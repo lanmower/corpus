@@ -1,0 +1,986 @@
+- id: extract-srs-cardiology-4
+subject: Extract SRS cards from ECG Interpretation - CMED4IIM2 - 2026_pages-001-010.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from ECG Interpretation - CMED4IIM2 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in cardiology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-cardiology-5
+subject: Extract SRS cards from Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009.txt
+  status: completed
+description: Extract learnable facts and generate YAML SRS cards from Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in cardiology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-cardiology-6
+  subject: Extract SRS cards from Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007.txt
+  status: completed
+  description: Extract learnable facts and generate YAML SRS cards from Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007.txt
+  effort: medium
+  category: feature
+  route_family: execution
+  load: 0.8
+  failure_modes: []
+  route_fit: examined
+  authorization: witnessed
+  blocking: []
+  blockedBy: []
+  acceptance:
+    - YAML file created in cardiology/srs-cards/
+    - Each fact is a separate card with front/back
+    - All testable facts captured
+  edge_cases:
+    - Empty sections
+    - Repeated facts
+
+- id: extract-srs-diabetes-7
+subject: Extract SRS cards from Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in diabetes/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-diabetes-8
+subject: Extract SRS cards from Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in diabetes/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-diabetes-9
+subject: Extract SRS cards from Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in diabetes/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-diabetes-10
+subject: Extract SRS cards from Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in diabetes/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-diabetes-11
+subject: Extract SRS cards from Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in diabetes/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-endocrine-12
+subject: Extract SRS cards from Adrenal Gland - CMED4IIM1 - 2026_pages-001-010.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Adrenal Gland - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in endocrine/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-endocrine-13
+subject: Extract SRS cards from Adrenal Gland - CMED4IIM1 - 2026_pages-011-015.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Adrenal Gland - CMED4IIM1 - 2026_pages-011-015.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in endocrine/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-endocrine-14
+subject: Extract SRS cards from Diagnosis  Classification Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.txt
+  status: completed
+description: Extract learnable facts and generate YAML SRS cards from Diagnosis  Classification Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in endocrine/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-endocrine-15
+subject: Extract SRS cards from Diagnosis  Classification Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-011-014.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Diagnosis  Classification Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-011-014.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in endocrine/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-endocrine-17
+subject: Extract SRS cards from Disorders Of The Pituitary Gland - CMEDIIM1 - 2026_pages-011-012.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Disorders Of The Pituitary Gland - CMEDIIM1 - 2026_pages-011-012.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in endocrine/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-endocrine-18
+subject: Extract SRS cards from Parathyroid Disorders - CMED4IIM1 - 2026_pages-001-007.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Parathyroid Disorders - CMED4IIM1 - 2026_pages-001-007.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in endocrine/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-gastroenterology-19
+subject: Extract SRS cards from Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in gastroenterology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-gastroenterology-20
+subject: Extract SRS cards from Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.txt
+  status: completed
+description: Extract learnable facts and generate YAML SRS cards from Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in gastroenterology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-gastroenterology-21
+subject: Extract SRS cards from An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in gastroenterology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-gastroenterology-22
+subject: Extract SRS cards from Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.txt
+  status: completed
+description: Extract learnable facts and generate YAML SRS cards from Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in gastroenterology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-gastroenterology-23
+subject: Extract SRS cards from Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in gastroenterology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-gastroenterology-24
+subject: Extract SRS cards from Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.txt
+  status: completed
+description: Extract learnable facts and generate YAML SRS cards from Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in gastroenterology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-gastroenterology-26
+subject: Extract SRS cards from Jaundice - CMED4IIM1 - 2026_pages-001-010.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Jaundice - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in gastroenterology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-gastroenterology-27
+subject: Extract SRS cards from Jaundice - CMED4IIM1 - 2026_pages-011-014.txt
+  status: completed
+description: Extract learnable facts and generate YAML SRS cards from Jaundice - CMED4IIM1 - 2026_pages-011-014.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in gastroenterology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-geriatric-28
+subject: Extract SRS cards from Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in geriatric/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-geriatric-30
+subject: Extract SRS cards from Geriatric - latrogenesis - CMED4IIM1 - 2026_pages-001-004.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Geriatric - latrogenesis - CMED4IIM1 - 2026_pages-001-004.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in geriatric/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-geriatric-31
+subject: Extract SRS cards from Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in geriatric/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-nephrology-31
+subject: Extract SRS cards from Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in nephrology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-nephrology-32
+subject: Extract SRS cards from Acute Kidney Disease - CMED4IIM1 - 2026_pages-001-007.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Acute Kidney Disease - CMED4IIM1 - 2026_pages-001-007.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in nephrology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-nephrology-34
+subject: Extract SRS cards from Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in nephrology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-nephrology-35
+subject: Extract SRS cards from Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in nephrology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-nephrology-36
+subject: Extract SRS cards from Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in nephrology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-nephrology-37
+subject: Extract SRS cards from HIV  The Kidney - CMED4IIM1 - 2026_pages-001-006.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from HIV  The Kidney - CMED4IIM1 - 2026_pages-001-006.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in nephrology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-nephrology-38
+  subject: Extract SRS cards from Hypertension  The Kidney - CMED4IIM1 -2026_pages-001-006.txt
+  status: completed
+description: Extract learnable facts and generate YAML SRS cards from Hypertension  The Kidney - CMED4IIM1 -2026_pages-001-006.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in nephrology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-nephrology-39
+subject: Extract SRS cards from Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in nephrology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-nephrology-41
+subject: Extract SRS cards from Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in nephrology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-pulmonology-42
+subject: Extract SRS cards from Community-Acquired Pneumonia - CMED4IIM1 - 2026_pages-001-010.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Community-Acquired Pneumonia - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in pulmonology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-pulmonology-43
+subject: Extract SRS cards from Community-Acquired Pneumonia - CMED4IIM1 - 2026_pages-011-013.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Community-Acquired Pneumonia - CMED4IIM1 - 2026_pages-011-013.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in pulmonology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-pulmonology-44
+subject: Extract SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-001-010.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in pulmonology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-pulmonology-45
+subject: Extract SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-011-013.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-011-013.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in pulmonology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-pulmonology-47
+subject: Extract SRS cards from Optimal Use Of Antibiotics - Antibiotic Stewardship - CMED4IIM1 - 2026_pages-011-015.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Optimal Use Of Antibiotics - Antibiotic Stewardship - CMED4IIM1 - 2026_pages-011-015.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in pulmonology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-pulmonology-48
+subject: Extract SRS cards from Suppurative Lung Syndromes - CMED4IIM1 - 2026_pages-001-008.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Suppurative Lung Syndromes - CMED4IIM1 - 2026_pages-001-008.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in pulmonology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-rheumatology-49
+subject: Extract SRS cards from Connective Tissue Disease - CMED4IIM1 - 2026_pages-001-010.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Connective Tissue Disease - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in rheumatology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-rheumatology-50
+subject: Extract SRS cards from Connective Tissue Disease - CMED4IIM1 - 2026_pages-011-014.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Connective Tissue Disease - CMED4IIM1 - 2026_pages-011-014.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in rheumatology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-rheumatology-51
+  subject: Extract SRS cards from Gout - CMED4IIM1 - 2026_pages-001-004.txt
+  status: completed
+  description: Extract learnable facts and generate YAML SRS cards from Gout - CMED4IIM1 - 2026_pages-001-004.txt
+  effort: medium
+  category: feature
+  route_family: execution
+  load: 0.8
+  failure_modes: []
+  route_fit: examined
+  authorization: witnessed
+  blocking: []
+  blockedBy: []
+  acceptance:
+    - YAML file created in rheumatology/srs-cards/
+    - Each fact is a separate card with front/back
+    - All testable facts captured
+  edge_cases:
+    - Empty sections
+    - Repeated facts
+
+- id: extract-srs-rheumatology-53
+subject: Extract SRS cards from Osteoarthritis - CMED4IIM1 - 2026_pages-001-008.txt
+status: completed
+description: Extract learnable facts and generate YAML SRS cards from Osteoarthritis - CMED4IIM1 - 2026_pages-001-008.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in rheumatology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-rheumatology-54
+subject: Extract SRS cards from Rheumatoid Arthritis - CMED4IIM1 - 2026_pages-001-010.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Rheumatoid Arthritis - CMED4IIM1 - 2026_pages-001-010.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in rheumatology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-rheumatology-55
+subject: Extract SRS cards from Rheumatoid Arthritis - CMED4IIM1 - 2026_pages-011-018.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Rheumatoid Arthritis - CMED4IIM1 - 2026_pages-011-018.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in rheumatology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
+
+- id: extract-srs-rheumatology-56
+subject: Extract SRS cards from Spondyloarthropathies (SpA) - CMED4IIM1- 2026_pages-001-007.txt
+status: pending
+description: Extract learnable facts and generate YAML SRS cards from Spondyloarthropathies (SpA) - CMED4IIM1- 2026_pages-001-007.txt
+effort: medium
+category: feature
+route_family: execution
+load: 0.8
+failure_modes: []
+route_fit: examined
+authorization: witnessed
+blocking: []
+blockedBy: []
+acceptance:
+  - YAML file created in rheumatology/srs-cards/
+  - Each fact is a separate card with front/back
+  - All testable facts captured
+edge_cases:
+  - Empty sections
+  - Repeated facts
