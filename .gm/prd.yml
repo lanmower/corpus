@@ -714,7 +714,7 @@ edge_cases:
 
 - id: extract-srs-pulmonology-44
 subject: Extract SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-001-010.txt
-status: pending
+status: completed
 description: Extract learnable facts and generate YAML SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-001-010.txt
 effort: medium
 category: feature
@@ -734,25 +734,25 @@ edge_cases:
   - Repeated facts
 
 - id: extract-srs-pulmonology-45
-subject: Extract SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-011-013.txt
-status: pending
-description: Extract learnable facts and generate YAML SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-011-013.txt
-effort: medium
-category: feature
-route_family: execution
-load: 0.8
-failure_modes: []
-route_fit: examined
-authorization: witnessed
-blocking: []
-blockedBy: []
-acceptance:
-  - YAML file created in pulmonology/srs-cards/
-  - Each fact is a separate card with front/back
-  - All testable facts captured
-edge_cases:
-  - Empty sections
-  - Repeated facts
+  subject: Extract SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-011-013.txt
+  status: completed
+  description: Extract learnable facts and generate YAML SRS cards from Lung Cancer - CMED4IIM1 - 2026_pages-011-013.txt
+  effort: medium
+  category: feature
+  route_family: execution
+  load: 0.8
+  failure_modes: []
+  route_fit: examined
+  authorization: witnessed
+  blocking: []
+  blockedBy: []
+  acceptance:
+    - YAML file created in pulmonology/srs-cards/
+    - Each fact is a separate card with front/back
+    - All testable facts captured
+  edge_cases:
+    - Empty sections
+    - Repeated facts
 
 - id: extract-srs-pulmonology-47
 subject: Extract SRS cards from Optimal Use Of Antibiotics - Antibiotic Stewardship - CMED4IIM1 - 2026_pages-011-015.txt
@@ -777,7 +777,7 @@ edge_cases:
 
 - id: extract-srs-pulmonology-48
 subject: Extract SRS cards from Suppurative Lung Syndromes - CMED4IIM1 - 2026_pages-001-008.txt
-status: pending
+status: completed
 description: Extract learnable facts and generate YAML SRS cards from Suppurative Lung Syndromes - CMED4IIM1 - 2026_pages-001-008.txt
 effort: medium
 category: feature
