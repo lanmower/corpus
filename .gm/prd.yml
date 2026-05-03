@@ -691,30 +691,9 @@ edge_cases:
   - Empty sections
   - Repeated facts
 
-- id: extract-srs-nephrology-41
-subject: Extract SRS cards from Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.txt
-status: completed
-description: Extract learnable facts and generate YAML SRS cards from Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.txt
-effort: medium
-category: feature
-route_family: execution
-load: 0.8
-failure_modes: []
-route_fit: examined
-authorization: witnessed
-blocking: []
-blockedBy: []
-acceptance:
-  - YAML file created in nephrology/srs-cards/
-  - Each fact is a separate card with front/back
-  - All testable facts captured
-edge_cases:
-  - Empty sections
-  - Repeated facts
-
 - id: extract-srs-pulmonology-42
-subject: Extract SRS cards from Community-Acquired Pneumonia - CMED4IIM1 - 2026_pages-001-010.txt
-status: pending
+  subject: Extract SRS cards from Community-Acquired Pneumonia - CMED4IIM1 - 2026_pages-001-010.txt
+  status: completed
 description: Extract learnable facts and generate YAML SRS cards from Community-Acquired Pneumonia - CMED4IIM1 - 2026_pages-001-010.txt
 effort: medium
 category: feature
