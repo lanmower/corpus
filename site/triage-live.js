@@ -1,12 +1,24 @@
 const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
-const SYSTEM_PROMPT_TMPL = `you are a clinical triage assistant. you reason out loud briefly and then act on a visual scratchpad by emitting JSON tool calls.
+const SYSTEM_PROMPT_TMPL = `you are a Socratic clinical examiner. the student is being tested. you do NOT give them the answer.
+
+your job in phase=asking:
+- read the case stem and the cards the student has already placed
+- ask probing questions that force the student to commit a differential / investigation / plan in their own words
+- if the student tries to ask "what is the differential?" or "what's the plan?", refuse — turn the question back: "what do YOU think? add three cards with your top differentials and i will grade them."
+- you may add a 'note' card to clarify the case stem (e.g. extra history) but you must NOT add differential / recommendation / plan / vital cards yourself in this phase. let the student supply them.
+
+your job in phase=grading:
+- compare the student's cards against the answer key (provided in this prompt only when grading)
+- for each canonical atom the student got right, emit highlight_card on the matching student card
+- for each canonical atom the student missed, emit add_card kind=note with title="missed: <atom>" so the gap is visible
+- finish with one short feedback sentence
 
 available tools (emit one per fenced block, language=tool):
 \`\`\`tool
-{"name":"add_card","args":{"id":"differ-1","kind":"differential|recommendation|warning|vital|plan|note","title":"short","body":"one or two sentences"}}
+{"name":"add_card","args":{"id":"note-1","kind":"differential|recommendation|warning|vital|plan|note","title":"short","body":"one or two sentences"}}
 \`\`\`
 \`\`\`tool
-{"name":"remove_card","args":{"id":"differ-1"}}
+{"name":"remove_card","args":{"id":"note-1"}}
 \`\`\`
 \`\`\`tool
 {"name":"highlight_card","args":{"id":"differ-1"}}
@@ -15,13 +27,16 @@ available tools (emit one per fenced block, language=tool):
 {"name":"clear_screen","args":{}}
 \`\`\`
 
-every turn you receive a fresh snapshot of the active scenario and the current scratchpad — you have no chat history. work from what is on screen now. when the user asks for differentials, add 3-5 differential cards. when they ask for a plan, add plan cards. always reason in 1-2 sentences before the tool blocks.
+every turn you receive a fresh snapshot — you have no chat history. work from what is on screen now.
 
-active scenario:
-{{SCENARIO}}
+phase: {{PHASE}}
 
-current scratchpad ({{N}} cards):
-{{CARDS}}`;
+case stem:
+{{STEM}}
+
+current scratchpad ({{N}} cards — these are the student's commitments):
+{{CARDS}}
+{{ANSWER_KEY}}`;
 
 const PERSIST_KEY = 'corpus.triage.v1';
 const SCHEMA_VERSION = 1;
@@ -39,9 +54,20 @@ const state = {
     pipeline: null,
     onProgress: null,
     subjectFilter: new Set(),
-    sessions: {}
+    sessions: {},
+    phase: 'asking'
 };
 window.__triage = state;
+
+function caseStem(sc) {
+    if (!sc) return '';
+    const ex = (sc.examples && sc.examples[0]) || {};
+    const stemRaw = (typeof ex === 'string' ? ex : (ex.case || ex.stem || ''));
+    if (stemRaw && stemRaw.length > 20) return stemRaw.slice(0, 600);
+    const desc = sc.description || '';
+    const lead = desc.split(/[.!?]/)[0] || sc.name;
+    return `${sc.name}. ${lead}. The patient presents to your service — you must work up and manage them. Commit your differentials, investigations, and plan as cards before requesting grading.`;
+}
 
 function safeStore() {
     try { return window.localStorage; } catch { return null; }
@@ -88,8 +114,18 @@ const els = {
     send: document.getElementById('send'),
     loadLLM: document.getElementById('load-llm'),
     clearScreen: document.getElementById('clear-screen'),
-    simulate: document.getElementById('simulate')
+    simulate: document.getElementById('simulate'),
+    submitGrading: document.getElementById('submit-grading')
 };
+
+function submitForGrading() {
+    if (!currentScenario()) return;
+    state.phase = 'grading';
+    renderActive();
+    els.prompt.value = 'grade my work';
+    send(true).then(() => renderActive());
+}
+state.submitForGrading = submitForGrading;
 
 function ce(tag, attrs = {}, ...kids) {
     const e = document.createElement(tag);
@@ -215,7 +251,7 @@ function renderScenarios() {
                 }
             },
                 ce('div', {}, sc.name),
-                ce('div', { class: 'sub' }, `${sc.atoms.length} atoms · ${subj}${hasSession ? ' · ●' : ''}`)
+                ce('div', { class: 'sub' }, `${subj}${hasSession ? ' · ●' : ''}`)
             ));
         }
     }
@@ -229,10 +265,17 @@ function selectScenario(id) {
     state.cards = saved.map(c => ({ ...c }));
     state.cardSeq = state.cards.length;
     state.messages = [];
+    state.phase = 'asking';
     renderScenarios();
     renderActive();
     renderScratchpad();
     renderMessages();
+}
+
+function countByKind(cards) {
+    const out = {};
+    for (const c of cards) out[c.kind] = (out[c.kind] || 0) + 1;
+    return out;
 }
 
 function renderActive() {
@@ -247,18 +290,38 @@ function renderActive() {
         return;
     }
     els.activeScenario.className = 'active-scenario panel rail-' + sc.cat;
-    const params = (sc.parameters && typeof sc.parameters === 'object' && !Array.isArray(sc.parameters)) ? sc.parameters : {};
-    const paramKeys = Object.keys(params);
+    const stem = caseStem(sc);
+    const counts = countByKind(state.cards);
+    const checklist = [
+        { kind: 'differential', label: 'differentials', target: 3 },
+        { kind: 'investigation', label: 'investigations', target: 2 },
+        { kind: 'plan', label: 'plan', target: 1 }
+    ];
+    const checklistEl = ce('div', { class: 'checklist' },
+        ...checklist.map(item => ce('div', { class: 'checklist-row' + ((counts[item.kind] || 0) >= item.target ? ' done' : '') },
+            ce('span', { class: 'tick' }, (counts[item.kind] || 0) >= item.target ? '●' : '○'),
+            ce('span', {}, `${item.label}: ${counts[item.kind] || 0} / ${item.target}`)
+        ))
+    );
+    const totalNeeded = checklist.reduce((a, b) => a + b.target, 0);
+    const totalGot = checklist.reduce((a, b) => a + Math.min(b.target, counts[b.kind] || 0), 0);
+    const ready = totalGot >= totalNeeded;
+    const gradeBtn = ce('button', {
+        class: 'run-btn' + (ready ? '' : ' disabled'),
+        on: { click: () => {
+            state.phase = 'grading';
+            renderActive();
+            els.prompt.value = 'grade my work';
+            send(true).then(() => renderActive());
+        } },
+        ...(ready ? {} : { disabled: 'true' })
+    }, state.phase === 'graded' ? 'graded — pick another scenario' : 'submit for grading');
     els.activeScenario.append(
-        ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, sc.subject)),
-        ce('div', { class: 'muted' }, sc.description || ''),
-        paramKeys.length ? ce('dl', { class: 'params' },
-            ...paramKeys.flatMap(k => [
-                ce('dt', {}, k),
-                ce('dd', {}, (typeof params[k] === 'string' ? params[k] : JSON.stringify(params[k])).slice(0, 220))
-            ])
-        ) : null,
-        (sc.atoms && sc.atoms.length) ? ce('div', { class: 'muted', style: 'margin-top:10px;font-family:var(--ff-mono);font-size:11px' }, `// ${sc.atoms.length} reasoning atoms attached`) : null
+        ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} · phase: ${state.phase}`)),
+        ce('div', { class: 'muted', style: 'font-size:14px;line-height:1.55;margin-bottom:12px' }, stem),
+        ce('div', { class: 'muted small', style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-3);margin-bottom:6px' }, '// commit your work as cards — atoms revealed only after grading'),
+        checklistEl,
+        gradeBtn
     );
 }
 
@@ -296,7 +359,7 @@ function renderMessages() {
     els.messages.scrollTop = els.messages.scrollHeight;
 }
 
-const CARD_KINDS = new Set(['differential', 'recommendation', 'warning', 'vital', 'plan', 'note']);
+const CARD_KINDS = new Set(['differential', 'recommendation', 'warning', 'vital', 'plan', 'note', 'investigation']);
 
 const TOOLS = {
     add_card({ id, kind, title, body }) {
@@ -343,16 +406,25 @@ state.dispatchToolCalls = dispatchToolCalls;
 
 function removeCard(id) { TOOLS.remove_card({ id }); }
 
-function buildSnapshot() {
+function buildSnapshot(phase) {
+    phase = phase || state.phase || 'asking';
     const sc = currentScenario();
-    const scenarioText = sc ? `${sc.name} (${sc.subject})\n${sc.description}\nparameters: ${JSON.stringify(sc.parameters)}\natoms:\n${sc.atoms.slice(0, 10).map(a => `- ${a.atom}: ${(a.definition || '').slice(0, 220)}`).join('\n')}` : 'none — pick a scenario from the left first';
+    const stem = sc ? caseStem(sc) : 'none — pick a scenario from the left first';
     const cardsText = state.cards.length === 0
-        ? '(empty)'
+        ? '(empty — student has not committed any cards yet)'
         : state.cards.map(c => `- [${c.id}] ${c.kind}: ${c.title} — ${c.body}`).join('\n');
+    let answerKey = '';
+    if (sc && phase === 'grading') {
+        const atoms = (sc.atoms || []).slice(0, 8).map(a => `- ${a.atom}: ${(a.definition || '').slice(0, 200)}`).join('\n');
+        const ex = (sc.examples && sc.examples[0]) || {};
+        answerKey = `\n\n=== ANSWER KEY (do not paraphrase verbatim — use to grade) ===\ncanonical atoms:\n${atoms}\nrecommended plan: ${ex.recommendation || '(not specified)'}\nreasoning: ${ex.reasoning || '(not specified)'}`;
+    }
     return SYSTEM_PROMPT_TMPL
-        .replace('{{SCENARIO}}', scenarioText)
+        .replace('{{PHASE}}', phase)
+        .replace('{{STEM}}', stem)
         .replace('{{N}}', state.cards.length)
-        .replace('{{CARDS}}', cardsText);
+        .replace('{{CARDS}}', cardsText)
+        .replace('{{ANSWER_KEY}}', answerKey);
 }
 state.buildSnapshot = buildSnapshot;
 
@@ -393,7 +465,7 @@ async function loadLLM() {
 
 async function generateLLM(userText) {
     if (!state.pipeline) throw new Error('LLM not loaded');
-    const sys = buildSnapshot();
+    const sys = buildSnapshot(state.phase);
     const messages = [
         { role: 'system', content: sys },
         { role: 'user', content: userText }
@@ -433,43 +505,85 @@ async function send(useSim = false) {
     dispatchToolCalls(reply);
 }
 
+function tokenize(s) { return new Set(String(s).toLowerCase().match(/[a-z]{4,}/g) || []); }
+function overlap(a, b) {
+    let n = 0;
+    for (const t of a) if (b.has(t)) n++;
+    return n;
+}
+
 function simulateAssistant(userText) {
     const sc = currentScenario();
     if (!sc) return 'pick a scenario first.';
     const t = userText.toLowerCase();
-    const blocks = [];
     if (t.includes('clear')) {
         return 'clearing the board.\n```tool\n{"name":"clear_screen","args":{}}\n```';
     }
-    if (t.includes('different') || t.includes('ddx') || t.includes('plot')) {
-        const atoms = sc.atoms.slice(0, 4);
-        blocks.push(`based on the active scenario "${sc.name}" and ${state.cards.length} cards already on screen, here are the differentials i'd consider first:`);
-        atoms.forEach((a, i) => {
-            blocks.push('```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `differ-${Date.now()}-${i}`, kind: 'differential', title: a.atom.slice(0, 60), body: (a.definition || '').slice(0, 220) } }) + '\n```');
-        });
+
+    if (state.phase === 'grading') {
+        const studentTokens = state.cards.map(c => ({ c, tok: tokenize(`${c.title} ${c.body}`) }));
+        const blocks = [`grading your ${state.cards.length} cards against the answer key for "${sc.name}".`];
+        let hits = 0, misses = 0;
+        const atoms = (sc.atoms || []).slice(0, 6);
+        const matchedStudentIds = new Set();
+        for (const a of atoms) {
+            const aTok = tokenize(`${a.atom} ${a.definition || ''}`);
+            let best = null, bestScore = 0;
+            for (const sCard of studentTokens) {
+                if (matchedStudentIds.has(sCard.c.id)) continue;
+                const s = overlap(aTok, sCard.tok);
+                if (s > bestScore) { bestScore = s; best = sCard; }
+            }
+            if (best && bestScore >= 2) {
+                matchedStudentIds.add(best.c.id);
+                hits++;
+                blocks.push('```tool\n' + JSON.stringify({ name: 'highlight_card', args: { id: best.c.id } }) + '\n```');
+            } else {
+                misses++;
+                blocks.push('```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `gap-${Date.now()}-${misses}`, kind: 'note', title: `missed: ${a.atom.slice(0, 50)}`, body: (a.definition || '').slice(0, 200) } }) + '\n```');
+            }
+        }
+        const ex = (sc.examples && sc.examples[0]) || {};
+        if (ex.recommendation) {
+            blocks.push('```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `key-rec-${Date.now()}`, kind: 'recommendation', title: 'canonical plan', body: ex.recommendation.slice(0, 240) } }) + '\n```');
+        }
+        const score = atoms.length ? Math.round(100 * hits / atoms.length) : 0;
+        blocks.push(`\n— ${hits}/${atoms.length} canonical atoms matched (${score}%). ${misses ? 'gaps added as note cards above.' : 'good cover.'}`);
+        state.phase = 'graded';
         return blocks.join('\n');
     }
-    if (t.includes('plan') || t.includes('manage') || t.includes('treat')) {
-        const ex = sc.examples[0] || {};
-        return `recommended plan based on the scenario:\n\n` +
-            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `plan-${Date.now()}`, kind: 'plan', title: 'first-line plan', body: ex.recommendation || 'guideline-directed therapy.' } }) + '\n```\n' +
-            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `note-${Date.now()}`, kind: 'note', title: 'reasoning', body: ex.reasoning || sc.description } }) + '\n```';
+
+    // asking phase — Socratic only, never reveal atoms
+    const counts = countByKind(state.cards);
+    const totalCommit = (counts.differential || 0) + (counts.investigation || 0) + (counts.plan || 0);
+    if (t.match(/what (is|are|should)|tell me|give me|hint|answer|differential|plan|treat|manage|investig/) && totalCommit < 3) {
+        return `i won't hand you the answer — you're being examined. read the case stem, then add YOUR best three differentials, two investigations, and one plan as cards (use the + button on the scratchpad or the chat — say "add differential: <your guess>"). i'll grade them when you submit.`;
     }
-    if (t.includes('vital') || t.includes('observ')) {
-        return 'pinning the vitals i would track:\n' +
-            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `vital-hr-${Date.now()}`, kind: 'vital', title: 'heart rate', body: '60–100 bpm; flag tachycardia >100 or bradycardia <60' } }) + '\n```\n' +
-            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `vital-bp-${Date.now()}`, kind: 'vital', title: 'blood pressure', body: 'target SBP 100-130; MAP ≥65 in shock' } }) + '\n```\n' +
-            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `vital-spo2-${Date.now()}`, kind: 'vital', title: 'spO2', body: '≥94% room air; titrate O2 to 88–92% in COPD' } }) + '\n```';
+    const m = t.match(/^add\s+(differential|investigation|plan|vital|warning|note)\s*[:\-]?\s*(.+)$/i);
+    if (m) {
+        const kind = m[1].toLowerCase();
+        const title = m[2].trim().slice(0, 60);
+        return `recording your ${kind}: "${title}". what is your reasoning?\n` +
+            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `student-${kind}-${Date.now()}`, kind, title, body: '(your commitment — add reasoning by editing or asking me)' } }) + '\n```';
     }
-    if (t.includes('warn') || t.includes('danger') || t.includes('red flag')) {
-        return 'red flags to watch:\n' +
-            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `warn-${Date.now()}`, kind: 'warning', title: 'critical signs', body: 'altered mental status, sustained hypotension, rising lactate — escalate' } }) + '\n```';
+    if (totalCommit === 0) {
+        return `case stem is on the left. what are the top three differentials YOU would consider here? type "add differential: <your guess>" three times, then add two investigations and a plan, then submit for grading.`;
     }
-    return `i can plot differentials, draft a plan, list vitals, or flag warnings for "${sc.name}". try: "plot differentials" or "draft plan".`;
+    if ((counts.differential || 0) < 3) {
+        return `you have ${counts.differential || 0} of 3 differentials. what else could explain this presentation? add the next one with "add differential: <name>".`;
+    }
+    if ((counts.investigation || 0) < 2) {
+        return `differentials look in place. what investigations would discriminate between them? add with "add investigation: <test>".`;
+    }
+    if ((counts.plan || 0) < 1) {
+        return `now commit your plan with "add plan: <first-line therapy>". then click submit for grading.`;
+    }
+    return `you have committed ${counts.differential || 0} differentials, ${counts.investigation || 0} investigations, ${counts.plan || 0} plan. click "submit for grading" when ready — i won't reveal the answer key until you do.`;
 }
 state.simulateAssistant = simulateAssistant;
 
 els.send.addEventListener('click', () => send(false));
+if (els.submitGrading) els.submitGrading.addEventListener('click', submitForGrading);
 els.simulate.addEventListener('click', () => send(true));
 els.loadLLM.addEventListener('click', loadLLM);
 els.clearScreen.addEventListener('click', () => TOOLS.clear_screen());

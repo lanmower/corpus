@@ -190,6 +190,59 @@ global.localStorage = (() => {
             assert.ok(Array.isArray(sc.examples));
         }
     });
+    console.log('# triage-disclosure-gate');
+    const liveSrc = fs.readFileSync(path.join(ROOT, 'site/triage-live.js'), 'utf8');
+    const liveHtml = fs.readFileSync(path.join(ROOT, 'site/triage-live.html'), 'utf8');
+    t('triage-live.js: buildSnapshot accepts phase argument', () => {
+        assert.match(liveSrc, /function buildSnapshot\(phase\)/);
+    });
+    t('renderActive omits parameters dl and atoms-attached count', () => {
+        const block = liveSrc.split('function renderActive')[1].split('\nfunction ')[0];
+        assert.ok(!/class: 'params'/.test(block), 'params dl present');
+        assert.ok(!/atoms attached/.test(block), 'atoms-count line present');
+        assert.ok(!/sc\.parameters/.test(block), 'sc.parameters referenced in renderActive');
+    });
+    t('scenario list row does not leak atoms count', () => {
+        assert.ok(!/sc\.atoms\.length\}\s*atoms/.test(liveSrc));
+    });
+    t('html exposes submit-for-grading button', () => {
+        assert.match(liveHtml, /id="submit-grading"/);
+    });
+    t('buildSnapshot: asking phase contains no atom defs / example reasoning', () => {
+        const vm = require('vm');
+        const sc = {
+            id: 'x-0', subject: 'cardiology', cat: 'green', name: 'Test scn',
+            description: 'test desc.', parameters: { hr: 110 }, examples: [{ case: 'A 60yo with chest pain.', reasoning: 'CANARY_REASONING_TOKEN', recommendation: 'CANARY_RECOMMENDATION_TOKEN' }],
+            atom_ids: ['a1'], atoms: [{ id: 'a1', atom: 'CanaryAtomFront', definition: 'CANARY_DEFINITION_TOKEN' }]
+        };
+        const ctx = { console, state: { activeScenarioId: 'x-0', scenarios: [sc], cards: [], phase: 'asking' } };
+        // extract SYSTEM_PROMPT_TMPL, caseStem, currentScenario, buildSnapshot
+        const grab = (re) => { const m = liveSrc.match(re); if (!m) throw new Error('miss '+re); return m[0]; };
+        const tmpl = grab(/const SYSTEM_PROMPT_TMPL = `[\s\S]*?`;/);
+        const cs = grab(/function caseStem\(sc\) \{[\s\S]*?^\}/m);
+        const cur = grab(/function currentScenario\(\) \{[\s\S]*?^\}/m);
+        const bs = grab(/function buildSnapshot\(phase\) \{[\s\S]*?^\}/m);
+        vm.createContext(ctx);
+        vm.runInContext(`${tmpl}\n${cs}\n${cur}\n${bs}\n`, ctx);
+        const asking = vm.runInContext(`buildSnapshot('asking')`, ctx);
+        const grading = vm.runInContext(`buildSnapshot('grading')`, ctx);
+        assert.ok(!asking.includes('CANARY_DEFINITION_TOKEN'), 'asking leaked atom definition');
+        assert.ok(!asking.includes('CANARY_REASONING_TOKEN'), 'asking leaked example reasoning');
+        assert.ok(!asking.includes('CANARY_RECOMMENDATION_TOKEN'), 'asking leaked recommendation');
+        assert.ok(!asking.includes('CanaryAtomFront'), 'asking leaked atom front');
+        assert.ok(grading.includes('CANARY_DEFINITION_TOKEN'), 'grading missing atom definition');
+        assert.ok(grading.includes('CanaryAtomFront'), 'grading missing atom front');
+        assert.ok(grading.includes('CANARY_RECOMMENDATION_TOKEN') || grading.includes('CANARY_REASONING_TOKEN'), 'grading missing example reasoning/recommendation');
+    });
+    t('simulateAssistant in asking phase does not pre-populate differential add_card', () => {
+        // Source-level: in asking branch, response emits add_card only if user types "add <kind>:" — never preemptive differential
+        const simBody = liveSrc.split('function simulateAssistant')[1].split('\nstate.simulateAssistant')[0];
+        const askingPart = simBody.split("state.phase === 'grading'")[1].split('return blocks.join')[1] || simBody;
+        // The remaining (asking) branch must not auto-emit kind:'differential' tool calls
+        const autoDiff = /add_card[\s\S]*?kind.{0,4}.differential/.test(askingPart) && !/m\[1\]\.toLowerCase\(\)/.test(askingPart);
+        assert.ok(!autoDiff, 'asking branch auto-populates differentials');
+    });
+
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
 })();
