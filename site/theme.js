@@ -37,10 +37,14 @@ export function makeToggleButton(doc = document) {
     const btn = doc.createElement('button');
     btn.type = 'button';
     btn.className = 'theme-toggle';
-    btn.setAttribute('aria-label', 'toggle theme');
+    const glyphs = { light: '☀', dark: '☾', auto: '◐' };
     const label = () => {
         const cur = getTheme();
-        btn.textContent = cur === 'dark' ? '◐' : (cur === 'light' ? '◑' : '◓');
+        btn.innerHTML = '';
+        const g = doc.createElement('span'); g.className = 'glyph'; g.textContent = glyphs[cur] || '◐'; g.setAttribute('aria-hidden', 'true');
+        const t = doc.createElement('span'); t.className = 'label'; t.textContent = cur;
+        btn.append(g, t);
+        btn.setAttribute('aria-label', `theme: ${cur} — click to cycle`);
         btn.title = `theme: ${cur} (click to cycle)`;
     };
     label();

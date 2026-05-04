@@ -16,17 +16,18 @@
 </head>
 <body>
 <div id="app">
-  <header class="topbar">
-    <div class="brand"><span class="brand-glyph">◰</span> corpus<span class="brand-tail">.live-triage</span></div>
-    <nav class="nav">
-      <a href="./index.html" class="navlink">overview</a>
+  <header class="topbar" role="banner">
+    <a href="./index.html#today" class="brand" aria-label="corpus home"><span class="brand-glyph" aria-hidden="true">◰</span><span>corpus</span></a>
+    <nav class="nav" aria-label="primary">
+      <a href="./index.html#today" class="navlink">today</a>
       <a href="./index.html#subjects" class="navlink">subjects</a>
-      <a href="./index.html#cards" class="navlink">cards</a>
-      <a href="./index.html#triage" class="navlink">triage</a>
-      <a href="./triage-live.html" class="navlink active">live triage</a>
+      <a href="./index.html#review" class="navlink">review</a>
+      <a href="./index.html#cases" class="navlink">cases</a>
+      <a href="./index.html#stats" class="navlink">stats</a>
+      <a href="./triage-live.html" class="navlink nav-cta active">live tutor</a>
     </nav>
     <div class="status">
-      <span class="dot" id="cap-dot"></span>
+      <span class="dot" id="cap-dot" aria-hidden="true"></span>
       <span class="status-label" id="cap-label">getting ready…</span>
     </div>
   </header>
@@ -64,9 +65,9 @@
         <textarea id="prompt" placeholder="reply to your tutor — e.g. 'add differential: acute coronary syndrome'" rows="3"></textarea>
         <div class="composer-row">
           <button class="run-btn" id="send">send</button>
+          <button class="run-btn" id="submit-grading" style="background:var(--purple)">submit for grading</button>
           <button class="chip" id="clear-screen">clear board</button>
           <button class="chip" id="simulate">use offline tutor</button>
-          <button class="chip" id="submit-grading">submit for grading</button>
         </div>
       </div>
     </aside>

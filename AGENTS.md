@@ -111,6 +111,43 @@ The whole site is now a student learning hub. Operator vocabulary (`manifest`, `
 - **Streak policy**: documented in README.md and `progress.js rollStreak` — `off==1 → +1`, anything else resets to 1. No grace day. Test asserts the 2-day-gap reset path.
 - **test.js**: 184 lines, 11 groups, 11/11 green.
 
+## Design system (post 2026-05-04 GUI pass)
+
+**Tokens** — declared at `:root` in `site/style.css`:
+
+- Type families: `--ff-display` (Archivo Black), `--ff-ui` / `--ff-prose` (Nunito), `--ff-mono` (JetBrains Mono)
+- Surface palette: `--paper`, `--ink`, `--panel-0..3`, `--panel-hover`, `--panel-select`, `--panel-text-2`, `--panel-text-3`, `--panel-text` (alias of `--panel-text-2`)
+- Accent rails: `--green`, `--purple`, `--mascot`, `--sun`, `--flame`, `--sky`. `--live`, `--warn`, `--link` for state.
+- Radii: `--r-sm 8px`, `--r-md 12px`, `--r-lg 18px`, `--r-pill 999px`. Components stay within these four; ad-hoc radii are out.
+- Spacing scale: `--s-1 4px`, `--s-2 8px`, `--s-3 12px`, `--s-4 16px`, `--s-5 22px`, `--s-6 32px`.
+- Shadow: `--shadow-1` (subtle lift), `--shadow-pop` (palette overlay).
+- Rail width: `--rail-w 4px` — single token across `.panel.rail-*`, `.subject-card.rail-*`, `.flashcard.rail-*`.
+
+**Dark mode** — `[data-theme="dark"]` redefines `--paper #1A1714`, `--ink #F2EAD8`, `--panel-0..3`, text greys, `--link #8FA5FF`, AND lifts the rail palette by ~8% lightness / drops ~5% saturation (`--green #6BB377`, `--purple #B077C0`, `--mascot #FF9DC2`, `--sun #FFE08C`, `--flame #FF9D70`, `--sky #94BEFF`) so the rails stay legible against dark paper. `.flashcard .back` border switches to `rgba(255,255,255,0.18)`.
+
+**Component vocabulary**:
+- `.topbar` — fixed-height banner with `.brand`, `.nav` (with `.navlink`, optional `.nav-cta` for the live-tutor primary action), `.status` (`.dot.live`, `.dot.live.loading` to opt-in to pulse, `.dot.offline`).
+- `.panel` — primary surface. Optional `.rail-{green|purple|mascot|sun|flame|sky}` adds inset accent. `.panel-head .title` for the headline.
+- `.section-head` — eyebrow + h2 pair. Eyebrow uses `.eyebrow` (uppercase mono, no `//` prefix).
+- `.cta` / `.cta-primary` — block CTAs in a `.cta-row`. Primary inverts to ink-paper.
+- `.subject-card`, `.flashcard` — interactive surfaces with rail support, hover bg shift, active translate, focus-visible ring.
+- `.row` — list rows with code/title/meta grid.
+- `.chip`, `.chip.active`, `.filter-chips` — pill controls.
+- `.run-btn`, `.grade-btn` — primary button (`min-height: 44px`). Hover purple, active translate.
+- `.search` — pill text input with focus ring via `--link`.
+- `.search-palette` — Ctrl-K dialog, `.search-result` rows.
+- `.statusbar` — only-when-offline footer message; `.hidden` class slides it off-screen.
+- `.theme-toggle` — text+glyph button reading `light`/`dark`/`auto`; on phone the text label hides.
+- `.empty-state`, `.skeleton`, `.error-state .panel-head` — non-happy-path surfaces.
+- `.guide-section` — single block (deduplicated this pass) for study-guide checkbox rows.
+
+**Information architecture** (this pass collapsed `home`+`today` and `triage`+`cases` into single canonical routes):
+- Topbar: `today | subjects | review | cards | cases | stats` + `live tutor` (CTA, ink-on-paper).
+- `#home` and `#triage` aliased via `ROUTE_ALIASES` to `today` and `cases` for back-compat.
+- The `today` route serves as the landing page: hero + workspace headline + streak/goal/due/cases chips + three CTAs (continue / review / start a case) + daily-goal progress + recommended cases + subject grid + recap.
+- The footer `.statusbar` is hidden when online; surfaces only the offline notice. The breadcrumb element is gone — the active topbar link is the breadcrumb.
+- The triage-live page topbar mirrors the main app nav exactly, with `live tutor` as the active CTA.
+
 ### Live browser witness — completed
 `gm:browser` (playwriter) attached and exercised every surface against the dev server. Witnessed green: home + `#today` + `#subjects` + `#review` + `#stats` + `#cards` + `#triage` route titles update per `setDocTitle`; subject deep route works via `[data-subject]` click (Cardiology guide rendered); Ctrl-K opens `#search-palette`, multi-token search returns ranked card/case/section hits; theme toggle flips `data-theme` dark↔light; submit-for-grading on a cardiology scenario stamped `streak 1 · last grade 100%`; SW registers at scope `/`, cache key `corpus-v2`, navigation requests survive offline. Triage-live `?debug=webgpu` spawned the real Gemma WebGPU worker on the RTX 3060 — 7000+ progress events streamed before the model finished downloading; pathway proven, full-load benchmark left to the user. No `console.error` and no `pageerror` events captured across the run.
 

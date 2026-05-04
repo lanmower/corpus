@@ -6,8 +6,8 @@ import { buildSearchIndex, mountPalette } from './search.js';
 import { makeToggleButton } from './theme.js';
 
 const stage = document.getElementById('stage');
-const crumb = document.getElementById('crumb');
-const footerStats = document.getElementById('footer-stats');
+const statusbarMsg = document.getElementById('statusbar-msg');
+const statusbar = document.querySelector('.statusbar');
 const DEBUG = new URLSearchParams(location.search).has('debug');
 const log = (...a) => console.log('[corpus]', ...a);
 const warn = (...a) => console.warn('[corpus]', ...a);
@@ -52,22 +52,23 @@ function el(tag, attrs = {}, ...kids) {
     return e;
 }
 
-const ROUTES = ['home', 'today', 'subjects', 'review', 'cards', 'triage', 'stats', 'subject'];
-const ROUTE_TITLES = { home: 'home', today: "today's plan", subjects: 'subjects', review: 'review',
-    cards: 'cards', triage: 'cases', stats: 'stats', subject: 'subject' };
+const ROUTES = ['today', 'subjects', 'review', 'cards', 'cases', 'stats', 'subject'];
+const ROUTE_TITLES = { today: "today's plan", subjects: 'subjects', review: 'review',
+    cards: 'cards', cases: 'cases', stats: 'stats', subject: 'subject' };
+const ROUTE_ALIASES = { home: 'today', triage: 'cases' };
 function setDocTitle(route, subject) {
     const cap = s => s ? s[0].toUpperCase() + s.slice(1) : '';
     const main = subject ? cap(subject) : cap(ROUTE_TITLES[route] || route);
     document.title = `${main} · corpus`;
 }
 function go(route, subject) {
-    if (!ROUTES.includes(route)) route = 'home';
+    if (ROUTE_ALIASES[route]) route = ROUTE_ALIASES[route];
+    if (!ROUTES.includes(route)) route = 'today';
     state.route = route;
     if (subject !== undefined) state.currentSubject = subject;
     if (route === 'cards' && subject) state.cardSubjectFilter = subject;
     if (route === 'review' && subject) { state.reviewSubjectFilter = subject; resetReviewQueue(); }
     document.querySelectorAll('.navlink').forEach(a => a.classList.toggle('active', a.dataset.route === route));
-    crumb.textContent = subject ? `${route} › ${subject}` : route;
     setDocTitle(route, subject);
     progress.setLast(route, subject);
     render();
@@ -100,12 +101,12 @@ function totalDueAll() {
 }
 
 function updateFooter() {
-    const p = progress.load();
-    if (DEBUG) {
-        const m = state.manifest;
-        footerStats.textContent = `${m.totals.cards} cards · ${m.totals.atoms} atoms · ${m.totals.scenarios} scenarios`;
+    if (!statusbar || !statusbarMsg) return;
+    if (!navigator.onLine) {
+        statusbar.classList.remove('hidden');
+        statusbarMsg.textContent = 'offline ready — your work is saved locally';
     } else {
-        footerStats.textContent = `streak ${p.streak} · ${p.todayGraded}/${p.dailyGoal} today`;
+        statusbar.classList.add('hidden');
     }
 }
 
@@ -113,9 +114,9 @@ function render() {
     stage.innerHTML = '';
     if (!state.manifest) { stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
     const r = state.route;
-    const fns = { home: renderHome, today: renderToday, subjects: renderSubjects, cards: renderCards,
-        review: renderReview, triage: renderTriage, stats: renderStats, subject: renderSubject };
-    (fns[r] || renderHome)();
+    const fns = { today: renderToday, subjects: renderSubjects, cards: renderCards,
+        review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject };
+    (fns[r] || renderToday)();
     updateFooter();
 }
 
@@ -126,58 +127,6 @@ function chipStat(num, lbl) {
 function isFirstVisit() {
     try { return !localStorage.getItem('corpus.progress.v1') && !localStorage.getItem('corpus.guide.v1') && !localStorage.getItem('corpus.srs.states'); }
     catch { return false; }
-}
-
-function renderHome() {
-    const p = progress.load();
-    const due = totalDueAll();
-    const last = p.lastSubject;
-    if (isFirstVisit()) {
-        stage.append(el('div', { class: 'panel rail-mascot onboarding', id: 'onboarding' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'welcome'), 'first time here'),
-            el('p', {}, "this is your medical study workspace. pick a subject below to start, or press Ctrl+K to search across cards, cases, and guide sections. your progress lives in this browser — no account needed.")));
-    }
-    const lastCTA = last ? el('a', { class: 'cta cta-primary', href: `#subject/${last}`,
-        on: { click: e => { e.preventDefault(); go('subject', last); } } },
-        el('div', { class: 'cta-label' }, 'continue where you left off'),
-        el('div', { class: 'cta-sub' }, last)) : null;
-
-    stage.append(el('section', { class: 'hero' },
-        el('h1', {}, 'your medical study ', el('em', {}, 'workspace')),
-        el('p', { class: 'lede' }, 'flashcards, cases, and study guides for eight subjects. pick up where you left off, review what is due, or work through a case.'),
-        el('div', { class: 'hero-stats' },
-            chipStat(p.streak, 'day streak'),
-            chipStat(`${p.todayGraded}/${p.dailyGoal}`, 'today'),
-            chipStat(due, 'cards due now'),
-            chipStat(state.manifest.subjects.length, 'subjects')
-        ),
-        el('div', { class: 'cta-row' },
-            lastCTA,
-            el('a', { class: 'cta', href: '#today', on: { click: e => { e.preventDefault(); go('today'); } } },
-                el('div', { class: 'cta-label' }, "today's plan"),
-                el('div', { class: 'cta-sub' }, 'streak, goal, recap')),
-            el('a', { class: 'cta', href: '#review', on: { click: e => { e.preventDefault(); go('review'); } } },
-                el('div', { class: 'cta-label' }, due ? `review ${due} due cards` : 'review cards'),
-                el('div', { class: 'cta-sub' }, 'spaced repetition')),
-            el('a', { class: 'cta', href: './triage-live.html' },
-                el('div', { class: 'cta-label' }, 'start a case'),
-                el('div', { class: 'cta-sub' }, 'work a clinical scenario'))
-        )
-    ));
-
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'label' }, '// pick a subject'),
-        el('h2', {}, 'subjects')
-    ));
-    stage.append(buildSubjectGrid());
-
-    if (DEBUG) {
-        stage.append(el('div', { class: 'section-head' }, el('span', { class: 'label' }, '// debug · rail legend'), el('h2', {}, 'coverage rails')));
-        for (const [name, txt] of [['rail-green', 'guide ≥ 50KB · cards ≥ 10 · scenarios ≥ 3'],
-            ['rail-sun', 'partial — 2 of 3 thresholds met'], ['rail-flame', 'stub — under-built']]) {
-            stage.append(el('div', { class: 'panel ' + name }, el('div', { class: 'panel-head' }, el('span', { class: 'title' }, name), txt)));
-        }
-    }
 }
 
 function buildSubjectGrid() {
@@ -211,25 +160,52 @@ function buildSubjectGrid() {
 
 function renderSubjects() {
     stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'label' }, '// 8 subjects'), el('h2', {}, 'pick a subject')));
+        el('span', { class: 'eyebrow' }, '8 subjects'), el('h2', {}, 'pick a subject')));
     stage.append(buildSubjectGrid());
 }
 
 function renderToday() {
     const p = progress.load();
     const due = totalDueAll();
+    const last = p.lastSubject;
     const goalPct = Math.min(100, Math.round(p.todayGraded / p.dailyGoal * 100));
-    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'label' }, '// today'), el('h2', {}, "today's plan")));
 
-    stage.append(el('div', { class: 'panel rail-green' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, `streak ${p.streak} day${p.streak === 1 ? '' : 's'}`),
-            p.streak > 0 ? 'keep it going' : 'start your streak today'),
+    if (isFirstVisit()) {
+        stage.append(el('div', { class: 'panel rail-mascot onboarding', id: 'onboarding' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'welcome'), 'first time here'),
+            el('p', {}, "this is your medical study workspace. pick a subject below to start, or press Ctrl+K to search across cards, cases, and guide sections. your progress lives in this browser — no account needed.")));
+    }
+
+    const lastCTA = last ? el('a', { class: 'cta cta-primary', href: `#subject/${last}`,
+        on: { click: e => { e.preventDefault(); go('subject', last); } } },
+        el('div', { class: 'cta-label' }, 'continue where you left off'),
+        el('div', { class: 'cta-sub' }, last)) : null;
+
+    stage.append(el('section', { class: 'hero' },
+        el('h1', {}, 'your medical study ', el('em', {}, 'workspace')),
+        el('p', { class: 'lede' }, 'flashcards, cases, and study guides for eight subjects. pick up where you left off, review what is due, or work through a case.'),
         el('div', { class: 'hero-stats' },
-            chipStat(p.streak, 'streak'),
+            chipStat(p.streak, p.streak === 1 ? 'day streak' : 'day streak'),
             chipStat(`${p.todayGraded}/${p.dailyGoal}`, 'cards today'),
-            chipStat(p.todayCases, 'cases today'),
-            chipStat(due, 'due now')
+            chipStat(due, 'cards due now'),
+            chipStat(p.todayCases, 'cases today')
         ),
+        el('div', { class: 'cta-row' },
+            lastCTA,
+            el('a', { class: 'cta cta-primary', href: '#review',
+                on: { click: e => { e.preventDefault(); go('review'); } } },
+                el('div', { class: 'cta-label' }, due ? `review ${due} due cards` : 'review cards'),
+                el('div', { class: 'cta-sub' }, 'spaced repetition')),
+            el('a', { class: 'cta', href: './triage-live.html' },
+                el('div', { class: 'cta-label' }, 'start a case'),
+                el('div', { class: 'cta-sub' }, 'work a clinical scenario with the live tutor'))
+        )
+    ));
+
+    // Daily-goal progress
+    stage.append(el('div', { class: 'panel rail-green' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, p.streak > 0 ? `streak ${p.streak} day${p.streak === 1 ? '' : 's'}` : 'start your streak today'),
+            `${p.todayGraded} of ${p.dailyGoal} cards today`),
         el('div', { class: 'progress-bar' }, el('div', { class: 'progress-fill', style: `width:${goalPct}%` })),
         el('div', { class: 'toolbar', style: 'margin-top:14px' },
             el('label', { for: 'goal-input' }, 'daily goal:'),
@@ -241,20 +217,7 @@ function renderToday() {
         )
     ));
 
-    if (due > 0) {
-        stage.append(el('div', { class: 'panel rail-purple' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, `${due} cards waiting`), 'spaced repetition'),
-            el('a', { class: 'cta cta-primary', href: '#review',
-                on: { click: e => { e.preventDefault(); go('review'); } } },
-                el('div', { class: 'cta-label' }, 'review now'))
-        ));
-    } else {
-        stage.append(el('div', { class: 'panel rail-sky' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'all caught up'), 'no cards due'),
-            el('div', {}, 'every scheduled card is in the future. try a case below or browse a subject.')));
-    }
-
-    // Recommended cases — sample one per subject with cases
+    // Recommended cases
     const recs = [];
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject];
@@ -273,7 +236,14 @@ function renderToday() {
             ))));
     }
 
-    // Recap — last 5 days
+    // Subjects
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'pick a subject'),
+        el('h2', {}, 'subjects')
+    ));
+    stage.append(buildSubjectGrid());
+
+    // Recap
     if (p.history && p.history.length) {
         const recent = p.history.slice(-5).reverse();
         stage.append(el('div', { class: 'panel' },
@@ -284,13 +254,22 @@ function renderToday() {
                 el('span', { class: 'meta' }, '')
             ))));
     }
+
+    if (DEBUG) {
+        stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'debug · rail legend'), el('h2', {}, 'coverage rails')));
+        for (const [name, txt] of [['rail-green', 'guide ≥ 50KB · cards ≥ 10 · scenarios ≥ 3'],
+            ['rail-sun', 'partial — 2 of 3 thresholds met'], ['rail-flame', 'stub — under-built']]) {
+            stage.append(el('div', { class: 'panel ' + name }, el('div', { class: 'panel-head' }, el('span', { class: 'title' }, name), txt)));
+        }
+    }
 }
 
 async function renderSubject() {
     const subj = state.currentSubject;
     if (!subj) { go('subjects'); return; }
     const meta = state.manifest.subjects.find(x => x.subject === subj);
-    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'label' }, `// ${subj}`), el('h2', {}, subj)));
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'subject'), el('h2', {style:'text-transform:capitalize'}, subj)));
     const placeholder = el('div', { class: 'loading' }, 'loading…');
     stage.append(placeholder);
     const shard = await loadShard(subj);
@@ -404,6 +383,7 @@ function buildFlashcard(c, cat) {
     },
         DEBUG ? el('div', { class: 'meta-line' }, el('span', {}, c.id || ''), el('span', {}, c.difficulty || 'medium')) : null,
         el('div', { class: 'front' }, c.front),
+        el('div', { class: 'flip-hint' }, 'click to flip'),
         el('div', { class: 'back' }, c.back || ''),
         c.tags && c.tags.length ? el('div', { class: 'tags' }, ...c.tags.slice(0, 6).map(t => el('span', { class: 'tag' }, t))) : null
     );
@@ -412,7 +392,8 @@ function buildFlashcard(c, cat) {
 }
 
 async function renderCards() {
-    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'label' }, '// flashcards'), el('h2', {}, 'card explorer')));
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'flashcards'), el('h2', {}, 'card explorer')));
     const search = el('input', {
         class: 'search', type: 'text', placeholder: 'search front + back…', value: state.cardSearch,
         'aria-label': 'search cards',
@@ -447,8 +428,16 @@ function renderCardList() {
     }
     const q = state.cardSearch.trim().toLowerCase();
     if (q) all = all.filter(c => (c.front + ' ' + (c.back || '')).toLowerCase().includes(q));
+    const cap = state.cardsShowAll ? all.length : 100;
+    const clipped = all.length > cap;
     list.append(el('div', { class: 'panel-head' },
-        el('span', { class: 'title' }, `${all.length} cards`), q ? `matching "${q}"` : 'showing first 100'));
+        el('span', { class: 'title' }, `${all.length} cards`),
+        q ? `matching "${q}"` : (clipped ? `showing first ${cap} of ${all.length} — refine search to narrow` : 'all shown')));
+    if (clipped && all.length < 1000) {
+        list.append(el('div', { class: 'toolbar', style: 'margin-bottom:8px' },
+            el('button', { class: 'chip', 'aria-label': 'show all matching cards',
+                on: { click: () => { state.cardsShowAll = true; renderCardList(); } } }, `load all ${all.length}`)));
+    }
     if (all.length === 0) {
         list.append(el('div', { class: 'empty-state' },
             el('div', { class: 'empty-title' }, 'no cards match'),
@@ -456,12 +445,13 @@ function renderCardList() {
             el('button', { class: 'chip', on: { click: () => { state.cardSearch = ''; state.cardSubjectFilter = 'all';
                 const inp = document.querySelector('.search'); if (inp) inp.value = ''; renderCardList(); } } }, 'clear filter')));
     }
-    for (const c of all.slice(0, 100)) list.append(buildFlashcard(c, c._cat || 'green'));
+    for (const c of all.slice(0, cap)) list.append(buildFlashcard(c, c._cat || 'green'));
     state.lastFilteredCount = all.length;
 }
 
 async function renderTriage() {
-    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'label' }, '// cases'), el('h2', {}, 'work a case')));
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'cases'), el('h2', {}, 'work a case')));
     const placeholder = el('div', { class: 'loading' }, 'loading…');
     stage.append(placeholder);
     await loadAllShards();
@@ -498,11 +488,11 @@ function buildTriageWidget(meta, shard, sc) {
         const vals = {}; for (const [k, e] of Object.entries(inputs)) vals[k] = e.value;
         const example = (sc.examples && sc.examples[0]) || {};
         out.innerHTML = '';
-        out.append(el('div', { class: 'label' }, 'inputs'));
+        out.append(el('div', { class: 'eyebrow' }, 'inputs'));
         out.append(el('pre', {}, JSON.stringify(vals, null, 2)));
-        out.append(el('div', { class: 'label' }, 'reasoning'));
+        out.append(el('div', { class: 'eyebrow' }, 'reasoning'));
         out.append(el('div', {}, example.reasoning || 'apply key topics in order: confirm diagnosis → classify severity → first-line therapy → reassess.'));
-        out.append(el('div', { class: 'label', style: 'margin-top:10px' }, 'recommendation'));
+        out.append(el('div', { class: 'eyebrow', style: 'margin-top:10px' }, 'recommendation'));
         out.append(el('div', {}, example.recommendation || 'Standard guideline-directed management.'));
         out.style.display = 'block';
     } } }, 'run case');
@@ -512,7 +502,8 @@ function buildTriageWidget(meta, shard, sc) {
 
 async function renderReview() {
     stage.innerHTML = '';
-    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'label' }, '// review'), el('h2', {}, 'review your cards')));
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'review'), el('h2', {}, 'review your cards')));
     const placeholder = el('div', { class: 'loading' }, 'loading…');
     stage.append(placeholder);
     const subjects = state.reviewSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.reviewSubjectFilter];
@@ -679,7 +670,8 @@ document.addEventListener('keydown', e => {
 
 function renderStats() {
     const m = state.manifest;
-    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'label' }, '// stats'), el('h2', {}, 'how you are doing')));
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'stats'), el('h2', {}, 'how you are doing')));
     renderHealthBands();
     if (DEBUG) renderDebugStats(m);
 }
@@ -799,14 +791,13 @@ function renderDebugStats(m) {
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
-    const links = [['home', 'home'], ['today', 'today'], ['subjects', 'subjects'],
-        ['review', 'review'], ['cards', 'cards'], ['triage', 'cases'], ['stats', 'stats']];
+    const links = [['today', 'today'], ['subjects', 'subjects'],
+        ['review', 'review'], ['cards', 'cards'], ['cases', 'cases'], ['stats', 'stats']];
     for (const [route, label] of links) {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
             on: { click: e => { e.preventDefault(); go(route); } } }, label));
     }
-    nav.append(el('a', { href: './triage-live.html', class: 'navlink' }, 'live tutor'));
-    // Search button
+    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta' }, 'live tutor'));
     const right = document.querySelector('header.topbar .status');
     const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'open search (Ctrl+K)', title: 'search (Ctrl+K)',
         on: { click: () => state.searchPaletteApi?.open() } }, 'search ⌘K');
@@ -831,6 +822,7 @@ function updateOnlineStatus() {
     const dot = document.querySelector('.status .dot');
     const lbl = document.getElementById('status-label');
     if (!dot || !lbl) return;
+    dot.classList.remove('loading');
     if (navigator.onLine) { dot.classList.remove('offline'); dot.classList.add('live'); lbl.textContent = 'ready'; }
     else { dot.classList.remove('live'); dot.classList.add('offline'); lbl.textContent = 'offline ready'; }
 }
@@ -843,6 +835,8 @@ function registerSW() {
 
 (async () => {
     try {
+        const dot = document.querySelector('.status .dot'); if (dot) dot.classList.add('loading');
+        const lbl = document.getElementById('status-label'); if (lbl) lbl.textContent = 'loading…';
         mountTopbar();
         await loadManifest();
         await loadAllShards();
@@ -851,7 +845,7 @@ function registerSW() {
         updateOnlineStatus();
         window.addEventListener('online', updateOnlineStatus);
         window.addEventListener('offline', updateOnlineStatus);
-        const hash = location.hash.replace('#', '') || 'home';
+        const hash = location.hash.replace('#', '') || 'today';
         const [route, sub] = hash.split('/');
         go(route, sub);
         log('ready', { subjects: state.manifest.subjects.length });
@@ -866,7 +860,7 @@ function registerSW() {
 })();
 
 window.addEventListener('hashchange', () => {
-    const hash = location.hash.replace('#', '') || 'home';
+    const hash = location.hash.replace('#', '') || 'today';
     const [route, sub] = hash.split('/');
     go(route, sub);
 });

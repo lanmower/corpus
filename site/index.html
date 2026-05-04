@@ -18,16 +18,15 @@
 <body>
 <div id="app">
   <header class="topbar" role="banner">
-    <a href="#home" class="brand" aria-label="corpus home"><span class="brand-glyph" aria-hidden="true">◰</span> corpus<span class="brand-tail">.study</span></a>
+    <a href="#today" class="brand" aria-label="corpus home"><span class="brand-glyph" aria-hidden="true">◰</span><span>corpus</span></a>
     <nav class="nav" aria-label="primary"></nav>
     <div class="status" aria-live="polite"><span class="dot live" aria-hidden="true"></span><span class="status-label" id="status-label">ready</span></div>
   </header>
 
   <main id="stage" class="stage" role="main"><div class="loading">loading…</div></main>
 
-  <footer class="statusbar" role="contentinfo">
-    <div class="left"><a href="#home" class="mono">corpus</a> <span class="sep">›</span> <span id="crumb">home</span></div>
-    <div class="right"><span class="mono" id="footer-stats">—</span></div>
+  <footer class="statusbar hidden" role="contentinfo" aria-live="polite">
+    <span id="statusbar-msg" class="mono">ready</span>
   </footer>
 </div>
 <script type="module" src="./app.js"></script>

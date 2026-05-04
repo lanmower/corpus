@@ -91,19 +91,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     });
     console.log('# student-mode+a11y+theme+search+progress+print');
     const appSrc = READ('site/app.js'), styleCss = READ('site/style.css'), indexHtml = READ('site/index.html');
-    t('default home shell has zero operator vocabulary + presents student CTAs', () => {
+    t('student-vocab-clean+studentCTAs+debugRevealsOperator', () => {
         const userText = indexHtml + '\n' + styleCss;
         for (const tok of [/\bmanifest\b/i, /\bshard\b/i, /\bsnapshot\b/i, /buildSnapshot/, /\bSM-2\b/, /easeFactor/, /\batoms?\b/i]) assert.ok(!tok.test(userText), `forbidden ${tok}`);
         for (const friendly of [/your medical study/i, /workspace/i, /streak/i, /today/i, /review/i]) assert.match(appSrc + indexHtml, friendly);
-        assert.match(appSrc, /cards due now|cards today|streak/);
-        assert.match(appSrc, /continue where you left off/);
-        assert.match(appSrc, /start a case|live tutor|work a case/);
-    });
-    t('?debug reveals operator surface (raw scheduler + atom counts gated)', () => {
-        assert.match(appSrc, /URLSearchParams\(location\.search\)\.has\(['"]debug['"]\)/);
-        assert.match(appSrc, /DEBUG\s*\?[\s\S]{0,200}atom/);
-        assert.match(appSrc, /raw scheduler|avg EF/);
-        assert.match(appSrc, /id: 'srs-stats'/);
+        for (const re of [/cards due now|cards today|streak/, /continue where you left off/, /start a case|live tutor|work a case/,
+            /URLSearchParams\(location\.search\)\.has\(['"]debug['"]\)/, /DEBUG\s*\?[\s\S]{0,200}atom/, /raw scheduler|avg EF/, /id: 'srs-stats'/]) assert.match(appSrc, re);
     });
     t('console telemetry uniformly prefixed [corpus]/[triage-live]/[worker-msg]/[webgpu-debug]', () => {
         for (const src of [appSrc, READ('site/srs.js'), liveSrc]) {
@@ -175,7 +168,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(triageCss, /\.composer-row \.run-btn[\s\S]{0,80}min-height: 44px/);
         assert.ok((appSrc.match(/aria-label/g) || []).length >= 6);
     });
-    t('friendly-grades + mastery + today + search + theme + bumpCase + titles + onboarding + hash-subroutes + body + sw + og + empty-state', () => {
+    t('friendly-grades+mastery+today+search+theme+bumpCase+titles+onboarding+hash-subroutes+body+sw+og+empty+designsystem+navIA', () => {
         const swSrc = READ('site/sw.js');
         for (const re of [/FRIENDLY_GRADES/, /friendly:\s*1[\s\S]{0,40}smscore:\s*0/, /friendly:\s*4[\s\S]{0,40}smscore:\s*5/,
             /space=reveal · 1=again · 2=hard/, /corpus\.guide\.v1/, /loadGuideTicks|guide-tick/, /renderToday/, /day streak/,
@@ -188,6 +181,16 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const re of [/og:title/, /og:description/, /og:type/, /rel="icon"/]) { assert.match(indexHtml, re); assert.match(liveHtml, re); }
         for (const re of [/\.empty-state/, /\.skeleton/, /\.dot\.offline/]) assert.match(styleCss, re);
         for (const sh of SHARDS) if (sh.guide) assert.ok(typeof sh.guide.body === 'string' && sh.guide.body.length > 100, `guide.body missing for ${sh.subject}`);
+        for (const re of [/--r-sm:\s*8px/, /--r-md:\s*12px/, /--r-lg:\s*18px/, /--r-pill:\s*999px/, /--s-1:\s*4px/, /--s-4:\s*16px/,
+            /--shadow-pop:/, /--rail-w:/, /--panel-text:\s*var\(--panel-text-2\)/,
+            /\[data-theme="dark"\][\s\S]*?--green:\s*#[0-9A-Fa-f]/]) assert.match(styleCss, re);
+        assert.strictEqual((styleCss.match(/^\.guide-section \{/gm) || []).length, 1);
+        assert.match(appSrc, /\['today',\s*'today'\][\s\S]*?\['stats',\s*'stats'\]/);
+        assert.match(appSrc, /ROUTE_ALIASES/);
+        for (const stale of [/\['home',\s*'home'\]/, /getElementById\('crumb'\)/, /getElementById\('footer-stats'\)/]) assert.ok(!stale.test(appSrc), 'stale ' + stale);
+        assert.match(indexHtml, /id="statusbar-msg"/);
+        for (const lbl of ['today', 'subjects', 'review', 'cases', 'stats', 'live tutor']) assert.ok(liveHtml.includes('>' + lbl + '<'), 'triage-live nav missing ' + lbl);
+        for (const stale of ['overview', 'brand-tail']) assert.ok(!liveHtml.includes(stale), 'triage-live stale ' + stale);
     });
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
