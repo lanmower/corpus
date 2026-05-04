@@ -1,0 +1,797 @@
+# Endocrine Triage Scenarios
+# Comprehensive collection of parameterized clinical triage scenarios
+# Based on extraction from 7+ endocrine SRS card files
+# Generated: 2026-05-04
+
+metadata:
+  version: 1.0
+  total_atoms: 18
+  total_scenarios: 18
+  coverage:
+    - hyperglycemia_differential
+    - DKA_vs_HHS
+    - hypoglycemia
+    - thyroid_dysfunction
+    - pituitary_hormone_deficiency_excess
+    - adrenal_insufficiency
+    - hypercalcemia
+  source_files:
+    - Adrenal Gland - CMED4IIM1 - 2026_pages-001-010.yml
+    - Adrenal Gland - CMED4IIM1 - 2026_pages-011-015.yml
+    - Diagnosis & Classification Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    - Diagnosis & Classification Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-011-014.yml
+    - Disorders Of The Pituitary Gland - CMEDIIM1 - 2026_pages-001-010.yml
+    - Disorders Of The Pituitary Gland - CMEDIIM1 - 2026_pages-011-012.yml
+    - Parathyroid Disorders - CMED4IIM1 - 2026_pages-001-007.yml
+    - Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    - Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+
+atoms:
+  - id: atom-001
+    topic: Hyperglycemia Classification
+    source: Diagnosis & Classification of Diabetes Mellitus - CMED4IIM1
+    description: |
+      Clinical stages of glycemia: normal (<6.1 mmol/L), impaired glucose tolerance (6.1-11.1 mmol/L at 2h), 
+      diabetes (≥11.1 mmol/L at 2h or ≥7 fasting)
+    parameters:
+      glucose_mmol_l: numeric
+      HbA1c_percent: numeric
+      fasting_state: boolean
+    srs_reference: "Card: Diagnostic criteria for diabetes using fasting plasma glucose"
+
+  - id: atom-002
+    topic: Hyperglycemia Differential
+    source: Diagnosis & Classification of Diabetes Mellitus
+    description: |
+      Type 1 presents with rapid DKA; Type 2 with slow onset, often overweight; LADA hybrid phenotype 
+      with autoimmune features
+    parameters:
+      glucose_mmol_l: numeric
+      age: integer
+      BMI: numeric
+      ketones_positive: boolean
+      C_peptide: numeric
+    srs_reference: "Card: Compare age of onset and body composition between type 1 and type 2"
+
+  - id: atom-003
+    topic: DKA Presentation
+    source: Diagnosis & Classification of Diabetes Mellitus
+    description: |
+      Type 1 diabetes acute crisis: rapidly progresses to diabetic ketoacidosis with acidosis, 
+      ketonuria, hyperglycemia
+    parameters:
+      glucose_mmol_l: numeric
+      pH: numeric
+      HCO3_mmol_l: numeric
+      ketones: string
+      anion_gap: numeric
+    srs_reference: "Card: Acute crisis presentation for untreated type 1 vs type 2 diabetes"
+
+  - id: atom-004
+    topic: HHS Presentation
+    source: Diagnosis & Classification of Diabetes Mellitus
+    description: |
+      Type 2 diabetes acute crisis: hyperosmolar hyperglycemic state without significant ketosis, 
+      severe hyperglycemia, dehydration
+    parameters:
+      glucose_mmol_l: numeric
+      osmolality: numeric
+      ketones: string
+      pH: numeric
+      consciousness: string
+    srs_reference: "Card: HHS (hyperosmolar hyperglycemic crisis) presentation"
+
+  - id: atom-005
+    topic: Hypoglycemia Clinical Features
+    source: Acute Diabetes & Complications - CMED4IIM1
+    description: |
+      Hypoglycemia: adrenergic symptoms (tremor, palpitations, sweating, anxiety) and 
+      neuroglycopenic (confusion, headache, coma)
+    parameters:
+      glucose_mmol_l: numeric
+      symptoms: string_array
+      consciousness: string
+    srs_reference: "Card: Clinical features of hypoglycemia"
+
+  - id: atom-006
+    topic: Hyperthyroidism Diagnosis
+    source: Hyperthyroidism - CMED4IIM1
+    description: |
+      TSH suppressed (first), T4 elevated, T3 elevated; Graves disease with anti-TSH receptor antibody 
+      and eye signs
+    parameters:
+      TSH_mIU_l: numeric
+      T4_pmol_l: numeric
+      T3_pmol_l: numeric
+      antibody_positive: boolean
+      eye_signs: boolean
+    srs_reference: "Card: Thyroid hormone measurement pattern in thyrotoxicosis"
+
+  - id: atom-007
+    topic: Hypothyroidism Diagnosis
+    source: Hypothyroidism - CMED4IIM1
+    description: |
+      Primary hypothyroidism: TSH elevated, T4 low; Secondary: TSH low, T4 low; 
+      Central: TSH low with inadequate T4 response
+    parameters:
+      TSH_mIU_l: numeric
+      T4_pmol_l: numeric
+      T3_pmol_l: numeric
+      antibody: string
+    srs_reference: "Card: Diagnosis of primary vs secondary hypothyroidism"
+
+  - id: atom-008
+    topic: Hypopituitarism Endocrinology
+    source: Disorders of the Pituitary Gland - CMEDIIM1
+    description: |
+      Isolated hypopituitarism: single hormone deficiency (ACTH, TSH, gonadotropins, GH); 
+      Pan-hypopituitarism: multiple deficiencies
+    parameters:
+      ACTH_pmol_l: numeric
+      TSH_mIU_l: numeric
+      cortisol_nmol_l: numeric
+      testosterone_nmol_l: numeric
+      IGF1_ug_l: numeric
+    srs_reference: "Card: Difference between isolated and pan-hypopituitarism"
+
+  - id: atom-009
+    topic: Pituitary Hormone Excess - Acromegaly
+    source: Disorders of the Pituitary Gland
+    description: |
+      Excess GH and IGF-1 causing coarse features, prognathism, organomegaly, hypertension, glucose intolerance; 
+      fails to suppress on OGTT
+    parameters:
+      GH_ug_l: numeric
+      IGF1_ug_l: numeric
+      glucose_mmol_l: numeric
+      blood_pressure: string
+    srs_reference: "Card: Gold standard provocative test for acromegaly - OGTT"
+
+  - id: atom-010
+    topic: Pituitary Hormone Excess - Prolactinoma
+    source: Disorders of the Pituitary Gland
+    description: |
+      Prolactin >4× upper limit normal with galactorrhea, amenorrhea, infertility, decreased libido; 
+      MRI identifies macroadenoma
+    parameters:
+      prolactin_mIU_l: numeric
+      visual_field_loss: boolean
+      adenoma_size_mm: numeric
+    srs_reference: "Card: Diagnostic approach for prolactinoma"
+
+  - id: atom-011
+    topic: Primary Adrenal Insufficiency
+    source: Adrenal Gland - CMED4IIM1
+    description: |
+      Addison disease: elevated ACTH, low cortisol, hyperpigmentation, hyponatremia, hyperkalemia, 
+      hypoglycemia, weight loss
+    parameters:
+      cortisol_nmol_l: numeric
+      ACTH_pmol_l: numeric
+      sodium_mmol_l: numeric
+      potassium_mmol_l: numeric
+      hyperpigmentation: boolean
+    srs_reference: "Card: Difference between primary and secondary adrenal insufficiency in ACTH levels"
+
+  - id: atom-012
+    topic: Secondary Adrenal Insufficiency
+    source: Adrenal Gland - CMED4IIM1
+    description: |
+      Pituitary problem: low ACTH, low cortisol, NO hyperpigmentation, mild hyponatremia; 
+      distinguished from primary by low ACTH
+    parameters:
+      cortisol_nmol_l: numeric
+      ACTH_pmol_l: numeric
+      sodium_mmol_l: numeric
+      hyperpigmentation: boolean
+    srs_reference: "Card: ACTH levels in primary vs secondary adrenal insufficiency"
+
+  - id: atom-013
+    topic: Addisonian Crisis Management
+    source: Adrenal Gland
+    description: |
+      Medical emergency: IV saline with high-dose hydrocortisone 100mg stat then 6-hourly, 
+      empiric antibiotics if infection suspected
+    parameters:
+      cortisol_nmol_l: numeric
+      shock: boolean
+      blood_pressure: string
+    srs_reference: "Card: Treatment of an Addisonian crisis"
+
+  - id: atom-014
+    topic: Cushing Syndrome - Hypercortisolism
+    source: Adrenal Gland
+    description: |
+      Excess cortisol: truncal obesity with thin limbs, moon facies, purple striae, myopathy, hypertension, 
+      dysglycemia, hypokalemia
+    parameters:
+      cortisol_nmol_l: numeric
+      ACTH_pmol_l: numeric
+      urine_free_cortisol_nmol_day: numeric
+      blood_pressure: string
+    srs_reference: "Card: Low-dose dexamethasone suppression test for Cushing diagnosis"
+
+  - id: atom-015
+    topic: Primary Hyperparathyroidism
+    source: Parathyroid Disorders - CMED4IIM1
+    description: |
+      Elevated PTH with elevated calcium, low phosphate; nephrolithiasis, nephrocalcinosis, bone disease, 
+      GI symptoms
+    parameters:
+      calcium_mmol_l: numeric
+      PTH_pg_ml: numeric
+      phosphate_mmol_l: numeric
+      alkaline_phosphatase_u_l: numeric
+    srs_reference: "Card: Key laboratory findings in primary hyperparathyroidism"
+
+  - id: atom-016
+    topic: Secondary Hyperparathyroidism
+    source: Parathyroid Disorders
+    description: |
+      Compensatory PTH elevation from chronic renal disease, malabsorption, or rickets; 
+      low calcium triggers PTH rise
+    parameters:
+      calcium_mmol_l: numeric
+      PTH_pg_ml: numeric
+      phosphate_mmol_l: numeric
+      renal_function: string
+    srs_reference: "Card: Definition of secondary hyperparathyroidism"
+
+  - id: atom-017
+    topic: Hypercalcemia - Ectopic PTH-rP
+    source: Parathyroid Disorders
+    description: |
+      Malignancy with PTH-related protein: high calcium with LOW or ABSENT PTH 
+      (distinguishes from primary hyperparathyroidism)
+    parameters:
+      calcium_mmol_l: numeric
+      PTH_pg_ml: numeric
+      PTHrP_pmol_l: numeric
+      malignancy: boolean
+    srs_reference: "Card: Ectopic hyperparathyroidism from PTH-rP secretion"
+
+  - id: atom-018
+    topic: Acute Hypercalcemia Emergency
+    source: Parathyroid Disorders
+    description: |
+      Calcium ≥3.5-3.7 mmol/L: shock-like state, oliguria, dehydration, pyrexia, coma; 
+      medical emergency requiring IV hydration
+    parameters:
+      calcium_mmol_l: numeric
+      consciousness: string
+      urine_output_ml_day: numeric
+    srs_reference: "Card: Acute hypercalcemia as medical emergency"
+
+scenarios:
+  - id: scenario-glucose-001
+    name: Fasting Hyperglycemia
+    category: glucose-interpretation
+    atoms_used:
+      - atom-001
+      - atom-002
+    description: |
+      Patient presents with fasting glucose elevated, requires differentiation between 
+      impaired fasting glucose vs diabetes
+    clinical_context: |
+      52-year-old man with family history of diabetes presents for routine blood work.
+      Fasting glucose elevated on two separate occasions.
+    parameters:
+      glucose_mmol_l: 6.5
+      two_hour_glucose_mmol_l: 9.0
+      HbA1c_percent: 6.2
+      age: 52
+      BMI: 28
+    expected_interpretation: |
+      IFG (6.1-7 mmol/L) + IGT (2h 7.8-11.1 mmol/L) pattern suggests type 2 diabetes risk; 
+      needs confirmation on repeat testing; lifestyle modification recommended
+    differential_diagnosis:
+      - Type 2 diabetes
+      - Impaired glucose tolerance
+      - Dietary factors
+    recommended_action: Repeat testing, OGTT, lifestyle counseling
+
+  - id: scenario-glucose-002
+    name: DKA Presentation
+    category: glucose-interpretation
+    atoms_used:
+      - atom-003
+    description: |
+      Young patient with rapid-onset diabetes and metabolic acidosis
+    clinical_context: |
+      24-year-old woman presenting with 2 weeks of polyuria, polydipsia, weight loss, 
+      and 1 day of nausea, vomiting, abdominal pain, and drowsiness
+    parameters:
+      glucose_mmol_l: 28.5
+      pH: 7.15
+      HCO3_mmol_l: 12
+      anion_gap: 18
+      ketones: large
+      age: 24
+      BMI: 22
+    expected_interpretation: |
+      DKA with severe hyperglycemia, anion gap metabolic acidosis (AG 18), high ketones; 
+      Type 1 diabetes new onset; requires urgent IV fluids, insulin, electrolyte monitoring
+    differential_diagnosis:
+      - Type 1 diabetes - new onset DKA
+      - DKA from other secondary cause
+    recommended_action: ICU admission, IV fluids, insulin infusion, electrolyte replacement
+
+  - id: scenario-glucose-003
+    name: HHS - Hyperosmolar Hyperglycemic State
+    category: glucose-interpretation
+    atoms_used:
+      - atom-004
+    description: |
+      Elderly patient with severe hyperglycemia without ketosis
+    clinical_context: |
+      78-year-old man with type 2 diabetes found confused at home after 3 days of 
+      polyuria and no fluid intake due to infection. Severely dehydrated.
+    parameters:
+      glucose_mmol_l: 55.0
+      osmolality_mosm_kg: 365
+      pH: 7.32
+      HCO3_mmol_l: 18
+      ketones: negative_mild
+      age: 78
+      consciousness: altered
+    expected_interpretation: |
+      HHS with severe hyperglycemia (55 mmol/L), hyperosmolarity (365), mild metabolic acidosis 
+      but NO ketonuria; Type 2 pattern; requires aggressive IV hydration and cautious insulin
+    differential_diagnosis:
+      - Type 2 diabetes - HHS
+      - Dehydration with hyperglycemia
+    recommended_action: ICU admission, careful rehydration, slower insulin correction
+
+  - id: scenario-glucose-004
+    name: Hypoglycemia - Neuroglycopenic
+    category: glucose-interpretation
+    atoms_used:
+      - atom-005
+    description: |
+      Diabetic patient on insulin with confusion and altered consciousness
+    clinical_context: |
+      45-year-old woman on insulin therapy presents with confusion, unable to talk coherently, 
+      tremor, and sweating; brought to ED by family
+    parameters:
+      glucose_mmol_l: 2.1
+      symptoms:
+        - confusion
+        - headache
+        - sweating
+        - tremor
+      consciousness: confused
+      response_to_dextrose: rapid_recovery
+    expected_interpretation: |
+      Severe hypoglycemia with neuroglycopenic symptoms (confusion, headache); 
+      adrenergic signs (tremor, sweating); requires urgent oral dextrose if conscious or IV if unable to swallow
+    differential_diagnosis:
+      - Insulin overdose
+      - Missed meal
+      - Exercise without adequate carbs
+    recommended_action: Immediate dextrose administration (15g oral or 25g IV), glucagon if severe
+
+  - id: scenario-thyroid-001
+    name: Graves Disease
+    category: hormone-patterns
+    atoms_used:
+      - atom-006
+    description: |
+      Young woman with weight loss, tremor, and thyroid function showing suppressed TSH
+    clinical_context: |
+      35-year-old woman with 3-month history of progressive weight loss, anxiety, tremor, 
+      palpitations, heat intolerance. On examination: tachycardia, tremor, and eye protrusion noted.
+    parameters:
+      TSH_mIU_l: 0.01
+      T4_pmol_l: 165
+      T3_pmol_l: 12.5
+      anti_TSH_receptor_antibody: true
+      eye_signs: true
+      age: 35
+      gender: female
+    expected_interpretation: |
+      Graves hyperthyroidism with suppressed TSH (0.01), elevated free T4 and T3; 
+      Positive anti-TSH receptor antibody pathognomonic for Graves; eye signs (orbitopathy) present; 
+      autoimmune thyroiditis
+    differential_diagnosis:
+      - Graves disease
+      - Toxic multinodular goiter
+      - Thyroiditis
+    recommended_action: Anti-thyroid drugs (carbimazole), beta-blocker for symptoms, eye monitoring
+
+  - id: scenario-thyroid-002
+    name: Primary Hypothyroidism
+    category: hormone-patterns
+    atoms_used:
+      - atom-007
+    description: |
+      Middle-aged patient with fatigue and cold intolerance
+    clinical_context: |
+      48-year-old woman with 6-month history of fatigue, weight gain, cold intolerance, 
+      dry skin, constipation. Has history of thyroid problems in family.
+    parameters:
+      TSH_mIU_l: 8.5
+      T4_pmol_l: 9.0
+      T3_pmol_l: 3.2
+      anti_TPO_antibody: true
+      age: 48
+      gender: female
+    expected_interpretation: |
+      Primary hypothyroidism with elevated TSH (8.5) and low T4 (9.0); 
+      Positive anti-TPO antibody suggests autoimmune (Hashimoto) thyroiditis; 
+      requires levothyroxine replacement titrated to TSH goal
+    differential_diagnosis:
+      - Hashimoto thyroiditis
+      - Primary hypothyroidism
+      - Iodine deficiency
+    recommended_action: Levothyroxine replacement, recheck TSH in 6-8 weeks
+
+  - id: scenario-thyroid-003
+    name: Central Hypothyroidism
+    category: hormone-patterns
+    atoms_used:
+      - atom-007
+      - atom-008
+    description: |
+      Patient with low T4 and inadequately low TSH suggesting pituitary insufficiency
+    clinical_context: |
+      62-year-old man with history of pituitary adenoma surgery presenting with fatigue, 
+      cold intolerance. Labs show low T4 with TSH that should be high but is normal-low.
+    parameters:
+      TSH_mIU_l: 2.1
+      T4_pmol_l: 8.5
+      T3_pmol_l: 3.0
+      cortisol_nmol_l: 180
+      ACTH_pmol_l: 15
+      pituitary_function: impaired
+    expected_interpretation: |
+      Central (secondary) hypothyroidism with low T4 (8.5) and inadequate TSH response (2.1); 
+      Suggests pituitary dysfunction; cortisol also low (180) with low ACTH (15) indicates 
+      secondary adrenal insufficiency; requires investigation of all pituitary axes
+    differential_diagnosis:
+      - Pituitary hypothyroidism
+      - Hypopituitarism
+      - Post-pituitary surgery
+    recommended_action: MRI pituitary, assess all pituitary axes, levothyroxine + cortisol replacement
+
+  - id: scenario-pituitary-001
+    name: Selective GH Deficiency
+    category: axis-dysfunction
+    atoms_used:
+      - atom-008
+    description: |
+      Patient with isolated growth hormone deficiency
+    clinical_context: |
+      34-year-old man with history of childhood growth hormone deficiency, now with 
+      fatigue and metabolic abnormalities. Other pituitary hormones normal.
+    parameters:
+      IGF1_ug_l: 35
+      GH_ug_l: 0.8
+      ACTH_pmol_l: 28
+      cortisol_nmol_l: 420
+      TSH_mIU_l: 2.3
+      T4_pmol_l: 95
+    expected_interpretation: |
+      Isolated GH deficiency (IGF-1 low 35, basal GH low 0.8) with other pituitary axes intact; 
+      ACTH and cortisol normal, TSH normal; requires GH stimulation testing (insulin tolerance or GHRH/arginine test) 
+      to confirm and quantify deficiency
+    differential_diagnosis:
+      - GH deficiency - isolated
+      - Partial hypopituitarism
+    recommended_action: GH stimulation testing, consider GH replacement if confirmed
+
+  - id: scenario-pituitary-002
+    name: Acromegaly - GH Excess
+    category: axis-dysfunction
+    atoms_used:
+      - atom-009
+    description: |
+      Patient with progressive enlargement and metabolic abnormalities
+    clinical_context: |
+      52-year-old man with progressive coarsening of facial features, hand enlargement, 
+      joint pain, hypertension. Wife notes increased sweating and snoring. Headaches present.
+    parameters:
+      GH_ug_l: 45.0
+      IGF1_ug_l: 850
+      glucose_mmol_l: 8.2
+      blood_pressure_systolic: 165
+      adenoma_size_mm: 18
+      OGTT_glucose_fails_to_suppress: true
+    expected_interpretation: |
+      Acromegaly with macroadenoma (18mm), markedly elevated GH (45) and IGF-1 (850); 
+      Glucose fails to suppress GH on OGTT (diagnostic); glucose intolerance present (8.2 mmol/L); 
+      hypertension develops in 20-40%; requires surgery or medical therapy
+    differential_diagnosis:
+      - Acromegaly
+      - Gigantism (if pre-epiphyseal closure)
+    recommended_action: Transphenoidal surgery, radiotherapy if surgical failure, somatostatin analogs
+
+  - id: scenario-pituitary-003
+    name: Prolactinoma
+    category: axis-dysfunction
+    atoms_used:
+      - atom-010
+    description: |
+      Woman with amenorrhea and galactorrhea
+    clinical_context: |
+      32-year-old woman with 8 months of amenorrhea and spontaneous galactorrhea. 
+      Headaches and some vision problems noted. MRI shows pituitary mass.
+    parameters:
+      prolactin_mIU_l: 2800
+      visual_field_loss: true
+      amenorrhea_duration_months: 8
+      adenoma_size_mm: 16
+      macroadenoma: true
+    expected_interpretation: |
+      Prolactinoma with macroadenoma (16mm); prolactin markedly elevated (2800, >>4× normal); 
+      Visual field loss from mass effect; amenorrhea from suppressed gonadotropins; 
+      First-line treatment is dopamine agonist (bromocriptine/cabergoline), not surgery
+    differential_diagnosis:
+      - Prolactinoma - macro
+      - Pituitary stalk compression
+      - Hypothyroidism causing hyperprolactinemia
+    recommended_action: Dopamine agonist (cabergoline), visual field monitoring, MRI follow-up
+
+  - id: scenario-adrenal-001
+    name: Primary Adrenal Insufficiency - Addison
+    category: axis-dysfunction
+    atoms_used:
+      - atom-011
+    description: |
+      Patient with weight loss, hyperpigmentation, and electrolyte abnormalities
+    clinical_context: |
+      48-year-old woman with 3-month history of progressive weight loss, malaise, anorexia. 
+      On exam: hyperpigmentation over knuckles and creases, postural hypotension noted. 
+      Labs show hyponatremia and hyperkalemia.
+    parameters:
+      cortisol_nmol_l: 95
+      ACTH_pmol_l: 185
+      sodium_mmol_l: 128
+      potassium_mmol_l: 5.8
+      hyperpigmentation: true
+      synacthen_test_response: no_rise
+    expected_interpretation: |
+      Primary adrenal insufficiency (Addison) with low cortisol (95, <180 nmol/L at 0900), 
+      MARKEDLY elevated ACTH (185, >>50) - the compensatory response; hyponatremia (128) from 
+      aldosterone deficiency; hyperkalemia (5.8) from mineralocorticoid loss; hyperpigmentation 
+      from ACTH stimulation of melanocytes; Synacthen test shows no response (destroyed adrenal)
+    differential_diagnosis:
+      - Addison disease
+      - Autoimmune adrenalitis
+      - TB adrenalitis
+      - Hemorrhagic necrosis
+    recommended_action: |
+      Glucocorticoid replacement (hydrocortisone 10mg am, 5mg lunch/evening) + 
+      mineralocorticoid (fludrocortisone 0.05-0.1mg daily)
+
+  - id: scenario-adrenal-002
+    name: Secondary Adrenal Insufficiency
+    category: axis-dysfunction
+    atoms_used:
+      - atom-012
+    description: |
+      Patient with pituitary disease and cortisol deficiency
+    clinical_context: |
+      55-year-old man post-pituitary surgery for adenoma now with fatigue, malaise, 
+      but no hyperpigmentation. Labs show low cortisol and inappropriately low ACTH.
+    parameters:
+      cortisol_nmol_l: 85
+      ACTH_pmol_l: 8
+      sodium_mmol_l: 132
+      potassium_mmol_l: 4.2
+      hyperpigmentation: false
+      pituitary_disease: true
+    expected_interpretation: |
+      Secondary adrenal insufficiency (pituitary dysfunction) with low cortisol (85) but LOW ACTH (8) 
+      - the key distinguishing feature from primary; NO hyperpigmentation (ACTH is low so cannot stimulate melanocytes); 
+      mild hyponatremia (132) only from cortisol loss (no aldosterone deficiency as adrenal aldosterone 
+      is primarily controlled by renin-angiotensin); normal potassium
+    differential_diagnosis:
+      - Pituitary insufficiency
+      - Hypopituitarism post-surgery
+      - Central adrenal insufficiency
+    recommended_action: Glucocorticoid replacement only (NO mineralocorticoid needed)
+
+  - id: scenario-adrenal-003
+    name: Addisonian Crisis
+    category: axis-dysfunction
+    atoms_used:
+      - atom-013
+    description: |
+      Medical emergency with shock and severe electrolyte derangement
+    clinical_context: |
+      42-year-old woman with known Addison disease admitted with shock, confusion, 
+      severe dehydration following illness. On examination: profound hypotension (SBP 82), 
+      severely ill appearance, confusion.
+    parameters:
+      cortisol_nmol_l: 65
+      ACTH_pmol_l: 250
+      sodium_mmol_l: 118
+      potassium_mmol_l: 6.5
+      blood_pressure_systolic: 82
+      shock: true
+      consciousness: obtunded
+    expected_interpretation: |
+      Addisonian crisis - MEDICAL EMERGENCY: acute decompensation with shock (SBP 82), 
+      severe hyponatremia (118), severe hyperkalemia (6.5), altered consciousness; 
+      Cortisol critically low (65); ACTH markedly elevated (250); precipitating infection 
+      likely given systemic illness
+    differential_diagnosis:
+      - Addison disease - acute crisis
+      - Septic shock (concurrent)
+      - Adrenal hemorrhage
+    recommended_action: |
+      ICU admission; IV hydrocortisone 100mg STAT then 6-hourly; IV normal saline or dextrose-saline 
+      (rapid volume replacement); empiric antibiotics (infection likely precipitant); 
+      electrolyte monitoring and correction; treat underlying infection
+
+  - id: scenario-adrenal-004
+    name: Cushing Syndrome
+    category: axis-dysfunction
+    atoms_used:
+      - atom-014
+    description: |
+      Patient with truncal obesity, muscle wasting, and hypertension
+    clinical_context: |
+      38-year-old woman with progressive weight gain (truncal), muscle weakness, 
+      hypertension (BP 165/95), and skin changes (purple striae, easy bruising). 
+      Mood changes and insomnia noted.
+    parameters:
+      cortisol_nmol_l: 880
+      ACTH_pmol_l: 125
+      urine_free_cortisol_nmol_day: 1250
+      blood_pressure_systolic: 165
+      potassium_mmol_l: 3.0
+      glucose_mmol_l: 9.5
+      dexamethasone_1mg_suppression: no_suppression
+    expected_interpretation: |
+      Cushing syndrome with excessive cortisol (880, >2× normal) unresponsive to 1mg dexamethasone 
+      (no suppression indicates pathologic cortisol excess); markedly elevated 24-hr urine free cortisol (1250); 
+      ACTH elevated (125) suggests pituitary source (Cushing disease) rather than primary adrenal; 
+      Metabolic complications: hypokalemia (3.0), impaired glucose tolerance (9.5), hypertension; 
+      High-dose dexamethasone test would help localize (pituitary shows suppression, ectopic does not)
+    differential_diagnosis:
+      - Cushing disease (pituitary adenoma)
+      - Ectopic ACTH (carcinoid, small cell lung cancer)
+      - Primary adrenal (adenoma or carcinoma)
+      - Pseudo-Cushing (depression)
+    recommended_action: |
+      High-dose dexamethasone test (8mg) for localization; IPSS if pituitary suspected; 
+      Imaging (MRI pituitary, CT chest/abdomen); transphenoidal surgery if pituitary
+
+  - id: scenario-calcium-001
+    name: Primary Hyperparathyroidism
+    category: calcium-interpretation
+    atoms_used:
+      - atom-015
+    description: |
+      Patient with elevated calcium and inappropriate PTH elevation
+    clinical_context: |
+      58-year-old woman with history of kidney stones presenting with hypercalcemia, 
+      mild renal impairment, and bone pain. Labs show elevated calcium with inappropriately 
+      elevated PTH.
+    parameters:
+      calcium_mmol_l: 3.2
+      corrected_calcium_mmol_l: 3.2
+      phosphate_mmol_l: 0.65
+      PTH_pg_ml: 185
+      alkaline_phosphatase_u_l: 125
+      creatinine_umol_l: 95
+    expected_interpretation: |
+      Primary hyperparathyroidism with elevated calcium (3.2) and inappropriately elevated PTH (185) - 
+      this combination is pathognomonic for primary hyperparathyroidism; low phosphate (0.65) typical 
+      (PTH increases urinary phosphate excretion); elevated alkaline phosphatase (125) suggests bone turnover; 
+      History of nephrolithiasis typical; Imaging would show bone changes (osteitis fibrosa cystica, 
+      subperiosteal reabsorption)
+    differential_diagnosis:
+      - Primary hyperparathyroidism
+      - Tertiary hyperparathyroidism (if history of CKD)
+    recommended_action: Parathyroidectomy (definitive), or medical surveillance if asymptomatic
+
+  - id: scenario-calcium-002
+    name: Secondary Hyperparathyroidism - CKD
+    category: calcium-interpretation
+    atoms_used:
+      - atom-016
+    description: |
+      Patient with chronic kidney disease and compensatory PTH elevation
+    clinical_context: |
+      68-year-old man with stage 3b CKD (eGFR 18) on dialysis presenting with bone pain 
+      and muscle cramps. Labs show low calcium and high phosphate with markedly elevated PTH.
+    parameters:
+      calcium_mmol_l: 2.0
+      phosphate_mmol_l: 2.1
+      PTH_pg_ml: 310
+      creatinine_umol_l: 380
+      eGFR_ml_min: 18
+      alkaline_phosphatase_u_l: 95
+    expected_interpretation: |
+      Secondary hyperparathyroidism from chronic kidney disease: PTH markedly elevated (310) 
+      in RESPONSE TO low calcium (2.0) and phosphate retention (2.1, high); Kidney disease 
+      (Cr 380, eGFR 18) causes: loss of 1,25-vitamin D production → low calcium → secondary PTH rise; 
+      retention of phosphate also stimulates PTH; This is compensatory hyperparathyroidism, 
+      NOT primary PTH excess (PTH is appropriately high given the stimulus)
+    differential_diagnosis:
+      - Secondary hyperparathyroidism (CKD stage 5)
+      - CKD-mineral bone disease
+      - Tertiary hyperparathyroidism (if autonomy developed)
+    recommended_action: |
+      Phosphate binders, active vitamin D or calcineuretics, PTH-lowering agents (cinacalcet) 
+      if PTH >300
+
+  - id: scenario-calcium-003
+    name: Hypercalcemia - Ectopic PTHrP
+    category: calcium-interpretation
+    atoms_used:
+      - atom-017
+    description: |
+      Patient with malignancy and hypercalcemia but SUPPRESSED PTH
+    clinical_context: |
+      64-year-old man with newly diagnosed lung carcinoma (squamous cell) presenting with 
+      hypercalcemia, polyuria, constipation. PTH measured and found to be LOW despite high calcium.
+    parameters:
+      calcium_mmol_l: 3.5
+      PTH_pg_ml: 18
+      PTHrP_pmol_l: 8.5
+      phosphate_mmol_l: 0.72
+      alkaline_phosphatase_u_l: 165
+      malignancy_type: lung carcinoma
+    expected_interpretation: |
+      Humoral hypercalcemia of malignancy (ectopic PTH-rP secretion): HIGH calcium (3.5) 
+      with LOW/SUPPRESSED PTH (18, <10 is low) and ELEVATED PTH-rP (8.5); This pattern 
+      is OPPOSITE to primary hyperparathyroidism (where PTH is high); PTH-rP mimics PTH 
+      effects causing calcium rise and phosphate decrease; commonly seen in squamous cell lung 
+      cancer, breast cancer, renal cancer
+    differential_diagnosis:
+      - Ectopic PTH-rP (humoral hypercalcemia)
+      - Osteolytic hypercalcemia (bone metastases)
+      - Lymphoma with calcitriol production (different biochemistry)
+    recommended_action: |
+      Treat underlying malignancy; aggressive hydration; bisphosphonates or denosumab 
+      for calcium control
+
+  - id: scenario-calcium-004
+    name: Acute Hypercalcemia Emergency
+    category: calcium-interpretation
+    atoms_used:
+      - atom-018
+    description: |
+      Medical emergency with severe symptomatic hypercalcemia
+    clinical_context: |
+      71-year-old man with primary hyperparathyroidism presenting with severe confusion, 
+      coma-like state, severe dehydration, and oliguria. Found unresponsive at home.
+    parameters:
+      calcium_mmol_l: 3.8
+      corrected_calcium_mmol_l: 3.8
+      consciousness: comatose
+      urine_output_ml_day: 200
+      serum_osmolality: 365
+      creatinine_umol_l: 285
+      treatment: IV hydration with normal saline
+    expected_interpretation: |
+      Acute hypercalcemia emergency (MEDICAL EMERGENCY): Calcium 3.8 mmol/L (normal <2.6), 
+      comatose consciousness, severe oliguria (200 mL/day), elevated osmolality (365) from 
+      severe dehydration; Elevated creatinine (285) from prerenal azotemia; Hypercalcemia 
+      causes nephrogenic DI → polyuria → severe dehydration if intake not maintained; 
+      Hypercalcemia directly toxic to CNS causing altered consciousness
+    differential_diagnosis:
+      - Acute hypercalcemia from primary hyperparathyroidism
+      - Acute hypercalcemia from malignancy
+    recommended_action: |
+      ICU admission; AGGRESSIVE IV hydration with normal saline (1-2 L/hr); 
+      diuretics (furosemide) once hydrated; bisphosphonates or denosumab; 
+      address underlying cause (surgery if parathyroid, treat cancer if malignancy)
+
+verification:
+  atoms_count: 18
+  scenarios_count: 18
+  all_source_files_referenced: true
+  parameterization_complete: true
+  coverage_complete:
+    hyperglycemia_differential: true
+    DKA_vs_HHS: true
+    hypoglycemia: true
+    thyroid_dysfunction: true
+    pituitary_hormone_deficiency: true
+    pituitary_hormone_excess: true
+    adrenal_insufficiency: true
+    hypercalcemia: true
