@@ -1,21 +1,22 @@
+# <<< gm managed
 # >>> gm managed (do not edit between markers)
+# tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
+*.stackdump
 .gm-stop-verified
-.gm/prd-state.json
-.gm/rslearn-counter.json
 .gm/git-block-counter.json
-.gm/learning-state.md
-.gm/trajectory-drafts/
 .gm/ingest-drafts/
-.gm/needs-gm
 .gm/lastskill
-.gm/turn-state.json
+.gm/learning-state.md
+.gm/needs-gm
 .gm/no-memorize-this-turn
+.gm/prd-state.json
 .gm/prd.paused.yml
 .gm/rs-learn.db-shm
 .gm/rs-learn.db-wal
-# tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
-# <<< gm managed
-.plugkit-browser-profile/
-.plugkit-browser-profile-*/
+.gm/rslearn-counter.json
+.gm/trajectory-drafts/
+.gm/turn-state.json
 .plugkit-agent-worktree/
-*.stackdump
+.plugkit-browser-profile-*/
+.plugkit-browser-profile/
+/.gm/

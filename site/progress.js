@@ -14,6 +14,7 @@ function defaults() {
         dailyGoal: 30, todayDate: todayISO(),
         todayGraded: 0, todayCases: 0,
         lastSubject: null, lastRoute: null,
+        lastReviewedAt: null,
         history: []
     };
 }
@@ -53,6 +54,7 @@ export function bumpGraded(n = 1) {
     const p = load();
     rollStreak(p);
     p.todayGraded = (p.todayGraded || 0) + n;
+    p.lastReviewedAt = Date.now();
     save(p);
     return p;
 }

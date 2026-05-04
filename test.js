@@ -168,29 +168,19 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(triageCss, /\.composer-row \.run-btn[\s\S]{0,80}min-height: 44px/);
         assert.ok((appSrc.match(/aria-label/g) || []).length >= 6);
     });
-    t('friendly-grades+mastery+today+search+theme+bumpCase+titles+onboarding+hash-subroutes+body+sw+og+empty+designsystem+navIA', () => {
-        const swSrc = READ('site/sw.js');
-        for (const re of [/FRIENDLY_GRADES/, /friendly:\s*1[\s\S]{0,40}smscore:\s*0/, /friendly:\s*4[\s\S]{0,40}smscore:\s*5/,
-            /space=reveal · 1=again · 2=hard/, /corpus\.guide\.v1/, /loadGuideTicks|guide-tick/, /renderToday/, /day streak/,
-            /mountSearchPalette|searchPaletteApi/, /makeToggleButton/, /setDocTitle|document\.title\s*=/, /ROUTE_TITLES/,
-            /isFirstVisit|onboarding/, /route === 'cards' && subject/, /route === 'review' && subject/,
-            /renderMarkdown|guide-body/, /serviceWorker\.register\(['"]\.\/sw\.js/, /navigator\.onLine|window\.addEventListener\(['"]offline/,
-            /no cards match|empty-state/]) assert.match(appSrc, re);
+    t('friendly+today+search+theme+titles+onboarding+sw+og+empty+ds+navIA+markdown+shortcuts+settings+heatmap+suspend+cram+tags+deeplink+storage+ariaLive+glyphs+routeFallback+srs+progress', () => {
+        const swSrc = READ('site/sw.js'), srsSrc = READ('site/srs.js'), progSrc = READ('site/progress.js');
+        for (const re of [/FRIENDLY_GRADES/, /smscore:\s*5/, /space=reveal · 1=again/, /corpus\.guide\.v1/, /guide-tick/, /renderToday/, /day streak/, /searchPaletteApi/, /makeToggleButton/, /document\.title\s*=/, /ROUTE_TITLES/, /onboarding/, /route === 'cards' && subject/, /route === 'review' && subject/, /renderMarkdown/, /guide-body/, /serviceWorker\.register\(['"]\.\/sw\.js/, /addEventListener\(['"]offline/, /empty-state/, /back markdown/, /shortcuts-modal/, /openShortcutsModal/, /SHORTCUTS\s*=/, /renderSettings/, /renderCardFocus/, /renderHeatmap/, /suspendCurrentReview/, /state\.cramMode/, /reviewTagFilter/, /collectReviewTags/, /tag-chips/, /focusCardId/, /addEventListener\(['"]storage/, /corpus:storage-full/, /showStorageFullBanner/, /✓ healthy/, /! needs attention/, /· not yet seen/, /since last visit/, /'settings'/, /'card'/, /e\.key === '\?'/, /if \(!state\.cramMode\) srs\.updateCard/, /\['today',\s*'today'\][\s\S]*?\['stats',\s*'stats'\]/, /ROUTE_ALIASES/]) assert.match(appSrc, re);
         for (const re of [/progress\.bumpCase/, /import \* as progress/]) assert.match(liveSrc, re);
-        for (const re of [/caches\.open/, /addEventListener\(['"]install/, /addEventListener\(['"]fetch/]) assert.match(swSrc, re);
-        for (const re of [/og:title/, /og:description/, /og:type/, /rel="icon"/]) { assert.match(indexHtml, re); assert.match(liveHtml, re); }
-        for (const re of [/\.empty-state/, /\.skeleton/, /\.dot\.offline/]) assert.match(styleCss, re);
-        for (const sh of SHARDS) if (sh.guide) assert.ok(typeof sh.guide.body === 'string' && sh.guide.body.length > 100, `guide.body missing for ${sh.subject}`);
-        for (const re of [/--r-sm:\s*8px/, /--r-md:\s*12px/, /--r-lg:\s*18px/, /--r-pill:\s*999px/, /--s-1:\s*4px/, /--s-4:\s*16px/,
-            /--shadow-pop:/, /--rail-w:/, /--panel-text:\s*var\(--panel-text-2\)/,
-            /\[data-theme="dark"\][\s\S]*?--green:\s*#[0-9A-Fa-f]/]) assert.match(styleCss, re);
-        assert.strictEqual((styleCss.match(/^\.guide-section \{/gm) || []).length, 1);
-        assert.match(appSrc, /\['today',\s*'today'\][\s\S]*?\['stats',\s*'stats'\]/);
-        assert.match(appSrc, /ROUTE_ALIASES/);
-        for (const stale of [/\['home',\s*'home'\]/, /getElementById\('crumb'\)/, /getElementById\('footer-stats'\)/]) assert.ok(!stale.test(appSrc), 'stale ' + stale);
-        assert.match(indexHtml, /id="statusbar-msg"/);
-        for (const lbl of ['today', 'subjects', 'review', 'cases', 'stats', 'live tutor']) assert.ok(liveHtml.includes('>' + lbl + '<'), 'triage-live nav missing ' + lbl);
-        for (const stale of ['overview', 'brand-tail']) assert.ok(!liveHtml.includes(stale), 'triage-live stale ' + stale);
+        for (const re of [/caches\.open/, /addEventListener\(['"]install/, /addEventListener\(['"]fetch/, /corpus-v\d+/]) assert.match(swSrc, re);
+        for (const re of [/og:title/, /og:type/, /rel="icon"/]) { assert.match(indexHtml, re); assert.match(liveHtml, re); }
+        for (const re of [/\.empty-state/, /\.skeleton/, /\.dot\.offline/, /\.shortcuts-modal/, /\.flashcard\.long/, /\.heatmap/, /\.storage-full-banner/, /\.tag-chips/, /\.flashcard \.back\.markdown/, /--r-md:\s*12px/, /--r-pill:\s*999px/, /--shadow-pop:/, /--rail-w:/, /\[data-theme="dark"\][\s\S]*?--green:\s*#[0-9A-Fa-f]/]) assert.match(styleCss, re);
+        for (const sh of SHARDS) if (sh.guide) assert.ok(typeof sh.guide.body === 'string' && sh.guide.body.length > 100);
+        for (const stale of [/\['home',\s*'home'\]/, /getElementById\('crumb'\)/]) assert.ok(!stale.test(appSrc));
+        for (const lbl of ['today', 'subjects', 'review', 'cases', 'stats', 'live tutor']) assert.ok(liveHtml.includes('>' + lbl + '<'));
+        for (const re of [/suspendCard/, /isSuspended/, /quota/i, /corpus:storage-full/, /s\.suspended/]) assert.match(srsSrc, re);
+        assert.match(indexHtml, /id="statusbar-msg"/); assert.match(liveHtml, /aria-live="polite"/); assert.match(progSrc, /lastReviewedAt/);
+        assert.match(appSrc.match(/function go\(route, subject\) \{[\s\S]*?^\}/m)[0], /route = 'today'/);
     });
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);

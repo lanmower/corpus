@@ -25,7 +25,9 @@ const state = {
     reviewSubjectFilter: 'all', reviewQueue: [], reviewQueueIds: [],
     reviewAgainPile: [], reviewAllCardIds: [], reviewIndex: 0,
     reviewRevealed: false, reviewSessionGraded: 0, reviewSessionStarted: 0,
-    sessionFinished: false, searchPaletteApi: null
+    sessionFinished: false, searchPaletteApi: null,
+    cramMode: false, reviewTagFilter: new Set(), focusCardId: null,
+    paletteReviewSet: null
 };
 window.__corpus = state;
 window.__corpus.DEBUG = DEBUG;
@@ -52,9 +54,9 @@ function el(tag, attrs = {}, ...kids) {
     return e;
 }
 
-const ROUTES = ['today', 'subjects', 'review', 'cards', 'cases', 'stats', 'subject'];
+const ROUTES = ['today', 'subjects', 'review', 'cards', 'cases', 'stats', 'subject', 'settings', 'card'];
 const ROUTE_TITLES = { today: "today's plan", subjects: 'subjects', review: 'review',
-    cards: 'cards', cases: 'cases', stats: 'stats', subject: 'subject' };
+    cards: 'cards', cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings', card: 'card' };
 const ROUTE_ALIASES = { home: 'today', triage: 'cases' };
 function setDocTitle(route, subject) {
     const cap = s => s ? s[0].toUpperCase() + s.slice(1) : '';
@@ -68,6 +70,7 @@ function go(route, subject) {
     if (subject !== undefined) state.currentSubject = subject;
     if (route === 'cards' && subject) state.cardSubjectFilter = subject;
     if (route === 'review' && subject) { state.reviewSubjectFilter = subject; resetReviewQueue(); }
+    if (route === 'card' && subject) state.focusCardId = subject;
     document.querySelectorAll('.navlink').forEach(a => a.classList.toggle('active', a.dataset.route === route));
     setDocTitle(route, subject);
     progress.setLast(route, subject);
@@ -115,7 +118,8 @@ function render() {
     if (!state.manifest) { stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
     const r = state.route;
     const fns = { today: renderToday, subjects: renderSubjects, cards: renderCards,
-        review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject };
+        review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
+        settings: renderSettings, card: renderCardFocus };
     (fns[r] || renderToday)();
     updateFooter();
 }
@@ -243,6 +247,18 @@ function renderToday() {
     ));
     stage.append(buildSubjectGrid());
 
+    // Since-last-visit
+    if (p.lastReviewedAt) {
+        const ago = Math.max(0, Math.round((Date.now() - p.lastReviewedAt) / 60000));
+        const agoText = ago < 1 ? 'just now' : ago < 60 ? `${ago} minute${ago === 1 ? '' : 's'} ago` :
+            ago < 1440 ? `${Math.round(ago / 60)} hour${ago < 120 ? '' : 's'} ago` : `${Math.round(ago / 1440)} day${ago < 2880 ? '' : 's'} ago`;
+        const yesterday = (p.history || []).slice(-1)[0];
+        stage.append(el('div', { class: 'panel' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'since last visit'), agoText),
+            el('div', {}, `last activity: ${p.lastRoute || 'today'}${p.lastSubject ? ' · ' + p.lastSubject : ''}`),
+            yesterday ? el('div', { class: 'meta' }, `yesterday: ${yesterday.graded || 0} cards · ${yesterday.cases || 0} cases`) : null));
+    }
+
     // Recap
     if (p.history && p.history.length) {
         const recent = p.history.slice(-5).reverse();
@@ -270,7 +286,11 @@ async function renderSubject() {
     const meta = state.manifest.subjects.find(x => x.subject === subj);
     stage.append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'subject'), el('h2', {style:'text-transform:capitalize'}, subj)));
-    const placeholder = el('div', { class: 'loading' }, 'loading…');
+    const placeholder = el('div', { class: 'panel skeleton-panel' },
+        el('div', { class: 'skeleton', style: 'width:60%;height:18px' }),
+        el('div', { class: 'skeleton', style: 'width:90%' }),
+        el('div', { class: 'skeleton', style: 'width:80%' }),
+        el('div', { class: 'skeleton', style: 'width:75%' }));
     stage.append(placeholder);
     const shard = await loadShard(subj);
     placeholder.remove();
@@ -372,8 +392,10 @@ function renderMarkdown(md) {
 
 function buildFlashcard(c, cat) {
     const id = c.id;
+    const back = c.back || '';
+    const long = back.length > 300;
     const card = el('div', {
-        class: `flashcard rail-${cat}`,
+        class: `flashcard rail-${cat}` + (long ? ' long' : ''),
         'role': 'button', 'tabindex': '0', 'aria-label': `flashcard: ${c.front?.slice(0, 60) || ''}`,
         data: { cardId: id },
         on: {
@@ -384,7 +406,7 @@ function buildFlashcard(c, cat) {
         DEBUG ? el('div', { class: 'meta-line' }, el('span', {}, c.id || ''), el('span', {}, c.difficulty || 'medium')) : null,
         el('div', { class: 'front' }, c.front),
         el('div', { class: 'flip-hint' }, 'click to flip'),
-        el('div', { class: 'back' }, c.back || ''),
+        el('div', { class: 'back markdown', html: renderMarkdown(back) }),
         c.tags && c.tags.length ? el('div', { class: 'tags' }, ...c.tags.slice(0, 6).map(t => el('span', { class: 'tag' }, t))) : null
     );
     if (state.flippedCards.has(id)) card.classList.add('flipped');
@@ -452,7 +474,11 @@ function renderCardList() {
 async function renderTriage() {
     stage.append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'cases'), el('h2', {}, 'work a case')));
-    const placeholder = el('div', { class: 'loading' }, 'loading…');
+    const placeholder = el('div', { class: 'panel skeleton-panel' },
+        el('div', { class: 'skeleton', style: 'width:60%;height:18px' }),
+        el('div', { class: 'skeleton', style: 'width:90%' }),
+        el('div', { class: 'skeleton', style: 'width:80%' }),
+        el('div', { class: 'skeleton', style: 'width:75%' }));
     stage.append(placeholder);
     await loadAllShards();
     placeholder.remove();
@@ -504,7 +530,11 @@ async function renderReview() {
     stage.innerHTML = '';
     stage.append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'review'), el('h2', {}, 'review your cards')));
-    const placeholder = el('div', { class: 'loading' }, 'loading…');
+    const placeholder = el('div', { class: 'panel skeleton-panel' },
+        el('div', { class: 'skeleton', style: 'width:60%;height:18px' }),
+        el('div', { class: 'skeleton', style: 'width:90%' }),
+        el('div', { class: 'skeleton', style: 'width:80%' }),
+        el('div', { class: 'skeleton', style: 'width:75%' }));
     stage.append(placeholder);
     const subjects = state.reviewSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.reviewSubjectFilter];
     await Promise.all(subjects.map(s => loadShard(s)));
@@ -521,7 +551,17 @@ async function renderReview() {
 
     if (!state.reviewQueueIds || state.reviewQueueIds.length === 0) {
         const states = srs.loadStates();
-        const dueIds = srs.getDueCards(cardIds, states);
+        let pool = cardIds;
+        if (state.paletteReviewSet && state.paletteReviewSet.length) pool = pool.filter(id => state.paletteReviewSet.includes(id));
+        if (state.reviewTagFilter.size > 0) {
+            const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
+            pool = pool.filter(id => {
+                const tags = cardById[id]?.tags || [];
+                for (const t of tags) if (state.reviewTagFilter.has(t)) return true;
+                return false;
+            });
+        }
+        const dueIds = state.cramMode ? pool : srs.getDueCards(pool, states);
         const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
         const sorted = dueIds.map(id => ({ id, dueAt: states[id]?.dueAt ?? 0, subject: cardById[id]._subject })).sort((a, b) => a.dueAt - b.dueAt);
         const bySubj = {};
@@ -549,11 +589,22 @@ async function renderReview() {
     );
     const head = el('div', { class: 'panel rail-green' },
         el('div', { class: 'panel-head' },
-            el('span', { class: 'title' }, `streak ${p.streak}`),
-            `${p.todayGraded}/${goal} today · ${total} due${state.reviewAgainPile.length ? ` · ${state.reviewAgainPile.length} to revisit` : ''}`),
+            el('span', { class: 'title' }, state.cramMode ? 'cram mode' : `streak ${p.streak}`),
+            `${p.todayGraded}/${goal} today · ${total} due${state.reviewAgainPile.length ? ` · ${state.reviewAgainPile.length} to revisit` : ''}${state.cramMode ? ' · grades not saved' : ''}`),
         el('div', { class: 'progress-bar' }, el('div', { class: 'progress-fill', style: `width:${progressPct}%` }))
     );
-    stage.append(el('div', { class: 'toolbar' }, chips), head);
+    const cramBtn = el('button', { class: 'chip' + (state.cramMode ? ' active' : ''),
+        'aria-label': 'toggle cram mode', 'aria-pressed': String(!!state.cramMode),
+        on: { click: () => { state.cramMode = !state.cramMode; renderReview(); } } },
+        state.cramMode ? 'cram on' : 'cram off');
+    const allTags = collectReviewTags(allCards);
+    const tagChips = allTags.length ? el('div', { class: 'filter-chips tag-chips', role: 'group', 'aria-label': 'tag filter' },
+        ...allTags.slice(0, 12).map(t => el('button', {
+            class: 'chip' + (state.reviewTagFilter.has(t) ? ' active' : ''),
+            'aria-pressed': String(state.reviewTagFilter.has(t)),
+            on: { click: () => { if (state.reviewTagFilter.has(t)) state.reviewTagFilter.delete(t); else state.reviewTagFilter.add(t); resetReviewQueue(); renderReview(); } } }, '#' + t))
+    ) : null;
+    stage.append(el('div', { class: 'toolbar' }, chips, cramBtn), tagChips, head);
 
     if (state.reviewQueue.length === 0) {
         if (state.reviewAgainPile.length > 0) {
@@ -594,7 +645,7 @@ async function renderReview() {
             DEBUG ? el('span', {}, `EF ${cardState.easeFactor.toFixed(2)} · ${cardState.phase} · ${cardState.interval}d`) : null
         ),
         el('div', { class: 'front' }, card.front),
-        el('div', { class: 'back' }, card.back || ''),
+        el('div', { class: 'back markdown', html: renderMarkdown(card.back || '') }),
         DEBUG ? el('div', { class: 'card-source' }, `source: ${card.source || card.sourceFile || ''}`) : null,
         card.tags && card.tags.length ? el('div', { class: 'tags' }, ...card.tags.slice(0, 6).map(t => el('span', { class: 'tag' }, t))) : null
     );
@@ -614,6 +665,8 @@ async function renderReview() {
         }
         actions.append(el('button', { class: 'chip', id: 'review-skip', 'aria-label': 'skip',
             on: { click: () => skipReview() } }, 'skip (s)'));
+        actions.append(el('button', { class: 'chip', id: 'review-suspend', 'aria-label': 'suspend card',
+            on: { click: () => { if (confirm('Suspend this card? It will not appear again until you un-suspend it from the card page.')) suspendCurrentReview(); } } }, 'suspend'));
     }
     stage.append(actions);
     const hint = DEBUG
@@ -637,9 +690,9 @@ function skipReview() {
 }
 
 function gradeReview(cardId, score) {
-    srs.updateCard(cardId, score, state.reviewAllCardIds || []);
+    if (!state.cramMode) srs.updateCard(cardId, score, state.reviewAllCardIds || []);
     state.reviewSessionGraded++;
-    progress.bumpGraded(1);
+    if (!state.cramMode) progress.bumpGraded(1);
     if (score === 0) state.reviewAgainPile.push(cardId);
     state.reviewQueueIds.splice(state.reviewIndex, 1);
     if (state.reviewIndex >= state.reviewQueueIds.length) state.reviewIndex = 0;
@@ -647,10 +700,22 @@ function gradeReview(cardId, score) {
     renderReview();
 }
 
+function suspendCurrentReview() {
+    const card = state.reviewQueue?.[state.reviewIndex];
+    if (!card) return;
+    srs.suspendCard(card.id, true);
+    state.reviewQueueIds.splice(state.reviewIndex, 1);
+    if (state.reviewIndex >= state.reviewQueueIds.length) state.reviewIndex = 0;
+    state.reviewRevealed = false;
+    renderReview();
+}
+
 document.addEventListener('keydown', e => {
-    if (state.route !== 'review') return;
     const tag = e.target?.tagName;
     if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    if (e.key === '?' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openShortcutsModal(); return; }
+    if (e.key === 'Escape') { closeShortcutsModal(); return; }
+    if (state.route !== 'review') return;
     if (e.key === ' ' || e.key === 'Spacebar') {
         e.preventDefault();
         if (!state.reviewRevealed && state.reviewQueue?.length) { state.reviewRevealed = true; renderReview(); }
@@ -703,11 +768,15 @@ async function renderHealthBands() {
         el('div', { class: 'hero-stats' },
             chipStat(p.streak, 'day streak'),
             chipStat(stats.scheduled, 'cards started'),
-            chipStat(healthy, 'healthy'),
-            chipStat(attention, 'needs attention'),
-            chipStat(untouched, 'not yet seen'),
+            chipStat(healthy, '✓ healthy'),
+            chipStat(attention, '! needs attention'),
+            chipStat(untouched, '· not yet seen'),
             chipStat(stats.due, 'due now')
         )));
+
+    stage.append(el('div', { class: 'panel rail-green heatmap-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study days'), 'last 9 weeks'),
+        renderHeatmap(p.history || [])));
 
     const maxF = Math.max(1, ...forecast.map(b => b.count));
     const forecastEl = el('div', { class: 'forecast' },
@@ -788,6 +857,168 @@ function renderDebugStats(m) {
         )));
 }
 
+function collectReviewTags(allCards) {
+    const counts = {};
+    for (const c of allCards) for (const t of (c.tags || [])) counts[t] = (counts[t] || 0) + 1;
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(x => x[0]);
+}
+
+async function renderCardFocus() {
+    const id = state.focusCardId;
+    if (!id) { go('cards'); return; }
+    await loadAllShards();
+    let card = null, meta = null;
+    for (const m of state.manifest.subjects) {
+        const sh = state.shards[m.subject];
+        const c = sh.cards.find(x => x.id === id);
+        if (c) { card = c; meta = m; break; }
+    }
+    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'card'), el('h2', {}, card ? card.front.slice(0, 80) : 'card not found')));
+    if (!card) {
+        stage.append(el('div', { class: 'empty-state' }, el('div', { class: 'empty-title' }, 'no such card'),
+            el('button', { class: 'chip', on: { click: () => go('cards') } }, 'back to cards')));
+        return;
+    }
+    const cs = srs.getCardState(card.id);
+    const suspended = !!cs.suspended;
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, meta.subject), `${(card.tags || []).join(' · ')}`),
+        buildFlashcard(card, meta.cat || 'green'),
+        el('div', { class: 'toolbar', style: 'margin-top:14px' },
+            el('button', { class: 'chip', 'aria-label': suspended ? 'un-suspend card' : 'suspend card',
+                on: { click: () => { srs.suspendCard(card.id, !suspended); render(); } } }, suspended ? 'un-suspend' : 'suspend'),
+            el('button', { class: 'chip', 'aria-label': 'reset this card',
+                on: { click: () => { if (confirm('Reset SRS state for this card?')) {
+                    const states = srs.loadStates(); delete states[card.id]; srs.saveStates(states); render();
+                } } } }, 'reset card'),
+            el('a', { class: 'chip', href: `#cards/${meta.subject}`, on: { click: e => { e.preventDefault(); go('cards', meta.subject); } } }, 'back to cards'))
+    ));
+}
+
+function renderHeatmap(history) {
+    const today = new Date(); today.setHours(0,0,0,0);
+    const days = 63;
+    const counts = {};
+    for (const h of (history || [])) counts[h.date] = (h.graded || 0);
+    const cells = [];
+    for (let i = days - 1; i >= 0; i--) {
+        const d = new Date(today.getTime() - i * 86400000);
+        const k = d.toISOString().slice(0, 10);
+        cells.push({ date: k, count: counts[k] || 0 });
+    }
+    const max = Math.max(1, ...cells.map(c => c.count));
+    const cellSize = 12, gap = 2, cols = 9;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'heatmap');
+    svg.setAttribute('width', String(cols * (cellSize + gap)));
+    svg.setAttribute('height', String(7 * (cellSize + gap)));
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', 'study days heatmap, last 63 days');
+    cells.forEach((c, i) => {
+        const r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        const col = Math.floor(i / 7), row = i % 7;
+        r.setAttribute('x', String(col * (cellSize + gap)));
+        r.setAttribute('y', String(row * (cellSize + gap)));
+        r.setAttribute('width', String(cellSize));
+        r.setAttribute('height', String(cellSize));
+        r.setAttribute('rx', '2');
+        const intensity = c.count === 0 ? 0 : Math.min(1, c.count / max);
+        const alpha = c.count === 0 ? 0.10 : 0.25 + intensity * 0.75;
+        r.setAttribute('fill', `rgba(63,138,74,${alpha})`);
+        const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+        title.textContent = `${c.date}: ${c.count} cards`;
+        r.appendChild(title);
+        svg.appendChild(r);
+    });
+    return svg;
+}
+
+async function renderSettings() {
+    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'settings'), el('h2', {}, 'settings')));
+    const cfg = srs.loadConfig();
+    const p = progress.load();
+    const examInput = el('input', { type: 'date', value: cfg.examDate, class: 'search', style: 'max-width:200px',
+        'aria-label': 'exam date', on: { change: e => { srs.saveConfig({ ...cfg, examDate: e.target.value }); render(); } } });
+    const goalInput = el('input', { type: 'number', min: '1', max: '500', value: String(p.dailyGoal), class: 'search',
+        style: 'max-width:120px', 'aria-label': 'daily goal',
+        on: { change: e => { progress.setGoal(parseInt(e.target.value, 10) || 30); render(); } } });
+    const cramBtn = el('button', { class: 'chip' + (state.cramMode ? ' active' : ''),
+        'aria-label': 'cram mode', 'aria-pressed': String(!!state.cramMode),
+        on: { click: () => { state.cramMode = !state.cramMode; render(); } } }, state.cramMode ? 'cram on' : 'cram off');
+    const exportBtn = el('button', { class: 'chip', 'aria-label': 'export your data',
+        on: { click: () => {
+            const blob = new Blob([srs.exportState()], { type: 'application/json' });
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+            a.download = `corpus-srs-${srs.today()}.json`; a.click(); URL.revokeObjectURL(a.href);
+        } } }, 'export your data');
+    const importInput = el('input', { type: 'file', accept: '.json', style: 'display:none',
+        on: { change: async e => {
+            const f = e.target.files?.[0]; if (!f) return;
+            if (!confirm('Importing will overwrite your current progress. Continue?')) return;
+            const text = await f.text();
+            try { const n = srs.importState(text); alert(`imported ${n} cards`); render(); }
+            catch (err) { alert('import failed: ' + err.message); }
+        } } });
+    const importBtn = el('button', { class: 'chip', 'aria-label': 'import data',
+        on: { click: () => importInput.click() } }, 'import data');
+    const resetBtn = el('button', { class: 'chip', 'aria-label': 'reset progress',
+        on: { click: () => { if (confirm('Reset all review progress? This cannot be undone.')) { srs.resetAll(); state.reviewSessionGraded = 0; render(); } } } }, 'reset progress');
+    const shortcutsBtn = el('button', { class: 'chip', 'aria-label': 'keyboard shortcuts',
+        on: { click: () => openShortcutsModal() } }, 'keyboard shortcuts');
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study')),
+        el('div', { class: 'toolbar' }, el('label', { for: 'exam-date' }, 'exam date:'), examInput,
+            el('label', {}, 'daily goal:'), goalInput, cramBtn)));
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'theme')),
+        el('div', { class: 'toolbar' }, makeToggleButton(document))));
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'data')),
+        el('div', { class: 'toolbar' }, exportBtn, importBtn, importInput, resetBtn)));
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'help')),
+        el('div', { class: 'toolbar' }, shortcutsBtn,
+            el('a', { class: 'chip', href: '?debug', 'aria-label': 'enable debug mode' }, 'enable debug mode'))));
+}
+
+const SHORTCUTS = [
+    ['Ctrl+K', 'open search'],
+    ['?', 'show this help'],
+    ['Esc', 'close modals'],
+    ['Space', 'reveal answer (review)'],
+    ['1–4', 'grade card (review)'],
+    ['s', 'skip card (review)'],
+    ['j / k', 'next / prev case (live tutor)'],
+    ['/', 'focus reply (live tutor)'],
+    ['Ctrl+Enter', 'send (live tutor)']
+];
+function openShortcutsModal() {
+    let m = document.getElementById('shortcuts-modal');
+    if (m) { m.classList.remove('hidden'); return; }
+    m = el('div', { id: 'shortcuts-modal', class: 'shortcuts-modal', role: 'dialog', 'aria-label': 'keyboard shortcuts' });
+    const inner = el('div', { class: 'shortcuts-inner' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'keyboard shortcuts'), el('button', { class: 'chip', 'aria-label': 'close',
+            on: { click: () => m.classList.add('hidden') } }, 'close')),
+        el('table', { class: 'shortcuts-table' },
+            el('tbody', {}, ...SHORTCUTS.map(([k, d]) => el('tr', {}, el('td', { class: 'kbd' }, k), el('td', {}, d))))
+        ));
+    m.append(inner);
+    m.addEventListener('click', e => { if (e.target === m) m.classList.add('hidden'); });
+    document.body.appendChild(m);
+}
+function closeShortcutsModal() {
+    const m = document.getElementById('shortcuts-modal'); if (m) m.classList.add('hidden');
+}
+
+function showStorageFullBanner() {
+    if (document.getElementById('storage-full-banner')) return;
+    const b = el('div', { id: 'storage-full-banner', class: 'storage-full-banner', role: 'alert' },
+        el('span', {}, 'browser storage is full. Export your data, then reset progress to free space.'),
+        el('button', { class: 'chip', on: { click: () => go('settings') } }, 'open settings'),
+        el('button', { class: 'chip', 'aria-label': 'dismiss', on: { click: () => b.remove() } }, 'dismiss'));
+    document.body.appendChild(b);
+}
+
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
@@ -797,6 +1028,8 @@ function mountTopbar() {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
             on: { click: e => { e.preventDefault(); go(route); } } }, label));
     }
+    nav.append(el('a', { href: '#settings', class: 'navlink', data: { route: 'settings' },
+        on: { click: e => { e.preventDefault(); go('settings'); } } }, 'settings'));
     nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta' }, 'live tutor'));
     const right = document.querySelector('header.topbar .status');
     const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'open search (Ctrl+K)', title: 'search (Ctrl+K)',
@@ -845,6 +1078,10 @@ function registerSW() {
         updateOnlineStatus();
         window.addEventListener('online', updateOnlineStatus);
         window.addEventListener('offline', updateOnlineStatus);
+        window.addEventListener('storage', e => {
+            if (e.key && /^corpus\./.test(e.key)) render();
+        });
+        window.addEventListener('corpus:storage-full', () => showStorageFullBanner());
         const hash = location.hash.replace('#', '') || 'today';
         const [route, sub] = hash.split('/');
         go(route, sub);

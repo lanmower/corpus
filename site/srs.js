@@ -145,7 +145,26 @@ export function loadStates() {
 }
 
 export function saveStates(states) {
-    localStorage.setItem(STATES_KEY, JSON.stringify({ version: SCHEMA_VERSION, states }));
+    try {
+        localStorage.setItem(STATES_KEY, JSON.stringify({ version: SCHEMA_VERSION, states }));
+        if (typeof window !== 'undefined') window.dispatchEvent(new Event('corpus:srs-changed'));
+    } catch (e) {
+        const quota = e && (e.name === 'QuotaExceededError' || /quota/i.test(String(e.message)));
+        if (quota && typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { source: 'srs', error: String(e) } }));
+        else throw e;
+    }
+}
+
+export function suspendCard(cardId, suspended = true) {
+    const states = loadStates();
+    const s = states[cardId] ?? defaultCardState();
+    states[cardId] = { ...s, suspended: !!suspended };
+    saveStates(states);
+    return states[cardId];
+}
+
+export function isSuspended(cardId, states = loadStates()) {
+    return !!(states[cardId] && states[cardId].suspended);
 }
 
 export function exportState() {
@@ -181,6 +200,7 @@ export function getDueCards(cardIds, states = loadStates()) {
     const now = Date.now();
     return cardIds.filter(id => {
         const s = states[id] ?? defaultCardState();
+        if (s.suspended) return false;
         return (s.dueAt ?? 0) <= now;
     });
 }
@@ -253,6 +273,6 @@ if (typeof window !== 'undefined') {
         defaultCardState, calcSM2, schedule, fuzzInterval, compressInterval, today,
         loadStates, saveStates, loadConfig, saveConfig, exportState, importState,
         daysUntilExam, effectiveDays, getDueCards, getCardState, updateCard,
-        getScheduleStats, getForecast, resetAll, SCHEMA_VERSION
+        getScheduleStats, getForecast, resetAll, suspendCard, isSuspended, SCHEMA_VERSION
     };
 }
