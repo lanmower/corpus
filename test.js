@@ -148,6 +148,24 @@ const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriat
         assert.ok(grade.includes('CANARY_DEF') && grade.includes('CanaryFront'));
         assert.ok(grade.includes('CANARY_REC') || grade.includes('CANARY_REASON'));
     });
+    console.log('# triage-llm-worker');
+    const workerSrc = fs.readFileSync(path.join(ROOT, 'site/triage-llm-worker.js'), 'utf8');
+    t('worker imports streaming primitives + correct model + posts streamed updates', () => {
+        assert.match(workerSrc, /TextStreamer/);
+        assert.match(workerSrc, /InterruptableStoppingCriteria/);
+        assert.match(workerSrc, /onnx-community\/gemma-4-e2b-it-ONNX/);
+        assert.match(workerSrc, /device:\s*'webgpu'/);
+        assert.match(workerSrc, /status:\s*'update'/);
+        assert.match(workerSrc, /apply_chat_template/);
+    });
+    t('triage-live spawns worker (type=module) + simulate fallback on worker error', () => {
+        assert.match(liveSrc, /new Worker\(['"]\.\/triage-llm-worker\.js['"],\s*\{\s*type:\s*['"]module['"]/);
+        assert.match(liveSrc, /workerReady/);
+        assert.match(liveSrc, /falling back to simulate/);
+        assert.match(liveSrc, /onWorkerMessage/);
+        assert.match(liveSrc, /'interrupt'/);
+    });
+
     t('simulateAssistant asking branch never auto-emits differential add_card', () => {
         const sim = liveSrc.split('function simulateAssistant')[1].split('\nstate.simulateAssistant')[0];
         const askingPart = sim.split("state.phase === 'grading'")[1].split('return blocks.join')[1] || sim;

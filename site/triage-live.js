@@ -52,6 +52,10 @@ const state = {
     llmStatus: 'idle',
     loadStarted: false,
     pipeline: null,
+    worker: null,
+    workerReady: false,
+    generating: false,
+    streamBuffer: '',
     onProgress: null,
     subjectFilter: new Set(),
     sessions: {},
@@ -428,6 +432,70 @@ function buildSnapshot(phase) {
 }
 state.buildSnapshot = buildSnapshot;
 
+function spawnWorker() {
+    if (state.worker) return state.worker;
+    try {
+        state.worker = new Worker('./triage-llm-worker.js', { type: 'module' });
+        state.worker.addEventListener('message', onWorkerMessage);
+        state.worker.addEventListener('error', e => {
+            state.llmStatus = 'error';
+            els.modelStatus.textContent = 'worker error';
+            els.progressText.textContent = 'worker failed: ' + (e.message || 'unknown') + ' — use simulate instead';
+            els.loadLLM.disabled = false;
+            state.loadStarted = false;
+            state.worker = null;
+        });
+    } catch (e) {
+        state.worker = null;
+        throw e;
+    }
+    return state.worker;
+}
+
+function onWorkerMessage(e) {
+    const m = e.data || {};
+    if (m.status === 'loading') {
+        els.progressText.textContent = `loading ${m.stage}…`;
+    } else if (m.status === 'progress') {
+        const p = m.payload || {};
+        const pct = p.progress != null ? Math.round(p.progress) : 0;
+        els.progressFill.style.width = pct + '%';
+        if (p.file) els.progressText.textContent = `${p.status || ''} ${p.file} — ${pct}%`;
+    } else if (m.status === 'ready') {
+        state.workerReady = true;
+        state.llmStatus = 'ready';
+        els.modelStatus.textContent = 'ready';
+        els.progressFill.style.width = '100%';
+        els.progressText.textContent = 'cached locally — ready';
+    } else if (m.status === 'start') {
+        state.streamBuffer = '';
+        const last = state.messages[state.messages.length - 1];
+        if (!last || last.role !== 'assistant') state.messages.push({ role: 'assistant', content: '' });
+        renderMessages();
+    } else if (m.status === 'update') {
+        state.streamBuffer += m.output || '';
+        const last = state.messages[state.messages.length - 1];
+        if (last && last.role === 'assistant') last.content = state.streamBuffer;
+        renderMessages();
+    } else if (m.status === 'complete') {
+        const text = m.output || state.streamBuffer;
+        const last = state.messages[state.messages.length - 1];
+        if (last && last.role === 'assistant') last.content = text;
+        state.generating = false;
+        renderMessages();
+        dispatchToolCalls(text);
+        if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
+    } else if (m.status === 'error') {
+        state.generating = false;
+        const last = state.messages[state.messages.length - 1];
+        const msg = `(worker error) ${m.error}`;
+        if (last && last.role === 'assistant' && !last.content) last.content = msg;
+        else state.messages.push({ role: 'assistant', content: msg });
+        renderMessages();
+        if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
+    }
+}
+
 async function loadLLM() {
     if (state.loadStarted) return;
     state.loadStarted = true;
@@ -435,25 +503,11 @@ async function loadLLM() {
     els.modelStatus.textContent = 'loading…';
     els.loadLLM.disabled = true;
     els.progress.hidden = false;
-    els.progressText.textContent = 'fetching transformers.js';
+    els.progressText.textContent = 'spawning worker…';
     try {
-        const mod = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.5.0/dist/transformers.min.js');
-        const { pipeline, env } = mod;
-        env.allowLocalModels = false;
-        els.progressText.textContent = 'downloading model (≈2GB) — first time only';
-        const onProgress = (p) => {
-            const pct = p && p.progress != null ? Math.round(p.progress) : 0;
-            els.progressFill.style.width = pct + '%';
-            if (p && p.file) els.progressText.textContent = `${p.status || ''} ${p.file} — ${pct}%`;
-        };
-        state.pipeline = await pipeline('text-generation', 'onnx-community/gemma-4-e2b-it-ONNX', {
-            device: 'webgpu',
-            progress_callback: onProgress
-        });
-        state.llmStatus = 'ready';
-        els.modelStatus.textContent = 'ready';
-        els.progressFill.style.width = '100%';
-        els.progressText.textContent = 'cached locally — ready';
+        const w = spawnWorker();
+        if (!w) throw new Error('worker unavailable');
+        w.postMessage({ type: 'load' });
     } catch (e) {
         state.llmStatus = 'error';
         els.modelStatus.textContent = 'error';
@@ -463,18 +517,20 @@ async function loadLLM() {
     }
 }
 
-async function generateLLM(userText) {
-    if (!state.pipeline) throw new Error('LLM not loaded');
+function generateLLM(userText) {
+    if (!state.worker || !state.workerReady) throw new Error('LLM not loaded');
     const sys = buildSnapshot(state.phase);
     const messages = [
         { role: 'system', content: sys },
         { role: 'user', content: userText }
     ];
-    const out = await state.pipeline(messages, { max_new_tokens: 384, temperature: 0.7, return_full_text: false });
-    const text = Array.isArray(out) ? (out[0].generated_text?.at?.(-1)?.content || out[0].generated_text || '') : String(out);
-    return typeof text === 'string' ? text : JSON.stringify(text);
+    if (state.generating) state.worker.postMessage({ type: 'interrupt' });
+    state.generating = true;
+    state.worker.postMessage({ type: 'generate', messages });
+    return new Promise(resolve => { state._afterGenerate = resolve; });
 }
 state.generateLLM = generateLLM;
+state.spawnWorker = spawnWorker;
 
 function pruneMessages() {
     if (state.messages.length > 2) state.messages = state.messages.slice(-2);
@@ -491,18 +547,25 @@ async function send(useSim = false) {
     els.prompt.value = '';
     state.messages = [{ role: 'user', content: txt }];
     renderMessages();
-    let reply;
-    try {
-        reply = useSim || !state.pipeline
-            ? simulateAssistant(txt)
-            : await generateLLM(txt);
-    } catch (e) {
-        reply = `(error) ${e.message}`;
+    const useLLM = !useSim && state.worker && state.workerReady;
+    if (useLLM) {
+        try { await generateLLM(txt); }
+        catch (e) {
+            const reply = `(error) ${e.message} — falling back to simulate.\n\n` + simulateAssistant(txt);
+            state.messages.push({ role: 'assistant', content: reply });
+            renderMessages();
+            dispatchToolCalls(reply);
+        }
+    } else {
+        let reply;
+        try { reply = simulateAssistant(txt); }
+        catch (e) { reply = `(error) ${e.message}`; }
+        state.messages.push({ role: 'assistant', content: reply });
+        renderMessages();
+        dispatchToolCalls(reply);
     }
-    state.messages = [{ role: 'user', content: txt }, { role: 'assistant', content: reply }];
     pruneMessages();
     renderMessages();
-    dispatchToolCalls(reply);
 }
 
 function tokenize(s) { return new Set(String(s).toLowerCase().match(/[a-z]{4,}/g) || []); }
