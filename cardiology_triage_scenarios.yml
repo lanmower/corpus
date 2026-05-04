@@ -1,0 +1,308 @@
+metadata:
+  title: Cardiology Triage Scenarios
+  version: '1.0'
+  generated: '2026-05-04'
+  source: 6 Cardiology SRS cards from CMED4IIM2
+  total_atoms: 36
+  total_scenarios: 6
+  total_parameters: 30
+atoms:
+  - &ref_0
+    id: ecg-interpretation-1
+    card_source: ECG Interpretation - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: What are the basic steps of ECG interpretation?
+    definition: "1. Verify ECG calibration\n2. Analyze rate and rhythm\n3. Determine cardiac axis\n4. Examine each wave morphology\n5. Look for chamber dilatation and hypertrophy\n6. Assess for myocardial infarction stages\n7. Check for metabolic abnormalities"
+    tags: [ecg-basics, interpretation-methodology]
+    source_type: srs-card
+  - &ref_1
+    id: ecg-interpretation-2
+    card_source: ECG Interpretation - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: What is the ECG paper speed and time calibration?
+    definition: 'Paper speed: 25 mm/second. X-axis (time): each 1 mm = 0.04 seconds (40 milliseconds). Y-axis (amplitude): each 10 mm = 1 millivolt.'
+    tags: [ecg-calibration, measurement]
+    source_type: srs-card
+  - &ref_2
+    id: ecg-interpretation-3
+    card_source: ECG Interpretation - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: How many electrodes and leads are used in a standard ECG?
+    definition: '10 electrodes that produce 12 leads: 3 standard limb leads (I, II, III), 3 augmented limb leads (aVR, aVL, aVF), and 6 precordial leads (V1-V6).'
+    tags: [ecg-leads, electrode-placement]
+    source_type: srs-card
+  - &ref_3
+    id: ecg-interpretation-4
+    card_source: ECG Interpretation - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: What are the locations of precordial ECG leads?
+    definition: 'V1: 4th intercostal space, right sternal border. V2: 4th intercostal space, left sternal border. V3: Between V2 and V4. V4: 5th intercostal space, midclavicular line. V5: Between V4 and V6. V6: 5th intercostal space, midaxillary line.'
+    tags: [ecg-leads, precordial-leads]
+    source_type: srs-card
+  - &ref_4
+    id: ecg-interpretation-5
+    card_source: ECG Interpretation - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: Which ECG leads view which cardiac walls?
+    definition: 'Inferior leads (II, III, aVF): inferior wall. Lateral leads (I, aVL, V5, V6): lateral wall. Anterior leads (V1-V4): anterior wall and septum. V1-V2: septal region.'
+    tags: [ecg-leads, cardiac-territories]
+    source_type: srs-card
+  - &ref_5
+    id: ecg-interpretation-6
+    card_source: ECG Interpretation - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: How is heart rate calculated from an ECG?
+    definition: 'Method 1: Count QRS complexes in 10 seconds and multiply by 6. Method 2 (regular rhythm): Count large blocks between two R waves and divide into 300.'
+    tags: [heart-rate, ecg-analysis]
+    source_type: srs-card
+  - &ref_6
+    id: coronary-artery-disease-(cad)-7
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: What is Coronary Artery Disease (CAD)?
+    definition: Coronary Artery Disease, also known as ischemic heart disease, is a condition where plaque builds up in the coronary arteries, restricting blood flow to the heart. It is the leading cause of death globally, accounting for 16% of total deaths.
+    tags: [CAD, definition, epidemiology]
+    source_type: srs-card
+  - &ref_7
+    id: coronary-artery-disease-(cad)-8
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: What are the global mortality statistics for cardiovascular disease?
+    definition: According to WHO 2019 statistics, cardiovascular disease is the commonest cause of mortality accounting for 18.5 million deaths annually, far exceeding cancer (10 million) and respiratory diseases (under 4 million).
+    tags: [epidemiology, mortality, global-health]
+    source_type: srs-card
+  - &ref_8
+    id: coronary-artery-disease-(cad)-9
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: What is the double burden of disease in South Africa and low/middle-income countries?
+    definition: The double burden refers to the simultaneous high prevalence of both infectious diseases (tuberculosis, AIDS) and non-communicable diseases (lifestyle-related conditions like CAD, hypertension, diabetes).
+    tags: [epidemiology, public-health, disease-burden]
+    source_type: srs-card
+  - &ref_9
+    id: coronary-artery-disease-(cad)-10
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: What is the most lethal manifestation of Coronary Artery Disease?
+    definition: Myocardial infarction (heart attack) is the most lethal and dangerous manifestation of CAD. It is a medical emergency caused by complete or near-complete blockage of a coronary artery.
+    tags: [CAD, complications, myocardial-infarction]
+    source_type: srs-card
+  - &ref_10
+    id: coronary-artery-disease-(cad)-11
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: What is the key message about CAD prevention and modification?
+    definition: CAD is a disease of lifestyle that can be modified through choices about diet and physical activity. It can also be managed with pharmacological therapies and mechanical interventions (angioplasty, stenting, bypass surgery). Leading a judicious lifestyle can delay or prevent CAD onset.
+    tags: [CAD, prevention, management]
+    source_type: srs-card
+  - &ref_11
+    id: coronary-artery-disease-(cad)-12
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-001-010.yml
+    atom: What are the main clinical manifestations of CAD?
+    definition: 'The main manifestations are: (1) Stable/Chronic coronary syndrome (stable angina), (2) Acute coronary syndrome including ST-elevation MI and non-ST elevation MI, (3) Unstable angina, (4) Silent ischemia, and (5) Sudden cardiac death.'
+    tags: [CAD, clinical-manifestations, presentation]
+    source_type: srs-card
+  - &ref_12
+    id: coronary-artery-disease-(cad)-13
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-011-020.yml
+    atom: What does ST segment depression of more than 1mm indicate, especially if horizontal?
+    definition: Highly suggestive of underlying coronary obstruction.
+    tags: [ECG, ST-depression, CAD-diagnosis]
+    source_type: srs-card
+  - &ref_13
+    id: coronary-artery-disease-(cad)-14
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-011-020.yml
+    atom: What is the significance of ST elevation myocardial infarction (STEMI)?
+    definition: A medical emergency where myocytes are under threat and begin to die after 5 minutes without blood supply and oxygen delivery.
+    tags: [STEMI, myocardial-infarction, emergency]
+    source_type: srs-card
+  - &ref_14
+    id: coronary-artery-disease-(cad)-15
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-011-020.yml
+    atom: What are the diagnostic criteria for ST elevation in limb leads vs chest leads for STEMI?
+    definition: 'Limb leads (I, II, III, aVR, aVL, aVF): require at least 1mm elevation. Chest leads (precordial): require at least 2mm elevation.'
+    tags: [STEMI, ECG-criteria, diagnostic]
+    source_type: srs-card
+  - &ref_15
+    id: coronary-artery-disease-(cad)-16
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-011-020.yml
+    atom: What does 'tombstone' pattern represent on ECG?
+    definition: A pattern of convex ST elevation (often 5-15mm) seen in anterior STEMI, named for its appearance.
+    tags: [ECG, STEMI, anterior-infarction]
+    source_type: srs-card
+  - &ref_16
+    id: coronary-artery-disease-(cad)-17
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-011-020.yml
+    atom: What is reciprocal ST depression in the context of myocardial infarction?
+    definition: ST depression in leads opposite to those showing ST elevation; occurs when infarction affects one region and helps confirm the diagnosis.
+    tags: [ECG, myocardial-infarction, reciprocal-changes]
+    source_type: srs-card
+  - &ref_17
+    id: coronary-artery-disease-(cad)-18
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-011-020.yml
+    atom: When is exercise stress testing contraindicated?
+    definition: In very high-risk patients (with typical anginal symptoms and multiple risk factors) and very low-risk patients (young individuals with no risk factors), as it may provoke ischemic events or is unhelpful.
+    tags: [exercise-stress-test, contraindications, risk-assessment]
+    source_type: srs-card
+  - &ref_18
+    id: coronary-artery-disease-(cad)-19
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-021-023.yml
+    atom: What is the preferred fibrinolytic agent for STEMI, and why?
+    definition: Tenectoplase is preferred (most effective), followed by alteplase, then streptokinase. However, any fibrinolytic agent given timely is better than nothing. Tenectoplase is most expensive and not always available.
+    tags: [STEMI, fibrinolytic agents, treatment]
+    source_type: srs-card
+  - &ref_19
+    id: coronary-artery-disease-(cad)-20
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-021-023.yml
+    atom: What dual anti-platelet therapy is used in STEMI?
+    definition: Aspirin (chewed tablet for rapid absorption, then 100mg indefinitely) and clopidogrel loading dose 300mg followed by 75mg daily. Dual therapy continues for 1 year; then clopidogrel is stopped but aspirin continues for life.
+    tags: [STEMI, antiplatelet therapy, medication]
+    source_type: srs-card
+  - &ref_20
+    id: coronary-artery-disease-(cad)-21
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-021-023.yml
+    atom: What anti-thrombin agent is preferred in STEMI and why?
+    definition: Enoxaparin is preferred over heparin because it is given subcutaneously (easier administration). Heparin requires continuous IV infusion and needs monitoring, making it more cumbersome.
+    tags: [STEMI, anticoagulation, enoxaparin]
+    source_type: srs-card
+  - &ref_21
+    id: coronary-artery-disease-(cad)-22
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-021-023.yml
+    atom: What is the minimum number of antithrombotic agents given in STEMI?
+    definition: 'A minimum of 4 antithrombotic agents: fibrinolytic agent + 2 antiplatelet agents (aspirin + clopidogrel) + 1 anticoagulant (enoxaparin or heparin).'
+    tags: [STEMI, antithrombotic therapy]
+    source_type: srs-card
+  - &ref_22
+    id: coronary-artery-disease-(cad)-23
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-021-023.yml
+    atom: What is the success rate of primary angioplasty vs fibrinolytic therapy in STEMI?
+    definition: Primary angioplasty leads to 95% vessel opening in skilled hands. Fibrinolytic therapy achieves approximately 64% vessel patency.
+    tags: [STEMI, angioplasty, fibrinolysis]
+    source_type: srs-card
+  - &ref_23
+    id: coronary-artery-disease-(cad)-24
+    card_source: Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-021-023.yml
+    atom: What is the timeline for endothelial incorporation of a metal stent?
+    definition: A metal stent is typically incorporated into the vessel wall by the endothelium over 1-3 months.
+    tags: [stent, vascular biology]
+    source_type: srs-card
+  - &ref_24
+    id: evaluation-of-valvular-heart-disease-25
+    card_source: Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009.yml
+    atom: What is rheumatic fever by definition?
+    definition: A systemic disease of childhood, often recurrent, that follows group A beta-hemolytic streptococcal infection. It is a diffuse inflammatory disease of connective tissue affecting the heart, blood vessels, joints, subcutaneous tissue, and central nervous system.
+    tags: [rheumatic-fever, definition]
+    source_type: srs-card
+  - &ref_25
+    id: evaluation-of-valvular-heart-disease-26
+    card_source: Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009.yml
+    atom: What is the pathogenesis of rheumatic fever?
+    definition: Delayed immune response to infection with group A beta-hemolytic streptococcus. Typically has a latent period of 1-3 weeks, followed by antibody-induced immunological damage to heart valves, joints, subcutaneous tissue, and basal ganglia.
+    tags: [rheumatic-fever, pathogenesis]
+    source_type: srs-card
+  - &ref_26
+    id: evaluation-of-valvular-heart-disease-27
+    card_source: Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009.yml
+    atom: What are the major criteria of the modified Jones criteria for rheumatic fever diagnosis?
+    definition: "1. Carditis (pancarditis affecting pericardium, myocardium, endocardium)\n2. Polyarthritis (flitting arthritis affecting one joint then progressing to adjacent joints)\n3. Subcutaneous nodules\n4. Erythema marginatum\n5. Sydenham's chorea"
+    tags: [rheumatic-fever, jones-criteria]
+    source_type: srs-card
+  - &ref_27
+    id: evaluation-of-valvular-heart-disease-28
+    card_source: Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009.yml
+    atom: What are the minor criteria of the modified Jones criteria for rheumatic fever?
+    definition: "1. Fever\n2. Arthralgia\n3. Elevated ESR and C-reactive protein\n4. Leukocytosis\n5. Prolonged PR interval on ECG (may indicate possible aortic regurgitation)"
+    tags: [rheumatic-fever, jones-criteria]
+    source_type: srs-card
+  - &ref_28
+    id: evaluation-of-valvular-heart-disease-29
+    card_source: Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009.yml
+    atom: What supporting evidence is used to confirm streptococcal infection in rheumatic fever?
+    definition: "1. Increased titers of antistreptococcal antibodies (ASOT and anti-DNase B)\n2. Positive throat culture for group A streptococcal\n3. Recent history of scarlet fever"
+    tags: [rheumatic-fever, diagnosis]
+    source_type: srs-card
+  - &ref_29
+    id: evaluation-of-valvular-heart-disease-30
+    card_source: Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009.yml
+    atom: What is the treatment of choice for primary prevention of rheumatic fever?
+    definition: 'Benzathine penicillin G 1.2 million units intramuscularly in a single dose, OR Penicillin V (pen VK) 500mg orally twice daily for 10 days. For penicillin-allergic patients: Erythromycin for 5-10 days.'
+    tags: [rheumatic-fever, treatment]
+    source_type: srs-card
+  - &ref_30
+    id: infective-endocarditis-31
+    card_source: Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007.yml
+    atom: What is infective endocarditis?
+    definition: Infection of the endocardial surface, typically with vegetations on the endocardium. The heart valves are most commonly affected. It is virtually always fatal if untreated.
+    tags: [definition, endocarditis]
+    source_type: srs-card
+  - &ref_31
+    id: infective-endocarditis-32
+    card_source: Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007.yml
+    atom: How is infective endocarditis classified?
+    definition: 'Four categories: 1) Native valve endocarditis 2) Prosthetic valve endocarditis 3) IV drug abuse-related endocarditis 4) Nosocomial endocarditis. Also classified as acute or subacute.'
+    tags: [classification, endocarditis]
+    source_type: srs-card
+  - &ref_32
+    id: infective-endocarditis-33
+    card_source: Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007.yml
+    atom: What is the difference between acute and subacute infective endocarditis?
+    definition: 'Acute: marked toxicity, progresses over days to weeks, causes valvular destruction and metastatic infection. Usually caused by Staphylococcus aureus. Fatal in <6 weeks if untreated. Subacute: evolves over weeks to months with modest toxicity. Usually caused by Streptococcus viridans. Takes longer than 6 weeks to be fatal if untreated.'
+    tags: [acute, subacute, endocarditis, prognosis]
+    source_type: srs-card
+  - &ref_33
+    id: infective-endocarditis-34
+    card_source: Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007.yml
+    atom: What is the annual incidence and epidemiology of infective endocarditis?
+    definition: 'Annual incidence: 15-20,000 cases per year. Fourth leading cause of life-threatening infectious disease. Slight predilection for males (ratio 1.7:1). Mitral valve affected in up to 45% of cases, aortic valve in 36%.'
+    tags: [epidemiology, endocarditis, incidence]
+    source_type: srs-card
+  - &ref_34
+    id: infective-endocarditis-35
+    card_source: Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007.yml
+    atom: What are the most common etiological agents of infective endocarditis?
+    definition: 'Streptococcus group: up to 80% of cases. Staphylococcus: 20-35%. Gram-negative aerobic bacilli: up to 13%. Other bacteria and fungi. Culture-negative endocarditis: up to 24% of cases.'
+    tags: [microbiology, endocarditis, organisms]
+    source_type: srs-card
+  - &ref_35
+    id: infective-endocarditis-36
+    card_source: Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007.yml
+    atom: What are the main predisposing factors for infective endocarditis?
+    definition: 'Structural heart disease: Rheumatic heart disease (76%), congenital heart disease, degenerative cardiac lesions, prosthetic valves. IV drug use (highest risk in patients <40 years). Approximately 75% of patients have pre-existing structural cardiac abnormality.'
+    tags: [risk factors, predisposing factors, endocarditis]
+    source_type: srs-card
+scenarios:
+  - name: ECG Interpretation & Diagnosis Chain
+    description: Systematically interpret ECG findings to differentiate cardiac pathology
+    atom_ids: [ecg-interpretation-1, ecg-interpretation-2, ecg-interpretation-3, ecg-interpretation-4, ecg-interpretation-5]
+    parameters: {heart_rate: {type: numeric, unit: bpm, variance: {bradycardia: {min: 30, max: 59, interpretation: sinus bradycardia or AV block}, normal: {min: 60, max: 100, interpretation: normal sinus rhythm}, tachycardia: {min: 101, max: 200, interpretation: sinus tachycardia or SVT}}}, pr_interval: {type: numeric, unit: milliseconds, variance: {short: {min: 60, max: 119, interpretation: short PR interval (WPW risk)}, normal: {min: 120, max: 200, interpretation: normal AV conduction}, prolonged: {min: 201, max: 400, interpretation: first-degree AV block}}}, qrs_duration: {type: numeric, unit: milliseconds, variance: {narrow: {min: 60, max: 119, interpretation: supraventricular origin}, wide: {min: 120, max: 200, interpretation: bundle branch block or ventricular origin}}}, st_segment: {type: categorical, variance: {depression: {interpretation: ischemia or NSTEMI}, elevation: {interpretation: 'STEMI, pericarditis, or normal variant'}, isoelectric: {interpretation: normal or old MI}}}, t_wave: {type: categorical, variance: {inverted: {interpretation: 'ischemia, PE, or old MI'}, peaked: {interpretation: hyperkalemia risk}, normal: {interpretation: normal variant}}}}
+    examples: [{case: 45-year-old male with chest pain, parameters: {heart_rate: 88, pr_interval: 160, qrs_duration: 100, st_segment: depression, t_wave: inverted}, reasoning: NSTEMI - ST depression + T-wave inversion in anterolateral leads suggests ongoing ischemia, recommendation: 'Troponin, BNP, chest imaging; consider urgent catheterization'}, {case: 30-year-old athlete, parameters: {heart_rate: 52, pr_interval: 160, qrs_duration: 100, st_segment: isoelectric, t_wave: normal}, reasoning: Normal athletic bradycardia - heart rate <60 in trained athlete is expected, recommendation: No intervention; normal variant}]
+  - name: CAD Risk Stratification & Severity Assessment
+    description: Stratify CAD risk based on presentation and diagnostic findings
+    atom_ids: [ecg-interpretation-6, coronary-artery-disease-(cad)-7, coronary-artery-disease-(cad)-8, coronary-artery-disease-(cad)-9, coronary-artery-disease-(cad)-10, coronary-artery-disease-(cad)-11, coronary-artery-disease-(cad)-12]
+    parameters: {age: {type: numeric, unit: years, variance: {young: {min: 18, max: 40, risk_modifier: low}, middle: {min: 41, max: 60, risk_modifier: moderate}, elderly: {min: 61, max: 100, risk_modifier: high}}}, troponin: {type: numeric, unit: ng/mL, variance: {negative: {max: 0.04, interpretation: no acute myocardial injury}, low_positive: {min: 0.04, max: 0.5, interpretation: minor myocardial injury}, high_positive: {min: 0.5, max: 10, interpretation: acute MI}}}, bnp: {type: numeric, unit: pg/mL, variance: {normal: {max: 100, interpretation: no heart failure}, elevated: {min: 101, max: 500, interpretation: mild ventricular dysfunction}, high: {min: 501, max: 5000, interpretation: severe heart failure risk}}}, ejection_fraction: {type: numeric, unit: '%', variance: {normal: {min: 50, max: 100, interpretation: preserved systolic function}, mildly_reduced: {min: 40, max: 49, interpretation: mild LV dysfunction}, severely_reduced: {min: 0, max: 39, interpretation: cardiogenic shock risk}}}, risk_factors: {type: count, variance: {low: {min: 0, max: 1, interpretation: low CAD risk}, moderate: {min: 2, max: 3, interpretation: moderate CAD risk}, high: {min: 4, max: 10, interpretation: high CAD risk}}}}
+    examples: [{case: 55-year-old diabetic with acute chest pain, parameters: {age: 55, troponin: 0.8, bnp: 450, ejection_fraction: 42, risk_factors: 4}, reasoning: STEMI with cardiogenic shock risk - elevated troponin + reduced EF + high risk profile, recommendation: Urgent PCI; ICU monitoring; inotropic support if SBP <90}]
+  - name: Valvular Heart Disease Differential
+    description: Differentiate between stenosis, regurgitation, and combined lesions
+    atom_ids: [coronary-artery-disease-(cad)-13, coronary-artery-disease-(cad)-14, coronary-artery-disease-(cad)-15, coronary-artery-disease-(cad)-16, coronary-artery-disease-(cad)-17, coronary-artery-disease-(cad)-18]
+    parameters: {murmur_timing: {type: categorical, variance: {systolic: {interpretation: mitral regurgitation or aortic stenosis}, diastolic: {interpretation: aortic regurgitation or mitral stenosis}, continuous: {interpretation: patent ductus arteriosus or AV fistula}}}, murmur_location: {type: categorical, variance: {apex: {interpretation: mitral valve pathology}, base_right: {interpretation: aortic valve pathology}, tricuspid_area: {interpretation: tricuspid pathology}}}, jet_velocity: {type: numeric, unit: m/s, variance: {mild: {min: 1, max: 2, interpretation: mild stenosis}, moderate: {min: 2, max: 4, interpretation: moderate stenosis}, severe: {min: 4, max: 10, interpretation: severe stenosis}}}, ventricular_size: {type: categorical, variance: {normal: {interpretation: preserved chamber dimensions}, dilated: {interpretation: chronic volume overload}, hypertrophied: {interpretation: chronic pressure overload}}}, ef: {type: numeric, unit: '%', variance: {preserved: {min: 50, max: 100, interpretation: preserved systolic function}, reduced: {min: 0, max: 49, interpretation: ventricular decompensation}}}}
+    examples: [{case: 35-year-old with history of rheumatic fever and dyspnea, parameters: {murmur_timing: diastolic, murmur_location: apex, jet_velocity: 3.5, ventricular_size: dilated, ef: 45}, reasoning: Moderate mitral stenosis with secondary LV dilation and reduced EF from chronic hemodynamic burden, recommendation: 'Echocardiogram, consider valve repair/replacement if EF continues declining'}]
+  - name: Infective Endocarditis Diagnosis & Severity
+    description: Apply Duke criteria and assess severity of IE
+    atom_ids: [coronary-artery-disease-(cad)-19, coronary-artery-disease-(cad)-20, coronary-artery-disease-(cad)-21, coronary-artery-disease-(cad)-22, coronary-artery-disease-(cad)-23, coronary-artery-disease-(cad)-24]
+    parameters: {fever: {type: numeric, unit: °C, variance: {low_grade: {min: 37.5, max: 38.5, interpretation: subacute IE}, moderate: {min: 38.5, max: 39.5, interpretation: subacute to acute IE}, high: {min: 39.5, max: 41, interpretation: acute IE or sepsis}}}, blood_cultures: {type: categorical, variance: {negative: {interpretation: culture-negative IE; consider fungal or fastidious organisms}, positive_strep: {interpretation: streptococcal IE; more indolent course}, positive_staph: {interpretation: staphylococcal IE; more aggressive}}}, vegetation_size: {type: numeric, unit: mm, variance: {small: {min: 2, max: 5, interpretation: may resolve with antibiotics alone}, large: {min: 5, max: 20, interpretation: high risk of embolization; consider early surgery}}}, prosthetic_valve: {type: boolean, variance: {'false': {interpretation: native valve IE; slower progression}, 'true': {interpretation: prosthetic valve IE; higher mortality}}}, embolic_phenomena: {type: count, variance: {none: {min: 0, max: 0, interpretation: lower embolic risk}, one: {min: 1, max: 1, interpretation: moderate embolic risk}, multiple: {min: 2, max: 10, interpretation: 'high embolic risk; brain, kidney, spleen involvement'}}}}
+    examples: [{case: 45-year-old IV drug user with fever and new murmur, parameters: {fever: 39.2, blood_cultures: positive_staph, vegetation_size: 12, prosthetic_valve: false, embolic_phenomena: 2}, reasoning: Acute staphylococcal IE with multiple septic emboli - high risk for septic shock and organ failure, recommendation: Vancomycin + gentamicin + rifampin; urgent cardiac surgery consultation; ICU admission}]
+  - name: Chest Pain Differential & Triage
+    description: Differentiate ACS, pericarditis, aortic dissection, and other causes
+    atom_ids: [evaluation-of-valvular-heart-disease-25, evaluation-of-valvular-heart-disease-26, evaluation-of-valvular-heart-disease-27, evaluation-of-valvular-heart-disease-28, evaluation-of-valvular-heart-disease-29, evaluation-of-valvular-heart-disease-30]
+    parameters: {chest_pain_character: {type: categorical, variance: {pressure: {interpretation: typical ACS presentation}, pleuritic: {interpretation: 'pericarditis, PE, pneumonia'}, tearing: {interpretation: aortic dissection until proven otherwise}, sharp: {interpretation: 'pericarditis, musculoskeletal, PE'}}}, pain_radiation: {type: categorical, variance: {left_arm: {interpretation: typical ACS}, back: {interpretation: 'aortic dissection, musculoskeletal'}, jaw_teeth: {interpretation: 'atypical ACS, TMJ dysfunction'}, none: {interpretation: 'pericarditis, musculoskeletal, anxiety'}}}, troponin_serial: {type: categorical, variance: {negative_both: {interpretation: low ACS probability; consider other causes}, positive_rise_fall: {interpretation: acute myocardial necrosis; ACS diagnosis confirmed}, positive_flat: {interpretation: 'chronic myocardial injury; consider HF, CKD'}}}, st_ecg_pattern: {type: categorical, variance: {normal: {interpretation: 'consider unstable angina, pericarditis, PE'}, elevation: {interpretation: STEMI (most critical)}, depression: {interpretation: NSTEMI or posterior MI}}}, time_symptom_onset: {type: numeric, unit: hours, variance: {immediate: {min: 0, max: 3, interpretation: PCI candidate; reperfusion therapy window}, delayed: {min: 3, max: 24, interpretation: coronary angiography; delayed PCI possible}, chronic: {min: 24, max: 1000, interpretation: chronic phase; assess for complications}}}}
+    examples: [{case: 60-year-old with acute onset tearing chest pain radiating to back, parameters: {chest_pain_character: tearing, pain_radiation: back, troponin_serial: negative_both, st_ecg_pattern: normal, time_symptom_onset: 1}, reasoning: 'Aortic dissection presentation - tearing pain to back, normal ECG/troponin. This is NOT ACS despite chest pain.', recommendation: STAT chest CT with IV contrast; cardiothoracic surgery consult; ICU admission; BP control with IV agents}, {case: '45-year-old with acute substernal pressure, ST elevation in V1-V4', parameters: {chest_pain_character: pressure, pain_radiation: left_arm, troponin_serial: positive_rise_fall, st_ecg_pattern: elevation, time_symptom_onset: 0.5}, reasoning: Anterior STEMI - IMMEDIATE PCI candidate; within reperfusion window, recommendation: 'Dual antiplatelet therapy (aspirin 300mg + P2Y12 inhibitor), LMWH, urgent cardiac catheterization for primary PCI'}]
+  - name: Arrhythmia Recognition & Management
+    description: Identify and manage common cardiac arrhythmias on ECG
+    atom_ids: [coronary-artery-disease-(cad)-16, coronary-artery-disease-(cad)-17, coronary-artery-disease-(cad)-18, coronary-artery-disease-(cad)-19, coronary-artery-disease-(cad)-20, coronary-artery-disease-(cad)-21]
+    parameters: {rhythm_regularity: {type: categorical, variance: {regular: {interpretation: 'sinus, flutter, VT, SVT'}, irregularly_irregular: {interpretation: atrial fibrillation}, regularly_irregular: {interpretation: 'second-degree AV block, ectopy'}}}, qrs_width: {type: categorical, variance: {narrow: {interpretation: supraventricular origin}, wide: {interpretation: ventricular origin or aberrancy}}}, p_wave_visible: {type: boolean, variance: {'true': {interpretation: sinus or organized rhythm}, 'false': {interpretation: 'AF, VT, or rapid SVT with buried P'}}}, heart_rate: {type: numeric, unit: bpm, variance: {slow: {min: 30, max: 59, interpretation: bradyarrhythmia; consider pacing}, normal: {min: 60, max: 100, interpretation: normal range}, fast: {min: 100, max: 300, interpretation: tachyarrhythmia; consider rate control or cardioversion}}}, hemodynamics: {type: categorical, variance: {stable: {interpretation: medical management acceptable}, unstable: {interpretation: emergency synchronized cardioversion indicated}}}}
+    examples: [{case: '70-year-old with rapid irregular rhythm at 150 bpm, narrow QRS', parameters: {rhythm_regularity: irregularly_irregular, qrs_width: narrow, p_wave_visible: false, heart_rate: 150, hemodynamics: stable}, reasoning: 'Atrial fibrillation with rapid ventricular response - irregular rhythm, no visible P waves, narrow complex', recommendation: Rate control with beta-blocker or CCB; anticoagulation if CHA2DS2-VASc ≥1; consider ablation if refractory}]
+verification_summary:
+  cards_covered: 6
+  atoms_per_card:
+    ECG Interpretation - CMED4IIM2 - 2026_pages-001-010.yml: [*ref_0, *ref_1, *ref_2, *ref_3, *ref_4, *ref_5]
+    Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-001-010.yml: [*ref_6, *ref_7, *ref_8, *ref_9, *ref_10, *ref_11]
+    Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-011-020.yml: [*ref_12, *ref_13, *ref_14, *ref_15, *ref_16, *ref_17]
+    Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-021-023.yml: [*ref_18, *ref_19, *ref_20, *ref_21, *ref_22, *ref_23]
+    Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009.yml: [*ref_24, *ref_25, *ref_26, *ref_27, *ref_28, *ref_29]
+    Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007.yml: [*ref_30, *ref_31, *ref_32, *ref_33, *ref_34, *ref_35]
+  acceptance_criteria:
+    min_atoms_required: 15
+    atoms_extracted: 36
+    criteria_met: true
+    scenarios_with_parameterization: 6
+    all_parameters_defined: true
+    output_format_valid: YAML

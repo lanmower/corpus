@@ -1,0 +1,681 @@
+metadata:
+  title: Geriatric Triage Scenarios
+  version: '1.0'
+  generated: '2026-05-04'
+  source: SRS cards from geriatric
+  total_atoms: 99
+  total_scenarios: 3
+atoms:
+  - id: geriatric-1
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the prevalence of falls in adults aged 65+ in the previous year?
+    definition: "Over 30% of adults age 65 years and above report to have fallen in the previous year."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-2
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What percentage of adults aged 75+ report falls in the previous two years?
+    definition: "Up to 75% of adults will report to have fallen in the previous two years."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-3
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the annual fall rate in old age homes?
+    definition: "50% per year, with half of these having recurrent falls (more than one fall per year)."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-4
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What percentage of falls are associated with acute illness?
+    definition: "10% of falls are capturing an acute illness."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-5
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What percentage of falls result in serious injuries or fractures?
+    definition: "10% of falls are associated with serious injuries, with fractures occurring in 5% of individuals who have fallen."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-6
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What proportion of patients who fall report fear of falling?
+    definition: Over one third of patients who have fallen report fear of falling, regardless of whether they had an injury.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-7
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the three categories of factors that cause falls in older people?
+    definition: Extrinsic (environmental), intrinsic (physiological), and situational factors.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-8
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the main components needed to maintain postural control?
+    definition: Motor coordination (frontal lobe, motor cortex, basal ganglia, cerebellar integration), sensory inputs (visual, vestibular, proprioception), biomechanics (skeletal integrity, joint stability, muscle strength).
+    tags: []
+    source_type: srs-card
+  - id: geriatric-9
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does vision contribute to fall prevention?
+    definition: Vision allows individuals to see where they are going. Blindness or deterioration in vision increases fall risk.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-10
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the role of the vestibular system in fall prevention?
+    definition: The vestibular system is necessary for balance. Vestibular dysfunction increases fall risk.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-11
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does postural hypotension relate to falls in elderly patients?
+    definition: Patients with postural hypotension tend to fall, especially if they experience dizziness or syncope.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-12
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the relationship between cardiac syncope and falls?
+    definition: Dizziness or syncope from cardiac causes increases fall risk in elderly patients.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-13
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How do musculoskeletal problems contribute to falls?
+    definition: Pain, deformity, or loss of function in joints, bones, and feet increase fall risk.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-14
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Why do patients with dementia and delirium have increased fall risk?
+    definition: Central nervous system dysfunction in dementia and delirium impairs cognitive and motor control, leading to falls.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-15
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How do medications increase fall risk?
+    definition: Drugs can cause sedation, dizziness, confusion, affecting the central nervous system and balance.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-16
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does stroke increase fall risk?
+    definition: Stroke can cause hemiplegia or hemiparesis, which impairs motor control and balance.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-17
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What neurological conditions increase fall risk?
+    definition: Seizures, pyramidal symptoms, cerebral dysfunction, spasticity, paraplegia, paraparesis, and sensory abnormalities.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-18
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does muscle weakness increase fall risk?
+    definition: Myopathies and peripheral neuropathy cause muscle weakness, impairing balance and strength needed for safe movement.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-19
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the importance of detailed history in fall assessment?
+    definition: A detailed history helps identify exact circumstances of the fall, previous falls, use of assistive devices, and associated symptoms.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-20
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What assistive devices should be assessed during fall evaluation?
+    definition: Walking frames, walking sticks, glasses, and hearing aids - checking if they are being used properly.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-21
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What systems should be reviewed during detailed history of falls?
+    definition: Nervous system (confusion, seizures, weakness, hallucinations), cardiovascular system (chest pain, orthostatic symptoms), musculoskeletal (joint pain), and vision.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-22
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What should medication review include in fall assessment?
+    definition: Prescribed medications, over-the-counter medications, medications from others, self-made medications, and supplements.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-23
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What does environmental assessment involve in fall prevention?
+    definition: "Assessment by physiotherapist of home hazards: loose rugs, cords, baby toys, pets, and identification of environmental modifications like rails and mats."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-24
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the Timed Up and Go test and what does it measure?
+    definition: Patient sits, stands without holding on, walks 3 meters, turns, and sits down. Assesses proximal muscle strength, gait, arm swing, turning ability, and walking speed.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-25
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What Timed Up and Go test times indicate fall risk?
+    definition: Less than 10 seconds indicates freely mobile with lower fall risk. More than 30 seconds indicates impaired mobility and higher fall risk.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-26
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the significance of steps taken during turning in fall assessment?
+    definition: Less than 3 steps to turn indicates lower fall risk. More than 3 steps indicates higher risk of falling.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-27
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What types of exercise are beneficial for fall prevention?
+    definition: "Tai Chi and Yoga (likely referred to as \"Rekhae\") improve muscle strength and postural reflexes."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-28
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the main prevention strategies for falls in older adults?
+    definition: Improvement of postural reflexes and muscle strength through exercise, walking aids, proper footwear, foot care, prevention and treatment of osteoporosis.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-29
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Who are considered high-risk fall patients requiring comprehensive geriatric assessment?
+    definition: Patients with falls and injury, recurrent falls in the previous year, or a single fall with abnormal gait.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-30
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What professionals are needed in a multidisciplinary fall management team?
+    definition: Physiotherapist, medical team, occupational therapist, and other allied health professionals depending on patient need.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-31
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the role of physiotherapist in fall management?
+    definition: Strength and balance training, assessment of assistive device needs, addressing fear of falling, and behavioral modification.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-32
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the role of the medical team in fall management?
+    definition: Manage contributory medical problems, conduct medication review, and stop medications that increase fall risk.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-33
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the role of occupational therapist in fall management?
+    definition: Modify the environment to minimize risk, educate patient on home safety, and address situational factors.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-34
+    card_source: Geriatric - Falls - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How should alcohol use be addressed in fall management?
+    definition: Alcohol history should be documented and addressed as a situational factor in comprehensive fall management.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-35
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What physiological change occurs from birth until age 35?
+    definition: All body systems and organs develop and reach peak function at age 35. Peak function depends on lifestyle factors like exercise and smoking status.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-36
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What happens to physiological function after age 35?
+    definition: There is a decline in physiological function after age 35. The rate of decline depends on the peak function achieved - those with higher peaks decline less severely than those with lower peaks.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-37
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Define frailty.
+    definition: "Frailty is defined as the loss of a patient's ability to extend minor environmental stresses because of reduced reserve in the physiological function of several organ systems."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-38
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is a physiological reserve line in frailty?
+    definition: The physiological reserve line is the level below which patients cannot function normally. When physiological decline passes this reserve line, patients are deemed frail and have high risk of disability.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-39
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How do robust individuals respond to stressors?
+    definition: Robust individuals (without frailty) experience a dip in physiological function when exposed to stressors (infection, fall, trauma, surgery), but recover back to their baseline.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-40
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How do pre-frail individuals respond to stressors?
+    definition: Pre-frail individuals experience a dip in physiological function when exposed to stressors, but do not fully recover back to their baseline after recovery.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-41
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How do frail individuals respond to stressors?
+    definition: Frail individuals hardly recover back to their baseline after exposure to stressors and typically become dependent, often unable to return home after hospitalization and requiring institutional care.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-42
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is sarcopenia and its relationship to frailty?
+    definition: Sarcopenia is reduced muscle strength and is a key feature of frailty. Frailty is associated with poor health outcomes.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-43
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the five components of the Cardiovascular Health Study (CHS) frailty phenotype?
+    definition: "The five components are: (1) unintentional weight loss >5% in previous year, (2) weakness measured by hand grip strength, (3) self-reported exhaustion or poor endurance, (4) slowness (timed 3-meter walk), and (5) low physical activity (self-reported)."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-44
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How is frailty classified using the CHS frailty phenotype?
+    definition: Patients meeting 3 or more of the 5 CHS criteria are regarded as frail. Patients with 1-2 criteria are classified as pre-frail.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-45
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the criteria for the Osteoporotic Fracture (OF) Frailty Index?
+    definition: "The OF Frailty Index assesses: (1) weight loss >5% over two-year period (regardless of intent), (2) inability to rise from a chair 5 times without using arms, and (3) reduced energy levels. Patients with 2 or more criteria are regarded as frail."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-46
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the Frailty Index or Deficit Accumulation method?
+    definition: The Frailty Index involves selecting 30 health deficits (symptoms, signs, diseases, disabilities, abnormal labs/imaging/ECGs) and counting how many the patient has. The score is calculated by dividing the number of deficits present by 30. A score ≥0.25 indicates frailty.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-47
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the Frailty Scale classification system?
+    definition: "The Frailty Scale classifies patients by functional ability: 1 = very fit; 5 = mild frail (need help with instrumental ADLs like transport, household chores, medication, finances); 9 = terminally ill (life expectancy <6 months)."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-48
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the two main pathways to frailty?
+    definition: "Primary frailty: genetic factors, atrocities, chronic inflammation, low exercise, malnutrition. Secondary frailty: chronic inflammation, genetic factors, low exercise leading to clinical disease, which then causes frailty and disability."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-49
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the relationship between frailty and chronic disease?
+    definition: Patients with primary frailty are at higher risk of developing chronic diseases, which can lead to secondary frailty - creating a vicious cycle. Patients with secondary frailty may also develop primary frailty characteristics.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-50
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What preventive measures can reduce frailty?
+    definition: "Prevention includes: regular exercise, balanced diet, smoking cessation, alcohol reduction, disease management (e.g., diabetes control), and lifestyle modifications. Prevention is possible before reaching irreversible frailty stages."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-51
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What happens once a patient reaches irreversible frailty?
+    definition: Once a patient reaches an irreversible stage of frailty, treatment shifts from prevention/rehabilitation to palliation (comfort care and symptom management).
+    tags: []
+    source_type: srs-card
+  - id: geriatric-52
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the main risk factors for frailty?
+    definition: "Risk factors include: age >80 years, female gender, smoking, depression, chronic diseases, and being underweight."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-53
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the major consequences of frailty?
+    definition: "Consequences include: falls, loss of ability to perform activities of daily living, disability, increased hospitalization risk with infections, malnutrition, cognitive impairment, osteoporosis, orthostatic hypertension, and increased mortality risk."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-54
+    card_source: GeriatriC - Frailty - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What rehabilitation options are available for frail patients?
+    definition: "Rehabilitation options include: exercise programs, disease management (even though genetics and age cannot be changed), lifestyle modifications, and activity enhancement. These can improve outcomes even in advanced frailty."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-55
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the prevalence of urinary incontinence in community-dwelling women above age 60?
+    definition: "Urinary incontinence affects 30% of community-dwelling women above age 60. Of these, 5-10% have severe urinary incontinence."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-56
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the prevalence of urinary incontinence in community-dwelling men above age 60?
+    definition: "Urinary incontinence affects 6% of community-dwelling men above age 60."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-57
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the prevalence of urinary incontinence in frail and cognitively impaired community-dwellers?
+    definition: "Urinary incontinence affects 30-50% of frail and cognitively impaired community-dwellers."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-58
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the prevalence of urinary incontinence in individuals living in nursing homes?
+    definition: "Urinary incontinence affects 50-70% of individuals in nursing homes, with many having severe incontinence."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-59
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What age-related change occurs in the detrusor muscle?
+    definition: As one ages, there is an increased number of involuntary detrusor contractions. The detrusor muscle becomes overactive with age.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-60
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is post-void residual volume and how does it change with age?
+    definition: Post-void residual volume is the urine that remains in the bladder after urination. It increases with age, affecting up to 200mL in males.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-61
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the relationship between nocturnal ADH secretion and incontinence in the elderly?
+    definition: There is increased nocturnal fluid resorption as one ages due to low nocturnal antidiuretic hormone (ADH) secretion, contributing to nocturnal incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-62
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does natriuretic peptide contribute to nocturnal incontinence in the elderly?
+    definition: Inappropriate nocturnal production of arterial natriuretic peptide in the elderly contributes to increased nocturnal fluid resorption and nocturnal incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-63
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does prostate enlargement affect the risk of incontinence in aging men?
+    definition: "There is increased prostate volume in men as they age, which can lead to urethral obstruction in approximately 50% of cases."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-64
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does bladder capacity change with age?
+    definition: Bladder capacity decreases with age, reducing the amount of urine the bladder can hold.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-65
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What happens to detrusor contractility with age?
+    definition: Detrusor contractility decreases with age. The detrusor muscle cannot sustain adequate tension during urination, leading to incomplete bladder emptying and increased post-void residual volume.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-66
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the ability to postpone micturition and how does it change with age?
+    definition: The ability to postpone urination (to delay going to the bathroom) decreases with age. Younger individuals can hold urine longer, but this ability reduces in the elderly.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-67
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does urethral closing ability change in aging women?
+    definition: There is decreased urethral closing ability in women as they age, especially in menopausal women, due to estrogen deficiency.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-68
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the six types of urinary incontinence?
+    definition: "The six types are: (1) stress, (2) urge, (3) overflow, (4) reflex, (5) functional, and (6) mixed incontinence."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-69
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Define stress urinary incontinence and its mechanism.
+    definition: Stress urinary incontinence occurs due to weakening of the pelvic floor muscles. When intra-abdominal pressure increases (coughing, laughing, sneezing), urine leaks.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-70
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Define urge incontinence and its mechanism.
+    definition: Urge incontinence is characterized by an overwhelming urge to urinate frequently, driven by an overactive bladder (detrusor overactivity).
+    tags: []
+    source_type: srs-card
+  - id: geriatric-71
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Define overflow incontinence and its mechanism.
+    definition: Overflow incontinence occurs when something blocks urinary flow. The bladder becomes distended and eventually stretches the urethra, causing urine to leak.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-72
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Define reflex incontinence and its mechanism.
+    definition: Reflex incontinence occurs due to damage in the neural connections between the urinary system and the brain. The person loses the ability to sense the need to urinate, and urine leaks involuntarily.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-73
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Define functional incontinence and its mechanism.
+    definition: Functional incontinence occurs when there is no underlying problem with the urogenital system itself, but something prevents the patient from reaching the bathroom in time, such as severe illness, fractures, or cognitive impairment.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-74
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Define mixed incontinence.
+    definition: Mixed incontinence is usually a combination of stress and urge incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-75
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the DRIP mnemonic for reversible causes of acute urinary incontinence?
+    definition: "DRIP stands for: D=Delirium, R=Restricted mobility, I=Infection/Inflammation, P=imperfection/Polyuria/Pills. These are reversible conditions causing acute incontinence."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-76
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What does the letter D stand for in the DRIP mnemonic?
+    definition: D = Delirium, a reversible cause of acute urinary incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-77
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What does the first R stand for in the DRIP mnemonic?
+    definition: R = Restricted mobility. Patients with pain, osteoarthritis, rheumatoid arthritis, fractures, or postoperative status cannot get to the toilet in time.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-78
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What does I stand for in the DRIP mnemonic and what are examples?
+    definition: I = Infection and Inflammation. Examples include urinary tract infections and atrophic urethritis or vaginitis in postmenopausal women.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-79
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What does the second R stand for in the DRIP mnemonic?
+    definition: R = Retention, which can result from anticholinergic drugs, fecal impaction, or bladder outflow obstruction.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-80
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What does P stand for in the DRIP mnemonic (first meaning)?
+    definition: P = imperfection (fecal impaction), a reversible cause of acute urinary incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-81
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What does P stand for in the DRIP mnemonic (second meaning)?
+    definition: P = Polyuria. Causes include glycosuria (glucose in urine), hypercalcemia, and excessive intake of caffeine or alcohol.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-82
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What does P stand for in the DRIP mnemonic (third meaning)?
+    definition: P = Pills (medications) that cause incontinence, including diuretics, anticholinergic drugs, alpha blockers, alcohol, and calcium channel blockers.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-83
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is nocturnal polyuria and what causes it?
+    definition: Nocturnal polyuria is excessive urination at night. It can be caused by conditions like cardiac failure.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-84
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the chronic risk factors for urinary incontinence related to childbirth?
+    definition: Vaginal childbirth, especially with neuromuscular damage during delivery, is a risk factor for chronic urinary incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-85
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is pelvic floor prolapse and its relationship to incontinence?
+    definition: Pelvic floor prolapse is a risk factor for chronic urinary incontinence in women.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-86
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does prostate surgery increase the risk of incontinence?
+    definition: Post-transurethral resection of the prostate (TURP), a surgical procedure for prostate cancer, is a risk factor for chronic urinary incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-87
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does obesity increase the risk of urinary incontinence?
+    definition: Obesity increases the risk of incontinence due to increased intra-abdominal pressure, which puts stress on the pelvic floor and bladder.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-88
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does smoking increase the risk of urinary incontinence?
+    definition: Smoking is a chronic risk factor for developing urinary incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-89
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does cognitive decline increase the risk of urinary incontinence?
+    definition: Cognitive decline is a chronic risk factor for urinary incontinence, as patients may not recognize the need to urinate or be able to reach the bathroom.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-90
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Is diabetes mellitus a risk factor for urinary incontinence?
+    definition: Yes, diabetes mellitus is an independent risk factor for urinary incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-91
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Is cerebral vascular accident a risk factor for urinary incontinence?
+    definition: Yes, patients who have had cerebral vascular accidents are at increased risk of urinary incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-92
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the non-pharmacological management strategies for urinary incontinence?
+    definition: "Non-pharmacological management includes: (1) prevention (avoiding caffeine and alcohol), (2) Kegel exercises (pelvic floor exercises), (3) prompted voiding or timed toileting, and (4) bladder training exercises."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-93
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is prompted timed voiding?
+    definition: Prompted timed voiding (also called scheduled voiding) involves having the patient go to the bathroom at specific scheduled times without waiting for the urge to urinate.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-94
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What pharmacological treatment is used for stress/urge incontinence in women?
+    definition: Anticholinergic medications are used to treat stress and urge incontinence in women, though there are concerns about their adverse effects as discussed in the iatrogenesis lecture.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-95
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What pharmacological treatment is used for overactive bladder/urge incontinence in men?
+    definition: Alpha blockers are used to treat overactive bladder or urge incontinence in men.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-96
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the indications for chronic indwelling urinary catheterization?
+    definition: "Indications include: (1) urinary retention causing persistent overflow incontinence, UTIs, or renal failure that cannot be corrected by treatment or surgery, (2) inability to perform intermittent catheterization, (3) contamination concerns (e.g., pressure ulcers or perineal wounds), and (4) terminal illness or patient/caregiver preference."
+    tags: []
+    source_type: srs-card
+  - id: geriatric-97
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: When is catheterization indicated for urinary retention?
+    definition: Catheterization is indicated when urinary retention cannot be corrected by other treatments or surgery, and when the patient cannot perform intermittent self-catheterization.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-98
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What complications of urinary retention warrant catheterization?
+    definition: Chronic catheterization is considered when urinary retention causes recurrent urinary tract infections, renal failure, or persistent overflow incontinence.
+    tags: []
+    source_type: srs-card
+  - id: geriatric-99
+    card_source: Geriatric - Urinary Incontinence - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: When is catheterization indicated due to contamination concerns?
+    definition: Catheterization is indicated in patients with pressure ulcers or wounds in the perineal area that need to be kept clean and dry to heal.
+    tags: []
+    source_type: srs-card
+scenarios:
+  - name: Geriatric - Falls — Diagnostic Reasoning Chain
+    description: Apply Geriatric - Falls atoms in sequence to triage a presenting patient
+    atom_ids:
+      - geriatric-1
+      - geriatric-2
+      - geriatric-3
+      - geriatric-4
+      - geriatric-5
+      - geriatric-6
+      - geriatric-7
+      - geriatric-8
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Geriatric - Falls guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Geriatric - Falls algorithm.
+  - name: GeriatriC - Frailty — Diagnostic Reasoning Chain
+    description: Apply GeriatriC - Frailty atoms in sequence to triage a presenting patient
+    atom_ids:
+      - geriatric-35
+      - geriatric-36
+      - geriatric-37
+      - geriatric-38
+      - geriatric-39
+      - geriatric-40
+      - geriatric-41
+      - geriatric-42
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per GeriatriC - Frailty guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per GeriatriC - Frailty algorithm.
+  - name: Geriatric - Urinary Incontinence — Diagnostic Reasoning Chain
+    description: Apply Geriatric - Urinary Incontinence atoms in sequence to triage a presenting patient
+    atom_ids:
+      - geriatric-55
+      - geriatric-56
+      - geriatric-57
+      - geriatric-58
+      - geriatric-59
+      - geriatric-60
+      - geriatric-61
+      - geriatric-62
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Geriatric - Urinary Incontinence guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Geriatric - Urinary Incontinence algorithm.

@@ -1,0 +1,2071 @@
+metadata:
+  title: Nephrology Triage Scenarios
+  version: '1.0'
+  generated: '2026-05-04'
+  source: SRS cards from nephrology
+  total_atoms: 296
+  total_scenarios: 11
+atoms:
+  - id: nephrology-1
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What is the definition of Acute Kidney Injury (AKI)?
+    definition: A syndrome characterized by rapid fall of GFR (generally within hours to days), retention of nitrogenous and non-nitrogenous waste products, and disordered electrolytes, acid-base, and fluid homeostasis.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-2
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What is the epidemiology of AKI?
+    definition: "AKI is responsible for 5-10% of general hospital admissions, 20-25% of sepsis patients develop AKI, 50% with septic shock develop AKI, and 50% of ICU admissions develop AKI. Mortality ranges from 20-60% in ICU."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-3
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What are the three stages of AKI classification?
+    definition: "Stage 1: Serum creatinine increases >26 μmol/L within 48h or 1.5-1.9x baseline, or urine output <0.5 mL/kg/hr for >6h. Stage 2: Serum creatinine 2-3x baseline or urine output <0.5 mL/kg/hr for >12h. Stage 3: Serum creatinine >3x baseline or >354 μmol/L, or urine output <0.3 mL/kg/hr for >24h."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-4
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What are the three main classifications of AKI?
+    definition: Pre-renal AKI (reduced kidney blood flow), Intrinsic AKI (kidney parenchymal damage to vasculature, glomeruli, or tubules), and Post-renal AKI (obstruction of urinary flow).
+    tags: []
+    source_type: srs-card
+  - id: nephrology-5
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What causes Pre-renal AKI?
+    definition: Acute hemorrhage, volume depletion, low cardiac output, sepsis, chronic congestive cardiac failure, cirrhosis, and vasomotor drugs (NSAIDs, ACE inhibitors, ARBs).
+    tags: []
+    source_type: srs-card
+  - id: nephrology-6
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What causes Intrinsic AKI?
+    definition: Acute Tubular Necrosis (ATN) from ischemic or nephrotoxic injury (hemoglobin, myoglobin, myeloma casts, nephrotoxic drugs, contrast), tubulointerstitial nephritis, acute glomerulonephritis, and vascular causes (vasculitis, thrombosis, severe hypertension).
+    tags: []
+    source_type: srs-card
+  - id: nephrology-7
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What causes Post-renal AKI?
+    definition: Obstruction of urinary flow at any level - bladder outflow obstruction or ureteral obstruction. If untreated, leads to permanent structural and functional kidney damage.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-8
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What are the risk factors for developing AKI?
+    definition: Increasing age, pre-existing chronic kidney disease, recent surgery, diabetes, volume depletion (vomiting, diarrhea, burns), RV dysfunction, cirrhosis, drugs causing vasomotor changes (NSAIDs, ACE inhibitors, ARBs), and systemic conditions (multiple myeloma).
+    tags: []
+    source_type: srs-card
+  - id: nephrology-9
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What nephrotoxic agents cause AKI?
+    definition: NSAIDs, diuretics, ACE inhibitors, ARBs (especially in volume-depleted patients), aminoglycosides, vancomycin, amphotericin B, chemotherapy agents (cisplatin), and IV contrast.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-10
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: How can perioperative AKI risk be reduced?
+    definition: Adequate hydration, remove nephrotoxic drugs, review volume status and kidney function, optimize volume status preoperatively, monitor daily weights and intake/output, control glucose in diabetics, optimize nutrition, screen for obstruction, avoid surgery immediately after contrast, and reduce antihypertensives in early postoperative period.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-11
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What are the presenting features of acute kidney injury?
+    definition: Rise in serum urea and creatinine, reduced urine output (earliest change, precedes urea/creatinine rise), volume depletion or overload, pulmonary edema, hyperkalemia (risk for arrhythmia/cardiac arrest), and nonspecific illness.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-12
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What clinical findings help diagnose AKI?
+    definition: Falling urine output and urea, persistent nausea/vomiting, dizziness, impaired consciousness, signs of systemic sepsis, evidence of severe hypertension or hypotension, pulmonary edema (crackles), peripheral edema, and metabolic acidosis.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-13
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: How do you distinguish AKI from Chronic Kidney Disease?
+    definition: "Review previous kidney function tests. On ultrasound, chronic kidney disease shows shrunken kidneys (<9-10 cm), while AKI shows normal-sized kidneys. Exception: diabetics have normal kidney size even with reduced function. Laboratory findings (anemia, calcium-phosphate abnormalities) are often unhelpful."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-14
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What are the priorities in managing AKI?
+    definition: Make the patient safe (airway, breathing, circulation), manage hyperkalemia urgently, assess volume status, perform urine dipstick analysis, look for reversible causes, assess hemodynamic status, check for post-renal obstruction with ultrasound, and review drug charts to stop nephrotoxic agents.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-15
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What clinical clues suggest Pre-renal AKI?
+    definition: "History of reduced intravascular volume (dehydration), heart failure, or sepsis. Clinical signs: abnormal blood pressure, elevated heart rate, poor peripheral perfusion, abnormal jugular venous pressure, peripheral and pulmonary edema, and reduced urine output."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-16
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What clinical clues suggest Intrinsic kidney AKI?
+    definition: "History of cardiovascular disease, hypertension, diabetes, hypercholesterolemia, peripheral vascular disease, stroke, ischemic heart disease, recent invasive/endovascular procedures, stem cell therapy, or surgery. Signs: signs of atherosclerosis, missing pulses, large heart, glaucoma, pediatric aneurysms, or ischemic toes."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-17
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What investigations help identify intrinsic glomerular AKI?
+    definition: "History of throat/skin infections, fever, night sweats, systemic features. Examination: rash, elevated blood pressure, evidence of systemic involvement (uveitis, ulcers, connective tissue disease). Investigations: blood or protein in urine."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-18
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What investigations help identify tubulointerstitial AKI?
+    definition: "History of drug use or systemic infections/diseases (sarcoid). Examination: secondary features (fever, rash, bruising). Typical clue: eosinophilia on urine microscopy or peripheral smear or in blood."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-19
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What clinical clues suggest Post-renal AKI?
+    definition: "Lower urinary tract symptoms, evidence of prostatic disease in elderly males, presence of cancers, and hematuria. Essential investigation: early ultrasound to exclude obstruction."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-20
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What findings on urine analysis help in AKI diagnosis?
+    definition: Presence of blood, protein, or red blood cells suggests glomerular or intrinsic kidney disease. Positive urine culture indicates UTI which can cause severe dysfunction. Urine electrolytes and specific gravity are generally not helpful in AKI assessment.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-21
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What blood test findings are important in AKI?
+    definition: Reduced hemoglobin (hemolysis or bleeding), elevated white cell count (infection), eosinophilia (systemic arthritis), reduced white cell count (sepsis), reduced platelets (DIC or thrombotic microangiopathy). Peripheral smear shows fragmented RBCs in microangiopathy.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-22
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What biochemical findings are important in AKI?
+    definition: Elevated potassium (hyperkalemia), reduced sodium (volume overload or excessive diuretics), reduced bicarbonate (metabolic acidosis). Urine and electrolytes are key for assessing AKI severity.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-23
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What imaging findings help in AKI diagnosis?
+    definition: "Chest X-ray: excludes pulmonary edema, respiratory infections, assesses cardiac size, presence of lymph nodes, or cystic lesions. Kidney ultrasound: excludes obstruction (urgent if obstruction suspected). Kidney size <9 cm suggests chronic kidney disease; normal size suggests acute kidney injury."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-24
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What is the role of volume replacement in Pre-renal AKI?
+    definition: "Prompt volume replacement early in pre-renal AKI improves outcomes. Must ensure patient not overloaded to avoid pulmonary edema. Fluids: crystalloid saline or crystalloids, with sodium bicarbonate. Assess adequacy by tachycardia, central venous pressure, and urine output."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-25
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What are the ECG changes in hyperkalemia?
+    definition: "Progressive changes: peaked T waves, flattened P waves, prolonged PR interval, widened QRS complex, and sine wave (terminal event leading to ventricular fibrillation or asystolic cardiac arrest). Potassium >6 mmol/L requires close cardiac monitoring and ECG."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-26
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: How is hyperkalemia managed?
+    definition: "Calcium carbonate 10% solution over 2-5 minutes, insulin-glucose (monitor sugars after), sodium bicarbonate (15-60 minutes) if volume-depleted. If unresponsive to these three measures, consider dialysis, especially if kidney function not improving and potassium continues to rise."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-27
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: How is pulmonary edema managed in AKI?
+    definition: Stop IV fluids, give oxygen, use diuretics, give opiates or morphine for mild relief, prop patient up. If unresponsive to diuretics, consider dialysis and ventilation.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-28
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: How is hyperphosphatemia managed in AKI?
+    definition: Dietary phosphate restriction, oral phosphate binders, and dialysis if severe.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-29
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: How is hypocalcemia managed in AKI?
+    definition: Oral replacement of vitamin D and calcium supplementation.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-30
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What is the relationship between hypomagnesemia and hypocalcemia?
+    definition: Hypomagnesemia is associated with both hypercalcemia and hypocalcemia. Unless magnesium is corrected, calcium will not correct. Therefore, magnesium correction is necessary for successful calcium management.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-31
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: How is metabolic acidosis managed in severe AKI?
+    definition: "High-dose metabolic acidosis in AKI; if severe, consider dialysis. Consider other causes: lactic acidosis, salicylate poisoning, methanol, ethylene glycol poisoning. Dialysis is indicated if pH drops to 7.1 or less."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-32
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What are the general management strategies for AKI?
+    definition: Treat anemia (consider bleeding or hemolysis as cause), treat infection, maintain adequate nutrition (patients are hypercatabolic), consider specific energy and protein requirements.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-33
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What are the indications for kidney replacement therapy (dialysis) in AKI?
+    definition: Persistent hyperkalemia, pulmonary edema refractory to diuretics, intractable acidosis, oliguria with high urea, uremic pericarditis, or uremic encephalopathy.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-34
+    card_source: Acute_Kidney_Disease_CMED4IIM1.yaml
+    atom: What are the types of kidney replacement therapy available?
+    definition: Hemodialysis and peritoneal dialysis are the main forms of acute kidney replacement therapy.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-35
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the definition of Chronic Kidney Disease (CKD)?
+    definition: Chronic Kidney Disease is an abnormality of kidney structure and function that is present for more than three months. Functional abnormality is defined by eGFR <60 mL/min, while structural abnormality includes proteinuria (elevated protein-creatinine ratio), hematuria, or structural abnormalities on imaging.
+    tags: [CKD, definition, diagnosis]
+    source_type: srs-card
+  - id: nephrology-36
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the eGFR-based CKD stages?
+    definition: "Grade 1: eGFR >90; Grade 2A: eGFR 60-90; Grade 3A: eGFR 45-59; Grade 3B: eGFR 30-44; Grade 4: eGFR 15-29 (advanced CKD); Grade 5: eGFR <15 (kidney failure), all in mL/min/1.73m2."
+    tags: [CKD, stages, eGFR, classification]
+    source_type: srs-card
+  - id: nephrology-37
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the epidemiology of CKD in South Africa?
+    definition: "The prevalence of CKD in South Africa is estimated at approximately 10% of the adult population. CKD numbers are expected to double in the next decade. It is currently under-recognized and under-treated, and prevalence increases with age."
+    tags: [epidemiology, CKD, South-Africa, prevalence]
+    source_type: srs-card
+  - id: nephrology-38
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the disease iceberg concept in CKD?
+    definition: For every 1 patient with kidney failure, there are approximately 200 patients in stages 3-4, and about 5,000 in stages 1-2. This means vast populations remain undiagnosed and we only see the tip of the iceberg in clinical practice.
+    tags: [epidemiology, CKD, disease-burden, screening]
+    source_type: srs-card
+  - id: nephrology-39
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the pathogenesis of CKD progression?
+    definition: Nephronal destruction leads to increased blood flow and permeability in remaining nephrons. The glomerulus becomes damaged with strain on mesangial cells, causing proteinuria that leaks into tubules, resulting in tubular-interstitial scarring and chronic ischemic damage.
+    tags: [pathophysiology, CKD, progression, mechanisms]
+    source_type: srs-card
+  - id: nephrology-40
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the most common causes of CKD in South Africa?
+    definition: "Hypertension (20%), Diabetes Mellitus (18%), HIV (14%), and other causes including drug toxicity (NSAIDs, contrast agents, aminoglycosides), connective tissue disease (lupus), and inherited conditions (polycystic kidney disease, obstructive nephropathy)."
+    tags: [etiology, CKD, causes, South-Africa]
+    source_type: srs-card
+  - id: nephrology-41
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: Why is diagnosing CKD clinically important?
+    definition: CKD diagnosis is crucial because it increases cardiovascular risk and early mortality, empowers further investigation and kidney biopsy, allows determination of underlying cause, enables specific treatments to slow progression, facilitates recognition of complications (anemia, bone disease), and prepares for kidney replacement therapy.
+    tags: [clinical-importance, CKD, diagnosis, outcomes]
+    source_type: srs-card
+  - id: nephrology-42
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: Who should be screened for CKD?
+    definition: "Screening indications include: persons with known risk factors (diabetes, hypertension, HIV), unexplained edema, congestive heart failure, evidence of atherosclerosis (cerebral or cardiovascular), multi-system disease, chronic nephrotoxin exposure, or neurological disease."
+    tags: [screening, CKD, risk-factors, clinical-practice]
+    source_type: srs-card
+  - id: nephrology-43
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: Why is proteinuria quantification important in CKD?
+    definition: Proteinuria is a marker of CKD and its progression. Greater protein excretion indicates faster CKD progression. It is also a cardiac risk marker; increased proteinuria correlates with higher cardiovascular morbidity and mortality.
+    tags: [proteinuria, CKD, risk-assessment, prognosis]
+    source_type: srs-card
+  - id: nephrology-44
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the relationship between hypertension and CKD?
+    definition: Hypertension is both a cause and consequence of CKD. It can both initiate kidney disease and result from it. Controlling blood pressure slows CKD progression, making hypertension management a key therapeutic target.
+    tags: [hypertension, CKD, pathophysiology, treatment]
+    source_type: srs-card
+  - id: nephrology-45
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What routine investigations are performed for CKD?
+    definition: "Investigations include: urine dipstick, urine microscopy, quantified proteinuria (protein-creatinine or albumin-creatinine ratio), urine electrolytes, estimated GFR calculation, renal ultrasound imaging, and kidney biopsy (when cause is unknown)."
+    tags: [investigation, CKD, diagnosis, tests]
+    source_type: srs-card
+  - id: nephrology-46
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: When should patients be referred to a nephrologist?
+    definition: "Referral indications include: eGFR <30 mL/min, proteinuria >500 g/24 hours, hematuria (suggests underlying glomerulonephritis), blood pressure poorly controlled despite 4+ agents, persistently abnormal serum potassium, evidence of inherited kidney disease, or recurrent kidney stones."
+    tags: [referral, specialist-care, CKD, management]
+    source_type: srs-card
+  - id: nephrology-47
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are non-modifiable risk factors for CKD progression?
+    definition: "Non-modifiable factors include: underlying cause of CKD, patient age, and race/ethnicity (certain races are more prone to specific kidney diseases)."
+    tags: [risk-factors, non-modifiable, CKD, progression]
+    source_type: srs-card
+  - id: nephrology-48
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are modifiable risk factors for CKD progression?
+    definition: "Modifiable factors include: blood pressure control, proteinuria reduction, avoidance of nephrotoxic agents, control of disease activity, treatment of obstruction and UTIs, correction of hypovolemia, management of anemia, smoking cessation, blood glucose control in diabetics, and avoidance of intercurrent illness."
+    tags: [risk-factors, modifiable, CKD, progression, management]
+    source_type: srs-card
+  - id: nephrology-49
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the blood pressure targets in CKD based on proteinuria?
+    definition: "For non-proteinuric or minimally proteinuric CKD: target 130/80 mmHg. For CKD with proteinuria >150 mg/day or in diabetics: lower target ~125/80 mmHg is preferred, individualized by patient age."
+    tags: [hypertension, blood-pressure, CKD, treatment-targets]
+    source_type: srs-card
+  - id: nephrology-50
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the preferred antihypertensive strategy in CKD?
+    definition: "First-line therapy: ACE inhibitors or Angiotensin Receptor Blockers (ARBs), which reduce both blood pressure and proteinuria. ACE-I/ARBs also reduce renal fibrosis and scarring. Sequential additions: loop diuretic (for salt/water overload), calcium channel blocker, beta-blocker, then alpha-blocker."
+    tags: [antihypertensive, ACE-inhibitor, ARB, CKD, treatment]
+    source_type: srs-card
+  - id: nephrology-51
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the role of statins in CKD management?
+    definition: Statins are used to manage dyslipidemia in CKD patients, helping reduce cardiovascular risk, which is elevated in CKD.
+    tags: [dyslipidemia, statins, CKD, cardiovascular-risk]
+    source_type: srs-card
+  - id: nephrology-52
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: How is hyperphosphatemia managed in CKD?
+    definition: Hyperphosphatemia in CKD is controlled through dietary phosphate restriction and the use of phosphate binders.
+    tags: [hyperphosphatemia, CKD, mineral-metabolism, treatment]
+    source_type: srs-card
+  - id: nephrology-53
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: How is anemia managed in CKD?
+    definition: Anemia in CKD is managed with iron supplementation and erythropoietin (EPO) therapy to restore hemoglobin levels.
+    tags: [anemia, CKD, complications, treatment]
+    source_type: srs-card
+  - id: nephrology-54
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are dietary recommendations in CKD?
+    definition: "Dietary measures include: limiting meat protein to 0.8-1 g/kg/day (reduces disease progression), smoking cessation, limiting alcohol to <3 units/day, weight loss, regular exercise, and obtaining appropriate vaccinations."
+    tags: [diet, nutrition, CKD, lifestyle, management]
+    source_type: srs-card
+  - id: nephrology-55
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What medications should be avoided or modified in CKD?
+    definition: "Medications to avoid: NSAIDs (nephrotoxic), metformin (stop when eGFR <30 to avoid lactic acidosis), contrast agents (in high-risk patients). Aspirin may be used for cardiovascular risk reduction."
+    tags: [medications, nephrotoxicity, CKD, contraindications]
+    source_type: srs-card
+  - id: nephrology-56
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the management approach for early-stage CKD?
+    definition: Management focuses on preventing progression through blood pressure control, proteinuria reduction, treatment of modifiable risk factors, and management of cardiovascular risk with statins and potentially aspirin.
+    tags: [early-stage-CKD, stages-1-2, management, prevention]
+    source_type: srs-card
+  - id: nephrology-57
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What special management is required in advanced CKD (stages 4-5)?
+    definition: "Advanced CKD management includes: nephrology referral, optimization of calcium and phosphate balance with binders, PTH management, correction of metabolic acidosis, water and salt restriction, and preparation for kidney replacement therapy. Daily weight monitoring is essential."
+    tags: [advanced-CKD, stages-4-5, management, replacement-therapy]
+    source_type: srs-card
+  - id: nephrology-58
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the management of hyperkalemia in end-stage kidney disease?
+    definition: "Hyperkalemia management includes: dietary potassium restriction (low-potassium diet), and in persistent cases, discontinuation of ACE inhibitors and ARBs which can worsen hyperkalemia."
+    tags: [hyperkalemia, end-stage-kidney-disease, complications, management]
+    source_type: srs-card
+  - id: nephrology-59
+    card_source: Approach To Chronic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the diagnostic criteria for CKD?
+    definition: "CKD diagnosis requires: presence of abnormality for >3 months; eGFR <60 mL/min/1.73m2; elevated protein-creatinine ratio; and persistent hematuria (blood in urine), or structural/functional abnormalities on imaging or biopsy."
+    tags: [CKD, diagnosis, criteria, diagnostic-threshold]
+    source_type: srs-card
+  - id: nephrology-60
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the definition of diabetic kidney disease (DKD)?
+    definition: Diabetic kidney disease is an encompassing term for kidney disease due to diabetes, including classical diabetic nephropathy (nodular glomerulosclerosis/chemistry of Wilson disease) and non-classical glomerular lesions, as well as severe tubular disease. It is a clinical diagnosis.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-61
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the classification types of diabetes mellitus?
+    definition: Type 1 (immunologically mediated), Type 2 (majority of diabetic patients), genetic disorders, and gestational diabetes.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-62
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the pathogenesis of diabetic nephropathy?
+    definition: "Caused by: (1) metabolic factors from high glucose levels leading to advanced glycation products, (2) hemodynamic changes in blood flow/pressure, (3) vasoactive hormones (angiotensin 2, endothelium) causing hemodynamic changes, (4) release of inflammatory cytokines (TGF-beta, FGF), leading to increased extracellular matrix and vascular permeability, manifesting as proteinuria."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-63
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the microvascular complications of diabetes?
+    definition: Eye complications (retinopathy), kidney complications (nephropathy), and nerve complications (neuropathies).
+    tags: []
+    source_type: srs-card
+  - id: nephrology-64
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the macrovascular complications of diabetes?
+    definition: Brain complications (heart attacks, strokes), heart complications, and peripheral vascular disease affecting extremities.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-65
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the characteristic pathological feature of classical diabetic nephropathy?
+    definition: Nodular glomerulosclerosis (Chemistry of Wilson disease) - characterized by deposition of extracellular matrix within the glomerulus, surrounding the basement membrane of capillary loops.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-66
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What percentage of patients with Type 1 and Type 2 diabetes develop diabetic kidney disease?
+    definition: "Approximately 20-40% of patients with Type 1 and Type 2 diabetes develop diabetic kidney disease, with close to half of them developing this clinical syndrome."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-67
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What defines overt diabetic nephropathy in terms of proteinuria and creatinine?
+    definition: Clinical syndrome characterized by presence of more than 3.3 grams of proteinuria and raised creatinine levels.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-68
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the natural history progression of diabetic kidney disease?
+    definition: "Stage 1: No symptoms with hyperfiltration (raised eGFR). Stage 2: Asymptomatic with microalbuminuria. Stage 3: Loss of protein excretion, proteinuria, puffiness. Stage 4: Pre-dialysis with more symptoms, blood in urine, acute breathlessness. Stage 5: Complete kidney failure."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-69
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: How does eGFR change over the natural history of diabetic kidney disease?
+    definition: Initially eGFR spikes (hyperfiltration), then with time tends to drop. After about 15 years of diabetes, eGFR drops precipitously.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-70
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the relationship between diabetic retinopathy and diabetic nephropathy?
+    definition: The eye is the window to the kidney. Presence of proliferative diabetic retinopathy correlates with pathological features of diabetic kidney disease. If a patient has diabetic retinopathy, they more likely have or will develop diabetic nephropathy.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-71
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What other causes of diabetes-related kidney disorders exist besides classical diabetic nephropathy?
+    definition: Renal hypoperfusion/papillary necrosis, renal vascular disease (hardening of arteries around kidneys), urogenic bladder with diabetic neuropathy, urinary tract infections causing kidney damage, and contrast-induced acute kidney injury.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-72
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the lifestyle modifications for managing diabetic kidney disease?
+    definition: Weight loss, stop smoking, improve diet, increase physical activity, protein restriction (less than 0.8 mg/day), and salt restriction (less than 5 grams per day).
+    tags: []
+    source_type: srs-card
+  - id: nephrology-73
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the first-line agent of choice for managing hypertension and proteinuria in diabetic kidney disease?
+    definition: ACE inhibitor or ARB (Angiotensin Receptor Blocker). These agents are the agents of choice for reducing proteinuria and slowing progression of kidney disease.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-74
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the newer agents used to manage blood glucose in diabetic kidney disease?
+    definition: SGLT2 inhibitors (sodium-glucose cotransporter-2 inhibitors) are the newer agents for the future of glucose management in diabetic kidney disease.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-75
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the target HbA1c for patients with diabetic kidney disease not on insulin?
+    definition: "Less than 7.5%. On insulin, the target should be less than 6.5%."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-76
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the target blood pressure for patients with diabetic kidney disease?
+    definition: Generally 130/80 mmHg, should aim for at least less than 120 mmHg. Patients with proteinuria should have an even lower blood pressure target.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-77
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: How does blood pressure control affect the decline in eGFR in overt diabetic nephropathy?
+    definition: "Without good blood pressure control: eGFR declines 12 ml/min per year. With good blood pressure control: eGFR declines 5 ml/min per year. With ACE inhibitor/ARB: eGFR declines less than 0.3 ml/min per year."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-78
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: At what eGFR threshold should metformin be withdrawn in diabetic kidney disease?
+    definition: When eGFR is less than 30, metformin should be withdrawn because it becomes nephrotoxic.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-79
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: When should a patient with diabetic kidney disease be referred to nephrology?
+    definition: "Referral is indicated when: (1) eGFR less than 30, (2) high protein excretion, (3) rapid loss of kidney function, (4) resistant hypertension, or (5) evidence of inflammatory kidney disease (RBC casts, dysmorphia, RBCs in urine)."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-80
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What antihypertensive and antiproteinuric agents are used in diabetic kidney disease?
+    definition: ACE inhibitor, ARB, non-dihydropyridine calcium channel blocker, glucagon-like peptide-1 (GLP-1) receptor agonists, beta blockers, and statins. All have some antiproteinuric actions to protect kidneys.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-81
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: How does the approach to glycemic control differ based on comorbidities in diabetic kidney disease?
+    definition: "Aim for HbA1c less than 6.5% if few comorbidities (better control). Keep range 6.5-8% with moderate comorbidities. Increase HbA1c target if severe kidney disease, or if hypoglycemic awareness is impaired, or if expecting short life expectancy."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-82
+    card_source: Diabetic Kidney Disease - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the key history elements to assess in a patient with suspected diabetic kidney disease?
+    definition: Type of diabetes (Type 1 vs Type 2), blood glucose control history (good vs poor), medication history for glucose control, presence of macro/microvascular complications, patient education received, glycemic episodes (hyperglycemic and hypoglycemic), and symptoms of complications (retinal, GI, musculoskeletal, infective, neuropsychiatric).
+    tags: []
+    source_type: srs-card
+  - id: nephrology-83
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What is the primary role of the kidney in maintaining patient health?
+    definition: The kidney filters waste products and regulates fluid balance, playing a crucial role in maintaining overall health.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-84
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What is nephrotoxicity?
+    definition: A condition in which certain medications adversely affect kidney function, causing damage and impairing kidney health.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-85
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: Which antibiotics are known to be nephrotoxic and how do they cause damage?
+    definition: Aminoglycosides (e.g., gentamicin) accumulate in the proximal tubules, interfere with protein synthesis, disrupt cellular metabolism, damage tubular cells, impair electrolyte balance, and reduce GFR.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-86
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What is the mechanism by which contrast agents cause acute kidney injury (AKI)?
+    definition: Contrast agents cause vasoconstriction of renal blood vessels, reducing blood flow to the kidneys, leading to hypoxia and impaired tubular function, potentially causing acute kidney injury.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-87
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: How do NSAIDs (nonsteroidal anti-inflammatory drugs) cause nephrotoxicity?
+    definition: NSAIDs inhibit prostaglandin synthesis, which normally maintains renal blood flow and sodium excretion. This inhibition causes reduced kidney blood flow, salt retention, and acute kidney injury.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-88
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What is the mechanism of nephrotoxicity associated with ACE inhibitors?
+    definition: ACE inhibitors reduce kidney blood flow and glomerular filtration, potentially causing irreversible kidney dysfunction. This effect is more pronounced in patients with preexisting kidney disease or taking other medications affecting kidney blood flow.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-89
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: How do diuretics contribute to drug-induced acute kidney injury?
+    definition: Excessive diuresis leads to dehydration, which reduces blood flow further and impairs drug elimination. Additionally, electrolyte imbalances from diuretics can disrupt kidney function and contribute to AKI.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-90
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What are the major risk factors for nephrotoxic drug-induced AKI?
+    definition: Preexisting kidney disease (GFR <60 mL/min), advanced age, volume depletion/dehydration, concurrent nephrotoxic medications, and underlying medical conditions such as diabetes or heart failure.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-91
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What is the significance of preexisting kidney disease in nephrotoxic drug-induced AKI?
+    definition: Patients with GFR <60 mL/min have reduced compensatory capacity and are at increased risk of AKI from nephrotoxic drugs.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-92
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: Why are older adults more susceptible to nephrotoxic drug effects?
+    definition: Age-related changes and altered pharmacokinetics make older adults more susceptible to nephrotoxic effects of medications.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-93
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: How does volume depletion increase nephrotoxic drug risk?
+    definition: Volume depletion potentiates the effects of nephrotoxic drugs by reducing kidney blood flow and impairing drug elimination.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-94
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What is the strategy of individualizing drug doses to prevent nephrotoxicity?
+    definition: Adjust doses based on kidney function and patient characteristics (comorbidities) to prevent excessive drug exposure and minimize nephrotoxicity.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-95
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What kidney function parameters should be monitored to detect early nephrotoxicity?
+    definition: Serum creatinine and GFR should be regularly monitored, especially in high-risk patients, to allow early detection of nephrotoxicity and timely intervention.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-96
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: How does adequate hydration help prevent drug-induced AKI?
+    definition: Adequate fluid intake maintains kidney blood flow and reduces the risk of drug-induced acute kidney injury.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-97
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What is the strategy of avoiding concurrent nephrotoxic drug use?
+    definition: When possible, alternate medications, reduce dosages, or avoid using nephrotoxic agents altogether to minimize cumulative nephrotoxic effects.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-98
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: In the case of a 45-year-old diabetic patient on NSAIDs, ACE inhibitor, and two diuretics undergoing coronary angiography, what is the primary risk?
+    definition: The combination of NSAIDs, ACE inhibitor, two diuretics, and contrast exposure in a dehydrated diabetic patient creates a high-risk scenario for nephrotoxic acute kidney injury.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-99
+    card_source: "Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml"
+    atom: What are the five main strategies to minimize nephrotoxic drug-induced AKI?
+    definition: 1) Patient education about potential nephrotoxic effects; 2) Individualize doses based on kidney function; 3) Monitor kidney function regularly (serum creatinine, GFR); 4) Maintain adequate hydration; 5) Avoid concurrent nephrotoxic medications.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-100
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is the epidemiology of glomerular disease in Africa?
+    definition: "Glomerular disease is responsible for between 5-10% of kidney disease cases in Africa. It is often poorly diagnosed and poorly managed, but can be successfully managed if diagnosed early and appropriately."
+    tags: [glomerular-disease, epidemiology, Africa, diagnosis]
+    source_type: srs-card
+  - id: nephrology-101
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is the classification of glomerular disease?
+    definition: Glomerular disease is classified into primary renal disease (limited to the kidney) and secondary kidney disease (systemic disease involving the kidney). These may present as nephrotic or nephritic syndrome.
+    tags: [glomerular-disease, classification, primary, secondary]
+    source_type: srs-card
+  - id: nephrology-102
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What are the primary causes of nephrotic syndrome?
+    definition: Primary causes include minimal change disease, focal segmental glomerular sclerosis (FSGS), and membranous nephropathy. Secondary causes include diabetes (most common), infections (especially HIV), and autoimmune diseases (like lupus).
+    tags: [nephrotic-syndrome, causes, minimal-change, FSGS, membranous]
+    source_type: srs-card
+  - id: nephrology-103
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: How is nephrotic syndrome defined?
+    definition: "Nephrotic syndrome is defined as urine protein excretion >3.5 g/24 hours per 1.73 m2, associated with hypoalbuminemia, peripheral or pulmonary edema, hyperlipidemia, lipiduria, and increased susceptibility to infections and hypercoagulation."
+    tags: [nephrotic-syndrome, definition, proteinuria, hypoalbuminemia]
+    source_type: srs-card
+  - id: nephrology-104
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is the pathophysiology of nephrotic syndrome?
+    definition: In nephrotic syndrome, damage to podocytes causes foot processes to become effaced and detached. This allows protein leakage into the tubules, where it becomes toxic to the kidney. Loss of protein from the bloodstream results in hypoalbuminemia and secondary manifestations.
+    tags: [nephrotic-syndrome, pathophysiology, podocytes, proteinuria]
+    source_type: srs-card
+  - id: nephrology-105
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What are the key differences between nephrotic and nephritic syndrome?
+    definition: "Nephrotic syndrome presents insidiously over time with normal early kidney function, mainly proteinuria >3.5 g/day, hypoalbuminemia, and late hypertension. Nephritic syndrome presents acutely with impaired kidney function, mainly hematuria with subnephrotic proteinuria, and early hypertension."
+    tags: [nephrotic-syndrome, nephritic-syndrome, comparison, clinical-presentation]
+    source_type: srs-card
+  - id: nephrology-106
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is the critical diagnostic test for glomerular disease?
+    definition: The urine dipstick is vital for diagnosis. It should show presence of protein (3+ indicates possible nephrotic syndrome) and/or blood. Failure to perform a urine dipstick can result in completely missing the diagnosis.
+    tags: [glomerular-disease, diagnosis, urine-dipstick, investigation]
+    source_type: srs-card
+  - id: nephrology-107
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What investigations are required for nephrotic syndrome?
+    definition: "Investigations include: urine dipstick and microscopy, albumin and protein-creatinine ratio quantification, eGFR and kidney function, liver function tests, bone profile (calcium, phosphate, magnesium), fasting lipid profile, and kidney ultrasound. Kidney biopsy if diagnosis remains unknown."
+    tags: [nephrotic-syndrome, investigation, urine-microscopy, eGFR]
+    source_type: srs-card
+  - id: nephrology-108
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is the management approach for nephrotic syndrome?
+    definition: "Management includes: salt restriction (<5 g/day), diuretics for edema with weight loss target 0.5-1 kg/day, ACE inhibitors or ARBs for proteinuria reduction, target BP 120/75 mmHg, protein restriction to 0.8 mg/kg/day, anticoagulation if high proteinuria, vaccinations for infections, and statins for dyslipidemia."
+    tags: [nephrotic-syndrome, management, salt-restriction, ACE-inhibitors]
+    source_type: srs-card
+  - id: nephrology-109
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: How is hypercoagulability managed in nephrotic syndrome?
+    definition: Hypercoagulability in nephrotic syndrome occurs due to increased hepatic procoagulant synthesis and loss of anticoagulants. Patients require anticoagulation with low-molecular-weight heparin or warfarin (maintaining INR 2-3), especially with high proteinuria. Risk of deep vein thrombosis and pulmonary embolism is significant.
+    tags: [nephrotic-syndrome, hypercoagulability, anticoagulation, thrombosis]
+    source_type: srs-card
+  - id: nephrology-110
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What immunosuppressive agents are used for primary nephrotic syndrome?
+    definition: "Based on kidney biopsy histology, agents used include: prednisone, ciclosporin, tacrolimus, mycophenolate mofetil, azathioprine, and cyclophosphamide. The specific agent depends on the underlying pathological diagnosis."
+    tags: [nephrotic-syndrome, immunosuppression, treatment, kidney-biopsy]
+    source_type: srs-card
+  - id: nephrology-111
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What are the non-proliferative causes of glomerulonephritis?
+    definition: Non-proliferative causes include minimal change disease, membranous nephropathy, and focal segmental glomerulosclerosis (FSGS). These typically present with nephrotic syndrome.
+    tags: [glomerulonephritis, non-proliferative, minimal-change, membranous]
+    source_type: srs-card
+  - id: nephrology-112
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is acute nephritic syndrome?
+    definition: Acute nephritic syndrome is caused by glomerular inflammation presenting with impaired kidney function, hematuria (often with dysmorphic RBCs and RBC casts), variable proteinuria, edema, hypertension, and sometimes systemic symptoms. It can progress to rapidly progressive glomerulonephritis or end-stage kidney disease if untreated.
+    tags: [nephritic-syndrome, acute, hematuria, glomerulonephritis]
+    source_type: srs-card
+  - id: nephrology-113
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What are the clinical manifestations of glomerular disease?
+    definition: "Glomerular disease can present with: blood in urine (hematuria), protein in urine (proteinuria), edema (peripheral or pulmonary), hypertension, and impaired kidney function. Systemic features may include rashes, arthritis, fever, and multi-organ involvement (eyes, cardiovascular, pulmonary, GI, neurological, skin)."
+    tags: [glomerular-disease, clinical-manifestations, symptoms, signs]
+    source_type: srs-card
+  - id: nephrology-114
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What serological tests are used to diagnose secondary glomerulonephritis?
+    definition: "Serological tests include: complement levels and ASOT for post-infectious GN, anti-DNA antibodies for lupus, ANCA antibodies for vasculitis, and HIV/Hepatitis B and C serology. ANA screen helps identify lupus as secondary cause."
+    tags: [glomerulonephritis, serological-tests, diagnosis, secondary-causes]
+    source_type: srs-card
+  - id: nephrology-115
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is the diagnostic algorithm for glomerular disease?
+    definition: "Step 1: Perform urine dipstick to detect protein and/or blood. Step 2: Determine if nephrotic or nephritic syndrome is present. Step 3: Assess for multi-system disease features. Step 4: Consider primary vs secondary causes. Step 5: Perform kidney biopsy for definitive diagnosis and guide treatment."
+    tags: [glomerular-disease, diagnosis, algorithm, clinical-approach]
+    source_type: srs-card
+  - id: nephrology-116
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: How does pregnancy affect presentation in case scenarios?
+    definition: The typical presentation of acute glomerulonephritis occurs 3 weeks after severe infection or ear injury. A classic case presents with dark urine (hematuria), generalized swelling (edema), acute kidney injury, elevated blood pressure (180/120), and systemic signs of infection.
+    tags: [glomerulonephritis, acute, post-infectious, clinical-case]
+    source_type: srs-card
+  - id: nephrology-117
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What findings on urinalysis indicate nephritic syndrome?
+    definition: "Key urinalysis findings in nephritic syndrome include: active sediment with 2-3+ blood, dysmorphic red blood cells, and red blood cell casts. Protein may be present but typically <1 g/day. These findings indicate glomerular inflammation and damage."
+    tags: [nephritic-syndrome, urinalysis, hematuria, RBC-casts]
+    source_type: srs-card
+  - id: nephrology-118
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is the role of kidney ultrasound in glomerular disease?
+    definition: Kidney ultrasound shows hyperechoic kidneys with echogenicity similar to the liver in acute nephritic syndrome. Ultrasound helps assess kidney size, cortical thickness, and excludes obstruction or structural abnormalities. It is part of the standard imaging workup.
+    tags: [glomerular-disease, imaging, ultrasound, investigation]
+    source_type: srs-card
+  - id: nephrology-119
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is the definitive diagnostic test for glomerular disease?
+    definition: Kidney biopsy is the definitive diagnostic test when the cause of glomerular disease is unknown. It provides histological diagnosis showing the type and severity of glomerular damage, guiding specific immunosuppressive or targeted therapy.
+    tags: [glomerular-disease, kidney-biopsy, diagnosis, histology]
+    source_type: srs-card
+  - id: nephrology-120
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: How is volume status managed in acute nephritic syndrome?
+    definition: "Management includes salt and water restriction, limiting fluid intake to previous day's urine output plus 500 mL, diuretics for fluid overload, daily weight monitoring, and treatment of infections. Blood pressure control targets 130/80 mmHg using ACE inhibitors or ARBs."
+    tags: [nephritic-syndrome, volume-management, salt-restriction, fluid-balance]
+    source_type: srs-card
+  - id: nephrology-121
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: When is dialysis indicated in acute nephritic syndrome?
+    definition: "Dialysis is indicated for: encephalopathy, severe fluid overload unresponsive to diuretics, persistent hyperkalemia, or uremic pericarditis."
+    tags: [nephritic-syndrome, dialysis, indications, acute-kidney-injury]
+    source_type: srs-card
+  - id: nephrology-122
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What differential diagnosis should be considered for hematuria and proteinuria?
+    definition: "The differential includes: determining if nephrotic vs nephritic syndrome, assessing quantitative levels of protein and blood, evaluating for systemic disease features, considering primary vs secondary glomerular disease, and determining eGFR level."
+    tags: [differential-diagnosis, hematuria, proteinuria, glomerular-disease]
+    source_type: srs-card
+  - id: nephrology-123
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What is the summary approach to glomerular disease management?
+    definition: "Glomerular disease management includes: detailed history and examination, urine dipstick and microscopy, quantified proteinuria assessment, kidney function testing, relevant serology, kidney imaging, kidney biopsy for definitive diagnosis, and histology-guided treatment tailored to the specific pathological type."
+    tags: [glomerular-disease, management, clinical-approach, diagnosis]
+    source_type: srs-card
+  - id: nephrology-124
+    card_source: Glomerular Disease - CMED4IIM1 - 2026_pages-001-007.yml
+    atom: What systemic features suggest secondary glomerular disease?
+    definition: "Systemic features indicating secondary glomerular disease include: fever, chills, weight loss, night sweats, fatigue, eye involvement (retinitis, uveitis), epistaxis, sinusitis, oral ulcers, murmurs, pericarditis, chest pain, heart failure, pulmonary infiltrates, nodules, colitis, pancreatitis, seizures, neuropathy, digital ischemia, and skin rashes."
+    tags: [secondary-glomerular-disease, systemic-features, diagnosis, multi-system]
+    source_type: srs-card
+  - id: nephrology-125
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What is the prevalence of kidney disease in HIV patients?
+    definition: "Kidney disease occurs in up to 5-10% of the approximately 7.92 million people living with HIV in South Africa (14% national prevalence)."
+    tags: [epidemiology, HIV, kidney-disease]
+    source_type: srs-card
+  - id: nephrology-126
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What are the three most important types of HIV-associated kidney disease?
+    definition: "1. HIV-associated nephropathy (HIVAN) - prevalence 40-80%\n2. HIV-associated immune complex disease\n3. HIV-associated thrombotic microangiopathy"
+    tags: [pathology, HIVAN, kidney-disease]
+    source_type: srs-card
+  - id: nephrology-127
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What causes HIV-associated thrombotic microangiopathy?
+    definition: The virus damages endothelial cells (lining of blood vessels), activates platelets, and deposits within renal microvascular tissue. Presents with acute renal failure, proteinuria, hematuria, microangiopathic hemolytic anemia, and thrombocytopenia (TTP or HUS picture). Poor prognosis unless treated early and aggressively.
+    tags: [pathophysiology, thrombotic-microangiopathy, acute-kidney-injury]
+    source_type: srs-card
+  - id: nephrology-128
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What is the mechanism of tenofovir-associated kidney dysfunction?
+    definition: Tenofovir causes proximal renal tubular acidosis (RTA) due to mitochondrial toxicity of proximal tubular cells. Characterized by proximal tubular dysfunction manifested by failure to reabsorb glucose, bicarbonate, and phosphates, resulting in hypokalemic metabolic acidosis, hypophosphatemia, and glucosuria.
+    tags: [drug-toxicity, tenofovir, RTA]
+    source_type: srs-card
+  - id: nephrology-129
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: Which antiretroviral drugs commonly cause kidney injury?
+    definition: "Nucleoside reverse transcriptase inhibitors (e.g., tenofovir): acute kidney failure, Fanconi syndrome, nephrogenic diabetes insipidus, lactic acidosis. Nucleotide RTIs: acute kidney failure, Fanconi syndrome, nephrogenic diabetes insipidus. Non-nucleoside RTIs (e.g., nevirapine): kidney stones. Protease inhibitors: interstitial crystallization, kidney stones, acute interstitial nephritis, papillary necrosis."
+    tags: [antiretroviral, drug-toxicity, nephrotoxicity]
+    source_type: srs-card
+  - id: nephrology-130
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What drugs commonly cause acute interstitial nephritis in HIV patients?
+    definition: Beta-lactams, sulfonamides, non-steroidal anti-inflammatory drugs (NSAIDs), proton pump inhibitors, allopurinol, and over-the-counter medications. Develops 1-2 weeks after drug introduction. Characterized by pyuria and peripheral eosinophilia on urine dipstick; presents with flank pain, fever, and rash.
+    tags: [acute-interstitial-nephritis, drug-induced, kidney-injury]
+    source_type: srs-card
+  - id: nephrology-131
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What is HIV-associated nephropathy (HIVAN) and its key characteristics?
+    definition: "High-grade proteinuria (>10 g/day) occurring in 30-80% of HIV patients. Associated with rapid progression of kidney dysfunction, especially in patients of African descent with APOL-1 gene variants. Often associated with detectable/unsuppressed viral load. Large, echogenic kidneys on ultrasound. Pathophysiology: HIV infects podocytes, causes loss of differentiation markers and foot processes, immature collagen expression, capillary loop collapse, tubular degeneration, and podocyte apoptosis."
+    tags: [HIVAN, proteinuria, pathophysiology]
+    source_type: srs-card
+  - id: nephrology-132
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What are the poor prognostic features in HIV-associated kidney disease?
+    definition: Presence of hypertension, very low serum albumin, high protein excretion, high serum creatinine, low CD4 count, detectable viral load, and low hemoglobin.
+    tags: [prognosis, HIVAN, clinical-features]
+    source_type: srs-card
+  - id: nephrology-133
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What electrolyte and acid-base disorders occur in HIV?
+    definition: "Electrolyte disorders: hyponatremia (from gastroenteritis, SIADH, adrenal insufficiency), hypokalemia and hyperkalemia (from adrenal insufficiency or gastroenteritis). Acid-base disorders: high anion gap metabolic acidosis (common in CKD/ESRD), non-anion gap metabolic acidosis (from gastroenteritis), respiratory alkalosis or acidosis (from lung infections), tubular acidosis (from adrenal disorders), lactic acidosis (type A or type B)."
+    tags: [electrolyte-disorders, acid-base-disorders, HIV-complications]
+    source_type: srs-card
+  - id: nephrology-134
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What are the risk factors for acute kidney injury in HIV patients?
+    definition: "HIV-related: starting/being on ART, defining illnesses, low CD4 count, high viral load, hepatitis B/C co-infection. HIV-independent: older age, diabetes, pre-existing CKD, acute or chronic liver disease."
+    tags: [acute-kidney-injury, risk-factors, HIV]
+    source_type: srs-card
+  - id: nephrology-135
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: How is acute interstitial nephritis managed in HIV?
+    definition: Immediately withdraw the offending drug and treat with glucocorticoids for at least 7-10 days. Early diagnosis is crucial to avoid permanent kidney damage. Diagnosis is based on clinical grounds; if not apparent, kidney biopsy may be performed.
+    tags: [acute-interstitial-nephritis, management, treatment]
+    source_type: srs-card
+  - id: nephrology-136
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What is the relationship between APOL-1 gene and HIV-associated nephropathy?
+    definition: Patients of African descent with APOL-1 gene variants have accelerated progression of kidney dysfunction in HIVAN.
+    tags: [HIVAN, genetics, African-descent]
+    source_type: srs-card
+  - id: nephrology-137
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What causes acute kidney injury in HIV patients?
+    definition: "Multiple causes: pre-renal (volume depletion, dehydration, hypovolemia, heart failure, cirrhosis), intrinsic (acute tubular necrosis from ischemia/toxins/sepsis, interstitial nephritis), post-renal (obstruction from crystal urea, tumor lysis syndrome, tumor, prosthetic material). Also thrombotic microangiopathy, drug-induced kidney dysfunction, and indirect causes (opportunistic infections, sepsis, heart failure)."
+    tags: [acute-kidney-injury, etiology, pathophysiology]
+    source_type: srs-card
+  - id: nephrology-138
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What are the pathological features of HIVAN?
+    definition: Complete collapse of the glomerular capillary loops, prominent tubular dilatation, and interstitial inflammation.
+    tags: [HIVAN, pathology, renal-biopsy]
+    source_type: srs-card
+  - id: nephrology-139
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What is the clinical presentation of HIVAN?
+    definition: "Often nonspecific: fatigue, malaise, anorexia, pruritus. Most patients have advanced HIV with high viral loads and low CD4 counts. May present as acute or chronic kidney failure. Uncommon features: peripheral edema and hypertension. Diagnostic features: black patients, late-onset disease, >1 g/day proteinuria, rising serum creatinine, enlarged echogenic kidneys on ultrasound, no red blood cell casts."
+    tags: [HIVAN, clinical-presentation, diagnosis]
+    source_type: srs-card
+  - id: nephrology-140
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What is the role of antiretroviral therapy (ART) in HIV-associated kidney disease?
+    definition: ART is essential therapy. Immediate or early initiation leads to improvement of kidney function and reduction in morbidity and mortality. Patients without ART progress rapidly to end-stage kidney disease. Three-drug regimen (RTI + protease inhibitor) has transformed outcomes. Continuous therapy is important for maximal benefit; treatment interruption or poor compliance leads to high incidence of ESRD.
+    tags: [ART, management, treatment, HIVAN]
+    source_type: srs-card
+  - id: nephrology-141
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What additional treatments improve prognosis in HIVAN besides ART?
+    definition: ACE inhibitors or ARBs reduce proteinuria and improve prognosis. Corticosteroids have also been shown to improve outcomes in HIVAN.
+    tags: [management, HIVAN, renin-angiotensin-system-inhibitors]
+    source_type: srs-card
+  - id: nephrology-142
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What are the effects of ART on kidney function in HIV-associated nephropathy?
+    definition: "ART produces: introduction or increase of proteinuria initially with full or partial remission of nephrotic syndrome, delayed progression of kidney impairment, potential recovery of kidney function, and dialysis independence (patients do not become dialysis-requiring)."
+    tags: [ART, treatment-response, HIVAN]
+    source_type: srs-card
+  - id: nephrology-143
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: What are the components of kidney disease risk assessment in HIV?
+    definition: Race/ethnicity, family history of kidney disease, CD4 count, viral load, nephrotoxic medications, recreational drug use, smoking status, comorbidities (diabetes, hypertension, hepatitis B/C co-infection), atherosclerotic vascular disease.
+    tags: [risk-assessment, kidney-disease, HIV]
+    source_type: srs-card
+  - id: nephrology-144
+    card_source: HIV_The_Kidney_CMED4IIM1.yml
+    atom: When should HIVAN be considered an indication to start ART?
+    definition: HIVAN diagnosis is a clear indication to start ART regardless of the CD4 count.
+    tags: [HIVAN, ART, treatment-indication]
+    source_type: srs-card
+  - id: nephrology-145
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is blood pressure determined by?
+    definition: Blood pressure is the product of cardiac output and systemic vascular resistance.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-146
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What causes increased cardiac output?
+    definition: Increased cardiac output can result from hypervolemia in kidney diseases, endocrine diseases, stress, sympathetic activation, or endocrine neoplasias.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-147
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What causes increased systemic vascular resistance?
+    definition: Increased systemic vascular resistance results from sympathetic activation, atherosclerosis/blockages in arteries, adrenal artery disease, endocrine properties, and cerebral ischemia.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-148
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is hypertensive nephropathy?
+    definition: Hypertensive nephropathy involves arterial sclerosis of renal vessels, sclerosis of glomeruli, and interstitial fibrosis, leading to progressive kidney destruction if blood pressure is not controlled.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-149
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are the epidemiological features of hypertension globally?
+    definition: "More than 1 billion adults have hypertension. At least 40% of people over 25 have hypertension. It is a silent, invisible, progressive disease."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-150
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are the epidemiological features of hypertension in South Africa?
+    definition: In South Africa, about 8.2 million adults in the public sector have hypertension with female predominance. More than one-third of kidney replacement therapy patients have hypertension as the primary cause.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-151
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What features suggest hypertensive nephropathy?
+    definition: Patients tend to have long hypertension history, left ventricular hypertrophy on ECG, relatively normal urinary sediment, kidney shrinkage on ultrasound, slowly progressive kidney function loss, and non-nephrotic proteinuria.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-152
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is the blood pressure classification for Stage 1 hypertension?
+    definition: Stage 1 hypertension - systolic BP 140-159 mmHg and diastolic BP 90-99 mmHg.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-153
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is the blood pressure classification for Stage 2 hypertension?
+    definition: "Stage 2 hypertension - systolic BP >160 mmHg and diastolic BP >100 mmHg."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-154
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is the blood pressure classification for normal and pre-hypertension?
+    definition: Normal - <120 systolic and <80 diastolic. Pre-hypertension - 120-139 systolic and 80-89 diastolic.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-155
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are the correct patient positioning requirements for BP measurement?
+    definition: Patient should sit with back supported, feet flat on floor, arms bare and resting on table. No talking between measurements. Patient should be in a quiet room and not smoke or consume coffee 30 minutes before measurement.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-156
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: How should BP be measured for diagnosis?
+    definition: BP should be measured on both arms separated by at least 1-2 minutes. Take average of two readings on more than two occasions. Bladder should be empty.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-157
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are major cardiovascular risk factors?
+    definition: "Risk factors include tobacco use, elevated LDL or total cholesterol, diabetes, obesity (BMI >30), age >55 for men or >65 for women, GFR <60 mL/min, proteinuria, family history of premature CVD, and lack of exercise."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-158
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are potential secondary causes of hypertension to exclude?
+    definition: Secondary causes include renal artery stenosis, obstructive sleep apnea, glomerulonephritis, chronic kidney disease, polycystic kidney disease, endocrine causes, gestational hypertension, SIADH, and aortic coarctation.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-159
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What medications can cause hypertension?
+    definition: Over-the-counter medications, herbal medications, anti-appetite medications, oral contraceptives, alcohol, illicit drugs, NSAIDs, corticosteroids, and licorice can all cause hypertension.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-160
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are the features of acute hypertensive retinopathy?
+    definition: Features include arteriovenous nicking, vessel wall changes, copper or silver wire appearances, hard exudates, flame hemorrhages, and papilledema (late sign).
+    tags: []
+    source_type: srs-card
+  - id: nephrology-161
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What lifestyle measures help reduce blood pressure?
+    definition: "Key measures include salt reduction (aim for <6g/day), weight loss for BMI >30, DASH diet adherence, exercise (5x/week, 30+ minutes at moderate intensity), alcohol reduction (≤2 drinks/day), caffeine reduction, and stress management."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-162
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are the effects of exercise on blood pressure?
+    definition: Exercise alone can reduce blood pressure by up to 10 mmHg. Patients should exercise 5 times per week at moderate intensity for at least 30-minute intervals with aerobic exercise.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-163
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is the impact of salt reduction on hypertension?
+    definition: Reducing salt reduces blood pressure in both normotensive and hypertensive populations. It enhances effectiveness of ACE inhibitors and ARBs. Normal range is 8-12 g/day; aim for <6 g/day.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-164
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is the impact of weight loss on hypertension and metabolic factors?
+    definition: Weight reduction reduces blood pressure, has beneficial influence on insulin resistance, improves cholesterol profile, improves left ventricular hypertrophy, and improves diabetic control.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-165
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is the target blood pressure for hypertensive patients?
+    definition: Target systolic BP is <120 mmHg. This target reduces progression in both diabetic and non-diabetic patients. However, targets must be individualized based on comorbidities and age.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-166
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are the major drug classes used to treat hypertension?
+    definition: Major classes include diuretics, ACE inhibitors, angiotensin receptor blockers (ARBs), calcium channel blockers, beta blockers, vasodilators, alpha agonists, and potassium-sparing agents.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-167
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: Why are ACE inhibitors and ARBs preferred in hypertension management?
+    definition: ACE inhibitors and ARBs are preferred because they help with chronic kidney disease and prevent or slow the progression of kidney disease.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-168
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: When should aspirin and statins be used in hypertensive patients?
+    definition: Aspirin and statin therapy should be considered to reduce cardiovascular risk profile in hypertensive patients.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-169
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are the indications to refer hypertensive patients for specialist care?
+    definition: "Refer for specialist care if - accelerated hypertension, BP >220/120 persistently, evidence of encephalopathy or cardiogenic shock, aortic dissection, impending complications (left ventricular failure, TIA), suspected secondary hypertension, resistant to >3 drugs, multiple drug intolerances/contraindications, non-compliance, or hypertension in pregnancy."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-170
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What symptoms can occur with hypertensive urgency?
+    definition: Symptoms may include headache, lightheadedness, shortness of breath, nausea, heart palpitations, epistaxis, anxiety, blurred vision, and reduced concentration. However, most hypertensives are asymptomatic.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-171
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are signs of target organ damage from chronic hypertension on examination?
+    definition: Signs include displaced and sustained apex beat, presence of S4 gallop, loud A2 with aortic root dilatation, absent or weak pulses (femoral), bruits over carotid arteries, and bruits over renal arteries.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-172
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What are the key history elements when evaluating a hypertensive patient?
+    definition: Key elements include - previous hypertension documentation on separate occasions, evidence of end-organ damage (heart, brain, kidney, eyes), cardiovascular risk factors, history of cardiac events (angina, MI, revascularization, heart failure), cerebrovascular events (stroke, TIA, dementia), chronic kidney disease, peripheral artery disease, retinopathy.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-173
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What investigations are needed for hypertensive patients?
+    definition: Investigations include hemoglobin (anemia detection), urinalysis and dipstick (proteinuria, primary/secondary causes), serum potassium and creatinine (kidney function, endocrine causes), blood glucose (diabetes), lipid profile, and ECG for left ventricular hypertrophy.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-174
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: How is diagnosis of hypertensive nephropathy made?
+    definition: Diagnosis is inferred from clinical characteristics and exclusion of other causes - long hypertension history, left ventricular hypertrophy on ECG, normal urinary sediment, kidney shrinkage on ultrasound, slowly progressive kidney function, and non-nephrotic proteinuria. Hypertension typically precedes proteinuria development.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-175
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: How does hypertensive nephropathy differ from nephrotic syndrome?
+    definition: Nephrotic syndrome has moderate-heavy proteinuria and edema with primary disease symptoms, while hypertensive nephropathy has mild-to-moderate proteinuria without nephrotic features. Hypertensive patients often have hematuria.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-176
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is the first-line approach to hypertension treatment?
+    definition: Lifestyle modifications are the first and most important approach. Lifestyle measures decrease blood pressure, reduce drug requirements, improve cardiovascular risk profile, and work synergistically with antihypertensive agents.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-177
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What effect does caffeine have on blood pressure?
+    definition: Consuming more than 5 cups of coffee per day increases blood pressure by at least 10-15 mmHg. Caffeine exposure should be reduced.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-178
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is the salt content recommendation for hypertensive patients?
+    definition: Daily salt intake should be 8-12 g normally but reduced to at least 6 g/day or less. This is equivalent to no more than one teaspoon of salt total per day. Most salt is hidden in breads, stock cubes, ready meals, breakfast cereals, and sauces.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-179
+    card_source: Hypertension_The_Kidney_CMED4IIM1.yml
+    atom: What is the DASH diet and when is it recommended?
+    definition: DASH (Dietary Approaches to Stop Hypertension) is a recommended eating pattern for hypertensive patients. Patients should be referred to a dietician for guidance on DASH diet adherence to help reduce salt and maintain healthy eating.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-180
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the annual cost of teaching a dialysis patient in the country?
+    definition: Approximately half a million per patient per year
+    tags: []
+    source_type: srs-card
+  - id: nephrology-181
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How many patients in the case study require dialysis every year?
+    definition: Approximately 5,000 to 10,000 patients per year, with potential to double by end of decade
+    tags: []
+    source_type: srs-card
+  - id: nephrology-182
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are the three types of kidney replacement therapies?
+    definition: Hemodialysis (machine-based), peritoneal dialysis (patient self-managed), and kidney transplantation
+    tags: []
+    source_type: srs-card
+  - id: nephrology-183
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the principle of dialysis in hemodialysis machines?
+    definition: Blood flows through a dialyzer with dialysis fluid running counter-current. Uremic toxins move across a membrane from blood to dialysate, while high potassium and phosphate move out and excessive water is removed
+    tags: []
+    source_type: srs-card
+  - id: nephrology-184
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How does diffusion rate relate to solution temperature and molecular viscosity?
+    definition: Diffusion is proportional to solution temperature and inversely proportional to viscosity and size of the molecule being dialyzed
+    tags: []
+    source_type: srs-card
+  - id: nephrology-185
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What type of solutes are dialyzed - protein-bound or free?
+    definition: Only the free fraction is dialyzed; protein-bound solids in blood are not dialyzed
+    tags: []
+    source_type: srs-card
+  - id: nephrology-186
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are indications for dialysis in acute kidney injury?
+    definition: "Acute fluid overload with pulmonary edema, refractory metabolic acidosis (bicarb <10), severe hyperkalemia (>6.5), uremic encephalopathy with seizures/confusion, uremic pericarditis, or need to remove toxins like methanol/ethylene glycol"
+    tags: []
+    source_type: srs-card
+  - id: nephrology-187
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are indications for dialysis in chronic kidney disease?
+    definition: Similar to acute indications, plus long-standing malaise, nausea, vomiting, weight loss, malnutrition, and GFR persistently <15
+    tags: []
+    source_type: srs-card
+  - id: nephrology-188
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How long does a hemodialysis session last and what percentage of kidney function does it replace?
+    definition: "Each session lasts about 4 hours and provides about 5% of normal kidney function (GFR approximately 5 mL/min)"
+    tags: []
+    source_type: srs-card
+  - id: nephrology-189
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What types of vascular access can be used for hemodialysis?
+    definition: Hemodialysis catheter, permanent tunneled catheter, venous fistulas, and synthetic grafts - all inserted into large veins
+    tags: []
+    source_type: srs-card
+  - id: nephrology-190
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the procedure for peritoneal dialysis?
+    definition: High glucose concentration solutions are infused through a catheter into the abdomen. After 4-6 hours, effluent drains through gravity into a bag. Patient performs approximately 4 exchanges daily continuously
+    tags: []
+    source_type: srs-card
+  - id: nephrology-191
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are the principles underlying peritoneal dialysis?
+    definition: Diffusion of high concentration solutes across peritoneal membrane, osmosis, and ultrafiltration - all occurring at a slower rate than hemodialysis
+    tags: []
+    source_type: srs-card
+  - id: nephrology-192
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are the advantages of peritoneal dialysis?
+    definition: Residual kidney function preserved longer than hemodialysis, ability to pass urine maintained, more readily available, not limited by machine availability, patients spend less time in hospital, greater patient empowerment
+    tags: []
+    source_type: srs-card
+  - id: nephrology-193
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: When was the first kidney transplant performed and by whom?
+    definition: First performed in 1954 by Joseph Murray and colleagues; they won the Nobel Prize for it in 1990
+    tags: []
+    source_type: srs-card
+  - id: nephrology-194
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the five-year survival rate for kidney transplants in the UK?
+    definition: "Approximately 87%"
+    tags: []
+    source_type: srs-card
+  - id: nephrology-195
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are the sources of donor kidneys for transplantation?
+    definition: Live-related donor (primary relative), live unrelated donor (friend or acquaintance), or cadaveric donor (brain dead with organs harvested)
+    tags: []
+    source_type: srs-card
+  - id: nephrology-196
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are the benefits of kidney transplantation compared to dialysis?
+    definition: Better patient survival, prevents metabolic consequences of CKD (uremia, vitamin D disorders, immunometabolism changes), significantly improves quality of life for patient and family, and is far cheaper after the first year
+    tags: []
+    source_type: srs-card
+  - id: nephrology-197
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What assessments are required before kidney transplantation?
+    definition: Clinical suitability evaluation, cross-matching with donor and recipient, assessment of viral status, planning for immunosuppression post-transplant, and monitoring for infections and linked diseases
+    tags: []
+    source_type: srs-card
+  - id: nephrology-198
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How is a kidney positioned after transplantation?
+    definition: The kidney is placed in extraperitoneal position with blood vessels and ureter attached to native kidneys allowing urine to drain into the bladder
+    tags: []
+    source_type: srs-card
+  - id: nephrology-199
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How many dialysis and transplantation centers exist in South Africa according to 2017 data?
+    definition: Approximately 278 centers total, with only 30 in the public sector
+    tags: []
+    source_type: srs-card
+  - id: nephrology-200
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the number of patients on kidney replacement therapy in South Africa and the per-million population ratio?
+    definition: Just over 10,000 patients on kidney replacement therapy with a per-million population ratio of 190 (very low)
+    tags: []
+    source_type: srs-card
+  - id: nephrology-201
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What percentage of South African kidney replacement therapy patients are on hemodialysis?
+    definition: "71% of patients are on hemodialysis"
+    tags: []
+    source_type: srs-card
+  - id: nephrology-202
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How many kidney transplants were performed in South Africa in 2017?
+    definition: Approximately 260 kidney transplants, majority performed in the private sector
+    tags: []
+    source_type: srs-card
+  - id: nephrology-203
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the most effective way to prevent the need for renal replacement therapy?
+    definition: Prevent patients from developing end-stage kidney disease by managing risk factors, recognizing causes (diabetes, hypertension, infections), treating them adequately, and recognizing congenital diseases
+    tags: []
+    source_type: srs-card
+  - id: nephrology-204
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is palliative supportive care for end-stage kidney disease?
+    definition: "Management for patients who cannot benefit from dialysis or transplantation due to exclusion criteria: managing blood pressure, treating anemia, correcting hypocalcemia, providing symptom control, and referring to palliative care structures"
+    tags: []
+    source_type: srs-card
+  - id: nephrology-205
+    card_source: Kidney Replacement Therapy - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: Can patients on palliative supportive care for end-stage kidney disease live longer than those on dialysis?
+    definition: Yes, in many instances patients on supportive care live longer than those initiated on dialysis
+    tags: []
+    source_type: srs-card
+  - id: nephrology-206
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What is the annual cost of treating a patient with kidney failure requiring dialysis?
+    definition: Approximately half a million per year per patient.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-207
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What is the estimated number of patients requiring dialysis annually in a single province?
+    definition: 5,000 to 10,000 patients per year, with potential to double by the end of the decade.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-208
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What is the key differentiating feature for patients eligible for dialysis under the national chronic renal dialysis program?
+    definition: They must be transplantable within a state center.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-209
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What are the three main types of kidney replacement therapy?
+    definition: 1) Hemodialysis (machine-based), 2) Peritoneal dialysis (patient self-managed), 3) Kidney transplantation.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-210
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: How does dialysis work? Describe the principle of dialysis.
+    definition: Blood containing uremic toxins, high potassium, and phosphate flows through a dialyzer in counter-current fashion to dialysis fluid. A membrane allows uremic toxins and electrolytes to move across while proteins remain. Excess water is removed by ultrafiltration.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-211
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What factors affect the rate of diffusion in dialysis?
+    definition: Temperature of solution (proportional) and viscosity/molecular size (inversely proportional). Membrane characteristics with larger pores have faster diffusion rates.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-212
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What is dialyzed versus not dialyzed in blood?
+    definition: Only the free fraction of solutes is dialyzed. Protein-bound solutes are not dialyzed.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-213
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What are the indications for acute hemodialysis?
+    definition: "Acute kidney injury with: acute fluid overload (especially with pulmonary edema), severe metabolic acidosis (HCO3 <10), severe hyperkalemia (>6.5), uremic encephalopathy with seizures/confusion, uremic pericarditis, or need to remove toxins (methanol, ethylene glycol)."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-214
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What are the indications for chronic hemodialysis?
+    definition: "Chronic kidney disease with: long-standing malaise, nausea, weight loss, malnutrition, hypertension, or GFR persistently less than 15 mL/min."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-215
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: Describe the process of hemodialysis step by step.
+    definition: Blood leaves through an access site, enters a blood pump, flows through a filter with dialysate in counter-current direction, allowing diffusion of solutes and removal of uremic toxins, electrolytes, and water. Filtered blood is returned to the body.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-216
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: How long is a typical hemodialysis session and what percentage of normal kidney function does it provide?
+    definition: "Each session lasts approximately 4 hours and provides about 5% of the kidney function normally expected. GFR after hemodialysis is about 5 mL/min."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-217
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What are the different types of hemodialysis access?
+    definition: "Temporary: hemodialysis catheter. Permanent: tunneled hemodialysis catheter, venous fistulas (native vein-to-vein), or synthetic grafts."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-218
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: How does peritoneal dialysis work?
+    definition: High concentration glucose solution is infused into the peritoneal cavity via a catheter. After 4-6 hours, effluent drains by gravity into a collection bag. Patients perform approximately 4 exchanges daily continuously throughout the week.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-219
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What physiologic processes occur in peritoneal dialysis?
+    definition: Diffusion (high to low concentration), osmosis, and ultrafiltration occur across the peritoneal membrane at a slower rate than hemodialysis.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-220
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What are the advantages of peritoneal dialysis compared to hemodialysis?
+    definition: Residual kidney function is preserved longer, ability to pass urine is maintained, more readily available (not limited by machine availability), less hospital time, and patients become more empowered and aware of treatment. However, more upfront training is required.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-221
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What types of catheters are used for peritoneal dialysis?
+    definition: "Temporary: stink catheter for acute peritoneal dialysis. Permanent: permanent tank catheter for continuous ambulatory peritoneal dialysis (CAPD)."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-222
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: When was kidney transplantation first performed and by whom?
+    definition: 1954 by Joseph Murray and colleagues, who won the Nobel Prize in 1990 for this achievement.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-223
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What is the five-year survival rate for kidney transplants in countries like the UK?
+    definition: "Approximately 87%."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-224
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What are the sources of donor kidneys for transplantation?
+    definition: Live-related donor (primary relative), live-unrelated donor (friend), or cadaveric donor (brain-dead individual).
+    tags: []
+    source_type: srs-card
+  - id: nephrology-225
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What are the benefits of kidney transplantation?
+    definition: 1) Improved patient survival compared to dialysis, 2) Prevents metabolic consequences of CKD (uremia, vitamin D, immunometabolism), 3) Significantly improves quality of life for patient and family, 4) More cost-effective than dialysis after the first year.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-226
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What are the requirements and considerations for kidney transplantation?
+    definition: Extensive clinical suitability assessment, cross-matching between donor and recipient, assessment of viral status, post-transplant immunosuppression management, and monitoring for infections and chronic graft disease.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-227
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: Where is the transplanted kidney placed anatomically?
+    definition: In an extraperitoneal position. The blood vessels and ureter are attached to the native kidneys and the ureter drains into the bladder.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-228
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What are the statistics for kidney replacement therapy in South Africa (2017)?
+    definition: "278 dialysis and transplantation centers total, only 30 in the public sector. Approximately 10,000 patients on kidney replacement therapy. Per million population ratio of 190. 71% of patients on hemodialysis. 260 kidney transplants performed in 2017, mostly in private sector."
+    tags: []
+    source_type: srs-card
+  - id: nephrology-229
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What is the most effective way to prevent the need for renal replacement therapy?
+    definition: Prevent patients from developing end-stage kidney disease by managing risk factors and causes, recognizing and treating conditions like diabetes, hypertension, infections, obstructions, and congenital diseases.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-230
+    card_source: kidney-replacement-therapy-srs-cards.yml
+    atom: What is conservative or palliative care for end-stage kidney disease patients?
+    definition: Care for patients who cannot benefit from dialysis or transplantation. Management includes blood pressure control, anemia treatment, hypocalcemia treatment, symptom control, and referral to palliative care structures. These patients may sometimes live longer than those on dialysis.
+    tags: []
+    source_type: srs-card
+  - id: nephrology-231
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What is the epidemiology of kidney disease globally?
+    definition: "Approximately 10% of the world's population has some form of kidney disease, and about 10% of all hospital admissions involve patients who develop kidney injury."
+    tags: [epidemiology, global-health, kidney-disease]
+    source_type: srs-card
+  - id: nephrology-232
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the dimensions and location of the kidneys?
+    definition: Kidneys are approximately 10-12 centimeters in size and are located in the retroperitoneum between T12 and L3 vertebrae. The right kidney is slightly lower than the left due to the liver. They weigh approximately 150-180 grams depending on patient size.
+    tags: [anatomy, kidney, dimensions, location]
+    source_type: srs-card
+  - id: nephrology-233
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the main anatomical divisions of the kidney?
+    definition: "The kidney is divided into: renal cortex, renal medulla, renal pelvis, and renal capsule."
+    tags: [anatomy, kidney, structure]
+    source_type: srs-card
+  - id: nephrology-234
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: Describe the arterial blood supply to the kidney.
+    definition: Blood supply originates from the aorta and flows through segmental arteries, then interlobular arteries, eventually becoming afferent arterioles that supply the glomerulus.
+    tags: [anatomy, blood-supply, arteries]
+    source_type: srs-card
+  - id: nephrology-235
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What percentage of cardiac output does the kidney receive?
+    definition: "The kidney receives approximately 20% of cardiac output. This means with every heartbeat, about one-fifth of the heart's output goes to the kidneys."
+    tags: [physiology, kidney, blood-flow, cardiac-output]
+    source_type: srs-card
+  - id: nephrology-236
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What is a nephron and how many are present in each kidney?
+    definition: A nephron is the functional unit of the kidney composed of a renal tubule and glomerulus. A normal adult has approximately one million nephrons per kidney.
+    tags: [anatomy, nephron, functional-unit]
+    source_type: srs-card
+  - id: nephrology-237
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the segments of the renal tubule?
+    definition: "The renal tubule consists of: proximal convoluted tubule, loop of Henle, distal convoluted tubule, and collecting duct. Each segment has distinctive cellular lining and function."
+    tags: [anatomy, renal-tubule, segments]
+    source_type: srs-card
+  - id: nephrology-238
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the main functions of the kidney?
+    definition: "The kidney has four main functions: (1) elimination of waste products, (2) regulation of water and electrolytes, (3) regulation of acid-base physiology, (4) regulation of blood pressure and blood volume."
+    tags: [physiology, kidney-function, homeostasis]
+    source_type: srs-card
+  - id: nephrology-239
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the components of the juxtaglomerular apparatus?
+    definition: "The juxtaglomerular apparatus includes: (1) juxtaglomerular cells (modified smooth muscle cells in the afferent arteriole), (2) macula densa (specialized cells in the distal convoluted tubule that monitor sodium-chloride concentration)."
+    tags: [anatomy, juxtaglomerular-apparatus, kidney]
+    source_type: srs-card
+  - id: nephrology-240
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What happens when urine becomes hyperosmolar in the distal tubule?
+    definition: When urine is hyperosmolar, the macula densa triggers release of renin, which vasoconstricts the efferent arteriole and increases GFR.
+    tags: [physiology, renin-angiotensin, GFR]
+    source_type: srs-card
+  - id: nephrology-241
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What is the effect of adenosine on GFR?
+    definition: When urine is hyperosmolar, adenosine is released, which causes vasoconstriction of the afferent arteriole, reducing GFR.
+    tags: [physiology, GFR, adenosine]
+    source_type: srs-card
+  - id: nephrology-242
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the hormones/substances produced by the kidney?
+    definition: The kidney produces erythropoietin (regulates red blood cell production) and vitamin D (calcium and phosphate metabolism).
+    tags: [physiology, kidney, endocrine, hormones]
+    source_type: srs-card
+  - id: nephrology-243
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the main clinical syndromes in nephrology based on pathological location?
+    definition: "Clinical syndromes include: (1) tubulo-interstitial disease (tubular and interstitial problems), (2) vascular disease (small vessel and large vessel disease, pregnancy-related), (3) glomerular disease (nephritic or nephrotic syndrome)."
+    tags: [clinical-syndromes, classification, nephrology]
+    source_type: srs-card
+  - id: nephrology-244
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What is the difference between nephritic and nephrotic syndrome?
+    definition: Nephritic syndrome is associated with glomerular inflammation presenting with hematuria, hypertension, and reduced GFR. Nephrotic syndrome presents with massive proteinuria, hypoalbuminemia, edema, and hyperlipidemia.
+    tags: [glomerular-disease, nephritic, nephrotic]
+    source_type: srs-card
+  - id: nephrology-245
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the main clinical presentations of kidney disease?
+    definition: "Clinical presentations include: asymptomatic urinary abnormalities, isolated proteinuria, microscopic hematuria, macroscopic hematuria, nephrotic syndrome, nephritic syndrome, acute kidney injury, chronic kidney disease, and end-stage kidney disease."
+    tags: [clinical-presentation, symptoms, diagnosis]
+    source_type: srs-card
+  - id: nephrology-246
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: Why are most cases of kidney disease asymptomatic in early stages?
+    definition: "The majority of kidney disease cases are asymptomatic, especially in earlier stages, because the kidneys have significant functional reserve and can lose up to 50% of function before symptoms appear."
+    tags: [pathophysiology, clinical-presentation, asymptomatic]
+    source_type: srs-card
+  - id: nephrology-247
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What past medical history questions are important in kidney disease assessment?
+    definition: "Important questions include: urinary problems during childhood, previously documented kidney disease, results of employment/insurance checks, history of hypertension or diabetes (how diagnosed, treated, and managed), history of systemic diseases."
+    tags: [history-taking, assessment, nephrology]
+    source_type: srs-card
+  - id: nephrology-248
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the main symptoms related to urinary tract disease?
+    definition: "Symptoms include: pain in the flank, ureteric area or suprapubic region; hematuria (blood in urine); changes in urine appearance or volume (polyuria or oliguria)."
+    tags: [urinary-symptoms, history, assessment]
+    source_type: srs-card
+  - id: nephrology-249
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What lower urinary tract symptoms may indicate urological disease?
+    definition: "Lower urinary tract symptoms include: reduced force of stream, hesitancy, straining, intermittent flow, sensation of incomplete emptying, retention of urine, and storage abnormalities (frequency, urgency, dysuria)."
+    tags: [lower-urinary-tract, symptoms, assessment]
+    source_type: srs-card
+  - id: nephrology-250
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What systemic disease clues should be identified on system review?
+    definition: "Important clues include: skin rashes, painful joints, muscle pain, Raynaud's phenomenon, dry painful eyes, fever or night sweats, sinusitis/rhinitis/epistaxis, mouth ulcers, or photosensitivity - suggesting systemic causes of kidney disease."
+    tags: [system-review, systemic-disease, assessment]
+    source_type: srs-card
+  - id: nephrology-251
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What medications can be nephrotoxic?
+    definition: "Nephrotoxic medications include: non-steroidal anti-inflammatory drugs (NSAIDs), certain antibiotics, ACE inhibitors/ARBs (in specific contexts), and chemotherapy agents."
+    tags: [drug-history, nephrotoxicity, medications]
+    source_type: srs-card
+  - id: nephrology-252
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What ethnic and racial predispositions exist for kidney disease?
+    definition: IgA nephropathy is commonly found in Caucasian and Japanese populations; Diabetes and hypertension are commonly found in Black and Asian populations; Lupus is commonly found in Black and Asian populations.
+    tags: [epidemiology, ethnicity, genetic-predisposition]
+    source_type: srs-card
+  - id: nephrology-253
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What social and lifestyle factors affect kidney disease risk?
+    definition: "Risk factors include: smoking (increases cardiovascular and kidney risk), occupational exposure to nephrotoxic agents, hepatitis risk, HIV risk, physical inactivity, socioeconomic status, housing conditions, and access to healthcare."
+    tags: [social-history, risk-factors, lifestyle]
+    source_type: srs-card
+  - id: nephrology-254
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What features of advanced kidney disease appear on general examination?
+    definition: "Features include: evidence of uremia (hyperventilation, hiccups), pallor, cellular complexion, hydration status assessment, edema, neuropathy, bruising or scratch marks, eye findings, mouth changes, and presence of rash."
+    tags: [physical-examination, advanced-disease, findings]
+    source_type: srs-card
+  - id: nephrology-255
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What vascular access findings may be seen on examination in kidney disease?
+    definition: "Vascular findings include: presence of arterio-venous fistulas, scars from dialysis, evidence of previous kidney transplantation, and assessment of kidney masses or tenderness."
+    tags: [physical-examination, vascular-access, dialysis]
+    source_type: srs-card
+  - id: nephrology-256
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What key findings should be assessed on abdominal examination in kidney disease?
+    definition: "Key findings include: scars indicating dialysis or previous operations, presence or absence of kidneys on palpation, kidney masses, presence of edema, bruising or pigmentation, and costovertebral angle tenderness."
+    tags: [physical-examination, abdomen, assessment]
+    source_type: srs-card
+  - id: nephrology-257
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What is the importance of urine analysis in kidney disease evaluation?
+    definition: Urine analysis is one of the most important physical examination findings. It can show glucose (diabetes), blood (hematuria suggesting stone or glomerulonephritis), protein (kidney damage), and urinary sediment characteristics.
+    tags: [urine-analysis, investigation, assessment]
+    source_type: srs-card
+  - id: nephrology-258
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What cardiovascular examination findings are relevant in kidney disease?
+    definition: "Important findings include: blood pressure (lying and standing), jugular venous pressure, evidence of edema (pulmonary or peripheral), apex beat, heart sounds, pericardial rub, pleural effusions, and signs of pulmonary edema."
+    tags: [cardiovascular-examination, assessment, nephrology]
+    source_type: srs-card
+  - id: nephrology-259
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What is the head-to-toe approach to examining a patient with kidney disease?
+    definition: "Head to toe examination assesses: confusion/lethargy (advanced disease), puffy face and eyelids (edema), bruising and bleeding, nausea and vomiting, urinary symptoms, bone pain (osteodystrophy), polyneuropathy, and ankle edema."
+    tags: [physical-examination, systematic-approach, assessment]
+    source_type: srs-card
+  - id: nephrology-260
+    card_source: Nephrology_Introduction_CMED4IIM1_2026_pages-001-004.yml
+    atom: What are the main nephrology topics covered in the curriculum?
+    definition: "Main topics include: Chronic Kidney Disease, Hypertensive Nephropathy, Diabetic Kidney Disease, HIV and the Kidney, Glomerular Disease, Acute Kidney Injury, Urinary Tract Infections, Drugs and the Kidney, and Kidney Replacement Therapies."
+    tags: [curriculum, nephrology-topics, overview]
+    source_type: srs-card
+  - id: nephrology-261
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the definition of Urinary Tract Infection (UTI)?
+    definition: A urinary tract infection is a bacterial infection that occurs anywhere in the urinary tract, from the urethra to the kidneys. UTIs are among the most common bacterial infections in the world, affecting millions of people worldwide.
+    tags: [UTI, definition, epidemiology]
+    source_type: srs-card
+  - id: nephrology-262
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the epidemiology of UTI in women?
+    definition: "Approximately 50% of women will experience a UTI during their lifetime. There is a 10% annual increase in UTI risk in older women. Younger, sexually active females have a 0.5% annual risk, and 3-5% of females develop recurrent UTIs."
+    tags: [UTI, epidemiology, women, incidence]
+    source_type: srs-card
+  - id: nephrology-263
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: When do UTIs occur in men and children?
+    definition: UTIs are generally rare in men and children. When they do occur in these populations, they are typically associated with an underlying urinary tract abnormality.
+    tags: [UTI, epidemiology, men, children, risk-factors]
+    source_type: srs-card
+  - id: nephrology-264
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the anatomical components of the urinary tract?
+    definition: "The urinary tract consists of four main components: (1) kidneys - produce urine; (2) ureters - carry urine from kidneys to bladder; (3) bladder - stores urine; (4) urethra - carries urine out of the body."
+    tags: [anatomy, urinary-tract, kidneys, bladder]
+    source_type: srs-card
+  - id: nephrology-265
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the difference between lower and upper UTIs?
+    definition: Lower UTIs involve the urethra and bladder, while upper UTIs involve the ureters and kidneys. Lower UTIs are more common but upper UTIs are more serious and can lead to kidney damage if untreated.
+    tags: [UTI, classification, lower-UTI, upper-UTI, pathology]
+    source_type: srs-card
+  - id: nephrology-266
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is an uncomplicated UTI?
+    definition: An uncomplicated UTI is symptomatic cystitis or a bladder infection occurring in women with a normal, structurally intact urinary tract.
+    tags: [UTI, classification, uncomplicated-UTI, cystitis]
+    source_type: srs-card
+  - id: nephrology-267
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is a complicated UTI?
+    definition: A complicated UTI is an infection occurring in a structurally or functionally abnormal urinary tract. These require more aggressive treatment.
+    tags: [UTI, classification, complicated-UTI, abnormal-anatomy]
+    source_type: srs-card
+  - id: nephrology-268
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the difference between relapse and reinfection in UTI?
+    definition: A relapse UTI is recurrence with the same organism that was not adequately cleared by antibiotics. A reinfection is a recurrent UTI with the same or different organism after the initial infection was cleared.
+    tags: [UTI, classification, relapse, reinfection, recurrent-UTI]
+    source_type: srs-card
+  - id: nephrology-269
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What defines recurrent UTIs?
+    definition: Recurrent UTIs are defined as more than 3-4 culture-proven UTIs within a year. This pattern is more common in female patients.
+    tags: [UTI, recurrent-UTI, classification, epidemiology]
+    source_type: srs-card
+  - id: nephrology-270
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the symptoms of lower UTI?
+    definition: Symptoms of lower UTI include dysuria (painful urination), urgency, frequency of urination, hematuria (blood in urine), and foul-smelling urine.
+    tags: [UTI, lower-UTI, symptoms, clinical-presentation]
+    source_type: srs-card
+  - id: nephrology-271
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the symptoms of upper UTI?
+    definition: Symptoms of upper UTI (pyelonephritis) include fever, chills, flank pain, nausea, and vomiting. These are more serious than lower UTI symptoms.
+    tags: [UTI, upper-UTI, pyelonephritis, symptoms, clinical-presentation]
+    source_type: srs-card
+  - id: nephrology-272
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Why are women more susceptible to UTIs than men?
+    definition: Women are more likely to develop UTIs than men because the female urethra is shorter than the male urethra, making it easier for bacteria to enter and travel to the bladder.
+    tags: [UTI, risk-factors, gender-differences, anatomy]
+    source_type: srs-card
+  - id: nephrology-273
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the risk factors for developing UTI?
+    definition: "Risk factors include: being female, diabetes mellitus, sexual activity, use of certain birth control methods, recent urinary tract surgery, and presence of kidney stones. These increase risk of structural or functional abnormalities."
+    tags: [UTI, risk-factors, diabetes, sexual-activity]
+    source_type: srs-card
+  - id: nephrology-274
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the role of urine flow in UTI prevention?
+    definition: Urine flow is unidirectional in normal individuals, which is a protective factor. This normal flow helps prevent bacterial colonization of the urinary tract.
+    tags: [UTI, protective-factors, physiology, prevention]
+    source_type: srs-card
+  - id: nephrology-275
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the role of lactobacilli in UTI prevention?
+    definition: Lactobacilli suppress general bacterial colonization of the urinary tract, providing a protective effect against UTI development.
+    tags: [UTI, protective-factors, lactobacilli, microbiome]
+    source_type: srs-card
+  - id: nephrology-276
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How do antibodies and complement protect against UTI?
+    definition: Secretory IgA (sIgA) in the urinary tract reduces the attachment and invasion of bacteria. The upper urinary tract contains local phagocytes, and there is renal production of antibodies and complement activation within the urinary tract.
+    tags: [UTI, protective-factors, immune-response, IgA]
+    source_type: srs-card
+  - id: nephrology-277
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What physical properties of urine protect against bacterial infection?
+    definition: The bladder has a low urine pH, high concentration of urea, and organic acids, all of which protect against bacterial infection.
+    tags: [UTI, protective-factors, urine-chemistry, physiology]
+    source_type: srs-card
+  - id: nephrology-278
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How is UTI diagnosed based on urine testing?
+    definition: UTI diagnosis is based on symptoms and urine testing. Urine dipstick and microscopy check for presence of bacteria, white blood cells, red blood cells. Urine culture may be performed to identify the specific causative bacteria.
+    tags: [UTI, diagnosis, urine-dipstick, urine-culture]
+    source_type: srs-card
+  - id: nephrology-279
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the findings on urine dipstick testing for UTI?
+    definition: "Urine dipstick may show: (1) leukocyte esterase test - positive predictive value 66%, negative predictive value ~90%; (2) nitrite test - highest specificity for bacteria; (3) hematuria - can indicate underlying UTI among other conditions."
+    tags: [UTI, diagnosis, dipstick, leukocyte-esterase, nitrites]
+    source_type: srs-card
+  - id: nephrology-280
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What does urine microscopy reveal in UTI?
+    definition: Urine microscopy can show white blood cell casts, red blood cell casts, and the presence of bacteria which can be cultured to identify the organism.
+    tags: [UTI, diagnosis, microscopy, urine-casts]
+    source_type: srs-card
+  - id: nephrology-281
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the colony-forming unit (CFU) thresholds in female UTI diagnosis?
+    definition: "In females with cystitis: >1,000 CFU/mL; in pyelonephritis: >10,000 CFU/mL; asymptomatic bacteriuria: >=100,000 CFU/mL (bacteria colonization without symptoms)."
+    tags: [UTI, diagnosis, urine-culture, CFU-threshold]
+    source_type: srs-card
+  - id: nephrology-282
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: When is imaging investigation indicated in UTI?
+    definition: Imaging (ultrasound, intravenous pyelogram/IVP, or CT scan) is indicated especially when pyelonephritis does not respond to therapy, to rule out underlying structural defects like kidney stones or neurogenic bladder.
+    tags: [UTI, investigation, imaging, ultrasound, CT-scan]
+    source_type: srs-card
+  - id: nephrology-283
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What imaging studies are recommended in men with recurrent UTI?
+    definition: In men with first or second UTI, especially elderly men, recommended studies include prostate-specific antigen testing, digital rectal prostate examination, ultrasound or IVP, and post-void residual volume assessment.
+    tags: [UTI, investigation, men, imaging, prostate]
+    source_type: srs-card
+  - id: nephrology-284
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the first-line antibiotics for uncomplicated cystitis in women?
+    definition: Uncomplicated cystitis in women is treated with fluoroquinolones such as ciprofloxacin for 3 days as first-line therapy.
+    tags: [UTI, treatment, antibiotics, ciprofloxacin, cystitis]
+    source_type: srs-card
+  - id: nephrology-285
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the treatment duration for complicated UTI?
+    definition: Complicated UTI requires 7 days of antibiotic treatment, compared to 3 days for uncomplicated cystitis.
+    tags: [UTI, treatment, antibiotics, complicated-UTI, duration]
+    source_type: srs-card
+  - id: nephrology-286
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the antibiotic treatment for UTI in pregnancy?
+    definition: In pregnant women with UTI, co-amoxiclav (amoxicillin-clavulanic acid) is used for 7 days.
+    tags: [UTI, treatment, pregnancy, co-amoxiclav, antibiotics]
+    source_type: srs-card
+  - id: nephrology-287
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the treatment for acute pyelonephritis in women?
+    definition: Uncomplicated pyelonephritis in women is treated with ciprofloxacin or other antibiotics for 14 days.
+    tags: [UTI, pyelonephritis, treatment, antibiotics, duration]
+    source_type: srs-card
+  - id: nephrology-288
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What supportive care is important in UTI treatment?
+    definition: Adequate oral fluid intake is essential to ensure bacteria are washed out of the urinary tract. Increased fluid and frequent urination helps clear the infection.
+    tags: [UTI, treatment, supportive-care, hydration, fluid-intake]
+    source_type: srs-card
+  - id: nephrology-289
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: When should complicated UTI patients be admitted to hospital?
+    definition: Complicated UTI patients should be admitted if they have evidence of systemic sepsis or if they are diabetic, as they are prone to severe infections.
+    tags: [UTI, complicated-UTI, hospitalization, sepsis, diabetes]
+    source_type: srs-card
+  - id: nephrology-290
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the in-hospital treatment regimen for complicated UTI?
+    definition: Hospitalized complicated UTI patients receive IV fluids, IV antibiotics, and require 2-3 weeks of therapy. Treatment is adjusted based on culture and sensitivity results. Further imaging may be needed if no response occurs.
+    tags: [UTI, complicated-UTI, hospitalization, IV-antibiotics, treatment]
+    source_type: srs-card
+  - id: nephrology-291
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the common causative organisms of UTI?
+    definition: "The most common causative organisms are: (1) E. coli - most common; (2) Staphylococcus saprophyticus; (3) Klebsiella; (4) Enterococcus; (5) Proteus species."
+    tags: [UTI, microbiology, bacteria, pathogens, E-coli]
+    source_type: srs-card
+  - id: nephrology-292
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the pathogenesis of lower UTI?
+    definition: Lower UTI typically begins when bacteria from the rectum or vagina enter the urethra and travel up to the bladder, causing infection.
+    tags: [UTI, lower-UTI, pathogenesis, bacterial-translocation]
+    source_type: srs-card
+  - id: nephrology-293
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the preventive measures for UTI?
+    definition: "Prevention strategies include: drinking plenty of fluids, urinating frequently, practicing good hygiene, avoiding tissues or spermicides, and consuming cranberry beverages (though evidence-based support is limited)."
+    tags: [UTI, prevention, lifestyle, hygiene, fluid-intake]
+    source_type: srs-card
+  - id: nephrology-294
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What clinical features suggest pyelonephritis rather than cystitis?
+    definition: "Clinical features suggesting pyelonephritis include: systemic symptoms (fever, chills), flank pain, and positive urine dipstick findings. In diabetic patients with systemic symptoms and urgency, pyelonephritis is likely."
+    tags: [UTI, pyelonephritis, diagnosis, clinical-differentiation]
+    source_type: srs-card
+  - id: nephrology-295
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the typical presentation of the index case described in the lecture?
+    definition: A 54-year-old diabetic patient presents with fever, left-sided flank pain, and dysuria for 3 days. Urine dipstick shows 3+ leukocytes and 1+ protein, consistent with pyelonephritis.
+    tags: [UTI, case-study, pyelonephritis, clinical-presentation]
+    source_type: srs-card
+  - id: nephrology-296
+    card_source: Urinary Tract Infections (UTI) - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the recommended management for the index case of pyelonephritis?
+    definition: The diabetic patient with pyelonephritis requires hospital admission, IV antibiotics, IV fluids for hydration, and pain control management due to systemic symptoms and underlying diabetes.
+    tags: [UTI, pyelonephritis, management, hospitalization, diabetes]
+    source_type: srs-card
+scenarios:
+  - name: Acute Kidney Disease CMED4IIM1 — Diagnostic Reasoning Chain
+    description: Apply Acute Kidney Disease CMED4IIM1 atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-1
+      - nephrology-2
+      - nephrology-3
+      - nephrology-4
+      - nephrology-5
+      - nephrology-6
+      - nephrology-7
+      - nephrology-8
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Acute Kidney Disease CMED4IIM1 guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Acute Kidney Disease CMED4IIM1 algorithm.
+  - name: Approach To Chronic Kidney Disease — Diagnostic Reasoning Chain
+    description: Apply Approach To Chronic Kidney Disease atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-35
+      - nephrology-36
+      - nephrology-37
+      - nephrology-38
+      - nephrology-39
+      - nephrology-40
+      - nephrology-41
+      - nephrology-42
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Approach To Chronic Kidney Disease guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Approach To Chronic Kidney Disease algorithm.
+  - name: Diabetic Kidney Disease — Diagnostic Reasoning Chain
+    description: Apply Diabetic Kidney Disease atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-60
+      - nephrology-61
+      - nephrology-62
+      - nephrology-63
+      - nephrology-64
+      - nephrology-65
+      - nephrology-66
+      - nephrology-67
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Diabetic Kidney Disease guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Diabetic Kidney Disease algorithm.
+  - name: "Drug  The Kidney — Diagnostic Reasoning Chain"
+    description: "Apply Drug  The Kidney atoms in sequence to triage a presenting patient"
+    atom_ids:
+      - nephrology-83
+      - nephrology-84
+      - nephrology-85
+      - nephrology-86
+      - nephrology-87
+      - nephrology-88
+      - nephrology-89
+      - nephrology-90
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Drug  The Kidney guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: "Reconfirm diagnosis; escalate to second-line per Drug  The Kidney algorithm."
+  - name: Glomerular Disease — Diagnostic Reasoning Chain
+    description: Apply Glomerular Disease atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-100
+      - nephrology-101
+      - nephrology-102
+      - nephrology-103
+      - nephrology-104
+      - nephrology-105
+      - nephrology-106
+      - nephrology-107
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Glomerular Disease guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Glomerular Disease algorithm.
+  - name: HIV The Kidney CMED4IIM1 — Diagnostic Reasoning Chain
+    description: Apply HIV The Kidney CMED4IIM1 atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-125
+      - nephrology-126
+      - nephrology-127
+      - nephrology-128
+      - nephrology-129
+      - nephrology-130
+      - nephrology-131
+      - nephrology-132
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per HIV The Kidney CMED4IIM1 guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per HIV The Kidney CMED4IIM1 algorithm.
+  - name: Hypertension The Kidney CMED4IIM1 — Diagnostic Reasoning Chain
+    description: Apply Hypertension The Kidney CMED4IIM1 atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-145
+      - nephrology-146
+      - nephrology-147
+      - nephrology-148
+      - nephrology-149
+      - nephrology-150
+      - nephrology-151
+      - nephrology-152
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Hypertension The Kidney CMED4IIM1 guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Hypertension The Kidney CMED4IIM1 algorithm.
+  - name: Kidney Replacement Therapy — Diagnostic Reasoning Chain
+    description: Apply Kidney Replacement Therapy atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-180
+      - nephrology-181
+      - nephrology-182
+      - nephrology-183
+      - nephrology-184
+      - nephrology-185
+      - nephrology-186
+      - nephrology-187
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Kidney Replacement Therapy guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Kidney Replacement Therapy algorithm.
+  - name: kidney-replacement-therapy-srs-cards — Diagnostic Reasoning Chain
+    description: Apply kidney-replacement-therapy-srs-cards atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-206
+      - nephrology-207
+      - nephrology-208
+      - nephrology-209
+      - nephrology-210
+      - nephrology-211
+      - nephrology-212
+      - nephrology-213
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per kidney-replacement-therapy-srs-cards guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per kidney-replacement-therapy-srs-cards algorithm.
+  - name: Nephrology Introduction CMED4IIM1 2026 pages-001-004 — Diagnostic Reasoning Chain
+    description: Apply Nephrology Introduction CMED4IIM1 2026 pages-001-004 atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-231
+      - nephrology-232
+      - nephrology-233
+      - nephrology-234
+      - nephrology-235
+      - nephrology-236
+      - nephrology-237
+      - nephrology-238
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Nephrology Introduction CMED4IIM1 2026 pages-001-004 guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Nephrology Introduction CMED4IIM1 2026 pages-001-004 algorithm.
+  - name: Urinary Tract Infections (UTI) — Diagnostic Reasoning Chain
+    description: Apply Urinary Tract Infections (UTI) atoms in sequence to triage a presenting patient
+    atom_ids:
+      - nephrology-261
+      - nephrology-262
+      - nephrology-263
+      - nephrology-264
+      - nephrology-265
+      - nephrology-266
+      - nephrology-267
+      - nephrology-268
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Urinary Tract Infections (UTI) guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Urinary Tract Infections (UTI) algorithm.

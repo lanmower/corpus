@@ -1,0 +1,1201 @@
+metadata:
+  title: Diabetes Triage Scenarios
+  version: '1.0'
+  generated: '2026-05-04'
+  source: SRS cards from diabetes
+  total_atoms: 177
+  total_scenarios: 5
+atoms:
+  - id: diabetes-1
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What are the two main categories of acute diabetes emergencies?
+    definition: Hyperglycemic emergencies (ketoacidosis and hyperosmolar hyperglycemic state) and hypoglycemic disorders.
+    tags: [diabetes, acute-complications, emergencies]
+    source_type: srs-card
+  - id: diabetes-2
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: List common precipitants of diabetic ketoacidosis in patients with established diabetes.
+    definition: Omission of insulin and underlying illnesses (infections, myocardial infarction, vascular events).
+    tags: [DKA, precipitants, etiology]
+    source_type: srs-card
+  - id: diabetes-3
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What are the two major metabolic abnormalities in ketoacidosis pathogenesis?
+    definition: Insulin deficiency and glucagon excess.
+    tags: [DKA, pathophysiology, metabolism]
+    source_type: srs-card
+  - id: diabetes-4
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What are the metabolic consequences of insulin deficiency?
+    definition: Reduced peripheral glucose uptake, increased hepatic gluconeogenesis, glycogen breakdown, hyperglycemia, osmotic diuresis, dehydration, and fat tissue breakdown (lipolysis).
+    tags: [insulin, deficiency, consequences]
+    source_type: srs-card
+  - id: diabetes-5
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: How does glucagon excess drive ketone body formation?
+    definition: Glucagon activates fatty acid oxidation in liver mitochondria, leading to ketone body formation.
+    tags: [glucagon, ketogenesis, mechanism]
+    source_type: srs-card
+  - id: diabetes-6
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: Why does the hyperosmolar hyperglycemic state not involve ketogenesis?
+    definition: Residual insulin secretion is sufficient to suppress lipolysis, preventing ketogenesis. This typically occurs in type 2 diabetes.
+    tags: [HHS, pathophysiology, type-2-diabetes]
+    source_type: srs-card
+  - id: diabetes-7
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What are the typical symptoms of acute metabolic emergencies in diabetes?
+    definition: Abdominal pain, nausea, vomiting, polyuria, polydipsia, dyspnea (asymptotic breathing), and progressing to confusion and coma.
+    tags: [DKA, symptoms, clinical-presentation]
+    source_type: srs-card
+  - id: diabetes-8
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What clinical signs indicate metabolic emergency in diabetes?
+    definition: Dehydration, asymptotic/cosmo breathing, tender abdomen, confusion, and coma as disease progresses.
+    tags: [DKA, signs, clinical-presentation]
+    source_type: srs-card
+  - id: diabetes-9
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What are the cornerstones of therapy for diabetic ketoacidosis?
+    definition: Intravenous fluid rehydration and glucose control with insulin infusion, along with correction of electrolyte abnormalities and treatment of associated illnesses.
+    tags: [DKA, management, treatment]
+    source_type: srs-card
+  - id: diabetes-10
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What type of intravenous fluid is used for rehydration in DKA, and when is an alternative used?
+    definition: Normal saline or isotonic saline is used initially; half normal saline is used if hyponatremia is present.
+    tags: [DKA, management, fluids]
+    source_type: srs-card
+  - id: diabetes-11
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What is the target rate for glucose reduction in DKA management?
+    definition: Between 3-4 millimoles per liter per hour.
+    tags: [DKA, management, glucose-control]
+    source_type: srs-card
+  - id: diabetes-12
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What happens to insulin infusion when glucose drops below 15 mmol/L?
+    definition: The insulin infusion rate may be slightly reduced, and fluids may include dextrose water or dextrose saline. However, insulin must not be stopped until full resolution of ketonemia.
+    tags: [DKA, management, insulin-therapy]
+    source_type: srs-card
+  - id: diabetes-13
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: Why is potassium monitoring critical in DKA treatment?
+    definition: Potassium is initially high at diagnosis but drops rapidly with insulin and glucose infusions, requiring vigorous replacement to prevent hypokalemia.
+    tags: [DKA, management, electrolytes]
+    source_type: srs-card
+  - id: diabetes-14
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: When is bicarbonate indicated in DKA management?
+    definition: Bicarbonate is usually not needed and should be avoided unless there is critical acidosis.
+    tags: [DKA, management, bicarbonate]
+    source_type: srs-card
+  - id: diabetes-15
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What is the purpose of monitoring in DKA management?
+    definition: To ensure steady progression and improvement in biochemical and clinical condition, done at least hourly.
+    tags: [DKA, management, monitoring]
+    source_type: srs-card
+  - id: diabetes-16
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What tool has recently become useful for monitoring ketonemia resolution in DKA?
+    definition: Finger prick blood ketone meters are widely available and useful for monitoring improvement and resolution of ketonemia.
+    tags: [DKA, monitoring, ketones]
+    source_type: srs-card
+  - id: diabetes-17
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What are potential complications of ketoacidosis?
+    definition: Cerebral edema (in severe forms), adult respiratory distress syndrome, and venous thromboembolism.
+    tags: [DKA, complications]
+    source_type: srs-card
+  - id: diabetes-18
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: Which complication is more common in hyperosmolar hyperglycemic state?
+    definition: Venous thromboembolism; prophylactic anticoagulation may be considered in older patients with severe hyperglycemia.
+    tags: [HHS, complications, thromboembolism]
+    source_type: srs-card
+  - id: diabetes-19
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: How is hypoglycemia classified in diabetes?
+    definition: "By glucose level: <3.9 mmol/L is glucose alert (Level 1), <3 mmol/L is clinically significant (Level 2), and any glucose associated with cognitive impairment is severe hypoglycemia."
+    tags: [hypoglycemia, classification, diagnosis]
+    source_type: srs-card
+  - id: diabetes-20
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What physiologic responses protect against hypoglycemia in non-diabetic individuals?
+    definition: Cessation of insulin secretion (at ~4 mmol/L glucose), release of counter-regulatory hormones (glucagon and catecholamines first, then cortisol and growth hormone), and neuroglycopenic responses.
+    tags: [hypoglycemia, physiology, counter-regulation]
+    source_type: srs-card
+  - id: diabetes-21
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: Why is counter-regulatory response to hypoglycemia impaired in people with diabetes?
+    definition: Due to injection of insulin prior to the episode or therapies (like sulfonylureas) that release endogenous insulin.
+    tags: [hypoglycemia, diabetes, pathophysiology]
+    source_type: srs-card
+  - id: diabetes-22
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What are adrenergic symptoms of hypoglycemia?
+    definition: Tremor, pallor, sweating, palpitations, and tachycardia.
+    tags: [hypoglycemia, symptoms, adrenergic]
+    source_type: srs-card
+  - id: diabetes-23
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What are neuroglycopenic symptoms of hypoglycemia?
+    definition: Cognitive dysfunction, which may progress to seizure and coma.
+    tags: [hypoglycemia, symptoms, neuroglycopenic]
+    source_type: srs-card
+  - id: diabetes-24
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What should be evaluated after a hypoglycemic episode in a patient with diabetes?
+    definition: The precipitating cause and measures to prevent recurrence should be determined.
+    tags: [hypoglycemia, management, evaluation]
+    source_type: srs-card
+  - id: diabetes-25
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: List treatment-related causes of hypoglycemia in diabetes patients.
+    definition: Too much insulin, inappropriately high sulfonylurea dosage, and long-acting sulfonylureas given to patients with renal dysfunction.
+    tags: [hypoglycemia, causes, treatment-related]
+    source_type: srs-card
+  - id: diabetes-26
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What non-treatment factors can cause hypoglycemia in diabetes?
+    definition: Missed meals, planned exercise, alcohol, drugs, and renal insufficiency.
+    tags: [hypoglycemia, causes, non-treatment]
+    source_type: srs-card
+  - id: diabetes-27
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: How is level 1 and 2 hypoglycemia managed?
+    definition: By administration of oral carbohydrate (10-15 grams initially, such as 100ml fruit juice, honey, sugar, or sweets).
+    tags: [hypoglycemia, management, treatment]
+    source_type: srs-card
+  - id: diabetes-28
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What additional measure is needed for hypoglycemia occurring at night or before a long period to next meal?
+    definition: Additional nutrient containing protein or fat is required to provide gluconeogenic substrate.
+    tags: [hypoglycemia, management, nocturnal]
+    source_type: srs-card
+  - id: diabetes-29
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What is severe hypoglycemia and how is it treated?
+    definition: Severe hypoglycemia is an emergency requiring intravenous glucose or glucagon administration. Glucagon (1mg) can be given by intramuscular or subcutaneous injection.
+    tags: [hypoglycemia, severe, emergency-treatment]
+    source_type: srs-card
+  - id: diabetes-30
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: Why must care be taken when administering intravenous glucose for severe hypoglycemia?
+    definition: To avoid extravasation of dextrose into subcutaneous tissues, which can cause tissue breakdown.
+    tags: [hypoglycemia, management, IV-glucose]
+    source_type: srs-card
+  - id: diabetes-31
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What must occur after glucagon administration for hypoglycemia?
+    definition: The patient needs to eat something to replenish the utilized liver glycogen.
+    tags: [hypoglycemia, management, glucagon]
+    source_type: srs-card
+  - id: diabetes-32
+    card_source: "Acute Diabetes  Complications - CMED4IIM1 - 2026_pages-001-004.yml"
+    atom: What preventive measures should be taken for patients at risk of hypoglycemia?
+    definition: Plan ahead to ingest carbohydrate in situations where hypoglycemia may occur (unplanned exercise), intensify glucose monitoring when insulin doses change, and modify lifestyle to avoid hypoglycemia.
+    tags: [hypoglycemia, prevention, management]
+    source_type: srs-card
+  - id: diabetes-33
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is the basic feedback loop of the pituitary-thyroid axis?
+    definition: Hypothalamus releases TRH → stimulates pituitary to release TSH → TSH binds to thyroid receptor → production of T4 and T3 → T4 and T3 feed back to suppress hypothalamus and pituitary.
+    tags: [physiology, endocrine, thyroid-axis]
+    source_type: srs-card
+  - id: diabetes-34
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What are the functional units of the thyroid gland where hormone synthesis occurs?
+    definition: Thyroid follicles are the functional units where thyroid hormone synthesis occurs. The colloid is the site where preformed thyroid hormone is stored.
+    tags: [anatomy, thyroid, physiology]
+    source_type: srs-card
+  - id: diabetes-35
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: How is thyroid hormone synthesized at the cellular level?
+    definition: Iodide is actively pumped from circulation into thyroid epithelial cells. Thyroid peroxidase enzyme organifies iodine, which binds to tyrosine to form T4 (thyroxine). T4 binds to thyroglobulin for storage in colloid.
+    tags: [synthesis, biochemistry, thyroid]
+    source_type: srs-card
+  - id: diabetes-36
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is the difference between hyperthyroidism and thyrotoxicosis?
+    definition: "Hyperthyroidism: excess thyroid hormone synthesized and secreted by the thyroid gland. Thyrotoxicosis: excess preformed thyroid hormones released, such as in inflammatory disorders."
+    tags: [definitions, pathophysiology]
+    source_type: srs-card
+  - id: diabetes-37
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What are the three most common causes of thyrotoxicosis?
+    definition: 1. Graves disease (most common) 2. Toxic multinodular goiter 3. Toxic adenoma. Other causes include thyroiditis and factitious hormone use.
+    tags: [etiology, differential-diagnosis]
+    source_type: srs-card
+  - id: diabetes-38
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: List the common symptoms of thyrotoxicosis.
+    definition: Weight loss despite increased appetite, tremor, anxiety, insomnia, palpitations, dyspnea, increased GI function, diaphoresis, heat intolerance. Graves disease patients may have specific eye signs.
+    tags: [clinical-presentation, symptoms]
+    source_type: srs-card
+  - id: diabetes-39
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What are the three specific eye-related manifestations of Graves disease?
+    definition: 1. Acropachy (clubbing-like appearance) 2. Dermopathy (infiltration of skin with ground substance, raised orange-skin lesions) 3. Graves orbitopathy (swelling and proptosis of eyes).
+    tags: [graves-disease, ophthalmology]
+    source_type: srs-card
+  - id: diabetes-40
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is Pemberton sign and what does it indicate?
+    definition: "Pemberton sign: patient elevates arms and external jugular vein becomes engorged. Indicates retrosternal extension of thyroid goiter."
+    tags: [clinical-examination, diagnosis]
+    source_type: srs-card
+  - id: diabetes-41
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What thyroid hormone measurement pattern indicates thyroid toxicosis?
+    definition: "TSH is suppressed (first indicator), T4 is elevated, T3 is elevated. Rare exception: TSH elevated with elevated T4/T3 suggests TSH-secreting pituitary adenoma."
+    tags: [laboratory, investigation]
+    source_type: srs-card
+  - id: diabetes-42
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is the difference between anti-TSH receptor antibody and anti-thyroid peroxidase/globulin antibodies?
+    definition: "Anti-TSH receptor antibody: pathognomonic of Graves disease, NOT found in other thyroid diseases, crosses placenta in pregnancy. Anti-TPO/anti-thyroglobulin: occur in autoimmune thyroiditis, found in normal people, do NOT cross placenta."
+    tags: [antibodies, immunology, diagnosis]
+    source_type: srs-card
+  - id: diabetes-43
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is the TIRADS grading system used for?
+    definition: Used in thyroid ultrasound to categorize nodules and help determine the need for needle aspiration biopsy.
+    tags: [investigation, ultrasound]
+    source_type: srs-card
+  - id: diabetes-44
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What are the patterns of isotope uptake in different thyrotoxic states?
+    definition: "Graves: uniform, symmetrical uptake. Toxic multinodular goiter: irregular, patchy uptake. Toxic adenoma: single area of uptake, rest suppressed. Inflammatory disease: diminished or absent uptake."
+    tags: [investigation, isotope-scan]
+    source_type: srs-card
+  - id: diabetes-45
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is the typical age and gender distribution of Graves disease?
+    definition: Typically affects young women between 30-60 years old with strong female-to-male predominance. Has genetic associations encoded in HLA and other genes with familiar clustering.
+    tags: [epidemiology, graves-disease]
+    source_type: srs-card
+  - id: diabetes-46
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: How does toxic multinodular goiter (Plummer disease) differ from Graves disease?
+    definition: Affects older persons, no female predominance, develops slowly in pre-existing nodular goiter. One or more nodules become autonomous and secrete thyroid hormone unregulated. Less severe disease, nodular on palpation, antibodies not detectable.
+    tags: [differential-diagnosis, etiology]
+    source_type: srs-card
+  - id: diabetes-47
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What are the two main categories of inflammatory thyroid disease?
+    definition: "1. Immune-mediated: Hashimoto's thyroiditis or drug-induced (interferon, immune checkpoint inhibitors). 2. Non-immune: De Quervain's thyroiditis (post-infectious), often follows viral infection."
+    tags: [thyroiditis, inflammation]
+    source_type: srs-card
+  - id: diabetes-48
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is the clinical presentation of inflammatory thyroid disease?
+    definition: Mild thyroid toxicosis, pain over thyroid often referred to jaw, fever, systemic illness. Isotope uptake absent. Antibodies very high in immune-mediated, absent in non-immune. Self-limiting with spontaneous resolution.
+    tags: [thyroiditis, clinical-presentation]
+    source_type: srs-card
+  - id: diabetes-49
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What are the three main treatment categories for thyroid toxicosis?
+    definition: "1. Symptomatic therapy: beta-blockers for heart rate, tremor control, and reducing T4 to T3 conversion. 2. Specific therapy: anti-thyroid drugs, thyroidectomy, radioactive iodine. 3. Duration and choice depends on etiology and circumstances."
+    tags: [treatment, management]
+    source_type: srs-card
+  - id: diabetes-50
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is carbimazole and what is its mechanism of action?
+    definition: Anti-thyroid drug available in South Africa (trade name Neomerkazole). Inhibits thyroid hormone synthesis by inhibiting thyroid peroxidase enzyme activity. Used for ~75 years, highly effective, generally well-tolerated.
+    tags: [pharmacology, antithyroid-drugs]
+    source_type: srs-card
+  - id: diabetes-51
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What are the adverse effects of anti-thyroid drugs?
+    definition: "Primary adverse effect: bone marrow toxicity (agranulocytosis). Relative risk of pancreatitis. Long-term use may be associated with vasculitis."
+    tags: [pharmacology, adverse-effects]
+    source_type: srs-card
+  - id: diabetes-52
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: How does radioactive iodine work and what are its considerations?
+    definition: Radioactive iodine (technetium 99) concentrates in thyroid, emits radiation destroying thyroid tissue. Teratogenic, may worsen Graves orbitopathy. Has slow onset; anti-thyroid drugs used meanwhile. Dose may need repetition after 6 months.
+    tags: [treatment, radioactive-iodine]
+    source_type: srs-card
+  - id: diabetes-53
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: When is total thyroidectomy indicated for thyroid toxicosis?
+    definition: "Reserved for: very large goiter with mediastinal compression, patient preference, mid-trimester pregnancy, inadequate response to medical therapy. Patient must be rendered euthyroid first with anti-thyroid drugs, Lugol's iodine, and beta-blockers."
+    tags: [surgery, thyroidectomy]
+    source_type: srs-card
+  - id: diabetes-54
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What are the complications of thyroidectomy?
+    definition: "Patient becomes hypothyroid (expected). Rare: hypoparathyroidism, recurrent laryngeal nerve injury. Total thyroidectomy is now preferred over subtotal for Graves disease."
+    tags: [surgery, complications]
+    source_type: srs-card
+  - id: diabetes-55
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is the GREAT score and what does it predict?
+    definition: "Clinical tool for estimating risk of relapse in Graves disease patients treated medically. Includes: age, thyroid hormone level, TSH receptor antibody level, goiter size (WHO classification). Helps determine likelihood of response to medical therapy."
+    tags: [scoring-system, prognosis, graves-disease]
+    source_type: srs-card
+  - id: diabetes-56
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is the management algorithm for Graves disease based on relapse risk?
+    definition: "Low relapse risk: medical management with carbimazole ~18 months; many undergo spontaneous remission. High relapse risk/low response chance: radioactive iodine (if small goiter, patient preference) or surgery (if large goiter, suspicious nodules, patient preference, orbitopathy)."
+    tags: [management, graves-disease]
+    source_type: srs-card
+  - id: diabetes-57
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: How is toxic multinodular goiter managed differently from Graves disease?
+    definition: Medical treatment (carbimazole) controls but does not cure disease. Definitive therapy requires radioactive iodine or thyroidectomy. Choice depends on individual circumstances, patient preference, and indications like large goiter or compressive symptoms.
+    tags: [management, nodular-goiter]
+    source_type: srs-card
+  - id: diabetes-58
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: Why are anti-thyroid drugs and radioactive iodine ineffective in inflammatory thyroid disease?
+    definition: Inflammatory diseases have no thyroid autonomy; the inflammation itself causes hormone release. Anti-thyroid drugs (which block synthesis) and radioactive iodine (which destroys autonomous tissue) cannot address the inflammatory process.
+    tags: [thyroiditis, treatment]
+    source_type: srs-card
+  - id: diabetes-59
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is Graves orbitopathy and what are the risk factors for development?
+    definition: "Inflammatory eye disease in Graves disease related to cross-reactivity of immune responses to thyroid and orbital antigens. Risk factors: cigarette smoking, severe hyperthyroidism, radioactive iodine, untreated/uncontrolled hypothyroidism."
+    tags: [orbitopathy, graves-disease]
+    source_type: srs-card
+  - id: diabetes-60
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: How is activity of Graves eye disease assessed?
+    definition: "Grading system identifies if 3+ components present = active disease. Severity assessed as mild, moderate, or severe. Severity criteria: degree of lid retraction, exophthalmos, corneal dryness, presence/absence of diplopia."
+    tags: [orbitopathy, assessment]
+    source_type: srs-card
+  - id: diabetes-61
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is sight-threatening Graves orbitopathy and how does it present?
+    definition: Optic nerve compression or corneal breakdown risk, leading to significant visual impairment. Requires urgent therapy with surgical decompression and powerful immunosuppressive agents.
+    tags: [orbitopathy, emergency]
+    source_type: srs-card
+  - id: diabetes-62
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is the stepped treatment approach for Graves orbitopathy by severity?
+    definition: "Mild: smoking cessation, normal thyroid function, topical lubricating gels/drops, oral selenium 6 months. Moderate: add IV methylprednisolone. Severe/site-threatening: IV methylprednisolone (12 weeks), surgical decompression, orbital radiation, immunosuppressive agents."
+    tags: [orbitopathy, treatment]
+    source_type: srs-card
+  - id: diabetes-63
+    card_source: Hyperthyroidism - CMED4IIM1 - 2026_pages-001-008.yml
+    atom: What is thyroid crisis (thyroid storm) and how is it treated?
+    definition: "Medical emergency with very high thyroid hormone levels. Diagnosis usually clinical. Treated in ICU/high-care with: high-dose carbimazole, Lugol's iodine, high-dose beta-blockers, IV hydrocortisone, treatment of atrial fibrillation. Alternatives if no response: lithium, potassium perchlorate, cholestyramine, plasma pheresis."
+    tags: [emergency, thyroid-crisis]
+    source_type: srs-card
+  - id: diabetes-64
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is hypothyroidism?
+    definition: A clinical syndrome resulting from inadequate tissue exposure to thyroid hormones, characterized by mental and physical lethargy, developing slowly.
+    tags: [definition, pathophysiology]
+    source_type: srs-card
+  - id: diabetes-65
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is primary hypothyroidism?
+    definition: Hypothyroidism due to disease of the thyroid gland itself (most common cause of hypothyroidism).
+    tags: [classification, etiology]
+    source_type: srs-card
+  - id: diabetes-66
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is secondary hypothyroidism?
+    definition: Hypothyroidism due to disease of the pituitary gland.
+    tags: [classification, etiology]
+    source_type: srs-card
+  - id: diabetes-67
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is tertiary hypothyroidism?
+    definition: Hypothyroidism due to disease of the hypothalamus.
+    tags: [classification, etiology]
+    source_type: srs-card
+  - id: diabetes-68
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: Name common causes of primary hypothyroidism related to thyroid disease.
+    definition: Autoimmune thyroiditis, post-infectious thyroiditis, thyroidectomy, radioactive iodine therapy, iodine deficiency or excess, infiltrative diseases, infections (tuberculosis), certain drugs.
+    tags: [etiology, primary-hypothyroidism]
+    source_type: srs-card
+  - id: diabetes-69
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are common causes of secondary and tertiary hypothyroidism?
+    definition: Pituitary tumors, treatment complications (surgery and radiotherapy), pituitary infections, trauma, certain drugs, genetic disorders.
+    tags: [etiology, secondary-tertiary]
+    source_type: srs-card
+  - id: diabetes-70
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: List the clinical features of hypothyroidism.
+    definition: Weakness, dry skin, slow speech, peri-orbital puffiness, cold intolerance, macroglossia with obstructive sleep apnea, muscle cramps, deafness, menorrhagia, loss of scalp hair, poor memory, constipation, weight gain, hoarseness, snoring.
+    tags: [clinical-features, symptoms]
+    source_type: srs-card
+  - id: diabetes-71
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What physical examination signs are seen in hypothyroidism?
+    definition: Dry, cool, wrinkled skin; brittle nails; coarse hair; thick tongue; pale appearance; peri-orbital puffiness (myxedema); keratinemia (yellowish discoloration of palms); alopecia; loss of lateral eyebrows.
+    tags: [clinical-features, physical-signs]
+    source_type: srs-card
+  - id: diabetes-72
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What cardiovascular manifestations are associated with hypothyroidism?
+    definition: Regular sinus bradycardia, hypertension, narrow pulse pressure, poor cardiac function, heart failure with cardiomyopathy, and rarely pericardial effusion.
+    tags: [cardiovascular, complications]
+    source_type: srs-card
+  - id: diabetes-73
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What neuromuscular signs occur in hypothyroidism?
+    definition: Dementia with reduced intellectual function, overall weakness, slow coarse speech, carpal tunnel syndrome, delayed tendon reflex relaxation, rarely cerebellar ataxia and nerve deafness.
+    tags: [neuromuscular, neurologic]
+    source_type: srs-card
+  - id: diabetes-74
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How is hypothyroidism diagnosed?
+    definition: Measurement of peripheral thyroid hormones (T4, T3), TSH level, measurement of antibodies (especially anti-thyroid peroxidase), and ultrasound. Isotope scan is usually not helpful.
+    tags: [diagnosis, investigations]
+    source_type: srs-card
+  - id: diabetes-75
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are typical laboratory findings in primary hypothyroidism?
+    definition: High TSH and low T4. Thyroid peroxidase (TPO) antibodies may be elevated if autoimmune etiology.
+    tags: [diagnosis, laboratory]
+    source_type: srs-card
+  - id: diabetes-76
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What laboratory finding suggests secondary or tertiary hypothyroidism?
+    definition: Low TSH with low T4 (or occasionally low TSH with high T4, which is rare).
+    tags: [diagnosis, laboratory]
+    source_type: srs-card
+  - id: diabetes-77
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What other laboratory abnormalities may occur in hypothyroidism?
+    definition: Hyponatremia (from SIADH), hypercholesterolemia, anemia (normalcytic, microcytic, or macrocytic), elevated muscle enzymes in severe cases. Glucose metabolism usually unaffected.
+    tags: [laboratory, complications]
+    source_type: srs-card
+  - id: diabetes-78
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the standard treatment for hypothyroidism?
+    definition: Levothyroxine (T4) replacement therapy. Typically formulated as sodium salt to enhance absorption.
+    tags: [treatment, management]
+    source_type: srs-card
+  - id: diabetes-79
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the optimal timing and conditions for levothyroxine absorption?
+    definition: Absorption is best in the fasting state. Should not be taken with meals or other medications as these interfere with absorption and lead to erratic thyroid hormone levels.
+    tags: [treatment, pharmacology]
+    source_type: srs-card
+  - id: diabetes-80
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What diseases interfere with levothyroxine absorption?
+    definition: H. pylori infection and celiac disease interfere with intestinal absorption of levothyroxine.
+    tags: [treatment, drug-interactions]
+    source_type: srs-card
+  - id: diabetes-81
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the standard starting dose of levothyroxine?
+    definition: Typically 50-100 micrograms daily or approximately 1.6 microgram per kilogram per day. Lower doses used in elderly and those with coronary artery disease, then slowly increased based on clinical and laboratory response.
+    tags: [treatment, dosing]
+    source_type: srs-card
+  - id: diabetes-82
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How often should TSH be monitored during initial levothyroxine therapy?
+    definition: Every 6 to 8 weeks, as this is the time needed for TSH to reach a new steady state.
+    tags: [treatment, monitoring]
+    source_type: srs-card
+  - id: diabetes-83
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the goal of levothyroxine treatment?
+    definition: To normalize TSH and restore patient well-being.
+    tags: [treatment, goals]
+    source_type: srs-card
+  - id: diabetes-84
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is the duration of levothyroxine therapy?
+    definition: Lifelong treatment. Once on a stable dose, TSH may be checked every 6 to 12 months.
+    tags: [treatment, duration]
+    source_type: srs-card
+  - id: diabetes-85
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: Is combined T4 and T3 therapy beneficial in hypothyroidism?
+    definition: No, studies show no added benefit to using T3 in patients with usual hypothyroidism. T3 may be used in thyroid hormone resistance syndrome.
+    tags: [treatment, pharmacology]
+    source_type: srs-card
+  - id: diabetes-86
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How is hypothyroidism managed in the setting of pituitary or hypothalamic disease?
+    definition: TSH cannot be used for monitoring. Instead, T4 and T3 levels are used along with clinical status to guide therapy.
+    tags: [treatment, secondary-tertiary]
+    source_type: srs-card
+  - id: diabetes-87
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are the special considerations for hypothyroidism treatment in pregnancy?
+    definition: Higher doses of levothyroxine are usually required. TSH targets are slightly lower in pregnancy due to hCG effects on the TSH receptor. Optimal thyroid replacement is crucial for fetal well-being.
+    tags: [treatment, pregnancy]
+    source_type: srs-card
+  - id: diabetes-88
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is subclinical hypothyroidism?
+    definition: A condition with elevated TSH but normal T4 and T3 levels, often seen in autoimmune thyroid disease. It represents a continuum toward overt hypothyroidism.
+    tags: [classification, subclinical]
+    source_type: srs-card
+  - id: diabetes-89
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: Should subclinical hypothyroidism be treated?
+    definition: "Treatment is indicated if TSH >10 mIU/L or if there are strongly positive peroxidase antibodies, goiter, high cholesterol, pregnancy, or infertility."
+    tags: [treatment, subclinical]
+    source_type: srs-card
+  - id: diabetes-90
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is myxedema coma?
+    definition: A severe acute exacerbation of hypothyroidism with altered mental status, hypothermia, and hypotension. It is a medical emergency requiring prompt recognition and treatment.
+    tags: [emergency, complications]
+    source_type: srs-card
+  - id: diabetes-91
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are precipitating factors for myxedema coma?
+    definition: Myocardial infarction, infection, sedative drugs, surgery, and cold exposure.
+    tags: [emergency, risk-factors]
+    source_type: srs-card
+  - id: diabetes-92
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What are the clinical features of myxedema coma?
+    definition: Altered mental status, possible psychosis, confusion, hypothermia, hypotension, diminished ventilation, hypoglycemia, and hyponatremia.
+    tags: [emergency, clinical-features]
+    source_type: srs-card
+  - id: diabetes-93
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: How is myxedema coma managed?
+    definition: Intensive care admission, IV fluids, calories, rewarming, ventilatory support, IV corticosteroids, and high-dose nasogastric thyroxine.
+    tags: [emergency, treatment]
+    source_type: srs-card
+  - id: diabetes-94
+    card_source: Hypothyroidism - CMED4IIM1 - 2026_pages-001-004.yml
+    atom: What is non-thyroidal illness?
+    definition: A condition where non-thyroidal disease causes abnormal thyroid function tests (low-normal TSH, low-normal T4, low T3). This is an adaptive response that does not require treatment and recovers as the underlying illness resolves.
+    tags: [diagnosis, euthyroid-sick]
+    source_type: srs-card
+  - id: diabetes-95
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are apolipoprotein proteins and why are they necessary?
+    definition: Apolipoprotein proteins are surface proteins that coat lipids to make them water-soluble for circulation in blood.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-96
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: List the major types of lipoproteins by size
+    definition: "Large to small: Chylomicrons (triglyceride-rich), VLDL (triglyceride and cholesterol-rich), IDL, LDL, HDL (predominantly cholesterol-rich)"
+    tags: []
+    source_type: srs-card
+  - id: diabetes-97
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are the two main pathways of lipid metabolism?
+    definition: "Exogenous: ingestion of dietary fat → absorption as chylomicrons → VLDL formation. Endogenous: cholesterol synthesis via HMG-CoA reductase pathway."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-98
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the role of lipoprotein lipase in lipid metabolism?
+    definition: Lipoprotein lipase breaks down chylomicrons and VLDL, releasing free fatty acids for peripheral cell uptake and triglyceride conversion.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-99
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: Why is HMG-CoA reductase clinically important?
+    definition: It is the rate-limiting enzyme of cholesterol synthesis and is the target of statin drugs, making it crucial for lipid-lowering therapy.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-100
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are the major risk factors for cardiovascular disease?
+    definition: Dyslipidemia, increased body weight, hypertension, cigarette smoking, and diabetes mellitus. Dyslipidemia is a primary risk factor.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-101
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What happens during plaque formation in coronary arteries?
+    definition: Lipids deposit in endothelium and form stable plaque that narrows arterial lumen. Acute coronary events occur when plaque ruptures, exposing thrombogenic particles and causing clot formation.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-102
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What equation is used to estimate LDL cholesterol and when is it invalid?
+    definition: The Friedewald equation is used but becomes invalid with significant triglyceride elevation; direct LDL measurement is then required.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-103
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: Distinguish between primary and secondary lipid disorders
+    definition: "Primary: due to genetic disorder. Secondary: caused by other conditions like obesity, diabetes, chronic kidney disease, thyroid disease, alcoholism, HIV, or certain drugs."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-104
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is familial hypercholesterolemia and why is it important in South Africa?
+    definition: Autosomal co-dominant disorder with genetic abnormalities in LDL receptor, apoB, or PCSK9. Has high prevalence in South Africa; heterozygous form occurs in 1 in 200-600 individuals.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-105
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are physical signs of familial hypercholesterolemia?
+    definition: Xanthomas (tendon and eruptive), xanthelasma (eyelid deposits), corneal arcus, aortic valve stenosis, and premature cardiovascular disease.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-106
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is lipemia retinalis and what causes it?
+    definition: Retinal vessel lipemia caused by high triglyceride levels; appears as milky appearance to retinal vessels. Important physical sign of hypertriglyceridemia.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-107
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: When should lipid screening begin and for whom?
+    definition: "Start early if family history of primary lipid disorder or premature vascular disease (father <55 or mother <65). Any adult >40 should have lipids measured; if risk factors present, screen by age 20."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-108
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the Framingham risk score and what variables does it include?
+    definition: "Scoring system to estimate 10-year vascular disease risk using: age, gender, total cholesterol, HDL cholesterol, blood pressure, and smoking status. Invalid for patients with very high vascular risk."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-109
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: Who are considered to have very high vascular risk (Framingham invalid)?
+    definition: "Patients with cardiovascular disease, type 2 diabetes with additional risk factor, type 2 diabetes >40 years, type 1 diabetes with albuminuria, genetic dyslipidemia, or chronic kidney disease."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-110
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the management approach based on Framingham risk score?
+    definition: "Score <3% = low risk (lifestyle only). Score >30% = high risk (immediate drug therapy). Intermediate scores = combination of lifestyle intervention and drug therapy."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-111
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are the general lifestyle measures for dyslipidemia management?
+    definition: Optimal body weight, healthy diet low in saturated fat and animal protein, regular physical exercise, complete smoking cessation, and limited or no alcohol intake.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-112
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: How do statins work to lower cholesterol?
+    definition: Statins inhibit HMG-CoA reductase, reducing hepatic cholesterol synthesis. This causes hepatocytes to increase LDL receptor expression, removing more LDL from circulation.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-113
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the clinical benefit of statins in terms of mortality reduction?
+    definition: "Each 1 mmol/L reduction in LDL cholesterol lowers: all-cause mortality by 10%, cardiovascular death by 20%, coronary events by 23%, and stroke by 17%."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-114
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are adverse effects of statins?
+    definition: Muscle pain (myalgia), severe muscle injury (rhabdomyolysis), elevated liver enzymes, and slightly increased diabetes risk. Rare but serious; monitor creatine kinase if symptoms develop.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-115
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What statin drug interaction should patients avoid?
+    definition: Grapefruit and grapefruit juice should be avoided as they interact with statin metabolism and increase adverse effect risk.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-116
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: How does ezetimibe lower cholesterol?
+    definition: "Ezetimibe inhibits cholesterol absorption from the gut by binding to a specific receptor, leading to LDL receptor upregulation similar to statins but achieving only ~20% LDL reduction."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-117
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are PCSK9 inhibitors and how do they work?
+    definition: "Injectable monoclonal antibodies that bind to LDL receptors, preventing their degradation and increasing LDL clearance. Can achieve up to 70% reduction in circulating LDL cholesterol."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-118
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What does PCSK9 stand for?
+    definition: PCSK9 = Pro protein Convertase Subtilisin/Kexin type 9
+    tags: []
+    source_type: srs-card
+  - id: diabetes-119
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the clinical efficacy of PCSK9 inhibitors?
+    definition: Demonstrated impressive reductions in all-cause mortality, cardiovascular mortality, and myocardial infarction. Generally well-tolerated with most common side effect being injection site reactions.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-120
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: How do fibrates work and what do they treat?
+    definition: "Fibrates stimulate PPAR-alpha receptors, regulating genes in triglyceride and HDL metabolism. Used primarily for hypertriglyceridemia; can lower triglycerides up to 50%."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-121
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are adverse effects of fibrates?
+    definition: Liver enzyme elevation, increased creatinine and homocysteine, lower muscle pain risk than statins, but can cause arrhythmias and venous thrombosis. Risk of muscle injury increased if combined with statins (especially gemfibrozil).
+    tags: []
+    source_type: srs-card
+  - id: diabetes-122
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What do bile acid sequestrants do and what is their limitation?
+    definition: "Lower cholesterol by interfering with enterohepatic circulation. Limited efficacy but paradoxically elevate serum triglycerides. Example: cholestyramine."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-123
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: How does niacin work and what are its limitations?
+    definition: Lowers cholesterol in liver and is effective for both triglycerides and cholesterol. Limited by side effects of flushing and liver injury.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-124
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the stepwise management approach for hypercholesterolemia?
+    definition: "Start: lifestyle measures (diet, exercise). Then: statin at maximal tolerated dose. If ineffective: add ezetimibe. If still ineffective: add PCSK9 inhibitor or cholestyramine."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-125
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the treatment goal for familial hypercholesterolemia?
+    definition: "Lower LDL cholesterol by >50%. Requires high-intensity statins plus ezetimibe, often with PCSK9 inhibitors. May need lipoprotein apheresis or liver transplantation if refractory."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-126
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is lipoprotein apheresis?
+    definition: Physical removal of lipids from blood used in refractory familial hypercholesterolemia when pharmacotherapy is insufficient.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-127
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What causes secondary hypertriglyceridemia?
+    definition: Primary gene disorder (less common) or secondary to obesity, diabetes, alcohol excess, and certain drugs. Manifests with eruptive/tuberous xanthomas.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-128
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the pancreatitis risk threshold for hypertriglyceridemia?
+    definition: Pancreatitis risk increases significantly when triglycerides exceed 10 mmol/L.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-129
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the cornerstone of treatment for hypertriglyceridemia?
+    definition: Dietary fat restriction. Omega-3 fatty acids help by lowering VLDL secretion. Fibrates, niacin useful. If associated with hyperglycemia, insulin therapy is effective.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-130
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the metabolic syndrome and what is it not?
+    definition: "Not a single disease entity but a clustering of cardiovascular risk factors: insulin resistance, abnormal glucose metabolism, obesity, atherogenic dyslipidemia, and hypertension."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-131
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are the harmonized diagnostic criteria for metabolic syndrome?
+    definition: "Requires 3 of 5: increased waist circumference, elevated serum triglycerides or hypertriglyceridemia treatment, low HDL cholesterol, hyperglycemia, or hypertension."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-132
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are the typical lipid abnormalities in metabolic syndrome?
+    definition: Hypertriglyceridemia with low HDL cholesterol and atherogenic small dense LDL cholesterol (central obesity component).
+    tags: []
+    source_type: srs-card
+  - id: diabetes-133
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What are the dominant pathophysiological features of metabolic syndrome?
+    definition: Visceral adiposity, upregulation of renin-angiotensin system, inflammatory mediators from visceral fat, neurohormonal activation, chronic inflammation, and insulin resistance.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-134
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What microbiome abnormality may contribute to metabolic syndrome?
+    definition: Abnormalities of the gut microbiome (colony of bacteria in intestines) may contribute to endothelial dysfunction and metabolic syndrome pathogenesis.
+    tags: []
+    source_type: srs-card
+  - id: diabetes-135
+    card_source: "Lipid Disorders  The Metabolic Syndrome - CMED4IIM1 - 2026_pages-001-007.yml"
+    atom: What is the management approach for metabolic syndrome?
+    definition: "Focus on individual components: optimal weight management, dyslipidemia treatment, hyperglycemia control, hypertension management, plus lifestyle (diet, exercise, smoking cessation, limited alcohol)."
+    tags: []
+    source_type: srs-card
+  - id: diabetes-136
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the primary diagnostic step when encountering a patient with probable diabetes mellitus?
+    definition: Confirm the diagnosis using glucose tolerance tests, hemoglobin A1c, and random glucose parameters. Then classify using WHO Classification Scheme.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-137
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the four commonly measured beta-cell autoantibodies in Type 1 diabetes?
+    definition: 1) Anti-insulin antibody, 2) Anti-glutamic acid decarboxylase (GAD), 3) Anti-islet antigen 2 (IA-2), 4) Anti-zinc transporter 8 (ZnT8)
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-138
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the normal hemoglobin A1c range in people without diabetes?
+    definition: "Between 5-6% (or 20-42 millimoles per mole with newer absolute concentration units)"
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-139
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the standard hemoglobin A1c treatment target for most people with diabetes?
+    definition: "Less than or equal to 7% (or 53 millimoles per mole). This is based on the exponential relationship between HbA1c and risk of complications, with inflection point around 7%."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-140
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What does hemoglobin A1c reflect and over what time period?
+    definition: It reflects average blood glucose over 4-6 weeks prior to testing. It is the global standard for monitoring glycemic control.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-141
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: "What is the 'legacy effect' in diabetes control?"
+    definition: Optimal glucose control from around time of diagnosis yields better long-term outcomes for microvascular and macrovascular complications than poor early control with better control later. Poor control early confers permanent risk.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-142
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: How much physical exercise is recommended for diabetes management?
+    definition: "At least 150 minutes per week with heart rate between 50-70% of maximum heart rate, plus resistance training several times per week."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-143
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the primary mechanism of action of metformin?
+    definition: "Reduces hepatic glucose output by inhibiting gluconeogenesis. Secondary effect: improves insulin sensitivity in muscle and fat peripherally. Does not stimulate insulin secretion, so hypoglycemia does not occur with monotherapy."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-144
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the typical hemoglobin A1c reduction with metformin monotherapy?
+    definition: "Around 1%. Common side effects are gastrointestinal (usually mild and improve with use). Lactic acidosis is rare but serious with ~80% case fatality. Avoid in abnormal kidney function and elderly."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-145
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the renal function-based dose adjustments for metformin?
+    definition: "If eGFR 30-45 mL/min: max dose 1000mg/day. If eGFR <30 mL/min: stop completely. Drug is excreted by kidneys, not metabolized."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-146
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: How do sulfonylureas work in Type 2 diabetes treatment?
+    definition: They bind to a receptor on beta cells, close potassium channels, open voltage-gated calcium channels, and trigger extrusion of preformed insulin. Hypoglycemia is a potential side effect.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-147
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What hemoglobin A1c reduction is achieved with sulfonylurea therapy?
+    definition: "1-1.5% reduction. Risk of hypoglycemia highest with longer-acting agents (like glibenclamide) and in elderly or those with abnormal renal function."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-148
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: "What is pioglitazone's mechanism of action?"
+    definition: It is an agonist of peroxisome proliferator-activated receptor gamma (PPAR-γ). When bound, it regulates genes involved in glucose metabolism, improving insulin sensitivity. Does not stimulate insulin secretion, so hypoglycemia does not occur.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-149
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the contraindications to pioglitazone use?
+    definition: "Should not be used in: heart failure (causes fluid retention), bladder lesions (increased bladder cancer risk), osteoporosis, liver disease, or patients taking high-dose insulin."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-150
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: How do SGLT2 inhibitors work?
+    definition: They inhibit glucose reabsorption in renal tubules by binding to SGLT2 channels in the proximal tubule. This leads to glycosuria and osmotic diuresis. Do not stimulate insulin secretion.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-151
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the major benefits of SGLT2 inhibitors beyond glucose control?
+    definition: Reduced macrovascular disease, reduced mortality (especially empagliflozin), reduced heart failure risk, reduced renal disease risk, and some weight loss. Useful in high-risk macrovascular disease, heart failure, or renal disease patients.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-152
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the major adverse effects of SGLT2 inhibitors?
+    definition: Euglycemic ketoacidosis risk, increased mycotic genital infections due to high glycosuria, and rare acute kidney injury.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-153
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the incretin effect and why is it reduced in Type 2 diabetes?
+    definition: The incretin effect is the greater insulin response to oral vs. intravenous glucose loading. It is mediated by gut-derived peptides released by food ingestion. The effect is normally inactivated by DPP-4 enzyme. In Type 2 diabetes, this effect is reduced.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-154
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the two classes of incretin-based therapies?
+    definition: "1) GLP-1 receptor agonists (injectables): analogs resistant to DPP-4 breakdown (e.g., liraglutide, semaglutide, dulaglutide). 2) DPP-4 inhibitors (oral): inhibit the enzyme that degrades endogenous GLP-1 (e.g., vildagliptin, sitagliptin)."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-155
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the efficacy of DPP-4 inhibitors?
+    definition: "Fairly weak with hemoglobin A1c reduction usually under 1%. Have neutral effect on weight and cardiovascular disease risk (except saxagliptin which increases heart failure risk). No risk of hypoglycemia. Well tolerated, especially in older individuals."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-156
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the benefits of GLP-1 receptor agonists?
+    definition: Associated with significant weight loss (even in non-diabetics), reduced cardiovascular risk, reduced mortality, reduced renal disease, and reduced stroke risk (semaglutide). Weight loss benefit more significant than DPP-4 inhibitors.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-157
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are contraindications to GLP-1 agonist use?
+    definition: "Should not be used in: pregnancy, Type 1 diabetes, medullary carcinoma of thyroid, patients with pancreatitis history or risk, and pancreatic carcinoma."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-158
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the main side effects of GLP-1 agonists and how are they managed?
+    definition: Usually gastrointestinal (nausea, vomiting). Managed by starting with low doses and slow dose increments to mitigate adverse effects.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-159
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the two phases of insulin secretion in response to blood glucose elevation?
+    definition: "First phase: rapid release of preformed insulin. Second phase: more delayed and prolonged release with continuous glucose exposure."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-160
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the three rapid-acting insulin analogs?
+    definition: 1) Humalog (insulin lispro), 2) Novolog (insulin aspart), 3) Apidra (insulin glulisine)
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-161
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the difference between intermediate and long-acting insulin analogs?
+    definition: "Intermediate-acting: Protophane/NPH (insulin isophane). Long-acting: Lantus (insulin glargine), Levemir (insulin detemir), Tresiba (insulin degludec)."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-162
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the composition of Atrophane, a common premix insulin?
+    definition: "30% soluble human insulin and 70% intermediate-acting human insulin (NPH)"
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-163
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is insulin replacement best accomplished with in Type 1 diabetes?
+    definition: Basal-bolus regimen (1-2 long-acting injections plus rapid-acting at meals) or continuous subcutaneous insulin infusion (CSII) using an automated pump device.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-164
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the initial total daily insulin dose for newly-diagnosed Type 1 diabetes after stabilization?
+    definition: "0.6 units per kilogram body weight, typically divided 50% basal and 50% bolus, then modified according to glucose levels and responses."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-165
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the common insulin regimen added to oral therapy in Type 2 diabetes?
+    definition: A single basal (long-acting) injection added to existing oral therapy. This limits overnight hepatic glucose output to control fasting glucose while oral agents manage daytime glucose loads.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-166
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the hypoglycemia risk time with basal insulin added to oral therapy in Type 2 diabetes?
+    definition: Around 2-3 AM in the morning, due to the long-acting basal insulin effect overnight.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-167
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the aims of therapy in diabetes management?
+    definition: 1) Lifestyle changes, 2) Prevent acute complications, 3) Prevent chronic complications, 4) Avoid iatrogenic hypoglycemia, 5) Control lipids and blood pressure, 6) Improve general well-being
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-168
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the limitations of self-monitoring of blood glucose (SMBG)?
+    definition: "Limited efficacy if patient is only on oral therapy. Self-monitoring with insulin allows autonomy and self-titration of doses. Goal: >70% of readings within target range."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-169
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the fasting and post-meal glucose target in diabetes guidelines?
+    definition: "Fasting/pre-meal: 4.7 millimoles per liter. Post-meal: under 10 millimoles per liter."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-170
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: Why is hemoglobin A1c not usable in certain patient populations?
+    definition: "Cannot use in: abnormal hemoglobin (thalassemia, hemoglobin S disease), chronic renal failure, anemia. In these cases, fructose amine may be used instead."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-171
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What does fructose amine measure and what is its timeframe?
+    definition: It is a glycated protein reflecting average blood glucose over 2-3 weeks (shorter timeframe than HbA1c). Useful when HbA1c cannot be used.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-172
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What pathophysiology makes insulin essential for Type 1 diabetes?
+    definition: Type 1 is an organ-specific autoimmune disease with targeted selective destruction of pancreatic beta cells mediated by both humoral and cellular immunity. All pancreatic capacity to produce and release insulin is destroyed.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-173
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the fundamental difference between Type 1 and Type 2 diabetes pathophysiology?
+    definition: "Type 1: complete beta cell destruction via autoimmunity. Type 2: combination of insulin resistance and beta cell dysfunction (present to different degrees in different patients) plus associated metabolic abnormalities (reduced incretin effect, abnormal renal glucose metabolism, increased hepatic glucose output, glucagon secretion abnormalities)."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-174
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What oral drug classes are available for Type 2 diabetes treatment?
+    definition: Biguanides (metformin), sulfonylureas, thiazolidine diones (pioglitazone), alpha-glucosidase inhibitors, DPP-4 inhibitors, SGLT2 inhibitors.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-175
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: When should metformin not be used?
+    definition: Perioperative period, acute illnesses, severe liver disease, elderly individuals, and abnormal kidney function (eGFR <30 mL/min)
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-176
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the step-wise treatment approach for Type 2 diabetes?
+    definition: "1st line: Metformin + lifestyle management, 2nd: Add sulfonylurea/DPP-4/SGLT2/pioglitazone, 3rd: Add third oral agent, 4th: Add injectables (basal insulin or GLP-1), 5th: Intensive basal-bolus insulin if needed."
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+  - id: diabetes-177
+    card_source: Treatment Of Diabetes Mellitus - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What parameters beyond glucose control need management in Type 2 diabetes?
+    definition: Lipid levels, blood pressure, body weight, smoking cessation, limitation of alcohol intake. Aspirin no longer recommended for primary prevention but required if patient has had macrovascular event.
+    tags: [diabetes, treatment, management, Type1, Type2, pharmacology, insulin]
+    source_type: srs-card
+scenarios:
+  - name: "Acute Diabetes  Complications — Diagnostic Reasoning Chain"
+    description: "Apply Acute Diabetes  Complications atoms in sequence to triage a presenting patient"
+    atom_ids:
+      - diabetes-1
+      - diabetes-2
+      - diabetes-3
+      - diabetes-4
+      - diabetes-5
+      - diabetes-6
+      - diabetes-7
+      - diabetes-8
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Acute Diabetes  Complications guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: "Reconfirm diagnosis; escalate to second-line per Acute Diabetes  Complications algorithm."
+  - name: Hyperthyroidism — Diagnostic Reasoning Chain
+    description: Apply Hyperthyroidism atoms in sequence to triage a presenting patient
+    atom_ids:
+      - diabetes-33
+      - diabetes-34
+      - diabetes-35
+      - diabetes-36
+      - diabetes-37
+      - diabetes-38
+      - diabetes-39
+      - diabetes-40
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Hyperthyroidism guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Hyperthyroidism algorithm.
+  - name: Hypothyroidism — Diagnostic Reasoning Chain
+    description: Apply Hypothyroidism atoms in sequence to triage a presenting patient
+    atom_ids:
+      - diabetes-64
+      - diabetes-65
+      - diabetes-66
+      - diabetes-67
+      - diabetes-68
+      - diabetes-69
+      - diabetes-70
+      - diabetes-71
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Hypothyroidism guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Hypothyroidism algorithm.
+  - name: "Lipid Disorders  The Metabolic Syndrome — Diagnostic Reasoning Chain"
+    description: "Apply Lipid Disorders  The Metabolic Syndrome atoms in sequence to triage a presenting patient"
+    atom_ids:
+      - diabetes-95
+      - diabetes-96
+      - diabetes-97
+      - diabetes-98
+      - diabetes-99
+      - diabetes-100
+      - diabetes-101
+      - diabetes-102
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Lipid Disorders  The Metabolic Syndrome guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: "Reconfirm diagnosis; escalate to second-line per Lipid Disorders  The Metabolic Syndrome algorithm."
+  - name: Treatment Of Diabetes Mellitus — Diagnostic Reasoning Chain
+    description: Apply Treatment Of Diabetes Mellitus atoms in sequence to triage a presenting patient
+    atom_ids:
+      - diabetes-136
+      - diabetes-137
+      - diabetes-138
+      - diabetes-139
+      - diabetes-140
+      - diabetes-141
+      - diabetes-142
+      - diabetes-143
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Treatment Of Diabetes Mellitus guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Treatment Of Diabetes Mellitus algorithm.

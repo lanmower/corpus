@@ -1,0 +1,1719 @@
+metadata:
+  title: Gastroenterology Triage Scenarios
+  version: '1.0'
+  generated: '2026-05-04'
+  source: SRS cards from gastroenterology
+  total_atoms: 246
+  total_scenarios: 9
+atoms:
+  - id: gastroenterology-1
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is acute pancreatitis?
+    definition: "An acute inflammatory process of the pancreas associated with severe upper abdominal pain, elevated blood levels of pancreatic enzymes. Divided into two categories: mild acute pancreatitis and necrotizing pancreatitis."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-2
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What diagnostic evidence is required for acute pancreatitis?
+    definition: A combination of biochemical, radiological, and sometimes histological evidence. No single finding alone is diagnostic.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-3
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What happens to endocrine and exocrine function during acute pancreatitis?
+    definition: There is transient endocrine and exocrine pancreatic dysfunction. Severity resolution is dependent on the severity of pancreatitis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-4
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the typical recovery timeline for acute pancreatitis?
+    definition: Usually complete recovery occurs within six months, but it may progress to chronic pancreatitis after repeated episodes.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-5
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: Why is diagnosis of acute pancreatitis difficult based on clinical presentation?
+    definition: Disease varies in severity and diagnosis is often missed at the extreme end of spectrum. Patients can have severe pancreatitis with only abdominal pain as the sole symptom.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-6
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the main etiologies of acute pancreatitis?
+    definition: "Gallstones and alcohol account for more than 98% of causes in adults. Other causes include hypertriglyceridemia, hypercalcemia, genetic mutations, drugs, toxins, autoimmune, trauma, and idiopathic."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-7
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the gender difference in acute pancreatitis etiology?
+    definition: Acute gallstone pancreatitis occurs more in women, while alcoholic pancreatitis occurs more in men.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-8
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What age presentation suggests a hereditary cause of acute pancreatitis?
+    definition: Onset in the first decade (before age 10) suggests a hereditary cause. Unusual causes to investigate include hyperlipidemia, hereditary chronic pancreatitis, and genetic mutations.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-9
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the cardinal symptom of acute pancreatitis?
+    definition: Severe upper abdominal pain that is usually steady and located in the mid-epigastrium. Can radiate to the right upper quadrant or diffuse across abdomen.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-10
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the typical timeline of pain in alcoholic pancreatitis?
+    definition: Usually occurs about 72 hours after finish or cessation of drinking. Pain lasts for days, unlike biliary colic which is short-lived (6-8 hours).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-11
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: How quickly does pain reach maximum intensity in acute pancreatitis?
+    definition: Maximum intensity usually reached within 10-20 minutes to one hour, with radiation to the back.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-12
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What percentage of acute pancreatitis presents without pain?
+    definition: "Painless disease is uncommon but occurs in 5-10% of patients. Sometimes diagnosis is only made at post-mortem examination."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-13
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are associated symptoms with acute pancreatitis pain?
+    definition: Nausea and vomiting. Patients are restless, agitated, and relief comes from bending forward. Severe cases may present with shock or coma.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-14
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What physical examination findings are present in mild acute pancreatitis?
+    definition: Epigastrium may be minimally tender. Respiration is usually shallow due to irritation of diaphragm from inflammatory process.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-15
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What physical examination findings are present in severe acute pancreatitis?
+    definition: "Abdominal distension, abdominal guarding, and potential ischemic discoloration in flanks (Cullen's sign) or around navel (Grey Turner's sign) - occur in ~1% of patients."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-16
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What laboratory marker rises first in acute pancreatitis?
+    definition: Amylase rises within 6-12 hours of onset of acute pancreatitis and is cleared fairly rapidly with a half-life of approximately 10 hours.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-17
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: How long is serum amylase typically elevated in uncomplicated acute pancreatitis?
+    definition: Usually elevated for about 3-5 days, then starts declining.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-18
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the diagnostic threshold for serum amylase in acute pancreatitis?
+    definition: An increase of more than 3 times the upper limit of normal suggests pancreatic injury.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-19
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: Why is serum amylase non-specific for acute pancreatitis?
+    definition: "Can be elevated in many conditions: cholecystitis, bowel obstruction, renal failure, diabetic ketoacidosis, pancreatitis, salpingitis."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-20
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the amylase-creatinine clearance ratio in acute pancreatitis?
+    definition: "Normally 3% of amylase is excreted in urine. In acute pancreatitis, this increases to about 10%, but does not add prognostic value over serum or urine amylase alone."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-21
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: How does lipase compare to amylase for diagnosing acute pancreatitis?
+    definition: Lipase is slightly more specific than serum amylase with better diagnostic accuracy on both day 1 and day 3.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-22
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: Does the level of pancreatic enzyme elevation correlate with disease severity?
+    definition: No. Enzyme levels do not correlate with severity. A patient with low lipase may have severe disease, while high enzyme levels are less predictive of severity.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-23
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What inflammatory markers predict acute pancreatitis severity?
+    definition: "C-reactive protein (CRP) of >150 mg/dL at 48 hours can discriminate severe from mild disease. Other markers include IL-6, IL-8, IL-10, TNF, neutrophil elastase."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-24
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What are the radiological findings on chest X-ray in acute pancreatitis?
+    definition: Elevation of hemidiaphragm, pleural effusions, atelectasis, pulmonary infiltrates, ARDS features, and left/right/bilateral pleural effusions (usually indicate complications).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-25
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What ultrasound findings are typical in acute pancreatitis?
+    definition: Pancreatic gland enlargement - diffusely enlarged gland with hypoechoic appearance. May also identify gallstones or dilated ducts suggesting etiology.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-26
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: Why is CT angiography most important for acute pancreatitis diagnosis?
+    definition: CTA is the most important test for diagnosis of acute pancreatitis and intra-abdominal complications. Assesses severity and if no improvement after conservative therapy, suggests complications or alternative diagnosis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-27
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What do the Ranson prognostic criteria assess?
+    definition: "Ranson is the most widely used severity score. Criteria at admission: WBC >16, glucose >200 mg/L, age >55, AST >250. A second score at 48 hours gives good prediction of 28-day mortality."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-28
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What other severity scores are used in acute pancreatitis?
+    definition: APACHE II, Marshall score, and PII subscores have all been validated for clinical practice to assess severity and guide ICU admission.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-29
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is a pseudocyst in acute pancreatitis?
+    definition: Localized amylase-rich fluid collection within or around the pancreas. Can be single or multiple, varying in size.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-30
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What complications can occur with pancreatic pseudocysts?
+    definition: Hemorrhage into the cyst, infection, rupture, or pressure effects on adjacent structures like duodenal obstruction.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-31
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What treatments are available for pancreatic pseudocysts?
+    definition: Percutaneous drainage, endoscopic drainage, or open surgical drainage. Only needed if complications present. Uncomplicated cysts can be observed for resolution.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-32
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What local complications can occur in acute pancreatitis?
+    definition: Pseudocyst formation, necrotizing pancreatitis, abscess formation. Can have GI bleeding, bowel compression, fistula within bowel.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-33
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the mortality rate of severe necrotizing pancreatitis?
+    definition: "High mortality rate approaching 85%."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-34
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the typical recovery timeline for mild acute pancreatitis?
+    definition: Most attacks are mild with recovery occurring within 5-7 days.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-35
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the primary treatment approach for acute pancreatitis?
+    definition: "Predominantly supportive care: pain control, intravenous fluids, correction of electrolyte abnormalities."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-36
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What pain management approach is used in acute pancreatitis?
+    definition: Initial IV cure is sufficient. Once pain is settled, transition to oral therapies can be advised. Pain management is essential as abdominal pain is often dominant symptom.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-37
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: Why is nutrition important in acute pancreatitis management?
+    definition: "Enteral nutrition or parenteral nutrition might be required depending on patient's mental state due to ongoing inflammatory process and auto-digestion."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-38
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: Why should antibiotics be initiated early in acute pancreatitis?
+    definition: Infection is a dire consequence of acute pancreatitis. Systemic antibiotics initiated early reduce mortality.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-39
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What investigations are needed for severe acute pancreatitis?
+    definition: Patients should be assessed for need for percutaneous CT-guided aspiration or drainage of the gland.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-40
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What is the importance of identifying the etiology of acute pancreatitis?
+    definition: Different etiologies require different therapeutic measures. Once the cause is eliminated, you can prevent further attacks or reduce morbidity.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-41
+    card_source: Acute Pancreatitis - CMED4IIM1 - 2026_pages-001-005.yml
+    atom: What happens to recurrent acute pancreatitis from gallstones if untreated?
+    definition: "Up to 50% of acute gallstone pancreatitis without cholecystectomy will have recurrent attacks. Cholecystectomy at discharge is preventative."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-42
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the definition of diarrhea?
+    definition: "Abnormally liquid or unformed stools at increased frequency (>3 stools/day OR >200 mL/day or any combination of these)"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-43
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: How is acute diarrhea classified by duration?
+    definition: "Acute: <2 weeks; Persistent: 14-30 days; Chronic: >4 weeks (also stated as >30 days)"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-44
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the basic pathophysiology of diarrhea?
+    definition: Imbalance between secretion and absorption. Total daily intake ~9.3L (saliva 1L, ingested 2.3L, gastric juice 2L, bile/pancreatic 1L, etc.) vs absorption (small intestine 8.3L, colon 0.9L)
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-45
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are the main complications of acute vs chronic diarrhea?
+    definition: "Acute: dehydration and electrolyte abnormalities; Chronic: malnutrition and impaired quality of life"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-46
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What percentage of acute diarrhea cases are infectious?
+    definition: "More than 90% of acute diarrhea cases are caused by infectious pathogens"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-47
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What percentage of chronic diarrhea cases are infectious?
+    definition: "More than 90% of chronic diarrhea cases are NOT infectious (>90% are non-infectious)"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-48
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: Describe small bowel vs large bowel diarrhea characteristics
+    definition: "Small bowel: watery, large volumes, cramping/bloating/gas, fever, blood/inflammatory cells; Large bowel: frequent, small volume, painful, bloody/mucoid stools, RBCs, less cramping"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-49
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: Which patient populations are at high risk for severe acute diarrhea?
+    definition: Immunosuppressed, HIV+, elderly, young children, pregnant women, those with dysentery, inability to drink/eat, severe vomiting
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-50
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are warning signs requiring admission for acute diarrhea?
+    definition: "Fever >38.5°C, frank blood in stool (dysentery), severe vomiting leading to dehydration, obvious dehydration, severe abdominal pain/tenderness"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-51
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the difference between secretory and osmotic diarrhea?
+    definition: "Secretory: stimulation of channels to secrete electrolytes (persists with fasting); Osmotic: nonabsorbed material pulls water (ceases with fasting)"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-52
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is stool osmolal gap and how is it interpreted?
+    definition: "Calculated as 290 - 2(Na + K). Secretory: <50 (normal); Indeterminate: 50-125; Osmotic: >125"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-53
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: How is fecal elastase used diagnostically?
+    definition: "<50 fecal elastase is diagnostic of steatorrhea; <200 supports pancreatic insufficiency (normal >200)"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-54
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are the features of malabsorption/steatorrhea diarrhea?
+    definition: Significant weight loss, greasy/oily stools, floating stools, fat droplets visible in toilet water
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-55
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What investigations should be done for acute diarrhea?
+    definition: "U&E (electrolytes), FBC (WCC, CRP), blood cultures, stool microscopy/culture/sensitivity, stool O&P, C.diff toxin, viral antigens"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-56
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the first-line management for acute diarrhea with oral intake capability?
+    definition: Oral rehydration solution (ORS); IV fluids if severely dehydrated; antibiotics if suspected infectious pathogen or high-risk
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-57
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: Why are antidiarrheals not recommended in acute diarrhea?
+    definition: High risk of toxic megacolon and perforation; not recommended in acute setting
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-58
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are the causes of inflammatory diarrhea?
+    definition: "IBD (ulcerative colitis, Crohn's), lymphocytic/collagenous colitis, immune-mediated (primary/secondary immunodeficiency, food allergy, eosinophilic gastroenteritis, graft-versus-host disease)"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-59
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the difference between IBS and functional diarrhea?
+    definition: "IBS: recurrent abdominal pain related to defecation with change in stool form/frequency; Functional diarrhea: recurrent loose/watery stools WITHOUT abdominal pain"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-60
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are common iatrogenic causes of diarrhea?
+    definition: Protease inhibitors, antibiotics, aminosalicylates (IBD treatment), proton pump inhibitors; surgery (blind loop, short bowel syndrome, post-gastrectomy)
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-61
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is fictitious diarrhea?
+    definition: Intentional injection of substance causing diarrhea or mixing stool sample with water/urine to exaggerate volume
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-62
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: When does HIV-associated diarrhea occur relative to HIV progression?
+    definition: During seroconversion (0-6 weeks), due to ART side effects (especially protease inhibitors), and with advanced disease/low CD4 (<200) with opportunistic infections
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-63
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What CD4 count threshold is important for opportunistic infections in HIV diarrhea?
+    definition: "CD4 <200 cells/μL: increased risk for CMV, microsporidia, GI malignancies, strongyloides; TB can occur at any CD4 count"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-64
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are the main causes of HIV-associated diarrhea?
+    definition: Opportunistic infections (CMV, cryptosporidium, microsporidia, MAC), malignancies (lymphoma, AIDS-related), drug side effects (ARVs, antibiotics), SIBO, and pathogen-negative AIDS enteropathy
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-65
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What investigations are first-line for HIV-related diarrhea?
+    definition: "3x stool samples for microscopy/O&P, TB screening, C.diff screen; assess CD4 count and viral load; consider PCR for suspected organisms"
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-66
+    card_source: "Acute, Chronic  HIV Related Diarrhoea - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the management flow for HIV-related diarrhea if stool samples are negative?
+    definition: Optimize/start ART; minimize drug side effects; if pathogen-negative, proceed to flexible sigmoidoscopy (biopsy for histology, TB, CMV), then colonoscopy if needed, then cross-sectional imaging (CT)
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-67
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is ascites?
+    definition: "Ascites is defined as the pathologic accumulation of fluid within the peritoneal cavity. It is important to distinguish ascites from other causes of abdominal swelling, which can be remembered by the acronym 'six ifs': fluid, fat, flatus, fetus, feces, and fatal growth."
+    tags: [ascites, definition, diagnosis]
+    source_type: srs-card
+  - id: gastroenterology-68
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the most common cause of ascites?
+    definition: "Portal hypertension related to liver cirrhosis is the most common cause of ascites, accounting for 75-80% of cases. The mechanism is increased hydrostatic pressure or venous hypertension."
+    tags: [ascites, etiology, portal-hypertension]
+    source_type: srs-card
+  - id: gastroenterology-69
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the major pathophysiologic mechanisms for ascites formation?
+    definition: "Four main mechanisms: (1) Increased hydrostatic pressure from portal hypertension (cirrhosis, hepatic vein thrombosis, IVC obstruction, constrictive pericarditis, congestive heart failure); (2) Decreased colloidal osmotic pressure (nephrotic syndrome, malnutrition, protein-losing enteropathy); (3) Increased permeability from peritoneal disease (tuberculosis peritonitis, bacterial peritonitis, malignancy metastases); (4) Leakage of fluid from organs (biliary leak, pancreatic ascites, chylous ascites, urinary ascites)."
+    tags: [ascites, pathophysiology, mechanisms]
+    source_type: srs-card
+  - id: gastroenterology-70
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: How is ascites graded by severity?
+    definition: "Ascites is graded as: Grade 1 - detectable only by ultrasound examination; Grade 2 - moderate symmetrical distension of the abdomen manifested clinically; Grade 3 - marked abdominal distension with large volume of gross ascites."
+    tags: [ascites, classification, severity]
+    source_type: srs-card
+  - id: gastroenterology-71
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the difference between complicated and uncomplicated ascites?
+    definition: Uncomplicated ascites is fluid in the abdomen that is not infected and not associated with complications like hepatorenal syndrome. Refractory ascites is ascites that does not disappear even after satisfactory medical treatment and large volume paracentesis. Diuretic-resistant ascites means the patient has no response to intensive diuretic therapy or develops intolerable side effects.
+    tags: [ascites, classification, complications]
+    source_type: srs-card
+  - id: gastroenterology-72
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the clinical symptoms of ascites?
+    definition: Patients with small amounts of fluid (Grade 1) are usually asymptomatic. As ascites progresses, patients develop abdominal distension, discomfort, anorexia, nausea, and heartburn. Tension ascites can cause respiratory symptoms due to compression on the diaphragm and lungs, presenting as dyspnea and respiratory distress. Early satiety occurs due to pressure effects from increasing fluid.
+    tags: [ascites, symptoms, presentation]
+    source_type: srs-card
+  - id: gastroenterology-73
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the clinical signs of ascites?
+    definition: "Specific signs of ascites include: inverted umbilicus, bulging of the flanks, shifting dullness, and fluid thrill on percussion. Note: absence of dullness does not exclude ascites in early cases. Associated signs depend on etiology - cirrhosis signs include jaundice, gynecomastia, clubbing, pedal edema, palmar erythema with spider telangiectasia, and splenic enlargement."
+    tags: [ascites, physical-examination, signs]
+    source_type: srs-card
+  - id: gastroenterology-74
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What complications of ascites should be examined for?
+    definition: Complications include umbilical hernia due to pressure effects and weakening of abdominal muscles, and hepatic hydrothorax where fluid tracks into the lungs, causing plural effusion (usually on the right side) with profound dyspnea.
+    tags: [ascites, complications, examination]
+    source_type: srs-card
+  - id: gastroenterology-75
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What imaging modality is preferred to confirm ascites?
+    definition: Ultrasound is the imaging modality of choice to confirm the presence of ascites. It is cost-effective, can provide information about possible etiology, assess the liver, evaluate the portal venous system, and is essential for guiding paracentesis safely. Chest radiographs are useful when complications like hepatic hydrothorax are suspected.
+    tags: [ascites, investigation, ultrasound]
+    source_type: srs-card
+  - id: gastroenterology-76
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: Why is paracentesis important in ascites evaluation?
+    definition: Abdominal paracentesis is of paramount importance because it provides both therapeutic benefit (especially for tense ascites or refractory ascites) and diagnostic information. Samples should be sent for macroscopic appearance, cell count, microscopy, culture, albumin levels, and serum ascitic albumin gradient (SAG) calculation. At bedside, if bacterial peritonitis is suspected, 10 mL of fluid should be inoculated into both aerobic and anaerobic blood culture bottles before antibiotics are given.
+    tags: [ascites, paracentesis, diagnostic-procedure]
+    source_type: srs-card
+  - id: gastroenterology-77
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What does the macroscopic appearance of ascitic fluid indicate?
+    definition: Clear fluid indicates uncomplicated ascites. Turbid/cloudy fluid may indicate spontaneous bacterial peritonitis (SBP). Milky fluid indicates chylous ascites (from lymphatic vessel damage with elevated triglycerides). Bloody fluid may indicate traumatic tap or malignancy. Brown fluid may indicate bile leak from biliary tree perforation. Black fluid is rare and seen with malignant melanoma.
+    tags: [ascites, paracentesis, fluid-analysis]
+    source_type: srs-card
+  - id: gastroenterology-78
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the serum ascitic albumin gradient (SAG) and how is it calculated?
+    definition: The SAG is calculated by subtracting ascitic albumin from serum albumin. SAG is the most useful test to distinguish causes of ascites. A high SAG (≥1.1 g/dL or ≥11 g/L) indicates portal hypertension in most cases. A low SAG (<1.1 g/dL or <11 g/L) suggests other causes like tuberculosis, serositis, nephrotic syndrome, or peritoneal metastases. The SAG should always be ordered when ascitic fluid is obtained.
+    tags: [ascites, serum-gradient, diagnostic-test]
+    source_type: srs-card
+  - id: gastroenterology-79
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is spontaneous bacterial peritonitis (SBP) and how is it diagnosed?
+    definition: "SBP is a complication of ascites, usually in cirrhosis patients, caused by translocation of gut bacteria into the peritoneal space. Patients present with pain and worsening ascites. Diagnosis requires: neutrophil cell count >250 cells/mm³ on fluid analysis. Cultures may grow E. coli, Klebsiella, or Streptococcus (common gastrointestinal bacteria). Fluid should be inoculated into blood culture bottles at bedside before antibiotics are administered."
+    tags: [ascites, spontaneous-bacterial-peritonitis, complications]
+    source_type: srs-card
+  - id: gastroenterology-80
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What does lymphocyte-predominant ascitic fluid indicate?
+    definition: "Lymphocyte-predominant fluid may indicate tuberculosis peritonitis or peritoneal carcinomatosis from metastatic cancer. The adenosine deaminase (ADA) level is a useful test - if ADA is elevated above 10 (typically >30 in TB), it has >90% sensitivity for TB peritonitis and helps distinguish between TB and other causes of low-gradient ascites with lymphocyte predominance."
+    tags: [ascites, cell-count, tuberculosis]
+    source_type: srs-card
+  - id: gastroenterology-81
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the pathophysiology of ascites in cirrhosis and portal hypertension?
+    definition: In cirrhosis, hepatic architecture is distorted with increased hepatic vascular tone, causing portal hypertension. This activates vasodilation mechanisms mediated by nitric oxide overproduction, which dilates splanchnic and peripheral vessels. This causes underfilling of the systemic arterial space and triggers baroreceptor activation, increasing renin-angiotensin-aldosterone system (RAAS) and antidiuretic hormone (ADH) release. Sodium and water retention develops, leading to ascites. Simultaneously, splanchnic vasodilation increases lymph production, which exceeds transport capacity and leaks into the peritoneal cavity.
+    tags: [ascites, pathophysiology, cirrhosis]
+    source_type: srs-card
+  - id: gastroenterology-82
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the first step in managing ascites?
+    definition: The first step is to diagnose the underlying cause of ascites, as treatment should target the etiology. For TB peritonitis, TB treatment is needed. For malignancy, chemotherapy may help. For heart failure, diuretics are required. For portal hypertension from cirrhosis, treatment aims to minimize ascites formation since cirrhosis cannot be reversed.
+    tags: [ascites, management, etiology]
+    source_type: srs-card
+  - id: gastroenterology-83
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What dietary modifications are used in ascites management?
+    definition: Sodium restriction is the cornerstone of dietary management for ascites due to portal hypertension. Patients should be restricted to approximately 2 grams of sodium per day. This requires patient counseling and dietitian involvement, as sodium is found in table salt, processed foods, and various food additives.
+    tags: [ascites, management, diet]
+    source_type: srs-card
+  - id: gastroenterology-84
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is spironolactone and why is it used in ascites?
+    definition: Spironolactone is an aldosterone antagonist used as first-line diuretic therapy for ascites. It blocks the renin-angiotensin-aldosterone system by inhibiting sodium reabsorption in the renal collecting duct, thus promoting sodium and water excretion. Starting dose is 100 mg daily, titrated up to a maximum of 400 mg daily. Side effects include fluctuations in potassium, sodium, and creatinine (requiring electrolyte/renal function monitoring), muscle cramps, and gynecomatia (even with early/long-term use).
+    tags: [ascites, management, spironolactone]
+    source_type: srs-card
+  - id: gastroenterology-85
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is furosemide and how is it used in ascites management?
+    definition: Furosemide is a loop diuretic used as second-line or adjunct therapy for ascites. Starting dose is approximately 40 mg daily, titrated up to a maximum of 160 mg daily. It must be used cautiously as high doses can cause significant electrolyte abnormalities. Close monitoring of electrolytes is essential.
+    tags: [ascites, management, furosemide]
+    source_type: srs-card
+  - id: gastroenterology-86
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the principles of diuretic dose adjustment in ascites?
+    definition: Once ascites mobilizes and clinically improves (no longer apparent), diuretic doses should be titrated down to the maximum tolerated dose that maintains symptom control. Patients should not be kept on high doses for prolonged periods once improved. Daily weight monitoring helps assess treatment response. Aim for 0.5 kg weight loss per day if ascites alone is present, or up to 1 kg per day if peripheral edema is also present.
+    tags: [ascites, management, monitoring]
+    source_type: srs-card
+  - id: gastroenterology-87
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: When is large volume paracentesis indicated?
+    definition: "Large volume paracentesis is indicated for: (1) Tense ascites causing respiratory compromise - to relieve dyspnea and respiratory distress; (2) Refractory ascites that fails to respond to medical management. Large volume paracentesis becomes part of the treatment strategy for refractory ascites."
+    tags: [ascites, paracentesis, indications]
+    source_type: srs-card
+  - id: gastroenterology-88
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What precautions must be taken during large volume paracentesis?
+    definition: To prevent hemodynamic disturbances and renal impairment during fluid removal, intravenous albumin infusion should be administered to provide intravascular volume replacement. Specifically, 8 grams of albumin should be given for each liter of fluid drained, especially when removing fluid volumes exceeding 5 liters.
+    tags: [ascites, paracentesis, albumin-replacement]
+    source_type: srs-card
+  - id: gastroenterology-89
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is TIPS and how does it work in refractory ascites?
+    definition: TIPS (Transjugular Intrahepatic Portosystemic Shunt) is an intervention for refractory ascites when patients fail medical therapy including large volume paracentesis. A shunt is placed between the portal vein and hepatic vein, providing an escape route for fluid from the portal system into the venous system, thereby reducing portal pressures and complications including ascites. A concern is precipitation of hepatic encephalopathy, though newer covered stents have reduced this complication compared to older stents.
+    tags: [ascites, refractory-ascites, TIPS]
+    source_type: srs-card
+  - id: gastroenterology-90
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the role of liver transplantation in ascites management?
+    definition: Liver transplantation should always be considered in patients with cirrhosis failing to respond to ascites management. Such patients should be referred to the appropriate liver transplant center.
+    tags: [ascites, refractory-ascites, transplantation]
+    source_type: srs-card
+  - id: gastroenterology-91
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the key points to remember about ascites classification?
+    definition: "The terms 'exudate' and 'transudate' are not used for ascitic fluid analysis (unlike pleural fluid analysis). Instead, ascites is classified based on the serum ascitic albumin gradient to determine etiology. Understanding the grading system (Grade 1, 2, 3) and classification (complicated vs uncomplicated) is important for clinical management."
+    tags: [ascites, classification, terminology]
+    source_type: srs-card
+  - id: gastroenterology-92
+    card_source: An Approach To Ascites - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the take-home message about ascites epidemiology and management?
+    definition: "Remember: (1) 75-80% of ascites is due to portal hypertension; (2) The initial diagnostic test is the serum ascitic albumin gradient; (3) High SAG indicates portal hypertension; (4) Multiple treatment options exist ranging from sodium restriction and diuretics to large volume paracentesis and TIPS in refractory cases; (5) Always consider the underlying etiology when managing ascites."
+    tags: [ascites, epidemiology, management-summary]
+    source_type: srs-card
+  - id: gastroenterology-93
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is chronic pancreatitis and what does it result in?
+    definition: Chronic pancreatitis involves progressing inflammatory changes in the pancreas that result in permanent structural damage, leading to impairment of both exocrine and endocrine function.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-94
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How does the pathogenesis of chronic pancreatitis differ from acute pancreatitis?
+    definition: Chronic pancreatitis results from recurrent episodes of acute pancreatitis over a period of time, whereas acute pancreatitis is usually a single, painful episode. Chronic pancreatitis may be asymptomatic for long periods.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-95
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is a key distinguishing feature of chronic vs acute pancreatitis in terms of symptoms?
+    definition: Acute pancreatitis is almost always painful in its acute presentation, while chronic pancreatitis may be asymptomatic over long periods, or present with pancreatic insufficiency symptoms initially without pain.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-96
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the distribution pattern of chronic pancreatitis?
+    definition: Chronic pancreatitis usually involves a diffuse, large portion of the entire pancreas rather than being localized or focal disease.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-97
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the pancreatic enzyme levels in chronic vs acute pancreatitis?
+    definition: Pancreatic enzymes such as amylase and lipase are usually normal in the chronic phase but are almost always elevated in acute pancreatitis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-98
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the most common etiology of chronic pancreatitis?
+    definition: Alcohol is the most common etiology of chronic pancreatitis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-99
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: List the genetic causes of chronic pancreatitis mentioned.
+    definition: Genetic causes include mutations in the cystic fibrosis gene and allergic pancreatitis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-100
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What other etiologies of chronic pancreatitis are mentioned?
+    definition: "Other etiologies include: autoimmune pancreatitis, ductal obstruction, tumors, pancreatic divisum, recurrent stone disease, tropical pancreatitis, and involvement in systemic diseases such as systemic lupus erythematosus."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-101
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What systemic diseases can involve the pancreas leading to chronic pancreatitis?
+    definition: Systemic lupus erythematosus and hyperparathyroidism are examples of systemic diseases that can involve the pancreas.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-102
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the relationship between alcohol consumption and chronic pancreatitis development?
+    definition: "Only 5-10% of alcoholics develop chronic pancreatitis, yet alcohol accounts for 45% of all cases. There is individual variation in sensitivity to alcohol toxicity."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-103
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the role of cigarette smoking in chronic pancreatitis?
+    definition: Cigarette smoking is an independent risk factor for chronic pancreatitis development. When combined with alcohol use, it increases the risk further.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-104
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Describe the typical abdominal pain in chronic pancreatitis.
+    definition: Pain is usually epigastric, radiating to the back with nausea and vomiting. Patients lean upright or slightly forward. Pain typically worsens 15-30 minutes after eating and can progress from discrete attacks to continuous pain throughout the day.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-105
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What percentage of pancreatic function must be lost before clinically significant pancreatic insufficiency occurs?
+    definition: "Clinically significant protein and fat deficiencies do not occur until more than 90% of pancreatic function is lost."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-106
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is steatorrhea and how does it present?
+    definition: Steatorrhea is fat malabsorption, clinically presenting as loose, greasy bowel stools that are difficult to flush away.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-107
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Which fat-soluble vitamins may be malabsorbed in chronic pancreatitis?
+    definition: Fat-soluble vitamins A, D, E, K, and B12 may be malabsorbed, leading to vitamin deficiency symptoms.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-108
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is pancreatic diabetes and when does it typically develop?
+    definition: Pancreatic diabetes is glucose intolerance resulting from destruction of pancreatic endocrine tissue. Diabetes mellitus usually occurs quite late in the disease course and requires insulin therapy.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-109
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Why is managing diabetes in chronic pancreatitis patients challenging?
+    definition: Patients have absolute reduction in both insulin and glucagon secretion, creating a very narrow therapeutic window. They have increased risk of hypoglycemia and standard hypoglycemic agents often do not work.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-110
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the diagnostic challenge in chronic pancreatitis?
+    definition: "Diagnosis is challenging because no single laboratory or imaging study is 100% diagnostic. All tests can be normal even in patients with clinical features of chronic pancreatitis."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-111
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the classic diagnostic findings of advanced chronic pancreatitis?
+    definition: "The classic triad includes: pancreatic calcifications, steatorrhea, and development of diabetes mellitus. However, these findings are only seen very late and in advanced disease."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-112
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the two categories of tests for pancreatic function?
+    definition: Direct tests stimulate the pancreas (e.g., secretin or cholecystokinin stimulation test) and measure pancreatic secretions. Indirect tests measure pancreatic products in serum or feces (e.g., 72-hour fecal fat, fecal chymotrypsin, serum trypsinogen).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-113
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Why is the direct secretin stimulation test not commonly used clinically?
+    definition: The direct secretin stimulation test is time-consuming and is only performed in specific research settings, not in routine clinical practice.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-114
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the clinical status of the 72-hour fecal fat test?
+    definition: The 72-hour fecal fat test is no longer performed in clinical practice, though laboratory fasting is needed before samples are collected.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-115
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What imaging findings are characteristic of chronic pancreatitis?
+    definition: Imaging shows pancreatic ductal dilation across the entire length to the tail, multiple calculi in a dilated main pancreatic duct, and distortion of pancreatic tissue architecture.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-116
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What diagnostic findings on ERCP/pancreatography are typical of chronic pancreatitis?
+    definition: An abnormal pancreatogram showing dilatation of the main pancreatic duct with stricturing of the side branches is typically diagnostic on ERCP.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-117
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What are the main treatment approaches for chronic pancreatitis pain?
+    definition: Pain management is the mainstay of treatment using analgesic therapy. Patients must be counseled on alcohol cessation, smoking cessation, and consumption of small meals. Pancreatic enzyme supplements are usually required.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-118
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What advanced pain management options are available for refractory pain?
+    definition: Antioxidant therapy can be considered in patients not responding to conventional analgesia. Selective nerve blocks can be offered. Endoscopic therapy includes pancreatic lithotripsy or pancreatic duct sphincterotomy.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-119
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What surgical options exist for chronic pancreatitis?
+    definition: Surgery may be offered for decompression, distal gland resection, or denervation procedures, though these are rarely used in current clinical practice.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-120
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: How is steatorrhea managed in chronic pancreatitis?
+    definition: Management includes dietary modification, pancreatic enzyme replacement (which usually resolves steatorrhea), vitamin supplementation, and use of medium-chain triglycerides or MCT oil to avoid chylomicron absorption issues.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-121
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: Why are medium-chain triglycerides used in chronic pancreatitis management?
+    definition: Medium-chain triglycerides bypass the need for normal fat absorption and are absorbed directly from the intestinal lumen, avoiding the chylomicron absorption pathway that is impaired in pancreatic insufficiency.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-122
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the treatment of diabetes mellitus in chronic pancreatitis?
+    definition: Insulin therapy is the mainstay of treatment. Hypoglycemic agents provide no benefit in these patients due to the absolute reduction in both insulin and glucagon.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-123
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What complications can pseudocysts undergo in chronic pancreatitis?
+    definition: Pseudocysts can become infected, rupture, or hemorrhage internally. If infection develops, it can lead to sepsis and complicated pancreatitis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-124
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What compression-related complications can occur with chronic pancreatitis?
+    definition: The inflammatory mass or pseudocysts can cause compression of the duodenum, biliary system, and stomach lumen, potentially requiring intervention.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-125
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What vascular complications can occur in chronic pancreatitis?
+    definition: Pancreatic fistulas, splenic venous thrombosis, and splenic artery aneurysms can occur. Splenic vein thrombosis runs across the pancreas and may cause esophageal varices.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-126
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What is the relationship between chronic pancreatitis and pancreatic cancer?
+    definition: Chronic pancreatitis is associated with an increased risk of developing pancreatic cancer, particularly in patients with a smoking history. However, it can be difficult to differentiate chronic pancreatitis from pancreatic adenocarcinoma.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-127
+    card_source: Chronic Pancreatitis - CMED4IIM1 - 2026_pages-001-003.yml
+    atom: What other acute complications can occur in chronic pancreatitis?
+    definition: Patients can present with recurrent episodes of acute pancreatitis, which is usually due to the underlying chronic pancreatitis condition.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-128
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: How is cirrhosis defined histologically?
+    definition: "Cirrhosis is defined by three key histological features: disordered liver architecture, fibrosis, and regenerative nodules on biopsy."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-129
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is the relationship between chronic liver disease and cirrhosis?
+    definition: While cirrhosis is a chronic liver disease, not all chronic liver diseases are cirrhosis. For example, chronic autoimmune hepatitis is a chronic liver disease but may not progress to cirrhosis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-130
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: Name the major etiologies of cirrhosis.
+    definition: "Major causes include: alcohol, chronic viral hepatitis (B and C), metabolic-associated steatotic liver disease (MASLD), Wilson's disease, hemochromatosis, autoimmune hepatitis, primary biliary cholangitis, primary sclerosing cholangitis, cardiac cirrhosis, and alpha-1 antitrypsin deficiency."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-131
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is MASLD and how does it differ from NAFLD?
+    definition: MASLD (metabolic-associated steatotic liver disease) is the updated umbrella term replacing NAFLD (non-alcoholic fatty liver disease). MASLD includes patients with metabolic syndrome features (diabetes, high cholesterol, hypertension) and excludes only significant alcohol use.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-132
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is schistosomiasis and how does it cause cirrhosis?
+    definition: Schistosomiasis is caused by parasitic eggs in portal veins leading to peri-portal fibrosis and portal hypertension. It typically preserves hepatocellular function and is an important cause of portal hypertension in sub-Saharan Africa and Egypt.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-133
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: Can cirrhosis be clinically silent?
+    definition: Yes, cirrhosis can be clinically silent. Many patients have cirrhosis without awareness of it, with symptoms being insidious in onset. Early presentations may include weight loss, sarcopenia, easy bruising, weakness, and fatigue.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-134
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What are the signs of hepatic decompensation in cirrhosis?
+    definition: Signs include jaundice, elevated creatinine, increased bilirubin, low albumin, and increased INR. These indicate the patient has progressed from compensated to decompensated cirrhosis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-135
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is the distinction between hypersplenism and splenic sequestration?
+    definition: The spleen is not actually hyperactive (hypersplenism) in portal hypertension. Rather, it undergoes splenic sequestration—the organ enlarges and pools more platelets and red blood cells, explaining declining platelet counts in progressive cirrhosis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-136
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is the significance of a declining platelet count in chronic liver disease?
+    definition: A gradual decline in platelet count may indicate progression toward cirrhosis and development of portal hypertension that may not yet be clinically apparent.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-137
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What characterizes ascites in portal hypertension?
+    definition: Ascites in portal hypertension is typically a high gradient serum-ascites albumin gradient (SAAG), reflecting the high pressure gradient between portal and systemic circulation.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-138
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What are the three categories of portal hypertension based on location?
+    definition: Pre-hepatic (obstruction before the liver, e.g., splenic vein thrombosis, schistosomiasis), intra-hepatic (within the liver, e.g., cirrhosis), and post-hepatic (obstruction after the liver, e.g., constrictive pericarditis, IVC obstruction, Budd-Chiari syndrome).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-139
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What percentage of hepatic blood supply comes from the portal vein vs hepatic artery?
+    definition: "The portal vein provides 75-80% of the hepatic blood supply, while the hepatic artery provides 20-25%."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-140
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What are the major complications of advanced cirrhosis?
+    definition: Major complications include esophageal varices with bleeding, hepatic encephalopathy, spontaneous bacterial peritonitis, hepatorenal syndrome, hepatopulmonary syndrome, and portal pulmonary hypertension.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-141
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What are the major causes of mortality in cirrhosis?
+    definition: The major causes are variceal bleeds (esophageal varices) and infections, particularly spontaneous bacterial peritonitis (SBP), which can precipitate hepatic encephalopathy.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-142
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is the endoscopic treatment for esophageal varices?
+    definition: Esophageal varices are treated with variceal rubber band ligation (VRBL). The varices are suctioned into the endoscope hood and a rubber band is deployed around them. Patients should also receive non-selective beta-blockers (e.g., carvedilol).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-143
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is the clinical significance of hepatic encephalopathy in cirrhosis?
+    definition: Hepatic encephalopathy in an already-decompensated cirrhotic patient is associated with significant mortality. It requires counseling of family members as there is substantial risk of death on each hospital admission.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-144
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What are the key precipitants of hepatic encephalopathy that must be actively sought?
+    definition: Key precipitants include infections (especially SBP), variceal bleeds, dehydration, electrolyte abnormalities, hepatotoxic drugs (including sedatives), alcohol consumption, and renal failure.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-145
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is the diagnostic threshold for spontaneous bacterial peritonitis?
+    definition: "SBP is diagnosed when the ascitic fluid has >250 PMN (polymorphonuclear neutrophils) per mm3. This criterion is sensitive, and antibiotics with gram-negative coverage should be initiated empirically. Blood cultures can increase specificity."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-146
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: How should vitamin K be managed in cirrhotic patients with elevated INR?
+    definition: While an initial IV dose of vitamin K may be given if INR is elevated, repeated doses over several days are of no benefit due to impaired synthesis of coagulation factors. An elevated INR in cirrhosis reflects synthetic dysfunction and is not corrected by vitamin K alone.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-147
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is the relationship between hepatitis B and hepatocellular carcinoma?
+    definition: Hepatitis B virus is directly oncogenic and can cause HCC even in the absence of cirrhosis, though most patients with hepatitis B-associated HCC have underlying cirrhosis. Hepatitis B vaccination can prevent this scenario.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-148
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: How does hepatitis C cause hepatocellular carcinoma?
+    definition: Unlike hepatitis B, hepatitis C virus is not directly oncogenic. It causes HCC indirectly by causing cirrhosis. HCV patients at risk for HCC do so because of cirrhosis development.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-149
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: Where can varices develop in cirrhosis?
+    definition: While esophageal varices are the most common and clinically important, varices can develop anywhere in the GI tract including the duodenum, stomach (gastric varices are rare), and rectum (anorectal varices).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-150
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What does a very high AFP (alpha-fetoprotein) suggest in the context of cirrhosis?
+    definition: A very high AFP is a tumor marker for hepatocellular carcinoma and can be quite specific and sensitive for HCC, especially when elevated substantially. It indicates the need for HCC screening and evaluation.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-151
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What are the general management principles for a cirrhotic patient in hepatic encephalopathy?
+    definition: Management includes treating the precipitant (infection, bleed, dehydration), correcting electrolyte abnormalities, monitoring glucose (cirrhotic patients are prone to hypoglycemia), using lactulose and antibiotics, and in selected cases using albumin infusions.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-152
+    card_source: "Cirrhosis  Liver Failuer - CMED4IIM1 - 2026_pages-001-008.yml"
+    atom: What is the final consideration for patients with advanced cirrhosis?
+    definition: Patients with cirrhosis should ultimately be evaluated for liver transplantation, which may be the definitive treatment for advanced disease.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-153
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is gastro-esophageal reflux disease (GERD)?
+    definition: A condition that results from failure of the normal anti-reflux mechanism to protect against frequent and abnormal amounts of gastro-esophageal reflux. GERD (United States terminology) or GORD (UK English) is one of the most common human diseases worldwide.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-154
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the key difference between normal gastric reflux and GERD?
+    definition: Occasional acid reflux is a normal physiological process (e.g., after large meals). GERD develops when reflux of gastric contents causes troublesome symptoms or complications that impact quality of life. It is patient-centered diagnosis based on symptom severity.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-155
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are the defensive factors that prevent GERD?
+    definition: The lower esophageal sphincter and diaphragm (internal and external sphincters coordinating similar to anal sphincters), esophageal acid clearance via peristalsis (coordinated contractions), and esophageal tissue resistance.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-156
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are the aggressive factors that promote GERD?
+    definition: Gastric acidity, volume of gastric contents, and duodenal contents. Conditions like pregnancy (uterus pushing), scleroderma (esophageal dysmotility), Zollinger-Ellison syndrome (excessive acid), post-surgical disruption of lower esophageal sphincter, and prolonged nasogastric intubation increase reflux.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-157
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are the classic reflux symptoms?
+    definition: Burning retrosternal pain (heartburn) and sensation of acid coming up into the throat. These are the most frequent presenting complaints in patients with GERD.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-158
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are atypical symptoms of GERD?
+    definition: Water brash, odynophagia, and dysphagia. These symptoms have other important causes and if present should prompt further investigation beyond simple GERD diagnosis to rule out other pathology.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-159
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the Montreal Classification system?
+    definition: "A classification defining esophageal syndromes: (1) Symptomatic syndrome (heartburn, acid regurgitation), (2) Reflux chest pain syndrome, (3) Syndromes associated with esophageal injury (erosions, strictures, Barrett esophagus), and (4) Extra-esophageal syndromes (reflux asthma, laryngitis - though associations not well-validated)."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-160
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: When does Barrett esophagus develop?
+    definition: Long-standing, poorly treated GERD can cause the normal squamous epithelium of the esophagus to change to columnar epithelium. This is a pre-neoplastic lesion that increases risk for esophageal adenocarcinoma.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-161
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the 2006 definition of reflux disease?
+    definition: Gastro-esophageal reflux disease develops when reflux of gastric contents causes troublesome symptoms or complications. This shifted diagnosis from physician-driven to patient-centered, based on symptoms affecting quality of life (work, home, leisure).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-162
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the 2018 Lyon Consensus view on GERD diagnosis?
+    definition: History, structured questionnaires, and response to treatment are insufficient for conclusive GERD diagnosis. Symptoms warrant further investigation to confirm objective evidence of acid reflux or identify other diagnoses, though this is not always pragmatic in general practice.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-163
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the diagnostic approach in general practice for suspected GERD?
+    definition: In young patients with classical reflux symptoms and no alarm symptoms, empiric trial of acid suppression with PPI (e.g., omeprazole) is used. Symptoms should improve within 8-12 weeks of treatment.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-164
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the proper timing for taking a proton pump inhibitor?
+    definition: PPIs should be taken 30-60 minutes before the first meal of the day to switch off the proton pumps before they become active, rather than immediately before eating.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-165
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are alarm symptoms requiring investigation in GERD?
+    definition: "Dysphagia, unintentional weight loss, occult or overt GI bleeding/anemia, symptoms for more than 5 years, and age >45 years. These patients should be referred for upper GI scope to rule out Barrett esophagus, strictures, or malignancy."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-166
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the sensitivity and specificity of endoscopic erosions for GERD?
+    definition: "Erosions are highly specific (~95%) for GERD, but have poor sensitivity (~60% for untreated disease). Normal appearance does not exclude significant gastro-esophageal reflux."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-167
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is esophageal pH monitoring?
+    definition: "A pH probe is placed in the lower esophagus for 24-hour monitoring. It records pH readings and patient-triggered events. Acid exposure time >6% indicates GERD, <4% does not indicate reflux. 4-6% is equivocal and may need impedance monitoring."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-168
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the gold standard investigation for confirming GERD?
+    definition: Esophageal pH studies (24-hour ambulatory pH monitoring) are regarded as the gold standard for objectively confirming gastro-esophageal reflux and relating symptoms to reflux events.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-169
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is esophageal manometry?
+    definition: Measures esophageal contraction and lower esophageal sphincter function. Useful to exclude achalasia (failure of lower esophageal relaxation), assess esophageal motility, and evaluate candidates for anti-reflux surgery.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-170
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are radiological findings in GERD evaluation?
+    definition: Water-soluble contrast studies are inexpensive and can identify esophageal strictures or hiatal hernias. Primarily used in dysphagia evaluation. Less commonly ordered in straightforward GERD unless assessing for strictures before endoscopy.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-171
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: When should cardiac causes be excluded in reflux chest pain?
+    definition: Always rule out coronary artery disease and myocardial infarction before attributing chest pain to GERD. Both reflux disease and cardiac disease are prevalent. Perform ECG before proceeding with esophageal investigations.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-172
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What are complications of GERD?
+    definition: Hemorrhage and perforation are exceedingly rare with modern early treatment. Strictures (benign peptic strictures) still occur. Pre-neoplastic change to Barrett esophagus increases risk for adenocarcinoma, especially in aging populations.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-173
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: What is the pathological process of Barrett esophagus?
+    definition: "Intestinal metaplasia: normal squamous epithelium changes to columnar epithelium. Can progress to dysplasia (low-grade or high-grade). Dysplasia can eventually develop into adenocarcinoma if left untreated."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-174
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-001-010.yml"
+    atom: How can adenocarcinoma development be prevented in Barrett esophagus?
+    definition: Endoscopic ablation (heat therapy) or mucosal resection can remove dysplastic tissue, preventing progression to adenocarcinoma. Early intervention avoids need for surgery, chemotherapy, and associated morbidity/mortality.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-175
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: "What is Barrett's esophagus and what is its significance?"
+    definition: "Barrett's esophagus is a condition where normal squamous epithelium of the esophagus undergoes metaplastic change to resemble the epithelium of the stomach. While sometimes a very short segment may be of little concern, these segments can extend high up into the esophagus and represent a complication of chronic GERD."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-176
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What are the two non-pharmacological treatments with evidence for GERD?
+    definition: "Elevation of the head of the bed (especially for nocturnal reflux) and weight loss of even 5% of body weight have clear evidence for reducing reflux symptoms. Weight loss is particularly important as it also benefits hypertension, diabetes, and cardiovascular risk."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-177
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: How do alginates differ from proton pump inhibitors in terms of dosing and use?
+    definition: Alginates are on-demand treatments that can be taken immediately after meals or when heartburn occurs. Unlike PPIs which must be taken 30 minutes to 1 hour before eating, alginates provide rapid onset of action.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-178
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What are H2 receptor antagonists and when are they used?
+    definition: H2 receptor antagonists are older drugs from the 1970s-80s that work before proton pump inhibitors were introduced. They have rapid onset of action and are still used on-demand for patients with acute episodes, especially in the evenings, compared to PPIs.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-179
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What do proton pump inhibitors do and what is their appropriate timing?
+    definition: PPIs markedly reduce acid secretion within the stomach. They must be taken 30 minutes to 1 hour before meals (typically before breakfast). Examples include omeprazole and pantoprazole. While generally safe, they have long-term safety concerns and must be used appropriately.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-180
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: How does anti-reflux surgery (fundoplication) alter the physiology of GERD?
+    definition: Surgery actually corrects the underlying pathophysiology unlike medications. It targets the lower esophageal sphincter to stop frequent transient relaxations and augment the sphincter. A 360-degree fundoplication wraps the fundus of the stomach around the LES below the diaphragm.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-181
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What are the potential complications of anti-reflux surgery?
+    definition: If the LES is made too tight, patients may develop dysphagia. Some patients may experience excessive bloating and abdominal distension because they cannot adequately release air when eating. These patients must be carefully selected.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-182
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: Who are good candidates for anti-reflux surgery?
+    definition: Healthy patients well-controlled on PPIs who want alternative therapy due to poor medication compliance or fear of side effects; patients with volume regurgitation, aspiration, or symptoms uncontrolled on PPIs. These are highly selected individuals.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-183
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What are potassium-competitive acid blockers (P-CABs) and their advantages?
+    definition: "P-CABs provide potent acid suppression with more flexibility than PPIs—they don't need to be taken 30 minutes before meals. They are emerging treatments for patients still experiencing significant symptoms on proton pump inhibitors, though not yet widely available."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-184
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is the definition of a peptic ulcer?
+    definition: "A peptic ulcer is defined as denudation of the mucosa exposed to gastric acid that must extend into the muscularis propria layer. If it doesn't extend into this layer, it is called an erosion, not a true ulcer."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-185
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What are the common locations and mortality of peptic ulcer disease?
+    definition: "Peptic ulcers occur commonly in the gastric antrum and duodenum. Generally low mortality with uncomplicated ulcers, but mortality is associated with three key complications: hemorrhage, perforation, and obstruction."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-186
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: How are the three major complications of peptic ulcer disease managed?
+    definition: Hemorrhage and obstruction can generally be managed endoscopically without immediate surgery. Most bleeding ulcers can now be controlled endoscopically. Perforation requires urgent surgical intervention. Obstruction may respond to endoscopic dilation but often requires surgical solution long-term.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-187
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What are the two most common causes of peptic ulcer disease worldwide?
+    definition: Helicobacter pylori-associated peptic ulcer disease and non-steroidal anti-inflammatory drug (NSAID)-associated peptic ulcer disease. These two account for the vast majority of ulcers seen worldwide.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-188
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What are other causes of peptic ulcers besides H. pylori and NSAIDs?
+    definition: "Stress ulcers (from severe pancreatitis, trauma, acute pancreatitis, extensive burns in ICU patients); Crohn's disease; tuberculosis (gastroduodenal); vascular insufficiency; and gastric cancer (which can mimic or present as an ulcer)."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-189
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is the pathophysiology of peptic ulcer disease?
+    definition: An imbalance between protective factors (bile, prostaglandins, mucus layer) and harmful factors (H. pylori, pepsin, enzymes, bicarb deficiency, acid). Understanding this balance is key to treatment strategies.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-190
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: Why did Marshall and Warren win the Nobel Prize in 2005?
+    definition: They demonstrated the link between Helicobacter pylori bacteria and peptic ulcer disease, fundamentally changing understanding and treatment of ulcers and eliminating the need for most ulcer surgeries.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-191
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What was the impact of discovering H. pylori on peptic ulcer treatment?
+    definition: Before this discovery, patients received antacids and concoctions that provided temporary relief but ulcers recurred, often requiring partial gastrectomy surgery. Eradication of H. pylori eliminates ulcer recurrence, making ulcer surgery largely obsolete.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-192
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is H. pylori and how does it survive in acidic stomach?
+    definition: H. pylori is a gram-negative bacillus that lives in the mucus layer overlying gastric epithelium, causing inflammation. It survives by creating an alkaline environment around itself using the enzyme urease, which breaks down urea into ammonia to neutralize acid.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-193
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is the association between H. pylori and gastric malignancy?
+    definition: H. pylori is a risk factor for gastric adenocarcinoma and gastric lymphoma. The bacteria causes duodenal ulcers by infection of ectopic gastric mucosa in the duodenum.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-194
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What diagnostic tests are most clinically useful for H. pylori detection?
+    definition: "The three most clinically useful tests are: (1) stool antigen testing (sensitive and specific for diagnosis and post-treatment confirmation at 8 weeks); (2) urease activity from gastric biopsy (shows pH change from urease); (3) histology of biopsy specimens. Urea breath test not readily available; serology not clinically helpful except for epidemiology."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-195
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: When should stool antigen testing be used for H. pylori?
+    definition: Use stool antigen for initial diagnosis and to confirm eradication at 8 weeks after completion of H. pylori eradication treatment. It is sensitive and specific and is probably underutilized clinically.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-196
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: How do NSAIDs cause peptic ulcer disease?
+    definition: NSAIDs inhibit cyclooxygenase enzyme, leading to suppression of prostaglandin synthesis. This reduces mucus production, decreases mucosal perfusion, and reduces epithelial proliferation—all protective factors for the gastric epithelium.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-197
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What are the clinical presentations of peptic ulcer disease?
+    definition: "Classic symptoms include burning or epigastric pain that may improve with antacids or food, may occur at night (intermittent), and may be associated with nausea and vomiting. Notably, about 40% of patients present without abdominal pain, especially with NSAID-related ulcers, which may present as upper GI bleed with hematemesis or melena."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-198
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: How do NSAID-related ulcers differ in presentation from H. pylori-related ulcers?
+    definition: NSAID-related ulcers are more likely to be painless because anti-inflammatory agents mask symptoms. They may present with upper GI bleed (hematemesis, melena) as the first presentation rather than with abdominal pain.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-199
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is the role of upper endoscopy in peptic ulcer disease?
+    definition: Upper endoscopy (esophagogastroduodenoscopy) is essential for confirming diagnosis and providing endoscopic treatment. It allows visualization to rule out malignancy (especially important for gastric ulcers) and to treat bleeding with hemoclips, heater probes, or epinephrine-saline injection.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-200
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is the role of barium studies in evaluating peptic ulcer disease?
+    definition: "Very limited role. Barium studies may be useful only if there's concern about outlet obstruction and you want to assess stricture length when unable to pass an endoscope, but otherwise have no significant diagnostic role."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-201
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is the rule for gastric ulcer biopsy?
+    definition: Gastric ulcers should always be biopsied during endoscopy to rule out malignancy/gastric cancer, even if the ulcer appears benign. Duodenal ulcers are not typically biopsied as they are usually benign. If patient is actively bleeding, biopsy can be deferred until patient is stabilized.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-202
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What are the high-risk ulcer features requiring endoscopic treatment?
+    definition: "High-risk features include: spurting arteries (Forrest Ia), visible blood vessels (Forrest IIa), and adherent blood clots (Forrest IIb). These require hemoclips or heater probes to prevent re-bleeding. Low-risk features like fibrin-based ulcers (Forrest III) don't require endoscopic treatment."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-203
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: When is IV proton pump inhibitor therapy indicated in peptic ulcer disease?
+    definition: IV PPI is only used in patients actively having an upper GI bleed in the first 24 hours and may continue as infusion for up to 72 hours depending on the type of lesion seen. There is no place for long-term IV PPIs.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-204
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is the treatment regimen for H. pylori eradication?
+    definition: "Standard eradication requires at least two antibiotics plus a proton pump inhibitor for two weeks. The regimen is difficult to tolerate. Even with recommended regimens, eradication fails in 15-20% of cases, requiring second-line or third-line regimens."
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-205
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: Who should be treated for H. pylori?
+    definition: Strongly recommended in patients with duodenal or gastric ulcers, gastric lymphoma, atrophic gastritis, and patients with first-degree relatives with gastric cancer who have had gastric cancer resection. There is worldwide consideration for screening and treating all adults as a public health strategy to reduce gastric cancer risk.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-206
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is the confirmation of H. pylori eradication?
+    definition: Stool antigen test 8 weeks after completion of H. pylori eradication treatment. The eradication rate with appropriate treatment is very high.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-207
+    card_source: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease - CMED4IIM1 - 2026_pages-011-017.yml"
+    atom: What is Zollinger-Ellison syndrome?
+    definition: A rare condition caused by a neuroendocrine tumor that secretes excessive gastrin without control, causing uninhibited acid secretion. Results in ulcers in unusual locations, poorly healing ulcers, and extensive erosions with no medical inhibition mechanism.
+    tags: [gerd, peptic-ulcer-disease, endoscopy, h-pylori, nsaids, pharmacology]
+    source_type: srs-card
+  - id: gastroenterology-208
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the gross anatomical framework for approaching jaundice?
+    definition: Start with intrahepatic bile ducts (coalesce to form common hepatic duct), add cystic duct (forms common bile duct), and CBD runs through head of pancreas. This framework helps identify if the problem is structural, intrahepatic, or within the liver itself.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-209
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the causes of jaundice related to increased hemolysis?
+    definition: "Increased intravascular hemolysis from RBC breakdown causes mild jaundice via elevated unconjugated bilirubin. Examples: leptospirosis, malaria."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-210
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is Gilbert syndrome?
+    definition: A condition with abnormal transport of unconjugated bilirubin from blood into hepatocytes due to defective transporter proteins. Causes mild unconjugated hyperbilirubinemia; not a major concern in normal individuals.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-211
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the pathway of bilirubin conjugation and excretion?
+    definition: Unconjugated bilirubin → transported into hepatocyte → converted to soluble conjugated bilirubin → transported out via transporter proteins (MRP2, MDR3, BSEP) into bile ducts → small intestine → bacterial proteases convert to urobilinogen → partially reabsorbed (enterohepatic circulation) → mostly excreted in stool.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-212
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the three main categories in the framework for jaundice?
+    definition: Pre-hepatic (hemolysis), Hepatic (problem within liver itself like acute viral hepatitis or decompensated cirrhosis), and Cholestatic (failure of bile formation/transport, can be intrahepatic or extrahepatic).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-213
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the difference between intrahepatic and extrahepatic cholestasis?
+    definition: "Intrahepatic cholestasis: problem within intrahepatic bile ducts (e.g., primary sclerosing cholangitis). Extrahepatic cholestasis: problem in larger tubes and pipes (common bile duct, hepatic duct) - the plumbing (e.g., stones, tumors causing obstruction)."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-214
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are key history points in jaundice assessment?
+    definition: Duration of jaundice, previous episodes (suggests viral or autoimmune), flu-like symptoms, unintentional weight loss (concerning for malignancy), fever and RUQ pain (suggests cholangitis), alcohol and drug history (including supplements), recent surgeries (risk of iatrogenic CBD injury), travel history (malaria), blood transfusions, pregnancy status, and family history.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-215
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the classic symptoms of ascending cholangitis?
+    definition: Fever, jaundice, and right upper quadrant pain. These patients need rapid imaging, blood cultures, and urgent referral to gastroenterology for ERCP to decompress the infected biliary system.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-216
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the significance of pale stools and dark urine in jaundice?
+    definition: Indicates cholestasis - the conjugated bilirubin cannot be excreted into bile ducts, reducing bile reaching the intestine (pale stools), while conjugated bilirubin backs up into bloodstream and is excreted in urine (dark urine).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-217
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What early signs of hepatic encephalopathy should be recognized?
+    definition: "Construction apraxia, cognitive impairment, disturbance in sleep patterns. As it progresses: asterixis (flapping tremor), confusion, coma, and fetal hepaticus (sickly sweet smell)."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-218
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the signs of cirrhosis you should examine for?
+    definition: "Gynecomastia, spider angiomas, palmar erythema, leuconychia, hair loss in axilla and legs, Dupuytren contracture. Important: one sign alone does not confirm cirrhosis; must consider context and risk factors."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-219
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the relationship between cirrhosis and portal hypertension?
+    definition: "While cirrhosis is the most common cause of portal hypertension worldwide, not all portal hypertension is due to cirrhosis. Non-cirrhotic causes of portal hypertension exist. Signs of portal hypertension: caput medusae, splenomegaly, ascites, varices."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-220
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What transporter proteins are involved in conjugated bilirubin excretion?
+    definition: MRP2 (multidrug resistance protein 2), MDR3, and BSEP (bile salt export pump). Genetic abnormalities in these proteins cause inherited cholestasis. Drug-induced liver injury can also affect these transporters.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-221
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is progressive familial intrahepatic cholestasis (PFIC)?
+    definition: An inherited genetic disorder with abnormal exporter-like proteins responsible for transporting conjugated bilirubin from hepatocytes into bile ducts. Results in chronic cholestasis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-222
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are the signs of liver failure vs cirrhosis vs portal hypertension?
+    definition: "Cirrhosis: spider angiomas, palmar erythema, gynecomastia, leuconychia. Portal hypertension: caput medusae, splenomegaly, ascites, varices. Liver failure: hepatic encephalopathy (asterixis, confusion, fetal hepaticus), coagulopathy."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-223
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What laboratory tests should be ordered for jaundice evaluation?
+    definition: Liver function tests (LFTs), INR (international normalized ratio), bilirubin fractionation (unconjugated vs conjugated). Elevated unconjugated suggests pre-hepatic or Gilbert; elevated conjugated suggests hepatic or post-hepatic problem.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-224
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What are common iatrogenic causes of CBD injury?
+    definition: Cholecystectomy (gallbladder removal) can result in inadvertent injury to the common bile duct, causing jaundice postoperatively. Always inquire about recent abdominal surgeries.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-225
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What is the difference between hemolysis and hepatic jaundice in terms of bilirubin?
+    definition: "Hemolysis: primarily unconjugated bilirubin elevation (pre-hepatic). Hepatic jaundice: the liver cannot process or transport bilirubin adequately. Cholestatic: conjugated bilirubin cannot be excreted (post-hepatic or intrahepatic obstruction)."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-226
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-001-010.yml
+    atom: What clinical red flags suggest malignancy in jaundice presentation?
+    definition: "Unintentional weight loss, jaundice in older individuals, painless jaundice. Concerning for: cholangiocarcinoma (bile duct tumor), pancreatic head tumor, or chronic pancreatitis causing duct obstruction."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-227
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What do the INR and albumin indicate about liver function?
+    definition: INR and albumin indicate the synthetic function of the liver. These are better markers of liver function than transaminases (ALT, AST) or alkaline phosphatase, which indicate where injury may be located (hepatic vs cholestatic) rather than overall function.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-228
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: How do you interpret liver function tests (LFT)?
+    definition: "When interpreting LFT, classify the pattern into three groups: hepatitic (predominant ALT/AST elevation indicating cellular destruction), cholestatic (alkaline phosphatase elevation), or mixed. Use the degree of enzyme elevation to distinguish between these patterns."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-229
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What is the R-value and what is its primary use?
+    definition: The R-value is a formula used to classify patients into cholestatic vs hepatitic patterns of LFT. Originally developed primarily for drug-induced liver injury research, but is increasingly being used clinically for various etiologies.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-230
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What imaging modalities are available for evaluating jaundice?
+    definition: Transabdominal ultrasound is the standard starting point. Additional modalities include CT scan, endoscopic ultrasound (EUS), magnetic resonance cholangiopancreatogram (MRCP), ERCP (performed with therapeutic intent), and sometimes liver biopsy for specific diagnoses like autoimmune hepatitis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-231
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: Why is ERCP only performed with therapeutic intent?
+    definition: ERCP carries significant risks including acute pancreatitis, bowel injury, and hemorrhage. It is not routinely used for diagnosis alone but rather when intervention is needed, such as stent placement for strictures or stone extraction.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-232
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What is fibroscan and what techniques does it use?
+    definition: Fibroscan is an ultrasound-based technique that assesses organ stiffness to determine if a patient is progressing toward cirrhosis. Uses vibration-controlled elastography or shear wave elastography. Increasingly standard in liver disease management.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-233
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What does cholestasis mean in terms of lab findings?
+    definition: Cholestasis means an increase in alkaline phosphatase and gamma-glutamyl transferase, with or without an increase in bilirubin. Cholestasis can exist without jaundice if bilirubin is not elevated.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-234
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What is the key distinction between intrahepatic and extrahepatic cholestasis?
+    definition: "Intrahepatic cholestasis: obstruction at the level of the liver parenchyma, not visible on imaging (ultrasound/CT). Extrahepatic cholestasis: obstruction in the bile duct system outside the liver, typically shows bile duct dilatation on imaging."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-235
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What are causes of acute hepatic jaundice?
+    definition: "Causes include viral hepatitis, drug-induced liver injury, alcohol, autoimmune hepatitis, aminita (death cap mushroom), Wilson's disease (copper overload from ATP-7B gene mutation), and hemolytic causes."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-236
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: "Why are Wilson's disease and hereditary hemochromatosis important to diagnose?"
+    definition: "These are among the few etiologies of jaundice that are reversible or can be stabilized with treatment if diagnosed early. Wilson's disease involves copper overload; hemochromatosis involves iron overload."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-237
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What causes of chronic hepatic jaundice should be considered?
+    definition: Cirrhosis from various etiologies, non-alcoholic fatty liver disease (NAFLD, now called steatotic liver disease), alpha-1 antitrypsin deficiency, large tumor burden in liver, hepatic ischemia from hepatic vein or IVC occlusion (Budd-Chiari syndrome).
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-238
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What are causes of intrahepatic cholestasis?
+    definition: Include primary sclerosing cholangitis (PSC), AIDS-cholangiopathy, drug-induced liver injury, progressive familial intrahepatic cholestasis, benign recurrent intrahepatic cholestasis, infiltrative etiologies (granulomas, sarcoid, tumors), and primary biliary cholangitis.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-239
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What infiltrative etiologies can cause intrahepatic cholestasis?
+    definition: Granulomas from tuberculosis or sarcoidosis, and tumors (either primary hepatic tumors or secondary spread from lymphoma, colorectal cancer). These cause cholestasis by infiltrating the liver parenchyma with focal lesions.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-240
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What are causes of extrahepatic cholestasis?
+    definition: Include strictures (benign or malignant), PSC strictures, pancreatic cancer, chronic pancreatitis, choledocholithiasis (bile duct stones), lymph nodes obstructing bile ducts, ascaris worms (rare), and iatrogenic bile duct injury during gallbladder surgery.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-241
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What imaging findings indicate extrahepatic cholestasis?
+    definition: Bile duct dilatation is the classic sign. Specific lesions include stones (hyperechoic with acoustic shadowing on ultrasound), strictures, and masses. Absence of dilatation does not exclude obstruction, especially with small lesions or early/shifting stones.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-242
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What are the features of primary sclerosing cholangitis (PSC) on imaging?
+    definition: "Characteristic \"onion skin\" ring fibrosis pattern on histology. Imaging shows irregular stricturing of intrahepatic bile ducts. Can affect intrahepatic and/or extrahepatic bile ducts. Multiple irregular areas of stricturing with focal dilation (beaded appearance)."
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-243
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: Why is MRCP sufficient for PSC diagnosis?
+    definition: MRCP provides excellent visualization of the bile duct anatomy and is sufficient for PSC diagnosis. ERCP is reserved for therapeutic interventions like stricture ballooning, as it adds unnecessary procedural risk without additional diagnostic benefit.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-244
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What systemic signs can accompany primary biliary cholangitis and PSC?
+    definition: Xanthomas and xanthelasmas can be seen in patients with long-standing cholestasis. Malabsorption of fat-soluble vitamins may occur due to impaired bile flow.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-245
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What scoring systems assess hepatic function and cirrhosis severity?
+    definition: Child-Pugh score assesses liver synthetic function and includes INR, albumin, and bilirubin. MELD score (Model for End-stage Liver Disease) is more commonly used to stratify patients for transplant listing and assess severity of hepatic dysfunction.
+    tags: []
+    source_type: srs-card
+  - id: gastroenterology-246
+    card_source: Jaundice - CMED4IIM1 - 2026_pages-011-014.yml
+    atom: What is the systematic approach to a patient with jaundice?
+    definition: "Collection: gather history, examination findings, and appropriate investigations. Analysis: reflect on data, consider anatomy, physiology, and likely pathology. Synthesis: determine the most likely cause (clinical assessment). Action: proceed with definitive investigation (MRCP, biopsy) or treatment as indicated."
+    tags: []
+    source_type: srs-card
+scenarios:
+  - name: Acute Pancreatitis — Diagnostic Reasoning Chain
+    description: Apply Acute Pancreatitis atoms in sequence to triage a presenting patient
+    atom_ids:
+      - gastroenterology-1
+      - gastroenterology-2
+      - gastroenterology-3
+      - gastroenterology-4
+      - gastroenterology-5
+      - gastroenterology-6
+      - gastroenterology-7
+      - gastroenterology-8
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Acute Pancreatitis guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Acute Pancreatitis algorithm.
+  - name: "Acute, Chronic  HIV Related Diarrhoea — Diagnostic Reasoning Chain"
+    description: "Apply Acute, Chronic  HIV Related Diarrhoea atoms in sequence to triage a presenting patient"
+    atom_ids:
+      - gastroenterology-42
+      - gastroenterology-43
+      - gastroenterology-44
+      - gastroenterology-45
+      - gastroenterology-46
+      - gastroenterology-47
+      - gastroenterology-48
+      - gastroenterology-49
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Acute, Chronic  HIV Related Diarrhoea guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: "Reconfirm diagnosis; escalate to second-line per Acute, Chronic  HIV Related Diarrhoea algorithm."
+  - name: An Approach To Ascites — Diagnostic Reasoning Chain
+    description: Apply An Approach To Ascites atoms in sequence to triage a presenting patient
+    atom_ids:
+      - gastroenterology-67
+      - gastroenterology-68
+      - gastroenterology-69
+      - gastroenterology-70
+      - gastroenterology-71
+      - gastroenterology-72
+      - gastroenterology-73
+      - gastroenterology-74
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per An Approach To Ascites guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per An Approach To Ascites algorithm.
+  - name: Chronic Pancreatitis — Diagnostic Reasoning Chain
+    description: Apply Chronic Pancreatitis atoms in sequence to triage a presenting patient
+    atom_ids:
+      - gastroenterology-93
+      - gastroenterology-94
+      - gastroenterology-95
+      - gastroenterology-96
+      - gastroenterology-97
+      - gastroenterology-98
+      - gastroenterology-99
+      - gastroenterology-100
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Chronic Pancreatitis guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Chronic Pancreatitis algorithm.
+  - name: "Cirrhosis  Liver Failuer — Diagnostic Reasoning Chain"
+    description: "Apply Cirrhosis  Liver Failuer atoms in sequence to triage a presenting patient"
+    atom_ids:
+      - gastroenterology-128
+      - gastroenterology-129
+      - gastroenterology-130
+      - gastroenterology-131
+      - gastroenterology-132
+      - gastroenterology-133
+      - gastroenterology-134
+      - gastroenterology-135
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Cirrhosis  Liver Failuer guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: "Reconfirm diagnosis; escalate to second-line per Cirrhosis  Liver Failuer algorithm."
+  - name: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease — Diagnostic Reasoning Chain"
+    description: "Apply Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease atoms in sequence to triage a presenting patient"
+    atom_ids:
+      - gastroenterology-153
+      - gastroenterology-154
+      - gastroenterology-155
+      - gastroenterology-156
+      - gastroenterology-157
+      - gastroenterology-158
+      - gastroenterology-159
+      - gastroenterology-160
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: "Reconfirm diagnosis; escalate to second-line per Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease algorithm."
+  - name: "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease — Diagnostic Reasoning Chain"
+    description: "Apply Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease atoms in sequence to triage a presenting patient"
+    atom_ids:
+      - gastroenterology-175
+      - gastroenterology-176
+      - gastroenterology-177
+      - gastroenterology-178
+      - gastroenterology-179
+      - gastroenterology-180
+      - gastroenterology-181
+      - gastroenterology-182
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: "Reconfirm diagnosis; escalate to second-line per Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease algorithm."
+  - name: Jaundice — Diagnostic Reasoning Chain
+    description: Apply Jaundice atoms in sequence to triage a presenting patient
+    atom_ids:
+      - gastroenterology-208
+      - gastroenterology-209
+      - gastroenterology-210
+      - gastroenterology-211
+      - gastroenterology-212
+      - gastroenterology-213
+      - gastroenterology-214
+      - gastroenterology-215
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Jaundice guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Jaundice algorithm.
+  - name: Jaundice — Diagnostic Reasoning Chain
+    description: Apply Jaundice atoms in sequence to triage a presenting patient
+    atom_ids:
+      - gastroenterology-227
+      - gastroenterology-228
+      - gastroenterology-229
+      - gastroenterology-230
+      - gastroenterology-231
+      - gastroenterology-232
+      - gastroenterology-233
+      - gastroenterology-234
+    parameters:
+      severity: "mild | moderate | severe — drives intensity of intervention"
+      onset: "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential"
+      comorbidities: comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice
+      response: "responsive | partial | refractory — gates escalation"
+    examples:
+      - case: Typical presentation, moderate severity, no comorbidities
+        reasoning: "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Jaundice guidelines."
+        recommendation: First-line management as defined by atoms above; reassess at 48-72h.
+      - case: Severe presentation with comorbidities
+        reasoning: Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.
+        recommendation: Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h.
+      - case: Refractory case after first-line therapy
+        reasoning: Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.
+        recommendation: Reconfirm diagnosis; escalate to second-line per Jaundice algorithm.
