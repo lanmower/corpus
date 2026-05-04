@@ -6356,16 +6356,6 @@
       {
         "name": "Acute Kidney Disease CMED4IIM1 — Diagnostic Reasoning Chain",
         "description": "Apply Acute Kidney Disease CMED4IIM1 atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-1",
-          "nephrology-2",
-          "nephrology-3",
-          "nephrology-4",
-          "nephrology-5",
-          "nephrology-6",
-          "nephrology-7",
-          "nephrology-8"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6388,21 +6378,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Acute Kidney Disease CMED4IIM1 algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-1",
+          "nephrology-2",
+          "nephrology-3",
+          "nephrology-4",
+          "nephrology-5",
+          "nephrology-6",
+          "nephrology-7",
+          "nephrology-8"
         ]
       },
       {
         "name": "Approach To Chronic Kidney Disease — Diagnostic Reasoning Chain",
         "description": "Apply Approach To Chronic Kidney Disease atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-35",
-          "nephrology-36",
-          "nephrology-37",
-          "nephrology-38",
-          "nephrology-39",
-          "nephrology-40",
-          "nephrology-41",
-          "nephrology-42"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6425,21 +6415,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Approach To Chronic Kidney Disease algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-35",
+          "nephrology-36",
+          "nephrology-37",
+          "nephrology-38",
+          "nephrology-39",
+          "nephrology-40",
+          "nephrology-41",
+          "nephrology-42"
         ]
       },
       {
         "name": "Diabetic Kidney Disease — Diagnostic Reasoning Chain",
         "description": "Apply Diabetic Kidney Disease atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-60",
-          "nephrology-61",
-          "nephrology-62",
-          "nephrology-63",
-          "nephrology-64",
-          "nephrology-65",
-          "nephrology-66",
-          "nephrology-67"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6462,21 +6452,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Diabetic Kidney Disease algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-60",
+          "nephrology-61",
+          "nephrology-62",
+          "nephrology-63",
+          "nephrology-64",
+          "nephrology-65",
+          "nephrology-66",
+          "nephrology-67"
         ]
       },
       {
         "name": "Drug  The Kidney — Diagnostic Reasoning Chain",
         "description": "Apply Drug  The Kidney atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-83",
-          "nephrology-84",
-          "nephrology-85",
-          "nephrology-86",
-          "nephrology-87",
-          "nephrology-88",
-          "nephrology-89",
-          "nephrology-90"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6499,21 +6489,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Drug  The Kidney algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-83",
+          "nephrology-84",
+          "nephrology-85",
+          "nephrology-86",
+          "nephrology-87",
+          "nephrology-88",
+          "nephrology-89",
+          "nephrology-90"
         ]
       },
       {
         "name": "Glomerular Disease — Diagnostic Reasoning Chain",
         "description": "Apply Glomerular Disease atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-100",
-          "nephrology-101",
-          "nephrology-102",
-          "nephrology-103",
-          "nephrology-104",
-          "nephrology-105",
-          "nephrology-106",
-          "nephrology-107"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6536,21 +6526,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Glomerular Disease algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-100",
+          "nephrology-101",
+          "nephrology-102",
+          "nephrology-103",
+          "nephrology-104",
+          "nephrology-105",
+          "nephrology-106",
+          "nephrology-107"
         ]
       },
       {
         "name": "HIV The Kidney CMED4IIM1 — Diagnostic Reasoning Chain",
         "description": "Apply HIV The Kidney CMED4IIM1 atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-125",
-          "nephrology-126",
-          "nephrology-127",
-          "nephrology-128",
-          "nephrology-129",
-          "nephrology-130",
-          "nephrology-131",
-          "nephrology-132"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6573,21 +6563,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per HIV The Kidney CMED4IIM1 algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-125",
+          "nephrology-126",
+          "nephrology-127",
+          "nephrology-128",
+          "nephrology-129",
+          "nephrology-130",
+          "nephrology-131",
+          "nephrology-132"
         ]
       },
       {
         "name": "Hypertension The Kidney CMED4IIM1 — Diagnostic Reasoning Chain",
         "description": "Apply Hypertension The Kidney CMED4IIM1 atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-145",
-          "nephrology-146",
-          "nephrology-147",
-          "nephrology-148",
-          "nephrology-149",
-          "nephrology-150",
-          "nephrology-151",
-          "nephrology-152"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6610,21 +6600,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Hypertension The Kidney CMED4IIM1 algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-145",
+          "nephrology-146",
+          "nephrology-147",
+          "nephrology-148",
+          "nephrology-149",
+          "nephrology-150",
+          "nephrology-151",
+          "nephrology-152"
         ]
       },
       {
         "name": "Kidney Replacement Therapy — Diagnostic Reasoning Chain",
         "description": "Apply Kidney Replacement Therapy atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-180",
-          "nephrology-181",
-          "nephrology-182",
-          "nephrology-183",
-          "nephrology-184",
-          "nephrology-185",
-          "nephrology-186",
-          "nephrology-187"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6647,21 +6637,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Kidney Replacement Therapy algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-180",
+          "nephrology-181",
+          "nephrology-182",
+          "nephrology-183",
+          "nephrology-184",
+          "nephrology-185",
+          "nephrology-186",
+          "nephrology-187"
         ]
       },
       {
         "name": "kidney-replacement-therapy-srs-cards — Diagnostic Reasoning Chain",
         "description": "Apply kidney-replacement-therapy-srs-cards atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-206",
-          "nephrology-207",
-          "nephrology-208",
-          "nephrology-209",
-          "nephrology-210",
-          "nephrology-211",
-          "nephrology-212",
-          "nephrology-213"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6684,21 +6674,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per kidney-replacement-therapy-srs-cards algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-206",
+          "nephrology-207",
+          "nephrology-208",
+          "nephrology-209",
+          "nephrology-210",
+          "nephrology-211",
+          "nephrology-212",
+          "nephrology-213"
         ]
       },
       {
         "name": "Nephrology Introduction CMED4IIM1 2026 pages-001-004 — Diagnostic Reasoning Chain",
         "description": "Apply Nephrology Introduction CMED4IIM1 2026 pages-001-004 atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-231",
-          "nephrology-232",
-          "nephrology-233",
-          "nephrology-234",
-          "nephrology-235",
-          "nephrology-236",
-          "nephrology-237",
-          "nephrology-238"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6721,21 +6711,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Nephrology Introduction CMED4IIM1 2026 pages-001-004 algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-231",
+          "nephrology-232",
+          "nephrology-233",
+          "nephrology-234",
+          "nephrology-235",
+          "nephrology-236",
+          "nephrology-237",
+          "nephrology-238"
         ]
       },
       {
         "name": "Urinary Tract Infections (UTI) — Diagnostic Reasoning Chain",
         "description": "Apply Urinary Tract Infections (UTI) atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "nephrology-261",
-          "nephrology-262",
-          "nephrology-263",
-          "nephrology-264",
-          "nephrology-265",
-          "nephrology-266",
-          "nephrology-267",
-          "nephrology-268"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -6758,6 +6748,16 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Urinary Tract Infections (UTI) algorithm."
           }
+        ],
+        "atom_ids": [
+          "nephrology-261",
+          "nephrology-262",
+          "nephrology-263",
+          "nephrology-264",
+          "nephrology-265",
+          "nephrology-266",
+          "nephrology-267",
+          "nephrology-268"
         ]
       }
     ],

@@ -23,6 +23,9 @@ active scenario:
 current scratchpad ({{N}} cards):
 {{CARDS}}`;
 
+const PERSIST_KEY = 'corpus.triage.v1';
+const SCHEMA_VERSION = 1;
+
 const state = {
     manifest: null,
     scenarios: [],
@@ -34,14 +37,45 @@ const state = {
     llmStatus: 'idle',
     loadStarted: false,
     pipeline: null,
-    onProgress: null
+    onProgress: null,
+    subjectFilter: new Set(),
+    sessions: {}
 };
 window.__triage = state;
+
+function safeStore() {
+    try { return window.localStorage; } catch { return null; }
+}
+function loadSessions() {
+    const ls = safeStore(); if (!ls) return {};
+    try {
+        const raw = ls.getItem(PERSIST_KEY);
+        if (!raw) return {};
+        const obj = JSON.parse(raw);
+        if (obj && obj.version === SCHEMA_VERSION && obj.sessions) return obj.sessions;
+        return {};
+    } catch { return {}; }
+}
+function saveSessions() {
+    const ls = safeStore(); if (!ls) return;
+    try { ls.setItem(PERSIST_KEY, JSON.stringify({ version: SCHEMA_VERSION, sessions: state.sessions, savedAt: Date.now() })); }
+    catch (e) { console.warn('persist failed', e); }
+}
+function persistActive() {
+    if (!state.activeScenarioId) return;
+    state.sessions[state.activeScenarioId] = state.cards.map(c => ({ id: c.id, kind: c.kind, title: c.title, body: c.body, highlighted: !!c.highlighted }));
+    saveSessions();
+    renderStats();
+}
 
 const els = {
     capDot: document.getElementById('cap-dot'),
     capLabel: document.getElementById('cap-label'),
     list: document.getElementById('scenario-list'),
+    filterBar: document.getElementById('filter-bar'),
+    statsRow: document.getElementById('stats-row'),
+    exportBtn: document.getElementById('export-btn'),
+    importInput: document.getElementById('import-input'),
     activeScenario: document.getElementById('active-scenario'),
     scratchpad: document.getElementById('scratchpad'),
     modelStatus: document.getElementById('model-status'),
@@ -123,21 +157,65 @@ async function loadManifestAndScenarios() {
     renderScenarios();
 }
 
+function visibleScenarios() {
+    if (state.subjectFilter.size === 0) return state.scenarios;
+    return state.scenarios.filter(s => state.subjectFilter.has(s.subject));
+}
+
+function renderFilterBar() {
+    if (!els.filterBar) return;
+    els.filterBar.innerHTML = '';
+    const subjects = Array.from(new Set(state.scenarios.map(s => s.subject))).sort();
+    const allActive = state.subjectFilter.size === 0;
+    els.filterBar.append(ce('button', {
+        class: 'chip filter-chip' + (allActive ? ' active' : ''), type: 'button',
+        'aria-pressed': String(allActive),
+        on: { click: () => { state.subjectFilter.clear(); renderFilterBar(); renderScenarios(); } }
+    }, 'all'));
+    for (const subj of subjects) {
+        const on = state.subjectFilter.has(subj);
+        els.filterBar.append(ce('button', {
+            class: 'chip filter-chip' + (on ? ' active' : ''), type: 'button',
+            'aria-pressed': String(on),
+            on: { click: () => { on ? state.subjectFilter.delete(subj) : state.subjectFilter.add(subj); renderFilterBar(); renderScenarios(); } }
+        }, subj));
+    }
+}
+
+function renderStats() {
+    if (!els.statsRow) return;
+    const sessions = state.sessions || {};
+    const touched = Object.keys(sessions).length;
+    let totalCards = 0;
+    for (const id of Object.keys(sessions)) totalCards += (sessions[id] || []).length;
+    els.statsRow.textContent = `// ${state.scenarios.length} scenarios · ${touched} touched · ${totalCards} cards placed`;
+}
+
 function renderScenarios() {
     els.list.innerHTML = '';
-    els.list.append(ce('div', { class: 'label' }, `// ${state.scenarios.length} scenarios`));
+    const vis = visibleScenarios();
     const bySubject = {};
-    for (const s of state.scenarios) (bySubject[s.subject] ||= []).push(s);
+    for (const s of vis) (bySubject[s.subject] ||= []).push(s);
+    if (vis.length === 0) {
+        els.list.append(ce('div', { class: 'label' }, '// no scenarios match filter'));
+        return;
+    }
     for (const [subj, items] of Object.entries(bySubject)) {
-        els.list.append(ce('div', { class: 'label', style: 'margin-top:14px' }, '// ' + subj));
+        els.list.append(ce('div', { class: 'label', style: 'margin-top:14px' }, `// ${subj} (${items.length})`));
         for (const sc of items) {
+            const hasSession = state.sessions[sc.id] && state.sessions[sc.id].length > 0;
             els.list.append(ce('div', {
-                class: 'scenario-row' + (state.activeScenarioId === sc.id ? ' active' : ''),
+                class: 'scenario-row' + (state.activeScenarioId === sc.id ? ' active' : '') + (hasSession ? ' has-session' : ''),
                 data: { id: sc.id },
-                on: { click: () => selectScenario(sc.id) }
+                role: 'button', tabindex: '0',
+                'aria-pressed': String(state.activeScenarioId === sc.id),
+                on: {
+                    click: () => selectScenario(sc.id),
+                    keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectScenario(sc.id); } }
+                }
             },
                 ce('div', {}, sc.name),
-                ce('div', { class: 'sub' }, `${sc.atoms.length} atoms · ${subj}`)
+                ce('div', { class: 'sub' }, `${sc.atoms.length} atoms · ${subj}${hasSession ? ' · ●' : ''}`)
             ));
         }
     }
@@ -147,7 +225,9 @@ function selectScenario(id) {
     const sc = state.scenarios.find(x => x.id === id);
     if (!sc) return;
     state.activeScenarioId = id;
-    state.cards = [];
+    const saved = state.sessions[id] || [];
+    state.cards = saved.map(c => ({ ...c }));
+    state.cardSeq = state.cards.length;
     state.messages = [];
     renderScenarios();
     renderActive();
@@ -167,16 +247,18 @@ function renderActive() {
         return;
     }
     els.activeScenario.className = 'active-scenario panel rail-' + sc.cat;
+    const params = (sc.parameters && typeof sc.parameters === 'object' && !Array.isArray(sc.parameters)) ? sc.parameters : {};
+    const paramKeys = Object.keys(params);
     els.activeScenario.append(
         ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, sc.subject)),
-        ce('div', { class: 'muted' }, sc.description),
-        Object.keys(sc.parameters).length ? ce('dl', { class: 'params' },
-            ...Object.entries(sc.parameters).flatMap(([k, v]) => [
+        ce('div', { class: 'muted' }, sc.description || ''),
+        paramKeys.length ? ce('dl', { class: 'params' },
+            ...paramKeys.flatMap(k => [
                 ce('dt', {}, k),
-                ce('dd', {}, String(v).slice(0, 160))
+                ce('dd', {}, (typeof params[k] === 'string' ? params[k] : JSON.stringify(params[k])).slice(0, 220))
             ])
         ) : null,
-        sc.atoms.length ? ce('div', { class: 'muted', style: 'margin-top:10px;font-family:var(--ff-mono);font-size:11px' }, `// ${sc.atoms.length} reasoning atoms attached`) : null
+        (sc.atoms && sc.atoms.length) ? ce('div', { class: 'muted', style: 'margin-top:10px;font-family:var(--ff-mono);font-size:11px' }, `// ${sc.atoms.length} reasoning atoms attached`) : null
     );
 }
 
@@ -223,24 +305,24 @@ const TOOLS = {
         const exists = state.cards.find(c => c.id === id);
         if (exists) Object.assign(exists, { kind, title, body });
         else state.cards.push({ id, kind, title: title || '', body: body || '', highlighted: false });
-        renderScratchpad();
+        renderScratchpad(); persistActive();
         return { ok: true, id };
     },
     remove_card({ id }) {
         const i = state.cards.findIndex(c => c.id === id);
         if (i < 0) return { ok: false, error: 'not found' };
         state.cards.splice(i, 1);
-        renderScratchpad();
+        renderScratchpad(); persistActive();
         return { ok: true };
     },
     highlight_card({ id }) {
         for (const c of state.cards) c.highlighted = (c.id === id);
-        renderScratchpad();
+        renderScratchpad(); persistActive();
         return { ok: true };
     },
     clear_screen() {
         state.cards = [];
-        renderScratchpad();
+        renderScratchpad(); persistActive();
         return { ok: true };
     }
 };
@@ -395,9 +477,43 @@ els.prompt.addEventListener('keydown', e => {
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); send(false); }
 });
 
+if (els.exportBtn) els.exportBtn.addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify({ version: SCHEMA_VERSION, sessions: state.sessions, exportedAt: new Date().toISOString() }, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `corpus-triage-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+});
+if (els.importInput) els.importInput.addEventListener('change', async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try {
+        const obj = JSON.parse(await f.text());
+        if (obj.version !== SCHEMA_VERSION || typeof obj.sessions !== 'object') throw new Error('bad schema');
+        state.sessions = obj.sessions;
+        saveSessions();
+        if (state.activeScenarioId) selectScenario(state.activeScenarioId);
+        renderScenarios(); renderStats();
+    } catch (err) { alert('import failed: ' + err.message); }
+    e.target.value = '';
+});
+
+document.addEventListener('keydown', e => {
+    if (e.target && (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT')) return;
+    const vis = visibleScenarios();
+    if (vis.length === 0) return;
+    const idx = vis.findIndex(s => s.id === state.activeScenarioId);
+    if (e.key === 'j') { e.preventDefault(); selectScenario(vis[Math.min(idx + 1, vis.length - 1)].id); }
+    else if (e.key === 'k') { e.preventDefault(); selectScenario(vis[Math.max(idx - 1, 0)].id); }
+    else if (e.key === 'c') { e.preventDefault(); TOOLS.clear_screen(); }
+    else if (e.key === '/') { e.preventDefault(); els.prompt.focus(); }
+});
+
 (async () => {
+    state.sessions = loadSessions();
     await checkCapability();
     await loadManifestAndScenarios();
+    renderFilterBar();
+    renderStats();
     renderActive();
     renderScratchpad();
 })();

@@ -3355,38 +3355,157 @@
       {
         "name": "ECG Interpretation & Diagnosis Chain",
         "description": "Systematically interpret ECG findings to differentiate cardiac pathology",
+        "parameters": {
+          "raw": "{heart_rate: {type: numeric, unit: bpm, variance: {bradycardia: {min: 30, max: 59, interpretation: sinus bradycardia or AV block}, normal: {min: 60, max: 100, interpretation: normal sinus rhythm}, tachycardia: {min: 101, max: 200, interpretation: sinus tachycardia or SVT}}}, pr_interval: {type: numeric, unit: milliseconds, variance: {short: {min: 60, max: 119, interpretation: short PR interval (WPW risk)}, normal: {min: 120, max: 200, interpretation: normal AV conduction}, prolonged: {min: 201, max: 400, interpretation: first-degree AV block}}}, qrs_duration: {type: numeric, unit: milliseconds, variance: {narrow: {min: 60, max: 119, interpretation: supraventricular origin}, wide: {min: 120, max: 200, interpretation: bundle branch block or ventricular origin}}}, st_segment: {type: categorical, variance: {depression: {interpretation: ischemia or NSTEMI}, elevation: {interpretation: 'STEMI, pericarditis, or normal variant'}, isoelectric: {interpretation: normal or old MI}}}, t_wave: {type: categorical, variance: {inverted: {interpretation: 'ischemia, PE, or old MI'}, peaked: {interpretation: hyperkalemia risk}, normal: {interpretation: normal variant}}}}"
+        },
+        "examples": [
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          }
+        ],
         "atom_ids": [
           "ecg-interpretation-1",
           "ecg-interpretation-2",
           "ecg-interpretation-3",
           "ecg-interpretation-4",
           "ecg-interpretation-5"
-        ],
-        "parameters": "{heart_rate: {type: numeric, unit: bpm, variance: {bradycardia: {min: 30, max: 59, interpretation: sinus bradycardia or AV block}, normal: {min: 60, max: 100, interpretation: normal sinus rhythm}, tachycardia: {min: 101, max: 200, interpretation: sinus tachycardia or SVT}}}, pr_interval: {type: numeric, unit: milliseconds, variance: {short: {min: 60, max: 119, interpretation: short PR interval (WPW risk)}, normal: {min: 120, max: 200, interpretation: normal AV conduction}, prolonged: {min: 201, max: 400, interpretation: first-degree AV block}}}, qrs_duration: {type: numeric, unit: milliseconds, variance: {narrow: {min: 60, max: 119, interpretation: supraventricular origin}, wide: {min: 120, max: 200, interpretation: bundle branch block or ventricular origin}}}, st_segment: {type: categorical, variance: {depression: {interpretation: ischemia or NSTEMI}, elevation: {interpretation: 'STEMI, pericarditis, or normal variant'}, isoelectric: {interpretation: normal or old MI}}}, t_wave: {type: categorical, variance: {inverted: {interpretation: 'ischemia, PE, or old MI'}, peaked: {interpretation: hyperkalemia risk}, normal: {interpretation: normal variant}}}}",
-        "examples": [
-          "{case: 45-year-old male with chest pain",
-          "parameters: {heart_rate: 88",
-          "pr_interval: 160",
-          "qrs_duration: 100",
-          "st_segment: depression",
-          "t_wave: inverted}",
-          "reasoning: NSTEMI - ST depression + T-wave inversion in anterolateral leads suggests ongoing ischemia",
-          "recommendation: 'Troponin",
-          "BNP",
-          "chest imaging; consider urgent catheterization'}",
-          "{case: 30-year-old athlete",
-          "parameters: {heart_rate: 52",
-          "pr_interval: 160",
-          "qrs_duration: 100",
-          "st_segment: isoelectric",
-          "t_wave: normal}",
-          "reasoning: Normal athletic bradycardia - heart rate <60 in trained athlete is expected",
-          "recommendation: No intervention; normal variant}"
         ]
       },
       {
         "name": "CAD Risk Stratification & Severity Assessment",
         "description": "Stratify CAD risk based on presentation and diagnostic findings",
+        "parameters": {
+          "raw": "{age: {type: numeric, unit: years, variance: {young: {min: 18, max: 40, risk_modifier: low}, middle: {min: 41, max: 60, risk_modifier: moderate}, elderly: {min: 61, max: 100, risk_modifier: high}}}, troponin: {type: numeric, unit: ng/mL, variance: {negative: {max: 0.04, interpretation: no acute myocardial injury}, low_positive: {min: 0.04, max: 0.5, interpretation: minor myocardial injury}, high_positive: {min: 0.5, max: 10, interpretation: acute MI}}}, bnp: {type: numeric, unit: pg/mL, variance: {normal: {max: 100, interpretation: no heart failure}, elevated: {min: 101, max: 500, interpretation: mild ventricular dysfunction}, high: {min: 501, max: 5000, interpretation: severe heart failure risk}}}, ejection_fraction: {type: numeric, unit: '%', variance: {normal: {min: 50, max: 100, interpretation: preserved systolic function}, mildly_reduced: {min: 40, max: 49, interpretation: mild LV dysfunction}, severely_reduced: {min: 0, max: 39, interpretation: cardiogenic shock risk}}}, risk_factors: {type: count, variance: {low: {min: 0, max: 1, interpretation: low CAD risk}, moderate: {min: 2, max: 3, interpretation: moderate CAD risk}, high: {min: 4, max: 10, interpretation: high CAD risk}}}}"
+        },
+        "examples": [
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          }
+        ],
         "atom_ids": [
           "ecg-interpretation-6",
           "coronary-artery-disease-(cad)-7",
@@ -3395,22 +3514,61 @@
           "coronary-artery-disease-(cad)-10",
           "coronary-artery-disease-(cad)-11",
           "coronary-artery-disease-(cad)-12"
-        ],
-        "parameters": "{age: {type: numeric, unit: years, variance: {young: {min: 18, max: 40, risk_modifier: low}, middle: {min: 41, max: 60, risk_modifier: moderate}, elderly: {min: 61, max: 100, risk_modifier: high}}}, troponin: {type: numeric, unit: ng/mL, variance: {negative: {max: 0.04, interpretation: no acute myocardial injury}, low_positive: {min: 0.04, max: 0.5, interpretation: minor myocardial injury}, high_positive: {min: 0.5, max: 10, interpretation: acute MI}}}, bnp: {type: numeric, unit: pg/mL, variance: {normal: {max: 100, interpretation: no heart failure}, elevated: {min: 101, max: 500, interpretation: mild ventricular dysfunction}, high: {min: 501, max: 5000, interpretation: severe heart failure risk}}}, ejection_fraction: {type: numeric, unit: '%', variance: {normal: {min: 50, max: 100, interpretation: preserved systolic function}, mildly_reduced: {min: 40, max: 49, interpretation: mild LV dysfunction}, severely_reduced: {min: 0, max: 39, interpretation: cardiogenic shock risk}}}, risk_factors: {type: count, variance: {low: {min: 0, max: 1, interpretation: low CAD risk}, moderate: {min: 2, max: 3, interpretation: moderate CAD risk}, high: {min: 4, max: 10, interpretation: high CAD risk}}}}",
-        "examples": [
-          "{case: 55-year-old diabetic with acute chest pain",
-          "parameters: {age: 55",
-          "troponin: 0.8",
-          "bnp: 450",
-          "ejection_fraction: 42",
-          "risk_factors: 4}",
-          "reasoning: STEMI with cardiogenic shock risk - elevated troponin + reduced EF + high risk profile",
-          "recommendation: Urgent PCI; ICU monitoring; inotropic support if SBP <90}"
         ]
       },
       {
         "name": "Valvular Heart Disease Differential",
         "description": "Differentiate between stenosis, regurgitation, and combined lesions",
+        "parameters": {
+          "raw": "{murmur_timing: {type: categorical, variance: {systolic: {interpretation: mitral regurgitation or aortic stenosis}, diastolic: {interpretation: aortic regurgitation or mitral stenosis}, continuous: {interpretation: patent ductus arteriosus or AV fistula}}}, murmur_location: {type: categorical, variance: {apex: {interpretation: mitral valve pathology}, base_right: {interpretation: aortic valve pathology}, tricuspid_area: {interpretation: tricuspid pathology}}}, jet_velocity: {type: numeric, unit: m/s, variance: {mild: {min: 1, max: 2, interpretation: mild stenosis}, moderate: {min: 2, max: 4, interpretation: moderate stenosis}, severe: {min: 4, max: 10, interpretation: severe stenosis}}}, ventricular_size: {type: categorical, variance: {normal: {interpretation: preserved chamber dimensions}, dilated: {interpretation: chronic volume overload}, hypertrophied: {interpretation: chronic pressure overload}}}, ef: {type: numeric, unit: '%', variance: {preserved: {min: 50, max: 100, interpretation: preserved systolic function}, reduced: {min: 0, max: 49, interpretation: ventricular decompensation}}}}"
+        },
+        "examples": [
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          }
+        ],
         "atom_ids": [
           "coronary-artery-disease-(cad)-13",
           "coronary-artery-disease-(cad)-14",
@@ -3418,23 +3576,56 @@
           "coronary-artery-disease-(cad)-16",
           "coronary-artery-disease-(cad)-17",
           "coronary-artery-disease-(cad)-18"
-        ],
-        "parameters": "{murmur_timing: {type: categorical, variance: {systolic: {interpretation: mitral regurgitation or aortic stenosis}, diastolic: {interpretation: aortic regurgitation or mitral stenosis}, continuous: {interpretation: patent ductus arteriosus or AV fistula}}}, murmur_location: {type: categorical, variance: {apex: {interpretation: mitral valve pathology}, base_right: {interpretation: aortic valve pathology}, tricuspid_area: {interpretation: tricuspid pathology}}}, jet_velocity: {type: numeric, unit: m/s, variance: {mild: {min: 1, max: 2, interpretation: mild stenosis}, moderate: {min: 2, max: 4, interpretation: moderate stenosis}, severe: {min: 4, max: 10, interpretation: severe stenosis}}}, ventricular_size: {type: categorical, variance: {normal: {interpretation: preserved chamber dimensions}, dilated: {interpretation: chronic volume overload}, hypertrophied: {interpretation: chronic pressure overload}}}, ef: {type: numeric, unit: '%', variance: {preserved: {min: 50, max: 100, interpretation: preserved systolic function}, reduced: {min: 0, max: 49, interpretation: ventricular decompensation}}}}",
-        "examples": [
-          "{case: 35-year-old with history of rheumatic fever and dyspnea",
-          "parameters: {murmur_timing: diastolic",
-          "murmur_location: apex",
-          "jet_velocity: 3.5",
-          "ventricular_size: dilated",
-          "ef: 45}",
-          "reasoning: Moderate mitral stenosis with secondary LV dilation and reduced EF from chronic hemodynamic burden",
-          "recommendation: 'Echocardiogram",
-          "consider valve repair/replacement if EF continues declining'}"
         ]
       },
       {
         "name": "Infective Endocarditis Diagnosis & Severity",
         "description": "Apply Duke criteria and assess severity of IE",
+        "parameters": {
+          "raw": "{fever: {type: numeric, unit: °C, variance: {low_grade: {min: 37.5, max: 38.5, interpretation: subacute IE}, moderate: {min: 38.5, max: 39.5, interpretation: subacute to acute IE}, high: {min: 39.5, max: 41, interpretation: acute IE or sepsis}}}, blood_cultures: {type: categorical, variance: {negative: {interpretation: culture-negative IE; consider fungal or fastidious organisms}, positive_strep: {interpretation: streptococcal IE; more indolent course}, positive_staph: {interpretation: staphylococcal IE; more aggressive}}}, vegetation_size: {type: numeric, unit: mm, variance: {small: {min: 2, max: 5, interpretation: may resolve with antibiotics alone}, large: {min: 5, max: 20, interpretation: high risk of embolization; consider early surgery}}}, prosthetic_valve: {type: boolean, variance: {'false': {interpretation: native valve IE; slower progression}, 'true': {interpretation: prosthetic valve IE; higher mortality}}}, embolic_phenomena: {type: count, variance: {none: {min: 0, max: 0, interpretation: lower embolic risk}, one: {min: 1, max: 1, interpretation: moderate embolic risk}, multiple: {min: 2, max: 10, interpretation: 'high embolic risk; brain, kidney, spleen involvement'}}}}"
+        },
+        "examples": [
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          }
+        ],
         "atom_ids": [
           "coronary-artery-disease-(cad)-19",
           "coronary-artery-disease-(cad)-20",
@@ -3442,22 +3633,116 @@
           "coronary-artery-disease-(cad)-22",
           "coronary-artery-disease-(cad)-23",
           "coronary-artery-disease-(cad)-24"
-        ],
-        "parameters": "{fever: {type: numeric, unit: °C, variance: {low_grade: {min: 37.5, max: 38.5, interpretation: subacute IE}, moderate: {min: 38.5, max: 39.5, interpretation: subacute to acute IE}, high: {min: 39.5, max: 41, interpretation: acute IE or sepsis}}}, blood_cultures: {type: categorical, variance: {negative: {interpretation: culture-negative IE; consider fungal or fastidious organisms}, positive_strep: {interpretation: streptococcal IE; more indolent course}, positive_staph: {interpretation: staphylococcal IE; more aggressive}}}, vegetation_size: {type: numeric, unit: mm, variance: {small: {min: 2, max: 5, interpretation: may resolve with antibiotics alone}, large: {min: 5, max: 20, interpretation: high risk of embolization; consider early surgery}}}, prosthetic_valve: {type: boolean, variance: {'false': {interpretation: native valve IE; slower progression}, 'true': {interpretation: prosthetic valve IE; higher mortality}}}, embolic_phenomena: {type: count, variance: {none: {min: 0, max: 0, interpretation: lower embolic risk}, one: {min: 1, max: 1, interpretation: moderate embolic risk}, multiple: {min: 2, max: 10, interpretation: 'high embolic risk; brain, kidney, spleen involvement'}}}}",
-        "examples": [
-          "{case: 45-year-old IV drug user with fever and new murmur",
-          "parameters: {fever: 39.2",
-          "blood_cultures: positive_staph",
-          "vegetation_size: 12",
-          "prosthetic_valve: false",
-          "embolic_phenomena: 2}",
-          "reasoning: Acute staphylococcal IE with multiple septic emboli - high risk for septic shock and organ failure",
-          "recommendation: Vancomycin + gentamicin + rifampin; urgent cardiac surgery consultation; ICU admission}"
         ]
       },
       {
         "name": "Chest Pain Differential & Triage",
         "description": "Differentiate ACS, pericarditis, aortic dissection, and other causes",
+        "parameters": {
+          "raw": "{chest_pain_character: {type: categorical, variance: {pressure: {interpretation: typical ACS presentation}, pleuritic: {interpretation: 'pericarditis, PE, pneumonia'}, tearing: {interpretation: aortic dissection until proven otherwise}, sharp: {interpretation: 'pericarditis, musculoskeletal, PE'}}}, pain_radiation: {type: categorical, variance: {left_arm: {interpretation: typical ACS}, back: {interpretation: 'aortic dissection, musculoskeletal'}, jaw_teeth: {interpretation: 'atypical ACS, TMJ dysfunction'}, none: {interpretation: 'pericarditis, musculoskeletal, anxiety'}}}, troponin_serial: {type: categorical, variance: {negative_both: {interpretation: low ACS probability; consider other causes}, positive_rise_fall: {interpretation: acute myocardial necrosis; ACS diagnosis confirmed}, positive_flat: {interpretation: 'chronic myocardial injury; consider HF, CKD'}}}, st_ecg_pattern: {type: categorical, variance: {normal: {interpretation: 'consider unstable angina, pericarditis, PE'}, elevation: {interpretation: STEMI (most critical)}, depression: {interpretation: NSTEMI or posterior MI}}}, time_symptom_onset: {type: numeric, unit: hours, variance: {immediate: {min: 0, max: 3, interpretation: PCI candidate; reperfusion therapy window}, delayed: {min: 3, max: 24, interpretation: coronary angiography; delayed PCI possible}, chronic: {min: 24, max: 1000, interpretation: chronic phase; assess for complications}}}}"
+        },
+        "examples": [
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          }
+        ],
         "atom_ids": [
           "evaluation-of-valvular-heart-disease-25",
           "evaluation-of-valvular-heart-disease-26",
@@ -3465,34 +3750,71 @@
           "evaluation-of-valvular-heart-disease-28",
           "evaluation-of-valvular-heart-disease-29",
           "evaluation-of-valvular-heart-disease-30"
-        ],
-        "parameters": "{chest_pain_character: {type: categorical, variance: {pressure: {interpretation: typical ACS presentation}, pleuritic: {interpretation: 'pericarditis, PE, pneumonia'}, tearing: {interpretation: aortic dissection until proven otherwise}, sharp: {interpretation: 'pericarditis, musculoskeletal, PE'}}}, pain_radiation: {type: categorical, variance: {left_arm: {interpretation: typical ACS}, back: {interpretation: 'aortic dissection, musculoskeletal'}, jaw_teeth: {interpretation: 'atypical ACS, TMJ dysfunction'}, none: {interpretation: 'pericarditis, musculoskeletal, anxiety'}}}, troponin_serial: {type: categorical, variance: {negative_both: {interpretation: low ACS probability; consider other causes}, positive_rise_fall: {interpretation: acute myocardial necrosis; ACS diagnosis confirmed}, positive_flat: {interpretation: 'chronic myocardial injury; consider HF, CKD'}}}, st_ecg_pattern: {type: categorical, variance: {normal: {interpretation: 'consider unstable angina, pericarditis, PE'}, elevation: {interpretation: STEMI (most critical)}, depression: {interpretation: NSTEMI or posterior MI}}}, time_symptom_onset: {type: numeric, unit: hours, variance: {immediate: {min: 0, max: 3, interpretation: PCI candidate; reperfusion therapy window}, delayed: {min: 3, max: 24, interpretation: coronary angiography; delayed PCI possible}, chronic: {min: 24, max: 1000, interpretation: chronic phase; assess for complications}}}}",
-        "examples": [
-          "{case: 60-year-old with acute onset tearing chest pain radiating to back",
-          "parameters: {chest_pain_character: tearing",
-          "pain_radiation: back",
-          "troponin_serial: negative_both",
-          "st_ecg_pattern: normal",
-          "time_symptom_onset: 1}",
-          "reasoning: 'Aortic dissection presentation - tearing pain to back",
-          "normal ECG/troponin. This is NOT ACS despite chest pain.'",
-          "recommendation: STAT chest CT with IV contrast; cardiothoracic surgery consult; ICU admission; BP control with IV agents}",
-          "{case: '45-year-old with acute substernal pressure",
-          "ST elevation in V1-V4'",
-          "parameters: {chest_pain_character: pressure",
-          "pain_radiation: left_arm",
-          "troponin_serial: positive_rise_fall",
-          "st_ecg_pattern: elevation",
-          "time_symptom_onset: 0.5}",
-          "reasoning: Anterior STEMI - IMMEDIATE PCI candidate; within reperfusion window",
-          "recommendation: 'Dual antiplatelet therapy (aspirin 300mg + P2Y12 inhibitor)",
-          "LMWH",
-          "urgent cardiac catheterization for primary PCI'}"
         ]
       },
       {
         "name": "Arrhythmia Recognition & Management",
         "description": "Identify and manage common cardiac arrhythmias on ECG",
+        "parameters": {
+          "raw": "{rhythm_regularity: {type: categorical, variance: {regular: {interpretation: 'sinus, flutter, VT, SVT'}, irregularly_irregular: {interpretation: atrial fibrillation}, regularly_irregular: {interpretation: 'second-degree AV block, ectopy'}}}, qrs_width: {type: categorical, variance: {narrow: {interpretation: supraventricular origin}, wide: {interpretation: ventricular origin or aberrancy}}}, p_wave_visible: {type: boolean, variance: {'true': {interpretation: sinus or organized rhythm}, 'false': {interpretation: 'AF, VT, or rapid SVT with buried P'}}}, heart_rate: {type: numeric, unit: bpm, variance: {slow: {min: 30, max: 59, interpretation: bradyarrhythmia; consider pacing}, normal: {min: 60, max: 100, interpretation: normal range}, fast: {min: 100, max: 300, interpretation: tachyarrhythmia; consider rate control or cardioversion}}}, hemodynamics: {type: categorical, variance: {stable: {interpretation: medical management acceptable}, unstable: {interpretation: emergency synchronized cardioversion indicated}}}}"
+        },
+        "examples": [
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          },
+          {
+            "case": "",
+            "reasoning": "",
+            "recommendation": ""
+          }
+        ],
         "atom_ids": [
           "coronary-artery-disease-(cad)-16",
           "coronary-artery-disease-(cad)-17",
@@ -3500,20 +3822,6 @@
           "coronary-artery-disease-(cad)-19",
           "coronary-artery-disease-(cad)-20",
           "coronary-artery-disease-(cad)-21"
-        ],
-        "parameters": "{rhythm_regularity: {type: categorical, variance: {regular: {interpretation: 'sinus, flutter, VT, SVT'}, irregularly_irregular: {interpretation: atrial fibrillation}, regularly_irregular: {interpretation: 'second-degree AV block, ectopy'}}}, qrs_width: {type: categorical, variance: {narrow: {interpretation: supraventricular origin}, wide: {interpretation: ventricular origin or aberrancy}}}, p_wave_visible: {type: boolean, variance: {'true': {interpretation: sinus or organized rhythm}, 'false': {interpretation: 'AF, VT, or rapid SVT with buried P'}}}, heart_rate: {type: numeric, unit: bpm, variance: {slow: {min: 30, max: 59, interpretation: bradyarrhythmia; consider pacing}, normal: {min: 60, max: 100, interpretation: normal range}, fast: {min: 100, max: 300, interpretation: tachyarrhythmia; consider rate control or cardioversion}}}, hemodynamics: {type: categorical, variance: {stable: {interpretation: medical management acceptable}, unstable: {interpretation: emergency synchronized cardioversion indicated}}}}",
-        "examples": [
-          "{case: '70-year-old with rapid irregular rhythm at 150 bpm",
-          "narrow QRS'",
-          "parameters: {rhythm_regularity: irregularly_irregular",
-          "qrs_width: narrow",
-          "p_wave_visible: false",
-          "heart_rate: 150",
-          "hemodynamics: stable}",
-          "reasoning: 'Atrial fibrillation with rapid ventricular response - irregular rhythm",
-          "no visible P waves",
-          "narrow complex'",
-          "recommendation: Rate control with beta-blocker or CCB; anticoagulation if CHA2DS2-VASc ≥1; consider ablation if refractory}"
         ]
       }
     ],

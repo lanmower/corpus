@@ -26,12 +26,21 @@
   </header>
 
   <main class="triage-shell">
-    <aside class="triage-side" id="scenario-list"><div class="loading">loading scenarios…</div></aside>
+    <aside class="triage-side" aria-label="scenario list">
+      <div class="filter-bar" id="filter-bar" role="group" aria-label="subject filter"></div>
+      <div class="stats-row" id="stats-row" aria-live="polite"></div>
+      <div class="io-row">
+        <button class="chip" id="export-btn" type="button" aria-label="export sessions">export</button>
+        <label class="chip" for="import-input">import<input id="import-input" type="file" accept="application/json" hidden></label>
+      </div>
+      <div id="scenario-list"><div class="loading">loading scenarios…</div></div>
+    </aside>
 
     <section class="triage-stage">
       <div class="active-scenario panel" id="active-scenario">
         <div class="panel-head"><span class="title">no scenario selected</span><span class="meta">pick one from the left</span></div>
         <div class="muted">this is your scratchpad — the assistant places differentials, recommendations, vitals, plans, and warnings as cards here. each turn it sees only the current screen, not the chat history.</div>
+        <div class="muted small" style="margin-top:8px">keys: <kbd>j</kbd>/<kbd>k</kbd> next/prev · <kbd>c</kbd> clear · <kbd>/</kbd> focus prompt · <kbd>Ctrl+Enter</kbd> send</div>
       </div>
       <div class="scratchpad" id="scratchpad"></div>
     </section>

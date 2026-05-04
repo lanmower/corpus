@@ -4335,16 +4335,6 @@
       {
         "name": "Acute Diabetes  Complications — Diagnostic Reasoning Chain",
         "description": "Apply Acute Diabetes  Complications atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "diabetes-1",
-          "diabetes-2",
-          "diabetes-3",
-          "diabetes-4",
-          "diabetes-5",
-          "diabetes-6",
-          "diabetes-7",
-          "diabetes-8"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -4367,21 +4357,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Acute Diabetes  Complications algorithm."
           }
+        ],
+        "atom_ids": [
+          "diabetes-1",
+          "diabetes-2",
+          "diabetes-3",
+          "diabetes-4",
+          "diabetes-5",
+          "diabetes-6",
+          "diabetes-7",
+          "diabetes-8"
         ]
       },
       {
         "name": "Hyperthyroidism — Diagnostic Reasoning Chain",
         "description": "Apply Hyperthyroidism atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "diabetes-33",
-          "diabetes-34",
-          "diabetes-35",
-          "diabetes-36",
-          "diabetes-37",
-          "diabetes-38",
-          "diabetes-39",
-          "diabetes-40"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -4404,21 +4394,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Hyperthyroidism algorithm."
           }
+        ],
+        "atom_ids": [
+          "diabetes-33",
+          "diabetes-34",
+          "diabetes-35",
+          "diabetes-36",
+          "diabetes-37",
+          "diabetes-38",
+          "diabetes-39",
+          "diabetes-40"
         ]
       },
       {
         "name": "Hypothyroidism — Diagnostic Reasoning Chain",
         "description": "Apply Hypothyroidism atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "diabetes-64",
-          "diabetes-65",
-          "diabetes-66",
-          "diabetes-67",
-          "diabetes-68",
-          "diabetes-69",
-          "diabetes-70",
-          "diabetes-71"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -4441,21 +4431,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Hypothyroidism algorithm."
           }
+        ],
+        "atom_ids": [
+          "diabetes-64",
+          "diabetes-65",
+          "diabetes-66",
+          "diabetes-67",
+          "diabetes-68",
+          "diabetes-69",
+          "diabetes-70",
+          "diabetes-71"
         ]
       },
       {
         "name": "Lipid Disorders  The Metabolic Syndrome — Diagnostic Reasoning Chain",
         "description": "Apply Lipid Disorders  The Metabolic Syndrome atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "diabetes-95",
-          "diabetes-96",
-          "diabetes-97",
-          "diabetes-98",
-          "diabetes-99",
-          "diabetes-100",
-          "diabetes-101",
-          "diabetes-102"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -4478,21 +4468,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Lipid Disorders  The Metabolic Syndrome algorithm."
           }
+        ],
+        "atom_ids": [
+          "diabetes-95",
+          "diabetes-96",
+          "diabetes-97",
+          "diabetes-98",
+          "diabetes-99",
+          "diabetes-100",
+          "diabetes-101",
+          "diabetes-102"
         ]
       },
       {
         "name": "Treatment Of Diabetes Mellitus — Diagnostic Reasoning Chain",
         "description": "Apply Treatment Of Diabetes Mellitus atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "diabetes-136",
-          "diabetes-137",
-          "diabetes-138",
-          "diabetes-139",
-          "diabetes-140",
-          "diabetes-141",
-          "diabetes-142",
-          "diabetes-143"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -4515,6 +4505,16 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Treatment Of Diabetes Mellitus algorithm."
           }
+        ],
+        "atom_ids": [
+          "diabetes-136",
+          "diabetes-137",
+          "diabetes-138",
+          "diabetes-139",
+          "diabetes-140",
+          "diabetes-141",
+          "diabetes-142",
+          "diabetes-143"
         ]
       }
     ],

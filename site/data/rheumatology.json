@@ -3874,9 +3874,7 @@
     "atoms": [],
     "scenarios": [
       {
-        "id": "scenario-001",
-        "title": "ACR/EULAR 2010 RA Classification Criteria",
-        "type": "RA Diagnosis",
+        "name": "ACR/EULAR 2010 RA Classification Criteria",
         "description": "Scoring system for classifying RA in patients with undifferentiated arthritis",
         "parameters": {
           "jointInvolvement": "Affects number and type of joint involvement",
@@ -3884,25 +3882,22 @@
           "acutePhaseReactants": "ESR and CRP levels",
           "symptomDuration": "Duration of symptoms"
         },
-        "scenarios": [
+        "examples": [
           {
-            "variant": "High Score Probable RA",
-            "score": 10,
-            "diagnosis": "RA classification criteria met (score >= 6)",
-            "action": "Start DMARD therapy immediately, target remission"
+            "case": "High Score Probable RA",
+            "reasoning": "RA classification criteria met (score >= 6)",
+            "recommendation": "Start DMARD therapy immediately, target remission"
           },
           {
-            "variant": "Borderline Score",
-            "score": 4,
-            "diagnosis": "Does not meet RA classification criteria yet",
-            "action": "Close monitoring, repeat serology and ESR/CRP in 4-6 weeks"
+            "case": "Borderline Score",
+            "reasoning": "Does not meet RA classification criteria yet",
+            "recommendation": "Close monitoring, repeat serology and ESR/CRP in 4-6 weeks"
           }
-        ]
+        ],
+        "atom_ids": []
       },
       {
-        "id": "scenario-002",
-        "title": "RA Disease Activity Score (DAS28)",
-        "type": "RA Disease Activity",
+        "name": "RA Disease Activity Score (DAS28)",
         "description": "Quantifying disease activity and treatment response",
         "parameters": {
           "tenderJointCount": {
@@ -3926,49 +3921,45 @@
             "unit": "mg/L"
           }
         },
-        "scenarios": [
+        "examples": [
           {
-            "variant": "Remission/Low Disease",
-            "DAS28": 2.3,
-            "interpretation": "Remission or low disease activity",
-            "action": "Continue current DMARD, consider tapering if sustained"
+            "case": "Remission/Low Disease",
+            "reasoning": "",
+            "recommendation": "Continue current DMARD, consider tapering if sustained"
           },
           {
-            "variant": "High Disease Activity",
-            "DAS28": 6.8,
-            "interpretation": "High disease activity",
-            "action": "Intensify DMARD therapy, consider biologic, assess compliance"
+            "case": "High Disease Activity",
+            "reasoning": "",
+            "recommendation": "Intensify DMARD therapy, consider biologic, assess compliance"
           }
-        ]
+        ],
+        "atom_ids": []
       },
       {
-        "id": "scenario-003",
-        "title": "ASAS Axial Spondyloarthritis Classification",
-        "type": "SpA Classification",
+        "name": "ASAS Axial Spondyloarthritis Classification",
+        "description": "SpA Classification",
         "parameters": {
           "backPainOnset": "less than 45 years",
           "duration": "at least 3 months",
           "responsiveToNSAID": "yes"
         },
-        "scenarios": [
+        "examples": [
           {
-            "variant": "Clear Sacroiliitis",
-            "imaging": "bilateral sacroiliitis grade 2-4",
-            "features": "inflammatory back pain + elevated CRP",
-            "diagnosis": "Axial spondyloarthropathy"
+            "case": "Clear Sacroiliitis",
+            "reasoning": "Axial spondyloarthropathy",
+            "recommendation": ""
           },
           {
-            "variant": "HLA B27 Positive",
-            "HLA_B27": true,
-            "features": "inflammatory back pain + arthritis + elevated CRP + family history",
-            "diagnosis": "Axial spondyloarthropathy"
+            "case": "HLA B27 Positive",
+            "reasoning": "Axial spondyloarthropathy",
+            "recommendation": ""
           }
-        ]
+        ],
+        "atom_ids": []
       },
       {
-        "id": "scenario-004",
-        "title": "Acute Monarticular Arthritis: Gout vs Pseudogout vs Septic",
-        "type": "Acute Presentation Differentiation",
+        "name": "Acute Monarticular Arthritis: Gout vs Pseudogout vs Septic",
+        "description": "Acute Presentation Differentiation",
         "parameters": {
           "serumUricAcid": {
             "value": 580,
@@ -3981,66 +3972,46 @@
             "unit": "per microliter"
           }
         },
-        "scenarios": [
+        "examples": [
           {
-            "variant": "Acute Gout",
-            "joint": "first MTP",
-            "crystal": "MSU needle-shaped intracellular",
-            "urate": 680,
-            "diagnosis": "Acute gout",
-            "management": "NSAIDs or colchicine, allopurinol after flare resolution"
+            "case": "Acute Gout",
+            "reasoning": "Acute gout",
+            "recommendation": ""
           },
           {
-            "variant": "Pseudogout",
-            "joint": "knee",
-            "crystal": "CPPD rhomboid extracellular",
-            "urate": 395,
-            "diagnosis": "Acute pseudogout",
-            "management": "NSAIDs or intra-articular steroids, address underlying OA"
+            "case": "Pseudogout",
+            "reasoning": "Acute pseudogout",
+            "recommendation": ""
           },
           {
-            "variant": "Septic Arthritis",
-            "joint": "knee",
-            "fluid": "turbid purulent",
-            "culture": "positive",
-            "diagnosis": "Septic arthritis",
-            "management": "IV antibiotics, joint aspiration/drainage, orthopedic consultation"
+            "case": "Septic Arthritis",
+            "reasoning": "Septic arthritis",
+            "recommendation": ""
           }
-        ]
-      },
-      {
-        "id": "scenario-005",
-        "title": "Back Pain Red Flags Assessment",
-        "type": "Back Pain Red Flags",
-        "redFlags": [
-          "age >50 or <20",
-          "significant trauma",
-          "fever",
-          "weight loss",
-          "cancer history",
-          "IVDU",
-          "night pain",
-          "neurologic deficit"
         ],
-        "scenarios": [
-          {
-            "variant": "Low Risk - Mechanical Back Pain",
-            "redFlagCount": 0,
-            "diagnosis": "Mechanical low back pain",
-            "management": "Conservative care, return to activity, NSAIDs PRN, imaging not indicated"
-          },
-          {
-            "variant": "High Risk - Red Flags Present",
-            "redFlagCount": 4,
-            "diagnosis": "Possible vertebral osteomyelitis or metastatic disease",
-            "management": "MRI spine, CBC, CRP/ESR, infectious disease consult, imaging urgent"
-          }
-        ]
+        "atom_ids": []
       },
       {
-        "id": "scenario-006",
-        "title": "SLE Lupus Nephritis Risk Stratification",
-        "type": "CTD Organ Involvement",
+        "name": "Back Pain Red Flags Assessment",
+        "description": "Back Pain Red Flags",
+        "parameters": {},
+        "examples": [
+          {
+            "case": "Low Risk - Mechanical Back Pain",
+            "reasoning": "Mechanical low back pain",
+            "recommendation": ""
+          },
+          {
+            "case": "High Risk - Red Flags Present",
+            "reasoning": "Possible vertebral osteomyelitis or metastatic disease",
+            "recommendation": ""
+          }
+        ],
+        "atom_ids": []
+      },
+      {
+        "name": "SLE Lupus Nephritis Risk Stratification",
+        "description": "CTD Organ Involvement",
         "parameters": {
           "ANA": "positive",
           "antiDsDNA": "positive/negative",
@@ -4064,29 +4035,23 @@
             "normal": "0.6-1.2"
           }
         },
-        "scenarios": [
+        "examples": [
           {
-            "variant": "High Nephritis Risk",
-            "antiDsDNA": "positive high-titre",
-            "complement": "low C3 and C4",
-            "proteinuria": "4.2 g/24hr",
-            "diagnosis": "Active lupus with probable nephritis",
-            "action": "Kidney biopsy, aggressive immunosuppression"
+            "case": "High Nephritis Risk",
+            "reasoning": "Active lupus with probable nephritis",
+            "recommendation": "Kidney biopsy, aggressive immunosuppression"
           },
           {
-            "variant": "Low Nephritis Risk",
-            "antiDsDNA": "negative",
-            "complement": "normal C3 and C4",
-            "proteinuria": "0.4 g/24hr",
-            "diagnosis": "SLE without nephritis manifestation",
-            "action": "Clinical monitoring, standard SLE therapy"
+            "case": "Low Nephritis Risk",
+            "reasoning": "SLE without nephritis manifestation",
+            "recommendation": "Clinical monitoring, standard SLE therapy"
           }
-        ]
+        ],
+        "atom_ids": []
       },
       {
-        "id": "scenario-007",
-        "title": "OA vs RA Differentiation and Management",
-        "type": "OA Management",
+        "name": "OA vs RA Differentiation and Management",
+        "description": "OA Management",
         "parameters": {
           "ESR": {
             "value": 18,
@@ -4106,57 +4071,37 @@
           },
           "imaging": "joint space narrowing, osteophytes, no erosions"
         },
-        "scenarios": [
+        "examples": [
           {
-            "variant": "Classic Osteoarthritis",
-            "inflammatoryMarkers": "all normal",
-            "stiffness": "10-15 minutes",
-            "joints": "knees, hips, DIP/PIP fingers",
-            "diagnosis": "Osteoarthritis",
-            "management": "Weight loss, PT, NSAIDs/acetaminophen PRN, intra-articular steroids"
+            "case": "Classic Osteoarthritis",
+            "reasoning": "Osteoarthritis",
+            "recommendation": ""
           },
           {
-            "variant": "Rheumatoid Arthritis",
-            "inflammatoryMarkers": "elevated",
-            "stiffness": "90 minutes",
-            "joints": "MCPs, wrists, PIPs - symmetric",
-            "diagnosis": "Rheumatoid arthritis",
-            "management": "Early DMARD therapy, NSAIDs, low-dose steroids, target remission"
+            "case": "Rheumatoid Arthritis",
+            "reasoning": "Rheumatoid arthritis",
+            "recommendation": ""
           }
-        ]
+        ],
+        "atom_ids": []
       },
       {
-        "id": "scenario-008",
-        "title": "Distinguishing Inflammatory vs Non-inflammatory Arthritis",
-        "type": "Inflammatory vs Non-inflammatory",
-        "keyDistinguishers": [
-          "Morning stiffness >1 hour suggests inflammatory",
-          "ESR/CRP elevation suggests inflammatory",
-          "Symmetric polyarticular pattern suggests inflammatory",
-          "Joint swelling suggests inflammatory"
-        ],
-        "scenarios": [
+        "name": "Distinguishing Inflammatory vs Non-inflammatory Arthritis",
+        "description": "Inflammatory vs Non-inflammatory",
+        "parameters": {},
+        "examples": [
           {
-            "variant": "Inflammatory Pattern",
-            "presentation": "bilateral symmetric hand swelling",
-            "stiffness": "2 hours",
-            "ESR": 72,
-            "CRP": 35,
-            "RF": "positive",
-            "diagnosis": "Inflammatory arthritis, likely RA",
-            "action": "Start DMARD immediately, target remission"
+            "case": "Inflammatory Pattern",
+            "reasoning": "Inflammatory arthritis, likely RA",
+            "recommendation": "Start DMARD immediately, target remission"
           },
           {
-            "variant": "Non-inflammatory Pattern",
-            "presentation": "asymmetric knees, hips, DIP fingers",
-            "stiffness": "10 minutes",
-            "ESR": 12,
-            "CRP": 2,
-            "RF": "negative",
-            "diagnosis": "Non-inflammatory arthritis, likely OA",
-            "action": "Conservative management, analgesics PRN"
+            "case": "Non-inflammatory Pattern",
+            "reasoning": "Non-inflammatory arthritis, likely OA",
+            "recommendation": "Conservative management, analgesics PRN"
           }
-        ]
+        ],
+        "atom_ids": []
       }
     ],
     "atomCount": 0,

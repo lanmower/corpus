@@ -4870,16 +4870,6 @@
       {
         "name": "Acute Pancreatitis — Diagnostic Reasoning Chain",
         "description": "Apply Acute Pancreatitis atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "gastroenterology-1",
-          "gastroenterology-2",
-          "gastroenterology-3",
-          "gastroenterology-4",
-          "gastroenterology-5",
-          "gastroenterology-6",
-          "gastroenterology-7",
-          "gastroenterology-8"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -4902,21 +4892,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Acute Pancreatitis algorithm."
           }
+        ],
+        "atom_ids": [
+          "gastroenterology-1",
+          "gastroenterology-2",
+          "gastroenterology-3",
+          "gastroenterology-4",
+          "gastroenterology-5",
+          "gastroenterology-6",
+          "gastroenterology-7",
+          "gastroenterology-8"
         ]
       },
       {
         "name": "Acute, Chronic  HIV Related Diarrhoea — Diagnostic Reasoning Chain",
         "description": "Apply Acute, Chronic  HIV Related Diarrhoea atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "gastroenterology-42",
-          "gastroenterology-43",
-          "gastroenterology-44",
-          "gastroenterology-45",
-          "gastroenterology-46",
-          "gastroenterology-47",
-          "gastroenterology-48",
-          "gastroenterology-49"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -4939,21 +4929,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Acute, Chronic  HIV Related Diarrhoea algorithm."
           }
+        ],
+        "atom_ids": [
+          "gastroenterology-42",
+          "gastroenterology-43",
+          "gastroenterology-44",
+          "gastroenterology-45",
+          "gastroenterology-46",
+          "gastroenterology-47",
+          "gastroenterology-48",
+          "gastroenterology-49"
         ]
       },
       {
         "name": "An Approach To Ascites — Diagnostic Reasoning Chain",
         "description": "Apply An Approach To Ascites atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "gastroenterology-67",
-          "gastroenterology-68",
-          "gastroenterology-69",
-          "gastroenterology-70",
-          "gastroenterology-71",
-          "gastroenterology-72",
-          "gastroenterology-73",
-          "gastroenterology-74"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -4976,21 +4966,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per An Approach To Ascites algorithm."
           }
+        ],
+        "atom_ids": [
+          "gastroenterology-67",
+          "gastroenterology-68",
+          "gastroenterology-69",
+          "gastroenterology-70",
+          "gastroenterology-71",
+          "gastroenterology-72",
+          "gastroenterology-73",
+          "gastroenterology-74"
         ]
       },
       {
         "name": "Chronic Pancreatitis — Diagnostic Reasoning Chain",
         "description": "Apply Chronic Pancreatitis atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "gastroenterology-93",
-          "gastroenterology-94",
-          "gastroenterology-95",
-          "gastroenterology-96",
-          "gastroenterology-97",
-          "gastroenterology-98",
-          "gastroenterology-99",
-          "gastroenterology-100"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -5013,21 +5003,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Chronic Pancreatitis algorithm."
           }
+        ],
+        "atom_ids": [
+          "gastroenterology-93",
+          "gastroenterology-94",
+          "gastroenterology-95",
+          "gastroenterology-96",
+          "gastroenterology-97",
+          "gastroenterology-98",
+          "gastroenterology-99",
+          "gastroenterology-100"
         ]
       },
       {
         "name": "Cirrhosis  Liver Failuer — Diagnostic Reasoning Chain",
         "description": "Apply Cirrhosis  Liver Failuer atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "gastroenterology-128",
-          "gastroenterology-129",
-          "gastroenterology-130",
-          "gastroenterology-131",
-          "gastroenterology-132",
-          "gastroenterology-133",
-          "gastroenterology-134",
-          "gastroenterology-135"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -5050,11 +5040,44 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Cirrhosis  Liver Failuer algorithm."
           }
+        ],
+        "atom_ids": [
+          "gastroenterology-128",
+          "gastroenterology-129",
+          "gastroenterology-130",
+          "gastroenterology-131",
+          "gastroenterology-132",
+          "gastroenterology-133",
+          "gastroenterology-134",
+          "gastroenterology-135"
         ]
       },
       {
         "name": "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease — Diagnostic Reasoning Chain",
         "description": "Apply Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease atoms in sequence to triage a presenting patient",
+        "parameters": {
+          "severity": "mild | moderate | severe — drives intensity of intervention",
+          "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
+          "comorbidities": "comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice",
+          "response": "responsive | partial | refractory — gates escalation"
+        },
+        "examples": [
+          {
+            "case": "Typical presentation, moderate severity, no comorbidities",
+            "reasoning": "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease guidelines.",
+            "recommendation": "First-line management as defined by atoms above; reassess at 48-72h."
+          },
+          {
+            "case": "Severe presentation with comorbidities",
+            "reasoning": "Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.",
+            "recommendation": "Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h."
+          },
+          {
+            "case": "Refractory case after first-line therapy",
+            "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
+            "recommendation": "Reconfirm diagnosis; escalate to second-line per Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease algorithm."
+          }
+        ],
         "atom_ids": [
           "gastroenterology-153",
           "gastroenterology-154",
@@ -5064,7 +5087,11 @@
           "gastroenterology-158",
           "gastroenterology-159",
           "gastroenterology-160"
-        ],
+        ]
+      },
+      {
+        "name": "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease — Diagnostic Reasoning Chain",
+        "description": "Apply Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease atoms in sequence to triage a presenting patient",
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -5087,11 +5114,7 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease algorithm."
           }
-        ]
-      },
-      {
-        "name": "Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease — Diagnostic Reasoning Chain",
-        "description": "Apply Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease atoms in sequence to triage a presenting patient",
+        ],
         "atom_ids": [
           "gastroenterology-175",
           "gastroenterology-176",
@@ -5101,7 +5124,11 @@
           "gastroenterology-180",
           "gastroenterology-181",
           "gastroenterology-182"
-        ],
+        ]
+      },
+      {
+        "name": "Jaundice — Diagnostic Reasoning Chain",
+        "description": "Apply Jaundice atoms in sequence to triage a presenting patient",
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -5111,7 +5138,7 @@
         "examples": [
           {
             "case": "Typical presentation, moderate severity, no comorbidities",
-            "reasoning": "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease guidelines.",
+            "reasoning": "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Jaundice guidelines.",
             "recommendation": "First-line management as defined by atoms above; reassess at 48-72h."
           },
           {
@@ -5122,13 +5149,9 @@
           {
             "case": "Refractory case after first-line therapy",
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
-            "recommendation": "Reconfirm diagnosis; escalate to second-line per Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease algorithm."
+            "recommendation": "Reconfirm diagnosis; escalate to second-line per Jaundice algorithm."
           }
-        ]
-      },
-      {
-        "name": "Jaundice — Diagnostic Reasoning Chain",
-        "description": "Apply Jaundice atoms in sequence to triage a presenting patient",
+        ],
         "atom_ids": [
           "gastroenterology-208",
           "gastroenterology-209",
@@ -5138,7 +5161,11 @@
           "gastroenterology-213",
           "gastroenterology-214",
           "gastroenterology-215"
-        ],
+        ]
+      },
+      {
+        "name": "Jaundice — Diagnostic Reasoning Chain",
+        "description": "Apply Jaundice atoms in sequence to triage a presenting patient",
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -5161,11 +5188,7 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Jaundice algorithm."
           }
-        ]
-      },
-      {
-        "name": "Jaundice — Diagnostic Reasoning Chain",
-        "description": "Apply Jaundice atoms in sequence to triage a presenting patient",
+        ],
         "atom_ids": [
           "gastroenterology-227",
           "gastroenterology-228",
@@ -5175,29 +5198,6 @@
           "gastroenterology-232",
           "gastroenterology-233",
           "gastroenterology-234"
-        ],
-        "parameters": {
-          "severity": "mild | moderate | severe — drives intensity of intervention",
-          "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
-          "comorbidities": "comma-separated list (e.g. diabetes, CKD, HIV) — modifies risk + drug choice",
-          "response": "responsive | partial | refractory — gates escalation"
-        },
-        "examples": [
-          {
-            "case": "Typical presentation, moderate severity, no comorbidities",
-            "reasoning": "Apply the first 3-4 atoms in order: confirm diagnosis using primary criterion, classify by severity, then choose first-line therapy per Jaundice guidelines.",
-            "recommendation": "First-line management as defined by atoms above; reassess at 48-72h."
-          },
-          {
-            "case": "Severe presentation with comorbidities",
-            "reasoning": "Comorbidities (diabetes/CKD/HIV) shift the risk profile and contraindicate some first-line agents. Use atoms covering complications and drug interactions.",
-            "recommendation": "Admit; start guideline-directed therapy adjusted for comorbidity; specialist input if refractory at 72h."
-          },
-          {
-            "case": "Refractory case after first-line therapy",
-            "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
-            "recommendation": "Reconfirm diagnosis; escalate to second-line per Jaundice algorithm."
-          }
         ]
       }
     ],

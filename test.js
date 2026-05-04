@@ -174,6 +174,22 @@ global.localStorage = (() => {
         assert.strictEqual(fc.length, 14);
     });
 
+    console.log('# triage-shape+manifest');
+    const subjects = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
+    const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data/manifest.json'), 'utf8'));
+    const allTriage = subjects.map(s => JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data', `${s}.json`), 'utf8')).triage || { scenarios: [] });
+    t('manifest scenarios = per-shard sum, ≥60', () => {
+        const total = allTriage.reduce((n, t) => n + t.scenarios.length, 0);
+        assert.strictEqual(total, manifest.totals.scenarios);
+        assert.ok(total >= 60);
+    });
+    t('every scenario canonical {name:str,parameters:obj-not-arr,examples:arr}', () => {
+        for (const tg of allTriage) for (const sc of tg.scenarios) {
+            assert.strictEqual(typeof sc.name, 'string');
+            assert.ok(sc.parameters && typeof sc.parameters === 'object' && !Array.isArray(sc.parameters));
+            assert.ok(Array.isArray(sc.examples));
+        }
+    });
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
 })();

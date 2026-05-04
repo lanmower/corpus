@@ -1701,16 +1701,6 @@
       {
         "name": "Geriatric - Falls — Diagnostic Reasoning Chain",
         "description": "Apply Geriatric - Falls atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "geriatric-1",
-          "geriatric-2",
-          "geriatric-3",
-          "geriatric-4",
-          "geriatric-5",
-          "geriatric-6",
-          "geriatric-7",
-          "geriatric-8"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -1733,21 +1723,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Geriatric - Falls algorithm."
           }
+        ],
+        "atom_ids": [
+          "geriatric-1",
+          "geriatric-2",
+          "geriatric-3",
+          "geriatric-4",
+          "geriatric-5",
+          "geriatric-6",
+          "geriatric-7",
+          "geriatric-8"
         ]
       },
       {
         "name": "GeriatriC - Frailty — Diagnostic Reasoning Chain",
         "description": "Apply GeriatriC - Frailty atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "geriatric-35",
-          "geriatric-36",
-          "geriatric-37",
-          "geriatric-38",
-          "geriatric-39",
-          "geriatric-40",
-          "geriatric-41",
-          "geriatric-42"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -1770,21 +1760,21 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per GeriatriC - Frailty algorithm."
           }
+        ],
+        "atom_ids": [
+          "geriatric-35",
+          "geriatric-36",
+          "geriatric-37",
+          "geriatric-38",
+          "geriatric-39",
+          "geriatric-40",
+          "geriatric-41",
+          "geriatric-42"
         ]
       },
       {
         "name": "Geriatric - Urinary Incontinence — Diagnostic Reasoning Chain",
         "description": "Apply Geriatric - Urinary Incontinence atoms in sequence to triage a presenting patient",
-        "atom_ids": [
-          "geriatric-55",
-          "geriatric-56",
-          "geriatric-57",
-          "geriatric-58",
-          "geriatric-59",
-          "geriatric-60",
-          "geriatric-61",
-          "geriatric-62"
-        ],
         "parameters": {
           "severity": "mild | moderate | severe — drives intensity of intervention",
           "onset": "acute (<24h) | subacute (days) | chronic (weeks+) — narrows differential",
@@ -1807,6 +1797,16 @@
             "reasoning": "Re-evaluate diagnosis (return to first atoms), confirm adherence, exclude alternative diagnoses listed in differential atoms, then escalate per second-line atoms.",
             "recommendation": "Reconfirm diagnosis; escalate to second-line per Geriatric - Urinary Incontinence algorithm."
           }
+        ],
+        "atom_ids": [
+          "geriatric-55",
+          "geriatric-56",
+          "geriatric-57",
+          "geriatric-58",
+          "geriatric-59",
+          "geriatric-60",
+          "geriatric-61",
+          "geriatric-62"
         ]
       }
     ],
