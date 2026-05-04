@@ -1,0 +1,233 @@
+metadata:
+  title: Rheumatology Triage Scenarios
+  version: '1.0'
+  description: Comprehensive clinical scenarios with parameterized disease markers for rheumatology differential diagnosis
+  generated: '2026-05-04T10:16:11.368Z'
+  totalScenarios: 8
+  totalAtoms: 402
+  sourceCards: 8
+  sourceCardFiles:
+    - RA-001-010 (43 cards)
+    - RA-011-018 (20 cards)
+    - SpA-001-007 (34 cards)
+    - CTD-001-010 (74 cards)
+    - CTD-011-014 (72 cards)
+    - GOUT-001-004 (36 cards)
+    - OA-001-008 (41 cards)
+    - BP-001-009 (82 cards)
+  parametersIncluded:
+    - ESR (mm/hr, range 0-150)
+    - CRP (mg/L, range 0-100)
+    - RF (rheumatoid factor positive/negative/titre)
+    - Anti-CCP (positive/negative/titre)
+    - ANA (positive/titre/pattern)
+    - Complement C3 (75-160 mg/dL) and C4 (15-45 mg/dL)
+    - Serum urate (360-420 umol/L)
+    - Imaging findings (JSN, osteophytes, erosions, sacroiliitis)
+scenarios:
+  - id: scenario-001
+    title: ACR/EULAR 2010 RA Classification Criteria
+    type: RA Diagnosis
+    description: Scoring system for classifying RA in patients with undifferentiated arthritis
+    parameters:
+      jointInvolvement: Affects number and type of joint involvement
+      serologyTest: RF and anti-CCP testing
+      acutePhaseReactants: ESR and CRP levels
+      symptomDuration: Duration of symptoms
+    scenarios:
+      - variant: High Score Probable RA
+        score: 10
+        diagnosis: RA classification criteria met (score >= 6)
+        action: Start DMARD therapy immediately, target remission
+      - variant: Borderline Score
+        score: 4
+        diagnosis: Does not meet RA classification criteria yet
+        action: Close monitoring, repeat serology and ESR/CRP in 4-6 weeks
+  - id: scenario-002
+    title: RA Disease Activity Score (DAS28)
+    type: RA Disease Activity
+    description: Quantifying disease activity and treatment response
+    parameters:
+      tenderJointCount:
+        value: 6
+        range: 0-28
+        unit: joints
+      swollenJointCount:
+        value: 4
+        range: 0-28
+        unit: joints
+      ESR:
+        value: 45
+        range: 0-150
+        unit: mm/1hr
+      CRP:
+        value: 22
+        range: 0-100
+        unit: mg/L
+    scenarios:
+      - variant: Remission/Low Disease
+        DAS28: 2.3
+        interpretation: Remission or low disease activity
+        action: Continue current DMARD, consider tapering if sustained
+      - variant: High Disease Activity
+        DAS28: 6.8
+        interpretation: High disease activity
+        action: Intensify DMARD therapy, consider biologic, assess compliance
+  - id: scenario-003
+    title: ASAS Axial Spondyloarthritis Classification
+    type: SpA Classification
+    parameters:
+      backPainOnset: less than 45 years
+      duration: at least 3 months
+      responsiveToNSAID: 'yes'
+    scenarios:
+      - variant: Clear Sacroiliitis
+        imaging: bilateral sacroiliitis grade 2-4
+        features: inflammatory back pain + elevated CRP
+        diagnosis: Axial spondyloarthropathy
+      - variant: HLA B27 Positive
+        HLA_B27: true
+        features: inflammatory back pain + arthritis + elevated CRP + family history
+        diagnosis: Axial spondyloarthropathy
+  - id: scenario-004
+    title: 'Acute Monarticular Arthritis: Gout vs Pseudogout vs Septic'
+    type: Acute Presentation Differentiation
+    parameters:
+      serumUricAcid:
+        value: 580
+        unit: umol/L
+        normal: 360-420
+      crystalType: monosodium urate vs CPPD vs none
+      WBCCount:
+        value: 15000-50000
+        unit: per microliter
+    scenarios:
+      - variant: Acute Gout
+        joint: first MTP
+        crystal: MSU needle-shaped intracellular
+        urate: 680
+        diagnosis: Acute gout
+        management: NSAIDs or colchicine, allopurinol after flare resolution
+      - variant: Pseudogout
+        joint: knee
+        crystal: CPPD rhomboid extracellular
+        urate: 395
+        diagnosis: Acute pseudogout
+        management: NSAIDs or intra-articular steroids, address underlying OA
+      - variant: Septic Arthritis
+        joint: knee
+        fluid: turbid purulent
+        culture: positive
+        diagnosis: Septic arthritis
+        management: IV antibiotics, joint aspiration/drainage, orthopedic consultation
+  - id: scenario-005
+    title: Back Pain Red Flags Assessment
+    type: Back Pain Red Flags
+    redFlags:
+      - age >50 or <20
+      - significant trauma
+      - fever
+      - weight loss
+      - cancer history
+      - IVDU
+      - night pain
+      - neurologic deficit
+    scenarios:
+      - variant: Low Risk - Mechanical Back Pain
+        redFlagCount: 0
+        diagnosis: Mechanical low back pain
+        management: Conservative care, return to activity, NSAIDs PRN, imaging not indicated
+      - variant: High Risk - Red Flags Present
+        redFlagCount: 4
+        diagnosis: Possible vertebral osteomyelitis or metastatic disease
+        management: MRI spine, CBC, CRP/ESR, infectious disease consult, imaging urgent
+  - id: scenario-006
+    title: SLE Lupus Nephritis Risk Stratification
+    type: CTD Organ Involvement
+    parameters:
+      ANA: positive
+      antiDsDNA: positive/negative
+      C3:
+        value: 45
+        unit: mg/dL
+        normal: 75-160
+      C4:
+        value: 8
+        unit: mg/dL
+        normal: 15-45
+      proteinuria:
+        value: 3.2
+        unit: g/24hr
+      creatinine:
+        value: 1.4
+        unit: mg/dL
+        normal: 0.6-1.2
+    scenarios:
+      - variant: High Nephritis Risk
+        antiDsDNA: positive high-titre
+        complement: low C3 and C4
+        proteinuria: 4.2 g/24hr
+        diagnosis: Active lupus with probable nephritis
+        action: Kidney biopsy, aggressive immunosuppression
+      - variant: Low Nephritis Risk
+        antiDsDNA: negative
+        complement: normal C3 and C4
+        proteinuria: 0.4 g/24hr
+        diagnosis: SLE without nephritis manifestation
+        action: Clinical monitoring, standard SLE therapy
+  - id: scenario-007
+    title: OA vs RA Differentiation and Management
+    type: OA Management
+    parameters:
+      ESR:
+        value: 18
+        unit: mm/hr
+        normal: <20
+      CRP:
+        value: 3
+        unit: mg/L
+        normal: <10
+      RF: negative
+      antiCCP: negative
+      morningStiffness:
+        value: 15
+        unit: minutes
+      imaging: joint space narrowing, osteophytes, no erosions
+    scenarios:
+      - variant: Classic Osteoarthritis
+        inflammatoryMarkers: all normal
+        stiffness: 10-15 minutes
+        joints: knees, hips, DIP/PIP fingers
+        diagnosis: Osteoarthritis
+        management: Weight loss, PT, NSAIDs/acetaminophen PRN, intra-articular steroids
+      - variant: Rheumatoid Arthritis
+        inflammatoryMarkers: elevated
+        stiffness: 90 minutes
+        joints: MCPs, wrists, PIPs - symmetric
+        diagnosis: Rheumatoid arthritis
+        management: Early DMARD therapy, NSAIDs, low-dose steroids, target remission
+  - id: scenario-008
+    title: Distinguishing Inflammatory vs Non-inflammatory Arthritis
+    type: Inflammatory vs Non-inflammatory
+    keyDistinguishers:
+      - Morning stiffness >1 hour suggests inflammatory
+      - ESR/CRP elevation suggests inflammatory
+      - Symmetric polyarticular pattern suggests inflammatory
+      - Joint swelling suggests inflammatory
+    scenarios:
+      - variant: Inflammatory Pattern
+        presentation: bilateral symmetric hand swelling
+        stiffness: 2 hours
+        ESR: 72
+        CRP: 35
+        RF: positive
+        diagnosis: Inflammatory arthritis, likely RA
+        action: Start DMARD immediately, target remission
+      - variant: Non-inflammatory Pattern
+        presentation: asymmetric knees, hips, DIP fingers
+        stiffness: 10 minutes
+        ESR: 12
+        CRP: 2
+        RF: negative
+        diagnosis: Non-inflammatory arthritis, likely OA
+        action: Conservative management, analgesics PRN
