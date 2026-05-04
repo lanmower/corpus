@@ -1,197 +1,490 @@
-# Geriatric — Complete Study Guide
+# Geriatric Medicine Study Guide
 
-**Generated:** 2026-05-04
-**Sources:** 4 lectures + 16 book sections
+**Generated**: 2026-05-04  
+**Sources**: 4 audio transcripts + 11 textbook sections
 
-> This guide compiles all available material to provide complete mastery of the subject.
+## Table of Contents
 
-## Contents
-
-### Audio Lectures
-1. Geriatric - Falls - CMED4IIM1 - 2026 pages-001-003
-2. GeriatriC - Frailty - CMED4IIM1 - 2026 pages-001-003
-3. Geriatric - latrogenesis - CMED4IIM1 - 2026 pages-001-004
-4. Geriatric - Urinary Incontinence - CMED4IIM1 - 2026 pages-001-003
-
-### Textbook Sections
-1. pages-001-010
-2. pages-011-020
-3. pages-021-025
-4. pages-001-010
-5. pages-011-020
-6. pages-021-023
-7. pages-001-010
-8. pages-011-020
-9. pages-021-030
-10. pages-031-040
-11. pages-001-010
-12. pages-011-020
-13. pages-021-023
-14. pages-021-025
-15. pages-021-030
-16. pages-031-040
+1. [Lecture Content](#lectures)
+   - Falls
+   - Frailty
+   - Iatrogenesis
+   - Urinary Incontinence
+2. [Textbook Sections](#textbooks)
+   - Cognitive Impairment & Delirium
+   - Comprehensive Geriatric Assessment
+   - Common Medical Conditions
+3. [Study Strategy](#strategy)
 
 ---
 
-## Lectures & Transcripts
+## Lectures {#lectures}
 
-### Geriatric - Falls - CMED4IIM1 - 2026 pages-001-003
-*Audio Transcript*
+### Falls
 
-Hello, I'm Dr. Mandela from the Department of Geriatrics. Welcome to a lecture on falls. Falls is regarded as one of the geriatric giants and this is because over 30% of adults age 65 years and above report to have fallen in the previous year. This percentage increases with age up to 75% of adults will report to have fallen in the previous two years and when you look at the individuals in old age home this is 50% per year and half of these will have recurrent falls which means they will have more than one fall in the year. 10% of falls are capturing an acute illness and 10% of these falls are associated with serious injuries, fractures being in 5% of the individuals who have fallen and over one third of patients who have fallen or report to having fear of falling this is regardless on whether they had an injury or not. So looking at why older people fall this is an interplay between extrinsic, intrinsic and situational factors. Extrinsic factors being environmental factors, how the ground is, how the how the interior of the house is like at the rugs in the in on the floor are the loose cords are the baby toys are the pets that would trip the older person situational factors like mountain climbing for instance and alcohol then you look at the intrinsic factors which is how is an individual you maintain postural control. So looking at maintaining posture you need the motor coordination so this will be the frontal lobe motor planning and focusing attention it will be the motor cortex basal ganglia and the cerebellar integration and coordination and peripheral nerve function then when you're looking at the sensory inputs and organization you need the visual the vestibular and proprioception all intact then you need the biomechanics you need the skeletal integrity intact you need the joints to be stable and the integrity of the joints and flexibility intact and you need your muscle strength to be intact. So looking at the intrinsic factors causing falls you have sensory inputs like vision you need to see to be able to see where you're going so patients who are blind or they have deterioration in vision for any cause vestibular dysfunction you need the vestibular system for balance you have peripheral nerve dysfunction and looking at the cardiovascular system patients who've got postural hypertension tend to fall if there's any dizziness or syncope from any cardiac cause those patients tend to fall and looking at the muscular skeletal systems that joined the bones and the feet if there's pain his deformity or loss of function those patients tend to fall and the central nervous system patients who have dementia and delirium tend to fall and drugs I measure cause of falling cause they'll affect the central nervous system it can be sedation it can be dizziness it can be confusion patients who have seizures and patients who've had a stroke like they'll have a hemiblegia or hemiparesis and patients who have expressed a pyramidal symptoms patients who have cerebral dysfunctions tend to have to be a tech seg and patients who have spine problems they tend to have spasticity or the some would have a paraplegia or paraparisis or sensation abnormalities those patients tend to fall and you have muscle weakness patients who have myopathies tend to fall patients who have peripheral neuropathy also tend to fall when assessing a patient who has fallen a detailed history is very important this include circumstances around that fall you need to know exactly what the patient was doing when they fail you need to look at the circumstances around the previous falls you need to look at the assistive devices they use working frames or working stakes do they have their classes on do they have their hearing aids on and you look at the associated symptoms this is a detailed systemic inquiry and to name the few you look at the nervous system do they have confusion do they have seizures do they have limb weaknesses do they have hallucinations and you look at th...
+**Epidemiology & Risk Factors**
+- Falls are a major cause of injury in elderly patients
+- Multiple intrinsic risk factors: weakness, balance impairment, sensory loss, medication effects
+- Environmental hazards compound intrinsic risks
+- Previous falls are strong predictor of future falls
 
----
+**Assessment**
+- History of fall mechanism and circumstances
+- Medication review (diuretics, sedatives, cardiovascular agents)
+- Orthostatic vital signs (lying and standing BP)
+- Balance and gait assessment (Timed Up and Go test)
+- Vision and hearing evaluation
+- Home safety assessment
 
-### GeriatriC - Frailty - CMED4IIM1 - 2026 pages-001-003
-*Audio Transcript*
+**Prevention & Management**
+- Exercise programs (strength, balance, flexibility)
+- Home modifications (remove hazards, adequate lighting, grab bars)
+- Medication optimization (reduce or eliminate fall-risk drugs)
+- Vision correction and hearing aids where needed
+- Vitamin D supplementation and calcium intake
+- Assistive devices (walkers, canes) as appropriate
 
-Hello, I'm Dr. Matella from the Department of Geriatrics. Welcome to your lecture on frailty. Looking at the physiological changes that happen from bed until the age around age of 35. So all the body systems and the body organs, they are developing at this stage and until they reach that peak at the age of 35. So for instance, if you're exercising, you're going to have a higher peak of the muscle strength than someone who's not exercising. If you're not smoking, you're going to have a higher peak of the lung function than someone who's smoking. Then there will be patients who have a higher cardiac reserve. It all depends on what the peak was. And depending on that peak, that decline that happens from the age of 35. There will be a decline regardless of who you are. That decline is dependent on what your peak was. If you had a low peak, that decline is going to be very significant. And if you had a high peak, you'll still have a decline, but it's not going to be as much as someone who had a low peak. Then there's that physiological reserve line where you still decline, but you are still able to function, you're still able to walk, you're still able to breathe properly. But when that decline then passes that functional reserve, that's when patients are deemed to have frailty, that's when patients have high risk of being disabled. Frailty is defined as the loss of a patient's ability to extend minor environmental stresses because of reduced reserve in the physiological function of several organ systems. So in this diagram here, you have an individual who's robust as an individual who does not have frailty. When they're exposed to the stressor, a stressor can be an infection, it can be a fall, it can be trauma, it can be surgery. When they are exposed to a stressor, there will be have a deep in the physiological function, but with recovery they recover back to their baseline, where a patient who has pre frailty when they're exposed to the same stressor, they will dip in the physiological function when they recover, they don't go back to their baseline. A patient who is frail, they hardly recover back to their baseline, they end up being dependent. These are the patients after admission or on discharge, they cannot go back home because they are not dependent, they end up in old age home. Sakopinium, which is defined as reduced muscle strength, is a key feature of frailty and frailty is associated with poor health outcome. There are multiple tools that are used to assess frailty, we will just discuss the commonly used ones. So there's a cardiovascular health study, which is also called frailty phenotype, it looks at five things, unintentional weight loss, which is more than 5% in the previous year, there is weakness, which is measured by a hand grip strength, there is self-reported exhaustion or poor endurance, there is slowness where you ask a patient to walk for three meters and you are timing them and the gates, you time the time they take to walk over three meters, then there's low physical activity which is self-reported and patients who meet three out of the five criteria are regarded as frail, pre frailty is the presence of one to two of these five criteria. Another assessment tool that has been used is osteoporotic fracture frailty index, where it looks at the weight loss of more than 5% over the two period, this is irrespective of the intent to lose weight, inability to rise five times from a chair without using your arms and reduce energy levels, you ask the patient, do you feel full of energy and they say no. So if they've got two out of these three, they are regarded as frail. The next commonly used tool is frailty index or deficit accumulation, in this one you would choose 30 health deficits, these can include symptoms, signs, diseases, disabilities, abnormal blood results or imaging or ECGs, and then you would take the patient and count how many of those the patient will have, they'll probably have maybe 20 out of the ...
+### Frailty
 
----
+**Concept of Reserve**
+- Frailty reflects loss of physiological reserve across multiple systems
+- Vulnerable to decompensation from minor stressors
+- Different from disability: frail patients may still be independent
 
-### Geriatric - latrogenesis - CMED4IIM1 - 2026 pages-001-004
-*Audio Transcript*
+**Assessment Tools**
+- Fried Frailty Phenotype: weakness, slowness, exhaustion, inactivity, weight loss
+- Edmonton Frail Scale: cognitive, functional, social, health domains
+- Clinical Frailty Scale: visual assessment categories
 
-Hello, I'm Yolysomadella from the Department of Geriatrics. Today we'll be talking about aiotrogenesis. We will start with this case scenario. You have an 86-year-old woman who is known with hypertension, diabetes, mellitus, dyslipidemia, ischemic heart disease, atrial fibrillation, and osteoarthritis of the knees. She is on hydrochlorothiazide, 12.5 milligrams daily for the hypertension, and allopral 5 milligrams twice a day for the hypertension, made forming 500 milligrams twice daily for diabetes, at over 13 10 milligrams at night for the dyslipidemia. I also bite mono nitrate 10 milligrams twice a day for the ischemic heart disease, paracetamol twice a day for the osteoarthritis, declofanac, 25 milligrams three times a day for the osteoarthritis, aspirin, 150 milligrams daily for the ischemic heart disease, and atinolol 50 milligrams daily for the hypertension and ischemic heart disease. At her follow-up visit, she complains of epicastropane and her blood pressures are 110 cevangi over 110 millimeters of mercury, which is high. Her blood tests show deterioration of her renal function. So I want you to look at this slide and think about what could be happening with this patient, and we will come back to this case scenario at a later stage. Looking at the respective for adverse drug events in older patients, you might be more familiar with the terminology of side effects, so the risk increases with age, especially those 85 years and above. Patients who have a low body mass index or low body weight, patients who have six or more chronic conditions because there will be on medication for those conditions. Patients who have an estimated creatinine clearance of less than 50 mils per minute, so patients who have got reduced renal function, patients who are on nine medications or more, patients who have more than 12 doses of medication a day. This means one medication you're taking it twice a day, some you're taking three times a day, some you're taking four times a day, some you're taking once a day, so if you are on 12 or more of those medications per day, patients who have a prior adverse drug reaction. So what puts older patients at a risk of adverse drug events is with age, you get physiological changes, which alter pharmacodynamics and pharmacokinetics, we will talk about this in the next slide. Patients who are older have tend to lose homeostasis, they tend to have multiple comorbidities and they tend to have polypharmacy, which by definition is if you are one for or more medication and they tend to have drug interactions and there's also an issue with complying. So looking at the mechanism of drug effects, when we talk about pharmacokinetics we're looking at what the body does to the drug, so when you take a drug it gets absorbed, this does not change with age, and then this drug gets distributed and it gets eliminated, the elimination includes metabolism and extrusion, so the distribution and the metabolism and extrusion, there are changes that happen with age. When it comes to pharmacodynamics now we're looking at what the drug does to the body, the next slide are going to explain how exactly the physiological changes would affect these pharmacokinetics and pharmacodynamics in older patients. So pharmacodynamics with aging there is changes in the drug response, so there is drug receptor and drug organ interactions that happen, there is increased sensitivity to certain drugs, like if you are on anticholinetics the older patients tend to have side effects related to the urinary bladder and the eyes and the brains, they are more sensitive to the anticholinetics and they tend to have decreased sensitivity to certain drugs like beta blockers and beta agonists, older patients tend to have a blended response, so those are the pharmacodynamics changes that happen with age. When it comes to homeostated changes with age there is physiological changes that happen in the bowel receptors, there is loss of control of body sway, there ...
+**Pathophysiology**
+- Sarcopenia (age-related muscle loss) is central feature
+- Mitochondrial dysfunction and increased oxidative stress
+- Chronic low-grade inflammation ("inflammaging")
+- Endocrine changes (testosterone, growth hormone decline)
+- Nutritional deficiencies compound vulnerability
 
----
+### Iatrogenesis
 
-### Geriatric - Urinary Incontinence - CMED4IIM1 - 2026 pages-001-003
-*Audio Transcript*
+**Pharmacokinetic Changes in Elderly**
+- Reduced renal clearance prolongs drug half-life
+- Decreased hepatic metabolism slows elimination
+- Increased body fat increases volume of distribution for lipophilic drugs
+- Decreased lean body mass reduces volume for hydrophilic drugs
+- Plasma protein binding changes affect free drug concentration
 
-Hello, this is Dr. Mantello from the Department of Geriatrics. Welcome to a lecture on urinary incontinence. The objectives of this lecture is for you to understand the age-related changes in the urogenital system, to be able to differentiate between the types of urinary incontinence and to know the causes of the incontinence, have an approach to management and know the indications for catheterization. Urinary incontinence is one of the geriatric syndromes. It affects 30% of community-dwelling women above the age of 60 years old, and 5 to 10% of these have severe urinary incontinence. It affects 6% in community-dwelling men above the age of 60 years old. This prevalence increases with age, it affects 30 to 50% of frail and cognitive impaired community-dwellers, and 50 to 70% of individuals in nursing homes have severe urinary incontinence. So, looking at why older patients in particular are in a high risk of getting urinary incontinence, it's all related to the age-related changes in the structure and function of the urinary tract system. As one ages, there is increased number of involuntary detresa contractions with detresa of activity, so the detresa is a muscle around the bladder. It becomes overactive as one age. There is also increased post-void residual volume of 5200 males. Post-void residual volume is the urine that gets left after you've passed urine. There is increased nocturnal fluid expression as one age. This is due to the low nocturnal antidiuretic hormone secretion, and inappropriate nocturnal production of arterial naturally urtic peptide. There is also increased prosthetic volume in men as they get older. These can lead to obstruction in 50% of their time. There is also decreased bladder capacity, so the bladder cannot hold a lot of urine. There is decreased detresa contractility, so when you pass urine, the detresa muscle of the bladder needs to have tension. It needs to contract for that urine to be expelled. So, that is decreased as you get older, and the detresa muscle cannot sustain the tension, hence you have increased post-vodal residual volume. There is also decreased ability to postpone waiting. When you are still younger, you are able to sit through the lecture and go pass urine afterwards, but there is one age that ability reduces. There is also decreased in urethral closing ability in women, especially menopausal women due to obstruction deficiency. The six types of urinary incontinence are stress, edge, overflow, reflex, functional, and mixed. In stress urinary incontinence, there is weakening of the pelvic floor muscles, and when there is increased abdominal pressure, like when one coughs, laughs or sneezes, the urine leaks. In edge, there is this overwhelming edge to go to the toilet and it's frequent, and this is driven by an overactive bladder. In overflow, there is something blocking the urine until the bladder is so distended that it ends up stretching the urethra or pen in the urine leaks. In reflex, there is damage in the connections to the brain that tells the brain this person needs to pass urine until the urine leaks. In functional, there is nothing wrong in the urogen at all systems, that there is something blocking the patient to get to the bathroom, like they are very ill, or they have a fracture until the urine passes out, or they have cognitive impairment, they can't remember they need to pass urine. In mixed, it's usually a mixture of stress and edge incontinence. Urine incontinence can be acute or chronic. These are reversible conditions that are associated with acute urinary incontinence. We use a mnemonic drip, which D is for delirium. R is for restricted mobility, like patients who have pain, osteoarthritis, comatoid arthritis, fractures, or postoperatively, they can't get to the toilet in time. Patients who have retention, which can be as a result of using drugs like anticholinigics, patients who have fecal impaction, or blood outflow obstruction. Their eye is for infection. ...
+**Pharmacodynamic Sensitivity**
+- Altered receptor sensitivity and expression
+- Increased CNS penetration of drugs (blood-brain barrier changes)
+- Greater effect at same plasma concentration (narrow therapeutic window)
 
----
+**Hospital Complications**
+- Nosocomial infections (UTI, pneumonia, C. difficile)
+- Pressure ulcers from immobility
+- Delirium from medications, infections, metabolic derangement
+- Aspiration risk from dysphagia or sedation
+- Thromboembolism from immobilization
 
-## Textbook References
+**Case Analysis & Prevention**
+- Medication review at admission: deprescribe unnecessary drugs
+- Monitor renal function; adjust doses accordingly
+- Avoid anticholinergic and sedating medications
+- Early mobilization to prevent deconditioning
+- Infection prevention (hand hygiene, appropriate antibiotics)
 
-### pages-001-010
-*Textbook Section*
+### Urinary Incontinence
 
-Geriatrics 4th year lectures 2024 Geriatric Giants/Syndromes Intellectual Impairment Instability Incontinence Iatrogenesis Frailty Common medical conditions CGA Medico-legal aspects Comprehensive Geriatric Assessment (CGA) A multidimensional, usually interdisciplinary, diagnostic process intended to determine a frail older person's medical, psychological, and functional capabilities and problems with the objective of developing an overall plan for treatment and follow-up. The CGA: covers 5 categories Physical health: acute and chronic clinical problems, skin, medication history, falls, incontinence, nutrition, vision, hearing etc. Mental health: depression, cognition Socioeconomic housing, support network, Status pension, abuse, advanced directives Environment home environment Functional status: assessment by occupational therapist Team Member | Activity assessed and promoted Physiotherapist | Mobility, balance and upper limb function Occupational therapist | ADL, e.g. dressing, cooking, Home environment and care needs Dietician | Nutrition Speech and language therapist | Communication and swallowing Social worker | Care needs and discharge planning, including organisation of institutional care Nurse | Motivation and initiation of activities Promotion of self-care, education Feeding, continence and skin care Communication with relatives and other professionals Assessment of care needs for discharge Doctor | Diagnosis and management of medical problems Coordinator of assessment, management and rehabilitation programme Multidisciplinary Assessment When should a CGA be performed? Frail individuals Presence of chronic diseases Acute change in social, physical or mental status New illness, unexpected admission, pre-op When considering placement Benefits of CGA Decreased mortality Favours living at home longer Reduced hospital admission and re-admission Improved physical function Beneficial effect on cognitive function Levels of Function Basic (Barthel’s index) walking, bathing, feeding grooming, toileting, dressing Instrumental (Lawton’s) transportation, taking medication, telephone, shopping, food preparation, housekeeping, laundry, finances Advanced Vigorous and moderate activities Climbing flights of stairs, crouching, bending, walking 200-300m, upper limb activities http://www.biomedcentral.com/1471-2318/7/15/figure/F2?highres=y Functional Capacity + one legged stance [NOTES] Physical performance tests. A Chair stands test. B Walk test. C Functional reach. D Modified Romberg test. Peeters et al. BMC Geriatrics 2007 7:15 doi:10.1186/1471-2318-7-15 Download authors' original image 6-minute walk Test One-time measure of functional status Measures the distance a patient can walk quickly on a flat, hard surface in a period of 6-minutes Evaluates the integrated response of all systems involved during exercise Assesses sub-maximal level of functional capacity
+**Types**
+- Stress incontinence: leakage with activity or increased abdominal pressure
+- Urge incontinence: loss of control with strong urge to void (overactive bladder)
+- Overflow incontinence: incomplete emptying leads to chronic retention
+- Functional incontinence: unable to reach toilet in time (mobility/cognition issues)
+- Mixed incontinence: combination of types
 
----
+**Age-Related Changes**
+- Decreased bladder compliance and capacity
+- Increased residual volume
+- Detrusor overactivity (involuntary contractions)
+- Urethral sphincter weakness
+- Nocturia increases with age
 
-### pages-011-020
-*Textbook Section*
+**DRIP Mnemonic** (Reversible causes)
+- **D**iuretics: excessive diuresis
+- **R**estrictive mobility: unable to reach toilet
+- **I**nfection: UTI causing urgency
+- **P**sychogenic: depression affecting motivation
 
-Prevention and Screening Primary avoidance of disease before it can begin Secondary screening for occult disease before it becomes symptomatic Tertiary rigorously treating disease to avoid adverse outcomes Screening HT every 2 years, annually if preHT Lipids 5 years or longer DM every 3 years BMD Nutrition Vision and Hearing UI Depression and Dementia Screening Functional decline and frailty Malignancies: breast: examination/mammogram cervical: PAP smear prostate: PSA (controversial) Recommended immunizations Influenza vaccine: yearly Pneumococcal vaccine: once or every 5 years in high risk individuals and older adults Tetanus vaccination: booster vaccinations every 10 years Herpes Zoster Define Premorbid Status Define Current Status Comprehensive Assessment And Investigation Correct ALL Treatable Conditions Restorative Rehabilitation PHYSICAL COGNITIVE Preventive Rehabilitation Components of Rehabilitation Stabilize the primary disorder Prevent secondary complications Treat functional deficits Promote adaptation of the person to his/her disability environment to the person family to the person Exercise Recommendations Understand the benefits of exercise Know the contraindications for exercise Medico-legal aspects Elder abuse Consent and advance directives Elder abuse: definition “…any act of commission or omission, intentional or unintentional, that causes an older person to experience distress, harm, suffering, victimization or loss that usually occurs within a relationship where there is an expectation of trust” (AEASA, 2006). Elder abuse Physical Psychological Sexual Neglect Material/Financial exploitation Violation of rights Systemic
-
----
-
-### pages-021-025
-*Textbook Section*
-
-Risk factors Communal living arrangements Social isolation Cognitive impairment of older person Caregiver financially dependent on older person Caregiver with history of substance abuse, mental illness or poor coping skills Where to Report Elder Abuse Department of Welfare 031 – 336 8700 TAFTA 031 – 332 3721 Doctor, nurse or clergy SA Police Services National Toll Free 080 – 000 3081 Help Line (Monday to Friday 9:30 – 13:00) Conditions for patient’s choice to be legally valid Patient’s participation and decision must be voluntary Patient must be sufficiently involved Patient must be mentally capable Standards for assessing decision-making capacity The ability to make a choice make a reasonable choice appreciate illness and treatment reason; comparative and consequential understand Advance directive Instructions given by patients for their future treatment should they become incompetent to consent to, or refuse, such treatment Living will Enduring power of attorney Mandated consent by proxy Curatorship Suggested Reading: McQuoid-Mason, D. Advance Directives and the National Health Act. SAMJ 2006, 96, 12: 1236-1238
-
----
-
-### pages-001-010
-*Textbook Section*
-
-Geriatrics 4th year lectures 2024 Geriatric Giants/Syndromes Intellectual Impairment Instability Incontinence Iatrogenesis Frailty Common medical conditions Cardiovascular disease Syncope Infections CGA Medico-legal aspects Burden of CVD in older persons Total number of CVDs nearly doubled 271 million in 1990 to 523 million in 2019 Leading cause of mortality and disability in older adults 12.1 million in 1990 to 18.6 million in 2019 Accounted for one-third of total deaths Over 80% of all CVD deaths are attributable to two conditions Ischaemic heart disease (IHD) and stroke ≥70 years old: CVD accounts for greater than 40% of total deaths Tsao, C.W, et al. Heart Disease and Stroke Statistics-2022 Update: A Report From the American Heart Association. Circulation 2022, 145, e153–e639 Roth GA, et al. Global Burden of Cardiovascular Dis- eases and Risk Factors, 1990-2019: Update From the GBD 2019 Study. Journal of the American College of Cardiology. 2020; 76: 2982–3021. CVS: age-related physiological changes Slightly smaller heart size Loss of cardiac contractile strength and efficiency Diminished cardiac output by age 70 years Increase in LV wall thickness Fibrous tissue infiltration of the sinoatrial node and internodal atrial tracts Decrease in coronary artery blood flow Increased aortic rigidity, causing increased systolic blood pressure disproportionate to diastolic, resulting in widened pulse pressure Heart rate takes longer to return to normal after exercise Decreased ability to respond to physical and emotional stress Systolic hypertension Blood pressure increases with age SH is defined as a systolic BP of > 140 mmHg with diastolic BP of <90mmHg Due to arteriosclerosis and decreased compliance of aorta Associated higher risk of CVA (2-4 times) Low dose diuretics first line Increase medication gradually Decrease SA node pacemaker cells Fibrosis at the Bundle of His AV Block Bradycardia usual although increase rate with exercise. Prolonged PR interval though not usually pathologic. Complete Heart Block Ventricular ectopics. Atrial fibrillation is common. Arrhythmias Outcomes in AF Cardio- embolic strokes associated with AF are usually severe, highly recurrent, often fatal, or with permanent disability. Mortality: AF is independently associated with a twofold increased risk of all-cause mortality in women and a 1.5-fold increase in men, with an overall 3.5-fold mortality risk increase Assessment of stroke risk
-
----
-
-### pages-011-020
-*Textbook Section*
-
-Syncope Transient loss of consciousness secondary to inadequate blood flow to the brainstem, reticular activating system and cerebral cortices Synkoptein : “cut short” Syncope in the older adult Effects of ageing decline in position sense damage to neuronal pathways deterioration in vision Cardiac and neurological diseases Polypharmacy Causes of syncope in the older adult Postural hypotension Reflex mediated/neurally mediated Vasovagal (emotional stressors) Situational (cough, micturition, Valsalva) Carotid sinus hypersensitivity Cardiac disease Neurological diseases Psychiatric causes Orthostatic hypotension Fall of 20 mmHg in systolic or 10 mmHg diastolic blood pressure within 3 minutes of standing from a supine position Failure of the arterial baroreflex arterial stiffness atherosclerosis autonomic neuropathy Volume depletion Drugs Cardiac disease Cardiac causes of syncope Valvular heart disease Acute myocardial infarction/ischaemia Hypertrophic cardiomyopathy Pericardial disease/tamponade Pulmonary embolism Acute aortic dissection Pulmonary hypertension Bradyarrhythmias Tachyarrhythmias Infections in the older adult The older adult Increased risk Altered immunity Physiological changes Co-morbid diseases Atypical presentation Changes in the Immune System Loss of ability to distinguish between self and non-self Loss of ability to recognize and destroy mutant cells which increases cancer risk Decreased antibody response and cell-mediated immunity Some active blood-forming marrow replaced by fatty bone marrow Fever may be blunted or absent in up to one-third of older patients with an infection: delay in diagnosis Older patients may have a lower baseline temperature, so that with infection, their temperature may not elevate above 38.30 C Fever in the older adult Urinary Tract Infections (UTI) Pneumonia Herpes Zoster Bacteraemia Infective Endocarditis Infectious diarrhea Meningitis Common Infections in the older adult
-
----
-
-### pages-021-023
-*Textbook Section*
-
-Factors that predispose older adults to UTI Use of catheters (80% of UTI in hospitalized patients) Neurogenic bladder Enlarged prostate Increase in vaginal pH Vaginal atrophy Incomplete bladder emptying Respiratory infections in the older adult Reasons for increased susceptibility to pneumonia Changes in pulmonary reserve Decreased mucociliary transport Decreased cough reflex Decreased elasticity of alveoli Poorer ventilation Influenza 80-90% of deaths due to influenza occur in adults ≥ 65 years Older adults are prone to severe complications due to co-existing chronic diseases and weakened immunity Benefit most from vaccination, early detection and aggressive therapy
-
----
-
-### pages-001-010
-*Textbook Section*
-
-Geriatric Medicine Geriatric Medicine Impact of physiological changes of ageing Increased prevalence of NCD Increased risk of communicable diseases and particularly a poor outcome Multimorbidity Increased risk of adverse events Atypical presentations Geriatric Giants/Syndromes Intellectual Impairment Instability Incontinence Iatrogenesis Frailty Common medical conditions CGA Medico-legal aspects Objectives Understand the differences between delirium, dementia and depression Know the predisposing and precipitating factors for delirium Know the potentially reversible causes of dementia Understand which assessments to use Principles of management Age-related changes in the CNS Morphology | Function Brain atrophy with cerebral neuronal loss Ventricular dilatation Meningeal fibrosis ↓ brain catecholamine synthesis ↓ brain dopaminergic synthesis | Psychomotor slowing ↓ complex learning ↓ memory ↑↑Central processing time ↑ response time to stimuli ↓ ability to recognise a stimulus, process the information & effect a response The senses | Morphology | Function Ear | Atrophy of external auditory meatus ↑ Obstruction of eustachian tube ↓ Elasticity of tympanic membrane Degenerative changes of ossicles Atrophy of cochlear hair cells Degeneration of organ of Corti Loss of auditory neurons | ↓ High frequency acuity (presbycusis) Difficulty discriminating words if background noise Approach to confusion Delirium Dementia Depression Deafness (or blindness), Dysphasia (failure to communicate) Assessment of Depression in the Elderly Difficulties with measuring depression in older people include Denial of depressive feelings Atypical presentation – more somatic symptoms Co-existence of depression and cognitive symptoms Geriatric Depression Scale DSM V: Delirium A disturbance in attention (i.e. reduced ability to direct, focus, sustain, and shift attention) and awareness (reduced orientation to the environment). The disturbance develops over a short period of time (usually hours to a few days), represents a change from baseline attention and awareness and tends to fluctuate in severity during the course of a day. An additional disturbance in cognition (e.g. memory deficit, disorientation, language, visuospatial ability or perception). DSM V: Delirium The disturbances in Criteria 1 and 2 are not better explained by another preexisting, established or evolving neurocognitive disorder and do not occur in the context of a severely reduced level of arousal, such as coma. There is evidence from the history, physical examination or laboratory findings that the disturbance is a direct physiological consequence of another medical condition, substance intoxication or withdrawal (i.e. because of a drug of abuse or to a medication), or exposure to a toxin, or is because of multiple etiologies
-
----
-
-### pages-011-020
-*Textbook Section*
-
-Prevalence 11 - 42% medical inpatients 15 – 53% post-operatively 70 – 83% intensive care unit Non-detection rates are 33 - 66% Pathogenesis Not well understood Inflammation alters the permeability of the blood-brain barrier via cytokines. Neurotransmission is disrupted with cholinergic deficiency and dopaminergic excess, worsened by anticholinergic and dopaminergic medication. Other neurotransmitters such as norepinephrine, serotonin, GABA, glutamate and melatonin may also play a role. A stress response leads to hypercortisolism and disrupts serotonin receptors. Inouye SK. Delirium in older persons. New Engl J Med 2006;354(11):1157-1165 Butler I, Sinclair L, Tipping B. CME October 2013 Vol. 31 No. 10 Inouye SK. Delirium in older persons. New Engl J Med 2006;354(11):1157-1165 Butler I, Sinclair L, Tipping B. CME October 2013 Vol. 31 No. 10 Inouye SK. Delirium in older persons. New Engl J Med 2006;354(11):1157-1165 Butler I, Sinclair L, Tipping B. CME October 2013 Vol. 31 No. 10 Inouye S, Van Dyck C. Ann Intern Med. 1990;113:941-948. Butler I, Sinclair L, Tipping B. CME October 2013 Vol. 31 No. 10 Consequences High costs Increased risk of death institutionalisation incident dementia loss of function from baseline Prevention and management Screen vulnerable patients (MMSE, CAM, and other risk factors) Geriatrics nursing Orientation Avoid restraints/immobilisation Avoid sensory impairment Optimize environment Avoid sleep deprivation Promote bladder and bowel function Manage pain Nutrition, hydration and electrolyte balance Optimize brain perfusion Diagnose and treat infections ‘tolerate, anticipate and don’t agitate’ Tolerate Try re-orientation once; if not effective do not continue Allow the patient to act naturally under close observation Observe behaviour to get clues about specific patient needs Anticipate Discontinue any unnecessary attachments; hide necessary attachments Don’t agitate Avoid short-term questions Affirm disorientation instead of re-orientating Pharmacological management No drug approved for treatment of delirium. Haloperidol in low doses (0.5 - 1 mg) to maximum of 3mg ad the total daily dose Side effects: muscle rigidity, dysphagia, aspiration pneumonia, orthostasis and QT prolongation predisposing to cardiac arrhythmias. Alternative agents zyprasidone 20 - 40 mg once or twice daily or quetiapine 25 mg at night.
-
----
-
-### pages-021-030
-*Textbook Section*
-
-An 68 year old man complains of memory loss. His wife agrees that he is becoming forgetful. He continues to work as an accountant without any difficulty. His neurological examination is normal. What are your considerations? What further bedside assessment would you perform? What further investigations would you request? Pharmacological management NOT mainstay NO DRUG approved REVIEW all existing medication Low dose haloperidol (not in patients with DLB, Parkinson’s disease or alcohol withdrawal) Mild cognitive impairment Objective and subjective cognitive impairment No functional deficit Most sensitive screening tool: Montreal Cognitive Assessment (MOCA) Higher risk of developing dementia. Major Neurocognitive Disorder(Dementia) DSM-V: Major Neurocognitive disorder A. Evidence of significant cognitive decline from a previous level of performance in one or more cognitive domains: - Learning and memory - Language - Executive function - Complex attention - Perceptual-motor - Social cognition B. The cognitive deficits interfere with independence in everyday activities. At a minimum, assistance should be required with complex instrumental activities of daily living, such as paying bills or managing medications. DSM-V: Major Neurocognitive disorder C. The cognitive deficits do not occur exclusively in the context of a delirium D. The cognitive deficits are not better explained by another mental disorder (eg, major depressive disorder, schizophrenia). Delirium Acute onset Underlying medical cause Fluctuating course Reversible Loss of attention Agitated, withdrawn of both Sleep-wake cycle disrupted Hallucinations Speech incoherent Dementia Gradual onset Risk factors Slow decline Irreversible Late feature Usually normal in early stages Late feature Word finding difficulty Non-reversible risk factors Increasing age Gender (women) Genetic predisposition (e.g., PS1, PS2, APP) Geographic origin (e.g. Asian, African–American) Prior strokes (particularly if large, multiple, or in vulnerable locations) Low educational level Reversible risk factors Hypertension Coronary artery disease Atrial fibrillation Diabetes mellitus Hyperlipidaemia Smoking Drinking Risk factors for dementia Neurodegenerative Causes | Potentially “Reversible” Causes Alzheimer’s Disease | HIV-associated dementia Vascular dementia | Infections Frontotemporal dementia | Head injury Parkinson’s disease | Normal pressure hydrocephalus Lewy body dementia | Metabolic disorders (hypothyroidism) Huntington’s disease | Nutritional deficiencies: B12, folate Creutzfeld-Jakob disease | Chronic alcoholism Vascular dementia Dementia Cerebrovascular disease Focal signs consistent with a stroke AND Relevant imaging Single strategically placed infarct Multiple large vessel infarcts Multiple lacunes Extensive periventricular white matter lesions Temporal relationship between 1 and 2 Dementia onset within 3 months Abrupt deterioration or fluctuating stepwise progression
-
----
-
-### pages-031-040
-*Textbook Section*
-
-Baseline investigations FBC Vitamin B12 ESR U&E Calcium TFT CXR ECG Syphilis serology Imaging HIV where indicated MMSE MMSE Screening tool Widely used, takes about 10 minutes Language, education and culture sensitivity Ensure that patient is able to see and hear Good for memory and visuospatial Does not test executive function Other tools Clox test: executive function Trail making A and B: attention and executive function (B) Mini-cog Verbal memory Montreal Cognitive Assessment (MOCA): includes CLOX and trail making tests executive function takes about 30 minutes Principles of management Establish a diagnosis if possible Estimate rate of progression Reassure if only memory loss present Consider psychological approaches Refer to support groups Establish regular routine and avoid hazardous behaviour Exercise caution with prescribing: avoid drugs which impair cognition (antipsychotics, PPI, anticholinergics etc.) Manage urinary & faecal incontinence Treat intercurrent illnesses Management Revealing the diagnosis Medico-legal issues Care-giver stress Drug treatmentAlzheimer’s disease Depression Early in disease where there is insight Avoid tricyclic antidepressants Citalopram (prolonged QT interval) Treatment of behavioural symptoms Atypical antipsychotics for short periods Titrate dose up and tail off when symptoms improve Side effects: prolonged QT interval, cognitive impairment Black box warning of sudden death Cognitive enhancers Delay progression of Alzheimer’s disease Cholinesterase inhibitors (for mild to moderate disease) Donepezil Rivastigmine Galantamine N-methyl-D-aspartate (NMDA) receptor antagonist (for moderate to severe disease) Memantine Anti-amyloid beta monoclonal antibodies Aducanumab Lecanemab
-
----
-
-### pages-001-010
-*Textbook Section*
-
-Geriatric Medicine Geriatric Medicine Impact of physiological changes of ageing Increased prevalence of NCD Increased risk of communicable diseases and particularly a poor outcome Multimorbidity Increased risk of adverse events Atypical presentations Geriatric Giants/Syndromes Intellectual Impairment Instability Incontinence Iatrogenesis Frailty Common medical conditions CGA Medico-legal aspects Objectives Understand the differences between delirium, dementia and depression Know the predisposing and precipitating factors for delirium Know the potentially reversible causes of dementia Understand which assessments to use Principles of management Age-related changes in the CNS Morphology | Function Brain atrophy with cerebral neuronal loss Ventricular dilatation Meningeal fibrosis ↓ brain catecholamine synthesis ↓ brain dopaminergic synthesis | Psychomotor slowing ↓ complex learning ↓ memory ↑↑Central processing time ↑ response time to stimuli ↓ ability to recognise a stimulus, process the information & effect a response The senses | Morphology | Function Ear | Atrophy of external auditory meatus ↑ Obstruction of eustachian tube ↓ Elasticity of tympanic membrane Degenerative changes of ossicles Atrophy of cochlear hair cells Degeneration of organ of Corti Loss of auditory neurons | ↓ High frequency acuity (presbycusis) Difficulty discriminating words if background noise Approach to confusion Delirium Dementia Depression Deafness (or blindness), Dysphasia (failure to communicate) Assessment of Depression in the Elderly Difficulties with measuring depression in older people include Denial of depressive feelings Atypical presentation – more somatic symptoms Co-existence of depression and cognitive symptoms Geriatric Depression Scale DSM V: Delirium A disturbance in attention (i.e. reduced ability to direct, focus, sustain, and shift attention) and awareness (reduced orientation to the environment). The disturbance develops over a short period of time (usually hours to a few days), represents a change from baseline attention and awareness and tends to fluctuate in severity during the course of a day. An additional disturbance in cognition (e.g. memory deficit, disorientation, language, visuospatial ability or perception). DSM V: Delirium The disturbances in Criteria 1 and 2 are not better explained by another preexisting, established or evolving neurocognitive disorder and do not occur in the context of a severely reduced level of arousal, such as coma. There is evidence from the history, physical examination or laboratory findings that the disturbance is a direct physiological consequence of another medical condition, substance intoxication or withdrawal (i.e. because of a drug of abuse or to a medication), or exposure to a toxin, or is because of multiple etiologies
+**Management**
+- Urinalysis to rule out infection
+- Post-void residual measurement (ultrasound or catheterization)
+- Toileting schedule (timed voiding, habit training)
+- Pelvic floor exercises (Kegel exercises)
+- Fluid management: limit evening fluids, adequate daytime hydration
+- Medications: antimuscarinic agents for urge incontinence
+- Catheterization only if conservative measures fail
 
 ---
 
-### pages-011-020
-*Textbook Section*
+## Textbooks {#textbooks}
 
-Prevalence 11 - 42% medical inpatients 15 – 53% post-operatively 70 – 83% intensive care unit Non-detection rates are 33 - 66% Pathogenesis Not well understood Inflammation alters the permeability of the blood-brain barrier via cytokines. Neurotransmission is disrupted with cholinergic deficiency and dopaminergic excess, worsened by anticholinergic and dopaminergic medication. Other neurotransmitters such as norepinephrine, serotonin, GABA, glutamate and melatonin may also play a role. A stress response leads to hypercortisolism and disrupts serotonin receptors. Inouye SK. Delirium in older persons. New Engl J Med 2006;354(11):1157-1165 Butler I, Sinclair L, Tipping B. CME October 2013 Vol. 31 No. 10 Inouye SK. Delirium in older persons. New Engl J Med 2006;354(11):1157-1165 Butler I, Sinclair L, Tipping B. CME October 2013 Vol. 31 No. 10 Inouye SK. Delirium in older persons. New Engl J Med 2006;354(11):1157-1165 Butler I, Sinclair L, Tipping B. CME October 2013 Vol. 31 No. 10 Inouye S, Van Dyck C. Ann Intern Med. 1990;113:941-948. Butler I, Sinclair L, Tipping B. CME October 2013 Vol. 31 No. 10 Consequences High costs Increased risk of death institutionalisation incident dementia loss of function from baseline Prevention and management Screen vulnerable patients (MMSE, CAM, and other risk factors) Geriatrics nursing Orientation Avoid restraints/immobilisation Avoid sensory impairment Optimize environment Avoid sleep deprivation Promote bladder and bowel function Manage pain Nutrition, hydration and electrolyte balance Optimize brain perfusion Diagnose and treat infections ‘tolerate, anticipate and don’t agitate’ Tolerate Try re-orientation once; if not effective do not continue Allow the patient to act naturally under close observation Observe behaviour to get clues about specific patient needs Anticipate Discontinue any unnecessary attachments; hide necessary attachments Don’t agitate Avoid short-term questions Affirm disorientation instead of re-orientating Pharmacological management No drug approved for treatment of delirium. Haloperidol in low doses (0.5 - 1 mg) to maximum of 3mg ad the total daily dose Side effects: muscle rigidity, dysphagia, aspiration pneumonia, orthostasis and QT prolongation predisposing to cardiac arrhythmias. Alternative agents zyprasidone 20 - 40 mg once or twice daily or quetiapine 25 mg at night.
+### Cognitive Impairment, Delirium & Dementia
+
+**Delirium: DSM-V Criteria**
+1. Disturbance in attention and awareness with reduced ability to direct, focus, sustain, and shift attention
+2. Develops over short period (hours to days), represents change from baseline
+3. Additional disturbance in cognition (memory, disorientation, language, visuospatial ability)
+4. Not explained by preexisting neurocognitive disorder
+5. Evidence from history/exam/labs that disturbance is direct physiological consequence of medical condition, substance intoxication/withdrawal, medication, or toxin
+
+**Key Features**
+- Acute onset (distinguishes from dementia)
+- Fluctuating course throughout day
+- Reversible if underlying cause treated
+- Often presents with agitation, withdrawal, or both
+- Sleep-wake cycle disrupted; may have hallucinations
+
+**Prevalence**
+- 11-42% in medical inpatients
+- 15-53% post-operatively
+- 70-83% in intensive care
+- Non-detection rates 33-66%
+
+**Pathogenesis**
+- Inflammation alters blood-brain barrier permeability via cytokines
+- Cholinergic deficiency and dopaminergic excess (worsened by anticholinergic/dopaminergic drugs)
+- Stress response causes hypercortisolism, disrupts serotonin receptors
+- Multiple neurotransmitters involved: norepinephrine, GABA, glutamate, melatonin
+
+**Prevention & Management**
+- Screen vulnerable patients (MMSE, CAM)
+- Geriatric nursing: orientation, avoid restraints, optimize sensory input/environment
+- Avoid sleep deprivation
+- Promote bladder/bowel function, manage pain
+- Optimize nutrition, hydration, electrolytes
+- Optimize brain perfusion, diagnose/treat infections
+- Principle: "Tolerate, anticipate, don't agitate"
+  - Try reorientation once; if ineffective, stop
+  - Observe behavior for clues to patient needs
+  - Discontinue unnecessary attachments
+  - Avoid short-term questions; affirm disorientation
+- Pharmacological: haloperidol low dose (0.5-1 mg to max 3 mg daily), alternatives zyprasidone 20-40 mg or quetiapine 25 mg night
+
+**Dementia vs Delirium**
+| Feature | Delirium | Dementia |
+|---------|----------|----------|
+| Onset | Acute | Gradual |
+| Cause | Medical (usually reversible) | Neurodegenerative (irreversible) |
+| Course | Fluctuating | Slow decline |
+| Attention | Loss (early, prominent) | Usually normal early |
+| Reversibility | Yes (if cause treated) | No |
+| Hallucinations | Common | Late feature |
+| Speech | Incoherent | Word-finding difficulty |
+
+**Mild Cognitive Impairment (MCI)**
+- Objective and subjective cognitive impairment
+- No functional deficit in activities of daily living
+- Montreal Cognitive Assessment (MoCA) most sensitive screening tool
+- Higher risk of developing dementia
+
+**Major Neurocognitive Disorder (Dementia): DSM-V**
+- Significant cognitive decline from baseline in ≥1 domain:
+  - Learning and memory
+  - Language
+  - Executive function
+  - Complex attention
+  - Perceptual-motor
+  - Social cognition
+- Deficits interfere with independence in everyday activities
+- At minimum, assistance required with complex instrumental ADLs (paying bills, managing medications)
+- Not occurring exclusively in context of delirium
+- Not better explained by another mental disorder
+
+**Risk Factors for Dementia**
+
+Non-reversible:
+- Increasing age
+- Female gender
+- Genetic predisposition (PS1, PS2, APP genes)
+- Geographic origin (Asian, African-American populations)
+- Prior strokes (especially large, multiple, or vulnerable locations)
+- Low educational level
+
+Reversible:
+- Hypertension
+- Coronary artery disease
+- Atrial fibrillation
+- Diabetes mellitus
+- Hyperlipidemia
+- Smoking
+- Alcohol use disorder
+
+**Causes of Dementia**
+
+Neurodegenerative:
+- Alzheimer's disease
+- Vascular dementia
+- Frontotemporal dementia
+- Parkinson's disease
+- Lewy body dementia
+- Huntington's disease
+- Creutzfeldt-Jakob disease
+
+Potentially Reversible:
+- HIV-associated dementia
+- Infections (neurosyphilis, encephalitis)
+- Head injury/chronic subdural hematoma
+- Normal pressure hydrocephalus
+- Metabolic disorders (hypothyroidism)
+- Nutritional deficiencies (B12, folate)
+- Chronic alcoholism
+
+**Vascular Dementia: Diagnostic Criteria**
+- Evidence of dementia + cerebrovascular disease
+- Focal neurological signs consistent with stroke AND relevant imaging showing:
+  - Single strategically placed infarct
+  - Multiple large vessel infarcts
+  - Multiple lacunes
+  - Extensive periventricular white matter lesions
+- Temporal relationship: dementia onset within 3 months of stroke, or abrupt deterioration/stepwise progression
+
+**Assessment Tools**
+- **MMSE** (Mini-Mental State Exam): widely used screening, ~10 minutes, tests memory & visuospatial; does NOT test executive function; consider language/education/culture
+- **Montreal Cognitive Assessment (MoCA)**: includes CLOX & trail making, tests executive function, ~30 minutes
+- **Clox Test**: executive function assessment
+- **Trail Making A & B**: attention (A) and executive function (B)
+- **Mini-Cog**: verbal memory screening
+
+**Baseline Investigations**
+- FBC, Vitamin B12, ESR, U&E, Calcium, TFT
+- CXR, ECG
+- Syphilis serology, HIV where indicated
+
+**Management Principles**
+- Establish diagnosis if possible
+- Estimate rate of progression
+- Reassure if only memory loss present
+- Consider psychological approaches; refer to support groups
+- Establish regular routine, avoid hazardous behavior
+- **Exercise caution with prescribing**: avoid drugs that impair cognition (antipsychotics, PPIs, anticholinergics)
+- Manage urinary & fecal incontinence
+- Treat intercurrent illnesses
+
+**Revealing the Diagnosis**
+- Medico-legal issues
+- Caregiver stress
+
+**Drug Treatment: Alzheimer's Disease**
+
+Depression (early in disease where there is insight):
+- Avoid tricyclic antidepressants
+- Avoid citalopram (prolonged QT interval)
+
+Behavioral Symptoms:
+- Atypical antipsychotics for short periods
+- Titrate dose up and taper off when symptoms improve
+- Monitor: prolonged QT interval, cognitive impairment, black box warning of sudden death
+
+Cognitive Enhancers:
+- Cholinesterase inhibitors (mild to moderate disease):
+  - Donepezil
+  - Rivastigmine
+  - Galantamine
+- NMDA receptor antagonist (moderate to severe disease):
+  - Memantine
+- Anti-amyloid beta monoclonal antibodies:
+  - Aducanumab
+  - Lecanemab
+
+### Comprehensive Geriatric Assessment (CGA)
+
+**Definition & Purpose**
+- Systematic, multidisciplinary process to identify medical, psychological, functional, social problems in older adults
+- Develops plan to optimize health and functional status
+- Improves outcomes: reduced mortality, institutionalization, improves functional independence
+
+**Five Categories of Assessment**
+1. Medical assessment: chronic diseases, acute illnesses, medications, laboratory values
+2. Mental health assessment: depression, cognitive function, anxiety, adjustment disorders
+3. Functional assessment: ADLs (eating, dressing, grooming, bathing, toileting, continence), IADLs (cooking, cleaning, shopping, managing finances)
+4. Social assessment: family support, living situation, financial resources, social engagement
+5. Environmental assessment: home safety, accessibility, assistive devices
+
+**Multidisciplinary Team**
+- Physician/geriatrician: medical assessment and management
+- Nurse: functional and social assessment, health education
+- Social worker: social support, discharge planning, financial resources
+- Physiotherapist: mobility and balance assessment, exercise prescription
+- Occupational therapist: functional assessment, adaptive equipment, home modifications
+
+**Prevention & Screening**
+- Early identification of problems before functional decline
+- Risk stratification (high-risk elderly benefit most from CGA)
+- Preventive interventions for common syndromes
+
+**Rehabilitation Principles**
+- Goal: restore or maintain functional independence
+- Early mobilization during acute illness
+- Graded exercise programs
+- Adaptive equipment and home modifications
+- Family education and support
+
+### Cardiovascular Disease in Elderly
+
+**Epidemiology**
+- Leading cause of morbidity and mortality in elderly
+- Age-related changes: increased arterial stiffness, ventricular hypertrophy
+- Increased prevalence of hypertension, coronary disease, arrhythmias
+
+**Age-Related Cardiovascular Changes**
+- Arterial stiffness from collagen deposition
+- Left ventricular hypertrophy
+- Decreased maximum heart rate response to exercise
+- Slowed conduction (increased PR interval, QRS duration)
+- Decreased diastolic compliance
+
+**Hypertension**
+- Most common cardiovascular condition
+- Contributes to MI, stroke, heart failure, kidney disease
+- Treatment reduces cardiovascular events and stroke
+- Target BP varies by age and comorbidities
+
+**Atrial Fibrillation (AFib)**
+- Increases with age
+- Increases stroke risk (requires anticoagulation)
+- May cause palpitations, dyspnea, or be asymptomatic
+- Rate vs rhythm control strategies
+
+**Arrhythmias**
+- Sinus bradycardia common, may be physiological
+- Premature beats (PACs, PVCs) common
+- Heart block: first-degree common, second/third-degree rare but may need pacing
+
+**Syncope & Orthostatic Hypotension**
+- Syncope: transient loss of consciousness with loss of postural tone
+- Orthostatic hypotension: drop in systolic BP ≥20 mmHg or diastolic ≥10 mmHg within 3 minutes of standing
+- Causes: dehydration, medications (diuretics, vasodilators), autonomic dysfunction, cardiac arrhythmias
+- Management: fluid intake, compression stockings, medication adjustment, slow position changes
+
+### Infections in Elderly
+
+**General Principles**
+- Atypical presentations (fever may be absent, confusion instead)
+- Delayed immune response
+- Poor outcomes if not promptly diagnosed and treated
+- Higher rates of bacteremia and invasive infection
+
+**Urinary Tract Infection (UTI)**
+- Most common infection in community-dwelling elderly
+- Factors: incomplete bladder emptying, urinary incontinence, immobility
+- Diagnosis: requires both symptoms AND positive urine culture (pyuria alone not sufficient)
+- Symptomatic infection: dysuria, frequency, urgency
+- Asymptomatic bacteriuria: treatment not recommended unless pregnant or before urologic procedures
+- Management: appropriate antibiotics based on culture, fluid intake, bladder emptying assessment
+
+**Pneumonia**
+- High mortality in elderly
+- Risk factors: aspiration, impaired cough reflex, bed rest, malnutrition
+- May present as confusion or functional decline without respiratory symptoms
+- Chest X-ray may lag clinical presentation
+- Empiric broad-spectrum antibiotics pending culture
+
+**Influenza**
+- Severe complications in elderly (pneumonia, myocarditis, delirium)
+- Annual vaccination recommended
+- Antivirals (neuraminidase inhibitors) if given within 48 hours of symptom onset
+- Droplet precautions to prevent spread
 
 ---
 
-### pages-021-023
-*Textbook Section*
+## Study Strategy {#strategy}
 
-Factors that predispose older adults to UTI Use of catheters (80% of UTI in hospitalized patients) Neurogenic bladder Enlarged prostate Increase in vaginal pH Vaginal atrophy Incomplete bladder emptying Respiratory infections in the older adult Reasons for increased susceptibility to pneumonia Changes in pulmonary reserve Decreased mucociliary transport Decreased cough reflex Decreased elasticity of alveoli Poorer ventilation Influenza 80-90% of deaths due to influenza occur in adults ≥ 65 years Older adults are prone to severe complications due to co-existing chronic diseases and weakened immunity Benefit most from vaccination, early detection and aggressive therapy
+### Foundation Phase
+Master the fundamental concepts of aging before moving to specific conditions.
+
+**Topics to Master First:**
+1. Normal age-related physiological changes (CNS, cardiovascular, renal, immune)
+2. Difference between delirium, dementia, and depression (the 3 Ds)
+3. Comprehensive Geriatric Assessment framework
+4. Geriatric Giants: intellectual impairment, instability, incontinence, iatrogenesis, frailty
+
+**Acceptance Criteria:**
+- Explain in your own words why age-related changes predispose to disease
+- Distinguish delirium from dementia in a patient case
+- List the 5 domains of CGA assessment
+- Identify potential iatrogenic harms in a medication list
+
+### Active Learning Phase
+Engage deeply with the major geriatric syndromes through case analysis.
+
+**Topics to Study:**
+1. **Falls**: Risk factors, assessment, prevention strategies
+   - Case: 78F with hip fracture; identify intrinsic and extrinsic factors
+   - Practice: complete medication review for fall risk
+2. **Frailty**: Assessment tools and physiological basis
+   - Case: 85M with sarcopenia; calculate frailty phenotype score
+   - Practice: Design exercise program for frail patient
+3. **Cognitive Impairment**: Delirium management and dementia workup
+   - Case: 82M with acute confusion in hospital; find reversible cause
+   - Practice: Differentiate vascular vs Alzheimer's dementia from imaging
+4. **Urinary Incontinence**: Types and management approach
+   - Case: 70F with stress incontinence; develop non-pharmacological plan
+   - Practice: DRIP assessment for reversible causes
+5. **Iatrogenesis**: Medication optimization in elderly
+   - Case: 80F on 12 medications; deprescribe appropriately
+   - Practice: Calculate adjusted doses for renal impairment
+
+**Acceptance Criteria:**
+- Solve at least 3 case scenarios per topic without help
+- Explain the pathophysiology behind each symptom in a case
+- Compare treatment options (pharmacological vs non-pharmacological)
+- Teach someone else about the topic using examples
+
+### Clinical Application Phase
+Integrate knowledge into practical decision-making.
+
+**Assessment Scenarios:**
+1. Elderly patient presents with falls → systematically work through risk factors, investigations, and prevention plan
+2. New confusion in hospitalized patient → delirium vs dementia assessment, reversible causes, management
+3. Frail elderly before surgery → preoperative optimization, risk stratification, post-op monitoring
+4. Urinary incontinence → type classification, reversible factors, personalized treatment plan
+5. Polypharmacy review → identify inappropriate medications, deprescribe, adjust for renal/hepatic function
+
+**Mastery Checklist:**
+- [ ] Explain 3 age-related CNS changes and their functional consequences
+- [ ] Distinguish delirium, dementia, depression using DSM-V/clinical criteria
+- [ ] Identify fall risk factors and design prevention program
+- [ ] Assess frailty using validated tool; explain pathophysiology
+- [ ] Diagnose and manage common UTI scenarios
+- [ ] Manage acute confusion: establish etiology, treat cause, monitor response
+- [ ] Review polypharmacy prescription: deprescribe ≥2 inappropriate drugs
+- [ ] Explain vascular vs neurodegenerative dementia; interpret imaging
+- [ ] Counsel patient with MCI on progression risk and prevention
+- [ ] Design CGA-based care plan for complex elderly patient
+
+### Testing Strategy
+Use spaced repetition and scenario-based questions to consolidate learning.
+
+**Question Types:**
+- Single best answer (MCQ): Pharmacology, diagnostic criteria, epidemiology
+- Clinical scenarios (case-based): Assessment, diagnosis, management decisions
+- Image interpretation: Imaging findings in dementia, vascular disease
+- True/false: Pathophysiology facts, normal vs abnormal findings
+
+**Spaced Repetition Schedule:**
+- Day 1: Review notes immediately after reading
+- Day 3: Active recall question on the topic
+- Day 7: Case scenario incorporating the topic
+- Day 14: Teach someone else about the topic
+- Day 30: Full scenario integrating multiple topics
+
+**High-Yield Facts for Rapid Recall:**
+- DRIP mnemonic for reversible incontinence causes
+- Delirium prevalence: 11-42% inpatients, 70-83% ICU
+- Fall risk drug classes: diuretics, sedatives, antihypertensives
+- Dementia types: Alzheimer's (50-70%), vascular (15-20%), Lewy body, FTD
+- CGA reduces mortality, institutionalization, improves function
+- Delirium is reversible; dementia usually irreversible
+- Orthostatic hypotension: ≥20 mmHg systolic drop in 3 minutes
 
 ---
 
-### pages-021-025
-*Textbook Section*
-
-Risk factors Communal living arrangements Social isolation Cognitive impairment of older person Caregiver financially dependent on older person Caregiver with history of substance abuse, mental illness or poor coping skills Where to Report Elder Abuse Department of Welfare 031 – 336 8700 TAFTA 031 – 332 3721 Doctor, nurse or clergy SA Police Services National Toll Free 080 – 000 3081 Help Line (Monday to Friday 9:30 – 13:00) Conditions for patient’s choice to be legally valid Patient’s participation and decision must be voluntary Patient must be sufficiently involved Patient must be mentally capable Standards for assessing decision-making capacity The ability to make a choice make a reasonable choice appreciate illness and treatment reason; comparative and consequential understand Advance directive Instructions given by patients for their future treatment should they become incompetent to consent to, or refuse, such treatment Living will Enduring power of attorney Mandated consent by proxy Curatorship Suggested Reading: McQuoid-Mason, D. Advance Directives and the National Health Act. SAMJ 2006, 96, 12: 1236-1238
-
----
-
-### pages-021-030
-*Textbook Section*
-
-An 68 year old man complains of memory loss. His wife agrees that he is becoming forgetful. He continues to work as an accountant without any difficulty. His neurological examination is normal. What are your considerations? What further bedside assessment would you perform? What further investigations would you request? Pharmacological management NOT mainstay NO DRUG approved REVIEW all existing medication Low dose haloperidol (not in patients with DLB, Parkinson’s disease or alcohol withdrawal) Mild cognitive impairment Objective and subjective cognitive impairment No functional deficit Most sensitive screening tool: Montreal Cognitive Assessment (MOCA) Higher risk of developing dementia. Major Neurocognitive Disorder(Dementia) DSM-V: Major Neurocognitive disorder A. Evidence of significant cognitive decline from a previous level of performance in one or more cognitive domains: - Learning and memory - Language - Executive function - Complex attention - Perceptual-motor - Social cognition B. The cognitive deficits interfere with independence in everyday activities. At a minimum, assistance should be required with complex instrumental activities of daily living, such as paying bills or managing medications. DSM-V: Major Neurocognitive disorder C. The cognitive deficits do not occur exclusively in the context of a delirium D. The cognitive deficits are not better explained by another mental disorder (eg, major depressive disorder, schizophrenia). Delirium Acute onset Underlying medical cause Fluctuating course Reversible Loss of attention Agitated, withdrawn of both Sleep-wake cycle disrupted Hallucinations Speech incoherent Dementia Gradual onset Risk factors Slow decline Irreversible Late feature Usually normal in early stages Late feature Word finding difficulty Non-reversible risk factors Increasing age Gender (women) Genetic predisposition (e.g., PS1, PS2, APP) Geographic origin (e.g. Asian, African–American) Prior strokes (particularly if large, multiple, or in vulnerable locations) Low educational level Reversible risk factors Hypertension Coronary artery disease Atrial fibrillation Diabetes mellitus Hyperlipidaemia Smoking Drinking Risk factors for dementia Neurodegenerative Causes | Potentially “Reversible” Causes Alzheimer’s Disease | HIV-associated dementia Vascular dementia | Infections Frontotemporal dementia | Head injury Parkinson’s disease | Normal pressure hydrocephalus Lewy body dementia | Metabolic disorders (hypothyroidism) Huntington’s disease | Nutritional deficiencies: B12, folate Creutzfeld-Jakob disease | Chronic alcoholism Vascular dementia Dementia Cerebrovascular disease Focal signs consistent with a stroke AND Relevant imaging Single strategically placed infarct Multiple large vessel infarcts Multiple lacunes Extensive periventricular white matter lesions Temporal relationship between 1 and 2 Dementia onset within 3 months Abrupt deterioration or fluctuating stepwise progression
-
----
-
-### pages-031-040
-*Textbook Section*
-
-Baseline investigations FBC Vitamin B12 ESR U&E Calcium TFT CXR ECG Syphilis serology Imaging HIV where indicated MMSE MMSE Screening tool Widely used, takes about 10 minutes Language, education and culture sensitivity Ensure that patient is able to see and hear Good for memory and visuospatial Does not test executive function Other tools Clox test: executive function Trail making A and B: attention and executive function (B) Mini-cog Verbal memory Montreal Cognitive Assessment (MOCA): includes CLOX and trail making tests executive function takes about 30 minutes Principles of management Establish a diagnosis if possible Estimate rate of progression Reassure if only memory loss present Consider psychological approaches Refer to support groups Establish regular routine and avoid hazardous behaviour Exercise caution with prescribing: avoid drugs which impair cognition (antipsychotics, PPI, anticholinergics etc.) Manage urinary & faecal incontinence Treat intercurrent illnesses Management Revealing the diagnosis Medico-legal issues Care-giver stress Drug treatmentAlzheimer’s disease Depression Early in disease where there is insight Avoid tricyclic antidepressants Citalopram (prolonged QT interval) Treatment of behavioural symptoms Atypical antipsychotics for short periods Titrate dose up and tail off when symptoms improve Side effects: prolonged QT interval, cognitive impairment Black box warning of sudden death Cognitive enhancers Delay progression of Alzheimer’s disease Cholinesterase inhibitors (for mild to moderate disease) Donepezil Rivastigmine Galantamine N-methyl-D-aspartate (NMDA) receptor antagonist (for moderate to severe disease) Memantine Anti-amyloid beta monoclonal antibodies Aducanumab Lecanemab
-
----
-
-## Study Strategy
-
-### Foundation
-1. Read the lecture transcripts to understand core concepts
-2. Review textbook sections for deeper technical detail
-3. Cross-reference between lectures and textbooks to reinforce learning
-
-### Active Learning
-1. Use the SRS cards (in srs-cards/) for spaced repetition
-2. Create your own notes highlighting key facts
-3. Test yourself with practice questions
-
-### Mastery Checklist
-- [ ] Understand all major concepts from lectures
-- [ ] Can explain key definitions from memory
-- [ ] Know the relationships between different topics
-- [ ] Can apply knowledge to clinical scenarios
-- [ ] Passing rate on SRS cards >90%
+**Last Updated**: 2026-05-04
