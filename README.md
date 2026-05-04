@@ -17,8 +17,7 @@ A service worker caches the shell + manifest + shards on first visit, so once yo
 
 ## What you get
 
-- **home** — pick up where you left off, with streak, daily goal, and due-card chips.
-- **today** — streak, goal progress, three recommended cases, last-five-days recap.
+- **today** (the landing) — workspace hero, streak / daily goal / due-card / cases-today chips, three CTAs (continue where you left off · review N due · start a case), recommended cases, subject grid, recent-days recap.
 - **subject** — full study-guide prose with section checkboxes, mastery bar, flashcards, and case list per subject.
 - **review** — spaced repetition with friendly four-grade buttons (`again · hard · good · easy`); end-of-session summary and back-to-today CTA.
 - **cards** — full card explorer with search and subject filter.
