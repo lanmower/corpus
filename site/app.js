@@ -1,4 +1,5 @@
 // corpus observability — vanilla ESM, no bundler.
+import * as srs from './srs.js';
 const stage = document.getElementById('stage');
 const crumb = document.getElementById('crumb');
 const footerStats = document.getElementById('footer-stats');
@@ -10,7 +11,12 @@ const state = {
     currentSubject: null,
     cardSearch: '',
     cardSubjectFilter: 'all',
-    flippedCards: new Set()
+    flippedCards: new Set(),
+    reviewSubjectFilter: 'all',
+    reviewQueue: [],
+    reviewIndex: 0,
+    reviewRevealed: false,
+    reviewSessionGraded: 0
 };
 window.__corpus = state;
 
@@ -73,6 +79,7 @@ function render() {
     if (r === 'overview') renderOverview();
     else if (r === 'subjects') renderSubjects();
     else if (r === 'cards') renderCards();
+    else if (r === 'review') renderReview();
     else if (r === 'triage') renderTriage();
     else if (r === 'stats') renderStats();
     else if (r === 'deepdive') renderDeepdive();
@@ -365,6 +372,111 @@ function buildTriageWidget(meta, shard, sc) {
     return wrap;
 }
 
+async function renderReview() {
+    stage.innerHTML = '';
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'label' }, '// SRS review'),
+        el('h2', {}, 'spaced repetition')
+    ));
+    const placeholder = el('div', { class: 'loading' }, 'loading shards…');
+    stage.append(placeholder);
+    const subjects = state.reviewSubjectFilter === 'all'
+        ? state.manifest.subjects.map(s => s.subject)
+        : [state.reviewSubjectFilter];
+    await Promise.all(subjects.map(s => loadShard(s)));
+    placeholder.remove();
+
+    const allCards = [];
+    for (const s of subjects) {
+        const sh = state.shards[s];
+        if (!sh) continue;
+        const meta = state.manifest.subjects.find(x => x.subject === s);
+        for (const c of sh.cards) allCards.push({ ...c, _subject: s, _cat: meta?.cat || 'green' });
+    }
+    const cardIds = allCards.map(c => c.id);
+    const dueIds = new Set(srs.getDueCards(cardIds));
+    state.reviewQueue = allCards.filter(c => dueIds.has(c.id));
+    if (state.reviewIndex >= state.reviewQueue.length) state.reviewIndex = 0;
+
+    const cfg = srs.loadConfig();
+    const stats = srs.getScheduleStats(cardIds);
+    const days = srs.daysUntilExam(cfg);
+
+    const chips = el('div', { class: 'filter-chips' },
+        el('button', {
+            class: 'chip' + (state.reviewSubjectFilter === 'all' ? ' active' : ''),
+            on: { click: () => { state.reviewSubjectFilter = 'all'; state.reviewIndex = 0; state.reviewRevealed = false; renderReview(); } }
+        }, 'all'),
+        ...state.manifest.subjects.map(s => el('button', {
+            class: 'chip' + (state.reviewSubjectFilter === s.subject ? ' active' : ''),
+            on: { click: () => { state.reviewSubjectFilter = s.subject; state.reviewIndex = 0; state.reviewRevealed = false; renderReview(); } }
+        }, s.subject))
+    );
+
+    const head = el('div', { class: 'panel rail-green' },
+        el('div', { class: 'panel-head' },
+            el('span', { class: 'title' }, 'session'),
+            `${state.reviewQueue.length} due · ${stats.scheduled} scheduled · exam in ${days}d · graded this session: ${state.reviewSessionGraded}`
+        )
+    );
+    stage.append(el('div', { class: 'toolbar' }, chips), head);
+
+    if (state.reviewQueue.length === 0) {
+        stage.append(el('div', { class: 'panel rail-sky' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'all caught up'), 'no cards due'),
+            el('div', {}, 'every scheduled card is in the future. add new cards to the queue by reviewing a subject in cards explorer, or wait for tomorrow.')
+        ));
+        return;
+    }
+
+    const card = state.reviewQueue[state.reviewIndex];
+    const cardState = srs.getCardState(card.id);
+    const reviewCard = el('div', {
+        class: `flashcard rail-${card._cat}` + (state.reviewRevealed ? ' flipped' : '')
+    },
+        el('div', { class: 'meta-line' },
+            el('span', {}, `${card._subject} · ${state.reviewIndex + 1}/${state.reviewQueue.length}`),
+            el('span', {}, `EF ${cardState.easeFactor.toFixed(2)} · rep ${cardState.repetitions}`)
+        ),
+        el('div', { class: 'front' }, card.front),
+        el('div', { class: 'back' }, card.back || ''),
+        card.tags && card.tags.length ? el('div', { class: 'tags' }, ...card.tags.slice(0, 6).map(t => el('span', { class: 'tag' }, t))) : null
+    );
+    stage.append(reviewCard);
+
+    const actions = el('div', { class: 'toolbar', id: 'review-actions' });
+    if (!state.reviewRevealed) {
+        actions.append(el('button', {
+            class: 'chip active', id: 'review-reveal',
+            on: { click: () => { state.reviewRevealed = true; renderReview(); } }
+        }, 'reveal answer'));
+    } else {
+        const labels = ['0 blackout', '1 wrong', '2 hard wrong', '3 hard right', '4 good', '5 perfect'];
+        for (let score = 0; score <= 5; score++) {
+            actions.append(el('button', {
+                class: 'chip', data: { score: String(score) }, id: `grade-${score}`,
+                on: { click: () => gradeReview(card.id, score, cardIds) }
+            }, labels[score]));
+        }
+        actions.append(el('button', {
+            class: 'chip', id: 'review-skip',
+            on: { click: () => { state.reviewIndex = (state.reviewIndex + 1) % state.reviewQueue.length; state.reviewRevealed = false; renderReview(); } }
+        }, 'skip'));
+    }
+    stage.append(actions);
+
+    state.lastReviewDueCount = state.reviewQueue.length;
+}
+
+function gradeReview(cardId, score, cardIds) {
+    srs.updateCard(cardId, score, cardIds);
+    state.reviewSessionGraded++;
+    state.reviewQueue.splice(state.reviewIndex, 1);
+    if (state.reviewIndex >= state.reviewQueue.length) state.reviewIndex = 0;
+    state.reviewRevealed = false;
+    renderReview();
+}
+
 function renderStats() {
     const m = state.manifest;
     stage.append(el('div', { class: 'section-head' },
@@ -394,6 +506,44 @@ function renderStats() {
         ))
     );
     stage.append(tbl);
+    renderSrsStats();
+}
+
+async function renderSrsStats() {
+    await Promise.all(state.manifest.subjects.map(s => loadShard(s.subject)));
+    const cardIds = [];
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject];
+        if (!sh) continue;
+        for (const c of sh.cards) cardIds.push(c.id);
+    }
+    const stats = srs.getScheduleStats(cardIds);
+    const cfg = srs.loadConfig();
+    const days = srs.daysUntilExam(cfg);
+    const eff = srs.effectiveDays(cfg);
+    const examInput = el('input', {
+        type: 'date', value: cfg.examDate, class: 'search', style: 'max-width:200px',
+        on: { change: e => { srs.saveConfig({ ...cfg, examDate: e.target.value }); render(); } }
+    });
+    const resetBtn = el('button', {
+        class: 'chip',
+        on: { click: () => { if (confirm('Reset all SRS state?')) { srs.resetAll(); state.reviewSessionGraded = 0; render(); } } }
+    }, 'reset SRS state');
+    stage.append(el('div', { class: 'panel rail-purple', id: 'srs-stats' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'SRS scheduling'), `localStorage corpus.srs.states`),
+        el('div', { class: 'hero-stats' },
+            chipStat(stats.total, 'total cards'),
+            chipStat(stats.scheduled, 'scheduled'),
+            chipStat(stats.due, 'due today'),
+            chipStat(stats.avgEaseFactor.toFixed(2), 'avg easeFactor'),
+            chipStat(stats.avgLastScore.toFixed(2), 'avg last score'),
+            chipStat(days, 'days to exam'),
+            chipStat(eff, 'effective days')
+        ),
+        el('div', { class: 'toolbar', style: 'margin-top:12px' },
+            el('label', { style: 'margin-right:8px' }, 'exam date:'), examInput, resetBtn
+        )
+    ));
 }
 
 (async () => {
