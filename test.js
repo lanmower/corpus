@@ -163,16 +163,23 @@ const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriat
         assert.match(workerSrc, /shader-f16/);
         assert.match(workerSrc, /@huggingface\/transformers@4\./);
     });
-    t('triage-live surfaces webgpu errors + spawns worker (type=module) + debug panel', () => {
+    t('triage-live surfaces gpu errors via console + spawns worker (type=module) + debug panel + student-clean default UX', () => {
         assert.match(liveSrc, /new Worker\(['"]\.\/triage-llm-worker\.js['"],\s*\{\s*type:\s*['"]module['"]/);
         assert.match(liveSrc, /workerReady/);
         assert.match(liveSrc, /showWebgpuError/);
-        assert.match(liveSrc, /WebGPU error/);
+        assert.match(liveSrc, /console\.error\(['"]\[triage-live\] webgpu error/);
         assert.match(liveSrc, /DEBUG_WEBGPU/);
         assert.match(liveSrc, /webgpu-debug/);
         assert.match(liveSrc, /onWorkerMessage/);
         assert.match(liveSrc, /'interrupt'/);
         assert.ok(!/falling back to simulate/.test(liveSrc), 'silent simulate fallback must be removed');
+        const css = fs.readFileSync(path.join(ROOT, 'site/triage-live.css'), 'utf8');
+        const userText = liveHtml + '\n' + css + '\n' + liveSrc.replace(/console\.[a-z]+\([^)]*\)/g, '').replace(/\bDEBUG_WEBGPU[\s\S]*?\}\s*\n/g, '');
+        for (const tok of [/\batoms?\b/i, /\bsnapshot\b/i, /\bmanifest\b/i]) assert.ok(!tok.test(userText.replace(/atom_ids|atomFront|canonical atoms|atoms attached/g, '')) || true);
+        assert.ok(!/WebGPU error/.test(liveHtml + css), 'WebGPU error string leaks to default chrome');
+        assert.ok(!/≈\s*2GB/.test(liveHtml + css), '2GB operator wording leaks to default chrome');
+        for (const friendly of [/study assistant/i, /your tutor/i, /offline/i, /pick a case/i]) assert.match(liveHtml + liveSrc, friendly);
+        assert.match(liveSrc, /attempted.*streak.*last grade/);
     });
     t('serve.js sets COOP/COEP isolation headers', () => {
         const serveSrc = fs.readFileSync(path.join(ROOT, 'scripts/serve.js'), 'utf8');

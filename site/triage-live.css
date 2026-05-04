@@ -56,9 +56,9 @@
 }
 
 .active-scenario .muted { color: var(--panel-text-2); font-size: 13px; line-height: 1.5; }
-.active-scenario .params { display: grid; grid-template-columns: 140px 1fr; gap: 8px; margin-top: 12px; font-size: 12px; }
-.active-scenario .params dt { font-family: var(--ff-mono); color: var(--panel-text-3); }
-.active-scenario .params dd { margin: 0; color: var(--panel-text-2); }
+.active-scenario .stem { color: var(--ink); font-size: 17px; line-height: 1.6; margin: 4px 0 14px; font-weight: 500; }
+.active-scenario .stem-hint { color: var(--panel-text-3); font-size: 12px; margin-bottom: 6px; }
+.active-scenario .panel-head .title { font-size: 18px; font-weight: 700; }
 
 .scratchpad {
     display: grid;
@@ -169,9 +169,8 @@
     font-size: 13px;
 }
 .messages:empty::before {
-    content: "// no turns yet — assistant has fresh memory each turn";
-    font-family: var(--ff-mono);
-    font-size: 11px;
+    content: "your tutor will reply here.";
+    font-size: 12px;
     color: var(--panel-text-3);
 }
 .msg {

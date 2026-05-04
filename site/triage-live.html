@@ -21,7 +21,7 @@
     </nav>
     <div class="status">
       <span class="dot" id="cap-dot"></span>
-      <span class="status-label" id="cap-label">checking…</span>
+      <span class="status-label" id="cap-label">getting ready…</span>
     </div>
   </header>
 
@@ -38,28 +38,28 @@
 
     <section class="triage-stage">
       <div class="active-scenario panel" id="active-scenario">
-        <div class="panel-head"><span class="title">no scenario selected</span><span class="meta">pick one from the left</span></div>
-        <div class="muted">this is your scratchpad — the assistant places differentials, recommendations, vitals, plans, and warnings as cards here. each turn it sees only the current screen, not the chat history.</div>
-        <div class="muted small" style="margin-top:8px">keys: <kbd>j</kbd>/<kbd>k</kbd> next/prev · <kbd>c</kbd> clear · <kbd>/</kbd> focus prompt · <kbd>Ctrl+Enter</kbd> send</div>
+        <div class="panel-head"><span class="title">pick a case to begin</span><span class="meta">choose one from the list</span></div>
+        <div class="muted">work the case on this board: write your differentials, investigations, and plan as cards, then submit for grading.</div>
+        <div class="muted small" style="margin-top:8px">shortcuts: <kbd>j</kbd>/<kbd>k</kbd> next/prev case · <kbd>c</kbd> clear board · <kbd>/</kbd> focus reply · <kbd>Ctrl+Enter</kbd> send</div>
       </div>
       <div class="scratchpad" id="scratchpad"></div>
     </section>
 
     <aside class="triage-chat" id="chat-pane">
       <div class="model-bay panel rail-purple">
-        <div class="panel-head"><span class="title">model</span><span class="meta" id="model-status">idle</span></div>
-        <div class="muted" id="model-detail">runs entirely in your browser via WebGPU. one-time download ≈ 2GB. cached after first load.</div>
-        <button class="run-btn" id="load-llm">load LLM (≈2GB)</button>
+        <div class="panel-head"><span class="title">study assistant</span><span class="meta" id="model-status">offline</span></div>
+        <div class="muted" id="model-detail">your private in-browser tutor. one-time setup the first time you turn it on.</div>
+        <button class="run-btn" id="load-llm">turn on assistant</button>
         <div class="progress" id="progress" hidden><div class="progress-fill" id="progress-fill"></div></div>
         <div class="muted small" id="progress-text"></div>
       </div>
       <div class="messages" id="messages"></div>
       <div class="composer">
-        <textarea id="prompt" placeholder="ask the assistant — e.g. 'plot the most likely differentials for this patient'" rows="3"></textarea>
+        <textarea id="prompt" placeholder="reply to your tutor — e.g. 'add differential: acute coronary syndrome'" rows="3"></textarea>
         <div class="composer-row">
           <button class="run-btn" id="send">send</button>
-          <button class="chip" id="clear-screen">clear screen</button>
-          <button class="chip" id="simulate">simulate (no LLM)</button>
+          <button class="chip" id="clear-screen">clear board</button>
+          <button class="chip" id="simulate">use offline tutor</button>
           <button class="chip" id="submit-grading">submit for grading</button>
         </div>
       </div>

@@ -148,15 +148,17 @@ function ce(tag, attrs = {}, ...kids) {
 }
 
 async function checkCapability() {
+    console.log('[triage-live] boot', { ua: navigator.userAgent, isolated: self.crossOriginIsolated, sab: typeof SharedArrayBuffer !== 'undefined' });
     if (DEBUG_WEBGPU) {
         debugLog('boot', { ua: navigator.userAgent, isolated: self.crossOriginIsolated, sab: typeof SharedArrayBuffer !== 'undefined' });
     }
     if (!navigator.gpu) {
         state.capability = 'unsupported';
         els.capDot.className = 'dot warn';
-        els.capLabel.textContent = 'WebGPU unavailable';
+        els.capLabel.textContent = 'offline tutor only';
         els.loadLLM.disabled = true;
-        els.modelDetail.textContent = 'this browser does not expose navigator.gpu — try Chrome 113+ or Edge 113+. you can still use the simulate button below.';
+        els.modelDetail.textContent = 'your browser can’t run the in-browser tutor. you can still use the offline tutor below.';
+        console.log('[triage-live] capability: gpu absent — offline tutor only');
         return;
     }
     try {
@@ -169,13 +171,18 @@ async function checkCapability() {
         state.capability = 'webgpu';
         state.gpuInfo = { features, fp16, info };
         els.capDot.className = 'dot ok';
-        els.capLabel.textContent = `WebGPU ready${fp16 ? ' · fp16' : ''}`;
+        els.capLabel.textContent = 'tutor available';
+        console.log('[triage-live] adapter', { features, fp16, info });
         debugLog('adapter', { features, fp16, info: { vendor: info.vendor, architecture: info.architecture, device: info.device } });
+        if (DEBUG_WEBGPU) {
+            els.modelDetail.textContent = `adapter: ${info.vendor || '?'} ${info.architecture || ''} · features: ${features.length} · fp16: ${fp16}`;
+        }
     } catch (e) {
         state.capability = 'unsupported';
         els.capDot.className = 'dot warn';
-        els.capLabel.textContent = 'no GPU adapter';
+        els.capLabel.textContent = 'offline tutor only';
         els.loadLLM.disabled = true;
+        console.warn('[triage-live] adapter-error', e);
         debugLog('adapter-error', String(e));
     }
 }
@@ -235,10 +242,13 @@ function renderFilterBar() {
 function renderStats() {
     if (!els.statsRow) return;
     const sessions = state.sessions || {};
-    const touched = Object.keys(sessions).length;
+    const attempted = Object.keys(sessions).length;
     let totalCards = 0;
     for (const id of Object.keys(sessions)) totalCards += (sessions[id] || []).length;
-    els.statsRow.textContent = `// ${state.scenarios.length} scenarios · ${touched} touched · ${totalCards} cards placed`;
+    const last = state.lastGrade != null ? `${state.lastGrade}%` : '—';
+    const streak = state.streak || 0;
+    els.statsRow.textContent = `${attempted} attempted · streak ${streak} · last grade ${last}`;
+    console.log('[triage-live] stats', { totalScenarios: state.scenarios.length, attempted, totalCards, lastGrade: state.lastGrade, streak });
 }
 
 function renderScenarios() {
@@ -247,11 +257,11 @@ function renderScenarios() {
     const bySubject = {};
     for (const s of vis) (bySubject[s.subject] ||= []).push(s);
     if (vis.length === 0) {
-        els.list.append(ce('div', { class: 'label' }, '// no scenarios match filter'));
+        els.list.append(ce('div', { class: 'label' }, 'no cases match these filters'));
         return;
     }
     for (const [subj, items] of Object.entries(bySubject)) {
-        els.list.append(ce('div', { class: 'label', style: 'margin-top:14px' }, `// ${subj} (${items.length})`));
+        els.list.append(ce('div', { class: 'label', style: 'margin-top:14px' }, `${subj} (${items.length})`));
         for (const sc of items) {
             const hasSession = state.sessions[sc.id] && state.sessions[sc.id].length > 0;
             els.list.append(ce('div', {
@@ -297,8 +307,8 @@ function renderActive() {
     const sc = currentScenario();
     if (!sc) {
         els.activeScenario.append(
-            ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, 'no scenario selected'), ce('span', { class: 'meta' }, 'pick one from the left')),
-            ce('div', { class: 'muted' }, 'this is your scratchpad — the assistant places differentials, recommendations, vitals, plans, and warnings as cards here. each turn it sees only the current screen, not the chat history.')
+            ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, 'pick a case to begin'), ce('span', { class: 'meta' }, 'choose one from the list')),
+            ce('div', { class: 'muted' }, 'work the case on this board: write your differentials, investigations, and plan as cards, then submit for grading.')
         );
         els.activeScenario.className = 'active-scenario panel';
         return;
@@ -329,11 +339,12 @@ function renderActive() {
             send(true).then(() => renderActive());
         } },
         ...(ready ? {} : { disabled: 'true' })
-    }, state.phase === 'graded' ? 'graded — pick another scenario' : 'submit for grading');
+    }, state.phase === 'graded' ? 'graded — pick another case' : 'submit for grading');
+    const phaseLabel = state.phase === 'asking' ? 'working the case' : state.phase === 'grading' ? 'grading' : state.phase === 'graded' ? 'graded' : state.phase;
     els.activeScenario.append(
-        ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} · phase: ${state.phase}`)),
-        ce('div', { class: 'muted', style: 'font-size:14px;line-height:1.55;margin-bottom:12px' }, stem),
-        ce('div', { class: 'muted small', style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-3);margin-bottom:6px' }, '// commit your work as cards — atoms revealed only after grading'),
+        ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} · ${phaseLabel}`)),
+        ce('div', { class: 'stem' }, stem),
+        ce('div', { class: 'stem-hint' }, 'write your differentials, investigations, and plan as cards below — the answer key stays hidden until you submit.'),
         checklistEl,
         gradeBtn
     );
@@ -346,7 +357,7 @@ function currentScenario() {
 function renderScratchpad() {
     els.scratchpad.innerHTML = '';
     if (state.cards.length === 0) {
-        els.scratchpad.append(ce('div', { class: 'scratchpad-empty' }, 'scratchpad empty — ask the assistant to plot differentials, suggest a workup, or flag warnings'));
+        els.scratchpad.append(ce('div', { class: 'scratchpad-empty' }, 'your board is empty — type "add differential: …", "add investigation: …", or "add plan: …" in the reply box to commit your answer'));
         return;
     }
     for (const c of state.cards) {
@@ -467,15 +478,16 @@ state.debugLog = debugLog;
 
 function showWebgpuError(reason, stack) {
     state.llmStatus = 'error';
-    els.modelStatus.textContent = 'WebGPU error';
-    els.modelDetail.textContent = 'WebGPU init failed: ' + reason;
+    els.modelStatus.textContent = 'offline';
+    els.modelDetail.textContent = 'couldn’t load the in-browser tutor — switching to offline mode.';
     els.progress.hidden = false;
     els.progressFill.style.width = '0%';
-    els.progressText.textContent = reason;
+    els.progressText.textContent = 'using offline tutor';
     els.loadLLM.disabled = false;
     state.loadStarted = false;
-    state.messages.push({ role: 'system', content: `WebGPU error: ${reason}${stack ? '\n\n' + stack : ''}` });
+    state.messages.push({ role: 'system', content: 'your tutor is in offline mode — you can still work cases.' });
     renderMessages();
+    console.error('[triage-live] webgpu error', reason, stack);
     debugLog('error', { reason, stack });
 }
 state.showWebgpuError = showWebgpuError;
@@ -502,24 +514,30 @@ function spawnWorker() {
 
 function onWorkerMessage(e) {
     const m = e.data || {};
+    console.log('[triage-live] worker', m.status, m);
     debugLog('worker-msg', m);
     if (m.status === 'gpu-info') {
-        els.modelDetail.textContent = `adapter: ${m.adapter?.vendor || '?'} ${m.adapter?.architecture || ''} · features: ${m.features.length} · fp16: ${m.fp16} · dtype: ${m.dtype}`;
+        if (DEBUG_WEBGPU) {
+            els.modelDetail.textContent = `adapter: ${m.adapter?.vendor || '?'} ${m.adapter?.architecture || ''} · features: ${m.features.length} · fp16: ${m.fp16} · dtype: ${m.dtype}`;
+        } else {
+            els.modelDetail.textContent = 'preparing your private tutor — this happens once.';
+        }
         return;
     }
     if (m.status === 'loading') {
-        els.progressText.textContent = `loading ${m.stage}…`;
+        els.progressText.textContent = 'loading study assistant…';
     } else if (m.status === 'progress') {
         const p = m.payload || {};
         const pct = p.progress != null ? Math.round(p.progress) : 0;
         els.progressFill.style.width = pct + '%';
-        if (p.file) els.progressText.textContent = `${p.status || ''} ${p.file} — ${pct}%`;
+        els.progressText.textContent = `loading study assistant… ${pct}%`;
     } else if (m.status === 'ready') {
         state.workerReady = true;
         state.llmStatus = 'ready';
         els.modelStatus.textContent = 'ready';
         els.progressFill.style.width = '100%';
-        els.progressText.textContent = 'cached locally — ready';
+        els.progressText.textContent = 'your tutor is ready';
+        els.modelDetail.textContent = 'your private tutor is loaded and ready.';
     } else if (m.status === 'start') {
         state.streamBuffer = '';
         const last = state.messages[state.messages.length - 1];
@@ -549,20 +567,22 @@ async function loadLLM() {
     if (state.loadStarted) return;
     state.loadStarted = true;
     state.llmStatus = 'loading';
-    els.modelStatus.textContent = 'loading…';
+    els.modelStatus.textContent = 'starting…';
     els.loadLLM.disabled = true;
     els.progress.hidden = false;
-    els.progressText.textContent = 'spawning worker…';
+    els.progressText.textContent = 'loading study assistant…';
+    console.log('[triage-live] starting tutor');
     try {
         const w = spawnWorker();
         if (!w) throw new Error('worker unavailable');
         w.postMessage({ type: 'load' });
     } catch (e) {
         state.llmStatus = 'error';
-        els.modelStatus.textContent = 'error';
-        els.progressText.textContent = 'failed: ' + e.message + ' — use simulate instead';
+        els.modelStatus.textContent = 'offline';
+        els.progressText.textContent = 'using offline tutor';
         els.loadLLM.disabled = false;
         state.loadStarted = false;
+        console.error('[triage-live] tutor load failed', e);
     }
 }
 
@@ -601,7 +621,7 @@ async function send(useSim = false) {
         try { await generateLLM(txt); }
         catch (e) {
             showWebgpuError(e.message || String(e), e.stack || '');
-            state.messages.push({ role: 'system', content: 'WebGPU generation failed — click "simulate (no LLM)" to use the offline fallback.' });
+            state.messages.push({ role: 'system', content: 'tutor went offline — click "use offline tutor" to continue.' });
             renderMessages();
         }
     } else {
@@ -659,7 +679,10 @@ function simulateAssistant(userText) {
             blocks.push('```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `key-rec-${Date.now()}`, kind: 'recommendation', title: 'canonical plan', body: ex.recommendation.slice(0, 240) } }) + '\n```');
         }
         const score = atoms.length ? Math.round(100 * hits / atoms.length) : 0;
-        blocks.push(`\n— ${hits}/${atoms.length} canonical atoms matched (${score}%). ${misses ? 'gaps added as note cards above.' : 'good cover.'}`);
+        blocks.push(`\n— ${hits} of ${atoms.length} key topics matched (${score}%). ${misses ? 'gaps shown as notes on your board.' : 'good coverage.'}`);
+        state.lastGrade = score;
+        state.streak = score >= 70 ? (state.streak || 0) + 1 : 0;
+        renderStats();
         state.phase = 'graded';
         return blocks.join('\n');
     }
