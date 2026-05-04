@@ -153,17 +153,32 @@ const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriat
     t('worker imports streaming primitives + correct model + posts streamed updates', () => {
         assert.match(workerSrc, /TextStreamer/);
         assert.match(workerSrc, /InterruptableStoppingCriteria/);
-        assert.match(workerSrc, /onnx-community\/gemma-4-e2b-it-ONNX/);
+        assert.match(workerSrc, /onnx-community\/gemma-4-E2B-it-ONNX/);
+        assert.match(workerSrc, /Gemma4ForConditionalGeneration/);
+        assert.match(workerSrc, /AutoProcessor/);
+        assert.match(workerSrc, /use_external_data_format:\s*true/);
         assert.match(workerSrc, /device:\s*'webgpu'/);
         assert.match(workerSrc, /status:\s*'update'/);
         assert.match(workerSrc, /apply_chat_template/);
+        assert.match(workerSrc, /shader-f16/);
+        assert.match(workerSrc, /@huggingface\/transformers@4\./);
     });
-    t('triage-live spawns worker (type=module) + simulate fallback on worker error', () => {
+    t('triage-live surfaces webgpu errors + spawns worker (type=module) + debug panel', () => {
         assert.match(liveSrc, /new Worker\(['"]\.\/triage-llm-worker\.js['"],\s*\{\s*type:\s*['"]module['"]/);
         assert.match(liveSrc, /workerReady/);
-        assert.match(liveSrc, /falling back to simulate/);
+        assert.match(liveSrc, /showWebgpuError/);
+        assert.match(liveSrc, /WebGPU error/);
+        assert.match(liveSrc, /DEBUG_WEBGPU/);
+        assert.match(liveSrc, /webgpu-debug/);
         assert.match(liveSrc, /onWorkerMessage/);
         assert.match(liveSrc, /'interrupt'/);
+        assert.ok(!/falling back to simulate/.test(liveSrc), 'silent simulate fallback must be removed');
+    });
+    t('serve.js sets COOP/COEP isolation headers', () => {
+        const serveSrc = fs.readFileSync(path.join(ROOT, 'scripts/serve.js'), 'utf8');
+        assert.match(serveSrc, /cross-origin-opener-policy[^,]*same-origin/i);
+        assert.match(serveSrc, /cross-origin-embedder-policy[^,]*require-corp/i);
+        assert.match(serveSrc, /cross-origin-resource-policy/i);
     });
 
     t('simulateAssistant asking branch never auto-emits differential add_card', () => {

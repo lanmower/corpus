@@ -148,6 +148,9 @@ function ce(tag, attrs = {}, ...kids) {
 }
 
 async function checkCapability() {
+    if (DEBUG_WEBGPU) {
+        debugLog('boot', { ua: navigator.userAgent, isolated: self.crossOriginIsolated, sab: typeof SharedArrayBuffer !== 'undefined' });
+    }
     if (!navigator.gpu) {
         state.capability = 'unsupported';
         els.capDot.className = 'dot warn';
@@ -157,16 +160,23 @@ async function checkCapability() {
         return;
     }
     try {
-        const a = await navigator.gpu.requestAdapter();
+        const a = await navigator.gpu.requestAdapter({ powerPreference: 'high-performance' });
         if (!a) throw new Error('no adapter');
+        const features = Array.from(a.features || []);
+        const fp16 = features.includes('shader-f16');
+        let info = {};
+        try { info = await a.requestAdapterInfo?.() || {}; } catch {}
         state.capability = 'webgpu';
+        state.gpuInfo = { features, fp16, info };
         els.capDot.className = 'dot ok';
-        els.capLabel.textContent = 'WebGPU ready';
+        els.capLabel.textContent = `WebGPU ready${fp16 ? ' · fp16' : ''}`;
+        debugLog('adapter', { features, fp16, info: { vendor: info.vendor, architecture: info.architecture, device: info.device } });
     } catch (e) {
         state.capability = 'unsupported';
         els.capDot.className = 'dot warn';
         els.capLabel.textContent = 'no GPU adapter';
         els.loadLLM.disabled = true;
+        debugLog('adapter-error', String(e));
     }
 }
 
@@ -432,18 +442,56 @@ function buildSnapshot(phase) {
 }
 state.buildSnapshot = buildSnapshot;
 
+const DEBUG_WEBGPU = new URLSearchParams(location.search).has('debug') && location.search.includes('webgpu');
+state.debugWebgpu = DEBUG_WEBGPU;
+
+function debugPanel() {
+    let p = document.getElementById('webgpu-debug');
+    if (!p) {
+        p = document.createElement('pre');
+        p.id = 'webgpu-debug';
+        p.style.cssText = 'position:fixed;right:8px;bottom:8px;max-width:520px;max-height:60vh;overflow:auto;background:#0b0b0b;color:#9ef;border:1px solid #345;padding:10px;font:11px/1.4 ui-monospace,monospace;z-index:9999;border-radius:6px;white-space:pre-wrap;word-break:break-word';
+        document.body.appendChild(p);
+    }
+    return p;
+}
+function debugLog(label, payload) {
+    if (!DEBUG_WEBGPU) return;
+    const p = debugPanel();
+    const line = `[${new Date().toISOString().slice(11,19)}] ${label} ${typeof payload==='string'?payload:JSON.stringify(payload)}\n`;
+    p.textContent += line;
+    p.scrollTop = p.scrollHeight;
+    console.log('[webgpu-debug]', label, payload);
+}
+state.debugLog = debugLog;
+
+function showWebgpuError(reason, stack) {
+    state.llmStatus = 'error';
+    els.modelStatus.textContent = 'WebGPU error';
+    els.modelDetail.textContent = 'WebGPU init failed: ' + reason;
+    els.progress.hidden = false;
+    els.progressFill.style.width = '0%';
+    els.progressText.textContent = reason;
+    els.loadLLM.disabled = false;
+    state.loadStarted = false;
+    state.messages.push({ role: 'system', content: `WebGPU error: ${reason}${stack ? '\n\n' + stack : ''}` });
+    renderMessages();
+    debugLog('error', { reason, stack });
+}
+state.showWebgpuError = showWebgpuError;
+
 function spawnWorker() {
     if (state.worker) return state.worker;
     try {
         state.worker = new Worker('./triage-llm-worker.js', { type: 'module' });
         state.worker.addEventListener('message', onWorkerMessage);
         state.worker.addEventListener('error', e => {
-            state.llmStatus = 'error';
-            els.modelStatus.textContent = 'worker error';
-            els.progressText.textContent = 'worker failed: ' + (e.message || 'unknown') + ' — use simulate instead';
-            els.loadLLM.disabled = false;
-            state.loadStarted = false;
+            const reason = e.message || `${e.filename || 'worker'}:${e.lineno || '?'}`;
+            showWebgpuError(reason, '');
             state.worker = null;
+        });
+        state.worker.addEventListener('messageerror', e => {
+            showWebgpuError('worker messageerror — module/MIME mismatch?', String(e));
         });
     } catch (e) {
         state.worker = null;
@@ -454,6 +502,11 @@ function spawnWorker() {
 
 function onWorkerMessage(e) {
     const m = e.data || {};
+    debugLog('worker-msg', m);
+    if (m.status === 'gpu-info') {
+        els.modelDetail.textContent = `adapter: ${m.adapter?.vendor || '?'} ${m.adapter?.architecture || ''} · features: ${m.features.length} · fp16: ${m.fp16} · dtype: ${m.dtype}`;
+        return;
+    }
     if (m.status === 'loading') {
         els.progressText.textContent = `loading ${m.stage}…`;
     } else if (m.status === 'progress') {
@@ -487,11 +540,7 @@ function onWorkerMessage(e) {
         if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
     } else if (m.status === 'error') {
         state.generating = false;
-        const last = state.messages[state.messages.length - 1];
-        const msg = `(worker error) ${m.error}`;
-        if (last && last.role === 'assistant' && !last.content) last.content = msg;
-        else state.messages.push({ role: 'assistant', content: msg });
-        renderMessages();
+        showWebgpuError(m.error || 'unknown worker error', m.stack || '');
         if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
     }
 }
@@ -551,10 +600,9 @@ async function send(useSim = false) {
     if (useLLM) {
         try { await generateLLM(txt); }
         catch (e) {
-            const reply = `(error) ${e.message} — falling back to simulate.\n\n` + simulateAssistant(txt);
-            state.messages.push({ role: 'assistant', content: reply });
+            showWebgpuError(e.message || String(e), e.stack || '');
+            state.messages.push({ role: 'system', content: 'WebGPU generation failed — click "simulate (no LLM)" to use the offline fallback.' });
             renderMessages();
-            dispatchToolCalls(reply);
         }
     } else {
         let reply;
