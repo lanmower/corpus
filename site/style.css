@@ -356,3 +356,27 @@ body {
     border-radius: 6px;
 }
 pre { padding: 14px 18px; overflow: auto; }
+
+
+/* ── SRS review additions ── */
+.progress-bar { height: 6px; background: var(--panel-3); border-radius: 3px; margin-top: 10px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--live)); transition: width .3s ease; }
+.review-actions { flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.review-actions .grade-btn { min-width: 92px; padding: 10px 14px; font-weight: 600; }
+.review-actions .grade-btn[data-score="0"] { border-color: var(--flame); color: var(--flame); }
+.review-actions .grade-btn[data-score="1"],
+.review-actions .grade-btn[data-score="2"] { border-color: var(--warn); }
+.review-actions .grade-btn[data-score="4"],
+.review-actions .grade-btn[data-score="5"] { border-color: var(--green); }
+.review-actions .chip:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.kbd-hint { font-family: var(--ff-mono); font-size: 11px; color: var(--panel-text-3); margin-top: 8px; letter-spacing: 0.04em; }
+.card-source { font-family: var(--ff-mono); font-size: 11px; color: var(--panel-text-3); margin-top: 6px; opacity: 0.8; }
+.forecast { display: flex; align-items: flex-end; gap: 6px; height: 80px; margin-top: 8px; padding: 8px 0; }
+.forecast-day { display: flex; flex-direction: column; align-items: center; flex: 1; gap: 4px; }
+.forecast-bar { width: 100%; min-height: 2px; background: var(--purple); border-radius: 2px 2px 0 0; transition: height .3s ease; }
+.forecast-label { font-family: var(--ff-mono); font-size: 10px; color: var(--panel-text-3); }
+
+@media (max-width: 600px) {
+  .review-actions { gap: 6px; }
+  .review-actions .grade-btn { min-width: 0; flex: 1 1 30%; padding: 12px 6px; font-size: 13px; }
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" class="ds-247420" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>live triage — corpus</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./triage-live.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><span class="brand-glyph">◰</span> corpus<span class="brand-tail">.live-triage</span></div>
+    <nav class="nav">
+      <a href="./index.html" class="navlink">overview</a>
+      <a href="./index.html#subjects" class="navlink">subjects</a>
+      <a href="./index.html#cards" class="navlink">cards</a>
+      <a href="./index.html#triage" class="navlink">triage</a>
+      <a href="./triage-live.html" class="navlink active">live triage</a>
+    </nav>
+    <div class="status">
+      <span class="dot" id="cap-dot"></span>
+      <span class="status-label" id="cap-label">checking…</span>
+    </div>
+  </header>
+
+  <main class="triage-shell">
+    <aside class="triage-side" id="scenario-list"><div class="loading">loading scenarios…</div></aside>
+
+    <section class="triage-stage">
+      <div class="active-scenario panel" id="active-scenario">
+        <div class="panel-head"><span class="title">no scenario selected</span><span class="meta">pick one from the left</span></div>
+        <div class="muted">this is your scratchpad — the assistant places differentials, recommendations, vitals, plans, and warnings as cards here. each turn it sees only the current screen, not the chat history.</div>
+      </div>
+      <div class="scratchpad" id="scratchpad"></div>
+    </section>
+
+    <aside class="triage-chat" id="chat-pane">
+      <div class="model-bay panel rail-purple">
+        <div class="panel-head"><span class="title">model</span><span class="meta" id="model-status">idle</span></div>
+        <div class="muted" id="model-detail">runs entirely in your browser via WebGPU. one-time download ≈ 2GB. cached after first load.</div>
+        <button class="run-btn" id="load-llm">load LLM (≈2GB)</button>
+        <div class="progress" id="progress" hidden><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="muted small" id="progress-text"></div>
+      </div>
+      <div class="messages" id="messages"></div>
+      <div class="composer">
+        <textarea id="prompt" placeholder="ask the assistant — e.g. 'plot the most likely differentials for this patient'" rows="3"></textarea>
+        <div class="composer-row">
+          <button class="run-btn" id="send">send</button>
+          <button class="chip" id="clear-screen">clear screen</button>
+          <button class="chip" id="simulate">simulate (no LLM)</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+</div>
+<script type="module" src="./triage-live.js"></script>
+</body>
+</html>
