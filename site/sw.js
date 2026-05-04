@@ -1,5 +1,5 @@
 // corpus offline cache — precaches shell + manifest + shards on install.
-const CACHE = 'corpus-v1';
+const CACHE = 'corpus-v2';
 const SHELL = [
     './', './index.html', './style.css', './app.js', './progress.js', './theme.js', './search.js', './srs.js',
     './triage-live.html', './triage-live.css', './triage-live.js',
@@ -47,6 +47,10 @@ self.addEventListener('fetch', e => {
             }
             return r;
         } catch (err) {
+            if (e.request.mode === 'navigate' || (e.request.headers.get('accept') || '').includes('text/html')) {
+                const shell = await cache.match('./') || await cache.match('./index.html');
+                if (shell) return shell;
+            }
             return new Response('offline', { status: 503, statusText: 'offline' });
         }
     })());
