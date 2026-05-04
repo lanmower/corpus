@@ -62,3 +62,5 @@ Totals across all 8 subjects:
 - No GitHub remote (local-only repo)
 - Current branch: master
 - Main branch: main
+
+Unwitnessed gap (carry-forward): physical browser click-event wiring on `site/triage-live.html` was not witnessed in the session that built it — `exec:browser` could not bind port 9225 in that environment. Node-side coverage is complete (HTML/JS/CSS served, `PERSIST_KEY`/`persistActive`/j-k handlers present, 68/68 scenarios over HTTP, tool-dispatch + localStorage round-trip simulated, rheumatology schema-fix verified). Re-witness from a normal browser env: load the page, click a scenario, press j/k, send a chat message, confirm localStorage persistence and DOM updates fire.
