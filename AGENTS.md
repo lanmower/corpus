@@ -20,9 +20,20 @@ Per-subject files at D:/corpus root:
 ## Observability Website
 
 Static site at `D:/corpus/site/`:
-- Files: `index.html`, `style.css`, `app.js`, `srs.js`
+- Files: `index.html`, `style.css`, `app.js`, `srs.js`, `triage-live.{html,js,css}`
 - Data: `data/` shards + `data/manifest.json`
 - Server: `node D:/corpus/scripts/serve.js` listens on port 8765
+
+## Live Triage System
+
+Standalone page at `site/triage-live.html` (linked from main nav). 3-pane layout: scenario list (left, with subject-filter chips and stats row), active scenario + scratchpad (center), model bay + chat composer (right).
+
+- 68 scenarios across 8 subjects, all canonicalized at build time to `{name:str, description:str, parameters:obj, examples:arr, atom_ids:arr}`. `scripts/build_data.js loadTriage` coerces alt-shape (rheumatology `title`/`scenarios[].variant`) and stringified flow-map params (cardiology) into the canonical shape.
+- LLM: lazy-loads `@huggingface/transformers@3.5.0` and `onnx-community/gemma-4-e2b-it-ONNX` on WebGPU when the user opts in. Tool calls (`add_card`, `remove_card`, `highlight_card`, `clear_screen`) parsed from fenced ` ```tool ` blocks; each turn rebuilds a fresh system prompt from the active scenario + current scratchpad — chat history pruned to 1 user + 1 assistant message after every turn.
+- Simulate path: deterministic offline assistant for plot/plan/vitals/warn keywords. Used as the offline witness.
+- Persistence: `corpus.triage.v1` localStorage key, schema-versioned `{version, sessions:{scenarioId:cards[]}, savedAt}`. Restored on `selectScenario`. Export downloads JSON; import re-hydrates.
+- Keyboard: `j`/`k` next/prev scenario, `c` clear scratchpad, `/` focus prompt, `Ctrl+Enter` send.
+- Accessibility: `role=button` + `tabindex=0` on scenario rows, `aria-pressed` on chips, focus-visible outlines, mobile single-column at ≤1100px.
 
 ## SRS Review System
 
