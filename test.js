@@ -159,10 +159,20 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(printBlock); assert.match(printBlock[0], /\.topbar[\s\S]*display:\s*none/);
         assert.match(styleCss, /\[data-theme="dark"\][\s\S]*?--paper:\s*#1A1714/);
     });
-    t('a11y: focus-visible + 360+768 mobile + ≥6 aria-labels in app.js', () => {
+    t('a11y+responsive: focus-visible + 600/1024 breakpoints + tablet+phone rules + triage-live stacks + tap-target floors + aria-labels', () => {
         assert.match(styleCss, /:focus-visible\s*\{/);
-        assert.match(styleCss, /@media \(max-width: 480px\)/);
-        assert.match(styleCss, /@media \(max-width: 768px\)/);
+        assert.match(styleCss, /@media \(max-width: 600px\)/);
+        assert.match(styleCss, /@media \(max-width: 1024px\)/);
+        assert.match(styleCss, /@media \(min-width: 601px\) and \(max-width: 1024px\)/);
+        assert.match(styleCss, /\.review-actions \.grade-btn[\s\S]{0,160}min-height: 48px/);
+        assert.match(styleCss, /\.search-palette-inner \{ width: 96vw/);
+        assert.match(styleCss, /\.param-row \{ grid-template-columns: 1fr/);
+        assert.match(styleCss, /\.run-btn, \.grade-btn \{ min-height: 44px/);
+        assert.match(styleCss, /\.navlink \{[\s\S]{0,260}min-height: 36px/);
+        const triageCss = READ('site/triage-live.css');
+        assert.match(triageCss, /@media \(max-width: 900px\)/);
+        assert.match(triageCss, /@media \(min-width: 901px\) and \(max-width: 1199px\)/);
+        assert.match(triageCss, /\.composer-row \.run-btn[\s\S]{0,80}min-height: 44px/);
         assert.ok((appSrc.match(/aria-label/g) || []).length >= 6);
     });
     t('friendly-grades + mastery + today + search + theme + bumpCase + titles + onboarding + hash-subroutes + body + sw + og + empty-state', () => {
