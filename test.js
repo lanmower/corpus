@@ -35,15 +35,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     console.log('# scheduler+persistence+stats');
     const now = Date.UTC(2026, 0, 1, 12, 0, 0);
     t('SM2+learning+leech+history cap + fuzz + persist+migrate + export/import + stats + forecast', () => {
-        let n = srs.calcSM2(srs.defaultCardState(), 1);
-        assert.strictEqual(n.repetitions, 0); assert.strictEqual(n.interval, 1);
-        n = srs.calcSM2(srs.defaultCardState(), 5); assert.ok(n.easeFactor > 2.5);
-        n = srs.calcSM2({ ...srs.defaultCardState(), repetitions: 1, interval: 1 }, 5);
-        assert.strictEqual(n.interval, 6);
+        let n = srs.calcSM2(srs.defaultCardState(), 1); assert.strictEqual(n.repetitions, 0); assert.strictEqual(n.interval, 1);
+        assert.ok(srs.calcSM2(srs.defaultCardState(), 5).easeFactor > 2.5);
+        assert.strictEqual(srs.calcSM2({ ...srs.defaultCardState(), repetitions: 1, interval: 1 }, 5).interval, 6);
         let s = srs.schedule(srs.defaultCardState(), 3, now, () => 0.5);
         assert.strictEqual(s.phase, 'learning'); assert.strictEqual(s.learningStep, 1);
-        s = srs.schedule({ ...srs.defaultCardState(), phase: 'learning', learningStep: 1 }, 4, now, () => 0.5);
-        assert.strictEqual(s.phase, 'review');
+        assert.strictEqual(srs.schedule({ ...srs.defaultCardState(), phase: 'learning', learningStep: 1 }, 4, now, () => 0.5).phase, 'review');
         s = srs.schedule({ ...srs.defaultCardState(), phase: 'review', lapses: 7 }, 0, now);
         assert.strictEqual(s.lapses, 8); assert.strictEqual(s.isLeech, true);
         let h = srs.defaultCardState();
@@ -55,8 +52,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         global.localStorage.clear();
         global.localStorage.setItem('corpus.srs.states', JSON.stringify({ 'legacy': { easeFactor: 2.5, interval: 5, repetitions: 2, dueDate: '2026-01-01', lastScore: 4 } }));
         assert.strictEqual(srs.loadStates()['legacy'].interval, 5);
-        global.localStorage.clear();
-        srs.saveStates({ 'x': { ...srs.defaultCardState(), interval: 13 } });
+        global.localStorage.clear(); srs.saveStates({ 'x': { ...srs.defaultCardState(), interval: 13 } });
         const blob = srs.exportState(); global.localStorage.clear(); srs.importState(blob);
         assert.strictEqual(srs.loadStates()['x'].interval, 13);
         global.localStorage.clear();
@@ -120,7 +116,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             }
         }
     });
-    t('progress.js: streak rolls, day rollover archives, goal+case bumps persist', () => {
+    t('progress.js: streak rolls, rollover archives, 2-day-gap resets, goal+case bumps persist', () => {
         global.localStorage.clear();
         let p = progress.load();
         assert.strictEqual(p.streak, 0); assert.strictEqual(p.dailyGoal, 30);
@@ -132,6 +128,11 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(p2.history.length >= 1); assert.strictEqual(p2.todayGraded, 0);
         progress.bumpGraded(1);
         assert.strictEqual(progress.load().streak, p.streak + 1);
+        // 2-day gap resets streak to 1
+        const twoAgo = new Date(Date.now() - 2 * 86400000).toISOString().slice(0, 10);
+        global.localStorage.setItem('corpus.progress.v1', JSON.stringify({ ...progress.load(), lastActiveDate: twoAgo, todayDate: new Date().toISOString().slice(0, 10), streak: 7 }));
+        progress.bumpGraded(1);
+        assert.strictEqual(progress.load().streak, 1);
         progress.setGoal(50); assert.strictEqual(progress.load().dailyGoal, 50);
         progress.bumpCase(2); assert.strictEqual(progress.load().todayCases, 2);
     });
@@ -164,19 +165,19 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(styleCss, /@media \(max-width: 768px\)/);
         assert.ok((appSrc.match(/aria-label/g) || []).length >= 6);
     });
-    t('review uses friendly 1-4 grades; debug exposes 0-5; mastery+today+search+theme+bumpCase wired', () => {
-        assert.match(appSrc, /FRIENDLY_GRADES/);
-        assert.match(appSrc, /friendly:\s*1[\s\S]{0,40}smscore:\s*0/);
-        assert.match(appSrc, /friendly:\s*4[\s\S]{0,40}smscore:\s*5/);
-        assert.match(appSrc, /space=reveal · 1=again · 2=hard/);
-        assert.match(appSrc, /corpus\.guide\.v1/);
-        assert.match(appSrc, /loadGuideTicks|guide-tick/);
-        assert.match(appSrc, /renderToday/);
-        assert.match(appSrc, /day streak/);
-        assert.match(appSrc, /mountSearchPalette|searchPaletteApi/);
-        assert.match(appSrc, /makeToggleButton/);
-        assert.match(liveSrc, /progress\.bumpCase/);
-        assert.match(liveSrc, /import \* as progress/);
+    t('friendly-grades + mastery + today + search + theme + bumpCase + titles + onboarding + hash-subroutes + body + sw + og + empty-state', () => {
+        const swSrc = READ('site/sw.js');
+        for (const re of [/FRIENDLY_GRADES/, /friendly:\s*1[\s\S]{0,40}smscore:\s*0/, /friendly:\s*4[\s\S]{0,40}smscore:\s*5/,
+            /space=reveal · 1=again · 2=hard/, /corpus\.guide\.v1/, /loadGuideTicks|guide-tick/, /renderToday/, /day streak/,
+            /mountSearchPalette|searchPaletteApi/, /makeToggleButton/, /setDocTitle|document\.title\s*=/, /ROUTE_TITLES/,
+            /isFirstVisit|onboarding/, /route === 'cards' && subject/, /route === 'review' && subject/,
+            /renderMarkdown|guide-body/, /serviceWorker\.register\(['"]\.\/sw\.js/, /navigator\.onLine|window\.addEventListener\(['"]offline/,
+            /no cards match|empty-state/]) assert.match(appSrc, re);
+        for (const re of [/progress\.bumpCase/, /import \* as progress/]) assert.match(liveSrc, re);
+        for (const re of [/caches\.open/, /addEventListener\(['"]install/, /addEventListener\(['"]fetch/]) assert.match(swSrc, re);
+        for (const re of [/og:title/, /og:description/, /og:type/, /rel="icon"/]) { assert.match(indexHtml, re); assert.match(liveHtml, re); }
+        for (const re of [/\.empty-state/, /\.skeleton/, /\.dot\.offline/]) assert.match(styleCss, re);
+        for (const sh of SHARDS) if (sh.guide) assert.ok(typeof sh.guide.body === 'string' && sh.guide.body.length > 100, `guide.body missing for ${sh.subject}`);
     });
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);

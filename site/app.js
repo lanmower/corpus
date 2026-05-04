@@ -53,12 +53,22 @@ function el(tag, attrs = {}, ...kids) {
 }
 
 const ROUTES = ['home', 'today', 'subjects', 'review', 'cards', 'triage', 'stats', 'subject'];
+const ROUTE_TITLES = { home: 'home', today: "today's plan", subjects: 'subjects', review: 'review',
+    cards: 'cards', triage: 'cases', stats: 'stats', subject: 'subject' };
+function setDocTitle(route, subject) {
+    const cap = s => s ? s[0].toUpperCase() + s.slice(1) : '';
+    const main = subject ? cap(subject) : cap(ROUTE_TITLES[route] || route);
+    document.title = `${main} · corpus`;
+}
 function go(route, subject) {
     if (!ROUTES.includes(route)) route = 'home';
     state.route = route;
     if (subject !== undefined) state.currentSubject = subject;
+    if (route === 'cards' && subject) state.cardSubjectFilter = subject;
+    if (route === 'review' && subject) { state.reviewSubjectFilter = subject; resetReviewQueue(); }
     document.querySelectorAll('.navlink').forEach(a => a.classList.toggle('active', a.dataset.route === route));
     crumb.textContent = subject ? `${route} › ${subject}` : route;
+    setDocTitle(route, subject);
     progress.setLast(route, subject);
     render();
 }
@@ -113,10 +123,20 @@ function chipStat(num, lbl) {
     return el('div', { class: 'stat-chip' }, el('div', { class: 'num' }, num), el('div', { class: 'lbl' }, lbl));
 }
 
+function isFirstVisit() {
+    try { return !localStorage.getItem('corpus.progress.v1') && !localStorage.getItem('corpus.guide.v1') && !localStorage.getItem('corpus.srs.states'); }
+    catch { return false; }
+}
+
 function renderHome() {
     const p = progress.load();
     const due = totalDueAll();
     const last = p.lastSubject;
+    if (isFirstVisit()) {
+        stage.append(el('div', { class: 'panel rail-mascot onboarding', id: 'onboarding' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'welcome'), 'first time here'),
+            el('p', {}, "this is your medical study workspace. pick a subject below to start, or press Ctrl+K to search across cards, cases, and guide sections. your progress lives in this browser — no account needed.")));
+    }
     const lastCTA = last ? el('a', { class: 'cta cta-primary', href: `#subject/${last}`,
         on: { click: e => { e.preventDefault(); go('subject', last); } } },
         el('div', { class: 'cta-label' }, 'continue where you left off'),
@@ -314,6 +334,10 @@ async function renderSubject() {
         )
     );
 
+    const guideBodyPanel = shard.guide?.body ? el('div', { class: 'panel guide-body-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study guide — full text'), `${shard.guide.lines} lines`),
+        el('div', { class: 'guide-body markdown', html: renderMarkdown(shard.guide.body) })
+    ) : null;
     const cardsPanel = el('div', { class: 'panel rail-' + (meta?.cat || 'green') },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'flashcards'), `${shard.cards.length} total · click to flip`),
         ...shard.cards.slice(0, 20).map(c => buildFlashcard(c, meta?.cat || 'green'))
@@ -331,9 +355,40 @@ async function renderSubject() {
             el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work it')
         ))) : null;
 
-    const right = el('div', {}, cardsPanel, triagePanel);
+    const right = el('div', {}, guideBodyPanel, cardsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
     stage.append(wrap);
+}
+
+function renderMarkdown(md) {
+    if (!md) return '';
+    const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const lines = md.split('\n');
+    const out = [];
+    let inList = false, inCode = false, para = [];
+    const flushPara = () => { if (para.length) { out.push('<p>' + inline(para.join(' ')) + '</p>'); para = []; } };
+    const flushList = () => { if (inList) { out.push('</ul>'); inList = false; } };
+    function inline(s) {
+        s = esc(s);
+        s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+        s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+        return s;
+    }
+    function slug(t) { return t.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''); }
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (/^```/.test(line)) { flushPara(); flushList(); inCode = !inCode; out.push(inCode ? '<pre><code>' : '</code></pre>'); continue; }
+        if (inCode) { out.push(esc(line)); continue; }
+        const h = line.match(/^(#{1,6})\s+(.+)$/);
+        if (h) { flushPara(); flushList(); const id = `g-${slug(h[2])}-${i}`; out.push(`<h${h[1].length} id="${id}">${inline(h[2])}</h${h[1].length}>`); continue; }
+        const li = line.match(/^[-*]\s+(.+)$/);
+        if (li) { flushPara(); if (!inList) { out.push('<ul>'); inList = true; } out.push('<li>' + inline(li[1]) + '</li>'); continue; }
+        if (line.trim() === '') { flushPara(); flushList(); continue; }
+        para.push(line);
+    }
+    flushPara(); flushList(); if (inCode) out.push('</code></pre>');
+    return out.join('\n');
 }
 
 function buildFlashcard(c, cat) {
@@ -394,6 +449,13 @@ function renderCardList() {
     if (q) all = all.filter(c => (c.front + ' ' + (c.back || '')).toLowerCase().includes(q));
     list.append(el('div', { class: 'panel-head' },
         el('span', { class: 'title' }, `${all.length} cards`), q ? `matching "${q}"` : 'showing first 100'));
+    if (all.length === 0) {
+        list.append(el('div', { class: 'empty-state' },
+            el('div', { class: 'empty-title' }, 'no cards match'),
+            el('div', { class: 'empty-sub' }, q ? `nothing matches "${q}". try a different query, or clear the filter.` : 'no cards available for this filter.'),
+            el('button', { class: 'chip', on: { click: () => { state.cardSearch = ''; state.cardSubjectFilter = 'all';
+                const inp = document.querySelector('.search'); if (inp) inp.value = ''; renderCardList(); } } }, 'clear filter')));
+    }
     for (const c of all.slice(0, 100)) list.append(buildFlashcard(c, c._cat || 'green'));
     state.lastFilteredCount = all.length;
 }
@@ -765,19 +827,40 @@ function mountSearchPalette() {
         });
 }
 
+function updateOnlineStatus() {
+    const dot = document.querySelector('.status .dot');
+    const lbl = document.getElementById('status-label');
+    if (!dot || !lbl) return;
+    if (navigator.onLine) { dot.classList.remove('offline'); dot.classList.add('live'); lbl.textContent = 'ready'; }
+    else { dot.classList.remove('live'); dot.classList.add('offline'); lbl.textContent = 'offline ready'; }
+}
+
+function registerSW() {
+    if (!('serviceWorker' in navigator)) return;
+    navigator.serviceWorker.register('./sw.js').then(reg => log('sw registered', reg.scope))
+        .catch(e => warn('sw register failed', e.message));
+}
+
 (async () => {
     try {
         mountTopbar();
         await loadManifest();
         await loadAllShards();
         mountSearchPalette();
+        registerSW();
+        updateOnlineStatus();
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
         const hash = location.hash.replace('#', '') || 'home';
         const [route, sub] = hash.split('/');
         go(route, sub);
         log('ready', { subjects: state.manifest.subjects.length });
     } catch (e) {
         stage.innerHTML = '';
-        stage.append(el('div', { class: 'panel rail-flame' }, 'failed to load: ' + e.message));
+        stage.append(el('div', { class: 'panel rail-flame error-state' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'failed to load'), 'try refresh'),
+            el('div', {}, e.message),
+            el('button', { class: 'chip', on: { click: () => location.reload() } }, 'retry')));
         warn('boot error', e);
     }
 })();

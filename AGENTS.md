@@ -93,6 +93,20 @@ The whole site is now a student learning hub. Operator vocabulary (`manifest`, `
 - `site/progress.js` — daily streak + goal + per-day history. Exports `load`/`save`/`bumpGraded`/`bumpCase`/`setGoal`/`rollStreak`. Schema-versioned at `corpus.progress.v1`. Day rollover archives yesterday's counters into `history` (cap 60 days).
 - `site/theme.js` — `getTheme`/`setTheme`/`cycleTheme`/`applyTheme`/`makeToggleButton`. `corpus.theme.v1`.
 - `site/search.js` — `buildSearchIndex(manifest, shards)` + `search(items, query)` + `mountPalette(doc, …)`. Multi-token scoring favors title hits.
+- `site/sw.js` — service worker. Install precaches shell + manifest + every per-subject shard. Fetch handler is cache-first for same-origin; background-refreshes `/data/*`. Topbar status dot turns amber + label reads `offline ready` when `navigator.onLine` is false.
+
+### Final-pass additions (2026-05-05)
+- **Guide bodies inlined**: `scripts/build_data.js loadGuide` emits `body` (full markdown) alongside sections/firstParagraph. `app.js renderMarkdown` converts headings (with anchored ids), lists, paragraphs, `**bold**`, `` `code` ``, fenced blocks. Subject deepdive renders full prose under the section-checkbox panel. Cardiology body ≈ 79 KB.
+- **Per-route titles**: `setDocTitle(route, subject)` sets `document.title` to `"<Subject|Route> · corpus"` on every `go()` call.
+- **OG/meta tags**: `og:title`, `og:description`, `og:type` on both `index.html` and `triage-live.html`. SVG-data favicon, no external asset.
+- **Onboarding**: `isFirstVisit()` checks all three localStorage keys; first-visit home renders one welcome panel (`#onboarding`). Returning visits never see it.
+- **Hash subroutes**: `#cards/<subject>` and `#review/<subject>` set the filter in `go()`. Back/Forward via existing `hashchange` listener.
+- **Empty + error + loading states**: `.empty-state` panel + clear-filter chip when card list is empty. Boot error renders `.error-state` panel with retry button. `.skeleton` class available for shimmer.
+- **Streak policy**: documented in README.md and `progress.js rollStreak` — `off==1 → +1`, anything else resets to 1. No grace day. Test asserts the 2-day-gap reset path.
+- **test.js**: 184 lines, 11 groups, 11/11 green.
+
+### Live browser witness — still unreachable in this env
+This session has Python `playwright` (1.52.0) but no Node `playwright`/`playwriter` — `gm:browser` requires the Node binding, which is not installed. Verification of all final-pass surface is via `test.js` (byte-level) + curl on every served route (200 across the board). To re-witness from a normal browser env after pulling: load `/`, confirm the welcome panel appears in a private window and disappears after first card grade; `#cards/diabetes` should land on the cards explorer with the diabetes filter active; reload while offline (after first visit) should still serve from cache with the topbar dot amber; `document.title` should change as you navigate.
 
 ### Triage-live (previous-session conversion, retained)
 
