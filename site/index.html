@@ -3,32 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>corpus — medical study observability</title>
+<title>corpus — your medical study workspace</title>
+<meta name="description" content="A medical study workspace — flashcards, study guides, clinical cases, spaced repetition.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
+<script>(function(){try{var t=localStorage.getItem('corpus.theme.v1');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}else if(matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 </head>
 <body>
 <div id="app">
-  <header class="topbar">
-    <div class="brand"><span class="brand-glyph">◰</span> corpus<span class="brand-tail">.observatory</span></div>
-    <nav class="nav">
-      <a href="#overview" class="navlink active" data-route="overview">overview</a>
-      <a href="#subjects" class="navlink" data-route="subjects">subjects</a>
-      <a href="#cards" class="navlink" data-route="cards">cards</a>
-      <a href="#triage" class="navlink" data-route="triage">triage</a>
-      <a href="#review" class="navlink" data-route="review">review</a>
-      <a href="#stats" class="navlink" data-route="stats">stats</a>
-      <a href="./triage-live.html" class="navlink">live triage ◐</a>
-    </nav>
-    <div class="status"><span class="dot live"></span><span class="status-label">live</span></div>
+  <header class="topbar" role="banner">
+    <a href="#home" class="brand" aria-label="corpus home"><span class="brand-glyph" aria-hidden="true">◰</span> corpus<span class="brand-tail">.study</span></a>
+    <nav class="nav" aria-label="primary"></nav>
+    <div class="status" aria-live="polite"><span class="dot live" aria-hidden="true"></span><span class="status-label" id="status-label">ready</span></div>
   </header>
 
-  <main id="stage" class="stage"><div class="loading">loading corpus…</div></main>
+  <main id="stage" class="stage" role="main"><div class="loading">loading…</div></main>
 
-  <footer class="statusbar">
-    <div class="left"><span class="mono">corpus</span> <span class="sep">›</span> <span id="crumb">overview</span></div>
+  <footer class="statusbar" role="contentinfo">
+    <div class="left"><a href="#home" class="mono">corpus</a> <span class="sep">›</span> <span id="crumb">home</span></div>
     <div class="right"><span class="mono" id="footer-stats">—</span></div>
   </footer>
 </div>

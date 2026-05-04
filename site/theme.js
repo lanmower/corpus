@@ -1,0 +1,57 @@
+// dark/light theme — corpus.theme.v1. applies before render to avoid flash.
+const KEY = 'corpus.theme.v1';
+const VALID = ['light', 'dark', 'auto'];
+
+export function getTheme() {
+    try { const v = localStorage.getItem(KEY); return VALID.includes(v) ? v : 'auto'; }
+    catch { return 'auto'; }
+}
+
+export function effectiveTheme(t = getTheme()) {
+    if (t === 'auto') {
+        const dark = typeof matchMedia !== 'undefined' && matchMedia('(prefers-color-scheme: dark)').matches;
+        return dark ? 'dark' : 'light';
+    }
+    return t;
+}
+
+export function applyTheme(t = getTheme()) {
+    if (typeof document === 'undefined') return;
+    document.documentElement.setAttribute('data-theme', effectiveTheme(t));
+}
+
+export function setTheme(t) {
+    if (!VALID.includes(t)) t = 'auto';
+    try { localStorage.setItem(KEY, t); } catch {}
+    applyTheme(t);
+    return t;
+}
+
+export function cycleTheme() {
+    const cur = getTheme();
+    const next = cur === 'light' ? 'dark' : (cur === 'dark' ? 'auto' : 'light');
+    return setTheme(next);
+}
+
+export function makeToggleButton(doc = document) {
+    const btn = doc.createElement('button');
+    btn.type = 'button';
+    btn.className = 'theme-toggle';
+    btn.setAttribute('aria-label', 'toggle theme');
+    const label = () => {
+        const cur = getTheme();
+        btn.textContent = cur === 'dark' ? '◐' : (cur === 'light' ? '◑' : '◓');
+        btn.title = `theme: ${cur} (click to cycle)`;
+    };
+    label();
+    btn.addEventListener('click', () => { cycleTheme(); label(); });
+    if (typeof matchMedia !== 'undefined') {
+        try { matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => applyTheme()); } catch {}
+    }
+    return btn;
+}
+
+// Apply immediately on import to avoid FOUC
+if (typeof document !== 'undefined') applyTheme();
+
+if (typeof window !== 'undefined') window.__theme = { getTheme, setTheme, cycleTheme, applyTheme, effectiveTheme };

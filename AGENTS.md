@@ -67,9 +67,34 @@ Totals across all 8 subjects:
 - Current branch: master
 - Main branch: main
 
-Unwitnessed gap (carry-forward): physical browser click-event wiring on `site/triage-live.html` was not witnessed in the session that built it — `exec:browser` could not bind port 9225 in that environment. Node-side coverage is complete (HTML/JS/CSS served, `PERSIST_KEY`/`persistActive`/j-k handlers present, 68/68 scenarios over HTTP, tool-dispatch + localStorage round-trip simulated, rheumatology schema-fix verified). Re-witness from a normal browser env: load the page, click a scenario, press j/k, send a chat message, confirm localStorage persistence and DOM updates fire.
+Unwitnessed gap (carry-forward, finishing pass 2026-05-04): live `exec:browser` automation could not launch in this session env (the rs-exec hook isn't installed in this Bash). Verification of the student-mode site-wide pass is via test.js (11/11 green, 183 lines, under cap) which exhaustively checks served bundles for forbidden operator vocabulary, presence of student CTAs, FRIENDLY_GRADES wiring, progress streak rollover, search index size, theme persistence primitives, dark palette delta, print stylesheet topbar-hide rule, prefers-reduced-motion, ≥6 aria-labels, and 360+768 mobile breakpoints — plus served HTTP 200 on every asset. Re-witness from a normal browser env: load `/`, confirm hero reads "your medical study workspace" with streak chip + four CTAs; press Ctrl-K and confirm palette opens; visit `#today`, `#review`, `#stats` and confirm zero of `manifest|shard|snapshot|easeFactor|EF|SM-2` appear; toggle theme button and verify `data-theme` flips and reload preserves; append `?debug` to any URL and confirm raw scheduler / atom counts return.
 
-## Student UX Conversion (2026-05-04)
+Prior carry-forward (still open): physical browser click-event wiring on `site/triage-live.html` was not witnessed in the session that built it — `exec:browser` could not bind port 9225 in that environment. Node-side coverage is complete (HTML/JS/CSS served, `PERSIST_KEY`/`persistActive`/j-k handlers present, 68/68 scenarios over HTTP, tool-dispatch + localStorage round-trip simulated, rheumatology schema-fix verified). Re-witness from a normal browser env: load the page, click a scenario, press j/k, send a chat message, confirm localStorage persistence and DOM updates fire.
+
+## Site Surfaces — Student UX (finishing pass 2026-05-04)
+
+The whole site is now a student learning hub. Operator vocabulary (`manifest`, `shard`, `snapshot`, `atoms`, `EF`, `SM-2`, `easeFactor`, `buildSnapshot`) is gone from default DOM site-wide; appending `?debug` to any URL re-exposes the operator surface (raw scheduler stats, atom counts, EF averages, schema version).
+
+- **Home (`#home`)**: hero "your medical study workspace" with streak/today/due/subjects chips, four CTAs ("continue where you left off" → last subject, "today's plan" → #today, "review N due cards" → #review, "start a case" → triage-live), then subject grid. Each subject card carries a mastery-% bar (from `corpus.guide.v1` ticks) and a due-card badge. Rail legend hidden by default; visible under `?debug`.
+- **Today (`#today`)**: streak counter (large), daily-goal progress bar, due-cards CTA, three random recommended cases, last-5-days recap from `corpus.progress.v1.history`. Daily-goal editable inline (persists).
+- **Subject (`#subject/<name>`)**: deepdive with mastery bar, study-guide section list as **interactive checkboxes** ("I understand this") persisted at `corpus.guide.v1 = {[subject]: {[sectionLine]: true}}`, flashcard preview, case list with "work it" links to `triage-live.html#<id>`. Audio/book counts and rating moved behind `?debug`.
+- **Review (`#review`)**: friendly four-grade UI by default (`1 again` → SM-2 0, `2 hard` → 2, `3 good` → 4, `4 easy` → 5); legacy `0-5` only with `?debug`. Cardstate metaline reads `new` / `seen N×` / `familiar` instead of `EF` / `phase=` / `interval`. End-of-session summary panel ("you reviewed N cards · streak now Q") with "back to today" / "review more" CTAs. Daily-goal + streak header always visible.
+- **Stats (`#stats`)**: reframed as health bands — `healthy` / `needs attention` / `not yet seen` (computed from lastScore ≥ 4 & no leech/lapses). Forecast bar chart kept (labeled "reviews coming up"). Per-subject row reads "M% understood · D due · N cards". Settings panel for exam-date, export/import, reset. Raw scheduler panel with EF/avg-score/schema/leeches gated to `?debug`.
+- **Cases (`#triage`)**: kept the parameterized scenario runner; copy reframed (`run scenario` → `run case`, `// inputs` → `inputs`); CTA at top points to live tutor.
+- **Triage live (`triage-live.html`)**: already converted in earlier session — Socratic phase-gated tutor with WebGPU Gemma 4 E2B; submitting for grading now bumps `corpus.progress.v1.todayCases` and rolls the streak.
+- **Search (`Ctrl-K` / `⌘K`)**: global palette indexes all 2228 items (cards + cases + guide sections). `↑↓ Enter Esc` navigation; selecting a card opens cards explorer pre-filtered, a case opens triage-live, a section routes to the subject deepdive.
+- **Theme (`corpus.theme.v1`)**: light / dark / auto cycler in topbar. Inline boot script in both HTMLs sets `data-theme` before stylesheet loads (no FOUC). Dark palette: paper `#1A1714`, ink `#F2EAD8`, panel rails inverted. Respects `prefers-color-scheme` when `auto`.
+- **A11y**: `:focus-visible` outlines globally, aria-labels on every chrome control, `prefers-reduced-motion` disables animations, role+tabindex on subject cards and flashcards.
+- **Mobile**: `@media (max-width: 480px)` collapses topbar nav into a horizontal-scroll strip, subject grid to 1-col, hero stats to 110px chips, hides the search button. `@media (max-width: 768px)` gives 2-col subject grid + single-col deepdive.
+- **Print**: `@media print` block hides chrome, forces white background and black ink, expands flashcard backs, renders all panels page-break-aware. Study guides print clean.
+- **Console telemetry**: every `console.log/warn/error` in `app.js`, `srs.js`, `triage-live.js` carries one of the prefixes `[corpus]`, `[triage-live]`, `[worker-msg]`, `[webgpu-debug]`. No bare prints in user-visible flow.
+
+### New modules
+- `site/progress.js` — daily streak + goal + per-day history. Exports `load`/`save`/`bumpGraded`/`bumpCase`/`setGoal`/`rollStreak`. Schema-versioned at `corpus.progress.v1`. Day rollover archives yesterday's counters into `history` (cap 60 days).
+- `site/theme.js` — `getTheme`/`setTheme`/`cycleTheme`/`applyTheme`/`makeToggleButton`. `corpus.theme.v1`.
+- `site/search.js` — `buildSearchIndex(manifest, shards)` + `search(items, query)` + `mountPalette(doc, …)`. Multi-token scoring favors title hits.
+
+### Triage-live (previous-session conversion, retained)
 
 `site/triage-live.{html,js,css}` was converted from operator/observability surface to a student learning UI. Default render now contains zero occurrences of `atom`, `snapshot`, `manifest`, `WebGPU`, `≈2GB`, `spawning worker`, or `crossOriginIsolated` in user-visible chrome (witnessed against served HTML+CSS).
 

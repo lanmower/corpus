@@ -1,3 +1,5 @@
+import './theme.js';
+import * as progress from './progress.js';
 const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
 const SYSTEM_PROMPT_TMPL = `you are a Socratic clinical examiner. the student is being tested. you do NOT give them the answer.
 
@@ -125,6 +127,7 @@ const els = {
 function submitForGrading() {
     if (!currentScenario()) return;
     state.phase = 'grading';
+    progress.bumpCase(1);
     renderActive();
     els.prompt.value = 'grade my work';
     send(true).then(() => renderActive());
