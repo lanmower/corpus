@@ -310,8 +310,8 @@ function renderActive() {
     const sc = currentScenario();
     if (!sc) {
         els.activeScenario.append(
-            ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, 'pick a case to begin'), ce('span', { class: 'meta' }, 'choose one from the list')),
-            ce('div', { class: 'muted' }, 'work the case on this board: write your differentials, investigations, and plan as cards, then submit for grading.')
+            ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, 'select a case.'), ce('span', { class: 'meta' }, 'choose one from the list')),
+            ce('div', { class: 'muted' }, 'write differentials, investigations, plan as cards. submit for grading.')
         );
         els.activeScenario.className = 'active-scenario panel';
         return;
@@ -342,12 +342,12 @@ function renderActive() {
             send(true).then(() => renderActive());
         } },
         ...(ready ? {} : { disabled: 'true' })
-    }, state.phase === 'graded' ? 'graded — pick another case' : 'submit for grading');
-    const phaseLabel = state.phase === 'asking' ? 'working the case' : state.phase === 'grading' ? 'grading' : state.phase === 'graded' ? 'graded' : state.phase;
+    }, state.phase === 'graded' ? 'graded — select another case' : 'submit for grading');
+    const phaseLabel = state.phase === 'asking' ? 'working' : state.phase === 'grading' ? 'grading' : state.phase === 'graded' ? 'graded' : state.phase;
     els.activeScenario.append(
         ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} · ${phaseLabel}`)),
         ce('div', { class: 'stem' }, stem),
-        ce('div', { class: 'stem-hint' }, 'write your differentials, investigations, and plan as cards below — the answer key stays hidden until you submit.'),
+        ce('div', { class: 'stem-hint' }, 'write differentials, investigations, plan as cards. answer key stays hidden until you submit.'),
         checklistEl,
         gradeBtn
     );
@@ -360,7 +360,7 @@ function currentScenario() {
 function renderScratchpad() {
     els.scratchpad.innerHTML = '';
     if (state.cards.length === 0) {
-        els.scratchpad.append(ce('div', { class: 'scratchpad-empty' }, 'your board is empty — type "add differential: …", "add investigation: …", or "add plan: …" in the reply box to commit your answer'));
+        els.scratchpad.append(ce('div', { class: 'scratchpad-empty' }, '(empty) — type "add differential: …", "add investigation: …", or "add plan: …"'));
         return;
     }
     for (const c of state.cards) {
@@ -528,18 +528,18 @@ function onWorkerMessage(e) {
         return;
     }
     if (m.status === 'loading') {
-        els.progressText.textContent = 'loading study assistant…';
+        els.progressText.textContent = 'loading tutor…';
     } else if (m.status === 'progress') {
         const p = m.payload || {};
         const pct = p.progress != null ? Math.round(p.progress) : 0;
         els.progressFill.style.width = pct + '%';
-        els.progressText.textContent = `loading study assistant… ${pct}%`;
+        els.progressText.textContent = `loading tutor… ${pct}%`;
     } else if (m.status === 'ready') {
         state.workerReady = true;
         state.llmStatus = 'ready';
         els.modelStatus.textContent = 'ready';
         els.progressFill.style.width = '100%';
-        els.progressText.textContent = 'your tutor is ready';
+        els.progressText.textContent = 'tutor ready';
         els.modelDetail.textContent = 'your private tutor is loaded and ready.';
     } else if (m.status === 'start') {
         state.streamBuffer = '';
@@ -573,7 +573,7 @@ async function loadLLM() {
     els.modelStatus.textContent = 'starting…';
     els.loadLLM.disabled = true;
     els.progress.hidden = false;
-    els.progressText.textContent = 'loading study assistant…';
+    els.progressText.textContent = 'loading tutor…';
     console.log('[triage-live] starting tutor');
     try {
         const w = spawnWorker();
@@ -624,7 +624,7 @@ async function send(useSim = false) {
         try { await generateLLM(txt); }
         catch (e) {
             showWebgpuError(e.message || String(e), e.stack || '');
-            state.messages.push({ role: 'system', content: 'tutor went offline — click "use offline tutor" to continue.' });
+            state.messages.push({ role: 'system', content: 'tutor offline — click "offline mode" to continue.' });
             renderMessages();
         }
     } else {

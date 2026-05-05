@@ -1,7 +1,11 @@
-// corpus — student learning hub. vanilla ESM, no bundler.
+// corpus — personal med-study notebook. vanilla ESM, no bundler.
 import './theme.js';
 import * as srs from './srs.js';
 import * as progress from './progress.js';
+import * as lastpos from './lastpos.js';
+import * as cram from './cram.js';
+import * as justread from './justread.js';
+import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
 import { buildSearchIndex, mountPalette } from './search.js';
 import { makeToggleButton } from './theme.js';
 
@@ -14,20 +18,20 @@ const warn = (...a) => console.warn('[corpus]', ...a);
 
 const FRIENDLY_GRADES = [
     { friendly: 1, smscore: 0, label: 'again', desc: "didn't know" },
-    { friendly: 2, smscore: 2, label: 'hard', desc: 'got it the slow way' },
-    { friendly: 3, smscore: 4, label: 'good', desc: 'recalled it' },
+    { friendly: 2, smscore: 2, label: 'hard', desc: 'slow recall' },
+    { friendly: 3, smscore: 4, label: 'good', desc: 'recalled' },
     { friendly: 4, smscore: 5, label: 'easy', desc: 'instant' }
 ];
 
 const state = {
-    manifest: null, shards: {}, route: 'home', currentSubject: null,
+    manifest: null, shards: {}, route: 'today', currentSubject: null,
     cardSearch: '', cardSubjectFilter: 'all', flippedCards: new Set(),
     reviewSubjectFilter: 'all', reviewQueue: [], reviewQueueIds: [],
     reviewAgainPile: [], reviewAllCardIds: [], reviewIndex: 0,
     reviewRevealed: false, reviewSessionGraded: 0, reviewSessionStarted: 0,
     sessionFinished: false, searchPaletteApi: null,
     cramMode: false, reviewTagFilter: new Set(), focusCardId: null,
-    paletteReviewSet: null
+    paletteReviewSet: null, cardTagFilter: null
 };
 window.__corpus = state;
 window.__corpus.DEBUG = DEBUG;
@@ -55,14 +59,15 @@ function el(tag, attrs = {}, ...kids) {
 }
 
 const ROUTES = ['today', 'guides', 'subjects', 'review', 'cards', 'cases', 'stats', 'subject', 'settings', 'card'];
-const ROUTE_TITLES = { today: "today's plan", guides: 'study guides', subjects: 'subjects', review: 'review',
+const ROUTE_TITLES = { today: 'today', guides: 'guides', subjects: 'subjects', review: 'review',
     cards: 'cards', cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings', card: 'card' };
 const ROUTE_ALIASES = { home: 'today', triage: 'cases' };
+
 function setDocTitle(route, subject) {
-    const cap = s => s ? s[0].toUpperCase() + s.slice(1) : '';
-    const main = subject ? cap(subject) : cap(ROUTE_TITLES[route] || route);
+    const main = subject ? subject : (ROUTE_TITLES[route] || route);
     document.title = `${main} · corpus`;
 }
+
 function go(route, subject) {
     if (ROUTE_ALIASES[route]) route = ROUTE_ALIASES[route];
     if (!ROUTES.includes(route)) route = 'today';
@@ -74,6 +79,10 @@ function go(route, subject) {
     document.querySelectorAll('.navlink').forEach(a => a.classList.toggle('active', a.dataset.route === route));
     setDocTitle(route, subject);
     progress.setLast(route, subject);
+    lastpos.save(route, subject);
+    // apply just-read on subject change
+    if (route === 'subject' && subject) justread.applyClass(justread.isOn(subject));
+    else justread.applyClass(false);
     render();
 }
 
@@ -103,11 +112,24 @@ function totalDueAll() {
     return n;
 }
 
+function totalCasesQueued() {
+    // Cases queued = scenarios in weakest subject + any unfinished sessions
+    let n = 0;
+    try {
+        const persisted = JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}');
+        const sessions = persisted.sessions || {};
+        for (const id of Object.keys(sessions)) if ((sessions[id] || []).length > 0) n++;
+    } catch {}
+    return n;
+}
+
+function estReviewMinutes(due) { return Math.max(1, Math.round(due * 0.4)); }
+
 function updateFooter() {
     if (!statusbar || !statusbarMsg) return;
     if (!navigator.onLine) {
         statusbar.classList.remove('hidden');
-        statusbarMsg.textContent = 'offline ready — your work is saved locally';
+        statusbarMsg.textContent = 'offline · saved locally';
     } else {
         statusbar.classList.add('hidden');
     }
@@ -124,243 +146,218 @@ function render() {
     updateFooter();
 }
 
-function chipStat(num, lbl) {
-    return el('div', { class: 'stat-chip' }, el('div', { class: 'num' }, num), el('div', { class: 'lbl' }, lbl));
+// ---- shell-prompt status line ----
+function renderStatusLine(p, due) {
+    const day = p.streak || 0;
+    return el('div', { class: 'status-line', role: 'status', 'aria-label': 'study status' },
+        el('span', {}, `day ${day}`),
+        el('span', { class: 'sep' }, '·'),
+        el('span', { class: 'due' }, `${due} due`),
+        el('span', { class: 'sep' }, '·'),
+        el('span', { class: 'streak' }, `streak ${p.streak}`),
+        el('span', { class: 'sep' }, '·'),
+        el('span', {}, `goal ${p.todayGraded}/${p.dailyGoal}`)
+    );
 }
 
-function isFirstVisit() {
-    try { return !localStorage.getItem('corpus.progress.v1') && !localStorage.getItem('corpus.guide.v1') && !localStorage.getItem('corpus.srs.states'); }
-    catch { return false; }
+// ---- cram banner ----
+function renderCramBanner(weakest) {
+    const days = srs.daysUntilExam();
+    if (days > 14) return null;
+    if (cram.isDismissed()) return null;
+    const w = weakest;
+    const sh = w ? state.shards[w.subject] : null;
+    const recs = sh?.triage?.scenarios?.slice(0, 2) || [];
+    return el('div', { class: 'cram-banner', role: 'alert' },
+        el('span', { class: 'label' }, `exam in ${days} day${days === 1 ? '' : 's'}`),
+        el('span', {}, '·'),
+        el('span', {}, `weakest: ${w ? w.subject : '—'}`),
+        el('span', {}, '·'),
+        el('span', {}, 'focus there'),
+        ...recs.map((sc, i) => el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name || (w.subject + '-' + i))}` }, sc.name)),
+        el('button', { class: 'dismiss', 'aria-label': 'dismiss',
+            on: { click: e => { e.target.closest('.cram-banner').remove(); cram.dismiss(); } } }, 'dismiss')
+    );
 }
 
-function buildSubjectGrid() {
+// ---- soft resume line ----
+function renderResumeLine() {
+    const lp = lastpos.load(); if (!lp) return null;
+    const gap = lastpos.gapDays();
+    if (gap < 1) return null;
+    const anchor = lp.subjectAnchor || lp.route || 'today';
+    const target = lp.subjectAnchor ? `#subject/${lp.subjectAnchor}` : `#${lp.route}`;
+    return el('div', { class: 'resume-line' },
+        `back after ${gap}d. last: ${anchor} `,
+        el('a', { href: target,
+            on: { click: e => { e.preventDefault(); if (lp.subjectAnchor) go('subject', lp.subjectAnchor); else go(lp.route); } } }, '→ resume')
+    );
+}
+
+// ---- compressed today ----
+function renderToday() {
+    const p = progress.load();
+    const due = totalDueAll();
+    const cases = totalCasesQueued();
+    const mins = estReviewMinutes(due);
+
+    // Compute weakest subject for cram banner
+    const states = srs.loadStates();
+    const ticks = loadGuideTicks();
+    const rows = buildRows(state.manifest, state.shards, states, ticks);
+    const weakest = computeWeakest(rows);
+
+    const cramEl = renderCramBanner(weakest);
+    if (cramEl) stage.append(cramEl);
+
+    const resumeEl = renderResumeLine();
+    if (resumeEl) stage.append(resumeEl);
+
+    stage.append(renderStatusLine(p, due));
+
+    // One-sentence summary
+    stage.append(el('p', { class: 'summary-line' },
+        'today: ',
+        el('span', { class: 'num' }, String(due)), ' due cards · ',
+        el('span', { class: 'num' }, String(cases)), ' cases queued · ~',
+        el('span', { class: 'num' }, String(mins)), ' min est.'
+    ));
+
+    // One primary affordance
+    stage.append(el('div', { style: 'margin-bottom:18px' },
+        el('a', { class: 'primary-action', href: '#review',
+            on: { click: e => { e.preventDefault(); go('review'); } } }, due ? `review (${due})` : 'review')
+    ));
+
+    // Quiet 8-row guide jump list — subject · sections · mastery%
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'guides'), el('h2', {}, 'subjects')
+    ));
+    const jump = el('div', { class: 'guide-jump' });
+    for (const meta of state.manifest.subjects) {
+        const m = masteryFor(meta.subject);
+        const sections = meta.guideSections || 0;
+        const pctClass = m >= 50 ? '' : (m >= 25 ? 'weak' : 'cold');
+        jump.append(el('a', {
+            class: 'guide-jump-row', href: `#subject/${meta.subject}`,
+            'aria-label': `${meta.subject} · ${m}% mastered`,
+            on: { click: e => { e.preventDefault(); go('subject', meta.subject); } }
+        },
+            el('span', { class: 'name' }, meta.subject),
+            el('span', { class: 'meta' }, `${sections} sections`),
+            el('span', { class: 'pct ' + pctClass }, `${m}%`)
+        ));
+    }
+    stage.append(jump);
+
+    if (DEBUG) {
+        // Recommended cases + 5-day recap behind ?debug
+        const recs = [];
+        for (const meta of state.manifest.subjects) {
+            const sh = state.shards[meta.subject];
+            if (!sh?.triage?.scenarios?.length) continue;
+            const sc = sh.triage.scenarios[0];
+            recs.push({ meta, sc });
+            if (recs.length >= 3) break;
+        }
+        if (recs.length) {
+            stage.append(el('div', { class: 'panel' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'debug · recommended cases')),
+                ...recs.map(({ meta, sc }) => el('div', { class: 'row' },
+                    el('span', { class: 'code' }, meta.subject.slice(0, 4)),
+                    el('div', {}, el('div', { class: 'title' }, sc.name)),
+                    el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
+                ))));
+        }
+        if (p.history && p.history.length) {
+            const recent = p.history.slice(-5).reverse();
+            stage.append(el('div', { class: 'panel' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'debug · last 5 days')),
+                ...recent.map(d => el('div', { class: 'row' },
+                    el('span', { class: 'code' }, d.date.slice(5)),
+                    el('div', {}, el('div', { class: 'title' }, `${d.graded} cards · ${d.cases} cases`)),
+                    el('span', { class: 'meta' }, '')
+                ))));
+        }
+        stage.append(el('div', { class: 'panel rail-flame' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'debug · rail legend')),
+            el('div', {}, 'rails neutralized — color reserved for due/mastered/missed/weak meaning')));
+    }
+}
+
+function renderGuides() {
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'guides'), el('h2', {}, 'study guides')));
+    const grid = el('div', { class: 'subject-grid' });
+    for (const meta of state.manifest.subjects) {
+        const m = masteryFor(meta.subject);
+        const sections = meta.guideSections || 0;
+        grid.append(el('div', {
+            class: 'subject-card', role: 'button', tabindex: '0',
+            'aria-label': `${meta.subject} guide, ${m}% understood`,
+            data: { subject: meta.subject },
+            on: { click: () => go('subject', meta.subject),
+                  keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go('subject', meta.subject); } } }
+        },
+            el('div', { class: 'name' }, meta.subject),
+            el('div', { class: 'tagline' }, `${sections} sections`),
+            el('div', { class: 'mastery-row' },
+                el('div', { class: 'mastery-bar' }, el('div', { class: 'mastery-fill' + (m < 25 ? ' weak' : ''), style: `width:${m}%` })),
+                el('span', { class: 'mastery-pct' }, `${m}%`)
+            )
+        ));
+    }
+    stage.append(grid);
+}
+
+function renderSubjects() {
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, '8 subjects'), el('h2', {}, 'subjects')));
     const grid = el('div', { class: 'subject-grid' });
     for (const s of state.manifest.subjects) {
         const due = dueCountFor(s.subject);
         const m = masteryFor(s.subject);
-        const card = el('div', {
-            class: `subject-card rail-${s.cat}`,
-            'role': 'button', 'tabindex': '0',
-            'aria-label': `open ${s.subject}, ${due} cards due, ${m}% mastered`,
-            data: { cat: s.cat, subject: s.subject, rating: s.rating },
+        grid.append(el('div', {
+            class: 'subject-card', role: 'button', tabindex: '0',
+            'aria-label': `open ${s.subject}, ${due} due, ${m}% mastered`,
+            data: { subject: s.subject },
             on: { click: () => go('subject', s.subject),
                   keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go('subject', s.subject); } } }
         },
             el('div', { class: 'name' }, s.subject),
             el('div', { class: 'tagline' }, `${s.cardCount} cards · ${s.scenarioCount} cases`),
             el('div', { class: 'mastery-row' },
-                el('div', { class: 'mastery-bar' }, el('div', { class: 'mastery-fill', style: `width:${m}%` })),
+                el('div', { class: 'mastery-bar' }, el('div', { class: 'mastery-fill' + (m < 25 ? ' weak' : ''), style: `width:${m}%` })),
                 el('span', { class: 'mastery-pct' }, `${m}%`)
             ),
             el('div', { class: 'subject-meta' },
-                due ? el('span', { class: 'due-badge' }, `${due} due`) : el('span', { class: 'all-clear' }, 'no due cards'),
-                DEBUG ? el('span', { class: 'mono', style: 'font-size:10px;color:var(--panel-text-3)' }, `${s.atomCount} atoms`) : null
+                due ? el('span', { class: 'due-badge' }, `${due} due`) : el('span', { class: 'all-clear' }, 'clear'),
+                DEBUG ? el('span', { style: 'font-family:var(--ff-mono);font-size:10px;color:var(--panel-text-3)' }, `${s.atomCount} atoms`) : null
             )
-        );
-        grid.append(card);
+        ));
     }
-    return grid;
-}
-
-function renderSubjects() {
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, '8 subjects'), el('h2', {}, 'pick a subject')));
-    stage.append(buildSubjectGrid());
-}
-
-function estReadMinutes(chars) {
-    // 1000 chars/min for medical prose
-    return Math.max(1, Math.round(chars / 1000));
-}
-
-function buildGuideCard(meta) {
-    const m = masteryFor(meta.subject);
-    const sections = meta.guideSections || 0;
-    const mins = estReadMinutes(meta.guideChars || 0);
-    const sizeKB = Math.round((meta.guideChars || 0) / 1024);
-    return el('div', {
-        class: `subject-card guide-card rail-${meta.cat}`,
-        'role': 'button', 'tabindex': '0',
-        'aria-label': `open ${meta.subject} study guide, ${m}% mastered, ${sections} sections`,
-        data: { subject: meta.subject },
-        on: { click: () => go('subject', meta.subject),
-              keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go('subject', meta.subject); } } }
-    },
-        el('div', { class: 'name', style: 'text-transform:capitalize' }, meta.subject),
-        el('div', { class: 'tagline' }, `complete study guide · ${sections} sections · ${sizeKB}KB · ~${mins} min read`),
-        el('div', { class: 'mastery-row' },
-            el('div', { class: 'mastery-bar' }, el('div', { class: 'mastery-fill', style: `width:${m}%` })),
-            el('span', { class: 'mastery-pct' }, `${m}% understood`)
-        ),
-        el('div', { class: 'subject-meta' },
-            el('span', { class: 'chip' }, 'open guide →')
-        )
-    );
-}
-
-function renderGuides() {
-    stage.append(el('section', { class: 'hero' },
-        el('h1', {}, 'our rewritten ', el('em', {}, 'study guides')),
-        el('p', { class: 'lede' }, 'every subject distilled into one complete study guide — fully rewritten from the source lectures and book chapters. tick what you understand, read the prose, work cards and cases from the same page.')
-    ));
-    const grid = el('div', { class: 'subject-grid' });
-    for (const meta of state.manifest.subjects) grid.append(buildGuideCard(meta));
     stage.append(grid);
-    const totals = state.manifest.totals;
-    stage.append(el('div', { class: 'panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'across all eight guides'), 'totals'),
-        el('div', {}, `${totals.guideSections || 0} sections · ${Math.round((totals.guideChars||0)/1024)}KB of rewritten prose · ${totals.cards} flashcards · ${totals.scenarios} clinical cases linked from these guides`)));
-}
-
-function renderToday() {
-    const p = progress.load();
-    const due = totalDueAll();
-    const last = p.lastSubject;
-    const goalPct = Math.min(100, Math.round(p.todayGraded / p.dailyGoal * 100));
-
-    if (isFirstVisit()) {
-        stage.append(el('div', { class: 'panel rail-mascot onboarding', id: 'onboarding' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'welcome'), 'first time here'),
-            el('p', {}, "this is your medical study workspace. pick a subject below to start, or press Ctrl+K to search across cards, cases, and guide sections. your progress lives in this browser — no account needed.")));
-    }
-
-    const lastCTA = last ? el('a', { class: 'cta cta-primary', href: `#subject/${last}`,
-        on: { click: e => { e.preventDefault(); go('subject', last); } } },
-        el('div', { class: 'cta-label' }, 'continue where you left off'),
-        el('div', { class: 'cta-sub' }, last)) : null;
-
-    stage.append(el('section', { class: 'hero' },
-        el('h1', {}, 'your medical study ', el('em', {}, 'workspace')),
-        el('p', { class: 'lede' }, 'eight rewritten study guides, plus flashcards and clinical cases bound to the same prose. pick up where you left off, open a guide, or work a case.'),
-        el('div', { class: 'hero-stats' },
-            chipStat(p.streak, p.streak === 1 ? 'day streak' : 'day streak'),
-            chipStat(`${p.todayGraded}/${p.dailyGoal}`, 'cards today'),
-            chipStat(due, 'cards due now'),
-            chipStat(p.todayCases, 'cases today')
-        ),
-        el('div', { class: 'cta-row' },
-            lastCTA,
-            el('a', { class: 'cta cta-primary', href: '#guides',
-                on: { click: e => { e.preventDefault(); go('guides'); } } },
-                el('div', { class: 'cta-label' }, 'open the study guides'),
-                el('div', { class: 'cta-sub' }, '8 rewritten subjects · 200+ sections')),
-            el('a', { class: 'cta', href: '#review',
-                on: { click: e => { e.preventDefault(); go('review'); } } },
-                el('div', { class: 'cta-label' }, due ? `review ${due} due cards` : 'review cards'),
-                el('div', { class: 'cta-sub' }, 'spaced repetition')),
-            el('a', { class: 'cta', href: './triage-live.html' },
-                el('div', { class: 'cta-label' }, 'start a case'),
-                el('div', { class: 'cta-sub' }, 'work a clinical scenario with the live tutor'))
-        )
-    ));
-
-    // Featured study guides
-    const guideMetas = state.manifest.subjects;
-    const guidePanel = el('div', { class: 'panel rail-purple featured-guides' },
-        el('div', { class: 'panel-head' },
-            el('span', { class: 'title' }, 'our rewritten study guides'),
-            el('a', { class: 'chip', href: '#guides',
-                on: { click: e => { e.preventDefault(); go('guides'); } } }, 'all 8 →')),
-        el('p', { class: 'lede', style: 'margin:6px 0 14px' }, 'every subject distilled into one complete guide — pick one to read.'),
-        el('div', { class: 'guide-mini-grid' },
-            ...guideMetas.map(meta => {
-                const m = masteryFor(meta.subject);
-                const sections = meta.guideSections || 0;
-                return el('a', { class: `guide-mini rail-${meta.cat}`, href: `#subject/${meta.subject}`,
-                    on: { click: e => { e.preventDefault(); go('subject', meta.subject); } } },
-                    el('div', { class: 'name', style: 'text-transform:capitalize;font-weight:700' }, meta.subject),
-                    el('div', { class: 'meta', style: 'font-size:12px' }, `${sections} sections · ${m}% understood`),
-                    el('div', { class: 'mastery-bar', style: 'margin-top:6px' }, el('div', { class: 'mastery-fill', style: `width:${m}%` }))
-                );
-            }))
-    );
-    stage.append(guidePanel);
-
-    // Daily-goal progress
-    stage.append(el('div', { class: 'panel rail-green' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, p.streak > 0 ? `streak ${p.streak} day${p.streak === 1 ? '' : 's'}` : 'start your streak today'),
-            `${p.todayGraded} of ${p.dailyGoal} cards today`),
-        el('div', { class: 'progress-bar' }, el('div', { class: 'progress-fill', style: `width:${goalPct}%` })),
-        el('div', { class: 'toolbar', style: 'margin-top:14px' },
-            el('label', { for: 'goal-input' }, 'daily goal:'),
-            el('input', {
-                id: 'goal-input', type: 'number', min: '1', max: '500', value: String(p.dailyGoal),
-                'aria-label': 'daily goal', class: 'search', style: 'max-width:120px',
-                on: { change: e => { progress.setGoal(parseInt(e.target.value, 10) || 30); render(); } }
-            })
-        )
-    ));
-
-    // Recommended cases
-    const recs = [];
-    for (const meta of state.manifest.subjects) {
-        const sh = state.shards[meta.subject];
-        if (!sh?.triage?.scenarios?.length) continue;
-        const sc = sh.triage.scenarios[Math.floor(Math.random() * sh.triage.scenarios.length)];
-        recs.push({ meta, sc });
-        if (recs.length >= 3) break;
-    }
-    if (recs.length) {
-        stage.append(el('div', { class: 'panel rail-mascot' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'cases to try today'), 'pick one and work it'),
-            ...recs.map(({ meta, sc }) => el('div', { class: 'row' },
-                el('span', { class: 'code' }, '◆'),
-                el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, meta.subject)),
-                el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work it')
-            ))));
-    }
-
-    // Subjects
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'pick a subject'),
-        el('h2', {}, 'subjects')
-    ));
-    stage.append(buildSubjectGrid());
-
-    // Since-last-visit
-    if (p.lastReviewedAt) {
-        const ago = Math.max(0, Math.round((Date.now() - p.lastReviewedAt) / 60000));
-        const agoText = ago < 1 ? 'just now' : ago < 60 ? `${ago} minute${ago === 1 ? '' : 's'} ago` :
-            ago < 1440 ? `${Math.round(ago / 60)} hour${ago < 120 ? '' : 's'} ago` : `${Math.round(ago / 1440)} day${ago < 2880 ? '' : 's'} ago`;
-        const yesterday = (p.history || []).slice(-1)[0];
-        stage.append(el('div', { class: 'panel' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'since last visit'), agoText),
-            el('div', {}, `last activity: ${p.lastRoute || 'today'}${p.lastSubject ? ' · ' + p.lastSubject : ''}`),
-            yesterday ? el('div', { class: 'meta' }, `yesterday: ${yesterday.graded || 0} cards · ${yesterday.cases || 0} cases`) : null));
-    }
-
-    // Recap
-    if (p.history && p.history.length) {
-        const recent = p.history.slice(-5).reverse();
-        stage.append(el('div', { class: 'panel' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'recent days'), 'cards graded · cases'),
-            ...recent.map(d => el('div', { class: 'row' },
-                el('span', { class: 'code' }, d.date.slice(5)),
-                el('div', {}, el('div', { class: 'title' }, `${d.graded} cards · ${d.cases} cases`)),
-                el('span', { class: 'meta' }, '')
-            ))));
-    }
-
-    if (DEBUG) {
-        stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'debug · rail legend'), el('h2', {}, 'coverage rails')));
-        for (const [name, txt] of [['rail-green', 'guide ≥ 50KB · cards ≥ 10 · scenarios ≥ 3'],
-            ['rail-sun', 'partial — 2 of 3 thresholds met'], ['rail-flame', 'stub — under-built']]) {
-            stage.append(el('div', { class: 'panel ' + name }, el('div', { class: 'panel-head' }, el('span', { class: 'title' }, name), txt)));
-        }
-    }
 }
 
 async function renderSubject() {
     const subj = state.currentSubject;
     if (!subj) { go('subjects'); return; }
     const meta = state.manifest.subjects.find(x => x.subject === subj);
+
+    // Cram banner on subject view
+    const states = srs.loadStates();
+    const ticksAll = loadGuideTicks();
+    const rows = buildRows(state.manifest, state.shards, states, ticksAll);
+    const weakest = computeWeakest(rows);
+    const cramEl = renderCramBanner(weakest);
+    if (cramEl) stage.append(cramEl);
+
     stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'subject'), el('h2', {style:'text-transform:capitalize'}, subj)));
-    const placeholder = el('div', { class: 'panel skeleton-panel' },
-        el('div', { class: 'skeleton', style: 'width:60%;height:18px' }),
+        el('span', { class: 'eyebrow' }, 'subject'), el('h2', {}, subj)));
+    const placeholder = el('div', { class: 'panel' },
+        el('div', { class: 'skeleton', style: 'width:60%;height:14px' }),
         el('div', { class: 'skeleton', style: 'width:90%' }),
-        el('div', { class: 'skeleton', style: 'width:80%' }),
-        el('div', { class: 'skeleton', style: 'width:75%' }));
+        el('div', { class: 'skeleton', style: 'width:80%' }));
     stage.append(placeholder);
     const shard = await loadShard(subj);
     placeholder.remove();
@@ -370,16 +367,15 @@ async function renderSubject() {
     const ticks = loadGuideTicks()[subj] || {};
 
     const left = el('aside', { class: 'deepdive-side' },
-        el('div', { class: 'panel rail-' + (meta?.cat || 'green') },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'this subject'), `${m}% mastered`),
-            el('div', { class: 'progress-bar' }, el('div', { class: 'progress-fill', style: `width:${m}%` })),
-            el('div', { style: 'margin-top:10px' }, `${shard.cards.length} cards · ${due} due`),
-            el('div', {}, `${shard.triage?.scenarioCount || 0} cases`),
-            DEBUG ? el('div', { class: 'mono', style: 'font-size:11px;color:var(--panel-text-3);margin-top:6px' },
-                `${shard.audio.length} lectures · ${shard.books.length} book sections · rating ${meta?.rating}`) : null
+        el('div', { class: 'panel' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'subject'), `${m}% mastered`),
+            el('div', { class: 'progress-bar' }, el('div', { class: 'progress-fill' + (m < 25 ? ' weak' : ''), style: `width:${m}%` })),
+            el('div', { style: 'margin-top:8px;font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' }, `${shard.cards.length} cards · ${due} due`),
+            el('div', { style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' }, `${shard.triage?.scenarioCount || 0} cases`),
+            el('div', { class: 'kbd-hint', style: 'margin-top:8px' }, 'press r for just-read')
         ),
         el('div', { class: 'panel' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'guide sections'), 'tick what you understand'),
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'sections')),
             ...(shard.guide?.sections || []).slice(0, 50).map(s => {
                 const lineKey = String(s.line);
                 const checked = !!ticks[lineKey];
@@ -393,6 +389,7 @@ async function renderSubject() {
                             (all[subj] = all[subj] || {})[lineKey] = e.target.checked;
                             saveGuideTicks(all);
                             row.classList.toggle('done', e.target.checked);
+                            lastpos.save('subject', subj);
                             render();
                         } }
                     }),
@@ -403,25 +400,25 @@ async function renderSubject() {
         )
     );
 
-    const guideBodyPanel = shard.guide?.body ? el('div', { class: 'panel guide-body-panel rail-' + (meta?.cat || 'green') },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'complete study guide'), `${shard.guide.sections.length} sections · ${Math.round(shard.guide.chars/1024)}KB · ~${estReadMinutes(shard.guide.chars)} min read`),
-        el('div', { class: 'guide-body markdown', html: renderMarkdown(shard.guide.body) })
+    const guideBodyPanel = shard.guide?.body ? el('div', { class: 'panel guide-body-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'guide'), `${shard.guide.sections.length} sections`),
+        el('div', { class: 'guide-body markdown', html: renderMarkdown(shard.guide.body, subj) })
     ) : null;
-    const cardsPanel = el('div', { class: 'panel rail-' + (meta?.cat || 'green') },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'flashcards'), `${shard.cards.length} total · click to flip`),
-        ...shard.cards.slice(0, 20).map(c => buildFlashcard(c, meta?.cat || 'green'))
+    const cardsPanel = el('div', { class: 'panel cards-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'cards'), `${shard.cards.length} total`),
+        ...shard.cards.slice(0, 20).map(c => buildFlashcard(c))
     );
     if (shard.cards.length > 20) {
-        cardsPanel.append(el('div', { class: 'panel-head', style: 'margin-top:16px' },
-            el('a', { href: '#cards', class: 'chip', on: { click: e => { e.preventDefault(); state.cardSubjectFilter = subj; go('cards'); } } }, `see all ${shard.cards.length} →`)));
+        cardsPanel.append(el('div', { style: 'margin-top:10px' },
+            el('a', { href: '#cards', class: 'chip', on: { click: e => { e.preventDefault(); state.cardSubjectFilter = subj; go('cards'); } } }, `all ${shard.cards.length} →`)));
     }
 
-    const triagePanel = shard.triage && shard.triage.scenarios.length ? el('div', { class: 'panel rail-' + (meta?.cat || 'green') },
+    const triagePanel = shard.triage && shard.triage.scenarios.length ? el('div', { class: 'panel cases-panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'cases'), `${shard.triage.scenarios.length}`),
         ...shard.triage.scenarios.slice(0, 8).map(sc => el('div', { class: 'row' },
             el('span', { class: 'code' }, '◆'),
             el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, sc.description || '')),
-            el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work it')
+            el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
         ))) : null;
 
     const right = el('div', {}, guideBodyPanel, cardsPanel, triagePanel);
@@ -429,7 +426,8 @@ async function renderSubject() {
     stage.append(wrap);
 }
 
-function renderMarkdown(md) {
+// ---- markdown with guide affordances ----
+function renderMarkdown(md, subject) {
     if (!md) return '';
     const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     const lines = md.split('\n');
@@ -445,12 +443,26 @@ function renderMarkdown(md) {
         return s;
     }
     function slug(t) { return t.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''); }
+    function token(t) { return slug(t).split('-').filter(Boolean).slice(0, 3).join('-'); }
+    function affordance(headingText) {
+        if (!subject) return '';
+        const topic = encodeURIComponent(headingText);
+        const tag = encodeURIComponent(token(headingText));
+        return `<span class="guide-aff"><a href="./triage-live.html?topic=${topic}&subject=${subject}" data-aff="tutor">→ tutor</a><a href="#cards/${subject}?tag=${tag}" data-aff="practice">→ practice</a></span>`;
+    }
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
         if (/^```/.test(line)) { flushPara(); flushList(); inCode = !inCode; out.push(inCode ? '<pre><code>' : '</code></pre>'); continue; }
         if (inCode) { out.push(esc(line)); continue; }
         const h = line.match(/^(#{1,6})\s+(.+)$/);
-        if (h) { flushPara(); flushList(); const id = `g-${slug(h[2])}-${i}`; out.push(`<h${h[1].length} id="${id}">${inline(h[2])}</h${h[1].length}>`); continue; }
+        if (h) {
+            flushPara(); flushList();
+            const id = `g-${slug(h[2])}-${i}`;
+            const level = h[1].length;
+            const aff = (level === 2 || level === 3) ? affordance(h[2]) : '';
+            out.push(`<h${level} id="${id}">${inline(h[2])}${aff}</h${level}>`);
+            continue;
+        }
         const li = line.match(/^[-*]\s+(.+)$/);
         if (li) { flushPara(); if (!inList) { out.push('<ul>'); inList = true; } out.push('<li>' + inline(li[1]) + '</li>'); continue; }
         if (line.trim() === '') { flushPara(); flushList(); continue; }
@@ -460,13 +472,13 @@ function renderMarkdown(md) {
     return out.join('\n');
 }
 
-function buildFlashcard(c, cat) {
+function buildFlashcard(c) {
     const id = c.id;
     const back = c.back || '';
     const long = back.length > 300;
     const card = el('div', {
-        class: `flashcard rail-${cat}` + (long ? ' long' : ''),
-        'role': 'button', 'tabindex': '0', 'aria-label': `flashcard: ${c.front?.slice(0, 60) || ''}`,
+        class: 'flashcard' + (long ? ' long' : ''),
+        role: 'button', tabindex: '0', 'aria-label': `card: ${c.front?.slice(0, 60) || ''}`,
         data: { cardId: id },
         on: {
             click: () => { if (state.flippedCards.has(id)) state.flippedCards.delete(id); else state.flippedCards.add(id); card.classList.toggle('flipped'); },
@@ -485,9 +497,19 @@ function buildFlashcard(c, cat) {
 
 async function renderCards() {
     stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'flashcards'), el('h2', {}, 'card explorer')));
+        el('span', { class: 'eyebrow' }, 'cards'), el('h2', {}, 'card explorer')));
+
+    // Tag filter via query string (e.g. #cards/cardiology?tag=heart-failure)
+    const hashParts = location.hash.split('?');
+    let tagFilter = null;
+    if (hashParts[1]) {
+        const params = new URLSearchParams(hashParts[1]);
+        tagFilter = params.get('tag');
+    }
+    state.cardTagFilter = tagFilter;
+
     const search = el('input', {
-        class: 'search', type: 'text', placeholder: 'search front + back…', value: state.cardSearch,
+        class: 'search', type: 'text', placeholder: 'search…', value: state.cardSearch,
         'aria-label': 'search cards',
         on: { input: e => { state.cardSearch = e.target.value; renderCardList(); } }
     });
@@ -499,6 +521,12 @@ async function renderCards() {
             on: { click: () => { state.cardSubjectFilter = s.subject; renderCardList(); } } }, s.subject))
     );
     stage.append(el('div', { class: 'toolbar' }, search, chips));
+    if (tagFilter) {
+        stage.append(el('div', { class: 'toolbar' },
+            el('span', { class: 'chip active' }, `tag: ${tagFilter}`),
+            el('button', { class: 'chip', on: { click: () => { state.cardTagFilter = null; location.hash = '#cards' + (state.cardSubjectFilter !== 'all' ? '/' + state.cardSubjectFilter : ''); renderCardList(); } } }, 'clear tag')
+        ));
+    }
     const list = el('div', { id: 'cards-list', class: 'panel' });
     stage.append(list);
 
@@ -515,47 +543,49 @@ function renderCardList() {
     let all = [];
     for (const s of subjects) {
         const sh = state.shards[s]; if (!sh) continue;
-        const meta = state.manifest.subjects.find(x => x.subject === s);
-        for (const c of sh.cards) all.push({ ...c, _subject: s, _cat: meta?.cat });
+        for (const c of sh.cards) all.push({ ...c, _subject: s });
     }
     const q = state.cardSearch.trim().toLowerCase();
     if (q) all = all.filter(c => (c.front + ' ' + (c.back || '')).toLowerCase().includes(q));
+    if (state.cardTagFilter) {
+        const tf = state.cardTagFilter.toLowerCase();
+        all = all.filter(c => {
+            const haystack = ((c.tags || []).join(' ') + ' ' + c.front + ' ' + (c.back || '')).toLowerCase();
+            return tf.split('-').every(tok => haystack.includes(tok));
+        });
+    }
     const cap = state.cardsShowAll ? all.length : 100;
     const clipped = all.length > cap;
     list.append(el('div', { class: 'panel-head' },
         el('span', { class: 'title' }, `${all.length} cards`),
-        q ? `matching "${q}"` : (clipped ? `showing first ${cap} of ${all.length} — refine search to narrow` : 'all shown')));
+        q ? `matching "${q}"` : (clipped ? `first ${cap} of ${all.length}` : 'all shown')));
     if (clipped && all.length < 1000) {
-        list.append(el('div', { class: 'toolbar', style: 'margin-bottom:8px' },
-            el('button', { class: 'chip', 'aria-label': 'show all matching cards',
+        list.append(el('div', { class: 'toolbar', style: 'margin-bottom:6px' },
+            el('button', { class: 'chip',
                 on: { click: () => { state.cardsShowAll = true; renderCardList(); } } }, `load all ${all.length}`)));
     }
     if (all.length === 0) {
         list.append(el('div', { class: 'empty-state' },
-            el('div', { class: 'empty-title' }, 'no cards match'),
-            el('div', { class: 'empty-sub' }, q ? `nothing matches "${q}". try a different query, or clear the filter.` : 'no cards available for this filter.'),
-            el('button', { class: 'chip', on: { click: () => { state.cardSearch = ''; state.cardSubjectFilter = 'all';
+            el('div', { class: 'empty-title' }, 'no matches'),
+            el('div', { class: 'empty-sub' }, q ? `nothing matches "${q}".` : 'no cards for this filter.'),
+            el('button', { class: 'chip', on: { click: () => { state.cardSearch = ''; state.cardSubjectFilter = 'all'; state.cardTagFilter = null;
                 const inp = document.querySelector('.search'); if (inp) inp.value = ''; renderCardList(); } } }, 'clear filter')));
     }
-    for (const c of all.slice(0, cap)) list.append(buildFlashcard(c, c._cat || 'green'));
+    for (const c of all.slice(0, cap)) list.append(buildFlashcard(c));
     state.lastFilteredCount = all.length;
 }
 
 async function renderTriage() {
     stage.append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'cases'), el('h2', {}, 'work a case')));
-    const placeholder = el('div', { class: 'panel skeleton-panel' },
-        el('div', { class: 'skeleton', style: 'width:60%;height:18px' }),
-        el('div', { class: 'skeleton', style: 'width:90%' }),
-        el('div', { class: 'skeleton', style: 'width:80%' }),
-        el('div', { class: 'skeleton', style: 'width:75%' }));
+    const placeholder = el('div', { class: 'panel' }, el('div', { class: 'skeleton', style: 'width:60%;height:14px' }));
     stage.append(placeholder);
     await loadAllShards();
     placeholder.remove();
-    stage.append(el('div', { class: 'panel rail-mascot' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'live tutor mode'), 'recommended'),
-        el('div', {}, "open the live tutor to work a case with an in-browser study assistant — supply differentials, plan, investigations, then submit for grading."),
-        el('a', { class: 'cta cta-primary', href: './triage-live.html' }, el('div', { class: 'cta-label' }, 'open live tutor'))));
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'live tutor')),
+        el('div', { style: 'font-family:var(--ff-prose);font-size:14px;color:var(--panel-text-2);margin-bottom:10px' }, 'work a case with the in-browser study assistant — supply differentials, plan, investigations, then submit for grading.'),
+        el('a', { class: 'primary-action', href: './triage-live.html' }, 'open live tutor')));
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject];
         if (!sh.triage || !sh.triage.scenarios.length) continue;
@@ -566,8 +596,7 @@ async function renderTriage() {
 function buildTriageWidget(meta, shard, sc) {
     const params = sc.parameters && typeof sc.parameters === 'object' && !Array.isArray(sc.parameters) ? sc.parameters : {};
     const inputs = {};
-    const wrap = el('div', { class: `triage-scenario rail-${meta.cat}` });
-    wrap.style.boxShadow = `inset 4px 0 0 var(--${meta.cat})`;
+    const wrap = el('div', { class: 'triage-scenario' });
     wrap.append(el('div', { class: 'panel-head' }, el('span', { class: 'title' }, sc.name), meta.subject));
     wrap.append(el('div', { class: 'description' }, sc.description || ''));
     for (const [k, v] of Object.entries(params)) {
@@ -587,9 +616,9 @@ function buildTriageWidget(meta, shard, sc) {
         out.append(el('div', { class: 'eyebrow' }, 'inputs'));
         out.append(el('pre', {}, JSON.stringify(vals, null, 2)));
         out.append(el('div', { class: 'eyebrow' }, 'reasoning'));
-        out.append(el('div', {}, example.reasoning || 'apply key topics in order: confirm diagnosis → classify severity → first-line therapy → reassess.'));
-        out.append(el('div', { class: 'eyebrow', style: 'margin-top:10px' }, 'recommendation'));
-        out.append(el('div', {}, example.recommendation || 'Standard guideline-directed management.'));
+        out.append(el('div', {}, example.reasoning || 'confirm diagnosis → classify severity → first-line therapy → reassess.'));
+        out.append(el('div', { class: 'eyebrow', style: 'margin-top:8px' }, 'recommendation'));
+        out.append(el('div', {}, example.recommendation || 'standard guideline-directed management.'));
         out.style.display = 'block';
     } } }, 'run case');
     wrap.append(btn, out);
@@ -598,13 +627,7 @@ function buildTriageWidget(meta, shard, sc) {
 
 async function renderReview() {
     stage.innerHTML = '';
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'review'), el('h2', {}, 'review your cards')));
-    const placeholder = el('div', { class: 'panel skeleton-panel' },
-        el('div', { class: 'skeleton', style: 'width:60%;height:18px' }),
-        el('div', { class: 'skeleton', style: 'width:90%' }),
-        el('div', { class: 'skeleton', style: 'width:80%' }),
-        el('div', { class: 'skeleton', style: 'width:75%' }));
+    const placeholder = el('div', { class: 'panel' }, el('div', { class: 'skeleton', style: 'width:60%;height:14px' }));
     stage.append(placeholder);
     const subjects = state.reviewSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.reviewSubjectFilter];
     await Promise.all(subjects.map(s => loadShard(s)));
@@ -613,8 +636,7 @@ async function renderReview() {
     const allCards = [];
     for (const s of subjects) {
         const sh = state.shards[s]; if (!sh) continue;
-        const meta = state.manifest.subjects.find(x => x.subject === s);
-        for (const c of sh.cards) allCards.push({ ...c, _subject: s, _cat: meta?.cat || 'green' });
+        for (const c of sh.cards) allCards.push({ ...c, _subject: s });
     }
     const cardIds = allCards.map(c => c.id);
     state.reviewAllCardIds = cardIds;
@@ -649,19 +671,25 @@ async function renderReview() {
     const p = progress.load();
     const total = state.reviewQueue.length;
     const goal = p.dailyGoal || 30;
-    const progressPct = Math.min(100, Math.round(state.reviewSessionGraded / goal * 100));
+    const sessionTotal = state.reviewSessionStarted || total;
+    const idxOneBased = Math.min(state.reviewSessionGraded + 1, sessionTotal);
+    const toGoal = Math.max(0, goal - p.todayGraded);
+
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'review'), el('h2', {}, state.cramMode ? 'cram' : 'review')));
+
+    // tiny progress line — REQUIRED feature 3
+    stage.append(el('div', { class: 'review-progress' },
+        el('span', { class: 'num' }, `${idxOneBased} of ${total || sessionTotal}`),
+        ' · ',
+        el('span', { class: 'goal' }, `${toGoal} to daily goal`)
+    ));
 
     const chips = el('div', { class: 'filter-chips', role: 'group', 'aria-label': 'subject filter' },
         el('button', { class: 'chip' + (state.reviewSubjectFilter === 'all' ? ' active' : ''),
             on: { click: () => { state.reviewSubjectFilter = 'all'; resetReviewQueue(); renderReview(); } } }, 'all'),
         ...state.manifest.subjects.map(s => el('button', { class: 'chip' + (state.reviewSubjectFilter === s.subject ? ' active' : ''),
             on: { click: () => { state.reviewSubjectFilter = s.subject; resetReviewQueue(); renderReview(); } } }, s.subject))
-    );
-    const head = el('div', { class: 'panel rail-green' },
-        el('div', { class: 'panel-head' },
-            el('span', { class: 'title' }, state.cramMode ? 'cram mode' : `streak ${p.streak}`),
-            `${p.todayGraded}/${goal} today · ${total} due${state.reviewAgainPile.length ? ` · ${state.reviewAgainPile.length} to revisit` : ''}${state.cramMode ? ' · grades not saved' : ''}`),
-        el('div', { class: 'progress-bar' }, el('div', { class: 'progress-fill', style: `width:${progressPct}%` }))
     );
     const cramBtn = el('button', { class: 'chip' + (state.cramMode ? ' active' : ''),
         'aria-label': 'toggle cram mode', 'aria-pressed': String(!!state.cramMode),
@@ -674,7 +702,7 @@ async function renderReview() {
             'aria-pressed': String(state.reviewTagFilter.has(t)),
             on: { click: () => { if (state.reviewTagFilter.has(t)) state.reviewTagFilter.delete(t); else state.reviewTagFilter.add(t); resetReviewQueue(); renderReview(); } } }, '#' + t))
     ) : null;
-    stage.append(el('div', { class: 'toolbar' }, chips, cramBtn), tagChips, head);
+    stage.append(el('div', { class: 'toolbar' }, chips, cramBtn), tagChips);
 
     if (state.reviewQueue.length === 0) {
         if (state.reviewAgainPile.length > 0) {
@@ -682,22 +710,20 @@ async function renderReview() {
             state.reviewAgainPile = []; state.reviewIndex = 0;
             renderReview(); return;
         }
-        // End-of-session summary
         const reviewed = state.reviewSessionGraded;
-        const started = state.reviewSessionStarted;
         if (reviewed > 0 && !state.sessionFinished) {
             state.sessionFinished = true;
-            stage.append(el('div', { class: 'panel rail-green' },
-                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'session complete'), 'great work'),
-                el('p', {}, `you reviewed ${reviewed} card${reviewed === 1 ? '' : 's'}. streak now ${p.streak}.`),
-                el('div', { class: 'cta-row' },
-                    el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); go('today'); } } }, 'back to today'),
+            stage.append(el('div', { class: 'panel' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'session done')),
+                el('p', {}, `${reviewed} card${reviewed === 1 ? '' : 's'} reviewed · streak ${p.streak}.`),
+                el('div', { class: 'toolbar' },
+                    el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); go('today'); } } }, 'today'),
                     el('a', { class: 'chip', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.sessionFinished = false; renderReview(); } } }, 'review more')
                 )));
         } else {
-            stage.append(el('div', { class: 'panel rail-sky' },
-                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'all caught up'), 'no cards due'),
-                el('div', {}, 'every scheduled card is in the future. add new cards by browsing a subject, or wait for tomorrow.')));
+            stage.append(el('div', { class: 'panel' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'all caught up')),
+                el('div', {}, 'no cards due. browse a subject or wait.')));
         }
         return;
     }
@@ -707,7 +733,7 @@ async function renderReview() {
     const seen = (cardState.history || []).length;
     const friendlyMeta = seen === 0 ? 'new' : (seen < 3 ? `seen ${seen}×` : 'familiar');
     const reviewCard = el('div', {
-        class: `flashcard rail-${card._cat}` + (state.reviewRevealed ? ' flipped' : ''), id: 'review-card'
+        class: 'flashcard' + (state.reviewRevealed ? ' flipped' : ''), id: 'review-card'
     },
         el('div', { class: 'meta-line' },
             el('span', {}, `${card._subject} · ${state.reviewIndex + 1}/${total}`),
@@ -736,11 +762,11 @@ async function renderReview() {
         actions.append(el('button', { class: 'chip', id: 'review-skip', 'aria-label': 'skip',
             on: { click: () => skipReview() } }, 'skip (s)'));
         actions.append(el('button', { class: 'chip', id: 'review-suspend', 'aria-label': 'suspend card',
-            on: { click: () => { if (confirm('Suspend this card? It will not appear again until you un-suspend it from the card page.')) suspendCurrentReview(); } } }, 'suspend'));
+            on: { click: () => { if (confirm('suspend this card?')) suspendCurrentReview(); } } }, 'suspend'));
     }
     stage.append(actions);
     const hint = DEBUG
-        ? 'space=reveal · 0-5=grade · s=skip · 0 sends to revisit pile'
+        ? 'space=reveal · 0-5=grade · s=skip · 0 sends to revisit'
         : 'space=reveal · 1=again · 2=hard · 3=good · 4=easy · s=skip';
     stage.append(el('div', { class: 'kbd-hint' }, hint));
 
@@ -784,7 +810,20 @@ document.addEventListener('keydown', e => {
     const tag = e.target?.tagName;
     if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
     if (e.key === '?' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openShortcutsModal(); return; }
-    if (e.key === 'Escape') { closeShortcutsModal(); return; }
+    if (e.key === 'Escape') {
+        if (document.body.classList.contains('just-read') && state.route === 'subject') {
+            justread.toggle(state.currentSubject);
+            justread.applyClass(false);
+            return;
+        }
+        closeShortcutsModal(); return;
+    }
+    if ((e.key === 'r' || e.key === 'R') && state.route === 'subject' && state.currentSubject) {
+        e.preventDefault();
+        const on = justread.toggle(state.currentSubject);
+        justread.applyClass(on);
+        return;
+    }
     if (state.route !== 'review') return;
     if (e.key === ' ' || e.key === 'Spacebar') {
         e.preventDefault();
@@ -803,128 +842,90 @@ document.addEventListener('keydown', e => {
     }
 });
 
-function renderStats() {
-    const m = state.manifest;
+async function renderStats() {
     stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'stats'), el('h2', {}, 'how you are doing')));
-    renderHealthBands();
-    if (DEBUG) renderDebugStats(m);
-}
-
-async function renderHealthBands() {
+        el('span', { class: 'eyebrow' }, 'stats'), el('h2', {}, 'stats')));
     await loadAllShards();
+    const states = srs.loadStates();
+    const ticks = loadGuideTicks();
+    const rows = buildRows(state.manifest, state.shards, states, ticks);
+    renderVerdictTable(rows);
+
     const cardIds = [];
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject]; if (!sh) continue;
         for (const c of sh.cards) cardIds.push(c.id);
     }
-    const states = srs.loadStates();
     const stats = srs.getScheduleStats(cardIds, states);
     const forecast = srs.getForecast(cardIds, 14, states);
     const p = progress.load();
 
-    // Health bands
-    let healthy = 0, attention = 0, untouched = 0;
-    for (const id of cardIds) {
-        const s = states[id];
-        if (!s) { untouched++; continue; }
-        const goodScore = (s.lastScore ?? 0) >= 4;
-        const noLeech = !s.isLeech && (s.lapses || 0) < 3;
-        if (goodScore && noLeech) healthy++; else attention++;
-    }
-
-    stage.append(el('div', { class: 'panel rail-green' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'your study health'), 'across all subjects'),
-        el('div', { class: 'hero-stats' },
-            chipStat(p.streak, 'day streak'),
-            chipStat(stats.scheduled, 'cards started'),
-            chipStat(healthy, '✓ healthy'),
-            chipStat(attention, '! needs attention'),
-            chipStat(untouched, '· not yet seen'),
-            chipStat(stats.due, 'due now')
-        )));
-
-    stage.append(el('div', { class: 'panel rail-green heatmap-panel' },
+    stage.append(el('div', { class: 'panel heatmap-panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study days'), 'last 9 weeks'),
         renderHeatmap(p.history || [])));
 
     const maxF = Math.max(1, ...forecast.map(b => b.count));
     const forecastEl = el('div', { class: 'forecast' },
         ...forecast.map(b => el('div', { class: 'forecast-day', title: `${b.date}: ${b.count}` },
-            el('div', { class: 'forecast-bar', style: `height:${Math.round(b.count / maxF * 60) + 2}px` }),
+            el('div', { class: 'forecast-bar', style: `height:${Math.round(b.count / maxF * 50) + 2}px` }),
             el('div', { class: 'forecast-label' }, String(b.day))
         )));
-    stage.append(el('div', { class: 'panel rail-purple' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'reviews coming up'), '14-day forecast'),
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'reviews coming up'), '14d'),
         forecastEl));
 
-    // Per-subject student bands
-    stage.append(el('div', { class: 'panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'per subject')),
-        ...state.manifest.subjects.map(s => {
-            const m = masteryFor(s.subject);
-            const due = dueCountFor(s.subject);
-            return el('div', { class: 'row' },
-                el('span', { class: 'code' }, s.subject.slice(0, 4)),
-                el('div', {}, el('div', { class: 'title' }, s.subject),
-                    el('div', { class: 'meta' }, `${m}% understood · ${due} due · ${s.cardCount} cards`)),
-                el('span', { class: 'meta' }, due > 0 ? 'review' : (m >= 70 ? 'healthy' : 'in progress'))
-            );
-        })));
-
-    const cfg = srs.loadConfig();
-    const examInput = el('input', { type: 'date', value: cfg.examDate, class: 'search', style: 'max-width:200px',
-        'aria-label': 'exam date',
-        on: { change: e => { srs.saveConfig({ ...cfg, examDate: e.target.value }); render(); } } });
-    const exportBtn = el('button', { class: 'chip', 'aria-label': 'export your data',
-        on: { click: () => {
-            const blob = new Blob([srs.exportState()], { type: 'application/json' });
-            const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-            a.download = `corpus-srs-${srs.today()}.json`; a.click(); URL.revokeObjectURL(a.href);
-        } } }, 'export your data');
-    const importInput = el('input', { type: 'file', accept: '.json', style: 'display:none',
-        on: { change: async e => {
-            const f = e.target.files?.[0]; if (!f) return;
-            const text = await f.text();
-            try { const n = srs.importState(text); alert(`imported ${n} cards`); render(); }
-            catch (err) { alert('import failed: ' + err.message); }
-        } } });
-    const importBtn = el('button', { class: 'chip', 'aria-label': 'import data',
-        on: { click: () => importInput.click() } }, 'import data');
-    const resetBtn = el('button', { class: 'chip', 'aria-label': 'reset progress',
-        on: { click: () => { if (confirm('Reset all review progress?')) { srs.resetAll(); state.reviewSessionGraded = 0; render(); } } } }, 'reset progress');
-    stage.append(el('div', { class: 'panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'settings')),
-        el('div', { class: 'toolbar' },
-            el('label', { for: 'exam-date' }, 'exam date:'), examInput, exportBtn, importBtn, importInput, resetBtn)));
+    if (DEBUG) renderDebugStats(state.manifest, stats);
 }
 
-function renderDebugStats(m) {
-    const cardIds = [];
-    for (const meta of state.manifest.subjects) {
-        const sh = state.shards[meta.subject]; if (!sh) continue;
-        for (const c of sh.cards) cardIds.push(c.id);
+function renderVerdictTable(rows) {
+    let sortKey = state.verdictSort || 'verdict';
+    function applySort(rs) {
+        const sorters = {
+            verdict: (a, b) => VERDICT_RANK[a.verdict] - VERDICT_RANK[b.verdict],
+            subject: (a, b) => a.subject.localeCompare(b.subject),
+            mastery: (a, b) => b.mastery - a.mastery,
+            trend: (a, b) => b.trend - a.trend,
+            backlog: (a, b) => b.backlog - a.backlog
+        };
+        return [...rs].sort(sorters[sortKey] || sorters.verdict);
     }
-    const stats = srs.getScheduleStats(cardIds);
+    const wrap = el('div', { class: 'panel' });
+    wrap.append(el('div', { class: 'panel-head' },
+        el('span', { class: 'title' }, 'exam-ready'),
+        el('span', {}, 'click a column to sort')
+    ));
+    const sortSel = el('select', { class: 'search', style: 'max-width:160px',
+        'aria-label': 'sort by',
+        on: { change: e => { state.verdictSort = e.target.value; renderStats(); } } },
+        ...['verdict', 'subject', 'mastery', 'trend', 'backlog'].map(k => el('option', { value: k, ...(k === sortKey ? { selected: 'selected' } : {}) }, `sort: ${k}`))
+    );
+    wrap.append(el('div', { class: 'toolbar' }, sortSel));
+    const sorted = applySort(rows);
+    const tbl = el('table', { class: 'verdict-table' },
+        el('thead', {}, el('tr', {},
+            ...['subject', 'mastery', 'trend', 'backlog', 'verdict'].map(k =>
+                el('th', { on: { click: () => { state.verdictSort = k; renderStats(); } } }, k))
+        )),
+        el('tbody', {}, ...sorted.map(r => el('tr', {},
+            el('td', { class: 'subject' }, r.subject),
+            el('td', { class: 'mastery' }, `${r.mastery}%`),
+            el('td', { class: 'trend ' + (r.trend > 0 ? 'up' : (r.trend < 0 ? 'down' : '')) }, r.trend > 0 ? `+${r.trend}` : String(r.trend)),
+            el('td', { class: 'backlog' }, String(r.backlog)),
+            el('td', { class: 'verdict ' + r.verdict.replace(/\s/g, '') }, r.verdict)
+        )))
+    );
+    wrap.append(el('div', { class: 'table-scroll' }, tbl));
+    stage.append(wrap);
+}
+
+function renderDebugStats(m, stats) {
     const days = srs.daysUntilExam();
     const eff = srs.effectiveDays();
-    stage.append(el('div', { class: 'panel rail-flame', id: 'srs-stats' },
+    stage.append(el('div', { class: 'panel', id: 'srs-stats' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'debug · raw scheduler'),
             `schema v${srs.SCHEMA_VERSION || 1} · localStorage corpus.srs.states`),
-        el('div', { class: 'hero-stats' },
-            chipStat(stats.total, 'total cards'),
-            chipStat(stats.new, 'new'),
-            chipStat(stats.learning, 'learning'),
-            chipStat(stats.young, 'young (<21d)'),
-            chipStat(stats.mature, 'mature (≥21d)'),
-            chipStat(stats.leech, 'leeches'),
-            chipStat(stats.avgEaseFactor.toFixed(2), 'avg EF'),
-            chipStat(stats.avgLastScore.toFixed(2), 'avg last score'),
-            chipStat(days, 'days to exam'),
-            chipStat(eff, 'effective days'),
-            chipStat(m.totals.atoms, 'atoms'),
-            chipStat(m.totals.scenarios, 'scenarios')
-        )));
+        el('div', { style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2);line-height:1.6' },
+            `total ${stats.total} · new ${stats.new} · learning ${stats.learning} · young ${stats.young} · mature ${stats.mature} · leech ${stats.leech} · avg EF ${stats.avgEaseFactor.toFixed(2)} · avg last score ${stats.avgLastScore.toFixed(2)} · days to exam ${days} · effective days ${eff} · atoms ${m.totals.atoms} · scenarios ${m.totals.scenarios}`)));
 }
 
 function collectReviewTags(allCards) {
@@ -943,25 +944,25 @@ async function renderCardFocus() {
         const c = sh.cards.find(x => x.id === id);
         if (c) { card = c; meta = m; break; }
     }
-    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'card'), el('h2', {}, card ? card.front.slice(0, 80) : 'card not found')));
+    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'card'), el('h2', {}, card ? card.front.slice(0, 80) : 'not found')));
     if (!card) {
         stage.append(el('div', { class: 'empty-state' }, el('div', { class: 'empty-title' }, 'no such card'),
-            el('button', { class: 'chip', on: { click: () => go('cards') } }, 'back to cards')));
+            el('button', { class: 'chip', on: { click: () => go('cards') } }, 'cards')));
         return;
     }
     const cs = srs.getCardState(card.id);
     const suspended = !!cs.suspended;
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, meta.subject), `${(card.tags || []).join(' · ')}`),
-        buildFlashcard(card, meta.cat || 'green'),
-        el('div', { class: 'toolbar', style: 'margin-top:14px' },
-            el('button', { class: 'chip', 'aria-label': suspended ? 'un-suspend card' : 'suspend card',
+        buildFlashcard(card),
+        el('div', { class: 'toolbar', style: 'margin-top:10px' },
+            el('button', { class: 'chip', 'aria-label': suspended ? 'un-suspend' : 'suspend',
                 on: { click: () => { srs.suspendCard(card.id, !suspended); render(); } } }, suspended ? 'un-suspend' : 'suspend'),
-            el('button', { class: 'chip', 'aria-label': 'reset this card',
-                on: { click: () => { if (confirm('Reset SRS state for this card?')) {
+            el('button', { class: 'chip', 'aria-label': 'reset card',
+                on: { click: () => { if (confirm('reset card?')) {
                     const states = srs.loadStates(); delete states[card.id]; srs.saveStates(states); render();
-                } } } }, 'reset card'),
-            el('a', { class: 'chip', href: `#cards/${meta.subject}`, on: { click: e => { e.preventDefault(); go('cards', meta.subject); } } }, 'back to cards'))
+                } } } }, 'reset'),
+            el('a', { class: 'chip', href: `#cards/${meta.subject}`, on: { click: e => { e.preventDefault(); go('cards', meta.subject); } } }, 'cards'))
     ));
 }
 
@@ -977,7 +978,7 @@ function renderHeatmap(history) {
         cells.push({ date: k, count: counts[k] || 0 });
     }
     const max = Math.max(1, ...cells.map(c => c.count));
-    const cellSize = 12, gap = 2, cols = 9;
+    const cellSize = 11, gap = 2, cols = 9;
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('class', 'heatmap');
     svg.setAttribute('width', String(cols * (cellSize + gap)));
@@ -994,7 +995,7 @@ function renderHeatmap(history) {
         r.setAttribute('rx', '2');
         const intensity = c.count === 0 ? 0 : Math.min(1, c.count / max);
         const alpha = c.count === 0 ? 0.10 : 0.25 + intensity * 0.75;
-        r.setAttribute('fill', `rgba(63,138,74,${alpha})`);
+        r.setAttribute('fill', `rgba(47,122,62,${alpha})`);
         const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
         title.textContent = `${c.date}: ${c.count} cards`;
         r.appendChild(title);
@@ -1015,30 +1016,30 @@ async function renderSettings() {
     const cramBtn = el('button', { class: 'chip' + (state.cramMode ? ' active' : ''),
         'aria-label': 'cram mode', 'aria-pressed': String(!!state.cramMode),
         on: { click: () => { state.cramMode = !state.cramMode; render(); } } }, state.cramMode ? 'cram on' : 'cram off');
-    const exportBtn = el('button', { class: 'chip', 'aria-label': 'export your data',
+    const exportBtn = el('button', { class: 'chip', 'aria-label': 'export data',
         on: { click: () => {
             const blob = new Blob([srs.exportState()], { type: 'application/json' });
             const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
             a.download = `corpus-srs-${srs.today()}.json`; a.click(); URL.revokeObjectURL(a.href);
-        } } }, 'export your data');
+        } } }, 'export');
     const importInput = el('input', { type: 'file', accept: '.json', style: 'display:none',
         on: { change: async e => {
             const f = e.target.files?.[0]; if (!f) return;
-            if (!confirm('Importing will overwrite your current progress. Continue?')) return;
+            if (!confirm('import overwrites current progress. continue?')) return;
             const text = await f.text();
             try { const n = srs.importState(text); alert(`imported ${n} cards`); render(); }
             catch (err) { alert('import failed: ' + err.message); }
         } } });
-    const importBtn = el('button', { class: 'chip', 'aria-label': 'import data',
-        on: { click: () => importInput.click() } }, 'import data');
-    const resetBtn = el('button', { class: 'chip', 'aria-label': 'reset progress',
-        on: { click: () => { if (confirm('Reset all review progress? This cannot be undone.')) { srs.resetAll(); state.reviewSessionGraded = 0; render(); } } } }, 'reset progress');
-    const shortcutsBtn = el('button', { class: 'chip', 'aria-label': 'keyboard shortcuts',
-        on: { click: () => openShortcutsModal() } }, 'keyboard shortcuts');
+    const importBtn = el('button', { class: 'chip', 'aria-label': 'import',
+        on: { click: () => importInput.click() } }, 'import');
+    const resetBtn = el('button', { class: 'chip', 'aria-label': 'reset',
+        on: { click: () => { if (confirm('reset all progress?')) { srs.resetAll(); state.reviewSessionGraded = 0; render(); } } } }, 'reset');
+    const shortcutsBtn = el('button', { class: 'chip', 'aria-label': 'shortcuts',
+        on: { click: () => openShortcutsModal() } }, 'shortcuts');
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study')),
-        el('div', { class: 'toolbar' }, el('label', { for: 'exam-date' }, 'exam date:'), examInput,
-            el('label', {}, 'daily goal:'), goalInput, cramBtn)));
+        el('div', { class: 'toolbar' }, el('label', { for: 'exam-date' }, 'exam:'), examInput,
+            el('label', {}, 'goal:'), goalInput, cramBtn)));
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'theme')),
         el('div', { class: 'toolbar' }, makeToggleButton(document))));
@@ -1048,26 +1049,27 @@ async function renderSettings() {
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'help')),
         el('div', { class: 'toolbar' }, shortcutsBtn,
-            el('a', { class: 'chip', href: '?debug', 'aria-label': 'enable debug mode' }, 'enable debug mode'))));
+            el('a', { class: 'chip', href: '?debug', 'aria-label': 'enable debug' }, 'debug mode'))));
 }
 
 const SHORTCUTS = [
-    ['Ctrl+K', 'open search'],
+    ['ctrl+k', 'open search'],
     ['?', 'show this help'],
-    ['Esc', 'close modals'],
-    ['Space', 'reveal answer (review)'],
+    ['esc', 'close modals · exit just-read'],
+    ['r', 'just-read mode (subject)'],
+    ['space', 'reveal answer (review)'],
     ['1–4', 'grade card (review)'],
     ['s', 'skip card (review)'],
     ['j / k', 'next / prev case (live tutor)'],
     ['/', 'focus reply (live tutor)'],
-    ['Ctrl+Enter', 'send (live tutor)']
+    ['ctrl+enter', 'send (live tutor)']
 ];
 function openShortcutsModal() {
     let m = document.getElementById('shortcuts-modal');
     if (m) { m.classList.remove('hidden'); return; }
-    m = el('div', { id: 'shortcuts-modal', class: 'shortcuts-modal', role: 'dialog', 'aria-label': 'keyboard shortcuts' });
+    m = el('div', { id: 'shortcuts-modal', class: 'shortcuts-modal', role: 'dialog', 'aria-label': 'shortcuts' });
     const inner = el('div', { class: 'shortcuts-inner' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'keyboard shortcuts'), el('button', { class: 'chip', 'aria-label': 'close',
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'shortcuts'), el('button', { class: 'chip', 'aria-label': 'close',
             on: { click: () => m.classList.add('hidden') } }, 'close')),
         el('table', { class: 'shortcuts-table' },
             el('tbody', {}, ...SHORTCUTS.map(([k, d]) => el('tr', {}, el('td', { class: 'kbd' }, k), el('td', {}, d))))
@@ -1083,8 +1085,8 @@ function closeShortcutsModal() {
 function showStorageFullBanner() {
     if (document.getElementById('storage-full-banner')) return;
     const b = el('div', { id: 'storage-full-banner', class: 'storage-full-banner', role: 'alert' },
-        el('span', {}, 'browser storage is full. Export your data, then reset progress to free space.'),
-        el('button', { class: 'chip', on: { click: () => go('settings') } }, 'open settings'),
+        el('span', {}, 'browser storage full. export, then reset to free space.'),
+        el('button', { class: 'chip', on: { click: () => go('settings') } }, 'settings'),
         el('button', { class: 'chip', 'aria-label': 'dismiss', on: { click: () => b.remove() } }, 'dismiss'));
     document.body.appendChild(b);
 }
@@ -1100,20 +1102,17 @@ function mountTopbar() {
     }
     nav.append(el('a', { href: '#settings', class: 'navlink', data: { route: 'settings' },
         on: { click: e => { e.preventDefault(); go('settings'); } } }, 'settings'));
-    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta' }, 'live tutor'));
+    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta' }, 'tutor'));
     const right = document.querySelector('header.topbar .status');
-    const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'open search (Ctrl+K)', title: 'search (Ctrl+K)',
-        on: { click: () => state.searchPaletteApi?.open() } }, 'search ⌘K');
+    const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'search (ctrl+k)', title: 'search (ctrl+k)',
+        on: { click: () => state.searchPaletteApi?.open() } }, 'search ⌘k');
     right.parentElement.insertBefore(searchBtn, right);
     right.parentElement.insertBefore(makeToggleButton(document), right);
 }
 
 function mountSearchPalette() {
     state.searchPaletteApi = mountPalette(document, '#search-palette',
-        () => {
-            const idx = buildSearchIndex(state.manifest, state.shards);
-            return idx;
-        },
+        () => buildSearchIndex(state.manifest, state.shards),
         (item) => {
             if (item.kind === 'card') { state.cardSearch = item.title.slice(0, 40); state.cardSubjectFilter = item.subject; go('cards'); }
             else if (item.kind === 'case') { location.href = `./triage-live.html#${encodeURIComponent(item.id)}`; }
@@ -1127,7 +1126,7 @@ function updateOnlineStatus() {
     if (!dot || !lbl) return;
     dot.classList.remove('loading');
     if (navigator.onLine) { dot.classList.remove('offline'); dot.classList.add('live'); lbl.textContent = 'ready'; }
-    else { dot.classList.remove('live'); dot.classList.add('offline'); lbl.textContent = 'offline ready'; }
+    else { dot.classList.remove('live'); dot.classList.add('offline'); lbl.textContent = 'offline'; }
 }
 
 function registerSW() {
@@ -1153,13 +1152,14 @@ function registerSW() {
         });
         window.addEventListener('corpus:storage-full', () => showStorageFullBanner());
         const hash = location.hash.replace('#', '') || 'today';
-        const [route, sub] = hash.split('/');
-        go(route, sub);
+        const [routeRaw, sub] = hash.split('/');
+        const route = routeRaw.split('?')[0];
+        go(route, sub ? sub.split('?')[0] : undefined);
         log('ready', { subjects: state.manifest.subjects.length });
     } catch (e) {
         stage.innerHTML = '';
-        stage.append(el('div', { class: 'panel rail-flame error-state' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'failed to load'), 'try refresh'),
+        stage.append(el('div', { class: 'panel error-state' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'failed to load')),
             el('div', {}, e.message),
             el('button', { class: 'chip', on: { click: () => location.reload() } }, 'retry')));
         warn('boot error', e);
@@ -1168,6 +1168,7 @@ function registerSW() {
 
 window.addEventListener('hashchange', () => {
     const hash = location.hash.replace('#', '') || 'today';
-    const [route, sub] = hash.split('/');
-    go(route, sub);
+    const [routeRaw, sub] = hash.split('/');
+    const route = routeRaw.split('?')[0];
+    go(route, sub ? sub.split('?')[0] : undefined);
 });

@@ -174,3 +174,55 @@ The whole site is now a student learning hub. Operator vocabulary (`manifest`, `
 - **Empty states**: messages `:empty::before` "// no turns yet — assistant has fresh memory each turn" → "your tutor will reply here."; scratchpad-empty "// scratchpad empty — ask the assistant to plot differentials…" → "your board is empty — type 'add differential: …' …"; default active panel "no scenario selected" → "pick a case to begin".
 - **Test gate**: `test.js` group `triage-live surfaces gpu errors via console + spawns worker (type=module) + debug panel + student-clean default UX` asserts (a) `console.error('[triage-live] webgpu error` exists, (b) `WebGPU error`/`≈2GB` strings absent from default chrome (HTML+CSS), (c) student-friendly strings present (`study assistant`, `your tutor`, `offline`, `pick a case`), (d) stats use `attempted/streak/last grade` shape. test.js is 199 lines (under 200 cap). 12/12 pass.
 - **Browser witness**: `gm:browser` (playwriter) attached and witnessed `?debug=webgpu` triggers the worker spawn, model-status transitions `offline → starting…`, and progress events stream from `[webgpu-debug] worker-msg` through `[triage-live] worker progress`. Default load (no `?debug`) renders student-clean chrome — confirmed by both the served-HTML test gate and the live DOM walk.
+
+
+## Personal-tool restyle + study-flow pass (2026-05-05)
+
+This pass dropped the marketing-style framing in favour of a personal study notebook. Witnessed live via fresh-context browser at `http://127.0.0.1:8765/`.
+
+**Design tokens** — `site/style.css` `:root`:
+- Type: `--ff-prose` (Lora, humanist serif), `--ff-ui` (system-ui sans), `--ff-mono` (JetBrains Mono). Archivo Black removed; `--ff-display` retired (the token name persists in legacy code paths but no longer loads a display face).
+- Color reserved for **meaning**: `--c-due`, `--c-mastered`, `--c-missed`, `--c-weak`. Decorative `rail-{green|purple|mascot|sun|flame|sky}` neutralised — they no longer drop a coloured stripe; the classnames remain inert for back-compat.
+- Chrome lowercased site-wide — `text-transform: lowercase` on `.navlink`, `.eyebrow`, `.chip`, `.panel-head .title`. Authored copy is already lowercase.
+
+**New modules** (all module-script ESM, registered on `window.__<name>`):
+- `site/cram.js` — `corpus.cram.dismissed.v1`. `isDismissed()` / `dismiss()`. Same-day persistence; rolls over at midnight.
+- `site/lastpos.js` — `corpus.lastpos.v1` = `{route, subjectAnchor, ts}`. Written on every `go()` and on guide-section-tick. `gapDays(now)` returns whole days since last visit.
+- `site/justread.js` — `corpus.justread.v1` = `{[subject]: bool}`. `toggle(subject)` flips and returns new value; `applyClass(on)` toggles `document.body.classList.just-read`.
+- `site/verdicts.js` — pure functions. `verdictFor({mastery, trend, backlog, scheduled})` → `'solid' | 'getting there' | 'weak' | 'cold'`. Thresholds: `scheduled===0 || mastery<25 → cold`; `mastery>=75 && trend>=0 && backlog<10 → solid`; `mastery>=50 → getting there`; `mastery>=25 → weak`. Helpers: `trendFor(states, ids, now)` (last-7d score balance ∈ [-1, +1]), `backlogFor`, `buildRows(manifest, shards, states, ticks)`, `computeWeakest(rows)`.
+
+**Seven study-flow features** (all wired, all witnessed):
+1. **Compressed `#today`** — single `.status-line` (`day N · M due · streak K · goal X/Y` mono), single `.summary-line` (`today: N due cards · M cases queued · ~X min est.`), one primary CTA `.primary-action` (`review (N)` or `review`), 8-row `.guide-jump` list (subject · sections · mastery%). Recommended cases + 5-day recap moved behind `?debug`.
+2. **Inline guide affordances** — `renderMarkdown(md, subject)` emits `<span class="guide-aff"><a data-aff="tutor">→ tutor</a><a data-aff="practice">→ practice</a></span>` next to every `h2` and `h3` in guide bodies. tutor href = `./triage-live.html?topic=<encoded>&subject=<x>`, practice href = `#cards/<subject>?tag=<heading-token>`. Witnessed: 22 affordances on cardiology guide.
+3. **Review queue progress** — `.review-progress` line above the active card: `<idxOneBased> of <total> · <toGoal> to daily goal`. No celebration animation on grade — instant next-card render. Witnessed: `1 of 542 · 30 to daily goal`.
+4. **Cram banner** — `renderCramBanner(weakest)` returns null unless `srs.daysUntilExam() <= 14` AND `!cram.isDismissed()`. Renders on `#today` AND `#subject/<x>`. Shows `exam in N days · weakest: <subject> · focus there` plus 2 case chips from the weakest subject and a `dismiss` button. Witness: `localStorage.corpus.srs.config = {examDate: '2026-05-14'}` → banner appears with cardiology = weakest.
+5. **Last-position memory** — `lastpos.save(route, subject)` fires on every `go()` and on guide-tick. `renderResumeLine()` on `#today` shows `back after Nd. last: <anchor> → resume` when `gapDays >= 1`.
+6. **Just-read mode** — `r` key on `#subject/<x>` toggles `document.body.classList.just-read`; persisted per subject at `corpus.justread.v1`. Hint `press r for just-read` rendered in the deepdive sidebar. `Esc` also exits. Style hides `.deepdive-side`, `.cards-panel`, `.cases-panel`, shrinks topbar.
+7. **Exam-ready verdicts** — `#stats` renders `.verdict-table` with columns `subject | mastery | trend | backlog | verdict`. Sortable by clicking header or via the `sort:` dropdown; default sort = `VERDICT_RANK` (cold → solid). Witness: 8 rows on initial load, all `cold` until states accumulate.
+
+**IA + nav**:
+- Nav: `today | guides | subjects | review | cards | cases | stats | settings` + `tutor` (`.nav-cta`).
+- `ROUTE_ALIASES = { home: 'today', triage: 'cases' }` keeps old fragment URLs working.
+- Topbar lowercase chrome; brand-glyph `·_`.
+
+**Microcopy sweep** (triage-live):
+- `load tutor` (was `turn on assistant`)
+- `offline mode` (was `use offline tutor`)
+- `select a case.` (was `pick a case to begin`)
+- `tutor` (was `study assistant`)
+- No `≈2GB` text in user-visible chrome.
+
+**test.js** (262 lines, 7/7 green): data integrity · scheduler+persistence · triage-live gate+worker+restyle · restyle tokens · new modules (cram/lastpos/justread/verdicts thresholds) · app.js wiring · progress+search+theme+a11y+telemetry.
+
+**Browser witness 2026-05-05** (fresh `browser.newContext()` to bypass the previous session's SW cache):
+- `#today`: status-line `day 0·1432 due·streak 0·goal 0/30`, summary `today: 1432 due cards · 0 cases queued · ~573 min est.`, primary `review (1432)`, 8 guide-jump rows, no `workspace` text.
+- `#subject/cardiology`: 22 guide-affordance spans rendered, `press r for just-read` hint visible, `r` flips `.just-read` on/off cleanly.
+- `#review`: `1 of 542 · 30 to daily goal` line above first card.
+- `#stats`: 8-row verdict table.
+- Cram: `localStorage.corpus.srs.config = {examDate: '2026-05-14'}` → banner `exam in 9 days · weakest: cardiology · focus there` + 2 case chips + dismiss.
+
+**Known rough edges (next session)**:
+- `renderStats` previously had a duplicated `buildRows` call; cleaned. Verdict trend column will read `0` for all subjects until users actually grade cards (no historic data on first load) — cosmetic.
+- The cram banner deduplicates against `cram.isDismissed()` per-day; a user who dismisses on day 1 won't re-see it until midnight rollover. Acceptable.
+- `renderHome` route name removed; `#home` aliases to `#today`. Old bookmarks still work.
+- The previous session's service worker (`corpus-v2`) caches stale HTML aggressively — first-visit users on the deployed site may need a hard reload. SW cache key was not bumped this pass; if persistent, bump `corpus-v3` next pass.

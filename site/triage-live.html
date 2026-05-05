@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Live tutor · corpus</title>
-<meta name="description" content="In-browser study assistant for working clinical cases — Socratic tutor with WebGPU LLM.">
-<meta property="og:title" content="Live tutor — corpus">
-<meta property="og:description" content="Work clinical cases with a WebGPU-powered study assistant. Differentials, plan, investigations — graded against canonical atoms.">
+<title>tutor · corpus</title>
+<meta name="description" content="in-browser study tutor — work clinical cases with a webgpu-powered assistant.">
+<meta property="og:title" content="tutor — corpus">
+<meta property="og:description" content="work clinical cases. differentials, plan, investigations — graded against canonical key topics.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23E8B86A'/%3E%3Ctext x='16' y='22' font-size='20' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%231A1714'%3E%E2%97%B0%3C/text%3E%3C/svg%3E">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23FAF7F0'/%3E%3Ctext x='16' y='22' font-size='18' font-family='ui-monospace,monospace' font-weight='600' text-anchor='middle' fill='%231A1714'%3E%C2%B7%5F%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="./triage-live.css">
 <script>(function(){try{var t=localStorage.getItem('corpus.theme.v1');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}else if(matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
@@ -17,57 +17,57 @@
 <body>
 <div id="app">
   <header class="topbar" role="banner">
-    <a href="./index.html#today" class="brand" aria-label="corpus home"><span class="brand-glyph" aria-hidden="true">◰</span><span>corpus</span></a>
+    <a href="./index.html#today" class="brand" aria-label="corpus home"><span class="brand-glyph" aria-hidden="true">·_</span><span>corpus</span></a>
     <nav class="nav" aria-label="primary">
       <a href="./index.html#today" class="navlink">today</a>
       <a href="./index.html#subjects" class="navlink">subjects</a>
       <a href="./index.html#review" class="navlink">review</a>
       <a href="./index.html#cases" class="navlink">cases</a>
       <a href="./index.html#stats" class="navlink">stats</a>
-      <a href="./triage-live.html" class="navlink nav-cta active">live tutor</a>
+      <a href="./triage-live.html" class="navlink nav-cta active">tutor</a>
     </nav>
     <div class="status">
       <span class="dot" id="cap-dot" aria-hidden="true"></span>
-      <span class="status-label" id="cap-label">getting ready…</span>
+      <span class="status-label" id="cap-label">starting…</span>
     </div>
   </header>
 
   <main class="triage-shell">
-    <aside class="triage-side" aria-label="scenario list">
+    <aside class="triage-side" aria-label="case list">
       <div class="filter-bar" id="filter-bar" role="group" aria-label="subject filter"></div>
       <div class="stats-row" id="stats-row" aria-live="polite"></div>
       <div class="io-row">
         <button class="chip" id="export-btn" type="button" aria-label="export sessions">export</button>
         <label class="chip" for="import-input">import<input id="import-input" type="file" accept="application/json" hidden></label>
       </div>
-      <div id="scenario-list"><div class="loading">loading scenarios…</div></div>
+      <div id="scenario-list"><div class="loading">loading cases…</div></div>
     </aside>
 
     <section class="triage-stage">
       <div class="active-scenario panel" id="active-scenario">
-        <div class="panel-head"><span class="title">pick a case to begin</span><span class="meta">choose one from the list</span></div>
+        <div class="panel-head"><span class="title">select a case.</span><span class="meta">choose one from the list</span></div>
         <div class="muted">work the case on this board: write your differentials, investigations, and plan as cards, then submit for grading.</div>
-        <div class="muted small" style="margin-top:8px">shortcuts: <kbd>j</kbd>/<kbd>k</kbd> next/prev case · <kbd>c</kbd> clear board · <kbd>/</kbd> focus reply · <kbd>Ctrl+Enter</kbd> send</div>
+        <div class="muted small" style="margin-top:8px">shortcuts: <kbd>j</kbd>/<kbd>k</kbd> next/prev · <kbd>c</kbd> clear board · <kbd>/</kbd> focus reply · <kbd>ctrl+enter</kbd> send</div>
       </div>
       <div class="scratchpad" id="scratchpad"></div>
     </section>
 
     <aside class="triage-chat" id="chat-pane">
-      <div class="model-bay panel rail-purple">
-        <div class="panel-head"><span class="title">study assistant</span><span class="meta" id="model-status">offline</span></div>
-        <div class="muted" id="model-detail">your private in-browser tutor. one-time setup the first time you turn it on.</div>
-        <button class="run-btn" id="load-llm">turn on assistant</button>
+      <div class="model-bay panel">
+        <div class="panel-head"><span class="title">tutor</span><span class="meta" id="model-status">offline</span></div>
+        <div class="muted" id="model-detail">your private in-browser tutor. one-time setup the first time you load it.</div>
+        <button class="run-btn" id="load-llm">load tutor</button>
         <div class="progress" id="progress" hidden><div class="progress-fill" id="progress-fill"></div></div>
         <div class="muted small" id="progress-text"></div>
       </div>
       <div class="messages" id="messages" aria-live="polite" aria-atomic="false" aria-label="tutor messages"></div>
       <div class="composer">
-        <textarea id="prompt" placeholder="reply to your tutor — e.g. 'add differential: acute coronary syndrome'" rows="3"></textarea>
+        <textarea id="prompt" placeholder="reply — e.g. 'add differential: acute coronary syndrome'" rows="3"></textarea>
         <div class="composer-row">
           <button class="run-btn" id="send">send</button>
-          <button class="run-btn" id="submit-grading" style="background:var(--purple)">submit for grading</button>
+          <button class="run-btn" id="submit-grading" style="background:var(--ink)">submit for grading</button>
           <button class="chip" id="clear-screen">clear board</button>
-          <button class="chip" id="simulate">use offline tutor</button>
+          <button class="chip" id="simulate">offline mode</button>
         </div>
       </div>
     </aside>
