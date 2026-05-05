@@ -311,11 +311,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         confidence.set('cardiology', 8, 3); assert.strictEqual(confidence.avgFor('cardiology'), 3.5);
     });
 
-    console.log('# integration: SW v3 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace');
+    console.log('# integration: SW v4 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace + archive isolation');
     t('SW + PWA manifest + theme contrast + search prose+snippet + streak grace + app keys + new routes', async () => {
         const sw = READ('site/sw.js');
-        assert.match(sw, /corpus-v3/);
-        for (const m of ['timer.js','plan.js','mistakes.js','drill.js','flag.js','undo.js','notes.js','late.js','usercards.js','confidence.js','manifest.webmanifest','medbak-index.json']) assert.ok(sw.includes(m), 'sw missing ' + m);
+        assert.match(sw, /corpus-v4/);
+        for (const m of ['timer.js','plan.js','mistakes.js','drill.js','flag.js','undo.js','notes.js','late.js','usercards.js','confidence.js','manifest.webmanifest']) assert.ok(sw.includes(m), 'sw missing ' + m);
+        assert.ok(!sw.includes('medbak'), 'sw should not reference medbak');
         const wm = JSON.parse(READ('site/manifest.webmanifest'));
         assert.ok(wm.name && wm.start_url && Array.isArray(wm.icons) && wm.icons.length >= 1);
         // index.html links
@@ -343,9 +344,16 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const route of ['mistakes','notes','drill']) assert.ok(appSrc.includes(`'${route}'`));
         // new shortcuts in modal
         for (const s of ['quick add card', 'pomodoro', 'undo last grade', 'flag card', 'go mistakes']) assert.ok(appSrc.includes(s), 'missing shortcut: '+s);
-        // medbak index json
-        const medbak = JSON.parse(READ('site/data/medbak-index.json'));
-        assert.ok(typeof medbak === 'object');
+        // originals never surfaced — no medbak/audio-transcripts/book-texts/pages-NNN in shards or guides
+        const fs2 = require('fs');
+        assert.ok(!fs2.existsSync('site/data/medbak-index.json'), 'medbak-index.json should be deleted');
+        for (const s of ['cardiology','rheumatology','pulmonology']) {
+            const j = JSON.parse(READ(`site/data/${s}.json`));
+            const body = (j.guide && j.guide.body) || '';
+            assert.ok(!/pages-\d|audio-transcripts|book-texts|medbak/i.test(body), `${s} guide body leaks original-source refs`);
+            const titles = (j.guide.sections || []).map(x => x.title || '').join('|');
+            assert.ok(!/pages?[\s_-]*\d+[\s_-]*\d+|CMED[A-Z0-9]+/i.test(titles), `${s} section titles leak transcript filenames`);
+        }
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

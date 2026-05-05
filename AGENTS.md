@@ -290,11 +290,11 @@ Added `'contrast'` option. `cycleTheme` order: light â dark â contrast
 
 ### PWA
 - `site/manifest.webmanifest` with SVG-data-URI icons (192 + 512 maskable). `<link rel="manifest">` in index.html. Installs as desktop/mobile app.
-- SW cache key bumped to `corpus-v3`. SHELL precaches all 10 new modules + `manifest.webmanifest` + `data/medbak-index.json`.
+- SW cache key bumped to `corpus-v4` (2026-05-05 archive-isolation pass dropped the medbak index). SHELL precaches all 10 new modules + `manifest.webmanifest`. The site never reads from `D:/medbak`; originals stay archive-only.
 - `site/index.html` script tags carry `?v=3` for cache-busting deployed users.
 
-### Audio re-link
-`scripts/build_medbak_index.js` reads `/d/medbak/archive-manifest.json` (or falls back to scanning the medbak directory, or empty index) and writes `site/data/medbak-index.json`. The persona's transcript files at `/d/medbak/<subject>/audio-transcripts/` are now indexed for future link-out from guide sections (file:// URLs are best-effort â browser security may block, but the index is in place).
+### Originals are archive-only (2026-05-05)
+The site surfaces the rewritten artifacts and nothing else: `concise/<subject>_study_guide.md`, `<subject>/srs-cards/`, `<subject>_triage_scenarios.yml`. Heading lines and TOC links in the rewritten guides were sanitized this pass to strip transcript-source filename suffixes (`_pages-NNN-NNN`, ` - CMED4IIMx - 2026`, "Lectures & Audio Transcripts"). `site/data/medbak-index.json` and `scripts/build_medbak_index.js` were deleted; no UI hook references the medbak archive. Card-level `sourceFile` / `source` fields persist in shards but are gated behind `?debug` and never feed the search index.
 
 ### Triage-live
 - New `copy as md` button in composer-row. Builds Markdown from active scenario name + description + scratchpad cards (kind, title, body), copies via `navigator.clipboard.writeText`. Console-logs char count with `[triage-live]` prefix.

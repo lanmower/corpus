@@ -8,22 +8,22 @@
 ## Contents
 
 ### Audio Lectures
-1. Adrenal Gland - CMED4IIM1 - 2026 pages 001-010
-2. Adrenal Gland - CMED4IIM1 - 2026 pages 011-015
-3. Diagnosis  Classification Of Diabetes Mellitus - CMED4IIM1 - 2026 pages 001-010
-4. Diagnosis  Classification Of Diabetes Mellitus - CMED4IIM1 - 2026 pages 011-014
-5. Disorders Of The Pituitary Gland - CMEDIIM1 - 2026 pages 001-010
-6. Disorders Of The Pituitary Gland - CMEDIIM1 - 2026 pages 011-012
-7. Parathyroid Disorders - CMED4IIM1 - 2026 pages 001-007
+1. Adrenal Gland
+2. Adrenal Gland
+3. Diagnosis  Classification Of Diabetes Mellitus
+4. Diagnosis  Classification Of Diabetes Mellitus
+5. Disorders Of The Pituitary Gland
+6. Disorders Of The Pituitary Gland
+7. Parathyroid Disorders
 
----
+-
 
 ## Lectures & Transcripts
 
-### Adrenal Gland - CMED4IIM1 - 2026 pages 001-010
+### Adrenal Gland
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 Okay, the third in this series of five lectures is abnormalities of the adrenal gland.
 And to understand that the adrenal gland comprises two sections, the adrenal medulla, which produces
 the catechol amines, and then there's the adrenal cortex.
@@ -50,7 +50,7 @@ gold standard for which is Addison's disease, that's primary hyper adrenalinism,
 congenital adrenal hyperplasia, which is really the domain of the pediatrician, and I'm not
 going to go into it, and in the medulla, hypofunction, which I will discuss, is pyrochromocytoma.
 So, to start with adrenal cortex hypofunction, or hypo adrenalinism, or adrenal insufficiency,
---- page 2 ---
+- page 2 -
 in terms of the etiology, this, as I've said, primary, which is Addison's disease, is where
 there is increased ACTH, because the problem is primarily in the adrenal, and so this causes
 a compensatory, a physiological increase in ACTH, or secondary, in other words, the disease is in
@@ -77,7 +77,7 @@ if you have a bit of general knowledge, that you will know who they are. The fir
 who many people recognize, is a former president of the United States, and that's John and Kennedy,
 and he had Addison's disease. And as you can see, he looks a little bit question-wide because he
 was probably over replaced with hydrocortism. But on the literary side is Jane Austen, who wrote
---- page 3 ---
+- page 3 -
 pride and prejudice and sense and sensibility, who you can see typifies the picture of Addison's
 disease. She is lean, and she is hyperpigmented, and I will now go into the clinical features of
 of hypodrenalism, typified by Addison's disease, where you get an insidious onset of weight loss,
@@ -104,7 +104,7 @@ amenorrhea and infertility, and susceptibility to infections neurologically. The
 psychiatric problems. They may also have benign intracranial hypertension, causing papilladema,
 so it's the second endocrine cause. The other one I spoke about was hypoperotharidism.
 And they may go into a coma if untreated. There's susceptibility to drugs, like
---- page 4 ---
+- page 4 -
 drugs like ruffampicin or ketoconazole, or anesthetic drugs, and
 methadine and morphine. And if untreated, they can go into a life-threatening condition
 referred to as adesonian crisis. And adesonian crisis basically is an exaggeration of the effects
@@ -131,7 +131,7 @@ stimulation test. That's the ACTH test. The short synapton test is
 essentially where you give a one microgram dose of intravenous ACTH and measure
 the cortisol level at baseline, then at one at 30 minutes, and then at 60 minutes after
 injection of the synapton. And you can use the 250 micrograms, but for
---- page 5 ---
+- page 5 -
 a secondary, you only need the one microgram. And in a normal individual, the cortisol will rise
 to more than 550 nanomoles per liter. And if it doesn't, then you say the patient has hypodrenalism.
 And you wait for the ACTH to, the other test that one can do is a long synapton stimulation test,
@@ -158,7 +158,7 @@ and very importantly, to provide a medic alert band. So, if the patient arrives 
 the attending doctor would know what the problem is.
 For adisonian crisis, the treatment is fluids, ideally normal or dextrose saline.
 Administer hydrocortizone intravenously, 100 milligrams statin, then 6 hourly for 24 to 48 hours.
---- page 6 ---
+- page 6 -
 And treat for a presumed way, you don't have obvious history of non-compliance of their steroids,
 then rather treat on speculation for infection with an antibiotic.
 So, now it's, what's the time now? Okay, we'll just carry on. We'll carry on for another 15 minutes
@@ -185,7 +185,7 @@ That means it's less than 10 millimeters. Or it may be increased CRH or corticot
 releasing hormone secretion from the hypothalamus, but they all sort of secondary.
 Ectopic acetate or CRH secretion occurs in essence in patients who have a malignancy
 like C. bronchus. This is a small cell C. Or even bronchial adenoma or bronchial carcinoma,
---- page 7 ---
+- page 7 -
 carcinoma of the, I mean bronchial carcinoid and then carcinoma of the pancreas and other ovarian
 tumors. But the important point here is usually the biochemical features,
 out of the clinical features or occur before the clinical features develop because the patient
@@ -212,7 +212,7 @@ Purple stria, now a lot of women and also obese men who lose weight, who will de
 stria, but these are usually pale stria. In Quishing's syndrome, this is characterized
 by what is referred to as purple stria which are wide, in other words more than one centimeter
 and seen on the flanks, the hips, the abdomen, the auxiliary fold and the thighs. And essentially
---- page 8 ---
+- page 8 -
 occurs because you get thinning of the skin and it exposes the small vessels and the capillaries
 which rupture and causing the purple or lemon stria. Proximal myopathy because of the protein
 metabolism, secondary hypertension because of the mandrelocorticoid effect of glucocorticoid
@@ -239,7 +239,7 @@ they start developing a round face at the obese and then in addition, they have 
 hypertension because they are obese and then one is inclined to consider quishing syndrome.
 But there are more people who just have all of these problems because of simple overeating
 and obesity rather than quishing syndrome. So the ancillary tests that one does
---- page 9 ---
+- page 9 -
 includes urea and electrolytes which will show a hypokalemic alkalosis, a full blood count
 which will show increased red cells and or hemoglobin or even polycythemia. A low white cell count,
 especially the iesinophils are decreased and a low ESR. That's the full blood count.
@@ -266,7 +266,7 @@ on the third day. And if there's a normal individual, the cortisol should fall. 
 all you can say is that there's hyper cortisolism.
 The next step is to establish the cause. In other words, the SART. Is it primary?
 Is it secondary? Or is it ectopic? And for that, you do the tests that are listed on the slide.
---- page 10 ---
+- -
 The serum acetate, the high dose dexamethasone suppression test.
 The high dose overnight dexamethasone 8 milligrams suppression test. The CRF DDAVP test,
 where you measure acetation cortisol response. And then getting more intricate and detailed
@@ -285,12 +285,12 @@ suppression. And the same principle holds for the high dose overnight dexamethas
 test over eight milligrams. Here, it's also to separate a topic from pituitary. You measure
 the cortisol the day before you don't really have t
 
----
+-
 
-### Adrenal Gland - CMED4IIM1 - 2026 pages 011-015
+### Adrenal Gland
 *Audio Transcript*
 
---- page 11 ---
+- -
 o measure. And then you give eight milligrams
 of dexamethasone at night and measure the serum cortisol the next day. And in essence,
 you should get more than 68% suppression in the serum cortisol by the next morning.
@@ -318,7 +318,7 @@ petrosal sinussembling, where you enter the jugular vein through the jugular vei
 inferior petrosal sinus, and the first thing you want to do is measure central that's over here
 in the petrosal sinus and peripheral that's in the in the brachial, and the second is so you
 want to see if there's a central to peripheral gradient, in other words, if there's a marked
---- page 12 ---
+- -
 difference, then it would suggest that it's in the central, whereas if there's no difference,
 it may be a topic. The next thing is once you've established that it's central, you want to determine
 the side, so you can you lay it all both sides, and you measure the ACTH. So for example, you can
@@ -346,7 +346,7 @@ then obviously you'll get further enhancement of the stimulation of the pituitar
 by the low cortisol. So you'll get further acetage increase, and then the tumor will start declaring
 itself. And like I told you earlier, with every acetage molecule that's produced, a beta MSH
 is also produced. So what happens here, Nelson syndrome is where the primary cause is in the
---- page 13 ---
+- -
 pituitary, but the patient had bilateral adrenalctomy. And so you've got autonomous enlargement of
 the pituitary associated with hyperpigmentation and compressive manifestations of an enlarging
 tumor with visual symptoms and cranial nerve signs. And the treatment for Nelson's room is either
@@ -374,7 +374,7 @@ you
 you
 you
 you
---- page 14 ---
+- -
 you
 you
 you
@@ -402,7 +402,7 @@ otherwise. The effects on the kidneys are the effects of monolocorticoids. They 
 because they cannot concentrate the urine, polydipsia, vacuolar nephropathy, which often
 leads to recurrent infections in pylenophyritus and nephrogenic diabetes insipidus. The important
 point is that there's no edema because of the escape phenomenon and you get the
---- page 15 ---
+- -
 naturally peptide being released.
 In terms of investigation, as I've said, one needs to differentiate from other causes of renal
 wasting of potassium and the investigations include biochemical and
@@ -430,7 +430,7 @@ I'm going to give you a flow diagram where you are going to, you are faced to th
 hypertension and hyperkalemia. I actually forgot to mention that part of the radiological
 leading investigations, and maybe I should just go back, is doing, in addition to doing a CT of
 the adrenal, one also does adrenal vein sampling, but I'm not going to go into detail. So if you
---- page 16 ---
+- -
 are faced with the patient with hypertension and hyperkalemia, one measures the plasma renin,
 a supine, plasma or a sitting, plasma renin and plasma aldosterone. A plasma renin may either be
 measured as renin activity, that's a PRA or a PRC, which is a plasma renin concentration,
@@ -458,7 +458,7 @@ of catechol amines that you know adrenalin and adrenalin which cause hypertensio
 symptoms which draw attention to the diagnosis. It accounts for about one percent of secondary
 hypertension and it tends to be more common in women than in men.
 Now 95 percent are sporadic and less than 5 percent are familial. The sporadic forms,
---- page 17 ---
+- -
 in 90 percent of these it's an adrenal cause that's a pheochromocytoma, technically
 extra adrenal in 10 percent that's paraganglionma and of the less than 5 percent that are familiar
 or what draws you to the attention is that they may be bilateral. They can occur alone but they
@@ -486,7 +486,7 @@ as well as the pain is a headache. So pressure is the blood pressure and the
 pallor is in a dish. So the pallor and the pressure are the two additional Ps.
 So these may, these are characterized by hypertension which may be in 60 percent
 sustained and in 40 percent paroxysmal. Half of those sustained hypertension also have
---- page 18 ---
+- -
 paroxysms. It's often severe, occasionally malignant type of tension and it's resistant
 to standard treatment, in other words often requiring more than five or other agents.
 The paroxysms or crises occur in over half of the patients. They last from 10 to 15 minutes
@@ -514,7 +514,7 @@ metricrit and erythrocytosis because erythropoetin may be produced by the tumor.
 Other effects are hypercalcemia, excessive or increase in ESR and paraxia because of interleukin
 6-produce, polyurea and they may even develop rhabdomyolysis with myoglobin neurogramophilia
 because of muscle ischemia resulting from the extreme vasoconstriction.
---- page 19 ---
+- -
 So, regarding the investigations, firstly, one wants to establish hyper secretion
 and secondly, one wants to localize the site of the tumor.
 So, the investigations, the biochemical investigations for establishing hyper secretion
@@ -542,7 +542,7 @@ or ideally in this day not so much the non-selective like phenoxybenzamine or
 cantolamine but rather selective like pryosicin, doxisicin, otarazicin and then
 you never start beta blockers without first preparing them with alpha adenergic blockade
 and the reason for that is that if you gave them beta blockers it get unopposed alpha
---- page 20 ---
+- -
 adenergic activity and the patient will have disastrous hypertension but you can use beta
 blockers once you've adequately alpha blocked them because alpha adenergic blockers like
 all of these agents that I've spoken about may cause a tachycardia so you want to bring
@@ -565,13 +565,12 @@ for several years in the asymptomatic patient and for in essence you will actual
 for life.
 So that's the end of the
 
+-
 
----
-
-### Diagnosis  Classification Of Diabetes Mellitus - CMED4IIM1 - 2026 pages 001-010
+### Diagnosis  Classification Of Diabetes Mellitus
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 is the diagnosis and classification as well as the epidemiology of diabetes.
 Now, as you know, diabetes is a state of chronic hypoglycemia
 associated with metabolic problems other than glucose metabolism,
@@ -590,7 +589,7 @@ lipids and as well as obesity with the use of diet and exercise as lifestyle mod
 oral anti-diabetic agents and insulin and other newer injectables.
 The why is as I've said to either prevent the onset or delay the progression of its chronic complications.
 Dr. Piri will discuss the how and the why and also the what.
---- page 2 ---
+- page 2 -
 In terms of classification and diagnosis, they are what you have to understand is that
 there are clinical stages on the x-axis and ecological types on the y-axis.
 The clinical stages are normal glycemia, that's normal glucose regulation or hyperglycemia
@@ -609,7 +608,7 @@ that means oral agents, and then going on to insulin requiring for control.
 And in acute cases of acute hyperglycemia crisis may require insulin requiring for survival at that particular moment in time.
 And then go back to base of either requiring insulin for control or not insulin requiring.
 Then the other specific types which account for a very small minority, again, showing the same pictures type two gestational diabetes is glucose intolerance that is first detected during pregnancy.
---- page 3 ---
+- page 3 -
 With respect to the etiological types, type one, which accounts for five to ten percent of all diabetes may either be autoimmune, that's the typical type one,
 or it may be idiopathic. Type two, which accounts for the vast majority, that's over 90%, starts off with insulin resistance,
 but fasting hyperglycemia only becomes manifest when there's insulin secretory defect.
@@ -628,7 +627,7 @@ and the ketosis prone type two, which has the phenotype of type two, but present
 Unclassified diabetes is a category that must only be temporarily used when there's not a clear diagnostic category,
 especially close to the time of the diagnosis of diabetes, which is what I was referring to you regarding the clinical stages and the etiological types.
 And hyperglycemia first detected in pregnancy may include a patient who's already known to have diabetes,
---- page 4 ---
+- page 4 -
 who hasn't been known to have diabetes, but has diabetes first detected in pregnancy and continues after pregnancy.
 And then there's gestational diabetes, which is only found during pregnancy.
 But for you, the important point is to be able to distinguish between type one and type two.
@@ -647,7 +646,7 @@ while in type two, as I said, the initial initiating event is insulin resistance
 and as it gets worse, you get insulin deficiency, and at which point you get fasting hyperglycemia or detectable diabetes.
 There's profound effect of autoimmunity in type one, the glutamic acid decaboxelase antibody or anti-gad antibody.
 I would sell antibody, IA2 antibody and insulin antibody, whereas there's no autoimmunity in type two.
---- page 5 ---
+- page 5 -
 The clinical, I've mentioned some of them, if untreated, type one rapidly goes into ketoacidosis,
 whereas if there's a hypoglycemic crisis, or in type two, it's usually a hyperosmolar hypoglycemia,
 previously referred to hypoosmolar non-ketotic hypoglycemia.
@@ -666,7 +665,7 @@ which is glycosylated, or glycoated hemoglobin, or hemoglobin A1C,
 and they're different criteria proposed by the World Health Organization, that's WHO,
 and the American Diabetes Association, or ADA, based on the WHO classification,
 and which is used universally,
---- page 6 ---
+- page 6 -
 if one does the venous plasma glucose, a person is defined as having a normal venous plasma glucose,
 if the fasting glucose is less than 6.1, and during the GTT, the 2-hour plasma glucose is less than 7.8.
 Impaired fasting glucose, or impaired fasting glycemia, or IFG, is if during a GTT, the fasting plasma glucose
@@ -685,7 +684,7 @@ and diabetes if the fasting plasma glucose is equal to greater than 7.
 If GTT is done, the category is referred to as normal glucose tolerance if the 2-hour plasma glucose during GTT is less than 7.8.
 So the same as WHO, IGT also the same between 7.8 and 11.1, and diabetes if the 2-hour plasma glucose is 11.1 millimoles per liter or more.
 The important thing is to report which test is to be used, and that the diagnosis of diabetes is always a provisional diagnosis
---- page 7 ---
+- page 7 -
 and must always be confirmed on another day, either with the same test.
 So if you only did a fasting plasma glucose, then you can do a GTT on the next occasion, so you'll have a 2-hour and a fasting.
 The importance of all of this is that laying a diagnosis of diabetes on an individual actually puts that person at risk for insurance purposes,
@@ -704,7 +703,7 @@ The WHO for diabetes, the glucose based is as for the earlier one, that's the fa
 and or a 2-hour plasma glucose of 11.1 or more, or an HPA1c of 6.5% or more.
 So in other words, similar to ADA, and again, must be confirmed by a repeat test and must be done by standardized HPA1c methods.
 And then in 2010, in addition, now we're talking about the ADA, in addition to saying that you can use the HPA1c of 6.5% or more,
---- page 8 ---
+- page 8 -
 I've said that we can introduce a category of increased risk for diabetes, glucose based, that's impaired fasting glucose of 5.6 to 6.1,
 IGT, 2-hour plasma glucose of 7.8 to 11, and then introduce now the intermediate types of HPA1c.
 In other words, between 5.7% to 6.4%.
@@ -723,7 +722,7 @@ So, just to give you some idea about how the burden of diabetes is that from the
 This is more than HIV, TB and malaria put together, and it is projected to increase by 46% by 2045 to 783 million.
 Also, that the greatest increase is expected for the Africa region, 134% increase from 24 million in 2021 to 55 million in 2045.
 So, to conclude this lecture, the diabetes is a common non-communicable disease and an important cause of morbidity and mortality, but they are clearly identifiable and modifiable risk factors for their development.
---- page 9 ---
+- page 9 -
 And it is important to detect and treat early both diabetes and its complications.
 So, that's the end of this.
 And the last lecture is on the complications of diabetes.
@@ -742,7 +741,7 @@ Just an overview, mitrovascular complications, retinopathy is present in 90% of 
 and neuropathy in 10% to 100% of all patients of both type 1 and type 2, and with respect to the macrovascular complications, and compared with the general population,
 the risk of cardiovascular disease is increased 2 to 4-fold and strokes by 2-fold.
 One important point is that microvascular complications occur both in type 1 and in type 2, regarding the onset of type 1 of the complications,
---- page 10 ---
+- -
 because one can only really date when type 1 diabetes is developed because they declare themselves a DKA, it's been shown that these chronic complications occur years after the diagnosis.
 In type 2 diabetes, if you had the patient who had IGT and you were following the patient, then you can date the date of diagnosis and will also show they do occur some years.
 However, in many instances, it may be the mode of presentation. In other words, the complications are found at presentational.
@@ -756,12 +755,12 @@ It is, as I've said, it is a relation, the duration of diabetes. It's the preval
 The incidence, prevalence means as a particular time, the incidence, if you track the patient from the diagnosis, the diabetes duration is most important.
 In type 1, it peaks at about 15 years, whereas in type 2, it can peak earlier, mainly b
 
----
+-
 
-### Diagnosis  Classification Of Diabetes Mellitus - CMED4IIM1 - 2026 pages 011-014
+### Diagnosis  Classification Of Diabetes Mellitus
 *Audio Transcript*
 
---- page 11 ---
+- -
 ecause you often don't know when it started.
 The renal involvement in diabetes, diabetic nephropathy is where there's diabetic glomerulus sclerosis.
 That's that chemo-steel Wilson glomerulus that I was showing you.
@@ -782,7 +781,7 @@ So just a few words about the pathophysiology and with respect to definitions an
 there are functional changes and morphological changes.
 The functional changes are the level of proteinuria.
 So you get established over nephropathy and incipient nephropathy.
---- page 12 ---
+- -
 The morphological changes are what you find on histology.
 And like I said when I said that diabetic nephropathy just remembers, characterized by persistent proteinuria,
 decline in renal function, arterial hypertension and retinopathy.
@@ -803,7 +802,7 @@ Now what about morphological versus functional change?
 It is important to understand that glomerulus sclerosis, as I've told you, the picture I showed you,
 this will occur in more than 90% of type 1 diabetes after 10 years duration.
 But diabetic nephropathy, which I have defined as a problem of persistent proteinuria,
---- page 13 ---
+- -
 progressive decline in the renal function, systemic hypertension and retinopathy,
 only develops in 35 to 40% of people with diabetes.
 And we're talking about type 1 because we can determine the duration.
@@ -824,7 +823,7 @@ with respect to the clinical features.
 So we've got the functional changes, or let's just speak to the functional changes.
 So the albumin excretion, the urine albumin excretion only starts becoming abnormal in stage 3 or incipient nephropathy.
 And then you get persistent proteinuria from stage 4, and this goes on all the way.
---- page 14 ---
+- -
 The JFR is increased in hyperfiltration and the silent stage, as well as the incipient stage,
 then it starts decreasing at the onset of persistent proteinuria, continues to decrease,
 and also the serum creatinine starts to rise in stage 5.
@@ -845,7 +844,7 @@ when the JFR changes, and the fact that the serum creatinine only starts increas
 And that the JFR, at the point of persistent proteinuria or established nephropathy,
 declines at 1 minute per year per month.
 So from the onset of established nephropathy, the patient has about 7 years to end stage renal disease if untreated.
---- page 15 ---
+- -
 The importance of early detection is that if you start treating incipient nephropathy,
 it will not only prevent but also delay the onset of overt nephropathy as well as end stage renal failure.
 Once they develop overt nephropathy, treatment of the onset will also prevent or decrease the progression to end stage renal failure.
@@ -866,7 +865,7 @@ But the management of diabetic nephropathy per se doesn't only imply glucose con
 It's important and perhaps more important once you develop over nephropathy for blood pressure control and control of the albuminuria.
 Glucose control dietary protein restriction of 0.8 to 1 kg per kg per day.
 And then once you have renal failure, dialysis, either umodialysis or in the dye instances where you don't have the facility see chronic ambulatory peritoneal dialysis and ideally transplantation.
---- page 16 ---
+- -
 The general measures are to stop smoking, decrease weight of the obese and to avoid drugs that worsen kidney function.
 And serial investigations, when the serum creatinine is more than 500 or equal to 500 micromoles per liter, then one needs to assess for the chronic renal program.
 And in such as ours, we would do that at a lower level of 250 micromoles per liter.
@@ -887,7 +886,7 @@ Now, to move to diabetic retinopathy.
 Again, remember this is a microvascular complication.
 So, diabetes related, let's look at it overall. The eye may be involved in several way in diabetes.
 Maybe diabetic retinopathy, it may be cataract, it may be neurological like a neuropathy, maybe other retinovascular disease or it may be, which is disease.
---- page 17 ---
+- -
 Diabetic, I mean, cataracts, maybe posterior subcapsular cataract or snowflake.
 The neuropathies may be optic neuropathy or even papillopathy, maybe ocular nerve palsies, that's a mononuritis.
 The third, fourth and sixth nerve may even be seventh nerve and autonomic pupillary dysfunction.
@@ -908,7 +907,7 @@ And then there's a new vessel formation near the disc or elsewhere, can you see 
 You can see how fragile they are, even if it's not sort of to the naked eye.
 Then following laser fibrosis, once you get, sometimes happens just to the vitreous hemorrhage or following laser photocoagulation.
 This is the pre retinol hemorrhage or the subhighloid hemorrhage.
---- page 18 ---
+- -
 This is the vitreous hemorrhage where the patient and the physician can't see anything and ultimately retinol detachment.
 The maculopathy, remember the way to see the macula is ask the patient to look directly into your ophthalmoscope and move and that will take you to the macula.
 Or if you are able to adequately dilate the eye, then it's to the lateral to the disc.
@@ -929,7 +928,7 @@ Often they talk about burning food, especially at night.
 And COVID may be chronic polyneuropathy, which is symmetrical, either sensory, sensory motor or autonomic.
 Or it may be focal and multi-focal neuropities, like intrapment neuropities.
 It's a carpal tunnel syndrome.
---- page 19 ---
+- -
 Cleaning nerve poses like a third nerve pose, proximal motor neuropathy.
 That's diabetic amiotropy and thoracometal neuropathy.
 Now more details of this will be given to you by neurology.
@@ -950,7 +949,7 @@ But nonetheless, for painful neuropathy, tricyclic antidepressants like emitript
 Dualoxetine, which is a 5-hydroxytryptamine and no adrenaline, no epinephrine, uptake inhibitor, and capsaicin clean, which is a substance P inhibitor.
 For the autonomic symptoms, like in particular, for gastroparesis, use dietary changes in prokinetics like metochloramide or retromomycin, erectile dysfunction.
 All of you know about that phosphodiester is type I of inhibitor or viagra, or but can use prostaglandins, or intra, which may be intra-corporeal or urethral, and then vacuum devices and phenylprosthesis.
---- page 20 ---
+- -
 For gastatriyperhydrosis, the use of lipopyrrolate or lumenar.
 So, the means of detecting the complications, like I said, is symptoms, clinical examination, specific investigations.
 Now, at all levels, this is how you should be.
@@ -964,13 +963,12 @@ And it is the consolidation in fourth, fifth and sixth year that will make you u
 And on that note, I will stop.
 And I thank you for your attention.
 
+-
 
----
-
-### Disorders Of The Pituitary Gland - CMEDIIM1 - 2026 pages 001-010
+### Disorders Of The Pituitary Gland
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 Good day, fourth year's. My name is Professor Aisha Motala, and I will be running the first
 part of the Indocrine lectures, which consists of five parts for disorders of the pituitary
 grant, parathyroid, adrenal gland, as well as two natures on diabetes, and the latter
@@ -990,7 +988,7 @@ prolactinoma, gonadotropins, that's the luteinizing hormone and follicle stimula
 a gonadotropinoma. When thyroid tropin, or TSH, is secreted excessively, causes secondary
 thyroid toxicosis, and in the case of acetate, hyper secretion, or cortical tropin, cushions
 disease. Hypo secretion is referred to as hyper pituitrism, which may be isolated, that's only one hormone
---- page 2 ---
+- page 2 -
 involved, or pen, that's more than one hormone. The posterior pituitary produces vasopressin,
 or arginine vasopressin, or antidiuretic hormone. The excess secretion of which results in syndrome
 of inappropriate ADH, OSEAD, and under or no secretion, results in cranial diabetes in Cipidus,
@@ -1010,7 +1008,7 @@ by coarse features, prominent supraorbital ridges because of enlarged frontal si
 which may cause frontal buzzing, prognethism that's the forward protrusion of the lower jaw,
 with the reversal of the bite and separation of the teeth, thickened lips and nose, and
 macroglossia. In the upper limbs, they are stayed like enlargement of the hands, and I'm going to
---- page 3 ---
+- page 3 -
 show you these pictures, resulting in compression of nerves and parastasia, excessive sweating,
 proximal myopathies. It's one of the endocrine causes of proximal weakness,
 carbultannal syndrome, and osteoarthritis. In the lower limbs, large feet, proximal
@@ -1030,7 +1028,7 @@ impotence, decreased libido, and because of co-secretion of prolactin, in many i
 gynecomastia and or galacturine may develop. The skeletal effects include osteoporosis,
 kyphosis, and spinal stenosis. Hypertrophy of the sweat glands may occur because of increased
 growth hormone, and this causes excessive sweating, and because of the enlarged thyroid and excessive
---- page 4 ---
+- page 4 -
 sweating, a misdiagnosis of thyroid toxicosis may be made. The skin and the subcut tissue
 here is characterized by oily skin, herseutism and acanthosis, nigricans, hypertricosis, and skin
 tags. And the importance of the skin tags is that if they are more than three skin tags, there's
@@ -1050,7 +1048,7 @@ investigating acromegaly? Clearly, it's the clinical features. So, it's importan
 a previous photograph, the visual fields by formal prometry showing biotemporal hemionopia,
 and then the radiological examination, which is either plain x-rays of the skull, the hands,
 the feet, and the chest x-ray, as well as, most importantly, direct MRI of the pituitrin,
---- page 5 ---
+- page 5 -
 where that's not available CT scan. The plain x-rays of the skull will show an enlarged
 pituitary fossa with the erosion of the clinoid processes and enlarged frontal sinuses,
 prognethism, and also separation of the teeth. In the hands, there's a characteristic
@@ -1070,7 +1068,7 @@ For the biochemical tests, the basal tests that are done include the serum growt
 an IGF-1, which is elevated, a prolactin, which may be in a co-secreting tumor, elevated,
 increased serum phosphate, hyperglycemia, or dysglycemia, and increased serum calcium.
 The gold standard provocative test that is done to establish growth hormone hypersecretion
---- page 6 ---
+- page 6 -
 is an oral glucose tolerance test, because normally, when one does an oral glucose tolerance test,
 the glucose rises by one hour and falls to basal at two hours, and the growth hormone,
 which has a certain basal level, will fall as the glucose increases at one hour and return to baseline
@@ -1090,7 +1088,7 @@ Basal test one does is a serum and urine osmolality. And the provocative test is
 test. With respect to management, the objectives of management is to reduce growth hormone and IGF1
 levels that's insulin-like growth factor one levels to normal, to decrease the size of the tumor
 and to preserve the rest of the pituitary function, both anterior and posterior.
---- page 7 ---
+- page 7 -
 Now, in most endocrine conditions, other than prolactinoma and pterotoxicosis,
 surgery is the first line of therapy and the treatment of choice in acromegaly.
 Radiotherapy is another option. And very last is the medical therapy.
@@ -1110,7 +1108,7 @@ or to tide the patient over before surgery. And the dose that's given is 2.5 mil
 three times a day up to 60 milligrams a day. And then the somatostatin analogs like octreotide
 or perseveotide and growth hormone receptor agonists, which is not available in this country.
 Sorry, growth hormone receptor antagonist. And this is pig, pig visa month. And this
---- page 8 ---
+- page 8 -
 works against the growth hormone receptor. So what about the follow up of these patients? All patients
 was acromegaly require long term follow up and evaluation for recurrence. And the cure rate is
 80% if there's a micro adenoma, which is hardly the instance. And 50% if there's a macro adenoma,
@@ -1130,7 +1128,7 @@ while macro adenomas, in other words more than 10 millimeters, tend to be more c
 in men. In other words, 60% of all macro adenomas that are prolactinomas are in men.
 And the clinical features are defined by or are characterized by, it's related either to the
 tumor size. In other words, the mass lesion with headache, cleaning of palsies or visual field defects.
---- page 9 ---
+- page 9 -
 But an important indicator, both in men and women is galacturia, which occurs in about 80%
 of all people who have hyperprolectinemia. And the other features are related to the excessive
 prolactin secretion, including the galacturia. So in men and women, you make it galacturia.
@@ -1150,7 +1148,7 @@ pictures. You can't really see this, but there's enlargement of the pituitary fo
 This can be seen clearly on the MRI. And on this section, you can see that the supracela
 extension, that supracela, this would be intracellular.
 The management of prolactinoma, unlike other endocrine conditions, as I've said earlier,
---- page 10 ---
+- -
 is medical. The medical treatment of choice is any dopamine agonist,
 either bromachiptine or the analogs, like cabbagoline or quinagilide. And surgical,
 they respond very poorly to surgery. And surgery is indicated if there's a microedadonoma,
@@ -1168,12 +1166,12 @@ and pan-hypo pituit in one hormone, like either ACTH or gonadotrofen or TSA to g
 deficiency. And pan-hypo pituitism, technically, if there's more than one hormone, but usually
 involves several of the pituitary hormones. The causes, again, a variety of 
 
----
+-
 
-### Disorders Of The Pituitary Gland - CMEDIIM1 - 2026 pages 011-012
+### Disorders Of The Pituitary Gland
 *Audio Transcript*
 
---- page 11 ---
+- -
 causes, they include
 idiopathic, where these are usually responsible for the isolated growth hormone, gonadotrofen,
 TSAH or ACTH deficiencies. And it is thought that this might be autoimmune.
@@ -1193,7 +1191,7 @@ like granulomatous conditions, tuberculosis, sarcoidosis, syphilis, and granulom
 hyperpositis. Histocytosis XO is lympholic granuloma and lymphocytic hyperpositis.
 Infective conditions remain in jitties, whether this is tuberculosis,
 susceptibility, fungal, parasitic, or, in fact, even pneumocystis, caremia, pneumonia.
---- page 12 ---
+- -
 Traumatic head injury, such as occurs in a motor vehicle accident, or hydrogenic surgery for
 pituitary tumors. Radiotherapies and other cause of hyperpituitism, and then depositional
 conditions, as occurs with hemochromatosis, where you get iron overload. For example,
@@ -1213,7 +1211,7 @@ diminished TSH, or a hypo adrenal state. And it is important to note, like I sai
 mineralo, it's only the glucocorticoid and not the mineralocorticoid.
 Now, this is just an example. This is the index patient, who's 17 years old. This is a child
 who's nine years old, and this is an adult. The patient, the index patient, should have reached
---- page 13 ---
+- -
 adult height, but is clearly much shorter, in other words, is more like a nine-year-old.
 The investigations and treatment, again, include radiological investigations and biochemical,
 the radiological, is asked for any other pituitary condition in X-ray of the skull and MRI of the
@@ -1233,7 +1231,7 @@ growth hormone. For the posterior pituitary, it is a water deprivation test that
 Now what about management? The management will depend on the cause. If it's a tumor, then obviously
 then it's a surgical intervention, and the important point is to replace the hormones,
 the growth hormone with the somatrokin, and this is given daily subcutaneously for the
---- page 14 ---
+- -
 glucocorticoids, the hydrocortisone, and for the thyroid, levothyroxin, 100 to 200 micrograms a day,
 but the important point is you never replace thyroxin without giving cortisol as well,
 because you may precipitate a hypoadrenal crisis because the thyroxin will accelerate
@@ -1253,7 +1251,7 @@ and a deficiency of ADH was until very recently referred to as cranial diabetes
 in Cipidus, and this has been renamed in 2022, to arginine vasopressin deficiency, or AVD,
 but for the purposes of this talk, I'll speak to diabetes in Cipidus.
 An over-secration is referred to as syndrome of inappropriate ADH, or SEAD. Now,
---- page 15 ---
+- -
 the diabetes in Cipidus, it's important to understand that the posterior pituitary
 stores the ADH. It's produced in the hypothalamus by nuclear and the hypothalamus, and it is
 a cranial diabetes in Cipidus, is caused by a lack of ADH either by damage to the hypothalamus,
@@ -1273,7 +1271,7 @@ And the clinical features in adults, or rather in adults, the first symptom is p
 but in both children and adults, any uresis, rather any uresis is the first symptom in children,
 but this can also occur in adults, so they may pass from four to 20 liters per day, which
 and the urine is dilute. They may become dehydrated and develop weight loss, constipation as well as
---- page 16 ---
+- -
 pyrexia, and then they may have compressive symptoms, either eye involvement, like I said,
 for the acromegaly or cranial nerve palsies. And the important point is that if you have
 concurrent ACTH deficiency, example of tumors, this may mitigate the symptoms of diabetes
@@ -1293,7 +1291,7 @@ of urine osmolality, while in diabetes, in septus, the serum osmolality is very 
 with the intranasal, there's more present, and that's part of the water deprivation test.
 When one is looking at diabetes in septus, one needs to understand
 that there's a differential diagnosis for diabetes in septus, as well as polyurea.
---- page 17 ---
+- -
 And for diabetes in septus, this may be cranial diabetes in septus, or what is referred to
 as arginine vasopressin deficiency, or it may be what was previously called nephrogenic
 diabetes in septus, and which is now referred to as arginine vasopressin resistance,
@@ -1313,7 +1311,7 @@ chloropromide, carbamazepine, chlorothiazide, and prophydrid. In other words, th
 but with the decimal crescent being available, there really is no need for the use of these
 other agents. And the last issue relating to pituitary disease is the syndrome of inappropriate ADH
 or C.N. And this is characterized by hyponatremia without edema due to inappropriately excessive
---- page 18 ---
+- -
 secretion of ADH, because this occurs in the presence of a low serum osmolality. And the causes
 again are quite varied. And in essence, broadly speaking, maybe due to tumors, drugs, non-malignant
 pulmonary disease, neurological disorders, and then there's some miscellaneous causes.
@@ -1333,7 +1331,7 @@ cerebrovascular thrombosis, cerebral atrophy, acute and cathelitis,
 tuberculosis, or pyrogenic meningitis, Galenbar syndrome, lupus, so there's a whole lot of
 neurological conditions, and then lastly some miscellaneous conditions, including hypothyroidism
 and positive pressure respiration. Now, the clinical feature, in terms of the clinical features,
---- page 19 ---
+- -
 the important point is where the rate of decline of the sodium is important. If it is a mild
 decrease, or if it's that's between a serum sodium of 130 to 135, or if there's severe and
 acute, which is more of a problem in the serum sodium is less than 120, if it's mild, then all
@@ -1353,7 +1351,7 @@ then you'll find elevated plasma ADH. However, this is not available in our coun
 The other important point is to have an approach to hyponatremia. Hyponatremia,
 there are three types. Type 1, type 2, and type 3. Type 1 is hyperbolemic, as occurs
 say with cardiac failure, liver disease, renal disease. Type 2 is hypovolemic, as would occur,
---- page 20 ---
+- -
 with dehydration from diarrhea, vomiting, and type 3, which is what we're talking about now,
 or CED, is uvolemic. In other words, there's no edema and no hypertension. But there are other
 causes of a low serum sodium, and these include primary polydipsia, hypotension in its own right,
@@ -1371,13 +1369,12 @@ what a very dangerous condition with which, for which the mortality is very high
 central pontine mylanolysis, which is characterized by quadriplegia, ataxia, extraocular, and abnormalities,
 and abnormal ocular movements. So that's so much for
 
+-
 
----
-
-### Parathyroid Disorders - CMED4IIM1 - 2026 pages 001-007
+### Parathyroid Disorders
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 parathyrid. This order is including the general considerations in hyper parathyridism and
 a hypo parathyridism. And perhaps for you to understand that there are three hormones and
 three organs that play a vital role. The hormones are parathyrid hormones referred to henceforth
@@ -1401,7 +1398,7 @@ This is pictorially or graphically showing what I've already explained to you ho
 PTH which is released from the paratharid gland acts on the kidney and the bone vitamins, it stimulates
 the function of active vitamin D and the gut causing an increase in blood calcium and
 the maintenance of blood calcium which, if it falls, will stimulate the paratharid gland to
---- page 2 ---
+- page 2 -
 produce PTH. So the types of hyperparatharidism that exist include primary, secondary, tertiary,
 and ectopic. Primary hyperparatharidism is where you have increased calcium and PTH.
 Secondary is so with respect to primary this may be due to an adenoma some involvement of the
@@ -1425,7 +1422,7 @@ instance adenomas either solitary or multiple multiple endocrine neoplasia hyper
 rarely carcinoma and all of this autonomous secretion of PTH that causes a high calcium
 that affects all the organs results in the condition that is referred to as bones,
 stones, abdominal groans and psychic bones and with respect to the clinical features these may be
---- page 3 ---
+- page 3 -
 the effects on the kidney that's the renal effects the bones or just the effect of hypercalcemia.
 So in the kidneys the commonest which is the commonest presentation of hyperparatharidism
 they may present with calculus or nephrocalcinosis or just the effects of hypertension and also
@@ -1449,7 +1446,7 @@ pathological fractures and you may also get superior osteo-reabsorption of the p
 and it's usually the radial aspect of the right middle finger. Now in addition to the
 increased reabsorption of calcium and rare reflection and osteitis fibrosocistica,
 hypercalcemia may also cause backache, bowing off a long of the long bone especially if it's
---- page 4 ---
+- page 4 -
 developing in adolescence, kyphosis and sero clubbing. Then lastly the effects of hypocalcemia.
 This again is a multi-system on the GI tract because anorexia, nausea, weight loss and weakness,
 dyspepsia related to a peptic ulcer or unrelated to a peptic ulcer, abdominal,
@@ -1473,7 +1470,7 @@ dehydration, pyrexia, coma and ultimately if unrecognized they may die.
 The investigations include a serum total calcium, corrected calcium that's elevated
 with a low serum phosphate, increased urinary calcium and urinary phosphate. The serum PTH
 is elevated regarding the alkaline phosphatase if the bone is involved this may be increased.
---- page 5 ---
+- page 5 -
 The megaheipa urosemia and in the urea and electrolytes on refined hypochloramic
 alkaloacidosis in other words a high bicarb and a low, I mean a high chloride and a low bicarb
 and the calcium excretion on a spot urine sample is increased here certain cup points.
@@ -1497,7 +1494,7 @@ show the radiological features of subperiosteal reabsorption then the cysts in t
 the salt and pepper appearance of the scalp, the system more clearly shown on this this is osteitis
 fibrosis cystica and this is the sestamivis scan which is a radionuclide scan this is the
 thyroid these are the parathyroid and what you can see here is the right lower parathyroid
---- page 6 ---
+- page 6 -
 picking up the tracer and suggesting an adenoma. So the management of parathyroidism
 depends obviously on the course if it's primary parathyroidism the treatment surgical treatment
 is the treatment of choice and importantly also to do intraoperative PTH levels we measure the
@@ -1521,7 +1518,7 @@ paracostome and but not for primary hyperparathyroidism. This is a picture depic
 that I've spoken about earlier all the effects of hyperparathyroidism.
 Now to move to hypercalciumia now hypercalciumia and hyperparathyroidism it is important broadly
 firstly to define that hypercalciumia may be because of PTH absent that's what hyperparathyroidism
---- page 7 ---
+- page 7 -
 which is what we are going to talk about. PTH in effector which may be due to multiple causes
 like a pseudo hyperparathyroidism chronic renal failure and vitamin D or PTH overwhelmed which
 may occur in the angry bone syndrome where you have after parathyroid dictum in a patient who had
@@ -1545,7 +1542,7 @@ cup of spasm and that's referred to as trussosine. A positive sharpstacks where 
 where one taps the facial nerve over the perotid and this induces contraction of the
 facial nerve but the important to understand there are about 5% of the normal population will
 also have a positive sharpstacks. Brisk reflexes, convulsions and if not treated they may get
---- page 8 ---
+- page 8 -
 laryngeal spasms and respiratory arrest. So that's the effect of neuromuscular irritability.
 Mental changes like irritability, depression and psychosis eyes may be involved with cataracts
 and it's one of the endocrine conditions that causes benign intracranial hypertension which
@@ -1569,7 +1566,7 @@ of the basal ganglia. The management will depend on whether it's transient
 or chronic and if it's transient then just treat with oral calcium, calcium
 ideally calcium carbonate and if it's severe intravenous calcium gluconeate. If it's chronic
 then vitamin D analogs like one alpha or alpha-calcidiol
---- page 9 ---
+- page 9 -
 and also rho-calcetrol which is 125 dihydroxylcholicasiparol
 and more recently the use of teri-paratide or PTH but we don't have it available for routine
 use and also important to check the magnesium because of the relationship I spoke to between
@@ -1593,7 +1590,7 @@ heraldry osteodistopy which consists of short stature skeletal abnormalities and
 with frontal buzzing and the skeletal abnormalities include short metacarpals the first the fourth
 and the fourth in particular the fourth metacarpal and occasionally you get short phalanges they
 get short stubby hands they get heterotropic calcification in the basal ganglia as well
---- page 10 ---
+- -
 and ectopic deposits of bone in the muscles and the skin some of them have mental deficiency
 and well actually most of them have some mental deficiency and they may have epilepsy and
 tetany and then they have all the other features of hyperparathyroidism that I that I spoke about
@@ -1611,8 +1608,7 @@ at the same level but you can see here that the fourth metacarpal is pushed down
 these other metacarpals but not the fourth metacarpal and this is another picture of the basal ganglia
 calcification so that's the end of the perathyroid i'm going to
 
-
----
+-
 
 ## Study Strategy
 

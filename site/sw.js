@@ -1,5 +1,5 @@
 // corpus offline cache — precaches shell + manifest + shards on install.
-const CACHE = 'corpus-v3';
+const CACHE = 'corpus-v4';
 const SHELL = [
     './', './index.html', './style.css', './app.js',
     './progress.js', './theme.js', './search.js', './srs.js',
@@ -8,7 +8,7 @@ const SHELL = [
     './undo.js', './notes.js', './late.js', './usercards.js', './confidence.js',
     './triage-live.html', './triage-live.css', './triage-live.js',
     './manifest.webmanifest',
-    './data/manifest.json', './data/medbak-index.json'
+    './data/manifest.json'
 ];
 
 self.addEventListener('install', e => {

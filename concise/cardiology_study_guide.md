@@ -13,11 +13,11 @@
 
 ## Audio Lectures
 
-### 1. Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-001-010
+### 1. Coronary Artery Disease (CAD)
 
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 worldwide. The most recent global mortality statistics by the World Health Organization,
 which was done in 2019, indicates that cardiovascular disease at the top bar graph in gray by far
 is the commonest cause of mortality accounting for 18 and a half million deaths annually.
@@ -42,13 +42,13 @@ disease of lifestyle that can be modified, either by choices you make
 
 [... content truncated, total length: 22640 chars ...]
 
----
+-
 
-### 2. Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-011-020
+### 2. Coronary Artery Disease (CAD)
 
 *Audio Transcript*
 
---- page 11 ---
+- -
 G is the ST segment. That
 is the P-wave, that is atrial depolarization, the QRS, which is ventricular depolarization,
 and after the S-wave, you get this ST segment and then the T-wave.
@@ -76,13 +76,13 @@ It looks like a tom
 
 [... content truncated, total length: 22649 chars ...]
 
----
+-
 
-### 3. Coronary Artery Disease (CAD) - CMED4IIM2 - 2026_pages-021-023
+### 3. Coronary Artery Disease (CAD)
 
 *Audio Transcript*
 
---- page 21 ---
+- -
 fer
 it is it is given as a bolus immediately. You don't have to give it as an infusion. The problem
 with tenectoplase is the most expensive of the brain and not often available. But if you have a
@@ -108,13 +108,13 @@ with step. What we mean by a percutaneous coronary interventio
 
 [... content truncated, total length: 22647 chars ...]
 
----
+-
 
-### 4. ECG Interpretation - CMED4IIM2 - 2026_pages-001-010
+### 4. ECG Interpretation
 
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 Good day and welcome to this three recorded lecture regarding the basics of ECG interpretation.
 We're going to go through the basic steps of ECG interpretation.
 First, you've got to make sure that the ECG is calibrated correctly.
@@ -143,13 +143,13 @@ So lead 1 reads between the
 
 [... content truncated, total length: 27473 chars ...]
 
----
+-
 
-### 5. Evaluation Of Valvular Heart Disease - CMED4IIM2 - 2026_pages-001-009
+### 5. Evaluation Of Valvular Heart Disease
 
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 Okay, good day. I'm Dr. Naidu from the Department of Cardiology. I will be doing the lecture
 on the evaluation of valvular heart disease.
 Okay, we're going to start by discussing rheumatic fever. By definition, rheumatic fever is a systemic
@@ -176,13 +176,13 @@ we look at
 
 [... content truncated, total length: 27031 chars ...]
 
----
+-
 
-### 6. Infective Endocarditis - CMED4IIM2 - 2026_pages-001-007
+### 6. Infective Endocarditis
 
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 I will be discussing the definition, the diagnosis, the management indications for surgery as well
 as prophylaxis. Infective endocarditis involves infection of endocardial surface, typically with
 vegetations on the endocardium. There may be physical presence of microorganisms in the lesion
@@ -209,7 +209,7 @@ much less percentage up to abou
 
 [... content truncated, total length: 20615 chars ...]
 
----
+-
 
 ## Textbook Sections
 
@@ -217,19 +217,19 @@ The following sections are drawn from clinical textbooks and lecture notes:
 
 ### Hypertension_2
 
-#### pages-001-010.txt
+####.txt
 
---- page 1 ---
+- page 1 -
 Hypertension
 Dr A Mahabal
 Department of Cardiology
 
---- page 2 ---
+- page 2 -
 Definition of Hypertension
 Usual BP > 140/90
 Treatment initiated if BP > 130/80 in high risk patients esp. With coronary artery disease
 
---- page 3 ---
+- page 3 -
 Essential Hypertension (90%)
 Hemodynamic subtypes
 Systolic Hypertension in Young Adults
@@ -243,7 +243,7 @@ Obstructive sleep apnoea – increased catecholamines
 Renal mechanisms – resetting pressure natriuresis /low birth weight
 Endothelial cell dysfunction
 
---- page 4 ---
+- page 4 -
 Secondary Hypertension (10%)
 Renal parenchymal disease
 GFR <60ml/min
@@ -254,7 +254,7 @@ Hemodialysis patients
 Renal transplant recipients
 Renovascular hypertension
 
---- page 5 ---
+- page 5 -
 Secondary Hypertension – cont..
 Adrenal
 Mineralocorticoid excess
@@ -267,7 +267,7 @@ Acromegaly / hypothyroidism / hyperparathyroidism
 Oral contraceptives
 Hypertension in pregnancy
 
---- page 6 ---
+- page 6 -
 Consequences of hypertension
 Hypertensive heart disease
 Pressure overload hypertrophy
@@ -278,9 +278,9 @@ ischeamic stroke
 
 [... content truncated, total length: 2826 chars ...]
 
-#### pages-011-019.txt
+####.txt
 
---- page 11 ---
+- -
 Lifestyle Modifications
 Weight reduction
 Maintain BMI 18.5 to 24.9
@@ -291,7 +291,7 @@ Physical activity
 30mins/day on most days
 Limit alcohol intake to at most 2 units for men and 1 unit for women, avoid tobacco
 
---- page 12 ---
+- -
 Antihypertensive drugs
 Diuretics
 Thiazides
@@ -301,7 +301,7 @@ Furosemide
 Potassium sparing agents
 Spironolactone
 
---- page 13 ---
+- -
 Antihypertensive drugs
 Adrenergic Inhibitors
 Peripheral Neuronal inhibitors
@@ -315,7 +315,7 @@ Atenolol, bisoprolol, propanolol
 Vasodilating Beta Blockers
 Carvedilol, Labetalol
 
---- page 14 ---
+- -
 Antihypertensive drugs
 Direct Vasodilators
 Hydralazine
@@ -326,7 +326,7 @@ Amlodipine, nifedipine
 Non-dihydropyridine
 Verapamil, diltiazem
 
---- page 15 ---
+- -
 Antihypertensive Drugs
 Inhibitors of the Renin-Angiotensin-Aldosterone System
 ACE inhibitors
@@ -336,7 +336,7 @@ Losartan, telmisartan
 Direct renin inhibitors
 Aliskerin
 
---- page 16 ---
+- -
 Hypertension Treatment Strategy
 Stepwise
 1. Thiazide diuretic Eg hydrochlorothiazide
@@ -347,116 +347,116 @@ Amlodipine
 
 [... content truncated, total length: 2360 chars ...]
 
----
+-
 
 ### IHD
 
-#### pages-001-010.txt
+####.txt
 
---- page 1 ---
+- page 1 -
 ISCHAEMIC HEART DISEASE
 S PONNUSAMY/ DP NaidooDEPARTMENT OF CARDIOLOGYINKOSI ALBERT LUTHULI CENTRAL HOSPITAL
 
---- page 2 ---
+- page 2 -
 Worldwide Statistics
 Each year:> 4 million patients are admitted with unstable angina and acute MI (ACS)> 900,000  patients undergo PCI with  or without stent placement
 
---- page 3 ---
+- page 3 -
 Ischaemic heart diseaseDefinition
 An imbalance between the supply of oxygen and the myocardial demand resulting in myocardial ischaemia.Angina pectoris	is the symptom, not the disease	chest discomfort associated with abnormal myocardial function in the absence of myocardial necrosis
 [NOTES]
 ‹#›
 
---- page 4 ---
+- page 4 -
 Causes of Impaired supply/demand
 SupplyAtheroma, thrombosis, spasm, embolusDemandAnaemia, hypertension, high cardiac output (thyrotoxicosis, myocardial hypertrophy)
 [NOTES]
 ‹#›
 
---- page 5 ---
+- page 5 -
 Response to injury hypothesis
 Accumulation of cholesterol in the vessel wall intimaSmooth muscle cell proliferation result in  GROWTH FACTORS leading to  SCLEROSIS	Expansion of fibrous tissue and INFLAMMATORY MEDIATORS leading to  INFLAMMATION	Chronic inflammatory cells migrate into wall, release cytokines
 [NOTES]
 ‹#›
 
---- page 6 ---
+- page 6 -
 Pathophysiology of IHD
 [NOTES]
 ‹#›
 
---- page 7 ---
+- page 7 -
 Ischaemic heart diseasePathophysiology
 [NOTES]
 ‹#›
 
---- page 8 ---
+- page 8 -
 Ischaemic heart diseaseManifestations
 Sudden deathMyocardial infarctionAcute coronary syndromeStable angina pectorisHeart failureArrhythmiaAsymptomatic
 [
 
 [... content truncated, total length: 2152 chars ...]
 
-#### pages-011-020.txt
+####.txt
 
---- page 11 ---
+- -
 [NOTES]
 ‹#›
 
---- page 12 ---
+- -
 Ischaemic heart diseaseRisk factors and prevention
 Family HistorySmokingHypertensionDiabetes MellitusHypercholesterolaemiaLack of exercisePRIMARY PREVENTION
 [NOTES]
 ‹#›
 
---- page 13 ---
+- -
 Differential diagnosis of Chest Pain
 Cardiac pathologyPericarditis, aortic dissectionPulmonary pathologyPulmonary embolus, pneumothorax, pneumoniaGastrointestinal pathologyPeptic ulcer disease, reflux oesophagitis (GORD), pancreatitis, ‘café coronary’Musculoskeletal pathologyTrauma, Tietze’s Syndrome
 [NOTES]
 ‹#›
 
---- page 14 ---
+- -
 Chest Painindicative of Myocardial ischaemia
 Site	Jaw to navel, retrosternal, not ‘poking’ left submammaryRadiation	Left chest, left arm, jaw….mandible, teeth, palateQuality/severity	tightness, heaviness, compression…clenched fists
 [NOTES]
 ‹#›
 
---- page 15 ---
+- -
 Chest PainFeatures of Myocardial ischaemia
 Precipitating/relieving factors	aggravated by physical exertion, cold windy weather, emotion	relieved by rest, sublingual nitratesAutonomic symptoms are frequent	sweating, pallor, peripheral vasoconstriction, nausea and vomiting
 [NOTES]
 ‹#›
 
---- page 16 ---
+- -
 UA / NSTEMI    The thrombus is mural and the culprit artery is usually patent.    AIM:  Prevent progression to occlusive stage i.e. passivate the plaque by converting a platelet- active surface to a platelet-inactive surfaceSTEMI    The vessel is acutely occluded.    AIM:   Rapid reperfusion to preserve myocardial 
 
 [... content truncated, total length: 2537 chars ...]
 
-#### pages-021-030.txt
+####.txt
 
---- page 21 ---
+- -
 [NOTES]
 ‹#›
 
---- page 22 ---
+- -
 [NOTES]
 ‹#›
 
---- page 23 ---
+- -
 
 
---- page 24 ---
+- -
 Overview
 Defn: Acute coronary syndrome (ACS)Risk stratificationHistoryExaminationECG changesBiochemical cardiac markersInitial management
 
---- page 25 ---
+- -
 DEFINITION
 Ischemic heart disease, also referred to as coronary heart disease, is present when a patient has one or more symptoms, signs, or complications from an inadequate supply of blood to the myocardiumThis is most commonly due to obstruction of the epicardial coronary arteries due to atherosclerosis
 
---- page 26 ---
+- -
 Myocardial Ischemia
 Spectrum of presentationsilent ischemiaexertion-induced anginaunstable anginaacute myocardial infarctionSudden cardiac death
 
---- page 27 ---
+- -
 Cumulative 6-month mortality from ischemic heart disease
 0           1           2           3            4           5           6
 5
@@ -471,7 +471,7 @@ Acute MIUnstable anginaStable angina
 Duke Cardiovascular Database
 N = 21,761; 1985-1992Diagnosis on adm to hosp
 
---- page 28 ---
+- -
 Atherosclerosis Timeline
 FoamCells
 FattyStreak
@@ -486,30 +486,30 @@ From FourthDecade
 [NOTES]
 ‹#›
 
---- page 29 ---
+- -
 Coronary Angiography
 
---- page 30 ---
+- -
 TREATMENT
 Aims of therapyDecrease symptomsDecrease pr
 
 [... content truncated, total length: 1520 chars ...]
 
-#### pages-031-040.txt
+####.txt
 
---- page 31 ---
+- -
 GOALS OF TREATMENT
 Relief or decrease of angina and ischemiaPrevention of progression of diseasePrevention of complications of diseaseMyocardial infarctionWorsening left ventricular function or development of congestive heart failureCardiovascular deathSudden cardiac death or arrhythmias
 
---- page 32 ---
+- -
 Ischemic Heart Diseaseevaluation
 Based on the patient’shistory / physical examelectrocardiogramPatients are categorized into 3 groupsnon-cardiac chest painunstable anginamyocardial infarction
 
---- page 33 ---
+- -
 Definitions – Acute coronary syndrome
 Any constellation of clinical symptoms that are compatible with acute myocardial ischemia.It encompasses a spectrum fromSTEMI NSTEMI Unstable Anginacharacterized by the common pathophysiology of a disrupted atheroslerotic plaque
 
---- page 34 ---
+- -
 Acute Coronary Syndrome
 Ischemic DiscomfortUnstable Symptoms
 No ST-segmentelevation
@@ -519,449 +519,447 @@ ECG
 AcuteReperfusion
 HistoryPhysical Exam
 
---- page 35 ---
+- -
 STEMI - acute process of myocardial ischemia resulting in myocardial necrosis.The initial ECG shows ST elevationNSTEMI – acute process of myocardial ischemia resulting in myocardial necrosis.The initial ECG does not show ST elevationUA – an acute process of myocardial ischemia that does not result in myocardial necrosis
 What’s the difference?
 
---- page 36 ---
+- -
 Acute Coronary Syndrome
 The spectrum of clinical conditio
 
 [... content truncated, total length: 1758 chars ...]
 
-#### pages-041-050.txt
+####.txt
 
---- page 41 ---
+- -
 [NOTES]
 ‹#›
 
---- page 42 ---
+- -
 [NOTES]
 ‹#›
 
---- page 43 ---
+- -
 [NOTES]
 ‹#›
 
---- page 44 ---
+- -
 Importance of risk stratification
 1)	Are the symptoms a manifestation of ACS2)	Therapy/ site of care will vary dependent on diagnosis3) 	To determine prognosis/short term survival
 
---- page 45 ---
+- -
 History – diagnosing ACS
 5 most important factors that relate to the likelihood of ischemia due to CAD…1) Nature of the anginal symptoms2) Prior Hx of CAD3) Sex4) Age5) Number of traditional risk factors presentBeware – women and elderly
 
---- page 46 ---
+- -
 History – diagnosing ACS
 High – Chest/L arm pain as chief symptom, similar to previous angina symptoms	Known Hx of CAD (including MI)Intermediate – Chest/L) arm pain as chief symptom	Age>70yrs/Male/Diabetes Low – Probable ischemic symptoms in absence of any of the intermediate likelihood characteristics	Recent cocaine use
 
---- page 47 ---
+- -
 History – short term risk of death or nonfatal MI in unstable angina
 High RiskAccelerating tempo of ischemic symptoms in preceding 48hrsProlonged ongoing (>20min) rest painIntermediate Prior MI, peripheral vascular disease or CVS/CABG/Aspirin useProlonged (>20min) rest angina, now resolved, with moderate or high likelihood of CADRest angina (<20min) or relieved with rest or SL  NTG
 
---- page 48 ---
+- -
 History – short term risk of death or nonfatal MI in unstable angina
 Low riskNew onset or progessive angina (Marked limitation/or inability to ca
 
 [... content truncated, total length: 2253 chars ...]
 
-#### pages-051-060.txt
+####.txt
 
---- page 51 ---
+- -
 Examination - short term risk of death or nonfatal MI in UA
  Cardiogenic shock occurs in up to 5% of patients with NSTEMI and mortality rates are greater than 60%
 
---- page 52 ---
+- -
 ECG - diagnosing ACS
 High – New, or presumably new, transient 	ST- segment deviation ( 0.05 mV) or T-wave inversion ( 0.2mV) with symptomsIntermediate – Fixed Q waves / Abnormal ST segments or T waves not documented to be newLow – T wave flattening or inversion in leads with dominant R waves / Normal ECG
 
---- page 53 ---
+- -
 ECG - diagnosing ACS
 A completely normal ECG in a patient with chest pain DOES NOT exclude the possibility of ACS. -  1-6% of these patients it will be proven that  	they have had a NSTEMI- 	  4% will be diagnosed with unstable angina
 
---- page 54 ---
+- -
 ECG - short term risk of death or nonfatal MI in unstable angina
 High – Angina at rest with transient ST-segment changes > 0.05mV	Bundle – branch block, new or presumed new	Sustained ventricular tachycardiaIntermediate – T wave inversion >0.2mV	Pathological Q wavesLow – Normal/unchanged ECG during an episode of chest pain
 
---- page 55 ---
+- -
 ECG - short term risk of death or nonfatal MI in unstable angina
 Risk factors ranked in order for risk of death in patients with ACS1) Confounding ECG patterns – bundle branch pattern,paced rhythm, LV hypertrophy2) ST segment deviation3) Isolated  T wave inversion or normal ECGECG pattern remains an independent predictor of death, after adj
 
 [... content truncated, total length: 2576 chars ...]
 
-#### pages-061-070.txt
+####.txt
 
---- page 61 ---
+- -
 BCM – CK-MB isoforms
 Advantages – Early detection of early MI (3-6hrs after onset of sxs)Disadvantages – Specificity profile similar to that of CK-MB
 
---- page 62 ---
+- -
 BCM - Myoglobin
 Advantages – High sensitivity	Useful in early detection of MI (2hrs after onset of sxs)	Most useful in ruling OUT a MIDisadvantages  - Very low specificity in setting of skeletal muscle injury or disease	Rapid return to normalShould not be used in isolation
 
---- page 63 ---
+- -
 BCM – Cardiac Troponins
 Advantages  - 	Powerful tool for risk stratification	Greater sensitivity and specificity than CK-MB	Detection of recent onset of MI up to 2 wks after onset	Useful for selection of therapy
 
---- page 64 ---
+- -
 
 
---- page 65 ---
+- -
 Cardiac Biomarkers – Cardiac Troponins
 Disadvantages - 	Low sensitivity in very early phase of MI (< 6hrs after onset of sxs) and requires repeat levels	Limited ability to detect late minor reinfarction
 
---- page 66 ---
+- -
 Cardiac Biomarkers – Other markers
 CRP – 	Patients without biochemical evidence of myocardial necrosis but who have an elevated CRP are at an increased risk of an adverse outcomeOther – 	Elevated levels of interleukin-6, serum amyloid A, have similar predictive value as CRP
 
---- page 67 ---
+- -
 
 
---- page 68 ---
+- -
 ACS : Putting it together : ANTMAN score
 7 point risk score (Antman et al)	Age (>65yrs)	More than 3 coronary risk factors	Prior angiographic coronary obstruction	ST – segment deviation	More th
 
 [... content truncated, total length: 1793 chars ...]
 
----
+-
 
 ### IHD_CSA_and_ACS
 
-#### pages-001-010.txt
+####.txt
 
---- page 1 ---
+- page 1 -
 ISCHAEMIC HEART DISEASE
 DP NaidooDEPARTMENT OF CARDIOLOGYINKOSI ALBERT LUTHULI CENTRAL HOSPITAL
 
---- page 2 ---
+- page 2 -
 DEFINITION
 Ischemic heart disease, also referred to as coronary heart disease, is present when a patient has one or more symptoms, signs, or complications from an inadequate supply of blood to the myocardiumThis is most commonly due to obstruction of the epicardial coronary arteries due to atherosclerosis
 
---- page 3 ---
+- page 3 -
 What is myocardial ischaemia?
 An imbalance between the supply of oxygen and the myocardial demand resulting in myocardial ischaemiaANGINA PECTORIS is the symptom of chronic myocardial ischaemiachest discomfort associated with abnormal myocardial function in the absence of myocardial necrosisMost common cause is coronary artery disease due to atheromaAcute onset of severe angina-like pain that does not remit may be a manifestation of  severe ischaemia (ACUTE CORONARY SYNDROME) is due to acute complete blockage of a coronary artery
 [NOTES]
 ‹#›
 
---- page 4 ---
+- page 4 -
 Myocardial Ischemia
 Spectrum of presentationsilent ischemiaexertion-induced anginaunstable anginaacute myocardial infarctionSudden cardiac death
 
---- page 5 ---
+- page 5 -
 Causes of Impaired supply/demand ischaemia
 SupplyAtheroma, thrombosis, spasm, embolusDemandAnaemia, hypertension, high cardiac output (thyrotoxicosis, myocardial hypertrophy)
 [NOTES]
 ‹#›
 
---- page 6 ---
+- page 6 -
 Pathophysiology of Ischaemic heart disease (IHD)
 [NOTES]
 ‹#›
 
---- page 7 ---
+- page 7 -
 
 [... content truncated, total length: 2564 chars ...]
 
-#### pages-011-020.txt
+####.txt
 
---- page 11 ---
+- -
 Stages in atheromatous plaque development and rupture
 [NOTES]
 ‹#›
 
---- page 12 ---
+- -
 Pathophysiology of Acute coronary syndromes
 Fatal AMI	Small, fat rich plaques.  Plaque rupture.  Thrombus in lipid core and on plaques surface.  Vessel lumen totally occluded.  Non-fatal AMI	Plaque erosion rather than rupture.  occlusive thrombus.  Unstable angina	Usually mod-severe stenosis. Multiple vessels. Collaterals often formed. Thrombus formation and vasoconstriction. Myocardial infarction may ensue.
 [NOTES]
 ‹#›
 
---- page 13 ---
+- -
 Chest pain due to myocardial ischaemia  acute       or    chronic
 Acute coronary syndrome STEMI   NSTEMI   Unstable angina
 Chronic stable angina
 [NOTES]
 ‹#›
 
---- page 14 ---
+- -
 APPROACH to chest pain syndromes
 Not all chest pain is due to myocardial ischaemia : there are several causes of chest pain Take a detailed historyIs it myocardial or not? If myocardial is the onset acute ? If myocardial the determine risk factor status
 [NOTES]
 ‹#›
 
---- page 15 ---
+- -
 Differential diagnosis of Chest Pain
 Cardiac pathologyPericarditis, aortic dissectionPulmonary pathologyPulmonary embolus, pneumothorax, pneumoniaGastrointestinal pathologyPeptic ulcer disease, reflux oesophagitis (GORD), pancreatitis, ‘café coronary’Musculoskeletal pathologyTrauma, Tietze’s Syndrome
 [NOTES]
 ‹#›
 
---- page 16 ---
+- -
 ANGINA : Chest Painindicative of Myocardial ischaemia
 Site	Jaw to navel, retrosternal, not ‘poking’ left submammaryRad
 
 [... content truncated, total length: 2588 chars ...]
 
-#### pages-021-030.txt
+####.txt
 
---- page 21 ---
+- -
 Acute chest pain evaluation
 Based on the patient’shistory / physical examelectrocardiogramPatients are categorized into 3 groupsnon-cardiac chest painunstable anginamyocardial infarction
 
---- page 22 ---
+- -
 Definitions – Acute coronary syndrome
 Any constellation of clinical symptoms that are compatible with acute myocardial ischemia.It encompasses a spectrum fromSTEMI NSTEMI Unstable Anginacharacterized by the common pathophysiology of a disrupted atheroslerotic plaque
 
---- page 23 ---
+- -
 STEMI - acute process of myocardial ischemia resulting in myocardial necrosis. The initial ECG shows ST elevationNSTEMI – acute process of myocardial ischemia resulting in myocardial necrosis.The initial ECG does not show ST elevationUA – an acute process of myocardial ischemia that does not result in myocardial necrosis
 What’s the difference?
 
---- page 24 ---
+- -
 Overview
 Defn: Acute coronary syndrome (ACS)Risk stratificationHistoryExaminationECG changesBiochemical cardiac markersInitial management
 
---- page 25 ---
+- -
 Importance of risk stratification
 1)	Are the symptoms a manifestation of acute coronary syndrome (ACS)2)	Therapy at the site of care will vary dependent on the diagnosis3) 	To determine prognosis/short term survival
 
---- page 26 ---
+- -
 History – diagnosing ACS
 5 most important factors that relate to the likelihood of ischemia due to CAD…1) Nature of the anginal symptoms2) Prior Hx of CAD3) Sex4) Age5) Number of traditional
 
 [... content truncated, total length: 2769 chars ...]
 
-#### pages-031-040.txt
+####.txt
 
---- page 31 ---
+- -
 Acute Coronary Syndrome
 The spectrum of clinical conditions ranging from:Unstable anginaNSTEMISTEMIcharacterized by the common pathophysiology of a disrupted atheroslerotic plaque
 
---- page 32 ---
+- -
 UA / NSTEMI    The thrombus is mural and the culprit artery is usually patent    AIM:  Prevent progression to occlusive stage i.e. passivate the plaque by converting a platelet- active surface to a platelet-inactive surface. STEMI    The vessel is acutely occluded by thrombus    AIM:   Immediate reperfusion to prevent muscle death and preserve myocardial function
 [NOTES]
 ‹#›
 
---- page 33 ---
+- -
 [NOTES]
 ‹#›
 
---- page 34 ---
+- -
 Acute ST elevation MI: Immediate treatment is to open the artery  immediately
 Thrombolysis best results within 4 hours  and is done at the base hospital Primary angioplasty best results if it can be done within 1.5 hours of the onset of pain
 [NOTES]
 ‹#›
 
---- page 35 ---
+- -
 Complications of Acute Myocardial Infarction
 Death (18% within 1 hour, 36% within 24 hours)Non-fatal arrhythmiaAcute left ventricular failureCardiogenic shockPapillary muscle rupture and mitral regurgitationMyocardial rupture and tamponadeVentricular aneurysm and thrombus
 [NOTES]
 ‹#›
 
---- page 36 ---
+- -
 Ventricular arrhythmias that need electrical conversion
 ventricular tachycardiaventricular fibrillation
 [NOTES]
 ‹#›
 
---- page 37 ---
+- -
 [NOTES]
 ‹#›
 
---- page 38 ---
+- -
 Don’t forget to address the risk factors in a patient who had recovetred fr
 
 [... content truncated, total length: 2390 chars ...]
 
-#### pages-041-044.txt
+####.txt
 
---- page 41 ---
+- -
 BCM - Myoglobin
 Advantages – High sensitivity	Useful in early detection of MI (2hrs after onset of sxs)	Most useful in ruling OUT a MIDisadvantages  - Very low specificity in setting of skeletal muscle injury or disease	Rapid return to normalShould not be used in isolation
 
---- page 42 ---
+- -
 BCM – Cardiac Troponins
 Advantages  	Powerful tool for risk stratification	Greater sensitivity and specificity than CK-MB	Detection of recent onset of MI up to 2 wks after onset	Useful for selection of therapyDisadvantages 	Low sensitivity in very early phase of MI (< 6hrs after onset of sxs) and requires repeat estimations 	Limited ability to detect late minor reinfarction since levels remain elevated for up to two weeks    Several causes for troponin elevationHigh sensitivity troponin test now available to detect mild elevation in troponin at an early stage of ACS
 [NOTES]
 Other biomarkers CRP – Patients without biochemical evidence of myocardial necrosis but who have an elevated CRP are at an increased risk of an adverse outcomeOther – Elevated levels of interleukin-6, serum amyloid A, have similar predictive value as CRP
 
---- page 43 ---
+- -
 ACS risk stratification : ANTMAN score
 7 point risk score (Antman et al): the higher the score (>5)  the higher the risk of mortality 	Age (>65yrs)	More than 3 coronary risk factors	Prior angiographic coronary obstruction	ST – segment deviation	More than 2 angina events within 24hrs	Use of aspirin wit
 
 [... content truncated, total length: 1557 chars ...]
 
----
+-
 
 ### INFECTIVE_ENDOCARDITIS_-_LECTURE
 
-#### pages-001-010.txt
+####.txt
 
---- page 1 ---
+- page 1 -
 INFECTIVE ENDOCARDITIS
 
---- page 2 ---
+- page 2 -
 INFECTIVE ENDOCARDITIS
 DefinitionDiagnosisManagementIndications for SurgeryProphylaxis
 
---- page 3 ---
+- page 3 -
 DEFINITION
 Infection of the endocardial surfaceVegetations on the endocardiumPhysical presence of microorganisms in the lesionHeart valves most commonly effectedMay develop on septal defect or on the mural endocardiumVirtually always fatal if untreated
 
---- page 4 ---
+- page 4 -
 CLASSIFICATION
 Four categories – different infecting organisms and run different coursesNative valve endocarditisProsthetic valve endocarditisEndocarditis in IV drug abusersNosocomial endocarditisORAcute vs Subacute
 
---- page 5 ---
+- page 5 -
 ACUTEMarked toxicityProgresses over days to several weeks to valvular destruction and metastatic infectionUsual organism – Staph aureusIf untreated fatal in <6weeksSub-acuteEvolves over weeks to months with modest toxicityUsual organism – Strep viridansRarely causes metastatic fociIf untreated takes >6 weeks to be fatal
 
---- page 6 ---
+- page 6 -
 EPIDEMIOLOGY
 Annual incidence: 15,000 to 20,000Forth leading cause of life-threatening infectious diseaseMale:female ratio is 1.7:1Up to 45% involve mitral valve, 36% aortic valve
 
---- page 7 ---
+- page 7 -
 ETIOLOGIC AGENTS
 AGENT	Streptococci		Viridans streptococci		Enterococci		Other streptococci	Staphylococci		Coagulase positive		Coagulase negative	Gram-negative aerobic bacilliFungi	Miscellaneous bacteria	Mixed infections	Culture negative
 PERC
 
 [... content truncated, total length: 2641 chars ...]
 
-#### pages-011-020.txt
+####.txt
 
---- page 11 ---
+- -
 RISK FACTORS
 Injection drug use Highest risk factor in patients < 40 years of ageProsthetic heart valvesProsthetic valve endocarditis comprises a small but important segment of IE cases More than 100,000 heart valves are implanted annually in the United States IE develops in 1 to 4 % of valve recipients during the 1st year following valve replacement, and in approximately 1 percent per year thereafter
 
---- page 12 ---
+- -
 RISK FACTORS
 Nosocomial endocarditis Usually a complication of bacteremia induced by an invasive procedure or a vascular deviceStructural heart disease Approximately three-fourths of all patients with IE have a preexisting structural cardiac abnormalityCongenital heart disease is present in 10-20% cases The most common predisposing congenital heart lesions are bicuspid aortic valves, PDA, VSD, coarctation of the aorta, and tetralogy of Fallot
 
---- page 13 ---
+- -
 RISK FACTORS
 Degenerative valvular lesions The risk of IE in patients with MVP and associated regurgitation is estimated to be 5 to 8 times higher than that in the normal population Aortic valve disease(stenosis or/and regurgitation) is present in 12 to 30 percent of cases
 
---- page 14 ---
+- -
 RISK FACTORS
 History of infective endocarditis Recurrent endocarditis occurred in 4.5 percent of one large cohort of non-addicts Other studies have reported rates of IE recurrence ranging from 2.5 to 9 percentHIV infection  A number of cases of IE have been reported in patient
 
 [... content truncated, total length: 4045 chars ...]
 
-#### pages-021-030.txt
+####.txt
 
---- page 21 ---
+- -
 LAB FINDINGS
 SerologyRheumatoid factor (40-50%)Circulating immune complexesAntinuclear antibodiesElevated levels of serum globulinsPresence of cryoglobulins Hypocomplementemia  False positive serologic tests for syphilis Blood cultureMost important lab testPositive cultures in 97% of casesA minimum of three blood cultures should be obtained over a time period based upon the severity of the illness
 
---- page 22 ---
+- -
 ElectrocardiogramAll patients with suspected IE should have an ECG to determine whether there is evidence of heart block or a conduction delay and to establish a baseline should such a complication develop later
 
---- page 23 ---
+- -
 PROCEDURES
 EchoTTE is rapid, noninvasivespecificity: 98%sensitivity: <60%TEEhigher ultrasonic frequencies, improve spatial resolutionspecificity: 94% (prosthetic valve: 88-100%)sensitivity: 76-100% (prosthetic valve: 86-94%)
 
---- page 24 ---
+- -
 Echocardiography Should be performed in all patients with suspected IEA TTE should initially be obtained in patients with native heart valves, while those with prosthetic valves should undergo TEE Detection of a vegetation by TTE is a positive test However, a negative study does not preclude the diagnosis and should be followed by TEE, when there is an intermediate or high suspicion of IE
 
---- page 25 ---
+- -
 
 
---- page 26 ---
+- -
 Duke Criteria for IE diagnosis
 Major criteriaPositive blood culture for infective endocarditisTypical microorganism for IE 
 
 [... content truncated, total length: 3108 chars ...]
 
-#### pages-031-040.txt
+####.txt
 
---- page 31 ---
-
-
---- page 32 ---
+- -
 
 
---- page 33 ---
+- -
+
+
+- -
 Prognostic signs
 S. aureus, fungal infectionsPrevious IECyanotic heart diseaseCHFEmbolic phenomenaRupture of a mycotic aneurysmLack of response to antimicrobial therapyProsthetic valve endocarditisPeriannular extension of infection
 
---- page 34 ---
+- -
 
 
---- page 35 ---
+- -
 
 
---- page 36 ---
+- -
 
 
---- page 37 ---
+- -
 
 
---- page 38 ---
+- -
 
 
---- page 39 ---
+- -
 
 
---- page 40 ---
+- -
+
+####.txt
+
+- -
 
 
-#### pages-041-050.txt
-
---- page 41 ---
-
-
---- page 42 ---
+- -
 INDICATIONS SURGICAL THERAPY
 Refractory CHF directly related to valve dysfunctionPhysiologically significant valve dysfunction as demonstrated by echo>2 serious systemic embolic episode particularly in the presence of large vegetationsPersistent or uncontrolled infection while receiving appropriate antimicrobial therapy Ineffective antimicrobial therapyLocal suppurative complications including perivalvular or myocardial abscessesResection of mycotic aneurysms
 
---- page 43 ---
+- -
 INDICATIONS FOR SURGERY IN IE
 The indications for surgery in patients with native-valve IE and prosthetic-valve IE are essentially the same Surgery is warranted for patients with active IE who have one or more of the following complications:CHF that is directly related to valve dysfunctionPersistent or uncontrolled infection while receiving appropriate antimicrobial therapy, including evidence of perivalvular extensionRecurrent emboli, >2, particularly in the presence of large vegetations
 
---- page 44 ---
+- -
 INDICATIONS FOR SURGERY IN IE
 Relative indications for surgeryEvidence of perivalvular infection, such as intracardiac abscess or fistula formationRupture of a sinus of Valsalva aneurysmFungal endocarditisEndocarditis due to highly resistant microorganismRelapse after a course of adequate antimicrobial therapy, particularly in prosthetic valve endocarditisCulture-negative IE with fever more than 10 days after starting empirical therapy
 
---
+-
 
 [... content truncated, total length: 2749 chars ...]
 
-#### pages-051-058.txt
+####.txt
 
---- page 51 ---
+- -
 
 
---- page 52 ---
+- -
 PROPHYLAXIS
 RationaleEndocarditis usually follows bacteremiaRisk of endocarditis is smallNo proof of efficacy of preventative therapyRecommended for patients with predisposing cardiac lesions undergoing procedures known to cause bacteremiaValvular heart diseaseCongenital heart diseaseIntracardiac prosthesisPrevious endocarditis
 
---- page 53 ---
+- -
 ESTIMATED RISK OF IE ASSOCIATED WITH PREEXISTING CARDIAC DISORDERS
 
---- page 54 ---
+- -
 INFECTIVE ENDOCARDITIS PREVENTIONNEW GUIDELINES
 The principle of antibiotic prophylaxis when performing procedures to patients at risk for IE with predisposing cardiac lesions are maintainedAb prophylaxis are limited to patients at highest risk undergoing high risk dental proceduresGood Dental hygiene and regular Dental review are more important than prophylaxis in preventing IEAseptic measures during venous catherisation and invasive procedures
 
---- page 55 ---
+- -
 
 
---- page 56 ---
+- -
 
 
---- page 57 ---
+- -
 
 
---- page 58 ---
+- -
 
-
----
+-
 
 ### New_ECG_Interpretation_part_1
 
-#### pages-001-010.txt
+####.txt
 
---- page 1 ---
+- page 1 -
 Sandhiran Nadar
 Department of Cardiology
 ECG InterpretationPart 1
 
---- page 2 ---
+- page 2 -
 Steps of ECG Interpretation
 Check calibration
 Rate
@@ -972,47 +970,47 @@ Hypertrophy
 Myocardial infarction
 Metabolic conditions
 
---- page 3 ---
+- page 3 -
 Calibration
 10 mm = 1 mV (amplitude)
 Paper speed = 25mm/s
 1 mm = 0.04 s
 
---- page 4 ---
+- page 4 -
 Electrode placement
 
---- page 5 ---
+- page 5 -
 
 
---- page 6 ---
+- page 6 -
 Where the waves come from
 
---- page 7 ---
+- page 7 -
 Direction of Current
 
---- page 8 ---
+- page 8 -
 
 
---- page 9 ---
+- page 9 -
 Rate
 Number of QRS complexes multiplied by 6
 If rhythm is regular, look at the R-R interval
 300 divided by the number of large squares between R waves
 60-100/min is generally regarded as normal
 
---- page 10 ---
+- -
 Sinus rhythm
 SA node acts as natural pacemaker
 Heart rate 60-100/min
 Every P wave followed by a QRS complex and every QRS complex preceded by a P wave
 P wave is negative in aVR and positive in II
 
-#### pages-011-020.txt
+####.txt
 
---- page 11 ---
+- -
 
 
---- page 12 ---
+- -
 Sinus bradycardia
 As in sinus rhythm but rate <60/min
 Causes
@@ -1024,7 +1022,7 @@ Hypothermia
 Electrolyte abnormalities
 ↑ICP
 
---- page 13 ---
+- -
 Sinus tachycardia
 Sinus rhythm with heart rate 100-150/min
 Causes
@@ -1034,29 +1032,29 @@ Anaemia
 Hyperthyroidism
 Hypovolaemia
 
---- page 14 ---
+- -
 Sinus arrhythmia
 Variation in heart rate with respiration
 Heart rate normally increases during respiration due to increased venous return
 
---- page 15 ---
+- -
 Cardiac Axis
 Gives one an idea of the general direction the wave of depolarisation takes
 
---- page 16 ---
+- -
 Left axis deviation
 Wolff-Parkinson-White syndrome
 Inferior MI
 Left ventricular hypertrophy
 
---- page 17 ---
+- -
 Right axis deviation
 Right ventricular hypertrophy
 WPW
 Anterolateral MI
 Dextrocardia
 
---- page 18 ---
+- -
 P wave
 Absent P waves
 AF
@@ -1068,7 +1066,7 @@ Atrial ectopics
 Junctional rhythms
 Ventricular ectopics
 
---- page 19 ---
+- -
 P pulmonale
 Tall P waves >2.5mm
 Right atrial enlargement
@@ -1076,23 +1074,23 @@ Pulmonary hypertension
 Pulmonary stenosis
 Tricuspid  stenosis
 
---- page 20 ---
+- -
 P mitrale
 Wide P waves > 0.12 s
 Often bifid appearance
 Left atrial enlargement
 Often due to mitral valve disease
 
-#### pages-021-030.txt
+####.txt
 
---- page 21 ---
+- -
 PR interval
 Measured from the start of the P wave to the start of the R wave
 Should be
 0.12 – 0.2 s long
 Consistent in length
 
---- page 22 ---
+- -
 Q waves
 Pathological Q waves
 > 25% of height of following R wave
@@ -1102,28 +1100,28 @@ MI
 LVH
 Bundle branch block
 
---- page 23 ---
+- -
 QRS complexes
 Should be < 0.12s in width
 R wave increases in height from V1-V6
 R wave should be smaller than S wave in V1-V2 and bigger in V5-V6
 
---- page 24 ---
+- -
 Ventricular Hypertrophy
 
---- page 25 ---
+- -
 LVH
 
---- page 26 ---
+- -
 RVH
 
---- page 27 ---
+- -
 Bundle Branch Blocks
 NORMAL
 RBBB
 LBBB
 
---- page 28 ---
+- -
 ST segment elevation
 Measured 0.04 s after the J point
 Significant > 1mm
@@ -1135,23 +1133,23 @@ Prinzmetal angina
 LBBB
 Brugada syndrome
 
---- page 29 ---
+- -
 Pericarditis
 Saddle-shaped
 No Q wave
 No reciprocal changes
 Widespread over many leads
 
---- page 30 ---
+- -
 Myocardial injury
 Convex ‘camel-hump’ appearance
 Q waves
 Reciprocal changes
 Specific contiguous leads
 
-#### pages-031-039.txt
+####.txt
 
---- page 31 ---
+- -
 ST depression
 Significant > 0.5mm
 Causes
@@ -1161,27 +1159,27 @@ Digoxin
 Hypokalaemia
 Reciprocal changes in MI
 
---- page 32 ---
+- -
 QT interval
 
---- page 33 ---
+- -
 Prolonged
 Hypocalcaemia
 Myocarditis
 Hereditary syndromes
 
---- page 34 ---
+- -
 Shortened
 Hypercalcaemia
 Digoxin
 Hereditary
 
---- page 35 ---
+- -
 U wave
 May be seen in some normal ECGs
 Prominent in hypokalaemia
 
---- page 36 ---
+- -
 Myocardial infarction
 Tall ‘hyperacute’ T waves
 St segment elevation
@@ -1191,10 +1189,10 @@ T waves become inverted
 Q waves persist
 May also present with a new LBBB
 
---- page 37 ---
+- -
 
 
---- page 38 ---
+- -
 Localisation of MIs
 Anterior
 V1-V4
@@ -1209,38 +1207,38 @@ II, III, aVF
 Inferolateral
 I, aVL, V5-V6, II, III, aVF
 
---- page 39 ---
+- -
 Right ventricle
 V4R, V5R, V6R – 15 lead ECG
 same as normal praecordial leads but on the right side of the thorax instead
 Posterior
 Tall R waves in V1 with ST depression
 
----
+-
 
 ### New_ECG_Interpretation_part_2
 
-#### pages-001-010.txt
+####.txt
 
---- page 1 ---
+- page 1 -
 Sandhiran Nadar
 Department of Cardiology
 ECG InterpretationPart 2
 
---- page 2 ---
+- page 2 -
 Anterolateral MI
 
---- page 3 ---
+- page 3 -
 Inferior MI
 
---- page 4 ---
+- page 4 -
 Hypokalaemia
 Flattened T wave
 Prominent U wave
 ST depression
 T wave inversion
 
---- page 5 ---
+- page 5 -
 Hyperkalaemia
 Tall peaked T wave
 Flattened P wave
@@ -1248,17 +1246,16 @@ Prolonged PR interval
 Smaller, broader QRS complexes
 Eventually VF
 
---- page 6 ---
+- page 6 -
 Hypothermia
 Irregular baseline
 Bradycardia
 J wave
 
---- page 7 ---
+- page 7 -
 Disorders of Conduction
 
---- page 8 ---
-1st degree AV block
+-st degree AV block
 Long but constant PR interval
 Each P wave followed by QRS complex
 Causes
@@ -1267,16 +1264,14 @@ IHD
 Rheumatic heart disease
 Drugs, eg. digoxin, β-blockers, Ca-channel blockers
 
---- page 9 ---
-2nd degree AV block
+-nd degree AV block
 Mobitz type I
 Wenckebach phenomenon
 PR interval progressively lengthens
 P wave fails to be conducted
 PR interval then resets to normal
 
---- page 10 ---
-2nd degree heart block
+-nd degree heart block
 Mobitz type II
 Results from abnormal conduction in bundle of His
 Most P waves are followed by a QRS complex
@@ -1284,21 +1279,20 @@ PR interval normal and constant
 Occasionally a P wave is not followed by a QRS complex
 May suddenly progress to complete heart block
 
-#### pages-011-020.txt
+####.txt
 
---- page 11 ---
-3rd degree heart block
+-rd degree heart block
 P waves have no relationship to QRS complexes
 Broad QRS complexes – ventricular escape rhythm
 Urgent pacing required
 
---- page 12 ---
+- -
 
 
---- page 13 ---
+- -
 Disturbances of Rhythm
 
---- page 14 ---
+- -
 Rhythm
 Identify the rhythm strip, usually lead II
 Regular vs irregular
@@ -1306,16 +1300,16 @@ Bradycardia vs tachycardia
 Narrow complex vs broad complex
 Supraventricular vs ventricular
 
---- page 15 ---
+- -
 Supraventricular Tachycardias
 Any heart rate >100/min that originates above the level of the ventricles
 Broad term encompassing many arrhythmias incl. sinus tachycardia, AF/flutter, atrial tachycardias and AV nodal re-entry tachycardias
 
---- page 16 ---
+- -
 Atrial Fibrillation
 Rapid, chaotic depolarisation occurring throughout the atria arising from multiple foci
 
---- page 17 ---
+- -
 No P waves
 Fibrillating baseline
 ‘Irregularly irregular’ R-R interval due to erratic transmission through AV node
@@ -1324,7 +1318,7 @@ Paroxysmal
 Persistent
 permanent
 
---- page 18 ---
+- -
 Atrial flutter
 Results from a re-entry circuit around the right atrium
 Atrial rate 250-350/min
@@ -1332,27 +1326,27 @@ AV block occurs due to failure of AV node to conduct every impulse
 Usually regular block, ie. 2:1, 3:1, 4:1
 Classic ‘sawtooth’ pattern of flutter waves with regular QRS complexes
 
---- page 19 ---
+- -
 Atrial Tachycardia
 Heart rate often >150/min
 P waves present but not always easily visible
 P waves abnormally-shaped due to ectopic focus
 
---- page 20 ---
+- -
 AV nodal re-entry tachycardia
 Arise when 
 
 [... content truncated, total length: 1791 chars ...]
 
-#### pages-021-030.txt
+####.txt
 
---- page 21 ---
+- -
 Heart rate often 150-250/min
 1 P wave per QRS complex, though not always clearly seen
 Regular R-R interval
 Narrow complexes
 
---- page 22 ---
+- -
 Ventricular rhythms
 Broad QRS complexes
 Ventricular tachycardia >120/min
@@ -1360,14 +1354,14 @@ Accelerated ventricular rhythm 40-120/min
 Idioventricular rhythm 30-40/min
 Ventricular escape rhythm <30/min
 
---- page 23 ---
+- -
 Ventricular tachycardia
 Defined as 3 or more successive ventricular beats at a rate exceeding 120/min
 Arises from either a re-entry circuit or a specific ventricular focus
 Episodes may be self-terminating, sustained, or may rapidly degenerate into VF
 When haemodynamic compromise is present, VT becomes a medical emergency – urgent DC cardioversion
 
---- page 24 ---
+- -
 Polymorphic Ventricular Tachycardia
 Acute myocardial ischaemia
 Abnormalities of ion channels
@@ -1383,73 +1377,73 @@ Hypertrophy
 Recent infarction
 Cardiomyopathy
 
---- page 25 ---
+- -
 Torsades de Pointes
 Polymorphic VT associated with a long QT interval
 May be precipitated by electrolyte abnormalities (Mg), anti-arrhythmic drugs, hereditary syndromes
 Characteristic undulating pattern on the ECG with ‘twisting of the points’
 Risk of precipitating VF
 
---- page 26 ---
+- -
 Ventricular fibrillation
 Rapidly fatal arrhythmia
 Most commonly due to MI
 
---- page 27 ---
+- -
 Asystole
 Absence o
 
 [... content truncated, total length: 1876 chars ...]
 
-#### pages-031-035.txt
+####.txt
 
---- page 31 ---
+- -
 Narrow and Irregular
 Atrial fibrillation
 Atrial flutter with variable block
 Atrial tachycardia with variable block
 
---- page 32 ---
+- -
 Wide and Regular
 Ventricular Tachycardia
 SVT with aberrant conduction
 
---- page 33 ---
+- -
 Wide and Irregular
 Atrial fibrillation with WPW
 Atrial fibrillation with bundle branch block
 
---- page 34 ---
+- -
 
 
---- page 35 ---
+- -
 Willem Einthoven’s Original Electrocardiograph
 
----
+-
 
 ### SK_Final_2024
 
-#### pages-001-010.txt
+####.txt
 
---- page 1 ---
+- page 1 -
 Coronary Artery Disease(CAD)
 S. Khan
 Dept. of Cardiology
 Albert Luthuli Hospital
 
---- page 2 ---
+- page 2 -
 WHO : Global Mortality 2019
 
---- page 3 ---
+- page 3 -
 Global Mortality in the Covid Era
 Report as at 31 August 2021
 
---- page 4 ---
+- page 4 -
 Introduction
 Coronary Artery Disease (Ischaemic Heart Disease) is the number 1 cause of death globally, responsible for 16% of the world’s total deaths
 CAD is a dynamic process that can be modified by lifestyle, pharmacological therapies and revascularization which can result in disease stabilization or regression
 
---- page 5 ---
+- page 5 -
 Clinical Manifestations of CAD
 Chronic coronary syndromes
 Stable angina
@@ -1460,7 +1454,7 @@ Unstable angina
 Silent ischaemia
 Sudden death
 
---- page 6 ---
+- page 6 -
 RISK RISK FACTORS: Non-Modifiable
 Age:
 CAD prevalence increases after 35 years
@@ -1471,22 +1465,22 @@ Family history:
 A family history of CAD < 50 years of age has an increased CAD mortality risk
 a father or brother diagnosed with CAD before 55 years of age and a mother or sister diagnosed before 65 years of age are considered risk factors
 
---- page 7 ---
+- page 7 -
 RISK FACTORS: Non-Modifiable
 Hypertension: About 1 out of every three patients have hypertension
 Hyperlipidaemia
 
 [... content truncated, total length: 2826 chars ...]
 
-#### pages-011-020.txt
+####.txt
 
---- page 11 ---
+- -
 Framingham Risk Score
 
---- page 12 ---
+- -
 Subjects at Very High Risk of CV Events who do not require Framingham risk scoring
 
---- page 13 ---
+- -
 Normal
 Fatty streak
 Atherosclerotic plaque
@@ -1499,20 +1493,20 @@ Pathology of Atherosclerotic CAD
 [NOTES]
 CAD is a pathological process characterized by atherosclerotic plaque formation in the epicardial arteries, whether obstructive or non-obstructive
 
---- page 14 ---
+- -
 
 
---- page 15 ---
+- -
 Chronic Coronary Syndromes
 Atherosclerotic plaque causing > 50%
 lumen stenosis
 
---- page 16 ---
+- -
 STEMI
 NSTE ACS
 ACUTE CORONARY SYNDROMES
 
---- page 17 ---
+- -
 Chronic Coronary Syndromes
 First indicator of CAD in 50% of patients
 Definition: symptom characteristics are unchanged for 60 days
@@ -1525,7 +1519,7 @@ Imaging
 CT coronary angiography
 r
 
---- page 18 ---
+- -
 DIAGNOSIS: History
 Typical Angina (definite)
 Constricting discomfort in the front of the chest or in the neck, jaw, shoulder or arm
@@ -1536,54 +1530,54 @@ Meets 2 of the above characteristics
 Non – anginal chest pain
 Meets 1 or none of the typical anginal characteristics
 
---- page 19 ---
+- -
 Canadian Cardiovascular Society Grading of Angina
 
---- page 20 ---
+- -
 DIAGNOSIS: Clinical
 Likelihood of 
 
 [... content truncated, total length: 1759 chars ...]
 
-#### pages-021-030.txt
+####.txt
 
---- page 21 ---
+- -
 DIAGNOSIS :  ECG
 
---- page 22 ---
+- -
 ST
 ECG Waveforms
 DIAGNOSIS :  ECG
 
---- page 23 ---
+- -
 ST Depression
 Normal
 ST depression
 DIAGNOSIS :  ECG
 
---- page 24 ---
+- -
 DIAGNOSIS :  ECG
 
---- page 25 ---
+- -
 DIAGNOSIS :  ECG
 
---- page 26 ---
+- -
 DIAGNOSIS :  ECG
 [NOTES]
 ST elevation in V1 – V4 = Anterior (antero-septal) STEMI
 
---- page 27 ---
+- -
 DIAGNOSIS :  ECG
 [NOTES]
 ST Elevation in leads ll, lll, aVF = Inferior STEMI
 
---- page 28 ---
+- -
 Establish diagnosis
 Determine risk of a coronary event
 EST not much value in patients at very high risk or very low risk of CAD
 DIAGNOSIS :  Exercise Stress Testing
 
---- page 29 ---
+- -
 Interpretation should include
 Symptoms
 Exercise capacity (should last at least 6 minutes)
@@ -1594,15 +1588,15 @@ either elevation or depression of at least 1 mm in leads without a
 diagnostic Q wave)
 DIAGNOSIS :  Exercise Stress Testing
 
---- page 30 ---
+- -
 AIM
 Prevent MI and delay death
 Improve symptoms
 TREATMENT: Chronic Coronary Syndromes
 
-#### pages-031-040.txt
+####.txt
 
---- page 31 ---
+- -
 Prevention of MI and Death
 Anti-platelet drugs
 Aspirin: a cyclo-oxygenous inhibitor
@@ -1619,7 +1613,7 @@ Aspirin, like the vast majority of NSAIDs, is thought to exert its anti-inflamma
 
 Concomitant use of a proton pump inhibitor is recommended in patients receiving aspirin monotherapy, DAPT, or OAC monotherapy who are at high risk of gastrointestinal bleeding.Lipid-lowering drugs: if goals are not achieved with the maximum tolerated dose of statin, combination with ezetimibe is recommended. Lipid-lowering drugs: for patients at very high risk who do not achieve their goals on a maximum tolerated dose of statin and ezetimibe, combination with a PCSK9 inhibitor is recommended.
 
---- page 32 ---
+- -
 Medication | Outcome | Hazard Ratio
 Aspirin | Vascular death | 0.77
 Clopidogrel | MI, stroke or all-cause death | 0.93
@@ -1632,37 +1626,37 @@ Telmisartan | All-
 
 [... content truncated, total length: 3453 chars ...]
 
-#### pages-041-050.txt
+####.txt
 
---- page 41 ---
+- -
 ACUTE CORONARY SYNDROMEs
 ST Elevation MI   (STEMI)
 Non ST Elevation ACS   (NSTE ACS)
 Unstable angina
 
---- page 42 ---
+- -
 STEMI
 NSTE ACS
 NSTEMI
 ACUTE CORONARY SYNDROME
 
---- page 43 ---
+- -
 STEMI
 The vessel is occluded
 The aim of therapy is rapid reperfusion and maintenance of vessel patency
 
---- page 44 ---
+- -
 Aim for a total ischaemic time of < 3 hours
 = the time from symptom onset to opening of culprit vessel
 STEMI
 
---- page 45 ---
+- -
 Diagnosis of STEMI
 Symptom : 	typical angina ongoing for > 30 minutes
 ECG : 		ST elevation
 Troponin:          elevation
 
---- page 46 ---
+- -
 MANAGEMENT OF STEMI
 Chest pain > 30 minutes
 +
@@ -1673,10 +1667,10 @@ REPERFUSION
 [NOTES]
 In patients with left bundle branch block (LBBB), specific ECG criteria  (Sgarbossa’s criteria) may help in the detection of candidates for immediate reperfusion
 
---- page 47 ---
+- -
 If uncertain of diagnosis, repeat ECG every 10 minutes
 
---- page 48 ---
+- -
 Management of STEMI : Reperfusion
 Primary PCI (angioplasty/stenting) best therapy
 Fibrinolysis if onset of pain < 12 hours
@@ -1694,12 +1688,12 @@ Quotation price of alteplase 100mg: R 11 830.88, 29 January 2019 .
 
 [... content truncated, total length: 1960 chars ...]
 
-#### pages-051-060.txt
+####.txt
 
---- page 51 ---
+- -
 
 
---- page 52 ---
+- -
 STEMI : Adjunctive therapy
 Analgesia
 morphine IV
@@ -1708,7 +1702,7 @@ nitrates IV
 Statins
 4. ACE-Inhibitors
 
---- page 53 ---
+- -
 General Measures
 Supplemental Oxygen
 Maintain arterial O2 saturation > 90%
@@ -1723,8 +1717,7 @@ Aortic stenosis
 Hyperthyroidism
 Morbid obesity
 
---- page 54 ---
-1.	BP > 200/120 mmHg
+-.	BP > 200/120 mmHg
 2.	History of haemorrhagic CVA/recent non-haemorrhagic CVA (6m)
 3.	Intracranial neoplasm / recent head trauma
 4. Trauma / surgery that is a potential bleeding source (<2 weeks)
@@ -1734,7 +1727,7 @@ Morbid obesity
 8.	Prolonged (> 10 min) or traumatic CPR
 Contra-indications to Fibrinolysis
 
---- page 55 ---
+- -
 Complications of STEMI
 Arrhythmias
 Heart block
@@ -1745,20 +1738,19 @@ Acute mitral regurgitation
 Ventricular septal defect
 Heart failure
 
---- page 56 ---
-30 day  Mortality in  STEMI
+- day  Mortality in  STEMI
 Untreated				        40%
 Fibrinolytic therapy		        8.7%
 Fibrinolytic within 1 hour	        1.2%
 
---- page 57 ---
+- -
 
 
---- page 58 ---
+- -
 Acute Coronary Syndromes
 NSTE ACS  (NSTEMI) and Unstable Angina
 
---- page 59 ---
+- -
 Definition
 NSTE ACS versus Unstable Angina
 Differ only in severity
@@ -1767,15 +1759,15 @@ The ischaemia is severe enough to cause myocardial n
 
 [... content truncated, total length: 1953 chars ...]
 
-#### pages-061-070.txt
+####.txt
 
---- page 61 ---
+- -
 Diagnosis
 Clinical
 ECG
 Biomarker
 
---- page 62 ---
+- -
 Management
 Risk Stratification
 Risk stratify
@@ -1790,7 +1782,7 @@ Physical findings
 ECG
 Biomarkers
 
---- page 63 ---
+- -
 High Risk
 History
 Angina at rest in the preceding 48 hours
@@ -1805,14 +1797,14 @@ Bundle branch block or tachyarrhythmias
 Biomarkers
 Troponin elevation
 
---- page 64 ---
+- -
 Increased Risk
 Previous MI, angioplasty or CABG
 Cerebrovascular disease
 Peripheral vascular disease
 Diabetes
 
---- page 65 ---
+- -
 ECG in the setting of NSTE-ACS
 ECG may be normal in more than 30% of patients
 Characteristic abnormalities include
@@ -1821,7 +1813,7 @@ Transient ST-segment elevation
 T-wave changes
 Additional 12-lead ECGs in case of diagnostic uncertainty
 
---- page 66 ---
+- -
 Low Risk /Unstable Angina
 History
 New-onset angina in the preceding 2 weeks without rest pain
@@ -1829,7 +1821,7 @@ Examination :     normal
 ECG                :     normal
 Biomarkers   :     normal
 
---- page 67 ---
+- -
 Management of the High Risk NSTE ACS
 General
 Bedrest
@@ -1841,12 +1833,12 @@ Anti-thrombins
 
 [... content truncated, total length: 2242 chars ...]
 
-#### pages-071-074.txt
+####.txt
 
---- page 71 ---
+- -
 REVASCULARIZATIONEarly Invasive Strategy in High Risk Patient
 
---- page 72 ---
+- -
 RISK STRATIFICATION IN NSTE ACS
 Aspirin, Clopidogrel, Enoxaparin
 HIGH RISK
@@ -1858,10 +1850,10 @@ Cath Lab
 CONSERVATIVE
 Stress Test
 
---- page 73 ---
+- -
 
 
---- page 74 ---
+- -
 Discharge Medication in ACS
 Dual Anti-platelet Therapy x 1 year
 Aspirin indefinitely
@@ -1872,227 +1864,227 @@ BP 130/80
 HbA1c < 7%
 BMI < 25
 
----
+-
 
 ### Valves
 
-#### pages-001-010.txt
+####.txt
 
---- page 1 ---
+- page 1 -
 Evaluation of Valvular Heart Disease
 Dr. D.R. NaidooDepartment of Cardiology
 
---- page 2 ---
+- page 2 -
 Rheumatic Fever
 
---- page 3 ---
+- page 3 -
 DEFINITION:
 Acute rheumatic fever is a systemic disease of childhood ,often recurrent that follows group A beta hemolytic streptococcal infectionIt is a diffuse inflammatory disease of connective tissue primarily involving heart, blood vessels, joints, subcut.tissue and CNS
 
---- page 4 ---
+- page 4 -
 Pathogenesis
 Delayed immune response to infection with group A beta hemolytic streptococci.After a latent period of 1-3 weeks, antibody induced immunological damage  occur to heart valves, joints, subcutaneous tissue & basal ganglia of brain.
 
---- page 5 ---
+- page 5 -
 
 
---- page 6 ---
+- page 6 -
 Step I  - Primary Prevention 					 (eradication of streptococci)
 Step II - anti inflammatory treatment 			         (aspirin,steroids)
 Step III- supportive management & 			         management of complications
 Step IV- Secondary Prevention 				          (prevention of recurrent attacks)
 Treatment
 
---- page 7 ---
+- page 7 -
 STEP I: Primary Prevention of Rheumatic Fever 		(Treatment of Streptococcal Tonsillopharyngitis)
 Agent	                              Dose                                      Mode	         DurationBenzathine penicillin G	0.6M IU  ( 27Kg)              Intramuscular        Once 			1.2 M IU (>27 kg )       			 or Penicillin V		Children: 250 mg bd/tds                Oral            10 d (phenoxymethyl penicillin)  Adolescents and adults: 			    
 
 [... content truncated, total length: 3324 chars ...]
 
-#### pages-011-020.txt
+####.txt
 
---- page 11 ---
+- -
 Duration of Secondary Rheumatic Fever Prophylaxis
 Category				Duration	Rheumatic fever with carditis and         At least 10yr since last residual residual heart disease 		 episode & at least until (persistent valvar disease*)               age 40 (sometimes lifelong 					               prophylaxis) 		Rheumatic fever with carditis		10yr or well into adulthood, but no residual heart disease 		 whichever is longer 	          			Rheumatic fever without carditis	5yr or until age 21yr, 						             whichever is longer	*Clinical or echocardiographic evidence.
 
---- page 12 ---
+- -
 Evaluation of Valvular Heart Disease
 
---- page 13 ---
+- -
 History
 Cardinal features of cardiovascular diseaseDyspneaSyncopeChest painPalpitationsCoughHaemoptysisCyanosis
 
---- page 14 ---
+- -
 Dyspnea
 Uncomfortable awareness of breathingCardiac Pulmonary congestion    LVF/MSInterstitial and alveolar edema stimulates J receptors in lung thereby stimulating respiration
 
---- page 15 ---
+- -
 CYANOSIS
-CentralReduced O2 sat due to R to L shunt or impaired pulmonary functionLate onset  -- Eisenmenger syndromePeripheralCutaneous vasoconstrictionReduced cardiac output
+CentralReduced O2 sat due to R to L shunt or impaired pulmonary functionLate onset  - Eisenmenger syndromePeripheralCutaneous vasoconstrictionReduced cardiac output
 
---- page 16 ---
+- -
 PALPITATIONS
 Unpleasant awareness of forceful or rapidly beating heartArrhythmiasHeart blockEctopicsAugmented Stroke Volume in valvular regurgitant lesionsHigh output statesSudden onset of bradycardia
 
---- page 17 ---
+- -
 EDEMA
 Heart failure   RVF BVFDifferentiate from other cause
 
 [... content truncated, total length: 2034 chars ...]
 
-#### pages-021-030.txt
+####.txt
 
---- page 21 ---
+- -
 MITRAL STENOSIS
 Predominantly due to Rheumatic Fever Fusion of commisures, cusps, chordsCongenitalCarcinoid, SLE, RA, Amyloid,
 
---- page 22 ---
+- -
 MS History
 Exertional DyspneaReduced pulmonary complianceSystemic emboliAF HaemoptysisHoarseness
 
---- page 23 ---
+- -
 MS Physical Examination
 Mitral FaciesSmall volume pulseApex Beat - Tapping -  pliable (Loud S1)Diastolic thrill at ApexPulmonary hypertensionLeft PSH/Palpable P2at 2nd L ICS
 
---- page 24 ---
+- -
 MS Physical Examination
 AuscultationLoud S1  ( normal or soft in Calcified valve)Loud P2Opening snap ( implies pliability)Sudden tensing of valve leaflets after completing their opening excursion
 
---- page 25 ---
+- -
 MS Physical Examination
 Diastolic MurmurLow pitched,rumbling at apexStarts after OSLength proportional to severitySevere MS   holodiastolicOther MurmursShort Early systolic murmur at LSBTricuspid regurgitation
 
---- page 26 ---
+- -
 MS Pathophysiology
 Normal MVA  4-6 cm²Mild stenosis 2-4cm²  a small pressure gradient required to propel blood to LVModerate  MVA 1-2cm²Severe MS  MVA  <1cm²  LAP of at least 25 mmHg to maintain CO at restLAP   pulm venous pressure pulmonary capillary pressure
 
---- page 27 ---
+- -
 MS
 ECGMod to severe MSLAE  P in II >0.12 secRVHR axis deviationAtrial fibrillation
 
---- page 28 ---
+- -
 MS-CXR
 CXRLA ,RA,RV,PA enlargementSplaying of LM bronchusInterstitial edema  Kerley A and B linesCalcification of MVPulm. HaemosiderosisPulm. e
 
 [... content truncated, total length: 1856 chars ...]
 
-#### pages-031-040.txt
+####.txt
 
---- page 31 ---
+- -
 Management of MS
 MedicalProphylaxisTreat anemia and infection promptly and aggressivelyOral diureticsAF - control ventricular rate B Blockers if Pulm HPT is not severeAnticoagulate if AF or Previous embolic event
 
---- page 32 ---
+- -
 MS management
 InterventionMVA   <  1cm²Class III or IV symptomsMVA 1-1.5 cm² with significant Pulm HTNValvuloplasty – pliable valve with less than moderate MRMVR
 
---- page 33 ---
+- -
 MITRAL REGURGITATION
 Aetiology/pathologyAbnormality of any component of mitral valve apparatusMajor causesRheumatic Heart DiseaseInfective EndocarditisCollagen Vascular DiseaseIschaemic Heart DiseaseMitral valve prolapse
 
---- page 34 ---
+- -
 MR/ Pathology
 Leaflet abnormalityShortening, thickening, deformity, retractionPerforationTraumatic destructionMitral annulusDilatationCalcification
 
---- page 35 ---
+- -
 MR / Pathology
 Chordae tendinaeLengthening and rupturePapilary muscle IschaemiaDysfunctionRupture
 
---- page 36 ---
+- -
 MR Pathophysiology
 Effective forward output is reduced despite an increased cardiac outputLV compensates for LVEDV by eccentric hypertrophy and dilatation
 
---- page 37 ---
+- -
 MR/Physical examination
 Brisk hyperdynamic A/B with  leftward displacementLA lift - late systolic thrust in parasternal regionS1 softPulm HtnS3 Increased flow rate across MVPSM – Blowing, high pitched
 
---- page 38 ---
+- -
 MR
 ECGLAE,AF,LVH,15% RVHCXRLV enlargementLA enlargement Lifted LM bronchusMitral anular calcific
 
 [... content truncated, total length: 1771 chars ...]
 
-#### pages-041-050.txt
+####.txt
 
---- page 41 ---
+- -
 AORTIC STENOSIS
 Aetiology/pathologyLVOT obstruction supravalvular/valvular/subvalvular/HOCMCongenital  Unicuspid/bicuspid/tricuspid/membraneAcquired ASRheumatic adhesion and fusion of commissuresDegenerative/calcific (2% of people over 65)calcium deposition along flexural lines at base of cuspArteriosclerosis predisposes to calcification
 
---- page 42 ---
+- -
 AS Pathophysiology
 LV output maintained by LVHNormal AV area 3-4 cm²Mild AS  1.5 – 2.0 cmModerate 1.0 – 1.4 cm       PIG 40 –60  mmHgSevere       <  1.0 cm² 	PIG > 60 mmHg 						Mean 50 mmHg
 
---- page 43 ---
+- -
 CLINICAL MANIFESTATIONS
 Cardinal symptoms Angina pectoris, Syncope, Dyspnea“Greying out” or dizzy spells GIT bleeding Infective endocarditis Cerebral emboliSymptoms indicate a poor prognosis Heart failure 2 yrs, Syncope 3 yrs, Angina 5 yrs
 
---- page 44 ---
+- -
 PHYSICAL EXAMINATION
 Pulse – slow rising and sustained Apex beat, sustained Systolic thrill at 2nd left ICSAuscultation 	- S1 normal S4 prominent S2 single 	- ESM late peaking radiates to neck
 
---- page 45 ---
+- -
 AS
 ECG LVH  85% of severe ASLV strain Pseudoinfarction LAE AF late finding AV block
 
---- page 46 ---
+- -
 AS
 CXRHeart size normal or slightly increased Post stenotic dilatation of aorta Echo  LV to aorta pressure gradient Aortic valve area AngiographyGradient Valve area
 
---- page 47 ---
+- -
 MANAGEMENT
 Asymptomatic Patient Report symptoms promptlyAvoid vigorous exercise Periodic assessment o
 
 [... content truncated, total length: 2319 chars ...]
 
-#### pages-051-055.txt
+####.txt
 
---- page 51 ---
+- -
 AR
 Clinical Gradual enlargement of LV while patient is aysmptomatic Symptoms of reduce cardiac reserve or myocardial ischaemia occur after considerable cardiomegaly and myocardial dysfunction Exertional dyspnea, PND, orthopnea, angina
 
---- page 52 ---
+- -
 AR
 Collapsing pulse, Corrigans, pistol shot femorals, duroziez, quincke’s A/B diffuse and hyperdynamic EDM length proportional to severity Austin Flint mid diastolic rumble at apexRapid antegrade flow across MV Severe AR
 
---- page 53 ---
+- -
 AR
 ECG Left axis LVH LV strain CXRCardiomegaly with LV configuration Echo AR seen on doppler
 
---- page 54 ---
+- -
 AR
 Medical Treatment Mild to moderate with normal size heart require no treatment Asymptomatic severe AR with N LV function 6 monthly examination Vasodilators
 
---- page 55 ---
+- -
 AR
 Surgical TreatmentSymptomatic patient with severe AR Asymptomatic patient with LVEF <55% or LVESD >55mm Operate before irreversible LV changes occur
 
----
+-
 
 ### pericardial_disease_ppt
 
-#### pages-001-010.txt
+####.txt
 
---- page 1 ---
+- page 1 -
 pericardiAL
 Disease
 Dr Naeem Hassen
 Division of cardiology
 DEPARTMENT OF MEDICINE
 
---- page 2 ---
+- page 2 -
 Focus
 Acute Pericarditis
 Pericardial Effusion
 Cardiac Tamponade
 Constrictive Pericarditis
 
---- page 3 ---
+- page 3 -
 the pericardium
 What is it ?
 Where is it ?
 What is its function ?
 
---- page 4 ---
+- page 4 -
 Anatomy
 The pericardium is the membranous sac surrounding the heart
 Consists of two layers:
@@ -2100,28 +2092,28 @@ inner visceral layer, and
 outer parietal layer, which is continuous with the diaphragm and outer walls of great arteries
 Pericardial cavity consists of 50mls of fluid
 
---- page 5 ---
+- page 5 -
 
 
---- page 6 ---
+- page 6 -
 Normal functions
 Maintaining an optimal cardiac shape
 Reducing friction between the beating heart and adjacent structures
 Protecting the heart from other diseases which are present in  adjacent organs
 Preventing overfilling of the heart
 
---- page 7 ---
+- page 7 -
 
 
---- page 8 ---
+- page 8 -
 Acute pericarditis
 Is an inflammation of the pericardium
 Variety of causes
 
---- page 9 ---
+- page 9 -
 Causes
 
---- page 10 ---
+- -
 symptoms, signs and investigations
 History
 Clinical examination
@@ -2130,9 +2122,9 @@ ECG
 Echo
 Invasive investigations
 
-#### pages-011-020.txt
+####.txt
 
---- page 11 ---
+- -
 History
 Fever
 Chest pain
@@ -2143,7 +2135,7 @@ Relived by sitting forward
 Symptoms of cardiac failure
 Symptoms suggestive of underlying aetiology
 
---- page 12 ---
+- -
 Clinical examination
 Pyrexia
 Oedema
@@ -2152,10 +2144,10 @@ Friction rub
 Possible pulmonary congestion
 Features suggestive of the underlying aetiology
 
---- page 13 ---
+- -
 Pericardial frictional rub
 
---- page 14 ---
+- -
 ECG
 Stage I: ST segment elevation (concave upward not convex) in all leads except avR and V1 without reciprocal ST segment depression (which occurs in MI) (Several hours later).
 Stage II: ST segments return to baseline, the initially upright T waves flatten (several days later)
@@ -2165,13 +2157,13 @@ months later))
 Other changes: Large effusion can cause both
 reduced voltage and electrical alternans
 
---- page 15 ---
+- -
 ECG
 
---- page 16 ---
+- -
 Pericarditis?
 
---- page 17 ---
+- -
 Diagnosis
 Patient will have 2 or more of the following:
 typical chest pain
@@ -2179,7 +2171,7 @@ pericardial friction rub
 new/worsening pericardial effusion
 characteristic changes on an ECG
 
---- page 18 ---
+- -
 Management
 Appropriately treat the underlying cause
 Bed rest
@@ -2189,23 +2181,23 @@ Colchicine
 Steroids
 Pericardiocentesis
 
---- page 19 ---
+- -
 drugs
 
---- page 20 ---
+- -
 When to admit
 
-#### pages-021-030.txt
+####.txt
 
---- page 21 ---
+- -
 Pericardial effusion
 Fluid within the pericardial space
 Any cause of pericarditis, can result in an effusion
 
---- page 22 ---
+- -
 
 
---- page 23 ---
+- -
 Pathophysiology
 Acute pericardial effusion
 Pressure of the pericardial cavity increases
@@ -2213,7 +2205,7 @@ Filling volume of the ventricular diastole decreases
 Stroke volume decreases
 Decrease in the CO and therefore BP
 
---- page 24 ---
+- -
 Signs
 Oedema
 Tachycardia
@@ -2224,10 +2216,10 @@ Impalpable apex beat
 Soft heart sounds
 Ewart’s sign
 
---- page 25 ---
+- -
 Physiology of the paradox
 
---- page 26 ---
+- -
 Investigations
 ECG
 low amplitude complexes
@@ -2238,23 +2230,23 @@ Echo
 size of the effusion
 haemodynamic effect
 
---- page 27 ---
+- -
 ECG
 
---- page 28 ---
+- -
 CXR
 Cardiac shadow has an enlarged “waterbottle” appearance.
 Clear lung field.
 Cardiac shadow changes with postures
 
---- page 29 ---
+- -
 Cardiac tamponade
 Pericardial effusion associated with haemodynamic compromise
 Depends on
 rate of accumulation of fluid
 pericardial compliance
 
---- page 30 ---
+- -
 Cardiac tamponade
 Medical Emergency
 Diagnosis is clinical
@@ -2263,15 +2255,15 @@ Hypotension
 Distended jugular vein
 Soft/muffled heart sounds
 
-#### pages-031-040.txt
+####.txt
 
---- page 31 ---
+- -
 Echo
 
---- page 32 ---
+- -
 Pathophysiology
 
---- page 33 ---
+- -
 Treatment
 Bed rest
 Leg elevation
@@ -2279,13 +2271,13 @@ Supplemental oxygen
 Intravascular volume expansion
 Pericardiocentesis - definitive therapy
 
---- page 34 ---
+- -
 Constrictive pericarditis
 Thickening and fibrosis of the pericardium
 Secondary to pericarditis
 Pathophysiology - decreased diastolic filling
 
---- page 35 ---
+- -
 Clinical manifestations
 Symptoms
 Of pulmonary and systemic venous congestion
@@ -2300,14 +2292,14 @@ Pericardial knock
 Hepatomegaly
 Ascites
 
---- page 36 ---
+- -
 pericardial knock
 
---- page 37 ---
+- -
 Pathophysiology:
 ventricular interdependence
 
---- page 38 ---
+- -
 Pathophysiology
 Restricted diastolic filling in all four chambers
 With elevated equilibrated diastolic pressure
@@ -2315,7 +2307,7 @@ Filling in early diastole is unimpaired
 However, it  is abruptly halted when cardiac volume meets the limits of the fibrosed/calcified pericardium
 Therefore almost all filling occurs rapidly in early diastole
 
---- page 39 ---
+- -
 Investigations
 ECG
 Low voltage complexes in limb leads
@@ -2326,21 +2318,21 @@ Pericardial calcification
 CT/MRI Heart
 Pericardial calcification
 
---- page 40 ---
+- -
 CXR
 
-#### pages-041-044.txt
+####.txt
 
---- page 41 ---
+- -
 Echo
 
---- page 42 ---
+- -
 Echo
 
---- page 43 ---
+- -
 CT
 
---- page 44 ---
+- -
 Treatment
 Pericardiectomy as early as possible
 Diuretics
@@ -2348,7 +2340,7 @@ Loop
 MRA
 Salt and Fluid Restriction
 
----
+-
 
 ## Study Strategy
 

@@ -18,14 +18,14 @@
 8. Jaundice
 9. Jaundice
 
----
+-
 
 ## Lectures & Transcripts
 
 ### Acute Pancreatitis
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 So, a good pancreatitis is an acute inflammatory process of pancreas associated with severe
 upper domino pain, elevated blood levels of pancreatic enzymes, and it can be divided
 into two broad categories, immediately a dimmitus or mild acute pancreatitis or your most severe
@@ -47,7 +47,7 @@ It's very difficult to base the diagnosis solely on the symptoms and even the si
 as a positive of them.
 The disease varies in severity, and the diagnosis is often missed at the extreme end of the
 spectrum.
---- page 2 ---
+- page 2 -
 In other words, someone can have severe pancreatitis and just have abdominal pain as it's only
 symptom.
 The etiology is vast, but they include gallstones, alcohol, hypertriting, synonymia, but the
@@ -69,7 +69,7 @@ chronic pancreatitis, and even infected causes.
 Cardinalidosis, all patients have acute abdominal pain at the onset of the disease process.
 The pain is usually steady, and it is in the mid-epic acidity.
 The pain we are relating to the right of a quadrant, or sometimes it can be diffused
---- page 3 ---
+- page 3 -
 across the abdomen.
 Boletic colic, which may help progress to acute pancreatitis, may occur post-prenulae.
 Boleticitis related to alcohol frequently occurs usually about up to 72 hours after a
@@ -91,7 +91,7 @@ They sometimes manage the flares at home by staying on clear liquids for a few d
 Since there's no specific physical sign for acute pancreatitis, the physical examination
 may vary depending on the severity of the 10.
 Most systemic features include that of fever, tachycardia, and severe cases of shock and
---- page 4 ---
+- page 4 -
 coma.
 With mild disease, the epigastia may be minimally tender, and severe episodes are often associated
 with abdominal distension, distendentness, and may be abdominal guarding.
@@ -113,7 +113,7 @@ Your pancreatic enzymes is the breakdown in sensitus, or secretion of coupling o
 cysts, digestive enzymes.
 Synthesis usually continues while there is a blockade of secretion, in other words, is
 cut off of the main pancreatic duct.
---- page 5 ---
+- page 5 -
 Digestive enzymes then tend to leak out of the SNS cells through the basal lateral membrane
 to the interstitial space, and then into the systemic circulation.
 Amylase.
@@ -135,7 +135,7 @@ urine amylase, not both.
 Lipase is a bit more specific than serum amylase, and urinary total amylase is in its diagnostic
 accuracy, and this is both on day one as well as day three.
 The level of pancreatic elevation does not correlate with the severity of the disease.
---- page 6 ---
+- page 6 -
 In other words, you can have a patient that has a light base of 150, and a patient that
 has a light base of around 550, and a patient with a lower level of light base might have
 a severe disease, but an elevated light base is significant.
@@ -157,7 +157,7 @@ At chest valve, here is specifically looking for elevation of the hemidifram, th
 of plurifusions, whether this presence of vaso-atelectasis, presence of pulmonary
 info-threads, heart features of the acute respiratory distress syndrome, and the presence
 of left or right or bilateral plurifusions, which usually indicates complications.
---- page 7 ---
+- page 7 -
 Abdominal ultrasound is of diagnostic use, as it can visualize pancreatic gland metificientine.
 You might see it diffusing in a large gland, that's got hypericolic, which is the classic
 autosomal features.
@@ -179,7 +179,7 @@ Once you eliminate the cause, you can either prevent further attacks or reduce t
 The patient has a current attacks of acute pancreatitis, and alcohol and etiology should
 be sought or an etiology or autoimmune pancreatitis.
 As a gallstone disease, you may have recurrent balladic colic, pancreatitis for choicosis
---- page 8 ---
+- page 8 -
 itis, important to elicit this in different clinical history.
 Cute balladic pancreatitis discharged from hospital without a galluscyctomy, up to 50%
 of the immune-related variants of the pancreatitis.
@@ -201,7 +201,7 @@ good idea of your 28-day mortality in these patients.
 Complications can be divided into both local and systemic complications.
 We look at local complications, pseudo-sustformation, this is localized amylase, amylase rich fluid
 within the collection, can be singular or multiple, and the sizes can vary.
---- page 9 ---
+- page 9 -
 The issue with this test is it can complicate, and those complications include
 it have hemorrhage into that test, can become infected, or it can rupture, or it can cause
 pressure effects on the adjacent structures, such as deodorant ability obstruction.
@@ -223,7 +223,7 @@ However, severe necrotizing pancreatitis has a high mortality rate and a high co
 rate with death being reported at close to 85%.
 So the treatment is aiming at correcting the underlying predisposing factors and trying
 to reduce the pancreatic inflammation as far as possible.
---- page 10 ---
+- -
 It's predominantly supportive care, and it's pain control, intravenous fluids, and
 to correct the electrolytic material at the malatives.
 Majority of patients require no further therapy.
@@ -242,13 +242,12 @@ Systemic antibiotics should be initiated early in the disease process to reduce 
 The question should be assessed for the need for percutaneous, either CT-guided or aspiration
 of the gland.
 
-
----
+-
 
 ### Acute, Chronic  HIV Related Diarrhoea
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 and HIV-related diarrhea.
 So I'm Dr. Coitila from the Department
 of Pasture and Terminology.
@@ -313,7 +312,7 @@ of inflammation about disease
 and about more than 90% of the causes are not infectious.
 And the acute is referred to as astroenteritis,
 while chronic is referred to as persistent
---- page 2 ---
+- page 2 -
 or protracted diarrhea.
 If you look in terms of again of the classification of diarrhea,
 the diarrhea tends to be watery, watery diarrhea,
@@ -378,7 +377,7 @@ So the etiology, as I've said,
 more than 90% is infectious in most of the times,
 but you can give the other 10% with drugs,
 or someone has ingested a toxin,
---- page 3 ---
+- page 3 -
 or if it's ischemic related,
 so you need to take a history or stress.
 And the complications are shock
@@ -443,7 +442,7 @@ So you can use oral replacement solution,
 especially if they're able to take orally
 and they're not vomiting.
 If they're quite dehydrated or severely dehydrated,
---- page 4 ---
+- page 4 -
 you need to replace with the IV fluids.
 You need to start them on antibiotics,
 especially if there's a suspected infectious pathogen.
@@ -508,7 +507,7 @@ So secretory, there's something,
 you're not stimulating the channels to secret.
 While osmotic, you've got some nonabsorbed material osmotic
 dietary material.
---- page 5 ---
+- page 5 -
 So something from the diet that's not absorbing,
 it's in the lumen, it pulls the water to come out,
 and then you have diarrhea.
@@ -573,7 +572,7 @@ So malabsorption, osteatoria, these patients will present
 with significant weight loss.
 They'll have greasy or oily stools.
 They'll say, oh, my stool is also floating.
---- page 6 ---
+- page 6 -
 As I'm trying to flush it, it's floating.
 It doesn't want to flush.
 And some of them they can even complain of,
@@ -638,7 +637,7 @@ So, here are some of the inflammatory causes,
 which include idiopathic inflammatory bowel disease,
 which includes ulcerative colitis and Crohn's disease,
 lymphocytic and collagenous colitis.
---- page 7 ---
+- page 7 -
 You can also have immune-related mucosal disease.
 These include primary or secondary immune deficiencies,
 food allergy, or isinophilic castroenteritis,
@@ -703,7 +702,7 @@ We're thinking of something else for my agency.
 And there's no organic cause.
 So, even if you do investigate, we don't find any cause,
 but they deal with these functional dairies and IBS.
---- page 8 ---
+- page 8 -
 We don't do a lot of investigations.
 The investigations are restricted from the history.
 You can tend to get an idea.
@@ -768,7 +767,7 @@ and also imaging chest x-ray, abdominal x-ray.
 You can also do an intestinal ultrasound
 to check for any bowel world bigening.
 And if needed, you can also do a CT and terrography.
---- page 9 ---
+- page 9 -
 APA endoscopy, this is mostly to, you know,
 those that present with infectious diarrhea, sorry,
 in with celiac, if you suspect in celiac disease,
@@ -833,7 +832,7 @@ But this is a diagnosis of exclusion drugs.
 As I've said, protease inhibitors, antibiotics,
 see the treatment as well.
 And then they can also have other small bacterial overgrowth,
---- page 10 ---
+- -
 where they get with gastric high co-acidity, impeds,
 intestinal immunity, and mortality.
 And you can also have nine HIV-related causes.
@@ -889,13 +888,12 @@ and then this is a colo, and you can see the abnormal colon at the top,
 with erydema, some houses, and some anxodates,
 and increased granularity there, take biopsies, and then that...
 
-
----
+-
 
 ### An Approach To Ascites
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 working in the Department of Gastroenterology. And today I'll be presenting the topic and
 approach to acites. So, by way of definition, acites is defined as the pathologic accumulation
 of fluid within the peritoneal cavity. As you can see from the pictures in the slide,
@@ -927,7 +925,7 @@ significant fluid in the abdomen. Sometimes in women, during the various stages 
 main stool cycle, you can get about 20 moles of fluid that's found. But in general, when you have
 excess fluid that's found on ultrasound examination, and it's only detectable, then one would consider
 that as a grade 1 acites. When you have a moderate symmetrical distinction of the abdomen, and
---- page 2 ---
+- page 2 -
 it's manifested clinically, this is considered as grade 2 acites. When you have marked abdominal
 distinction and you have a large volume of gross acites, this is graded as grade 3 acites.
 Acites can also be classified by whether or not it is complicated or uncomplicated, or whether or
@@ -959,7 +957,7 @@ with respiratory symptoms. The patient may also present with symptoms that might
 idea as to the possible etiology of the acites, so a patient presenting with significant weight loss
 in the context of acites might, one might think of malignancy or TB, your patient has
 constitutional symptoms, you might consider malignancy or TB, a patient presenting with
---- page 3 ---
+- page 3 -
 jaundice, perhaps you would think of decompensated liver cirrhosis, so the various symptoms that
 the patient, other symptoms that the patient may present with might give you clues as to possible
 etiology. When it comes to clinical science, it's important to to realize that there are
@@ -991,7 +989,7 @@ of acites. For example, a patient may have an umbilical hernia due to the pressu
 and the weakening abdominal muscles and presents with the hernia, which may be complicated or
 uncomplicated. They may have fluid that's checked up into the lungs and present as a hepatic
 hydrotorax, where the patient has quite profound dyspnea and evidence of a plural effusion clinically
---- page 4 ---
+- page 4 -
 usually on the right side. So, some investigations that one can consider.
 Ultrasound is usually the imaging modality that we use to confirm the presence of acites.
 It's a cost-effective modality, and in some cases, it can give you information as regarding the
@@ -1023,7 +1021,7 @@ there's important things that we request from the laboratory. So, one of the thi
 it's important to have a good look at the macroscopic appearance of the fluid,
 on our next slide, we'll see why that becomes important. Some routine tests include cell count,
 microscopy culture, and then get an idea about the albumin protein levels in the fluid.
---- page 5 ---
+- page 5 -
 And with that albumin level, as well as the albumin that is found in the patient's blood serum,
 when we perform a liver function test, one can then calculate the serum acetic albumin gradient.
 This is a simple calculation by taking the serum albumin and subtracting the
@@ -1055,7 +1053,7 @@ black fluid. There are malignant melanoma that might present as a black fluid so
 So in macroscopic appearance might give you some information, and it's important to note
 the color when you remove fluid, especially if you're not the only person treating the
 patient. It's important to document that somewhere down on the notes. So like we mentioned, the
---- page 6 ---
+- page 6 -
 serum society's albumin gradient is a useful test to distinguish the various causes of
 societies. It tells us whether the site is due to portal hypertension and other causes that
 are of a high gradient to scientists, or if it's due to low gradient causes. So like we said,
@@ -1087,7 +1085,7 @@ bedside to, if you suspect bacterial peritoneitis, and this should be done on ad
 receive antibiotics, one should take the fluid and inoculate blood culture bottles at the bedside,
 put 10 molds of fluid into the anaerobic and aerobic blood culture bottles and send it off to the lab
 for analysis as well. So you might get certain bacteria like E. coli, Clibsiella,
---- page 7 ---
+- page 7 -
 Streptococcus, these are bugs that line our gastrointestinal tract and they are common
 culprits when it comes to the complication of spontaneous bacterial peritoneitis.
 In other instances, we are patient presents with the scientists and the fluid cell count
@@ -1119,7 +1117,7 @@ pressure homeostasis. And when these are activated, remember, especially when it
 and your tinsenal dostron system, that system is in place to increase your blood pressure
 by increasing sodium and water retention. When you have sodium and water retention,
 the sitees develops. Another mechanism that's usually happening simultaneously is that
---- page 8 ---
+- page 8 -
 the splantic vasodilation causes an increase in lymph production. And when that lymph
 production exceeds the body's lymphatic transport system capacity, that eventually leads to leakage
 of lymph fluid into the peritoneal cavity. So these are the mechanisms by which a scientist
@@ -1151,7 +1149,7 @@ so essentially the patient excretes the sodium and excretes the fluid and doesn'
 into the systemic circulation. The spironolactone can be dosed, usually starting dose of 100
 milligrams daily, and that can be titrated up to a maximum of around 400 milligrams a day.
 Spironolactone is usually the first line therapy. And one should always be made
---- page 9 ---
+- page 9 -
 away or be cognizant of potential side effects of a spironolactone, including fluctuations in
 serum levels of potassium, sodium, and creatinine. So it's important to monitor patients electrolytes
 in the renal function. Patients may also complain of muscle cramps, which can be quite debilitating.
@@ -1183,7 +1181,7 @@ To avoid or prevent hemodynamic disturbances or renal impairments, when we are r
 excess fluid, it's important to provide the patient with volume, intervascular volume.
 And we do this by giving IV albumin infusions, especially when you're removing fluid volume
 in excess of 5 liters, one would need to, which you can do safely, but one would need to replace
---- page 10 ---
+- -
 albumin at the same time. So you give about 8 grams of albumin per liter that is drained.
 When it comes to patients who do not respond, remember we spoke about this in earlier on,
 patients that have refractory societies, they fail to respond to medical therapy, including
@@ -1207,13 +1205,12 @@ a serum of the scientist's albumin gradient as the initial test. We know that a 
 sag indicates portal hypertension, and we've gone through the various treatment options when
 it comes to managing patients with the scientists. It's also important when a patient complies
 
-
----
+-
 
 ### Chronic Pancreatitis
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 Good morning. You have a brief overview of chronic pancreatitis and salient features
 regarding its management. So chronic pancreatitis is progressing in
 planetary changes in pancreas at the results in permanent structural damage.
@@ -1227,7 +1224,7 @@ initially. A acute pancreatitis is almost always painful in its acute
 presentation.
 Chronic pancreatitis was itself to be Apache or focal disease and it usually
 involves an acute diffuse large portion of the entire pancreas.
---- page 2 ---
+- page 2 -
 Magnetic enzymes such as amylase and lipase are usually normal in the
 chronic phase but they're almost always elevated in a patient that has acute
 disease. The echologies of chronic pancreatitis is vast and of which
@@ -1241,7 +1238,7 @@ them. Hypotractic sedemia should be sold and it could be possibly involved in
 hyperparaphyroidism. What you mean by pancreatitis is in its two forms can be
 quite silent for long periods of time before it presents and then a subset of
 patients that have chronic pancreatitis for which low causes found.
---- page 3 ---
+- page 3 -
 Now call abuse. Ethnol autos digestive zygone activation is considered a
 variation in individual sensitivity to toxicity of alcohol. It's difficult to
 define a safe level of consumption so currently recommendations is no
@@ -1255,7 +1252,7 @@ pancreatitis but the overall risk is so conferred to the best then between 5 and
 pancreatitis. It's usually a big asterisk, a lady h to the back and maybe some
 nausea and vomiting. Patient symptoms is a leading upright or slightly leading
 forward and it usually is worse within 15 to 30 minutes after eating. It can
---- page 4 ---
+- page 4 -
 occur in discrete attacks and the condition can progress where the pain
 becomes more continuous throughout the course of the day.
 Pancreatic insufficiency. So clinically significant protein and fat
@@ -1269,7 +1266,7 @@ Pancreatic diabetes. Spangatic diabetes is glucose intolerance due to the
 destruction of the glands. Diabetes mellitus usually occur quite late and all
 these patients will require instant therapy. But all hypoglycemia does not
 work for them. Increase the risk of hypoglycemia because the patients also
---- page 5 ---
+- page 5 -
 have absolute reduction. It uses glucagon. So it's a very narrow band for
 managing the patients on its therapy.
 Diaphragmatic pancreatitis is challenging since no laboratory study or
@@ -1283,8 +1280,7 @@ give a direct test, stimulate the pancreas, which is a cleat sacritin or
 colicosestokinin and then fluid is collected as known as the sacritin
 secretion test and gives you the direct indication of the function of the
 pancreas. Indirect tests for testing pancreatic function, such as two elastase,
---- page 6 ---
-72-offycofat or serum trypsinogen, can also be done. Of these tests, the
+-offycofat or serum trypsinogen, can also be done. Of these tests, the
 direct test is time-consuming and it's only done in a specific research setting.
 The indirect test, the 72-offycofat laboratory needs to be in a form before
 samples are collected for this test, but it's not done in clinical practice anymore.
@@ -1297,7 +1293,7 @@ ECP.
 So here is an ERP, so then there's a little bit of a pancreatogram and you can see in this image
 that there is dilatation of the pancreatic duct across all the way to its tail.
 This is a coronal slice of a patient with chronic pancreatitis and you can see the pancreatic
---- page 7 ---
+- page 7 -
 gland in this particular slice and there is multiple calculi in a dilated main pancreatic duct.
 You also can see that this distortion of the pancreatic tissue.
 Management of this patient, pain management is the mainstay of treatment.
@@ -1311,7 +1307,7 @@ Select nerve block can be offered for the patients.
 Endoscopic therapy for the treatment of chronic pancreatitis involves pancreatic
 lithrotherpsy or pancreatic ducts, standing for those that are refractory to pain.
 Radiation therapy can be offered to reduce the gland structure and then surgery
---- page 8 ---
+- page 8 -
 in select patients and surgery is purely to be for decompression,
 the section of the distal part of the gland or denervation procedures.
 These are not offered in clinical practice.
@@ -1325,7 +1321,7 @@ on no benefit.
 As with acute pancreatitis, chronic pancreatitis can have complications,
 and often, patients present with one of these complications first before diagnosis is made.
 Innovation can have a pseudocyst that has formed there over time,
---- page 9 ---
+- page 9 -
 and the pseudocyst can become infected, can rupture, can hemorrhage within it,
 and when it leads within it, you can have a congenital syndrome of spanklytitis.
 Global compression of the duodenum or the biliary system,
@@ -1339,7 +1335,7 @@ Other complications that can occur, pancreatic sitees or pseudosupps,
 eruption, plural fusions can occur over time.
 Patients can present from both of the swelling vein, normal anatomy,
 swelling vein runs across the pancreas, and the patients can present the enthusiastic
---- page 10 ---
+- -
 viruses. They can have zero aneurysms, and then have recurrent episodes of acute pancreatitis,
 which is usually due to that situation around chronic pancreatitis,
 and there is a risk for development of pancreatic cancer.
@@ -1347,13 +1343,12 @@ The risk is higher than associated smoking, but it's difficult to differentiate
 chronic pancreatitis from patients with an adenocarcinoma.
 There's an image of a patient that has a dilated
 
-
----
+-
 
 ### Cirrhosis  Liver Failuer
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 uh now we're going to be speaking specifically about cirrhosis so if you had your lecture on
 an approach to like you know jaundice this is we're going to fairly much go through uh similar
 uh like you know content but yeah with an emphasis primarily on cirrhosis
@@ -1378,7 +1373,7 @@ histological features one really has to do a biopsy to prove cirrhosis okay
 so etiologies and that's quite uh uh like a wide but well you know this includes alcohol
 chronic viral hepatitis and we're talking about many hepatitis B and C and in what has emerged
 in over the years uh to be a very important cause of cirrhosis and most your likely
---- page 2 ---
+- page 2 -
 will continue to be an increasing like you know cause is fatty your liver now the overall term for
 fatty disease the old term was your nash so-called non-alcoholic steato-epid
 heper your titus and the reason why they call it non-alcoholic steato-epid
@@ -1403,7 +1398,7 @@ and as i said about in 20
 23 in 20 23 the term non-alcoholic cadaitis or non-alcoholic fatty
 you know liver disease was replaced with this overarching term of stear you know tautic
 liver disease or esal you know d which has these several groups undead right so uh these
---- page 3 ---
+- page 3 -
 groups include the meta click associated dysfunction associated stear tautic liver disease or
 MESLD and that's the condition that's associated with the meta
 alex syndrome right so we call that the meta bolic associated stear tautic liver disease or
@@ -1428,7 +1423,7 @@ fibrosis the cells themselves are usually preserved so they've got good liver fu
 and the parasites are preserved that's just a little bit of how we can go about making a diene
 osis but it's usually inferred if a patient presents with portal hypertension especially
 a young individual and you've excluded other etiologies force erosis and if their INR is normal
---- page 4 ---
+- page 4 -
 their albuminine is normal they're not you know jaundiced then you can almost infer from your
 imaging and the clinical prison patient that this patient's portal hypertension is due to
 schistousomiasis okay so just something important to be aware of especially in sub-sarland Africa
@@ -1453,7 +1448,7 @@ that they had cirrhosis maybe there's maybe nonspecific fatigue and easy bruisin
 these are the features that say to you this patient who probably had cirrhosis or is known to have
 had cirrhosis maybe it was incidentally found on imaging elsewhere but if they present with
 n kefir here locked at the any degree uh cytase increased b lirubin a low albumin and an increase
---- page 5 ---
+- page 5 -
 in the iron r that indicates to you that this patient with cirrhosis has now decompensated they
 haven't compensated right also we do look for the features of portlide tension especially early on
 uh the patient may have an enlargement plus highness associated with what people refer to and i've
@@ -1478,7 +1473,7 @@ boastus so this doesn't have anything to do with the like liver itself for examp
 develop a spleenic vein from boastus from menicute pancrear unititis you can develop
 botolipid hyper your tension so-called you left-sided port lipotension the other example that is
 pre hepetic is though and we spoke about earlier schistus omiesis because remember schistus omiesis
---- page 6 ---
+- page 6 -
 is not affecting the cells of the liver itself it's actually affecting the intra hepatic your portal
 veins right it's causing peri portal fibrosis and scarring and so that's actually giving you all
 the signs of port lipotension it's due to obstruction of slow within the uh itself remember
@@ -1503,7 +1498,7 @@ syndrome, portal pulmonary hypertension and even a serotic cardiomyopathy can th
 in association with cirrhosis especially in patients who have very advanced and decompensated
 cirrhosis right but just to be aware of these uh by like a name okay of emphasis what you need
 to know very like well because these are the kind of patients that will present to a like in casualty
---- page 7 ---
+- page 7 -
 very acutely is esophageal heresies especially if they bleed right and as i did mention there
 major causes of mortality in patients with cirrhosis of heresial bleeds or infection especially
 spontaneous bacterial peritonitis as infection of the ascetic fluid and that can often precipitate
@@ -1528,7 +1523,7 @@ okay so now you have a patient with cirrhosis who's now in keflo ethic this usua
 speak to the patients family because it is associated with significant mortality and i think this is
 quite important and something that we often over like in look that this patient may have come to
 hospital a few times and i may have had previous episodes of n-keflopathy may have been in and out
---- page 8 ---
+- page 8 -
 for repeated hemorrhages of edictial bleeds drainage of the sitees etc and every time there's a hospital
 station for whichever cause i think it is important to counsel the family because on one of these
 admissions there is a good chance this patient may not serve five depending on how advanced
@@ -1553,7 +1548,7 @@ whoever's ITs we would actively look for SPP right spontaneous bacterial periton
 you can immediately on arrival irrespective of the INR aspirate some of these i think fluid
 and if the i'd sell your account is more than 250 PMNs per mole that is in keeping that is
 quite sensitive for bacterial peritonitis and you can even put some of the synthetic fluid into
---- page 9 ---
+- page 9 -
 blood culture those to increase your specificity but just based on that acitico right cell like
 an account of more than 250 cells you can commence anti-biotics with good gram negative
 like no cover obviously we'd look for an upper GI bleed by doing a PR examination especially
@@ -1578,7 +1573,7 @@ developed cirrhosis and he had enough feet approaching up front that was really 
 like you know marker that we use for HCC and if it's really high it can be quite specific and
 quite instant especially if it's high it's and this is a big tumor that this patient has and even
 a smaller one year as well okay so what are the points of in oceans in a patient with cirrhosis
---- page 10 ---
+- -
 no esophageal aortices well they can be and also remember that they don't necessarily
 always have esophageal aortices they can have a extra esophageal aortices as well you can get
 duodenal aortices you can get aortices in the stomach you can get anorectal aortices okay so
@@ -1600,13 +1595,12 @@ about cirrhosis there's other aspects of epidemiology that we basically haven't 
 scratched the surface of so we're planning to study learn the and you know anatomy the physiology
 the pathology and have fun with it so i'll stop here
 
-
----
+-
 
 ### Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 Okay, we're now going to speak about reflux disease and pectic ulcer disease.
 So we'll start off with advice to students from, this isn't from me, this is from Maurice
 Epworth, who was a physician in the 1960s.
@@ -1644,7 +1638,7 @@ your H2 receptor antagonists and proton company bidders are the most profitable 
 But it also causes significant impairment of quality of life, similar to arthritis, MI and heart failure.
 So it's like common and causes significant impairment and it's a big economic interest as well.
 So when does this physioheological process become pathoheological?
---- page 2 ---
+- page 2 -
 It is a complex and delicately balanced system between the esophagus, which is in the ache of thorax
 and the stomach where you've got your acid and digestive enzymes and fluid, right?
 So you unstuff to go from your esophagus into the stomach and stay there.
@@ -1682,7 +1676,7 @@ which also disrupts the lower esophageal sphincter and allows the refluxate,
 more frequent refluxate into the esophagus.
 Okay, so how did the patients with the gases of the reflux disease present?
 They have classic reflux symptoms.
---- page 3 ---
+- page 3 -
 Now, this is the one we should all be aware of because that's the one that's most frequently
 going to come to you and that's going to be the most frequent,
 like in a complaint.
@@ -1720,7 +1714,7 @@ And this is the definition.
 It's that God is a condition which develops when the reflux or gastric content causes,
 it's troublesome symptoms or complications.
 And the key word here is troublesome.
---- page 4 ---
+- page 4 -
 So, if it is a problem for the patient, if it's causing them troublesome, it's impacting
 on their lives, be it on work, on home life, on like in leisure life, et cetera, their
 hobbies or whatever else, then it shifts from being a Physiophageical Process to now something
@@ -1758,7 +1752,7 @@ which I'll speak about briefly later, which is where the enormous, normal squamo
 has now changed to a columnar type epithelium, and it is a pre-neoplastic lesion that puts patients
 at risk for a esophageal adenocarcinoma.
 So, this can lead to a type of cancer called an adenocarcinoma of the esophagus.
---- page 5 ---
+- page 5 -
 In Sub-Saharan Africa, the type of tumors of the esophagus we see in the esophagus is usually squamous.
 But if it's associated with your reflux, it's an adenocarcinoma.
 Okay.
@@ -1796,7 +1790,7 @@ but then when you go and you do investigations specifically to confirm whether a
 it's not there.
 So, lion basically says it's an indication for further investigation.
 Symptoms are basically an indication for further investigation to confirm
---- page 6 ---
+- page 6 -
 whether the patient does indeed have acid reflux or some other diagnosis that may account for their symptoms.
 But lion at the same time accepts this is not pragmatic for daily clinical practice.
 So, I think what you can actually take from here is that, yes, in general practice,
@@ -1834,7 +1828,7 @@ In fact, all of these here.
 Okay.
 So, you now refer the patient to us for an upper GI scope,
 and in our scope is by a gastroenterologist.
---- page 7 ---
+- page 7 -
 And what are we searching for?
 We are looking for evidence of mucosal injuries.
 If there's a mucosal injury, now we have to see erosion.
@@ -1872,7 +1866,7 @@ whether they've got reflux or patients being planned for an anti-reflux operatio
 may need to have this thing called esophageal pH studies.
 So, yeah, some of the clinical indications for pH studies, I'm not going to go over all of them.
 But as I did mention right here, the indications are expanding where we really want to know what the phenotype is
---- page 8 ---
+- page 8 -
 of a patient who's got these so-called reflux symptoms.
 But it is a resource that is not widely available.
 You do need some equipment, and you do need people who are trained to perform this, right?
@@ -1910,7 +1904,7 @@ Oh, I feel acid coming up to my chest and into my throat and all of that there.
 And that can sometimes get confused with your reflux.
 And of course, it's useful in the pre-operative evaluation,
 the patient who is being proposed for anterior reflux surgery,
---- page 9 ---
+- page 9 -
 to assess what the contactability is of the esophagus itself,
 and the contactability of the lower esophageal sphincter.
 But I don't need to know too much of it, just to be aware of it,
@@ -1948,7 +1942,7 @@ So just briefly about a esophagus that I spoke about earlier.
 So it is suspected at scope.
 All I can say is this looks like an esophagus.
 It must be confirmed with biopsy and his pathology.
---- page 10 ---
+- -
 And what it is is where the normal squamous epithelium has now changed to a more
 columnar type epithelium in response to long-standing acid reflux.
 And this process here we refer to as interstinal metoplasia, right?
@@ -1978,12 +1972,12 @@ So here you can see the normal salmon pink type of, uh, very light salmon pink o
 squamous epithelium of the, uh, of the, uh, of the, uh, of the, uh, of the, uh, of the, uh,
 of the, uh, of the, uh, of the, uh, of th
 
----
+-
 
 ### Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease
 *Audio Transcript*
 
---- page 11 ---
+- -
 e, uh, of the, uh, of the stomach.
 Here's the stomach, just beyond there, this is the OG function.
 You can see where the normal squamous epithelium has undergone some kind of, like, change
@@ -2021,7 +2015,7 @@ evidence, uh, for it is if they can reduce their alcohol intake and, of course, 
 cessation.
 I'm talking specifically about your reflux.
 Obviously, it's helpful to stop smoking for other reasons, but in terms of your reflux,
---- page 12 ---
+- -
 it may be helpful.
 We don't have conferencing evidence or, uh, for it, but either way, it seems to be a,
 uh, great idea, too, in, are it smoking cessation for a variety of reasons, not just for gas
@@ -2059,7 +2053,7 @@ They have been issues with safety concerns in the, uh, with the long term use of
 agents.
 Um, but by and large, they have been proven to be, uh, fairly safe, but they still need
 to be used appropriately, simply because there have been some concerns over long term safety
---- page 13 ---
+- -
 issues.
 So appropriate use of proton pump inhibitors must be emphasized.
 What do they do?
@@ -2097,7 +2091,7 @@ And that augments the lower esophageal sphincter there.
 Okay.
 So who is anti-reflux surgery, a reasonable option in, uh, healthy patients with
 God, well-controlled on PPIs, who want to alternative therapy because the drug
---- page 14 ---
+- -
 expands poor medication compliance or fear of underlying side effects.
 Patients with volume regurgitation, aspiration, uncutored on PPIs.
 But like I said, these are highly selected individuals.
@@ -2135,7 +2129,7 @@ Uh, it occurs commonly in the gastric anthem and, uh, judinum, all.
 But what, I'll tell you, generally low with uncomplicated empty gases, but if, if there
 is any mortality is due to these three key complications, hemorrhage, perforation, and
 obstruction.
---- page 15 ---
+- -
 Okay.
 Uh, the hemorrhage and obstruction, we can generally do something about that endoscopically.
 We don't need to always resort immediately to an operation.
@@ -2173,7 +2167,7 @@ Other things that can cause ulcers even in the upper GI tract are clones disease
 You can get instant tuberculosis.
 You can get gastrodinol tuberculosis that can appear similar to an ulcer.
 And vascular insufficiency.
---- page 16 ---
+- -
 And let's not take it as well.
 Uh, stomach like in a cancer can present as an ulcer or can appear and just copy it as an ulcer
 and can have similar symptoms to an ulcer as well.
@@ -2211,7 +2205,7 @@ agotomies, agasparing, et cetera, et cetera.
 And because of this, um, this, I'll be in a way,
 it now really meant that hardly anyone should go to the operating theater for a peptic ulcer.
 Okay.
---- page 17 ---
+- -
 If you eradicate the helicobacter and you treat the ulcer, it won't recur.
 So, helicobacter isn't just associated with epic ulcer disease.
 It's also a risk factor for gastric adenocastinoma and lymphoma of the stomach.
@@ -2249,7 +2243,7 @@ but it isn't the easiest organisms to grow to check the culture and sensitivity
 it can be performed but here you need to speak to your lab microbiologist so from
 a clinical point of view the three that we most frequently use that are
 clinically useful and used are the stool antigen urease activity of a biopsy
---- page 18 ---
+- -
 specimen and his his ology and here's what the organism appears like okay
 non-steroidal anti-inflammatory drugs are the other important cause of peptic
 also disease how do they do this they can ever by the non-steroidal
@@ -2287,7 +2281,7 @@ symptoms are associated with a cancer whether it's not just a benign
 peptic ulcer whether it's actually a ulcer that is your cancerous a malignant
 ulcer okay so obviously the patient has or eight loss if you can feel an epigastric
 mass of omitting anemia family history of stomach cancer okay and as a rule biopsy
---- page 19 ---
+- -
 for the person doing the scope we generally have a rule biopsy or ulcers
 in the stomach you know ulcers generally those are not malignant they are usually
 benign but if it's an ulcer in the stomach you should take care of a biopsy to rule
@@ -2325,7 +2319,7 @@ it's just for the patient who has is having an upper GI bleed from a peptic ulce
 and the standard of treatment has been auto PPI's
 here you go back to PPI how do you how to treat so it changes it's an organism that is very
 difficult to eradicate you need at least two antibiotics plus protein pump inhibitor and usually
---- page 20 ---
+- -
 treatment is required for two weeks so it's quite hard I mean to take two antibiotics four or two
 weeks plus the proton pump inhibitor and even with you like the your regimen I have
 below there's an example sometimes in about 15% to up to 8% you fail to eradicate the organism and
@@ -2360,13 +2354,12 @@ lignin gastron from a neuro endocrine tumor and it causes ulcers in unusual plac
 healing ulcers extensive erosions etc so it's rare but it's interesting and that's where I'm going
 to stop and thank you for your attention
 
-
----
+-
 
 ### Jaundice
 *Audio Transcript*
 
---- page 1 ---
+- page 1 -
 Okay, so for the first lecture, we're going to be speaking about, you know, jaundice,
 which is a key sign in clinical like medicine.
 And you'll often be confronted by like patients arriving either in your casualty or in your
@@ -2395,7 +2388,7 @@ So this just gives you a little bit of a framework from a gross anatomical persp
 Shifting on then, if we go in a bit further, we can also see that you can get, like, jaundice
 from increased hemolysis, right?
 So if you've got any cause of increased intra vascular hemolysis, you're going to get an
---- page 2 ---
+- page 2 -
 elevation in your unconjugated bilirubin.
 And that usually gives you very mild, like a jaundice.
 And other example where we get increased hemolysis is in an infection, like, you know,
@@ -2424,7 +2417,7 @@ right?
 So as I mentioned earlier, this is a framework, right?
 So now we've got the conjugated bilirubin within the hepatocyte itself and it cannot
 stay in the hepatocyte because it is, you're toxic to the hepatocyte itself.
---- page 3 ---
+- page 3 -
 It needs to be transported out of the liver's cell.
 And again, you need transporter new proteins, which will come to soon that needs that are
 required to transfer the conjugated bilirubin from the liver's cell into the bilirubin system.
@@ -2453,7 +2446,7 @@ system where it cannot be excreted?
 So that's at a cellular year level.
 Or is it a transporting problem within the bilirubin system itself, a tumor like corangiocastinoma,
 for example, or a stone in the extrapatic alex that's causing obstruction to the bilirubin
---- page 4 ---
+- page 4 -
 system?
 Is it a fertilizer that has extrapatic cory stasis?
 Or is it intrapatic cory stasis where there's a problem within the intrapatic bilirubin system
@@ -2482,7 +2475,7 @@ Okay.
 It's also associated with other inherited etiologies of Oli's stasis, such as your progressive
 familiar intrapatic, Oli's aces, which are interesting genetic abnormalities in these
 exporter-like proteins that are responsible for the transport of the conjugated bilirubin
---- page 5 ---
+- page 5 -
 from the atrocyte into the, like, in bile duct.
 Okay.
 So if there's anything you're going to recall from this entire year lecture, it will probably
@@ -2511,7 +2504,7 @@ acute at some stage, and then it got dissolved and is now flared up.
 It became chronic, could it be autoimmune related, where these patients can have episodes
 of flares in between episodes that are quite, you know, normal, or something like geobias,
 which has to do with the transporter proteins of the unconjugateably-robin into the way
---- page 6 ---
+- page 6 -
 itself.
 Ask about flu-like symptoms, unintentional weight loss.
 We always concern, especially in older individuals, about the development of a unit cancer, such
@@ -2540,7 +2533,7 @@ up the gallbladder, and the patient may have inadvertently had some kind of eart
 injury to the CBD.
 Ask about a travel history for, especially to areas with malaria, history of blood transfusions,
 even though our blood is screened for hepatitis B and C, it's actually something we still
---- page 7 ---
+- page 7 -
 ask about.
 And of course, pregnancy, family history, we mentioned some of the familial intrapatic
 causes of choruses, okay.
@@ -2569,7 +2562,7 @@ I'll leave that to the pediatric unit department.
 Okay, but there are certain causes of this infected affair, your number of causes of
 like jaundice in like in kids that over your lap with adults, example of viral hepatitis
 and auto immune, et cetera, and obviously some of these kids do, these kids may grow up into
---- page 8 ---
+- page 8 -
 it, like adulthood, but having been first seen in ediatrics, okay.
 So on a clinical examination in a patient with your jaundice, if there must be meticulous
 and thoughtful, the jaundice sometimes can be subtle and is easiest appreciated in neonatal
@@ -2598,7 +2591,7 @@ In an individual who's got no risk factors for cirrhosis, who's got no other cli
 signs of cirrhosis, then you'd be hard pressed to say just because this patient's got a spider
 like a nivis, therefore he must have cirrhosis.
 Okay, so having one of these signs does not mean the patient obviously has cirrhosis.
---- page 9 ---
+- page 9 -
 And then do not commit the sin of a diagon monastic greed.
 What does this mean?
 This means if a patient's got, for example, a potato's bee and a strong ethanol history
@@ -2627,7 +2620,7 @@ So, not all causes of portal hyper tension are due to cirrhosis, right?
 There are non-sclerotic causes of portal hyper tension as, you know, well, having said
 that worldwide, the most common cause of portal hyper your tension is cirrhosis, right?
 So, usually if patient has cirrhosis, there often may be signs of portal hyper tension
---- page 10 ---
+- -
 as, like and well, which you should also go out and seek, right?
 But just be aware that not all portal hyper tension is due to cirrhosis, but yes, by and
 large worldwide cirrhosis is the most common cause of portal hyper your tension, okay?
@@ -2656,12 +2649,12 @@ and then of course, we do some testing.
 So, in anybody with like jaundice, you're going to start up with a liver function, like
 in test, the LFT, INR, the international normalized ratio, which is usually e
 
----
+-
 
 ### Jaundice
 *Audio Transcript*
 
---- page 11 ---
+- -
 levated in somebody
 with cirrhosis but isn't always.
 And that tells you about the liver, some big function, the INR along with the albumin
@@ -2688,7 +2681,7 @@ is generally undertaken with therapeutic intent.
 In other words, I need to put a stent in to relieve the blurry obstruction, or I need
 to extract a stone or do a balloon dalette patient.
 It's not usually performed just, in fact, it's hardly ever easily performed, just to make
---- page 12 ---
+- -
 a diagnosis.
 In other words, you should already know from your other imaging and your labs and your
 history and your clinical examination, what the problem is, and the reason why we say
@@ -2715,7 +2708,7 @@ And it's probably going to become quite a standard feature in units that deal wi
 patients with the conditions of the liver, if not, I think it's already become fairly
 standard in centers around the world.
 So the LFT, again, we already spoke a little bit about this in terms of how to, like, interpret
---- page 13 ---
+- -
 the LFT.
 When you're given an LFT, a little function test, and asked to, like, here, interpret
 the LFT, we're not really asking you to give us the results, like, you know, the ALT is
@@ -2742,7 +2735,7 @@ And of course, the other thing is that you see on the LFT is the algorithm, and 
 the INR you ask for separately, but the algorithm and the INR do give you an indication about
 the synthetic function of the organ itself.
 Okay.
---- page 14 ---
+- -
 So the enzyme itself don't really inform us so much about how the organ is actually functioning,
 so the LFT is a bit of a mis-you know-ma.
 But what does give us some idea about liver function per se, synthetic function, is the
@@ -2769,7 +2762,7 @@ disease, which is a condition of overload of copper, genetically, it's due to a 
 mutation in the ATP-7B gene, quite a number of mutations, actually, but just to be aware
 of it, so these are conditions that you just need to be aware of, and the reason why I do
 include them and make an engine of them, things like hereditary necromatosis, which
---- page 15 ---
+- -
 is iron overload, and Wilson's disease, is because these are some of the few etiologies
 that we can actually reverse with treatment provided, we make the diagnosis, right?
 We can actually really stabilize these individuals, although they are a little bit aware, it's
@@ -2796,7 +2789,7 @@ differentiate with, which can be hard, is is this intra-patic or extra-patic?
 Avoid the term surgical, you know, jaundice, and I usually also say to the fellows, avoid
 the term obstructor jaundice, because as soon as you say obstructor, it means you are saying
 that there is a mechanical obstruction which you have not proven yet from your clinical
---- page 16 ---
+- -
 examination or you're like in a imaging.
 In fact, there's no such thing as surgical, you're jaundice because, you know, you don't
 know, it's just, you're a jaundice, okay?
@@ -2823,7 +2816,7 @@ by focal uvision or lesions.
 And this includes granuloma from tuberculosis, sarcoid, for example, or tumors, either
 inter-patic tumors, tumors within the liver that arise from the ulevia itself, or tumors
 from elsewhere, a lymphoma, a colorectal, like in a cancer, for example, that is now
---- page 17 ---
+- -
 spread to involve the ulevia.
 Okay, so we group those infiltrative etiologies also because that they can cause a degree
 of intra-patic cholistasis.
@@ -2850,7 +2843,7 @@ the PSC strictures of the extra-patic dilatation system, pancreatic cancer, chro
 cholidocolytiasis, lymph nodes, occasionally you might even find in a scarless, lumpy
 cholidase worm that causes blurry obstruction, that's quite rare nowadays.
 But on occasions seen and sometimes inadvertent CB reggation during gallbladder surgery, also
---- page 18 ---
+- -
 fairly rare, but occurs now and again.
 Okay, so here's an example for interest of a patient who was referred for endoscopic ultrasound.
 The LFT picture was some elevation, the alkaline phosphatase and the energy T, but there was
@@ -2877,7 +2870,7 @@ endoscopically.
 Here's an example of an ERCP, as you can see we introduced the scope, we introduced an
 ultra-term type catheter, we fill up the body system with, like in a contrast, and
 we do an x-ray imaging, this is actually a fairly normal ERCP, and in this particular
---- page 19 ---
+- -
 case they've also filled some contrast into the main pancreatic, like a duct, which we
 generally try to avoid doing, because one of the risks of ERCP is acute pancreas, your
 nucleus, and it can be quite severe, which is the reason why we only do ERCP as far as
@@ -2904,7 +2897,7 @@ belary does it can affect the extra-patic belary system, it can affect both the 
 extra-patic belary system, but you can see irregular areas of stricturing, there's beating focal
 areas of a patient, and here's the corresponding ERCP image, and again you can see these biologues are
 completely irregular if you compare to that previous ERCP or for what was essentially a normal
---- page 20 ---
+- -
 belary system. So like I said, we don't normally do an ERCP, this is an old image of a patient, PSC,
 just to make a diagnosis of PSC, we'd be happy just with the MRCP, and you don't really need to
 check the patient to increase your risk by proceeding to an ERCP just to make a diagnosis.
@@ -2930,8 +2923,7 @@ So that might involve a definitive investigation patient may have to have an MRC
 order biopsy or something. And of course, an action also includes appropriate treatment.
 And that's the end of an approach to join us.
 
-
----
+-
 
 ## Study Strategy
 
