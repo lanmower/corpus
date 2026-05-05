@@ -5,8 +5,18 @@ import * as progress from './progress.js';
 import * as lastpos from './lastpos.js';
 import * as cram from './cram.js';
 import * as justread from './justread.js';
+import * as timer from './timer.js';
+import * as planMod from './plan.js';
+import * as mistakes from './mistakes.js';
+import * as drill from './drill.js';
+import * as flag from './flag.js';
+import * as undo from './undo.js';
+import * as notes from './notes.js';
+import * as late from './late.js';
+import * as usercards from './usercards.js';
+import * as confidence from './confidence.js';
 import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
-import { buildSearchIndex, mountPalette } from './search.js';
+import { buildSearchIndex, mountPalette, snippet as searchSnippet } from './search.js';
 import { makeToggleButton } from './theme.js';
 
 const stage = document.getElementById('stage');
@@ -58,9 +68,10 @@ function el(tag, attrs = {}, ...kids) {
     return e;
 }
 
-const ROUTES = ['today', 'guides', 'subjects', 'review', 'cards', 'cases', 'stats', 'subject', 'settings', 'card'];
+const ROUTES = ['today', 'guides', 'subjects', 'review', 'cards', 'cases', 'stats', 'subject', 'settings', 'card', 'mistakes', 'notes', 'drill'];
 const ROUTE_TITLES = { today: 'today', guides: 'guides', subjects: 'subjects', review: 'review',
-    cards: 'cards', cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings', card: 'card' };
+    cards: 'cards', cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings', card: 'card',
+    mistakes: 'mistakes', notes: 'notes', drill: 'drill' };
 const ROUTE_ALIASES = { home: 'today', triage: 'cases' };
 
 function setDocTitle(route, subject) {
@@ -139,9 +150,15 @@ function render() {
     stage.innerHTML = '';
     if (!state.manifest) { stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
     const r = state.route;
+    // day-of-exam minimal mode — only mistakes + farewell
+    const days = srs.daysUntilExam();
+    if (days === 0 && r !== 'mistakes' && r !== 'settings') {
+        renderExamDay(); updateFooter(); return;
+    }
     const fns = { today: renderToday, guides: renderGuides, subjects: renderSubjects, cards: renderCards,
         review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
-        settings: renderSettings, card: renderCardFocus };
+        settings: renderSettings, card: renderCardFocus, mistakes: renderMistakes, notes: renderNotes,
+        drill: renderDrill };
     (fns[r] || renderToday)();
     updateFooter();
 }
@@ -222,6 +239,37 @@ function renderToday() {
         el('span', { class: 'num' }, String(cases)), ' cases queued · ~',
         el('span', { class: 'num' }, String(mins)), ' min est.'
     ));
+
+    // Daily plan
+    const ticksAll = loadGuideTicks();
+    const wsh = weakest ? state.shards[weakest.subject] : null;
+    const tw = weakest ? (ticksAll[weakest.subject] || {}) : {};
+    const nextSection = wsh?.guide?.sections?.find(s => !tw[String(s.line)]) || null;
+    const planObj = planMod.build({ due, weakestSubject: weakest?.subject, nextSection,
+        casesAvailable: wsh?.triage?.scenarios?.length || 0 });
+    if (planObj.tasks.length) {
+        const planEl = el('div', { class: 'panel daily-plan' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "today's plan"), `~${planObj.total} min`),
+            ...planObj.tasks.map(t => el('a', { class: 'plan-task', href: t.href,
+                on: { click: e => { if (t.href.startsWith('#')) { e.preventDefault(); go(t.href.slice(1).split('/')[0], t.href.split('/')[1]); } } } },
+                el('span', { class: 'plan-min' }, `${t.min}m`),
+                el('span', { class: 'plan-label' }, t.label))));
+        stage.append(planEl);
+    }
+
+    // Drill 10 chip + flagged + sparkline row
+    const flagCount = flag.count();
+    const chipRow = el('div', { class: 'today-chips' },
+        el('a', { class: 'chip', href: '#drill',
+            on: { click: e => { e.preventDefault(); go('drill'); } } }, 'drill 10'),
+        flagCount ? el('a', { class: 'chip', href: '#review',
+            on: { click: e => { e.preventDefault(); state.paletteReviewSet = flag.ids(); resetReviewQueue(); go('review'); } } },
+            `${flagCount} flagged`) : null,
+        el('a', { class: 'chip', href: '#mistakes',
+            on: { click: e => { e.preventDefault(); go('mistakes'); } } }, 'mistakes'),
+        el('div', { class: 'sparkline-wrap', 'aria-label': '7-day activity' }, renderSparkline(p.history))
+    );
+    stage.append(chipRow);
 
     // One primary affordance
     stage.append(el('div', { style: 'margin-bottom:18px' },
@@ -354,6 +402,12 @@ async function renderSubject() {
 
     stage.append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'subject'), el('h2', {}, subj)));
+    // Next thing
+    const subTicks = loadGuideTicks()[subj] || {};
+    const subShard0 = state.shards[subj];
+    const nextSec = subShard0?.guide?.sections?.find(s => !subTicks[String(s.line)]);
+    if (nextSec) stage.append(el('div', { class: 'next-thing' },
+        el('span', { class: 'eyebrow' }, 'next:'), ' ', el('span', {}, nextSec.title)));
     const placeholder = el('div', { class: 'panel' },
         el('div', { class: 'skeleton', style: 'width:60%;height:14px' }),
         el('div', { class: 'skeleton', style: 'width:90%' }),
@@ -421,7 +475,17 @@ async function renderSubject() {
             el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
         ))) : null;
 
-    const right = el('div', {}, guideBodyPanel, cardsPanel, triagePanel);
+    // tag cloud
+    const tagCounts = {};
+    for (const c of shard.cards) for (const t of (c.tags || [])) tagCounts[t] = (tagCounts[t] || 0) + 1;
+    const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 20);
+    const tagCloud = topTags.length ? el('div', { class: 'panel tag-cloud' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'tags')),
+        el('div', {}, ...topTags.map(([t, n]) => el('a', { class: 'tag-pill', href: `#cards/${subj}?tag=${encodeURIComponent(t)}`,
+            style: `font-size:${Math.min(18, 11 + Math.log2(n))}px`,
+            on: { click: e => { e.preventDefault(); location.hash = `#cards/${subj}?tag=${encodeURIComponent(t)}`; } } },
+            t, el('span', { class: 'meta' }, ` ${n}`))))) : null;
+    const right = el('div', {}, tagCloud, guideBodyPanel, cardsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
     stage.append(wrap);
 }
@@ -638,6 +702,10 @@ async function renderReview() {
         const sh = state.shards[s]; if (!sh) continue;
         for (const c of sh.cards) allCards.push({ ...c, _subject: s });
     }
+    // merge personal user cards (when filter is all or matches)
+    for (const uc of usercards.load()) {
+        if (state.reviewSubjectFilter === 'all' || state.reviewSubjectFilter === uc._subject) allCards.push(uc);
+    }
     const cardIds = allCards.map(c => c.id);
     state.reviewAllCardIds = cardIds;
 
@@ -732,11 +800,12 @@ async function renderReview() {
     const cardState = srs.getCardState(card.id);
     const seen = (cardState.history || []).length;
     const friendlyMeta = seen === 0 ? 'new' : (seen < 3 ? `seen ${seen}×` : 'familiar');
+    const isFlag = flag.isFlagged(card.id);
     const reviewCard = el('div', {
-        class: 'flashcard' + (state.reviewRevealed ? ' flipped' : ''), id: 'review-card'
+        class: 'flashcard' + (state.reviewRevealed ? ' flipped' : '') + (isFlag ? ' flagged' : ''), id: 'review-card'
     },
         el('div', { class: 'meta-line' },
-            el('span', {}, `${card._subject} · ${state.reviewIndex + 1}/${total}`),
+            el('span', {}, `${card._subject} · ${state.reviewIndex + 1}/${total}` + (card._personal ? ' (personal)' : '') + (isFlag ? ' · flagged' : '')),
             el('span', {}, friendlyMeta),
             DEBUG ? el('span', {}, `EF ${cardState.easeFactor.toFixed(2)} · ${cardState.phase} · ${cardState.interval}d`) : null
         ),
@@ -786,14 +855,39 @@ function skipReview() {
 }
 
 function gradeReview(cardId, score) {
+    const prev = srs.getCardState(cardId);
     if (!state.cramMode) srs.updateCard(cardId, score, state.reviewAllCardIds || []);
     state.reviewSessionGraded++;
     if (!state.cramMode) progress.bumpGraded(1);
     if (score === 0) state.reviewAgainPile.push(cardId);
+    // Mistake log
+    const card = state.reviewQueue?.[state.reviewIndex];
+    if (score <= 2 && card) mistakes.logMistake(cardId, card._subject, score);
+    // Undo record
+    undo.record(cardId, prev);
+    showUndoToast();
     state.reviewQueueIds.splice(state.reviewIndex, 1);
     if (state.reviewIndex >= state.reviewQueueIds.length) state.reviewIndex = 0;
     state.reviewRevealed = false;
     renderReview();
+}
+
+function showUndoToast() {
+    const old = document.getElementById('undo-toast'); if (old) old.remove();
+    const t = el('div', { id: 'undo-toast', class: 'undo-toast', role: 'status' },
+        el('span', {}, 'graded · '),
+        el('button', { class: 'chip', 'aria-label': 'undo grade',
+            on: { click: () => undoLastGrade() } }, 'undo (u)'));
+    document.body.appendChild(t);
+    setTimeout(() => { if (t.parentNode) t.remove(); }, 5000);
+}
+function undoLastGrade() {
+    const r = undo.consume(); if (!r) return;
+    const states = srs.loadStates();
+    states[r.cardId] = r.prevState;
+    srs.saveStates(states);
+    const t = document.getElementById('undo-toast'); if (t) t.remove();
+    if (state.route === 'review') renderReview();
 }
 
 function suspendCurrentReview() {
@@ -806,10 +900,29 @@ function suspendCurrentReview() {
     renderReview();
 }
 
+let gPrefixTs = 0;
 document.addEventListener('keydown', e => {
     const tag = e.target?.tagName;
     if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
     if (e.key === '?' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openShortcutsModal(); return; }
+    // g-prefix vim nav
+    if (Date.now() - gPrefixTs < 1500) {
+        const map = { h: 'today', r: 'review', s: 'stats', c: 'cards', m: 'mistakes', n: 'notes', t: 'today' };
+        const dest = map[e.key];
+        if (dest) { e.preventDefault(); gPrefixTs = 0; go(dest); return; }
+        gPrefixTs = 0;
+    }
+    if (e.key === 'g' && !e.ctrlKey && !e.metaKey) { gPrefixTs = Date.now(); return; }
+    // global keys
+    if (e.key === 't' && !e.ctrlKey && !e.metaKey && state.route !== 'review') {
+        e.preventDefault(); state.timerApi?.toggleVis(); return;
+    }
+    if (e.key === '+' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openQuickAdd(); return; }
+    if (e.key === 'u' && !e.ctrlKey && !e.metaKey && undo.peek()) { e.preventDefault(); undoLastGrade(); return; }
+    if ((e.key === 'h' || e.key === 'n') && state.route === 'subject') {
+        const sel = window.getSelection(); const text = sel?.toString() || '';
+        if (text.trim()) { e.preventDefault(); handleHighlightOrNote(e.key, text, sel); return; }
+    }
     if (e.key === 'Escape') {
         if (document.body.classList.contains('just-read') && state.route === 'subject') {
             justread.toggle(state.currentSubject);
@@ -830,6 +943,9 @@ document.addEventListener('keydown', e => {
         if (!state.reviewRevealed && state.reviewQueue?.length) { state.reviewRevealed = true; renderReview(); }
     } else if (e.key === 's' || e.key === 'S') {
         if (state.reviewQueue?.length) { e.preventDefault(); skipReview(); }
+    } else if (e.key === 'f' || e.key === 'F') {
+        const card = state.reviewQueue?.[state.reviewIndex];
+        if (card) { e.preventDefault(); flag.toggle(card.id); renderReview(); }
     } else if (state.reviewRevealed) {
         const card = state.reviewQueue?.[state.reviewIndex];
         if (!card) return;
@@ -873,6 +989,17 @@ async function renderStats() {
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'reviews coming up'), '14d'),
         forecastEl));
+
+    // week-over-week diff
+    const hist = p.history || [];
+    const last7 = hist.slice(-7).reduce((a, h) => a + (h.graded || 0), 0) + (p.todayGraded || 0);
+    const prior7 = hist.slice(-14, -7).reduce((a, h) => a + (h.graded || 0), 0);
+    const delta = last7 - prior7;
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'this week vs last')),
+        el('div', { style: 'font-family:var(--ff-mono);font-size:13px' },
+            `${last7} cards this week · ${prior7} prior · `,
+            el('span', { class: 'trend ' + (delta >= 0 ? 'up' : 'down') }, delta >= 0 ? `+${delta}` : String(delta)))));
 
     if (DEBUG) renderDebugStats(state.manifest, stats);
 }
@@ -1057,6 +1184,18 @@ const SHORTCUTS = [
     ['?', 'show this help'],
     ['esc', 'close modals · exit just-read'],
     ['r', 'just-read mode (subject)'],
+    ['t', 'pomodoro timer toggle'],
+    ['+', 'quick add card'],
+    ['u', 'undo last grade'],
+    ['h', 'highlight selected text (subject)'],
+    ['n', 'note on selected text (subject)'],
+    ['f', 'flag card (review)'],
+    ['g h', 'go home (today)'],
+    ['g r', 'go review'],
+    ['g s', 'go stats'],
+    ['g c', 'go cards'],
+    ['g m', 'go mistakes'],
+    ['g n', 'go notes'],
     ['space', 'reveal answer (review)'],
     ['1–4', 'grade card (review)'],
     ['s', 'skip card (review)'],
@@ -1091,11 +1230,167 @@ function showStorageFullBanner() {
     document.body.appendChild(b);
 }
 
+function renderExamDay() {
+    stage.innerHTML = '';
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'exam day')),
+        el('p', { style: 'font-family:var(--ff-prose);font-size:18px;line-height:1.6' }, 'good luck. trust your prep.'),
+        el('div', { class: 'toolbar', style: 'margin-top:14px' },
+            el('a', { class: 'chip', href: '#mistakes', on: { click: e => { e.preventDefault(); go('mistakes'); } } }, 'mistakes'),
+            el('a', { class: 'chip', href: '#settings', on: { click: e => { e.preventDefault(); go('settings'); } } }, 'settings'))));
+}
+
+async function renderMistakes() {
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'mistakes'), el('h2', {}, 'mistake log')));
+    await loadAllShards();
+    const recent = mistakes.recent(50);
+    if (!recent.length) {
+        stage.append(el('div', { class: 'empty-state' },
+            el('div', { class: 'empty-title' }, 'no mistakes logged yet'),
+            el('div', { class: 'empty-sub' }, 'cards graded again or hard show up here.')));
+        return;
+    }
+    const cardById = {};
+    for (const meta of state.manifest.subjects) for (const c of (state.shards[meta.subject]?.cards || [])) cardById[c.id] = { ...c, _subject: meta.subject };
+    const grp = mistakes.bySubject(50);
+    stage.append(el('div', { class: 'toolbar' },
+        el('button', { class: 'chip', 'aria-label': 'review mistakes',
+            on: { click: () => { state.paletteReviewSet = mistakes.ids(); resetReviewQueue(); go('review'); } } }, `review all ${recent.length} →`),
+        el('button', { class: 'chip', on: { click: () => { if (confirm('clear mistake log?')) { mistakes.clear(); render(); } } } }, 'clear')));
+    for (const subject of Object.keys(grp).sort()) {
+        const arr = grp[subject];
+        stage.append(el('div', { class: 'panel' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, subject), `${arr.length}`),
+            ...arr.map(m => {
+                const c = cardById[m.cardId];
+                return el('div', { class: 'row' },
+                    el('span', { class: 'code' }, ['', 'again', 'hard'][m.score] || String(m.score)),
+                    el('div', {}, el('div', { class: 'title' }, c ? c.front.slice(0, 100) : m.cardId),
+                        el('div', { class: 'meta' }, new Date(m.ts).toLocaleString())),
+                    c ? el('a', { class: 'chip', href: `#card/${c.id}`, on: { click: e => { e.preventDefault(); go('card', c.id); } } }, 'open') : null);
+            })));
+    }
+}
+
+function renderNotes() {
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'notes'), el('h2', {}, 'highlights & notes')));
+    const arr = notes.all();
+    if (!arr.length) {
+        stage.append(el('div', { class: 'empty-state' },
+            el('div', { class: 'empty-title' }, 'no notes yet'),
+            el('div', { class: 'empty-sub' }, 'select text on a guide and press h to highlight or n to note.')));
+        return;
+    }
+    const grp = {};
+    for (const n of arr) (grp[n.subject] = grp[n.subject] || []).push(n);
+    for (const s of Object.keys(grp).sort()) {
+        stage.append(el('div', { class: 'panel' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, s), `${grp[s].length}`),
+            ...grp[s].map(n => el('div', { class: 'row' },
+                el('span', { class: 'code' }, n.hl ? '★' : '✎'),
+                el('div', {}, el('div', { class: 'title' }, n.text || ''), el('div', { class: 'meta' }, n.note || '')),
+                el('a', { class: 'chip', href: `#subject/${n.subject}`, on: { click: e => { e.preventDefault(); go('subject', n.subject); } } }, 'open')))));
+    }
+}
+
+async function renderDrill() {
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'drill'), el('h2', {}, 'drill 10')));
+    await loadAllShards();
+    let d = drill.active();
+    if (!d) {
+        // pick weakest cluster
+        const states = srs.loadStates();
+        const ticks = loadGuideTicks();
+        const rows = buildRows(state.manifest, state.shards, states, ticks);
+        const w = computeWeakest(rows);
+        const sub = w?.subject || state.manifest.subjects[0].subject;
+        const sh = state.shards[sub];
+        const ids = sh.cards.slice(0, 30).map(c => c.id);
+        const due = srs.getDueCards(ids, states);
+        const pool = (due.length >= 10 ? due : ids).slice(0, 10);
+        d = drill.start(pool, sub);
+    }
+    state.paletteReviewSet = d.ids;
+    state.reviewSubjectFilter = 'all';
+    resetReviewQueue();
+    state.reviewQueueIds = [...d.ids];
+    state.reviewSessionStarted = d.ids.length;
+    go('review');
+}
+
+function openQuickAdd() {
+    if (document.getElementById('quickadd-modal')) return;
+    const m = el('div', { id: 'quickadd-modal', class: 'shortcuts-modal', role: 'dialog', 'aria-label': 'add card' });
+    const input = el('input', { type: 'text', class: 'search', placeholder: 'front | back | tag1,tag2',
+        style: 'width:100%;font-size:15px', 'aria-label': 'card text' });
+    const inner = el('div', { class: 'shortcuts-inner', style: 'min-width:480px' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'quick add'),
+            el('button', { class: 'chip', on: { click: () => m.remove() } }, 'close')),
+        input,
+        el('div', { class: 'kbd-hint', style: 'margin-top:8px' }, 'enter to save · esc to cancel'));
+    m.append(inner);
+    document.body.appendChild(m);
+    setTimeout(() => input.focus(), 10);
+    input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+            const parsed = usercards.parseLine(input.value);
+            if (parsed) { usercards.add(parsed.front, parsed.back, parsed.tags); m.remove(); render(); }
+            else { input.style.borderColor = 'var(--c-due, red)'; }
+        } else if (e.key === 'Escape') m.remove();
+    });
+    m.addEventListener('click', e => { if (e.target === m) m.remove(); });
+}
+
+function handleHighlightOrNote(key, text, sel) {
+    const subject = state.currentSubject; if (!subject) return;
+    const lineNum = Date.now() % 100000;
+    const existing = notes.get(subject, lineNum) || {};
+    if (key === 'h') notes.set(subject, lineNum, { ...existing, text: text.slice(0, 200), hl: true });
+    else {
+        const note = prompt('note:', existing.note || '');
+        if (note != null) notes.set(subject, lineNum, { ...existing, text: text.slice(0, 200), note });
+    }
+    sel?.removeAllRanges();
+}
+
+function renderSparkline(history, days = 7) {
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const counts = {};
+    for (const h of (history || [])) counts[h.date] = h.graded || 0;
+    const todayKey = new Date().toISOString().slice(0, 10);
+    const todayP = progress.load();
+    counts[todayKey] = (counts[todayKey] || 0) + (todayP.todayGraded || 0);
+    const cells = [];
+    for (let i = days - 1; i >= 0; i--) {
+        const d = new Date(today.getTime() - i * 86400000);
+        cells.push(counts[d.toISOString().slice(0, 10)] || 0);
+    }
+    const max = Math.max(1, ...cells);
+    const W = 80, H = 24, gap = 2, cw = (W - gap * (days - 1)) / days;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', String(W)); svg.setAttribute('height', String(H));
+    svg.setAttribute('class', 'sparkline'); svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `7-day grading sparkline, max ${max}`);
+    cells.forEach((c, i) => {
+        const h = Math.round((c / max) * H);
+        const r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        r.setAttribute('x', String(i * (cw + gap))); r.setAttribute('y', String(H - h));
+        r.setAttribute('width', String(cw)); r.setAttribute('height', String(Math.max(1, h)));
+        r.setAttribute('fill', 'currentColor'); r.setAttribute('opacity', c === 0 ? '0.15' : '0.7');
+        svg.appendChild(r);
+    });
+    return svg;
+}
+
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
     const links = [['today', 'today'], ['guides', 'guides'], ['subjects', 'subjects'],
-        ['review', 'review'], ['cards', 'cards'], ['cases', 'cases'], ['stats', 'stats']];
+        ['review', 'review'], ['cards', 'cards'], ['cases', 'cases'], ['stats', 'stats'],
+        ['mistakes', 'mistakes'], ['notes', 'notes']];
     for (const [route, label] of links) {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
             on: { click: e => { e.preventDefault(); go(route); } } }, label));
@@ -1104,6 +1399,11 @@ function mountTopbar() {
         on: { click: e => { e.preventDefault(); go('settings'); } } }, 'settings'));
     nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta' }, 'tutor'));
     const right = document.querySelector('header.topbar .status');
+    const days = srs.daysUntilExam();
+    const countdown = el('a', { class: 'exam-countdown', href: '#settings',
+        title: 'days to exam — click to edit', 'aria-label': `${days} days to exam`,
+        on: { click: e => { e.preventDefault(); go('settings'); } } }, `${days}d`);
+    right.parentElement.insertBefore(countdown, right);
     const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'search (ctrl+k)', title: 'search (ctrl+k)',
         on: { click: () => state.searchPaletteApi?.open() } }, 'search ⌘k');
     right.parentElement.insertBefore(searchBtn, right);
@@ -1143,6 +1443,12 @@ function registerSW() {
         await loadManifest();
         await loadAllShards();
         mountSearchPalette();
+        state.timerApi = timer.mount(document);
+        const lvl = late.lateLevel(); late.applyClass(document, lvl);
+        if (lvl !== 'normal') {
+            const m = late.message(lvl);
+            if (m) { const banner = el('div', { class: 'late-banner', role: 'status' }, m); document.body.appendChild(banner); }
+        }
         registerSW();
         updateOnlineStatus();
         window.addEventListener('online', updateOnlineStatus);

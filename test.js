@@ -257,6 +257,97 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         }
     });
 
+    console.log('# new modules: timer + plan + mistakes + drill + flag + undo + notes + late + usercards + confidence');
+    t('all 10 new modules export expected APIs and round-trip storage', async () => {
+        global.localStorage.clear();
+        const timer = await import('./site/timer.js');
+        const planMod = await import('./site/plan.js');
+        const mistakes = await import('./site/mistakes.js');
+        const drill = await import('./site/drill.js');
+        const flag = await import('./site/flag.js');
+        const undo = await import('./site/undo.js');
+        const notes = await import('./site/notes.js');
+        const late = await import('./site/late.js');
+        const usercards = await import('./site/usercards.js');
+        const confidence = await import('./site/confidence.js');
+        // timer
+        assert.strictEqual(timer.fmt(65), '1:05');
+        let tt = timer.load(); assert.strictEqual(tt.running, false); assert.strictEqual(tt.remaining, 25*60);
+        timer.start(); assert.strictEqual(timer.load().running, true); timer.pause();
+        // plan
+        const p = planMod.build({ due: 20, weakestSubject: 'cardiology', nextSection: { title: 'CHF', line: 5 }, casesAvailable: 3 });
+        assert.ok(p.tasks.length >= 2 && p.total > 0);
+        planMod.save(p); assert.ok(planMod.load());
+        // mistakes
+        mistakes.logMistake('c-1', 'cardiology', 1);
+        mistakes.logMistake('c-2', 'cardiology', 5); // ignored
+        mistakes.logMistake('d-1', 'diabetes', 2);
+        assert.strictEqual(mistakes.recent().length, 2);
+        const grp = mistakes.bySubject(); assert.ok(grp.cardiology.length === 1 && grp.diabetes.length === 1);
+        assert.deepStrictEqual(mistakes.ids().sort(), ['c-1','d-1']);
+        // drill
+        const d = drill.start(['x1','x2','x3'], 'cardiology'); assert.strictEqual(d.ids.length, 3);
+        drill.advance(); assert.ok(drill.active());
+        // flag
+        flag.toggle('card-x'); assert.strictEqual(flag.isFlagged('card-x'), true); assert.strictEqual(flag.count(), 1);
+        flag.toggle('card-x'); assert.strictEqual(flag.count(), 0);
+        // undo
+        undo.record('id', { interval: 5 }); assert.ok(undo.peek());
+        const r = undo.consume(); assert.strictEqual(r.cardId, 'id'); assert.strictEqual(undo.peek(), null);
+        // notes
+        notes.set('cardiology', 12, { hl: true, text: 'foo' }); assert.deepStrictEqual(notes.get('cardiology', 12), { hl: true, text: 'foo' });
+        assert.strictEqual(notes.all().length, 1);
+        // late
+        assert.strictEqual(late.lateLevel(new Date('2026-05-05T12:00:00')), 'normal');
+        assert.strictEqual(late.lateLevel(new Date('2026-05-05T23:30:00')), 'late');
+        assert.strictEqual(late.lateLevel(new Date('2026-05-05T03:00:00')), 'sleep');
+        assert.match(late.message('late'), /late session/);
+        // usercards
+        const c = usercards.add('front?', 'back!', ['t1']); assert.ok(c.id.startsWith('user-'));
+        assert.strictEqual(usercards.load().length, 1);
+        const parsed = usercards.parseLine('front | back | a,b'); assert.deepStrictEqual(parsed, { front: 'front', back: 'back', tags: ['a','b'] });
+        // confidence
+        confidence.set('cardiology', 5, 4); assert.strictEqual(confidence.get('cardiology', 5), 4);
+        confidence.set('cardiology', 8, 3); assert.strictEqual(confidence.avgFor('cardiology'), 3.5);
+    });
+
+    console.log('# integration: SW v3 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace');
+    t('SW + PWA manifest + theme contrast + search prose+snippet + streak grace + app keys + new routes', async () => {
+        const sw = READ('site/sw.js');
+        assert.match(sw, /corpus-v3/);
+        for (const m of ['timer.js','plan.js','mistakes.js','drill.js','flag.js','undo.js','notes.js','late.js','usercards.js','confidence.js','manifest.webmanifest','medbak-index.json']) assert.ok(sw.includes(m), 'sw missing ' + m);
+        const wm = JSON.parse(READ('site/manifest.webmanifest'));
+        assert.ok(wm.name && wm.start_url && Array.isArray(wm.icons) && wm.icons.length >= 1);
+        // index.html links
+        assert.match(indexHtml, /rel="manifest"/);
+        assert.match(indexHtml, /\?v=3/);
+        // theme contrast
+        const themeSrc = READ('site/theme.js');
+        assert.match(themeSrc, /'contrast'/);
+        assert.match(styleCss, /\[data-theme="contrast"\]/);
+        // search prose + snippet
+        const searchMod = await import('./site/search.js');
+        assert.strictEqual(typeof searchMod.snippet, 'function');
+        const idx2 = searchMod.buildSearchIndex(MANIFEST, SHARDMAP);
+        assert.ok(idx2.some(x => x.kind === 'prose'));
+        const snip = searchMod.snippet('the heart pumps blood and supplies the body', 'pumps');
+        assert.match(snip, /pumps/);
+        // streak grace — bumpGraded at 03:00 should attribute to prior day
+        const progressMod = await import('./site/progress.js');
+        assert.strictEqual(typeof progressMod.effectiveDateISO, 'function');
+        const at3am = new Date('2026-05-05T03:00:00');
+        const eff = progressMod.effectiveDateISO(at3am);
+        assert.notStrictEqual(eff, at3am.toISOString().slice(0, 10));
+        // app keys + routes
+        for (const re of [/openQuickAdd/, /undoLastGrade/, /handleHighlightOrNote/, /gPrefixTs/, /renderMistakes/, /renderNotes/, /renderDrill/, /renderExamDay/, /renderSparkline/, /tag-cloud/, /next-thing/, /daily-plan/, /exam-countdown/, /late-banner/, /undo-toast/]) assert.match(appSrc, re);
+        for (const route of ['mistakes','notes','drill']) assert.ok(appSrc.includes(`'${route}'`));
+        // new shortcuts in modal
+        for (const s of ['quick add card', 'pomodoro', 'undo last grade', 'flag card', 'go mistakes']) assert.ok(appSrc.includes(s), 'missing shortcut: '+s);
+        // medbak index json
+        const medbak = JSON.parse(READ('site/data/medbak-index.json'));
+        assert.ok(typeof medbak === 'object');
+    });
+
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
 })();

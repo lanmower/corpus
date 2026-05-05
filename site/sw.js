@@ -1,20 +1,25 @@
 // corpus offline cache — precaches shell + manifest + shards on install.
-const CACHE = 'corpus-v4';
+const CACHE = 'corpus-v3';
 const SHELL = [
-    './', './index.html', './style.css', './app.js', './progress.js', './theme.js', './search.js', './srs.js',
+    './', './index.html', './style.css', './app.js',
+    './progress.js', './theme.js', './search.js', './srs.js',
+    './cram.js', './justread.js', './lastpos.js', './verdicts.js',
+    './timer.js', './plan.js', './mistakes.js', './drill.js', './flag.js',
+    './undo.js', './notes.js', './late.js', './usercards.js', './confidence.js',
     './triage-live.html', './triage-live.css', './triage-live.js',
-    './data/manifest.json'
+    './manifest.webmanifest',
+    './data/manifest.json', './data/medbak-index.json'
 ];
 
 self.addEventListener('install', e => {
     e.waitUntil((async () => {
         const c = await caches.open(CACHE);
-        await c.addAll(SHELL);
+        await c.addAll(SHELL.filter(Boolean));
         try {
             const m = await (await fetch('./data/manifest.json')).json();
             const shards = m.subjects.map(s => `./data/${s.subject}.json`);
             await c.addAll(shards);
-        } catch (e) { /* network may be unavailable on install; runtime fetch will populate */ }
+        } catch (e) { /* runtime fetch will populate */ }
         self.skipWaiting();
     })());
 });
@@ -34,7 +39,6 @@ self.addEventListener('fetch', e => {
         const cache = await caches.open(CACHE);
         const cached = await cache.match(e.request);
         if (cached) {
-            // Refresh in background for shards/manifest
             if (/\/data\//.test(url.pathname)) {
                 fetch(e.request).then(r => { if (r.ok) cache.put(e.request, r.clone()); }).catch(() => {});
             }
@@ -42,7 +46,7 @@ self.addEventListener('fetch', e => {
         }
         try {
             const r = await fetch(e.request);
-            if (r.ok && (url.pathname.endsWith('.json') || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html'))) {
+            if (r.ok && (url.pathname.endsWith('.json') || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname.endsWith('.webmanifest'))) {
                 cache.put(e.request, r.clone());
             }
             return r;

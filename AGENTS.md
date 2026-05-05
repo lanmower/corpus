@@ -226,3 +226,101 @@ This pass dropped the marketing-style framing in favour of a personal study note
 - The cram banner deduplicates against `cram.isDismissed()` per-day; a user who dismisses on day 1 won't re-see it until midnight rollover. Acceptable.
 - `renderHome` route name removed; `#home` aliases to `#today`. Old bookmarks still work.
 - The previous session's service worker (`corpus-v2`) caches stale HTML aggressively — first-visit users on the deployed site may need a hard reload. SW cache key was not bumped this pass; if persistent, bump `corpus-v3` next pass.
+
+## Study-flow expansion (2026-05-05, post personal-tool restyle)
+
+10 new modules + integrations land for the 4th-year-med-student persona heading into a 41-day exam runway.
+
+### New modules
+- `site/timer.js` â pomodoro 25/5, persists `corpus.timer.v1`. Floating bottom-right widget. `t` key toggles visibility.
+- `site/plan.js` â daily plan builder. `corpus.plan.v1`. Inputs: due count, weakest subject, next un-ticked guide section, cases-available. Output: `{tasks:[{kind,min,label,href}], total}`.
+- `site/mistakes.js` â log of every grade â¤2. `corpus.mistakes.v1` capped at 200. `recent(50)` reverse-chrono, `bySubject(50)` grouped, `ids()` for re-review queue.
+- `site/drill.js` â 10-card mini-session. `corpus.drill.v1`. Picks weakest cluster's due cards (falls back to first 10 cards). `#drill` route bridges to `#review` with the queue prefilled.
+- `site/flag.js` â flag for later. `corpus.flagged.v1` (Set serialized as array). `f` key in review toggles. Today chip shows count when â¥1.
+- `site/undo.js` â 5s undo ring of 1. Records prevState before grade; `u` key consumes and restores. Toast `#undo-toast` shown for 5s after every grade.
+- `site/notes.js` â highlights + notes on guide prose. `corpus.notes.v1 = {[subject]:{[lineNum]:{text,hl?,note?}}}`. `h`/`n` keys with selected text on `#subject/<x>`. `#notes` route lists all.
+- `site/late.js` â clock-only late-night detection. 23:00â02:00 â `body.late-night` (filter:brightness 0.85). 02:00â05:00 â `body.really-late` (filter:brightness 0.7 sepia). Banner reads "late session â keep it short" / "past 2am â you should sleep."
+- `site/usercards.js` â personal cards. `corpus.usercards.v1`. `+` opens one-line composer parsed as `front | back | tag1,tag2`. Merged into review queue with `(personal)` badge.
+- `site/confidence.js` â 1â5 per guide section. `corpus.confidence.v1`. `avgFor(subject)` for verdict weighting.
+
+### New routes
+- `#mistakes` â last 50 mistakes grouped by subject, bulk "review all" button (loads `mistakes.ids()` into review queue), clear-log button.
+- `#notes` â flat list of every highlight + note across subjects, jump-to-subject.
+- `#drill` â bridge route; computes weakest cluster, calls `drill.start`, redirects to `#review` with prefilled queue.
+
+### Topbar
+- Added `mistakes` + `notes` navlinks.
+- New `.exam-countdown` badge (`41d`) â clicks â `#settings`.
+
+### Keymap (full)
+- `?` shortcuts modal Â· `Esc` close
+- `Ctrl+K` search palette
+- `r` just-read (subject) Â· `t` pomodoro toggle Â· `+` quick add Â· `u` undo last grade
+- `h` highlight selected text (subject) Â· `n` note on selected text (subject)
+- `f` flag card (review) Â· `space` reveal Â· `1â4` grade Â· `s` skip
+- g-prefix nav: `g h` today, `g r` review, `g s` stats, `g c` cards, `g m` mistakes, `g n` notes
+- live tutor: `j`/`k` next/prev case, `/` focus, `Ctrl+Enter` send
+
+### Storage keys (cumulative)
+`corpus.theme.v1`, `corpus.progress.v1`, `corpus.srs.states`, `corpus.srs.config`, `corpus.guide.v1`, `corpus.cram.dismissed.v1`, `corpus.lastpos.v1`, `corpus.justread.v1`, `corpus.triage.v1`, `corpus.timer.v1`, `corpus.plan.v1`, `corpus.mistakes.v1`, `corpus.drill.v1`, `corpus.flagged.v1`, `corpus.notes.v1`, `corpus.usercards.v1`, `corpus.confidence.v1`.
+
+### Streak grace
+`progress.rollStreak` now uses `effectiveDateISO(now)` â between 0:00 and 6:00 local, the day attributes back to the prior calendar date so post-midnight study doesn't reset a streak. Default behavior past 6:00 unchanged.
+
+### Day-of-exam mode
+When `srs.daysUntilExam() === 0` and the route isn't `#mistakes` or `#settings`, `render()` short-circuits to `renderExamDay` â minimal panel with "good luck. trust your prep." + chip-links to mistakes and settings. Auto-recovers next day.
+
+### Today screen additions
+- `.daily-plan` panel (~60 min budget): minutes-per-task labels, click-through to the relevant route.
+- `.today-chips`: drill-10, flagged-count (when â¥1), mistakes, plus inline 7-day SVG sparkline.
+- 0-byte SVG generation (currentColor fill, opacity-coded) â works in dark/light/contrast.
+
+### Stats screen additions
+- `this week vs last` panel: `last7 - prior7` from `progress.history`, sign-coded delta.
+
+### Subject view additions
+- `.next-thing` line: first un-ticked section title.
+- `.tag-cloud` panel: top 20 tags by count, font-size proportional to log2(n), pills click to `#cards/<subject>?tag=â¦`.
+
+### Theme
+Added `'contrast'` option. `cycleTheme` order: light â dark â contrast â auto â light. `prefers-contrast: more` auto-selects contrast in `auto` mode. `[data-theme="contrast"]` is pure black/white with no shadows; prints clean.
+
+### Search palette
+`buildSearchIndex` now emits a `prose` kind for every guide-body paragraph â¥40 chars (excluding headings). `snippet(body, query, radius=60)` returns `Â±60`-char windows around the first matching token with ellipsis affordances.
+
+### PWA
+- `site/manifest.webmanifest` with SVG-data-URI icons (192 + 512 maskable). `<link rel="manifest">` in index.html. Installs as desktop/mobile app.
+- SW cache key bumped to `corpus-v3`. SHELL precaches all 10 new modules + `manifest.webmanifest` + `data/medbak-index.json`.
+- `site/index.html` script tags carry `?v=3` for cache-busting deployed users.
+
+### Audio re-link
+`scripts/build_medbak_index.js` reads `/d/medbak/archive-manifest.json` (or falls back to scanning the medbak directory, or empty index) and writes `site/data/medbak-index.json`. The persona's transcript files at `/d/medbak/<subject>/audio-transcripts/` are now indexed for future link-out from guide sections (file:// URLs are best-effort â browser security may block, but the index is in place).
+
+### Triage-live
+- New `copy as md` button in composer-row. Builds Markdown from active scenario name + description + scratchpad cards (kind, title, body), copies via `navigator.clipboard.writeText`. Console-logs char count with `[triage-live]` prefix.
+
+### Tests
+`test.js` extended to 353 lines, 9 groups, 9/9 green. New groups:
+- `new modules: timer + plan + mistakes + drill + flag + undo + notes + late + usercards + confidence` â round-trips storage for all 10 modules, asserts API surface.
+- `integration: SW v3 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace` â gates the SHELL contents, manifest.webmanifest schema, theme-contrast block, prose+snippet emission, effectiveDateISO post-midnight grace, and presence of every new app.js identifier (`openQuickAdd`, `undoLastGrade`, `gPrefixTs`, `renderMistakes`, `renderExamDay`, `renderSparkline`, `daily-plan`, `tag-cloud`, `next-thing`, `exam-countdown`, etc.) plus the medbak-index.json on disk.
+
+### Browser witness
+Witnessed in fresh incognito context against `node scripts/serve.js` on 8765:
+- Home: 11 navlinks (today/guides/subjects/review/cards/cases/stats/mistakes/notes/settings/tutor), `.exam-countdown` reads `41d`, `.daily-plan` renders 3 tasks, today-chips include drill-10 + mistakes, sparkline SVG mounted, `#pomo` floating widget mounted, zero pageerrors.
+- Keys: `+` opens `#quickadd-modal`; `Enter` on a `front | back | tag` line writes `corpus.usercards.v1` (count=1). `t` toggles `#pomo` `.hidden`. `?` opens `#shortcuts-modal` with all new entries. `g m` navigates to `#mistakes` (title="mistakes Â· corpus", h2="mistake log"). `g r` to review. Logging a mistake via `window.__mistakes.logMistake` then navigating to `#mistakes` shows the row.
+- Subject route: `.next-thing` reads "next: Cardiology â Complete Study Guide", `.tag-cloud` panel mounts.
+- Stats route: `this week vs last` panel mounts.
+
+Witness gaps (carry-forward â non-blocking):
+- Pomodoro timer 1-second countdown ticking through a full minute and break-mode flip not witnessed against wall-clock; logic is unit-tested via load/save/start/pause and `fmt`.
+- `h`/`n` highlight-on-selection with a real text-range; only the storage round-trip is tested.
+- `u` undo of a real grade SM-2 reversal with the 5-second window expiry; module unit-tested.
+- Late-night CSS filter under faked system clock past 23:00; CSS rules + `late.lateLevel` unit-tested.
+- Day-of-exam minimal mode under `daysUntilExam===0`; render branch present and reachable, not witnessed under faked exam-date.
+- Offline reload via `page.context().setOffline(true)` â SW shape verified at install/fetch by source, not load-cycle witnessed.
+- PWA install prompt on a real Chrome instance â manifest.webmanifest present and validated by JSON-parse + key check; install UI not exercised.
+
+### What was rewritten / kept
+Kept: `srs.js`, `verdicts.js`, `cram.js`, `lastpos.js`, `justread.js`, `progress.js` (small additions), `theme.js` (small additions), `search.js` (extended), all data shards.
+Rewrote: `sw.js` (cache key + SHELL list), `index.html` (manifest link + ?v=3).
+Added: 10 new modules in `site/`, `site/manifest.webmanifest`, `site/data/medbak-index.json`, `scripts/build_medbak_index.js`.

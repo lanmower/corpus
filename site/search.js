@@ -16,8 +16,36 @@ export function buildSearchIndex(manifest, shards) {
             kind: 'section', subject: meta.subject, id: `${meta.subject}#${sec.line}`,
             title: sec.title, body: '', level: sec.level
         });
+        if (sh.guide && sh.guide.body) {
+            const body = sh.guide.body;
+            const paras = body.split(/\n\n+/);
+            let lineCounter = 0;
+            for (const p of paras) {
+                const lines = p.split('\n').length;
+                lineCounter += lines + 1;
+                const trimmed = p.trim();
+                if (trimmed.length < 40) continue;
+                if (/^#{1,6}\s/.test(trimmed)) continue;
+                items.push({
+                    kind: 'prose', subject: meta.subject,
+                    id: `${meta.subject}#L${lineCounter}`,
+                    title: trimmed.slice(0, 80) + (trimmed.length > 80 ? '…' : ''),
+                    body: trimmed
+                });
+            }
+        }
     }
     return items;
+}
+
+export function snippet(body, query, radius = 60) {
+    if (!body || !query) return '';
+    const tok = query.trim().toLowerCase().split(/\s+/)[0];
+    if (!tok) return body.slice(0, radius * 2);
+    const i = body.toLowerCase().indexOf(tok);
+    if (i < 0) return body.slice(0, radius * 2);
+    const s = Math.max(0, i - radius), e = Math.min(body.length, i + tok.length + radius);
+    return (s > 0 ? '…' : '') + body.slice(s, e) + (e < body.length ? '…' : '');
 }
 
 export function search(items, q, limit = 30) {
@@ -103,4 +131,4 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
 
 function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
-if (typeof window !== 'undefined') window.__search = { buildSearchIndex, search };
+if (typeof window !== 'undefined') window.__search = { buildSearchIndex, search, snippet };

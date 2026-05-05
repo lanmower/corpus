@@ -1,6 +1,6 @@
 // dark/light theme — corpus.theme.v1. applies before render to avoid flash.
 const KEY = 'corpus.theme.v1';
-const VALID = ['light', 'dark', 'auto'];
+const VALID = ['light', 'dark', 'auto', 'contrast'];
 
 export function getTheme() {
     try { const v = localStorage.getItem(KEY); return VALID.includes(v) ? v : 'auto'; }
@@ -9,6 +9,8 @@ export function getTheme() {
 
 export function effectiveTheme(t = getTheme()) {
     if (t === 'auto') {
+        const contrast = typeof matchMedia !== 'undefined' && matchMedia('(prefers-contrast: more)').matches;
+        if (contrast) return 'contrast';
         const dark = typeof matchMedia !== 'undefined' && matchMedia('(prefers-color-scheme: dark)').matches;
         return dark ? 'dark' : 'light';
     }
@@ -29,7 +31,8 @@ export function setTheme(t) {
 
 export function cycleTheme() {
     const cur = getTheme();
-    const next = cur === 'light' ? 'dark' : (cur === 'dark' ? 'auto' : 'light');
+    const order = { light: 'dark', dark: 'contrast', contrast: 'auto', auto: 'light' };
+    const next = order[cur] || 'light';
     return setTheme(next);
 }
 
@@ -37,7 +40,7 @@ export function makeToggleButton(doc = document) {
     const btn = doc.createElement('button');
     btn.type = 'button';
     btn.className = 'theme-toggle';
-    const glyphs = { light: '☀', dark: '☾', auto: '◐' };
+    const glyphs = { light: '☀', dark: '☾', auto: '◐', contrast: '◑' };
     const label = () => {
         const cur = getTheme();
         btn.innerHTML = '';

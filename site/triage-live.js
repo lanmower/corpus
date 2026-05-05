@@ -724,6 +724,20 @@ if (els.submitGrading) els.submitGrading.addEventListener('click', submitForGrad
 els.simulate.addEventListener('click', () => send(true));
 els.loadLLM.addEventListener('click', loadLLM);
 els.clearScreen.addEventListener('click', () => TOOLS.clear_screen());
+const copyMdBtn = document.getElementById('copy-md');
+if (copyMdBtn) copyMdBtn.addEventListener('click', () => {
+    const sc = currentScenario();
+    const lines = [];
+    lines.push('# ' + (sc?.name || 'case'));
+    if (sc?.description) lines.push('', sc.description);
+    lines.push('', '## board', '');
+    for (const c of (state.cards || [])) lines.push(`- **${c.kind || 'note'}**: ${c.title || ''}` + (c.body ? `\n  ${c.body}` : ''));
+    const md = lines.join('\n');
+    navigator.clipboard?.writeText(md).then(() => {
+        copyMdBtn.textContent = 'copied!'; setTimeout(() => { copyMdBtn.textContent = 'copy as md'; }, 1500);
+    }).catch(() => { copyMdBtn.textContent = 'failed'; setTimeout(() => { copyMdBtn.textContent = 'copy as md'; }, 1500); });
+    console.log('[triage-live] copied board as md', md.length, 'chars');
+});
 els.prompt.addEventListener('keydown', e => {
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); send(false); }
 });

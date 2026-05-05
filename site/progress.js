@@ -3,6 +3,14 @@ const KEY = 'corpus.progress.v1';
 const VERSION = 1;
 
 function todayISO() { return new Date().toISOString().slice(0, 10); }
+// Streak grace: 0:00–6:00 counts for the prior calendar day.
+function effectiveDateISO(now = new Date()) {
+    if (now.getHours() < 6) {
+        const d = new Date(now.getTime() - 6 * 3600 * 1000);
+        return d.toISOString().slice(0, 10);
+    }
+    return now.toISOString().slice(0, 10);
+}
 function dayOffset(a, b) {
     const d = (new Date(b) - new Date(a)) / 86400000;
     return Math.round(d);
@@ -41,7 +49,8 @@ export function load() {
 
 export function save(p) { localStorage.setItem(KEY, JSON.stringify(p)); }
 
-export function rollStreak(p, now = todayISO()) {
+export { effectiveDateISO };
+export function rollStreak(p, now = effectiveDateISO()) {
     if (!p.lastActiveDate) { p.streak = 1; p.lastActiveDate = now; return p; }
     const off = dayOffset(p.lastActiveDate, now);
     if (off === 0) return p;
