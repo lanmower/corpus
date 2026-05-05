@@ -2,20 +2,20 @@
 
 ## Corpus Structure & Archive Status
 
-**Effective 2026-05-04**: D:/corpus is the root of a medical study corpus for CMED4IIM1/IIM2 covering 8 subjects: cardiology, diabetes, endocrine, gastroenterology, geriatric, nephrology, pulmonology, rheumatology.
+**Effective 2026-05-04** (archive relocated 2026-05-05): D:/corpus is the root of a medical study corpus for CMED4IIM1/IIM2 covering 8 subjects: cardiology, diabetes, endocrine, gastroenterology, geriatric, nephrology, pulmonology, rheumatology.
 
 Each subject originally had three subdirectories:
-- `audio-transcripts/` — **moved to C:/medbak/<subject>/** (cross-drive archive)
-- `book-texts/` — **moved to C:/medbak/<subject>/** (cross-drive archive)
-- `srs-cards/` — **remains at D:/corpus/<subject>/**
+- `audio-transcripts/` — **moved to D:/medbak/<subject>/audio-transcripts/** (offline archive, 2026-05-05 moved from C:/medbak)
+- `book-texts/` — **moved to D:/medbak/<subject>/book-texts/** (offline archive, 2026-05-05 moved from C:/medbak)
+- `srs-cards/` — **remains at D:/corpus/<subject>/srs-cards/**
 
-Only srs-cards remain at the corpus root; all other source materials are now on the C: drive.
+Only srs-cards remain at the corpus root; all original source materials live at `D:/medbak/<subject>/` along with `D:/medbak/archive-manifest.json` (records every moved file). The build pipeline no longer reads from medbak — `scripts/build_data.js` ingests `srs-cards/` + `concise/<subject>_study_guide.md` + `<subject>_triage_scenarios.yml` only. `loadAudio`/`loadBooks` removed; shards no longer carry `audio[]`/`books[]` arrays; manifest no longer carries `audioCount`/`bookCount`.
 
 ## Generated Artifacts
 
 Per-subject files at D:/corpus root:
 - `*_triage_scenarios.yml` (all 8 subjects) — parameterized clinical triage scenarios extracted from SRS cards
-- `concise/<subject>_study_guide.md` (all 8 subjects) — human-readable rollup study guides
+- `concise/<subject>_study_guide.md` (all 8 subjects) — **the rewritten study guides; 934KB total prose across 202 sections; the featured top-level artifact of the site** (see "Study Guides Featured" below)
 
 ## Observability Website
 
@@ -52,20 +52,30 @@ Ported from `C:/dev/srs-mccqe1` on 2026-05-04. Browser-side SM-2 review engine �
 
 ## Corpus Statistics
 
-Totals across all 8 subjects:
+Totals across all 8 subjects (post-archive-relocation 2026-05-05):
 - **1958 SRS cards**
 - **901 reasoning atoms**
 - **68 triage scenarios**
-- **56 audio lectures**
-- **135 book sections**
-- **~956 KB** study guide markdown
+- **202 study-guide sections** across **934 KB** of rewritten prose
+- **56 audio lectures + 135 book sections** archived offline at `D:/medbak/<subject>/` (no longer surfaced in shards or UI)
+
+## Study Guides Featured (2026-05-05 IA pass)
+
+The eight rewritten study guides at `concise/<subject>_study_guide.md` are the primary artifact of the site. Three new surfaces:
+
+- **`#guides` route** — top-nav link between `today` and `subjects`. `renderGuides()` emits a hero ("our rewritten study guides") plus a grid of 8 large guide cards (subject, section count, KB size, ~min read, mastery%, "open guide →" chip). Below the grid: totals panel summing sections, KB, cards, scenarios.
+- **Featured-guides panel on `#today`** — `.featured-guides` panel (rail-purple) with a `.guide-mini-grid` of all 8 subjects (name, section count, mastery%, mini progress bar). Headline copy: "our rewritten study guides".
+- **`#subject/<name>` deepdive reordered** — `.guide-body-panel` (rail-coloured) with full rendered markdown is now the FIRST panel in the right column, before flashcards and cases. Panel head reads "complete study guide · N sections · KB · ~min read". Sidebar TOC retains the "tick what you understand" checkboxes (panel head renamed "guide sections").
+- **CTA on home hero**: primary CTA "open the study guides" routes to `#guides` (replaced the previous "review N due cards" as primary).
+- **Lede copy updated**: "eight rewritten study guides, plus flashcards and clinical cases bound to the same prose".
 
 ## Repository State
 
 - Git identity: `lanmower` (almagestfraternite@gmail.com)
-- No GitHub remote (local-only repo)
+- GitHub remote: `https://github.com/lanmower/corpus.git` (origin)
 - Current branch: master
-- Main branch: main
+- Main branch: master
+- GitHub Pages: deploys from `master` via `.github/workflows/pages.yml` to `https://lanmower.github.io/corpus/`
 
 Unwitnessed gap (carry-forward, finishing pass 2026-05-04): live `exec:browser` automation could not launch in this session env (the rs-exec hook isn't installed in this Bash). Verification of the student-mode site-wide pass is via test.js (11/11 green, 183 lines, under cap) which exhaustively checks served bundles for forbidden operator vocabulary, presence of student CTAs, FRIENDLY_GRADES wiring, progress streak rollover, search index size, theme persistence primitives, dark palette delta, print stylesheet topbar-hide rule, prefers-reduced-motion, ≥6 aria-labels, and 360+768 mobile breakpoints — plus served HTTP 200 on every asset. Re-witness from a normal browser env: load `/`, confirm hero reads "your medical study workspace" with streak chip + four CTAs; press Ctrl-K and confirm palette opens; visit `#today`, `#review`, `#stats` and confirm zero of `manifest|shard|snapshot|easeFactor|EF|SM-2` appear; toggle theme button and verify `data-theme` flips and reload preserves; append `?debug` to any URL and confirm raw scheduler / atom counts return.
 

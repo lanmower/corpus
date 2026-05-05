@@ -181,6 +181,17 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const re of [/suspendCard/, /isSuspended/, /quota/i, /corpus:storage-full/, /s\.suspended/]) assert.match(srsSrc, re);
         assert.match(indexHtml, /id="statusbar-msg"/); assert.match(liveHtml, /aria-live="polite"/); assert.match(progSrc, /lastReviewedAt/);
         assert.match(appSrc.match(/function go\(route, subject\) \{[\s\S]*?^\}/m)[0], /route = 'today'/);
+        // study guides featured: route + nav + renderGuides + featured-guides on today + guide-body before flashcards on subject + microcopy
+        assert.match(appSrc, /'guides'/); assert.match(appSrc, /function renderGuides/);
+        assert.match(appSrc, /\['guides',\s*'guides'\]/);
+        assert.match(appSrc, /featured-guides/); assert.match(appSrc, /our rewritten study guides/i);
+        assert.match(appSrc, /complete study guide/i);
+        const subjFn = appSrc.match(/async function renderSubject\(\)[\s\S]*?^\}/m)[0];
+        assert.ok(subjFn.indexOf('guideBodyPanel') < subjFn.indexOf('cardsPanel'), 'guide-body must precede flashcards');
+        // no audio/book references in shards or pipeline
+        for (const sh of SHARDS) { assert.ok(!('audio' in sh)); assert.ok(!('books' in sh)); }
+        const buildSrc = READ('scripts/build_data.js');
+        assert.ok(!/loadAudio|loadBooks|medbak/.test(buildSrc));
     });
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);

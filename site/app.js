@@ -54,8 +54,8 @@ function el(tag, attrs = {}, ...kids) {
     return e;
 }
 
-const ROUTES = ['today', 'subjects', 'review', 'cards', 'cases', 'stats', 'subject', 'settings', 'card'];
-const ROUTE_TITLES = { today: "today's plan", subjects: 'subjects', review: 'review',
+const ROUTES = ['today', 'guides', 'subjects', 'review', 'cards', 'cases', 'stats', 'subject', 'settings', 'card'];
+const ROUTE_TITLES = { today: "today's plan", guides: 'study guides', subjects: 'subjects', review: 'review',
     cards: 'cards', cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings', card: 'card' };
 const ROUTE_ALIASES = { home: 'today', triage: 'cases' };
 function setDocTitle(route, subject) {
@@ -117,7 +117,7 @@ function render() {
     stage.innerHTML = '';
     if (!state.manifest) { stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
     const r = state.route;
-    const fns = { today: renderToday, subjects: renderSubjects, cards: renderCards,
+    const fns = { today: renderToday, guides: renderGuides, subjects: renderSubjects, cards: renderCards,
         review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
         settings: renderSettings, card: renderCardFocus };
     (fns[r] || renderToday)();
@@ -168,6 +168,50 @@ function renderSubjects() {
     stage.append(buildSubjectGrid());
 }
 
+function estReadMinutes(chars) {
+    // 1000 chars/min for medical prose
+    return Math.max(1, Math.round(chars / 1000));
+}
+
+function buildGuideCard(meta) {
+    const m = masteryFor(meta.subject);
+    const sections = meta.guideSections || 0;
+    const mins = estReadMinutes(meta.guideChars || 0);
+    const sizeKB = Math.round((meta.guideChars || 0) / 1024);
+    return el('div', {
+        class: `subject-card guide-card rail-${meta.cat}`,
+        'role': 'button', 'tabindex': '0',
+        'aria-label': `open ${meta.subject} study guide, ${m}% mastered, ${sections} sections`,
+        data: { subject: meta.subject },
+        on: { click: () => go('subject', meta.subject),
+              keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go('subject', meta.subject); } } }
+    },
+        el('div', { class: 'name', style: 'text-transform:capitalize' }, meta.subject),
+        el('div', { class: 'tagline' }, `complete study guide · ${sections} sections · ${sizeKB}KB · ~${mins} min read`),
+        el('div', { class: 'mastery-row' },
+            el('div', { class: 'mastery-bar' }, el('div', { class: 'mastery-fill', style: `width:${m}%` })),
+            el('span', { class: 'mastery-pct' }, `${m}% understood`)
+        ),
+        el('div', { class: 'subject-meta' },
+            el('span', { class: 'chip' }, 'open guide →')
+        )
+    );
+}
+
+function renderGuides() {
+    stage.append(el('section', { class: 'hero' },
+        el('h1', {}, 'our rewritten ', el('em', {}, 'study guides')),
+        el('p', { class: 'lede' }, 'every subject distilled into one complete study guide — fully rewritten from the source lectures and book chapters. tick what you understand, read the prose, work cards and cases from the same page.')
+    ));
+    const grid = el('div', { class: 'subject-grid' });
+    for (const meta of state.manifest.subjects) grid.append(buildGuideCard(meta));
+    stage.append(grid);
+    const totals = state.manifest.totals;
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'across all eight guides'), 'totals'),
+        el('div', {}, `${totals.guideSections || 0} sections · ${Math.round((totals.guideChars||0)/1024)}KB of rewritten prose · ${totals.cards} flashcards · ${totals.scenarios} clinical cases linked from these guides`)));
+}
+
 function renderToday() {
     const p = progress.load();
     const due = totalDueAll();
@@ -187,7 +231,7 @@ function renderToday() {
 
     stage.append(el('section', { class: 'hero' },
         el('h1', {}, 'your medical study ', el('em', {}, 'workspace')),
-        el('p', { class: 'lede' }, 'flashcards, cases, and study guides for eight subjects. pick up where you left off, review what is due, or work through a case.'),
+        el('p', { class: 'lede' }, 'eight rewritten study guides, plus flashcards and clinical cases bound to the same prose. pick up where you left off, open a guide, or work a case.'),
         el('div', { class: 'hero-stats' },
             chipStat(p.streak, p.streak === 1 ? 'day streak' : 'day streak'),
             chipStat(`${p.todayGraded}/${p.dailyGoal}`, 'cards today'),
@@ -196,7 +240,11 @@ function renderToday() {
         ),
         el('div', { class: 'cta-row' },
             lastCTA,
-            el('a', { class: 'cta cta-primary', href: '#review',
+            el('a', { class: 'cta cta-primary', href: '#guides',
+                on: { click: e => { e.preventDefault(); go('guides'); } } },
+                el('div', { class: 'cta-label' }, 'open the study guides'),
+                el('div', { class: 'cta-sub' }, '8 rewritten subjects · 200+ sections')),
+            el('a', { class: 'cta', href: '#review',
                 on: { click: e => { e.preventDefault(); go('review'); } } },
                 el('div', { class: 'cta-label' }, due ? `review ${due} due cards` : 'review cards'),
                 el('div', { class: 'cta-sub' }, 'spaced repetition')),
@@ -205,6 +253,28 @@ function renderToday() {
                 el('div', { class: 'cta-sub' }, 'work a clinical scenario with the live tutor'))
         )
     ));
+
+    // Featured study guides
+    const guideMetas = state.manifest.subjects;
+    const guidePanel = el('div', { class: 'panel rail-purple featured-guides' },
+        el('div', { class: 'panel-head' },
+            el('span', { class: 'title' }, 'our rewritten study guides'),
+            el('a', { class: 'chip', href: '#guides',
+                on: { click: e => { e.preventDefault(); go('guides'); } } }, 'all 8 →')),
+        el('p', { class: 'lede', style: 'margin:6px 0 14px' }, 'every subject distilled into one complete guide — pick one to read.'),
+        el('div', { class: 'guide-mini-grid' },
+            ...guideMetas.map(meta => {
+                const m = masteryFor(meta.subject);
+                const sections = meta.guideSections || 0;
+                return el('a', { class: `guide-mini rail-${meta.cat}`, href: `#subject/${meta.subject}`,
+                    on: { click: e => { e.preventDefault(); go('subject', meta.subject); } } },
+                    el('div', { class: 'name', style: 'text-transform:capitalize;font-weight:700' }, meta.subject),
+                    el('div', { class: 'meta', style: 'font-size:12px' }, `${sections} sections · ${m}% understood`),
+                    el('div', { class: 'mastery-bar', style: 'margin-top:6px' }, el('div', { class: 'mastery-fill', style: `width:${m}%` }))
+                );
+            }))
+    );
+    stage.append(guidePanel);
 
     // Daily-goal progress
     stage.append(el('div', { class: 'panel rail-green' },
@@ -309,7 +379,7 @@ async function renderSubject() {
                 `${shard.audio.length} lectures · ${shard.books.length} book sections · rating ${meta?.rating}`) : null
         ),
         el('div', { class: 'panel' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study guide'), 'tick what you understand'),
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'guide sections'), 'tick what you understand'),
             ...(shard.guide?.sections || []).slice(0, 50).map(s => {
                 const lineKey = String(s.line);
                 const checked = !!ticks[lineKey];
@@ -333,8 +403,8 @@ async function renderSubject() {
         )
     );
 
-    const guideBodyPanel = shard.guide?.body ? el('div', { class: 'panel guide-body-panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study guide — full text'), `${shard.guide.lines} lines`),
+    const guideBodyPanel = shard.guide?.body ? el('div', { class: 'panel guide-body-panel rail-' + (meta?.cat || 'green') },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'complete study guide'), `${shard.guide.sections.length} sections · ${Math.round(shard.guide.chars/1024)}KB · ~${estReadMinutes(shard.guide.chars)} min read`),
         el('div', { class: 'guide-body markdown', html: renderMarkdown(shard.guide.body) })
     ) : null;
     const cardsPanel = el('div', { class: 'panel rail-' + (meta?.cat || 'green') },
@@ -1022,7 +1092,7 @@ function showStorageFullBanner() {
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
-    const links = [['today', 'today'], ['subjects', 'subjects'],
+    const links = [['today', 'today'], ['guides', 'guides'], ['subjects', 'subjects'],
         ['review', 'review'], ['cards', 'cards'], ['cases', 'cases'], ['stats', 'stats']];
     for (const [route, label] of links) {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },

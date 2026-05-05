@@ -680,3 +680,15 @@ button:focus-visible, .chip:focus-visible, .navlink:focus-visible, a:focus-visib
 /* ---- tag chips on review ---- */
 .tag-chips { padding: 0 var(--s-3); margin-top: -4px; flex-wrap: wrap; }
 .tag-chips .chip { font-family: var(--ff-mono); font-size: 12px; }
+
+/* featured-guides mini grid (home) */
+.featured-guides .guide-mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+.featured-guides .guide-mini { display: block; padding: 12px 14px; border-radius: var(--r-md); background: var(--panel-1); text-decoration: none; color: var(--ink); border-left: var(--rail-w) solid var(--green); transition: background 0.15s; }
+.featured-guides .guide-mini:hover { background: var(--panel-hover); }
+.featured-guides .guide-mini.rail-mascot { border-left-color: var(--mascot); }
+.featured-guides .guide-mini.rail-sun { border-left-color: var(--sun); }
+.featured-guides .guide-mini.rail-purple { border-left-color: var(--purple); }
+.featured-guides .guide-mini.rail-flame { border-left-color: var(--flame); }
+.featured-guides .guide-mini.rail-sky { border-left-color: var(--sky); }
+.featured-guides .guide-mini.rail-green { border-left-color: var(--green); }
+.guide-card .tagline { font-size: 12px; color: var(--panel-text-3); }
