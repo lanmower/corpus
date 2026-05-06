@@ -15,6 +15,8 @@ import * as notes from './notes.js';
 import * as late from './late.js';
 import * as usercards from './usercards.js';
 import * as confidence from './confidence.js';
+import * as schedule from './schedule.js';
+import * as calendar from './calendar.js';
 import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
 import { buildSearchIndex, mountPalette, snippet as searchSnippet } from './search.js';
 import { makeToggleButton } from './theme.js';
@@ -68,8 +70,8 @@ function el(tag, attrs = {}, ...kids) {
     return e;
 }
 
-const ROUTES = ['today', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'mistakes', 'notes', 'drill'];
-const ROUTE_TITLES = { today: 'today', guides: 'guides', review: 'review',
+const ROUTES = ['today', 'calendar', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'mistakes', 'notes', 'drill'];
+const ROUTE_TITLES = { today: 'today', calendar: 'calendar', guides: 'guides', review: 'review',
     cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings',
     mistakes: 'mistakes', notes: 'notes', drill: 'drill' };
 const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review' };
@@ -153,7 +155,7 @@ function render() {
     if (days === 0 && r !== 'mistakes' && r !== 'settings') {
         renderExamDay(); updateFooter(); return;
     }
-    const fns = { today: renderToday, guides: renderGuides,
+    const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
         review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
         settings: renderSettings, mistakes: renderMistakes, notes: renderNotes,
         drill: renderDrill };
@@ -977,6 +979,133 @@ function renderHeatmap(history) {
     return svg;
 }
 
+function dueCountsBySubject() {
+    const out = {};
+    if (!state.manifest) return out;
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject];
+        if (!sh) { out[meta.subject] = 0; continue; }
+        out[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id)).length;
+    }
+    return out;
+}
+
+function renderCalendar() {
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'plan'), el('h2', {}, 'calendar')));
+    const mount = el('div', { class: 'cal-mount', id: 'cal-mount' });
+    stage.append(mount);
+    calendar.mount(mount, { dueCountsFn: () => dueCountsBySubject() });
+}
+
+function debounce(fn, ms) { let h = null; return (...a) => { clearTimeout(h); h = setTimeout(() => fn(...a), ms); }; }
+
+function renderScheduleConfigPanel() {
+    const cfg = schedule.loadConfig();
+    const examDays = srs.daysUntilExam();
+    const panel = el('div', { class: 'panel settings-section schedule-config' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study schedule'),
+            el('span', { class: 'meta exam-count' }, `${examDays}d to exam`))
+    );
+
+    // intensity
+    const intensities = ['light', 'standard', 'hard', 'cram'];
+    const intensityRow = el('div', { class: 'cfg-row' }, el('label', {}, 'intensity'),
+        el('div', { class: 'btn-group intensity-group' },
+            ...intensities.map(v => el('button', {
+                class: 'chip' + (cfg.intensity === v ? ' active' : ''), 'aria-pressed': String(cfg.intensity === v),
+                on: { click: () => { schedule.saveConfig({ intensity: v }); regenAndPreview(); render(); } }
+            }, v))));
+    panel.append(intensityRow);
+
+    // chronotype
+    const chronos = ['morning', 'evening', 'flex'];
+    const chronoRow = el('div', { class: 'cfg-row' }, el('label', {}, 'chronotype'),
+        el('div', { class: 'btn-group chrono-group' },
+            ...chronos.map(v => el('button', {
+                class: 'chip' + (cfg.chronotype === v ? ' active' : ''), 'aria-pressed': String(cfg.chronotype === v),
+                on: { click: () => { schedule.saveConfig({ chronotype: v }); regenAndPreview(); render(); } }
+            }, v))));
+    panel.append(chronoRow);
+
+    // pomodoro + break sliders
+    const pomoRow = el('div', { class: 'cfg-row' }, el('label', {}, 'pomodoro'),
+        el('input', { type: 'range', min: '15', max: '60', step: '5', value: String(cfg.pomodoro),
+            'aria-label': 'pomodoro length',
+            on: { input: debounce(e => { schedule.saveConfig({ pomodoro: parseInt(e.target.value, 10) }); regenAndPreview(); }, 200) } }),
+        el('span', { class: 'mono cfg-val' }, `${cfg.pomodoro}m`));
+    panel.append(pomoRow);
+    const brkRow = el('div', { class: 'cfg-row' }, el('label', {}, 'break'),
+        el('input', { type: 'range', min: '3', max: '20', step: '1', value: String(cfg.breakLen),
+            'aria-label': 'break length',
+            on: { input: debounce(e => { schedule.saveConfig({ breakLen: parseInt(e.target.value, 10) }); regenAndPreview(); }, 200) } }),
+        el('span', { class: 'mono cfg-val' }, `${cfg.breakLen}m`));
+    panel.append(brkRow);
+
+    // availability — 7 rows
+    const availPanel = el('div', { class: 'cfg-availability' }, el('div', { class: 'cfg-sublabel' }, 'availability (minutes/day)'));
+    const dows = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+    for (const d of dows) {
+        availPanel.append(el('div', { class: 'cfg-row dow-row' },
+            el('label', {}, d),
+            el('input', { type: 'range', min: '0', max: '480', step: '15', value: String(cfg.availability[d] || 0),
+                'aria-label': `${d} availability`,
+                on: { input: debounce(e => {
+                    const av = { ...schedule.loadConfig().availability, [d]: parseInt(e.target.value, 10) };
+                    schedule.saveConfig({ availability: av }); regenAndPreview();
+                }, 200) } }),
+            el('span', { class: 'mono cfg-val' }, `${cfg.availability[d] || 0}m`)));
+    }
+    panel.append(availPanel);
+
+    // subject weighting — 8 sliders
+    const weightPanel = el('div', { class: 'cfg-weights' }, el('div', { class: 'cfg-sublabel' }, 'subject weighting'));
+    for (const meta of state.manifest.subjects) {
+        const sub = meta.subject;
+        weightPanel.append(el('div', { class: 'cfg-row weight-row' },
+            el('label', {}, sub),
+            el('input', { type: 'range', min: '0', max: '3', step: '0.1', value: String(cfg.weights[sub] ?? 1),
+                'aria-label': `${sub} weight`,
+                on: { input: debounce(e => {
+                    const w = { ...schedule.loadConfig().weights, [sub]: parseFloat(e.target.value) };
+                    schedule.saveConfig({ weights: w }); regenAndPreview();
+                }, 200) } }),
+            el('span', { class: 'mono cfg-val' }, String(cfg.weights[sub] ?? 1))));
+    }
+    panel.append(weightPanel);
+
+    // regenerate button + preview
+    const previewWrap = el('div', { class: 'cfg-preview', 'aria-live': 'polite' });
+    const regenBtn = el('button', { class: 'run-btn',
+        on: { click: () => { schedule.regenerate({ dueCounts: dueCountsBySubject() }); refreshPreview(); } } }, 'regenerate');
+    panel.append(el('div', { class: 'cfg-row regen-row' }, regenBtn, el('span', { class: 'muted' }, 'tomorrow preview:')));
+    panel.append(previewWrap);
+
+    function refreshPreview() {
+        const tomorrow = schedule.addDays(schedule.isoDate(new Date()), 1);
+        const sched = schedule.getSchedule({ dueCounts: dueCountsBySubject() });
+        const blocks = sched.blocks.filter(b => b.date === tomorrow);
+        previewWrap.innerHTML = '';
+        if (!blocks.length) { previewWrap.append(el('div', { class: 'muted' }, 'no blocks scheduled tomorrow.')); return; }
+        for (const b of blocks) {
+            const h = Math.floor(b.startMin / 60), m = b.startMin % 60;
+            const t = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+            previewWrap.append(el('div', { class: 'preview-block' + (b.kind === 'break' ? ' brk' : '') },
+                el('span', { class: 'mono' }, t),
+                el('span', {}, b.kind === 'break' ? 'break' : b.subject),
+                el('span', { class: 'mono' }, `${b.len}m`)));
+        }
+    }
+
+    function regenAndPreview() {
+        schedule.regenerate({ dueCounts: dueCountsBySubject() });
+        refreshPreview();
+    }
+
+    refreshPreview();
+    return panel;
+}
+
 async function renderSettings() {
     stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'settings'), el('h2', {}, 'settings')));
     const cfg = srs.loadConfig();
@@ -1019,6 +1148,7 @@ async function renderSettings() {
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'data')),
         el('div', { class: 'toolbar' }, exportBtn, importBtn, importInput, resetBtn)));
+    stage.append(renderScheduleConfigPanel());
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'help')),
         el('div', { class: 'toolbar' }, shortcutsBtn,
@@ -1234,7 +1364,7 @@ function renderSparkline(history, days = 7) {
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
-    const links = [['today', 'today'], ['guides', 'guides'],
+    const links = [['today', 'today'], ['calendar', 'calendar'], ['guides', 'guides'],
         ['review', 'review'], ['cases', 'cases'], ['stats', 'stats'],
         ['mistakes', 'mistakes'], ['notes', 'notes']];
     for (const [route, label] of links) {
@@ -1303,6 +1433,19 @@ function registerSW() {
         window.addEventListener('storage', e => {
             if (e.key && /^corpus\./.test(e.key)) render();
         });
+        try {
+            const ch = new BroadcastChannel('corpus');
+            ch.addEventListener('message', e => {
+                if (e.data?.type === 'schedule:updated') {
+                    if (state.route === 'calendar') {
+                        // calendar self-updates via schedule.onUpdate; nothing to do
+                    } else if (state.route === 'today' || state.route === 'settings') {
+                        render();
+                    }
+                }
+            });
+            state.broadcastChannel = ch;
+        } catch (e) { warn('broadcast channel unavailable', e.message); }
         window.addEventListener('corpus:storage-full', () => showStorageFullBanner());
         const hash = location.hash.replace('#', '') || 'today';
         const [routeRaw, sub] = hash.split('/');

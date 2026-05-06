@@ -318,14 +318,15 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     console.log('# integration: SW v4 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace + archive isolation');
     t('SW + PWA manifest + theme contrast + search prose+snippet + streak grace + app keys + new routes', async () => {
         const sw = READ('site/sw.js');
-        assert.match(sw, /corpus-v7/);
+        assert.match(sw, /corpus-v10/);
+        assert.ok(sw.includes('schedule.js') && sw.includes('calendar.js'));
         for (const m of ['timer.js','plan.js','mistakes.js','drill.js','flag.js','undo.js','notes.js','late.js','usercards.js','confidence.js','manifest.webmanifest']) assert.ok(sw.includes(m), 'sw missing ' + m);
         assert.ok(!sw.includes('medbak'), 'sw should not reference medbak');
         const wm = JSON.parse(READ('site/manifest.webmanifest'));
         assert.ok(wm.name && wm.start_url && Array.isArray(wm.icons) && wm.icons.length >= 1);
         // index.html links
         assert.match(indexHtml, /rel="manifest"/);
-        assert.match(indexHtml, /\?v=6/);
+        assert.match(indexHtml, /\?v=9/);
         // theme contrast
         const themeSrc = READ('site/theme.js');
         assert.match(themeSrc, /'contrast'/);
@@ -358,6 +359,73 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             const titles = (j.guide.sections || []).map(x => x.title || '').join('|');
             assert.ok(!/pages?[\s_-]*\d+[\s_-]*\d+|CMED[A-Z0-9]+/i.test(titles), `${s} section titles leak transcript filenames`);
         }
+    });
+
+    console.log('# phase 1: schedule engine + calendar + settings + nav');
+    t('schedule determinism + config round-trip + edit/lock + calendar render + nav links + broadcastchannel', async () => {
+        global.localStorage.clear();
+        const sched = await import('./site/schedule.js');
+        // config round-trip
+        const c1 = sched.loadConfig();
+        assert.strictEqual(c1.intensity, 'standard');
+        assert.strictEqual(c1.pomodoro, 25);
+        sched.saveConfig({ intensity: 'hard', pomodoro: 30 });
+        const c2 = sched.loadConfig();
+        assert.strictEqual(c2.intensity, 'hard'); assert.strictEqual(c2.pomodoro, 30);
+        // weights/availability merge defaults
+        assert.ok(typeof c2.availability.mon === 'number');
+        for (const s of SUBJECTS) assert.ok(typeof c2.weights[s] === 'number');
+        // determinism — same inputs → same blocks
+        global.localStorage.clear();
+        sched.saveConfig({ intensity: 'standard', chronotype: 'morning', pomodoro: 25, breakLen: 5 });
+        const today = '2026-05-06';
+        const dueCounts = Object.fromEntries(SUBJECTS.map((s, i) => [s, i * 2]));
+        const a = sched.regenerate({ today, dueCounts, horizonDays: 7 });
+        const ids = a.blocks.map(b => b.id);
+        const lensA = a.blocks.map(b => `${b.date}:${b.subject}:${b.startMin}:${b.len}`);
+        global.localStorage.removeItem('corpus.schedule.v1');
+        const b = sched.regenerate({ today, dueCounts, horizonDays: 7 });
+        const lensB = b.blocks.map(x => `${x.date}:${x.subject}:${x.startMin}:${x.len}`);
+        assert.deepStrictEqual(lensA, lensB);
+        assert.ok(a.blocks.length > 0);
+        // markBlockComplete + editBlock + lockBlock
+        const studyBlock = a.blocks.find(x => x.kind === 'study');
+        assert.ok(studyBlock);
+        const m = sched.markBlockComplete(studyBlock.id, true);
+        assert.strictEqual(m.done, true);
+        const ed = sched.editBlock(studyBlock.id, { len: 99 });
+        assert.strictEqual(ed.len, 99);
+        const lk = sched.lockBlock(studyBlock.id, true);
+        assert.strictEqual(lk.locked, true);
+        // locked blocks survive regenerate
+        const after = sched.regenerate({ today, dueCounts, horizonDays: 7 });
+        const found = after.blocks.find(x => x.id === studyBlock.id);
+        assert.ok(found && found.locked && found.len === 99 && found.done);
+        // dayCompletion + subjectHeat
+        const comp = sched.dayCompletion(studyBlock.date);
+        assert.ok(comp.total >= 1 && comp.totalMin > 0);
+        const heat = sched.subjectHeat(studyBlock.date);
+        assert.ok(Object.keys(heat).length >= 1);
+        // helpers
+        assert.strictEqual(sched.addDays('2026-05-06', 3), '2026-05-09');
+        assert.strictEqual(sched.daysBetween('2026-05-06', '2026-05-09'), 3);
+        // calendar render — DOM-island assertions via served HTML
+        const calSrc = READ('site/calendar.js');
+        for (const re of [/function renderDayCell/, /cal-grid/, /openDetail/, /renderRing/, /renderHeatbar/, /onUpdate/, /toolbar/i]) assert.match(calSrc, re);
+        // app.js wiring
+        for (const re of [/import \* as schedule from '\.\/schedule\.js'/, /import \* as calendar from '\.\/calendar\.js'/, /function renderCalendar/, /renderScheduleConfigPanel/, /\['calendar', 'calendar'\]/, /BroadcastChannel\('corpus'\)/, /schedule:updated/, /dueCountsBySubject/]) assert.match(appSrc, re);
+        // nav in triage-live.html
+        assert.match(liveHtml, /#calendar/);
+        // settings panel HTML hooks
+        for (const re of [/schedule-config/, /intensity-group/, /chrono-group/, /cfg-availability/, /cfg-weights/, /cfg-preview/]) assert.match(appSrc, re);
+        // SW shell + cache key
+        const sw = READ('site/sw.js');
+        assert.ok(sw.includes('corpus-v10') && sw.includes('schedule.js') && sw.includes('calendar.js'));
+        // index.html cache-bust ?v=9
+        assert.match(indexHtml, /app\.js\?v=9/);
+        assert.match(indexHtml, /style\.css\?v=9/);
+        // schedule emits BroadcastChannel + custom event
+        for (const re of [/BroadcastChannel\('corpus'\)/, /schedule:updated/, /dispatchEvent/]) assert.match(READ('site/schedule.js'), re);
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);
