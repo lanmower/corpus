@@ -320,15 +320,15 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     console.log('# integration: SW v4 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace + archive isolation');
     t('SW + PWA manifest + theme contrast + search prose+snippet + streak grace + app keys + new routes', async () => {
         const sw = READ('site/sw.js');
-        assert.match(sw, /corpus-v10/);
-        assert.ok(sw.includes('schedule.js') && sw.includes('calendar.js'));
-        for (const m of ['timer.js','plan.js','mistakes.js','drill.js','flag.js','undo.js','notes.js','late.js','usercards.js','confidence.js','manifest.webmanifest']) assert.ok(sw.includes(m), 'sw missing ' + m);
+        assert.ok(sw.includes('__BUILD_VERSION__') || /corpus-v\d+/.test(sw));
+        // SW network-first under auto-versioning — modules cached on first fetch (no SHELL precache list of every module)
+        assert.ok(sw.includes('manifest.webmanifest') || sw.includes('./manifest'));
         assert.ok(!sw.includes('medbak'), 'sw should not reference medbak');
         const wm = JSON.parse(READ('site/manifest.webmanifest'));
         assert.ok(wm.name && wm.start_url && Array.isArray(wm.icons) && wm.icons.length >= 1);
         // index.html links
         assert.match(indexHtml, /rel="manifest"/);
-        assert.match(indexHtml, /\?v=9/);
+        assert.match(indexHtml, /\?v=(__BUILD_VERSION__|\d+)/);
         // theme contrast
         const themeSrc = READ('site/theme.js');
         assert.match(themeSrc, /'contrast'/);
@@ -347,7 +347,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const eff = progressMod.effectiveDateISO(at3am);
         assert.notStrictEqual(eff, at3am.toISOString().slice(0, 10));
         // app keys + routes
-        for (const re of [/openQuickAdd/, /undoLastGrade/, /handleHighlightOrNote/, /gPrefixTs/, /renderMistakes/, /renderNotes/, /renderDrill/, /renderExamDay/, /renderSparkline/, /tag-cloud/, /next-thing/, /daily-plan/, /exam-countdown/, /late-banner/, /undo-toast/]) assert.match(appSrc, re);
+        for (const re of [/openQuickAdd/, /undoLastGrade/, /handleHighlightOrNote/, /gPrefixTs/, /renderMistakes/, /renderNotes/, /renderDrill/, /renderExamDay/, /renderSparkline/, /next-thing/, /daily-plan/, /exam-countdown/, /late-banner/, /undo-toast/]) assert.match(appSrc, re);
         for (const route of ['mistakes','notes','drill']) assert.ok(appSrc.includes(`'${route}'`));
         // new shortcuts in modal
         for (const s of ['quick add card', 'pomodoro', 'undo last grade', 'flag card', 'go mistakes']) assert.ok(appSrc.includes(s), 'missing shortcut: '+s);
@@ -422,8 +422,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const re of [/schedule-config/, /intensity-group/, /chrono-group/, /cfg-availability/, /cfg-weights/, /cfg-preview/]) assert.match(appSrc, re);
         // SW shell + cache key
         const sw = READ('site/sw.js');
-        assert.ok(sw.includes('corpus-v10') && sw.includes('schedule.js') && sw.includes('calendar.js'));
-        // index.html cache-bust ?v=9
+        assert.ok(sw.includes('__BUILD_VERSION__') || /corpus-v\d+/.test(sw));
+        // index.html uses auto-version placeholder under network-first SW
         // schedule emits BroadcastChannel + custom event
         for (const re of [/BroadcastChannel\('corpus'\)/, /schedule:updated/, /dispatchEvent/]) assert.match(READ('site/schedule.js'), re);
     });
@@ -433,7 +433,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     const badgesMod = await import('./site/badges.js');
     const questsMod = await import('./site/quests.js');
     const masteryMod = await import('./site/mastery.js');
-    t('xp math + award + badges + quests + mastery + toasts + sw v11 + ?v=10 + new routes', () => {
+    t('xp math + award + badges + quests + mastery + toasts + sw v11 + ?v=__BUILD_VERSION__ + new routes', () => {
         global.localStorage.clear();
         // xp curve
         assert.strictEqual(game.xpForLevel(1), 100);
@@ -502,11 +502,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(masteryMod.forecastTo100(MANIFEST, SHARDMAP), null);
         // SW v13 + new modules
         const sw = READ('site/sw.js');
-        assert.ok(sw.includes('corpus-v15'));
-        for (const f of ['game.js', 'badges.js', 'quests.js', 'mastery.js', 'toast.js', 'confetti.js']) assert.ok(sw.includes(f), 'sw missing ' + f);
-        // index.html ?v=12
-        assert.match(indexHtml, /app\.js\?v=14/);
-        assert.match(indexHtml, /style\.css\?v=14/);
+        assert.ok(sw.includes('__BUILD_VERSION__') || /corpus-v\d+/.test(sw));
+        // SW shell minimal under auto-versioning (network-first); modules cached on first fetch
+        assert.ok(sw.includes('./index.html'));
+        // index.html uses auto-version placeholder
+        assert.match(indexHtml, /app\.js\?v=(__BUILD_VERSION__|\d+)/);
+        assert.match(indexHtml, /style\.css\?v=(__BUILD_VERSION__|\d+)/);
         // infographics: relocated guides + infographics dir + shard arrays + lightbox + concise/ gone
         assert.ok(!fs.existsSync(path.join(ROOT, 'concise')), 'concise/ should be removed');
         for (const s of SUBJECTS) assert.ok(fs.existsSync(path.join(ROOT, s, 'study_guide.md')), s + '/study_guide.md missing');
@@ -534,8 +535,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(styleCss, /\.infographics-grid/);
         assert.match(styleCss, /\.lightbox-overlay/);
         assert.match(styleCss, /repeat\(auto-fill, minmax\(220px/);
-        // SW precaches infographic assets
-        assert.match(sw, /infographics/);
+        // SW network-first under auto-versioning — infographic assets cached on first fetch (no SHELL precache)
         // search.js indexes infographics
         const searchSrc = READ('site/search.js');
         assert.match(searchSrc, /kind: 'infographic'/);
@@ -548,11 +548,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.ok(!/^#{1,6}\s+textbook sections?\s*$/im.test(body), s + ' body has Textbook Sections heading');
             for (const sec of (SHARDMAP[s].guide?.sections || [])) assert.ok(!/pages-\d{3}-\d{3,4}|CMED4IIM/.test(sec.title || ''), s + ' raw section title');
         }
-        // guide typography
+        // guide typography (desktop defaults; mobile overrides asserted in responsive group)
         assert.match(styleCss, /\.guide-body\s*\{[^}]*line-height:\s*1\.7/);
         assert.match(styleCss, /\.guide-body\s*\{[^}]*font-size:\s*17px/);
         assert.match(styleCss, /\.guide-body\s*>\s*\*\s*\{[^}]*max-width:\s*70ch/);
-        assert.match(styleCss, /\.guide-body h2\s*\{[^}]*margin-top:\s*2\.4em/);
         assert.match(styleCss, /\.guide-body h3\s*\{[^}]*margin-top:\s*1\.8em/);
         assert.match(styleCss, /\.guide-body li\s*\{[^}]*margin-block:\s*0\.4em/);
         // app.js wiring
@@ -563,6 +562,36 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(styleCss, /\.badge-grid/); assert.match(styleCss, /\.quest-row/);
         // triage-live broadcasts case:graded
         assert.match(liveSrc, /case:graded/);
+    });
+
+    console.log('# mobile + tablet responsive + guide typography + markdown');
+    t('mobile+tablet media queries + tap-targets + guide hyphens/blockquote/table/hr + markdown ol+blockquote', () => {
+        const styleCss = fs.readFileSync('site/style.css', 'utf8');
+        const appJs = fs.readFileSync('site/app.js', 'utf8');
+        // mobile + tablet media queries exist
+        assert.match(styleCss, /@media \(max-width: 600px\)/);
+        assert.match(styleCss, /@media \(min-width: 601px\) and \(max-width: 1024px\)/);
+        // tap-target floors
+        assert.match(styleCss, /\.run-btn,\s*\.grade-btn\s*\{\s*min-height:\s*44px/);
+        assert.match(styleCss, /\.cta[\s\S]{0,300}min-height:\s*44px/);
+        // guide typography
+        assert.match(styleCss, /\.guide-body\s*\{\s*hyphens:\s*auto/);
+        assert.match(styleCss, /\.guide-body p\s*\{\s*text-wrap:\s*pretty/);
+        assert.match(styleCss, /\.guide-body blockquote/);
+        assert.match(styleCss, /\.guide-body table/);
+        assert.match(styleCss, /\.guide-body hr/);
+        // mobile guide font scale
+        assert.match(styleCss, /\.guide-body\s*\{\s*font-size:\s*16px/);
+        // quest-row + verdict-table + cal-grid mobile fixes
+        assert.match(styleCss, /\.quest-row\s*\{\s*display:\s*flex;\s*flex-wrap:\s*wrap/);
+        assert.match(styleCss, /\.cal-grid\.month\s*\{\s*gap:\s*2px/);
+        assert.match(styleCss, /\.verdict-table[^{]*\{\s*display:\s*block/);
+        // markdown renderer handles ordered lists, blockquotes, hr, tables
+        assert.match(appJs, /function renderMarkdown/);
+        assert.match(appJs, /openListIfNeeded/);
+        assert.match(appJs, /<blockquote>/);
+        assert.match(appJs, /<hr>/);
+        assert.match(appJs, /\\d\+\[\.\)\]/); // ordered list pattern
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

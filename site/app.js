@@ -533,42 +533,64 @@ function renderMarkdown(md, subject) {
     const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     const lines = md.split('\n');
     const out = [];
-    let inList = false, inCode = false, para = [];
+    let listStack = [];
+    let inCode = false, inQuote = false, para = [];
     const flushPara = () => { if (para.length) { out.push('<p>' + inline(para.join(' ')) + '</p>'); para = []; } };
-    const flushList = () => { if (inList) { out.push('</ul>'); inList = false; } };
+    const flushList = () => { while (listStack.length) out.push('</' + listStack.pop() + '>'); };
+    const flushQuote = () => { if (inQuote) { out.push('</blockquote>'); inQuote = false; } };
+    const flushAll = () => { flushPara(); flushList(); flushQuote(); };
     function inline(s) {
         s = esc(s);
         s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
-        s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-        s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+        s = s.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+        s = s.replace(/(^|[\s(])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+        s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
         return s;
     }
     function slug(t) { return t.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''); }
-    function token(t) { return slug(t).split('-').filter(Boolean).slice(0, 3).join('-'); }
     function affordance(headingText) {
         if (!subject) return '';
         const topic = encodeURIComponent(headingText);
         return `<span class="guide-aff"><a href="./triage-live.html?topic=${topic}&subject=${subject}" data-aff="tutor">→ tutor</a></span>`;
     }
+    function openListIfNeeded(tag) {
+        if (listStack[listStack.length - 1] !== tag) {
+            flushList();
+            out.push('<' + tag + '>');
+            listStack.push(tag);
+        }
+    }
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        if (/^```/.test(line)) { flushPara(); flushList(); inCode = !inCode; out.push(inCode ? '<pre><code>' : '</code></pre>'); continue; }
+        if (/^```/.test(line)) { flushAll(); inCode = !inCode; out.push(inCode ? '<pre><code>' : '</code></pre>'); continue; }
         if (inCode) { out.push(esc(line)); continue; }
-        const h = line.match(/^(#{1,6})\s+(.+)$/);
+        if (/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(line)) { flushAll(); out.push('<hr>'); continue; }
+        const h = line.match(/^(#{1,6})\s+(.+?)\s*#*\s*$/);
         if (h) {
-            flushPara(); flushList();
+            flushAll();
             const id = `g-${slug(h[2])}-${i}`;
             const level = h[1].length;
             const aff = (level === 2 || level === 3) ? affordance(h[2]) : '';
             out.push(`<h${level} id="${id}">${inline(h[2])}${aff}</h${level}>`);
             continue;
         }
-        const li = line.match(/^[-*]\s+(.+)$/);
-        if (li) { flushPara(); if (!inList) { out.push('<ul>'); inList = true; } out.push('<li>' + inline(li[1]) + '</li>'); continue; }
-        if (line.trim() === '') { flushPara(); flushList(); continue; }
+        const bq = line.match(/^>\s?(.*)$/);
+        if (bq) {
+            flushPara(); flushList();
+            if (!inQuote) { out.push('<blockquote>'); inQuote = true; }
+            out.push('<p>' + inline(bq[1]) + '</p>');
+            continue;
+        }
+        if (inQuote && line.trim() === '') { flushQuote(); continue; }
+        const ul = line.match(/^\s*[-*+]\s+(.+)$/);
+        const ol = line.match(/^\s*\d+[.)]\s+(.+)$/);
+        if (ul) { flushPara(); flushQuote(); openListIfNeeded('ul'); out.push('<li>' + inline(ul[1]) + '</li>'); continue; }
+        if (ol) { flushPara(); flushQuote(); openListIfNeeded('ol'); out.push('<li>' + inline(ol[1]) + '</li>'); continue; }
+        if (line.trim() === '') { flushAll(); continue; }
+        flushList();
         para.push(line);
     }
-    flushPara(); flushList(); if (inCode) out.push('</code></pre>');
+    flushAll(); if (inCode) out.push('</code></pre>');
     return out.join('\n');
 }
 

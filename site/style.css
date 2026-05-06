@@ -842,3 +842,76 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 @media (prefers-reduced-motion: reduce) {
     .infographic-tile { transition: none; }
 }
+
+/* ---- 2026-05-06 mobile/tablet polish + guide typography ---- */
+.guide-body { hyphens: auto; word-break: normal; overflow-wrap: break-word; }
+.guide-body p { text-wrap: pretty; }
+.guide-body p + p { margin-top: 0.4em; }
+.guide-body blockquote { margin: 1em 0; padding: 0.4em 0 0.4em 14px; border-left: 3px solid var(--link); color: var(--panel-text-2); font-style: italic; }
+.guide-body table { border-collapse: collapse; width: 100%; max-width: 70ch; margin: 1em 0; font-size: 14px; }
+.guide-body th, .guide-body td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
+.guide-body th { background: var(--panel-2); }
+.guide-body hr { border: 0; border-top: 1px solid var(--border); margin: 1.6em 0; }
+.guide-body ol { list-style: decimal; }
+.guide-body ul { list-style: disc; }
+.guide-body ol ol, .guide-body ul ul, .guide-body ol ul, .guide-body ul ol { margin: 0.2em 0 0.2em 22px; }
+
+/* tablet 768 fine-tune */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .verdict-table { font-size: 14px; }
+    .quest-row { flex-wrap: wrap; }
+    .cal-grid.month { gap: 4px; }
+}
+
+/* mobile 360 hardening */
+@media (max-width: 600px) {
+    html, body { overflow-x: hidden; }
+    .stage > *, .panel { min-width: 0; }
+    .deepdive { gap: 12px; }
+    .deepdive > * { min-width: 0; max-width: 100%; }
+    .deepdive-side, .deepdive-main { max-width: 100%; }
+    .panel { max-width: 100%; }
+
+    /* quest rows wrap so the locked/unlocked chip stays in viewport */
+    .quest-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; }
+    .quest-row > * { min-width: 0; }
+    .quest-row .chip { flex: 0 0 auto; max-width: 100%; }
+
+    /* timeline + today chips wrap */
+    .today-chips { flex-wrap: wrap; }
+    .timeline-block { flex-wrap: wrap; }
+
+    /* verdict / data tables — horizontal scroll inside wrapper, never page */
+    .verdict-table, table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .verdict-table thead, .verdict-table tbody, .verdict-table tr { display: table; width: 100%; table-layout: fixed; }
+    .verdict-table th, .verdict-table td { padding: 6px 6px; font-size: 12px; word-break: break-word; }
+
+    /* calendar — tighten gap so 7×day fits 360 */
+    .cal-grid.month { gap: 2px; }
+    .cal-grid.month .cal-day { padding: 2px; font-size: 11px; }
+    .cal-day { min-width: 0; }
+
+    /* guide typography on phone */
+    .guide-body { font-size: 16px; line-height: 1.65; }
+    .guide-body > * { max-width: 100%; }
+    .guide-body h1 { font-size: 22px; margin-top: 1em; }
+    .guide-body h2 { font-size: 19px; margin-top: 1.6em; padding-bottom: 0.2em; }
+    .guide-body h3 { font-size: 17px; margin-top: 1.3em; }
+    .guide-body h4 { font-size: 15px; margin-top: 1.1em; }
+    .guide-body ul, .guide-body ol { margin-left: 20px; }
+    .guide-body pre { font-size: 12px; padding: 8px 10px; overflow-x: auto; }
+    .guide-body .guide-aff { display: block; margin-left: 0; margin-top: 4px; font-size: 11px; }
+
+    /* search palette already 96vw — bump font-size to prevent ios zoom */
+    #search-palette-input { font-size: 16px; }
+
+    /* tap-target floor on all interactive chrome */
+    .cta, .nav-cta, .chip, .navlink, .run-btn, .grade-btn, button:not(.guide-tick):not(.lightbox-close):not(.lightbox-prev):not(.lightbox-next) { min-height: 44px; }
+    .filter-chips .chip { min-height: 44px; }
+}
+
+/* tablet — guide typography */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .guide-body h2 { margin-top: 1.8em; }
+    .guide-body h3 { margin-top: 1.4em; }
+}
