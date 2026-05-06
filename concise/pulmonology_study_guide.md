@@ -7,15 +7,6 @@
 
 ## Table of Contents
 
-### Audio Lectures
-1. Community-Acquired Pneumonia
-2. Community-Acquired Pneumonia
-3. Lung Cancer
-4. Lung Cancer
-5. Optimal Use Of Antibiotics - Antibiotic Stewardship
-6. Optimal Use Of Antibiotics - Antibiotic Stewardship
-7. Suppurative Lung Syndromes
-## Lectures & Transcripts
 
 ### Community-Acquired Pneumonia
 *Audio Transcript*

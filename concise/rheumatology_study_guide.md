@@ -206,7 +206,6 @@ and developed God. So urate acid comes from protein-baked dye. So from protein, 
 
 -
 
-## Textbook Content
 
 ### Rheumatoid Arthritis
 
@@ -307,7 +306,6 @@ d)GUT microbiomes
 
 
 - page 9 -
-
 
 
 *(Content truncated for brevity)*

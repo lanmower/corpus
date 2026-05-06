@@ -7,20 +7,6 @@
 
 ## Contents
 
-### Audio Lectures
-1. Acute Pancreatitis
-2. Acute, Chronic  HIV Related Diarrhoea
-3. An Approach To Ascites
-4. Chronic Pancreatitis
-5. Cirrhosis  Liver Failuer
-6. Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease
-7. Gastro-Oesophageal Reflux Disease  Peptic Ulcer Disease
-8. Jaundice
-9. Jaundice
-
--
-
-## Lectures & Transcripts
 
 ### Acute Pancreatitis
 *Audio Transcript*

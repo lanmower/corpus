@@ -498,13 +498,29 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // forecast — zero rate => null
         global.localStorage.setItem('corpus.progress.v1', JSON.stringify({ version: 1, history: [{ date: '2026-05-01', graded: 0 }, { date: '2026-05-02', graded: 0 }] }));
         assert.strictEqual(masteryMod.forecastTo100(MANIFEST, SHARDMAP), null);
-        // SW v11 + new modules
+        // SW v12 + new modules
         const sw = READ('site/sw.js');
-        assert.ok(sw.includes('corpus-v11'));
+        assert.ok(sw.includes('corpus-v12'));
         for (const f of ['game.js', 'badges.js', 'quests.js', 'mastery.js', 'toast.js', 'confetti.js']) assert.ok(sw.includes(f), 'sw missing ' + f);
-        // index.html ?v=10
-        assert.match(indexHtml, /app\.js\?v=10/);
-        assert.match(indexHtml, /style\.css\?v=10/);
+        // index.html ?v=11
+        assert.match(indexHtml, /app\.js\?v=11/);
+        assert.match(indexHtml, /style\.css\?v=11/);
+        // raw-source markers absent from shards
+        for (const s of SUBJECTS) {
+            const body = (SHARDMAP[s].guide && SHARDMAP[s].guide.body) || '';
+            assert.ok(!/pages-\d{3}-\d{3,4}/.test(body), s + ' body has pages-NNN');
+            assert.ok(!/CMED4IIM/.test(body), s + ' body has CMED4IIM');
+            assert.ok(!/^#{1,6}\s+audio lectures?\s*$/im.test(body), s + ' body has Audio Lectures heading');
+            assert.ok(!/^#{1,6}\s+textbook sections?\s*$/im.test(body), s + ' body has Textbook Sections heading');
+            for (const sec of (SHARDMAP[s].guide?.sections || [])) assert.ok(!/pages-\d{3}-\d{3,4}|CMED4IIM/.test(sec.title || ''), s + ' raw section title');
+        }
+        // guide typography
+        assert.match(styleCss, /\.guide-body\s*\{[^}]*line-height:\s*1\.7/);
+        assert.match(styleCss, /\.guide-body\s*\{[^}]*font-size:\s*17px/);
+        assert.match(styleCss, /\.guide-body\s*>\s*\*\s*\{[^}]*max-width:\s*70ch/);
+        assert.match(styleCss, /\.guide-body h2\s*\{[^}]*margin-top:\s*2\.4em/);
+        assert.match(styleCss, /\.guide-body h3\s*\{[^}]*margin-top:\s*1\.8em/);
+        assert.match(styleCss, /\.guide-body li\s*\{[^}]*margin-block:\s*0\.4em/);
         // app.js wiring
         for (const re of [/import \* as game from '\.\/game\.js'/, /import \* as badges from '\.\/badges\.js'/, /import \* as quests from '\.\/quests\.js'/, /import \* as mastery from '\.\/mastery\.js'/, /import \* as toast from '\.\/toast\.js'/, /function renderQuests/, /function renderBadges/, /function renderXpChip/, /xp-chip/, /awardCardXP/, /'quests', 'quests'/, /'badges', 'badges'/, /pomodoro:done/, /case:graded/, /gamification/]) assert.match(appSrc, re);
         // CSS tokens

@@ -1,5 +1,5 @@
 // corpus offline cache — precaches shell + manifest + shards on install.
-const CACHE = 'corpus-v11';
+const CACHE = 'corpus-v12';
 const SHELL = [
     './', './index.html', './style.css', './app.js',
     './progress.js', './theme.js', './search.js', './srs.js',

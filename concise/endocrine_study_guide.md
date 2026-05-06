@@ -7,18 +7,6 @@
 
 ## Contents
 
-### Audio Lectures
-1. Adrenal Gland
-2. Adrenal Gland
-3. Diagnosis  Classification Of Diabetes Mellitus
-4. Diagnosis  Classification Of Diabetes Mellitus
-5. Disorders Of The Pituitary Gland
-6. Disorders Of The Pituitary Gland
-7. Parathyroid Disorders
-
--
-
-## Lectures & Transcripts
 
 ### Adrenal Gland
 *Audio Transcript*

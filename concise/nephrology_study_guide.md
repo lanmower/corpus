@@ -7,26 +7,6 @@
 
 ## Table of Contents
 
-### Audio Lectures
-1. Acute Kidney Disease
-2. Approach To Chronic Kidney Disease
-3. Diabetic Kidney Disease
-4. Drug  The Kidney
-5. Glomerular Disease
-6. HIV  The Kidney
-7. Hypertension  The Kidney
-8. Kidney Replacement Therapy
-9. Nephrology Introduction
-10. Urinary Tract Infections (UTI)
-
-### Study Resources
-- Full lecture transcripts with clinical content
-- Spaced repetition flashcards (SRS deck)
-- Systematic review methodology
-
--
-
-## Complete Lecture Transcripts
 
 ### Acute Kidney Disease
 
