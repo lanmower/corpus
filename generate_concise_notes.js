@@ -5,6 +5,7 @@ const { readdirSync, statSync, readFileSync, writeFileSync } = fs;
 
 const CORPUS_ROOT = path.join(__dirname);
 const CONCISE_ROOT = path.join(CORPUS_ROOT, 'concise');
+const MEDBAK_ROOT = 'D:/medbak';
 
 function cleanFileName(filename) {
   return filename.replace(/\.(txt|yaml|yml)$/i, '').replace(/_/g, ' ');
@@ -27,8 +28,9 @@ function extractTextFromFile(filepath) {
 function collectSubjectContent() {
   const subjects = {};
 
-  const entries = readdirSync(CORPUS_ROOT).filter(name => {
-    const fullPath = path.join(CORPUS_ROOT, name);
+  const root = fs.existsSync(MEDBAK_ROOT) ? MEDBAK_ROOT : CORPUS_ROOT;
+  const entries = readdirSync(root).filter(name => {
+    const fullPath = path.join(root, name);
     return statSync(fullPath).isDirectory() &&
            !name.startsWith('.') &&
            name !== 'concise' &&
@@ -36,7 +38,7 @@ function collectSubjectContent() {
   });
 
   entries.forEach(subjectName => {
-    const subjectPath = path.join(CORPUS_ROOT, subjectName);
+    const subjectPath = path.join(root, subjectName);
     const transcriptDir = path.join(subjectPath, 'audio-transcripts');
     const bookDir = path.join(subjectPath, 'book-texts');
 
@@ -127,11 +129,7 @@ function generateGuide(subject, data) {
       lines.push(`### ${t.label}`);
       lines.push('*Audio Transcript*');
       lines.push('');
-      // Limit very long content
-      const content = t.content.length > 4000 ?
-        t.content.substring(0, 4000) + '...' :
-        t.content;
-      lines.push(content);
+      lines.push(t.content);
       lines.push('');
       lines.push('---');
       lines.push('');
@@ -146,10 +144,7 @@ function generateGuide(subject, data) {
       lines.push(`### ${b.label}`);
       lines.push('*Textbook Section*');
       lines.push('');
-      const content = b.content.length > 3000 ?
-        b.content.substring(0, 3000) + '...' :
-        b.content;
-      lines.push(content);
+      lines.push(b.content);
       lines.push('');
       lines.push('---');
       lines.push('');
