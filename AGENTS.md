@@ -54,7 +54,7 @@ Ported from `C:/dev/srs-mccqe1` on 2026-05-04. Browser-side SM-2 review engine â
 ## Corpus Statistics
 
 Totals across all 8 subjects (post-archive-relocation 2026-05-05):
-- **1958 SRS cards**
+- **2551 SRS cards** (2026-05-06: imported 593 user CSV flashcards from `newcards/` across 7 subjects, 3 dedups against existing fronts; CSVs were two-column Anki-style `front,back`, written into `<subject>/srs-cards/imported-flashcards-<subject>.yml` in shape-B; `newcards/` removed)
 - **901 reasoning atoms**
 - **68 triage scenarios**
 - **202 study-guide sections** across **934 KB** of rewritten prose

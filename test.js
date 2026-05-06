@@ -41,6 +41,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         }
         for (const sh of SHARDS) if (sh.guide) assert.ok(typeof sh.guide.body === 'string' && sh.guide.body.length > 100);
         for (const sh of SHARDS) { assert.ok(!('audio' in sh)); assert.ok(!('books' in sh)); }
+        assert.ok(!fs.existsSync(path.join(ROOT, 'newcards')), 'newcards/ should be removed');
+        assert.ok(MANIFEST.totals.cards >= 2551, 'manifest totals.cards should be >=2551 after newcards merge');
     });
 
     console.log('# scheduler+persistence+stats');
@@ -500,11 +502,11 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(masteryMod.forecastTo100(MANIFEST, SHARDMAP), null);
         // SW v13 + new modules
         const sw = READ('site/sw.js');
-        assert.ok(sw.includes('corpus-v13'));
+        assert.ok(sw.includes('corpus-v14'));
         for (const f of ['game.js', 'badges.js', 'quests.js', 'mastery.js', 'toast.js', 'confetti.js']) assert.ok(sw.includes(f), 'sw missing ' + f);
         // index.html ?v=12
-        assert.match(indexHtml, /app\.js\?v=12/);
-        assert.match(indexHtml, /style\.css\?v=12/);
+        assert.match(indexHtml, /app\.js\?v=13/);
+        assert.match(indexHtml, /style\.css\?v=13/);
         // infographics: relocated guides + infographics dir + shard arrays + lightbox + concise/ gone
         assert.ok(!fs.existsSync(path.join(ROOT, 'concise')), 'concise/ should be removed');
         for (const s of SUBJECTS) assert.ok(fs.existsSync(path.join(ROOT, s, 'study_guide.md')), s + '/study_guide.md missing');
