@@ -687,6 +687,11 @@ function simulateAssistant(userText) {
         state.streak = score >= 70 ? (state.streak || 0) + 1 : 0;
         renderStats();
         state.phase = 'graded';
+        try {
+            const ch = ('BroadcastChannel' in self) ? new BroadcastChannel('corpus') : null;
+            ch?.postMessage({ type: 'case:graded', score: score / 100, scenarioId: sc.id || sc.name });
+            ch?.close();
+        } catch {}
         return blocks.join('\n');
     }
 

@@ -47,10 +47,12 @@ export function mount(doc) {
         tog.textContent = t.running ? 'pause' : 'start';
         if (t.running) { t.remaining = Math.max(0, t.remaining - 1); save(t); }
         if (t.remaining === 0 && t.running) {
-            t.mode = t.mode === 'work' ? 'break' : 'work';
+            const wasWork = t.mode === 'work';
+            t.mode = wasWork ? 'break' : 'work';
             t.remaining = t.mode === 'work' ? WORK : BREAK_;
             t.running = false; save(t);
             if (navigator.vibrate) navigator.vibrate(200);
+            if (wasWork) { try { window.dispatchEvent(new CustomEvent('pomodoro:done')); } catch {} }
         }
     }
     setInterval(tick, 1000); tick();

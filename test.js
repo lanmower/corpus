@@ -422,10 +422,97 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const sw = READ('site/sw.js');
         assert.ok(sw.includes('corpus-v10') && sw.includes('schedule.js') && sw.includes('calendar.js'));
         // index.html cache-bust ?v=9
-        assert.match(indexHtml, /app\.js\?v=9/);
-        assert.match(indexHtml, /style\.css\?v=9/);
         // schedule emits BroadcastChannel + custom event
         for (const re of [/BroadcastChannel\('corpus'\)/, /schedule:updated/, /dispatchEvent/]) assert.match(READ('site/schedule.js'), re);
+    });
+
+    console.log('# phase 2 gamification + mastery');
+    const game = await import('./site/game.js');
+    const badgesMod = await import('./site/badges.js');
+    const questsMod = await import('./site/quests.js');
+    const masteryMod = await import('./site/mastery.js');
+    t('xp math + award + badges + quests + mastery + toasts + sw v11 + ?v=10 + new routes', () => {
+        global.localStorage.clear();
+        // xp curve
+        assert.strictEqual(game.xpForLevel(1), 100);
+        assert.ok(game.xpForLevel(2) > game.xpForLevel(1));
+        assert.strictEqual(game.levelFromXP(0), 1);
+        assert.ok(game.levelFromXP(100000) > 10);
+        // award xp persists + level rise
+        const g1 = game.awardXP(50, 'card_grade');
+        assert.strictEqual(g1.xp, 50);
+        assert.strictEqual(g1.level, 1);
+        const g2 = game.awardXP(60, 'card_grade');
+        assert.ok(g2.xp >= 110);
+        assert.ok(g2.level >= 2);
+        // toast suppression flag persists
+        game.setSuppressToasts(true);
+        assert.strictEqual(game.load().suppressToasts, true);
+        game.setSuppressToasts(false);
+        // badge predicate evaluation — synthetic snapshot
+        global.localStorage.clear();
+        const snap = {
+            progress: { streak: 7, history: [], todayGraded: 5, todayDate: '2026-05-06' },
+            gameState: { level: 5 }, mistakes: { cleared: 0 }, flag: { count: 0 }, notes: { count: 0 },
+            masterySubjects: {}, daysToExam: 30, hourNow: 12, comboGrade4: 0, srsStates: {}
+        };
+        assert.strictEqual(badgesMod.predicate('streak_7', snap), true);
+        assert.strictEqual(badgesMod.predicate('streak_30', snap), false);
+        assert.strictEqual(badgesMod.predicate('level_5', snap), true);
+        assert.strictEqual(badgesMod.predicate('level_10', snap), false);
+        assert.strictEqual(badgesMod.predicate('first_review', { ...snap, progress: { ...snap.progress, todayGraded: 1 } }), true);
+        // evaluateBadges awards via game.awardBadge
+        global.localStorage.clear();
+        badgesMod.evaluateBadges(snap);
+        const post = game.load();
+        assert.ok(post.badges.includes('streak_7'));
+        assert.ok(post.badges.includes('level_5'));
+        // quests deterministic daily roll
+        global.localStorage.clear();
+        const q1 = questsMod.rollDaily('2026-05-06');
+        const q2 = questsMod.rollDaily('2026-05-06');
+        assert.strictEqual(q1.daily.length, 3);
+        assert.deepStrictEqual(q1.daily.map(x => x.id), q2.daily.map(x => x.id));
+        // weekly roll
+        const wq = questsMod.rollWeekly(new Date('2026-05-04T12:00Z'));
+        assert.ok(wq.weekly && wq.weekly.id);
+        // progressOn bumps + claim awards xp
+        global.localStorage.clear();
+        const q3 = questsMod.rollDaily('2026-05-06');
+        const cardQuest = q3.daily.find(x => x.kind === 'card_count');
+        if (cardQuest) {
+            for (let i = 0; i < cardQuest.target; i++) questsMod.progressOn('srs:graded', { score: 4 });
+            const before = game.load().xp;
+            const r = questsMod.claim(cardQuest.id);
+            assert.ok(r && r.reward >= 200);
+            assert.ok(game.load().xp >= before + 200);
+        }
+        // mastery — empty shards => 0%
+        const emptyShards = Object.fromEntries(SUBJECTS.map(s => [s, { cards: [], guide: { sections: [] }, triage: { scenarios: [] } }]));
+        const m = masteryMod.overallProgress(MANIFEST, emptyShards);
+        assert.strictEqual(m.weighted, 0);
+        // mastery — real shards yields valid object
+        const m2 = masteryMod.overallProgress(MANIFEST, SHARDMAP);
+        assert.ok(m2.cards.total > 0 && m2.sections.total > 0 && m2.cases.total > 0);
+        assert.ok(typeof m2.weighted === 'number');
+        // forecast — zero rate => null
+        global.localStorage.setItem('corpus.progress.v1', JSON.stringify({ version: 1, history: [{ date: '2026-05-01', graded: 0 }, { date: '2026-05-02', graded: 0 }] }));
+        assert.strictEqual(masteryMod.forecastTo100(MANIFEST, SHARDMAP), null);
+        // SW v11 + new modules
+        const sw = READ('site/sw.js');
+        assert.ok(sw.includes('corpus-v11'));
+        for (const f of ['game.js', 'badges.js', 'quests.js', 'mastery.js', 'toast.js', 'confetti.js']) assert.ok(sw.includes(f), 'sw missing ' + f);
+        // index.html ?v=10
+        assert.match(indexHtml, /app\.js\?v=10/);
+        assert.match(indexHtml, /style\.css\?v=10/);
+        // app.js wiring
+        for (const re of [/import \* as game from '\.\/game\.js'/, /import \* as badges from '\.\/badges\.js'/, /import \* as quests from '\.\/quests\.js'/, /import \* as mastery from '\.\/mastery\.js'/, /import \* as toast from '\.\/toast\.js'/, /function renderQuests/, /function renderBadges/, /function renderXpChip/, /xp-chip/, /awardCardXP/, /'quests', 'quests'/, /'badges', 'badges'/, /pomodoro:done/, /case:graded/, /gamification/]) assert.match(appSrc, re);
+        // CSS tokens
+        assert.match(styleCss, /--c-xp/); assert.match(styleCss, /--c-quest/);
+        assert.match(styleCss, /\.xp-chip/); assert.match(styleCss, /\.toast-container/);
+        assert.match(styleCss, /\.badge-grid/); assert.match(styleCss, /\.quest-row/);
+        // triage-live broadcasts case:graded
+        assert.match(liveSrc, /case:graded/);
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

@@ -17,6 +17,11 @@ import * as usercards from './usercards.js';
 import * as confidence from './confidence.js';
 import * as schedule from './schedule.js';
 import * as calendar from './calendar.js';
+import * as game from './game.js';
+import * as badges from './badges.js';
+import * as quests from './quests.js';
+import * as mastery from './mastery.js';
+import * as toast from './toast.js';
 import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
 import { buildSearchIndex, mountPalette, snippet as searchSnippet } from './search.js';
 import { makeToggleButton } from './theme.js';
@@ -70,10 +75,10 @@ function el(tag, attrs = {}, ...kids) {
     return e;
 }
 
-const ROUTES = ['today', 'calendar', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'mistakes', 'notes', 'drill'];
+const ROUTES = ['today', 'calendar', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'mistakes', 'notes', 'drill', 'quests', 'badges'];
 const ROUTE_TITLES = { today: 'today', calendar: 'calendar', guides: 'guides', review: 'review',
     cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings',
-    mistakes: 'mistakes', notes: 'notes', drill: 'drill' };
+    mistakes: 'mistakes', notes: 'notes', drill: 'drill', quests: 'quests', badges: 'badges' };
 const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review' };
 
 function setDocTitle(route, subject) {
@@ -158,7 +163,7 @@ function render() {
     const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
         review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
         settings: renderSettings, mistakes: renderMistakes, notes: renderNotes,
-        drill: renderDrill };
+        drill: renderDrill, quests: renderQuests, badges: renderBadges };
     (fns[r] || renderToday)();
     updateFooter();
 }
@@ -232,6 +237,13 @@ function renderToday() {
 
     stage.append(renderStatusLine(p, due));
 
+    // Phase 2: XP/level bar + overall mastery ring + today's quests + schedule timeline
+    quests.ensureCurrent();
+    stage.append(renderXpBarFull());
+    stage.append(renderMasteryRing());
+    stage.append(renderQuestsPanel());
+    const tl = renderTimelineStrip(); if (tl) stage.append(tl);
+
     // One-sentence summary
     stage.append(el('p', { class: 'summary-line' },
         'today: ',
@@ -297,6 +309,7 @@ function renderToday() {
         ));
     }
     stage.append(jump);
+    const ach = renderAchievementsPanel(); if (ach) stage.append(ach);
 
     if (DEBUG) {
         // Recommended cases + 5-day recap behind ?debug
@@ -415,6 +428,11 @@ async function renderSubject() {
                             saveGuideTicks(all);
                             row.classList.toggle('done', e.target.checked);
                             lastpos.save('subject', subj);
+                            if (e.target.checked) {
+                                game.awardXP(game.XP.section_tick, 'section');
+                                quests.progressOn('section:ticked', { subject: subj });
+                                runBadgeEvaluation();
+                            }
                             render();
                         } }
                     }),
@@ -743,6 +761,8 @@ function gradeReview(cardId, score) {
     // Mistake log
     const card = state.reviewQueue?.[state.reviewIndex];
     if (score <= 2 && card) mistakes.logMistake(cardId, card._subject, score);
+    // Gamification — XP, combo, badges, quests
+    awardCardXP(score, card);
     // Undo record
     undo.record(cardId, prev);
     showUndoToast();
@@ -750,6 +770,51 @@ function gradeReview(cardId, score) {
     if (state.reviewIndex >= state.reviewQueueIds.length) state.reviewIndex = 0;
     state.reviewRevealed = false;
     renderReview();
+}
+
+function awardCardXP(score, card) {
+    const friendly = score <= 0 ? 1 : (score <= 2 ? 2 : (score <= 4 ? 3 : 4));
+    const amt = game.XP['card_grade_' + friendly] || 10;
+    game.awardXP(amt, 'card_grade');
+    const combo = game.bumpCombo(score);
+    if (combo >= 3) game.awardXP(game.XP.combo_bonus, 'combo');
+    quests.progressOn('srs:graded', { score, subject: card?._subject });
+    if (card?._subject) quests.progressOn('subject:touched', { subject: card._subject });
+    // daily-goal-hit one-shot
+    const p = progress.load();
+    if (p.todayGraded >= (p.dailyGoal || 30)) {
+        const g = game.load();
+        if (g.lastGoalHitDate !== p.todayDate) {
+            game.awardXP(game.XP.daily_goal_hit, 'daily_goal');
+            const g2 = game.load(); g2.lastGoalHitDate = p.todayDate; game.save(g2);
+        }
+    }
+    runBadgeEvaluation();
+}
+
+function runBadgeEvaluation() {
+    try {
+        const p = progress.load();
+        const states = srs.loadStates();
+        const masterySubjects = {};
+        for (const s of state.manifest?.subjects || []) {
+            const sm = mastery.subjectProgress(state.manifest, state.shards, s.subject);
+            masterySubjects[s.subject] = sm.weighted;
+        }
+        const mistakesArr = (() => { try { return JSON.parse(localStorage.getItem('corpus.mistakes.v1') || '[]'); } catch { return []; } })();
+        const cleared = mistakesArr.filter(m => (states[m.cardId]?.lastScore || 0) >= 3).length;
+        const notesArr = (() => { try { return JSON.parse(localStorage.getItem('corpus.notes.v1') || '{}'); } catch { return {}; } })();
+        let noteCount = 0; for (const k of Object.keys(notesArr)) noteCount += Object.keys(notesArr[k] || {}).length;
+        const flagSet = (() => { try { return JSON.parse(localStorage.getItem('corpus.flagged.v1') || '[]'); } catch { return []; } })();
+        const snap = {
+            progress: p, gameState: game.load(), srsStates: states,
+            mistakes: { cleared }, flag: { count: flagSet.length }, notes: { count: noteCount },
+            masterySubjects, daysToExam: srs.daysUntilExam(), hourNow: new Date().getHours(),
+            comboGrade4: game.load().comboCount || 0,
+            subjectsTouchedToday: Object.values(states).filter(s => s.lastReviewedAt && (Date.now() - s.lastReviewedAt) < 86400000).length
+        };
+        badges.evaluateBadges(snap);
+    } catch (e) { warn('badge eval', e.message); }
 }
 
 function showUndoToast() {
@@ -1149,6 +1214,18 @@ async function renderSettings() {
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'data')),
         el('div', { class: 'toolbar' }, exportBtn, importBtn, importInput, resetBtn)));
     stage.append(renderScheduleConfigPanel());
+    // Phase 2: gamification settings
+    const gState = game.load();
+    const suppressInput = el('input', { type: 'checkbox', id: 'suppress-toasts',
+        ...(gState.suppressToasts ? { checked: 'checked' } : {}),
+        on: { change: e => game.setSuppressToasts(e.target.checked) } });
+    const resetGameBtn = el('button', { class: 'chip', 'aria-label': 'reset gamification',
+        on: { click: () => { if (confirm('reset XP, badges, quests?')) { game.reset(); quests.reset(); render(); } } } }, 'reset gamification');
+    stage.append(el('div', { class: 'panel settings-section gamification' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'gamification')),
+        el('div', { class: 'toolbar' },
+            el('label', { for: 'suppress-toasts' }, suppressInput, ' suppress toasts'),
+            resetGameBtn)));
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'help')),
         el('div', { class: 'toolbar' }, shortcutsBtn,
@@ -1361,12 +1438,188 @@ function renderSparkline(history, days = 7) {
     return svg;
 }
 
+function renderXpChip() {
+    const g = game.load();
+    const info = game.xpToNext(g.xp);
+    const frac = Math.round(info.frac * 100);
+    return el('a', { id: 'xp-chip', class: 'xp-chip', href: '#stats',
+        'aria-label': `level ${info.level}, ${info.inLvl} of ${info.need} xp`,
+        on: { click: e => { e.preventDefault(); go('stats'); } } },
+        el('span', { class: 'xp-lvl' }, `Lv ${info.level}`),
+        el('span', { class: 'xp-bar' }, el('span', { class: 'xp-fill', style: `width:${frac}%` })),
+        el('span', { class: 'xp-num mono' }, `${info.inLvl}/${info.need}`)
+    );
+}
+
+function renderXpBarFull() {
+    const g = game.load();
+    const info = game.xpToNext(g.xp);
+    return el('div', { class: 'xp-bar-full panel' },
+        el('div', { class: 'xp-bar-head' },
+            el('span', { class: 'xp-bar-lvl' }, `level ${info.level}`),
+            el('span', { class: 'xp-bar-num mono' }, `${info.inLvl} / ${info.need} xp · total ${g.xp}`)),
+        el('div', { class: 'xp-bar-track' }, el('div', { class: 'xp-bar-fill', style: `width:${Math.round(info.frac*100)}%` }))
+    );
+}
+
+function renderMasteryRing() {
+    const m = mastery.overallProgress(state.manifest, state.shards);
+    const r = 48, c = 2 * Math.PI * r;
+    const off = c * (1 - m.weighted / 100);
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('class', 'mastery-ring'); svg.setAttribute('viewBox', '0 0 120 120');
+    svg.setAttribute('width', '120'); svg.setAttribute('height', '120');
+    svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', `overall mastery ${m.weighted}%`);
+    const bg = document.createElementNS(svgNS, 'circle');
+    bg.setAttribute('cx', '60'); bg.setAttribute('cy', '60'); bg.setAttribute('r', String(r));
+    bg.setAttribute('fill', 'none'); bg.setAttribute('stroke', 'var(--panel-3)'); bg.setAttribute('stroke-width', '10');
+    svg.appendChild(bg);
+    const fg = document.createElementNS(svgNS, 'circle');
+    fg.setAttribute('cx', '60'); fg.setAttribute('cy', '60'); fg.setAttribute('r', String(r));
+    fg.setAttribute('fill', 'none'); fg.setAttribute('stroke', 'var(--c-mastered, #6BB377)'); fg.setAttribute('stroke-width', '10');
+    fg.setAttribute('stroke-dasharray', String(c)); fg.setAttribute('stroke-dashoffset', String(off));
+    fg.setAttribute('stroke-linecap', 'round'); fg.setAttribute('transform', 'rotate(-90 60 60)');
+    svg.appendChild(fg);
+    const txt = document.createElementNS(svgNS, 'text');
+    txt.setAttribute('x', '60'); txt.setAttribute('y', '66'); txt.setAttribute('text-anchor', 'middle');
+    txt.setAttribute('font-size', '24'); txt.setAttribute('font-weight', '700'); txt.setAttribute('fill', 'currentColor');
+    txt.textContent = `${m.weighted}%`;
+    svg.appendChild(txt);
+    const wrap = el('div', { class: 'panel mastery-ring-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'overall mastery')),
+        el('div', { class: 'mastery-ring-row' }, svg,
+            el('div', { class: 'mastery-quad' },
+                el('div', { class: 'quad-row' }, el('span', {}, 'cards'), el('span', { class: 'mono' }, `${m.cards.pct}% (${m.cards.mastered}/${m.cards.total})`)),
+                el('div', { class: 'quad-row' }, el('span', {}, 'sections'), el('span', { class: 'mono' }, `${m.sections.pct}% (${m.sections.ticked}/${m.sections.total})`)),
+                el('div', { class: 'quad-row' }, el('span', {}, 'cases'), el('span', { class: 'mono' }, `${m.cases.pct}% (${m.cases.passed}/${m.cases.total})`)),
+                el('div', { class: 'quad-row' }, el('span', {}, 'mistakes'), el('span', { class: 'mono' }, `${m.mistakes.pct}% (${m.mistakes.cleared}/${m.mistakes.total})`))
+            ))
+    );
+    return wrap;
+}
+
+function renderQuestsPanel() {
+    const q = quests.ensureCurrent();
+    const panel = el('div', { class: 'panel quests-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "today's quests"),
+            el('a', { class: 'chip', href: '#quests', on: { click: e => { e.preventDefault(); go('quests'); } } }, 'all →'))
+    );
+    for (const item of q.daily) panel.append(questRow(item, 'daily'));
+    if (q.weekly) panel.append(questRow(q.weekly, 'weekly'));
+    return panel;
+}
+
+function questRow(item, kind) {
+    const pct = Math.min(100, Math.round(100 * (item.progress || 0) / item.target));
+    const ready = (item.progress || 0) >= item.target && !item.claimed;
+    return el('div', { class: 'quest-row' + (ready ? ' ready' : '') + (item.claimed ? ' claimed' : '') },
+        el('div', { class: 'quest-label' }, item.label, el('span', { class: 'quest-kind mono' }, ' ' + kind)),
+        el('div', { class: 'quest-track' }, el('div', { class: 'quest-fill', style: `width:${pct}%` })),
+        el('div', { class: 'quest-meta mono' }, `${item.progress || 0}/${item.target}`),
+        el('button', {
+            class: 'chip claim-btn', disabled: ready ? null : 'true',
+            on: { click: () => { if (ready) { quests.claim(item.id); render(); } } }
+        }, item.claimed ? 'claimed' : (ready ? 'claim' : 'locked'))
+    );
+}
+
+function renderTimelineStrip() {
+    const today = new Date().toISOString().slice(0, 10);
+    const dueCounts = {};
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject]; if (!sh) continue;
+        dueCounts[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id)).length;
+    }
+    const sched = schedule.getSchedule({ today, dueCounts });
+    const blocks = sched.blocks.filter(b => b.date === today);
+    if (!blocks.length) return null;
+    const panel = el('div', { class: 'panel timeline-strip-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "today's schedule"),
+            el('a', { class: 'chip', href: '#calendar', on: { click: e => { e.preventDefault(); go('calendar'); } } }, 'calendar →'))
+    );
+    const next = blocks.find(b => !b.done && b.kind === 'study');
+    if (next) panel.append(el('a', { class: 'primary-action', href: '#review',
+        on: { click: e => { e.preventDefault(); if (next.subject) { state.reviewSubjectFilter = next.subject; resetReviewQueue(); } go('review', next.subject); } } },
+        `start next block · ${next.subject || 'study'} (${next.len}m)`));
+    const strip = el('div', { class: 'timeline-strip' });
+    for (const b of blocks) {
+        const hh = String(Math.floor(b.startMin / 60)).padStart(2, '0');
+        const mm = String(b.startMin % 60).padStart(2, '0');
+        strip.append(el('div', { class: `timeline-block kind-${b.kind}` + (b.done ? ' done' : '') },
+            el('span', { class: 'tl-time mono' }, `${hh}:${mm}`),
+            el('span', { class: 'tl-label' }, b.kind === 'break' ? 'break' : (b.subject || 'study')),
+            el('span', { class: 'tl-len mono' }, `${b.len}m`),
+            b.kind === 'study' ? el('button', { class: 'chip',
+                on: { click: () => { schedule.markBlockComplete(b.id, !b.done); if (!b.done) { game.awardXP(game.XP.block_complete + Math.round(b.len/5), 'block'); quests.progressOn('block:done'); } render(); } } },
+                b.done ? '✓' : 'mark') : null
+        ));
+    }
+    panel.append(strip);
+    return panel;
+}
+
+function renderAchievementsPanel() {
+    const g = game.load();
+    if (!g.unlocks?.length) return null;
+    return el('div', { class: 'panel achievements-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'recent achievements'),
+            el('a', { class: 'chip', href: '#badges', on: { click: e => { e.preventDefault(); go('badges'); } } }, 'all →')),
+        ...g.unlocks.slice(0, 3).map(u => el('div', { class: 'row achievement-row' },
+            el('span', { class: 'badge-icon' }, u.icon || '★'),
+            el('span', { class: 'title' }, u.label || u.id),
+            el('span', { class: 'meta mono' }, new Date(u.ts).toISOString().slice(5, 10))))
+    );
+}
+
+function renderQuests() {
+    const q = quests.ensureCurrent();
+    const hist = quests.loadHistory();
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'quests'), el('h2', {}, 'daily + weekly')));
+    const panel = el('div', { class: 'panel quests-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'today (3)')),
+        ...q.daily.map(it => questRow(it, 'daily'))
+    );
+    stage.append(panel);
+    if (q.weekly) stage.append(el('div', { class: 'panel quests-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'this week')),
+        questRow(q.weekly, 'weekly')));
+    if (hist.length) {
+        stage.append(el('div', { class: 'panel' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'completed (last 14)')),
+            ...hist.slice(-14).reverse().map(h => el('div', { class: 'row' },
+                el('span', { class: 'title' }, h.label),
+                el('span', { class: 'meta mono' }, `+${h.reward}`)))));
+    }
+}
+
+function renderBadges() {
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'badges'), el('h2', {}, 'achievements')));
+    const g = game.load();
+    const grid = el('div', { class: 'badge-grid' });
+    for (const b of badges.CATALOG) {
+        const unlocked = g.badges.includes(b.id);
+        const u = g.unlocks.find(x => x.id === b.id);
+        grid.append(el('div', {
+            class: 'badge-tile' + (unlocked ? ' unlocked' : ' locked'),
+            title: b.desc + (unlocked && u ? ` — ${new Date(u.ts).toISOString().slice(0, 10)}` : '')
+        },
+            el('span', { class: 'badge-icon' }, b.icon),
+            el('span', { class: 'badge-label' }, b.label),
+            el('span', { class: 'badge-desc' }, b.desc)
+        ));
+    }
+    stage.append(grid);
+}
+
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
     const links = [['today', 'today'], ['calendar', 'calendar'], ['guides', 'guides'],
         ['review', 'review'], ['cases', 'cases'], ['stats', 'stats'],
-        ['mistakes', 'mistakes'], ['notes', 'notes']];
+        ['quests', 'quests'], ['badges', 'badges'], ['mistakes', 'mistakes'], ['notes', 'notes']];
     for (const [route, label] of links) {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
             on: { click: e => { e.preventDefault(); go(route); } } }, label));
@@ -1375,6 +1628,15 @@ function mountTopbar() {
         on: { click: e => { e.preventDefault(); go('settings'); } } }, 'settings'));
     nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta' }, 'tutor'));
     const right = document.querySelector('header.topbar .status');
+    const xpChip = renderXpChip();
+    right.parentElement.insertBefore(xpChip, right);
+    if (typeof window !== 'undefined') {
+        window.addEventListener('game:xp', () => {
+            const newChip = renderXpChip();
+            const old = document.getElementById('xp-chip');
+            if (old && old.parentElement) old.parentElement.replaceChild(newChip, old);
+        });
+    }
     const days = srs.daysUntilExam();
     const countdown = el('a', { class: 'exam-countdown', href: '#settings',
         title: 'days to exam — click to edit', 'aria-label': `${days} days to exam`,
@@ -1427,6 +1689,13 @@ function registerSW() {
             if (m) { const banner = el('div', { class: 'late-banner', role: 'status' }, m); document.body.appendChild(banner); }
         }
         registerSW();
+        toast.bind();
+        quests.ensureCurrent();
+        window.addEventListener('pomodoro:done', () => {
+            game.awardXP(game.XP.pomodoro_complete, 'pomodoro');
+            quests.progressOn('pomodoro:done');
+            runBadgeEvaluation();
+        });
         updateOnlineStatus();
         window.addEventListener('online', updateOnlineStatus);
         window.addEventListener('offline', updateOnlineStatus);
@@ -1442,6 +1711,11 @@ function registerSW() {
                     } else if (state.route === 'today' || state.route === 'settings') {
                         render();
                     }
+                } else if (e.data?.type === 'case:graded') {
+                    const score = e.data.score || 0;
+                    game.awardXP(game.XP.case_graded + (score >= 0.7 ? game.XP.case_passed_bonus : 0), 'case');
+                    quests.progressOn('case:graded', { score });
+                    runBadgeEvaluation();
                 }
             });
             state.broadcastChannel = ch;
