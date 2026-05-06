@@ -1,128 +1,228 @@
-- front: "What is the difference between time-dependent and concentration-dependent antibiotics?"
-  back: "Time-dependent antibiotics (e.g., penicillins, vancomycin, cephalosporins, lincosamides): effectiveness depends on how long drug levels stay above MIC. Concentration-dependent antibiotics (e.g., aminoglycosides, fluoroquinolones, macrolides): effectiveness depends on peak serum concentration relative to MIC."
-  tags: ["antibiotics", "pharmacodynamics", "drug-classes"]
-
-- front: "How should time-dependent antibiotics be dosed?"
-  back: "Time-dependent antibiotics are given frequently (e.g., every 4-6 hours) to maintain drug levels above the MIC. The goal is to ensure adequate time-above-MIC coverage throughout the dosing interval."
-  tags: ["dosing-strategy", "time-dependent", "antibiotics"]
-
-- front: "How should concentration-dependent antibiotics be dosed?"
-  back: "Concentration-dependent antibiotics are given as high doses once or twice daily to maximize peak concentration. This maximizes the concentration-dependent kill effect, achieving therapeutic success with less frequent dosing."
-  tags: ["dosing-strategy", "concentration-dependent", "antibiotics"]
-
-- front: "What are the key steps in antibiotic selection?"
-  back: "1. Make accurate clinical diagnosis and identify infectious vs non-infectious cause 2. Determine likely organisms based on site and clinical presentation 3. Collect appropriate samples before starting therapy 4. Base selection on pre-graduation education, scientific evidence, company information, clinical experience, local epidemiology, and local laboratory data 5. Always adapt national guidelines to local epidemiology and resistance patterns"
-  tags: ["antibiotic-selection", "clinical-practice"]
-
-- front: "What are the reasons for antibiotic failure after initiation?"
-  back: "1. Incorrect diagnosis (not actually an infection) 2. Wrong type of antibiotic agent 3. Inadequate dose 4. Incorrect frequency of administration 5. Poor drug distribution to infection site 6. Inadequate host nutrition 7. Use of inappropriate combination therapy 8. Emergence of resistance 9. Other factors (abscess formation, foreign body, immune system issues)"
-  tags: ["treatment-failure", "antibiotic-management"]
-
-- front: "What are the adverse effects and dangers of antimicrobial agents?"
-  back: "1. Direct toxicity: hypersensitivity, encephalitis, rash, fever, blood disorders 2. Effects on normal flora: superinfection (Candida, C. difficile) 3. Masking of severe infection (e.g., abscess) 4. Drug tolerability issues 5. Selection and proliferation of drug-resistant organisms"
-  tags: ["adverse-effects", "drug-safety", "antibiotic-complications"]
-
-- front: "What are the indications for antibiotic prophylaxis?"
-  back: "Medical indications: recurrent fever, recurrent UTI. Surgical indications: clean surgery (especially if involving prosthetic devices), lower limb amputation, endocarditis prevention, cardiac surgery with underlying conditions, surgeries with prosthetic devices."
-  tags: ["prophylaxis", "indications"]
-
-- front: "What are the criteria for choosing a prophylactic antibiotic?"
-  back: "1. Risk of infection is high 2. Probable organism is identified 3. Agent is likely to be active against the organism 4. Narrow spectrum preferred (not broad-spectrum) 5. Agent should NOT be one used for treatment 6. Must be appropriate for the specific indication"
-  tags: ["prophylaxis", "antibiotic-selection"]
-
-- front: "What is antibiotic resistance and why is it a major problem?"
-  back: "Antibiotic resistance: organisms develop the ability to survive in the presence of antibiotics that previously killed them. It emerged after penicillin discovery in 1940 and now affects up to 100% of certain organisms in some areas. Resistance leads to high morbidity and mortality, is a major public health crisis, and requires continuous monitoring and appropriate use strategies."
-  tags: ["resistance", "public-health", "stewardship"]
-
-- front: "What are the main resistance mechanisms in bacteria?"
-  back: "1. Enzyme production (beta-lactamase, AmpC, carbapenemase) 2. Altered target sites (penicillin-binding proteins) 3. Decreased permeability (gram-negative outer membrane) 4. Active efflux pumps 5. Biochemical modification of the antibiotic molecule"
-  tags: ["resistance-mechanisms", "microbiology"]
-
-- front: "What is the definition of antimicrobial stewardship?"
-  back: "Prudent use of antibiotics to achieve the best patient outcomes while minimizing antibiotic selective pressure, reducing drug resistance, and avoiding excessively adverse or undesirable dose effects."
-  tags: ["stewardship", "definition", "antimicrobial-management"]
-
-- front: "What are the core components of antimicrobial stewardship?"
-  back: "1. Confirm infection vs non-infection 2. Collect appropriate samples before treatment 3. Initiate empirical therapy after specimen collection 4. Monitor time to administration (should be rapid) 5. Re-evaluate at 48-72 hours (D2-D3) based on culture and sensitivity results 6. De-escalate, escalate, or tailor therapy according to results 7. Assess clinical stability and adjust accordingly"
-  tags: ["stewardship-components", "clinical-management"]
-
-- front: "What additional factors are important in antimicrobial stewardship?"
-  back: "1. Appropriate dose and frequency 2. Correct route of administration 3. De-escalation from IV to oral when appropriate 4. Appropriate duration of therapy 5. Whether to use single agent vs combination therapy 6. Monitoring for adverse effects 7. Regular team-based audit and feedback"
-  tags: ["stewardship-optimization", "clinical-management"]
-
-- front: "What is the proper duration of prophylactic antibiotics?"
-  back: "Prophylaxis should be given within 12 hours pre-operatively or 1 dose before surgery. Duration: typically one dose for most procedures. If dosing extends beyond 24 hours, it is considered therapeutic, not prophylactic (even if only 3-5 days). Prophylactic antibiotics must be kept short to prevent resistance emergence."
-  tags: ["prophylaxis-duration", "surgical-prophylaxis"]
-
-- front: "What is the triangle approach to antibiotic optimization?"
-  back: "Three interconnected factors: (1) Drug: dose, pharmacokinetics/pharmacodynamics, concentration-dependent vs time-dependent properties, toxicity, infection site penetration. (2) Organism: susceptibility, virulence factors, resistance mechanisms, biofilm production. (3) Host: age, organ function (renal, hepatic), body weight, comorbidities, immune status, source of infection."
-  tags: ["antibiotic-optimization", "pharmacotherapy"]
-
-- front: "How does patient age affect antibiotic selection?"
-  back: "Neonates: many antibiotics are contraindicated or have altered metabolism. Common organisms in neonates (Group B Streptococcus, Listeria, gram-negative bacilli) differ from older patients. Drug penetration and metabolism vary significantly. Special dosing considerations (e.g., reduced renal/hepatic function) are critical."
-  tags: ["age-considerations", "neonatal-therapy"]
-
-- front: "What host factors must be considered when choosing antibiotics?"
-  back: "1. Age and metabolic capacity 2. Body weight 3. Renal function (affects clearance) 4. Hepatic function (affects metabolism) 5. Site of infection (drug penetration requirements) 6. Immune status 7. Comorbid diseases 8. Nutritional status 9. Previous source of infection history"
-  tags: ["host-factors", "patient-assessment"]
-
-- front: "How should antibiotic therapy be adjusted based on culture and sensitivity results?"
-  back: "After 48-72 hours (D2-D3), review culture and sensitivity results. If organism is sensitive to initial choice: continue the same antibiotic. If resistance is found: step up to a more potent agent. Always tailor therapy based on susceptibility patterns rather than empirical choice."
-  tags: ["de-escalation", "culture-results", "therapy-adjustment"]
-
-- front: "When is it appropriate to switch from IV to oral antibiotics?"
-  back: "Switch from IV to oral when: (1) patient is clinically improving, (2) patient is tolerating oral intake, (3) appropriate oral agent with good bioavailability is available, (4) infection site allows for oral drug penetration."
-  tags: ["iv-to-oral-switch", "route-optimization"]
-
-- front: "What is the role of a team-based approach in antimicrobial stewardship?"
-  back: "Stewardship cannot be performed by one person alone. It requires a multidisciplinary team including: clinicians, microbiologists, pharmacists, nurses, and laboratory personnel. The team should: audit antibiotic usage, analyze data, provide feedback, establish guidelines, implement strategies, monitor compliance, and ensure adherence to stewardship principles."
-  tags: ["stewardship-team", "multidisciplinary-approach"]
-
-- front: "What strategies should an antimicrobial stewardship program employ?"
-  back: "1. Pre-authorization and restriction of certain antibiotics 2. Education and training for all staff 3. Development of institutional guidelines and clinical pathways 4. Antimicrobial cycling or rotation strategies 5. Combination therapy indications 6. Regular audit and feedback loops 7. Monitoring of resistance patterns 8. Analysis of antibiotic usage patterns"
-  tags: ["stewardship-strategies", "program-implementation"]
-
-- front: "What are the differences in antibiotic coverage needs for gram-positive vs gram-negative organisms?"
-  back: "Gram-positive organisms: covered by penicillins, cephalosporins, vancomycin, macrolides. Gram-negative organisms: require different agents (e.g., fluoroquinolones, aminoglycosides, certain beta-lactams). Anaerobic coverage: requires specific agents. Chart shows coverage by drug class for each category."
-  tags: ["gram-stain", "organism-coverage", "drug-selection"]
-
-- front: "How does antimicrobial stewardship relate to infection site?"
-  back: "Different infection sites require different considerations: UTI with complicated vs uncomplicated status affects antibiotic choice. CSF infections require agents with good CNS penetration. Localized infections (abscess) may require drainage in addition to antibiotics. The infection site also determines drug penetration requirements and local epidemiology."
-  tags: ["infection-site", "disease-specific", "antibiotic-selection"]
-
-- front: "What is meant by narrowing antibiotic coverage and when should it be done?"
-  back: "Narrowing coverage means switching from broad-spectrum antibiotics to more specific agents once the causative organism and susceptibilities are known. This is done at 48-72 hours when culture results return. Narrowing reduces selective pressure for resistance and minimizes impact on normal flora."
-  tags: ["de-escalation", "narrow-spectrum", "stewardship-principle"]
-
-- front: "Why should national guidelines be adapted to local epidemiology?"
-  back: "National guidelines are based on epidemiological data that may not apply to every institution. Resistance patterns vary by region and facility. Using unadapted national guidelines may select for resistant organisms at your facility. Local surveillance data must guide modifications to guidelines to achieve optimal outcomes while managing local resistance patterns."
-  tags: ["stewardship-principles", "local-adaptation", "guidelines"]
-
-- front: "What is the clinical evaluation pathway from presentation to appropriate therapy?"
-  back: "1. Patient presents with disease/symptoms 2. Ask: Is this really an infectious disease? 3. Make clinical diagnosis 4. Ask: Infectious or non-infectious problem? 5. Identify likely organisms for that site/diagnosis 6. Collect appropriate samples (blood, urine, CSF, etc) 7. Send specimens to laboratory 8. Start empirical therapy 9. Lab performs microscopy, gram stain, culture, organism ID, susceptibility testing 10. Report results at D2-D3 11. Adjust therapy based on results"
-  tags: ["clinical-pathway", "diagnostic-process", "therapy-initiation"]
-
-- front: "How are antibiotic susceptibilities determined in the laboratory?"
-  back: "Laboratory performs disk diffusion tests (Kirby-Bauer): antibiotic discs are placed on bacterial culture plates. After incubation, inhibition zones are measured. Zones are compared to standard guidelines to classify organisms as sensitive, intermediate, or resistant. This determines which antibiotics are effective against the specific organism."
-  tags: ["susceptibility-testing", "laboratory-methods", "microbiology"]
-
-- front: "What does a green color indicate on an antibiotic susceptibility disc test?"
-  back: "Green color (or larger inhibition zone) indicates the organism is sensitive to that antibiotic (susceptibility typically greater than 80 percent). Orange/intermediate color indicates partial susceptibility (around 80 percent susceptibility). Red/no zone indicates resistance (the antibiotic is not effective). Full sensitivity is not guaranteed even with new agents."
-  tags: ["susceptibility-interpretation", "laboratory-diagnostics"]
-
-- front: "What are the factors affecting choice of antibiotic in uncomplicated vs complicated UTI?"
-  back: "Uncomplicated UTI: typically simple organisms (E. coli), shorter therapy, oral agents usually sufficient. Complicated UTI: may have polymicrobial infections, structural/functional urinary tract abnormalities, requires broader coverage and longer duration. Choice of agent and duration depends on complexity and patient factors."
-  tags: ["uti-management", "disease-specific", "infection-classification"]
-
-- front: "What is the relationship between antibiotic use and antibiotic resistance development?"
-  back: "Every antibiotic use creates selective pressure favoring resistant organisms. Resistance emerges within populations when antibiotics eliminate susceptible bacteria, leaving resistant strains to proliferate. Overuse and misuse accelerate this process. Appropriate stewardship minimizes selective pressure and slows resistance emergence."
-  tags: ["resistance-development", "stewardship-rationale"]
-
-- front: "What are the components of combination antibiotic therapy?"
-  back: "Combination therapy should only be used with clear indications. Unnecessary combination kills all susceptible organisms and creates space for resistant organisms to emerge. Combination therapy is indicated for polymicrobial infections, enhanced coverage when organism is unknown, or specific synergistic effects. Single agent therapy should be used whenever possible."
-  tags: ["combination-therapy", "stewardship", "antibiotic-selection"]
-
-- front: "What is the bench-to-patient clinical pathway in antimicrobial stewardship?"
-  back: "Bench (Laboratory): microscopy, gram stain, culture, organism identification, susceptibility testing. Patient (Clinic): Initial diagnosis and empirical therapy selection, Re-evaluation at D2-D3 with lab results, therapy adjustment based on susceptibility, clinical monitoring for response and adverse effects."
-  tags: ["clinical-pathway", "laboratory-integration", "stewardship"]
-
+# Anki canonical export — pulmonology / Optimal Use Of Antibiotics - Antibiotic Stewardship
+# Generated by scripts/anki_migrate.js
+deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+notes:
+  - guid: c30e241046d3e5da
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is the difference between time-dependent and concentration-dependent antibiotics?"
+      Back: "Time-dependent antibiotics (e.g., penicillins, vancomycin, cephalosporins, lincosamides): effectiveness depends on how long drug levels stay above MIC. Concentration-dependent antibiotics (e.g., aminoglycosides, fluoroquinolones, macrolides): effectiveness depends on peak serum concentration relative to MIC."
+    tags: ["antibiotics", "pharmacodynamics", "drug-classes", "subject:pulmonology"]
+  - guid: 7e95254f6c1f6c71
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "How should time-dependent antibiotics be dosed?"
+      Back: "Time-dependent antibiotics are given frequently (e.g., every 4-6 hours) to maintain drug levels above the MIC. The goal is to ensure adequate time-above-MIC coverage throughout the dosing interval."
+    tags: ["dosing-strategy", "time-dependent", "antibiotics", "subject:pulmonology"]
+  - guid: 2204f6f59c83f229
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "How should concentration-dependent antibiotics be dosed?"
+      Back: "Concentration-dependent antibiotics are given as high doses once or twice daily to maximize peak concentration. This maximizes the concentration-dependent kill effect, achieving therapeutic success with less frequent dosing."
+    tags: ["dosing-strategy", "concentration-dependent", "antibiotics", "subject:pulmonology"]
+  - guid: 8dfde00cd74f732d
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the key steps in antibiotic selection?"
+      Back: "1. Make accurate clinical diagnosis and identify infectious vs non-infectious cause 2. Determine likely organisms based on site and clinical presentation 3. Collect appropriate samples before starting therapy 4. Base selection on pre-graduation education, scientific evidence, company information, clinical experience, local epidemiology, and local laboratory data 5. Always adapt national guidelines to local epidemiology and resistance patterns"
+    tags: ["antibiotic-selection", "clinical-practice", "subject:pulmonology"]
+  - guid: 8fded48a1e097854
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the reasons for antibiotic failure after initiation?"
+      Back: "1. Incorrect diagnosis (not actually an infection) 2. Wrong type of antibiotic agent 3. Inadequate dose 4. Incorrect frequency of administration 5. Poor drug distribution to infection site 6. Inadequate host nutrition 7. Use of inappropriate combination therapy 8. Emergence of resistance 9. Other factors (abscess formation, foreign body, immune system issues)"
+    tags: ["treatment-failure", "antibiotic-management", "subject:pulmonology"]
+  - guid: 52acfd4ad99df9ce
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the adverse effects and dangers of antimicrobial agents?"
+      Back: "1. Direct toxicity: hypersensitivity, encephalitis, rash, fever, blood disorders 2. Effects on normal flora: superinfection (Candida, C. difficile) 3. Masking of severe infection (e.g., abscess) 4. Drug tolerability issues 5. Selection and proliferation of drug-resistant organisms"
+    tags: ["adverse-effects", "drug-safety", "antibiotic-complications", "subject:pulmonology"]
+  - guid: a9dae23868d907ba
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the indications for antibiotic prophylaxis?"
+      Back: "Medical indications: recurrent fever, recurrent UTI. Surgical indications: clean surgery (especially if involving prosthetic devices), lower limb amputation, endocarditis prevention, cardiac surgery with underlying conditions, surgeries with prosthetic devices."
+    tags: ["prophylaxis", "indications", "subject:pulmonology"]
+  - guid: b11fdd2d0cb8c6eb
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the criteria for choosing a prophylactic antibiotic?"
+      Back: "1. Risk of infection is high 2. Probable organism is identified 3. Agent is likely to be active against the organism 4. Narrow spectrum preferred (not broad-spectrum) 5. Agent should NOT be one used for treatment 6. Must be appropriate for the specific indication"
+    tags: ["prophylaxis", "antibiotic-selection", "subject:pulmonology"]
+  - guid: 3efbb40ada91005e
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is antibiotic resistance and why is it a major problem?"
+      Back: "Antibiotic resistance: organisms develop the ability to survive in the presence of antibiotics that previously killed them. It emerged after penicillin discovery in 1940 and now affects up to 100% of certain organisms in some areas. Resistance leads to high morbidity and mortality, is a major public health crisis, and requires continuous monitoring and appropriate use strategies."
+    tags: ["resistance", "public-health", "stewardship", "subject:pulmonology"]
+  - guid: f76120925a42678a
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the main resistance mechanisms in bacteria?"
+      Back: "1. Enzyme production (beta-lactamase, AmpC, carbapenemase) 2. Altered target sites (penicillin-binding proteins) 3. Decreased permeability (gram-negative outer membrane) 4. Active efflux pumps 5. Biochemical modification of the antibiotic molecule"
+    tags: ["resistance-mechanisms", "microbiology", "subject:pulmonology"]
+  - guid: df77ffd692f7040e
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is the definition of antimicrobial stewardship?"
+      Back: "Prudent use of antibiotics to achieve the best patient outcomes while minimizing antibiotic selective pressure, reducing drug resistance, and avoiding excessively adverse or undesirable dose effects."
+    tags: ["stewardship", "definition", "antimicrobial-management", "subject:pulmonology"]
+  - guid: 74ab02f256cae9ed
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the core components of antimicrobial stewardship?"
+      Back: "1. Confirm infection vs non-infection 2. Collect appropriate samples before treatment 3. Initiate empirical therapy after specimen collection 4. Monitor time to administration (should be rapid) 5. Re-evaluate at 48-72 hours (D2-D3) based on culture and sensitivity results 6. De-escalate, escalate, or tailor therapy according to results 7. Assess clinical stability and adjust accordingly"
+    tags: ["stewardship-components", "clinical-management", "subject:pulmonology"]
+  - guid: d40840fdeafeab0f
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What additional factors are important in antimicrobial stewardship?"
+      Back: "1. Appropriate dose and frequency 2. Correct route of administration 3. De-escalation from IV to oral when appropriate 4. Appropriate duration of therapy 5. Whether to use single agent vs combination therapy 6. Monitoring for adverse effects 7. Regular team-based audit and feedback"
+    tags: ["stewardship-optimization", "clinical-management", "subject:pulmonology"]
+  - guid: f1b01c4117c2b7e0
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is the proper duration of prophylactic antibiotics?"
+      Back: "Prophylaxis should be given within 12 hours pre-operatively or 1 dose before surgery. Duration: typically one dose for most procedures. If dosing extends beyond 24 hours, it is considered therapeutic, not prophylactic (even if only 3-5 days). Prophylactic antibiotics must be kept short to prevent resistance emergence."
+    tags: ["prophylaxis-duration", "surgical-prophylaxis", "subject:pulmonology"]
+  - guid: 935f61b37d6f7757
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is the triangle approach to antibiotic optimization?"
+      Back: "Three interconnected factors: (1) Drug: dose, pharmacokinetics/pharmacodynamics, concentration-dependent vs time-dependent properties, toxicity, infection site penetration. (2) Organism: susceptibility, virulence factors, resistance mechanisms, biofilm production. (3) Host: age, organ function (renal, hepatic), body weight, comorbidities, immune status, source of infection."
+    tags: ["antibiotic-optimization", "pharmacotherapy", "subject:pulmonology"]
+  - guid: 343ad5d60424063a
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "How does patient age affect antibiotic selection?"
+      Back: "Neonates: many antibiotics are contraindicated or have altered metabolism. Common organisms in neonates (Group B Streptococcus, Listeria, gram-negative bacilli) differ from older patients. Drug penetration and metabolism vary significantly. Special dosing considerations (e.g., reduced renal/hepatic function) are critical."
+    tags: ["age-considerations", "neonatal-therapy", "subject:pulmonology"]
+  - guid: b80ca1917a2c0262
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What host factors must be considered when choosing antibiotics?"
+      Back: "1. Age and metabolic capacity 2. Body weight 3. Renal function (affects clearance) 4. Hepatic function (affects metabolism) 5. Site of infection (drug penetration requirements) 6. Immune status 7. Comorbid diseases 8. Nutritional status 9. Previous source of infection history"
+    tags: ["host-factors", "patient-assessment", "subject:pulmonology"]
+  - guid: 63174ccf2212a997
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "How should antibiotic therapy be adjusted based on culture and sensitivity results?"
+      Back: "After 48-72 hours (D2-D3), review culture and sensitivity results. If organism is sensitive to initial choice: continue the same antibiotic. If resistance is found: step up to a more potent agent. Always tailor therapy based on susceptibility patterns rather than empirical choice."
+    tags: ["de-escalation", "culture-results", "therapy-adjustment", "subject:pulmonology"]
+  - guid: 0f31b6347a09d43c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "When is it appropriate to switch from IV to oral antibiotics?"
+      Back: "Switch from IV to oral when: (1) patient is clinically improving, (2) patient is tolerating oral intake, (3) appropriate oral agent with good bioavailability is available, (4) infection site allows for oral drug penetration."
+    tags: ["iv-to-oral-switch", "route-optimization", "subject:pulmonology"]
+  - guid: 8efd6cc50bb6e46c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is the role of a team-based approach in antimicrobial stewardship?"
+      Back: "Stewardship cannot be performed by one person alone. It requires a multidisciplinary team including: clinicians, microbiologists, pharmacists, nurses, and laboratory personnel. The team should: audit antibiotic usage, analyze data, provide feedback, establish guidelines, implement strategies, monitor compliance, and ensure adherence to stewardship principles."
+    tags: ["stewardship-team", "multidisciplinary-approach", "subject:pulmonology"]
+  - guid: 79a2cccb5d9674d2
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What strategies should an antimicrobial stewardship program employ?"
+      Back: "1. Pre-authorization and restriction of certain antibiotics 2. Education and training for all staff 3. Development of institutional guidelines and clinical pathways 4. Antimicrobial cycling or rotation strategies 5. Combination therapy indications 6. Regular audit and feedback loops 7. Monitoring of resistance patterns 8. Analysis of antibiotic usage patterns"
+    tags: ["stewardship-strategies", "program-implementation", "subject:pulmonology"]
+  - guid: e28bc919ac38d76c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the differences in antibiotic coverage needs for gram-positive vs gram-negative organisms?"
+      Back: "Gram-positive organisms: covered by penicillins, cephalosporins, vancomycin, macrolides. Gram-negative organisms: require different agents (e.g., fluoroquinolones, aminoglycosides, certain beta-lactams). Anaerobic coverage: requires specific agents. Chart shows coverage by drug class for each category."
+    tags: ["gram-stain", "organism-coverage", "drug-selection", "subject:pulmonology"]
+  - guid: b675d8372e7d3822
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "How does antimicrobial stewardship relate to infection site?"
+      Back: "Different infection sites require different considerations: UTI with complicated vs uncomplicated status affects antibiotic choice. CSF infections require agents with good CNS penetration. Localized infections (abscess) may require drainage in addition to antibiotics. The infection site also determines drug penetration requirements and local epidemiology."
+    tags: ["infection-site", "disease-specific", "antibiotic-selection", "subject:pulmonology"]
+  - guid: da70fdd5bfd549fe
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is meant by narrowing antibiotic coverage and when should it be done?"
+      Back: "Narrowing coverage means switching from broad-spectrum antibiotics to more specific agents once the causative organism and susceptibilities are known. This is done at 48-72 hours when culture results return. Narrowing reduces selective pressure for resistance and minimizes impact on normal flora."
+    tags: ["de-escalation", "narrow-spectrum", "stewardship-principle", "subject:pulmonology"]
+  - guid: 31ffbef79d6ea0ea
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "Why should national guidelines be adapted to local epidemiology?"
+      Back: "National guidelines are based on epidemiological data that may not apply to every institution. Resistance patterns vary by region and facility. Using unadapted national guidelines may select for resistant organisms at your facility. Local surveillance data must guide modifications to guidelines to achieve optimal outcomes while managing local resistance patterns."
+    tags: ["stewardship-principles", "local-adaptation", "guidelines", "subject:pulmonology"]
+  - guid: cc9dabc57515d3a8
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is the clinical evaluation pathway from presentation to appropriate therapy?"
+      Back: "1. Patient presents with disease/symptoms 2. Ask: Is this really an infectious disease? 3. Make clinical diagnosis 4. Ask: Infectious or non-infectious problem? 5. Identify likely organisms for that site/diagnosis 6. Collect appropriate samples (blood, urine, CSF, etc) 7. Send specimens to laboratory 8. Start empirical therapy 9. Lab performs microscopy, gram stain, culture, organism ID, susceptibility testing 10. Report results at D2-D3 11. Adjust therapy based on results"
+    tags: ["clinical-pathway", "diagnostic-process", "therapy-initiation", "subject:pulmonology"]
+  - guid: dda65ff38486d0e5
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "How are antibiotic susceptibilities determined in the laboratory?"
+      Back: "Laboratory performs disk diffusion tests (Kirby-Bauer): antibiotic discs are placed on bacterial culture plates. After incubation, inhibition zones are measured. Zones are compared to standard guidelines to classify organisms as sensitive, intermediate, or resistant. This determines which antibiotics are effective against the specific organism."
+    tags: ["susceptibility-testing", "laboratory-methods", "microbiology", "subject:pulmonology"]
+  - guid: c6d27881a0539c2a
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What does a green color indicate on an antibiotic susceptibility disc test?"
+      Back: "Green color (or larger inhibition zone) indicates the organism is sensitive to that antibiotic (susceptibility typically greater than 80 percent). Orange/intermediate color indicates partial susceptibility (around 80 percent susceptibility). Red/no zone indicates resistance (the antibiotic is not effective). Full sensitivity is not guaranteed even with new agents."
+    tags: ["susceptibility-interpretation", "laboratory-diagnostics", "subject:pulmonology"]
+  - guid: cbbf8b1bda19c34e
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the factors affecting choice of antibiotic in uncomplicated vs complicated UTI?"
+      Back: "Uncomplicated UTI: typically simple organisms (E. coli), shorter therapy, oral agents usually sufficient. Complicated UTI: may have polymicrobial infections, structural/functional urinary tract abnormalities, requires broader coverage and longer duration. Choice of agent and duration depends on complexity and patient factors."
+    tags: ["uti-management", "disease-specific", "infection-classification", "subject:pulmonology"]
+  - guid: 01fed9c4fe0a1a73
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is the relationship between antibiotic use and antibiotic resistance development?"
+      Back: "Every antibiotic use creates selective pressure favoring resistant organisms. Resistance emerges within populations when antibiotics eliminate susceptible bacteria, leaving resistant strains to proliferate. Overuse and misuse accelerate this process. Appropriate stewardship minimizes selective pressure and slows resistance emergence."
+    tags: ["resistance-development", "stewardship-rationale", "subject:pulmonology"]
+  - guid: 812451e825018f5a
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What are the components of combination antibiotic therapy?"
+      Back: "Combination therapy should only be used with clear indications. Unnecessary combination kills all susceptible organisms and creates space for resistant organisms to emerge. Combination therapy is indicated for polymicrobial infections, enhanced coverage when organism is unknown, or specific synergistic effects. Single agent therapy should be used whenever possible."
+    tags: ["combination-therapy", "stewardship", "antibiotic-selection", "subject:pulmonology"]
+  - guid: 9b2f5cd605b39987
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Optimal Use Of Antibiotics - Antibiotic Stewardship"
+    fields:
+      Front: "What is the bench-to-patient clinical pathway in antimicrobial stewardship?"
+      Back: "Bench (Laboratory): microscopy, gram stain, culture, organism identification, susceptibility testing. Patient (Clinic): Initial diagnosis and empirical therapy selection, Re-evaluation at D2-D3 with lab results, therapy adjustment based on susceptibility, clinical monitoring for response and adverse effects."
+    tags: ["clinical-pathway", "laboratory-integration", "stewardship", "subject:pulmonology"]

@@ -1,119 +1,214 @@
-- front: "What is the epidemiology of kidney disease globally?"
-  back: "Approximately 10% of the world's population has some form of kidney disease, and about 10% of all hospital admissions involve patients who develop kidney injury."
-  tags: ["epidemiology", "global-health", "kidney-disease"]
-
-- front: "What are the dimensions and location of the kidneys?"
-  back: "Kidneys are approximately 10-12 centimeters in size and are located in the retroperitoneum between T12 and L3 vertebrae. The right kidney is slightly lower than the left due to the liver. They weigh approximately 150-180 grams depending on patient size."
-  tags: ["anatomy", "kidney", "dimensions", "location"]
-
-- front: "What are the main anatomical divisions of the kidney?"
-  back: "The kidney is divided into: renal cortex, renal medulla, renal pelvis, and renal capsule."
-  tags: ["anatomy", "kidney", "structure"]
-
-- front: "Describe the arterial blood supply to the kidney."
-  back: "Blood supply originates from the aorta and flows through segmental arteries, then interlobular arteries, eventually becoming afferent arterioles that supply the glomerulus."
-  tags: ["anatomy", "blood-supply", "arteries"]
-
-- front: "What percentage of cardiac output does the kidney receive?"
-  back: "The kidney receives approximately 20% of cardiac output. This means with every heartbeat, about one-fifth of the heart's output goes to the kidneys."
-  tags: ["physiology", "kidney", "blood-flow", "cardiac-output"]
-
-- front: "What is a nephron and how many are present in each kidney?"
-  back: "A nephron is the functional unit of the kidney composed of a renal tubule and glomerulus. A normal adult has approximately one million nephrons per kidney."
-  tags: ["anatomy", "nephron", "functional-unit"]
-
-- front: "What are the segments of the renal tubule?"
-  back: "The renal tubule consists of: proximal convoluted tubule, loop of Henle, distal convoluted tubule, and collecting duct. Each segment has distinctive cellular lining and function."
-  tags: ["anatomy", "renal-tubule", "segments"]
-
-- front: "What are the main functions of the kidney?"
-  back: "The kidney has four main functions: (1) elimination of waste products, (2) regulation of water and electrolytes, (3) regulation of acid-base physiology, (4) regulation of blood pressure and blood volume."
-  tags: ["physiology", "kidney-function", "homeostasis"]
-
-- front: "What are the components of the juxtaglomerular apparatus?"
-  back: "The juxtaglomerular apparatus includes: (1) juxtaglomerular cells (modified smooth muscle cells in the afferent arteriole), (2) macula densa (specialized cells in the distal convoluted tubule that monitor sodium-chloride concentration)."
-  tags: ["anatomy", "juxtaglomerular-apparatus", "kidney"]
-
-- front: "What happens when urine becomes hyperosmolar in the distal tubule?"
-  back: "When urine is hyperosmolar, the macula densa triggers release of renin, which vasoconstricts the efferent arteriole and increases GFR."
-  tags: ["physiology", "renin-angiotensin", "GFR"]
-
-- front: "What is the effect of adenosine on GFR?"
-  back: "When urine is hyperosmolar, adenosine is released, which causes vasoconstriction of the afferent arteriole, reducing GFR."
-  tags: ["physiology", "GFR", "adenosine"]
-
-- front: "What are the hormones/substances produced by the kidney?"
-  back: "The kidney produces erythropoietin (regulates red blood cell production) and vitamin D (calcium and phosphate metabolism)."
-  tags: ["physiology", "kidney", "endocrine", "hormones"]
-
-- front: "What are the main clinical syndromes in nephrology based on pathological location?"
-  back: "Clinical syndromes include: (1) tubulo-interstitial disease (tubular and interstitial problems), (2) vascular disease (small vessel and large vessel disease, pregnancy-related), (3) glomerular disease (nephritic or nephrotic syndrome)."
-  tags: ["clinical-syndromes", "classification", "nephrology"]
-
-- front: "What is the difference between nephritic and nephrotic syndrome?"
-  back: "Nephritic syndrome is associated with glomerular inflammation presenting with hematuria, hypertension, and reduced GFR. Nephrotic syndrome presents with massive proteinuria, hypoalbuminemia, edema, and hyperlipidemia."
-  tags: ["glomerular-disease", "nephritic", "nephrotic"]
-
-- front: "What are the main clinical presentations of kidney disease?"
-  back: "Clinical presentations include: asymptomatic urinary abnormalities, isolated proteinuria, microscopic hematuria, macroscopic hematuria, nephrotic syndrome, nephritic syndrome, acute kidney injury, chronic kidney disease, and end-stage kidney disease."
-  tags: ["clinical-presentation", "symptoms", "diagnosis"]
-
-- front: "Why are most cases of kidney disease asymptomatic in early stages?"
-  back: "The majority of kidney disease cases are asymptomatic, especially in earlier stages, because the kidneys have significant functional reserve and can lose up to 50% of function before symptoms appear."
-  tags: ["pathophysiology", "clinical-presentation", "asymptomatic"]
-
-- front: "What past medical history questions are important in kidney disease assessment?"
-  back: "Important questions include: urinary problems during childhood, previously documented kidney disease, results of employment/insurance checks, history of hypertension or diabetes (how diagnosed, treated, and managed), history of systemic diseases."
-  tags: ["history-taking", "assessment", "nephrology"]
-
-- front: "What are the main symptoms related to urinary tract disease?"
-  back: "Symptoms include: pain in the flank, ureteric area or suprapubic region; hematuria (blood in urine); changes in urine appearance or volume (polyuria or oliguria)."
-  tags: ["urinary-symptoms", "history", "assessment"]
-
-- front: "What lower urinary tract symptoms may indicate urological disease?"
-  back: "Lower urinary tract symptoms include: reduced force of stream, hesitancy, straining, intermittent flow, sensation of incomplete emptying, retention of urine, and storage abnormalities (frequency, urgency, dysuria)."
-  tags: ["lower-urinary-tract", "symptoms", "assessment"]
-
-- front: "What systemic disease clues should be identified on system review?"
-  back: "Important clues include: skin rashes, painful joints, muscle pain, Raynaud's phenomenon, dry painful eyes, fever or night sweats, sinusitis/rhinitis/epistaxis, mouth ulcers, or photosensitivity - suggesting systemic causes of kidney disease."
-  tags: ["system-review", "systemic-disease", "assessment"]
-
-- front: "What medications can be nephrotoxic?"
-  back: "Nephrotoxic medications include: non-steroidal anti-inflammatory drugs (NSAIDs), certain antibiotics, ACE inhibitors/ARBs (in specific contexts), and chemotherapy agents."
-  tags: ["drug-history", "nephrotoxicity", "medications"]
-
-- front: "What ethnic and racial predispositions exist for kidney disease?"
-  back: "IgA nephropathy is commonly found in Caucasian and Japanese populations; Diabetes and hypertension are commonly found in Black and Asian populations; Lupus is commonly found in Black and Asian populations."
-  tags: ["epidemiology", "ethnicity", "genetic-predisposition"]
-
-- front: "What social and lifestyle factors affect kidney disease risk?"
-  back: "Risk factors include: smoking (increases cardiovascular and kidney risk), occupational exposure to nephrotoxic agents, hepatitis risk, HIV risk, physical inactivity, socioeconomic status, housing conditions, and access to healthcare."
-  tags: ["social-history", "risk-factors", "lifestyle"]
-
-- front: "What features of advanced kidney disease appear on general examination?"
-  back: "Features include: evidence of uremia (hyperventilation, hiccups), pallor, cellular complexion, hydration status assessment, edema, neuropathy, bruising or scratch marks, eye findings, mouth changes, and presence of rash."
-  tags: ["physical-examination", "advanced-disease", "findings"]
-
-- front: "What vascular access findings may be seen on examination in kidney disease?"
-  back: "Vascular findings include: presence of arterio-venous fistulas, scars from dialysis, evidence of previous kidney transplantation, and assessment of kidney masses or tenderness."
-  tags: ["physical-examination", "vascular-access", "dialysis"]
-
-- front: "What key findings should be assessed on abdominal examination in kidney disease?"
-  back: "Key findings include: scars indicating dialysis or previous operations, presence or absence of kidneys on palpation, kidney masses, presence of edema, bruising or pigmentation, and costovertebral angle tenderness."
-  tags: ["physical-examination", "abdomen", "assessment"]
-
-- front: "What is the importance of urine analysis in kidney disease evaluation?"
-  back: "Urine analysis is one of the most important physical examination findings. It can show glucose (diabetes), blood (hematuria suggesting stone or glomerulonephritis), protein (kidney damage), and urinary sediment characteristics."
-  tags: ["urine-analysis", "investigation", "assessment"]
-
-- front: "What cardiovascular examination findings are relevant in kidney disease?"
-  back: "Important findings include: blood pressure (lying and standing), jugular venous pressure, evidence of edema (pulmonary or peripheral), apex beat, heart sounds, pericardial rub, pleural effusions, and signs of pulmonary edema."
-  tags: ["cardiovascular-examination", "assessment", "nephrology"]
-
-- front: "What is the head-to-toe approach to examining a patient with kidney disease?"
-  back: "Head to toe examination assesses: confusion/lethargy (advanced disease), puffy face and eyelids (edema), bruising and bleeding, nausea and vomiting, urinary symptoms, bone pain (osteodystrophy), polyneuropathy, and ankle edema."
-  tags: ["physical-examination", "systematic-approach", "assessment"]
-
-- front: "What are the main nephrology topics covered in the curriculum?"
-  back: "Main topics include: Chronic Kidney Disease, Hypertensive Nephropathy, Diabetic Kidney Disease, HIV and the Kidney, Glomerular Disease, Acute Kidney Injury, Urinary Tract Infections, Drugs and the Kidney, and Kidney Replacement Therapies."
-  tags: ["curriculum", "nephrology-topics", "overview"]
+# Anki canonical export — nephrology / Nephrology_Introduction_CMED4IIM1_2026
+# Generated by scripts/anki_migrate.js
+deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+notes:
+  - guid: 8ed771cd3155299e
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What is the epidemiology of kidney disease globally?"
+      Back: "Approximately 10% of the world's population has some form of kidney disease, and about 10% of all hospital admissions involve patients who develop kidney injury."
+    tags: ["epidemiology", "global-health", "kidney-disease", "subject:nephrology"]
+  - guid: 127c8dc095e3cc90
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the dimensions and location of the kidneys?"
+      Back: "Kidneys are approximately 10-12 centimeters in size and are located in the retroperitoneum between T12 and L3 vertebrae. The right kidney is slightly lower than the left due to the liver. They weigh approximately 150-180 grams depending on patient size."
+    tags: ["anatomy", "kidney", "dimensions", "location", "subject:nephrology"]
+  - guid: e24c728f8ff56f7a
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the main anatomical divisions of the kidney?"
+      Back: "The kidney is divided into: renal cortex, renal medulla, renal pelvis, and renal capsule."
+    tags: ["anatomy", "kidney", "structure", "subject:nephrology"]
+  - guid: b619de9cb5e1bc31
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "Describe the arterial blood supply to the kidney."
+      Back: "Blood supply originates from the aorta and flows through segmental arteries, then interlobular arteries, eventually becoming afferent arterioles that supply the glomerulus."
+    tags: ["anatomy", "blood-supply", "arteries", "subject:nephrology"]
+  - guid: 860f580126dcaeba
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What percentage of cardiac output does the kidney receive?"
+      Back: "The kidney receives approximately 20% of cardiac output. This means with every heartbeat, about one-fifth of the heart's output goes to the kidneys."
+    tags: ["physiology", "kidney", "blood-flow", "cardiac-output", "subject:nephrology"]
+  - guid: 3cde79b02c46dc38
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What is a nephron and how many are present in each kidney?"
+      Back: "A nephron is the functional unit of the kidney composed of a renal tubule and glomerulus. A normal adult has approximately one million nephrons per kidney."
+    tags: ["anatomy", "nephron", "functional-unit", "subject:nephrology"]
+  - guid: 9cd4bcee71ab96b5
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the segments of the renal tubule?"
+      Back: "The renal tubule consists of: proximal convoluted tubule, loop of Henle, distal convoluted tubule, and collecting duct. Each segment has distinctive cellular lining and function."
+    tags: ["anatomy", "renal-tubule", "segments", "subject:nephrology"]
+  - guid: 96df3f8cc03167fd
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the main functions of the kidney?"
+      Back: "The kidney has four main functions: (1) elimination of waste products, (2) regulation of water and electrolytes, (3) regulation of acid-base physiology, (4) regulation of blood pressure and blood volume."
+    tags: ["physiology", "kidney-function", "homeostasis", "subject:nephrology"]
+  - guid: 536630fb71b7df68
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the components of the juxtaglomerular apparatus?"
+      Back: "The juxtaglomerular apparatus includes: (1) juxtaglomerular cells (modified smooth muscle cells in the afferent arteriole), (2) macula densa (specialized cells in the distal convoluted tubule that monitor sodium-chloride concentration)."
+    tags: ["anatomy", "juxtaglomerular-apparatus", "kidney", "subject:nephrology"]
+  - guid: bc9ebba9a5883004
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What happens when urine becomes hyperosmolar in the distal tubule?"
+      Back: "When urine is hyperosmolar, the macula densa triggers release of renin, which vasoconstricts the efferent arteriole and increases GFR."
+    tags: ["physiology", "renin-angiotensin", "GFR", "subject:nephrology"]
+  - guid: c0941e22ff4dd26e
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What is the effect of adenosine on GFR?"
+      Back: "When urine is hyperosmolar, adenosine is released, which causes vasoconstriction of the afferent arteriole, reducing GFR."
+    tags: ["physiology", "GFR", "adenosine", "subject:nephrology"]
+  - guid: 345e69bd878909a5
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the hormones/substances produced by the kidney?"
+      Back: "The kidney produces erythropoietin (regulates red blood cell production) and vitamin D (calcium and phosphate metabolism)."
+    tags: ["physiology", "kidney", "endocrine", "hormones", "subject:nephrology"]
+  - guid: 54c4ac78c12dc83d
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the main clinical syndromes in nephrology based on pathological location?"
+      Back: "Clinical syndromes include: (1) tubulo-interstitial disease (tubular and interstitial problems), (2) vascular disease (small vessel and large vessel disease, pregnancy-related), (3) glomerular disease (nephritic or nephrotic syndrome)."
+    tags: ["clinical-syndromes", "classification", "nephrology", "subject:nephrology"]
+  - guid: 36194296e7d54731
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What is the difference between nephritic and nephrotic syndrome?"
+      Back: "Nephritic syndrome is associated with glomerular inflammation presenting with hematuria, hypertension, and reduced GFR. Nephrotic syndrome presents with massive proteinuria, hypoalbuminemia, edema, and hyperlipidemia."
+    tags: ["glomerular-disease", "nephritic", "nephrotic", "subject:nephrology"]
+  - guid: f8501b9dedcd5f09
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the main clinical presentations of kidney disease?"
+      Back: "Clinical presentations include: asymptomatic urinary abnormalities, isolated proteinuria, microscopic hematuria, macroscopic hematuria, nephrotic syndrome, nephritic syndrome, acute kidney injury, chronic kidney disease, and end-stage kidney disease."
+    tags: ["clinical-presentation", "symptoms", "diagnosis", "subject:nephrology"]
+  - guid: 8ece323520de8926
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "Why are most cases of kidney disease asymptomatic in early stages?"
+      Back: "The majority of kidney disease cases are asymptomatic, especially in earlier stages, because the kidneys have significant functional reserve and can lose up to 50% of function before symptoms appear."
+    tags: ["pathophysiology", "clinical-presentation", "asymptomatic", "subject:nephrology"]
+  - guid: de97b37c8daac212
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What past medical history questions are important in kidney disease assessment?"
+      Back: "Important questions include: urinary problems during childhood, previously documented kidney disease, results of employment/insurance checks, history of hypertension or diabetes (how diagnosed, treated, and managed), history of systemic diseases."
+    tags: ["history-taking", "assessment", "nephrology", "subject:nephrology"]
+  - guid: 1f41f4b4089a1612
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the main symptoms related to urinary tract disease?"
+      Back: "Symptoms include: pain in the flank, ureteric area or suprapubic region; hematuria (blood in urine); changes in urine appearance or volume (polyuria or oliguria)."
+    tags: ["urinary-symptoms", "history", "assessment", "subject:nephrology"]
+  - guid: fb9750c805f59310
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What lower urinary tract symptoms may indicate urological disease?"
+      Back: "Lower urinary tract symptoms include: reduced force of stream, hesitancy, straining, intermittent flow, sensation of incomplete emptying, retention of urine, and storage abnormalities (frequency, urgency, dysuria)."
+    tags: ["lower-urinary-tract", "symptoms", "assessment", "subject:nephrology"]
+  - guid: 086b21219b640ab9
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What systemic disease clues should be identified on system review?"
+      Back: "Important clues include: skin rashes, painful joints, muscle pain, Raynaud's phenomenon, dry painful eyes, fever or night sweats, sinusitis/rhinitis/epistaxis, mouth ulcers, or photosensitivity - suggesting systemic causes of kidney disease."
+    tags: ["system-review", "systemic-disease", "assessment", "subject:nephrology"]
+  - guid: 8ff9ebaf21b21aaa
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What medications can be nephrotoxic?"
+      Back: "Nephrotoxic medications include: non-steroidal anti-inflammatory drugs (NSAIDs), certain antibiotics, ACE inhibitors/ARBs (in specific contexts), and chemotherapy agents."
+    tags: ["drug-history", "nephrotoxicity", "medications", "subject:nephrology"]
+  - guid: 20862fc3fb780f59
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What ethnic and racial predispositions exist for kidney disease?"
+      Back: "IgA nephropathy is commonly found in Caucasian and Japanese populations; Diabetes and hypertension are commonly found in Black and Asian populations; Lupus is commonly found in Black and Asian populations."
+    tags: ["epidemiology", "ethnicity", "genetic-predisposition", "subject:nephrology"]
+  - guid: b19c9e2c3af6e76a
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What social and lifestyle factors affect kidney disease risk?"
+      Back: "Risk factors include: smoking (increases cardiovascular and kidney risk), occupational exposure to nephrotoxic agents, hepatitis risk, HIV risk, physical inactivity, socioeconomic status, housing conditions, and access to healthcare."
+    tags: ["social-history", "risk-factors", "lifestyle", "subject:nephrology"]
+  - guid: 2702f5c7c9db5e35
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What features of advanced kidney disease appear on general examination?"
+      Back: "Features include: evidence of uremia (hyperventilation, hiccups), pallor, cellular complexion, hydration status assessment, edema, neuropathy, bruising or scratch marks, eye findings, mouth changes, and presence of rash."
+    tags: ["physical-examination", "advanced-disease", "findings", "subject:nephrology"]
+  - guid: 6aca9b0d3a8531b3
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What vascular access findings may be seen on examination in kidney disease?"
+      Back: "Vascular findings include: presence of arterio-venous fistulas, scars from dialysis, evidence of previous kidney transplantation, and assessment of kidney masses or tenderness."
+    tags: ["physical-examination", "vascular-access", "dialysis", "subject:nephrology"]
+  - guid: 693f6c835fbe0596
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What key findings should be assessed on abdominal examination in kidney disease?"
+      Back: "Key findings include: scars indicating dialysis or previous operations, presence or absence of kidneys on palpation, kidney masses, presence of edema, bruising or pigmentation, and costovertebral angle tenderness."
+    tags: ["physical-examination", "abdomen", "assessment", "subject:nephrology"]
+  - guid: 7c6bda379e510e79
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What is the importance of urine analysis in kidney disease evaluation?"
+      Back: "Urine analysis is one of the most important physical examination findings. It can show glucose (diabetes), blood (hematuria suggesting stone or glomerulonephritis), protein (kidney damage), and urinary sediment characteristics."
+    tags: ["urine-analysis", "investigation", "assessment", "subject:nephrology"]
+  - guid: 3c31f701ab13d71e
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What cardiovascular examination findings are relevant in kidney disease?"
+      Back: "Important findings include: blood pressure (lying and standing), jugular venous pressure, evidence of edema (pulmonary or peripheral), apex beat, heart sounds, pericardial rub, pleural effusions, and signs of pulmonary edema."
+    tags: ["cardiovascular-examination", "assessment", "nephrology", "subject:nephrology"]
+  - guid: 0a66b5024ab30501
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What is the head-to-toe approach to examining a patient with kidney disease?"
+      Back: "Head to toe examination assesses: confusion/lethargy (advanced disease), puffy face and eyelids (edema), bruising and bleeding, nausea and vomiting, urinary symptoms, bone pain (osteodystrophy), polyneuropathy, and ankle edema."
+    tags: ["physical-examination", "systematic-approach", "assessment", "subject:nephrology"]
+  - guid: e254f72b978c5001
+    noteType: Basic
+    deck: "Corpus::Nephrology::Nephrology_Introduction_CMED4IIM1_2026"
+    fields:
+      Front: "What are the main nephrology topics covered in the curriculum?"
+      Back: "Main topics include: Chronic Kidney Disease, Hypertensive Nephropathy, Diabetic Kidney Disease, HIV and the Kidney, Glomerular Disease, Acute Kidney Injury, Urinary Tract Infections, Drugs and the Kidney, and Kidney Replacement Therapies."
+    tags: ["curriculum", "nephrology-topics", "overview", "subject:nephrology"]

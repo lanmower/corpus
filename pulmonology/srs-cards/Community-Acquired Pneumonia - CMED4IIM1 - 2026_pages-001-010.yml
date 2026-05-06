@@ -1,201 +1,179 @@
-﻿- id: card-01
-  front: "What is the definition of community acquired pneumonia?"
-  back: |
-    An infection of the low respiratory tract resulting in parenchymal lung inflammation, typically associated with acute symptoms including cough, sputum production, shortness of breath, and pleural chest pain, with new infiltrates visible on chest radiograph.
-  review_count: 0
-  difficulty: medium
-  topic: definition
-
-- id: card-02
-  front: "What is the incidence of pneumonia in South Africa?"
-  back: |
-    Approximately 400,000 cases per 100,000 population, with peak incidence in those aged 25-64 years, driven by high HIV prevalence in this age group.
-  review_count: 0
-  difficulty: medium
-  topic: epidemiology
-
-- id: card-03
-  front: "What is the HIV prevalence in hospitalized pneumonia patients?"
-  back: |
-    Approximately 70% overall, with rates as high as 90% in patients aged 25-44 years.
-  review_count: 0
-  difficulty: medium
-  topic: epidemiology
-
-- id: card-04
-  front: "What are the case fatality rates for pneumonia?"
-  back: |
-    Overall approximately 5%, rising to 12% in hospitalized patients and exceeding 40% in those requiring intensive care support.
-  review_count: 0
-  difficulty: medium
-  topic: prognosis
-
-- id: card-05
-  front: "List the major risk factors for community acquired pneumonia."
-  back: |
-    Older age, comorbidities (COPD, asthma, cardiac disease), immunosuppression (diabetes, HIV), recent viral infection, substance abuse, poverty, overcrowding, and pollution.
-  review_count: 0
-  difficulty: medium
-  topic: risk-factors
-
-- id: card-06
-  front: "What is the most common cause of pneumonia globally?"
-  back: |
-    Pneumococcus (Streptococcus pneumoniae) is the most common identified organism. However, no pathogen is identified in approximately 40% of cases even after invasive investigation.
-  review_count: 0
-  difficulty: medium
-  topic: etiology
-
-- id: card-07
-  front: "How has pneumococcal vaccination affected pneumonia epidemiology?"
-  back: |
-    There has been a global decrease in pneumococcal disease proportion following vaccination introduction. South Africa introduced the vaccine into routine infant immunization in 2009.
-  review_count: 0
-  difficulty: medium
-  topic: etiology
-
-- id: card-08
-  front: "What is the key finding regarding tuberculosis in pneumonia in South Africa?"
-  back: |
-    TB was identified in approximately 40% of hospitalized pneumonia cases in Durban, outranking pneumococcus. This was true in both HIV-positive and HIV-negative populations.
-  review_count: 0
-  difficulty: medium
-  topic: etiology
-
-- id: card-09
-  front: "What are the typical clinical symptoms of pneumonia?"
-  back: |
-    Cough, sputum production, shortness of breath, and pleural chest pain. Signs may be localized to lungs or systemic.
-  review_count: 0
-  difficulty: easy
-  topic: clinical-presentation
-
-- id: card-10
-  front: "What is the significance of chest radiography in pneumonia diagnosis?"
-  back: |
-    Chest radiography is the gold standard. A normal radiograph can exclude pneumonia except in specific circumstances. Clinical symptoms and signs alone correctly identify pneumonia in only 50% of patients.
-  review_count: 0
-  difficulty: medium
-  topic: diagnosis
-
-- id: card-11
-  front: "What are the predominant radiological patterns of pneumonia?"
-  back: |
-    Lower infiltration and interstitial infiltrates. The air bronchogram is a key radiological feature indicating consolidation.
-  review_count: 0
-  difficulty: medium
-  topic: diagnosis
-
-- id: card-12
-  front: "In which situations may a normal chest radiograph fail to exclude pneumonia?"
-  back: |
-    Elderly patients (immunosenescence), immunocompromised hosts, hypovolemic patients, and early clinical-radiological dissociation (where repeat radiograph at 24-48 hours is recommended).
-  review_count: 0
-  difficulty: medium
-  topic: diagnosis
-
-- id: card-13
-  front: "What is the CURB-65 scoring system?"
-  back: |
-    A severity assessment tool that awards one point for each of five components, determining pneumonia severity and guiding appropriate site of care. Widely validated since 2003.
-  review_count: 0
-  difficulty: medium
-  topic: severity
-
-- id: card-14
-  front: "What is the role of C-reactive protein (CRP) in pneumonia management?"
-  back: |
-    CRP does not improve diagnosis with clinical evaluation and radiograph, but can be used where radiographs are unavailable. CRP failure to halve by 3-4 days identifies treatment failure risk.
-  review_count: 0
-  difficulty: medium
-  topic: biomarkers
-
-- id: card-15
-  front: "What is the role of procalcitonin in pneumonia management?"
-  back: |
-    Makes no additional contribution to diagnosis. May support decisions not to initiate antibiotics or guide discontinuation at 90% reduction from baseline. Not recommended for routine clinical use.
-  review_count: 0
-  difficulty: medium
-  topic: biomarkers
-
-- id: card-16
-  front: "What is the yield of sputum culture in pneumonia diagnosis?"
-  back: |
-    Approximately 15% in pneumonia. Only a minority produce adequate samples. Recommended in patients with risk factors and in all hospitalized patients with CURB-65 score >= 2.
-  review_count: 0
-  difficulty: medium
-  topic: microbiology
-
-- id: card-17
-  front: "What is the diagnostic yield of blood culture in pneumonia?"
-  back: |
-    As low as 5%, rarely impacting clinical decisions except for Staphylococcus aureus. Recommended in patients with CURB score >= 2 or prior antibiotic exposure, but not in outpatient settings.
-  review_count: 0
-  difficulty: medium
-  topic: microbiology
-
-- id: card-18
-  front: "What is the significance of urine antigen testing for pneumococcal pneumonia?"
-  back: |
-    Identifies an additional 11% of pneumococcal cases. However, does not influence antibiotic choices because empiric regimens always include pneumococcal coverage.
-  review_count: 0
-  difficulty: medium
-  topic: microbiology
-
-- id: card-19
-  front: "What are the limitations of molecular testing for viral pathogens?"
-  back: |
-    Positive results do not imply causality (positive in asymptomatic individuals). Few effective treatments exist for viral causes. Tests do not exclude polymicrobial infection.
-  review_count: 0
-  difficulty: medium
-  topic: microbiology
-
-- id: card-20
-  front: "What is the role of Gene Xpert assay in TB diagnosis?"
-  back: |
-    Cartridge-based nucleic acid amplification test replacing sputum smear microscopy. Has excellent diagnostic characteristics, surpassed only by sputum culture. Particularly useful in pneumonia.
-  review_count: 0
-  difficulty: medium
-  topic: tb-diagnosis
-
-- id: card-21
-  front: "What is the urine-based LAM test?"
-  back: |
-    Useful in HIV-positive patients unable to produce adequate sputum for TB diagnosis. Sensitivity increases with advancing immunosuppression, approaching 85% in patients with CD4 counts under 50 cells/µL.
-  review_count: 0
-  difficulty: medium
-  topic: tb-diagnosis
-
-- id: card-22
-  front: "What are the main etiological agents of pneumonia in HIV-infected patients?"
-  back: |
-    TB and pneumococcal pneumonia comprise the majority. Pneumocystis jirovecii pneumonia (PCP) is the third most common pathogen, unique to HIV hyperendemicity settings.
-  review_count: 0
-  difficulty: medium
-  topic: hiv-pneumonia
-
-- id: card-23
-  front: "What are the diagnostic challenges of Pneumocystis pneumonia (PCP)?"
-  back: |
-    Accurate diagnosis requires organism identification on bronchoalveolar lavage. Immunofluorescence identifies at most 60% of cases. PCR tests have high false positive rates.
-  review_count: 0
-  difficulty: hard
-  topic: hiv-pneumonia
-
-- id: card-24
-  front: "What is the role of microbiological investigations in pneumonia treatment?"
-  back: |
-    Small and perhaps negligible role for upfront investigations. Clinical rules for antibiotic escalation are sufficient for identifying treatment failure.
-  review_count: 0
-  difficulty: medium
-  topic: microbiology
-
-- id: card-25
-  front: "What percentage of pneumonia cases have no identified pathogen?"
-  back: |
-    Approximately 40% of pneumonia cases remain without identified pathogens even after invasive investigation, highlighting importance of empiric antibiotic therapy.
-  review_count: 0
-  difficulty: easy
-  topic: etiology
-
-
+# Anki canonical export — pulmonology / Community-Acquired Pneumonia
+# Generated by scripts/anki_migrate.js
+deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+notes:
+  - guid: 104981a5d505269b
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the definition of community acquired pneumonia?"
+      Back: "An infection of the low respiratory tract resulting in parenchymal lung inflammation, typically associated with acute symptoms including cough, sputum production, shortness of breath, and pleural chest pain, with new infiltrates visible on chest radiograph."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 1b183e75a07fdcd3
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the incidence of pneumonia in South Africa?"
+      Back: "Approximately 400,000 cases per 100,000 population, with peak incidence in those aged 25-64 years, driven by high HIV prevalence in this age group."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 2ba597ee424e6602
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the HIV prevalence in hospitalized pneumonia patients?"
+      Back: "Approximately 70% overall, with rates as high as 90% in patients aged 25-44 years."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 9f1d0baf0608eeb4
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What are the case fatality rates for pneumonia?"
+      Back: "Overall approximately 5%, rising to 12% in hospitalized patients and exceeding 40% in those requiring intensive care support."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 61c44eb78d3bd239
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "List the major risk factors for community acquired pneumonia."
+      Back: "Older age, comorbidities (COPD, asthma, cardiac disease), immunosuppression (diabetes, HIV), recent viral infection, substance abuse, poverty, overcrowding, and pollution."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 6a655a4996110b81
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the most common cause of pneumonia globally?"
+      Back: "Pneumococcus (Streptococcus pneumoniae) is the most common identified organism. However, no pathogen is identified in approximately 40% of cases even after invasive investigation."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: c9509db7cf74c32c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "How has pneumococcal vaccination affected pneumonia epidemiology?"
+      Back: "There has been a global decrease in pneumococcal disease proportion following vaccination introduction. South Africa introduced the vaccine into routine infant immunization in 2009."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 4ada94d826499780
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the key finding regarding tuberculosis in pneumonia in South Africa?"
+      Back: "TB was identified in approximately 40% of hospitalized pneumonia cases in Durban, outranking pneumococcus. This was true in both HIV-positive and HIV-negative populations."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 0a9682ff90e35ebf
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What are the typical clinical symptoms of pneumonia?"
+      Back: "Cough, sputum production, shortness of breath, and pleural chest pain. Signs may be localized to lungs or systemic."
+    tags: ["difficulty:easy", "subject:pulmonology"]
+  - guid: e2e259fbc561c04f
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the significance of chest radiography in pneumonia diagnosis?"
+      Back: "Chest radiography is the gold standard. A normal radiograph can exclude pneumonia except in specific circumstances. Clinical symptoms and signs alone correctly identify pneumonia in only 50% of patients."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: df310d1d4d8aba05
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What are the predominant radiological patterns of pneumonia?"
+      Back: "Lower infiltration and interstitial infiltrates. The air bronchogram is a key radiological feature indicating consolidation."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 365cb7f07163c291
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "In which situations may a normal chest radiograph fail to exclude pneumonia?"
+      Back: "Elderly patients (immunosenescence), immunocompromised hosts, hypovolemic patients, and early clinical-radiological dissociation (where repeat radiograph at 24-48 hours is recommended)."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: d0b71555d1cc30fe
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the CURB-65 scoring system?"
+      Back: "A severity assessment tool that awards one point for each of five components, determining pneumonia severity and guiding appropriate site of care. Widely validated since 2003."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 09a5055c01692efe
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the role of C-reactive protein (CRP) in pneumonia management?"
+      Back: "CRP does not improve diagnosis with clinical evaluation and radiograph, but can be used where radiographs are unavailable. CRP failure to halve by 3-4 days identifies treatment failure risk."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 15e4e11478962ed2
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the role of procalcitonin in pneumonia management?"
+      Back: "Makes no additional contribution to diagnosis. May support decisions not to initiate antibiotics or guide discontinuation at 90% reduction from baseline. Not recommended for routine clinical use."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 52bfffcfa04306e8
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the yield of sputum culture in pneumonia diagnosis?"
+      Back: "Approximately 15% in pneumonia. Only a minority produce adequate samples. Recommended in patients with risk factors and in all hospitalized patients with CURB-65 score >= 2."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 3403fee4e0b06ae3
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the diagnostic yield of blood culture in pneumonia?"
+      Back: "As low as 5%, rarely impacting clinical decisions except for Staphylococcus aureus. Recommended in patients with CURB score >= 2 or prior antibiotic exposure, but not in outpatient settings."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: d59be5c34e6eea17
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the significance of urine antigen testing for pneumococcal pneumonia?"
+      Back: "Identifies an additional 11% of pneumococcal cases. However, does not influence antibiotic choices because empiric regimens always include pneumococcal coverage."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 37ce3c69b4ab149b
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What are the limitations of molecular testing for viral pathogens?"
+      Back: "Positive results do not imply causality (positive in asymptomatic individuals). Few effective treatments exist for viral causes. Tests do not exclude polymicrobial infection."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 0bb66866942b3e6e
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the role of Gene Xpert assay in TB diagnosis?"
+      Back: "Cartridge-based nucleic acid amplification test replacing sputum smear microscopy. Has excellent diagnostic characteristics, surpassed only by sputum culture. Particularly useful in pneumonia."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: ec105b3abb569e0e
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the urine-based LAM test?"
+      Back: "Useful in HIV-positive patients unable to produce adequate sputum for TB diagnosis. Sensitivity increases with advancing immunosuppression, approaching 85% in patients with CD4 counts under 50 cells/µL."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 432ebaea779b256b
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What are the main etiological agents of pneumonia in HIV-infected patients?"
+      Back: "TB and pneumococcal pneumonia comprise the majority. Pneumocystis jirovecii pneumonia (PCP) is the third most common pathogen, unique to HIV hyperendemicity settings."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 7315e17f49f1b857
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What are the diagnostic challenges of Pneumocystis pneumonia (PCP)?"
+      Back: "Accurate diagnosis requires organism identification on bronchoalveolar lavage. Immunofluorescence identifies at most 60% of cases. PCR tests have high false positive rates."
+    tags: ["difficulty:hard", "subject:pulmonology"]
+  - guid: d0cfc56549f02560
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What is the role of microbiological investigations in pneumonia treatment?"
+      Back: "Small and perhaps negligible role for upfront investigations. Clinical rules for antibiotic escalation are sufficient for identifying treatment failure."
+    tags: ["difficulty:medium", "subject:pulmonology"]
+  - guid: 5463c0383efb8798
+    noteType: Basic
+    deck: "Corpus::Pulmonology::Community-Acquired Pneumonia"
+    fields:
+      Front: "What percentage of pneumonia cases have no identified pathogen?"
+      Back: "Approximately 40% of pneumonia cases remain without identified pathogens even after invasive investigation, highlighting importance of empiric antibiotic therapy."
+    tags: ["difficulty:easy", "subject:pulmonology"]

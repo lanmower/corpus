@@ -1,228 +1,410 @@
-- front: "What are the basic steps of ECG interpretation?"
-  back: "1. Verify ECG calibration\n2. Analyze rate and rhythm\n3. Determine cardiac axis\n4. Examine each wave morphology\n5. Look for chamber dilatation and hypertrophy\n6. Assess for myocardial infarction stages\n7. Check for metabolic abnormalities"
-  tags: ["ecg-basics", "interpretation-methodology"]
-
-- front: "What is the ECG paper speed and time calibration?"
-  back: "Paper speed: 25 mm/second. X-axis (time): each 1 mm = 0.04 seconds (40 milliseconds). Y-axis (amplitude): each 10 mm = 1 millivolt."
-  tags: ["ecg-calibration", "measurement"]
-
-- front: "How many electrodes and leads are used in a standard ECG?"
-  back: "10 electrodes that produce 12 leads: 3 standard limb leads (I, II, III), 3 augmented limb leads (aVR, aVL, aVF), and 6 precordial leads (V1-V6)."
-  tags: ["ecg-leads", "electrode-placement"]
-
-- front: "What are the locations of precordial ECG leads?"
-  back: "V1: 4th intercostal space, right sternal border. V2: 4th intercostal space, left sternal border. V3: Between V2 and V4. V4: 5th intercostal space, midclavicular line. V5: Between V4 and V6. V6: 5th intercostal space, midaxillary line."
-  tags: ["ecg-leads", "precordial-leads"]
-
-- front: "Which ECG leads view which cardiac walls?"
-  back: "Inferior leads (II, III, aVF): inferior wall. Lateral leads (I, aVL, V5, V6): lateral wall. Anterior leads (V1-V4): anterior wall and septum. V1-V2: septal region."
-  tags: ["ecg-leads", "cardiac-territories"]
-
-- front: "How is heart rate calculated from an ECG?"
-  back: "Method 1: Count QRS complexes in 10 seconds and multiply by 6. Method 2 (regular rhythm): Count large blocks between two R waves and divide into 300."
-  tags: ["heart-rate", "ecg-analysis"]
-
-- front: "What defines normal sinus rhythm?"
-  back: "P wave before every QRS complex and QRS after every P wave. Rate 60-100 bpm. P wave is negative in aVR and positive in lead II (normal pattern)."
-  tags: ["sinus-rhythm", "normal-ecg"]
-
-- front: "What is the impulse conduction pathway in the heart?"
-  back: "SA node → intra-atrial pathways → AV node (with delay) → bundle of His → right and left bundle branches → Purkinje system → ventricular depolarization."
-  tags: ["conduction-system", "cardiac-physiology"]
-
-- front: "What causes sinus bradycardia and what is the heart rate?"
-  back: "Heart rate <60 bpm. Causes: beta-blockers, calcium channel blockers, athletes, right coronary artery ischemia/MI (which supplies SA and AV nodes), hypothyroidism, hypothermia, increased intracranial pressure."
-  tags: ["sinus-bradycardia", "arrhythmias"]
-
-- front: "What is sinus tachycardia and its causes?"
-  back: "Heart rate 100-150 bpm in sinus rhythm. Physiological causes: anxiety, pain, fever, exercise. Drug-related: adrenaline, atropine, caffeine, alcohol, salbutamol. Pathological: anemia, hypovolemia, hyperthyroidism."
-  tags: ["sinus-tachycardia", "arrhythmias"]
-
-- front: "What is the normal cardiac axis and its deviations?"
-  back: "Normal axis: -30 to +90 degrees. Left axis deviation (LAD): -30 to -90 degrees. Right axis deviation (RAD): +90 to +180 degrees."
-  tags: ["cardiac-axis", "axis-deviation"]
-
-- front: "What are the ECG findings in left axis deviation?"
-  back: "Positive R-wave in lead I, negative R-wave (or small R) in aVF and lead II. Causes: Wolff-Parkinson-White (WPW) syndrome, inferior MI, left ventricular hypertrophy."
-  tags: ["left-axis-deviation", "axis-deviation"]
-
-- front: "What are the ECG findings in right axis deviation?"
-  back: "Negative R-wave in lead I, positive R-wave in aVF. Causes: right ventricular hypertrophy, certain types of WPW syndrome, atrial fibrillation, hyperkalemia, atrial septal defect."
-  tags: ["right-axis-deviation", "axis-deviation"]
-
-- front: "What is P-pulmonale and what does it indicate?"
-  back: "P-pulmonale: P-waves >2.5 mm tall (peaked). Indicates right atrial enlargement. Associated with pulmonary hypertension, pulmonary stenosis, tricuspid stenosis."
-  tags: ["p-wave-abnormalities", "atrial-enlargement"]
-
-- front: "What is P-mitrale and what does it indicate?"
-  back: "P-mitrale: P-waves >120 milliseconds wide with bifid (two-peaked) appearance. Indicates left atrial enlargement. Associated with mitral valve disease."
-  tags: ["p-wave-abnormalities", "atrial-enlargement"]
-
-- front: "What is the PR interval and what is the normal duration?"
-  back: "PR interval: measured from start of P-wave to start of R-wave. Represents time of atrial depolarization plus AV node conduction delay. Normal: 120-200 milliseconds. Should be consistent beat-to-beat."
-  tags: ["pr-interval", "conduction"]
-
-- front: "How are Q-waves classified as pathological?"
-  back: "Q-waves are pathological if: (1) >25% height of following R-wave, OR (2) >1 small block (40 ms) in width. Pathological Q-waves usually indicate previous MI but can also occur with LVH and bundle branch blocks."
-  tags: ["q-waves", "myocardial-infarction"]
-
-- front: "What is the normal QRS duration and R-wave progression?"
-  back: "QRS complex: <120 milliseconds (less than 3 small blocks). R-wave should increase progressively in height from V1 to V6 (normal R-wave progression). This is because left ventricle has the most mass."
-  tags: ["qrs-complex", "ventricular-depolarization"]
-
-- front: "What are the criteria for left ventricular hypertrophy (LVH) on ECG?"
-  back: "LVH criteria: (1) R-wave in V5 or V6 >27 mm, OR (2) S-wave in V1 + R-wave in V5 >35 mm. Also shows deeper S-wave in V1-V2 and taller R-wave in V5-V6."
-  tags: ["lvh", "ventricular-hypertrophy"]
-
-- front: "What are the ECG findings in right ventricular hypertrophy (RVH)?"
-  back: "RVH shows: (1) Dominant R-wave in V1 (R-wave taller than S-wave), (2) Persistent S-wave in V5-V6. Causes: chronic lung disease, pulmonary hypertension."
-  tags: ["rvh", "ventricular-hypertrophy"]
-
-- front: "What causes QRS widening in bundle branch blocks?"
-  back: "Bundle branch blocks cause QRS >120 milliseconds because impulses cannot travel through the blocked bundle and must spread myocyte-to-myocyte through myocardium, which is much slower than normal conduction system."
-  tags: ["bundle-branch-block", "qrs-widening"]
-
-- front: "What are the ECG patterns in right bundle branch block (RBBB)?"
-  back: "RBBB shows: (1) QRS >120 ms, (2) M-pattern (RSR') in V1-V2, (3) W-pattern in V6, (4) Right ventricle depolarizes after left ventricle."
-  tags: ["rbbb", "bundle-branch-block"]
-
-- front: "What are the ECG patterns in left bundle branch block (LBBB)?"
-  back: "LBBB shows: (1) QRS >120 ms, (2) W-pattern in V1-V2, (3) M-pattern (RSR') in V6, (4) Left ventricle depolarizes after right ventricle."
-  tags: ["lbbb", "bundle-branch-block"]
-
-- front: "What is the J-point and ST segment elevation significance?"
-  back: "J-point: junction where QRS complex meets the isoelectric line. ST segment elevation >1 mm from the J-point is significant. Main causes: STEMI (most common), pericarditis, LV aneurysm, Prinzmetal angina, LBB, Brugada syndrome."
-  tags: ["st-segment", "st-elevation"]
-
-- front: "How does pericarditis differ from STEMI on ECG?"
-  back: "Pericarditis: (1) Saddle-shaped (concave) ST elevation, (2) No Q-waves, (3) No reciprocal ST depression, (4) Widespread ST elevation over most leads, (5) PR segment depression in II, (6) PR segment elevation in aVR (pathognomonic)."
-  tags: ["pericarditis", "st-elevation"]
-
-- front: "What is reciprocal ST change in myocardial infarction?"
-  back: "Reciprocal changes: ST elevation in one area of the heart is accompanied by ST depression in another (opposite) area. Occurs in STEMI but NOT in pericarditis. Indicates a single affected territory."
-  tags: ["myocardial-infarction", "st-changes"]
-
-- front: "What is ST depression and what causes it?"
-  back: "ST depression: >0.5 mm below baseline. Causes: myocardial ischemia/strain, digoxin (downsloping with T-wave inversion called reverse tick), hypokalemia."
-  tags: ["st-segment", "st-depression"]
-
-- front: "What are the stages of myocardial infarction on ECG?"
-  back: "Stage 1: Peaked/hyperacute T-waves. Stage 2: ST segment elevation. Stage 3: Q-wave formation (necrosis). Stage 4: ST returns to normal, T-waves invert. Stage 5: Q-waves persist as marker of previous MI."
-  tags: ["myocardial-infarction", "mi-stages"]
-
-- front: "Which ECG leads correspond to which MI territories?"
-  back: "Anterior MI: V1-V4. Lateral MI: I, aVL, V5-V6. Anterolateral MI: V1-V5, I, aVL. Inferior MI: II, III, aVF. Anteroseptal: V1-V3. Infrolateral: II, III, aVF, V5-V6."
-  tags: ["myocardial-infarction", "mi-territories"]
-
-- front: "How do you diagnose right ventricular infarction?"
-  back: "Right ventricular MI usually occurs with inferior MI. Place V4 lead on right side of chest (called V4R) and look for ST elevation. ST elevation in V4R indicates RV infarction."
-  tags: ["myocardial-infarction", "rv-infarction"]
-
-- front: "How do you diagnose posterior myocardial infarction on ECG?"
-  back: "Posterior MI usually accompanies inferior MI. Signs: (1) Tall R-wave (reciprocal Q-wave) in V1 with ST depression, (2) Can place precordial leads on back of chest (V7, V8, V9) and look for ST elevation."
-  tags: ["myocardial-infarction", "posterior-mi"]
-
-- front: "What are the ECG findings in hypokalemia?"
-  back: "Hypokalemia shows: (1) Flattened T-waves, (2) Prominent U-wave, (3) ST depression, (4) T-wave inversion, (5) Downsloping ST segment similar to digoxin effect."
-  tags: ["electrolyte-abnormalities", "hypokalemia"]
-
-- front: "What are the ECG findings in hyperkalemia?"
-  back: "Early hyperkalemia: (1) Peaked (tall, narrow) T-waves. As severity increases: (2) Flattened P-waves, (3) Prolonged PR interval, (4) Narrower, broader QRS complex (Splinterung), (5) Can progress to ventricular fibrillation (medical emergency)."
-  tags: ["electrolyte-abnormalities", "hyperkalemia"]
-
-- front: "What are the ECG findings in hypothermia?"
-  back: "Hypothermia shows: (1) Bradycardia, (2) Irregular baseline (from shivering), (3) J-wave or Osborn wave at end of QRS complex before ST segment."
-  tags: ["environmental-effects", "hypothermia"]
-
-- front: "What is first-degree AV block?"
-  back: "First-degree AV block: (1) Prolonged PR interval >200 ms (>5 small blocks), (2) Constant PR duration, (3) Every P-wave followed by QRS complex (1:1 conduction). Causes: ischemia, hypokalemia, rheumatic heart disease, aortic root abscess, digoxin, beta-blockers, calcium channel blockers."
-  tags: ["av-blocks", "conduction-disorders"]
-
-- front: "What is Mobitz type 1 (Wenckebach) second-degree AV block?"
-  back: "Mobitz type 1: (1) Progressive prolongation of PR interval beat-to-beat (lengthening), (2) Then sudden P-wave without QRS (dropped beat), (3) Cycle repeats. Most PR intervals are conducted. Usually benign."
-  tags: ["av-blocks", "conduction-disorders"]
-
-- front: "What is Mobitz type 2 second-degree AV block?"
-  back: "Mobitz type 2: (1) Constant PR interval (no lengthening), (2) Sudden dropped beats (P-wave without QRS), (3) Regular pattern of block (e.g., 2:1, 3:1). More serious than Mobitz I, requires pacemaker insertion due to risk of complete heart block."
-  tags: ["av-blocks", "conduction-disorders"]
-
-- front: "How do you differentiate Mobitz type 1 and type 2 AV block?"
-  back: "Mobitz type 1: PR interval progressively lengthens before dropped beat. Mobitz type 2: PR interval remains constant, no progressive lengthening."
-  tags: ["av-blocks", "conduction-disorders"]
-
-- front: "What is third-degree AV block (complete heart block)?"
-  back: "Third-degree AV block: (1) No relationship between P-waves and QRS complexes, (2) P-waves and PP intervals are regular (atrial rate from SA node), (3) QRS complexes are regular at slower rate (ventricular escape rhythm), (4) Broad QRS complex from ventricular origin, (5) Complete AV dissociation. Requires pacemaker insertion."
-  tags: ["av-blocks", "conduction-disorders"]
-
-- front: "What approach should be used for tachyarrhythmias?"
-  back: "Approach: (1) Identify rhythm strip (usually lead II), (2) Determine if regular or irregular, (3) Determine if narrow or broad QRS, (4) Narrow complex = always supraventricular tachycardia, (5) Broad complex = 80% ventricular tachycardia, 20% SVT with BBB."
-  tags: ["tachyarrhythmias", "arrhythmia-approach"]
-
-- front: "What is atrial fibrillation and its ECG appearance?"
-  back: "Atrial fibrillation: (1) Rapid chaotic depolarization from multiple foci, (2) Absent P-waves with fibrillating baseline, (3) Irregular (irregularly irregular) QRS complexes, (4) Ventricular rate variable. Most common arrhythmia."
-  tags: ["atrial-fibrillation", "arrhythmias"]
-
-- front: "What is atrial flutter and its ECG appearance?"
-  back: "Atrial flutter: (1) Reentry circuit around right atrium, (2) Atrial rate 250-350 bpm, (3) Typical sawtooth flutter waves on baseline, (4) Regular QRS complexes (usually 2:1, 3:1, or 4:1 AV conduction), (5) AV node cannot conduct all atrial impulses."
-  tags: ["atrial-flutter", "arrhythmias"]
-
-- front: "What is atrial tachycardia and its characteristics?"
-  back: "Atrial tachycardia: (1) Heart rate often >150 bpm, (2) P-waves present but may not be easily visible, (3) Abnormally shaped P-waves (may appear just after QRS), (4) Due to ectopic focus from abnormal area of atrium."
-  tags: ["atrial-tachycardia", "arrhythmias"]
-
-- front: "What is ventricular tachycardia and how is it defined?"
-  back: "Ventricular tachycardia: (1) Broad QRS complex (>120 ms), (2) Rate >120 bpm, (3) Three or more successive ventricular beats, (4) Arises from reentry circuit or ectopic ventricular focus (e.g., scar from previous MI), (5) May be self-terminating or sustained, (6) Can degenerate to ventricular fibrillation."
-  tags: ["ventricular-tachycardia", "arrhythmias"]
-
-- front: "What are the types of ventricular tachycardia?"
-  back: "Monomorphic VT: All QRS complexes look the same (from single focus). Polymorphic VT: Varying QRS complexes. Torsades de Pointes: Type of polymorphic VT with twisting pattern, caused by prolonged QT interval from electrolyte abnormalities or drugs."
-  tags: ["ventricular-tachycardia", "arrhythmias"]
-
-- front: "What causes accelerated ventricular rhythm and idioventricular rhythm?"
-  back: "Accelerated ventricular rhythm: Heart rate 40-120 bpm (between normal escape rate and VT). Idioventricular rhythm: Heart rate 30-40 bpm (ventricular escape rhythm). Both are slower than VT (>120 bpm)."
-  tags: ["ventricular-rhythms", "arrhythmias"]
-
-- front: "What is ventricular fibrillation and how is it managed?"
-  back: "Ventricular fibrillation: (1) Rapidly fatal arrhythmia, (2) Most common cause is myocardial infarction, (3) Can occur with electrolyte abnormalities, (4) Requires urgent defibrillation (electrical cardioversion)."
-  tags: ["ventricular-fibrillation", "arrhythmias"]
-
-- front: "What is asystole?"
-  back: "Asystole: Absence of any electrical cardiac activity on ECG (flat line). Results in no cardiac output and requires urgent CPR and ACLS protocol."
-  tags: ["cardiac-arrest", "arrhythmias"]
-
-- front: "What is torsades de pointes?"
-  back: "Torsades de Pointes: Polymorphic VT with twisting pattern around the baseline. Caused by prolonged QT interval from electrolyte abnormalities (hypomagnesemia) or QT-prolonging drugs (antiarrhythmics). Often associated with sudden syncope and VF. Treated with IV magnesium and electrical cardioversion."
-  tags: ["torsades-de-pointes", "polymorphic-vt"]
-
-- front: "What is Wolff-Parkinson-White (WPW) syndrome?"
-  back: "WPW syndrome: (1) Accessory pathway (bundle of Kent) between atrium and ventricles, (2) Bypass of AV node causes short PR interval (<120 ms), (3) Delta wave (slurred upstroke) in QRS complex, (4) Can develop reentry tachycardia (AVNRT circuit)."
-  tags: ["wpw-syndrome", "pre-excitation"]
-
-- front: "What is the delta wave in WPW syndrome?"
-  back: "Delta wave: Slurred upstroke at the beginning of QRS complex in WPW syndrome. Caused by slow myocyte-to-myocyte depolarization through accessory pathway (not through normal conduction system)."
-  tags: ["wpw-syndrome", "pre-excitation"]
-
-- front: "How does the accessory pathway in WPW cause short PR interval?"
-  back: "In WPW: (1) Accessory pathway bypasses the AV node delay, (2) Conduction through accessory pathway is faster than through AV node, (3) Ventricles depolarize immediately after atrium, (4) Results in short PR interval (<120 ms)."
-  tags: ["wpw-syndrome", "pre-excitation"]
-
-- front: "What is AV reentry tachycardia (AVNRT) in WPW?"
-  back: "AVNRT in WPW: (1) Macro reentry circuit develops, (2) Impulse travels down AV node through bundle branches into myocardium, (3) Then back up through accessory pathway, (4) Depolarizes atrium and restarts circuit, (5) Results in rapid narrow or broad complex tachycardia."
-  tags: ["wpw-syndrome", "reentry-tachycardia"]
-
-- front: "What are the differential diagnoses for narrow regular tachycardia?"
-  back: "Narrow regular tachycardia (SVT): (1) Sinus tachycardia, (2) Atrial flutter, (3) Atrial tachycardia, (4) AV nodal reentry tachycardia, (5) AV reentry tachycardia (WPW)."
-  tags: ["tachyarrhythmias", "svt"]
-
-- front: "What are the differential diagnoses for narrow irregular tachycardia?"
-  back: "Narrow irregular tachycardia: (1) Atrial fibrillation (most common), (2) Atrial flutter with variable AV block, (3) Atrial tachycardia with variable block."
-  tags: ["tachyarrhythmias", "irregular-tachycardia"]
-
-- front: "What are the differential diagnoses for wide regular tachycardia?"
-  back: "Wide regular tachycardia: (1) Ventricular tachycardia (80%), (2) SVT with bundle branch block (20%)."
-  tags: ["tachyarrhythmias", "wide-complex-tachycardia"]
-
-- front: "What are the differential diagnoses for wide irregular tachycardia?"
-  back: "Wide irregular tachycardia: (1) Atrial fibrillation with bundle branch block, (2) Atrial fibrillation with WPW syndrome, (3) Polymorphic VT/Torsades de Pointes."
-  tags: ["tachyarrhythmias", "wide-complex-irregular"]
-
+# Anki canonical export — cardiology / ECG Interpretation
+# Generated by scripts/anki_migrate.js
+deck: "Corpus::Cardiology::ECG Interpretation"
+notes:
+  - guid: fa2f758b36a358c8
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the basic steps of ECG interpretation?"
+      Back: |
+      1. Verify ECG calibration
+      2. Analyze rate and rhythm
+      3. Determine cardiac axis
+      4. Examine each wave morphology
+      5. Look for chamber dilatation and hypertrophy
+      6. Assess for myocardial infarction stages
+      7. Check for metabolic abnormalities
+    tags: ["ecg-basics", "interpretation-methodology", "subject:cardiology"]
+  - guid: 0995eab2fe674287
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is the ECG paper speed and time calibration?"
+      Back: "Paper speed: 25 mm/second. X-axis (time): each 1 mm = 0.04 seconds (40 milliseconds). Y-axis (amplitude): each 10 mm = 1 millivolt."
+    tags: ["ecg-calibration", "measurement", "subject:cardiology"]
+  - guid: f2a3db98d39e2ed3
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "How many electrodes and leads are used in a standard ECG?"
+      Back: "10 electrodes that produce 12 leads: 3 standard limb leads (I, II, III), 3 augmented limb leads (aVR, aVL, aVF), and 6 precordial leads (V1-V6)."
+    tags: ["ecg-leads", "electrode-placement", "subject:cardiology"]
+  - guid: d9b9177109abfdc4
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the locations of precordial ECG leads?"
+      Back: "V1: 4th intercostal space, right sternal border. V2: 4th intercostal space, left sternal border. V3: Between V2 and V4. V4: 5th intercostal space, midclavicular line. V5: Between V4 and V6. V6: 5th intercostal space, midaxillary line."
+    tags: ["ecg-leads", "precordial-leads", "subject:cardiology"]
+  - guid: 9bdb1d424990557d
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "Which ECG leads view which cardiac walls?"
+      Back: "Inferior leads (II, III, aVF): inferior wall. Lateral leads (I, aVL, V5, V6): lateral wall. Anterior leads (V1-V4): anterior wall and septum. V1-V2: septal region."
+    tags: ["ecg-leads", "cardiac-territories", "subject:cardiology"]
+  - guid: 698c7c571cff4299
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "How is heart rate calculated from an ECG?"
+      Back: "Method 1: Count QRS complexes in 10 seconds and multiply by 6. Method 2 (regular rhythm): Count large blocks between two R waves and divide into 300."
+    tags: ["heart-rate", "ecg-analysis", "subject:cardiology"]
+  - guid: 66c48bdf4db1544c
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What defines normal sinus rhythm?"
+      Back: "P wave before every QRS complex and QRS after every P wave. Rate 60-100 bpm. P wave is negative in aVR and positive in lead II (normal pattern)."
+    tags: ["sinus-rhythm", "normal-ecg", "subject:cardiology"]
+  - guid: 19778269f77e4057
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is the impulse conduction pathway in the heart?"
+      Back: "SA node → intra-atrial pathways → AV node (with delay) → bundle of His → right and left bundle branches → Purkinje system → ventricular depolarization."
+    tags: ["conduction-system", "cardiac-physiology", "subject:cardiology"]
+  - guid: 6249c00ff528bef9
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What causes sinus bradycardia and what is the heart rate?"
+      Back: "Heart rate <60 bpm. Causes: beta-blockers, calcium channel blockers, athletes, right coronary artery ischemia/MI (which supplies SA and AV nodes), hypothyroidism, hypothermia, increased intracranial pressure."
+    tags: ["sinus-bradycardia", "arrhythmias", "subject:cardiology"]
+  - guid: 1062149fa4baae64
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is sinus tachycardia and its causes?"
+      Back: "Heart rate 100-150 bpm in sinus rhythm. Physiological causes: anxiety, pain, fever, exercise. Drug-related: adrenaline, atropine, caffeine, alcohol, salbutamol. Pathological: anemia, hypovolemia, hyperthyroidism."
+    tags: ["sinus-tachycardia", "arrhythmias", "subject:cardiology"]
+  - guid: 6c632420bc26f964
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is the normal cardiac axis and its deviations?"
+      Back: "Normal axis: -30 to +90 degrees. Left axis deviation (LAD): -30 to -90 degrees. Right axis deviation (RAD): +90 to +180 degrees."
+    tags: ["cardiac-axis", "axis-deviation", "subject:cardiology"]
+  - guid: cfbdd4382d964618
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the ECG findings in left axis deviation?"
+      Back: "Positive R-wave in lead I, negative R-wave (or small R) in aVF and lead II. Causes: Wolff-Parkinson-White (WPW) syndrome, inferior MI, left ventricular hypertrophy."
+    tags: ["left-axis-deviation", "axis-deviation", "subject:cardiology"]
+  - guid: f072f75417b26d26
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the ECG findings in right axis deviation?"
+      Back: "Negative R-wave in lead I, positive R-wave in aVF. Causes: right ventricular hypertrophy, certain types of WPW syndrome, atrial fibrillation, hyperkalemia, atrial septal defect."
+    tags: ["right-axis-deviation", "axis-deviation", "subject:cardiology"]
+  - guid: 49046469efd67934
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is P-pulmonale and what does it indicate?"
+      Back: "P-pulmonale: P-waves >2.5 mm tall (peaked). Indicates right atrial enlargement. Associated with pulmonary hypertension, pulmonary stenosis, tricuspid stenosis."
+    tags: ["p-wave-abnormalities", "atrial-enlargement", "subject:cardiology"]
+  - guid: 1ce2fdf6037e958a
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is P-mitrale and what does it indicate?"
+      Back: "P-mitrale: P-waves >120 milliseconds wide with bifid (two-peaked) appearance. Indicates left atrial enlargement. Associated with mitral valve disease."
+    tags: ["p-wave-abnormalities", "atrial-enlargement", "subject:cardiology"]
+  - guid: 4b5d0e547fc6a598
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is the PR interval and what is the normal duration?"
+      Back: "PR interval: measured from start of P-wave to start of R-wave. Represents time of atrial depolarization plus AV node conduction delay. Normal: 120-200 milliseconds. Should be consistent beat-to-beat."
+    tags: ["pr-interval", "conduction", "subject:cardiology"]
+  - guid: f03eb50860864c63
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "How are Q-waves classified as pathological?"
+      Back: "Q-waves are pathological if: (1) >25% height of following R-wave, OR (2) >1 small block (40 ms) in width. Pathological Q-waves usually indicate previous MI but can also occur with LVH and bundle branch blocks."
+    tags: ["q-waves", "myocardial-infarction", "subject:cardiology"]
+  - guid: 6c2fc89062a823d6
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is the normal QRS duration and R-wave progression?"
+      Back: "QRS complex: <120 milliseconds (less than 3 small blocks). R-wave should increase progressively in height from V1 to V6 (normal R-wave progression). This is because left ventricle has the most mass."
+    tags: ["qrs-complex", "ventricular-depolarization", "subject:cardiology"]
+  - guid: 4b83c9f5b0ec503c
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the criteria for left ventricular hypertrophy (LVH) on ECG?"
+      Back: "LVH criteria: (1) R-wave in V5 or V6 >27 mm, OR (2) S-wave in V1 + R-wave in V5 >35 mm. Also shows deeper S-wave in V1-V2 and taller R-wave in V5-V6."
+    tags: ["lvh", "ventricular-hypertrophy", "subject:cardiology"]
+  - guid: 8d8b8475f93bba76
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the ECG findings in right ventricular hypertrophy (RVH)?"
+      Back: "RVH shows: (1) Dominant R-wave in V1 (R-wave taller than S-wave), (2) Persistent S-wave in V5-V6. Causes: chronic lung disease, pulmonary hypertension."
+    tags: ["rvh", "ventricular-hypertrophy", "subject:cardiology"]
+  - guid: 9a615a9ccfb14031
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What causes QRS widening in bundle branch blocks?"
+      Back: "Bundle branch blocks cause QRS >120 milliseconds because impulses cannot travel through the blocked bundle and must spread myocyte-to-myocyte through myocardium, which is much slower than normal conduction system."
+    tags: ["bundle-branch-block", "qrs-widening", "subject:cardiology"]
+  - guid: 08a24def4b17ee86
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the ECG patterns in right bundle branch block (RBBB)?"
+      Back: "RBBB shows: (1) QRS >120 ms, (2) M-pattern (RSR') in V1-V2, (3) W-pattern in V6, (4) Right ventricle depolarizes after left ventricle."
+    tags: ["rbbb", "bundle-branch-block", "subject:cardiology"]
+  - guid: 138fe119701dc6df
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the ECG patterns in left bundle branch block (LBBB)?"
+      Back: "LBBB shows: (1) QRS >120 ms, (2) W-pattern in V1-V2, (3) M-pattern (RSR') in V6, (4) Left ventricle depolarizes after right ventricle."
+    tags: ["lbbb", "bundle-branch-block", "subject:cardiology"]
+  - guid: 0835312df965d570
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is the J-point and ST segment elevation significance?"
+      Back: "J-point: junction where QRS complex meets the isoelectric line. ST segment elevation >1 mm from the J-point is significant. Main causes: STEMI (most common), pericarditis, LV aneurysm, Prinzmetal angina, LBB, Brugada syndrome."
+    tags: ["st-segment", "st-elevation", "subject:cardiology"]
+  - guid: c1a0133fb76a473a
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "How does pericarditis differ from STEMI on ECG?"
+      Back: "Pericarditis: (1) Saddle-shaped (concave) ST elevation, (2) No Q-waves, (3) No reciprocal ST depression, (4) Widespread ST elevation over most leads, (5) PR segment depression in II, (6) PR segment elevation in aVR (pathognomonic)."
+    tags: ["pericarditis", "st-elevation", "subject:cardiology"]
+  - guid: 59b025d2e428d9e0
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is reciprocal ST change in myocardial infarction?"
+      Back: "Reciprocal changes: ST elevation in one area of the heart is accompanied by ST depression in another (opposite) area. Occurs in STEMI but NOT in pericarditis. Indicates a single affected territory."
+    tags: ["myocardial-infarction", "st-changes", "subject:cardiology"]
+  - guid: 60018df05b3441e1
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is ST depression and what causes it?"
+      Back: "ST depression: >0.5 mm below baseline. Causes: myocardial ischemia/strain, digoxin (downsloping with T-wave inversion called reverse tick), hypokalemia."
+    tags: ["st-segment", "st-depression", "subject:cardiology"]
+  - guid: e0f68ff366d76cde
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the stages of myocardial infarction on ECG?"
+      Back: "Stage 1: Peaked/hyperacute T-waves. Stage 2: ST segment elevation. Stage 3: Q-wave formation (necrosis). Stage 4: ST returns to normal, T-waves invert. Stage 5: Q-waves persist as marker of previous MI."
+    tags: ["myocardial-infarction", "mi-stages", "subject:cardiology"]
+  - guid: a5f8daffcdfb745d
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "Which ECG leads correspond to which MI territories?"
+      Back: "Anterior MI: V1-V4. Lateral MI: I, aVL, V5-V6. Anterolateral MI: V1-V5, I, aVL. Inferior MI: II, III, aVF. Anteroseptal: V1-V3. Infrolateral: II, III, aVF, V5-V6."
+    tags: ["myocardial-infarction", "mi-territories", "subject:cardiology"]
+  - guid: 07f55e66d597c8e2
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "How do you diagnose right ventricular infarction?"
+      Back: "Right ventricular MI usually occurs with inferior MI. Place V4 lead on right side of chest (called V4R) and look for ST elevation. ST elevation in V4R indicates RV infarction."
+    tags: ["myocardial-infarction", "rv-infarction", "subject:cardiology"]
+  - guid: 7ed6ef78d0b9d8e9
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "How do you diagnose posterior myocardial infarction on ECG?"
+      Back: "Posterior MI usually accompanies inferior MI. Signs: (1) Tall R-wave (reciprocal Q-wave) in V1 with ST depression, (2) Can place precordial leads on back of chest (V7, V8, V9) and look for ST elevation."
+    tags: ["myocardial-infarction", "posterior-mi", "subject:cardiology"]
+  - guid: a29e91a9230d4e77
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the ECG findings in hypokalemia?"
+      Back: "Hypokalemia shows: (1) Flattened T-waves, (2) Prominent U-wave, (3) ST depression, (4) T-wave inversion, (5) Downsloping ST segment similar to digoxin effect."
+    tags: ["electrolyte-abnormalities", "hypokalemia", "subject:cardiology"]
+  - guid: 3e81d01c33d5f22b
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the ECG findings in hyperkalemia?"
+      Back: "Early hyperkalemia: (1) Peaked (tall, narrow) T-waves. As severity increases: (2) Flattened P-waves, (3) Prolonged PR interval, (4) Narrower, broader QRS complex (Splinterung), (5) Can progress to ventricular fibrillation (medical emergency)."
+    tags: ["electrolyte-abnormalities", "hyperkalemia", "subject:cardiology"]
+  - guid: 41bc0eaddcd2dd54
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the ECG findings in hypothermia?"
+      Back: "Hypothermia shows: (1) Bradycardia, (2) Irregular baseline (from shivering), (3) J-wave or Osborn wave at end of QRS complex before ST segment."
+    tags: ["environmental-effects", "hypothermia", "subject:cardiology"]
+  - guid: 8dc2ed903ab94a03
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is first-degree AV block?"
+      Back: "First-degree AV block: (1) Prolonged PR interval >200 ms (>5 small blocks), (2) Constant PR duration, (3) Every P-wave followed by QRS complex (1:1 conduction). Causes: ischemia, hypokalemia, rheumatic heart disease, aortic root abscess, digoxin, beta-blockers, calcium channel blockers."
+    tags: ["av-blocks", "conduction-disorders", "subject:cardiology"]
+  - guid: c8e3d196a66974b4
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is Mobitz type 1 (Wenckebach) second-degree AV block?"
+      Back: "Mobitz type 1: (1) Progressive prolongation of PR interval beat-to-beat (lengthening), (2) Then sudden P-wave without QRS (dropped beat), (3) Cycle repeats. Most PR intervals are conducted. Usually benign."
+    tags: ["av-blocks", "conduction-disorders", "subject:cardiology"]
+  - guid: 7378fb46335dfe1d
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is Mobitz type 2 second-degree AV block?"
+      Back: "Mobitz type 2: (1) Constant PR interval (no lengthening), (2) Sudden dropped beats (P-wave without QRS), (3) Regular pattern of block (e.g., 2:1, 3:1). More serious than Mobitz I, requires pacemaker insertion due to risk of complete heart block."
+    tags: ["av-blocks", "conduction-disorders", "subject:cardiology"]
+  - guid: b13c061f010ebda3
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "How do you differentiate Mobitz type 1 and type 2 AV block?"
+      Back: "Mobitz type 1: PR interval progressively lengthens before dropped beat. Mobitz type 2: PR interval remains constant, no progressive lengthening."
+    tags: ["av-blocks", "conduction-disorders", "subject:cardiology"]
+  - guid: 9383a68efa29aba4
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is third-degree AV block (complete heart block)?"
+      Back: "Third-degree AV block: (1) No relationship between P-waves and QRS complexes, (2) P-waves and PP intervals are regular (atrial rate from SA node), (3) QRS complexes are regular at slower rate (ventricular escape rhythm), (4) Broad QRS complex from ventricular origin, (5) Complete AV dissociation. Requires pacemaker insertion."
+    tags: ["av-blocks", "conduction-disorders", "subject:cardiology"]
+  - guid: e073c1ac550343af
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What approach should be used for tachyarrhythmias?"
+      Back: "Approach: (1) Identify rhythm strip (usually lead II), (2) Determine if regular or irregular, (3) Determine if narrow or broad QRS, (4) Narrow complex = always supraventricular tachycardia, (5) Broad complex = 80% ventricular tachycardia, 20% SVT with BBB."
+    tags: ["tachyarrhythmias", "arrhythmia-approach", "subject:cardiology"]
+  - guid: 4ee832a18aa43c31
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is atrial fibrillation and its ECG appearance?"
+      Back: "Atrial fibrillation: (1) Rapid chaotic depolarization from multiple foci, (2) Absent P-waves with fibrillating baseline, (3) Irregular (irregularly irregular) QRS complexes, (4) Ventricular rate variable. Most common arrhythmia."
+    tags: ["atrial-fibrillation", "arrhythmias", "subject:cardiology"]
+  - guid: 96fac69dafaf9e54
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is atrial flutter and its ECG appearance?"
+      Back: "Atrial flutter: (1) Reentry circuit around right atrium, (2) Atrial rate 250-350 bpm, (3) Typical sawtooth flutter waves on baseline, (4) Regular QRS complexes (usually 2:1, 3:1, or 4:1 AV conduction), (5) AV node cannot conduct all atrial impulses."
+    tags: ["atrial-flutter", "arrhythmias", "subject:cardiology"]
+  - guid: 12910a79124f50a5
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is atrial tachycardia and its characteristics?"
+      Back: "Atrial tachycardia: (1) Heart rate often >150 bpm, (2) P-waves present but may not be easily visible, (3) Abnormally shaped P-waves (may appear just after QRS), (4) Due to ectopic focus from abnormal area of atrium."
+    tags: ["atrial-tachycardia", "arrhythmias", "subject:cardiology"]
+  - guid: 8a1a7dda29dc5889
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is ventricular tachycardia and how is it defined?"
+      Back: "Ventricular tachycardia: (1) Broad QRS complex (>120 ms), (2) Rate >120 bpm, (3) Three or more successive ventricular beats, (4) Arises from reentry circuit or ectopic ventricular focus (e.g., scar from previous MI), (5) May be self-terminating or sustained, (6) Can degenerate to ventricular fibrillation."
+    tags: ["ventricular-tachycardia", "arrhythmias", "subject:cardiology"]
+  - guid: d3b163cabd0d1108
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the types of ventricular tachycardia?"
+      Back: "Monomorphic VT: All QRS complexes look the same (from single focus). Polymorphic VT: Varying QRS complexes. Torsades de Pointes: Type of polymorphic VT with twisting pattern, caused by prolonged QT interval from electrolyte abnormalities or drugs."
+    tags: ["ventricular-tachycardia", "arrhythmias", "subject:cardiology"]
+  - guid: 31246df4c84d9a65
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What causes accelerated ventricular rhythm and idioventricular rhythm?"
+      Back: "Accelerated ventricular rhythm: Heart rate 40-120 bpm (between normal escape rate and VT). Idioventricular rhythm: Heart rate 30-40 bpm (ventricular escape rhythm). Both are slower than VT (>120 bpm)."
+    tags: ["ventricular-rhythms", "arrhythmias", "subject:cardiology"]
+  - guid: 7f42a4c25c6f2121
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is ventricular fibrillation and how is it managed?"
+      Back: "Ventricular fibrillation: (1) Rapidly fatal arrhythmia, (2) Most common cause is myocardial infarction, (3) Can occur with electrolyte abnormalities, (4) Requires urgent defibrillation (electrical cardioversion)."
+    tags: ["ventricular-fibrillation", "arrhythmias", "subject:cardiology"]
+  - guid: 992e95b4994ae997
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is asystole?"
+      Back: "Asystole: Absence of any electrical cardiac activity on ECG (flat line). Results in no cardiac output and requires urgent CPR and ACLS protocol."
+    tags: ["cardiac-arrest", "arrhythmias", "subject:cardiology"]
+  - guid: 2fff06aab7586903
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is torsades de pointes?"
+      Back: "Torsades de Pointes: Polymorphic VT with twisting pattern around the baseline. Caused by prolonged QT interval from electrolyte abnormalities (hypomagnesemia) or QT-prolonging drugs (antiarrhythmics). Often associated with sudden syncope and VF. Treated with IV magnesium and electrical cardioversion."
+    tags: ["torsades-de-pointes", "polymorphic-vt", "subject:cardiology"]
+  - guid: d3f4821b559415f3
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is Wolff-Parkinson-White (WPW) syndrome?"
+      Back: "WPW syndrome: (1) Accessory pathway (bundle of Kent) between atrium and ventricles, (2) Bypass of AV node causes short PR interval (<120 ms), (3) Delta wave (slurred upstroke) in QRS complex, (4) Can develop reentry tachycardia (AVNRT circuit)."
+    tags: ["wpw-syndrome", "pre-excitation", "subject:cardiology"]
+  - guid: 45c727cbc3ab4470
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is the delta wave in WPW syndrome?"
+      Back: "Delta wave: Slurred upstroke at the beginning of QRS complex in WPW syndrome. Caused by slow myocyte-to-myocyte depolarization through accessory pathway (not through normal conduction system)."
+    tags: ["wpw-syndrome", "pre-excitation", "subject:cardiology"]
+  - guid: 0b6ffdea2f051a77
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "How does the accessory pathway in WPW cause short PR interval?"
+      Back: "In WPW: (1) Accessory pathway bypasses the AV node delay, (2) Conduction through accessory pathway is faster than through AV node, (3) Ventricles depolarize immediately after atrium, (4) Results in short PR interval (<120 ms)."
+    tags: ["wpw-syndrome", "pre-excitation", "subject:cardiology"]
+  - guid: 890d7b773da2c0e0
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What is AV reentry tachycardia (AVNRT) in WPW?"
+      Back: "AVNRT in WPW: (1) Macro reentry circuit develops, (2) Impulse travels down AV node through bundle branches into myocardium, (3) Then back up through accessory pathway, (4) Depolarizes atrium and restarts circuit, (5) Results in rapid narrow or broad complex tachycardia."
+    tags: ["wpw-syndrome", "reentry-tachycardia", "subject:cardiology"]
+  - guid: 20aafd4387baa5e6
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the differential diagnoses for narrow regular tachycardia?"
+      Back: "Narrow regular tachycardia (SVT): (1) Sinus tachycardia, (2) Atrial flutter, (3) Atrial tachycardia, (4) AV nodal reentry tachycardia, (5) AV reentry tachycardia (WPW)."
+    tags: ["tachyarrhythmias", "svt", "subject:cardiology"]
+  - guid: 45b09bbc3b683956
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the differential diagnoses for narrow irregular tachycardia?"
+      Back: "Narrow irregular tachycardia: (1) Atrial fibrillation (most common), (2) Atrial flutter with variable AV block, (3) Atrial tachycardia with variable block."
+    tags: ["tachyarrhythmias", "irregular-tachycardia", "subject:cardiology"]
+  - guid: e5071dbbe0b34733
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the differential diagnoses for wide regular tachycardia?"
+      Back: "Wide regular tachycardia: (1) Ventricular tachycardia (80%), (2) SVT with bundle branch block (20%)."
+    tags: ["tachyarrhythmias", "wide-complex-tachycardia", "subject:cardiology"]
+  - guid: 0c4ea262a7969c9d
+    noteType: Basic
+    deck: "Corpus::Cardiology::ECG Interpretation"
+    fields:
+      Front: "What are the differential diagnoses for wide irregular tachycardia?"
+      Back: "Wide irregular tachycardia: (1) Atrial fibrillation with bundle branch block, (2) Atrial fibrillation with WPW syndrome, (3) Polymorphic VT/Torsades de Pointes."
+    tags: ["tachyarrhythmias", "wide-complex-irregular", "subject:cardiology"]

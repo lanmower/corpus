@@ -502,11 +502,11 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(masteryMod.forecastTo100(MANIFEST, SHARDMAP), null);
         // SW v13 + new modules
         const sw = READ('site/sw.js');
-        assert.ok(sw.includes('corpus-v14'));
+        assert.ok(sw.includes('corpus-v15'));
         for (const f of ['game.js', 'badges.js', 'quests.js', 'mastery.js', 'toast.js', 'confetti.js']) assert.ok(sw.includes(f), 'sw missing ' + f);
         // index.html ?v=12
-        assert.match(indexHtml, /app\.js\?v=13/);
-        assert.match(indexHtml, /style\.css\?v=13/);
+        assert.match(indexHtml, /app\.js\?v=14/);
+        assert.match(indexHtml, /style\.css\?v=14/);
         // infographics: relocated guides + infographics dir + shard arrays + lightbox + concise/ gone
         assert.ok(!fs.existsSync(path.join(ROOT, 'concise')), 'concise/ should be removed');
         for (const s of SUBJECTS) assert.ok(fs.existsSync(path.join(ROOT, s, 'study_guide.md')), s + '/study_guide.md missing');

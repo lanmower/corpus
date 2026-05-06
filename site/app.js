@@ -1259,6 +1259,27 @@ async function renderSettings() {
         on: { click: () => importInput.click() } }, 'import');
     const resetBtn = el('button', { class: 'chip', 'aria-label': 'reset',
         on: { click: () => { if (confirm('reset all progress?')) { srs.resetAll(); state.reviewSessionGraded = 0; render(); } } } }, 'reset');
+    const ankiBtn = el('button', { class: 'chip', 'aria-label': 'export to Anki',
+        on: { click: async () => {
+            const lines = ['#separator:tab', '#html:true', '#guid column:1', '#notetype column:2', '#deck column:3', '#tags column:6'];
+            try {
+                const mf = await fetch('data/manifest.json').then(r => r.json());
+                for (const s of mf.subjects) {
+                    const sh = await fetch(`data/${s.subject}.json`).then(r => r.json());
+                    for (const c of sh.cards) {
+                        const deck = c._deck || `Corpus::${s.subject}::${c.source || 'general'}`;
+                        const noteType = c._noteType || 'Basic';
+                        const tags = [...(c.tags || []), `subject:${s.subject}`, `difficulty:${c.difficulty || 'medium'}`].join(' ');
+                        const front = String(c.front || '').replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+                        const back = String(c.back || '').replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+                        lines.push([c._guid || c.id, noteType, deck, front, back, tags].join('\t'));
+                    }
+                }
+                const blob = new Blob([lines.join('\n') + '\n'], { type: 'text/tab-separated-values' });
+                const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+                a.download = `corpus-anki-${srs.today()}.txt`; a.click(); URL.revokeObjectURL(a.href);
+            } catch (e) { alert('anki export failed: ' + e.message); }
+        } } }, 'export to Anki (.txt)');
     const shortcutsBtn = el('button', { class: 'chip', 'aria-label': 'shortcuts',
         on: { click: () => openShortcutsModal() } }, 'shortcuts');
     stage.append(el('div', { class: 'panel' },
@@ -1270,7 +1291,7 @@ async function renderSettings() {
         el('div', { class: 'toolbar' }, makeToggleButton(document))));
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'data')),
-        el('div', { class: 'toolbar' }, exportBtn, importBtn, importInput, resetBtn)));
+        el('div', { class: 'toolbar' }, exportBtn, importBtn, importInput, ankiBtn, resetBtn)));
     stage.append(renderScheduleConfigPanel());
     // Phase 2: gamification settings
     const gState = game.load();

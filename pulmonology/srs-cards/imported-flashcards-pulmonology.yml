@@ -1,355 +1,627 @@
-- front: "What clinical finding, in addition to symptoms of infection, is required to establish a diagnosis of community-acquired pneumonia (CAP)?"
-  back: "The presence of new infiltrates on a chest radiograph."
-  tags: []
-
-- front: "To differentiate CAP from healthcare-associated pneumonia, what is the required patient status regarding hospitalization?"
-  back: "The patient must not be currently hospitalized or reside in a long-term care facility."
-  tags: []
-
-- front: "Which age group in South Africa experiences the peak incidence of pneumonia, likely due to the HIV epidemic?"
-  back: "Individuals aged 25 to 64 years of age."
-  tags: []
-
-- front: "What is the estimated HIV prevalence in hospitalized pneumonia patients aged 25 to 44 in South Africa?"
-  back: "The prevalence is estimated to be as high as 90%."
-  tags: []
-
-- front: "What is the reported case fatality rate for pneumonia patients requiring intensive care support?"
-  back: "The case fatality rate exceeds 40%."
-  tags: []
-
-- front: "In the South African context, what outranks pneumococcus as the most common cause of pneumonia in hospitalized patients?"
-  back: "Tuberculosis (identified in almost 40% of cases)."
-  tags: []
-
-- front: "The absence of which four clinical signs can reliably exclude a diagnosis of pneumonia in over 95% of patients?"
-  back: "Tachycardia, tachypnea, fever, and hypoxemia."
-  tags: []
-
-- front: "Under what physiological condition might a chest radiograph fail to show infiltrates despite the presence of pneumonia?"
-  back: "Hypovolemia (restricting inflammatory exudation)."
-  tags: []
-
-- front: "What is the primary radiological feature indicative of consolidation in pneumonia?"
-  back: "The air bronchogram."
-  tags: []
-
-- front: "According to the British Thoracic Society, what is the purpose of the CURB-65 scoring system?"
-  back: "Deciding the severity of illness and guiding the most suitable site of care."
-  tags: []
-
-- front: "In settings where chest radiography is unavailable, what biomarker provides a similar positive predictive value for pneumonia?"
-  back: "C-reactive protein (CRP)."
-  tags: []
-
-- front: "What reduction threshold in C-reactive protein (CRP) by day 3 or 4 is used to identify patients at lower risk of treatment failure?"
-  back: "A reduction of at least 50% (halving) of the initial CRP value."
-  tags: []
-
-- front: "According to randomized controlled trials, how can procalcitonin (PCT) results be used to support initial treatment decisions?"
-  back: "It can be used to support the decision not to initiate antibiotics."
-  tags: []
-
-- front: "What specific percentage reduction in procalcitonin (PCT) from its initial value indicates that it is safe to discontinue antibiotics?"
-  back: "A reduction of 90%."
-  tags: []
-
-- front: "What is the reported diagnostic yield of sputum culture in patients with pneumonia?"
-  back: "The yield is approximately 15%."
-  tags: []
-
-- front: "For which patients does the South African guideline recommend performing blood cultures?"
-  back: "Patients with a CURB-65 score of 2 or more or those with prior antibiotic exposure."
-  tags: []
-
-- front: "Why is testing for viral pathogens (excluding influenza or SARS-CoV-2) generally not recommended for routine CAP management?"
-  back: "There are currently no effective treatment options for most common viral causes of pneumonia."
-  tags: []
-
-- front: "In the South African setting, what diagnostic test has replaced sputum smear as the initial test for Tuberculosis?"
-  back: "The GeneXpert assay (nucleic acid amplification test)."
-  tags: []
-
-- front: "Which urine-based test is used for TB diagnosis in HIV patients with advanced immunosuppression ($CD4 < 50$)?"
-  back: "The urine-based LAM (Lipoarabinomannan) test."
-  tags: []
-
-- front: "What is the third most common etiological agent of pneumonia in HIV-infected patients in South Africa?"
-  back: "Pneumocystis jirovecii (PCP)."
-  tags: []
-
-- front: "What is the gold standard for diagnosing Pneumocystis jirovecii pneumonia (PCP)?"
-  back: "Identification of the organism on a Broncho-Alveolar Lavage (BAL) specimen."
-  tags: []
-
-- front: "According to the WHO case definition for PCP in HIV, what radiographic pattern is typically seen?"
-  back: "Bilateral infiltrates."
-  tags: []
-
-- front: "Which initial antibiotic is recommended for young outpatients with CAP who have no comorbidities or recent antibiotic exposure?"
-  back: "Oral high-dose amoxicillin."
-  tags: []
-
-- front: "What is the recommended treatment for inpatients with a CURB-65 score $\\ge 2$ who have no significant comorbidities?"
-  back: "Amoxicillin-clavulanate (or a cephalosporin) plus a macrolide."
-  tags: []
-
-- front: "Why should the routine use of respiratory fluoroquinolones for CAP be restricted in South Africa?"
-  back: "To preserve their activity against drug-resistant Tuberculosis."
-  tags: []
-
-- front: "Under what specific condition should empiric TB treatment be initiated in at-risk HIV-infected patients despite missing molecular confirmation?"
-  back: "In the setting of septic shock."
-  tags: []
-
-- front: "What adjunctive therapy has been shown to reduce the risk of intubation and death in patients with severe CAP admitted to the ICU?"
-  back: "Corticosteroids (specifically hydrocortisone)."
-  tags: []
-
-- front: "What is the recommended dose and duration of hydrocortisone for severe CAP in the ICU?"
-  back: "200 mg per day for 4 to 8 days."
-  tags: []
-
-- front: "According to antibiotic stewardship principles, when should a patient be switched from intravenous to oral antibiotics?"
-  back: "Once clinical stability is achieved and the patient can tolerate oral medication."
-  tags: []
-
-- front: "What defines clinical stability in a pneumonia patient regarding temperature?"
-  back: "The patient must be afebrile."
-  tags: []
-
-- front: "A pleural fluid pH below what value is indicative of a direct pleural infection (empyema)?"
-  back: "A pH less than 7.2."
-  tags: []
-
-- front: "What is the recommended duration of antibiotic therapy for a lung abscess?"
-  back: "4 to 6 weeks."
-  tags: []
-
-- front: "Which long-term complication of pneumonia involves a vicious cycle of airway destruction and recurrent infection?"
-  back: "Bronchiectasis."
-  tags: []
-
-- front: "What is the 5-year mortality rate following a single incident episode of pneumonia?"
-  back: "Between 30% and 50%."
-  tags: []
-
-- front: "Which pneumococcal vaccine is indicated for all adults 65 years or older or younger high-risk adults?"
-  back: "PPSV23 (23-valent polysaccharide vaccine)."
-  tags: []
-
-- front: "In high-risk patients, what is the recommended sequence for pneumococcal vaccination?"
-  back: "PCV13 (13-valent conjugate vaccine) first, followed by PPSV23 one year later."
-  tags: []
-
-- front: "What trial demonstrated that low-dose CT is superior to chest X-ray for detecting early-stage lung cancer in high-risk smokers?"
-  back: "The National Lung Screening Trial (NLST)."
-  tags: []
-
-- front: "In terms of duration and intensity of smoking, which factor poses a greater risk for developing lung cancer?"
-  back: "Duration of smoking."
-  tags: []
-
-- front: "By what factor does HIV infection independently increase the risk of lung cancer regardless of smoking status?"
-  back: "By a factor of at least 2.5-fold."
-  tags: []
-
-- front: "Which specific histological subtype of non-small cell lung cancer (NSCLC) is most common in HIV patients?"
-  back: "Adenocarcinoma."
-  tags: []
-
-- front: "Exposure to which inert gas produced by uranium decay is a well-established risk factor for lung cancer in miners?"
-  back: "Radon."
-  tags: []
-
-- front: "What is the synergistic effect of tobacco smoke and asbestos exposure on lung cancer risk?"
-  back: "The risk increases to 80-90 times that of controlled populations."
-  tags: []
-
-- front: "Supplementation with which vitamins has been shown to actually increase the incidence of lung cancer in high-risk individuals?"
-  back: "Beta-carotene and Vitamin E."
-  tags: []
-
-- front: "What histological feature characterizes small cell lung cancer (SCLC) on staining?"
-  back: "Small round blue cells approximately twice the size of lymphocytes."
-  tags: []
-
-- front: "Which histological subtype of lung cancer is most frequently associated with cavitation?"
-  back: "Squamous cell carcinoma."
-  tags: []
-
-- front: "Which histological subtype of lung cancer is the most common among non-smokers?"
-  back: "Adenocarcinoma."
-  tags: []
-
-- front: "What is the most common presenting symptom of lung cancer?"
-  back: "Cough."
-  tags: []
-
-- front: "Compression of which nerve by a lung tumor results in hoarseness of voice?"
-  back: "Recurrent laryngeal nerve."
-  tags: []
-
-- front: "What clinical syndrome presents with meiosis, ptosis, and anhydrosis due to sympathetic plexus compression?"
-  back: "Horner's Syndrome."
-  tags: []
-
-- front: "What are the four most common sites for lung cancer metastasis?"
-  back: "Bones, liver, brain, and adrenal glands."
-  tags: []
-
-- front: "Which paraneoplastic syndrome is caused by antibodies cross-reacting with voltage-gated calcium channels in motor neurons?"
-  back: "Lambert-Eaton Syndrome."
-  tags: []
-
-- front: "Which type of lung cancer is most frequently associated with hypercalcemia?"
-  back: "Squamous cell carcinoma."
-  tags: []
-
-- front: "What paraneoplastic syndrome presents with hyponatremia and is common in Small Cell Lung Cancer?"
-  back: "Syndrome of Inappropriate Antidiuretic Hormone (SIADH)."
-  tags: []
-
-- front: "Hypertrophic osteoarthropathy is characterized by the combination of clubbing and what other finding?"
-  back: "Periostitis (swelling of the distal bones such as wrists and ankles)."
-  tags: []
-
-- front: "In lung cancer imaging, what is the first-line investigation for a suspected case?"
-  back: "Chest X-ray."
-  tags: []
-
-- front: "What is the purpose of using Fluorodeoxyglucose (FDG) in a PET CT scan for lung cancer?"
-  back: "To identify areas of high metabolic activity indicative of cancer or infection."
-  tags: []
-
-- front: "What staging system is currently used for both Small Cell and Non-Small Cell Lung Cancer?"
-  back: "TNM staging (Tumor, Node, Metastasis)."
-  tags: []
-
-- front: "In the context of SCLC, how is 'Limited Disease' defined?"
-  back: "Cancer is present in only one side of the chest and can be treated with a single radiation field."
-  tags: []
-
-- front: "What are the primary treatment modalities for Small Cell Lung Cancer (SCLC)?"
-  back: "Chemotherapy and radiotherapy."
-  tags: []
-
-- front: "For which stage of NSCLC is surgical resection considered a primary curative candidate?"
-  back: "Early-stage disease (Stage 1 and some Stage 2)."
-  tags: []
-
-- front: "Targeted therapies in lung cancer are designed to inhibit specific pathways like EGFR or ALK. What does EGFR stand for?"
-  back: "Epidermal Growth Factor Receptor."
-  tags: []
-
-- front: "How does immunotherapy help the body fight lung cancer cells?"
-  back: "It targets receptors or ligands that cancers use to evade detection by the immune system."
-  tags: []
-
-- front: "What is the most important prognostic factor for both Small Cell and Non-Small Cell Lung Cancer?"
-  back: "Stage of the disease at diagnosis."
-  tags: []
-
-- front: "Define 'Antibiotic Stewardship' according to the study guide."
-  back: "Prudent use of antibiotics to achieve best patient outcomes while minimizing selective pressure and drug resistance."
-  tags: []
-
-- front: "What is 'Empirical Therapy' in the context of antimicrobial use?"
-  back: "Treatment initiated based on a best-guess of etiologic pathogens before laboratory confirmation is available."
-  tags: []
-
-- front: "How does 'Directed Therapy' (or Targeted Therapy) differ from Empirical Therapy?"
-  back: "It is based on specific laboratory identification and susceptibility data of the pathogen."
-  tags: []
-
-- front: "Which class of antibiotics is considered concentration-dependent, meaning efficacy is maximized by high peak doses?"
-  back: "Aminoglycosides (or Fluoroquinolones)."
-  tags: []
-
-- front: "Which class of antibiotics is considered time-dependent, meaning efficacy depends on the duration the serum level remains above the MIC?"
-  back: "Beta-lactams (e.g., Penicillins, Cephalosporins)."
-  tags: []
-
-- front: "What is the primary mechanism of resistance for MRSA (Methicillin-resistant Staphylococcus aureus)?"
-  back: "Alteration of the target site (Penicillin-Binding Proteins/PBP)."
-  tags: []
-
-- front: "What is the 'Signet Ring Sign' on a CT scan indicative of?"
-  back: "Bronchiectasis (where the dilated bronchus is larger than its accompanying artery)."
-  tags: []
-
-- front: "What is the 'Tram Track Sign' on imaging?"
-  back: "Parallel line opacities representing thickened, dilated bronchial walls in bronchiectasis."
-  tags: []
-
-- front: "Which genetic condition is characterized by the triad of situs inversus, chronic sinusitis, and bronchiectasis?"
-  back: "Kartagener's Syndrome."
-  tags: []
-
-- front: "What is the primary pathology in Cystic Fibrosis that leads to bronchiectasis?"
-  back: "Mutated chloride channels (CFTR) causing viscoid, thick secretions that impair clearance."
-  tags: []
-
-- front: "In a patient lying supine, which lung segment is the most common site for aspiration-related lung abscess?"
-  back: "The superior segment of the lower lobe."
-  tags: []
-
-- front: "Aspiration in a patient lying on their side (lateral) typically involves which lung segment?"
-  back: "The posterior segment of the upper lobe."
-  tags: []
-
-- front: "What is the hallmark radiographic finding of a lung abscess on a chest X-ray?"
-  back: "A necrotic cavity containing an air-fluid level."
-  tags: []
-
-- front: "According to the study guide, what are the three stages of empyema development?"
-  back: "Exudative stage, Fibropurulent stage, and Organizing stage."
-  tags: []
-
-- front: "What defines the 'Organizing Stage' of empyema?"
-  back: "The growth of fibroblasts into the pleural space and formation of an inelastic membrane (pleural peel)."
-  tags: []
-
-- front: "What is 'Empyema Necessitans'?"
-  back: "Spontaneous rupture of an empyema into the chest wall."
-  tags: []
-
-- front: "In the context of empyema, why is the glucose level low in pleural fluid?"
-  back: "Bacteria and neutrophils consume the glucose through metabolic activity."
-  tags: []
-
-- front: "Which pathogen is of particular concern in bronchiectasis because it is associated with faster deterioration of lung function?"
-  back: "Pseudomonas aeruginosa."
-  tags: []
-
-- front: "What is the treatment of choice for a purulent pleural effusion (empyema)?"
-  back: "Intercostal drainage (chest tube)."
-  tags: []
-
-- front: "Under what condition is 'Decortication' surgery indicated for empyema?"
-  back: "When calcification or a thick fibrous peel occurs in the pleural space, preventing lung re-expansion."
-  tags: []
-
-- front: "In HIV patients, what is the significance of the $B$-2-$D$ glucan test for PCP?"
-  back: "It identifies fungal cell wall components, but its specific role in HIV-associated PCP is not yet recommended for routine use."
-  tags: []
-
-- front: "What role does the 'Pemberton Sign' play in lung cancer physical examination?"
-  back: "It is used to check for facial congestion and blushing when arms are raised, suggesting Superior Vena Cava Syndrome."
-  tags: []
-
-- front: "Which lung cancer subtype is historically staged as 'Limited' or 'Extensive' rather than by numerical stages?"
-  back: "Small Cell Lung Cancer (SCLC)."
-  tags: []
-
-- front: "What is 'Brachytherapy' in the context of lung cancer treatment?"
-  back: "Endobronchial radiation delivered directly to a tumor via a bronchoscope."
-  tags: []
-
-- front: "Why is the incidence of pneumonia in South Africa particularly high in the 25-44 age group?"
-  back: "It is driven by the high prevalence of HIV in that demographic."
-  tags: []
-
-- front: "Which biomarker under 100 mg/L has a strong negative predictive value for 30-day mortality in pneumonia?"
-  back: "C-reactive protein (CRP)."
-  tags: []
+# Anki canonical export — pulmonology / pulmonology
+# Generated by scripts/anki_migrate.js
+deck: "Corpus::Pulmonology::pulmonology"
+notes:
+  - guid: 6f3ae4d05e735106
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What clinical finding, in addition to symptoms of infection, is required to establish a diagnosis of community-acquired pneumonia (CAP)?"
+      Back: "The presence of new infiltrates on a chest radiograph."
+    tags: ["subject:pulmonology"]
+  - guid: e1087e032fbed631
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "To differentiate CAP from healthcare-associated pneumonia, what is the required patient status regarding hospitalization?"
+      Back: "The patient must not be currently hospitalized or reside in a long-term care facility."
+    tags: ["subject:pulmonology"]
+  - guid: 3d0af5e4c1875d4b
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which age group in South Africa experiences the peak incidence of pneumonia, likely due to the HIV epidemic?"
+      Back: "Individuals aged 25 to 64 years of age."
+    tags: ["subject:pulmonology"]
+  - guid: 5d519a5e541a5a54
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the estimated HIV prevalence in hospitalized pneumonia patients aged 25 to 44 in South Africa?"
+      Back: "The prevalence is estimated to be as high as 90%."
+    tags: ["subject:pulmonology"]
+  - guid: 21783a6f91d27c18
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the reported case fatality rate for pneumonia patients requiring intensive care support?"
+      Back: "The case fatality rate exceeds 40%."
+    tags: ["subject:pulmonology"]
+  - guid: 87292eeb449d2f5c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In the South African context, what outranks pneumococcus as the most common cause of pneumonia in hospitalized patients?"
+      Back: "Tuberculosis (identified in almost 40% of cases)."
+    tags: ["subject:pulmonology"]
+  - guid: 11fd734553d5a375
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "The absence of which four clinical signs can reliably exclude a diagnosis of pneumonia in over 95% of patients?"
+      Back: "Tachycardia, tachypnea, fever, and hypoxemia."
+    tags: ["subject:pulmonology"]
+  - guid: 86b9057dbfecb064
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Under what physiological condition might a chest radiograph fail to show infiltrates despite the presence of pneumonia?"
+      Back: "Hypovolemia (restricting inflammatory exudation)."
+    tags: ["subject:pulmonology"]
+  - guid: 8a68761dc13aeb83
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the primary radiological feature indicative of consolidation in pneumonia?"
+      Back: "The air bronchogram."
+    tags: ["subject:pulmonology"]
+  - guid: 1bf7c810c64076d8
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "According to the British Thoracic Society, what is the purpose of the CURB-65 scoring system?"
+      Back: "Deciding the severity of illness and guiding the most suitable site of care."
+    tags: ["subject:pulmonology"]
+  - guid: edb54ac76e1b4fbf
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In settings where chest radiography is unavailable, what biomarker provides a similar positive predictive value for pneumonia?"
+      Back: "C-reactive protein (CRP)."
+    tags: ["subject:pulmonology"]
+  - guid: e744c9d124162ddf
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What reduction threshold in C-reactive protein (CRP) by day 3 or 4 is used to identify patients at lower risk of treatment failure?"
+      Back: "A reduction of at least 50% (halving) of the initial CRP value."
+    tags: ["subject:pulmonology"]
+  - guid: d5a69b59193040e2
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "According to randomized controlled trials, how can procalcitonin (PCT) results be used to support initial treatment decisions?"
+      Back: "It can be used to support the decision not to initiate antibiotics."
+    tags: ["subject:pulmonology"]
+  - guid: 3b34fc6024f478a8
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What specific percentage reduction in procalcitonin (PCT) from its initial value indicates that it is safe to discontinue antibiotics?"
+      Back: "A reduction of 90%."
+    tags: ["subject:pulmonology"]
+  - guid: 0096c504483771ff
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the reported diagnostic yield of sputum culture in patients with pneumonia?"
+      Back: "The yield is approximately 15%."
+    tags: ["subject:pulmonology"]
+  - guid: afdd42f233144735
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "For which patients does the South African guideline recommend performing blood cultures?"
+      Back: "Patients with a CURB-65 score of 2 or more or those with prior antibiotic exposure."
+    tags: ["subject:pulmonology"]
+  - guid: f0a5efe5da6a0ef1
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Why is testing for viral pathogens (excluding influenza or SARS-CoV-2) generally not recommended for routine CAP management?"
+      Back: "There are currently no effective treatment options for most common viral causes of pneumonia."
+    tags: ["subject:pulmonology"]
+  - guid: 71d2a928690e8059
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In the South African setting, what diagnostic test has replaced sputum smear as the initial test for Tuberculosis?"
+      Back: "The GeneXpert assay (nucleic acid amplification test)."
+    tags: ["subject:pulmonology"]
+  - guid: 83857e6d997765fd
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which urine-based test is used for TB diagnosis in HIV patients with advanced immunosuppression ($CD4 < 50$)?"
+      Back: "The urine-based LAM (Lipoarabinomannan) test."
+    tags: ["subject:pulmonology"]
+  - guid: 2274d640cdfcdf12
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the third most common etiological agent of pneumonia in HIV-infected patients in South Africa?"
+      Back: "Pneumocystis jirovecii (PCP)."
+    tags: ["subject:pulmonology"]
+  - guid: 610651cab119c396
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the gold standard for diagnosing Pneumocystis jirovecii pneumonia (PCP)?"
+      Back: "Identification of the organism on a Broncho-Alveolar Lavage (BAL) specimen."
+    tags: ["subject:pulmonology"]
+  - guid: e8ba69c035701321
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "According to the WHO case definition for PCP in HIV, what radiographic pattern is typically seen?"
+      Back: "Bilateral infiltrates."
+    tags: ["subject:pulmonology"]
+  - guid: 8bcf4cf111e37a18
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which initial antibiotic is recommended for young outpatients with CAP who have no comorbidities or recent antibiotic exposure?"
+      Back: "Oral high-dose amoxicillin."
+    tags: ["subject:pulmonology"]
+  - guid: 52c485ca74c47520
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the recommended treatment for inpatients with a CURB-65 score $\\ge 2$ who have no significant comorbidities?"
+      Back: "Amoxicillin-clavulanate (or a cephalosporin) plus a macrolide."
+    tags: ["subject:pulmonology"]
+  - guid: 2a677a5d814d0573
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Why should the routine use of respiratory fluoroquinolones for CAP be restricted in South Africa?"
+      Back: "To preserve their activity against drug-resistant Tuberculosis."
+    tags: ["subject:pulmonology"]
+  - guid: 5aa2367133b4cefd
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Under what specific condition should empiric TB treatment be initiated in at-risk HIV-infected patients despite missing molecular confirmation?"
+      Back: "In the setting of septic shock."
+    tags: ["subject:pulmonology"]
+  - guid: 86b045a2e6076ccd
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What adjunctive therapy has been shown to reduce the risk of intubation and death in patients with severe CAP admitted to the ICU?"
+      Back: "Corticosteroids (specifically hydrocortisone)."
+    tags: ["subject:pulmonology"]
+  - guid: 57797ff45ad814e5
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the recommended dose and duration of hydrocortisone for severe CAP in the ICU?"
+      Back: "200 mg per day for 4 to 8 days."
+    tags: ["subject:pulmonology"]
+  - guid: 5dc1de08b4cca09f
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "According to antibiotic stewardship principles, when should a patient be switched from intravenous to oral antibiotics?"
+      Back: "Once clinical stability is achieved and the patient can tolerate oral medication."
+    tags: ["subject:pulmonology"]
+  - guid: bf71bbf4a91f387e
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What defines clinical stability in a pneumonia patient regarding temperature?"
+      Back: "The patient must be afebrile."
+    tags: ["subject:pulmonology"]
+  - guid: 2fc052f1ee6f822b
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "A pleural fluid pH below what value is indicative of a direct pleural infection (empyema)?"
+      Back: "A pH less than 7.2."
+    tags: ["subject:pulmonology"]
+  - guid: 3eeadcb35c80a0df
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the recommended duration of antibiotic therapy for a lung abscess?"
+      Back: "4 to 6 weeks."
+    tags: ["subject:pulmonology"]
+  - guid: 4f85ea9b5757ac8f
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which long-term complication of pneumonia involves a vicious cycle of airway destruction and recurrent infection?"
+      Back: "Bronchiectasis."
+    tags: ["subject:pulmonology"]
+  - guid: 27ee450bf32fa106
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the 5-year mortality rate following a single incident episode of pneumonia?"
+      Back: "Between 30% and 50%."
+    tags: ["subject:pulmonology"]
+  - guid: 86a52af1a3fbeda0
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which pneumococcal vaccine is indicated for all adults 65 years or older or younger high-risk adults?"
+      Back: "PPSV23 (23-valent polysaccharide vaccine)."
+    tags: ["subject:pulmonology"]
+  - guid: bab7d42286866a5c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In high-risk patients, what is the recommended sequence for pneumococcal vaccination?"
+      Back: "PCV13 (13-valent conjugate vaccine) first, followed by PPSV23 one year later."
+    tags: ["subject:pulmonology"]
+  - guid: edc50234333c47e5
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What trial demonstrated that low-dose CT is superior to chest X-ray for detecting early-stage lung cancer in high-risk smokers?"
+      Back: "The National Lung Screening Trial (NLST)."
+    tags: ["subject:pulmonology"]
+  - guid: 472a755ea2dde19f
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In terms of duration and intensity of smoking, which factor poses a greater risk for developing lung cancer?"
+      Back: "Duration of smoking."
+    tags: ["subject:pulmonology"]
+  - guid: cdb2b34b864a16cf
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "By what factor does HIV infection independently increase the risk of lung cancer regardless of smoking status?"
+      Back: "By a factor of at least 2.5-fold."
+    tags: ["subject:pulmonology"]
+  - guid: db65552c4b8e9a73
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which specific histological subtype of non-small cell lung cancer (NSCLC) is most common in HIV patients?"
+      Back: "Adenocarcinoma."
+    tags: ["subject:pulmonology"]
+  - guid: a7742b3438f32cf2
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Exposure to which inert gas produced by uranium decay is a well-established risk factor for lung cancer in miners?"
+      Back: "Radon."
+    tags: ["subject:pulmonology"]
+  - guid: 46bd29398de435ec
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the synergistic effect of tobacco smoke and asbestos exposure on lung cancer risk?"
+      Back: "The risk increases to 80-90 times that of controlled populations."
+    tags: ["subject:pulmonology"]
+  - guid: ba00746ee8444920
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Supplementation with which vitamins has been shown to actually increase the incidence of lung cancer in high-risk individuals?"
+      Back: "Beta-carotene and Vitamin E."
+    tags: ["subject:pulmonology"]
+  - guid: 531f6317cb65670b
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What histological feature characterizes small cell lung cancer (SCLC) on staining?"
+      Back: "Small round blue cells approximately twice the size of lymphocytes."
+    tags: ["subject:pulmonology"]
+  - guid: a7bc357c512d4470
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which histological subtype of lung cancer is most frequently associated with cavitation?"
+      Back: "Squamous cell carcinoma."
+    tags: ["subject:pulmonology"]
+  - guid: 826f56403033d400
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which histological subtype of lung cancer is the most common among non-smokers?"
+      Back: "Adenocarcinoma."
+    tags: ["subject:pulmonology"]
+  - guid: 328afe2eeee22cc5
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the most common presenting symptom of lung cancer?"
+      Back: "Cough."
+    tags: ["subject:pulmonology"]
+  - guid: 5ba3f7a3f5b65d3d
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Compression of which nerve by a lung tumor results in hoarseness of voice?"
+      Back: "Recurrent laryngeal nerve."
+    tags: ["subject:pulmonology"]
+  - guid: 4350607f374e1afd
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What clinical syndrome presents with meiosis, ptosis, and anhydrosis due to sympathetic plexus compression?"
+      Back: "Horner's Syndrome."
+    tags: ["subject:pulmonology"]
+  - guid: eaaeed3d5cae1c1c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What are the four most common sites for lung cancer metastasis?"
+      Back: "Bones, liver, brain, and adrenal glands."
+    tags: ["subject:pulmonology"]
+  - guid: 7f82461400537f65
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which paraneoplastic syndrome is caused by antibodies cross-reacting with voltage-gated calcium channels in motor neurons?"
+      Back: "Lambert-Eaton Syndrome."
+    tags: ["subject:pulmonology"]
+  - guid: ad302680965a4bd4
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which type of lung cancer is most frequently associated with hypercalcemia?"
+      Back: "Squamous cell carcinoma."
+    tags: ["subject:pulmonology"]
+  - guid: 3102e9c558a6f71d
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What paraneoplastic syndrome presents with hyponatremia and is common in Small Cell Lung Cancer?"
+      Back: "Syndrome of Inappropriate Antidiuretic Hormone (SIADH)."
+    tags: ["subject:pulmonology"]
+  - guid: bd9615c0635d72b3
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Hypertrophic osteoarthropathy is characterized by the combination of clubbing and what other finding?"
+      Back: "Periostitis (swelling of the distal bones such as wrists and ankles)."
+    tags: ["subject:pulmonology"]
+  - guid: b515f747c49d4ce0
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In lung cancer imaging, what is the first-line investigation for a suspected case?"
+      Back: "Chest X-ray."
+    tags: ["subject:pulmonology"]
+  - guid: a6b87017309a79e9
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the purpose of using Fluorodeoxyglucose (FDG) in a PET CT scan for lung cancer?"
+      Back: "To identify areas of high metabolic activity indicative of cancer or infection."
+    tags: ["subject:pulmonology"]
+  - guid: f80043dcb612795e
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What staging system is currently used for both Small Cell and Non-Small Cell Lung Cancer?"
+      Back: "TNM staging (Tumor, Node, Metastasis)."
+    tags: ["subject:pulmonology"]
+  - guid: 919d02b174f4232f
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In the context of SCLC, how is 'Limited Disease' defined?"
+      Back: "Cancer is present in only one side of the chest and can be treated with a single radiation field."
+    tags: ["subject:pulmonology"]
+  - guid: ef0110ae1e455eaf
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What are the primary treatment modalities for Small Cell Lung Cancer (SCLC)?"
+      Back: "Chemotherapy and radiotherapy."
+    tags: ["subject:pulmonology"]
+  - guid: 3f6aec4bdb129f94
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "For which stage of NSCLC is surgical resection considered a primary curative candidate?"
+      Back: "Early-stage disease (Stage 1 and some Stage 2)."
+    tags: ["subject:pulmonology"]
+  - guid: 9996fa522cd6ec48
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Targeted therapies in lung cancer are designed to inhibit specific pathways like EGFR or ALK. What does EGFR stand for?"
+      Back: "Epidermal Growth Factor Receptor."
+    tags: ["subject:pulmonology"]
+  - guid: 6e5faa28c7d20b79
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "How does immunotherapy help the body fight lung cancer cells?"
+      Back: "It targets receptors or ligands that cancers use to evade detection by the immune system."
+    tags: ["subject:pulmonology"]
+  - guid: 13284116b9fb45dd
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the most important prognostic factor for both Small Cell and Non-Small Cell Lung Cancer?"
+      Back: "Stage of the disease at diagnosis."
+    tags: ["subject:pulmonology"]
+  - guid: b48d8f28cf62067c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Define 'Antibiotic Stewardship' according to the study guide."
+      Back: "Prudent use of antibiotics to achieve best patient outcomes while minimizing selective pressure and drug resistance."
+    tags: ["subject:pulmonology"]
+  - guid: 805c021674e3960f
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is 'Empirical Therapy' in the context of antimicrobial use?"
+      Back: "Treatment initiated based on a best-guess of etiologic pathogens before laboratory confirmation is available."
+    tags: ["subject:pulmonology"]
+  - guid: 1d6ffe848a017d84
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "How does 'Directed Therapy' (or Targeted Therapy) differ from Empirical Therapy?"
+      Back: "It is based on specific laboratory identification and susceptibility data of the pathogen."
+    tags: ["subject:pulmonology"]
+  - guid: 5fcd027f52bec9ad
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which class of antibiotics is considered concentration-dependent, meaning efficacy is maximized by high peak doses?"
+      Back: "Aminoglycosides (or Fluoroquinolones)."
+    tags: ["subject:pulmonology"]
+  - guid: ccd1302509f7a0c8
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which class of antibiotics is considered time-dependent, meaning efficacy depends on the duration the serum level remains above the MIC?"
+      Back: "Beta-lactams (e.g., Penicillins, Cephalosporins)."
+    tags: ["subject:pulmonology"]
+  - guid: 49d05039df39c6f4
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the primary mechanism of resistance for MRSA (Methicillin-resistant Staphylococcus aureus)?"
+      Back: "Alteration of the target site (Penicillin-Binding Proteins/PBP)."
+    tags: ["subject:pulmonology"]
+  - guid: 9ba27a25bab05653
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the 'Signet Ring Sign' on a CT scan indicative of?"
+      Back: "Bronchiectasis (where the dilated bronchus is larger than its accompanying artery)."
+    tags: ["subject:pulmonology"]
+  - guid: 1df70659bb913907
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the 'Tram Track Sign' on imaging?"
+      Back: "Parallel line opacities representing thickened, dilated bronchial walls in bronchiectasis."
+    tags: ["subject:pulmonology"]
+  - guid: 76a58ed91409e45c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which genetic condition is characterized by the triad of situs inversus, chronic sinusitis, and bronchiectasis?"
+      Back: "Kartagener's Syndrome."
+    tags: ["subject:pulmonology"]
+  - guid: 8d041fa484291b1b
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the primary pathology in Cystic Fibrosis that leads to bronchiectasis?"
+      Back: "Mutated chloride channels (CFTR) causing viscoid, thick secretions that impair clearance."
+    tags: ["subject:pulmonology"]
+  - guid: 1122ca766d904017
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In a patient lying supine, which lung segment is the most common site for aspiration-related lung abscess?"
+      Back: "The superior segment of the lower lobe."
+    tags: ["subject:pulmonology"]
+  - guid: fdbb63940c5f19f5
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Aspiration in a patient lying on their side (lateral) typically involves which lung segment?"
+      Back: "The posterior segment of the upper lobe."
+    tags: ["subject:pulmonology"]
+  - guid: bea480896d2f3ac6
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the hallmark radiographic finding of a lung abscess on a chest X-ray?"
+      Back: "A necrotic cavity containing an air-fluid level."
+    tags: ["subject:pulmonology"]
+  - guid: a12654f2c396c17c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "According to the study guide, what are the three stages of empyema development?"
+      Back: "Exudative stage, Fibropurulent stage, and Organizing stage."
+    tags: ["subject:pulmonology"]
+  - guid: 0d751d8d675a27a7
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What defines the 'Organizing Stage' of empyema?"
+      Back: "The growth of fibroblasts into the pleural space and formation of an inelastic membrane (pleural peel)."
+    tags: ["subject:pulmonology"]
+  - guid: 6fe3311fdfbbb708
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is 'Empyema Necessitans'?"
+      Back: "Spontaneous rupture of an empyema into the chest wall."
+    tags: ["subject:pulmonology"]
+  - guid: 0c56ec5e164de39c
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In the context of empyema, why is the glucose level low in pleural fluid?"
+      Back: "Bacteria and neutrophils consume the glucose through metabolic activity."
+    tags: ["subject:pulmonology"]
+  - guid: 9723d802c08d56c0
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which pathogen is of particular concern in bronchiectasis because it is associated with faster deterioration of lung function?"
+      Back: "Pseudomonas aeruginosa."
+    tags: ["subject:pulmonology"]
+  - guid: 9139a1a4b062a5bb
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is the treatment of choice for a purulent pleural effusion (empyema)?"
+      Back: "Intercostal drainage (chest tube)."
+    tags: ["subject:pulmonology"]
+  - guid: 65f6de8dce40db1a
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Under what condition is 'Decortication' surgery indicated for empyema?"
+      Back: "When calcification or a thick fibrous peel occurs in the pleural space, preventing lung re-expansion."
+    tags: ["subject:pulmonology"]
+  - guid: f4532c65e12b936f
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "In HIV patients, what is the significance of the $B$-2-$D$ glucan test for PCP?"
+      Back: "It identifies fungal cell wall components, but its specific role in HIV-associated PCP is not yet recommended for routine use."
+    tags: ["subject:pulmonology"]
+  - guid: a1f39a3d66684cca
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What role does the 'Pemberton Sign' play in lung cancer physical examination?"
+      Back: "It is used to check for facial congestion and blushing when arms are raised, suggesting Superior Vena Cava Syndrome."
+    tags: ["subject:pulmonology"]
+  - guid: a2aa8ddb3c8c72c9
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which lung cancer subtype is historically staged as 'Limited' or 'Extensive' rather than by numerical stages?"
+      Back: "Small Cell Lung Cancer (SCLC)."
+    tags: ["subject:pulmonology"]
+  - guid: 09203d756bd8d325
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "What is 'Brachytherapy' in the context of lung cancer treatment?"
+      Back: "Endobronchial radiation delivered directly to a tumor via a bronchoscope."
+    tags: ["subject:pulmonology"]
+  - guid: 83429c22d5742ad4
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Why is the incidence of pneumonia in South Africa particularly high in the 25-44 age group?"
+      Back: "It is driven by the high prevalence of HIV in that demographic."
+    tags: ["subject:pulmonology"]
+  - guid: 838c09d48b63bff6
+    noteType: Basic
+    deck: "Corpus::Pulmonology::pulmonology"
+    fields:
+      Front: "Which biomarker under 100 mg/L has a strong negative predictive value for 30-day mortality in pneumonia?"
+      Back: "C-reactive protein (CRP)."
+    tags: ["subject:pulmonology"]

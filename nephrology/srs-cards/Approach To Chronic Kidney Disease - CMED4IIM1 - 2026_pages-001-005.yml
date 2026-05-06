@@ -1,99 +1,179 @@
-- front: "What is the definition of Chronic Kidney Disease (CKD)?"
-  back: "Chronic Kidney Disease is an abnormality of kidney structure and function that is present for more than three months. Functional abnormality is defined by eGFR <60 mL/min, while structural abnormality includes proteinuria (elevated protein-creatinine ratio), hematuria, or structural abnormalities on imaging."
-  tags: ["CKD", "definition", "diagnosis"]
-
-- front: "What are the eGFR-based CKD stages?"
-  back: "Grade 1: eGFR >90; Grade 2A: eGFR 60-90; Grade 3A: eGFR 45-59; Grade 3B: eGFR 30-44; Grade 4: eGFR 15-29 (advanced CKD); Grade 5: eGFR <15 (kidney failure), all in mL/min/1.73m2."
-  tags: ["CKD", "stages", "eGFR", "classification"]
-
-- front: "What is the epidemiology of CKD in South Africa?"
-  back: "The prevalence of CKD in South Africa is estimated at approximately 10% of the adult population. CKD numbers are expected to double in the next decade. It is currently under-recognized and under-treated, and prevalence increases with age."
-  tags: ["epidemiology", "CKD", "South-Africa", "prevalence"]
-
-- front: "What is the disease iceberg concept in CKD?"
-  back: "For every 1 patient with kidney failure, there are approximately 200 patients in stages 3-4, and about 5,000 in stages 1-2. This means vast populations remain undiagnosed and we only see the tip of the iceberg in clinical practice."
-  tags: ["epidemiology", "CKD", "disease-burden", "screening"]
-
-- front: "What is the pathogenesis of CKD progression?"
-  back: "Nephronal destruction leads to increased blood flow and permeability in remaining nephrons. The glomerulus becomes damaged with strain on mesangial cells, causing proteinuria that leaks into tubules, resulting in tubular-interstitial scarring and chronic ischemic damage."
-  tags: ["pathophysiology", "CKD", "progression", "mechanisms"]
-
-- front: "What are the most common causes of CKD in South Africa?"
-  back: "Hypertension (20%), Diabetes Mellitus (18%), HIV (14%), and other causes including drug toxicity (NSAIDs, contrast agents, aminoglycosides), connective tissue disease (lupus), and inherited conditions (polycystic kidney disease, obstructive nephropathy)."
-  tags: ["etiology", "CKD", "causes", "South-Africa"]
-
-- front: "Why is diagnosing CKD clinically important?"
-  back: "CKD diagnosis is crucial because it increases cardiovascular risk and early mortality, empowers further investigation and kidney biopsy, allows determination of underlying cause, enables specific treatments to slow progression, facilitates recognition of complications (anemia, bone disease), and prepares for kidney replacement therapy."
-  tags: ["clinical-importance", "CKD", "diagnosis", "outcomes"]
-
-- front: "Who should be screened for CKD?"
-  back: "Screening indications include: persons with known risk factors (diabetes, hypertension, HIV), unexplained edema, congestive heart failure, evidence of atherosclerosis (cerebral or cardiovascular), multi-system disease, chronic nephrotoxin exposure, or neurological disease."
-  tags: ["screening", "CKD", "risk-factors", "clinical-practice"]
-
-- front: "Why is proteinuria quantification important in CKD?"
-  back: "Proteinuria is a marker of CKD and its progression. Greater protein excretion indicates faster CKD progression. It is also a cardiac risk marker; increased proteinuria correlates with higher cardiovascular morbidity and mortality."
-  tags: ["proteinuria", "CKD", "risk-assessment", "prognosis"]
-
-- front: "What is the relationship between hypertension and CKD?"
-  back: "Hypertension is both a cause and consequence of CKD. It can both initiate kidney disease and result from it. Controlling blood pressure slows CKD progression, making hypertension management a key therapeutic target."
-  tags: ["hypertension", "CKD", "pathophysiology", "treatment"]
-
-- front: "What routine investigations are performed for CKD?"
-  back: "Investigations include: urine dipstick, urine microscopy, quantified proteinuria (protein-creatinine or albumin-creatinine ratio), urine electrolytes, estimated GFR calculation, renal ultrasound imaging, and kidney biopsy (when cause is unknown)."
-  tags: ["investigation", "CKD", "diagnosis", "tests"]
-
-- front: "When should patients be referred to a nephrologist?"
-  back: "Referral indications include: eGFR <30 mL/min, proteinuria >500 g/24 hours, hematuria (suggests underlying glomerulonephritis), blood pressure poorly controlled despite 4+ agents, persistently abnormal serum potassium, evidence of inherited kidney disease, or recurrent kidney stones."
-  tags: ["referral", "specialist-care", "CKD", "management"]
-
-- front: "What are non-modifiable risk factors for CKD progression?"
-  back: "Non-modifiable factors include: underlying cause of CKD, patient age, and race/ethnicity (certain races are more prone to specific kidney diseases)."
-  tags: ["risk-factors", "non-modifiable", "CKD", "progression"]
-
-- front: "What are modifiable risk factors for CKD progression?"
-  back: "Modifiable factors include: blood pressure control, proteinuria reduction, avoidance of nephrotoxic agents, control of disease activity, treatment of obstruction and UTIs, correction of hypovolemia, management of anemia, smoking cessation, blood glucose control in diabetics, and avoidance of intercurrent illness."
-  tags: ["risk-factors", "modifiable", "CKD", "progression", "management"]
-
-- front: "What are the blood pressure targets in CKD based on proteinuria?"
-  back: "For non-proteinuric or minimally proteinuric CKD: target 130/80 mmHg. For CKD with proteinuria >150 mg/day or in diabetics: lower target ~125/80 mmHg is preferred, individualized by patient age."
-  tags: ["hypertension", "blood-pressure", "CKD", "treatment-targets"]
-
-- front: "What is the preferred antihypertensive strategy in CKD?"
-  back: "First-line therapy: ACE inhibitors or Angiotensin Receptor Blockers (ARBs), which reduce both blood pressure and proteinuria. ACE-I/ARBs also reduce renal fibrosis and scarring. Sequential additions: loop diuretic (for salt/water overload), calcium channel blocker, beta-blocker, then alpha-blocker."
-  tags: ["antihypertensive", "ACE-inhibitor", "ARB", "CKD", "treatment"]
-
-- front: "What is the role of statins in CKD management?"
-  back: "Statins are used to manage dyslipidemia in CKD patients, helping reduce cardiovascular risk, which is elevated in CKD."
-  tags: ["dyslipidemia", "statins", "CKD", "cardiovascular-risk"]
-
-- front: "How is hyperphosphatemia managed in CKD?"
-  back: "Hyperphosphatemia in CKD is controlled through dietary phosphate restriction and the use of phosphate binders."
-  tags: ["hyperphosphatemia", "CKD", "mineral-metabolism", "treatment"]
-
-- front: "How is anemia managed in CKD?"
-  back: "Anemia in CKD is managed with iron supplementation and erythropoietin (EPO) therapy to restore hemoglobin levels."
-  tags: ["anemia", "CKD", "complications", "treatment"]
-
-- front: "What are dietary recommendations in CKD?"
-  back: "Dietary measures include: limiting meat protein to 0.8-1 g/kg/day (reduces disease progression), smoking cessation, limiting alcohol to <3 units/day, weight loss, regular exercise, and obtaining appropriate vaccinations."
-  tags: ["diet", "nutrition", "CKD", "lifestyle", "management"]
-
-- front: "What medications should be avoided or modified in CKD?"
-  back: "Medications to avoid: NSAIDs (nephrotoxic), metformin (stop when eGFR <30 to avoid lactic acidosis), contrast agents (in high-risk patients). Aspirin may be used for cardiovascular risk reduction."
-  tags: ["medications", "nephrotoxicity", "CKD", "contraindications"]
-
-- front: "What is the management approach for early-stage CKD?"
-  back: "Management focuses on preventing progression through blood pressure control, proteinuria reduction, treatment of modifiable risk factors, and management of cardiovascular risk with statins and potentially aspirin."
-  tags: ["early-stage-CKD", "stages-1-2", "management", "prevention"]
-
-- front: "What special management is required in advanced CKD (stages 4-5)?"
-  back: "Advanced CKD management includes: nephrology referral, optimization of calcium and phosphate balance with binders, PTH management, correction of metabolic acidosis, water and salt restriction, and preparation for kidney replacement therapy. Daily weight monitoring is essential."
-  tags: ["advanced-CKD", "stages-4-5", "management", "replacement-therapy"]
-
-- front: "What is the management of hyperkalemia in end-stage kidney disease?"
-  back: "Hyperkalemia management includes: dietary potassium restriction (low-potassium diet), and in persistent cases, discontinuation of ACE inhibitors and ARBs which can worsen hyperkalemia."
-  tags: ["hyperkalemia", "end-stage-kidney-disease", "complications", "management"]
-
-- front: "What are the diagnostic criteria for CKD?"
-  back: "CKD diagnosis requires: presence of abnormality for >3 months; eGFR <60 mL/min/1.73m2; elevated protein-creatinine ratio; and persistent hematuria (blood in urine), or structural/functional abnormalities on imaging or biopsy."
-  tags: ["CKD", "diagnosis", "criteria", "diagnostic-threshold"]
+# Anki canonical export — nephrology / Approach To Chronic Kidney Disease
+# Generated by scripts/anki_migrate.js
+deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+notes:
+  - guid: 238da4d9f93f8115
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What is the definition of Chronic Kidney Disease (CKD)?"
+      Back: "Chronic Kidney Disease is an abnormality of kidney structure and function that is present for more than three months. Functional abnormality is defined by eGFR <60 mL/min, while structural abnormality includes proteinuria (elevated protein-creatinine ratio), hematuria, or structural abnormalities on imaging."
+    tags: ["CKD", "definition", "diagnosis", "subject:nephrology"]
+  - guid: 3859226295515547
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What are the eGFR-based CKD stages?"
+      Back: "Grade 1: eGFR >90; Grade 2A: eGFR 60-90; Grade 3A: eGFR 45-59; Grade 3B: eGFR 30-44; Grade 4: eGFR 15-29 (advanced CKD); Grade 5: eGFR <15 (kidney failure), all in mL/min/1.73m2."
+    tags: ["CKD", "stages", "eGFR", "classification", "subject:nephrology"]
+  - guid: fadfba72d769e65c
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What is the epidemiology of CKD in South Africa?"
+      Back: "The prevalence of CKD in South Africa is estimated at approximately 10% of the adult population. CKD numbers are expected to double in the next decade. It is currently under-recognized and under-treated, and prevalence increases with age."
+    tags: ["epidemiology", "CKD", "South-Africa", "prevalence", "subject:nephrology"]
+  - guid: 2d815b1d708f17f6
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What is the disease iceberg concept in CKD?"
+      Back: "For every 1 patient with kidney failure, there are approximately 200 patients in stages 3-4, and about 5,000 in stages 1-2. This means vast populations remain undiagnosed and we only see the tip of the iceberg in clinical practice."
+    tags: ["epidemiology", "CKD", "disease-burden", "screening", "subject:nephrology"]
+  - guid: 5d1d721dc620f07f
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What is the pathogenesis of CKD progression?"
+      Back: "Nephronal destruction leads to increased blood flow and permeability in remaining nephrons. The glomerulus becomes damaged with strain on mesangial cells, causing proteinuria that leaks into tubules, resulting in tubular-interstitial scarring and chronic ischemic damage."
+    tags: ["pathophysiology", "CKD", "progression", "mechanisms", "subject:nephrology"]
+  - guid: 2a5e3ddb4d14abd7
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What are the most common causes of CKD in South Africa?"
+      Back: "Hypertension (20%), Diabetes Mellitus (18%), HIV (14%), and other causes including drug toxicity (NSAIDs, contrast agents, aminoglycosides), connective tissue disease (lupus), and inherited conditions (polycystic kidney disease, obstructive nephropathy)."
+    tags: ["etiology", "CKD", "causes", "South-Africa", "subject:nephrology"]
+  - guid: 940c7d8b9c430ea5
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "Why is diagnosing CKD clinically important?"
+      Back: "CKD diagnosis is crucial because it increases cardiovascular risk and early mortality, empowers further investigation and kidney biopsy, allows determination of underlying cause, enables specific treatments to slow progression, facilitates recognition of complications (anemia, bone disease), and prepares for kidney replacement therapy."
+    tags: ["clinical-importance", "CKD", "diagnosis", "outcomes", "subject:nephrology"]
+  - guid: 47ef33c26a111049
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "Who should be screened for CKD?"
+      Back: "Screening indications include: persons with known risk factors (diabetes, hypertension, HIV), unexplained edema, congestive heart failure, evidence of atherosclerosis (cerebral or cardiovascular), multi-system disease, chronic nephrotoxin exposure, or neurological disease."
+    tags: ["screening", "CKD", "risk-factors", "clinical-practice", "subject:nephrology"]
+  - guid: a9e3e149fa260db5
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "Why is proteinuria quantification important in CKD?"
+      Back: "Proteinuria is a marker of CKD and its progression. Greater protein excretion indicates faster CKD progression. It is also a cardiac risk marker; increased proteinuria correlates with higher cardiovascular morbidity and mortality."
+    tags: ["proteinuria", "CKD", "risk-assessment", "prognosis", "subject:nephrology"]
+  - guid: 11e63ac6397e5412
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What is the relationship between hypertension and CKD?"
+      Back: "Hypertension is both a cause and consequence of CKD. It can both initiate kidney disease and result from it. Controlling blood pressure slows CKD progression, making hypertension management a key therapeutic target."
+    tags: ["hypertension", "CKD", "pathophysiology", "treatment", "subject:nephrology"]
+  - guid: 8f6e1970b153f8dc
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What routine investigations are performed for CKD?"
+      Back: "Investigations include: urine dipstick, urine microscopy, quantified proteinuria (protein-creatinine or albumin-creatinine ratio), urine electrolytes, estimated GFR calculation, renal ultrasound imaging, and kidney biopsy (when cause is unknown)."
+    tags: ["investigation", "CKD", "diagnosis", "tests", "subject:nephrology"]
+  - guid: 8d20d2271abb2b7b
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "When should patients be referred to a nephrologist?"
+      Back: "Referral indications include: eGFR <30 mL/min, proteinuria >500 g/24 hours, hematuria (suggests underlying glomerulonephritis), blood pressure poorly controlled despite 4+ agents, persistently abnormal serum potassium, evidence of inherited kidney disease, or recurrent kidney stones."
+    tags: ["referral", "specialist-care", "CKD", "management", "subject:nephrology"]
+  - guid: 42810a33a0b8e415
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What are non-modifiable risk factors for CKD progression?"
+      Back: "Non-modifiable factors include: underlying cause of CKD, patient age, and race/ethnicity (certain races are more prone to specific kidney diseases)."
+    tags: ["risk-factors", "non-modifiable", "CKD", "progression", "subject:nephrology"]
+  - guid: 871b11db4d537bc5
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What are modifiable risk factors for CKD progression?"
+      Back: "Modifiable factors include: blood pressure control, proteinuria reduction, avoidance of nephrotoxic agents, control of disease activity, treatment of obstruction and UTIs, correction of hypovolemia, management of anemia, smoking cessation, blood glucose control in diabetics, and avoidance of intercurrent illness."
+    tags: ["risk-factors", "modifiable", "CKD", "progression", "management", "subject:nephrology"]
+  - guid: d36afc4a72da7b6f
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What are the blood pressure targets in CKD based on proteinuria?"
+      Back: "For non-proteinuric or minimally proteinuric CKD: target 130/80 mmHg. For CKD with proteinuria >150 mg/day or in diabetics: lower target ~125/80 mmHg is preferred, individualized by patient age."
+    tags: ["hypertension", "blood-pressure", "CKD", "treatment-targets", "subject:nephrology"]
+  - guid: 4412fd78dcc8ba89
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What is the preferred antihypertensive strategy in CKD?"
+      Back: "First-line therapy: ACE inhibitors or Angiotensin Receptor Blockers (ARBs), which reduce both blood pressure and proteinuria. ACE-I/ARBs also reduce renal fibrosis and scarring. Sequential additions: loop diuretic (for salt/water overload), calcium channel blocker, beta-blocker, then alpha-blocker."
+    tags: ["antihypertensive", "ACE-inhibitor", "ARB", "CKD", "treatment", "subject:nephrology"]
+  - guid: ce0cde87bdcbf5da
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What is the role of statins in CKD management?"
+      Back: "Statins are used to manage dyslipidemia in CKD patients, helping reduce cardiovascular risk, which is elevated in CKD."
+    tags: ["dyslipidemia", "statins", "CKD", "cardiovascular-risk", "subject:nephrology"]
+  - guid: ad9f5e3d17e44e2c
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "How is hyperphosphatemia managed in CKD?"
+      Back: "Hyperphosphatemia in CKD is controlled through dietary phosphate restriction and the use of phosphate binders."
+    tags: ["hyperphosphatemia", "CKD", "mineral-metabolism", "treatment", "subject:nephrology"]
+  - guid: 4fe25b64a199f870
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "How is anemia managed in CKD?"
+      Back: "Anemia in CKD is managed with iron supplementation and erythropoietin (EPO) therapy to restore hemoglobin levels."
+    tags: ["anemia", "CKD", "complications", "treatment", "subject:nephrology"]
+  - guid: cd862eb349c77dd2
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What are dietary recommendations in CKD?"
+      Back: "Dietary measures include: limiting meat protein to 0.8-1 g/kg/day (reduces disease progression), smoking cessation, limiting alcohol to <3 units/day, weight loss, regular exercise, and obtaining appropriate vaccinations."
+    tags: ["diet", "nutrition", "CKD", "lifestyle", "management", "subject:nephrology"]
+  - guid: 69ffcefc67d95e2e
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What medications should be avoided or modified in CKD?"
+      Back: "Medications to avoid: NSAIDs (nephrotoxic), metformin (stop when eGFR <30 to avoid lactic acidosis), contrast agents (in high-risk patients). Aspirin may be used for cardiovascular risk reduction."
+    tags: ["medications", "nephrotoxicity", "CKD", "contraindications", "subject:nephrology"]
+  - guid: 6e597ca83083021e
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What is the management approach for early-stage CKD?"
+      Back: "Management focuses on preventing progression through blood pressure control, proteinuria reduction, treatment of modifiable risk factors, and management of cardiovascular risk with statins and potentially aspirin."
+    tags: ["early-stage-CKD", "stages-1-2", "management", "prevention", "subject:nephrology"]
+  - guid: c49bacc163967021
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What special management is required in advanced CKD (stages 4-5)?"
+      Back: "Advanced CKD management includes: nephrology referral, optimization of calcium and phosphate balance with binders, PTH management, correction of metabolic acidosis, water and salt restriction, and preparation for kidney replacement therapy. Daily weight monitoring is essential."
+    tags: ["advanced-CKD", "stages-4-5", "management", "replacement-therapy", "subject:nephrology"]
+  - guid: 7c2646b16170825b
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What is the management of hyperkalemia in end-stage kidney disease?"
+      Back: "Hyperkalemia management includes: dietary potassium restriction (low-potassium diet), and in persistent cases, discontinuation of ACE inhibitors and ARBs which can worsen hyperkalemia."
+    tags: ["hyperkalemia", "end-stage-kidney-disease", "complications", "management", "subject:nephrology"]
+  - guid: fc9bc22fb01e166c
+    noteType: Basic
+    deck: "Corpus::Nephrology::Approach To Chronic Kidney Disease"
+    fields:
+      Front: "What are the diagnostic criteria for CKD?"
+      Back: "CKD diagnosis requires: presence of abnormality for >3 months; eGFR <60 mL/min/1.73m2; elevated protein-creatinine ratio; and persistent hematuria (blood in urine), or structural/functional abnormalities on imaging or biopsy."
+    tags: ["CKD", "diagnosis", "criteria", "diagnostic-threshold", "subject:nephrology"]

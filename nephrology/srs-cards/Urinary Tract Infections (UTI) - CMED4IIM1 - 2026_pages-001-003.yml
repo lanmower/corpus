@@ -1,143 +1,256 @@
-- front: "What is the definition of Urinary Tract Infection (UTI)?"
-  back: "A urinary tract infection is a bacterial infection that occurs anywhere in the urinary tract, from the urethra to the kidneys. UTIs are among the most common bacterial infections in the world, affecting millions of people worldwide."
-  tags: ["UTI", "definition", "epidemiology"]
-
-- front: "What is the epidemiology of UTI in women?"
-  back: "Approximately 50% of women will experience a UTI during their lifetime. There is a 10% annual increase in UTI risk in older women. Younger, sexually active females have a 0.5% annual risk, and 3-5% of females develop recurrent UTIs."
-  tags: ["UTI", "epidemiology", "women", "incidence"]
-
-- front: "When do UTIs occur in men and children?"
-  back: "UTIs are generally rare in men and children. When they do occur in these populations, they are typically associated with an underlying urinary tract abnormality."
-  tags: ["UTI", "epidemiology", "men", "children", "risk-factors"]
-
-- front: "What are the anatomical components of the urinary tract?"
-  back: "The urinary tract consists of four main components: (1) kidneys - produce urine; (2) ureters - carry urine from kidneys to bladder; (3) bladder - stores urine; (4) urethra - carries urine out of the body."
-  tags: ["anatomy", "urinary-tract", "kidneys", "bladder"]
-
-- front: "What is the difference between lower and upper UTIs?"
-  back: "Lower UTIs involve the urethra and bladder, while upper UTIs involve the ureters and kidneys. Lower UTIs are more common but upper UTIs are more serious and can lead to kidney damage if untreated."
-  tags: ["UTI", "classification", "lower-UTI", "upper-UTI", "pathology"]
-
-- front: "What is an uncomplicated UTI?"
-  back: "An uncomplicated UTI is symptomatic cystitis or a bladder infection occurring in women with a normal, structurally intact urinary tract."
-  tags: ["UTI", "classification", "uncomplicated-UTI", "cystitis"]
-
-- front: "What is a complicated UTI?"
-  back: "A complicated UTI is an infection occurring in a structurally or functionally abnormal urinary tract. These require more aggressive treatment."
-  tags: ["UTI", "classification", "complicated-UTI", "abnormal-anatomy"]
-
-- front: "What is the difference between relapse and reinfection in UTI?"
-  back: "A relapse UTI is recurrence with the same organism that was not adequately cleared by antibiotics. A reinfection is a recurrent UTI with the same or different organism after the initial infection was cleared."
-  tags: ["UTI", "classification", "relapse", "reinfection", "recurrent-UTI"]
-
-- front: "What defines recurrent UTIs?"
-  back: "Recurrent UTIs are defined as more than 3-4 culture-proven UTIs within a year. This pattern is more common in female patients."
-  tags: ["UTI", "recurrent-UTI", "classification", "epidemiology"]
-
-- front: "What are the symptoms of lower UTI?"
-  back: "Symptoms of lower UTI include dysuria (painful urination), urgency, frequency of urination, hematuria (blood in urine), and foul-smelling urine."
-  tags: ["UTI", "lower-UTI", "symptoms", "clinical-presentation"]
-
-- front: "What are the symptoms of upper UTI?"
-  back: "Symptoms of upper UTI (pyelonephritis) include fever, chills, flank pain, nausea, and vomiting. These are more serious than lower UTI symptoms."
-  tags: ["UTI", "upper-UTI", "pyelonephritis", "symptoms", "clinical-presentation"]
-
-- front: "Why are women more susceptible to UTIs than men?"
-  back: "Women are more likely to develop UTIs than men because the female urethra is shorter than the male urethra, making it easier for bacteria to enter and travel to the bladder."
-  tags: ["UTI", "risk-factors", "gender-differences", "anatomy"]
-
-- front: "What are the risk factors for developing UTI?"
-  back: "Risk factors include: being female, diabetes mellitus, sexual activity, use of certain birth control methods, recent urinary tract surgery, and presence of kidney stones. These increase risk of structural or functional abnormalities."
-  tags: ["UTI", "risk-factors", "diabetes", "sexual-activity"]
-
-- front: "What is the role of urine flow in UTI prevention?"
-  back: "Urine flow is unidirectional in normal individuals, which is a protective factor. This normal flow helps prevent bacterial colonization of the urinary tract."
-  tags: ["UTI", "protective-factors", "physiology", "prevention"]
-
-- front: "What is the role of lactobacilli in UTI prevention?"
-  back: "Lactobacilli suppress general bacterial colonization of the urinary tract, providing a protective effect against UTI development."
-  tags: ["UTI", "protective-factors", "lactobacilli", "microbiome"]
-
-- front: "How do antibodies and complement protect against UTI?"
-  back: "Secretory IgA (sIgA) in the urinary tract reduces the attachment and invasion of bacteria. The upper urinary tract contains local phagocytes, and there is renal production of antibodies and complement activation within the urinary tract."
-  tags: ["UTI", "protective-factors", "immune-response", "IgA"]
-
-- front: "What physical properties of urine protect against bacterial infection?"
-  back: "The bladder has a low urine pH, high concentration of urea, and organic acids, all of which protect against bacterial infection."
-  tags: ["UTI", "protective-factors", "urine-chemistry", "physiology"]
-
-- front: "How is UTI diagnosed based on urine testing?"
-  back: "UTI diagnosis is based on symptoms and urine testing. Urine dipstick and microscopy check for presence of bacteria, white blood cells, red blood cells. Urine culture may be performed to identify the specific causative bacteria."
-  tags: ["UTI", "diagnosis", "urine-dipstick", "urine-culture"]
-
-- front: "What are the findings on urine dipstick testing for UTI?"
-  back: "Urine dipstick may show: (1) leukocyte esterase test - positive predictive value 66%, negative predictive value ~90%; (2) nitrite test - highest specificity for bacteria; (3) hematuria - can indicate underlying UTI among other conditions."
-  tags: ["UTI", "diagnosis", "dipstick", "leukocyte-esterase", "nitrites"]
-
-- front: "What does urine microscopy reveal in UTI?"
-  back: "Urine microscopy can show white blood cell casts, red blood cell casts, and the presence of bacteria which can be cultured to identify the organism."
-  tags: ["UTI", "diagnosis", "microscopy", "urine-casts"]
-
-- front: "What are the colony-forming unit (CFU) thresholds in female UTI diagnosis?"
-  back: "In females with cystitis: >1,000 CFU/mL; in pyelonephritis: >10,000 CFU/mL; asymptomatic bacteriuria: >=100,000 CFU/mL (bacteria colonization without symptoms)."
-  tags: ["UTI", "diagnosis", "urine-culture", "CFU-threshold"]
-
-- front: "When is imaging investigation indicated in UTI?"
-  back: "Imaging (ultrasound, intravenous pyelogram/IVP, or CT scan) is indicated especially when pyelonephritis does not respond to therapy, to rule out underlying structural defects like kidney stones or neurogenic bladder."
-  tags: ["UTI", "investigation", "imaging", "ultrasound", "CT-scan"]
-
-- front: "What imaging studies are recommended in men with recurrent UTI?"
-  back: "In men with first or second UTI, especially elderly men, recommended studies include prostate-specific antigen testing, digital rectal prostate examination, ultrasound or IVP, and post-void residual volume assessment."
-  tags: ["UTI", "investigation", "men", "imaging", "prostate"]
-
-- front: "What are the first-line antibiotics for uncomplicated cystitis in women?"
-  back: "Uncomplicated cystitis in women is treated with fluoroquinolones such as ciprofloxacin for 3 days as first-line therapy."
-  tags: ["UTI", "treatment", "antibiotics", "ciprofloxacin", "cystitis"]
-
-- front: "What is the treatment duration for complicated UTI?"
-  back: "Complicated UTI requires 7 days of antibiotic treatment, compared to 3 days for uncomplicated cystitis."
-  tags: ["UTI", "treatment", "antibiotics", "complicated-UTI", "duration"]
-
-- front: "What is the antibiotic treatment for UTI in pregnancy?"
-  back: "In pregnant women with UTI, co-amoxiclav (amoxicillin-clavulanic acid) is used for 7 days."
-  tags: ["UTI", "treatment", "pregnancy", "co-amoxiclav", "antibiotics"]
-
-- front: "What is the treatment for acute pyelonephritis in women?"
-  back: "Uncomplicated pyelonephritis in women is treated with ciprofloxacin or other antibiotics for 14 days."
-  tags: ["UTI", "pyelonephritis", "treatment", "antibiotics", "duration"]
-
-- front: "What supportive care is important in UTI treatment?"
-  back: "Adequate oral fluid intake is essential to ensure bacteria are washed out of the urinary tract. Increased fluid and frequent urination helps clear the infection."
-  tags: ["UTI", "treatment", "supportive-care", "hydration", "fluid-intake"]
-
-- front: "When should complicated UTI patients be admitted to hospital?"
-  back: "Complicated UTI patients should be admitted if they have evidence of systemic sepsis or if they are diabetic, as they are prone to severe infections."
-  tags: ["UTI", "complicated-UTI", "hospitalization", "sepsis", "diabetes"]
-
-- front: "What is the in-hospital treatment regimen for complicated UTI?"
-  back: "Hospitalized complicated UTI patients receive IV fluids, IV antibiotics, and require 2-3 weeks of therapy. Treatment is adjusted based on culture and sensitivity results. Further imaging may be needed if no response occurs."
-  tags: ["UTI", "complicated-UTI", "hospitalization", "IV-antibiotics", "treatment"]
-
-- front: "What are the common causative organisms of UTI?"
-  back: "The most common causative organisms are: (1) E. coli - most common; (2) Staphylococcus saprophyticus; (3) Klebsiella; (4) Enterococcus; (5) Proteus species."
-  tags: ["UTI", "microbiology", "bacteria", "pathogens", "E-coli"]
-
-- front: "What is the pathogenesis of lower UTI?"
-  back: "Lower UTI typically begins when bacteria from the rectum or vagina enter the urethra and travel up to the bladder, causing infection."
-  tags: ["UTI", "lower-UTI", "pathogenesis", "bacterial-translocation"]
-
-- front: "What are the preventive measures for UTI?"
-  back: "Prevention strategies include: drinking plenty of fluids, urinating frequently, practicing good hygiene, avoiding tissues or spermicides, and consuming cranberry beverages (though evidence-based support is limited)."
-  tags: ["UTI", "prevention", "lifestyle", "hygiene", "fluid-intake"]
-
-- front: "What clinical features suggest pyelonephritis rather than cystitis?"
-  back: "Clinical features suggesting pyelonephritis include: systemic symptoms (fever, chills), flank pain, and positive urine dipstick findings. In diabetic patients with systemic symptoms and urgency, pyelonephritis is likely."
-  tags: ["UTI", "pyelonephritis", "diagnosis", "clinical-differentiation"]
-
-- front: "What is the typical presentation of the index case described in the lecture?"
-  back: "A 54-year-old diabetic patient presents with fever, left-sided flank pain, and dysuria for 3 days. Urine dipstick shows 3+ leukocytes and 1+ protein, consistent with pyelonephritis."
-  tags: ["UTI", "case-study", "pyelonephritis", "clinical-presentation"]
-
-- front: "What is the recommended management for the index case of pyelonephritis?"
-  back: "The diabetic patient with pyelonephritis requires hospital admission, IV antibiotics, IV fluids for hydration, and pain control management due to systemic symptoms and underlying diabetes."
-  tags: ["UTI", "pyelonephritis", "management", "hospitalization", "diabetes"]
+# Anki canonical export — nephrology / Urinary Tract Infections (UTI)
+# Generated by scripts/anki_migrate.js
+deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+notes:
+  - guid: c8214a8e0d9b4ebe
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the definition of Urinary Tract Infection (UTI)?"
+      Back: "A urinary tract infection is a bacterial infection that occurs anywhere in the urinary tract, from the urethra to the kidneys. UTIs are among the most common bacterial infections in the world, affecting millions of people worldwide."
+    tags: ["UTI", "definition", "epidemiology", "subject:nephrology"]
+  - guid: 69fc6fd6afeede59
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the epidemiology of UTI in women?"
+      Back: "Approximately 50% of women will experience a UTI during their lifetime. There is a 10% annual increase in UTI risk in older women. Younger, sexually active females have a 0.5% annual risk, and 3-5% of females develop recurrent UTIs."
+    tags: ["UTI", "epidemiology", "women", "incidence", "subject:nephrology"]
+  - guid: 7db0a7855cc987e2
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "When do UTIs occur in men and children?"
+      Back: "UTIs are generally rare in men and children. When they do occur in these populations, they are typically associated with an underlying urinary tract abnormality."
+    tags: ["UTI", "epidemiology", "men", "children", "risk-factors", "subject:nephrology"]
+  - guid: 6a9d0d475799a40e
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What are the anatomical components of the urinary tract?"
+      Back: "The urinary tract consists of four main components: (1) kidneys - produce urine; (2) ureters - carry urine from kidneys to bladder; (3) bladder - stores urine; (4) urethra - carries urine out of the body."
+    tags: ["anatomy", "urinary-tract", "kidneys", "bladder", "subject:nephrology"]
+  - guid: 59857ad27ff98ec9
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the difference between lower and upper UTIs?"
+      Back: "Lower UTIs involve the urethra and bladder, while upper UTIs involve the ureters and kidneys. Lower UTIs are more common but upper UTIs are more serious and can lead to kidney damage if untreated."
+    tags: ["UTI", "classification", "lower-UTI", "upper-UTI", "pathology", "subject:nephrology"]
+  - guid: faea16ed0ea8b7dd
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is an uncomplicated UTI?"
+      Back: "An uncomplicated UTI is symptomatic cystitis or a bladder infection occurring in women with a normal, structurally intact urinary tract."
+    tags: ["UTI", "classification", "uncomplicated-UTI", "cystitis", "subject:nephrology"]
+  - guid: e7678c7d524c99e9
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is a complicated UTI?"
+      Back: "A complicated UTI is an infection occurring in a structurally or functionally abnormal urinary tract. These require more aggressive treatment."
+    tags: ["UTI", "classification", "complicated-UTI", "abnormal-anatomy", "subject:nephrology"]
+  - guid: a82eb154b9a37e63
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the difference between relapse and reinfection in UTI?"
+      Back: "A relapse UTI is recurrence with the same organism that was not adequately cleared by antibiotics. A reinfection is a recurrent UTI with the same or different organism after the initial infection was cleared."
+    tags: ["UTI", "classification", "relapse", "reinfection", "recurrent-UTI", "subject:nephrology"]
+  - guid: d21d74983a9c53d5
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What defines recurrent UTIs?"
+      Back: "Recurrent UTIs are defined as more than 3-4 culture-proven UTIs within a year. This pattern is more common in female patients."
+    tags: ["UTI", "recurrent-UTI", "classification", "epidemiology", "subject:nephrology"]
+  - guid: 00b81153333f229a
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What are the symptoms of lower UTI?"
+      Back: "Symptoms of lower UTI include dysuria (painful urination), urgency, frequency of urination, hematuria (blood in urine), and foul-smelling urine."
+    tags: ["UTI", "lower-UTI", "symptoms", "clinical-presentation", "subject:nephrology"]
+  - guid: 4c373b3d2945c306
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What are the symptoms of upper UTI?"
+      Back: "Symptoms of upper UTI (pyelonephritis) include fever, chills, flank pain, nausea, and vomiting. These are more serious than lower UTI symptoms."
+    tags: ["UTI", "upper-UTI", "pyelonephritis", "symptoms", "clinical-presentation", "subject:nephrology"]
+  - guid: cdd51ca460f45fa6
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "Why are women more susceptible to UTIs than men?"
+      Back: "Women are more likely to develop UTIs than men because the female urethra is shorter than the male urethra, making it easier for bacteria to enter and travel to the bladder."
+    tags: ["UTI", "risk-factors", "gender-differences", "anatomy", "subject:nephrology"]
+  - guid: e41baf89ea107c05
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What are the risk factors for developing UTI?"
+      Back: "Risk factors include: being female, diabetes mellitus, sexual activity, use of certain birth control methods, recent urinary tract surgery, and presence of kidney stones. These increase risk of structural or functional abnormalities."
+    tags: ["UTI", "risk-factors", "diabetes", "sexual-activity", "subject:nephrology"]
+  - guid: d97965850cea88df
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the role of urine flow in UTI prevention?"
+      Back: "Urine flow is unidirectional in normal individuals, which is a protective factor. This normal flow helps prevent bacterial colonization of the urinary tract."
+    tags: ["UTI", "protective-factors", "physiology", "prevention", "subject:nephrology"]
+  - guid: df6bf32edb8ffafb
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the role of lactobacilli in UTI prevention?"
+      Back: "Lactobacilli suppress general bacterial colonization of the urinary tract, providing a protective effect against UTI development."
+    tags: ["UTI", "protective-factors", "lactobacilli", "microbiome", "subject:nephrology"]
+  - guid: 4c1ed32f9e765813
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "How do antibodies and complement protect against UTI?"
+      Back: "Secretory IgA (sIgA) in the urinary tract reduces the attachment and invasion of bacteria. The upper urinary tract contains local phagocytes, and there is renal production of antibodies and complement activation within the urinary tract."
+    tags: ["UTI", "protective-factors", "immune-response", "IgA", "subject:nephrology"]
+  - guid: 9ab4126fed7ac703
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What physical properties of urine protect against bacterial infection?"
+      Back: "The bladder has a low urine pH, high concentration of urea, and organic acids, all of which protect against bacterial infection."
+    tags: ["UTI", "protective-factors", "urine-chemistry", "physiology", "subject:nephrology"]
+  - guid: 933dd4623a37b8de
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "How is UTI diagnosed based on urine testing?"
+      Back: "UTI diagnosis is based on symptoms and urine testing. Urine dipstick and microscopy check for presence of bacteria, white blood cells, red blood cells. Urine culture may be performed to identify the specific causative bacteria."
+    tags: ["UTI", "diagnosis", "urine-dipstick", "urine-culture", "subject:nephrology"]
+  - guid: 4366d5418f646bae
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What are the findings on urine dipstick testing for UTI?"
+      Back: "Urine dipstick may show: (1) leukocyte esterase test - positive predictive value 66%, negative predictive value ~90%; (2) nitrite test - highest specificity for bacteria; (3) hematuria - can indicate underlying UTI among other conditions."
+    tags: ["UTI", "diagnosis", "dipstick", "leukocyte-esterase", "nitrites", "subject:nephrology"]
+  - guid: 50cf4de11a9c1093
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What does urine microscopy reveal in UTI?"
+      Back: "Urine microscopy can show white blood cell casts, red blood cell casts, and the presence of bacteria which can be cultured to identify the organism."
+    tags: ["UTI", "diagnosis", "microscopy", "urine-casts", "subject:nephrology"]
+  - guid: 1f1d1966a9f20699
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What are the colony-forming unit (CFU) thresholds in female UTI diagnosis?"
+      Back: "In females with cystitis: >1,000 CFU/mL; in pyelonephritis: >10,000 CFU/mL; asymptomatic bacteriuria: >=100,000 CFU/mL (bacteria colonization without symptoms)."
+    tags: ["UTI", "diagnosis", "urine-culture", "CFU-threshold", "subject:nephrology"]
+  - guid: 86e15737ec8be80e
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "When is imaging investigation indicated in UTI?"
+      Back: "Imaging (ultrasound, intravenous pyelogram/IVP, or CT scan) is indicated especially when pyelonephritis does not respond to therapy, to rule out underlying structural defects like kidney stones or neurogenic bladder."
+    tags: ["UTI", "investigation", "imaging", "ultrasound", "CT-scan", "subject:nephrology"]
+  - guid: b2a94064a3bb1d18
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What imaging studies are recommended in men with recurrent UTI?"
+      Back: "In men with first or second UTI, especially elderly men, recommended studies include prostate-specific antigen testing, digital rectal prostate examination, ultrasound or IVP, and post-void residual volume assessment."
+    tags: ["UTI", "investigation", "men", "imaging", "prostate", "subject:nephrology"]
+  - guid: 71cce3d69c3ecd22
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What are the first-line antibiotics for uncomplicated cystitis in women?"
+      Back: "Uncomplicated cystitis in women is treated with fluoroquinolones such as ciprofloxacin for 3 days as first-line therapy."
+    tags: ["UTI", "treatment", "antibiotics", "ciprofloxacin", "cystitis", "subject:nephrology"]
+  - guid: 03a67999ae3b79bc
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the treatment duration for complicated UTI?"
+      Back: "Complicated UTI requires 7 days of antibiotic treatment, compared to 3 days for uncomplicated cystitis."
+    tags: ["UTI", "treatment", "antibiotics", "complicated-UTI", "duration", "subject:nephrology"]
+  - guid: c256d24b76dbd8c8
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the antibiotic treatment for UTI in pregnancy?"
+      Back: "In pregnant women with UTI, co-amoxiclav (amoxicillin-clavulanic acid) is used for 7 days."
+    tags: ["UTI", "treatment", "pregnancy", "co-amoxiclav", "antibiotics", "subject:nephrology"]
+  - guid: 9e3a3b6dda3dfec3
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the treatment for acute pyelonephritis in women?"
+      Back: "Uncomplicated pyelonephritis in women is treated with ciprofloxacin or other antibiotics for 14 days."
+    tags: ["UTI", "pyelonephritis", "treatment", "antibiotics", "duration", "subject:nephrology"]
+  - guid: 11926b924a13bc06
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What supportive care is important in UTI treatment?"
+      Back: "Adequate oral fluid intake is essential to ensure bacteria are washed out of the urinary tract. Increased fluid and frequent urination helps clear the infection."
+    tags: ["UTI", "treatment", "supportive-care", "hydration", "fluid-intake", "subject:nephrology"]
+  - guid: 46e795f45b4c8f49
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "When should complicated UTI patients be admitted to hospital?"
+      Back: "Complicated UTI patients should be admitted if they have evidence of systemic sepsis or if they are diabetic, as they are prone to severe infections."
+    tags: ["UTI", "complicated-UTI", "hospitalization", "sepsis", "diabetes", "subject:nephrology"]
+  - guid: ba08757f4ead9444
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the in-hospital treatment regimen for complicated UTI?"
+      Back: "Hospitalized complicated UTI patients receive IV fluids, IV antibiotics, and require 2-3 weeks of therapy. Treatment is adjusted based on culture and sensitivity results. Further imaging may be needed if no response occurs."
+    tags: ["UTI", "complicated-UTI", "hospitalization", "IV-antibiotics", "treatment", "subject:nephrology"]
+  - guid: 1592a91e554985c0
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What are the common causative organisms of UTI?"
+      Back: "The most common causative organisms are: (1) E. coli - most common; (2) Staphylococcus saprophyticus; (3) Klebsiella; (4) Enterococcus; (5) Proteus species."
+    tags: ["UTI", "microbiology", "bacteria", "pathogens", "E-coli", "subject:nephrology"]
+  - guid: 0d9618d77596ae6f
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the pathogenesis of lower UTI?"
+      Back: "Lower UTI typically begins when bacteria from the rectum or vagina enter the urethra and travel up to the bladder, causing infection."
+    tags: ["UTI", "lower-UTI", "pathogenesis", "bacterial-translocation", "subject:nephrology"]
+  - guid: d1815e257e960503
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What are the preventive measures for UTI?"
+      Back: "Prevention strategies include: drinking plenty of fluids, urinating frequently, practicing good hygiene, avoiding tissues or spermicides, and consuming cranberry beverages (though evidence-based support is limited)."
+    tags: ["UTI", "prevention", "lifestyle", "hygiene", "fluid-intake", "subject:nephrology"]
+  - guid: b5200dcd252b4856
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What clinical features suggest pyelonephritis rather than cystitis?"
+      Back: "Clinical features suggesting pyelonephritis include: systemic symptoms (fever, chills), flank pain, and positive urine dipstick findings. In diabetic patients with systemic symptoms and urgency, pyelonephritis is likely."
+    tags: ["UTI", "pyelonephritis", "diagnosis", "clinical-differentiation", "subject:nephrology"]
+  - guid: c6a356be49e7d5e7
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the typical presentation of the index case described in the lecture?"
+      Back: "A 54-year-old diabetic patient presents with fever, left-sided flank pain, and dysuria for 3 days. Urine dipstick shows 3+ leukocytes and 1+ protein, consistent with pyelonephritis."
+    tags: ["UTI", "case-study", "pyelonephritis", "clinical-presentation", "subject:nephrology"]
+  - guid: 0b29dba91f606e2c
+    noteType: Basic
+    deck: "Corpus::Nephrology::Urinary Tract Infections (UTI)"
+    fields:
+      Front: "What is the recommended management for the index case of pyelonephritis?"
+      Back: "The diabetic patient with pyelonephritis requires hospital admission, IV antibiotics, IV fluids for hydration, and pain control management due to systemic symptoms and underlying diabetes."
+    tags: ["UTI", "pyelonephritis", "management", "hospitalization", "diabetes", "subject:nephrology"]

@@ -11,6 +11,32 @@ Each subject originally had three subdirectories:
 
 Only srs-cards remain at the corpus root; all original source materials live at `D:/medbak/<subject>/` along with `D:/medbak/archive-manifest.json` (records every moved file). The build pipeline no longer reads from medbak — `scripts/build_data.js` ingests `srs-cards/` + `<subject>/study_guide.md` + `<subject>/infographics/*.png` + `<subject>_triage_scenarios.yml` only. `loadAudio`/`loadBooks` removed; shards no longer carry `audio[]`/`books[]` arrays; manifest no longer carries `audioCount`/`bookCount`.
 
+## Anki canonical schema (2026-05-06)
+
+All `<subject>/srs-cards/*.yml` files now share a single canonical YAML schema mapping 1:1 to Anki's import format:
+
+```yaml
+deck: "Corpus::<Subject>::<Topic>"
+notes:
+  - guid: <16-char sha1 of subject+front+back>
+    noteType: Basic           # or Cloze when {{c1::...}} present
+    deck: "Corpus::<Subject>::<Topic>"
+    fields:
+      Front: "..."
+      Back: "..."
+    tags: ["userTag", "subject:<subject>", "difficulty:<medium>", "source:<src>"]
+```
+
+Migration: `scripts/anki_migrate.js` — one-shot, idempotent on re-run. Reads legacy Shape A (`cards:` wrapper), Shape B (top-level list), atoms-shape, and the `imported-flashcards-*` files; writes the canonical schema in place. 2551 notes across 63 files, 0 GUID collisions, 0 skips.
+
+Build: `scripts/build_data.js loadCards` reads the canonical schema and maps it to the existing shard `cards[]` shape (preserves `id`/`front`/`back`/`tags`/`difficulty`/`source` plus carries `_guid`/`_deck`/`_noteType` for the exporter). Stable IDs unchanged.
+
+Export: `scripts/anki_export.js` emits `exports/corpus-anki.txt` (TSV with `#guid #notetype #deck #tags` headers, Anki-importable via File > Import). 2551 lines + 6-line header. True `.apkg` is out of scope (requires sqlite + media bundling).
+
+Settings page: `data` panel now has an `export to Anki (.txt)` button that walks `data/manifest.json` + per-subject shards and downloads the same TSV in-browser.
+
+Missing card-sets audit: `docs/missing-cards.md` — per-subject matrix of expected topics (study-guide H1-H3 + medbak filename stems + triage scenario names) versus card-set filenames, marked covered / thin (<20 cards) / missing.
+
 ## Generated Artifacts
 
 Per-subject files at D:/corpus root:
