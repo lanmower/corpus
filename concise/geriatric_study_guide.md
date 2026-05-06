@@ -1,9 +1,6 @@
 # Geriatric — Complete Study Guide
 
 **Generated:** 2026-05-04
-**Sources:** 4 lectures, 99 SRS atoms
-
-> Built for 100% mastery: every lecture transcript embedded in full, every SRS atom inlined under its lecture, no truncation. Use this as the single reference for geriatric.
 
 ## Contents
 
@@ -16,10 +13,7 @@
 
 ## Geriatric - Falls
 
-### Lecture Transcript
-
-- page 1 -
-Hello, I'm Dr. Mandela from the Department of Geriatrics. Welcome to a lecture on
+Hello, I'm Dr. Mandela from the Department of Geriatrics. Welcome to a section on
 falls. Falls is regarded as one of the geriatric giants and this is because
 over 30% of adults age 65 years and above report to have fallen in the
 previous year. This percentage increases with age up to 75% of adults will report
@@ -31,7 +25,6 @@ injuries, fractures being in 5% of the individuals who have fallen and over one
 third of patients who have fallen or report to having fear of falling this is
 regardless on whether they had an injury or not. So looking at why older people fall
 this is an interplay between extrinsic, intrinsic and situational factors.
-- page 2 -
 Extrinsic factors being environmental factors, how the ground is, how the
 how the interior of the house is like at the rugs in the in on the floor are
 the loose cords are the baby toys are the pets that would trip the older
@@ -44,7 +37,6 @@ and peripheral nerve function then when you're looking at the sensory inputs and
 organization you need the visual the vestibular and proprioception all intact
 then you need the biomechanics you need the skeletal integrity intact you need
 the joints to be stable and the integrity of the joints and flexibility
-- page 3 -
 intact and you need your muscle strength to be intact. So looking at the
 intrinsic factors causing falls you have sensory inputs like vision you need to
 see to be able to see where you're going so patients who are blind or they
@@ -57,7 +49,6 @@ the bones and the feet if there's pain his deformity or loss of function those
 patients tend to fall and the central nervous system patients who have
 dementia and delirium tend to fall and drugs I measure cause of falling cause
 they'll affect the central nervous system it can be sedation it can be
-- page 4 -
 dizziness it can be confusion patients who have seizures and patients who've had
 a stroke like they'll have a hemiblegia or hemiparesis and patients who have
 expressed a pyramidal symptoms patients who have cerebral dysfunctions tend to
@@ -70,7 +61,6 @@ history is very important this include circumstances around that fall you need
 to know exactly what the patient was doing when they fail you need to look at
 the circumstances around the previous falls you need to look at the assistive
 devices they use working frames or working stakes do they have their
-- page 5 -
 classes on do they have their hearing aids on and you look at the associated
 symptoms this is a detailed systemic inquiry and to name the few you look at
 the nervous system do they have confusion do they have seizures do they
@@ -83,7 +73,6 @@ balance assessment we'll talk about in the next slide you will have a full
 medical assessment this is a full systemic examination looking at all the
 things that can cause falls in each system then you would do a detailed
 medication review this includes prescribed medication over counter
-- page 6 -
 medication medication given by the neighbor medication from friends and
 family medication they make for themselves and supplements then you
 would look at the environmental assessment which is usually done by the
@@ -96,7 +85,6 @@ bathrooms there are a number of gait and balance assessments that can be done
 and patients will have fallen there's a get-up and go test which I will explain
 in the next slide there's a stenal nudge test where someone stands behind the
 patient and you push the patient on the stenum and you want to see if the
-- page 7 -
 patient can block the fall and then there's a rhombic test where the
 patient stands with their eyes closed you're looking if they they are able to
 maintain their posture without swaying there's a one leg it stands where you ask
@@ -109,7 +97,6 @@ meters and turn around and go and sit down so when they are standing up you are
 looking at the proximal muscle strength which is mostly the quadriceps that's
 what you need to stand up and then you are looking at the gate as they walk
 you're looking at the arm swings you're looking at the type of a gate do they
-- page 8 -
 they have and you're looking at they are it they are walking straight then when
 they turn you are counting the number of steps they use to turn and you need
 them to have less than three steps more than that means they are in a higher
@@ -122,7 +109,6 @@ of the two condition the postural reflexes and muscle strength and exercise has
 been shown to improve these exercises like Tai Chi and Rekhae for instance have
 been shown to improve muscle strength and improve postural reflexes as well
 patients also need to be advised on walking aids proper footwear and food
-- page 9 -
 care to minimize the risk of fractures should the patients continue to fall
 includes prevention and treatment of osteoporosis there are patients who
 are you would classify as high-risk patients that would need to have a
@@ -286,10 +272,7 @@ A: Alcohol history should be documented and addressed as a situational factor in
 
 ## GeriatriC - Frailty
 
-### Lecture Transcript
-
-- page 1 -
-Hello, I'm Dr. Matella from the Department of Geriatrics. Welcome to your lecture on
+Hello, I'm Dr. Matella from the Department of Geriatrics. Welcome to your section on
 frailty. Looking at the physiological changes that happen from bed until the
 age around age of 35. So all the body systems and the body organs, they are
 developing at this stage and until they reach that peak at the age of 35. So for
@@ -299,7 +282,6 @@ going to have a higher peak of the lung function than someone who's smoking. The
 there will be patients who have a higher cardiac reserve. It all depends on what
 the peak was. And depending on that peak, that decline that happens from the age of
 35. There will be a decline regardless of who you are. That decline is dependent on
-- page 2 -
 what your peak was. If you had a low peak, that decline is going to be very
 significant. And if you had a high peak, you'll still have a decline, but it's not
 going to be as much as someone who had a low peak. Then there's that physiological
@@ -310,7 +292,6 @@ frailty, that's when patients have high risk of being disabled.
 Frailty is defined as the loss of a patient's ability to extend minor
 environmental stresses because of reduced reserve in the physiological
 function of several organ systems. So in this diagram here, you have an
-- page 3 -
 individual who's robust as an individual who does not have frailty. When they're
 exposed to the stressor, a stressor can be an infection, it can be a fall, it can be
 trauma, it can be surgery. When they are exposed to a stressor, there will be
@@ -321,7 +302,6 @@ they don't go back to their baseline. A patient who is frail, they hardly recove
 back to their baseline, they end up being dependent. These are the patients
 after admission or on discharge, they cannot go back home because they are not
 dependent, they end up in old age home. Sakopinium, which is defined as
-- page 4 -
 reduced muscle strength, is a key feature of frailty and frailty is
 associated with poor health outcome. There are multiple tools that are used to
 assess frailty, we will just discuss the commonly used ones. So there's a
@@ -332,7 +312,6 @@ self-reported exhaustion or poor endurance, there is slowness where you ask a
 patient to walk for three meters and you are timing them and the gates, you time
 the time they take to walk over three meters, then there's low physical
 activity which is self-reported and patients who meet three out of the five
-- page 5 -
 criteria are regarded as frail, pre frailty is the presence of one to two of
 these five criteria. Another assessment tool that has been used is osteoporotic
 fracture frailty index, where it looks at the weight loss of more than 5% over
@@ -343,7 +322,6 @@ they've got two out of these three, they are regarded as frail. The next
 commonly used tool is frailty index or deficit accumulation, in this one you
 would choose 30 health deficits, these can include symptoms, signs, diseases,
 disabilities, abnormal blood results or imaging or ECGs, and then you would take
-- page 6 -
 the patient and count how many of those the patient will have, they'll
 probably have maybe 20 out of the 30 or 15 out of the 30, then you will divide
 that if they have 20 you divide that 20 by the 30 and you get a score, a score
@@ -354,7 +332,6 @@ patient, these are people who are more evidently slowing, they need help with
 doing their instrumental activities of daily living, like taking transport to
 hospital, doing house chores, taking their own medication or managing their own
 finances, and a terminally ill, which is a nine would be patients who are
-- page 7 -
 reaching their end of life or have a life expectancy of less than six months, so
 frailty is either primary or secondary, but when you're looking at the pathophysiology
 there is genetic factors, atrocities and chronic inflammation, which is believed
@@ -365,7 +342,6 @@ that can lead to a clinical disease, that clinical disease then leads to
 secondary frailty and those patients end up being disabled and then it becomes a
 a psycho and with disability then they are slower, they have low physical
 activity, which then leads them to that primary frailty, but patients who are
-- page 8 -
 also just primarily frail, they are in a higher risk of getting chronic diseases
 and these chronic diseases we know can lead to secondary frailty, so it becomes a
 psycho, but when you look at the pathophysiology there's also a room for
@@ -376,7 +352,6 @@ where you cannot reverse frailty and that's when we talk about palliation, this
 slide is more like a reputation of the pathophysiology of frailty, you have
 genetics, there's lifestyle factors like smoking, alcohol, inactivity, malnutrition
 then there are diseases like diabetes, atherosclerosis, cognitive impairment
-- page 9 -
 coupled with aging, those are the factors that will lead to frailty and with frailty
 there is functional decline and disability and once you have that there's increased risk of
 hospitalization of institutionalization and death and but patients who are frail
@@ -393,7 +368,7 @@ and consequences of frailty include falls, lots of ability to do activities of d
 disability, frail patients have higher risk of getting hospitalized when they get infection,
 they have risk of infections, they have risk of getting malnutrition, they have higher risk of
 getting cognitive impairment, they have increased risk of osteoporosis, osteostatic hypertension
-and higher risk of dying, this is the end of the frailty lecture thank you
+and higher risk of dying, this is the end of the frailty section thank you
 
 ### Key Atoms (SRS)
 
@@ -481,9 +456,6 @@ A: Rehabilitation options include: exercise programs, disease management (even t
 
 ## Geriatric - latrogenesis
 
-### Lecture Transcript
-
-- page 1 -
 Hello, I'm Yolysomadella from the Department of Geriatrics. Today we'll be
 talking about aiotrogenesis. We will start with this case scenario. You have an
 86-year-old woman who is known with hypertension, diabetes, mellitus,
@@ -499,7 +471,6 @@ atinolol 50 milligrams daily for the hypertension and ischemic heart disease.
 At her follow-up visit, she complains of epicastropane and her blood pressures
 are 110 cevangi over 110 millimeters of mercury, which is high. Her blood tests
 show deterioration of her renal function. So I want you to look at this slide and
-- page 2 -
 think about what could be happening with this patient, and we will come back
 to this case scenario at a later stage. Looking at the
 respective for adverse drug events in older patients, you might be more
@@ -515,7 +486,6 @@ some you're taking four times a day, some you're taking once a day, so if you ar
 on 12 or more of those medications per day, patients who have a prior
 adverse drug reaction. So what puts older patients at a risk of adverse drug
 events is with age, you get physiological changes, which alter
-- page 3 -
 pharmacodynamics and pharmacokinetics, we will talk about this in the next slide.
 Patients who are older have tend to lose homeostasis, they tend to have multiple
 comorbidities and they tend to have polypharmacy, which by definition is if
@@ -531,7 +501,6 @@ body, the next slide are going to explain how exactly the physiological changes
 would affect these pharmacokinetics and pharmacodynamics in older patients. So
 pharmacodynamics with aging there is changes in the drug response, so there is
 drug receptor and drug organ interactions that happen, there is increased
-- page 4 -
 sensitivity to certain drugs, like if you are on anticholinetics the older
 patients tend to have side effects related to the urinary bladder and the
 eyes and the brains, they are more sensitive to the anticholinetics and they
@@ -547,7 +516,6 @@ people then tend to be prone to having orthostatic hypotension, especially when
 they are on certain drugs that will drop their blood pressure, they tend to be
 atexic when you give them benzodiazepine, they tend to have hypodemia, if you give
 them drugs like pheno thiazide and they tend to be volume depleted and they
-- page 5 -
 become dehydrated when you give them diuretics and they also tend to have
 electrolyte abnormalities with glucose dysregulation when you give them
 diuretics. There is also the effect of coexisting diseases because chronic
@@ -563,7 +531,6 @@ worsening of the cloud. Polypharmacy is defined as being on
 for or more medications and we know that drug to drug interaction increases once
 someone is on for more medication, older patients also tend to have more pain
 complaints and tend to take non-steroidal anti-inflammatory drugs. The problem with
-- page 6 -
 non-steroidal anti-inflammatory drugs is that the encounter at the efficacy of
 all anti-hypertensives, so they will come with uncontrolled hypertension, it
 counteracts with the efficacy of anti-ingential drugs and anti-cardiac
@@ -579,7 +546,6 @@ somewhere, it becomes an inconvenience. If there's differing perception, if an
 older patient does not think they need that drug then they will not take that
 drug. They have poor eyesight, they won't see where the drug is or how to
 open the drug. If they have arthritis, they have difficulty in opening certain
-- page 7 -
 containers and patients with cognitive impairment would tend to forget to take
 that drug. So those are some of the reasons why you have poor compliance in
 older patients. So strategies to improve compliance include adequate clinical
@@ -595,7 +561,6 @@ patient came alone than the family members at home can help. Then always
 review the patient and their medication regularly. This includes over-the-counter
 medications, supplements or anything else the patient might be taking. So when
 you're looking at aiachrogenesis, we don't only talk about adverse drug
-- page 8 -
 reaction. We also talk about adverse events that are related to medical and
 missing care. So when you're looking at hospitalization, for instance, you look
 at clinical aortrogenesis and functional aortrogenesis. So clinical
@@ -611,7 +576,6 @@ those interventions. Because the patient is sick, you're going to get you're
 going to admit them to the hospital. Then they get adverse events related to
 the admission to the hospital. So those would be functional aortrogenesis. We'll
 talk about in the next slide. And when you look at the statistics, more than 50
-- page 9 -
 percent of patients over the age of 70 years, they experience a decline in
 physical and cognitive function. That is not related to their admitting diagnosis.
 So when you look at hospitalization, patients who are in the hospital tend to
@@ -641,23 +605,19 @@ anti-anginal, and anti-cadiac failure drugs. This is why the blood pressure is h
 patient. Nonsteroidal anti-inflammatory drugs also have a high risk of causing
 peptic ulcer disease. Hence the patient came with epicastric pain. They are also at risk for
 impairing renal function. That's why there's deterioration in the renal function. So that is
-the drug you're stopping this patient. That is the end of our eoxygenesis lecture. Thank you.
+the drug you're stopping this patient. That is the end of our eoxygenesis section. Thank you.
 
 -
 
 ## Geriatric - Urinary Incontinence
 
-### Lecture Transcript
-
-- page 1 -
-Hello, this is Dr. Mantello from the Department of Geriatrics. Welcome to a lecture on urinary incontinence.
-The objectives of this lecture is for you to understand the age-related changes in the urogenital system,
+Hello, this is Dr. Mantello from the Department of Geriatrics. Welcome to a section on urinary incontinence.
+The objectives of this section is for you to understand the age-related changes in the urogenital system,
 to be able to differentiate between the types of urinary incontinence and to know the causes of the incontinence,
 have an approach to management and know the indications for catheterization.
 Urinary incontinence is one of the geriatric syndromes. It affects 30% of community-dwelling women above the age of 60 years old,
 and 5 to 10% of these have severe urinary incontinence. It affects 6% in community-dwelling men above the age of 60 years old.
 This prevalence increases with age, it affects 30 to 50% of frail and cognitive impaired community-dwellers,
-- page 2 -
 and 50 to 70% of individuals in nursing homes have severe urinary incontinence.
 So, looking at why older patients in particular are in a high risk of getting urinary incontinence,
 it's all related to the age-related changes in the structure and function of the urinary tract system.
@@ -665,15 +625,13 @@ As one ages, there is increased number of involuntary detresa contractions with 
 so the detresa is a muscle around the bladder. It becomes overactive as one age.
 There is also increased post-void residual volume of 5200 males. Post-void residual volume is the urine that gets left after you've passed urine.
 There is increased nocturnal fluid expression as one age. This is due to the low nocturnal antidiuretic hormone secretion,
-- page 3 -
 and inappropriate nocturnal production of arterial naturally urtic peptide.
 There is also increased prosthetic volume in men as they get older. These can lead to obstruction in 50% of their time.
 There is also decreased bladder capacity, so the bladder cannot hold a lot of urine.
 There is decreased detresa contractility, so when you pass urine, the detresa muscle of the bladder needs to have tension.
 It needs to contract for that urine to be expelled. So, that is decreased as you get older, and the detresa muscle cannot sustain the tension,
 hence you have increased post-vodal residual volume. There is also decreased ability to postpone waiting.
-When you are still younger, you are able to sit through the lecture and go pass urine afterwards, but there is one age that ability reduces.
-- page 4 -
+When you are still younger, you are able to sit through the section and go pass urine afterwards, but there is one age that ability reduces.
 There is also decreased in urethral closing ability in women, especially menopausal women due to obstruction deficiency.
 The six types of urinary incontinence are stress, edge, overflow, reflex, functional, and mixed.
 In stress urinary incontinence, there is weakening of the pelvic floor muscles, and when there is increased abdominal pressure,
@@ -681,7 +639,6 @@ like when one coughs, laughs or sneezes, the urine leaks. In edge, there is this
 and this is driven by an overactive bladder. In overflow, there is something blocking the urine until the bladder is so distended that it ends up stretching the urethra or pen in the urine leaks.
 In reflex, there is damage in the connections to the brain that tells the brain this person needs to pass urine until the urine leaks.
 In functional, there is nothing wrong in the urogen at all systems, that there is something blocking the patient to get to the bathroom, like they are very ill,
-- page 5 -
 or they have a fracture until the urine passes out, or they have cognitive impairment, they can't remember they need to pass urine.
 In mixed, it's usually a mixture of stress and edge incontinence.
 Urine incontinence can be acute or chronic. These are reversible conditions that are associated with acute urinary incontinence.
@@ -689,7 +646,6 @@ We use a mnemonic drip, which D is for delirium.
 R is for restricted mobility, like patients who have pain, osteoarthritis, comatoid arthritis, fractures, or postoperatively, they can't get to the toilet in time.
 Patients who have retention, which can be as a result of using drugs like anticholinigics, patients who have fecal impaction, or blood outflow obstruction.
 Their eye is for infection. It's also for inflammation, like patients who have atrophic urethritis, or in vaginitis, that happens a lot in patients who are postmenopausal.
-- page 6 -
 R is also for imperfection, like fecal impaction.
 Then P is for polyureal, like patients who have glycosuria, who have hypacalsemia, who drink a lot of caffeine, or alcohol.
 Patients who have nocturnal polyureal, like patients who have cardiac failure.
@@ -697,7 +653,6 @@ And P is for pills, again, like drugs, like diuretics, cytotropic drugs, alpha b
 These are the factors that predispose a patient to having chronic urinary incontinence, like patients who have had vaginal child birth, especially those who had neuromuscular damage.
 During the delivery, patients who have pelvic floor prolapse, patients who have had a post-transurricular section of the prostate.
 This is an operation done for prosthetic cancer.
-- page 7 -
 Patients who are obese because of the increase in club abdominal pressure. Patients who smoke.
 Patients who have cognitive decline.
 Diabetes mellitus is an independent risk factor for urinary incontinence in patients who have had cerebral vascular accidents.
@@ -705,20 +660,18 @@ Management of urinary incontinence includes non-pharmacological and pharmacologi
 Non-pharmacological, there is prevention, for instance, avoiding taking lots of caffeine or alcohol.
 Kigel exercises which are pelvic floor exercises.
 There is prompted timed or timed avoiding, where the patient will have specific times.
-- page 8 -
 They just go to the bathroom without waiting for the urine to start leaking.
 Then there is bladder training exercises.
 Then there is pharmacological treatment, where in age urinary incontinence in women, you would give anticholinetics.
-But when you listen to the eartrogenesis lecture, then you would know that there are problems with using anticholinetics.
+But when you listen to the eartrogenesis section, then you would know that there are problems with using anticholinetics.
 Then in men with overactive bladder or urine or in age incontinence, you would use alpha blockers.
 So indications for chronic indwelling urine or catheter in patients with urinary incontinence include
 patients who have urinary retention, that urinary retention if it causes persistent overflow incontinence,
-- page 9 -
 or it causes urinary tract infections or ends up in renal failure.
 If the urinary retention cannot be corrected by treatment or surgery, if they cannot intermittently catheterize themselves.
 Or if there is a quantamination you worried about, like in patients who have pressure ulcers or wounds around the perinale area that you want to heal.
 Patients who are terminally ill or impaired, and sometimes it's a patient preference or a caregiver preference.
-This is the end of our urinary incontinence lecture. Thank you.
+This is the end of our urinary incontinence section. Thank you.
 
 ### Key Atoms (SRS)
 
@@ -880,7 +833,7 @@ A: Prompted timed voiding (also called scheduled voiding) involves having the pa
 
 **Q: What pharmacological treatment is used for stress/urge incontinence in women?**
 
-A: Anticholinergic medications are used to treat stress and urge incontinence in women, though there are concerns about their adverse effects as discussed in the iatrogenesis lecture.
+A: Anticholinergic medications are used to treat stress and urge incontinence in women, though there are concerns about their adverse effects as discussed in the iatrogenesis section.
 
 **Q: What pharmacological treatment is used for overactive bladder/urge incontinence in men?**
 
@@ -906,7 +859,7 @@ A: Catheterization is indicated in patients with pressure ulcers or wounds in th
 
 ## Mastery Checklist
 
-- [ ] Read every lecture transcript above (4 lectures)
+- [ ] Read every Notes above (4 sections)
 - [ ] Drill every SRS atom (99 atoms)
 - [ ] Run the triage scenarios for geriatric until parameters are intuitive
 - [ ] Re-derive each atom's definition from memory

@@ -218,7 +218,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(p.streak, 0); assert.strictEqual(p.dailyGoal, 30);
         progress.bumpGraded(1);
         assert.strictEqual(progress.load().streak, 1);
-        const twoAgo = new Date(Date.now() - 2 * 86400000).toISOString().slice(0, 10);
+        const eff = (() => { const now = new Date(); if (now.getHours() < 6) return new Date(now.getTime() - 6 * 3600 * 1000); return now; })();
+        const twoAgo = new Date(eff.getTime() - 2 * 86400000).toISOString().slice(0, 10);
         global.localStorage.setItem('corpus.progress.v1', JSON.stringify({ ...progress.load(), lastActiveDate: twoAgo, todayDate: new Date().toISOString().slice(0, 10), streak: 7 }));
         progress.bumpGraded(1);
         assert.strictEqual(progress.load().streak, 1);
@@ -314,7 +315,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     console.log('# integration: SW v4 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace + archive isolation');
     t('SW + PWA manifest + theme contrast + search prose+snippet + streak grace + app keys + new routes', async () => {
         const sw = READ('site/sw.js');
-        assert.match(sw, /corpus-v4/);
+        assert.match(sw, /corpus-v5/);
         for (const m of ['timer.js','plan.js','mistakes.js','drill.js','flag.js','undo.js','notes.js','late.js','usercards.js','confidence.js','manifest.webmanifest']) assert.ok(sw.includes(m), 'sw missing ' + m);
         assert.ok(!sw.includes('medbak'), 'sw should not reference medbak');
         const wm = JSON.parse(READ('site/manifest.webmanifest'));

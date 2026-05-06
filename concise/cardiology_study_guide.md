@@ -1,23 +1,13 @@
 # Cardiology — Complete Study Guide
 
 **Generated:** 2026-05-04
-**Sources:** 6 lectures + 47 textbook sections
-
-> This guide compiles all available material to provide complete mastery of the subject.
 
 ## Table of Contents
 
-1. [Audio Lectures](#audio-lectures)
-2. [Textbook Sections](#textbook-sections)
 3. [Study Strategy](#study-strategy)
-
-## Audio Lectures
 
 ### 1. Coronary Artery Disease (CAD)
 
-*Audio Transcript*
-
-- page 1 -
 worldwide. The most recent global mortality statistics by the World Health Organization,
 which was done in 2019, indicates that cardiovascular disease at the top bar graph in gray by far
 is the commonest cause of mortality accounting for 18 and a half million deaths annually.
@@ -45,8 +35,6 @@ disease of lifestyle that can be modified, either by choices you make
 -
 
 ### 2. Coronary Artery Disease (CAD)
-
-*Audio Transcript*
 
 - -
 G is the ST segment. That
@@ -80,8 +68,6 @@ It looks like a tom
 
 ### 3. Coronary Artery Disease (CAD)
 
-*Audio Transcript*
-
 - -
 fer
 it is it is given as a bolus immediately. You don't have to give it as an infusion. The problem
@@ -112,10 +98,7 @@ with step. What we mean by a percutaneous coronary interventio
 
 ### 4. ECG Interpretation
 
-*Audio Transcript*
-
-- page 1 -
-Good day and welcome to this three recorded lecture regarding the basics of ECG interpretation.
+Good day and welcome to this three recorded section regarding the basics of ECG interpretation.
 We're going to go through the basic steps of ECG interpretation.
 First, you've got to make sure that the ECG is calibrated correctly.
 We then analyze the rate, the rhythm.
@@ -147,10 +130,7 @@ So lead 1 reads between the
 
 ### 5. Evaluation Of Valvular Heart Disease
 
-*Audio Transcript*
-
-- page 1 -
-Okay, good day. I'm Dr. Naidu from the Department of Cardiology. I will be doing the lecture
+Okay, good day. I'm Dr. Naidu from the Department of Cardiology. I will be doing the section
 on the evaluation of valvular heart disease.
 Okay, we're going to start by discussing rheumatic fever. By definition, rheumatic fever is a systemic
 disease of childhood. It's often recurrent that follows group A, beta-homolytic streptococcal
@@ -180,9 +160,6 @@ we look at
 
 ### 6. Infective Endocarditis
 
-*Audio Transcript*
-
-- page 1 -
 I will be discussing the definition, the diagnosis, the management indications for surgery as well
 as prophylaxis. Infective endocarditis involves infection of endocardial surface, typically with
 vegetations on the endocardium. There may be physical presence of microorganisms in the lesion
@@ -211,25 +188,20 @@ much less percentage up to abou
 
 -
 
-## Textbook Sections
-
-The following sections are drawn from clinical textbooks and lecture notes:
+The following sections are drawn from clinical references and section notes:
 
 ### Hypertension_2
 
 ####.txt
 
-- page 1 -
 Hypertension
 Dr A Mahabal
 Department of Cardiology
 
-- page 2 -
 Definition of Hypertension
 Usual BP > 140/90
 Treatment initiated if BP > 130/80 in high risk patients esp. With coronary artery disease
 
-- page 3 -
 Essential Hypertension (90%)
 Hemodynamic subtypes
 Systolic Hypertension in Young Adults
@@ -243,7 +215,6 @@ Obstructive sleep apnoea – increased catecholamines
 Renal mechanisms – resetting pressure natriuresis /low birth weight
 Endothelial cell dysfunction
 
-- page 4 -
 Secondary Hypertension (10%)
 Renal parenchymal disease
 GFR <60ml/min
@@ -254,7 +225,6 @@ Hemodialysis patients
 Renal transplant recipients
 Renovascular hypertension
 
-- page 5 -
 Secondary Hypertension – cont..
 Adrenal
 Mineralocorticoid excess
@@ -267,7 +237,6 @@ Acromegaly / hypothyroidism / hyperparathyroidism
 Oral contraceptives
 Hypertension in pregnancy
 
-- page 6 -
 Consequences of hypertension
 Hypertensive heart disease
 Pressure overload hypertrophy
@@ -353,43 +322,35 @@ Amlodipine
 
 ####.txt
 
-- page 1 -
 ISCHAEMIC HEART DISEASE
 S PONNUSAMY/ DP NaidooDEPARTMENT OF CARDIOLOGYINKOSI ALBERT LUTHULI CENTRAL HOSPITAL
 
-- page 2 -
 Worldwide Statistics
 Each year:> 4 million patients are admitted with unstable angina and acute MI (ACS)> 900,000  patients undergo PCI with  or without stent placement
 
-- page 3 -
 Ischaemic heart diseaseDefinition
 An imbalance between the supply of oxygen and the myocardial demand resulting in myocardial ischaemia.Angina pectoris	is the symptom, not the disease	chest discomfort associated with abnormal myocardial function in the absence of myocardial necrosis
 [NOTES]
 ‹#›
 
-- page 4 -
 Causes of Impaired supply/demand
 SupplyAtheroma, thrombosis, spasm, embolusDemandAnaemia, hypertension, high cardiac output (thyrotoxicosis, myocardial hypertrophy)
 [NOTES]
 ‹#›
 
-- page 5 -
 Response to injury hypothesis
 Accumulation of cholesterol in the vessel wall intimaSmooth muscle cell proliferation result in  GROWTH FACTORS leading to  SCLEROSIS	Expansion of fibrous tissue and INFLAMMATORY MEDIATORS leading to  INFLAMMATION	Chronic inflammatory cells migrate into wall, release cytokines
 [NOTES]
 ‹#›
 
-- page 6 -
 Pathophysiology of IHD
 [NOTES]
 ‹#›
 
-- page 7 -
 Ischaemic heart diseasePathophysiology
 [NOTES]
 ‹#›
 
-- page 8 -
 Ischaemic heart diseaseManifestations
 Sudden deathMyocardial infarctionAcute coronary syndromeStable angina pectorisHeart failureArrhythmiaAsymptomatic
 [
@@ -629,36 +590,29 @@ ACS : Putting it together : ANTMAN score
 
 ####.txt
 
-- page 1 -
 ISCHAEMIC HEART DISEASE
 DP NaidooDEPARTMENT OF CARDIOLOGYINKOSI ALBERT LUTHULI CENTRAL HOSPITAL
 
-- page 2 -
 DEFINITION
 Ischemic heart disease, also referred to as coronary heart disease, is present when a patient has one or more symptoms, signs, or complications from an inadequate supply of blood to the myocardiumThis is most commonly due to obstruction of the epicardial coronary arteries due to atherosclerosis
 
-- page 3 -
 What is myocardial ischaemia?
 An imbalance between the supply of oxygen and the myocardial demand resulting in myocardial ischaemiaANGINA PECTORIS is the symptom of chronic myocardial ischaemiachest discomfort associated with abnormal myocardial function in the absence of myocardial necrosisMost common cause is coronary artery disease due to atheromaAcute onset of severe angina-like pain that does not remit may be a manifestation of  severe ischaemia (ACUTE CORONARY SYNDROME) is due to acute complete blockage of a coronary artery
 [NOTES]
 ‹#›
 
-- page 4 -
 Myocardial Ischemia
 Spectrum of presentationsilent ischemiaexertion-induced anginaunstable anginaacute myocardial infarctionSudden cardiac death
 
-- page 5 -
 Causes of Impaired supply/demand ischaemia
 SupplyAtheroma, thrombosis, spasm, embolusDemandAnaemia, hypertension, high cardiac output (thyrotoxicosis, myocardial hypertrophy)
 [NOTES]
 ‹#›
 
-- page 6 -
 Pathophysiology of Ischaemic heart disease (IHD)
 [NOTES]
 ‹#›
 
-- page 7 -
 
 [... content truncated, total length: 2564 chars ...]
 
@@ -790,33 +744,26 @@ ACS risk stratification : ANTMAN score
 
 -
 
-### INFECTIVE_ENDOCARDITIS_-_LECTURE
+### Infective Endocarditis
 
 ####.txt
 
-- page 1 -
 INFECTIVE ENDOCARDITIS
 
-- page 2 -
 INFECTIVE ENDOCARDITIS
 DefinitionDiagnosisManagementIndications for SurgeryProphylaxis
 
-- page 3 -
 DEFINITION
 Infection of the endocardial surfaceVegetations on the endocardiumPhysical presence of microorganisms in the lesionHeart valves most commonly effectedMay develop on septal defect or on the mural endocardiumVirtually always fatal if untreated
 
-- page 4 -
 CLASSIFICATION
 Four categories – different infecting organisms and run different coursesNative valve endocarditisProsthetic valve endocarditisEndocarditis in IV drug abusersNosocomial endocarditisORAcute vs Subacute
 
-- page 5 -
 ACUTEMarked toxicityProgresses over days to several weeks to valvular destruction and metastatic infectionUsual organism – Staph aureusIf untreated fatal in <6weeksSub-acuteEvolves over weeks to months with modest toxicityUsual organism – Strep viridansRarely causes metastatic fociIf untreated takes >6 weeks to be fatal
 
-- page 6 -
 EPIDEMIOLOGY
 Annual incidence: 15,000 to 20,000Forth leading cause of life-threatening infectious diseaseMale:female ratio is 1.7:1Up to 45% involve mitral valve, 36% aortic valve
 
-- page 7 -
 ETIOLOGIC AGENTS
 AGENT	Streptococci		Viridans streptococci		Enterococci		Other streptococci	Staphylococci		Coagulase positive		Coagulase negative	Gram-negative aerobic bacilliFungi	Miscellaneous bacteria	Mixed infections	Culture negative
 PERC
@@ -954,12 +901,10 @@ The principle of antibiotic prophylaxis when performing procedures to patients a
 
 ####.txt
 
-- page 1 -
 Sandhiran Nadar
 Department of Cardiology
 ECG InterpretationPart 1
 
-- page 2 -
 Steps of ECG Interpretation
 Check calibration
 Rate
@@ -970,28 +915,21 @@ Hypertrophy
 Myocardial infarction
 Metabolic conditions
 
-- page 3 -
 Calibration
 10 mm = 1 mV (amplitude)
 Paper speed = 25mm/s
 1 mm = 0.04 s
 
-- page 4 -
 Electrode placement
 
-- page 5 -
 
 
-- page 6 -
 Where the waves come from
 
-- page 7 -
 Direction of Current
 
-- page 8 -
 
 
-- page 9 -
 Rate
 Number of QRS complexes multiplied by 6
 If rhythm is regular, look at the R-R interval
@@ -1220,25 +1158,20 @@ Tall R waves in V1 with ST depression
 
 ####.txt
 
-- page 1 -
 Sandhiran Nadar
 Department of Cardiology
 ECG InterpretationPart 2
 
-- page 2 -
 Anterolateral MI
 
-- page 3 -
 Inferior MI
 
-- page 4 -
 Hypokalaemia
 Flattened T wave
 Prominent U wave
 ST depression
 T wave inversion
 
-- page 5 -
 Hyperkalaemia
 Tall peaked T wave
 Flattened P wave
@@ -1246,13 +1179,11 @@ Prolonged PR interval
 Smaller, broader QRS complexes
 Eventually VF
 
-- page 6 -
 Hypothermia
 Irregular baseline
 Bradycardia
 J wave
 
-- page 7 -
 Disorders of Conduction
 
 -st degree AV block
@@ -1425,25 +1356,20 @@ Willem Einthoven’s Original Electrocardiograph
 
 ####.txt
 
-- page 1 -
 Coronary Artery Disease(CAD)
 S. Khan
 Dept. of Cardiology
 Albert Luthuli Hospital
 
-- page 2 -
 WHO : Global Mortality 2019
 
-- page 3 -
 Global Mortality in the Covid Era
 Report as at 31 August 2021
 
-- page 4 -
 Introduction
 Coronary Artery Disease (Ischaemic Heart Disease) is the number 1 cause of death globally, responsible for 16% of the world’s total deaths
 CAD is a dynamic process that can be modified by lifestyle, pharmacological therapies and revascularization which can result in disease stabilization or regression
 
-- page 5 -
 Clinical Manifestations of CAD
 Chronic coronary syndromes
 Stable angina
@@ -1454,7 +1380,6 @@ Unstable angina
 Silent ischaemia
 Sudden death
 
-- page 6 -
 RISK RISK FACTORS: Non-Modifiable
 Age:
 CAD prevalence increases after 35 years
@@ -1465,7 +1390,6 @@ Family history:
 A family history of CAD < 50 years of age has an increased CAD mortality risk
 a father or brother diagnosed with CAD before 55 years of age and a mother or sister diagnosed before 65 years of age are considered risk factors
 
-- page 7 -
 RISK FACTORS: Non-Modifiable
 Hypertension: About 1 out of every three patients have hypertension
 Hyperlipidaemia
@@ -1870,32 +1794,25 @@ BMI < 25
 
 ####.txt
 
-- page 1 -
 Evaluation of Valvular Heart Disease
 Dr. D.R. NaidooDepartment of Cardiology
 
-- page 2 -
 Rheumatic Fever
 
-- page 3 -
 DEFINITION:
 Acute rheumatic fever is a systemic disease of childhood ,often recurrent that follows group A beta hemolytic streptococcal infectionIt is a diffuse inflammatory disease of connective tissue primarily involving heart, blood vessels, joints, subcut.tissue and CNS
 
-- page 4 -
 Pathogenesis
 Delayed immune response to infection with group A beta hemolytic streptococci.After a latent period of 1-3 weeks, antibody induced immunological damage  occur to heart valves, joints, subcutaneous tissue & basal ganglia of brain.
 
-- page 5 -
 
 
-- page 6 -
 Step I  - Primary Prevention 					 (eradication of streptococci)
 Step II - anti inflammatory treatment 			         (aspirin,steroids)
 Step III- supportive management & 			         management of complications
 Step IV- Secondary Prevention 				          (prevention of recurrent attacks)
 Treatment
 
-- page 7 -
 STEP I: Primary Prevention of Rheumatic Fever 		(Treatment of Streptococcal Tonsillopharyngitis)
 Agent	                              Dose                                      Mode	         DurationBenzathine penicillin G	0.6M IU  ( 27Kg)              Intramuscular        Once 			1.2 M IU (>27 kg )       			 or Penicillin V		Children: 250 mg bd/tds                Oral            10 d (phenoxymethyl penicillin)  Adolescents and adults: 			    
 
@@ -2064,27 +1981,23 @@ Surgical TreatmentSymptomatic patient with severe AR Asymptomatic patient with
 
 ####.txt
 
-- page 1 -
 pericardiAL
 Disease
 Dr Naeem Hassen
 Division of cardiology
 DEPARTMENT OF MEDICINE
 
-- page 2 -
 Focus
 Acute Pericarditis
 Pericardial Effusion
 Cardiac Tamponade
 Constrictive Pericarditis
 
-- page 3 -
 the pericardium
 What is it ?
 Where is it ?
 What is its function ?
 
-- page 4 -
 Anatomy
 The pericardium is the membranous sac surrounding the heart
 Consists of two layers:
@@ -2092,25 +2005,20 @@ inner visceral layer, and
 outer parietal layer, which is continuous with the diaphragm and outer walls of great arteries
 Pericardial cavity consists of 50mls of fluid
 
-- page 5 -
 
 
-- page 6 -
 Normal functions
 Maintaining an optimal cardiac shape
 Reducing friction between the beating heart and adjacent structures
 Protecting the heart from other diseases which are present in  adjacent organs
 Preventing overfilling of the heart
 
-- page 7 -
 
 
-- page 8 -
 Acute pericarditis
 Is an inflammation of the pericardium
 Variety of causes
 
-- page 9 -
 Causes
 
 - -
@@ -2346,11 +2254,11 @@ Salt and Fluid Restriction
 
 ### Recommended Learning Path
 
-1. **Foundation**: Begin with the textbook sections on fundamental cardiac anatomy and physiology from the ECG Interpretation and Hypertension sections.
+1. **Foundation**: Begin with the sections on fundamental cardiac anatomy and physiology from the ECG Interpretation and Hypertension sections.
 
-2. **Pathophysiology**: Progress to understanding disease mechanisms through Coronary Artery Disease lectures and Infective Endocarditis sections.
+2. **Pathophysiology**: Progress to understanding disease mechanisms through Coronary Artery Disease sections and Infective Endocarditis sections.
 
-3. **Clinical Recognition**: Master diagnostic approaches from ECG Interpretation and Valvular Heart Disease lectures.
+3. **Clinical Recognition**: Master diagnostic approaches from ECG Interpretation and Valvular Heart Disease sections.
 
 4. **Integration**: Synthesize knowledge by reviewing Coronary Artery Disease in context of acute coronary syndromes and clinical decision-making.
 
@@ -2368,5 +2276,5 @@ Salt and Fluid Restriction
 - Review ECG examples systematically while reading about acute coronary syndromes
 - Create flashcards for diagnostic criteria (ST elevation, troponin elevation)
 - Practice clinical scenarios combining multiple topics
-- Use the lecture transcripts to understand clinical reasoning and decision-making
+- Use the Notes to understand clinical reasoning and decision-making
 

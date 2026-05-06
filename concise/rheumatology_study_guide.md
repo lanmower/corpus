@@ -1,20 +1,18 @@
 # Comprehensive Rheumatology Study Guide
 
 **Generated:** May 4, 2026
-**Total Sources:** 64 (8 audio transcripts + 56 textbook sections)
 
 ## Table of Contents
 
 1. [Overview & Learning Strategy](#overview-learning-strategy)
 2. [Topics](#topics)
-3. [Textbook Content](#textbook-content)
 4. [Study Strategy & Mastery Framework](#study-strategy-mastery-framework)
 
 -
 
 ## Overview & Learning Strategy
 
-This comprehensive guide synthesizes 8 audio lecture transcripts and 56 textbook sections covering the complete spectrum of rheumatology. The content is organized by lecture topic and textbook section to support both breadth and depth of understanding.
+This comprehensive guide synthesizes 8 Section and 56 sections covering the complete spectrum of rheumatology. The content is organized by section topic and section to support both breadth and depth of understanding.
 
 ### Key Topics Covered
 
@@ -96,7 +94,6 @@ So it's just to show you the problem of the nodules, which are the excess surfac
 
 ### Spondyloarthropathies (SpA)
 
-- page 1 -
 The Spondyloathropeties. The Spondyloathropeties include ankylosing
 spondylitis, psoriatic arthritis, reactive arthritis or retis syndrome as it was
 previously known, antipatic arthritis and juvenile ankylosing spondylitis.
@@ -105,7 +102,6 @@ with the presence of cyanobitis to identify an individual with a spondyloathrope
 And spinal pain or cyanobitis with asymmetrical lower limb involvement
 could often be a presentation of a spondyloathropetie.
 
-- page 1 -
 The Spondyloathropeties. The Spondyloathropeties include ankylosing
 spondylitis, psoriatic arthritis, reactive arthritis or retis syndrome as it was
 previously known, antipatic arthritis and juvenile ankylosing spondylitis.
@@ -133,7 +129,6 @@ Other characteristics include as we mentioned sacroiliators or inflammation
 
 #### 2026
 
-- page 1 -
 So, previously osteoarthritis was considered to be a disease of older individuals.
 It was thought to be more due to degenerative disease of the cartilage.
 However, in the past decades, there's much research that has gone into osteoarthritis
@@ -141,7 +136,6 @@ and we now know that the pathogenesis, the underlying cause for the disease is m
 complicated and it is thought to be a dull disease no longer.
 So what is the osteoarthritis characterised by?
 
-- page 1 -
 So, previously osteoarthritis was considered to be a disease of older individuals.
 It was thought to be more due to degenerative disease of the cartilage.
 However, in the past decades, there's much research that has gone into osteoarthritis
@@ -168,12 +162,10 @@ So, this network of collagen basically is placed in this manner to maintain the 
 
 #### 2026
 
-- page 1 -
 Hello everybody, I'm Dr. Vinder from the Department of Anthropology. During this session
 I will be discussing God. So God is known as a disease of kings, mainly because of the
 modified risk factors that are associated with it, with its onset and exacerbation.
 
-- page 1 -
 Hello everybody, I'm Dr. Vinder from the Department of Anthropology. During this session
 I will be discussing God. So God is known as a disease of kings, mainly because of the
 modified risk factors that are associated with it, with its onset and exacerbation.
@@ -188,7 +180,6 @@ degree, where there is either upper production of urate acid or under-extrician 
 And under-extrician is the main cause of hypoecinia. So God is a commonest form of the
 immunociraptoritis in men, with the male to female ratio of 2 to 4, is to men in Caucasian
 and egg 8 is to men in Asian, with the peak age of 40 to 50 years. It's very rare in males
-- page 2 -
 below age 30, children in a pain and a causal woman. You're not everyone with hypoecinia
 and developed God. So urate acid comes from protein-baked dye. So from protein, you've
 
@@ -205,8 +196,6 @@ and developed God. So urate acid comes from protein-baked dye. So from protein, 
 #### 2026
 
 -
-
-## Textbook Content
 
 ### Rheumatoid Arthritis
 
@@ -249,13 +238,10 @@ The most significant genetic risk factors for RA are variations in the human
 
 ####.txt
 
-- page 1 -
 
 
-- page 2 -
 
 
-- page 3 -
 RHEUMATOID ARTHRITIS
 • Autoimmune disease
 • Chronic, symmetrical, inflammatory, erosive 
@@ -263,7 +249,6 @@ polyarthritis
 • Extra – articular manifestations
 
 
-- page 4 -
 Epidemiology
 • It  occurs all over the world with a prevalence of 
 around 1% with a lower prevalence in developing 
@@ -274,10 +259,8 @@ areas (0.12% vs 0.90%)
 • F:M ratio 3:1
 
 
-- page 5 -
 
 
-- page 6 -
 Aetiology
 The cause is not known but genetic, epigenetic and 
 environmental factors play a role
@@ -292,7 +275,6 @@ about 70 -
 Familial
 
 
-- page 7 -
 Aetiology
 Environmental factors
 a)Periodontal infection
@@ -303,10 +285,8 @@ and increased presentation post partum.
 d)GUT microbiomes
 
 
-- page 8 -
 
 
-- page 9 -
 
 
 
@@ -800,8 +780,7 @@ LONG AS POSSIBLE. »
 
 ####.txt
 
-- page 1 -
-LECTURE NOTES – SPONDYLOARTHROPATHY 
+section NOTES – SPONDYLOARTHROPATHY 
  
 Summary 
 • 
@@ -841,10 +820,8 @@ CLASSIFICATION CRITERIA:
 
 ####.txt
 
-- page 1 -
 
 
-- page 2 -
 Features of spondyloarthritis
 Musculoskeletal - SI joints, spine, 
 peripheral arthritis, enthesitis, dactylitis
@@ -856,7 +833,6 @@ peripheral arthritis, enthesitis, dactylitis
 Familial aggregation
 
 
-- page 3 -
 Musculoskeletal Manifestations
 B ackache (Sacroiliitis)) 
 E nthesitis
@@ -866,22 +842,16 @@ S pine
 •
 
 
-- page 4 -
 
 
-- page 5 -
 
 
-- page 6 -
 
 
-- page 7 -
 
 
-- page 8 -
 
 
-- page 9 -
 
 
 - -
@@ -1046,7 +1016,6 @@ Arthritis (GRAPPA)
 
 ####.txt
 
-- page 1 -
 OSTEOARTHRITIS 
  
 Overview of learning outcomes 
@@ -1082,15 +1051,12 @@ degradation is accompanied by variable degrees of repair and inflammation.
 
 ####.txt
 
-- page 1 -
 Osteoarthritis
 Rheumatology unit
 
 
-- page 2 -
 
 
-- page 3 -
 Definition of Osteoarthritis
 OA is characterized by focal softening and 
 disintegration of articular cartilage, which is 
@@ -1100,7 +1066,6 @@ accompanied by the proliferation of new bone.
 •Peak onset is between 50 – 60 years
 
 
-- page 4 -
 Epidemiology
 Symptomatic OA
 Knee
@@ -1117,10 +1082,8 @@ Knee OA: 33% of people age ≥ 63 years in Framingham
 study
 
 
-- page 5 -
 
 
-- page 6 -
 Mechanism of joint damage
 Collagen 
 1.
@@ -1136,7 +1099,6 @@ Subchonderal: bone micro-fractures
 Synovial changes 
 
 
-- page 7 -
 Causes of joint pain in OA
 SOURCE
 • Synovium
@@ -1301,7 +1263,6 @@ Arthrodesis
 
 ####.txt
 
-- page 1 -
 Gout 
  
 1. Definition  
@@ -1326,19 +1287,16 @@ The peak age for onset of gout in males is 40 – 50 years and 60 years in women
 
 ####.txt
 
-- page 1 -
 GOUT
 DEPARTMENT OF RHEUMATOLOGY
 
 
-- page 2 -
 GOUT
 ‘DISEASES OF 
 KINGS and KING OF 
 DISEASES’
 
 
-- page 3 -
 DEFINITION OF GOUT
 • A clinical syndrome: deposition of monosodium 
 monohydrate crystals in joints.
@@ -1348,14 +1306,11 @@ arthritis.
 and bones
 
 
-- page 4 -
 
 
-- page 5 -
 Uric acid synthesis
 
 
-- page 6 -
 Definition of hyperuricaemia
 Physiochemical: Concentration above solubility limits of urate
 Consequences of hyperuricaemia
@@ -1371,7 +1326,6 @@ Underexcretion (80%)
 Secondary
 
 
-- page 7 -
 Causes of hyperuricaemia
 Overproduction
 • Nutritional
@@ -1394,7 +1348,6 @@ ethambutol,cyclosporin,
 low dose salicylates
 
 
-- page 8 -
 Epidemiology
 • Common inflammatory arthritis in men >> women
 
@@ -1565,7 +1518,6 @@ Allopurinol indications
 
 ####.txt
 
-- page 1 -
 Connective tissue disease 
 Connective tissue diseases (CTD) are a group of disease resulting from persisting immune 
 inflammation in genetically predisposed individuals. The immune dysregulation results in 
@@ -1628,7 +1580,7 @@ SLE renal disease/ haematological/major organ involvement
 Inflammatory myositis 
  
  
-Quiz. Answers please refer to lectures, tect and and Kumar and Clark for answers. 
+Quiz. Answers please refer to sections, tect and and Kumar and Clark for answers. 
 A 23 year old woman is diagnosed with SLE. 
 1. What are acute cutaneous manifestations of SLE? 
 2. What are characteristics of arthritis in SLE? 
@@ -1638,13 +1590,11 @@ A 23 year old woman is diagnosed with SLE.
 
 ####.txt
 
-- page 1 -
 Connective tissue diseases
 Department of Rheumatology
 2021
 
 
-- page 2 -
 Overview
 • Epidemiology
 • Clinical  features
@@ -1652,7 +1602,6 @@ Overview
 • Management
 
 
-- page 3 -
 What are the CTD
 • Systemic lupus erythematosus (SLE)
 • Scleroderma
@@ -1662,7 +1611,6 @@ What are the CTD
 • Undifferentiated CTD
 
 
-- page 4 -
 Characteristics of autoimmune connective tissue 
 diseases
 • Multi-system involvement
@@ -1674,12 +1622,10 @@ diseases
 inappropriately treated        
 
 
-- page 5 -
 Systemic lupus 
 erythematosus
 
 
-- page 6 -
 Epidemiology
 • Women > men (3:1)
 • World-wide IR fluctuate
@@ -1692,7 +1638,6 @@ Epidemiology
 • Risk factors: familial and environmental
 
 
-- page 7 -
 Clinical features of SLE
 
 *(Content truncated for brevity)*
@@ -1986,9 +1931,8 @@ MCTD: Alarcon-Segovia diagnostic Criteria
 
 ####.txt
 
-- page 1 -
 Approach to joint pain and arthritis 
-Overview of lecture 
+Overview of section 
 Non-articular pain syndromes 
 - 
 Localized to the upper limb 
@@ -2079,12 +2023,10 @@ Table 3: differential diagnosis for polyarthritis
 
 ####.txt
 
-- page 1 -
 Approach to joint pain 
 and arthritis
 
 
-- page 2 -
 CASE HISTORY
 A patient presents with a swollen knee.
 What is the likely diagnosis in
@@ -2101,7 +2043,6 @@ Pattern of joint involvement
 Associated manifestatiuons: skin rash, red eyes, diarrhea, backache
 
 
-- page 3 -
 CASE HISTORY
 A 25 year old female has polyarthritis.
 Associated features
@@ -2114,7 +2055,6 @@ Anaemia
 Kidney disease
 
 
-- page 4 -
 PATTERNS OF ARTHRITIS
 • ACUTE vs CHRONIC
 • SYMMETRICAL vs ASYMMETRICAL
@@ -2124,7 +2064,6 @@ PATTERNS OF ARTHRITIS
 • INFLAMMATORY VS NON-INFLAMMATORY
 
 
-- page 5 -
 Joint Pain
 Non - Articular
 Articular
@@ -2135,7 +2074,6 @@ Oligoarthritis
 Polyarthritis
 
 
-- page 6 -
 Differential Diagnosis of Arthritis
 ARTHRITIS
 TRAUMATIC
@@ -2152,7 +2090,6 @@ PERIPHERAL
 SPINAL PAIN
 
 
-- page 7 -
 • WHAT ARE THE COMMON 
 
 *(Content truncated for brevity)*
@@ -2394,8 +2331,7 @@ SPINE
 
 ####.txt
 
-- page 1 -
-LECTURE NOTES: NECK PAIN 
+section NOTES: NECK PAIN 
  
 Neck pain is a common problem that many of us will experience at some time in our lives. 
 Disabling neck pain, while less common, is still a major cause of morbidity in the community 
@@ -2448,8 +2384,8 @@ By completing this study guide, you should be able to:
 - Output: Create a differential diagnosis matrix
 
 **Phase 2: Condition-Specific Knowledge (Weeks 2-3)**
-- Read lectures: RA → SpA → OA → Gout → CTD
-- Read corresponding textbook sections
+- Read sections: RA → SpA → OA → Gout → CTD
+- Read corresponding sections
 - Objective: Master pathophysiology, clinical features, and management
 - Output: Create one summary sheet per condition
 
@@ -2519,10 +2455,10 @@ Test your mastery through:
 ## Document Statistics
 
 - Total sections: 64
-- Audio transcripts: 8
-- Textbook sections: 56
+- Notes: 8
+- sections: 56
 - Topics covered: 7 major conditions
 - Estimated reading time: 8-12 hours comprehensive review
 - Recommended study duration: 5 weeks with active learning
 
-*This guide is a synthesis of clinical lectures and textbook material. Use it in conjunction with recommended textbooks and clinical practice for mastery.*
+*This guide is a synthesis of clinical sections and reference material. Use it in conjunction with recommended references and clinical practice for mastery.*
