@@ -178,10 +178,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // resume line
         assert.match(appSrc, /renderResumeLine/);
         assert.match(appSrc, /back after \$\{gap\}d/);
-        // guide affordances
+        // guide affordances — tutor only (practice/cards browser removed)
         assert.match(appSrc, /class="guide-aff"/);
         assert.match(appSrc, /→ tutor/);
-        assert.match(appSrc, /→ practice/);
+        assert.ok(!/→ practice/.test(appSrc));
         // review progress line
         assert.match(appSrc, /class: 'review-progress'/);
         assert.match(appSrc, /to daily goal/);
@@ -195,9 +195,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /VERDICT_RANK/);
         // lastpos save on go()
         assert.match(appSrc, /lastpos\.save\(route, subject\)/);
-        // IA: nav has today guides subjects review cards cases stats settings + tutor cta
-        for (const lbl of ['today','guides','subjects','review','cards','cases','stats']) {
+        // IA: nav has today guides review cases stats settings + tutor cta (subjects/cards removed)
+        for (const lbl of ['today','guides','review','cases','stats']) {
             assert.ok(appSrc.includes(`['${lbl}', '${lbl}']`) || appSrc.includes(`'${lbl}'`));
+        }
+        for (const removed of [`['subjects', 'subjects']`, `['cards', 'cards']`]) {
+            assert.ok(!appSrc.includes(removed), 'nav still contains removed link: ' + removed);
         }
         assert.match(appSrc, /nav-cta/);
         // route aliases home→today, triage→cases
@@ -315,14 +318,14 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     console.log('# integration: SW v4 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace + archive isolation');
     t('SW + PWA manifest + theme contrast + search prose+snippet + streak grace + app keys + new routes', async () => {
         const sw = READ('site/sw.js');
-        assert.match(sw, /corpus-v5/);
+        assert.match(sw, /corpus-v7/);
         for (const m of ['timer.js','plan.js','mistakes.js','drill.js','flag.js','undo.js','notes.js','late.js','usercards.js','confidence.js','manifest.webmanifest']) assert.ok(sw.includes(m), 'sw missing ' + m);
         assert.ok(!sw.includes('medbak'), 'sw should not reference medbak');
         const wm = JSON.parse(READ('site/manifest.webmanifest'));
         assert.ok(wm.name && wm.start_url && Array.isArray(wm.icons) && wm.icons.length >= 1);
         // index.html links
         assert.match(indexHtml, /rel="manifest"/);
-        assert.match(indexHtml, /\?v=3/);
+        assert.match(indexHtml, /\?v=6/);
         // theme contrast
         const themeSrc = READ('site/theme.js');
         assert.match(themeSrc, /'contrast'/);

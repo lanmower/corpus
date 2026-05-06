@@ -324,3 +324,19 @@ Witness gaps (carry-forward â non-blocking):
 Kept: `srs.js`, `verdicts.js`, `cram.js`, `lastpos.js`, `justread.js`, `progress.js` (small additions), `theme.js` (small additions), `search.js` (extended), all data shards.
 Rewrote: `sw.js` (cache key + SHELL list), `index.html` (manifest link + ?v=3).
 Added: 10 new modules in `site/`, `site/manifest.webmanifest`, `site/data/medbak-index.json`, `scripts/build_medbak_index.js`.
+
+## IA simplification (2026-05-06)
+
+The student-facing site no longer surfaces `subjects` (plural index) or `cards` (browser). Review covers practice, the per-subject deepdive at `#subject/<name>` covers everything you'd reach from the subject index plus the full guide body inline.
+
+- **Topbar nav** (both `index.html` and `triage-live.html`): `today | guides | review | cases | stats | mistakes | notes` + `settings` + `tutor` (CTA).
+- **Routes removed**: `#subjects`, `#cards`, `#cards/<subject>`, `#cards/<subject>?tag=…`, `#card/<id>`. Functions removed: `renderSubjects`, `renderCards`, `renderCardList`, `renderCardFocus`. State fields removed: `cardSearch`, `cardSubjectFilter`, `cardTagFilter`, `focusCardId`.
+- **Route aliases extended** in `ROUTE_ALIASES`: `subjects → guides`, `cards → review`, plus the existing `home → today`, `triage → cases`. Old bookmarks still resolve.
+- **Guide affordances**: the inline `class="guide-aff"` span next to each `h2`/`h3` now emits only `→ tutor`. The `→ practice` link (which used to deep-link into `#cards/<subject>?tag=…`) is gone.
+- **Tag-cloud panel removed** from the subject deepdive (it was the last surviving consumer of the cards browser).
+- **Subject deepdive `cards-panel`**: the "all N →" chip now reads `review all N →` and routes to `#review` filtered by subject instead of the cards browser.
+- **Search palette**: card hits open `#subject/<name>` instead of the cards filter; section + prose hits already routed to the deepdive.
+- **Keymap**: `g c` (`go cards`) replaced with `g g` (`go guides`); shortcuts modal updated.
+- **SW cache key**: `corpus-v6 → corpus-v7`. `index.html` cache-busters: `style.css?v=5 → ?v=6`, `app.js?v=5 → ?v=6`. Test gate updated (`/corpus-v7/`, `/\?v=6/`).
+- **test.js**: 9/9 green. Asserts (a) nav contains `today guides review cases stats` and NOT `['subjects','subjects']` / `['cards','cards']`; (b) `→ practice` is absent from `app.js`; (c) cache key + `?v=6`.
+- **Witness**: served `index.html` ships `app.js?v=6` + `style.css?v=6`; `triage-live.html` nav lists today/guides/review/cases/stats/tutor (no subjects/cards); `sw.js` first lines show `CACHE = 'corpus-v7'`; `grep` for `renderSubjects|renderCards|renderCardList|renderCardFocus` against the served `app.js` returns 0 matches; the served `app.js` `mountTopbar` `links` array starts `[['today', 'today'], ['guides', 'guides'], …]`. Live browser witness was attempted via `exec:browser` and failed to bind port 9226 in this session env (carry-forward — re-witness from a normal browser env: load `/`, confirm nav has no `subjects`/`cards`, hit `#guides` and `#subject/cardiology`, run a review session).

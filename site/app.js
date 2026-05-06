@@ -35,13 +35,13 @@ const FRIENDLY_GRADES = [
 
 const state = {
     manifest: null, shards: {}, route: 'today', currentSubject: null,
-    cardSearch: '', cardSubjectFilter: 'all', flippedCards: new Set(),
+    flippedCards: new Set(),
     reviewSubjectFilter: 'all', reviewQueue: [], reviewQueueIds: [],
     reviewAgainPile: [], reviewAllCardIds: [], reviewIndex: 0,
     reviewRevealed: false, reviewSessionGraded: 0, reviewSessionStarted: 0,
     sessionFinished: false, searchPaletteApi: null,
-    cramMode: false, reviewTagFilter: new Set(), focusCardId: null,
-    paletteReviewSet: null, cardTagFilter: null
+    cramMode: false, reviewTagFilter: new Set(),
+    paletteReviewSet: null
 };
 window.__corpus = state;
 window.__corpus.DEBUG = DEBUG;
@@ -68,11 +68,11 @@ function el(tag, attrs = {}, ...kids) {
     return e;
 }
 
-const ROUTES = ['today', 'guides', 'subjects', 'review', 'cards', 'cases', 'stats', 'subject', 'settings', 'card', 'mistakes', 'notes', 'drill'];
-const ROUTE_TITLES = { today: 'today', guides: 'guides', subjects: 'subjects', review: 'review',
-    cards: 'cards', cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings', card: 'card',
+const ROUTES = ['today', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'mistakes', 'notes', 'drill'];
+const ROUTE_TITLES = { today: 'today', guides: 'guides', review: 'review',
+    cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings',
     mistakes: 'mistakes', notes: 'notes', drill: 'drill' };
-const ROUTE_ALIASES = { home: 'today', triage: 'cases' };
+const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review' };
 
 function setDocTitle(route, subject) {
     const main = subject ? subject : (ROUTE_TITLES[route] || route);
@@ -84,9 +84,7 @@ function go(route, subject) {
     if (!ROUTES.includes(route)) route = 'today';
     state.route = route;
     if (subject !== undefined) state.currentSubject = subject;
-    if (route === 'cards' && subject) state.cardSubjectFilter = subject;
     if (route === 'review' && subject) { state.reviewSubjectFilter = subject; resetReviewQueue(); }
-    if (route === 'card' && subject) state.focusCardId = subject;
     document.querySelectorAll('.navlink').forEach(a => a.classList.toggle('active', a.dataset.route === route));
     setDocTitle(route, subject);
     progress.setLast(route, subject);
@@ -155,9 +153,9 @@ function render() {
     if (days === 0 && r !== 'mistakes' && r !== 'settings') {
         renderExamDay(); updateFooter(); return;
     }
-    const fns = { today: renderToday, guides: renderGuides, subjects: renderSubjects, cards: renderCards,
+    const fns = { today: renderToday, guides: renderGuides,
         review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
-        settings: renderSettings, card: renderCardFocus, mistakes: renderMistakes, notes: renderNotes,
+        settings: renderSettings, mistakes: renderMistakes, notes: renderNotes,
         drill: renderDrill };
     (fns[r] || renderToday)();
     updateFooter();
@@ -279,7 +277,7 @@ function renderToday() {
 
     // Quiet 8-row guide jump list — subject · sections · mastery%
     stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'guides'), el('h2', {}, 'subjects')
+        el('span', { class: 'eyebrow' }, 'guides'), el('h2', {}, 'study guides')
     ));
     const jump = el('div', { class: 'guide-jump' });
     for (const meta of state.manifest.subjects) {
@@ -358,38 +356,9 @@ function renderGuides() {
     stage.append(grid);
 }
 
-function renderSubjects() {
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, '8 subjects'), el('h2', {}, 'subjects')));
-    const grid = el('div', { class: 'subject-grid' });
-    for (const s of state.manifest.subjects) {
-        const due = dueCountFor(s.subject);
-        const m = masteryFor(s.subject);
-        grid.append(el('div', {
-            class: 'subject-card', role: 'button', tabindex: '0',
-            'aria-label': `open ${s.subject}, ${due} due, ${m}% mastered`,
-            data: { subject: s.subject },
-            on: { click: () => go('subject', s.subject),
-                  keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go('subject', s.subject); } } }
-        },
-            el('div', { class: 'name' }, s.subject),
-            el('div', { class: 'tagline' }, `${s.cardCount} cards · ${s.scenarioCount} cases`),
-            el('div', { class: 'mastery-row' },
-                el('div', { class: 'mastery-bar' }, el('div', { class: 'mastery-fill' + (m < 25 ? ' weak' : ''), style: `width:${m}%` })),
-                el('span', { class: 'mastery-pct' }, `${m}%`)
-            ),
-            el('div', { class: 'subject-meta' },
-                due ? el('span', { class: 'due-badge' }, `${due} due`) : el('span', { class: 'all-clear' }, 'clear'),
-                DEBUG ? el('span', { style: 'font-family:var(--ff-mono);font-size:10px;color:var(--panel-text-3)' }, `${s.atomCount} atoms`) : null
-            )
-        ));
-    }
-    stage.append(grid);
-}
-
 async function renderSubject() {
     const subj = state.currentSubject;
-    if (!subj) { go('subjects'); return; }
+    if (!subj) { go('guides'); return; }
     const meta = state.manifest.subjects.find(x => x.subject === subj);
 
     // Cram banner on subject view
@@ -464,7 +433,7 @@ async function renderSubject() {
     );
     if (shard.cards.length > 20) {
         cardsPanel.append(el('div', { style: 'margin-top:10px' },
-            el('a', { href: '#cards', class: 'chip', on: { click: e => { e.preventDefault(); state.cardSubjectFilter = subj; go('cards'); } } }, `all ${shard.cards.length} →`)));
+            el('a', { href: '#review', class: 'chip', on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; go('review', subj); } } }, `review all ${shard.cards.length} →`)));
     }
 
     const triagePanel = shard.triage && shard.triage.scenarios.length ? el('div', { class: 'panel cases-panel' },
@@ -475,17 +444,7 @@ async function renderSubject() {
             el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
         ))) : null;
 
-    // tag cloud
-    const tagCounts = {};
-    for (const c of shard.cards) for (const t of (c.tags || [])) tagCounts[t] = (tagCounts[t] || 0) + 1;
-    const topTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 20);
-    const tagCloud = topTags.length ? el('div', { class: 'panel tag-cloud' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'tags')),
-        el('div', {}, ...topTags.map(([t, n]) => el('a', { class: 'tag-pill', href: `#cards/${subj}?tag=${encodeURIComponent(t)}`,
-            style: `font-size:${Math.min(18, 11 + Math.log2(n))}px`,
-            on: { click: e => { e.preventDefault(); location.hash = `#cards/${subj}?tag=${encodeURIComponent(t)}`; } } },
-            t, el('span', { class: 'meta' }, ` ${n}`))))) : null;
-    const right = el('div', {}, tagCloud, guideBodyPanel, cardsPanel, triagePanel);
+    const right = el('div', {}, guideBodyPanel, cardsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
     stage.append(wrap);
 }
@@ -511,8 +470,7 @@ function renderMarkdown(md, subject) {
     function affordance(headingText) {
         if (!subject) return '';
         const topic = encodeURIComponent(headingText);
-        const tag = encodeURIComponent(token(headingText));
-        return `<span class="guide-aff"><a href="./triage-live.html?topic=${topic}&subject=${subject}" data-aff="tutor">→ tutor</a><a href="#cards/${subject}?tag=${tag}" data-aff="practice">→ practice</a></span>`;
+        return `<span class="guide-aff"><a href="./triage-live.html?topic=${topic}&subject=${subject}" data-aff="tutor">→ tutor</a></span>`;
     }
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
@@ -557,86 +515,6 @@ function buildFlashcard(c) {
     );
     if (state.flippedCards.has(id)) card.classList.add('flipped');
     return card;
-}
-
-async function renderCards() {
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'cards'), el('h2', {}, 'card explorer')));
-
-    // Tag filter via query string (e.g. #cards/cardiology?tag=heart-failure)
-    const hashParts = location.hash.split('?');
-    let tagFilter = null;
-    if (hashParts[1]) {
-        const params = new URLSearchParams(hashParts[1]);
-        tagFilter = params.get('tag');
-    }
-    state.cardTagFilter = tagFilter;
-
-    const search = el('input', {
-        class: 'search', type: 'text', placeholder: 'search…', value: state.cardSearch,
-        'aria-label': 'search cards',
-        on: { input: e => { state.cardSearch = e.target.value; renderCardList(); } }
-    });
-    const chips = el('div', { class: 'filter-chips', role: 'group', 'aria-label': 'subject filter' },
-        el('button', { class: 'chip' + (state.cardSubjectFilter === 'all' ? ' active' : ''),
-            on: { click: () => { state.cardSubjectFilter = 'all'; renderCardList(); } } }, 'all'),
-        ...state.manifest.subjects.map(s => el('button', {
-            class: 'chip' + (state.cardSubjectFilter === s.subject ? ' active' : ''),
-            on: { click: () => { state.cardSubjectFilter = s.subject; renderCardList(); } } }, s.subject))
-    );
-    stage.append(el('div', { class: 'toolbar' }, search, chips));
-    if (tagFilter) {
-        stage.append(el('div', { class: 'toolbar' },
-            el('span', { class: 'chip active' }, `tag: ${tagFilter}`),
-            el('button', { class: 'chip', on: { click: () => { state.cardTagFilter = null; location.hash = '#cards' + (state.cardSubjectFilter !== 'all' ? '/' + state.cardSubjectFilter : ''); renderCardList(); } } }, 'clear tag')
-        ));
-    }
-    const list = el('div', { id: 'cards-list', class: 'panel' });
-    stage.append(list);
-
-    const subjects = state.cardSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.cardSubjectFilter];
-    await Promise.all(subjects.map(s => loadShard(s)));
-    renderCardList();
-}
-
-function renderCardList() {
-    const list = document.getElementById('cards-list');
-    if (!list) return;
-    list.innerHTML = '';
-    const subjects = state.cardSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.cardSubjectFilter];
-    let all = [];
-    for (const s of subjects) {
-        const sh = state.shards[s]; if (!sh) continue;
-        for (const c of sh.cards) all.push({ ...c, _subject: s });
-    }
-    const q = state.cardSearch.trim().toLowerCase();
-    if (q) all = all.filter(c => (c.front + ' ' + (c.back || '')).toLowerCase().includes(q));
-    if (state.cardTagFilter) {
-        const tf = state.cardTagFilter.toLowerCase();
-        all = all.filter(c => {
-            const haystack = ((c.tags || []).join(' ') + ' ' + c.front + ' ' + (c.back || '')).toLowerCase();
-            return tf.split('-').every(tok => haystack.includes(tok));
-        });
-    }
-    const cap = state.cardsShowAll ? all.length : 100;
-    const clipped = all.length > cap;
-    list.append(el('div', { class: 'panel-head' },
-        el('span', { class: 'title' }, `${all.length} cards`),
-        q ? `matching "${q}"` : (clipped ? `first ${cap} of ${all.length}` : 'all shown')));
-    if (clipped && all.length < 1000) {
-        list.append(el('div', { class: 'toolbar', style: 'margin-bottom:6px' },
-            el('button', { class: 'chip',
-                on: { click: () => { state.cardsShowAll = true; renderCardList(); } } }, `load all ${all.length}`)));
-    }
-    if (all.length === 0) {
-        list.append(el('div', { class: 'empty-state' },
-            el('div', { class: 'empty-title' }, 'no matches'),
-            el('div', { class: 'empty-sub' }, q ? `nothing matches "${q}".` : 'no cards for this filter.'),
-            el('button', { class: 'chip', on: { click: () => { state.cardSearch = ''; state.cardSubjectFilter = 'all'; state.cardTagFilter = null;
-                const inp = document.querySelector('.search'); if (inp) inp.value = ''; renderCardList(); } } }, 'clear filter')));
-    }
-    for (const c of all.slice(0, cap)) list.append(buildFlashcard(c));
-    state.lastFilteredCount = all.length;
 }
 
 async function renderTriage() {
@@ -907,7 +785,7 @@ document.addEventListener('keydown', e => {
     if (e.key === '?' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openShortcutsModal(); return; }
     // g-prefix vim nav
     if (Date.now() - gPrefixTs < 1500) {
-        const map = { h: 'today', r: 'review', s: 'stats', c: 'cards', m: 'mistakes', n: 'notes', t: 'today' };
+        const map = { h: 'today', r: 'review', s: 'stats', g: 'guides', m: 'mistakes', n: 'notes', t: 'today' };
         const dest = map[e.key];
         if (dest) { e.preventDefault(); gPrefixTs = 0; go(dest); return; }
         gPrefixTs = 0;
@@ -1061,38 +939,6 @@ function collectReviewTags(allCards) {
     return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(x => x[0]);
 }
 
-async function renderCardFocus() {
-    const id = state.focusCardId;
-    if (!id) { go('cards'); return; }
-    await loadAllShards();
-    let card = null, meta = null;
-    for (const m of state.manifest.subjects) {
-        const sh = state.shards[m.subject];
-        const c = sh.cards.find(x => x.id === id);
-        if (c) { card = c; meta = m; break; }
-    }
-    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'card'), el('h2', {}, card ? card.front.slice(0, 80) : 'not found')));
-    if (!card) {
-        stage.append(el('div', { class: 'empty-state' }, el('div', { class: 'empty-title' }, 'no such card'),
-            el('button', { class: 'chip', on: { click: () => go('cards') } }, 'cards')));
-        return;
-    }
-    const cs = srs.getCardState(card.id);
-    const suspended = !!cs.suspended;
-    stage.append(el('div', { class: 'panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, meta.subject), `${(card.tags || []).join(' · ')}`),
-        buildFlashcard(card),
-        el('div', { class: 'toolbar', style: 'margin-top:10px' },
-            el('button', { class: 'chip', 'aria-label': suspended ? 'un-suspend' : 'suspend',
-                on: { click: () => { srs.suspendCard(card.id, !suspended); render(); } } }, suspended ? 'un-suspend' : 'suspend'),
-            el('button', { class: 'chip', 'aria-label': 'reset card',
-                on: { click: () => { if (confirm('reset card?')) {
-                    const states = srs.loadStates(); delete states[card.id]; srs.saveStates(states); render();
-                } } } }, 'reset'),
-            el('a', { class: 'chip', href: `#cards/${meta.subject}`, on: { click: e => { e.preventDefault(); go('cards', meta.subject); } } }, 'cards'))
-    ));
-}
-
 function renderHeatmap(history) {
     const today = new Date(); today.setHours(0,0,0,0);
     const days = 63;
@@ -1193,7 +1039,7 @@ const SHORTCUTS = [
     ['g h', 'go home (today)'],
     ['g r', 'go review'],
     ['g s', 'go stats'],
-    ['g c', 'go cards'],
+    ['g g', 'go guides'],
     ['g m', 'go mistakes'],
     ['g n', 'go notes'],
     ['space', 'reveal answer (review)'],
@@ -1388,8 +1234,8 @@ function renderSparkline(history, days = 7) {
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
-    const links = [['today', 'today'], ['guides', 'guides'], ['subjects', 'subjects'],
-        ['review', 'review'], ['cards', 'cards'], ['cases', 'cases'], ['stats', 'stats'],
+    const links = [['today', 'today'], ['guides', 'guides'],
+        ['review', 'review'], ['cases', 'cases'], ['stats', 'stats'],
         ['mistakes', 'mistakes'], ['notes', 'notes']];
     for (const [route, label] of links) {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
@@ -1414,9 +1260,10 @@ function mountSearchPalette() {
     state.searchPaletteApi = mountPalette(document, '#search-palette',
         () => buildSearchIndex(state.manifest, state.shards),
         (item) => {
-            if (item.kind === 'card') { state.cardSearch = item.title.slice(0, 40); state.cardSubjectFilter = item.subject; go('cards'); }
+            if (item.kind === 'card') { go('subject', item.subject); }
             else if (item.kind === 'case') { location.href = `./triage-live.html#${encodeURIComponent(item.id)}`; }
             else if (item.kind === 'section') { go('subject', item.subject); }
+            else if (item.kind === 'prose') { go('subject', item.subject); }
         });
 }
 
