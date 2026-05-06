@@ -163,10 +163,14 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const re of [/import \* as cram from '\.\/cram\.js'/, /import \* as justread from '\.\/justread\.js'/, /import \* as lastpos from '\.\/lastpos\.js'/, /from '\.\/verdicts\.js'/]) assert.match(appSrc, re);
         // compressed today
         assert.match(appSrc, /function renderToday\(\)/);
-        assert.match(appSrc, /summary-line/);
-        assert.match(appSrc, /due cards · /);
-        assert.match(appSrc, /min est\./);
         assert.match(appSrc, /primary-action/);
+        // simplification pass — slim today, nav-more overflow, subject hero
+        assert.match(appSrc, /nav-more/);
+        assert.match(appSrc, /subject-hero/);
+        assert.match(appSrc, /collapsible/);
+        assert.match(appSrc, /today-primary/);
+        // primary CTA outcome-oriented
+        assert.match(appSrc, /study \$\{due\} card/);
         // status-line shape: day N · M due · streak K · goal X/Y
         assert.match(appSrc, /renderStatusLine/);
         assert.match(appSrc, /`day \$\{day\}`/);

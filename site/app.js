@@ -237,81 +237,55 @@ function renderToday() {
 
     stage.append(renderStatusLine(p, due));
 
-    // Phase 2: XP/level bar + overall mastery ring + today's quests + schedule timeline
+    // Slim today: status, primary CTA, schedule strip, quests, mastery ring
     quests.ensureCurrent();
-    stage.append(renderXpBarFull());
-    stage.append(renderMasteryRing());
-    stage.append(renderQuestsPanel());
-    const tl = renderTimelineStrip(); if (tl) stage.append(tl);
 
-    // One-sentence summary
-    stage.append(el('p', { class: 'summary-line' },
-        'today: ',
-        el('span', { class: 'num' }, String(due)), ' due cards · ',
-        el('span', { class: 'num' }, String(cases)), ' cases queued · ~',
-        el('span', { class: 'num' }, String(mins)), ' min est.'
-    ));
-
-    // Daily plan
-    const ticksAll = loadGuideTicks();
-    const wsh = weakest ? state.shards[weakest.subject] : null;
-    const tw = weakest ? (ticksAll[weakest.subject] || {}) : {};
-    const nextSection = wsh?.guide?.sections?.find(s => !tw[String(s.line)]) || null;
-    const planObj = planMod.build({ due, weakestSubject: weakest?.subject, nextSection,
-        casesAvailable: wsh?.triage?.scenarios?.length || 0 });
-    if (planObj.tasks.length) {
-        const planEl = el('div', { class: 'panel daily-plan' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "today's plan"), `~${planObj.total} min`),
-            ...planObj.tasks.map(t => el('a', { class: 'plan-task', href: t.href,
-                on: { click: e => { if (t.href.startsWith('#')) { e.preventDefault(); go(t.href.slice(1).split('/')[0], t.href.split('/')[1]); } } } },
-                el('span', { class: 'plan-min' }, `${t.min}m`),
-                el('span', { class: 'plan-label' }, t.label))));
-        stage.append(planEl);
-    }
-
-    // Drill 10 chip + flagged + sparkline row
-    const flagCount = flag.count();
-    const chipRow = el('div', { class: 'today-chips' },
-        el('a', { class: 'chip', href: '#drill',
-            on: { click: e => { e.preventDefault(); go('drill'); } } }, 'drill 10'),
-        flagCount ? el('a', { class: 'chip', href: '#review',
-            on: { click: e => { e.preventDefault(); state.paletteReviewSet = flag.ids(); resetReviewQueue(); go('review'); } } },
-            `${flagCount} flagged`) : null,
-        el('a', { class: 'chip', href: '#mistakes',
-            on: { click: e => { e.preventDefault(); go('mistakes'); } } }, 'mistakes'),
-        el('div', { class: 'sparkline-wrap', 'aria-label': '7-day activity' }, renderSparkline(p.history))
-    );
-    stage.append(chipRow);
-
-    // One primary affordance
-    stage.append(el('div', { style: 'margin-bottom:18px' },
+    // Primary CTA — outcome-oriented
+    stage.append(el('div', { class: 'today-primary' },
         el('a', { class: 'primary-action', href: '#review',
-            on: { click: e => { e.preventDefault(); go('review'); } } }, due ? `review (${due})` : 'review')
+            on: { click: e => { e.preventDefault(); go('review'); } } },
+            due ? `study ${due} card${due === 1 ? '' : 's'} · ~${mins} min` : 'no cards due — browse guides')
     ));
 
-    // Quiet 8-row guide jump list — subject · sections · mastery%
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'guides'), el('h2', {}, 'study guides')
-    ));
-    const jump = el('div', { class: 'guide-jump' });
-    for (const meta of state.manifest.subjects) {
-        const m = masteryFor(meta.subject);
-        const sections = meta.guideSections || 0;
-        const pctClass = m >= 50 ? '' : (m >= 25 ? 'weak' : 'cold');
-        jump.append(el('a', {
-            class: 'guide-jump-row', href: `#subject/${meta.subject}`,
-            'aria-label': `${meta.subject} · ${m}% mastered`,
-            on: { click: e => { e.preventDefault(); go('subject', meta.subject); } }
-        },
-            el('span', { class: 'name' }, meta.subject),
-            el('span', { class: 'meta' }, `${sections} sections`),
-            el('span', { class: 'pct ' + pctClass }, `${m}%`)
-        ));
-    }
-    stage.append(jump);
-    const ach = renderAchievementsPanel(); if (ach) stage.append(ach);
+    const tl = renderTimelineStrip(); if (tl) stage.append(tl);
+    stage.append(renderQuestsPanel());
+    stage.append(renderMasteryRing());
 
     if (DEBUG) {
+        stage.append(renderXpBarFull());
+        stage.append(el('p', { class: 'summary-line' },
+            'today: ', el('span', { class: 'num' }, String(due)), ' due cards · ',
+            el('span', { class: 'num' }, String(cases)), ' cases queued · ~',
+            el('span', { class: 'num' }, String(mins)), ' min est.'));
+        const ticksAll = loadGuideTicks();
+        const wsh = weakest ? state.shards[weakest.subject] : null;
+        const tw = weakest ? (ticksAll[weakest.subject] || {}) : {};
+        const nextSection = wsh?.guide?.sections?.find(s => !tw[String(s.line)]) || null;
+        const planObj = planMod.build({ due, weakestSubject: weakest?.subject, nextSection,
+            casesAvailable: wsh?.triage?.scenarios?.length || 0 });
+        if (planObj.tasks.length) {
+            const planEl = el('div', { class: 'panel daily-plan' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "debug · today's plan"), `~${planObj.total} min`),
+                ...planObj.tasks.map(t => el('a', { class: 'plan-task', href: t.href,
+                    on: { click: e => { if (t.href.startsWith('#')) { e.preventDefault(); go(t.href.slice(1).split('/')[0], t.href.split('/')[1]); } } } },
+                    el('span', { class: 'plan-min' }, `${t.min}m`),
+                    el('span', { class: 'plan-label' }, t.label))));
+            stage.append(planEl);
+        }
+        const flagCount = flag.count();
+        const chipRow = el('div', { class: 'today-chips' },
+            el('a', { class: 'chip', href: '#drill',
+                on: { click: e => { e.preventDefault(); go('drill'); } } }, 'drill 10'),
+            flagCount ? el('a', { class: 'chip', href: '#review',
+                on: { click: e => { e.preventDefault(); state.paletteReviewSet = flag.ids(); resetReviewQueue(); go('review'); } } },
+                `${flagCount} flagged`) : null,
+            el('a', { class: 'chip', href: '#mistakes',
+                on: { click: e => { e.preventDefault(); go('mistakes'); } } }, 'mistakes'),
+            el('div', { class: 'sparkline-wrap', 'aria-label': '7-day activity' }, renderSparkline(p.history))
+        );
+        stage.append(chipRow);
+        const ach = renderAchievementsPanel(); if (ach) stage.append(ach);
+
         // Recommended cases + 5-day recap behind ?debug
         const recs = [];
         for (const meta of state.manifest.subjects) {
@@ -386,6 +360,17 @@ async function renderSubject() {
 
     stage.append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'subject'), el('h2', {}, subj)));
+    const subjMastery = masteryFor(subj);
+    const subjDue = dueCountFor(subj);
+    stage.append(el('div', { class: 'subject-hero' },
+        el('div', { class: 'subject-hero-ring', 'aria-label': `${subjMastery}% mastered` },
+            el('div', { class: 'mini-ring', style: `--p:${subjMastery}` }, `${subjMastery}%`)),
+        el('div', { class: 'subject-hero-cta' },
+            el('a', { class: 'primary-action', href: `#review/${subj}`,
+                on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; go('review', subj); } } },
+                subjDue ? `review ${subjDue} card${subjDue === 1 ? '' : 's'}` : 'no cards due'),
+            el('a', { class: 'cta', href: `./triage-live.html?subject=${encodeURIComponent(subj)}` }, 'open in tutor'))
+    ));
     // Next thing
     const subTicks = loadGuideTicks()[subj] || {};
     const subShard0 = state.shards[subj];
@@ -447,22 +432,23 @@ async function renderSubject() {
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'guide'), `${shard.guide.sections.length} sections`),
         el('div', { class: 'guide-body markdown', html: renderMarkdown(shard.guide.body, subj) })
     ) : null;
-    const cardsPanel = el('div', { class: 'panel cards-panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'cards'), `${shard.cards.length} total`),
+    const cardsDetails = el('details', { class: 'panel cards-panel collapsible' },
+        el('summary', { class: 'panel-head' }, el('span', { class: 'title' }, `flashcards (${shard.cards.length})`)),
         ...shard.cards.slice(0, 20).map(c => buildFlashcard(c))
     );
     if (shard.cards.length > 20) {
-        cardsPanel.append(el('div', { style: 'margin-top:10px' },
+        cardsDetails.append(el('div', { style: 'margin-top:10px' },
             el('a', { href: '#review', class: 'chip', on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; go('review', subj); } } }, `review all ${shard.cards.length} →`)));
     }
 
-    const triagePanel = shard.triage && shard.triage.scenarios.length ? el('div', { class: 'panel cases-panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'cases'), `${shard.triage.scenarios.length}`),
+    const triagePanel = shard.triage && shard.triage.scenarios.length ? el('details', { class: 'panel cases-panel collapsible' },
+        el('summary', { class: 'panel-head' }, el('span', { class: 'title' }, `cases (${shard.triage.scenarios.length})`)),
         ...shard.triage.scenarios.slice(0, 8).map(sc => el('div', { class: 'row' },
             el('span', { class: 'code' }, '◆'),
             el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, sc.description || '')),
             el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
         ))) : null;
+    const cardsPanel = cardsDetails;
 
     const infographicsPanel = buildInfographicsPanel(shard.guide?.infographics || []);
     const right = el('div', {}, guideBodyPanel, infographicsPanel, cardsPanel, triagePanel);
@@ -1718,15 +1704,36 @@ function renderBadges() {
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
-    const links = [['today', 'today'], ['calendar', 'calendar'], ['guides', 'guides'],
-        ['review', 'review'], ['cases', 'cases'], ['stats', 'stats'],
-        ['quests', 'quests'], ['badges', 'badges'], ['mistakes', 'mistakes'], ['notes', 'notes']];
-    for (const [route, label] of links) {
+    const primary = [['today', 'today'], ['guides', 'guides'], ['review', 'review']];
+    for (const [route, label] of primary) {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
             on: { click: e => { e.preventDefault(); go(route); } } }, label));
     }
-    nav.append(el('a', { href: '#settings', class: 'navlink', data: { route: 'settings' },
-        on: { click: e => { e.preventDefault(); go('settings'); } } }, 'settings'));
+    const moreWrap = el('div', { class: 'nav-more' });
+    const moreBtn = el('button', { class: 'navlink nav-more-btn', type: 'button',
+        'aria-haspopup': 'menu', 'aria-expanded': 'false' }, 'more ▾');
+    const moreMenu = el('div', { class: 'nav-more-menu hidden', role: 'menu' });
+    const secondary = [['cases', 'cases'], ['calendar', 'calendar'], ['stats', 'stats'],
+        ['mistakes', 'mistakes'], ['notes', 'notes'], ['quests', 'quests'],
+        ['badges', 'badges'], ['settings', 'settings']];
+    for (const [route, label] of secondary) {
+        moreMenu.append(el('a', { href: `#${route}`, class: 'navlink nav-more-item',
+            data: { route }, role: 'menuitem',
+            on: { click: e => { e.preventDefault(); moreMenu.classList.add('hidden');
+                moreBtn.setAttribute('aria-expanded', 'false'); go(route); } } }, label));
+    }
+    moreBtn.addEventListener('click', () => {
+        const open = moreMenu.classList.toggle('hidden');
+        moreBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+    document.addEventListener('click', e => {
+        if (!moreWrap.contains(e.target)) {
+            moreMenu.classList.add('hidden');
+            moreBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
+    moreWrap.append(moreBtn, moreMenu);
+    nav.append(moreWrap);
     nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta' }, 'tutor'));
     const right = document.querySelector('header.topbar .status');
     const xpChip = renderXpChip();

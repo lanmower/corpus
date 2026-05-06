@@ -915,3 +915,31 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     .guide-body h2 { margin-top: 1.8em; }
     .guide-body h3 { margin-top: 1.4em; }
 }
+
+/* simplification pass — nav more, subject hero, collapsible panels */
+.nav-more { position: relative; display: inline-block; }
+.nav-more-btn { background: none; border: 0; cursor: pointer; font: inherit; color: inherit; padding: 6px 10px; }
+.nav-more-menu { position: absolute; top: 100%; right: 0; background: var(--paper); border: 1px solid var(--panel-2);
+    border-radius: var(--r-md); box-shadow: var(--shadow-pop); min-width: 160px; z-index: 50; padding: 6px 0;
+    display: flex; flex-direction: column; }
+.nav-more-menu.hidden { display: none; }
+.nav-more-item { padding: 8px 14px; text-decoration: none; color: var(--ink); }
+.nav-more-item:hover, .nav-more-item:focus-visible { background: var(--panel-hover); }
+.today-primary { margin: 14px 0 22px; }
+.today-primary .primary-action { font-size: 18px; padding: 18px 24px; display: inline-block; }
+.subject-hero { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; margin: 12px 0 18px;
+    padding: 14px; background: var(--panel-1); border-radius: var(--r-md); }
+.subject-hero-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+.mini-ring { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: var(--ff-mono); font-weight: 600; font-size: 13px;
+    background: conic-gradient(var(--c-mastered, #6BB377) calc(var(--p) * 1%), var(--panel-2) 0); }
+details.collapsible > summary { cursor: pointer; user-select: none; list-style: none; }
+details.collapsible > summary::-webkit-details-marker { display: none; }
+details.collapsible > summary::after { content: '▾'; float: right; font-family: var(--ff-mono); opacity: 0.5; }
+details.collapsible[open] > summary::after { content: '▴'; }
+@media (max-width: 600px) {
+    .nav-more-menu { right: auto; left: 0; min-width: 140px; }
+    .subject-hero { flex-direction: column; align-items: flex-start; }
+    .subject-hero-cta { width: 100%; }
+    .subject-hero-cta .primary-action { width: 100%; text-align: center; }
+}
