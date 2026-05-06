@@ -1,36 +1,18 @@
-// corpus offline cache — precaches shell + manifest + shards on install.
-const CACHE = 'corpus-v15';
+// corpus service worker — network-first for HTML/JS/CSS/JSON, cache-first for fonts/images.
+// Cache key is injected at deploy time by .github/workflows/pages.yml replacing __BUILD_VERSION__.
+// In local dev the placeholder remains, so we fall back to a per-boot dev key (forces fresh fetches).
+const RAW_VERSION = '__BUILD_VERSION__';
+const VERSION = RAW_VERSION.indexOf('BUILD_VERSION') >= 0 ? ('dev-' + Date.now()) : RAW_VERSION;
+const CACHE = 'corpus-' + VERSION;
+
 const SHELL = [
-    './', './index.html', './style.css', './app.js',
-    './progress.js', './theme.js', './search.js', './srs.js',
-    './cram.js', './justread.js', './lastpos.js', './verdicts.js',
-    './timer.js', './plan.js', './mistakes.js', './drill.js', './flag.js',
-    './undo.js', './notes.js', './late.js', './usercards.js', './confidence.js',
-    './schedule.js', './calendar.js',
-    './game.js', './badges.js', './quests.js', './mastery.js', './toast.js', './confetti.js',
-    './triage-live.html', './triage-live.css', './triage-live.js',
-    './manifest.webmanifest',
-    './data/manifest.json'
+    './', './index.html', './manifest.webmanifest'
 ];
 
 self.addEventListener('install', e => {
     e.waitUntil((async () => {
         const c = await caches.open(CACHE);
-        await c.addAll(SHELL.filter(Boolean));
-        try {
-            const m = await (await fetch('./data/manifest.json')).json();
-            const shards = m.subjects.map(s => `./data/${s.subject}.json`);
-            await c.addAll(shards);
-            const igAssets = [];
-            for (const sm of m.subjects) {
-                try {
-                    const sh = await (await fetch(`./data/${sm.subject}.json`)).json();
-                    const igs = (sh.guide && sh.guide.infographics) || [];
-                    for (const ig of igs) igAssets.push('./' + ig.src);
-                } catch {}
-            }
-            if (igAssets.length) await c.addAll(igAssets).catch(() => {});
-        } catch (e) { /* runtime fetch will populate */ }
+        try { await c.addAll(SHELL); } catch {}
         self.skipWaiting();
     })());
 });
@@ -39,29 +21,45 @@ self.addEventListener('activate', e => {
     e.waitUntil((async () => {
         const keys = await caches.keys();
         await Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)));
-        self.clients.claim();
+        await self.clients.claim();
+        const cs = await self.clients.matchAll({ type: 'window' });
+        for (const client of cs) {
+            try { client.postMessage({ type: 'sw-activated', version: VERSION }); } catch {}
+        }
     })());
 });
 
+function isStaticAsset(url) {
+    return /\.(woff2?|ttf|otf|eot|png|jpe?g|gif|webp|ico)$/i.test(url.pathname);
+}
+
 self.addEventListener('fetch', e => {
+    if (e.request.method !== 'GET') return;
     const url = new URL(e.request.url);
     if (url.origin !== location.origin) return;
+
     e.respondWith((async () => {
         const cache = await caches.open(CACHE);
-        const cached = await cache.match(e.request);
-        if (cached) {
-            if (/\/data\//.test(url.pathname)) {
-                fetch(e.request).then(r => { if (r.ok) cache.put(e.request, r.clone()); }).catch(() => {});
+
+        if (isStaticAsset(url)) {
+            const hit = await cache.match(e.request);
+            if (hit) return hit;
+            try {
+                const r = await fetch(e.request);
+                if (r.ok) cache.put(e.request, r.clone());
+                return r;
+            } catch {
+                return new Response('offline', { status: 503 });
             }
-            return cached;
         }
+
         try {
-            const r = await fetch(e.request);
-            if (r.ok && (url.pathname.endsWith('.json') || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname.endsWith('.webmanifest') || /\.(png|jpe?g|svg|webp)$/i.test(url.pathname))) {
-                cache.put(e.request, r.clone());
-            }
+            const r = await fetch(e.request, { cache: 'no-store' });
+            if (r.ok) cache.put(e.request, r.clone());
             return r;
-        } catch (err) {
+        } catch {
+            const cached = await cache.match(e.request);
+            if (cached) return cached;
             if (e.request.mode === 'navigate' || (e.request.headers.get('accept') || '').includes('text/html')) {
                 const shell = await cache.match('./') || await cache.match('./index.html');
                 if (shell) return shell;

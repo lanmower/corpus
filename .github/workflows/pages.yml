@@ -22,6 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Inject build version (commit SHA) into sw.js + html
+        run: |
+          SHA="${GITHUB_SHA::8}"
+          echo "Injecting build version: $SHA"
+          sed -i "s/__BUILD_VERSION__/${SHA}/g" site/sw.js site/index.html site/triage-live.html
+          grep -n "corpus-" site/sw.js | head -3 || true
+          grep -n "?v=" site/index.html site/triage-live.html || true
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
