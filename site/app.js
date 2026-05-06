@@ -464,9 +464,67 @@ async function renderSubject() {
             el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
         ))) : null;
 
-    const right = el('div', {}, guideBodyPanel, cardsPanel, triagePanel);
+    const infographicsPanel = buildInfographicsPanel(shard.guide?.infographics || []);
+    const right = el('div', {}, guideBodyPanel, infographicsPanel, cardsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
     stage.append(wrap);
+}
+
+function buildInfographicsPanel(items) {
+    if (!Array.isArray(items) || items.length === 0) return null;
+    const grid = el('div', { class: 'infographics-grid' });
+    items.forEach((ig, idx) => {
+        const tile = el('button', {
+            class: 'infographic-tile',
+            type: 'button',
+            'aria-label': ig.alt,
+            on: { click: () => openInfographicLightbox(items, idx) }
+        },
+            el('img', { src: ig.src, alt: ig.alt, loading: 'lazy' }),
+            el('div', { class: 'infographic-caption' }, ig.title)
+        );
+        grid.append(tile);
+    });
+    return el('div', { class: 'panel infographics-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'infographics'), `${items.length}`),
+        grid
+    );
+}
+
+function openInfographicLightbox(items, startIdx) {
+    let idx = startIdx;
+    const existing = document.getElementById('infographic-lightbox');
+    if (existing) existing.remove();
+    const imgEl = el('img', { class: 'lightbox-img', src: items[idx].src, alt: items[idx].alt });
+    const caption = el('div', { class: 'lightbox-caption' }, items[idx].title);
+    const close = el('button', { class: 'lightbox-close', type: 'button', 'aria-label': 'close' }, '×');
+    const prev = el('button', { class: 'lightbox-prev', type: 'button', 'aria-label': 'previous' }, '‹');
+    const next = el('button', { class: 'lightbox-next', type: 'button', 'aria-label': 'next' }, '›');
+    const stage = el('div', { class: 'lightbox-stage' }, imgEl, caption);
+    const overlay = el('div', { id: 'infographic-lightbox', class: 'lightbox-overlay', role: 'dialog', 'aria-modal': 'true' }, close, prev, stage, next);
+    function show(i) {
+        idx = (i + items.length) % items.length;
+        imgEl.src = items[idx].src;
+        imgEl.alt = items[idx].alt;
+        caption.textContent = items[idx].title;
+    }
+    function shut() {
+        document.removeEventListener('keydown', onKey);
+        overlay.remove();
+    }
+    function onKey(e) {
+        if (e.key === 'Escape') shut();
+        else if (e.key === 'ArrowLeft') show(idx - 1);
+        else if (e.key === 'ArrowRight') show(idx + 1);
+        else if (e.key === 'Tab') { e.preventDefault(); close.focus(); }
+    }
+    close.addEventListener('click', shut);
+    prev.addEventListener('click', () => show(idx - 1));
+    next.addEventListener('click', () => show(idx + 1));
+    overlay.addEventListener('click', e => { if (e.target === overlay) shut(); });
+    document.addEventListener('keydown', onKey);
+    document.body.append(overlay);
+    close.focus();
 }
 
 // ---- markdown with guide affordances ----
@@ -1656,6 +1714,7 @@ function mountSearchPalette() {
             else if (item.kind === 'case') { location.href = `./triage-live.html#${encodeURIComponent(item.id)}`; }
             else if (item.kind === 'section') { go('subject', item.subject); }
             else if (item.kind === 'prose') { go('subject', item.subject); }
+            else if (item.kind === 'infographic') { go('subject', item.subject); }
         });
 }
 

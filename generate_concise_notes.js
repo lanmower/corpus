@@ -4,7 +4,6 @@ const path = require('path');
 const { readdirSync, statSync, readFileSync, writeFileSync } = fs;
 
 const CORPUS_ROOT = path.join(__dirname);
-const CONCISE_ROOT = path.join(CORPUS_ROOT, 'concise');
 const MEDBAK_ROOT = 'D:/medbak';
 
 function cleanFileName(filename) {
@@ -185,16 +184,13 @@ function main() {
     return;
   }
 
-  // Create concise directory
-  if (!fs.existsSync(CONCISE_ROOT)) {
-    fs.mkdirSync(CONCISE_ROOT, { recursive: true });
-  }
-
   const results = [];
   Object.entries(subjects).forEach(([subject, data]) => {
     const guide = generateGuide(subject, data);
-    const filename = `${subject}_study_guide.md`;
-    const filepath = path.join(CONCISE_ROOT, filename);
+    const filename = 'study_guide.md';
+    const subjectDir = path.join(CORPUS_ROOT, subject);
+    if (!fs.existsSync(subjectDir)) fs.mkdirSync(subjectDir, { recursive: true });
+    const filepath = path.join(subjectDir, filename);
 
     writeFileSync(filepath, guide, 'utf-8');
     results.push({

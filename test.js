@@ -498,13 +498,45 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // forecast — zero rate => null
         global.localStorage.setItem('corpus.progress.v1', JSON.stringify({ version: 1, history: [{ date: '2026-05-01', graded: 0 }, { date: '2026-05-02', graded: 0 }] }));
         assert.strictEqual(masteryMod.forecastTo100(MANIFEST, SHARDMAP), null);
-        // SW v12 + new modules
+        // SW v13 + new modules
         const sw = READ('site/sw.js');
-        assert.ok(sw.includes('corpus-v12'));
+        assert.ok(sw.includes('corpus-v13'));
         for (const f of ['game.js', 'badges.js', 'quests.js', 'mastery.js', 'toast.js', 'confetti.js']) assert.ok(sw.includes(f), 'sw missing ' + f);
-        // index.html ?v=11
-        assert.match(indexHtml, /app\.js\?v=11/);
-        assert.match(indexHtml, /style\.css\?v=11/);
+        // index.html ?v=12
+        assert.match(indexHtml, /app\.js\?v=12/);
+        assert.match(indexHtml, /style\.css\?v=12/);
+        // infographics: relocated guides + infographics dir + shard arrays + lightbox + concise/ gone
+        assert.ok(!fs.existsSync(path.join(ROOT, 'concise')), 'concise/ should be removed');
+        for (const s of SUBJECTS) assert.ok(fs.existsSync(path.join(ROOT, s, 'study_guide.md')), s + '/study_guide.md missing');
+        const expectedChars = { cardiology: 237482, diabetes: 140719, endocrine: 139144, gastroenterology: 190984, geriatric: 57261, nephrology: 137214, pulmonology: 141764, rheumatology: 51027 };
+        for (const s of SUBJECTS) assert.strictEqual(SHARDMAP[s].guide.chars, expectedChars[s], s + ' char count');
+        for (const s of SUBJECTS) {
+            const igs = SHARDMAP[s].guide.infographics;
+            assert.ok(Array.isArray(igs), s + ' infographics array');
+            const expected = s === 'rheumatology' ? 0 : 1;
+            assert.strictEqual(igs.length, expected, s + ' infographics length');
+            if (expected === 1) {
+                assert.ok(igs[0].filename && igs[0].title && igs[0].alt && igs[0].src);
+                assert.ok(fs.existsSync(path.join(ROOT, 'site', igs[0].src)), s + ' asset copied');
+            }
+        }
+        // app.js wires panel + lightbox
+        assert.match(appSrc, /buildInfographicsPanel/);
+        assert.match(appSrc, /openInfographicLightbox/);
+        assert.match(appSrc, /infographic-tile/);
+        assert.match(appSrc, /lightbox-overlay/);
+        assert.match(appSrc, /'Escape'/);
+        assert.match(appSrc, /'ArrowLeft'/);
+        assert.match(appSrc, /'ArrowRight'/);
+        // CSS for panel + lightbox
+        assert.match(styleCss, /\.infographics-grid/);
+        assert.match(styleCss, /\.lightbox-overlay/);
+        assert.match(styleCss, /repeat\(auto-fill, minmax\(220px/);
+        // SW precaches infographic assets
+        assert.match(sw, /infographics/);
+        // search.js indexes infographics
+        const searchSrc = READ('site/search.js');
+        assert.match(searchSrc, /kind: 'infographic'/);
         // raw-source markers absent from shards
         for (const s of SUBJECTS) {
             const body = (SHARDMAP[s].guide && SHARDMAP[s].guide.body) || '';

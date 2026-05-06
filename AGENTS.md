@@ -9,13 +9,14 @@ Each subject originally had three subdirectories:
 - `book-texts/` — **moved to D:/medbak/<subject>/book-texts/** (offline archive, 2026-05-05 moved from C:/medbak)
 - `srs-cards/` — **remains at D:/corpus/<subject>/srs-cards/**
 
-Only srs-cards remain at the corpus root; all original source materials live at `D:/medbak/<subject>/` along with `D:/medbak/archive-manifest.json` (records every moved file). The build pipeline no longer reads from medbak — `scripts/build_data.js` ingests `srs-cards/` + `concise/<subject>_study_guide.md` + `<subject>_triage_scenarios.yml` only. `loadAudio`/`loadBooks` removed; shards no longer carry `audio[]`/`books[]` arrays; manifest no longer carries `audioCount`/`bookCount`.
+Only srs-cards remain at the corpus root; all original source materials live at `D:/medbak/<subject>/` along with `D:/medbak/archive-manifest.json` (records every moved file). The build pipeline no longer reads from medbak — `scripts/build_data.js` ingests `srs-cards/` + `<subject>/study_guide.md` + `<subject>/infographics/*.png` + `<subject>_triage_scenarios.yml` only. `loadAudio`/`loadBooks` removed; shards no longer carry `audio[]`/`books[]` arrays; manifest no longer carries `audioCount`/`bookCount`.
 
 ## Generated Artifacts
 
 Per-subject files at D:/corpus root:
 - `*_triage_scenarios.yml` (all 8 subjects) — parameterized clinical triage scenarios extracted from SRS cards
-- `concise/<subject>_study_guide.md` (all 8 subjects) — **the rewritten study guides; 934KB total prose across 202 sections; the featured top-level artifact of the site** (see "Study Guides Featured" below)
+- `<subject>/study_guide.md` (all 8 subjects) — **the rewritten study guides; 934KB total prose across 202 sections; the featured top-level artifact of the site** (see "Study Guides Featured" below)
+- `<subject>/infographics/*.png` (7 of 8 subjects, rheumatology pending) — per-subject infographic gallery surfaced via `.infographics-panel` + lightbox on subject deepdives
 
 ## Observability Website
 
@@ -61,7 +62,7 @@ Totals across all 8 subjects (post-archive-relocation 2026-05-05):
 
 ## Study Guides Featured (2026-05-05 IA pass)
 
-The eight rewritten study guides at `concise/<subject>_study_guide.md` are the primary artifact of the site. Three new surfaces:
+The eight rewritten study guides at `<subject>/study_guide.md` are the primary artifact of the site. Three new surfaces:
 
 - **`#guides` route** — top-nav link between `today` and `subjects`. `renderGuides()` emits a hero ("our rewritten study guides") plus a grid of 8 large guide cards (subject, section count, KB size, ~min read, mastery%, "open guide →" chip). Below the grid: totals panel summing sections, KB, cards, scenarios.
 - **Featured-guides panel on `#today`** — `.featured-guides` panel (rail-purple) with a `.guide-mini-grid` of all 8 subjects (name, section count, mastery%, mini progress bar). Headline copy: "our rewritten study guides".
@@ -294,7 +295,7 @@ Added `'contrast'` option. `cycleTheme` order: light â dark â contrast
 - `site/index.html` script tags carry `?v=3` for cache-busting deployed users.
 
 ### Originals are archive-only (2026-05-05)
-The site surfaces the rewritten artifacts and nothing else: `concise/<subject>_study_guide.md`, `<subject>/srs-cards/`, `<subject>_triage_scenarios.yml`. Heading lines and TOC links in the rewritten guides were sanitized this pass to strip transcript-source filename suffixes (`_pages-NNN-NNN`, ` - CMED4IIMx - 2026`, "Lectures & Audio Transcripts"). `site/data/medbak-index.json` and `scripts/build_medbak_index.js` were deleted; no UI hook references the medbak archive. Card-level `sourceFile` / `source` fields persist in shards but are gated behind `?debug` and never feed the search index.
+The site surfaces the rewritten artifacts and nothing else: `<subject>/study_guide.md`, `<subject>/infographics/`, `<subject>/srs-cards/`, `<subject>_triage_scenarios.yml`. Heading lines and TOC links in the rewritten guides were sanitized this pass to strip transcript-source filename suffixes (`_pages-NNN-NNN`, ` - CMED4IIMx - 2026`, "Lectures & Audio Transcripts"). `site/data/medbak-index.json` and `scripts/build_medbak_index.js` were deleted; no UI hook references the medbak archive. Card-level `sourceFile` / `source` fields persist in shards but are gated behind `?debug` and never feed the search index.
 
 ### Triage-live
 - New `copy as md` button in composer-row. Builds Markdown from active scenario name + description + scratchpad cards (kind, title, body), copies via `navigator.clipboard.writeText`. Console-logs char count with `[triage-live]` prefix.

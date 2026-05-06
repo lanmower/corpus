@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Rebuilds concise/<subject>_study_guide.md for stub subjects with full
+// Rebuilds <subject>/study_guide.md for stub subjects with full
 // transcript text + SRS atoms inline (Key Atoms section per lecture).
 // No truncation. Idempotent.
 const fs = require('fs');
@@ -7,7 +7,6 @@ const path = require('path');
 const { parseYaml } = require('./parse_yaml.js');
 
 const ROOT = path.resolve(__dirname, '..');
-const CONCISE = path.join(ROOT, 'concise');
 
 function readSafe(p) { try { return fs.readFileSync(p, 'utf8'); } catch { return null; } }
 function lsSafe(d) { try { return fs.readdirSync(d); } catch { return []; } }
@@ -144,10 +143,11 @@ function buildGuide(subject) {
 }
 
 function main(targets) {
-    fs.mkdirSync(CONCISE, { recursive: true });
     for (const s of targets) {
         const md = buildGuide(s);
-        const out = path.join(CONCISE, `${s}_study_guide.md`);
+        const subjDir = path.join(ROOT, s);
+        fs.mkdirSync(subjDir, { recursive: true });
+        const out = path.join(subjDir, 'study_guide.md');
         fs.writeFileSync(out, md);
         console.log(`✓ ${s}: ${md.length} chars → ${out}`);
     }

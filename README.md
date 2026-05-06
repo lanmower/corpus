@@ -56,7 +56,7 @@ The site is buildless in the browser — vanilla ESM, no bundler. Two scripts po
 
 ```bash
 node scripts/build_data.js       # rebuilds shards + manifest from corpus YAML/markdown
-node scripts/build_guides.js     # regenerates concise/<subject>_study_guide.md
+node scripts/build_guides.js     # regenerates <subject>/study_guide.md
 ```
 
 ## Tests

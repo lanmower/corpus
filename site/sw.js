@@ -1,5 +1,5 @@
 // corpus offline cache — precaches shell + manifest + shards on install.
-const CACHE = 'corpus-v12';
+const CACHE = 'corpus-v13';
 const SHELL = [
     './', './index.html', './style.css', './app.js',
     './progress.js', './theme.js', './search.js', './srs.js',
@@ -21,6 +21,15 @@ self.addEventListener('install', e => {
             const m = await (await fetch('./data/manifest.json')).json();
             const shards = m.subjects.map(s => `./data/${s.subject}.json`);
             await c.addAll(shards);
+            const igAssets = [];
+            for (const sm of m.subjects) {
+                try {
+                    const sh = await (await fetch(`./data/${sm.subject}.json`)).json();
+                    const igs = (sh.guide && sh.guide.infographics) || [];
+                    for (const ig of igs) igAssets.push('./' + ig.src);
+                } catch {}
+            }
+            if (igAssets.length) await c.addAll(igAssets).catch(() => {});
         } catch (e) { /* runtime fetch will populate */ }
         self.skipWaiting();
     })());
@@ -48,7 +57,7 @@ self.addEventListener('fetch', e => {
         }
         try {
             const r = await fetch(e.request);
-            if (r.ok && (url.pathname.endsWith('.json') || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname.endsWith('.webmanifest'))) {
+            if (r.ok && (url.pathname.endsWith('.json') || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname.endsWith('.webmanifest') || /\.(png|jpe?g|svg|webp)$/i.test(url.pathname))) {
                 cache.put(e.request, r.clone());
             }
             return r;
