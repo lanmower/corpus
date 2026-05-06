@@ -11,15 +11,12 @@ import * as mistakes from './mistakes.js';
 import * as drill from './drill.js';
 import * as flag from './flag.js';
 import * as undo from './undo.js';
-import * as notes from './notes.js';
 import * as late from './late.js';
 import * as usercards from './usercards.js';
 import * as confidence from './confidence.js';
 import * as schedule from './schedule.js';
 import * as calendar from './calendar.js';
 import * as game from './game.js';
-import * as badges from './badges.js';
-import * as quests from './quests.js';
 import * as mastery from './mastery.js';
 import * as toast from './toast.js';
 import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
@@ -75,11 +72,12 @@ function el(tag, attrs = {}, ...kids) {
     return e;
 }
 
-const ROUTES = ['today', 'calendar', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'mistakes', 'notes', 'drill', 'quests', 'badges'];
+const ROUTES = ['today', 'calendar', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'mistakes', 'drill'];
 const ROUTE_TITLES = { today: 'today', calendar: 'calendar', guides: 'guides', review: 'review',
     cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings',
-    mistakes: 'mistakes', notes: 'notes', drill: 'drill', quests: 'quests', badges: 'badges' };
-const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review' };
+    mistakes: 'mistakes', drill: 'drill' };
+const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review',
+    notes: 'today', quests: 'today', badges: 'today' };
 
 function setDocTitle(route, subject) {
     const main = subject ? subject : (ROUTE_TITLES[route] || route);
@@ -162,8 +160,7 @@ function render() {
     }
     const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
         review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
-        settings: renderSettings, mistakes: renderMistakes, notes: renderNotes,
-        drill: renderDrill, quests: renderQuests, badges: renderBadges };
+        settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
     (fns[r] || renderToday)();
     updateFooter();
 }
@@ -237,8 +234,7 @@ function renderToday() {
 
     stage.append(renderStatusLine(p, due));
 
-    // Slim today: status, primary CTA, schedule strip, quests, mastery ring
-    quests.ensureCurrent();
+    // Slim today: status, primary CTA, schedule strip, mastery ring
 
     // Primary CTA — outcome-oriented
     stage.append(el('div', { class: 'today-primary' },
@@ -248,7 +244,6 @@ function renderToday() {
     ));
 
     const tl = renderTimelineStrip(); if (tl) stage.append(tl);
-    stage.append(renderQuestsPanel());
     stage.append(renderMasteryRing());
 
     if (DEBUG) {
@@ -284,7 +279,6 @@ function renderToday() {
             el('div', { class: 'sparkline-wrap', 'aria-label': '7-day activity' }, renderSparkline(p.history))
         );
         stage.append(chipRow);
-        const ach = renderAchievementsPanel(); if (ach) stage.append(ach);
 
         // Recommended cases + 5-day recap behind ?debug
         const recs = [];
@@ -415,8 +409,6 @@ async function renderSubject() {
                             lastpos.save('subject', subj);
                             if (e.target.checked) {
                                 game.awardXP(game.XP.section_tick, 'section');
-                                quests.progressOn('section:ticked', { subject: subj });
-                                runBadgeEvaluation();
                             }
                             render();
                         } }
@@ -844,8 +836,6 @@ function awardCardXP(score, card) {
     game.awardXP(amt, 'card_grade');
     const combo = game.bumpCombo(score);
     if (combo >= 3) game.awardXP(game.XP.combo_bonus, 'combo');
-    quests.progressOn('srs:graded', { score, subject: card?._subject });
-    if (card?._subject) quests.progressOn('subject:touched', { subject: card._subject });
     // daily-goal-hit one-shot
     const p = progress.load();
     if (p.todayGraded >= (p.dailyGoal || 30)) {
@@ -855,32 +845,6 @@ function awardCardXP(score, card) {
             const g2 = game.load(); g2.lastGoalHitDate = p.todayDate; game.save(g2);
         }
     }
-    runBadgeEvaluation();
-}
-
-function runBadgeEvaluation() {
-    try {
-        const p = progress.load();
-        const states = srs.loadStates();
-        const masterySubjects = {};
-        for (const s of state.manifest?.subjects || []) {
-            const sm = mastery.subjectProgress(state.manifest, state.shards, s.subject);
-            masterySubjects[s.subject] = sm.weighted;
-        }
-        const mistakesArr = (() => { try { return JSON.parse(localStorage.getItem('corpus.mistakes.v1') || '[]'); } catch { return []; } })();
-        const cleared = mistakesArr.filter(m => (states[m.cardId]?.lastScore || 0) >= 3).length;
-        const notesArr = (() => { try { return JSON.parse(localStorage.getItem('corpus.notes.v1') || '{}'); } catch { return {}; } })();
-        let noteCount = 0; for (const k of Object.keys(notesArr)) noteCount += Object.keys(notesArr[k] || {}).length;
-        const flagSet = (() => { try { return JSON.parse(localStorage.getItem('corpus.flagged.v1') || '[]'); } catch { return []; } })();
-        const snap = {
-            progress: p, gameState: game.load(), srsStates: states,
-            mistakes: { cleared }, flag: { count: flagSet.length }, notes: { count: noteCount },
-            masterySubjects, daysToExam: srs.daysUntilExam(), hourNow: new Date().getHours(),
-            comboGrade4: game.load().comboCount || 0,
-            subjectsTouchedToday: Object.values(states).filter(s => s.lastReviewedAt && (Date.now() - s.lastReviewedAt) < 86400000).length
-        };
-        badges.evaluateBadges(snap);
-    } catch (e) { warn('badge eval', e.message); }
 }
 
 function showUndoToast() {
@@ -918,7 +882,7 @@ document.addEventListener('keydown', e => {
     if (e.key === '?' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openShortcutsModal(); return; }
     // g-prefix vim nav
     if (Date.now() - gPrefixTs < 1500) {
-        const map = { h: 'today', r: 'review', s: 'stats', g: 'guides', m: 'mistakes', n: 'notes', t: 'today' };
+        const map = { h: 'today', r: 'review', s: 'stats', g: 'guides', m: 'mistakes', t: 'today' };
         const dest = map[e.key];
         if (dest) { e.preventDefault(); gPrefixTs = 0; go(dest); return; }
         gPrefixTs = 0;
@@ -930,10 +894,6 @@ document.addEventListener('keydown', e => {
     }
     if (e.key === '+' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openQuickAdd(); return; }
     if (e.key === 'u' && !e.ctrlKey && !e.metaKey && undo.peek()) { e.preventDefault(); undoLastGrade(); return; }
-    if ((e.key === 'h' || e.key === 'n') && state.route === 'subject') {
-        const sel = window.getSelection(); const text = sel?.toString() || '';
-        if (text.trim()) { e.preventDefault(); handleHighlightOrNote(e.key, text, sel); return; }
-    }
     if (e.key === 'Escape') {
         if (document.body.classList.contains('just-read') && state.route === 'subject') {
             justread.toggle(state.currentSubject);
@@ -1307,7 +1267,7 @@ async function renderSettings() {
         ...(gState.suppressToasts ? { checked: 'checked' } : {}),
         on: { change: e => game.setSuppressToasts(e.target.checked) } });
     const resetGameBtn = el('button', { class: 'chip', 'aria-label': 'reset gamification',
-        on: { click: () => { if (confirm('reset XP, badges, quests?')) { game.reset(); quests.reset(); render(); } } } }, 'reset gamification');
+        on: { click: () => { if (confirm('reset XP?')) { game.reset(); render(); } } } }, 'reset gamification');
     stage.append(el('div', { class: 'panel settings-section gamification' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'gamification')),
         el('div', { class: 'toolbar' },
@@ -1327,15 +1287,12 @@ const SHORTCUTS = [
     ['t', 'pomodoro timer toggle'],
     ['+', 'quick add card'],
     ['u', 'undo last grade'],
-    ['h', 'highlight selected text (subject)'],
-    ['n', 'note on selected text (subject)'],
     ['f', 'flag card (review)'],
     ['g h', 'go home (today)'],
     ['g r', 'go review'],
     ['g s', 'go stats'],
     ['g g', 'go guides'],
     ['g m', 'go mistakes'],
-    ['g n', 'go notes'],
     ['space', 'reveal answer (review)'],
     ['1–4', 'grade card (review)'],
     ['s', 'skip card (review)'],
@@ -1413,28 +1370,6 @@ async function renderMistakes() {
     }
 }
 
-function renderNotes() {
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'notes'), el('h2', {}, 'highlights & notes')));
-    const arr = notes.all();
-    if (!arr.length) {
-        stage.append(el('div', { class: 'empty-state' },
-            el('div', { class: 'empty-title' }, 'no notes yet'),
-            el('div', { class: 'empty-sub' }, 'select text on a guide and press h to highlight or n to note.')));
-        return;
-    }
-    const grp = {};
-    for (const n of arr) (grp[n.subject] = grp[n.subject] || []).push(n);
-    for (const s of Object.keys(grp).sort()) {
-        stage.append(el('div', { class: 'panel' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, s), `${grp[s].length}`),
-            ...grp[s].map(n => el('div', { class: 'row' },
-                el('span', { class: 'code' }, n.hl ? '★' : '✎'),
-                el('div', {}, el('div', { class: 'title' }, n.text || ''), el('div', { class: 'meta' }, n.note || '')),
-                el('a', { class: 'chip', href: `#subject/${n.subject}`, on: { click: e => { e.preventDefault(); go('subject', n.subject); } } }, 'open')))));
-    }
-}
-
 async function renderDrill() {
     stage.append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'drill'), el('h2', {}, 'drill 10')));
@@ -1482,18 +1417,6 @@ function openQuickAdd() {
         } else if (e.key === 'Escape') m.remove();
     });
     m.addEventListener('click', e => { if (e.target === m) m.remove(); });
-}
-
-function handleHighlightOrNote(key, text, sel) {
-    const subject = state.currentSubject; if (!subject) return;
-    const lineNum = Date.now() % 100000;
-    const existing = notes.get(subject, lineNum) || {};
-    if (key === 'h') notes.set(subject, lineNum, { ...existing, text: text.slice(0, 200), hl: true });
-    else {
-        const note = prompt('note:', existing.note || '');
-        if (note != null) notes.set(subject, lineNum, { ...existing, text: text.slice(0, 200), note });
-    }
-    sel?.removeAllRanges();
 }
 
 function renderSparkline(history, days = 7) {
@@ -1586,31 +1509,6 @@ function renderMasteryRing() {
     return wrap;
 }
 
-function renderQuestsPanel() {
-    const q = quests.ensureCurrent();
-    const panel = el('div', { class: 'panel quests-panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "today's quests"),
-            el('a', { class: 'chip', href: '#quests', on: { click: e => { e.preventDefault(); go('quests'); } } }, 'all →'))
-    );
-    for (const item of q.daily) panel.append(questRow(item, 'daily'));
-    if (q.weekly) panel.append(questRow(q.weekly, 'weekly'));
-    return panel;
-}
-
-function questRow(item, kind) {
-    const pct = Math.min(100, Math.round(100 * (item.progress || 0) / item.target));
-    const ready = (item.progress || 0) >= item.target && !item.claimed;
-    return el('div', { class: 'quest-row' + (ready ? ' ready' : '') + (item.claimed ? ' claimed' : '') },
-        el('div', { class: 'quest-label' }, item.label, el('span', { class: 'quest-kind mono' }, ' ' + kind)),
-        el('div', { class: 'quest-track' }, el('div', { class: 'quest-fill', style: `width:${pct}%` })),
-        el('div', { class: 'quest-meta mono' }, `${item.progress || 0}/${item.target}`),
-        el('button', {
-            class: 'chip claim-btn', disabled: ready ? null : 'true',
-            on: { click: () => { if (ready) { quests.claim(item.id); render(); } } }
-        }, item.claimed ? 'claimed' : (ready ? 'claim' : 'locked'))
-    );
-}
-
 function renderTimelineStrip() {
     const today = new Date().toISOString().slice(0, 10);
     const dueCounts = {};
@@ -1638,67 +1536,12 @@ function renderTimelineStrip() {
             el('span', { class: 'tl-label' }, b.kind === 'break' ? 'break' : (b.subject || 'study')),
             el('span', { class: 'tl-len mono' }, `${b.len}m`),
             b.kind === 'study' ? el('button', { class: 'chip',
-                on: { click: () => { schedule.markBlockComplete(b.id, !b.done); if (!b.done) { game.awardXP(game.XP.block_complete + Math.round(b.len/5), 'block'); quests.progressOn('block:done'); } render(); } } },
+                on: { click: () => { schedule.markBlockComplete(b.id, !b.done); if (!b.done) { game.awardXP(game.XP.block_complete + Math.round(b.len/5), 'block'); } render(); } } },
                 b.done ? '✓' : 'mark') : null
         ));
     }
     panel.append(strip);
     return panel;
-}
-
-function renderAchievementsPanel() {
-    const g = game.load();
-    if (!g.unlocks?.length) return null;
-    return el('div', { class: 'panel achievements-panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'recent achievements'),
-            el('a', { class: 'chip', href: '#badges', on: { click: e => { e.preventDefault(); go('badges'); } } }, 'all →')),
-        ...g.unlocks.slice(0, 3).map(u => el('div', { class: 'row achievement-row' },
-            el('span', { class: 'badge-icon' }, u.icon || '★'),
-            el('span', { class: 'title' }, u.label || u.id),
-            el('span', { class: 'meta mono' }, new Date(u.ts).toISOString().slice(5, 10))))
-    );
-}
-
-function renderQuests() {
-    const q = quests.ensureCurrent();
-    const hist = quests.loadHistory();
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'quests'), el('h2', {}, 'daily + weekly')));
-    const panel = el('div', { class: 'panel quests-panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'today (3)')),
-        ...q.daily.map(it => questRow(it, 'daily'))
-    );
-    stage.append(panel);
-    if (q.weekly) stage.append(el('div', { class: 'panel quests-panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'this week')),
-        questRow(q.weekly, 'weekly')));
-    if (hist.length) {
-        stage.append(el('div', { class: 'panel' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'completed (last 14)')),
-            ...hist.slice(-14).reverse().map(h => el('div', { class: 'row' },
-                el('span', { class: 'title' }, h.label),
-                el('span', { class: 'meta mono' }, `+${h.reward}`)))));
-    }
-}
-
-function renderBadges() {
-    stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'badges'), el('h2', {}, 'achievements')));
-    const g = game.load();
-    const grid = el('div', { class: 'badge-grid' });
-    for (const b of badges.CATALOG) {
-        const unlocked = g.badges.includes(b.id);
-        const u = g.unlocks.find(x => x.id === b.id);
-        grid.append(el('div', {
-            class: 'badge-tile' + (unlocked ? ' unlocked' : ' locked'),
-            title: b.desc + (unlocked && u ? ` — ${new Date(u.ts).toISOString().slice(0, 10)}` : '')
-        },
-            el('span', { class: 'badge-icon' }, b.icon),
-            el('span', { class: 'badge-label' }, b.label),
-            el('span', { class: 'badge-desc' }, b.desc)
-        ));
-    }
-    stage.append(grid);
 }
 
 function mountTopbar() {
@@ -1714,8 +1557,7 @@ function mountTopbar() {
         'aria-haspopup': 'menu', 'aria-expanded': 'false' }, 'more ▾');
     const moreMenu = el('div', { class: 'nav-more-menu hidden', role: 'menu' });
     const secondary = [['cases', 'cases'], ['calendar', 'calendar'], ['stats', 'stats'],
-        ['mistakes', 'mistakes'], ['notes', 'notes'], ['quests', 'quests'],
-        ['badges', 'badges'], ['settings', 'settings']];
+        ['mistakes', 'mistakes'], ['settings', 'settings']];
     for (const [route, label] of secondary) {
         moreMenu.append(el('a', { href: `#${route}`, class: 'navlink nav-more-item',
             data: { route }, role: 'menuitem',
@@ -1799,11 +1641,8 @@ function registerSW() {
         }
         registerSW();
         toast.bind();
-        quests.ensureCurrent();
         window.addEventListener('pomodoro:done', () => {
             game.awardXP(game.XP.pomodoro_complete, 'pomodoro');
-            quests.progressOn('pomodoro:done');
-            runBadgeEvaluation();
         });
         updateOnlineStatus();
         window.addEventListener('online', updateOnlineStatus);
@@ -1823,8 +1662,6 @@ function registerSW() {
                 } else if (e.data?.type === 'case:graded') {
                     const score = e.data.score || 0;
                     game.awardXP(game.XP.case_graded + (score >= 0.7 ? game.XP.case_passed_bonus : 0), 'case');
-                    quests.progressOn('case:graded', { score });
-                    runBadgeEvaluation();
                 }
             });
             state.broadcastChannel = ch;
