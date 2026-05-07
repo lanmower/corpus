@@ -16,6 +16,7 @@ import * as usercards from './usercards.js';
 import * as confidence from './confidence.js';
 import * as unlocked from './unlocked.js';
 import * as newcards from './newcards.js';
+import * as coverage from './coverage.js';
 import * as schedule from './schedule.js';
 import * as calendar from './calendar.js';
 import * as game from './game.js';
@@ -120,11 +121,99 @@ function masteryFor(subject) {
 function eligibleForSubject(subject, sessionUsed = 0) {
     const unl = unlocked.isUnlocked(subject);
     const capRemaining = newcards.remaining(subject);
+    const sh = state.shards[subject];
+    const byId = new Map((sh?.cards || []).map(c => [c.id, c]));
+    const covered = coverage.coveredSections(subject);
     return (id, s) => {
         if (!srs.isNewCardForGate(s)) return true;
         if (!unl) return false;
-        return sessionUsed < capRemaining;
+        if (sessionUsed >= capRemaining) return false;
+        const c = byId.get(id);
+        if (c && c.requires && c.requires.sectionLine && !covered.has(String(c.requires.sectionLine))) return false;
+        return true;
     };
+}
+
+// Map subject -> Map<sectionLine, count> of cards keyed by their `requires.sectionLine`.
+function sectionCardCounts(subject) {
+    const sh = state.shards[subject];
+    const m = new Map();
+    if (!sh) return m;
+    for (const c of sh.cards) {
+        if (!c.requires || !c.requires.sectionLine) continue;
+        const k = String(c.requires.sectionLine);
+        m.set(k, (m.get(k) || 0) + 1);
+    }
+    return m;
+}
+
+function pickNextActionSubject(rows) {
+    if (!rows || !rows.length) return null;
+    const sorted = [...rows].sort((a, b) => (a.mastery ?? 0) - (b.mastery ?? 0));
+    return sorted[0] || null;
+}
+
+function computeNextAction(rows) {
+    if (!state.manifest) return null;
+    // priority 1: any subject with a video that's not yet watched
+    const weakestRow = pickNextActionSubject(rows);
+    const orderedSubs = [];
+    if (weakestRow) orderedSubs.push(weakestRow.subject);
+    for (const m of state.manifest.subjects) if (!orderedSubs.includes(m.subject)) orderedSubs.push(m.subject);
+
+    for (const subj of orderedSubs) {
+        if (unlocked.isAutoUnlocked(subj)) continue;
+        if (unlocked.isUnlocked(subj)) continue;
+        const sh = state.shards[subj];
+        const vids = sh?.guide?.videos || [];
+        if (!vids.length) continue;
+        const dur = vids[0].durationMin || Math.max(1, Math.round((vids[0].sizeMB || 50) / 8));
+        const counts = sectionCardCounts(subj);
+        // unlocking the video doesn't directly unlock cards (sections do) — but new cards
+        // from un-section-required cards become eligible too. Compute total cards in subject
+        // that are currently locked behind the video gate (i.e. all new cards in subject).
+        const states = srs.loadStates();
+        const newCount = sh.cards.filter(c => srs.isNewCardForGate(states[c.id])).length;
+        return el('div', { class: 'panel next-action rail-mascot' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'next action')),
+            el('a', { class: 'next-action-link', href: `#subject/${subj}`,
+                on: { click: e => { e.preventDefault(); go('subject', subj); } } },
+                `▶ watch ${subj} lecture (~${dur} min, unlocks ${newCount} cards)`)
+        );
+    }
+
+    // priority 2: untouched guide section that gates ≥1 card
+    for (const subj of orderedSubs) {
+        const sh = state.shards[subj];
+        if (!sh) continue;
+        const ticksAll = loadGuideTicks()[subj] || {};
+        const counts = sectionCardCounts(subj);
+        const sections = sh.guide?.sections || [];
+        for (const s of sections) {
+            const k = String(s.line);
+            if (ticksAll[k]) continue;
+            const n = counts.get(k) || 0;
+            if (n < 1) continue;
+            return el('div', { class: 'panel next-action rail-sky' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'next action')),
+                el('a', { class: 'next-action-link', href: `#subject/${subj}`,
+                    on: { click: e => { e.preventDefault(); go('subject', subj); } } },
+                    `📖 read ${subj} · ${s.title} (unlocks ${n} card${n === 1 ? '' : 's'})`)
+            );
+        }
+    }
+
+    // priority 3: due cards exist — primary CTA already covers it
+    const due = totalDueAll();
+    if (due > 0) return null;
+
+    // priority 4: caught up
+    return el('div', { class: 'panel next-action rail-green' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'next action')),
+        el('a', { class: 'next-action-link', href: '#cases',
+            on: { click: e => { e.preventDefault(); go('cases'); } } },
+            '✓ caught up — try a clinical case')
+    );
 }
 
 function dueCountFor(subject) {
@@ -275,6 +364,9 @@ function renderToday() {
             on: { click: e => { e.preventDefault(); go('review'); } } },
             due ? `study ${due} card${due === 1 ? '' : 's'} · ~${mins} min` : 'no cards due — browse guides')
     ));
+
+    const next = computeNextAction(rows);
+    if (next) stage.append(next);
 
     const tl = renderTimelineStrip(); if (tl) stage.append(tl);
     stage.append(renderMasteryRing());
@@ -467,30 +559,38 @@ async function renderSubject() {
         ),
         el('div', { class: 'panel' },
             el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'sections')),
-            ...(shard.guide?.sections || []).slice(0, 50).map(s => {
-                const lineKey = String(s.line);
-                const checked = !!ticks[lineKey];
-                const row = el('label', { class: `guide-section h${s.level}` + (checked ? ' done' : '') },
-                    el('input', {
-                        type: 'checkbox', class: 'guide-tick',
-                        ...(checked ? { checked: 'checked' } : {}),
-                        'aria-label': `mark "${s.title}" understood`,
-                        on: { change: e => {
-                            const all = loadGuideTicks();
-                            (all[subj] = all[subj] || {})[lineKey] = e.target.checked;
-                            saveGuideTicks(all);
-                            row.classList.toggle('done', e.target.checked);
-                            lastpos.save('subject', subj);
-                            if (e.target.checked) {
-                                game.awardXP(game.XP.section_tick, 'section');
-                            }
-                            render();
-                        } }
-                    }),
-                    el('span', {}, s.title)
-                );
-                return row;
-            })
+            ...(() => {
+                const counts = sectionCardCounts(subj);
+                return (shard.guide?.sections || []).slice(0, 50).map(s => {
+                    const lineKey = String(s.line);
+                    const checked = !!ticks[lineKey];
+                    const n = counts.get(lineKey) || 0;
+                    const badgeText = n
+                        ? (checked ? `(${n} card${n === 1 ? '' : 's'} · ready)` : `(${n} card${n === 1 ? '' : 's'} · 🔒)`)
+                        : '';
+                    const row = el('label', { class: `guide-section h${s.level}` + (checked ? ' done' : '') },
+                        el('input', {
+                            type: 'checkbox', class: 'guide-tick',
+                            ...(checked ? { checked: 'checked' } : {}),
+                            'aria-label': `mark "${s.title}" understood`,
+                            on: { change: e => {
+                                const all = loadGuideTicks();
+                                (all[subj] = all[subj] || {})[lineKey] = e.target.checked;
+                                saveGuideTicks(all);
+                                row.classList.toggle('done', e.target.checked);
+                                lastpos.save('subject', subj);
+                                if (e.target.checked) {
+                                    game.awardXP(game.XP.section_tick, 'section');
+                                }
+                                render();
+                            } }
+                        }),
+                        el('span', {}, s.title),
+                        badgeText ? el('span', { class: 'sec-card-badge' }, ' ', badgeText) : null
+                    );
+                    return row;
+                });
+            })()
         )
     );
 

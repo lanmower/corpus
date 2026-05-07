@@ -204,6 +204,16 @@ export function isNewCardForGate(state) {
     return (state.repetitions === 0 || state.repetitions == null) && (state.lastScore == null);
 }
 
+// Coverage gate: a "new" card can only enter review if its required guide
+// section is ticked. Cards without a `requires` field are permissive.
+// Already-graded cards bypass entirely.
+export function coverageEligible(card, state, coverageOf) {
+    if (!isNewCardForGate(state)) return true;
+    if (!card || !card.requires || !card.requires.sectionLine) return true;
+    const set = coverageOf(card.requires.subject);
+    return !!(set && set.has(String(card.requires.sectionLine)));
+}
+
 export function getDueCards(cardIds, states = loadStates(), isEligible = null) {
     const now = Date.now();
     return cardIds.filter(id => {
@@ -283,6 +293,6 @@ if (typeof window !== 'undefined') {
         defaultCardState, calcSM2, schedule, fuzzInterval, compressInterval, today,
         loadStates, saveStates, loadConfig, saveConfig, exportState, importState,
         daysUntilExam, effectiveDays, getDueCards, getCardState, updateCard,
-        getScheduleStats, getForecast, resetAll, suspendCard, isSuspended, isNewCardForGate, SCHEMA_VERSION
+        getScheduleStats, getForecast, resetAll, suspendCard, isSuspended, isNewCardForGate, coverageEligible, SCHEMA_VERSION
     };
 }

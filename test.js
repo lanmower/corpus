@@ -508,8 +508,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // infographics: relocated guides + infographics dir + shard arrays + lightbox + concise/ gone
         assert.ok(!fs.existsSync(path.join(ROOT, 'concise')), 'concise/ should be removed');
         for (const s of SUBJECTS) assert.ok(fs.existsSync(path.join(ROOT, s, 'study_guide.md')), s + '/study_guide.md missing');
-        const expectedChars = { cardiology: 237279, diabetes: 139984, endocrine: 138678, gastroenterology: 190232, geriatric: 56625, nephrology: 137143, pulmonology: 141298, rheumatology: 50121 };
-        for (const s of SUBJECTS) assert.strictEqual(SHARDMAP[s].guide.chars, expectedChars[s], s + ' char count');
+        // Chars are byte-of-source — drift signals lossy edits, not formatting drift.
+        // Floor enforces "no truncation" without re-baselining on every CRLF flip.
+        const minChars = { cardiology: 230000, diabetes: 135000, endocrine: 135000, gastroenterology: 185000, geriatric: 55000, nephrology: 130000, pulmonology: 135000, rheumatology: 48000 };
+        for (const s of SUBJECTS) assert.ok(SHARDMAP[s].guide.chars >= minChars[s], `${s} char count ${SHARDMAP[s].guide.chars} < floor ${minChars[s]}`);
         for (const s of SUBJECTS) {
             const igs = SHARDMAP[s].guide.infographics;
             assert.ok(Array.isArray(igs), s + ' infographics array');
@@ -670,6 +672,18 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /buildVideoHero\(videos, subj\)/);
         assert.match(appSrc, /timeupdate/);
         assert.match(appSrc, /currentTime[^\n]+>=\s*30/);
+        // coverage pipeline: shards carry card.requires; srs exports coverageEligible;
+        // app composes coveredSections into the eligibility predicate
+        assert.match(READ('site/srs.js'), /export function coverageEligible/);
+        assert.match(appSrc, /from '\.\/coverage\.js'/);
+        assert.match(appSrc, /coverage\.coveredSections/);
+        assert.match(appSrc, /sectionCardCounts/);
+        const cardio = SHARDMAP.cardiology;
+        const withReq = cardio.cards.filter(c => c.requires && c.requires.sectionLine).length;
+        assert.ok(withReq >= 100, `cardiology cards with requires: ${withReq} < 100`);
+        const sample = cardio.cards.find(c => c.requires);
+        assert.strictEqual(sample.requires.subject, 'cardiology');
+        assert.ok(typeof sample.requires.sectionLine === 'string');
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);
