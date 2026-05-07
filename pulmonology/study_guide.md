@@ -4,11 +4,9 @@
 
 ## Table of Contents
 
-
 ### Community-Acquired Pneumonia
 *Audio Transcript*
 
-- page 1 -
 Welcome to this presentation on community acquired pneumonia presented on behalf of the division
 of pulmonology and critical care.
 I will be discussing the epidemiology of community acquired pneumonia with a focus on
@@ -33,7 +31,6 @@ To differentiate the disease from nosocomium pneumonias, patients should have no
 for healthcare-associated pneumonia and should not be hospitalized or reside in a
 long-term care facility.
 Influenza and pneumonia along with tuberculosis are amongst the top 10 causes of death in
-- page 2 -
 South Africa and represent the leading causes of death from curable infectious diseases.
 The incidence of pneumonia arising from sentinel surveillance data is exceedingly high at
 about 400,000 population.
@@ -58,7 +55,6 @@ The world over mixed viral and bacterial infections are common and the identific
 organism by routine laboratory methods may be misleading in directing therapy.
 While pneumococcal pneumonia has predominated as the microorganism responsible for most
 cases of pneumonia there has been a global decrease in the proportion of disease attributed
-- page 3 -
 to pneumococcus following the introduction of pneumococcal vaccination.
 In South Africa the vaccine was introduced into the routine infant immunization schedule
 in 2009 and we are likely to see the cohort effect of this in the adult population in
@@ -83,7 +79,6 @@ tract infection as well as radiological evidence of new infiltrates on chest rad
 The most commonly reported symptoms include cough, sputum production, shortness of breath
 and puritic chest pain while signs may be localised to the lung or maybe systemic.
 The importance of radiographic evidence of infection is highlighted by the limitations
-- page 4 -
 of using only symptoms and signs to establish the diagnosis.
 Although cough was found to be the most common art patient to complain, pneumonia was established
 as the diagnosis in only 5% of these individuals.
@@ -108,7 +103,6 @@ These include the elderly where immunosinescence dulls the inflammatory response
 or in immunocompromised hosts for the same reason and in the setting of hypovolemia when
 inflammatory excitation is restricted.
 Although uncommon early clinical radiological dissociation may occur and in this instance
-- page 5 -
 together with the previously mentioned cases a diagnosis of suspected pneumonia can be made
 with a repeat chest radiograph performed in 24 to 48 hours.
 Maintaining the diagnosis of pneumonia despite a normal chest radiograph in the absence of
@@ -133,7 +127,6 @@ Ultimately, neither the CD active protein nor procalcitonin contribute to improv
 the diagnosis of pneumonia.
 When clinical evaluation, history and examination are accompanied by a chest radiograph suggestive
 of pneumonia, neither the CD active protein nor the procalcitonin add additional diagnostic
-- page 6 -
 benefit.
 The CRP can be used in settings where chest radiographs are not available as an elevated
 CRP offers similar positive predictive value as a radiograph.
@@ -158,7 +151,6 @@ It would appear that clinicians feel less confident to withhold antibiotics base
 their own findings when compared to a laboratory test such as the procalcitoninin.
 A different problem arises from trial data which supports the role of the procalcitonin
 to guide antibiotic discontinuation, where it has been shown that discontinuing antibiotics
-- page 7 -
 once the PCT has been reduced by 90% from its initial value is safe and is not associated
 with an increased risk of treatment failure or mortality.
 On the other hand, doing so significantly shortens the duration of exposure to antibiotics.
@@ -183,7 +175,6 @@ cover in settings where clinical algorithms are not closely followed resulting i
 benefit to patients.
 In instances where antibiotic activity can be narrowed, society at large benefits from
 this principle of antibiotics stewardship.
-- page 8 -
 In addition, the surveillance of etiological agents of pneumonia may continue to help guide
 our choices of empiric antibiotics at regional and national levels.
 Sputum evaluation is bedeviled by the need for an adequate sputum sample.
@@ -208,7 +199,6 @@ This is unsurprising given that empatic antibiotic regimens for pneumonia always
 for pneumococcal cover.
 Similarly, urine antigen testing for lesionella is of limited value as the organism is relatively
 uncommon in patients with non-severe pneumonia and in all patients with severe pneumonia
-- page 9 -
 they are likely to be appropriately covered by empritic choices.
 There have been significant additions to the diagnostic armamentarium by molecular methods
 for detecting organisms, although most of these gains have been made in detecting viruses.
@@ -533,7 +523,6 @@ Thank you.
 ### Lung Cancer
 *Audio Transcript*
 
-- page 1 -
 Hello, I'm Dr. Maharaj from the department of pulmonology and let's look just on land
 cancer. So land cancer worldwide is the second most commonly diagnosed
 cancer and is the leading cause of cancer death for men and women. In South Africa,
@@ -556,7 +545,6 @@ low-dose CT compared to chest X-ray. So this showed that low-dose CT is
 better at detecting land cancer in the early stages in this high-risk
 population. The screening information is just for interest and it's not
 something that you need to study or need to know.
-- page 2 -
 So cigarette smoking is the most important risk factor associated with
 causation of land cancer in up to 90% of cases. It's the number one
 modifiable risk factor for land cancer. There are more than 300 chemicals in one
@@ -579,7 +567,6 @@ to 2-fold approximately 30 years after cessation. This explains the development
 of almost 50% of land cancer cases in past smokers. Strong and cardio respiratory
 fitness might help reduce the land cancer risk in cigarette smokers or people who
 used to smoke. Many who had higher fitness levels at baseline and measured with a
-- page 3 -
 maximal treat more exercise test had a lower incidence of land cancer during
 follow-up and a better survival if they did get land cancer.
 Cigarette smoke containing the carcinogenic nitrosamines and aromatic
@@ -602,7 +589,6 @@ cancer in uranium miners and approximately 2 to 3% of land cancers annually are 
 to be caused by radon exposure. Household exposure to radon however has not been clearly
 shown to cause land cancer. As best as exposure, as best as exposure has been shown to be strongly
 associated with the causation of land cancer, malignant plural mesohelioma and pulmonary fibrosis.
-- page 4 -
 As best as exposure increases the risk of developing land cancer by as much as five times.
 Tobacco smoke and asbestos exposure acts synergistically and the risk of developing land
 cancer for persons who currently smoke tobacco and have a history of asbestos exposure
@@ -625,7 +611,6 @@ Colutants from cooking and heating like biomass, fuel exposure, burning coal ind
 indoors, cooking indoors on wood stoves, frying foods and oil at high temperatures.
 Dietary fiber and vegetables have been suggested as protective from land cancer although diets
 rich in fruit and vegetables appear to be associated with lung cancer. Trials of supplements of
-- page 5 -
 beta-carotene alone or in combination with vitamin E and retinal palmitate and persons at risk of
 land cancer found that supplementation with antioxidant vitamins actually increases the incidence of
 lung cancer. Another important risk factor is smoking cannabis. Studies are now showing that
@@ -648,7 +633,6 @@ usually with chemo and radiation and it wasn't amenable to surgery because it wa
 at an advanced stage of disease and metastases had often been and had occurred prior to diagnosis.
 Non-small cell lung cancer can be centrally or peripherally located. Many are often
 peripherally located. They can be fast or slow growing and they're staged using the T&M
-- page 6 -
 staging which is now also applicable to small cell lung cancer and their new treatment which
 has improved the survival of non-small cell lung cancer. So non-small cell lung cancer comes
 for 85 percent of all cancers and small cell lung cancer 15 percent. Small cell lung cancer
@@ -671,7 +655,6 @@ It's the most common carcinoma to cavitate and it carries a prognosis. It's usua
 tumour so it's very difficult to resect it because it usually grows into the airway
 and very close to the big vessels in the media stanum and the heart. It's difficult to resect
 it surgically and so difficult to care. Large cell carcinomas are the least common
-- page 7 -
 type of non-small cell lung cancers. They're usually peripherally located and they're very
 large usually one in four centimeters on diagnosis. So how does lung cancer present? Often it presents
 with no symptoms in the early stages of the diseases. These patients are often asymptomatic
@@ -694,7 +677,6 @@ pain may be present. Chest pain can also be present if the tumour involved lymph
 large in that to press on the surrounding structures. Patients may also present with
 horseness of voice and this symptom arises when the tumour compresses the recurrent laryngeal nerve
 around the trachea that innovates the vocal cause.
-- page 8 -
 Other symptoms of which patients with lung cancer can present with or late symptoms
 are headache, swelling of the face, arms, and neck. This is usually, this constellation of symptoms
 can be caused by superior vena cedar syndrome. This occurs when the great vessels entering or
@@ -717,7 +699,6 @@ So the most common sites for lung cancer to metastasise to your other bones, liv
 and adrenal glands, and when lung cancer is being worked up, investigations looking for
 involvement of these sites should be looked for. Bone metastases can present as localised
 bone pain, whereas non-traumatic fractures, due to bone weakness. The bones most commonly
-- page 9 -
 affected are the spine, ribs, and pelvis. Jordous, weakness, and weight loss may indicate liver
 metastases, and brain metastases have a wide range of presented features, including confusion,
 headache, nausea, and vomiting, two personality changes and seizures.
@@ -989,7 +970,6 @@ is around 20% of five years survival, so it's a poor prognosis. Thank you for yo
 ### Optimal Use Of Antibiotics - Antibiotic Stewardship
 *Audio Transcript*
 
-- page 1 -
 Okay, a good day or stress, vacant for my online
 lecture notes, that is the optimum use of antibiotics, including the antibiotics
 ratio.
@@ -1021,7 +1001,6 @@ So microorganism individual, organism always, you know, they protect themselves.
 So when you use the antimicrobial agents, they also protect with the mechanism of their
 resistance.
 So D by D, you know, resistant, but then are changed.
-- page 2 -
 It might be the same, might be the, you know, different, because of that reason, we always
 need to review there, you know, indication for which antimicrobial drugs are used, right?
 So this is very important.
@@ -1053,7 +1032,6 @@ susceptible for the type of immunocompromised suppressive patient, right?
 And another, you know, option is the type therapy, you know, type therapy, me, that is based
 on the laboratory research, right?
 So you collect the samples and you send to the request, IG identification susceptibility
-- page 3 -
 reset for the, that's sent sample.
 And after D2 or T3, you will receive back the, you know, IG, me, name of the organism and
 the accessibility data.
@@ -1085,7 +1063,6 @@ for, you know, antimicrobial agents, that is, you have done already, right?
 So you have to recheck.
 So because my lecture is without knowing all those, you know, topics, you know, you
 don't understand, right?
-- page 4 -
 So this is a basic, you know, antimicrobial agent.
 So you have to reach.
 What is the most appropriate track, right?
@@ -1117,7 +1094,6 @@ are drug mustn't, you know, penetrate to the, you know, like you, the brain, you
 ex, via head excite.
 So if, you know, you know, restricted with that, you know, distribution, you might have
 a side effect, like a severe headache, you don't want that, right?
-- page 5 -
 So some, some trucks are, you know, okay, killing the pathogen from the same side, but
 if the doses are due to the liver or the doses due to the kidney, we know function, that
 is also we don't want, right?
@@ -1149,7 +1125,6 @@ So that's how, you know, you have to think, a coffin, a barrel spirit is a fluen
 nume, right?
 People like you say you got a diary or something, you always think they're GI, a pathogen, like
 you say, a monolashigella, something like that, right?
-- page 6 -
 Are these any epidemiology clues?
 But you got a fever or cough or something, example, like a COVID-19, everybody knows
 that, that period, 2021, and the pandemic for COVID.
@@ -1181,7 +1156,6 @@ You have to understand, you say, you know, long ago, last 10 years ago, six, nin
 years ago, you know, like they, they were drug resistant organisms, of course, in, you
 know, in each month, right?
 And when you look at the 2017, also similarly, increasing after resistant organics are there,
-- page 7 -
 you see, you know, like a MDR pseudo, the mandatory resistant, as in due back to ESB,
 above the E.Koda, ESB, positive eclipse, you know, co-opener resistant, and rubatic
 disease, MRSC and others.
@@ -1213,7 +1187,6 @@ So why severance?
 We need to push up, you know, what, you know, resistance pattern occurs in your specific
 unit or hospital, right?
 So that, now, resistance is a image, and we always think about the, how would you manage?
-- page 8 -
 Now, before that, you always need to understand, you know, how you prevent the resistance.
 So combination therapy is, you know, certain cases, indications you need to understand,
 the one is, you know, to increase the spectrum of the cover.
@@ -1245,7 +1218,6 @@ the regular contact with the health system, chronic illness, right?
 That is, you know, community-acquired infection.
 If a hospital-acquired infections may infection time use after 48 hours of the hospitalization
 or regular contact with the health system, right?
-- page 9 -
 So these are hospital-acquired infections.
 And microbes to consider in community and hospital-acquired infections, you can see that in community
 -acquired is mostly a very sensitive, you know, organism, and hospital-acquired is mostly
@@ -1591,7 +1563,6 @@ look at, ask yourself, you know, before reading, that's,
 ### Suppurative Lung Syndromes
 *Audio Transcript*
 
-- page 1 -
 Three, two, one. So today we're going to be looking at superative lung syndromes focusing
 on bronchiectasis, lung absists, and ampaima. Looking at a brief overview of this presentation.
 With regards to bronchiectasis, we'll be focusing on the definition, looking a little
@@ -1617,7 +1588,6 @@ you get repetitive destruction of the bronchial walls. The host then institutes 
 response to the toxins. And you end up with mediators and oxygen free radicals, which results in more
 destruction. Eventually, the airways become colonized with these bacteria, which can result in ongoing
 destructive changes, as well as in ongoing inflammatory response. Specifically for TB with the mechanism
-- page 2 -
 here, it causes a necrotizing effect on the lung parenchimer and the airways. And it can also result
 in area obstruction by fibrosis or with lymph node enlargement. So the further mechanism is that of an
 impaired host defense, which we had spoken about. And this can be a result of an endobronchial
@@ -1643,7 +1613,6 @@ cough of very productive, profuse, purine, and sofalsmenin sputum. And a large m
 patients actually do present with hematosis. And this is due to bleeding through the friable
 mucosa or hypertrophyid bronchial arteries. They will also give a complaint of dyspnea,
 or they may have a history of wheeze due to associated bronchoconstriction of an airway.
-- page 3 -
 Technically, scientists pick up with that of clubbing, and on respiratory exam,
 they would have a significant accrepitation, so usually cause crepitations, as a result of the
 surrounding fibrosis and secretions within the airway.
@@ -1669,7 +1638,6 @@ as well. So we diagnose it on CT imaging, where there is noted to be airway dila
 of airway tapering toward the periphery. We would also note bronchial wall thickenin,
 which appears very close like in appearance of the bronchioles, or it may be cystic like
 what we term cystic bronchiectasis, which is noted at the end of the bronchus. An echocardiogram
-- page 4 -
 is also noted to look for right heart strain or involvement. So we look at right heart
 dilatation, and we check the pulmonary pressures as well for pulmonary hypertension.
 Okay, so this is an x-ray where you can see these dilated airways
@@ -1695,7 +1663,6 @@ focal bronchiectasis, or are we talking about diffuse bronchiectasis involving b
 lung involvement, and then based on that, you would narrow down your investigations depending.
 So what are the goals for treatment?
 So the goal for treatment is to treat the infections early, especially during exacerbations.
-- page 5 -
 So we need to identify infections early and treat them aggressively.
 We want to improve airway clearance, we want to reduce inflammation, and if possible, and
 there is an underlying identifiable cause for the bronchiectasis, we want to treat this.
@@ -1721,7 +1688,6 @@ flu vaccines as well as vaccination against COVID. And if the indication for dor
 oxygen is there, they should be provided with oxygen therapy.
 Just a quick overview on cystic fibrosis. So cystic fibrosis, so we know this is a problem with
 mucocillary clearance. And these patients develop bronchiectasis. So it's an autosomal recessive
-- page 6 -
 disease. The mutation is on the cystic fibrosis transmembrane regulator on chromosome seven.
 And the problem is with the chloride channels, which have a very developed very
 viscoid. So it's the chloride channels with a problem. So they end up with very viscoid
@@ -1747,7 +1713,6 @@ the positioning that they line in. So if you have a patient who is lying supine,
 the aspiration often occurs in the superior segment of the lower lobe on the
 superior segment of the lower lobe, and if a patient is lying prone, or if they're lying on
 their side, aspiration occurs in the posterior segment of the abdomen.
-- page 7 -
 Like septic emboli, like infected endocarditis, or if you look specifically on x-ray and there's
 an apical abscess, you have to think about tuberculosis. We then undertake sputimal analysis here too,
 particularly looking for things like oral anoropes, because as mentioned, aspiration is a risk factor
@@ -1773,7 +1738,6 @@ And so at that point, if they're not really responding well to oral antibiotic t
 the lung abscess would need a postural drainage or bronchoscopic drainage and some general measures
 which will give to these patients who are generally quite toxic on admission is
 pain relief with analgesia and antibiotics. So the indications for surgery would include
-- page 8 -
 a massive hematosis which might develop if the patient is refractory to medical treatment. So as
 mentioned, no improvement on oral antibiotics. If it's a very large cavity with thick walls,
 if it's complicated by a malignancy, so the development of a complication like empaima,
@@ -1799,7 +1763,6 @@ mere spinal shift, so that with tracheal deviation to the contralateral side to 
 is located, there would be stony downness to percussion and reduced breath sounds.
 So the pathophysiology of empaima is that it starts with as an exudative process,
 which then develops into a fibronome purulent stage, and then you end up with an organizing
-- page 9 -
 stage thereafter. And the duration for this is the exudative space is usually around about
 two weeks or so, and the fibronome purulent stage is quite a long duration. It can be anything
 between a week to six weeks, and then the organizing stage is generally two weeks thereafter.

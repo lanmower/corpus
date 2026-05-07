@@ -4,7 +4,6 @@
 
 ## Table of Contents
 
-
 ### Acute Kidney Disease
 
 *Audio Lecture Transcript*

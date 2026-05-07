@@ -14,7 +14,6 @@
 
 ### Lecture Transcript
 
-- page 1 -
 In general, there are a group of acute emergencies in people's diabetes, and these are divided
 into the hyperglycemic emergencies, including ketoacidosis and the hyperosmolar hyperglycemic
 state, and then hyperglycemic disorders.
@@ -30,7 +29,6 @@ such as a myocardial infact.
 In the pathogenesis of ketoacidosis, there are two major metabolic abnormalities which
 need to be born in mind.
 The first is insulin deficiency, and the second is glucoquone excess.
-- page 2 -
 The consequences of insulin is predominantly hyperglycemia because of reduced peripheral
 glucose uptake, as well as increased hepatic gluconeogenesis and glycogen breakdown.
 Hyperglycemia is often progressive and includes or leads to osmotic diuresis and dehydration.
@@ -46,7 +44,6 @@ and glucoquone excess driving ketone formation within the mitochondria of the li
 Another hyperglycemia state without the formation of ketone bodies is the hyperosmolar hyperglycemic
 state, usually occurring in people with type 2 diabetes.
 And the difference, other than the absence of ketosis, is that there's usually a higher
-- page 3 -
 level of hyperglycemia and a higher level of volume depletion and dehydration.
 And the reason that ketogenesis does not occur in this situation is probably due to
 the fact that there's residual insulin secretion, which is sufficient to suppress
@@ -62,7 +59,6 @@ and coma.
 Any focal neurologic sign should be borne in mind as indicating a complication of the
 acute metabolic emergency.
 So the diagnostic criteria for diabetic ketoacidosis and the hyperglycemic hyperosmal estate and
-- page 4 -
 DKA itself may be divided into mild, moderate, and severe forms, depending on the metabolic
 parameters.
 The management of these conditions is similar.
@@ -78,7 +74,6 @@ used if there is hyponatremia.
 As with all acute illnesses, fluid and other requirements need to be monitored and constantly
 adjusted according to clinical circumstances.
 In Finland, it is given by a continuous intravenous infusion.
-- page 5 -
 Often, there's an initial bolus followed by an infusion and a regular infusion as shown
 in the slide with the aim to lower glucose by between 3 and 4 millimoles per liter per
 hour.
@@ -94,7 +89,6 @@ Monoprene is a critical part of the management of both ketoacidosis and the hapr
 hapaglacemic state and should be done at least hourly to ensure that there is steady progression
 and improvement in the biochemical as well as the clinical condition.
 More recently, finger prick blood ketone meters have become widely available and these are
-- page 6 -
 very useful to monitor the improvement and the resolution of ketonemia.
 Complications are fortunately uncommon but may include cerebral edema in the more severe
 forms of ketoacidosis, the adult respiratory distress syndrome or venous thromboembolism
@@ -110,7 +104,6 @@ Proglycemia is classified according to the level of the glucose itself as well a
 presence of neuroglycopenia or neurologic consequences of hypoglycemia.
 A glucose under 3.9 millimole per liter is regarded as hypoglycemia if the person has
 diabetes mellitus.
-- page 7 -
 This is regarded as glucose alert or level 1 hypoglycemia.
 If the glucose drops to under 3 millimole per liter, this is regarded as clinically significant
 or level 2 hypoglycemia and any level of glucose associated with cognitive impairment is regarded
@@ -126,7 +119,6 @@ So in people who have diabetes, the capacity for this counter-regulatory respons
 against hypoglycemia is impaired such as by injection of insulin prior to the episode
 or therapies such as softener ureas which release endogenous insulin.
 If symptoms in science are often divided into the adrenergic and neuroglycopenic symptoms
-- page 8 -
 in science.
 Adrenergic symptoms in science include tremor, pallas, sweating, palpitations, tachycardia,
 whereas more important neuroglycopenic symptoms in science are levels of cognitive dysfunction
@@ -142,7 +134,6 @@ The development of renal insufficiency is another reason for patients to develop
 after a long period of stability.
 The management of hypoglycemia is largely to replace carbohydrate and levels one and two
 can usually be managed by administration of oral carbohydrate.
-- page 9 -
 And this initially would require between 10 and 15 grams such as 100 moles of fruit
 juice, honey, sugar or sweets.
 If the episode is occurring at night or if there's a long period to the next meal then
@@ -365,7 +356,6 @@ A: Plan ahead to ingest carbohydrate in situations where hypoglycemia may occur 
 
 ### Lecture Transcript
 
-- page 1 -
 lecture is on hyperthyroidism.
 Initially it's important to revise the basic physiology of the
 pituitary thyroid axis as this is a classic
@@ -395,7 +385,6 @@ which is the storage area of the thyroid and then as T4 is needed
 a hydrolysis occurs releasing T4 from thyroglobulin
 and T4 then enters the circulation.
 Within the circulation T4 circulate bound with peptide known as thyroid binding
-- page 2 -
 globulin and then at certain sites
 a dehydrogenase enzyme removes one of the bound iodine atoms
 converting T4 to T3. T3 or lyothyronine is the active peptide
@@ -425,7 +414,6 @@ neurologic, gastrointestinal and other systems.
 So commonly these weight loss despite an increased appetite
 there's tremor, anxiety, insomnia, palpitations with effort intolerance,
 shortness of breath is an increased gastrointestinal function,
-- page 3 -
 sweatiness, heat intolerance and in particularly
 patients with grave disease specific eye signs and symptoms may develop.
 Grazed disease is a commonest cause of thyrotoxicosis and in
@@ -455,7 +443,6 @@ to listen for a brewery over the lobes of the thyroid noting that a brewery occu
 in patients with graze disease. It's also important to look for regional lymphadenopathy.
 Note that a hornet syndrome usually means that a thyroid lesion is malignant
 as there has been invasion of the adjacent nerves.
-- page 4 -
 Investigation of a patient with suspected thyroid toxicosis includes
 measurement of thyroid hormones, measurement of thyroid antibodies,
 the use of ultrasound and in some cases isotope scanning.
@@ -485,7 +472,6 @@ The thyroid autosound is useful to determine the size of the gland and particula
 for nodules. In any nodule is categorized according to a specific grading system known
 as the tie-red system and this helps determine the need for any needle aspiration of the nodules.
 The autosound will often show increased vascularity and graze disease and may also confirm as well as
-- page 5 -
 provide the extent of any degree of retrysternal extension of the goiter.
 Tocscans are used less frequently and most often if the etiology is not known and the antibodies
 are negative. The most common isotope is technician 99 and these isotopes after injection
@@ -515,7 +501,6 @@ overlying audible buoy. They may be thyroid acropacky, dormopathy or infiltrativ
 thumbopathy however the majority of patients with graves disease do not have these characteristics.
 In addition since graves disease is all in specific and autoimmune
 other autoimmune diseases may occur and some examples include vitiligo, mice,
-- page 6 -
 female graves or type 1 diabetes mellitus.
 Optic mark in the logoid care have a different disease profile in that it affects older persons.
 It does not have the female predominance and often develops slowly in a patient
@@ -545,7 +530,6 @@ and then I will join it together. It should work. Okay all right. It should work
 The treatment of patients with thyroid toxicosis. You need to get it again Dr. Peri.
 So again Kannen. You need to share your presentation again.
 Can you see it? I can see it. Go back to that slide that way when we had an interruption.
-- page 7 -
 Okay this is where I start. Okay. Can you start from there?
 Okay.
 Providing the treatment of patients with thyroid toxicosis.
@@ -575,7 +559,6 @@ in the Massachusetts General Hospital thyroid units administered by Dr. Saul Hur
 and the use has been continued from this time forward.
 Already mentioned but important to note is that the orbitopathy associated with
 graves disease may worsen if a patient is given radioactive iodine and this effect may be
-- page 8 -
 ameliorated but not eliminated by the concomitant use of corticosteroids. Radioactive iodine has
 a slow onset of activity and thus antithyroid drugs may be used in that interim period
 and the dose may need to be repeated but only after about a six-month period had elapsed.
@@ -605,7 +588,6 @@ way and looking at it another way the potential of response to medical therapy a
 determination of scores according to age, the level of thyroid hormone, the level of the
 TSH receptor antibody and the size of the goiter as classified according to the world health organization.
 So an animal scheme for the management of grave disease is to assess the risk of relapse. If the
-- page 9 -
 risk of relapse is low and there's no other indication for surgery the patient should be given medical
 management with carbamazol for about 18 months and in that period a substantial number will
 undergo spontaneous remission with the loss of the TSH receptor antibody. These patients will then
@@ -853,7 +835,6 @@ A: Medical emergency with very high thyroid hormone levels. Diagnosis usually cl
 
 ### Lecture Transcript
 
-- page 1 -
 diabetes and endocrinology and this lecture is on hypothyroidism.
 Some important references which the interested reader may refer to are shown here and in particular
 references made to a publication in the Journal of Endocrinology and Metabolism
@@ -867,7 +848,6 @@ and occasionally there may be an thyroid hormone receptor abnormality leading to
 thyroid hormones. Diseases that made into the thyroid itself leading to primary hypothyroidism
 include inflammatory diseases such as autoimmune thyroiditis, post-infectious thyroiditis,
 thyroidectomy, previous radioactive iodine therapy, iodine deficiency or excess,
-- page 2 -
 certain infiltrate of diseases, infections like tuberculosis, a wide array of different
 drugs may lead to primary hypothyroidism. Occasionally genetic disorders lead to
 hypothyroidism from the time of birth onwards. Rarely they are defects in thyroid hormone,
@@ -881,7 +861,6 @@ often unnoticed particularly by the family and the individual concerned. Common 
 weakness, dry skin, slow speech, period orbital puffiness especially in early mornings,
 cold intolerance, macroglossia with obstructive sleep apnea, muscle cramps, occasionally deafness
 may occur. In women menerasia may occur, loss of scalp hair, poor memory, constipation, weight gain
-- page 3 -
 and hoarseness of the voice and snoring due to obstructive sleep apnea. These are common symptoms
 which as can be seen are fairly non-specific.
 Many of these designs may often be missed and are variable depending on the etiology.
@@ -895,7 +874,6 @@ So the link between atrophy of the thyroid gland as occurs in autoimmune thyroid
 hypothyroidism was made many years ago and this description is very appropriate
 in the patient with hypothyroidism where this particular physician described a patient as becoming
 more and more languid, increase in bulk, the face altering from oval to round,
-- page 4 -
 the tongue broadened thick, the voice guttural and the pronunciation is if the tongue were too
 large for the mouth. In addition, the change in the mental state, the mind which had been active
 and inquisitive, assumed a gentle, classic indifference with associated muscular language.
@@ -909,7 +887,6 @@ of the lateral eyebrows, puffiness around the eyes and puffiness of the face.
 So you can see a patient with hypothyroidism and the facial appearance after treatment,
 showing the peri-orbital puffiness and the coarseness of the features which resolves as
 thyroid hormone is adequately replaced. The patient has called alopecia, associated with hypothyroidism
-- page 5 -
 and this patient has loss of the patient on the right, has loss of the outer third of the eyebrows
 which recovers as thyroid hormone is replaced. Cardiovascular signs include a regular sinus
 bradycardia, the presence of hypertension, narrow pulse pressure, poor cardiac function and in some
@@ -923,7 +900,6 @@ of a plural effusion is uncommon. General abdominal distension may also occur.
 I note this once the conditioning is considered is straightforward and relatively easy and involves
 the measurement of peripheral thyroid hormones as well as TSH, the measurement of antibodies
 and an ultrasound. In this case, the isotope scan is usually not helpful.
-- page 6 -
 Cardiomyint is donated to SH and P4 and typically the TSH is high and the T4 is low.
 A very rare situation would be if the TSH is high and the T4 is high or if the T4 is low
 and the TSH is ortho low. In the latter instance, one would consider secondary or tertiary hypothyroidism.
@@ -937,7 +913,6 @@ elevated in severe hypothyroid states and usually glucose metabolism is unaffect
 The hypothyroidism is simply to replace what is lacking and levothyroxine or T4 is the standard
 of therapy. So this is typically formulated as a sodium salt in order to enhance the absorption.
 The absorption occurs along the entire small intestine.
-- page 7 -
 Importantly, the absorption of T4 is best in the fasting state and common errors with the
 treatment of patients is the use of thyroxine with meals or with other medication because these
 factors then interfere with the absorption and lead to erratic levels of measured thyroid hormone.
@@ -951,7 +926,6 @@ to start and these doses would then slowly be increased depending on the clinica
 laboratory response. The TSH needs to be checked every 6 to 8 weeks because of the time it takes
 or the TSH to reach a new steady state and the goal of treatment is to normalize the TSH
 and restore patient well-being. In most instances it's important to inform the patient treatment
-- page 8 -
 is lifelong and when the patient is on a stable dose TSH may be checked every 6 to 12 months.
 Several studies have examined the co-administration of T4 and T3 and in general there is no added
 benefit to using T3 in patients with usual hypothyroidism. In the resistance syndrome sometimes T3
@@ -965,7 +939,6 @@ for pregnant. A specific entity known as subclinical hypothyroidism may develop
 particularly in patients with autoimmune thyroid disease. In this condition TSH is elevated
 and T4 and T3 are in the normal range and effectively this is part of a continuum of evolution
 toward overt hypothyroidism.
-- page 9 -
 The role of the lead that's shown at subclinical primary hypothyroidism is significantly associated
 with an increased coronary heart disease risk and therefore should be treated according to
 specific guidelines. These guidelines are shown here if the death increase in 10 milli units per
@@ -1184,7 +1157,6 @@ A: A condition where non-thyroidal disease causes abnormal thyroid function test
 
 ### Lecture Transcript
 
-- page 1 -
 diabetes and endocrinology and this lecture is on lipid disorders and the metabolic syndrome.
 An important reference to take note of are the guidelines for South Africa published
 in the South African Medical Journal in 2018 and people are encouraged to access these guidelines
@@ -1208,7 +1180,6 @@ and converted into triglycerides. Color micron remnants are taken up by the live
 resecreted as VLDL, very low-density lipoprotein. This particle is also acted on by lipoprotein
 lipase leading to the formation of intermediate density lipoprotein which then is converted to
 low-density lipoprotein. Low-density lipoprotein may be taken up either by the liver or peripheral
-- page 2 -
 cells through a specific receptor and in the periphery cholesterol recirculates via high-density
 lipoprotein. Let's draw this synthesized from acetyl CoA through a series of steps
 with the rate limiting enzyme being hydroxymethal glutarhalcoenzyme A, HMG CoA reductase.
@@ -1232,7 +1203,6 @@ low-density lipoprotein and therefore it is usually estimated from an equation w
 the feet of alt equation. The specific equation is shown here and as you can see,
 the triglycerides are part of the equation and therefore if the significant elevation of triglycerides,
 the equation is invalid. In this instance, the lab needs to measure directly on the old levels.
-- page 3 -
 The lipid disorders may be classified as being primary usually due to a genetic disorder or secondary
 where another condition leads to elevation of serum lipids. Furthermore, each entity may be
 classified as pure hypercholesterolemia, pure hypertroglyceridemia or a mixture of both.
@@ -1256,7 +1226,6 @@ Evidence of macrovascular disease may be manifest with angina,
 low limb chlorication or cerebrovascular events.
 Hypertroglyceridemia may cause pancreatitis and therefore manifest with abdominal pain.
 Physical signs include tissue deposition of cholesterol leading to
-- page 4 -
 xantholasma, tendon xanthometer, other forms of xanthometer and soft tissues,
 high triglycerides and the retinal vessels causing lipimia, retinitis,
 corneal arcus, arterial narrowing may lead to the presence of buoys or axial pulses
@@ -1280,7 +1249,6 @@ framing risk score and this score uses clinical and laboratory variables to esti
 of vascular disease over the following 10 years. The level of this risk then informs the management
 decisions. So the variables that are included in the score include the patient's age,
 the gender, the level of total cholesterol and HDL cholesterol, the level of blood pressure
-- page 5 -
 or treatment for hypertension and the smoking status. However, if the person has a very high
 vascular risk, then the scoring system is invalid. These patients include those with
 cardiovascular disease, patients with type 2 diabetes and one additional risk factor
@@ -1304,7 +1272,6 @@ may be used to treat papillopidemia. The common of these are the statins or HMG 
 inhibitors. Another cholesterol lowering agent is Isitamag and more recently highly effective
 injectable agents for lowering cholesterol are the PC-SK9 inhibitors. Fibrets, lower triglycerides,
 biosecid sacristrenes are used in some cases to lower cholesterol and nicotinic acid occasionally
-- page 6 -
 is used to lower cholesterol. So as mentioned already, the statins are inhibitors of the rate
 limiting enzyme of cholesterol biosynthesis namely HMG co-ariductase. So inhibition of cholesterol
 synthesis reduces hepatic LDL low-density-lapper protein synthesis. The hepatocytes respond to
@@ -1328,7 +1295,6 @@ therapies must be considered. Side effects are less common including raised live
 enzymes and a slightly increased risk of diabetes mellitus.
 In some patients the adverse effects may be precipitated by drug and food interactions
 and one of the food items that should be avoided in these patients is the ingestion of grapefruit.
-- page 7 -
 A different agent with also lower cholesterol is azetamut and this effectively impairs the
 absorption of cholesterol from the gut. It binds to a specific receptor and inhibits the absorption
 of cholesterol. This leads to upregulation of LDL receptors like with the statins and therefore
@@ -1352,7 +1318,6 @@ side effect profile that occurs with the statins and the most common effect is i
 reaction. As mentioned earlier the vibrates are used predominantly to treat patients with
 hypertriglyceridemia and these work by stimulating peroxisone proliferated activated receptor alpha
 which regulates gene products in the metabolism of triglycerides and HDL cholesterol.
-- page 8 -
 So these may lower triglyceride levels by up to 50% and the example which is available in the
 quasulinatal department of health is visa-fibrate.
 Occasionally adverse effects may occur like there's the elevation of liver enzymes and
@@ -1376,7 +1341,6 @@ of the LDL receptor or apple apoprotein B or PCSK9. So homozygous familial hyper
 a prevalence of 1 in 1 million but in the heterozygous form is far more common 1 in 200 to 600 individuals.
 Connected this patient had pendants and pomata early aggressive cardiovascular disease
 and aortic or super aortic valvulus denosis. The laboratory test showed very high levels
-- page 9 -
 of LDL cholesterol with normal triglycerides.
 And the goal of treatment is to lower LDL cholesterol by more than 50 percent and this will require
 high intensity statins plus is eczema often additionally with the requirement for PCSK9
@@ -1596,7 +1560,6 @@ A: Focus on individual components: optimal weight management, dyslipidemia treat
 
 ### Lecture Transcript
 
-- page 1 -
 on the treatment of diabetes mellitus, including both type 1 and type 2 diabetes.
 An important reference for people to be aware of, which is freely available,
 is the publication in the Journal of Endocrinology, Metabolism and Diabetes of South Africa,
@@ -1621,7 +1584,6 @@ When the glycemic control is being assessed, there are several measures that are
 including the techniques of self-monitoring of blood glucose as well as laboratory tests,
 which include hemoglobin A1c and fructose amine. Most patients will do
 fingerprint glucose monitoring, which measures glucose in capillary blood and the health
-- page 2 -
 practitioner will advise the patient on specific times at which glucose monitoring will be undertaken
 depending on the specifics for that patient. There are numerous continuous glucose monitoring
 devices which are available and these devices measure glucose in interstitial fluid and not blood
@@ -1646,7 +1608,6 @@ normal as possible without hypoglycemia. But in general, the target in diabetes 
 equal to 7% or 53 millimoles per mole for most people with diabetes.
 Hemoglobin A1c may not be used in certain situations such as those who have an abnormal hemoglobin
 such as thalassemia or hemoglobin S disease, patients with chronic renal failure or anemia,
-- page 3 -
 and in these instances, the fructose amine may be a useful measure of glycemic control.
 In the treatment of people with diabetes, it's important to individualize targets based on
 co-morbidities and other factors, and this table is drawn from the same guidelines,
@@ -1671,7 +1632,6 @@ the use of targeted drug therapy, and the management of any comorbidities.
 Lifestyle management includes regular physical exercise, recommended to be at least 150 minutes
 per week during which the heart rate is between 50 and 70% of the protective maximum,
 and including resistance training several times per week. However, it's important to take
-- page 4 -
 account of comorbidities such as ischemic heart disease, which may limit the amount of physical
 exercise that a person can undertake, and judgment is needed in these instances.
 As far as the diet is concerned, carbohydrate intake must be limited, especially those
@@ -1696,7 +1656,6 @@ So the autoimmune process destroys all the pancreatic capacity to produce and re
 And therefore, insulin replacement is the only treatment.
 T-dibt is a different condition in which there is a combination of both insulin resistance
 and pancreatic beta cell dysfunction, which is present to different degrees and different patients.
-- page 5 -
 And T-dibt is furthermore associated with other metabolic abnormalities,
 such as the reduced incretin effect, which will be discussed later, abnormal renal glucose metabolism,
 increased hepatic glucose output, and abnormalities of glucuon secretion amongst other abnormalities.
@@ -1721,7 +1680,6 @@ then the overall maximal dose may not exceed 1000 milligrams per day.
 If it is under 30 moles per minute, then the strike must be stopped completely.
 Metformin should not be used in the perioperative situation during acute illnesses.
 Patients with severe liver disease and in the elderly individuals.
-- page 6 -
 The thickened agent is commonly used in the treatment of type 2 diabetes, is the group known as the sulfonalurias, and there are several examples in this group.
 These drugs work in a different way to metformin, in that they bind to a receptor on the beta cell and stimulate insulin secretion.
 And as a result of this, hypoglycemia is a potential side effect.
@@ -1746,7 +1704,6 @@ And this is the group of drug known as the sodium glucose co-transporter 2 inhib
 These drugs act on glucose transporters in the renal tubules.
 The agent binds to a specific channel in the proximal tubule of the kidneys and inhibits the reabsorption of glucose in the filtrate.
 This leads to glycosuria, and because of the presence of glucose in the tubule of fluid, osmotic diuresis also occurs.
-- page 7 -
 Insulin secretion is not stimulated by these drugs, therefore hypoglycemia is not a risk.
 Two examples include empagliflosin and diaphragliflosin.
 So the diagram illustrates the mechanism of action of sodium glucose transporter inhibitors,
@@ -1771,7 +1728,6 @@ Over time, the insulin level is measured, and as can be noted, the insulin respo
 On the right is shown the abrogated effect that has been demonstrated in people's type 2 diabetes.
 In summary, the peptides have several beneficial effects which are shown on the right, but these effects are limited to only a few minutes because of the physiologic process of inactivation by the enzyme DPP4.
 The incritin-based therapy therefore exploits two arms of the system.
-- page 8 -
 On the left, you will see by the injectables which are analogs of the peptide which have a longer half life in that they are resistant to breakdown by DPP4.
 Examples include laryglutide, semaglutide, dulaglutide, and excinatide.
 On the right are the oral agents, and these work by inhibiting DPP4, the enzyme which degrades endogenous GOP1.
@@ -1796,7 +1752,6 @@ The side effects are usually gastrointestinal, including nausea and vomiting, an
 Lastly, we move to insulin therapy, which is one of the oldest therapies available for diabetes mellitus.
 And in 1921, in Canada, dancing and best, isolated insulin for the first time, and since then, it has been widely used for the treatment of various forms of diabetes in different formulations.
 The chemical composition of regular insulin may be modified, leading to an adjustment of the pharmacokinetics, as will be shown in the following slides.
-- page 9 -
 And importantly, all insulin in South Africa is synthetic human insulin, and no longer derived from animals.
 These are the two Canadian workers who identified the insulin molecule in Toronto in 1921.
 And this is the overall structure of insulin, which consists of an A and a B chain, found by intra chain disulfide blindness.

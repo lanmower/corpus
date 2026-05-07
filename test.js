@@ -508,7 +508,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // infographics: relocated guides + infographics dir + shard arrays + lightbox + concise/ gone
         assert.ok(!fs.existsSync(path.join(ROOT, 'concise')), 'concise/ should be removed');
         for (const s of SUBJECTS) assert.ok(fs.existsSync(path.join(ROOT, s, 'study_guide.md')), s + '/study_guide.md missing');
-        const expectedChars = { cardiology: 237482, diabetes: 140719, endocrine: 139144, gastroenterology: 190984, geriatric: 57261, nephrology: 137214, pulmonology: 141764, rheumatology: 51027 };
+        const expectedChars = { cardiology: 237279, diabetes: 139984, endocrine: 138678, gastroenterology: 190232, geriatric: 56625, nephrology: 137143, pulmonology: 141298, rheumatology: 50121 };
         for (const s of SUBJECTS) assert.strictEqual(SHARDMAP[s].guide.chars, expectedChars[s], s + ' char count');
         for (const s of SUBJECTS) {
             const igs = SHARDMAP[s].guide.infographics;
@@ -541,9 +541,16 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             const body = (SHARDMAP[s].guide && SHARDMAP[s].guide.body) || '';
             assert.ok(!/pages-\d{3}-\d{3,4}/.test(body), s + ' body has pages-NNN');
             assert.ok(!/CMED4IIM/.test(body), s + ' body has CMED4IIM');
+            assert.ok(!/^-\s*page\s+\d+\s*-\s*$/im.test(body), s + ' body has - page N - marker');
+            assert.ok(!/\(page\s+\d+\)/i.test(body), s + ' body has (page N) parenthetical');
+            assert.ok(!/^#{1,6}\s+page\s+\d+\s*$/im.test(body), s + ' body has page heading');
             assert.ok(!/^#{1,6}\s+audio lectures?\s*$/im.test(body), s + ' body has Audio Lectures heading');
             assert.ok(!/^#{1,6}\s+textbook sections?\s*$/im.test(body), s + ' body has Textbook Sections heading');
-            for (const sec of (SHARDMAP[s].guide?.sections || [])) assert.ok(!/pages-\d{3}-\d{3,4}|CMED4IIM/.test(sec.title || ''), s + ' raw section title');
+            for (const sec of (SHARDMAP[s].guide?.sections || [])) {
+                assert.ok(!/pages-\d{3}-\d{3,4}|CMED4IIM/.test(sec.title || ''), s + ' raw section title');
+                assert.ok(!/^pages?\s+\d+(-\d+)?$/i.test(sec.title || ''), s + ' page-marker section title: ' + sec.title);
+                assert.ok(!/^pages?-\d+(-\d+)?$/i.test(sec.title || ''), s + ' pages-range section title: ' + sec.title);
+            }
         }
         // guide typography (desktop defaults; mobile overrides asserted in responsive group)
         assert.match(styleCss, /\.guide-body\s*\{[^}]*line-height:\s*1\.7/);

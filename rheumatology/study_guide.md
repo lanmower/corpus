@@ -95,7 +95,6 @@ So it's just to show you the problem of the nodules, which are the excess surfac
 
 ### Spondyloarthropathies (SpA)
 
-- page 1 -
 The Spondyloathropeties. The Spondyloathropeties include ankylosing
 spondylitis, psoriatic arthritis, reactive arthritis or retis syndrome as it was
 previously known, antipatic arthritis and juvenile ankylosing spondylitis.
@@ -104,7 +103,6 @@ with the presence of cyanobitis to identify an individual with a spondyloathrope
 And spinal pain or cyanobitis with asymmetrical lower limb involvement
 could often be a presentation of a spondyloathropetie.
 
-- page 1 -
 The Spondyloathropeties. The Spondyloathropeties include ankylosing
 spondylitis, psoriatic arthritis, reactive arthritis or retis syndrome as it was
 previously known, antipatic arthritis and juvenile ankylosing spondylitis.
@@ -132,7 +130,6 @@ Other characteristics include as we mentioned sacroiliators or inflammation
 
 #### 2026
 
-- page 1 -
 So, previously osteoarthritis was considered to be a disease of older individuals.
 It was thought to be more due to degenerative disease of the cartilage.
 However, in the past decades, there's much research that has gone into osteoarthritis
@@ -140,7 +137,6 @@ and we now know that the pathogenesis, the underlying cause for the disease is m
 complicated and it is thought to be a dull disease no longer.
 So what is the osteoarthritis characterised by?
 
-- page 1 -
 So, previously osteoarthritis was considered to be a disease of older individuals.
 It was thought to be more due to degenerative disease of the cartilage.
 However, in the past decades, there's much research that has gone into osteoarthritis
@@ -167,12 +163,10 @@ So, this network of collagen basically is placed in this manner to maintain the 
 
 #### 2026
 
-- page 1 -
 Hello everybody, I'm Dr. Vinder from the Department of Anthropology. During this session
 I will be discussing God. So God is known as a disease of kings, mainly because of the
 modified risk factors that are associated with it, with its onset and exacerbation.
 
-- page 1 -
 Hello everybody, I'm Dr. Vinder from the Department of Anthropology. During this session
 I will be discussing God. So God is known as a disease of kings, mainly because of the
 modified risk factors that are associated with it, with its onset and exacerbation.
@@ -187,7 +181,6 @@ degree, where there is either upper production of urate acid or under-extrician 
 And under-extrician is the main cause of hypoecinia. So God is a commonest form of the
 immunociraptoritis in men, with the male to female ratio of 2 to 4, is to men in Caucasian
 and egg 8 is to men in Asian, with the peak age of 40 to 50 years. It's very rare in males
-- page 2 -
 below age 30, children in a pain and a causal woman. You're not everyone with hypoecinia
 and developed God. So urate acid comes from protein-baked dye. So from protein, you've
 
@@ -204,7 +197,6 @@ and developed God. So urate acid comes from protein-baked dye. So from protein, 
 #### 2026
 
 -
-
 
 ### Rheumatoid Arthritis
 
@@ -247,21 +239,12 @@ The most significant genetic risk factors for RA are variations in the human
 
 ####.txt
 
-- page 1 -
-
-
-- page 2 -
-
-
-- page 3 -
 RHEUMATOID ARTHRITIS
 • Autoimmune disease
 • Chronic, symmetrical, inflammatory, erosive 
 polyarthritis 
 • Extra – articular manifestations
 
-
-- page 4 -
 Epidemiology
 • It  occurs all over the world with a prevalence of 
 around 1% with a lower prevalence in developing 
@@ -271,11 +254,6 @@ areas (0.12% vs 0.90%)
 • Peak age of onset is between 35 – 55 years
 • F:M ratio 3:1
 
-
-- page 5 -
-
-
-- page 6 -
 Aetiology
 The cause is not known but genetic, epigenetic and 
 environmental factors play a role
@@ -289,8 +267,6 @@ about 70 -
 75% with RA
 Familial
 
-
-- page 7 -
 Aetiology
 Environmental factors
 a)Periodontal infection
@@ -300,19 +276,11 @@ c)Hormonal – increased prevalence in females
 and increased presentation post partum.
 d)GUT microbiomes
 
-
-- page 8 -
-
-
-- page 9 -
-
-
 *(Content truncated for brevity)*
 
 ####.txt
 
 - -
-
 
 - -
 PATHOPHYSIOLOGY OF EARLY RHEUMATOID ARTHRITIS
@@ -330,27 +298,19 @@ chondrocytes) destruction
 New blood vessel formation (neoangiogenesis) – attracts more leucocytes 
 and perpetuates inflammation
 
+- -
 
 - -
 
+- -
 
 - -
 
+- -
 
 - -
 
-
 - -
-
-
-- -
-
-
-- -
-
-
-- -
-
 
 - -
 CLINICAL PRESENTATION
@@ -390,7 +350,6 @@ Acromioclavicular joints
 »
 -
 
-
 - -
 SHOULDER
 • Movements – abduction, external and internal rotation
@@ -405,7 +364,6 @@ ELBOWS
 • Lateral epicondylitis – tennis elbow
 • Medil epicondylitis
 
-
 - -
 WRISTS
 • Synovial swelling
@@ -415,7 +373,6 @@ WRISTS
 • Dorsal tenosynovitis - swelling
 • Dorsiflexion / palmar flexion
 • Subluxation
-
 
 - -
 HANDS
@@ -486,9 +443,7 @@ Abnormal CRP and ESR
 Patients with a score of ≥ 6 are considered to have 
 definite RA
 
-
 - -
-
 
 - -
 Extra-articular manifestations of rheumatoid 
@@ -506,7 +461,6 @@ scleritis, scelromalacia / perforans
 nodules, pleural effusion, interstitial 
 lung disease, bronchiolitis obliterans, 
 Caplan’s 
-
 
 - -
 Extra-articular manifestations of rheumatoid 
@@ -538,7 +492,6 @@ Urea, Creatinine, LFT
 Hands, feet, selected 
 involved joints
 
-
 - -
 ASSESSMENT OF DISEASE ACTIVITY 
 Disease activity index
@@ -562,15 +515,11 @@ CRP mg/dl)
 1,2,3,5 DAS 28 CRP –Disease activity score
 *Smolen J et al. Rheumatology 2003;42:244-57
 
+- -
 
 - -
 
-
 - -
-
-
-- -
-
 
 - -
 Confirm diagnosis
@@ -582,7 +531,6 @@ Therapies
 Drug Therapy
 MANAGEMENT OF RHEUMATOID 
 ARTHRITIS
-
 
 - -
 EDUCATIONAL TOPICS FOR 
@@ -604,7 +552,6 @@ THERAPY
 • Joint protection techniques
 • Preserve and improve function
 
-
 - -
 SURGERY
 (A) SOFT TISSUE SURGERY
@@ -612,7 +559,6 @@ eg. Tendon surgery
 (B) JOINT SURGERY
 Excision arthroplasty
 Replacement arthroplasty
-
 
 - -
 DRUG THERAPY
@@ -624,7 +570,6 @@ Chloroquine       Sulphasalazine        Methotrexate       Lefluanmide
 MANAGEMENT OF RHEUMATOID ARTHRITIS
 Biologic therapy
 
-
 - -
 (1) ANALGESICS
 eg. Panado, Stilpain
@@ -632,7 +577,6 @@ eg. Panado, Stilpain
 eg. Brufen, Voltaren, Arthrexin 
 Mobic, Celebrex, Vioxx
 DRUG TREATMENT
-
 
 - -
 ADVERSE EFFECTS OF NSAIDS
@@ -642,7 +586,6 @@ CNS
 Haematological
 Cutaneous
 Drug interactions
-
 
 - -
 ROLE OF STEROIDS
@@ -671,14 +614,12 @@ Low
 Remission
 (EULAR = European League Against Rheumatism)
 
-
 - -
 TARGETS FOR THERAPY
 • CYTOKINES eg TNF α , IL -1R, IL-6
 • B CELLS  eg Anti- CD 20
 • CO-STIMULATION  eg CTLA4
 • JAK Kinase inhibitors
-
 
 - -
 NEWER DISEASE MODIFYING DRUGS
@@ -690,7 +631,6 @@ drugs
 • Cost
 • Eg. Revellex, Etanercept
 
-
 - -
 Safety Issues with Biologic DMARDs
 • Serious/opportunistic infections (eg, TB)
@@ -700,20 +640,15 @@ Safety Issues with Biologic DMARDs
 • Congestive heart failure
 • Malignancies
 
-
 - -
 
-
 - -
-
 
 - -
 Prevention of RA – is it 
 possible?
 
-
 - -
-
 
 - -
 Start of
@@ -724,7 +659,6 @@ damage
 Shift in the Fate of RA
 Progression
 Start of DMARD therapy
-
 
 - -
 Start of
@@ -755,13 +689,11 @@ rheumatologist
 Presentation to 
 rheumatologist
 
-
 - -
 The Challenge
 • Rapid referral
 • Rapid diagnosis of RA
 • Rapid start of intervention
-
 
 - -
 Conclusion
@@ -774,12 +706,10 @@ costs
 less than 10% of the patients
 • Successful treatment can reduce mortality
 
-
 - -
 References
 • Davidsons
 • ACR/Eular Rheumatoid arthritis guidelines 
-
 
 - -
 « IT’S GOOD TO FEEL BETTER BUT
@@ -797,7 +727,6 @@ LONG AS POSSIBLE. »
 
 ####.txt
 
-- page 1 -
 LECTURE NOTES – SPONDYLOARTHROPATHY 
  
 Summary 
@@ -838,10 +767,6 @@ CLASSIFICATION CRITERIA:
 
 ####.txt
 
-- page 1 -
-
-
-- page 2 -
 Features of spondyloarthritis
 Musculoskeletal - SI joints, spine, 
 peripheral arthritis, enthesitis, dactylitis
@@ -852,8 +777,6 @@ peripheral arthritis, enthesitis, dactylitis
 Association with HLA B27
 Familial aggregation
 
-
-- page 3 -
 Musculoskeletal Manifestations
 B ackache (Sacroiliitis)) 
 E nthesitis
@@ -862,55 +785,28 @@ D actylitis
 S pine
 •
 
-
-- page 4 -
-
-
-- page 5 -
-
-
-- page 6 -
-
-
-- page 7 -
-
-
-- page 8 -
-
-
-- page 9 -
-
-
 - -
 
 ####.txt
 
 - -
 
+- -
 
 - -
 
-
 - -
 
-
 - -
-
-
-- -
-
 
 - -
 ESSG criteria for SpA
 
-
 - -
 DIAGNOSIS OF PERIPHERAL SpA
 
-
 - -
 DIAGNOSIS OF AXIAL SpA
-
 
 - -
 Combined use of the Assessment of SpondyloArthritis international Society (ASAS) criteria for 
@@ -919,25 +815,19 @@ population.
 M Rudwaleit et al. Ann Rheum Dis 2011;70:25-31
 ©2011 by BMJ Publishing Group Ltd and European League Against Rheumatism
 
-
 - -
 
 ####.txt
 
 - -
 
+- -
 
 - -
 
-
 - -
 
-
 - -
-
-
-- -
-
 
 - -
 Reactive arthritis
@@ -952,7 +842,6 @@ Salmonella, Shigella, Yersinia entercolitica,
 eg limecycline, erythromycin
 Reduction of post-chlamydia relapses from 37% to 10%
 
-
 - -
 Extra-articular manifestations of reactive arthritis
 •
@@ -966,7 +855,6 @@ Circinate balanitis presents as shallow ulcers on the glans or the
 shaft of the penis, and is plaque-like and hyperkeratotic
 •
 Oral ulcers on the hard palate or tongue are typically painless
-
 
 - -
 Enteropathic SpA
@@ -990,30 +878,21 @@ Lateral flexion to R and L
 ROM including internal and external rotation
 Intermalleolar distance
 
+- -
 
 - -
 
+- -
 
 - -
 
+- -
 
 - -
 
-
 - -
 
-
 - -
-
-
-- -
-
-
-- -
-
-
-- -
-
 
 - -
 
@@ -1021,16 +900,13 @@ Intermalleolar distance
 
 - -
 
-
 - -
 New drug treatments for SpA
 • IL-17 inhibitors – secukinumab, ixekizumab
 • IL 12/23 inhibitors – ustekinumab,
 • JAK inhibitors - tofacitinb
 
-
 - -
-
 
 - -
 Acknowledgements
@@ -1043,7 +919,6 @@ Arthritis (GRAPPA)
 
 ####.txt
 
-- page 1 -
 OSTEOARTHRITIS 
  
 Overview of learning outcomes 
@@ -1079,15 +954,9 @@ degradation is accompanied by variable degrees of repair and inflammation.
 
 ####.txt
 
-- page 1 -
 Osteoarthritis
 Rheumatology unit
 
-
-- page 2 -
-
-
-- page 3 -
 Definition of Osteoarthritis
 OA is characterized by focal softening and 
 disintegration of articular cartilage, which is 
@@ -1096,8 +965,6 @@ accompanied by the proliferation of new bone.
 •More women than men
 •Peak onset is between 50 – 60 years
 
-
-- page 4 -
 Epidemiology
 Symptomatic OA
 Knee
@@ -1113,11 +980,6 @@ Hands:  32.5% of adults in the US
 Knee OA: 33% of people age ≥ 63 years in Framingham 
 study
 
-
-- page 5 -
-
-
-- page 6 -
 Mechanism of joint damage
 Collagen 
 1.
@@ -1132,8 +994,6 @@ release enzymes which digest the cartilage
 Subchonderal: bone micro-fractures
 Synovial changes 
 
-
-- page 7 -
 Causes of joint pain in OA
 SOURCE
 • Synovium
@@ -1160,7 +1020,6 @@ Signs
 •Joint deformity
 •Synovial thickening and effusion
 
-
 - -
 XR changes
 The radiograph changes include:
@@ -1168,21 +1027,15 @@ Joint space narrowing
 Subchondral sclerosis
 Marginal osteophytes 
 
+- -
 
 - -
 
+- -
 
 - -
 
-
 - -
-
-
-- -
-
-
-- -
-
 
 - -
 Risk factors for OA
@@ -1201,7 +1054,6 @@ Joint injury
 Occupation
 •
 Shape of the joint
-
 
 - -
 OA 
@@ -1223,7 +1075,6 @@ Blacks
 • Knee
 •Males
 • Hip
-
 
 - -
 Influencing factors
@@ -1252,7 +1103,6 @@ Occupation
 • Oestrogen
 • Nutritional factors 
 
-
 - -
 Management
 1.
@@ -1267,7 +1117,6 @@ Non – Pharmacological
 Pharmacological
 Surgical
 
-
 - -
 PHARMACOLOGICAL
 Analgesics
@@ -1275,7 +1124,6 @@ NSAIDS
 Intra – articular corticosteroids
 Visco-supplementation
 Glucosamine sulphate
-
 
 - -
 NSAIDS side effects
@@ -1285,7 +1133,6 @@ Impaired renal function
 Poorly compensated heart failure
 Hepatic dysfunction
 Concomitant use of anticoagulants 
-
 
 - -
 Surgery in OA
@@ -1298,7 +1145,6 @@ Arthrodesis
 
 ####.txt
 
-- page 1 -
 Gout 
  
 1. Definition  
@@ -1323,19 +1169,14 @@ The peak age for onset of gout in males is 40 – 50 years and 60 years in women
 
 ####.txt
 
-- page 1 -
 GOUT
 DEPARTMENT OF RHEUMATOLOGY
 
-
-- page 2 -
 GOUT
 ‘DISEASES OF 
 KINGS and KING OF 
 DISEASES’
 
-
-- page 3 -
 DEFINITION OF GOUT
 • A clinical syndrome: deposition of monosodium 
 monohydrate crystals in joints.
@@ -1344,15 +1185,8 @@ arthritis.
 • Tophi: crystal accumulation in cartilage, tendon, bursae
 and bones
 
-
-- page 4 -
-
-
-- page 5 -
 Uric acid synthesis
 
-
-- page 6 -
 Definition of hyperuricaemia
 Physiochemical: Concentration above solubility limits of urate
 Consequences of hyperuricaemia
@@ -1367,8 +1201,6 @@ Uric acid stones, nephropathy
 Underexcretion (80%)
 Secondary
 
-
-- page 7 -
 Causes of hyperuricaemia
 Overproduction
 • Nutritional
@@ -1390,8 +1222,6 @@ Under-excretion
 ethambutol,cyclosporin, 
 low dose salicylates
 
-
-- page 8 -
 Epidemiology
 • Common inflammatory arthritis in men >> women
 
@@ -1412,7 +1242,6 @@ Acute gout
 • Polyarticular pattern
 • elderly, diuretics, renal insufficiency
 
-
 - -
 Precipitating factors
 •Trauma
@@ -1423,16 +1252,12 @@ Precipitating factors
 •Alcohol
 •↑purine intake
 
-
 - -
 
-
 - -
-
 
 - -
 • INTERVAL PHASE
-
 
 - -
 Chronic tophaceous gout
@@ -1445,15 +1270,11 @@ cartilage, bone
 • May be inflamed and ulcerate , discharge chalky material 
 resembling pus
 
+- -
 
 - -
 
-
 - -
-
-
-- -
-
 
 - -
 
@@ -1461,9 +1282,7 @@ resembling pus
 
 - -
 
-
 - -
-
 
 - -
 Renal disease
@@ -1481,7 +1300,6 @@ chemotherapy
 • ↓U-pH
 • Chronic uric acid nephropathy
 
-
 - -
 Investigations
 • Serum uric acid
@@ -1495,7 +1313,6 @@ Investigations
 acid crystals  in synovial fluid or synovial tissue 
 biopsy 
 
-
 - -
 Management of hyperuricaemia and 
 gout
@@ -1504,7 +1321,6 @@ hyperuricaemia
 •Management of acute gout
 •Long term management of gout
 
-
 - -
 Management of asymptomatic hyperuricaemia
 •Risk of nephrolithiasis low
@@ -1512,7 +1328,6 @@ Management of asymptomatic hyperuricaemia
 •Risk of renal insufficiency low
 •Correct hyperuricaemia if possible
 •Serial monitoring
-
 
 - -
 
@@ -1528,7 +1343,6 @@ indications for treatment
 •Presence of tophi
 •Willingness to continue lifelong therapy
 
-
 - -
 URATE LOWERING DRUGS
 •Probenacid - uricosuric agents
@@ -1536,7 +1350,6 @@ URATE LOWERING DRUGS
 oxidase inhibitor
 •Lesinurad – chronic refractory gout: 
 URAT 1 inhibitor
-
 
 - -
 Uricosuric agents
@@ -1546,7 +1359,6 @@ Uricosuric agents
 •Age below 60 years
 •Do not require low dose salicylates for 
 vascular disease
-
 
 - -
 Allopurinol indications
@@ -1562,7 +1374,6 @@ Allopurinol indications
 
 ####.txt
 
-- page 1 -
 Connective tissue disease 
 Connective tissue diseases (CTD) are a group of disease resulting from persisting immune 
 inflammation in genetically predisposed individuals. The immune dysregulation results in 
@@ -1635,21 +1446,16 @@ A 23 year old woman is diagnosed with SLE.
 
 ####.txt
 
-- page 1 -
 Connective tissue diseases
 Department of Rheumatology
 2021
 
-
-- page 2 -
 Overview
 • Epidemiology
 • Clinical  features
 • Investigations
 • Management
 
-
-- page 3 -
 What are the CTD
 • Systemic lupus erythematosus (SLE)
 • Scleroderma
@@ -1658,8 +1464,6 @@ What are the CTD
 • Overlap Syndrome
 • Undifferentiated CTD
 
-
-- page 4 -
 Characteristics of autoimmune connective tissue 
 diseases
 • Multi-system involvement
@@ -1670,13 +1474,9 @@ diseases
 • May have a high morbidity or mortality  if undiagnosed  or 
 inappropriately treated        
 
-
-- page 5 -
 Systemic lupus 
 erythematosus
 
-
-- page 6 -
 Epidemiology
 • Women > men (3:1)
 • World-wide IR fluctuate
@@ -1688,8 +1488,6 @@ Epidemiology
 • Manifestations are varied from mild to life threatening disease
 • Risk factors: familial and environmental
 
-
-- page 7 -
 Clinical features of SLE
 
 *(Content truncated for brevity)*
@@ -1706,18 +1504,13 @@ pattern for SLE
 • 98% SLE elevated serum levels of ANA
 • 5% of people with a positive ANA: SLE
 
+- -
 
 - -
 
-
 - -
 
-
 - -
-
-
-- -
-
 
 - -
 Investigations
@@ -1743,7 +1536,6 @@ Investigations
 Rest depends on systems
 • Lipogram, HbA1c etc
 
-
 - -
 Management
 • Depends on disease severity and organ involvement
@@ -1755,19 +1547,15 @@ Management
 • CYP
 • AZA
 
-
 - -
 
-
 - -
-
 
 - -
 
 ####.txt
 
 - -
-
 
 - -
 Antiphospholipid antibody syndrome
@@ -1777,10 +1565,8 @@ Recurrent miscarriages
 Thrombocytopaenia
 Livedo reticularis
 
-
 - -
 APLS Diagnostic criteria
-
 
 - -
 Antiphospholipid antibody syndrome
@@ -1792,21 +1578,15 @@ Anti-cardiolipin antibodies
 Lupus anticoagulants
 B2 Glycoprotein
 
+- -
 
 - -
 
+- -
 
 - -
 
-
 - -
-
-
-- -
-
-
-- -
-
 
 - -
 Key characteristics
@@ -1819,9 +1599,7 @@ Key characteristics
 
 - -
 
-
 - -
-
 
 - -
 Tightening of skin
@@ -1830,12 +1608,9 @@ Oedematous phase
 Indurable phase with skin thickening
 Atrophic phase with contractures
 
-
 - -
 
-
 - -
-
 
 - -
 Skin changes
@@ -1846,15 +1621,11 @@ Hyper/hypo -pigmentation
 Telangectasia
 Calcinosis
 
+- -
 
 - -
 
-
 - -
-
-
-- -
-
 
 - -
 Raynaud's phenomenon
@@ -1879,29 +1650,22 @@ changes
 
 - -
 
-
 - -
 Prevalence of Raynaud's
 • Limited Scleroderma 100%
 • Diffuse scleroderma 70-80%
 • SLE 20-45%
 
+- -
 
 - -
 
-
 - -
 
-
 - -
-
-
-- -
-
 
 - -
 Management
-
 
 - -
 Myositis
@@ -1912,7 +1676,6 @@ Myositis
 • Female : male ratio - 2–3:1 
 • In the United States, African Americans > Caucasians
 
-
 - -
 Clinical presentation
 • Present with difficulty standing, combing hair
@@ -1920,7 +1683,6 @@ Clinical presentation
 • Neck flexor weakness 
 • Muscle pain in 50%
 • Skin rashes include heliotrope erythema and Gottron’s patches
-
 
 - -
 Skin manifestations of DM
@@ -1937,9 +1699,7 @@ Skin manifestations of DM
 
 - -
 
-
 - -
-
 
 - -
 Classification criteria
@@ -1949,32 +1709,24 @@ Classification criteria
 • Myositis associated with CTD
 • Myositis associated with Malignancy
 
+- -
 
 - -
 
-
 - -
 
-
 - -
-
-
-- -
-
 
 - -
 Diagnosis
 
-
 - -
-
 
 - -
 
 ####.txt
 
 - -
-
 
 - -
 MCTD: Alarcon-Segovia diagnostic Criteria
@@ -1983,7 +1735,6 @@ MCTD: Alarcon-Segovia diagnostic Criteria
 
 ####.txt
 
-- page 1 -
 Approach to joint pain and arthritis 
 Overview of lecture 
 Non-articular pain syndromes 
@@ -2035,7 +1786,6 @@ result in significant deformity and disability. A systematic approach to joint p
  
  
 
-
 - -
  
 Table 3: differential diagnosis for polyarthritis 
@@ -2068,7 +1818,6 @@ Table 3: differential diagnosis for polyarthritis
  
  
 
-
 - -
  
  
@@ -2076,12 +1825,9 @@ Table 3: differential diagnosis for polyarthritis
 
 ####.txt
 
-- page 1 -
 Approach to joint pain 
 and arthritis
 
-
-- page 2 -
 CASE HISTORY
 A patient presents with a swollen knee.
 What is the likely diagnosis in
@@ -2097,8 +1843,6 @@ Onset Acute or Chronic
 Pattern of joint involvement
 Associated manifestatiuons: skin rash, red eyes, diarrhea, backache
 
-
-- page 3 -
 CASE HISTORY
 A 25 year old female has polyarthritis.
 Associated features
@@ -2110,8 +1854,6 @@ Raynaud’s
 Anaemia
 Kidney disease
 
-
-- page 4 -
 PATTERNS OF ARTHRITIS
 • ACUTE vs CHRONIC
 • SYMMETRICAL vs ASYMMETRICAL
@@ -2120,8 +1862,6 @@ PATTERNS OF ARTHRITIS
 • LARGE JOINT vs SMALL PERIPHERAL JOINTS
 • INFLAMMATORY VS NON-INFLAMMATORY
 
-
-- page 5 -
 Joint Pain
 Non - Articular
 Articular
@@ -2131,8 +1871,6 @@ Monoarthritis
 Oligoarthritis
 Polyarthritis
 
-
-- page 6 -
 Differential Diagnosis of Arthritis
 ARTHRITIS
 TRAUMATIC
@@ -2148,8 +1886,6 @@ SPINAL PAIN
 PERIPHERAL
 SPINAL PAIN
 
-
-- page 7 -
 • WHAT ARE THE COMMON 
 
 *(Content truncated for brevity)*
@@ -2157,7 +1893,6 @@ SPINAL PAIN
 ####.txt
 
 - -
-
 
 - -
 SYSTEMIC FEATURES OF 
@@ -2189,7 +1924,6 @@ MOUTH
 Oral ulcers
 SLE, Reiter’s syndrome
 
-
 - -
 SYSTEMIC FEATURES OF 
 MONOARTHRITIS
@@ -2207,7 +1941,6 @@ spondylitis, infective endocarditis
 RESPIRATORY
 Tuberculosis, sarcoidosis
 
-
 - -
 INVESTIGATIONS
 • FBC
@@ -2220,12 +1953,9 @@ INVESTIGATIONS
 • Bone scan
 • C T scan / MRI
 
-
 - -
 
-
 - -
-
 
 - -
 CAUSES OF POLYARTHRITIS
@@ -2236,7 +1966,6 @@ CAUSES OF POLYARTHRITIS
 • Other spondyloarthropathies
 • Polyarticular OA
 • Polyarticular gout
-
 
 - -
 Rheumatoid Arthritis
@@ -2263,7 +1992,6 @@ Changes
 Syndesmophyte
 “Bamboo” spine
 
-
 - -
 Psoriatic Arthritis
 Joint 
@@ -2285,7 +2013,6 @@ Changes
 Enthersopathy
 Erosive arthritis
 
-
 - -
 Polyarticular Gout
 Joint 
@@ -2303,7 +2030,6 @@ Radiographic
 Changes
 Erosive arthropathy
 Tophi deposits in bone and joint
-
 
 - -
 DEFINITION OF HYPERURICAEMIA
@@ -2333,7 +2059,6 @@ Changes
 Sclerosis of joint margin
 Sub Chondral cysts 
 
-
 - -
 OSTEOARTHRITIS
 OA is characterized by focal softening and 
@@ -2346,9 +2071,7 @@ Subchondral sclerosis
 Marginal osteophytes 
 Subchondral cysts
 
-
 - -
-
 
 - -
 Classification of OA
@@ -2365,7 +2088,6 @@ b) Anatomical / developmental
 c) Metabolic or endocrine
 d) Inflammatory
 e) Miscellaneous
-
 
 - -
 Classification of primary OA
@@ -2391,7 +2113,6 @@ SPINE
 
 ####.txt
 
-- page 1 -
 LECTURE NOTES: NECK PAIN 
  
 Neck pain is a common problem that many of us will experience at some time in our lives. 
