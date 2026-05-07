@@ -251,12 +251,46 @@ function renderResumeLine() {
     );
 }
 
+// ---- first-time visitor detection ----
+function isFirstTimeVisitor() {
+    try {
+        const p = progress.load();
+        if (!p || p.todayGraded > 0) return false;
+        const states = srs.loadStates();
+        const hasHistory = p.history && p.history.some(h => (h.graded || 0) > 0);
+        if (hasHistory) return false;
+        const hasReviewed = Object.values(states).some(s => s && s.history && s.history.length > 0);
+        if (hasReviewed) return false;
+        return !localStorage.getItem('corpus.welcome.dismissed');
+    } catch { return false; }
+}
+
+// ---- welcome panel for first-time visitors ----
+function renderWelcome() {
+    if (!isFirstTimeVisitor()) return null;
+    return el('div', { class: 'panel', style: 'border-left: 4px solid var(--c-mastered);' },
+        el('div', { class: 'panel-head' },
+            el('span', { class: 'title' }, 'welcome to corpus'),
+            el('button', { class: 'chip', style: 'margin-left:auto', 'aria-label': 'dismiss welcome',
+                on: { click: () => { localStorage.setItem('corpus.welcome.dismissed', '1'); render(); } } }, 'got it')),
+        el('div', { style: 'font-family:var(--ff-prose);line-height:1.6;font-size:15px' },
+            el('p', {}, 'this is your medical study corpus — a personal notebook covering 8 subjects with spaced repetition cards, study guides, and clinical cases.'),
+            el('p', {}, 'cards marked "due" use a spaced repetition algorithm (SRS) to optimize memory retention. review them daily to build mastery.'),
+            el('p', {}, el('strong', {}, 'get started:'), ' review due cards, read a guide, or work through a clinical case.')
+        )
+    );
+}
+
 // ---- compressed today ----
 function renderToday() {
     const p = progress.load();
     const due = totalDueAll();
     const cases = totalCasesQueued();
     const mins = estReviewMinutes(due);
+
+    // Welcome message for first-time visitors
+    const welcomeEl = renderWelcome();
+    if (welcomeEl) stage.append(welcomeEl);
 
     // Compute weakest subject for cram banner
     const states = srs.loadStates();
@@ -1800,7 +1834,7 @@ function mountTopbar() {
     const days = srs.daysUntilExam();
     const countdown = el('a', { class: 'exam-countdown', href: '#settings',
         title: 'days to exam — click to edit', 'aria-label': `${days} days to exam`,
-        on: { click: e => { e.preventDefault(); go('settings'); } } }, `${days}d`);
+        on: { click: e => { e.preventDefault(); go('settings'); } }, `${days}d to exam`));
     right.parentElement.insertBefore(countdown, right);
     const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'search (ctrl+k)', title: 'search (ctrl+k)',
         on: { click: () => state.searchPaletteApi?.open() } }, 'search ⌘k');
@@ -1829,7 +1863,7 @@ function updateOnlineStatus() {
     const lbl = document.getElementById('status-label');
     if (!dot || !lbl) return;
     dot.classList.remove('loading');
-    if (navigator.onLine) { dot.classList.remove('offline'); dot.classList.add('live'); lbl.textContent = 'ready'; }
+    if (navigator.onLine) { dot.classList.remove('offline'); dot.classList.add('live'); lbl.textContent = 'online'; }
     else { dot.classList.remove('live'); dot.classList.add('offline'); lbl.textContent = 'offline'; }
 }
 

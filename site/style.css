@@ -63,6 +63,10 @@ body {
     min-height: 100vh;
 }
 
+/* ---- links: global reset, design-system tokens ---- */
+a { color: var(--ink); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
 /* ---- topbar — dense, lowercase, single-row when possible ---- */
 .topbar {
     display: flex; align-items: center; gap: var(--s-3);
@@ -377,6 +381,7 @@ body {
 /* ---- guide body markdown — sans prose ---- */
 .guide-body-panel .guide-body { padding: 4px 0; max-height: none; }
 .guide-body { font-family: var(--ff-prose); line-height: 1.7; font-size: 17px; color: var(--ink); }
+.guide-body a { color: var(--link); }
 .guide-body > * { max-width: 68ch; }
 .guide-body h1, .guide-body h2, .guide-body h3, .guide-body h4 { font-family: var(--ff-ui); font-weight: 700; line-height: 1.25; color: var(--ink); letter-spacing: -0.01em; }
 .guide-body h1 { font-size: 26px; margin: 0 0 0.9em; }
