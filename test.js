@@ -557,9 +557,37 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // guide typography (desktop defaults; mobile overrides asserted in responsive group)
         assert.match(styleCss, /\.guide-body\s*\{[^}]*line-height:\s*1\.7/);
         assert.match(styleCss, /\.guide-body\s*\{[^}]*font-size:\s*17px/);
-        assert.match(styleCss, /\.guide-body\s*>\s*\*\s*\{[^}]*max-width:\s*70ch/);
-        assert.match(styleCss, /\.guide-body h3\s*\{[^}]*margin-top:\s*1\.8em/);
-        assert.match(styleCss, /\.guide-body li\s*\{[^}]*margin-block:\s*0\.4em/);
+        assert.match(styleCss, /\.guide-body\s*>\s*\*\s*\{[^}]*max-width:\s*68ch/);
+        assert.match(styleCss, /\.guide-body h3\s*\{[^}]*margin-top:\s*2em/);
+        assert.match(styleCss, /\.guide-body li\s*\{[^}]*margin-block:\s*0\.45em/);
+        assert.match(styleCss, /\.guide-body p\s*\{\s*margin-block:\s*0\s+1\.15em/);
+        // render-time paragraph polish: softSplitPara + disfluency cleanup + typo refine
+        assert.match(appSrc, /function softSplitPara/);
+        assert.match(appSrc, /function cleanDisfluencies/);
+        assert.match(appSrc, /function typoRefine/);
+        // sandbox the helpers via vm and assert behavior
+        const ctx = { module: {}, exports: {} };
+        const startIdx = appSrc.indexOf('const DISFLUENCY_RE');
+        const endIdx = appSrc.indexOf('function renderMarkdown', startIdx);
+        const helperSrc = appSrc.slice(startIdx, endIdx);
+        vm.createContext(ctx);
+        vm.runInContext(helperSrc + '\nmodule.exports = { softSplitPara, cleanDisfluencies, typoRefine };', ctx);
+        const H = ctx.module.exports;
+        // disfluency removal
+        assert.strictEqual(H.cleanDisfluencies('um, the patient, you know, has uh hypertension.'), 'the patient, has hypertension.');
+        // em-dash and en-dash refine
+        assert.ok(H.typoRefine('she was 50 -- 60 years old, BP 120-140 mmHg').includes('—'));
+        assert.ok(H.typoRefine('range 5-10 mg').includes('–'));
+        // soft split: long paragraph with >3 sentences breaks into multiple chunks
+        const longTxt = 'First sentence here goes long enough to push past the threshold meaningfully. Second sentence runs longer than expected and keeps adding clinical detail. Third sentence keeps the patient story going further with workup notes and findings. Fourth sentence wraps it up nicely with a clear plan and disposition. Fifth sentence adds yet more detail to the case from the consult team. Sixth sentence finally concludes the matter completely with follow-up arrangements.';
+        const chunks = H.softSplitPara(longTxt);
+        assert.ok(chunks.length >= 2, 'expected soft-split into multiple chunks, got ' + chunks.length);
+        // short input passes through
+        assert.strictEqual(H.softSplitPara('Just one sentence.').length, 1);
+        // hard-wrap safety net: nothing over 900 chars survives
+        const monster = ('lorem ipsum dolor sit amet '.repeat(60)).trim();
+        const wrapped = H.softSplitPara(monster);
+        assert.ok(wrapped.every(c => c.length <= 900), 'monster paragraph not hard-wrapped: ' + wrapped.map(c=>c.length).join(','));
         // app.js wiring
         for (const re of [/import \* as game from '\.\/game\.js'/, /import \* as mastery from '\.\/mastery\.js'/, /import \* as toast from '\.\/toast\.js'/, /function renderXpChip/, /xp-chip/, /awardCardXP/, /pomodoro:done/, /case:graded/, /gamification/]) assert.match(appSrc, re);
         // CSS tokens

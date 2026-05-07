@@ -707,6 +707,59 @@ function openInfographicLightbox(items, startIdx) {
 }
 
 // ---- markdown with guide affordances ----
+// disfluency tokens removed at render time (source files untouched). conservative.
+const DISFLUENCY_RE = /\b(?:um+|uh+|er+m?|y'?know|you know|sort of|kind of|basically|i mean)\b[,]?\s*/gi;
+function cleanDisfluencies(s) {
+    return s.replace(DISFLUENCY_RE, '').replace(/\s{2,}/g, ' ').replace(/\s+([,.;:!?])/g, '$1').trim();
+}
+function typoRefine(s) {
+    s = s.replace(/(\s)--(\s)/g, '$1—$2');           // " -- " em-dash
+    s = s.replace(/(\d)\s*-\s*(\d)/g, '$1–$2');       // numeric range en-dash
+    s = s.replace(/\b(Mr|Mrs|Ms|Dr|Prof|St)\.\s+/g, '$1. '); // honorific nbsp
+    s = s.replace(/(\d)\s+(mg|mcg|ng|kg|g|mL|L|mmol|mEq|IU|U|bpm|mmHg|mm|cm)\b/g, '$1 $2');
+    return s;
+}
+// soft-split: paragraphs with >3 sentences AND >400 chars get broken into 2-3 sentence chunks.
+function softSplitPara(text) {
+    text = cleanDisfluencies(text);
+    text = typoRefine(text);
+    if (text.length <= 400) return [text];
+    let sentences = text.match(/[^.!?]+[.!?]+(?:["')\]]+)?(?:\s|$)|[^.!?]+$/g);
+    // fallback: punctuation-poor transcripts — split on " so "/" and "/" but "/" because " plus comma joints.
+    if (!sentences || sentences.length <= 3) {
+        if (text.length <= 700) return [text];
+        const seams = text.split(/(\s+(?:so|and|but|because|however|therefore|then|while|whereas)\s+)/i);
+        if (seams.length <= 3) sentences = text.match(/[^,]+,\s*/g) || [text];
+        else { sentences = []; for (let k = 0; k < seams.length; k += 2) sentences.push((seams[k] || '') + (seams[k+1] || '')); }
+        if (sentences.length <= 2) sentences = [text];
+    }
+    const chunks = [];
+    let buf = [], bufLen = 0;
+    for (const sent of sentences) {
+        buf.push(sent.trim());
+        bufLen += sent.length;
+        if (buf.length >= 2 && bufLen >= 220) { chunks.push(buf.join(' ')); buf = []; bufLen = 0; }
+    }
+    if (buf.length) {
+        if (chunks.length && buf.join(' ').length < 80) chunks[chunks.length - 1] += ' ' + buf.join(' ');
+        else chunks.push(buf.join(' '));
+    }
+    // final safety net: hard-wrap any chunk still over 900 chars on word boundaries near 500-char marks
+    const out = [];
+    for (const c of chunks) {
+        if (c.length <= 900) { out.push(c); continue; }
+        let rest = c;
+        while (rest.length > 900) {
+            let cut = rest.lastIndexOf(' ', 600);
+            if (cut < 300) cut = 600;
+            out.push(rest.slice(0, cut).trim());
+            rest = rest.slice(cut).trim();
+        }
+        if (rest) out.push(rest);
+    }
+    return out;
+}
+
 function renderMarkdown(md, subject) {
     if (!md) return '';
     const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -714,7 +767,7 @@ function renderMarkdown(md, subject) {
     const out = [];
     let listStack = [];
     let inCode = false, inQuote = false, para = [];
-    const flushPara = () => { if (para.length) { out.push('<p>' + inline(para.join(' ')) + '</p>'); para = []; } };
+    const flushPara = () => { if (para.length) { for (const chunk of softSplitPara(para.join(' '))) out.push('<p>' + inline(chunk) + '</p>'); para = []; } };
     const flushList = () => { while (listStack.length) out.push('</' + listStack.pop() + '>'); };
     const flushQuote = () => { if (inQuote) { out.push('</blockquote>'); inQuote = false; } };
     const flushAll = () => { flushPara(); flushList(); flushQuote(); };
