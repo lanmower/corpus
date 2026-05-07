@@ -1,8 +1,8 @@
 // subject-level video unlock gate. corpus.unlocked.v1
 // {[subject]: {watched:bool, watchedAt:ISO}}
-// Diabetes has no lecture video — auto-unlocked.
+// All 8 subjects ship a lecture video; no auto-unlocks.
 const KEY = 'corpus.unlocked.v1';
-const NO_VIDEO_SUBJECTS = new Set(['diabetes']);
+const NO_VIDEO_SUBJECTS = new Set();
 
 function readRaw() {
     try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch { return {}; }

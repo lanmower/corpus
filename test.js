@@ -363,9 +363,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         }
     });
 
-    t('videos: 7 subjects have ≥1 mp4 + diabetes 0 + shard.guide.videos populated + manifest videoCount + app wires .video-hero', () => {
-        const expectVideo = ['cardiology','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
-        for (const s of expectVideo) {
+    t('videos: 8 subjects each have ≥1 mp4 + shard.guide.videos populated + manifest videoCount + totals=8 + app wires .video-hero', () => {
+        for (const s of SUBJECTS) {
             const sh = SHARDMAP[s];
             assert.ok(Array.isArray(sh.guide.videos) && sh.guide.videos.length >= 1, `${s} missing videos`);
             const v = sh.guide.videos[0];
@@ -375,10 +374,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.strictEqual(meta.videoCount, sh.guide.videos.length, `${s} manifest videoCount mismatch`);
             assert.ok(fs.existsSync(path.join(ROOT, 'site', v.src)), `${s} video file missing on disk`);
         }
-        const dia = SHARDMAP['diabetes'];
-        assert.strictEqual((dia.guide.videos || []).length, 0, 'diabetes should have no videos');
-        const diaMeta = MANIFEST.subjects.find(x => x.subject === 'diabetes');
-        assert.strictEqual(diaMeta.videoCount, 0, 'diabetes manifest videoCount should be 0');
+        assert.strictEqual(MANIFEST.totals.videoCount, 8, 'manifest totals.videoCount should be 8');
         const app = READ('site/app.js');
         assert.ok(/buildVideoHero/.test(app), 'app.js missing buildVideoHero');
         assert.ok(/class:\s*'panel video-hero'/.test(app), 'app.js missing .video-hero class');
@@ -671,14 +667,17 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     const unlocked = await import('./site/unlocked.js');
     const newcards = await import('./site/newcards.js');
     const planMod = await import('./site/plan.js');
-    t('storage roundtrip + diabetes auto + predicate + cap default + plan locked-subject branch + app wiring + srs export', () => {
+    t('storage roundtrip + no auto-unlocks + predicate + cap default + plan locked-subject branch + app wiring + srs export', () => {
         global.localStorage.clear();
-        // diabetes auto-unlocked
-        assert.strictEqual(unlocked.isAutoUnlocked('diabetes'), true);
-        assert.strictEqual(unlocked.isUnlocked('diabetes'), true);
-        // cardiology starts locked
-        assert.strictEqual(unlocked.isAutoUnlocked('cardiology'), false);
-        assert.strictEqual(unlocked.isUnlocked('cardiology'), false);
+        // all 8 subjects ship a lecture video — none auto-unlocked
+        for (const s of SUBJECTS) {
+            assert.strictEqual(unlocked.isAutoUnlocked(s), false, `${s} should not be auto-unlocked`);
+            assert.strictEqual(unlocked.isUnlocked(s), false, `${s} should start locked`);
+        }
+        // manifest carries videoCount=1 per subject + totals.videoCount=8
+        for (const sm of MANIFEST.subjects) assert.strictEqual(sm.videoCount, 1, `${sm.subject} videoCount`);
+        assert.strictEqual(MANIFEST.totals.videoCount, 8);
+        assert.strictEqual(MANIFEST.totals.audioCount, 8);
         unlocked.markWatched('cardiology', '2026-05-06T12:00:00.000Z');
         assert.strictEqual(unlocked.isUnlocked('cardiology'), true);
         assert.strictEqual(unlocked.watchedAt('cardiology'), '2026-05-06T12:00:00.000Z');
