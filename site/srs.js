@@ -204,12 +204,14 @@ export function isNewCardForGate(state) {
     return (state.repetitions === 0 || state.repetitions == null) && (state.lastScore == null);
 }
 
-export function getDueCards(cardIds, states = loadStates()) {
+export function getDueCards(cardIds, states = loadStates(), isEligible = null) {
     const now = Date.now();
     return cardIds.filter(id => {
         const s = states[id] ?? defaultCardState();
         if (s.suspended) return false;
-        return (s.dueAt ?? 0) <= now;
+        if ((s.dueAt ?? 0) > now) return false;
+        if (isEligible && !isEligible(id, s)) return false;
+        return true;
     });
 }
 
@@ -238,7 +240,7 @@ export function updateCard(cardId, score, allCardIds = null) {
     return next;
 }
 
-export function getScheduleStats(cardIds, states = loadStates()) {
+export function getScheduleStats(cardIds, states = loadStates(), isEligible = null) {
     const now = Date.now();
     let due = 0, scheduled = 0, learning = 0, young = 0, mature = 0, leech = 0;
     let efSum = 0, efCount = 0, scoreSum = 0, scoreCount = 0;
@@ -246,7 +248,7 @@ export function getScheduleStats(cardIds, states = loadStates()) {
         const s = states[id];
         if (!s) continue;
         scheduled++;
-        if ((s.dueAt ?? 0) <= now) due++;
+        if ((s.dueAt ?? 0) <= now && (!isEligible || isEligible(id, s))) due++;
         if (s.phase === 'learning') learning++;
         else if (s.interval < 21) young++;
         else mature++;

@@ -113,17 +113,31 @@ function masteryFor(subject) {
     return Math.round((Object.values(ticks).filter(Boolean).length / total) * 100);
 }
 
+// Unified gate predicate factory. A card is eligible when:
+//   (a) its subject is unlocked (video watched, or auto-unlocked)
+//   (b) if it's "new" (never graded), the subject is still under its daily cap
+//   (c) already-graded cards always pass
+function eligibleForSubject(subject, sessionUsed = 0) {
+    const unl = unlocked.isUnlocked(subject);
+    const capRemaining = newcards.remaining(subject);
+    return (id, s) => {
+        if (!srs.isNewCardForGate(s)) return true;
+        if (!unl) return false;
+        return sessionUsed < capRemaining;
+    };
+}
+
 function dueCountFor(subject) {
     const sh = state.shards[subject]; if (!sh) return 0;
     const ids = sh.cards.map(c => c.id);
-    return srs.getDueCards(ids).length;
+    return srs.getDueCards(ids, srs.loadStates(), eligibleForSubject(subject)).length;
 }
 
 function totalDueAll() {
     let n = 0;
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject]; if (!sh) continue;
-        n += srs.getDueCards(sh.cards.map(c => c.id)).length;
+        n += srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates(), eligibleForSubject(meta.subject)).length;
     }
     return n;
 }
@@ -439,7 +453,7 @@ async function renderSubject() {
     const shard = await loadShard(subj);
     placeholder.remove();
 
-    const due = srs.getDueCards(shard.cards.map(c => c.id)).length;
+    const due = srs.getDueCards(shard.cards.map(c => c.id), srs.loadStates(), eligibleForSubject(subj)).length;
     const m = masteryFor(subj);
     const ticks = loadGuideTicks()[subj] || {};
 
@@ -753,7 +767,15 @@ async function renderReview() {
                 return false;
             });
         }
-        const dueIdsRaw = state.cramMode ? pool : srs.getDueCards(pool, states);
+        const cardByIdEarly = Object.fromEntries(allCards.map(c => [c.id, c]));
+        const subjEligibleR = {};
+        const reviewEligible = (id, s) => {
+            const c = cardByIdEarly[id]; if (!c) return true;
+            const subj = c._subject || c.subject; if (!subj) return true;
+            const fn = subjEligibleR[subj] || (subjEligibleR[subj] = eligibleForSubject(subj));
+            return fn(id, s);
+        };
+        const dueIdsRaw = state.cramMode ? pool : srs.getDueCards(pool, states, reviewEligible);
         const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
         // Unlock gate + per-subject daily new-card cap. Apply only to "new" cards
         // (repetitions===0 && lastScore==null). Already-graded cards bypass.
@@ -1035,11 +1057,18 @@ async function renderStats() {
     renderVerdictTable(rows);
 
     const cardIds = [];
+    const idSubject = {};
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject]; if (!sh) continue;
-        for (const c of sh.cards) cardIds.push(c.id);
+        for (const c of sh.cards) { cardIds.push(c.id); idSubject[c.id] = meta.subject; }
     }
-    const stats = srs.getScheduleStats(cardIds, states);
+    const subjEligible = {};
+    for (const meta of state.manifest.subjects) subjEligible[meta.subject] = eligibleForSubject(meta.subject);
+    const allEligible = (id, s) => {
+        const subj = idSubject[id]; if (!subj) return true;
+        return subjEligible[subj](id, s);
+    };
+    const stats = srs.getScheduleStats(cardIds, states, allEligible);
     const forecast = srs.getForecast(cardIds, 14, states);
     const p = progress.load();
 
@@ -1172,7 +1201,7 @@ function dueCountsBySubject() {
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject];
         if (!sh) { out[meta.subject] = 0; continue; }
-        out[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id)).length;
+        out[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates(), eligibleForSubject(meta.subject)).length;
     }
     return out;
 }
@@ -1480,7 +1509,7 @@ async function renderDrill() {
         const sub = w?.subject || state.manifest.subjects[0].subject;
         const sh = state.shards[sub];
         const ids = sh.cards.slice(0, 30).map(c => c.id);
-        const due = srs.getDueCards(ids, states);
+        const due = srs.getDueCards(ids, states, eligibleForSubject(sub));
         const pool = (due.length >= 10 ? due : ids).slice(0, 10);
         d = drill.start(pool, sub);
     }
@@ -1610,7 +1639,7 @@ function renderTimelineStrip() {
     const dueCounts = {};
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject]; if (!sh) continue;
-        dueCounts[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id)).length;
+        dueCounts[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates(), eligibleForSubject(meta.subject)).length;
     }
     const sched = schedule.getSchedule({ today, dueCounts });
     const blocks = sched.blocks.filter(b => b.date === today);
