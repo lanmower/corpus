@@ -196,21 +196,17 @@ export function daysUntilExam(cfg = loadConfig()) {
 
 export function effectiveDays(cfg = loadConfig()) { return Math.max(1, daysUntilExam(cfg) - 14); }
 
-// Predicate: is this card "new" for the unlock gate? Migration-safe — only
-// truly-untouched cards (repetitions===0 && lastScore==null) are subject to
-// the gate. Already-graded cards bypass forever.
 export function isNewCardForGate(state) {
     if (!state) return true;
     return (state.repetitions === 0 || state.repetitions == null) && (state.lastScore == null);
 }
 
-export function getDueCards(cardIds, states = loadStates(), isEligible = null) {
+export function getDueCards(cardIds, states = loadStates()) {
     const now = Date.now();
     return cardIds.filter(id => {
         const s = states[id] ?? defaultCardState();
         if (s.suspended) return false;
         if ((s.dueAt ?? 0) > now) return false;
-        if (isEligible && !isEligible(id, s)) return false;
         return true;
     });
 }
@@ -240,7 +236,7 @@ export function updateCard(cardId, score, allCardIds = null) {
     return next;
 }
 
-export function getScheduleStats(cardIds, states = loadStates(), isEligible = null) {
+export function getScheduleStats(cardIds, states = loadStates()) {
     const now = Date.now();
     let due = 0, scheduled = 0, learning = 0, young = 0, mature = 0, leech = 0;
     let efSum = 0, efCount = 0, scoreSum = 0, scoreCount = 0;
@@ -248,7 +244,7 @@ export function getScheduleStats(cardIds, states = loadStates(), isEligible = nu
         const s = states[id];
         if (!s) continue;
         scheduled++;
-        if ((s.dueAt ?? 0) <= now && (!isEligible || isEligible(id, s))) due++;
+        if ((s.dueAt ?? 0) <= now) due++;
         if (s.phase === 'learning') learning++;
         else if (s.interval < 21) young++;
         else mature++;
