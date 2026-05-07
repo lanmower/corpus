@@ -17,7 +17,7 @@ A service worker caches the shell + manifest + shards on first visit, so once yo
 
 ## What you get
 
-- **today** (the landing) — workspace hero, status line (`day N · M due · streak K · goal X/Y`), today's schedule checklist with click-through to each block, daily-plan summary, recommended cases, subject grid, last-7-days sparkline.
+- **today** (the landing) — workspace hero, status line (`YYYY-MM-DD · M due · X reviewed today`), today's schedule checklist with click-through to each block, daily-plan summary, recommended cases, subject grid, last-7-days sparkline.
 - **guides** — eight rewritten study guides in a grid, each card showing section count, KB size, ~min read, mastery%.
 - **subject** — full study-guide prose with section checkboxes, mastery bar, infographics, audio deep-dive, lecture video (where present), flashcards, case list.
 - **review** — spaced repetition with friendly four-grade buttons (`again · hard · good · easy`); review-progress line, end-of-session summary, undo last grade with `u`.
@@ -47,9 +47,7 @@ Seventeen `localStorage` keys under `corpus.*`, all under your control. A few of
 | `corpus.schedule.v1` | Today's blocks + reconciliation surplus/rollover |
 | `corpus.progress.v1` | Streak, daily goal, today's counters, last-60-days history |
 | `corpus.guide.v1` | Per-subject "I understand this" ticks on guide sections |
-| `corpus.notes.v1` (deprecated, retained) | Highlights/notes — module removed, data preserved |
 | `corpus.theme.v1` | `light` · `dark` · `contrast` · `auto` |
-| `corpus.game.v1` | XP, level, badge unlocks |
 | `corpus.mistakes.v1` | Last 200 mistakes for the mistake log |
 | `corpus.flagged.v1` | Cards flagged with `f` for later |
 | `corpus.usercards.v1` | Personal cards added with `+` |
@@ -81,7 +79,7 @@ Source materials (audio transcripts, book texts) are archived offline at `D:/med
 node test.js
 ```
 
-One integration test under 750 lines, sixteen groups, real data, real system — covers deterministic IDs, scheduler invariants, schedule reconcile (surplus + rollover), persistence, the triage disclosure gate, student-mode chrome, theme/print/a11y, search index, progress streak math, service worker shell, PWA manifest, gamification XP math, video + audio + syllabus pipeline, and per-route titles.
+One integration test under 200 lines, real data, real system — covers data integrity, scheduler invariants, schedule reconcile, persistence, triage disclosure gate, student-mode chrome, theme/print/a11y, search index, progress streak math, service worker shell, and PWA manifest.
 
 ## License
 
