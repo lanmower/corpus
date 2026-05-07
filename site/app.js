@@ -1178,7 +1178,7 @@ function dueCountsBySubject() {
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject];
         if (!sh) { out[meta.subject] = 0; continue; }
-        out[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates())).length;
+        out[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates()).length;
     }
     return out;
 }
