@@ -99,9 +99,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     });
 
     console.log('# restyle: tokens + lowercase + no archivo + no hero + meaningful color');
-    t('Lora prose + system-ui chrome + JetBrains mono + no Archivo + meaningful color tokens + no hero copy', () => {
-        // Font swap: Lora present, Archivo Black gone
-        assert.match(indexHtml, /Lora/);
+    t('sans-everywhere chrome + JetBrains mono + no Archivo + no Lora + meaningful color tokens + no hero copy', () => {
+        // Sans-everywhere: no serif Lora, no display Archivo
+        assert.ok(!/Lora/.test(indexHtml));
         assert.ok(!/Archivo\+?Black/i.test(indexHtml));
         assert.ok(!/Archivo Black/i.test(styleCss));
         // No hero / workspace framing
@@ -666,6 +666,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(styleCss, /\.subject-card\.locked/);
         // srs.js exports the predicate
         assert.match(READ('site/srs.js'), /export function isNewCardForGate/);
+        // video auto-unlock at >=30s playback
+        assert.match(appSrc, /buildVideoHero\(videos, subj\)/);
+        assert.match(appSrc, /timeupdate/);
+        assert.match(appSrc, /currentTime[^\n]+>=\s*30/);
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

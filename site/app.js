@@ -517,23 +517,34 @@ async function renderSubject() {
     const cardsPanel = cardsDetails;
 
     const infographicsPanel = buildInfographicsPanel(shard.guide?.infographics || []);
-    const videoHero = buildVideoHero(shard.guide?.videos || []);
+    const videoHero = buildVideoHero(shard.guide?.videos || [], subj);
     const right = el('div', {}, videoHero, guideBodyPanel, infographicsPanel, cardsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
     stage.append(wrap);
 }
 
-function buildVideoHero(videos) {
+function buildVideoHero(videos, subj) {
     if (!Array.isArray(videos) || videos.length === 0) return null;
     const v = videos[0];
     const sub = v.title || 'lecture video';
     const meta = [v.durationMin ? `${v.durationMin} min` : null, v.sizeMB ? `${v.sizeMB} MB` : null].filter(Boolean).join(' · ');
     const source = v.url || v.src;
+    const vidEl = el('video', { controls: 'controls', preload: 'metadata', playsinline: 'playsinline', src: source });
+    if (subj && !unlocked.isUnlocked(subj)) {
+        let armed = false;
+        vidEl.addEventListener('timeupdate', () => {
+            if (armed) return;
+            if ((vidEl.currentTime || 0) >= 30) {
+                armed = true;
+                unlocked.markWatched(subj);
+                toast.info(`${subj} unlocked — cards now in review`);
+                render();
+            }
+        });
+    }
     return el('div', { class: 'panel video-hero', 'data-video-id': v.filename },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'watch first'), meta),
-        el('div', { class: 'video-hero-frame' },
-            el('video', { controls: 'controls', preload: 'metadata', playsinline: 'playsinline', src: source })
-        ),
+        el('div', { class: 'video-hero-frame' }, vidEl),
         el('div', { class: 'video-hero-caption' }, sub)
     );
 }
