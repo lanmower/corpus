@@ -1,6 +1,4 @@
 // toast container — bottom-right, max 3 visible, auto-dismiss 3s
-import * as game from './game.js';
-
 const CONTAINER_ID = 'toast-container';
 const MAX = 3;
 const DURATION = 3000;
@@ -17,10 +15,7 @@ function ensureContainer() {
     return c;
 }
 
-function suppress() { try { return !!game.load().suppressToasts; } catch { return false; } }
-
 function push(kind, text, icon) {
-    if (suppress()) return;
     const c = ensureContainer();
     while (c.children.length >= MAX) c.firstChild.remove();
     const t = document.createElement('div');
@@ -45,20 +40,6 @@ let bound = false;
 export function bind() {
     if (bound || typeof window === 'undefined') return;
     bound = true;
-    window.addEventListener('game:xp', e => {
-        const { delta, reason, leveledUp, level } = e.detail || {};
-        if (delta) xp(delta, reason);
-        if (leveledUp) { levelUp(level); try { import('./confetti.js').then(c => c.fire && c.fire()); } catch {} }
-    });
-    window.addEventListener('game:badge', e => {
-        const { label, icon } = e.detail || {};
-        badge(label, icon);
-        try { import('./confetti.js').then(c => c.fire && c.fire()); } catch {}
-    });
-    window.addEventListener('quest:completed', e => {
-        const { label, reward } = e.detail || {};
-        quest(label, reward);
-    });
 }
 
 if (typeof window !== 'undefined') window.__toast = { xp, badge, quest, levelUp, info, bind };
