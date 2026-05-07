@@ -172,20 +172,24 @@ function updateFooter() {
     }
 }
 
+let __rendering = false;
 function render() {
-    stage.innerHTML = '';
-    if (!state.manifest) { stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
-    const r = state.route;
-    // day-of-exam minimal mode — only mistakes + farewell
-    const days = srs.daysUntilExam();
-    if (days === 0 && r !== 'mistakes' && r !== 'settings') {
-        renderExamDay(); updateFooter(); return;
-    }
-    const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
-        review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
-        settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
-    (fns[r] || renderToday)();
-    updateFooter();
+    __rendering = true;
+    try {
+        stage.innerHTML = '';
+        if (!state.manifest) { stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
+        const r = state.route;
+        // day-of-exam minimal mode — only mistakes + farewell
+        const days = srs.daysUntilExam();
+        if (days === 0 && r !== 'mistakes' && r !== 'settings') {
+            renderExamDay(); updateFooter(); return;
+        }
+        const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
+            review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
+            settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
+        (fns[r] || renderToday)();
+        updateFooter();
+    } finally { __rendering = false; }
 }
 
 // ---- shell-prompt status line ----
@@ -1819,15 +1823,17 @@ function registerSW() {
         window.addEventListener('online', updateOnlineStatus);
         window.addEventListener('offline', updateOnlineStatus);
         window.addEventListener('storage', e => {
+            if (__rendering) return;
             if (e.key && /^corpus\./.test(e.key)) render();
         });
         try {
             const ch = new BroadcastChannel('corpus');
             ch.addEventListener('message', e => {
                 if (e.data?.type === 'schedule:updated') {
+                    if (__rendering) return;
                     if (state.route === 'calendar') {
                         // calendar self-updates via schedule.onUpdate; nothing to do
-                    } else if (state.route === 'today' || state.route === 'settings') {
+                    } else if (state.route === 'settings') {
                         render();
                     }
                 } else if (e.data?.type === 'case:graded') {
