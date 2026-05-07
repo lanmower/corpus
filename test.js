@@ -171,12 +171,21 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /today-primary/);
         // free-study fallback CTA
         assert.match(appSrc, /just review whatever's due/);
-        // status-line shape: day N · M due · streak K · goal X/Y
+        // status-line shape: date · M due · X reviewed today (gamification stripped)
         assert.match(appSrc, /renderStatusLine/);
-        assert.match(appSrc, /`day \$\{day\}`/);
         assert.match(appSrc, /`\$\{due\} due`/);
-        assert.match(appSrc, /`streak \$\{p\.streak\}`/);
-        assert.match(appSrc, /`goal \$\{p\.todayGraded\}\/\$\{p\.dailyGoal\}`/);
+        assert.match(appSrc, /reviewed today/);
+        // gamification removed
+        assert.ok(!/`day \$\{day\}`/.test(appSrc), 'day chip removed from status line');
+        assert.ok(!/`streak \$\{p\.streak\}`/.test(appSrc), 'streak chip removed from status line');
+        assert.ok(!/`goal \$\{p\.todayGraded\}\/\$\{p\.dailyGoal\}`/.test(appSrc), 'goal chip removed from status line');
+        // TOC features
+        assert.match(appSrc, /buildGuideToc/);
+        assert.match(appSrc, /toc-filter/);
+        assert.match(appSrc, /toc-h2-progress/);
+        assert.match(appSrc, /mountBackToTop/);
+        assert.match(appSrc, /back-to-top/);
+        assert.match(appSrc, /applyTocFilter/);
         // cram banner trigger
         assert.match(appSrc, /renderCramBanner/);
         assert.match(appSrc, /days > 14/);
@@ -490,32 +499,18 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const re of [/BroadcastChannel\('corpus'\)/, /schedule:updated/, /dispatchEvent/]) assert.match(READ('site/schedule.js'), re);
     });
 
-    console.log('# phase 2 gamification + mastery');
-    const game = await import('./site/game.js');
+    console.log('# gamification stripped + mastery + sw');
     const masteryMod = await import('./site/mastery.js');
-    t('xp math + award + mastery + toasts + sw + ?v=__BUILD_VERSION__ + no quests/badges/notes', () => {
+    t('game/confetti deleted + mastery + sw + ?v=__BUILD_VERSION__ + no quests/badges/notes/xp', () => {
         global.localStorage.clear();
-        // xp curve
-        assert.strictEqual(game.xpForLevel(1), 100);
-        assert.ok(game.xpForLevel(2) > game.xpForLevel(1));
-        assert.strictEqual(game.levelFromXP(0), 1);
-        assert.ok(game.levelFromXP(100000) > 10);
-        // award xp persists + level rise
-        const g1 = game.awardXP(50, 'card_grade');
-        assert.strictEqual(g1.xp, 50);
-        assert.strictEqual(g1.level, 1);
-        const g2 = game.awardXP(60, 'card_grade');
-        assert.ok(g2.xp >= 110);
-        assert.ok(g2.level >= 2);
-        // toast suppression flag persists
-        game.setSuppressToasts(true);
-        assert.strictEqual(game.load().suppressToasts, true);
-        game.setSuppressToasts(false);
-        // removed surfaces — modules deleted, app references gone
+        // game.js + confetti.js removed
+        assert.ok(!fs.existsSync(path.join(ROOT, 'site/game.js')), 'game.js should be deleted');
+        assert.ok(!fs.existsSync(path.join(ROOT, 'site/confetti.js')), 'confetti.js should be deleted');
         assert.ok(!fs.existsSync(path.join(ROOT, 'site/quests.js')), 'quests.js should be deleted');
         assert.ok(!fs.existsSync(path.join(ROOT, 'site/badges.js')), 'badges.js should be deleted');
         assert.ok(!fs.existsSync(path.join(ROOT, 'site/notes.js')), 'notes.js should be deleted');
-        for (const re of [/quests\.js/, /badges\.js/, /notes\.js/, /renderQuests\b/, /renderBadges\b/, /renderNotes\b/, /handleHighlightOrNote/, /runBadgeEvaluation/]) assert.ok(!re.test(appSrc), 'app.js still references ' + re);
+        // app.js no longer references game/confetti/xp/awardXP
+        for (const re of [/from '\.\/game\.js'/, /from '\.\/confetti\.js'/, /\bawardXP\b/, /\brenderXpChip\b/, /\brenderXpBarFull\b/, /\bawardCardXP\b/, /\bxp-chip\b/, /game\./, /confetti\./, /quests\.js/, /badges\.js/, /notes\.js/, /renderQuests\b/, /renderBadges\b/, /renderNotes\b/, /handleHighlightOrNote/, /runBadgeEvaluation/]) assert.ok(!re.test(appSrc), 'app.js still references ' + re);
         // aliases in place
         assert.match(appSrc, /notes:\s*'today'/);
         assert.match(appSrc, /quests:\s*'today'/);
@@ -623,11 +618,14 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const monster = ('lorem ipsum dolor sit amet '.repeat(60)).trim();
         const wrapped = H.softSplitPara(monster);
         assert.ok(wrapped.every(c => c.length <= 900), 'monster paragraph not hard-wrapped: ' + wrapped.map(c=>c.length).join(','));
-        // app.js wiring
-        for (const re of [/import \* as game from '\.\/game\.js'/, /import \* as mastery from '\.\/mastery\.js'/, /import \* as toast from '\.\/toast\.js'/, /function renderXpChip/, /xp-chip/, /awardCardXP/, /pomodoro:done/, /case:graded/, /gamification/]) assert.match(appSrc, re);
-        // CSS tokens
-        assert.match(styleCss, /--c-xp/);
-        assert.match(styleCss, /\.xp-chip/); assert.match(styleCss, /\.toast-container/);
+        // app.js wiring (gamification stripped)
+        for (const re of [/import \* as mastery from '\.\/mastery\.js'/, /import \* as toast from '\.\/toast\.js'/]) assert.match(appSrc, re);
+        // gamification fully removed
+        for (const re of [/import \* as game from/, /function renderXpChip/, /xp-chip/, /awardCardXP/, /pomodoro:done/]) assert.ok(!re.test(appSrc), 'app.js still has ' + re);
+        // CSS tokens — toast container still present (toasts still used)
+        assert.match(styleCss, /\.toast-container/);
+        // gamification CSS gone
+        for (const re of [/--c-xp/, /\.xp-chip/, /\.confetti-canvas/]) assert.ok(!re.test(styleCss), 'style.css still has ' + re);
         // triage-live broadcasts case:graded
         assert.match(liveSrc, /case:graded/);
     });

@@ -16,7 +16,6 @@ import * as confidence from './confidence.js';
 import * as newcards from './newcards.js';
 import * as schedule from './schedule.js';
 import * as calendar from './calendar.js';
-import * as game from './game.js';
 import * as mastery from './mastery.js';
 import * as toast from './toast.js';
 import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
@@ -194,15 +193,14 @@ function render() {
 
 // ---- shell-prompt status line ----
 function renderStatusLine(p, due) {
-    const day = p.streak || 0;
+    const date = new Date().toISOString().slice(0, 10);
+    const reviewed = p.todayGraded || 0;
     return el('div', { class: 'status-line', role: 'status', 'aria-label': 'study status' },
-        el('span', {}, `day ${day}`),
+        el('span', { class: 'date' }, date),
         el('span', { class: 'sep' }, '·'),
         el('span', { class: 'due' }, `${due} due`),
         el('span', { class: 'sep' }, '·'),
-        el('span', { class: 'streak' }, `streak ${p.streak}`),
-        el('span', { class: 'sep' }, '·'),
-        el('span', {}, `goal ${p.todayGraded}/${p.dailyGoal}`)
+        el('span', {}, `${reviewed} reviewed today`)
     );
 }
 
@@ -274,7 +272,6 @@ function renderToday() {
     stage.append(renderMasteryRing());
 
     if (DEBUG) {
-        stage.append(renderXpBarFull());
         stage.append(el('p', { class: 'summary-line' },
             'today: ', el('span', { class: 'num' }, String(due)), ' due cards · ',
             el('span', { class: 'num' }, String(cases)), ' cases queued · ~',
@@ -406,39 +403,7 @@ async function renderSubject() {
             el('div', { style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' }, `${shard.triage?.scenarioCount || 0} cases`),
             el('div', { class: 'kbd-hint', style: 'margin-top:8px' }, 'press r for just-read')
         ),
-        el('div', { class: 'panel' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'sections')),
-            ...(() => {
-                const counts = sectionCardCounts(subj);
-                return (shard.guide?.sections || []).slice(0, 50).map(s => {
-                    const lineKey = String(s.line);
-                    const checked = !!ticks[lineKey];
-                    const n = counts.get(lineKey) || 0;
-                    const badgeText = n ? `(${n} card${n === 1 ? '' : 's'})` : '';
-                    const row = el('label', { class: `guide-section h${s.level}` + (checked ? ' done' : '') },
-                        el('input', {
-                            type: 'checkbox', class: 'guide-tick',
-                            ...(checked ? { checked: 'checked' } : {}),
-                            'aria-label': `mark "${s.title}" understood`,
-                            on: { change: e => {
-                                const all = loadGuideTicks();
-                                (all[subj] = all[subj] || {})[lineKey] = e.target.checked;
-                                saveGuideTicks(all);
-                                row.classList.toggle('done', e.target.checked);
-                                lastpos.save('subject', subj);
-                                if (e.target.checked) {
-                                    game.awardXP(game.XP.section_tick, 'section');
-                                }
-                                render();
-                            } }
-                        }),
-                        el('span', {}, s.title),
-                        badgeText ? el('span', { class: 'sec-card-badge' }, ' ', badgeText) : null
-                    );
-                    return row;
-                });
-            })()
-        )
+        buildGuideToc(subj, shard, ticks)
     );
 
     const guideBodyPanel = shard.guide?.body ? el('div', { class: 'panel guide-body-panel' },
@@ -469,6 +434,126 @@ async function renderSubject() {
     const right = el('div', {}, videoHero, audioPanel, guideBodyPanel, infographicsPanel, cardsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
     stage.append(wrap);
+    mountBackToTop();
+}
+
+function slugify(t) { return String(t).toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''); }
+
+function buildGuideToc(subj, shard, ticks) {
+    const counts = sectionCardCounts(subj);
+    const sections = (shard.guide?.sections || []).filter(s => s.level === 2 || s.level === 3);
+    // Group H3 children under H2 parents
+    const groups = [];
+    let cur = null;
+    for (const s of sections) {
+        if (s.level === 2) { cur = { h2: s, children: [] }; groups.push(cur); }
+        else if (s.level === 3) {
+            if (!cur) { cur = { h2: null, children: [] }; groups.push(cur); }
+            cur.children.push(s);
+        }
+    }
+    const totalSections = sections.length;
+    const tickedTotal = sections.filter(s => ticks[String(s.line)]).length;
+
+    const filterInput = el('input', {
+        type: 'search', class: 'toc-filter', placeholder: 'filter sections…',
+        'aria-label': 'filter guide sections',
+        on: { input: e => applyTocFilter(panel, e.target.value) }
+    });
+
+    const renderRow = (s) => {
+        const lineKey = String(s.line);
+        const checked = !!ticks[lineKey];
+        const n = counts.get(lineKey) || 0;
+        const badgeText = n ? `(${n})` : '';
+        const anchorId = `g-${slugify(s.title)}-${s.line}`;
+        const row = el('div', { class: `toc-row h${s.level}` + (checked ? ' done' : ''), 'data-title': s.title.toLowerCase() },
+            el('input', {
+                type: 'checkbox', class: 'guide-tick',
+                ...(checked ? { checked: 'checked' } : {}),
+                'aria-label': `mark "${s.title}" understood`,
+                on: { change: e => {
+                    const all = loadGuideTicks();
+                    (all[subj] = all[subj] || {})[lineKey] = e.target.checked;
+                    saveGuideTicks(all);
+                    row.classList.toggle('done', e.target.checked);
+                    lastpos.save('subject', subj);
+                    render();
+                } }
+            }),
+            el('a', { class: 'toc-link', href: `#${anchorId}`,
+                on: { click: e => {
+                    e.preventDefault();
+                    const target = document.getElementById(anchorId);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } } }, s.title),
+            badgeText ? el('span', { class: 'sec-card-badge' }, badgeText) : null
+        );
+        return row;
+    };
+
+    const groupEls = groups.map((g, gi) => {
+        if (!g.h2) {
+            return el('div', { class: 'toc-group toc-group-bare' }, ...g.children.map(renderRow));
+        }
+        const childRows = g.children.map(renderRow);
+        const childTicked = g.children.filter(s => ticks[String(s.line)]).length;
+        const h2Ticked = !!ticks[String(g.h2.line)];
+        const totalKids = g.children.length;
+        const progressLabel = totalKids ? `${childTicked}/${totalKids}` : (h2Ticked ? '✓' : '');
+        const details = el('details', { class: 'toc-group', open: 'open' },
+            el('summary', { class: 'toc-h2-summary' },
+                el('span', { class: 'toc-h2-title' }, g.h2.title),
+                el('span', { class: 'toc-h2-progress mono' }, progressLabel)
+            ),
+            renderRow(g.h2),
+            ...childRows
+        );
+        return details;
+    });
+
+    const panel = el('div', { class: 'panel toc-panel' },
+        el('div', { class: 'panel-head' },
+            el('span', { class: 'title' }, 'contents'),
+            el('span', { class: 'toc-progress-summary mono' }, `${tickedTotal}/${totalSections}`)),
+        filterInput,
+        el('div', { class: 'toc-groups' }, ...groupEls)
+    );
+    return panel;
+}
+
+function applyTocFilter(panel, q) {
+    const needle = String(q || '').trim().toLowerCase();
+    const rows = panel.querySelectorAll('.toc-row');
+    rows.forEach(r => {
+        const title = r.getAttribute('data-title') || '';
+        const match = !needle || title.includes(needle);
+        r.style.display = match ? '' : 'none';
+    });
+    // hide groups with no visible children + non-matching h2
+    panel.querySelectorAll('.toc-group').forEach(g => {
+        const visible = Array.from(g.querySelectorAll('.toc-row')).some(r => r.style.display !== 'none');
+        g.style.display = visible ? '' : 'none';
+        if (needle && visible && g.tagName === 'DETAILS') g.setAttribute('open', 'open');
+    });
+}
+
+function mountBackToTop() {
+    let btn = document.getElementById('back-to-top');
+    if (!btn) {
+        btn = el('button', { id: 'back-to-top', class: 'back-to-top hidden',
+            'aria-label': 'back to top',
+            on: { click: () => window.scrollTo({ top: 0, behavior: 'smooth' }) } }, '↑ top');
+        document.body.appendChild(btn);
+    }
+    const onScroll = () => {
+        if (window.scrollY > 400) btn.classList.remove('hidden');
+        else btn.classList.add('hidden');
+    };
+    window.removeEventListener('scroll', window.__backToTopHandler || (() => {}));
+    window.__backToTopHandler = onScroll;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 }
 
 function buildVideoHero(videos, subj) {
@@ -924,8 +1009,6 @@ function gradeReview(cardId, score) {
     // Mistake log
     const card = state.reviewQueue?.[state.reviewIndex];
     if (score <= 2 && card) mistakes.logMistake(cardId, card._subject, score);
-    // Gamification — XP, combo, badges, quests
-    awardCardXP(score, card);
     // Undo record
     undo.record(cardId, prev);
     showUndoToast();
@@ -933,23 +1016,6 @@ function gradeReview(cardId, score) {
     if (state.reviewIndex >= state.reviewQueueIds.length) state.reviewIndex = 0;
     state.reviewRevealed = false;
     renderReview();
-}
-
-function awardCardXP(score, card) {
-    const friendly = score <= 0 ? 1 : (score <= 2 ? 2 : (score <= 4 ? 3 : 4));
-    const amt = game.XP['card_grade_' + friendly] || 10;
-    game.awardXP(amt, 'card_grade');
-    const combo = game.bumpCombo(score);
-    if (combo >= 3) game.awardXP(game.XP.combo_bonus, 'combo');
-    // daily-goal-hit one-shot
-    const p = progress.load();
-    if (p.todayGraded >= (p.dailyGoal || 30)) {
-        const g = game.load();
-        if (g.lastGoalHitDate !== p.todayDate) {
-            game.awardXP(game.XP.daily_goal_hit, 'daily_goal');
-            const g2 = game.load(); g2.lastGoalHitDate = p.todayDate; game.save(g2);
-        }
-    }
 }
 
 function showUndoToast() {
@@ -1367,18 +1433,6 @@ async function renderSettings() {
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'data')),
         el('div', { class: 'toolbar' }, exportBtn, importBtn, importInput, ankiBtn, resetBtn)));
     stage.append(renderScheduleConfigPanel());
-    // Phase 2: gamification settings
-    const gState = game.load();
-    const suppressInput = el('input', { type: 'checkbox', id: 'suppress-toasts',
-        ...(gState.suppressToasts ? { checked: 'checked' } : {}),
-        on: { change: e => game.setSuppressToasts(e.target.checked) } });
-    const resetGameBtn = el('button', { class: 'chip', 'aria-label': 'reset gamification',
-        on: { click: () => { if (confirm('reset XP?')) { game.reset(); render(); } } } }, 'reset gamification');
-    stage.append(el('div', { class: 'panel settings-section gamification' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'gamification')),
-        el('div', { class: 'toolbar' },
-            el('label', { for: 'suppress-toasts' }, suppressInput, ' suppress toasts'),
-            resetGameBtn)));
     stage.append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'help')),
         el('div', { class: 'toolbar' }, shortcutsBtn,
@@ -1554,30 +1608,6 @@ function renderSparkline(history, days = 7) {
     return svg;
 }
 
-function renderXpChip() {
-    const g = game.load();
-    const info = game.xpToNext(g.xp);
-    const frac = Math.round(info.frac * 100);
-    return el('a', { id: 'xp-chip', class: 'xp-chip', href: '#stats',
-        'aria-label': `level ${info.level}, ${info.inLvl} of ${info.need} xp`,
-        on: { click: e => { e.preventDefault(); go('stats'); } } },
-        el('span', { class: 'xp-lvl' }, `Lv ${info.level}`),
-        el('span', { class: 'xp-bar' }, el('span', { class: 'xp-fill', style: `width:${frac}%` })),
-        el('span', { class: 'xp-num mono' }, `${info.inLvl}/${info.need}`)
-    );
-}
-
-function renderXpBarFull() {
-    const g = game.load();
-    const info = game.xpToNext(g.xp);
-    return el('div', { class: 'xp-bar-full panel' },
-        el('div', { class: 'xp-bar-head' },
-            el('span', { class: 'xp-bar-lvl' }, `level ${info.level}`),
-            el('span', { class: 'xp-bar-num mono' }, `${info.inLvl} / ${info.need} xp · total ${g.xp}`)),
-        el('div', { class: 'xp-bar-track' }, el('div', { class: 'xp-bar-fill', style: `width:${Math.round(info.frac*100)}%` }))
-    );
-}
-
 function renderMasteryRing() {
     const m = mastery.overallProgress(state.manifest, state.shards);
     const r = 48, c = 2 * Math.PI * r;
@@ -1749,15 +1779,6 @@ function mountTopbar() {
     nav.append(moreWrap);
     nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta' }, 'tutor'));
     const right = document.querySelector('header.topbar .status');
-    const xpChip = renderXpChip();
-    right.parentElement.insertBefore(xpChip, right);
-    if (typeof window !== 'undefined') {
-        window.addEventListener('game:xp', () => {
-            const newChip = renderXpChip();
-            const old = document.getElementById('xp-chip');
-            if (old && old.parentElement) old.parentElement.replaceChild(newChip, old);
-        });
-    }
     const days = srs.daysUntilExam();
     const countdown = el('a', { class: 'exam-countdown', href: '#settings',
         title: 'days to exam — click to edit', 'aria-label': `${days} days to exam`,
@@ -1816,9 +1837,6 @@ function registerSW() {
         }
         registerSW();
         toast.bind();
-        window.addEventListener('pomodoro:done', () => {
-            game.awardXP(game.XP.pomodoro_complete, 'pomodoro');
-        });
         updateOnlineStatus();
         window.addEventListener('online', updateOnlineStatus);
         window.addEventListener('offline', updateOnlineStatus);
@@ -1836,9 +1854,6 @@ function registerSW() {
                     } else if (state.route === 'settings') {
                         render();
                     }
-                } else if (e.data?.type === 'case:graded') {
-                    const score = e.data.score || 0;
-                    game.awardXP(game.XP.case_graded + (score >= 0.7 ? game.XP.case_passed_bonus : 0), 'case');
                 }
             });
             state.broadcastChannel = ch;
