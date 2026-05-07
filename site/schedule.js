@@ -68,32 +68,60 @@ export function allocateSubjects(totalMin, weights, dueCounts) {
 }
 
 // Build blocks for a single day. Pomodoro-segmented per subject. Chronotype shifts start hour.
-export function buildDayBlocks(cfg, dateIso, dueCounts) {
+// Each study block carries a work spec: plannedReview/plannedNew/plannedSections/plannedCases.
+// extras: { ticksAll: {[subj]:{[line]:bool}}, shards: {[subj]:{cards,guide,triage}}, casesDone: {[subj]:Set} }
+export function buildDayBlocks(cfg, dateIso, dueCounts, extras = {}) {
     const total = dayMinutes(cfg, dateIso);
     if (total <= 0) return [];
     const startHour = cfg.chronotype === 'morning' ? 8 : (cfg.chronotype === 'evening' ? 17 : 12);
     const allocs = allocateSubjects(total, cfg.weights, dueCounts);
+    const intensityMul = INTENSITY_FACTOR[cfg.intensity] || 1;
     const blocks = [];
     let cur = startHour * 60;
+    const subjFirstSeen = {};
     for (const a of allocs) {
         let left = a.min;
+        let firstBlockForSubj = true;
         while (left >= 10) {
             const len = Math.min(cfg.pomodoro || 25, left);
+            const subjShareOfTotal = a.min > 0 ? len / a.min : 0;
+            const due = dueCounts[a.subject] || 0;
+            const plannedReview = Math.max(0, Math.round(due * subjShareOfTotal));
+            const plannedNew = firstBlockForSubj ? Math.round(5 * intensityMul) : 0;
+            let plannedSections = [];
+            let plannedCases = [];
+            if (firstBlockForSubj) {
+                const sh = (extras.shards || {})[a.subject];
+                const ticks = ((extras.ticksAll || {})[a.subject]) || {};
+                if (sh && sh.guide && Array.isArray(sh.guide.sections)) {
+                    const next = sh.guide.sections.find(s => !ticks[String(s.line)]);
+                    if (next) plannedSections = [String(next.line)];
+                }
+                const done = (extras.casesDone || {})[a.subject] || new Set();
+                if (sh && sh.triage && Array.isArray(sh.triage.scenarios)) {
+                    const nextCase = sh.triage.scenarios.find(sc => !done.has(sc.id || sc.name));
+                    if (nextCase) plannedCases = [nextCase.id || nextCase.name];
+                }
+                subjFirstSeen[a.subject] = true;
+            }
             blocks.push({
                 id: `${dateIso}-${a.subject}-${cur}`,
                 date: dateIso, subject: a.subject,
-                startMin: cur, len,
-                kind: left === a.min ? 'study' : 'study',
-                done: false, locked: false
+                startMin: cur, len, kind: 'study',
+                done: false, locked: false,
+                plannedReview, plannedNew, plannedSections, plannedCases,
+                completedReview: 0, completedNew: 0,
+                completedSections: [], completedCases: [],
+                rollover: null, over: false, surplus: 0
             });
-            cur += len; left -= len;
+            cur += len; left -= len; firstBlockForSubj = false;
             if (left >= 10) { blocks.push({ id: `${dateIso}-break-${cur}`, date: dateIso, subject: null, startMin: cur, len: cfg.breakLen || 5, kind: 'break', done: false, locked: false }); cur += cfg.breakLen || 5; }
         }
     }
     return blocks;
 }
 
-export function regenerate({ today = isoDate(new Date()), dueCounts = {}, horizonDays = null } = {}) {
+export function regenerate({ today = isoDate(new Date()), dueCounts = {}, horizonDays = null, extras = {} } = {}) {
     const cfg = loadConfig();
     const dl = daysBetween(today, cfg.examDate);
     const horizon = horizonDays != null ? horizonDays : Math.max(7, Math.min(60, dl + 1));
@@ -103,7 +131,7 @@ export function regenerate({ today = isoDate(new Date()), dueCounts = {}, horizo
     const out = [];
     for (let i = 0; i < horizon; i++) {
         const date = addDays(today, i);
-        const day = buildDayBlocks(cfg, date, dueCounts);
+        const day = buildDayBlocks(cfg, date, dueCounts, extras);
         for (const b of day) {
             if (lockedById.has(b.id)) out.push(lockedById.get(b.id));
             else out.push(b);
@@ -140,6 +168,94 @@ export function lockBlock(id, locked = true) {
     const s = loadSchedule();
     const b = s.blocks.find(x => x.id === id); if (!b) return null;
     b.locked = !!locked; saveSchedule(s); return b;
+}
+
+// Reconcile a schedule against actual student work.
+// inputs:
+//   today: ISO date. Past blocks that fell short roll their shortfall into today's first
+//     block of the same subject as `rollover:{review,new}`.
+//   actualBySubject: { [subject]: { review, new, sectionsRead:Set<line>, casesDone:Set<id> } }
+//     aggregated across the schedule's date range. Caller may pre-aggregate or pass per-day.
+//   actualByDayBySubject (optional): { [date]:{ [subject]:{review,new,sectionsRead,casesDone} } }
+//     for finer-grained reconciliation. When omitted, all actuals are treated as today's.
+// Mutates blocks: sets completed*, done, over, surplus, rollover. Saves and returns the schedule.
+export function reconcile({ today = isoDate(new Date()), actualByDayBySubject = null, actualBySubject = {} } = {}) {
+    const s = loadSchedule();
+    const blocks = s.blocks;
+    // index per (date, subject) -> first study block
+    const firstStudy = {};
+    for (const b of blocks) {
+        if (b.kind !== 'study') continue;
+        const k = `${b.date}|${b.subject}`;
+        if (!firstStudy[k]) firstStudy[k] = b;
+    }
+    // helper to fetch actuals for a (date, subject)
+    const actFor = (date, subj) => {
+        if (actualByDayBySubject && actualByDayBySubject[date] && actualByDayBySubject[date][subj]) return actualByDayBySubject[date][subj];
+        if (date === today && actualBySubject[subj]) return actualBySubject[subj];
+        return { review: 0, new: 0, sectionsRead: new Set(), casesDone: new Set() };
+    };
+    // First pass: distribute actuals across blocks of the same (date,subject) in order.
+    // Same-day blocks for a subject share a pool; consume planned slots in order.
+    const remaining = {};
+    for (const b of blocks) {
+        if (b.kind !== 'study') continue;
+        const k = `${b.date}|${b.subject}`;
+        if (!remaining[k]) {
+            const a = actFor(b.date, b.subject);
+            remaining[k] = {
+                review: a.review || 0, new: a.new || 0,
+                sectionsRead: new Set(a.sectionsRead || []),
+                casesDone: new Set(a.casesDone || [])
+            };
+        }
+        const pool = remaining[k];
+        const r = Math.min(b.plannedReview || 0, pool.review);
+        const n = Math.min(b.plannedNew || 0, pool.new);
+        b.completedReview = r; b.completedNew = n;
+        pool.review -= r; pool.new -= n;
+        b.completedSections = (b.plannedSections || []).filter(line => pool.sectionsRead.has(String(line)));
+        b.completedCases = (b.plannedCases || []).filter(id => pool.casesDone.has(id));
+        b.done = (b.completedReview >= (b.plannedReview || 0))
+              && (b.completedNew >= (b.plannedNew || 0))
+              && (b.completedSections.length >= (b.plannedSections || []).length)
+              && (b.completedCases.length >= (b.plannedCases || []).length);
+    }
+    // Second pass: leftover surplus credits next-day block of same subject (subtract planned).
+    // Past-day shortfalls roll into today's first block of same subject as rollover.
+    for (const b of blocks) {
+        if (b.kind !== 'study') continue;
+        const k = `${b.date}|${b.subject}`;
+        const pool = remaining[k]; if (!pool) continue;
+        if (pool.review > 0 || pool.new > 0) {
+            b.over = true; b.surplus = pool.review + pool.new;
+            // credit next-day same-subject first block
+            const next = firstStudy[`${addDays(b.date, 1)}|${b.subject}`];
+            if (next) {
+                next.plannedReview = Math.max(0, (next.plannedReview || 0) - pool.review);
+                next.plannedNew = Math.max(0, (next.plannedNew || 0) - pool.new);
+            }
+            pool.review = 0; pool.new = 0;
+        }
+    }
+    // Past-day shortfalls -> today rollover
+    const todayKey = today;
+    for (const b of blocks) {
+        if (b.kind !== 'study') continue;
+        if (b.date >= todayKey) continue;
+        const shortR = Math.max(0, (b.plannedReview || 0) - (b.completedReview || 0));
+        const shortN = Math.max(0, (b.plannedNew || 0) - (b.completedNew || 0));
+        if (!shortR && !shortN) continue;
+        const target = firstStudy[`${todayKey}|${b.subject}`];
+        if (!target) continue;
+        const ro = target.rollover || { review: 0, new: 0 };
+        ro.review += shortR; ro.new += shortN;
+        target.rollover = ro;
+        target.plannedReview = (target.plannedReview || 0) + shortR;
+        target.plannedNew = (target.plannedNew || 0) + shortN;
+    }
+    saveSchedule(s);
+    return s;
 }
 
 export function dayCompletion(dateIso) {

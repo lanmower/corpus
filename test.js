@@ -169,8 +169,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /subject-hero/);
         assert.match(appSrc, /collapsible/);
         assert.match(appSrc, /today-primary/);
-        // primary CTA outcome-oriented
-        assert.match(appSrc, /study \$\{due\} card/);
+        // free-study fallback CTA
+        assert.match(appSrc, /just review whatever's due/);
         // status-line shape: day N · M due · streak K · goal X/Y
         assert.match(appSrc, /renderStatusLine/);
         assert.match(appSrc, /`day \$\{day\}`/);
@@ -387,7 +387,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(/\.video-hero/.test(css), 'style.css missing .video-hero rule');
     });
 
-    t('audio deep-dives: 8 subjects each have 1 m4a + shard.guide.audio + manifest audioCount + app wires audio-panel + 30s unlock', () => {
+    t('audio deep-dives: 8 subjects each have 1 m4a + shard.guide.audio + manifest audioCount + app wires audio-panel', () => {
         const SUBJ_ROOT = path.join(ROOT, 'syllabus', 'cmed4-2026');
         for (const s of SUBJECTS) {
             const sh = SHARDMAP[s];
@@ -403,8 +403,6 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const app = READ('site/app.js');
         assert.ok(/buildAudioPanel/.test(app), 'app.js missing buildAudioPanel');
         assert.ok(/audio-panel/.test(app), 'app.js missing audio-panel class');
-        assert.ok(/audioEl\.addEventListener\('timeupdate'/.test(app), 'app.js missing audio timeupdate handler');
-        assert.ok(/currentTime[^\n]*>= 30/.test(app), 'app.js missing 30s unlock threshold for audio');
         const ga = READ('.gitattributes');
         assert.ok(/\*\.m4a filter=lfs/.test(ga), '.gitattributes missing m4a LFS filter');
     });
@@ -663,95 +661,72 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appJs, /\\d\+\[\.\)\]/); // ordered list pattern
     });
 
-    console.log('# unlock gate + new-card cap');
-    const unlocked = await import('./site/unlocked.js');
+    console.log('# schedule reconcile + no-gating');
     const newcards = await import('./site/newcards.js');
-    const planMod = await import('./site/plan.js');
-    t('storage roundtrip + no auto-unlocks + predicate + cap default + plan locked-subject branch + app wiring + srs export', () => {
+    t('reconcile surplus + rollover + getDueCards has no eligibility gate + lock UI removed', async () => {
+        const sched = await import('./site/schedule.js');
         global.localStorage.clear();
-        // all 8 subjects ship a lecture video — none auto-unlocked
-        for (const s of SUBJECTS) {
-            assert.strictEqual(unlocked.isAutoUnlocked(s), false, `${s} should not be auto-unlocked`);
-            assert.strictEqual(unlocked.isUnlocked(s), false, `${s} should start locked`);
-        }
-        // manifest carries videoCount=1 per subject + totals.videoCount=8
-        for (const sm of MANIFEST.subjects) assert.strictEqual(sm.videoCount, 1, `${sm.subject} videoCount`);
-        assert.strictEqual(MANIFEST.totals.videoCount, 8);
-        assert.strictEqual(MANIFEST.totals.audioCount, 8);
-        unlocked.markWatched('cardiology', '2026-05-06T12:00:00.000Z');
-        assert.strictEqual(unlocked.isUnlocked('cardiology'), true);
-        assert.strictEqual(unlocked.watchedAt('cardiology'), '2026-05-06T12:00:00.000Z');
-        // persistence shape
-        const raw = JSON.parse(global.localStorage.getItem('corpus.unlocked.v1'));
-        assert.strictEqual(raw.cardiology.watched, true);
-        assert.ok(typeof raw.cardiology.watchedAt === 'string');
-        unlocked.reset('cardiology');
-        assert.strictEqual(unlocked.isUnlocked('cardiology'), false);
-        // newcards cap default + bump + count
+        // no-gating: getDueCards returns ALL due cards (only suspended/dueAt filter)
+        const states = { c1: { suspended: false, dueAt: 0 }, c2: { suspended: false, dueAt: Date.now() + 86400000 }, c3: { suspended: true, dueAt: 0 } };
+        const due = srs.getDueCards(['c1','c2','c3'], states);
+        assert.deepStrictEqual(due, ['c1']);
+        // schedule.reconcile: surplus credits next-day same-subject
+        sched.saveConfig({ intensity: 'standard', chronotype: 'morning', pomodoro: 25, breakLen: 5, weights: Object.fromEntries(SUBJECTS.map(s => [s, s === 'cardiology' ? 1 : 0])) });
+        const today = '2026-05-07';
+        const dueCounts = Object.fromEntries(SUBJECTS.map(s => [s, s === 'cardiology' ? 30 : 0]));
+        sched.regenerate({ today, dueCounts, horizonDays: 3, extras: { ticksAll: {}, shards: SHARDMAP, casesDone: {} } });
+        const sNow = sched.loadSchedule();
+        const todayBlocks = sNow.blocks.filter(b => b.date === today && b.kind === 'study');
+        assert.ok(todayBlocks.length >= 1, 'today has at least one study block');
+        const firstToday = todayBlocks[0];
+        assert.ok(typeof firstToday.plannedReview === 'number', 'plannedReview present');
+        assert.ok(typeof firstToday.plannedNew === 'number', 'plannedNew present');
+        // Surplus path: actual exceeds first block's planned -> next-day adjustment
+        const reconciled = sched.reconcile({ today, actualBySubject: { cardiology: { review: (firstToday.plannedReview || 0) + 5, new: 0, sectionsRead: new Set(), casesDone: new Set() } } });
+        const firstAfter = reconciled.blocks.find(b => b.id === firstToday.id);
+        assert.strictEqual(firstAfter.over, true, 'first block should be flagged over');
+        assert.ok(firstAfter.surplus >= 1, 'surplus recorded');
+        // Rollover path: simulate yesterday block planned=10 actual=4 -> today rollover.review=6
+        global.localStorage.clear();
+        const yesterday = '2026-05-06';
+        const tWithPast = '2026-05-07';
+        sched.saveConfig({ intensity: 'standard', chronotype: 'morning', pomodoro: 25, breakLen: 5, weights: Object.fromEntries(SUBJECTS.map(s => [s, s === 'cardiology' ? 1 : 0])) });
+        // build for two days starting yesterday
+        sched.regenerate({ today: yesterday, dueCounts, horizonDays: 3, extras: { ticksAll: {}, shards: SHARDMAP, casesDone: {} } });
+        const sched2 = sched.loadSchedule();
+        const yBlock = sched2.blocks.find(b => b.date === yesterday && b.kind === 'study');
+        const tBlock = sched2.blocks.find(b => b.date === tWithPast && b.kind === 'study');
+        assert.ok(yBlock && tBlock, 'have yesterday + today blocks');
+        // force planned counts
+        yBlock.plannedReview = 10; yBlock.plannedNew = 0;
+        tBlock.plannedReview = 5; tBlock.plannedNew = 0;
+        sched.saveSchedule(sched2);
+        const r2 = sched.reconcile({ today: tWithPast, actualByDayBySubject: { [yesterday]: { cardiology: { review: 4, new: 0, sectionsRead: new Set(), casesDone: new Set() } } } });
+        const tAfter = r2.blocks.find(b => b.id === tBlock.id);
+        assert.ok(tAfter.rollover, 'today block has rollover');
+        assert.strictEqual(tAfter.rollover.review, 6, 'rollover review = shortfall 6');
+        assert.strictEqual(tAfter.plannedReview, 11, 'today plannedReview absorbed +6');
+        // newcards still works as record (not a gate)
+        global.localStorage.clear();
         assert.strictEqual(newcards.cap(), 20);
-        assert.strictEqual(newcards.countToday('cardiology'), 0);
-        newcards.bump('cardiology', 1);
-        newcards.bump('cardiology', 2);
+        newcards.bump('cardiology', 3);
         assert.strictEqual(newcards.countToday('cardiology'), 3);
-        assert.strictEqual(newcards.remaining('cardiology'), 17);
-        assert.strictEqual(newcards.canIntroduce('cardiology'), true);
-        newcards.setCap(2);
-        assert.strictEqual(newcards.cap(), 2);
-        assert.strictEqual(newcards.canIntroduce('cardiology'), false);
-        newcards.setCap(20);
-        // schema key for daily counts is date-bucketed
-        const ckRaw = JSON.parse(global.localStorage.getItem('corpus.newcards.v1'));
-        const today = new Date().toISOString().slice(0, 10);
-        assert.ok(ckRaw[today]);
-        assert.strictEqual(ckRaw[today].cardiology, 3);
-        // srs predicate: only repetitions===0 && lastScore==null is gated
-        assert.strictEqual(srs.isNewCardForGate(null), true);
-        assert.strictEqual(srs.isNewCardForGate({ repetitions: 0, lastScore: null }), true);
-        assert.strictEqual(srs.isNewCardForGate({ repetitions: 0, lastScore: 3 }), false);
-        assert.strictEqual(srs.isNewCardForGate({ repetitions: 2, lastScore: null }), false);
-        // plan branches: locked weakest emits watch + read instead of review
-        const planLocked = planMod.build({ due: 50, weakestSubject: 'cardiology', nextSection: { title: 'IHD' }, casesAvailable: 3,
-            unlocked: { cardiology: false, diabetes: true }, lockedSubjects: ['cardiology'] });
-        const kinds = planLocked.tasks.map(t => t.kind);
-        assert.ok(kinds.includes('watch'), 'locked weakest should yield watch task');
-        assert.ok(kinds.includes('read'), 'locked weakest should yield read task');
-        assert.ok(!kinds.includes('review'), 'locked weakest should suppress review task');
-        // unlocked weakest emits standard tasks
-        const planOpen = planMod.build({ due: 50, weakestSubject: 'diabetes', nextSection: { title: 'DKA' }, casesAvailable: 3,
-            unlocked: { diabetes: true }, lockedSubjects: [] });
-        const kindsO = planOpen.tasks.map(t => t.kind);
-        assert.ok(kindsO.includes('review'));
-        // app.js wiring
-        assert.match(appSrc, /from '\.\/unlocked\.js'/);
-        assert.match(appSrc, /from '\.\/newcards\.js'/);
-        assert.match(appSrc, /unlocked\.isUnlocked\(/);
-        assert.match(appSrc, /newcards\.cap\(\)/);
-        assert.match(appSrc, /isNewCardForGate/);
-        assert.match(appSrc, /unlock-panel/);
-        assert.match(appSrc, /locks-strip/);
-        assert.match(appSrc, /markWatched\(/);
-        // CSS hooks present
-        assert.match(styleCss, /\.unlock-panel/);
-        assert.match(styleCss, /\.locks-strip/);
-        assert.match(styleCss, /\.subject-card\.locked/);
-        // srs.js exports the predicate
+        // app.js: no lock UI, no eligibility predicate
+        assert.ok(!/locks-strip/.test(appSrc), 'app.js should not contain locks-strip');
+        assert.ok(!/unlock-panel/.test(appSrc), 'app.js should not contain unlock-panel');
+        assert.ok(!/eligibleForSubject/.test(appSrc), 'app.js should not reference eligibleForSubject');
+        assert.ok(!/coverageEligible/.test(appSrc), 'app.js should not reference coverageEligible');
+        assert.ok(!/markWatched\(/.test(appSrc), 'app.js should not call markWatched');
+        // srs.js: coverageEligible removed
+        assert.ok(!/export function coverageEligible/.test(READ('site/srs.js')), 'srs.coverageEligible removed');
         assert.match(READ('site/srs.js'), /export function isNewCardForGate/);
-        // video auto-unlock at >=30s playback
-        assert.match(appSrc, /buildVideoHero\(videos, subj\)/);
-        assert.match(appSrc, /timeupdate/);
-        assert.match(appSrc, /currentTime[^\n]+>=\s*30/);
-        // coverage pipeline: shards carry card.requires; srs exports coverageEligible;
-        // app composes coveredSections into the eligibility predicate
-        assert.match(READ('site/srs.js'), /export function coverageEligible/);
-        assert.match(appSrc, /from '\.\/coverage\.js'/);
-        assert.match(appSrc, /coverage\.coveredSections/);
-        assert.match(appSrc, /sectionCardCounts/);
-        const cardio = SHARDMAP.cardiology;
-        const withReq = cardio.cards.filter(c => c.requires && c.requires.sectionLine).length;
-        assert.ok(withReq >= 100, `cardiology cards with requires: ${withReq} < 100`);
-        const sample = cardio.cards.find(c => c.requires);
-        assert.strictEqual(sample.requires.subject, 'cardiology');
-        assert.ok(typeof sample.requires.sectionLine === 'string');
+        // schedule reconcile + work spec exported
+        assert.match(READ('site/schedule.js'), /export function reconcile/);
+        assert.match(READ('site/schedule.js'), /plannedReview/);
+        assert.match(READ('site/schedule.js'), /plannedNew/);
+        // today renders schedule-checklist
+        assert.match(appSrc, /schedule-checklist/);
+        assert.match(appSrc, /renderScheduleChecklist/);
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

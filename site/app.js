@@ -6,7 +6,6 @@ import * as lastpos from './lastpos.js';
 import * as cram from './cram.js';
 import * as justread from './justread.js';
 import * as timer from './timer.js';
-import * as planMod from './plan.js';
 import * as mistakes from './mistakes.js';
 import * as drill from './drill.js';
 import * as flag from './flag.js';
@@ -14,9 +13,7 @@ import * as undo from './undo.js';
 import * as late from './late.js';
 import * as usercards from './usercards.js';
 import * as confidence from './confidence.js';
-import * as unlocked from './unlocked.js';
 import * as newcards from './newcards.js';
-import * as coverage from './coverage.js';
 import * as schedule from './schedule.js';
 import * as calendar from './calendar.js';
 import * as game from './game.js';
@@ -114,27 +111,8 @@ function masteryFor(subject) {
     return Math.round((Object.values(ticks).filter(Boolean).length / total) * 100);
 }
 
-// Unified gate predicate factory. A card is eligible when:
-//   (a) its subject is unlocked (video watched, or auto-unlocked)
-//   (b) if it's "new" (never graded), the subject is still under its daily cap
-//   (c) already-graded cards always pass
-function eligibleForSubject(subject, sessionUsed = 0) {
-    const unl = unlocked.isUnlocked(subject);
-    const capRemaining = newcards.remaining(subject);
-    const sh = state.shards[subject];
-    const byId = new Map((sh?.cards || []).map(c => [c.id, c]));
-    const covered = coverage.coveredSections(subject);
-    return (id, s) => {
-        if (!srs.isNewCardForGate(s)) return true;
-        if (!unl) return false;
-        if (sessionUsed >= capRemaining) return false;
-        const c = byId.get(id);
-        if (c && c.requires && c.requires.sectionLine && !covered.has(String(c.requires.sectionLine))) return false;
-        return true;
-    };
-}
-
 // Map subject -> Map<sectionLine, count> of cards keyed by their `requires.sectionLine`.
+// Informational only — used to label sections with their card count, no gating.
 function sectionCardCounts(subject) {
     const sh = state.shards[subject];
     const m = new Map();
@@ -147,88 +125,28 @@ function sectionCardCounts(subject) {
     return m;
 }
 
-function pickNextActionSubject(rows) {
-    if (!rows || !rows.length) return null;
-    const sorted = [...rows].sort((a, b) => (a.mastery ?? 0) - (b.mastery ?? 0));
-    return sorted[0] || null;
-}
-
-function computeNextAction(rows) {
-    if (!state.manifest) return null;
-    // priority 1: any subject with a video that's not yet watched
-    const weakestRow = pickNextActionSubject(rows);
-    const orderedSubs = [];
-    if (weakestRow) orderedSubs.push(weakestRow.subject);
-    for (const m of state.manifest.subjects) if (!orderedSubs.includes(m.subject)) orderedSubs.push(m.subject);
-
-    for (const subj of orderedSubs) {
-        if (unlocked.isAutoUnlocked(subj)) continue;
-        if (unlocked.isUnlocked(subj)) continue;
-        const sh = state.shards[subj];
-        const vids = sh?.guide?.videos || [];
-        if (!vids.length) continue;
-        const dur = vids[0].durationMin || Math.max(1, Math.round((vids[0].sizeMB || 50) / 8));
-        const counts = sectionCardCounts(subj);
-        // unlocking the video doesn't directly unlock cards (sections do) — but new cards
-        // from un-section-required cards become eligible too. Compute total cards in subject
-        // that are currently locked behind the video gate (i.e. all new cards in subject).
-        const states = srs.loadStates();
-        const newCount = sh.cards.filter(c => srs.isNewCardForGate(states[c.id])).length;
-        return el('div', { class: 'panel next-action rail-mascot' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'next action')),
-            el('a', { class: 'next-action-link', href: `#subject/${subj}`,
-                on: { click: e => { e.preventDefault(); go('subject', subj); } } },
-                `▶ watch ${subj} lecture (~${dur} min, unlocks ${newCount} cards)`)
-        );
-    }
-
-    // priority 2: untouched guide section that gates ≥1 card
-    for (const subj of orderedSubs) {
-        const sh = state.shards[subj];
-        if (!sh) continue;
-        const ticksAll = loadGuideTicks()[subj] || {};
-        const counts = sectionCardCounts(subj);
-        const sections = sh.guide?.sections || [];
-        for (const s of sections) {
-            const k = String(s.line);
-            if (ticksAll[k]) continue;
-            const n = counts.get(k) || 0;
-            if (n < 1) continue;
-            return el('div', { class: 'panel next-action rail-sky' },
-                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'next action')),
-                el('a', { class: 'next-action-link', href: `#subject/${subj}`,
-                    on: { click: e => { e.preventDefault(); go('subject', subj); } } },
-                    `📖 read ${subj} · ${s.title} (unlocks ${n} card${n === 1 ? '' : 's'})`)
-            );
-        }
-    }
-
-    // priority 3: due cards exist — primary CTA already covers it
-    const due = totalDueAll();
-    if (due > 0) return null;
-
-    // priority 4: caught up
-    return el('div', { class: 'panel next-action rail-green' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'next action')),
-        el('a', { class: 'next-action-link', href: '#cases',
-            on: { click: e => { e.preventDefault(); go('cases'); } } },
-            '✓ caught up — try a clinical case')
-    );
-}
-
 function dueCountFor(subject) {
     const sh = state.shards[subject]; if (!sh) return 0;
     const ids = sh.cards.map(c => c.id);
-    return srs.getDueCards(ids, srs.loadStates(), eligibleForSubject(subject)).length;
+    return srs.getDueCards(ids, srs.loadStates()).length;
 }
 
 function totalDueAll() {
     let n = 0;
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject]; if (!sh) continue;
-        n += srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates(), eligibleForSubject(meta.subject)).length;
+        n += srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates()).length;
     }
     return n;
+}
+
+function dueCountsBySubjectMap() {
+    const out = {};
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject];
+        out[meta.subject] = sh ? srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates()).length : 0;
+    }
+    return out;
 }
 
 function totalCasesQueued() {
@@ -339,36 +257,16 @@ function renderToday() {
 
     stage.append(renderStatusLine(p, due));
 
-    // Locked-subjects strip — actionable nudge.
-    {
-        const locked = state.manifest.subjects
-            .map(m => m.subject)
-            .filter(s => !unlocked.isUnlocked(s));
-        if (locked.length) {
-            const strip = el('div', { class: 'locks-strip', role: 'note' },
-                el('span', { class: 'eyebrow' }, '🔒 locked'),
-                ' ',
-                el('span', {}, `${locked.length} subject${locked.length === 1 ? '' : 's'}: `),
-                ...locked.map((s, i) => el('a', { class: 'chip', href: `#subject/${s}`,
-                    on: { click: e => { e.preventDefault(); go('subject', s); } } }, s + (i < locked.length - 1 ? '' : '')))
-            );
-            stage.append(strip);
-        }
-    }
+    const checklist = renderScheduleChecklist(rows);
+    if (checklist) stage.append(checklist);
 
-    // Slim today: status, primary CTA, schedule strip, mastery ring
-
-    // Primary CTA — outcome-oriented
+    // Free-study fallback — review whatever's due, no filter
     stage.append(el('div', { class: 'today-primary' },
         el('a', { class: 'primary-action', href: '#review',
-            on: { click: e => { e.preventDefault(); go('review'); } } },
-            due ? `study ${due} card${due === 1 ? '' : 's'} · ~${mins} min` : 'no cards due — browse guides')
+            on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = 'all'; resetReviewQueue(); go('review'); } } },
+            due ? `or just review whatever's due (${due}) · ~${mins} min` : 'no cards due — browse guides')
     ));
 
-    const next = computeNextAction(rows);
-    if (next) stage.append(next);
-
-    const tl = renderTimelineStrip(); if (tl) stage.append(tl);
     stage.append(renderMasteryRing());
 
     if (DEBUG) {
@@ -377,28 +275,6 @@ function renderToday() {
             'today: ', el('span', { class: 'num' }, String(due)), ' due cards · ',
             el('span', { class: 'num' }, String(cases)), ' cases queued · ~',
             el('span', { class: 'num' }, String(mins)), ' min est.'));
-        const ticksAll = loadGuideTicks();
-        const wsh = weakest ? state.shards[weakest.subject] : null;
-        const tw = weakest ? (ticksAll[weakest.subject] || {}) : {};
-        const nextSection = wsh?.guide?.sections?.find(s => !tw[String(s.line)]) || null;
-        const unlMap = {}; const lockedList = [];
-        for (const meta of state.manifest.subjects) {
-            const u = unlocked.isUnlocked(meta.subject);
-            unlMap[meta.subject] = u;
-            if (!u) lockedList.push(meta.subject);
-        }
-        const planObj = planMod.build({ due, weakestSubject: weakest?.subject, nextSection,
-            casesAvailable: wsh?.triage?.scenarios?.length || 0,
-            unlocked: unlMap, lockedSubjects: lockedList });
-        if (planObj.tasks.length) {
-            const planEl = el('div', { class: 'panel daily-plan' },
-                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "debug · today's plan"), `~${planObj.total} min`),
-                ...planObj.tasks.map(t => el('a', { class: 'plan-task', href: t.href,
-                    on: { click: e => { if (t.href.startsWith('#')) { e.preventDefault(); go(t.href.slice(1).split('/')[0], t.href.split('/')[1]); } } } },
-                    el('span', { class: 'plan-min' }, `${t.min}m`),
-                    el('span', { class: 'plan-label' }, t.label))));
-            stage.append(planEl);
-        }
         const flagCount = flag.count();
         const chipRow = el('div', { class: 'today-chips' },
             el('a', { class: 'chip', href: '#drill',
@@ -454,13 +330,11 @@ function renderGuides() {
         const m = masteryFor(meta.subject);
         const sections = meta.guideSections || 0;
         const hasVideo = (meta.videoCount || 0) > 0;
-        const isLocked = !unlocked.isUnlocked(meta.subject);
         const taglineParts = [`${sections} sections`];
         if (hasVideo) taglineParts.push('▶ video');
-        if (isLocked) taglineParts.push('🔒 locked');
         grid.append(el('div', {
-            class: 'subject-card' + (hasVideo ? ' has-video' : '') + (isLocked ? ' locked' : ''), role: 'button', tabindex: '0',
-            'aria-label': `${meta.subject} guide, ${m}% understood${hasVideo ? ', includes video' : ''}${isLocked ? ', cards locked until lecture watched' : ''}`,
+            class: 'subject-card' + (hasVideo ? ' has-video' : ''), role: 'button', tabindex: '0',
+            'aria-label': `${meta.subject} guide, ${m}% understood${hasVideo ? ', includes video' : ''}`,
             data: { subject: meta.subject },
             on: { click: () => go('subject', meta.subject),
                   keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go('subject', meta.subject); } } }
@@ -502,35 +376,6 @@ async function renderSubject() {
                 subjDue ? `review ${subjDue} card${subjDue === 1 ? '' : 's'}` : 'no cards due'),
             el('a', { class: 'cta', href: `./triage-live.html?subject=${encodeURIComponent(subj)}` }, 'open in tutor'))
     ));
-    // Unlock gate panel — visible whenever subject is locked OR has a video.
-    {
-        const auto = unlocked.isAutoUnlocked(subj);
-        const unl = unlocked.isUnlocked(subj);
-        const wAt = unlocked.watchedAt(subj);
-        const hasVid = (meta?.videoCount || 0) > 0;
-        if (auto) {
-            stage.append(el('div', { class: 'panel unlock-panel auto' },
-                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'unlocked'), 'no lecture video — open'),
-                el('div', { class: 'meta' }, 'all new cards available immediately.')));
-        } else if (!unl) {
-            const btn = el('button', { class: 'primary-action unlock-btn',
-                on: { click: () => { unlocked.markWatched(subj); render(); } } },
-                'I watched the lecture — unlock cards');
-            stage.append(el('div', { class: 'panel unlock-panel locked' },
-                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, '🔒 locked'), 'watch the lecture, then unlock'),
-                el('div', { class: 'meta' }, hasVid ? 'new cards stay hidden in review until you confirm you watched the lecture.' : 'no video on file — toggle below to unlock.'),
-                btn));
-        } else {
-            const dayCap = newcards.cap();
-            const countT = newcards.countToday(subj);
-            const rem = newcards.remaining(subj);
-            stage.append(el('div', { class: 'panel unlock-panel unlocked' },
-                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, '✓ unlocked'), wAt ? `since ${wAt.slice(0, 10)}` : ''),
-                el('div', { class: 'meta' }, `today: ${countT}/${dayCap} new · ${rem} remaining`),
-                el('button', { class: 'chip', on: { click: () => { if (confirm('relock this subject? cards introduced today still count.')) { unlocked.reset(subj); render(); } } } }, 'relock')));
-        }
-    }
-
     // Next thing
     const subTicks = loadGuideTicks()[subj] || {};
     const subShard0 = state.shards[subj];
@@ -545,7 +390,7 @@ async function renderSubject() {
     const shard = await loadShard(subj);
     placeholder.remove();
 
-    const due = srs.getDueCards(shard.cards.map(c => c.id), srs.loadStates(), eligibleForSubject(subj)).length;
+    const due = srs.getDueCards(shard.cards.map(c => c.id), srs.loadStates()).length;
     const m = masteryFor(subj);
     const ticks = loadGuideTicks()[subj] || {};
 
@@ -565,9 +410,7 @@ async function renderSubject() {
                     const lineKey = String(s.line);
                     const checked = !!ticks[lineKey];
                     const n = counts.get(lineKey) || 0;
-                    const badgeText = n
-                        ? (checked ? `(${n} card${n === 1 ? '' : 's'} · ready)` : `(${n} card${n === 1 ? '' : 's'} · 🔒)`)
-                        : '';
+                    const badgeText = n ? `(${n} card${n === 1 ? '' : 's'})` : '';
                     const row = el('label', { class: `guide-section h${s.level}` + (checked ? ' done' : '') },
                         el('input', {
                             type: 'checkbox', class: 'guide-tick',
@@ -631,18 +474,6 @@ function buildVideoHero(videos, subj) {
     const meta = [v.durationMin ? `${v.durationMin} min` : null, v.sizeMB ? `${v.sizeMB} MB` : null].filter(Boolean).join(' · ');
     const source = v.url || v.src;
     const vidEl = el('video', { controls: 'controls', preload: 'metadata', playsinline: 'playsinline', src: source });
-    if (subj && !unlocked.isUnlocked(subj)) {
-        let armed = false;
-        vidEl.addEventListener('timeupdate', () => {
-            if (armed) return;
-            if ((vidEl.currentTime || 0) >= 30) {
-                armed = true;
-                unlocked.markWatched(subj);
-                toast.info(`${subj} unlocked — cards now in review`);
-                render();
-            }
-        });
-    }
     return el('div', { class: 'panel video-hero', 'data-video-id': v.filename },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'watch first'), meta),
         el('div', { class: 'video-hero-frame' }, vidEl),
@@ -655,18 +486,6 @@ function buildAudioPanel(items, subj) {
     const a = items[0];
     const meta = a.sizeMB ? `${a.sizeMB} MB` : '';
     const audioEl = el('audio', { controls: 'controls', preload: 'metadata', src: a.src });
-    if (subj && !unlocked.isUnlocked(subj)) {
-        let armed = false;
-        audioEl.addEventListener('timeupdate', () => {
-            if (armed) return;
-            if ((audioEl.currentTime || 0) >= 30) {
-                armed = true;
-                unlocked.markWatched(subj);
-                toast.info(`${subj} unlocked — cards now in review`);
-                render();
-            }
-        });
-    }
     return el('div', { class: 'panel audio-panel', 'data-audio-id': a.filename },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'deep dive (audio)'), meta),
         el('div', { class: 'audio-frame' }, audioEl),
@@ -956,33 +775,8 @@ async function renderReview() {
                 return false;
             });
         }
-        const cardByIdEarly = Object.fromEntries(allCards.map(c => [c.id, c]));
-        const subjEligibleR = {};
-        const reviewEligible = (id, s) => {
-            const c = cardByIdEarly[id]; if (!c) return true;
-            const subj = c._subject || c.subject; if (!subj) return true;
-            const fn = subjEligibleR[subj] || (subjEligibleR[subj] = eligibleForSubject(subj));
-            return fn(id, s);
-        };
-        const dueIdsRaw = state.cramMode ? pool : srs.getDueCards(pool, states, reviewEligible);
         const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
-        // Unlock gate + per-subject daily new-card cap. Apply only to "new" cards
-        // (repetitions===0 && lastScore==null). Already-graded cards bypass.
-        const introducedThisSession = {};
-        const dueIds = [];
-        for (const id of dueIdsRaw) {
-            const c = cardById[id]; if (!c) continue;
-            const subj = c._subject || c.subject;
-            const cs = states[id];
-            const isNew = srs.isNewCardForGate(cs);
-            if (!isNew) { dueIds.push(id); continue; }
-            if (!unlocked.isUnlocked(subj)) continue; // locked subject — drop new cards
-            const introToday = newcards.countToday(subj);
-            const usedThisSess = introducedThisSession[subj] || 0;
-            if (introToday + usedThisSess >= newcards.cap()) continue;
-            introducedThisSession[subj] = usedThisSess + 1;
-            dueIds.push(id);
-        }
+        const dueIds = state.cramMode ? pool : srs.getDueCards(pool, states);
         const sorted = dueIds.map(id => ({ id, dueAt: states[id]?.dueAt ?? 0, subject: cardById[id]._subject })).sort((a, b) => a.dueAt - b.dueAt);
         const bySubj = {};
         for (const x of sorted) (bySubj[x.subject] ||= []).push(x.id);
@@ -1251,13 +1045,7 @@ async function renderStats() {
         const sh = state.shards[meta.subject]; if (!sh) continue;
         for (const c of sh.cards) { cardIds.push(c.id); idSubject[c.id] = meta.subject; }
     }
-    const subjEligible = {};
-    for (const meta of state.manifest.subjects) subjEligible[meta.subject] = eligibleForSubject(meta.subject);
-    const allEligible = (id, s) => {
-        const subj = idSubject[id]; if (!subj) return true;
-        return subjEligible[subj](id, s);
-    };
-    const stats = srs.getScheduleStats(cardIds, states, allEligible);
+    const stats = srs.getScheduleStats(cardIds, states);
     const forecast = srs.getForecast(cardIds, 14, states);
     const p = progress.load();
 
@@ -1390,7 +1178,7 @@ function dueCountsBySubject() {
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject];
         if (!sh) { out[meta.subject] = 0; continue; }
-        out[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates(), eligibleForSubject(meta.subject)).length;
+        out[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates())).length;
     }
     return out;
 }
@@ -1698,7 +1486,7 @@ async function renderDrill() {
         const sub = w?.subject || state.manifest.subjects[0].subject;
         const sh = state.shards[sub];
         const ids = sh.cards.slice(0, 30).map(c => c.id);
-        const due = srs.getDueCards(ids, states, eligibleForSubject(sub));
+        const due = srs.getDueCards(ids, states);
         const pool = (due.length >= 10 ? due : ids).slice(0, 10);
         d = drill.start(pool, sub);
     }
@@ -1823,38 +1611,103 @@ function renderMasteryRing() {
     return wrap;
 }
 
-function renderTimelineStrip() {
+// Today's plan: schedule-driven checklist. Schedule is recommendation, not gate.
+// Reconciles actuals (newcards.bumps + grade history + section ticks + cases) and
+// surfaces rollover/surplus as informational text.
+function renderScheduleChecklist(rows) {
+    if (!state.manifest) return null;
     const today = new Date().toISOString().slice(0, 10);
-    const dueCounts = {};
+    const dueCounts = dueCountsBySubjectMap();
+    // Build extras for plannedSections / plannedCases
+    const ticksAll = loadGuideTicks();
+    const casesDone = {};
+    try {
+        const triage = JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}');
+        const sessions = triage.sessions || {};
+        for (const id of Object.keys(sessions)) (casesDone[id] = casesDone[id] || new Set()).add(id);
+    } catch {}
+    schedule.regenerate({ today, dueCounts, extras: { ticksAll, shards: state.shards, casesDone } });
+    // Build actuals — review/new from today's progress + newcards counts; sections = today's ticks (we don't track per-day, so pass full ticks set)
+    const p = progress.load();
+    const states = srs.loadStates();
+    const actualBySubject = {};
     for (const meta of state.manifest.subjects) {
-        const sh = state.shards[meta.subject]; if (!sh) continue;
-        dueCounts[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates(), eligibleForSubject(meta.subject)).length;
+        const subj = meta.subject;
+        actualBySubject[subj] = {
+            review: 0, new: newcards.countToday(subj),
+            sectionsRead: new Set(Object.keys(ticksAll[subj] || {}).filter(k => ticksAll[subj][k])),
+            casesDone: new Set()
+        };
     }
-    const sched = schedule.getSchedule({ today, dueCounts });
-    const blocks = sched.blocks.filter(b => b.date === today);
+    // Distribute today's grades proportionally — best-effort approximation
+    const todayGraded = p.todayGraded || 0;
+    if (todayGraded > 0) {
+        const totalDue = Object.values(dueCounts).reduce((n, x) => n + x, 0) || 1;
+        for (const meta of state.manifest.subjects) {
+            const subj = meta.subject;
+            const share = (dueCounts[subj] || 0) / totalDue;
+            actualBySubject[subj].review = Math.round(todayGraded * share);
+        }
+    }
+    const sched = schedule.reconcile({ today, actualBySubject });
+    const blocks = sched.blocks.filter(b => b.date === today && b.kind === 'study');
     if (!blocks.length) return null;
-    const panel = el('div', { class: 'panel timeline-strip-panel' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "today's schedule"),
+    const panel = el('div', { class: 'panel schedule-checklist' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "today's plan"),
             el('a', { class: 'chip', href: '#calendar', on: { click: e => { e.preventDefault(); go('calendar'); } } }, 'calendar →'))
     );
-    const next = blocks.find(b => !b.done && b.kind === 'study');
-    if (next) panel.append(el('a', { class: 'primary-action', href: '#review',
-        on: { click: e => { e.preventDefault(); if (next.subject) { state.reviewSubjectFilter = next.subject; resetReviewQueue(); } go('review', next.subject); } } },
-        `start next block · ${next.subject || 'study'} (${next.len}m)`));
-    const strip = el('div', { class: 'timeline-strip' });
+    let totalShortReview = 0, totalShortNew = 0, totalSurplus = 0;
     for (const b of blocks) {
-        const hh = String(Math.floor(b.startMin / 60)).padStart(2, '0');
-        const mm = String(b.startMin % 60).padStart(2, '0');
-        strip.append(el('div', { class: `timeline-block kind-${b.kind}` + (b.done ? ' done' : '') },
-            el('span', { class: 'tl-time mono' }, `${hh}:${mm}`),
-            el('span', { class: 'tl-label' }, b.kind === 'break' ? 'break' : (b.subject || 'study')),
-            el('span', { class: 'tl-len mono' }, `${b.len}m`),
-            b.kind === 'study' ? el('button', { class: 'chip',
-                on: { click: () => { schedule.markBlockComplete(b.id, !b.done); if (!b.done) { game.awardXP(game.XP.block_complete + Math.round(b.len/5), 'block'); } render(); } } },
-                b.done ? '✓' : 'mark') : null
-        ));
+        if (b.rollover) { totalShortReview += b.rollover.review || 0; totalShortNew += b.rollover.new || 0; }
+        if (b.over) totalSurplus += b.surplus || 0;
+        const items = [];
+        if (b.plannedReview > 0) items.push({
+            kind: 'review', done: b.completedReview >= b.plannedReview,
+            label: `review ${b.plannedReview} ${b.subject} card${b.plannedReview === 1 ? '' : 's'} (${b.completedReview}/${b.plannedReview})`,
+            click: () => { state.reviewSubjectFilter = b.subject; resetReviewQueue(); go('review', b.subject); }
+        });
+        if (b.plannedNew > 0) items.push({
+            kind: 'new', done: b.completedNew >= b.plannedNew,
+            label: `introduce ${b.plannedNew} new ${b.subject} card${b.plannedNew === 1 ? '' : 's'} (${b.completedNew}/${b.plannedNew})`,
+            click: () => { state.reviewSubjectFilter = b.subject; resetReviewQueue(); go('review', b.subject); }
+        });
+        for (const line of (b.plannedSections || [])) {
+            const sh = state.shards[b.subject];
+            const sec = sh?.guide?.sections?.find(s => String(s.line) === String(line));
+            const sTitle = sec?.title || `section ${line}`;
+            items.push({
+                kind: 'read', done: b.completedSections.includes(line),
+                label: `read ${b.subject} · ${sTitle}`,
+                click: () => go('subject', b.subject)
+            });
+        }
+        for (const cid of (b.plannedCases || [])) {
+            const sh = state.shards[b.subject];
+            const sc = sh?.triage?.scenarios?.find(x => (x.id || x.name) === cid);
+            const cTitle = sc?.name || cid;
+            items.push({
+                kind: 'case', done: b.completedCases.includes(cid),
+                label: `work case · ${cTitle}`,
+                href: `./triage-live.html#${encodeURIComponent(cid)}`
+            });
+        }
+        for (const it of items) {
+            const row = el('div', { class: `checklist-row${it.done ? ' done' : ''} kind-${it.kind}` },
+                el('span', { class: 'check' }, it.done ? '☑' : '☐'),
+                it.href
+                    ? el('a', { href: it.href, class: 'cl-label' }, it.label)
+                    : el('a', { href: '#', class: 'cl-label', on: { click: e => { e.preventDefault(); it.click && it.click(); } } }, it.label)
+            );
+            panel.append(row);
+        }
     }
-    panel.append(strip);
+    if (totalShortReview || totalShortNew) {
+        panel.append(el('div', { class: 'rollover-note' },
+            `↻ rolled over from earlier: ${totalShortReview} review${totalShortReview === 1 ? '' : 's'}` +
+            (totalShortNew ? ` · ${totalShortNew} new card${totalShortNew === 1 ? '' : 's'}` : '')));
+    } else if (totalSurplus > 0) {
+        panel.append(el('div', { class: 'surplus-note' }, `✓ ahead by ${totalSurplus} — credited to tomorrow`));
+    }
     return panel;
 }
 
