@@ -161,6 +161,19 @@ function totalCasesQueued() {
 
 function estReviewMinutes(due) { return Math.max(1, Math.round(due * 0.4)); }
 
+// Sum plannedReview across today's study blocks — represents what the plan asks for today,
+// not the full backlog. Falls back to 0 when no schedule has been generated yet.
+function todayPlanReviewTarget() {
+    try {
+        const today = new Date().toISOString().slice(0, 10);
+        const sched = schedule.loadSchedule();
+        const blocks = (sched.blocks || []).filter(b => b.date === today && b.kind === 'study');
+        let n = 0;
+        for (const b of blocks) n += (b.plannedReview || 0) + (b.plannedNew || 0);
+        return n;
+    } catch { return 0; }
+}
+
 function updateFooter() {
     if (!statusbar || !statusbarMsg) return;
     if (!navigator.onLine) {
@@ -262,11 +275,16 @@ function renderToday() {
     const checklist = renderScheduleChecklist(rows);
     if (checklist) stage.append(checklist);
 
-    // Free-study fallback — review whatever's due, no filter
+    // Free-study fallback — review whatever's due, clamped to today's plan target.
+    const planTarget = todayPlanReviewTarget();
+    const offerN = planTarget > 0 ? Math.min(planTarget, due) : Math.min(due, 60);
+    const offerMin = estReviewMinutes(offerN);
     stage.append(el('div', { class: 'today-primary' },
         el('a', { class: 'primary-action', href: '#review',
             on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = 'all'; resetReviewQueue(); go('review'); } } },
-            due ? `or just review whatever's due (${due}) · ~${mins} min` : 'no cards due — browse guides')
+            due ? `or just review (${offerN}) · ~${offerMin} min` : 'no cards due — browse guides'),
+        (due > offerN) ? el('div', { class: 'meta', style: 'margin-top:4px;font-size:12px;color:var(--panel-text-2)' },
+            `backlog: ${due} cards across all subjects`) : null
     ));
 
     stage.append(renderMasteryRing());

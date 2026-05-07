@@ -169,8 +169,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /subject-hero/);
         assert.match(appSrc, /collapsible/);
         assert.match(appSrc, /today-primary/);
-        // free-study fallback CTA
-        assert.match(appSrc, /just review whatever's due/);
+        // free-study fallback CTA — clamped to today's plan target, not full backlog
+        assert.match(appSrc, /or just review \(/);
+        assert.match(appSrc, /todayPlanReviewTarget/);
         // status-line shape: date · M due · X reviewed today (gamification stripped)
         assert.match(appSrc, /renderStatusLine/);
         assert.match(appSrc, /`\$\{due\} due`/);
@@ -725,6 +726,23 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // today renders schedule-checklist
         assert.match(appSrc, /schedule-checklist/);
         assert.match(appSrc, /renderScheduleChecklist/);
+        // daily caps: per-subject review cap + global new-card budget — plan can't dump full backlog
+        global.localStorage.clear();
+        const sched3 = await import('./site/schedule.js');
+        sched3.saveConfig({ intensity: 'standard', chronotype: 'morning', pomodoro: 25, breakLen: 5, weights: Object.fromEntries(SUBJECTS.map(s => [s, 1])) });
+        const tCap = '2026-05-07';
+        const bigDue = Object.fromEntries(SUBJECTS.map(s => [s, 500])); // cold-start: everything due
+        sched3.regenerate({ today: tCap, dueCounts: bigDue, horizonDays: 1, extras: { ticksAll: {}, shards: SHARDMAP, casesDone: {} } });
+        const capDay = sched3.loadSchedule().blocks.filter(b => b.date === tCap && b.kind === 'study');
+        const sumByS = {};
+        for (const b of capDay) sumByS[b.subject] = (sumByS[b.subject] || 0) + (b.plannedReview || 0);
+        for (const s of SUBJECTS) assert.ok((sumByS[s] || 0) <= 30, `per-subject review cap ${s}=${sumByS[s]}`);
+        const totalNew = capDay.reduce((n, b) => n + (b.plannedNew || 0), 0);
+        assert.ok(totalNew <= 12, `daily new-card cap (got ${totalNew})`);
+        const guideSubjs = new Set(capDay.filter(b => (b.plannedSections || []).length).map(b => b.subject));
+        assert.ok(guideSubjs.size <= 2, `guide-section subject cap (got ${guideSubjs.size})`);
+        const caseSubjs = new Set(capDay.filter(b => (b.plannedCases || []).length).map(b => b.subject));
+        assert.ok(caseSubjs.size <= 2, `case subject cap (got ${caseSubjs.size})`);
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

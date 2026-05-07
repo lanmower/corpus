@@ -16,6 +16,12 @@ const DEFAULT_CONFIG = {
 
 const INTENSITY_FACTOR = { light: 0.6, standard: 1.0, hard: 1.4, cram: 1.7 };
 const DOW = ['sun','mon','tue','wed','thu','fri','sat'];
+// Daily budget caps — keep "today's plan" a single-day slice, not full backlog.
+const PER_SUBJECT_DAILY_REVIEW_CAP = 30;   // scaled by intensity
+const DAILY_NEW_CAP = 12;                  // total new cards/day across all subjects, scaled by intensity
+const MIN_PER_REVIEW = 0.4;                // estimator: minutes per card review
+const MAX_GUIDE_SECTIONS_PER_DAY = 2;
+const MAX_CASES_PER_DAY = 2;
 
 export function defaultConfig() { return JSON.parse(JSON.stringify(DEFAULT_CONFIG)); }
 
@@ -76,29 +82,54 @@ export function buildDayBlocks(cfg, dateIso, dueCounts, extras = {}) {
     const startHour = cfg.chronotype === 'morning' ? 8 : (cfg.chronotype === 'evening' ? 17 : 12);
     const allocs = allocateSubjects(total, cfg.weights, dueCounts);
     const intensityMul = INTENSITY_FACTOR[cfg.intensity] || 1;
+    // Per-subject daily review cap: base × intensity, but never more than what's actually due.
+    const reviewCap = Math.max(1, Math.round(PER_SUBJECT_DAILY_REVIEW_CAP * intensityMul));
+    const dailyReviewBySubj = {};
+    for (const a of allocs) dailyReviewBySubj[a.subject] = Math.min(reviewCap, dueCounts[a.subject] || 0);
+    // Total daily new-card budget — allocate proportionally to top subjects only.
+    const newBudget = Math.max(0, Math.round(DAILY_NEW_CAP * intensityMul));
+    const sortedAllocs = [...allocs].sort((x, y) => y.min - x.min);
+    const newBySubj = {};
+    if (newBudget > 0 && sortedAllocs.length) {
+        // Spread the budget across the top 3 (by allocation), 4/4/4 style.
+        const topN = Math.min(3, sortedAllocs.length);
+        const base = Math.floor(newBudget / topN);
+        let rem = newBudget - base * topN;
+        for (let i = 0; i < topN; i++) {
+            newBySubj[sortedAllocs[i].subject] = base + (rem > 0 ? 1 : 0);
+            if (rem > 0) rem--;
+        }
+    }
+    // Guide sections + cases: only the top 2 subjects (by allocation) get one each per day.
+    const guideSubjects = new Set(sortedAllocs.slice(0, MAX_GUIDE_SECTIONS_PER_DAY).map(x => x.subject));
+    const caseSubjects = new Set(sortedAllocs.slice(0, MAX_CASES_PER_DAY).map(x => x.subject));
     const blocks = [];
     let cur = startHour * 60;
     const subjFirstSeen = {};
+    const reviewLeftBySubj = { ...dailyReviewBySubj };
     for (const a of allocs) {
         let left = a.min;
         let firstBlockForSubj = true;
         while (left >= 10) {
             const len = Math.min(cfg.pomodoro || 25, left);
             const subjShareOfTotal = a.min > 0 ? len / a.min : 0;
-            const due = dueCounts[a.subject] || 0;
-            const plannedReview = Math.max(0, Math.round(due * subjShareOfTotal));
-            const plannedNew = firstBlockForSubj ? Math.round(5 * intensityMul) : 0;
+            // Cap reviews per block by both (a) capacity at MIN_PER_REVIEW and (b) remaining daily cap.
+            const blockCapacity = Math.max(0, Math.floor(len / MIN_PER_REVIEW));
+            const proportional = Math.round((dailyReviewBySubj[a.subject] || 0) * subjShareOfTotal);
+            const plannedReview = Math.max(0, Math.min(blockCapacity, proportional, reviewLeftBySubj[a.subject] || 0));
+            reviewLeftBySubj[a.subject] = Math.max(0, (reviewLeftBySubj[a.subject] || 0) - plannedReview);
+            const plannedNew = firstBlockForSubj ? (newBySubj[a.subject] || 0) : 0;
             let plannedSections = [];
             let plannedCases = [];
             if (firstBlockForSubj) {
                 const sh = (extras.shards || {})[a.subject];
                 const ticks = ((extras.ticksAll || {})[a.subject]) || {};
-                if (sh && sh.guide && Array.isArray(sh.guide.sections)) {
+                if (guideSubjects.has(a.subject) && sh && sh.guide && Array.isArray(sh.guide.sections)) {
                     const next = sh.guide.sections.find(s => !ticks[String(s.line)]);
                     if (next) plannedSections = [String(next.line)];
                 }
                 const done = (extras.casesDone || {})[a.subject] || new Set();
-                if (sh && sh.triage && Array.isArray(sh.triage.scenarios)) {
+                if (caseSubjects.has(a.subject) && sh && sh.triage && Array.isArray(sh.triage.scenarios)) {
                     const nextCase = sh.triage.scenarios.find(sc => !done.has(sc.id || sc.name));
                     if (nextCase) plannedCases = [nextCase.id || nextCase.name];
                 }

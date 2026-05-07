@@ -353,6 +353,18 @@ Kept: `srs.js`, `verdicts.js`, `cram.js`, `lastpos.js`, `justread.js`, `progress
 Rewrote: `sw.js` (cache key + SHELL list), `index.html` (manifest link + ?v=3).
 Added: 10 new modules in `site/`, `site/manifest.webmanifest`, `site/data/medbak-index.json`, `scripts/build_medbak_index.js`.
 
+## Today's-plan daily caps (2026-05-07)
+
+`buildDayBlocks` no longer dumps the full per-subject backlog into one day. Caps applied (scaled by `INTENSITY_FACTOR`):
+
+- `PER_SUBJECT_DAILY_REVIEW_CAP = 30` — each subject's `plannedReview` for the day is clamped to `min(due, 30 × intensity)`. Per-block `plannedReview` is additionally capped by block capacity at `MIN_PER_REVIEW = 0.4 min/card`.
+- `DAILY_NEW_CAP = 12` — total new cards across the whole day, allocated to the **top 3** subjects by time-allocation only (4/4/4 split standard intensity).
+- `MAX_GUIDE_SECTIONS_PER_DAY = 2` and `MAX_CASES_PER_DAY = 2` — only the top-2 weighted subjects get a guide-section / case task on a given day; others rotate in subsequent days.
+
+Today-page free-study CTA now reads `or just review (N) · ~M min` where `N = todayPlanReviewTarget()` (sum of today's `plannedReview + plannedNew`). When the full backlog exceeds the plan target, a secondary line shows `backlog: <due> cards across all subjects`. Cold-start no longer surfaces "1919 · 768 min" — instead "review 252 · ~101 min" on standard intensity at equal weights.
+
+`test.js` group `schedule reconcile + no-gating` extended to assert per-subject review cap ≤ 30, total new ≤ 12, guide-subjects ≤ 2, case-subjects ≤ 2 from a synthetic 500-each cold-start. 16/16 green.
+
 ## IA simplification (2026-05-06)
 
 The student-facing site no longer surfaces `subjects` (plural index) or `cards` (browser). Review covers practice, the per-subject deepdive at `#subject/<name>` covers everything you'd reach from the subject index plus the full guide body inline.
