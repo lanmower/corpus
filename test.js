@@ -391,6 +391,46 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(/\.video-hero/.test(css), 'style.css missing .video-hero rule');
     });
 
+    t('audio deep-dives: 8 subjects each have 1 m4a + shard.guide.audio + manifest audioCount + app wires audio-panel + 30s unlock', () => {
+        const SUBJ_ROOT = path.join(ROOT, 'syllabus', 'cmed4-2026');
+        for (const s of SUBJECTS) {
+            const sh = SHARDMAP[s];
+            assert.ok(Array.isArray(sh.guide.audio) && sh.guide.audio.length === 1, `${s} guide.audio length`);
+            const a = sh.guide.audio[0];
+            assert.ok(/\.m4a$/i.test(a.filename), `${s} audio filename ext`);
+            assert.ok(a.src.startsWith(`data/audio/${s}/`), `${s} audio src path`);
+            assert.ok(fs.existsSync(path.join(ROOT, 'site', a.src)), `${s} audio file copied to site/data`);
+            assert.ok(fs.existsSync(path.join(SUBJ_ROOT, s, 'audio-deepdive', a.filename)), `${s} source audio under syllabus`);
+            const meta = MANIFEST.subjects.find(x => x.subject === s);
+            assert.strictEqual(meta.audioCount, 1, `${s} manifest audioCount`);
+        }
+        const app = READ('site/app.js');
+        assert.ok(/buildAudioPanel/.test(app), 'app.js missing buildAudioPanel');
+        assert.ok(/audio-panel/.test(app), 'app.js missing audio-panel class');
+        assert.ok(/audioEl\.addEventListener\('timeupdate'/.test(app), 'app.js missing audio timeupdate handler');
+        assert.ok(/currentTime[^\n]*>= 30/.test(app), 'app.js missing 30s unlock threshold for audio');
+        const ga = READ('.gitattributes');
+        assert.ok(/\*\.m4a filter=lfs/.test(ga), '.gitattributes missing m4a LFS filter');
+    });
+
+    t('syllabus: manifest + cmed4-2026 syllabus.json + build reads from syllabus path + triage scenarios nested', () => {
+        const sm = JSON.parse(READ('syllabus/manifest.json'));
+        assert.strictEqual(sm.default, 'cmed4-2026');
+        assert.ok(Array.isArray(sm.syllabi) && sm.syllabi.includes('cmed4-2026'));
+        const sj = JSON.parse(READ('syllabus/cmed4-2026/syllabus.json'));
+        assert.strictEqual(sj.id, 'cmed4-2026');
+        assert.ok(typeof sj.name === 'string' && sj.name.length > 0);
+        assert.deepStrictEqual([...sj.subjects].sort(), [...SUBJECTS].sort());
+        assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(sj.examDate));
+        for (const s of SUBJECTS) {
+            assert.ok(fs.existsSync(path.join(ROOT, 'syllabus/cmed4-2026', s, 'triage_scenarios.yml')), `${s} triage nested`);
+            assert.ok(!fs.existsSync(path.join(ROOT, `${s}_triage_scenarios.yml`)), `${s} legacy triage at root must be gone`);
+        }
+        const build = READ('scripts/build_data.js');
+        assert.ok(/CORPUS_SYLLABUS/.test(build), 'build_data.js missing CORPUS_SYLLABUS env hook');
+        assert.ok(/SUBJ_ROOT/.test(build), 'build_data.js missing SUBJ_ROOT');
+    });
+
     console.log('# phase 1: schedule engine + calendar + settings + nav');
     t('schedule determinism + config round-trip + edit/lock + calendar render + nav links + broadcastchannel', async () => {
         global.localStorage.clear();
@@ -507,7 +547,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(indexHtml, /style\.css\?v=(__BUILD_VERSION__|\d+)/);
         // infographics: relocated guides + infographics dir + shard arrays + lightbox + concise/ gone
         assert.ok(!fs.existsSync(path.join(ROOT, 'concise')), 'concise/ should be removed');
-        for (const s of SUBJECTS) assert.ok(fs.existsSync(path.join(ROOT, s, 'study_guide.md')), s + '/study_guide.md missing');
+        const SUBJ_ROOT = path.join(ROOT, 'syllabus', 'cmed4-2026');
+        for (const s of SUBJECTS) assert.ok(fs.existsSync(path.join(SUBJ_ROOT, s, 'study_guide.md')), s + '/study_guide.md missing under syllabus');
         // Chars are byte-of-source — drift signals lossy edits, not formatting drift.
         // Floor enforces "no truncation" without re-baselining on every CRLF flip.
         const minChars = { cardiology: 230000, diabetes: 135000, endocrine: 135000, gastroenterology: 185000, geriatric: 55000, nephrology: 130000, pulmonology: 135000, rheumatology: 48000 };

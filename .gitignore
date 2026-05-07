@@ -109,10 +109,7 @@
 # build output â videos copied from <subject>/videos/ at build time
 site/data/videos/
 
-# accidentally committed in 7853443 - keep out
-diabetes/Adrenal,_pituitary,_and_pancreatic_clinical_mastery.m4a
-*.m4a
-*.mp4
+# audio + video tracked via git-lfs (see .gitattributes)
 # >>> gm managed (do not edit between markers)
 .gm-stop-verified
 .gm/prd-state.json

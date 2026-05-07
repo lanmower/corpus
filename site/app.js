@@ -618,7 +618,8 @@ async function renderSubject() {
 
     const infographicsPanel = buildInfographicsPanel(shard.guide?.infographics || []);
     const videoHero = buildVideoHero(shard.guide?.videos || [], subj);
-    const right = el('div', {}, videoHero, guideBodyPanel, infographicsPanel, cardsPanel, triagePanel);
+    const audioPanel = buildAudioPanel(shard.guide?.audio || [], subj);
+    const right = el('div', {}, videoHero, audioPanel, guideBodyPanel, infographicsPanel, cardsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
     stage.append(wrap);
 }
@@ -646,6 +647,30 @@ function buildVideoHero(videos, subj) {
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'watch first'), meta),
         el('div', { class: 'video-hero-frame' }, vidEl),
         el('div', { class: 'video-hero-caption' }, sub)
+    );
+}
+
+function buildAudioPanel(items, subj) {
+    if (!Array.isArray(items) || items.length === 0) return null;
+    const a = items[0];
+    const meta = a.sizeMB ? `${a.sizeMB} MB` : '';
+    const audioEl = el('audio', { controls: 'controls', preload: 'metadata', src: a.src });
+    if (subj && !unlocked.isUnlocked(subj)) {
+        let armed = false;
+        audioEl.addEventListener('timeupdate', () => {
+            if (armed) return;
+            if ((audioEl.currentTime || 0) >= 30) {
+                armed = true;
+                unlocked.markWatched(subj);
+                toast.info(`${subj} unlocked — cards now in review`);
+                render();
+            }
+        });
+    }
+    return el('div', { class: 'panel audio-panel', 'data-audio-id': a.filename },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'deep dive (audio)'), meta),
+        el('div', { class: 'audio-frame' }, audioEl),
+        el('div', { class: 'audio-caption' }, a.title || 'audio deep dive')
     );
 }
 
