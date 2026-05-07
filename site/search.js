@@ -20,6 +20,10 @@ export function buildSearchIndex(manifest, shards) {
             kind: 'infographic', subject: meta.subject, id: `${meta.subject}/${ig.filename}`,
             title: ig.title, body: ig.alt || ''
         });
+        if (sh.guide && Array.isArray(sh.guide.videos)) for (const vid of sh.guide.videos) items.push({
+            kind: 'video', subject: meta.subject, id: `${meta.subject}/${vid.filename}`,
+            title: vid.title, body: 'lecture video'
+        });
         if (sh.guide && sh.guide.body) {
             const body = sh.guide.body;
             const paras = body.split(/\n\n+/);

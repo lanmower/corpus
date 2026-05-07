@@ -43,6 +43,7 @@ Per-subject files at D:/corpus root:
 - `*_triage_scenarios.yml` (all 8 subjects) — parameterized clinical triage scenarios extracted from SRS cards
 - `<subject>/study_guide.md` (all 8 subjects) — **the rewritten study guides; 934KB total prose across 202 sections; the featured top-level artifact of the site** (see "Study Guides Featured" below)
 - `<subject>/infographics/*.png` (7 of 8 subjects, rheumatology pending) — per-subject infographic gallery surfaced via `.infographics-panel` + lightbox on subject deepdives
+- `<subject>/videos/*.mp4` + `<subject>/videos.json` (7 of 8 subjects — diabetes has no video, graceful fallback) — per-subject lecture video tracked via **git-lfs** (`*.mp4` filter set in `.gitattributes`). The Pages workflow runs `actions/checkout@v4 with: lfs: true` then `git lfs pull` and re-runs `node scripts/build_data.js` so videos land in `site/data/videos/<subject>/` on deploy. Each shard's `guide.videos[]` carries `{filename, title, src, sizeMB, durationMin?, url?}`. The deepdive renders `.video-hero` (16:9 native `<video controls preload="metadata">`) as the FIRST element of the right column on `#subject/<x>`; `#guides` cards get a `▶ video` tagline + `.has-video` class + aria-label suffix when present. Search palette indexes `kind:'video'` and auto-scrolls to the player on select. SW skips caching `.mp4|.webm|.mov|.m4v` (network-first, never persisted).
 
 ## Observability Website
 

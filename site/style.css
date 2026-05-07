@@ -943,3 +943,23 @@ details.collapsible[open] > summary::after { content: '▴'; }
     .subject-hero-cta { width: 100%; }
     .subject-hero-cta .primary-action { width: 100%; text-align: center; }
 }
+
+
+/* video hero — top of subject deepdive */
+.video-hero { padding: 14px 16px 16px; }
+.video-hero-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: var(--r-md);
+    overflow: hidden;
+    margin-top: 8px;
+}
+.video-hero-frame video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.video-hero-caption { margin-top: 10px; font-family: var(--ff-prose); font-size: 14px; color: var(--panel-text-2); }
+.subject-card.has-video .tagline { color: var(--ink); font-weight: 600; }
+@media (max-width: 600px) {
+    .video-hero { padding: 8px 6px 10px; border-radius: 0; }
+    .video-hero-frame { border-radius: 8px; }
+}

@@ -321,15 +321,18 @@ function renderGuides() {
     for (const meta of state.manifest.subjects) {
         const m = masteryFor(meta.subject);
         const sections = meta.guideSections || 0;
+        const hasVideo = (meta.videoCount || 0) > 0;
+        const taglineParts = [`${sections} sections`];
+        if (hasVideo) taglineParts.push('▶ video');
         grid.append(el('div', {
-            class: 'subject-card', role: 'button', tabindex: '0',
-            'aria-label': `${meta.subject} guide, ${m}% understood`,
+            class: 'subject-card' + (hasVideo ? ' has-video' : ''), role: 'button', tabindex: '0',
+            'aria-label': `${meta.subject} guide, ${m}% understood${hasVideo ? ', includes video' : ''}`,
             data: { subject: meta.subject },
             on: { click: () => go('subject', meta.subject),
                   keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go('subject', meta.subject); } } }
         },
             el('div', { class: 'name' }, meta.subject),
-            el('div', { class: 'tagline' }, `${sections} sections`),
+            el('div', { class: 'tagline' }, taglineParts.join(' · ')),
             el('div', { class: 'mastery-row' },
                 el('div', { class: 'mastery-bar' }, el('div', { class: 'mastery-fill' + (m < 25 ? ' weak' : ''), style: `width:${m}%` })),
                 el('span', { class: 'mastery-pct' }, `${m}%`)
@@ -443,9 +446,25 @@ async function renderSubject() {
     const cardsPanel = cardsDetails;
 
     const infographicsPanel = buildInfographicsPanel(shard.guide?.infographics || []);
-    const right = el('div', {}, guideBodyPanel, infographicsPanel, cardsPanel, triagePanel);
+    const videoHero = buildVideoHero(shard.guide?.videos || []);
+    const right = el('div', {}, videoHero, guideBodyPanel, infographicsPanel, cardsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
     stage.append(wrap);
+}
+
+function buildVideoHero(videos) {
+    if (!Array.isArray(videos) || videos.length === 0) return null;
+    const v = videos[0];
+    const sub = v.title || 'lecture video';
+    const meta = [v.durationMin ? `${v.durationMin} min` : null, v.sizeMB ? `${v.sizeMB} MB` : null].filter(Boolean).join(' · ');
+    const source = v.url || v.src;
+    return el('div', { class: 'panel video-hero', 'data-video-id': v.filename },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'watch first'), meta),
+        el('div', { class: 'video-hero-frame' },
+            el('video', { controls: 'controls', preload: 'metadata', playsinline: 'playsinline', src: source })
+        ),
+        el('div', { class: 'video-hero-caption' }, sub)
+    );
 }
 
 function buildInfographicsPanel(items) {
@@ -1607,6 +1626,10 @@ function mountSearchPalette() {
             else if (item.kind === 'section') { go('subject', item.subject); }
             else if (item.kind === 'prose') { go('subject', item.subject); }
             else if (item.kind === 'infographic') { go('subject', item.subject); }
+            else if (item.kind === 'video') {
+                go('subject', item.subject);
+                setTimeout(() => { const v = document.querySelector('.video-hero'); if (v) v.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 200);
+            }
         });
 }
 

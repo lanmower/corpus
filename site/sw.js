@@ -66,9 +66,10 @@ async function handle(request) {
         }
     }
 
+    const isVideo = /\.(mp4|webm|mov|m4v)$/i.test(url.pathname);
     try {
         const r = await fetch(request);
-        if (r && r.ok && cache) safeCachePut(cache, request, r.clone());
+        if (r && r.ok && cache && !isVideo) safeCachePut(cache, request, r.clone());
         return r;
     } catch {
         if (cache) {

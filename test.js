@@ -363,6 +363,34 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         }
     });
 
+    t('videos: 7 subjects have ≥1 mp4 + diabetes 0 + shard.guide.videos populated + manifest videoCount + app wires .video-hero', () => {
+        const expectVideo = ['cardiology','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
+        for (const s of expectVideo) {
+            const sh = SHARDMAP[s];
+            assert.ok(Array.isArray(sh.guide.videos) && sh.guide.videos.length >= 1, `${s} missing videos`);
+            const v = sh.guide.videos[0];
+            assert.ok(v.filename && /\.mp4$/i.test(v.filename), `${s} video filename`);
+            assert.ok(v.src && v.src.startsWith(`data/videos/${s}/`), `${s} video src path`);
+            const meta = MANIFEST.subjects.find(x => x.subject === s);
+            assert.strictEqual(meta.videoCount, sh.guide.videos.length, `${s} manifest videoCount mismatch`);
+            assert.ok(fs.existsSync(path.join(ROOT, 'site', v.src)), `${s} video file missing on disk`);
+        }
+        const dia = SHARDMAP['diabetes'];
+        assert.strictEqual((dia.guide.videos || []).length, 0, 'diabetes should have no videos');
+        const diaMeta = MANIFEST.subjects.find(x => x.subject === 'diabetes');
+        assert.strictEqual(diaMeta.videoCount, 0, 'diabetes manifest videoCount should be 0');
+        const app = READ('site/app.js');
+        assert.ok(/buildVideoHero/.test(app), 'app.js missing buildVideoHero');
+        assert.ok(/class:\s*'panel video-hero'/.test(app), 'app.js missing .video-hero class');
+        assert.ok(/has-video/.test(app), 'app.js missing has-video badge wiring');
+        const search = READ('site/search.js');
+        assert.ok(/kind:\s*'video'/.test(search), 'search.js missing video kind');
+        const sw = READ('site/sw.js');
+        assert.ok(/isVideo/.test(sw), 'sw.js should skip caching videos');
+        const css = READ('site/style.css');
+        assert.ok(/\.video-hero/.test(css), 'style.css missing .video-hero rule');
+    });
+
     console.log('# phase 1: schedule engine + calendar + settings + nav');
     t('schedule determinism + config round-trip + edit/lock + calendar render + nav links + broadcastchannel', async () => {
         global.localStorage.clear();

@@ -22,6 +22,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Pull LFS files
+        run: git lfs pull
+      - name: Build data shards (copies videos into site/data/videos/)
+        run: node scripts/build_data.js
       - name: Inject build version (commit SHA) into sw.js + html
         run: |
           SHA="${GITHUB_SHA::8}"
