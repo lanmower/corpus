@@ -1,10 +1,5 @@
 # Cardiology — Complete Study Guide
 
-**Generated:** 2026-05-06
-**Sources:** 6 lectures + 61 book sections
-
-> This guide compiles all available material in full — no truncation.
-
 ## Contents
 
 

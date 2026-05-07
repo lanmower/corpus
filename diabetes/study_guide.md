@@ -1,10 +1,5 @@
 # Diabetes — Complete Study Guide
 
-**Generated:** 2026-05-04
-**Sources:** 5 lectures, 177 SRS atoms
-
-> Built for 100% mastery: every lecture transcript embedded in full, every SRS atom inlined under its lecture, no truncation. Use this as the single reference for diabetes.
-
 ## Contents
 
 1. [Acute Diabetes  Complications](#acute-diabetes-complications)

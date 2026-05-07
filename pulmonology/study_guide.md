@@ -1,8 +1,5 @@
 # Pulmonology — Complete Study Guide
 
-**Generated:** 2026-05-04
-**Sources:** 7 lectures + 0 book sections
-
 > This guide compiles all available material to provide complete mastery of pulmonology. Each lecture covers critical topics in respiratory medicine, diagnostics, and clinical management.
 
 ## Table of Contents

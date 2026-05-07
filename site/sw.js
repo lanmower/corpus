@@ -47,41 +47,54 @@ async function safeCacheMatch(cache, req) {
     try { return await cache.match(req); } catch { return undefined; }
 }
 
-async function handle(request) {
-    let cache;
-    try { cache = await caches.open(CACHE); } catch { cache = null; }
-    const url = new URL(request.url);
+async function safeFetch(request) {
+    try { return await fetch(request); } catch { return null; }
+}
 
-    if (isStaticAsset(url)) {
+async function safeClone(r) {
+    try { return r.clone(); } catch { return null; }
+}
+
+async function handle(request) {
+    let cache = null;
+    try { cache = await caches.open(CACHE); } catch {}
+    let url;
+    try { url = new URL(request.url); } catch { url = null; }
+
+    if (url && isStaticAsset(url)) {
         if (cache) {
             const hit = await safeCacheMatch(cache, request);
             if (hit) return hit;
         }
-        try {
-            const r = await fetch(request);
-            if (r && r.ok && cache) safeCachePut(cache, request, r.clone());
-            return r;
-        } catch {
-            return new Response('offline', { status: 503, statusText: 'offline' });
+        const r = await safeFetch(request);
+        if (r && r.ok && cache) {
+            const c = await safeClone(r);
+            if (c) safeCachePut(cache, request, c);
         }
-    }
-
-    const isVideo = /\.(mp4|webm|mov|m4v)$/i.test(url.pathname);
-    try {
-        const r = await fetch(request);
-        if (r && r.ok && cache && !isVideo) safeCachePut(cache, request, r.clone());
-        return r;
-    } catch {
-        if (cache) {
-            const cached = await safeCacheMatch(cache, request);
-            if (cached) return cached;
-            if (request.mode === 'navigate' || (request.headers.get('accept') || '').includes('text/html')) {
-                const shell = (await safeCacheMatch(cache, './')) || (await safeCacheMatch(cache, './index.html'));
-                if (shell) return shell;
-            }
-        }
+        if (r) return r;
         return new Response('offline', { status: 503, statusText: 'offline' });
     }
+
+    const isVideo = url ? /\.(mp4|webm|mov|m4v)$/i.test(url.pathname) : false;
+    const r = await safeFetch(request);
+    if (r) {
+        if (r.ok && cache && !isVideo) {
+            const c = await safeClone(r);
+            if (c) safeCachePut(cache, request, c);
+        }
+        return r;
+    }
+    if (cache) {
+        const cached = await safeCacheMatch(cache, request);
+        if (cached) return cached;
+        let accept = '';
+        try { accept = request.headers.get('accept') || ''; } catch {}
+        if (request.mode === 'navigate' || accept.includes('text/html')) {
+            const shell = (await safeCacheMatch(cache, './')) || (await safeCacheMatch(cache, './index.html'));
+            if (shell) return shell;
+        }
+    }
+    return new Response('offline', { status: 503, statusText: 'offline' });
 }
 
 self.addEventListener('fetch', e => {

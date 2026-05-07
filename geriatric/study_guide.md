@@ -1,10 +1,5 @@
 # Geriatric — Complete Study Guide
 
-**Generated:** 2026-05-04
-**Sources:** 4 lectures, 99 SRS atoms
-
-> Built for 100% mastery: every lecture transcript embedded in full, every SRS atom inlined under its lecture, no truncation. Use this as the single reference for geriatric.
-
 ## Contents
 
 1. [Geriatric - Falls](#geriatric-falls)

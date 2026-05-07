@@ -1,8 +1,5 @@
 # Nephrology — Complete Study Guide
 
-**Generated:** 2026-05-04
-**Sources:** 10 lectures + 0 book sections
-
 > This guide compiles all available material to provide complete mastery of nephrology. A student reading this guide gets everything needed to understand kidney physiology, pathology, and clinical management from the - course.
 
 ## Table of Contents

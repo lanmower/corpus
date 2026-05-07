@@ -1,8 +1,5 @@
 # Gastroenterology — Complete Study Guide
 
-**Generated:** 2026-05-04
-**Sources:** 9 lectures + 0 book sections
-
 > This guide compiles all available material to provide complete mastery of the subject.
 
 ## Contents

@@ -1,6 +1,5 @@
 # Comprehensive Rheumatology Study Guide
 
-**Generated:** May 4, 2026
 **Total Sources:** 64 (8 audio transcripts + 56 textbook sections)
 
 ## Table of Contents
