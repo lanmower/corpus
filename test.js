@@ -596,6 +596,78 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appJs, /\\d\+\[\.\)\]/); // ordered list pattern
     });
 
+    console.log('# unlock gate + new-card cap');
+    const unlocked = await import('./site/unlocked.js');
+    const newcards = await import('./site/newcards.js');
+    const planMod = await import('./site/plan.js');
+    t('storage roundtrip + diabetes auto + predicate + cap default + plan locked-subject branch + app wiring + srs export', () => {
+        global.localStorage.clear();
+        // diabetes auto-unlocked
+        assert.strictEqual(unlocked.isAutoUnlocked('diabetes'), true);
+        assert.strictEqual(unlocked.isUnlocked('diabetes'), true);
+        // cardiology starts locked
+        assert.strictEqual(unlocked.isAutoUnlocked('cardiology'), false);
+        assert.strictEqual(unlocked.isUnlocked('cardiology'), false);
+        unlocked.markWatched('cardiology', '2026-05-06T12:00:00.000Z');
+        assert.strictEqual(unlocked.isUnlocked('cardiology'), true);
+        assert.strictEqual(unlocked.watchedAt('cardiology'), '2026-05-06T12:00:00.000Z');
+        // persistence shape
+        const raw = JSON.parse(global.localStorage.getItem('corpus.unlocked.v1'));
+        assert.strictEqual(raw.cardiology.watched, true);
+        assert.ok(typeof raw.cardiology.watchedAt === 'string');
+        unlocked.reset('cardiology');
+        assert.strictEqual(unlocked.isUnlocked('cardiology'), false);
+        // newcards cap default + bump + count
+        assert.strictEqual(newcards.cap(), 20);
+        assert.strictEqual(newcards.countToday('cardiology'), 0);
+        newcards.bump('cardiology', 1);
+        newcards.bump('cardiology', 2);
+        assert.strictEqual(newcards.countToday('cardiology'), 3);
+        assert.strictEqual(newcards.remaining('cardiology'), 17);
+        assert.strictEqual(newcards.canIntroduce('cardiology'), true);
+        newcards.setCap(2);
+        assert.strictEqual(newcards.cap(), 2);
+        assert.strictEqual(newcards.canIntroduce('cardiology'), false);
+        newcards.setCap(20);
+        // schema key for daily counts is date-bucketed
+        const ckRaw = JSON.parse(global.localStorage.getItem('corpus.newcards.v1'));
+        const today = new Date().toISOString().slice(0, 10);
+        assert.ok(ckRaw[today]);
+        assert.strictEqual(ckRaw[today].cardiology, 3);
+        // srs predicate: only repetitions===0 && lastScore==null is gated
+        assert.strictEqual(srs.isNewCardForGate(null), true);
+        assert.strictEqual(srs.isNewCardForGate({ repetitions: 0, lastScore: null }), true);
+        assert.strictEqual(srs.isNewCardForGate({ repetitions: 0, lastScore: 3 }), false);
+        assert.strictEqual(srs.isNewCardForGate({ repetitions: 2, lastScore: null }), false);
+        // plan branches: locked weakest emits watch + read instead of review
+        const planLocked = planMod.build({ due: 50, weakestSubject: 'cardiology', nextSection: { title: 'IHD' }, casesAvailable: 3,
+            unlocked: { cardiology: false, diabetes: true }, lockedSubjects: ['cardiology'] });
+        const kinds = planLocked.tasks.map(t => t.kind);
+        assert.ok(kinds.includes('watch'), 'locked weakest should yield watch task');
+        assert.ok(kinds.includes('read'), 'locked weakest should yield read task');
+        assert.ok(!kinds.includes('review'), 'locked weakest should suppress review task');
+        // unlocked weakest emits standard tasks
+        const planOpen = planMod.build({ due: 50, weakestSubject: 'diabetes', nextSection: { title: 'DKA' }, casesAvailable: 3,
+            unlocked: { diabetes: true }, lockedSubjects: [] });
+        const kindsO = planOpen.tasks.map(t => t.kind);
+        assert.ok(kindsO.includes('review'));
+        // app.js wiring
+        assert.match(appSrc, /from '\.\/unlocked\.js'/);
+        assert.match(appSrc, /from '\.\/newcards\.js'/);
+        assert.match(appSrc, /unlocked\.isUnlocked\(/);
+        assert.match(appSrc, /newcards\.cap\(\)/);
+        assert.match(appSrc, /isNewCardForGate/);
+        assert.match(appSrc, /unlock-panel/);
+        assert.match(appSrc, /locks-strip/);
+        assert.match(appSrc, /markWatched\(/);
+        // CSS hooks present
+        assert.match(styleCss, /\.unlock-panel/);
+        assert.match(styleCss, /\.locks-strip/);
+        assert.match(styleCss, /\.subject-card\.locked/);
+        // srs.js exports the predicate
+        assert.match(READ('site/srs.js'), /export function isNewCardForGate/);
+    });
+
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
 })();

@@ -196,6 +196,14 @@ export function daysUntilExam(cfg = loadConfig()) {
 
 export function effectiveDays(cfg = loadConfig()) { return Math.max(1, daysUntilExam(cfg) - 14); }
 
+// Predicate: is this card "new" for the unlock gate? Migration-safe — only
+// truly-untouched cards (repetitions===0 && lastScore==null) are subject to
+// the gate. Already-graded cards bypass forever.
+export function isNewCardForGate(state) {
+    if (!state) return true;
+    return (state.repetitions === 0 || state.repetitions == null) && (state.lastScore == null);
+}
+
 export function getDueCards(cardIds, states = loadStates()) {
     const now = Date.now();
     return cardIds.filter(id => {
@@ -273,6 +281,6 @@ if (typeof window !== 'undefined') {
         defaultCardState, calcSM2, schedule, fuzzInterval, compressInterval, today,
         loadStates, saveStates, loadConfig, saveConfig, exportState, importState,
         daysUntilExam, effectiveDays, getDueCards, getCardState, updateCard,
-        getScheduleStats, getForecast, resetAll, suspendCard, isSuspended, SCHEMA_VERSION
+        getScheduleStats, getForecast, resetAll, suspendCard, isSuspended, isNewCardForGate, SCHEMA_VERSION
     };
 }

@@ -963,3 +963,16 @@ details.collapsible[open] > summary::after { content: '▴'; }
     .video-hero { padding: 8px 6px 10px; border-radius: 0; }
     .video-hero-frame { border-radius: 8px; }
 }
+
+
+/* unlock gate */
+.locks-strip { border:1px dashed var(--panel-text-3); border-radius:var(--r-sm); padding:8px 12px; margin:0 0 var(--s-3); font-family:var(--ff-mono); font-size:12px; display:flex; gap:var(--s-2); align-items:center; flex-wrap:wrap; }
+.locks-strip .chip { font-size:12px; }
+.unlock-panel { margin: var(--s-3) 0; }
+.unlock-panel.locked { border-left: var(--rail-w) solid var(--c-due); }
+.unlock-panel.unlocked { border-left: var(--rail-w) solid var(--c-mastered); }
+.unlock-panel.auto { border-left: var(--rail-w) solid var(--c-mastered); opacity:0.85; }
+.unlock-panel .meta { font-family:var(--ff-mono); font-size:12px; color:var(--panel-text-2); margin:6px 0; }
+.unlock-btn { margin-top:8px; }
+.subject-card.locked { opacity: 0.85; }
+.subject-card.locked .name::after { content:" 🔒"; font-size:0.85em; }

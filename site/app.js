@@ -14,6 +14,8 @@ import * as undo from './undo.js';
 import * as late from './late.js';
 import * as usercards from './usercards.js';
 import * as confidence from './confidence.js';
+import * as unlocked from './unlocked.js';
+import * as newcards from './newcards.js';
 import * as schedule from './schedule.js';
 import * as calendar from './calendar.js';
 import * as game from './game.js';
@@ -234,6 +236,23 @@ function renderToday() {
 
     stage.append(renderStatusLine(p, due));
 
+    // Locked-subjects strip — actionable nudge.
+    {
+        const locked = state.manifest.subjects
+            .map(m => m.subject)
+            .filter(s => !unlocked.isUnlocked(s));
+        if (locked.length) {
+            const strip = el('div', { class: 'locks-strip', role: 'note' },
+                el('span', { class: 'eyebrow' }, '🔒 locked'),
+                ' ',
+                el('span', {}, `${locked.length} subject${locked.length === 1 ? '' : 's'}: `),
+                ...locked.map((s, i) => el('a', { class: 'chip', href: `#subject/${s}`,
+                    on: { click: e => { e.preventDefault(); go('subject', s); } } }, s + (i < locked.length - 1 ? '' : '')))
+            );
+            stage.append(strip);
+        }
+    }
+
     // Slim today: status, primary CTA, schedule strip, mastery ring
 
     // Primary CTA — outcome-oriented
@@ -256,8 +275,15 @@ function renderToday() {
         const wsh = weakest ? state.shards[weakest.subject] : null;
         const tw = weakest ? (ticksAll[weakest.subject] || {}) : {};
         const nextSection = wsh?.guide?.sections?.find(s => !tw[String(s.line)]) || null;
+        const unlMap = {}; const lockedList = [];
+        for (const meta of state.manifest.subjects) {
+            const u = unlocked.isUnlocked(meta.subject);
+            unlMap[meta.subject] = u;
+            if (!u) lockedList.push(meta.subject);
+        }
         const planObj = planMod.build({ due, weakestSubject: weakest?.subject, nextSection,
-            casesAvailable: wsh?.triage?.scenarios?.length || 0 });
+            casesAvailable: wsh?.triage?.scenarios?.length || 0,
+            unlocked: unlMap, lockedSubjects: lockedList });
         if (planObj.tasks.length) {
             const planEl = el('div', { class: 'panel daily-plan' },
                 el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "debug · today's plan"), `~${planObj.total} min`),
@@ -322,11 +348,13 @@ function renderGuides() {
         const m = masteryFor(meta.subject);
         const sections = meta.guideSections || 0;
         const hasVideo = (meta.videoCount || 0) > 0;
+        const isLocked = !unlocked.isUnlocked(meta.subject);
         const taglineParts = [`${sections} sections`];
         if (hasVideo) taglineParts.push('▶ video');
+        if (isLocked) taglineParts.push('🔒 locked');
         grid.append(el('div', {
-            class: 'subject-card' + (hasVideo ? ' has-video' : ''), role: 'button', tabindex: '0',
-            'aria-label': `${meta.subject} guide, ${m}% understood${hasVideo ? ', includes video' : ''}`,
+            class: 'subject-card' + (hasVideo ? ' has-video' : '') + (isLocked ? ' locked' : ''), role: 'button', tabindex: '0',
+            'aria-label': `${meta.subject} guide, ${m}% understood${hasVideo ? ', includes video' : ''}${isLocked ? ', cards locked until lecture watched' : ''}`,
             data: { subject: meta.subject },
             on: { click: () => go('subject', meta.subject),
                   keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go('subject', meta.subject); } } }
@@ -368,6 +396,35 @@ async function renderSubject() {
                 subjDue ? `review ${subjDue} card${subjDue === 1 ? '' : 's'}` : 'no cards due'),
             el('a', { class: 'cta', href: `./triage-live.html?subject=${encodeURIComponent(subj)}` }, 'open in tutor'))
     ));
+    // Unlock gate panel — visible whenever subject is locked OR has a video.
+    {
+        const auto = unlocked.isAutoUnlocked(subj);
+        const unl = unlocked.isUnlocked(subj);
+        const wAt = unlocked.watchedAt(subj);
+        const hasVid = (meta?.videoCount || 0) > 0;
+        if (auto) {
+            stage.append(el('div', { class: 'panel unlock-panel auto' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'unlocked'), 'no lecture video — open'),
+                el('div', { class: 'meta' }, 'all new cards available immediately.')));
+        } else if (!unl) {
+            const btn = el('button', { class: 'primary-action unlock-btn',
+                on: { click: () => { unlocked.markWatched(subj); render(); } } },
+                'I watched the lecture — unlock cards');
+            stage.append(el('div', { class: 'panel unlock-panel locked' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, '🔒 locked'), 'watch the lecture, then unlock'),
+                el('div', { class: 'meta' }, hasVid ? 'new cards stay hidden in review until you confirm you watched the lecture.' : 'no video on file — toggle below to unlock.'),
+                btn));
+        } else {
+            const dayCap = newcards.cap();
+            const countT = newcards.countToday(subj);
+            const rem = newcards.remaining(subj);
+            stage.append(el('div', { class: 'panel unlock-panel unlocked' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, '✓ unlocked'), wAt ? `since ${wAt.slice(0, 10)}` : ''),
+                el('div', { class: 'meta' }, `today: ${countT}/${dayCap} new · ${rem} remaining`),
+                el('button', { class: 'chip', on: { click: () => { if (confirm('relock this subject? cards introduced today still count.')) { unlocked.reset(subj); render(); } } } }, 'relock')));
+        }
+    }
+
     // Next thing
     const subTicks = loadGuideTicks()[subj] || {};
     const subShard0 = state.shards[subj];
@@ -696,8 +753,25 @@ async function renderReview() {
                 return false;
             });
         }
-        const dueIds = state.cramMode ? pool : srs.getDueCards(pool, states);
+        const dueIdsRaw = state.cramMode ? pool : srs.getDueCards(pool, states);
         const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
+        // Unlock gate + per-subject daily new-card cap. Apply only to "new" cards
+        // (repetitions===0 && lastScore==null). Already-graded cards bypass.
+        const introducedThisSession = {};
+        const dueIds = [];
+        for (const id of dueIdsRaw) {
+            const c = cardById[id]; if (!c) continue;
+            const subj = c._subject || c.subject;
+            const cs = states[id];
+            const isNew = srs.isNewCardForGate(cs);
+            if (!isNew) { dueIds.push(id); continue; }
+            if (!unlocked.isUnlocked(subj)) continue; // locked subject — drop new cards
+            const introToday = newcards.countToday(subj);
+            const usedThisSess = introducedThisSession[subj] || 0;
+            if (introToday + usedThisSess >= newcards.cap()) continue;
+            introducedThisSession[subj] = usedThisSess + 1;
+            dueIds.push(id);
+        }
         const sorted = dueIds.map(id => ({ id, dueAt: states[id]?.dueAt ?? 0, subject: cardById[id]._subject })).sort((a, b) => a.dueAt - b.dueAt);
         const bySubj = {};
         for (const x of sorted) (bySubj[x.subject] ||= []).push(x.id);
@@ -831,7 +905,10 @@ function skipReview() {
 
 function gradeReview(cardId, score) {
     const prev = srs.getCardState(cardId);
+    const wasNew = srs.isNewCardForGate(prev);
+    const card0 = state.reviewQueue?.[state.reviewIndex];
     if (!state.cramMode) srs.updateCard(cardId, score, state.reviewAllCardIds || []);
+    if (!state.cramMode && wasNew && card0?._subject) newcards.bump(card0._subject, 1);
     state.reviewSessionGraded++;
     if (!state.cramMode) progress.bumpGraded(1);
     if (score === 0) state.reviewAgainPile.push(cardId);
