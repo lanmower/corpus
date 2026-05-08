@@ -460,7 +460,7 @@ async function renderSubject() {
 
     const guideBodyPanel = shard.guide?.body ? el('div', { class: 'panel guide-body-panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'guide'), `${shard.guide.sections.length} sections`),
-        el('div', { class: 'guide-body markdown', html: renderMarkdown(shard.guide.body, subj) })
+        buildChunkedGuide(subj, shard, ticks)
     ) : null;
     const cardsDetails = el('details', { class: 'panel cards-panel collapsible' },
         el('summary', { class: 'panel-head' }, el('span', { class: 'title' }, `flashcards (${shard.cards.length})`)),
@@ -572,6 +572,82 @@ function buildGuideToc(subj, shard, ticks) {
         el('div', { class: 'toc-groups' }, ...groupEls)
     );
     return panel;
+}
+
+// Build chunked guide — sections grouped with their cards
+function buildChunkedGuide(subj, shard, ticks) {
+    const counts = sectionCardCounts(subj);
+    const sections = (shard.guide?.sections || []).filter(s => s.level === 2 || s.level === 3);
+    if (!sections.length || !shard.guide?.body) return null;
+
+    // Parse markdown body into sections by heading matches
+    const body = shard.guide.body;
+    const lines = body.split('\n');
+    const sectionRanges = []; // [{line, title, level, startLine, endLine}]
+
+    for (let i = 0; i < lines.length; i++) {
+        const m = lines[i].match(/^(#{1,3})\s+(.+?)\s*#*\s*$/);
+        if (m) {
+            const level = m[1].length;
+            const title = m[2];
+            const secLine = sections.find(s => s.title === title && s.level === level);
+            if (secLine) {
+                sectionRanges.push({ ...secLine, startLine: i, endLine: i });
+                if (sectionRanges.length > 1) {
+                    sectionRanges[sectionRanges.length - 2].endLine = i - 1;
+                }
+            }
+        }
+    }
+    if (sectionRanges.length > 0) {
+        sectionRanges[sectionRanges.length - 1].endLine = lines.length - 1;
+    }
+
+    // Build cards by section line
+    const cardsByLine = {};
+    for (const c of shard.cards) {
+        if (!c.requires?.sectionLine) continue;
+        const k = String(c.requires.sectionLine);
+        if (!cardsByLine[k]) cardsByLine[k] = [];
+        cardsByLine[k].push(c);
+    }
+
+    const chunks = [];
+    for (const sec of sectionRanges) {
+        const lineKey = String(sec.line);
+        const secCards = cardsByLine[lineKey] || [];
+        const checked = !!ticks[lineKey];
+        const cardCount = secCards.length;
+
+        // Extract section content (simplified: just show heading for now)
+        const secBody = secCards.length
+            ? `<div class="chunk-section">
+                <h3 id="g-${slugify(sec.title)}-${sec.line}">${sec.title}</h3>
+                <div class="chunk-cards">
+                    ${secCards.slice(0, 5).map(c => `
+                        <div class="mini-card">
+                            <div class="mini-q">${c.front}</div>
+                            <div class="mini-a">${c.back?.slice(0, 120) || ''}...</div>
+                        </div>
+                    `).join('')}
+                    ${secCards.length > 5 ? `<a href="#review" class="chip" onclick="event.preventDefault();state.reviewSubjectFilter='${subj}';go('review','${subj}')">See ${secCards.length} cards →</a>` : ''}
+                </div>
+            </div>`
+            : `<div class="chunk-section">
+                <h3 id="g-${slugify(sec.title)}-${sec.line}">${sec.title}</h3>
+                <div class="no-cards">No cards for this section</div>
+            </div>`;
+
+        chunks.push(el('div', { class: `chunk-panel${checked ? ' done' : ''}` },
+            el('div', { class: 'chunk-head' },
+                el('span', {}, sec.title),
+                cardCount ? el('span', { class: 'chunk-badge' }, `${cardCount} cards`) : null
+            ),
+            el('div', { class: 'chunk-body', html: secBody })
+        ));
+    }
+
+    return el('div', { class: 'chunked-guide' }, ...chunks);
 }
 
 function applyTocFilter(panel, q) {
