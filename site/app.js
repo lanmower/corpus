@@ -552,7 +552,7 @@ function buildGuideToc(subj, shard, ticks) {
         const childTicked = g.children.filter(s => ticks[String(s.line)]).length;
         const h2Ticked = !!ticks[String(g.h2.line)];
         const totalKids = g.children.length;
-        const progressLabel = totalKids ? `${childTicked}/${totalKids}` : (h2Ticked ? '✓' : '');
+        const progressLabel = totalKids ? `${childTicked}/${totalKids}` : (h2Ticked ? 'done' : '');
         const details = el('details', { class: 'toc-group', open: 'open' },
             el('summary', { class: 'toc-h2-summary' },
                 el('span', { class: 'toc-h2-title' }, g.h2.title),
@@ -1779,7 +1779,7 @@ function renderScheduleChecklist(rows) {
         }
         for (const it of items) {
             const row = el('div', { class: `checklist-row${it.done ? ' done' : ''} kind-${it.kind}` },
-                el('span', { class: 'check' }, it.done ? '☑' : '☐'),
+                el('span', { class: 'check' }, it.done ? '✓' : '○'),
                 it.href
                     ? el('a', { href: it.href, class: 'cl-label' }, it.label)
                     : el('a', { href: '#', class: 'cl-label', on: { click: e => { e.preventDefault(); it.click && it.click(); } } }, it.label)
@@ -1789,10 +1789,10 @@ function renderScheduleChecklist(rows) {
     }
     if (totalShortReview || totalShortNew) {
         panel.append(el('div', { class: 'rollover-note' },
-            `↻ rolled over from earlier: ${totalShortReview} review${totalShortReview === 1 ? '' : 's'}` +
+            `Rolled over from earlier: ${totalShortReview} review${totalShortReview === 1 ? '' : 's'}` +
             (totalShortNew ? ` · ${totalShortNew} new card${totalShortNew === 1 ? '' : 's'}` : '')));
     } else if (totalSurplus > 0) {
-        panel.append(el('div', { class: 'surplus-note' }, `✓ ahead by ${totalSurplus} — credited to tomorrow`));
+        panel.append(el('div', { class: 'surplus-note' }, `Ahead by ${totalSurplus} — credited to tomorrow`));
     }
     return panel;
 }
