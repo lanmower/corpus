@@ -483,7 +483,7 @@ async function renderSubject() {
     const infographicsPanel = buildInfographicsPanel(shard.guide?.infographics || []);
     const videoHero = buildVideoHero(shard.guide?.videos || [], subj);
     const audioPanel = buildAudioPanel(shard.guide?.audio || [], subj);
-    const right = el('div', {}, videoHero, audioPanel, guideBodyPanel, infographicsPanel, cardsPanel, triagePanel);
+    const right = el('div', {}, videoHero, audioPanel, cardsPanel, guideBodyPanel, infographicsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
     stage.append(wrap);
     mountBackToTop();
