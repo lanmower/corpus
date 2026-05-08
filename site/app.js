@@ -1834,7 +1834,7 @@ function mountTopbar() {
     const days = srs.daysUntilExam();
     const countdown = el('a', { class: 'exam-countdown', href: '#settings',
         title: 'days to exam — click to edit', 'aria-label': `${days} days to exam`,
-        on: { click: e => { e.preventDefault(); go('settings'); } }, days + "d to exam"));
+        on: { click: e => { e.preventDefault(); go('settings'); } } }, days + "d to exam");
     right.parentElement.insertBefore(countdown, right);
     const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'search (ctrl+k)', title: 'search (ctrl+k)',
         on: { click: () => state.searchPaletteApi?.open() } }, 'search ⌘k');
