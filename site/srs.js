@@ -204,11 +204,57 @@ export function isNewCardForGate(state) {
 export function getDueCards(cardIds, states = loadStates()) {
     const now = Date.now();
     return cardIds.filter(id => {
-        const s = states[id] ?? defaultCardState();
+        const s = states[id];
+        if (!s) return false;
+        if (s.suspended) return false;
+        if (!(s.history && s.history.length > 0)) return false;
+        if ((s.dueAt ?? 0) > now) return false;
+        return true;
+    });
+}
+
+export function isIntroduced(state) {
+    return !!(state && state.history && state.history.length > 0);
+}
+
+export function isEligible(card, state, ticksForSubject) {
+    if (isIntroduced(state)) return true;
+    const ticks = ticksForSubject || {};
+    const line = card?.requires?.sectionLine;
+    if (line != null) return !!ticks[String(line)];
+    return Object.values(ticks).some(v => v === true);
+}
+
+export function getEligibleCards(cards, states = loadStates(), ticksAll = {}) {
+    return cards.filter(c => isEligible(c, states[c.id], ticksAll[c._subject] || {}));
+}
+
+export function getEligibleDueCards(cards, states = loadStates(), ticksAll = {}) {
+    const now = Date.now();
+    return cards.filter(c => {
+        const s = states[c.id];
+        if (!isIntroduced(s)) return false;
         if (s.suspended) return false;
         if ((s.dueAt ?? 0) > now) return false;
         return true;
     });
+}
+
+export function getNewEligibleCards(cards, states = loadStates(), ticksAll = {}) {
+    return cards.filter(c => {
+        if (isIntroduced(states[c.id])) return false;
+        return isEligible(c, states[c.id], ticksAll[c._subject] || {});
+    });
+}
+
+export function introduceCard(cardId, now = Date.now()) {
+    const states = loadStates();
+    const prev = states[cardId];
+    if (isIntroduced(prev)) return prev;
+    const seed = { ...defaultCardState(), dueAt: now, dueDate: dateOf(now), history: [{ ts: now, score: null, kind: 'introduced' }] };
+    states[cardId] = seed;
+    saveStates(states);
+    return seed;
 }
 
 export function getCardState(cardId, states = loadStates()) {

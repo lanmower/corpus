@@ -45,7 +45,7 @@ function computeFromCards(manifest, shards, only) {
     const ticks = loadGuideTicks();
     const triage = loadTriage();
     const mistakes = loadMistakes();
-    let cardsTotal = 0, cardsMast = 0, cardsDue = 0;
+    let cardsTotal = 0, cardsMast = 0, cardsDue = 0, cardsIntroduced = 0;
     let secTotal = 0, secTicked = 0;
     let caseTotal = 0, casePass = 0;
     let mTotal = 0, mClear = 0;
@@ -56,8 +56,10 @@ function computeFromCards(manifest, shards, only) {
         for (const c of (sh.cards || [])) {
             cardsTotal++;
             const st = states[c.id];
-            if (cardMastered(st)) cardsMast++;
-            if (st && st.dueAt && st.dueAt <= now) cardsDue++;
+            const introduced = !!(st && st.history && st.history.length > 0);
+            if (introduced) cardsIntroduced++;
+            if (introduced && cardMastered(st)) cardsMast++;
+            if (introduced && st.dueAt && st.dueAt <= now) cardsDue++;
         }
         const secs = sh.guide?.sections || [];
         secTotal += secs.length;
@@ -77,13 +79,20 @@ function computeFromCards(manifest, shards, only) {
         const st = states[m.cardId];
         if (st && (st.lastScore || 0) >= 3) mClear++;
     }
-    const cards = pct(cardsMast, cardsTotal);
+    // Use introduced cards as denominator when ≥3 introduced; otherwise N/A (don't penalize fresh users).
+    const cardDenom = cardsIntroduced >= 3 ? cardsIntroduced : 0;
+    const cards = pct(cardsMast, cardDenom);
     const sections = pct(secTicked, secTotal);
     const cases = pct(casePass, caseTotal);
     const mDone = pct(mClear, mTotal);
-    const weighted = Math.round(0.4 * cards.pct + 0.3 * sections.pct + 0.2 * cases.pct + 0.1 * mDone.pct);
+    // Weighted score: cards weight only counts when there are enough introduced cards.
+    const wCards = cardDenom > 0 ? 0.4 : 0;
+    const wSections = 0.3 + (cardDenom > 0 ? 0 : 0.2);
+    const wCases = 0.2;
+    const wMistakes = 0.1 + (cardDenom > 0 ? 0 : 0.2);
+    const weighted = Math.round(wCards * cards.pct + wSections * sections.pct + wCases * cases.pct + wMistakes * mDone.pct);
     return {
-        cards: { ...cards, mastered: cardsMast, total: cardsTotal, due: cardsDue },
+        cards: { ...cards, mastered: cardsMast, introduced: cardsIntroduced, total: cardsTotal, due: cardsDue, na: cardDenom === 0 },
         sections: { ...sections, ticked: secTicked, total: secTotal },
         cases: { ...cases, passed: casePass, total: caseTotal },
         mistakes: { ...mDone, cleared: mClear, total: mTotal },

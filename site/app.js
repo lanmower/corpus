@@ -43,7 +43,7 @@ const state = {
     reviewAgainPile: [], reviewAllCardIds: [], reviewIndex: 0,
     reviewRevealed: false, reviewSessionGraded: 0, reviewSessionStarted: 0,
     sessionFinished: false, searchPaletteApi: null, reviewSessionCap: null,
-    cramMode: false, reviewTagFilter: new Set(),
+    cramMode: false, learnMode: false, reviewTagFilter: new Set(),
     paletteReviewSet: null, sectionFilter: null
 };
 window.__corpus = state;
@@ -76,7 +76,7 @@ const ROUTE_TITLES = { today: 'today', guides: 'subjects', review: 'review',
     cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings',
     calendar: 'calendar', mistakes: 'mistakes', drill: 'drill' };
 const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review',
-    notes: 'today', quests: 'today', badges: 'today', calendar: 'today', mistakes: 'stats', drill: 'review' };
+    notes: 'today', quests: 'today', badges: 'today' };
 
 function setDocTitle(route, subject) {
     const main = subject ? subject : (ROUTE_TITLES[route] || route);
@@ -297,44 +297,106 @@ function renderWelcome() {
 }
 
 // ---- compressed today ----
+function renderTodayPrimary(due, newCount) {
+    if (due > 0) {
+        const mins = estReviewMinutes(due);
+        return el('div', { class: 'today-primary' },
+            el('a', { class: 'primary-action', href: '#review',
+                on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = 'all'; state.cramMode = false; state.learnMode = false; resetReviewQueue(); go('review'); } } },
+                el('span', { class: 'pa-label' }, `review ${due} due card${due === 1 ? '' : 's'}`),
+                el('span', { class: 'pa-meta' }, `~${mins} min`)));
+    }
+    if (newCount > 0) {
+        const planTarget = todayPlanReviewTarget();
+        const altMeta = planTarget > 0 ? `${newCount} ready · or just review (${planTarget})` : `${newCount} ready to introduce`;
+        return el('div', { class: 'today-primary' },
+            el('a', { class: 'primary-action', href: '#review',
+                on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = 'all'; state.cramMode = false; state.learnMode = true; resetReviewQueue(); go('review'); } } },
+                el('span', { class: 'pa-label' }, `learn 5 new cards`),
+                el('span', { class: 'pa-meta' }, altMeta)));
+    }
+    // Fresh user, no eligible cards yet — point to next unticked section
+    const next = nextUntickedSubject();
+    if (next) {
+        return el('div', { class: 'today-primary' },
+            el('a', { class: 'primary-action', href: `#subject/${next.subject}`,
+                on: { click: e => { e.preventDefault(); go('subject', next.subject); } } },
+                el('span', { class: 'pa-label' }, `start with ${next.subject}`),
+                el('span', { class: 'pa-meta' }, next.section?.title || 'first section')));
+    }
+    return el('div', { class: 'today-primary' },
+        el('div', { class: 'primary-action muted' }, 'all caught up · browse subjects'));
+}
+
+function totalNewEligibleAll() {
+    const states = srs.loadStates();
+    const ticksAll = loadGuideTicks();
+    const out = {};
+    let total = 0;
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject]; if (!sh) continue;
+        const cards = sh.cards.map(c => ({ ...c, _subject: meta.subject }));
+        const n = srs.getNewEligibleCards(cards, states, ticksAll).length;
+        out[meta.subject] = n; total += n;
+    }
+    return { total, bySubject: out };
+}
+
+function nextUntickedSubject() {
+    const ticksAll = loadGuideTicks();
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject]; if (!sh) continue;
+        const t = ticksAll[meta.subject] || {};
+        const sec = sh.guide?.sections?.find(s => !t[String(s.line)]);
+        if (sec) return { subject: meta.subject, section: sec };
+    }
+    return null;
+}
+
 function renderToday() {
     const p = progress.load();
     const due = totalDueAll();
-    const cases = totalCasesQueued();
-    const mins = estReviewMinutes(due);
+    const newEl = totalNewEligibleAll();
+    const newCount = newEl.total;
 
     // Welcome message for first-time visitors
     const welcomeEl = renderWelcome();
     if (welcomeEl) stage.append(welcomeEl);
 
-    // Compute weakest subject for cram banner
+    // Cram banner (only when exam ≤ 14 days)
     const states = srs.loadStates();
     const ticks = loadGuideTicks();
     const rows = buildRows(state.manifest, state.shards, states, ticks);
     const weakest = computeWeakest(rows);
-
     const cramEl = renderCramBanner(weakest);
     if (cramEl) stage.append(cramEl);
 
     const resumeEl = renderResumeLine();
     if (resumeEl) stage.append(resumeEl);
 
-    stage.append(renderStatusLine(p, due));
+    // Primary action — the ONE thing to do now
+    stage.append(renderTodayPrimary(due, newCount));
 
-    const checklist = renderScheduleChecklist(rows);
-    if (checklist) stage.append(checklist);
-
-    // Daily progress bar
+    // Compact stats strip
     const goal = p.dailyGoal || 30;
     const reviewed = p.todayGraded || 0;
     const progressPct = Math.min(100, Math.round(100 * reviewed / goal));
+    stage.append(el('div', { class: 'today-stats' },
+        el('div', { class: 'today-stat' }, el('span', { class: 'num' }, String(p.streak || 0)), el('span', { class: 'lbl' }, 'streak')),
+        el('div', { class: 'today-stat' }, el('span', { class: 'num' }, `${reviewed}/${goal}`), el('span', { class: 'lbl' }, 'today')),
+        el('div', { class: 'today-stat' }, el('span', { class: 'num' }, String(due)), el('span', { class: 'lbl' }, 'due')),
+        el('div', { class: 'today-stat' }, el('span', { class: 'num' }, String(newCount)), el('span', { class: 'lbl' }, 'new')),
+    ));
+
     stage.append(el('div', { class: 'today-progress' },
         el('div', { class: 'today-progress-bar' },
             el('div', { class: 'today-progress-fill', style: `width:${progressPct}%` })),
         el('div', { class: 'today-progress-label' }, `${reviewed} / ${goal} reviewed today`)
     ));
 
-    // Subject rows with due counts
+    // Details (collapsible)
+    const detailsOpen = localStorage.getItem('corpus.today.details') === '1';
+    const detailsBody = el('div', { class: 'today-details-body' });
     if (due > 0) {
         const dueCounts = dueCountsBySubjectMap();
         const subjectRows = state.manifest.subjects
@@ -348,22 +410,21 @@ function renderToday() {
                         on: { click: () => { state.reviewSubjectFilter = m.subject; resetReviewQueue(); go('review'); } } }, 'review')
                 );
             });
-        if (subjectRows.length) stage.append(el('div', { class: 'today-subject-list' }, ...subjectRows));
+        if (subjectRows.length) detailsBody.append(el('div', { class: 'today-subject-list' }, ...subjectRows));
     }
-
-    // Primary CTA
-    const offerMin = estReviewMinutes(due);
-    stage.append(el('div', { class: 'today-primary' },
-        due
-            ? el('a', { class: 'primary-action', href: '#review',
-                on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = 'all'; resetReviewQueue(); go('review'); } } },
-                `review ${due} due card${due === 1 ? '' : 's'} · ~${offerMin} min`)
-            : el('div', { class: 'primary-action muted' }, 'all caught up · browse a subject')
-    ));
-
-    stage.append(renderMasteryRing());
+    const checklist = renderScheduleChecklist(rows);
+    if (checklist) detailsBody.append(checklist);
+    detailsBody.append(renderMasteryRing());
+    const detailsBox = el('details', { class: 'today-details', ...(detailsOpen ? { open: '' } : {}) },
+        el('summary', { class: 'today-details-summary',
+            on: { click: () => { setTimeout(() => { const open = stage.querySelector('.today-details')?.hasAttribute('open'); localStorage.setItem('corpus.today.details', open ? '1' : '0'); }, 0); } } },
+            'details · subject breakdown · schedule · mastery'),
+        detailsBody);
+    stage.append(detailsBox);
 
     if (DEBUG) {
+        const cases = totalCasesQueued();
+        const mins = estReviewMinutes(due);
         stage.append(el('p', { class: 'summary-line' },
             'today: ', el('span', { class: 'num' }, String(due)), ' due cards · ',
             el('span', { class: 'num' }, String(cases)), ' cases queued · ~',
@@ -460,21 +521,41 @@ async function renderSubject() {
         el('span', { class: 'eyebrow' }, 'subject'), el('h2', {}, subj)));
     const subjMastery = masteryFor(subj);
     const subjDue = dueCountFor(subj);
+    const subShard0 = state.shards[subj];
+    const subTicks = loadGuideTicks()[subj] || {};
+    const newEligibleSubj = subShard0
+        ? srs.getNewEligibleCards(subShard0.cards.map(c => ({ ...c, _subject: subj })), states, { [subj]: subTicks }).length
+        : 0;
+    let primaryCta;
+    if (subjDue > 0) {
+        primaryCta = el('a', { class: 'primary-action', href: `#review/${subj}`,
+            on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; state.cramMode = false; state.learnMode = false; resetReviewQueue(); go('review', subj); } } },
+            `review ${subjDue} card${subjDue === 1 ? '' : 's'}`);
+    } else if (newEligibleSubj > 0) {
+        primaryCta = el('a', { class: 'primary-action', href: `#review/${subj}`,
+            on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; state.cramMode = false; state.learnMode = true; resetReviewQueue(); go('review', subj); } } },
+            `learn ${Math.min(5, newEligibleSubj)} new card${newEligibleSubj === 1 ? '' : 's'}`);
+    } else {
+        primaryCta = el('div', { class: 'primary-action muted' }, 'all caught up here');
+    }
     stage.append(el('div', { class: 'subject-hero' },
         el('div', { class: 'subject-hero-ring', 'aria-label': `${subjMastery}% mastered` },
             el('div', { class: 'mini-ring', style: `--p:${subjMastery}` }, `${subjMastery}%`)),
         el('div', { class: 'subject-hero-cta' },
-            el('a', { class: 'primary-action', href: `#review/${subj}`,
-                on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; go('review', subj); } } },
-                subjDue ? `review ${subjDue} card${subjDue === 1 ? '' : 's'}` : 'no cards due'),
+            primaryCta,
             el('a', { class: 'cta', href: `./triage-live.html?subject=${encodeURIComponent(subj)}` }, 'open in tutor'))
     ));
-    // Next thing
-    const subTicks = loadGuideTicks()[subj] || {};
-    const subShard0 = state.shards[subj];
+    // Next thing — promoted to a clickable scroll-to-section card
     const nextSec = subShard0?.guide?.sections?.find(s => !subTicks[String(s.line)]);
-    if (nextSec) stage.append(el('div', { class: 'next-thing' },
-        el('span', { class: 'eyebrow' }, 'next:'), ' ', el('span', {}, nextSec.title)));
+    if (nextSec) stage.append(el('div', { class: 'next-thing-card', role: 'button', tabindex: '0',
+        on: {
+            click: () => { const e = document.getElementById(`g-section-${nextSec.line}`); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+            keydown: ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); const e = document.getElementById(`g-section-${nextSec.line}`); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
+        }
+    },
+        el('span', { class: 'eyebrow' }, 'next section'),
+        el('div', { class: 'nt-title' }, nextSec.title),
+        el('span', { class: 'nt-cta' }, 'read →')));
     const placeholder = el('div', { class: 'panel' },
         el('div', { class: 'skeleton', style: 'width:60%;height:14px' }),
         el('div', { class: 'skeleton', style: 'width:90%' }),
@@ -493,7 +574,7 @@ async function renderSubject() {
             el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'subject'), `${m}% mastered`),
             el('div', { class: 'progress-bar' }, el('div', { class: 'progress-fill' + (m < 25 ? ' weak' : ''), style: `width:${m}%` })),
             el('div', { class: 'mastery-breakdown', style: 'margin-top:8px;font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' },
-                `cards ${masteryData.cards.pct}% · sections ${masteryData.sections.pct}% · cases ${masteryData.cases.total ? masteryData.cases.pct + '%' : 'N/A'}`),
+                `cards ${masteryData.cards.na ? '—' : masteryData.cards.pct + '%'} (${masteryData.cards.mastered}/${masteryData.cards.introduced} introduced) · sections ${masteryData.sections.pct}% · cases ${masteryData.cases.total ? masteryData.cases.pct + '%' : 'N/A'}`),
             el('div', { style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' }, `${shard.cards.length} cards · ${due} due`),
             el('div', { class: 'kbd-hint', style: 'margin-top:8px' }, 'press r for just-read')
         ),
@@ -1139,7 +1220,27 @@ async function renderReview() {
             });
         }
         const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
-        const dueIds = state.cramMode ? pool : srs.getDueCards(pool, states);
+        const ticksAll = loadGuideTicks();
+        let dueIds;
+        if (state.learnMode) {
+            const pickable = pool.map(id => cardById[id]).filter(Boolean);
+            const newElig = srs.getNewEligibleCards(pickable, states, ticksAll);
+            const remainingBySubj = {};
+            const learnLimit = 5;
+            const picked = [];
+            for (const c of newElig) {
+                if (picked.length >= learnLimit) break;
+                const subj = c._subject;
+                if ((remainingBySubj[subj] ?? newcards.remaining(subj)) <= 0) continue;
+                picked.push(c.id);
+                remainingBySubj[subj] = (remainingBySubj[subj] ?? newcards.remaining(subj)) - 1;
+            }
+            dueIds = picked;
+        } else if (state.cramMode) {
+            dueIds = pool;
+        } else {
+            dueIds = srs.getDueCards(pool, states);
+        }
         const sorted = dueIds.map(id => ({ id, dueAt: states[id]?.dueAt ?? 0, subject: cardById[id]._subject })).sort((a, b) => a.dueAt - b.dueAt);
         const bySubj = {};
         for (const x of sorted) (bySubj[x.subject] ||= []).push(x.id);
@@ -1151,7 +1252,7 @@ async function renderReview() {
         if (!state.cramMode && state.reviewSessionCap === null) {
             state.reviewSessionCap = Math.min(totalDue, p0.dailyGoal || 30, 50);
         }
-        const cap = state.cramMode ? null : state.reviewSessionCap;
+        const cap = (state.cramMode || state.learnMode) ? null : state.reviewSessionCap;
         state.reviewQueueIds = cap != null ? interleaved.slice(0, cap) : interleaved;
         state._reviewBacklog = cap != null ? Math.max(0, totalDue - state.reviewQueueIds.length) : 0;
         state.reviewIndex = 0; state.reviewAgainPile = [];
@@ -1169,7 +1270,8 @@ async function renderReview() {
     const toGoal = Math.max(0, goal - p.todayGraded);
 
     stage.append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'review'), el('h2', {}, state.cramMode ? 'cram' : 'review')));
+        el('span', { class: 'eyebrow' }, state.learnMode ? 'learn' : 'review'),
+        el('h2', {}, state.cramMode ? 'cram' : (state.learnMode ? 'learn new' : 'review'))));
 
     // tiny progress line — REQUIRED feature 3
     stage.append(el('div', { class: 'review-progress' },
@@ -1223,18 +1325,27 @@ async function renderReview() {
         if (reviewed > 0 && !state.sessionFinished) {
             state.sessionFinished = true;
             const backlog = state._reviewBacklog || 0;
+            const wasLearn = state.learnMode;
             stage.append(el('div', { class: 'panel' },
-                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'session done')),
-                el('p', {}, `${reviewed} card${reviewed === 1 ? '' : 's'} reviewed · streak ${p.streak}.`),
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, wasLearn ? 'learning done' : 'session done')),
+                el('p', {}, wasLearn
+                    ? `${reviewed} new card${reviewed === 1 ? '' : 's'} introduced · they'll come back for review tomorrow.`
+                    : `${reviewed} card${reviewed === 1 ? '' : 's'} reviewed · streak ${p.streak}.`),
                 backlog > 0 ? el('p', { class: 'meta' }, `${backlog} more in backlog`) : null,
                 el('div', { class: 'toolbar' },
-                    el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); go('today'); } } }, 'today'),
-                    el('a', { class: 'chip', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.sessionFinished = false; state.reviewSessionCap = null; renderReview(); } } }, 'review more')
+                    el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); state.learnMode = false; go('today'); } } }, 'today'),
+                    el('a', { class: 'chip', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.sessionFinished = false; state.reviewSessionCap = null; renderReview(); } } }, wasLearn ? 'learn more' : 'review more')
                 )));
         } else {
+            const onlyNew = !state.cramMode && !state.learnMode && totalNewEligibleAll().total > 0;
             stage.append(el('div', { class: 'panel' },
-                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'all caught up')),
-                el('div', {}, 'no cards due. browse a subject or wait.')));
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, state.learnMode ? 'no new cards eligible' : 'all caught up')),
+                el('div', {}, state.learnMode
+                    ? 'tick more guide sections to introduce more cards.'
+                    : (onlyNew ? 'no cards due — try learning new ones.' : 'no cards due. browse a subject or wait.')),
+                onlyNew ? el('div', { class: 'toolbar' },
+                    el('a', { class: 'chip', href: '#review',
+                        on: { click: e => { e.preventDefault(); state.learnMode = true; resetReviewQueue(); renderReview(); } } }, 'learn new')) : null));
         }
         return;
     }
@@ -1319,6 +1430,11 @@ function resetReviewQueue() {
     state.reviewRevealed = false; state.reviewAgainPile = [];
     state.reviewSessionGraded = 0; state.sessionFinished = false;
     state.reviewSessionCap = null; state._reviewBacklog = 0;
+}
+
+function exitLearnMode() {
+    state.learnMode = false;
+    resetReviewQueue();
 }
 
 function skipReview() {
@@ -1433,6 +1549,11 @@ document.addEventListener('keydown', e => {
 async function renderStats() {
     stage.append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'stats'), el('h2', {}, 'stats')));
+    stage.append(el('div', { class: 'toolbar stats-deeplinks' },
+        el('a', { class: 'chip', href: '#mistakes', on: { click: e => { e.preventDefault(); go('mistakes'); } } }, 'mistakes'),
+        el('a', { class: 'chip', href: '#drill', on: { click: e => { e.preventDefault(); go('drill'); } } }, 'drill 10'),
+        el('a', { class: 'chip', href: '#calendar', on: { click: e => { e.preventDefault(); go('calendar'); } } }, 'calendar')
+    ));
     await loadAllShards();
     const states = srs.loadStates();
     const ticks = loadGuideTicks();
@@ -2084,6 +2205,13 @@ function mountTopbar() {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
             on: { click: e => { e.preventDefault(); go(route); } } }, label));
     }
+    const moreMenu = el('div', { class: 'nav-more-menu', hidden: '' },
+        el('a', { href: '#calendar', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('calendar'); } } }, 'calendar'),
+        el('a', { href: '#mistakes', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('mistakes'); } } }, 'mistakes'),
+        el('a', { href: '#drill', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('drill'); } } }, 'drill 10'));
+    const moreBtn = el('button', { class: 'navlink nav-more', 'aria-label': 'more', 'aria-haspopup': 'menu',
+        on: { click: e => { e.preventDefault(); moreMenu.hidden = !moreMenu.hidden; } } }, '⋯');
+    nav.append(moreBtn, moreMenu);
     nav.append(el('a', { href: '#settings', class: 'navlink nav-settings', data: { route: 'settings' },
         'aria-label': 'settings', on: { click: e => { e.preventDefault(); go('settings'); } } }, '⚙'));
     const right = document.querySelector('header.topbar .status');

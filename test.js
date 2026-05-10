@@ -660,15 +660,33 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appJs, /\\d\+\[\.\)\]/); // ordered list pattern
     });
 
-    console.log('# schedule reconcile + no-gating');
+    console.log('# schedule reconcile + eligibility gate');
     const newcards = await import('./site/newcards.js');
-    t('reconcile surplus + rollover + getDueCards has no eligibility gate + lock UI removed', async () => {
+    t('reconcile surplus + rollover + getDueCards eligibility gate + introduceCard + isEligible', async () => {
         const sched = await import('./site/schedule.js');
         global.localStorage.clear();
-        // no-gating: getDueCards returns ALL due cards (only suspended/dueAt filter)
-        const states = { c1: { suspended: false, dueAt: 0 }, c2: { suspended: false, dueAt: Date.now() + 86400000 }, c3: { suspended: true, dueAt: 0 } };
+        // gating: cards with no history are NOT due (fresh user sees 0 due)
+        const fresh = srs.getDueCards(['c1','c2','c3'], {});
+        assert.deepStrictEqual(fresh, [], 'fresh user has 0 due cards');
+        // introduced card (history present) IS due when dueAt <= now
+        const states = {
+            c1: { suspended: false, dueAt: 0, history: [{ ts: 1, score: null, kind: 'introduced' }] },
+            c2: { suspended: false, dueAt: Date.now() + 86400000, history: [{ ts: 1, score: 4 }] },
+            c3: { suspended: true, dueAt: 0, history: [{ ts: 1, score: 4 }] }
+        };
         const due = srs.getDueCards(['c1','c2','c3'], states);
-        assert.deepStrictEqual(due, ['c1']);
+        assert.deepStrictEqual(due, ['c1'], 'introduced+due+unsuspended only');
+        // isEligible: section-tick gate
+        const card = { id: 'x', _subject: 'cardiology', requires: { sectionLine: 42 } };
+        assert.strictEqual(srs.isEligible(card, undefined, {}), false, 'no tick → not eligible');
+        assert.strictEqual(srs.isEligible(card, undefined, { '42': true }), true, 'tick on section → eligible');
+        const cardNoLine = { id: 'y', _subject: 'cardiology' };
+        assert.strictEqual(srs.isEligible(cardNoLine, undefined, {}), false, 'no tick anywhere → not eligible');
+        assert.strictEqual(srs.isEligible(cardNoLine, undefined, { '7': true }), true, 'subject-touched → eligible for unlinked card');
+        // introduceCard seeds a history entry
+        global.localStorage.clear();
+        srs.introduceCard('newcard');
+        assert.ok(srs.isIntroduced(srs.loadStates()['newcard']));
         // schedule.reconcile: surplus credits next-day same-subject
         sched.saveConfig({ intensity: 'standard', chronotype: 'morning', pomodoro: 25, breakLen: 5, weights: Object.fromEntries(SUBJECTS.map(s => [s, s === 'cardiology' ? 1 : 0])) });
         const today = '2026-05-07';
