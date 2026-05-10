@@ -107,27 +107,26 @@ export function buildDayBlocks(cfg, dateIso, dueCounts, extras = {}) {
     );
     const dailyReviewBySubj = {};
     for (const a of allocs) {
-        // Only allow reviews for subjects that have been studied (at least one section ticked)
-        // Exception: if no subjects have been studied yet, allow all (first-time setup)
-        const hasStudied = studiedSubjects.size === 0 || studiedSubjects.has(a.subject);
-        if (hasStudied) {
-            dailyReviewBySubj[a.subject] = Math.min(reviewCap, dueCounts[a.subject] || 0);
-        } else {
-            dailyReviewBySubj[a.subject] = 0;
-        }
+        // Only plan reviews for subjects that have been studied (at least one section ticked).
+        // Fresh users (no ticks) get 0 reviews — they should learn first.
+        const hasStudied = studiedSubjects.has(a.subject);
+        dailyReviewBySubj[a.subject] = hasStudied ? Math.min(reviewCap, dueCounts[a.subject] || 0) : 0;
     }
     // Total daily new-card budget — allocate proportionally to top subjects only.
     const newBudget = Math.max(0, Math.round(DAILY_NEW_CAP * intensityMul));
     const sortedAllocs = [...allocs].sort((x, y) => y.min - x.min);
     const newBySubj = {};
     if (newBudget > 0 && sortedAllocs.length) {
-        // Spread the budget across the top 3 (by allocation), 4/4/4 style.
-        const topN = Math.min(3, sortedAllocs.length);
-        const base = Math.floor(newBudget / topN);
-        let rem = newBudget - base * topN;
-        for (let i = 0; i < topN; i++) {
-            newBySubj[sortedAllocs[i].subject] = base + (rem > 0 ? 1 : 0);
-            if (rem > 0) rem--;
+        // Only seed new cards for subjects the student has actually started studying.
+        const studiedAllocs = sortedAllocs.filter(a => studiedSubjects.has(a.subject));
+        const topN = Math.min(3, studiedAllocs.length);
+        if (topN > 0) {
+            const base = Math.floor(newBudget / topN);
+            let rem = newBudget - base * topN;
+            for (let i = 0; i < topN; i++) {
+                newBySubj[studiedAllocs[i].subject] = base + (rem > 0 ? 1 : 0);
+                if (rem > 0) rem--;
+            }
         }
     }
     // Guide sections + cases: only the top 2 subjects (by allocation) get one each per day.
