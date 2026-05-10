@@ -23,7 +23,7 @@ function defaults() {
         todayGraded: 0, todayCases: 0,
         lastSubject: null, lastRoute: null,
         lastReviewedAt: null,
-        history: []
+        history: [], gradedBySubject: {}, sessions: []
     };
 }
 
@@ -39,9 +39,11 @@ export function load() {
             p.history = (p.history || []).concat([{
                 date: p.todayDate, graded: p.todayGraded || 0, cases: p.todayCases || 0
             }]).slice(-60);
+            p.sessions = (p.sessions || []).filter(s => s.date !== today);
             p.todayDate = today;
             p.todayGraded = 0;
             p.todayCases = 0;
+            p.gradedBySubject = {};
         }
         return { ...defaults(), ...p };
     } catch { return defaults(); }
@@ -59,13 +61,21 @@ export function rollStreak(p, now = effectiveDateISO()) {
     return p;
 }
 
-export function bumpGraded(n = 1) {
+export function bumpGraded(n = 1, subject = null) {
     const p = load();
     rollStreak(p);
     p.todayGraded = (p.todayGraded || 0) + n;
     p.lastReviewedAt = Date.now();
+    if (subject) {
+        p.gradedBySubject = p.gradedBySubject || {};
+        p.gradedBySubject[subject] = (p.gradedBySubject[subject] || 0) + n;
+    }
     save(p);
     return p;
+}
+
+export function bumpGradedSubject(subject, n = 1) {
+    return bumpGraded(n, subject);
 }
 
 export function bumpCase(n = 1) {
@@ -87,5 +97,5 @@ export function setLast(route, subject) {
 export function reset() { localStorage.removeItem(KEY); }
 
 if (typeof window !== 'undefined') {
-    window.__progress = { load, save, bumpGraded, bumpCase, setGoal, setLast, rollStreak, reset };
+    window.__progress = { load, save, bumpGraded, bumpGradedSubject, bumpCase, setGoal, setLast, rollStreak, reset };
 }

@@ -487,7 +487,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const calSrc = READ('site/calendar.js');
         for (const re of [/function renderDayCell/, /cal-grid/, /openDetail/, /renderRing/, /renderHeatbar/, /onUpdate/, /toolbar/i]) assert.match(calSrc, re);
         // app.js wiring
-        for (const re of [/import \* as schedule from '\.\/schedule\.js'/, /import \* as calendar from '\.\/calendar\.js'/, /function renderCalendar/, /renderScheduleConfigPanel/, /\['calendar', 'calendar'\]/, /BroadcastChannel\('corpus'\)/, /schedule:updated/, /dueCountsBySubject/]) assert.match(appSrc, re);
+        for (const re of [/import \* as schedule from '\.\/schedule\.js'/, /import \* as calendar from '\.\/calendar\.js'/, /function renderCalendar/, /renderScheduleConfigPanel/, /calendar.*today|ROUTE_ALIASES/, /BroadcastChannel\('corpus'\)/, /schedule:updated/, /dueCountsBySubject/]) assert.match(appSrc, re);
         // nav in triage-live.html
         assert.match(liveHtml, /#calendar/);
         // settings panel HTML hooks

@@ -29,8 +29,16 @@ export function loadConfig() {
     try {
         const raw = localStorage.getItem(CFG_KEY);
         const cfg = raw ? JSON.parse(raw) : {};
+        // Priority: schedule config examDate > SRS config examDate > default
+        let examDate = cfg.examDate;
+        if (!examDate) {
+            try {
+                const srsCfg = JSON.parse(localStorage.getItem('corpus.srs.config') || '{}');
+                examDate = srsCfg.examDate;
+            } catch {}
+        }
         return {
-            ...DEFAULT_CONFIG, ...cfg,
+            ...DEFAULT_CONFIG, ...cfg, examDate,
             availability: { ...DEFAULT_CONFIG.availability, ...(cfg.availability || {}) },
             weights: { ...DEFAULT_CONFIG.weights, ...(cfg.weights || {}) }
         };
@@ -62,11 +70,14 @@ export function dayMinutes(cfg, dateIso) {
 }
 
 // Allocate minutes to subjects by weight (proportional, integer rounding, remainder to top weight).
-export function allocateSubjects(totalMin, weights, dueCounts) {
+// Daily quota scales inversely with days-to-exam: more time = lower daily pace for same backlog.
+export function allocateSubjects(totalMin, weights, dueCounts, daysToExam = 30) {
     const subs = SUBJECTS.map(s => ({ s, w: Math.max(0, weights[s] || 0) * (1 + Math.log10(1 + (dueCounts[s] || 0))) }));
     const sumW = subs.reduce((n, x) => n + x.w, 0);
     if (sumW === 0) return [];
-    const out = subs.map(x => ({ subject: x.s, min: Math.floor(totalMin * x.w / sumW) }));
+    // Pace factor: <1 when exam far (spread work thinner), 1 at default, >1 when exam near (cram)
+    const paceFactor = Math.max(0.5, Math.min(2, 30 / Math.max(7, daysToExam)));
+    const out = subs.map(x => ({ subject: x.s, min: Math.floor(totalMin * x.w / sumW * paceFactor) }));
     let rem = totalMin - out.reduce((n, x) => n + x.min, 0);
     out.sort((a, b) => (weights[b.subject] || 0) - (weights[a.subject] || 0));
     for (let i = 0; rem > 0 && i < out.length; i++, rem--) out[i].min++;
@@ -75,17 +86,36 @@ export function allocateSubjects(totalMin, weights, dueCounts) {
 
 // Build blocks for a single day. Pomodoro-segmented per subject. Chronotype shifts start hour.
 // Each study block carries a work spec: plannedReview/plannedNew/plannedSections/plannedCases.
-// extras: { ticksAll: {[subj]:{[line]:bool}}, shards: {[subj]:{cards,guide,triage}}, casesDone: {[subj]:Set} }
+// extras: { ticksAll: {[subj]:{[line]:bool}}, shards: {[subj]:{cards,guide,triage}}, casesDone: {[subj]:Set}, daysToExam: number }
 export function buildDayBlocks(cfg, dateIso, dueCounts, extras = {}) {
     const total = dayMinutes(cfg, dateIso);
     if (total <= 0) return [];
     const startHour = cfg.chronotype === 'morning' ? 8 : (cfg.chronotype === 'evening' ? 17 : 12);
-    const allocs = allocateSubjects(total, cfg.weights, dueCounts);
+    const daysToExam = extras.daysToExam || daysBetween(new Date().toISOString().slice(0, 10), cfg.examDate);
+    const allocs = allocateSubjects(total, cfg.weights, dueCounts, daysToExam);
     const intensityMul = INTENSITY_FACTOR[cfg.intensity] || 1;
     // Per-subject daily review cap: base × intensity, but never more than what's actually due.
     const reviewCap = Math.max(1, Math.round(PER_SUBJECT_DAILY_REVIEW_CAP * intensityMul));
+    // Filter subjects: only schedule reviews for subjects where student has ticked at least one guide section
+    // This ensures material is studied before reviewing cards
+    const ticksAll = extras.ticksAll || {};
+    const studiedSubjects = new Set(
+        Object.keys(ticksAll).filter(subj => {
+            const ticks = ticksAll[subj] || {};
+            return Object.values(ticks).some(v => v === true);
+        })
+    );
     const dailyReviewBySubj = {};
-    for (const a of allocs) dailyReviewBySubj[a.subject] = Math.min(reviewCap, dueCounts[a.subject] || 0);
+    for (const a of allocs) {
+        // Only allow reviews for subjects that have been studied (at least one section ticked)
+        // Exception: if no subjects have been studied yet, allow all (first-time setup)
+        const hasStudied = studiedSubjects.size === 0 || studiedSubjects.has(a.subject);
+        if (hasStudied) {
+            dailyReviewBySubj[a.subject] = Math.min(reviewCap, dueCounts[a.subject] || 0);
+        } else {
+            dailyReviewBySubj[a.subject] = 0;
+        }
+    }
     // Total daily new-card budget — allocate proportionally to top subjects only.
     const newBudget = Math.max(0, Math.round(DAILY_NEW_CAP * intensityMul));
     const sortedAllocs = [...allocs].sort((x, y) => y.min - x.min);
@@ -156,13 +186,15 @@ export function regenerate({ today = isoDate(new Date()), dueCounts = {}, horizo
     const cfg = loadConfig();
     const dl = daysBetween(today, cfg.examDate);
     const horizon = horizonDays != null ? horizonDays : Math.max(7, Math.min(60, dl + 1));
+    // Pass daysToExam in extras for pace-aware allocation
+    const fullExtras = { ...extras, daysToExam: dl };
     const existing = loadSchedule();
     const lockedById = new Map();
     for (const b of existing.blocks) if (b.locked) lockedById.set(b.id, b);
     const out = [];
     for (let i = 0; i < horizon; i++) {
         const date = addDays(today, i);
-        const day = buildDayBlocks(cfg, date, dueCounts, extras);
+        const day = buildDayBlocks(cfg, date, dueCounts, fullExtras);
         for (const b of day) {
             if (lockedById.has(b.id)) out.push(lockedById.get(b.id));
             else out.push(b);
@@ -175,10 +207,25 @@ export function regenerate({ today = isoDate(new Date()), dueCounts = {}, horizo
     return sched;
 }
 
-export function getSchedule({ regenerateIfStale = true, today = isoDate(new Date()), dueCounts = {} } = {}) {
+export function getSchedule({ regenerateIfStale = true, today = isoDate(new Date()), dueCounts = {}, ticksAll = {} } = {}) {
     const s = loadSchedule();
-    if (regenerateIfStale && (!s.blocks.length || s.today !== today)) return regenerate({ today, dueCounts });
+    if (regenerateIfStale && (!s.blocks.length || s.today !== today)) {
+        // Build extras with available data, including daysToExam for pace-aware allocation
+        const cfg = loadConfig();
+        const daysToExam = daysBetween(today, cfg.examDate);
+        const extras = { dueCounts, daysToExam, ticksAll };
+        return regenerate({ today, dueCounts, extras });
+    }
     return s;
+}
+
+// Dynamic intensity based on recent progress rate
+export function computeDynamicIntensity(cfg, weeklyGradedAvg) {
+    const baseIntensity = INTENSITY_FACTOR[cfg.intensity] || 1;
+    if (weeklyGradedAvg < 10) return baseIntensity * 0.8;
+    if (weeklyGradedAvg < 30) return baseIntensity * 1.0;
+    if (weeklyGradedAvg > 100) return baseIntensity * 1.15;
+    return baseIntensity;
 }
 
 export function blocksForDate(dateIso) { return loadSchedule().blocks.filter(b => b.date === dateIso); }

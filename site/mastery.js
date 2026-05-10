@@ -18,6 +18,12 @@ function cardMastered(state) {
     return (state.lastScore >= 4) && ((state.interval || 0) >= 21);
 }
 
+function cardReady(state) {
+    if (!state) return false;
+    // Ready if mastered OR not due (will become due soon)
+    return cardMastered(state) || (!state.dueAt || state.dueAt <= Date.now() + 3 * 86400000);
+}
+
 function casePassed(session) {
     if (!session) return false;
     if (typeof session.score === 'number') return session.score >= 0.8;
@@ -33,21 +39,25 @@ export function subjectProgress(manifest, shards, subject) {
     return computeFromCards(manifest, shards, subject);
 }
 
+// Compute readiness-adjusted mastery score
 function computeFromCards(manifest, shards, only) {
     const states = srs.loadStates();
     const ticks = loadGuideTicks();
     const triage = loadTriage();
     const mistakes = loadMistakes();
-    let cardsTotal = 0, cardsMast = 0;
+    let cardsTotal = 0, cardsMast = 0, cardsDue = 0;
     let secTotal = 0, secTicked = 0;
     let caseTotal = 0, casePass = 0;
     let mTotal = 0, mClear = 0;
+    const now = Date.now();
     const subjects = only ? [only] : SUBJECTS;
     for (const s of subjects) {
         const sh = shards[s]; if (!sh) continue;
         for (const c of (sh.cards || [])) {
             cardsTotal++;
-            if (cardMastered(states[c.id])) cardsMast++;
+            const st = states[c.id];
+            if (cardMastered(st)) cardsMast++;
+            if (st && st.dueAt && st.dueAt <= now) cardsDue++;
         }
         const secs = sh.guide?.sections || [];
         secTotal += secs.length;
@@ -73,7 +83,7 @@ function computeFromCards(manifest, shards, only) {
     const mDone = pct(mClear, mTotal);
     const weighted = Math.round(0.4 * cards.pct + 0.3 * sections.pct + 0.2 * cases.pct + 0.1 * mDone.pct);
     return {
-        cards: { ...cards, mastered: cardsMast, total: cardsTotal },
+        cards: { ...cards, mastered: cardsMast, total: cardsTotal, due: cardsDue },
         sections: { ...sections, ticked: secTicked, total: secTotal },
         cases: { ...cases, passed: casePass, total: caseTotal },
         mistakes: { ...mDone, cleared: mClear, total: mTotal },

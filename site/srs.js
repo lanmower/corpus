@@ -27,7 +27,7 @@ export function defaultCardState() {
 }
 
 export function calcSM2(state, score) {
-    if (score < 3) return { ...state, interval: 1, repetitions: 0, easeFactor: state.easeFactor };
+    if (score < 3) return { ...state, interval: 1, repetitions: 0, easeFactor: Math.max(1.3, state.easeFactor - 0.15) };
     const ef = Math.max(1.3, state.easeFactor + 0.1 - (5 - score) * (0.08 + (5 - score) * 0.02));
     let interval;
     if (state.repetitions === 0) interval = 1;

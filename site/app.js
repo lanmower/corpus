@@ -31,7 +31,7 @@ const warn = (...a) => console.warn('[corpus]', ...a);
 
 const FRIENDLY_GRADES = [
     { friendly: 1, smscore: 0, label: 'again', desc: "didn't know" },
-    { friendly: 2, smscore: 2, label: 'hard', desc: 'slow recall' },
+    { friendly: 2, smscore: 3, label: 'hard', desc: 'slow recall' },
     { friendly: 3, smscore: 4, label: 'good', desc: 'recalled' },
     { friendly: 4, smscore: 5, label: 'easy', desc: 'instant' }
 ];
@@ -42,9 +42,9 @@ const state = {
     reviewSubjectFilter: 'all', reviewQueue: [], reviewQueueIds: [],
     reviewAgainPile: [], reviewAllCardIds: [], reviewIndex: 0,
     reviewRevealed: false, reviewSessionGraded: 0, reviewSessionStarted: 0,
-    sessionFinished: false, searchPaletteApi: null,
+    sessionFinished: false, searchPaletteApi: null, reviewSessionCap: null,
     cramMode: false, reviewTagFilter: new Set(),
-    paletteReviewSet: null
+    paletteReviewSet: null, sectionFilter: null
 };
 window.__corpus = state;
 window.__corpus.DEBUG = DEBUG;
@@ -71,12 +71,12 @@ function el(tag, attrs = {}, ...kids) {
     return e;
 }
 
-const ROUTES = ['today', 'calendar', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'mistakes', 'drill'];
-const ROUTE_TITLES = { today: 'today', calendar: 'calendar', guides: 'guides', review: 'review',
+const ROUTES = ['today', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'calendar', 'mistakes', 'drill'];
+const ROUTE_TITLES = { today: 'today', guides: 'subjects', review: 'review',
     cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings',
-    mistakes: 'mistakes', drill: 'drill' };
+    calendar: 'calendar', mistakes: 'mistakes', drill: 'drill' };
 const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review',
-    notes: 'today', quests: 'today', badges: 'today' };
+    notes: 'today', quests: 'today', badges: 'today', calendar: 'today', mistakes: 'stats', drill: 'review' };
 
 function setDocTitle(route, subject) {
     const main = subject ? subject : (ROUTE_TITLES[route] || route);
@@ -172,6 +172,21 @@ function todayPlanReviewTarget() {
         for (const b of blocks) n += (b.plannedReview || 0) + (b.plannedNew || 0);
         return n;
     } catch { return 0; }
+}
+
+let bc = null;
+function channel() {
+    if (bc) return bc;
+    try { bc = ('BroadcastChannel' in (typeof self !== 'undefined' ? self : {})) ? new BroadcastChannel('corpus') : null; } catch { bc = null; }
+    return bc;
+}
+function emit(reason) {
+    try { channel()?.postMessage({ type: 'schedule:updated', reason, ts: Date.now() }); } catch {}
+    try {
+        if (typeof window !== 'undefined' && window.dispatchEvent) {
+            window.dispatchEvent(new CustomEvent('schedule:updated', { detail: { reason, ts: Date.now() } }));
+        }
+    } catch {}
 }
 
 function updateFooter() {
@@ -309,16 +324,41 @@ function renderToday() {
     const checklist = renderScheduleChecklist(rows);
     if (checklist) stage.append(checklist);
 
-    // Free-study fallback — review whatever's due, clamped to today's plan target.
-    const planTarget = todayPlanReviewTarget();
-    const offerN = planTarget > 0 ? Math.min(planTarget, due) : Math.min(due, 60);
-    const offerMin = estReviewMinutes(offerN);
+    // Daily progress bar
+    const goal = p.dailyGoal || 30;
+    const reviewed = p.todayGraded || 0;
+    const progressPct = Math.min(100, Math.round(100 * reviewed / goal));
+    stage.append(el('div', { class: 'today-progress' },
+        el('div', { class: 'today-progress-bar' },
+            el('div', { class: 'today-progress-fill', style: `width:${progressPct}%` })),
+        el('div', { class: 'today-progress-label' }, `${reviewed} / ${goal} reviewed today`)
+    ));
+
+    // Subject rows with due counts
+    if (due > 0) {
+        const dueCounts = dueCountsBySubjectMap();
+        const subjectRows = state.manifest.subjects
+            .filter(m => (dueCounts[m.subject] || 0) > 0)
+            .map(m => {
+                const n = dueCounts[m.subject];
+                return el('div', { class: 'today-subject-row' },
+                    el('span', { class: 'today-subject-name' }, m.subject),
+                    el('span', { class: 'today-subject-due' }, `${n} due`),
+                    el('button', { class: 'chip', 'aria-label': `review ${m.subject}`,
+                        on: { click: () => { state.reviewSubjectFilter = m.subject; resetReviewQueue(); go('review'); } } }, 'review')
+                );
+            });
+        if (subjectRows.length) stage.append(el('div', { class: 'today-subject-list' }, ...subjectRows));
+    }
+
+    // Primary CTA
+    const offerMin = estReviewMinutes(due);
     stage.append(el('div', { class: 'today-primary' },
-        el('a', { class: 'primary-action', href: '#review',
-            on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = 'all'; resetReviewQueue(); go('review'); } } },
-            due ? `or just review (${offerN}) · ~${offerMin} min` : 'no cards due — browse guides'),
-        (due > offerN) ? el('div', { class: 'meta', style: 'margin-top:4px;font-size:12px;color:var(--panel-text-2)' },
-            `backlog: ${due} cards across all subjects`) : null
+        due
+            ? el('a', { class: 'primary-action', href: '#review',
+                on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = 'all'; resetReviewQueue(); go('review'); } } },
+                `review ${due} due card${due === 1 ? '' : 's'} · ~${offerMin} min`)
+            : el('div', { class: 'primary-action muted' }, 'all caught up · browse a subject')
     ));
 
     stage.append(renderMasteryRing());
@@ -444,15 +484,17 @@ async function renderSubject() {
     placeholder.remove();
 
     const due = srs.getDueCards(shard.cards.map(c => c.id), srs.loadStates()).length;
-    const m = masteryFor(subj);
     const ticks = loadGuideTicks()[subj] || {};
+    const masteryData = mastery.subjectProgress(state.manifest, state.shards, subj);
+    const m = masteryData.weighted;
 
     const left = el('aside', { class: 'deepdive-side' },
         el('div', { class: 'panel' },
             el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'subject'), `${m}% mastered`),
             el('div', { class: 'progress-bar' }, el('div', { class: 'progress-fill' + (m < 25 ? ' weak' : ''), style: `width:${m}%` })),
-            el('div', { style: 'margin-top:8px;font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' }, `${shard.cards.length} cards · ${due} due`),
-            el('div', { style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' }, `${shard.triage?.scenarioCount || 0} cases`),
+            el('div', { class: 'mastery-breakdown', style: 'margin-top:8px;font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' },
+                `cards ${masteryData.cards.pct}% · sections ${masteryData.sections.pct}% · cases ${masteryData.cases.total ? masteryData.cases.pct + '%' : 'N/A'}`),
+            el('div', { style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' }, `${shard.cards.length} cards · ${due} due`),
             el('div', { class: 'kbd-hint', style: 'margin-top:8px' }, 'press r for just-read')
         ),
         buildGuideToc(subj, shard, ticks)
@@ -462,22 +504,42 @@ async function renderSubject() {
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'guide'), `${shard.guide.sections.length} sections`),
         buildChunkedGuide(subj, shard, ticks)
     ) : null;
-    const cardsDetails = el('details', { class: 'panel cards-panel collapsible' },
-        el('summary', { class: 'panel-head' }, el('span', { class: 'title' }, `flashcards (${shard.cards.length})`)),
-        ...shard.cards.slice(0, 20).map(c => buildFlashcard(c))
+    const cardsDetails = el('div', { class: 'panel cards-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'flashcards')),
+        el('div', { class: 'cards-cta-row' },
+            el('span', { class: 'cards-cta-meta' }, `${shard.cards.length} cards · ${due} due`),
+            el('a', { class: 'chip', href: `#review/${subj}`,
+                on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; resetReviewQueue(); go('review', subj); } } },
+                due ? `review ${due} due →` : 'browse cards →')
+        )
     );
-    if (shard.cards.length > 20) {
-        cardsDetails.append(el('div', { style: 'margin-top:10px' },
-            el('a', { href: '#review', class: 'chip', on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; go('review', subj); } } }, `review all ${shard.cards.length} →`)));
-    }
 
-    const triagePanel = shard.triage && shard.triage.scenarios.length ? el('details', { class: 'panel cases-panel collapsible' },
-        el('summary', { class: 'panel-head' }, el('span', { class: 'title' }, `cases (${shard.triage.scenarios.length})`)),
-        ...shard.triage.scenarios.slice(0, 8).map(sc => el('div', { class: 'row' },
-            el('span', { class: 'code' }, '◆'),
-            el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, sc.description || '')),
-            el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
-        ))) : null;
+    const triageScenarios = shard.triage?.scenarios || [];
+    const triageVisible = triageScenarios.slice(0, 3);
+    const triageHidden = triageScenarios.slice(3);
+    const triagePanel = triageScenarios.length ? (() => {
+        const panel = el('div', { class: 'panel cases-panel' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, `cases (${triageScenarios.length})`)),
+            ...triageVisible.map(sc => el('div', { class: 'row' },
+                el('span', { class: 'code' }, '◆'),
+                el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, sc.description || '')),
+                el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
+            ))
+        );
+        if (triageHidden.length) {
+            const moreRows = triageHidden.map(sc => el('div', { class: 'row triage-hidden' },
+                el('span', { class: 'code' }, '◆'),
+                el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, sc.description || '')),
+                el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
+            ));
+            moreRows.forEach(r => r.style.display = 'none');
+            const showBtn = el('button', { class: 'chip', style: 'margin-top:8px',
+                on: { click: e => { moreRows.forEach(r => r.style.display = ''); e.target.remove(); } } },
+                `show ${triageHidden.length} more`);
+            panel.append(...moreRows, showBtn);
+        }
+        return panel;
+    })() : null;
     const cardsPanel = cardsDetails;
 
     const infographicsPanel = buildInfographicsPanel(shard.guide?.infographics || []);
@@ -537,7 +599,15 @@ function buildGuideToc(subj, shard, ticks) {
                 on: { click: e => {
                     e.preventDefault();
                     const target = document.getElementById(anchorId);
-                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (target) {
+                        const panel = target.closest('.chunk-panel');
+                        if (panel && panel.classList.contains('chunk-collapsed')) {
+                            panel.classList.remove('chunk-collapsed');
+                            const btn = panel.closest('.chunked-guide')?.querySelector('.chunk-expand-btn');
+                            if (btn) { const remaining = panel.closest('.chunked-guide').querySelectorAll('.chunk-collapsed').length; if (!remaining) btn.remove(); }
+                        }
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 } } }, s.title),
             badgeText ? el('span', { class: 'sec-card-badge' }, badgeText) : null
         );
@@ -584,14 +654,17 @@ function buildChunkedGuide(subj, shard, ticks) {
     const body = shard.guide.body;
     const lines = body.split('\n');
     const sectionRanges = []; // [{line, title, level, startLine, endLine}]
+    let usedSections = new Set(); // track which sections have been consumed
 
     for (let i = 0; i < lines.length; i++) {
         const m = lines[i].match(/^(#{1,3})\s+(.+?)\s*#*\s*$/);
         if (m) {
             const level = m[1].length;
             const title = m[2];
-            const secLine = sections.find(s => s.title === title && s.level === level);
+            // Find first unused section matching title+level (handles duplicate titles)
+            const secLine = sections.find(s => !usedSections.has(s.line) && s.title === title && s.level === level);
             if (secLine) {
+                usedSections.add(secLine.line);
                 sectionRanges.push({ ...secLine, startLine: i, endLine: i });
                 if (sectionRanges.length > 1) {
                     sectionRanges[sectionRanges.length - 2].endLine = i - 1;
@@ -612,42 +685,108 @@ function buildChunkedGuide(subj, shard, ticks) {
         cardsByLine[k].push(c);
     }
 
+    const INITIAL_VISIBLE = 3;
     const chunks = [];
-    for (const sec of sectionRanges) {
+    for (let si = 0; si < sectionRanges.length; si++) {
+        const sec = sectionRanges[si];
         const lineKey = String(sec.line);
         const secCards = cardsByLine[lineKey] || [];
         const checked = !!ticks[lineKey];
         const cardCount = secCards.length;
+        const anchorId = `g-${slugify(sec.title)}-${sec.line}`;
 
-        // Extract section content (simplified: just show heading for now)
-        const secBody = secCards.length
-            ? `<div class="chunk-section">
-                <h3 id="g-${slugify(sec.title)}-${sec.line}">${sec.title}</h3>
-                <div class="chunk-cards">
-                    ${secCards.slice(0, 5).map(c => `
-                        <div class="mini-card">
-                            <div class="mini-q">${c.front}</div>
-                            <div class="mini-a">${c.back?.slice(0, 120) || ''}...</div>
-                        </div>
-                    `).join('')}
-                    ${secCards.length > 5 ? `<a href="#review" class="chip" onclick="event.preventDefault();state.reviewSubjectFilter='${subj}';go('review','${subj}')">See ${secCards.length} cards →</a>` : ''}
-                </div>
-            </div>`
-            : `<div class="chunk-section">
-                <h3 id="g-${slugify(sec.title)}-${sec.line}">${sec.title}</h3>
-                <div class="no-cards">No cards for this section</div>
-            </div>`;
+        const secBody = cardCount
+            ? el('div', { class: 'chunk-section' },
+                el('h3', { id: anchorId, 'data-section-line': sec.line }, sec.title),
+                el('div', { class: 'chunk-cards' },
+                    el('span', { class: 'chunk-card-count' }, `${cardCount} card${cardCount === 1 ? '' : 's'}`),
+                    el('button', { class: 'chip section-review-all', data: { section: lineKey }, 'aria-label': `review ${cardCount} cards in this section` }, `review →`)
+                )
+              )
+            : el('div', { class: 'chunk-section' },
+                el('h3', { id: anchorId, 'data-section-line': sec.line }, sec.title),
+                el('div', { class: 'no-cards' }, el('button', { class: 'chip mark-read', data: { section: lineKey }, 'aria-label': 'mark as read' }, 'mark as read'))
+              );
 
-        chunks.push(el('div', { class: `chunk-panel${checked ? ' done' : ''}` },
+        const chunkEl = el('div', {
+            class: `chunk-panel${checked ? ' done' : ''}${si >= INITIAL_VISIBLE ? ' chunk-collapsed' : ''}`,
+            data: { sectionIdx: String(si) }
+        },
             el('div', { class: 'chunk-head' },
-                el('span', {}, sec.title),
-                cardCount ? el('span', { class: 'chunk-badge' }, `${cardCount} cards`) : null
+                el('span', { class: 'section-num' }, `§${sec.line}`),
+                el('span', { class: 'section-title' }, sec.title),
+                cardCount ? el('span', { class: 'chunk-badge' }, `${cardCount}`) : null
             ),
-            el('div', { class: 'chunk-body', html: secBody })
-        ));
+            el('div', { class: 'chunk-body' }, secBody)
+        );
+        chunks.push(chunkEl);
     }
 
-    return el('div', { class: 'chunked-guide' }, ...chunks);
+    const hiddenCount = Math.max(0, sectionRanges.length - INITIAL_VISIBLE);
+    const expandBtn = hiddenCount > 0 ? el('button', { class: 'chip chunk-expand-btn', 'aria-label': `show ${hiddenCount} more sections`,
+        on: { click: e => {
+            const btn = e.currentTarget;
+            const guide = btn.closest('.chunked-guide');
+            guide.querySelectorAll('.chunk-collapsed').forEach(c => c.classList.remove('chunk-collapsed'));
+            btn.remove();
+        } } }, `show ${hiddenCount} more sections`) : null;
+
+    const result = el('div', { class: 'chunked-guide', 'data-subject': subj }, ...chunks, expandBtn);
+    
+    // Attach event handlers after element is in DOM
+    setTimeout(() => mountMiniCardHandlers(result, subj), 0);
+    
+    return result;
+}
+
+// Handle mini-card interactions: flip and review
+function mountMiniCardHandlers(container, subject) {
+    if (!container) return;
+    container.querySelectorAll('.mini-flip').forEach(btn => {
+        btn.addEventListener('click', e => {
+            const cardEl = e.target.closest('.mini-card');
+            if (cardEl) cardEl.classList.toggle('flipped');
+        });
+    });
+    container.querySelectorAll('.mini-review').forEach(btn => {
+        btn.addEventListener('click', e => {
+            const cardId = e.target.dataset.cardId;
+            state.paletteReviewSet = [cardId];
+            resetReviewQueue();
+            go('review', subject);
+        });
+    });
+    container.querySelectorAll('.section-review-all').forEach(btn => {
+        btn.addEventListener('click', e => {
+            const section = e.target.dataset.section;
+            state.reviewSubjectFilter = subject;
+            state.sectionFilter = section;
+            resetReviewQueue();
+            go('review', subject);
+        });
+    });
+    container.querySelectorAll('.mark-read').forEach(btn => {
+        btn.addEventListener('click', e => {
+            const section = e.target.dataset.section;
+            const all = loadGuideTicks();
+            (all[subject] = all[subject] || {})[section] = true;
+            saveGuideTicks(all);
+            render();
+        });
+    });
+    
+    // Keyboard navigation for mini-cards
+    container.querySelectorAll('.mini-card').forEach(cardEl => {
+        cardEl.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                cardEl.classList.toggle('flipped');
+            } else if (e.key === 'r') {
+                const reviewBtn = cardEl.querySelector('.mini-review');
+                if (reviewBtn) reviewBtn.click();
+            }
+        });
+    });
 }
 
 function applyTocFilter(panel, q) {
@@ -992,6 +1131,13 @@ async function renderReview() {
                 return false;
             });
         }
+        // Section filter - show only cards from a specific section
+        if (state.sectionFilter) {
+            pool = pool.filter(id => {
+                const card = allCards.find(c => c.id === id);
+                return card && String(card.requires?.sectionLine) === String(state.sectionFilter);
+            });
+        }
         const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
         const dueIds = state.cramMode ? pool : srs.getDueCards(pool, states);
         const sorted = dueIds.map(id => ({ id, dueAt: states[id]?.dueAt ?? 0, subject: cardById[id]._subject })).sort((a, b) => a.dueAt - b.dueAt);
@@ -999,9 +1145,17 @@ async function renderReview() {
         for (const x of sorted) (bySubj[x.subject] ||= []).push(x.id);
         const interleaved = []; let any = true;
         while (any) { any = false; for (const k of Object.keys(bySubj)) { if (bySubj[k].length) { interleaved.push(bySubj[k].shift()); any = true; } } }
-        state.reviewQueueIds = interleaved;
+        // Apply session cap (again-pile is exempt — added later)
+        const p0 = progress.load();
+        const totalDue = interleaved.length;
+        if (!state.cramMode && state.reviewSessionCap === null) {
+            state.reviewSessionCap = Math.min(totalDue, p0.dailyGoal || 30, 50);
+        }
+        const cap = state.cramMode ? null : state.reviewSessionCap;
+        state.reviewQueueIds = cap != null ? interleaved.slice(0, cap) : interleaved;
+        state._reviewBacklog = cap != null ? Math.max(0, totalDue - state.reviewQueueIds.length) : 0;
         state.reviewIndex = 0; state.reviewAgainPile = [];
-        state.reviewSessionStarted = interleaved.length;
+        state.reviewSessionStarted = state.reviewQueueIds.length;
         state.sessionFinished = false;
     }
     state.reviewQueue = state.reviewQueueIds.map(id => allCards.find(c => c.id === id)).filter(Boolean);
@@ -1041,6 +1195,22 @@ async function renderReview() {
             'aria-pressed': String(state.reviewTagFilter.has(t)),
             on: { click: () => { if (state.reviewTagFilter.has(t)) state.reviewTagFilter.delete(t); else state.reviewTagFilter.add(t); resetReviewQueue(); renderReview(); } } }, '#' + t))
     ) : null;
+    // Session-size picker (shown when due >= 10, not in cram mode)
+    const totalDueForPicker = (state.reviewSessionStarted || 0) + (state._reviewBacklog || 0);
+    if (!state.cramMode && totalDueForPicker >= 10 && state.reviewSessionGraded === 0) {
+        const caps = [10, 20, 50, null];
+        const capLabels = { 10: '10', 20: '20', 50: '50', null: 'all' };
+        const pickerChips = caps.map(c => el('button', {
+            class: 'chip' + (state.reviewSessionCap === c ? ' active' : ''),
+            'aria-label': `session size ${c ?? 'all'}`,
+            on: { click: () => { state.reviewSessionCap = c; resetReviewQueue(); renderReview(); } }
+        }, capLabels[c]));
+        stage.append(el('div', { class: 'session-picker' },
+            el('span', { class: 'session-picker-label' }, 'session:'),
+            ...pickerChips
+        ));
+    }
+
     stage.append(el('div', { class: 'toolbar' }, chips, cramBtn), tagChips);
 
     if (state.reviewQueue.length === 0) {
@@ -1052,12 +1222,14 @@ async function renderReview() {
         const reviewed = state.reviewSessionGraded;
         if (reviewed > 0 && !state.sessionFinished) {
             state.sessionFinished = true;
+            const backlog = state._reviewBacklog || 0;
             stage.append(el('div', { class: 'panel' },
                 el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'session done')),
                 el('p', {}, `${reviewed} card${reviewed === 1 ? '' : 's'} reviewed · streak ${p.streak}.`),
+                backlog > 0 ? el('p', { class: 'meta' }, `${backlog} more in backlog`) : null,
                 el('div', { class: 'toolbar' },
                     el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); go('today'); } } }, 'today'),
-                    el('a', { class: 'chip', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.sessionFinished = false; renderReview(); } } }, 'review more')
+                    el('a', { class: 'chip', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.sessionFinished = false; state.reviewSessionCap = null; renderReview(); } } }, 'review more')
                 )));
         } else {
             stage.append(el('div', { class: 'panel' },
@@ -1072,12 +1244,28 @@ async function renderReview() {
     const seen = (cardState.history || []).length;
     const friendlyMeta = seen === 0 ? 'new' : (seen < 3 ? `seen ${seen}×` : 'familiar');
     const isFlag = flag.isFlagged(card.id);
+    
+    // Section reference link for bidirectional navigation
+    const sectionRef = card.requires?.sectionLine ? el('a', { 
+        class: 'chip section-link', 
+        href: `#subject/${card._subject}`,
+        on: { click: e => { 
+            e.preventDefault(); 
+            go('subject', card._subject);
+            setTimeout(() => {
+                const el = document.getElementById(`g-section-${card.requires.sectionLine}`);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }}
+    }, `§${card.requires.sectionLine}`) : null;
+    
     const reviewCard = el('div', {
         class: 'flashcard' + (state.reviewRevealed ? ' flipped' : '') + (isFlag ? ' flagged' : ''), id: 'review-card'
     },
         el('div', { class: 'meta-line' },
             el('span', {}, `${card._subject} · ${state.reviewIndex + 1}/${total}` + (card._personal ? ' (personal)' : '') + (isFlag ? ' · flagged' : '')),
             el('span', {}, friendlyMeta),
+            sectionRef,
             DEBUG ? el('span', {}, `EF ${cardState.easeFactor.toFixed(2)} · ${cardState.phase} · ${cardState.interval}d`) : null
         ),
         el('div', { class: 'front' }, card.front),
@@ -1095,9 +1283,22 @@ async function renderReview() {
         const grades = DEBUG
             ? [0, 1, 2, 3, 4, 5].map(s => ({ key: String(s), score: s, label: ['again', 'wrong', 'hard wrong', 'hard right', 'good', 'perfect'][s] }))
             : FRIENDLY_GRADES.map(g => ({ key: String(g.friendly), score: g.smscore, label: g.label }));
+        const previewInterval = (score) => {
+            if (state.cramMode) return '';
+            const next = srs.schedule(cardState, score);
+            if (next.phase === 'learning') {
+                const minLeft = Math.round((next.dueAt - Date.now()) / 60000);
+                return minLeft < 60 ? `${minLeft}m` : `${Math.round(minLeft / 60)}h`;
+            }
+            const d = next.interval || 0;
+            return d < 1 ? '<1d' : `${d}d`;
+        };
         for (const g of grades) {
+            const preview = previewInterval(g.score);
+            const btnLabel = preview ? `${g.key} ${g.label} · ${preview}` : `${g.key} ${g.label}`;
             actions.append(el('button', { class: 'chip grade-btn', data: { score: String(g.score) }, id: `grade-${g.score}`,
-                'aria-label': `grade ${g.label}`, on: { click: () => gradeReview(card.id, g.score) } }, `${g.key} ${g.label}`));
+                'aria-label': `grade ${g.label}${preview ? ', next in ' + preview : ''}`,
+                on: { click: () => gradeReview(card.id, g.score) } }, btnLabel));
         }
         actions.append(el('button', { class: 'chip', id: 'review-skip', 'aria-label': 'skip',
             on: { click: () => skipReview() } }, 'skip (s)'));
@@ -1117,6 +1318,7 @@ function resetReviewQueue() {
     state.reviewQueueIds = []; state.reviewIndex = 0;
     state.reviewRevealed = false; state.reviewAgainPile = [];
     state.reviewSessionGraded = 0; state.sessionFinished = false;
+    state.reviewSessionCap = null; state._reviewBacklog = 0;
 }
 
 function skipReview() {
@@ -1132,7 +1334,7 @@ function gradeReview(cardId, score) {
     if (!state.cramMode) srs.updateCard(cardId, score, state.reviewAllCardIds || []);
     if (!state.cramMode && wasNew && card0?._subject) newcards.bump(card0._subject, 1);
     state.reviewSessionGraded++;
-    if (!state.cramMode) progress.bumpGraded(1);
+    if (!state.cramMode) progress.bumpGradedSubject(card0?._subject || null, 1);
     if (score === 0) state.reviewAgainPile.push(cardId);
     // Mistake log
     const card = state.reviewQueue?.[state.reviewIndex];
@@ -1500,9 +1702,15 @@ function renderScheduleConfigPanel() {
 async function renderSettings() {
     stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'settings'), el('h2', {}, 'settings')));
     const cfg = srs.loadConfig();
+    const schedCfg = schedule.loadConfig();
     const p = progress.load();
     const examInput = el('input', { type: 'date', value: cfg.examDate, class: 'search', style: 'max-width:200px',
-        'aria-label': 'exam date', on: { change: e => { srs.saveConfig({ ...cfg, examDate: e.target.value }); render(); } } });
+        'aria-label': 'exam date', on: { change: e => {
+            const newDate = e.target.value;
+            srs.saveConfig({ ...cfg, examDate: newDate });
+            schedule.saveConfig({ ...schedCfg, examDate: newDate });
+            render();
+        } } });
     const goalInput = el('input', { type: 'number', min: '1', max: '500', value: String(p.dailyGoal), class: 'search',
         style: 'max-width:120px', 'aria-label': 'daily goal',
         on: { change: e => { progress.setGoal(parseInt(e.target.value, 10) || 30); render(); } } });
@@ -1584,6 +1792,8 @@ const SHORTCUTS = [
     ['space', 'reveal answer (review)'],
     ['1–4', 'grade card (review)'],
     ['s', 'skip card (review)'],
+    ['enter / space', 'flip mini-card (guide)'],
+    ['r', 'review mini-card (guide)'],
     ['j / k', 'next / prev case (live tutor)'],
     ['/', 'focus reply (live tutor)'],
     ['ctrl+enter', 'send (live tutor)']
@@ -1764,7 +1974,7 @@ function renderMasteryRing() {
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'overall mastery')),
         el('div', { class: 'mastery-ring-row' }, svg,
             el('div', { class: 'mastery-quad' },
-                el('div', { class: 'quad-row' }, el('span', {}, 'cards'), el('span', { class: 'mono' }, `${m.cards.pct}% (${m.cards.mastered}/${m.cards.total})`)),
+                el('div', { class: 'quad-row' }, el('span', {}, 'cards'), el('span', { class: 'mono' }, `${m.cards.pct}% (${m.cards.mastered}/${m.cards.total}, ${m.cards.due} due)`)),
                 el('div', { class: 'quad-row' }, el('span', {}, 'sections'), el('span', { class: 'mono' }, `${m.sections.pct}% (${m.sections.ticked}/${m.sections.total})`)),
                 el('div', { class: 'quad-row' }, el('span', {}, 'cases'), el('span', { class: 'mono' }, `${m.cases.pct}% (${m.cases.passed}/${m.cases.total})`)),
                 el('div', { class: 'quad-row' }, el('span', {}, 'mistakes'), el('span', { class: 'mono' }, `${m.mistakes.pct}% (${m.mistakes.cleared}/${m.mistakes.total})`))
@@ -1788,31 +1998,24 @@ function renderScheduleChecklist(rows) {
         const sessions = triage.sessions || {};
         for (const id of Object.keys(sessions)) (casesDone[id] = casesDone[id] || new Set()).add(id);
     } catch {}
-    schedule.regenerate({ today, dueCounts, extras: { ticksAll, shards: state.shards, casesDone } });
-    // Build actuals — review/new from today's progress + newcards counts; sections = today's ticks (we don't track per-day, so pass full ticks set)
+    // Use loadSchedule() to avoid triggering regeneration during render
+    // Schedule will be regenerated by getSchedule when truly needed (stale date, empty blocks)
+    const sched = schedule.loadSchedule();
+    // Build actuals from tracked data
     const p = progress.load();
     const states = srs.loadStates();
     const actualBySubject = {};
     for (const meta of state.manifest.subjects) {
         const subj = meta.subject;
+        const gradedSubject = p.gradedBySubject?.[subj] || 0;
         actualBySubject[subj] = {
-            review: 0, new: newcards.countToday(subj),
+            review: gradedSubject, new: newcards.countToday(subj),
             sectionsRead: new Set(Object.keys(ticksAll[subj] || {}).filter(k => ticksAll[subj][k])),
             casesDone: new Set()
         };
     }
-    // Distribute today's grades proportionally — best-effort approximation
-    const todayGraded = p.todayGraded || 0;
-    if (todayGraded > 0) {
-        const totalDue = Object.values(dueCounts).reduce((n, x) => n + x, 0) || 1;
-        for (const meta of state.manifest.subjects) {
-            const subj = meta.subject;
-            const share = (dueCounts[subj] || 0) / totalDue;
-            actualBySubject[subj].review = Math.round(todayGraded * share);
-        }
-    }
-    const sched = schedule.reconcile({ today, actualBySubject });
-    const blocks = sched.blocks.filter(b => b.date === today && b.kind === 'study');
+    const schedReconciled = schedule.reconcile({ today, actualBySubject });
+    const blocks = schedReconciled.blocks.filter(b => b.date === today && b.kind === 'study');
     if (!blocks.length) return null;
     const panel = el('div', { class: 'panel schedule-checklist' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "today's plan"),
@@ -1876,36 +2079,13 @@ function renderScheduleChecklist(rows) {
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
-    const primary = [['today', 'today'], ['guides', 'guides'], ['review', 'review']];
+    const primary = [['today', 'today'], ['guides', 'subjects'], ['review', 'review'], ['cases', 'cases'], ['stats', 'stats']];
     for (const [route, label] of primary) {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
             on: { click: e => { e.preventDefault(); go(route); } } }, label));
     }
-    const moreWrap = el('div', { class: 'nav-more' });
-    const moreBtn = el('button', { class: 'navlink nav-more-btn', type: 'button',
-        'aria-haspopup': 'menu', 'aria-expanded': 'false' }, 'more ▾');
-    const moreMenu = el('div', { class: 'nav-more-menu hidden', role: 'menu' });
-    const secondary = [['cases', 'cases'], ['calendar', 'calendar'], ['stats', 'stats'],
-        ['mistakes', 'mistakes'], ['settings', 'settings']];
-    for (const [route, label] of secondary) {
-        moreMenu.append(el('a', { href: `#${route}`, class: 'navlink nav-more-item',
-            data: { route }, role: 'menuitem',
-            on: { click: e => { e.preventDefault(); moreMenu.classList.add('hidden');
-                moreBtn.setAttribute('aria-expanded', 'false'); go(route); } } }, label));
-    }
-    moreBtn.addEventListener('click', () => {
-        const open = moreMenu.classList.toggle('hidden');
-        moreBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
-    });
-    document.addEventListener('click', e => {
-        if (!moreWrap.contains(e.target)) {
-            moreMenu.classList.add('hidden');
-            moreBtn.setAttribute('aria-expanded', 'false');
-        }
-    });
-    moreWrap.append(moreBtn, moreMenu);
-    nav.append(moreWrap);
-    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta' }, 'tutor'));
+    nav.append(el('a', { href: '#settings', class: 'navlink nav-settings', data: { route: 'settings' },
+        'aria-label': 'settings', on: { click: e => { e.preventDefault(); go('settings'); } } }, '⚙'));
     const right = document.querySelector('header.topbar .status');
     const days = srs.daysUntilExam();
     const countdown = el('a', { class: 'exam-countdown', href: '#settings',
@@ -1956,6 +2136,13 @@ function registerSW() {
         mountTopbar();
         await loadManifest();
         await loadAllShards();
+        // Initialize schedule - regenerate if stale (date changed) or empty
+        // Pass ticksAll so schedule only suggests reviews for subjects with studied material
+        const today = new Date().toISOString().slice(0, 10);
+        const sched = schedule.loadSchedule();
+        if (!sched.blocks.length || sched.today !== today) {
+            schedule.getSchedule({ today, dueCounts: dueCountsBySubjectMap(), ticksAll: loadGuideTicks() });
+        }
         mountSearchPalette();
         state.timerApi = timer.mount(document);
         const lvl = late.lateLevel(); late.applyClass(document, lvl);

@@ -15,5 +15,13 @@ export function message(level) {
     if (level === 'late') return 'late session — keep it short.';
     return null;
 }
+// Reduced study quota for late sessions — but if ahead (has surplus), maintain full pace
+export function reducedQuota(base, level, isAhead = false) {
+    // If ahead with surplus, maintain full pace to stay ahead
+    if (isAhead) return base;
+    if (level === 'sleep') return Math.max(1, Math.floor(base * 0.5));
+    if (level === 'late') return Math.max(1, Math.floor(base * 0.7));
+    return base;
+}
 
 if (typeof window !== 'undefined') window.__late = { lateLevel, applyClass, message };
