@@ -23,9 +23,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          lfs: true
-      - name: Pull LFS files
-        run: git lfs pull
+          lfs: false
+      - name: Pull LFS files (best-effort; budget may be exceeded)
+        run: git lfs pull || echo "LFS pull failed — building without media"
+        continue-on-error: true
       - name: Build data shards (copies videos into site/data/videos/)
         run: node scripts/build_data.js
       - name: Inject build version (commit SHA) into sw.js + html
