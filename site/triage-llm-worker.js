@@ -1,20 +1,21 @@
 import {
-    AutoProcessor,
-    Gemma4ForConditionalGeneration,
+    AutoTokenizer,
+    AutoModelForCausalLM,
     TextStreamer,
     InterruptableStoppingCriteria,
     env
-} from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0/dist/transformers.min.js';
+} from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.0/dist/transformers.min.js';
 
 env.allowLocalModels = false;
 env.useBrowserCache = true;
 
-const MODEL_ID = 'onnx-community/gemma-4-E2B-it-ONNX';
+// SmolLM2-360M is small (~250MB at q4), fast, and actually exists on HF.
+const MODEL_ID = 'HuggingFaceTB/SmolLM2-360M-Instruct';
 
-let processor = null;
+let tokenizer = null;
 let model = null;
 let chosenDtype = 'q4f16';
-const stopping_criteria = new InterruptableStoppingCriteria();
+let stopping_criteria = new InterruptableStoppingCriteria();
 
 async function probeAdapter() {
     if (!('gpu' in navigator)) {
@@ -35,34 +36,33 @@ async function load() {
     chosenDtype = probe.fp16 ? 'q4f16' : 'q4';
     self.postMessage({ status: 'gpu-info', adapter: probe.info, features: probe.features, fp16: probe.fp16, dtype: chosenDtype });
 
-    self.postMessage({ status: 'loading', stage: 'processor' });
-    processor = await AutoProcessor.from_pretrained(MODEL_ID, {
+    self.postMessage({ status: 'loading', stage: 'tokenizer' });
+    tokenizer = await AutoTokenizer.from_pretrained(MODEL_ID, {
         progress_callback: p => self.postMessage({ status: 'progress', payload: p })
     });
 
     self.postMessage({ status: 'loading', stage: 'model' });
-    model = await Gemma4ForConditionalGeneration.from_pretrained(MODEL_ID, {
+    model = await AutoModelForCausalLM.from_pretrained(MODEL_ID, {
         dtype: chosenDtype,
         device: 'webgpu',
-        use_external_data_format: true,
         progress_callback: p => self.postMessage({ status: 'progress', payload: p })
     });
 
     self.postMessage({ status: 'loading', stage: 'warmup' });
-    const warmText = processor.apply_chat_template([{ role: 'user', content: 'hi' }], { add_generation_prompt: true });
-    const warmInputs = await processor(warmText);
+    const warmText = tokenizer.apply_chat_template([{ role: 'user', content: 'hi' }], { add_generation_prompt: true, tokenize: false });
+    const warmInputs = tokenizer(warmText, { return_tensors: 'pt' });
     await model.generate({ ...warmInputs, max_new_tokens: 1 });
     self.postMessage({ status: 'ready', dtype: chosenDtype });
 }
 
 async function generate(messages) {
-    if (!model || !processor) {
+    if (!model || !tokenizer) {
         self.postMessage({ status: 'error', error: 'model not loaded', stack: '' });
         return;
     }
-    stopping_criteria.reset();
-    const text = processor.apply_chat_template(messages, { add_generation_prompt: true });
-    const inputs = await processor(text);
+    stopping_criteria = new InterruptableStoppingCriteria();
+    const text = tokenizer.apply_chat_template(messages, { add_generation_prompt: true, tokenize: false });
+    const inputs = tokenizer(text, { return_tensors: 'pt' });
     let startTime = null;
     let numTokens = 0;
     let tps = 0;
@@ -73,7 +73,6 @@ async function generate(messages) {
     const callback_function = (output) => {
         self.postMessage({ status: 'update', output, tps, numTokens });
     };
-    const tokenizer = processor.tokenizer || processor;
     const streamer = new TextStreamer(tokenizer, {
         skip_prompt: true,
         skip_special_tokens: true,

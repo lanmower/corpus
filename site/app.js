@@ -2228,6 +2228,7 @@ function mountTopbar() {
     const moreBtn = el('button', { class: 'navlink nav-more', 'aria-label': 'more', 'aria-haspopup': 'menu',
         on: { click: e => { e.preventDefault(); moreMenu.hidden = !moreMenu.hidden; } } }, '⋯');
     nav.append(moreBtn, moreMenu);
+    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta', 'aria-label': 'open tutor' }, 'tutor'));
     nav.append(el('a', { href: '#settings', class: 'navlink nav-settings', data: { route: 'settings' },
         'aria-label': 'settings', on: { click: e => { e.preventDefault(); go('settings'); } } }, '⚙'));
     const right = document.querySelector('header.topbar .status');

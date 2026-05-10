@@ -245,3 +245,44 @@
 .scenario-row.has-session { box-shadow: inset 3px 0 0 var(--green); }
 .scenario-row:focus-visible { outline: 2px solid var(--mascot); outline-offset: 1px; }
 kbd { font-family: var(--ff-mono); font-size: 10px; background: var(--panel-2); border-radius: 4px; padding: 1px 5px; border: 1px solid var(--panel-3); }
+
+/* Quick-add UI */
+.quick-add { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 12px; }
+.qa-row { display: flex; gap: 6px; align-items: center; }
+.qa-label { font-family: var(--ff-mono); font-size: 11px; color: var(--panel-text-2); width: 110px; flex-shrink: 0; }
+.qa-input { flex: 1; min-width: 0; background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-family: var(--ff-ui); font-size: 13px; color: var(--ink); outline: none; }
+.qa-input:focus { background: var(--panel-1); box-shadow: inset 0 0 0 2px var(--mascot); }
+.qa-go { padding: 6px 12px; cursor: pointer; }
+
+/* Grade panel */
+.grade-panel { display: flex; flex-direction: column; gap: 12px; padding: 14px; background: var(--panel-1); border-radius: var(--r-md); margin-top: 10px; }
+.grade-score { display: flex; align-items: baseline; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.grade-score .pct { font-family: var(--ff-display, var(--ff-ui)); font-size: 42px; font-weight: 800; line-height: 1; }
+.grade-score .lbl { font-family: var(--ff-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
+.grade-score.high .pct, .grade-score.high .lbl { color: var(--green); }
+.grade-score.mid .pct, .grade-score.mid .lbl { color: var(--sun); }
+.grade-score.low .pct, .grade-score.low .lbl { color: var(--flame); }
+.grade-section-title { font-family: var(--ff-mono); font-size: 11px; color: var(--panel-text-2); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+.grade-row { display: flex; gap: 8px; padding: 4px 0; align-items: flex-start; font-size: 13px; }
+.grade-row .check { font-family: var(--ff-mono); font-weight: 700; width: 14px; flex-shrink: 0; }
+.grade-row.hit .check { color: var(--green); }
+.grade-row.miss .check { color: var(--flame); }
+.miss-title { font-weight: 600; }
+.miss-body { color: var(--panel-text-2); font-size: 12px; margin-top: 2px; }
+.grade-actions { display: flex; gap: 8px; margin-top: 6px; }
+
+/* Search */
+.case-search { width: 100%; box-sizing: border-box; background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-family: var(--ff-ui); font-size: 13px; color: var(--ink); margin-bottom: 8px; outline: none; }
+.case-search:focus { background: var(--panel-1); box-shadow: inset 0 0 0 2px var(--mascot); }
+.filter-chips-row { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* Score chip on scenario row */
+.scenario-row.has-score .sub { color: var(--green); font-weight: 600; }
+
+/* Undo toast */
+.triage-undo { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 8px 14px; border-radius: 999px; font-family: var(--ff-mono); font-size: 12px; display: flex; gap: 10px; align-items: center; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.triage-undo button { background: var(--paper); color: var(--ink); cursor: pointer; }
+
+/* Collapsible model bay */
+#model-bay summary { cursor: pointer; list-style: revert; }
+.submit-grading-btn { background: var(--ink); color: var(--paper); }

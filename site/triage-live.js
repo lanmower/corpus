@@ -70,34 +70,60 @@ function caseStem(sc) {
     const ex = (sc.examples && sc.examples[0]) || {};
     const stemRaw = (typeof ex === 'string' ? ex : (ex.case || ex.stem || ''));
     if (stemRaw && stemRaw.length > 20) return stemRaw.slice(0, 600);
+    // Build a richer stem from parameters when no example.case is present.
+    const p = sc.parameters || {};
+    const demo = [];
+    if (p.age) demo.push(`${p.age}yo`);
+    if (p.sex) demo.push(p.sex);
+    const vitals = [];
+    for (const k of ['hr', 'HR', 'bp', 'BP', 'temp', 'rr', 'spo2', 'SpO2', 'glucose']) {
+        if (p[k] != null) vitals.push(`${k.toUpperCase()} ${p[k]}`);
+    }
     const desc = sc.description || '';
     const lead = desc.split(/[.!?]/)[0] || sc.name;
-    return `${sc.name}. ${lead}. The patient presents to your service — you must work up and manage them. Commit your differentials, investigations, and plan as cards before requesting grading.`;
+    const presentation = demo.length || vitals.length
+        ? `A ${demo.join(' ') || 'patient'}${vitals.length ? ` with ${vitals.join(', ')}` : ''} presents to your service.`
+        : 'The patient presents to your service.';
+    return `${sc.name}. ${lead}. ${presentation} Commit your differentials, investigations, and plan as cards before requesting grading.`;
 }
 
 function safeStore() {
     try { return window.localStorage; } catch { return null; }
 }
 function loadSessions() {
-    const ls = safeStore(); if (!ls) return {};
+    const ls = safeStore(); if (!ls) return { sessions: {}, streak: 0 };
     try {
         const raw = ls.getItem(PERSIST_KEY);
-        if (!raw) return {};
+        if (!raw) return { sessions: {}, streak: 0 };
         const obj = JSON.parse(raw);
-        if (obj && obj.version === SCHEMA_VERSION && obj.sessions) return obj.sessions;
-        return {};
-    } catch { return {}; }
+        if (obj && obj.version === SCHEMA_VERSION) return { sessions: obj.sessions || {}, streak: obj.streak || 0 };
+        return { sessions: {}, streak: 0 };
+    } catch { return { sessions: {}, streak: 0 }; }
 }
 function saveSessions() {
     const ls = safeStore(); if (!ls) return;
-    try { ls.setItem(PERSIST_KEY, JSON.stringify({ version: SCHEMA_VERSION, sessions: state.sessions, savedAt: Date.now() })); }
+    try { ls.setItem(PERSIST_KEY, JSON.stringify({ version: SCHEMA_VERSION, sessions: state.sessions, streak: state.streak || 0, savedAt: Date.now() })); }
     catch (e) { console.warn('persist failed', e); }
 }
 function persistActive() {
     if (!state.activeScenarioId) return;
-    state.sessions[state.activeScenarioId] = state.cards.map(c => ({ id: c.id, kind: c.kind, title: c.title, body: c.body, highlighted: !!c.highlighted }));
+    const prev = state.sessions[state.activeScenarioId];
+    const prevScore = prev && !Array.isArray(prev) ? prev.score : (prev?.score);
+    const cards = state.cards.map(c => ({ id: c.id, kind: c.kind, title: c.title, body: c.body, highlighted: !!c.highlighted }));
+    state.sessions[state.activeScenarioId] = { cards, score: state.lastGrade ?? prevScore ?? null, gradedAt: state.phase === 'graded' ? Date.now() : (prev?.gradedAt ?? null) };
     saveSessions();
     renderStats();
+}
+
+// Backwards-compat: sessions used to be stored as bare arrays; normalize on read.
+function sessionCards(sess) {
+    if (!sess) return [];
+    if (Array.isArray(sess)) return sess;
+    return sess.cards || [];
+}
+function sessionScore(sess) {
+    if (!sess || Array.isArray(sess)) return null;
+    return sess.score ?? null;
 }
 
 const els = {
@@ -120,7 +146,6 @@ const els = {
     send: document.getElementById('send'),
     loadLLM: document.getElementById('load-llm'),
     clearScreen: document.getElementById('clear-screen'),
-    simulate: document.getElementById('simulate'),
     submitGrading: document.getElementById('submit-grading')
 };
 
@@ -157,11 +182,11 @@ async function checkCapability() {
     }
     if (!navigator.gpu) {
         state.capability = 'unsupported';
-        els.capDot.className = 'dot warn';
-        els.capLabel.textContent = 'offline tutor only';
+        els.capDot.className = 'dot ok';
+        els.capLabel.textContent = 'tutor ready (offline)';
         els.loadLLM.disabled = true;
-        els.modelDetail.textContent = 'your browser can’t run the in-browser tutor. you can still use the offline tutor below.';
-        console.log('[triage-live] capability: gpu absent — offline tutor only');
+        els.modelDetail.textContent = 'using built-in offline tutor — no setup needed. type or use the buttons to add cards, then submit for grading.';
+        console.log('[triage-live] capability: gpu absent — using simulator');
         return;
     }
     try {
@@ -174,7 +199,8 @@ async function checkCapability() {
         state.capability = 'webgpu';
         state.gpuInfo = { features, fp16, info };
         els.capDot.className = 'dot ok';
-        els.capLabel.textContent = 'tutor available';
+        els.capLabel.textContent = 'tutor ready';
+        els.modelDetail.textContent = 'offline tutor active. for an experimental LLM tutor (~250MB download), click "load tutor" below.';
         console.log('[triage-live] adapter', { features, fp16, info });
         debugLog('adapter', { features, fp16, info: { vendor: info.vendor, architecture: info.architecture, device: info.device } });
         if (DEBUG_WEBGPU) {
@@ -218,28 +244,42 @@ async function loadManifestAndScenarios() {
 }
 
 function visibleScenarios() {
-    if (state.subjectFilter.size === 0) return state.scenarios;
-    return state.scenarios.filter(s => state.subjectFilter.has(s.subject));
+    let pool = state.scenarios;
+    if (state.subjectFilter.size > 0) pool = pool.filter(s => state.subjectFilter.has(s.subject));
+    if (state.searchQuery) {
+        const q = state.searchQuery.toLowerCase();
+        pool = pool.filter(s => (s.name || '').toLowerCase().includes(q) || (s.description || '').toLowerCase().includes(q));
+    }
+    return pool;
 }
 
 function renderFilterBar() {
     if (!els.filterBar) return;
     els.filterBar.innerHTML = '';
+    // Search input
+    const searchEl = ce('input', {
+        type: 'search', class: 'case-search', placeholder: 'search cases…',
+        'aria-label': 'search cases', value: state.searchQuery || '',
+        on: { input: e => { state.searchQuery = e.target.value; renderScenarios(); } }
+    });
+    els.filterBar.append(searchEl);
+    const chipsRow = ce('div', { class: 'filter-chips-row' });
     const subjects = Array.from(new Set(state.scenarios.map(s => s.subject))).sort();
     const allActive = state.subjectFilter.size === 0;
-    els.filterBar.append(ce('button', {
+    chipsRow.append(ce('button', {
         class: 'chip filter-chip' + (allActive ? ' active' : ''), type: 'button',
         'aria-pressed': String(allActive),
         on: { click: () => { state.subjectFilter.clear(); renderFilterBar(); renderScenarios(); } }
     }, 'all'));
     for (const subj of subjects) {
         const on = state.subjectFilter.has(subj);
-        els.filterBar.append(ce('button', {
+        chipsRow.append(ce('button', {
             class: 'chip filter-chip' + (on ? ' active' : ''), type: 'button',
             'aria-pressed': String(on),
             on: { click: () => { on ? state.subjectFilter.delete(subj) : state.subjectFilter.add(subj); renderFilterBar(); renderScenarios(); } }
         }, subj));
     }
+    els.filterBar.append(chipsRow);
 }
 
 function renderStats() {
@@ -266,9 +306,15 @@ function renderScenarios() {
     for (const [subj, items] of Object.entries(bySubject)) {
         els.list.append(ce('div', { class: 'label', style: 'margin-top:14px' }, `${subj} (${items.length})`));
         for (const sc of items) {
-            const hasSession = state.sessions[sc.id] && state.sessions[sc.id].length > 0;
+            const sess = state.sessions[sc.id];
+            const cards = sessionCards(sess);
+            const score = sessionScore(sess);
+            const hasSession = cards.length > 0;
+            const subParts = [subj];
+            if (score != null) subParts.push(`${score}%`);
+            else if (hasSession) subParts.push(`${cards.length} cards`);
             els.list.append(ce('div', {
-                class: 'scenario-row' + (state.activeScenarioId === sc.id ? ' active' : '') + (hasSession ? ' has-session' : ''),
+                class: 'scenario-row' + (state.activeScenarioId === sc.id ? ' active' : '') + (hasSession ? ' has-session' : '') + (score != null ? ' has-score' : ''),
                 data: { id: sc.id },
                 role: 'button', tabindex: '0',
                 'aria-pressed': String(state.activeScenarioId === sc.id),
@@ -278,7 +324,7 @@ function renderScenarios() {
                 }
             },
                 ce('div', {}, sc.name),
-                ce('div', { class: 'sub' }, `${subj}${hasSession ? ' · ●' : ''}`)
+                ce('div', { class: 'sub' }, subParts.join(' · '))
             ));
         }
     }
@@ -288,11 +334,13 @@ function selectScenario(id) {
     const sc = state.scenarios.find(x => x.id === id);
     if (!sc) return;
     state.activeScenarioId = id;
-    const saved = state.sessions[id] || [];
-    state.cards = saved.map(c => ({ ...c }));
+    const saved = state.sessions[id];
+    state.cards = sessionCards(saved).map(c => ({ ...c }));
     state.cardSeq = state.cards.length;
     state.messages = [];
-    state.phase = 'asking';
+    state.lastGrade = sessionScore(saved);
+    // If this case was previously graded and still has highlights, treat as graded; else asking.
+    state.phase = (state.lastGrade != null && state.cards.some(c => c.highlighted)) ? 'graded' : 'asking';
     renderScenarios();
     renderActive();
     renderScratchpad();
@@ -303,6 +351,79 @@ function countByKind(cards) {
     const out = {};
     for (const c of cards) out[c.kind] = (out[c.kind] || 0) + 1;
     return out;
+}
+
+function renderQuickAdd() {
+    const kinds = [
+        { kind: 'differential', label: '+ differential', placeholder: 'e.g. acute coronary syndrome' },
+        { kind: 'investigation', label: '+ investigation', placeholder: 'e.g. ECG, troponin' },
+        { kind: 'plan', label: '+ plan', placeholder: 'e.g. aspirin 300mg, GTN, oxygen' }
+    ];
+    const wrap = ce('div', { class: 'quick-add' });
+    for (const k of kinds) {
+        const input = ce('input', {
+            type: 'text', class: 'qa-input', placeholder: k.placeholder,
+            'aria-label': `add ${k.kind}`,
+            on: { keydown: e => { if (e.key === 'Enter') { e.preventDefault(); commit(); } } }
+        });
+        const commit = () => {
+            const v = input.value.trim();
+            if (!v) return;
+            const title = v.slice(0, 80);
+            const body = v.length > 80 ? v.slice(80) : '';
+            TOOLS.add_card({ id: `student-${k.kind}-${Date.now()}`, kind: k.kind, title, body });
+            input.value = '';
+            renderActive();
+        };
+        wrap.append(ce('div', { class: 'qa-row' },
+            ce('label', { class: 'qa-label' }, k.label),
+            input,
+            ce('button', { class: 'chip qa-go', on: { click: commit } }, 'add')
+        ));
+    }
+    return wrap;
+}
+
+function renderGradePanel(sc) {
+    const score = state.lastGrade != null ? state.lastGrade : 0;
+    const matched = state.cards.filter(c => c.highlighted);
+    const gaps = state.cards.filter(c => c.kind === 'note' && /^missed:/i.test(c.title || ''));
+    const wrap = ce('div', { class: 'grade-panel' });
+    const scoreClass = score >= 80 ? 'high' : score >= 60 ? 'mid' : 'low';
+    wrap.append(ce('div', { class: `grade-score ${scoreClass}` },
+        ce('span', { class: 'pct' }, `${score}%`),
+        ce('span', { class: 'lbl' }, score >= 80 ? 'solid' : score >= 60 ? 'getting there' : 'review needed')
+    ));
+    if (matched.length) wrap.append(ce('div', { class: 'grade-section' },
+        ce('div', { class: 'grade-section-title' }, `you got (${matched.length})`),
+        ...matched.map(c => ce('div', { class: 'grade-row hit' }, ce('span', { class: 'check' }, '✓'), ce('span', {}, c.title)))
+    ));
+    if (gaps.length) wrap.append(ce('div', { class: 'grade-section' },
+        ce('div', { class: 'grade-section-title' }, `you missed (${gaps.length})`),
+        ...gaps.map(c => ce('div', { class: 'grade-row miss' }, ce('span', { class: 'check' }, '×'),
+            ce('div', {},
+                ce('div', { class: 'miss-title' }, (c.title || '').replace(/^missed:\s*/i, '')),
+                c.body ? ce('div', { class: 'miss-body' }, c.body) : null
+            )
+        ))
+    ));
+    wrap.append(ce('div', { class: 'grade-actions' },
+        ce('button', { class: 'run-btn', on: { click: () => {
+            // Try again: clear highlights + drop gap notes, restore asking phase
+            state.cards = state.cards.filter(c => !(c.kind === 'note' && /^missed:/i.test(c.title || '')));
+            for (const c of state.cards) c.highlighted = false;
+            state.phase = 'asking';
+            persistActive();
+            renderActive(); renderScratchpad();
+        } } }, 'try again'),
+        ce('button', { class: 'chip', on: { click: () => {
+            const vis = visibleScenarios();
+            const idx = vis.findIndex(s => s.id === sc.id);
+            const next = vis[Math.min(idx + 1, vis.length - 1)];
+            if (next && next.id !== sc.id) selectScenario(next.id);
+        } } }, 'next case →')
+    );
+    return wrap;
 }
 
 function renderActive() {
@@ -333,24 +454,31 @@ function renderActive() {
     const totalNeeded = checklist.reduce((a, b) => a + b.target, 0);
     const totalGot = checklist.reduce((a, b) => a + Math.min(b.target, counts[b.kind] || 0), 0);
     const ready = totalGot >= totalNeeded;
-    const gradeBtn = ce('button', {
-        class: 'run-btn' + (ready ? '' : ' disabled'),
-        on: { click: () => {
-            state.phase = 'grading';
-            renderActive();
-            els.prompt.value = 'grade my work';
-            send(true).then(() => renderActive());
-        } },
-        ...(ready ? {} : { disabled: 'true' })
-    }, state.phase === 'graded' ? 'graded — select another case' : 'submit for grading');
     const phaseLabel = state.phase === 'asking' ? 'working' : state.phase === 'grading' ? 'grading' : state.phase === 'graded' ? 'graded' : state.phase;
     els.activeScenario.append(
         ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} · ${phaseLabel}`)),
         ce('div', { class: 'stem' }, stem),
-        ce('div', { class: 'stem-hint' }, 'write differentials, investigations, plan as cards. answer key stays hidden until you submit.'),
-        checklistEl,
-        gradeBtn
     );
+    if (state.phase === 'graded') {
+        els.activeScenario.append(renderGradePanel(sc));
+    } else {
+        const gradeBtn = ce('button', {
+            class: 'run-btn' + (ready ? '' : ' disabled'),
+            on: { click: () => {
+                state.phase = 'grading';
+                renderActive();
+                els.prompt.value = 'grade my work';
+                send(true).then(() => renderActive());
+            } },
+            ...(ready ? {} : { disabled: 'true' })
+        }, ready ? 'submit for grading' : `add ${totalNeeded - totalGot} more to submit`);
+        els.activeScenario.append(
+            ce('div', { class: 'stem-hint' }, 'add cards via the buttons below or type "add differential: …" in the chat. answer key stays hidden until you submit.'),
+            checklistEl,
+            renderQuickAdd(),
+            gradeBtn
+        );
+    }
 }
 
 function currentScenario() {
@@ -432,7 +560,25 @@ function dispatchToolCalls(text) {
 }
 state.dispatchToolCalls = dispatchToolCalls;
 
-function removeCard(id) { TOOLS.remove_card({ id }); }
+function removeCard(id) {
+    const idx = state.cards.findIndex(c => c.id === id);
+    if (idx < 0) return;
+    const removed = { ...state.cards[idx], _idx: idx };
+    TOOLS.remove_card({ id });
+    // Show undo toast
+    const old = document.getElementById('triage-undo'); if (old) old.remove();
+    const toast = document.createElement('div');
+    toast.id = 'triage-undo';
+    toast.className = 'triage-undo';
+    toast.innerHTML = `<span>card removed</span> <button class="chip" type="button">undo</button>`;
+    toast.querySelector('button').addEventListener('click', () => {
+        state.cards.splice(Math.min(removed._idx, state.cards.length), 0, { id: removed.id, kind: removed.kind, title: removed.title, body: removed.body, highlighted: !!removed.highlighted });
+        persistActive(); renderScratchpad();
+        toast.remove();
+    });
+    document.body.appendChild(toast);
+    setTimeout(() => { if (toast.parentNode) toast.remove(); }, 5000);
+}
 
 function buildSnapshot(phase) {
     phase = phase || state.phase || 'asking';
@@ -604,11 +750,7 @@ function generateLLM(userText) {
 state.generateLLM = generateLLM;
 state.spawnWorker = spawnWorker;
 
-function pruneMessages() {
-    if (state.messages.length > 2) state.messages = state.messages.slice(-2);
-}
-
-async function send(useSim = false) {
+async function send(forceSim = false) {
     const txt = els.prompt.value.trim();
     if (!txt) return;
     if (!currentScenario()) {
@@ -617,15 +759,19 @@ async function send(useSim = false) {
         return;
     }
     els.prompt.value = '';
-    state.messages = [{ role: 'user', content: txt }];
+    state.messages.push({ role: 'user', content: txt });
     renderMessages();
-    const useLLM = !useSim && state.worker && state.workerReady;
+    const useLLM = !forceSim && state.worker && state.workerReady;
     if (useLLM) {
         try { await generateLLM(txt); }
         catch (e) {
             showWebgpuError(e.message || String(e), e.stack || '');
-            state.messages.push({ role: 'system', content: 'tutor offline — click "offline mode" to continue.' });
+            state.messages.push({ role: 'system', content: 'tutor offline — using simulator.' });
             renderMessages();
+            const reply = simulateAssistant(txt);
+            state.messages.push({ role: 'assistant', content: reply });
+            renderMessages();
+            dispatchToolCalls(reply);
         }
     } else {
         let reply;
@@ -635,7 +781,8 @@ async function send(useSim = false) {
         renderMessages();
         dispatchToolCalls(reply);
     }
-    pruneMessages();
+    // Cap history at 20 messages so DOM doesn't bloat.
+    if (state.messages.length > 20) state.messages = state.messages.slice(-20);
     renderMessages();
 }
 
@@ -685,8 +832,10 @@ function simulateAssistant(userText) {
         blocks.push(`\n— ${hits} of ${atoms.length} key topics matched (${score}%). ${misses ? 'gaps shown as notes on your board.' : 'good coverage.'}`);
         state.lastGrade = score;
         state.streak = score >= 70 ? (state.streak || 0) + 1 : 0;
-        renderStats();
         state.phase = 'graded';
+        persistActive();
+        saveSessions();
+        renderStats();
         try {
             const ch = ('BroadcastChannel' in self) ? new BroadcastChannel('corpus') : null;
             ch?.postMessage({ type: 'case:graded', score: score / 100, scenarioId: sc.id || sc.name });
@@ -726,7 +875,6 @@ state.simulateAssistant = simulateAssistant;
 
 els.send.addEventListener('click', () => send(false));
 if (els.submitGrading) els.submitGrading.addEventListener('click', submitForGrading);
-els.simulate.addEventListener('click', () => send(true));
 els.loadLLM.addEventListener('click', loadLLM);
 els.clearScreen.addEventListener('click', () => TOOLS.clear_screen());
 const copyMdBtn = document.getElementById('copy-md');
@@ -779,7 +927,9 @@ document.addEventListener('keydown', e => {
 });
 
 (async () => {
-    state.sessions = loadSessions();
+    const loaded = loadSessions();
+    state.sessions = loaded.sessions;
+    state.streak = loaded.streak;
     await checkCapability();
     await loadManifestAndScenarios();
     renderFilterBar();
