@@ -84,7 +84,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const grade = vm.runInContext(`buildSnapshot('grading')`, ctx);
         for (const tok of ['CANARY_DEF', 'CANARY_REASON', 'CANARY_REC', 'CanaryFront']) assert.ok(!ask.includes(tok));
         assert.ok(grade.includes('CANARY_DEF') && grade.includes('CanaryFront'));
-        for (const re of [/TextStreamer/, /InterruptableStoppingCriteria/, /SmolLM2-360M-Instruct/, /AutoModelForCausalLM/, /AutoTokenizer/, /device:\s*'webgpu'/, /apply_chat_template/, /shader-f16/]) assert.match(workerSrc, re);
+        for (const re of [/TextStreamer/, /InterruptableStoppingCriteria/, /onnx-community\/gemma-4-E2B-it-ONNX/, /Gemma4ForConditionalGeneration/, /AutoProcessor/, /device:\s*'webgpu'/, /apply_chat_template/, /shader-f16/]) assert.match(workerSrc, re);
         assert.match(liveSrc, /new Worker\(['"]\.\/triage-llm-worker\.js['"],\s*\{\s*type:\s*['"]module['"]/);
         assert.match(liveSrc, /showWebgpuError/); assert.match(liveSrc, /console\.error\(['"]\[triage-live\] webgpu error/);
         // Restyle microcopy: load tutor / select a case / no "study assistant" / no "≈2GB"
