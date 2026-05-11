@@ -16,12 +16,106 @@ function parseScalar(s) {
     if (s.startsWith("'") && s.endsWith("'")) {
         return s.slice(1, -1).replace(/''/g, "'");
     }
+    if (s.startsWith('{') && s.endsWith('}')) {
+        try { return parseFlow(s); } catch { /* fall through */ }
+    }
     if (s.startsWith('[') && s.endsWith(']')) {
-        const inner = s.slice(1, -1).trim();
-        if (!inner) return [];
-        return inner.split(',').map(p => parseScalar(p.trim()));
+        try { return parseFlow(s); } catch { /* fall through */ }
     }
     return s;
+}
+
+// Parse YAML flow style: inline maps {k: v, k2: {...}} and sequences [a, b, [c, d]].
+// Handles arbitrary nesting and quoted strings. Unquoted scalars accept letters/digits/
+// punctuation up to the next unbalanced delimiter or comma.
+function parseFlow(s) {
+    let i = 0;
+    function skipWs() { while (i < s.length && /\s/.test(s[i])) i++; }
+    function parseValue() {
+        skipWs();
+        const c = s[i];
+        if (c === '{') return parseMap();
+        if (c === '[') return parseSeq();
+        if (c === '"' || c === "'") return parseQuoted();
+        return parseBareScalar();
+    }
+    function parseMap() {
+        i++; // consume {
+        const o = {};
+        skipWs();
+        if (s[i] === '}') { i++; return o; }
+        while (i < s.length) {
+            skipWs();
+            const key = parseKey();
+            skipWs();
+            if (s[i] !== ':') throw new Error('flow-map missing colon at ' + i);
+            i++;
+            const val = parseValue();
+            o[key] = val;
+            skipWs();
+            if (s[i] === ',') { i++; continue; }
+            if (s[i] === '}') { i++; return o; }
+            throw new Error('flow-map unexpected char ' + s[i] + ' at ' + i);
+        }
+        throw new Error('flow-map unterminated');
+    }
+    function parseSeq() {
+        i++; // consume [
+        const a = [];
+        skipWs();
+        if (s[i] === ']') { i++; return a; }
+        while (i < s.length) {
+            a.push(parseValue());
+            skipWs();
+            if (s[i] === ',') { i++; continue; }
+            if (s[i] === ']') { i++; return a; }
+            throw new Error('flow-seq unexpected char ' + s[i] + ' at ' + i);
+        }
+        throw new Error('flow-seq unterminated');
+    }
+    function parseQuoted() {
+        const q = s[i++];
+        let out = '';
+        while (i < s.length) {
+            if (q === '"' && s[i] === '\\' && s[i + 1]) { out += s[i + 1] === 'n' ? '\n' : s[i + 1]; i += 2; continue; }
+            if (q === "'" && s[i] === "'" && s[i + 1] === "'") { out += "'"; i += 2; continue; }
+            if (s[i] === q) { i++; return out; }
+            out += s[i++];
+        }
+        throw new Error('quoted-scalar unterminated');
+    }
+    function parseKey() {
+        if (s[i] === '"' || s[i] === "'") return parseQuoted();
+        let out = '';
+        while (i < s.length && s[i] !== ':' && s[i] !== ',' && s[i] !== '}' && s[i] !== ']') out += s[i++];
+        return out.trim();
+    }
+    function parseBareScalar() {
+        let out = '';
+        let depth = 0;
+        while (i < s.length) {
+            const c = s[i];
+            if (depth === 0 && (c === ',' || c === '}' || c === ']')) break;
+            if (c === '(' || c === '[' || c === '{') depth++;
+            else if (c === ')' || c === ']' || c === '}') {
+                if (depth === 0) break;
+                depth--;
+            }
+            out += c;
+            i++;
+        }
+        const t = out.trim();
+        if (t === 'true') return true;
+        if (t === 'false') return false;
+        if (t === 'null' || t === '~' || t === '') return null;
+        if (/^-?\d+$/.test(t)) return parseInt(t, 10);
+        if (/^-?\d+\.\d+$/.test(t)) return parseFloat(t);
+        return t;
+    }
+    const v = parseValue();
+    skipWs();
+    if (i !== s.length) throw new Error('flow trailing chars at ' + i);
+    return v;
 }
 
 function indent(line) {

@@ -167,8 +167,7 @@ const els = {
     prompt: document.getElementById('prompt'),
     send: document.getElementById('send'),
     loadLLM: document.getElementById('load-llm'),
-    clearScreen: document.getElementById('clear-screen'),
-    submitGrading: document.getElementById('submit-grading')
+    clearScreen: document.getElementById('clear-screen')
 };
 
 function submitForGrading() {
@@ -361,8 +360,7 @@ function selectScenario(id) {
     state.cardSeq = state.cards.length;
     state.messages = [];
     state.lastGrade = sessionScore(saved);
-    // If this case was previously graded and still has highlights, treat as graded; else asking.
-    state.phase = (state.lastGrade != null && state.cards.some(c => c.highlighted)) ? 'graded' : 'asking';
+    state.phase = state.lastGrade != null ? 'graded' : 'asking';
     renderScenarios();
     renderActive();
     renderScratchpad();
@@ -383,11 +381,7 @@ function renderQuickAdd() {
     ];
     const wrap = ce('div', { class: 'quick-add' });
     for (const k of kinds) {
-        const input = ce('input', {
-            type: 'text', class: 'qa-input', placeholder: k.placeholder,
-            'aria-label': `add ${k.kind}`,
-            on: { keydown: e => { if (e.key === 'Enter') { e.preventDefault(); commit(); } } }
-        });
+        let input;
         const commit = () => {
             const v = input.value.trim();
             if (!v) return;
@@ -397,6 +391,11 @@ function renderQuickAdd() {
             input.value = '';
             renderActive();
         };
+        input = ce('input', {
+            type: 'text', class: 'qa-input', placeholder: k.placeholder,
+            'aria-label': `add ${k.kind}`,
+            on: { keydown: e => { if (e.key === 'Enter') { e.preventDefault(); commit(); } } }
+        });
         wrap.append(ce('div', { class: 'qa-row' },
             ce('label', { class: 'qa-label' }, k.label),
             input,
@@ -901,7 +900,6 @@ function simulateAssistant(userText) {
 state.simulateAssistant = simulateAssistant;
 
 els.send.addEventListener('click', () => send(false));
-if (els.submitGrading) els.submitGrading.addEventListener('click', submitForGrading);
 els.loadLLM.addEventListener('click', loadLLM);
 els.clearScreen.addEventListener('click', () => TOOLS.clear_screen());
 const copyMdBtn = document.getElementById('copy-md');

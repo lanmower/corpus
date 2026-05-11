@@ -37,6 +37,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(total, MANIFEST.totals.scenarios); assert.ok(total >= 60);
         for (const sh of SHARDS) for (const sc of (sh.triage?.scenarios || [])) {
             assert.ok(sc.parameters && typeof sc.parameters === 'object' && !Array.isArray(sc.parameters));
+            assert.ok(!('raw' in sc.parameters), 'parameters.raw leaks unparsed YAML into shard: ' + sc.name);
             assert.ok(Array.isArray(sc.examples));
         }
         for (const sh of SHARDS) if (sh.guide) assert.ok(typeof sh.guide.body === 'string' && sh.guide.body.length > 100);
@@ -86,7 +87,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     console.log('# triage-live: gate + worker + student-clean chrome');
     t('disclosure-gate (asking hides answer key, grading reveals) + worker shape + restyle microcopy + serve isolation', () => {
         assert.match(liveSrc, /function buildSnapshot\(phase\)/);
-        assert.match(liveHtml, /id="submit-grading"/);
+        // Grade-button is now the in-panel run-btn rendered by renderActive; composer button removed.
+        assert.match(liveSrc, /submitForGrading/);
         const sc = { id: 'x-0', subject: 'c', cat: 'green', name: 'T', description: 'd.', parameters: { hr: 110 },
             examples: [{ case: 'A 60yo w/ chest pain.', reasoning: 'CANARY_REASON', recommendation: 'CANARY_REC' }],
             atom_ids: ['a1'], atoms: [{ id: 'a1', atom: 'CanaryFront', definition: 'CANARY_DEF' }] };
