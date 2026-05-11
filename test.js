@@ -69,6 +69,20 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const re of [/suspendCard/, /isSuspended/, /quota/i, /corpus:storage-full/, /s\.suspended/]) assert.match(READ('site/srs.js'), re);
     });
 
+    console.log('# esm parse: every site/*.js parses as a module');
+    t('every site/*.js passes node --check --input-type=module (catches missing paren etc)', () => {
+        const cp = require('child_process');
+        const files = fs.readdirSync(path.join(ROOT, 'site')).filter(f => f.endsWith('.js'));
+        const broken = [];
+        for (const f of files) {
+            const r = cp.spawnSync(process.execPath, ['--check', '--input-type=module'], {
+                input: fs.readFileSync(path.join(ROOT, 'site', f), 'utf8')
+            });
+            if (r.status !== 0) broken.push({ f, err: (r.stderr.toString() || '').slice(0, 200) });
+        }
+        assert.deepStrictEqual(broken, [], 'ESM parse failures: ' + JSON.stringify(broken));
+    });
+
     console.log('# triage-live: gate + worker + student-clean chrome');
     t('disclosure-gate (asking hides answer key, grading reveals) + worker shape + restyle microcopy + serve isolation', () => {
         assert.match(liveSrc, /function buildSnapshot\(phase\)/);

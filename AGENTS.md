@@ -28,6 +28,11 @@ New: `mastery.js` (readiness-adjusted score), `schedule.js` (deterministic daily
 
 Deleted (gamification stripped): `game.js`, `confetti.js`, `quests.js`, `badges.js`, `notes.js`.
 
+## Non-Obvious Caveats
+
+- `node --check` on site/*.js passes even when the browser throws `SyntaxError` on load: browser parses files as ESM/module-worker while node --check parses as CJS script. Use a live browser witness (plugkit `exec --lang browser`) to catch real parse failures — node syntax-check is not sufficient.
+- The exec-spool `in/browser/N.js` dispatch reports "plugkit not found in PATH". Route browser execution via `in/bash/N.sh` calling `node <absolute plugkit path> exec --lang browser --session <name> --timeout-ms <ms> '<JS>'` (sessionId required). Plugkit lives under `C:/Users/user/.claude/plugins/cache/gm-cc/gm/<hash>/bin/plugkit.js`.
+
 ## Repository State
 
 - Git identity: `lanmower` (almagestfraternite@gmail.com)

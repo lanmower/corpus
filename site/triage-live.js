@@ -422,7 +422,7 @@ function renderGradePanel(sc) {
             const next = vis[Math.min(idx + 1, vis.length - 1)];
             if (next && next.id !== sc.id) selectScenario(next.id);
         } } }, 'next case →')
-    );
+    ));
     return wrap;
 }
 
