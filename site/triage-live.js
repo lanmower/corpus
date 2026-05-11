@@ -65,25 +65,47 @@ const state = {
 };
 window.__triage = state;
 
+function pickFromVariance(varObj) {
+    // Variance descriptor: { mild: {...}, moderate: {...}, severe: {...} } -> pick one key.
+    if (!varObj || typeof varObj !== 'object') return null;
+    const keys = Object.keys(varObj);
+    if (!keys.length) return null;
+    // Deterministic-by-scenario pick: hash from joined keys so same scenario stems are stable.
+    return keys[0];
+}
+
 function caseStem(sc) {
     if (!sc) return '';
     const ex = (sc.examples && sc.examples[0]) || {};
     const stemRaw = (typeof ex === 'string' ? ex : (ex.case || ex.stem || ''));
     if (stemRaw && stemRaw.length > 20) return stemRaw.slice(0, 600);
-    // Build a richer stem from parameters when no example.case is present.
     const p = sc.parameters || {};
+    // Numeric-vital weave (when params expose age/sex/hr/bp/...)
     const demo = [];
     if (p.age) demo.push(`${p.age}yo`);
     if (p.sex) demo.push(p.sex);
     const vitals = [];
     for (const k of ['hr', 'HR', 'bp', 'BP', 'temp', 'rr', 'spo2', 'SpO2', 'glucose']) {
-        if (p[k] != null) vitals.push(`${k.toUpperCase()} ${p[k]}`);
+        if (p[k] != null && typeof p[k] !== 'object') vitals.push(`${k.toUpperCase()} ${p[k]}`);
+    }
+    // Categorical descriptor weave: severity/onset/comorbidities/response -> stem clauses.
+    const features = [];
+    if (p.severity?.variance) features.push(`${pickFromVariance(p.severity.variance)} severity`);
+    if (p.onset?.variance) features.push(`${pickFromVariance(p.onset.variance)} onset`);
+    if (p.comorbidities?.variance) {
+        const c = pickFromVariance(p.comorbidities.variance);
+        if (c && c !== 'none') features.push(`with ${c.replace(/_/g, ' ')}`);
     }
     const desc = sc.description || '';
     const lead = desc.split(/[.!?]/)[0] || sc.name;
-    const presentation = demo.length || vitals.length
-        ? `A ${demo.join(' ') || 'patient'}${vitals.length ? ` with ${vitals.join(', ')}` : ''} presents to your service.`
-        : 'The patient presents to your service.';
+    let presentation;
+    if (demo.length || vitals.length) {
+        presentation = `A ${demo.join(' ') || 'patient'}${vitals.length ? ` with ${vitals.join(', ')}` : ''} presents to your service.`;
+    } else if (features.length) {
+        presentation = `A patient presents with ${features.join(', ')}.`;
+    } else {
+        presentation = 'The patient presents to your service.';
+    }
     return `${sc.name}. ${lead}. ${presentation} Commit your differentials, investigations, and plan as cards before requesting grading.`;
 }
 
@@ -409,10 +431,15 @@ function renderGradePanel(sc) {
     ));
     wrap.append(ce('div', { class: 'grade-actions' },
         ce('button', { class: 'run-btn', on: { click: () => {
-            // Try again: clear highlights + drop gap notes, restore asking phase
-            state.cards = state.cards.filter(c => !(c.kind === 'note' && /^missed:/i.test(c.title || '')));
+            // Try again: clear highlights, drop the tutor-added gap notes & canonical-plan card, restore asking phase
+            state.cards = state.cards.filter(c => {
+                if (c.kind === 'note' && /^missed:/i.test(c.title || '')) return false;
+                if (typeof c.id === 'string' && (c.id.startsWith('gap-') || c.id.startsWith('key-rec-'))) return false;
+                return true;
+            });
             for (const c of state.cards) c.highlighted = false;
             state.phase = 'asking';
+            state.lastGrade = null;
             persistActive();
             renderActive(); renderScratchpad();
         } } }, 'try again'),
