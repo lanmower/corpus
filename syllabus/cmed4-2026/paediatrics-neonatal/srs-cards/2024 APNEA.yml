@@ -1,0 +1,713 @@
+deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+notes:
+  - guid: "apnea001defn01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Define apnoea in the neonate."
+      Back: "Cessation of breathing (respiratory airflow)."
+    tags: ["definition", "apnea-basics", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea002duration1"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the time threshold for apnoea of 20 seconds or more?"
+      Back: "Apnoea ≥20 seconds, with or without cyanosis, pallor or bradycardia (<100 bpm)."
+    tags: ["definition", "apnea-threshold", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea003duration2"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the time threshold for apnoea <20 seconds?"
+      Back: "Cessation of breathing <20 seconds associated with cyanosis, pallor or bradycardia (<100 bpm)."
+    tags: ["definition", "apnea-threshold", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea004bradydef"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the bradycardia threshold in apnoea definitions?"
+      Back: "Heart rate <100 bpm."
+    tags: ["definition", "bradycardia", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea005periodic01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "At what age is periodic breathing predominantly seen?"
+      Back: "Age 2 to 4 weeks."
+    tags: ["periodic-breathing", "age-specific", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea006periodic02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "When does periodic breathing resolve?"
+      Back: "By 6 months of age."
+    tags: ["periodic-breathing", "age-specific", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea007periodic03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Describe the pattern of apnoea episodes in periodic breathing."
+      Back: "Brief episodes of apnoea occurring in short cycles of 5 to 10 seconds."
+    tags: ["periodic-breathing", "pattern", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea008epidem01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "In what gestational age group does apnoea occur most commonly?"
+      Back: "Preterm infants; incidence increases with decreasing gestational age."
+    tags: ["epidemiology", "gestational-age", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea009epidem02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What percentage of infants <28 weeks gestation experience apnoea?"
+      Back: "Almost every infant younger than 28 weeks will have an episode."
+    tags: ["epidemiology", "gestational-age", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea010epidem03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What percentage of infants born <34 weeks gestation experience apnoea?"
+      Back: "At least 85%."
+    tags: ["epidemiology", "gestational-age", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea011epidem04"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the incidence of apnoea in term infants?"
+      Back: "1 per 1000. Apnoea in term infants is often abnormal and associated with serious identifiable causes."
+    tags: ["epidemiology", "term-infant", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea012control01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Name the three components of breathing control."
+      Back: "1. Control centre (brain and brainstem). 2. Afferent and efferent communication (nerves). 3. Receptors (central and peripheral chemoreceptors, stretch receptors)."
+    tags: ["physiology", "control-system", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea013ventilation"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Name the four components of breathing ventilation."
+      Back: "1. Airway (upper and lower). 2. Gas exchange (lung physiological unit = alveoli). 3. Respiratory muscles (diaphragm, accessory). 4. Supporting structures (ribs, connective tissue)."
+    tags: ["physiology", "ventilation", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea014cortex"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Which brain region controls voluntary respiration?"
+      Back: "Cerebral motor cortex."
+    tags: ["physiology", "control-centre", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea015brainstem"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Which brain region controls involuntary respiration?"
+      Back: "Brainstem."
+    tags: ["physiology", "control-centre", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea016medulla"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the primary respiratory control centre?"
+      Back: "Medulla oblongata."
+    tags: ["physiology", "brainstem", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea017vrg"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What does VRG (ventral respiratory group) in the medulla stimulate?"
+      Back: "Expiratory movements."
+    tags: ["physiology", "medulla", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea018drg"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What does DRG (dorsal respiratory group, solitary tract) in the medulla stimulate?"
+      Back: "Inspiratory movements."
+    tags: ["physiology", "medulla", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea019medulla02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What non-respiratory air movements does the medulla control?"
+      Back: "Coughing and sneezing."
+    tags: ["physiology", "medulla", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea020pons"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What does the pons control in respiration?"
+      Back: "Rate of involuntary respiration."
+    tags: ["physiology", "pons", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea021apneustic"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What does the apneustic centre (in pons) send signals for?"
+      Back: "Long and deep breaths (increases tidal volume)."
+    tags: ["physiology", "pons", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea022hering"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What inhibits the apneustic centre and signals for maximum inspiration?"
+      Back: "Stretch receptors in pulmonary muscles at maximum inspiration (Hering-Breuer reflex)."
+    tags: ["physiology", "reflex", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea023pneumo"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What does the pneumotaxic centre (in pons) send signals for?"
+      Back: "To inhibit inspiration (decreases tidal volume)."
+    tags: ["physiology", "pons", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea024pneumo02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What does the pneumotaxic centre inhibit?"
+      Back: "1. The activity of the phrenic nerve. 2. The apneustic centre."
+    tags: ["physiology", "pons", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea025chemo01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the location of central chemoreceptors?"
+      Back: "Surface of the medulla oblongata."
+    tags: ["physiology", "chemoreceptor", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea026chemo02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What substances do central chemoreceptors sense?"
+      Back: "H⁺ ion concentration and PaCO₂ in blood and CSF."
+    tags: ["physiology", "chemoreceptor", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea027chemo03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "How does increased CO₂ affect pH at the central chemoreceptor?"
+      Back: "Increased CO₂ leads to decreased pH due to production of H⁺ ions from H₂CO₃."
+    tags: ["physiology", "chemoreceptor", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea028periph01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Where are peripheral chemoreceptors located?"
+      Back: "Aortic arch and carotid bodies."
+    tags: ["physiology", "chemoreceptor", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea029periph02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What do peripheral chemoreceptors measure?"
+      Back: "PaO₂ in arterial blood."
+    tags: ["physiology", "chemoreceptor", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea030stretch"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Where are stretch receptors located?"
+      Back: "Smooth muscle of airways."
+    tags: ["physiology", "receptor", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea031afferent1"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Which cranial nerve carries afferent signals from the carotid body?"
+      Back: "Glossopharyngeal nerve (CN IX)."
+    tags: ["physiology", "nerve", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea032afferent2"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Which cranial nerve carries afferent signals from the aortic arch and lungs?"
+      Back: "Vagus nerve (CN X)."
+    tags: ["physiology", "nerve", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea033afferent3"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Which nerves carry afferent signals in the respiratory pathway?"
+      Back: "1. Glossopharyngeal (CN IX) from carotid body. 2. Vagus (CN X) from aortic arch chemoreceptors and lungs (stretch and irritant receptors)."
+    tags: ["physiology", "nerve", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea034efferent1"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Which nerve innervates the diaphragm?"
+      Back: "Phrenic nerve."
+    tags: ["physiology", "nerve", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea035efferent2"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What are the spinal nerve roots of the phrenic nerve?"
+      Back: "C3, C4, C5."
+    tags: ["physiology", "nerve", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea036efferent3"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Which nerves innervate the accessory muscles of breathing?"
+      Back: "Thoracic nerves."
+    tags: ["physiology", "nerve", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea037upper01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Name the components of the upper airways."
+      Back: "1. Nostril. 2. Nasal cavity and paranasal sinuses. 3. Pharynx. 4. Larynx."
+    tags: ["physiology", "airway", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea038lower01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Name the components of the lower airways."
+      Back: "1. Trachea. 2. Bronchi. 3. Bronchioles."
+    tags: ["physiology", "airway", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea039gasex"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the functional unit of the respiratory system for gas exchange?"
+      Back: "Alveolus."
+    tags: ["physiology", "gas-exchange", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea040muscles01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the primary respiratory muscle?"
+      Back: "Diaphragm."
+    tags: ["physiology", "muscle", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea041muscles02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Name the accessory muscles of respiration."
+      Back: "1. Intercostal muscles and other chest wall muscles. 2. Sternocleidomastoid. 3. Abdominal wall muscles."
+    tags: ["physiology", "muscle", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea042support"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Name the supporting structures for respiration."
+      Back: "Bones, cartilage and connective tissue."
+    tags: ["physiology", "structure", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea043pathogen01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the first factor in the pathogenesis of apnoea?"
+      Back: "Developmental immaturity of the central respiratory drive."
+    tags: ["pathogenesis", "mechanism", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea044pathogen02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the second factor in the pathogenesis of apnoea?"
+      Back: "Receptor response – apnoea in response to hypoxia and hypercapnoea (foetal/neonatal transition physiology)."
+    tags: ["pathogenesis", "mechanism", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea045pathogen03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the third factor in the pathogenesis of apnoea?"
+      Back: "Reflexes – e.g. laryngeal chemical reflex depresses breathing during feeding."
+    tags: ["pathogenesis", "mechanism", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea046pathogen04"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the fourth factor in the pathogenesis of apnoea?"
+      Back: "Increased sensitivity to stressors such as toxins, hypoglycaemia, hypothermia, anaemia."
+    tags: ["pathogenesis", "mechanism", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea047pathogen05"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the fifth factor in the pathogenesis of apnoea?"
+      Back: "Respiratory muscles and chest wall – more easily fatigable. Thoracic wall and muscles more pliable leading to increased work of breathing."
+    tags: ["pathogenesis", "mechanism", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea048pathogen06"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the sixth factor in the pathogenesis of apnoea?"
+      Back: "Airway obstruction."
+    tags: ["pathogenesis", "mechanism", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea049classify01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Define central apnoea."
+      Back: "Inspiratory effort is absent. Comprises approximately 20% of apnoea cases."
+    tags: ["classification", "apnea-type", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea050classify02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Define obstructive apnoea."
+      Back: "Inspiratory efforts persist in the presence of airway obstruction. Comprises approximately 20% of apnoea cases."
+    tags: ["classification", "apnea-type", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea051classify03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Define reflex apnoea."
+      Back: "Apnoea that is vagally mediated."
+    tags: ["classification", "apnea-type", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea052classify04"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Define mixed apnoea."
+      Back: "Airway obstruction with inspiratory effort precedes or follows central apnoea. Comprises approximately 60% of apnoea cases."
+    tags: ["classification", "apnea-type", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea053reflex01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "List the reflex apnoea triggers in preterm infants."
+      Back: "1. GORD. 2. Overfeeding. 3. Deep suctioning. 4. Intubation."
+    tags: ["causes", "reflex-apnea", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea054central01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "List the central apnoea causes in preterm infants (part 1)."
+      Back: "1. Prematurity. 2. Hypoxia. 3. Acidosis. 4. CNS lesions (IVH, seizures, meningitis). 5. NEC."
+    tags: ["causes", "central-apnea", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea055central02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "List the central apnoea causes in preterm infants (part 2)."
+      Back: "6. Ambient temperature fluctuations. 7. Metabolic derangements (glucose and electrolyte abnormalities). 8. Anaemia. 9. Drugs (phenobarb, sedatives). 10. Pain and excessive handling."
+    tags: ["causes", "central-apnea", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea056central03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "List the central apnoea causes in preterm infants (part 3)."
+      Back: "11. Cardiac abnormalities e.g. PDA, heart failure."
+    tags: ["causes", "central-apnea", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea057obstruct01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Why are neonates prone to obstructive apnoea?"
+      Back: "Neonates are obligatory nose breathers. Obstruction of nares leads to apnoeas."
+    tags: ["causes", "obstructive-apnea", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea058obstruct02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "List the obstructive apnoea causes in preterm infants."
+      Back: "1. Choanal atresia/stenosis. 2. Macroglossia. 3. Micrognathia. 4. Secretions. 5. Excessive neck flexion or extension."
+    tags: ["causes", "obstructive-apnea", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea059mixed01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What are the causes of mixed apnoea?"
+      Back: "Combination of central, reflex, and obstructive causes."
+    tags: ["causes", "mixed-apnea", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea060history01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What history differentiations are important in apnoea assessment?"
+      Back: "True apnoea versus periodic breathing versus breath holding."
+    tags: ["assessment", "history", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea061history02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What perinatal and postnatal history elements should be obtained?"
+      Back: "Antenatal, perinatal, postnatal, and feeding history."
+    tags: ["assessment", "history", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea062history03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What family history elements are relevant to apnoea assessment?"
+      Back: "Family history of seizures, infant deaths, serious family illnesses, consanguinity."
+    tags: ["assessment", "history", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea063history04"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What social history elements are relevant to apnoea assessment?"
+      Back: "Toxins, drugs, medications, tobacco smoke, CO."
+    tags: ["assessment", "history", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea064history05"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What associated symptoms should be documented in apnoea history?"
+      Back: "Sleep issues, snoring, mouth breathing."
+    tags: ["assessment", "history", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea065exam01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What should be assessed on examination in apnoea (part 1)?"
+      Back: "1. Congenital anomalies. 2. Genetic syndromes. 3. Congenital infections. 4. IEM stigmata."
+    tags: ["assessment", "examination", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea066exam02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What should be assessed on examination in apnoea (part 2)?"
+      Back: "5. Fever or hypothermia. 6. Tachypnoea. 7. Stridor."
+    tags: ["assessment", "examination", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea067monitor01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is a readily available monitoring method for apnoea?"
+      Back: "SpO₂ monitoring, though it may be insufficient."
+    tags: ["monitoring", "method", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea068monitor02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What are the limitations of SpO₂ monitoring for apnoea?"
+      Back: "1. Movement-related false alarms. 2. Newer models more movement resistant."
+    tags: ["monitoring", "method", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea069monitor03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is abdominal pressure monitoring?"
+      Back: "Diaphragm taped to abdominal wall to detect respiratory effort."
+    tags: ["monitoring", "method", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea070monitor04"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is transthoracic impedance pneumography?"
+      Back: "Electrodes placed above and below diaphragm on infant's chest. Cannot identify obstructive apnoea well."
+    tags: ["monitoring", "method", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea071monitor05"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is nasal thermistry?"
+      Back: "Device attached above upper lip that detects changes in temperature."
+    tags: ["monitoring", "method", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea072monitor06"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is respiratory inductance plethysmography?"
+      Back: "Coil bands placed around infant's abdomen and chest that can estimate tidal volume."
+    tags: ["monitoring", "method", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea073mgmt01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the first principle of apnoea management?"
+      Back: "Identify and treat underlying cause."
+    tags: ["management", "principle", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea074respsupp01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "List the respiratory support options for apnoea (part 1)."
+      Back: "1. NPO₂. 2. Warm, humidified HFNC. 3. NCPAP/SIPAP. 4. Mechanical ventilation."
+    tags: ["management", "respiratory-support", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea075stim01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What class of drugs are used as central stimulants for apnoea?"
+      Back: "Methylxanthines."
+    tags: ["management", "stimulant", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea076methyl01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Which methylxanthines are used for apnoea of prematurity?"
+      Back: "1. Caffeine (citrate/base) – Yes. 2. Aminophylline – Yes. 3. Theophylline – No."
+    tags: ["management", "methylxanthine", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea077mechan01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the mechanism of methylxanthines?"
+      Back: "Central blockade of GABA-ergic neuron + Adenosine₂ₐ receptors, resulting in decreased release of GABA."
+    tags: ["mechanism", "methylxanthine", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea078mechan02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "How do methylxanthines protect cells during hypoxia and ischaemia?"
+      Back: "They preserve brain ATP levels."
+    tags: ["mechanism", "methylxanthine", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea079mechan03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What other effects do methylxanthines have on respiratory function?"
+      Back: "1. Improved respiratory muscle function. 2. Enhanced chemoreceptor responsiveness to CO₂."
+    tags: ["mechanism", "methylxanthine", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea080side01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What are the side effects of methylxanthines?"
+      Back: "1. Increased energy expenditure and oxygen consumption – may decrease growth. 2. Behavioural problems in later childhood?"
+    tags: ["management", "side-effect", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea081outcomes01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What did 18-month follow-up of caffeine-treated neonates show?"
+      Back: "Those treated with caffeine as neonates had significantly improved survival without neurodevelopmental disability."
+    tags: ["management", "outcome", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea082sids01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "Define SIDS (Sudden Infant Death Syndrome)."
+      Back: "The sudden unexplained death of a child less than one year of age."
+    tags: ["sids", "definition", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea083sids02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "At what age is SIDS most common?"
+      Back: "Most commonly 2–4 months age; almost unheard of after 6 months."
+    tags: ["sids", "epidemiology", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea084sids03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the primary prevention for SIDS?"
+      Back: "Sleeping on back."
+    tags: ["sids", "prevention", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea085sids04"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What environmental factors should be avoided to prevent SIDS?"
+      Back: "1. No blankets or pillows. 2. Use firm mattress. 3. Smoking should be avoided by parents. 4. Avoid overheating. 5. Avoid sleeping in same bed."
+    tags: ["sids", "prevention", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea086sids05"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What protective factors reduce the risk of SIDS?"
+      Back: "1. Breast feeding. 2. Pacifiers."
+    tags: ["sids", "prevention", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea087sids06"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the SIDS risk in infants born before 32 weeks gestation?"
+      Back: "Three-times-higher risk of sudden infant death syndrome (SIDS) compared to term infants."
+    tags: ["sids", "epidemiology", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea088outcome01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What are the short-term consequences of apnoea?"
+      Back: "1. Hypoxaemia. 2. Bradycardia. 3. Impaired perfusion and drop in BP. 4. Decreased cerebral perfusion. 5. Reflex hyperperfusion."
+    tags: ["outcome", "consequence", "subject:paediatrics-neonatal"]
+
+  - guid: "apnea089outcome02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::2024 APNEA"
+    fields:
+      Front: "What is the relationship between apnoea and neurodevelopmental outcome?"
+      Back: "Apnoea is associated with poor neurodevelopmental outcome. Long-term effects are controversial, and it is difficult to establish causal relationship in patients with co-existing medical problems."
+    tags: ["outcome", "consequence", "subject:paediatrics-neonatal"]

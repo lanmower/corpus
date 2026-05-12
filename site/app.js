@@ -50,7 +50,10 @@ window.__corpus = state;
 window.__corpus.DEBUG = DEBUG;
 
 async function fetchJson(p) { const r = await fetch(p); if (!r.ok) throw new Error(`${p}: ${r.status}`); return r.json(); }
-async function loadManifest() { state.manifest = await fetchJson('./data/manifest.json'); }
+async function loadManifest() {
+    state.manifest = await fetchJson('./data/manifest.json');
+    try { schedule.setSubjectList(state.manifest.subjects.map(s => s.subject)); } catch {}
+}
 async function loadShard(s) { if (state.shards[s]) return state.shards[s]; state.shards[s] = await fetchJson(`./data/${s}.json`); return state.shards[s]; }
 async function loadAllShards() { await Promise.all(state.manifest.subjects.map(s => loadShard(s.subject))); }
 
@@ -1772,18 +1775,33 @@ function renderScheduleConfigPanel() {
     }
     panel.append(availPanel);
 
-    // subject weighting — 8 sliders
-    const weightPanel = el('div', { class: 'cfg-weights' }, el('div', { class: 'cfg-sublabel' }, 'subject weighting'));
+    // subject weighting — toggle + slider per subject
+    const weightPanel = el('div', { class: 'cfg-weights' },
+        el('div', { class: 'cfg-sublabel' }, 'subjects (toggle off to cram a subset)'));
     for (const meta of state.manifest.subjects) {
         const sub = meta.subject;
-        weightPanel.append(el('div', { class: 'cfg-row weight-row' },
+        const isOn = cfg.enabled[sub] !== false;
+        const toggle = el('button', {
+            class: 'chip subject-toggle' + (isOn ? ' active' : ''),
+            'aria-pressed': String(isOn),
+            title: isOn ? 'enabled — click to disable' : 'disabled — click to enable',
+            on: { click: () => {
+                const en = { ...schedule.loadConfig().enabled, [sub]: !isOn };
+                schedule.saveConfig({ enabled: en }); regenAndPreview(); render();
+            } }
+        }, isOn ? 'on' : 'off');
+        const slider = el('input', { type: 'range', min: '0', max: '3', step: '0.1',
+            value: String(cfg.weights[sub] ?? 1),
+            disabled: isOn ? null : 'disabled',
+            'aria-label': `${sub} weight`,
+            on: { input: debounce(e => {
+                const w = { ...schedule.loadConfig().weights, [sub]: parseFloat(e.target.value) };
+                schedule.saveConfig({ weights: w }); regenAndPreview();
+            }, 200) } });
+        weightPanel.append(el('div', { class: 'cfg-row weight-row' + (isOn ? '' : ' disabled') },
+            toggle,
             el('label', {}, sub),
-            el('input', { type: 'range', min: '0', max: '3', step: '0.1', value: String(cfg.weights[sub] ?? 1),
-                'aria-label': `${sub} weight`,
-                on: { input: debounce(e => {
-                    const w = { ...schedule.loadConfig().weights, [sub]: parseFloat(e.target.value) };
-                    schedule.saveConfig({ weights: w }); regenAndPreview();
-                }, 200) } }),
+            slider,
             el('span', { class: 'mono cfg-val' }, String(cfg.weights[sub] ?? 1))));
     }
     panel.append(weightPanel);

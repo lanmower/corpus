@@ -1,0 +1,241 @@
+deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+notes:
+  - guid: "sup0001perinct"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the cumulative perinatal HIV transmission risk without intervention?"
+      Back: "13% to 39% (broken down as: intrauterine 5%, peripartum 13-18%, breastfeeding 5-28%)."
+    tags: ["transmission-without-intervention", "cumulative-breakdown", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0002persplit"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "Why are perinatal transmission rates quoted as both '15-45%' and '13-39%' cumulatively?"
+      Back: "15-45% is the global range without intervention. 13-39% is the cumulative breakdown by mode: intrauterine (5%) + peripartum (13-18%) + breastfeeding (5-28%) = 23-51% theoretical max, but actual cumulative is 13-39%."
+    tags: ["transmission-without-intervention", "transmission-rates", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0003aband01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the first management step for an abandoned infant with unknown HIV exposure?"
+      Back: "Treat as a high-risk infant: perform HIV PCR and initiate high-risk prophylaxis (AZT + NVP)."
+    tags: ["abandoned-infants", "algorithm", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0004aband02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the management if an abandoned infant's initial PCR is positive?"
+      Back: "Confirm with viral load test, initiate ART, and stop NVP and AZT."
+    tags: ["abandoned-infants", "algorithm", "pcr-positive", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0005aband03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the management if an abandoned infant's initial PCR is negative?"
+      Back: "Repeat HIV PCR at 10 weeks of age."
+    tags: ["abandoned-infants", "algorithm", "pcr-negative", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0006indter01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the first step when managing an indeterminate HIV PCR result?"
+      Back: "Check prior PCR results and viral load history."
+    tags: ["indeterminate-pcr", "algorithm", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0007indter02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What action if indeterminate or positive PCR shows detectable viral load?"
+      Back: "Treat as infected: initiate ART immediately."
+    tags: ["indeterminate-pcr", "algorithm", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0008indter03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What action if indeterminate/negative PCR with undetectable VL and no prior tests?"
+      Back: "Repeat HIV PCR and viral load urgently."
+    tags: ["indeterminate-pcr", "algorithm", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0009indter04"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the final step if repeat PCR and VL are negative in indeterminate case?"
+      Back: "Follow the standard testing algorithm for an HIV-exposed infant."
+    tags: ["indeterminate-pcr", "algorithm", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0010tbdose01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the TB prophylaxis regimen for TB-exposed asymptomatic neonates?"
+      Back: "INH 10 mg/kg daily for 6 months. Do NOT give BCG during this period."
+    tags: ["tb-prophylaxis", "dosing", "weight-based", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0011tbdose02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "When can BCG be administered after TB prophylaxis completion?"
+      Back: "2 weeks after completion of INH 6-month course."
+    tags: ["tb-prophylaxis", "bcg-timing", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0012tbdose03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "Calculate INH dose for a 3 kg TB-exposed neonate (10 mg/kg regimen)."
+      Back: "3 kg × 10 mg/kg = 30 mg daily for 6 months."
+    tags: ["tb-prophylaxis", "dosing-example", "weight-based", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0013tbdose04"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "Calculate INH dose for a 4 kg TB-exposed neonate (10 mg/kg regimen)."
+      Back: "4 kg × 10 mg/kg = 40 mg daily for 6 months."
+    tags: ["tb-prophylaxis", "dosing-example", "weight-based", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0014nvptime01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "When should the first dose of NVP be administered to exposed infant?"
+      Back: "As soon as possible after birth."
+    tags: ["nvp-dosing", "timing", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0015nvptime02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "Should birth PCR testing delay NVP administration?"
+      Back: "No. Ideally birth PCR should be done before NVP, but any delay in testing should NOT delay NVP administration."
+    tags: ["nvp-dosing", "pcr-timing", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0016nvpfreq01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the dosing frequency for NVP in exposed infants?"
+      Back: "One dose per 24-hour period; repeat dose once only if baby vomits."
+    tags: ["nvp-dosing", "frequency", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0017vltrans01"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is HIV transmission rate with VL <400 copies/ml?"
+      Back: "0% (95% CI: 0-11.0%)"
+    tags: ["viral-load-transmission", "vl-class-1", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0018vltrans02"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is HIV transmission rate with VL 400-3500 copies/ml?"
+      Back: "8.6% (95% CI: 2.0-11.2%)"
+    tags: ["viral-load-transmission", "vl-class-2", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0019vltrans03"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is HIV transmission rate with VL 3500-10,000 copies/ml?"
+      Back: "19.4% (95% CI: 10.3-28.5%)"
+    tags: ["viral-load-transmission", "vl-class-3", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0020vltrans04"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is HIV transmission rate with VL 10,000-30,000 copies/ml?"
+      Back: "18.8% (95% CI: 10.3-27.4%)"
+    tags: ["viral-load-transmission", "vl-class-4", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0021vltrans05"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is HIV transmission rate with VL >30,000 copies/ml?"
+      Back: "34.8% (95% CI: 29.5-40.1%)"
+    tags: ["viral-load-transmission", "vl-class-5", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0022comp01test"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "Compare 2015 vs 2019 maternal HIV testing frequency guidelines."
+      Back: "2015: At first visit and every 3 months. | 2019: At first visit and each routine basic antenatal care plus visit (8 visits in all)."
+    tags: ["comparison-2015-2019", "maternal-testing", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0023comp02inftest"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "Compare 2015 vs 2019 infant HIV testing timeline (14-week and 6-month tests)."
+      Back: "2015: PCR at birth, 10 weeks, 14 weeks (high-risk). | 2019: PCR at birth, 10 weeks, NO 14-week test, 6-month PCR for all exposed infants."
+    tags: ["comparison-2015-2019", "infant-testing", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0024comp03highrisk"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "Compare 2015 vs 2019 high-risk infant definition criteria."
+      Back: "2015: Maternal VL >1000 c/ml OR maternal ART <4 weeks prior to delivery. | 2019: Mother VL >1000 c/ml at delivery (or most recent VL in last 12 weeks ANC) OR mother with no VL in last 12 weeks ANC."
+    tags: ["comparison-2015-2019", "high-risk-definition", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0025comp04pep"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "Compare 2015 vs 2019 infant PEP regimen and NVP stopping rules."
+      Back: "2015: AZT 6 weeks + NVP 12 weeks. | 2019: AZT 6 weeks + NVP minimum 12 weeks; STOP NVP if mother's VL <1000 c/ml OR 1 week after breastfeeding stops."
+    tags: ["comparison-2015-2019", "pep-regimen", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0026res01aids"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the primary US resource for HIV/AIDS clinical information and guidelines?"
+      Back: "www.aidsinfo.nih.gov (NIH AIDSinfo resource)"
+    tags: ["resources", "guidelines", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0027res02cdc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the CDC's primary website for HIV information?"
+      Back: "www.cdc.gov/hiv"
+    tags: ["resources", "guidelines", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0028res03who"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is WHO's HIV resource website?"
+      Back: "www.who.int/hiv/en"
+    tags: ["resources", "guidelines", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0029res04sahiv"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is the South African HIV Society resource for 2015 HIV guidelines?"
+      Back: "www.sahivsoc.org/upload/documents/HIV%20guidelines%20_Jan%202015.pdf"
+    tags: ["resources", "guidelines", "south-africa", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "sup0030res05avert"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::PMTCT updated 2020"
+    fields:
+      Front: "What is AVERT's resource for South African HIV/AIDS statistics?"
+      Back: "www.avert.org/south-africa-hiv-aids-statistics.htm"
+    tags: ["resources", "statistics", "south-africa", "subject:paediatrics-neonatal", "supplement"]

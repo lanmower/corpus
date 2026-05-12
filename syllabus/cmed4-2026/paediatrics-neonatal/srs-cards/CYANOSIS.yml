@@ -1,0 +1,345 @@
+deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+notes:
+  - guid: "cyanosis001def"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "What is cyanosis? Define it."
+      Back: "Bluish discolouration of the skin and mucous membranes that results when the concentration of deoxygenated haemoglobin is excessive in blood OR when there is increased concentration of abnormal haemoglobin derivatives (e.g. methaemoglobinaemia, sulphaemoglobinaemia) in the superficial blood vessels."
+    tags: ["definition", "pathophysiology", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis002cent"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Define central cyanosis. What causes it?"
+      Back: "Bluish discolouration of the highly vascularised areas (lips, tongue, mucous membranes). Caused by reduced arterial oxygen saturation (SO₂). Cardiac output and temperature are usually normal."
+    tags: ["central-cyanosis", "classification", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis003peri"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Define peripheral cyanosis. What causes it?"
+      Back: "Bluish discolouration of the distal extremities only, due to increased extraction of oxygen from sluggish blood movement through capillaries (e.g. peripheral vasoconstriction or polycythaemia). Systemic arterial oxygen saturation is usually normal."
+    tags: ["peripheral-cyanosis", "classification", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis004comp"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Central vs Peripheral Cyanosis: Compare area of involvement."
+      Back: "Central: generalised. Peripheral: localised (distal extremities only)."
+    tags: ["comparison", "central-peripheral", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis005tong"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Central vs Peripheral Cyanosis: Tongue involvement?"
+      Back: "Central: tongue involved. Peripheral: tongue NOT involved."
+    tags: ["comparison", "clinical-signs", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis006temp"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Central vs Peripheral Cyanosis: Temperature at site?"
+      Back: "Central: warm. Peripheral: cold."
+    tags: ["comparison", "clinical-signs", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis007club"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Central vs Peripheral Cyanosis: Clubbing?"
+      Back: "Central: usually present. Peripheral: absent."
+    tags: ["comparison", "clinical-signs", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis008oxy2"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Central vs Peripheral Cyanosis: Response to oxygen supplementation?"
+      Back: "Central: improvement if pulmonary cause. Peripheral: no improvement."
+    tags: ["comparison", "investigation", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis009warm"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Central vs Peripheral Cyanosis: Response to warming?"
+      Back: "Central: no improvement. Peripheral: improvement."
+    tags: ["comparison", "management", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis010mech"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Central vs Peripheral Cyanosis: Underlying mechanism?"
+      Back: "Central: reduction in oxygen saturation. Peripheral: reduction in blood flow."
+    tags: ["comparison", "pathophysiology", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis011crt"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Central vs Peripheral Cyanosis: Capillary refill time?"
+      Back: "Central: < 2 seconds. Peripheral: > 2 seconds."
+    tags: ["comparison", "clinical-signs", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis012hypo"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "List 5 pathophysiological mechanisms of cyanosis."
+      Back: "1. Hypoventilation of the alveoli\n2. Diffusion impairment\n3. Ventilation-perfusion mismatch\n4. Right-to-left shunting (intracardiac or intrapulmonary)\n5. Haemoglobinopathy limiting O₂ transport (e.g. methaemoglobin)"
+    tags: ["pathophysiology", "mechanisms", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis013palms"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "PALMS mnemonic for central cyanosis causes. Expand each letter."
+      Back: "P = Polycythaemia\nA = Altitude\nL = Lung\nM = Methaemoglobin / Metabolic disorders (hypoglycaemia)\nS = Shunt"
+    tags: ["mnemonic", "central-cyanosis", "causes", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis014alv1"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary causes of cyanosis: Alveolar hypoventilation — list causes."
+      Back: "A. Central nervous system depression: asphyxia, sedation, intracranial pathology\nB. Neuromuscular disease: e.g. Guillain-Barré, Duchenne's muscular dystrophy\nC. Airway obstruction: Choanal stenosis"
+    tags: ["pulmonary-causes", "hypoventilation", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis015vpm"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary causes of cyanosis: Ventilation-Perfusion mismatch — list causes."
+      Back: "A. Extrinsic compression of lungs: pneumothorax, pleural effusion, thoracic dystrophies\nB. Intrinsic compression of lungs: pneumonia, lung atelectasis, hyaline membrane disease, asthma"
+    tags: ["pulmonary-causes", "v-p-mismatch", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis016diff"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary causes of cyanosis: Diffusion impairment — list causes."
+      Back: "A. Pulmonary oedema\nB. Bronchopulmonary dysplasia"
+    tags: ["pulmonary-causes", "diffusion-impairment", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis017dpcf"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac causes of cyanosis: Decreased pulmonary blood flow — list lesions."
+      Back: "A. Tetralogy of Fallot\nB. Tricuspid atresia"
+    tags: ["cardiac-causes", "decreased-pbf", "congenital", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis018ipcf"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac causes of cyanosis: Increased pulmonary blood flow — list lesions."
+      Back: "A. Transposition of great vessels\nB. Total anomalous pulmonary venous return\nC. Truncus arteriosus"
+    tags: ["cardiac-causes", "increased-pbf", "congenital", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis019shf"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac causes of cyanosis: Severe heart failure — list lesions."
+      Back: "A. Coarctation of the aorta\nB. Hypoplastic left heart"
+    tags: ["cardiac-causes", "heart-failure", "congenital", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis020meth"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Define methaemoglobinaemia. What causes it?"
+      Back: "Haemoglobinopathy causing cyanosis via abnormal haemoglobin derivatives. Can be congenital or secondary to toxin exposure."
+    tags: ["haemoglobinopathy", "methaemoglobinaemia", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis021sulph"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Define sulphaemoglobinaemia. What causes it?"
+      Back: "Haemoglobinopathy causing cyanosis via abnormal haemoglobin derivatives. Secondary to toxin exposure."
+    tags: ["haemoglobinopathy", "sulphaemoglobinaemia", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis022cold"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "COLD mnemonic for peripheral cyanosis causes. Expand each letter."
+      Back: "C = Cold\nO = Obstruction\nL = LVF (Left Ventricular Failure) and shock\nD = Decreased cardiac output"
+    tags: ["mnemonic", "peripheral-cyanosis", "causes", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis023hemo"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "How does haemoglobin concentration affect detection of cyanosis?"
+      Back: "Cyanosis is more apparent at high levels of haemoglobin saturation."
+    tags: ["factors-detection", "haemoglobin", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis024fhb"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "How does fetal haemoglobin affect detection of cyanosis?"
+      Back: "Cyanosis is more apparent at low levels of fetal haemoglobin saturation."
+    tags: ["factors-detection", "fetal-haemoglobin", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis025pigm"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "How does skin pigmentation affect detection of cyanosis?"
+      Back: "Cyanosis is less apparent in patients with darker skin pigmentation."
+    tags: ["factors-detection", "skin-pigmentation", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis026inv"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "List investigations for cyanosis."
+      Back: "1. Saturation monitor\n2. Haemoglobin or haematocrit\n3. Arterial blood gas\n4. Hyperoxic test\n5. Septic screen\n6. Electrocardiogram and echocardiography\n7. Haemoglobin electrophoresis"
+    tags: ["investigations", "diagnostic", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis027bga1"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal pH range?"
+      Back: "7.35–7.45"
+    tags: ["blood-gas", "reference-range", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis028bga2"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal pCO₂ range?"
+      Back: "35–45 mmHg"
+    tags: ["blood-gas", "reference-range", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis029bga3"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal HCO₃ (standard) range?"
+      Back: "22.0–30.0 mmol/L"
+    tags: ["blood-gas", "reference-range", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis030bga4"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal Base Excess range?"
+      Back: "−3.0 to 3.0 mmol/L"
+    tags: ["blood-gas", "reference-range", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis031bga5"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal pO₂ range?"
+      Back: "75–100 mmHg"
+    tags: ["blood-gas", "reference-range", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis032bga6"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal O₂ saturation range?"
+      Back: "95–100%"
+    tags: ["blood-gas", "reference-range", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis033pot"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal serum potassium range?"
+      Back: "3.5–5.5 mmol/L"
+    tags: ["blood-gas", "electrolytes", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis034sod"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal serum sodium range?"
+      Back: "135–145 mmol/L"
+    tags: ["blood-gas", "electrolytes", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis035chlo"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal serum chloride range?"
+      Back: "95–110 mmol/L"
+    tags: ["blood-gas", "electrolytes", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis036ca"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal ionized calcium (iCa²⁺) range?"
+      Back: "1.12–1.30 mmol/L"
+    tags: ["blood-gas", "electrolytes", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis037gluc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal serum glucose range?"
+      Back: "3.6–7.7 mmol/L"
+    tags: ["blood-gas", "electrolytes", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis038lact"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Blood gas reference: Normal serum lactate range?"
+      Back: "0.2–1.8 mmol/L"
+    tags: ["blood-gas", "electrolytes", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis039hyp1"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Hyperoxia test: PaO₂ >300 mmHg after 100% O₂ indicates what?"
+      Back: "Normal"
+    tags: ["hyperoxia-test", "interpretation", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis040hyp2"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Hyperoxia test: PaO₂ >150 but <300 mmHg after 100% O₂ indicates what conditions?"
+      Back: "Pulmonary disorders; CNS (central nervous system) disorders; Methaemoglobinaemia"
+    tags: ["hyperoxia-test", "interpretation", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis041hyp3"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Hyperoxia test: PaO₂ >100 but <150 mmHg after 100% O₂ indicates what conditions?"
+      Back: "PPHN (Persistent Pulmonary Hypertension of the Newborn); Cardiac mixing lesions with increased pulmonary blood flow"
+    tags: ["hyperoxia-test", "interpretation", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis042hyp4"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Hyperoxia test: PaO₂ <100 mmHg after 100% O₂ indicates what conditions?"
+      Back: "Cardiac condition with parallel circulation; Cardiac mixing lesions with restricted pulmonary blood flow"
+    tags: ["hyperoxia-test", "interpretation", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanosis043tx"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "What are the components of treating cyanosis?"
+      Back: "1. Treat underlying cause\n2. Optimize oxygenation\n3. Symptomatic management"
+    tags: ["management", "treatment", "subject:paediatrics-neonatal"]

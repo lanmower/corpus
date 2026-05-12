@@ -1,0 +1,286 @@
+deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+notes:
+  # PALMS — individual letters
+  - guid: "cyanosis_palms_p"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "PALMS mnemonic for central cyanosis: What does P stand for?"
+      Back: "P = Polycythaemia"
+    tags: ["PALMS", "mnemonic", "central-cyanosis", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_palms_a"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "PALMS mnemonic for central cyanosis: What does A stand for?"
+      Back: "A = Altitude"
+    tags: ["PALMS", "mnemonic", "central-cyanosis", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_palms_l"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "PALMS mnemonic for central cyanosis: What does L stand for?"
+      Back: "L = Lung"
+    tags: ["PALMS", "mnemonic", "central-cyanosis", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_palms_m"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "PALMS mnemonic for central cyanosis: What does M stand for?"
+      Back: "M = Methaemoglobin / Metabolic disorders (hypoglycaemia)"
+    tags: ["PALMS", "mnemonic", "central-cyanosis", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_palms_s"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "PALMS mnemonic for central cyanosis: What does S stand for?"
+      Back: "S = Shunt"
+    tags: ["PALMS", "mnemonic", "central-cyanosis", "subject:paediatrics-neonatal", "supplement"]
+
+  # COLD — individual letters
+  - guid: "cyanosis_cold_c"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "COLD mnemonic for peripheral cyanosis: What does C stand for?"
+      Back: "C = Cold"
+    tags: ["COLD", "mnemonic", "peripheral-cyanosis", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_cold_o"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "COLD mnemonic for peripheral cyanosis: What does O stand for?"
+      Back: "O = Obstruction"
+    tags: ["COLD", "mnemonic", "peripheral-cyanosis", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_cold_l"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "COLD mnemonic for peripheral cyanosis: What does L stand for?"
+      Back: "L = LVF (Left Ventricular Failure) and shock"
+    tags: ["COLD", "mnemonic", "peripheral-cyanosis", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_cold_d"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "COLD mnemonic for peripheral cyanosis: What does D stand for?"
+      Back: "D = Decreased cardiac output"
+    tags: ["COLD", "mnemonic", "peripheral-cyanosis", "subject:paediatrics-neonatal", "supplement"]
+
+  # Cardiac lesions — Decreased pulmonary blood flow
+  - guid: "cyanosis_cardiac_dpbf_tof"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac cause of cyanosis (decreased PBF): What is Tetralogy of Fallot?"
+      Back: "A cyanotic congenital heart lesion characterized by decreased pulmonary blood flow, typically presenting with 'Tet' spells."
+    tags: ["cardiac-causes", "decreased-pbf", "Tetralogy-of-Fallot", "congenital", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_cardiac_dpbf_ta"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac cause of cyanosis (decreased PBF): What is Tricuspid atresia?"
+      Back: "A cyanotic congenital heart lesion characterized by complete absence of the tricuspid valve, causing severe decreased pulmonary blood flow."
+    tags: ["cardiac-causes", "decreased-pbf", "Tricuspid-atresia", "congenital", "subject:paediatrics-neonatal", "supplement"]
+
+  # Cardiac lesions — Increased pulmonary blood flow
+  - guid: "cyanosis_cardiac_ipbf_tgv"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac cause of cyanosis (increased PBF): What is Transposition of the Great Vessels (TGV)?"
+      Back: "A cyanotic congenital heart lesion where the aorta arises from the right ventricle and the pulmonary artery from the left ventricle, causing increased pulmonary blood flow and cyanosis."
+    tags: ["cardiac-causes", "increased-pbf", "TGV", "Transposition", "congenital", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_cardiac_ipbf_tapvr"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac cause of cyanosis (increased PBF): What is Total Anomalous Pulmonary Venous Return (TAPVR)?"
+      Back: "A cyanotic congenital heart lesion where all pulmonary veins drain anomalously (not into the left atrium), causing increased pulmonary blood flow and cyanosis."
+    tags: ["cardiac-causes", "increased-pbf", "TAPVR", "congenital", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_cardiac_ipbf_truncus"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac cause of cyanosis (increased PBF): What is Truncus arteriosus?"
+      Back: "A cyanotic congenital heart lesion where a single arterial trunk arises from the heart, supplying the systemic, pulmonary, and coronary circulations, causing increased pulmonary blood flow and cyanosis."
+    tags: ["cardiac-causes", "increased-pbf", "Truncus-arteriosus", "congenital", "subject:paediatrics-neonatal", "supplement"]
+
+  # Cardiac lesions — Severe heart failure
+  - guid: "cyanosis_cardiac_shf_coarc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac cause of cyanosis (severe heart failure): What is Coarctation of the aorta?"
+      Back: "A congenital heart lesion with narrowing of the aorta, causing systemic hypertension and severe heart failure, which can lead to cyanosis."
+    tags: ["cardiac-causes", "heart-failure", "Coarctation", "congenital", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_cardiac_shf_hlh"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Cardiac cause of cyanosis (severe heart failure): What is Hypoplastic left heart?"
+      Back: "A cyanotic congenital heart lesion with underdevelopment of the left heart structures, causing severe heart failure and cyanosis from birth."
+    tags: ["cardiac-causes", "heart-failure", "Hypoplastic-left-heart", "congenital", "subject:paediatrics-neonatal", "supplement"]
+
+  # Pulmonary — CNS depression subcategories
+  - guid: "cyanosis_pulm_hypo_cns_asphyxia"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (alveolar hypoventilation): What is the role of asphyxia in CNS depression?"
+      Back: "Asphyxia is a form of CNS depression that reduces alveolar hypoventilation and leads to cyanosis due to inadequate respiratory drive."
+    tags: ["pulmonary-causes", "hypoventilation", "CNS-depression", "asphyxia", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_pulm_hypo_cns_sedation"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (alveolar hypoventilation): What is the role of sedation in CNS depression?"
+      Back: "Sedation causes CNS depression reducing alveolar hypoventilation and respiratory drive, leading to cyanosis."
+    tags: ["pulmonary-causes", "hypoventilation", "CNS-depression", "sedation", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_pulm_hypo_cns_intracranial"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (alveolar hypoventilation): What is the role of intracranial pathology in CNS depression?"
+      Back: "Intracranial pathology (e.g. head injury, raised ICP, hemorrhage) causes CNS depression reducing alveolar hypoventilation and leading to cyanosis."
+    tags: ["pulmonary-causes", "hypoventilation", "CNS-depression", "intracranial", "subject:paediatrics-neonatal", "supplement"]
+
+  # Pulmonary — Neuromuscular subcategories
+  - guid: "cyanosis_pulm_hypo_nm_gbs"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (alveolar hypoventilation): What is Guillain-Barré syndrome (GBS) as a neuromuscular cause?"
+      Back: "GBS is an acute inflammatory neuromuscular disease causing ascending paralysis and respiratory muscle weakness, leading to alveolar hypoventilation and cyanosis."
+    tags: ["pulmonary-causes", "hypoventilation", "neuromuscular", "GBS", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_pulm_hypo_nm_dmd"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (alveolar hypoventilation): What is Duchenne's muscular dystrophy (DMD) as a neuromuscular cause?"
+      Back: "DMD is a progressive neuromuscular disease causing muscle weakness and degeneration, including respiratory muscles, leading to alveolar hypoventilation and cyanosis."
+    tags: ["pulmonary-causes", "hypoventilation", "neuromuscular", "DMD", "subject:paediatrics-neonatal", "supplement"]
+
+  # Pulmonary — Airway obstruction
+  - guid: "cyanosis_pulm_hypo_airway_choanal"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (alveolar hypoventilation): What is Choanal stenosis?"
+      Back: "Choanal stenosis is a congenital narrowing of the posterior nasal aperture (choana), causing airway obstruction and alveolar hypoventilation in neonates."
+    tags: ["pulmonary-causes", "hypoventilation", "airway-obstruction", "choanal-stenosis", "subject:paediatrics-neonatal", "supplement"]
+
+  # Pulmonary — V/P mismatch — Extrinsic compression
+  - guid: "cyanosis_pulm_vpm_extrinsic_pneumothorax"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (V/P mismatch): What is pneumothorax as extrinsic lung compression?"
+      Back: "Pneumothorax is a collapsed lung caused by air in the pleural space, leading to extrinsic compression and ventilation-perfusion mismatch."
+    tags: ["pulmonary-causes", "v-p-mismatch", "extrinsic-compression", "pneumothorax", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_pulm_vpm_extrinsic_pleural"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (V/P mismatch): What is pleural effusion as extrinsic lung compression?"
+      Back: "Pleural effusion is fluid in the pleural space causing extrinsic compression of lung tissue and ventilation-perfusion mismatch."
+    tags: ["pulmonary-causes", "v-p-mismatch", "extrinsic-compression", "pleural-effusion", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_pulm_vpm_extrinsic_thoracic"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (V/P mismatch): What are thoracic dystrophies as extrinsic lung compression?"
+      Back: "Thoracic dystrophies are skeletal abnormalities of the thorax reducing thoracic volume, causing extrinsic compression and ventilation-perfusion mismatch."
+    tags: ["pulmonary-causes", "v-p-mismatch", "extrinsic-compression", "thoracic-dystrophies", "subject:paediatrics-neonatal", "supplement"]
+
+  # Pulmonary — V/P mismatch — Intrinsic compression
+  - guid: "cyanosis_pulm_vpm_intrinsic_pneumonia"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (V/P mismatch): What is pneumonia as intrinsic lung compression?"
+      Back: "Pneumonia is inflammation of lung parenchyma causing airway blockage and intrinsic compression, leading to ventilation-perfusion mismatch."
+    tags: ["pulmonary-causes", "v-p-mismatch", "intrinsic-compression", "pneumonia", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_pulm_vpm_intrinsic_atelectasis"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (V/P mismatch): What is lung atelectasis as intrinsic lung compression?"
+      Back: "Lung atelectasis is collapse of alveolar units due to surfactant deficiency or airway obstruction, causing intrinsic compression and ventilation-perfusion mismatch."
+    tags: ["pulmonary-causes", "v-p-mismatch", "intrinsic-compression", "atelectasis", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_pulm_vpm_intrinsic_hmd"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (V/P mismatch): What is Hyaline Membrane Disease (HMD) as intrinsic lung compression?"
+      Back: "HMD (infant respiratory distress syndrome) is a condition of surfactant deficiency in preterm neonates causing alveolar collapse and intrinsic compression with ventilation-perfusion mismatch."
+    tags: ["pulmonary-causes", "v-p-mismatch", "intrinsic-compression", "HMD", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_pulm_vpm_intrinsic_asthma"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (V/P mismatch): What is asthma as intrinsic lung compression?"
+      Back: "Asthma is airways inflammation and bronchoconstriction causing airway obstruction and intrinsic compression, leading to ventilation-perfusion mismatch."
+    tags: ["pulmonary-causes", "v-p-mismatch", "intrinsic-compression", "asthma", "subject:paediatrics-neonatal", "supplement"]
+
+  # Pulmonary — Diffusion impairment
+  - guid: "cyanosis_pulm_diffusion_oedema"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (diffusion impairment): What is pulmonary oedema?"
+      Back: "Pulmonary oedema is fluid accumulation in the lung parenchyma and alveolar space, thickening the alveolar-capillary membrane and impairing oxygen diffusion."
+    tags: ["pulmonary-causes", "diffusion-impairment", "pulmonary-oedema", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_pulm_diffusion_bpd"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "Pulmonary cause (diffusion impairment): What is Bronchopulmonary dysplasia (BPD)?"
+      Back: "BPD is chronic lung disease in premature infants caused by mechanical ventilation and supplemental oxygen exposure, causing fibrosis and impaired diffusion of oxygen."
+    tags: ["pulmonary-causes", "diffusion-impairment", "BPD", "subject:paediatrics-neonatal", "supplement"]
+
+  # Haemoglobinopathy — Methaemoglobinaemia
+  - guid: "cyanosis_haemoglobin_methaem_congenital"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "What is congenital methaemoglobinaemia?"
+      Back: "Congenital methaemoglobinaemia is a hereditary disorder of haemoglobin resulting in abnormal haemoglobin derivatives that cannot carry oxygen effectively, causing cyanosis from birth."
+    tags: ["haemoglobinopathy", "methaemoglobinaemia", "congenital", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "cyanosis_haemoglobin_methaem_toxin"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "What is toxic/acquired methaemoglobinaemia?"
+      Back: "Toxic methaemoglobinaemia results from exposure to oxidizing agents (e.g. nitrites, sulfonamides, aniline dyes) that convert normal haemoglobin to methaemoglobin, causing cyanosis."
+    tags: ["haemoglobinopathy", "methaemoglobinaemia", "toxic", "acquired", "subject:paediatrics-neonatal", "supplement"]
+
+  # Haemoglobinopathy — Sulphaemoglobinaemia
+  - guid: "cyanosis_haemoglobin_sulphaem_toxin"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::CYANOSIS"
+    fields:
+      Front: "What is sulphaemoglobinaemia and how does it occur?"
+      Back: "Sulphaemoglobinaemia is a rare cyanosis-causing condition resulting from exposure to oxidizing toxins that convert haemoglobin to an abnormal sulphur-containing derivative (sulphaemoglobin) that cannot carry oxygen."
+    tags: ["haemoglobinopathy", "sulphaemoglobinaemia", "toxic", "subject:paediatrics-neonatal", "supplement"]

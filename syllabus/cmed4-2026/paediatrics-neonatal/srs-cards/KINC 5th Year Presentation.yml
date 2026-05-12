@@ -1,0 +1,437 @@
+deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+notes:
+  - guid: "kinc-ooshi-acronym"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What does OOSHI stand for in neonatal care?"
+      Back: |
+        O – Observation
+        O – Oxygen
+        S – Sugar
+        H – Hypo/hyperthermia
+        I – Infection
+    tags: ["ooshi-mnemonic", "principles", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-ooshi-principles"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What are the five core principles of newborn care?"
+      Back: |
+        1. Maintain normal body temperature
+        2. Safe oxygen therapy
+        3. Maintain normal glucose
+        4. Feeds and fluids for sick and small babies
+        5. Infection prevention and control
+    tags: ["principles", "newborn-care", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-delivery-room-obs"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What observation measures should be taken in the delivery room?"
+      Back: |
+        1. Ensure adequate room temperature for delivery
+        2. Have equipment ready for resuscitation if needed (Helping Babies Breathe and Golden Minute protocols)
+    tags: ["observation", "delivery-room", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-post-delivery-obs"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What are the components of post-delivery observation?"
+      Back: |
+        1. Rapid assessment after birth: APGAR score and signs of distress
+        2. Full postnatal ward assessment: head-to-toe examination or signs of continuing distress
+        3. Manage risk factors or special treatment needs
+    tags: ["observation", "post-natal", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-apgar-components"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What are the five components of the APGAR score?"
+      Back: |
+        1. Colour
+        2. Tone
+        3. Heart rate
+        4. Cry/Respiration
+        5. Activity
+    tags: ["apgar", "assessment", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-rapid-assessment"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What signs should be assessed during rapid assessment at birth?"
+      Back: |
+        1. Signs of dysmorphology or obvious congenital abnormalities
+        2. Signs of RDS or flat newborn
+    tags: ["assessment", "rapid", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-full-assessment"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What must a full assessment in the postnatal ward include?"
+      Back: |
+        1. Full head-to-toe examination
+        2. Vital signs: Pulse and respiratory rate
+        3. SpO2 at birth and 6 hours post delivery (most important)
+    tags: ["assessment", "full", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-oxygen-drug"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What is the key principle regarding oxygen in neonatal resuscitation?"
+      Back: "Oxygen is a drug and too much is not a good thing"
+    tags: ["oxygen", "principles", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-resus-fio2-term"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What FiO2 should be used for resuscitation in a term delivery?"
+      Back: "Start at 21% FiO2, increasing as required"
+    tags: ["oxygen", "resuscitation", "term", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-resus-fio2-preterm"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What FiO2 should be used for resuscitation in a preterm baby?"
+      Back: "Start at 30% FiO2, increasing as required"
+    tags: ["oxygen", "resuscitation", "preterm", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-spo2-term"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What is the target SpO2 range for a term neonate?"
+      Back: ">92%"
+    tags: ["oxygen", "monitoring", "term", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-spo2-preterm"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What is the target SpO2 range for a preterm neonate?"
+      Back: "90–94%"
+    tags: ["oxygen", "monitoring", "preterm", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-oxygen-requirements"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What clinical situations require oxygen therapy in neonates?"
+      Back: |
+        1. Severe hypothermia
+        2. Respiratory failure
+        3. Circulatory failure
+        4. Severe RDS (RR >80 bpm, severe chest indrawing/grunting, SpO2 <90%, central cyanosis)
+    tags: ["oxygen", "indications", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-oxygen-delivery-methods"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What are the methods of oxygen administration available?"
+      Back: |
+        1. NPO₂ (nasal prongs oxygen)
+        2. FMO₂ (face mask oxygen)
+        3. Headbox O₂ (not routinely used but available if nothing else)
+        4. CPAP (for severe RDS if available)
+        5. Ventilation (with view to refer to regional/tertiary hospital)
+    tags: ["oxygen", "delivery-methods", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-blood-glucose-timing-all"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When should all babies have blood glucose checked post delivery?"
+      Back: "Within one hour of delivery"
+    tags: ["glucose", "monitoring", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-blood-glucose-timing-sick"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When should small and sick babies have blood glucose checked?"
+      Back: "Every 3 hours for the first 24 hours and until normal for 24 hours"
+    tags: ["glucose", "monitoring", "sick-babies", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-blood-glucose-timing-lga"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When should LGA babies and infants of diabetic mothers have blood glucose checked?"
+      Back: "Hourly for the first 6 hours"
+    tags: ["glucose", "monitoring", "lga", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-glucose-check-groups"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "Which other baby groups require blood glucose monitoring?"
+      Back: |
+        1. Hypothermic babies
+        2. Babies who have not fed
+    tags: ["glucose", "monitoring", "indications", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-hypoglycaemia-prevent"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What preventive measures should be taken for hypoglycaemia?"
+      Back: |
+        1. Pre-term babies: feed immediately after birth
+        2. If not sucking well: NGT with expressed breast milk or cup feed
+        3. If NPO: use neonatal nasogastric line (NNL) immediately
+        4. Keep baby warm
+    tags: ["glucose", "hypoglycaemia", "prevention", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-hypoglycaemia-signs"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What are the clinical signs of neonatal hypoglycaemia?"
+      Back: |
+        1. May be asymptomatic
+        2. Irregular jerky movements
+        3. Jittery
+        4. Convulsions
+        5. Lethargy
+        6. Coma
+        7. Apnoea
+        8. Hypotonia
+    tags: ["glucose", "hypoglycaemia", "signs", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-hypoglycaemia-1.4-2.5"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "How is hypoglycaemia treated when blood glucose is 1.4–2.5 mmol/l?"
+      Back: |
+        1. Feed immediately if possible
+        2. Repeat blood glucose in 15 minutes
+        3. If remains low, treat as severe hypoglycaemia
+        4. If glucose becomes normal, check 3-hourly until normal over 24 hours
+    tags: ["glucose", "hypoglycaemia", "treatment", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-hypoglycaemia-severe"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "How is severe hypoglycaemia (glucose <1.4 mmol/l) treated?"
+      Back: |
+        1. Give 10% dextrose infusion bolus at 2 ml/kg via nasogastric line (NNL)
+        2. Continue at recommended infusion rate for age and gestation
+        3. Repeat blood glucose in 15 minutes
+        4. If still low: increase dextrose concentration or consult specialist
+    tags: ["glucose", "hypoglycaemia", "severe", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-hyperglycaemia-features"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When is hyperglycaemia commonly seen in neonates?"
+      Back: "In small, sick, and septic babies"
+    tags: ["glucose", "hyperglycaemia", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-hyperglycaemia-management"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What are the management steps for neonatal hyperglycaemia?"
+      Back: |
+        1. Check hydration and correct
+        2. If on IV fluids, change to 5% dextrose infusion
+        3. Consider insulin if glucose remains >14 mmol/l (consult specialist)
+    tags: ["glucose", "hyperglycaemia", "management", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-drying-newborn"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What is the first thermal management step for a newborn at birth?"
+      Back: |
+        1. Dry the baby well at birth
+        2. Provide skin-to-skin contact if possible
+        3. If unable, ensure baby is covered/clothed with observation areas uncovered for assessment or treatment
+    tags: ["temperature", "thermoregulation", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-early-feeding-thermal"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "How does feeding help with thermoregulation in newborns?"
+      Back: "Feed baby early"
+    tags: ["temperature", "feeding", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-newborn-unit-temp"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What should be the ambient temperature in the newborn unit?"
+      Back: "24–25°C"
+    tags: ["temperature", "environment", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-thermometer-check"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "How frequently should the wall thermometer in the newborn unit be checked?"
+      Back: "At least 4 times daily and recorded"
+    tags: ["temperature", "monitoring", "environment", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-unit-maintenance"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What measures should be taken to maintain the newborn unit environment?"
+      Back: |
+        1. Keep room free of draughts
+        2. Maintain temperature at 24–25°C
+        3. Check wall thermometer at least 4 times daily
+    tags: ["temperature", "environment", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-temp-monitoring-vlbw"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "How frequently should body temperature be monitored in babies <1.2 kg with serious infection?"
+      Back: "Hourly"
+    tags: ["temperature", "monitoring", "vlbw", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-temp-monitoring-1.2-1.5"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "How frequently should body temperature be monitored in babies 1.2–1.5 kg?"
+      Back: "3-hourly"
+    tags: ["temperature", "monitoring", "lbw", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-temp-monitoring-stable"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "How frequently should body temperature be monitored in stable babies >1.5 kg?"
+      Back: "6-hourly"
+    tags: ["temperature", "monitoring", "stable", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-ipc-handwashing"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When should hand washing be performed in the neonatal unit?"
+      Back: |
+        1. On entering the unit
+        2. Between patients
+        3. Use soap and water or alcohol-based solution
+    tags: ["infection-prevention", "hand-hygiene", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-ipc-measures"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What infection prevention and control measures are required?"
+      Back: |
+        1. Hand washing (on entering unit and between patients)
+        2. Isolation and admission of sick neonates or those suspected of infection
+        3. Clean nursing practices
+        4. Staff compliance
+        5. Equipment cleaning
+    tags: ["infection-prevention", "control", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-antibiotic-indications-weight"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What weight-based indication requires consideration of antibiotics?"
+      Back: "Babies <1.5 kg"
+    tags: ["infection", "antibiotics", "weight-based", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-antibiotic-indications-prom"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When are antibiotics considered for potentially infected birth environment?"
+      Back: "Babies born from potentially infected environment (e.g., PROM – prolonged rupture of membranes)"
+    tags: ["infection", "antibiotics", "prom", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-antibiotic-indications-signs"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When should antibiotics be considered for obvious infection signs?"
+      Back: "Babies with obvious signs of infection"
+    tags: ["infection", "antibiotics", "clinical-signs", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-antibiotic-indications-gestation"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When should antibiotics be considered based on gestational age without obvious reason?"
+      Back: "Babies <37 weeks gestation where no obvious reason for preterm delivery"
+    tags: ["infection", "antibiotics", "gestation", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-antibiotic-indications-rds"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When should antibiotics be considered for respiratory signs?"
+      Back: "Babies with respiratory distress"
+    tags: ["infection", "antibiotics", "rds", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-empiric-therapy-first-line"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What is the first-line empiric antibiotic therapy for neonatal infection?"
+      Back: "Penicillin/ampicillin +/− gentamycin if required"
+    tags: ["infection", "antibiotics", "empiric", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-meningitis-therapy"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What is the empiric therapy for neonatal meningitis?"
+      Back: "Ampicillin + Cefotaxime at high dose"
+    tags: ["infection", "meningitis", "antibiotics", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-bloods-initial"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What blood investigations should be done on admission for suspected infection?"
+      Back: |
+        1. FBC (full blood count)
+        2. CRP (C-reactive protein)
+        3. Blood culture
+    tags: ["infection", "investigations", "admission", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-bloods-follow-up"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When should blood investigations be repeated after initial admission bloods?"
+      Back: "After at least 48 hours"
+    tags: ["infection", "investigations", "follow-up", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-antibiotic-cessation"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "When can antibiotics be considered for stopping?"
+      Back: "If CRP is normal and/or blood culture is negative with a stable baby, antibiotics can be considered for cessation"
+    tags: ["infection", "antibiotics", "cessation", "subject:paediatrics-neonatal"]
+
+  - guid: "kinc-importance-summary"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::KINC 5th Year Presentation"
+    fields:
+      Front: "What is KINC's role in neonatal care?"
+      Back: "KINC is an important tool for the management of newborns, especially in resource-limited settings"
+    tags: ["kinc", "overview", "subject:paediatrics-neonatal"]

@@ -1056,3 +1056,10 @@ details.collapsible[open] > summary::after { content: '▴'; }
 .nav-more-menu[hidden] { display: none; }
 .nav-more-item { padding: 8px 12px; text-decoration: none; color: var(--ink); border-radius: 4px; font-family: var(--ff-ui); font-size: 14px; }
 .nav-more-item:hover { background: var(--panel-hover); }
+
+.cfg-row.weight-row{display:flex;gap:.5rem;align-items:center;}
+.cfg-row.weight-row.disabled{opacity:.5;}
+.cfg-row.weight-row.disabled input[type=range]{filter:grayscale(1);}
+.chip.subject-toggle{min-width:2.4rem;text-align:center;font-size:.75rem;padding:.15rem .5rem;}
+.chip.subject-toggle.active{background:var(--ok,#3a7);color:#fff;}
+.chip.subject-toggle:not(.active){background:var(--mute,#666);color:#fff;}

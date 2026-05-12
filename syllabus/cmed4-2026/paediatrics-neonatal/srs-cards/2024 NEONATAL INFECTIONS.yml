@@ -1,0 +1,764 @@
+deck: "Corpus::Paediatrics-Neonatal::2024 NEONATAL INFECTIONS"
+notes:
+  - guid: "ne001epidem01"
+    noteType: Basic
+    fields:
+      Front: "What is the global proportion of neonatal deaths attributable to sepsis or meningitis?"
+      Back: "4% of all neonatal deaths globally."
+    tags: ["epidemiology", "sepsis", "subject:paediatrics-neonatal"]
+  - guid: "ne002epidem02"
+    noteType: Basic
+    fields:
+      Front: "List the proportions of global neonatal deaths by cause."
+      Back: "Preterm complications 10%, Intrapartum-related 8%, Sepsis/meningitis 4%, Tetanus 1%, Congenital abnormalities 2%, Other 1%, Pneumonia 14%, Diarrhoea 11%, Injury 4%, Measles 1%, Malaria 15%, AIDS 4%, Meningitis 3%, Other disorders 19%."
+    tags: ["epidemiology", "subject:paediatrics-neonatal"]
+  - guid: "ne003def01"
+    noteType: Basic
+    fields:
+      Front: "Define neonatal sepsis."
+      Back: "Clinical syndrome of bacteremia with systemic signs and symptoms of infection in the first 28 days of life."
+    tags: ["definitions", "sepsis", "subject:paediatrics-neonatal"]
+  - guid: "ne004immun01"
+    noteType: Basic
+    fields:
+      Front: "What happens to maternal IgG levels in the neonate after birth?"
+      Back: "Passively transferred maternal IgG falls to a transient low at birth–9 months while infant IgM and IgG ramp up; IgA lags behind."
+    tags: ["immunology", "neonatal-immunity", "subject:paediatrics-neonatal"]
+  - guid: "ne005class01"
+    noteType: Basic
+    fields:
+      Front: "What are the two main categories of neonatal infections?"
+      Back: "1) Congenital (antenatal acquisition: transplacental, ascending, intrapartum, from birth canal); 2) Acquired (typically occurs later)."
+    tags: ["classification", "subject:paediatrics-neonatal"]
+  - guid: "ne006timing01"
+    noteType: Basic
+    fields:
+      Front: "Define early neonatal infection by time frame."
+      Back: "Birth to 7 days of life."
+    tags: ["timing", "early-onset", "subject:paediatrics-neonatal"]
+  - guid: "ne007timing02"
+    noteType: Basic
+    fields:
+      Front: "Define late neonatal infection by time frame."
+      Back: "8 days to 28 days; acquired in hospital, home, or community."
+    tags: ["timing", "late-onset", "subject:paediatrics-neonatal"]
+  - guid: "ne008risk01"
+    noteType: Basic
+    fields:
+      Front: "List general risk factors for neonatal infection."
+      Back: "1) Maternal infection (subclinical, UTI, chorioamnionitis); 2) Prematurity (less capable immune response); 3) Absence of IgM/IgA antibodies; 4) Delicate/cracked skin; 5) VLBW neonates with prolonged facility stay; 6) Facility overcrowding, poor hand-washing, understaffing."
+    tags: ["risk-factors", "general", "subject:paediatrics-neonatal"]
+  - guid: "ne009riskear01"
+    noteType: Basic
+    fields:
+      Front: "List risk factors specific to early neonatal infection."
+      Back: "1) Prematurity; 2) Chorioamnionitis; 3) PROM >18 hours; 4) Maternal colonization with Group B Strep."
+    tags: ["risk-factors", "early-onset", "subject:paediatrics-neonatal"]
+  - guid: "ne010risklat01"
+    noteType: Basic
+    fields:
+      Front: "List risk factors specific to late neonatal infection."
+      Back: "1) Prematurity; 2) Invasive procedures; 3) Indwelling devices; 4) Ventilators; 5) VP shunts."
+    tags: ["risk-factors", "late-onset", "subject:paediatrics-neonatal"]
+  - guid: "ne011org-cong01"
+    noteType: Basic
+    fields:
+      Front: "List the TORCH organisms causing congenital infection."
+      Back: "Toxoplasma; Other (parvo, varicella, hepatitis); Rubella; Cytomegalovirus; Herpes; HIV; Syphilis."
+    tags: ["organisms", "congenital", "torch", "subject:paediatrics-neonatal"]
+  - guid: "ne012org-acq01"
+    noteType: Basic
+    fields:
+      Front: "List gram-positive organisms causing acquired neonatal infection."
+      Back: "Group B Streptococcus (GBS); Streptococcus species; Staphylococcus species; Listeria monocytogenes."
+    tags: ["organisms", "acquired", "gram-positive", "subject:paediatrics-neonatal"]
+  - guid: "ne013org-acq02"
+    noteType: Basic
+    fields:
+      Front: "List gram-negative organisms causing acquired neonatal infection."
+      Back: "Escherichia coli; Klebsiella pneumoniae."
+    tags: ["organisms", "acquired", "gram-negative", "subject:paediatrics-neonatal"]
+  - guid: "ne014signs01"
+    noteType: Basic
+    fields:
+      Front: "List the clinical signs of neonatal sepsis. Why is high index of suspicion needed?"
+      Back: "Signs are vague: temperature instability, respiratory distress/apnoea, feeding problems/vomiting, lethargy/refusal to suckle, pallor/petechiae/mottling/jaundice, poor perfusion, unstable blood glucose. High suspicion needed because presentation is nonspecific."
+    tags: ["clinical-presentation", "signs-symptoms", "subject:paediatrics-neonatal"]
+  - guid: "ne015invest01"
+    noteType: Basic
+    fields:
+      Front: "List nonspecific investigations for neonatal sepsis."
+      Back: "Full blood count (FBC); Platelets may be low; White cell count increased or decreased (normal 5–20); Immature-to-total (IT) neutrophil ratio >0.2 predictive; C-reactive protein."
+    tags: ["investigations", "nonspecific", "subject:paediatrics-neonatal"]
+  - guid: "ne016invest02"
+    noteType: Basic
+    fields:
+      Front: "List specific investigations for neonatal sepsis."
+      Back: "Cultures: blood, CSF, urine, superficial swabs; Serology for congenital infection; Radiology (X-rays of affected areas)."
+    tags: ["investigations", "specific", "subject:paediatrics-neonatal"]
+  - guid: "ne017mgmt-supp01"
+    noteType: Basic
+    fields:
+      Front: "List supportive management components for neonatal sepsis."
+      Back: "1) Fluid and electrolyte/glucose correction; 2) Respiratory support—may require ventilation; 3) Cardiovascular support—inotropes for septic shock."
+    tags: ["management", "supportive", "subject:paediatrics-neonatal"]
+  - guid: "ne018mgmt-antim01"
+    noteType: Basic
+    fields:
+      Front: "What is first-line antimicrobial therapy for suspected neonatal sepsis?"
+      Back: "Penicillin +/- aminoglycoside. Continue, stop, or change based on culture and sensitivity results."
+    tags: ["management", "antimicrobial", "antibiotics", "subject:paediatrics-neonatal"]
+  - guid: "ne019mgmt-dur01"
+    noteType: Basic
+    fields:
+      Front: "What is the duration of antimicrobial treatment for proven septicemia in neonates?"
+      Back: "7 to 10 days."
+    tags: ["management", "duration", "septicemia", "subject:paediatrics-neonatal"]
+  - guid: "ne020mgmt-dur02"
+    noteType: Basic
+    fields:
+      Front: "What is the duration of antimicrobial treatment for confirmed bacterial meningitis in neonates?"
+      Back: "21 days."
+    tags: ["management", "duration", "meningitis", "subject:paediatrics-neonatal"]
+  - guid: "ne021prev-cong01"
+    noteType: Basic
+    fields:
+      Front: "List preventive measures for congenital infections."
+      Back: "1) Improved antenatal care; 2) Syphilis testing during pregnancy with documented results and treatment; 3) PMTCT and fast-tracked ARVs for mother; 4) TB screening; 5) Education on respiratory/viral pathogen exposure; 6) Effective management of maternal infections and prolonged rupture of membranes."
+    tags: ["prevention", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne022prev-acq01"
+    noteType: Basic
+    fields:
+      Front: "List preventive measures for acquired (nosocomial) infections."
+      Back: "1) Early skin-to-skin contact with mother (KMC); 2) Exclusive breastfeeding; 3) Strict hand washing; 4) Aseptic technique during procedures; 5) Limit duration of ventilation with active weaning."
+    tags: ["prevention", "acquired", "nosocomial", "subject:paediatrics-neonatal"]
+  - guid: "ne023sa-infect01"
+    noteType: Basic
+    fields:
+      Front: "What is the ranking of HIV as a cause of maternal mortality in South Africa?"
+      Back: "3rd leading cause of maternal mortality in South Africa."
+    tags: ["epidemiology", "sa-context", "hiv", "subject:paediatrics-neonatal"]
+  - guid: "ne024sa-infect02"
+    noteType: Basic
+    fields:
+      Front: "List important congenital infections in South Africa."
+      Back: "HIV; Syphilis; Tuberculosis; Hepatitis B; Malaria; Listeria monocytogenes; COVID-19."
+    tags: ["congenital", "sa-context", "subject:paediatrics-neonatal"]
+  - guid: "ne025sa-outcome01"
+    noteType: Basic
+    fields:
+      Front: "What is the mortality rate for congenital TB in South Africa?"
+      Back: "43.48% (95% CI 33.9–52.6%)."
+    tags: ["epidemiology", "tb", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne026key-message01"
+    noteType: Basic
+    fields:
+      Front: "What is the key message regarding congenital infections?"
+      Back: "Most are PREVENTABLE and TREATABLE (especially if early) with good outcome (CURE and CONTROL); if one infection present, GO LOOK for others."
+    tags: ["key-message", "subject:paediatrics-neonatal"]
+  - guid: "ne027tb-cong01"
+    noteType: Basic
+    fields:
+      Front: "What is the source of congenital TB in the neonate?"
+      Back: "Primary infection in mother, transmitted through the placenta (via umbilical vein) just before or during delivery."
+    tags: ["tb", "congenital", "transmission", "subject:paediatrics-neonatal"]
+  - guid: "ne028tb-cong02"
+    noteType: Basic
+    fields:
+      Front: "Describe the pathophysiology of congenital TB after placental transmission."
+      Back: "Tubercle bacilli first reach the liver; periportal lymph node involvement occurs; main fetal circulation leads to infection of many organs."
+    tags: ["tb", "congenital", "pathophysiology", "subject:paediatrics-neonatal"]
+  - guid: "ne029tb-cong03"
+    noteType: Basic
+    fields:
+      Front: "What other routes of congenital TB transmission exist?"
+      Back: "Ingestion or aspiration of infected amniotic fluid."
+    tags: ["tb", "congenital", "transmission", "subject:paediatrics-neonatal"]
+  - guid: "ne030tb-cong04"
+    noteType: Basic
+    fields:
+      Front: "What is the most common cause of TB at birth in neonates?"
+      Back: "Postnatal airborne transmission of disease (not congenital)."
+    tags: ["tb", "epidemiology", "subject:paediatrics-neonatal"]
+  - guid: "ne031tb-diag01"
+    noteType: Basic
+    fields:
+      Front: "What is the diagnostic yield of gastric aspirate for TB in neonates?"
+      Back: "Acid-fast smear 8/9; mycobacterial culture 8/9; smear or culture 9/11."
+    tags: ["tb", "diagnostics", "specimen-yield", "subject:paediatrics-neonatal"]
+  - guid: "ne032tb-diag02"
+    noteType: Basic
+    fields:
+      Front: "What is the diagnostic yield of endotracheal aspirate for TB in neonates?"
+      Back: "Acid-fast smear 7/7; mycobacterial culture 7/7; smear or culture 7/7."
+    tags: ["tb", "diagnostics", "specimen-yield", "subject:paediatrics-neonatal"]
+  - guid: "ne033tb-diag03"
+    noteType: Basic
+    fields:
+      Front: "What is the diagnostic yield of CSF for TB in neonates?"
+      Back: "Acid-fast smear 1/2; mycobacterial culture 1/2; smear or culture 1/2."
+    tags: ["tb", "diagnostics", "specimen-yield", "subject:paediatrics-neonatal"]
+  - guid: "ne034tb-diag04"
+    noteType: Basic
+    fields:
+      Front: "What is the diagnostic yield of urine for TB in neonates?"
+      Back: "Acid-fast smear 0/2; mycobacterial culture 0/2; smear or culture 0/2."
+    tags: ["tb", "diagnostics", "specimen-yield", "subject:paediatrics-neonatal"]
+  - guid: "ne035tb-diag05"
+    noteType: Basic
+    fields:
+      Front: "What is the diagnostic yield of biopsy specimens for TB in neonates?"
+      Back: "Acid-fast smear 14/19; mycobacterial culture 11/12; smear or culture 16/21."
+    tags: ["tb", "diagnostics", "biopsy", "subject:paediatrics-neonatal"]
+  - guid: "ne036tb-diag06"
+    noteType: Basic
+    fields:
+      Front: "What is the diagnostic yield of lymph node biopsy for TB in neonates?"
+      Back: "Acid-fast smear 7/8; mycobacterial culture 6/6; smear or culture 7/8. Note: all negative smear/culture specimens showed histopathological changes (granulomas, giant-cell transformation ± caseation)."
+    tags: ["tb", "diagnostics", "biopsy", "subject:paediatrics-neonatal"]
+  - guid: "ne037tb-diag07"
+    noteType: Basic
+    fields:
+      Front: "What is the diagnostic yield of liver biopsy for TB in neonates?"
+      Back: "Acid-fast smear 4/6; mycobacterial culture 1/2; smear or culture 4/6. Note: all negative smear/culture specimens showed histopathological changes."
+    tags: ["tb", "diagnostics", "biopsy", "subject:paediatrics-neonatal"]
+  - guid: "ne038tb-mgmt01"
+    noteType: Basic
+    fields:
+      Front: "Describe the TB neonate management algorithm at first check-up (<4 weeks) per NEMLC 2019."
+      Back: "All pregnant women with TB or recent TB exposure: assess TB symptoms and check sputum testing/X-ray."
+    tags: ["tb", "management", "algorithm", "subject:paediatrics-neonatal"]
+  - guid: "ne039tb-mgmt02"
+    noteType: Basic
+    fields:
+      Front: "Describe the TB neonate management at 6 weeks well-baby visit per NEMLC 2019."
+      Back: "Continue isoniazid prophylaxis (3HP/INH) for 6 months in HIV-exposed; assess TB symptoms; check sputum testing or X-ray."
+    tags: ["tb", "management", "prophylaxis", "subject:paediatrics-neonatal"]
+  - guid: "ne040tb-mgmt03"
+    noteType: Basic
+    fields:
+      Front: "What is the duration of INH prophylaxis for TB-exposed neonates?"
+      Back: "6 months."
+    tags: ["tb", "prophylaxis", "duration", "subject:paediatrics-neonatal"]
+  - guid: "ne041tb-inh01"
+    noteType: Basic
+    fields:
+      Front: "What is the dosing of isoniazid (INH) for TB prophylaxis in neonates with weight <5 kg?"
+      Back: "½ tablet of 100 mg = ~10 mg/kg."
+    tags: ["tb", "drug-dosing", "isoniazid", "subject:paediatrics-neonatal"]
+  - guid: "ne042tb-inh02"
+    noteType: Basic
+    fields:
+      Front: "What is the dosing of isoniazid (INH) for TB prophylaxis in neonates with weight 5.0–7.9 kg?"
+      Back: "1 tablet of 100 mg = ~10 mg/kg."
+    tags: ["tb", "drug-dosing", "isoniazid", "subject:paediatrics-neonatal"]
+  - guid: "ne043tb-inh03"
+    noteType: Basic
+    fields:
+      Front: "What is the dosing of isoniazid (INH) for TB prophylaxis in neonates with weight 8.0–10.9 kg?"
+      Back: "1½ tablets of 100 mg = ~10 mg/kg."
+    tags: ["tb", "drug-dosing", "isoniazid", "subject:paediatrics-neonatal"]
+  - guid: "ne044tb-inh04"
+    noteType: Basic
+    fields:
+      Front: "What is the dosing of isoniazid (INH) for TB prophylaxis in neonates with weight ≥25 kg?"
+      Back: "1 tablet of 300 mg = ~10 mg/kg."
+    tags: ["tb", "drug-dosing", "isoniazid", "subject:paediatrics-neonatal"]
+  - guid: "ne045syph-clin01"
+    noteType: Basic
+    fields:
+      Front: "List the clinical features of early congenital syphilis."
+      Back: "Snuffles; nasal discharge; hepatosplenomegaly; skin rash/desquamation; bone changes; pseudoparalysis; rash on edges of soles; pallor; lymphadenopathy."
+    tags: ["syphilis", "clinical-presentation", "early-congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne046syph-late01"
+    noteType: Basic
+    fields:
+      Front: "List the clinical features of late congenital syphilis (>2 years of age)."
+      Back: "Dentition: Hutchinson's teeth; Eye: interstitial keratitis; Ear: eighth nerve deafness; Skin/face: frontal bossing, saddle nose, rhagades; CNS: mental retardation, hydrocephalus; Bones/joints: sabre shins, Clutton's joints."
+    tags: ["syphilis", "clinical-presentation", "late-congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne047syph-screen01"
+    noteType: Basic
+    fields:
+      Front: "When should syphilis testing be performed in pregnant women per DOH 2020?"
+      Back: "At first antenatal care (ANC) visit; if negative before 20 weeks gestation, repeat at 32–34 weeks."
+    tags: ["syphilis", "screening", "antenatal", "subject:paediatrics-neonatal"]
+  - guid: "ne048syph-treat01"
+    noteType: Basic
+    fields:
+      Front: "What is the principle for treating syphilis in pregnant women?"
+      Back: "Treat all women with a positive syphilis screening test, irrespective of titer."
+    tags: ["syphilis", "treatment", "maternal", "subject:paediatrics-neonatal"]
+  - guid: "ne049syph-asymp01"
+    noteType: Basic
+    fields:
+      Front: "When is benzathine penicillin indicated for asymptomatic neonates born to RPR-positive mothers?"
+      Back: "If mother has received <3 doses of benzathine benzylpenicillin, OR if mother delivers within 4 weeks of commencing treatment."
+    tags: ["syphilis", "neonatal-treatment", "asymptomatic", "subject:paediatrics-neonatal"]
+  - guid: "ne050syph-asymp02"
+    noteType: Basic
+    fields:
+      Front: "What is the dose and route of benzathine penicillin for asymptomatic neonates with maternal syphilis?"
+      Back: "50,000 U/kg IM as a single dose (stat)."
+    tags: ["syphilis", "neonatal-treatment", "drug-dosing", "subject:paediatrics-neonatal"]
+  - guid: "ne051syph-symp01"
+    noteType: Basic
+    fields:
+      Front: "List symptoms in neonates that warrant treatment for congenital syphilis."
+      Back: "Hepatosplenomegaly; pseudoparalysis; snuffles; oedema; jaundice; anaemia; purpura; desquamative rash (especially palms and soles)."
+    tags: ["syphilis", "neonatal-treatment", "symptomatic", "subject:paediatrics-neonatal"]
+  - guid: "ne052syph-symp02"
+    noteType: Basic
+    fields:
+      Front: "What are the treatment regimens for symptomatic congenital syphilis in neonates?"
+      Back: "Option 1: Procaine penicillin 50,000 U/kg IM daily for 10 days. Option 2: Benzyl penicillin (penicillin G) 50,000 U/kg/dose IV 12-hourly for 10 days."
+    tags: ["syphilis", "neonatal-treatment", "drug-dosing", "subject:paediatrics-neonatal"]
+  - guid: "ne053syph-notif01"
+    noteType: Basic
+    fields:
+      Front: "What is the notification status of congenital syphilis?"
+      Back: "Notifiable condition."
+    tags: ["syphilis", "legal-notification", "subject:paediatrics-neonatal"]
+  - guid: "ne054hbv-prev01"
+    noteType: Basic
+    fields:
+      Front: "When should HBV testing be performed in pregnant women living with HIV?"
+      Back: "All women living with HIV on 1st-line ART (containing TDF and 3TC/FTC) are automatically treated for HBV. HIV-negative women should have HBV testing within the first 12 months."
+    tags: ["hbv", "screening", "antenatal", "subject:paediatrics-neonatal"]
+  - guid: "ne055hbv-vacc01"
+    noteType: Basic
+    fields:
+      Front: "What is the vaccination schedule for hepatitis B in neonates?"
+      Back: "All babies should receive hepatitis B vaccinations in accordance with the Expanded Programme on Immunisation (EPI) schedule."
+    tags: ["hbv", "vaccination", "neonatal", "subject:paediatrics-neonatal"]
+  - guid: "ne056malaria-risk01"
+    noteType: Basic
+    fields:
+      Front: "What is the frequency of mother-to-child transmission (MTCT) of malaria?"
+      Back: "Rare; however, malaria in pregnancy poses serious risks for both mother and baby."
+    tags: ["malaria", "epidemiology", "transmission", "subject:paediatrics-neonatal"]
+  - guid: "ne057malaria-diag01"
+    noteType: Basic
+    fields:
+      Front: "What is the key to diagnosing malaria in pregnancy?"
+      Back: "High index of suspicion. If woman presents with fever in pregnancy, always ask about travel history. Recognize that malaria may be unrecognized or misdiagnosed with severe consequences."
+    tags: ["malaria", "diagnostics", "clinical-approach", "subject:paediatrics-neonatal"]
+  - guid: "ne058hiv-pmtct01"
+    noteType: Basic
+    fields:
+      Front: "What is PMTCT?"
+      Back: "Prevention of Mother-to-Child Transmission of HIV."
+    tags: ["hiv", "pmtct", "definition", "subject:paediatrics-neonatal"]
+  - guid: "ne059hiv-test01"
+    noteType: Basic
+    fields:
+      Front: "When should HIV testing be performed in pregnant women per PMTCT 2020?"
+      Back: "At first ANC visit and at every subsequent ANC visit (ideal 8 visits total)."
+    tags: ["hiv", "screening", "antenatal", "subject:paediatrics-neonatal"]
+  - guid: "ne060hiv-treat01"
+    noteType: Basic
+    fields:
+      Front: "What is the principle of HIV treatment in pregnancy per Option B+ (2015–present)?"
+      Back: "Start ALL HIV-positive pregnant women on ART as soon as possible, regardless of gestation, CD4 count, or clinical stage. Continue ART for life."
+    tags: ["hiv", "treatment", "antenatal", "subject:paediatrics-neonatal"]
+  - guid: "ne061hiv-reg01"
+    noteType: Basic
+    fields:
+      Front: "What is the preferred first-line ART regimen for newly diagnosed pregnant women per PMTCT 2020?"
+      Back: "TDF (tenofovir), 3TC (lamivudine), and DTG (dolutegravir) as a fixed-dose combination."
+    tags: ["hiv", "art-regimen", "antenatal", "subject:paediatrics-neonatal"]
+  - guid: "ne062hiv-reg02"
+    noteType: Basic
+    fields:
+      Front: "What is an alternative first-line ART regimen for newly diagnosed pregnant women if DTG is not suitable?"
+      Back: "TDF, 3TC, and EFV (efavirenz) as a fixed-dose combination. Note: EFV carries risks; DTG is now preferred."
+    tags: ["hiv", "art-regimen", "antenatal", "subject:paediatrics-neonatal"]
+  - guid: "ne063hiv-dtg01"
+    noteType: Basic
+    fields:
+      Front: "What special counselling is needed when initiating dolutegravir in pregnant women?"
+      Back: "Careful, individualised counselling and informed decision-making about neural tube defect (NTD) risk, especially in 1st–3rd trimester."
+    tags: ["hiv", "art-regimen", "dolutegravir", "pregnancy", "subject:paediatrics-neonatal"]
+  - guid: "ne064hiv-ctx01"
+    noteType: Basic
+    fields:
+      Front: "When should co-trimoxazole prophylaxis be commenced in pregnant women living with HIV?"
+      Back: "After 14 weeks gestation, regardless of CD4 count or clinical stage."
+    tags: ["hiv", "prophylaxis", "co-trimoxazole", "subject:paediatrics-neonatal"]
+  - guid: "ne065hiv-vl01"
+    noteType: Basic
+    fields:
+      Front: "What is the viral load threshold indicating successful PMTCT?"
+      Back: "VL <50 copies/ml."
+    tags: ["hiv", "viral-load", "threshold", "subject:paediatrics-neonatal"]
+  - guid: "ne066hiv-vl-mon01"
+    noteType: Basic
+    fields:
+      Front: "What is the viral load monitoring schedule for newly diagnosed and ART-initiated pregnant women?"
+      Back: "1st VL at 3 months on ART; if VL <50 c/ml, repeat VL at delivery."
+    tags: ["hiv", "viral-load", "monitoring", "subject:paediatrics-neonatal"]
+  - guid: "ne067hiv-vl-mon02"
+    noteType: Basic
+    fields:
+      Front: "What is the viral load monitoring schedule for women already on ART?"
+      Back: "VL at first/booking ANC visit; if VL <50 c/ml, repeat VL at delivery."
+    tags: ["hiv", "viral-load", "monitoring", "subject:paediatrics-neonatal"]
+  - guid: "ne068hiv-birth01"
+    noteType: Basic
+    fields:
+      Front: "What is the timing of birth HIV-PCR in HIV-exposed neonates?"
+      Back: "All HIV-exposed infants should receive birth HIV-PCR to identify transmission that occurred in utero."
+    tags: ["hiv", "neonatal-diagnostics", "birth-pcr", "subject:paediatrics-neonatal"]
+  - guid: "ne069hiv-nvp01"
+    noteType: Basic
+    fields:
+      Front: "What is the minimum duration of nevirapine (NVP) prophylaxis for all HIV-exposed neonates?"
+      Back: "Minimum of six weeks post-exposure prophylaxis with NVP."
+    tags: ["hiv", "neonatal-prophylaxis", "nevirapine", "subject:paediatrics-neonatal"]
+  - guid: "ne070hiv-highrisk01"
+    noteType: Basic
+    fields:
+      Front: "List criteria for identifying high-risk HIV-exposed infants who require additional prophylaxis."
+      Back: "1) Mother with VL ≥1,000 cells/ml at delivery or no VL within 12 weeks of antenatal care; 2) Mother on ART <12 weeks at delivery; 3) Mother had treatment interruption ≥4 weeks during pregnancy."
+    tags: ["hiv", "neonatal-prophylaxis", "high-risk", "subject:paediatrics-neonatal"]
+  - guid: "ne071hiv-highrisk02"
+    noteType: Basic
+    fields:
+      Front: "What additional prophylaxis is given to high-risk HIV-exposed breastfed infants?"
+      Back: "Additional AZT for the first six weeks of life and NVP for at least 12 weeks."
+    tags: ["hiv", "neonatal-prophylaxis", "high-risk", "subject:paediatrics-neonatal"]
+  - guid: "ne072hiv-highrisk03"
+    noteType: Basic
+    fields:
+      Front: "What additional prophylaxis is given to high-risk HIV-exposed formula-fed infants?"
+      Back: "NVP can be stopped earlier than 12 weeks in formula-fed infants."
+    tags: ["hiv", "neonatal-prophylaxis", "high-risk", "subject:paediatrics-neonatal"]
+  - guid: "ne073hiv-3tc01"
+    noteType: Basic
+    fields:
+      Front: "What is the target dose of lamivudine (3TC) for neonates aged 0–28 days?"
+      Back: "4 mg/kg twice daily."
+    tags: ["hiv", "neonatal-dosing", "lamivudine", "subject:paediatrics-neonatal"]
+  - guid: "ne074hiv-3tc02"
+    noteType: Basic
+    fields:
+      Front: "What is the available formulation of lamivudine (3TC) for neonates?"
+      Back: "10 mg/ml."
+    tags: ["hiv", "neonatal-dosing", "lamivudine", "subject:paediatrics-neonatal"]
+  - guid: "ne075hiv-azt01"
+    noteType: Basic
+    fields:
+      Front: "What is the target dose of zidovudine (AZT) for neonates aged 0–28 days?"
+      Back: "4 mg/kg twice daily."
+    tags: ["hiv", "neonatal-dosing", "zidovudine", "subject:paediatrics-neonatal"]
+  - guid: "ne076hiv-azt02"
+    noteType: Basic
+    fields:
+      Front: "What is the available formulation of zidovudine (AZT) for neonates?"
+      Back: "10 mg/ml."
+    tags: ["hiv", "neonatal-dosing", "zidovudine", "subject:paediatrics-neonatal"]
+  - guid: "ne077hiv-nvp-dose01"
+    noteType: Basic
+    fields:
+      Front: "What is the target dose of nevirapine (NVP) for neonates aged 0–28 days?"
+      Back: "6 mg/kg twice daily."
+    tags: ["hiv", "neonatal-dosing", "nevirapine", "subject:paediatrics-neonatal"]
+  - guid: "ne078hiv-nvp-form01"
+    noteType: Basic
+    fields:
+      Front: "What is the available formulation of nevirapine (NVP) for neonates?"
+      Back: "10 mg/ml."
+    tags: ["hiv", "neonatal-dosing", "nevirapine", "subject:paediatrics-neonatal"]
+  - guid: "ne079hiv-arv-2.5kg01"
+    noteType: Basic
+    fields:
+      Front: "What are the ARV doses for neonates weighing 2.5–3 kg (0–28 days, birth weight ≥2.5 kg)?"
+      Back: "3TC: 1.0 ml AM and PM; AZT: 1.0 ml AM and PM; NVP: 2.0 ml AM and PM."
+    tags: ["hiv", "neonatal-dosing", "arv", "subject:paediatrics-neonatal"]
+  - guid: "ne080hiv-arv-3.1kg01"
+    noteType: Basic
+    fields:
+      Front: "What are the ARV doses for neonates weighing 3.1–4 kg (0–28 days, birth weight ≥2.5 kg)?"
+      Back: "3TC: 1.5 ml AM and PM; AZT: 1.5 ml AM and PM; NVP: 2.5 ml AM and PM."
+    tags: ["hiv", "neonatal-dosing", "arv", "subject:paediatrics-neonatal"]
+  - guid: "ne081hiv-arv-4.1kg01"
+    noteType: Basic
+    fields:
+      Front: "What are the ARV doses for neonates weighing 4.1–5 kg (0–28 days, birth weight ≥2.5 kg)?"
+      Back: "3TC: 2 ml AM and PM; AZT: 2 ml AM and PM; NVP: 3.5 ml AM and PM."
+    tags: ["hiv", "neonatal-dosing", "arv", "subject:paediatrics-neonatal"]
+  - guid: "ne082hiv-arv-admin01"
+    noteType: Basic
+    fields:
+      Front: "What is the principle of ARV dosing in neonates 0–28 days?"
+      Back: "Dosing is based on birth weight and does not need to change before 28 days (e.g., if weight decreases in first weeks of life)."
+    tags: ["hiv", "neonatal-dosing", "arv", "subject:paediatrics-neonatal"]
+  - guid: "ne083hiv-arv-admin02"
+    noteType: Basic
+    fields:
+      Front: "What is recommended for caregivers administering ARV medications to neonates?"
+      Back: "Caregivers should be supplied with a syringe (5 ml or 3 ml) for each of the 3 ARVs and shown how to prepare and administer the correct dose. Bottles and syringes should be colour-coded if required (e.g. red for AZT, blue for 3TC, green for NVP)."
+    tags: ["hiv", "neonatal-administration", "subject:paediatrics-neonatal"]
+  - guid: "ne084hiv-peakmortal01"
+    noteType: Basic
+    fields:
+      Front: "What is the peak mortality period for HIV-infected infants in South Africa?"
+      Back: "2–4 months of age."
+    tags: ["hiv", "epidemiology", "mortality", "subject:paediatrics-neonatal"]
+  - guid: "ne085hiv-earlyart01"
+    noteType: Basic
+    fields:
+      Front: "What is the target timing for ART initiation in HIV-infected (birth-PCR reactive) neonates?"
+      Back: "Within 7 days of birth (ideally at 1st post-natal visit in primary health care setting)."
+    tags: ["hiv", "neonatal-treatment", "art-initiation", "subject:paediatrics-neonatal"]
+  - guid: "ne086hiv-bpcr-positive01"
+    noteType: Basic
+    fields:
+      Front: "Describe the management pathway for a neonate with positive birth PCR."
+      Back: "1) Actively trace positive BPCR and link to care; 2) Post-test counselling for mother; 3) Baseline assessment (clinical and lab: HIV PCR, CD4, FBC/Hb, AST); 4) ART adherence counselling; 5) Start ART same day when baby tolerates enteral feeds (AZT/3TC/NVP)."
+    tags: ["hiv", "neonatal-treatment", "management-pathway", "subject:paediatrics-neonatal"]
+  - guid: "ne087hiv-follow01"
+    noteType: Basic
+    fields:
+      Front: "What is the follow-up schedule after ART initiation in neonates (1st month)?"
+      Back: "Review in 1 week: check results, monitor compliance/tolerability, adjust dosage; Review in 2 weeks: monitor compliance/tolerability, adjust dosage; Review at 1 month: monitor compliance, repeat bloods (FBC/Hb, Chol/Tg), change regimen to ABC/3TC/Kaletra."
+    tags: ["hiv", "neonatal-follow-up", "subject:paediatrics-neonatal"]
+  - guid: "ne088cmv-diag01"
+    noteType: Basic
+    fields:
+      Front: "How is congenital CMV diagnosed?"
+      Back: "Send blood and urine for CMV PCR. If positive or infant <3 weeks of age with confirmed congenital CMV, IgM is most sensitive in this period."
+    tags: ["cmv", "diagnostics", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne089cmv-symp01"
+    noteType: Basic
+    fields:
+      Front: "List the signs and symptoms of symptomatic congenital CMV infection."
+      Back: "Chorioretinitis; neurological abnormalities; microcephaly; hearing impairment; hepatitis; thrombocytopenia; intrauterine growth restriction (IUGR); jaundice; sepsis."
+    tags: ["cmv", "clinical-presentation", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne090cmv-treat01"
+    noteType: Basic
+    fields:
+      Front: "What is the treatment regimen for symptomatic congenital CMV in neonates?"
+      Back: "Ganciclovir IV 6 mg/kg/dose 12-hourly for 6 weeks, then oral valganciclovir 16 mg/kg/dose 12-hourly to complete 6 months total."
+    tags: ["cmv", "neonatal-treatment", "drug-dosing", "subject:paediatrics-neonatal"]
+  - guid: "ne091rubella-diag01"
+    noteType: Basic
+    fields:
+      Front: "How is congenital rubella diagnosed?"
+      Back: "Detected by IgM antibodies (positive in first month). PCR can detect virus from urine, throat swab, blood, or CSF for 6 months."
+    tags: ["rubella", "diagnostics", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne092rubella-clin01"
+    noteType: Basic
+    fields:
+      Front: "List the neurological and other features of congenital rubella."
+      Back: "Deafness; cataracts; cardiac lesions (PDA, peripheral pulmonary stenosis); thrombocytopenia; hepatosplenomegaly; microcephaly; growth failure; blueberry muffin baby appearance (extramedullary haematopoiesis)."
+    tags: ["rubella", "clinical-presentation", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne093rubella-treat01"
+    noteType: Basic
+    fields:
+      Front: "Is there specific treatment for congenital rubella?"
+      Back: "No specific treatment. Babies are infectious, so isolation/precautions needed. Ophthalmology and hearing screening essential. Neurodevelopmental follow-up required."
+    tags: ["rubella", "neonatal-treatment", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne094hsv-acq01"
+    noteType: Basic
+    fields:
+      Front: "Is congenital HSV a true congenital infection?"
+      Back: "Rarely; HSV is usually acquired postnatally."
+    tags: ["hsv", "epidemiology", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne095hsv-clin01"
+    noteType: Basic
+    fields:
+      Front: "What are the manifestations of HSV infection in neonates?"
+      Back: "Skin lesions with vesicles; disseminated form with severe pneumonitis or encephalitis (50–60% mortality without treatment)."
+    tags: ["hsv", "clinical-presentation", "neonatal", "subject:paediatrics-neonatal"]
+  - guid: "ne096hsv-mgmt01"
+    noteType: Basic
+    fields:
+      Front: "What is the supportive and specific management of neonatal HSV?"
+      Back: "Supportive care: parenteral nutrition, ventilation when indicated. Specific: IV aciclovir. Investigation: HSV PCR from skin lesions, blood, CSF; continue monitoring disease activity."
+    tags: ["hsv", "neonatal-treatment", "management", "subject:paediatrics-neonatal"]
+  - guid: "ne097hsv-treat01"
+    noteType: Basic
+    fields:
+      Front: "What is the dose and duration of high-dose aciclovir for neonatal HSV encephalitis?"
+      Back: "20 mg/kg 8-hourly for 3 weeks."
+    tags: ["hsv", "neonatal-treatment", "drug-dosing", "subject:paediatrics-neonatal"]
+  - guid: "ne098hsv-sem01"
+    noteType: Basic
+    fields:
+      Front: "What is the duration of high-dose aciclovir for HSV with skin, eye, and mouth (SEM) disease only?"
+      Back: "2 weeks."
+    tags: ["hsv", "neonatal-treatment", "drug-dosing", "sem", "subject:paediatrics-neonatal"]
+  - guid: "ne099toxo-pres01"
+    noteType: Basic
+    fields:
+      Front: "What is the typical mode of presentation of congenital toxoplasmosis?"
+      Back: "Intrauterine growth restriction (IUGR), intrauterine fetal death (IUFD), or stillbirth."
+    tags: ["toxoplasmosis", "clinical-presentation", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne100toxo-clin01"
+    noteType: Basic
+    fields:
+      Front: "What are the clinical manifestations of congenital toxoplasmosis?"
+      Back: "Encephalitis; hydrocephalus; cataracts; chorioretinitis."
+    tags: ["toxoplasmosis", "clinical-presentation", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne101toxo-diag01"
+    noteType: Basic
+    fields:
+      Front: "How is congenital toxoplasmosis diagnosed?"
+      Back: "Serology: IgM/IgG antibodies. Send blood for CMV, EBV, Rubella PCR for diagnosis."
+    tags: ["toxoplasmosis", "diagnostics", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne102toxo-lifelong01"
+    noteType: Basic
+    fields:
+      Front: "What is the prognosis for congenital toxoplasmosis infection timing?"
+      Back: "All infants infected at all stages of pregnancy may be infected for life once exposed."
+    tags: ["toxoplasmosis", "prognosis", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "ne103bca01"
+    noteType: Basic
+    fields:
+      Front: "What is the Mosteller formula for calculating body surface area (BSA)?"
+      Back: "BSA (m²) = √(height (cm) × weight (kg) / 3600)."
+    tags: ["calculations", "bsa", "subject:paediatrics-neonatal"]
+  - guid: "ne104hiv-referral01"
+    noteType: Basic
+    fields:
+      Front: "Which HIV-exposed neonates should be referred for follow-up at a Regional level center?"
+      Back: "Neonates born <35 weeks gestational age or with birth weight <2.5 kg."
+    tags: ["hiv", "neonatal-referral", "follow-up", "subject:paediatrics-neonatal"]
+  - guid: "ne105hiv-referral02"
+    noteType: Basic
+    fields:
+      Front: "Which HIV-exposed neonates can continue follow-up at district level center?"
+      Back: "Neonates born ≥35 weeks gestational age and with birth weight ≥2.5 kg."
+    tags: ["hiv", "neonatal-referral", "follow-up", "subject:paediatrics-neonatal"]
+  - guid: "ne106hiv-bcg01"
+    noteType: Basic
+    fields:
+      Front: "When should BCG vaccination NOT be given to HIV-exposed neonates?"
+      Back: "Do not give BCG if baby is TB-exposed and will be receiving TB prophylaxis."
+    tags: ["hiv", "vaccination", "bcg", "subject:paediatrics-neonatal"]
+  - guid: "ne107hiv-pcr-schedule01"
+    noteType: Basic
+    fields:
+      Front: "What is the HIV-PCR testing schedule for HIV-exposed neonates?"
+      Back: "At birth, 10 weeks, 6 months, 10 months, and 18 months."
+    tags: ["hiv", "neonatal-diagnostics", "pcr-schedule", "subject:paediatrics-neonatal"]
+  - guid: "ne108hiv-antibody01"
+    noteType: Basic
+    fields:
+      Front: "When is HIV antibody testing performed in HIV-exposed neonates?"
+      Back: "At 18 months for breastfeeding children, or 6 weeks after cessation of breastfeeding if still breastfed at 18 months."
+    tags: ["hiv", "neonatal-diagnostics", "antibody-testing", "subject:paediatrics-neonatal"]
+  - guid: "ne109hiv-ctx-exposed01"
+    noteType: Basic
+    fields:
+      Front: "When should co-trimoxazole prophylaxis be started in HIV-exposed neonates?"
+      Back: "From 6 weeks onwards until HIV negative 6 weeks after cessation of breastfeeding."
+    tags: ["hiv", "neonatal-prophylaxis", "co-trimoxazole", "subject:paediatrics-neonatal"]
+  - guid: "ne110hiv-pcr-confirm01"
+    noteType: Basic
+    fields:
+      Front: "What is required for confirmation of a positive HIV-PCR in neonates?"
+      Back: "Confirmation of any positive PCR with another sample is mandatory."
+    tags: ["hiv", "neonatal-diagnostics", "confirmation", "subject:paediatrics-neonatal"]
+  - guid: "ne111food-exposure01"
+    noteType: Basic
+    fields:
+      Front: "What food handling measures should pregnant women take to prevent toxoplasmosis?"
+      Back: "Avoid raw or undercooked lamb, pork, beef, or poultry. Cook all meat until no longer pink and juices run clear."
+    tags: ["prevention", "toxoplasmosis", "food-safety", "subject:paediatrics-neonatal"]
+  - guid: "ne112food-dairy01"
+    noteType: Basic
+    fields:
+      Front: "What dairy precautions should pregnant women take?"
+      Back: "Do not eat unpasteurized milk products (including all soft cheeses)."
+    tags: ["prevention", "toxoplasmosis", "food-safety", "subject:paediatrics-neonatal"]
+  - guid: "ne113food-fruit01"
+    noteType: Basic
+    fields:
+      Front: "What produce handling measures should pregnant women take?"
+      Back: "Peel or wash raw fruit and vegetables thoroughly. Wash hands, knives, and cutting boards after handling uncooked food or fluids from their packages."
+    tags: ["prevention", "food-safety", "subject:paediatrics-neonatal"]
+  - guid: "ne114respiratory-protect01"
+    noteType: Basic
+    fields:
+      Front: "How should pregnant women protect themselves from respiratory infections?"
+      Back: "Avoid close or intimate contact with adults with communicable respiratory diseases, acute or recent fever, or flu symptoms. Avoid kissing, sharing utensils, drinking from same container. Wash hands frequently; use alcohol gel after handshakes and before eating."
+    tags: ["prevention", "respiratory", "subject:paediatrics-neonatal"]
+  - guid: "ne115sexual-protect01"
+    noteType: Basic
+    fields:
+      Front: "What sexual precautions should pregnant women take?"
+      Back: "Use male latex condoms consistently and correctly. Avoid receptive oral sex with partner with oral herpes or intercourse during 3rd trimester with men with genital herpes. Ensure all sexual contacts of treated STI individuals are linked to care and receive treatment."
+    tags: ["prevention", "sexual", "subject:paediatrics-neonatal"]
+  - guid: "ne116blood-protect01"
+    noteType: Basic
+    fields:
+      Front: "What blood-contact precautions should pregnant women take?"
+      Back: "Consider risks of tattoos/body piercing (infected tools transmit hepatitis). Do not share personal care items with blood on them (razors, toothbrushes). Avoid drug use; do not share needles or drug equipment."
+    tags: ["prevention", "blood-contact", "subject:paediatrics-neonatal"]
+  - guid: "ne117malaria-prevent01"
+    noteType: Basic
+    fields:
+      Front: "What is the prevention measure for malaria in pregnant women in endemic areas?"
+      Back: "Always use insecticide-treated bed nets if living in a malaria endemic area."
+    tags: ["prevention", "malaria", "subject:paediatrics-neonatal"]
+  - guid: "ne118child-contact01"
+    noteType: Basic
+    fields:
+      Front: "What precautions should pregnant women take with children with respiratory/rash symptoms?"
+      Back: "Careful hand washing with soap and running water (use alcohol gel if available) after: exposure to child's bodily fluids, diaper changes, bathing child, handling dirty laundry, touching toys. Avoid close contact: mouth/cheek kissing (kiss head or hug instead), sleeping together, sharing towels. Avoid contact with baby's saliva while feeding."
+    tags: ["prevention", "child-contact", "subject:paediatrics-neonatal"]
+  - guid: "ne119doh-pillar01"
+    noteType: Basic
+    fields:
+      Front: "Describe DOH 4-Pillar approach Pillar 1 for prevention of MTCT."
+      Back: "Pillar 1: Primary prevention of HIV/STI/TB infection, especially among women of childbearing age."
+    tags: ["prevention", "doh-pillars", "pmtct", "subject:paediatrics-neonatal"]
+  - guid: "ne120doh-pillar02"
+    noteType: Basic
+    fields:
+      Front: "Describe DOH 4-Pillar approach Pillar 2 for prevention of MTCT."
+      Back: "Pillar 2: Preventing unintended pregnancies among women diagnosed with HIV/syphilis/TB infections."
+    tags: ["prevention", "doh-pillars", "pmtct", "subject:paediatrics-neonatal"]
+  - guid: "ne121doh-pillar03"
+    noteType: Basic
+    fields:
+      Front: "Describe DOH 4-Pillar approach Pillar 3 for prevention of MTCT."
+      Back: "Pillar 3: Preventing disease transmission from a woman living with HIV/syphilis/TB to her infant."
+    tags: ["prevention", "doh-pillars", "pmtct", "subject:paediatrics-neonatal"]
+  - guid: "ne122doh-pillar04"
+    noteType: Basic
+    fields:
+      Front: "Describe DOH 4-Pillar approach Pillar 4 for prevention of MTCT."
+      Back: "Pillar 4: Providing appropriate treatment, care, and support to women, their children, partners and families."
+    tags: ["prevention", "doh-pillars", "pmtct", "subject:paediatrics-neonatal"]
+  - guid: "ne123hiv-vl-nonsuppress01"
+    noteType: Basic
+    fields:
+      Front: "What should be done if VL is ≥50 c/ml in any PMTCT scenario?"
+      Back: "Follow the VL Non-suppression Algorithm (referenced on page 21 of guidelines)."
+    tags: ["hiv", "viral-load", "management", "subject:paediatrics-neonatal"]
+  - guid: "ne124hiv-referral-oi01"
+    noteType: Basic
+    fields:
+      Front: "What screening and management should be performed for PMTCT in HIV+ pregnant women?"
+      Back: "Screen for TB (and other opportunistic infections); consider TPT (TB preventive therapy). Screen and treat for syphilis."
+    tags: ["hiv", "screening", "opportunistic-infections", "subject:paediatrics-neonatal"]
+  - guid: "ne125hiv-cd4-mon01"
+    noteType: Basic
+    fields:
+      Front: "Is CD4 count still required for ART initiation in pregnant women per PMTCT 2020?"
+      Back: "No, CD4 count is no longer required for ART initiation. However, baseline and follow-up CD4 counts are still checked to determine WHO clinical staging and assess for prophylaxis (e.g., CTX, INH)."
+    tags: ["hiv", "cd4-count", "art-initiation", "subject:paediatrics-neonatal"]
+  - guid: "ne126hiv-creatinine01"
+    noteType: Basic
+    fields:
+      Front: "Should creatinine be checked before ART initiation in pregnant women?"
+      Back: "Yes, creatinine should be checked at baseline and results followed up."
+    tags: ["hiv", "baseline-assessment", "subject:paediatrics-neonatal"]
+  - guid: "ne127hiv-switch01"
+    noteType: Basic
+    fields:
+      Front: "Should pregnant women already on ART continue or switch their regimen?"
+      Back: "Pregnant women already on ART should continue their current ART regimen during their first ANC visit unless side effects necessitate a switch."
+    tags: ["hiv", "art-regimen", "pregnancy", "subject:paediatrics-neonatal"]

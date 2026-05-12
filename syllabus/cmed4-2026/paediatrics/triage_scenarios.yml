@@ -1,0 +1,568 @@
+metadata:
+  title: Paediatrics Triage Scenarios
+  version: '1.0'
+  generated: '2026-05-12'
+  source: 36 Paediatrics SRS cards from CMED4 Paediatrics
+  total_atoms: 36
+  total_scenarios: 8
+  total_parameters: 33
+atoms:
+  - &ref_0
+    id: circulation-1
+    card_source: 2025 CIRCULATION_pages-001-010.yml
+    atom: What are the three clinical signs used to assess circulation in a child?
+    definition: "1. Cold hands\n2. Capillary refill time (CRT) >=3 seconds\n3. Weak and fast pulse"
+    tags: [circulation-assessment, shock-signs]
+    source_type: srs-card
+  - &ref_1
+    id: circulation-2
+    card_source: 2025 CIRCULATION_pages-001-010.yml
+    atom: Define shock in a paediatric patient based on circulatory signs.
+    definition: "All three signs present: cold hands AND capillary refill time >=3 seconds AND weak fast pulse = SHOCK (Emergency)."
+    tags: [shock-definition, emergency]
+    source_type: srs-card
+  - &ref_2
+    id: circulation-3
+    card_source: 2025 CIRCULATION_pages-001-010.yml
+    atom: What is the fluid bolus volume and infusion time for a child WITHOUT severe acute malnutrition in shock?
+    definition: "10 mL/kg bolus FAST over 15 minutes using balanced crystalloid (Ringer's lactate OR Normal saline)."
+    tags: [fluid-bolus, shock-treatment]
+    source_type: srs-card
+  - &ref_3
+    id: circulation-4
+    card_source: 2025 CIRCULATION_pages-001-010.yml
+    atom: What is the fluid bolus volume and infusion time for a child WITH severe acute malnutrition in shock?
+    definition: "10 mL/kg bolus over 30 minutes (cautious infusion) using Normal saline OR Ringer's Lactate."
+    tags: [fluid-bolus, malnutrition, shock-treatment]
+    source_type: srs-card
+  - &ref_4
+    id: circulation-5
+    card_source: 2025 CIRCULATION_pages-001-010.yml
+    atom: When should glucose be checked in a shocked child and what is the treatment threshold?
+    definition: "Check for hypoglycaemia while the bolus is being given. Treat with 5 mL/kg 10% Dextrose if glucose <3 mmol/L."
+    tags: [hypoglycaemia, glucose-management]
+    source_type: srs-card
+  - &ref_5
+    id: dehydration-1
+    card_source: DEHYDRATION_pages-001-010.yml
+    atom: What is dehydration in paediatric emergency care?
+    definition: "A state of fluid loss from body tissues requiring assessment and fluid replacement in children with diarrhoea and other causes of fluid loss. Initial assessment screens for shock vs non-shock dehydration."
+    tags: [dehydration, assessment]
+    source_type: srs-card
+  - &ref_6
+    id: coma-convulsion-1
+    card_source: COMA  COVULSION_pages-001-010.yml
+    atom: What are the emergency triage signs (A-B-C-D)?
+    definition: "A=Airway, B=Breathing, C=Circulation/Coma/Convulsion, D=Dehydration (severe)."
+    tags: [triage-abcd, emergency-management]
+    source_type: srs-card
+  - &ref_7
+    id: coma-convulsion-2
+    card_source: COMA  COVULSION_pages-001-010.yml
+    atom: Define coma using the AVPU score.
+    definition: "Coma = P (responds only to Pain) or U (Unresponsive) on the AVPU scale."
+    tags: [coma-definition, consciousness-assessment]
+    source_type: srs-card
+  - &ref_8
+    id: coma-convulsion-3
+    card_source: COMA  COVULSION_pages-001-010.yml
+    atom: List the clinical signs of a child actively convulsing.
+    definition: "1. Sudden loss of consciousness\n2. Uncontrolled jerky movements of the limbs and/or face\n3. Stiffening of the arms and legs\n4. Uncontrolled movements of the arms and legs\n5. Twitching of the face, hands or feet\n6. Abnormal movements of the eyes\n7. Brief apnoeas"
+    tags: [convulsion-signs, seizure-recognition]
+    source_type: srs-card
+  - &ref_9
+    id: airway-1
+    card_source: 2021 AIRWAY AND BREATHING_pages-001-010.yml
+    atom: What are the three components of assessing if a child is breathing (Look-Listen-Feel)?
+    definition: "LOOK — see if the chest is moving or if the child is active, talking or crying. LISTEN — for any breath sounds. FEEL — for breath at the nose or mouth."
+    tags: [breathing-assessment, airway]
+    source_type: srs-card
+  - &ref_10
+    id: airway-2
+    card_source: 2021 AIRWAY AND BREATHING_pages-001-010.yml
+    atom: What are the three airway obstruction sounds and what do they indicate?
+    definition: "Gurgling — pooled secretions or blood in airway. Snoring (stertor) — soft palate obstruction. Stridor — harsh sound indicating upper airway obstruction from airway narrowing."
+    tags: [airway-obstruction, breath-sounds]
+    source_type: srs-card
+  - &ref_11
+    id: airway-3
+    card_source: 2021 AIRWAY AND BREATHING_pages-001-010.yml
+    atom: What are the signs of respiratory distress in a child?
+    definition: "Increased work of breathing, child tired and distressed, fast breathing, difficulty talking/eating/breastfeeding, severe chest-wall indrawing, short grunting noise on breathing, head nodding with every respiration."
+    tags: [respiratory-distress, emergency-signs]
+    source_type: srs-card
+  - &ref_12
+    id: airway-4
+    card_source: 2021 AIRWAY AND BREATHING_pages-001-010.yml
+    atom: What is central cyanosis and how is it assessed?
+    definition: "Abnormally low level of oxygen in the blood causing bluish/purplish discolouration of the tongue, inside the mouth, and skin. SpO2 <92% indicates low oxygen and is an emergency."
+    tags: [cyanosis, oxygenation]
+    source_type: srs-card
+  - &ref_13
+    id: airway-5
+    card_source: 2021 AIRWAY AND BREATHING_pages-001-010.yml
+    atom: What is croup and what sound does it cause?
+    definition: "Croup is a common infectious cause of upper airway obstruction. It produces stridor — a harsh sound on breathing that indicates upper-airway obstruction from airway narrowing."
+    tags: [croup, upper-airway-obstruction]
+    source_type: srs-card
+  - &ref_14
+    id: poisoning-1
+    card_source: 2022 POISONING_pages-001-010.yml
+    atom: What is the highest peak age for accidental poisoning in children?
+    definition: "1–4 years is the highest peak age for accidental poisoning rates in children."
+    tags: [epidemiology, poisoning]
+    source_type: srs-card
+  - &ref_15
+    id: poisoning-2
+    card_source: 2022 POISONING_pages-001-010.yml
+    atom: What are toxidromes in the context of poisoning?
+    definition: "Toxidromes are characteristic clinical syndromes that result from specific classes of toxins, allowing recognition of poisoning patterns."
+    tags: [toxidromes, diagnosis]
+    source_type: srs-card
+  - &ref_16
+    id: poisoning-3
+    card_source: 2022 POISONING_pages-001-010.yml
+    atom: What physiological differences make children vulnerable to toxins?
+    definition: "Children under 4 months have increased skin and mucosal permeability to toxins. Smaller body size means dose per kilogram is more toxic. Decreased glycogen stores may contribute to metabolic complications."
+    tags: [physiology, toxins, vulnerability]
+    source_type: srs-card
+  - &ref_17
+    id: asthma-1
+    card_source: ASTHMA 2021 CONSENSUS GUIDELINE_pages-001-005.yml
+    atom: How is asthma diagnosed in children?
+    definition: "Asthma is diagnosed in children who present with episodes of variable expiratory airflow limitation. Symptoms may include episodic wheeze, shortness of breath, difficult or laboured breathing, chest tightness and reduced activity with or without cough."
+    tags: [asthma, diagnosis]
+    source_type: srs-card
+  - &ref_18
+    id: asthma-2
+    card_source: ASTHMA 2021 CONSENSUS GUIDELINE_pages-001-005.yml
+    atom: What symptoms support an asthma diagnosis?
+    definition: "Symptoms that improve after correct use of a rapid-acting inhaled bronchodilator support asthma diagnosis. Bronchodilator reversibility with FEV1 increase >12% indicates variable airflow limitation."
+    tags: [asthma, bronchodilator]
+    source_type: srs-card
+  - &ref_19
+    id: asthma-3
+    card_source: ASTHMA 2021 CONSENSUS GUIDELINE_pages-001-005.yml
+    atom: What wheezing frequency pattern supports asthma diagnosis?
+    definition: "Events that occur more frequently (>3 episodes per year) and that last longer (>10 days at a time) may indicate an asthma diagnosis."
+    tags: [asthma, wheezing]
+    source_type: srs-card
+  - &ref_20
+    id: asthma-4
+    card_source: ASTHMA 2021 CONSENSUS GUIDELINE_pages-001-005.yml
+    atom: What are the four severity grades for asthma in children?
+    definition: "Mild intermittent: <=2 symptoms/week, <=2 nights/month. Mild persistent: >2 symptoms/week, >2 nights/month, PEF >=80%, variability 20-30%. Moderate persistent: daily symptoms, >1 night/week, PEF 60-80%, variability >30%. Severe persistent: continual symptoms, frequent night symptoms, PEF <=60%, variability >30%."
+    tags: [asthma, severity]
+    source_type: srs-card
+  - &ref_21
+    id: seizure-1
+    card_source: 2025 MANAGEMENT OF SEIZURES_pages-001-010.yml
+    atom: "Define: seizure"
+    definition: "A seizure is an abnormal, excessive, or synchronous discharge of neurons that results in sudden, transient alterations in neurological function, manifested by clinical or EEG changes."
+    tags: [seizures, definitions]
+    source_type: srs-card
+  - &ref_22
+    id: seizure-2
+    card_source: 2025 MANAGEMENT OF SEIZURES_pages-001-010.yml
+    atom: "Define: status epilepticus"
+    definition: "Status epilepticus is a state of prolonged seizure activity or a series of seizures without full recovery of consciousness between attacks; defined as seizure activity lasting more than 30 minutes or two or more seizures without regaining consciousness."
+    tags: [seizures, status-epilepticus]
+    source_type: srs-card
+  - &ref_23
+    id: neonatal-1
+    card_source: 2022 Neonatal infections 2021 UKZN 5th year tut_pages-001-010.yml
+    atom: Define neonatal sepsis.
+    definition: "Clinical syndrome of bacteraemia with systemic signs and symptoms of infection in the first 28 days of life."
+    tags: [sepsis, definition]
+    source_type: srs-card
+  - &ref_24
+    id: neonatal-2
+    card_source: 2022 Neonatal infections 2021 UKZN 5th year tut_pages-001-010.yml
+    atom: What are the two main classifications of neonatal infections by timing?
+    definition: "Congenital (antenatal acquisition) and Acquired (typically occurs later). Early acquired: 0–7 days. Late acquired: 8–28 days."
+    tags: [infection-classification]
+    source_type: srs-card
+  - &ref_25
+    id: neonatal-3
+    card_source: 2022 Neonatal infections 2021 UKZN 5th year tut_pages-001-010.yml
+    atom: What clinical signs suggest neonatal sepsis?
+    definition: "Temperature instability, respiratory distress and apnoea, feeding problems and vomiting, lethargy and refusal to suckle, pallor, petechiae, mottling of skin, jaundice, poor perfusion, unstable blood glucose."
+    tags: [clinical-signs, sepsis]
+    source_type: srs-card
+  - &ref_26
+    id: imam-1
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: What is the definition of Severe Acute Malnutrition (SAM) in children?
+    definition: "SAM is defined by any of the following: Weight-for-height/length <-3 SD; MUAC <11.5 cm (for >6 months); bilateral pitting oedema."
+    tags: [malnutrition, imam, definition]
+    source_type: srs-card
+  - &ref_27
+    id: imam-2
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: What is the hypoglycaemia threshold in SAM children and how is it treated?
+    definition: "Low blood glucose is defined as <3 mmol/L. Treat asymptomatic hypoglycaemia orally with F75, sugar solution 10 mL/kg, or 50 mL bolus of 10% dextrose. Treat symptomatic with IV 10% dextrose 2 mL/kg over 2–3 minutes."
+    tags: [malnutrition, hypoglycaemia, treatment]
+    source_type: srs-card
+  - &ref_28
+    id: imam-3
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: What is the normal axillary temperature range in children and how is hypothermia managed in SAM?
+    definition: "Normal temperature: 36.5–37.4 °C. Temp <36.5 °C indicates urgent need to warm child. Monitor every 30 min; temperature generally goes up 0.5–1 °C per hour."
+    tags: [malnutrition, hypothermia]
+    source_type: srs-card
+  - &ref_29
+    id: imam-4
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: What are the grades of dehydration in SAM?
+    definition: "No visible dehydration: normal presentation. Some dehydration: eyes sunken, slow skin pinch turgor (<2 sec), drinks eagerly, irritable/restless. Severe dehydration: eyes sunken, very slow skin pinch (>2 sec), drinks poorly."
+    tags: [malnutrition, dehydration]
+    source_type: srs-card
+  - &ref_30
+    id: imam-5
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: How is diarrhoea with some or severe dehydration managed in SAM?
+    definition: "Give ORS 5 mL/kg every 15 minutes (20 mL/kg/h) for 4 hours. Continue to feed the child. Reassess level of dehydration frequently after 4 hours."
+    tags: [malnutrition, dehydration, ors]
+    source_type: srs-card
+  - &ref_31
+    id: imam-6
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: What are the IV fluid rates for treating dehydration in SAM?
+    definition: "IV Darrow's half-strength with dextrose 5%: 2–10 kg = 10 mL/kg/hr; 11–20 kg = 8 mL/kg/hr; 21–50 kg = 6 mL/kg/hr. Given in addition to oral feeds."
+    tags: [malnutrition, IV-therapy]
+    source_type: srs-card
+  - &ref_32
+    id: imam-7
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: What is the fluid bolus dosing and administration for shock in SAM?
+    definition: "Resuscitate with fluid bolus: 0.9% NS or Ringer's lactate. Volume: 10 mL/kg. Given as a bolus over 20 minutes. If no response, repeat up to 3 times total."
+    tags: [malnutrition, shock, treatment]
+    source_type: srs-card
+  - &ref_33
+    id: imam-8
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: What signs indicate shock in SAM children?
+    definition: "Compensated shock: delayed capillary filling time >3 sec, increased pulse rate (>140–160 bpm), cool peripheries. Late shock: decreased consciousness (lethargic), decreased blood pressure, decreased pulse volume."
+    tags: [malnutrition, shock]
+    source_type: srs-card
+  - &ref_34
+    id: imam-9
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: What is the Hb threshold for very severe anaemia in SAM and how is it managed?
+    definition: "Hb <4 g/dL. Transfuse packed cells 5–10 mL/kg slowly over 4 hours. Give furosemide 1 mg/kg IV at start and end of transfusion."
+    tags: [malnutrition, anaemia, transfusion]
+    source_type: srs-card
+  - &ref_35
+    id: imam-10
+    card_source: 2024 IMAM_pages-481-507.yml
+    atom: What are the discharge criteria for SAM in children 6–59 months?
+    definition: "Appetite returned, tolerating RUTF; child clinically well and alert; bilateral pitting oedema resolved; medical complications resolved; persistent and good weight gain (>10 g/kg/day) over 5 days."
+    tags: [malnutrition, discharge]
+    source_type: srs-card
+scenarios:
+  - name: Shock Recognition & Fluid Resuscitation
+    description: Assess and manage paediatric shock using clinical signs and fluid protocols
+    atom_ids: [circulation-1, circulation-2, circulation-3, circulation-4, circulation-5]
+    parameters:
+      circulation_signs:
+        type: categorical
+        variance:
+          good_perfusion: {interpretation: "Warm hands, CRT <2 sec, strong pulse — no shock"}
+          impaired: {interpretation: "1–2 signs present (cold hands OR slow CRT OR weak pulse) — Priority: monitor closely"}
+          shock: {interpretation: "All 3 signs: cold hands AND CRT >=3 sec AND weak fast pulse — EMERGENCY"}
+      glucose_mmol_l:
+        type: numeric
+        unit: mmol/L
+        variance:
+          normal: {min: 3.0, max: 10.0, interpretation: "safe glucose level"}
+          hypoglycaemia: {min: 0.0, max: 3.0, interpretation: "critical — treat immediately with 5 mL/kg 10% dextrose"}
+      fluid_bolus_rate:
+        type: categorical
+        variance:
+          no_malnutrition: {interpretation: "10 mL/kg bolus FAST over 15 minutes (balanced crystalloid)"}
+          severe_malnutrition: {interpretation: "10 mL/kg bolus CAUTIOUS over 30 minutes (NS or RL)"}
+      bolus_response:
+        type: categorical
+        variance:
+          improved: {interpretation: "Circulation restored — stop bolus, reassess"}
+          no_change: {interpretation: "Still shocked — give 2nd bolus (same volume, same rate)"}
+          worsened_hf: {interpretation: "Signs of heart failure appearing — STOP bolus, seek help"}
+    examples:
+      - case: "3-year-old boy with acute diarrhoea x 2 days. Found unconscious, cold hands, CRT 4 sec, weak thready pulse (120 bpm). Blood glucose 2.2 mmol/L. No malnutrition."
+        parameters: {circulation_signs: shock, glucose_mmol_l: 2.2, fluid_bolus_rate: no_malnutrition, bolus_response: improved}
+        reasoning: "Classic hypovolaemic shock from acute fluid loss + hypoglycaemia. No severe malnutrition, so aggressive fluid resuscitation appropriate."
+        recommendation: "(1) Give 5 mL/kg 10% dextrose IV/IO for glucose 2.2; (2) Start 10 mL/kg bolus balanced crystalloid over 15 min; (3) Recheck glucose after 30 min; (4) Reassess circulation after bolus — if still shocked, 2nd bolus; (5) Monitor for heart failure signs; (6) After 3 boluses consider inotropes/CVP monitoring."
+      - case: "18-month-old girl with marasmus (MUAC 9.5 cm, WFH -4 SD) in shock. Cold extremities, CRT 5 sec, weak pulse 140. Glucose 3.8 mmol/L."
+        parameters: {circulation_signs: shock, glucose_mmol_l: 3.8, fluid_bolus_rate: severe_malnutrition, bolus_response: improved}
+        reasoning: "Shock in SAM — cardiac and renal reserve compromised. Cautious fluid to avoid pulmonary oedema."
+        recommendation: "(1) Warm patient; (2) 10 mL/kg bolus SLOWLY over 30 min (0.9% NS or RL); (3) Monitor for tachycardia, gallop, hepatomegaly; (4) Recheck glucose q30min; (5) Continue F75 feeds if tolerated; (6) Reassess after bolus; (7) Arrange high-care monitoring if inadequate response."
+
+  - name: Dehydration Triage & Rehydration Plan
+    description: Classify dehydration severity and select appropriate rehydration regimen
+    atom_ids: [dehydration-1, imam-4, imam-5, imam-6]
+    parameters:
+      dehydration_grade:
+        type: categorical
+        variance:
+          none: {interpretation: "Normal appearance, eyes normal, skin turgor <2 sec, alert, drinks normally"}
+          some: {interpretation: "Eyes slightly sunken, skin pinch <2 sec, drinks eagerly, may be irritable/restless"}
+          severe: {interpretation: "Eyes very sunken, skin pinch >2 sec, drinks poorly or unable, lethargic"}
+      ors_ml_kg_h:
+        type: numeric
+        unit: mL/kg/hour
+        variance:
+          maintenance: {min: 0, max: 5, interpretation: "no dehydration or maintenance only"}
+          rehydration_ors: {min: 20, max: 30, interpretation: "ORS 5 mL/kg every 15 min (= 20 mL/kg/h) for 4 hours"}
+          iv_fluid: {min: 6, max: 10, interpretation: "IV Darrow's half-strength + 5% dextrose (weight-dependent rate)"}
+      reassessment_interval:
+        type: numeric
+        unit: hours
+        variance:
+          frequent: {min: 0.25, max: 0.5, interpretation: "glucose checks every 30 min initially"}
+          standard: {min: 4, max: 4, interpretation: "full dehydration reassessment after 4-hour ORS course"}
+    examples:
+      - case: "4-year-old boy, acute watery diarrhoea x 3 days. Eyes slightly sunken, skin pinch <2 sec, drinks eagerly, alert. Weight 15 kg."
+        parameters: {dehydration_grade: some, ors_ml_kg_h: 20, reassessment_interval: 4}
+        reasoning: "Some dehydration without shock. ORS preferred. 5 mL/kg q15min for 4 h achieves rehydration."
+        recommendation: "ORS 5 mL/kg (75 mL) q15min for 4 h using cup/spoon. Continue feeds. After 4 h reassess; if improved continue maintenance ORS 10 mL/kg after each stool. Reassess q4h."
+      - case: "2-year-old girl with SAM (MUAC 10.5 cm) and severe diarrhoea. Eyes very sunken, skin pinch >2 sec, poor intake, lethargic. CRT 3.5 sec. Weight 8 kg. No shock yet."
+        parameters: {dehydration_grade: severe, ors_ml_kg_h: 20, reassessment_interval: 4}
+        reasoning: "Severe dehydration in SAM — risk of rapid deterioration. ORS preferred but with close monitoring."
+        recommendation: "ORS 5 mL/kg (40 mL) q15min for 4 h. Continue F75. Monitor CRT/pulse/consciousness q30min. After 4 h reassess; if worsened switch to IV Darrow's 1/2-strength + 5% dextrose at 8 mL/kg/hr (= 64 mL/hr) and seek high-care."
+
+  - name: Convulsion & Status Epilepticus Management
+    description: Recognize seizure activity and initiate acute management protocols
+    atom_ids: [coma-convulsion-1, coma-convulsion-2, coma-convulsion-3, seizure-1, seizure-2]
+    parameters:
+      consciousness_level:
+        type: categorical
+        variance:
+          alert: {interpretation: "A on AVPU — responds normally"}
+          responds_to_voice: {interpretation: "V on AVPU — responds to voice"}
+          responds_to_pain: {interpretation: "P on AVPU — coma (responds only to pain)"}
+          unresponsive: {interpretation: "U on AVPU — coma (no response)"}
+      seizure_activity:
+        type: categorical
+        variance:
+          none: {interpretation: "No convulsion"}
+          active_generalized: {interpretation: "Jerky limb movements, stiffening, twitching face/eyes, brief apnoeas"}
+          post_ictal: {interpretation: "Recent seizure ended — child drowsy/confused"}
+      seizure_duration:
+        type: numeric
+        unit: minutes
+        variance:
+          simple: {min: 0.5, max: 5, interpretation: "isolated brief seizure — observe"}
+          prolonged: {min: 5, max: 30, interpretation: "prolonged seizure — first-line anticonvulsant"}
+          status_epilepticus: {min: 30, max: 1000, interpretation: "SE: >30 min OR 2+ seizures without consciousness recovery — CRITICAL"}
+    examples:
+      - case: "5-year-old boy, sudden loss of consciousness, generalised tonic-clonic, brief apnoea, ongoing x 8 minutes."
+        parameters: {consciousness_level: unresponsive, seizure_activity: active_generalized, seizure_duration: 8}
+        reasoning: "Prolonged isolated seizure (8 min). Risk of SE. Urgent anticonvulsant."
+        recommendation: "(1) Position on side, protect airway; (2) First-line anticonvulsant (IV/IM lorazepam or rectal diazepam); (3) IV access, glucose, temp; (4) Prepare for intubation if continues >5 more min; (5) Investigate cause."
+      - case: "2-year-old girl, fever 39.2 C, 2 seizures in 15 min without full recovery. CRT 4 sec, pulse 160."
+        parameters: {consciousness_level: responds_to_pain, seizure_activity: post_ictal, seizure_duration: 15}
+        reasoning: "Status epilepticus pattern plus shock signs. Possible meningitis."
+        recommendation: "(1) ABC, oxygen; (2) Second-line anticonvulsant (IV levetiracetam or phenytoin); (3) 10 mL/kg bolus over 15 min for shock; (4) Empiric ceftriaxone 80-100 mg/kg for meningitis; (5) Glucose check — if <3 mmol/L give 5 mL/kg 10% dextrose; (6) Prepare ICU transfer."
+
+  - name: Airway Obstruction & Respiratory Compromise
+    description: Recognize and manage upper airway obstruction and respiratory distress
+    atom_ids: [airway-1, airway-2, airway-3, airway-4, airway-5]
+    parameters:
+      breathing_assessment:
+        type: categorical
+        variance:
+          normal: {interpretation: "Chest moving, breath sounds, breath at nose/mouth"}
+          compromised: {interpretation: "Reduced air movement, grunting, nasal flaring, chest-wall indrawing, head nodding"}
+          severe: {interpretation: "Silent chest, drowsy, difficulty talking, unable to maintain airway"}
+      airway_sound:
+        type: categorical
+        variance:
+          none: {interpretation: "Normal breath sounds"}
+          gurgling: {interpretation: "Pooled secretions/blood — suction/position"}
+          stertor: {interpretation: "Soft palate obstruction — reposition airway"}
+          stridor: {interpretation: "Harsh upper-airway sound — croup, foreign body, epiglottitis risk"}
+      oxygenation:
+        type: numeric
+        unit: '%'
+        variance:
+          normal: {min: 94, max: 100, interpretation: "adequate"}
+          borderline: {min: 92, max: 93, interpretation: "mild hypoxaemia — give oxygen"}
+          hypoxaemia: {min: 0, max: 91, interpretation: "central cyanosis — emergency intervention"}
+    examples:
+      - case: "3-year-old, barky cough x 2 days, biphasic stridor, hoarse. RR 36, SpO2 94. Alert, no drooling."
+        parameters: {breathing_assessment: compromised, airway_sound: stridor, oxygenation: 94}
+        reasoning: "Croup with subglottic obstruction. SpO2 adequate. Moderate distress."
+        recommendation: "Dexamethasone 0.15 mg/kg (max 10 mg). Oxygen if SpO2 <90%. Nebulised adrenaline (0.4 mL/kg 1:1000 in 2 mL NS, max 5 mL) if stridor at rest. Position upright. Reassess q30min."
+      - case: "18-month-old, acute cough, drooling, tripod posture, stridor, RR 48, SpO2 88, cyanotic lips."
+        parameters: {breathing_assessment: severe, airway_sound: stridor, oxygenation: 88}
+        reasoning: "CRITICAL epiglottitis/severe croup with hypoxaemia. Risk of total airway loss."
+        recommendation: "Do NOT examine throat. Call anaesthetist/ENT for emergency airway. Keep upright, calm. Humidified oxygen. Intubate in OR. Keep NPO. Cricothyrotomy kit available."
+
+  - name: Poisoning Triage & Toxidrome Recognition
+    description: Identify poisoning by toxidrome pattern and initial management
+    atom_ids: [poisoning-1, poisoning-2, poisoning-3]
+    parameters:
+      age_group:
+        type: numeric
+        unit: years
+        variance:
+          toddler_accidental: {min: 1, max: 4, interpretation: "peak for accidental poisoning"}
+          older_child: {min: 5, max: 14, interpretation: "moderate accidental risk"}
+          adolescent_intentional: {min: 15, max: 18, interpretation: "peak non-accidental — assess for suicidal intent"}
+      clinical_syndrome:
+        type: categorical
+        variance:
+          anticholinergic: {interpretation: "dilated pupils, hyperthermia, tachycardia, hallucinations, urinary retention"}
+          cholinergic: {interpretation: "miosis, bronchospasm, bradycardia, salivation, fasciculations, incontinence"}
+          stimulant: {interpretation: "hypertension, tachycardia, hyperthermia, agitation, arrhythmias"}
+          opioid: {interpretation: "miosis, respiratory depression, hypotension, decreased GCS, bradycardia"}
+      vulnerability_factor:
+        type: categorical
+        variance:
+          increased_permeability: {interpretation: "child <4 months — transdermal absorption risk"}
+          dose_per_kg: {interpretation: "smaller body mass — higher dose/kg toxicity"}
+          metabolic: {interpretation: "decreased glycogen stores increase metabolic risk"}
+    examples:
+      - case: "3-year-old found with empty antihistamine bottle. Dilated pupils, dry skin, HR 140, temp 38.2 C, hallucinations."
+        parameters: {age_group: 3, clinical_syndrome: anticholinergic, vulnerability_factor: dose_per_kg}
+        reasoning: "Accidental anticholinergic toxidrome — small body weight increases dose/kg toxicity."
+        recommendation: "Activated charcoal 1 g/kg PO if <1 hr post-ingestion and GCS adequate. Continuous monitoring. Cooling for hyperthermia. Consider physostigmine if severe. Seizure precautions. Poison-centre consult."
+      - case: "15-year-old with empty organophosphate container. Pinpoint pupils, wheezing, salivation, fasciculations, urinary incontinence, HR 48."
+        parameters: {age_group: 15, clinical_syndrome: cholinergic, vulnerability_factor: metabolic}
+        reasoning: "Severe cholinergic toxidrome — life-threatening bradycardia and bronchospasm."
+        recommendation: "Secure airway. Atropine 0.02-0.05 mg/kg IV q5-10min until atropinisation. Pralidoxime 25-50 mg/kg IV. Suction secretions. Benzodiazepine ready for seizures. ICU + ventilation likely. Decontaminate skin. Psychiatric consult."
+
+  - name: Asthma Severity & Acute Exacerbation Management
+    description: Classify asthma severity and guide stepwise treatment escalation
+    atom_ids: [asthma-1, asthma-2, asthma-3, asthma-4]
+    parameters:
+      symptom_frequency:
+        type: categorical
+        variance:
+          intermittent: {interpretation: "<=2/week, <=2 nights/month"}
+          mild_persistent: {interpretation: ">2/week, >2 nights/month"}
+          moderate_persistent: {interpretation: "daily, >1 night/week"}
+          severe_persistent: {interpretation: "continual daytime, frequent nights"}
+      pef_percent_predicted:
+        type: numeric
+        unit: '%'
+        variance:
+          preserved: {min: 80, max: 100, interpretation: "normal — mild"}
+          mildly_reduced: {min: 60, max: 79, interpretation: "moderate-severe"}
+          severely_reduced: {min: 0, max: 59, interpretation: "marked reduction — severe or acute"}
+      fev1_bronchodilator_response:
+        type: numeric
+        unit: '%'
+        variance:
+          normal: {min: 0, max: 12, interpretation: "no reversibility — consider alternative diagnosis"}
+          reversible: {min: 12, max: 100, interpretation: "FEV1 >12% increase confirms asthma"}
+    examples:
+      - case: "7-year-old, episodic wheeze >3/yr lasting 7-14 days, URI/cold-air triggered. PEF baseline 85%, post-albuterol 95%."
+        parameters: {symptom_frequency: mild_persistent, pef_percent_predicted: 85, fev1_bronchodilator_response: 18}
+        reasoning: "Mild persistent asthma with >12% reversibility confirms diagnosis."
+        recommendation: "Step 1 controller: daily low-dose ICS (budesonide 200 mcg/day pMDI + spacer) + albuterol PRN. Review in 6-8 weeks. Trigger/technique/adherence education."
+      - case: "5-year-old, severe persistent asthma on Step 2. Acute exacerbation: RR 48, SpO2 91, subcostal indrawing, cannot speak in sentences, PEF 55%."
+        parameters: {symptom_frequency: severe_persistent, pef_percent_predicted: 55, fev1_bronchodilator_response: 16}
+        reasoning: "Severe uncontrolled asthma plus acute moderate-severe exacerbation."
+        recommendation: "ACUTE: O2 to SpO2 >90%; albuterol nebulised 0.15 mg/kg q20min x1h; ipratropium if poor response; prednisolone 0.5-1 mg/kg daily x5d. Reassess at 1 h. CHRONIC: Step up to Step 3 — medium-dose ICS/LABA."
+
+  - name: Neonatal Sepsis Risk Assessment & Empiric Treatment
+    description: Identify neonatal infection risk and initiate early empiric antibiotics
+    atom_ids: [neonatal-1, neonatal-2, neonatal-3]
+    parameters:
+      age_category:
+        type: categorical
+        variance:
+          early_onset: {interpretation: "0-7 days — GBS, E. coli, Listeria"}
+          late_onset: {interpretation: "8-28 days — nosocomial (Staph, Candida) or community"}
+      maternal_risk_factors:
+        type: categorical
+        variance:
+          high_risk: {interpretation: "prematurity, chorioamnionitis, PROM >18 h, maternal GBS+, fever — presume sepsis"}
+          low_risk: {interpretation: "term, no fever, no prolonged rupture, no GBS — selective screening"}
+      clinical_signs:
+        type: categorical
+        variance:
+          none: {interpretation: "afebrile, feeding well, active"}
+          subtle: {interpretation: "temperature instability, slow feeding, mildly lethargic, mild tachycardia"}
+          severe: {interpretation: "fever or hypothermia, respiratory distress/apnoea, poor feeding, lethargy, pallor, petechiae, jaundice, poor perfusion"}
+    examples:
+      - case: "Newborn day 2. Mother had fever 38.4 C in labour and PROM 22 h. Infant temp 37.2, feeds poorly, lethargic, HR 160, RR 50."
+        parameters: {age_category: early_onset, maternal_risk_factors: high_risk, clinical_signs: subtle}
+        reasoning: "Early-onset sepsis risk very high. Subtle signs may precede fulminance."
+        recommendation: "Admit. CBC, CRP, blood culture, urine culture, +/- CSF. Start ampicillin 50 mg/kg q6h + gentamicin 7.5 mg/kg q18h immediately. Supportive care. Discontinue at 48 h if cultures negative and improving."
+      - case: "Term neonate day 5. GBS+ mother (one IPP dose before delivery). Temp 38.6, HR 170, grunting, crepitations, increasingly tired."
+        parameters: {age_category: early_onset, maternal_risk_factors: high_risk, clinical_signs: severe}
+        reasoning: "Early-onset GBS sepsis/pneumonia despite IPP. Risk of decompensation."
+        recommendation: "Cultures including consider LP. Ampicillin 50 mg/kg q6h + gentamicin 7.5 mg/kg q18h IV; add cefotaxime 100 mg/kg q6h if meningitis. O2 to SpO2 >94. IV fluids, continuous monitoring, ICU/high-care. Repeat clinical q4h. Continue 7-10 days minimum."
+
+  - name: Severe Acute Malnutrition (SAM) Stabilisation & Shock Management
+    description: Manage SAM with emergency complications - shock, hypoglycaemia, hypothermia, dehydration
+    atom_ids: [imam-1, imam-2, imam-3, imam-4, imam-7, imam-8, imam-9]
+    parameters:
+      sam_criteria:
+        type: categorical
+        variance:
+          yes: {interpretation: "MUAC <11.5 cm OR WFH <-3 SD OR bilateral pitting oedema"}
+          no: {interpretation: "not SAM"}
+      glucose_mmol_l:
+        type: numeric
+        unit: mmol/L
+        variance:
+          normal: {min: 3.0, max: 10.0, interpretation: "glucose safe"}
+          hypoglycaemia: {min: 0.0, max: 3.0, interpretation: "treat asymptomatic: 10 mL/kg sugar/F75 or 50 mL 10% dextrose PO; symptomatic: IV 2 mL/kg 10% dextrose over 2-3 min"}
+      temperature_celsius:
+        type: numeric
+        unit: degC
+        variance:
+          normothermia: {min: 36.5, max: 37.4, interpretation: "normal — monitor q3-4h"}
+          hypothermia: {min: 0, max: 36.4, interpretation: "skin-to-skin, blankets, heater. Target +0.5-1 C/hr. Monitor q30min."}
+      capillary_refill_seconds:
+        type: numeric
+        unit: seconds
+        variance:
+          good: {min: 0, max: 2, interpretation: "good perfusion"}
+          compensated_shock: {min: 2.1, max: 3, interpretation: "delayed CRT, HR >140-160, cool peripheries"}
+          late_shock: {min: 3.1, max: 10, interpretation: "lethargy, low BP, weak pulse — risk of arrest"}
+      haemoglobin_g_dl:
+        type: numeric
+        unit: g/dL
+        variance:
+          normal: {min: 10, max: 14, interpretation: "no transfusion"}
+          severe_anaemia: {min: 4, max: 6, interpretation: "with respiratory distress — transfuse packed cells 5-10 mL/kg over 4 h"}
+          very_severe: {min: 0, max: 3.9, interpretation: "Hb <4 — transfuse 5-10 mL/kg over 4 h + furosemide 1 mg/kg IV at start and end"}
+      weight_gain_g_kg_day:
+        type: numeric
+        unit: g/kg/day
+        variance:
+          inadequate: {min: 0, max: 1, interpretation: "poor — check feeding tolerance, complications, malabsorption"}
+          moderate: {min: 1, max: 5, interpretation: "acceptable during stabilisation"}
+          good: {min: 5, max: 100, interpretation: ">5 g/kg/d for 0-6 m; >10 g/kg/d for 6-59 m at discharge"}
+    examples:
+      - case: "14-month-old marasmus (MUAC 10.2, WFH -4 SD). AVPU P. Cold hands, CRT 4 sec, HR 150, RR 60. Temp 35.8 C. Glucose 1.8 mmol/L."
+        parameters: {sam_criteria: yes, glucose_mmol_l: 1.8, temperature_celsius: 35.8, capillary_refill_seconds: 4, weight_gain_g_kg_day: 0}
+        reasoning: "SAM with shock, hypoglycaemia, hypothermia, and coma — multiple simultaneous life threats."
+        recommendation: "(1) Warm first — skin-to-skin, blankets, heater; (2) Glucose — 50 mL bolus 10% dextrose PO or IV 2 mL/kg over 2-3 min if unable PO; (3) Shock — 10 mL/kg balanced crystalloid SLOWLY over 30 min; (4) Monitor for fluid overload; (5) Start F75 100 kcal/kg low-lactose 130 mL/kg/day once stable; (6) Continuous vitals/glucose/temp; (7) If no response to 1st bolus, cautious 2nd; after 3 boluses go to high-care; (8) Investigate infection/TB/HIV; (9) Transition to rehab with F100/RUTF when stable."
+      - case: "26-month-old kwashiorkor (bilateral oedema, MUAC 10.8). Diarrhoea x 5 days, no shock, AVPU A, temp 37.1, glucose 3.2. Hb 3.8 g/dL."
+        parameters: {sam_criteria: yes, glucose_mmol_l: 3.2, temperature_celsius: 37.1, capillary_refill_seconds: 2.5, haemoglobin_g_dl: 3.8}
+        reasoning: "SAM with very severe anaemia (Hb <4) — transfusion required. Diarrhoea manageable with ORS + F75."
+        recommendation: "(1) Transfuse packed cells 5-10 mL/kg slowly over 4 h with furosemide 1 mg/kg IV at start AND end; (2) Watch for overload; (3) ORS 5 mL/kg q15min (20 mL/kg/h) for 4 h, then reassess; (4) F75 100 mL/kg/day in 8 feeds (oedema dose); (5) Record intake/output daily; (6) Monitor glucose q4h, temp q4h; (7) Transition to F100 over 2 days then RUTF in rehab; (8) Target discharge when oedema resolved + good weight gain (>10 g/kg/day x 5 days) + RUTF tolerated."
+verification_summary:
+  cards_covered: 9
+  atoms_per_card:
+    "2025 CIRCULATION_pages-001-010.yml": [*ref_0, *ref_1, *ref_2, *ref_3, *ref_4]
+    "DEHYDRATION_pages-001-010.yml": [*ref_5]
+    "COMA  COVULSION_pages-001-010.yml": [*ref_6, *ref_7, *ref_8]
+    "2021 AIRWAY AND BREATHING_pages-001-010.yml": [*ref_9, *ref_10, *ref_11, *ref_12, *ref_13]
+    "2022 POISONING_pages-001-010.yml": [*ref_14, *ref_15, *ref_16]
+    "ASTHMA 2021 CONSENSUS GUIDELINE_pages-001-005.yml": [*ref_17, *ref_18, *ref_19, *ref_20]
+    "2025 MANAGEMENT OF SEIZURES_pages-001-010.yml": [*ref_21, *ref_22]
+    "2022 Neonatal infections 2021 UKZN 5th year tut_pages-001-010.yml": [*ref_23, *ref_24, *ref_25]
+    "2024 IMAM_pages-481-507.yml": [*ref_26, *ref_27, *ref_28, *ref_29, *ref_30, *ref_31, *ref_32, *ref_33, *ref_34, *ref_35]
+  acceptance_criteria:
+    min_atoms_required: 15
+    atoms_extracted: 36
+    criteria_met: true
+    scenarios_with_parameterization: 8
+    all_parameters_defined: true
+    output_format_valid: YAML

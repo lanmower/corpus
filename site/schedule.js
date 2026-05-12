@@ -2,7 +2,11 @@
 // Deterministic per (config, exam date, due-counts, weights). Re-run from same inputs → same output.
 const KEY = 'corpus.schedule.v1';
 const CFG_KEY = 'corpus.schedule.config.v1';
-const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
+let SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
+
+export function setSubjectList(list) {
+    if (Array.isArray(list) && list.length) SUBJECTS = list.slice();
+}
 
 const DEFAULT_CONFIG = {
     examDate: '2026-06-15',
@@ -11,8 +15,19 @@ const DEFAULT_CONFIG = {
     pomodoro: 25,
     breakLen: 5,
     availability: { mon: 180, tue: 180, wed: 180, thu: 180, fri: 180, sat: 240, sun: 240 },
-    weights: Object.fromEntries(SUBJECTS.map(s => [s, 1]))
+    weights: {},
+    enabled: {}
 };
+
+function fillSubjectMaps(cfg) {
+    const w = { ...cfg.weights };
+    const en = { ...cfg.enabled };
+    for (const s of SUBJECTS) {
+        if (w[s] == null) w[s] = 1;
+        if (en[s] == null) en[s] = true;
+    }
+    return { ...cfg, weights: w, enabled: en };
+}
 
 const INTENSITY_FACTOR = { light: 0.6, standard: 1.0, hard: 1.4, cram: 1.7 };
 const DOW = ['sun','mon','tue','wed','thu','fri','sat'];
@@ -23,7 +38,7 @@ const MIN_PER_REVIEW = 0.4;                // estimator: minutes per card review
 const MAX_GUIDE_SECTIONS_PER_DAY = 2;
 const MAX_CASES_PER_DAY = 2;
 
-export function defaultConfig() { return JSON.parse(JSON.stringify(DEFAULT_CONFIG)); }
+export function defaultConfig() { return fillSubjectMaps(JSON.parse(JSON.stringify(DEFAULT_CONFIG))); }
 
 export function loadConfig() {
     try {
@@ -37,11 +52,12 @@ export function loadConfig() {
                 examDate = srsCfg.examDate;
             } catch {}
         }
-        return {
+        return fillSubjectMaps({
             ...DEFAULT_CONFIG, ...cfg, examDate,
             availability: { ...DEFAULT_CONFIG.availability, ...(cfg.availability || {}) },
-            weights: { ...DEFAULT_CONFIG.weights, ...(cfg.weights || {}) }
-        };
+            weights: { ...(cfg.weights || {}) },
+            enabled: { ...(cfg.enabled || {}) }
+        });
     } catch { return defaultConfig(); }
 }
 
@@ -71,8 +87,12 @@ export function dayMinutes(cfg, dateIso) {
 
 // Allocate minutes to subjects by weight (proportional, integer rounding, remainder to top weight).
 // Daily quota scales inversely with days-to-exam: more time = lower daily pace for same backlog.
-export function allocateSubjects(totalMin, weights, dueCounts, daysToExam = 30) {
-    const subs = SUBJECTS.map(s => ({ s, w: Math.max(0, weights[s] || 0) * (1 + Math.log10(1 + (dueCounts[s] || 0))) }));
+export function allocateSubjects(totalMin, weights, dueCounts, daysToExam = 30, enabled = null) {
+    const subs = SUBJECTS.map(s => {
+        const isOn = enabled ? enabled[s] !== false : true;
+        const w = isOn ? Math.max(0, weights[s] || 0) * (1 + Math.log10(1 + (dueCounts[s] || 0))) : 0;
+        return { s, w };
+    });
     const sumW = subs.reduce((n, x) => n + x.w, 0);
     if (sumW === 0) return [];
     // Pace factor: <1 when exam far (spread work thinner), 1 at default, >1 when exam near (cram)
@@ -92,7 +112,7 @@ export function buildDayBlocks(cfg, dateIso, dueCounts, extras = {}) {
     if (total <= 0) return [];
     const startHour = cfg.chronotype === 'morning' ? 8 : (cfg.chronotype === 'evening' ? 17 : 12);
     const daysToExam = extras.daysToExam || daysBetween(new Date().toISOString().slice(0, 10), cfg.examDate);
-    const allocs = allocateSubjects(total, cfg.weights, dueCounts, daysToExam);
+    const allocs = allocateSubjects(total, cfg.weights, dueCounts, daysToExam, cfg.enabled);
     const intensityMul = INTENSITY_FACTOR[cfg.intensity] || 1;
     // Per-subject daily review cap: base × intensity, but never more than what's actually due.
     const reviewCap = Math.max(1, Math.round(PER_SUBJECT_DAILY_REVIEW_CAP * intensityMul));
@@ -372,4 +392,5 @@ export function onUpdate(handler) {
     if (typeof window !== 'undefined') window.addEventListener('schedule:updated', e => handler(e.detail));
 }
 
+export function subjectList() { return SUBJECTS.slice(); }
 export const SUBJECT_LIST = SUBJECTS;

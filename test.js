@@ -33,8 +33,14 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.ok(!all.has(c.id)); all.add(c.id); assert.ok(c.front && c.front.length > 0);
         }
         assert.ok(all.size >= 1900);
-        const total = SHARDS.reduce((n, sh) => n + (sh.triage?.scenarios.length || 0), 0);
-        assert.strictEqual(total, MANIFEST.totals.scenarios); assert.ok(total >= 60);
+        // Sum across every subject present in the manifest, not just the 8 with full asset
+        // coverage in this test — additional syllabus subjects (e.g. paediatrics-neonatal)
+        // still contribute to the manifest totals via build_data.js.
+        const allShardScenarios = MANIFEST.subjects.reduce((n, m) => {
+            const sh = JSON.parse(READ(`site/data/${m.subject}.json`));
+            return n + (sh.triage?.scenarios.length || 0);
+        }, 0);
+        assert.strictEqual(allShardScenarios, MANIFEST.totals.scenarios); assert.ok(allShardScenarios >= 60);
         for (const sh of SHARDS) for (const sc of (sh.triage?.scenarios || [])) {
             assert.ok(sc.parameters && typeof sc.parameters === 'object' && !Array.isArray(sc.parameters));
             assert.ok(!('raw' in sc.parameters), 'parameters.raw leaks unparsed YAML into shard: ' + sc.name);
@@ -440,7 +446,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const sj = JSON.parse(READ('syllabus/cmed4-2026/syllabus.json'));
         assert.strictEqual(sj.id, 'cmed4-2026');
         assert.ok(typeof sj.name === 'string' && sj.name.length > 0);
-        assert.deepStrictEqual([...sj.subjects].sort(), [...SUBJECTS].sort());
+        // Syllabus may carry additional subjects beyond the 8 with full asset coverage (e.g. paediatrics, partial).
+        for (const s of SUBJECTS) assert.ok(sj.subjects.includes(s), `syllabus.json missing ${s}`);
         assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(sj.examDate));
         for (const s of SUBJECTS) {
             assert.ok(fs.existsSync(path.join(ROOT, 'syllabus/cmed4-2026', s, 'triage_scenarios.yml')), `${s} triage nested`);

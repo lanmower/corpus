@@ -1,0 +1,345 @@
+deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+notes:
+  - guid: "ooshi-mnemonic"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What does OOSHI stand for in newborn assessment?"
+      Back: "O - Observations\nO - Oxygen\nS - Sugar\nH - Hypothermia\nI - Infections"
+    tags: ["assessment", "subject:paediatrics-neonatal"]
+
+  - guid: "rds-causes-list"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "List the causes of respiratory distress in the newborn."
+      Back: "1. HMD (Hyaline Membrane Disease)\n2. MAS (Meconium Aspiration Syndrome)\n3. TTN (Transient Tachypnea of Newborn)\n4. Congenital pneumonia\n5. Metabolic acidosis\n6. Cardiac causes\n7. Rare: Diaphragmatic hernia"
+    tags: ["differential-diagnosis", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-gestational-age"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "At what gestational age does Hyaline Membrane Disease typically occur?"
+      Back: "Usually before 34 weeks gestation due to immature lungs that do not produce enough surfactant"
+    tags: ["hmd", "subject:paediatrics-neonatal"]
+
+  - guid: "antenatal-steroids-hmd"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "Who should receive steroids for threatened pregnancy before 35 weeks gestation and why?"
+      Back: "The MOTHER must receive steroids to help the baby's lungs mature and increase surfactant production (NOT the baby)"
+    tags: ["hmd", "antenatal-management", "subject:paediatrics-neonatal"]
+
+  - guid: "surfactant-function"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the function of surfactant in the lungs?"
+      Back: "Surfactant is a substance that prevents the lungs from collapsing, particularly at the alveolar level"
+    tags: ["hmd", "physiology", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-xray-appearance"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the characteristic chest X-ray appearance in Hyaline Membrane Disease?"
+      Back: "Ground glass appearance due to micro-collapse of alveoli (not a completely collapsed lung). Affects both lungs equally with small lung volumes."
+    tags: ["hmd", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "air-bronchograms-hmd"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "Why do air bronchograms form on chest X-ray in HMD and what do they indicate?"
+      Back: "Air bronchograms form because air in the airways appears in more detail against a white background of collapsed lung tissue. They indicate more severe HMD where extensive alveolar collapse has occurred."
+    tags: ["hmd", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-surfactant-therapy"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "How is surfactant administered in HMD and what supervision is required?"
+      Back: "Surfactant can be given endotracheally and the patient can be put back on CPAP, but this requires training and supervision first before it can be initiated in the district hospital"
+    tags: ["hmd", "treatment", "subject:paediatrics-neonatal"]
+
+  - guid: "cpap-hmd-initiation"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the standard approach for CPAP initiation in HMD at district hospitals?"
+      Back: "All district hospitals must initiate CPAP as soon as it is needed, following the KINC chart on respiratory distress. If baby is not coping with CPAP, contact the referral hospital immediately."
+    tags: ["hmd", "treatment", "cpap", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-mild-xray"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What are the X-ray findings in mild Hyaline Membrane Disease?"
+      Back: "Ground glass appearance to lung fields extending to the periphery of both lungs; relatively small lungs"
+    tags: ["hmd", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-moderate-xray"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What are the X-ray findings in moderate Hyaline Membrane Disease?"
+      Back: "Dense ground glass appearance extending to periphery of lungs; air bronchograms visible (air in smaller airways); both lungs equally involved"
+    tags: ["hmd", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-severe-xray"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What are the X-ray findings in severe Hyaline Membrane Disease?"
+      Back: "Dense lung fields; air bronchograms; presence of endotracheal tube with tip above carina"
+    tags: ["hmd", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "meconium-production"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "Why does a fetus produce meconium and in which babies does it occur?"
+      Back: "Fetus produces meconium as a stress response to something going wrong in utero (indicating urgent need for delivery). Meconium is usually produced in term babies and rare in preterm babies."
+    tags: ["mas", "subject:paediatrics-neonatal"]
+
+  - guid: "meconium-sterility"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "Is meconium sterile or contaminated and what damage does it cause?"
+      Back: "Meconium is STERILE. The damage caused to the lungs is chemical pneumonitis (similar to paraffin ingestion). Antibiotics are used because the damaged lung is easily infected by bacteria."
+    tags: ["mas", "subject:paediatrics-neonatal"]
+
+  - guid: "mas-ball-valve"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the ball-valve effect of meconium in Meconium Aspiration Syndrome?"
+      Back: "Meconium acts as a one-way valve allowing air in but preventing air from leaving, causing hyperinflation of the lungs"
+    tags: ["mas", "physiology", "subject:paediatrics-neonatal"]
+
+  - guid: "mas-pneumothorax-risk"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the main complication of Meconium Aspiration Syndrome due to hyperinflation?"
+      Back: "Pneumothorax is a major risk and complication of MAS due to the ball-valve effect causing air trapping and hyperinflation"
+    tags: ["mas", "complications", "subject:paediatrics-neonatal"]
+
+  - guid: "mas-suctioning-technique"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the correct suctioning technique in meconium-stained deliveries?"
+      Back: "Suction baby below the cords under direct vision BEFORE stimulating baby during resuscitation. If baby is active, crying, and vigorous, do NOT suction below cords."
+    tags: ["mas", "management", "subject:paediatrics-neonatal"]
+
+  - guid: "mas-admission-criteria"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "When should a baby with MAS be admitted immediately?"
+      Back: "If patient's chest is hyperinflated and distressed, admit immediately. If worsening respiratory distress and not coping per KINC Chart, contact referral hospital immediately."
+    tags: ["mas", "management", "subject:paediatrics-neonatal"]
+
+  - guid: "cpap-mas-contraindication"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "Why is CPAP a relative contraindication in Meconium Aspiration Syndrome?"
+      Back: "CPAP may cause pneumothoraces in MAS due to air trapping from the ball-valve effect of meconium"
+    tags: ["mas", "cpap", "subject:paediatrics-neonatal"]
+
+  - guid: "mas-xray-appearance"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the characteristic chest X-ray appearance in Meconium Aspiration Syndrome?"
+      Back: "Relatively large lung fields with flat diaphragm; coarse patchy appearance of consolidation/collapse in lung fields; areas of normal/over-expanded lung"
+    tags: ["mas", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "pneumothorax-signs"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What are the X-ray findings in neonatal pneumothorax?"
+      Back: "Free air in pleural space; mediastinal shift away from the pneumothorax; collapsed lung"
+    tags: ["complications", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "pneumonia-timing"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the most common cause of pneumonia early in the neonatal period and what antibiotic is it sensitive to?"
+      Back: "Group B Strep is the most common cause of early neonatal pneumonia and is sensitive to penicillin"
+    tags: ["pneumonia", "microbiology", "subject:paediatrics-neonatal"]
+
+  - guid: "pneumonia-other-causes"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "List other causes of congenital or acquired pneumonia in the newborn besides Group B Strep."
+      Back: "1. CMV (Cytomegalovirus)\n2. Herpes simplex virus\n3. Syphilis\n4. TB (Tuberculosis)"
+    tags: ["pneumonia", "microbiology", "subject:paediatrics-neonatal"]
+
+  - guid: "pneumonia-definition"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "How does pneumonia affect the lungs in distribution and what type of infection can it be?"
+      Back: "Pneumonia affects the lungs unequally and may be congenital or acquired"
+    tags: ["pneumonia", "subject:paediatrics-neonatal"]
+
+  - guid: "pneumonia-maternal-history"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "Why is maternal history important in neonatal pneumonia?"
+      Back: "Maternal history may direct diagnosis toward chorioamnionitis and allows checking the mother to identify the causative organism (e.g., TB)"
+    tags: ["pneumonia", "diagnosis", "subject:paediatrics-neonatal"]
+
+  - guid: "pneumonia-treatment"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the standard treatment for pneumonia in high-risk neonates?"
+      Back: "Penicillin and gentamicin for all high-risk babies (see KINC chartbook)"
+    tags: ["pneumonia", "treatment", "subject:paediatrics-neonatal"]
+
+  - guid: "pneumonia-xray"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the characteristic chest X-ray appearance in neonatal pneumonia?"
+      Back: "Variable consolidation in lungs; relatively large lung fields; areas of apparently normal lung (unequal distribution)"
+    tags: ["pneumonia", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "ttn-definition"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is Transient Tachypnea of the Newborn (TTN) and when does it occur?"
+      Back: "TTN occurs in babies post C-section who have increased amount of fluid in the lungs with mild to moderate respiratory distress"
+    tags: ["ttn", "subject:paediatrics-neonatal"]
+
+  - guid: "ttn-duration"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "How long does Transient Tachypnea of the Newborn typically last?"
+      Back: "TTN normally lasts about 4-6 hours but may persist longer"
+    tags: ["ttn", "subject:paediatrics-neonatal"]
+
+  - guid: "ttn-management"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What should be done if Transient Tachypnea of the Newborn does not resolve?"
+      Back: "Treat baby as per KINC booklet; patient will need to be admitted and treated for pneumonia or sepsis"
+    tags: ["ttn", "management", "subject:paediatrics-neonatal"]
+
+  - guid: "ttn-xray-appearance"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the characteristic chest X-ray appearance in Transient Tachypnea of the Newborn?"
+      Back: "Bilateral streaky appearance; possible fluid in the fissure; peripheral aspect of X-ray is normal"
+    tags: ["ttn", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "congenital-cardiac-types"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What are the two main classifications of congenital cardiac disease relevant to RDS presentation?"
+      Back: "1. Acyanotic vs Cyanotic\n2. Oligaemic vs Plethoric"
+    tags: ["cardiac", "classification", "subject:paediatrics-neonatal"]
+
+  - guid: "cyanotic-cardiac-management"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the management approach for cyanotic cardiac disease in the newborn?"
+      Back: "OOSHI FIRST, then CXR, then ECG/4-limb BP if possible. Cyanotic in trouble requires stabilization and transfer."
+    tags: ["cardiac", "management", "subject:paediatrics-neonatal"]
+
+  - guid: "acyanotic-cardiac-stable"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "How should an acyanotic stable cardiac baby be managed?"
+      Back: "Can be referred electively to cardiac clinic at 6 weeks of age. Parent education: return to hospital if any change in baby's condition including POOR FEEDING."
+    tags: ["cardiac", "management", "subject:paediatrics-neonatal"]
+
+  - guid: "cardiomegaly-xray"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What are the X-ray findings in cardiomegaly from congenital heart disease?"
+      Back: "Large heart shadow (>60% of chest width); increased vascular markings in lung fields"
+    tags: ["cardiac", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "diaphragmatic-hernia-definition"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is a diaphragmatic hernia and how does it affect the lungs?"
+      Back: "Diaphragmatic hernia occurs when bowel protrudes into the chest cavity, hindering lung development and resulting in hypoplastic lungs which cause respiratory distress"
+    tags: ["diaphragmatic-hernia", "subject:paediatrics-neonatal"]
+
+  - guid: "diaphragmatic-hernia-genetic"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "Is there a genetic component to diaphragmatic hernia and which lung is affected?"
+      Back: "There is genetic predisposition because the other lung is also affected (bilateral involvement)"
+    tags: ["diaphragmatic-hernia", "subject:paediatrics-neonatal"]
+
+  - guid: "diaphragmatic-hernia-management"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the management of diaphragmatic hernia in the severely distressed newborn?"
+      Back: "Referral to tertiary hospital urgently if severely distressed"
+    tags: ["diaphragmatic-hernia", "management", "subject:paediatrics-neonatal"]
+
+  - guid: "diaphragmatic-hernia-xray"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the characteristic chest X-ray appearance in diaphragmatic hernia?"
+      Back: "Heart displaced to contralateral chest; bowel visible in chest cavity; compressed lung on affected side"
+    tags: ["diaphragmatic-hernia", "radiology", "subject:paediatrics-neonatal"]
+
+  - guid: "metabolic-acidosis-mechanism"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "How does metabolic acidosis present with respiratory distress and why?"
+      Back: "Metabolic acidosis presents with respiratory distress because the body compensates by blowing off CO2 through fast breathing (tachypnea)"
+    tags: ["metabolic-acidosis", "physiology", "subject:paediatrics-neonatal"]
+
+  - guid: "metabolic-acidosis-management"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the treatment approach for metabolic acidosis presenting as respiratory distress?"
+      Back: "OOSHI and appropriate fluid management will result in correction of the acidosis"
+    tags: ["metabolic-acidosis", "management", "subject:paediatrics-neonatal"]
+
+  - guid: "metabolic-acidosis-causes"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "List conditions that can cause metabolic acidosis and respiratory distress in the newborn."
+      Back: "1. Hypoxia\n2. Hypothermia\n(These can cause metabolic acidosis leading to compensatory tachypnea)"
+    tags: ["metabolic-acidosis", "causes", "subject:paediatrics-neonatal"]
+
+  - guid: "key-management-principle"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::RDS - KINC"
+    fields:
+      Front: "What is the key management principle emphasized in KINC when dealing with respiratory distress?"
+      Back: "WHEN IN DOUBT – ASK!!!"
+    tags: ["general-principle", "subject:paediatrics-neonatal"]

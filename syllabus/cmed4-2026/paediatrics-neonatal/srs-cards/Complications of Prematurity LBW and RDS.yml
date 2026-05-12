@@ -1,0 +1,417 @@
+deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+notes:
+  - guid: "prem-defn-0001"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Define prematurity by gestational age."
+      Back: "Birth occurring before 37 completed weeks (< 259 days) of gestation."
+    tags: ["prematurity-definition", "gestational-age", "subject:paediatrics-neonatal"]
+
+  - guid: "prem-late-0002"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the gestational age range for late preterm birth?"
+      Back: "GA between 34 and less than 37 weeks."
+    tags: ["prematurity-classification", "gestational-age", "subject:paediatrics-neonatal"]
+
+  - guid: "prem-vpt-0003"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the gestational age cutoff for very preterm (VPT) birth?"
+      Back: "GA less than 32 weeks."
+    tags: ["prematurity-classification", "gestational-age", "subject:paediatrics-neonatal"]
+
+  - guid: "prem-ept-0004"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the gestational age cutoff for extremely preterm (EPT) birth?"
+      Back: "GA at or below 28 weeks."
+    tags: ["prematurity-classification", "gestational-age", "subject:paediatrics-neonatal"]
+
+  - guid: "risk-socioeconomic-0005"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List socioeconomic and psychosocial risk factors for preterm birth."
+      Back: "1. No partner\n2. Low socioeconomic level\n3. Anxiety, stress\n4. Depression, use of SSRIs\n5. Life events (divorce, separation, death)\n6. Low educational achievement"
+    tags: ["risk-factors", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "risk-occupational-0006"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List occupational risk factors for preterm birth."
+      Back: "1. Upright posture\n2. Use of industrial machines\n3. Physical exertion\n4. Mental stress related to work\n5. Environmental stress related to working conditions"
+    tags: ["risk-factors", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "risk-surgery-0007"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is an important surgical risk factor for preterm birth?"
+      Back: "Abdominal surgery during pregnancy."
+    tags: ["risk-factors", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "risk-obstetric-0008"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List obstetric risk factors for preterm birth."
+      Back: "1. Multiple gestation\n2. Polyhydramnios\n3. Uterine anomaly (including DES-induced changes, leiomyomas)\n4. Preterm premature rupture of membranes (PPROM)\n5. History of second-trimester abortion\n6. History of cervical surgery\n7. Premature cervical dilatation or effacement (short cervical length)\n8. Placenta previa\n9. Placental abruption\n10. Vaginal bleeding (especially > 1 trimester)\n11. Previous preterm delivery\n12. Excessive uterine contractility"
+    tags: ["risk-factors", "preterm-birth", "obstetric", "subject:paediatrics-neonatal"]
+
+  - guid: "risk-infection-0009"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List infectious risk factors for preterm birth."
+      Back: "1. Sexually transmitted infections\n2. Systemic infection (pyelonephritis, appendicitis, pneumonia)\n3. Bacteriuria\n4. Periodontal disease"
+    tags: ["risk-factors", "preterm-birth", "infection", "subject:paediatrics-neonatal"]
+
+  - guid: "risk-maternal-0010"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List maternal factors increasing risk of preterm birth."
+      Back: "1. Substance abuse\n2. Smoking\n3. Maternal age < 18 or > 40 years\n4. African-American race\n5. Poor nutrition and low body mass index\n6. Inadequate prenatal care\n7. Anaemia (Hb < 10 g/dL)\n8. Family history of spontaneous preterm birth (especially if mother herself was born preterm)"
+    tags: ["risk-factors", "preterm-birth", "maternal", "subject:paediatrics-neonatal"]
+
+  - guid: "risk-fetal-0011"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List fetal and environmental risk factors for preterm birth."
+      Back: "1. Fetal anomaly\n2. Fetal growth restriction\n3. Fetal demise\n4. Positive fetal fibronectin test in vaginal secretions\n5. Environmental factors (heat, air pollution)"
+    tags: ["risk-factors", "preterm-birth", "fetal", "subject:paediatrics-neonatal"]
+
+  - guid: "etio-spont-labor-0012"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the frequency of spontaneous preterm labor as an etiology for preterm birth?"
+      Back: "30-50%"
+    tags: ["etiology", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "etio-pprom-0013"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the frequency of PPROM as an etiology for preterm birth?"
+      Back: "5-40%"
+    tags: ["etiology", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "etio-mult-gest-0014"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the frequency of multiple gestation as an etiology for preterm birth?"
+      Back: "10-30%"
+    tags: ["etiology", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "etio-eclamp-0015"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the frequency of preeclampsia/eclampsia as an etiology for preterm birth?"
+      Back: "12%"
+    tags: ["etiology", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "etio-bleed-0016"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the frequency of antepartum bleeding as an etiology for preterm birth?"
+      Back: "6-9%"
+    tags: ["etiology", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "etio-fgr-0017"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the frequency of fetal growth restriction as an etiology for preterm birth?"
+      Back: "2-4%"
+    tags: ["etiology", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "etio-other-0018"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the frequency of other etiologies for preterm birth?"
+      Back: "8-9%"
+    tags: ["etiology", "preterm-birth", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-short-resp-0019"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List short-term respiratory complications of prematurity."
+      Back: "1. Respiratory distress syndrome (surfactant deficiency / HMD)\n2. Apnoea\n3. Chronic lung disease (BPD)\n4. Pulmonary haemorrhage\n5. Air leak (pneumothorax)"
+    tags: ["complications-short-term", "respiratory", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-short-neuro-0020"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List short-term neurological complications of prematurity."
+      Back: "1. Intraventricular haemorrhage\n2. Periventricular leukomalacia\n3. Neurodevelopmental delay"
+    tags: ["complications-short-term", "neurological", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-short-gi-0021"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List short-term gastrointestinal complications of prematurity."
+      Back: "1. Necrotising enterocolitis\n2. Feed intolerance\n3. Hyperbilirubinaemia"
+    tags: ["complications-short-term", "gastrointestinal", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-short-blood-0022"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List short-term haematological complications of prematurity."
+      Back: "1. Anaemia of prematurity\n2. Thrombocytopenia\n3. Coagulopathy"
+    tags: ["complications-short-term", "haematological", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-short-circ-0023"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List short-term circulatory complications of prematurity."
+      Back: "1. Patent ductus arteriosus\n2. Hypotension\n3. Sepsis"
+    tags: ["complications-short-term", "circulatory", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-short-renal-0024"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List short-term renal complications of prematurity."
+      Back: "1. Acute kidney injury\n2. Electrolyte derangement"
+    tags: ["complications-short-term", "renal", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-short-other-0025"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List short-term other complications of prematurity."
+      Back: "1. Hypothermia\n2. Hypoglycaemia/hyperglycaemia\n3. Nosocomial infection\n4. Retinopathy of prematurity"
+    tags: ["complications-short-term", "other", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-long-neuro-0026"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the major long-term morbidity in preterm children?"
+      Back: "Long-term neurodevelopmental disability."
+    tags: ["complications-long-term", "neurological", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-long-chronic-0027"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List common chronic medical problems in preterm children."
+      Back: "1. Respiratory abnormalities\n2. Poor growth\n3. Frequent hospitalizations"
+    tags: ["complications-long-term", "chronic", "subject:paediatrics-neonatal"]
+
+  - guid: "comp-long-adult-0028"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What adult health outcomes are increased in preterm-born individuals?"
+      Back: "1. Increased insulin resistance\n2. Increased blood pressure\n3. Decreased reproductive rate"
+    tags: ["complications-long-term", "adult-outcomes", "subject:paediatrics-neonatal"]
+
+  - guid: "lbw-defn-0029"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Define low birth weight (LBW)."
+      Back: "Birth weight < 2500 g."
+    tags: ["birth-weight-classification", "subject:paediatrics-neonatal"]
+
+  - guid: "lbw-vlbw-0030"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Define very low birth weight (VLBW)."
+      Back: "Birth weight < 1500 g."
+    tags: ["birth-weight-classification", "subject:paediatrics-neonatal"]
+
+  - guid: "lbw-elbw-0031"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Define extremely low birth weight (ELBW)."
+      Back: "Birth weight < 1000 g."
+    tags: ["birth-weight-classification", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step1-0032"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the initial pathogenic step in hyaline membrane disease (HMD)?"
+      Back: "Prematurity leads to reduced surfactant synthesis, storage, and release."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step2-0033"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What happens after decreased alveolar surfactant in HMD pathogenesis?"
+      Back: "Increased alveolar surface tension develops."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step3-0034"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What pathological process results from increased alveolar surface tension in HMD?"
+      Back: "Atelectasis (alveolar collapse)."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step4-0035"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What consequences follow atelectasis in HMD pathogenesis?"
+      Back: "Uneven perfusion and hypoventilation occur, leading to hypoxaemia and CO2 retention."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step5-0036"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What acid-base disturbance develops from hypoxaemia and CO2 retention in HMD?"
+      Back: "Acidosis."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step6-0037"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What pulmonary vascular consequence follows acidosis in HMD pathogenesis?"
+      Back: "Pulmonary vasoconstriction leading to pulmonary hypoperfusion."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step7-0038"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What vascular injury occurs in HMD due to pulmonary hypoperfusion?"
+      Back: "Endothelial damage and epithelial damage."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step8-0039"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What occurs as a result of endothelial and epithelial damage in HMD?"
+      Back: "Plasma leaks into alveoli."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step9-0040"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the pathological hallmark of HMD?"
+      Back: "Hyaline membrane formation (fibrin and necrotic cells lining alveoli)."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-pathogenesis-step10-0041"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "How does hyaline membrane formation perpetuate HMD pathology?"
+      Back: "Hyaline membranes increase the diffusion gradient, which feeds back to worsening hypoxaemia and CO2 retention."
+    tags: ["hmd-pathogenesis", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-cxr-findings-0042"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Describe characteristic chest radiograph findings in HMD."
+      Back: "Low lung volumes with diffuse reticulogranular ground-glass appearance and air bronchograms."
+    tags: ["hmd-imaging", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "hmd-management-0043"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List the two main management approaches for HMD."
+      Back: "1. Respiratory support (CPAP or IPPV)\n2. Surfactant therapy"
+    tags: ["hmd-management", "respiratory-distress-syndrome", "subject:paediatrics-neonatal"]
+
+  - guid: "nec-pathogenesis-0044"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Define necrotising enterocolitis (NEC)."
+      Back: "Ischaemic necrosis of the intestinal mucosa associated with severe inflammation, invasion of enteric gas-forming organisms, and potential dissection of gas into the bowel wall and portal venous system."
+    tags: ["nec-definition", "gastrointestinal-complication", "subject:paediatrics-neonatal"]
+
+  - guid: "nec-stage-ia-0045"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Describe Modified Bell Stage IA (Suspected NEC) clinical presentation."
+      Back: "Systemic signs: Temperature instability, apnoea, bradycardia, lethargy\nAbdominal signs: Gastric retention, abdominal distention, emesis, heme-positive stool\nRadiographic signs: Normal or mild intestinal dilation, mild ileus"
+    tags: ["nec-staging", "bell-criteria", "subject:paediatrics-neonatal"]
+
+  - guid: "nec-stage-ib-0046"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Describe Modified Bell Stage IB (Suspected NEC) clinical presentation."
+      Back: "Systemic signs: Temperature instability, apnoea, bradycardia, lethargy\nAbdominal signs: Grossly bloody stool\nRadiographic signs: Normal or mild intestinal dilation, mild ileus"
+    tags: ["nec-staging", "bell-criteria", "subject:paediatrics-neonatal"]
+
+  - guid: "nec-stage-iia-0047"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Describe Modified Bell Stage IIA (Definite, mildly ill NEC) clinical presentation."
+      Back: "Systemic signs: Temperature instability, apnoea, bradycardia, lethargy\nAbdominal signs: Gastric retention, abdominal distention, emesis, heme-positive stool, plus absent bowel sounds with or without abdominal tenderness\nRadiographic signs: Intestinal dilation, ileus, pneumatosis intestinalis"
+    tags: ["nec-staging", "bell-criteria", "subject:paediatrics-neonatal"]
+
+  - guid: "nec-stage-iib-0048"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Describe Modified Bell Stage IIB (Definite, moderately ill NEC) clinical presentation."
+      Back: "Systemic signs: Temperature instability, apnoea, bradycardia, lethargy, mild metabolic acidosis, thrombocytopenia\nAbdominal signs: Gastric retention, abdominal distention, emesis, heme-positive stool, absent bowel sounds, definite tenderness, with or without abdominal cellulitis or right lower quadrant mass\nRadiographic signs: Intestinal dilation, ileus, pneumatosis intestinalis, ascites"
+    tags: ["nec-staging", "bell-criteria", "subject:paediatrics-neonatal"]
+
+  - guid: "nec-stage-iiia-0049"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Describe Modified Bell Stage IIIA (Advanced, severely ill, intact bowel NEC) clinical presentation."
+      Back: "Systemic signs: Temperature instability, apnoea, bradycardia, lethargy, hypotension, bradycardia, severe apnoea, combined respiratory and metabolic acidosis, DIC, neutropenia\nAbdominal signs: Gastric retention, abdominal distention, emesis, heme-positive stool, absent bowel sounds, tenderness, with/without cellulitis, signs of peritonitis, marked tenderness, abdominal distention\nRadiographic signs: Intestinal dilation, ileus, pneumatosis intestinalis, ascites"
+    tags: ["nec-staging", "bell-criteria", "subject:paediatrics-neonatal"]
+
+  - guid: "nec-stage-iiib-0050"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Describe Modified Bell Stage IIIB (Advanced, severely ill, perforated bowel NEC) clinical presentation."
+      Back: "Systemic signs: Temperature instability, apnoea, bradycardia, lethargy, hypotension, bradycardia, severe apnoea, combined respiratory and metabolic acidosis, DIC, neutropenia\nAbdominal signs: Gastric retention, abdominal distention, emesis, heme-positive stool, absent bowel sounds, tenderness, with/without cellulitis, signs of peritonitis, marked tenderness, abdominal distention\nRadiographic signs: Intestinal dilation, ileus, pneumatosis intestinalis, ascites, pneumoperitoneum"
+    tags: ["nec-staging", "bell-criteria", "subject:paediatrics-neonatal"]
+
+  - guid: "nec-xray-findings-0051"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "Describe radiographic hallmarks of NEC on plain abdominal radiograph."
+      Back: "1. Marked abdominal distention\n2. Dilated bowel loops\n3. Pneumatosis intestinalis (gas bubbles in bowel wall)\n4. Potential portal venous gas\n5. Potential free intraperitoneal air"
+    tags: ["nec-imaging", "gastrointestinal-complication", "subject:paediatrics-neonatal"]
+
+  - guid: "nec-management-0052"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "List the main management approaches for NEC."
+      Back: "1. Stage-dependent management\n2. Keep baby NPO (nil per os)\n3. Antibiotics\n4. Nutritional support with TPN\n5. Surgery if required"
+    tags: ["nec-management", "gastrointestinal-complication", "subject:paediatrics-neonatal"]

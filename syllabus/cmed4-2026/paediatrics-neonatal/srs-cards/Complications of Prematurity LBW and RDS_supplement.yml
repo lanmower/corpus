@@ -1,0 +1,97 @@
+deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+notes:
+  - guid: "hmd-alternative-0053"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the alternative name for respiratory distress syndrome (RDS) caused by surfactant deficiency?"
+      Back: "Hyaline Membrane Disease (HMD)."
+    tags: ["hmd-definition", "respiratory-distress-syndrome", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "hmd-pathophysiology-0054"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the pathophysiological mechanism that causes HMD?"
+      Back: "Surfactant deficiency leads to increased alveolar surface tension, causing widespread alveolar collapse (atelectasis), ventilation-perfusion mismatch, and hypoxaemia."
+    tags: ["hmd-pathophysiology", "respiratory-distress-syndrome", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "hmd-imaging-detail-0055"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What are the specific radiographic features seen in severe vs. moderate HMD on chest X-ray?"
+      Back: "Both severe and moderate HMD demonstrate: low lung volumes, diffuse reticulogranular ground-glass appearance, and air bronchograms. Severe cases show more extensive involvement."
+    tags: ["hmd-imaging", "respiratory-distress-syndrome", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "nec-portal-venous-gas-0056"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is portal venous gas in NEC?"
+      Back: "Gas that has dissected into the portal venous system as a result of intestinal mucosal necrosis and invasion of gas-forming organisms in necrotising enterocolitis. Seen on abdominal radiograph as branching lucencies in the liver."
+    tags: ["nec-imaging", "gastrointestinal-complication", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "nec-pneumoperitoneum-0057"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is pneumoperitoneum in the context of NEC?"
+      Back: "Free intraperitoneal air resulting from perforation of the necrotic intestinal wall. Indicates Stage IIIB (advanced, severely ill NEC with perforated bowel) and typically requires urgent surgical intervention."
+    tags: ["nec-imaging", "gastrointestinal-complication", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "nec-pneumatosis-intestinalis-0058"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is pneumatosis intestinalis in NEC?"
+      Back: "Gas bubbles present in the bowel wall (intramural gas) as a result of invasion by gas-forming organisms during necrotising enterocolitis. Appears as bubbles or streaks of gas on abdominal radiograph."
+    tags: ["nec-imaging", "gastrointestinal-complication", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "nec-bell-stage-overview-0059"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "How many stages are there in the Modified Bell staging criteria for NEC and what are they?"
+      Back: "Six stages:\nStage IA & IB: Suspected NEC\nStage IIA & IIB: Definite NEC (mildly to moderately ill)\nStage IIIA & IIIB: Advanced NEC (severely ill, with distinction between intact and perforated bowel)"
+    tags: ["nec-staging", "bell-criteria", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "nec-stage-progression-0060"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "How does severity progress in Modified Bell staging of NEC?"
+      Back: "Stage I (Suspected) → Stage II (Definite) → Stage III (Advanced). Within each stage, severity increases (A then B). Stage IIB includes metabolic acidosis and thrombocytopenia; Stage III includes hypotension, DIC, and neutropenia."
+    tags: ["nec-staging", "bell-criteria", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "nec-stage-iii-distinction-0061"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the key distinction between Modified Bell Stage IIIA and IIIB?"
+      Back: "Stage IIIA: Advanced, severely ill NEC with intact bowel.\nStage IIIB: Advanced, severely ill NEC with perforated bowel (pneumoperitoneum on imaging)."
+    tags: ["nec-staging", "bell-criteria", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "hmd-long-term-outcome-0062"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What long-term respiratory sequela commonly develops in preterm infants who have had severe HMD?"
+      Back: "Chronic lung disease (bronchopulmonary dysplasia, BPD), which is listed as a complication of prematurity and can result in respiratory abnormalities and frequent hospitalizations."
+    tags: ["hmd-long-term", "respiratory-distress-syndrome", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "prematurity-days-cutoff-0063"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What is the gestational age cutoff for prematurity expressed in days?"
+      Back: "Less than 259 days (before 37 completed weeks)."
+    tags: ["prematurity-definition", "gestational-age", "subject:paediatrics-neonatal", "supplement"]
+
+  - guid: "nec-pathogenic-triad-0064"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::Complications of Prematurity LBW and RDS"
+    fields:
+      Front: "What are the three key pathogenic components of necrotising enterocolitis (NEC)?"
+      Back: "1. Ischaemic necrosis of intestinal mucosa\n2. Severe inflammation\n3. Invasion of enteric gas-forming organisms"
+    tags: ["nec-pathogenesis", "gastrointestinal-complication", "subject:paediatrics-neonatal", "supplement"]

@@ -1,0 +1,1668 @@
+deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+notes:
+  - guid: "jaundvis001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "At what serum bilirubin level is jaundice clinically visible?"
+      Back: "85–120 µmol/ℓ"
+    tags: ["jaundice-definition", "bilirubin", "subject:paediatrics-neonatal"]
+  - guid: "jaundtype002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What do UBR and CBR stand for in bilirubin classification?"
+      Back: "UBR = unconjugated bilirubin (fat soluble); CBR = conjugated bilirubin (water soluble)"
+    tags: ["jaundice-definition", "bilirubin", "subject:paediatrics-neonatal"]
+  - guid: "jaundpath001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Jaundice is pathological if it occurs within the first 24 hours. What is the bilirubin threshold for term infants?"
+      Back: ">220 µmol/ℓ (term) or >204 µmol/ℓ (preterm)"
+    tags: ["jaundice-pathology", "bilirubin-threshold", "subject:paediatrics-neonatal"]
+  - guid: "jaundpath002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What rate of bilirubin rise per day is considered pathological?"
+      Back: ">85 µmol/ℓ per day"
+    tags: ["jaundice-pathology", "bilirubin-threshold", "subject:paediatrics-neonatal"]
+  - guid: "jaundpath003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What serum direct bilirubin level is pathological?"
+      Back: ">34 µmol/ℓ"
+    tags: ["jaundice-pathology", "bilirubin-threshold", "subject:paediatrics-neonatal"]
+  - guid: "jaundpath004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "For how long is jaundice considered pathological if it persists?"
+      Back: "1 week (term infants) or 2 weeks (preterm infants)"
+    tags: ["jaundice-pathology", "duration", "subject:paediatrics-neonatal"]
+  - guid: "bilpath001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "First step in bilirubin synthesis from hemoglobin?"
+      Back: "Hb → Globin + Heme"
+    tags: ["bilirubin-metabolism", "biochemistry", "subject:paediatrics-neonatal"]
+  - guid: "bilpath002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What enzyme converts heme to biliverdin, and what does it release?"
+      Back: "Heme Oxygenase (inhibited by metalloporphyrins); releases CO"
+    tags: ["bilirubin-metabolism", "biochemistry", "subject:paediatrics-neonatal"]
+  - guid: "bilpath003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What enzyme converts biliverdin to bilirubin?"
+      Back: "Biliverdin Reductase"
+    tags: ["bilirubin-metabolism", "biochemistry", "subject:paediatrics-neonatal"]
+  - guid: "bilmet001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "By what mechanism is unconjugated bilirubin taken up by the hepatocyte?"
+      Back: "Via ligandin protein"
+    tags: ["bilirubin-metabolism", "liver", "subject:paediatrics-neonatal"]
+  - guid: "bilmet002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "With what molecule is bilirubin conjugated in the liver?"
+      Back: "Glucuronic acid"
+    tags: ["bilirubin-metabolism", "liver", "subject:paediatrics-neonatal"]
+  - guid: "bilmet003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Describe the route of conjugated bilirubin after hepatic conjugation"
+      Back: "Excreted into bile → gallbladder → intestines"
+    tags: ["bilirubin-metabolism", "liver", "subject:paediatrics-neonatal"]
+  - guid: "bilmet004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What are the two products of bilirubin deconjugation in the intestine?"
+      Back: "Urobilinogen (urinary excretion) and stercobilin (faecal excretion)"
+    tags: ["bilirubin-metabolism", "intestine", "subject:paediatrics-neonatal"]
+  - guid: "bilmet005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is the name of the pathway by which unconjugated bilirubin is reabsorbed back to the liver?"
+      Back: "Enterohepatic circulation"
+    tags: ["bilirubin-metabolism", "intestine", "subject:paediatrics-neonatal"]
+  - guid: "danger001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (1): family history"
+      Back: "Family history of significant haemolytic disease"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "danger002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (2): timing"
+      Back: "Onset in first 24 hours"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "danger003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (3): timing"
+      Back: "Onset after 3 days of life"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "danger004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (4)"
+      Back: "Vomiting"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "danger005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (5)"
+      Back: "Lethargy"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "danger006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (6)"
+      Back: "Poor feeding"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "danger007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (7)"
+      Back: "Fever"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "danger008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (8)"
+      Back: "High pitched cry"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "danger009abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (9)"
+      Back: "Dark urine"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "danger010abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Danger sign in jaundiced infants (10)"
+      Back: "Light (pale) stool"
+    tags: ["danger-signs", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "physjau001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define physiological jaundice"
+      Back: "Raised unconjugated bilirubin in the first week of life with BR <220 µmol/ℓ"
+    tags: ["physiological-jaundice", "jaundice", "subject:paediatrics-neonatal"]
+  - guid: "physjau002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of physiological jaundice (1)"
+      Back: "Increased red blood cell breakdown"
+    tags: ["physiological-jaundice", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "physjau003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of physiological jaundice (2)"
+      Back: "Defective uptake, conjugation, and excretion of bilirubin"
+    tags: ["physiological-jaundice", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "physjau004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of physiological jaundice (3)"
+      Back: "Inadequate hepatic perfusion"
+    tags: ["physiological-jaundice", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "physjau005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of physiological jaundice (4)"
+      Back: "Increased enterohepatic circulation of bilirubin"
+    tags: ["physiological-jaundice", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "cause35001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (3-5 days) (1)"
+      Back: "Blood group incompatibility"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause35002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (3-5 days) (2)"
+      Back: "Bleeding and bruising"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause35003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (3-5 days) (3)"
+      Back: "Physiological"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause35004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (3-5 days) (4)"
+      Back: "Infection (e.g. intrauterine, acquired)"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause35005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (3-5 days) (5)"
+      Back: "Immaturity"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause35006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (3-5 days) (6)"
+      Back: "Maternal Diabetes"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause57001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (5-7 days) (1)"
+      Back: "Infections (UTI, gram-negative sepsis)"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause57002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (5-7 days) (2)"
+      Back: "Neonatal Hepatitis Syndrome"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause57003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (5-7 days) (3)"
+      Back: "Metabolic disturbances (e.g. galactosaemia)"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause57004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (5-7 days) (4)"
+      Back: "Endocrine (e.g. hypothyroidism)"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause57005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (5-7 days) (5)"
+      Back: "Miscellaneous (e.g. Downs syndrome)"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "cause57006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of jaundice in first week (5-7 days) (6)"
+      Back: "Biliary atresia"
+    tags: ["jaundice-etiology", "causes", "subject:paediatrics-neonatal"]
+  - guid: "kernict001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is kernicterus?"
+      Back: "Yellow staining of basal ganglia and hippocampus; bilirubin encephalopathy (autopsy diagnosis)"
+    tags: ["kernicterus", "bilirubin-toxicity", "subject:paediatrics-neonatal"]
+  - guid: "kernict002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Explain the pathophysiology of kernicterus"
+      Back: "High free bilirubin crosses the blood-brain barrier (area with high blood flow and high metabolic rates) → bilirubin toxicity"
+    tags: ["kernicterus", "bilirubin-toxicity", "subject:paediatrics-neonatal"]
+  - guid: "kernict003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Risk factor for kernicterus (1)"
+      Back: "Asphyxia"
+    tags: ["kernicterus", "risk-factors", "subject:paediatrics-neonatal"]
+  - guid: "kernict004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Risk factor for kernicterus (2)"
+      Back: "Sepsis"
+    tags: ["kernicterus", "risk-factors", "subject:paediatrics-neonatal"]
+  - guid: "kernict005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Risk factor for kernicterus (3)"
+      Back: "Acidosis"
+    tags: ["kernicterus", "risk-factors", "subject:paediatrics-neonatal"]
+  - guid: "kernict006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Risk factor for kernicterus (4)"
+      Back: "Hypoglycaemia"
+    tags: ["kernicterus", "risk-factors", "subject:paediatrics-neonatal"]
+  - guid: "kernict007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Risk factor for kernicterus (5)"
+      Back: "Respiratory Distress Syndrome (RDS)"
+    tags: ["kernicterus", "risk-factors", "subject:paediatrics-neonatal"]
+  - guid: "kernict008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Early sign of kernicterus (1)"
+      Back: "Poor feeding"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict009abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Early sign of kernicterus (2)"
+      Back: "Irritability"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict010abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Early sign of kernicterus (3)"
+      Back: "Temperature instability"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict011abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Early sign of kernicterus (4)"
+      Back: "Cycling movements"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict012abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Progressive sign of kernicterus (1)"
+      Back: "Opisthotonus"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict013abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Progressive sign of kernicterus (2)"
+      Back: "Crossed extension of legs"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict014abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Progressive sign of kernicterus (3)"
+      Back: "High pitched cry"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict015abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Progressive sign of kernicterus (4)"
+      Back: "Setting sun eyes (downward deviation of eyes)"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict016abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Terminal sign of kernicterus (1)"
+      Back: "Gastric haemorrhage"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict017abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Terminal sign of kernicterus (2)"
+      Back: "Pulmonary haemorrhage"
+    tags: ["kernicterus-signs", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "kernict018abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Long-term complication of kernicterus (1)"
+      Back: "Hypotonia"
+    tags: ["kernicterus-complications", "sequelae", "subject:paediatrics-neonatal"]
+  - guid: "kernict019abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Long-term complication of kernicterus (2)"
+      Back: "Developmental delay"
+    tags: ["kernicterus-complications", "sequelae", "subject:paediatrics-neonatal"]
+  - guid: "kernict020abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Long-term complication of kernicterus (3)"
+      Back: "Choreoathetosis"
+    tags: ["kernicterus-complications", "sequelae", "subject:paediatrics-neonatal"]
+  - guid: "kernict021abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Long-term complication of kernicterus (4)"
+      Back: "Intellectual impairment"
+    tags: ["kernicterus-complications", "sequelae", "subject:paediatrics-neonatal"]
+  - guid: "kernict022abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Long-term complication of kernicterus (5)"
+      Back: "High tone deafness"
+    tags: ["kernicterus-complications", "sequelae", "subject:paediatrics-neonatal"]
+  - guid: "kernict023abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Long-term complication of kernicterus (6)"
+      Back: "Dental dysplasia"
+    tags: ["kernicterus-complications", "sequelae", "subject:paediatrics-neonatal"]
+  - guid: "kernict024abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Long-term complication of kernicterus (7)"
+      Back: "Spastic cerebral palsy"
+    tags: ["kernicterus-complications", "sequelae", "subject:paediatrics-neonatal"]
+  - guid: "kernict025abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Long-term complication of kernicterus (8)"
+      Back: "Clumsiness"
+    tags: ["kernicterus-complications", "sequelae", "subject:paediatrics-neonatal"]
+  - guid: "kernict026abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "How does kernicterus present in preterm infants?"
+      Back: "Jaundice with fisting, increased tone, and apnoea"
+    tags: ["kernicterus", "preterm", "subject:paediatrics-neonatal"]
+  - guid: "rhdis001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "How many rhesus antigens exist and what are they?"
+      Back: "3 antigens: C, D, E"
+    tags: ["rh-disease", "immunology", "subject:paediatrics-neonatal"]
+  - guid: "rhdis002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What defines Rh negative blood type?"
+      Back: "Absence of D antigen (denoted d)"
+    tags: ["rh-disease", "immunology", "subject:paediatrics-neonatal"]
+  - guid: "rhdis003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "First step in Rh disease pathogenesis"
+      Back: "Fetal D+ cells cross placenta into Rh- mother circulation"
+    tags: ["rh-disease", "pathogenesis", "subject:paediatrics-neonatal"]
+  - guid: "rhdis004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What does the Rh- mother's blood do when exposed to D antigen?"
+      Back: "Produces antibodies to the D antigen"
+    tags: ["rh-disease", "pathogenesis", "subject:paediatrics-neonatal"]
+  - guid: "rhdis005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What happens when maternal Rh antibodies cross back to the fetus?"
+      Back: "Haemolysis of fetal red blood cells"
+    tags: ["rh-disease", "pathogenesis", "subject:paediatrics-neonatal"]
+  - guid: "rhdis006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What determines the severity of Rh disease?"
+      Back: "Parity and the stage at which antibody crosses the placenta (earlier crossing = more severe disease)"
+    tags: ["rh-disease", "severity", "subject:paediatrics-neonatal"]
+  - guid: "rhdis007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Clinical feature of Rh disease (1)"
+      Back: "Early onset jaundice"
+    tags: ["rh-disease", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "rhdis008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Clinical feature of Rh disease (2)"
+      Back: "Anaemia"
+    tags: ["rh-disease", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "rhdis009abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Clinical feature of Rh disease (3)"
+      Back: "Hepatosplenomegaly (HSM)"
+    tags: ["rh-disease", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "rhdis010abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Clinical feature of Rh disease (4)"
+      Back: "Oedema"
+    tags: ["rh-disease", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "rhdis011abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Clinical feature of Rh disease (5)"
+      Back: "Hypoproteinaemia"
+    tags: ["rh-disease", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "rhdis012abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Clinical feature of Rh disease (6)"
+      Back: "Cardiac failure"
+    tags: ["rh-disease", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "rhdis013abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Clinical feature of Rh disease (7)"
+      Back: "Ascites (hydrops fetalis)"
+    tags: ["rh-disease", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "rhprev001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of increased Rh sensitisation (1)"
+      Back: "Abortion"
+    tags: ["rh-disease", "prevention", "subject:paediatrics-neonatal"]
+  - guid: "rhprev002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of increased Rh sensitisation (2)"
+      Back: "Amniocentesis"
+    tags: ["rh-disease", "prevention", "subject:paediatrics-neonatal"]
+  - guid: "rhprev003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of increased Rh sensitisation (3)"
+      Back: "External cephalic version (ECV)"
+    tags: ["rh-disease", "prevention", "subject:paediatrics-neonatal"]
+  - guid: "rhprev004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "First step in Rh disease prevention"
+      Back: "Check Rh- women for antibody"
+    tags: ["rh-disease", "prevention", "subject:paediatrics-neonatal"]
+  - guid: "rhprev005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is given to prevent Rh sensitisation after procedures?"
+      Back: "Anti-D (Rh-hyperimmune gammaglobulin)"
+    tags: ["rh-disease", "prevention", "subject:paediatrics-neonatal"]
+  - guid: "rhprev006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Within what timeframe must anti-D be given?"
+      Back: "Within 48 hours of procedure"
+    tags: ["rh-disease", "prevention", "subject:paediatrics-neonatal"]
+  - guid: "rhprev007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "How does anti-D prevent Rh sensitisation?"
+      Back: "Binds to fetal cells and facilitates their rapid removal from maternal circulation"
+    tags: ["rh-disease", "prevention", "subject:paediatrics-neonatal"]
+  - guid: "abo001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "How does ABO incompatibility compare to Rh disease in frequency?"
+      Back: "More common than Rh disease"
+    tags: ["abo-incompatibility", "immunology", "subject:paediatrics-neonatal"]
+  - guid: "abo002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is the typical Coombs test result in ABO incompatibility?"
+      Back: "Often negative"
+    tags: ["abo-incompatibility", "immunology", "subject:paediatrics-neonatal"]
+  - guid: "abo003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "ABO incompatibility: what are the maternal and fetal blood group combinations?"
+      Back: "Mother: O; Baby: A or B"
+    tags: ["abo-incompatibility", "immunology", "subject:paediatrics-neonatal"]
+  - guid: "abo004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Are anaemia and hepatosplenomegaly (HSM) common in ABO incompatibility?"
+      Back: "No, anaemia and HSM are unusual in ABO incompatibility"
+    tags: ["abo-incompatibility", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "abo005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What factors aggravate bilirubin levels in ABO incompatibility?"
+      Back: "Low birth weight (LBW), haemorrhage, infection"
+    tags: ["abo-incompatibility", "clinical-features", "subject:paediatrics-neonatal"]
+  - guid: "nnjmgmt001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is the primary aim of neonatal jaundice management?"
+      Back: "Prevent kernicterus"
+    tags: ["jaundice-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "nnjmgmt002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "First step in neonatal jaundice management"
+      Back: "Daily examination to detect jaundice early"
+    tags: ["jaundice-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "nnjmgmt003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Second step in neonatal jaundice management"
+      Back: "Investigate according to causes"
+    tags: ["jaundice-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "nnjmgmt004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What four parameters must be checked in jaundice management?"
+      Back: "Formal Total Serum Bilirubin (TSB), Group and Cross (G+C), fluids, feeds"
+    tags: ["jaundice-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "nnjmgmt005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is the dose of 20% albumin given IV to enhance bilirubin binding?"
+      Back: "5 ml/kg IV"
+    tags: ["jaundice-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "nnjmgmt006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "How should maintenance fluids be managed in jaundice?"
+      Back: "Ensure correct maintenance fluids, intravenously and/or orally"
+    tags: ["jaundice-management", "fluids", "subject:paediatrics-neonatal"]
+  - guid: "nnjmgmt007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "How should feeds be managed in severe jaundice?"
+      Back: "Encourage nasogastric tube (NGT) feeds or feeds under phototherapy light to maximize exposure and limit breastfeeding time"
+    tags: ["jaundice-management", "phototherapy", "subject:paediatrics-neonatal"]
+  - guid: "phototh001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is the principle of phototherapy in neonatal jaundice?"
+      Back: "Maximize phototherapy exposure time"
+    tags: ["jaundice-management", "phototherapy", "subject:paediatrics-neonatal"]
+  - guid: "fluid001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is the basal fluid requirement for neonates?"
+      Back: "60–150 ml/kg/day (preterm babies have greater losses)"
+    tags: ["fluid-management", "electrolytes", "subject:paediatrics-neonatal"]
+  - guid: "fluid002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of increased fluid loss in neonates (1)"
+      Back: "Open incubators"
+    tags: ["fluid-management", "losses", "subject:paediatrics-neonatal"]
+  - guid: "fluid003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of increased fluid loss in neonates (2)"
+      Back: "Phototherapy lights"
+    tags: ["fluid-management", "losses", "subject:paediatrics-neonatal"]
+  - guid: "fluid004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of increased fluid loss in neonates (3)"
+      Back: "Radiant heaters"
+    tags: ["fluid-management", "losses", "subject:paediatrics-neonatal"]
+  - guid: "fluid005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of higher fluid requirements (1)"
+      Back: "Osmotic diuresis"
+    tags: ["fluid-management", "requirements", "subject:paediatrics-neonatal"]
+  - guid: "fluid006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of higher fluid requirements (2)"
+      Back: "Excess gut loss"
+    tags: ["fluid-management", "requirements", "subject:paediatrics-neonatal"]
+  - guid: "fluid007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of higher fluid requirements (3)"
+      Back: "Diuretic therapy"
+    tags: ["fluid-management", "requirements", "subject:paediatrics-neonatal"]
+  - guid: "fluid008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of fluid overload (1)"
+      Back: "Excessive parenteral fluids"
+    tags: ["fluid-management", "overload", "subject:paediatrics-neonatal"]
+  - guid: "fluid009abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of fluid overload (2)"
+      Back: "Repeated clearing of arterial lines"
+    tags: ["fluid-management", "overload", "subject:paediatrics-neonatal"]
+  - guid: "fluid010abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of fluid overload (3)"
+      Back: "Bolus doses of drugs"
+    tags: ["fluid-management", "overload", "subject:paediatrics-neonatal"]
+  - guid: "fluid011abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Consequence of fluid overload (1)"
+      Back: "Cardiac failure"
+    tags: ["fluid-management", "overload", "subject:paediatrics-neonatal"]
+  - guid: "fluid012abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Consequence of fluid overload (2)"
+      Back: "Pulmonary oedema"
+    tags: ["fluid-management", "overload", "subject:paediatrics-neonatal"]
+  - guid: "fluid013abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Consequence of fluid overload (3)"
+      Back: "Patent ductus arteriosus (PDA)"
+    tags: ["fluid-management", "overload", "subject:paediatrics-neonatal"]
+  - guid: "fluid014abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Consequence of fluid overload (4)"
+      Back: "Necrotizing enterocolitis (NEC)"
+    tags: ["fluid-management", "overload", "subject:paediatrics-neonatal"]
+  - guid: "fluid015abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Consequence of fluid overload (5)"
+      Back: "Electrolyte disturbances (e.g. low sodium)"
+    tags: ["fluid-management", "overload", "subject:paediatrics-neonatal"]
+  - guid: "fluid016abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Which babies are prone to fluid retention (1)?"
+      Back: "Asphyxiated babies"
+    tags: ["fluid-management", "risk-groups", "subject:paediatrics-neonatal"]
+  - guid: "fluid017abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Which babies are prone to fluid retention (2)?"
+      Back: "Babies with poor renal function"
+    tags: ["fluid-management", "risk-groups", "subject:paediatrics-neonatal"]
+  - guid: "fluid018abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Which babies are prone to fluid retention (3)?"
+      Back: "Babies with leaky capillaries"
+    tags: ["fluid-management", "risk-groups", "subject:paediatrics-neonatal"]
+  - guid: "hypogly001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define hypoglycaemia in neonates"
+      Back: "Blood glucose <2.5 mmol/ℓ (confirmed with second sample)"
+    tags: ["hypoglycaemia", "blood-glucose", "subject:paediatrics-neonatal"]
+  - guid: "hypogly002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypoglycaemia (1)"
+      Back: "Decreased glucose intake"
+    tags: ["hypoglycaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypogly003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypoglycaemia (2)"
+      Back: "Inadequate or depleted glycogen and fat stores"
+    tags: ["hypoglycaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypogly004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypoglycaemia (3)"
+      Back: "Hyperinsulinism (Infant of Diabetic Mother)"
+    tags: ["hypoglycaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypogly005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypoglycaemia (4)"
+      Back: "Increased consumption (hypothermia, asphyxia, RDS, infection)"
+    tags: ["hypoglycaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypogly006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypoglycaemia (1)"
+      Back: "Jitteriness"
+    tags: ["hypoglycaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypogly007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypoglycaemia (2)"
+      Back: "Lethargy"
+    tags: ["hypoglycaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypogly008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypoglycaemia (3)"
+      Back: "Poor sucking"
+    tags: ["hypoglycaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypogly009abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypoglycaemia (4)"
+      Back: "Convulsions"
+    tags: ["hypoglycaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypogly010abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypoglycaemia (5)"
+      Back: "Hypothermia"
+    tags: ["hypoglycaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypogly011abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypoglycaemia (6)"
+      Back: "Apnoea"
+    tags: ["hypoglycaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypogly012abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "How should hypoglycaemia be monitored?"
+      Back: "Check glucose meter within 1 hour of birth in at-risk babies, then hourly until glucose >3 mmol/ℓ"
+    tags: ["hypoglycaemia", "monitoring", "subject:paediatrics-neonatal"]
+  - guid: "hypogly013abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypoglycaemia management step 1"
+      Back: "Feed all babies within 30 minutes after delivery"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly014abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypoglycaemia management step 2"
+      Back: "Frequent breastfeeds 1–2 hourly"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly015abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypoglycaemia management step 3"
+      Back: "Expressed breast milk (EBM) via nasogastric tube (NGT) if poor sucking"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly016abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypoglycaemia management step 4"
+      Back: "Check glucose 30 minutes after completion of feed"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly017abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypoglycaemia management step 5"
+      Back: "If glucose remains <2.5 mmol/ℓ, establish IV drip"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly018abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypoglycaemia management step 6"
+      Back: "Give 10% dextrose as neonatal normal saline at 3–5 ml/kg bolus, then maintenance intravenous fluids"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly019abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypoglycaemia management step 7"
+      Back: "Continue breastfeeds"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly020abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Advanced hypoglycaemia management step 1"
+      Back: "Check glucose meter within 1 hour of birth for all at-risk newborns"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly021abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Advanced hypoglycaemia management step 2"
+      Back: "Check urine dipstix for glucosuria"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly022abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Advanced hypoglycaemia management step 3"
+      Back: "If normoglycaemia not attained, consider 15% glucose solution (central line administration required)"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly023abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Advanced hypoglycaemia management step 4"
+      Back: "Drugs (Hydrocortisone, Glucagon) for persistent hypoglycaemia"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypogly024abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Advanced hypoglycaemia management step 5"
+      Back: "Appropriate investigations to determine aetiology in prolonged hypoglycaemia"
+    tags: ["hypoglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypergl001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define hyperglycaemia in neonates"
+      Back: "Blood glucose >10 mmol/ℓ"
+    tags: ["hyperglycaemia", "blood-glucose", "subject:paediatrics-neonatal"]
+  - guid: "hypergl002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperglycaemia (1)"
+      Back: "Extreme prematurity"
+    tags: ["hyperglycaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypergl003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperglycaemia (2)"
+      Back: "Stress response (e.g. intraventricular haemorrhage)"
+    tags: ["hyperglycaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypergl004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperglycaemia (3)"
+      Back: "Iatrogenic causes (e.g. poorly controlled intravenous fluids)"
+    tags: ["hyperglycaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypergl005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperglycaemia (4)"
+      Back: "Sepsis"
+    tags: ["hyperglycaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypergl006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperglycaemia (5)"
+      Back: "Asphyxia"
+    tags: ["hyperglycaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypergl007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperglycaemia management step 1"
+      Back: "Ensure correct drip rate and monitor glucosuria"
+    tags: ["hyperglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypergl008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperglycaemia management step 2"
+      Back: "Screen for intraventricular haemorrhage (IVH)"
+    tags: ["hyperglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypergl009abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperglycaemia management step 3"
+      Back: "Change to 5% dextrose cocktail and check glucose meter hourly"
+    tags: ["hyperglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypergl010abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperglycaemia management step 4"
+      Back: "If glucose remains high, change to 1/2 saline"
+    tags: ["hyperglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypergl011abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperglycaemia management step 5"
+      Back: "Obtain bloods: insulin, cortisol, glucose, growth hormone, liver function tests, thyroid function tests"
+    tags: ["hyperglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypergl012abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperglycaemia management step 6: insulin preparation"
+      Back: "Mix 2 iu Actrapid in 20 ml 1/2 saline"
+    tags: ["hyperglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypergl013abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperglycaemia management step 7: insulin dosing"
+      Back: "Give 0.05 iu/kg stat, then commence infusion at 0.05 iu/kg"
+    tags: ["hyperglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypergl014abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperglycaemia management step 8"
+      Back: "Once glucose <12 mmol/ℓ, change to 5% glucose cocktail"
+    tags: ["hyperglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypergl015abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperglycaemia management step 9"
+      Back: "Glucose <10 mmol/ℓ: wean insulin and change to neonatal normal saline"
+    tags: ["hyperglycaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "idm001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "How does pregnancy glycaemic control affect IDM (Infant of Diabetic Mother) complications?"
+      Back: "Good diabetic control during pregnancy decreases risk of most complications but does NOT reduce malformation incidence"
+    tags: ["idm", "infant-diabetic-mother", "subject:paediatrics-neonatal"]
+  - guid: "idm002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What causes IDM complications?"
+      Back: "Large size of baby and immaturity of gestational age"
+    tags: ["idm", "pathology", "subject:paediatrics-neonatal"]
+  - guid: "idm003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM birth injury (1)"
+      Back: "Brachial plexus injury (BPI)"
+    tags: ["idm-complications", "birth-injuries", "subject:paediatrics-neonatal"]
+  - guid: "idm004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM birth injury (2)"
+      Back: "Humerus fracture secondary to shoulder dystocia"
+    tags: ["idm-complications", "birth-injuries", "subject:paediatrics-neonatal"]
+  - guid: "idm005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM metabolic complication (1)"
+      Back: "Hypoglycaemia"
+    tags: ["idm-complications", "metabolic", "subject:paediatrics-neonatal"]
+  - guid: "idm006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM metabolic complication (2)"
+      Back: "Poor feeding and sucking"
+    tags: ["idm-complications", "metabolic", "subject:paediatrics-neonatal"]
+  - guid: "idm007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM metabolic complication (3)"
+      Back: "Jaundice"
+    tags: ["idm-complications", "metabolic", "subject:paediatrics-neonatal"]
+  - guid: "idm008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM metabolic complication (4)"
+      Back: "Hypocalcaemia"
+    tags: ["idm-complications", "metabolic", "subject:paediatrics-neonatal"]
+  - guid: "idm009abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM metabolic complication (5)"
+      Back: "Respiratory Distress Syndrome (RDS)"
+    tags: ["idm-complications", "metabolic", "subject:paediatrics-neonatal"]
+  - guid: "idm010abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM metabolic complication (6)"
+      Back: "Polycythaemia"
+    tags: ["idm-complications", "metabolic", "subject:paediatrics-neonatal"]
+  - guid: "idm011abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM cardiac/gastrointestinal/renal complication (1)"
+      Back: "Cardiomyopathy"
+    tags: ["idm-complications", "systemic", "subject:paediatrics-neonatal"]
+  - guid: "idm012abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM cardiac/gastrointestinal/renal complication (2)"
+      Back: "Small left colon syndrome (transient obstruction)"
+    tags: ["idm-complications", "systemic", "subject:paediatrics-neonatal"]
+  - guid: "idm013abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM cardiac/gastrointestinal/renal complication (3)"
+      Back: "Renal vein thrombosis (presenting with haematuria)"
+    tags: ["idm-complications", "systemic", "subject:paediatrics-neonatal"]
+  - guid: "idm014abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM congenital malformation (1)"
+      Back: "Neural tube defects (NTD)"
+    tags: ["idm-complications", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "idm015abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM congenital malformation (2)"
+      Back: "Vertebral defects"
+    tags: ["idm-complications", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "idm016abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM congenital malformation (3)"
+      Back: "Sacral agenesis"
+    tags: ["idm-complications", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "idm017abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "IDM congenital malformation (4)"
+      Back: "Cardiac defects (VSD, TGV, COA)"
+    tags: ["idm-complications", "congenital", "subject:paediatrics-neonatal"]
+  - guid: "hypoca001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define hypocalcaemia in term infants"
+      Back: "Serum calcium <2 mmol/ℓ (Normal: 2.1–2.7 mmol/ℓ)"
+    tags: ["hypocalcaemia", "calcium", "subject:paediatrics-neonatal"]
+  - guid: "hypoca002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define hypocalcaemia in preterm infants"
+      Back: "Serum calcium <1.8 mmol/ℓ (Normal: 1.9–2.8 mmol/ℓ)"
+    tags: ["hypocalcaemia", "calcium", "subject:paediatrics-neonatal"]
+  - guid: "hypoca003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is the incidence of hypocalcaemia in neonates?"
+      Back: "About 1/3 of low birth weight infants (LBWI) and 50% of IDM within 3 days of life"
+    tags: ["hypocalcaemia", "epidemiology", "subject:paediatrics-neonatal"]
+  - guid: "hypoca004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "When does hypocalcaemia occur in the first week vs after first week?"
+      Back: "First week: prems calcium deficient; After 1st week: formula-fed infants with high phosphate"
+    tags: ["hypocalcaemia", "timing", "subject:paediatrics-neonatal"]
+  - guid: "hypoca005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia cause (1)"
+      Back: "Relative hypoparathyroidism (suppression of fetal parathyroid by transferred maternal parathyroid hormone; improves within days after birth)"
+    tags: ["hypocalcaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypoca006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia cause (2)"
+      Back: "Preterm infants: calcium deficient"
+    tags: ["hypocalcaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypoca007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia cause (3)"
+      Back: "Asphyxia, correction of acidosis, endotracheal feeding"
+    tags: ["hypocalcaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypoca008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia clinical feature: asymptomatic"
+      Back: "Asymptomatic"
+    tags: ["hypocalcaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypoca009abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia clinical feature (2)"
+      Back: "Twitching"
+    tags: ["hypocalcaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypoca010abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia clinical feature (3)"
+      Back: "Jitteriness"
+    tags: ["hypocalcaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypoca011abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia clinical feature (4)"
+      Back: "Seizures"
+    tags: ["hypocalcaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypoca012abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia clinical feature (5)"
+      Back: "High pitched cry"
+    tags: ["hypocalcaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypoca013abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia clinical feature: electrocardiogram"
+      Back: "Electrocardiogram shows prolonged Q-T segment"
+    tags: ["hypocalcaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypoca014abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia treatment (1)"
+      Back: "3 ml of 10% Calcium Gluconate per 100 ml neonatal normal saline"
+    tags: ["hypocalcaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypoca015abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia treatment (2): oral for asymptomatic"
+      Back: "Calcium Gluconate or Lactate 1–3 g po daily"
+    tags: ["hypocalcaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypoca016abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hypocalcaemia treatment (3): intravenous direct"
+      Back: "Calcium Gluconate 10% 2 ml/kg IV diluted, given slowly"
+    tags: ["hypocalcaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypomagn001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define hypomagnesaemia"
+      Back: "Serum magnesium <0.62 mmol/ℓ (Normal: 0.7–0.9 mmol/ℓ)"
+    tags: ["hypomagnesaemia", "magnesium", "subject:paediatrics-neonatal"]
+  - guid: "hypomagn002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "High risk group for hypomagnesaemia (1)"
+      Back: "IDM (Infant of Diabetic Mother)"
+    tags: ["hypomagnesaemia", "risk-groups", "subject:paediatrics-neonatal"]
+  - guid: "hypomagn003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "High risk group for hypomagnesaemia (2)"
+      Back: "SGA (Small for Gestational Age)"
+    tags: ["hypomagnesaemia", "risk-groups", "subject:paediatrics-neonatal"]
+  - guid: "hypomagn004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "High risk group for hypomagnesaemia (3)"
+      Back: "Exchange transfusion"
+    tags: ["hypomagnesaemia", "risk-groups", "subject:paediatrics-neonatal"]
+  - guid: "hypomagn005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What are the clinical signs of hypomagnesaemia?"
+      Back: "Similar to hypocalcaemia"
+    tags: ["hypomagnesaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypomagn006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Treatment of hypomagnesaemia"
+      Back: "0.1 MgSO₄ 50% IV/IM 12 hourly for 3 doses"
+    tags: ["hypomagnesaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hypermagn001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "What is the cause of hypermagnesaemia in neonates?"
+      Back: "Eclamptic mothers are treated with magnesium sulfate"
+    tags: ["hypermagnesaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypermagn002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypermagnesaemia (1)"
+      Back: "Central nervous system depression"
+    tags: ["hypermagnesaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypermagn003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypermagnesaemia (2)"
+      Back: "Apnoea"
+    tags: ["hypermagnesaemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypermagn004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Treatment of hypermagnesaemia"
+      Back: "Supportive care"
+    tags: ["hypermagnesaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hyperna001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define hypernatraemia"
+      Back: "Serum sodium >150 mmol/ℓ"
+    tags: ["hypernatraemia", "sodium", "subject:paediatrics-neonatal"]
+  - guid: "hyperna002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Explain the pathophysiology of hypernatraemia"
+      Back: "Shift of water from brain tissue → brain cell shrinkage, pressure differences → capillary dilatation and rupture, cerebral venous thrombosis and haemorrhage"
+    tags: ["hypernatraemia", "pathophysiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperna003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypernatraemia (1)"
+      Back: "Insufficient fluid intake"
+    tags: ["hypernatraemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperna004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypernatraemia (2)"
+      Back: "Dehydration secondary to excessive insensible water loss (phototherapy lamps, radiant heaters)"
+    tags: ["hypernatraemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperna005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypernatraemia (1)"
+      Back: "Lethargy"
+    tags: ["hypernatraemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hyperna006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypernatraemia (2)"
+      Back: "Irritability"
+    tags: ["hypernatraemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hyperna007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hypernatraemia (3)"
+      Back: "Convulsions"
+    tags: ["hypernatraemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hyperna008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Treatment of hypernatraemia"
+      Back: "Lower serum sodium over 24–48 hours to prevent cerebral oedema"
+    tags: ["hypernatraemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hyponatrem001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define hyponatraemia"
+      Back: "Serum sodium <125 mmol/ℓ"
+    tags: ["hyponatraemia", "sodium", "subject:paediatrics-neonatal"]
+  - guid: "hyponatrem002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Explain the pathophysiology of hyponatraemia"
+      Back: "Water is drawn into brain cells → central nervous system injury"
+    tags: ["hyponatraemia", "pathophysiology", "subject:paediatrics-neonatal"]
+  - guid: "hyponatrem003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyponatraemia (1)"
+      Back: "Very low birth weight (VLBW) <32 weeks gestation unable to conserve sodium (high urinary loss)"
+    tags: ["hyponatraemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyponatrem004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyponatraemia (2)"
+      Back: "RDS + asphyxia → SIADH → loss of sodium in urine, water intoxication, diarrhoea"
+    tags: ["hyponatraemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyponatrem005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hyponatraemia (1)"
+      Back: "Lethargy"
+    tags: ["hyponatraemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hyponatrem006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hyponatraemia (2)"
+      Back: "Poor feeding"
+    tags: ["hyponatraemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hyponatrem007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hyponatraemia (3)"
+      Back: "Apnoea"
+    tags: ["hyponatraemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hyponatrem008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Sign of hyponatraemia (4)"
+      Back: "Shock"
+    tags: ["hyponatraemia", "clinical-signs", "subject:paediatrics-neonatal"]
+  - guid: "hypoka001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define hypokalaemia"
+      Back: "Serum potassium <3 mmol/ℓ"
+    tags: ["hypokalaemia", "potassium", "subject:paediatrics-neonatal"]
+  - guid: "hypoka002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypokalaemia (1)"
+      Back: "Poor intake"
+    tags: ["hypokalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypoka003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypokalaemia (2)"
+      Back: "Alkalosis"
+    tags: ["hypokalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypoka004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypokalaemia (3)"
+      Back: "Diarrhoea"
+    tags: ["hypokalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hypoka005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hypokalaemia (4)"
+      Back: "Diuretics"
+    tags: ["hypokalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperka001abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Define hyperkalaemia"
+      Back: "Serum potassium >7 mmol/ℓ"
+    tags: ["hyperkalaemia", "potassium", "subject:paediatrics-neonatal"]
+  - guid: "hyperka002abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Electrocardiogram sign of hyperkalaemia (1)"
+      Back: "Peaked T waves"
+    tags: ["hyperkalaemia", "ecg-changes", "subject:paediatrics-neonatal"]
+  - guid: "hyperka003abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Electrocardiogram sign of hyperkalaemia (2)"
+      Back: "Prolonged PR interval"
+    tags: ["hyperkalaemia", "ecg-changes", "subject:paediatrics-neonatal"]
+  - guid: "hyperka004abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Electrocardiogram sign of hyperkalaemia (3)"
+      Back: "Absent P waves"
+    tags: ["hyperkalaemia", "ecg-changes", "subject:paediatrics-neonatal"]
+  - guid: "hyperka005abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Electrocardiogram sign of hyperkalaemia (4)"
+      Back: "Arrhythmias"
+    tags: ["hyperkalaemia", "ecg-changes", "subject:paediatrics-neonatal"]
+  - guid: "hyperka006abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperkalaemia (1)"
+      Back: "Severe catabolic state"
+    tags: ["hyperkalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperka007abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperkalaemia (2)"
+      Back: "Acute renal failure"
+    tags: ["hyperkalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperka008abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperkalaemia (3)"
+      Back: "Hypoxia"
+    tags: ["hyperkalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperka009abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperkalaemia (4)"
+      Back: "Shock"
+    tags: ["hyperkalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperka010abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperkalaemia (5)"
+      Back: "Acidosis"
+    tags: ["hyperkalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperka011abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Cause of hyperkalaemia (6)"
+      Back: "Congenital Adrenal Hyperplasia (CAH)"
+    tags: ["hyperkalaemia", "etiology", "subject:paediatrics-neonatal"]
+  - guid: "hyperka012abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperkalaemia management step 1"
+      Back: "Electrocardiogram monitoring"
+    tags: ["hyperkalaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hyperka013abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperkalaemia management step 2"
+      Back: "Calcium Gluconate 10% 1 ml/kg given slowly"
+    tags: ["hyperkalaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hyperka014abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperkalaemia management step 3"
+      Back: "Sodium bicarbonate (Sodabic) 2 mmol/kg (to correct acidosis)"
+    tags: ["hyperkalaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hyperka015abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperkalaemia management step 4"
+      Back: "Salbutamol 4 mcg/kg IV bolus"
+    tags: ["hyperkalaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hyperka016abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperkalaemia management step 5"
+      Back: "Glucose and Insulin"
+    tags: ["hyperkalaemia-management", "treatment", "subject:paediatrics-neonatal"]
+  - guid: "hyperka017abc"
+    noteType: Basic
+    deck: "Corpus::Paediatrics-Neonatal::NEONATAL JAUNDICE"
+    fields:
+      Front: "Hyperkalaemia management step 6"
+      Back: "Kayexalate 1 g/kg/day po/pr"
+    tags: ["hyperkalaemia-management", "treatment", "subject:paediatrics-neonatal"]
