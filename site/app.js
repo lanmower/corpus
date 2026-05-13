@@ -206,6 +206,7 @@ let __rendering = false;
 function render() {
     __rendering = true;
     try {
+        window.__lastRenderTs = Date.now();
         stage.innerHTML = '';
         if (!state.manifest) { stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
         const r = state.route;
@@ -1809,7 +1810,7 @@ function renderScheduleConfigPanel() {
     // regenerate button + preview
     const previewWrap = el('div', { class: 'cfg-preview', 'aria-live': 'polite' });
     const regenBtn = el('button', { class: 'run-btn',
-        on: { click: () => { schedule.regenerate({ dueCounts: dueCountsBySubject() }); refreshPreview(); } } }, 'regenerate');
+        on: { click: () => { regenAndPreview(); } } }, 'regenerate');
     panel.append(el('div', { class: 'cfg-row regen-row' }, regenBtn, el('span', { class: 'muted' }, 'tomorrow preview:')));
     panel.append(previewWrap);
 
@@ -1830,7 +1831,17 @@ function renderScheduleConfigPanel() {
     }
 
     function regenAndPreview() {
-        schedule.regenerate({ dueCounts: dueCountsBySubject() });
+        const ticksAll = loadGuideTicks();
+        const casesDone = {};
+        try {
+            const triage = JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}');
+            const sessions = triage.sessions || {};
+            for (const id of Object.keys(sessions)) (casesDone[id] = casesDone[id] || new Set()).add(id);
+        } catch {}
+        schedule.regenerate({
+            dueCounts: dueCountsBySubject(),
+            extras: { ticksAll, shards: state.shards, casesDone }
+        });
         refreshPreview();
     }
 
@@ -2327,6 +2338,8 @@ function registerSW() {
             ch.addEventListener('message', e => {
                 if (e.data?.type === 'schedule:updated') {
                     if (__rendering) return;
+                    // Skip if we rendered very recently (same-tab self-broadcast from a click handler).
+                    if (Date.now() - (window.__lastRenderTs || 0) < 200) return;
                     if (state.route === 'calendar') {
                         // calendar self-updates via schedule.onUpdate; nothing to do
                     } else if (state.route === 'settings') {

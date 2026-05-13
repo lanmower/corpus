@@ -52,6 +52,7 @@ export function loadConfig() {
                 examDate = srsCfg.examDate;
             } catch {}
         }
+        if (!examDate) examDate = DEFAULT_CONFIG.examDate;
         return fillSubjectMaps({
             ...DEFAULT_CONFIG, ...cfg, examDate,
             availability: { ...DEFAULT_CONFIG.availability, ...(cfg.availability || {}) },
@@ -63,6 +64,11 @@ export function loadConfig() {
 
 export function saveConfig(cfg) {
     const merged = { ...loadConfig(), ...cfg };
+    // Guard numeric fields against NaN/junk from inputs.
+    if (!Number.isFinite(merged.pomodoro) || merged.pomodoro < 5) merged.pomodoro = DEFAULT_CONFIG.pomodoro;
+    if (!Number.isFinite(merged.breakLen) || merged.breakLen < 1) merged.breakLen = DEFAULT_CONFIG.breakLen;
+    if (!INTENSITY_FACTOR[merged.intensity]) merged.intensity = DEFAULT_CONFIG.intensity;
+    if (!merged.examDate) merged.examDate = DEFAULT_CONFIG.examDate;
     localStorage.setItem(CFG_KEY, JSON.stringify(merged));
     emit('config');
     return merged;
@@ -77,7 +83,11 @@ export function saveSchedule(s) { localStorage.setItem(KEY, JSON.stringify(s)); 
 
 export function isoDate(d) { return d.toISOString().slice(0, 10); }
 export function addDays(iso, n) { const d = new Date(iso + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return isoDate(d); }
-export function daysBetween(a, b) { return Math.floor((new Date(b + 'T00:00:00Z') - new Date(a + 'T00:00:00Z')) / 86400000); }
+export function daysBetween(a, b) {
+    if (!a || !b) return 30;
+    const d = Math.floor((new Date(b + 'T00:00:00Z') - new Date(a + 'T00:00:00Z')) / 86400000);
+    return Number.isFinite(d) ? d : 30;
+}
 
 export function dayMinutes(cfg, dateIso) {
     const dow = DOW[new Date(dateIso + 'T00:00:00Z').getUTCDay()];
@@ -204,9 +214,10 @@ export function buildDayBlocks(cfg, dateIso, dueCounts, extras = {}) {
 export function regenerate({ today = isoDate(new Date()), dueCounts = {}, horizonDays = null, extras = {} } = {}) {
     const cfg = loadConfig();
     const dl = daysBetween(today, cfg.examDate);
-    const horizon = horizonDays != null ? horizonDays : Math.max(7, Math.min(60, dl + 1));
+    const safeDl = Number.isFinite(dl) ? dl : 30;
+    const horizon = horizonDays != null ? horizonDays : Math.max(7, Math.min(60, safeDl + 1));
     // Pass daysToExam in extras for pace-aware allocation
-    const fullExtras = { ...extras, daysToExam: dl };
+    const fullExtras = { ...extras, daysToExam: safeDl };
     const existing = loadSchedule();
     const lockedById = new Map();
     for (const b of existing.blocks) if (b.locked) lockedById.set(b.id, b);
