@@ -1,4 +1,4 @@
-﻿// corpus — personal med-study notebook. vanilla ESM, no bundler.
+// corpus — personal med-study notebook. vanilla ESM, no bundler.
 import './theme.js';
 import * as srs from './srs.js';
 import * as progress from './progress.js';
@@ -367,14 +367,6 @@ function renderToday() {
     const welcomeEl = renderWelcome();
     if (welcomeEl) stage.append(welcomeEl);
 
-    // Cram banner (only when exam ≤ 14 days)
-    const states = srs.loadStates();
-    const ticks = loadGuideTicks();
-    const rows = buildRows(state.manifest, state.shards, states, ticks);
-    const weakest = computeWeakest(rows);
-    const cramEl = renderCramBanner(weakest);
-    if (cramEl) stage.append(cramEl);
-
     const resumeEl = renderResumeLine();
     if (resumeEl) stage.append(resumeEl);
 
@@ -398,9 +390,7 @@ function renderToday() {
         el('div', { class: 'today-progress-label' }, `${reviewed} / ${goal} reviewed today`)
     ));
 
-    // Details (collapsible)
-    const detailsOpen = localStorage.getItem('corpus.today.details') === '1';
-    const detailsBody = el('div', { class: 'today-details-body' });
+    // Subject-by-subject due breakdown (permanently visible)
     if (due > 0) {
         const dueCounts = dueCountsBySubjectMap();
         const subjectRows = state.manifest.subjects
@@ -414,19 +404,15 @@ function renderToday() {
                         on: { click: () => { state.reviewSubjectFilter = m.subject; resetReviewQueue(); go('review'); } } }, 'review')
                 );
             });
-        if (subjectRows.length) detailsBody.append(el('div', { class: 'today-subject-list' }, ...subjectRows));
+        if (subjectRows.length) stage.append(el('div', { class: 'today-subject-list' }, ...subjectRows));
     }
-    const checklist = renderScheduleChecklist(rows);
-    if (checklist) detailsBody.append(checklist);
-    detailsBody.append(renderMasteryRing());
-    const detailsBox = el('details', { class: 'today-details', ...(detailsOpen ? { open: '' } : {}) },
-        el('summary', { class: 'today-details-summary',
-            on: { click: () => { setTimeout(() => { const open = stage.querySelector('.today-details')?.hasAttribute('open'); localStorage.setItem('corpus.today.details', open ? '1' : '0'); }, 0); } } },
-            'details · subject breakdown · schedule · mastery'),
-        detailsBody);
-    stage.append(detailsBox);
 
-    if (DEBUG) {
+    // Debug panels only with ?debug param
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('debug')) {
+        const states = srs.loadStates();
+        const ticks = loadGuideTicks();
+        const rows = buildRows(state.manifest, state.shards, states, ticks);
         const cases = totalCasesQueued();
         const mins = estReviewMinutes(due);
         stage.append(el('p', { class: 'summary-line' },
@@ -446,7 +432,11 @@ function renderToday() {
         );
         stage.append(chipRow);
 
-        // Recommended cases + 5-day recap behind ?debug
+        const checklist = renderScheduleChecklist(rows);
+        if (checklist) stage.append(checklist);
+        stage.append(renderMasteryRing());
+
+        // Recommended cases + 5-day recap
         const recs = [];
         for (const meta of state.manifest.subjects) {
             const sh = state.shards[meta.subject];
@@ -589,6 +579,12 @@ async function renderSubject() {
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'guide'), `${shard.guide.sections.length} sections`),
         buildChunkedGuide(subj, shard, ticks)
     ) : null;
+    const cardCounts = sectionCardCounts(subj);
+    const sectionsWithCards = [];
+    for (const [lineStr, count] of cardCounts) {
+        const sec = shard.guide?.sections?.find(s => String(s.line) === String(lineStr));
+        if (sec) sectionsWithCards.push({ line: parseInt(lineStr), title: sec.title, count });
+    }
     const cardsDetails = el('div', { class: 'panel cards-panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'flashcards')),
         el('div', { class: 'cards-cta-row' },
@@ -596,7 +592,17 @@ async function renderSubject() {
             el('a', { class: 'chip', href: `#review/${subj}`,
                 on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; resetReviewQueue(); go('review', subj); } } },
                 due ? `review ${due} due →` : 'browse cards →')
-        )
+        ),
+        sectionsWithCards.length > 0 ? el('div', { class: 'cards-section-hint' },
+            el('div', { class: 'hint-label' }, 'from sections:'),
+            ...sectionsWithCards.map(sec => el('button', { class: 'chip', 'aria-label': `review cards from "${sec.title}"`,
+                on: { click: () => {
+                    state.sectionFilter = sec.line;
+                    state.reviewSubjectFilter = subj;
+                    resetReviewQueue();
+                    go('review', subj);
+                } } }, `${sec.title} (${sec.count})`))
+        ) : null
     );
 
     const triageScenarios = shard.triage?.scenarios || [];
@@ -694,7 +700,15 @@ function buildGuideToc(subj, shard, ticks) {
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 } } }, s.title),
-            badgeText ? el('span', { class: 'sec-card-badge' }, badgeText) : null
+            badgeText ? el('span', { class: 'sec-card-badge' }, badgeText) : null,
+            n > 0 ? el('button', { class: 'chip toc-review-btn', 'aria-label': `review ${n} card${n === 1 ? '' : 's'} from this section`,
+                on: { click: e => {
+                    e.preventDefault();
+                    state.sectionFilter = s.line;
+                    state.reviewSubjectFilter = subj;
+                    resetReviewQueue();
+                    go('review', subj);
+                } } }, `review →`) : null
         );
         return row;
     };
@@ -729,7 +743,7 @@ function buildGuideToc(subj, shard, ticks) {
     return panel;
 }
 
-// Build chunked guide — sections grouped with their cards
+// Build chunked guide — sections grouped with their cards. Each section has review affordances.
 function buildChunkedGuide(subj, shard, ticks) {
     const counts = sectionCardCounts(subj);
     const sections = (shard.guide?.sections || []).filter(s => s.level === 2 || s.level === 3);
@@ -780,18 +794,22 @@ function buildChunkedGuide(subj, shard, ticks) {
         const cardCount = secCards.length;
         const anchorId = `g-${slugify(sec.title)}-${sec.line}`;
 
-        const secBody = cardCount
-            ? el('div', { class: 'chunk-section' },
-                el('h3', { id: anchorId, 'data-section-line': sec.line }, sec.title),
-                el('div', { class: 'chunk-cards' },
-                    el('span', { class: 'chunk-card-count' }, `${cardCount} card${cardCount === 1 ? '' : 's'}`),
-                    el('button', { class: 'chip section-review-all', data: { section: lineKey }, 'aria-label': `review ${cardCount} cards in this section` }, `review →`)
-                )
+        // Build card preview chips for this section
+        const cardPreviews = secCards.length > 0 
+            ? el('div', { class: 'section-card-previews' },
+                ...secCards.slice(0, 3).map(c => 
+                    el('span', { class: 'card-preview-chip', title: c.front?.slice(0, 60), 'data-card-id': c.id },
+                        c.front?.slice(0, 30) + (c.front?.length > 30 ? '…' : '')
+                    )
+                ),
+                secCards.length > 3 ? el('span', { class: 'card-preview-more' }, `+${secCards.length - 3} more`) : null
               )
-            : el('div', { class: 'chunk-section' },
-                el('h3', { id: anchorId, 'data-section-line': sec.line }, sec.title),
-                el('div', { class: 'no-cards' }, el('button', { class: 'chip mark-read', data: { section: lineKey }, 'aria-label': 'mark as read' }, 'mark as read'))
-              );
+            : null;
+
+        const secBody = el('div', { class: 'chunk-section' },
+            el('h3', { id: anchorId, 'data-section-line': sec.line }, sec.title),
+            cardPreviews ? el('div', { class: 'card-previews-wrapper' }, cardPreviews) : null
+        );
 
         const chunkEl = el('div', {
             class: `chunk-panel${checked ? ' done' : ''}${si >= INITIAL_VISIBLE ? ' chunk-collapsed' : ''}`,
@@ -800,7 +818,15 @@ function buildChunkedGuide(subj, shard, ticks) {
             el('div', { class: 'chunk-head' },
                 el('span', { class: 'section-num' }, `§${sec.line}`),
                 el('span', { class: 'section-title' }, sec.title),
-                cardCount ? el('span', { class: 'chunk-badge' }, `${cardCount}`) : null
+                cardCount ? el('span', { class: 'chunk-badge' }, `${cardCount}`) : null,
+                el('div', { class: 'chunk-affordances' },
+                    el('button', { class: 'chip section-review-btn', data: { section: lineKey }, 'aria-label': `review ${cardCount} cards in this section` },
+                        cardCount > 0 ? `review ${cardCount} card${cardCount > 1 ? 's' : ''} →` : 'no cards yet'
+                    ),
+                    el('button', { class: 'chip mark-read', data: { section: lineKey }, 'aria-label': 'mark as read',
+                        style: cardCount === 0 ? 'background:var(--c-mastered);color:#fff' : '' },
+                        checked ? '✓ read' : 'mark read')
+                )
             ),
             el('div', { class: 'chunk-body' }, secBody)
         );
@@ -833,7 +859,7 @@ function mountMiniCardHandlers(container, subject) {
             if (cardEl) cardEl.classList.toggle('flipped');
         });
     });
-    container.querySelectorAll('.mini-review').forEach(btn => {
+container.querySelectorAll('.mini-review').forEach(btn => {
         btn.addEventListener('click', e => {
             const cardId = e.target.dataset.cardId;
             state.paletteReviewSet = [cardId];
@@ -848,6 +874,17 @@ function mountMiniCardHandlers(container, subject) {
             state.sectionFilter = section;
             resetReviewQueue();
             go('review', subject);
+        });
+    });
+    container.querySelectorAll('.section-review-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+            const section = e.target.dataset.section;
+            if (section) {
+                state.reviewSubjectFilter = subject;
+                state.sectionFilter = section;
+                resetReviewQueue();
+                go('review', subject);
+            }
         });
     });
     container.querySelectorAll('.mark-read').forEach(btn => {
@@ -1330,6 +1367,17 @@ async function renderReview() {
             state.sessionFinished = true;
             const backlog = state._reviewBacklog || 0;
             const wasLearn = state.learnMode;
+            // Smart recommendation: check if reviewing a specific subject or filter
+            const subj = state.reviewSubjectFilter !== 'all' ? state.reviewSubjectFilter : null;
+            const untickedCount = subj
+                ? (() => {
+                    const ticks = loadGuideTicks()[subj] || {};
+                    const shard = state.shards[subj];
+                    const totalSections = (shard?.guide?.sections || []).filter(s => s.level === 2 || s.level === 3).length;
+                    const tickedCount = Object.keys(ticks).length;
+                    return Math.max(0, totalSections - tickedCount);
+                })()
+                : null;
             stage.append(el('div', { class: 'panel' },
                 el('div', { class: 'panel-head' }, el('span', { class: 'title' }, wasLearn ? 'learning done' : 'session done')),
                 el('p', {}, wasLearn
@@ -1337,50 +1385,110 @@ async function renderReview() {
                     : `${reviewed} card${reviewed === 1 ? '' : 's'} reviewed · streak ${p.streak}.`),
                 backlog > 0 ? el('p', { class: 'meta' }, `${backlog} more in backlog`) : null,
                 el('div', { class: 'toolbar' },
-                    el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); state.learnMode = false; go('today'); } } }, 'today'),
-                    el('a', { class: 'chip', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.sessionFinished = false; state.reviewSessionCap = null; renderReview(); } } }, wasLearn ? 'learn more' : 'review more')
+                    el('a', { class: 'chip primary-action', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.sessionFinished = false; state.reviewSessionCap = null; renderReview(); } } }, wasLearn ? 'learn more' : 'review more'),
+                    untickedCount > 0 ? el('a', { class: 'chip', href: `#subject/${subj}`, on: { click: e => { e.preventDefault(); go('subject', subj); } } }, `read ${subj} guide`) : null,
+                    el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); state.learnMode = false; go('today'); } } }, 'back to today')
                 )));
         } else {
             const onlyNew = !state.cramMode && !state.learnMode && totalNewEligibleAll().total > 0;
+            const untickedCount = state.manifest.subjects.reduce((sum, s) => {
+                const ticks = loadGuideTicks()[s.subject] || {};
+                const shard = state.shards[s.subject];
+                const totalSections = (shard?.guide?.sections || []).filter(s => s.level === 2 || s.level === 3).length;
+                const tickedCount = Object.keys(ticks).length;
+                return sum + Math.max(0, totalSections - tickedCount);
+            }, 0);
             stage.append(el('div', { class: 'panel' },
                 el('div', { class: 'panel-head' }, el('span', { class: 'title' }, state.learnMode ? 'no new cards eligible' : 'all caught up')),
                 el('div', {}, state.learnMode
                     ? 'tick more guide sections to introduce more cards.'
-                    : (onlyNew ? 'no cards due — try learning new ones.' : 'no cards due. browse a subject or wait.')),
-                onlyNew ? el('div', { class: 'toolbar' },
-                    el('a', { class: 'chip', href: '#review',
-                        on: { click: e => { e.preventDefault(); state.learnMode = true; resetReviewQueue(); renderReview(); } } }, 'learn new')) : null));
+                    : (onlyNew ? 'no cards due — try learning new ones.' : (untickedCount > 0 ? `read a guide section to unlock more cards. ${untickedCount} section${untickedCount === 1 ? '' : 's'} available.` : 'all material covered.'))),
+                el('div', { class: 'toolbar' },
+                    onlyNew ? el('a', { class: 'chip', href: '#review',
+                        on: { click: e => { e.preventDefault(); state.learnMode = true; resetReviewQueue(); renderReview(); } } }, 'learn new') : null,
+                    untickedCount > 0 ? el('a', { class: 'chip primary-action', href: '#guides',
+                        on: { click: e => { e.preventDefault(); go('guides'); } } }, 'read guide') : null,
+                    el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); go('today'); } } }, 'back to today')
+                )));
         }
         return;
     }
 
-    const card = state.reviewQueue[state.reviewIndex];
+const card = state.reviewQueue[state.reviewIndex];
     const cardState = srs.getCardState(card.id);
     const seen = (cardState.history || []).length;
     const friendlyMeta = seen === 0 ? 'new' : (seen < 3 ? `seen ${seen}×` : 'familiar');
-    const isFlag = flag.isFlagged(card.id);
-    
-    // Section reference link for bidirectional navigation
-    const sectionRef = card.requires?.sectionLine ? el('a', { 
-        class: 'chip section-link', 
+ const isFlag = flag.isFlagged(card.id);
+ 
+     // Section reference link for bidirectional navigation
+    const sectionRef = card.requires?.sectionLine ? el('a', {
+        class: 'section-link',
         href: `#subject/${card._subject}`,
-        on: { click: e => { 
-            e.preventDefault(); 
+        'data-section': card.requires.sectionLine,
+        title: `View section this card comes from`,
+        on: { click: e => {
+            e.preventDefault();
+            state.reviewSubjectFilter = card._subject;
+            state.sectionFilter = null;
+            resetReviewQueue();
             go('subject', card._subject);
             setTimeout(() => {
-                const el = document.getElementById(`g-section-${card.requires.sectionLine}`);
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
+                const shard = state.shards[card._subject];
+                if (!shard) return;
+                const sec = shard.guide?.sections?.find(s => s.line === card.requires.sectionLine);
+                if (sec) {
+                    const anchorId = `g-${slugify(sec.title)}-${sec.line}`;
+                    const el = document.getElementById(anchorId);
+                    if (el) {
+                        const panel = el.closest('.chunk-panel');
+                        if (panel && panel.classList.contains('chunk-collapsed')) {
+                            panel.classList.remove('chunk-collapsed');
+                        }
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }, 150);
         }}
-    }, `§${card.requires.sectionLine}`) : null;
+    }, `← guide section`) : null;
     
-    const reviewCard = el('div', {
+    // Subject-level back link - always show for easy navigation
+    const backToSubjectLink = state.reviewSubjectFilter !== 'all' 
+        ? el('a', {
+            class: 'section-link',
+            href: `#subject/${state.reviewSubjectFilter}`,
+            on: { click: e => {
+                e.preventDefault();
+                resetReviewQueue();
+                go('subject', state.reviewSubjectFilter);
+            }}
+        }, `← ${state.reviewSubjectFilter}`) 
+        : el('a', { class: 'section-link', href: '#guides',
+            on: { click: e => { e.preventDefault(); resetReviewQueue(); go('guides'); } } }, '← subjects');
+    
+    // Link to review all cards for this subject
+    const allCardsLink = el('a', {
+        class: 'section-link',
+        href: `#review/${card._subject}`,
+        on: { click: e => {
+            e.preventDefault();
+            state.reviewSubjectFilter = card._subject;
+            state.sectionFilter = null;
+            resetReviewQueue();
+            go('review', card._subject);
+        }}
+    }, 'review subject');
+     
+ const reviewCard = el('div', {
         class: 'flashcard' + (state.reviewRevealed ? ' flipped' : '') + (isFlag ? ' flagged' : ''), id: 'review-card'
     },
+        el('div', { class: 'review-nav' },
+            el('div', { class: 'review-nav-left' }, backToSubjectLink),
+            el('div', { class: 'review-nav-right' }, sectionRef || allCardsLink)
+        ),
         el('div', { class: 'meta-line' },
             el('span', {}, `${card._subject} · ${state.reviewIndex + 1}/${total}` + (card._personal ? ' (personal)' : '') + (isFlag ? ' · flagged' : '')),
             el('span', {}, friendlyMeta),
-            sectionRef,
+            sectionRef ? el('span', { class: 'section-ref' }, `section ${card.requires?.sectionLine || '—'}`) : null,
             DEBUG ? el('span', {}, `EF ${cardState.easeFactor.toFixed(2)} · ${cardState.phase} · ${cardState.interval}d`) : null
         ),
         el('div', { class: 'front' }, card.front),
@@ -2245,31 +2353,38 @@ function renderScheduleChecklist(rows) {
 function mountTopbar() {
     const nav = document.querySelector('.nav');
     nav.innerHTML = '';
-    const primary = [['today', 'today'], ['guides', 'subjects'], ['review', 'review'], ['cases', 'cases'], ['stats', 'stats']];
+    // Simplified primary nav - fewer items for clarity
+    const primary = [['today', 'home'], ['guides', 'subjects'], ['review', 'cards'], ['stats', 'progress']];
     for (const [route, label] of primary) {
         nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
             on: { click: e => { e.preventDefault(); go(route); } } }, label));
     }
+    // Secondary actions in dropdown
     const moreMenu = el('div', { class: 'nav-more-menu', hidden: '' },
-        el('a', { href: '#calendar', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('calendar'); } } }, 'calendar'),
+        el('a', { href: '#cases', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('cases'); } } }, 'clinical cases'),
+        el('a', { href: '#calendar', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('calendar'); } } }, 'study plan'),
         el('a', { href: '#mistakes', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('mistakes'); } } }, 'mistakes'),
         el('a', { href: '#drill', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('drill'); } } }, 'drill 10'));
     const moreBtn = el('button', { class: 'navlink nav-more', 'aria-label': 'more', 'aria-haspopup': 'menu',
-        on: { click: e => { e.preventDefault(); moreMenu.hidden = !moreMenu.hidden; } } }, '⋯');
+        on: { click: e => { e.preventDefault(); moreMenu.hidden = !moreMenu.hidden; } } }, 'more');
     nav.append(moreBtn, moreMenu);
-    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta', 'aria-label': 'open tutor' }, 'tutor'));
-    nav.append(el('a', { href: '#settings', class: 'navlink nav-settings', data: { route: 'settings' },
-        'aria-label': 'settings', on: { click: e => { e.preventDefault(); go('settings'); } } }, '⚙'));
+    // Tutor CTA - clear visual distinction
+    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta', 'aria-label': 'open tutor' }, 'tutor →'));
+    
+    // Right side: countdown + quick actions
     const right = document.querySelector('header.topbar .status');
     const days = srs.daysUntilExam();
     const countdown = el('a', { class: 'exam-countdown', href: '#settings',
         title: 'days to exam — click to edit', 'aria-label': `${days} days to exam`,
-        on: { click: e => { e.preventDefault(); go('settings'); } } }, days + "d to exam");
+        on: { click: e => { e.preventDefault(); go('settings'); } } }, `${days}d to exam`);
     right.parentElement.insertBefore(countdown, right);
     const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'search (ctrl+k)', title: 'search (ctrl+k)',
-        on: { click: () => state.searchPaletteApi?.open() } }, 'search ⌘k');
+        on: { click: () => state.searchPaletteApi?.open() } }, '⌘k');
     right.parentElement.insertBefore(searchBtn, right);
     right.parentElement.insertBefore(makeToggleButton(document), right);
+    const settingsBtn = el('a', { href: '#settings', class: 'chip', 'aria-label': 'settings',
+        on: { click: e => { e.preventDefault(); go('settings'); } } }, '⚙');
+    right.parentElement.insertBefore(settingsBtn, right);
 }
 
 function mountSearchPalette() {
