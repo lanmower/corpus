@@ -1,5 +1,437 @@
 metadata:
   subject: paediatrics-neonatal
   version: 1
-atoms: []
-scenarios: []
+atoms:
+  - id: a1
+    name: "central apnoea"
+    description: "Absent inspiratory effort, failure of respiratory drive"
+  - id: a2
+    name: "obstructive apnoea"
+    description: "Inspiratory effort present but airway blocked, obligatory nasal breathing"
+  - id: a3
+    name: "bradycardia"
+    description: "Heart rate <100 bpm in neonate, critical sign"
+  - id: a4
+    name: "chest compression"
+    description: "Neonatal CPR technique: 3:1 compression-to-breath ratio, thumb encircling hands, midline sternum"
+  - id: a5
+    name: "adrenaline dosing"
+    description: "Neonatal adrenaline 1:10,000, 0.01 mg/kg IV, repeat every 3-5 min"
+  - id: a6
+    name: "meconium aspiration"
+    description: "ILCOR 2015: no routine suctioning below vocal cords, only if obvious obstruction"
+  - id: a7
+    name: "bag-mask ventilation"
+    description: "Do NOT hold down pop-up valve on ambu-bag, increases air leak risk"
+  - id: a8
+    name: "hypoglycaemia threshold"
+    description: "Whole blood glucose <2.6 mmol/L, treat immediately if symptomatic"
+  - id: a9
+    name: "hyperinsulinism"
+    description: "Elevated insulin despite low glucose, transient or persistent, treat with diazoxide"
+  - id: a10
+    name: "kangaroo care"
+    description: "Skin-to-skin contact 8-24 hours daily, improves thermoregulation, bonding, immune transfer"
+  - id: a11
+    name: "early onset neonatal sepsis"
+    description: "Birth to 7 days, vertical transmission from mother, risk: prematurity, chorioamnionitis, GBS"
+  - id: a12
+    name: "Group B Streptococcus"
+    description: "Most common early onset sepsis organism, vertical transmission"
+  - id: a13
+    name: "septic screen"
+    description: "Blood, CSF, urine, swab cultures; CBC, I:T ratio, CRP, serology"
+  - id: a14
+    name: "penicillin regimen"
+    description: "First-line neonatal sepsis; 7-10 days for septicaemia, 21 days for meningitis"
+  - id: a15
+    name: "congenital syphilis early"
+    description: "Snuffles, nasal discharge, rash on palms/soles, hepatosplenomegaly, pseudoparalysis"
+  - id: a16
+    name: "congenital TB"
+    description: "Placental transmission, high mortality 43%, TB prophylaxis with isoniazid 6 months"
+  - id: a17
+    name: "neonatal HIV prophylaxis"
+    description: "Minimum 6 weeks nevirapine for standard risk, high-risk: zidovudine + extended nevirapine"
+  - id: a18
+    name: "congenital CMV"
+    description: "Diagnosis: blood/urine PCR, symptomatic: chorioretinitis, microcephaly, hearing loss; treat with ganciclovir IV 6 weeks"
+  - id: a19
+    name: "resuscitation airway"
+    description: "Neutral head position, suction only obvious secretions, consider choanal atresia"
+  - id: a20
+    name: "triage umbilical catheter"
+    description: "Umbilical venous catheter for vascular access when peripheral IV fails"
+  - id: a21
+    name: "thermoregulation newborn"
+    description: "Warm environment critical from birth, remove wet towels (cool), maintain temperature"
+  - id: a22
+    name: "down syndrome cardiac"
+    description: "40-60% cardiac involvement, atrioventricular canal defects most characteristic"
+  - id: a23
+    name: "trisomy 18 features"
+    description: "Edwards syndrome: overlapping fingers, rocker-bottom feet, microcephaly, 90% have heart defects"
+  - id: a24
+    name: "trisomy 13 holoprosencephaly"
+    description: "Patau syndrome: forebrain not divided, cyclopia, cleft palate, polydactyly, most die first year"
+  - id: a25
+    name: "turner syndrome"
+    description: "45,X: short stature, ovarian dysgenesis, webbed neck, 30-40% cardiac defects (bicuspid aortic valve)"
+  - id: a26
+    name: "apnoea prematurity pathogenesis"
+    description: "Immature brainstem, paradoxical response to hypoxia/hypercapnoea, hypersensitivity to stressors"
+  - id: a27
+    name: "caffeine therapy apnoea"
+    description: "Blocks adenosine A2a receptors, improves respiratory drive, proven in CATNAP trial"
+  - id: a28
+    name: "neonatal seizure ddx"
+    description: "IVH, infection, metabolic (hypoglycaemia, hyponatraemia), sepsis, HIE"
+  - id: a29
+    name: "persistent hypoglycaemia"
+    description: "Low glucose >48 hours or parenteral dextrose >48 hours; hyperinsulinism most common cause"
+  - id: a30
+    name: "glucose delivery rate"
+    description: "Term: 6-8 mg/kg/min, preterm: 4-6 mg/kg/min; calculate: (ml/kg/24h) × (% dextrose) × 0.007"
+
+scenarios:
+  - id: sc1
+    name: "28-week infant with recurrent apnoea: diagnosis and management"
+    description: |
+      A 28-week-old preterm infant (day 4 of life) experiences recurrent episodes of apnoea of 20–30 seconds lasting several times per hour. Pulse oximetry shows desaturation to 85% during episodes. The infant is on continuous positive airway pressure. You are asked to differentiate the type of apnoea, explain the pathophysiology, and outline pharmacological and non-pharmacological management. Why does a preterm infant paradoxically respond to hypoxia with apnoea rather than increased breathing? What is the role of caffeine therapy and when should it be initiated? How do you monitor efficacy?
+    learning_objectives:
+      - Classify apnoea (central, obstructive, reflex, mixed)
+      - Explain foetal-neonatal physiology: protective apneic response
+      - Recognize prematurity as baseline risk for apnoea
+      - Implement caffeine citrate therapy for central apnoea
+      - Manage respiratory support (CPAP, high-flow nasal cannula)
+    atoms: [a2, a26, a27]
+    tags: [apnoea, prematurity, respiratory]
+
+  - id: sc2
+    name: "Neonatal resuscitation: managing severe bradycardia in delivery room"
+    description: |
+      A term infant is born limp, apnoeic, and cyanotic. Initial assessment shows no spontaneous breathing and heart rate of 40 bpm. You initiate neonatal resuscitation. Walk through the steps: airway positioning, when to suction, when to provide positive pressure ventilation, how to perform bag-mask ventilation without injury, when to escalate to chest compressions, and adrenaline dosing if bradycardia persists. What is the correct hand technique for neonatal chest compressions? When do you stop resuscitation?
+    learning_objectives:
+      - Assess newborn: breathing, heart rate, colour
+      - Position airway: neutral head, suction only if obvious obstruction
+      - Provide bag-mask ventilation (avoid pressure on pop-up valve)
+      - Initiate chest compressions: 3:1 ratio, thumb encircling technique, midline sternum
+      - Administer adrenaline: 1:10,000, 0.01 mg/kg IV
+      - Decide discontinuation: 10 min no heart rate, 20 min no breathing
+    atoms: [a3, a4, a5, a6, a7, a19, a20, a21]
+    tags: [resuscitation, delivery room, bradycardia]
+
+  - id: sc3
+    name: "Severe neonatal hypoglycaemia: symptomatic infant with seizures"
+    description: |
+      A 6-hour-old term infant of a diabetic mother presents with jitteriness, sweating, tachycardia, and a seizure-like episode. Whole blood glucose is 1.5 mmol/L. Outline your immediate management: bolus therapy choice, timing of rechecks, transition to maintenance IV glucose, escalation of dextrose concentration if glucose remains low, and when to consider glucagon. Why is 50% dextrose contraindicated? When should you suspect persistent hyperinsulinism?
+    learning_objectives:
+      - Recognize symptomatic severe hypoglycaemia (<1.7 mmol/L or any symptomatic)
+      - Administer initial bolus: 2-5 ml/kg of 10% dextrose IV or NG feed if available
+      - Transition to maintenance IV at 60-120 ml/kg/24h depending on age
+      - Escalate dextrose concentration (12.5%, 15%, 20%) if glucose remains low
+      - Recheck glucose every 30 minutes after intervention
+      - Recognize persistent hypoglycaemia (>48 hours): consider hyperinsulinism
+      - Understand glucose requirement: term 6-8 mg/kg/min, preterm 4-6 mg/kg/min
+    atoms: [a8, a9, a29, a30]
+    tags: [hypoglycaemia, metabolic, infant of diabetic mother]
+
+  - id: sc4
+    name: "Kangaroo Mother Care: implementing skin-to-skin contact in preterm twins"
+    description: |
+      Twin preterm infants (32 weeks) are stable on supplemental oxygen via high-flow nasal cannula. You counsel the mother on kangaroo care (KMC). Explain the physiological benefits, the correct positioning technique, duration and frequency of KMC, how to manage feeds during KMC, and discharge criteria. What are the documented outcomes in the literature? How does KMC improve immune function and reduce infection risk? What is the role of exclusive breastfeeding alongside KMC?
+    learning_objectives:
+      - Define KMC: skin-to-skin contact 8-24 hours daily, exclusive breastfeeding
+      - Describe benefits: thermoregulation, improved breastmilk production, reduced hypoglycaemia, immune transfer, reduced maternal depression
+      - Teach correct positioning: upright against chest, neck extended, airways clear
+      - Outline timing: start early, continue through hospitalization
+      - Describe transition: intermittent KMC (unstable) → continuous KMC (stable) → home-based
+      - Recognize discharge criteria: feeding well, gaining weight, stable temperature
+      - Connect oxytocin effects: cardiovascular stability, bonding, brain development
+    atoms: [a10, a21]
+    tags: [kangaroo care, prematurity, bonding]
+
+  - id: sc5
+    name: "Early-onset neonatal sepsis: screening and antibiotic selection"
+    description: |
+      A 24-hour-old term infant born to a mother with chorioamnionitis presents with fever, irritability, and poor feeding. You perform a septic screen. Walk through the investigations: which cultures to obtain, timing, bloodwork (CBC, I:T ratio, CRP), imaging, and interpretation. What is the significance of an I:T ratio >0.2? How do you interpret CRP in the first 24 hours? What is the empirical antibiotic regimen for early-onset sepsis? How long do you treat if cultures are negative? What if blood culture is positive for GBS?
+    learning_objectives:
+      - Obtain septic screen: blood, CSF (if indicated), urine, throat/rectal swabs, serology
+      - Interpret CBC: immature-to-total neutrophil ratio >0.2 supports infection, thrombocytopenia
+      - Recognize CRP elevation and serial changes (day 0 vs day 1)
+      - Start empirical antibiotics: penicillin ± aminoglycoside
+      - Treat septicaemia (positive blood culture): 7-10 days
+      - Treat meningitis (positive CSF or compatible findings): 21 days
+      - Recognize GBS (Group B Streptococcus) as most common early-onset cause
+      - Understand vertical transmission from maternal colonization
+      - Know risk factors: prematurity, chorioamnionitis, prolonged rupture of membranes
+    atoms: [a11, a12, a13, a14]
+    tags: [sepsis, early-onset, maternal risk factors]
+
+  - id: sc6
+    name: "Late-onset neonatal sepsis: nosocomial infection in NICU"
+    description: |
+      A 3-week-old preterm infant who was stable is now showing signs of sepsis: temperature instability, apnoea, poor perfusion. The infant has a central line in place for 2 weeks. Describe the causative organisms for late-onset disease, risk factors related to invasive devices, clinical presentation (which can be subtle), investigation, and treatment. How do you differentiate late-onset sepsis from other complications? Why is coagulase-negative Staphylococcus common in late-onset disease?
+    learning_objectives:
+      - Recognize late-onset sepsis: day 8–28 of life, nosocomial origin
+      - Know causative organisms: Gram-positive (CoNS, S. aureus, enterococci), Gram-negative (E. coli, Klebsiella, Pseudomonas)
+      - Identify risk factors: prematurity, central line, prolonged ventilation, invasive procedures
+      - Recognize subtle presentation: temperature instability, apnoea, poor feeding, poor perfusion
+      - Perform septic screen with adjusted interpretation for late-onset
+      - Empirical coverage: usually broader to cover CoNS and Gram-negatives
+      - Understand biofilm formation on central catheters and device-related sepsis
+      - Consider early line removal if sepsis confirmed and device-dependent
+    atoms: [a11, a13, a14]
+    tags: [sepsis, late-onset, invasive devices]
+
+  - id: sc7
+    name: "Congenital syphilis: recognizing early and late manifestations"
+    description: |
+      A 2-day-old infant presents with nasal congestion and purulent discharge ("snuffles"), a desquamative rash on palms and soles, hepatosplenomegaly, and pseudoparalysis. RPR serology is positive. Discuss the mother's infection, vertical transmission, clinical manifestations of early congenital syphilis, treatment in the neonate (distinguishing symptomatic vs asymptomatic cases), and long-term complications of late congenital syphilis. What preventive steps during pregnancy could have avoided this?
+    learning_objectives:
+      - Recognize early congenital syphilis signs: snuffles, nasal discharge, rash, hepatosplenomegaly, pseudoparalysis, bone involvement
+      - Understand vertical transmission: through placenta, especially in untreated or recently treated mothers
+      - Treat symptomatic infant: procaine penicillin 50,000 units/kg IM daily × 10 days OR penicillin G 50,000 units/kg IV 12-hourly × 10 days
+      - Treat asymptomatic infant of treated mother: benzathine penicillin 50,000 units/kg IM single dose
+      - Know late congenital syphilis features (>2 years): Hutchinson teeth, interstitial keratitis, deafness, saddle nose, sabre shins
+      - Understand antenatal prevention: screening at first ANC visit and 32-34 weeks, treat all positive mothers regardless of titre
+      - Recognize congenital syphilis as notifiable condition
+    atoms: [a15]
+    tags: [congenital infection, syphilis, penicillin]
+
+  - id: sc8
+    name: "Congenital tuberculosis: diagnosis and neonatal TB prophylaxis"
+    description: |
+      A 1-week-old infant born to a mother with active tuberculosis shows respiratory symptoms and poor feeding. CXR suggests pulmonary involvement. You suspect congenital TB (placental transmission). Describe the pathogenesis, diagnostic specimens (gastric aspirate, ETT aspirate, lung biopsy), diagnostic yield, and management with TB prophylaxis. What is the dosing regimen for isoniazid in neonates? When can BCG vaccination be given? What is the mortality if untreated?
+    learning_objectives:
+      - Understand congenital TB pathogenesis: placental transmission, liver seeding, haematogenous spread
+      - Know high mortality: 43% in South African neonates if untreated
+      - Obtain diagnostic specimens: gastric aspirate (8/9 positive smear/culture), ETT aspirate (7/7), lymph node biopsy (7/8), liver biopsy (4/6)
+      - Initiate TB prophylaxis: isoniazid ~10 mg/kg daily × 6 months (weight-based dosing: 0.5 tab <5kg, 1 tab 5-7.9kg, etc.)
+      - Defer BCG vaccination until TB prophylaxis complete
+      - Continue EPI vaccinations per schedule
+      - Escalate to full TB treatment if TB infection confirmed during follow-up
+      - Ensure close contact tracing and treatment of mother
+    atoms: [a16]
+    tags: [congenital TB, prophylaxis, maternal TB]
+
+  - id: sc9
+    name: "Neonatal HIV exposure: PMTCT prophylaxis and baseline testing"
+    description: |
+      A newborn is born to an HIV-positive mother on antiretroviral therapy (ART) with undetectable viral load at delivery. Outline the PMTCT strategy, neonatal prophylaxis regimen, baseline testing (birth PCR), dosing adjustments for different birth weights, and follow-up schedules. What qualifies as "high-risk" exposure? How long is prophylaxis continued? What is the feeding recommendation? When is ART initiated if the infant is positive?
+    learning_objectives:
+      - Know PMTCT goal: mother on ART with viral load <50 copies/mL at delivery
+      - Obtain birth HIV-PCR to identify in utero transmission
+      - Standard-risk infant: nevirapine prophylaxis minimum 6 weeks
+      - High-risk infant: zidovudine × 6 weeks + nevirapine × 12 weeks (breastfed) or shorter (formula-fed)
+      - Know ARV dosing for neonates (0-28 days, based on BIRTH weight): lamivudine, zidovudine, nevirapine (specific ml/kg concentrations)
+      - Provide calibrated syringes and careful instruction
+      - Use colour-coding if helpful for medication identification
+      - If infant is PCR-positive: ART initiation within 7 days of birth, as soon as feeding tolerates
+      - Baseline assessments: CD4, CBC, AST; follow-up weeks 1, 2, 4
+      - Exclusive breastfeeding recommended first 6 months
+      - Recognize peak mortality 2-4 months in untreated infants
+    atoms: [a17]
+    tags: [HIV, PMTCT, prophylaxis, ARV dosing]
+
+  - id: sc10
+    name: "Congenital CMV infection: diagnosis and ganciclovir therapy"
+    description: |
+      Antenatal screening detected CMV in amniotic fluid. The infant is born with growth restriction, jaundice, hepatosplenomegaly, and chorioretinitis. Describe diagnostic tests (blood PCR, urine PCR, IgM serology), which is most sensitive in the first 3 weeks, and symptomatic presentation. Outline ganciclovir therapy: dosing (6 mg/kg 12-hourly for 6 weeks IV) and transition to oral valganciclovir for 6 months total. What are the long-term sequelae of untreated congenital CMV?
+    learning_objectives:
+      - Recognize symptomatic congenital CMV: chorioretinitis (ophthalmology consult), microcephaly, sensorineural hearing loss, hepatitis, thrombocytopenia, IUGR, jaundice
+      - Obtain diagnostics: blood PCR, urine PCR, IgM (most sensitive <3 weeks)
+      - Initiate ganciclovir IV 6 mg/kg per dose every 12 hours for 6 weeks
+      - Transition to oral valganciclovir 16 mg/kg per dose every 12 hours for remaining 6 months (total 6 months therapy)
+      - Monitor for ganciclovir toxicity: cytopaenia
+      - Coordinate with ophthalmology for chorioretinitis management
+      - Understand high risk of permanent sensorineural hearing loss
+      - Recommend long-term follow-up: audiology, neurodevelopmental assessment
+      - Recognize asymptomatic congenital CMV has better prognosis
+    atoms: [a18]
+    tags: [congenital CMV, ganciclovir, symptoms]
+
+  - id: sc11
+    name: "Recurrent apnoea due to gastro-oesophageal reflux: reflex apnoea mechanism"
+    description: |
+      A preterm infant (34 weeks corrected) on caffeine therapy continues to have apnoea episodes, particularly when feeds are advanced. You suspect reflex apnoea triggered by gastro-oesophageal reflux (GORD). Explain the vagal laryngeal chemoreflex, why acid irritation triggers apnoea, and non-pharmacological (positioning, feed volume, frequency) and pharmacological (ranitidine, domperidone) management. How do you differentiate reflex apnoea from central apnoea?
+    learning_objectives:
+      - Recognize vagal laryngeal chemoreflex: acid irritation → laryngeal chemoreceptor activation → reflex apnoea
+      - Understand GORD as reflex apnoea trigger
+      - Implement positioning: head-elevated (30°), prone or left lateral
+      - Adjust feeding: smaller, more frequent feeds instead of bolus
+      - Use anti-reflux medication: ranitidine or proton-pump inhibitor (reduce acid), domperidone (prokinetic)
+      - Continue caffeine for central apnoea component if present
+      - Monitor for response: reduction in apnoea frequency/severity
+      - Differentiate central apnoea (absent effort) from reflex apnoea (triggered by stimulus)
+      - Educate parents on feeding technique and positioning at home post-discharge
+    atoms: [a2, a26, a27]
+    tags: [apnoea, GORD, reflex]
+
+  - id: sc12
+    name: "Choanal atresia: upper airway obstruction in neonatal resuscitation"
+    description: |
+      A newborn with confirmed choanal atresia presents in the delivery room. The infant is cyanotic and unable to breathe effectively despite being a term infant with normal chest movements. Explain why obligatory nasal breathing makes this a resuscitation emergency, when to suspect choanal atresia, management in the delivery room (oropharyngeal airway placement), and definitive surgical repair planning. How would you differentiate this from other causes of neonatal cyanosis?
+    learning_objectives:
+      - Recognize obligatory nasal breathing in neonates: if nasal obstruction → cannot switch to mouth breathing
+      - Suspect choanal atresia: cyanosis despite normal respiratory effort, fails to respond to initial resuscitation
+      - Provide immediate relief: insert oropharyngeal airway to allow oral breathing
+      - Maintain airway patency until surgical repair arranged
+      - Coordinate with ENT for surgical management (usually endoscopic repair)
+      - Understand unilateral vs bilateral atresia presentation
+      - Consider associated syndromes: CHARGE syndrome in some cases
+      - Educate parents on surgical timeline and prognosis
+    atoms: [a19, a21]
+    tags: [airway, congenital anomaly, delivery room]
+
+  - id: sc13
+    name: "Down syndrome screening and cardiac assessment in neonatal period"
+    description: |
+      A newborn with clinical features suggestive of Down syndrome (flat face, upslanting palpebrae, hypotonia, single palmar crease) requires urgent cardiac assessment. Explain the cardiac lesions most common in Down syndrome (AV canal defects), echocardiographic findings, when to refer to cardiology, and management of asymptomatic vs symptomatic cardiac disease in the newborn. What other Down syndrome complications present in the neonatal period (infection risk, hypothyroidism screening)? When should karyotyping be performed?
+    learning_objectives:
+      - Recognize clinical features of Down syndrome in newborn
+      - Understand that 40-60% have cardiac involvement
+      - Know atrioventricular (endocardial cushion) defects are most characteristic
+      - Obtain baseline echo even if asymptomatic
+      - Assess for heart failure signs: poor feeding, tachypnoea, hepatomegaly
+      - Refer to cardiology for asymptomatic structural disease (follow-up, activity restriction if needed)
+      - Manage symptomatic cardiac disease: diuretics, afterload reduction, oxygen as needed
+      - Screen for infection: increased risk due to immune dysfunction
+      - Arrange thyroid screening: elevated TSH risk, elevated TRH
+      - Obtain karyotype: 47,XX,+21 (regular trisomy ~95%) or variants (translocation, mosaicism)
+      - Provide family counseling: growth/development expectations, early intervention programs
+    atoms: [a22]
+    tags: [Down syndrome, cardiac, screening]
+
+  - id: sc14
+    name: "Trisomy 18 (Edwards syndrome): severity, management decisions, and end-of-life care"
+    description: |
+      A preterm infant with multiple congenital anomalies is diagnosed with trisomy 18 on karyotype: severe IUGR, congenital heart defect (VSD), micrognathia, overlapping fingers, and rocker-bottom feet. Discuss the grave prognosis (most die within 1 year), ethical considerations around intensive care vs comfort-focused care, feeding decisions (NG tube vs parenteral nutrition vs comfort feeds only), and family support. What is the median survival with aggressive intervention vs natural history?
+    learning_objectives:
+      - Recognize characteristic features of trisomy 18: overlapping fingers (2nd overlaps 3rd, 5th overlaps 4th), rocker-bottom feet, microcephaly, micrognathia
+      - Know 90% have congenital heart defects (VSD, PDA, ASD)
+      - Understand profound intellectual disability and severe growth restriction
+      - Present realistic prognosis: most infants die within 1 year
+      - Discuss family preferences: aggressive intervention (surgery, mechanical ventilation) vs comfort-focused care
+      - Address feeding: oral feeding if possible, NG tube if needed for comfort, consider limitations of artificial feeding
+      - Coordinate palliative care: symptom management, family time, spiritual support
+      - Provide genetic counseling: recurrence risk (usually <1% if sporadic; higher if parental translocation)
+      - Offer bereavement support and follow-up
+      - Respect family wishes: some choose maximalist care, others prefer comfort; individualize approach
+    atoms: [a23]
+    tags: [trisomy 18, prognosis, end-of-life care]
+
+  - id: sc15
+    name: "Trisomy 13 (Patau syndrome) with holoprosencephaly: antenatal diagnosis to postnatal care"
+    description: |
+      Antenatal ultrasound shows a fetus with holoprosencephaly (single ventricular chamber), bilateral cleft lip and palate, and cardiac defect. Karyotype confirms trisomy 13. Discuss antenatal counseling on severity, prognosis, delivery planning (where to deliver, who should be present), perinatology/neonatology coordination, and postnatal management (comfort vs intervention). What is the spectrum of holoprosencephaly severity? What are realistic outcomes?
+    learning_objectives:
+      - Recognize holoprosencephaly spectrum: alobar (single ventricle, cyclopia—most severe), semilobar, lobar
+      - Understand associated facial midline defects: cleft palate ± cleft lip (often bilateral)
+      - Know congenital heart defects nearly universal (PDA, VSD, ASD)
+      - Additional features: polydactyly (postaxial), rocker-bottom feet, renal anomalies
+      - Know prognosis: most die within 1 year, severe developmental impairment in survivors
+      - Coordinate antenatal counseling: realistic discussion of severity, neonatal team present at delivery
+      - Plan delivery: vaginal delivery acceptable if parents wish, have neonatal team available
+      - Discuss postnatal approach: comfort-focused care is appropriate; intensive care if family wishes
+      - Manage feeding: comfort feeds if appropriate, avoid aggressive artificial nutrition
+      - Coordinate palliative team: pain, comfort, family support
+      - Provide follow-up grief support and genetic counseling
+    atoms: [a24]
+    tags: [trisomy 13, holoprosencephaly, palliative care]
+
+  - id: sc16
+    name: "Osteogenesis imperfecta: recognizing brittle bone disease and managing fractures"
+    description: |
+      A newborn presents with multiple fractures (femur, ribs, clavicle) identified on imaging despite no clear trauma history. Blue sclerae are noted. You suspect osteogenesis imperfecta (OI). Discuss the genetic basis (FBN1 mutations affecting type I collagen, wait—actually COL1A1/COL1A2), severity spectrum (lethal in utero to mild), management of acute fractures (immobilization, pain control), and long-term care (calcium, vitamin D, bisphosphonates, genetic counseling). What is the inheritance pattern?
+    learning_objectives:
+      - Recognize cardinal features: fragile bones with fractures from minimal trauma, blue sclerae
+      - Understand genetic basis: mutations affecting type I collagen synthesis
+      - Know severity spectrum: type I (mild, auto-dominant), type II (lethal), type III (severe), type IV (variable)
+      - Obtain skeletal survey: document all fractures
+      - Manage acute fractures: gentle handling, immobilization (splinting), pain control with analgesia
+      - Provide long-term skeletal support: calcium, vitamin D supplementation
+      - Consider bisphosphonate therapy (pamidronate) in severe cases to reduce fracture risk
+      - Assess for other OI complications: dentine dysplasia, hearing loss, growth failure
+      - Provide orthotic devices and rehabilitation as needed
+      - Coordinate with genetics for diagnosis confirmation and family counseling
+      - Educate parents on careful handling, activity appropriate to severity
+      - Document for abuse prevention: ensure OI diagnosis not confused with non-accidental injury
+    atoms: []
+    tags: [osteogenesis imperfecta, fractures, genetic disorder]
+
+  - id: sc17
+    name: "Turner syndrome (45,X): recognizing cardiovascular complications in neonatal period"
+    description: |
+      A female newborn is diagnosed with Turner syndrome (karyotype 45,X) after routine screening. Physical examination reveals short stature (length <3rd centile), broad flat face, and on echocardiography a bicuspid aortic valve with mild stenosis. Discuss the cardiovascular complications (bicuspid aortic valve, aortic stenosis, coarctation of aorta, hypoplastic left heart), monitoring requirements (echo, blood pressure), and long-term cardiac surveillance. What other organ systems are affected (renal, skeletal, hearing)?
+    learning_objectives:
+      - Recognize Turner syndrome features: short stature (cardinal finding), ovarian dysgenesis, broad face, webbed neck, shield chest
+      - Understand cardiovascular involvement in 30-40%: bicuspid aortic valve (most common), aortic stenosis, coarctation of aorta, hypoplastic left heart
+      - Obtain baseline echo and ECG in neonatal period
+      - Monitor blood pressure: screen for hypertension from coarctation or renal disease
+      - Establish cardiology follow-up plan: periodic echo surveillance
+      - Know renal anomalies: renal agenesis, hypoplasia, duplications in subset
+      - Screen hearing: conductive and sensorineural loss common
+      - Provide growth monitoring: consider growth hormone therapy in appropriate cases
+      - Genetic counseling: most cases non-inherited (monosomy X), low recurrence risk
+      - Educate on activity: usually normal activity with cardiac monitoring
+      - Support normal development and social integration
+    atoms: [a25]
+    tags: [Turner syndrome, cardiac anomaly, surveillance]
+
+  - id: sc18
+    name: "Neonatal hyperbilirubinaemia: phototherapy vs exchange transfusion decision-making"
+    description: |
+      A 36-hour-old term infant has serum bilirubin 18 mg/dL (308 µmol/L). The infant is otherwise well, feeding, and at low risk. You plot the bilirubin on the age-specific nomogram. Discuss phototherapy threshold vs exchange transfusion threshold, treatment initiation, phototherapy wavelength (blue light 460-490 nm), monitoring during phototherapy, and cessation criteria. When would you escalate to exchange transfusion? What are the hemolytic causes requiring urgent consideration (ABO incompatibility, G6PD deficiency)?
+    learning_objectives:
+      - Use age-specific phototherapy nomogram correctly (AAP/NICE guidelines)
+      - Know phototherapy threshold (lower for older infants, higher for term near-discharge)
+      - Initiate phototherapy when indicated: blue light wavelength 460-490 nm optimal
+      - Monitor closely: repeat TSB at 4-24 hours depending on risk category
+      - Assess feeding: breastfeeding support, supplement if inadequate intake
+      - Evaluate for underlying cause: ABO incompatibility (most common), Rh disease (rare now), G6PD, other haemolytic disease
+      - Assess risk: isoimmune haemolytic disease, G6PD deficiency, asphyxia, sepsis, acidosis
+      - Know exchange transfusion threshold (much higher than phototherapy): reserve for rapidly rising bilirubin or very high levels
+      - Discontinue phototherapy: when TSB falls ≥2 mg/dL below treatment threshold
+      - Follow-up post-discharge: bilirubin check at 24-72 hours
+      - Educate on jaundice: normal in most infants, monitor feeding, seek help if yellow, lethargy
+    atoms: []
+    tags: [hyperbilirubinaemia, phototherapy, exchange transfusion]
+
+  - id: sc19
+    name: "Neonatal abstinence syndrome: managing opioid-exposed infant"
+    description: |
+      A newborn born to a mother on methadone maintenance therapy presents with irritability, poor feeding, tremors, and diarrhoea beginning at 24 hours of life. You diagnose neonatal abstinence syndrome (NAS). Outline assessment using the Finnegan scoring system, non-pharmacological interventions (swaddling, minimal handling, dark quiet room, feeding support), and pharmacological treatment (morphine vs phenobarbital vs methadone). What is the typical timeline of symptom onset and duration? When do you involve addiction medicine and social services?
+    learning_objectives:
+      - Recognize NAS symptoms: tremor, irritability, high-pitched cry, poor suck, vomiting, diarrhoea, sweating, fever
+      - Use Finnegan Neonatal Abstinence Scoring System: quantify severity, track over time
+      - Implement comfort measures: swaddling, holding, dark quiet room, minimal stimulation
+      - Optimize feeding: small frequent feeds, patience with poor suck, consider NG tube if needed
+      - Pharmacological treatment: typically morphine (titrate 0.05-0.2 mg/kg per dose) or phenobarbital if seizure risk
+      - Monitor response: serial Finnegan scores
+      - Timeline: symptoms typically onset day 2-3 (methadone) to day 1 (heroin), resolve over weeks with treatment
+      - Coordinate with addiction medicine, social services, child protective services
+      - Plan discharge: teach mother safe handling, medication adherence if on maintenance therapy
+      - Provide follow-up: neurodevelopmental screening, family support
+    atoms: []
+    tags: [neonatal abstinence, opioid exposure, non-pharmacological care]
+
+  - id: sc20
+    name: "SIDS prevention in preterm infant discharge: counseling on back sleeping, sleeping environment"
+    description: |
+      A preterm infant (34 weeks gestation, now 3 weeks corrected age) is approaching hospital discharge. You counsel the family on SIDS prevention. Discuss sleeping position (back, not side/prone), mattress firmness, avoiding pillows/blankets, room-sharing without bed-sharing, breastfeeding, pacifier use, and avoiding overheating. Why are preterm infants at higher risk for SIDS? What role does arousal reflex maturity play? When is the peak SIDS age?
+    learning_objectives:
+      - Know SIDS peak age: 2-4 months, rare after 6 months
+      - Recognize preterm infants at 3× higher risk than term infants
+      - Understand causative factors: immature arousal reflexes, chemoreceptor dysfunction, abnormal sleep architecture
+      - Primary prevention: back sleeping position (not side/prone)
+      - Sleep environment: firm mattress (no memory foam, pillows, blankets, bumpers)
+      - Room-sharing without bed-sharing: prefer crib in parent's room
+      - Promote breastfeeding: improves arousal, immune function
+      - Encourage pacifier use: enhances arousal, maintains airway patency
+      - Avoid overheating: appropriate room temperature, avoid excess bedding/clothing
+      - Avoid: bed-sharing (high suffocation/entrapment risk), smoke/alcohol/drug exposure, loose blankets
+      - Recommend: immunizations (reduce SIDS risk), consider home cardiorespiratory monitoring if indicated
+      - Counsel on safe sleep from hospital discharge onward
+    atoms: []
+    tags: [SIDS prevention, discharge planning, back sleep]

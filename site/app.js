@@ -127,6 +127,27 @@ function sectionCardCounts(subject) {
     return m;
 }
 
+function exportSessionCards(cards) {
+    if (!cards || cards.length === 0) {
+        toast.show('No cards to export');
+        return;
+    }
+    const lines = [];
+    for (const card of cards) {
+        const front = (card.front || '').replace(/\t/g, ' ').replace(/\n/g, ' ');
+        const back = (card.back || '').replace(/\t/g, ' ').replace(/\n/g, ' ');
+        const subject = card._subject || 'unknown';
+        const section = card.requires?.sectionLine || '';
+        lines.push([front, back, subject, section].join('\t'));
+    }
+    const tsv = lines.join('\n');
+    navigator.clipboard.writeText(tsv).then(() => {
+        toast.show(`Copied ${cards.length} card${cards.length === 1 ? '' : 's'} to clipboard`);
+    }).catch(() => {
+        toast.show('Failed to copy to clipboard');
+    });
+}
+
 function dueCountFor(subject) {
     const sh = state.shards[subject]; if (!sh) return 0;
     const ids = sh.cards.map(c => c.id);
@@ -1386,6 +1407,7 @@ async function renderReview() {
                 backlog > 0 ? el('p', { class: 'meta' }, `${backlog} more in backlog`) : null,
                 el('div', { class: 'toolbar' },
                     el('a', { class: 'chip primary-action', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.sessionFinished = false; state.reviewSessionCap = null; renderReview(); } } }, wasLearn ? 'learn more' : 'review more'),
+                    el('button', { class: 'chip', on: { click: e => { e.preventDefault(); exportSessionCards(state.reviewQueue.filter((_, i) => i < state.reviewIndex + 1)); } } }, 'export cards'),
                     untickedCount > 0 ? el('a', { class: 'chip', href: `#subject/${subj}`, on: { click: e => { e.preventDefault(); go('subject', subj); } } }, `read ${subj} guide`) : null,
                     el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); state.learnMode = false; go('today'); } } }, 'back to today')
                 )));
@@ -1421,35 +1443,41 @@ const card = state.reviewQueue[state.reviewIndex];
  const isFlag = flag.isFlagged(card.id);
  
      // Section reference link for bidirectional navigation
-    const sectionRef = card.requires?.sectionLine ? el('a', {
-        class: 'section-link',
-        href: `#subject/${card._subject}`,
-        'data-section': card.requires.sectionLine,
-        title: `View section this card comes from`,
-        on: { click: e => {
-            e.preventDefault();
-            state.reviewSubjectFilter = card._subject;
-            state.sectionFilter = null;
-            resetReviewQueue();
-            go('subject', card._subject);
-            setTimeout(() => {
-                const shard = state.shards[card._subject];
-                if (!shard) return;
-                const sec = shard.guide?.sections?.find(s => s.line === card.requires.sectionLine);
-                if (sec) {
-                    const anchorId = `g-${slugify(sec.title)}-${sec.line}`;
-                    const el = document.getElementById(anchorId);
-                    if (el) {
-                        const panel = el.closest('.chunk-panel');
-                        if (panel && panel.classList.contains('chunk-collapsed')) {
-                            panel.classList.remove('chunk-collapsed');
+    const sectionRef = (() => {
+        if (!card.requires?.sectionLine) return null;
+        const shard = state.shards[card._subject];
+        const sec = shard?.guide?.sections?.find(s => s.line === card.requires.sectionLine);
+        const sectionTitle = sec?.title || 'guide section';
+        return el('a', {
+            class: 'section-link',
+            href: `#subject/${card._subject}`,
+            'data-section': card.requires.sectionLine,
+            title: `View: ${sectionTitle}`,
+            on: { click: e => {
+                e.preventDefault();
+                state.reviewSubjectFilter = card._subject;
+                state.sectionFilter = null;
+                resetReviewQueue();
+                go('subject', card._subject);
+                setTimeout(() => {
+                    const shard = state.shards[card._subject];
+                    if (!shard) return;
+                    const sec = shard.guide?.sections?.find(s => s.line === card.requires.sectionLine);
+                    if (sec) {
+                        const anchorId = `g-${slugify(sec.title)}-${sec.line}`;
+                        const el = document.getElementById(anchorId);
+                        if (el) {
+                            const panel = el.closest('.chunk-panel');
+                            if (panel && panel.classList.contains('chunk-collapsed')) {
+                                panel.classList.remove('chunk-collapsed');
+                            }
+                            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
-                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
-                }
-            }, 150);
-        }}
-    }, `← guide section`) : null;
+                }, 150);
+            }}
+        }, `← ${sectionTitle}`);
+    })();
     
     // Subject-level back link - always show for easy navigation
     const backToSubjectLink = state.reviewSubjectFilter !== 'all' 
