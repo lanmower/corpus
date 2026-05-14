@@ -356,7 +356,7 @@ a:hover { text-decoration: underline; }
 .chip:hover { background: var(--panel-2); color: var(--ink); }
 .chip.active { background: var(--ink); color: var(--paper); border-color: var(--ink); font-weight: 600; }
 @media (max-width: 480px) {
-    .chip { padding: 5px 10px; min-height: 40px; font-size: 11px; }
+    .chip { padding: 5px 10px; min-height: 44px; font-size: 11px; }
 }
 
 /* ---- flashcards ---- */
