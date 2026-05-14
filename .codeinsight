@@ -1,57 +1,57 @@
 ## 🎯 corpus — your medical study workspace A local, private, browser-only study workspace for eight medical subjects: cardiology, diabetes, endocrine, gastroenterology, geriatric, nephrology, pulmonology, rheumatology.
 
-# 284f 67.1kL 409fn 0cls cx2.2
+# 284f 67.1kL 409fn 0cls cx2.3
 *Legend: f=files L=lines fn=functions cls=classes cx=avg-complexity | file:line:name(NL)=location Np=params | ↑N=imports-from ↓N=imported-by (N)=occurrences (+N)=more | 🔄circular 🏝️isolated 🔥complex 📋duplicated 📁large*
 
 **Langs:** YAML:83% JS:11% JSON:4% HTML:0%
 
 ## 🛠️ Tech Stack
 
-**Patterns:** el(558), assert.ok(138), assert.match(127), lines.push(114), assert.strictEqual(85), e.preventDefault(57)
-**Top IDs:** class(523), state(489), assert(358), subject(307), length(301), push(271)
+**Patterns:** el(558), assert.ok(138), assert.match(127), lines.push(114), assert.strictEqual(85), stage.append(57)
+**Top IDs:** class(523), state(490), assert(358), subject(307), length(301), push(271)
 
 ## ⚡ Code Patterns
 
 **Async:** async(74), await(76), Promise(4)
-**Errors:** try/catch(107), throw(17)
+**Errors:** try/catch(108), throw(17)
 **Internal calls:** el(558), assert.ok(138), assert.match(127), lines.push(114), assert.strictEqual(85), stage.append(57), e.preventDefault(57), ce(56)
 
 ## 🔗 I/O & Integration
 
 **Env vars:** CORPUS_SYLLABUS, PORT
 **HTTP:** fetch(6)
-**Storage:** SQL(1), files(138), JSON(74)
+**Storage:** SQL(1), files(138), JSON(75)
 **Events:** emit(0), listen(53)
 
 ## 📊 Code Organization
 
-**Large files:** site/app.js:2360L, nephrology/triage_scenarios.yml:2071L, gastroenterology/triage_scenarios.yml:1719L, srs-cards/NEONATAL JAUNDICE.yml:1668L, diabetes/triage_scenarios.yml:1201L, srs-cards/PMTCT updated 2020.yml:1137L (+105)
-**Long funcs:** site/app.js:1186:renderReview(244L), scripts/parse_yaml.js:127:parseYaml(131L), site/app.js:510:renderSubject(127L), site/app.js:359:renderToday(122L), site/app.js:1720:renderScheduleConfigPanel(120L), site/app.js:2128:renderScheduleChecklist(105L) (+18)
-**Many params:** site/app.js:1186:renderReview(13p), site/app.js:1047:renderMarkdown(9p), site/app.js:1604:renderVerdictTable(8p), site/timer.js:32:mount(8p), site/search.js:78:mountPalette(8p), scripts/parse_yaml.js:31:parseFlow(8p)
+**Large files:** site/app.js:2373L, nephrology/triage_scenarios.yml:2071L, gastroenterology/triage_scenarios.yml:1719L, srs-cards/NEONATAL JAUNDICE.yml:1668L, diabetes/triage_scenarios.yml:1201L, srs-cards/PMTCT updated 2020.yml:1137L (+105)
+**Long funcs:** site/app.js:1187:renderReview(244L), scripts/parse_yaml.js:127:parseYaml(131L), site/app.js:1721:renderScheduleConfigPanel(130L), site/app.js:511:renderSubject(127L), site/app.js:360:renderToday(122L), site/app.js:2139:renderScheduleChecklist(105L) (+18)
+**Many params:** site/app.js:1187:renderReview(13p), site/app.js:1048:renderMarkdown(9p), site/timer.js:32:mount(8p), scripts/parse_yaml.js:31:parseFlow(8p), site/search.js:78:mountPalette(8p), site/app.js:1605:renderVerdictTable(8p)
 
 ## 🔄 Architecture
 
-**L0 [pure exports]:** parse_yaml(6↓), schedule(3↓), srs(3↓), progress(3↓), drill(2↓), search(2↓), mistakes(2↓), theme(2↓) (+12)
+**L0 [pure exports]:** parse_yaml(6↓), schedule(3↓), progress(3↓), srs(3↓), mistakes(2↓), cram(2↓), confidence(2↓), lastpos(2↓) (+12)
 **L3 [pure imports]:** app(21↑), test(20↑), triage-live(2↑), build_triage(1↑), build_guides(1↑), anki_export(1↑), anki_migrate(1↑)
 **Cross-module:** test.js→site, test.js→scripts
 **Hubs:** app(21↑0↓), test(20↑0↓), parse_yaml(0↑6↓)
-**External:** https:, vm
+**External:** vm, https:
 
 ## 🔌 API Surface
 
-**Exported fns:** build_guides.js:57:buildGuide(2p), anki_export.js:17:main(1p), anki_migrate.js:10:guidFor(1p), anki_migrate.js:14:topicFromFilename(1p), anki_migrate.js:72:migrateOne(1p), parse_yaml.js:127:parseYaml(6p), progress.js:7:effectiveDateISO(1p), build_data.js:8:stableCardId(1p), build_data.js:328:buildShard(1p), build_triage.js:82:buildScenariosFor(3p)
-**Entry files:** srs, lastpos, usercards, schedule, parse_yaml (+15)
+**Exported fns:** anki_migrate.js:10:guidFor(1p), anki_migrate.js:14:topicFromFilename(1p), anki_migrate.js:72:migrateOne(1p), parse_yaml.js:127:parseYaml(6p), progress.js:7:effectiveDateISO(1p), build_guides.js:57:buildGuide(2p), anki_export.js:17:main(1p), build_triage.js:82:buildScenariosFor(3p), build_data.js:8:stableCardId(1p), build_data.js:328:buildShard(1p)
+**Entry files:** usercards, mistakes, flag, cram, lastpos (+15)
 
 ## 🚨 Issues
 
-- 🔥 Complex funcs: app.js:1186:renderReview(244L), parse_yaml.js:127:parseYaml(131L), app.js:510:renderSubject(127L), app.js:359:renderToday(122L) (+2)
-- 📁 Large files: srs-cards/imported-flashcards-pulmonology.yml:627L, site/app.js:2360L, srs-cards/imported-flashcards-nephrology.yml:634L (+23)
+- 🔥 Complex funcs: app.js:1187:renderReview(244L), parse_yaml.js:127:parseYaml(131L), app.js:1721:renderScheduleConfigPanel(130L), app.js:511:renderSubject(127L) (+2)
+- 📁 Large files: srs-cards/2025 BIRTH DEFECTS.yml:1094L, srs-cards/2025 BIRTH DEFECTS_supplement.yml:541L, srs-cards/Connective Tissue Disease - CMED4IIM1 - 2026_pages-011-014.yml:508L (+23)
 - 📋 17 duplicated groups
 
 ## 🧹 Dead Code & Tests
 
-**Orphaned:** Emergency care for children- the seriously ill child_pages-041-050.yml, videos.json, 2022 NEONATAL RESUS_supplement.yml, 2025 PALLIATIVE_pages-011-020.yml, Hypoxic Ischaemic Encephalopathy_supplement.yml, Drug  The Kidney - CMED4IIM1 - 2026_pages-001-003.yml (+247)
-**Unused exports:** anki_export.js: main | build_triage.js: buildScenariosFor | anki_migrate.js: migrateOne, topicFromFilename | build_guides.js: buildGuide
+**Orphaned:** EMERGENCY CARE FOR CHILDREN_pages-001-010.yml, Jaundice - CMED4IIM1 - 2026_pages-011-014.yml, 2022 POISONING_pages-011-020.yml, syllabus.json, 2025 HIV STAGING, TREATMENT AND PMTC_pages-071-073.yml, Disorders Of The Pituitary Gland - CMEDIIM1 - 2026_pages-011-012.yml (+247)
+**Unused exports:** build_triage.js: buildScenariosFor | anki_migrate.js: guidFor, migrateOne | build_guides.js: buildGuide | anki_export.js: main
 **Tests:** 0/345 (0%)
 
 ## 📦 Modules
@@ -65,14 +65,14 @@
 **generate_concise_notes.js** 215L fn: cleanFileName, extractTextFromFile, collectSubjectContent, generateGuide (+1)
 **generate_spa_cards.js** 194L
 **scripts/anki_export.js** 42L exports: [main] fn: tsvEscape, main
-**scripts/anki_migrate.js** 135L exports: [migrateOne], [topicFromFilename], [guidFor] fn: guidFor, topicFromFilename, detectCloze, yamlEscape (+4)
-**scripts/build_data.js** 392L exports: [stableCardId], [buildShard], [SUBJECTS], [SUBJECT_CAT] fn: stableCardId, resolveSyllabus, safeReaddir, safeStat (+15)
+**scripts/anki_migrate.js** 135L exports: [guidFor], [migrateOne], [topicFromFilename] fn: guidFor, topicFromFilename, detectCloze, yamlEscape (+4)
+**scripts/build_data.js** 392L exports: [buildShard], [SUBJECTS], [stableCardId], [SUBJECT_CAT] fn: stableCardId, resolveSyllabus, safeReaddir, safeStat (+15)
 **scripts/build_guides.js** 161L exports: [buildGuide] fn: readSafe, lsSafe, loadCards, lectureKey (+5)
 **scripts/build_triage.js** 171L exports: [buildScenariosFor] fn: readSafe, lsSafe, loadCards, slug (+4)
 **scripts/compress_media.js** 95L fn: preflight, walk, sizeMB, ffmpegAudio (+3)
 **scripts/parse_yaml.js** 259L exports: [parseYaml] fn: parseScalar, parseFlow, skipWs, parseValue (+12)
 **scripts/serve.js** 28L
-**site/app.js** 2360L fn: fetchJson, loadManifest, loadShard, loadAllShards (+87)
+**site/app.js** 2373L fn: fetchJson, loadManifest, loadShard, loadAllShards (+87)
 **site/calendar.js** 195L fn: el, isoDate, parseIso, monthGridDays (+13)
 **site/confidence.js** 18L fn: load, save, set, get (+1)
 **site/cram.js** 16L fn: isDismissed, dismiss, todayISO
@@ -84,7 +84,7 @@
 **site/justread.js** 20L fn: load, save, isOn, toggle (+1)
 *+264 more files*
 
-Git: branch: master, 55 uncommitted
-Hot: test.js(44), app.js(40), AGENTS.md(28), style.css(26), manifest.json(23), sw.js(20)
+Git: branch: master, 4 uncommitted
+Hot: test.js(44), app.js(41), AGENTS.md(28), style.css(26), manifest.json(22), cardiology.json(20)
 Tooling: GitHub Actions (pages.yml)
 Conv[JS]: 4-space, single quotes, semicolons, function declarations, named exports, relative imports, snake_case files

@@ -2,13 +2,17 @@
 
 > Extended knowledge extracted to `C:/Users/user/.claude/projects/D--corpus/memory/` (design-system, modules-api, storage-keys, build-pipeline, srs-algorithm, triage-system, ia-nav, test-discipline).
 
-## Session Changes (2026-05-08)
+## Session Changes (2026-05-12)
 
-**Daily quota system unified**: Study target derives from schedule plan with `gradedBySubject` tracking in `progress.v1`. Late-session quota via `reducedQuota(base, level, isAhead)` — if ahead of schedule (`isAhead`), maintain full pace.
+**Scheduler subject toggles**: `site/schedule.js` exports `setSubjectList(list)`; `app.js` seeds SUBJECTS from manifest at runtime. `corpus.schedule.config.v1` grows an `enabled` map (default true per subject). `allocateSubjects(weights, dueCounts, daysToExam, enabled)` skips subjects where `enabled[s] === false` — cram mode targets a chosen subset. Settings UI `renderScheduleConfigPanel` adds on/off chip per subject beside the weight slider; disabled rows grey out and the slider is disabled.
 
-**Schedule lazy regeneration**: `getSchedule({regenerateIfStale})` only rebuilds when date changes. Plan stored in `corpus.schedule.v1` with `corpus.schedule.config.v1` for config.
+**Paediatrics + paediatrics-neonatal added**: `syllabus/cmed4-2026/syllabus.json` now lists 10 subjects (was 8). Both new dirs have srs-cards, study_guide.md, triage_scenarios.yml, infographics, videos, audio-deepdive. `manifest.json` has `videoCount`/`audioCount` for all 10. Build pipeline auto-picks them up.
 
-**Readiness-adjusted mastery**: `mastery.js` computes weighted score (cards 40% + sections 30% + cases 20% + mistakes 10%) with exam-pressure adjustment when due backlog exceeds threshold.
+**Media compression**: `scripts/compress_media.js` batches ffmpeg — audio → Opus 48k VBR mono (voip profile); video → AV1 350k + Opus 48k mono in `.webm`. Idempotent (skips if compressed sibling exists). `--replace` deletes originals. Preflight checks for libaom-av1 + libopus.
+
+**build_data.js**: Accepts `.opus` audio and `.webm` video. New `preferCompressed(files, ext)` helper dedupes when both source and compressed siblings exist (drops the uncompressed). Audio regex includes opus; video regex includes webm + mkv.
+
+**Repo size**: Original `.m4a`/`.mp4` sources removed from HEAD's working tree; compressed assets shipped instead (~500MB vs 2.6GB). LFS history retains old blobs but new clones won't fetch them. Squash commit `c17a990` force-pushed to `origin/master`.
 
 ## Build Commands
 
