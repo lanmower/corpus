@@ -14,7 +14,7 @@
 
 **Async:** async(74), await(76), Promise(4)
 **Errors:** try/catch(108), throw(17)
-**Internal calls:** el(571), assert.ok(138), assert.match(127), lines.push(115), assert.strictEqual(85), e.preventDefault(66), stage.append(58), go(56)
+**Internal calls:** el(571), assert.ok(138), assert.match(127), lines.push(115), assert.strictEqual(85), e.preventDefault(66), stage.append(58), ce(56)
 
 ## 🔗 I/O & Integration
 
@@ -27,31 +27,31 @@
 
 **Large files:** site/app.js:2516L, nephrology/triage_scenarios.yml:2071L, gastroenterology/triage_scenarios.yml:1719L, srs-cards/NEONATAL JAUNDICE.yml:1668L, diabetes/triage_scenarios.yml:1201L, srs-cards/PMTCT updated 2020.yml:1137L (+106)
 **Long funcs:** site/app.js:1245:renderReview(322L), site/app.js:522:renderSubject(143L), scripts/parse_yaml.js:127:parseYaml(131L), site/app.js:1857:renderScheduleConfigPanel(130L), site/app.js:381:renderToday(112L), site/app.js:768:buildChunkedGuide(105L) (+19)
-**Many params:** site/app.js:1245:renderReview(17p), site/app.js:1106:renderMarkdown(9p), scripts/parse_yaml.js:31:parseFlow(8p), site/search.js:78:mountPalette(8p), site/app.js:1741:renderVerdictTable(8p), site/timer.js:32:mount(8p)
+**Many params:** site/app.js:1245:renderReview(17p), site/app.js:1106:renderMarkdown(9p), site/app.js:1741:renderVerdictTable(8p), site/timer.js:32:mount(8p), site/search.js:78:mountPalette(8p), scripts/parse_yaml.js:31:parseFlow(8p)
 
 ## 🔄 Architecture
 
-**L0 [pure exports]:** parse_yaml(6↓), progress(3↓), schedule(3↓), srs(3↓), usercards(2↓), search(2↓), mistakes(2↓), flag(2↓) (+12)
-**L3 [pure imports]:** app(21↑), test(20↑), triage-live(2↑), build_guides(1↑), build_triage(1↑), anki_export(1↑), anki_migrate(1↑)
+**L0 [pure exports]:** parse_yaml(6↓), srs(3↓), schedule(3↓), progress(3↓), mistakes(2↓), confidence(2↓), timer(2↓), late(2↓) (+12)
+**L3 [pure imports]:** app(21↑), test(20↑), triage-live(2↑), build_triage(1↑), build_guides(1↑), anki_export(1↑), anki_migrate(1↑)
 **Cross-module:** test.js→site, test.js→scripts
 **Hubs:** app(21↑0↓), test(20↑0↓), parse_yaml(0↑6↓)
 **External:** https:, vm
 
 ## 🔌 API Surface
 
-**Exported fns:** parse_yaml.js:127:parseYaml(6p), build_triage.js:82:buildScenariosFor(3p), anki_migrate.js:10:guidFor(1p), anki_migrate.js:14:topicFromFilename(1p), anki_migrate.js:72:migrateOne(1p), build_guides.js:57:buildGuide(2p), build_data.js:8:stableCardId(1p), build_data.js:328:buildShard(1p), progress.js:7:effectiveDateISO(1p), anki_export.js:17:main(1p)
-**Entry files:** theme, toast, search, usercards, verdicts (+15)
+**Exported fns:** build_guides.js:57:buildGuide(2p), progress.js:7:effectiveDateISO(1p), build_data.js:8:stableCardId(1p), build_data.js:328:buildShard(1p), parse_yaml.js:127:parseYaml(6p), anki_migrate.js:10:guidFor(1p), anki_migrate.js:14:topicFromFilename(1p), anki_migrate.js:72:migrateOne(1p), build_triage.js:82:buildScenariosFor(3p), anki_export.js:17:main(1p)
+**Entry files:** mistakes, parse_yaml, cram, verdicts, theme (+15)
 
 ## 🚨 Issues
 
 - 🔥 Complex funcs: app.js:1245:renderReview(322L), app.js:522:renderSubject(143L), parse_yaml.js:127:parseYaml(131L), app.js:1857:renderScheduleConfigPanel(130L) (+3)
-- 📁 Large files: srs-cards/2025 BIRTH DEFECTS_supplement.yml:541L, srs-cards/NEONATAL JAUNDICE.yml:1668L, paediatrics/triage_scenarios.yml:568L (+23)
+- 📁 Large files: srs-cards/2024 NEONATAL INFECTIONS.yml:764L, srs-cards/2025 BIRTH DEFECTS_supplement.yml:541L, srs-cards/Neck Pain  Back Pain - CMED4IIM1  - 2026_pages-001-009.yml:578L (+23)
 - 📋 17 duplicated groups
 
 ## 🧹 Dead Code & Tests
 
-**Orphaned:** ETAT - Coma and Convulsions_pages-001-010.yml, 2025 PMTC_pages-011-020.yml, generate_spa_cards.js, Complications of Prematurity LBW and RDS.yml, videos.json, imported-flashcards-cardiology.yml (+247)
-**Unused exports:** build_triage.js: buildScenariosFor | build_guides.js: buildGuide | anki_migrate.js: guidFor, migrateOne | anki_export.js: main
+**Orphaned:** rheumatoid-arthritis-pages-011-018.yml, 2025 PALLIATIVE_pages-031-034.yml, videos.json, Bleeding child_pages-021-030.yml, Adrenal Gland - CMED4IIM1 - 2026_pages-001-010.yml, DEHYDRATION_pages-011-020.yml (+247)
+**Unused exports:** build_triage.js: buildScenariosFor | anki_migrate.js: migrateOne, topicFromFilename | build_guides.js: buildGuide | anki_export.js: main
 **Tests:** 0/345 (0%)
 
 ## 📦 Modules
@@ -65,8 +65,8 @@
 **generate_concise_notes.js** 215L fn: cleanFileName, extractTextFromFile, collectSubjectContent, generateGuide (+1)
 **generate_spa_cards.js** 194L
 **scripts/anki_export.js** 42L exports: [main] fn: tsvEscape, main
-**scripts/anki_migrate.js** 135L exports: [guidFor], [migrateOne], [topicFromFilename] fn: guidFor, topicFromFilename, detectCloze, yamlEscape (+4)
-**scripts/build_data.js** 392L exports: [SUBJECT_CAT], [buildShard], [stableCardId], [SUBJECTS] fn: stableCardId, resolveSyllabus, safeReaddir, safeStat (+15)
+**scripts/anki_migrate.js** 135L exports: [migrateOne], [topicFromFilename], [guidFor] fn: guidFor, topicFromFilename, detectCloze, yamlEscape (+4)
+**scripts/build_data.js** 392L exports: [SUBJECTS], [buildShard], [SUBJECT_CAT], [stableCardId] fn: stableCardId, resolveSyllabus, safeReaddir, safeStat (+15)
 **scripts/build_guides.js** 161L exports: [buildGuide] fn: readSafe, lsSafe, loadCards, lectureKey (+5)
 **scripts/build_triage.js** 171L exports: [buildScenariosFor] fn: readSafe, lsSafe, loadCards, slug (+4)
 **scripts/compress_media.js** 95L fn: preflight, walk, sizeMB, ffmpegAudio (+3)
@@ -84,7 +84,7 @@
 **site/justread.js** 20L fn: load, save, isOn, toggle (+1)
 *+264 more files*
 
-Git: branch: master, 4 uncommitted
-Hot: test.js(45), app.js(43), AGENTS.md(29), style.css(29), manifest.json(22), cardiology.json(20)
+Git: branch: master, 1 uncommitted
+Hot: test.js(45), app.js(43), AGENTS.md(29), style.css(29), manifest.json(22), sw.js(20)
 Tooling: GitHub Actions (pages.yml)
 Conv[JS]: 4-space, single quotes, semicolons, function declarations, named exports, relative imports, snake_case files
