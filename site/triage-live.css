@@ -341,14 +341,39 @@ kbd { font-family: var(--ff-mono); font-size: 10px; background: var(--panel-2); 
 /* ---- responsive: phone ≤480px ---- */
 @media (max-width: 480px) {
     .triage-shell { padding: 8px 10px 80px; gap: 8px; }
-    .triage-side { max-height: 38vh; padding: 8px; overflow-y: auto; }
+    .triage-side {
+        max-height: 38vh;
+        padding: 8px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-width: 0;
+    }
     .scenario-row {
         padding: 10px 10px;
         font-size: 12px;
         word-break: break-word;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
+        max-width: 100%;
+        min-width: 0;
+    }
+    .scenario-row > div {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        max-width: 100%;
     }
     .scenario-row .sub { font-size: 10px; }
+    /* Filter chips: keep inside the panel, don't overflow long subject names */
+    .filter-bar {
+        max-width: 100%;
+        min-width: 0;
+        flex-wrap: wrap;
+    }
+    .filter-chip {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
     .stem { font-size: 14px; line-height: 1.5; }
     .active-scenario .panel-head .title { font-size: 15px; }
     .scratchpad { grid-template-columns: 1fr; gap: 10px; }
