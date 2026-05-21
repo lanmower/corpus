@@ -204,10 +204,21 @@ Provide coaching.`;
     }
 }
 
-// Placeholder: Generate coaching using template rules (replace with Bonsai inference)
+// Generate coaching message using template rules
+// TODO: Phase 4.10 - Replace with real Bonsai 1-bit model inference
+// Model: prism-ml/Bonsai-1B-gguf (1.7B params, 290MB, needs GGML.js runtime)
+// Protocol: LLM receives {front, back, grade, subject, attempt} → streams tokens
 async function generateCoachingText(userMessage, front, back, grade) {
-    // Extract key terms for better coaching
+    // TODO: Uncomment when Bonsai inference is ready
+    // if (state.model && state.modelLoaded) {
+    //     return await inferBonsai({front, back, grade, subject: userMessage});
+    // }
+
+    // Fallback template-based coaching
+    // Extract key concepts from card
     const keyTerms = front.split(' ').slice(0, 8).join(' ');
+    const backSnippet = back.split('.')[0]; // First sentence of answer
+
     const responseQuality = [
         'Let\\'s strengthen this concept. ',
         'The key insight here is: ',
@@ -236,7 +247,21 @@ async function generateCoachingText(userMessage, front, back, grade) {
     const action = responseQuality[Math.floor(Math.random() * responseQuality.length)];
     const suggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
 
-    return starter + action + keyTerms + '. ' + suggestion + ' You\\'ve got this.';
+    // Build response that references the card
+    const response = starter + action + 'The answer is about: ' + backSnippet.slice(0, 80) + (backSnippet.length > 80 ? '...' : '');
+    return response + ' ' + suggestion + ' You\\'ve got this.';
+}
+
+// Real Bonsai inference (placeholder for Phase 4.10)
+// Once GGML.js or equivalent is integrated, replace templates with this
+async function inferBonsai(context) {
+    // {front, back, grade, subject} → coaching response
+    // This would:
+    // 1. Build prompt: "Student saw card: {front}, Answer: {back}, Grade: {grade}"
+    // 2. Run inference: model.generate(prompt, maxTokens: 100, temperature: 0.7)
+    // 3. Stream tokens back to main thread
+    // For now, returns error so caller falls back to templates
+    throw new Error('Bonsai inference not yet implemented - using templates');
 }
 
 // Generate session overview for SRS daily page
