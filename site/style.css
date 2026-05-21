@@ -1714,4 +1714,32 @@ details.collapsible[open] > summary::after { content: 'â–´'; }
     }
 }
 
+/* Tutor panel animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+}
+
+/* Tutor panel collapse animation */
+#tutor-panel {
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 

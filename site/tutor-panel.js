@@ -3,6 +3,7 @@
 export let tutorMessages = [];
 export let tutorWorker = null;
 export let panelContainer = null;
+let isPanelCollapsed = false;
 
 export async function initTutorPanel() {
     try {
@@ -107,13 +108,33 @@ function renderFallbackChat() {
             flex-direction: column;
             z-index: 100;
             font-family: var(--ff-body);
+            transition: width 0.3s ease;
         `;
         document.body.appendChild(panelContainer);
     }
 
+    const collapseBtn = `<button id="tutor-collapse-btn" style="
+        background: none;
+        border: none;
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 16px;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+    " title="Collapse panel">→</button>`;
+
     panelContainer.innerHTML = `
-        <div style="padding: 12px; border-bottom: 1px solid var(--border); background: var(--panel-2);">
-            <span style="font-weight: 600; font-size: 14px;">🤖 Study Coach</span>
+        <div style="padding: 12px; border-bottom: 1px solid var(--border); background: var(--panel-2); display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 20px;">🤖</span>
+                <span style="font-weight: 600; font-size: 14px;">Study Coach</span>
+            </div>
+            ${collapseBtn}
         </div>
         <div id="tutor-messages" aria-live="polite" aria-label="coaching messages" style="flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
             <div style="padding: 8px; background: var(--panel-2); border-radius: 4px; font-size: 13px;">
@@ -144,6 +165,34 @@ function renderFallbackChat() {
             }
         });
     }
+
+    const collapseBtn = panelContainer.querySelector('#tutor-collapse-btn');
+    if (collapseBtn) {
+        collapseBtn.addEventListener('click', toggleTutorCollapse);
+    }
+}
+
+function toggleTutorCollapse() {
+    if (!panelContainer) return;
+    isPanelCollapsed = !isPanelCollapsed;
+
+    if (isPanelCollapsed) {
+        panelContainer.style.width = '60px';
+        const collapseBtn = panelContainer.querySelector('#tutor-collapse-btn');
+        if (collapseBtn) collapseBtn.textContent = '←';
+        const messagesDiv = panelContainer.querySelector('#tutor-messages');
+        if (messagesDiv) messagesDiv.parentElement.style.display = 'none';
+        const inputDiv = panelContainer.querySelector('#tutor-input');
+        if (inputDiv) inputDiv.parentElement.style.display = 'none';
+    } else {
+        panelContainer.style.width = '30%';
+        const collapseBtn = panelContainer.querySelector('#tutor-collapse-btn');
+        if (collapseBtn) collapseBtn.textContent = '→';
+        const messagesDiv = panelContainer.querySelector('#tutor-messages');
+        if (messagesDiv) messagesDiv.parentElement.style.display = '';
+        const inputDiv = panelContainer.querySelector('#tutor-input');
+        if (inputDiv) inputDiv.parentElement.style.display = '';
+    }
 }
 
 function syncTheme() {
@@ -170,6 +219,32 @@ export function addTutorMessage(text, isUser = false) {
     msg.textContent = text;
     messagesContainer.appendChild(msg);
     messagesContainer.parentElement.scrollTop = messagesContainer.parentElement.scrollHeight;
+}
+
+export function showTutorToast(message, duration = 3000) {
+    if (!panelContainer) return;
+
+    const toast = document.createElement('div');
+    toast.style.cssText = `
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        background: var(--accent);
+        color: var(--accent-text);
+        padding: 12px 16px;
+        border-radius: 4px;
+        font-size: 13px;
+        z-index: 1001;
+        animation: slideIn 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    `;
+    toast.textContent = message;
+    panelContainer.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, duration);
 }
 
 export function sendTutorMessage(text) {
@@ -201,6 +276,7 @@ export function wireWorkerToPanel(worker) {
 
             case 'coaching-start':
                 addTutorMessage('💭 Thinking...', false);
+                showTutorToast('Coaching...');
                 break;
 
             case 'token':
@@ -224,6 +300,7 @@ export function wireWorkerToPanel(worker) {
 
             case 'guide-answer-done':
                 addTutorMessage(message, false);
+                showTutorToast('📚 Guide answer ready');
                 break;
 
             case 'error':
