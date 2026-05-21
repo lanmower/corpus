@@ -1614,6 +1614,21 @@ const card = state.reviewQueue[state.reviewIndex];
     );
     stage.append(reviewCard);
 
+    // Notify tutor of loaded card (non-blocking)
+    if (state.tutorWorker && card) {
+        try {
+            state.tutorWorker.postMessage({
+                cmd: 'card-loaded',
+                id: card.id,
+                front: card.front,
+                back: card.back,
+                subject: card._subject
+            });
+        } catch (err) {
+            warn('tutor card-loaded notification failed', err.message);
+        }
+    }
+
     const actions = el('div', { class: 'toolbar review-actions', id: 'review-actions' });
     if (!state.reviewRevealed) {
         actions.append(el('button', { class: 'chip active', id: 'review-reveal',
@@ -1686,6 +1701,29 @@ function gradeReview(cardId, score) {
     // Undo record
     undo.record(cardId, prev);
     showUndoToast();
+
+    // Send to tutor for coaching (non-blocking)
+    if (state.tutorWorker && card0) {
+        try {
+            state.tutorWorker.postMessage({
+                cmd: 'user-graded',
+                cardId: cardId,
+                front: card0.front,
+                back: card0.back,
+                subject: card0._subject,
+                score: score,
+                history: {
+                    attempts: prev.reviews || 0,
+                    easeFactor: prev.easeFactor || 1.0,
+                    lastAttempt: prev.lastReviewDate || null
+                }
+            });
+        } catch (err) {
+            // Non-blocking: tutor errors don't crash review flow
+            warn('tutor coaching failed', err.message);
+        }
+    }
+
     state.reviewQueueIds.splice(state.reviewIndex, 1);
     if (state.reviewIndex >= state.reviewQueueIds.length) state.reviewIndex = 0;
     state.reviewRevealed = false;
