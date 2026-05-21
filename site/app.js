@@ -2666,21 +2666,39 @@ function registerSW() {
             state.broadcastChannel = ch;
         } catch (e) { warn('broadcast channel unavailable', e.message); }
 
-        // Initialize Bonsai tutor (async, non-blocking)
+        // Initialize Bonsai-1.7B tutor (async, non-blocking).
+        // tutor.js is an ES module worker that uses transformers.js + WebGPU for real LLM inference.
         try {
             initTutorPanel().catch(err => warn('tutor initialization failed', err.message));
-            // Spawn tutor worker
-            const tutorBlob = new Blob([`importScripts('./tutor.js')`], { type: 'application/javascript' });
-            const tutorWorker = new Worker(URL.createObjectURL(tutorBlob));
-            // Also try loading tutor.js directly
-            const worker = new Worker('./tutor.js', { type: 'module' }).catch(() => new Worker('./tutor.js'));
+            const worker = new Worker('./tutor.js', { type: 'module' });
+            worker.addEventListener('error', e => warn('tutor worker error', e.message || e.filename));
             wireWorkerToPanel(worker);
             state.tutorWorker = worker;
-            // Tell worker to initialize
             worker.postMessage({ cmd: 'init' });
         } catch (err) {
             warn('tutor worker spawn failed', err.message);
         }
+
+        // Expose page-control actions for LLM tool dispatch.
+        // The tutor LLM emits fenced ```tool blocks that the panel parses and calls these handlers.
+        window.__tutorActions = {
+            navigate(args) {
+                const route = String(args?.route || '').replace(/^#/, '');
+                if (!route) return;
+                location.hash = '#' + route;
+            },
+            open_guide(args) {
+                const subject = String(args?.subject || '').toLowerCase();
+                if (!subject) return;
+                const anchor = args?.anchor ? '#' + args.anchor : '';
+                location.hash = `#guides/${subject}${anchor}`;
+            },
+            start_session(args) {
+                const subject = String(args?.subject || '').toLowerCase();
+                if (!subject) { location.hash = '#review'; return; }
+                location.hash = `#review/${subject}`;
+            }
+        };
 
         window.addEventListener('corpus:storage-full', () => showStorageFullBanner());
         const hash = location.hash.replace('#', '') || 'today';

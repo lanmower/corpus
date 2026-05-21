@@ -1,5 +1,7 @@
 // Tutor panel - renders Chat UI and manages communication with corpus
 
+import { dispatchToolCalls, stripToolBlocks } from './tool-dispatch.js';
+
 export let tutorMessages = [];
 export let tutorWorker = null;
 export let panelContainer = null;
@@ -113,7 +115,7 @@ function renderFallbackChat() {
         document.body.appendChild(panelContainer);
     }
 
-    const collapseBtn = `<button id="tutor-collapse-btn" style="
+    const collapseBtnHtml = `<button id="tutor-collapse-btn" style="
         background: none;
         border: none;
         color: var(--ink);
@@ -134,7 +136,7 @@ function renderFallbackChat() {
                 <span style="font-size: 20px;">🤖</span>
                 <span style="font-weight: 600; font-size: 14px;">Study Coach</span>
             </div>
-            ${collapseBtn}
+            ${collapseBtnHtml}
         </div>
         <div id="tutor-messages" aria-live="polite" aria-label="coaching messages" style="flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
             <div style="padding: 8px; background: var(--panel-2); border-radius: 4px; font-size: 13px;">
@@ -263,53 +265,108 @@ export function sendTutorMessage(text) {
     }
 }
 
+// Dispatch any fenced ```tool blocks the LLM emitted; return prose-only text for display.
+function dispatchAndStrip(message) {
+    if (!message) return '';
+    const actions = (typeof window !== 'undefined' && window.__tutorActions) || {};
+    try { dispatchToolCalls(message, actions); }
+    catch (e) { console.warn('[tutor-panel] tool dispatch error', e); }
+    return stripToolBlocks(message) || message;
+}
+
 export function wireWorkerToPanel(worker) {
     tutorWorker = worker;
+    let streamingMsg = null;
+    let streamingBuf = '';
 
     worker.addEventListener('message', (e) => {
-        const { event, token, message, error } = e.data;
+        const { event, token, message, error, stage, progress, loaded, total } = e.data || {};
 
         switch (event) {
             case 'log':
                 console.log('[tutor]', e.data.msg);
                 break;
 
+            case 'warn':
+                console.warn('[tutor]', e.data.msg);
+                break;
+
+            case 'model-loading':
+                addTutorMessage(`⏳ ${stage || 'loading tutor…'}`, false);
+                break;
+
+            case 'model-downloading': {
+                const pct = total ? Math.round((loaded / total) * 100) : Math.round(progress || 0);
+                const msgs = document.getElementById('tutor-messages');
+                const last = msgs?.lastElementChild;
+                if (last && last.dataset.kind === 'progress') {
+                    last.textContent = `⏳ downloading Bonsai-1.7B… ${pct}%`;
+                } else {
+                    const div = document.createElement('div');
+                    div.dataset.kind = 'progress';
+                    div.style.cssText = 'padding:8px 12px;background:var(--panel-2);border-radius:4px;font-size:13px;font-family:var(--ff-mono);';
+                    div.textContent = `⏳ downloading Bonsai-1.7B… ${pct}%`;
+                    msgs?.appendChild(div);
+                    if (msgs?.parentElement) msgs.parentElement.scrollTop = msgs.parentElement.scrollHeight;
+                }
+                break;
+            }
+
+            case 'ready':
+                addTutorMessage('✓ tutor ready — ask me anything about your study material.', false);
+                break;
+
+            case 'unavailable':
+                addTutorMessage(`tutor unavailable — ${error || 'WebGPU required. Open in Chrome or Edge.'}`, false);
+                break;
+
             case 'coaching-start':
-                addTutorMessage('💭 Thinking...', false);
-                showTutorToast('Coaching...');
+                // Start a fresh assistant bubble that tokens will stream into.
+                streamingBuf = '';
+                streamingMsg = document.createElement('div');
+                streamingMsg.style.cssText = `
+                    padding: 8px 12px;
+                    background: var(--accent-tint);
+                    border-radius: 4px;
+                    font-size: 13px;
+                    line-height: 1.5;
+                    word-wrap: break-word;
+                `;
+                streamingMsg.textContent = '';
+                document.getElementById('tutor-messages')?.appendChild(streamingMsg);
                 break;
 
             case 'token':
-                // Update last message with streaming token
-                const msgs = document.getElementById('tutor-messages');
-                if (msgs) {
-                    const lastMsg = msgs.lastElementChild;
-                    if (lastMsg) {
-                        lastMsg.textContent += token;
-                    }
+                if (streamingMsg && token != null) {
+                    streamingBuf += token;
+                    // Hide tool blocks from the live view while streaming.
+                    streamingMsg.textContent = stripToolBlocks(streamingBuf) || streamingBuf;
+                    const msgs = document.getElementById('tutor-messages');
+                    if (msgs?.parentElement) msgs.parentElement.scrollTop = msgs.parentElement.scrollHeight;
                 }
                 break;
 
             case 'coaching-done':
-                addTutorMessage(message, false);
-                break;
-
             case 'session-overview-done':
-                addTutorMessage(message, false);
-                break;
-
             case 'guide-answer-done':
-                addTutorMessage(message, false);
-                showTutorToast('📚 Guide answer ready');
+            case 'triage-hint-done': {
+                const clean = dispatchAndStrip(message);
+                if (streamingMsg) {
+                    streamingMsg.textContent = clean;
+                    streamingMsg = null;
+                    streamingBuf = '';
+                } else {
+                    addTutorMessage(clean, false);
+                }
+                if (event === 'guide-answer-done') showTutorToast('📚 guide answer ready');
+                if (event === 'triage-hint-done') showTutorToast('💡 hint provided');
                 break;
-
-            case 'triage-hint-done':
-                addTutorMessage(`💡 ${message}`, false);
-                showTutorToast('Hint provided');
-                break;
+            }
 
             case 'error':
-                addTutorMessage(`❌ Error: ${error || e.data.msg}`, false);
+                addTutorMessage(`error: ${error || e.data.msg}`, false);
+                streamingMsg = null;
+                streamingBuf = '';
                 break;
         }
     });

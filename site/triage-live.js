@@ -1,25 +1,29 @@
 ﻿import './theme.js';
 import * as progress from './progress.js';
-const SYSTEM_PROMPT_TMPL = `you are a Socratic clinical examiner. the student is being tested. you do NOT give them the answer.
+import { dispatchToolCalls as runToolCalls, stripToolBlocks } from './tool-dispatch.js';
+
+const SYSTEM_PROMPT_TMPL = `you are a Socratic clinical examiner running an OSCE-style triage station. you are conversational. the student talks to you in plain english — they do NOT type commands or syntax. when they describe something (a differential, an investigation, a plan), YOU translate it into the right tool call and place the card on their board.
 
 your job in phase=asking:
-- read the case stem and the cards the student has already placed
-- ask probing questions that force the student to commit a differential / investigation / plan in their own words
-- if the student tries to ask "what is the differential?" or "what's the plan?", refuse — turn the question back: "what do YOU think? add three cards with your top differentials and i will grade them."
-- you may add a 'note' card to clarify the case stem (e.g. extra history) but you must NOT add differential / recommendation / plan / vital cards yourself in this phase. let the student supply them.
+- read the case stem and the cards already on the board
+- when the student commits to something (e.g. "i think this is a STEMI", "i'd order an ECG and troponin", "i'd give aspirin 300mg"), call add_card with the appropriate kind. infer kind from what they said: a disease/condition is "differential", a test is "investigation", a treatment is "plan", a finding is "vital" or "note".
+- ask short probing questions to draw out their reasoning. never volunteer the answer.
+- if they ask "what's the differential?" or "what should i do?", refuse and turn it back: "what do YOU think? give me your top three."
+- when they say something like "i'm done", "grade me", "i'm ready", "check my work" — and they have at least 3 differentials, 2 investigations and 1 plan committed — call set_phase phase=grading. otherwise tell them what's still missing and keep asking.
+- do not add differential / investigation / plan cards yourself; only 'note' or 'vital' cards to clarify the stem.
 
 your job in phase=grading:
-- compare the student's cards against the answer key (provided in this prompt only when grading)
-- for each canonical atom the student got right, emit highlight_card on the matching student card
-- for each canonical atom the student missed, emit add_card kind=note with title="missed: <atom>" so the gap is visible
-- finish with one short feedback sentence
+- the answer key is included below for this turn only. compare the student's cards against it.
+- for each canonical atom the student got right, call highlight_card on the matching student card.
+- for each canonical atom the student missed, call add_card kind=note with title="missed: <atom>" and a one-sentence body.
+- finish with one short feedback sentence, then call set_phase phase=graded.
 
-available tools (emit one per fenced block, language=tool):
+available tools — emit each in its own fenced block, language=tool. emit tool calls AND prose in the same turn; the prose appears in chat, the tools mutate the board:
 \`\`\`tool
-{"name":"add_card","args":{"id":"note-1","kind":"differential|recommendation|warning|vital|plan|note","title":"short","body":"one or two sentences"}}
+{"name":"add_card","args":{"id":"differ-1","kind":"differential|investigation|plan|vital|note","title":"short","body":"one or two sentences"}}
 \`\`\`
 \`\`\`tool
-{"name":"remove_card","args":{"id":"note-1"}}
+{"name":"remove_card","args":{"id":"differ-1"}}
 \`\`\`
 \`\`\`tool
 {"name":"highlight_card","args":{"id":"differ-1"}}
@@ -27,15 +31,18 @@ available tools (emit one per fenced block, language=tool):
 \`\`\`tool
 {"name":"clear_screen","args":{}}
 \`\`\`
+\`\`\`tool
+{"name":"set_phase","args":{"phase":"asking|grading|graded"}}
+\`\`\`
 
-every turn you receive a fresh snapshot — you have no chat history. work from what is on screen now.
+every turn you receive a fresh snapshot — you have no chat history. work from what is on the board now.
 
 phase: {{PHASE}}
 
 case stem:
 {{STEM}}
 
-current scratchpad ({{N}} cards — these are the student's commitments):
+current board ({{N}} cards — these are the student's commitments):
 {{CARDS}}
 {{ANSWER_KEY}}`;
 
@@ -169,15 +176,7 @@ const els = {
     clearScreen: document.getElementById('clear-screen')
 };
 
-function submitForGrading() {
-    if (!currentScenario()) return;
-    state.phase = 'grading';
-    progress.bumpCase(1);
-    renderActive();
-    els.prompt.value = 'grade my work';
-    send(true).then(() => renderActive());
-}
-state.submitForGrading = submitForGrading;
+// (removed) submitForGrading — phase transitions are now LLM-driven via the set_phase tool.
 
 function ce(tag, attrs = {}, ...kids) {
     const e = document.createElement(tag);
@@ -202,11 +201,11 @@ async function checkCapability() {
     }
     if (!navigator.gpu) {
         state.capability = 'unsupported';
-        els.capDot.className = 'dot ok';
-        els.capLabel.textContent = 'tutor ready (offline)';
+        els.capDot.className = 'dot warn';
+        els.capLabel.textContent = 'WebGPU required';
         els.loadLLM.disabled = true;
-        els.modelDetail.textContent = 'using built-in offline tutor â€” no setup needed. type or use the buttons to add cards, then submit for grading.';
-        console.log('[triage-live] capability: gpu absent â€” using simulator');
+        els.modelDetail.textContent = 'this browser does not support WebGPU. open in Chrome or Edge for the live tutor. offline grading is still available.';
+        console.log('[triage-live] capability: gpu absent — using offline grading only');
         return;
     }
     try {
@@ -220,7 +219,7 @@ async function checkCapability() {
         state.gpuInfo = { features, fp16, info };
         els.capDot.className = 'dot ok';
         els.capLabel.textContent = 'tutor ready';
-        els.modelDetail.textContent = 'offline tutor active. for an experimental LLM tutor (~250MB download), click "load tutor" below.';
+        els.modelDetail.textContent = 'your private tutor loads automatically when you open a case (~250MB once, then cached).';
         console.log('[triage-live] adapter', { features, fp16, info });
         debugLog('adapter', { features, fp16, info: { vendor: info.vendor, architecture: info.architecture, device: info.device } });
         if (DEBUG_WEBGPU) {
@@ -365,6 +364,10 @@ function selectScenario(id) {
     renderActive();
     renderScratchpad();
     renderMessages();
+    // Auto-load the LLM on first scenario select. If WebGPU is missing, this is a no-op.
+    if (state.capability === 'webgpu' && !state.loadStarted) {
+        loadLLM().catch(e => console.warn('[triage-live] auto-load failed', e));
+    }
 }
 
 function countByKind(cards) {
@@ -373,37 +376,7 @@ function countByKind(cards) {
     return out;
 }
 
-function renderQuickAdd() {
-    const kinds = [
-        { kind: 'differential', label: '+ differential', placeholder: 'e.g. acute coronary syndrome' },
-        { kind: 'investigation', label: '+ investigation', placeholder: 'e.g. ECG, troponin' },
-        { kind: 'plan', label: '+ plan', placeholder: 'e.g. aspirin 300mg, GTN, oxygen' }
-    ];
-    const wrap = ce('div', { class: 'quick-add' });
-    for (const k of kinds) {
-        let input;
-        const commit = () => {
-            const v = input.value.trim();
-            if (!v) return;
-            const title = v.slice(0, 80);
-            const body = v.length > 80 ? v.slice(80) : '';
-            TOOLS.add_card({ id: `student-${k.kind}-${Date.now()}`, kind: k.kind, title, body });
-            input.value = '';
-            renderActive();
-        };
-        input = ce('input', {
-            type: 'text', class: 'qa-input', placeholder: k.placeholder,
-            'aria-label': `add ${k.kind}`,
-            on: { keydown: e => { if (e.key === 'Enter') { e.preventDefault(); commit(); } } }
-        });
-        wrap.append(ce('div', { class: 'qa-row' },
-            ce('label', { class: 'qa-label' }, k.label),
-            input,
-            ce('button', { class: 'chip qa-go', on: { click: commit } }, 'add')
-        ));
-    }
-    return wrap;
-}
+// (removed) renderQuickAdd — the LLM places cards from natural-language descriptions.
 
 function renderGradePanel(sc) {
     const score = state.lastGrade != null ? state.lastGrade : 0;
@@ -458,7 +431,7 @@ function renderActive() {
     if (!sc) {
         els.activeScenario.append(
             ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, 'select a case.'), ce('span', { class: 'meta' }, 'choose one from the list')),
-            ce('div', { class: 'muted' }, 'write differentials, investigations, plan as cards. submit for grading.')
+            ce('div', { class: 'muted' }, 'pick a case on the left. talk to your tutor in plain english — they place cards and grade when you ask.')
         );
         els.activeScenario.className = 'active-scenario panel';
         return;
@@ -488,21 +461,28 @@ function renderActive() {
     if (state.phase === 'graded') {
         els.activeScenario.append(renderGradePanel(sc));
     } else {
-        const gradeBtn = ce('button', {
+        // Conversational suggestion chips — each sends a natural-language message to the tutor.
+        // The LLM decides whether to add a card, ask a follow-up, or transition phase.
+        const askChip = (text, label) => ce('button', {
+            class: 'chip', type: 'button',
+            on: { click: () => { els.prompt.value = text; els.prompt.focus(); } }
+        }, label);
+        const gradeChip = ce('button', {
             class: 'run-btn' + (ready ? '' : ' disabled'),
             on: { click: () => {
-                state.phase = 'grading';
-                renderActive();
-                els.prompt.value = 'grade my work';
-                send(true).then(() => renderActive());
+                els.prompt.value = "i'm ready — grade my work.";
+                send(false);
             } },
             ...(ready ? {} : { disabled: 'true' })
-        }, ready ? 'submit for grading' : `add ${totalNeeded - totalGot} more to submit`);
+        }, ready ? "i'm ready — grade me" : `add ${totalNeeded - totalGot} more, then ask to be graded`);
         els.activeScenario.append(
-            ce('div', { class: 'stem-hint' }, 'add cards via the buttons below or type "add differential: …" in the chat. answer key stays hidden until you submit.'),
+            ce('div', { class: 'stem-hint' }, 'tell the tutor your differentials, investigations, and plan in your own words. they will place the cards for you and grade when you ask.'),
             checklistEl,
-            renderQuickAdd(),
-            gradeBtn
+            ce('div', { class: 'suggestion-chips' },
+                askChip('what additional history would help?', 'ask for more history'),
+                askChip('give me a hint without spoiling the answer.', 'request a hint'),
+                gradeChip
+            )
         );
     }
 }
@@ -514,7 +494,7 @@ function currentScenario() {
 function renderScratchpad() {
     els.scratchpad.innerHTML = '';
     if (state.cards.length === 0) {
-        els.scratchpad.append(ce('div', { class: 'scratchpad-empty' }, '(empty) â€” type "add differential: …", "add investigation: …", or "add plan: …"'));
+        els.scratchpad.append(ce('div', { class: 'scratchpad-empty' }, 'your board is empty — tell the tutor your first differential.'));
         return;
     }
     for (const c of state.cards) {
@@ -569,22 +549,47 @@ const TOOLS = {
         state.cards = [];
         renderScratchpad(); persistActive();
         return { ok: true };
+    },
+    set_phase({ phase }) {
+        if (!['asking', 'grading', 'graded'].includes(phase)) return { ok: false, error: 'bad phase' };
+        const prev = state.phase;
+        state.phase = phase;
+        persistActive(); renderActive();
+        if (phase === 'graded' && prev !== 'graded') {
+            // Compute a score from highlighted vs missed-note cards.
+            const sc = currentScenario();
+            const atomCount = (sc?.atoms || []).length || 0;
+            const hits = state.cards.filter(c => c.highlighted).length;
+            const score = atomCount ? Math.round(100 * hits / atomCount) : 0;
+            state.lastGrade = score;
+            state.streak = score >= 70 ? (state.streak || 0) + 1 : 0;
+            try {
+                const ch = ('BroadcastChannel' in self) ? new BroadcastChannel('corpus') : null;
+                ch?.postMessage({ type: 'case:graded', score: score / 100, scenarioId: sc?.id || sc?.name });
+                ch?.close();
+            } catch {}
+            saveSessions(); renderStats(); renderActive();
+        }
+        if (phase === 'grading') {
+            // Re-issue generation with answer-key snapshot so the LLM can grade.
+            // Caller's current generation is the "asking" turn; we trigger a follow-up grading turn.
+            setTimeout(() => {
+                if (state.workerReady && !state.generating) {
+                    const sys = buildSnapshot('grading');
+                    state.generating = true;
+                    state.worker?.postMessage({ type: 'generate', messages: [
+                        { role: 'system', content: sys },
+                        { role: 'user', content: 'grade the board now using the answer key above. emit highlight_card and add_card tools per the system prompt, then set_phase phase=graded.' }
+                    ] });
+                }
+            }, 50);
+        }
+        return { ok: true };
     }
 };
 
-function dispatchToolCalls(text) {
-    const re = /```tool\s*\n([\s\S]*?)\n```/g;
-    let m, count = 0;
-    while ((m = re.exec(text))) {
-        let parsed;
-        try { parsed = JSON.parse(m[1].trim()); } catch { continue; }
-        const fn = TOOLS[parsed.name];
-        if (!fn) continue;
-        try { fn(parsed.args || {}); count++; } catch (e) { console.error('tool error', e); }
-    }
-    return count;
-}
-state.dispatchToolCalls = dispatchToolCalls;
+// Tool dispatch lives in ./tool-dispatch.js (runToolCalls). Exposed on state for debugging.
+state.dispatchToolCalls = (text) => runToolCalls(text, TOOLS);
 
 function removeCard(id) {
     const idx = state.cards.findIndex(c => c.id === id);
@@ -654,13 +659,13 @@ state.debugLog = debugLog;
 function showWebgpuError(reason, stack) {
     state.llmStatus = 'error';
     els.modelStatus.textContent = 'offline';
-    els.modelDetail.textContent = 'couldnâ€™t load the in-browser tutor â€” switching to offline mode.';
+    els.modelDetail.textContent = "couldn't load the live tutor — offline grading is still available, but conversational coaching needs WebGPU.";
     els.progress.hidden = false;
     els.progressFill.style.width = '0%';
-    els.progressText.textContent = 'using offline tutor';
+    els.progressText.textContent = 'using offline grading';
     els.loadLLM.disabled = false;
     state.loadStarted = false;
-    state.messages.push({ role: 'system', content: 'your tutor is in offline mode â€” you can still work cases.' });
+    state.messages.push({ role: 'system', content: "the live tutor isn't available. you can still get an offline grade — type 'grade me' when you've added your cards." });
     renderMessages();
     console.error('[triage-live] webgpu error', reason, stack);
     debugLog('error', { reason, stack });
@@ -670,7 +675,7 @@ state.showWebgpuError = showWebgpuError;
 function spawnWorker() {
     if (state.worker) return state.worker;
     try {
-        state.worker = new Worker('./triage-llm-worker.js', { type: 'module' });
+        state.worker = new Worker('./llm-worker.js', { type: 'module' });
         state.worker.addEventListener('message', onWorkerMessage);
         state.worker.addEventListener('error', e => {
             const reason = e.message || `${e.filename || 'worker'}:${e.lineno || '?'}`;
@@ -721,15 +726,16 @@ function onWorkerMessage(e) {
     } else if (m.status === 'update') {
         state.streamBuffer += m.output || '';
         const last = state.messages[state.messages.length - 1];
-        if (last && last.role === 'assistant') last.content = state.streamBuffer;
+        // While streaming, show prose with tool blocks hidden so the chat stays readable.
+        if (last && last.role === 'assistant') last.content = stripToolBlocks(state.streamBuffer) || state.streamBuffer;
         renderMessages();
     } else if (m.status === 'complete') {
         const text = m.output || state.streamBuffer;
         const last = state.messages[state.messages.length - 1];
-        if (last && last.role === 'assistant') last.content = text;
+        if (last && last.role === 'assistant') last.content = stripToolBlocks(text);
         state.generating = false;
         renderMessages();
-        dispatchToolCalls(text);
+        runToolCalls(text, TOOLS);
         if (state.phase === 'graded') renderActive();
         if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
     } else if (m.status === 'error') {
@@ -820,83 +826,42 @@ function overlap(a, b) {
     return n;
 }
 
+// Last-resort fallback when WebGPU is unavailable. The LLM is the tutor;
+// without it, we can only do an offline token-overlap grading so the student isn't stuck mid-case.
+// We do NOT try to fake conversational coaching here — that would be dishonest.
 function simulateAssistant(userText) {
     const sc = currentScenario();
     if (!sc) return 'pick a scenario first.';
-    const t = userText.toLowerCase();
-    if (t.includes('clear')) {
-        return 'clearing the board.\n```tool\n{"name":"clear_screen","args":{}}\n```';
+    if (state.phase !== 'grading' && !/\b(grade|score|check)\b/i.test(userText || '')) {
+        return "the live tutor needs WebGPU (Chrome or Edge). i can still grade your board offline against the answer key — type 'grade me' when you're ready.";
     }
-
-    if (state.phase === 'grading') {
-        const studentTokens = state.cards.map(c => ({ c, tok: tokenize(`${c.title} ${c.body}`) }));
-        const blocks = [`grading your ${state.cards.length} cards against the answer key for "${sc.name}".`];
-        let hits = 0, misses = 0;
-        const atoms = (sc.atoms || []).slice(0, 6);
-        const matchedStudentIds = new Set();
-        for (const a of atoms) {
-            const aTok = tokenize(`${a.atom} ${a.definition || ''}`);
-            let best = null, bestScore = 0;
-            for (const sCard of studentTokens) {
-                if (matchedStudentIds.has(sCard.c.id)) continue;
-                const s = overlap(aTok, sCard.tok);
-                if (s > bestScore) { bestScore = s; best = sCard; }
-            }
-            if (best && bestScore >= 2) {
-                matchedStudentIds.add(best.c.id);
-                hits++;
-                blocks.push('```tool\n' + JSON.stringify({ name: 'highlight_card', args: { id: best.c.id } }) + '\n```');
-            } else {
-                misses++;
-                blocks.push('```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `gap-${Date.now()}-${misses}`, kind: 'note', title: `missed: ${a.atom.slice(0, 50)}`, body: (a.definition || '').slice(0, 200) } }) + '\n```');
-            }
+    // Offline grading path — token-overlap against atoms.
+    const studentTokens = state.cards.map(c => ({ c, tok: tokenize(`${c.title} ${c.body}`) }));
+    const blocks = [`grading your ${state.cards.length} cards offline against "${sc.name}".`];
+    let hits = 0, misses = 0;
+    const atoms = (sc.atoms || []).slice(0, 6);
+    const matchedStudentIds = new Set();
+    for (const a of atoms) {
+        const aTok = tokenize(`${a.atom} ${a.definition || ''}`);
+        let best = null, bestScore = 0;
+        for (const sCard of studentTokens) {
+            if (matchedStudentIds.has(sCard.c.id)) continue;
+            const s = overlap(aTok, sCard.tok);
+            if (s > bestScore) { bestScore = s; best = sCard; }
         }
-        const ex = (sc.examples && sc.examples[0]) || {};
-        if (ex.recommendation) {
-            blocks.push('```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `key-rec-${Date.now()}`, kind: 'recommendation', title: 'canonical plan', body: ex.recommendation.slice(0, 240) } }) + '\n```');
+        if (best && bestScore >= 2) {
+            matchedStudentIds.add(best.c.id);
+            hits++;
+            blocks.push('```tool\n' + JSON.stringify({ name: 'highlight_card', args: { id: best.c.id } }) + '\n```');
+        } else {
+            misses++;
+            blocks.push('```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `gap-${Date.now()}-${misses}`, kind: 'note', title: `missed: ${a.atom.slice(0, 50)}`, body: (a.definition || '').slice(0, 200) } }) + '\n```');
         }
-        const score = atoms.length ? Math.round(100 * hits / atoms.length) : 0;
-        blocks.push(`\nâ€” ${hits} of ${atoms.length} key topics matched (${score}%). ${misses ? 'gaps shown as notes on your board.' : 'good coverage.'}`);
-        state.lastGrade = score;
-        state.streak = score >= 70 ? (state.streak || 0) + 1 : 0;
-        state.phase = 'graded';
-        persistActive();
-        saveSessions();
-        renderStats();
-        try {
-            const ch = ('BroadcastChannel' in self) ? new BroadcastChannel('corpus') : null;
-            ch?.postMessage({ type: 'case:graded', score: score / 100, scenarioId: sc.id || sc.name });
-            ch?.close();
-        } catch {}
-        return blocks.join('\n');
     }
-
-    // asking phase â€” Socratic only, never reveal atoms
-    const counts = countByKind(state.cards);
-    const totalCommit = (counts.differential || 0) + (counts.investigation || 0) + (counts.plan || 0);
-    if (t.match(/what (is|are|should)|tell me|give me|hint|answer|differential|plan|treat|manage|investig/) && totalCommit < 3) {
-        return `i won't hand you the answer â€” you're being examined. read the case stem, then add YOUR best three differentials, two investigations, and one plan as cards (use the + button on the scratchpad or the chat â€” say "add differential: <your guess>"). i'll grade them when you submit.`;
-    }
-    const m = t.match(/^add\s+(differential|investigation|plan|vital|warning|note)\s*[:\-]?\s*(.+)$/i);
-    if (m) {
-        const kind = m[1].toLowerCase();
-        const title = m[2].trim().slice(0, 60);
-        return `recording your ${kind}: "${title}". what is your reasoning?\n` +
-            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `student-${kind}-${Date.now()}`, kind, title, body: '(your commitment â€” add reasoning by editing or asking me)' } }) + '\n```';
-    }
-    if (totalCommit === 0) {
-        return `case stem is on the left. what are the top three differentials YOU would consider here? type "add differential: <your guess>" three times, then add two investigations and a plan, then submit for grading.`;
-    }
-    if ((counts.differential || 0) < 3) {
-        return `you have ${counts.differential || 0} of 3 differentials. what else could explain this presentation? add the next one with "add differential: <name>".`;
-    }
-    if ((counts.investigation || 0) < 2) {
-        return `differentials look in place. what investigations would discriminate between them? add with "add investigation: <test>".`;
-    }
-    if ((counts.plan || 0) < 1) {
-        return `now commit your plan with "add plan: <first-line therapy>". then click submit for grading.`;
-    }
-    return `you have committed ${counts.differential || 0} differentials, ${counts.investigation || 0} investigations, ${counts.plan || 0} plan. click "submit for grading" when ready â€” i won't reveal the answer key until you do.`;
+    const score = atoms.length ? Math.round(100 * hits / atoms.length) : 0;
+    blocks.push('```tool\n' + JSON.stringify({ name: 'set_phase', args: { phase: 'graded' } }) + '\n```');
+    blocks.push(`\noffline grade: ${hits} of ${atoms.length} key topics (${score}%). gaps shown on board.`);
+    return blocks.join('\n');
 }
 state.simulateAssistant = simulateAssistant;
 
@@ -948,7 +913,6 @@ document.addEventListener('keydown', e => {
     const idx = vis.findIndex(s => s.id === state.activeScenarioId);
     if (e.key === 'j') { e.preventDefault(); selectScenario(vis[Math.min(idx + 1, vis.length - 1)].id); }
     else if (e.key === 'k') { e.preventDefault(); selectScenario(vis[Math.max(idx - 1, 0)].id); }
-    else if (e.key === 'c') { e.preventDefault(); TOOLS.clear_screen(); }
     else if (e.key === '/') { e.preventDefault(); els.prompt.focus(); }
 });
 

@@ -48,23 +48,23 @@
     <section class="triage-stage">
       <div class="active-scenario panel" id="active-scenario">
         <div class="panel-head"><span class="title">select a case.</span><span class="meta">choose one from the list</span></div>
-        <div class="muted">work the case on this board: write your differentials, investigations, and plan as cards, then submit for grading.</div>
-        <div class="muted small" style="margin-top:8px">shortcuts: <kbd>j</kbd>/<kbd>k</kbd> next/prev · <kbd>c</kbd> clear board · <kbd>/</kbd> focus reply · <kbd>ctrl+enter</kbd> send</div>
+        <div class="muted">pick a case on the left. talk to your tutor in plain english — they will place cards on the board and grade when you say you're ready.</div>
+        <div class="muted small" style="margin-top:8px">shortcuts: <kbd>j</kbd>/<kbd>k</kbd> next/prev · <kbd>/</kbd> focus reply · <kbd>ctrl+enter</kbd> send</div>
       </div>
       <div class="scratchpad" id="scratchpad"></div>
     </section>
 
     <aside class="triage-chat" id="chat-pane">
       <details class="model-bay panel" id="model-bay">
-        <summary class="panel-head"><span class="title">tutor</span><span class="meta" id="model-status">ready</span></summary>
-        <div class="muted" id="model-detail">offline tutor active.</div>
-        <button class="run-btn" id="load-llm">load experimental LLM tutor</button>
+        <summary class="panel-head"><span class="title">tutor</span><span class="meta" id="model-status">starting…</span></summary>
+        <div class="muted" id="model-detail">your private tutor loads automatically when you open a case.</div>
+        <button class="chip" id="load-llm" type="button">retry tutor load</button>
         <div class="progress" id="progress" hidden><div class="progress-fill" id="progress-fill"></div></div>
         <div class="muted small" id="progress-text"></div>
       </details>
       <div class="messages" id="messages" aria-live="polite" aria-atomic="false" aria-label="tutor messages"></div>
       <div class="composer">
-        <textarea id="prompt" placeholder="ask a question or type 'add differential: ...' / 'add investigation: ...' / 'add plan: ...'" rows="3"></textarea>
+        <textarea id="prompt" placeholder="talk to your tutor in plain english — describe a differential, ask for a hint, say 'i'm ready to be graded'…" rows="3"></textarea>
         <div class="composer-row">
           <button class="run-btn" id="send">send</button>
           <button class="chip" id="clear-screen">clear board</button>
