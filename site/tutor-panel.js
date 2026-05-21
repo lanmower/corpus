@@ -20,6 +20,7 @@ export async function initTutorPanel() {
             panelContainer = document.createElement('div');
             panelContainer.id = 'tutor-panel';
             panelContainer.className = 'tutor-panel ds-247420';
+            panelContainer.setAttribute('aria-label', 'Study Coach');
             panelContainer.style.cssText = `
                 position: fixed;
                 right: 0;
@@ -45,7 +46,7 @@ export async function initTutorPanel() {
                             h('span', { style: 'font-weight: 600; font-size: 14px;' }, '🤖 Study Coach')
                         ),
                         h('div', { style: 'flex: 1; overflow-y: auto; padding: 12px;' },
-                            h('div', { id: 'tutor-messages', style: 'display: flex; flex-direction: column; gap: 8px;' })
+                            h('div', { id: 'tutor-messages', 'aria-live': 'polite', 'aria-label': 'coaching messages', style: 'display: flex; flex-direction: column; gap: 8px;' })
                         ),
                         h('div', { style: 'padding: 12px; border-top: 1px solid var(--border);' },
                             h('input', {
@@ -114,7 +115,7 @@ function renderFallbackChat() {
         <div style="padding: 12px; border-bottom: 1px solid var(--border); background: var(--panel-2);">
             <span style="font-weight: 600; font-size: 14px;">🤖 Study Coach</span>
         </div>
-        <div id="tutor-messages" style="flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+        <div id="tutor-messages" aria-live="polite" aria-label="coaching messages" style="flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
             <div style="padding: 8px; background: var(--panel-2); border-radius: 4px; font-size: 13px;">
                 Welcome! I'll help you study more effectively. Start reviewing cards or ask me questions.
             </div>

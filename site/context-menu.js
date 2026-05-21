@@ -8,6 +8,7 @@ export function showContextMenu(x, y, items) {
 
     const menu = document.createElement('div');
     menu.className = 'context-menu';
+    menu.setAttribute('role', 'menu');
     menu.style.top = `${y}px`;
     menu.style.left = `${x}px`;
 
@@ -20,6 +21,7 @@ export function showContextMenu(x, y, items) {
             const menuItem = document.createElement('button');
             menuItem.className = 'context-menu-item';
             menuItem.type = 'button';
+            menuItem.setAttribute('role', 'menuitem');
 
             if (item.icon) {
                 const icon = document.createElement('span');
