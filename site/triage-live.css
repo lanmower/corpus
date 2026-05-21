@@ -1,4 +1,16 @@
-﻿.triage-shell {
+﻿/* Override SDK app shell for triage layout */
+.ds-247420 .app-body {
+    grid-template-columns: 280px minmax(0, 1fr) !important;
+}
+.ds-247420 .app-main {
+    padding: 0 !important;
+}
+.ds-247420 .app-side {
+    padding: 0;
+    border: 0;
+}
+
+.triage-shell {
     display: grid;
     grid-template-columns: 280px 1fr 360px;
     gap: 14px;

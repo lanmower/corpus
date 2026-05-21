@@ -1126,6 +1126,50 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     box-shadow: none !important; background: var(--paper); border-color: #000;
 }
 
+/* ---- tutor panel (floating SDK chat) ---- */
+.tutor-panel-root {
+    font-family: var(--ff-body);
+    box-shadow: -4px 0 24px rgba(0,0,0,0.12);
+}
+.tutor-panel-root .tutor-collapse-btn {
+    position: absolute;
+    left: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 48px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-right: 0;
+    border-radius: 8px 0 0 8px;
+    color: var(--ink);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+}
+.tutor-panel-root .tutor-collapse-btn:hover {
+    background: var(--panel-2);
+}
+.tutor-panel-root .chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.tutor-panel-root .chat-thread {
+    flex: 1;
+    overflow-y: auto;
+}
+.tutor-panel-root .tutor-collapsed-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+}
+
 /* calendar (phase 1) */
 .cal-toolbar { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0; align-items:center; }
 .cal-toolbar .chip.active { background: var(--ink); color: var(--paper); }
