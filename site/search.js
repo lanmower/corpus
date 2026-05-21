@@ -1,4 +1,4 @@
-﻿// global search palette â€” Ctrl-K. indexes cards + scenarios + guide sections.
+﻿// global search palette — Ctrl-K. indexes cards + scenarios + guide sections.
 export function buildSearchIndex(manifest, shards) {
     const items = [];
     for (const meta of manifest.subjects) {
@@ -37,7 +37,7 @@ export function buildSearchIndex(manifest, shards) {
                 items.push({
                     kind: 'prose', subject: meta.subject,
                     id: `${meta.subject}#L${lineCounter}`,
-                    title: trimmed.slice(0, 80) + (trimmed.length > 80 ? 'â€¦' : ''),
+                    title: trimmed.slice(0, 80) + (trimmed.length > 80 ? '…' : ''),
                     body: trimmed
                 });
             }
@@ -53,7 +53,7 @@ export function snippet(body, query, radius = 60) {
     const i = body.toLowerCase().indexOf(tok);
     if (i < 0) return body.slice(0, radius * 2);
     const s = Math.max(0, i - radius), e = Math.min(body.length, i + tok.length + radius);
-    return (s > 0 ? 'â€¦' : '') + body.slice(s, e) + (e < body.length ? 'â€¦' : '');
+    return (s > 0 ? '…' : '') + body.slice(s, e) + (e < body.length ? '…' : '');
 }
 
 export function search(items, q, limit = 30) {

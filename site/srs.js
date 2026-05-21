@@ -1,4 +1,4 @@
-﻿// SRS engine â€” SM-2+ with learning steps, leech detection, interval fuzz.
+﻿// SRS engine — SM-2+ with learning steps, leech detection, interval fuzz.
 // Schema-versioned localStorage. Browser + node compatible.
 
 const STATES_KEY = 'corpus.srs.states';

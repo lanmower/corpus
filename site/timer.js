@@ -1,4 +1,4 @@
-﻿// pomodoro timer â€” 25/5, persists, no chimes. corpus.timer.v1
+﻿// pomodoro timer — 25/5, persists, no chimes. corpus.timer.v1
 const KEY = 'corpus.timer.v1';
 const WORK = 25 * 60, BREAK_ = 5 * 60;
 
@@ -36,7 +36,7 @@ export function mount(doc) {
     el.className = 'pomo hidden';
     el.setAttribute('role', 'timer');
     el.setAttribute('aria-label', 'pomodoro timer');
-    el.innerHTML = `<span class="pomo-mode" id="pomo-mode">work</span><span class="pomo-time" id="pomo-time">25:00</span><button class="chip" id="pomo-toggle">start</button><button class="chip" id="pomo-reset" aria-label="reset">â†º</button><button class="chip" id="pomo-close" aria-label="close">Ã—</button>`;
+    el.innerHTML = `<span class="pomo-mode" id="pomo-mode">work</span><span class="pomo-time" id="pomo-time">25:00</span><button class="chip" id="pomo-toggle">start</button><button class="chip" id="pomo-reset" aria-label="reset">â†º</button><button class="chip" id="pomo-close" aria-label="close">×</button>`;
     doc.body.appendChild(el);
     const mode = el.querySelector('#pomo-mode'), time = el.querySelector('#pomo-time'),
         tog = el.querySelector('#pomo-toggle'), rs = el.querySelector('#pomo-reset'), cl = el.querySelector('#pomo-close');

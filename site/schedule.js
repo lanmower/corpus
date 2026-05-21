@@ -1,4 +1,4 @@
-﻿// schedule engine â€” corpus.schedule.v1 (blocks) + corpus.schedule.config.v1 (config)
+﻿// schedule engine — corpus.schedule.v1 (blocks) + corpus.schedule.config.v1 (config)
 // Deterministic per (config, exam date, due-counts, weights). Re-run from same inputs â†’ same output.
 const KEY = 'corpus.schedule.v1';
 const CFG_KEY = 'corpus.schedule.config.v1';
@@ -31,7 +31,7 @@ function fillSubjectMaps(cfg) {
 
 const INTENSITY_FACTOR = { light: 0.6, standard: 1.0, hard: 1.4, cram: 1.7 };
 const DOW = ['sun','mon','tue','wed','thu','fri','sat'];
-// Daily budget caps â€” keep "today's plan" a single-day slice, not full backlog.
+// Daily budget caps — keep "today's plan" a single-day slice, not full backlog.
 const PER_SUBJECT_DAILY_REVIEW_CAP = 30;   // scaled by intensity
 const DAILY_NEW_CAP = 12;                  // total new cards/day across all subjects, scaled by intensity
 const MIN_PER_REVIEW = 0.4;                // estimator: minutes per card review
@@ -124,7 +124,7 @@ export function buildDayBlocks(cfg, dateIso, dueCounts, extras = {}) {
     const daysToExam = extras.daysToExam || daysBetween(new Date().toISOString().slice(0, 10), cfg.examDate);
     const allocs = allocateSubjects(total, cfg.weights, dueCounts, daysToExam, cfg.enabled);
     const intensityMul = INTENSITY_FACTOR[cfg.intensity] || 1;
-    // Per-subject daily review cap: base Ã— intensity, but never more than what's actually due.
+    // Per-subject daily review cap: base × intensity, but never more than what's actually due.
     const reviewCap = Math.max(1, Math.round(PER_SUBJECT_DAILY_REVIEW_CAP * intensityMul));
     // Filter subjects: only schedule reviews for subjects where student has ticked at least one guide section
     // This ensures material is studied before reviewing cards
@@ -138,11 +138,11 @@ export function buildDayBlocks(cfg, dateIso, dueCounts, extras = {}) {
     const dailyReviewBySubj = {};
     for (const a of allocs) {
         // Only plan reviews for subjects that have been studied (at least one section ticked).
-        // Fresh users (no ticks) get 0 reviews â€” they should learn first.
+        // Fresh users (no ticks) get 0 reviews — they should learn first.
         const hasStudied = studiedSubjects.has(a.subject);
         dailyReviewBySubj[a.subject] = hasStudied ? Math.min(reviewCap, dueCounts[a.subject] || 0) : 0;
     }
-    // Total daily new-card budget â€” allocate proportionally to top subjects only.
+    // Total daily new-card budget — allocate proportionally to top subjects only.
     const newBudget = Math.max(0, Math.round(DAILY_NEW_CAP * intensityMul));
     const sortedAllocs = [...allocs].sort((x, y) => y.min - x.min);
     const newBySubj = {};

@@ -226,7 +226,7 @@ async function checkCapability() {
         console.log('[triage-live] adapter', { features, fp16, info });
         debugLog('adapter', { features, fp16, info: { vendor: info.vendor, architecture: info.architecture, device: info.device } });
         if (DEBUG_WEBGPU) {
-            els.modelDetail.textContent = `adapter: ${info.vendor || '?'} ${info.architecture || ''} Â· features: ${features.length} Â· fp16: ${fp16}`;
+            els.modelDetail.textContent = `adapter: ${info.vendor || '?'} ${info.architecture || ''} · features: ${features.length} · fp16: ${fp16}`;
         }
     } catch (e) {
         state.capability = 'unsupported';
@@ -311,9 +311,9 @@ function renderStats() {
     const attempted = Object.keys(sessions).length;
     let totalCards = 0;
     for (const id of Object.keys(sessions)) totalCards += (sessions[id] || []).length;
-    const last = state.lastGrade != null ? `${state.lastGrade}%` : 'â€”';
+    const last = state.lastGrade != null ? `${state.lastGrade}%` : '—';
     const streak = state.streak || 0;
-    els.statsRow.textContent = `${attempted} attempted Â· streak ${streak} Â· last grade ${last}`;
+    els.statsRow.textContent = `${attempted} attempted · streak ${streak} · last grade ${last}`;
     console.log('[triage-live] stats', { totalScenarios: state.scenarios.length, attempted, totalCards, lastGrade: state.lastGrade, streak });
 }
 
@@ -408,11 +408,11 @@ function renderGradePanel(sc) {
     ));
     if (matched.length) wrap.append(ce('div', { class: 'grade-section' },
         ce('div', { class: 'grade-section-title' }, `you got (${matched.length})`),
-        ...matched.map(c => ce('div', { class: 'grade-row hit' }, ce('span', { class: 'check' }, 'âœ“'), ce('span', {}, c.title)))
+        ...matched.map(c => ce('div', { class: 'grade-row hit' }, ce('span', { class: 'check' }, '✓'), ce('span', {}, c.title)))
     ));
     if (gaps.length) wrap.append(ce('div', { class: 'grade-section' },
         ce('div', { class: 'grade-section-title' }, `you missed (${gaps.length})`),
-        ...gaps.map(c => ce('div', { class: 'grade-row miss' }, ce('span', { class: 'check' }, 'Ã—'),
+        ...gaps.map(c => ce('div', { class: 'grade-row miss' }, ce('span', { class: 'check' }, '×'),
             ce('div', {},
                 ce('div', { class: 'miss-title' }, (c.title || '').replace(/^missed:\s*/i, '')),
                 c.body ? ce('div', { class: 'miss-body' }, c.body) : null
@@ -473,7 +473,7 @@ function renderActive() {
     const ready = totalGot >= totalNeeded;
     const phaseLabel = state.phase === 'asking' ? 'working' : state.phase === 'grading' ? 'grading' : state.phase === 'graded' ? 'graded' : state.phase;
     els.activeScenario.append(
-        ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} Â· ${phaseLabel}`)),
+        ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} · ${phaseLabel}`)),
         ce('div', { class: 'stem' }, stem),
     );
     if (state.phase === 'graded') {
@@ -652,15 +652,15 @@ function removeCard(id) {
 function buildSnapshot(phase) {
     phase = phase || state.phase || 'asking';
     const sc = currentScenario();
-    const stem = sc ? caseStem(sc) : 'none â€” pick a scenario from the left first';
+    const stem = sc ? caseStem(sc) : 'none — pick a scenario from the left first';
     const cardsText = state.cards.length === 0
-        ? '(empty â€” student has not committed any cards yet)'
-        : state.cards.map(c => `- [${c.id}] ${c.kind}: ${c.title} â€” ${c.body}`).join('\n');
+        ? '(empty — student has not committed any cards yet)'
+        : state.cards.map(c => `- [${c.id}] ${c.kind}: ${c.title} — ${c.body}`).join('\n');
     let answerKey = '';
     if (sc && phase === 'grading') {
         const atoms = (sc.atoms || []).slice(0, 8).map(a => `- ${a.atom}: ${(a.definition || '').slice(0, 200)}`).join('\n');
         const ex = (sc.examples && sc.examples[0]) || {};
-        answerKey = `\n\n=== ANSWER KEY (do not paraphrase verbatim â€” use to grade) ===\ncanonical atoms:\n${atoms}\nrecommended plan: ${ex.recommendation || '(not specified)'}\nreasoning: ${ex.reasoning || '(not specified)'}`;
+        answerKey = `\n\n=== ANSWER KEY (do not paraphrase verbatim — use to grade) ===\ncanonical atoms:\n${atoms}\nrecommended plan: ${ex.recommendation || '(not specified)'}\nreasoning: ${ex.reasoning || '(not specified)'}`;
     }
     return SYSTEM_PROMPT_TMPL
         .replace('{{PHASE}}', phase)
@@ -721,7 +721,7 @@ function spawnWorker() {
             state.worker = null;
         });
         state.worker.addEventListener('messageerror', e => {
-            showWebgpuError('worker messageerror â€” module/MIME mismatch?', String(e));
+            showWebgpuError('worker messageerror — module/MIME mismatch?', String(e));
         });
     } catch (e) {
         state.worker = null;
@@ -736,9 +736,9 @@ function onWorkerMessage(e) {
     debugLog('worker-msg', m);
     if (m.status === 'gpu-info') {
         if (DEBUG_WEBGPU) {
-            els.modelDetail.textContent = `adapter: ${m.adapter?.vendor || '?'} ${m.adapter?.architecture || ''} Â· features: ${m.features.length} Â· fp16: ${m.fp16} Â· dtype: ${m.dtype}`;
+            els.modelDetail.textContent = `adapter: ${m.adapter?.vendor || '?'} ${m.adapter?.architecture || ''} · features: ${m.features.length} · fp16: ${m.fp16} · dtype: ${m.dtype}`;
         } else {
-            els.modelDetail.textContent = 'preparing your private tutor â€” this happens once.';
+            els.modelDetail.textContent = 'preparing your private tutor — this happens once.';
         }
         return;
     }
