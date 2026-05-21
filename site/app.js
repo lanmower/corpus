@@ -21,6 +21,8 @@ import * as toast from './toast.js';
 import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
 import { buildSearchIndex, mountPalette, snippet as searchSnippet } from './search.js';
 import { makeToggleButton } from './theme.js';
+import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from './drag.js';
+import { showContextMenu, closeContextMenu } from './context-menu.js';
 
 const stage = document.getElementById('stage');
 const statusbarMsg = document.getElementById('statusbar-msg');
@@ -378,6 +380,73 @@ function nextUntickedSubject() {
     return null;
 }
 
+function nextUntickedSection() {
+    const ticksAll = loadGuideTicks();
+    const lp = lastpos.load();
+    if (lp?.subjectAnchor) {
+        const sh = state.shards[lp.subjectAnchor];
+        if (sh) {
+            const t = ticksAll[lp.subjectAnchor] || {};
+            const sec = sh.guide?.sections?.find(s => (s.level === 2 || s.level === 3) && !t[String(s.line)]);
+            if (sec) return { subject: lp.subjectAnchor, section: sec };
+        }
+    }
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject]; if (!sh) continue;
+        const t = ticksAll[meta.subject] || {};
+        const sec = sh.guide?.sections?.find(s => (s.level === 2 || s.level === 3) && !t[String(s.line)]);
+        if (sec) return { subject: meta.subject, section: sec };
+    }
+    return null;
+}
+
+function renderNextReadingCard(next) {
+    if (!next) return null;
+    const subj = next.subject;
+    const sec = next.section;
+    const ticks = loadGuideTicks()[subj] || {};
+    const tickedCount = Object.keys(ticks).filter(k => ticks[k]).length;
+    const isFirstRead = tickedCount === 0;
+    const totalSections = (state.shards[subj]?.guide?.sections || []).filter(s => s.level === 2 || s.level === 3).length;
+    const progressLabel = totalSections ? `${tickedCount}/${totalSections} sections` : '';
+
+    return el('div', { class: 'panel next-reading-panel', role: 'region', 'aria-label': isFirstRead ? 'start reading' : 'continue reading' },
+        el('div', { class: 'panel-head' },
+            el('span', { class: 'title' }, isFirstRead ? 'start reading' : 'continue reading'),
+            el('span', { class: 'meta' }, `${subj} \u00b7 ${progressLabel}`)),
+        el('div', { class: 'next-reading-body' },
+            el('div', { class: 'nr-subject' }, subj),
+            el('div', { class: 'nr-section' }, sec.title)),
+        el('div', { class: 'next-reading-actions' },
+            el('a', { class: 'chip primary-action', href: `#subject/${subj}`,
+                on: { click: e => {
+                    e.preventDefault();
+                    go('subject', subj);
+                    const anchorId = `g-${slugify(sec.title)}-${sec.line}`;
+                    const pollStart = Date.now();
+                    const poll = () => {
+                        const target = document.getElementById(anchorId);
+                        if (target) {
+                            const panel = target.closest('.chunk-panel');
+                            if (panel && panel.classList.contains('chunk-collapsed')) {
+                                panel.classList.remove('chunk-collapsed');
+                            }
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        } else if (Date.now() - pollStart < 3000) {
+                            setTimeout(poll, 150);
+                        }
+                    };
+                    setTimeout(poll, 300);
+                } } }, 'read \u2192'),
+            el('button', { class: 'chip',
+                on: { click: () => {
+                    const all = loadGuideTicks();
+                    (all[subj] = all[subj] || {})[String(sec.line)] = true;
+                    saveGuideTicks(all);
+                    render();
+                } } }, 'mark read')));
+}
+
 function renderToday() {
     const p = progress.load();
     const due = totalDueAll();
@@ -393,6 +462,10 @@ function renderToday() {
 
     // Primary action — the ONE thing to do now
     stage.append(renderTodayPrimary(due, newCount));
+
+    // Next reading recommendation — always visible so user knows what to read next
+    const nextRead = nextUntickedSection();
+    if (nextRead) stage.append(renderNextReadingCard(nextRead));
 
     // Compact stats strip
     const goal = p.dailyGoal || 30;
@@ -1179,7 +1252,17 @@ function buildFlashcard(c) {
         data: { cardId: id },
         on: {
             click: () => { if (state.flippedCards.has(id)) state.flippedCards.delete(id); else state.flippedCards.add(id); card.classList.toggle('flipped'); },
-            keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } }
+            keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } },
+            contextmenu: e => {
+                e.preventDefault();
+                const isFlagged = flag.isFlagged(id);
+                showContextMenu(e.clientX, e.clientY, [
+                    { icon: isFlagged ? '⚑' : '⚐', label: isFlagged ? 'unflag' : 'flag', action: () => { flag.toggle(id); card.classList.toggle('flagged'); } },
+                    { icon: '⏸', label: 'suspend', action: () => { if (confirm('suspend this card?')) { srs.suspendCard(id, true); } } },
+                    { type: 'divider' },
+                    { icon: '📋', label: 'copy id', action: () => { navigator.clipboard.writeText(id); } }
+                ]);
+            }
         }
     },
         DEBUG ? el('div', { class: 'meta-line' }, el('span', {}, c.id || ''), el('span', {}, c.difficulty || 'medium')) : null,
@@ -1189,6 +1272,7 @@ function buildFlashcard(c) {
         c.tags && c.tags.length ? el('div', { class: 'tags' }, ...c.tags.slice(0, 6).map(t => el('span', { class: 'tag' }, t))) : null
     );
     if (state.flippedCards.has(id)) card.classList.add('flipped');
+    makeDraggable(card);
     return card;
 }
 
@@ -1244,11 +1328,14 @@ function buildTriageWidget(meta, shard, sc) {
 
 async function renderReview() {
     stage.innerHTML = '';
-    const placeholder = el('div', { class: 'panel' }, el('div', { class: 'skeleton', style: 'width:60%;height:14px' }));
-    stage.append(placeholder);
+    const placeholderContainer = el('div', { class: 'panel is-loading' });
+    const placeholder = el('div', { class: 'skeleton', style: 'width:60%;height:14px' });
+    placeholderContainer.append(placeholder);
+    showLoadingState(placeholderContainer, 'loading cards...');
+    stage.append(placeholderContainer);
     const subjects = state.reviewSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.reviewSubjectFilter];
     await Promise.all(subjects.map(s => loadShard(s)));
-    placeholder.remove();
+    placeholderContainer.remove();
 
     const allCards = [];
     for (const s of subjects) {

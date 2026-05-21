@@ -1509,5 +1509,203 @@ details.collapsible[open] > summary::after { content: 'â–´'; }
 .chip.subject-toggle.active{background:var(--ok,#3a7);color:#fff;}
 .chip.subject-toggle:not(.active){background:var(--mute,#666);color:#fff;}
 
+/* ---- Phase 1.3: Drag & Drop Feedback ---- */
+.draggable {
+    cursor: grab;
+    transition: opacity 0.15s ease;
+}
+.draggable:active {
+    cursor: grabbing;
+}
+.dragging {
+    opacity: 0.6;
+    outline: 2px dashed var(--border);
+    outline-offset: 2px;
+}
+.drag-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.85;
+    transform: scale(0.95);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    border-radius: var(--r-sm);
+    pointer-events: none;
+}
+.drop-zone-active {
+    background: rgba(58, 102, 255, 0.04);
+    border: 2px solid var(--link);
+    border-radius: var(--r-sm);
+}
+.drop-zone-active::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, transparent 48%, var(--link) 48%, var(--link) 52%, transparent 52%);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* ---- Phase 1.4: Loading States & Skeletons ---- */
+.is-loading {
+    opacity: 0.7;
+    pointer-events: none;
+    position: relative;
+}
+.skeleton {
+    background: linear-gradient(90deg, var(--panel-2) 0%, var(--panel-3) 50%, var(--panel-2) 100%);
+    background-size: 200% 100%;
+    animation: skeleton-pulse 1.5s infinite;
+    border-radius: var(--r-sm);
+}
+@keyframes skeleton-pulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+.skeleton-line {
+    height: 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+.skeleton-line.long {
+    width: 90%;
+}
+.skeleton-line.short {
+    width: 60%;
+}
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border);
+    border-top-color: var(--link);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.loading-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--panel-text-2);
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    background: var(--panel-1);
+}
+.loading-count {
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    color: var(--link);
+}
+.retry-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--ink);
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.retry-button:hover {
+    background: var(--panel-3);
+    transform: translateY(-1px);
+}
+.retry-button:active {
+    transform: translateY(0) scale(0.96);
+}
+.retry-button:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+}
+
+/* ---- Phase 1.5: Context Menus ---- */
+.context-menu {
+    position: fixed;
+    background: var(--panel-1);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--r-sm);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    z-index: 1000;
+    min-width: 180px;
+    padding: 4px;
+    animation: context-popup 0.15s ease-out;
+}
+@keyframes context-popup {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+.context-menu[hidden] {
+    display: none;
+}
+.context-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    color: var(--ink);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: background-color 0.1s ease;
+    text-decoration: none;
+}
+.context-menu-item:hover {
+    background: var(--panel-hover);
+}
+.context-menu-item:active {
+    background: var(--panel-select);
+}
+.context-menu-item:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: -2px;
+}
+.context-menu-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    opacity: 0.6;
+}
+.context-menu-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 0;
+}
+.context-menu-section {
+    padding: 4px 0;
+}
+
+/* Keyboard shortcut indicator */
+.context-menu-shortcut {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--panel-text-3);
+    font-family: var(--ff-mono);
+    padding-left: 12px;
+}
+
+/* Prevent context menu on mobile when not supported */
+@media (max-width: 480px) {
+    .context-menu {
+        max-width: calc(100vw - 16px);
+        min-width: 140px;
+    }
+}
 
 
