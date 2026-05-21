@@ -1,4 +1,4 @@
-// daily new-card cap per subject. corpus.newcards.v1
+﻿// daily new-card cap per subject. corpus.newcards.v1
 // { [YYYY-MM-DD]: { [subject]: count } }
 // Companion config key corpus.newcards.cap.v1 stores the per-subject daily cap.
 const COUNT_KEY = 'corpus.newcards.v1';
@@ -58,3 +58,6 @@ export function reset() { writeCounts({}); }
 if (typeof window !== 'undefined') {
     window.__newcards = { cap, setCap, countToday, remaining, canIntroduce, bump, reset, DEFAULT_CAP };
 }
+
+
+

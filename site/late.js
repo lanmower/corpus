@@ -1,4 +1,4 @@
-// late-night detection. zero storage — pure clock check.
+﻿// late-night detection. zero storage â€” pure clock check.
 export function lateLevel(now = new Date()) {
     const h = now.getHours();
     if (h >= 2 && h < 5) return 'sleep';
@@ -11,11 +11,11 @@ export function applyClass(doc, level) {
     else if (level === 'sleep') doc.body.classList.add('really-late');
 }
 export function message(level) {
-    if (level === 'sleep') return 'past 2am — you should sleep.';
-    if (level === 'late') return 'late session — keep it short.';
+    if (level === 'sleep') return 'past 2am â€” you should sleep.';
+    if (level === 'late') return 'late session â€” keep it short.';
     return null;
 }
-// Reduced study quota for late sessions — but if ahead (has surplus), maintain full pace
+// Reduced study quota for late sessions â€” but if ahead (has surplus), maintain full pace
 export function reducedQuota(base, level, isAhead = false) {
     // If ahead with surplus, maintain full pace to stay ahead
     if (isAhead) return base;
@@ -25,3 +25,6 @@ export function reducedQuota(base, level, isAhead = false) {
 }
 
 if (typeof window !== 'undefined') window.__late = { lateLevel, applyClass, message };
+
+
+

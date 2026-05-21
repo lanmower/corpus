@@ -1,6 +1,6 @@
-// verdicts — per-subject solid|getting there|weak|cold + weakest-subject computation.
+﻿// verdicts â€” per-subject solid|getting there|weak|cold + weakest-subject computation.
 // trend: blends mastery% with last-7-days grade trend (avg score delta).
-// All pure functions — no localStorage access here, callers pass state.
+// All pure functions â€” no localStorage access here, callers pass state.
 
 export const VERDICT_RANK = { 'solid': 0, 'getting there': 1, 'weak': 2, 'cold': 3 };
 
@@ -64,7 +64,7 @@ export function buildRows(manifest, shards, states, ticksBySubject) {
     return rows;
 }
 
-// weakest = composite score: lower mastery and lower trend = weaker. Scheduled<5 → cold pile, push forward.
+// weakest = composite score: lower mastery and lower trend = weaker. Scheduled<5 â†’ cold pile, push forward.
 export function computeWeakest(rows) {
     if (!rows.length) return null;
     const scored = rows.map(r => {
@@ -76,3 +76,6 @@ export function computeWeakest(rows) {
 }
 
 if (typeof window !== 'undefined') window.__verdicts = { verdictFor, trendFor, backlogFor, buildRows, computeWeakest, VERDICT_RANK };
+
+
+

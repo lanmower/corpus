@@ -1,4 +1,4 @@
-// corpus service worker — network-first for HTML/JS/CSS/JSON, cache-first for fonts/images.
+﻿// corpus service worker â€” network-first for HTML/JS/CSS/JSON, cache-first for fonts/images.
 // Cache key is injected at deploy time by .github/workflows/pages.yml replacing __BUILD_VERSION__.
 // In local dev the placeholder remains, so we fall back to a per-boot dev key (forces fresh fetches).
 const RAW_VERSION = '__BUILD_VERSION__';
@@ -105,3 +105,6 @@ self.addEventListener('fetch', e => {
 
     e.respondWith(handle(e.request).catch(() => new Response('sw-error', { status: 503, statusText: 'sw-error' })));
 });
+
+
+

@@ -1,4 +1,4 @@
-// personal cards added in-app. corpus.usercards.v1
+﻿// personal cards added in-app. corpus.usercards.v1
 const KEY = 'corpus.usercards.v1';
 
 export function load() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } }
@@ -18,3 +18,6 @@ export function parseLine(line) {
 }
 
 if (typeof window !== 'undefined') window.__usercards = { load, save, add, remove, parseLine };
+
+
+

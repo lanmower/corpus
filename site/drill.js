@@ -1,4 +1,4 @@
-// drill 10 — quick blast session. corpus.drill.v1
+﻿// drill 10 â€” quick blast session. corpus.drill.v1
 const KEY = 'corpus.drill.v1';
 
 export function load() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch { return null; } }
@@ -12,3 +12,6 @@ export function advance() { const d = load(); if (!d) return null; d.index++; if
 export function active() { const d = load(); return d && d.index < d.ids.length ? d : null; }
 
 if (typeof window !== 'undefined') window.__drill = { load, save, clear, start, advance, active };
+
+
+

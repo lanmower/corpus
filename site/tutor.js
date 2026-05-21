@@ -238,6 +238,67 @@ async function generateCoachingText(userMessage, front, back, grade) {
     return starter + action + keyTerms + '. ' + suggestion + ' You\\'ve got this.';
 }
 
+// Generate session overview for SRS daily page
+async function generateSessionOverview(dueCount, newCount, weakestSubject, examDaysLeft) {
+    const overviewParts = [];
+
+    // Greeting based on time of day
+    const hour = new Date().getHours();
+    const greeting = hour < 12 ? 'Good morning! ' : hour < 18 ? 'Good afternoon! ' : 'Good evening! ';
+    overviewParts.push(greeting);
+
+    // Cards to do today
+    const totalToday = dueCount + Math.min(newCount, 5);
+    overviewParts.push(`You have ${dueCount} cards due and ${newCount} new cards available. `);
+
+    // Focus recommendation
+    if (weakestSubject) {
+        overviewParts.push(`Your weakest area is ${weakestSubject}—let\'s prioritize that today. `);
+    }
+
+    // Exam countdown
+    if (examDaysLeft && examDaysLeft > 0) {
+        if (examDaysLeft <= 7) {
+            overviewParts.push(`You have ${examDaysLeft} days until your exam. Focus on mastery over quantity. `);
+        } else if (examDaysLeft <= 30) {
+            overviewParts.push(`${examDaysLeft} days to exam. Pace yourself to cover all weak areas. `);
+        }
+    }
+
+    // Strategy
+    const strategies = [
+        `Start with your weakest subject, then review the due cards. Aim for 80% accuracy today.`,
+        `Do ${Math.min(dueCount, 15)} due cards first, then tackle new cards in your weak area.`,
+        `Speed run through due cards (1-2 min each), then deep-dive into new cards in ${weakestSubject || 'your weak area'}.`
+    ];
+    overviewParts.push(strategies[Math.floor(Math.random() * strategies.length)]);
+
+    // Motivational close
+    const motivations = [
+        ' You\'ve got this!',
+        ' Let\'s do great work today.',
+        ' Every card brings you closer to mastery.',
+        ' You\'re building real expertise.'
+    ];
+    overviewParts.push(motivations[Math.floor(Math.random() * motivations.length)]);
+
+    const overview = overviewParts.join(' ');
+
+    // Stream the overview
+    self.postMessage({ event: 'coaching-start' });
+    let fullMessage = '';
+    const tokenLatency = 30; // ms per token, slightly faster for overview
+
+    for (let i = 0; i < overview.length; i++) {
+        fullMessage += overview[i];
+        self.postMessage({ event: 'token', token: overview[i] });
+        await new Promise(r => setTimeout(r, tokenLatency));
+    }
+
+    self.postMessage({ event: 'session-overview-done', message: fullMessage });
+    state.lastContext.push({ role: 'system', content: `Session overview: ${fullMessage}` });
+}
+
 // Message router
 self.addEventListener('message', async (e) => {
     const { cmd, ...args } = e.data;
@@ -255,6 +316,10 @@ self.addEventListener('message', async (e) => {
 
             case 'generate-coaching':
                 await generateCoaching(args.front, args.back, args.subject, args.grade, args.history);
+                break;
+
+            case 'session-overview':
+                await generateSessionOverview(args.dueCount, args.newCount, args.weakestSubject, args.examDaysLeft);
                 break;
 
             case 'card-loaded':

@@ -1,6 +1,5 @@
-import './theme.js';
+﻿import './theme.js';
 import * as progress from './progress.js';
-const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
 const SYSTEM_PROMPT_TMPL = `you are a Socratic clinical examiner. the student is being tested. you do NOT give them the answer.
 
 your job in phase=asking:
@@ -206,8 +205,8 @@ async function checkCapability() {
         els.capDot.className = 'dot ok';
         els.capLabel.textContent = 'tutor ready (offline)';
         els.loadLLM.disabled = true;
-        els.modelDetail.textContent = 'using built-in offline tutor — no setup needed. type or use the buttons to add cards, then submit for grading.';
-        console.log('[triage-live] capability: gpu absent — using simulator');
+        els.modelDetail.textContent = 'using built-in offline tutor â€” no setup needed. type or use the buttons to add cards, then submit for grading.';
+        console.log('[triage-live] capability: gpu absent â€” using simulator');
         return;
     }
     try {
@@ -225,7 +224,7 @@ async function checkCapability() {
         console.log('[triage-live] adapter', { features, fp16, info });
         debugLog('adapter', { features, fp16, info: { vendor: info.vendor, architecture: info.architecture, device: info.device } });
         if (DEBUG_WEBGPU) {
-            els.modelDetail.textContent = `adapter: ${info.vendor || '?'} ${info.architecture || ''} · features: ${features.length} · fp16: ${fp16}`;
+            els.modelDetail.textContent = `adapter: ${info.vendor || '?'} ${info.architecture || ''} Â· features: ${features.length} Â· fp16: ${fp16}`;
         }
     } catch (e) {
         state.capability = 'unsupported';
@@ -240,7 +239,8 @@ async function checkCapability() {
 async function loadManifestAndScenarios() {
     state.manifest = await fetch('./data/manifest.json').then(r => r.json());
     const all = [];
-    await Promise.all(SUBJECTS.map(async s => {
+    const subjects = state.manifest.subjects.map(s => s.subject);
+    await Promise.all(subjects.map(async s => {
         const sh = await fetch(`./data/${s}.json`).then(r => r.json());
         const meta = state.manifest.subjects.find(x => x.subject === s);
         if (sh.triage && Array.isArray(sh.triage.scenarios)) {
@@ -309,9 +309,9 @@ function renderStats() {
     const attempted = Object.keys(sessions).length;
     let totalCards = 0;
     for (const id of Object.keys(sessions)) totalCards += (sessions[id] || []).length;
-    const last = state.lastGrade != null ? `${state.lastGrade}%` : '—';
+    const last = state.lastGrade != null ? `${state.lastGrade}%` : 'â€”';
     const streak = state.streak || 0;
-    els.statsRow.textContent = `${attempted} attempted · streak ${streak} · last grade ${last}`;
+    els.statsRow.textContent = `${attempted} attempted Â· streak ${streak} Â· last grade ${last}`;
     console.log('[triage-live] stats', { totalScenarios: state.scenarios.length, attempted, totalCards, lastGrade: state.lastGrade, streak });
 }
 
@@ -345,7 +345,7 @@ function renderScenarios() {
                 }
             },
                 ce('div', {}, sc.name),
-                ce('div', { class: 'sub' }, subParts.join(' · '))
+                ce('div', { class: 'sub' }, subParts.join(' Â· '))
             ));
         }
     }
@@ -417,11 +417,11 @@ function renderGradePanel(sc) {
     ));
     if (matched.length) wrap.append(ce('div', { class: 'grade-section' },
         ce('div', { class: 'grade-section-title' }, `you got (${matched.length})`),
-        ...matched.map(c => ce('div', { class: 'grade-row hit' }, ce('span', { class: 'check' }, '✓'), ce('span', {}, c.title)))
+        ...matched.map(c => ce('div', { class: 'grade-row hit' }, ce('span', { class: 'check' }, 'âœ“'), ce('span', {}, c.title)))
     ));
     if (gaps.length) wrap.append(ce('div', { class: 'grade-section' },
         ce('div', { class: 'grade-section-title' }, `you missed (${gaps.length})`),
-        ...gaps.map(c => ce('div', { class: 'grade-row miss' }, ce('span', { class: 'check' }, '×'),
+        ...gaps.map(c => ce('div', { class: 'grade-row miss' }, ce('span', { class: 'check' }, 'Ã—'),
             ce('div', {},
                 ce('div', { class: 'miss-title' }, (c.title || '').replace(/^missed:\s*/i, '')),
                 c.body ? ce('div', { class: 'miss-body' }, c.body) : null
@@ -447,7 +447,7 @@ function renderGradePanel(sc) {
             const idx = vis.findIndex(s => s.id === sc.id);
             const next = vis[Math.min(idx + 1, vis.length - 1)];
             if (next && next.id !== sc.id) selectScenario(next.id);
-        } } }, 'next case →')
+        } } }, 'next case â†’')
     ));
     return wrap;
 }
@@ -473,7 +473,7 @@ function renderActive() {
     ];
     const checklistEl = ce('div', { class: 'checklist' },
         ...checklist.map(item => ce('div', { class: 'checklist-row' + ((counts[item.kind] || 0) >= item.target ? ' done' : '') },
-            ce('span', { class: 'tick' }, (counts[item.kind] || 0) >= item.target ? '●' : '○'),
+            ce('span', { class: 'tick' }, (counts[item.kind] || 0) >= item.target ? '●' : '◇'),
             ce('span', {}, `${item.label}: ${counts[item.kind] || 0} / ${item.target}`)
         ))
     );
@@ -482,7 +482,7 @@ function renderActive() {
     const ready = totalGot >= totalNeeded;
     const phaseLabel = state.phase === 'asking' ? 'working' : state.phase === 'grading' ? 'grading' : state.phase === 'graded' ? 'graded' : state.phase;
     els.activeScenario.append(
-        ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} · ${phaseLabel}`)),
+        ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} Â· ${phaseLabel}`)),
         ce('div', { class: 'stem' }, stem),
     );
     if (state.phase === 'graded') {
@@ -514,7 +514,7 @@ function currentScenario() {
 function renderScratchpad() {
     els.scratchpad.innerHTML = '';
     if (state.cards.length === 0) {
-        els.scratchpad.append(ce('div', { class: 'scratchpad-empty' }, '(empty) — type "add differential: …", "add investigation: …", or "add plan: …"'));
+        els.scratchpad.append(ce('div', { class: 'scratchpad-empty' }, '(empty) â€” type "add differential: …", "add investigation: …", or "add plan: …"'));
         return;
     }
     for (const c of state.cards) {
@@ -522,7 +522,7 @@ function renderScratchpad() {
             class: 'scratch-card' + (c.highlighted ? ' highlighted' : ''),
             data: { id: c.id, kind: c.kind }
         },
-            ce('button', { class: 'closer', on: { click: () => removeCard(c.id) } }, '×'),
+            ce('button', { class: 'closer', on: { click: () => removeCard(c.id) } }, 'Ã—'),
             ce('div', { class: 'kind' }, c.kind),
             ce('div', { class: 'title' }, c.title),
             ce('div', { class: 'body' }, c.body || '')
@@ -609,15 +609,15 @@ function removeCard(id) {
 function buildSnapshot(phase) {
     phase = phase || state.phase || 'asking';
     const sc = currentScenario();
-    const stem = sc ? caseStem(sc) : 'none — pick a scenario from the left first';
+    const stem = sc ? caseStem(sc) : 'none â€” pick a scenario from the left first';
     const cardsText = state.cards.length === 0
-        ? '(empty — student has not committed any cards yet)'
-        : state.cards.map(c => `- [${c.id}] ${c.kind}: ${c.title} — ${c.body}`).join('\n');
+        ? '(empty â€” student has not committed any cards yet)'
+        : state.cards.map(c => `- [${c.id}] ${c.kind}: ${c.title} â€” ${c.body}`).join('\n');
     let answerKey = '';
     if (sc && phase === 'grading') {
         const atoms = (sc.atoms || []).slice(0, 8).map(a => `- ${a.atom}: ${(a.definition || '').slice(0, 200)}`).join('\n');
         const ex = (sc.examples && sc.examples[0]) || {};
-        answerKey = `\n\n=== ANSWER KEY (do not paraphrase verbatim — use to grade) ===\ncanonical atoms:\n${atoms}\nrecommended plan: ${ex.recommendation || '(not specified)'}\nreasoning: ${ex.reasoning || '(not specified)'}`;
+        answerKey = `\n\n=== ANSWER KEY (do not paraphrase verbatim â€” use to grade) ===\ncanonical atoms:\n${atoms}\nrecommended plan: ${ex.recommendation || '(not specified)'}\nreasoning: ${ex.reasoning || '(not specified)'}`;
     }
     return SYSTEM_PROMPT_TMPL
         .replace('{{PHASE}}', phase)
@@ -654,13 +654,13 @@ state.debugLog = debugLog;
 function showWebgpuError(reason, stack) {
     state.llmStatus = 'error';
     els.modelStatus.textContent = 'offline';
-    els.modelDetail.textContent = 'couldn’t load the in-browser tutor — switching to offline mode.';
+    els.modelDetail.textContent = 'couldnâ€™t load the in-browser tutor â€” switching to offline mode.';
     els.progress.hidden = false;
     els.progressFill.style.width = '0%';
     els.progressText.textContent = 'using offline tutor';
     els.loadLLM.disabled = false;
     state.loadStarted = false;
-    state.messages.push({ role: 'system', content: 'your tutor is in offline mode — you can still work cases.' });
+    state.messages.push({ role: 'system', content: 'your tutor is in offline mode â€” you can still work cases.' });
     renderMessages();
     console.error('[triage-live] webgpu error', reason, stack);
     debugLog('error', { reason, stack });
@@ -678,7 +678,7 @@ function spawnWorker() {
             state.worker = null;
         });
         state.worker.addEventListener('messageerror', e => {
-            showWebgpuError('worker messageerror — module/MIME mismatch?', String(e));
+            showWebgpuError('worker messageerror â€” module/MIME mismatch?', String(e));
         });
     } catch (e) {
         state.worker = null;
@@ -693,9 +693,9 @@ function onWorkerMessage(e) {
     debugLog('worker-msg', m);
     if (m.status === 'gpu-info') {
         if (DEBUG_WEBGPU) {
-            els.modelDetail.textContent = `adapter: ${m.adapter?.vendor || '?'} ${m.adapter?.architecture || ''} · features: ${m.features.length} · fp16: ${m.fp16} · dtype: ${m.dtype}`;
+            els.modelDetail.textContent = `adapter: ${m.adapter?.vendor || '?'} ${m.adapter?.architecture || ''} Â· features: ${m.features.length} Â· fp16: ${m.fp16} Â· dtype: ${m.dtype}`;
         } else {
-            els.modelDetail.textContent = 'preparing your private tutor — this happens once.';
+            els.modelDetail.textContent = 'preparing your private tutor â€” this happens once.';
         }
         return;
     }
@@ -730,6 +730,7 @@ function onWorkerMessage(e) {
         state.generating = false;
         renderMessages();
         dispatchToolCalls(text);
+        if (state.phase === 'graded') renderActive();
         if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
     } else if (m.status === 'error') {
         state.generating = false;
@@ -792,7 +793,7 @@ async function send(forceSim = false) {
         try { await generateLLM(txt); }
         catch (e) {
             showWebgpuError(e.message || String(e), e.stack || '');
-            state.messages.push({ role: 'system', content: 'tutor offline — using simulator.' });
+            state.messages.push({ role: 'system', content: 'tutor offline â€” using simulator.' });
             renderMessages();
             const reply = simulateAssistant(txt);
             state.messages.push({ role: 'assistant', content: reply });
@@ -855,7 +856,7 @@ function simulateAssistant(userText) {
             blocks.push('```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `key-rec-${Date.now()}`, kind: 'recommendation', title: 'canonical plan', body: ex.recommendation.slice(0, 240) } }) + '\n```');
         }
         const score = atoms.length ? Math.round(100 * hits / atoms.length) : 0;
-        blocks.push(`\n— ${hits} of ${atoms.length} key topics matched (${score}%). ${misses ? 'gaps shown as notes on your board.' : 'good coverage.'}`);
+        blocks.push(`\nâ€” ${hits} of ${atoms.length} key topics matched (${score}%). ${misses ? 'gaps shown as notes on your board.' : 'good coverage.'}`);
         state.lastGrade = score;
         state.streak = score >= 70 ? (state.streak || 0) + 1 : 0;
         state.phase = 'graded';
@@ -870,18 +871,18 @@ function simulateAssistant(userText) {
         return blocks.join('\n');
     }
 
-    // asking phase — Socratic only, never reveal atoms
+    // asking phase â€” Socratic only, never reveal atoms
     const counts = countByKind(state.cards);
     const totalCommit = (counts.differential || 0) + (counts.investigation || 0) + (counts.plan || 0);
     if (t.match(/what (is|are|should)|tell me|give me|hint|answer|differential|plan|treat|manage|investig/) && totalCommit < 3) {
-        return `i won't hand you the answer — you're being examined. read the case stem, then add YOUR best three differentials, two investigations, and one plan as cards (use the + button on the scratchpad or the chat — say "add differential: <your guess>"). i'll grade them when you submit.`;
+        return `i won't hand you the answer â€” you're being examined. read the case stem, then add YOUR best three differentials, two investigations, and one plan as cards (use the + button on the scratchpad or the chat â€” say "add differential: <your guess>"). i'll grade them when you submit.`;
     }
     const m = t.match(/^add\s+(differential|investigation|plan|vital|warning|note)\s*[:\-]?\s*(.+)$/i);
     if (m) {
         const kind = m[1].toLowerCase();
         const title = m[2].trim().slice(0, 60);
         return `recording your ${kind}: "${title}". what is your reasoning?\n` +
-            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `student-${kind}-${Date.now()}`, kind, title, body: '(your commitment — add reasoning by editing or asking me)' } }) + '\n```';
+            '```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `student-${kind}-${Date.now()}`, kind, title, body: '(your commitment â€” add reasoning by editing or asking me)' } }) + '\n```';
     }
     if (totalCommit === 0) {
         return `case stem is on the left. what are the top three differentials YOU would consider here? type "add differential: <your guess>" three times, then add two investigations and a plan, then submit for grading.`;
@@ -895,7 +896,7 @@ function simulateAssistant(userText) {
     if ((counts.plan || 0) < 1) {
         return `now commit your plan with "add plan: <first-line therapy>". then click submit for grading.`;
     }
-    return `you have committed ${counts.differential || 0} differentials, ${counts.investigation || 0} investigations, ${counts.plan || 0} plan. click "submit for grading" when ready — i won't reveal the answer key until you do.`;
+    return `you have committed ${counts.differential || 0} differentials, ${counts.investigation || 0} investigations, ${counts.plan || 0} plan. click "submit for grading" when ready â€” i won't reveal the answer key until you do.`;
 }
 state.simulateAssistant = simulateAssistant;
 
@@ -962,3 +963,6 @@ document.addEventListener('keydown', e => {
     renderActive();
     renderScratchpad();
 })();
+
+
+

@@ -1,4 +1,4 @@
-// 1-5 confidence per guide section. corpus.confidence.v1
+﻿// 1-5 confidence per guide section. corpus.confidence.v1
 const KEY = 'corpus.confidence.v1';
 
 export function load() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } }
@@ -16,3 +16,6 @@ export function avgFor(subject) {
 }
 
 if (typeof window !== 'undefined') window.__confidence = { load, save, set, get, avgFor };
+
+
+

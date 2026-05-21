@@ -1,4 +1,4 @@
-import {
+﻿import {
     AutoProcessor,
     Gemma4ForConditionalGeneration,
     TextStreamer,
@@ -18,10 +18,10 @@ let stopping_criteria = new InterruptableStoppingCriteria();
 
 async function probeAdapter() {
     if (!('gpu' in navigator)) {
-        throw new Error('navigator.gpu missing — browser does not expose WebGPU');
+        throw new Error('navigator.gpu missing â€” browser does not expose WebGPU');
     }
     const adapter = await navigator.gpu.requestAdapter({ powerPreference: 'high-performance' });
-    if (!adapter) throw new Error('navigator.gpu.requestAdapter() returned null — no GPU adapter available');
+    if (!adapter) throw new Error('navigator.gpu.requestAdapter() returned null â€” no GPU adapter available');
     const features = Array.from(adapter.features || []);
     const fp16 = features.includes('shader-f16');
     let info = {};
@@ -116,3 +116,6 @@ self.addEventListener('message', async (e) => {
         stopping_criteria.interrupt();
     }
 });
+
+
+

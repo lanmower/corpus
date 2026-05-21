@@ -2,6 +2,18 @@
 
 > Extended knowledge extracted to `C:/Users/user/.claude/projects/D--corpus/memory/` (design-system, modules-api, storage-keys, build-pipeline, srs-algorithm, triage-system, ia-nav, test-discipline).
 
+## Session Changes (2026-05-16)
+
+**Mobile UX improvements (part 2)**: Enhanced touch feedback and visual states for all interactive elements. Flashcards now scale down on tap (0.98) with background darkening. Section links have active state scaling (0.97) and improved hover states with subtle shadow. Grade buttons increased to 15px font, 10px gap, and subtle box-shadow on hover. Chips get scale-down feedback (0.95) on tap plus focus outline for accessibility.
+
+**Mobile UX improvements**: Updated `site/style.css` with larger touch targets (44px min) for mobile media queries. Added 2-column grid layout for grade buttons in review sessions (single column on ≤340px screens). Grade buttons now 56px tall on mobile for easier tapping.
+
+**Welcome panel syntax fix**: Fixed ESM parse error in `site/app.js` line 347 — missing comma between nested `el('div')` closures in `renderWelcome()`. The browser threw `SyntaxError: Unexpected token ')'` due to malformed element structure.
+
+**Flashcard interactions**: Improved flashcard flip experience with hover/active state feedback (subtle translateY animation). Front content dims when flipped to emphasize back content.
+
+**Welcome panel microcopy**: Improved welcome messaging with clearer call-to-action button "start reviewing now" instead of auto-start behavior.
+
 ## Session Changes (2026-05-12)
 
 **Scheduler subject toggles**: `site/schedule.js` exports `setSubjectList(list)`; `app.js` seeds SUBJECTS from manifest at runtime. `corpus.schedule.config.v1` grows an `enabled` map (default true per subject). `allocateSubjects(weights, dueCounts, daysToExam, enabled)` skips subjects where `enabled[s] === false` — cram mode targets a chosen subset. Settings UI `renderScheduleConfigPanel` adds on/off chip per subject beside the weight slider; disabled rows grey out and the slider is disabled.
@@ -21,7 +33,7 @@ node D:/corpus/scripts/serve.js          # dev server (port 8765, COOP/COEP head
 node D:/corpus/scripts/build_data.js     # build site/data/ shards
 node D:/corpus/scripts/anki_export.js    # emit exports/corpus-anki.txt
 node D:/corpus/scripts/anki_migrate.js   # normalize srs-cards to canonical schema
-node D:/corpus/test.js                   # test (200-line cap, 16/16 green)
+node D:/corpus/test.js                   # test (200-line cap, 17/17 green)
 ```
 
 ## Site Modules

@@ -1,4 +1,4 @@
-// overall + per-subject progress. weighted: 0.4 cards + 0.3 sections + 0.2 cases + 0.1 mistakes
+﻿// overall + per-subject progress. weighted: 0.4 cards + 0.3 sections + 0.2 cases + 0.1 mistakes
 import * as srs from './srs.js';
 
 const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
@@ -79,7 +79,7 @@ function computeFromCards(manifest, shards, only) {
         const st = states[m.cardId];
         if (st && (st.lastScore || 0) >= 3) mClear++;
     }
-    // Use introduced cards as denominator when ≥3 introduced; otherwise N/A (don't penalize fresh users).
+    // Use introduced cards as denominator when â‰¥3 introduced; otherwise N/A (don't penalize fresh users).
     const cardDenom = cardsIntroduced >= 3 ? cardsIntroduced : 0;
     const cards = pct(cardsMast, cardDenom);
     const sections = pct(secTicked, secTotal);
@@ -119,3 +119,6 @@ export function forecastTo100(manifest, shards) {
 }
 
 if (typeof window !== 'undefined') window.__mastery = { overallProgress, subjectProgress, forecastTo100 };
+
+
+

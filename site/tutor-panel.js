@@ -207,6 +207,10 @@ export function wireWorkerToPanel(worker) {
                 addTutorMessage(message, false);
                 break;
 
+            case 'session-overview-done':
+                addTutorMessage(message, false);
+                break;
+
             case 'error':
                 addTutorMessage(`❌ Error: ${error || e.data.msg}`, false);
                 break;

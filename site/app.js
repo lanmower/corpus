@@ -324,6 +324,45 @@ function renderWelcome() {
     );
 }
 
+// Tutor session overview panel for SRS daily page
+function renderTutorOverviewPanel(due, newCount) {
+    if (!state.tutorWorker) return null;
+
+    // Find weakest subject by progress
+    let weakestSubject = null;
+    let weakestPct = 101;
+    for (const subj of (state.manifest?.subjects || [])) {
+        try {
+            const prog = mastery.subjectProgress(state.manifest, state.shards, subj.subject);
+            const pct = prog?.masteredPct || 0;
+            if (pct < weakestPct) {
+                weakestPct = pct;
+                weakestSubject = subj.subject;
+            }
+        } catch (err) {
+            // skip on error
+        }
+    }
+
+    // Calculate days until exam (placeholder: hardcode to 30 days)
+    const examDaysLeft = 30;
+
+    // Send session overview to tutor worker
+    try {
+        state.tutorWorker.postMessage({
+            cmd: 'session-overview',
+            dueCount: due,
+            newCount: newCount,
+            weakestSubject: weakestSubject,
+            examDaysLeft: examDaysLeft
+        });
+    } catch (err) {
+        warn('tutor session overview failed', err.message);
+    }
+
+    return null;
+}
+
 // ---- compressed today ----
 function renderTodayPrimary(due, newCount) {
     if (due > 0) {
@@ -460,6 +499,9 @@ function renderToday() {
 
     const resumeEl = renderResumeLine();
     if (resumeEl) stage.append(resumeEl);
+
+    // Trigger tutor session overview (displays in tutor panel)
+    renderTutorOverviewPanel(due, newCount);
 
     // Primary action — the ONE thing to do now
     stage.append(renderTodayPrimary(due, newCount));

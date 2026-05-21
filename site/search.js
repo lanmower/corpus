@@ -1,4 +1,4 @@
-// global search palette — Ctrl-K. indexes cards + scenarios + guide sections.
+﻿// global search palette â€” Ctrl-K. indexes cards + scenarios + guide sections.
 export function buildSearchIndex(manifest, shards) {
     const items = [];
     for (const meta of manifest.subjects) {
@@ -37,7 +37,7 @@ export function buildSearchIndex(manifest, shards) {
                 items.push({
                     kind: 'prose', subject: meta.subject,
                     id: `${meta.subject}#L${lineCounter}`,
-                    title: trimmed.slice(0, 80) + (trimmed.length > 80 ? '…' : ''),
+                    title: trimmed.slice(0, 80) + (trimmed.length > 80 ? 'â€¦' : ''),
                     body: trimmed
                 });
             }
@@ -53,7 +53,7 @@ export function snippet(body, query, radius = 60) {
     const i = body.toLowerCase().indexOf(tok);
     if (i < 0) return body.slice(0, radius * 2);
     const s = Math.max(0, i - radius), e = Math.min(body.length, i + tok.length + radius);
-    return (s > 0 ? '…' : '') + body.slice(s, e) + (e < body.length ? '…' : '');
+    return (s > 0 ? 'â€¦' : '') + body.slice(s, e) + (e < body.length ? 'â€¦' : '');
 }
 
 export function search(items, q, limit = 30) {
@@ -85,9 +85,9 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
         el.setAttribute('aria-label', 'global search');
         el.innerHTML = `
             <div class="search-palette-inner">
-                <input id="search-palette-input" type="text" placeholder="search cards, cases, sections…" aria-label="search">
+                <input id="search-palette-input" type="text" placeholder="search cards, cases, sectionsâ€¦" aria-label="search">
                 <ul id="search-palette-list" role="listbox"></ul>
-                <div class="search-palette-hint">↑↓ navigate · enter open · esc close</div>
+                <div class="search-palette-hint">â†‘â†“ navigate Â· enter open Â· esc close</div>
             </div>`;
         doc.body.appendChild(el);
     }
@@ -140,3 +140,6 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
 function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
 if (typeof window !== 'undefined') window.__search = { buildSearchIndex, search, snippet };
+
+
+

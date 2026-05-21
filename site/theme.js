@@ -1,4 +1,4 @@
-// dark/light theme — corpus.theme.v1. applies before render to avoid flash.
+﻿// dark/light theme â€” corpus.theme.v1. applies before render to avoid flash.
 const KEY = 'corpus.theme.v1';
 const VALID = ['light', 'dark', 'auto', 'contrast'];
 
@@ -40,14 +40,14 @@ export function makeToggleButton(doc = document) {
     const btn = doc.createElement('button');
     btn.type = 'button';
     btn.className = 'theme-toggle';
-    const glyphs = { light: '☀', dark: '☾', auto: '◐', contrast: '◑' };
+    const glyphs = { light: 'â˜€', dark: 'â˜¾', auto: 'â—', contrast: 'â—‘' };
     const label = () => {
         const cur = getTheme();
         btn.innerHTML = '';
-        const g = doc.createElement('span'); g.className = 'glyph'; g.textContent = glyphs[cur] || '◐'; g.setAttribute('aria-hidden', 'true');
+        const g = doc.createElement('span'); g.className = 'glyph'; g.textContent = glyphs[cur] || 'â—'; g.setAttribute('aria-hidden', 'true');
         const t = doc.createElement('span'); t.className = 'label'; t.textContent = cur;
         btn.append(g, t);
-        btn.setAttribute('aria-label', `theme: ${cur} — click to cycle`);
+        btn.setAttribute('aria-label', `theme: ${cur} â€” click to cycle`);
         btn.title = `theme: ${cur} (click to cycle)`;
     };
     label();
@@ -62,3 +62,6 @@ export function makeToggleButton(doc = document) {
 if (typeof document !== 'undefined') applyTheme();
 
 if (typeof window !== 'undefined') window.__theme = { getTheme, setTheme, cycleTheme, applyTheme, effectiveTheme };
+
+
+

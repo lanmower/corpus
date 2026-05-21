@@ -1,4 +1,4 @@
-// mistake log — every grade ≤2. corpus.mistakes.v1
+﻿// mistake log â€” every grade â‰¤2. corpus.mistakes.v1
 const KEY = 'corpus.mistakes.v1';
 const CAP = 200;
 
@@ -20,3 +20,6 @@ export function clear() { try { localStorage.removeItem(KEY); } catch {} }
 export function ids() { return [...new Set(load().map(m => m.cardId))]; }
 
 if (typeof window !== 'undefined') window.__mistakes = { load, logMistake, recent, bySubject, clear, ids };
+
+
+

@@ -1,4 +1,4 @@
-// toast container — bottom-right, max 3 visible, auto-dismiss 3s
+﻿// toast container â€” bottom-right, max 3 visible, auto-dismiss 3s
 const CONTAINER_ID = 'toast-container';
 const MAX = 3;
 const DURATION = 3000;
@@ -30,10 +30,10 @@ function push(kind, text, icon) {
     return t;
 }
 
-export function xp(delta, reason) { return push('xp', `+${delta} xp${reason ? ' · ' + reason.replace(/_/g, ' ') : ''}`, '✦'); }
-export function badge(label, icon) { return push('badge', `badge: ${label}`, icon || '★'); }
-export function quest(label, reward) { return push('quest', `quest done: ${label} (+${reward || 0})`, '◇'); }
-export function levelUp(level) { return push('level', `level up · lv ${level}`, '⇪'); }
+export function xp(delta, reason) { return push('xp', `+${delta} xp${reason ? ' Â· ' + reason.replace(/_/g, ' ') : ''}`, 'âœ¦'); }
+export function badge(label, icon) { return push('badge', `badge: ${label}`, icon || 'â˜…'); }
+export function quest(label, reward) { return push('quest', `quest done: ${label} (+${reward || 0})`, 'â—‡'); }
+export function levelUp(level) { return push('level', `level up Â· lv ${level}`, 'â‡ª'); }
 export function info(text) { return push('info', text, ''); }
 
 let bound = false;
@@ -43,3 +43,6 @@ export function bind() {
 }
 
 if (typeof window !== 'undefined') window.__toast = { xp, badge, quest, levelUp, info, bind };
+
+
+

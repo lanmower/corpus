@@ -1,9 +1,9 @@
-// student progress — streak, daily goal, today counters. corpus.progress.v1
+﻿// student progress â€” streak, daily goal, today counters. corpus.progress.v1
 const KEY = 'corpus.progress.v1';
 const VERSION = 1;
 
 function todayISO() { return new Date().toISOString().slice(0, 10); }
-// Streak grace: 0:00–6:00 counts for the prior calendar day.
+// Streak grace: 0:00â€“6:00 counts for the prior calendar day.
 function effectiveDateISO(now = new Date()) {
     if (now.getHours() < 6) {
         const d = new Date(now.getTime() - 6 * 3600 * 1000);
@@ -99,3 +99,6 @@ export function reset() { localStorage.removeItem(KEY); }
 if (typeof window !== 'undefined') {
     window.__progress = { load, save, bumpGraded, bumpGradedSubject, bumpCase, setGoal, setLast, rollStreak, reset };
 }
+
+
+

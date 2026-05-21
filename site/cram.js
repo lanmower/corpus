@@ -1,4 +1,4 @@
-// cram-mode dismissal persistence — corpus.cram.dismissed.v1.
+﻿// cram-mode dismissal persistence â€” corpus.cram.dismissed.v1.
 const KEY = 'corpus.cram.dismissed.v1';
 
 export function isDismissed() {
@@ -14,3 +14,6 @@ export function dismiss() {
 function todayISO() { return new Date().toISOString().slice(0, 10); }
 
 if (typeof window !== 'undefined') window.__cram = { isDismissed, dismiss };
+
+
+

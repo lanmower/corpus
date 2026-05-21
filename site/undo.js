@@ -1,4 +1,4 @@
-// undo last grade — 5s window. in-memory ring of 1.
+﻿// undo last grade â€” 5s window. in-memory ring of 1.
 let last = null;
 let timer = null;
 
@@ -8,3 +8,6 @@ export function consume() { const r = last; last = null; if (timer) { clearTimeo
 export function clear() { last = null; if (timer) clearTimeout(timer); timer = null; }
 
 if (typeof window !== 'undefined') window.__undo = { record, peek, consume, clear };
+
+
+

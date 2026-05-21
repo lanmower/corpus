@@ -1,4 +1,4 @@
-// flag for later — corpus.flagged.v1
+﻿// flag for later â€” corpus.flagged.v1
 const KEY = 'corpus.flagged.v1';
 
 export function load() { try { return new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch { return new Set(); } }
@@ -10,3 +10,6 @@ export function count() { return load().size; }
 export function clear() { try { localStorage.removeItem(KEY); } catch {} }
 
 if (typeof window !== 'undefined') window.__flag = { load, save, toggle, isFlagged, ids, count, clear };
+
+
+
