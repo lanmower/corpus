@@ -695,6 +695,11 @@ async function renderSubject() {
     const shard = await loadShard(subj);
     placeholder.remove();
 
+    // Send guide shard to tutor worker for Q&A indexing
+    if (state.tutorWorker && shard.guide) {
+        state.tutorWorker.postMessage({ cmd: 'load-guide-shard', shard: { subject: subj, guide: shard.guide } });
+    }
+
     const due = srs.getDueCards(shard.cards.map(c => c.id), srs.loadStates()).length;
     const ticks = loadGuideTicks()[subj] || {};
     const masteryData = mastery.subjectProgress(state.manifest, state.shards, subj);

@@ -175,7 +175,17 @@ export function addTutorMessage(text, isUser = false) {
 export function sendTutorMessage(text) {
     if (!text.trim() || !tutorWorker) return;
     addTutorMessage(text, true);
-    tutorWorker.postMessage({ cmd: 'user-message', text });
+
+    // Detect guide questions (start with keywords or question marks)
+    const isGuideQuestion = /^(what|explain|tell|help|understand|how|why|define)\s+/i.test(text) ||
+                            text.includes('?') ||
+                            /^(about|on)\s+/i.test(text);
+
+    if (isGuideQuestion) {
+        tutorWorker.postMessage({ cmd: 'guide-question', question: text });
+    } else {
+        tutorWorker.postMessage({ cmd: 'user-message', text });
+    }
 }
 
 export function wireWorkerToPanel(worker) {
@@ -209,6 +219,10 @@ export function wireWorkerToPanel(worker) {
                 break;
 
             case 'session-overview-done':
+                addTutorMessage(message, false);
+                break;
+
+            case 'guide-answer-done':
                 addTutorMessage(message, false);
                 break;
 

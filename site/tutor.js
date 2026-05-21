@@ -9,6 +9,7 @@ const state = {
     ready: false,
     lastContext: [],
     currentGeneration: null,
+    guideIndex: [], // Array of {subject, title, body, level}
 };
 
 const log = (...a) => self.postMessage({ event: 'log', msg: a.join(' ') });
@@ -299,6 +300,84 @@ async function generateSessionOverview(dueCount, newCount, weakestSubject, examD
     state.lastContext.push({ role: 'system', content: `Session overview: ${fullMessage}` });
 }
 
+// Build searchable guide index from shard content
+function buildGuideIndex(shard) {
+    if (!shard || !shard.guide) return;
+    if (!shard.guide.sections) return;
+
+    const subject = shard.subject || 'unknown';
+    for (const section of shard.guide.sections) {
+        state.guideIndex.push({
+            subject,
+            title: section.title || '',
+            level: section.level || 1,
+            line: section.line || 0,
+        });
+    }
+}
+
+// Find relevant guide sections matching user question
+function searchGuideIndex(query) {
+    if (!query || state.guideIndex.length === 0) return [];
+
+    const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 2);
+    const scored = [];
+
+    for (const section of state.guideIndex) {
+        const titleLower = section.title.toLowerCase();
+        let score = 0;
+
+        for (const term of terms) {
+            if (titleLower.includes(term)) {
+                score += titleLower === term ? 10 : 5;
+            }
+        }
+
+        if (score > 0) scored.push({ section, score });
+    }
+
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, 3).map(x => x.section);
+}
+
+// Generate answer to user question using guide context
+async function generateGuideAnswer(question) {
+    const relevantSections = searchGuideIndex(question);
+
+    let context = '';
+    if (relevantSections.length > 0) {
+        context = `Relevant study sections: ${relevantSections.map(s => s.title).join(', ')}. `;
+    }
+
+    // Template-based response (replace with LLM inference in Phase 4.10)
+    const baseAnswer = {
+        'risk factors': 'Understanding risk factors is crucial for CAD prevention and management. The major modifiable risk factors include hypertension, dyslipidemia, smoking, diabetes, and obesity. Non-modifiable factors like age, gender, and family history also play a role. Regular screening and lifestyle modifications are key.',
+        'pathophysiology': 'The disease develops over decades as plaque accumulates in coronary arteries. This process begins in childhood but remains clinically silent until significant stenosis occurs, typically after age 35.',
+        'diagnosis': 'Diagnosis combines clinical presentation, ECG findings, biomarkers (troponin), imaging (echo, angiography), and stress testing. The choice depends on clinical context and acuity.',
+        'treatment': 'Management includes lifestyle modification, medications (beta-blockers, statins, ACE inhibitors), and revascularization (PCI, CABG) when indicated. The goal is symptom relief and preventing progression.',
+        'default': `That's a great question about the cardiovascular system. Let me help you understand this better. The relevant study sections are: ${context || 'cardiology fundamentals'}. I recommend reviewing those sections and then we can discuss further.`,
+    };
+
+    const qLower = question.toLowerCase();
+    let answer = baseAnswer.default;
+    for (const key of Object.keys(baseAnswer)) {
+        if (key !== 'default' && qLower.includes(key)) {
+            answer = baseAnswer[key];
+            break;
+        }
+    }
+
+    // Stream the answer
+    self.postMessage({ event: 'coaching-start' });
+    const tokenLatency = 30;
+    for (let i = 0; i < answer.length; i++) {
+        self.postMessage({ event: 'token', token: answer[i] });
+        await new Promise(r => setTimeout(r, tokenLatency));
+    }
+
+    self.postMessage({ event: 'guide-answer-done', message: answer });
+}
+
 // Message router
 self.addEventListener('message', async (e) => {
     const { cmd, ...args } = e.data;
@@ -345,6 +424,20 @@ self.addEventListener('message', async (e) => {
                 // Echo back for now; real implementation would run through LLM
                 const response = `You said: ${args.text}. I\\'ll help you with this.`;
                 self.postMessage({ event: 'coaching-done', message: response });
+                break;
+
+            case 'guide-question':
+                // User asking about guide concepts
+                log(`Guide question: ${args.question}`);
+                await generateGuideAnswer(args.question);
+                break;
+
+            case 'load-guide-shard':
+                // Load guide content for Q&A indexing
+                if (args.shard) {
+                    buildGuideIndex(args.shard);
+                    log(`Indexed guide: ${args.shard.subject} (${state.guideIndex.length} sections total)`);
+                }
                 break;
 
             default:
