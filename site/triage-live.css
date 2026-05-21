@@ -287,5 +287,95 @@ kbd { font-family: var(--ff-mono); font-size: 10px; background: var(--panel-2); 
 #model-bay summary { cursor: pointer; list-style: revert; }
 .submit-grading-btn { background: var(--ink); color: var(--paper); }
 
+/* ---- responsive: small tablet / large phone (≤768px) ---- */
+/* The triage-shell already stacks at ≤900px (grid-template-columns: 1fr) but
+   panel headers, composer rows, and the tutor bay don't yet behave at narrow widths. */
+@media (max-width: 768px) {
+    .panel-head {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 10px;
+        align-items: baseline;
+    }
+    .panel-head .meta {
+        font-size: 11px;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .suggestion-chips {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .suggestion-chips .chip,
+    .suggestion-chips .run-btn {
+        flex: 1 1 auto;
+        min-height: 40px;
+        font-size: 13px;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .composer-row {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .composer-row .run-btn,
+    .composer-row .chip {
+        flex: 1 1 calc(50% - 3px);
+        min-height: 42px;
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    #model-status,
+    #model-detail {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* ---- responsive: phone ≤480px ---- */
+@media (max-width: 480px) {
+    .triage-shell { padding: 8px 10px 80px; gap: 8px; }
+    .triage-side { max-height: 38vh; padding: 8px; overflow-y: auto; }
+    .scenario-row {
+        padding: 10px 10px;
+        font-size: 12px;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    .scenario-row .sub { font-size: 10px; }
+    .stem { font-size: 14px; line-height: 1.5; }
+    .active-scenario .panel-head .title { font-size: 15px; }
+    .scratchpad { grid-template-columns: 1fr; gap: 10px; }
+    .scratch-card { padding: 10px; }
+    .filter-bar { gap: 4px; padding-bottom: 6px; }
+    .filter-chip {
+        padding: 4px 8px;
+        font-size: 11px;
+        min-height: 32px;
+    }
+    .composer { padding: 10px 12px; gap: 8px; }
+    .composer textarea { min-height: 64px; font-size: 13px; }
+    .io-row { gap: 4px; padding: 0 4px; }
+    .io-row .chip {
+        padding: 6px 10px;
+        font-size: 11px;
+        min-height: 34px;
+        flex: 1 1 auto;
+    }
+    .checklist-row { font-size: 12px; }
+    .messages { padding: 8px 10px; }
+    .msg { padding: 6px 10px; font-size: 12px; line-height: 1.4; }
+    /* Tutor bay summary in the chat panel — keep header readable */
+    .model-bay summary { padding: 8px 10px; gap: 8px; }
+    .model-bay summary .title { font-size: 13px; }
+    .model-bay summary .meta { font-size: 11px; }
+}
+
 
 
