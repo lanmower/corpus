@@ -76,23 +76,27 @@ export function search(items, q, limit = 30) {
 }
 
 export function mountPalette(doc, openSelector, getItems, onSelect) {
-    let el = doc.getElementById('search-palette');
+    let el = doc.getElementById(‘search-palette’);
     if (!el) {
-        el = doc.createElement('div');
-        el.id = 'search-palette';
-        el.className = 'search-palette hidden';
-        el.setAttribute('role', 'dialog');
-        el.setAttribute('aria-label', 'global search');
+        el = doc.createElement(‘div’);
+        el.id = ‘search-palette’;
+        el.className = ‘search-palette hidden’;
+        el.setAttribute(‘role’, ‘dialog’);
+        el.setAttribute(‘aria-label’, ‘global search’);
         el.innerHTML = `
-            <div class="search-palette-inner">
-                <input id="search-palette-input" type="text" placeholder="search cards, cases, sectionsâ€¦" aria-label="search">
-                <ul id="search-palette-list" role="listbox"></ul>
-                <div class="search-palette-hint">â†‘â†“ navigate Â· enter open Â· esc close</div>
+            <div class=”search-palette-inner”>
+                <div class=”search-palette-header”>
+                    <input id=”search-palette-input” type=”text” placeholder=”search cards, cases, sectionsâ€¦” aria-label=”search”>
+                    <button id=”search-palette-clear” class=”search-clear” aria-label=”clear search” type=”button”>Ã—</button>
+                </div>
+                <ul id=”search-palette-list” role=”listbox”></ul>
+                <div class=”search-palette-hint”>â†’â†” navigate Â· enter open Â· esc close</div>
             </div>`;
         doc.body.appendChild(el);
     }
-    const input = el.querySelector('#search-palette-input');
-    const list = el.querySelector('#search-palette-list');
+    const input = el.querySelector(‘#search-palette-input’);
+    const clearBtn = el.querySelector(‘#search-palette-clear’);
+    const list = el.querySelector(‘#search-palette-list’);
     let active = 0;
     let results = [];
 
@@ -103,6 +107,7 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
         render();
         setTimeout(() => input.focus(), 10);
     };
+    const clear = () => { input.value = ''; input.focus(); results = getItems().slice(0, 30); active = 0; render(); };
     const render = () => {
         list.innerHTML = '';
         results.forEach((it, i) => {
@@ -119,6 +124,10 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
         results = search(items, input.value);
         active = 0;
         render();
+    });
+    clearBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        clear();
     });
     input.addEventListener('keydown', e => {
         if (e.key === 'Escape') { e.preventDefault(); close(); }

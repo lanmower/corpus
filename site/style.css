@@ -732,13 +732,19 @@ button:focus-visible, .chip:focus-visible, .navlink:focus-visible, a:focus-visib
     --live: #4BC49A;
 }
 [data-theme="dark"] .flashcard .back { border-top-color: rgba(255,255,255,0.18); }
+[data-theme="dark"] img { opacity: 0.85; }
+[data-theme="dark"] .infographic-tile img, [data-theme="dark"] .lightbox-img { opacity: 1; }
 
 /* ---- search palette ---- */
 .search-palette { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: flex-start; justify-content: center; padding-top: 12vh; z-index: 1000; }
 .search-palette.hidden { display: none; }
 .search-palette-inner { background: var(--paper); border: 1px solid var(--border); border-radius: var(--r-sm); width: min(640px, 92vw); padding: 12px; box-shadow: var(--shadow-pop); }
-#search-palette-input { width: 100%; background: var(--paper); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 10px 14px; font-size: 14px; color: var(--ink); outline: none; font-family: var(--ff-ui); }
+.search-palette-header { display: flex; gap: 8px; align-items: center; }
+#search-palette-input { flex: 1; background: var(--paper); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 10px 14px; font-size: 14px; color: var(--ink); outline: none; font-family: var(--ff-ui); }
 #search-palette-input:focus-visible { border-color: var(--ink); outline: none; }
+.search-clear { background: transparent; border: 1px solid var(--border); border-radius: var(--r-sm); padding: 8px 12px; font-size: 18px; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; min-height: 40px; transition: background-color 0.15s ease; }
+.search-clear:hover { background: var(--panel-2); }
+.search-clear:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 #search-palette-list { list-style: none; padding: 0; margin: 10px 0 0; max-height: 50vh; overflow-y: auto; }
 .search-result { display: grid; grid-template-columns: 60px 1fr auto; gap: 8px; align-items: center; padding: 6px 10px; border-radius: var(--r-sm); cursor: pointer; font-size: 13px; }
 .search-result:hover, .search-result.active { background: var(--panel-2); }
