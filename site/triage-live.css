@@ -287,6 +287,18 @@ kbd { font-family: var(--ff-mono); font-size: 10px; background: var(--panel-2); 
 #model-bay summary { cursor: pointer; list-style: revert; }
 .submit-grading-btn { background: var(--ink); color: var(--paper); }
 
+/* ---- responsive: ensure stacked panels never overflow viewport ---- */
+@media (max-width: 900px) {
+    .triage-shell { overflow-x: hidden; max-width: 100vw; }
+    .triage-side, .triage-stage, .triage-chat {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .composer { max-width: 100%; box-sizing: border-box; }
+    .composer textarea { max-width: 100%; box-sizing: border-box; }
+}
+
 /* ---- responsive: small tablet / large phone (≤768px) ---- */
 /* The triage-shell already stacks at ≤900px (grid-template-columns: 1fr) but
    panel headers, composer rows, and the tutor bay don't yet behave at narrow widths. */
