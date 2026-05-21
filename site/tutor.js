@@ -252,6 +252,28 @@ async function generateCoachingText(userMessage, front, back, grade) {
     return response + ' ' + suggestion + ' You\\'ve got this.';
 }
 
+// Generate hint for triage scenario (Phase 4.7)
+async function generateTriageHint(scenarioId, caseDescription, cardPlaced) {
+    // cardPlaced: [{id, kind, title, body}, ...] - student's current submissions
+    // This would provide hints without giving away the answer
+    const hints = [
+        'Consider what vital sign or finding would narrow the differential.',
+        'Think about the most common cause first, then work from there.',
+        'What additional history would help you commit to a diagnosis?',
+        'Look at the timeline of symptoms - is this acute or chronic?',
+        'Remember the rule of relevance: every finding you add should change management.',
+    ];
+
+    const selectedHint = hints[Math.floor(Math.random() * hints.length)];
+    self.postMessage({ event: 'coaching-start' });
+    const tokenLatency = 30;
+    for (let i = 0; i < selectedHint.length; i++) {
+        self.postMessage({ event: 'token', token: selectedHint[i] });
+        await new Promise(r => setTimeout(r, tokenLatency));
+    }
+    self.postMessage({ event: 'triage-hint-done', message: selectedHint });
+}
+
 // Real Bonsai inference (placeholder for Phase 4.10)
 // Once GGML.js or equivalent is integrated, replace templates with this
 async function inferBonsai(context) {
@@ -463,6 +485,12 @@ self.addEventListener('message', async (e) => {
                     buildGuideIndex(args.shard);
                     log(`Indexed guide: ${args.shard.subject} (${state.guideIndex.length} sections total)`);
                 }
+                break;
+
+            case 'triage-hint':
+                // Tutor provides hint for triage scenario (Phase 4.7)
+                log(`Triage hint for: ${args.scenarioId}`);
+                await generateTriageHint(args.scenarioId, args.caseDescription, args.cardPlaced);
                 break;
 
             default:

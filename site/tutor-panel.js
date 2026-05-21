@@ -303,6 +303,11 @@ export function wireWorkerToPanel(worker) {
                 showTutorToast('📚 Guide answer ready');
                 break;
 
+            case 'triage-hint-done':
+                addTutorMessage(`💡 ${message}`, false);
+                showTutorToast('Hint provided');
+                break;
+
             case 'error':
                 addTutorMessage(`❌ Error: ${error || e.data.msg}`, false);
                 break;
