@@ -40,6 +40,7 @@ body {
     color: var(--ink);
     background: var(--paper);
     min-height: 100vh;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 /* ---- links: global reset, design-system tokens ---- */
@@ -357,13 +358,12 @@ a:hover { text-decoration: underline; }
     border-radius: var(--r-sm); padding: 18px 20px;
     margin-bottom: 12px; cursor: pointer;
     touch-action: manipulation;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.1s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
     min-height: 140px;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    /* Mobile: larger touch target */
 }
 .flashcard::before {
     content: '';
@@ -393,9 +393,10 @@ a:hover { text-decoration: underline; }
     border-top: 1px solid var(--border);
     margin-top: 10px; display: none;
     font-size: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
 }
-.flashcard.flipped .back { display: block; animation: fadeIn 0.3s ease; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.flashcard.flipped .back { display: block; opacity: 1; }
 .flashcard.flipped .front { opacity: 0.6; }
 .flashcard .tags { margin-top: 10px; display: flex; gap: 4px; flex-wrap: wrap; }
 @media (max-width: 480px) {
@@ -644,11 +645,13 @@ body.just-read .panel { border: 0; padding: 0; }
 .review-actions { flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .review-actions .grade-reveal { flex: 1 1 100%; }
 .review-actions .grade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; width: 100%; }
-.review-actions .grade-grid .grade-btn { min-height: 52px; padding: 10px 8px; font-size: 15px; border-radius: 10px; font-weight: 500; transition: transform 0.1s ease, background-color 0.15s, box-shadow 0.15s; }
+.review-actions .grade-grid .grade-btn { min-height: 52px; padding: 10px 8px; font-size: 15px; border-radius: 10px; font-weight: 500; transition: transform 0.1s ease, background-color 0.15s, box-shadow 0.15s, color 0.15s; border: 1px solid transparent; }
 .review-actions .grade-btn[data-score="0"], .review-actions .grade-btn[data-score="1"], .review-actions .grade-btn[data-score="2"] { color: var(--c-due); }
 .review-actions .grade-btn[data-score="4"], .review-actions .grade-btn[data-score="5"] { color: var(--c-mastered); }
-.review-actions .grade-btn:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.review-actions .grade-btn:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); background-color: var(--panel-2); }
 .review-actions .grade-btn:active { transform: translateY(0) scale(0.96); }
+.review-actions .grade-btn.selected { opacity: 1; font-weight: 600; box-shadow: 0 0 0 2px currentColor; }
+.review-actions .grade-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .review-actions .grade-btn:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 .kbd-hint { font-family: var(--ff-mono); font-size: 11px; color: var(--panel-text-3); margin-top: 8px; letter-spacing: 0.04em; }
 .card-source { font-family: var(--ff-mono); font-size: 10px; color: var(--panel-text-3); margin-top: 4px; }
