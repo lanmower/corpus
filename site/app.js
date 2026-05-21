@@ -23,6 +23,7 @@ import { buildSearchIndex, mountPalette, snippet as searchSnippet } from './sear
 import { makeToggleButton } from './theme.js';
 import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from './drag.js';
 import { showContextMenu, closeContextMenu } from './context-menu.js';
+import { initTutorPanel, wireWorkerToPanel, addTutorMessage } from './tutor-panel.js';
 
 const stage = document.getElementById('stage');
 const statusbarMsg = document.getElementById('statusbar-msg');
@@ -2579,6 +2580,23 @@ function registerSW() {
             });
             state.broadcastChannel = ch;
         } catch (e) { warn('broadcast channel unavailable', e.message); }
+
+        // Initialize Bonsai tutor (async, non-blocking)
+        try {
+            initTutorPanel().catch(err => warn('tutor initialization failed', err.message));
+            // Spawn tutor worker
+            const tutorBlob = new Blob([`importScripts('./tutor.js')`], { type: 'application/javascript' });
+            const tutorWorker = new Worker(URL.createObjectURL(tutorBlob));
+            // Also try loading tutor.js directly
+            const worker = new Worker('./tutor.js', { type: 'module' }).catch(() => new Worker('./tutor.js'));
+            wireWorkerToPanel(worker);
+            state.tutorWorker = worker;
+            // Tell worker to initialize
+            worker.postMessage({ cmd: 'init' });
+        } catch (err) {
+            warn('tutor worker spawn failed', err.message);
+        }
+
         window.addEventListener('corpus:storage-full', () => showStorageFullBanner());
         const hash = location.hash.replace('#', '') || 'today';
         const [routeRaw, sub] = hash.split('/');
