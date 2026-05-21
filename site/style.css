@@ -1739,7 +1739,98 @@ details.collapsible[open] > summary::after { content: 'â–´'; }
 
 /* Tutor panel collapse animation */
 #tutor-panel {
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Inline tutor coaching slot rendered below the SRS review card */
+.tutor-inline-coach {
+    min-height: 0;
+    margin: 10px 0 0;
+    padding: 0;
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.5;
+}
+.tutor-inline-coach:not(:empty) {
+    padding: 10px 12px;
+    background: var(--accent-tint, var(--panel-2));
+    border-left: 3px solid var(--accent, var(--link));
+    border-radius: 4px;
+}
+
+/* Tutor panel — mobile bottom sheet (≤768px) */
+@media (max-width: 768px) {
+    #tutor-panel {
+        width: 100% !important;
+        height: 50vh !important;
+        top: auto !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        left: 0 !important;
+        border-left: none !important;
+        border-top: 1px solid var(--border);
+        box-shadow: 0 -2px 12px rgba(0,0,0,0.12);
+    }
+    /* Collapsed: peek of header only at bottom of viewport */
+    #tutor-panel.tutor-collapsed-mobile {
+        height: 48px !important;
+        overflow: hidden;
+    }
+    /* Page content needs bottom padding so it isn't hidden by the panel */
+    body { padding-bottom: 50vh; }
+    body.tutor-panel-collapsed { padding-bottom: 48px; }
+}
+
+/* Context-menu polish — modules already provide structure, this fills in look */
+.context-menu {
+    position: fixed;
+    z-index: 10000;
+    min-width: 200px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.16);
+    padding: 4px;
+    font-family: var(--ff-body);
+    font-size: 13px;
+}
+.context-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px 10px;
+    background: transparent;
+    border: none;
+    color: var(--ink);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    min-height: 36px;
+}
+.context-menu-item:hover, .context-menu-item:focus {
+    background: var(--panel-2);
+    outline: none;
+}
+.context-menu-icon { width: 18px; text-align: center; }
+.context-menu-shortcut { margin-left: auto; color: var(--muted); font-family: var(--ff-mono); font-size: 11px; }
+.context-menu-divider { height: 1px; background: var(--border); margin: 4px 6px; }
+
+/* Triage suggestion chips row */
+.suggestion-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+.suggestion-chips .chip,
+.suggestion-chips .run-btn {
+    min-height: 36px;
+}
+
+/* Card-preview chip — bump from 28px to 44px so touch targets are consistent across breakpoints */
+.card-preview-chip {
+    min-height: 44px;
 }
 
 

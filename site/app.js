@@ -1661,6 +1661,31 @@ const card = state.reviewQueue[state.reviewIndex];
     );
     stage.append(reviewCard);
 
+    // Inline tutor coaching slot — the tutor LLM can render brief hints here mid-review
+    // (rendered by tutor-panel.js when it receives coaching-done with target=inline).
+    stage.append(el('div', { id: 'tutor-card-coaching', class: 'tutor-inline-coach', 'aria-live': 'polite' }));
+
+    // Right-click on the card → context menu with quick actions
+    reviewCard.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        import('./context-menu.js').then(({ showContextMenu }) => {
+            const items = [
+                { icon: '🚩', label: isFlag ? 'unflag card' : 'flag card', shortcut: 'f',
+                  action: () => { flag.toggle(card.id); renderReview(); } },
+                { icon: '⏭', label: 'skip card', shortcut: 's', action: () => skipReview() },
+                { type: 'divider' },
+                { icon: '💬', label: 'ask tutor about this', action: () => {
+                    if (state.tutorWorker) state.tutorWorker.postMessage({
+                        cmd: 'user-message',
+                        text: `explain the concept behind this card: "${card.front}" — answer is: ${card.back}`
+                    });
+                } },
+                { icon: '📖', label: 'open subject guide', action: () => { location.hash = `#guides/${card._subject}`; } }
+            ];
+            showContextMenu(e.clientX, e.clientY, items);
+        }).catch(() => {});
+    });
+
     // Notify tutor of loaded card (non-blocking)
     if (state.tutorWorker && card) {
         try {
@@ -2697,6 +2722,62 @@ function registerSW() {
                 const subject = String(args?.subject || '').toLowerCase();
                 if (!subject) { location.hash = '#review'; return; }
                 location.hash = `#review/${subject}`;
+            },
+            // --- SRS session controls (LLM drives the review loop) ---
+            reveal_card() {
+                if (state.route !== 'review' || !state.reviewQueue?.length) return;
+                state.reviewRevealed = true;
+                if (typeof renderReview === 'function') renderReview();
+            },
+            grade_card(args) {
+                if (state.route !== 'review' || !state.reviewQueue?.length) return;
+                const score = Number(args?.score);
+                if (!Number.isFinite(score) || score < 0 || score > 5) return;
+                const card = state.reviewQueue[state.reviewIndex];
+                if (!card) return;
+                if (!state.reviewRevealed) state.reviewRevealed = true;
+                gradeReview(card.id, score);
+            },
+            skip_card() {
+                if (state.route !== 'review' || !state.reviewQueue?.length) return;
+                if (typeof skipReview === 'function') skipReview();
+            },
+            end_session() {
+                if (state.route !== 'review') return;
+                state.sessionFinished = true;
+                if (typeof renderReview === 'function') renderReview();
+            },
+            get_session_state() {
+                return {
+                    route: state.route,
+                    queue: state.reviewQueueIds?.length || 0,
+                    index: state.reviewIndex || 0,
+                    graded: state.reviewSessionGraded || 0,
+                    againPile: state.reviewAgainPile?.length || 0,
+                    revealed: !!state.reviewRevealed,
+                    cramMode: !!state.cramMode,
+                    learnMode: !!state.learnMode,
+                    sessionFinished: !!state.sessionFinished
+                };
+            },
+            get_current_card() {
+                const card = state.reviewQueue?.[state.reviewIndex];
+                if (!card) return null;
+                return {
+                    id: card.id, front: card.front, back: card.back,
+                    subject: card._subject, tags: card.tags || []
+                };
+            },
+            filter_session(args) {
+                // Mid-session re-filter — narrows queue to a subject. Triggers re-render of review.
+                const subject = args?.subject ? String(args.subject).toLowerCase() : 'all';
+                state.reviewSubjectFilter = subject;
+                // Force queue rebuild
+                state.reviewQueueIds = []; state.reviewIndex = 0;
+                state.reviewAgainPile = []; state.reviewSessionGraded = 0;
+                state.sessionFinished = false; state.reviewRevealed = false;
+                location.hash = subject === 'all' ? '#review' : `#review/${subject}`;
+                if (typeof renderReview === 'function') renderReview();
             }
         };
 

@@ -333,7 +333,7 @@ function renderScenarios() {
             const subParts = [subj];
             if (score != null) subParts.push(`${score}%`);
             else if (hasSession) subParts.push(`${cards.length} cards`);
-            els.list.append(ce('div', {
+            const row = ce('div', {
                 class: 'scenario-row' + (state.activeScenarioId === sc.id ? ' active' : '') + (hasSession ? ' has-session' : '') + (score != null ? ' has-score' : ''),
                 data: { id: sc.id },
                 role: 'button', tabindex: '0',
@@ -344,8 +344,23 @@ function renderScenarios() {
                 }
             },
                 ce('div', {}, sc.name),
-                ce('div', { class: 'sub' }, subParts.join(' Â· '))
-            ));
+                ce('div', { class: 'sub' }, subParts.join(' · '))
+            );
+            row.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                import('./context-menu.js').then(({ showContextMenu }) => {
+                    const has = !!state.sessions[sc.id];
+                    showContextMenu(e.clientX, e.clientY, [
+                        { icon: '▶', label: 'open this case', action: () => selectScenario(sc.id) },
+                        has ? { icon: '↺', label: 'reset progress', action: () => {
+                            delete state.sessions[sc.id]; saveSessions();
+                            if (state.activeScenarioId === sc.id) { state.cards = []; state.lastGrade = null; state.phase = 'asking'; renderActive(); renderScratchpad(); }
+                            renderScenarios(); renderStats();
+                        } } : null
+                    ].filter(Boolean));
+                }).catch(() => {});
+            });
+            els.list.append(row);
         }
     }
 }
@@ -498,15 +513,35 @@ function renderScratchpad() {
         return;
     }
     for (const c of state.cards) {
-        els.scratchpad.append(ce('div', {
+        const card = ce('div', {
             class: 'scratch-card' + (c.highlighted ? ' highlighted' : ''),
             data: { id: c.id, kind: c.kind }
         },
-            ce('button', { class: 'closer', on: { click: () => removeCard(c.id) } }, 'Ã—'),
+            ce('button', { class: 'closer', on: { click: () => removeCard(c.id) }, 'aria-label': 'remove card' }, '×'),
             ce('div', { class: 'kind' }, c.kind),
             ce('div', { class: 'title' }, c.title),
             ce('div', { class: 'body' }, c.body || '')
-        ));
+        );
+        // Right-click on a scratchpad card → context menu (LLM-aware actions)
+        card.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            import('./context-menu.js').then(({ showContextMenu }) => {
+                showContextMenu(e.clientX, e.clientY, [
+                    { icon: '🗑', label: 'remove card', action: () => removeCard(c.id) },
+                    { icon: '✨', label: c.highlighted ? 'unhighlight' : 'highlight', action: () => TOOLS.highlight_card({ id: c.id }) },
+                    { type: 'divider' },
+                    { icon: '💬', label: 'ask tutor why this matters', action: () => {
+                        els.prompt.value = `why is "${c.title}" relevant in this case?`;
+                        els.prompt.focus();
+                    } },
+                    { icon: '🔄', label: 'reword this card', action: () => {
+                        els.prompt.value = `reword my "${c.kind}" card titled "${c.title}" more precisely.`;
+                        els.prompt.focus();
+                    } }
+                ]);
+            }).catch(() => {});
+        });
+        els.scratchpad.append(card);
     }
 }
 

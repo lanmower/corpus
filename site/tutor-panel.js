@@ -8,89 +8,34 @@ export let panelContainer = null;
 let isPanelCollapsed = false;
 
 export async function initTutorPanel() {
-    try {
-        // Load anentrypoint-design SDK from CDN
-        const script = document.createElement('script');
-        script.src = 'https://unpkg.com/anentrypoint-design@latest/dist/247420.js';
-        script.onload = async () => {
-            const { mount, h } = window['247420'] || window.__anentrypoint || {};
-            if (!mount || !h) {
-                console.warn('[tutor-panel] anentrypoint-design SDK not available');
-                return;
-            }
-
-            // Create panel container
-            panelContainer = document.createElement('div');
-            panelContainer.id = 'tutor-panel';
-            panelContainer.className = 'tutor-panel ds-247420';
-            panelContainer.setAttribute('aria-label', 'Study Coach');
-            panelContainer.style.cssText = `
-                position: fixed;
-                right: 0;
-                top: 0;
-                width: 30%;
-                height: 100vh;
-                background: var(--paper);
-                border-left: 1px solid var(--border);
-                display: flex;
-                flex-direction: column;
-                z-index: 100;
-                font-family: var(--ff-body);
-                overflow: hidden;
-            `;
-            document.body.appendChild(panelContainer);
-
-            // Mount Chat component
-            const ChatComponent = window['247420']?.Chat || window.__anentrypoint?.Chat;
-            if (ChatComponent) {
-                mount(panelContainer, () => {
-                    return h('div', { style: 'height: 100%; display: flex; flex-direction: column;' },
-                        h('div', { style: 'padding: 12px; border-bottom: 1px solid var(--border); background: var(--panel-2);' },
-                            h('span', { style: 'font-weight: 600; font-size: 14px;' }, '🤖 Study Coach')
-                        ),
-                        h('div', { style: 'flex: 1; overflow-y: auto; padding: 12px;' },
-                            h('div', { id: 'tutor-messages', 'aria-live': 'polite', 'aria-label': 'coaching messages', style: 'display: flex; flex-direction: column; gap: 8px;' })
-                        ),
-                        h('div', { style: 'padding: 12px; border-top: 1px solid var(--border);' },
-                            h('input', {
-                                id: 'tutor-input',
-                                type: 'text',
-                                placeholder: 'Ask me anything...',
-                                style: `
-                                    width: 100%;
-                                    padding: 8px 12px;
-                                    border: 1px solid var(--border);
-                                    border-radius: 4px;
-                                    font-family: var(--ff-body);
-                                    font-size: 13px;
-                                    background: var(--paper);
-                                    color: var(--ink);
-                                `,
-                                onkeydown: (e) => {
-                                    if (e.key === 'Enter' && !e.shiftKey) {
-                                        e.preventDefault();
-                                        sendTutorMessage(e.target.value);
-                                        e.target.value = '';
-                                    }
-                                }
-                            })
-                        )
-                    );
-                });
-            } else {
-                // Fallback: simple chat UI if SDK components unavailable
-                renderFallbackChat();
-            }
-
-            // Sync theme
-            syncTheme();
-            document.addEventListener('theme-changed', syncTheme);
-        };
-        document.head.appendChild(script);
-    } catch (err) {
-        console.warn('[tutor-panel] Failed to initialize:', err);
-        renderFallbackChat();
+    // Load anentrypoint-design CSS (scope class .ds-247420 is required for it to apply).
+    if (!document.querySelector('link[data-ds247420]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://unpkg.com/anentrypoint-design@latest/dist/247420.css';
+        link.setAttribute('data-ds247420', '1');
+        document.head.appendChild(link);
     }
+    // Try to load the SDK as a real ES module (the SDK is ESM-only — older code that
+    // loaded it as a classic script expecting window globals always failed).
+    let sdk = null;
+    try {
+        sdk = await import(/* @vite-ignore */ 'https://unpkg.com/anentrypoint-design@latest/dist/247420.js');
+    } catch (err) {
+        console.warn('[tutor-panel] SDK ESM import failed; using fallback UI', err?.message || err);
+    }
+    // Always render the fallback (hand-rolled) chat — it's the resilient default and the
+    // SDK Chat would need more wiring to match our streaming protocol. We attach the
+    // .ds-247420 scope so SDK CSS tokens style chips, buttons, focus rings if loaded.
+    renderFallbackChat();
+    if (panelContainer && !panelContainer.classList.contains('ds-247420')) {
+        panelContainer.classList.add('ds-247420');
+    }
+    // Sync theme
+    syncTheme();
+    document.addEventListener('theme-changed', syncTheme);
+    // Expose SDK to debug surface so other modules can adopt components incrementally
+    if (sdk && typeof window !== 'undefined') window.__ds247420 = sdk;
 }
 
 function renderFallbackChat() {
@@ -357,6 +302,12 @@ export function wireWorkerToPanel(worker) {
                     streamingBuf = '';
                 } else {
                     addTutorMessage(clean, false);
+                }
+                // Mirror coaching into the inline SRS slot when present (so the user
+                // sees the tutor's comment on the review card without looking sideways).
+                if (event === 'coaching-done') {
+                    const inline = document.getElementById('tutor-card-coaching');
+                    if (inline) inline.textContent = clean;
                 }
                 if (event === 'guide-answer-done') showTutorToast('📚 guide answer ready');
                 if (event === 'triage-hint-done') showTutorToast('💡 hint provided');
