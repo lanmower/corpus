@@ -218,8 +218,11 @@ async function checkCapability() {
         state.capability = 'webgpu';
         state.gpuInfo = { features, fp16, info };
         els.capDot.className = 'dot ok';
-        els.capLabel.textContent = 'tutor ready';
-        els.modelDetail.textContent = 'your private tutor loads automatically when you open a case (~250MB once, then cached).';
+        els.capLabel.textContent = 'tutor loading';
+        els.modelDetail.textContent = 'preparing your private tutor (~250MB once, then cached).';
+        // Start the model download immediately so it's ready by the time the user picks a case.
+        // The shared worker only downloads once; selectScenario's later attempt is a no-op.
+        try { loadLLM(); } catch (e) { console.warn('[triage-live] eager auto-load failed', e); }
         console.log('[triage-live] adapter', { features, fp16, info });
         debugLog('adapter', { features, fp16, info: { vendor: info.vendor, architecture: info.architecture, device: info.device } });
         if (DEBUG_WEBGPU) {
@@ -834,12 +837,10 @@ async function send(forceSim = false) {
         try { await generateLLM(txt); }
         catch (e) {
             showWebgpuError(e.message || String(e), e.stack || '');
-            state.messages.push({ role: 'system', content: 'tutor offline â€” using simulator.' });
-            renderMessages();
             const reply = simulateAssistant(txt);
             state.messages.push({ role: 'assistant', content: reply });
             renderMessages();
-            dispatchToolCalls(reply);
+            runToolCalls(reply, TOOLS);
         }
     } else {
         let reply;
@@ -847,7 +848,7 @@ async function send(forceSim = false) {
         catch (e) { reply = `(error) ${e.message}`; }
         state.messages.push({ role: 'assistant', content: reply });
         renderMessages();
-        dispatchToolCalls(reply);
+        runToolCalls(reply, TOOLS);
     }
     // Cap history at 20 messages so DOM doesn't bloat.
     if (state.messages.length > 20) state.messages = state.messages.slice(-20);
@@ -861,14 +862,27 @@ function overlap(a, b) {
     return n;
 }
 
-// Last-resort fallback when WebGPU is unavailable. The LLM is the tutor;
-// without it, we can only do an offline token-overlap grading so the student isn't stuck mid-case.
-// We do NOT try to fake conversational coaching here — that would be dishonest.
+// Last-resort fallback when the live LLM tutor isn't available yet (or the browser can't run it).
+// Tells the truth about WHY it's offline — distinguishes "WebGPU missing" from "model still loading".
 function simulateAssistant(userText) {
     const sc = currentScenario();
     if (!sc) return 'pick a scenario first.';
     if (state.phase !== 'grading' && !/\b(grade|score|check)\b/i.test(userText || '')) {
-        return "the live tutor needs WebGPU (Chrome or Edge). i can still grade your board offline against the answer key — type 'grade me' when you're ready.";
+        if (state.capability === 'unsupported') {
+            return "the live tutor needs WebGPU (Chrome or Edge). i can still grade your board offline against the answer key — type 'grade me' when you're ready.";
+        }
+        if (state.llmStatus === 'loading' || state.loadStarted) {
+            return "the live tutor is still loading (~250 MB on first use, then cached). i'll be ready in a moment — keep noting your differentials and i'll join in. or type 'grade me' to score offline now.";
+        }
+        if (state.llmStatus === 'error') {
+            return "couldn't start the live tutor on this device. i can still grade your board offline — type 'grade me' when you're ready.";
+        }
+        // capability=webgpu but worker never spawned (auto-load race). Kick it off now.
+        if (state.capability === 'webgpu' && !state.loadStarted) {
+            try { loadLLM(); } catch (e) { console.warn('[triage-live] late auto-load failed', e); }
+            return "starting your private tutor now — give it a moment to load (~250 MB once, then cached). type 'grade me' if you'd rather score offline.";
+        }
+        return "the live tutor isn't ready yet. type 'grade me' to score offline, or wait a moment and try again.";
     }
     // Offline grading path — token-overlap against atoms.
     const studentTokens = state.cards.map(c => ({ c, tok: tokenize(`${c.title} ${c.body}`) }));
