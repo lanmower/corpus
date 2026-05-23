@@ -94,8 +94,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     console.log('# triage-live: gate + worker + student-clean chrome');
     t('disclosure-gate (asking hides answer key, grading reveals) + worker shape + restyle microcopy + serve isolation', () => {
         assert.match(liveSrc, /function buildSnapshot\(phase\)/);
-        // Grade-button is now the in-panel run-btn rendered by renderActive; composer button removed.
-        assert.match(liveSrc, /submitForGrading/);
+        // Phase transitions are now LLM-driven via the set_phase tool.
+        assert.match(liveSrc, /set_phase/);
         const sc = { id: 'x-0', subject: 'c', cat: 'green', name: 'T', description: 'd.', parameters: { hr: 110 },
             examples: [{ case: 'A 60yo w/ chest pain.', reasoning: 'CANARY_REASON', recommendation: 'CANARY_REC' }],
             atom_ids: ['a1'], atoms: [{ id: 'a1', atom: 'CanaryFront', definition: 'CANARY_DEF' }] };
@@ -107,9 +107,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const grade = vm.runInContext(`buildSnapshot('grading')`, ctx);
         for (const tok of ['CANARY_DEF', 'CANARY_REASON', 'CANARY_REC', 'CanaryFront']) assert.ok(!ask.includes(tok));
         assert.ok(grade.includes('CANARY_DEF') && grade.includes('CanaryFront'));
-        for (const re of [/TextStreamer/, /InterruptableStoppingCriteria/, /onnx-community\/gemma-4-E2B-it-ONNX/, /Gemma4ForConditionalGeneration/, /AutoProcessor/, /device:\s*'webgpu'/, /apply_chat_template/, /shader-f16/]) assert.match(workerSrc, re);
+        for (const re of [/TextStreamer/, /InterruptableStoppingCriteria/, /onnx-community\/Bonsai-1.7B-ONNX/, /device:\s*'webgpu'/]) assert.match(workerSrc, re);
         assert.match(liveSrc, /new Worker\(['"]\.\/triage-llm-worker\.js['"],\s*\{\s*type:\s*['"]module['"]/);
-        assert.match(liveSrc, /showWebgpuError/); assert.match(liveSrc, /console\.error\(['"]\[triage-live\] webgpu error/);
+        assert.match(liveSrc, /showWebgpuError/); assert.match(liveSrc, /console\.error\(['"]\[corpus\] webgpu error/);
         // Restyle microcopy: load tutor / select a case / no "study assistant" / no "≈2GB"
         assert.match(liveHtml, /load.*tutor/i);
         assert.match(liveHtml, /select a case/);

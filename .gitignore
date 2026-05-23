@@ -1,7 +1,5 @@
 # <<< gm managed
-# >>> gm managed (do not edit between markers)
 # tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
-*.stackdump
 .gm-stop-verified
 .gm/git-block-counter.json
 .gm/ingest-drafts/
@@ -16,14 +14,16 @@
 .gm/rslearn-counter.json
 .gm/trajectory-drafts/
 .gm/turn-state.json
-.plugkit-agent-worktree/
-.plugkit-browser-profile-*/
-.plugkit-browser-profile/
-/.gm/
 .gm/exec-spool.in
 .gm/exec-spool.out
 .gm/exec-spool.started
-# <<< gm managed
+.gm/browser-profile/
+.gm/browser-profile-*/
+.plugkit-agent-worktree/
+.plugkit-browser-profile-*/
+.plugkit-browser-profile/
+*.stackdump
+# >>> gm managed (do not edit between markers)
 
 # build output — videos copied from <subject>/videos/ at build time
 site/data/videos/
@@ -31,145 +31,3 @@ site/data/videos/
 # audio + video tracked via git-lfs (see .gitattributes)
 *.mp4
 *.m4a
-# >>> gm managed (do not edit between markers)
-.gm-stop-verified
-.gm/prd-state.json
-.gm/rslearn-counter.json
-.gm/git-block-counter.json
-.gm/learning-state.md
-.gm/trajectory-drafts/
-.gm/ingest-drafts/
-.gm/needs-gm
-.gm/lastskill
-.gm/turn-state.json
-.gm/no-memorize-this-turn
-.gm/prd.paused.yml
-.gm/rs-learn.db-shm
-.gm/rs-learn.db-wal
-.gm/exec-spool.in
-.gm/exec-spool.out
-.gm/exec-spool.started
-# tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
-# <<< gm managed
-# >>> gm managed (do not edit between markers)
-.gm-stop-verified
-.gm/prd-state.json
-.gm/rslearn-counter.json
-.gm/git-block-counter.json
-.gm/learning-state.md
-.gm/trajectory-drafts/
-.gm/ingest-drafts/
-.gm/needs-gm
-.gm/lastskill
-.gm/turn-state.json
-.gm/no-memorize-this-turn
-.gm/prd.paused.yml
-.gm/rs-learn.db-shm
-.gm/rs-learn.db-wal
-.gm/exec-spool.in
-.gm/exec-spool.out
-.gm/exec-spool.started
-# tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
-# <<< gm managed
-# >>> gm managed (do not edit between markers)
-.gm-stop-verified
-.gm/prd-state.json
-.gm/rslearn-counter.json
-.gm/git-block-counter.json
-.gm/learning-state.md
-.gm/trajectory-drafts/
-.gm/ingest-drafts/
-.gm/needs-gm
-.gm/lastskill
-.gm/turn-state.json
-.gm/no-memorize-this-turn
-.gm/prd.paused.yml
-.gm/rs-learn.db-shm
-.gm/rs-learn.db-wal
-.gm/exec-spool.in
-.gm/exec-spool.out
-.gm/exec-spool.started
-# tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
-# <<< gm managed
-# >>> gm managed (do not edit between markers)
-.gm-stop-verified
-.gm/prd-state.json
-.gm/rslearn-counter.json
-.gm/git-block-counter.json
-.gm/learning-state.md
-.gm/trajectory-drafts/
-.gm/ingest-drafts/
-.gm/needs-gm
-.gm/lastskill
-.gm/turn-state.json
-.gm/no-memorize-this-turn
-.gm/prd.paused.yml
-.gm/rs-learn.db-shm
-.gm/rs-learn.db-wal
-.gm/exec-spool.in
-.gm/exec-spool.out
-.gm/exec-spool.started
-# tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
-# <<< gm managed
-# >>> gm managed (do not edit between markers)
-.gm-stop-verified
-.gm/prd-state.json
-.gm/rslearn-counter.json
-.gm/git-block-counter.json
-.gm/learning-state.md
-.gm/trajectory-drafts/
-.gm/ingest-drafts/
-.gm/needs-gm
-.gm/lastskill
-.gm/turn-state.json
-.gm/no-memorize-this-turn
-.gm/prd.paused.yml
-.gm/rs-learn.db-shm
-.gm/rs-learn.db-wal
-.gm/exec-spool.in
-.gm/exec-spool.out
-.gm/exec-spool.started
-# tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
-# <<< gm managed
-# >>> gm managed (do not edit between markers)
-.gm-stop-verified
-.gm/prd-state.json
-.gm/rslearn-counter.json
-.gm/git-block-counter.json
-.gm/learning-state.md
-.gm/trajectory-drafts/
-.gm/ingest-drafts/
-.gm/needs-gm
-.gm/lastskill
-.gm/turn-state.json
-.gm/no-memorize-this-turn
-.gm/prd.paused.yml
-.gm/rs-learn.db-shm
-.gm/rs-learn.db-wal
-.gm/exec-spool.in
-.gm/exec-spool.out
-.gm/exec-spool.started
-# tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
-# <<< gm managed
-# >>> gm managed (do not edit between markers)
-.gm-stop-verified
-.gm/prd-state.json
-.gm/rslearn-counter.json
-.gm/git-block-counter.json
-.gm/learning-state.md
-.gm/trajectory-drafts/
-.gm/ingest-drafts/
-.gm/needs-gm
-.gm/lastskill
-.gm/turn-state.json
-.gm/no-memorize-this-turn
-.gm/prd.paused.yml
-.gm/rs-learn.db-shm
-.gm/rs-learn.db-wal
-.gm/exec-spool.in
-.gm/exec-spool.out
-.gm/exec-spool.started
-# tracked: .gm/rs-learn.db, .gm/code-search/, AGENTS.md, .gm/prd.yml
-# <<< gm managed
-.gm/browser-profile/
-.gm/browser-profile-*/

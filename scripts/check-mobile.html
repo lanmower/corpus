@@ -1,0 +1,37 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>body{font-family:monospace;padding:8px;background:#222;color:#eee;}</style>
+<iframe id="f" src="https://lanmower.github.io/corpus/triage-live.html" style="width:375px;height:600px;border:1px solid #555;"></iframe>
+<div id="out" style="margin-top:8px;font-size:11px;white-space:pre-wrap"></div>
+<script>
+  const f = document.getElementById('f');
+  const out = document.getElementById('out');
+  f.addEventListener('load', () => {
+    setTimeout(() => {
+      try {
+        const doc = f.contentDocument;
+        const shell = doc.querySelector('.triage-shell');
+        const side = doc.querySelector('.triage-side');
+        const chat = doc.querySelector('.triage-chat');
+        const composer = doc.querySelector('.composer');
+        const composerRow = doc.querySelector('.composer-row');
+        const clearBtn = doc.getElementById('clear-screen');
+        const result = {
+          viewportW: f.contentWindow.innerWidth,
+          shellWidth: shell ? shell.getBoundingClientRect().width : 'n/a',
+          shellOverflow: shell ? getComputedStyle(shell).overflowX : 'n/a',
+          sideMinWidth: side ? getComputedStyle(side).minWidth : 'n/a',
+          chatMinWidth: chat ? getComputedStyle(chat).minWidth : 'n/a',
+          chatWidth: chat ? chat.getBoundingClientRect().width : 'n/a',
+          composerWidth: composer ? composer.getBoundingClientRect().width : 'n/a',
+          composerRowFlexWrap: composerRow ? getComputedStyle(composerRow).flexWrap : 'n/a',
+          clearBtnRight: clearBtn ? clearBtn.getBoundingClientRect().right : 'n/a',
+          clearBtnFlex: clearBtn ? getComputedStyle(clearBtn).flex : 'n/a'
+        };
+        out.textContent = JSON.stringify(result, null, 2);
+      } catch (e) {
+        out.textContent = 'cross-origin: ' + e.message;
+      }
+    }, 5000);
+  });
+</script>

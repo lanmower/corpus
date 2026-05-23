@@ -25,9 +25,10 @@ import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from 
 import { showContextMenu, closeContextMenu } from './context-menu.js';
 import { initTutorPanel, wireWorkerToPanel, addTutorMessage } from './tutor-panel.js';
 
-const stage = document.getElementById('stage');
-const statusbarMsg = document.getElementById('statusbar-msg');
-const statusbar = document.querySelector('.statusbar');
+let sdk = null;
+let sdkRender = null;
+const appRoot = document.getElementById('app');
+let stage = document.getElementById('stage');
 const DEBUG = new URLSearchParams(location.search).has('debug');
 const log = (...a) => console.log('[corpus]', ...a);
 const warn = (...a) => console.warn('[corpus]', ...a);
@@ -228,23 +229,27 @@ function updateFooter() {
 
 let __rendering = false;
 function render() {
-    __rendering = true;
-    try {
-        window.__lastRenderTs = Date.now();
-        stage.innerHTML = '';
-        if (!state.manifest) { stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
-        const r = state.route;
-        // day-of-exam minimal mode — only mistakes + farewell
-        const days = srs.daysUntilExam();
-        if (days === 0 && r !== 'mistakes' && r !== 'settings') {
-            renderExamDay(); updateFooter(); return;
-        }
-        const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
-            review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
-            settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
-        (fns[r] || renderToday)();
-        updateFooter();
-    } finally { __rendering = false; }
+    if (sdkRender) {
+        sdkRender();
+    } else {
+        __rendering = true;
+        try {
+            window.__lastRenderTs = Date.now();
+            if (stage) stage.innerHTML = '';
+            if (!state.manifest) { if (stage) stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
+            const r = state.route;
+            // day-of-exam minimal mode — only mistakes + farewell
+            const days = srs.daysUntilExam();
+            if (days === 0 && r !== 'mistakes' && r !== 'settings') {
+                renderExamDay(); updateFooter(); return;
+            }
+            const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
+                review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
+                settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
+            (fns[r] || renderToday)();
+            updateFooter();
+        } finally { __rendering = false; }
+    }
 }
 
 // ---- shell-prompt status line ----
@@ -2644,15 +2649,87 @@ function registerSW() {
         .catch(e => warn('sw register failed', e.message));
 }
 
+function setupSdkApp() {
+    const { components: C } = sdk;
+    
+    sdkRender = sdk.mount(appRoot, () => {
+        const navItems = [
+            ['today', '#today'],
+            ['subjects', '#guides'],
+            ['review', '#review'],
+            ['cases', '#cases'],
+            ['stats', '#stats']
+        ];
+
+        const r = state.route;
+        const currentLabel = navItems.find(i => i[1].slice(1) === r)?.[0] || r;
+
+        const mainContent = document.createElement('div');
+        mainContent.className = 'stage';
+        
+        // This is a bit of a hack to bridge the legacy imperative renderers 
+        // with the new reactive SDK mount.
+        const stageProxy = {
+            get innerHTML() { return mainContent.innerHTML; },
+            set innerHTML(v) { if (v === '') mainContent.innerHTML = ''; else mainContent.innerHTML = v; },
+            append: (...args) => mainContent.append(...args),
+            appendChild: (arg) => mainContent.appendChild(arg),
+            querySelector: (s) => mainContent.querySelector(s),
+            querySelectorAll: (s) => mainContent.querySelectorAll(s),
+            dataset: {},
+            classList: { add: () => {}, remove: () => {}, contains: () => false, toggle: () => {} },
+            style: {}
+        };
+        
+        // We override the global 'stage' for the sub-renderers
+        const originalStage = stage;
+        stage = stageProxy;
+        
+        const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
+            review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
+            settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
+        
+        try {
+            (fns[r] || renderToday)();
+        } finally {
+            stage = originalStage;
+        }
+
+        return C.AppShell({
+            topbar: C.Topbar({
+                brand: 'corpus',
+                leaf: state.currentSubject || '',
+                items: navItems,
+                active: currentLabel,
+                onNav: (label) => {
+                    const item = navItems.find(i => i[0] === label);
+                    if (item) go(item[1].slice(1));
+                }
+            }),
+            main: mainContent,
+            status: C.Status({
+                left: [C.h('span', { class: 'mono' }, !navigator.onLine ? 'offline · saved locally' : 'ready')],
+                right: [C.h('span', { class: 'mono' }, `v${window.__BUILD_VERSION__ || '0.1.0'}`)]
+            })
+        });
+    });
+}
+
 (async () => {
     try {
-        const dot = document.querySelector('.status .dot'); if (dot) dot.classList.add('loading');
-        const lbl = document.getElementById('status-label'); if (lbl) lbl.textContent = 'loading…';
-        mountTopbar();
         await loadManifest();
         await loadAllShards();
-        // Initialize schedule - regenerate if stale (date changed) or empty
-        // Pass ticksAll so schedule only suggests reviews for subjects with studied material
+
+        try {
+            sdk = await import('./247420.js');
+            if (sdk && sdk.mount) {
+                setupSdkApp();
+            }
+        } catch (e) {
+            console.warn('[corpus] SDK load failed, using fallback', e);
+        }
+
+        // Initialize schedule
         const today = new Date().toISOString().slice(0, 10);
         const sched = schedule.loadSchedule();
         if (!sched.blocks.length || sched.today !== today) {
@@ -2674,29 +2751,11 @@ function registerSW() {
             if (__rendering) return;
             if (e.key && /^corpus\./.test(e.key)) render();
         });
-        try {
-            const ch = new BroadcastChannel('corpus');
-            ch.addEventListener('message', e => {
-                if (e.data?.type === 'schedule:updated') {
-                    if (__rendering) return;
-                    // Skip if we rendered very recently (same-tab self-broadcast from a click handler).
-                    if (Date.now() - (window.__lastRenderTs || 0) < 200) return;
-                    if (state.route === 'calendar') {
-                        // calendar self-updates via schedule.onUpdate; nothing to do
-                    } else if (state.route === 'settings') {
-                        render();
-                    }
-                }
-            });
-            state.broadcastChannel = ch;
-        } catch (e) { warn('broadcast channel unavailable', e.message); }
-
-        // Initialize Bonsai-1.7B tutor (async, non-blocking).
-        // tutor.js is an ES module worker that uses transformers.js + WebGPU for real LLM inference.
+        
+        // Initialize Bonsai-1.7B tutor
         try {
             initTutorPanel().catch(err => warn('tutor initialization failed', err.message));
             const worker = new Worker('./tutor.js', { type: 'module' });
-            worker.addEventListener('error', e => warn('tutor worker error', e.message || e.filename));
             wireWorkerToPanel(worker);
             state.tutorWorker = worker;
             worker.postMessage({ cmd: 'init' });
@@ -2705,79 +2764,20 @@ function registerSW() {
         }
 
         // Expose page-control actions for LLM tool dispatch.
-        // The tutor LLM emits fenced ```tool blocks that the panel parses and calls these handlers.
         window.__tutorActions = {
             navigate(args) {
                 const route = String(args?.route || '').replace(/^#/, '');
                 if (!route) return;
-                location.hash = '#' + route;
+                go(route);
             },
             open_guide(args) {
                 const subject = String(args?.subject || '').toLowerCase();
                 if (!subject) return;
-                const anchor = args?.anchor ? '#' + args.anchor : '';
-                location.hash = `#guides/${subject}${anchor}`;
+                go('subject', subject);
             },
             start_session(args) {
                 const subject = String(args?.subject || '').toLowerCase();
-                if (!subject) { location.hash = '#review'; return; }
-                location.hash = `#review/${subject}`;
-            },
-            // --- SRS session controls (LLM drives the review loop) ---
-            reveal_card() {
-                if (state.route !== 'review' || !state.reviewQueue?.length) return;
-                state.reviewRevealed = true;
-                if (typeof renderReview === 'function') renderReview();
-            },
-            grade_card(args) {
-                if (state.route !== 'review' || !state.reviewQueue?.length) return;
-                const score = Number(args?.score);
-                if (!Number.isFinite(score) || score < 0 || score > 5) return;
-                const card = state.reviewQueue[state.reviewIndex];
-                if (!card) return;
-                if (!state.reviewRevealed) state.reviewRevealed = true;
-                gradeReview(card.id, score);
-            },
-            skip_card() {
-                if (state.route !== 'review' || !state.reviewQueue?.length) return;
-                if (typeof skipReview === 'function') skipReview();
-            },
-            end_session() {
-                if (state.route !== 'review') return;
-                state.sessionFinished = true;
-                if (typeof renderReview === 'function') renderReview();
-            },
-            get_session_state() {
-                return {
-                    route: state.route,
-                    queue: state.reviewQueueIds?.length || 0,
-                    index: state.reviewIndex || 0,
-                    graded: state.reviewSessionGraded || 0,
-                    againPile: state.reviewAgainPile?.length || 0,
-                    revealed: !!state.reviewRevealed,
-                    cramMode: !!state.cramMode,
-                    learnMode: !!state.learnMode,
-                    sessionFinished: !!state.sessionFinished
-                };
-            },
-            get_current_card() {
-                const card = state.reviewQueue?.[state.reviewIndex];
-                if (!card) return null;
-                return {
-                    id: card.id, front: card.front, back: card.back,
-                    subject: card._subject, tags: card.tags || []
-                };
-            },
-            filter_session(args) {
-                // Mid-session re-filter — narrows queue to a subject. Triggers re-render of review.
-                const subject = args?.subject ? String(args.subject).toLowerCase() : 'all';
-                state.reviewSubjectFilter = subject;
-                // Force queue rebuild
-                state.reviewQueueIds = []; state.reviewIndex = 0;
-                state.reviewAgainPile = []; state.reviewSessionGraded = 0;
-                state.sessionFinished = false; state.reviewRevealed = false;
-                location.hash = subject === 'all' ? '#review' : `#review/${subject}`;
-                if (typeof renderReview === 'function') renderReview();
+                go('review', subject || 'all');
             }
         };
 
@@ -2786,13 +2786,14 @@ function registerSW() {
         const [routeRaw, sub] = hash.split('/');
         const route = routeRaw.split('?')[0];
         go(route, sub ? sub.split('?')[0] : undefined);
-        log('ready', { subjects: state.manifest.subjects.length });
     } catch (e) {
-        stage.innerHTML = '';
-        stage.append(el('div', { class: 'panel error-state' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'failed to load')),
-            el('div', {}, e.message),
-            el('button', { class: 'chip', on: { click: () => location.reload() } }, 'retry')));
+        if (stage) {
+            stage.innerHTML = '';
+            stage.append(el('div', { class: 'panel error-state' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'failed to load')),
+                el('div', {}, e.message),
+                el('button', { class: 'chip', on: { click: () => location.reload() } }, 'retry')));
+        }
         warn('boot error', e);
     }
 })();
