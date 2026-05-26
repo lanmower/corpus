@@ -1,0 +1,2 @@
+./site/confidence.js:11:11 get
+function get(subject, lineNum) { return (load()[subject] || {})[String(lineNum)] || 0; }

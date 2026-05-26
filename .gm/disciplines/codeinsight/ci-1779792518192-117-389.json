@@ -1,0 +1,8 @@
+./site/247420.js:117:123 En
+function En({onPrev:e,onNext:t,onReset:n}){let s=document.createElement("div");return s.className="overlay export-hidden",s.setAttribute("role","toolbar"),s.setAttribute("aria-label","Deck controls"),s.innerHTML=`
+        <button class="btn prev" type="button" aria-label="Previous slide" title="Previous (\u2190)">${br}</button>
+        <span class="count" aria-live="polite"><span class="current">1</span><span class="sep">/</span><span class="total">1</span></span>
+        <button class="btn next" type="button" aria-label="Next slide" title="Next (\u2192)">${yr}</button>
+        <span class="divider"></span>
+        <button class="btn reset" type="button" aria-label="Reset to first slide" title="Reset (R)">Reset<span class="kbd">R</span></button>
+    `,s.querySelector(".prev").addEventListener("click",e),s.querySelector(".next").addEventListener("click",t),s.querySelector(".reset").addEventListener("click",n),s}

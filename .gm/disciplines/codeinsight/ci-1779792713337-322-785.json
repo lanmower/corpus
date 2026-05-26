@@ -1,0 +1,4 @@
+./site/tutor-panel.js:322:324 stopGeneration
+function stopGeneration() {
+    if (tutorWorker) tutorWorker.postMessage({ cmd: 'stop' });
+}

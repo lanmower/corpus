@@ -1,0 +1,2 @@
+./site/247420.js:123:123 Ut
+function Ut({name:e="aicat",status:t="idle",face:n}={}){return h("div",{class:"aicat-portrait"},h("pre",{class:"aicat-face","aria-label":`${e} portrait`},n||Re),h("div",{class:"aicat-meta"},h("span",{class:"name"},e),h("span",{class:"status","aria-label":`status: ${t}`},h("span",{class:"dot","aria-hidden":"true"},"\u25CF "),t)))}

@@ -1,0 +1,2 @@
+./site/247420.js:123:123 Ln
+function Ln(e,t){let n=t.target;if(n&&(n.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(n.tagName))||t.metaKey||t.ctrlKey||t.altKey)return!1;let s=vr[t.key];if(s)return s(e),!0;if(/^[0-9]$/.test(t.key)){let r=t.key==="0"?9:parseInt(t.key,10)-1;if(r<e._slides.length)return e._go(r,"keyboard"),!0}return!1}

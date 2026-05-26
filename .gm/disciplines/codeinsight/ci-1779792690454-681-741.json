@@ -1,0 +1,11 @@
+./site/triage-live.js:681:690 debugPanel
+function debugPanel() {
+    let p = document.getElementById('webgpu-debug');
+    if (!p) {
+        p = document.createElement('pre');
+        p.id = 'webgpu-debug';
+        p.style.cssText = 'position:fixed;right:8px;bottom:8px;max-width:520px;max-height:60vh;overflow:auto;background:#0b0b0b;color:#9ef;border:1px solid #345;padding:10px;font:11px/1.4 ui-monospace,monospace;z-index:9999;border-radius:6px;white-space:pre-wrap;word-break:break-word';
+        document.body.appendChild(p);
+    }
+    return p;
+}

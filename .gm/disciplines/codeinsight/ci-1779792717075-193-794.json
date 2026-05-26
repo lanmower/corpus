@@ -1,0 +1,51 @@
+./site/tutor-panel.js:193:242 renderFallbackChat
+function renderFallbackChat() {
+    if (!panelContainer) {
+        panelContainer = document.createElement('div');
+        panelContainer.id = 'tutor-panel';
+        panelContainer.className = 'tutor-panel-fallback tutor-panel-root';
+        document.body.appendChild(panelContainer);
+    }
+    applyResponsiveWidth();
+
+    panelContainer.innerHTML = `
+        <div class="tutor-fallback-head">
+            <div style="display:flex;align-items:center;gap:8px;">
+                <span style="font-size:20px;">🤖</span>
+                <span style="font-weight:600;font-size:14px;">Study Coach</span>
+                <span id="tutor-status-pill" class="tutor-status-pill">starting…</span>
+            </div>
+            <div style="display:flex;gap:4px;">
+                <button id="tutor-clear-btn" class="tutor-hdr-btn" title="New conversation" aria-label="New conversation">⟲</button>
+                <button id="tutor-collapse-btn" class="tutor-collapse-btn" title="Collapse panel" aria-label="Collapse panel">→</button>
+            </div>
+        </div>
+        <div id="tutor-messages" aria-live="polite" aria-label="coaching messages" class="tutor-fallback-msgs"></div>
+        <div class="tutor-fallback-composer">
+            <textarea id="tutor-input" rows="1" aria-label="Ask the study coach a question"
+                placeholder="Ask me anything…"></textarea>
+        </div>
+    `;
+
+    const input = panelContainer.querySelector('#tutor-input');
+    if (input) {
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                if (!isThinking && input.value.trim()) {
+                    sendTutorMessage(input.value);
+                    input.value = '';
+                }
+            }
+        });
+    }
+    panelContainer.querySelector('#tutor-collapse-btn')?.addEventListener('click', toggleTutorCollapse);
+    panelContainer.querySelector('#tutor-clear-btn')?.addEventListener('click', clearConversation);
+
+    // Replay persisted history into the fallback DOM.
+    if (tutorMessages.length === 0) {
+        appendFallbackMessage('Welcome! I’ll help you study. Ask a question or start a review.', false);
+    } else {
+        for (const m of tutorMessages) appendFallbackMessage(m.text, m.role === 'user');
+    }
+}

@@ -1,0 +1,29 @@
+./site/triage-llm-worker.js:36:63 loadOnce
+async function loadOnce() {
+    self.postMessage({ status: 'loading', stage: 'probing webgpu' });
+    if (!('gpu' in navigator)) throw new Error('navigator.gpu missing — WebGPU required');
+    const adapter = await navigator.gpu.requestAdapter({ powerPreference: 'high-performance' });
+    if (!adapter) throw new Error('no WebGPU adapter');
+
+    self.postMessage({ status: 'loading', stage: 'downloading Bonsai-1.7B (1-bit)' });
+    generator = await pipeline('text-generation', MODEL_ID, {
+        device: 'webgpu',
+        dtype: 'q1',
+        progress_callback: (info) => {
+            if (info?.status === 'progress_total' || info?.status === 'progress') {
+                self.postMessage({
+                    status: 'progress',
+                    loaded: Number(info.loaded ?? 0),
+                    total: Number(info.total ?? 0),
+                    progress: Number(info.progress ?? 0)
+                });
+            }
+        }
+    });
+
+    self.postMessage({ status: 'loading', stage: 'optimizing for 1-bit execution' });
+    const warm = generator.tokenizer('a');
+    await generator.model.generate({ ...warm, max_new_tokens: 1 });
+
+    self.postMessage({ status: 'ready' });
+}

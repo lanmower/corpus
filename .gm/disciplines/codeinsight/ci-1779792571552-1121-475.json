@@ -1,0 +1,21 @@
+./site/app.js:1121:1140 buildInfographicsPanel
+function buildInfographicsPanel(items) {
+    if (!Array.isArray(items) || items.length === 0) return null;
+    const grid = el('div', { class: 'infographics-grid' });
+    items.forEach((ig, idx) => {
+        const tile = el('button', {
+            class: 'infographic-tile',
+            type: 'button',
+            'aria-label': ig.alt,
+            on: { click: () => openInfographicLightbox(items, idx) }
+        },
+            el('img', { src: ig.src, alt: ig.alt, loading: 'lazy' }),
+            el('div', { class: 'infographic-caption' }, ig.title)
+        );
+        grid.append(tile);
+    });
+    return el('div', { class: 'panel infographics-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'infographics'), `${items.length}`),
+        grid
+    );
+}

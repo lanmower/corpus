@@ -1,0 +1,26 @@
+./site/schedule.js:214:238 regenerate
+function regenerate({ today = isoDate(new Date()), dueCounts = {}, horizonDays = null, extras = {} } = {}) {
+    const cfg = loadConfig();
+    const dl = daysBetween(today, cfg.examDate);
+    const safeDl = Number.isFinite(dl) ? dl : 30;
+    const horizon = horizonDays != null ? horizonDays : Math.max(7, Math.min(60, safeDl + 1));
+    // Pass daysToExam in extras for pace-aware allocation
+    const fullExtras = { ...extras, daysToExam: safeDl };
+    const existing = loadSchedule();
+    const lockedById = new Map();
+    for (const b of existing.blocks) if (b.locked) lockedById.set(b.id, b);
+    const out = [];
+    for (let i = 0; i < horizon; i++) {
+        const date = addDays(today, i);
+        const day = buildDayBlocks(cfg, date, dueCounts, fullExtras);
+        for (const b of day) {
+            if (lockedById.has(b.id)) out.push(lockedById.get(b.id));
+            else out.push(b);
+        }
+    }
+    // Carry forward any locked block whose id is in the past or unmatched.
+    for (const [id, b] of lockedById) if (!out.find(x => x.id === id)) out.push(b);
+    const sched = { blocks: out, generatedAt: Date.now(), horizon, today };
+    saveSchedule(sched);
+    return sched;
+}

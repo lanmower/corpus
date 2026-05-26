@@ -1,0 +1,51 @@
+./site/triage-live.js:324:373 renderScenarios
+function renderScenarios() {
+    els.list.innerHTML = '';
+    const vis = visibleScenarios();
+    const bySubject = {};
+    for (const s of vis) (bySubject[s.subject] ||= []).push(s);
+    if (vis.length === 0) {
+        els.list.append(ce('div', { class: 'label' }, 'no cases match these filters'));
+        return;
+    }
+    for (const [subj, items] of Object.entries(bySubject)) {
+        els.list.append(ce('div', { class: 'label', style: 'margin-top:14px' }, `${subj} (${items.length})`));
+        for (const sc of items) {
+            const sess = state.sessions[sc.id];
+            const cards = sessionCards(sess);
+            const score = sessionScore(sess);
+            const hasSession = cards.length > 0;
+            const subParts = [subj];
+            if (score != null) subParts.push(`${score}%`);
+            else if (hasSession) subParts.push(`${cards.length} cards`);
+            const row = ce('div', {
+                class: 'scenario-row' + (state.activeScenarioId === sc.id ? ' active' : '') + (hasSession ? ' has-session' : '') + (score != null ? ' has-score' : ''),
+                data: { id: sc.id },
+                role: 'button', tabindex: '0',
+                'aria-pressed': String(state.activeScenarioId === sc.id),
+                on: {
+                    click: () => selectScenario(sc.id),
+                    keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectScenario(sc.id); } }
+                }
+            },
+                ce('div', {}, sc.name),
+                ce('div', { class: 'sub' }, subParts.join(' · '))
+            );
+            row.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                import('./context-menu.js').then(({ showContextMenu }) => {
+                    const has = !!state.sessions[sc.id];
+                    showContextMenu(e.clientX, e.clientY, [
+                        { icon: '▶', label: 'open this case', action: () => selectScenario(sc.id) },
+                        has ? { icon: '↺', label: 'reset progress', action: () => {
+                            delete state.sessions[sc.id]; saveSessions();
+                            if (state.activeScenarioId === sc.id) { state.cards = []; state.lastGrade = null; state.phase = 'asking'; renderActive(); renderScratchpad(); }
+                            renderScenarios(); renderStats();
+                        } } : null
+                    ].filter(Boolean));
+                }).catch(() => {});
+            });
+            els.list.append(row);
+        }
+    }
+}

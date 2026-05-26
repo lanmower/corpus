@@ -1,0 +1,18 @@
+./site/app.js:1332:1348 renderTriage
+async function renderTriage() {
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'cases'), el('h2', {}, 'work a case')));
+    const placeholder = el('div', { class: 'panel' }, el('div', { class: 'skeleton', style: 'width:60%;height:14px' }));
+    stage.append(placeholder);
+    await loadAllShards();
+    placeholder.remove();
+    stage.append(el('div', { class: 'panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'live tutor')),
+        el('div', { style: 'font-family:var(--ff-prose);font-size:14px;color:var(--panel-text-2);margin-bottom:10px' }, 'work a case with the in-browser study assistant — supply differentials, plan, investigations, then submit for grading.'),
+        el('a', { class: 'primary-action', href: './triage-live.html' }, 'open live tutor')));
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject];
+        if (!sh.triage || !sh.triage.scenarios.length) continue;
+        for (const sc of sh.triage.scenarios) stage.append(buildTriageWidget(meta, sh, sc));
+    }
+}

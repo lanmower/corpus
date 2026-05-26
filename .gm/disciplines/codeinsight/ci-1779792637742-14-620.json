@@ -1,0 +1,5 @@
+./site/progress.js:14:17 dayOffset
+function dayOffset(a, b) {
+    const d = (new Date(b) - new Date(a)) / 86400000;
+    return Math.round(d);
+}

@@ -1,0 +1,7 @@
+./scripts/compress_media.js:44:49 ffmpegAudio
+function ffmpegAudio(src, dst) {
+    const args = ['-hide_banner', '-loglevel', 'error', '-y', '-i', src,
+        '-c:a', 'libopus', '-b:a', '48k', '-vbr', 'on', '-ac', '1',
+        '-application', 'voip', '-vn', dst];
+    return spawnSync('ffmpeg', args, { stdio: 'inherit' });
+}

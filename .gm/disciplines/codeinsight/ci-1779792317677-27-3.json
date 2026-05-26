@@ -1,0 +1,64 @@
+./generate_concise_notes.js:27:89 collectSubjectContent
+function collectSubjectContent() {
+  const subjects = {};
+
+  const root = fs.existsSync(MEDBAK_ROOT) ? MEDBAK_ROOT : CORPUS_ROOT;
+  const entries = readdirSync(root).filter(name => {
+    const fullPath = path.join(root, name);
+    return statSync(fullPath).isDirectory() &&
+           !name.startsWith('.') &&
+           name !== 'concise' &&
+           name !== 'node_modules';
+  });
+
+  entries.forEach(subjectName => {
+    const subjectPath = path.join(root, subjectName);
+    const transcriptDir = path.join(subjectPath, 'audio-transcripts');
+    const bookDir = path.join(subjectPath, 'book-texts');
+
+    const transcripts = [];
+    const books = [];
+
+    // Collect transcripts
+    if (fs.existsSync(transcriptDir)) {
+      readdirSync(transcriptDir).filter(f => f.endsWith('.txt')).forEach(file => {
+        const content = extractTextFromFile(path.join(transcriptDir, file));
+        if (content) {
+          transcripts.push({
+            label: cleanFileName(file),
+            content: content,
+            file: file
+          });
+        }
+      });
+    }
+
+    // Collect books (recursively)
+    if (fs.existsSync(bookDir)) {
+      const walkBooks = (dir) => {
+        readdirSync(dir).forEach(item => {
+          const fullPath = path.join(dir, item);
+          if (statSync(fullPath).isDirectory()) {
+            walkBooks(fullPath);
+          } else if (item.endsWith('.txt')) {
+            const content = extractTextFromFile(fullPath);
+            if (content) {
+              books.push({
+                label: cleanFileName(item),
+                content: content,
+                file: item
+              });
+            }
+          }
+        });
+      };
+      walkBooks(bookDir);
+    }
+
+    if (transcripts.length > 0 || books.length > 0) {
+      subjects[subjectName] = { transcripts, books };
+    }
+  });
+
+  return subjects;
+}

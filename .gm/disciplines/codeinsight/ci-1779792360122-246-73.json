@@ -1,0 +1,2 @@
+./site/247420.js:246:246 Yr
+function Yr(e,t,{autoScope:n=!0}={}){if(!e)throw new Error("mount: rootEl required");if(typeof t!="function")throw new Error("mount: viewFn required");if(n&&e.classList&&!e.classList.contains(ke.slice(1))){let r=ke.slice(1);e.closest&&e.closest("."+r)||e.classList.add(r)}or().catch(()=>{});let s=()=>{U(e,t(s)),requestAnimationFrame(()=>ge(e))};return s(),s}

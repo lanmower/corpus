@@ -1,0 +1,83 @@
+./site/app.js:2718:2799 
+async () => {
+    try {
+        await loadManifest();
+        await loadAllShards();
+
+        try {
+            sdk = await import('./247420.js');
+            if (sdk && sdk.mount) {
+                setupSdkApp();
+            }
+        } catch (e) {
+            console.warn('[corpus] SDK load failed, using fallback', e);
+        }
+
+        // Initialize schedule
+        const today = new Date().toISOString().slice(0, 10);
+        const sched = schedule.loadSchedule();
+        if (!sched.blocks.length || sched.today !== today) {
+            schedule.getSchedule({ today, dueCounts: dueCountsBySubjectMap(), ticksAll: loadGuideTicks() });
+        }
+        mountSearchPalette();
+        state.timerApi = timer.mount(document);
+        const lvl = late.lateLevel(); late.applyClass(document, lvl);
+        if (lvl !== 'normal') {
+            const m = late.message(lvl);
+            if (m) { const banner = el('div', { class: 'late-banner', role: 'status' }, m); document.body.appendChild(banner); }
+        }
+        registerSW();
+        toast.bind();
+        updateOnlineStatus();
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        window.addEventListener('storage', e => {
+            if (__rendering) return;
+            if (e.key && /^corpus\./.test(e.key)) render();
+        });
+        
+        // Initialize Bonsai-1.7B tutor
+        try {
+            initTutorPanel().catch(err => warn('tutor initialization failed', err.message));
+            const worker = new Worker('./tutor.js', { type: 'module' });
+            wireWorkerToPanel(worker);
+            state.tutorWorker = worker;
+            worker.postMessage({ cmd: 'init' });
+        } catch (err) {
+            warn('tutor worker spawn failed', err.message);
+        }
+
+        // Expose page-control actions for LLM tool dispatch.
+        window.__tutorActions = {
+            navigate(args) {
+                const route = String(args?.route || '').replace(/^#/, '');
+                if (!route) return;
+                go(route);
+            },
+            open_guide(args) {
+                const subject = String(args?.subject || '').toLowerCase();
+                if (!subject) return;
+                go('subject', subject);
+            },
+            start_session(args) {
+                const subject = String(args?.subject || '').toLowerCase();
+                go('review', subject || 'all');
+            }
+        };
+
+        window.addEventListener('corpus:storage-full', () => showStorageFullBanner());
+        const hash = location.hash.replace('#', '') || 'today';
+        const [routeRaw, sub] = hash.split('/');
+        const route = routeRaw.split('?')[0];
+        go(route, sub ? sub.split('?')[0] : undefined);
+    } catch (e) {
+        if (stage) {
+            stage.innerHTML = '';
+            stage.append(el('div', { class: 'panel error-state' },
+                el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'failed to load')),
+                el('div', {}, e.message),
+                el('button', { class: 'chip', on: { click: () => location.reload() } }, 'retry')));
+        }
+        warn('boot error', e);
+    }
+}

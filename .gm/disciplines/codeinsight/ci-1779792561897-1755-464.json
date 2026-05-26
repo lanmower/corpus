@@ -1,0 +1,5 @@
+./site/app.js:1755:1758 exitLearnMode
+function exitLearnMode() {
+    state.learnMode = false;
+    resetReviewQueue();
+}

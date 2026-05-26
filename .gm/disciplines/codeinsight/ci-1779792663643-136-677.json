@@ -1,0 +1,11 @@
+./site/srs.js:136:145 loadStates
+function loadStates() {
+    try {
+        const raw = localStorage.getItem(STATES_KEY);
+        if (!raw) return {};
+        const parsed = JSON.parse(raw);
+        const migrated = migrate(parsed);
+        if (parsed.version !== SCHEMA_VERSION) localStorage.setItem(STATES_KEY, JSON.stringify(migrated));
+        return migrated.states || {};
+    } catch { return {}; }
+}

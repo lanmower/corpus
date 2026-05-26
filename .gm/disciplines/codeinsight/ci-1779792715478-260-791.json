@@ -1,0 +1,26 @@
+./site/tutor-panel.js:260:284 applyResponsiveWidth
+function applyResponsiveWidth() {
+    if (!panelContainer) return;
+    const mobile = window.matchMedia('(max-width: 640px)').matches;
+    const chatRoot = panelContainer.querySelector('#tutor-chat-root');
+    const toggleBtn = panelContainer.querySelector('#tutor-collapse-btn');
+
+    if (isPanelCollapsed) {
+        panelContainer.classList.add('tutor-collapsed');
+        panelContainer.classList.remove('tutor-mobile-overlay');
+        panelContainer.style.width = '52px';
+        if (chatRoot) chatRoot.style.display = 'none';
+        if (toggleBtn) toggleBtn.textContent = mobile ? '🤖' : '←';
+    } else {
+        panelContainer.classList.remove('tutor-collapsed');
+        if (chatRoot) chatRoot.style.display = '';
+        if (toggleBtn) toggleBtn.textContent = '→';
+        if (mobile) {
+            panelContainer.classList.add('tutor-mobile-overlay');
+            panelContainer.style.width = '100%';
+        } else {
+            panelContainer.classList.remove('tutor-mobile-overlay');
+            panelContainer.style.width = (config.panelWidth || 30) + '%';
+        }
+    }
+}

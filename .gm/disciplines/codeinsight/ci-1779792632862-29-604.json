@@ -1,0 +1,6 @@
+./site/newcards.js:29:33 countToday
+function countToday(subject, now = new Date()) {
+    const day = todayISO(now);
+    const o = readCounts();
+    return ((o[day] || {})[subject]) || 0;
+}

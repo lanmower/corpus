@@ -1,0 +1,5 @@
+./site/lastpos.js:4:7 load
+function load() {
+    try { const raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : null; }
+    catch { return null; }
+}

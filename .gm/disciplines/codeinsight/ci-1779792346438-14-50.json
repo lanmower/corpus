@@ -1,0 +1,18 @@
+./scripts/build_triage.js:14:30 loadCards
+function loadCards(subject) {
+    const dir = path.join(ROOT, subject, 'srs-cards');
+    const out = [];
+    for (const f of lsSafe(dir)) {
+        if (!f.endsWith('.yml') && !f.endsWith('.yaml')) continue;
+        const text = readSafe(path.join(dir, f));
+        if (!text) continue;
+        const parsed = parseYaml(text);
+        let cards = [];
+        if (Array.isArray(parsed)) cards = parsed;
+        else if (parsed && Array.isArray(parsed.cards)) cards = parsed.cards;
+        for (const c of cards) {
+            if (c && c.front) out.push({ ...c, sourceFile: f });
+        }
+    }
+    return out;
+}

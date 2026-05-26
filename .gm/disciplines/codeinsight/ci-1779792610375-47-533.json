@@ -1,0 +1,17 @@
+./site/calendar.js:47:62 renderRing
+function renderRing(pct) {
+    const r = 8, c = 2 * Math.PI * r, off = c * (1 - Math.max(0, Math.min(100, pct)) / 100);
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 22 22'); svg.setAttribute('class', 'ring');
+    svg.setAttribute('width', '22'); svg.setAttribute('height', '22'); svg.setAttribute('aria-hidden', 'true');
+    const bg = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    bg.setAttribute('cx', '11'); bg.setAttribute('cy', '11'); bg.setAttribute('r', String(r));
+    bg.setAttribute('fill', 'none'); bg.setAttribute('stroke', 'currentColor'); bg.setAttribute('stroke-opacity', '0.18'); bg.setAttribute('stroke-width', '3');
+    const fg = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    fg.setAttribute('cx', '11'); fg.setAttribute('cy', '11'); fg.setAttribute('r', String(r));
+    fg.setAttribute('fill', 'none'); fg.setAttribute('stroke', 'currentColor'); fg.setAttribute('stroke-width', '3');
+    fg.setAttribute('stroke-dasharray', String(c)); fg.setAttribute('stroke-dashoffset', String(off));
+    fg.setAttribute('transform', 'rotate(-90 11 11)'); fg.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(bg); svg.appendChild(fg);
+    return svg;
+}

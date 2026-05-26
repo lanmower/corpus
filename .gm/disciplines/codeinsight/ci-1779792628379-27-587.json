@@ -1,0 +1,7 @@
+./site/mastery.js:27:32 casePassed
+function casePassed(session) {
+    if (!session) return false;
+    if (typeof session.score === 'number') return session.score >= 0.8;
+    if (session.graded) return true;
+    return false;
+}

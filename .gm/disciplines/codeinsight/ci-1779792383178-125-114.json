@@ -1,0 +1,2 @@
+./site/247420.js:125:125 Qs
+function Qs({side:e="left",open:t=!1,onClose:n,children:s,ariaLabel:r}={}){if(!t)return null;let i=a=>{a.key==="Escape"&&(a.preventDefault(),n&&n())};return b("div",{class:"ds-ep-drawer-backdrop",onmousedown:a=>{a.target===a.currentTarget&&n&&n()}},b("div",{class:"ds-ep-drawer side-"+e,role:"dialog","aria-modal":"true","aria-label":r||"Drawer",tabindex:"-1",onkeydown:i,ref:a=>{!a||a._dsTrap||(a._dsTrap=!0,a.addEventListener("keydown",o=>en(a,o)),queueMicrotask(()=>{(a.querySelector(We)||a).focus()}))}},...C(s)))}

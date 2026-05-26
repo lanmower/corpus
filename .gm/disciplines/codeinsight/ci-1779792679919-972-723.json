@@ -1,0 +1,12 @@
+./site/triage-live.js:972:982 render
+function render() {
+    if (sdkRender) {
+        sdkRender();
+    } else {
+        renderFilterBar();
+        renderStats();
+        renderActive();
+        renderScratchpad();
+        renderMessages();
+    }
+}

@@ -1,0 +1,4 @@
+./scripts/build_data.js:62:64 safeStat
+function safeStat(p) {
+    try { return fs.statSync(p); } catch { return null; }
+}

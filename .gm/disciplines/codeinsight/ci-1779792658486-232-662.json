@@ -1,0 +1,11 @@
+./site/srs.js:232:241 getEligibleDueCards
+function getEligibleDueCards(cards, states = loadStates(), ticksAll = {}) {
+    const now = Date.now();
+    return cards.filter(c => {
+        const s = states[c.id];
+        if (!isIntroduced(s)) return false;
+        if (s.suspended) return false;
+        if ((s.dueAt ?? 0) > now) return false;
+        return true;
+    });
+}

@@ -1,0 +1,11 @@
+./site/calendar.js:184:193 mount
+function mount(parent, { dueCountsFn } = {}) {
+    state.anchor = isoDate(new Date());
+    state.mountEl = parent;
+    if (dueCountsFn) state.dueCountsFn = dueCountsFn;
+    // ensure schedule exists
+    schedule.getSchedule({ today: isoDate(new Date()), dueCounts: state.dueCountsFn() });
+    schedule.onUpdate(() => rerender());
+    rerender();
+    return { rerender };
+}

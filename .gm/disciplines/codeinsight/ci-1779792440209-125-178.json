@@ -1,0 +1,2 @@
+./site/247420.js:125:125 ts
+function ts({height:e="1em",width:t="100%",count:n=1,label:s="loading content",key:r}={}){return f("div",{key:r,class:"ds-skeleton-group",role:"status","aria-busy":"true","aria-label":s},...Array(n).fill(0).map((i,a)=>f("div",{key:String(a),class:"ds-skeleton",style:`height:${e};width:${t};`,"aria-hidden":"true"})))}

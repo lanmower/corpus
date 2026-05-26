@@ -1,0 +1,2 @@
+./site/247420.js:125:125 Rn
+async function Rn(){if(Hn)return typeof customElements<"u"?customElements.get("deck-stage"):null;if(typeof customElements>"u"||typeof HTMLElement>"u")return null;try{await Promise.resolve().then(()=>(Pn(),Nn))}catch(e){return console.warn("[247420] deck-stage import failed:",e),null}return Hn=!0,customElements.get("deck-stage")}

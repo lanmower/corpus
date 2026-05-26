@@ -1,0 +1,4 @@
+./site/triage-live.js:122:124 safeStore
+function safeStore() {
+    try { return window.localStorage; } catch { return null; }
+}

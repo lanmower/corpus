@@ -1,0 +1,9 @@
+./site/triage-live.js:78:85 pickFromVariance
+function pickFromVariance(varObj) {
+    // Variance descriptor: { mild: {...}, moderate: {...}, severe: {...} } -> pick one key.
+    if (!varObj || typeof varObj !== 'object') return null;
+    const keys = Object.keys(varObj);
+    if (!keys.length) return null;
+    // Deterministic-by-scenario pick: hash from joined keys so same scenario stems are stable.
+    return keys[0];
+}

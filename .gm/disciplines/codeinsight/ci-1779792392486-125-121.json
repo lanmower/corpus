@@ -1,0 +1,2 @@
+./site/247420.js:125:125 Xs
+function Xs(e){if(typeof window>"u"||!window.matchMedia)return{matches:!1,addListener:()=>{},removeListener:()=>{}};let t=window.matchMedia(e);return{get matches(){return t.matches},addListener(n){t.addEventListener?t.addEventListener("change",n):t.addListener(n)},removeListener(n){t.removeEventListener?t.removeEventListener("change",n):t.removeListener(n)}}}

@@ -1,0 +1,9 @@
+./site/triage-live.js:691:698 debugLog
+function debugLog(label, payload) {
+    if (!DEBUG_WEBGPU) return;
+    const p = debugPanel();
+    const line = `[${new Date().toISOString().slice(11,19)}] ${label} ${typeof payload==='string'?payload:JSON.stringify(payload)}\n`;
+    p.textContent += line;
+    p.scrollTop = p.scrollHeight;
+    console.log('[webgpu-debug]', label, payload);
+}

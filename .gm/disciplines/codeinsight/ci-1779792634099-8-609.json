@@ -1,0 +1,2 @@
+./site/newcards.js:8:8 todayISO
+function todayISO(now = new Date()) { return now.toISOString().slice(0, 10); }

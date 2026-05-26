@@ -1,0 +1,8 @@
+./site/drag.js:63:69 showLoadingSpinner
+function showLoadingSpinner(container, message = 'loading...') {
+    const spinner = document.createElement('div');
+    spinner.className = 'loading-text';
+    spinner.innerHTML = `<div class="loading-spinner"></div><span>${message}</span>`;
+    container.appendChild(spinner);
+    return spinner;
+}

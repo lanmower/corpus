@@ -1,0 +1,2 @@
+./site/progress.js:89:89 setGoal
+function setGoal(g) { const p = load(); p.dailyGoal = Math.max(1, g | 0); save(p); return p; }

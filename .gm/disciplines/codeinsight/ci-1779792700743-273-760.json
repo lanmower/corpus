@@ -1,0 +1,10 @@
+./site/triage-live.js:273:281 visibleScenarios
+function visibleScenarios() {
+    let pool = state.scenarios;
+    if (state.subjectFilter.size > 0) pool = pool.filter(s => state.subjectFilter.has(s.subject));
+    if (state.searchQuery) {
+        const q = state.searchQuery.toLowerCase();
+        pool = pool.filter(s => (s.name || '').toLowerCase().includes(q) || (s.description || '').toLowerCase().includes(q));
+    }
+    return pool;
+}

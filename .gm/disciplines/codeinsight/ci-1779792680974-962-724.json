@@ -1,0 +1,10 @@
+./site/triage-live.js:962:970 
+e => {
+    if (e.target && (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT')) return;
+    const vis = visibleScenarios();
+    if (vis.length === 0) return;
+    const idx = vis.findIndex(s => s.id === state.activeScenarioId);
+    if (e.key === 'j') { e.preventDefault(); selectScenario(vis[Math.min(idx + 1, vis.length - 1)].id); }
+    else if (e.key === 'k') { e.preventDefault(); selectScenario(vis[Math.max(idx - 1, 0)].id); }
+    else if (e.key === '/') { e.preventDefault(); els.prompt.focus(); }
+}

@@ -1,0 +1,8 @@
+./site/schedule.js:253:259 computeDynamicIntensity
+function computeDynamicIntensity(cfg, weeklyGradedAvg) {
+    const baseIntensity = INTENSITY_FACTOR[cfg.intensity] || 1;
+    if (weeklyGradedAvg < 10) return baseIntensity * 0.8;
+    if (weeklyGradedAvg < 30) return baseIntensity * 1.0;
+    if (weeklyGradedAvg > 100) return baseIntensity * 1.15;
+    return baseIntensity;
+}

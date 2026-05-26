@@ -1,0 +1,11 @@
+./site/triage-live.js:555:564 renderMessages
+function renderMessages() {
+    els.messages.innerHTML = '';
+    for (const m of state.messages) {
+        els.messages.append(ce('div', { class: `msg ${m.role}` },
+            ce('div', { class: 'role' }, m.role),
+            ce('div', {}, m.content.length > 600 ? m.content.slice(0, 600) + '…' : m.content)
+        ));
+    }
+    els.messages.scrollTop = els.messages.scrollHeight;
+}

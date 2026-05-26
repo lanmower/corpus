@@ -1,0 +1,4 @@
+./site/progress.js:77:79 bumpGradedSubject
+function bumpGradedSubject(subject, n = 1) {
+    return bumpGraded(n, subject);
+}

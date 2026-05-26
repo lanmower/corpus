@@ -1,0 +1,2 @@
+./test.js:6:6 
+(name, fn) => { try { fn(); console.log('  PASS', name); pass++; } catch (e) { console.log('  FAIL', name, '-', e.message); fail++; } }

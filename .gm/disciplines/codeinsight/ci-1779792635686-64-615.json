@@ -1,0 +1,13 @@
+./site/progress.js:64:75 bumpGraded
+function bumpGraded(n = 1, subject = null) {
+    const p = load();
+    rollStreak(p);
+    p.todayGraded = (p.todayGraded || 0) + n;
+    p.lastReviewedAt = Date.now();
+    if (subject) {
+        p.gradedBySubject = p.gradedBySubject || {};
+        p.gradedBySubject[subject] = (p.gradedBySubject[subject] || 0) + n;
+    }
+    save(p);
+    return p;
+}

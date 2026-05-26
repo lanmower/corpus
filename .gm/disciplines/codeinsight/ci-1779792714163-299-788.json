@@ -1,0 +1,5 @@
+./site/tutor-panel.js:299:302 syncTheme
+function syncTheme() {
+    if (!panelContainer) return;
+    if (sdkRender) sdkRender();
+}

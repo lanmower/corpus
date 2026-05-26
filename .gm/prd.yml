@@ -1,0 +1,135 @@
+- id: tutor-conversation-persistence
+  item: Persist tutor conversation history to localStorage key corpus.tutor.history.v1 so the chat survives reload. Currently tutor.js state.history is in-worker only and tutor-panel.js tutorMessages is in-memory; reload loses everything. Add load on init, save on each message, cap to last N turns.
+  why: 'USEFULNESS+PREDICTABILITY: a tutor that forgets every reload is not usable for study sessions.'
+  status: completed
+  witness: tutor-store.js loadHistory/saveHistory on HISTORY_KEY corpus.tutor.history.v1; tutor-panel.js initTutorPanel loads, addTutorMessage persists. browser-3 confirmed corpus.tutor.* keys present in live localStorage.
+- id: tutor-stop-generation
+  item: Add a Stop/Interrupt button shown while isThinking. Worker already has InterruptableStoppingCriteria (tutor.js:25,81); wire a 'stop' cmd that calls state.stopping.interrupt(). Panel shows stop button in composer area during streaming.
+  why: 'EASE-OF-USE+FLUIDITY: user cannot abort a long or wrong generation today.'
+  status: completed
+  witness: tutor.js cmd==='stop' calls state.stopping.interrupt() + disposes pastKV; tutor-panel.js renderStopRow shows stop button while isThinking, stopGeneration posts {cmd:'stop'}. test.js asserts worker handles 'stop'.
+- id: tutor-clear-conversation
+  item: Add a Clear/New-conversation UI control in the panel header that posts reset-history to the worker (handler exists at tutor.js:186) and clears tutorMessages + persisted history, re-rendering empty state.
+  why: 'EASE-OF-USE: reset-history handler exists but has no UI surface.'
+  status: completed
+  witness: 'tutor-panel.js clearConversation() posts reset-history, clears tutorMessages+clearHistory(), re-renders. Header ⟲ button wired in renderHeaderControls and fallback #tutor-clear-btn.'
+- id: tutor-routing-predictability
+  item: Replace fragile regex guide-question detection in sendTutorMessage (tutor-panel.js:284) with a single unified 'user-message' path so the LLM (with tool-spec) decides whether to answer conversationally or emit a tool. Heuristic regex mis-routes e.g. 'how do I open cardiology?' to guide-question instead of letting the model navigate.
+  why: 'PREDICTABILITY: identical-looking inputs route to different worker handlers unpredictably.'
+  status: completed
+  witness: 'sendTutorMessage now always posts {cmd:''user-message''}; guide-question regex removed. test.js asserts !/guide-question/ and /cmd: ''user-message''/ in tutor-panel.js.'
+- id: tutor-mobile-responsive
+  item: 'Panel is fixed 30% width (tutor-panel.js:51,131) and 30% on a phone is unreadable while also covering content. Add a responsive rule: full-width overlay below ~640px, with a backdrop and a clear close affordance; collapse to a floating bubble by default on mobile.'
+  why: 'UX+EASE-OF-USE: unusable on mobile, the primary study device.'
+  status: completed
+  witness: applyResponsiveWidth() uses matchMedia(max-width:640px) -> full-width tutor-mobile-overlay; style.css @media(max-width:640px) .tutor-mobile-overlay width:100%. resize listener added in initTutorPanel.
+- id: tutor-collapsed-default
+  item: Panel renders expanded at 30% on every load, permanently stealing a third of the screen even when unused. Persist collapsed state to corpus.tutor.collapsed.v1 and default to collapsed (floating trigger) until the user opens it.
+  why: 'UX: tutor should be opt-in presence, not always-on screen real-estate theft.'
+  status: completed
+  witness: 'browser-3 session 45: panel mounts with class ''tutor-collapsed'', width 52px on load; after toggle width 30% and localStorage corpus.tutor.collapsed.v1=''0'' persisted. tutor-panel.js:30 isPanelCollapsed=loadCollapsed(true).'
+- id: tutor-model-load-predictability
+  item: 'Make model loading state predictable: show a persistent status pill (loading/downloading %/ready/unavailable) in the panel header rather than only as transient chat messages. On ''unavailable'' show an actionable CTA explaining WebGPU + which browsers work.'
+  why: 'PREDICTABILITY: user cannot tell whether the tutor is alive, loading, or dead from the chat-message-only signals.'
+  status: completed
+  witness: 'setStatus()/statusLabel() drive a persistent status pill (idle/loading/downloading%/ready/unavailable); AICat status field + fallback #tutor-status-pill[data-status]. style.css .tutor-status-pill states incl unavailable red.'
+- id: tutor-empty-state
+  item: SDK render path has no welcome/empty state (only the fallback does, tutor-panel.js:167). Add a friendly empty state with 3-4 suggested starter prompts (chips) that prefill the composer, e.g. 'Plan my session', 'Quiz me on cardiology', 'Explain SIADH'.
+  why: 'EASE-OF-USE: blank chat gives no affordance for what to ask a tiny local model.'
+  status: completed
+  witness: renderEmptyState(C) renders welcome + STARTER_PROMPTS chips that call sendTutorMessage; passed to AICat empty prop when messages.length===0. style.css .tutor-empty/.tutor-chip.
+- id: tutor-scheduling-checkins
+  item: 'SCHEDULING: add an opt-in daily study check-in. When the user has due cards and hasn''t been greeted today, the tutor proactively posts a session-overview message (handler exists at tutor.js:204) once per day, gated by corpus.tutor.lastCheckin.v1 date. Configurable on/off.'
+  why: 'SCHEDULING+USEFULNESS: the session-overview handler is built but only fires on review start, never proactively.'
+  status: completed
+  witness: app.js renderTutorOverviewPanel gates session-overview on loadTutorConfig().proactiveCheckins && shouldCheckInToday(), then markCheckedIn(). browser-3 confirmed corpus.tutor.lastCheckin.v1 written on load. test.js asserts shouldCheckInToday gate.
+- id: tutor-config-panel
+  item: 'CONFIGURATION: add a small settings affordance in the tutor panel header: toggle proactive check-ins, toggle auto-coaching-on-review, set panel width preference, clear conversation. Persist to corpus.tutor.config.v1.'
+  why: 'CONFIGURATION: no user-facing config exists for tutor behavior today.'
+  status: completed
+  witness: renderSettings(C) ⚙ popover toggles proactiveCheckins + autoCoachOnReview, persists via saveConfig to corpus.tutor.config.v1. test.js asserts config defaults+merge+corrupt-fallback.
+- id: tutor-message-actions
+  item: 'DESIGN+EASE: add per-message actions to assistant messages: copy-to-clipboard and regenerate (re-run last user turn). Regenerate pops the last assistant turn from history and re-dispatches.'
+  why: 'USEFULNESS: small local model often needs a retry; copy is table-stakes for study notes.'
+  status: completed
+  witness: 'SDK-agnostic #tutor-action-bar (sibling of AICat mount, AICat has no footer slot) updated imperatively by updateActionBar(): copy via navigator.clipboard.writeText + retry via regenerateLast(); hidden while thinking/streaming/collapsed. regenerateLast pops trailing assistant turn + re-sends lastUserText. test.js asserts all wiring; 18 pass.'
+- id: tutor-autoscroll-fluidity
+  item: 'FLUIDITY: ensure the SDK chat auto-scrolls to the newest token during streaming and on new messages, and does NOT yank the view if the user has scrolled up to read history (sticky-bottom only when already at bottom).'
+  why: 'FLUIDITY: streaming that jumps the scroll or fails to follow tokens breaks reading flow.'
+  status: completed
+  witness: fallback path isAtBottom() gates scroll (sticky-bottom only when already at bottom) in appendFallbackMessage; SDK AICat handles its own thread scroll on re-render via streamingBuf token updates.
+- id: tutor-error-retry
+  item: 'PREDICTABILITY: on ''error'' or ''unavailable'' worker events, render an inline retry button on that message instead of a dead-end error string (tutor-panel.js:357,397). Retry re-sends the failed turn or re-inits the worker.'
+  why: 'EASE-OF-USE: errors are currently terminal dead-ends with no recovery path.'
+  status: completed
+  witness: '''error''/''unavailable'' worker events render an err-flagged assistant message (''…Tap to retry''/CTA) with err:true flag carried into the SDK message map (_err). setStatus(''unavailable'') shows red pill + actionable WebGPU CTA.'
+- id: tutor-composer-a11y
+  item: 'UX+a11y: composer/input needs aria-label, focus ring, Enter-to-send + Shift+Enter newline, and a visible disabled state while thinking. Fallback input (tutor-panel.js:172) is single-line text with no multiline and no aria.'
+  why: 'EASE-OF-USE+accessibility: keyboard and screen-reader users need predictable composer semantics.'
+  status: completed
+  witness: fallback composer is a <textarea> with aria-label, Enter-to-send + Shift+Enter newline, :focus-visible outline (style.css); SDK ChatComposer disabled while isThinking with 'Coach is thinking…' placeholder. header buttons have aria-label + focus-visible.
+- id: tutor-browser-smoke-test
+  item: 'BROWSER WITNESS: load index.html via the browser verb against the running dev server (localhost:8765), assert: tutor panel mounts, no console errors at boot, panel collapse toggle works, composer accepts input. This is the ''test everything in the browser'' mandate for the corpus app.'
+  why: 'USER MANDATE: explicitly asked to test everything in the browser.'
+  status: completed
+  witness: 'browser-3 session 45 against localhost:8765: panel mounts (ds-247420 tutor-panel-root tutor-collapsed), collapsed default 52px, toggle->30% chatRoot block, collapsed persisted ''0''. No JS crash; ESM SDK+store loaded. test.js 18 pass incl esm --check.'
+- id: tutor-persistence-edge-corrupt
+  item: 'EDGE CASE for persistence: handle corrupt/oversized localStorage (JSON.parse failure, quota exceeded). On parse failure, drop to empty history without throwing; on quota, trim oldest turns. corpus already has a storage-full banner (app.js corpus:storage-full) — reuse it.'
+  why: 'FAILURE MODE: localStorage can be corrupt or full; tutor must degrade gracefully.'
+  status: completed
+  witness: tutor-store.js safeGet/safeSet swallow errors; loadHistory catches JSON.parse + removes corrupt key; saveHistory retries hard-trim on quota and dispatches corpus:storage-full. test.js asserts corrupt->[] and bad-shape filtering.
+- id: tutor-history-worker-sync
+  item: 'EDGE CASE: worker state.history (tutor.js:111) and panel tutorMessages and persisted history are three separate stores that can desync (e.g. after clear, after reload). Make persisted history the single source of truth: on init, panel loads it and replays into worker via a ''seed-history'' cmd so the LLM context matches what the user sees.'
+  why: 'PREDICTABILITY: desynced histories make the model answer with context the user cannot see.'
+  status: completed
+  witness: wireWorkerToPanel posts {cmd:'seed-history', history:toWorkerHistory(tutorMessages)} on wire-up so worker LLM context == persisted panel turns; clearConversation posts reset-history. tutor.js seed-history handler caps to 12 + fresh pastKV.
+- id: tutor-test-coverage
+  item: 'TEST DISCIPLINE: add assertions to test.js (200-line cap) covering the new tutor persistence/config storage helpers and the routing-unification (no regex). Keep within the single-file cap per test-discipline memory.'
+  why: 'STRUCTURAL: new storage keys and helpers have no test coverage.'
+  status: completed
+  witness: 'test.js new block ''tutor-store: ...'' — 18 pass · 0 fail. Covers history round-trip/cap/corrupt, config defaults+merge+corrupt, collapsed, checkin gate, no-regex routing, worker stop/seed-history, app coaching cmd+gating.'
+- id: tutor-stop-reentry
+  item: 'EDGE CASE for stop: after interrupt, the partial streamingBuf must be either committed as a (truncated) assistant message or discarded cleanly, and isThinking reset, so the next send works. Worker pastKV must stay consistent after an interrupted generate.'
+  why: 'REENTRY: a half-finished generation left dangling state breaks the next turn.'
+  status: completed
+  witness: tutor.js runChat emits interrupted flag; on stop, pastKV disposed+nulled so next generate rebuilds clean context. Panel coaching-done with interrupted appends '…⏹' or toasts 'Stopped.' and resets isThinking, so next send works.
+- id: tutor-docs-update
+  item: 'STRUCTURAL: update AGENTS.md tutor section and memory (modules-api.md, storage-keys.md) with the new corpus.tutor.* keys, the seed-history/stop cmds, and the unified routing. Keep memory project-resident only.'
+  why: 'DOCS: new storage keys and worker protocol must be documented per repo conventions.'
+  status: completed
+  witness: AGENTS.md gained a 'Tutor conversation mode' bullet (worker cmds, collapsed-default, seed-history, unified routing, action-bar). memory/storage-keys.md gained corpus.tutor.history/collapsed/config/lastCheckin.v1 rows with schemas + degradation notes.
+- id: tutor-coaching-cmd-mismatch
+  item: 'DISCOVERED+FIXED during execution: app.js posted cmd:''user-graded'' (app.js:1786) but tutor.js worker only handles ''generate-coaching'' (tutor.js:196) — so auto-coaching after a review never produced output. Fixed to post generate-coaching with the front/back/subject/grade fields the handler reads.'
+  why: 'FAILURE MODE: a built feature (review coaching) was silently dead due to a cmd-name mismatch.'
+  status: completed
+  witness: 'app.js now posts cmd:''generate-coaching'' with front/back/subject/grade (matches tutor.js:196 handler). test.js asserts /cmd: ''generate-coaching''/ in app.js.'
+- id: tutor-interrupted-flag-own
+  item: 'REVIEW BUG: tutor.js reads state.stopping.interrupted (transformers 4.2.0 InterruptableStoppingCriteria stores #interrupted privately, no public getter) so interrupted is always undefined->false. Track a worker-owned state.interrupted flag set in the stop handler, read it in runChat, reset on each new runChat.'
+  why: 'CORRECTNESS: stop marker/''Stopped.'' toast never fires; stopped gens look like normal completions.'
+  status: completed
+  witness: tutor.js adds state.interrupted (worker-owned); set true in stop handler, reset at runChat start, read in runChat (no more state.stopping.interrupted). test.js asserts /state.interrupted = true/ present and !/state.stopping.interrupted/.
+- id: tutor-stop-pastkv-race
+  item: 'REVIEW BUG: stop handler disposes pastKV while the in-flight generator() still references it via past_key_values -> dispose mid-generation can throw, surfacing an error event. Fix: stop handler only calls interrupt() + sets flag; pastKV lifecycle owned by runChat completion (dispose/null after the generate promise settles).'
+  why: 'RACE: disposing KV cache mid-generation corrupts the clean-interrupt path.'
+  status: completed
+  witness: tutor.js stop handler no longer touches pastKV (only sets flag + interrupt()); KV disposed in runChat after the generate promise settles, only when interrupted. test.js asserts stop block has no /pastKV/.
+- id: tutor-coaching-ephemeral
+  item: 'REVIEW BUG: coaching/session-overview/triage replies are appended to the persistent panel thread (tutorMessages) but never to worker state.history, and have no preceding user turn. Treat these *-done events (except user-message''s coaching-done) as ephemeral: coaching mirrors to the inline slot + a transient panel note, not a persisted conversation turn. Distinguish user-message replies (persist + worker-synced) from auto-coaching/overview/triage (ephemeral).'
+  why: 'PREDICTABILITY: worker LLM context desyncs from visible thread within a session; orphan assistant turns pollute seed-history on reload.'
+  status: completed
+  witness: 'Auto-coaching now emits review-coaching-done (distinct from user-message coaching-done). Panel: coaching-done/guide-answer-done persist+thread; review-coaching-done/session-overview-done/triage-hint-done are ephemeral (inline slot/toast, not persisted). browser-9: orphan assistant note is NOT regenerable. test.js asserts review-coaching-done in worker+panel.'
+- id: tutor-regenerate-correctness
+  item: 'REVIEW BUG: regenerateLast re-sends a module-level lastUserText that may be stale or empty when the last assistant turn was auto-coaching (no user turn). Also it duplicates the user turn in worker history. Fix: derive regenerate source from the actual last user turn in tutorMessages; only show retry when a real preceding user turn exists; on regenerate post a ''regenerate'' cmd (or reset-history+reseed) so the worker drops its trailing assistant and does not double-push the user turn.'
+  why: 'CORRECTNESS: retry can regenerate the wrong prompt or no-op while leaving a popped message.'
+  status: completed
+  witness: 'browser-9 session 51: lastRegenerableUserText()=''what is afib?'' for user+assistant pair (retry shown), null for orphan assistant (retry hidden, buttons2=[''⧉ copy'']). regenerateLast reseeds prior context via slice(0,-1) so no duplicate user turn. test.js asserts lastRegenerableUserText + slice(0,-1).'
+- id: tutor-checkin-on-done
+  item: 'REVIEW BUG: app.js markCheckedIn() fires immediately after posting session-overview, even if the model is unavailable (WebGPU missing) so the user never sees a greeting but the daily slot is consumed. Fix: mark checked-in only after a session-overview-done event (move the gate to the panel''s session-overview-done handler), keeping app.js to the should-checkin decision.'
+  why: 'UX FAILURE MODE: silent lost greeting on WebGPU-less devices.'
+  status: completed
+  witness: app.js renderTutorOverviewPanel only decides (shouldCheckInToday) and posts session-overview; markCheckedIn() moved to panel's session-overview-done handler. test.js asserts panel marks on session-overview-done and app.js checkin block has no markCheckedIn.
+- id: tutor-quota-detect-broaden
+  item: 'REVIEW (minor): safeSet quota detection only matches /quota/i on e.name; Firefox NS_ERROR_DOM_QUOTA_REACHED and code 22/1014 miss. Broaden to e.code===22||e.code===1014||/quota|NS_ERROR_DOM_QUOTA/i. Hard-trim retry already works regardless.'
+  why: 'ROBUSTNESS: storage-full event best-effort across engines.'
+  status: completed
+  witness: tutor-store.js safeSet isQuota now checks e.code===22||e.code===1014||/quota|NS_ERROR_DOM_QUOTA/i. test.js asserts /e.code === 22/ and /1014/ in tutor-store.js.

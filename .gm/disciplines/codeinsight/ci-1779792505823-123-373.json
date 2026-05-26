@@ -1,0 +1,2 @@
+./site/247420.js:123:123 is
+async function is(e){try{let t=await fetch(e);if(!t.ok)throw new Error("http "+t.status);let n=await t.text();new Function("window",n)(window)}catch(t){console.warn("[247420] prism part failed:",e,t.message)}}

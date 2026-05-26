@@ -1,0 +1,2 @@
+./site/247420.js:123:123 Cn
+function Cn(e){let t=document.getElementById("speaker-notes");if(!t)return[];try{let n=JSON.parse(t.textContent||"[]");return Array.isArray(n)?n:[]}catch(n){return console.warn("[deck-stage] Failed to parse #speaker-notes JSON:",n),[]}}

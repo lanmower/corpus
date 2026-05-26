@@ -1,0 +1,5 @@
+./site/srs.js:192:195 daysUntilExam
+function daysUntilExam(cfg = loadConfig()) {
+    const ms = new Date(cfg.examDate) - new Date(today());
+    return Math.max(0, Math.floor(ms / 86400000));
+}

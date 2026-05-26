@@ -1,0 +1,9 @@
+./site/app.js:2308:2315 showStorageFullBanner
+function showStorageFullBanner() {
+    if (document.getElementById('storage-full-banner')) return;
+    const b = el('div', { id: 'storage-full-banner', class: 'storage-full-banner', role: 'alert' },
+        el('span', {}, 'browser storage full. export, then reset to free space.'),
+        el('button', { class: 'chip', on: { click: () => go('settings') } }, 'settings'),
+        el('button', { class: 'chip', 'aria-label': 'dismiss', on: { click: () => b.remove() } }, 'dismiss'));
+    document.body.appendChild(b);
+}

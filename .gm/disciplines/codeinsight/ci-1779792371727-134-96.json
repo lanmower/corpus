@@ -1,0 +1,4 @@
+./site/247420.js:134:136 Gr
+function Gr(e){let t=String(e||"").split(`
+`),n=[],s=!1,r=!1;for(let i of t){if(i.startsWith("```")){s?(n.push("</pre>"),s=!1):(n.push("<pre>"),s=!0);continue}if(s){n.push(B(i));continue}i.startsWith("# ")?n.push(`<h1>${B(i.slice(2))}</h1>`):i.startsWith("## ")?n.push(`<h2>${B(i.slice(3))}</h2>`):i.startsWith("### ")?n.push(`<h3>${B(i.slice(4))}</h3>`):i.startsWith("- ")?(r||(n.push("<ul>"),r=!0),n.push(`<li>${rr(B(i.slice(2)))}</li>`)):(r&&(n.push("</ul>"),r=!1),i.trim()&&n.push(`<p>${rr(B(i))}</p>`))}return r&&n.push("</ul>"),s&&n.push("</pre>"),n.join(`
+`)}

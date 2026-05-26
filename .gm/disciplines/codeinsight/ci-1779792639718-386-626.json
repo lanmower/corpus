@@ -1,0 +1,6 @@
+./site/schedule.js:386:390 channel
+function channel() {
+    if (bc) return bc;
+    try { bc = ('BroadcastChannel' in (typeof self !== 'undefined' ? self : {})) ? new BroadcastChannel('corpus') : null; } catch { bc = null; }
+    return bc;
+}

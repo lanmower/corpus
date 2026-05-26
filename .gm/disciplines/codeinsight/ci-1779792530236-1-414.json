@@ -1,0 +1,2 @@
+./site/247420.js:1:1 E
+function E(e,t,...n){if(typeof e=="string"){let s=t||{},r=D(n);return r.length>0?s.dangerouslySetInnerHTML?(s.children=[],console.warn("WebJSX: Ignoring children since dangerouslySetInnerHTML is set.")):s.children=r:s.children=[],{type:e,tagName:ln.get(e)??e.toUpperCase(),props:s??{}}}else return D(n)}

@@ -1,0 +1,4 @@
+./site/newcards.js:39:41 canIntroduce
+function canIntroduce(subject, now = new Date()) {
+    return remaining(subject, now) > 0;
+}

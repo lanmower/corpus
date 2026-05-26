@@ -1,0 +1,4 @@
+./site/mastery.js:9:11 loadTriage
+function loadTriage() {
+    try { return JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}'); } catch { return {}; }
+}

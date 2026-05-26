@@ -1,0 +1,5 @@
+./site/toast.js:40:43 bind
+function bind() {
+    if (bound || typeof window === 'undefined') return;
+    bound = true;
+}

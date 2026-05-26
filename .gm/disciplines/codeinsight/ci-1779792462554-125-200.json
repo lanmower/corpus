@@ -1,0 +1,2 @@
+./site/247420.js:125:125 F
+function F({title:e,count:t,right:n,style:s="",children:r,kind:i}){let a="panel"+(i?" panel-"+i:"");return f("div",{class:a,style:s},e!=null?f("div",{class:"panel-head"},f("span",{},e),n??(t!=null?f("span",{},String(t)):null)):null,f("div",{class:"panel-body"},...Array.isArray(r)?r:[r]))}

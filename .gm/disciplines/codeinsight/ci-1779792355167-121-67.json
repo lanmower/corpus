@@ -1,0 +1,6 @@
+./scripts/parse_yaml.js:121:125 indent
+function indent(line) {
+    let i = 0;
+    while (i < line.length && line[i] === ' ') i++;
+    return i;
+}

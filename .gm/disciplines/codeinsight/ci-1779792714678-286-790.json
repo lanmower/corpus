@@ -1,0 +1,8 @@
+./site/tutor-panel.js:286:292 toggleTutorCollapse
+function toggleTutorCollapse() {
+    if (!panelContainer) return;
+    isPanelCollapsed = !isPanelCollapsed;
+    saveCollapsed(isPanelCollapsed);
+    applyResponsiveWidth();
+    if (sdkRender) sdkRender();
+}

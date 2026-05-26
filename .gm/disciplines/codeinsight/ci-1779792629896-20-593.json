@@ -1,0 +1,2 @@
+./site/mistakes.js:20:20 ids
+function ids() { return [...new Set(load().map(m => m.cardId))]; }

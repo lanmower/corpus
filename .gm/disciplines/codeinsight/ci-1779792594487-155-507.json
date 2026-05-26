@@ -1,0 +1,6 @@
+./site/app.js:155:159 dueCountFor
+function dueCountFor(subject) {
+    const sh = state.shards[subject]; if (!sh) return 0;
+    const ids = sh.cards.map(c => c.id);
+    return srs.getDueCards(ids, srs.loadStates()).length;
+}

@@ -1,0 +1,18 @@
+./site/calendar.js:102:118 openDetail
+function openDetail(dateIso) {
+    let m = document.getElementById('cal-detail');
+    if (m) m.remove();
+    const blocks = schedule.blocksForDate(dateIso);
+    m = el('div', { id: 'cal-detail', class: 'cal-detail-modal', role: 'dialog', 'aria-label': `${dateIso} schedule` });
+    const inner = el('div', { class: 'cal-detail-inner' },
+        el('div', { class: 'panel-head' },
+            el('span', { class: 'title' }, dateIso),
+            el('button', { class: 'chip', 'aria-label': 'close', on: { click: () => m.remove() } }, 'close')
+        ),
+        blocks.length === 0 ? el('div', { class: 'muted' }, 'no blocks scheduled.') :
+            el('div', { class: 'cal-timeline' }, ...blocks.map(b => renderTimelineRow(b)))
+    );
+    m.append(inner);
+    m.addEventListener('click', e => { if (e.target === m) m.remove(); });
+    document.body.appendChild(m);
+}

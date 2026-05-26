@@ -1,0 +1,4 @@
+./site/srs.js:170:172 exportState
+function exportState() {
+    return JSON.stringify({ version: SCHEMA_VERSION, states: loadStates(), config: loadConfig(), exportedAt: new Date().toISOString() }, null, 2);
+}

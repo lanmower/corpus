@@ -1,0 +1,12 @@
+./site/app.js:1109:1119 buildAudioPanel
+function buildAudioPanel(items, subj) {
+    if (!Array.isArray(items) || items.length === 0) return null;
+    const a = items[0];
+    const meta = a.sizeMB ? `${a.sizeMB} MB` : '';
+    const audioEl = el('audio', { controls: 'controls', preload: 'metadata', src: a.src });
+    return el('div', { class: 'panel audio-panel', 'data-audio-id': a.filename },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'deep dive (audio)'), meta),
+        el('div', { class: 'audio-frame' }, audioEl),
+        el('div', { class: 'audio-caption' }, a.title || 'audio deep dive')
+    );
+}

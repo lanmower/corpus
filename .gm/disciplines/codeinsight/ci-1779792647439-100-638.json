@@ -1,0 +1,17 @@
+./site/schedule.js:100:115 allocateSubjects
+function allocateSubjects(totalMin, weights, dueCounts, daysToExam = 30, enabled = null) {
+    const subs = SUBJECTS.map(s => {
+        const isOn = enabled ? enabled[s] !== false : true;
+        const w = isOn ? Math.max(0, weights[s] || 0) * (1 + Math.log10(1 + (dueCounts[s] || 0))) : 0;
+        return { s, w };
+    });
+    const sumW = subs.reduce((n, x) => n + x.w, 0);
+    if (sumW === 0) return [];
+    // Pace factor: <1 when exam far (spread work thinner), 1 at default, >1 when exam near (cram)
+    const paceFactor = Math.max(0.5, Math.min(2, 30 / Math.max(7, daysToExam)));
+    const out = subs.map(x => ({ subject: x.s, min: Math.floor(totalMin * x.w / sumW * paceFactor) }));
+    let rem = totalMin - out.reduce((n, x) => n + x.min, 0);
+    out.sort((a, b) => (weights[b.subject] || 0) - (weights[a.subject] || 0));
+    for (let i = 0; rem > 0 && i < out.length; i++, rem--) out[i].min++;
+    return out.filter(x => x.min >= 5);
+}

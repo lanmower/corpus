@@ -1,0 +1,41 @@
+./site/app.js:1944:1983 renderVerdictTable
+function renderVerdictTable(rows) {
+    let sortKey = state.verdictSort || 'verdict';
+    function applySort(rs) {
+        const sorters = {
+            verdict: (a, b) => VERDICT_RANK[a.verdict] - VERDICT_RANK[b.verdict],
+            subject: (a, b) => a.subject.localeCompare(b.subject),
+            mastery: (a, b) => b.mastery - a.mastery,
+            trend: (a, b) => b.trend - a.trend,
+            backlog: (a, b) => b.backlog - a.backlog
+        };
+        return [...rs].sort(sorters[sortKey] || sorters.verdict);
+    }
+    const wrap = el('div', { class: 'panel' });
+    wrap.append(el('div', { class: 'panel-head' },
+        el('span', { class: 'title' }, 'exam-ready'),
+        el('span', {}, 'click a column to sort')
+    ));
+    const sortSel = el('select', { class: 'search', style: 'max-width:160px',
+        'aria-label': 'sort by',
+        on: { change: e => { state.verdictSort = e.target.value; renderStats(); } } },
+        ...['verdict', 'subject', 'mastery', 'trend', 'backlog'].map(k => el('option', { value: k, ...(k === sortKey ? { selected: 'selected' } : {}) }, `sort: ${k}`))
+    );
+    wrap.append(el('div', { class: 'toolbar' }, sortSel));
+    const sorted = applySort(rows);
+    const tbl = el('table', { class: 'verdict-table' },
+        el('thead', {}, el('tr', {},
+            ...['subject', 'mastery', 'trend', 'backlog', 'verdict'].map(k =>
+                el('th', { on: { click: () => { state.verdictSort = k; renderStats(); } } }, k))
+        )),
+        el('tbody', {}, ...sorted.map(r => el('tr', {},
+            el('td', { class: 'subject' }, r.subject),
+            el('td', { class: 'mastery' }, `${r.mastery}%`),
+            el('td', { class: 'trend ' + (r.trend > 0 ? 'up' : (r.trend < 0 ? 'down' : '')) }, r.trend > 0 ? `+${r.trend}` : String(r.trend)),
+            el('td', { class: 'backlog' }, String(r.backlog)),
+            el('td', { class: 'verdict ' + r.verdict.replace(/\s/g, '') }, r.verdict)
+        )))
+    );
+    wrap.append(el('div', { class: 'table-scroll' }, tbl));
+    stage.append(wrap);
+}

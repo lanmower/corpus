@@ -1,0 +1,5 @@
+./site/triage-live.js:156:159 sessionScore
+function sessionScore(sess) {
+    if (!sess || Array.isArray(sess)) return null;
+    return sess.score ?? null;
+}

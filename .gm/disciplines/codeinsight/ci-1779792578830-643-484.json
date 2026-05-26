@@ -1,0 +1,132 @@
+./site/app.js:643:790 renderSubject
+async function renderSubject() {
+    const subj = state.currentSubject;
+    if (!subj) { go('guides'); return; }
+    const meta = state.manifest.subjects.find(x => x.subject === subj);
+
+    // Cram banner on subject view
+    const states = srs.loadStates();
+    const ticksAll = loadGuideTicks();
+    const rows = buildRows(state.manifest, state.shards, states, ticksAll);
+    const weakest = computeWeakest(rows);
+    const cramEl = renderCramBanner(weakest);
+    if (cramEl) stage.append(cramEl);
+
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'subject'), el('h2', {}, subj)));
+    const subjMastery = masteryFor(subj);
+    const subjDue = dueCountFor(subj);
+    const subShard0 = state.shards[subj];
+    const subTicks = loadGuideTicks()[subj] || {};
+    const newEligibleSubj = subShard0
+        ? srs.getNewEligibleCards(subShard0.cards.map(c => ({ ...c, _subject: subj })), states, { [subj]: subTicks }).length
+        : 0;
+    let primaryCta;
+    if (subjDue > 0) {
+        primaryCta = el('a', { class: 'primary-action', href: `#review/${subj}`,
+            on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; state.cramMode = false; state.learnMode = false; resetReviewQueue(); go('review', subj); } } },
+            `review ${subjDue} card${subjDue === 1 ? '' : 's'}`);
+    } else if (newEligibleSubj > 0) {
+        primaryCta = el('a', { class: 'primary-action', href: `#review/${subj}`,
+            on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; state.cramMode = false; state.learnMode = true; resetReviewQueue(); go('review', subj); } } },
+            `learn ${Math.min(5, newEligibleSubj)} new card${newEligibleSubj === 1 ? '' : 's'}`);
+    } else {
+        primaryCta = el('div', { class: 'primary-action muted' }, 'all caught up here');
+    }
+    stage.append(el('div', { class: 'subject-hero' },
+        el('div', { class: 'subject-hero-ring', 'aria-label': `${subjMastery}% mastered` },
+            el('div', { class: 'mini-ring', style: `--p:${subjMastery}` }, `${subjMastery}%`)),
+        el('div', { class: 'subject-hero-cta' },
+            primaryCta,
+            el('a', { class: 'cta', href: `./triage-live.html?subject=${encodeURIComponent(subj)}` }, 'open in tutor'))
+    ));
+    // Next thing — promoted to a clickable scroll-to-section card
+    const nextSec = subShard0?.guide?.sections?.find(s => !subTicks[String(s.line)]);
+    if (nextSec) stage.append(el('div', { class: 'next-thing-card', role: 'button', tabindex: '0',
+        on: {
+            click: () => { const e = document.getElementById(`g-section-${nextSec.line}`); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+            keydown: ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); const e = document.getElementById(`g-section-${nextSec.line}`); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
+        }
+    },
+        el('span', { class: 'eyebrow' }, 'next section'),
+        el('div', { class: 'nt-title' }, nextSec.title),
+        el('span', { class: 'nt-cta' }, 'read →')));
+    const placeholder = el('div', { class: 'panel' },
+        el('div', { class: 'skeleton', style: 'width:60%;height:14px' }),
+        el('div', { class: 'skeleton', style: 'width:90%' }),
+        el('div', { class: 'skeleton', style: 'width:80%' }));
+    stage.append(placeholder);
+    const shard = await loadShard(subj);
+    placeholder.remove();
+
+    // Send guide shard to tutor worker for Q&A indexing
+    if (state.tutorWorker && shard.guide) {
+        state.tutorWorker.postMessage({ cmd: 'load-guide-shard', shard: { subject: subj, guide: shard.guide } });
+    }
+
+    const due = srs.getDueCards(shard.cards.map(c => c.id), srs.loadStates()).length;
+    const ticks = loadGuideTicks()[subj] || {};
+    const masteryData = mastery.subjectProgress(state.manifest, state.shards, subj);
+    const m = masteryData.weighted;
+
+    const left = el('aside', { class: 'deepdive-side' },
+        el('div', { class: 'panel' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'subject'), `${m}% mastered`),
+            el('div', { class: 'progress-bar' }, el('div', { class: 'progress-fill' + (m < 25 ? ' weak' : ''), style: `width:${m}%` })),
+            el('div', { class: 'mastery-breakdown', style: 'margin-top:8px;font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' },
+                `cards ${masteryData.cards.na ? '—' : masteryData.cards.pct + '%'} (${masteryData.cards.mastered}/${masteryData.cards.introduced} introduced) · sections ${masteryData.sections.pct}% · cases ${masteryData.cases.total ? masteryData.cases.pct + '%' : 'N/A'}`),
+            el('div', { style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2)' }, `${shard.cards.length} cards · ${due} due`),
+            el('div', { class: 'kbd-hint', style: 'margin-top:8px' }, 'press r for just-read')
+        ),
+        buildGuideToc(subj, shard, ticks)
+    );
+
+    const guideBodyPanel = shard.guide?.body ? el('div', { class: 'panel guide-body-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'guide'), `${shard.guide.sections.length} sections`),
+        buildChunkedGuide(subj, shard, ticks)
+    ) : null;
+    const cardCounts = sectionCardCounts(subj);
+    const sectionsWithCards = [];
+    for (const [lineStr, count] of cardCounts) {
+        const sec = shard.guide?.sections?.find(s => String(s.line) === String(lineStr));
+        if (sec) sectionsWithCards.push({ line: parseInt(lineStr), title: sec.title, count });
+    }
+    const cardsDetails = el('div', { class: 'panel cards-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'flashcards')),
+        el('div', { class: 'cards-cta-row' },
+            el('span', { class: 'cards-cta-meta' }, `${shard.cards.length} cards · ${due} due`),
+            el('a', { class: 'chip', href: `#review/${subj}`,
+                on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; resetReviewQueue(); go('review', subj); } } },
+                due ? `review ${due} due →` : 'browse cards →')
+        ),
+        sectionsWithCards.length > 0 ? el('div', { class: 'cards-section-hint' },
+            el('div', { class: 'hint-label' }, 'from sections:'),
+            ...sectionsWithCards.map(sec => el('button', { class: 'chip', 'aria-label': `review cards from "${sec.title}"`,
+                on: { click: () => {
+                    state.sectionFilter = sec.line;
+                    state.reviewSubjectFilter = subj;
+                    resetReviewQueue();
+                    go('review', subj);
+                } } }, `${sec.title} (${sec.count})`))
+        ) : null
+    );
+
+    const triageScenarios = shard.triage?.scenarios || [];
+    const triageVisible = triageScenarios.slice(0, 3);
+    const triageHidden = triageScenarios.slice(3);
+    const triagePanel = triageScenarios.length ? (() => {
+        const panel = el('div', { class: 'panel cases-panel' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, `cases (${triageScenarios.length})`)),
+            ...triageVisible.map(sc => el('div', { class: 'row' },
+                el('span', { class: 'code' }, '◆'),
+                el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, sc.description || '')),
+                el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
+            ))
+        );
+        if (triageHidden.length) {
+            const moreRows = triageHidden.map(sc => el('div', { class: 'row triage-hidden' },
+                el('span', { class: 'code' }, '◆'),
+                el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, sc.description || '')),
+                el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
+            ));
+            moreRows.forEac

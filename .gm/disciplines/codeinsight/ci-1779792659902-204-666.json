@@ -1,0 +1,12 @@
+./site/srs.js:204:214 getDueCards
+function getDueCards(cardIds, states = loadStates()) {
+    const now = Date.now();
+    return cardIds.filter(id => {
+        const s = states[id];
+        if (!s) return false;
+        if (s.suspended) return false;
+        if (!(s.history && s.history.length > 0)) return false;
+        if ((s.dueAt ?? 0) > now) return false;
+        return true;
+    });
+}

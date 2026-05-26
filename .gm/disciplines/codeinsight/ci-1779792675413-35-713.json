@@ -1,0 +1,2 @@
+./site/toast.js:35:35 quest
+function quest(label, reward) { return push('quest', `quest done: ${label} (+${reward || 0})`, '◇'); }

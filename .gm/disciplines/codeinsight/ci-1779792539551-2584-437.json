@@ -1,0 +1,37 @@
+./site/app.js:2584:2619 mountTopbar
+function mountTopbar() {
+    const nav = document.querySelector('.nav');
+    nav.innerHTML = '';
+    // Simplified primary nav - fewer items for clarity
+    const primary = [['today', 'home'], ['guides', 'subjects'], ['review', 'cards'], ['stats', 'progress']];
+    for (const [route, label] of primary) {
+        nav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
+            on: { click: e => { e.preventDefault(); go(route); } } }, label));
+    }
+    // Secondary actions in dropdown
+    const moreMenu = el('div', { class: 'nav-more-menu', hidden: '' },
+        el('a', { href: '#cases', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('cases'); } } }, 'clinical cases'),
+        el('a', { href: '#calendar', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('calendar'); } } }, 'study plan'),
+        el('a', { href: '#mistakes', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('mistakes'); } } }, 'mistakes'),
+        el('a', { href: '#drill', class: 'nav-more-item', on: { click: e => { e.preventDefault(); moreMenu.hidden = true; go('drill'); } } }, 'drill 10'));
+    const moreBtn = el('button', { class: 'navlink nav-more', 'aria-label': 'more', 'aria-haspopup': 'menu',
+        on: { click: e => { e.preventDefault(); moreMenu.hidden = !moreMenu.hidden; } } }, 'more');
+    nav.append(moreBtn, moreMenu);
+    // Tutor CTA - clear visual distinction
+    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta', 'aria-label': 'open tutor' }, 'tutor →'));
+    
+    // Right side: countdown + quick actions
+    const right = document.querySelector('header.topbar .status');
+    const days = srs.daysUntilExam();
+    const countdown = el('a', { class: 'exam-countdown', href: '#settings',
+        title: 'days to exam — click to edit', 'aria-label': `${days} days to exam`,
+        on: { click: e => { e.preventDefault(); go('settings'); } } }, `${days}d to exam`);
+    right.parentElement.insertBefore(countdown, right);
+    const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'search (ctrl+k)', title: 'search (ctrl+k)',
+        on: { click: () => state.searchPaletteApi?.open() } }, '⌘k');
+    right.parentElement.insertBefore(searchBtn, right);
+    right.parentElement.insertBefore(makeToggleButton(document), right);
+    const settingsBtn = el('a', { href: '#settings', class: 'chip', 'aria-label': 'settings',
+        on: { click: e => { e.preventDefault(); go('settings'); } } }, '⚙');
+    right.parentElement.insertBefore(settingsBtn, right);
+}

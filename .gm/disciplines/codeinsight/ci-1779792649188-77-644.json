@@ -1,0 +1,5 @@
+./site/schedule.js:77:80 loadSchedule
+function loadSchedule() {
+    try { return JSON.parse(localStorage.getItem(KEY) || '{"blocks":[],"generatedAt":0}'); }
+    catch { return { blocks: [], generatedAt: 0 }; }
+}

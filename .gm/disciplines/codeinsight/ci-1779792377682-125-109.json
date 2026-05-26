@@ -1,0 +1,2 @@
+./site/247420.js:125:125 tr
+function tr({items:e=[],value:t,onChange:n,dense:s=!1}={}){return b("div",{class:"ds-ep-btngrp"+(s?" dense":""),role:"group"},...e.map(r=>b("button",{key:r.id,type:"button",class:"ds-ep-btngrp-btn"+(r.id===t?" active":""),title:r.title||r.label||r.id,"aria-pressed":r.id===t?"true":"false",disabled:r.disabled?"disabled":null,onclick:()=>{!r.disabled&&n&&n(r.id)}},r.glyph!=null?r.glyph:r.label)))}

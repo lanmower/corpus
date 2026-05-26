@@ -1,0 +1,19 @@
+./site/triage-live.js:1133:1150 
+async () => {
+    const loaded = loadSessions();
+    state.sessions = loaded.sessions;
+    state.streak = loaded.streak;
+    
+    try {
+        sdk = await import('./247420.js');
+        if (sdk && sdk.mount) {
+            setupSdkApp();
+        }
+    } catch (e) {
+        console.warn('[corpus] SDK load failed', e);
+    }
+
+    await checkCapability();
+    await loadManifestAndScenarios();
+    render();
+}

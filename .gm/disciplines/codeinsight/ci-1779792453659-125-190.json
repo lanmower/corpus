@@ -1,0 +1,2 @@
+./site/247420.js:125:125 It
+function It({paragraphs:e=[],maxWidth:t}){return f("div",{class:"ds-prose ds-manifesto","data-max-width":t?String(t):null},...e.map((n,s)=>f("p",{key:s,class:"ds-manifesto-para"+(n.dim?" dim":"")},n.text||n)))}

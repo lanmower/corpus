@@ -1,0 +1,4 @@
+./site/app.js:2304:2306 closeShortcutsModal
+function closeShortcutsModal() {
+    const m = document.getElementById('shortcuts-modal'); if (m) m.classList.add('hidden');
+}

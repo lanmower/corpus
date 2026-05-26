@@ -1,0 +1,2 @@
+./site/srs.js:197:197 effectiveDays
+function effectiveDays(cfg = loadConfig()) { return Math.max(1, daysUntilExam(cfg) - 14); }

@@ -1,0 +1,71 @@
+./site/search.js:78:147 mountPalette
+function mountPalette(doc, openSelector, getItems, onSelect) {
+    let el = doc.getElementById('search-palette');
+    if (!el) {
+        el = doc.createElement('div');
+        el.id = 'search-palette';
+        el.className = 'search-palette hidden';
+        el.setAttribute('role', 'dialog');
+        el.setAttribute('aria-label', 'global search');
+        el.innerHTML = `
+            <div class="search-palette-inner">
+                <div class="search-palette-header">
+                    <input id="search-palette-input" type="text" placeholder="search cards, cases, sections…" aria-label="search">
+                    <button id="search-palette-clear" class="search-clear" aria-label="clear search" type="button">×</button>
+                </div>
+                <ul id="search-palette-list" role="listbox"></ul>
+                <div class="search-palette-hint">↑↓ navigate · enter open · esc close</div>
+            </div>`;
+        doc.body.appendChild(el);
+    }
+    const input = el.querySelector('#search-palette-input');
+    const clearBtn = el.querySelector('#search-palette-clear');
+    const list = el.querySelector('#search-palette-list');
+    let active = 0;
+    let results = [];
+
+    const close = () => { el.classList.add('hidden'); input.value = ''; };
+    const open = () => {
+        el.classList.remove('hidden');
+        results = getItems().slice(0, 30);
+        render();
+        setTimeout(() => input.focus(), 10);
+    };
+    const clear = () => { input.value = ''; input.focus(); results = getItems().slice(0, 30); active = 0; render(); };
+    const render = () => {
+        list.innerHTML = '';
+        results.forEach((it, i) => {
+            const li = doc.createElement('li');
+            li.className = 'search-result' + (i === active ? ' active' : '');
+            li.setAttribute('role', 'option');
+            li.innerHTML = `<span class="kind kind-${it.kind}">${it.kind}</span><span class="t">${escapeHtml(it.title.slice(0, 80))}</span><span class="sub">${it.subject}</span>`;
+            li.addEventListener('click', () => { onSelect(it); close(); });
+            list.appendChild(li);
+        });
+    };
+    input.addEventListener('input', () => {
+        const items = getItems();
+        results = search(items, input.value);
+        active = 0;
+        render();
+    });
+    clearBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        clear();
+    });
+    input.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { e.preventDefault(); close(); }
+        else if (e.key === 'ArrowDown') { e.preventDefault(); active = Math.min(results.length - 1, active + 1); render(); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); active = Math.max(0, active - 1); render(); }
+        else if (e.key === 'Enter') { e.preventDefault(); if (results[active]) { onSelect(results[active]); close(); } }
+    });
+    el.addEventListener('click', e => { if (e.target === el) close(); });
+
+    doc.addEventListener('keydown', e => {
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+            e.preventDefault();
+            if (el.classList.contains('hidden')) open(); else close();
+        }
+    });
+    return { open, close };
+}

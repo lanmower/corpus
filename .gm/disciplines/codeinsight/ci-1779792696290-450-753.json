@@ -1,0 +1,62 @@
+./site/triage-live.js:450:510 renderActive
+function renderActive() {
+    els.activeScenario.innerHTML = '';
+    const sc = currentScenario();
+    if (!sc) {
+        els.activeScenario.append(
+            ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, 'select a case.'), ce('span', { class: 'meta' }, 'choose one from the list')),
+            ce('div', { class: 'muted' }, 'pick a case on the left. talk to your tutor in plain english — they place cards and grade when you ask.')
+        );
+        els.activeScenario.className = 'active-scenario panel';
+        return;
+    }
+    els.activeScenario.className = 'active-scenario panel rail-' + sc.cat;
+    const stem = caseStem(sc);
+    const counts = countByKind(state.cards);
+    const checklist = [
+        { kind: 'differential', label: 'differentials', target: 3 },
+        { kind: 'investigation', label: 'investigations', target: 2 },
+        { kind: 'plan', label: 'plan', target: 1 }
+    ];
+    const checklistEl = ce('div', { class: 'checklist' },
+        ...checklist.map(item => ce('div', { class: 'checklist-row' + ((counts[item.kind] || 0) >= item.target ? ' done' : '') },
+            ce('span', { class: 'tick' }, (counts[item.kind] || 0) >= item.target ? '●' : '◇'),
+            ce('span', {}, `${item.label}: ${counts[item.kind] || 0} / ${item.target}`)
+        ))
+    );
+    const totalNeeded = checklist.reduce((a, b) => a + b.target, 0);
+    const totalGot = checklist.reduce((a, b) => a + Math.min(b.target, counts[b.kind] || 0), 0);
+    const ready = totalGot >= totalNeeded;
+    const phaseLabel = state.phase === 'asking' ? 'working' : state.phase === 'grading' ? 'grading' : state.phase === 'graded' ? 'graded' : state.phase;
+    els.activeScenario.append(
+        ce('div', { class: 'panel-head' }, ce('span', { class: 'title' }, sc.name), ce('span', { class: 'meta' }, `${sc.subject} · ${phaseLabel}`)),
+        ce('div', { class: 'stem' }, stem),
+    );
+    if (state.phase === 'graded') {
+        els.activeScenario.append(renderGradePanel(sc));
+    } else {
+        // Conversational suggestion chips — each sends a natural-language message to the tutor.
+        // The LLM decides whether to add a card, ask a follow-up, or transition phase.
+        const askChip = (text, label) => ce('button', {
+            class: 'chip', type: 'button',
+            on: { click: () => { els.prompt.value = text; els.prompt.focus(); } }
+        }, label);
+        const gradeChip = ce('button', {
+            class: 'run-btn' + (ready ? '' : ' disabled'),
+            on: { click: () => {
+                els.prompt.value = "i'm ready — grade my work.";
+                send(false);
+            } },
+            ...(ready ? {} : { disabled: 'true' })
+        }, ready ? "i'm ready — grade me" : `add ${totalNeeded - totalGot} more, then ask to be graded`);
+        els.activeScenario.append(
+            ce('div', { class: 'stem-hint' }, 'tell the tutor your differentials, investigations, and plan in your own words. they will place the cards for you and grade when you ask.'),
+            checklistEl,
+            ce('div', { class: 'suggestion-chips' },
+                askChip('what additional history would help?', 'ask for more history'),
+                askChip('give me a hint without spoiling the answer.', 'request a hint'),
+                gradeChip
+            )
+        );
+    }
+}

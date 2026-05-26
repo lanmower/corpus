@@ -1,0 +1,2 @@
+./site/247420.js:125:125 ns
+function ns({kind:e="info",children:t,onDismiss:n,title:s,key:r}={}){let i={info:"\u2139",success:"\u2713",warn:"\u26A0",error:"\u2715"},a="ds-alert ds-alert-"+e;return f("div",{key:r,class:a,role:"alert"},f("span",{key:"icon",class:"ds-alert-icon"},i[e]),f("div",{key:"content",class:"ds-alert-content"},s?f("div",{key:"title",class:"ds-alert-title"},s):null,f("div",{key:"msg",class:"ds-alert-message"},...Array.isArray(t)?t:[t])),n?f("button",{key:"dismiss",class:"ds-alert-dismiss",onclick:n},"\u2715"):null)}

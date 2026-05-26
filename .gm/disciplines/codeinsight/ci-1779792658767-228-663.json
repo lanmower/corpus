@@ -1,0 +1,4 @@
+./site/srs.js:228:230 getEligibleCards
+function getEligibleCards(cards, states = loadStates(), ticksAll = {}) {
+    return cards.filter(c => isEligible(c, states[c.id], ticksAll[c._subject] || {}));
+}

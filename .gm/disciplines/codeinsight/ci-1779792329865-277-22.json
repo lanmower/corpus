@@ -1,0 +1,22 @@
+./scripts/build_data.js:277:297 loadInfographics
+function loadInfographics(subject) {
+    const dir = path.join(SUBJ_ROOT, subject, 'infographics');
+    const out = [];
+    const destDir = path.join(DATA, 'infographics', subject);
+    for (const f of safeReaddir(dir)) {
+        if (!/\.(png|jpe?g|svg|webp)$/i.test(f)) continue;
+        const src = path.join(dir, f);
+        if (!safeStat(src)) continue;
+        fs.mkdirSync(destDir, { recursive: true });
+        fs.copyFileSync(src, path.join(destDir, f));
+        const base = f.replace(/\.[^.]+$/, '');
+        const title = `${subject} — ${base}`;
+        out.push({
+            filename: f,
+            title,
+            alt: `${subject} infographic: ${base}`,
+            src: `data/infographics/${subject}/${f}`
+        });
+    }
+    return out;
+}

@@ -1,0 +1,16 @@
+./site/verdicts.js:21:35 trendFor
+function trendFor(states, cardIds, nowMs = Date.now()) {
+    let pos = 0, neg = 0;
+    const cutoff = nowMs - 7 * 86400000;
+    for (const id of cardIds) {
+        const s = states[id]; if (!s || !s.history) continue;
+        for (const h of s.history) {
+            if ((h.ts || 0) < cutoff) continue;
+            if (h.score >= 4) pos++;
+            else if (h.score <= 2) neg++;
+        }
+    }
+    const total = pos + neg;
+    if (!total) return 0;
+    return Math.round(((pos - neg) / total) * 100) / 100;
+}

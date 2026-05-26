@@ -1,0 +1,32 @@
+./site/app.js:1350:1380 buildTriageWidget
+function buildTriageWidget(meta, shard, sc) {
+    const params = sc.parameters && typeof sc.parameters === 'object' && !Array.isArray(sc.parameters) ? sc.parameters : {};
+    const inputs = {};
+    const wrap = el('div', { class: 'triage-scenario' });
+    wrap.append(el('div', { class: 'panel-head' }, el('span', { class: 'title' }, sc.name), meta.subject));
+    wrap.append(el('div', { class: 'description' }, sc.description || ''));
+    for (const [k, v] of Object.entries(params)) {
+        const desc = String(v);
+        const opts = desc.split('|').map(x => x.split('—')[0].trim()).filter(Boolean).slice(0, 6);
+        const ctl = opts.length > 1 && opts.length < 8
+            ? el('select', { 'aria-label': k }, ...opts.map(o => el('option', { value: o }, o)))
+            : el('input', { type: 'text', placeholder: desc.slice(0, 40), 'aria-label': k });
+        inputs[k] = ctl;
+        wrap.append(el('div', { class: 'param-row' }, el('label', {}, k), ctl));
+    }
+    const out = el('div', { class: 'outcome', style: 'display:none' });
+    const btn = el('button', { class: 'run-btn', on: { click: () => {
+        const vals = {}; for (const [k, e] of Object.entries(inputs)) vals[k] = e.value;
+        const example = (sc.examples && sc.examples[0]) || {};
+        out.innerHTML = '';
+        out.append(el('div', { class: 'eyebrow' }, 'inputs'));
+        out.append(el('pre', {}, JSON.stringify(vals, null, 2)));
+        out.append(el('div', { class: 'eyebrow' }, 'reasoning'));
+        out.append(el('div', {}, example.reasoning || 'confirm diagnosis → classify severity → first-line therapy → reassess.'));
+        out.append(el('div', { class: 'eyebrow', style: 'margin-top:8px' }, 'recommendation'));
+        out.append(el('div', {}, example.recommendation || 'standard guideline-directed management.'));
+        out.style.display = 'block';
+    } } }, 'run case');
+    wrap.append(btn, out);
+    return wrap;
+}

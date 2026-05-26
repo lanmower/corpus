@@ -1,0 +1,13 @@
+./site/tutor-panel.js:309:320 clearConversation
+function clearConversation() {
+    tutorMessages = [];
+    streamingBuf = '';
+    clearHistory();
+    if (tutorWorker) tutorWorker.postMessage({ cmd: 'reset-history' });
+    if (sdkRender) sdkRender();
+    else {
+        const m = panelContainer?.querySelector('#tutor-messages');
+        if (m) m.innerHTML = '';
+        appendFallbackMessage('New conversation started. Ask me anything.', false);
+    }
+}

@@ -1,0 +1,2 @@
+./site/247420.js:125:125 Ss
+function Ss({src:e,type:t="other",name:n}={}){return t==="image"?w("img",{class:"ds-preview-media",src:e,alt:n||""}):t==="video"?w("video",{class:"ds-preview-media",src:e,controls:!0}):t==="audio"?w("audio",{class:"ds-preview-audio",src:e,controls:!0}):w("div",{class:"ds-preview-fallback"},w("span",{class:"ds-preview-glyph"},de(t)),w("span",{},"no inline preview for "+(t||"this file")))}

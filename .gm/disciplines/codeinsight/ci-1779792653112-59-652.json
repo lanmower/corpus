@@ -1,0 +1,19 @@
+./site/search.js:59:76 search
+function search(items, q, limit = 30) {
+    const t = q.trim().toLowerCase();
+    if (!t) return items.slice(0, limit);
+    const tokens = t.split(/\s+/).filter(Boolean);
+    const scored = [];
+    for (const it of items) {
+        const hay = (it.title + ' ' + it.body + ' ' + it.subject).toLowerCase();
+        let score = 0, matched = true;
+        for (const tok of tokens) {
+            const i = hay.indexOf(tok);
+            if (i < 0) { matched = false; break; }
+            score += 1 + (it.title.toLowerCase().includes(tok) ? 3 : 0) + (i < 20 ? 1 : 0);
+        }
+        if (matched) scored.push({ it, score });
+    }
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, limit).map(x => x.it);
+}

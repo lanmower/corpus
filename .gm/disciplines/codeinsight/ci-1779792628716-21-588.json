@@ -1,0 +1,6 @@
+./site/mastery.js:21:25 cardReady
+function cardReady(state) {
+    if (!state) return false;
+    // Ready if mastered OR not due (will become due soon)
+    return cardMastered(state) || (!state.dueAt || state.dueAt <= Date.now() + 3 * 86400000);
+}

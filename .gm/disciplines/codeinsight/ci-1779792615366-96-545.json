@@ -1,0 +1,26 @@
+./site/context-menu.js:96:120 
+(e) => {
+    if (!currentContextMenu) return;
+
+    if (e.key === 'Escape') {
+        e.preventDefault();
+        closeContextMenu();
+        return;
+    }
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const items = Array.from(currentContextMenu.querySelectorAll('.context-menu-item'));
+        const current = currentContextMenu.querySelector(':focus');
+        const currentIndex = items.indexOf(current);
+
+        let nextIndex;
+        if (e.key === 'ArrowDown') {
+            nextIndex = (currentIndex + 1) % items.length;
+        } else {
+            nextIndex = (currentIndex - 1 + items.length) % items.length;
+        }
+
+        items[nextIndex].focus();
+    }
+}

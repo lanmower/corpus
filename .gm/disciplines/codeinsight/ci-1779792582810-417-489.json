@@ -1,0 +1,11 @@
+./site/app.js:417:426 nextUntickedSubject
+function nextUntickedSubject() {
+    const ticksAll = loadGuideTicks();
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject]; if (!sh) continue;
+        const t = ticksAll[meta.subject] || {};
+        const sec = sh.guide?.sections?.find(s => !t[String(s.line)]);
+        if (sec) return { subject: meta.subject, section: sec };
+    }
+    return null;
+}

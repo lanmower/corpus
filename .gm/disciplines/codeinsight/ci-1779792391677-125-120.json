@@ -1,0 +1,2 @@
+./site/247420.js:125:125 en
+function en(e,t){if(t.key!=="Tab")return;let n=e.querySelectorAll(We);if(!n.length){t.preventDefault();return}let s=n[0],r=n[n.length-1],i=e.getRootNode&&e.getRootNode().activeElement||document.activeElement;t.shiftKey&&i===s?(t.preventDefault(),r.focus()):!t.shiftKey&&i===r&&(t.preventDefault(),s.focus())}

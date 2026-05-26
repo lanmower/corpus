@@ -1,0 +1,2 @@
+./site/247420.js:136:136 Zr
+function Zr(e,t){if(!t)return"#";let n=String(t);if(/^([a-z]+:|#|\/\/)/i.test(n)||!e)return n;let s=e.replace(/\/+$/,"");return n.startsWith("/")?s+n:s+"/"+n.replace(/^\.?\//,"")}

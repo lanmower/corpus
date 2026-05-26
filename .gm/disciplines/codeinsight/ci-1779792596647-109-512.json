@@ -1,0 +1,4 @@
+./site/app.js:109:111 loadGuideTicks
+function loadGuideTicks() {
+    try { return JSON.parse(localStorage.getItem('corpus.guide.v1') || '{}'); } catch { return {}; }
+}

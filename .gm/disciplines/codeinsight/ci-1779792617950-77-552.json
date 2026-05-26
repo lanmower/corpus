@@ -1,0 +1,6 @@
+./site/drag.js:77:81 hideLoadingState
+function hideLoadingState(element) {
+    element.classList.remove('is-loading');
+    const spinner = element.querySelector('.loading-text');
+    if (spinner) spinner.remove();
+}

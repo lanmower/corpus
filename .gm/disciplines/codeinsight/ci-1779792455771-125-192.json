@@ -1,0 +1,2 @@
+./site/247420.js:125:125 At
+function At({works:e=[],openedIndex:t=-1,onToggle:n}){return F({children:e.map((s,r)=>{let i=t===r;return f("div",{key:r},Y({code:s.code,title:s.title,sub:s.sub,meta:s.meta+"  "+(i?"\u2212":"+"),active:i,onClick:()=>n&&n(i?-1:r)}),i?f("div",{class:"work-detail","data-work-index":String(r)},f("div",{class:"ds-prose"},f("p",{class:"ds-work-body"},s.body)),f("div",{class:"ds-work-actions"},j({primary:!0,href:s.href||"#",children:"open \u2197"}),j({href:s.source||"#",children:"source"}))):null)})})}

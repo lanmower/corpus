@@ -1,0 +1,5 @@
+./site/theme.js:20:23 applyTheme
+function applyTheme(t = getTheme()) {
+    if (typeof document === 'undefined') return;
+    document.documentElement.setAttribute('data-theme', effectiveTheme(t));
+}

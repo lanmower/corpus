@@ -1,0 +1,15 @@
+./site/toast.js:18:31 push
+function push(kind, text, icon) {
+    const c = ensureContainer();
+    while (c.children.length >= MAX) c.firstChild.remove();
+    const t = document.createElement('div');
+    t.className = `toast toast-${kind}`;
+    t.setAttribute('role', 'status');
+    if (icon) {
+        const i = document.createElement('span'); i.className = 'toast-icon'; i.textContent = icon; t.appendChild(i);
+    }
+    const m = document.createElement('span'); m.className = 'toast-msg'; m.textContent = text; t.appendChild(m);
+    c.appendChild(t);
+    setTimeout(() => { if (t.parentNode) t.remove(); }, DURATION);
+    return t;
+}

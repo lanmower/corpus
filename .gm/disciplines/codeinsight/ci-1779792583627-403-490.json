@@ -1,0 +1,14 @@
+./site/app.js:403:415 totalNewEligibleAll
+function totalNewEligibleAll() {
+    const states = srs.loadStates();
+    const ticksAll = loadGuideTicks();
+    const out = {};
+    let total = 0;
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject]; if (!sh) continue;
+        const cards = sh.cards.map(c => ({ ...c, _subject: meta.subject }));
+        const n = srs.getNewEligibleCards(cards, states, ticksAll).length;
+        out[meta.subject] = n; total += n;
+    }
+    return { total, bySubject: out };
+}

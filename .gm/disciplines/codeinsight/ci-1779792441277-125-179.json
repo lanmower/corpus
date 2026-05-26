@@ -1,0 +1,2 @@
+./site/247420.js:125:125 es
+function es({size:e="base",tone:t="accent",label:n="loading",key:s}={}){return f("div",{key:s,class:"ds-spinner "+(e==="sm"?"ds-spinner-sm":e==="lg"?"ds-spinner-lg":"")+" tone-"+t,role:"status","aria-live":"polite","aria-label":n},f("span",{key:"1","aria-hidden":"true"}),f("span",{key:"2","aria-hidden":"true"}),f("span",{key:"3","aria-hidden":"true"}))}

@@ -1,0 +1,4 @@
+./scripts/build_data.js:66:68 readFileSafe
+function readFileSafe(p) {
+    try { return fs.readFileSync(p, 'utf8'); } catch { return null; }
+}

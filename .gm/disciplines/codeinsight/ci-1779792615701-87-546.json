@@ -1,0 +1,8 @@
+./site/context-menu.js:87:93 closeContextMenu
+function closeContextMenu() {
+    if (currentContextMenu) {
+        currentContextMenu.remove();
+        currentContextMenu = null;
+    }
+    document.removeEventListener('click', closeContextMenuOnClickOutside, true);
+}

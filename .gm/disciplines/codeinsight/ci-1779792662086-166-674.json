@@ -1,0 +1,4 @@
+./site/srs.js:166:168 isSuspended
+function isSuspended(cardId, states = loadStates()) {
+    return !!(states[cardId] && states[cardId].suspended);
+}

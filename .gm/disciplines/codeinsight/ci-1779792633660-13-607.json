@@ -1,0 +1,2 @@
+./site/newcards.js:13:13 writeCounts
+function writeCounts(o) { try { localStorage.setItem(COUNT_KEY, JSON.stringify(o)); } catch {} }

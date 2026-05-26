@@ -1,0 +1,80 @@
+./site/tutor-panel.js:385:463 wireWorkerToPanel
+function wireWorkerToPanel(worker) {
+    tutorWorker = worker;
+
+    // Seed the worker with persisted history so its LLM context matches the panel.
+    if (tutorMessages.length) {
+        worker.postMessage({ cmd: 'seed-history', history: toWorkerHistory(tutorMessages) });
+    }
+
+    worker.addEventListener('message', (e) => {
+        const { event, token, message, error, stage, progress, loaded, total, interrupted } = e.data || {};
+
+        switch (event) {
+            case 'log': console.log('[tutor]', e.data.msg); break;
+            case 'warn': console.warn('[tutor]', e.data.msg); break;
+
+            case 'model-loading':
+                setStatus('loading', stage || 'loading tutor…');
+                break;
+
+            case 'model-downloading': {
+                const pct = total ? Math.round((loaded / total) * 100) : Math.round(progress || 0);
+                setStatus('downloading', `Bonsai-1.7B ${pct}%`);
+                break;
+            }
+
+            case 'ready':
+                isThinking = false;
+                setStatus('ready');
+                break;
+
+            case 'unavailable':
+                isThinking = false;
+                setStatus('unavailable', error || 'WebGPU required');
+                addTutorMessage(`Tutor unavailable — ${error || 'WebGPU required. Open in Chrome or Edge.'}`, false, { err: true });
+                break;
+
+            case 'coaching-start':
+                isThinking = true;
+                streamingBuf = '';
+                if (sdkRender) sdkRender();
+                break;
+
+            case 'token':
+                if (token != null) {
+                    streamingBuf += token;
+                    if (sdkRender) sdkRender();
+                }
+                break;
+
+            case 'coaching-done':
+            case 'session-overview-done':
+            case 'guide-answer-done':
+            case 'triage-hint-done': {
+                isThinking = false;
+                const clean = dispatchAndStrip(message);
+                streamingBuf = '';
+                if (clean && clean.trim()) {
+                    addTutorMessage(interrupted ? clean + ' …⏹' : clean, false);
+                } else if (interrupted) {
+                    showTutorToast('Stopped.');
+                    if (sdkRender) sdkRender();
+                }
+                if (event === 'coaching-done') {
+                    const inline = document.getElementById('tutor-card-coaching');
+                    if (inline) inline.textContent = clean;
+                }
+                if (event === 'guide-answer-done') showTutorToast('📚 guide answer ready');
+                if (event === 'triage-hint-done') showTutorToast('💡 hint provided');
+                break;
+            }
+
+            case 'error':
+                isThinking = false;
+                streamingBuf = '';
+                addTutorMessage(`Something went wrong: ${error || e.data.msg}. Tap to retry.`, false, { err: true });
+                break;
+        }
+    });
+}

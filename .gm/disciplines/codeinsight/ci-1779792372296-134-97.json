@@ -1,0 +1,2 @@
+./site/247420.js:134:134 rr
+function rr(e){return e.replace(/`([^`]+)`/g,"<code>$1</code>").replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2">$1</a>')}

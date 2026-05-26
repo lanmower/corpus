@@ -1,0 +1,10 @@
+./site/app.js:1810:1818 showUndoToast
+function showUndoToast() {
+    const old = document.getElementById('undo-toast'); if (old) old.remove();
+    const t = el('div', { id: 'undo-toast', class: 'undo-toast', role: 'status' },
+        el('span', {}, 'graded · '),
+        el('button', { class: 'chip', 'aria-label': 'undo grade',
+            on: { click: () => undoLastGrade() } }, 'undo (u)'));
+    document.body.appendChild(t);
+    setTimeout(() => { if (t.parentNode) t.remove(); }, 5000);
+}

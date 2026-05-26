@@ -1,0 +1,8 @@
+./site/triage-live.js:578:584 remove_card
+remove_card({ id }) {
+        const i = state.cards.findIndex(c => c.id === id);
+        if (i < 0) return { ok: false, error: 'not found' };
+        state.cards.splice(i, 1);
+        renderScratchpad(); persistActive();
+        return { ok: true };
+    }

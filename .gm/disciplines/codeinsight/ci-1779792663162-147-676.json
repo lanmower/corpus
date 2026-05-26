@@ -1,0 +1,11 @@
+./site/srs.js:147:156 saveStates
+function saveStates(states) {
+    try {
+        localStorage.setItem(STATES_KEY, JSON.stringify({ version: SCHEMA_VERSION, states }));
+        if (typeof window !== 'undefined') window.dispatchEvent(new Event('corpus:srs-changed'));
+    } catch (e) {
+        const quota = e && (e.name === 'QuotaExceededError' || /quota/i.test(String(e.message)));
+        if (quota && typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { source: 'srs', error: String(e) } }));
+        else throw e;
+    }
+}

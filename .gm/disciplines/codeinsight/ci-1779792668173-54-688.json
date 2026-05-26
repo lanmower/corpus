@@ -1,0 +1,4 @@
+./site/sw.js:54:56 safeClone
+async function safeClone(r) {
+    try { return r.clone(); } catch { return null; }
+}

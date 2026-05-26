@@ -1,0 +1,4 @@
+./site/sw.js:42:44 safeCachePut
+async function safeCachePut(cache, req, res) {
+    try { await cache.put(req, res); } catch {}
+}

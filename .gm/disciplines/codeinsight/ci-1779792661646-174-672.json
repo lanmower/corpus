@@ -1,0 +1,8 @@
+./site/srs.js:174:180 importState
+function importState(json) {
+    const parsed = typeof json === 'string' ? JSON.parse(json) : json;
+    const migrated = migrate(parsed);
+    if (migrated.states) saveStates(migrated.states);
+    if (parsed.config) saveConfig(parsed.config);
+    return Object.keys(migrated.states || {}).length;
+}

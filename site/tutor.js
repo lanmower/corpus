@@ -23,6 +23,7 @@ const state = {
     loadPromise: null,
     pastKV: null,
     stopping: new InterruptableStoppingCriteria(),
+    interrupted: false,  // worker-owned flag (transformers' #interrupted is private)
     history: [],         // [{role, content}] chat history (last 12 turns)
     guideIndex: []       // [{subject, title, body, level, line}]
 };
@@ -79,6 +80,7 @@ async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320 
         return '';
     }
     state.stopping.reset();
+    state.interrupted = false;
     self.postMessage({ event: 'coaching-start' });
     let buf = '';
     const streamer = new TextStreamer(state.generator.tokenizer, {
@@ -99,7 +101,11 @@ async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320 
             past_key_values: state.pastKV
         });
         const content = out?.[0]?.generated_text?.at?.(-1)?.content ?? buf;
-        self.postMessage({ event: doneEvent, message: content });
+        const interrupted = state.interrupted === true;
+        // KV cache lifecycle is owned here, after the generate promise settles —
+        // never disposed mid-generation by the stop handler (avoids a use-after-free race).
+        if (interrupted) { state.pastKV?.dispose?.(); state.pastKV = null; }
+        self.postMessage({ event: doneEvent, message: content, interrupted });
         return content;
     } catch (e) {
         self.postMessage({ event: 'error', error: String(e?.message || e) });
@@ -189,6 +195,25 @@ self.addEventListener('message', async (e) => {
             state.pastKV = null;
             return;
         }
+        if (cmd === 'seed-history') {
+            // Replay persisted turns into the worker so the LLM context matches
+            // what the user sees on the page (single source of truth = panel).
+            const turns = Array.isArray(data.history) ? data.history : [];
+            state.history = turns
+                .filter(t => t && (t.role === 'user' || t.role === 'assistant') && t.content)
+                .slice(-12);
+            // A fresh KV cache must accompany a reseeded history.
+            state.pastKV?.dispose?.();
+            state.pastKV = null;
+            return;
+        }
+        if (cmd === 'stop') {
+            // Only signal interruption. The KV cache is owned by runChat and disposed
+            // there after the generate promise settles — never freed mid-generation.
+            state.interrupted = true;
+            state.stopping.interrupt();
+            return;
+        }
 
         // All chat-driven commands need the model.
         await ensureLoaded();
@@ -197,7 +222,7 @@ self.addEventListener('message', async (e) => {
             const { front = '', back = '', grade, subject = '' } = data;
             const user = `subject: ${subject}\ncard front: ${front}\ncard back: ${back}\ngrade given: ${grade} (0=blackout, 4=perfect)\n\ngive me coaching for this review.`;
             await runChat([{ role: 'system', content: SYS.coach }, { role: 'user', content: user }],
-                { doneEvent: 'coaching-done', maxTokens: 220 });
+                { doneEvent: 'review-coaching-done', maxTokens: 220 });
             return;
         }
 
@@ -238,7 +263,8 @@ self.addEventListener('message', async (e) => {
             const sysWithTools = `${SYS.chat}\n\n${TOOL_SPEC}`;
             const messages = [{ role: 'system', content: sysWithTools }, ...state.history];
             const reply = await runChat(messages, { doneEvent: 'coaching-done', maxTokens: 300 });
-            pushHistory('assistant', reply);
+            // Don't pollute context with an empty assistant turn (e.g. immediate stop or error).
+            if (reply && reply.trim()) pushHistory('assistant', reply);
             return;
         }
 

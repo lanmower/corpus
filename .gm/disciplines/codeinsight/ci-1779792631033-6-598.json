@@ -1,0 +1,2 @@
+./site/mistakes.js:6:6 save
+function save(arr) { try { localStorage.setItem(KEY, JSON.stringify(arr.slice(-CAP))); } catch {} }

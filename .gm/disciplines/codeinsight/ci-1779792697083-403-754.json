@@ -1,0 +1,47 @@
+./site/triage-live.js:403:448 renderGradePanel
+function renderGradePanel(sc) {
+    const score = state.lastGrade != null ? state.lastGrade : 0;
+    const matched = state.cards.filter(c => c.highlighted);
+    const gaps = state.cards.filter(c => c.kind === 'note' && /^missed:/i.test(c.title || ''));
+    const wrap = ce('div', { class: 'grade-panel' });
+    const scoreClass = score >= 80 ? 'high' : score >= 60 ? 'mid' : 'low';
+    wrap.append(ce('div', { class: `grade-score ${scoreClass}` },
+        ce('span', { class: 'pct' }, `${score}%`),
+        ce('span', { class: 'lbl' }, score >= 80 ? 'solid' : score >= 60 ? 'getting there' : 'review needed')
+    ));
+    if (matched.length) wrap.append(ce('div', { class: 'grade-section' },
+        ce('div', { class: 'grade-section-title' }, `you got (${matched.length})`),
+        ...matched.map(c => ce('div', { class: 'grade-row hit' }, ce('span', { class: 'check' }, '✓'), ce('span', {}, c.title)))
+    ));
+    if (gaps.length) wrap.append(ce('div', { class: 'grade-section' },
+        ce('div', { class: 'grade-section-title' }, `you missed (${gaps.length})`),
+        ...gaps.map(c => ce('div', { class: 'grade-row miss' }, ce('span', { class: 'check' }, '×'),
+            ce('div', {},
+                ce('div', { class: 'miss-title' }, (c.title || '').replace(/^missed:\s*/i, '')),
+                c.body ? ce('div', { class: 'miss-body' }, c.body) : null
+            )
+        ))
+    ));
+    wrap.append(ce('div', { class: 'grade-actions' },
+        ce('button', { class: 'run-btn', on: { click: () => {
+            // Try again: clear highlights, drop the tutor-added gap notes & canonical-plan card, restore asking phase
+            state.cards = state.cards.filter(c => {
+                if (c.kind === 'note' && /^missed:/i.test(c.title || '')) return false;
+                if (typeof c.id === 'string' && (c.id.startsWith('gap-') || c.id.startsWith('key-rec-'))) return false;
+                return true;
+            });
+            for (const c of state.cards) c.highlighted = false;
+            state.phase = 'asking';
+            state.lastGrade = null;
+            persistActive();
+            renderActive(); renderScratchpad();
+        } } }, 'try again'),
+        ce('button', { class: 'chip', on: { click: () => {
+            const vis = visibleScenarios();
+            const idx = vis.findIndex(s => s.id === sc.id);
+            const next = vis[Math.min(idx + 1, vis.length - 1)];
+            if (next && next.id !== sc.id) selectScenario(next.id);
+        } } }, 'next case â†’')
+    ));
+    return wrap;
+}

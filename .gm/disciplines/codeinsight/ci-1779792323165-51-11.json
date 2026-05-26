@@ -1,0 +1,21 @@
+./scripts/anki_migrate.js:51:70 readCardsFromYml
+function readCardsFromYml(text, file) {
+    const parsed = parseYaml(text);
+    if (Array.isArray(parsed)) return parsed;
+    if (parsed && Array.isArray(parsed.cards)) return parsed.cards;
+    if (parsed && Array.isArray(parsed.notes)) {
+        return parsed.notes.map(n => ({
+            front: n.fields?.Front || n.fields?.Text,
+            back: n.fields?.Back || n.fields?.Extra || '',
+            tags: n.tags || [],
+            _alreadyAnki: true,
+            _guid: n.guid,
+            _deck: n.deck,
+            _noteType: n.noteType
+        }));
+    }
+    if (parsed && Array.isArray(parsed.atoms)) {
+        return parsed.atoms.map(a => ({ id: a.id, front: a.atom, back: a.definition, tags: a.tags }));
+    }
+    return [];
+}

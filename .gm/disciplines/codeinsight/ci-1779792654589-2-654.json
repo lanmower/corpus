@@ -1,0 +1,47 @@
+./site/search.js:2:47 buildSearchIndex
+function buildSearchIndex(manifest, shards) {
+    const items = [];
+    for (const meta of manifest.subjects) {
+        const sh = shards[meta.subject];
+        if (!sh) continue;
+        for (const c of sh.cards) items.push({
+            kind: 'card', subject: meta.subject, id: c.id,
+            title: c.front, body: c.back || '', tags: c.tags || []
+        });
+        if (sh.triage && sh.triage.scenarios) for (const s of sh.triage.scenarios) items.push({
+            kind: 'case', subject: meta.subject, id: s.id || s.name,
+            title: s.name, body: s.description || ''
+        });
+        if (sh.guide && sh.guide.sections) for (const sec of sh.guide.sections) items.push({
+            kind: 'section', subject: meta.subject, id: `${meta.subject}#${sec.line}`,
+            title: sec.title, body: '', level: sec.level
+        });
+        if (sh.guide && Array.isArray(sh.guide.infographics)) for (const ig of sh.guide.infographics) items.push({
+            kind: 'infographic', subject: meta.subject, id: `${meta.subject}/${ig.filename}`,
+            title: ig.title, body: ig.alt || ''
+        });
+        if (sh.guide && Array.isArray(sh.guide.videos)) for (const vid of sh.guide.videos) items.push({
+            kind: 'video', subject: meta.subject, id: `${meta.subject}/${vid.filename}`,
+            title: vid.title, body: 'lecture video'
+        });
+        if (sh.guide && sh.guide.body) {
+            const body = sh.guide.body;
+            const paras = body.split(/\n\n+/);
+            let lineCounter = 0;
+            for (const p of paras) {
+                const lines = p.split('\n').length;
+                lineCounter += lines + 1;
+                const trimmed = p.trim();
+                if (trimmed.length < 40) continue;
+                if (/^#{1,6}\s/.test(trimmed)) continue;
+                items.push({
+                    kind: 'prose', subject: meta.subject,
+                    id: `${meta.subject}#L${lineCounter}`,
+                    title: trimmed.slice(0, 80) + (trimmed.length > 80 ? '…' : ''),
+                    body: trimmed
+                });
+            }
+        }
+    }
+    return items;
+}

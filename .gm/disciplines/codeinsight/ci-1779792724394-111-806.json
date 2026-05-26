@@ -1,0 +1,5 @@
+./site/tutor.js:111:114 pushHistory
+function pushHistory(role, content) {
+    state.history.push({ role, content });
+    if (state.history.length > 12) state.history = state.history.slice(-12);
+}

@@ -1,0 +1,4 @@
+./site/cram.js:10:12 dismiss
+function dismiss() {
+    try { localStorage.setItem(KEY, JSON.stringify({ date: todayISO() })); } catch {}
+}

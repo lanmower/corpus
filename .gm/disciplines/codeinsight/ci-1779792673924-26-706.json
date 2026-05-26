@@ -1,0 +1,2 @@
+./site/timer.js:26:26 start
+function start() { const t = load(); t.running = true; t.startedAt = Date.now(); save(t); return t; }

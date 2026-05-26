@@ -1,0 +1,2 @@
+./site/247420.js:125:125 xs
+function xs({segments:e=[],onNav:t,root:n="root"}={}){let s=[k("button",{key:"root",class:"ds-crumb-seg",onclick:()=>t&&t(0)},n)];return e.forEach((r,i)=>{s.push(k("span",{key:"sep"+i,class:"ds-crumb-sep"},"\u203A")),s.push(k("button",{key:"seg"+i,class:"ds-crumb-seg"+(i===e.length-1?" leaf":""),onclick:()=>t&&t(i+1)},r))}),k("div",{class:"ds-crumb-path"},...s)}

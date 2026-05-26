@@ -1,0 +1,2 @@
+./site/247420.js:246:246 ar
+function ar({root:e,view:t,screen:n,animateOnMount:s=!0}={}){if(!e)throw new Error("mountKit: root required");if(typeof t!="function")throw new Error("mountKit: view fn required");n&&typeof document<"u"&&(document.body.dataset.screenLabel=n),me();let r=!1,i=()=>{r=!1,U(e,t()),s&&requestAnimationFrame(()=>ge(e))},a=()=>{r||(r=!0,queueMicrotask(i))};return se("bootstrap",()=>({screen:n||null,mounted:!!e.firstChild,root:e.id||e.tagName})),i(),{render:i,schedule:a}}

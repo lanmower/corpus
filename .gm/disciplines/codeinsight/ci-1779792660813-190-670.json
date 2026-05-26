@@ -1,0 +1,2 @@
+./site/srs.js:190:190 saveConfig
+function saveConfig(cfg) { localStorage.setItem(CONFIG_KEY, JSON.stringify(cfg)); }

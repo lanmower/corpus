@@ -1,0 +1,47 @@
+./site/app.js:448:493 renderNextReadingCard
+function renderNextReadingCard(next) {
+    if (!next) return null;
+    const subj = next.subject;
+    const sec = next.section;
+    const ticks = loadGuideTicks()[subj] || {};
+    const tickedCount = Object.keys(ticks).filter(k => ticks[k]).length;
+    const isFirstRead = tickedCount === 0;
+    const totalSections = (state.shards[subj]?.guide?.sections || []).filter(s => s.level === 2 || s.level === 3).length;
+    const progressLabel = totalSections ? `${tickedCount}/${totalSections} sections` : '';
+
+    return el('div', { class: 'panel next-reading-panel', role: 'region', 'aria-label': isFirstRead ? 'start reading' : 'continue reading' },
+        el('div', { class: 'panel-head' },
+            el('span', { class: 'title' }, isFirstRead ? 'start reading' : 'continue reading'),
+            el('span', { class: 'meta' }, `${subj} \u00b7 ${progressLabel}`)),
+        el('div', { class: 'next-reading-body' },
+            el('div', { class: 'nr-subject' }, subj),
+            el('div', { class: 'nr-section' }, sec.title)),
+        el('div', { class: 'next-reading-actions' },
+            el('a', { class: 'chip primary-action', href: `#subject/${subj}`,
+                on: { click: e => {
+                    e.preventDefault();
+                    go('subject', subj);
+                    const anchorId = `g-${slugify(sec.title)}-${sec.line}`;
+                    const pollStart = Date.now();
+                    const poll = () => {
+                        const target = document.getElementById(anchorId);
+                        if (target) {
+                            const panel = target.closest('.chunk-panel');
+                            if (panel && panel.classList.contains('chunk-collapsed')) {
+                                panel.classList.remove('chunk-collapsed');
+                            }
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        } else if (Date.now() - pollStart < 3000) {
+                            setTimeout(poll, 150);
+                        }
+                    };
+                    setTimeout(poll, 300);
+                } } }, 'read \u2192'),
+            el('button', { class: 'chip',
+                on: { click: () => {
+                    const all = loadGuideTicks();
+                    (all[subj] = all[subj] || {})[String(sec.line)] = true;
+                    saveGuideTicks(all);
+                    render();
+                } } }, 'mark read')));
+}

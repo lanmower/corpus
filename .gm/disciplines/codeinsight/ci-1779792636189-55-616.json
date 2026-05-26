@@ -1,0 +1,9 @@
+./site/progress.js:55:62 rollStreak
+function rollStreak(p, now = effectiveDateISO()) {
+    if (!p.lastActiveDate) { p.streak = 1; p.lastActiveDate = now; return p; }
+    const off = dayOffset(p.lastActiveDate, now);
+    if (off === 0) return p;
+    if (off === 1) p.streak += 1; else p.streak = 1;
+    p.lastActiveDate = now;
+    return p;
+}

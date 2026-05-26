@@ -1,0 +1,8 @@
+./site/app.js:2050:2056 renderCalendar
+function renderCalendar() {
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, 'plan'), el('h2', {}, 'calendar')));
+    const mount = el('div', { class: 'cal-mount', id: 'cal-mount' });
+    stage.append(mount);
+    calendar.mount(mount, { dueCountsFn: () => dueCountsBySubject() });
+}

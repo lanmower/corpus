@@ -1,0 +1,4 @@
+./site/sw.js:46:48 safeCacheMatch
+async function safeCacheMatch(cache, req) {
+    try { return await cache.match(req); } catch { return undefined; }
+}

@@ -1,0 +1,2 @@
+./site/confidence.js:4:4 load
+function load() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } }

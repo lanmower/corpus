@@ -1,0 +1,149 @@
+./site/app.js:1382:1746 renderReview
+async function renderReview() {
+    stage.innerHTML = '';
+    const placeholderContainer = el('div', { class: 'panel is-loading' });
+    const placeholder = el('div', { class: 'skeleton', style: 'width:60%;height:14px' });
+    placeholderContainer.append(placeholder);
+    showLoadingState(placeholderContainer, 'loading cards...');
+    stage.append(placeholderContainer);
+    const subjects = state.reviewSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.reviewSubjectFilter];
+    await Promise.all(subjects.map(s => loadShard(s)));
+    placeholderContainer.remove();
+
+    const allCards = [];
+    for (const s of subjects) {
+        const sh = state.shards[s]; if (!sh) continue;
+        for (const c of sh.cards) allCards.push({ ...c, _subject: s });
+    }
+    // merge personal user cards (when filter is all or matches)
+    for (const uc of usercards.load()) {
+        if (state.reviewSubjectFilter === 'all' || state.reviewSubjectFilter === uc._subject) allCards.push(uc);
+    }
+    const cardIds = allCards.map(c => c.id);
+    state.reviewAllCardIds = cardIds;
+
+    if (!state.reviewQueueIds || state.reviewQueueIds.length === 0) {
+        const states = srs.loadStates();
+        let pool = cardIds;
+        if (state.paletteReviewSet && state.paletteReviewSet.length) pool = pool.filter(id => state.paletteReviewSet.includes(id));
+        if (state.reviewTagFilter.size > 0) {
+            const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
+            pool = pool.filter(id => {
+                const tags = cardById[id]?.tags || [];
+                for (const t of tags) if (state.reviewTagFilter.has(t)) return true;
+                return false;
+            });
+        }
+        // Section filter - show only cards from a specific section
+        if (state.sectionFilter) {
+            pool = pool.filter(id => {
+                const card = allCards.find(c => c.id === id);
+                return card && String(card.requires?.sectionLine) === String(state.sectionFilter);
+            });
+        }
+        const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
+        const ticksAll = loadGuideTicks();
+        let dueIds;
+        if (state.learnMode) {
+            const pickable = pool.map(id => cardById[id]).filter(Boolean);
+            const newElig = srs.getNewEligibleCards(pickable, states, ticksAll);
+            const remainingBySubj = {};
+            const learnLimit = 5;
+            const picked = [];
+            for (const c of newElig) {
+                if (picked.length >= learnLimit) break;
+                const subj = c._subject;
+                if ((remainingBySubj[subj] ?? newcards.remaining(subj)) <= 0) continue;
+                picked.push(c.id);
+                remainingBySubj[subj] = (remainingBySubj[subj] ?? newcards.remaining(subj)) - 1;
+            }
+            dueIds = picked;
+        } else if (state.cramMode) {
+            dueIds = pool;
+        } else {
+            dueIds = srs.getDueCards(pool, states);
+        }
+        const sorted = dueIds.map(id => ({ id, dueAt: states[id]?.dueAt ?? 0, subject: cardById[id]._subject })).sort((a, b) => a.dueAt - b.dueAt);
+        const bySubj = {};
+        for (const x of sorted) (bySubj[x.subject] ||= []).push(x.id);
+        const interleaved = []; let any = true;
+        while (any) { any = false; for (const k of Object.keys(bySubj)) { if (bySubj[k].length) { interleaved.push(bySubj[k].shift()); any = true; } } }
+        // Apply session cap (again-pile is exempt — added later)
+        const p0 = progress.load();
+        const totalDue = interleaved.length;
+        if (!state.cramMode && state.reviewSessionCap === null) {
+            state.reviewSessionCap = Math.min(totalDue, p0.dailyGoal || 30, 50);
+        }
+        const cap = (state.cramMode || state.learnMode) ? null : state.reviewSessionCap;
+        state.reviewQueueIds = cap != null ? interleaved.slice(0, cap) : interleaved;
+        state._reviewBacklog = cap != null ? Math.max(0, totalDue - state.reviewQueueIds.length) : 0;
+        state.reviewIndex = 0; state.reviewAgainPile = [];
+        state.reviewSessionStarted = state.reviewQueueIds.length;
+        state.sessionFinished = false;
+    }
+    state.reviewQueue = state.reviewQueueIds.map(id => allCards.find(c => c.id === id)).filter(Boolean);
+    if (state.reviewIndex >= state.reviewQueue.length) state.reviewIndex = 0;
+
+    const p = progress.load();
+    const total = state.reviewQueue.length;
+    const goal = p.dailyGoal || 30;
+    const sessionTotal = state.reviewSessionStarted || total;
+    const idxOneBased = Math.min(state.reviewSessionGraded + 1, sessionTotal);
+    const toGoal = Math.max(0, goal - p.todayGraded);
+
+    stage.append(el('div', { class: 'section-head' },
+        el('span', { class: 'eyebrow' }, state.learnMode ? 'learn' : 'review'),
+        el('h2', {}, state.cramMode ? 'cram' : (state.learnMode ? 'learn new' : 'review'))));
+
+    // tiny progress line — REQUIRED feature 3
+    stage.append(el('div', { class: 'review-progress' },
+        el('span', { class: 'num' }, `${idxOneBased} of ${total || sessionTotal}`),
+        ' · ',
+        el('span', { class: 'goal' }, `${toGoal} to daily goal`)
+    ));
+
+    const chips = el('div', { class: 'filter-chips', role: 'group', 'aria-label': 'subject filter' },
+        el('button', { class: 'chip' + (state.reviewSubjectFilter === 'all' ? ' active' : ''),
+            on: { click: () => { state.reviewSubjectFilter = 'all'; resetReviewQueue(); renderReview(); } } }, 'all'),
+        ...state.manifest.subjects.map(s => el('button', { class: 'chip' + (state.reviewSubjectFilter === s.subject ? ' active' : ''),
+            on: { click: () => { state.reviewSubjectFilter = s.subject; resetReviewQueue(); renderReview(); } } }, s.subject))
+    );
+    const cramBtn = el('button', { class: 'chip' + (state.cramMode ? ' active' : ''),
+        'aria-label': 'toggle cram mode', 'aria-pressed': String(!!state.cramMode),
+        on: { click: () => { state.cramMode = !state.cramMode; renderReview(); } } },
+        state.cramMode ? 'cram on' : 'cram off');
+    const allTags = collectReviewTags(allCards);
+    const tagChips = allTags.length ? el('div', { class: 'filter-chips tag-chips', role: 'group', 'aria-label': 'tag filter' },
+        ...allTags.slice(0, 12).map(t => el('button', {
+            class: 'chip' + (state.reviewTagFilter.has(t) ? ' active' : ''),
+            'aria-pressed': String(state.reviewTagFilter.has(t)),
+            on: { click: () => { if (state.reviewTagFilter.has(t)) state.reviewTagFilter.delete(t); else state.reviewTagFilter.add(t); resetReviewQueue(); renderReview(); } } }, '#' + t))
+    ) : null;
+    // Session-size picker (shown when due >= 10, not in cram mode)
+    const totalDueForPicker = (state.reviewSessionStarted || 0) + (state._reviewBacklog || 0);
+    if (!state.cramMode && totalDueForPicker >= 10 && state.reviewSessionGraded === 0) {
+        const caps = [10, 20, 50, null];
+        const capLabels = { 10: '10', 20: '20', 50: '50', null: 'all' };
+        const pickerChips = caps.map(c => el('button', {
+            class: 'chip' + (state.reviewSessionCap === c ? ' active' : ''),
+            'aria-label': `session size ${c ?? 'all'}`,
+            on: { click: () => { state.reviewSessionCap = c; resetReviewQueue(); renderReview(); } }
+        }, capLabels[c]));
+        stage.append(el('div', { class: 'session-picker' },
+            el('span', { class: 'session-picker-label' }, 'session:'),
+            ...pickerChips
+        ));
+    }
+
+    stage.append(el('div', { class: 'toolbar' }, chips, cramBtn), tagChips);
+
+    if (state.reviewQueue.length === 0) {
+        if (state.reviewAgainPile.length > 0) {
+            state.reviewQueueIds = state.reviewAgainPile;
+            state.reviewAgainPile = []; state.reviewIndex = 0;
+            renderReview(); return;
+        }
+        const reviewed = state.reviewSessionGraded;
+        if (reviewed > 0 && !state.sessionFinished) {
+            state.sessionFinished = true;
+  

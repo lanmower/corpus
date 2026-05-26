@@ -1,0 +1,10 @@
+./site/calendar.js:28:36 monthGridDays
+function monthGridDays(anchorIso) {
+    const a = parseIso(anchorIso);
+    const first = new Date(Date.UTC(a.getUTCFullYear(), a.getUTCMonth(), 1));
+    const startDow = first.getUTCDay();
+    const start = new Date(first); start.setUTCDate(first.getUTCDate() - startDow);
+    const out = [];
+    for (let i = 0; i < 42; i++) { const d = new Date(start); d.setUTCDate(start.getUTCDate() + i); out.push(isoDate(d)); }
+    return out;
+}

@@ -1,0 +1,2 @@
+./scripts/build_guides.js:11:11 readSafe
+function readSafe(p) { try { return fs.readFileSync(p, 'utf8'); } catch { return null; } }

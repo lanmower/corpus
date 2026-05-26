@@ -1,0 +1,60 @@
+./site/mastery.js:43:101 computeFromCards
+function computeFromCards(manifest, shards, only) {
+    const states = srs.loadStates();
+    const ticks = loadGuideTicks();
+    const triage = loadTriage();
+    const mistakes = loadMistakes();
+    let cardsTotal = 0, cardsMast = 0, cardsDue = 0, cardsIntroduced = 0;
+    let secTotal = 0, secTicked = 0;
+    let caseTotal = 0, casePass = 0;
+    let mTotal = 0, mClear = 0;
+    const now = Date.now();
+    const subjects = only ? [only] : SUBJECTS;
+    for (const s of subjects) {
+        const sh = shards[s]; if (!sh) continue;
+        for (const c of (sh.cards || [])) {
+            cardsTotal++;
+            const st = states[c.id];
+            const introduced = !!(st && st.history && st.history.length > 0);
+            if (introduced) cardsIntroduced++;
+            if (introduced && cardMastered(st)) cardsMast++;
+            if (introduced && st.dueAt && st.dueAt <= now) cardsDue++;
+        }
+        const secs = sh.guide?.sections || [];
+        secTotal += secs.length;
+        const tk = ticks[s] || {};
+        for (const sec of secs) if (tk[String(sec.line)]) secTicked++;
+        const scenarios = sh.triage?.scenarios || [];
+        for (const sc of scenarios) {
+            caseTotal++;
+            const sid = sc.id || sc.name;
+            const sess = (triage.sessions || {})[sid];
+            if (casePassed(sess)) casePass++;
+        }
+    }
+    const recent = mistakes.filter(m => !only || m.subject === only);
+    mTotal = recent.length;
+    for (const m of recent) {
+        const st = states[m.cardId];
+        if (st && (st.lastScore || 0) >= 3) mClear++;
+    }
+    // Use introduced cards as denominator when â‰¥3 introduced; otherwise N/A (don't penalize fresh users).
+    const cardDenom = cardsIntroduced >= 3 ? cardsIntroduced : 0;
+    const cards = pct(cardsMast, cardDenom);
+    const sections = pct(secTicked, secTotal);
+    const cases = pct(casePass, caseTotal);
+    const mDone = pct(mClear, mTotal);
+    // Weighted score: cards weight only counts when there are enough introduced cards.
+    const wCards = cardDenom > 0 ? 0.4 : 0;
+    const wSections = 0.3 + (cardDenom > 0 ? 0 : 0.2);
+    const wCases = 0.2;
+    const wMistakes = 0.1 + (cardDenom > 0 ? 0 : 0.2);
+    const weighted = Math.round(wCards * cards.pct + wSections * sections.pct + wCases * cases.pct + wMistakes * mDone.pct);
+    return {
+        cards: { ...cards, mastered: cardsMast, introduced: cardsIntroduced, total: cardsTotal, due: cardsDue, na: cardDenom === 0 },
+        sections: { ...sections, ticked: secTicked, total: secTotal },
+        cases: { ...cases, passed: casePass, total: caseTotal },
+        mistakes: { ...mDone, cleared: mClear, total: mTotal },
+        weighted
+    };
+}

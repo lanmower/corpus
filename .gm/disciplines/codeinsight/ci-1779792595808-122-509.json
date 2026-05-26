@@ -1,0 +1,12 @@
+./site/app.js:122:132 sectionCardCounts
+function sectionCardCounts(subject) {
+    const sh = state.shards[subject];
+    const m = new Map();
+    if (!sh) return m;
+    for (const c of sh.cards) {
+        if (!c.requires || !c.requires.sectionLine) continue;
+        const k = String(c.requires.sectionLine);
+        m.set(k, (m.get(k) || 0) + 1);
+    }
+    return m;
+}

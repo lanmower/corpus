@@ -1,0 +1,2 @@
+./site/app.js:792:792 slugify
+function slugify(t) { return String(t).toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''); }

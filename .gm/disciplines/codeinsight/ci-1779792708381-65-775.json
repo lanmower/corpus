@@ -1,0 +1,5 @@
+./site/triage-llm-worker.js:65:68 load
+function load() {
+    if (!loadPromise) loadPromise = loadOnce().catch(err => { loadPromise = null; throw err; });
+    return loadPromise;
+}

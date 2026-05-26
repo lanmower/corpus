@@ -1,0 +1,2 @@
+./site/flag.js:6:6 toggle
+function toggle(id) { const s = load(); if (s.has(id)) s.delete(id); else s.add(id); save(s); return s.has(id); }

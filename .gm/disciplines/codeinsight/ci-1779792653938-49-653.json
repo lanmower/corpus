@@ -1,0 +1,10 @@
+./site/search.js:49:57 snippet
+function snippet(body, query, radius = 60) {
+    if (!body || !query) return '';
+    const tok = query.trim().toLowerCase().split(/\s+/)[0];
+    if (!tok) return body.slice(0, radius * 2);
+    const i = body.toLowerCase().indexOf(tok);
+    if (i < 0) return body.slice(0, radius * 2);
+    const s = Math.max(0, i - radius), e = Math.min(body.length, i + tok.length + radius);
+    return (s > 0 ? '…' : '') + body.slice(s, e) + (e < body.length ? '…' : '');
+}

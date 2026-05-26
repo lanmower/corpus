@@ -1,0 +1,6 @@
+./site/srs.js:39:43 fuzzInterval
+function fuzzInterval(days, rng = Math.random) {
+    if (days < 2) return days;
+    const delta = Math.round(days * FUZZ_RATIO * (rng() * 2 - 1));
+    return Math.max(1, days + delta);
+}

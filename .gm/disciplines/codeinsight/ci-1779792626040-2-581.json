@@ -1,0 +1,7 @@
+./site/late.js:2:7 lateLevel
+function lateLevel(now = new Date()) {
+    const h = now.getHours();
+    if (h >= 2 && h < 5) return 'sleep';
+    if (h >= 23 || h < 2) return 'late';
+    return 'normal';
+}

@@ -1,0 +1,12 @@
+./site/tutor-panel.js:345:355 showTutorToast
+function showTutorToast(message, duration = 3000) {
+    if (!panelContainer) return;
+    const toast = document.createElement('div');
+    toast.className = 'tutor-toast';
+    toast.textContent = message;
+    panelContainer.appendChild(toast);
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+    }, duration);
+}

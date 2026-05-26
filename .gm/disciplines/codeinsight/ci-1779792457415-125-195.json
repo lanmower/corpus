@@ -1,0 +1,2 @@
+./site/247420.js:125:125 Lt
+function Lt({cmd:e,copied:t,onCopy:n}){return f("div",{class:"cli"},f("span",{class:"prompt"},"$"),f("span",{class:"cmd"},e),f("span",{class:"copy",onclick:()=>n&&n(e)},t?"copied":"copy"))}

@@ -1,0 +1,2 @@
+./site/app.js:61:61 loadShard
+async function loadShard(s) { if (state.shards[s]) return state.shards[s]; state.shards[s] = await fetchJson(`./data/${s}.json`); return state.shards[s]; }

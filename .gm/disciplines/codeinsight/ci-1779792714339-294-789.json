@@ -1,0 +1,5 @@
+./site/tutor-panel.js:294:297 toggleSettings
+function toggleSettings() {
+    showSettings = !showSettings;
+    if (sdkRender) sdkRender();
+}

@@ -24,6 +24,7 @@ import { makeToggleButton } from './theme.js';
 import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from './drag.js';
 import { showContextMenu, closeContextMenu } from './context-menu.js';
 import { initTutorPanel, wireWorkerToPanel, addTutorMessage } from './tutor-panel.js';
+import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn } from './tutor-store.js';
 
 let sdk = null;
 let sdkRender = null;
@@ -352,15 +353,20 @@ function renderTutorOverviewPanel(due, newCount) {
     // Calculate days until exam (placeholder: hardcode to 30 days)
     const examDaysLeft = 30;
 
-    // Send session overview to tutor worker
+    // Proactive daily check-in: only when enabled in config and not yet greeted today.
     try {
-        state.tutorWorker.postMessage({
-            cmd: 'session-overview',
-            dueCount: due,
-            newCount: newCount,
-            weakestSubject: weakestSubject,
-            examDaysLeft: examDaysLeft
-        });
+        const cfg = loadTutorConfig();
+        // Decide here; the panel calls markCheckedIn() only on session-overview-done,
+        // so a WebGPU-less device doesn't silently consume the daily greeting.
+        if (cfg.proactiveCheckins && shouldCheckInToday()) {
+            state.tutorWorker.postMessage({
+                cmd: 'session-overview',
+                dueCount: due,
+                newCount: newCount,
+                weakestSubject: weakestSubject,
+                examDaysLeft: examDaysLeft
+            });
+        }
     } catch (err) {
         warn('tutor session overview failed', err.message);
     }
@@ -1779,21 +1785,16 @@ function gradeReview(cardId, score) {
     undo.record(cardId, prev);
     showUndoToast();
 
-    // Send to tutor for coaching (non-blocking)
-    if (state.tutorWorker && card0) {
+    // Send to tutor for coaching (non-blocking). Gated by config; uses the
+    // worker's actual handler cmd ('generate-coaching', tutor.js:196).
+    if (state.tutorWorker && card0 && loadTutorConfig().autoCoachOnReview) {
         try {
             state.tutorWorker.postMessage({
-                cmd: 'user-graded',
-                cardId: cardId,
+                cmd: 'generate-coaching',
                 front: card0.front,
                 back: card0.back,
                 subject: card0._subject,
-                score: score,
-                history: {
-                    attempts: prev.reviews || 0,
-                    easeFactor: prev.easeFactor || 1.0,
-                    lastAttempt: prev.lastReviewDate || null
-                }
+                grade: score
             });
         } catch (err) {
             // Non-blocking: tutor errors don't crash review flow

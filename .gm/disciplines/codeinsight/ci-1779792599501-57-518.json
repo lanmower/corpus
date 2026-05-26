@@ -1,0 +1,5 @@
+./site/app.js:57:60 loadManifest
+async function loadManifest() {
+    state.manifest = await fetchJson('./data/manifest.json');
+    try { schedule.setSubjectList(state.manifest.subjects.map(s => s.subject)); } catch {}
+}

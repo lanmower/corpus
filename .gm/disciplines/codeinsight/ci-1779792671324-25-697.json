@@ -1,0 +1,7 @@
+./site/theme.js:25:30 setTheme
+function setTheme(t) {
+    if (!VALID.includes(t)) t = 'auto';
+    try { localStorage.setItem(KEY, t); } catch {}
+    applyTheme(t);
+    return t;
+}

@@ -1,0 +1,22 @@
+./site/schedule.js:43:63 loadConfig
+function loadConfig() {
+    try {
+        const raw = localStorage.getItem(CFG_KEY);
+        const cfg = raw ? JSON.parse(raw) : {};
+        // Priority: schedule config examDate > SRS config examDate > default
+        let examDate = cfg.examDate;
+        if (!examDate) {
+            try {
+                const srsCfg = JSON.parse(localStorage.getItem('corpus.srs.config') || '{}');
+                examDate = srsCfg.examDate;
+            } catch {}
+        }
+        if (!examDate) examDate = DEFAULT_CONFIG.examDate;
+        return fillSubjectMaps({
+            ...DEFAULT_CONFIG, ...cfg, examDate,
+            availability: { ...DEFAULT_CONFIG.availability, ...(cfg.availability || {}) },
+            weights: { ...(cfg.weights || {}) },
+            enabled: { ...(cfg.enabled || {}) }
+        });
+    } catch { return defaultConfig(); }
+}

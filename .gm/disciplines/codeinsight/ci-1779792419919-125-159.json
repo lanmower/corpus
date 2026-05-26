@@ -1,0 +1,2 @@
+./site/247420.js:125:125 qt
+function qt({id:e,name:t,icon:n,active:s,badge:r,onClick:i}={}){let a=(t||"?").slice(0,2).toUpperCase();return m("div",{class:"cm-server-icon"+(s?" active":""),onclick:i,role:"button","aria-label":t,"aria-pressed":s?"true":"false",tabindex:"0","data-id":e,onkeydown:o=>{(o.key==="Enter"||o.key===" ")&&(o.preventDefault(),i&&i(o))}},m("span",{class:"cm-server-pill"}),n?m("img",{src:n,alt:t}):m("span",{},a),r?m("span",{class:"cm-server-badge"},r>99?"99+":String(r)):null)}

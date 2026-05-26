@@ -1,0 +1,16 @@
+./site/app.js:1061:1075 applyTocFilter
+function applyTocFilter(panel, q) {
+    const needle = String(q || '').trim().toLowerCase();
+    const rows = panel.querySelectorAll('.toc-row');
+    rows.forEach(r => {
+        const title = r.getAttribute('data-title') || '';
+        const match = !needle || title.includes(needle);
+        r.style.display = match ? '' : 'none';
+    });
+    // hide groups with no visible children + non-matching h2
+    panel.querySelectorAll('.toc-group').forEach(g => {
+        const visible = Array.from(g.querySelectorAll('.toc-row')).some(r => r.style.display !== 'none');
+        g.style.display = visible ? '' : 'none';
+        if (needle && visible && g.tagName === 'DETAILS') g.setAttribute('open', 'open');
+    });
+}

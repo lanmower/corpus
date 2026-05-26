@@ -1,0 +1,21 @@
+./scripts/fix_mojibake.js:76:95 applyFixes
+function applyFixes(buf) {
+    let count = 0;
+    let result = buf;
+    for (const { from, to } of BYTE_FIXES) {
+        const parts = [];
+        let last = 0;
+        let idx;
+        while ((idx = bufIndexOf(result, from, last)) !== -1) {
+            parts.push(result.subarray(last, idx));
+            parts.push(to);
+            last = idx + from.length;
+            count++;
+        }
+        if (parts.length) {
+            parts.push(result.subarray(last));
+            result = Buffer.concat(parts);
+        }
+    }
+    return { buf: result, count };
+}

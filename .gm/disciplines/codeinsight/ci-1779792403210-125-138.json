@@ -1,0 +1,2 @@
+./site/247420.js:125:125 Is
+function Is(){if(P||!De()||!window.matchMedia)return;P=window.matchMedia("(prefers-color-scheme: dark)");let e=()=>{if(pe==="auto")for(let t of Ue)try{t({mode:"auto",resolved:P.matches?"ink":"paper"})}catch{}};P.addEventListener?P.addEventListener("change",e):P.addListener&&P.addListener(e)}

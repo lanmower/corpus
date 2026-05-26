@@ -1,0 +1,2 @@
+./site/calendar.js:100:100 fmtTime
+function fmtTime(min) { const h = Math.floor(min / 60), m = min % 60; return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`; }

@@ -1,0 +1,8 @@
+./site/srs.js:220:226 isEligible
+function isEligible(card, state, ticksForSubject) {
+    if (isIntroduced(state)) return true;
+    const ticks = ticksForSubject || {};
+    const line = card?.requires?.sectionLine;
+    if (line != null) return !!ticks[String(line)];
+    return Object.values(ticks).some(v => v === true);
+}

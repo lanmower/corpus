@@ -1,0 +1,99 @@
+./site/app.js:794:891 buildGuideToc
+function buildGuideToc(subj, shard, ticks) {
+    const counts = sectionCardCounts(subj);
+    const sections = (shard.guide?.sections || []).filter(s => s.level === 2 || s.level === 3);
+    // Group H3 children under H2 parents
+    const groups = [];
+    let cur = null;
+    for (const s of sections) {
+        if (s.level === 2) { cur = { h2: s, children: [] }; groups.push(cur); }
+        else if (s.level === 3) {
+            if (!cur) { cur = { h2: null, children: [] }; groups.push(cur); }
+            cur.children.push(s);
+        }
+    }
+    const totalSections = sections.length;
+    const tickedTotal = sections.filter(s => ticks[String(s.line)]).length;
+
+    const filterInput = el('input', {
+        type: 'search', class: 'toc-filter', placeholder: 'filter sections…',
+        'aria-label': 'filter guide sections',
+        on: { input: e => applyTocFilter(panel, e.target.value) }
+    });
+
+    const renderRow = (s) => {
+        const lineKey = String(s.line);
+        const checked = !!ticks[lineKey];
+        const n = counts.get(lineKey) || 0;
+        const badgeText = n ? `(${n})` : '';
+        const anchorId = `g-${slugify(s.title)}-${s.line}`;
+        const row = el('div', { class: `toc-row h${s.level}` + (checked ? ' done' : ''), 'data-title': s.title.toLowerCase() },
+            el('input', {
+                type: 'checkbox', class: 'guide-tick',
+                ...(checked ? { checked: 'checked' } : {}),
+                'aria-label': `mark "${s.title}" understood`,
+                on: { change: e => {
+                    const all = loadGuideTicks();
+                    (all[subj] = all[subj] || {})[lineKey] = e.target.checked;
+                    saveGuideTicks(all);
+                    row.classList.toggle('done', e.target.checked);
+                    lastpos.save('subject', subj);
+                    render();
+                } }
+            }),
+            el('a', { class: 'toc-link', href: `#${anchorId}`,
+                on: { click: e => {
+                    e.preventDefault();
+                    const target = document.getElementById(anchorId);
+                    if (target) {
+                        const panel = target.closest('.chunk-panel');
+                        if (panel && panel.classList.contains('chunk-collapsed')) {
+                            panel.classList.remove('chunk-collapsed');
+                            const btn = panel.closest('.chunked-guide')?.querySelector('.chunk-expand-btn');
+                            if (btn) { const remaining = panel.closest('.chunked-guide').querySelectorAll('.chunk-collapsed').length; if (!remaining) btn.remove(); }
+                        }
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                } } }, s.title),
+            badgeText ? el('span', { class: 'sec-card-badge' }, badgeText) : null,
+            n > 0 ? el('button', { class: 'chip toc-review-btn', 'aria-label': `review ${n} card${n === 1 ? '' : 's'} from this section`,
+                on: { click: e => {
+                    e.preventDefault();
+                    state.sectionFilter = s.line;
+                    state.reviewSubjectFilter = subj;
+                    resetReviewQueue();
+                    go('review', subj);
+                } } }, `review →`) : null
+        );
+        return row;
+    };
+
+    const groupEls = groups.map((g, gi) => {
+        if (!g.h2) {
+            return el('div', { class: 'toc-group toc-group-bare' }, ...g.children.map(renderRow));
+        }
+        const childRows = g.children.map(renderRow);
+        const childTicked = g.children.filter(s => ticks[String(s.line)]).length;
+        const h2Ticked = !!ticks[String(g.h2.line)];
+        const totalKids = g.children.length;
+        const progressLabel = totalKids ? `${childTicked}/${totalKids}` : (h2Ticked ? 'done' : '');
+        const details = el('details', { class: 'toc-group', open: 'open' },
+            el('summary', { class: 'toc-h2-summary' },
+                el('span', { class: 'toc-h2-title' }, g.h2.title),
+                el('span', { class: 'toc-h2-progress mono' }, progressLabel)
+            ),
+            renderRow(g.h2),
+            ...childRows
+        );
+        return details;
+    });
+
+    const panel = el('div', { class: 'panel toc-panel' },
+        el('div', { class: 'panel-head' },
+            el('span', { class: 'title' }, 'contents'),
+            el('span', { class: 'toc-progress-summary mono' }, `${tickedTotal}/${totalSections}`)),
+        filterInput,
+        el('div', { class: 'toc-groups' }, ...groupEls)
+    );
+    return panel;
+}

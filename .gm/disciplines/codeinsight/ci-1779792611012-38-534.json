@@ -1,0 +1,9 @@
+./site/calendar.js:38:45 weekDays
+function weekDays(anchorIso) {
+    const a = parseIso(anchorIso);
+    const dow = a.getUTCDay();
+    const start = new Date(a); start.setUTCDate(a.getUTCDate() - dow);
+    const out = [];
+    for (let i = 0; i < 7; i++) { const d = new Date(start); d.setUTCDate(start.getUTCDate() + i); out.push(isoDate(d)); }
+    return out;
+}

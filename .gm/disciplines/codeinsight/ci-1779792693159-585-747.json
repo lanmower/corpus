@@ -1,0 +1,6 @@
+./site/triage-live.js:585:589 highlight_card
+highlight_card({ id }) {
+        for (const c of state.cards) c.highlighted = (c.id === id);
+        renderScratchpad(); persistActive();
+        return { ok: true };
+    }

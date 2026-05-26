@@ -1,0 +1,4 @@
+./scripts/fix_mojibake.js:72:74 bufIndexOf
+function bufIndexOf(haystack, needle, fromIndex = 0) {
+    return haystack.indexOf(needle, fromIndex);
+}

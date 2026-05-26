@@ -1,0 +1,21 @@
+./site/triage-live.js:656:675 buildSnapshot
+function buildSnapshot(phase) {
+    phase = phase || state.phase || 'asking';
+    const sc = currentScenario();
+    const stem = sc ? caseStem(sc) : 'none — pick a scenario from the left first';
+    const cardsText = state.cards.length === 0
+        ? '(empty — student has not committed any cards yet)'
+        : state.cards.map(c => `- [${c.id}] ${c.kind}: ${c.title} — ${c.body}`).join('\n');
+    let answerKey = '';
+    if (sc && phase === 'grading') {
+        const atoms = (sc.atoms || []).slice(0, 8).map(a => `- ${a.atom}: ${(a.definition || '').slice(0, 200)}`).join('\n');
+        const ex = (sc.examples && sc.examples[0]) || {};
+        answerKey = `\n\n=== ANSWER KEY (do not paraphrase verbatim — use to grade) ===\ncanonical atoms:\n${atoms}\nrecommended plan: ${ex.recommendation || '(not specified)'}\nreasoning: ${ex.reasoning || '(not specified)'}`;
+    }
+    return SYSTEM_PROMPT_TMPL
+        .replace('{{PHASE}}', phase)
+        .replace('{{STEM}}', stem)
+        .replace('{{N}}', state.cards.length)
+        .replace('{{CARDS}}', cardsText)
+        .replace('{{ANSWER_KEY}}', answerKey);
+}

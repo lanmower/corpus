@@ -1,0 +1,2 @@
+./site/247420.js:123:123 jr
+function jr(e){return h("div",{class:"chat-bubble chat-code",ref:n=>{n&&n.dataset.codeKey!==(e.lang||"")+"|"+(e.code||"").length&&(n.dataset.codeKey=(e.lang||"")+"|"+(e.code||"").length,ls(n))}},h("div",{class:"chat-code-head"},h("span",{class:"lang"},e.lang||"code"),e.filename?h("span",{class:"name"},e.filename):null),h("pre",{},h("code",{class:e.lang?"lang-"+e.lang+" language-"+e.lang:""},e.code||"")))}

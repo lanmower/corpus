@@ -21,6 +21,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     const lastpos = await import('./site/lastpos.js');
     const cram = await import('./site/cram.js');
     const justread = await import('./site/justread.js');
+    const tutorStore = await import('./site/tutor-store.js');
     const appSrc = READ('site/app.js'), styleCss = READ('site/style.css'), indexHtml = READ('site/index.html');
     const liveSrc = READ('site/triage-live.js'), liveHtml = READ('site/triage-live.html'), liveCss = READ('site/triage-live.css'), workerSrc = READ('site/triage-llm-worker.js');
 
@@ -791,6 +792,85 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(guideSubjs.size <= 2, `guide-section subject cap (got ${guideSubjs.size})`);
         const caseSubjs = new Set(capDay.filter(b => (b.plannedCases || []).length).map(b => b.subject));
         assert.ok(caseSubjs.size <= 2, `case subject cap (got ${caseSubjs.size})`);
+    });
+
+    console.log('# tutor-store: history persistence + config + collapsed + checkin + corrupt/quota degradation');
+    t('tutor history round-trip + cap + corrupt-safe; config defaults+merge; collapsed default; daily checkin gate; unified routing (no regex)', () => {
+        localStorage.clear();
+        // history round-trip
+        const turns = [{ role: 'user', text: 'hi', ts: 1 }, { role: 'assistant', text: 'hello', ts: 2 }];
+        tutorStore.saveHistory(turns);
+        const loaded = tutorStore.loadHistory();
+        assert.strictEqual(loaded.length, 2);
+        assert.strictEqual(loaded[0].role, 'user'); assert.strictEqual(loaded[1].text, 'hello');
+        // worker projection: {role,content}, capped to 12
+        const wh = tutorStore.toWorkerHistory(Array.from({ length: 20 }, (_, i) => ({ role: 'user', text: 'm' + i })));
+        assert.strictEqual(wh.length, 12); assert.strictEqual(wh[0].content, 'm8');
+        // corrupt JSON degrades to [] without throwing, and clears the key
+        localStorage.setItem(tutorStore.HISTORY_KEY, '{not json');
+        assert.deepStrictEqual(tutorStore.loadHistory(), []);
+        // non-array / bad-shape entries filtered out
+        localStorage.setItem(tutorStore.HISTORY_KEY, JSON.stringify([{ role: 'bogus' }, { role: 'user', text: 'ok', ts: 1 }, 'junk']));
+        assert.strictEqual(tutorStore.loadHistory().length, 1);
+        // clearHistory empties it
+        tutorStore.saveHistory(turns); tutorStore.clearHistory();
+        assert.deepStrictEqual(tutorStore.loadHistory(), []);
+        // config defaults + persistence + merge of partial
+        const cfg = tutorStore.loadConfig();
+        assert.strictEqual(cfg.proactiveCheckins, true); assert.strictEqual(cfg.autoCoachOnReview, true);
+        tutorStore.saveConfig({ proactiveCheckins: false });
+        const cfg2 = tutorStore.loadConfig();
+        assert.strictEqual(cfg2.proactiveCheckins, false); assert.strictEqual(cfg2.autoCoachOnReview, true); // unspecified key keeps default
+        // corrupt config falls back to defaults
+        localStorage.setItem(tutorStore.CONFIG_KEY, 'xx');
+        assert.strictEqual(tutorStore.loadConfig().proactiveCheckins, true);
+        // collapsed: default true when unset, persists 0/1
+        assert.strictEqual(tutorStore.loadCollapsed(true), true);
+        tutorStore.saveCollapsed(false);
+        assert.strictEqual(tutorStore.loadCollapsed(true), false);
+        assert.strictEqual(localStorage.getItem(tutorStore.COLLAPSED_KEY), '0');
+        // daily check-in gate: true before mark, false after, same day
+        localStorage.removeItem(tutorStore.LAST_CHECKIN_KEY);
+        assert.strictEqual(tutorStore.shouldCheckInToday(), true);
+        tutorStore.markCheckedIn();
+        assert.strictEqual(tutorStore.shouldCheckInToday(), false);
+        // routing predictability: the panel no longer branches on a guide-question regex
+        const panelSrc = READ('site/tutor-panel.js');
+        assert.ok(!/guide-question/.test(panelSrc), 'panel must not route via guide-question regex');
+        assert.ok(/cmd: 'user-message'/.test(panelSrc), 'panel uses the unified user-message path');
+        // worker exposes the new stop + seed-history commands
+        const workerTutor = READ('site/tutor.js');
+        assert.ok(/cmd === 'stop'/.test(workerTutor) && /cmd === 'seed-history'/.test(workerTutor), 'worker handles stop + seed-history');
+        // app.js coaching uses the handler's real cmd, gated by config
+        const app = READ('site/app.js');
+        assert.ok(/cmd: 'generate-coaching'/.test(app), 'app posts generate-coaching (matches worker handler)');
+        assert.ok(/autoCoachOnReview/.test(app) && /proactiveCheckins/.test(app), 'app gates coaching/checkin on config');
+        // message actions: SDK-agnostic action bar with copy + regenerate, hidden while thinking/streaming
+        assert.ok(/tutor-action-bar/.test(panelSrc) && /updateActionBar/.test(panelSrc), 'panel has the SDK-agnostic action bar');
+        assert.ok(/clipboard\?\.writeText/.test(panelSrc), 'copy uses clipboard');
+        assert.ok(/regenerateLast/.test(panelSrc), 'retry wires regenerateLast');
+        // review-fix invariants:
+        // worker owns its own interrupted flag (transformers #interrupted is private)
+        assert.ok(/state\.interrupted/.test(workerTutor) && /state\.interrupted = true/.test(workerTutor), 'worker owns interrupted flag');
+        assert.ok(!/state\.stopping\.interrupted/.test(workerTutor), 'no read of private stopping.interrupted');
+        // stop handler must NOT dispose pastKV (race); runChat owns KV disposal on interrupt
+        const stopBlock = workerTutor.slice(workerTutor.indexOf("cmd === 'stop'"), workerTutor.indexOf("cmd === 'stop'") + 220);
+        assert.ok(!/pastKV/.test(stopBlock), 'stop handler does not touch pastKV (no mid-gen dispose race)');
+        // empty assistant replies are not pushed into worker history
+        assert.ok(/if \(reply && reply\.trim\(\)\) pushHistory/.test(workerTutor), 'no empty assistant turn pushed');
+        // auto-coaching uses a distinct ephemeral event, not the persisted coaching-done
+        assert.ok(/review-coaching-done/.test(workerTutor) && /review-coaching-done/.test(panelSrc), 'auto-coaching is ephemeral (review-coaching-done)');
+        // regenerate derives from the real preceding user turn + reseeds prior context (no dup)
+        assert.ok(/lastRegenerableUserText/.test(panelSrc), 'regenerate uses lastRegenerableUserText');
+        assert.ok(/slice\(0, -1\)/.test(panelSrc), 'regenerate reseeds prior context excluding resent turn');
+        // checkin marked only on session-overview-done in the panel, not eagerly in app.js
+        assert.ok(/event === 'session-overview-done'\) \{[\s\S]{0,160}markCheckedIn\(\)/.test(panelSrc), 'checkin marked on session-overview-done');
+        const appCheckinBlock = app.slice(app.indexOf('proactiveCheckins && shouldCheckInToday'), app.indexOf('proactiveCheckins && shouldCheckInToday') + 320);
+        assert.ok(!/markCheckedIn/.test(appCheckinBlock), 'app.js does not eagerly markCheckedIn');
+        // broadened quota detection
+        const storeSrc = READ('site/tutor-store.js');
+        assert.ok(/e\.code === 22/.test(storeSrc) && /1014/.test(storeSrc), 'quota detection covers Chrome+Firefox codes');
+        localStorage.clear();
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

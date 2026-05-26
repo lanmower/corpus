@@ -1,0 +1,9 @@
+./site/app.js:1819:1826 undoLastGrade
+function undoLastGrade() {
+    const r = undo.consume(); if (!r) return;
+    const states = srs.loadStates();
+    states[r.cardId] = r.prevState;
+    srs.saveStates(states);
+    const t = document.getElementById('undo-toast'); if (t) t.remove();
+    if (state.route === 'review') renderReview();
+}

@@ -1,0 +1,2 @@
+./scripts/build_guides.js:12:12 lsSafe
+function lsSafe(d) { try { return fs.readdirSync(d); } catch { return []; } }

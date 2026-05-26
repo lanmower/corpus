@@ -1,0 +1,10 @@
+./site/tutor-panel.js:183:191 makeToggleBtn
+function makeToggleBtn() {
+    const toggleBtn = document.createElement('button');
+    toggleBtn.id = 'tutor-collapse-btn';
+    toggleBtn.className = 'tutor-collapse-btn';
+    toggleBtn.textContent = isPanelCollapsed ? '←' : '→';
+    toggleBtn.setAttribute('aria-label', 'Toggle study coach panel');
+    toggleBtn.addEventListener('click', toggleTutorCollapse);
+    return toggleBtn;
+}

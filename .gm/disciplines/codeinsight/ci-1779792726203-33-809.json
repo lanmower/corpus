@@ -1,0 +1,30 @@
+./site/tutor.js:33:61 loadModelOnce
+async function loadModelOnce() {
+    self.postMessage({ event: 'model-loading', stage: 'probing webgpu' });
+    if (!('gpu' in navigator)) throw new Error('navigator.gpu missing — WebGPU required');
+    const adapter = await navigator.gpu.requestAdapter({ powerPreference: 'high-performance' });
+    if (!adapter) throw new Error('no WebGPU adapter');
+
+    self.postMessage({ event: 'model-loading', stage: 'downloading Bonsai-1.7B (1-bit)' });
+    state.generator = await pipeline('text-generation', MODEL_ID, {
+        device: 'webgpu',
+        dtype: 'q1',
+        progress_callback: (info) => {
+            if (info?.status === 'progress_total' || info?.status === 'progress') {
+                self.postMessage({
+                    event: 'model-downloading',
+                    loaded: Number(info.loaded ?? 0),
+                    total: Number(info.total ?? 0),
+                    progress: Number(info.progress ?? 0)
+                });
+            }
+        }
+    });
+
+    self.postMessage({ event: 'model-loading', stage: 'optimizing for 1-bit execution' });
+    const warm = state.generator.tokenizer('a');
+    await state.generator.model.generate({ ...warm, max_new_tokens: 1 });
+
+    state.ready = true;
+    self.postMessage({ event: 'ready' });
+}

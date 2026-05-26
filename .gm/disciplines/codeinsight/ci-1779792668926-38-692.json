@@ -1,0 +1,4 @@
+./site/sw.js:38:40 isStaticAsset
+function isStaticAsset(url) {
+    return /\.(woff2?|ttf|otf|eot|png|jpe?g|gif|webp|ico)$/i.test(url.pathname);
+}

@@ -1,0 +1,17 @@
+./scripts/build_data.js:311:326 attachRequires
+function attachRequires(cards, sections, subject) {
+    if (!Array.isArray(sections) || !sections.length) return;
+    const secTokens = sections.map(s => ({ line: s.line, title: s.title, set: new Set(tokenize(s.title)) }));
+    for (const c of cards) {
+        const cardTokens = tokenize(`${c.front} ${c.back || ''}`);
+        if (!cardTokens.length) continue;
+        let best = null, bestN = 0;
+        for (const sec of secTokens) {
+            if (!sec.set.size) continue;
+            let n = 0;
+            for (const t of cardTokens) if (sec.set.has(t)) n++;
+            if (n > bestN) { bestN = n; best = sec; }
+        }
+        if (best && bestN >= 1) c.requires = { subject, sectionLine: String(best.line) };
+    }
+}

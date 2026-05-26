@@ -1,0 +1,53 @@
+./site/app.js:1839:1890 
+e => {
+    const tag = e.target?.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    if (e.key === '?' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openShortcutsModal(); return; }
+    // g-prefix vim nav
+    if (Date.now() - gPrefixTs < 1500) {
+        const map = { h: 'today', r: 'review', s: 'stats', g: 'guides', m: 'mistakes', t: 'today' };
+        const dest = map[e.key];
+        if (dest) { e.preventDefault(); gPrefixTs = 0; go(dest); return; }
+        gPrefixTs = 0;
+    }
+    if (e.key === 'g' && !e.ctrlKey && !e.metaKey) { gPrefixTs = Date.now(); return; }
+    // global keys
+    if (e.key === 't' && !e.ctrlKey && !e.metaKey && state.route !== 'review') {
+        e.preventDefault(); state.timerApi?.toggleVis(); return;
+    }
+    if (e.key === '+' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openQuickAdd(); return; }
+    if (e.key === 'u' && !e.ctrlKey && !e.metaKey && undo.peek()) { e.preventDefault(); undoLastGrade(); return; }
+    if (e.key === 'Escape') {
+        if (document.body.classList.contains('just-read') && state.route === 'subject') {
+            justread.toggle(state.currentSubject);
+            justread.applyClass(false);
+            return;
+        }
+        closeShortcutsModal(); return;
+    }
+    if ((e.key === 'r' || e.key === 'R') && state.route === 'subject' && state.currentSubject) {
+        e.preventDefault();
+        const on = justread.toggle(state.currentSubject);
+        justread.applyClass(on);
+        return;
+    }
+    if (state.route !== 'review') return;
+    if (e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        if (!state.reviewRevealed && state.reviewQueue?.length) { state.reviewRevealed = true; renderReview(); }
+    } else if (e.key === 's' || e.key === 'S') {
+        if (state.reviewQueue?.length) { e.preventDefault(); skipReview(); }
+    } else if (e.key === 'f' || e.key === 'F') {
+        const card = state.reviewQueue?.[state.reviewIndex];
+        if (card) { e.preventDefault(); flag.toggle(card.id); renderReview(); }
+    } else if (state.reviewRevealed) {
+        const card = state.reviewQueue?.[state.reviewIndex];
+        if (!card) return;
+        if (DEBUG && /^[0-5]$/.test(e.key)) { e.preventDefault(); gradeReview(card.id, parseInt(e.key, 10)); }
+        else if (!DEBUG && /^[1-4]$/.test(e.key)) {
+            e.preventDefault();
+            const g = FRIENDLY_GRADES.find(x => x.friendly === parseInt(e.key, 10));
+            if (g) gradeReview(card.id, g.smscore);
+        }
+    }
+}

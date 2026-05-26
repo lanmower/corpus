@@ -1,0 +1,2 @@
+./site/247420.js:125:125 Rs
+function Rs({leading:e=[],trailing:t=[],dense:n=!1,children:s}={}){let r="ds-ep-toolbar"+(n?" dense":"");return b("div",{class:r,role:"toolbar"},b("div",{class:"ds-ep-toolbar-leading"},...C(e)),s!=null?b("div",{class:"ds-ep-toolbar-center"},...C(s)):null,b("div",{class:"ds-ep-toolbar-trailing"},...C(t)))}

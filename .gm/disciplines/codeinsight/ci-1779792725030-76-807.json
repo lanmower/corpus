@@ -1,0 +1,35 @@
+./site/tutor.js:76:109 runChat
+async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320 } = {}) {
+    if (!state.ready) {
+        self.postMessage({ event: 'unavailable', error: 'model not ready' });
+        return '';
+    }
+    state.stopping.reset();
+    self.postMessage({ event: 'coaching-start' });
+    let buf = '';
+    const streamer = new TextStreamer(state.generator.tokenizer, {
+        skip_prompt: true,
+        skip_special_tokens: true,
+        callback_function: (chunk) => {
+            buf += chunk;
+            self.postMessage({ event: 'token', token: chunk });
+        }
+    });
+    state.pastKV ??= new DynamicCache();
+    try {
+        const out = await state.generator(messages, {
+            max_new_tokens: maxTokens,
+            do_sample: false,
+            streamer,
+            stopping_criteria: state.stopping,
+            past_key_values: state.pastKV
+        });
+        const content = out?.[0]?.generated_text?.at?.(-1)?.content ?? buf;
+        const interrupted = state.stopping.interrupted === true;
+        self.postMessage({ event: doneEvent, message: content, interrupted });
+        return content;
+    } catch (e) {
+        self.postMessage({ event: 'error', error: String(e?.message || e) });
+        return '';
+    }
+}

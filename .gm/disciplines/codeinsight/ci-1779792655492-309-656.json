@@ -1,0 +1,12 @@
+./site/srs.js:309:319 getForecast
+function getForecast(cardIds, days = 14, states = loadStates()) {
+    const now = Date.now();
+    const buckets = Array.from({ length: days }, (_, i) => ({ day: i, date: dateOf(now + i * 86400000), count: 0 }));
+    for (const id of cardIds) {
+        const s = states[id];
+        if (!s || !s.dueAt) continue;
+        const offset = Math.floor((s.dueAt - now) / 86400000);
+        if (offset >= 0 && offset < days) buckets[offset].count++;
+    }
+    return buckets;
+}

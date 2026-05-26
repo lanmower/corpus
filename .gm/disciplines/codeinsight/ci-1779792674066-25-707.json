@@ -1,0 +1,2 @@
+./site/timer.js:25:25 save
+function save(t) { try { localStorage.setItem(KEY, JSON.stringify(t)); } catch {} }

@@ -1,0 +1,2 @@
+./site/triage-live.js:862:862 tokenize
+function tokenize(s) { return new Set(String(s).toLowerCase().match(/[a-z]{4,}/g) || []); }

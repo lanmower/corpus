@@ -1,0 +1,6 @@
+./site/app.js:1995:1999 collectReviewTags
+function collectReviewTags(allCards) {
+    const counts = {};
+    for (const c of allCards) for (const t of (c.tags || [])) counts[t] = (counts[t] || 0) + 1;
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(x => x[0]);
+}

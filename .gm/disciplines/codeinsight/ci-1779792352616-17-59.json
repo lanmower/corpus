@@ -1,0 +1,16 @@
+./scripts/compress_media.js:17:31 preflight
+function preflight() {
+    try {
+        const enc = execSync('ffmpeg -hide_banner -encoders 2>&1', { encoding: 'utf8' });
+        const okOpus = /libopus/i.test(enc);
+        const okAV1 = /libaom-av1/i.test(enc);
+        if (!okOpus || !okAV1) {
+            console.error('! Missing encoders. libopus=' + okOpus + ' libaom-av1=' + okAV1);
+            console.error('  Install ffmpeg with libaom + libopus (e.g. gyan.dev "essentials" build on Windows).');
+            process.exit(2);
+        }
+    } catch (e) {
+        console.error('! ffmpeg not on PATH:', e.message.split('\n')[0]);
+        process.exit(2);
+    }
+}

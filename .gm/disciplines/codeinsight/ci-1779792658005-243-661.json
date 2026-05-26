@@ -1,0 +1,7 @@
+./site/srs.js:243:248 getNewEligibleCards
+function getNewEligibleCards(cards, states = loadStates(), ticksAll = {}) {
+    return cards.filter(c => {
+        if (isIntroduced(states[c.id])) return false;
+        return isEligible(c, states[c.id], ticksAll[c._subject] || {});
+    });
+}

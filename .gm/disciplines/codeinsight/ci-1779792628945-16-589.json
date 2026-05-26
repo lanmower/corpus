@@ -1,0 +1,5 @@
+./site/mastery.js:16:19 cardMastered
+function cardMastered(state) {
+    if (!state) return false;
+    return (state.lastScore >= 4) && ((state.interval || 0) >= 21);
+}

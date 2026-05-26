@@ -1,0 +1,13 @@
+./scripts/build_data.js:328:339 buildShard
+function buildShard(subject) {
+    const cards = loadCards(subject);
+    const guide = loadGuide(subject);
+    if (guide && guide.sections) attachRequires(cards, guide.sections, subject);
+    return {
+        subject,
+        cat: SUBJECT_CAT[subject] || 'green',
+        cards,
+        triage: loadTriage(subject),
+        guide
+    };
+}

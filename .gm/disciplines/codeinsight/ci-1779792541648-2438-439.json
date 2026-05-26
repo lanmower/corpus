@@ -1,0 +1,37 @@
+./site/app.js:2438:2473 renderMasteryRing
+function renderMasteryRing() {
+    const m = mastery.overallProgress(state.manifest, state.shards);
+    const r = 48, c = 2 * Math.PI * r;
+    const off = c * (1 - m.weighted / 100);
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('class', 'mastery-ring'); svg.setAttribute('viewBox', '0 0 120 120');
+    svg.setAttribute('width', '120'); svg.setAttribute('height', '120');
+    svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', `overall mastery ${m.weighted}%`);
+    const bg = document.createElementNS(svgNS, 'circle');
+    bg.setAttribute('cx', '60'); bg.setAttribute('cy', '60'); bg.setAttribute('r', String(r));
+    bg.setAttribute('fill', 'none'); bg.setAttribute('stroke', 'var(--panel-3)'); bg.setAttribute('stroke-width', '10');
+    svg.appendChild(bg);
+    const fg = document.createElementNS(svgNS, 'circle');
+    fg.setAttribute('cx', '60'); fg.setAttribute('cy', '60'); fg.setAttribute('r', String(r));
+    fg.setAttribute('fill', 'none'); fg.setAttribute('stroke', 'var(--c-mastered, #6BB377)'); fg.setAttribute('stroke-width', '10');
+    fg.setAttribute('stroke-dasharray', String(c)); fg.setAttribute('stroke-dashoffset', String(off));
+    fg.setAttribute('stroke-linecap', 'round'); fg.setAttribute('transform', 'rotate(-90 60 60)');
+    svg.appendChild(fg);
+    const txt = document.createElementNS(svgNS, 'text');
+    txt.setAttribute('x', '60'); txt.setAttribute('y', '66'); txt.setAttribute('text-anchor', 'middle');
+    txt.setAttribute('font-size', '24'); txt.setAttribute('font-weight', '700'); txt.setAttribute('fill', 'currentColor');
+    txt.textContent = `${m.weighted}%`;
+    svg.appendChild(txt);
+    const wrap = el('div', { class: 'panel mastery-ring-panel' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'overall mastery')),
+        el('div', { class: 'mastery-ring-row' }, svg,
+            el('div', { class: 'mastery-quad' },
+                el('div', { class: 'quad-row' }, el('span', {}, 'cards'), el('span', { class: 'mono' }, `${m.cards.pct}% (${m.cards.mastered}/${m.cards.total}, ${m.cards.due} due)`)),
+                el('div', { class: 'quad-row' }, el('span', {}, 'sections'), el('span', { class: 'mono' }, `${m.sections.pct}% (${m.sections.ticked}/${m.sections.total})`)),
+                el('div', { class: 'quad-row' }, el('span', {}, 'cases'), el('span', { class: 'mono' }, `${m.cases.pct}% (${m.cases.passed}/${m.cases.total})`)),
+                el('div', { class: 'quad-row' }, el('span', {}, 'mistakes'), el('span', { class: 'mono' }, `${m.mistakes.pct}% (${m.mistakes.cleared}/${m.mistakes.total})`))
+            ))
+    );
+    return wrap;
+}

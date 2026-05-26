@@ -1,0 +1,4 @@
+./site/mastery.js:6:8 loadGuideTicks
+function loadGuideTicks() {
+    try { return JSON.parse(localStorage.getItem('corpus.guide.v1') || '{}'); } catch { return {}; }
+}

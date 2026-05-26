@@ -1,0 +1,101 @@
+./site/tutor.js:171:270 
+async (e) => {
+    const data = e.data || {};
+    const cmd = data.cmd;
+    try {
+        if (cmd === 'init' || cmd === 'load-model') {
+            await ensureLoaded();
+            return;
+        }
+        if (cmd === 'load-guide-shard') {
+            buildGuideIndex(data.shard);
+            return;
+        }
+        if (cmd === 'card-loaded') {
+            // No-op — kept for protocol compat.
+            return;
+        }
+        if (cmd === 'reset-history') {
+            state.history = [];
+            state.pastKV?.dispose?.();
+            state.pastKV = null;
+            return;
+        }
+        if (cmd === 'seed-history') {
+            // Replay persisted turns into the worker so the LLM context matches
+            // what the user sees on the page (single source of truth = panel).
+            const turns = Array.isArray(data.history) ? data.history : [];
+            state.history = turns
+                .filter(t => t && (t.role === 'user' || t.role === 'assistant') && t.content)
+                .slice(-12);
+            // A fresh KV cache must accompany a reseeded history.
+            state.pastKV?.dispose?.();
+            state.pastKV = null;
+            return;
+        }
+        if (cmd === 'stop') {
+            // Interrupt an in-flight generation. runChat's catch path stays clean;
+            // pastKV is rebuilt on the next turn so an interrupt cannot corrupt context.
+            state.stopping.interrupt();
+            state.pastKV?.dispose?.();
+            state.pastKV = null;
+            return;
+        }
+
+        // All chat-driven commands need the model.
+        await ensureLoaded();
+
+        if (cmd === 'generate-coaching') {
+            const { front = '', back = '', grade, subject = '' } = data;
+            const user = `subject: ${subject}\ncard front: ${front}\ncard back: ${back}\ngrade given: ${grade} (0=blackout, 4=perfect)\n\ngive me coaching for this review.`;
+            await runChat([{ role: 'system', content: SYS.coach }, { role: 'user', content: user }],
+                { doneEvent: 'coaching-done', maxTokens: 220 });
+            return;
+        }
+
+        if (cmd === 'session-overview') {
+            const { dueCount = 0, newCount = 0, weakestSubject = '', examDaysLeft = null } = data;
+            const user = `due cards: ${dueCount}\nnew cards available: ${newCount}\nweakest subject: ${weakestSubject || 'unknown'}\ndays until exam: ${examDaysLeft != null ? examDaysLeft : 'unknown'}\nlocal hour: ${new Date().getHours()}\n\nplan my session.`;
+            await runChat([{ role: 'system', content: SYS.session }, { role: 'user', content: user }],
+                { doneEvent: 'session-overview-done', maxTokens: 220 });
+            return;
+        }
+
+        if (cmd === 'guide-question') {
+            const question = data.question || '';
+            const sections = searchGuideIndex(question, 3);
+            const ctx = sections.length
+                ? sections.map((s, i) => `[${i + 1}] ${s.subject} — ${s.title}\n${(s.body || '').slice(0, 600)}`).join('\n\n')
+                : '(no matching guide sections were indexed yet — answer from general clinical knowledge but say so)';
+            const user = `question: ${question}\n\nguide sections you may use:\n${ctx}`;
+            await runChat([{ role: 'system', content: SYS.guide }, { role: 'user', content: user }],
+                { doneEvent: 'guide-answer-done', maxTokens: 320 });
+            return;
+        }
+
+        if (cmd === 'triage-hint') {
+            const { scenarioId = '', caseDescription = '', cardPlaced = [] } = data;
+            const cards = Array.isArray(cardPlaced) && cardPlaced.length
+                ? cardPlaced.map(c => `- ${c.kind || 'note'}: ${c.title || ''}`).join('\n')
+                : '(none yet)';
+            const user = `scenario: ${scenarioId}\ncase: ${caseDescription}\nstudent has placed:\n${cards}\n\ngive one Socratic hint.`;
+            await runChat([{ role: 'system', content: SYS.triage }, { role: 'user', content: user }],
+                { doneEvent: 'triage-hint-done', maxTokens: 120 });
+            return;
+        }
+
+        if (cmd === 'user-message') {
+            const text = data.text || '';
+            pushHistory('user', text);
+            const sysWithTools = `${SYS.chat}\n\n${TOOL_SPEC}`;
+            const messages = [{ role: 'system', content: sysWithTools }, ...state.history];
+            const reply = await runChat(messages, { doneEvent: 'coaching-done', maxTokens: 300 });
+            pushHistory('assistant', reply);
+            return;
+        }
+
+        warn('unknown cmd', cmd);
+    } catch (err) {
+        self.postMessage({ event: 'error', error: String(err?.message || err) });
+    }
+}

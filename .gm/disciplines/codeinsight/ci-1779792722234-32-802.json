@@ -1,0 +1,31 @@
+./site/tutor-panel.js:32:61 initTutorPanel
+async function initTutorPanel() {
+    // Load persisted history first so a reload restores the conversation.
+    tutorMessages = loadHistory();
+    isPanelCollapsed = loadCollapsed(true);
+
+    if (!document.querySelector('link[data-ds247420]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = './247420.css';
+        link.setAttribute('data-ds247420', '1');
+        document.head.appendChild(link);
+    }
+
+    try {
+        sdk = await import('./247420.js');
+        if (typeof window !== 'undefined') window.__ds247420 = sdk;
+    } catch (err) {
+        console.warn('[tutor-panel] SDK ESM import failed; falling back to manual UI', err?.message || err);
+    }
+
+    if (sdk && sdk.mount) {
+        renderSdkChat();
+    } else {
+        renderFallbackChat();
+    }
+
+    syncTheme();
+    document.addEventListener('theme-changed', syncTheme);
+    window.addEventListener('resize', applyResponsiveWidth);
+}

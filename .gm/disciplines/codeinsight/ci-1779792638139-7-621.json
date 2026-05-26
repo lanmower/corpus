@@ -1,0 +1,8 @@
+./site/progress.js:7:13 effectiveDateISO
+function effectiveDateISO(now = new Date()) {
+    if (now.getHours() < 6) {
+        const d = new Date(now.getTime() - 6 * 3600 * 1000);
+        return d.toISOString().slice(0, 10);
+    }
+    return now.toISOString().slice(0, 10);
+}

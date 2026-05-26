@@ -1,0 +1,7 @@
+./site/usercards.js:6:11 add
+function add(front, back, tags = [], subject = 'personal') {
+    const arr = load();
+    const id = 'user-' + Math.random().toString(36).slice(2, 10);
+    const card = { id, front, back, tags, _subject: subject, _personal: true, createdAt: Date.now() };
+    arr.push(card); save(arr); return card;
+}

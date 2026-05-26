@@ -1,0 +1,7 @@
+./site/app.js:113:118 masteryFor
+function masteryFor(subject) {
+    const ticks = loadGuideTicks()[subject] || {};
+    const total = state.shards[subject]?.guide?.sections?.length || 0;
+    if (!total) return 0;
+    return Math.round((Object.values(ticks).filter(Boolean).length / total) * 100);
+}

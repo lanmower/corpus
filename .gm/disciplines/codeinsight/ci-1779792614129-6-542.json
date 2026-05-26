@@ -1,0 +1,6 @@
+./site/confidence.js:6:10 set
+function set(subject, lineNum, score) {
+    const all = load();
+    (all[subject] = all[subject] || {})[String(lineNum)] = Math.max(1, Math.min(5, score | 0));
+    save(all); return all;
+}

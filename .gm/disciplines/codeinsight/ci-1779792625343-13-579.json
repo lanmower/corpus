@@ -1,0 +1,6 @@
+./site/late.js:13:17 message
+function message(level) {
+    if (level === 'sleep') return 'past 2am â€” you should sleep.';
+    if (level === 'late') return 'late session â€” keep it short.';
+    return null;
+}

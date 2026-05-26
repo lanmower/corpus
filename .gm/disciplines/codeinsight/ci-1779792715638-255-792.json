@@ -1,0 +1,4 @@
+./site/tutor-panel.js:255:257 isAtBottom
+function isAtBottom(el) {
+    return el.scrollHeight - el.scrollTop - el.clientHeight < 40;
+}

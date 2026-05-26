@@ -1,0 +1,10 @@
+./site/verdicts.js:37:45 backlogFor
+function backlogFor(states, cardIds, nowMs = Date.now()) {
+    let n = 0;
+    for (const id of cardIds) {
+        const s = states[id]; if (!s) continue;
+        if (s.suspended) continue;
+        if ((s.dueAt || 0) <= nowMs) n++;
+    }
+    return n;
+}

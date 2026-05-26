@@ -1,0 +1,6 @@
+./site/schedule.js:263:267 markBlockComplete
+function markBlockComplete(id, done = true) {
+    const s = loadSchedule();
+    const b = s.blocks.find(x => x.id === id); if (!b) return null;
+    b.done = !!done; saveSchedule(s); return b;
+}

@@ -1,0 +1,4 @@
+./scripts/build_guides.js:32:34 lectureKey
+function lectureKey(filename) {
+    return filename.replace(/\.txt$/, '').replace(/_/g, ' ').toLowerCase();
+}

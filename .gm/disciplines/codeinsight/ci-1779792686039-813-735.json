@@ -1,0 +1,13 @@
+./site/triage-live.js:813:824 generateLLM
+function generateLLM(userText) {
+    if (!state.worker || !state.workerReady) throw new Error('LLM not loaded');
+    const sys = buildSnapshot(state.phase);
+    const messages = [
+        { role: 'system', content: sys },
+        { role: 'user', content: userText }
+    ];
+    if (state.generating) state.worker.postMessage({ type: 'interrupt' });
+    state.generating = true;
+    state.worker.postMessage({ type: 'generate', messages });
+    return new Promise(resolve => { state._afterGenerate = resolve; });
+}

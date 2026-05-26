@@ -1,0 +1,7 @@
+./site/mistakes.js:7:12 logMistake
+function logMistake(cardId, subject, score) {
+    if (score > 2) return;
+    const arr = load();
+    arr.push({ cardId, subject, score, ts: Date.now() });
+    save(arr);
+}

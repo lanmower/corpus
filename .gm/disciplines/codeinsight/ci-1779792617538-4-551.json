@@ -1,0 +1,6 @@
+./site/cram.js:4:8 isDismissed
+function isDismissed() {
+    try { const raw = localStorage.getItem(KEY); if (!raw) return false;
+        const d = JSON.parse(raw); return d && d.date === todayISO(); }
+    catch { return false; }
+}

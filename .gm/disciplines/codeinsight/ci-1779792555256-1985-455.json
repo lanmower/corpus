@@ -1,0 +1,10 @@
+./site/app.js:1985:1993 renderDebugStats
+function renderDebugStats(m, stats) {
+    const days = srs.daysUntilExam();
+    const eff = srs.effectiveDays();
+    stage.append(el('div', { class: 'panel', id: 'srs-stats' },
+        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'debug · raw scheduler'),
+            `schema v${srs.SCHEMA_VERSION || 1} · localStorage corpus.srs.states`),
+        el('div', { style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2);line-height:1.6' },
+            `total ${stats.total} · new ${stats.new} · learning ${stats.learning} · young ${stats.young} · mature ${stats.mature} · leech ${stats.leech} · avg EF ${stats.avgEaseFactor.toFixed(2)} · avg last score ${stats.avgLastScore.toFixed(2)} · days to exam ${days} · effective days ${eff} · atoms ${m.totals.atoms} · scenarios ${m.totals.scenarios}`)));
+}

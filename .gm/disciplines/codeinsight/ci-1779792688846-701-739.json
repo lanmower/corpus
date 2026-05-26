@@ -1,0 +1,15 @@
+./site/triage-live.js:701:714 showWebgpuError
+function showWebgpuError(reason, stack) {
+    state.llmStatus = 'error';
+    els.modelStatus.textContent = 'offline';
+    els.modelDetail.textContent = "couldn't load the live tutor — offline grading is still available, but conversational coaching needs WebGPU.";
+    els.progress.hidden = false;
+    els.progressFill.style.width = '0%';
+    els.progressText.textContent = 'using offline grading';
+    els.loadLLM.disabled = false;
+    state.loadStarted = false;
+    state.messages.push({ role: 'system', content: "the live tutor isn't available. you can still get an offline grade — type 'grade me' when you've added your cards." });
+    renderMessages();
+    console.error('[corpus] webgpu error', reason, stack);
+    debugLog('error', { reason, stack });
+}

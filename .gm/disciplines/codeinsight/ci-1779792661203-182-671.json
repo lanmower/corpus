@@ -1,0 +1,8 @@
+./site/srs.js:182:188 loadConfig
+function loadConfig() {
+    try {
+        const raw = localStorage.getItem(CONFIG_KEY);
+        const cfg = raw ? JSON.parse(raw) : {};
+        return { examDate: DEFAULT_EXAM_DATE, sessionGoal: 30, ...cfg };
+    } catch { return { examDate: DEFAULT_EXAM_DATE, sessionGoal: 30 }; }
+}

@@ -1,0 +1,15 @@
+./site/srs.js:121:134 migrate
+function migrate(payload) {
+    if (!payload || typeof payload !== 'object') return { version: SCHEMA_VERSION, states: {} };
+    if (payload.version === SCHEMA_VERSION) return payload;
+    if (payload.version == null && typeof payload === 'object') {
+        const states = {};
+        for (const [id, s] of Object.entries(payload)) {
+            if (s && typeof s === 'object' && s.easeFactor != null) {
+                states[id] = { ...defaultCardState(), ...s, phase: 'review' };
+            }
+        }
+        return { version: SCHEMA_VERSION, states };
+    }
+    return payload;
+}

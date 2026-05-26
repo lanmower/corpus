@@ -1,0 +1,10 @@
+./site/app.js:220:228 updateFooter
+function updateFooter() {
+    if (!statusbar || !statusbarMsg) return;
+    if (!navigator.onLine) {
+        statusbar.classList.remove('hidden');
+        statusbarMsg.textContent = 'offline · saved locally';
+    } else {
+        statusbar.classList.add('hidden');
+    }
+}

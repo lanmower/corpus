@@ -1,0 +1,7 @@
+./site/theme.js:32:37 cycleTheme
+function cycleTheme() {
+    const cur = getTheme();
+    const order = { light: 'dark', dark: 'contrast', contrast: 'auto', auto: 'light' };
+    const next = order[cur] || 'light';
+    return setTheme(next);
+}

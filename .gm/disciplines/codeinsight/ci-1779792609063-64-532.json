@@ -1,0 +1,10 @@
+./site/calendar.js:64:72 renderHeatbar
+function renderHeatbar(heat) {
+    const total = Object.values(heat).reduce((n, x) => n + x, 0);
+    const wrap = el('div', { class: 'cal-heat', 'aria-hidden': 'true' });
+    if (!total) return wrap;
+    for (const [subject, mins] of Object.entries(heat)) {
+        wrap.append(el('span', { class: `cal-heat-seg subj-${subject}`, style: `flex:${mins} 0 0; width:${(mins / total) * 100}%`, title: `${subject}: ${mins}m` }));
+    }
+    return wrap;
+}

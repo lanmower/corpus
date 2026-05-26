@@ -1,0 +1,26 @@
+./site/drag.js:37:61 makeDropZone
+function makeDropZone(element, onDrop, dropZoneClass = 'drop-zone-active') {
+    element.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        element.classList.add(dropZoneClass);
+    });
+
+    element.addEventListener('dragleave', (e) => {
+        if (e.target === element) {
+            element.classList.remove(dropZoneClass);
+        }
+    });
+
+    element.addEventListener('drop', (e) => {
+        e.preventDefault();
+        element.classList.remove(dropZoneClass);
+
+        try {
+            const data = JSON.parse(e.dataTransfer.getData('application/json'));
+            onDrop(data);
+        } catch (err) {
+            console.warn('[drag] drop handler failed:', err);
+        }
+    });
+}

@@ -1,0 +1,11 @@
+./scripts/build_guides.js:145:154 main
+function main(targets) {
+    for (const s of targets) {
+        const md = buildGuide(s);
+        const subjDir = path.join(ROOT, s);
+        fs.mkdirSync(subjDir, { recursive: true });
+        const out = path.join(subjDir, 'study_guide.md');
+        fs.writeFileSync(out, md);
+        console.log(`✓ ${s}: ${md.length} chars → ${out}`);
+    }
+}

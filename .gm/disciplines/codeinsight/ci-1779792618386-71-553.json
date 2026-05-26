@@ -1,0 +1,6 @@
+./site/drag.js:71:75 showLoadingState
+function showLoadingState(element, cardCount = null) {
+    element.classList.add('is-loading');
+    const msg = cardCount ? `loading ${cardCount} card${cardCount > 1 ? 's' : ''}...` : 'loading...';
+    showLoadingSpinner(element, msg);
+}

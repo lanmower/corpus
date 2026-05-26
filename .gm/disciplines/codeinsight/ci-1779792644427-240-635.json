@@ -1,0 +1,12 @@
+./site/schedule.js:240:250 getSchedule
+function getSchedule({ regenerateIfStale = true, today = isoDate(new Date()), dueCounts = {}, ticksAll = {} } = {}) {
+    const s = loadSchedule();
+    if (regenerateIfStale && (!s.blocks.length || s.today !== today)) {
+        // Build extras with available data, including daysToExam for pace-aware allocation
+        const cfg = loadConfig();
+        const daysToExam = daysBetween(today, cfg.examDate);
+        const extras = { dueCounts, daysToExam, ticksAll };
+        return regenerate({ today, dueCounts, extras });
+    }
+    return s;
+}

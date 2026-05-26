@@ -1,0 +1,10 @@
+./site/triage-live.js:140:148 persistActive
+function persistActive() {
+    if (!state.activeScenarioId) return;
+    const prev = state.sessions[state.activeScenarioId];
+    const prevScore = prev && !Array.isArray(prev) ? prev.score : (prev?.score);
+    const cards = state.cards.map(c => ({ id: c.id, kind: c.kind, title: c.title, body: c.body, highlighted: !!c.highlighted }));
+    state.sessions[state.activeScenarioId] = { cards, score: state.lastGrade ?? prevScore ?? null, gradedAt: state.phase === 'graded' ? Date.now() : (prev?.gradedAt ?? null) };
+    saveSessions();
+    renderStats();
+}

@@ -1,0 +1,13 @@
+./site/app.js:303:314 isFirstTimeVisitor
+function isFirstTimeVisitor() {
+    try {
+        const p = progress.load();
+        if (!p || p.todayGraded > 0) return false;
+        const states = srs.loadStates();
+        const hasHistory = p.history && p.history.some(h => (h.graded || 0) > 0);
+        if (hasHistory) return false;
+        const hasReviewed = Object.values(states).some(s => s && s.history && s.history.length > 0);
+        if (hasReviewed) return false;
+        return !localStorage.getItem('corpus.welcome.dismissed');
+    } catch { return false; }
+}

@@ -1,0 +1,11 @@
+./site/tutor-panel.js:244:253 appendFallbackMessage
+function appendFallbackMessage(text, isUser) {
+    const messagesContainer = panelContainer?.querySelector('#tutor-messages');
+    if (!messagesContainer) return;
+    const stick = isAtBottom(messagesContainer);
+    const msg = document.createElement('div');
+    msg.className = isUser ? 'tutor-msg tutor-msg-user' : 'tutor-msg tutor-msg-bot';
+    msg.textContent = text;
+    messagesContainer.appendChild(msg);
+    if (stick) messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}

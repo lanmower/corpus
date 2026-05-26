@@ -1,0 +1,9 @@
+./scripts/compress_media.js:51:58 ffmpegVideo
+function ffmpegVideo(src, dst) {
+    const args = ['-hide_banner', '-loglevel', 'error', '-y', '-i', src,
+        '-c:v', 'libaom-av1', '-b:v', '350k', '-cpu-used', '6', '-row-mt', '1',
+        '-tile-columns', '2', '-tile-rows', '1', '-g', '240',
+        '-c:a', 'libopus', '-b:a', '48k', '-ac', '1', '-application', 'voip',
+        '-pix_fmt', 'yuv420p', dst];
+    return spawnSync('ffmpeg', args, { stdio: 'inherit' });
+}

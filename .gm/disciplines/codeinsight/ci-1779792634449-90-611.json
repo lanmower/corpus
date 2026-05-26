@@ -1,0 +1,7 @@
+./site/progress.js:90:95 setLast
+function setLast(route, subject) {
+    const p = load();
+    p.lastRoute = route;
+    if (subject) p.lastSubject = subject;
+    save(p); return p;
+}

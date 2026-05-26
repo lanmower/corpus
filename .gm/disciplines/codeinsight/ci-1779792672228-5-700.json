@@ -1,0 +1,5 @@
+./site/theme.js:5:8 getTheme
+function getTheme() {
+    try { const v = localStorage.getItem(KEY); return VALID.includes(v) ? v : 'auto'; }
+    catch { return 'auto'; }
+}

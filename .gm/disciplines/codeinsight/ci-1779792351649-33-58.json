@@ -1,0 +1,9 @@
+./scripts/compress_media.js:33:40 walk
+function walk(dir, out = []) {
+    if (!fs.existsSync(dir)) return out;
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+        const p = path.join(dir, e.name);
+        if (e.isDirectory()) walk(p, out); else out.push(p);
+    }
+    return out;
+}

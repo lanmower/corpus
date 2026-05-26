@@ -1,0 +1,6 @@
+./site/late.js:8:12 applyClass
+function applyClass(doc, level) {
+    doc.body.classList.remove('late-night', 'really-late');
+    if (level === 'late') doc.body.classList.add('late-night');
+    else if (level === 'sleep') doc.body.classList.add('really-late');
+}

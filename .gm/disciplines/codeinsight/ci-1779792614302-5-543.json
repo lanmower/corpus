@@ -1,0 +1,2 @@
+./site/confidence.js:5:5 save
+function save(c) { try { localStorage.setItem(KEY, JSON.stringify(c)); } catch {} }

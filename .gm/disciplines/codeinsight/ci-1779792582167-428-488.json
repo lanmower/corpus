@@ -1,0 +1,20 @@
+./site/app.js:428:446 nextUntickedSection
+function nextUntickedSection() {
+    const ticksAll = loadGuideTicks();
+    const lp = lastpos.load();
+    if (lp?.subjectAnchor) {
+        const sh = state.shards[lp.subjectAnchor];
+        if (sh) {
+            const t = ticksAll[lp.subjectAnchor] || {};
+            const sec = sh.guide?.sections?.find(s => (s.level === 2 || s.level === 3) && !t[String(s.line)]);
+            if (sec) return { subject: lp.subjectAnchor, section: sec };
+        }
+    }
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject]; if (!sh) continue;
+        const t = ticksAll[meta.subject] || {};
+        const sec = sh.guide?.sections?.find(s => (s.level === 2 || s.level === 3) && !t[String(s.line)]);
+        if (sec) return { subject: meta.subject, section: sec };
+    }
+    return null;
+}
