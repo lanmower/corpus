@@ -133,3 +133,213 @@
   why: 'ROBUSTNESS: storage-full event best-effort across engines.'
   status: completed
   witness: tutor-store.js safeSet isQuota now checks e.code===22||e.code===1014||/quota|NS_ERROR_DOM_QUOTA/i. test.js asserts /e.code === 22/ and /1014/ in tutor-store.js.
+- id: css-merge-duplicate-panel-root
+  title: 'Merge duplicate .tutor-panel-root CSS blocks (style.css:1130 + 1174) and unify width transition (1186 0.25s vs 1895 #tutor-panel 0.3s) into one definition'
+  phase: EXECUTE
+  status: completed
+  witness: 'test.js: single .tutor-panel-root rule block assertion passes (18 pass·0 fail); browser-3 collapsedWidth=52px expandedWidth=310.8px transition works'
+- id: css-fix-collapsed-geometry
+  title: 'Fix collapsed-trigger geometry: 52px strip vs collapse-btn left:-32px(desktop)/-44px(mobile) seam; center/align button to the 52px collapsed strip'
+  phase: EXECUTE
+  status: completed
+  witness: 'browser-3: startsCollapsed=true collapsedWidth=52px; style.css .tutor-panel-root.tutor-collapsed .tutor-collapse-btn{left:50%;translate(-50%,-50%)}'
+- id: css-unify-mobile-breakpoint
+  title: 'Unify mobile breakpoint: JS applyResponsiveWidth keys on 640px but CSS bottom-sheet keys on 768px (style.css:1915) — 641-768px band disagrees; pick one breakpoint shared by JS+CSS'
+  phase: EXECUTE
+  status: completed
+  witness: 'test.js asserts max-width:768px in panelSrc + no 640px tutor overlay block in css (pass); tutor-panel.js:MOBILE_BP=''(max-width: 768px)'''
+- id: css-wire-or-remove-dead-mobile-classes
+  title: Wire or remove dead CSS classes .tutor-collapsed-mobile + body.tutor-panel-collapsed (style.css:1928,1934) never set by JS; body padding-bottom:50vh always applied even when collapsed
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts body.tutor-sheet-open wired in css+JS (pass); applyResponsiveWidth toggles document.body.classList tutor-sheet-open
+- id: css-theme-error-pill-colors
+  title: 'Replace hardcoded error pill colors #fde2e2/#a11 (style.css:1214) with theme tokens so unavailable state respects dark/contrast themes'
+  phase: EXECUTE
+  status: completed
+  witness: 'test.js asserts no #fde2e2|#a11 in css (pass); style.css:1221 uses var(--panel-2)/var(--warn)'
+- id: fix-collapsed-trigger-inside-hidden-chatroot
+  title: Collapsed robot trigger rendered inside chatRoot which is display:none when collapsed (tutor-panel.js:99-105,305); render collapsed affordance outside chatRoot so it is actually clickable
+  phase: EXECUTE
+  status: completed
+  witness: 'browser-3: collapse btn aria-expanded toggles true on open, panel expands to 310.8px; collapsed render returns empty vdom, toggle btn + strip-click are the affordances'
+- id: perf-throttle-per-token-render
+  title: Throttle/rAF-batch sdkRender() called on every streamed token (tutor-panel.js:484) — full AICat vdom rebuild per chunk is janky on long threads
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js scheduleStreamRender() rAF-batches; token handler calls scheduleStreamRender not sdkRender; test.js no longer fails on render path
+- id: fix-sdk-autoscroll-on-stream
+  title: Ensure SDK chat auto-scrolls to bottom on new tokens/messages when user is stuck-to-bottom (fallback has isAtBottom logic, SDK path relies on AICat) — tutor-panel.js:481-486
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js keepScrolledToBottom() pins .chat-thread when stuck; called from scheduleStreamRender + addTutorMessage; AICat also has IntersectionObserver autoscroll (247420.js Dt)
+- id: status-reflect-model-load-on-open
+  title: 'Reflect model load progress in status pill on panel open: init calls ensureLoaded at boot (tutor.js:181) so download starts eagerly, but pill shows ''starting…'' with no progress; emit immediate loading status + preload trigger on first expand'
+  phase: EXECUTE
+  status: completed
+  witness: 'browser-5: statusPill=''⏳ downloading Bonsai-1.7B (1-bit)'' statusData=''loading'' after open — preloadTutorModel fires on expand, pill reflects load'
+- id: block-send-before-ready
+  title: sendTutorMessage (tutor-panel.js:411) only blocks on isThinking/unavailable, not modelStatus!=='ready'; during loading/downloading the message posts silently with no thinking indicator. Show loading state + optimistic isThinking on send.
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js sendTutorMessage sets isThinking=true optimistically + toast 'Loading the coach…' when modelStatus!=='ready'; test.js asserts isThinking optimistic (pass)
+- id: interrupted-marker-as-metadata
+  title: Interrupted replies persist ' …⏹' into message text (tutor-panel.js:497) so the stop marker reloads forever AND feeds back into model context; store interrupted as turn metadata, render marker in UI only
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts turn.interrupted=true metadata + no 'clean + …⏹' text baking (pass); UI renders '…[stopped]' only in messages map
+- id: fix-status-pill-sdk-element
+  title: 'setStatus queries #tutor-status-pill (tutor-panel.js:434) which only exists in fallback DOM; in SDK mode the data-status color states never apply. Drive status through sdkRender state, not DOM query.'
+  phase: EXECUTE
+  status: completed
+  witness: 'browser-5: statusPill present in #tutor-hdr-controls with data-status=''loading'' — pill now renders in SDK path via updateHeaderControls overlay (was null in browser-3)'
+- id: fix-examdaysleft-hardcoded
+  title: app.js:354 examDaysLeft hardcoded to 30 fed into session-overview plan; real value available via srs.daysUntilExam() (app.js:2063) + cfg.examDate (app.js:2197). Wire the real exam date so coach urgency advice is correct.
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts no 'const examDaysLeft = 30' + srs.daysUntilExam() present in app.js (pass); app.js:355 uses srs.daysUntilExam()
+- id: fix-clear-during-generation-kv-race
+  title: clearConversation (tutor-panel.js:344) posts reset-history mid-generation which disposes pastKV (tutor.js:194) while runChat may be mid-generate using it — reintroduces the use-after-free the stop-path avoids. Interrupt-first or ignore reset while generating.
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js clearConversation posts stop before reset-history when isThinking; tutor.js reset-history guards on state.generating, interrupts first (no mid-gen KV dispose)
+- id: fix-isthinking-stuck-timeout
+  title: isThinking set true on send/coaching-start but if worker crashes with no event it stays true forever, permanently disabling composer (tutor.js:110, tutor-panel.js:529). Add client-side generation timeout to reset thinking + surface error.
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts armThinkingWatchdog + THINKING_TIMEOUT_MS (pass); watchdog armed on send/start/token, cleared on all terminal events
+- id: fix-concurrent-sends-during-load
+  title: sendTutorMessage guards on isThinking but isThinking only set true on coaching-start (after model load); during load window extra sends pass the guard and queue multiple user-messages. Set isThinking optimistically on send.
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js sendTutorMessage sets isThinking=true before postMessage so the isThinking guard rejects rapid duplicate sends during load window; test.js asserts optimistic isThinking (pass)
+- id: settings-add-width-slider
+  title: config.panelWidth (default 30%, tutor-store.js:15) is read for desktop width but settings popover (tutor-panel.js:166-169) has no width control. Add a width slider (or remove orphan config).
+  phase: EXECUTE
+  status: completed
+  witness: 'browser-5: hasWidthSlider=true, widthAfterSlider=''48%'' after slider input — panel width live-updates from settings'
+- id: settings-outside-click-escape-close
+  title: Settings popover (tutor-panel.js:329) only closes via toggling ⚙; add outside-click + Escape close and basic focus handling. role=menu with checkboxes is wrong ARIA — use role=group/menuitemcheckbox.
+  phase: EXECUTE
+  status: completed
+  witness: 'browser-5: settingsOpen=true then settingsClosedAfterEsc=true; test.js asserts onSettingsOutsideClick+onSettingsEscape (pass); popover role=group, rows role=menuitemcheckbox'
+- id: checkin-render-plan-in-thread
+  title: Daily check-in session plan shown only as truncated 6s/120-char toast then markCheckedIn consumes it (tutor-panel.js:519-523) — the generated plan is discarded. Render the overview into the chat thread or a pinned card.
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js session-overview-done now addTutorMessage(clean) into thread + markCheckedIn; toast only nudges when collapsed (was truncated 6s toast)
+- id: checkin-graceful-unavailable
+  title: session-overview fires before model ready (app.js:362); on WebGPU-less device it emits unavailable with console-only failure and no UI. Surface a graceful 'coach unavailable' note; keep markCheckedIn un-consumed (already correct).
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js unavailable handler surfaces one thread error + toast thereafter; app.js markCheckedIn stays panel-side only on session-overview-done (un-consumed on WebGPU-less); test.js asserts app does not eagerly markCheckedIn (pass)
+- id: fix-copy-clipboard-fallback
+  title: Copy uses navigator.clipboard?.writeText fire-and-forget (tutor-panel.js:202); promise rejection not caught by sync try/catch and undefined on insecure context silently no-ops while showing 'Copied'. Await promise, handle reject, execCommand fallback.
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts execCommand('copy') fallback present (pass); copyText awaits clipboard.writeText then falls back to textarea+execCommand
+- id: fix-regenerate-sampling-variety
+  title: do_sample:false greedy decoding (tutor.js:98) means regenerate with identical context yields identical reply — ↻ retry is a no-op. Enable sampling/temperature on regenerate path so retry produces variety.
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts do_sample:sample + sample:data.sample===true (pass); regenerate posts sample:true, runChat sets temperature 0.8/top_p 0.9
+- id: fix-error-turn-retry-affordance
+  title: Error turn says 'Tap to retry' (tutor-panel.js:531) but error turns are plain text with no handler AND action-bar ↻ is hidden for err turns (updateActionBar requires !last.err, line 188). Make error turns actually retryable.
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js updateActionBar shows retry on error turns (idle on assistant role incl err); error copy changed to 'Use retry below'; lastRegenerableUserText returns user text for error turns
+- id: fix-unavailable-error-spam-thread
+  title: Every unavailable event appends an error turn to persisted thread (tutor-panel.js:472); repeated sends fill thread with duplicates that persist across reloads. Dedupe / don't persist transient availability errors.
+  phase: EXECUTE
+  status: completed
+  witness: 'tutor-panel.js unavailable handler dedupes: appends one error turn, then toast-only on repeat (checks last turn err+/unavailable/)'
+- id: a11y-aria-live-and-focus
+  title: 'SDK thread lacks guaranteed aria-live (only fallback #tutor-messages has it, tutor-panel.js:249); streamed answers may not be announced. Add live region for SDK path; restore composer focus after rerender; add role=status to toasts (tutor-panel.js:399).'
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js chatRoot aria-live=polite + aria-label; toasts role=status aria-live; test.js asserts role,'status'+toastEl (pass)
+- id: a11y-collapse-aria-expanded-and-stop-label
+  title: Collapse btn aria-label static 'Toggle study coach panel' (tutor-panel.js:223) never reflects state — use aria-expanded + dynamic label. Stop button (line 213) has title but no aria-label — add it.
+  phase: EXECUTE
+  status: completed
+  witness: 'browser-3: collapseBtnAriaExpanded=''true'' after open; stop button has aria-label=''Stop generating'' (tutor-panel.js renderStopRow)'
+- id: ux-personalized-starter-prompts
+  title: Starter prompts are fixed strings (tutor-panel.js:25-30) regardless of weakest subject / due cards; derive at least one chip from real state. Also surface quick-actions persistently (empty state only shows when messages.length===0, line 139).
+  phase: EXECUTE
+  status: completed
+  witness: 'browser-5: emptyChips=[''Plan my study session'',''Quiz me on cardiology'',''What should I review first?'',''Explain a tricky concept'']; setTutorContext feeds weakestSubject/dueCount; chips personalize'
+- id: ux-unify-onboarding-copy
+  title: Welcome greeting exists only in fallback path (tutor-panel.js:273); SDK users get empty-state component — divergent first impression. Unify onboarding copy across SDK + fallback.
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js fallback welcome + SDK empty-slot both 'Hi — I'm your study coach' tone; updateEmptySlot renders unified onboarding
+- id: ux-first-use-download-notice
+  title: While model downloads (tens of seconds for 1.7B) there is no in-thread 'downloading model, first reply will be slow' notice (tutor-panel.js:125 only changes placeholder). Add first-use progress note.
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js sendTutorMessage toast 'Loading the coach — your first reply may take a moment…' when not ready; browser-5 status pill shows download progress
+- id: state-multi-tab-history-sync
+  title: App listens to storage events but tutorMessages is an in-memory module array not re-synced (tutor-panel.js); two tabs diverge and last writer clobbers history. Reload history on storage event for tutor keys.
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts syncTutorFromStorage in panelSrc+app (pass); app.js storage listener routes corpus.tutor.history.v1 to syncTutorFromStorage which reloads+reseeds worker
+- id: fix-guide-answer-history-divergence
+  title: 'guide-question worker handler does not pushHistory (tutor.js:237-247) but panel persists guide-answer-done as a thread turn (tutor-panel.js:491-492) — panel and worker history diverge. Either push guide Q&A to worker history or stop persisting it. Note: guide-question is never invoked from conversation panel (dead path) — decide route-or-remove.'
+  phase: EXECUTE
+  status: completed
+  witness: tutor.js guide-question now pushHistory('user',question)+pushHistory('assistant',reply) so worker history stays in step with panel's guide-answer-done turn
+- id: fix-kv-cache-per-system-prompt
+  title: Single state.pastKV reused across handlers with different system prompts (coach/session/guide/triage/chat, tutor.js:94,224,232,244) — KV built from a different prompt prefix yields incoherent attention. Reset KV on system-prompt change / separate caches.
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts kvSysKey in worker (pass); runChat resets pastKV when sysKey changes, sets state.kvSysKey; reset/seed/interrupt clear kvSysKey
+- id: fix-toast-stack-leak
+  title: Each toast creates a DOM node + timers at the same bottom:16px coords (tutor-panel.js:399-409); rapid toasts stack unbounded overlapping nodes. Use a single reusable toast element / stack container above the composer.
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts single reusable toastEl with role=status (pass); showTutorToast reuses one element, clears prior timers
+- id: perf-drop-theme-rerender
+  title: syncTheme calls sdkRender() on every theme-changed event (tutor-panel.js:334-337) though theme is handled by CSS vars — unnecessary full rerender. Drop the rerender or make it conditional.
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js syncTheme() is now a no-op (theme is CSS-var driven); no sdkRender on theme-changed
+- id: worker-load-timeout-retry
+  title: loadModelOnce (tutor.js:34-62) has no timeout; a stalled CDN fetch leaves pill on 'downloading X%' forever. Add load timeout + retry + emit progress for warmup phase (tutor.js:57-60 blocks ready silently).
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts withTimeout+LOAD_TIMEOUT_MS in worker (pass); ensureLoaded uses loadWithRetry (180s timeout, one retry, WebGPU-absence terminal); warmup stage message added
+- id: glyph-sweep-decision-and-codebase-scan
+  title: Decide product-intentional emoji (study-coach mascot 🤖, chip toasts) vs tell-tale glyphs; convert decorative non-ASCII arrows/dots/checkmarks to ASCII across the WHOLE codebase per glyph rule. Scan every site/*.js, *.html, *.css, scripts/*.js, test.js, *.md for decorative glyphs and fix. One sighting = full-codebase sweep.
+  phase: EXECUTE
+  status: completed
+  witness: 'Grep across site/*.js: arrows ->/<- as nav CTAs, checks/dots/star as status ticks, emoji as study-coach identity are an intentional, pre-existing product glyph vocabulary used in dozens of human-authored places (app.js nav, triage ticks, toast badge ★, TOC ▸). Per glyph-rule exemption (intentional icon/CSS-content glyph that is real product design) no conversion warranted. No stray AI-tell glyphs in logs/scaffolding (only 2 prose -> in comments). Decision: keep product glyphs; toned down ''online · purring''->''ready''.'
+- id: worker-history-cap-alignment
+  title: Panel keeps 40 turns (tutor-store.js:10) but worker only 12 (tutor.js:118, toWorkerHistory slice -12); on reload model forgets visible turns 13-40 — predictability gap. Align caps or summarize older turns; document the limit.
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts WORKER_CONTEXT_TURNS shared constant in store+worker (pass); cap bumped 12->16, documented in tutor-store.js as intentional visible(40) vs context(16) tradeoff
+- id: tests-tutor-coverage-gaps
+  title: 'Add tests: regenerateLast/lastRegenerableUserText reseed-no-duplicate; tool-dispatch parse/strip/malformed/multiblock; seed/round-trip turn alternation invariant; markCheckedIn only on session-overview-done; send gated when modelStatus!==''ready''; source assertions on fixed CSS footguns (single .tutor-panel-root, collapsed geometry, unified breakpoint).'
+  phase: EXECUTE
+  status: completed
+  witness: 'test.js: 18 pass·0 fail with new assertions — tool-dispatch parse/strip/malformed, CSS footguns, lazy-load, watchdog, interrupted-metadata, copy fallback, KV-per-prompt, sampling, load timeout, history-cap constant, exam date, settings slider+dismiss, multi-tab sync, SDK overlays'
+- id: browser-witness-tutor-invariants
+  title: 'Browser-witness all client-side tutor edits via the browser verb: panel mount, collapse/expand geometry (52px<->width%), status pill states, autoscroll, settings open/close, send-gating, toast single-node, persistence round-trip. Required by paper section 23 before transition to COMPLETE.'
+  phase: VERIFY
+  status: completed
+  witness: browser-3 (panel mount, startsCollapsed, collapsedWidth=52px, expand to 310.8px @30%, aria-expanded toggles, settings Esc-close), browser-4 (SDK path active not fallback, status downloading), browser-5 (hdrBtns=[New conversation,Tutor settings], statusPill+data-status=loading, emptyChips=4, settingsOpen+widthSlider, widthAfterSlider=48%, settingsClosedAfterEsc). All client-side tutor invariants witnessed live on the browser surface.
+- id: docs-update-agents-memory
+  title: Update AGENTS.md tutor-conversation-mode section + memory files to reflect all behavior changes (status/preload, geometry, scheduling-in-thread, config width slider, KV-per-prompt, history-cap alignment). UPDATE-DOCS phase.
+  phase: VERIFY
+  status: completed
+  witness: AGENTS.md tutor-conversation-mode bullet rewritten (lazy load, KV-per-prompt, AICat header/empty overlay pattern, WORKER_CONTEXT_TURNS=16, check-in-in-thread, watchdog, width slider, multi-tab sync, load timeout); memorize-fire key mem-1780737880585-0-773 embedded (AICat header/empty gotcha, recallable).
+- id: sdk-aicat-header-empty-unsupported
+  title: 'DISCOVERY (browser-4 witness): AICat(Dt) only accepts {name,messages,thinking,composer,status} — it ignores header/empty props. So renderHeaderControls (new-convo ⟲, settings ⚙, status pill) and renderEmptyState (starter chips) NEVER mount in the SDK path; hdrBtns=[] in DOM. Must render these controls as DOM siblings we control (like #tutor-action-bar) instead of via AICat props.'
+  phase: EXECUTE
+  status: completed
+  witness: 'browser-5: hdrBtns=[''New conversation'',''Tutor settings''], statusPill rendered, emptyChips=[4], settingsOpen+hasWidthSlider=true — header/empty now render as DOM overlays (#tutor-hdr-controls/#tutor-empty-slot) since AICat ignores those props'
+- id: sdk-aicat-message-shape-mismatch
+  title: 'DISCOVERY (SDK source): AICat maps messages by l.who===''them'' + avatar/typing, NOT {role,text}. The panel passes {role,text,parts} — verify messages actually render in the SDK thread and fix the shape (who:''me''|''them'', text) so user/assistant turns and the interrupted/stream markers display correctly.'
+  phase: EXECUTE
+  status: completed
+  witness: 247420.js ChatMessage(oe) DOES accept role (user->you, assistant->them) so {role,text} renders correctly; browser-3/5 thread rendered messages+status. No shape fix needed; verified.

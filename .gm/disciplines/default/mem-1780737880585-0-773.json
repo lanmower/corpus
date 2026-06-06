@@ -1,0 +1,3 @@
+## Corpus tutor SDK gotcha: AICat ignores header/empty props
+
+The anentrypoint-design AICat component (247420.js `Dt`) only accepts {name,messages,thinking,composer,status}. It silently ignores `header` and `empty` props. So tutor-panel.js must render the header controls (status pill, new-conversation ⟲, settings ⚙) and starter-chip empty state as DOM-overlay siblings it controls (#tutor-hdr-controls, #tutor-empty-slot, #tutor-action-bar), updated imperatively — NOT via AICat props. ChatMessage (`oe`) DOES accept role (user->you, assistant->them), so {role,text} message shape renders fine. Witnessed via browser verb (browser-5: hdrBtns + statusPill + emptyChips + width slider all present after the overlay rework; were all absent when passed as AICat props).
