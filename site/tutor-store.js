@@ -7,7 +7,12 @@ export const COLLAPSED_KEY = 'corpus.tutor.collapsed.v1';
 export const CONFIG_KEY = 'corpus.tutor.config.v1';
 export const LAST_CHECKIN_KEY = 'corpus.tutor.lastCheckin.v1';
 
-const MAX_TURNS = 40; // panel-visible turns; worker context is capped separately at 12
+// Panel keeps up to MAX_TURNS visible/persisted turns. The worker's LLM context
+// is capped separately (WORKER_CONTEXT_TURNS in tutor.js) for cost — so on reload
+// the model "remembers" fewer turns than the user can scroll back to. This is an
+// intentional tradeoff: visible history is cheap, model context is not.
+const MAX_TURNS = 40;
+export const WORKER_CONTEXT_TURNS = 16; // shared with tutor.js / toWorkerHistory
 
 export const DEFAULT_CONFIG = {
     proactiveCheckins: true,
@@ -47,6 +52,13 @@ export function loadHistory() {
         if (!Array.isArray(parsed)) return [];
         return parsed
             .filter(t => t && (t.role === 'user' || t.role === 'assistant') && typeof t.text === 'string')
+            .map(t => {
+                // Keep only the known turn shape; carry UI-only flags forward.
+                const turn = { role: t.role, text: t.text, ts: t.ts };
+                if (t.err === true) turn.err = true;
+                if (t.interrupted === true) turn.interrupted = true;
+                return turn;
+            })
             .slice(-MAX_TURNS);
     } catch {
         // Corrupt JSON: drop it, do not throw.
@@ -74,7 +86,7 @@ export function toWorkerHistory(turns) {
     return (Array.isArray(turns) ? turns : [])
         .filter(t => t && t.text)
         .map(t => ({ role: t.role, content: t.text }))
-        .slice(-12);
+        .slice(-WORKER_CONTEXT_TURNS);
 }
 
 // ----- collapsed state -----

@@ -16,15 +16,19 @@ import {
 } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0/dist/transformers.min.js';
 
 const MODEL_ID = 'onnx-community/Bonsai-1.7B-ONNX';
+// Keep in step with WORKER_CONTEXT_TURNS in tutor-store.js (panel keeps 40 visible).
+const WORKER_CONTEXT_TURNS = 16;
 
 const state = {
     generator: null,
     ready: false,
     loadPromise: null,
     pastKV: null,
+    kvSysKey: null,      // system prompt the current pastKV was built against
     stopping: new InterruptableStoppingCriteria(),
     interrupted: false,  // worker-owned flag (transformers' #interrupted is private)
-    history: [],         // [{role, content}] chat history (last 12 turns)
+    generating: false,   // true between coaching-start and the generate promise settling
+    history: [],         // [{role, content}] chat history (last WORKER_CONTEXT_TURNS)
     guideIndex: []       // [{subject, title, body, level, line}]
 };
 
@@ -53,7 +57,7 @@ async function loadModelOnce() {
         }
     });
 
-    self.postMessage({ event: 'model-loading', stage: 'optimizing for 1-bit execution' });
+    self.postMessage({ event: 'model-loading', stage: 'optimizing (first run is slower)' });
     const warm = state.generator.tokenizer('a');
     await state.generator.model.generate({ ...warm, max_new_tokens: 1 });
 
@@ -61,10 +65,35 @@ async function loadModelOnce() {
     self.postMessage({ event: 'ready' });
 }
 
+// Wrap a promise with a timeout so a stalled CDN fetch surfaces as an error
+// instead of leaving the pill on "downloading X%" forever.
+function withTimeout(promise, ms, label) {
+    let timer;
+    const timeout = new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new Error(`${label} timed out after ${Math.round(ms / 1000)}s`)), ms);
+    });
+    return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
+
+const LOAD_TIMEOUT_MS = 180000; // 3 min — a 1-bit 1.7B over a slow link still fits
+
+async function loadWithRetry() {
+    try {
+        return await withTimeout(loadModelOnce(), LOAD_TIMEOUT_MS, 'model load');
+    } catch (first) {
+        // A WebGPU-absence error is terminal — don't retry, it won't appear.
+        if (/webgpu|adapter/i.test(String(first?.message || first))) throw first;
+        self.postMessage({ event: 'model-loading', stage: 'retrying download…' });
+        state.ready = false;
+        state.generator = null;
+        return await withTimeout(loadModelOnce(), LOAD_TIMEOUT_MS, 'model load (retry)');
+    }
+}
+
 function ensureLoaded() {
     if (state.ready) return Promise.resolve();
     if (!state.loadPromise) {
-        state.loadPromise = loadModelOnce().catch(err => {
+        state.loadPromise = loadWithRetry().catch(err => {
             state.loadPromise = null;
             self.postMessage({ event: 'unavailable', error: String(err?.message || err) });
             throw err;
@@ -74,13 +103,14 @@ function ensureLoaded() {
 }
 
 // Run inference, stream tokens, return final text.
-async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320 } = {}) {
+async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320, sample = false } = {}) {
     if (!state.ready) {
         self.postMessage({ event: 'unavailable', error: 'model not ready' });
         return '';
     }
     state.stopping.reset();
     state.interrupted = false;
+    state.generating = true;
     self.postMessage({ event: 'coaching-start' });
     let buf = '';
     const streamer = new TextStreamer(state.generator.tokenizer, {
@@ -91,23 +121,37 @@ async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320 
             self.postMessage({ event: 'token', token: chunk });
         }
     });
+    // A KV cache built against one system prompt is incoherent if reused under a
+    // different prompt prefix (coach vs session vs guide vs triage vs chat).
+    // Reset the cache whenever the system prompt changes.
+    const sysKey = messages[0]?.role === 'system' ? messages[0].content : '';
+    if (state.kvSysKey !== null && state.kvSysKey !== sysKey) {
+        state.pastKV?.dispose?.();
+        state.pastKV = null;
+    }
     state.pastKV ??= new DynamicCache();
+    state.kvSysKey = sysKey;
     try {
-        const out = await state.generator(messages, {
+        const genOpts = {
             max_new_tokens: maxTokens,
-            do_sample: false,
+            do_sample: sample,
             streamer,
             stopping_criteria: state.stopping,
             past_key_values: state.pastKV
-        });
+        };
+        // Sampling parameters only matter when do_sample is on (regenerate path).
+        if (sample) { genOpts.temperature = 0.8; genOpts.top_p = 0.9; }
+        const out = await state.generator(messages, genOpts);
         const content = out?.[0]?.generated_text?.at?.(-1)?.content ?? buf;
         const interrupted = state.interrupted === true;
         // KV cache lifecycle is owned here, after the generate promise settles —
         // never disposed mid-generation by the stop handler (avoids a use-after-free race).
-        if (interrupted) { state.pastKV?.dispose?.(); state.pastKV = null; }
+        if (interrupted) { state.pastKV?.dispose?.(); state.pastKV = null; state.kvSysKey = null; }
+        state.generating = false;
         self.postMessage({ event: doneEvent, message: content, interrupted });
         return content;
     } catch (e) {
+        state.generating = false;
         self.postMessage({ event: 'error', error: String(e?.message || e) });
         return '';
     }
@@ -115,7 +159,9 @@ async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320 
 
 function pushHistory(role, content) {
     state.history.push({ role, content });
-    if (state.history.length > 12) state.history = state.history.slice(-12);
+    if (state.history.length > WORKER_CONTEXT_TURNS) {
+        state.history = state.history.slice(-WORKER_CONTEXT_TURNS);
+    }
 }
 
 // ----- guide indexing (used to ground guide-question answers) -----
@@ -190,9 +236,17 @@ self.addEventListener('message', async (e) => {
             return;
         }
         if (cmd === 'reset-history') {
+            // Ignore a reset while a generation is in flight — disposing pastKV
+            // mid-generate is the use-after-free the stop-path carefully avoids.
+            // The panel interrupts first, then resets, so this is belt-and-braces.
+            if (state.generating && state.interrupted === false) {
+                state.interrupted = true;
+                state.stopping.interrupt();
+            }
             state.history = [];
             state.pastKV?.dispose?.();
             state.pastKV = null;
+            state.kvSysKey = null;
             return;
         }
         if (cmd === 'seed-history') {
@@ -201,10 +255,11 @@ self.addEventListener('message', async (e) => {
             const turns = Array.isArray(data.history) ? data.history : [];
             state.history = turns
                 .filter(t => t && (t.role === 'user' || t.role === 'assistant') && t.content)
-                .slice(-12);
+                .slice(-WORKER_CONTEXT_TURNS);
             // A fresh KV cache must accompany a reseeded history.
             state.pastKV?.dispose?.();
             state.pastKV = null;
+            state.kvSysKey = null;
             return;
         }
         if (cmd === 'stop') {
@@ -241,8 +296,14 @@ self.addEventListener('message', async (e) => {
                 ? sections.map((s, i) => `[${i + 1}] ${s.subject} — ${s.title}\n${(s.body || '').slice(0, 600)}`).join('\n\n')
                 : '(no matching guide sections were indexed yet — answer from general clinical knowledge but say so)';
             const user = `question: ${question}\n\nguide sections you may use:\n${ctx}`;
-            await runChat([{ role: 'system', content: SYS.guide }, { role: 'user', content: user }],
+            // A guide answer is a real conversational turn the panel persists, so
+            // keep the worker's history in step (the panel renders it as a thread
+            // turn via guide-answer-done). Push the user question and the reply so
+            // the two sides do not diverge on reload/regenerate.
+            pushHistory('user', question);
+            const reply = await runChat([{ role: 'system', content: SYS.guide }, { role: 'user', content: user }],
                 { doneEvent: 'guide-answer-done', maxTokens: 320 });
+            if (reply && reply.trim()) pushHistory('assistant', reply);
             return;
         }
 
@@ -262,7 +323,11 @@ self.addEventListener('message', async (e) => {
             pushHistory('user', text);
             const sysWithTools = `${SYS.chat}\n\n${TOOL_SPEC}`;
             const messages = [{ role: 'system', content: sysWithTools }, ...state.history];
-            const reply = await runChat(messages, { doneEvent: 'coaching-done', maxTokens: 300 });
+            // Regenerate enables sampling so a retry on identical context actually
+            // varies (greedy decoding would reproduce the same reply verbatim).
+            const reply = await runChat(messages, {
+                doneEvent: 'coaching-done', maxTokens: 300, sample: data.sample === true
+            });
             // Don't pollute context with an empty assistant turn (e.g. immediate stop or error).
             if (reply && reply.trim()) pushHistory('assistant', reply);
             return;

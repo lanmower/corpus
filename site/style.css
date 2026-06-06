@@ -1128,9 +1128,25 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 
 /* ---- tutor panel (floating SDK chat) ---- */
 .tutor-panel-root {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+    background: var(--paper);
+    color: var(--ink);
     font-family: var(--ff-body);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     box-shadow: -4px 0 24px rgba(0,0,0,0.12);
+    /* single source of truth for collapse/expand animation */
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.tutor-panel-root.tutor-collapsed { box-shadow: none; }
 .tutor-panel-root .tutor-collapse-btn {
     position: absolute;
     left: -32px;
@@ -1149,6 +1165,14 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     align-items: center;
     justify-content: center;
     z-index: 101;
+}
+/* When collapsed to the 52px strip, center the toggle inside the strip
+   instead of hanging it off the left edge (removes the seam). */
+.tutor-panel-root.tutor-collapsed .tutor-collapse-btn {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-right: 1px solid var(--border);
+    border-radius: 8px;
 }
 .tutor-panel-root .tutor-collapse-btn:hover {
     background: var(--panel-2);
@@ -1170,24 +1194,18 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     cursor: pointer;
 }
 
-/* tutor panel: base positioning (was previously inline) */
-.tutor-panel-root {
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 100;
-    background: var(--paper);
-    color: var(--ink);
-    border-left: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    transition: width 0.25s ease;
+/* header controls overlay (status pill, new conversation, settings).
+   Positioned over the AICat chat-head since AICat has no header slot. */
+#tutor-hdr-controls {
+    position: absolute; top: 8px; right: 12px; z-index: 6;
+    display: flex; gap: 4px; align-items: center;
 }
-.tutor-panel-root.tutor-collapsed { box-shadow: none; }
-
-/* header controls (new conversation, settings) */
+/* empty-state starter chips overlay (AICat has no empty slot) */
+#tutor-empty-slot {
+    position: absolute; left: 0; right: 0; top: 64px; z-index: 4;
+    padding: 12px 16px; text-align: center; pointer-events: none;
+}
+#tutor-empty-slot .tutor-chip { pointer-events: auto; }
 .tutor-hdr-controls { display: flex; gap: 4px; align-items: center; position: relative; }
 .tutor-hdr-btn {
     background: none; border: 1px solid var(--border); color: var(--ink);
@@ -1204,6 +1222,9 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     box-shadow: 0 4px 16px rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 6px;
 }
 .tutor-set-row { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
+.tutor-set-width { justify-content: space-between; cursor: default; }
+.tutor-set-width input[type="range"] { flex: 1; min-width: 80px; }
+.tutor-set-val { font-family: var(--ff-mono); font-size: 12px; color: var(--panel-text-3); min-width: 36px; text-align: right; }
 
 /* status pill */
 .tutor-status-pill {
@@ -1211,7 +1232,7 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     border-radius: 999px; background: var(--panel-2); color: var(--panel-text-3);
 }
 .tutor-status-pill[data-status="ready"] { background: var(--accent-tint, var(--panel-2)); color: var(--ink); }
-.tutor-status-pill[data-status="unavailable"] { background: #fde2e2; color: #a11; }
+.tutor-status-pill[data-status="unavailable"] { background: var(--panel-2); color: var(--warn, var(--ink)); }
 
 /* empty state */
 .tutor-empty { padding: 20px 16px; text-align: center; }
@@ -1271,13 +1292,8 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 }
 .tutor-fallback-composer textarea:focus-visible { outline: 2px solid var(--link); outline-offset: 1px; }
 
-/* mobile: full-width overlay with backdrop */
-@media (max-width: 640px) {
-    .tutor-panel-root.tutor-mobile-overlay {
-        width: 100% !important; left: 0; box-shadow: none;
-    }
-    .tutor-panel-root.tutor-collapsed .tutor-collapse-btn { left: -44px; }
-}
+/* mobile layout for the tutor panel lives in the single ≤768px bottom-sheet
+   block below; JS applyResponsiveWidth() keys off the same 768px breakpoint. */
 
 /* calendar (phase 1) */
 .cal-toolbar { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0; align-items:center; }
@@ -1911,27 +1927,30 @@ details.collapsible[open] > summary::after { content: 'â–´'; }
     border-radius: 4px;
 }
 
-/* Tutor panel — mobile bottom sheet (≤768px) */
+/* Tutor panel — mobile bottom sheet (≤768px).
+   JS applyResponsiveWidth() keys off this same 768px breakpoint and toggles
+   the body.tutor-sheet-open class so page padding only reserves space when the
+   sheet is actually expanded. */
 @media (max-width: 768px) {
-    #tutor-panel {
+    #tutor-panel.tutor-panel-root {
         width: 100% !important;
-        height: 50vh !important;
+        height: 56px;            /* collapsed peek by default */
         top: auto !important;
         bottom: 0 !important;
         right: 0 !important;
         left: 0 !important;
-        border-left: none !important;
+        border-left: none;
         border-top: 1px solid var(--border);
         box-shadow: 0 -2px 12px rgba(0,0,0,0.12);
-    }
-    /* Collapsed: peek of header only at bottom of viewport */
-    #tutor-panel.tutor-collapsed-mobile {
-        height: 48px !important;
         overflow: hidden;
     }
-    /* Page content needs bottom padding so it isn't hidden by the panel */
-    body { padding-bottom: 50vh; }
-    body.tutor-panel-collapsed { padding-bottom: 48px; }
+    /* Expanded sheet: half-viewport with a backdrop seam. */
+    #tutor-panel.tutor-panel-root:not(.tutor-collapsed) {
+        height: 50vh;
+    }
+    /* Only reserve page space while the sheet is open; collapsed peek is overlaid. */
+    body { padding-bottom: 56px; }
+    body.tutor-sheet-open { padding-bottom: 50vh; }
 }
 
 /* Context-menu polish — modules already provide structure, this fills in look */

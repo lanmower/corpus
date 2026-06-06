@@ -38,6 +38,10 @@
 .plugkit-browser-profile-*/
 .plugkit-browser-profile/
 *.stackdump
+# code-search index shards — regenerated from source on each codesearch rebuild
+.gm/disciplines/codeinsight-vec/
+.gm/disciplines/codeinsight-manifest/
+.gm/disciplines/codeinsight/
 # >>> gm managed (do not edit between markers)
 
 # build output — videos copied from <subject>/videos/ at build time
@@ -46,3 +50,4 @@ site/data/videos/
 # audio + video tracked via git-lfs (see .gitattributes)
 *.mp4
 *.m4a
+.gm/pw-sock-*/

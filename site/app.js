@@ -23,7 +23,7 @@ import { buildSearchIndex, mountPalette, snippet as searchSnippet } from './sear
 import { makeToggleButton } from './theme.js';
 import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from './drag.js';
 import { showContextMenu, closeContextMenu } from './context-menu.js';
-import { initTutorPanel, wireWorkerToPanel, addTutorMessage } from './tutor-panel.js';
+import { initTutorPanel, wireWorkerToPanel, addTutorMessage, setTutorContext, syncTutorFromStorage } from './tutor-panel.js';
 import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn } from './tutor-store.js';
 
 let sdk = null;
@@ -350,8 +350,13 @@ function renderTutorOverviewPanel(due, newCount) {
         }
     }
 
-    // Calculate days until exam (placeholder: hardcode to 30 days)
-    const examDaysLeft = 30;
+    // Days until exam from the user's configured exam date (was hardcoded to 30,
+    // which made the coach's urgency advice always wrong).
+    let examDaysLeft = null;
+    try { examDaysLeft = srs.daysUntilExam(); } catch { examDaysLeft = null; }
+
+    // Feed real study state to the panel so starter chips can be personalized.
+    try { setTutorContext({ weakestSubject: weakestSubject || '', dueCount: due || 0 }); } catch {}
 
     // Proactive daily check-in: only when enabled in config and not yet greeted today.
     try {
@@ -2750,6 +2755,9 @@ function setupSdkApp() {
         window.addEventListener('offline', updateOnlineStatus);
         window.addEventListener('storage', e => {
             if (__rendering) return;
+            // Tutor history written by another tab: re-sync the panel's in-memory
+            // thread so the two tabs don't diverge / clobber each other.
+            if (e.key === 'corpus.tutor.history.v1') { try { syncTutorFromStorage(); } catch {} return; }
             if (e.key && /^corpus\./.test(e.key)) render();
         });
         
@@ -2759,7 +2767,10 @@ function setupSdkApp() {
             const worker = new Worker('./tutor.js', { type: 'module' });
             wireWorkerToPanel(worker);
             state.tutorWorker = worker;
-            worker.postMessage({ cmd: 'init' });
+            // Lazy-load the 1-bit model: the heavy download only starts when the
+            // user actually opens the coach (or sends a message / triggers a
+            // check-in), not on every page load. preloadTutorModel() is the panel's
+            // idempotent trigger; the daily check-in path also calls init on demand.
         } catch (err) {
             warn('tutor worker spawn failed', err.message);
         }

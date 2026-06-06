@@ -21,6 +21,53 @@ let modelStatus = 'idle';     // idle | loading | downloading | ready | unavaila
 let modelStatusDetail = '';
 let lastUserText = '';        // for regenerate
 let showSettings = false;
+let thinkingWatchdog = null;  // resets isThinking if the worker goes silent
+
+// If the worker crashes mid-generation it emits no done/error event, leaving
+// isThinking stuck true and the composer permanently disabled. Arm a watchdog
+// on each send/start and clear it on any terminal event.
+const THINKING_TIMEOUT_MS = 90000;
+function armThinkingWatchdog() {
+    clearTimeout(thinkingWatchdog);
+    thinkingWatchdog = setTimeout(() => {
+        if (!isThinking) return;
+        isThinking = false;
+        streamingBuf = '';
+        showTutorToast('The coach stopped responding — please try again.');
+        if (sdkRender) sdkRender();
+    }, THINKING_TIMEOUT_MS);
+}
+function clearThinkingWatchdog() {
+    clearTimeout(thinkingWatchdog);
+    thinkingWatchdog = null;
+}
+
+// rAF-batch streaming renders: a full AICat vdom rebuild on every single token
+// is janky on long threads. Coalesce bursts of tokens into one render per frame.
+let streamRenderQueued = false;
+function scheduleStreamRender() {
+    if (streamRenderQueued) return;
+    streamRenderQueued = true;
+    const raf = (typeof requestAnimationFrame === 'function')
+        ? requestAnimationFrame
+        : (cb) => setTimeout(cb, 16);
+    raf(() => {
+        streamRenderQueued = false;
+        if (sdkRender) sdkRender();
+        keepScrolledToBottom();
+    });
+}
+
+// Keep the chat pinned to the latest message while streaming, mirroring the
+// fallback path's stick-to-bottom behaviour for the SDK thread.
+function keepScrolledToBottom() {
+    const root = panelContainer?.querySelector('#tutor-chat-root');
+    if (!root) return;
+    const scroller = root.querySelector('.chat-thread') || root.querySelector('[class*="thread"]') || root;
+    if (!scroller) return;
+    const stuck = scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight < 80;
+    if (stuck) scroller.scrollTop = scroller.scrollHeight;
+}
 
 const STARTER_PROMPTS = [
     'Plan my study session',
@@ -28,6 +75,23 @@ const STARTER_PROMPTS = [
     'Explain SIADH simply',
     'What should I review first?'
 ];
+
+// Real study state, set by the app so starter chips can be personalized.
+let tutorContext = { weakestSubject: '', dueCount: 0 };
+export function setTutorContext(ctx = {}) {
+    tutorContext = { ...tutorContext, ...ctx };
+}
+
+function starterPrompts() {
+    const chips = [];
+    if (tutorContext.dueCount > 0) chips.push(`Plan my ${tutorContext.dueCount} due cards`);
+    else chips.push('Plan my study session');
+    if (tutorContext.weakestSubject) chips.push(`Quiz me on ${tutorContext.weakestSubject}`);
+    else chips.push('Quiz me on cardiology');
+    chips.push('What should I review first?');
+    chips.push('Explain a tricky concept');
+    return chips;
+}
 
 export async function initTutorPanel() {
     // Load persisted history first so a reload restores the conversation.
@@ -64,9 +128,9 @@ function statusLabel() {
     switch (modelStatus) {
         case 'loading': return `⏳ ${modelStatusDetail || 'loading…'}`;
         case 'downloading': return `⏬ ${modelStatusDetail || 'downloading…'}`;
-        case 'ready': return 'online · purring';
+        case 'ready': return 'ready';
         case 'unavailable': return '⚠ unavailable';
-        default: return 'starting…';
+        default: return 'tap to start';
     }
 }
 
@@ -80,12 +144,36 @@ function renderSdkChat() {
         const chatRoot = document.createElement('div');
         chatRoot.id = 'tutor-chat-root';
         chatRoot.style.cssText = 'flex:1;overflow:hidden;display:flex;flex-direction:column;';
+        // Announce streamed/added messages to assistive tech (the SDK thread has
+        // no live region of its own; the fallback path uses aria-live too).
+        chatRoot.setAttribute('aria-live', 'polite');
+        chatRoot.setAttribute('aria-label', 'Study coach conversation');
         panelContainer.appendChild(chatRoot);
+
+        // SDK-agnostic header controls (status pill, new-conversation, settings).
+        // AICat(Dt) ignores a `header` prop, so we render these as an overlay we
+        // control, positioned over the AICat chat-head.
+        const hdr = document.createElement('div');
+        hdr.id = 'tutor-hdr-controls';
+        panelContainer.appendChild(hdr);
 
         // SDK-agnostic action bar (copy / regenerate) rendered as a sibling we control.
         const actionBar = document.createElement('div');
         actionBar.id = 'tutor-action-bar';
         panelContainer.appendChild(actionBar);
+
+        // Empty-state starter chips (AICat ignores an `empty` prop) — overlay slot.
+        const emptySlot = document.createElement('div');
+        emptySlot.id = 'tutor-empty-slot';
+        panelContainer.appendChild(emptySlot);
+
+        // Whole collapsed strip is a click target to expand (the toggle button
+        // is small; the 52px strip / mobile peek should also open the coach).
+        panelContainer.addEventListener('click', (e) => {
+            if (isPanelCollapsed && !e.target.closest('#tutor-collapse-btn')) {
+                toggleTutorCollapse();
+            }
+        });
 
         document.body.appendChild(panelContainer);
     }
@@ -96,18 +184,15 @@ function renderSdkChat() {
     if (!chatRoot) return;
 
     sdkRender = sdk.mount(chatRoot, () => {
-        if (isPanelCollapsed) {
-            return C.h('div', {
-                class: 'tutor-collapsed-trigger',
-                style: 'display:flex;align-items:center;justify-content:center;height:100%;cursor:pointer;',
-                onClick: toggleTutorCollapse,
-                title: 'Open study coach'
-            }, C.h('span', { style: 'font-size:22px;color:var(--ink)' }, '🤖'));
-        }
+        // When collapsed, chatRoot is display:none — the always-present toggle
+        // button (rendered outside chatRoot) is the open affordance, so render
+        // nothing here to avoid building dead vdom on every collapse.
+        if (isPanelCollapsed) return C.h('div', {});
 
         const messages = tutorMessages.map((m, i) => ({
             role: m.role || (m.isUser ? 'user' : 'assistant'),
-            text: m.text,
+            // Render the stop marker only in the UI; it is never stored in m.text.
+            text: m.interrupted ? `${m.text} …[stopped]` : m.text,
             parts: m.parts,
             _idx: i,
             _err: m.err === true
@@ -127,66 +212,129 @@ function renderSdkChat() {
             disabled: isThinking
         });
 
-        // Update the SDK-agnostic action bar imperatively (AICat has no footer slot).
+        // AICat ignores header/footer/empty props — update our own overlays.
         updateActionBar();
+        updateHeaderControls();
+        updateEmptySlot(messages.length === 0);
 
         return C.AICat({
             name: 'Study Coach',
             messages: messages,
             thinking: isThinking,
             status: statusLabel(),
-            header: renderHeaderControls(C),
-            empty: messages.length === 0 ? renderEmptyState(C) : undefined,
             composer: isThinking ? renderStopRow(C, composer) : composer
         });
     });
 }
 
-function renderHeaderControls(C) {
-    const btn = (label, title, onClick) => C.h('button', {
-        class: 'tutor-hdr-btn', title, 'aria-label': title, onClick
-    }, label);
-    const controls = [
-        btn('⟲', 'New conversation', clearConversation),
-        btn('⚙', 'Tutor settings', toggleSettings)
-    ];
-    if (showSettings) controls.push(renderSettings(C));
-    return C.h('div', { class: 'tutor-hdr-controls' }, ...controls);
+// Imperative header overlay (status pill + new-conversation + settings), since
+// AICat(Dt) does not render a `header` prop.
+function updateHeaderControls() {
+    const host = panelContainer?.querySelector('#tutor-hdr-controls');
+    if (!host) return;
+    host.style.display = isPanelCollapsed ? 'none' : '';
+    if (isPanelCollapsed) { host.innerHTML = ''; return; }
+    host.innerHTML = '';
+    const pill = document.createElement('span');
+    pill.className = 'tutor-status-pill';
+    pill.setAttribute('data-status', modelStatus);
+    pill.setAttribute('role', 'status');
+    pill.setAttribute('aria-live', 'polite');
+    pill.textContent = statusLabel();
+    host.appendChild(pill);
+    const mk = (label, title, fn) => {
+        const b = document.createElement('button');
+        b.className = 'tutor-hdr-btn';
+        b.textContent = label; b.title = title; b.setAttribute('aria-label', title);
+        b.addEventListener('click', fn);
+        return b;
+    };
+    host.appendChild(mk('⟲', 'New conversation', clearConversation));
+    host.appendChild(mk('⚙', 'Tutor settings', toggleSettings));
+    if (showSettings) host.appendChild(buildSettingsPopover());
 }
 
-function renderSettings(C) {
-    const row = (label, key) => C.h('label', { class: 'tutor-set-row' },
-        C.h('input', {
-            type: 'checkbox',
-            checked: !!config[key],
-            onChange: (e) => { config[key] = e.target.checked; saveConfig(config); }
-        }),
-        C.h('span', {}, label)
-    );
-    return C.h('div', { class: 'tutor-settings-pop', role: 'menu' },
-        row('Daily check-in', 'proactiveCheckins'),
-        row('Coach me after reviews', 'autoCoachOnReview')
-    );
+// Empty-state starter chips overlay (AICat ignores an `empty` prop).
+function updateEmptySlot(isEmpty) {
+    const slot = panelContainer?.querySelector('#tutor-empty-slot');
+    if (!slot) return;
+    if (!isEmpty || isPanelCollapsed) { slot.style.display = 'none'; slot.innerHTML = ''; return; }
+    slot.style.display = '';
+    slot.innerHTML = '';
+    const title = document.createElement('div');
+    title.className = 'tutor-empty-title';
+    title.textContent = 'Hi — I’m your study coach.';
+    const sub = document.createElement('div');
+    sub.className = 'tutor-empty-sub';
+    sub.textContent = 'Try one of these:';
+    const chips = document.createElement('div');
+    chips.className = 'tutor-chips';
+    for (const p of starterPrompts()) {
+        const c = document.createElement('button');
+        c.className = 'tutor-chip';
+        c.textContent = p;
+        c.addEventListener('click', () => sendTutorMessage(p));
+        chips.appendChild(c);
+    }
+    slot.append(title, sub, chips);
 }
 
-function renderEmptyState(C) {
-    return C.h('div', { class: 'tutor-empty' },
-        C.h('div', { class: 'tutor-empty-title' }, '👋 Hi — I’m your study coach.'),
-        C.h('div', { class: 'tutor-empty-sub' }, 'Try one of these:'),
-        C.h('div', { class: 'tutor-chips' },
-            ...STARTER_PROMPTS.map(p => C.h('button', {
-                class: 'tutor-chip', onClick: () => sendTutorMessage(p)
-            }, p))
-        )
+// DOM (not vdom) settings popover — lives inside the imperative header overlay.
+function buildSettingsPopover() {
+    const pop = document.createElement('div');
+    pop.className = 'tutor-settings-pop';
+    pop.setAttribute('role', 'group');
+    pop.setAttribute('aria-label', 'Tutor settings');
+    const toggleRow = (label, key) => {
+        const row = document.createElement('label');
+        row.className = 'tutor-set-row';
+        row.setAttribute('role', 'menuitemcheckbox');
+        row.setAttribute('aria-checked', String(!!config[key]));
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = !!config[key];
+        cb.addEventListener('change', () => {
+            config[key] = cb.checked;
+            saveConfig(config);
+            row.setAttribute('aria-checked', String(cb.checked));
+        });
+        const span = document.createElement('span');
+        span.textContent = label;
+        row.append(cb, span);
+        return row;
+    };
+    const widthRow = document.createElement('label');
+    widthRow.className = 'tutor-set-row tutor-set-width';
+    const wlabel = document.createElement('span');
+    wlabel.textContent = 'Panel width';
+    const slider = document.createElement('input');
+    slider.type = 'range'; slider.min = '24'; slider.max = '60'; slider.step = '2';
+    slider.value = String(config.panelWidth || 30);
+    slider.setAttribute('aria-label', 'Panel width percent');
+    const val = document.createElement('span');
+    val.className = 'tutor-set-val';
+    val.textContent = `${config.panelWidth || 30}%`;
+    slider.addEventListener('input', () => {
+        config.panelWidth = Number(slider.value) || 30;
+        saveConfig(config);
+        val.textContent = `${config.panelWidth}%`;
+        applyResponsiveWidth();
+    });
+    widthRow.append(wlabel, slider, val);
+    pop.append(
+        toggleRow('Daily check-in', 'proactiveCheckins'),
+        toggleRow('Coach me after reviews', 'autoCoachOnReview'),
+        widthRow
     );
+    return pop;
 }
 
 function updateActionBar() {
     const bar = panelContainer?.querySelector('#tutor-action-bar');
     if (!bar) return;
     const last = tutorMessages[tutorMessages.length - 1];
-    const show = !isPanelCollapsed && !isThinking && !streamingBuf && last && last.role === 'assistant' && !last.err;
-    if (!show) { bar.innerHTML = ''; bar.style.display = 'none'; return; }
+    const idle = !isPanelCollapsed && !isThinking && !streamingBuf && last && last.role === 'assistant';
+    if (!idle) { bar.innerHTML = ''; bar.style.display = 'none'; return; }
     bar.style.display = '';
     bar.className = 'tutor-msg-actions';
     bar.innerHTML = '';
@@ -198,11 +346,10 @@ function updateActionBar() {
         b.addEventListener('click', fn);
         return b;
     };
-    bar.appendChild(mkBtn('⧉ copy', 'Copy answer', () => {
-        try { navigator.clipboard?.writeText(last.text); showTutorToast('Copied'); }
-        catch { showTutorToast('Copy failed'); }
-    }));
-    // Retry only when there is a real preceding user turn to regenerate from.
+    // Copy is meaningless on an error turn; only offer retry there.
+    if (!last.err) bar.appendChild(mkBtn('⧉ copy', 'Copy answer', () => copyText(last.text)));
+    // Retry whenever there is a real preceding user turn to resend — including
+    // after an error turn, so "use retry below" is a real affordance.
     if (lastRegenerableUserText()) {
         bar.appendChild(mkBtn('↻ retry', 'Regenerate answer', regenerateLast));
     }
@@ -210,7 +357,7 @@ function updateActionBar() {
 
 function renderStopRow(C, composer) {
     return C.h('div', { class: 'tutor-composer-stop' },
-        C.h('button', { class: 'tutor-stop-btn', title: 'Stop generating', onClick: stopGeneration }, '■ stop'),
+        C.h('button', { class: 'tutor-stop-btn', title: 'Stop generating', 'aria-label': 'Stop generating', onClick: stopGeneration }, '■ stop'),
         composer
     );
 }
@@ -270,7 +417,7 @@ function renderFallbackChat() {
 
     // Replay persisted history into the fallback DOM.
     if (tutorMessages.length === 0) {
-        appendFallbackMessage('Welcome! I’ll help you study. Ask a question or start a review.', false);
+        appendFallbackMessage('Hi — I’m your study coach. Ask a question, or try “What should I review first?”', false);
     } else {
         for (const m of tutorMessages) appendFallbackMessage(m.text, m.role === 'user');
     }
@@ -292,29 +439,36 @@ function isAtBottom(el) {
 }
 
 // ----- width / responsive -----
+// Single breakpoint shared with style.css (≤768px = mobile bottom sheet).
+const MOBILE_BP = '(max-width: 768px)';
+
 function applyResponsiveWidth() {
     if (!panelContainer) return;
-    const mobile = window.matchMedia('(max-width: 640px)').matches;
+    const mobile = window.matchMedia(MOBILE_BP).matches;
     const chatRoot = panelContainer.querySelector('#tutor-chat-root');
     const toggleBtn = panelContainer.querySelector('#tutor-collapse-btn');
 
-    if (isPanelCollapsed) {
-        panelContainer.classList.add('tutor-collapsed');
-        panelContainer.classList.remove('tutor-mobile-overlay');
-        panelContainer.style.width = '52px';
-        if (chatRoot) chatRoot.style.display = 'none';
-        if (toggleBtn) toggleBtn.textContent = mobile ? '🤖' : '←';
+    panelContainer.classList.toggle('tutor-collapsed', isPanelCollapsed);
+
+    if (mobile) {
+        // Mobile: CSS owns width/height (bottom sheet). Never set inline width —
+        // it would fight the !important sheet rules and the height transition.
+        panelContainer.style.width = '';
+        document.body.classList.toggle('tutor-sheet-open', !isPanelCollapsed);
     } else {
-        panelContainer.classList.remove('tutor-collapsed');
-        if (chatRoot) chatRoot.style.display = '';
-        if (toggleBtn) toggleBtn.textContent = '→';
-        if (mobile) {
-            panelContainer.classList.add('tutor-mobile-overlay');
-            panelContainer.style.width = '100%';
-        } else {
-            panelContainer.classList.remove('tutor-mobile-overlay');
-            panelContainer.style.width = (config.panelWidth || 30) + '%';
-        }
+        // Desktop: collapsed strip vs configured width. Clear the body class.
+        document.body.classList.remove('tutor-sheet-open');
+        panelContainer.style.width = isPanelCollapsed ? '52px' : ((config.panelWidth || 30) + '%');
+    }
+
+    // The chat body is hidden when collapsed via the .tutor-collapsed class in CSS
+    // (display toggle deferred so the width/height transition can animate).
+    if (chatRoot) chatRoot.style.display = isPanelCollapsed ? 'none' : '';
+
+    if (toggleBtn) {
+        toggleBtn.textContent = isPanelCollapsed ? (mobile ? '🤖' : '←') : '→';
+        toggleBtn.setAttribute('aria-expanded', String(!isPanelCollapsed));
+        toggleBtn.setAttribute('aria-label', isPanelCollapsed ? 'Open study coach' : 'Collapse study coach');
     }
 }
 
@@ -323,17 +477,64 @@ function toggleTutorCollapse() {
     isPanelCollapsed = !isPanelCollapsed;
     saveCollapsed(isPanelCollapsed);
     applyResponsiveWidth();
+    // Opening the coach is the moment to start loading the model (lazy load),
+    // so the first message doesn't pay the full download with no feedback.
+    if (!isPanelCollapsed) preloadTutorModel();
     if (sdkRender) sdkRender();
+}
+
+// Idempotent model preload — kicks the worker's load and reflects it in the pill.
+let preloadKicked = false;
+export function preloadTutorModel() {
+    if (preloadKicked || !tutorWorker) return;
+    if (modelStatus === 'ready' || modelStatus === 'unavailable') return;
+    preloadKicked = true;
+    setStatus('loading', 'starting the coach…');
+    tutorWorker.postMessage({ cmd: 'init' });
 }
 
 function toggleSettings() {
     showSettings = !showSettings;
+    if (showSettings) {
+        // Close on outside-click or Escape. Registered on the next tick so the
+        // click that opened the popover doesn't immediately close it.
+        setTimeout(() => {
+            document.addEventListener('click', onSettingsOutsideClick, true);
+            document.addEventListener('keydown', onSettingsEscape, true);
+        }, 0);
+    } else {
+        removeSettingsDismissHandlers();
+    }
     if (sdkRender) sdkRender();
 }
 
+function removeSettingsDismissHandlers() {
+    document.removeEventListener('click', onSettingsOutsideClick, true);
+    document.removeEventListener('keydown', onSettingsEscape, true);
+}
+
+function onSettingsOutsideClick(e) {
+    const pop = panelContainer?.querySelector('.tutor-settings-pop');
+    const gear = e.target.closest?.('.tutor-hdr-btn');
+    if (pop && !pop.contains(e.target) && !gear) {
+        showSettings = false;
+        removeSettingsDismissHandlers();
+        if (sdkRender) sdkRender();
+    }
+}
+
+function onSettingsEscape(e) {
+    if (e.key === 'Escape') {
+        showSettings = false;
+        removeSettingsDismissHandlers();
+        if (sdkRender) sdkRender();
+    }
+}
+
 function syncTheme() {
-    if (!panelContainer) return;
-    if (sdkRender) sdkRender();
+    // Theme is entirely CSS-variable driven, so a theme change needs no rerender
+    // of the chat vdom. (Previously this re-ran the full AICat build on every
+    // theme-changed event, compounding the per-token render cost.)
 }
 
 // ----- conversation control -----
@@ -345,7 +546,14 @@ export function clearConversation() {
     tutorMessages = [];
     streamingBuf = '';
     clearHistory();
-    if (tutorWorker) tutorWorker.postMessage({ cmd: 'reset-history' });
+    if (tutorWorker) {
+        // Interrupt any in-flight generation before resetting so the worker's
+        // KV cache is disposed by runChat after the generate settles, never
+        // mid-generate (the use-after-free guard). The worker also self-guards.
+        if (isThinking) tutorWorker.postMessage({ cmd: 'stop' });
+        tutorWorker.postMessage({ cmd: 'reset-history' });
+    }
+    isThinking = false;
     if (sdkRender) sdkRender();
     else {
         const m = panelContainer?.querySelector('#tutor-messages');
@@ -390,21 +598,60 @@ export function regenerateLast() {
 export function addTutorMessage(text, isUser = false, opts = {}) {
     const turn = { text, role: isUser ? 'user' : 'assistant', ts: Date.now() };
     if (opts.err) turn.err = true;
+    if (opts.interrupted) turn.interrupted = true;
     tutorMessages.push(turn);
     persist();
-    if (sdkRender) sdkRender();
+    if (sdkRender) { sdkRender(); keepScrolledToBottom(); }
     else appendFallbackMessage(text, isUser);
 }
 
+// Copy with a real async path: clipboard API rejects asynchronously (the sync
+// try/catch never catches it) and is undefined on insecure contexts, so we await
+// it and fall back to execCommand before reporting success.
+async function copyText(text) {
+    try {
+        if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(text);
+            showTutorToast('Copied');
+            return;
+        }
+    } catch { /* fall through to execCommand */ }
+    try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;opacity:0;';
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand('copy');
+        ta.remove();
+        showTutorToast(ok ? 'Copied' : 'Copy failed');
+    } catch {
+        showTutorToast('Copy failed');
+    }
+}
+
+let toastEl = null;
+let toastTimer = null;
+let toastRemoveTimer = null;
+// Single reusable toast element: rapid-fire toasts (repeated errors, copy, stop)
+// reuse one node instead of stacking unbounded overlapping divs at the same spot.
 export function showTutorToast(message, duration = 3000) {
     if (!panelContainer) return;
-    const toast = document.createElement('div');
-    toast.className = 'tutor-toast';
-    toast.textContent = message;
-    panelContainer.appendChild(toast);
-    setTimeout(() => {
-        toast.style.opacity = '0';
-        setTimeout(() => toast.remove(), 300);
+    if (!toastEl || !toastEl.isConnected) {
+        toastEl = document.createElement('div');
+        toastEl.className = 'tutor-toast';
+        toastEl.setAttribute('role', 'status');
+        toastEl.setAttribute('aria-live', 'polite');
+        panelContainer.appendChild(toastEl);
+    }
+    clearTimeout(toastTimer);
+    clearTimeout(toastRemoveTimer);
+    toastEl.textContent = message;
+    toastEl.style.opacity = '1';
+    toastTimer = setTimeout(() => {
+        if (!toastEl) return;
+        toastEl.style.opacity = '0';
+        toastRemoveTimer = setTimeout(() => { toastEl?.remove(); toastEl = null; }, 300);
     }, duration);
 }
 
@@ -414,10 +661,25 @@ export function sendTutorMessage(text, opts = {}) {
         showTutorToast('Tutor unavailable — WebGPU required (Chrome/Edge).');
         return;
     }
+    preloadTutorModel(); // ensure the model is loading even if send precedes open
     if (!opts.isRegenerate) addTutorMessage(text, true);
     lastUserText = text;
+    // Set thinking optimistically *now*, before the worker's coaching-start —
+    // otherwise during the model-load window (status loading/downloading) the
+    // isThinking guard is still false and rapid sends would queue duplicate
+    // user-messages with no spinner. The worker processes in order; the first
+    // coaching-start just confirms what we already reflect.
+    isThinking = true;
+    armThinkingWatchdog();
+    if (modelStatus !== 'ready') {
+        // First use while the model is still loading: tell the user the reply
+        // will follow once the model finishes, so the UI does not look frozen.
+        showTutorToast('Loading the coach — your first reply may take a moment…', 4000);
+    }
+    if (sdkRender) sdkRender();
     // Unified routing: the model decides whether to answer or emit a tool block.
-    tutorWorker.postMessage({ cmd: 'user-message', text });
+    // Regenerate requests sampling so the retry varies (see runChat sample flag).
+    tutorWorker.postMessage({ cmd: 'user-message', text, sample: opts.isRegenerate === true });
 }
 
 function dispatchAndStrip(message) {
@@ -444,6 +706,10 @@ export function wireWorkerToPanel(worker) {
         worker.postMessage({ cmd: 'seed-history', history: toWorkerHistory(tutorMessages) });
     }
 
+    // If the user had the coach open from a previous visit, start loading now so
+    // it is ready by the time they type (the open-trigger already fired pre-wire).
+    if (!isPanelCollapsed) preloadTutorModel();
+
     worker.addEventListener('message', (e) => {
         const { event, token, message, error, stage, progress, loaded, total, interrupted } = e.data || {};
 
@@ -466,14 +732,25 @@ export function wireWorkerToPanel(worker) {
                 setStatus('ready');
                 break;
 
-            case 'unavailable':
+            case 'unavailable': {
                 isThinking = false;
+                clearThinkingWatchdog();
                 setStatus('unavailable', error || 'WebGPU required');
-                addTutorMessage(`Tutor unavailable — ${error || 'WebGPU required. Open in Chrome or Edge.'}`, false, { err: true });
+                // Don't spam the thread with duplicate availability errors on repeated
+                // sends — surface once, then only a transient toast thereafter.
+                const last = tutorMessages[tutorMessages.length - 1];
+                const alreadyShown = last && last.err && /unavailable/i.test(last.text);
+                if (!alreadyShown) {
+                    addTutorMessage(`Tutor unavailable — ${error || 'WebGPU required. Open in Chrome or Edge.'}`, false, { err: true });
+                } else {
+                    showTutorToast('Tutor unavailable — WebGPU required.');
+                }
                 break;
+            }
 
             case 'coaching-start':
                 isThinking = true;
+                armThinkingWatchdog();
                 streamingBuf = '';
                 if (sdkRender) sdkRender();
                 break;
@@ -481,7 +758,8 @@ export function wireWorkerToPanel(worker) {
             case 'token':
                 if (token != null) {
                     streamingBuf += token;
-                    if (sdkRender) sdkRender();
+                    armThinkingWatchdog(); // streaming progress = worker alive
+                    scheduleStreamRender();
                 }
                 break;
 
@@ -491,10 +769,14 @@ export function wireWorkerToPanel(worker) {
             case 'coaching-done':
             case 'guide-answer-done': {
                 isThinking = false;
+                clearThinkingWatchdog();
                 const clean = dispatchAndStrip(message);
                 streamingBuf = '';
                 if (clean && clean.trim()) {
-                    addTutorMessage(interrupted ? clean + ' …⏹' : clean, false);
+                    // Persist interrupted as metadata, not baked into the text —
+                    // so the marker never reloads into the thread or feeds back
+                    // into the model's context on reseed.
+                    addTutorMessage(clean, false, { interrupted: interrupted === true });
                 } else if (interrupted) {
                     showTutorToast('Stopped.');
                     if (sdkRender) sdkRender();
@@ -510,6 +792,7 @@ export function wireWorkerToPanel(worker) {
             case 'session-overview-done':
             case 'triage-hint-done': {
                 isThinking = false;
+                clearThinkingWatchdog();
                 const clean = dispatchAndStrip(message);
                 streamingBuf = '';
                 if (event === 'review-coaching-done') {
@@ -519,7 +802,13 @@ export function wireWorkerToPanel(worker) {
                 if (event === 'session-overview-done') {
                     // Daily greeting: consume the check-in slot only once it actually rendered.
                     markCheckedIn();
-                    if (clean && clean.trim()) showTutorToast('👋 ' + clean.slice(0, 120), 6000);
+                    // Render the full personalized plan into the thread (it used to be a
+                    // truncated 6s toast that was discarded). A short toast nudges the
+                    // user to open the panel if it's collapsed.
+                    if (clean && clean.trim()) {
+                        addTutorMessage(clean, false);
+                        if (isPanelCollapsed) showTutorToast('Your study coach has a plan for today', 6000);
+                    }
                 }
                 if (event === 'triage-hint-done' && clean) showTutorToast('💡 ' + clean.slice(0, 120), 6000);
                 break;
@@ -527,11 +816,27 @@ export function wireWorkerToPanel(worker) {
 
             case 'error':
                 isThinking = false;
+                clearThinkingWatchdog();
                 streamingBuf = '';
-                addTutorMessage(`Something went wrong: ${error || e.data.msg}. Tap to retry.`, false, { err: true });
+                addTutorMessage(`Something went wrong: ${error || e.data.msg}. Use retry below.`, false, { err: true });
                 break;
         }
     });
+}
+
+// Re-sync the in-memory thread from storage (another tab wrote history).
+// Guard against clobbering a live generation in this tab.
+export function syncTutorFromStorage() {
+    if (isThinking || streamingBuf) return;
+    const fresh = loadHistory();
+    // Only adopt if it actually differs, to avoid needless rerenders.
+    if (JSON.stringify(fresh) === JSON.stringify(tutorMessages)) return;
+    tutorMessages = fresh;
+    if (tutorWorker) {
+        tutorWorker.postMessage({ cmd: 'reset-history' });
+        tutorWorker.postMessage({ cmd: 'seed-history', history: toWorkerHistory(tutorMessages) });
+    }
+    if (sdkRender) sdkRender();
 }
 
 export function closeTutorPanel() {

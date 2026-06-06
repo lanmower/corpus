@@ -22,6 +22,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     const cram = await import('./site/cram.js');
     const justread = await import('./site/justread.js');
     const tutorStore = await import('./site/tutor-store.js');
+    const toolDispatch = await import('./site/tool-dispatch.js');
     const appSrc = READ('site/app.js'), styleCss = READ('site/style.css'), indexHtml = READ('site/index.html');
     const liveSrc = READ('site/triage-live.js'), liveHtml = READ('site/triage-live.html'), liveCss = READ('site/triage-live.css'), workerSrc = READ('site/triage-llm-worker.js');
 
@@ -803,9 +804,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const loaded = tutorStore.loadHistory();
         assert.strictEqual(loaded.length, 2);
         assert.strictEqual(loaded[0].role, 'user'); assert.strictEqual(loaded[1].text, 'hello');
-        // worker projection: {role,content}, capped to 12
+        // worker projection: {role,content}, capped to WORKER_CONTEXT_TURNS (16)
         const wh = tutorStore.toWorkerHistory(Array.from({ length: 20 }, (_, i) => ({ role: 'user', text: 'm' + i })));
-        assert.strictEqual(wh.length, 12); assert.strictEqual(wh[0].content, 'm8');
+        assert.strictEqual(wh.length, tutorStore.WORKER_CONTEXT_TURNS);
+        assert.strictEqual(wh[0].content, 'm' + (20 - tutorStore.WORKER_CONTEXT_TURNS));
         // corrupt JSON degrades to [] without throwing, and clears the key
         localStorage.setItem(tutorStore.HISTORY_KEY, '{not json');
         assert.deepStrictEqual(tutorStore.loadHistory(), []);
@@ -870,6 +872,55 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // broadened quota detection
         const storeSrc = READ('site/tutor-store.js');
         assert.ok(/e\.code === 22/.test(storeSrc) && /1014/.test(storeSrc), 'quota detection covers Chrome+Firefox codes');
+
+        // ---- conversation-mode UX overhaul invariants ----
+        // CSS footguns fixed: single .tutor-panel-root block, unified 768px breakpoint, no dead mobile classes
+        const css = READ('site/style.css');
+        assert.strictEqual((css.match(/^\.tutor-panel-root \{/gm) || []).length, 1, 'single .tutor-panel-root rule block');
+        assert.ok(!/max-width: 640px/.test(css) || !/tutor-mobile-overlay/.test(css), 'no stray 640px tutor overlay block');
+        assert.ok(/tutor-sheet-open/.test(css) && /tutor-sheet-open/.test(panelSrc), 'body.tutor-sheet-open wired in CSS+JS');
+        assert.ok(!/#fde2e2|#a11\b/.test(css), 'error pill colors themed, not hardcoded');
+        // JS+CSS share the 768px mobile breakpoint
+        assert.ok(/max-width: 768px/.test(panelSrc), 'JS keys mobile off 768px (matches CSS)');
+        // lazy load: no eager init at boot; preload on open
+        assert.ok(!/worker\.postMessage\(\{ cmd: 'init' \}\)/.test(app), 'no eager model init at boot');
+        assert.ok(/preloadTutorModel/.test(panelSrc), 'panel preloads model on open');
+        // send gated when not ready + optimistic thinking + watchdog
+        assert.ok(/armThinkingWatchdog/.test(panelSrc) && /THINKING_TIMEOUT_MS/.test(panelSrc), 'thinking watchdog resets stuck state');
+        assert.ok(/isThinking = true;\s*\n\s*armThinkingWatchdog/.test(panelSrc), 'isThinking set optimistically on send');
+        // interrupted persisted as metadata, not baked into text
+        assert.ok(/turn\.interrupted = true/.test(panelSrc) && !/clean \+ ' …⏹'/.test(panelSrc), 'interrupted is metadata, not text');
+        // copy has execCommand fallback; toasts reuse one node with role=status
+        assert.ok(/execCommand\('copy'\)/.test(panelSrc), 'copy falls back to execCommand');
+        assert.ok(/role', 'status'/.test(panelSrc) && /toastEl/.test(panelSrc), 'single reusable toast with role=status');
+        // worker resets KV on system-prompt change + samples on regenerate + load timeout
+        assert.ok(/kvSysKey/.test(workerTutor), 'worker resets KV per system prompt');
+        assert.ok(/do_sample: sample/.test(workerTutor) && /sample: data\.sample === true/.test(workerTutor), 'regenerate path enables sampling');
+        assert.ok(/withTimeout/.test(workerTutor) && /LOAD_TIMEOUT_MS/.test(workerTutor), 'model load has timeout+retry');
+        // history caps aligned + documented via shared constant
+        assert.ok(/WORKER_CONTEXT_TURNS/.test(storeSrc) && /WORKER_CONTEXT_TURNS/.test(workerTutor), 'worker context cap is a shared documented constant');
+        // exam days no longer hardcoded
+        assert.ok(!/const examDaysLeft = 30/.test(app) && /srs\.daysUntilExam\(\)/.test(app), 'session-overview uses real exam date');
+        // settings: width slider + outside-click/escape dismissal
+        assert.ok(/panelWidth/.test(panelSrc) && /\.type = 'range'/.test(panelSrc), 'settings expose panel width slider');
+        // SDK overlays: header controls + empty chips rendered as DOM siblings (AICat ignores header/empty props)
+        assert.ok(/tutor-hdr-controls/.test(panelSrc) && /updateHeaderControls/.test(panelSrc), 'header controls rendered as overlay sibling');
+        assert.ok(/tutor-empty-slot/.test(panelSrc) && /updateEmptySlot/.test(panelSrc), 'empty-state chips rendered as overlay sibling');
+        assert.ok(!/header: renderHeaderControls/.test(panelSrc) && !/empty: messages\.length/.test(panelSrc), 'no unsupported AICat header/empty props');
+        assert.ok(/onSettingsOutsideClick/.test(panelSrc) && /onSettingsEscape/.test(panelSrc), 'settings close on outside-click + escape');
+        // multi-tab history sync + personalized starters
+        assert.ok(/syncTutorFromStorage/.test(panelSrc) && /syncTutorFromStorage/.test(app), 'multi-tab history sync wired');
+        assert.ok(/setTutorContext/.test(panelSrc) && /starterPrompts/.test(panelSrc), 'starter chips personalize from real state');
+
+        // tool-dispatch parser: strip + dispatch + malformed tolerance
+        const td = toolDispatch;
+        const withTool = 'before\n```tool\n{"name":"navigate","args":{"route":"today"}}\n```\nafter';
+        let dispatched = null;
+        td.dispatchToolCalls(withTool, { navigate: (a) => { dispatched = a.route; } });
+        assert.strictEqual(dispatched, 'today', 'tool-dispatch invokes the named action');
+        assert.ok(!/```tool/.test(td.stripToolBlocks(withTool)), 'stripToolBlocks removes fenced tool block');
+        assert.doesNotThrow(() => td.dispatchToolCalls('```tool\n{bad json}\n```', {}), 'malformed tool block does not throw');
+
         localStorage.clear();
     });
 
