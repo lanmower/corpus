@@ -1,2 +1,0 @@
-./site/247420.js:123:123 ae
-function ae(e){if(e==null)return[];let t=[],n=/(\*\*([^*]+)\*\*|\*([^*]+)\*|`([^`]+)`|\[([^\]]+)\]\(([^)]+)\))/g,s=0,r,i=0,a=o=>t.push(o);for(;(r=n.exec(e))!==null;)r.index>s&&a(h("span",{key:"s"+i+"a"},e.slice(s,r.index))),r[2]!=null?a(h("strong",{key:"s"+i},r[2])):r[3]!=null?a(h("em",{key:"s"+i},r[3])):r[4]!=null?a(h("code",{key:"s"+i,class:"chat-tick"},r[4])):r[5]!=null&&a(h("a",{key:"s"+i,href:r[6],target:"_blank",rel:"noopener"},r[5])),s=r.index+r[0].length,i+=1;return s<e.length&&a(h("span",{key:"s"+i+"a"},e.slice(s))),t}

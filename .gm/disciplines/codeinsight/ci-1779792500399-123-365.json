@@ -1,2 +1,0 @@
-./site/247420.js:123:123 cs
-function cs(){let e=S.cacheHits+S.cacheMisses;return{markdownInitialized:Ie,prismInitialized:Ne,initMs:{markdown:S.markdownInitMs,prism:S.prismInitMs},renderStats:{count:S.renderCount,avgTimeMs:S.renderTimes.length?(S.renderTimes.reduce((t,n)=>t+n,0)/S.renderTimes.length).toFixed(2):0,minTimeMs:S.renderTimes.length?Math.min(...S.renderTimes).toFixed(2):0,maxTimeMs:S.renderTimes.length?Math.max(...S.renderTimes).toFixed(2):0},cacheStats:{hits:S.cacheHits,misses:S.cacheMisses,hitRate:e>0?(S.cacheHits/e*100).toFixed(1)+"%":"N/A",cacheSize:X.size}}}

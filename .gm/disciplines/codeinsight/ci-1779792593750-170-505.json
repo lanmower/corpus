@@ -1,9 +1,0 @@
-./site/app.js:170:177 dueCountsBySubjectMap
-function dueCountsBySubjectMap() {
-    const out = {};
-    for (const meta of state.manifest.subjects) {
-        const sh = state.shards[meta.subject];
-        out[meta.subject] = sh ? srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates()).length : 0;
-    }
-    return out;
-}

@@ -1,9 +1,0 @@
-./site/app.js:2637:2644 updateOnlineStatus
-function updateOnlineStatus() {
-    const dot = document.querySelector('.status .dot');
-    const lbl = document.getElementById('status-label');
-    if (!dot || !lbl) return;
-    dot.classList.remove('loading');
-    if (navigator.onLine) { dot.classList.remove('offline'); dot.classList.add('live'); lbl.textContent = 'online'; }
-    else { dot.classList.remove('live'); dot.classList.add('offline'); lbl.textContent = 'offline'; }
-}

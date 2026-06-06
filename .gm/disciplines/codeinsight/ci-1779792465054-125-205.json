@@ -1,2 +1,0 @@
-./site/247420.js:125:125 Vn
-function Vn({topbar:e,crumb:t,side:n,main:s,status:r,narrow:i}={}){let a=!!n,o=a?n:y("aside",{class:"app-side","aria-hidden":"true"});return y("div",{class:"app"},y("a",{href:"#app-main",class:"skip-link"},"skip to main content"),e||null,t||null,y("div",{class:"app-body"+(a?"":" no-side")},y("div",{class:"app-side-shell"},o),y("main",{class:"app-main"+(i?" narrow":""),id:"app-main"},...Array.isArray(s)?s:[s])),r||null)}

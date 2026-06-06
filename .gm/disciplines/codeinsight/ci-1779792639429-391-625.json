@@ -1,9 +1,0 @@
-./site/schedule.js:391:398 emit
-function emit(reason) {
-    try { channel()?.postMessage({ type: 'schedule:updated', reason, ts: Date.now() }); } catch {}
-    try {
-        if (typeof window !== 'undefined' && window.dispatchEvent) {
-            window.dispatchEvent(new CustomEvent('schedule:updated', { detail: { reason, ts: Date.now() } }));
-        }
-    } catch {}
-}

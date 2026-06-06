@@ -1,7 +1,0 @@
-./site/schedule.js:378:383 subjectHeat
-function subjectHeat(dateIso) {
-    const blocks = blocksForDate(dateIso).filter(b => b.kind === 'study');
-    const map = {};
-    for (const b of blocks) map[b.subject] = (map[b.subject] || 0) + b.len;
-    return map;
-}

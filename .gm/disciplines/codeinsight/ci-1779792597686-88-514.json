@@ -1,5 +1,0 @@
-./site/app.js:88:91 setDocTitle
-function setDocTitle(route, subject) {
-    const main = subject ? subject : (ROUTE_TITLES[route] || route);
-    document.title = `${main} · corpus`;
-}

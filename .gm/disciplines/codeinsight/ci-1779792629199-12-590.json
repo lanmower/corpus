@@ -1,4 +1,0 @@
-./site/mastery.js:12:14 loadMistakes
-function loadMistakes() {
-    try { return JSON.parse(localStorage.getItem('corpus.mistakes.v1') || '[]'); } catch { return []; }
-}

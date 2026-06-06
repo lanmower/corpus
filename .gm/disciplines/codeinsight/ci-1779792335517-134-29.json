@@ -1,6 +1,0 @@
-./scripts/build_data.js:134:138 coerceParameters
-function coerceParameters(p) {
-    if (p && typeof p === 'object' && !Array.isArray(p)) return p;
-    if (typeof p === 'string' && p.trim()) return { description: p };
-    return {};
-}

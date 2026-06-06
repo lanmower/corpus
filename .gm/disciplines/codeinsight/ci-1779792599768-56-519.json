@@ -1,2 +1,0 @@
-./site/app.js:56:56 fetchJson
-async function fetchJson(p) { const r = await fetch(p); if (!r.ok) throw new Error(`${p}: ${r.status}`); return r.json(); }

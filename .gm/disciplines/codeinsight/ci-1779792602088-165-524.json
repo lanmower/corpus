@@ -1,9 +1,0 @@
-./site/calendar.js:165:172 renderWeek
-function renderWeek() {
-    const days = weekDays(state.anchor);
-    const head = el('div', { class: 'cal-title' }, `week of ${days[0]}`);
-    const dowRow = el('div', { class: 'cal-dow' }, ...DOW_LABELS.map(l => el('span', {}, l)));
-    const grid = el('div', { class: 'cal-grid week' });
-    for (const d of days) grid.append(renderDayCell(d));
-    return el('div', {}, head, dowRow, grid);
-}

@@ -1,2 +1,0 @@
-./scripts/compress_media.js:42:42 sizeMB
-function sizeMB(p) { try { return fs.statSync(p).size / (1024 * 1024); } catch { return 0; } }

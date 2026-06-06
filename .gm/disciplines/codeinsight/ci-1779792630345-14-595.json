@@ -1,6 +1,0 @@
-./site/mistakes.js:14:18 bySubject
-function bySubject(n = 50) {
-    const out = {};
-    for (const m of recent(n)) (out[m.subject] = out[m.subject] || []).push(m);
-    return out;
-}

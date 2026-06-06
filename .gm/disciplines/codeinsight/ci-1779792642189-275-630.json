@@ -1,6 +1,0 @@
-./site/schedule.js:275:279 lockBlock
-function lockBlock(id, locked = true) {
-    const s = loadSchedule();
-    const b = s.blocks.find(x => x.id === id); if (!b) return null;
-    b.locked = !!locked; saveSchedule(s); return b;
-}

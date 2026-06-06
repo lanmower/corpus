@@ -1,7 +1,0 @@
-./site/app.js:1748:1753 resetReviewQueue
-function resetReviewQueue() {
-    state.reviewQueueIds = []; state.reviewIndex = 0;
-    state.reviewRevealed = false; state.reviewAgainPile = [];
-    state.reviewSessionGraded = 0; state.sessionFinished = false;
-    state.reviewSessionCap = null; state._reviewBacklog = 0;
-}

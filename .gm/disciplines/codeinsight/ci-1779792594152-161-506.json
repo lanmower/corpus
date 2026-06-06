@@ -1,9 +1,0 @@
-./site/app.js:161:168 totalDueAll
-function totalDueAll() {
-    let n = 0;
-    for (const meta of state.manifest.subjects) {
-        const sh = state.shards[meta.subject]; if (!sh) continue;
-        n += srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates()).length;
-    }
-    return n;
-}

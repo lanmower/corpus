@@ -1,2 +1,0 @@
-./site/247420.js:125:125 $n
-function $n({fields:e=[],submit:t="submit",onSubmit:n}){return f("form",{class:"row-form",onsubmit:s=>{s.preventDefault(),n&&n(s)}},...e.map((s,r)=>s.kind==="textarea"?f("textarea",{key:r,name:s.name,placeholder:s.placeholder||"",rows:s.rows||4}):f("input",{key:r,name:s.name,type:s.type||"text",placeholder:s.placeholder||"",value:s.value||"",required:s.required?"true":null})),f("button",{type:"submit",class:"btn-primary"},t))}

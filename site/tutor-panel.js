@@ -61,6 +61,7 @@ function scheduleStreamRender() {
 // Keep the chat pinned to the latest message while streaming, mirroring the
 // fallback path's stick-to-bottom behaviour for the SDK thread.
 function keepScrolledToBottom() {
+    if (isPanelCollapsed) return; // chatRoot is display:none when collapsed — nothing to scroll
     const root = panelContainer?.querySelector('#tutor-chat-root');
     if (!root) return;
     const scroller = root.querySelector('.chat-thread') || root.querySelector('[class*="thread"]') || root;
@@ -233,7 +234,21 @@ function updateHeaderControls() {
     const host = panelContainer?.querySelector('#tutor-hdr-controls');
     if (!host) return;
     host.style.display = isPanelCollapsed ? 'none' : '';
-    if (isPanelCollapsed) { host.innerHTML = ''; return; }
+    if (isPanelCollapsed) { host.innerHTML = ''; host.dataset.built = '0'; return; }
+
+    // The pill text/status changes on every streaming token; the buttons and the
+    // (possibly open) settings popover do NOT. Rebuilding host.innerHTML on every
+    // render would destroy an open popover and steal slider focus mid-drag. So:
+    // build the static structure once, then update only the pill in place. Rebuild
+    // the popover sub-tree only when showSettings toggles.
+    const built = host.dataset.built === '1';
+    const popOpen = !!host.querySelector('.tutor-settings-pop');
+    if (built && popOpen === showSettings) {
+        const pill = host.querySelector('.tutor-status-pill');
+        if (pill) { pill.setAttribute('data-status', modelStatus); pill.textContent = statusLabel(); }
+        return;
+    }
+
     host.innerHTML = '';
     const pill = document.createElement('span');
     pill.className = 'tutor-status-pill';
@@ -252,13 +267,20 @@ function updateHeaderControls() {
     host.appendChild(mk('⟲', 'New conversation', clearConversation));
     host.appendChild(mk('⚙', 'Tutor settings', toggleSettings));
     if (showSettings) host.appendChild(buildSettingsPopover());
+    host.dataset.built = '1';
 }
 
 // Empty-state starter chips overlay (AICat ignores an `empty` prop).
 function updateEmptySlot(isEmpty) {
     const slot = panelContainer?.querySelector('#tutor-empty-slot');
     if (!slot) return;
-    if (!isEmpty || isPanelCollapsed) { slot.style.display = 'none'; slot.innerHTML = ''; return; }
+    if (!isEmpty || isPanelCollapsed) {
+        if (slot.dataset.shown === '1') { slot.style.display = 'none'; slot.innerHTML = ''; slot.dataset.shown = '0'; }
+        return;
+    }
+    // Already showing the chips — skip the full rebuild to avoid per-render flicker/churn.
+    if (slot.dataset.shown === '1') return;
+    slot.dataset.shown = '1';
     slot.style.display = '';
     slot.innerHTML = '';
     const title = document.createElement('div');
@@ -288,7 +310,7 @@ function buildSettingsPopover() {
     const toggleRow = (label, key) => {
         const row = document.createElement('label');
         row.className = 'tutor-set-row';
-        row.setAttribute('role', 'menuitemcheckbox');
+        row.setAttribute('role', 'checkbox');
         row.setAttribute('aria-checked', String(!!config[key]));
         const cb = document.createElement('input');
         cb.type = 'checkbox';
@@ -384,7 +406,6 @@ function renderFallbackChat() {
     panelContainer.innerHTML = `
         <div class="tutor-fallback-head">
             <div style="display:flex;align-items:center;gap:8px;">
-                <span style="font-size:20px;">🤖</span>
                 <span style="font-weight:600;font-size:14px;">Study Coach</span>
                 <span id="tutor-status-pill" class="tutor-status-pill">starting…</span>
             </div>
@@ -466,7 +487,7 @@ function applyResponsiveWidth() {
     if (chatRoot) chatRoot.style.display = isPanelCollapsed ? 'none' : '';
 
     if (toggleBtn) {
-        toggleBtn.textContent = isPanelCollapsed ? (mobile ? '🤖' : '←') : '→';
+        toggleBtn.textContent = isPanelCollapsed ? (mobile ? 'Coach' : '←') : '→';
         toggleBtn.setAttribute('aria-expanded', String(!isPanelCollapsed));
         toggleBtn.setAttribute('aria-label', isPanelCollapsed ? 'Open study coach' : 'Collapse study coach');
     }
@@ -781,7 +802,7 @@ export function wireWorkerToPanel(worker) {
                     showTutorToast('Stopped.');
                     if (sdkRender) sdkRender();
                 }
-                if (event === 'guide-answer-done') showTutorToast('📚 guide answer ready');
+                if (event === 'guide-answer-done') showTutorToast('Guide answer ready');
                 break;
             }
 
@@ -810,7 +831,7 @@ export function wireWorkerToPanel(worker) {
                         if (isPanelCollapsed) showTutorToast('Your study coach has a plan for today', 6000);
                     }
                 }
-                if (event === 'triage-hint-done' && clean) showTutorToast('💡 ' + clean.slice(0, 120), 6000);
+                if (event === 'triage-hint-done' && clean) showTutorToast('Hint: ' + clean.slice(0, 120), 6000);
                 break;
             }
 

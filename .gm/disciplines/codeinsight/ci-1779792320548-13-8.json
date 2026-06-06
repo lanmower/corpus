@@ -1,4 +1,0 @@
-./scripts/anki_export.js:13:15 tsvEscape
-function tsvEscape(s) {
-    return String(s == null ? '' : s).replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
-}

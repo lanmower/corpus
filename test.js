@@ -280,6 +280,21 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(themeSrc, /prefers-color-scheme/);
         assert.match(indexHtml, /corpus\.theme\.v1/);
         assert.match(styleCss, /\[data-theme="dark"\]/);
+        // theme fix: dark/contrast blocks are scoped to .ds-247420[data-theme=...]
+        // (matched SDK specificity) and drive the SEMANTIC tokens the rules read.
+        assert.match(styleCss, /\.ds-247420\[data-theme="dark"\]/);
+        assert.match(styleCss, /\.ds-247420\[data-theme="contrast"\]/);
+        // semantic-token migration: no raw --ink/--paper used as fg/bg anymore.
+        assert.ok(!/var\(--ink\)/.test(styleCss) && !/var\(--paper\)/.test(styleCss),
+            'style.css uses semantic --fg/--bg, not raw palette tokens, for theming');
+        // SDK clobber guard: theme.js reasserts after the SDK init microtask.
+        assert.match(themeSrc, /MutationObserver/);
+        assert.match(themeSrc, /effectiveTheme\(\)/);
+        // theme toggle glyphs are ASCII (no mojibake / decorative tells).
+        assert.ok(!/[^\x00-\x7F]/.test(themeSrc), 'theme.js is ASCII-clean (no mojibake glyphs)');
+        // conversation-only tutor: decorative emoji removed from the panel.
+        const panelEmoji = READ('site/tutor-panel.js');
+        assert.ok(!/🤖|📚|💡/.test(panelEmoji), 'tutor-panel has no decorative emoji tells');
         assert.match(styleCss, /@media \(prefers-reduced-motion: reduce\)/);
         assert.match(styleCss, /@media print/);
         assert.match(styleCss, /:focus-visible/);

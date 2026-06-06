@@ -1,6 +1,0 @@
-./site/schedule.js:86:90 daysBetween
-function daysBetween(a, b) {
-    if (!a || !b) return 30;
-    const d = Math.floor((new Date(b + 'T00:00:00Z') - new Date(a + 'T00:00:00Z')) / 86400000);
-    return Number.isFinite(d) ? d : 30;
-}

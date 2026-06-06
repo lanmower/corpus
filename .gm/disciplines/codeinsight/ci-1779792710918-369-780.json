@@ -1,8 +1,0 @@
-./site/tutor-panel.js:369:375 dispatchAndStrip
-function dispatchAndStrip(message) {
-    if (!message) return '';
-    const actions = (typeof window !== 'undefined' && window.__tutorActions) || {};
-    try { dispatchToolCalls(message, actions); }
-    catch (e) { console.warn('[tutor-panel] tool dispatch error', e); }
-    return stripToolBlocks(message) || message;
-}

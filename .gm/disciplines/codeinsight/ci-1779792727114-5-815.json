@@ -1,2 +1,0 @@
-./site/undo.js:5:5 record
-function record(cardId, prevState) { last = { cardId, prevState, ts: Date.now() }; if (timer) clearTimeout(timer); timer = setTimeout(() => { last = null; timer = null; }, 5000); }

@@ -1,5 +1,0 @@
-./scripts/build_data.js:217:220 preferCompressed
-function preferCompressed(files, compressedExt) {
-    const bases = new Set(files.filter(f => path.extname(f).toLowerCase() === compressedExt).map(f => f.replace(/\.[^.]+$/, '')));
-    return files.filter(f => path.extname(f).toLowerCase() === compressedExt || !bases.has(f.replace(/\.[^.]+$/, '')));
-}

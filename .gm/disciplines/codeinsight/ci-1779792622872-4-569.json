@@ -1,2 +1,0 @@
-./site/flag.js:4:4 load
-function load() { try { return new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch { return new Set(); } }

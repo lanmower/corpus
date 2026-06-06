@@ -1,5 +1,0 @@
-./site/lastpos.js:9:12 save
-function save(route, subjectAnchor) {
-    try { localStorage.setItem(KEY, JSON.stringify({ route, subjectAnchor: subjectAnchor || null, ts: Date.now() })); }
-    catch {}
-}

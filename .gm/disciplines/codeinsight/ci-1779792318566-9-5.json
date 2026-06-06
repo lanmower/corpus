@@ -1,4 +1,0 @@
-./generate_concise_notes.js:9:11 cleanFileName
-function cleanFileName(filename) {
-  return filename.replace(/\.(txt|yaml|yml)$/i, '').replace(/_/g, ' ');
-}

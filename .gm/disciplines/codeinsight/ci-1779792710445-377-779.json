@@ -1,8 +1,0 @@
-./site/tutor-panel.js:377:383 setStatus
-function setStatus(status, detail = '') {
-    modelStatus = status;
-    modelStatusDetail = detail;
-    const pill = panelContainer?.querySelector('#tutor-status-pill');
-    if (pill) { pill.textContent = statusLabel(); pill.dataset.status = status; }
-    if (sdkRender) sdkRender();
-}

@@ -1,2 +1,0 @@
-./site/247420.js:125:125 Ft
-function Ft({servers:e=[],activeId:t,onSelect:n,onAdd:s}={}){return m("div",{class:"cm-server-rail",role:"navigation","aria-label":"servers"},m("a",{class:"cm-server-back",href:"../",title:"Back","aria-label":"back"},"\u25F0"),m("div",{class:"cm-server-sep","aria-hidden":"true"}),...e.map(r=>qt({...r,active:r.id===t,onClick:()=>n&&n(r.id)})),s?m("button",{class:"cm-server-add",type:"button",onclick:s,title:"Add server","aria-label":"add server"},"+"):null)}

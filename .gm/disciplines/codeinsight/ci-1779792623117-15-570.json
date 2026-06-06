@@ -1,5 +1,0 @@
-./site/justread.js:15:18 applyClass
-function applyClass(on) {
-    if (typeof document === 'undefined') return;
-    document.body.classList.toggle('just-read', !!on);
-}

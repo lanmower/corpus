@@ -1,4 +1,0 @@
-./site/newcards.js:35:37 remaining
-function remaining(subject, now = new Date()) {
-    return Math.max(0, cap() - countToday(subject, now));
-}

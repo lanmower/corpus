@@ -1,6 +1,0 @@
-./site/triage-live.js:395:399 countByKind
-function countByKind(cards) {
-    const out = {};
-    for (const c of cards) out[c.kind] = (out[c.kind] || 0) + 1;
-    return out;
-}

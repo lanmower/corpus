@@ -1,7 +1,0 @@
-./site/calendar.js:148:153 shift
-function shift(n) {
-    const d = parseIso(state.anchor);
-    if (state.mode === 'month') d.setUTCMonth(d.getUTCMonth() + n);
-    else d.setUTCDate(d.getUTCDate() + n * 7);
-    state.anchor = isoDate(d); rerender();
-}

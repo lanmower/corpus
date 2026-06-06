@@ -1,2 +1,0 @@
-./site/247420.js:125:125 _n
-function _n({items:e,events:t,emptyText:n="no events",rankPad:s=3}){let r=e||t||[];return r.length?f("section",{class:"ds-section ds-event-list"},...r.map((i,a)=>Y({key:i.key||"ev"+a,code:i.code!=null?i.code:i.rank!=null?i.rank:String(a+1).padStart(s,"0"),title:i.title||"(empty)",sub:i.sub||"",active:i.active,onClick:i.onClick,kind:i.kind}))):f("p",{class:"lede"},n)}

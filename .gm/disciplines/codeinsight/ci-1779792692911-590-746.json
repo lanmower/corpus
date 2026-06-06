@@ -1,6 +1,0 @@
-./site/triage-live.js:590:594 clear_screen
-clear_screen() {
-        state.cards = [];
-        renderScratchpad(); persistActive();
-        return { ok: true };
-    }

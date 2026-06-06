@@ -1,6 +1,0 @@
-./generate_spa_cards.js:183:187 
-card => {
-  yamlContent += '- front: "' + card.front.replace(/"/g, '\\"') + '"\n';
-  yamlContent += '  back: "' + card.back.replace(/"/g, '\\"') + '"\n';
-  yamlContent += '  tags: [' + card.tags.map(t => '"' + t + '"').join(', ') + ']\n\n';
-}

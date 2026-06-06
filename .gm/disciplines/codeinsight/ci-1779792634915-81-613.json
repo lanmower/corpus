@@ -1,8 +1,0 @@
-./site/progress.js:81:87 bumpCase
-function bumpCase(n = 1) {
-    const p = load();
-    rollStreak(p);
-    p.todayCases = (p.todayCases || 0) + n;
-    save(p);
-    return p;
-}

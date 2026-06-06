@@ -1,6 +1,0 @@
-./site/schedule.js:92:96 dayMinutes
-function dayMinutes(cfg, dateIso) {
-    const dow = DOW[new Date(dateIso + 'T00:00:00Z').getUTCDay()];
-    const base = cfg.availability[dow] || 0;
-    return Math.round(base * (INTENSITY_FACTOR[cfg.intensity] || 1));
-}

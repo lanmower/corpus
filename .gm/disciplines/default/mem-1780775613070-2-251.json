@@ -1,0 +1,3 @@
+## Resolved mutable: mut-sdk-aicat-shape
+
+browser-4: addTutorMessage({role:'user'/'assistant'}) renders msgCount=2 with roleClasses ['you','them'] and intact bubble text under AICat bs()/ke() in 0.0.196. {role,text} shape confirmed forward-compatible.

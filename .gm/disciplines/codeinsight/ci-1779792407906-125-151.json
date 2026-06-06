@@ -1,2 +1,0 @@
-./site/247420.js:125:125 Jt
-function Jt({categories:e=[],open:t}={}){return m("div",{class:"cm-member-list"+(t?" open":"")},...e.flatMap(n=>[m("div",{class:"cm-member-category",key:n.label},`${n.label} \u2014 ${n.members.length}`),...n.members.map((s,r)=>Yt({...s,key:s.identity||r}))]))}

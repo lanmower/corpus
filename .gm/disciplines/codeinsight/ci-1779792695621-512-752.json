@@ -1,4 +1,0 @@
-./site/triage-live.js:512:514 currentScenario
-function currentScenario() {
-    return state.scenarios.find(x => x.id === state.activeScenarioId) || null;
-}

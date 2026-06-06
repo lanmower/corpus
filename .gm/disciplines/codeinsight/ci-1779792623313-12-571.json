@@ -1,4 +1,0 @@
-./site/justread.js:12:14 toggle
-function toggle(subject) {
-    const m = load(); m[subject] = !m[subject]; save(m); return m[subject];
-}

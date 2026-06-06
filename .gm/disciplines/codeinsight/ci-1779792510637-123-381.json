@@ -1,2 +1,0 @@
-./site/247420.js:123:123 kt
-function kt(e,{index:t,prevIndex:n,slides:s,countEl:r,showOverlay:i=!0,broadcast:a=!0,reason:o="init",flashFn:l=null}={}){if(!s.length)return;let p=n??-1,d=t;if(s.forEach((u,c)=>{c===d?u.setAttribute("data-deck-active",""):u.removeAttribute("data-deck-active")}),r&&(r.textContent=String(d+1)),wr(e,d),a){try{window.postMessage({slideIndexChanged:d},"*")}catch{}e.dispatchEvent(new CustomEvent("slidechange",{detail:{index:d,previousIndex:p,total:s.length,slide:s[d]||null,previousSlide:p>=0&&s[p]||null,reason:o},bubbles:!0,composed:!0}))}i&&l&&l()}

@@ -1,8 +1,0 @@
-./site/srs.js:158:164 suspendCard
-function suspendCard(cardId, suspended = true) {
-    const states = loadStates();
-    const s = states[cardId] ?? defaultCardState();
-    states[cardId] = { ...s, suspended: !!suspended };
-    saveStates(states);
-    return states[cardId];
-}

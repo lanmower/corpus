@@ -1,2 +1,0 @@
-./site/247420.js:125:125 Dn
-function Dn({trail:e=[],leaf:t="",right:n}={}){let s=[];return e.forEach((r,i)=>{s.push(y("span",{key:"t"+i},r)),s.push(y("span",{key:"s"+i,class:"sep"},"\u203A"))}),s.push(y("span",{key:"leaf",class:"leaf"},t)),n&&s.push(y("span",{key:"r",class:"crumb-right"},...Array.isArray(n)?n:[n])),y("div",{class:"app-crumb"},...s)}

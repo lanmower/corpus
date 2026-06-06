@@ -1,6 +1,0 @@
-./site/confidence.js:12:16 avgFor
-function avgFor(subject) {
-    const m = load()[subject] || {}; const v = Object.values(m);
-    if (!v.length) return 0;
-    return v.reduce((a, b) => a + b, 0) / v.length;
-}

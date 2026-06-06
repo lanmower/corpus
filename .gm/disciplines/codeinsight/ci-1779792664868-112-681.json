@@ -1,6 +1,0 @@
-./site/srs.js:112:116 compressInterval
-function compressInterval(interval, effectiveDays, pendingCount) {
-    if (effectiveDays <= 0) return 1;
-    const pressure = Math.min(1, pendingCount / effectiveDays);
-    return Math.max(1, Math.round(interval * (1 - pressure * 0.5)));
-}

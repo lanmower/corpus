@@ -1,2 +1,0 @@
-./site/undo.js:7:7 consume
-function consume() { const r = last; last = null; if (timer) { clearTimeout(timer); timer = null; } return r; }

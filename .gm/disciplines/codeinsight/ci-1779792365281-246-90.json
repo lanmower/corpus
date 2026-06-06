@@ -1,2 +1,0 @@
-./site/247420.js:246:246 attributeChangedCallback
-attributeChangedCallback(t,n,s){if(t==="messages"){try{this._messages=JSON.parse(s)}catch{this._messages=[]}this._scrollPending=!0}else t==="placeholder"?this._placeholder=s||"":t==="title"?this._title=s||"chat":t==="sub"?this._sub=s||"":t==="disabled"&&(this._disabled=s!=null&&s!=="false");this._render()}

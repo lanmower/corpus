@@ -1,6 +1,0 @@
-./site/triage-live.js:151:155 sessionCards
-function sessionCards(sess) {
-    if (!sess) return [];
-    if (Array.isArray(sess)) return sess;
-    return sess.cards || [];
-}

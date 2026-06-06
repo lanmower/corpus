@@ -1,0 +1,9 @@
+## Corpus light/dark theme: SDK clobber + raw-palette pitfall (fixed 2026-06-07)
+
+TWO bugs made corpus light/dark 'especially bust':
+
+1. **SDK clobber**: anentrypoint-design 247420.js auto-runs its own initTheme (`js()`) on a post-import microtask `Ae()&&Promise.resolve().then(()=>js())`. Its theme set is `Ns={auto,paper,ink,thebird}`. Corpus uses data-theme=light/dark/contrast — NOT in that set — so the SDK normalizer `n=e||(Ns.has(t)?t:'auto')` resets data-theme to 'auto', overwriting theme.js's boot value. FIX: theme.js reasserts effectiveTheme() after the SDK microtask + rAF + a MutationObserver on <html> data-theme that re-applies if anything writes a value != effectiveTheme().
+
+2. **Raw-palette-as-semantic**: style.css used var(--ink) (always dark) / var(--paper) (always light) as fg/bg in ~103 places. The SDK only re-themes the SEMANTIC tokens (--fg/--bg/--panel-*) under .ds-247420[data-theme=dark]; it NEVER re-themes raw --ink/--paper. FIX: migrated all to var(--fg)/var(--bg); corpus dark/contrast blocks rescoped to .ds-247420[data-theme=...] (matched SDK specificity, loaded after -> wins) redefining semantic tokens.
+
+Witness: browser-14/16/18 — light{bodyBg #F6F5F1} dark{bodyBg #131318} contrast{bodyBg #FFF} invert correctly at real boot flow (set corpus.theme.v1 then reload, cache-busted). Bundle is byte-identical to c:/dev/anentrypoint-design/dist (v0.0.196, sha b8c90964). theme.js must be saved UTF-8 no-BOM (test.js asserts ASCII-clean).

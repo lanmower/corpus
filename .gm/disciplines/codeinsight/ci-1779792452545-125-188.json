@@ -1,2 +1,0 @@
-./site/247420.js:125:125 Fn
-function Fn({headers:e=[],rows:t=[],onRowClick:n,emptyText:s="nothing here yet"}){return!t||t.length===0?f("div",{class:"empty"},s):f("table",{role:"table"},f("thead",{},f("tr",{role:"row"},...e.map((r,i)=>f("th",{key:i,scope:"col",role:"columnheader"},r)))),f("tbody",{},...t.map((r,i)=>f("tr",{key:i,class:n?"clickable":"",role:"row",onclick:n?()=>n(i):null,...n?{tabindex:"0",onkeydown:a=>{a.key==="Enter"&&n(i)}}:{}},...r.map((a,o)=>f("td",{key:o,role:"cell"},a==null?"":typeof a=="object"?a:String(a)))))))}

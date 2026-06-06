@@ -1,6 +1,0 @@
-./site/context-menu.js:81:85 closeContextMenuOnClickOutside
-function closeContextMenuOnClickOutside(e) {
-    if (currentContextMenu && !currentContextMenu.contains(e.target)) {
-        closeContextMenu();
-    }
-}

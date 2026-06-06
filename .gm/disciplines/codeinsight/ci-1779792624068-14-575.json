@@ -1,5 +1,0 @@
-./site/lastpos.js:14:17 gapDays
-function gapDays(now = Date.now()) {
-    const lp = load(); if (!lp || !lp.ts) return 0;
-    return Math.floor((now - lp.ts) / 86400000);
-}

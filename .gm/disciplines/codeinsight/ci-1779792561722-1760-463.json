@@ -1,6 +1,0 @@
-./site/app.js:1760:1764 skipReview
-function skipReview() {
-    if (!state.reviewQueue.length) return;
-    state.reviewIndex = (state.reviewIndex + 1) % state.reviewQueue.length;
-    state.reviewRevealed = false; renderReview();
-}

@@ -363,7 +363,11 @@ function renderTutorOverviewPanel(due, newCount) {
         const cfg = loadTutorConfig();
         // Decide here; the panel calls markCheckedIn() only on session-overview-done,
         // so a WebGPU-less device doesn't silently consume the daily greeting.
-        if (cfg.proactiveCheckins && shouldCheckInToday()) {
+        // markCheckedIn is deferred to the worker reply, so guard with a session
+        // flag too: re-rendering the daily page (nav back) before the reply lands
+        // must not post a second session-overview and duplicate the plan in-thread.
+        if (cfg.proactiveCheckins && shouldCheckInToday() && !state.tutorCheckinPosted) {
+            state.tutorCheckinPosted = true;
             state.tutorWorker.postMessage({
                 cmd: 'session-overview',
                 dueCount: due,
@@ -1324,7 +1328,7 @@ function buildFlashcard(c) {
                     { icon: isFlagged ? '⚑' : '⚐', label: isFlagged ? 'unflag' : 'flag', action: () => { flag.toggle(id); card.classList.toggle('flagged'); } },
                     { icon: '⏸', label: 'suspend', action: () => { if (confirm('suspend this card?')) { srs.suspendCard(id, true); } } },
                     { type: 'divider' },
-                    { icon: '📋', label: 'copy id', action: () => { navigator.clipboard.writeText(id); } }
+                    { icon: '⧉', label: 'copy id', action: () => { navigator.clipboard.writeText(id); } }
                 ]);
             }
         }
@@ -1686,17 +1690,17 @@ const card = state.reviewQueue[state.reviewIndex];
         e.preventDefault();
         import('./context-menu.js').then(({ showContextMenu }) => {
             const items = [
-                { icon: '🚩', label: isFlag ? 'unflag card' : 'flag card', shortcut: 'f',
+                { icon: '⚑', label: isFlag ? 'unflag card' : 'flag card', shortcut: 'f',
                   action: () => { flag.toggle(card.id); renderReview(); } },
                 { icon: '⏭', label: 'skip card', shortcut: 's', action: () => skipReview() },
                 { type: 'divider' },
-                { icon: '💬', label: 'ask tutor about this', action: () => {
+                { icon: '?', label: 'ask tutor about this', action: () => {
                     if (state.tutorWorker) state.tutorWorker.postMessage({
                         cmd: 'user-message',
                         text: `explain the concept behind this card: "${card.front}" — answer is: ${card.back}`
                     });
                 } },
-                { icon: '📖', label: 'open subject guide', action: () => { location.hash = `#guides/${card._subject}`; } }
+                { icon: '#', label: 'open subject guide', action: () => { location.hash = `#guides/${card._subject}`; } }
             ];
             showContextMenu(e.clientX, e.clientY, items);
         }).catch(() => {});

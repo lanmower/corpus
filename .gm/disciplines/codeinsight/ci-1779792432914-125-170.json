@@ -1,2 +1,0 @@
-./site/247420.js:125:125 ys
-function ys({children:e,dragover:t,onDrop:n,onDragOver:s,onDragLeave:r,label:i="drop files here",onPick:a}={}){return k("div",{class:"ds-dropzone"+(t?" dragover":""),ondragover:o=>{o.preventDefault(),s&&s(o)},ondragleave:o=>{r&&r(o)},ondrop:o=>{o.preventDefault(),n&&n(o.dataTransfer.files)}},k("div",{class:"ds-dropzone-inner"},k("span",{class:"ds-dropzone-glyph"},"\u21EA"),k("span",{class:"ds-dropzone-label"},i),a?j({onClick:a,children:"pick files"}):null),...Array.isArray(e)?e:e?[e]:[])}

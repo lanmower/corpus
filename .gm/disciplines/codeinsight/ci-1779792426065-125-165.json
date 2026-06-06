@@ -1,2 +1,0 @@
-./site/247420.js:125:125 ks
-function ks({title:e="confirm",message:t,confirmLabel:n="confirm",cancelLabel:s="cancel",destructive:r,onConfirm:i,onCancel:a}={}){return Wt({onClose:a,kind:"small",children:[w("div",{class:"ds-modal-head"},e),w("div",{class:"ds-modal-body"},t||""),w("div",{class:"ds-modal-actions"},j({onClick:a,children:s}),w("button",{class:r?"btn-primary danger":"btn-primary",onclick:i},n))]})}

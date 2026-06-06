@@ -1,8 +1,0 @@
-./site/app.js:1184:1190 typoRefine
-function typoRefine(s) {
-    s = s.replace(/(\s)--(\s)/g, '$1—$2');           // " -- " em-dash
-    s = s.replace(/(\d)\s*-\s*(\d)/g, '$1–$2');       // numeric range en-dash
-    s = s.replace(/\b(Mr|Mrs|Ms|Dr|Prof|St)\.\s+/g, '$1. '); // honorific nbsp
-    s = s.replace(/(\d)\s+(mg|mcg|ng|kg|g|mL|L|mmol|mEq|IU|U|bpm|mmHg|mm|cm)\b/g, '$1 $2');
-    return s;
-}

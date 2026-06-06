@@ -1,4 +1,0 @@
-./site/app.js:1181:1183 cleanDisfluencies
-function cleanDisfluencies(s) {
-    return s.replace(DISFLUENCY_RE, '').replace(/\s{2,}/g, ' ').replace(/\s+([,.;:!?])/g, '$1').trim();
-}

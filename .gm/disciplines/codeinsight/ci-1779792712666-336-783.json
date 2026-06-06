@@ -1,9 +1,0 @@
-./site/tutor-panel.js:336:343 addTutorMessage
-function addTutorMessage(text, isUser = false, opts = {}) {
-    const turn = { text, role: isUser ? 'user' : 'assistant', ts: Date.now() };
-    if (opts.err) turn.err = true;
-    tutorMessages.push(turn);
-    persist();
-    if (sdkRender) sdkRender();
-    else appendFallbackMessage(text, isUser);
-}

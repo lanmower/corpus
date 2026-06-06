@@ -1,2 +1,0 @@
-./site/app.js:62:62 loadAllShards
-async function loadAllShards() { await Promise.all(state.manifest.subjects.map(s => loadShard(s.subject))); }

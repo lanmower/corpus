@@ -1,2 +1,0 @@
-./site/mistakes.js:5:5 load
-function load() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } }

@@ -1,5 +1,0 @@
-./site/srs.js:199:202 isNewCardForGate
-function isNewCardForGate(state) {
-    if (!state) return true;
-    return (state.repetitions === 0 || state.repetitions == null) && (state.lastScore == null);
-}

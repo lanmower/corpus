@@ -412,11 +412,11 @@ function renderGradePanel(sc) {
     ));
     if (matched.length) wrap.append(ce('div', { class: 'grade-section' },
         ce('div', { class: 'grade-section-title' }, `you got (${matched.length})`),
-        ...matched.map(c => ce('div', { class: 'grade-row hit' }, ce('span', { class: 'check' }, '✓'), ce('span', {}, c.title)))
+        ...matched.map(c => ce('div', { class: 'grade-row hit' }, ce('span', { class: 'check' }, '[x]'), ce('span', {}, c.title)))
     ));
     if (gaps.length) wrap.append(ce('div', { class: 'grade-section' },
         ce('div', { class: 'grade-section-title' }, `you missed (${gaps.length})`),
-        ...gaps.map(c => ce('div', { class: 'grade-row miss' }, ce('span', { class: 'check' }, '×'),
+        ...gaps.map(c => ce('div', { class: 'grade-row miss' }, ce('span', { class: 'check' }, '[ ]'),
             ce('div', {},
                 ce('div', { class: 'miss-title' }, (c.title || '').replace(/^missed:\s*/i, '')),
                 c.body ? ce('div', { class: 'miss-body' }, c.body) : null
@@ -442,7 +442,7 @@ function renderGradePanel(sc) {
             const idx = vis.findIndex(s => s.id === sc.id);
             const next = vis[Math.min(idx + 1, vis.length - 1)];
             if (next && next.id !== sc.id) selectScenario(next.id);
-        } } }, 'next case â†’')
+        } } }, 'next case ->')
     ));
     return wrap;
 }

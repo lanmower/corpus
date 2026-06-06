@@ -1,6 +1,0 @@
-./site/newcards.js:23:27 setCap
-function setCap(n) {
-    const v = Math.max(0, Math.floor(Number(n) || 0));
-    try { localStorage.setItem(CAP_KEY, String(v)); } catch {}
-    return v;
-}

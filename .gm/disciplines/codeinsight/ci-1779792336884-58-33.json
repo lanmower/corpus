@@ -1,4 +1,0 @@
-./scripts/build_data.js:58:60 safeReaddir
-function safeReaddir(dir) {
-    try { return fs.readdirSync(dir); } catch { return []; }
-}

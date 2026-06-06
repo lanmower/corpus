@@ -1,7 +1,0 @@
-./site/tutor-panel.js:465:470 closeTutorPanel
-function closeTutorPanel() {
-    if (panelContainer) {
-        panelContainer.remove();
-        panelContainer = null;
-    }
-}

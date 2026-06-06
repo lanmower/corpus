@@ -1,2 +1,0 @@
-./site/drill.js:11:11 advance
-function advance() { const d = load(); if (!d) return null; d.index++; if (d.index >= d.ids.length) { clear(); return null; } save(d); return d; }

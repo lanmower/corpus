@@ -1,8 +1,0 @@
-./site/newcards.js:15:21 cap
-function cap() {
-    try {
-        const v = parseInt(localStorage.getItem(CAP_KEY) || '', 10);
-        if (Number.isFinite(v) && v >= 0) return v;
-    } catch {}
-    return DEFAULT_CAP;
-}

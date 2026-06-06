@@ -1,9 +1,0 @@
-./site/schedule.js:369:376 dayCompletion
-function dayCompletion(dateIso) {
-    const blocks = blocksForDate(dateIso).filter(b => b.kind === 'study');
-    if (!blocks.length) return { pct: 0, done: 0, total: 0, totalMin: 0, doneMin: 0 };
-    const done = blocks.filter(b => b.done);
-    const totalMin = blocks.reduce((n, b) => n + b.len, 0);
-    const doneMin = done.reduce((n, b) => n + b.len, 0);
-    return { pct: totalMin ? Math.round(100 * doneMin / totalMin) : 0, done: done.length, total: blocks.length, totalMin, doneMin };
-}

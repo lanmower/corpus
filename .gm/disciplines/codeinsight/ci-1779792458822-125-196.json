@@ -1,2 +1,0 @@
-./site/247420.js:125:125 Tt
-function Tt({eyebrow:e,title:t,body:n,accent:s,badge:r,badgeCount:i,actions:a}){return f("div",{class:"ds-hero"},e?f("span",{class:"eyebrow"},e):null,f("h1",{class:"ds-hero-title"},t),n?f("p",{class:"ds-hero-body"},n,s?f("span",{class:"ds-hero-accent"}," "+s):null):null,a?f("div",{class:"ds-hero-actions",style:"display:flex;gap:10px;flex-wrap:wrap;margin-top:8px"},...Array.isArray(a)?a:[a]):null,r?F({title:r,count:i,kind:"inline",children:[]}):null)}

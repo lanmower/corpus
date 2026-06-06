@@ -1,5 +1,0 @@
-./scripts/build_guides.js:36:39 cardKey
-function cardKey(c) {
-    const src = (c.source || c.sourceFile || '').replace(/\.ya?ml$/, '').replace(/_/g, ' ').toLowerCase();
-    return src;
-}

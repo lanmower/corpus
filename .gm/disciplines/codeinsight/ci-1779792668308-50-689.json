@@ -1,4 +1,0 @@
-./site/sw.js:50:52 safeFetch
-async function safeFetch(request) {
-    try { return await fetch(request); } catch { return null; }
-}

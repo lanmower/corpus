@@ -1,2 +1,0 @@
-./site/247420.js:134:134 ge
-function ge(e){if(!e||typeof e.querySelectorAll!="function")return;e.querySelectorAll(".ds-hero,.panel,.ds-section,.app-main > *").forEach((n,s)=>{if(n.dataset.anim==="ready")return;n.dataset.anim="in";let r=Math.min(s,6)*30;setTimeout(()=>{n.dataset.anim="ready"},r)})}

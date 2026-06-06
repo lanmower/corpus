@@ -1,2 +1,0 @@
-./site/247420.js:125:125 Yn
-function Yn({value:e="",placeholder:t="search\u2026",onInput:n,onSubmit:s,name:r="q",key:i}){return f("input",{key:i,type:"search",name:r,class:"ds-search-input",placeholder:t,value:e,oninput:n?a=>n(a.target.value,a):null,onkeydown:s?a=>{a.key==="Enter"&&s(a.target.value,a)}:null})}

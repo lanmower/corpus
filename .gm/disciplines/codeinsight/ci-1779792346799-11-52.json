@@ -1,2 +1,0 @@
-./scripts/build_triage.js:11:11 readSafe
-function readSafe(p) { try { return fs.readFileSync(p, 'utf8'); } catch { return null; } }

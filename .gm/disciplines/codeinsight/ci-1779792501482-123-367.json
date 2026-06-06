@@ -1,2 +1,0 @@
-./site/247420.js:123:123 os
-async function os(e){let t=performance.now(),n=Ir(e||"");if(X.has(n))return S.cacheHits+=1,X.get(n);Ie||(await te(),Ie=!0);let s=await Ce(e);if(X.set(n,s),X.size>500){let i=X.keys().next().value;X.delete(i)}let r=performance.now()-t;return S.renderCount+=1,S.cacheMisses+=1,S.renderTimes.push(r),S.renderTimes.length>100&&S.renderTimes.shift(),s}

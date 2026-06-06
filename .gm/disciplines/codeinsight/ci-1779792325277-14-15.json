@@ -1,8 +1,0 @@
-./scripts/anki_migrate.js:14:20 topicFromFilename
-function topicFromFilename(f) {
-    return f.replace(/\.ya?ml$/, '')
-        .replace(/_pages-\d+-\d+/g, '')
-        .replace(/\s*-\s*CMED4IIM[12]\s*-\s*2026/gi, '')
-        .replace(/^imported-flashcards-/, '')
-        .trim();
-}

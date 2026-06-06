@@ -1,5 +1,0 @@
-./site/drill.js:7:10 start
-function start(cardIds, subject) {
-    const d = { ids: cardIds.slice(0, 10), index: 0, subject, startedAt: Date.now() };
-    save(d); return d;
-}

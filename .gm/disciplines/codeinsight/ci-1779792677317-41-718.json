@@ -1,5 +1,0 @@
-./site/tool-dispatch.js:41:44 stripToolBlocks
-function stripToolBlocks(text) {
-    if (typeof text !== 'string') return '';
-    return text.replace(TOOL_RE, '').trim();
-}

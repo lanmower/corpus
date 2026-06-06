@@ -1,4 +1,0 @@
-./site/justread.js:4:6 load
-function load() {
-    try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; }
-}

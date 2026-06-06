@@ -1,7 +1,0 @@
-./site/app.js:2801:2806 
-() => {
-    const hash = location.hash.replace('#', '') || 'today';
-    const [routeRaw, sub] = hash.split('/');
-    const route = routeRaw.split('?')[0];
-    go(route, sub ? sub.split('?')[0] : undefined);
-}

@@ -1,2 +1,0 @@
-./site/247420.js:1:1 ur
-function ur(e,t,n){if(e instanceof HTMLElement){if(t in e){e[t]=n;return}if(typeof n=="string"){e.setAttribute(t,n);return}e[t]=n;return}if(e.namespaceURI==="http://www.w3.org/2000/svg"){n!=null?e.setAttribute(t,`${n}`):e.removeAttribute(t);return}typeof n=="string"?e.setAttribute(t,n):e[t]=n}

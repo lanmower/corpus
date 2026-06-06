@@ -1,4 +1,0 @@
-./site/newcards.js:10:12 readCounts
-function readCounts() {
-    try { return JSON.parse(localStorage.getItem(COUNT_KEY) || '{}') || {}; } catch { return {}; }
-}

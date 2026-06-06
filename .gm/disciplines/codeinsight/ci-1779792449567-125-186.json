@@ -1,2 +1,0 @@
-./site/247420.js:125:125 Gn
-function Gn({project:e={},copied:t,onCopy:n}={}){return[f("div",{class:"ds-prose"},q({level:1,children:e.name}),Te({children:e.tagline})),e.install?[q({level:3,children:"install"}),Lt({cmd:e.install,copied:t,onCopy:n})]:null,e.receipt?[q({level:3,children:"by the numbers"}),Mt({rows:e.receipt})]:null,e.changelog?[q({level:3,children:"recent releases"}),Ct({entries:e.changelog})]:null].filter(Boolean).flat()}

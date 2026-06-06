@@ -1,2 +1,0 @@
-./site/247420.js:125:125 er
-function er({message:e,kind:t="info",duration:n=3e3}={}){let s=qr();if(!s)return()=>{};let r=document.createElement("div");r.className="ds-ep-toast kind-"+t,r.setAttribute("role","status"),r.setAttribute("aria-live","polite"),r.textContent=e,s.appendChild(r);let i=()=>{r.parentNode&&(r.classList.add("leaving"),setTimeout(()=>{r.parentNode&&r.parentNode.removeChild(r)},200))};return n>0&&setTimeout(i,n),i}

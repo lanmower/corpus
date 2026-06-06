@@ -1,2 +1,0 @@
-./site/247420.js:125:125 $s
-function $s({message:e,kind:t="info",duration:n=3e3,onClose:s}={}){return b("div",{class:"ds-ep-toast kind-"+t,role:"status","aria-live":"polite",ref:r=>{!r||r._dsToast||(r._dsToast=!0,n>0&&setTimeout(()=>{s&&s(),r.classList.add("leaving")},n))}},e)}

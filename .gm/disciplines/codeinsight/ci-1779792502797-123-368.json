@@ -1,2 +1,0 @@
-./site/247420.js:123:123 Rt
-async function Rt(){return ze||(ze=(async()=>{let e=performance.now(),[t,n]=await Promise.all([(async()=>{let r=performance.now(),i=await te();return S.markdownInitMs=performance.now()-r,Ie=!0,i})(),(async()=>{let r=performance.now(),i=await J();return S.prismInitMs=performance.now()-r,Ne=!0,i})()]),s=performance.now()-e;return console.debug(`[247420] markdown/prism caches initialized in ${s.toFixed(1)}ms (markdown: ${S.markdownInitMs.toFixed(1)}ms, prism: ${S.prismInitMs.toFixed(1)}ms)`),{markdown:t,prism:n}})(),ze)}

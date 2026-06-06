@@ -1,7 +1,0 @@
-./site/tutor-panel.js:176:181 renderStopRow
-function renderStopRow(C, composer) {
-    return C.h('div', { class: 'tutor-composer-stop' },
-        C.h('button', { class: 'tutor-stop-btn', title: 'Stop generating', onClick: stopGeneration }, '■ stop'),
-        composer
-    );
-}

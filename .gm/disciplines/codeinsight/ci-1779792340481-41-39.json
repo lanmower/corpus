@@ -1,4 +1,0 @@
-./scripts/build_guides.js:41:43 tokenSet
-function tokenSet(s) {
-    return new Set((s || '').toLowerCase().split(/\s+/).filter(w => w.length > 3));
-}

@@ -1,6 +1,0 @@
-./site/schedule.js:269:273 editBlock
-function editBlock(id, patch) {
-    const s = loadSchedule();
-    const b = s.blocks.find(x => x.id === id); if (!b) return null;
-    Object.assign(b, patch || {}); saveSchedule(s); return b;
-}

@@ -1,7 +1,0 @@
-./site/usercards.js:13:18 parseLine
-function parseLine(line) {
-    const [front, back, tagStr] = line.split('|').map(s => s.trim());
-    if (!front || !back) return null;
-    const tags = tagStr ? tagStr.split(',').map(s => s.trim()).filter(Boolean) : [];
-    return { front, back, tags };
-}

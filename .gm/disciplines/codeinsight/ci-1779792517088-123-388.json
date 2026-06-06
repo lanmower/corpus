@@ -1,2 +1,0 @@
-./site/247420.js:123:123 Tn
-function Tn({onBack:e,onForward:t}){let n=document.createElement("div");n.className="tapzones export-hidden",n.setAttribute("aria-hidden","true");let s=document.createElement("div");s.className="tapzone tapzone--back";let r=document.createElement("div");r.className="tapzone tapzone--mid",r.style.pointerEvents="none";let i=document.createElement("div");return i.className="tapzone tapzone--fwd",s.addEventListener("click",e),i.addEventListener("click",t),n.append(s,r,i),n}

@@ -1,2 +1,0 @@
-./site/247420.js:125:125 Yt
-function Yt({identity:e,name:t,color:n,status:s="online"}={}){let r=(t||e||"?").slice(0,1).toUpperCase();return m("div",{class:"cm-member-item"},m("div",{class:"cm-member-avatar",style:n?`background:${n}`:""},m("span",{class:"cm-member-status"+(s==="online"?" online":"")}),r),m("span",{class:"cm-member-name"},t||e))}
