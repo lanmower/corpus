@@ -935,8 +935,11 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(!/[←-⇿⌀-➿⬀-⯿■-◿☀-⛿]/.test(panelSrc), 'no decorative unicode glyphs in tutor-panel.js');
         // model load retries after an unavailable (preloadKicked latch is released)
         assert.ok(/preloadKicked = false/.test(panelSrc) && /preloadKicked = true/.test(panelSrc), 'preloadKicked reset on unavailable so load can retry');
-        // settings popover restores focus to its opener (a11y)
-        assert.ok(/restoreSettingsFocus/.test(panelSrc) && /settingsPriorFocus/.test(panelSrc), 'settings popover restores focus on close');
+        // settings popover restores focus to the gear on close (a11y). Restore must
+        // run AFTER the rerender (which rebuilds the gear) and target the gear by its
+        // stable selector, re-asserting across a frame to win any deferred SDK focus reset.
+        assert.ok(/restoreSettingsFocus/.test(panelSrc) && /closeSettingsAndRestoreFocus/.test(panelSrc), 'settings popover restores focus on close');
+        assert.ok(/#tutor-hdr-controls \.tutor-hdr-btn/.test(panelSrc) && /requestAnimationFrame\(focusTarget\)/.test(panelSrc), 'focus restore targets gear by stable selector and re-asserts on next frame');
         // config: panelWidth clamped to slider bounds; date stamp zero-padded
         assert.ok(/Math\.max\(24, Math\.min\(60/.test(storeSrc), 'loadConfig clamps panelWidth to slider bounds');
         assert.ok(/padStart\(2, '0'\)/.test(storeSrc), 'todayStamp is zero-padded (stable date compare)');

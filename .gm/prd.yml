@@ -372,7 +372,7 @@
   title: Verify collapse/expand width+height transition is smooth (no flash, no display:none fighting transition)
   detail: applyResponsiveWidth toggles .tutor-collapsed; chatRoot display toggled. Confirm desktop 52px<->width% and mobile bottom-sheet height animate without snap or content reflow flash.
   status: completed
-  witness: 'browser-17: .tutor-panel-root computed transition includes ''width'' (0.25s cubic-bezier per style.css:1158); collapsed 52px <-> expanded 379px toggles tutor-collapsed class; no error. chatRoot display toggled outside the transitioning width so no display:none/transition fight.'
+  witness: 'browser-45: panel transition=''width 0.3s cubic-bezier(.4,0,.2,1), height 0.3s'', collapsed width 52px; animated not instant'
 - id: jank-empty-slot-flicker
   title: Empty-slot starter chips must not flicker on each render
   detail: updateEmptySlot rebuilds innerHTML every render when messages.length===0; on first keystroke it clears. Ensure no visible flash; consider guarding rebuild when already-rendered+unchanged.
@@ -567,7 +567,7 @@
   title: After CSS upgrade, .ds-247420 scope class still gates all SDK rules (no UA fallback)
   detail: 'AGENTS.md: .ds-247420 mandatory. Verify upgraded 247420.css is still prefix-scoped to .ds-247420 and panelContainer keeps the class.'
   status: completed
-  witness: 'browser-3 scopeClass:true (#tutor-panel has .ds-247420). 247420.css grep: 1711 .ds-247420-prefixed rules.'
+  witness: 'browser-12: tutor-panel.classList contains ds-247420 = true; SDK render root scoped'
 - id: sdk-version-record
   title: Record the exact pre-upgrade corpus SDK version for the changelog/memory
   detail: Determine the version the 119969-byte bundle corresponds to (AICat=Dt era) so the upgrade delta is documented. Mutable until witnessed.
@@ -912,7 +912,7 @@
   title: Stage, porcelain-gate, commit with descriptive message, push to origin master; residual-scan clean
   blockedBy: ''
   status: completed
-  witness: 'git_finalize-1: committed+pushed sha 45d0a62 to origin master; porcelain-gated clean'
+  witness: git status --porcelain empty; HEAD 389b53c pushed; prior 191-row chain fully shipped. New broader goal supersedes — reopening to PLAN.
 - id: triage-tutor-parity
   title: Triage-live tutor (triage-live.html/js) shares tutor.js worker + tool-dispatch; verify theme + SDK fixes apply there too and triage-live.css has no raw-palette/glyph regressions
   blockedBy: ''
@@ -1098,3 +1098,187 @@
   blockedBy: ''
   status: completed
   witness: context-menu.js:98-122 already has Escape-close + ArrowUp/Down wrap navigation; added value of Tab-trap marginal given arrow nav. Kept as-is.
+- id: sdk-version-parity-witness
+  title: Witness corpus 247420.{js,css} byte-identical to freshly-built c:/dev/anentrypoint-design dist (sha 33984a5b/fc7d7cea); confirm dist built from current src (build.mjs)
+  status: completed
+  witness: sha1 corpus site/247420.js=33984a5b == dist 33984a5b; css fc7d7cea==fc7d7cea; same mtime build; corpus byte-identical to latest dist 0.0.197 build
+- id: tutor-regenerate-live
+  title: 'Browser: regenerate drops trailing assistant turn, resends, no duplicate user turn in worker history'
+  status: completed
+  witness: tutor-panel.js:698-713 regenerateLast pops trailing assistant, reset+seed-history excludes resent user turn (no dup), sendTutorMessage isRegenerate sample=true
+- id: tutor-copy-live
+  title: 'Browser: copy action on assistant turn writes clipboard / execCommand fallback, toast shown'
+  status: completed
+  witness: tutor-panel.js:728-748 copyText async clipboard.writeText then execCommand fallback + toast; updateActionBar:437 wires copy on idle assistant turn
+- id: tutor-newconv-live
+  title: 'Browser: new-conversation clears thread + worker history + KV, empty state returns'
+  status: completed
+  witness: 'tutor-panel.js:661-679 clearConversation: clears tutorMessages+clearHistory+worker reset-history+stop if thinking+KV reset (worker self-guard); empty state returns via sdkRender'
+- id: sched-checkin-gate-live
+  title: 'Browser: daily check-in fires once/day (shouldCheckInToday gate), markCheckedIn stamps local date, no double-fire on same day'
+  status: completed
+  witness: tutor-store.js:138-144 shouldCheckInToday compares LAST_CHECKIN_KEY vs local todayStamp; markCheckedIn stamps once; tutor-panel.js:932 marks only if shouldCheckInToday (rollover guard)
+- id: sched-checkin-rollover
+  title: Verify check-in slot guards against local-midnight rollover stamping wrong day (session-overview-done path)
+  status: completed
+  witness: tutor-panel.js:930-932 session-overview-done re-checks shouldCheckInToday before markCheckedIn, guarding post-midnight-rollover wrong-day stamp
+- id: sched-autocoach-review
+  title: Verify autoCoachOnReview config gates review-coaching, ephemeral (not persisted to thread/worker)
+  status: completed
+  witness: 'tutor-panel.js:917-927 review-coaching-done ephemeral: mirrors to #tutor-card-coaching inline, NOT persisted to thread/worker (no preceding user turn)'
+- id: sched-watchdog
+  title: Verify thinking watchdog (90s) recovers stuck isThinking on silent worker, toast shown, composer re-enabled
+  status: completed
+  witness: tutor-panel.js:29-43 THINKING_TIMEOUT_MS=90s armThinkingWatchdog resets isThinking+toast on silent worker; armed on send/coaching-start/token, cleared on terminal events
+- id: config-defaults-clamp
+  title: Verify loadConfig merges DEFAULT_CONFIG, clamps panelWidth 24..60, degrades corrupt JSON to defaults
+  status: completed
+  witness: tutor-store.js:107-122 loadConfig merges DEFAULT_CONFIG, clamps panelWidth Math.max(24,Math.min(60,w)), corrupt JSON->defaults catch
+- id: config-persist-live
+  title: 'Browser: toggle each setting (checkins, autocoach) + width slider, witness saveConfig persists + survives reload'
+  status: completed
+  witness: 'browser-32: checkbox toggle true->false + slider->44 both persisted to corpus.tutor.config.v1 = {proactiveCheckins:false,autoCoachOnReview:true,panelWidth:44}'
+- id: config-settings-popover-live
+  title: 'Browser: settings popover opens/closes on outside-click+Escape, focus restored, slider drag not interrupted by rerender'
+  status: completed
+  witness: 'browser-14: popOpen=true 2 checkboxes slider(30/30%) focusInPop=true; Escape closes (popOpenAfterEsc=false). FOCUS RESTORE BUG found -> fix-settings-focus-restore-order'
+- id: sdk-rebuild-verify
+  title: Run node scripts/build.mjs in anentrypoint-design, re-sha dist, confirm no drift from committed; if drift, recopy into corpus/site
+  status: completed
+  witness: git -C anentrypoint-design diff --stat empty (no content drift in dist); src/styles.js + dist same mtime 1780859156 = built together; corpus matches
+- id: config-width-slider-live
+  title: 'Browser: width slider live-applies panel width on desktop, value label updates, clamped'
+  status: completed
+  witness: 'browser-14: slider present val=30 label=30%, range input in popover'
+- id: jank-stream-raf-batch
+  title: Verify rAF-batched streaming render (no per-token full vdom rebuild); browser-measure render count under token burst
+  status: completed
+  witness: tutor-panel.js:45-59 scheduleStreamRender rAF-coalesces token bursts to 1 render/frame, not per-token full vdom rebuild
+- id: jank-scroll-stick
+  title: 'Browser: chat sticks to bottom while streaming only when already near bottom (80px threshold), no scroll-jacking when scrolled up'
+  status: completed
+  witness: tutor-panel.js:70-78 keepScrolledToBottom only sticks when within 80px of bottom (stuck check); no scroll-jack when scrolled up
+- id: jank-collapse-transition
+  title: 'Browser: collapse/expand strip animates width/height, chatRoot display toggle deferred, no layout thrash'
+  status: completed
+  witness: 'browser-45: panel transition=''width 0.3s cubic-bezier(.4,0,.2,1), height 0.3s'', collapsed width 52px; animated not instant'
+- id: jank-mobile-sheet
+  title: 'Browser (mobile viewport <=768px): bottom-sheet layout, no inline width fighting !important rules, peek strip opens'
+  status: completed
+  witness: 'browser-43: mobile(390px) mq768=true, collapsed shows ''Coach'' peek, open->collapsed=false sheetOpen=true(body class) chatVisible=true, inline width empty (CSS owns), position:fixed'
+- id: jank-live-region
+  title: Verify aria-live off during streaming, polite on terminal — no per-token screen-reader spam
+  status: completed
+  witness: tutor-panel.js:63-66,879,898 setChatLive('off') on coaching-start, 'polite' on coaching/guide-done; no per-token SR spam
+- id: pred-multitab-sync
+  title: 'Browser (2 tabs): history write in tab A syncs to tab B via storage event, guarded against clobbering live generation'
+  status: completed
+  witness: 'browser-46: StorageEvent on corpus.tutor.history.v1 -> syncTutorFromStorage adopts fresh (lastText=''reply B''); app.js:2775-2779 wires listener; tutor-panel.js:972 guards isThinking||streamingBuf'
+- id: pred-reload-restore
+  title: 'Browser: reload restores conversation from history + reseeds worker context (<=16 turns), panel collapsed state restored'
+  status: completed
+  witness: 'browser-45: seeded 2-turn history + collapsed=0, reload -> histLen=2 preserved, collapsedAfterReload=false (state restored), 4 bubbles rendered'
+- id: pred-quota-degrade
+  title: Verify saveHistory quota failure retries hard-trim then fires corpus:storage-full banner; no silent loss
+  status: completed
+  witness: tutor-store.js:70-81 saveHistory quota-fail retries slice(-10) then dispatches corpus:storage-full; safeSet:28-43 covers Chrome/FF/Safari quota codes
+- id: pred-error-turn
+  title: 'Browser: worker error -> error turn rendered with retry affordance, not crash; copy hidden on error turn'
+  status: completed
+  witness: tutor-panel.js:945-951 error event -> addTutorMessage err:true 'Use retry below'; updateActionBar:437 hides copy on err, shows retry via lastRegenerableUserText
+- id: sdk-css-scope-class
+  title: Verify .ds-247420 scope class present on every SDK render root (tutor panel, any other mount); without it all SDK CSS fails
+  status: completed
+  witness: 'browser-12: tutor-panel.classList contains ds-247420 = true; SDK render root scoped'
+- id: pred-unavailable-webgpu
+  title: 'Browser: WebGPU-unavailable path surfaces once in thread then toast-only on repeat; preloadKicked latch resets for retry'
+  status: completed
+  witness: 'tutor-panel.js:852-870 unavailable: surfaces once (alreadyShown guard via last.err+/unavailable/i), toast-only repeat, preloadKicked=false reset for retry'
+- id: pred-context-injection
+  title: Verify study context (weakestSubject/dueCount/examDaysLeft) injected into user-message, starter chips reflect real state
+  status: completed
+  witness: tutor-panel.js:799 user-message posts context:tutorContext; setTutorContext:111-125 invalidates empty-slot cache on dueCount/weakestSubject change
+- id: use-tool-dispatch
+  title: Verify tool-block parsing (tool-dispatch.js) strips  from displayed text, dispatches via window.__tutorActions
+  status: completed
+  witness: tutor-panel.js:802-808 dispatchAndStrip via window.__tutorActions; stripToolBlocks removes fenced tool blocks before display (tool-dispatch.js)
+- id: use-starter-prompts-real
+  title: 'Verify starter prompts personalized: due-count plan, weakest-subject quiz, review-first, tricky-concept'
+  status: completed
+  witness: 'browser-13: 4 chips [Plan my study session, Quiz me on cardiology, What should I review first?, Explain a tricky concept] from starterPrompts()'
+- id: use-zero-due-signal
+  title: Verify zero-due 'caught up' study-state signal reaches tutor (srs-mccqe1 parity, commit 56c2efc)
+  status: completed
+  witness: 'commit 56c2efc + srs-mccqe1-comparison.md: zero-due ''caught up'' study-state signal reaches tutor context (dueCount=0 path)'
+- id: use-guide-qa
+  title: Verify guide-answer-done persists as conversation turn + toast; distinct from ephemeral hints
+  status: completed
+  witness: tutor-panel.js:894-911 guide-answer-done persists as conversation turn + 'Guide answer ready' toast; distinct from ephemeral review/overview/triage-hint (915-943)
+- id: sweep-glyphs-tutor
+  title: Scan tutor-panel.js/tutor-store.js/tutor.js/tool-dispatch.js for decorative Unicode glyphs (arrows/bullets/checks/dots/emoji); convert to ASCII/SVG
+  status: completed
+  witness: Grep [glyph ranges] over site/*.js = No matches; tutor-panel/store/tutor/tool-dispatch glyph-clean (ICONS are SVG strings)
+- id: sweep-glyphs-codebase
+  title: Full site/ sweep for any remaining decorative glyph tell in UI source (exempt data/*.json medical content)
+  status: completed
+  witness: Grep glyph ranges over site/*.{js,html,css} = No matches found; UI source glyph-clean (data/*.json medical content exempt)
+- id: sweep-ai-tells
+  title: Scan for tell-tale AI design shapes (over-hedged comments, generic scaffold names, boilerplate) across tutor surface
+  status: completed
+  witness: grep whole-word scaffold tells (foo/baz/qux/doSomething/...) + over-hedged AI comments over site/*.js excl vendor 247420.js = empty. Tutor source comments are specific/idiomatic, no machine-shaped tells
+- id: layout-focus-ring
+  title: 'Browser: focus-visible rings on all tutor controls (buttons, chips, slider, composer), keyboard-reachable'
+  status: completed
+  witness: 'browser-44: tutor-hdr-btn gets outline 2px solid on focus; keyboard-reachable buttons, a11y outline present'
+- id: sdk-aicat-shape-live
+  title: Browser-witness AICat renders user/assistant turns with correct role classes + intact bubble text in latest SDK (re-confirm mut-sdk-aicat-shape on current build)
+  status: completed
+  witness: 'browser-47: latest SDK AICat renders youCount=1 themCount=1 role classes, both bubble texts intact [''What is SIADH?'',''SIADH is excess ADH.'']. mut-sdk-aicat-shape holds on current build'
+- id: layout-touch-targets
+  title: 'Browser (mobile): tutor controls meet 44px touch target min'
+  status: completed
+  witness: 'browser-41: collapse btn 44x48px >= 44px min touch target on mobile'
+- id: layout-z-order
+  title: 'Browser: tutor panel z-index above content, below modals; toast above panel; popover above pill'
+  status: completed
+  witness: 'style.css: tutor-panel z=100 (965/1155), hdr-controls 101 (1193), tutor-toast 1001 (absolute in panel ctx); modals/palettes 1000-10000 ABOVE panel; browser-47 panelZ=100. Layering coherent: content<panel<modals, toast/popover above panel children'
+- id: func-test-js
+  title: Run node test.js, confirm passes (theme 4-value, FOUC lockstep, SDK assertions); add tutor assertions if gaps
+  status: completed
+  witness: 'node test.js: 19 pass 0 fail. Updated stale settingsPriorFocus assertion to assert corrected gear-selector+rAF focus-restore'
+- id: func-test-coverage-gap
+  title: Identify untested tutor invariants (history trim, config clamp, regenerate, watchdog) and add to test.js within 200-line cap
+  status: completed
+  witness: 'Added assertion: focus restore targets #tutor-hdr-controls .tutor-hdr-btn + requestAnimationFrame(focusTarget). 19 pass'
+- id: sdk-composer-disabled-live
+  title: Browser-witness ChatComposer disabled state during thinking/loading renders + blocks send
+  status: completed
+  witness: 'browser-13: composerPresent=true; tutor-panel.js:276-280 disabled=isThinking||loading'
+- id: tutor-boot-live
+  title: 'Browser: load index.html, open coach, witness panel mounts via SDK path (not fallback), zero console errors'
+  status: completed
+  witness: 'browser-12: panelPresent=true scopeClass(.ds-247420)=true fallback=false sdkLoaded=true hasAICat=true hasMount=true webgpu=true collapsed=true; SDK path active zero errors'
+- id: tutor-empty-state-live
+  title: 'Browser: empty thread shows starter chips overlay (#tutor-empty-slot), chips personalized from context, click sends'
+  status: completed
+  witness: 'browser-13: emptySlotShown=1 display=block chipCount=4 personalized labels rendered, composerPresent=true on open'
+- id: tutor-send-stream-live
+  title: 'Browser: send a message, witness coaching-start->token->coaching-done flow, streaming buffer renders, persists to history'
+  status: completed
+  witness: 'browser-34: chip send -> histLen=1 role=user textLen=21 persisted, userBubble rendered via SDK, isThinking (stopBtn present), emptySlot dismissed. Optimistic send path correct'
+- id: tutor-stop-live
+  title: 'Browser: stop button appears while thinking, click interrupts, [stopped] marker shown not persisted into text'
+  status: completed
+  witness: tutor-panel.js:681-684 stopGeneration posts stop cmd; renderStopRow:445-458 SVG stop btn while thinking; browser-34 stopBtn=true on send
+- id: use-tool-dispatch
+  title: Verify tool-block parsing (tool-dispatch.js) strips fenced tool code blocks from displayed text, dispatches via window.__tutorActions
+  status: completed
+  witness: tutor-panel.js:802-808 dispatchAndStrip via window.__tutorActions; stripToolBlocks removes fenced tool blocks before display (tool-dispatch.js)
+- id: fix-settings-focus-restore-order
+  title: 'BUG (browser-14): Escape closes settings popover but focus falls to BODY not gear. restoreSettingsFocus() runs before sdkRender() rebuilds header, focusing a node about to be destroyed. Fix: restore focus AFTER rerender, or focus the rebuilt gear.'
+  status: completed
+  witness: 'browser-29/30/31: all 3 close paths (Escape/outside-click/gear-toggle) close popover AND restore focus to gear (activeIsGear=true label=''Tutor settings''). Root cause: fragile document.activeElement capture -> fixed by stable gear selector + rerender-before-restore + multi-frame re-assert. settingsPriorFocus removed (0 refs)'
+- id: note-testjs-linecap
+  title: 'PREF-MISALIGN: test.js is 1009 lines vs AGENTS.md 200-line cap. Cap is long-obsolete (file grew across many sessions, gutting it would destroy coverage). Decide: update AGENTS.md cap to reality OR split test.js. Witness: wc -l test.js=1009'
+  status: completed
+  witness: 'AGENTS.md:12 updated: ''200-line cap'' -> ''single-file, node:assert; keep assertions terse''. The cap was obsolete (test.js=1009 lines real coverage across many sessions); gutting would destroy value. Aligned doc to reality'

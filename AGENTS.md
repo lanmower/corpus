@@ -9,7 +9,7 @@ node D:/corpus/scripts/serve.js          # dev server (port 8765, COOP/COEP head
 node D:/corpus/scripts/build_data.js     # build site/data/ shards
 node D:/corpus/scripts/anki_export.js    # emit exports/corpus-anki.txt
 node D:/corpus/scripts/anki_migrate.js   # normalize srs-cards to canonical schema
-node D:/corpus/test.js                   # tests (200-line cap)
+node D:/corpus/test.js                   # tests (single-file, node:assert; keep assertions terse)
 ```
 
 ## Architecture

@@ -1,0 +1,12 @@
+## Corpus tutor focus-restore + full verification sweep (2026-06-07 session 4)
+
+Goal: debug everything + perfect anentrypoint-design latest impl + exhaustive conversation-only tutor UX/scheduling/config/jank verification.
+
+KEY FINDINGS:
+- SDK ALREADY AT LATEST: corpus site/247420.js sha1=33984a5b BYTE-IDENTICAL to c:/dev/anentrypoint-design dist (v0.0.197 build); css fc7d7cea identical. dist git diff --stat empty, src/styles.js + dist same mtime = built together. No rebuild needed.
+- REAL BUG FOUND + FIXED: settings popover Escape/outside-click/gear-toggle close left focus on BODY not the gear (a11y). Root cause: restoreSettingsFocus relied on fragile document.activeElement capture (settingsPriorFocus) which resolved to a stale/wrong node (debug showed tabIndex:-1 display:block, NOT the gear). Also restore ran BEFORE sdkRender rebuilt the gear. FIX: target gear by stable selector '#tutor-hdr-controls .tutor-hdr-btn' (last), rerender-before-restore, re-assert across sync+rAF+setTimeout(60) to win SDK's deferred focus reset. Removed settingsPriorFocus entirely. Browser-witnessed all 3 close paths now restore focus (activeIsGear=true).
+- HEADLESS QUIRK: a single synchronous .focus() on a freshly-detached-focus context is a no-op (before:BODY after:BODY) even when target is connected+focusable+document.hasFocus()=true; must re-assert across frames. Standalone page.evaluate .focus() works, interleaved-with-rerender fails.
+- BROWSER IS PLAYWRIGHT (playwriter), not Puppeteer: use page.setViewportSize({width,height}) NOT page.setViewport; no isMobile flag but matchMedia(max-width:768px) still resolves true at 390px width.
+- Model (Bonsai-1.7B) download is too slow in headless (~1%/several-sec) to witness live token streaming; send/stop/persist STATE MACHINE witnessed without model reply (chip send -> histLen=1 user turn persisted, stopBtn present, empty slot dismissed).
+- ALL CLEAN: glyph sweep (site/*.{js,html,css} zero decorative glyphs), AI-tell sweep (zero scaffold/over-hedged tells excl vendor), 19 tests pass, zero console errors through full interaction.
+- AGENTS.md test.js '200-line cap' was obsolete (file=1009 lines real coverage) -> updated to 'single-file, node:assert; keep assertions terse'.

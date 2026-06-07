@@ -591,13 +591,9 @@ export function preloadTutorModel() {
     tutorWorker.postMessage({ cmd: 'init' });
 }
 
-let settingsPriorFocus = null;
 function toggleSettings() {
     showSettings = !showSettings;
     if (showSettings) {
-        // Remember what had focus so we can restore it when the popover closes
-        // (keyboard users shouldn't be dumped at the top of the document).
-        settingsPriorFocus = document.activeElement;
         // Close on outside-click or Escape. Registered on the next tick so the
         // click that opened the popover doesn't immediately close it.
         setTimeout(() => {
@@ -607,19 +603,34 @@ function toggleSettings() {
             panelContainer?.querySelector('.tutor-settings-pop input')?.focus();
         }, 0);
     } else {
+        // Closing via the gear toggle: rerender first, then restore focus to the
+        // rebuilt gear (same ordering fix as Escape/outside-click).
         removeSettingsDismissHandlers();
+        if (sdkRender) sdkRender();
         restoreSettingsFocus();
+        return;
     }
     if (sdkRender) sdkRender();
 }
 
 function restoreSettingsFocus() {
-    const gear = panelContainer?.querySelectorAll('.tutor-hdr-btn');
-    const target = (settingsPriorFocus && settingsPriorFocus.isConnected)
-        ? settingsPriorFocus
-        : (gear && gear[gear.length - 1]);
-    settingsPriorFocus = null;
-    try { target?.focus(); } catch {}
+    // Return focus to the settings gear (the control that opened the popover) so a
+    // keyboard user isn't dumped at document top. Always target the gear by its
+    // stable position (last .tutor-hdr-btn) rather than a captured activeElement
+    // node — the captured node may be stale, detached, or never the gear at all.
+    const focusTarget = () => {
+        const gear = panelContainer?.querySelectorAll('#tutor-hdr-controls .tutor-hdr-btn');
+        const target = gear && gear[gear.length - 1];
+        // A freshly-detached prior focus can make a single synchronous .focus() a
+        // no-op (the browser is mid focus-transition), so re-assert until it sticks.
+        try { target?.focus(); } catch {}
+    };
+    // The gear exists synchronously after sdkRender's updateHeaderControls pass;
+    // focus now, then re-assert across the next frame + a short timeout to win any
+    // deferred SDK render/focus reset that would otherwise drop focus to body.
+    focusTarget();
+    if (typeof requestAnimationFrame === 'function') requestAnimationFrame(focusTarget);
+    setTimeout(focusTarget, 60);
 }
 
 function removeSettingsDismissHandlers() {
@@ -627,23 +638,26 @@ function removeSettingsDismissHandlers() {
     document.removeEventListener('keydown', onSettingsEscape, true);
 }
 
+// Close the popover in the correct order: drop handlers, rerender (rebuilds the
+// header + gear), THEN restore focus to the rebuilt gear on the next frame.
+function closeSettingsAndRestoreFocus() {
+    showSettings = false;
+    removeSettingsDismissHandlers();
+    if (sdkRender) sdkRender();
+    restoreSettingsFocus();
+}
+
 function onSettingsOutsideClick(e) {
     const pop = panelContainer?.querySelector('.tutor-settings-pop');
     const gear = e.target.closest?.('.tutor-hdr-btn');
     if (pop && !pop.contains(e.target) && !gear) {
-        showSettings = false;
-        removeSettingsDismissHandlers();
-        restoreSettingsFocus();
-        if (sdkRender) sdkRender();
+        closeSettingsAndRestoreFocus();
     }
 }
 
 function onSettingsEscape(e) {
     if (e.key === 'Escape') {
-        showSettings = false;
-        removeSettingsDismissHandlers();
-        restoreSettingsFocus();
-        if (sdkRender) sdkRender();
+        closeSettingsAndRestoreFocus();
     }
 }
 
