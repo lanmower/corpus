@@ -984,6 +984,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // conversational tutor now injects real study context into the chat prompt.
         const tutorSrc = READ('site/tutor.js');
         assert.match(tutorSrc, /function buildStudyContextLine/);
+        // zero-due "caught up" signal (srs-mccqe1 parity): coach must learn the
+        // student is on track, not just go silent when nothing is due.
+        assert.match(tutorSrc, /caught up on reviews/);
         assert.match(panelSrcS(), /context: tutorContext/);
         // touch targets meet 44px (WCAG 2.5.5) for header + collapse buttons.
         assert.match(styleCss, /\.tutor-hdr-btn \{[^}]*width: 44px; height: 44px/);

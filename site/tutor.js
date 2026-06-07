@@ -162,7 +162,12 @@ async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320,
 function buildStudyContextLine(ctx) {
     if (!ctx || typeof ctx !== 'object') return '';
     const bits = [];
-    if (Number(ctx.dueCount) > 0) bits.push(`${ctx.dueCount} cards due for review`);
+    // Surface the "caught up" state explicitly. Like srs-mccqe1's dashboard, a
+    // zero-due day is a real signal (the student is on track) — going silent here
+    // left the coach unable to acknowledge progress or pivot to weak-area drilling.
+    const due = Number(ctx.dueCount);
+    if (due > 0) bits.push(`${due} cards due for review`);
+    else if (Number.isFinite(due)) bits.push('no cards due right now (caught up on reviews)');
     if (ctx.weakestSubject) bits.push(`weakest subject is ${ctx.weakestSubject}`);
     if (ctx.examDaysLeft != null && ctx.examDaysLeft !== '') bits.push(`${ctx.examDaysLeft} days until their exam`);
     if (!bits.length) return '';
