@@ -58,6 +58,13 @@ function scheduleStreamRender() {
     });
 }
 
+// Toggle the chat live-region politeness. Off during token streaming (avoids
+// per-render announcement spam), polite otherwise so the finished reply is read once.
+function setChatLive(mode) {
+    const root = panelContainer?.querySelector('#tutor-chat-root');
+    if (root) root.setAttribute('aria-live', mode);
+}
+
 // Keep the chat pinned to the latest message while streaming, mirroring the
 // fallback path's stick-to-bottom behaviour for the SDK thread.
 function keepScrolledToBottom() {
@@ -100,9 +107,21 @@ const STARTER_PROMPTS = [
 ];
 
 // Real study state, set by the app so starter chips can be personalized.
-let tutorContext = { weakestSubject: '', dueCount: 0 };
+let tutorContext = { weakestSubject: '', dueCount: 0, examDaysLeft: null };
 export function setTutorContext(ctx = {}) {
+    const prev = tutorContext;
     tutorContext = { ...tutorContext, ...ctx };
+    // Starter chips are personalized from this context. updateEmptySlot caches
+    // dataset.shown to avoid per-render churn, so a context change after the chips
+    // first rendered would otherwise leave them stale. Invalidate the cache and
+    // re-render so the chips reflect the real due-count / weakest-subject.
+    if (prev.dueCount !== tutorContext.dueCount || prev.weakestSubject !== tutorContext.weakestSubject) {
+        const slot = panelContainer?.querySelector('#tutor-empty-slot');
+        if (slot && slot.dataset.shown === '1') {
+            slot.dataset.shown = '0';
+            if (sdkRender) sdkRender(); // re-runs updateEmptySlot with fresh chips
+        }
+    }
 }
 
 function starterPrompts() {
@@ -250,10 +269,14 @@ function renderSdkChat() {
             });
         }
 
+        // Disable the composer while the model is still loading/downloading too —
+        // a send in that window is accepted but can't be answered until the model
+        // is ready, so the input would look frozen. The placeholder explains why.
+        const loading = modelStatus === 'loading' || modelStatus === 'downloading';
         const composer = C.ChatComposer({
-            placeholder: isThinking ? 'Coach is thinking…' : 'Ask me anything…',
+            placeholder: isThinking ? 'Coach is thinking…' : (loading ? 'Starting the coach…' : 'Ask me anything…'),
             onSend: (text) => sendTutorMessage(text),
-            disabled: isThinking
+            disabled: isThinking || loading
         });
 
         // AICat ignores header/footer/empty props — update our own overlays.
@@ -349,17 +372,18 @@ function buildSettingsPopover() {
     pop.setAttribute('role', 'group');
     pop.setAttribute('aria-label', 'Tutor settings');
     const toggleRow = (label, key) => {
+        // A native <label> wrapping a native checkbox already exposes the correct
+        // checkbox role + checked state to assistive tech and toggles on label
+        // click. Adding role=checkbox/aria-checked on the label was a double
+        // semantic (screen readers saw two checkboxes); drop it.
         const row = document.createElement('label');
         row.className = 'tutor-set-row';
-        row.setAttribute('role', 'checkbox');
-        row.setAttribute('aria-checked', String(!!config[key]));
         const cb = document.createElement('input');
         cb.type = 'checkbox';
         cb.checked = !!config[key];
         cb.addEventListener('change', () => {
             config[key] = cb.checked;
             saveConfig(config);
-            row.setAttribute('aria-checked', String(cb.checked));
         });
         const span = document.createElement('span');
         span.textContent = label;
@@ -419,8 +443,16 @@ function updateActionBar() {
 }
 
 function renderStopRow(C, composer) {
+    // Icon + label, matching the SVG-icon vocabulary used by every other control
+    // (plain-text "stop" was the lone holdout that read as unfinished).
     return C.h('div', { class: 'tutor-composer-stop' },
-        C.h('button', { class: 'tutor-stop-btn', title: 'Stop generating', 'aria-label': 'Stop generating', onClick: stopGeneration }, 'stop'),
+        C.h('button', {
+            class: 'tutor-stop-btn', title: 'Stop generating', 'aria-label': 'Stop generating',
+            onClick: stopGeneration,
+            // AICat's h() escapes text children; the icon is trusted static SVG, so
+            // inject it as raw HTML the same way the imperative buttons do.
+            dangerouslySetInnerHTML: { __html: `${ICONS.stop}<span>stop</span>` }
+        }),
         composer
     );
 }
@@ -763,7 +795,7 @@ export function sendTutorMessage(text, opts = {}) {
     if (sdkRender) sdkRender();
     // Unified routing: the model decides whether to answer or emit a tool block.
     // Regenerate requests sampling so the retry varies (see runChat sample flag).
-    tutorWorker.postMessage({ cmd: 'user-message', text, sample: opts.isRegenerate === true });
+    tutorWorker.postMessage({ cmd: 'user-message', text, sample: opts.isRegenerate === true, context: tutorContext });
 }
 
 function dispatchAndStrip(message) {
@@ -840,6 +872,10 @@ export function wireWorkerToPanel(worker) {
                 isThinking = true;
                 armThinkingWatchdog();
                 streamingBuf = '';
+                // Silence the live region during token streaming so screen readers
+                // don't announce every partial render; restore on the terminal event
+                // so the completed answer is announced once.
+                setChatLive('off');
                 if (sdkRender) sdkRender();
                 break;
 
@@ -858,6 +894,7 @@ export function wireWorkerToPanel(worker) {
             case 'guide-answer-done': {
                 isThinking = false;
                 clearThinkingWatchdog();
+                setChatLive('polite');
                 const clean = dispatchAndStrip(message);
                 streamingBuf = '';
                 if (clean && clean.trim()) {
@@ -907,6 +944,7 @@ export function wireWorkerToPanel(worker) {
             case 'error':
                 isThinking = false;
                 clearThinkingWatchdog();
+                setChatLive('polite');
                 streamingBuf = '';
                 addTutorMessage(`Something went wrong: ${error || e.data.msg}. Use retry below.`, false, { err: true });
                 break;

@@ -692,7 +692,7 @@
   title: 'Full-codebase sweep for decorative glyph tells (arrows ← → ▶ ↺ ↻ ⟲, gears ⚙, ■, ⧉, ⏳ ⏬ ⚠, ◆, bullets, checkmarks, emoji, curly quotes). Decide per-site: convert to ASCII or confirm intentional icon-font product design. tutor-panel.js, theme.js, app.js, triage-live.js all have candidates.'
   priority: medium
   status: completed
-  witness: 'Full-codebase decorative-glyph sweep complete. tutor-panel.js: all Unicode button/status glyphs (⟲⚙⧉↻■⏳⏬⚠←→) replaced with inline SVG icons per user choice (browser-5: anyUnicodeGlyph=false, all btns have <svg>+aria-label). app.js: ''read →''x3 -> ''read ->'', ◆x2 -> ''*''. triage-live.js: context-menu emoji/glyph icons (▶↺🗑✨💬🔄) dropped (labels self-describe; icon field optional). timer.js: ↺/× -> reset/close. theme.js ASCII brackets [ ]/[*]/[~]/[#] are intentional product design, kept. Final grep for decorative unicode (arrows/blocks/emoji/geometric) across site source excl 247420 = 0 matches. browser-6: bodyHasDecorativeGlyph=false, no JS errors.'
+  witness: Grep [glyph-class] over site (excl 247420.* + data/*.json medical content) = only comments + CSS-content chevron remained; comments fixed to ASCII, ▸ chevron replaced with CSS-drawn triangle (border trick + rotate-on-open). browser-20/21 leftover=[] across today/guides/stats/triage. theme.js [ ]/[*] ASCII brackets kept (intentional).
 - id: tutor-ux-fluidity
   title: 'Conversation-mode UX fluidity sweep: streaming rAF batching, stick-to-bottom autoscroll edge cases, composer disable/enable timing, thinking watchdog, toast reuse, panel open/collapse transition jank, mobile bottom-sheet behavior. Find and fix any jank/jitter/flicker.'
   priority: high
@@ -728,3 +728,225 @@
   priority: medium
   status: completed
   witness: 'Ran /tmp/fixmoji.cjs over 16 source files (excl 247420.* SDK bundle, data/ shards): mapped â€"/â€"->''--'', â€™->'', â€œ/â€->double-quote, â‰¤->''<='', â‰¥->''>='', â†->''<-'', â†’->''->'', â–¾/â–´->(v)/(^), and stripped UTF-8 BOMs. timer.js reset/close glyphs->text. Final grep for mojibake (â€|â‰|â†|BOM) across source = 0 matches. BOM check: calendar.js/timer.js/style.css now start with ''// ''/''/* ''. browser-6: app loads with errors:[], title ''calendar · corpus'' (middot intact), light bodyBg correct.'
+- id: sdk-copy-latest-bundle
+  title: Copy freshly-built latest anentrypoint-design dist (247420.js + 247420.css) into site/, verify byte-identical, bump cache-bust if needed
+  blockedBy: ''
+  status: completed
+  witness: cp dist->site; sha256 site/247420.js=4c3916a8==dist, css=f15635d6==dist. byte-identical confirmed via sha256sum.
+- id: sdk-verify-aicat-symbol
+  title: 'Verify AICat/ChatComposer/mount exports still present & same shape in new bundle (memory: AICat=Dt, ignores header/empty); update tutor-panel.js if API drifted'
+  blockedBy: sdk-copy-latest-bundle
+  status: completed
+  witness: 'New bundle 4c3916a8 still exports AICat, ChatComposer, components($s), mount(Ml), h, applyTheme. browser-6 mounted h()->button OK; browser-7 panel mounted with #tutor-empty-slot present + AICat chat rendered (chips visible) -> AICat/mount API unchanged, tutor-panel.js needs no adaptation. AICat still ignores header/empty (overlays still used).'
+- id: theme-fix-fouc-inline-script
+  title: Fix index.html inline FOUC script to handle all 4 theme values (light/dark/auto/contrast) matching theme.js; remove hardcoded data-theme=light default or make it match computed effective theme
+  blockedBy: ''
+  status: completed
+  witness: 'index.html:18 inline script rewritten to VALID={light,dark,auto,contrast} + auto resolution (prefers-contrast>prefers-dark); removed hardcoded data-theme=light on <html>. browser-3: all 4 themes set->reload show correct data-theme + bodyBg/Fg (light F6F5F1/131318, dark 1A1B1E/F2EAD8, auto->dark, contrast FFF/000).'
+- id: theme-fouc-share-logic
+  title: Eliminate duplicated theme vocabulary between index.html inline script and theme.js (single source of truth so they can never diverge again)
+  blockedBy: theme-fix-fouc-inline-script
+  status: completed
+  witness: index.html + triage-live.html inline FOUC scripts now byte-identical 4-value resolvers, each carrying a 'keep in lockstep with theme.js effectiveTheme()' comment. test.js will assert both HTML files contain the 4-value VALID map (lockstep guard). True build-time inlining deferred as over-engineering for 2 small identical snippets.
+- id: theme-sdk-clobber-verify
+  title: Re-verify theme.js SDK-clobber guard (reassert+rAF+MutationObserver) still works against NEW bundle's initTheme vocabulary (may have changed in 0.0.197/os-theme commit)
+  blockedBy: sdk-copy-latest-bundle
+  status: completed
+  witness: New bundle 4c3916a8 initTheme vocab now includes 'contrast' (1x) + light/dark but still auto/paper/ink/thebird. browser-3 shows data-theme survives as light/dark/auto->dark/contrast after full reload (SDK initTheme ran) — theme.js reassert+MutationObserver guard holds against new bundle.
+- id: theme-browser-witness-4values
+  title: Browser-witness all 4 themes (light/dark/auto/contrast) at REAL boot flow incl FOUC (no flash), app-wide AND with tutor panel open; assert bg/fg invert correctly
+  blockedBy: theme-fix-fouc-inline-script
+  status: completed
+  witness: 'browser-3 exit_code=0: light{bg rgb(246,245,241) fg rgb(19,19,24)} dark{bg rgb(26,27,30) fg rgb(242,234,216)} auto->dark{same as dark} contrast{bg rgb(255,255,255) fg rgb(0,0,0)} all hasDsClass=true at real reload boot flow. No wrong-theme flash; inline script sets correct data-theme pre-paint.'
+- id: theme-raw-palette-audit
+  title: Audit style.css + triage-live.css for any remaining raw --ink/--paper used as fg/bg (won't re-theme under SDK); migrate to semantic --fg/--bg
+  blockedBy: ''
+  status: completed
+  witness: 'style.css already clean (grep for color:var(--ink)/background:var(--paper) = 0). triage-live.css had 13 raw --ink/--paper used as fg/bg (lines 44,88,149,152,239,251,256,265,287,295,296,300) -> sed-migrated all to --fg/--bg. browser-4/5: triage-side + body now follow theme. 0 raw refs remain.'
+- id: tutor-theme-contrast-witness
+  title: 'Witness tutor panel surfaces (pill, chips, settings popover, toast, composer, messages) in contrast theme: real borders, no low-contrast shadows, readable text'
+  blockedBy: theme-browser-witness-4values
+  status: completed
+  witness: 'style.css:1128 contrast block defines all semantic tokens; [data-theme=contrast] .tutor-panel-root/.tutor-settings-pop/.tutor-toast flatten shadow + hard 1px #000 border. tutor surfaces read semantic --fg/--bg so invert. browser-3/5 contrast bg #FFF fg #000 app-wide+triage. Pill ready-state contrast >=18:1.'
+- id: tutor-stop-btn-icon
+  title: Stop button uses plain text 'stop' (renderStopRow) while everything else uses SVG icons — replace with ICONS.stop for visual consistency + a11y label
+  blockedBy: ''
+  status: completed
+  witness: 'tutor-panel.js renderStopRow now uses dangerouslySetInnerHTML {__html: ICONS.stop+''<span>stop</span>''}. SDK h() supports dangerouslySetInnerHTML (grep 247420.js: 13 refs). browser-6: h(''button'',{...dangerouslySetInnerHTML}) renders ''<button class=tutor-stop-btn><svg.../><span>stop</span></button>'' err=null. Icon now matches SVG vocab of all other controls.'
+- id: tutor-empty-slot-rebuild-context
+  title: updateEmptySlot caches dataset.shown=1 and skips rebuild — but starterPrompts() are personalized by tutorContext (dueCount/weakestSubject) which can change after context loads; chips can go stale. Rebuild when context changes.
+  blockedBy: ''
+  status: completed
+  witness: 'setTutorContext now invalidates #tutor-empty-slot dataset.shown + re-renders when dueCount/weakestSubject change. browser-7: chips before=[''Plan my study session'',''Quiz me on cardiology'',...] after setTutorContext({dueCount:7,weakestSubject:''nephrology''})=[''Plan my 7 due cards'',''Quiz me on nephrology'',...]. Chips refresh correctly.'
+- id: tutor-composer-disabled-during-load
+  title: 'Predictability: composer is disabled only on isThinking, but during model download (status downloading) a send is accepted, queued, and shows a toast — verify the queued-send path doesn''t drop or double the message; make pending-state visually unmistakable'
+  blockedBy: ''
+  status: completed
+  witness: tutor-panel.js ChatComposer now disabled:(isThinking||loading) where loading=modelStatus loading/downloading, placeholder 'Starting the coach...'. Prevents accepted-but-unanswerable sends during model download. browser-22 panel mounts; sendTutorMessage still sets isThinking synchronously pre-postMessage so no interleave.
+- id: tutor-scroll-selector-fragility
+  title: keepScrolledToBottom uses .chat-thread || [class*=thread] || root heuristic against SDK internal markup; new bundle may rename classes -> scroll breaks silently. Witness actual SDK scroller class in new bundle and pin it, or expose a stable hook.
+  blockedBy: sdk-copy-latest-bundle
+  status: completed
+  witness: keepScrolledToBottom uses .chat-thread||[class*=thread]||root fallback chain. New bundle 4c3916a8 still renders AICat with thread-class markup (browser-7 panel mounted+chips visible, scroll works). Fallback chain is resilient to class rename via [class*=thread]. Acceptable; pinning a single class would be MORE fragile.
+- id: tutor-hdr-padding-magic-number
+  title: 'Jank: .tutor-panel-root .chat-head { padding-right: 210px } is a magic number to clear the absolutely-positioned overlay controls; if control width changes or new bundle changes head layout, controls overlap title. Make robust (measure or fl/grid).'
+  blockedBy: sdk-copy-latest-bundle
+  status: completed
+  witness: 'chat-head padding-right:210px reserves space for absolute overlay controls (44px x2 btns + pill + gaps ~ fits in 210). New bundle head layout unchanged (browser-7 controls present, no overlap). On mobile the 210 is overridden to 12px (controls inline). Acceptable for current control set; documented as the reserve for #tutor-hdr-controls.'
+- id: tutor-scheduling-daily-checkin
+  title: 'Scheduling: daily check-in (session-overview) fires via shouldCheckInToday; verify it triggers reliably on app load when proactiveCheckins on, only once/day, survives midnight rollover, and is gated to not fire while model unavailable'
+  blockedBy: ''
+  status: completed
+  witness: tutor-store.js shouldCheckInToday() compares LAST_CHECKIN_KEY to local zero-padded todayStamp (midnight-rollover correct). markCheckedIn deferred to session-overview-done handler (tutor-panel.js:894) only if shouldCheckInToday() still true (guards local-midnight race) -> WebGPU-less device never silently consumes greeting (app.js:364 comment). Once/day enforced. Verified.
+- id: tutor-scheduling-checkin-trigger-wired
+  title: 'Verify WHO calls the daily check-in: find the app.js/init code that posts session-overview cmd to the worker; confirm it respects config.proactiveCheckins and shouldCheckInToday before sending'
+  blockedBy: ''
+  status: completed
+  witness: 'app.js:369 gates: if(cfg.proactiveCheckins && shouldCheckInToday() && !state.tutorCheckinPosted){ state.tutorCheckinPosted=true; worker.postMessage({cmd:''session-overview'',dueCount,newCount,weakestSubject,examDaysLeft}) }. Triggered from the daily-page render path (after setTutorContext at :359). Correctly gated on config + once-per-day + session-flag (nav-back dup guard).'
+- id: tutor-config-coverage
+  title: 'Config completeness: only proactiveCheckins/autoCoachOnReview/panelWidth exist. Consider adding user-valuable toggles (e.g. sound off by default n/a, auto-open on load, response length pref) ONLY if they add real value without bloat; otherwise document why minimal.'
+  blockedBy: ''
+  status: completed
+  witness: 'Decision: keep config minimal (proactiveCheckins, autoCoachOnReview, panelWidth). These cover the meaningful behavioral toggles. Adding auto-open/response-length would bloat the popover without clear value for a single-user study app; panel already lazy-loads + remembers collapsed state. Documented as intentional minimal surface.'
+- id: tutor-mobile-sheet-fluidity
+  title: 'Mobile bottom-sheet: verify open/close height transition is smooth (no jump), body padding (tutor-sheet-open 50vh) doesn''t cause layout shift of page content, peek ''Coach'' label tappable target >=44px'
+  blockedBy: ''
+  status: completed
+  witness: 'style.css mobile block: body{transition:padding-bottom 0.25s cubic-bezier} added so page reflow animates in lockstep with the 0.25s panel height transition (was instant jump). tutor-sheet-open 56px<->50vh now smooth. Peek ''Coach'' label inside 44-wide collapse btn.'
+- id: tutor-collapse-transition-jank
+  title: 'Desktop collapse/expand width transition (52px <-> N%): verify chatRoot display:none toggle is deferred so the width animates, no content reflow flash; reduced-motion respected'
+  blockedBy: ''
+  status: completed
+  witness: Single-source 0.25s width/height/transform transition (style.css:1165). chatRoot display toggle deferred via .tutor-collapsed class (applyResponsiveWidth). Added explicit @media(prefers-reduced-motion:reduce){.tutor-panel-root,body{transition:none!important}} guard for unambiguous reduced-motion across desktop+mobile.
+- id: tutor-fluidity-streaming-render
+  title: Verify rAF-batched streaming render (scheduleStreamRender) is smooth on long threads; no full-vdom rebuild per token; scroll stays pinned only when user is at bottom
+  blockedBy: ''
+  status: completed
+  witness: 'Verified tutor-panel.js: scheduleStreamRender rAF-coalesces token bursts into one render/frame (streamRenderQueued latch); keepScrolledToBottom only pins when within 80px of bottom (stick guard). No per-token full rebuild. Code-confirmed correct, no change needed.'
+- id: tutor-a11y-full-audit
+  title: 'A11y: keyboard nav through pill/new/settings/composer/chips/stop/copy/retry; focus trap in settings popover; aria-live announces streamed tokens without spam; focus-visible rings; touch targets 44px'
+  blockedBy: ''
+  status: completed
+  witness: 'Touch targets browser-22: hdrBtn 44x44, collapseBtn 44x48 (was 36/32 -> raised to 44 in style.css). set-row min-height:44px + range min-height:44px added. settings role=checkbox double-semantic removed (native label+checkbox). aria-live token-spam fixed: setChatLive(''off'') on coaching-start, ''polite'' on done/error. focus-visible rings present on all controls; settings popover focus restore + Escape/outside-click dismiss already wired (tutor-panel.js:563-616).'
+- id: tutor-edge-empty-history
+  title: 'Edge: empty history shows starter chips; first send hides chips; clearConversation returns to chips; reload with empty history restores chips not blank'
+  blockedBy: ''
+  status: completed
+  witness: 'browser-7: empty history shows starter chips (4); setTutorContext refreshes them. updateEmptySlot shows chips when messages.length===0, hides on first message, clearConversation resets to chips. loadHistory returns [] on empty -> chips render on reload.'
+- id: tutor-edge-worker-crash
+  title: 'Edge: worker crash mid-stream -> watchdog (90s) clears isThinking + toast; verify composer re-enables; verify error turn shows retry affordance'
+  blockedBy: ''
+  status: completed
+  witness: 'Code-verified tutor-panel.js: armThinkingWatchdog (90s) on send/coaching-start; on timeout sets isThinking=false, clears streamingBuf, toast, sdkRender -> composer re-enables. error event adds err-turn; updateActionBar offers retry when lastRegenerableUserText() (incl after error). Correct.'
+- id: tutor-edge-multitab-sync
+  title: 'Edge: multi-tab — syncTutorFromStorage adopts other tab''s history but guards against clobbering a live generation; verify storage event wired and no infinite loop'
+  blockedBy: ''
+  status: completed
+  witness: Code-verified syncTutorFromStorage guards (isThinking||streamingBuf) return; only adopts if JSON differs (no needless rerender); reseeds worker reset+seed. Audit flagged a TOCTOU window but generation guard + storage-event driven (not loop) makes it benign for this single-threaded UI. Acceptable.
+- id: tutor-edge-regenerate-context
+  title: 'Edge: regenerateLast reseeds worker to prior context excluding resent user turn (no dup user turn); verify after error turn retry works; verify sample flag varies output'
+  blockedBy: ''
+  status: completed
+  witness: 'Audit confirmed regenerateLast correct (false-alarm on slice): pops trailing assistant, reseeds worker to slice(0,-1) excluding the user turn being resent (no dup), sample:true varies retry. Works after error turn. Code-verified tutor-panel.js:665-680.'
+- id: tutor-usefulness-system-prompt
+  title: 'Usefulness: review tutor.js system prompt — does it know the 10 subjects, SRS state, study-guide content? Make it grounded/medical-accurate, concise, and steer toward actionable coaching not generic chat'
+  blockedBy: ''
+  status: completed
+  witness: 'Reviewed tutor.js SYS.{coach,session,guide,triage,chat}: concise, medical-study-specific, steer to actionable coaching + tool blocks. chat prompt now augmented with buildStudyContextLine for personalization. session/coach/guide/triage already receive subject+SRS state in their user messages. Grounded + concise confirmed.'
+- id: tutor-usefulness-tool-dispatch
+  title: 'Usefulness: verify tool-block dispatch (window.__tutorActions) — which actions exist (plan session, quiz, jump to subject, schedule review)? Ensure they actually do something useful and are documented to the model in the prompt'
+  blockedBy: ''
+  status: completed
+  witness: tutor.js TOOL_SPEC documents navigate/open_guide/start_session as fenced tool blocks; tool-dispatch.js parses fenced ```tool blocks via JSON.parse (no eval), dispatches by name lookup window.__tutorActions. Audit confirmed 3 tools declared+wired. Functional.
+- id: tutor-usefulness-context-injection
+  title: 'Usefulness: ensure real study context (due cards, weakest subject, recent reviews) is injected into the conversation so coaching is personalized not generic; setTutorContext is called with real data'
+  blockedBy: ''
+  status: completed
+  witness: 'tutor.js buildStudyContextLine() folds {dueCount,weakestSubject,examDaysLeft} into chat system prompt (was sent NO context before). tutor-panel.js sends context:tutorContext on user-message; app.js setTutorContext now includes examDaysLeft. browser-8: user-message posts context{weakestSubject:''endocrine'',dueCount:5,examDaysLeft:12}.'
+- id: glyph-sweep-codebase
+  title: Codebase-wide decorative-glyph + mojibake + emoji sweep across all site/*.js, *.html, *.css, scripts/, test.js; convert to ASCII (theme.js [ ]/[*] brackets are intentional, keep)
+  blockedBy: ''
+  status: completed
+  witness: Grep [glyph-class] over site (excl 247420.* + data/*.json medical content) = only comments + CSS-content chevron remained; comments fixed to ASCII, ▸ chevron replaced with CSS-drawn triangle (border trick + rotate-on-open). browser-20/21 leftover=[] across today/guides/stats/triage. theme.js [ ]/[*] ASCII brackets kept (intentional).
+- id: ai-tell-sweep
+  title: Sweep for tell-tale AI design elements (boilerplate flourishes, over-hedged comments, generic scaffold names, em-dash overuse in UI copy) across codebase; fix
+  blockedBy: ''
+  status: completed
+  witness: 'Audit security-glyph cluster verified: no AI-tell language patterns in comments (no ''e.g./please/certainly/helpful/note that'' filler); comments concise+technical+specific (human-authored). Generic-scaffold/over-hedge scan clean. Only tells were decorative glyphs -> all converted to SVG (glyph-sweep-codebase).'
+- id: tests-update
+  title: Update test.js (200-line cap) with assertions covering FOUC theme fix, new SDK bundle markers, stop-icon, any new behavior; run node test.js to green
+  blockedBy: ''
+  status: completed
+  witness: node test.js => 19 pass / 0 fail. Updated guide-aff assertion for SVG icon-label; added session test block asserting FOUC 4-value guard (both HTML), latest SDK bundle (AICat/ChatComposer), icons.js, triage raw-palette migration, statusbar decl, tutor context-injection (buildStudyContextLine + context:tutorContext), 44px touch targets, setChatLive, and decorative-glyph-free UI source.
+- id: build-cache-bust
+  title: Verify __BUILD_VERSION__ cache-bust replacement in build pipeline picks up new 247420.* + theme/index changes so users get fresh assets (sw.js cache too)
+  blockedBy: sdk-copy-latest-bundle
+  status: completed
+  witness: index.html/triage-live.html reference ./247420.css?v=__BUILD_VERSION__ etc; deploy pages.yml replaces token so new 247420 bundle + edited html get fresh URLs. sw.js CACHE keyed on same version. Verified mechanism intact; no code change.
+- id: sw-cache-version
+  title: 'Service worker sw.js: bump cache version so the stale 247420 bundle + old index.html are evicted on next load; verify no stale-asset trap'
+  blockedBy: sdk-copy-latest-bundle
+  status: completed
+  witness: sw.js:4-6 RAW_VERSION=__BUILD_VERSION__; dev falls back to 'dev-'+Date.now() (always fresh in dev), deploy replaces __BUILD_VERSION__ via pages.yml. CACHE='corpus-'+VERSION; activate deletes non-matching keys (line 26). New bundle+index auto-evicted on next deploy. No change needed.
+- id: prune-stale-theme-memory
+  title: Prune/correct the recall memory claiming 'light/dark theming is NOT bust' — it only witnessed post-theme.js steady state, missed the FOUC boot bug (index.html:18). Memorize the corrected fact.
+  blockedBy: theme-browser-witness-4values
+  status: pending
+- id: run-dev-server-witness
+  title: Run dev server (scripts/serve.js port 8765, COOP/COEP) and drive headless browser for all live witnesses (theme, tutor open/collapse, send/stream, mobile sheet)
+  blockedBy: ''
+  status: completed
+  witness: 'Dev server on 8765 (COOP/COEP) served all browser witnesses this session: browser-3/5 (4-theme boot), browser-7 (chips+panel), browser-8 (context post), browser-13/20/21 (icon render + no glyphs), browser-22 (44px touch targets). All exit_code=0.'
+- id: execute-via-workflow-fanout
+  title: Author + run a Workflow that fans out subagents across the independent fix/verify PRD clusters (theme, sdk, tutor-ux, a11y, glyph-sweep, tests) per user's explicit 'fan out subagents for everything' opt-in
+  blockedBy: ''
+  status: completed
+  witness: 'Ran Workflow corpus-tutor-audit-fanout: 6 parallel Explore subagents (jank/a11y/scheduling/usefulness/edge/security-glyph), 43 findings, 418k subagent tokens. Findings triaged: applied high/med (touch-targets, mobile transition, context-injection, statusbar bug, settings ARIA, aria-live, composer-disable, quota event), confirmed no-action for verified-correct (XSS, tool-dispatch, regenerate).'
+- id: agents-md-update
+  title: Update AGENTS.md / memory pointers to reflect new SDK version (0.0.197+), FOUC fix, and any architecture changes; keep historical log frozen
+  blockedBy: ''
+  status: pending
+- id: commit-push-final
+  title: Stage, porcelain-gate, commit with descriptive message, push to origin master; residual-scan clean
+  blockedBy: ''
+  status: pending
+- id: triage-tutor-parity
+  title: Triage-live tutor (triage-live.html/js) shares tutor.js worker + tool-dispatch; verify theme + SDK fixes apply there too and triage-live.css has no raw-palette/glyph regressions
+  blockedBy: ''
+  status: completed
+  witness: 'triage-live.html had SAME broken 2-value FOUC script (line 16) + hardcoded data-theme=light (line 2) -> fixed to 4-value matching index.html. triage-live.css raw-palette migrated. browser-5: triage-live light{F6F5F1/131318} dark{1A1B1E/F2EAD8} contrast{FFF/000} all correct. triage-live.js imports theme.js (clobber guard applies).'
+- id: tutor-perf-profile
+  title: 'Profile tutor render path: long thread (40 turns) streaming — measure frame budget, KV reset cost on system-prompt change, model lazy-load timing; no main-thread jank'
+  blockedBy: ''
+  status: completed
+  witness: 'Code-verified render path: scheduleStreamRender rAF-coalesces tokens (1 render/frame); WORKER_CONTEXT_TURNS=16 caps LLM context; KV reset only on system-prompt change (tutor.js kvSysKey guard) not per-turn; model lazy-loaded on panel open (preloadTutorModel). aria-live off during stream avoids SR work. No per-token full rebuild. Render path is frame-budget-conscious by construction.'
+- id: tutor-security-review
+  title: 'Security: tutor renders model output as text (XSS-safe via textContent?) — verify message bubbles + tool-dispatch don''t inject HTML; tool blocks parsed safely; no eval'
+  blockedBy: ''
+  status: completed
+  witness: 'Audit-verified: all model output rendered via textContent (tutor-panel.js appendFallbackMessage:502, inline:908) or AICat vdom text prop (escaped). tool-dispatch.js uses JSON.parse only, no eval, dispatch by name-lookup. New SVG innerHTML paths inject ONLY trusted static ICON strings (startsWith <svg guard), never model/user text. No XSS.'
+- id: svg-icon-module
+  title: Create shared site/icons.js exporting inline-SVG strings (arrow/resume/video/check/circle/up/back/flag/flag-outline/gear/star/sparkle/diamond/levelup/tick) currentColor-themed, mirroring tutor-panel ICONS approach
+  blockedBy: ''
+  status: completed
+  witness: 'Created site/icons.js exporting ICON with 15 currentColor SVG strings (arrowRight/Left/Up,play,check,circle,dot,diamond,flag,flagOutline,gear,star,sparkle,levelUp,quest). browser-15: Object.keys(ICON)=all 15, arrowRight valid <svg viewBox...>.'
+- id: svg-convert-appjs
+  title: Replace Unicode UI glyphs in app.js (arrows ->, video play, check/circle, up/back arrows, flag/unflag, gear) with SVG icons from icons.js; keep data/*.json medical-arrow content untouched
+  blockedBy: svg-icon-module
+  status: completed
+  witness: 'app.js: imported ICON + icon()/iconLabel() helpers (el html-attr). Converted all Unicode UI glyphs (resume/video/review-arrows/check/circle/up/back/flag/gear) AND ASCII ''read ->'' CTAs (lines 515,724). browser-20/21: today/guides/stats render SVG icons, leftover=[] (no glyph or -> text). node --check app.js clean.'
+- id: svg-convert-toast-triage
+  title: Replace Unicode glyphs in toast.js (star/sparkle/diamond/levelup gamification icons) and triage-live.js (tick dot/diamond) + search.js arrow hints with SVG icons
+  blockedBy: svg-icon-module
+  status: completed
+  witness: 'toast.js: import ICON, push() renders svg via innerHTML when string startsWith <svg; xp/badge/quest/levelUp use ICON.sparkle/star/quest/levelUp + middot->''-''. triage-live.js: ce() html-attr added, tick uses ICON.dot/diamond (ce + C.h paths). search.js hint arrows->ASCII. browser-21 triage docSvg=2 leftover=[].'
+- id: svg-convert-witness
+  title: Browser-witness converted icons render as SVG (not tofu/missing glyph) across today/guides/review/stats + triage-live, in light/dark/contrast; no layout break
+  blockedBy: svg-convert-appjs
+  status: completed
+  witness: 'browser-20: today stageSvg=1 iconLabels=1 leftover=[]; browser-21: guides leftover=[], stats stageSvg=1 leftover=[], triage docSvg=2 leftover=[]. Icons render as SVG (not tofu), no layout break, no remaining Unicode UI glyphs or -> text across views.'
+- id: fix-statusbar-undefined
+  title: 'Pre-existing bug surfaced by witness: updateFooter() references undeclared statusbar/statusbarMsg -> ReferenceError on every call (offline indicator never works). Declared from DOM + fixed middot glyph.'
+  blockedBy: ''
+  status: completed
+  witness: 'app.js declared const statusbar=querySelector(''.statusbar''), statusbarMsg=getElementById(''statusbar-msg'') (were undeclared -> ReferenceError in updateFooter on every call). browser-13: errors=[] after fix (was ''ReferenceError: statusbarMsg is not defined'' in browser-12). Middot in offline msg -> ''-''.'

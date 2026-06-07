@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="ds-247420" data-theme="light">
+<html lang="en" class="ds-247420">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,10 @@
 <link rel="stylesheet" href="./247420.css?v=__BUILD_VERSION__">
 <link rel="stylesheet" href="./style.css?v=__BUILD_VERSION__">
 <link rel="manifest" href="./manifest.webmanifest">
-<script>(function(){try{var t=localStorage.getItem('corpus.theme.v1');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}else if(matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<script>/* FOUC guard: resolve the effective theme before first paint. MUST stay in
+   lockstep with theme.js effectiveTheme() — same vocabulary (light/dark/auto/
+   contrast) and same auto resolution (prefers-contrast wins over prefers-dark). */
+(function(){try{var VALID={light:1,dark:1,auto:1,contrast:1};var t=localStorage.getItem('corpus.theme.v1');if(!VALID[t])t='auto';var eff=t;if(t==='auto'){eff=matchMedia('(prefers-contrast: more)').matches?'contrast':(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}document.documentElement.setAttribute('data-theme',eff);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 </head>
 <body>
 <div id="app">

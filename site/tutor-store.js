@@ -71,9 +71,12 @@ export function saveHistory(turns) {
     const trimmed = (Array.isArray(turns) ? turns : []).slice(-MAX_TURNS);
     let payload = JSON.stringify(trimmed);
     if (!safeSet(HISTORY_KEY, payload)) {
-        // On quota failure, retry with a harder trim.
+        // On quota failure, retry with a harder trim. If even that fails, surface
+        // the storage-full banner so history loss isn't silent (matches srs.js).
         const hard = trimmed.slice(-10);
-        safeSet(HISTORY_KEY, JSON.stringify(hard));
+        if (!safeSet(HISTORY_KEY, JSON.stringify(hard)) && typeof window !== 'undefined') {
+            try { window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { source: 'tutor' } })); } catch {}
+        }
     }
 }
 

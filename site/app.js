@@ -25,11 +25,22 @@ import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from 
 import { showContextMenu, closeContextMenu } from './context-menu.js';
 import { initTutorPanel, wireWorkerToPanel, addTutorMessage, setTutorContext, syncTutorFromStorage } from './tutor-panel.js';
 import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn } from './tutor-store.js';
+import { ICON } from './icons.js';
+
+// Render an icon as an inline element for el()/innerHTML contexts. Returns a span
+// node carrying the SVG so callers can drop it into el(...) children lists.
+function icon(name, cls = 'i') { return el('span', { class: cls, html: ICON[name] || '' }); }
+// Icon + text label as a small inline cluster (replaces "glyph text" strings).
+function iconLabel(name, text) { return el('span', { class: 'icon-label' }, icon(name), el('span', {}, text)); }
 
 let sdk = null;
 let sdkRender = null;
 const appRoot = document.getElementById('app');
 let stage = document.getElementById('stage');
+// Footer status bar (offline indicator). Referenced by updateFooter(); were
+// previously undeclared, so updateFooter threw a ReferenceError on every call.
+const statusbar = document.querySelector('.statusbar');
+const statusbarMsg = document.getElementById('statusbar-msg');
 const DEBUG = new URLSearchParams(location.search).has('debug');
 const log = (...a) => console.log('[corpus]', ...a);
 const warn = (...a) => console.warn('[corpus]', ...a);
@@ -49,7 +60,11 @@ const state = {
     reviewRevealed: false, reviewSessionGraded: 0, reviewSessionStarted: 0,
     sessionFinished: false, searchPaletteApi: null, reviewSessionCap: null,
     cramMode: false, learnMode: false, reviewTagFilter: new Set(),
-    paletteReviewSet: null, sectionFilter: null
+    paletteReviewSet: null, sectionFilter: null,
+    // Guards a second daily session-overview post when the daily page re-renders
+    // (nav back) before the worker reply lands. Explicit init so the check at the
+    // guard site never relies on undefined coercion.
+    tutorCheckinPosted: false
 };
 window.__corpus = state;
 window.__corpus.DEBUG = DEBUG;
@@ -222,7 +237,7 @@ function updateFooter() {
     if (!statusbar || !statusbarMsg) return;
     if (!navigator.onLine) {
         statusbar.classList.remove('hidden');
-        statusbarMsg.textContent = 'offline · saved locally';
+        statusbarMsg.textContent = 'offline - saved locally';
     } else {
         statusbar.classList.add('hidden');
     }
@@ -296,7 +311,7 @@ function renderResumeLine() {
     return el('div', { class: 'resume-line' },
         `back after ${gap}d. last: ${anchor} `,
         el('a', { href: target,
-            on: { click: e => { e.preventDefault(); if (lp.subjectAnchor) go('subject', lp.subjectAnchor); else go(lp.route); } } }, '→ resume')
+            on: { click: e => { e.preventDefault(); if (lp.subjectAnchor) go('subject', lp.subjectAnchor); else go(lp.route); } } }, iconLabel('arrowRight', 'resume'))
     );
 }
 
@@ -356,7 +371,7 @@ function renderTutorOverviewPanel(due, newCount) {
     try { examDaysLeft = srs.daysUntilExam(); } catch { examDaysLeft = null; }
 
     // Feed real study state to the panel so starter chips can be personalized.
-    try { setTutorContext({ weakestSubject: weakestSubject || '', dueCount: due || 0 }); } catch {}
+    try { setTutorContext({ weakestSubject: weakestSubject || '', dueCount: due || 0, examDaysLeft }); } catch {}
 
     // Proactive daily check-in: only when enabled in config and not yet greeted today.
     try {
@@ -497,7 +512,7 @@ function renderNextReadingCard(next) {
                         }
                     };
                     setTimeout(poll, 300);
-                } } }, 'read ->'),
+                } } }, iconLabel('arrowRight', 'read')),
             el('button', { class: 'chip',
                 on: { click: () => {
                     const all = loadGuideTicks();
@@ -636,7 +651,7 @@ function renderGuides() {
         const sections = meta.guideSections || 0;
         const hasVideo = (meta.videoCount || 0) > 0;
         const taglineParts = [`${sections} sections`];
-        if (hasVideo) taglineParts.push('▶ video');
+        if (hasVideo) taglineParts.push('video');
         grid.append(el('div', {
             class: 'subject-card' + (hasVideo ? ' has-video' : ''), role: 'button', tabindex: '0',
             'aria-label': `${meta.subject} guide, ${m}% understood${hasVideo ? ', includes video' : ''}`,
@@ -706,7 +721,7 @@ async function renderSubject() {
     },
         el('span', { class: 'eyebrow' }, 'next section'),
         el('div', { class: 'nt-title' }, nextSec.title),
-        el('span', { class: 'nt-cta' }, 'read ->')));
+        el('span', { class: 'nt-cta' }, iconLabel('arrowRight', 'read'))));
     const placeholder = el('div', { class: 'panel' },
         el('div', { class: 'skeleton', style: 'width:60%;height:14px' }),
         el('div', { class: 'skeleton', style: 'width:90%' }),
@@ -753,7 +768,7 @@ async function renderSubject() {
             el('span', { class: 'cards-cta-meta' }, `${shard.cards.length} cards · ${due} due`),
             el('a', { class: 'chip', href: `#review/${subj}`,
                 on: { click: e => { e.preventDefault(); state.reviewSubjectFilter = subj; resetReviewQueue(); go('review', subj); } } },
-                due ? `review ${due} due →` : 'browse cards →')
+                el('span', { class: 'icon-label' }, el('span', {}, due ? `review ${due} due` : 'browse cards'), icon('arrowRight')))
         ),
         sectionsWithCards.length > 0 ? el('div', { class: 'cards-section-hint' },
             el('div', { class: 'hint-label' }, 'from sections:'),
@@ -870,7 +885,7 @@ function buildGuideToc(subj, shard, ticks) {
                     state.reviewSubjectFilter = subj;
                     resetReviewQueue();
                     go('review', subj);
-                } } }, `review →`) : null
+                } } }, el('span', { class: 'icon-label' }, el('span', {}, 'review'), icon('arrowRight'))) : null
         );
         return row;
     };
@@ -983,11 +998,11 @@ function buildChunkedGuide(subj, shard, ticks) {
                 cardCount ? el('span', { class: 'chunk-badge' }, `${cardCount}`) : null,
                 el('div', { class: 'chunk-affordances' },
                     el('button', { class: 'chip section-review-btn', data: { section: lineKey }, 'aria-label': `review ${cardCount} cards in this section` },
-                        cardCount > 0 ? `review ${cardCount} card${cardCount > 1 ? 's' : ''} →` : 'no cards yet'
+                        cardCount > 0 ? el('span', { class: 'icon-label' }, el('span', {}, `review ${cardCount} card${cardCount > 1 ? 's' : ''}`), icon('arrowRight')) : 'no cards yet'
                     ),
                     el('button', { class: 'chip mark-read', data: { section: lineKey }, 'aria-label': 'mark as read',
                         style: cardCount === 0 ? 'background:var(--c-mastered);color:#fff' : '' },
-                        checked ? '✓ read' : 'mark read')
+                        checked ? el('span', { class: 'icon-label' }, icon('check'), el('span', {}, 'read')) : 'mark read')
                 )
             ),
             el('div', { class: 'chunk-body' }, secBody)
@@ -1094,7 +1109,7 @@ function mountBackToTop() {
     if (!btn) {
         btn = el('button', { id: 'back-to-top', class: 'back-to-top hidden',
             'aria-label': 'back to top',
-            on: { click: () => window.scrollTo({ top: 0, behavior: 'smooth' }) } }, '↑ top');
+            on: { click: () => window.scrollTo({ top: 0, behavior: 'smooth' }) } }, iconLabel('arrowUp', 'top'));
         document.body.appendChild(btn);
     }
     const onScroll = () => {
@@ -1267,7 +1282,7 @@ function renderMarkdown(md, subject) {
     function affordance(headingText) {
         if (!subject) return '';
         const topic = encodeURIComponent(headingText);
-        return `<span class="guide-aff"><a href="./triage-live.html?topic=${topic}&subject=${subject}" data-aff="tutor">→ tutor</a></span>`;
+        return `<span class="guide-aff"><a href="./triage-live.html?topic=${topic}&subject=${subject}" data-aff="tutor"><span class="icon-label">${ICON.arrowRight}<span>tutor</span></span></a></span>`;
     }
     function openListIfNeeded(tag) {
         if (listStack[listStack.length - 1] !== tag) {
@@ -1325,7 +1340,7 @@ function buildFlashcard(c) {
                 e.preventDefault();
                 const isFlagged = flag.isFlagged(id);
                 showContextMenu(e.clientX, e.clientY, [
-                    { icon: isFlagged ? '⚑' : '⚐', label: isFlagged ? 'unflag' : 'flag', action: () => { flag.toggle(id); card.classList.toggle('flagged'); } },
+                    { icon: isFlagged ? ICON.flag : ICON.flagOutline, label: isFlagged ? 'unflag' : 'flag', action: () => { flag.toggle(id); card.classList.toggle('flagged'); } },
                     { icon: '⏸', label: 'suspend', action: () => { if (confirm('suspend this card?')) { srs.suspendCard(id, true); } } },
                     { type: 'divider' },
                     { icon: '⧉', label: 'copy id', action: () => { navigator.clipboard.writeText(id); } }
@@ -1385,7 +1400,7 @@ function buildTriageWidget(meta, shard, sc) {
         out.append(el('div', { class: 'eyebrow' }, 'inputs'));
         out.append(el('pre', {}, JSON.stringify(vals, null, 2)));
         out.append(el('div', { class: 'eyebrow' }, 'reasoning'));
-        out.append(el('div', {}, example.reasoning || 'confirm diagnosis → classify severity → first-line therapy → reassess.'));
+        out.append(el('div', {}, example.reasoning || 'confirm diagnosis -> classify severity -> first-line therapy -> reassess.'));
         out.append(el('div', { class: 'eyebrow', style: 'margin-top:8px' }, 'recommendation'));
         out.append(el('div', {}, example.recommendation || 'standard guideline-directed management.'));
         out.style.display = 'block';
@@ -1631,7 +1646,7 @@ const card = state.reviewQueue[state.reviewIndex];
                     }
                 }, 150);
             }}
-        }, `← ${sectionTitle}`);
+        }, iconLabel('arrowLeft', sectionTitle));
     })();
     
     // Subject-level back link - always show for easy navigation
@@ -1644,9 +1659,9 @@ const card = state.reviewQueue[state.reviewIndex];
                 resetReviewQueue();
                 go('subject', state.reviewSubjectFilter);
             }}
-        }, `← ${state.reviewSubjectFilter}`) 
+        }, iconLabel('arrowLeft', state.reviewSubjectFilter))
         : el('a', { class: 'section-link', href: '#guides',
-            on: { click: e => { e.preventDefault(); resetReviewQueue(); go('guides'); } } }, '← subjects');
+            on: { click: e => { e.preventDefault(); resetReviewQueue(); go('guides'); } } }, iconLabel('arrowLeft', 'subjects'));
     
     // Link to review all cards for this subject
     const allCardsLink = el('a', {
@@ -1685,12 +1700,12 @@ const card = state.reviewQueue[state.reviewIndex];
     // (rendered by tutor-panel.js when it receives coaching-done with target=inline).
     stage.append(el('div', { id: 'tutor-card-coaching', class: 'tutor-inline-coach', 'aria-live': 'polite' }));
 
-    // Right-click on the card → context menu with quick actions
+    // Right-click on the card -> context menu with quick actions
     reviewCard.addEventListener('contextmenu', (e) => {
         e.preventDefault();
         import('./context-menu.js').then(({ showContextMenu }) => {
             const items = [
-                { icon: '⚑', label: isFlag ? 'unflag card' : 'flag card', shortcut: 'f',
+                { icon: isFlag ? ICON.flag : ICON.flagOutline, label: isFlag ? 'unflag card' : 'flag card', shortcut: 'f',
                   action: () => { flag.toggle(card.id); renderReview(); } },
                 { icon: '⏭', label: 'skip card', shortcut: 's', action: () => skipReview() },
                 { type: 'divider' },
@@ -2350,7 +2365,7 @@ async function renderMistakes() {
     const grp = mistakes.bySubject(50);
     stage.append(el('div', { class: 'toolbar' },
         el('button', { class: 'chip', 'aria-label': 'review mistakes',
-            on: { click: () => { state.paletteReviewSet = mistakes.ids(); resetReviewQueue(); go('review'); } } }, `review all ${recent.length} →`),
+            on: { click: () => { state.paletteReviewSet = mistakes.ids(); resetReviewQueue(); go('review'); } } }, el('span', { class: 'icon-label' }, el('span', {}, `review all ${recent.length}`), icon('arrowRight'))),
         el('button', { class: 'chip', on: { click: () => { if (confirm('clear mistake log?')) { mistakes.clear(); render(); } } } }, 'clear')));
     for (const subject of Object.keys(grp).sort()) {
         const arr = grp[subject];
@@ -2526,7 +2541,7 @@ function renderScheduleChecklist(rows) {
     if (!blocks.length) return null;
     const panel = el('div', { class: 'panel schedule-checklist' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, "today's plan"),
-            el('a', { class: 'chip', href: '#calendar', on: { click: e => { e.preventDefault(); go('calendar'); } } }, 'calendar →'))
+            el('a', { class: 'chip', href: '#calendar', on: { click: e => { e.preventDefault(); go('calendar'); } } }, el('span', { class: 'icon-label' }, el('span', {}, 'calendar'), icon('arrowRight'))))
     );
     let totalShortReview = 0, totalShortNew = 0, totalSurplus = 0;
     for (const b of blocks) {
@@ -2573,7 +2588,7 @@ function renderScheduleChecklist(rows) {
         }
         for (const it of items) {
             const row = el('div', { class: `checklist-row${it.done ? ' done' : ''} kind-${it.kind}` },
-                el('span', { class: 'check' }, it.done ? '✓' : '○'),
+                el('span', { class: 'check', html: it.done ? ICON.check : ICON.circle }),
                 it.href
                     ? el('a', { href: it.href, class: 'cl-label' }, it.label)
                     : el('a', { href: '#', class: 'cl-label', on: { click: e => { e.preventDefault(); it.click && it.click(); } } }, it.label)
@@ -2610,7 +2625,7 @@ function mountTopbar() {
         on: { click: e => { e.preventDefault(); moreMenu.hidden = !moreMenu.hidden; } } }, 'more');
     nav.append(moreBtn, moreMenu);
     // Tutor CTA - clear visual distinction
-    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta', 'aria-label': 'open tutor' }, 'tutor →'));
+    nav.append(el('a', { href: './triage-live.html', class: 'navlink nav-cta', 'aria-label': 'open tutor' }, iconLabel('arrowRight', 'tutor')));
     
     // Right side: countdown + quick actions
     const right = document.querySelector('header.topbar .status');
@@ -2624,7 +2639,7 @@ function mountTopbar() {
     right.parentElement.insertBefore(searchBtn, right);
     right.parentElement.insertBefore(makeToggleButton(document), right);
     const settingsBtn = el('a', { href: '#settings', class: 'chip', 'aria-label': 'settings',
-        on: { click: e => { e.preventDefault(); go('settings'); } } }, '⚙');
+        on: { click: e => { e.preventDefault(); go('settings'); } } }, icon('gear'));
     right.parentElement.insertBefore(settingsBtn, right);
 }
 

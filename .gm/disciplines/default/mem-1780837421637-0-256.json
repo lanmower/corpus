@@ -1,0 +1,3 @@
+## Resolved mutable: mut-sdk-bundle-stale
+
+sha256sum: site/247420.js=b8c90964 vs freshly-built dist/247420.js=4c3916a8; site/247420.css=d672540b vs dist=f15635d6. Mismatch confirmed: corpus ships stale bundle. Fix tracked by PRD row sdk-copy-latest-bundle.

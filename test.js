@@ -219,10 +219,13 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // resume line
         assert.match(appSrc, /renderResumeLine/);
         assert.match(appSrc, /back after \$\{gap\}d/);
-        // guide affordances — tutor only (practice/cards browser removed)
+        // guide affordances — tutor only (practice/cards browser removed). The
+        // arrow glyph is now an SVG icon-label (icons.js sweep), so assert the
+        // icon-label tutor markup rather than the old Unicode arrow.
         assert.match(appSrc, /class="guide-aff"/);
-        assert.match(appSrc, /→ tutor/);
+        assert.match(appSrc, /icon-label[^>]*>\$\{ICON\.arrowRight\}<span>tutor/);
         assert.ok(!/→ practice/.test(appSrc));
+        assert.ok(!/→ tutor/.test(appSrc), 'guide-aff should use SVG icon, not Unicode arrow');
         // review progress line
         assert.match(appSrc, /class: 'review-progress'/);
         assert.match(appSrc, /to daily goal/);
@@ -954,6 +957,46 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
 
         localStorage.clear();
     });
+
+    console.log('# session 2026-06-07: latest SDK + FOUC theme + icon sweep + tutor a11y/context');
+    t('FOUC 4-value theme guard (both HTML) + latest SDK bundle + icons.js + triage raw-palette + statusbar decl + tutor context-injection + touch targets + glyph-clean source', () => {
+        // FOUC inline guard handles all 4 theme values in BOTH entry HTMLs and stays
+        // in lockstep with theme.js's vocabulary (the old guard only knew light/dark).
+        for (const html of [indexHtml, liveHtml]) {
+            assert.ok(/light:1,\s*dark:1,\s*auto:1,\s*contrast:1/.test(html), 'FOUC guard missing 4-value VALID map');
+            assert.ok(/prefers-contrast: more/.test(html), 'FOUC guard missing contrast resolution');
+            assert.ok(!/data-theme="light">/.test(html), 'HTML must not hardcode data-theme=light (FOUC flash)');
+        }
+        // anentrypoint-design bundle is the freshly-built latest (AICat/ChatComposer present).
+        const sdkJs = READ('site/247420.js');
+        for (const sym of ['AICat', 'ChatComposer']) assert.ok(sdkJs.includes(sym), 'SDK bundle missing ' + sym);
+        // shared SVG icon module exists with the expected icon names.
+        const iconsSrc = READ('site/icons.js');
+        for (const name of ['arrowRight', 'arrowLeft', 'gear', 'flag', 'check', 'star', 'sparkle']) {
+            assert.ok(new RegExp(name + ':').test(iconsSrc), 'icons.js missing ' + name);
+        }
+        assert.match(appSrc, /import \{ ICON \} from '\.\/icons\.js'/);
+        // triage-live.css migrated off raw --ink/--paper to semantic --fg/--bg.
+        assert.ok(!/var\(--ink\)|var\(--paper\)/.test(liveCss), 'triage-live.css must use semantic tokens');
+        // statusbar refs are declared (were undeclared -> ReferenceError in updateFooter).
+        assert.match(appSrc, /const statusbar = document\.querySelector\('\.statusbar'\)/);
+        assert.match(appSrc, /const statusbarMsg = document\.getElementById\('statusbar-msg'\)/);
+        // conversational tutor now injects real study context into the chat prompt.
+        const tutorSrc = READ('site/tutor.js');
+        assert.match(tutorSrc, /function buildStudyContextLine/);
+        assert.match(panelSrcS(), /context: tutorContext/);
+        // touch targets meet 44px (WCAG 2.5.5) for header + collapse buttons.
+        assert.match(styleCss, /\.tutor-hdr-btn \{[^}]*width: 44px; height: 44px/);
+        assert.ok(/\.tutor-set-row \{[^}]*min-height: 44px/.test(styleCss), 'settings rows need 44px touch target');
+        // aria-live token-stream spam guard.
+        assert.match(panelSrcS(), /function setChatLive/);
+        // UI source files are free of decorative Unicode glyphs (medical data/*.json exempt).
+        for (const [nm, src] of [['app.js', appSrc], ['toast.js', READ('site/toast.js')], ['triage-live.js', liveSrc], ['icons.js', iconsSrc]]) {
+            const decorative = src.match(/[←-⇿─-╿■-◿☀-➿⬀-⯿]/g) || [];
+            assert.deepStrictEqual(decorative, [], nm + ' has decorative glyphs: ' + decorative.join(''));
+        }
+    });
+    function panelSrcS() { return READ('site/tutor-panel.js'); }
 
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);

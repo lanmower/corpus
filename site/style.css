@@ -1,6 +1,6 @@
 /* corpus — personal notebook. Adopts 247420 design system tokens. */
 
-/* Alias old token names → 247420 DS tokens. Do NOT redefine DS tokens here. */
+/* Alias old token names -> 247420 DS tokens. Do NOT redefine DS tokens here. */
 :root {
     --ff-ui: var(--ff-body);
     --ff-prose: var(--ff-body);
@@ -1167,12 +1167,18 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
                 transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tutor-panel-root.tutor-collapsed { box-shadow: none; }
+/* Explicit reduced-motion guard for the panel + mobile body reflow (the global
+   blanket rule covers this, but make the intent unambiguous across desktop/mobile). */
+@media (prefers-reduced-motion: reduce) {
+    .tutor-panel-root { transition: none !important; }
+    body { transition: none !important; }
+}
 .tutor-panel-root .tutor-collapse-btn {
     position: absolute;
-    left: -32px;
+    left: -44px;
     top: 50%;
     transform: translateY(-50%);
-    width: 32px;
+    width: 44px;
     height: 48px;
     background: var(--bg);
     border: 1px solid var(--border);
@@ -1241,7 +1247,7 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 .tutor-hdr-controls { display: flex; gap: 4px; align-items: center; position: relative; }
 .tutor-hdr-btn {
     background: none; border: 1px solid var(--border); color: var(--fg);
-    cursor: pointer; font-size: 14px; width: 36px; height: 36px; min-width: 36px;
+    cursor: pointer; font-size: 14px; width: 44px; height: 44px; min-width: 44px;
     border-radius: 6px; display: flex; align-items: center; justify-content: center;
     padding: 0;
 }
@@ -1255,9 +1261,9 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     border-radius: 8px; padding: 8px; min-width: 200px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 6px;
 }
-.tutor-set-row { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
+.tutor-set-row { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; min-height: 44px; padding: 4px 2px; }
 .tutor-set-width { justify-content: space-between; cursor: default; }
-.tutor-set-width input[type="range"] { flex: 1; min-width: 80px; }
+.tutor-set-width input[type="range"] { flex: 1; min-width: 80px; min-height: 44px; }
 .tutor-set-width input[type="range"]:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 .tutor-set-row input[type="checkbox"]:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 .tutor-set-val { font-family: var(--ff-mono); font-size: 12px; color: var(--panel-text-3); min-width: 36px; text-align: right; }
@@ -1305,8 +1311,10 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 .tutor-stop-btn {
     align-self: flex-start; background: var(--panel-2); border: 1px solid var(--border);
     color: var(--fg); border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer;
-    min-height: 36px;
+    min-height: 44px; min-width: 44px;
+    display: inline-flex; align-items: center; gap: 6px;
 }
+.tutor-stop-btn svg { display: block; }
 .tutor-stop-btn:hover { background: var(--panel-hover); }
 .tutor-stop-btn:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
@@ -1337,7 +1345,7 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 }
 .tutor-fallback-composer textarea:focus-visible { outline: 2px solid var(--link); outline-offset: 1px; }
 
-/* mobile layout for the tutor panel lives in the single ≤768px bottom-sheet
+/* mobile layout for the tutor panel lives in the single <=768px bottom-sheet
    block below; JS applyResponsiveWidth() keys off the same 768px breakpoint. */
 
 /* calendar (phase 1) */
@@ -1401,7 +1409,17 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 .toc-group-bare { border-left: none; padding-left: 0; }
 .toc-h2-summary { display:flex; justify-content:space-between; align-items:center; cursor:pointer; padding:4px 6px; font-weight:600; font-size:13px; list-style:none; }
 .toc-h2-summary::-webkit-details-marker { display:none; }
-.toc-h2-summary::before { content:'▸'; display:inline-block; margin-right:6px; font-size:10px; transition: transform 0.15s; color: var(--panel-text-2); }
+/* CSS-drawn disclosure caret (no Unicode glyph): a right-pointing triangle via
+   borders, rotated to point down when the summary is open. */
+.toc-h2-summary::before {
+    content:''; display:inline-block; margin-right:8px; vertical-align: middle;
+    width:0; height:0; border-style:solid; border-width:4px 0 4px 6px;
+    border-color: transparent transparent transparent var(--panel-text-2);
+    transition: transform 0.15s;
+}
+.icon-label { display:inline-flex; align-items:center; gap:5px; }
+.icon-label svg { display:block; flex:0 0 auto; }
+.check svg, .tick svg { display:block; }
 .toc-group[open] > .toc-h2-summary::before { transform: rotate(90deg); }
 .toc-h2-progress { color: var(--panel-text-2); font-size:10px; }
 .toc-row { display:flex; align-items:center; gap:6px; padding:3px 6px; font-size:12px; line-height:1.4; }
@@ -1972,7 +1990,7 @@ details.collapsible[open] > summary::after { content: '(^)'; }
     border-radius: 4px;
 }
 
-/* Tutor panel — mobile bottom sheet (≤768px).
+/* Tutor panel - mobile bottom sheet (<=768px).
    JS applyResponsiveWidth() keys off this same 768px breakpoint and toggles
    the body.tutor-sheet-open class so page padding only reserves space when the
    sheet is actually expanded. */
@@ -1993,8 +2011,10 @@ details.collapsible[open] > summary::after { content: '(^)'; }
     #tutor-panel.tutor-panel-root:not(.tutor-collapsed) {
         height: 50vh;
     }
-    /* Only reserve page space while the sheet is open; collapsed peek is overlaid. */
-    body { padding-bottom: 56px; }
+    /* Only reserve page space while the sheet is open; collapsed peek is overlaid.
+       Transition padding in lockstep with the panel's height animation so the page
+       content reflows smoothly instead of jumping when the sheet opens/closes. */
+    body { padding-bottom: 56px; transition: padding-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
     body.tutor-sheet-open { padding-bottom: 50vh; }
     /* The 210px right-pad reserved for the desktop overlay controls wastes the
        full-width mobile head; the controls sit inline there. */

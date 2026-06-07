@@ -26,7 +26,9 @@ export function showContextMenu(x, y, items) {
             if (item.icon) {
                 const icon = document.createElement('span');
                 icon.className = 'context-menu-icon';
-                icon.textContent = item.icon;
+                // SVG icon strings are trusted static markup; a bare string stays text.
+                if (typeof item.icon === 'string' && item.icon.trimStart().startsWith('<svg')) icon.innerHTML = item.icon;
+                else icon.textContent = item.icon;
                 menuItem.appendChild(icon);
             }
 

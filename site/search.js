@@ -90,7 +90,7 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
                     <button id="search-palette-clear" class="search-clear" aria-label="clear search" type="button">×</button>
                 </div>
                 <ul id="search-palette-list" role="listbox"></ul>
-                <div class="search-palette-hint">↑↓ navigate · enter open · esc close</div>
+                <div class="search-palette-hint">up/down navigate - enter open - esc close</div>
             </div>`;
         doc.body.appendChild(el);
     }

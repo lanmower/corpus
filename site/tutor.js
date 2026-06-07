@@ -157,6 +157,18 @@ async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320,
     }
 }
 
+// Build a one-line study-state suffix for the chat system prompt. Returns '' when
+// there is nothing useful to say, so the prompt stays clean for a cold start.
+function buildStudyContextLine(ctx) {
+    if (!ctx || typeof ctx !== 'object') return '';
+    const bits = [];
+    if (Number(ctx.dueCount) > 0) bits.push(`${ctx.dueCount} cards due for review`);
+    if (ctx.weakestSubject) bits.push(`weakest subject is ${ctx.weakestSubject}`);
+    if (ctx.examDaysLeft != null && ctx.examDaysLeft !== '') bits.push(`${ctx.examDaysLeft} days until their exam`);
+    if (!bits.length) return '';
+    return `\n\ncurrent study state (use it to personalize, do not recite it verbatim): the student has ${bits.join(', ')}.`;
+}
+
 function pushHistory(role, content) {
     state.history.push({ role, content });
     if (state.history.length > WORKER_CONTEXT_TURNS) {
@@ -321,7 +333,11 @@ self.addEventListener('message', async (e) => {
         if (cmd === 'user-message') {
             const text = data.text || '';
             pushHistory('user', text);
-            const sysWithTools = `${SYS.chat}\n\n${TOOL_SPEC}`;
+            // Inject the user's real study state so the conversational tutor can
+            // personalize (SYS.chat promises grounding but the chat path used to
+            // send no context). Kept to one terse line; omitted entirely when empty.
+            const ctxLine = buildStudyContextLine(data.context);
+            const sysWithTools = `${SYS.chat}${ctxLine}\n\n${TOOL_SPEC}`;
             const messages = [{ role: 'system', content: sysWithTools }, ...state.history];
             // Regenerate enables sampling so a retry on identical context actually
             // varies (greedy decoding would reproduce the same reply verbatim).

@@ -1,0 +1,3 @@
+## Resolved mutable: mut-fouc-theme-boot
+
+index.html:2 hardcodes data-theme=light; index.html:18 inline script handles only t==='dark'||t==='light' then else-if prefers-dark, no auto/contrast. theme.js:3 VALID=['light','dark','auto','contrast']. Divergence confirmed. Fix tracked by theme-fix-fouc-inline-script.

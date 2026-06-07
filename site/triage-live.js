@@ -1,6 +1,7 @@
 ﻿import './theme.js';
 import * as progress from './progress.js';
 import { dispatchToolCalls as runToolCalls, stripToolBlocks } from './tool-dispatch.js';
+import { ICON } from './icons.js';
 
 let sdk = null;
 let sdkRender = null;
@@ -188,6 +189,7 @@ function ce(tag, attrs = {}, ...kids) {
         if (k === 'class') e.className = v;
         else if (k === 'on') for (const [n, h] of Object.entries(v)) e.addEventListener(n, h);
         else if (k === 'data') for (const [dk, dv] of Object.entries(v)) e.dataset[dk] = dv;
+        else if (k === 'html') e.innerHTML = v;
         else if (v != null) e.setAttribute(k, v);
     }
     for (const k of kids) {
@@ -468,7 +470,7 @@ function renderActive() {
     ];
     const checklistEl = ce('div', { class: 'checklist' },
         ...checklist.map(item => ce('div', { class: 'checklist-row' + ((counts[item.kind] || 0) >= item.target ? ' done' : '') },
-            ce('span', { class: 'tick' }, (counts[item.kind] || 0) >= item.target ? '●' : '◇'),
+            ce('span', { class: 'tick', html: (counts[item.kind] || 0) >= item.target ? ICON.dot : ICON.diamond }),
             ce('span', {}, `${item.label}: ${counts[item.kind] || 0} / ${item.target}`)
         ))
     );
@@ -529,7 +531,7 @@ function renderScratchpad() {
             ce('div', { class: 'title' }, c.title),
             ce('div', { class: 'body' }, c.body || '')
         );
-        // Right-click on a scratchpad card → context menu (LLM-aware actions)
+        // Right-click on a scratchpad card -> context menu (LLM-aware actions)
         card.addEventListener('contextmenu', (e) => {
             e.preventDefault();
             import('./context-menu.js').then(({ showContextMenu }) => {
@@ -1063,7 +1065,7 @@ async function setupSdkApp() {
                                     const count = countByKind(state.cards)[item.kind] || 0;
                                     const done = count >= item.target;
                                     return C.h('div', { class: `checklist-row${done ? ' done' : ''}` },
-                                        C.h('span', { class: 'tick' }, done ? '●' : '◇'),
+                                        C.h('span', { class: 'tick', dangerouslySetInnerHTML: { __html: done ? ICON.dot : ICON.diamond } }),
                                         C.h('span', {}, `${item.label}: ${count} / ${item.target}`)
                                     );
                                 })
