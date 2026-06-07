@@ -192,6 +192,7 @@
     border-radius: 18px;
     padding: 14px 16px;
     overflow-y: auto;
+    scrollbar-gutter: stable;
     max-height: 40vh;
     display: flex;
     flex-direction: column;
@@ -404,9 +405,9 @@ kbd { font-family: var(--ff-mono); font-size: 10px; background: var(--panel-2); 
     .scratch-card { padding: 10px; }
     .filter-bar { gap: 4px; padding-bottom: 6px; }
     .filter-chip {
-        padding: 4px 8px;
+        padding: 8px 10px;
         font-size: 11px;
-        min-height: 32px;
+        min-height: 44px;
     }
     .composer { padding: 10px 12px; gap: 8px; }
     .composer textarea { min-height: 64px; font-size: 13px; }

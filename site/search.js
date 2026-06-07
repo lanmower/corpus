@@ -1,4 +1,5 @@
 ﻿// global search palette — Ctrl-K. indexes cards + scenarios + guide sections.
+import { ICON } from './icons.js';
 export function buildSearchIndex(manifest, shards) {
     const items = [];
     for (const meta of manifest.subjects) {
@@ -87,7 +88,7 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
             <div class="search-palette-inner">
                 <div class="search-palette-header">
                     <input id="search-palette-input" type="text" placeholder="search cards, cases, sections…" aria-label="search">
-                    <button id="search-palette-clear" class="search-clear" aria-label="clear search" type="button">×</button>
+                    <button id="search-palette-clear" class="search-clear" aria-label="clear search" type="button">${ICON.close}</button>
                 </div>
                 <ul id="search-palette-list" role="listbox"></ul>
                 <div class="search-palette-hint">up/down navigate - enter open - esc close</div>

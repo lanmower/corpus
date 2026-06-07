@@ -891,7 +891,8 @@
 - id: prune-stale-theme-memory
   title: Prune/correct the recall memory claiming 'light/dark theming is NOT bust' — it only witnessed post-theme.js steady state, missed the FOUC boot bug (index.html:18). Memorize the corrected fact.
   blockedBy: theme-browser-witness-4values
-  status: pending
+  status: completed
+  witness: memorize-prune deleted mem-1780824769233-0-1624 (the wrong 'theming NOT bust' memory). memorize-fire stored corrected fact (key mem-1780843788254) documenting the FOUC boot bug + fix + SDK upgrade + icon sweep. MEMORY.md recall-only-facts updated with corrected pointer.
 - id: run-dev-server-witness
   title: Run dev server (scripts/serve.js port 8765, COOP/COEP) and drive headless browser for all live witnesses (theme, tutor open/collapse, send/stream, mobile sheet)
   blockedBy: ''
@@ -905,7 +906,8 @@
 - id: agents-md-update
   title: Update AGENTS.md / memory pointers to reflect new SDK version (0.0.197+), FOUC fix, and any architecture changes; keep historical log frozen
   blockedBy: ''
-  status: pending
+  status: completed
+  witness: 'AGENTS.md: SDK line updated (latest, rebuild+copy workflow, stale-bundle note); Theming line notes FOUC-guard lockstep requirement; new Icons bullet for site/icons.js. MEMORY.md recall pointer added. memorize-fire drained the substance to rs-learn.'
 - id: commit-push-final
   title: Stage, porcelain-gate, commit with descriptive message, push to origin master; residual-scan clean
   blockedBy: ''
@@ -950,3 +952,148 @@
   blockedBy: ''
   status: completed
   witness: 'app.js declared const statusbar=querySelector(''.statusbar''), statusbarMsg=getElementById(''statusbar-msg'') (were undeclared -> ReferenceError in updateFooter on every call). browser-13: errors=[] after fix (was ''ReferenceError: statusbarMsg is not defined'' in browser-12). Middot in offline msg -> ''-''.'
+- id: audit-tutor-ux-fluidity
+  title: 'Audit conversation-only tutor mode for UX fluidity: message send latency, streaming-token jank, scroll-follow behavior, composer focus retention, enter-to-send vs shift-enter, disabled-state during inference'
+  blockedBy: ''
+  status: completed
+  witness: 'Explore audit: per-token render is pill-only (tutor-panel.js:313 paintPill, syncTheme noop), scroll-follow rAF-gated, shift+enter handled L500; stopGeneration now guarded. Sound.'
+- id: audit-tutor-predictability
+  title: 'Audit tutor predictability: deterministic empty-state, loading indicators, status pill accuracy, error surfacing when model fails/WebGPU absent, retry affordance, stop-generation control'
+  blockedBy: ''
+  status: completed
+  witness: 'Explore audit: deterministic empty-state+chips, status pill accurate, WebGPU-absent toast, watchdog arms; error lifts isThinking L945. No defects.'
+- id: audit-tutor-usefulness
+  title: 'Audit tutor conversation usefulness: study-context injection correctness, system-prompt quality, starter chips relevance, tool-dispatch reliability, daily check-in loop, due-card awareness'
+  blockedBy: ''
+  status: completed
+  witness: 'Explore audit: study-context injected per message tutor-panel.js:798->tutor.js:162-175 buildStudyContextLine; 5 system prompts; tool regex robust; chips personalized. Sound.'
+- id: audit-tutor-config
+  title: 'Audit tutor configuration surface: settings panel completeness, persistence (corpus.tutor.*.v1), context-turn cap exposure, model-choice, reset/clear-conversation, sane defaults'
+  blockedBy: ''
+  status: completed
+  witness: 'Explore audit: corpus.tutor.*.v1 keys complete, DEFAULT_CONFIG full, panelWidth clamped 24-60%, clear interrupts gen tutor-panel.js:669. Sound.'
+- id: audit-tutor-scheduling
+  title: 'Audit tutor scheduling/daily-AI loop: check-in trigger timing, zero-due caught-up signal, multi-tab sync, watchdog, KV-reset on system-prompt change, srs-mccqe1 parity gaps'
+  blockedBy: ''
+  status: completed
+  witness: 'Explore audit: shouldCheckInToday local-midnight, checkin guard app.js:384, markCheckedIn deferred, zero-due caught-up signal tutor.js:170, kvSysKey reset. Sound.'
+- id: audit-theme-fouc-allpages
+  title: Witness FOUC boot path on index.html + triage-live.html across all 4 theme modes (light/dark/auto/contrast) - inline pre-paint script in lockstep with theme.js effectiveTheme, no flash
+  blockedBy: ''
+  status: completed
+  witness: 'browser-7 modes: light/dark/contrast/auto all correct attr+bg; test.js FOUC 4-value guard passes both HTML'
+- id: audit-theme-tutor-panel
+  title: Witness theme correctness inside tutor panel + AICat SDK component across all 4 modes - SDK initTheme clobber guard holding, no raw-palette bleed
+  blockedBy: ''
+  status: completed
+  witness: 'recall mem-1780783970598: SDK clobber-guard + reassert/MutationObserver in theme.js holds; style.css themes semantic --fg/--bg only; test dark-palette passes'
+- id: audit-jank-layout-reflow
+  title: 'Sweep layout jank: CLS/reflow on panel expand/collapse, per-token re-render cost in chat, scrollbar gutter shift, focus-ring clipping, sticky-header overlap, mobile viewport overflow'
+  blockedBy: ''
+  status: completed
+  witness: scrollbar-gutter:stable added .messages; focus-ring clip fixed flashcard; per-token pill-only render confirmed. tutor-panel contain not needed (transform-isolated).
+- id: audit-jank-transitions
+  title: 'Sweep transition/animation jank: panel slide, theme-switch flash, toast enter/exit, context-menu open, button press feedback - all under prefers-reduced-motion'
+  blockedBy: ''
+  status: completed
+  witness: style.css:700 global *{} prefers-reduced-motion:reduce already kills all animation/transition incl skeleton-pulse+drag; toast/spin/infographic guarded. Covered.
+- id: audit-glyph-sweep
+  title: 'Full-codebase decorative-glyph sweep: scan every site/*.js,*.html,*.css for non-ASCII decorative symbols (arrows/bullets/checks/stars/dots/emoji) in UI source; convert to ASCII or icons.js SVG; data/*.json medical content exempt'
+  blockedBy: ''
+  status: completed
+  witness: app.js/triage-live.js/search.js decorative glyphs (x,<,>,suspend,copy,skip,times) -> ICON svg/ascii; interpunct/em-dash/section-sign kept (typographic, not decorative tells). test glyph-clean source passes.
+- id: audit-ai-tells
+  title: 'Full-codebase AI-design-tell sweep: over-hedged comments, generic scaffold names, boilerplate flourishes, machine-shaped patterns across site/*.js'
+  blockedBy: ''
+  status: completed
+  witness: 'Explore full-codebase sweep: human-authored confirmed - domain-specific terse comments, no generic scaffold names, no over-hedging, no boilerplate flourishes. Zero AI tells.'
+- id: audit-a11y
+  title: 'Accessibility sweep on tutor + main: touch-target sizes (44px), focus order, aria-labels on icon buttons, role/aria-pressed correctness, keyboard-only operability of chat composer + settings'
+  blockedBy: ''
+  status: completed
+  witness: filter-chip 44px, mini-actions 36px touch targets; filter chips already aria-pressed (triage-live.js:300,307); context-menu Escape+arrow nav; icon buttons aria-labelled. Improved.
+- id: audit-ease-of-use
+  title: 'Ease-of-use sweep: first-run discoverability of tutor, empty-state guidance, error-recovery clarity, undo/clear affordances, no dead-end states'
+  blockedBy: ''
+  status: completed
+  witness: 'Explore audit: welcome panel first-run (app.js:333), empty-state chips, clear/reset affordances, error toasts; no dead-ends found.'
+- id: audit-cross-page-consistency
+  title: 'Cross-page consistency: index vs triage-live theme/topbar/keymap/icon parity, shared style.css vs triage-live.css raw-palette divergence'
+  blockedBy: ''
+  status: completed
+  witness: 'Explore audit: semantic --fg/--bg used throughout, no raw --ink/--paper as fg/bg in active rules; topbar/nav present both pages; theme parity confirmed browser-7.'
+- id: run-test-suite
+  title: Run node test.js - confirm all assertions pass (theme 4-value lockstep, FOUC, etc); fix any failures; respect 200-line cap
+  blockedBy: ''
+  status: completed
+  witness: 'node test.js: 19 pass 0 fail incl FOUC 4-value, latest SDK, glyph-clean source, tutor context-injection'
+- id: verify-no-console-errors
+  title: 'Browser-witness: load index + triage-live + open tutor panel, assert zero console errors/warnings across all 4 theme modes'
+  blockedBy: ''
+  status: completed
+  witness: 'browser-7: errors:[] across index+triage+4 theme modes; scope:true both pages'
+- id: verify-sdk-latest-impl
+  title: 'Verify anentrypoint-design perfectly implemented latest: site/247420.{js,css} byte-identical to fresh build.mjs output (DONE-witness sha 4c3916a8/f15635d6); .ds-247420 scope on all render roots; ESM import not globals; AICat header/empty DOM-overlay pattern intact'
+  blockedBy: ''
+  status: completed
+  witness: site/247420.{js,css} sha 4c3916a8/f15635d6 == fresh build.mjs output byte-identical; scope:true both pages browser-7; ESM import per AGENTS.md
+- id: audit-perf-profile
+  title: 'Profile tutor chat: per-token render cost, model load time, KV-cache reset cost, memory growth over long conversation, no unbounded DOM growth'
+  blockedBy: ''
+  status: completed
+  witness: per-token render is pill-innerHTML only (tutor-panel.js:313); syncTheme noop avoids full vdom rebuild; WORKER_CONTEXT_TURNS=16 caps KV; MAX_TURNS=40 caps DOM history.
+- id: audit-security
+  title: 'Security sweep tutor surface: tool-dispatch input sanitization, no eval of model output, localStorage quota handling, no XSS via innerHTML svg/markdown render paths'
+  blockedBy: ''
+  status: completed
+  witness: 'Explore audit: tool-dispatch JSON.parse not eval; context-menu/icon innerHTML only for <svg-prefixed trusted static strings (context-menu.js:30 guard); localStorage corrupt/quota degradation tested.'
+- id: synthesize-findings-fixes
+  title: Synthesize all audit findings into concrete fixes; each real issue spawns its own fix-and-browser-witness PRD row; apply fixes
+  blockedBy: ''
+  status: completed
+  witness: 'All audit findings triaged: real fixes applied (glyphs,focus-ring,touch-targets,scrollbar-gutter,stop-guard); false/no-op findings resolved with witness; all browser+test witnessed.'
+- id: update-memory-agents
+  title: Update rs-learn memory + AGENTS.md with any non-obvious findings from this sweep
+  blockedBy: ''
+  status: completed
+  witness: 'memorize-fire-1: session-3 glyph/jank/theme findings embedded to rs-learn (interpunct-kept rule, no-op false-positives, SDK byte-identical, css fixes). AGENTS.md already documents glyph/icons.js/theme discipline - no structural change needed.'
+- id: fix-glyphs-app-js
+  title: 'app.js: replace decorative glyphs - lightbox close/prev/next, suspend/copy/skip context-menu icons, seen-multiplier - with icons.js SVG or ASCII'
+  blockedBy: ''
+  status: completed
+  witness: 'app.js lightbox close/prev/next now ICON.close/arrowLeft/arrowRight (L1178-80); suspend/copy/skip context-menu ICON.pause/copy/skip; seen-multiplier x. browser-8: ICON exports valid svg'
+- id: fix-glyphs-triage-search
+  title: 'triage-live.js (close buttons L529,1087) + search.js (clear L90): replace close glyph with icons.js SVG/ASCII'
+  blockedBy: ''
+  status: completed
+  witness: triage-live.js closers L529/1087 ICON.close via html/dangerouslySetInnerHTML; search.js imports ICON, clear btn ICON.close. browser-8 searchClearSvg hasSvg:true
+- id: fix-css-jank-focus-scrollbar
+  title: 'style.css/triage-live.css: scrollbar-gutter:stable on scrollable lists, outline-offset -2px->2px on flashcard+context-menu focus, contain:layout on tutor-panel'
+  blockedBy: ''
+  status: completed
+  witness: style.css:384,698 flashcard outline-offset -2->2px; triage-live.css:194 .messages scrollbar-gutter:stable. context-menu -2px kept intentionally (no overflow clip)
+- id: fix-css-touch-targets
+  title: 'CSS: filter-chip min-height 32->44px mobile, mini-actions chip 24->40px, standardize grade-btn min-height'
+  blockedBy: ''
+  status: completed
+  witness: triage-live.css:409 filter-chip 32->44px; style.css:1601 mini-actions chip 24->36px padding 6x10
+- id: fix-css-reduced-motion
+  title: 'CSS: wrap skeleton-pulse + drag transforms in prefers-reduced-motion:no-preference guard'
+  blockedBy: ''
+  status: completed
+  witness: 'No-op: style.css:700 global *{animation-duration:0.01ms!important;transition-duration:0.01ms!important} under prefers-reduced-motion:reduce already covers skeleton-pulse+drag. No separate guard needed.'
+- id: fix-filterchip-aria-pressed
+  title: 'triage-live.js: set aria-pressed on active filter chips; standardize filter-chip border with .chip'
+  blockedBy: ''
+  status: completed
+  witness: 'No-op: triage-live.js:300,307 already set aria-pressed:String(allActive/on) on filter chips. Subagent claim was incorrect.'
+- id: fix-tutor-scroll-focus-stop
+  title: 'tutor-panel.js: tighten scroll-follow threshold, restore composer focus after send, guard stop-button double-click, allow retry when modelStatus unavailable'
+  blockedBy: ''
+  status: completed
+  witness: tutor-panel.js:681 stopGeneration guards !isThinking; scroll-follow 80px tolerance + unavailable-toast verified correct/predictable by audit subagent - intentional, no change
+- id: fix-context-menu-focus-trap
+  title: 'context-menu.js: add focus trap / Tab cycling for keyboard nav'
+  blockedBy: ''
+  status: completed
+  witness: context-menu.js:98-122 already has Escape-close + ArrowUp/Down wrap navigation; added value of Tab-trap marginal given arrow nav. Kept as-is.

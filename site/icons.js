@@ -39,5 +39,13 @@ export const ICON = {
     // up-level chevrons — "level up"
     levelUp: svg('<path d="M4 9l4-4 4 4"/><path d="M4 13l4-4 4 4"/>'),
     // quest diamond (reuse diamond outline)
-    quest: svg('<path d="M8 2.5 13.5 8 8 13.5 2.5 8 8 2.5Z"/>')
+    quest: svg('<path d="M8 2.5 13.5 8 8 13.5 2.5 8 8 2.5Z"/>'),
+    // x — "close / dismiss"
+    close: svg('<path d="M4 4l8 8M12 4l-8 8"/>'),
+    // two vertical bars — "suspend / pause"
+    pause: svg('<path d="M6 3.5v9M10 3.5v9"/>'),
+    // overlapping squares — "copy"
+    copy: svg('<rect x="5.5" y="5.5" width="7" height="7" rx="1"/><path d="M3.5 10.5V4a.5.5 0 0 1 .5-.5h6.5"/>'),
+    // skip-forward — "skip card"
+    skip: svg('<path d="M4 4l5 4-5 4z"/><path d="M11.5 4v8"/>')
 };

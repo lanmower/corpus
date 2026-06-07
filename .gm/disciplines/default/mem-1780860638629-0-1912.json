@@ -1,0 +1,17 @@
+## Corpus glyph-sweep + jank session (2026-06-07 session 3)
+
+Full audit/fix sweep of conversation-only tutor mode + theme + jank. Findings:
+
+- LIGHT/DARK NOT bust in steady-state: browser-witnessed all 4 modes (light/dark/contrast/auto) resolve correct attr+bg on index.html + triage-live.html, zero console errors. Prior session-2 FOUC fixes hold. SDK site/247420.{js,css} sha 4c3916a8(js)/f15635d6(css) == fresh build.mjs output byte-identical -> SDK perfectly implemented latest.
+
+- GLYPH FIXES applied: added icons.js ICON.close/pause/copy/skip. app.js lightbox close/prev/next -> ICON.close/arrowLeft/arrowRight; context-menu suspend/copy/skip glyphs (U+23F8/U+29C9/U+23ED) -> ICON.pause/copy/skip; 'seen N×' -> 'seen Nx'. triage-live.js closers (U+00D7) -> ICON.close (ce html attr + C.h dangerouslySetInnerHTML). search.js imports ICON, clear btn -> ICON.close.
+
+- KEPT (typographic, NOT decorative AI-tells): interpunct '·' (U+00B7) as inline list separator throughout app.js (5 cards · 3 due); em-dash '—'; section-sign '§' as section-num prefix; ellipsis '…'. These are real product typography, exempt.
+
+- CSS jank fixes: flashcard :focus-visible outline-offset -2px->2px (was clipping); .messages scrollbar-gutter:stable; filter-chip mobile min-height 32->44px; mini-actions chip 24->36px touch target. context-menu -2px kept (no overflow clip).
+
+- NO-OPS (subagent false positives): filter chips ALREADY set aria-pressed (triage-live.js:300,307); reduced-motion ALREADY blanket-covered by style.css:700 global *{animation/transition-duration:0.01ms!important}; context-menu ALREADY has Escape+arrow-wrap nav.
+
+- tutor-panel.js: stopGeneration now guards !isThinking. Two Explore audits found tutor otherwise SOUND: per-token render is pill-innerHTML only (L313, syncTheme noop), study-context injected per-message, KV reset on kvSysKey, daily-checkin gated. No bugs.
+
+test.js: 19 pass 0 fail.

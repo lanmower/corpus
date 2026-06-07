@@ -679,7 +679,8 @@ export function clearConversation() {
 }
 
 function stopGeneration() {
-    if (tutorWorker) tutorWorker.postMessage({ cmd: 'stop' });
+    if (!isThinking || !tutorWorker) return;
+    tutorWorker.postMessage({ cmd: 'stop' });
 }
 
 // Regenerate only makes sense when the last turn is an assistant reply preceded by a

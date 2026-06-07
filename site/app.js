@@ -1175,9 +1175,9 @@ function openInfographicLightbox(items, startIdx) {
     if (existing) existing.remove();
     const imgEl = el('img', { class: 'lightbox-img', src: items[idx].src, alt: items[idx].alt });
     const caption = el('div', { class: 'lightbox-caption' }, items[idx].title);
-    const close = el('button', { class: 'lightbox-close', type: 'button', 'aria-label': 'close' }, '×');
-    const prev = el('button', { class: 'lightbox-prev', type: 'button', 'aria-label': 'previous' }, '‹');
-    const next = el('button', { class: 'lightbox-next', type: 'button', 'aria-label': 'next' }, '›');
+    const close = el('button', { class: 'lightbox-close', type: 'button', 'aria-label': 'close', html: ICON.close });
+    const prev = el('button', { class: 'lightbox-prev', type: 'button', 'aria-label': 'previous', html: ICON.arrowLeft });
+    const next = el('button', { class: 'lightbox-next', type: 'button', 'aria-label': 'next', html: ICON.arrowRight });
     const stage = el('div', { class: 'lightbox-stage' }, imgEl, caption);
     const overlay = el('div', { id: 'infographic-lightbox', class: 'lightbox-overlay', role: 'dialog', 'aria-modal': 'true' }, close, prev, stage, next);
     function show(i) {
@@ -1341,9 +1341,9 @@ function buildFlashcard(c) {
                 const isFlagged = flag.isFlagged(id);
                 showContextMenu(e.clientX, e.clientY, [
                     { icon: isFlagged ? ICON.flag : ICON.flagOutline, label: isFlagged ? 'unflag' : 'flag', action: () => { flag.toggle(id); card.classList.toggle('flagged'); } },
-                    { icon: '⏸', label: 'suspend', action: () => { if (confirm('suspend this card?')) { srs.suspendCard(id, true); } } },
+                    { icon: ICON.pause, label: 'suspend', action: () => { if (confirm('suspend this card?')) { srs.suspendCard(id, true); } } },
                     { type: 'divider' },
-                    { icon: '⧉', label: 'copy id', action: () => { navigator.clipboard.writeText(id); } }
+                    { icon: ICON.copy, label: 'copy id', action: () => { navigator.clipboard.writeText(id); } }
                 ]);
             }
         }
@@ -1609,7 +1609,7 @@ async function renderReview() {
 const card = state.reviewQueue[state.reviewIndex];
     const cardState = srs.getCardState(card.id);
     const seen = (cardState.history || []).length;
-    const friendlyMeta = seen === 0 ? 'new' : (seen < 3 ? `seen ${seen}×` : 'familiar');
+    const friendlyMeta = seen === 0 ? 'new' : (seen < 3 ? `seen ${seen}x` : 'familiar');
  const isFlag = flag.isFlagged(card.id);
  
      // Section reference link for bidirectional navigation
@@ -1707,7 +1707,7 @@ const card = state.reviewQueue[state.reviewIndex];
             const items = [
                 { icon: isFlag ? ICON.flag : ICON.flagOutline, label: isFlag ? 'unflag card' : 'flag card', shortcut: 'f',
                   action: () => { flag.toggle(card.id); renderReview(); } },
-                { icon: '⏭', label: 'skip card', shortcut: 's', action: () => skipReview() },
+                { icon: ICON.skip, label: 'skip card', shortcut: 's', action: () => skipReview() },
                 { type: 'divider' },
                 { icon: '?', label: 'ask tutor about this', action: () => {
                     if (state.tutorWorker) state.tutorWorker.postMessage({

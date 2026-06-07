@@ -526,7 +526,7 @@ function renderScratchpad() {
             class: 'scratch-card' + (c.highlighted ? ' highlighted' : ''),
             data: { id: c.id, kind: c.kind }
         },
-            ce('button', { class: 'closer', on: { click: () => removeCard(c.id) }, 'aria-label': 'remove card' }, '×'),
+            ce('button', { class: 'closer', on: { click: () => removeCard(c.id) }, 'aria-label': 'remove card', html: ICON.close }),
             ce('div', { class: 'kind' }, c.kind),
             ce('div', { class: 'title' }, c.title),
             ce('div', { class: 'body' }, c.body || '')
@@ -1084,7 +1084,7 @@ async function setupSdkApp() {
                     C.h('div', { class: 'scratchpad' },
                         state.cards.length === 0 ? C.h('div', { class: 'scratchpad-empty' }, 'your board is empty') :
                         state.cards.map(c => C.h('div', { class: `scratch-card${c.highlighted ? ' highlighted' : ''}` },
-                            C.h('button', { class: 'closer', onClick: () => removeCard(c.id) }, '×'),
+                            C.h('button', { class: 'closer', onClick: () => removeCard(c.id), 'aria-label': 'remove card', dangerouslySetInnerHTML: { __html: ICON.close } }),
                             C.h('div', { class: 'kind' }, c.kind),
                             C.h('div', { class: 'title' }, c.title),
                             C.h('div', { class: 'body' }, c.body || '')
