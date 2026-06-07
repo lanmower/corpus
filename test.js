@@ -880,8 +880,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // regenerate derives from the real preceding user turn + reseeds prior context (no dup)
         assert.ok(/lastRegenerableUserText/.test(panelSrc), 'regenerate uses lastRegenerableUserText');
         assert.ok(/slice\(0, -1\)/.test(panelSrc), 'regenerate reseeds prior context excluding resent turn');
-        // checkin marked only on session-overview-done in the panel, not eagerly in app.js
-        assert.ok(/event === 'session-overview-done'\) \{[\s\S]{0,160}markCheckedIn\(\)/.test(panelSrc), 'checkin marked on session-overview-done');
+        // checkin marked only on session-overview-done in the panel (date-guarded so a
+        // reply arriving after local-midnight rollover can't stamp the wrong day), not in app.js
+        assert.ok(/if \(shouldCheckInToday\(\)\) markCheckedIn\(\)/.test(panelSrc), 'checkin marked on session-overview-done, date-guarded');
         const appCheckinBlock = app.slice(app.indexOf('proactiveCheckins && shouldCheckInToday'), app.indexOf('proactiveCheckins && shouldCheckInToday') + 320);
         assert.ok(!/markCheckedIn/.test(appCheckinBlock), 'app.js does not eagerly markCheckedIn');
         // broadened quota detection
@@ -926,6 +927,21 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // multi-tab history sync + personalized starters
         assert.ok(/syncTutorFromStorage/.test(panelSrc) && /syncTutorFromStorage/.test(app), 'multi-tab history sync wired');
         assert.ok(/setTutorContext/.test(panelSrc) && /starterPrompts/.test(panelSrc), 'starter chips personalize from real state');
+        // tutor controls use inline SVG icons (not Unicode-glyph button tells)
+        assert.ok(/const ICONS = \{/.test(panelSrc) && /<svg/.test(panelSrc), 'tutor controls use inline SVG icons');
+        assert.ok(!/[←-⇿⌀-➿⬀-⯿■-◿☀-⛿]/.test(panelSrc), 'no decorative unicode glyphs in tutor-panel.js');
+        // model load retries after an unavailable (preloadKicked latch is released)
+        assert.ok(/preloadKicked = false/.test(panelSrc) && /preloadKicked = true/.test(panelSrc), 'preloadKicked reset on unavailable so load can retry');
+        // settings popover restores focus to its opener (a11y)
+        assert.ok(/restoreSettingsFocus/.test(panelSrc) && /settingsPriorFocus/.test(panelSrc), 'settings popover restores focus on close');
+        // config: panelWidth clamped to slider bounds; date stamp zero-padded
+        assert.ok(/Math\.max\(24, Math\.min\(60/.test(storeSrc), 'loadConfig clamps panelWidth to slider bounds');
+        assert.ok(/padStart\(2, '0'\)/.test(storeSrc), 'todayStamp is zero-padded (stable date compare)');
+        assert.strictEqual(tutorStore.loadConfig().panelWidth >= 24 && tutorStore.loadConfig().panelWidth <= 60, true, 'panelWidth within bounds');
+        // codebase is free of encoding-corruption mojibake + decorative glyphs in shipped UI
+        for (const [nm, src] of [['app.js', app], ['tutor-panel.js', panelSrc], ['tutor-store.js', storeSrc]]) {
+            assert.ok(!/â|â‰|â†|﻿/.test(src), `${nm} free of mojibake/BOM`);
+        }
 
         // tool-dispatch parser: strip + dispatch + malformed tolerance
         const td = toolDispatch;

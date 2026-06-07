@@ -5,7 +5,7 @@
 import { dispatchToolCalls, stripToolBlocks } from './tool-dispatch.js';
 import {
     loadHistory, saveHistory, clearHistory, toWorkerHistory,
-    loadCollapsed, saveCollapsed, loadConfig, saveConfig, markCheckedIn
+    loadCollapsed, saveCollapsed, loadConfig, saveConfig, markCheckedIn, shouldCheckInToday
 } from './tutor-store.js';
 
 export let tutorMessages = [];
@@ -70,6 +70,28 @@ function keepScrolledToBottom() {
     if (stuck) scroller.scrollTop = scroller.scrollHeight;
 }
 
+// Inline SVG icons (crisp at any DPI, theme-colored via currentColor) — replace
+// the Unicode-glyph button labels that read as machine-shaped tells. Each returns
+// an <svg> string sized to the em-box; stroke uses currentColor so theming is free.
+const ICONS = {
+    // circular-arrow "new conversation"
+    new: '<svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9"/><path d="M13.5 2.5V5H11"/></svg>',
+    // gear "settings"
+    settings: '<svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.4v1.6M8 13v1.6M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M1.4 8h1.6M13 8h1.6M3.1 12.9l1.1-1.1M11.8 4.2l1.1-1.1"/></svg>',
+    // overlapping-squares "copy"
+    copy: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.3"/><path d="M10.5 5.5V3.8A1.3 1.3 0 0 0 9.2 2.5H3.8A1.3 1.3 0 0 0 2.5 3.8v5.4a1.3 1.3 0 0 0 1.3 1.3h1.7"/></svg>',
+    // refresh "retry"
+    retry: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8a5.5 5.5 0 1 1 1.6 3.9"/><path d="M2.5 13.5V11H5"/></svg>',
+    // filled square "stop"
+    stop: '<svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><rect x="3.5" y="3.5" width="9" height="9" rx="1.4"/></svg>',
+    // collapse/expand chevrons
+    chevronLeft: '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>',
+    chevronRight: '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>',
+    // spinner-dot for loading / warning triangle for unavailable (status pill)
+    spinner: '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" class="tutor-spin"><path d="M8 2a6 6 0 1 0 6 6" opacity="0.9"/></svg>',
+    warn: '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2 14.5 13.5H1.5L8 2.2Z"/><path d="M8 6.5v3M8 11.5v.01"/></svg>'
+};
+
 const STARTER_PROMPTS = [
     'Plan my study session',
     'Quiz me on cardiology',
@@ -125,14 +147,35 @@ export async function initTutorPanel() {
     window.addEventListener('resize', applyResponsiveWidth);
 }
 
+// Plain-text status (used for the AICat `status` prop and aria). The pill DOM
+// adds an icon separately via statusIcon().
 function statusLabel() {
     switch (modelStatus) {
-        case 'loading': return `⏳ ${modelStatusDetail || 'loading…'}`;
-        case 'downloading': return `⏬ ${modelStatusDetail || 'downloading…'}`;
+        case 'loading': return modelStatusDetail || 'loading…';
+        case 'downloading': return modelStatusDetail || 'downloading…';
         case 'ready': return 'ready';
-        case 'unavailable': return '⚠ unavailable';
+        case 'unavailable': return 'unavailable';
         default: return 'tap to start';
     }
+}
+
+function statusIcon() {
+    switch (modelStatus) {
+        case 'loading':
+        case 'downloading': return ICONS.spinner;
+        case 'unavailable': return ICONS.warn;
+        default: return '';
+    }
+}
+
+// Render the status pill's content (icon + label) into a given element.
+function paintPill(pill) {
+    if (!pill) return;
+    pill.setAttribute('data-status', modelStatus);
+    const ic = statusIcon();
+    pill.innerHTML = (ic ? `<span class="tutor-pill-ic">${ic}</span>` : '') +
+        `<span class="tutor-pill-label"></span>`;
+    pill.querySelector('.tutor-pill-label').textContent = statusLabel();
 }
 
 function renderSdkChat() {
@@ -244,28 +287,26 @@ function updateHeaderControls() {
     const built = host.dataset.built === '1';
     const popOpen = !!host.querySelector('.tutor-settings-pop');
     if (built && popOpen === showSettings) {
-        const pill = host.querySelector('.tutor-status-pill');
-        if (pill) { pill.setAttribute('data-status', modelStatus); pill.textContent = statusLabel(); }
+        paintPill(host.querySelector('.tutor-status-pill'));
         return;
     }
 
     host.innerHTML = '';
     const pill = document.createElement('span');
     pill.className = 'tutor-status-pill';
-    pill.setAttribute('data-status', modelStatus);
     pill.setAttribute('role', 'status');
     pill.setAttribute('aria-live', 'polite');
-    pill.textContent = statusLabel();
+    paintPill(pill);
     host.appendChild(pill);
-    const mk = (label, title, fn) => {
+    const mk = (svg, title, fn) => {
         const b = document.createElement('button');
         b.className = 'tutor-hdr-btn';
-        b.textContent = label; b.title = title; b.setAttribute('aria-label', title);
+        b.innerHTML = svg; b.title = title; b.setAttribute('aria-label', title);
         b.addEventListener('click', fn);
         return b;
     };
-    host.appendChild(mk('⟲', 'New conversation', clearConversation));
-    host.appendChild(mk('⚙', 'Tutor settings', toggleSettings));
+    host.appendChild(mk(ICONS.new, 'New conversation', clearConversation));
+    host.appendChild(mk(ICONS.settings, 'Tutor settings', toggleSettings));
     if (showSettings) host.appendChild(buildSettingsPopover());
     host.dataset.built = '1';
 }
@@ -285,7 +326,7 @@ function updateEmptySlot(isEmpty) {
     slot.innerHTML = '';
     const title = document.createElement('div');
     title.className = 'tutor-empty-title';
-    title.textContent = 'Hi — I’m your study coach.';
+    title.textContent = "Hi -- I'm your study coach.";
     const sub = document.createElement('div');
     sub.className = 'tutor-empty-sub';
     sub.textContent = 'Try one of these:';
@@ -360,26 +401,26 @@ function updateActionBar() {
     bar.style.display = '';
     bar.className = 'tutor-msg-actions';
     bar.innerHTML = '';
-    const mkBtn = (label, title, fn) => {
+    const mkBtn = (svg, label, title, fn) => {
         const b = document.createElement('button');
         b.className = 'tutor-msg-act';
-        b.textContent = label;
+        b.innerHTML = `${svg}<span>${label}</span>`;
         b.title = title; b.setAttribute('aria-label', title);
         b.addEventListener('click', fn);
         return b;
     };
     // Copy is meaningless on an error turn; only offer retry there.
-    if (!last.err) bar.appendChild(mkBtn('⧉ copy', 'Copy answer', () => copyText(last.text)));
+    if (!last.err) bar.appendChild(mkBtn(ICONS.copy, 'copy', 'Copy answer', () => copyText(last.text)));
     // Retry whenever there is a real preceding user turn to resend — including
     // after an error turn, so "use retry below" is a real affordance.
     if (lastRegenerableUserText()) {
-        bar.appendChild(mkBtn('↻ retry', 'Regenerate answer', regenerateLast));
+        bar.appendChild(mkBtn(ICONS.retry, 'retry', 'Regenerate answer', regenerateLast));
     }
 }
 
 function renderStopRow(C, composer) {
     return C.h('div', { class: 'tutor-composer-stop' },
-        C.h('button', { class: 'tutor-stop-btn', title: 'Stop generating', 'aria-label': 'Stop generating', onClick: stopGeneration }, '■ stop'),
+        C.h('button', { class: 'tutor-stop-btn', title: 'Stop generating', 'aria-label': 'Stop generating', onClick: stopGeneration }, 'stop'),
         composer
     );
 }
@@ -388,7 +429,7 @@ function makeToggleBtn() {
     const toggleBtn = document.createElement('button');
     toggleBtn.id = 'tutor-collapse-btn';
     toggleBtn.className = 'tutor-collapse-btn';
-    toggleBtn.textContent = isPanelCollapsed ? '←' : '→';
+    toggleBtn.innerHTML = isPanelCollapsed ? ICONS.chevronLeft : ICONS.chevronRight;
     toggleBtn.setAttribute('aria-label', 'Toggle study coach panel');
     toggleBtn.addEventListener('click', toggleTutorCollapse);
     return toggleBtn;
@@ -410,8 +451,8 @@ function renderFallbackChat() {
                 <span id="tutor-status-pill" class="tutor-status-pill">starting…</span>
             </div>
             <div style="display:flex;gap:4px;">
-                <button id="tutor-clear-btn" class="tutor-hdr-btn" title="New conversation" aria-label="New conversation">⟲</button>
-                <button id="tutor-collapse-btn" class="tutor-collapse-btn" title="Collapse panel" aria-label="Collapse panel">→</button>
+                <button id="tutor-clear-btn" class="tutor-hdr-btn" title="New conversation" aria-label="New conversation">${ICONS.new}</button>
+                <button id="tutor-collapse-btn" class="tutor-collapse-btn" title="Collapse panel" aria-label="Collapse panel">${ICONS.chevronRight}</button>
             </div>
         </div>
         <div id="tutor-messages" aria-live="polite" aria-label="coaching messages" class="tutor-fallback-msgs"></div>
@@ -438,7 +479,7 @@ function renderFallbackChat() {
 
     // Replay persisted history into the fallback DOM.
     if (tutorMessages.length === 0) {
-        appendFallbackMessage('Hi — I’m your study coach. Ask a question, or try “What should I review first?”', false);
+        appendFallbackMessage('Hi -- I\'m your study coach. Ask a question, or try "What should I review first?"', false);
     } else {
         for (const m of tutorMessages) appendFallbackMessage(m.text, m.role === 'user');
     }
@@ -487,7 +528,11 @@ function applyResponsiveWidth() {
     if (chatRoot) chatRoot.style.display = isPanelCollapsed ? 'none' : '';
 
     if (toggleBtn) {
-        toggleBtn.textContent = isPanelCollapsed ? (mobile ? 'Coach' : '←') : '→';
+        if (isPanelCollapsed && mobile) {
+            toggleBtn.innerHTML = '<span class="tutor-collapse-label">Coach</span>';
+        } else {
+            toggleBtn.innerHTML = isPanelCollapsed ? ICONS.chevronLeft : ICONS.chevronRight;
+        }
         toggleBtn.setAttribute('aria-expanded', String(!isPanelCollapsed));
         toggleBtn.setAttribute('aria-label', isPanelCollapsed ? 'Open study coach' : 'Collapse study coach');
     }
@@ -514,19 +559,35 @@ export function preloadTutorModel() {
     tutorWorker.postMessage({ cmd: 'init' });
 }
 
+let settingsPriorFocus = null;
 function toggleSettings() {
     showSettings = !showSettings;
     if (showSettings) {
+        // Remember what had focus so we can restore it when the popover closes
+        // (keyboard users shouldn't be dumped at the top of the document).
+        settingsPriorFocus = document.activeElement;
         // Close on outside-click or Escape. Registered on the next tick so the
         // click that opened the popover doesn't immediately close it.
         setTimeout(() => {
             document.addEventListener('click', onSettingsOutsideClick, true);
             document.addEventListener('keydown', onSettingsEscape, true);
+            // Move focus into the popover for keyboard users.
+            panelContainer?.querySelector('.tutor-settings-pop input')?.focus();
         }, 0);
     } else {
         removeSettingsDismissHandlers();
+        restoreSettingsFocus();
     }
     if (sdkRender) sdkRender();
+}
+
+function restoreSettingsFocus() {
+    const gear = panelContainer?.querySelectorAll('.tutor-hdr-btn');
+    const target = (settingsPriorFocus && settingsPriorFocus.isConnected)
+        ? settingsPriorFocus
+        : (gear && gear[gear.length - 1]);
+    settingsPriorFocus = null;
+    try { target?.focus(); } catch {}
 }
 
 function removeSettingsDismissHandlers() {
@@ -540,6 +601,7 @@ function onSettingsOutsideClick(e) {
     if (pop && !pop.contains(e.target) && !gear) {
         showSettings = false;
         removeSettingsDismissHandlers();
+        restoreSettingsFocus();
         if (sdkRender) sdkRender();
     }
 }
@@ -548,6 +610,7 @@ function onSettingsEscape(e) {
     if (e.key === 'Escape') {
         showSettings = false;
         removeSettingsDismissHandlers();
+        restoreSettingsFocus();
         if (sdkRender) sdkRender();
     }
 }
@@ -714,8 +777,8 @@ function dispatchAndStrip(message) {
 function setStatus(status, detail = '') {
     modelStatus = status;
     modelStatusDetail = detail;
-    const pill = panelContainer?.querySelector('#tutor-status-pill');
-    if (pill) { pill.textContent = statusLabel(); pill.dataset.status = status; }
+    paintPill(panelContainer?.querySelector('#tutor-status-pill'));
+    paintPill(panelContainer?.querySelector('.tutor-status-pill'));
     if (sdkRender) sdkRender();
 }
 
@@ -756,6 +819,10 @@ export function wireWorkerToPanel(worker) {
             case 'unavailable': {
                 isThinking = false;
                 clearThinkingWatchdog();
+                // Allow a later open/send to re-attempt the load. Without this the
+                // module-scoped preloadKicked latch stays true forever, so a retry
+                // (e.g. after the user enables WebGPU and reopens) never fires.
+                preloadKicked = false;
                 setStatus('unavailable', error || 'WebGPU required');
                 // Don't spam the thread with duplicate availability errors on repeated
                 // sends — surface once, then only a transient toast thereafter.
@@ -821,8 +888,10 @@ export function wireWorkerToPanel(worker) {
                     if (inline) inline.textContent = clean;
                 }
                 if (event === 'session-overview-done') {
-                    // Daily greeting: consume the check-in slot only once it actually rendered.
-                    markCheckedIn();
+                    // Daily greeting: consume the check-in slot only once it actually
+                    // rendered. Guard against a reply that arrives after a local-midnight
+                    // rollover stamping the wrong (prior) day as checked-in.
+                    if (shouldCheckInToday()) markCheckedIn();
                     // Render the full personalized plan into the thread (it used to be a
                     // truncated 6s toast that was discarded). A short toast nudges the
                     // user to open the panel if it's collapsed.

@@ -1,4 +1,4 @@
-﻿// just-read mode â€” distraction-free reading on subject pages. corpus.justread.v1
+// just-read mode -- distraction-free reading on subject pages. corpus.justread.v1
 const KEY = 'corpus.justread.v1';
 
 export function load() {

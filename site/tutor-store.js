@@ -107,7 +107,12 @@ export function loadConfig() {
     try {
         const parsed = JSON.parse(raw);
         if (!parsed || typeof parsed !== 'object') return { ...DEFAULT_CONFIG };
-        return { ...DEFAULT_CONFIG, ...parsed };
+        const merged = { ...DEFAULT_CONFIG, ...parsed };
+        // Clamp panelWidth to the slider's bounds (24..60) so a hand-edited or
+        // legacy value can't silently desync the slider thumb from the saved value.
+        const w = Number(merged.panelWidth);
+        merged.panelWidth = Number.isFinite(w) ? Math.max(24, Math.min(60, w)) : DEFAULT_CONFIG.panelWidth;
+        return merged;
     } catch {
         return { ...DEFAULT_CONFIG };
     }
@@ -119,8 +124,12 @@ export function saveConfig(config) {
 
 // ----- daily check-in gate -----
 function todayStamp() {
+    // Zero-padded local date (YYYY-MM-DD). Local — not UTC — so the "new day"
+    // rolls over at the user's local midnight, matching how they perceive "today".
     const d = new Date();
-    return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return `${d.getFullYear()}-${mm}-${dd}`;
 }
 
 export function shouldCheckInToday() {

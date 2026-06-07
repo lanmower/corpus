@@ -1,4 +1,4 @@
-﻿// cram-mode dismissal persistence â€” corpus.cram.dismissed.v1.
+// cram-mode dismissal persistence -- corpus.cram.dismissed.v1.
 const KEY = 'corpus.cram.dismissed.v1';
 
 export function isDismissed() {

@@ -1,4 +1,4 @@
-﻿// undo last grade â€” 5s window. in-memory ring of 1.
+// undo last grade -- 5s window. in-memory ring of 1.
 let last = null;
 let timer = null;
 

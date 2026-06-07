@@ -1,4 +1,4 @@
-﻿// mistake log â€” every grade â‰¤2. corpus.mistakes.v1
+// mistake log -- every grade <=2. corpus.mistakes.v1
 const KEY = 'corpus.mistakes.v1';
 const CAP = 200;
 

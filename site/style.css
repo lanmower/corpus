@@ -795,7 +795,7 @@ button:focus-visible, .chip:focus-visible, .navlink:focus-visible, a:focus-visib
 /* ---- heatmap ---- */
 .heatmap-panel svg.heatmap { display: block; margin-top: 6px; }
 
-/* ---- responsive: tablet â‰¤1024 ---- */
+/* ---- responsive: tablet <=1024 ---- */
 @media (max-width: 1024px) {
     .topbar { flex-wrap: wrap; gap: 6px 10px; padding: 6px 12px; }
     .topbar .nav { order: 3; flex-basis: 100%; overflow-x: auto; flex-wrap: nowrap; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
@@ -807,7 +807,7 @@ button:focus-visible, .chip:focus-visible, .navlink:focus-visible, a:focus-visib
     .subject-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 }
 
-/* ---- responsive: phone â‰¤600 ---- */
+/* ---- responsive: phone <=600 ---- */
 @media (max-width: 600px) {
     /* Mobile-first topbar - compact and touch-friendly */
     .topbar { gap: 2px; padding: 4px 8px; min-height: 44px; }
@@ -1137,6 +1137,14 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 [data-theme="contrast"] .panel, [data-theme="contrast"] .flashcard, [data-theme="contrast"] .topbar {
     box-shadow: none !important; background: var(--bg); border-color: #000;
 }
+/* Tutor floating surfaces read the semantic tokens (so colors invert already),
+   but their decorative shadows reduce edge contrast — flatten them and force a
+   hard border in the high-contrast theme. */
+[data-theme="contrast"] .tutor-panel-root,
+[data-theme="contrast"] .tutor-settings-pop,
+[data-theme="contrast"] .tutor-toast {
+    box-shadow: none !important; border: 1px solid #000;
+}
 
 /* ---- tutor panel (floating SDK chat) ---- */
 .tutor-panel-root {
@@ -1186,6 +1194,8 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     border-right: 1px solid var(--border);
     border-radius: 8px;
 }
+.tutor-panel-root .tutor-collapse-btn svg { display: block; }
+.tutor-collapse-label { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.02em; }
 .tutor-panel-root .tutor-collapse-btn:hover {
     background: var(--panel-2);
 }
@@ -1231,9 +1241,11 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 .tutor-hdr-controls { display: flex; gap: 4px; align-items: center; position: relative; }
 .tutor-hdr-btn {
     background: none; border: 1px solid var(--border); color: var(--fg);
-    cursor: pointer; font-size: 14px; width: 30px; height: 30px;
+    cursor: pointer; font-size: 14px; width: 36px; height: 36px; min-width: 36px;
     border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    padding: 0;
 }
+.tutor-hdr-btn svg { display: block; }
 .tutor-hdr-btn:hover { background: var(--panel-2); }
 .tutor-hdr-btn:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
@@ -1254,7 +1266,13 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 .tutor-status-pill {
     font-family: var(--ff-mono); font-size: 11px; padding: 2px 8px;
     border-radius: 999px; background: var(--panel-2); color: var(--panel-text-3);
+    display: inline-flex; align-items: center; gap: 4px;
 }
+.tutor-pill-ic { display: inline-flex; }
+.tutor-pill-ic svg { display: block; }
+.tutor-spin { animation: tutor-spin 0.9s linear infinite; transform-origin: 50% 50%; }
+@keyframes tutor-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .tutor-spin { animation: none; } }
 .tutor-status-pill[data-status="ready"] { background: var(--accent-tint, var(--panel-2)); color: var(--fg); }
 .tutor-status-pill[data-status="unavailable"] { background: var(--panel-2); color: var(--warn, var(--fg)); }
 
@@ -1265,8 +1283,8 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 .tutor-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .tutor-chip {
     background: var(--panel-2); border: 1px solid var(--border); color: var(--fg);
-    border-radius: 999px; padding: 8px 14px; font-size: 13px; cursor: pointer;
-    min-height: 40px;
+    border-radius: 999px; padding: 10px 16px; font-size: 13px; cursor: pointer;
+    min-height: 44px;
 }
 .tutor-chip:hover { background: var(--panel-hover); }
 .tutor-chip:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
@@ -1275,8 +1293,10 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
 .tutor-msg-actions { display: flex; gap: 8px; padding: 4px 12px 8px; }
 .tutor-msg-act {
     background: none; border: 1px solid var(--border); color: var(--panel-text-3);
-    border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; min-height: 32px;
+    border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; min-height: 44px;
+    display: inline-flex; align-items: center; gap: 5px;
 }
+.tutor-msg-act svg { display: block; }
 .tutor-msg-act:hover { background: var(--panel-2); color: var(--fg); }
 .tutor-msg-act:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
@@ -1542,8 +1562,8 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     background: conic-gradient(var(--c-mastered, #6BB377) calc(var(--p) * 1%), var(--panel-2) 0); }
 details.collapsible > summary { cursor: pointer; user-select: none; list-style: none; }
 details.collapsible > summary::-webkit-details-marker { display: none; }
-details.collapsible > summary::after { content: 'â–¾'; float: right; font-family: var(--ff-mono); opacity: 0.5; }
-details.collapsible[open] > summary::after { content: 'â–´'; }
+details.collapsible > summary::after { content: '(v)'; float: right; font-family: var(--ff-mono); opacity: 0.5; }
+details.collapsible[open] > summary::after { content: '(^)'; }
 
 /* ---- mini-cards in chunked guide ---- */
 .mini-card {
@@ -1976,6 +1996,9 @@ details.collapsible[open] > summary::after { content: 'â–´'; }
     /* Only reserve page space while the sheet is open; collapsed peek is overlaid. */
     body { padding-bottom: 56px; }
     body.tutor-sheet-open { padding-bottom: 50vh; }
+    /* The 210px right-pad reserved for the desktop overlay controls wastes the
+       full-width mobile head; the controls sit inline there. */
+    .tutor-panel-root .chat-head { padding-right: 12px; }
 }
 
 /* Context-menu polish — modules already provide structure, this fills in look */

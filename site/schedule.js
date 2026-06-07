@@ -1,5 +1,5 @@
-﻿// schedule engine — corpus.schedule.v1 (blocks) + corpus.schedule.config.v1 (config)
-// Deterministic per (config, exam date, due-counts, weights). Re-run from same inputs â†’ same output.
+// schedule engine — corpus.schedule.v1 (blocks) + corpus.schedule.config.v1 (config)
+// Deterministic per (config, exam date, due-counts, weights). Re-run from same inputs -> same output.
 const KEY = 'corpus.schedule.v1';
 const CFG_KEY = 'corpus.schedule.config.v1';
 let SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];

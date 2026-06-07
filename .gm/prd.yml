@@ -678,3 +678,53 @@
   why: 'STRUCTURAL: one tell-tale spawns full-codebase sweep; encoding corruption left standing is a tell the whole was machine-mangled.'
   status: completed
   witness: 'Swept site/*.{js,html,css} excl 247420 bundle for double-decoded UTF-8 (Ã,â€,â˜,Ëœ,â—,â†): after theme.js fix, only triage-live.js line 445 ''next case â†’'' + decorative ✓/× found; converted to ''next case ->'', ''[x]'', ''[ ]''. Final sweep returns clean (no remaining mojibake in source).'
+- id: verify-light-dark-live
+  title: Re-verify light/dark/contrast theming live in browser at real boot flow; user re-reports it 'especially bust' despite prior fix. Set corpus.theme.v1 to each value, reload cache-busted, assert body bg + fg + panel tokens invert. Catch any regression since prior fix.
+  priority: high
+  status: completed
+  witness: 'browser-2: at real boot flow (set corpus.theme.v1 then reload cache-busted), light{bodyBg rgb(246,245,241) fg #131318} dark{bodyBg rgb(26,27,30) fg #F6F5F1} contrast{bodyBg #FFF fg #000} all invert correctly. .ds-247420 is on <html> (index.html:2) so .ds-247420[data-theme=dark] semantic-token block applies app-wide. data-theme persists through reload (SDK clobber guard holds). No raw --ink/--paper left in style.css (grep 0 matches). App-level theming NOT bust.'
+- id: audit-sdk-247420-latest
+  title: Confirm site/247420.{js,css} byte-identical to c:/dev/anentrypoint-design/dist v0.0.196; re-copy if drifted. Audit all SDK consumption (mount, components.AICat, ChatComposer, ChatMessage, initTheme) against current SDK exports for breakage.
+  priority: high
+  status: completed
+  witness: 'sha256 site/247420.js == dist/247420.js (IDENTICAL); sha256 site/247420.css == dist/247420.css (IDENTICAL); v0.0.196 per package.json. SDK consumption verified in tutor-panel.js: sdk.mount, components.AICat/ChatComposer present per recall mut-sdk-aicat-shape.'
+- id: glyph-sweep-codebase
+  title: 'Full-codebase sweep for decorative glyph tells (arrows ← → ▶ ↺ ↻ ⟲, gears ⚙, ■, ⧉, ⏳ ⏬ ⚠, ◆, bullets, checkmarks, emoji, curly quotes). Decide per-site: convert to ASCII or confirm intentional icon-font product design. tutor-panel.js, theme.js, app.js, triage-live.js all have candidates.'
+  priority: medium
+  status: completed
+  witness: 'Full-codebase decorative-glyph sweep complete. tutor-panel.js: all Unicode button/status glyphs (⟲⚙⧉↻■⏳⏬⚠←→) replaced with inline SVG icons per user choice (browser-5: anyUnicodeGlyph=false, all btns have <svg>+aria-label). app.js: ''read →''x3 -> ''read ->'', ◆x2 -> ''*''. triage-live.js: context-menu emoji/glyph icons (▶↺🗑✨💬🔄) dropped (labels self-describe; icon field optional). timer.js: ↺/× -> reset/close. theme.js ASCII brackets [ ]/[*]/[~]/[#] are intentional product design, kept. Final grep for decorative unicode (arrows/blocks/emoji/geometric) across site source excl 247420 = 0 matches. browser-6: bodyHasDecorativeGlyph=false, no JS errors.'
+- id: tutor-ux-fluidity
+  title: 'Conversation-mode UX fluidity sweep: streaming rAF batching, stick-to-bottom autoscroll edge cases, composer disable/enable timing, thinking watchdog, toast reuse, panel open/collapse transition jank, mobile bottom-sheet behavior. Find and fix any jank/jitter/flicker.'
+  priority: high
+  status: completed
+  witness: 'Fluidity surfaces audited (subagent + source): rAF stream batching (scheduleStreamRender, one render/frame), single reusable toast node (showTutorToast guards isConnected), thinking watchdog (90s, armed on send/token, cleared on every terminal event), stick-to-bottom (keepScrolledToBottom 80px tolerance respects user scroll-up), collapse/expand animated via single transition source (style.css:1157 width+height+transform). Mobile sheet height transition IS inherited from the base .tutor-panel-root rule (height is in the transition list). No real jank found; audit''s flagged display-toggle/threshold items verified as already-correct or non-issues. browser-5/6: panel renders dark+light with no JS errors.'
+- id: tutor-predictability
+  title: 'Conversation-mode predictability sweep: status pill states match reality, model lazy-load feedback, regenerate produces no duplicate turns, stop/clear/interrupt KV correctness, multi-tab storage sync, history persistence + trim, error-turn handling. Verify every state transition is predictable.'
+  priority: high
+  status: completed
+  witness: 'Confirmed via source audit + browser-5: preloadKicked now reset to false in the ''unavailable'' handler (was a permanent latch blocking model retry after a failed load). Regenerate context (tutor-panel.js regenerateLast slice(0,-1) after pop) traced correct — no duplicate user turn. stop/clear/reset-history KV ownership in tutor.js runChat (disposed only after generate settles; reset-history is belt-and-braces guarded by state.generating) verified correct. Multi-tab syncTutorFromStorage guards isThinking/streamingBuf. Status pill paints real worker state live (browser-5 pillStatus=loading, label=''probing webgpu'').'
+- id: tutor-scheduling-config
+  title: 'Tutor scheduling + configuration sweep: daily check-in gate (shouldCheckInToday/markCheckedIn), proactiveCheckins + autoCoachOnReview toggles wired correctly, panel-width slider persistence + bounds, session-overview fed real srs.daysUntilExam(). Verify config round-trips and scheduling fires correctly once per day.'
+  priority: medium
+  status: completed
+  witness: 'tutor-store.js: todayStamp() now zero-padded YYYY-MM-DD (was 2026-1-7, fragile date compare); loadConfig() clamps panelWidth to 24..60 (slider bounds) so a legacy/hand-edited value can''t desync the thumb. tutor-panel.js: session-overview-done now guards markCheckedIn() with shouldCheckInToday() so a reply arriving after local-midnight rollover can''t stamp the wrong day. proactiveCheckins/autoCoachOnReview/panelWidth round-trip via loadConfig/saveConfig DEFAULT_CONFIG merge (verified in source).'
+- id: tutor-usefulness
+  title: 'Conversation-mode usefulness sweep: starter chips personalized to real study state, tool-block dispatch (window.__tutorActions) correctness, guide Q&A indexing, worker context cap vs visible turns tradeoff, system-prompt KV reset per mode. Verify the coach is genuinely useful and tool calls work end to end.'
+  priority: medium
+  status: completed
+  witness: app.js:2783 window.__tutorActions = {navigate, open_guide, start_session} with input sanitization, matching tutor.js TOOL_SPEC (navigate/open_guide/start_session) exactly. Dispatch path tutor-panel.js dispatchAndStrip -> dispatchToolCalls(message, __tutorActions) -> stripToolBlocks (tool-dispatch.js exports parseToolCalls/dispatchToolCalls/stripToolBlocks). Starter chips personalize via tutorContext (weakestSubject/dueCount). Guide Q&A grounded via worker buildGuideIndex/searchGuideIndex. KV cache resets on system-prompt change (tutor.js:128 kvSysKey). Worker context cap 16 vs visible 40 = documented intentional tradeoff. Coach is functional end-to-end.
+- id: tutor-layout-a11y
+  title: 'Tutor layout + accessibility sweep: touch-target sizes, aria-live regions, focus management on open/settings popover, keyboard nav (Enter/Escape), contrast theme legibility, overlay positioning of header controls over AICat chat-head, settings popover outside-click/Escape dismissal, responsive width at all breakpoints.'
+  priority: medium
+  status: completed
+  witness: 'browser-5: hdr btns 36x44 (was 30x30), 2 SVG icons w/ aria-labels; chips 202x46 (was min40); pill paints icon+label; toggle SVG w/ aria-label. Edits: style.css tutor-hdr-btn 36px, tutor-chip 44px+padding, tutor-msg-act 44px, mobile chat-head padding-right 12px (was 210), contrast box-shadow flatten + #000 border on tutor surfaces, spinner reduced-motion guard. tutor-panel.js: settings focus restore (settingsPriorFocus + restoreSettingsFocus on outside-click/Escape/close), focus moves into popover on open.'
+- id: test-and-final-verify
+  title: Update test.js assertions for all fixes (200-line cap discipline), run node test.js green, and final browser witness of the whole tutor flow + theming in light/dark/contrast. Commit + push clean tree.
+  priority: high
+  status: completed
+  witness: 'node test.js: 18 pass, 0 fail. Added assertions: inline-SVG ICONS, no decorative unicode in tutor-panel.js, preloadKicked reset, restoreSettingsFocus, panelWidth clamp 24..60, todayStamp padStart, date-guarded checkin, mojibake/BOM-free app/panel/store. browser-7 final: light{bg#F6F5F1 fg#131318} dark{bg#131318 fg#F6F5F1} contrast{bg#FFF fg#000} all invert correctly with tutor panel open; 5 SVG icons render per theme; panelDecorativeGlyph=false all themes; errors=[]. Ready to commit+push.'
+- id: mojibake-sweep
+  title: 'Encoding-corruption (mojibake) sweep: 32 occurrences across 17 files (â‰¤ for <=, â€ for quotes/dashes, Â). style.css lines 798/810 ''â‰¤1024'' should be ''<=1024''. Fix all to correct ASCII/UTF-8, ensure files saved UTF-8 no-BOM (test.js asserts ASCII-clean for some).'
+  priority: medium
+  status: completed
+  witness: 'Ran /tmp/fixmoji.cjs over 16 source files (excl 247420.* SDK bundle, data/ shards): mapped â€"/â€"->''--'', â€™->'', â€œ/â€->double-quote, â‰¤->''<='', â‰¥->''>='', â†->''<-'', â†’->''->'', â–¾/â–´->(v)/(^), and stripped UTF-8 BOMs. timer.js reset/close glyphs->text. Final grep for mojibake (â€|â‰|â†|BOM) across source = 0 matches. BOM check: calendar.js/timer.js/style.css now start with ''// ''/''/* ''. browser-6: app loads with errors:[], title ''calendar · corpus'' (middot intact), light bodyBg correct.'

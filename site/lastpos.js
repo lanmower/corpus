@@ -1,4 +1,4 @@
-﻿// last-position memory â€” corpus.lastpos.v1.
+// last-position memory -- corpus.lastpos.v1.
 const KEY = 'corpus.lastpos.v1';
 
 export function load() {

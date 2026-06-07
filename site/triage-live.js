@@ -358,8 +358,8 @@ function renderScenarios() {
                 import('./context-menu.js').then(({ showContextMenu }) => {
                     const has = !!state.sessions[sc.id];
                     showContextMenu(e.clientX, e.clientY, [
-                        { icon: '▶', label: 'open this case', action: () => selectScenario(sc.id) },
-                        has ? { icon: '↺', label: 'reset progress', action: () => {
+                        { label: 'open this case', action: () => selectScenario(sc.id) },
+                        has ? { label: 'reset progress', action: () => {
                             delete state.sessions[sc.id]; saveSessions();
                             if (state.activeScenarioId === sc.id) { state.cards = []; state.lastGrade = null; state.phase = 'asking'; renderActive(); renderScratchpad(); }
                             renderScenarios(); renderStats();
@@ -534,14 +534,14 @@ function renderScratchpad() {
             e.preventDefault();
             import('./context-menu.js').then(({ showContextMenu }) => {
                 showContextMenu(e.clientX, e.clientY, [
-                    { icon: '🗑', label: 'remove card', action: () => removeCard(c.id) },
-                    { icon: '✨', label: c.highlighted ? 'unhighlight' : 'highlight', action: () => TOOLS.highlight_card({ id: c.id }) },
+                    { label: 'remove card', action: () => removeCard(c.id) },
+                    { label: c.highlighted ? 'unhighlight' : 'highlight', action: () => TOOLS.highlight_card({ id: c.id }) },
                     { type: 'divider' },
-                    { icon: '💬', label: 'ask tutor why this matters', action: () => {
+                    { label: 'ask tutor why this matters', action: () => {
                         els.prompt.value = `why is "${c.title}" relevant in this case?`;
                         els.prompt.focus();
                     } },
-                    { icon: '🔄', label: 'reword this card', action: () => {
+                    { label: 'reword this card', action: () => {
                         els.prompt.value = `reword my "${c.kind}" card titled "${c.title}" more precisely.`;
                         els.prompt.focus();
                     } }

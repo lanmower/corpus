@@ -497,7 +497,7 @@ function renderNextReadingCard(next) {
                         }
                     };
                     setTimeout(poll, 300);
-                } } }, 'read \u2192'),
+                } } }, 'read ->'),
             el('button', { class: 'chip',
                 on: { click: () => {
                     const all = loadGuideTicks();
@@ -706,7 +706,7 @@ async function renderSubject() {
     },
         el('span', { class: 'eyebrow' }, 'next section'),
         el('div', { class: 'nt-title' }, nextSec.title),
-        el('span', { class: 'nt-cta' }, 'read →')));
+        el('span', { class: 'nt-cta' }, 'read ->')));
     const placeholder = el('div', { class: 'panel' },
         el('div', { class: 'skeleton', style: 'width:60%;height:14px' }),
         el('div', { class: 'skeleton', style: 'width:90%' }),
@@ -774,14 +774,14 @@ async function renderSubject() {
         const panel = el('div', { class: 'panel cases-panel' },
             el('div', { class: 'panel-head' }, el('span', { class: 'title' }, `cases (${triageScenarios.length})`)),
             ...triageVisible.map(sc => el('div', { class: 'row' },
-                el('span', { class: 'code' }, '◆'),
+                el('span', { class: 'code' }, '*'),
                 el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, sc.description || '')),
                 el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
             ))
         );
         if (triageHidden.length) {
             const moreRows = triageHidden.map(sc => el('div', { class: 'row triage-hidden' },
-                el('span', { class: 'code' }, '◆'),
+                el('span', { class: 'code' }, '*'),
                 el('div', {}, el('div', { class: 'title' }, sc.name), el('div', { class: 'meta' }, sc.description || '')),
                 el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name)}` }, 'work')
             ));

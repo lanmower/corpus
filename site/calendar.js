@@ -1,4 +1,4 @@
-﻿// calendar â€” month/week grid renderer for the schedule engine. DOM-island re-render on schedule:updated.
+// calendar -- month/week grid renderer for the schedule engine. DOM-island re-render on schedule:updated.
 import * as schedule from './schedule.js';
 
 const MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
@@ -85,7 +85,7 @@ function renderDayCell(dateIso, opts = {}) {
     const d = parseIso(dateIso).getUTCDate();
     return el('button', {
         class: cls.join(' '), type: 'button', 'data-date': dateIso,
-        'aria-label': `${dateIso} â€” ${comp.done}/${comp.total} blocks done, ${totalMin}m total`,
+        'aria-label': `${dateIso} -- ${comp.done}/${comp.total} blocks done, ${totalMin}m total`,
         on: { click: () => openDetail(dateIso) }
     },
         el('div', { class: 'cal-day-head' },
@@ -120,7 +120,7 @@ function openDetail(dateIso) {
 function renderTimelineRow(b) {
     const t1 = fmtTime(b.startMin), t2 = fmtTime(b.startMin + b.len);
     return el('div', { class: 'cal-row' + (b.done ? ' done' : '') + (b.locked ? ' locked' : '') + (b.kind === 'break' ? ' brk' : ''), 'data-id': b.id },
-        el('span', { class: 'cal-time mono' }, `${t1}â€“${t2}`),
+        el('span', { class: 'cal-time mono' }, `${t1}--${t2}`),
         el('span', { class: 'cal-subj' }, b.kind === 'break' ? 'break' : b.subject),
         el('span', { class: 'cal-len mono' }, `${b.len}m`),
         el('div', { class: 'cal-actions' },
@@ -135,8 +135,8 @@ function renderTimelineRow(b) {
 function renderToolbar(onRegen) {
     return el('div', { class: 'cal-toolbar' },
         el('button', { class: 'chip', on: { click: () => { state.anchor = isoDate(new Date()); rerender(); } } }, 'today'),
-        el('button', { class: 'chip', on: { click: () => shift(-1) } }, 'â†'),
-        el('button', { class: 'chip', on: { click: () => shift(1) } }, 'â†’'),
+        el('button', { class: 'chip', on: { click: () => shift(-1) } }, '<-'),
+        el('button', { class: 'chip', on: { click: () => shift(1) } }, '->'),
         el('button', { class: 'chip' + (state.mode === 'month' ? ' active' : ''),
             on: { click: () => { state.mode = 'month'; rerender(); } } }, 'month'),
         el('button', { class: 'chip' + (state.mode === 'week' ? ' active' : ''),
