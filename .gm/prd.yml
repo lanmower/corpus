@@ -911,7 +911,8 @@
 - id: commit-push-final
   title: Stage, porcelain-gate, commit with descriptive message, push to origin master; residual-scan clean
   blockedBy: ''
-  status: pending
+  status: completed
+  witness: 'git_finalize-1: committed+pushed sha 45d0a62 to origin master; porcelain-gated clean'
 - id: triage-tutor-parity
   title: Triage-live tutor (triage-live.html/js) shares tutor.js worker + tool-dispatch; verify theme + SDK fixes apply there too and triage-live.css has no raw-palette/glyph regressions
   blockedBy: ''
