@@ -191,6 +191,15 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /primary-action/);
         // simplification pass — slim today, nav-more overflow, subject hero
         assert.match(appSrc, /nav-more/);
+        // NAV FIX: bottom-nav must be populated unconditionally (the SDK shell can
+        // crash mid-mount, and its catch must fall back to mountTopbar; without a
+        // populated bottom-nav mobile had zero visible navigation).
+        assert.match(appSrc, /function mountBottomNav\(\)/);
+        assert.ok(/mountBottomNav\(\)/.test(appSrc.slice(appSrc.indexOf('mountSearchPalette();') - 400, appSrc.indexOf('mountSearchPalette();'))), 'mountBottomNav called in init (not only in the unused mountTopbar)');
+        // The SDK-setup catch resets sdkRender and mounts the legacy topbar so a
+        // mid-mount SDK crash still yields a fully navigable page.
+        const sdkCatch = appSrc.slice(appSrc.indexOf('SDK load failed, using fallback'), appSrc.indexOf('SDK load failed, using fallback') + 800);
+        assert.ok(/sdkRender = null/.test(sdkCatch) && /mountTopbar\(\)/.test(sdkCatch), 'SDK setup failure falls back to mountTopbar + legacy render');
         assert.match(appSrc, /subject-hero/);
         assert.match(appSrc, /chunked-guide|chunk-panel/);
         assert.match(appSrc, /today-primary/);
@@ -873,9 +882,15 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // worker owns its own interrupted flag (transformers #interrupted is private)
         assert.ok(/state\.interrupted/.test(workerTutor) && /state\.interrupted = true/.test(workerTutor), 'worker owns interrupted flag');
         assert.ok(!/state\.stopping\.interrupted/.test(workerTutor), 'no read of private stopping.interrupted');
-        // stop handler must NOT dispose pastKV (race); runChat owns KV disposal on interrupt
+        // stop handler must NOT dispose KV (race); runChat owns KV disposal on interrupt
         const stopBlock = workerTutor.slice(workerTutor.indexOf("cmd === 'stop'"), workerTutor.indexOf("cmd === 'stop'") + 220);
-        assert.ok(!/pastKV/.test(stopBlock), 'stop handler does not touch pastKV (no mid-gen dispose race)');
+        assert.ok(!/pastKV/.test(stopBlock), 'stop handler does not touch KV (no mid-gen dispose race)');
+        // CHAT FIX: runChat must build a FRESH per-call KV cache, never reuse a
+        // persisted state.pastKV across full-prompt generate calls — the reuse
+        // double-counted context and made the model emit the same canned reply to
+        // every input (the reported "chat sucks" bug). No cross-turn KV state.
+        assert.ok(/let pastKV = new DynamicCache\(\)/.test(workerTutor), 'runChat builds a fresh per-call KV cache');
+        assert.ok(!/state\.pastKV/.test(workerTutor) && !/kvSysKey/.test(workerTutor), 'no cross-turn persisted KV state (state.pastKV/kvSysKey removed)');
         // empty assistant replies are not pushed into worker history
         assert.ok(/if \(reply && reply\.trim\(\)\) pushHistory/.test(workerTutor), 'no empty assistant turn pushed');
         // auto-coaching uses a distinct ephemeral event, not the persisted coaching-done
@@ -912,8 +927,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // copy has execCommand fallback; toasts reuse one node with role=status
         assert.ok(/execCommand\('copy'\)/.test(panelSrc), 'copy falls back to execCommand');
         assert.ok(/role', 'status'/.test(panelSrc) && /toastEl/.test(panelSrc), 'single reusable toast with role=status');
-        // worker resets KV on system-prompt change + samples on regenerate + load timeout
-        assert.ok(/kvSysKey/.test(workerTutor), 'worker resets KV per system prompt');
+        // worker uses a fresh per-call KV (no stale cross-turn reuse) + samples on regenerate + load timeout
+        assert.ok(/past_key_values: pastKV/.test(workerTutor), 'worker passes the fresh per-call KV to generate');
         assert.ok(/do_sample: sample/.test(workerTutor) && /sample: data\.sample === true/.test(workerTutor), 'regenerate path enables sampling');
         assert.ok(/withTimeout/.test(workerTutor) && /LOAD_TIMEOUT_MS/.test(workerTutor), 'model load has timeout+retry');
         // history caps aligned + documented via shared constant

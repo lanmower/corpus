@@ -23,8 +23,6 @@ const state = {
     generator: null,
     ready: false,
     loadPromise: null,
-    pastKV: null,
-    kvSysKey: null,      // system prompt the current pastKV was built against
     stopping: new InterruptableStoppingCriteria(),
     interrupted: false,  // worker-owned flag (transformers' #interrupted is private)
     generating: false,   // true between coaching-start and the generate promise settling
@@ -121,32 +119,32 @@ async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320,
             self.postMessage({ event: 'token', token: chunk });
         }
     });
-    // A KV cache built against one system prompt is incoherent if reused under a
-    // different prompt prefix (coach vs session vs guide vs triage vs chat).
-    // Reset the cache whenever the system prompt changes.
-    const sysKey = messages[0]?.role === 'system' ? messages[0].content : '';
-    if (state.kvSysKey !== null && state.kvSysKey !== sysKey) {
-        state.pastKV?.dispose?.();
-        state.pastKV = null;
-    }
-    state.pastKV ??= new DynamicCache();
-    state.kvSysKey = sysKey;
+    // Each runChat call re-tokenizes the COMPLETE messages array (system + full
+    // history). Reusing a populated KV cache across these full-prompt calls is the
+    // bug behind the "same canned reply to every input": transformers.js would
+    // prepend the cached prefix AND re-encode the whole prompt, double-counting the
+    // context so the model ignores the new user turn and emits a generic templated
+    // reply. A fresh cache per generate is correct here — the cache is an intra-
+    // generation accelerator, not a cross-turn store, because we always re-feed the
+    // entire conversation rather than only the new tokens.
+    let pastKV = new DynamicCache();
     try {
         const genOpts = {
             max_new_tokens: maxTokens,
             do_sample: sample,
             streamer,
             stopping_criteria: state.stopping,
-            past_key_values: state.pastKV
+            past_key_values: pastKV
         };
         // Sampling parameters only matter when do_sample is on (regenerate path).
         if (sample) { genOpts.temperature = 0.8; genOpts.top_p = 0.9; }
         const out = await state.generator(messages, genOpts);
         const content = out?.[0]?.generated_text?.at?.(-1)?.content ?? buf;
         const interrupted = state.interrupted === true;
-        // KV cache lifecycle is owned here, after the generate promise settles —
-        // never disposed mid-generation by the stop handler (avoids a use-after-free race).
-        if (interrupted) { state.pastKV?.dispose?.(); state.pastKV = null; state.kvSysKey = null; }
+        // Dispose the per-call cache once the generate settles (after, never mid-
+        // generation — the stop handler only signals interruption, it never frees KV).
+        pastKV?.dispose?.();
+        pastKV = null;
         state.generating = false;
         self.postMessage({ event: doneEvent, message: content, interrupted });
         return content;
@@ -253,17 +251,13 @@ self.addEventListener('message', async (e) => {
             return;
         }
         if (cmd === 'reset-history') {
-            // Ignore a reset while a generation is in flight — disposing pastKV
-            // mid-generate is the use-after-free the stop-path carefully avoids.
-            // The panel interrupts first, then resets, so this is belt-and-braces.
+            // Interrupt an in-flight generation before clearing so the runChat
+            // promise settles cleanly (it owns + disposes its own per-call KV cache).
             if (state.generating && state.interrupted === false) {
                 state.interrupted = true;
                 state.stopping.interrupt();
             }
             state.history = [];
-            state.pastKV?.dispose?.();
-            state.pastKV = null;
-            state.kvSysKey = null;
             return;
         }
         if (cmd === 'seed-history') {
@@ -273,10 +267,6 @@ self.addEventListener('message', async (e) => {
             state.history = turns
                 .filter(t => t && (t.role === 'user' || t.role === 'assistant') && t.content)
                 .slice(-WORKER_CONTEXT_TURNS);
-            // A fresh KV cache must accompany a reseeded history.
-            state.pastKV?.dispose?.();
-            state.pastKV = null;
-            state.kvSysKey = null;
             return;
         }
         if (cmd === 'stop') {

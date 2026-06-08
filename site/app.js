@@ -2634,13 +2634,31 @@ function mountTopbar() {
         title: 'days to exam — click to edit', 'aria-label': `${days} days to exam`,
         on: { click: e => { e.preventDefault(); go('settings'); } } }, `${days}d to exam`);
     right.parentElement.insertBefore(countdown, right);
+    // ASCII label (was a decorative command-key glyph that mismatched the ctrl+k
+    // aria-label and reads wrong on non-Mac platforms).
     const searchBtn = el('button', { class: 'chip search-btn', 'aria-label': 'search (ctrl+k)', title: 'search (ctrl+k)',
-        on: { click: () => state.searchPaletteApi?.open() } }, '⌘k');
+        on: { click: () => state.searchPaletteApi?.open() } }, 'ctrl+k');
     right.parentElement.insertBefore(searchBtn, right);
     right.parentElement.insertBefore(makeToggleButton(document), right);
     const settingsBtn = el('a', { href: '#settings', class: 'chip', 'aria-label': 'settings',
         on: { click: e => { e.preventDefault(); go('settings'); } } }, icon('gear'));
     right.parentElement.insertBefore(settingsBtn, right);
+}
+
+// The top .nav is display:none on mobile; the .bottom-nav element exists in the
+// HTML but was never populated, leaving mobile with NO reachable navigation.
+// Fill it with the same primary routes so navigation is always visible on mobile.
+// data-route lets the route-change handler (toggling .navlink.active) light the
+// current tab automatically — no separate active-state wiring needed.
+function mountBottomNav() {
+    const bnav = document.querySelector('.bottom-nav');
+    if (!bnav) return;
+    bnav.innerHTML = '';
+    const items = [['today', 'home'], ['guides', 'subjects'], ['review', 'cards'], ['stats', 'progress'], ['settings', 'more']];
+    for (const [route, label] of items) {
+        bnav.append(el('a', { href: `#${route}`, class: 'navlink', data: { route },
+            on: { click: e => { e.preventDefault(); go(route); } } }, label));
+    }
 }
 
 function mountSearchPalette() {
@@ -2752,6 +2770,13 @@ function setupSdkApp() {
             }
         } catch (e) {
             console.warn('[corpus] SDK load failed, using fallback', e);
+            // setupSdkApp threw mid-mount (e.g. an SDK hyperscript error). Without a
+            // real fallback the page kept the static empty header and rendered NO
+            // navigation at all. Reset to the legacy imperative path: clear any
+            // half-set sdkRender so render() uses the stage path, and populate the
+            // raw topbar nav that the SDK shell would otherwise have owned.
+            sdkRender = null;
+            try { mountTopbar(); } catch (e2) { console.warn('[corpus] mountTopbar failed', e2); }
         }
 
         // Initialize schedule
@@ -2760,6 +2785,12 @@ function setupSdkApp() {
         if (!sched.blocks.length || sched.today !== today) {
             schedule.getSchedule({ today, dueCounts: dueCountsBySubjectMap(), ticksAll: loadGuideTicks() });
         }
+        // Bottom-nav must mount regardless of the SDK vs fallback render path —
+        // the SDK AppShell renders its own topbar (the raw .nav/.bottom-nav from
+        // index.html are NOT used by it), so without this mobile had zero visible
+        // navigation. The .bottom-nav element is a sibling of #app and survives the
+        // SDK mount; populate it once here, on both paths.
+        mountBottomNav();
         mountSearchPalette();
         state.timerApi = timer.mount(document);
         const lvl = late.lateLevel(); late.applyClass(document, lvl);
