@@ -23,7 +23,7 @@ import { buildSearchIndex, mountPalette, snippet as searchSnippet } from './sear
 import { makeToggleButton } from './theme.js';
 import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from './drag.js';
 import { showContextMenu, closeContextMenu } from './context-menu.js';
-import { initTutorPanel, wireWorkerToPanel, addTutorMessage, setTutorContext, syncTutorFromStorage } from './tutor-panel.js';
+import { initTutorPanel, wireWorkerToPanel, addTutorMessage, setTutorContext, syncTutorFromStorage, startDailySyllabus, setDailyPlanProvider } from './tutor-panel.js';
 import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn } from './tutor-store.js';
 import { ICON } from './icons.js';
 
@@ -383,13 +383,18 @@ function renderTutorOverviewPanel(due, newCount) {
         // must not post a second session-overview and duplicate the plan in-thread.
         if (cfg.proactiveCheckins && shouldCheckInToday() && !state.tutorCheckinPosted) {
             state.tutorCheckinPosted = true;
-            state.tutorWorker.postMessage({
-                cmd: 'session-overview',
-                dueCount: due,
-                newCount: newCount,
-                weakestSubject: weakestSubject,
-                examDaysLeft: examDaysLeft
-            });
+            // The daily check-in is now an INTERACTIVE syllabus walk (srs-mccqe1
+            // pattern) rather than a one-shot greeting: hand the coach today's real
+            // schedule blocks so it presents the plan step by step and the student
+            // can drive it through the chat path.
+            const today = new Date().toISOString().slice(0, 10);
+            let plan = null;
+            try {
+                const sched = schedule.loadSchedule();
+                const blocks = (sched.blocks || []).filter(b => b.date === today);
+                plan = { date: today, blocks };
+            } catch { plan = { date: today, blocks: [] }; }
+            startDailySyllabus(plan);
         }
     } catch (err) {
         warn('tutor session overview failed', err.message);
@@ -2791,6 +2796,15 @@ function setupSdkApp() {
         // navigation. The .bottom-nav element is a sibling of #app and survives the
         // SDK mount; populate it once here, on both paths.
         mountBottomNav();
+        // Give the tutor panel a way to fetch today's real schedule plan so its
+        // "Walk me through today" chip can launch the interactive daily-syllabus walk.
+        setDailyPlanProvider(() => {
+            const today = new Date().toISOString().slice(0, 10);
+            try {
+                const sched = schedule.loadSchedule();
+                return { date: today, blocks: (sched.blocks || []).filter(b => b.date === today) };
+            } catch { return { date: today, blocks: [] }; }
+        });
         mountSearchPalette();
         state.timerApi = timer.mount(document);
         const lvl = late.lateLevel(); late.applyClass(document, lvl);

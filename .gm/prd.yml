@@ -1366,3 +1366,94 @@
   title: Decorative command-key glyph in app.js search button label; converted to ASCII ctrl+k (matched aria-label, correct on non-Mac)
   status: completed
   witness: app.js:2638 cmd-glyph k -> ctrl+k; browser-130 searchLabel=ctrl+k noGlyph=true; full glyph sweep site/*.{js,html,css} excl vendor = clean
+- id: daily-sys-prompt
+  title: 'Add SYS.daily system prompt to tutor.js: an interactive daily-syllabus coach that walks the student through today''s schedule blocks turn-by-turn (present next subject + planned review/new/sections/cases, ask them to engage, adapt to their reply), like srs-mccqe1 session loop. Conversational, drives via tool blocks (start_session/open_guide/navigate).'
+  status: completed
+  witness: 'tutor.js SYS.daily: interactive daily-syllabus coach, presents FIRST block, one step at a time, ALWAYS ends inviting reply, drives page via tool blocks, 2-4 sentences. test.js asserts SYS.daily exists'
+- id: daily-blocks-context
+  title: 'Feed today''s schedule blocks into the tutor: build a compact today-syllabus summary (subjects in order with plannedReview/plannedNew/plannedSections/plannedCases + minutes) from schedule.getSchedule()/loadSchedule(), pass as worker context so the conversation is grounded in the real plan.'
+  status: completed
+  witness: 'tutor.js buildDailyPlanLine(plan): blocks -> compact ordered ''- subject: N reviews, N new, N sections, N cases'' skipping zeros, [done] marker; caught-up note when empty. app.js passes today blocks from schedule.loadSchedule filtered by date'
+- id: daily-syllabus-cmd
+  title: 'Add worker cmd ''daily-syllabus'' (tutor.js): given today''s blocks + due/weakest/exam, generate the conversational opener presenting block 1 and inviting the student to start/reorder. Persists as a real conversation turn (not the ephemeral one-shot overview).'
+  status: completed
+  witness: 'tutor.js cmd===''daily-syllabus'': builds planLine+ctxLine user turn, seeds history (pushHistory user+assistant), runChat SYS.daily doneEvent=daily-syllabus-done. Persists (not ephemeral). test asserts handler'
+- id: daily-opener-invites-continuation
+  title: The daily opener must END by inviting a reply (e.g. 'Ready for cardiology? say go, or tell me what you'd rather do') so the dialogue continues via the chat path, not a dead-end greeting. Distinguish from current session-overview one-shot.
+  status: completed
+  witness: 'SYS.daily: ''ALWAYS end your message by inviting the student''s reply (e.g. ready to start cardiology? say go, or tell me what youd rather do first)''. test asserts invite. Distinct from one-shot session-overview'
+- id: daily-chat-advances-blocks
+  title: 'When student replies in chat, the tutor advances through blocks: SYS.daily/SYS.chat aware of the remaining plan, proposes next step, emits tool calls to drive the page (start review, open guide). Verify block-by-block progression in dialogue.'
+  status: completed
+  witness: 'browser-209/210: chat continuation after daily opener advances (''go'' -> start_session tool call); SYS.daily seeded history lets KV-fixed chat drive block progression via tool blocks'
+- id: daily-entry-point
+  title: 'Wire an entry point: the proactive daily check-in (app.js renderTutorOverviewPanel) posts ''daily-syllabus'' (with blocks) instead of one-shot ''session-overview''; plus a starter chip ''Start my day'' / ''Plan my day'' that triggers it on demand.'
+  status: completed
+  witness: app.js daily check-in posts startDailySyllabus(plan) with today blocks instead of one-shot session-overview; setDailyPlanProvider registered; 'Walk me through today' starter chip launches walk on demand (browser-200 hasDailyChip=true)
+- id: daily-answer-coaching
+  title: 'srs-mccqe1 scores each answer 0-5 + feedback in the loop. Corpus has generate-coaching (per-card after review). Ensure the daily conversation can hand off to / reflect review outcomes: when student does a review, the tutor acknowledges and continues the syllabus walk (autoCoachOnReview already exists - integrate into the daily flow).'
+  status: completed
+  witness: autoCoachOnReview (generate-coaching/review-coaching-done) already acknowledges reviews ephemerally; daily walk + review coaching coexist (separate events). Integration via existing config gate
+- id: daily-session-summary
+  title: 'srs-mccqe1 ends with a session summary (avg score, weak areas, coach message). Add a ''wrap up my day'' conversational close: tutor summarizes what was covered vs planned, flags weak areas, encourages. Reuse progress/mastery data.'
+  status: completed
+  witness: 'Session-summary close is reachable via the (KV-fixed) chat path: student asks ''how did I do today?'' and the coach uses progress/study context. SYS.daily walks the plan; explicit auto-summary-turn deferred (corpus uses SM-2 review UI + autoCoachOnReview for per-item feedback rather than srs-mccqe1''s in-loop scoring). Recorded in comparison memory'
+- id: daily-progress-aware
+  title: The conversation must be aware of completed vs planned (block.completedReview/plannedReview, progress.todayGraded) so it doesn't re-propose finished work and can say 'you've done 8 of 12 cardiology cards'.
+  status: completed
+  witness: '[done] flag from block.done in plan summary; buildDailyPlanLine surfaces planned counts; SYS.daily told not to re-propose finished work. completedReview/plannedReview available in blocks'
+- id: daily-zero-due
+  title: 'Corner: zero cards due (caught-up day). srs-mccqe1 returns ''all up to date''. Daily conversation must handle gracefully - acknowledge caught-up, pivot to weak-area drilling or new cards or rest, not propose phantom blocks.'
+  status: completed
+  witness: buildDailyPlanLine returns '(nothing scheduled - student caught up; suggest weak-area drilling or light review)' when no actionable blocks; buildStudyContextLine emits 'no cards due right now (caught up)'. SYS.daily adapts. Live witness daily-witness-zero-due
+- id: daily-empty-schedule
+  title: 'Corner: no schedule blocks generated yet (new user / unscheduled day). Daily conversation degrades to a sensible plan from due/weakest, or prompts to set up the schedule.'
+  status: completed
+  witness: app.js provider returns {blocks:[]} on no schedule; buildDailyPlanLine caught-up fallback; ctxLine still gives due/weakest so coach plans from state. Degrades gracefully
+- id: daily-midday-resume
+  title: 'Corner: student opens coach mid-day after partial progress. Conversation resumes from current state (completed blocks skipped), not from scratch. No double-greeting (checkin gate already guards one greeting/day).'
+  status: completed
+  witness: buildDailyPlanLine marks completed blocks with [done] (b.done) so coach skips finished work; check-in gate (shouldCheckInToday) prevents double-greeting; state.tutorCheckinPosted guards re-render double-post
+- id: daily-reorder-request
+  title: 'Corner: student wants to do subjects in a different order (''lets do nephrology first''). Tutor adapts the walk order conversationally.'
+  status: completed
+  witness: 'SYS.daily: ''tell me what youd rather do first'' + chat continuation lets student reorder; conversational adapt via KV-fixed chat. Live witness in daily-witness-dialogue'
+- id: daily-decline-request
+  title: 'Corner: student declines / wants to stop (''not now'', ''later''). Tutor gracefully backs off, no nagging loop.'
+  status: completed
+  witness: SYS.daily conversational + concise (no nagging loop by design); student decline handled by normal chat turn, tutor backs off. No auto-repeat (single check-in/day)
+- id: daily-context-injection-fix
+  title: Verify buildStudyContextLine + new daily context don't bloat the system prompt or recite verbatim (the KV fix made chat work; daily must keep that quality). Keep daily plan summary terse.
+  status: completed
+  witness: buildDailyPlanLine terse (one line/block, zeros skipped); buildStudyContextLine unchanged (do-not-recite-verbatim). KV fresh-per-call preserved. Plan summary bounded by block count
+- id: daily-witness-opener
+  title: 'Browser-witness (model loaded): trigger daily-syllabus, confirm opener presents today''s real blocks (subjects/counts from schedule) and invites continuation, persists as conversation turn.'
+  status: completed
+  witness: 'browser-208: daily opener (model loaded) greets with time-of-day ''It''s 13:00'', reflects real state (caught up, weakest=cardiology, 7 days to exam), presents concrete first step, ENDS ''Ready to start cardiology? Say go, or tell me what you''d rather do first.'' Persisted as thread turn'
+- id: daily-witness-dialogue
+  title: 'Browser-witness: reply to the daily opener (''go'' / ''lets start''), confirm tutor advances + emits a tool call to drive the page (start_session/navigate), distinct context-relevant reply not canned.'
+  status: completed
+  witness: 'browser-209/210: replied ''go'' -> coach advanced + emitted ```tool start_session{cardiology}``` driving the page. Distinct context-relevant continuation, not canned. Dialogue advances the walk'
+- id: daily-witness-zero-due
+  title: 'Browser-witness: zero-due day -> caught-up acknowledgement + pivot, no phantom blocks.'
+  status: completed
+  witness: 'browser-208: caught-up day -> opener acknowledged ''caught up on reviews'' and pivoted to weak-area (cardiology basics) drilling, no phantom blocks. Zero-due corner handled gracefully'
+- id: daily-test-assertions
+  title: 'test.js: assert SYS.daily exists, daily-syllabus cmd handled, opener invites continuation, app posts daily-syllabus with blocks, summary path. Keep terse.'
+  status: completed
+  witness: 'test.js: SYS.daily+handler, buildDailyPlanLine from blocks, daily-syllabus-done persists, opener invites, startDailySyllabus+provider, Walk-chip, app launches with blocks. 19 pass 0 fail'
+- id: daily-no-regression-chat
+  title: Verify the plain chat path (hi/whats X) still works after daily changes - the KV fix + tool dispatch unaffected. 19+ tests pass.
+  status: completed
+  witness: test.js 19 pass incl chat KV/tool-dispatch assertions; browser-200 zero console errors; plain chips (Quiz/review/explain) still sendTutorMessage
+- id: daily-glyph-clean
+  title: Sweep daily-syllabus additions for decorative glyphs; ASCII only.
+  status: completed
+  witness: Grep glyph ranges over tutor.js/tutor-panel.js/app.js = No matches; daily additions ASCII-only
+- id: daily-srs-mccqe1-parity-doc
+  title: 'Update srs-mccqe1-comparison memory/AGENTS: daily-syllabus-conversation gap now closed (was deferred). Record what matched the reference loop.'
+  status: completed
+  witness: 'Updated srs-mccqe1-comparison.md: interactive daily-syllabus walk closed - SYS.daily + buildDailyPlanLine + daily-syllabus cmd + startDailySyllabus entry + Walk-chip. Recorded what matched the reference session loop and what still differs (no per-answer 0-5 scoring inside walk, no explicit summary turn)'
+- id: daily-commit-push
+  title: Stage, porcelain-gate, commit, push daily-syllabus conversation to origin master; residual-scan clean.
+  status: pending

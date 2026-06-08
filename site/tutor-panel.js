@@ -124,10 +124,18 @@ export function setTutorContext(ctx = {}) {
     }
 }
 
+// App registers a provider that returns today's schedule plan ({date, blocks}); the
+// "Walk me through today" chip uses it to launch the interactive daily-syllabus walk
+// on demand (the same flow the proactive daily check-in fires automatically).
+let dailyPlanProvider = null;
+export function setDailyPlanProvider(fn) { dailyPlanProvider = typeof fn === 'function' ? fn : null; }
+
+const DAILY_CHIP = 'Walk me through today';
+
 function starterPrompts() {
-    const chips = [];
-    if (tutorContext.dueCount > 0) chips.push(`Plan my ${tutorContext.dueCount} due cards`);
-    else chips.push('Plan my study session');
+    // Lead with the interactive daily walk (this is the headline feature), then the
+    // quick conversational prompts.
+    const chips = [DAILY_CHIP];
     if (tutorContext.weakestSubject) chips.push(`Quiz me on ${tutorContext.weakestSubject}`);
     else chips.push('Quiz me on cardiology');
     chips.push('What should I review first?');
@@ -359,7 +367,17 @@ function updateEmptySlot(isEmpty) {
         const c = document.createElement('button');
         c.className = 'tutor-chip';
         c.textContent = p;
-        c.addEventListener('click', () => sendTutorMessage(p));
+        if (p === DAILY_CHIP) {
+            // Launch the interactive daily-syllabus walk with today's real plan
+            // (falls back to a plain message if no provider/plan is available).
+            c.addEventListener('click', () => {
+                const plan = dailyPlanProvider ? dailyPlanProvider() : null;
+                if (plan) startDailySyllabus(plan);
+                else sendTutorMessage('Plan my day');
+            });
+        } else {
+            c.addEventListener('click', () => sendTutorMessage(p));
+        }
         chips.appendChild(c);
     }
     slot.append(title, sub, chips);
@@ -813,6 +831,20 @@ export function sendTutorMessage(text, opts = {}) {
     tutorWorker.postMessage({ cmd: 'user-message', text, sample: opts.isRegenerate === true, context: tutorContext });
 }
 
+// Start the interactive daily-syllabus walk: post today's plan + study context to
+// the worker, which opens the guided dialogue (persisted as a thread turn). Unlike
+// sendTutorMessage there is no user-typed text — the seed user turn lives in the
+// worker. Guard the same way (model availability, not-already-thinking).
+export function startDailySyllabus(plan) {
+    if (!tutorWorker || isThinking) return;
+    if (modelStatus === 'unavailable') return; // silent: this is proactive, not user-initiated
+    preloadTutorModel();
+    isThinking = true;
+    armThinkingWatchdog();
+    if (sdkRender) sdkRender();
+    tutorWorker.postMessage({ cmd: 'daily-syllabus', plan, context: tutorContext });
+}
+
 function dispatchAndStrip(message) {
     if (!message) return '';
     const actions = (typeof window !== 'undefined' && window.__tutorActions) || {};
@@ -904,9 +936,11 @@ export function wireWorkerToPanel(worker) {
 
             // Conversational reply to a user message — the ONLY path that persists a
             // thread turn AND is worker-synced. (guide-answer-done is also a direct
-            // user question, so it persists too.)
+            // user question, so it persists too. daily-syllabus-done seeds the worker
+            // history too, so it persists as the opener of the day's guided dialogue.)
             case 'coaching-done':
-            case 'guide-answer-done': {
+            case 'guide-answer-done':
+            case 'daily-syllabus-done': {
                 isThinking = false;
                 clearThinkingWatchdog();
                 setChatLive('polite');
@@ -922,6 +956,12 @@ export function wireWorkerToPanel(worker) {
                     if (sdkRender) sdkRender();
                 }
                 if (event === 'guide-answer-done') showTutorToast('Guide answer ready');
+                if (event === 'daily-syllabus-done') {
+                    // The interactive daily walk IS today's check-in — consume the slot
+                    // (date-guarded against a post-midnight rollover, same as overview).
+                    if (shouldCheckInToday()) markCheckedIn();
+                    if (isPanelCollapsed) showTutorToast('Your study coach has planned your day', 6000);
+                }
                 break;
             }
 

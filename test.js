@@ -195,7 +195,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // crash mid-mount, and its catch must fall back to mountTopbar; without a
         // populated bottom-nav mobile had zero visible navigation).
         assert.match(appSrc, /function mountBottomNav\(\)/);
-        assert.ok(/mountBottomNav\(\)/.test(appSrc.slice(appSrc.indexOf('mountSearchPalette();') - 400, appSrc.indexOf('mountSearchPalette();'))), 'mountBottomNav called in init (not only in the unused mountTopbar)');
+        // mountBottomNav is defined once and must be CALLED in init (not only inside
+        // the unused mountTopbar). Count call-sites: >1 `mountBottomNav()` occurrence
+        // means definition + at least one real call.
+        assert.ok((appSrc.match(/mountBottomNav\(\)/g) || []).length >= 2, 'mountBottomNav called in init (not only defined)');
         // The SDK-setup catch resets sdkRender and mounts the legacy topbar so a
         // mid-mount SDK crash still yields a fully navigable page.
         const sdkCatch = appSrc.slice(appSrc.indexOf('SDK load failed, using fallback'), appSrc.indexOf('SDK load failed, using fallback') + 800);
@@ -870,10 +873,21 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // worker exposes the new stop + seed-history commands
         const workerTutor = READ('site/tutor.js');
         assert.ok(/cmd === 'stop'/.test(workerTutor) && /cmd === 'seed-history'/.test(workerTutor), 'worker handles stop + seed-history');
+        // DAILY SYLLABUS as conversation (srs-mccqe1 parity): SYS.daily prompt + a
+        // daily-syllabus handler that builds the plan summary, seeds history, and
+        // persists via daily-syllabus-done. The opener must invite continuation.
+        assert.ok(/daily:\s*`/.test(workerTutor) && /cmd === 'daily-syllabus'/.test(workerTutor), 'worker has SYS.daily + daily-syllabus handler');
+        assert.ok(/function buildDailyPlanLine/.test(workerTutor) && /plannedReview|plannedNew/.test(workerTutor), 'daily plan summary built from schedule blocks');
+        assert.ok(/daily-syllabus-done/.test(workerTutor) && /daily-syllabus-done/.test(panelSrc), 'daily-syllabus-done persists as a thread turn');
+        assert.ok(/invit/i.test(workerTutor.slice(workerTutor.indexOf('daily: `'), workerTutor.indexOf('daily: `') + 700)) || /end your message by inviting/i.test(workerTutor), 'daily opener invites continuation');
+        assert.ok(/export function startDailySyllabus/.test(panelSrc) && /setDailyPlanProvider/.test(panelSrc), 'panel exposes startDailySyllabus + plan provider');
+        assert.ok(/Walk me through today/.test(panelSrc), 'daily-walk starter chip present');
         // app.js coaching uses the handler's real cmd, gated by config
         const app = READ('site/app.js');
         assert.ok(/cmd: 'generate-coaching'/.test(app), 'app posts generate-coaching (matches worker handler)');
         assert.ok(/autoCoachOnReview/.test(app) && /proactiveCheckins/.test(app), 'app gates coaching/checkin on config');
+        // daily check-in now launches the interactive syllabus walk with real blocks
+        assert.ok(/startDailySyllabus\(plan\)/.test(app) && /setDailyPlanProvider/.test(app), 'app launches daily-syllabus walk with today blocks');
         // message actions: SDK-agnostic action bar with copy + regenerate, hidden while thinking/streaming
         assert.ok(/tutor-action-bar/.test(panelSrc) && /updateActionBar/.test(panelSrc), 'panel has the SDK-agnostic action bar');
         assert.ok(/clipboard\?\.writeText/.test(panelSrc), 'copy uses clipboard');

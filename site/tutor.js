@@ -172,6 +172,33 @@ function buildStudyContextLine(ctx) {
     return `\n\ncurrent study state (use it to personalize, do not recite it verbatim): the student has ${bits.join(', ')}.`;
 }
 
+// Turn today's schedule blocks into a compact ordered plan summary for the daily
+// coach. Each study block becomes one line: subject + what's planned (reviews /
+// new / sections / cases), skipping zero counts. Completed blocks are marked so
+// the coach resumes mid-day rather than re-proposing finished work. Returns a
+// caught-up note when there are no actionable blocks.
+function buildDailyPlanLine(plan) {
+    const blocks = Array.isArray(plan?.blocks) ? plan.blocks : [];
+    const lines = [];
+    for (const b of blocks) {
+        if (!b || b.kind === 'break' || !b.subject) continue;
+        const parts = [];
+        const review = Number(b.plannedReview) || 0;
+        const fresh = Number(b.plannedNew) || 0;
+        const sections = Array.isArray(b.plannedSections) ? b.plannedSections.length : (Number(b.plannedSections) || 0);
+        const cases = Array.isArray(b.plannedCases) ? b.plannedCases.length : (Number(b.plannedCases) || 0);
+        if (review) parts.push(`${review} review${review === 1 ? '' : 's'}`);
+        if (fresh) parts.push(`${fresh} new`);
+        if (sections) parts.push(`${sections} guide section${sections === 1 ? '' : 's'}`);
+        if (cases) parts.push(`${cases} case${cases === 1 ? '' : 's'}`);
+        if (!parts.length) continue;
+        const doneFlag = b.done ? ' [done]' : '';
+        lines.push(`- ${b.subject}: ${parts.join(', ')}${doneFlag}`);
+    }
+    if (!lines.length) return '(nothing scheduled — the student is caught up; suggest weak-area drilling or a light review)';
+    return lines.join('\n');
+}
+
 function pushHistory(role, content) {
     state.history.push({ role, content });
     if (state.history.length > WORKER_CONTEXT_TURNS) {
@@ -219,7 +246,14 @@ const SYS = {
     session: `you are planning today's medical-study session. given the user's due-card count, new-card budget, weakest subject, and days until exam, write a short personalized plan (3-4 sentences). lead with a greeting suited to the time of day. end with one specific action.`,
     guide: `you are answering a medical-study question using the user's own study guide. ground your answer in the provided guide sections; do NOT invent information not in the sections. cite the section titles you used. keep it under 6 sentences.`,
     triage: `you are giving a Socratic hint on a triage scenario. given the case description and the cards the student has already placed, give ONE short hint that nudges them toward the next clinical reasoning step. do NOT reveal the diagnosis or the canonical plan.`,
-    chat: `you are the user's medical-study tutor. you are conversational, concise, and grounded in the user's actual study material. when the user asks you to do something on the page (open a guide, start a review, navigate), emit a fenced tool block as described below. otherwise answer in 1-4 sentences.`
+    chat: `you are the user's medical-study tutor. you are conversational, concise, and grounded in the user's actual study material. when the user asks you to do something on the page (open a guide, start a review, navigate), emit a fenced tool block as described below. otherwise answer in 1-4 sentences.`,
+    // Interactive daily-syllabus coach. Walks the student through today's planned
+    // blocks one at a time as a conversation (mirrors srs-mccqe1's session loop:
+    // present the next item, let the student respond, adapt, advance). The plan is
+    // provided in the user turn; the coach proposes the FIRST step and always ends
+    // by inviting a reply so the dialogue continues, and drives the page with tool
+    // blocks when the student is ready to act.
+    daily: `you are the user's medical-study coach running today's study plan as a conversation. you are given today's planned blocks (subjects in order, each with how many reviews / new cards / guide sections / cases are planned) and the student's study state. greet briefly (suit the time of day), then present the FIRST block concretely (subject + what's planned for it). do NOT dump the whole plan as a list — surface one step at a time. ALWAYS end your message by inviting the student's reply (e.g. "ready to start cardiology? say go, or tell me what you'd rather do first"). when the student agrees to start, emit the matching tool block to drive the page. keep each message to 2-4 sentences. warm, specific, no filler.`
 };
 
 const TOOL_SPEC = `available page-control tools — emit each in its own fenced block, language=tool:
@@ -293,6 +327,23 @@ self.addEventListener('message', async (e) => {
             const user = `due cards: ${dueCount}\nnew cards available: ${newCount}\nweakest subject: ${weakestSubject || 'unknown'}\ndays until exam: ${examDaysLeft != null ? examDaysLeft : 'unknown'}\nlocal hour: ${new Date().getHours()}\n\nplan my session.`;
             await runChat([{ role: 'system', content: SYS.session }, { role: 'user', content: user }],
                 { doneEvent: 'session-overview-done', maxTokens: 220 });
+            return;
+        }
+
+        // Interactive daily syllabus: present today's plan as a conversation the
+        // student can drive. Unlike session-overview (a one-shot ephemeral greeting),
+        // this seeds the worker history so the follow-up chat path continues the
+        // walk coherently (the panel persists it as a real thread turn).
+        if (cmd === 'daily-syllabus') {
+            const planLine = buildDailyPlanLine(data.plan);
+            const ctxLine = buildStudyContextLine(data.context);
+            const user = `today's plan:\n${planLine}${ctxLine}\nlocal hour: ${new Date().getHours()}\n\nstart walking me through today.`;
+            // Seed the conversation so subsequent chat turns continue the syllabus
+            // walk (the model sees the opener as the prior assistant turn).
+            pushHistory('user', "let's start today's plan");
+            const reply = await runChat([{ role: 'system', content: SYS.daily }, { role: 'user', content: user }],
+                { doneEvent: 'daily-syllabus-done', maxTokens: 240 });
+            if (reply && reply.trim()) pushHistory('assistant', reply);
             return;
         }
 
