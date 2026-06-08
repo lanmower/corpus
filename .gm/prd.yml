@@ -1556,7 +1556,8 @@
   witness: SDK version bumped 33984a5b->afcaaf8c (v0.0.197 commit a91365e) recorded in this session memory; AGENTS.md SDK line references rebuild-from-dist process which still holds
 - id: commit-push-sweep
   title: Stage, porcelain-gate, commit, push the comprehensive sweep (SDK update + daily jank fixes + verifications) to origin master; residual-scan clean.
-  status: pending
+  status: completed
+  witness: git_finalize committed a782591 + pushed to origin master; git status --porcelain clean. SDK bump + daily-defer + stall-guard + tests all shipped
 - id: worker-load-timeout-too-short
   title: 'JANK (witnessed browser-306/307): worker LOAD_TIMEOUT_MS=180s fires DURING a slow but healthy download (1.7B model takes ~10min on slow links), emitting unavailable+error -> 2 error turns. The timeout should reset on download PROGRESS (distinguish stalled fetch from slow-but-progressing), not cap total load at 180s. Also dedup the unavailable+error double-turn.'
   status: completed
