@@ -1456,4 +1456,5 @@
   witness: 'Updated srs-mccqe1-comparison.md: interactive daily-syllabus walk closed - SYS.daily + buildDailyPlanLine + daily-syllabus cmd + startDailySyllabus entry + Walk-chip. Recorded what matched the reference session loop and what still differs (no per-answer 0-5 scoring inside walk, no explicit summary turn)'
 - id: daily-commit-push
   title: Stage, porcelain-gate, commit, push daily-syllabus conversation to origin master; residual-scan clean.
-  status: pending
+  status: completed
+  witness: git_finalize committed e1ac6f4 + pushed to origin master; git status --porcelain clean; ahead==0. All daily-syllabus code, tests, memory shipped
