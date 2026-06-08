@@ -881,6 +881,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(/daily-syllabus-done/.test(workerTutor) && /daily-syllabus-done/.test(panelSrc), 'daily-syllabus-done persists as a thread turn');
         assert.ok(/invit/i.test(workerTutor.slice(workerTutor.indexOf('daily: `'), workerTutor.indexOf('daily: `') + 700)) || /end your message by inviting/i.test(workerTutor), 'daily opener invites continuation');
         assert.ok(/export function startDailySyllabus/.test(panelSrc) && /setDailyPlanProvider/.test(panelSrc), 'panel exposes startDailySyllabus + plan provider');
+        // daily walk requested before the model is ready DEFERS (pendingDailyPlan) and
+        // fires from the 'ready' handler — never posts the cmd into a load-timeout race
+        // (which spammed 3 "model load timed out" turns).
+        assert.ok(/pendingDailyPlan/.test(panelSrc) && /modelStatus !== 'ready'/.test(panelSrc.slice(panelSrc.indexOf('export function startDailySyllabus'), panelSrc.indexOf('export function startDailySyllabus') + 600)), 'daily walk defers until model ready (no load-timeout error spam)');
         assert.ok(/Walk me through today/.test(panelSrc), 'daily-walk starter chip present');
         // app.js coaching uses the handler's real cmd, gated by config
         const app = READ('site/app.js');
@@ -944,7 +948,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // worker uses a fresh per-call KV (no stale cross-turn reuse) + samples on regenerate + load timeout
         assert.ok(/past_key_values: pastKV/.test(workerTutor), 'worker passes the fresh per-call KV to generate');
         assert.ok(/do_sample: sample/.test(workerTutor) && /sample: data\.sample === true/.test(workerTutor), 'regenerate path enables sampling');
-        assert.ok(/withTimeout/.test(workerTutor) && /LOAD_TIMEOUT_MS/.test(workerTutor), 'model load has timeout+retry');
+        // model load uses a STALL watchdog (resets on download progress) not a fixed
+        // total cap — a slow but healthy 1.7B download must not spuriously time out.
+        assert.ok(/withStallGuard/.test(workerTutor) && /STALL_TIMEOUT_MS/.test(workerTutor) && /onLoadProgress/.test(workerTutor), 'model load uses a progress-reset stall watchdog + retry');
         // history caps aligned + documented via shared constant
         assert.ok(/WORKER_CONTEXT_TURNS/.test(storeSrc) && /WORKER_CONTEXT_TURNS/.test(workerTutor), 'worker context cap is a shared documented constant');
         // exam days no longer hardcoded

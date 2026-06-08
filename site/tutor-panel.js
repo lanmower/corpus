@@ -831,18 +831,34 @@ export function sendTutorMessage(text, opts = {}) {
     tutorWorker.postMessage({ cmd: 'user-message', text, sample: opts.isRegenerate === true, context: tutorContext });
 }
 
-// Start the interactive daily-syllabus walk: post today's plan + study context to
-// the worker, which opens the guided dialogue (persisted as a thread turn). Unlike
-// sendTutorMessage there is no user-typed text — the seed user turn lives in the
-// worker. Guard the same way (model availability, not-already-thinking).
-export function startDailySyllabus(plan) {
-    if (!tutorWorker || isThinking) return;
-    if (modelStatus === 'unavailable') return; // silent: this is proactive, not user-initiated
-    preloadTutorModel();
+// A daily-syllabus walk requested before the model is ready. Posting the cmd while
+// the model is still downloading raced the worker's 180s load timeout and spammed
+// three "model load timed out" error turns into the thread. Instead we hold the
+// plan here and fire it from the 'ready' event handler exactly once.
+let pendingDailyPlan = null;
+
+function postDailySyllabus(plan) {
     isThinking = true;
     armThinkingWatchdog();
     if (sdkRender) sdkRender();
     tutorWorker.postMessage({ cmd: 'daily-syllabus', plan, context: tutorContext });
+}
+
+// Start the interactive daily-syllabus walk: post today's plan + study context to
+// the worker, which opens the guided dialogue (persisted as a thread turn). Unlike
+// sendTutorMessage there is no user-typed text — the seed user turn lives in the
+// worker. If the model is not ready yet, defer until the 'ready' event rather than
+// racing the worker load timeout (which produced duplicate error turns).
+export function startDailySyllabus(plan) {
+    if (!tutorWorker || isThinking) return;
+    if (modelStatus === 'unavailable') return; // silent: this is proactive, not user-initiated
+    if (modelStatus !== 'ready') {
+        // Defer: kick the load and remember the plan; the 'ready' handler fires it.
+        pendingDailyPlan = plan;
+        preloadTutorModel();
+        return;
+    }
+    postDailySyllabus(plan);
 }
 
 function dispatchAndStrip(message) {
@@ -893,11 +909,21 @@ export function wireWorkerToPanel(worker) {
             case 'ready':
                 isThinking = false;
                 setStatus('ready');
+                // Fire a daily-syllabus walk that was requested before the model
+                // finished loading (deferred so it never races the load timeout).
+                if (pendingDailyPlan) {
+                    const plan = pendingDailyPlan;
+                    pendingDailyPlan = null;
+                    postDailySyllabus(plan);
+                }
                 break;
 
             case 'unavailable': {
                 isThinking = false;
                 clearThinkingWatchdog();
+                // A deferred daily walk can never run on an unavailable model — drop it
+                // so it doesn't fire spuriously if the model later recovers.
+                pendingDailyPlan = null;
                 // Allow a later open/send to re-attempt the load. Without this the
                 // module-scoped preloadKicked latch stays true forever, so a retry
                 // (e.g. after the user enables WebGPU and reopens) never fires.

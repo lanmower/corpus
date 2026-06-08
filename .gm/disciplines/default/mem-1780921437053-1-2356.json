@@ -1,0 +1,12 @@
+## Corpus tutor sweep: SDK bump + model-load jank fixes (2026-06-08 session 7)
+
+Comprehensive sweep of conversation-only tutor mode (goal: every UX/design/scheduling/config/fluidity/predictability/usefulness + jank + latest anentrypoint-design).
+
+KEY WORK, browser-witnessed:
+1. SDK DRIFT FIXED: corpus site/247420.{js,css} were STALE (sha 33984a5b/fc7d7cea) vs latest dist afcaaf8c/82081ff7 (v0.0.197 commit a91365e ShortcutHelpDialog label + e0a8867 gm-recall cards). Copied fresh dist into site/. browser: SDK loads (AICat/mount/scope ds-247420), fallback=false, navLinks=6, contrast theme resolves (clobber-guard holds), zero console errors. New SDK commits don't touch AICat/mount/Topbar signatures corpus consumes - no adjustment needed.
+2. DAILY-WALK LOAD-TIMEOUT JANK FIXED (two parts):
+   a) startDailySyllabus now DEFERS when modelStatus!=ready: sets pendingDailyPlan + preloadTutorModel, fires from the 'ready' event handler. Was posting the daily-syllabus cmd into a load-timeout race -> 3 error turns. pendingDailyPlan cleared on 'unavailable'. browser-303: chip clicked while downloading -> histLen=0 errTurns=0.
+   b) tutor.js worker model-load: replaced fixed LOAD_TIMEOUT_MS=180s (withTimeout) with a STALL watchdog STALL_TIMEOUT_MS=90s that RESETS on each download progress pulse (onLoadProgress called from progress_callback, withStallGuard races the load). A slow-but-healthy 1.7B download (~10min) no longer spuriously times out. browser-309/310/311: download ran 10+ min past the old 180s cap at errTurns=0; then opener generated cleanly.
+3. RE-VERIFIED after SDK bump: chat KV fix holds (browser-316 'lets do nephrology first' -> distinct nephrology reply not canned), daily walk opener clean (browser-315, invites continuation, no error spam), reorder adapts (browser-317), reload-restore (browser-321: 5 turns persisted, 10 bubbles render), nav (6 desktop/5 mobile), focus rings, touch targets, mobile sheet, z-order all hold.
+
+GOTCHA confirmed: a 1.7B model is non-deterministic - 'go' sometimes emits start_session tool block (proven session 6) and sometimes re-describes the subject (browser-318). Tool path code intact; this is model capability not a bug. test.js: 19 pass, added stall-watchdog + daily-defer assertions, updated the obsolete withTimeout/LOAD_TIMEOUT_MS assertion. SDK now afcaaf8c (track for next drift check).

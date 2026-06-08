@@ -45,6 +45,7 @@ async function loadModelOnce() {
         dtype: 'q1',
         progress_callback: (info) => {
             if (info?.status === 'progress_total' || info?.status === 'progress') {
+                onLoadProgress(); // pulse the stall watchdog: a healthy download keeps it alive
                 self.postMessage({
                     event: 'model-downloading',
                     loaded: Number(info.loaded ?? 0),
@@ -63,28 +64,40 @@ async function loadModelOnce() {
     self.postMessage({ event: 'ready' });
 }
 
-// Wrap a promise with a timeout so a stalled CDN fetch surfaces as an error
-// instead of leaving the pill on "downloading X%" forever.
-function withTimeout(promise, ms, label) {
-    let timer;
-    const timeout = new Promise((_, reject) => {
-        timer = setTimeout(() => reject(new Error(`${label} timed out after ${Math.round(ms / 1000)}s`)), ms);
-    });
-    return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
-}
+// Stall watchdog. A fixed total-load cap (the old 180s) wrongly failed a slow but
+// HEALTHY download (a 1.7B model can legitimately take 10+ min on a slow link),
+// surfacing "model load timed out" error turns mid-download. Instead we fail only
+// when the download makes NO progress for STALL_TIMEOUT_MS — distinguishing a dead
+// fetch from a slow one. Each progress event pulses the deadline forward.
+const STALL_TIMEOUT_MS = 90000; // no progress for 90s = genuinely stalled
+let _stallPulse = null; // called by the progress callback to reset the deadline
+function onLoadProgress() { if (_stallPulse) _stallPulse(); }
 
-const LOAD_TIMEOUT_MS = 180000; // 3 min — a 1-bit 1.7B over a slow link still fits
+// Race `promise` against a stall watchdog. The watchdog only fires after
+// STALL_TIMEOUT_MS with no onLoadProgress() pulse; any progress restarts the clock.
+function withStallGuard(promise, label) {
+    let timer;
+    const stall = new Promise((_, reject) => {
+        const arm = () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => reject(new Error(`${label} stalled (no progress for ${Math.round(STALL_TIMEOUT_MS / 1000)}s)`)), STALL_TIMEOUT_MS);
+        };
+        _stallPulse = arm;
+        arm(); // arm immediately so a fetch that never starts still fails
+    });
+    return Promise.race([promise, stall]).finally(() => { clearTimeout(timer); _stallPulse = null; });
+}
 
 async function loadWithRetry() {
     try {
-        return await withTimeout(loadModelOnce(), LOAD_TIMEOUT_MS, 'model load');
+        return await withStallGuard(loadModelOnce(), 'model load');
     } catch (first) {
         // A WebGPU-absence error is terminal — don't retry, it won't appear.
         if (/webgpu|adapter/i.test(String(first?.message || first))) throw first;
         self.postMessage({ event: 'model-loading', stage: 'retrying download…' });
         state.ready = false;
         state.generator = null;
-        return await withTimeout(loadModelOnce(), LOAD_TIMEOUT_MS, 'model load (retry)');
+        return await withStallGuard(loadModelOnce(), 'model load (retry)');
     }
 }
 

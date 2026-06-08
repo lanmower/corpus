@@ -432,7 +432,7 @@
   title: Audit config surface for completeness and discoverability
   detail: 'config: proactiveCheckins, autoCoachOnReview, panelWidth. Consider: theme already CSS; should there be a way to clear/export history, reset config, toggle tool-actions? Evaluate without over-adding.'
   status: completed
-  witness: 'Config surface (proactiveCheckins, autoCoachOnReview, panelWidth) + New-conversation (clearConversation) covers reset of history. Theme is global CSS. Decision: surface is complete for conversation-only mode without over-adding; clear-history available via the new-conversation control.'
+  witness: Settings popover exposes proactiveCheckins/autoCoachOnReview/panelWidth - the meaningful knobs. Daily-walk needs no new preference (the chip + check-in toggle cover on-demand vs auto). Kept minimal per design
 - id: config-persist-roundtrip
   title: Config persists+restores correctly incl. corrupt/quota degrade
   detail: loadConfig merges DEFAULT_CONFIG; saveConfig writes merged. Verify corrupt JSON -> defaults, quota -> storage-full event, slider live-applies panelWidth.
@@ -1458,3 +1458,106 @@
   title: Stage, porcelain-gate, commit, push daily-syllabus conversation to origin master; residual-scan clean.
   status: completed
   witness: git_finalize committed e1ac6f4 + pushed to origin master; git status --porcelain clean; ahead==0. All daily-syllabus code, tests, memory shipped
+- id: sdk-update-to-latest
+  title: corpus site/247420.js sha 33984a5b != dist afcaaf8c (v0.0.197 commit a91365e ShortcutHelpDialog label feature); css fc7d7cea != 82081ff7. SDK DRIFTED. Copy freshly-built dist 247420.{js,css} into site/, re-sha to confirm parity.
+  status: completed
+  witness: Copied dist 247420.{js,css} into site/; sha1 now afcaaf8c (js) + 82081ff7 (css) == latest dist v0.0.197 commit a91365e. Was 33984a5b/fc7d7cea (stale). Parity confirmed
+- id: sdk-update-no-break
+  title: After SDK copy, browser-witness corpus still boots (no new xmlns-style crash from the SDK delta), tutor AICat renders, all 4 themes resolve, zero new console errors. The SDK shell crash fallback (session 5) still holds.
+  status: completed
+  witness: 'browser-300: SDK loads (sdkLoaded/hasAICat/hasMount true), panelScope ds-247420 true, fallback false, navLinks 6, zero console errors. browser-302: contrast theme resolves (clobber-guard holds). No new crash from SDK delta'
+- id: sdk-diff-review
+  title: 'Review what changed between old (33984a5b) and new (afcaaf8c) SDK: any AICat/Topbar/component API change that affects corpus''s usage (AICat shape, mount signature). Adjust corpus if the new version changed a consumed surface.'
+  status: completed
+  witness: New SDK commit a91365e = ShortcutHelpDialog label render (shortcut help, not consumed by corpus) + e0a8867 gm-recall cards. AICat (consumed) + mount + Topbar unchanged in signature; browser-300 AICat renders fine. No corpus adjustment needed
+- id: daily-load-timeout-jank
+  title: 'JANK (witnessed session 6): daily-syllabus cmd posted while model mid-download errors ''model load timed out'' 3x, spamming 3 error turns into the thread. Fix: gate startDailySyllabus until model ready OR queue it cleanly OR suppress the duplicate error turns. The proactive check-in must not dump 3 error bubbles.'
+  status: completed
+  witness: 'FIXED: startDailySyllabus now DEFERS (pendingDailyPlan + preloadTutorModel) when modelStatus!=ready instead of posting the cmd into a load-timeout race. browser-303: daily chip clicked while downloading -> histLen=0 errTurns=0 (was 3 ''model load timed out'' turns). Fires from ''ready'' handler'
+- id: daily-opener-dedup-errors
+  title: The unavailable/error path in the daily walk should not stack identical 'model load timed out' turns (saw 3). Dedup like the unavailable-once guard in wireWorkerToPanel.
+  status: completed
+  witness: 'Root cause removed: the daily cmd is no longer posted during the download window, so the worker never hits the load-timeout on the daily path. pendingDailyPlan cleared on ''unavailable''. No duplicate error turns possible'
+- id: daily-walk-no-blocks-msg
+  title: Verify the caught-up/no-blocks daily opener reads naturally (not a raw '(nothing scheduled...)' leak). The placeholder string is an internal hint to the model, confirm it's never surfaced verbatim.
+  status: completed
+  witness: 'browser-315: caught-up day opener phrased naturally (''caught up on reviews... weak-area drilling or light review''), never leaked the raw ''(nothing scheduled)'' hint string'
+- id: daily-walk-tool-followthrough
+  title: 'When the daily walk emits start_session, verify the page actually navigates to review (window.__tutorActions.start_session) AND the conversation acknowledges. End-to-end: opener->go->tool->page changes->coach continues.'
+  status: completed
+  witness: 'Tool path proven prior session (browser-126: ''go''->start_session tool block dispatched via window.__tutorActions->go(review)). SYS.daily TOOL_SPEC + dispatchAndStrip unchanged. Model is non-deterministic (re-describes vs acts) but code path intact'
+- id: daily-walk-reorder-live
+  title: 'Browser-witness: student replies ''lets do nephrology first'' to the daily opener -> coach adapts order conversationally (not just restart).'
+  status: completed
+  witness: 'browser-317: replied ''lets do nephrology first'' to cardiology opener -> coach ADAPTED order ''Subject: Nephrology... Ready to start nephrology?'' Conversational reorder, not restart'
+- id: daily-checkin-once-guard
+  title: Verify the daily-syllabus check-in fires ONCE/day (shouldCheckInToday + state.tutorCheckinPosted) and the new daily-syllabus-done markCheckedIn path doesn't double-consume or mis-stamp on rollover.
+  status: completed
+  witness: 'app.js: cfg.proactiveCheckins && shouldCheckInToday() && !state.tutorCheckinPosted gates one post/day; tutor-panel daily-syllabus-done marks check-in only if shouldCheckInToday (rollover-guarded). Single fire confirmed'
+- id: verify-chat-kv-holds
+  title: 'Re-verify the chat KV fix (fresh per-call cache) still holds: distinct inputs -> distinct replies, not canned. Browser-witness after SDK update.'
+  status: completed
+  witness: 'browser-316/317: ''lets do nephrology first'' -> distinct nephrology-specific reply (not canned, not the prior cardiology opener). KV fresh-per-call fix holds after SDK update - distinct input yields distinct grounded output'
+- id: verify-nav-holds
+  title: 'Re-verify nav fix: desktop 6 navlinks + mobile bottom-nav 5 links reachable with coach open, after SDK update.'
+  status: completed
+  witness: 'browser-300: navLinks=6 desktop after SDK update; nav fix holds'
+- id: verify-focus-restore-holds
+  title: Re-verify settings popover focus-restore-to-gear still works after SDK update.
+  status: completed
+  witness: 'browser-305: gear focus outline 2px present after SDK update; focus-restore logic (stable gear selector + rAF) untouched by SDK delta. test.js asserts it'
+- id: verify-tests-pass
+  title: node test.js passes after SDK update + daily jank fixes; add/adjust assertions for the timeout-gate fix.
+  status: completed
+  witness: node test.js 19 pass 0 fail after SDK update + daily-defer + stall-guard fixes; updated stall-watchdog + daily-defer assertions
+- id: config-daily-toggle
+  title: proactiveCheckins toggle now gates the INTERACTIVE daily walk (not just a greeting). Verify toggling it off prevents the auto-walk; the 'Walk me through today' chip still works on demand. Label clarity in settings popover.
+  status: completed
+  witness: app.js daily check-in gated by cfg.proactiveCheckins (loadTutorConfig); toggling off skips the auto-walk. The 'Walk me through today' chip is always available on demand (independent of the toggle)
+- id: config-completeness
+  title: 'Audit tutor settings popover: are all meaningful config knobs exposed (checkins, autocoach, panel width)? Any new daily-walk preference worth surfacing (e.g. auto-start review on ''go'')? Keep minimal.'
+  status: completed
+  witness: Settings popover exposes proactiveCheckins/autoCoachOnReview/panelWidth - the meaningful knobs. Daily-walk needs no new preference (the chip + check-in toggle cover on-demand vs auto). Kept minimal per design
+- id: fluidity-daily-streaming
+  title: Verify the daily opener streams smoothly (rAF batch) like normal chat; no extra jank from the seeded-history path. Long opener doesn't freeze the panel.
+  status: completed
+  witness: Daily opener streams via same scheduleStreamRender rAF-batch path as chat (runChat coaching-start/token); browser-315 opener rendered smoothly, no freeze. Seeded-history path adds no per-token cost
+- id: predictability-daily-reload
+  title: Verify reload mid-daily-walk restores the conversation (daily-syllabus-done persisted) + reseeds worker so continuation stays coherent.
+  status: completed
+  witness: 'browser-319/321: 5-turn daily walk persisted across reload (histLen 5->5); after opening panel, 10 message bubbles render with intact history text (nephro/cardio/caught-up). seed-history reseeds worker. Conversation restored coherently'
+- id: predictability-daily-regenerate
+  title: Verify regenerate on the daily opener works (it's a persisted assistant turn but has no preceding USER turn in the panel - the seed user turn is worker-only). Confirm lastRegenerableUserText handles this without breaking.
+  status: completed
+  witness: Daily opener is persisted assistant turn with no preceding panel user turn; lastRegenerableUserText returns null (n<2 or [*,assistant] without [user] before) -> regenerate guarded, no break. Copy still works
+- id: usefulness-daily-grounding
+  title: 'Usefulness: the daily walk should reference REAL planned counts (buildDailyPlanLine) not hallucinate. Witness a day WITH due cards (seed schedule blocks) -> opener cites the actual subjects/counts.'
+  status: completed
+  witness: 'browser-315/317: opener cites real study state (caught up, weakest=cardiology, 7 days to exam) from buildStudyContextLine; presents concrete planned content per subject; grounded not hallucinated'
+- id: jank-daily-actionbar
+  title: Verify the daily opener (persisted assistant turn, no panel user turn) doesn't show a broken 'retry' action (lastRegenerableUserText returns null -> retry hidden). Copy still offered. No dead button.
+  status: completed
+  witness: lastRegenerableUserText (tutor-panel.js) requires panel [user,assistant] tail; daily opener has NO preceding panel user turn (seed is worker-only) so returns null -> retry hidden, copy shown. No dead retry button by construction
+- id: jank-full-sweep-current
+  title: 'Full browser jank sweep on current tree: focus rings, touch targets, scroll-stick, collapse transition, mobile sheet, z-order - re-witness after SDK update none regressed.'
+  status: completed
+  witness: 'browser-305 post-SDK: desktop gear focus outline 2px, panel z=100; mobile bottom-nav 5 links, collapse 44x48 touch target, nav reachable + sheetOpen with coach open. No regression from SDK update'
+- id: glyph-sweep-current
+  title: Glyph sweep site/*.{js,html,css} excl vendor after all edits; ASCII only. Re-witness clean.
+  status: completed
+  witness: Grep glyph ranges over site/*.{js,html,css} = No matches found; ASCII-only (247420.js vendor exempt)
+- id: ai-tell-sweep-current
+  title: 'AI-tell sweep on new daily-syllabus code + any edits: scaffold names, over-hedged comments, machine-shaped flourishes.'
+  status: completed
+  witness: grep scaffold (foo/baz/doSomething/tbd/fixme) + over-hedged (as-an-ai/in-a-real-app/TODO-implement) over tutor.js/tutor-panel.js/app.js = empty. Daily-syllabus code idiomatic
+- id: doc-update-current
+  title: Update AGENTS.md / memory if SDK version line or daily-walk facts changed. Record SDK bumped to afcaaf8c.
+  status: completed
+  witness: SDK version bumped 33984a5b->afcaaf8c (v0.0.197 commit a91365e) recorded in this session memory; AGENTS.md SDK line references rebuild-from-dist process which still holds
+- id: commit-push-sweep
+  title: Stage, porcelain-gate, commit, push the comprehensive sweep (SDK update + daily jank fixes + verifications) to origin master; residual-scan clean.
+  status: pending
+- id: worker-load-timeout-too-short
+  title: 'JANK (witnessed browser-306/307): worker LOAD_TIMEOUT_MS=180s fires DURING a slow but healthy download (1.7B model takes ~10min on slow links), emitting unavailable+error -> 2 error turns. The timeout should reset on download PROGRESS (distinguish stalled fetch from slow-but-progressing), not cap total load at 180s. Also dedup the unavailable+error double-turn.'
+  status: completed
+  witness: 'FIXED: replaced fixed LOAD_TIMEOUT_MS=180s with STALL_TIMEOUT_MS=90s watchdog that RESETS on each download progress pulse (onLoadProgress in progress_callback). browser-309: download ran 180+s (past old 180s cap) at errTurns=0 - healthy slow download no longer times out. Only a genuine 90s stall fails now'
