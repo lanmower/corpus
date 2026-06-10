@@ -1,0 +1,13 @@
+## Corpus conversation-only tutor — 7-dimension coverage matrix (2026-06-10)
+
+Systematic per-dimension verification (every dimension confirmed in source + browser):
+
+- UX: full control inventory (open/collapse/send/stop/regenerate/copy/clear/chips/daily-chip/settings/toggles/width-slider) all mouse+keyboard reachable, labelled, predictable. RESIDUAL FIXED: collapse toggle now sets aria-expanded at creation (tutor-panel.js makeToggleBtn), not only in applyResponsiveWidth. Starter chips lack a disabled-while-thinking state but are hidden when thread non-empty so it's not reachable in practice (non-defect).
+- DESIGN: anentrypoint-design at LATEST — rebuilding c:/dev/anentrypoint-design/dist reproduces corpus site/247420.js=afcaaf8c / .css=82081ff7 BYTE-IDENTICAL. A naive sha compare against an un-rebuilt dist shows false drift; ALWAYS rebuild dist (node scripts/build.mjs) before comparing. Tutor CSS uses semantic tokens; .ds-247420 scope on root (tutor-panel.js:219 className 'ds-247420 tutor-panel-root'). Hardcoded rgba shadows / contrast #000 are app-wide pre-existing, not tutor regressions.
+- SCHEDULING: empty->caught-up prompt gate correct (tutor.js hasWork). schedule.js over-full/all-disabled (sumW=0 -> []) + negative/NaN daysToExam (Math.max(7,..), safeDl Number.isFinite guard) all safe, no NaN/zero-block. RESIDUAL FIXED: app.js state.tutorCheckinPosted is a same-session dedup, NOT the day gate (shouldCheckInToday()/localStorage is) — now date-stamped (state.tutorCheckinDate) so a tab open past midnight re-arms.
+- CONFIGURATION: loadConfig merges defaults + clamps panelWidth 24..60 + survives corrupt JSON; proactiveCheckins/autoCoachOnReview read fresh at use sites and gate behaviour. RESIDUAL FIXED: saveConfig now RETURNS safeSet result (was swallowed).
+- EASE OF USE: all model states (idle/loading/downloading/ready/unavailable) have user copy; offline path adds error turn + toast + resets preloadKicked for retry; keyboard-only path complete (open->input->send->settings->escape).
+- FLUIDITY: autoscroll non-yank (80px SDK / 40px fallback threshold), rAF token batching (one render/frame), prefers-reduced-motion guarded (global blanket + explicit panel/spinner guards). ALL CLEAN.
+- PREDICTABILITY/USEFULNESS: deterministic pill (paintPill rebuilds icon only on data-status change), thinking watchdog (90s, re-armed per token, cleared on all terminal events) prevents stuck isThinking, tool-dispatch strict-regex + graceful, study-context injected per message, multi-tab sync guarded by isThinking||streamingBuf. ALL CLEAN.
+
+Commits: 037bc62 (residuals) on top of 9d35166/4d24563/a4af0c2 (gap-sweep) + peer 2c3bede (quality-max 14 fixes). 22 tests pass, browser-witnessed aria-expanded=true/role=log/zero console errors.

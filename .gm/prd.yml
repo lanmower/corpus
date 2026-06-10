@@ -1686,3 +1686,15 @@
   title: 'HIGH (workflow-missed): app.js:152,165,167 call toast.show() for export/copy feedback but toast.js exports no show() -> TypeError, feedback broken. Fix: add show() as the canonical generic toast (info aliases it).'
   status: completed
   witness: 'toast.js exports show() (info aliases). browser-100: toastShow=true, toastShowRuns=true (was TypeError). test asserts show export.'
+- id: run-quality-max-workflow
+  title: Run existing .claude/workflows/quality-max.js (8 engineering-DNA lenses -> adversarial verify -> synthesize) against current corpus site+tutor state
+  detail: Workflow already built+committed (2c3bede). Re-run to catch issues introduced since last run incl peer-uncommitted app.js/tutor-panel.js/tutor-store.js edits.
+  status: pending
+- id: fix-confirmed-findings
+  title: Fix every adversarially-confirmed finding the workflow returns; add test guardrails; browser-witness client-side edits
+  detail: Only fix MY slice + shared issues; leave peer-owned uncommitted files unless finding is in code I can own. Skip refuted findings.
+  status: pending
+- id: commit-push-own-slice
+  title: Commit+push only my own confirmed fixes with explicit paths (never git add -A); leave peer slice intact per shared-spool collision rule
+  detail: ''
+  status: pending
