@@ -1,0 +1,19 @@
+## Corpus quality-max 7th run (2026-06-10 session 7, commit 88b19e7)
+
+User re-issued the quality-max prompt. Workflow existed; the NEW move this run: EXPANDED its SCOPE constant by 27 never-reviewed modules (calendar/clipboard/confidence/context-menu/cram/drag/drill/flag/justread/lastpos/late/markdown/mastery/mistakes/newcards/progress/schedule/timer/toast/undo/usercards/verdicts + scripts anki_migrate/build_guides/build_triage/parse_yaml/syllabus + triage-llm-worker). wf_4170610a-446: 30 agents, 22 raw -> 21 confirmed / 1 refuted — the expanded scope paid: schedule.js alone yielded 7 findings.
+
+KEY FIXES:
+1. triage-llm-worker.js: per-generate DynamicCache AND per-generate InterruptableStoppingCriteria (currentStopping module ref for interrupt). The old shared stopping meant interrupt->reset->generate un-interrupted the in-flight generation. {type:'reset'} is now a back-compat NO-OP (cache per-call). KV disposed in finally.
+2. tutor.js: runChat serialized via state.chatChain promise chain (runChat wraps runChatInner) — queued user-messages can no longer generate concurrently. KV dispose moved to finally (error-path leak -> OOM spiral). TOOL_SPEC open_guide anchor arg removed (handler never read it).
+3. LOCAL DAY-KEYS END TO END: schedule.isoDate is now LOCAL calendar date (was UTC toISOString), all 7 app.js schedule day-key sites use schedule.isoDate(new Date()), newcards todayISO local. Matches the local check-in gate (run-3 fix family completed).
+4. app.js casesDoneBySubject(): extras.casesDone was keyed by SCENARIO ID at both regenerate sites but buildDayBlocks consumes [a.subject] — lookup always undefined, completed cases re-planned forever. Now maps session ids->subjects via shards. totalCasesQueued read .length on object sessions (always 0) — normalizes {cards}.
+5. schedule.js: 10-subject fallback (had 8), examDate via srsLoadConfig() import (sanitized, no raw key), quota-guarded persist() -> corpus:storage-full, dead computeDynamicIntensity/subjectList/SUBJECT_LIST removed. late.reducedQuota + tutor-panel closeTutorPanel dead-removed.
+6. tutor-panel model-downloading pulses armThinkingWatchdog (first download >90s falsely tripped 'coach stopped responding').
+7. build_data.js NUL byte -> '\0' TWO-CHAR ESCAPE via byte-level Node patch: same runtime string so ALL CARD IDS UNCHANGED (verified: rebuild diff = manifest timestamp only). File is now plain text — Edit tool is SAFE on build_data.js from now on.
+8. AGENTS.md: site/llm-worker.js never existed; triage-llm-worker.js is triage-ONLY (tutor uses tutor.js).
+
+SDK: rebuilt dist (v0.0.201, upstream 2ba5785 'predictable interaction lifecycles'), shas drifted, recopied.
+
+test.js 23 pass (run-7 block ~20 assertions: per-call KV/stopping, chatChain, local day-keys x7, casesDoneBySubject x3, no NUL, honest header). Browser sessions 50/51 witnessed both pages, zero console errors.
+
+LESSON: scope expansion is the 'consider everything not yet considered' move when the workflow already exists — 27 added modules produced 21 real findings after 6 prior exhaustive runs over the OLD scope.

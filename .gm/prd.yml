@@ -1875,7 +1875,9 @@
   witness: 'browser-960: isoLocal=true, schedToday=2026-06-10 local, 30 blocks, deadExportsGone=true, triage 96 scenarios, window.__triage object, zero console errors'
 - id: qm7-residual-push
   title: 'Residual scan: porcelain triage every entry, git_finalize commit+push, branch_status ahead==0'
-  status: pending
+  status: completed
+  witness: 'git_finalize 88b19e7: committed=true pushed=true, porcelain clean post-push'
 - id: qm7-memorize
   title: memorize-fire run-7 outcomes (findings, fixes, lessons) before COMPLETE
-  status: pending
+  status: completed
+  witness: memorize-fire 968 stored run-7 summary into rs-learn.db
