@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-10
+
+### Fixed
+- Tutor daily-syllabus walk uses a dedicated caught-up prompt when today's plan has no actionable blocks, so the coach no longer tries to "present the first step" of an empty plan.
+- Chat conversation region is now `role="log"` with `aria-atomic="false"`, so assistive tech announces appended messages as a conversation log.
+- Tutor settings popover is now a `role="dialog"` modal with a Tab focus trap (Escape and outside-click still close it).
+- Malformed-JSON and unknown-action tool blocks now log a warning instead of being silently dropped (still no-throw).
+
 ## 2026-05-07
 
 ### Fixed
