@@ -217,7 +217,9 @@ function renderSdkChat() {
         chatRoot.style.cssText = 'flex:1;overflow:hidden;display:flex;flex-direction:column;';
         // Announce streamed/added messages to assistive tech (the SDK thread has
         // no live region of its own; the fallback path uses aria-live too).
+        chatRoot.setAttribute('role', 'log');
         chatRoot.setAttribute('aria-live', 'polite');
+        chatRoot.setAttribute('aria-atomic', 'false');
         chatRoot.setAttribute('aria-label', 'Study coach conversation');
         panelContainer.appendChild(chatRoot);
 
@@ -387,8 +389,18 @@ function updateEmptySlot(isEmpty) {
 function buildSettingsPopover() {
     const pop = document.createElement('div');
     pop.className = 'tutor-settings-pop';
-    pop.setAttribute('role', 'group');
+    pop.setAttribute('role', 'dialog');
+    pop.setAttribute('aria-modal', 'true');
     pop.setAttribute('aria-label', 'Tutor settings');
+    // Keep Tab focus inside the open popover (Escape/outside-click still close it).
+    pop.addEventListener('keydown', e => {
+        if (e.key !== 'Tab') return;
+        const f = pop.querySelectorAll('input, button, [tabindex]:not([tabindex="-1"])');
+        if (!f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+        else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+    });
     const toggleRow = (label, key) => {
         // A native <label> wrapping a native checkbox already exposes the correct
         // checkbox role + checked state to assistive tech and toggles on label

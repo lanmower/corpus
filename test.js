@@ -892,6 +892,20 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(/autoCoachOnReview/.test(app) && /proactiveCheckins/.test(app), 'app gates coaching/checkin on config');
         // daily check-in now launches the interactive syllabus walk with real blocks
         assert.ok(/startDailySyllabus\(plan\)/.test(app) && /setDailyPlanProvider/.test(app), 'app launches daily-syllabus walk with today blocks');
+        // empty/caught-up plan must NOT use the "present the FIRST block" prompt (that
+        // contradicts the caught-up plan line and yields nonsense). A distinct
+        // dailyCaughtUp prompt is selected when no actionable blocks exist.
+        assert.ok(/dailyCaughtUp:\s*`/.test(workerTutor), 'worker has a caught-up daily prompt variant');
+        assert.ok(/const hasWork =/.test(workerTutor) && /SYS\.daily : SYS\.dailyCaughtUp/.test(workerTutor), 'daily handler branches prompt on whether the plan has actionable blocks');
+        assert.ok(/do NOT pretend there is a first block/.test(workerTutor), 'caught-up prompt forbids inventing a first block');
+        // chat log a11y: append-only region announced as a log (not a bare div)
+        assert.ok(/setAttribute\('role', 'log'\)/.test(panelSrc) && /aria-atomic', 'false'/.test(panelSrc), 'chat root is role=log with aria-atomic=false');
+        // settings overlay is a modal dialog with a Tab focus trap (Escape/outside-click already close it)
+        assert.ok(/setAttribute\('role', 'dialog'\)/.test(panelSrc) && /aria-modal', 'true'/.test(panelSrc), 'settings popover is role=dialog aria-modal');
+        assert.ok(/if \(e\.key !== 'Tab'\) return;/.test(panelSrc) && /last\.focus\(\); e\.preventDefault\(\)/.test(panelSrc), 'settings popover traps Tab focus');
+        // tool-dispatch surfaces malformed JSON + unknown actions (debugging aid; still no-throw)
+        const tdSrc = READ('site/tool-dispatch.js');
+        assert.ok(/malformed tool-block JSON/.test(tdSrc) && /unknown tool action/.test(tdSrc), 'tool-dispatch warns on malformed/unknown blocks');
         // message actions: SDK-agnostic action bar with copy + regenerate, hidden while thinking/streaming
         assert.ok(/tutor-action-bar/.test(panelSrc) && /updateActionBar/.test(panelSrc), 'panel has the SDK-agnostic action bar');
         assert.ok(/clipboard\?\.writeText/.test(panelSrc), 'copy uses clipboard');

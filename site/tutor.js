@@ -266,7 +266,12 @@ const SYS = {
     // provided in the user turn; the coach proposes the FIRST step and always ends
     // by inviting a reply so the dialogue continues, and drives the page with tool
     // blocks when the student is ready to act.
-    daily: `you are the user's medical-study coach running today's study plan as a conversation. you are given today's planned blocks (subjects in order, each with how many reviews / new cards / guide sections / cases are planned) and the student's study state. greet briefly (suit the time of day), then present the FIRST block concretely (subject + what's planned for it). do NOT dump the whole plan as a list — surface one step at a time. ALWAYS end your message by inviting the student's reply (e.g. "ready to start cardiology? say go, or tell me what you'd rather do first"). when the student agrees to start, emit the matching tool block to drive the page. keep each message to 2-4 sentences. warm, specific, no filler.`
+    daily: `you are the user's medical-study coach running today's study plan as a conversation. you are given today's planned blocks (subjects in order, each with how many reviews / new cards / guide sections / cases are planned) and the student's study state. greet briefly (suit the time of day), then present the FIRST block concretely (subject + what's planned for it). do NOT dump the whole plan as a list — surface one step at a time. ALWAYS end your message by inviting the student's reply (e.g. "ready to start cardiology? say go, or tell me what you'd rather do first"). when the student agrees to start, emit the matching tool block to drive the page. keep each message to 2-4 sentences. warm, specific, no filler.`,
+    // Caught-up variant: there are no scheduled blocks today. Do NOT invent or
+    // "present the first block" — there is none. Acknowledge they are caught up and
+    // offer one optional light next step (weak-area drill or a short review),
+    // inviting a reply. 2-3 sentences, warm, no filler.
+    dailyCaughtUp: `you are the user's medical-study coach. today's plan is empty — the student is caught up with no scheduled reviews, new cards, guide sections, or cases. do NOT pretend there is a first block to start; there isn't. congratulate them briefly (suit the time of day), then offer ONE optional light next step — drilling their weakest subject or a short refresher — and invite them to choose or rest. if they agree to drill or review, emit the matching tool block to drive the page. keep it to 2-3 sentences. warm, specific, no filler.`
 };
 
 const TOOL_SPEC = `available page-control tools — emit each in its own fenced block, language=tool:
@@ -348,13 +353,22 @@ self.addEventListener('message', async (e) => {
         // this seeds the worker history so the follow-up chat path continues the
         // walk coherently (the panel persists it as a real thread turn).
         if (cmd === 'daily-syllabus') {
+            const blocks = Array.isArray(data.plan?.blocks) ? data.plan.blocks : [];
+            const hasWork = blocks.some(b => b && b.kind !== 'break' && b.subject &&
+                ((Number(b.plannedReview) || 0) || (Number(b.plannedNew) || 0) ||
+                 (Array.isArray(b.plannedSections) ? b.plannedSections.length : (Number(b.plannedSections) || 0)) ||
+                 (Array.isArray(b.plannedCases) ? b.plannedCases.length : (Number(b.plannedCases) || 0))));
             const planLine = buildDailyPlanLine(data.plan);
             const ctxLine = buildStudyContextLine(data.context);
             const user = `today's plan:\n${planLine}${ctxLine}\nlocal hour: ${new Date().getHours()}\n\nstart walking me through today.`;
+            // When there are no actionable blocks the "present the FIRST block"
+            // instruction in SYS.daily contradicts the caught-up plan line, so the
+            // model produces nonsense. Swap to the caught-up prompt in that case.
+            const sysDaily = hasWork ? SYS.daily : SYS.dailyCaughtUp;
             // Seed the conversation so subsequent chat turns continue the syllabus
             // walk (the model sees the opener as the prior assistant turn).
             pushHistory('user', "let's start today's plan");
-            const reply = await runChat([{ role: 'system', content: SYS.daily }, { role: 'user', content: user }],
+            const reply = await runChat([{ role: 'system', content: sysDaily }, { role: 'user', content: user }],
                 { doneEvent: 'daily-syllabus-done', maxTokens: 240 });
             if (reply && reply.trim()) pushHistory('assistant', reply);
             return;
