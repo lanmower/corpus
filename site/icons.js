@@ -16,8 +16,6 @@ export const ICON = {
     arrowLeft: svg('<path d="M13 8H3"/><path d="M7 4L3 8l4 4"/>'),
     // up arrow — "back to top"
     arrowUp: svg('<path d="M8 13V3"/><path d="M4 7l4-4 4 4"/>'),
-    // filled play triangle — "video"
-    play: '<svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M4.5 3.2v9.6a.6.6 0 0 0 .92.5l7.2-4.8a.6.6 0 0 0 0-1l-7.2-4.8a.6.6 0 0 0-.92.5Z"/></svg>',
     // check — "read / done"
     check: svg('<path d="M3 8.5l3.2 3.2L13 5"/>'),
     // hollow circle — "not done"

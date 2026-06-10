@@ -493,7 +493,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.ok(!fs.existsSync(path.join(ROOT, `${s}_triage_scenarios.yml`)), `${s} legacy triage at root must be gone`);
         }
         const build = READ('scripts/build_data.js');
-        assert.ok(/CORPUS_SYLLABUS/.test(build), 'build_data.js missing CORPUS_SYLLABUS env hook');
+        // build_data.js must DELEGATE to the single-owner resolver, not reimplement
+        // it — the CORPUS_SYLLABUS env hook now lives once in scripts/syllabus.js so a
+        // layout change reaches both the shard build and the Anki export. Asserting the
+        // import (not a copied literal) is what keeps the single-owner contract honest.
+        assert.ok(/require\(['"]\.\/syllabus\.js['"]\)/.test(build), 'build_data.js must import scripts/syllabus.js (single-owner resolver), not duplicate it');
+        assert.ok(/resolveSyllabus/.test(build) && /CORPUS_SYLLABUS/.test(READ('scripts/syllabus.js')), 'CORPUS_SYLLABUS env hook must live in syllabus.js and be consumed by build_data.js');
         assert.ok(/SUBJ_ROOT/.test(build), 'build_data.js missing SUBJ_ROOT');
         // anki_export.js + build_data.js share one syllabus-path resolver so the
         // documented `node scripts/anki_export.js` cannot drift into an ENOENT
@@ -511,11 +516,11 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(liveSrc, /state\.streak = score >= 70[\s\S]{0,400}?persistActive\(\)/, 'graded score must be re-persisted after lastGrade is set');
         const ankiSrc = READ('scripts/anki_export.js');
         assert.match(ankiSrc, /require\('\.\/syllabus\.js'\)/, 'anki_export.js must use the shared syllabus resolver');
-        // build_data.js carries its own flat-layout fallback SUBJECTS list (it cannot
-        // import syllabus.js without risking the embedded NUL in stableCardId); that
-        // fallback must stay complete or `node scripts/build_data.js` silently drops
-        // the two paediatrics subjects when no syllabus.json is present.
-        assert.ok(/'paediatrics'/.test(build) && /'paediatrics-neonatal'/.test(build), 'build_data.js fallback SUBJECTS must include both paediatrics subjects');
+        // build_data.js now uses the single-owner DEFAULT_SUBJECTS fallback from
+        // syllabus.js (asserted complete at line 503), so it can never drift out of
+        // sync with the resolver — a layout change updates one list, both consumers
+        // follow. `node scripts/build_data.js` ran clean above proving the import works.
+        assert.ok(/SUBJECTS = SYLLABUS\.subjects \|\| DEFAULT_SUBJECTS/.test(build), 'build_data.js must fall back to the shared DEFAULT_SUBJECTS, not a duplicated list');
         assert.ok(!/path\.join\(ROOT, s, 'srs-cards'\)/.test(ankiSrc), 'anki_export.js must not read the flat ROOT/<subj>/srs-cards layout');
         // It actually runs without throwing and emits notes.
         const cp = require('child_process');

@@ -1,0 +1,11 @@
+## Corpus tutor conversation-mode detail (drained from AGENTS.md 2026-06-10)
+
+site/tutor-panel.js (chat UI) + site/tutor.js (Bonsai WebGPU worker) + site/tutor-store.js (persistence/config, corpus.tutor.*.v1). Invariants:
+- daily-syllabus worker handler MUST select SYS.dailyCaughtUp (never SYS.daily) when the plan has no actionable blocks — SYS.daily says 'present the FIRST block' which contradicts an empty plan and yields nonsense.
+- chat root #tutor-chat-root carries role='log' / aria-atomic='false'; settings popover is role='dialog'/aria-modal with a Tab focus trap.
+- tool-dispatch.js warns (never throws) on malformed-JSON or unknown-action tool blocks.
+- daily check-in day gate is shouldCheckInToday() (localStorage date); state.tutorCheckinPosted in app.js is ONLY a same-session double-post dedup and MUST be date-stamped (state.tutorCheckinDate) so a tab open past midnight re-arms.
+- saveConfig returns the safeSet result so callers can detect a quota-rejected write.
+- Panel defaults collapsed; worker context cap WORKER_CONTEXT_TURNS=16 (shared) vs 40 visible turns; model lazy-loaded via preloadTutorModel(); KV resets on system-prompt change (state.kvSysKey).
+- AICat ignores header/empty props so controls render as DOM-overlay siblings (#tutor-hdr-controls w/ inline-SVG icons, #tutor-empty-slot, #tutor-action-bar).
+Full worker-cmd protocol, watchdog, multi-tab sync, daily check-in, SVG-icon + a11y + scheduling-guard details: recall 'corpus tutor + theming + glyph state' and 'AICat ignores header/empty props'.

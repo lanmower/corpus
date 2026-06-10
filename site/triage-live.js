@@ -970,9 +970,15 @@ function simulateAssistant(userText) {
             blocks.push('```tool\n' + JSON.stringify({ name: 'add_card', args: { id: `gap-${Date.now()}-${misses}`, kind: 'note', title: `missed: ${a.atom.slice(0, 50)}`, body: (a.definition || '').slice(0, 200) } }) + '\n```');
         }
     }
-    const score = atoms.length ? Math.round(100 * hits / atoms.length) : 0;
+    // Report the percentage over the FULL atom count, the same denominator
+    // set_phase() uses to compute the authoritative persisted grade. Only the
+    // first 6 atoms can be highlighted/hit, but dividing by the capped 6 here
+    // would print a blurb (e.g. "5 of 6, 83%") that contradicts the grade panel
+    // (5/8 = 63%) for the 29 scenarios with >6 atoms. One denominator, no divergence.
+    const totalAtoms = (sc.atoms || []).length;
+    const score = totalAtoms ? Math.round(100 * hits / totalAtoms) : 0;
     blocks.push('```tool\n' + JSON.stringify({ name: 'set_phase', args: { phase: 'graded' } }) + '\n```');
-    blocks.push(`\noffline grade: ${hits} of ${atoms.length} key topics (${score}%). gaps shown on board.`);
+    blocks.push(`\noffline grade: ${hits} of ${totalAtoms} key topics (${score}%). gaps shown on board.`);
     return blocks.join('\n');
 }
 state.simulateAssistant = simulateAssistant;

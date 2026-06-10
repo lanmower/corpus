@@ -1,0 +1,16 @@
+## Corpus quality-max run-5: triage LLM surface fixes (2026-06-10 session 5, commits 1d00a93 + 0ab6304)
+
+User re-issued the conversation-only-tutor sweep /goal after compact. Orient (recall) confirmed 8 prior sessions already drove the dense closure; reopened PLAN once (transition to=PLAN) for the user-authorized re-run. Two genuinely NEW residuals surfaced:
+
+1. SDK DRIFT (commit 1d00a93): corpus site/247420.js was STALE at v0.0.197 (afcaaf8c) vs upstream v0.0.198 (11fdf9ed = freshly-rebuilt dist, byte-identical). CSS stayed 82081ff7. Upstream added 01a8d55 responsive desk/tablet/mobile layer + 7f0d31f ShortcutHelpDialog label. ALWAYS rebuild c:/dev/anentrypoint-design dist (node scripts/build.mjs) BEFORE comparing shas. Copied fresh dist into site/. Browser-witnessed: .ds-247420 scope mounts, navLinks=17, zero console errors, consumed AICat/Topbar signatures unaffected.
+
+2. quality-max run (.claude/workflows/quality-max.js, wf_5f226a35-c0e: 14 agents, 8 lenses, 5 confirmed / 1 refuted) surfaced 5 triage-live.js residuals — the conversation tutor's SIBLING LLM surface, never swept before (commit 0ab6304):
+  - HIGH: generateLLM re-fed full prompt every turn but NEVER reset the shared worker KV -> populated cache double-counts prefix -> same canned reply every input (the exact bug tutor.js:135-142 documents fixing). Fix: post {type:reset} before each {type:generate}.
+  - MEDIUM: interrupted generation still emits its own 'complete'; consumer ignored the documented requestId. Fix: generate carries incrementing requestId (state._activeReqId); start/update/complete/error drop mismatched requestId.
+  - MEDIUM: loadManifestAndScenarios + boot IIFE had no try/catch -> offline/mid-download bricks page on 'loading cases...' placeholder. Fix: ok-checked fetchJson + boot try/catch renders error+retry panel into #scenario-list.
+  - LOW: removed dead gpu-info consumer branch (worker never emits it).
+  - LOW: removed unused 'snippet as searchSnippet' import in app.js:22 (snippet still reachable via window.__search.snippet).
+
+Browser-witnessed (browser-61/62): triage loads 96 scenario rows no stale placeholder, index search.snippet still function, zero console errors. test.js run-5 group asserts all 5 (21 pass/0 fail). AGENTS.md gained a 'Triage LLM turn contract' bullet.
+
+LESSON: a re-issued long-horizon /goal is NOT automatically empty — running the existing quality-max workflow against current state caught a real HIGH-sev KV bug on a sibling surface + an SDK version bump that drifted since the last byte-identical check. Re-run the workflow, don't assume prior coverage holds.

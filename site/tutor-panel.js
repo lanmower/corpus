@@ -993,7 +993,8 @@ export function wireWorkerToPanel(worker) {
                 setChatLive('polite');
                 const clean = dispatchAndStrip(message);
                 streamingBuf = '';
-                if (clean && clean.trim()) {
+                const dailyRendered = !!(clean && clean.trim());
+                if (dailyRendered) {
                     // Persist interrupted as metadata, not baked into the text —
                     // so the marker never reloads into the thread or feeds back
                     // into the model's context on reseed.
@@ -1006,7 +1007,10 @@ export function wireWorkerToPanel(worker) {
                 if (event === 'daily-syllabus-done') {
                     // The interactive daily walk IS today's check-in — consume the slot
                     // (date-guarded against a post-midnight rollover, same as overview).
-                    if (shouldCheckInToday()) markCheckedIn();
+                    // Only consume it once a plan actually rendered: an empty/interrupted/
+                    // tool-only reply must NOT burn the day's single slot and leave the
+                    // coach silent until the next local-midnight rollover re-arms it.
+                    if (dailyRendered && shouldCheckInToday()) markCheckedIn();
                     if (isPanelCollapsed) showTutorToast('Your study coach has planned your day', 6000);
                 }
                 break;
@@ -1027,14 +1031,17 @@ export function wireWorkerToPanel(worker) {
                     if (inline) inline.textContent = clean;
                 }
                 if (event === 'session-overview-done') {
-                    // Daily greeting: consume the check-in slot only once it actually
-                    // rendered. Guard against a reply that arrives after a local-midnight
-                    // rollover stamping the wrong (prior) day as checked-in.
-                    if (shouldCheckInToday()) markCheckedIn();
+                    // Daily greeting: consume the check-in slot only once the plan
+                    // actually rendered. An empty (interrupted/error/whitespace) reply
+                    // must not burn the day's slot and leave the greeting silently gone
+                    // until the next local-midnight rollover. The date guard inside
+                    // shouldCheckInToday() also protects against a reply that lands after
+                    // rollover stamping the wrong (prior) day.
                     // Render the full personalized plan into the thread (it used to be a
                     // truncated 6s toast that was discarded). A short toast nudges the
                     // user to open the panel if it's collapsed.
                     if (clean && clean.trim()) {
+                        if (shouldCheckInToday()) markCheckedIn();
                         addTutorMessage(clean, false);
                         if (isPanelCollapsed) showTutorToast('Your study coach has a plan for today', 6000);
                     }

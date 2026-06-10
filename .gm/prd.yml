@@ -1725,12 +1725,14 @@
   title: Run .claude/workflows/quality-max.js against current state to surface any NEW residual across all engineering-DNA lenses since last run (commit 6032078)
   blockedBy:
   - verify-clean-baseline
-  status: pending
+  status: completed
+  witness: 'wf_5f226a35-c0e: 14 agents, 8 lenses, 5 confirmed / 1 refuted. Findings drove rows 56-60.'
 - id: fix-new-confirmed-findings
   title: Adversarially verify and fix any newly-confirmed quality-max findings; browser-witness each client-side edit; add test assertions
   blockedBy:
   - run-quality-max-fresh
-  status: pending
+  status: completed
+  witness: all 5 confirmed findings fixed+tested+browser-witnessed across commits 0ab6304; 21 tests pass
 - id: commit-push-doc-state
   title: Commit and push any new fixes + doc/changelog updates with porcelain-gated push; transition to COMPLETE on clean tree
   blockedBy:
@@ -1739,23 +1741,28 @@
 - id: fix-triage-kv-reset
   title: 'HIGH: triage-live.js generateLLM never sends {type:reset} so shared worker reuses populated KV across full-prompt turns -> canned repeated replies (same bug tutor.js fixes)'
   blockedBy: []
-  status: pending
+  status: completed
+  witness: triage-live.js generateLLM posts {type:reset} before generate; test run-5 asserts; commit 0ab6304 + browser-61 witness
 - id: fix-triage-dataload-failpath
   title: 'MEDIUM: triage-live.js loadManifestAndScenarios + boot IIFE have no try/catch -> offline/mid-download bricks page on loading-cases placeholder with no error/retry'
   blockedBy: []
-  status: pending
+  status: completed
+  witness: fetchJson ok-check + boot try/catch error+retry panel; browser-61 96 rows no stale placeholder; commit 0ab6304
 - id: fix-triage-requestid
   title: 'MEDIUM: triage generateLLM sends no requestId and complete handler ignores it -> interrupted generation stale complete resolves next turn'
   blockedBy: []
-  status: pending
+  status: completed
+  witness: generate carries requestId; start/update/complete/error guard on _activeReqId; test run-5; commit 0ab6304
 - id: fix-triage-gpuinfo-deadbranch
   title: 'LOW: triage-live.js onWorkerMessage has dead gpu-info branch worker never emits + protocol header omits -> remove for honest interface'
   blockedBy: []
-  status: pending
+  status: completed
+  witness: gpu-info branch removed; test run-5 asserts absence; commit 0ab6304
 - id: fix-app-dead-snippet-import
   title: 'LOW: app.js:22 imports snippet as searchSnippet but never uses it -> remove dead alias'
   blockedBy: []
-  status: pending
+  status: completed
+  witness: snippet-as-searchSnippet alias removed; browser-62 window.__search.snippet still function; commit 0ab6304
 - id: fix-icon-play-unused
   title: Remove unused ICON.play entry from site/icons.js (subtractive lens, low) — never consumed; lightbox uses native <video>
   status: pending
