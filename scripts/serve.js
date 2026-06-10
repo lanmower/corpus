@@ -25,4 +25,3 @@ const srv = http.createServer((req, res) => {
 });
 const PORT = parseInt(process.env.PORT || '8765', 10);
 srv.listen(PORT, '127.0.0.1', () => console.log(`serving ${ROOT} on http://127.0.0.1:${PORT} (COOP/COEP isolated)`));
-setInterval(() => {}, 60000);

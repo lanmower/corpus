@@ -110,7 +110,11 @@ export function schedule(state, score, now = Date.now(), rng = Math.random) {
 }
 
 export function compressInterval(interval, effectiveDays, pendingCount) {
-    if (effectiveDays <= 0) return 1;
+    // Non-finite effectiveDays (a corrupt/unparseable examDate -> NaN) must NOT
+    // slip through `<= 0` (NaN <= 0 is false): a NaN pressure poisons interval and
+    // dueAt to NaN, and `NaN > now` is always false, so the card becomes
+    // permanently due and never re-schedules. Treat non-finite as max pressure.
+    if (!Number.isFinite(effectiveDays) || effectiveDays <= 0) return 1;
     const pressure = Math.min(1, pendingCount / effectiveDays);
     return Math.max(1, Math.round(interval * (1 - pressure * 0.5)));
 }
@@ -121,6 +125,12 @@ function dateOf(ms) { return new Date(ms).toISOString().slice(0, 10); }
 function migrate(payload) {
     if (!payload || typeof payload !== 'object') return { version: SCHEMA_VERSION, states: {} };
     if (payload.version === SCHEMA_VERSION) return payload;
+    // A version we don't recognise (a backup from a NEWER schema) must be rejected,
+    // not silently re-stamped as the current version - restamping would relabel
+    // possibly-incompatible card states. null/absent is the only known older shape.
+    if (payload.version != null && payload.version !== SCHEMA_VERSION) {
+        throw new Error(`srs: unsupported schema version ${payload.version} (this build supports ${SCHEMA_VERSION})`);
+    }
     if (payload.version == null && typeof payload === 'object') {
         const states = {};
         for (const [id, s] of Object.entries(payload)) {
@@ -183,7 +193,12 @@ export function loadConfig() {
     try {
         const raw = localStorage.getItem(CONFIG_KEY);
         const cfg = raw ? JSON.parse(raw) : {};
-        return { examDate: DEFAULT_EXAM_DATE, sessionGoal: 30, ...cfg };
+        const out = { examDate: DEFAULT_EXAM_DATE, sessionGoal: 30, ...cfg };
+        // A hand-edited / legacy / unparseable examDate would make new Date() an
+        // Invalid Date and cascade NaN through the whole SM-2 schedule. Fall back
+        // to the default rather than persist a poison value downstream.
+        if (!Number.isFinite(new Date(out.examDate).getTime())) out.examDate = DEFAULT_EXAM_DATE;
+        return out;
     } catch { return { examDate: DEFAULT_EXAM_DATE, sessionGoal: 30 }; }
 }
 

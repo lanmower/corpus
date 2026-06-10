@@ -76,6 +76,27 @@ const state = {
 };
 window.__triage = state;
 
+// state.generating gates the composer (disabled while true). It is cleared on the
+// worker's complete/error message — but a WebGPU device-lost mid-generate emits
+// NEITHER, leaving generating stuck true and the composer permanently disabled.
+// setGenerating owns the flag AND a watchdog so the flag can never be raised
+// without a recovery path (mirrors tutor-panel.js armThinkingWatchdog).
+const THINKING_TIMEOUT_MS = 90000;
+let thinkingWatchdog = null;
+function setGenerating(v) {
+    state.generating = !!v;
+    clearTimeout(thinkingWatchdog);
+    thinkingWatchdog = null;
+    if (v) {
+        thinkingWatchdog = setTimeout(() => {
+            if (!state.generating) return;
+            state.generating = false;
+            showWebgpuError('the tutor stopped responding - please try again.', '');
+            if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
+        }, THINKING_TIMEOUT_MS);
+    }
+}
+
 function pickFromVariance(varObj) {
     // Variance descriptor: { mild: {...}, moderate: {...}, severe: {...} } -> pick one key.
     if (!varObj || typeof varObj !== 'object') return null;
@@ -636,7 +657,7 @@ const TOOLS = {
             setTimeout(() => {
                 if (state.workerReady && !state.generating) {
                     const sys = buildSnapshot('grading');
-                    state.generating = true;
+                    setGenerating(true);
                     state.worker?.postMessage({ type: 'generate', messages: [
                         { role: 'system', content: sys },
                         { role: 'user', content: 'grade the board now using the answer key above. emit highlight_card and add_card tools per the system prompt, then set_phase phase=graded.' }
@@ -743,6 +764,7 @@ function spawnWorker() {
         state.worker.addEventListener('message', onWorkerMessage);
         state.worker.addEventListener('error', e => {
             const reason = e.message || `${e.filename || 'worker'}:${e.lineno || '?'}`;
+            setGenerating(false);
             showWebgpuError(reason, '');
             state.worker = null;
         });
@@ -799,13 +821,13 @@ function onWorkerMessage(e) {
         const text = m.output || state.streamBuffer;
         const last = state.messages[state.messages.length - 1];
         if (last && last.role === 'assistant') last.content = stripToolBlocks(text);
-        state.generating = false;
+        setGenerating(false);
         renderMessages();
         runToolCalls(text, TOOLS);
         if (state.phase === 'graded') renderActive();
         if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
     } else if (m.status === 'error') {
-        state.generating = false;
+        setGenerating(false);
         showWebgpuError(m.error || 'unknown worker error', m.stack || '');
         if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
     }
@@ -842,7 +864,7 @@ function generateLLM(userText) {
         { role: 'user', content: userText }
     ];
     if (state.generating) state.worker.postMessage({ type: 'interrupt' });
-    state.generating = true;
+    setGenerating(true);
     state.worker.postMessage({ type: 'generate', messages });
     return new Promise(resolve => { state._afterGenerate = resolve; });
 }

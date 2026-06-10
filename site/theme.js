@@ -52,8 +52,14 @@ export function makeToggleButton(doc = document) {
     };
     label();
     btn.addEventListener('click', () => { cycleTheme(); label(); });
+    // Re-apply on ANY media input effectiveTheme() reads, so the resolved 'auto'
+    // value can't silently drift from the live OS prefs. Both queries (color-scheme
+    // AND contrast) feed effectiveTheme(), so both need a paired change listener;
+    // missing the contrast listener left high-contrast toggles needing a reload.
     if (typeof matchMedia !== 'undefined') {
-        try { matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => applyTheme()); } catch {}
+        for (const q of ['(prefers-color-scheme: dark)', '(prefers-contrast: more)']) {
+            try { matchMedia(q).addEventListener('change', () => applyTheme()); } catch {}
+        }
     }
     return btn;
 }

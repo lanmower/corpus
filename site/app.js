@@ -24,7 +24,7 @@ import { makeToggleButton } from './theme.js';
 import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from './drag.js';
 import { showContextMenu, closeContextMenu } from './context-menu.js';
 import { initTutorPanel, wireWorkerToPanel, addTutorMessage, setTutorContext, syncTutorFromStorage, startDailySyllabus, setDailyPlanProvider, sendTutorMessage } from './tutor-panel.js';
-import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn } from './tutor-store.js';
+import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn, todayStamp as localDateStamp } from './tutor-store.js';
 import { ICON } from './icons.js';
 
 // Render an icon as an inline element for el()/innerHTML contexts. Returns a span
@@ -385,8 +385,11 @@ function renderTutorOverviewPanel(due, newCount) {
         // flag too: re-rendering the daily page (nav back) before the reply lands
         // must not post a second session-overview and duplicate the plan in-thread.
         // Re-arm the same-session dedup flag when the local date rolls over, so a
-        // tab left open past midnight still fires the next day's check-in.
-        const checkinToday = new Date().toISOString().slice(0, 10);
+        // tab left open past midnight still fires the next day's check-in. Must use
+        // the LOCAL date (matching tutor-store's shouldCheckInToday()/todayStamp()),
+        // not UTC: a UTC stamp re-arms at the wrong boundary, so a user behind UTC
+        // would have the gate re-open at local midnight while this flag stayed set.
+        const checkinToday = localDateStamp();
         if (state.tutorCheckinDate !== checkinToday) {
             state.tutorCheckinDate = checkinToday;
             state.tutorCheckinPosted = false;

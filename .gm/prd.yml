@@ -1687,10 +1687,10 @@
   status: completed
   witness: 'toast.js exports show() (info aliases). browser-100: toastShow=true, toastShowRuns=true (was TypeError). test asserts show export.'
 - id: run-quality-max-workflow
-  title: Run existing .claude/workflows/quality-max.js (8 engineering-DNA lenses -> adversarial verify -> synthesize) against current corpus site+tutor state
-  detail: Workflow already built+committed (2c3bede). Re-run to catch issues introduced since last run incl peer-uncommitted app.js/tutor-panel.js/tutor-store.js edits.
+  title: Run existing .claude/workflows/quality-max.js against current corpus state (8 engineering-DNA lenses, adversarial verify)
+  phase: EXECUTE
   status: completed
-  witness: 'wf_86bc4fa7-fbf: 17 agents, 8 confirmed/2 refuted findings returned'
+  witness: 'wf_6490f4c6-884: 16 agents, 8 raw -> 7 confirmed / 1 refuted (task w4p1abfm6 output)'
 - id: fix-confirmed-findings
   title: Fix every adversarially-confirmed finding the workflow returns; add test guardrails; browser-witness client-side edits
   detail: Only fix MY slice + shared issues; leave peer-owned uncommitted files unless finding is in code I can own. Skip refuted findings.
@@ -1701,3 +1701,13 @@
   detail: ''
   status: completed
   witness: commit b05282e pushed af5b176..b05282e; 4 explicit files (triage-live.js srs.js build_data.js test.js); peer slice already committed by peer; .gm/prd.yml left unstaged
+- id: triage-confirmed-findings
+  title: Convert each confirmed finding from workflow run into its own PRD fix row with witness; refuted ones discarded
+  phase: EXECUTE
+  status: completed
+  witness: '7 confirmed findings fixed: app.js:389 local-date dedup, serve.js:28 dead interval removed, build_data.js:205 guide body, theme.js:55 contrast listener, srs.js:112 NaN guard + loadConfig validate, triage-live.js setGenerating watchdog, srs.js:131 future-schema reject'
+- id: fix-and-verify-findings
+  title: Fix every confirmed finding, browser-witness any client-side edit, run test.js, commit+push
+  phase: EXECUTE
+  status: completed
+  witness: browser-4 WITNESS {compress_nan_guarded:true,import_future_rejected:true,localStamp_is_local:true,theme_api:true}; test.js 19 pass/0 fail; cardiology guide 6/8 sections body (22250ch sample)

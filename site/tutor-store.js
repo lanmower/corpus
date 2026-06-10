@@ -130,7 +130,7 @@ export function saveConfig(config) {
 }
 
 // ----- daily check-in gate -----
-function todayStamp() {
+export function todayStamp() {
     // Zero-padded local date (YYYY-MM-DD). Local — not UTC — so the "new day"
     // rolls over at the user's local midnight, matching how they perceive "today".
     const d = new Date();
