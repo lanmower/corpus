@@ -1,0 +1,14 @@
+## Corpus app.js god-module split (2026-06-10 session 7)
+
+User (after quality-max 6th run confirmed app.js as a 2923-line god-module via composition-spine lens) chose 'Tackle app.js god-module'. CORRECT SCOPE (Principle 2/12 judgment): per-route renderers are NOT cleanly extractable — they share a module-private `state` global + a mutable `stage` binding reassigned during SDK render + ~50 cross-calls; extracting them would net-GROW surface (export state, el, go, render, stage...). Only the PURE LEAF clusters were extracted:
+
+1. site/markdown.js — DISFLUENCY_RE, cleanDisfluencies, typoRefine, softSplitPara, renderMarkdown. Depends ONLY on ICON (icons.js). renderMarkdown's affordance() emits the guide-aff tutor link. ~118 lines.
+2. site/clipboard.js — copyToClipboard, fallbackCopy. Depends ONLY on toast.js. ~22 lines.
+
+app.js now `import { renderMarkdown } from './markdown.js'` + `import { copyToClipboard } from './clipboard.js'` (only the 2 names it actually calls — trimmed unused). app.js 2923 -> ~2783 lines.
+
+TEST MIGRATION (the key constraint): test.js had ~40 READ('site/app.js') regex assertions. Markdown helper test now imports site/markdown.js (top-level `const markdown = await import` in the IIFE) instead of vm-evaling an app.js source-slice; renderMarkdown/openListIfNeeded/blockquote/hr + guide-aff assertions read site/markdown.js source; clipboard assertions read site/clipboard.js + assert app IMPORTS them and no longer DEFINES them. 22 pass/0 fail.
+
+WITNESS: browser session on live index.html#subject/cardiology — errs=[], `await import('./markdown.js')` exposes all 5 exports, renderMarkdown produces hasH1/H2/P/Ul/Ol + tutor guide-aff, clipboard.js loads. The guide UI lazy-renders body into chunk panels (buildChunkedGuide) so DOM `p` count was 0 via route nav — witnessed renderMarkdown DIRECTLY via dynamic import on the live page instead. The live page IS the debugger.
+
+DEFERRED still: per-route render split + markdown.js could grow if more pure helpers surface, but the state/stage web makes route extraction a net-loss right now.

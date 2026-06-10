@@ -3,6 +3,7 @@
 ## 2026-06-10
 
 ### Changed
+- Split two pure leaf clusters out of the 2923-line `site/app.js` god-module into their own single-focus modules along the existing composition spine: `site/markdown.js` (guide markdown renderer + disfluency/typo polish + soft-split — depends only on `icons.js`) and `site/clipboard.js` (`copyToClipboard` + execCommand fallback — depends only on `toast.js`). `app.js` now imports the two functions it actually calls; behavior is unchanged (browser-witnessed: live guide renders headings/paragraphs/lists/tutor-affordance, zero console errors), and the test suite now exercises the real modules instead of source-slicing app.js.
 - Bumped the `anentrypoint-design` SDK bundle (`site/247420.{js,css}`) to v0.0.198 — corpus was shipping the stale v0.0.197 JS; the upstream responsive desk/tablet/mobile layer and ShortcutHelpDialog label render are now included. Browser-witnessed: SDK mounts with `.ds-247420` scope, zero console errors, consumed AICat/Topbar signatures unaffected.
 
 ### Fixed

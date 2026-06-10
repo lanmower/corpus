@@ -23,6 +23,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     const justread = await import('./site/justread.js');
     const tutorStore = await import('./site/tutor-store.js');
     const toolDispatch = await import('./site/tool-dispatch.js');
+    const markdown = await import('./site/markdown.js');
+    const clipboard = await import('./site/clipboard.js');
     const appSrc = READ('site/app.js'), styleCss = READ('site/style.css'), indexHtml = READ('site/index.html');
     const liveSrc = READ('site/triage-live.js'), liveHtml = READ('site/triage-live.html'), liveCss = READ('site/triage-live.css'), workerSrc = READ('site/triage-llm-worker.js');
 
@@ -233,9 +235,11 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /back after \$\{gap\}d/);
         // guide affordances — tutor only (practice/cards browser removed). The
         // arrow glyph is now an SVG icon-label (icons.js sweep), so assert the
-        // icon-label tutor markup rather than the old Unicode arrow.
-        assert.match(appSrc, /class="guide-aff"/);
-        assert.match(appSrc, /icon-label[^>]*>\$\{ICON\.arrowRight\}<span>tutor/);
+        // icon-label tutor markup rather than the old Unicode arrow. The guide
+        // affordance is emitted by renderMarkdown's affordance(), now in markdown.js.
+        const mdSrc = READ('site/markdown.js');
+        assert.match(mdSrc, /class="guide-aff"/);
+        assert.match(mdSrc, /icon-label[^>]*>\$\{ICON\.arrowRight\}<span>tutor/);
         assert.ok(!/→ practice/.test(appSrc));
         assert.ok(!/→ tutor/.test(appSrc), 'guide-aff should use SVG icon, not Unicode arrow');
         // review progress line
@@ -686,18 +690,18 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(styleCss, /\.guide-body h3\s*\{[^}]*margin-top:\s*2em/);
         assert.match(styleCss, /\.guide-body li\s*\{[^}]*margin-block:\s*0\.45em/);
         assert.match(styleCss, /\.guide-body p\s*\{\s*margin-block:\s*0\s+1\.15em/);
-        // render-time paragraph polish: softSplitPara + disfluency cleanup + typo refine
-        assert.match(appSrc, /function softSplitPara/);
-        assert.match(appSrc, /function cleanDisfluencies/);
-        assert.match(appSrc, /function typoRefine/);
-        // sandbox the helpers via vm and assert behavior
-        const ctx = { module: {}, exports: {} };
-        const startIdx = appSrc.indexOf('const DISFLUENCY_RE');
-        const endIdx = appSrc.indexOf('function renderMarkdown', startIdx);
-        const helperSrc = appSrc.slice(startIdx, endIdx);
-        vm.createContext(ctx);
-        vm.runInContext(helperSrc + '\nmodule.exports = { softSplitPara, cleanDisfluencies, typoRefine };', ctx);
-        const H = ctx.module.exports;
+        // render-time paragraph polish: softSplitPara + disfluency cleanup + typo refine.
+        // The markdown cluster was extracted from app.js into its own leaf module
+        // (site/markdown.js) — import and exercise the real exports rather than
+        // source-slicing app.js, so the test follows the artifact it validates.
+        const H = markdown;
+        assert.strictEqual(typeof H.softSplitPara, 'function');
+        assert.strictEqual(typeof H.cleanDisfluencies, 'function');
+        assert.strictEqual(typeof H.typoRefine, 'function');
+        assert.strictEqual(typeof H.renderMarkdown, 'function');
+        // app.js must consume the module, not redefine the helpers inline.
+        assert.match(appSrc, /import \{ renderMarkdown \} from '\.\/markdown\.js'/);
+        assert.ok(!/function renderMarkdown/.test(appSrc), 'renderMarkdown must live in markdown.js, not app.js');
         // disfluency removal
         assert.strictEqual(H.cleanDisfluencies('um, the patient, you know, has uh hypertension.'), 'the patient, has hypertension.');
         // em-dash and en-dash refine
@@ -729,6 +733,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     t('mobile+tablet media queries + tap-targets + guide hyphens/blockquote/table/hr + markdown ol+blockquote', () => {
         const styleCss = fs.readFileSync('site/style.css', 'utf8');
         const appJs = fs.readFileSync('site/app.js', 'utf8');
+        const mdJs = fs.readFileSync('site/markdown.js', 'utf8');
         // mobile + tablet media queries exist
         assert.match(styleCss, /@media \(max-width: 600px\)/);
         assert.match(styleCss, /@media \(min-width: 601px\) and \(max-width: 1024px\)/);
@@ -746,12 +751,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // verdict-table + cal-grid mobile fixes
         assert.match(styleCss, /\.cal-grid\.month\s*\{\s*gap:\s*2px/);
         assert.match(styleCss, /\.verdict-table[^{]*\{\s*display:\s*block/);
-        // markdown renderer handles ordered lists, blockquotes, hr, tables
-        assert.match(appJs, /function renderMarkdown/);
-        assert.match(appJs, /openListIfNeeded/);
-        assert.match(appJs, /<blockquote>/);
-        assert.match(appJs, /<hr>/);
-        assert.match(appJs, /\\d\+\[\.\)\]/); // ordered list pattern
+        // markdown renderer (now in markdown.js) handles ordered lists, blockquotes, hr, tables
+        assert.match(mdJs, /export function renderMarkdown/);
+        assert.match(mdJs, /openListIfNeeded/);
+        assert.match(mdJs, /<blockquote>/);
+        assert.match(mdJs, /<hr>/);
+        assert.match(mdJs, /\\d\+\[\.\)\]/); // ordered list pattern
     });
 
     console.log('# schedule reconcile + eligibility gate');
@@ -1126,8 +1131,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(!/localStorage\.setItem\(CONFIG_KEY, JSON\.stringify\(cfg\)\)/.test(srs), 'saveConfig must not write cfg verbatim');
         // Clipboard writes degrade on insecure context: a shared copyToClipboard with an
         // execCommand fallback replaces the unguarded navigator.clipboard.writeText calls.
-        assert.match(app, /function copyToClipboard/, 'app must define copyToClipboard helper');
-        assert.match(app, /function fallbackCopy/, 'app must define execCommand fallback');
+        // The helper now lives in its own leaf module (site/clipboard.js).
+        const clip = READ('site/clipboard.js');
+        assert.match(clip, /export function copyToClipboard/, 'clipboard.js must export copyToClipboard');
+        assert.match(clip, /export function fallbackCopy/, 'clipboard.js must export execCommand fallback');
+        assert.match(app, /import \{ copyToClipboard \} from '\.\/clipboard\.js'/, 'app must import copyToClipboard');
+        assert.ok(!/function copyToClipboard/.test(app), 'copyToClipboard must live in clipboard.js, not app.js');
         assert.match(app, /copyToClipboard\(id,/, 'copy-id action must route through copyToClipboard');
         assert.ok(!/navigator\.clipboard\.writeText\(id\)/.test(app), 'copy-id must not call navigator.clipboard.writeText unguarded');
         assert.ok(!/navigator\.clipboard\.writeText\(tsv\)/.test(app), 'exportSessionCards must route through copyToClipboard');

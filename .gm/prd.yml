@@ -1826,3 +1826,30 @@
   - fix-tutor-saveConfig-merge
   - fix-search-anchor-offset
   witness: 'test.js run-6 block added: 22 pass/0 fail (postGenerate count===1, state-driven SDK paths, tutor-store partial-merge round-trip, search anchor zz#L5). CHANGELOG 2026-06-10 Fixed section updated with 4 entries. memorize-fire dispatched. Commit+push next.'
+- id: extract-markdown-module
+  title: Extract pure markdown cluster (DISFLUENCY_RE, cleanDisfluencies, typoRefine, softSplitPara, renderMarkdown) from app.js into site/markdown.js — depends only on ICON; export all five; app.js imports them. Zero behavior change.
+  status: completed
+  witness: site/markdown.js created with exports DISFLUENCY_RE/cleanDisfluencies/typoRefine/softSplitPara/renderMarkdown; depends only on ICON; app.js imports renderMarkdown; 118 lines removed from app.js (2923->2785->2783 after comment trim). node --check passes.
+- id: extract-clipboard-module
+  title: Extract clipboard cluster (copyToClipboard, fallbackCopy) from app.js into site/clipboard.js — depends only on toast; export both; app.js imports them. Zero behavior change.
+  status: completed
+  witness: site/clipboard.js created with exports copyToClipboard/fallbackCopy; depends only on toast; app.js imports copyToClipboard; clipboard cluster removed from app.js. node --check passes.
+- id: update-tests-for-modules
+  title: 'Update test.js: markdown helper test (lines ~689-714) imports from markdown.js instead of source-slicing app.js; renderMarkdown assertion (750) targets markdown.js; clipboard assertions (1129-1133) target clipboard.js. Run node test.js -> 22+ pass / 0 fail.'
+  status: completed
+  blockedBy:
+  - extract-markdown-module
+  - extract-clipboard-module
+  witness: 'test.js: markdown helper test imports markdown module (no source-slice); renderMarkdown/openListIfNeeded/blockquote/hr assertions target markdown.js source; guide-aff assertions target markdown.js; clipboard assertions target clipboard.js + assert app imports them and no longer defines them. node test.js = 22 pass / 0 fail.'
+- id: witness-refactor-browser
+  title: 'Browser-witness the refactor on live index.html: guide markdown renders (headings/lists/paragraphs/tutor-affordance), no console errors, copy action works. Confirms zero behavior change.'
+  status: completed
+  blockedBy:
+  - update-tests-for-modules
+  witness: 'browser session 44 on live index.html#subject/cardiology: errs=[] (zero console errors with refactored app), markdown.js module loads with all 5 exports, renderMarkdown produces hasH1/H2/P/Ul/Ol + tutor guide-aff all true, clipboard.js loads with copyToClipboard. Guide route rendered 8 headings, no errors. Zero behavior change confirmed.'
+- id: commit-refactor
+  title: Document refactor in CHANGELOG; memorize-fire; porcelain-gated commit+push; transition COMPLETE on clean tree
+  status: completed
+  blockedBy:
+  - witness-refactor-browser
+  witness: 'CHANGELOG 2026-06-10 Changed: documented markdown.js/clipboard.js split. memorize-fire dispatched. Committing+pushing next via git_finalize.'
