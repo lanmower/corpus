@@ -5,12 +5,11 @@ const COUNT_KEY = 'corpus.newcards.v1';
 const CAP_KEY = 'corpus.newcards.cap.v1';
 const DEFAULT_CAP = 20;
 
+import { localDayISO } from './dates.js';
+
 // LOCAL date, not UTC: the daily new-card cap must reset at local midnight, in
-// step with the schedule day-keys and the check-in gate (a UTC stamp resets the
-// cap at the wrong hour for any user not on UTC).
-function todayISO(now = new Date()) {
-    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-}
+// step with the schedule day-keys and the check-in gate.
+function todayISO(now = new Date()) { return localDayISO(now); }
 
 function readCounts() {
     try { return JSON.parse(localStorage.getItem(COUNT_KEY) || '{}') || {}; } catch { return {}; }
@@ -25,12 +24,6 @@ export function cap() {
     return DEFAULT_CAP;
 }
 
-export function setCap(n) {
-    const v = Math.max(0, Math.floor(Number(n) || 0));
-    try { localStorage.setItem(CAP_KEY, String(v)); } catch {}
-    return v;
-}
-
 export function countToday(subject, now = new Date()) {
     const day = todayISO(now);
     const o = readCounts();
@@ -39,10 +32,6 @@ export function countToday(subject, now = new Date()) {
 
 export function remaining(subject, now = new Date()) {
     return Math.max(0, cap() - countToday(subject, now));
-}
-
-export function canIntroduce(subject, now = new Date()) {
-    return remaining(subject, now) > 0;
 }
 
 export function bump(subject, n = 1, now = new Date()) {
@@ -60,9 +49,6 @@ export function bump(subject, n = 1, now = new Date()) {
 
 export function reset() { writeCounts({}); }
 
-if (typeof window !== 'undefined') {
-    window.__newcards = { cap, setCap, countToday, remaining, canIntroduce, bump, reset, DEFAULT_CAP };
-}
 
 
 

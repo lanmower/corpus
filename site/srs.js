@@ -1,6 +1,8 @@
 ﻿// SRS engine — SM-2+ with learning steps, leech detection, interval fuzz.
 // Schema-versioned localStorage. Browser + node compatible.
 
+import { localDayISO } from './dates.js';
+
 const STATES_KEY = 'corpus.srs.states';
 const CONFIG_KEY = 'corpus.srs.config';
 const DEFAULT_EXAM_DATE = '2026-06-15';
@@ -119,8 +121,11 @@ export function compressInterval(interval, effectiveDays, pendingCount) {
     return Math.max(1, Math.round(interval * (1 - pressure * 0.5)));
 }
 
-export function today() { return new Date().toISOString().slice(0, 10); }
-function dateOf(ms) { return new Date(ms).toISOString().slice(0, 10); }
+// LOCAL day keys: due dates roll at local midnight, in step with the schedule
+// day-keys and the daily counters (a UTC key makes a 1-day card graded just
+// after local midnight reappear as due in the same session).
+export function today() { return localDayISO(); }
+function dateOf(ms) { return localDayISO(new Date(ms)); }
 
 function migrate(payload) {
     if (!payload || typeof payload !== 'object') return { version: SCHEMA_VERSION, states: {} };

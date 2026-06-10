@@ -1,19 +1,17 @@
 // student progress -- streak, daily goal, today counters. corpus.progress.v1
+import { localDayISO, dayOffset } from './dates.js';
 const KEY = 'corpus.progress.v1';
 const VERSION = 1;
 
-function todayISO() { return new Date().toISOString().slice(0, 10); }
-// Streak grace: 0:00--6:00 counts for the prior calendar day.
+function todayISO() { return localDayISO(); }
+// Streak grace: 0:00--6:00 counts for the prior LOCAL calendar day. Subtract
+// the grace window, then key on local components — mixing local getHours with
+// a UTC date string breaks the guarantee for any user off UTC.
 function effectiveDateISO(now = new Date()) {
     if (now.getHours() < 6) {
-        const d = new Date(now.getTime() - 6 * 3600 * 1000);
-        return d.toISOString().slice(0, 10);
+        return localDayISO(new Date(now.getTime() - 6 * 3600 * 1000));
     }
-    return now.toISOString().slice(0, 10);
-}
-function dayOffset(a, b) {
-    const d = (new Date(b) - new Date(a)) / 86400000;
-    return Math.round(d);
+    return localDayISO(now);
 }
 
 function defaults() {
@@ -49,7 +47,14 @@ export function load() {
     } catch { return defaults(); }
 }
 
-export function save(p) { localStorage.setItem(KEY, JSON.stringify(p)); }
+// Quota-guarded: a setItem throw must degrade to the storage-full banner, not
+// escape into the grading/case-completion flow (same contract as srs/schedule).
+export function save(p) {
+    try { localStorage.setItem(KEY, JSON.stringify(p)); }
+    catch (e) {
+        try { if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { source: 'progress', error: String(e) } })); } catch {}
+    }
+}
 
 export { effectiveDateISO };
 export function rollStreak(p, now = effectiveDateISO()) {

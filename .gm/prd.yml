@@ -1881,3 +1881,57 @@
   title: memorize-fire run-7 outcomes (findings, fixes, lessons) before COMPLETE
   status: completed
   witness: memorize-fire 968 stored run-7 summary into rs-learn.db
+- id: quality-max-run-8
+  subject: 'Run .claude/workflows/quality-max.js (8th run): fan out engineering-DNA lens subagents over corpus site+tutor, adversarially verify findings'
+  validation: Workflow completes; confirmed findings list produced
+  status: completed
+  witness: 'wf_6d54366a-cf5 completed: 30 agents, 8 lenses, 22 raw -> 16 confirmed / 6 refuted; output C:/Users/user/AppData/Local/Temp/claude/D--corpus/42af1202-dbe8-4ed7-93d2-e7ea34bf927c/tasks/wik27j3bz.output'
+- id: run8-fix-confirmed
+  subject: Fix every confirmed finding from quality-max run-8, one fix per finding, with browser witness for every client-side edit
+  validation: All confirmed findings resolved or triaged with witness; .turn-browser-witnessed covers edits
+  status: completed
+  witness: '16/16 confirmed findings fixed or triaged: daykey-unify, reconcile-idempotent, dead-code (drag/newcards/calendar/daily-plan CSS), duecount-dedupe, triage-store, import-validator, storage-guards (progress+usercards), god-module triaged; node test.js 24 pass 0 fail; browser witnesses 3028+3029 all true'
+- id: run8-residual-push
+  subject: Residual scan, commit and push run-8 changes; memorize-fire session learnings
+  validation: git_finalize succeeds, porcelain empty, ahead==0
+  status: pending
+- id: run8-daykey-unify
+  subject: 'Converge all day-key helpers on local-date convention: progress.js todayISO/effectiveDateISO, srs.js today/dateOf, cram.js todayISO, calendar.js isoDate, schedule.js addDays UTC-parse bug — one shared local day-key helper (dates.js)'
+  validation: All day keys local; addDays('2026-06-10',1)==='2026-06-11' in any tz; test.js passes; browser witness
+  status: completed
+  witness: 'site/dates.js created; progress.js/srs.js/cram.js/calendar.js/newcards.js import it; schedule.js addDays local-parse (schedule.js:103); browser-3028: addDays 2026-06-11, localTodayOk true, progressTodayLocal true; test.js run-8 block PASS'
+- id: run8-reconcile-idempotent
+  subject: 'Make schedule.reconcile() idempotent for locked blocks: locked blocks escape regenerate() reset and accumulate plannedReview/rollover on every render'
+  validation: Double reconcile with same actuals does not double-apply on locked blocks; test added
+  status: completed
+  witness: schedule.js:302-313 base-plan snapshot + derived-state reset; browser-3028 reconcileIdempotent:true (double reconcile equal block state)
+- id: run8-dead-code
+  subject: 'Remove dead code: drag.js makeDropZone+drop CSS (+makeDraggable if delivers nothing), hideLoadingState, newcards setCap/canIntroduce + __newcards registry, calendar.js __test export'
+  validation: codesearch shows zero refs; test.js passes; browser witness
+  status: completed
+  witness: drag.js deleted; drag CSS removed style.css; newcards setCap/canIntroduce/__newcards removed; calendar __test removed; stale .daily-plan CSS removed; test.js run-8 assertions PASS; browser-3028 newcardsClean:true appRendered:true
+- id: run8-duecount-dedupe
+  subject: Collapse app.js dueCountsBySubjectMap (line 194) and dueCountsBySubject (line 1993) into one helper
+  validation: Single helper, both call sites use it; browser witness
+  status: completed
+  witness: app.js:193 single dueCountsBySubject (manifest guard + cached loadStates); 6 call sites renamed; browser-3028 appRendered:true
+- id: run8-triage-store
+  subject: Extract shared triage-store.js (read+normalize corpus.triage.v1) used by both app.js (totalCasesQueued/casesDoneBySubject) and triage-live.js sessionCards
+  validation: Both pages import the shared module; browser witness on both pages
+  status: completed
+  witness: site/triage-store.js created; triage-live.js + app.js import it; browser-3029 normLegacy/normObj/normNull/scoreNull/readSessionsHeals all true on triage page; browser-3028 triageStore:true on index
+- id: run8-import-validator
+  subject: 'triage-live.js import validator: reject null/array sessions (typeof null===''object'' hole) at line ~1035'
+  validation: Importing {version:1,sessions:null} is rejected with error message, no crash; browser witness
+  status: completed
+  witness: triage-live.js import guard rejects null/array sessions; browser-3029 validatorRejectsNull/validatorRejectsArray/validatorAcceptsGood true
+- id: run8-storage-guards
+  subject: progress.js save() quota guard + corpus:storage-full; usercards.js save() report failure (add() must not return success-shaped object on quota fail) + storage-full event
+  validation: setItem throw degrades to banner, no exception escapes grading flow; browser witness
+  status: completed
+  witness: progress.js save() try/catch + corpus:storage-full; usercards.js save() returns bool + storage-full, add() returns null on persist fail, app.js:2350 caller guards; test.js run-8 PASS
+- id: run8-extract-review
+  subject: 'Spine cut prerequisite: review renderer extraction requires a designed app-context module first (state + el/icon + go + loadShard shared surface) — resetReviewQueue alone has 18 call sites across app.js (lines 119,448,457,617,640,739,743,811,820,927,1084,1093,1103,2275,2312,2458,2463) and gradeReview/undoLastGrade are wired into the global keymap; a blind cut threads an 8-field param bag and net-grows coupling (Principle 2). Triage outcome: deferred behind app-context extraction, queued as the next architectural session''s first row.'
+  validation: Triaged with witness this run; extraction lands only after app-context module exists
+  status: completed
+  witness: 'Triaged with witness: resetReviewQueue 18 call sites (app.js:119...2463), gradeReview/undoLastGrade in global keymap; blind extraction net-grows coupling (Principle 2); deferred behind app-context module, recorded in row subject'

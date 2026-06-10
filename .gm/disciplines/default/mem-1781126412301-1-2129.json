@@ -1,0 +1,13 @@
+## Corpus quality-max 8th run (2026-06-10 session 8)
+
+Ran .claude/workflows/quality-max.js (wf_6d54366a-cf5): 30 agents, 8 lenses, 22 raw -> 16 confirmed / 6 refuted. Fixes shipped:
+1. NEW site/dates.js: shared LOCAL day-key helpers (localDayISO/addDays/dayOffset). Converged progress.js, srs.js (today/dateOf), cram.js, calendar.js today-keys, newcards.js on it. Killed the UTC/local split-brain (streak resets, post-midnight due cards, reconcile crediting wrong day).
+2. schedule.addDays UTC-parse bug (HIGH): parse local `new Date(y,m-1,d+n)` — old UTC-midnight parse + local format returned the SAME day west of UTC.
+3. schedule.reconcile idempotent: basePlannedReview/basePlannedNew snapshot + derived reset (rollover/over/surplus) at top — locked blocks no longer accumulate shortfall every render.
+4. NEW site/triage-store.js (readSessions/sessionCards/sessionScore) — app.js + triage-live.js both import; app no longer hand-parses corpus.triage.v1.
+5. triage import validator rejects null/array sessions (typeof null==='object' hole).
+6. progress.save + usercards.save quota-guarded with corpus:storage-full; usercards.add returns null on persist fail.
+7. Dead code deleted: drag.js whole module (makeDropZone never called, makeDraggable delivered nothing) + drag CSS, newcards setCap/canIntroduce/__newcards, calendar __test, stale .daily-plan CSS, dup dueCountsBySubjectMap collapsed.
+8. test.js: sync t() swallowed async-callback failures and printed PASS early — added `ta` async-aware variant; surfaced stale /daily-plan/ token (renamed to schedule-checklist). run-8 test block added; 24 pass 0 fail.
+DEFERRED with witness: review-renderer extraction from app.js god-module — resetReviewQueue has 18 call sites + keymap wiring; needs an app-context module first (next architectural session's first row).
+Browser witness via playwriter direct-CDP: `chrome --headless=new --remote-debugging-port=9222` then spool browser verb `session new --direct localhost:9222`, then plain-JS bodies (playwright waitUntil 'networkidle' not 'networkidle2'; 14s timeout — split goto and evaluate into separate dispatches).

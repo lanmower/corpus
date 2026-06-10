@@ -21,12 +21,12 @@ import * as toast from './toast.js';
 import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
 import { buildSearchIndex, mountPalette } from './search.js';
 import { makeToggleButton } from './theme.js';
-import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from './drag.js';
 import { showContextMenu, closeContextMenu } from './context-menu.js';
 import { initTutorPanel, wireWorkerToPanel, addTutorMessage, setTutorContext, syncTutorFromStorage, startDailySyllabus, setDailyPlanProvider, sendTutorMessage } from './tutor-panel.js';
 import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn, todayStamp as localDateStamp } from './tutor-store.js';
 import { ICON } from './icons.js';
 import { renderMarkdown } from './markdown.js';
+import { readSessions as readTriageSessions, sessionCards as triageSessionCards } from './triage-store.js';
 import { copyToClipboard } from './clipboard.js';
 
 // Render an icon as an inline element for el()/innerHTML contexts. Returns a span
@@ -191,28 +191,23 @@ function totalDueAll() {
     return n;
 }
 
-function dueCountsBySubjectMap() {
+function dueCountsBySubject() {
     const out = {};
+    if (!state.manifest) return out;
+    const states = srs.loadStates();
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject];
-        out[meta.subject] = sh ? srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates()).length : 0;
+        out[meta.subject] = sh ? srs.getDueCards(sh.cards.map(c => c.id), states).length : 0;
     }
     return out;
 }
 
 function totalCasesQueued() {
-    // Cases queued = scenarios in weakest subject + any unfinished sessions.
-    // Session values are objects {cards, score, gradedAt} (legacy: bare arrays) —
-    // same normalization triage-live.js sessionCards() applies.
     let n = 0;
-    try {
-        const persisted = JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}');
-        const sessions = persisted.sessions || {};
-        for (const id of Object.keys(sessions)) {
-            const s = sessions[id];
-            if (((s && s.cards) || s || []).length > 0) n++;
-        }
-    } catch {}
+    const { sessions } = readTriageSessions();
+    for (const id of Object.keys(sessions)) {
+        if (triageSessionCards(sessions[id]).length > 0) n++;
+    }
     return n;
 }
 
@@ -222,8 +217,7 @@ function totalCasesQueued() {
 function casesDoneBySubject() {
     const out = {};
     try {
-        const triage = JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}');
-        const done = new Set(Object.keys(triage.sessions || {}));
+        const done = new Set(Object.keys(readTriageSessions().sessions));
         if (!done.size) return out;
         for (const [subj, sh] of Object.entries(state.shards || {})) {
             for (const sc of sh?.triage?.scenarios || []) {
@@ -611,7 +605,7 @@ function renderToday() {
 
     // Subject-by-subject due breakdown (permanently visible)
     if (due > 0) {
-        const dueCounts = dueCountsBySubjectMap();
+        const dueCounts = dueCountsBySubject();
         const subjectRows = state.manifest.subjects
             .filter(m => (dueCounts[m.subject] || 0) > 0)
             .map(m => {
@@ -1282,7 +1276,6 @@ function buildFlashcard(c) {
         c.tags && c.tags.length ? el('div', { class: 'tags' }, ...c.tags.slice(0, 6).map(t => el('span', { class: 'tag' }, t))) : null
     );
     if (state.flippedCards.has(id)) card.classList.add('flipped');
-    makeDraggable(card);
     return card;
 }
 
@@ -1341,7 +1334,8 @@ async function renderReview() {
     const placeholderContainer = el('div', { class: 'panel is-loading' });
     const placeholder = el('div', { class: 'skeleton', style: 'width:60%;height:14px' });
     placeholderContainer.append(placeholder);
-    showLoadingState(placeholderContainer, 'loading cards...');
+    placeholderContainer.append(el('div', { class: 'loading-text' },
+        el('div', { class: 'loading-spinner' }), el('span', {}, 'loading cards...')));
     stage.append(placeholderContainer);
     const subjects = state.reviewSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.reviewSubjectFilter];
     await Promise.all(subjects.map(s => loadShard(s)));
@@ -1990,17 +1984,6 @@ function renderHeatmap(history) {
     return svg;
 }
 
-function dueCountsBySubject() {
-    const out = {};
-    if (!state.manifest) return out;
-    for (const meta of state.manifest.subjects) {
-        const sh = state.shards[meta.subject];
-        if (!sh) { out[meta.subject] = 0; continue; }
-        out[meta.subject] = srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates()).length;
-    }
-    return out;
-}
-
 function renderCalendar() {
     stage.append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'plan'), el('h2', {}, 'calendar')));
@@ -2348,7 +2331,7 @@ function openQuickAdd() {
     input.addEventListener('keydown', e => {
         if (e.key === 'Enter') {
             const parsed = usercards.parseLine(input.value);
-            if (parsed) { usercards.add(parsed.front, parsed.back, parsed.tags); m.remove(); render(); }
+            if (parsed && usercards.add(parsed.front, parsed.back, parsed.tags)) { m.remove(); render(); }
             else { input.style.borderColor = 'var(--c-due, red)'; }
         } else if (e.key === 'Escape') m.remove();
     });
@@ -2427,7 +2410,7 @@ function renderMasteryRing() {
 function renderScheduleChecklist(rows) {
     if (!state.manifest) return null;
     const today = schedule.isoDate(new Date());
-    const dueCounts = dueCountsBySubjectMap();
+    const dueCounts = dueCountsBySubject();
     // Build extras for plannedSections / plannedCases
     const ticksAll = loadGuideTicks();
     const casesDone = casesDoneBySubject();
@@ -2702,7 +2685,7 @@ function setupSdkApp() {
         const today = schedule.isoDate(new Date());
         const sched = schedule.loadSchedule();
         if (!sched.blocks.length || sched.today !== today) {
-            schedule.getSchedule({ today, dueCounts: dueCountsBySubjectMap(), ticksAll: loadGuideTicks() });
+            schedule.getSchedule({ today, dueCounts: dueCountsBySubject(), ticksAll: loadGuideTicks() });
         }
         // Bottom-nav must mount regardless of the SDK vs fallback render path —
         // the SDK AppShell renders its own topbar (the raw .nav/.bottom-nav from

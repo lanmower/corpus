@@ -2,6 +2,7 @@
 import * as progress from './progress.js';
 import { dispatchToolCalls as runToolCalls, stripToolBlocks } from './tool-dispatch.js';
 import { ICON } from './icons.js';
+import { PERSIST_KEY, SCHEMA_VERSION, readSessions, sessionCards, sessionScore } from './triage-store.js';
 
 let sdk = null;
 let sdkRender = null;
@@ -50,9 +51,6 @@ case stem:
 current board ({{N}} cards — these are the student's commitments):
 {{CARDS}}
 {{ANSWER_KEY}}`;
-
-const PERSIST_KEY = 'corpus.triage.v1';
-const SCHEMA_VERSION = 1;
 
 const state = {
     manifest: null,
@@ -146,13 +144,7 @@ function safeStore() {
 }
 function loadSessions() {
     const ls = safeStore(); if (!ls) return { sessions: {}, streak: 0 };
-    try {
-        const raw = ls.getItem(PERSIST_KEY);
-        if (!raw) return { sessions: {}, streak: 0 };
-        const obj = JSON.parse(raw);
-        if (obj && obj.version === SCHEMA_VERSION) return { sessions: obj.sessions || {}, streak: obj.streak || 0 };
-        return { sessions: {}, streak: 0 };
-    } catch { return { sessions: {}, streak: 0 }; }
+    return readSessions();
 }
 function saveSessions() {
     const ls = safeStore(); if (!ls) return;
@@ -167,17 +159,6 @@ function persistActive() {
     state.sessions[state.activeScenarioId] = { cards, score: state.lastGrade ?? prevScore ?? null, gradedAt: state.phase === 'graded' ? Date.now() : (prev?.gradedAt ?? null) };
     saveSessions();
     renderStats();
-}
-
-// Backwards-compat: sessions used to be stored as bare arrays; normalize on read.
-function sessionCards(sess) {
-    if (!sess) return [];
-    if (Array.isArray(sess)) return sess;
-    return sess.cards || [];
-}
-function sessionScore(sess) {
-    if (!sess || Array.isArray(sess)) return null;
-    return sess.score ?? null;
 }
 
 const els = {
@@ -1032,7 +1013,9 @@ if (els.importInput) els.importInput.addEventListener('change', async e => {
     const f = e.target.files[0]; if (!f) return;
     try {
         const obj = JSON.parse(await f.text());
-        if (obj.version !== SCHEMA_VERSION || typeof obj.sessions !== 'object') throw new Error('bad schema');
+        // typeof null === 'object' and typeof [] === 'object': a null/array
+        // sessions blob would persist, then crash every render until reload.
+        if (obj.version !== SCHEMA_VERSION || !obj.sessions || typeof obj.sessions !== 'object' || Array.isArray(obj.sessions)) throw new Error('bad schema');
         state.sessions = obj.sessions;
         saveSessions();
         if (state.activeScenarioId) selectScenario(state.activeScenarioId);

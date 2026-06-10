@@ -4,6 +4,9 @@ const { stableCardId } = require('./scripts/build_data.js');
 const ROOT = __dirname;
 let pass = 0, fail = 0;
 const t = (name, fn) => { try { fn(); console.log('  PASS', name); pass++; } catch (e) { console.log('  FAIL', name, '-', e.message); fail++; } };
+// Async-aware variant: sync t() would print PASS before an async callback's
+// awaits run and swallow its failures — always `await ta(...)` for async tests.
+const ta = async (name, fn) => { try { await fn(); console.log('  PASS', name); pass++; } catch (e) { console.log('  FAIL', name, '-', e.message); fail++; } };
 global.localStorage = (() => { const s = new Map(); return { getItem: k => s.has(k) ? s.get(k) : null, setItem: (k, v) => s.set(k, String(v)), removeItem: k => s.delete(k), clear: () => s.clear() }; })();
 global.window = { dispatchEvent: () => {}, addEventListener: () => {}, removeEventListener: () => {} };
 global.CustomEvent = class { constructor(t, d) { this.type = t; this.detail = d; } };
@@ -387,7 +390,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     });
 
     console.log('# integration: SW v4 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace + archive isolation');
-    t('SW + PWA manifest + theme contrast + search prose+snippet + streak grace + app keys + new routes', async () => {
+    await ta('SW + PWA manifest + theme contrast + search prose+snippet + streak grace + app keys + new routes', async () => {
         const sw = READ('site/sw.js');
         assert.ok(sw.includes('__BUILD_VERSION__') || /corpus-v\d+/.test(sw));
         // SW network-first under auto-versioning — modules cached on first fetch (no SHELL precache list of every module)
@@ -416,7 +419,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const eff = progressMod.effectiveDateISO(at3am);
         assert.notStrictEqual(eff, at3am.toISOString().slice(0, 10));
         // app keys + routes
-        for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /renderSparkline/, /next-thing/, /daily-plan/, /exam-countdown/, /late-banner/, /undo-toast/]) assert.match(appSrc, re);
+        for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /renderSparkline/, /next-thing/, /schedule-checklist/, /exam-countdown/, /late-banner/, /undo-toast/]) assert.match(appSrc, re);
         for (const route of ['mistakes','drill']) assert.ok(appSrc.includes(`'${route}'`));
         // new shortcuts in modal
         for (const s of ['quick add card', 'pomodoro', 'undo last grade', 'flag card', 'go mistakes']) assert.ok(appSrc.includes(s), 'missing shortcut: '+s);
@@ -1237,8 +1240,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(app, /function casesDoneBySubject\(\)/, 'shared casesDoneBySubject builder must exist');
         assert.strictEqual((app.match(/casesDoneBySubject\(\)/g) || []).length, 3, 'both regenerate sites use the shared builder');
         assert.ok(!/casesDone\[id\] = casesDone\[id\]/.test(app), 'scenario-id-keyed casesDone construction must be gone');
-        // MEDIUM (worst-case): totalCasesQueued must read the object session schema.
-        assert.match(app, /\(\(s && s\.cards\) \|\| s \|\| \[\]\)\.length/, 'totalCasesQueued normalizes {cards} sessions');
+        // MEDIUM (worst-case): triage session reads go through the shared store
+        // (triage-store.js owns the {cards}/legacy-array normalization).
+        assert.match(app, /from '\.\/triage-store\.js'/, 'app.js imports triage-store');
+        assert.match(app, /triageSessionCards\(sessions\[id\]\)/, 'totalCasesQueued normalizes via shared sessionCards');
         // Day-keys are LOCAL calendar dates end to end: schedule.isoDate, the app
         // plan filters, and the new-card cap — matching the local check-in gate.
         const sched = READ('site/schedule.js');
@@ -1263,6 +1268,40 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(bd.indexOf(0), -1, 'build_data.js must contain no NUL byte');
         // Worker header honesty: triage worker no longer claims to be shared.
         assert.ok(!/Used by both the triage page and the corpus tutor panel/.test(w), 'triage worker header must not claim tutor sharing');
+    });
+
+    await ta('quality-max run-8: shared local day-keys + tz-proof addDays + idempotent reconcile + import validator + storage guards + dead code gone', async () => {
+        // dates.js is the single local day-key source; UTC slices are gone from daily-rollover stores.
+        const dates = await import('./site/dates.js');
+        assert.strictEqual(dates.addDays('2026-06-10', 1), '2026-06-11', 'addDays advances in local calendar');
+        assert.strictEqual(dates.addDays('2026-12-31', 1), '2027-01-01');
+        assert.strictEqual(dates.dayOffset('2026-06-09', '2026-06-11'), 2);
+        for (const f of ['site/progress.js', 'site/srs.js', 'site/cram.js']) {
+            assert.ok(!/toISOString\(\)\.slice\(0, 10\)/.test(READ(f)), `${f} day keys must be local`);
+            assert.match(READ(f), /from '\.\/dates\.js'/, `${f} imports dates.js`);
+        }
+        const sched8 = READ('site/schedule.js');
+        assert.ok(!/T00:00:00Z'\); d\.setUTCDate/.test(sched8), 'schedule.addDays UTC-parse bug gone');
+        // reconcile re-derives from the immutable base plan (idempotent for locked blocks).
+        assert.match(sched8, /basePlannedReview/, 'reconcile snapshots base plan');
+        // calendar "today" is local; internal UTC grid math untouched.
+        assert.match(READ('site/calendar.js'), /localDayISO\(\)/, 'calendar today key is local');
+        // import validator rejects null/array sessions.
+        assert.match(READ('site/triage-live.js'), /Array\.isArray\(obj\.sessions\)/, 'triage import rejects array sessions');
+        // storage guards: progress + usercards degrade to the storage-full banner.
+        assert.match(READ('site/progress.js'), /corpus:storage-full/, 'progress.save quota-guarded');
+        assert.match(READ('site/usercards.js'), /corpus:storage-full/, 'usercards.save quota-guarded');
+        assert.match(READ('site/usercards.js'), /return save\(arr\) \? card : null/, 'usercards.add reports persist failure');
+        // dead code removed: drag.js, calendar __test, newcards gating API, dup due-count helper.
+        assert.ok(!require('fs').existsSync('site/drag.js'), 'drag.js deleted');
+        const app8 = READ('site/app.js');
+        assert.ok(!/drag\.js|makeDraggable|makeDropZone|hideLoadingState/.test(app8), 'drag imports gone from app.js');
+        assert.ok(!/dueCountsBySubjectMap/.test(app8), 'duplicate due-count helper collapsed');
+        assert.ok(!/drop-zone-active|\.draggable|\.dragging/.test(READ('site/style.css')), 'drag CSS removed');
+        assert.ok(!/__test/.test(READ('site/calendar.js')), 'calendar __test hook removed');
+        assert.ok(!/setCap|canIntroduce|__newcards/.test(READ('site/newcards.js')), 'newcards dead gating API removed');
+        // triage-store is the shared schema owner; triage-live consumes it.
+        assert.match(READ('site/triage-live.js'), /from '\.\/triage-store\.js'/, 'triage-live imports shared store');
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

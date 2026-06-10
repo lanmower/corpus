@@ -1,4 +1,5 @@
 // cram-mode dismissal persistence -- corpus.cram.dismissed.v1.
+import { localDayISO } from './dates.js';
 const KEY = 'corpus.cram.dismissed.v1';
 
 export function isDismissed() {
@@ -11,7 +12,7 @@ export function dismiss() {
     try { localStorage.setItem(KEY, JSON.stringify({ date: todayISO() })); } catch {}
 }
 
-function todayISO() { return new Date().toISOString().slice(0, 10); }
+function todayISO() { return localDayISO(); }
 
 if (typeof window !== 'undefined') window.__cram = { isDismissed, dismiss };
 

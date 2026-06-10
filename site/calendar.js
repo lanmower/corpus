@@ -1,5 +1,6 @@
 // calendar -- month/week grid renderer for the schedule engine. DOM-island re-render on schedule:updated.
 import * as schedule from './schedule.js';
+import { localDayISO } from './dates.js';
 
 const MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
 const DOW_LABELS = ['sun','mon','tue','wed','thu','fri','sat'];
@@ -72,7 +73,7 @@ function renderHeatbar(heat) {
 }
 
 function renderDayCell(dateIso, opts = {}) {
-    const today = isoDate(new Date());
+    const today = localDayISO();
     const blocks = schedule.blocksForDate(dateIso);
     const studyBlocks = blocks.filter(b => b.kind === 'study');
     const comp = schedule.dayCompletion(dateIso);
@@ -134,7 +135,7 @@ function renderTimelineRow(b) {
 
 function renderToolbar(onRegen) {
     return el('div', { class: 'cal-toolbar' },
-        el('button', { class: 'chip', on: { click: () => { state.anchor = isoDate(new Date()); rerender(); } } }, 'today'),
+        el('button', { class: 'chip', on: { click: () => { state.anchor = localDayISO(); rerender(); } } }, 'today'),
         el('button', { class: 'chip', on: { click: () => shift(-1) } }, '<-'),
         el('button', { class: 'chip', on: { click: () => shift(1) } }, '->'),
         el('button', { class: 'chip' + (state.mode === 'month' ? ' active' : ''),
@@ -176,23 +177,22 @@ function rerender() {
     state.mountEl.innerHTML = '';
     state.mountEl.append(renderToolbar(() => {
         const dueCounts = state.dueCountsFn();
-        schedule.regenerate({ today: isoDate(new Date()), dueCounts });
+        schedule.regenerate({ today: localDayISO(), dueCounts });
     }));
     state.mountEl.append(state.mode === 'month' ? renderMonth() : renderWeek());
 }
 
 export function mount(parent, { dueCountsFn } = {}) {
-    state.anchor = isoDate(new Date());
+    state.anchor = localDayISO();
     state.mountEl = parent;
     if (dueCountsFn) state.dueCountsFn = dueCountsFn;
     // ensure schedule exists
-    schedule.getSchedule({ today: isoDate(new Date()), dueCounts: state.dueCountsFn() });
+    schedule.getSchedule({ today: localDayISO(), dueCounts: state.dueCountsFn() });
     schedule.onUpdate(() => rerender());
     rerender();
     return { rerender };
 }
 
-export const __test = { monthGridDays, weekDays, renderDayCell, renderTimelineRow };
 
 
 

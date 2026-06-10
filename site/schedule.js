@@ -98,7 +98,9 @@ function persist(key, json) {
 export function isoDate(d) {
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
-export function addDays(iso, n) { const d = new Date(iso + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return isoDate(d); }
+// Parse and re-format in the LOCAL calendar: a UTC-midnight parse fed to the
+// local isoDate formatter returns the SAME day for any user west of UTC.
+export function addDays(iso, n) { const [y, m, d] = iso.split('-').map(Number); return isoDate(new Date(y, m - 1, d + n)); }
 export function daysBetween(a, b) {
     if (!a || !b) return 30;
     const d = Math.floor((new Date(b + 'T00:00:00Z') - new Date(a + 'T00:00:00Z')) / 86400000);
@@ -297,6 +299,18 @@ export function lockBlock(id, locked = true) {
 export function reconcile({ today = isoDate(new Date()), actualByDayBySubject = null, actualBySubject = {} } = {}) {
     const s = loadSchedule();
     const blocks = s.blocks;
+    // Idempotency: planned* is the immutable plan; surplus credits and rollover
+    // are DERIVED. Snapshot the base plan on first touch and re-derive from it
+    // every run — without this, locked blocks (which survive regenerate's
+    // rebuild verbatim) accumulate the same shortfall/surplus on every render.
+    for (const b of blocks) {
+        if (b.kind !== 'study') continue;
+        if (b.basePlannedReview == null) b.basePlannedReview = b.plannedReview || 0;
+        if (b.basePlannedNew == null) b.basePlannedNew = b.plannedNew || 0;
+        b.plannedReview = b.basePlannedReview;
+        b.plannedNew = b.basePlannedNew;
+        b.rollover = null; b.over = false; b.surplus = 0;
+    }
     // index per (date, subject) -> first study block
     const firstStudy = {};
     for (const b of blocks) {
