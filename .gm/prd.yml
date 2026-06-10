@@ -1716,3 +1716,23 @@
   why: 'User re-issued the quality-max request. Workflow already exists (commits 2c3bede/b05282e/7d2e92b). Principle 2/3: run not rebuild. Each prior run found bugs in subsystems prior runs skipped — continue the selection-pressure loop on everything not yet considered.'
   status: completed
   witness: commit 6032078 pushed e8ed72e..6032078; 5 fixes in app.js+srs.js; browser-8404 oldMatch=false newMatch=true 0-errs; test.js 20 pass
+- id: verify-clean-baseline
+  title: Verify worktree clean, origin synced, tests green, SDK byte-latest as starting baseline before any new sweep
+  blockedBy: []
+  status: completed
+  witness: 'git 0/0 origin-synced HEAD=79728ff; node test.js 20 pass/0 fail; SDK rebuild compared (drift found in JS: corpus afcaaf8c vs latest 11fdf9ed)'
+- id: run-quality-max-fresh
+  title: Run .claude/workflows/quality-max.js against current state to surface any NEW residual across all engineering-DNA lenses since last run (commit 6032078)
+  blockedBy:
+  - verify-clean-baseline
+  status: pending
+- id: fix-new-confirmed-findings
+  title: Adversarially verify and fix any newly-confirmed quality-max findings; browser-witness each client-side edit; add test assertions
+  blockedBy:
+  - run-quality-max-fresh
+  status: pending
+- id: commit-push-doc-state
+  title: Commit and push any new fixes + doc/changelog updates with porcelain-gated push; transition to COMPLETE on clean tree
+  blockedBy:
+  - fix-new-confirmed-findings
+  status: pending

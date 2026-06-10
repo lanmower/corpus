@@ -2,6 +2,9 @@
 
 ## 2026-06-10
 
+### Changed
+- Bumped the `anentrypoint-design` SDK bundle (`site/247420.{js,css}`) to v0.0.198 — corpus was shipping the stale v0.0.197 JS; the upstream responsive desk/tablet/mobile layer and ShortcutHelpDialog label render are now included. Browser-witnessed: SDK mounts with `.ds-247420` scope, zero console errors, consumed AICat/Topbar signatures unaffected.
+
 ### Fixed
 - Tutor daily-syllabus walk uses a dedicated caught-up prompt when today's plan has no actionable blocks, so the coach no longer tries to "present the first step" of an empty plan.
 - Chat conversation region is now `role="log"` with `aria-atomic="false"`, so assistive tech announces appended messages as a conversation log.
