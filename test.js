@@ -495,6 +495,20 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const build = READ('scripts/build_data.js');
         assert.ok(/CORPUS_SYLLABUS/.test(build), 'build_data.js missing CORPUS_SYLLABUS env hook');
         assert.ok(/SUBJ_ROOT/.test(build), 'build_data.js missing SUBJ_ROOT');
+        // anki_export.js + build_data.js share one syllabus-path resolver so the
+        // documented `node scripts/anki_export.js` cannot drift into an ENOENT
+        // crash again (it hardcoded the pre-syllabus flat layout before).
+        const syl = require('./scripts/syllabus.js');
+        assert.ok(typeof syl.resolveSyllabus === 'function' && typeof syl.safeReaddir === 'function', 'scripts/syllabus.js must export resolveSyllabus + safeReaddir');
+        assert.ok(syl.DEFAULT_SUBJECTS.includes('paediatrics') && syl.DEFAULT_SUBJECTS.includes('paediatrics-neonatal'), 'syllabus DEFAULT_SUBJECTS must include both paediatrics subjects');
+        const ankiSrc = READ('scripts/anki_export.js');
+        assert.match(ankiSrc, /require\('\.\/syllabus\.js'\)/, 'anki_export.js must use the shared syllabus resolver');
+        assert.ok(!/path\.join\(ROOT, s, 'srs-cards'\)/.test(ankiSrc), 'anki_export.js must not read the flat ROOT/<subj>/srs-cards layout');
+        // It actually runs without throwing and emits notes.
+        const cp = require('child_process');
+        const r = cp.spawnSync(process.execPath, [path.join(ROOT, 'scripts', 'anki_export.js')], { encoding: 'utf8' });
+        assert.strictEqual(r.status, 0, 'anki_export.js exited non-zero: ' + (r.stderr || '').slice(0, 300));
+        assert.match(r.stdout || '', /wrote .* — \d+ notes/, 'anki_export.js did not report notes written');
     });
 
     console.log('# phase 1: schedule engine + calendar + settings + nav');
@@ -1024,9 +1038,21 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const sym of ['AICat', 'ChatComposer']) assert.ok(sdkJs.includes(sym), 'SDK bundle missing ' + sym);
         // shared SVG icon module exists with the expected icon names.
         const iconsSrc = READ('site/icons.js');
-        for (const name of ['arrowRight', 'arrowLeft', 'gear', 'flag', 'check', 'star', 'sparkle']) {
+        for (const name of ['arrowRight', 'arrowLeft', 'gear', 'flag', 'check', 'help', 'book']) {
             assert.ok(new RegExp(name + ':').test(iconsSrc), 'icons.js missing ' + name);
         }
+        // gamification was stripped: the dead icons + their toast helpers must not return.
+        for (const dead of ['star', 'sparkle', 'levelUp', 'quest']) {
+            assert.ok(!new RegExp(dead + ':').test(iconsSrc), 'icons.js has dead gamification icon ' + dead);
+        }
+        const toastSrc = READ('site/toast.js');
+        assert.match(toastSrc, /export function show\(/, 'toast.js must export show() (app.js calls toast.show)');
+        assert.ok(!/export function (xp|badge|quest|levelUp)\(/.test(toastSrc), 'toast.js has dead gamification helper');
+        // The module worker (tutor.js) is CDN-only and cannot import tutor-store.js,
+        // so WORKER_CONTEXT_TURNS is hand-synced. Guard the two literals agree.
+        const wkr = READ('site/tutor.js').match(/const WORKER_CONTEXT_TURNS = (\d+)/);
+        const store = READ('site/tutor-store.js').match(/export const WORKER_CONTEXT_TURNS = (\d+)/);
+        assert.ok(wkr && store && wkr[1] === store[1], 'WORKER_CONTEXT_TURNS drifted between tutor.js and tutor-store.js');
         assert.match(appSrc, /import \{ ICON \} from '\.\/icons\.js'/);
         // triage-live.css migrated off raw --ink/--paper to semantic --fg/--bg.
         assert.ok(!/var\(--ink\)|var\(--paper\)/.test(liveCss), 'triage-live.css must use semantic tokens');

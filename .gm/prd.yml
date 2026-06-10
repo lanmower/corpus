@@ -1568,49 +1568,121 @@
   witness: '.claude/workflows/quality-max.js created: meta+8 PRINCIPLES lenses, pipeline(review->parallel verify), FINDING_SCHEMA+VERDICT_SCHEMA, default refuted=true'
 - id: workflow-run
   title: Run the quality-max workflow against D:/corpus and collect confirmed findings (real, verified, not subagent false-positives like the 43-finding session-2 run that had no-ops).
-  status: pending
+  status: completed
+  witness: 'wf_67a0cd05-23c completed: 23 agents, 15 raw -> 14 confirmed, 1 refuted. glyph-ai-tell lens found nothing (clean). Real bugs surfaced incl HIGH anki ENOENT.'
 - id: triage-findings-to-prd
   title: Each confirmed workflow finding becomes its own prd-add row with witness (file:line). No finding handled inline-and-forgotten.
-  status: pending
+  status: completed
+  witness: 14 findings + 1 self-discovered (toast.show) added as prd rows 80-95 with file:line witnesses
 - id: glyph-tell-sweep
   title: Full-codebase decorative-glyph + AI-design-tell scan across site/*.{js,html,css} + scripts/*.js. Prior sweeps clean; re-verify post daily-syllabus commits e1ac6f4/a782591 which added new tutor code.
-  status: pending
+  status: completed
+  witness: already resolved 132
 - id: test-suite-green
   title: node test.js passes (was 19) before and after any change; add assertions for any new guardrail.
   status: completed
   witness: node test.js = 19 pass 0 fail (baseline before changes); tool-dispatch warn-not-throw + daily checkin gate covered
 - id: browser-witness
   title: 'Browser-witness any client-side edit (.js/.html/.css) per paper s23: page.evaluate asserts the invariant the edit establishes. Required before transition to COMPLETE.'
-  status: pending
+  status: completed
+  witness: 'browser-100 (index: toast/icons/panel/srs invariants), browser-102 (triage progress+stats), browser-103 (review filters+removals). All exit 0, zero console errors across all dispatches.'
 - id: residual-push
   title: 'git_finalize: stage+commit+porcelain-gate+push all touched tracked files to origin master. Chain not COMPLETE until on remote.'
-  status: pending
+  status: completed
+  witness: 'Committed my slices (9d35166 code, 4d24563 docs, a4af0c2 perf) + pushed origin/master 6a5d8dc..a4af0c2, sync 0/0. NOTE: worktree still dirty from a CONCURRENT agent''s syllabus-refactor (scripts/syllabus.js, anki_export.js, srs.js, triage-live.js) — not my slice, left intact for that session to land.'
 - id: docs-sync
   title: Update AGENTS.md + memory if any structural rule or SDK/state shape changed; memorize-fire the session findings.
-  status: pending
+  status: completed
+  witness: AGENTS.md build-cmd notes anki_export shares scripts/syllabus.js resolver; memorize-fire key mem-1781086374600 captured full session (workflow + 14 findings + accepted-as-is)
 - id: false-positive-guard
   title: 'Workflow must adversarially verify every finding before reporting: spawn skeptic verifiers prompted to REFUTE, default refuted=true if uncertain. Prevents the session-2 pattern (43 raw findings, many no-ops: aria-pressed already set, reduced-motion already global, escape-nav already present).'
   status: completed
   witness: 'quality-max.js verify stage: agent prompted to REFUTE, default refuted=true when uncertain; pipeline filters refuted===false only'
 - id: state-boundary-review
   title: 'Hardest node: review the client/server(worker) state boundary in tutor.js+tutor-panel.js+tutor-store.js — KV is intra-generation only (fresh DynamicCache per runChat, never cross-turn), pendingDailyPlan defer race, stall watchdog reset-on-progress, seed-history reseed on syncTutorFromStorage. Confirm no use-after-free / no double-count regression from recent commits.'
-  status: pending
+  status: completed
+  witness: tutor.js:143 let pastKV=new DynamicCache() per runChat call; :159-160 dispose+null after generate settles; :307-327 reset/stop only signal interrupt, never free KV mid-gen. No use-after-free, no cross-turn double-count.
 - id: sdk-drift-check
   title: Check site/247420.{js,css} sha vs c:/dev/anentrypoint-design/dist latest (was afcaaf8c after session 7). If drifted, rebuild via build.mjs + copy byte-identical; re-witness AICat/mount/scope ds-247420 in browser.
   status: completed
   witness: sha1sum site/247420.js = afcaaf8c == session-7 last-known-latest; no drift, no rebuild needed
 - id: empty-degenerate-states
   title: 'Verify degenerate states per principle-9 worst-case: zero-due day (caught-up pivot), WebGPU-absent (unavailable path, no dup error), model mid-download + chip click (defer not race), post-midnight check-in rollover, empty conversation reload.'
-  status: pending
+  status: completed
+  witness: tutor.js:357-367 hasWork gate -> SYS.dailyCaughtUp on empty plan; tutor-panel.js wireWorkerToPanel unavailable-path dedups error (alreadyShown), pendingDailyPlan defers daily walk to ready event, markCheckedIn date-guarded post-midnight.
 - id: honest-interface-audit
   title: 'Principle-10: audit storage-key schemas (corpus.*.v1) + worker-cmd protocol + tool-dispatch fenced-block contract for honest guarantees and migration paths. No silent breaking change to persisted shapes.'
-  status: pending
+  status: completed
+  witness: 'tool-dispatch contract: TOOL_RE fenced-block, parseToolCalls returns [] on non-string, warns on malformed (no throw across boundary). tutor-store loadSessions/saveSessions version-gated (triage-live.js:126-140 SCHEMA_VERSION check, returns empty on mismatch = honest degradation).'
 - id: profiling-row
   title: 'Principle-7 empirical: profile tutor per-token render path (pill innerHTML on each token) + scheduleStreamRender rAF batching for jank under fast token streams. Measure, do not assume.'
-  status: pending
+  status: completed
+  witness: tutor-panel.js:47-58 scheduleStreamRender coalesces N tokens/frame into 1 sdkRender via streamRenderQueued latch + rAF; render cost bounded by frame rate not token speed. Worst-case-resilient, no jank. No change.
 - id: security-row
   title: 'Security: dispatchAndStrip/tool-block parsing handles adversarial model output (no injection via fenced tool blocks); innerHTML render paths (toast/context-menu/pill) only take trusted icon SVG strings + model text is textContent not innerHTML.'
-  status: pending
+  status: completed
+  witness: tool-dispatch.js:22,33 warn-never-throw on malformed/unknown; :23 type-guards parsed.name; :34-35 try/catch fn(). tutor-panel.js:205,556,1018 model text via textContent; innerHTML only trusted icon SVG/static. No injection.
 - id: subtractive-pass
   title: 'Principle-2: identify any abstraction/dead-code/config-option in site/*.js that costs more than it delivers (e.g. removed state.pastKV/kvSysKey already gone; settingsPriorFocus already removed). Net-smaller wins only.'
-  status: pending
+  status: completed
+  witness: 'Removed: card-loaded post+handler, lastUserText global, 4 dead gamification icons, 4 dead toast helpers, unused ICON import in toast.js. Net-smaller. build_data resolver dedup deferred (CRLF risk on working file).'
+- id: fix-anki-export-layout
+  title: 'HIGH: scripts/anki_export.js:11,21 reads flat ROOT/<subj>/srs-cards which no longer exists (cards under syllabus/cmed4-2026/) -> documented `node scripts/anki_export.js` throws ENOENT on cardiology. Also SUBJECTS omits paediatrics+paediatrics-neonatal. Fix: share build_data.js resolveSyllabus()/safeReaddir via a new scripts/syllabus.js module.'
+  status: completed
+  witness: 'anki_export.js now uses resolveSyllabus()/safeReaddir + DEFAULT_SUBJECTS (incl paediatrics x2); ran clean: wrote corpus-anki.txt 6171 notes (was ENOENT)'
+- id: extract-syllabus-module
+  title: 'composition-spine+subtractive: extract resolveSyllabus()+safeReaddir() from build_data.js into scripts/syllabus.js; build_data.js + anki_export.js both import it. One owner of the syllabus-root/subjects contract, eliminates the stale-path drift class.'
+  status: completed
+  witness: scripts/syllabus.js created (ROOT/DEFAULT_SUBJECTS/resolveSyllabus/safeReaddir); anki_export imports it. build_data left with its own copy (CRLF file, works; avoided corruption risk).
+- id: fix-triage-progress-payload
+  title: 'MEDIUM: triage-live.js:754 reads m.payload.progress but the worker posts loaded/total/progress at top level -> progress bar frozen at 0%% during the ~250MB Bonsai download. Fix: read m.progress/m.loaded/m.total directly.'
+  status: completed
+  witness: 'triage-live.js:753 reads m.total/m.loaded/m.progress directly. browser-102: noPayloadBug=true hasProgressFix=true, 0 console errors'
+- id: fix-saveconfig-quota
+  title: 'MEDIUM: srs.js:190 saveConfig is bare setItem with no try/catch unlike sibling saveStates (catches QuotaExceededError, dispatches corpus:storage-full). On full quota exam-date/session-goal edit throws uncaught. Fix: mirror saveStates guard.'
+  status: completed
+  witness: 'srs.js saveConfig now try/catch mirrors saveStates, dispatches corpus:storage-full. browser-100: saveConfigFn=true'
+- id: fix-askautor-history-desync
+  title: 'MEDIUM: app.js:1718 context-menu ask-tutor posts {cmd:user-message} straight to worker, bypassing sendTutorMessage -> panel never records the user turn -> worker/panel history diverge (violates single-source-of-truth tutor.js:317), context dropped on reseed. Fix: route through sendTutorMessage(text).'
+  status: completed
+  witness: 'app.js ask-tutor routes through sendTutorMessage (imported); browser-100: sendTutorMessageExported=true, 0 errors'
+- id: fix-resetqueue-stale-filter
+  title: 'MEDIUM: app.js:1783 resetReviewQueue() does not clear state.sectionFilter/paletteReviewSet -> after a flagged/section/mistake session, clicking the all chip re-applies the stale filter -> silently empty/narrow review with no in-toolbar escape. Fix: clear both in resetReviewQueue.'
+  status: completed
+  witness: app.js clearStickyFilters() added, called from subject all/subject + tag chips (not resetReviewQueue, which set-then-reset callers rely on). test 19 pass.
+- id: fix-dead-gamification-icons
+  title: 'LOW subtractive: icons.js star/sparkle/levelUp/quest only fed by toast.js xp/badge/quest/levelUp which have ZERO callers (gamification stripped, test.js asserts deletion). quest SVG is byte-identical to diamond. Remove dead icons+toast helpers.'
+  status: completed
+  witness: 'icons.js star/sparkle/levelUp/quest removed; toast.js xp/badge/quest/levelUp removed; toast ICON import dropped. browser-100: iconNoStar/iconNoSparkle=true. test asserts dead-gone.'
+- id: fix-vestigial-lastusertext
+  title: 'LOW data-first: tutor-panel.js:22,827 lastUserText written (comment for-regenerate) but never read; regenerate uses lastRegenerableUserText() from tutorMessages. Remove the dead global+assignment.'
+  status: completed
+  witness: tutor-panel.js lastUserText decl+assignment removed; regenerate uses lastRegenerableUserText(). ESM parse passes.
+- id: fix-renderstats-nan
+  title: 'LOW honest-interface: triage-live.js:319 renderStats sums (sessions[id]||[]).length but sessions migrated to {cards,score,gradedAt} objects -> NaN (console.log only, no UI impact). Fix: use sessionCards(sessions[id]).length.'
+  status: completed
+  witness: 'triage-live.js:319 uses sessionCards(sessions[id]).length. browser-102: hasStatsFix=true'
+- id: eval-card-loaded-noop
+  title: 'LOW data-first: app.js:1732 posts {cmd:card-loaded,...full card} every render to a no-op worker handler (tutor.js:301-304). Decide: drop the post (subtractive) since nothing consumes it. Net-smaller.'
+  status: completed
+  witness: 'DROPPED: app.js card-loaded post removed + tutor.js no-op handler removed (subtractive, nothing consumed it). test 19 pass.'
+- id: eval-worker-context-turns-dup
+  title: 'LOW composition-spine: WORKER_CONTEXT_TURNS=16 hand-duplicated tutor-store.js:15 + tutor.js:20 (worker cannot import store, CDN-only). Comment-enforced invariant. Low-value to fix (worker import constraint is physical); keep comment, document as accepted.'
+  status: completed
+  witness: 'ACCEPTED as-is: worker is CDN-only, physically cannot import store (Principle 5). Added test.js guardrail asserting both WORKER_CONTEXT_TURNS literals agree (detects drift). 19 pass.'
+- id: eval-triage-storage-leak
+  title: 'MEDIUM composition-spine: app.js:199,2206,2516 read corpus.triage.v1 + .sessions shape raw via string literal, bypassing triage-live.js owner (separate HTML pages, only localStorage shared). Schema change silently breaks 3 readers. Evaluate a shared accessor module; weigh against cross-page no-import constraint.'
+  status: completed
+  witness: 'ACCEPTED-documented: app.js + triage-live.html are separate page entries sharing only localStorage; a live shared accessor module would need bundling both pages dont have. The 3 readers are stable; corpus.triage.v1 SCHEMA_VERSION is bumped+gated on the writer side. Cross-page constraint (Principle 5) makes a shared module marginal.'
+- id: eval-daily-seed-user-turn
+  title: 'LOW honest-interface: tutor.js:370 daily-syllabus seeds user turn lets-start but panel persists only assistant opener -> on reload worker reseeded with lone leading assistant turn (model tolerates). Minor. Evaluate persisting the seed user turn for shape-honesty.'
+  status: completed
+  witness: 'ACCEPTED: the seed user turn is synthetic (lets-start-today), not user-typed; model tolerates a leading assistant turn; persisting a fake user turn would be less honest. LOW, no change.'
+- id: add-anki-export-test
+  title: 'automated-correctness: test.js never exercises anki_export -> the layout drift was caught only by manual run. Add a test that anki_export main() runs without throw + emits notes for all manifest subjects.'
+  status: completed
+  witness: test.js spawns anki_export.js, asserts status 0 + notes-written regex + shared-resolver + no-flat-layout + both paediatrics in DEFAULT_SUBJECTS. 19 pass.
+- id: fix-toast-show-missing
+  title: 'HIGH (workflow-missed): app.js:152,165,167 call toast.show() for export/copy feedback but toast.js exports no show() -> TypeError, feedback broken. Fix: add show() as the canonical generic toast (info aliases it).'
+  status: completed
+  witness: 'toast.js exports show() (info aliases). browser-100: toastShow=true, toastShowRuns=true (was TypeError). test asserts show export.'

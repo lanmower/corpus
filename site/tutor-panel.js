@@ -19,7 +19,6 @@ let isPanelCollapsed = true;
 let config = { ...loadConfig() };
 let modelStatus = 'idle';     // idle | loading | downloading | ready | unavailable
 let modelStatusDetail = '';
-let lastUserText = '';        // for regenerate
 let showSettings = false;
 let thinkingWatchdog = null;  // resets isThinking if the worker goes silent
 
@@ -832,7 +831,6 @@ export function sendTutorMessage(text, opts = {}) {
     }
     preloadTutorModel(); // ensure the model is loading even if send precedes open
     if (!opts.isRegenerate) addTutorMessage(text, true);
-    lastUserText = text;
     // Set thinking optimistically *now*, before the worker's coaching-start —
     // otherwise during the model-load window (status loading/downloading) the
     // isThinking guard is still false and rapid sends would queue duplicate

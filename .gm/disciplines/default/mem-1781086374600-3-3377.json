@@ -1,0 +1,19 @@
+## Corpus quality-max workflow + 14-finding sweep (2026-06-10 session)
+
+User: 'make a workflow to maximize project quality, fan out subagents, use synthesized-engineering-dna discipline'.
+
+DELIVERABLE: .claude/workflows/quality-max.js - reusable Workflow. 8 review lenses (one per engineering-DNA principle: data-first/subtractive/composition-spine/adversarial/automated-correctness/worst-case/honest-interface/glyph-ai-tell), pipeline(review->parallel adversarial-verify->synthesize). Verify stage prompts skeptic to REFUTE, default refuted=true -> filters the session-2 false-positive pattern. FINDING_SCHEMA+VERDICT_SCHEMA. Run wf_67a0cd05-23c: 23 agents, 15 raw -> 14 confirmed, 1 refuted. glyph lens found nothing (codebase clean after 7 prior sweeps).
+
+REAL BUGS FIXED (prior sweeps missed, all browser-witnessed, test 19->19 pass w/ new guardrails):
+1. HIGH: scripts/anki_export.js read flat ROOT/<subj>/srs-cards (cards moved to syllabus/cmed4-2026/) -> documented `node scripts/anki_export.js` threw ENOENT. ALSO SUBJECTS omitted paediatrics+paediatrics-neonatal. FIX: extracted scripts/syllabus.js (ROOT/DEFAULT_SUBJECTS/resolveSyllabus/safeReaddir); anki_export imports it. Now writes 6171 notes. build_data.js kept own copy (CRLF file, avoided corruption). test spawns anki_export asserting status 0 + notes regex.
+2. HIGH (workflow-MISSED, self-found): app.js:152/165/167 call toast.show() but toast.js had no show() export -> TypeError, export/copy feedback broken. FIX: added show() (info aliases it).
+3. MEDIUM triage-live.js: progress reads m.payload.progress but worker posts loaded/total/progress TOP-LEVEL -> bar frozen 0%% whole download. FIX: read m.total/m.loaded/m.progress (mirror tutor-panel:924).
+4. MEDIUM srs.js saveConfig bare setItem no quota guard (sibling saveStates has one) -> uncaught on full quota. FIX: try/catch + corpus:storage-full.
+5. MEDIUM app.js ask-tutor context-menu posted {cmd:user-message} straight to worker bypassing sendTutorMessage -> panel never recorded user turn -> worker/panel history diverge. FIX: route through sendTutorMessage (now imported in app.js).
+6. MEDIUM app.js resetReviewQueue left sectionFilter/paletteReviewSet -> all-chip re-applied stale filter -> silently empty review. FIX: clearStickyFilters() called from subject+tag chips ONLY (NOT resetReviewQueue - set-then-reset callers rely on it).
+
+SUBTRACTIVE removals: card-loaded post+no-op handler (app.js+tutor.js), lastUserText dead global, 4 dead gamification icons (star/sparkle/levelUp/quest) + 4 dead toast helpers (xp/badge/quest/levelUp) + unused ICON import. Added icons.help+book for context menu (replaced '?'/'#' ASCII placeholders). renderStats NaN -> sessionCards().length.
+
+ACCEPTED-as-is (Principle 5 physical constraint): WORKER_CONTEXT_TURNS=16 hand-dup'd tutor.js+tutor-store.js (worker CDN-only, cannot import store) - added test guardrail asserting literals agree. eval-triage-storage-leak (corpus.triage.v1 raw-read in app.js x3) - separate page entries share only localStorage, shared live module needs bundling neither page has; SCHEMA_VERSION gated on writer. daily-syllabus seed user turn not persisted (synthetic not user-typed).
+
+KEY: the quality-max workflow earned its cost - surfaced a HIGH crash 7 manual sweeps missed. test.js now 19 pass with anki-run + dead-gamification + toast.show + WORKER_CONTEXT_TURNS guardrails.

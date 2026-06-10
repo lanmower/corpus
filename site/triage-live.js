@@ -316,7 +316,7 @@ function renderStats() {
     const sessions = state.sessions || {};
     const attempted = Object.keys(sessions).length;
     let totalCards = 0;
-    for (const id of Object.keys(sessions)) totalCards += (sessions[id] || []).length;
+    for (const id of Object.keys(sessions)) totalCards += sessionCards(sessions[id]).length;
     const last = state.lastGrade != null ? `${state.lastGrade}%` : '—';
     const streak = state.streak || 0;
     els.statsRow.textContent = `${attempted} attempted · streak ${streak} · last grade ${last}`;
@@ -751,8 +751,10 @@ function onWorkerMessage(e) {
     if (m.status === 'loading') {
         els.progressText.textContent = 'loading tutor…';
     } else if (m.status === 'progress') {
-        const p = m.payload || {};
-        const pct = p.progress != null ? Math.round(p.progress) : 0;
+        // The worker posts loaded/total/progress at the top level (see
+        // triage-llm-worker.js) — there is no `payload` wrapper. Prefer the
+        // byte ratio, fall back to the transformers.js percentage.
+        const pct = m.total ? Math.round((m.loaded / m.total) * 100) : Math.round(m.progress || 0);
         els.progressFill.style.width = pct + '%';
         els.progressText.textContent = `loading tutor… ${pct}%`;
     } else if (m.status === 'ready') {

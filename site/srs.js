@@ -187,7 +187,17 @@ export function loadConfig() {
     } catch { return { examDate: DEFAULT_EXAM_DATE, sessionGoal: 30 }; }
 }
 
-export function saveConfig(cfg) { localStorage.setItem(CONFIG_KEY, JSON.stringify(cfg)); }
+export function saveConfig(cfg) {
+    // Mirror saveStates' quota guard: a full quota degrades to the storage-full
+    // banner instead of throwing an uncaught error out of an exam-date / goal edit.
+    try {
+        localStorage.setItem(CONFIG_KEY, JSON.stringify(cfg));
+    } catch (e) {
+        const quota = e && (e.name === 'QuotaExceededError' || /quota/i.test(String(e.message)));
+        if (quota && typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { source: 'srs', error: String(e) } }));
+        else throw e;
+    }
+}
 
 export function daysUntilExam(cfg = loadConfig()) {
     const ms = new Date(cfg.examDate) - new Date(today());

@@ -32,14 +32,10 @@ export const ICON = {
     flagOutline: svg('<path d="M4 14V3"/><path d="M4 3.5h7.5l-1.5 2.5 1.5 2.5H4Z"/>'),
     // gear — "settings"
     gear: svg('<circle cx="8" cy="8" r="2.2"/><path d="M8 1.4v1.6M8 13v1.6M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M1.4 8h1.6M13 8h1.6M3.1 12.9l1.1-1.1M11.8 4.2l1.1-1.1"/>', 14, 14),
-    // star — gamification "badge"
-    star: '<svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M8 1.5l1.8 3.9 4.2.5-3.1 2.9.8 4.2L8 11.5 4.3 13.4l.8-4.2L2 6.3l4.2-.5L8 1.5Z"/></svg>',
-    // sparkle — gamification "xp"
-    sparkle: '<svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M8 1.5c.4 2.7 1.8 4.1 4.5 4.5-2.7.4-4.1 1.8-4.5 4.5-.4-2.7-1.8-4.1-4.5-4.5C6.2 5.6 7.6 4.2 8 1.5Z"/><path d="M13 9.5c.2 1.2.8 1.8 2 2-1.2.2-1.8.8-2 2-.2-1.2-.8-1.8-2-2 1.2-.2 1.8-.8 2-2Z"/></svg>',
-    // up-level chevrons — "level up"
-    levelUp: svg('<path d="M4 9l4-4 4 4"/><path d="M4 13l4-4 4 4"/>'),
-    // quest diamond (reuse diamond outline)
-    quest: svg('<path d="M8 2.5 13.5 8 8 13.5 2.5 8 8 2.5Z"/>'),
+    // question mark in a circle — "ask the tutor"
+    help: svg('<circle cx="8" cy="8" r="6"/><path d="M6.3 6.2a1.7 1.7 0 0 1 3.3.5c0 1.1-1.6 1.4-1.6 2.5"/><path d="M8 11.4h.01"/>'),
+    // open book — "open subject guide"
+    book: svg('<path d="M8 4v9"/><path d="M8 4C6.5 3 4 3 2.5 3.5v8C4 11 6.5 11 8 12c1.5-1 4-1 5.5-.5v-8C12 3 9.5 3 8 4Z"/>'),
     // x — "close / dismiss"
     close: svg('<path d="M4 4l8 8M12 4l-8 8"/>'),
     // two vertical bars — "suspend / pause"

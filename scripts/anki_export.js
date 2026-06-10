@@ -6,9 +6,11 @@
 const fs = require('fs');
 const path = require('path');
 const { parseYaml } = require('./parse_yaml.js');
+const { ROOT, DEFAULT_SUBJECTS, resolveSyllabus, safeReaddir } = require('./syllabus.js');
 
-const ROOT = path.resolve(__dirname, '..');
-const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
+const SYLLABUS = resolveSyllabus();
+const SUBJ_ROOT = SYLLABUS.root;
+const SUBJECTS = SYLLABUS.subjects || DEFAULT_SUBJECTS;
 
 function tsvEscape(s) {
     return String(s == null ? '' : s).replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
@@ -18,8 +20,8 @@ function main() {
     const out = ['#separator:tab', '#html:true', '#guid column:1', '#notetype column:2', '#deck column:3', '#tags column:6'];
     let count = 0;
     for (const s of SUBJECTS) {
-        const dir = path.join(ROOT, s, 'srs-cards');
-        for (const f of fs.readdirSync(dir).filter(x => /\.ya?ml$/.test(x))) {
+        const dir = path.join(SUBJ_ROOT, s, 'srs-cards');
+        for (const f of safeReaddir(dir).filter(x => /\.ya?ml$/.test(x))) {
             const parsed = parseYaml(fs.readFileSync(path.join(dir, f), 'utf8'));
             if (!parsed || !Array.isArray(parsed.notes)) continue;
             for (const n of parsed.notes) {

@@ -23,7 +23,7 @@ import { buildSearchIndex, mountPalette, snippet as searchSnippet } from './sear
 import { makeToggleButton } from './theme.js';
 import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from './drag.js';
 import { showContextMenu, closeContextMenu } from './context-menu.js';
-import { initTutorPanel, wireWorkerToPanel, addTutorMessage, setTutorContext, syncTutorFromStorage, startDailySyllabus, setDailyPlanProvider } from './tutor-panel.js';
+import { initTutorPanel, wireWorkerToPanel, addTutorMessage, setTutorContext, syncTutorFromStorage, startDailySyllabus, setDailyPlanProvider, sendTutorMessage } from './tutor-panel.js';
 import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn } from './tutor-store.js';
 import { ICON } from './icons.js';
 
@@ -1519,9 +1519,9 @@ async function renderReview() {
 
     const chips = el('div', { class: 'filter-chips', role: 'group', 'aria-label': 'subject filter' },
         el('button', { class: 'chip' + (state.reviewSubjectFilter === 'all' ? ' active' : ''),
-            on: { click: () => { state.reviewSubjectFilter = 'all'; resetReviewQueue(); renderReview(); } } }, 'all'),
+            on: { click: () => { state.reviewSubjectFilter = 'all'; clearStickyFilters(); resetReviewQueue(); renderReview(); } } }, 'all'),
         ...state.manifest.subjects.map(s => el('button', { class: 'chip' + (state.reviewSubjectFilter === s.subject ? ' active' : ''),
-            on: { click: () => { state.reviewSubjectFilter = s.subject; resetReviewQueue(); renderReview(); } } }, s.subject))
+            on: { click: () => { state.reviewSubjectFilter = s.subject; clearStickyFilters(); resetReviewQueue(); renderReview(); } } }, s.subject))
     );
     const cramBtn = el('button', { class: 'chip' + (state.cramMode ? ' active' : ''),
         'aria-label': 'toggle cram mode', 'aria-pressed': String(!!state.cramMode),
@@ -1532,7 +1532,7 @@ async function renderReview() {
         ...allTags.slice(0, 12).map(t => el('button', {
             class: 'chip' + (state.reviewTagFilter.has(t) ? ' active' : ''),
             'aria-pressed': String(state.reviewTagFilter.has(t)),
-            on: { click: () => { if (state.reviewTagFilter.has(t)) state.reviewTagFilter.delete(t); else state.reviewTagFilter.add(t); resetReviewQueue(); renderReview(); } } }, '#' + t))
+            on: { click: () => { if (state.reviewTagFilter.has(t)) state.reviewTagFilter.delete(t); else state.reviewTagFilter.add(t); clearStickyFilters(); resetReviewQueue(); renderReview(); } } }, '#' + t))
     ) : null;
     // Session-size picker (shown when due >= 10, not in cram mode)
     const totalDueForPicker = (state.reviewSessionStarted || 0) + (state._reviewBacklog || 0);
@@ -1714,32 +1714,19 @@ const card = state.reviewQueue[state.reviewIndex];
                   action: () => { flag.toggle(card.id); renderReview(); } },
                 { icon: ICON.skip, label: 'skip card', shortcut: 's', action: () => skipReview() },
                 { type: 'divider' },
-                { icon: '?', label: 'ask tutor about this', action: () => {
-                    if (state.tutorWorker) state.tutorWorker.postMessage({
-                        cmd: 'user-message',
-                        text: `explain the concept behind this card: "${card.front}" — answer is: ${card.back}`
-                    });
+                { icon: ICON.help, label: 'ask tutor about this', action: () => {
+                    // Route through sendTutorMessage so the panel records the user
+                    // turn too — posting straight to the worker recorded only the
+                    // assistant reply and diverged worker/panel history (single
+                    // source of truth = the panel's thread).
+                    sendTutorMessage(`explain the concept behind this card: "${card.front}" — answer is: ${card.back}`);
                 } },
-                { icon: '#', label: 'open subject guide', action: () => { location.hash = `#guides/${card._subject}`; } }
+                { icon: ICON.book, label: 'open subject guide', action: () => { location.hash = `#guides/${card._subject}`; } }
             ];
             showContextMenu(e.clientX, e.clientY, items);
         }).catch(() => {});
     });
 
-    // Notify tutor of loaded card (non-blocking)
-    if (state.tutorWorker && card) {
-        try {
-            state.tutorWorker.postMessage({
-                cmd: 'card-loaded',
-                id: card.id,
-                front: card.front,
-                back: card.back,
-                subject: card._subject
-            });
-        } catch (err) {
-            warn('tutor card-loaded notification failed', err.message);
-        }
-    }
 
     const actions = el('div', { class: 'toolbar review-actions', id: 'review-actions' });
     if (!state.reviewRevealed) {
@@ -1785,6 +1772,16 @@ function resetReviewQueue() {
     state.reviewRevealed = false; state.reviewAgainPile = [];
     state.reviewSessionGraded = 0; state.sessionFinished = false;
     state.reviewSessionCap = null; state._reviewBacklog = 0;
+}
+
+// Drop the sticky narrowing filters (flagged/mistake/drill set + section).
+// resetReviewQueue() must NOT do this — several entry points set these filters
+// immediately before calling it. Only the "broaden the queue" controls (subject
+// + tag chips) clear them, so the user has an in-toolbar escape from a narrowed
+// session back to the full due pool instead of a silently-empty queue.
+function clearStickyFilters() {
+    state.paletteReviewSet = null;
+    state.sectionFilter = null;
 }
 
 function exitLearnMode() {

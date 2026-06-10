@@ -1,6 +1,4 @@
 ﻿// toast container — bottom-right, max 3 visible, auto-dismiss 3s
-import { ICON } from './icons.js';
-
 const CONTAINER_ID = 'toast-container';
 const MAX = 3;
 const DURATION = 3000;
@@ -37,11 +35,10 @@ function push(kind, text, icon) {
     return t;
 }
 
-export function xp(delta, reason) { return push('xp', `+${delta} xp${reason ? ' - ' + reason.replace(/_/g, ' ') : ''}`, ICON.sparkle); }
-export function badge(label, icon) { return push('badge', `badge: ${label}`, icon || ICON.star); }
-export function quest(label, reward) { return push('quest', `quest done: ${label} (+${reward || 0})`, ICON.quest); }
-export function levelUp(level) { return push('level', `level up - lv ${level}`, ICON.levelUp); }
-export function info(text) { return push('info', text, ''); }
+// Generic notification. `show` is the canonical name (app.js calls toast.show);
+// `info` is kept as an alias for older call sites.
+export function show(text) { return push('info', text, ''); }
+export const info = show;
 
 let bound = false;
 export function bind() {
@@ -49,7 +46,7 @@ export function bind() {
     bound = true;
 }
 
-if (typeof window !== 'undefined') window.__toast = { xp, badge, quest, levelUp, info, bind };
+if (typeof window !== 'undefined') window.__toast = { show, info, bind };
 
 
 

@@ -298,10 +298,6 @@ self.addEventListener('message', async (e) => {
             buildGuideIndex(data.shard);
             return;
         }
-        if (cmd === 'card-loaded') {
-            // No-op — kept for protocol compat.
-            return;
-        }
         if (cmd === 'reset-history') {
             // Interrupt an in-flight generation before clearing so the runChat
             // promise settles cleanly (it owns + disposes its own per-call KV cache).
