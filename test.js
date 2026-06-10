@@ -1098,6 +1098,35 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.deepStrictEqual(decorative, [], nm + ' has decorative glyphs: ' + decorative.join(''));
         }
     });
+    t('quality-max run-4: section-line String-coercion + session-card retention + saveConfig merge + clipboard fallback', () => {
+        const app = READ('site/app.js'), srs = READ('site/srs.js');
+        // Section-ref match: shard.guide.sections[].line is a NUMBER, card.requires.sectionLine
+        // a STRING (build_data: line:heads[h].line vs sectionLine:String(best.line)). A bare ===
+        // is always false -> section link always fell back to the generic title and never scrolled.
+        // Both the builder and the post-nav click handler must coerce both sides to String.
+        assert.ok(!/sections\?\.find\(s => s\.line === card\.requires\.sectionLine\)/.test(app),
+            'section-ref builder uses bare number===string (always false)');
+        assert.ok(!/sections\?\.find\(s => s\.line === card\.requires\.sectionLine\)/.test(app.replace(/\?\./g, '.')),
+            'section-ref click-handler uses bare number===string');
+        assert.ok((app.match(/String\(s\.line\) === String\(card\.requires\.sectionLine\)/g) || []).length >= 2,
+            'both section-ref lookups must String()-coerce both sides');
+        // Session-done "export cards" must export the retained session cards, not
+        // state.reviewQueue (emptied by grade time -> always exported []).
+        assert.match(app, /reviewSessionCards: \[\]/, 'state must declare reviewSessionCards');
+        assert.match(app, /state\.reviewSessionCards\.push\(card0\)/, 'gradeReview must retain the graded card');
+        assert.match(app, /exportSessionCards\(state\.reviewSessionCards\.slice\(\)\)/, 'export must read retained session cards');
+        assert.ok(!/exportSessionCards\(state\.reviewQueue\.filter/.test(app), 'export must not filter the (empty) live queue');
+        // srs.saveConfig must merge over existing config so a partial write cannot wipe a field.
+        assert.match(srs, /const merged = \{ \.\.\.loadConfig\(\), \.\.\.cfg \}/, 'saveConfig must merge over persisted config');
+        assert.ok(!/localStorage\.setItem\(CONFIG_KEY, JSON\.stringify\(cfg\)\)/.test(srs), 'saveConfig must not write cfg verbatim');
+        // Clipboard writes degrade on insecure context: a shared copyToClipboard with an
+        // execCommand fallback replaces the unguarded navigator.clipboard.writeText calls.
+        assert.match(app, /function copyToClipboard/, 'app must define copyToClipboard helper');
+        assert.match(app, /function fallbackCopy/, 'app must define execCommand fallback');
+        assert.match(app, /copyToClipboard\(id,/, 'copy-id action must route through copyToClipboard');
+        assert.ok(!/navigator\.clipboard\.writeText\(id\)/.test(app), 'copy-id must not call navigator.clipboard.writeText unguarded');
+        assert.ok(!/navigator\.clipboard\.writeText\(tsv\)/.test(app), 'exportSessionCards must route through copyToClipboard');
+    });
     function panelSrcS() { return READ('site/tutor-panel.js'); }
 
     console.log(`\n${pass} pass · ${fail} fail`);

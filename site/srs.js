@@ -203,10 +203,16 @@ export function loadConfig() {
 }
 
 export function saveConfig(cfg) {
+    // Merge over the persisted config so a partial write (e.g. saveConfig({ sessionGoal })
+    // from a future settings control) cannot silently wipe the other field. Without this,
+    // the full-overwrite contract was an undocumented caller obligation every call site
+    // had to honour by re-spreading loadConfig() — exactly the misuse a confused
+    // maintainer would hit. loadConfig() already normalises a poison examDate.
+    const merged = { ...loadConfig(), ...cfg };
     // Mirror saveStates' quota guard: a full quota degrades to the storage-full
     // banner instead of throwing an uncaught error out of an exam-date / goal edit.
     try {
-        localStorage.setItem(CONFIG_KEY, JSON.stringify(cfg));
+        localStorage.setItem(CONFIG_KEY, JSON.stringify(merged));
     } catch (e) {
         const quota = e && (e.name === 'QuotaExceededError' || /quota/i.test(String(e.message)));
         if (quota && typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { source: 'srs', error: String(e) } }));

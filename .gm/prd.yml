@@ -1711,3 +1711,7 @@
   phase: EXECUTE
   status: completed
   witness: browser-4 WITNESS {compress_nan_guarded:true,import_future_rejected:true,localStamp_is_local:true,theme_api:true}; test.js 19 pass/0 fail; cardiology guide 6/8 sections body (22250ch sample)
+- id: quality-max-run-4
+  title: Run .claude/workflows/quality-max.js (4th run, engineering-DNA fan-out) against current state; adversarially verify findings; fix confirmed bugs; browser-witness client edits; test.js guardrails; commit+push
+  why: 'User re-issued the quality-max request. Workflow already exists (commits 2c3bede/b05282e/7d2e92b). Principle 2/3: run not rebuild. Each prior run found bugs in subsystems prior runs skipped — continue the selection-pressure loop on everything not yet considered.'
+  status: pending

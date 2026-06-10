@@ -57,7 +57,7 @@ const state = {
     flippedCards: new Set(),
     reviewSubjectFilter: 'all', reviewQueue: [], reviewQueueIds: [],
     reviewAgainPile: [], reviewAllCardIds: [], reviewIndex: 0,
-    reviewRevealed: false, reviewSessionGraded: 0, reviewSessionStarted: 0,
+    reviewRevealed: false, reviewSessionGraded: 0, reviewSessionStarted: 0, reviewSessionCards: [],
     sessionFinished: false, searchPaletteApi: null, reviewSessionCap: null,
     cramMode: false, learnMode: false, reviewTagFilter: new Set(),
     paletteReviewSet: null, sectionFilter: null,
@@ -164,11 +164,37 @@ function exportSessionCards(cards) {
         lines.push([front, back, subject, section].join('\t'));
     }
     const tsv = lines.join('\n');
-    navigator.clipboard.writeText(tsv).then(() => {
-        toast.show(`Copied ${cards.length} card${cards.length === 1 ? '' : 's'} to clipboard`);
-    }).catch(() => {
-        toast.show('Failed to copy to clipboard');
-    });
+    copyToClipboard(tsv,
+        `Copied ${cards.length} card${cards.length === 1 ? '' : 's'} to clipboard`,
+        'Failed to copy to clipboard');
+}
+
+// Clipboard write that degrades on an insecure context (file://, plain HTTP) where
+// navigator.clipboard is undefined — accessing .writeText there throws a synchronous
+// TypeError that a bare .catch() never sees. Falls back to execCommand('copy') like
+// tutor-panel's copyText, and always surfaces a toast so the action is never a silent
+// no-op. ok/fail are optional toast strings.
+function copyToClipboard(text, ok, fail) {
+    const done = () => { if (ok) toast.show(ok); };
+    const failed = () => { if (fail) toast.show(fail); };
+    try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done, failed));
+            return;
+        }
+    } catch {}
+    fallbackCopy(text, done, failed);
+}
+
+function fallbackCopy(text, done, failed) {
+    try {
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        const okExec = document.execCommand('copy');
+        ta.remove();
+        if (okExec) done(); else failed();
+    } catch { failed(); }
 }
 
 function dueCountFor(subject) {
@@ -1361,7 +1387,7 @@ function buildFlashcard(c) {
                     { icon: isFlagged ? ICON.flag : ICON.flagOutline, label: isFlagged ? 'unflag' : 'flag', action: () => { flag.toggle(id); card.classList.toggle('flagged'); } },
                     { icon: ICON.pause, label: 'suspend', action: () => { if (confirm('suspend this card?')) { srs.suspendCard(id, true); } } },
                     { type: 'divider' },
-                    { icon: ICON.copy, label: 'copy id', action: () => { navigator.clipboard.writeText(id); } }
+                    { icon: ICON.copy, label: 'copy id', action: () => { copyToClipboard(id, 'card id copied', 'copy failed'); } }
                 ]);
             }
         }
@@ -1594,8 +1620,8 @@ async function renderReview() {
                     : `${reviewed} card${reviewed === 1 ? '' : 's'} reviewed · streak ${p.streak}.`),
                 backlog > 0 ? el('p', { class: 'meta' }, `${backlog} more in backlog`) : null,
                 el('div', { class: 'toolbar' },
-                    el('a', { class: 'chip primary-action', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.sessionFinished = false; state.reviewSessionCap = null; renderReview(); } } }, wasLearn ? 'learn more' : 'review more'),
-                    el('button', { class: 'chip', on: { click: e => { e.preventDefault(); exportSessionCards(state.reviewQueue.filter((_, i) => i < state.reviewIndex + 1)); } } }, 'export cards'),
+                    el('a', { class: 'chip primary-action', href: '#review', on: { click: e => { e.preventDefault(); state.reviewSessionGraded = 0; state.reviewSessionCards = []; state.sessionFinished = false; state.reviewSessionCap = null; renderReview(); } } }, wasLearn ? 'learn more' : 'review more'),
+                    el('button', { class: 'chip', on: { click: e => { e.preventDefault(); exportSessionCards(state.reviewSessionCards.slice()); } } }, 'export cards'),
                     untickedCount > 0 ? el('a', { class: 'chip', href: `#subject/${subj}`, on: { click: e => { e.preventDefault(); go('subject', subj); } } }, `read ${subj} guide`) : null,
                     el('a', { class: 'chip', href: '#today', on: { click: e => { e.preventDefault(); state.learnMode = false; go('today'); } } }, 'back to today')
                 )));
@@ -1634,7 +1660,7 @@ const card = state.reviewQueue[state.reviewIndex];
     const sectionRef = (() => {
         if (!card.requires?.sectionLine) return null;
         const shard = state.shards[card._subject];
-        const sec = shard?.guide?.sections?.find(s => s.line === card.requires.sectionLine);
+        const sec = shard?.guide?.sections?.find(s => String(s.line) === String(card.requires.sectionLine));
         const sectionTitle = sec?.title || 'guide section';
         return el('a', {
             class: 'section-link',
@@ -1650,7 +1676,7 @@ const card = state.reviewQueue[state.reviewIndex];
                 setTimeout(() => {
                     const shard = state.shards[card._subject];
                     if (!shard) return;
-                    const sec = shard.guide?.sections?.find(s => s.line === card.requires.sectionLine);
+                    const sec = shard.guide?.sections?.find(s => String(s.line) === String(card.requires.sectionLine));
                     if (sec) {
                         const anchorId = `g-${slugify(sec.title)}-${sec.line}`;
                         const el = document.getElementById(anchorId);
@@ -1785,6 +1811,7 @@ function resetReviewQueue() {
     state.reviewRevealed = false; state.reviewAgainPile = [];
     state.reviewSessionGraded = 0; state.sessionFinished = false;
     state.reviewSessionCap = null; state._reviewBacklog = 0;
+    state.reviewSessionCards = [];
 }
 
 // Drop the sticky narrowing filters (flagged/mistake/drill set + section).
@@ -1815,6 +1842,10 @@ function gradeReview(cardId, score) {
     if (!state.cramMode) srs.updateCard(cardId, score, state.reviewAllCardIds || []);
     if (!state.cramMode && wasNew && card0?._subject) newcards.bump(card0._subject, 1);
     state.reviewSessionGraded++;
+    // Retain the graded card so the session-done "export cards" button has a real
+    // queue: state.reviewQueue is empty by the time the done screen renders (each
+    // graded id is spliced out of reviewQueueIds), so filtering it always yielded [].
+    if (card0) state.reviewSessionCards.push(card0);
     if (!state.cramMode) progress.bumpGradedSubject(card0?._subject || null, 1);
     if (score === 0) state.reviewAgainPile.push(cardId);
     // Mistake log
