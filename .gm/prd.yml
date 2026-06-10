@@ -1894,7 +1894,8 @@
 - id: run8-residual-push
   subject: Residual scan, commit and push run-8 changes; memorize-fire session learnings
   validation: git_finalize succeeds, porcelain empty, ahead==0
-  status: pending
+  status: completed
+  witness: git_finalize ae7a893 committed+pushed master; memorize-fire mem-1781126412301 embedded; porcelain gated clean by git_finalize
 - id: run8-daykey-unify
   subject: 'Converge all day-key helpers on local-date convention: progress.js todayISO/effectiveDateISO, srs.js today/dateOf, cram.js todayISO, calendar.js isoDate, schedule.js addDays UTC-parse bug — one shared local day-key helper (dates.js)'
   validation: All day keys local; addDays('2026-06-10',1)==='2026-06-11' in any tz; test.js passes; browser witness
