@@ -1689,12 +1689,15 @@
 - id: run-quality-max-workflow
   title: Run existing .claude/workflows/quality-max.js (8 engineering-DNA lenses -> adversarial verify -> synthesize) against current corpus site+tutor state
   detail: Workflow already built+committed (2c3bede). Re-run to catch issues introduced since last run incl peer-uncommitted app.js/tutor-panel.js/tutor-store.js edits.
-  status: pending
+  status: completed
+  witness: 'wf_86bc4fa7-fbf: 17 agents, 8 confirmed/2 refuted findings returned'
 - id: fix-confirmed-findings
   title: Fix every adversarially-confirmed finding the workflow returns; add test guardrails; browser-witness client-side edits
   detail: Only fix MY slice + shared issues; leave peer-owned uncommitted files unless finding is in code I can own. Skip refuted findings.
-  status: pending
+  status: completed
+  witness: triage-live.js highlight accumulate (browser-704 accumulates:true) + re-persist score + $-safe template (browser-702 dollarSafe:true) + grading reset; srs.js 2 dead exports removed; build_data.js fallback paediatrics completed; test.js 4 guardrails, 19 pass
 - id: commit-push-own-slice
   title: Commit+push only my own confirmed fixes with explicit paths (never git add -A); leave peer slice intact per shared-spool collision rule
   detail: ''
-  status: pending
+  status: completed
+  witness: commit b05282e pushed af5b176..b05282e; 4 explicit files (triage-live.js srs.js build_data.js test.js); peer slice already committed by peer; .gm/prd.yml left unstaged
