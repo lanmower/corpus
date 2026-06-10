@@ -1853,3 +1853,29 @@
   blockedBy:
   - witness-refactor-browser
   witness: 'CHANGELOG 2026-06-10 Changed: documented markdown.js/clipboard.js split. memorize-fire dispatched. Committing+pushing next via git_finalize.'
+- id: qm7-run-workflow
+  title: Run quality-max workflow (run 7) against HEAD 7811d4a with scope biased to never-reviewed surfaces (sw.js, anki_migrate.js, schedule.js, serve.js, style.css)
+  status: completed
+  witness: 'wf_4170610a-446: 30 agents, 8 lenses, 22 raw -> 21 confirmed / 1 refuted; scope expanded by 27 never-reviewed modules'
+- id: qm7-fix-confirmed
+  title: Fix every confirmed finding from run 7; each fix gets a test.js guardrail
+  status: completed
+  witness: 'all 21 findings fixed or structurally resolved: schedule.js (10-subject fallback, srsLoadConfig, local isoDate, quota persist, 3 dead exports), late.js reducedQuota, tutor-panel (watchdog pulse, closeTutorPanel), triage-llm-worker (per-call KV+stopping, honest header), tutor.js (chatChain serialize, finally dispose, anchor removed), app.js (casesDoneBySubject x2, totalCasesQueued schema, 7 local day-key sites), newcards local todayISO, build_data NUL->escape, AGENTS.md worker ref'
+- id: qm7-sdk-freshness
+  title: Rebuild c:/dev/anentrypoint-design dist via node scripts/build.mjs, sha-compare against site/247420.{js,css}, recopy on drift
+  status: completed
+  witness: rebuilt c:/dev/anentrypoint-design dist (v0.0.201+, commit 2ba5785); shas drifted; recopied 247420.{js,css}; browser-50 witnessed ds-scope mount, zero console errors
+- id: qm7-verify-tests
+  title: node test.js passes (currently 22) after all fixes; add run-7 guardrail block
+  status: completed
+  witness: 'node test.js: 23 pass / 0 fail (run-7 guardrail block added, 20+ assertions)'
+- id: qm7-browser-witness
+  title: Browser-verb witness every client-side edit same-session (domcontentloaded, window.__triage / live globals)
+  status: completed
+  witness: 'browser-960: isoLocal=true, schedToday=2026-06-10 local, 30 blocks, deadExportsGone=true, triage 96 scenarios, window.__triage object, zero console errors'
+- id: qm7-residual-push
+  title: 'Residual scan: porcelain triage every entry, git_finalize commit+push, branch_status ahead==0'
+  status: pending
+- id: qm7-memorize
+  title: memorize-fire run-7 outcomes (findings, fixes, lessons) before COMPLETE
+  status: pending

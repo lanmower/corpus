@@ -924,6 +924,11 @@ export function wireWorkerToPanel(worker) {
             case 'model-downloading': {
                 const pct = total ? Math.round((loaded / total) * 100) : Math.round(progress || 0);
                 setStatus('downloading', `Bonsai-1.7B ${pct}%`);
+                // A first download routinely exceeds the 90s watchdog; progress
+                // events prove the worker is alive, so pulse the watchdog the same
+                // way streamed tokens do — otherwise a send-during-download falsely
+                // trips "the coach stopped responding" mid-healthy-download.
+                if (isThinking) armThinkingWatchdog();
                 break;
             }
 
@@ -1074,11 +1079,4 @@ export function syncTutorFromStorage() {
         tutorWorker.postMessage({ cmd: 'seed-history', history: toWorkerHistory(tutorMessages) });
     }
     if (sdkRender) sdkRender();
-}
-
-export function closeTutorPanel() {
-    if (panelContainer) {
-        panelContainer.remove();
-        panelContainer = null;
-    }
 }

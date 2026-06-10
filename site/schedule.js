@@ -1,8 +1,10 @@
 // schedule engine — corpus.schedule.v1 (blocks) + corpus.schedule.config.v1 (config)
 // Deterministic per (config, exam date, due-counts, weights). Re-run from same inputs -> same output.
+import { loadConfig as srsLoadConfig } from './srs.js';
+
 const KEY = 'corpus.schedule.v1';
 const CFG_KEY = 'corpus.schedule.config.v1';
-let SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
+let SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','paediatrics','paediatrics-neonatal','pulmonology','rheumatology'];
 
 export function setSubjectList(list) {
     if (Array.isArray(list) && list.length) SUBJECTS = list.slice();
@@ -47,10 +49,9 @@ export function loadConfig() {
         // Priority: schedule config examDate > SRS config examDate > default
         let examDate = cfg.examDate;
         if (!examDate) {
-            try {
-                const srsCfg = JSON.parse(localStorage.getItem('corpus.srs.config') || '{}');
-                examDate = srsCfg.examDate;
-            } catch {}
+            // Go through srs.loadConfig() (not a raw key read) so srs's examDate
+            // sanitizer filters corrupt dates before we adopt them here.
+            try { examDate = srsLoadConfig().examDate; } catch {}
         }
         if (!examDate) examDate = DEFAULT_CONFIG.examDate;
         return fillSubjectMaps({
@@ -69,7 +70,7 @@ export function saveConfig(cfg) {
     if (!Number.isFinite(merged.breakLen) || merged.breakLen < 1) merged.breakLen = DEFAULT_CONFIG.breakLen;
     if (!INTENSITY_FACTOR[merged.intensity]) merged.intensity = DEFAULT_CONFIG.intensity;
     if (!merged.examDate) merged.examDate = DEFAULT_CONFIG.examDate;
-    localStorage.setItem(CFG_KEY, JSON.stringify(merged));
+    persist(CFG_KEY, JSON.stringify(merged));
     emit('config');
     return merged;
 }
@@ -79,9 +80,24 @@ export function loadSchedule() {
     catch { return { blocks: [], generatedAt: 0 }; }
 }
 
-export function saveSchedule(s) { localStorage.setItem(KEY, JSON.stringify(s)); emit('schedule'); }
+export function saveSchedule(s) { persist(KEY, JSON.stringify(s)); emit('schedule'); }
 
-export function isoDate(d) { return d.toISOString().slice(0, 10); }
+// Quota-guarded write: the schedule blob is the largest periodic write in the
+// app, and saveSchedule runs from the boot-time staleness regenerate — a quota
+// throw must degrade to the storage-full banner, not escape the render path.
+function persist(key, json) {
+    try { localStorage.setItem(key, json); }
+    catch {
+        try { if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { key } })); } catch {}
+    }
+}
+
+// LOCAL calendar date, not UTC: the daily check-in gate, "today's plan" views and
+// the new-card cap all roll over at local midnight, so schedule day-keys must too
+// (a UTC key hands users east of UTC yesterday's plan between 00:00 and UTC rollover).
+export function isoDate(d) {
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
 export function addDays(iso, n) { const d = new Date(iso + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return isoDate(d); }
 export function daysBetween(a, b) {
     if (!a || !b) return 30;
@@ -249,15 +265,6 @@ export function getSchedule({ regenerateIfStale = true, today = isoDate(new Date
     return s;
 }
 
-// Dynamic intensity based on recent progress rate
-export function computeDynamicIntensity(cfg, weeklyGradedAvg) {
-    const baseIntensity = INTENSITY_FACTOR[cfg.intensity] || 1;
-    if (weeklyGradedAvg < 10) return baseIntensity * 0.8;
-    if (weeklyGradedAvg < 30) return baseIntensity * 1.0;
-    if (weeklyGradedAvg > 100) return baseIntensity * 1.15;
-    return baseIntensity;
-}
-
 export function blocksForDate(dateIso) { return loadSchedule().blocks.filter(b => b.date === dateIso); }
 
 export function markBlockComplete(id, done = true) {
@@ -403,8 +410,6 @@ export function onUpdate(handler) {
     if (typeof window !== 'undefined') window.addEventListener('schedule:updated', e => handler(e.detail));
 }
 
-export function subjectList() { return SUBJECTS.slice(); }
-export const SUBJECT_LIST = SUBJECTS;
 
 
 

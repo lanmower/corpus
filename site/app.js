@@ -201,14 +201,38 @@ function dueCountsBySubjectMap() {
 }
 
 function totalCasesQueued() {
-    // Cases queued = scenarios in weakest subject + any unfinished sessions
+    // Cases queued = scenarios in weakest subject + any unfinished sessions.
+    // Session values are objects {cards, score, gradedAt} (legacy: bare arrays) —
+    // same normalization triage-live.js sessionCards() applies.
     let n = 0;
     try {
         const persisted = JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}');
         const sessions = persisted.sessions || {};
-        for (const id of Object.keys(sessions)) if ((sessions[id] || []).length > 0) n++;
+        for (const id of Object.keys(sessions)) {
+            const s = sessions[id];
+            if (((s && s.cards) || s || []).length > 0) n++;
+        }
     } catch {}
     return n;
+}
+
+// Build the schedule extras' casesDone map keyed by SUBJECT (the contract
+// schedule.buildDayBlocks consumes at extras.casesDone[a.subject]). Sessions in
+// corpus.triage.v1 are keyed by scenario id, so map ids back through the shards.
+function casesDoneBySubject() {
+    const out = {};
+    try {
+        const triage = JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}');
+        const done = new Set(Object.keys(triage.sessions || {}));
+        if (!done.size) return out;
+        for (const [subj, sh] of Object.entries(state.shards || {})) {
+            for (const sc of sh?.triage?.scenarios || []) {
+                const id = sc.id || sc.name;
+                if (done.has(id)) (out[subj] = out[subj] || new Set()).add(id);
+            }
+        }
+    } catch {}
+    return out;
 }
 
 function estReviewMinutes(due) { return Math.max(1, Math.round(due * 0.4)); }
@@ -217,7 +241,7 @@ function estReviewMinutes(due) { return Math.max(1, Math.round(due * 0.4)); }
 // not the full backlog. Falls back to 0 when no schedule has been generated yet.
 function todayPlanReviewTarget() {
     try {
-        const today = new Date().toISOString().slice(0, 10);
+        const today = schedule.isoDate(new Date());
         const sched = schedule.loadSchedule();
         const blocks = (sched.blocks || []).filter(b => b.date === today && b.kind === 'study');
         let n = 0;
@@ -278,7 +302,7 @@ function render() {
 
 // ---- shell-prompt status line ----
 function renderStatusLine(p, due) {
-    const date = new Date().toISOString().slice(0, 10);
+    const date = schedule.isoDate(new Date());
     const reviewed = p.todayGraded || 0;
     return el('div', { class: 'status-line', role: 'status', 'aria-label': 'study status' },
         el('span', { class: 'date' }, date),
@@ -405,7 +429,7 @@ function renderTutorOverviewPanel(due, newCount) {
             // pattern) rather than a one-shot greeting: hand the coach today's real
             // schedule blocks so it presents the plan step by step and the student
             // can drive it through the chat path.
-            const today = new Date().toISOString().slice(0, 10);
+            const today = schedule.isoDate(new Date());
             let plan = null;
             try {
                 const sched = schedule.loadSchedule();
@@ -2101,12 +2125,7 @@ function renderScheduleConfigPanel() {
 
     function regenAndPreview() {
         const ticksAll = loadGuideTicks();
-        const casesDone = {};
-        try {
-            const triage = JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}');
-            const sessions = triage.sessions || {};
-            for (const id of Object.keys(sessions)) (casesDone[id] = casesDone[id] || new Set()).add(id);
-        } catch {}
+        const casesDone = casesDoneBySubject();
         schedule.regenerate({
             dueCounts: dueCountsBySubject(),
             extras: { ticksAll, shards: state.shards, casesDone }
@@ -2407,16 +2426,11 @@ function renderMasteryRing() {
 // surfaces rollover/surplus as informational text.
 function renderScheduleChecklist(rows) {
     if (!state.manifest) return null;
-    const today = new Date().toISOString().slice(0, 10);
+    const today = schedule.isoDate(new Date());
     const dueCounts = dueCountsBySubjectMap();
     // Build extras for plannedSections / plannedCases
     const ticksAll = loadGuideTicks();
-    const casesDone = {};
-    try {
-        const triage = JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}');
-        const sessions = triage.sessions || {};
-        for (const id of Object.keys(sessions)) (casesDone[id] = casesDone[id] || new Set()).add(id);
-    } catch {}
+    const casesDone = casesDoneBySubject();
     // Regenerate plan with current eligibility-gated due counts and tick state.
     // Eligibility changes (ticking sections, introducing cards) shift what should be planned.
     const dueCountsForPlan = {};
@@ -2685,7 +2699,7 @@ function setupSdkApp() {
         }
 
         // Initialize schedule
-        const today = new Date().toISOString().slice(0, 10);
+        const today = schedule.isoDate(new Date());
         const sched = schedule.loadSchedule();
         if (!sched.blocks.length || sched.today !== today) {
             schedule.getSchedule({ today, dueCounts: dueCountsBySubjectMap(), ticksAll: loadGuideTicks() });
@@ -2699,7 +2713,7 @@ function setupSdkApp() {
         // Give the tutor panel a way to fetch today's real schedule plan so its
         // "Walk me through today" chip can launch the interactive daily-syllabus walk.
         setDailyPlanProvider(() => {
-            const today = new Date().toISOString().slice(0, 10);
+            const today = schedule.isoDate(new Date());
             try {
                 const sched = schedule.loadSchedule();
                 return { date: today, blocks: (sched.blocks || []).filter(b => b.date === today) };

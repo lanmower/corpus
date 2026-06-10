@@ -1,14 +1,15 @@
-// Shared LLM worker — Bonsai-1.7B 1-bit via transformers.js + WebGPU.
+// Triage LLM worker — Bonsai-1.7B 1-bit via transformers.js + WebGPU.
 // Based on the official Bonsai-WebGPU demo:
 //   https://huggingface.co/spaces/webml-community/bonsai-webgpu
 //
-// Used by both the triage page and the corpus tutor panel.
+// Used ONLY by the triage page (triage-live.js). The corpus tutor panel spawns
+// site/tutor.js, a separate worker with its own {cmd,...} protocol.
 //
 // Message protocol:
-//   { type: 'load' }                                          (idempotent — safe to call from multiple pages)
+//   { type: 'load' }                                          (idempotent)
 //   { type: 'generate', messages: [{role, content}], requestId? }
-//   { type: 'interrupt' }
-//   { type: 'reset' }                                         (clear past-key-values cache)
+//   { type: 'interrupt' }                                     (stops the in-flight generation only)
+//   { type: 'reset' }                                         (no-op kept for back-compat: the KV cache is per-generate)
 //
 // Reply protocol:
 //   { status: 'loading', stage }
@@ -30,8 +31,10 @@ const MODEL_ID = 'onnx-community/Bonsai-1.7B-ONNX';
 
 let generator = null;
 let loadPromise = null;
-let pastKV = null;
-const stopping = new InterruptableStoppingCriteria();
+// Stopping criteria of the generation currently in flight. Per-generate (never a
+// shared module instance): the caller's interrupt->reset->generate burst must not
+// let the new generate's reset un-interrupt the old generation it just stopped.
+let currentStopping = null;
 
 async function loadOnce() {
     self.postMessage({ status: 'loading', stage: 'probing webgpu' });
@@ -72,7 +75,8 @@ async function generate(messages, requestId) {
         self.postMessage({ status: 'error', error: 'model not loaded', stack: '', requestId });
         return;
     }
-    stopping.reset();
+    const stopping = new InterruptableStoppingCriteria();
+    currentStopping = stopping;
     let startTime;
     let numTokens = 0;
     let tps;
@@ -88,7 +92,12 @@ async function generate(messages, requestId) {
         }
     });
     self.postMessage({ status: 'start', requestId });
-    pastKV ??= new DynamicCache();
+    // Fresh KV cache per generate: every turn re-feeds the full prompt, so a
+    // reused populated cache double-counts the prefix and emits the same canned
+    // reply to every input (the bug tutor.js documents). Per-call ownership also
+    // removes the caller's reset-before-generate obligation. Disposed in finally
+    // so error paths (device-lost, OOM, interrupt throw) never leak GPU buffers.
+    let pastKV = new DynamicCache();
     try {
         const out = await generator(messages, {
             max_new_tokens: 512,
@@ -101,13 +110,11 @@ async function generate(messages, requestId) {
         self.postMessage({ status: 'complete', output: content, tps, numTokens, requestId });
     } catch (e) {
         self.postMessage({ status: 'error', error: String(e?.message || e), stack: String(e?.stack || ''), requestId });
+    } finally {
+        pastKV?.dispose?.();
+        pastKV = null;
+        if (currentStopping === stopping) currentStopping = null;
     }
-}
-
-function reset() {
-    pastKV?.dispose?.();
-    pastKV = null;
-    stopping.reset();
 }
 
 self.addEventListener('message', async (e) => {
@@ -118,9 +125,11 @@ self.addEventListener('message', async (e) => {
         } else if (type === 'generate') {
             await generate(messages, requestId);
         } else if (type === 'interrupt') {
-            stopping.interrupt();
+            currentStopping?.interrupt();
         } else if (type === 'reset') {
-            reset();
+            // Back-compat no-op: the KV cache is created and disposed per generate,
+            // so there is no cross-turn state to clear. Never touches stopping —
+            // a reset must not un-interrupt the generation just stopped.
         }
     } catch (err) {
         self.postMessage({ status: 'error', error: String(err?.message || err), stack: String(err?.stack || ''), phase: type });

@@ -5,7 +5,12 @@ const COUNT_KEY = 'corpus.newcards.v1';
 const CAP_KEY = 'corpus.newcards.cap.v1';
 const DEFAULT_CAP = 20;
 
-function todayISO(now = new Date()) { return now.toISOString().slice(0, 10); }
+// LOCAL date, not UTC: the daily new-card cap must reset at local midnight, in
+// step with the schedule day-keys and the check-in gate (a UTC stamp resets the
+// cap at the wrong hour for any user not on UTC).
+function todayISO(now = new Date()) {
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+}
 
 function readCounts() {
     try { return JSON.parse(localStorage.getItem(COUNT_KEY) || '{}') || {}; } catch { return {}; }

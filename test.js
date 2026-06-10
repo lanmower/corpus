@@ -1210,6 +1210,61 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     });
     function panelSrcS() { return READ('site/tutor-panel.js'); }
 
+    t('quality-max run-7: per-call KV/stopping in triage worker + chat serialization + local day-keys + casesDone subject contract + schedule hygiene', () => {
+        const w = READ('site/triage-llm-worker.js');
+        // MEDIUM (composition/adversarial): per-generate KV cache + stopping criteria.
+        // A module-level pastKV reused across full-prompt turns double-counts the
+        // prefix (canned-reply bug); a shared stopping criteria lets the caller's
+        // interrupt->reset->generate burst un-interrupt the generation just stopped.
+        assert.match(w, /let pastKV = new DynamicCache\(\)/, 'triage worker KV cache must be per-generate');
+        assert.ok(!/pastKV \?\?= new DynamicCache/.test(w), 'module-level reused pastKV must be gone');
+        assert.match(w, /const stopping = new InterruptableStoppingCriteria\(\)/, 'stopping criteria must be per-generate');
+        assert.match(w, /currentStopping\?\.interrupt\(\)/, 'interrupt must target the in-flight generation');
+        assert.match(w, /finally \{/, 'KV must be disposed in finally (error paths must not leak GPU buffers)');
+        const tut = READ('site/tutor.js');
+        // MEDIUM (worst-case): chat commands serialize through a promise chain so a
+        // duplicate queued user-message cannot generate concurrently; KV disposes in
+        // finally so a throwing generate cannot leak into an OOM spiral.
+        assert.match(tut, /state\.chatChain\.then\(\(\) => runChatInner/, 'runChat must serialize via chatChain');
+        assert.match(tut, /\} finally \{[\s\S]{0,400}pastKV\?\.dispose/, 'tutor KV dispose must live in finally');
+        // LOW (honest-interface): TOOL_SPEC must not advertise the anchor arg the
+        // open_guide handler never reads.
+        assert.ok(!/optional-section-id/.test(tut), 'open_guide anchor arg removed from TOOL_SPEC');
+        // MEDIUM (automated-correctness): schedule extras casesDone is keyed by
+        // SUBJECT (the buildDayBlocks contract), not by scenario id; both regenerate
+        // call sites must use the shared builder.
+        const app = READ('site/app.js');
+        assert.match(app, /function casesDoneBySubject\(\)/, 'shared casesDoneBySubject builder must exist');
+        assert.strictEqual((app.match(/casesDoneBySubject\(\)/g) || []).length, 3, 'both regenerate sites use the shared builder');
+        assert.ok(!/casesDone\[id\] = casesDone\[id\]/.test(app), 'scenario-id-keyed casesDone construction must be gone');
+        // MEDIUM (worst-case): totalCasesQueued must read the object session schema.
+        assert.match(app, /\(\(s && s\.cards\) \|\| s \|\| \[\]\)\.length/, 'totalCasesQueued normalizes {cards} sessions');
+        // Day-keys are LOCAL calendar dates end to end: schedule.isoDate, the app
+        // plan filters, and the new-card cap — matching the local check-in gate.
+        const sched = READ('site/schedule.js');
+        assert.match(sched, /getFullYear\(\)/, 'schedule.isoDate must be local-date');
+        assert.ok(!/toISOString\(\)\.slice\(0, 10\)/.test(READ('site/newcards.js')), 'newcards todayISO must be local-date');
+        assert.strictEqual((app.match(/schedule\.isoDate\(new Date\(\)\)/g) || []).length, 7, 'app schedule day-key sites use schedule.isoDate');
+        // data-first/subtractive (schedule.js): 10-subject fallback, srs config via
+        // srs.loadConfig (sanitized), quota-guarded persist, dead exports removed.
+        assert.ok(/paediatrics/.test(sched) && /paediatrics-neonatal/.test(sched), 'schedule fallback lists all 10 subjects');
+        assert.match(sched, /srsLoadConfig\(\)\.examDate/, 'examDate fallback goes through srs.loadConfig');
+        assert.ok(!/localStorage\.getItem\('corpus\.srs\.config'\)/.test(sched), 'raw srs key read must be gone');
+        assert.match(sched, /corpus:storage-full/, 'schedule persist must degrade to the storage-full banner');
+        assert.ok(!/computeDynamicIntensity|SUBJECT_LIST|export function subjectList/.test(sched), 'dead schedule exports removed');
+        assert.ok(!/reducedQuota/.test(READ('site/late.js')), 'dead late.reducedQuota removed');
+        assert.ok(!/closeTutorPanel/.test(panelSrcS()), 'dead closeTutorPanel removed');
+        // MEDIUM (worst-case): download progress pulses the thinking watchdog so a
+        // send-during-first-download cannot falsely trip "coach stopped responding".
+        assert.match(panelSrcS(), /case 'model-downloading': \{[\s\S]{0,600}armThinkingWatchdog\(\)/, 'model-downloading must pulse the watchdog');
+        // glyph-ai-tell: build_data.js is plain text again (NUL byte replaced by the
+        // \0 escape — same runtime string, card ids unchanged).
+        const bd = require('fs').readFileSync('scripts/build_data.js');
+        assert.strictEqual(bd.indexOf(0), -1, 'build_data.js must contain no NUL byte');
+        // Worker header honesty: triage worker no longer claims to be shared.
+        assert.ok(!/Used by both the triage page and the corpus tutor panel/.test(w), 'triage worker header must not claim tutor sharing');
+    });
+
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
 })();

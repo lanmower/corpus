@@ -26,6 +26,7 @@ const state = {
     stopping: new InterruptableStoppingCriteria(),
     interrupted: false,  // worker-owned flag (transformers' #interrupted is private)
     generating: false,   // true between coaching-start and the generate promise settling
+    chatChain: Promise.resolve(), // serializes runChat calls (see runChat)
     history: [],         // [{role, content}] chat history (last WORKER_CONTEXT_TURNS)
     guideIndex: []       // [{subject, title, body, level, line}]
 };
@@ -113,8 +114,18 @@ function ensureLoaded() {
     return state.loadPromise;
 }
 
-// Run inference, stream tokens, return final text.
-async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320, sample = false } = {}) {
+// Run inference, stream tokens, return final text. Serialized: each message-handler
+// invocation is an independent async task, so two queued user-messages would
+// otherwise generate CONCURRENTLY on the same pipeline (interleaved token streams,
+// the second's stopping.reset un-interrupting the first). The chain makes the
+// panel's "the worker processes in order" assumption actually true.
+function runChat(messages, opts) {
+    const p = state.chatChain.then(() => runChatInner(messages, opts));
+    state.chatChain = p.catch(() => {});
+    return p;
+}
+
+async function runChatInner(messages, { doneEvent = 'coaching-done', maxTokens = 320, sample = false } = {}) {
     if (!state.ready) {
         self.postMessage({ event: 'unavailable', error: 'model not ready' });
         return '';
@@ -154,17 +165,18 @@ async function runChat(messages, { doneEvent = 'coaching-done', maxTokens = 320,
         const out = await state.generator(messages, genOpts);
         const content = out?.[0]?.generated_text?.at?.(-1)?.content ?? buf;
         const interrupted = state.interrupted === true;
-        // Dispose the per-call cache once the generate settles (after, never mid-
-        // generation — the stop handler only signals interruption, it never frees KV).
-        pastKV?.dispose?.();
-        pastKV = null;
-        state.generating = false;
         self.postMessage({ event: doneEvent, message: content, interrupted });
         return content;
     } catch (e) {
-        state.generating = false;
         self.postMessage({ event: 'error', error: String(e?.message || e) });
         return '';
+    } finally {
+        // Dispose the per-call cache once the generate settles — on EVERY path.
+        // A device-lost/OOM throw that skipped disposal leaked the populated KV
+        // buffers, making the next generate more likely to OOM (a death spiral).
+        pastKV?.dispose?.();
+        pastKV = null;
+        state.generating = false;
     }
 }
 
@@ -279,7 +291,7 @@ const TOOL_SPEC = `available page-control tools — emit each in its own fenced 
 {"name":"navigate","args":{"route":"today|calendar|guides|review|cases|stats"}}
 \`\`\`
 \`\`\`tool
-{"name":"open_guide","args":{"subject":"cardiology","anchor":"optional-section-id"}}
+{"name":"open_guide","args":{"subject":"cardiology"}}
 \`\`\`
 \`\`\`tool
 {"name":"start_session","args":{"subject":"cardiology"}}
