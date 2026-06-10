@@ -1,0 +1,3 @@
+## Corpus: node --check is NOT sufficient for site/*.js (per-tool quirk)
+
+`node --check` on D:/corpus/site/*.js parses as CommonJS, so it gives false positives/negatives on: ESM `export`, top-level `await`, worker-scope `self`, and `import` from a URL. Always verify client-side JS in a real browser (headless Chrome / playwriter works). Related: workers must be spawned `{type:'module'}` to use `import` (shared llm-worker.js and tutor.js both require this); cross-origin module workers need COEP require-corp (dev server sets it) + the CDN must serve CORP cross-origin (jsdelivr does); the `.ds-247420` scope class on the render root is mandatory for anentrypoint-design CSS (no UA fallback without it).

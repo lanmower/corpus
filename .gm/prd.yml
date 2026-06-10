@@ -1562,3 +1562,55 @@
   title: 'JANK (witnessed browser-306/307): worker LOAD_TIMEOUT_MS=180s fires DURING a slow but healthy download (1.7B model takes ~10min on slow links), emitting unavailable+error -> 2 error turns. The timeout should reset on download PROGRESS (distinguish stalled fetch from slow-but-progressing), not cap total load at 180s. Also dedup the unavailable+error double-turn.'
   status: completed
   witness: 'FIXED: replaced fixed LOAD_TIMEOUT_MS=180s with STALL_TIMEOUT_MS=90s watchdog that RESETS on each download progress pulse (onLoadProgress in progress_callback). browser-309: download ran 180+s (past old 180s cap) at errTurns=0 - healthy slow download no longer times out. Only a genuine 90s stall fails now'
+- id: workflow-artifact
+  title: 'Author reusable Workflow script .claude/workflows/quality-max.js that fans out subagents, each carrying one engineering-DNA principle as its review lens, over corpus surfaces (gui/ux/ui/client-state/server-state/boundary). pipeline: review-by-principle -> adversarial verify -> synthesize confirmed findings.'
+  status: completed
+  witness: '.claude/workflows/quality-max.js created: meta+8 PRINCIPLES lenses, pipeline(review->parallel verify), FINDING_SCHEMA+VERDICT_SCHEMA, default refuted=true'
+- id: workflow-run
+  title: Run the quality-max workflow against D:/corpus and collect confirmed findings (real, verified, not subagent false-positives like the 43-finding session-2 run that had no-ops).
+  status: pending
+- id: triage-findings-to-prd
+  title: Each confirmed workflow finding becomes its own prd-add row with witness (file:line). No finding handled inline-and-forgotten.
+  status: pending
+- id: glyph-tell-sweep
+  title: Full-codebase decorative-glyph + AI-design-tell scan across site/*.{js,html,css} + scripts/*.js. Prior sweeps clean; re-verify post daily-syllabus commits e1ac6f4/a782591 which added new tutor code.
+  status: pending
+- id: test-suite-green
+  title: node test.js passes (was 19) before and after any change; add assertions for any new guardrail.
+  status: completed
+  witness: node test.js = 19 pass 0 fail (baseline before changes); tool-dispatch warn-not-throw + daily checkin gate covered
+- id: browser-witness
+  title: 'Browser-witness any client-side edit (.js/.html/.css) per paper s23: page.evaluate asserts the invariant the edit establishes. Required before transition to COMPLETE.'
+  status: pending
+- id: residual-push
+  title: 'git_finalize: stage+commit+porcelain-gate+push all touched tracked files to origin master. Chain not COMPLETE until on remote.'
+  status: pending
+- id: docs-sync
+  title: Update AGENTS.md + memory if any structural rule or SDK/state shape changed; memorize-fire the session findings.
+  status: pending
+- id: false-positive-guard
+  title: 'Workflow must adversarially verify every finding before reporting: spawn skeptic verifiers prompted to REFUTE, default refuted=true if uncertain. Prevents the session-2 pattern (43 raw findings, many no-ops: aria-pressed already set, reduced-motion already global, escape-nav already present).'
+  status: completed
+  witness: 'quality-max.js verify stage: agent prompted to REFUTE, default refuted=true when uncertain; pipeline filters refuted===false only'
+- id: state-boundary-review
+  title: 'Hardest node: review the client/server(worker) state boundary in tutor.js+tutor-panel.js+tutor-store.js — KV is intra-generation only (fresh DynamicCache per runChat, never cross-turn), pendingDailyPlan defer race, stall watchdog reset-on-progress, seed-history reseed on syncTutorFromStorage. Confirm no use-after-free / no double-count regression from recent commits.'
+  status: pending
+- id: sdk-drift-check
+  title: Check site/247420.{js,css} sha vs c:/dev/anentrypoint-design/dist latest (was afcaaf8c after session 7). If drifted, rebuild via build.mjs + copy byte-identical; re-witness AICat/mount/scope ds-247420 in browser.
+  status: completed
+  witness: sha1sum site/247420.js = afcaaf8c == session-7 last-known-latest; no drift, no rebuild needed
+- id: empty-degenerate-states
+  title: 'Verify degenerate states per principle-9 worst-case: zero-due day (caught-up pivot), WebGPU-absent (unavailable path, no dup error), model mid-download + chip click (defer not race), post-midnight check-in rollover, empty conversation reload.'
+  status: pending
+- id: honest-interface-audit
+  title: 'Principle-10: audit storage-key schemas (corpus.*.v1) + worker-cmd protocol + tool-dispatch fenced-block contract for honest guarantees and migration paths. No silent breaking change to persisted shapes.'
+  status: pending
+- id: profiling-row
+  title: 'Principle-7 empirical: profile tutor per-token render path (pill innerHTML on each token) + scheduleStreamRender rAF batching for jank under fast token streams. Measure, do not assume.'
+  status: pending
+- id: security-row
+  title: 'Security: dispatchAndStrip/tool-block parsing handles adversarial model output (no injection via fenced tool blocks); innerHTML render paths (toast/context-menu/pill) only take trusted icon SVG strings + model text is textContent not innerHTML.'
+  status: pending
+- id: subtractive-pass
+  title: 'Principle-2: identify any abstraction/dead-code/config-option in site/*.js that costs more than it delivers (e.g. removed state.pastKV/kvSysKey already gone; settingsPriorFocus already removed). Net-smaller wins only.'
+  status: pending

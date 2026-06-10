@@ -1,0 +1,13 @@
+## Corpus tutor gap-sweep invariants (2026-06-10)
+
+Conversation-only tutor mode, fixes for surfaces not covered in sessions 3-7:
+
+1. DAILY EMPTY-PLAN PROMPT BRANCH: site/tutor.js `daily-syllabus` handler computes `hasWork` (any block with plannedReview/plannedNew/plannedSections/plannedCases) and selects `SYS.dailyCaughtUp` when false, else `SYS.daily`. SYS.daily says "present the FIRST block concretely" which contradicts an empty/caught-up plan and made the model emit nonsense. SYS.dailyCaughtUp explicitly forbids inventing a first block, congratulates, offers one optional light step (weak-area drill / short review). Regressing this = caught-up days produce garbage openers.
+
+2. CHAT LOG A11Y: #tutor-chat-root has role="log" + aria-live=polite + aria-atomic=false so AT announces appended messages as a conversation log, not a bare div.
+
+3. SETTINGS DIALOG: .tutor-settings-pop is role="dialog" + aria-modal=true with a Tab focus trap (keydown handler cycles first<->last focusable). Escape + outside-click close behaviour unchanged. Was role=group before.
+
+4. TOOL-DISPATCH DIAGNOSTICS: tool-dispatch.js console.warn on malformed-JSON tool blocks (parse catch) AND unknown action names (typeof fn !== function) — still no-throw, tests assert that. Aids debugging the non-deterministic model's tool emissions.
+
+Browser-witnessed (playwriter): chatRole=log/live=polite/atomic=false zero console errors; settings opens role=dialog aria-modal activeInside=true focusables=3. Commit 9d35166. 22 tests pass.
