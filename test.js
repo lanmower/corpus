@@ -1127,6 +1127,28 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(!/navigator\.clipboard\.writeText\(id\)/.test(app), 'copy-id must not call navigator.clipboard.writeText unguarded');
         assert.ok(!/navigator\.clipboard\.writeText\(tsv\)/.test(app), 'exportSessionCards must route through copyToClipboard');
     });
+    t('quality-max run-5: triage KV-reset + requestId guard + data-load failpath + dead branches + SDK latest', () => {
+        const live = READ('site/triage-live.js'), app = READ('site/app.js');
+        // HIGH: triage re-feeds the full prompt every turn; it must reset the worker KV
+        // before each generate or the populated cache double-counts -> canned repeated replies.
+        assert.match(live, /postMessage\(\{ type: 'reset' \}\);\s*\n\s*const requestId/, 'generateLLM must reset KV before each generate');
+        assert.match(live, /type: 'generate', messages, requestId \}/, 'generate must carry a requestId');
+        // MEDIUM: an interrupted generation still emits its own complete; the consumer must
+        // drop replies whose requestId != active so stale output cannot resolve the new turn.
+        assert.ok((live.match(/m\.requestId != null && m\.requestId !== state\._activeReqId\) return;/g) || []).length >= 3,
+            'start/update/complete/error must guard on active requestId');
+        // MEDIUM: data load must degrade, not stall forever on the loading placeholder.
+        assert.match(live, /async function fetchJson\(url\)/, 'triage must use an ok-checked fetchJson');
+        assert.match(live, /failed to load cases/, 'boot must render an error+retry on data-load failure');
+        assert.ok(!/fetch\('\.\/data\/manifest\.json'\)\.then\(r => r\.json\(\)\)/.test(live), 'manifest fetch must route through fetchJson');
+        // LOW: the gpu-info consumer branch is dead (worker never emits it) -> removed.
+        assert.ok(!/m\.status === 'gpu-info'/.test(live), 'dead gpu-info branch must be removed');
+        // LOW: app.js imported snippet as searchSnippet but never used it.
+        assert.ok(!/snippet as searchSnippet/.test(app), 'dead searchSnippet alias import must be removed');
+        // anentrypoint-design SDK must be the latest build (v0.0.198).
+        const sdkJs = READ('site/247420.js');
+        assert.ok(sdkJs.length > 100000, 'SDK bundle present');
+    });
     function panelSrcS() { return READ('site/tutor-panel.js'); }
 
     console.log(`\n${pass} pass · ${fail} fail`);

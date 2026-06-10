@@ -19,7 +19,7 @@ import * as calendar from './calendar.js';
 import * as mastery from './mastery.js';
 import * as toast from './toast.js';
 import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
-import { buildSearchIndex, mountPalette, snippet as searchSnippet } from './search.js';
+import { buildSearchIndex, mountPalette } from './search.js';
 import { makeToggleButton } from './theme.js';
 import { makeDraggable, makeDropZone, showLoadingState, hideLoadingState } from './drag.js';
 import { showContextMenu, closeContextMenu } from './context-menu.js';

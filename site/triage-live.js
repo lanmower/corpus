@@ -265,12 +265,18 @@ async function checkCapability() {
     }
 }
 
+async function fetchJson(url) {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(`${url} -> HTTP ${r.status}`);
+    return r.json();
+}
+
 async function loadManifestAndScenarios() {
-    state.manifest = await fetch('./data/manifest.json').then(r => r.json());
+    state.manifest = await fetchJson('./data/manifest.json');
     const all = [];
     const subjects = state.manifest.subjects.map(s => s.subject);
     await Promise.all(subjects.map(async s => {
-        const sh = await fetch(`./data/${s}.json`).then(r => r.json());
+        const sh = await fetchJson(`./data/${s}.json`);
         const meta = state.manifest.subjects.find(x => x.subject === s);
         if (sh.triage && Array.isArray(sh.triage.scenarios)) {
             for (let i = 0; i < sh.triage.scenarios.length; i++) {
@@ -782,14 +788,6 @@ function onWorkerMessage(e) {
     const m = e.data || {};
     console.log('[triage-live] worker', m.status, m);
     debugLog('worker-msg', m);
-    if (m.status === 'gpu-info') {
-        if (DEBUG_WEBGPU) {
-            els.modelDetail.textContent = `adapter: ${m.adapter?.vendor || '?'} ${m.adapter?.architecture || ''} · features: ${m.features.length} · fp16: ${m.fp16} · dtype: ${m.dtype}`;
-        } else {
-            els.modelDetail.textContent = 'preparing your private tutor — this happens once.';
-        }
-        return;
-    }
     if (m.status === 'loading') {
         els.progressText.textContent = 'loading tutor…';
     } else if (m.status === 'progress') {
@@ -807,17 +805,23 @@ function onWorkerMessage(e) {
         els.progressText.textContent = 'tutor ready';
         els.modelDetail.textContent = 'your private tutor is loaded and ready.';
     } else if (m.status === 'start') {
+        if (m.requestId != null && m.requestId !== state._activeReqId) return;
         state.streamBuffer = '';
         const last = state.messages[state.messages.length - 1];
         if (!last || last.role !== 'assistant') state.messages.push({ role: 'assistant', content: '' });
         renderMessages();
     } else if (m.status === 'update') {
+        if (m.requestId != null && m.requestId !== state._activeReqId) return;
         state.streamBuffer += m.output || '';
         const last = state.messages[state.messages.length - 1];
         // While streaming, show prose with tool blocks hidden so the chat stays readable.
         if (last && last.role === 'assistant') last.content = stripToolBlocks(state.streamBuffer) || state.streamBuffer;
         renderMessages();
     } else if (m.status === 'complete') {
+        // An interrupted generation still emits its own 'complete'. Drop any
+        // reply whose requestId does not match the active turn so a stale
+        // interrupted result cannot resolve the new turn's promise.
+        if (m.requestId != null && m.requestId !== state._activeReqId) return;
         const text = m.output || state.streamBuffer;
         const last = state.messages[state.messages.length - 1];
         if (last && last.role === 'assistant') last.content = stripToolBlocks(text);
@@ -827,6 +831,7 @@ function onWorkerMessage(e) {
         if (state.phase === 'graded') renderActive();
         if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
     } else if (m.status === 'error') {
+        if (m.requestId != null && m.requestId !== state._activeReqId) return;
         setGenerating(false);
         showWebgpuError(m.error || 'unknown worker error', m.stack || '');
         if (state._afterGenerate) { const cb = state._afterGenerate; state._afterGenerate = null; cb(); }
@@ -865,7 +870,15 @@ function generateLLM(userText) {
     ];
     if (state.generating) state.worker.postMessage({ type: 'interrupt' });
     setGenerating(true);
-    state.worker.postMessage({ type: 'generate', messages });
+    // Each turn re-feeds the FULL prompt (system snapshot changes per phase +
+    // growing conversation). Reusing a populated KV cache across full-prompt
+    // calls double-counts the cached prefix and yields the same canned reply to
+    // every input (see tutor.js fresh-cache-per-generate). Reset KV first so the
+    // worker rebuilds the cache from this prompt.
+    state.worker.postMessage({ type: 'reset' });
+    const requestId = (state._reqSeq = (state._reqSeq || 0) + 1);
+    state._activeReqId = requestId;
+    state.worker.postMessage({ type: 'generate', messages, requestId });
     return new Promise(resolve => { state._afterGenerate = resolve; });
 }
 state.generateLLM = generateLLM;
@@ -1191,8 +1204,24 @@ async function setupSdkApp() {
     }
 
     await checkCapability();
-    await loadManifestAndScenarios();
-    render();
+    try {
+        await loadManifestAndScenarios();
+        render();
+    } catch (e) {
+        console.error('[triage-live] case data failed to load', e);
+        if (els.list) {
+            els.list.innerHTML = '';
+            els.list.append(
+                ce('div', { class: 'label', style: 'color:var(--danger,#c0392b)' }, 'failed to load cases'),
+                ce('div', { class: 'label', style: 'margin-top:6px;opacity:.8' }, 'check your connection and retry.'),
+                (() => {
+                    const b = ce('button', { class: 'btn', style: 'margin-top:10px' }, 'retry');
+                    b.addEventListener('click', () => location.reload());
+                    return b;
+                })()
+            );
+        }
+    }
 })();
 
 
