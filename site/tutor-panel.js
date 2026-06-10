@@ -500,6 +500,9 @@ function makeToggleBtn() {
     toggleBtn.className = 'tutor-collapse-btn';
     toggleBtn.innerHTML = isPanelCollapsed ? ICONS.chevronLeft : ICONS.chevronRight;
     toggleBtn.setAttribute('aria-label', 'Toggle study coach panel');
+    // Set aria-expanded at creation (not only later in applyResponsiveWidth) so AT
+    // reports the collapsed/expanded state from first render.
+    toggleBtn.setAttribute('aria-expanded', String(!isPanelCollapsed));
     toggleBtn.addEventListener('click', toggleTutorCollapse);
     return toggleBtn;
 }

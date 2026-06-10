@@ -920,6 +920,14 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // tool-dispatch surfaces malformed JSON + unknown actions (debugging aid; still no-throw)
         const tdSrc = READ('site/tool-dispatch.js');
         assert.ok(/malformed tool-block JSON/.test(tdSrc) && /unknown tool action/.test(tdSrc), 'tool-dispatch warns on malformed/unknown blocks');
+        // per-dimension coverage residuals:
+        // SCHEDULING: the same-session check-in dedup flag re-arms when the local date
+        // rolls over, so a tab open past midnight still fires the next day's check-in.
+        assert.ok(/tutorCheckinDate/.test(app) && /state\.tutorCheckinDate !== checkinToday/.test(app) && /state\.tutorCheckinPosted = false/.test(app), 'daily check-in dedup flag re-arms on date rollover');
+        // CONFIG: saveConfig returns the write result (honest interface) instead of swallowing it.
+        assert.ok(/return safeSet\(CONFIG_KEY/.test(READ('site/tutor-store.js')), 'saveConfig returns the persist result');
+        // UX: collapse toggle exposes aria-expanded from first render.
+        assert.ok(/aria-expanded', String\(!isPanelCollapsed\)\)/.test(panelSrc), 'collapse toggle sets aria-expanded at creation');
         // message actions: SDK-agnostic action bar with copy + regenerate, hidden while thinking/streaming
         assert.ok(/tutor-action-bar/.test(panelSrc) && /updateActionBar/.test(panelSrc), 'panel has the SDK-agnostic action bar');
         assert.ok(/clipboard\?\.writeText/.test(panelSrc), 'copy uses clipboard');

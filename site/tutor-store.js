@@ -122,7 +122,11 @@ export function loadConfig() {
 }
 
 export function saveConfig(config) {
-    safeSet(CONFIG_KEY, JSON.stringify({ ...DEFAULT_CONFIG, ...config }));
+    // Returns false when the write was rejected (quota/disabled). safeSet already
+    // fires the corpus:storage-full banner in that case, but returning the result
+    // lets callers know this specific config change did not persist (honest
+    // interface — matches saveHistory's contract).
+    return safeSet(CONFIG_KEY, JSON.stringify({ ...DEFAULT_CONFIG, ...config }));
 }
 
 // ----- daily check-in gate -----

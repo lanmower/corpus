@@ -63,8 +63,11 @@ const state = {
     paletteReviewSet: null, sectionFilter: null,
     // Guards a second daily session-overview post when the daily page re-renders
     // (nav back) before the worker reply lands. Explicit init so the check at the
-    // guard site never relies on undefined coercion.
-    tutorCheckinPosted: false
+    // guard site never relies on undefined coercion. Date-stamped so a tab left
+    // open across midnight re-arms for the new day (the flag is a same-session
+    // dedup, NOT the day gate — that is shouldCheckInToday()/localStorage).
+    tutorCheckinPosted: false,
+    tutorCheckinDate: null
 };
 window.__corpus = state;
 window.__corpus.DEBUG = DEBUG;
@@ -381,6 +384,13 @@ function renderTutorOverviewPanel(due, newCount) {
         // markCheckedIn is deferred to the worker reply, so guard with a session
         // flag too: re-rendering the daily page (nav back) before the reply lands
         // must not post a second session-overview and duplicate the plan in-thread.
+        // Re-arm the same-session dedup flag when the local date rolls over, so a
+        // tab left open past midnight still fires the next day's check-in.
+        const checkinToday = new Date().toISOString().slice(0, 10);
+        if (state.tutorCheckinDate !== checkinToday) {
+            state.tutorCheckinDate = checkinToday;
+            state.tutorCheckinPosted = false;
+        }
         if (cfg.proactiveCheckins && shouldCheckInToday() && !state.tutorCheckinPosted) {
             state.tutorCheckinPosted = true;
             // The daily check-in is now an INTERACTIVE syllabus walk (srs-mccqe1
