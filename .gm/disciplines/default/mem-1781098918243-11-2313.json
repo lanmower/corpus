@@ -1,0 +1,11 @@
+## Corpus quality-max 5th run + shared-spool convergence (2026-06-10 session 5)
+
+User re-issued 'make a workflow to maximize quality, fan out subagents, engineering-DNA discipline, consider everything not yet considered'. Workflow ALREADY EXISTED (.claude/workflows/quality-max.js). Ran it (NOT rebuild, Principle 2/3): wf_38115b20-e76, 14 agents, 8 lenses, 6 confirmed/1 refuted against HEAD 1d00a93.
+
+6 CONFIRMED findings fixed: (1) site/icons.js unused ICON.play removed [subtractive]; (2) triage-live.js offline grade denominator divergence — simulateAssistant reported % over capped 6 atoms while set_phase recomputes over full sc.atoms.length; fixed both to use totalAtoms=(sc.atoms||[]).length [automated-correctness]; (3+4) tutor-panel.js daily-syllabus-done + session-overview-done markCheckedIn() consumed the day's check-in slot even on empty/interrupted/tool-only reply — gated on dailyRendered flag / moved inside clean-non-empty branch [worst-case]; (5) scripts/build_data.js duplicated syllabus.js's single-owner resolveSyllabus/safeReaddir/DEFAULT_SUBJECTS — now imports them, restoring documented contract [honest-interface].
+
+KEY EVENT: a CONCURRENT Claude session (shared .gm/exec-spool control plane) ran the IDENTICAL quality-max workflow, found the IDENTICAL 6 findings, fixed them BYTE-IDENTICAL, and committed+pushed as 1d00a93 WHILE this session was editing. Result: my edits landed on an already-fixed tree, git diff HEAD = empty for all 6 files + CHANGELOG + test.js. This is Principle 7 'both ways' converging to identical output, and the known shared-spool collision pattern (mem-1781085753728). Correct triage: nothing to commit (content-identical), origin/master...HEAD = 0 0, git_push 'Everything up-to-date'.
+
+TEST FIX: removing build_data.js's inline resolveSyllabus broke 2 stale test.js assertions that grepped build_data.js source for CORPUS_SYLLABUS literal + paediatrics fallback list. Updated them to assert DELEGATION (require('./syllabus.js') + SUBJECTS=SYLLABUS.subjects||DEFAULT_SUBJECTS) — the corrected single-owner architecture. 21 pass 0 fail.
+
+LINE-ENDING NOTE: Windows checkout shows phantom CRLF residuals (AGENTS/CHANGELOG/247420/shards) under git status that vanish under git diff HEAD; `git add --renormalize .` clears them. Don't commit them as work.

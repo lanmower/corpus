@@ -1737,7 +1737,8 @@
   title: Commit and push any new fixes + doc/changelog updates with porcelain-gated push; transition to COMPLETE on clean tree
   blockedBy:
   - fix-new-confirmed-findings
-  status: pending
+  status: completed
+  witness: git status --porcelain empty; origin/master...HEAD = 0 0 (in sync). All 6 quality-max fixes + CHANGELOG + test.js delegation assertions already landed byte-identical via concurrent-session commit 1d00a93 (shared-spool convergence, Principle 7 both-ways); git_push returned Everything up-to-date. test.js 21 pass 0 fail; index+triage browser-witnessed zero console errors.
 - id: fix-triage-kv-reset
   title: 'HIGH: triage-live.js generateLLM never sends {type:reset} so shared worker reuses populated KV across full-prompt turns -> canned repeated replies (same bug tutor.js fixes)'
   blockedBy: []
