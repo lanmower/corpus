@@ -6,6 +6,10 @@
 - Bumped the `anentrypoint-design` SDK bundle (`site/247420.{js,css}`) to v0.0.198 — corpus was shipping the stale v0.0.197 JS; the upstream responsive desk/tablet/mobile layer and ShortcutHelpDialog label render are now included. Browser-witnessed: SDK mounts with `.ds-247420` scope, zero console errors, consumed AICat/Topbar signatures unaffected.
 
 ### Fixed
+- Offline triage grade now reports its percentage over the full scenario atom count (the same denominator `set_phase` uses for the persisted grade), so the chat blurb and the grade panel no longer show conflicting scores for the 29 scenarios with more than six atoms.
+- Tutor daily check-in slot is consumed only once a plan actually rendered — an empty, interrupted, or tool-only reply no longer burns the day's single proactive check-in and leaves the coach silent until the next local-midnight rollover (both the daily-syllabus walk and the session-overview greeting).
+- `scripts/build_data.js` now imports the syllabus-root/subject resolver from `scripts/syllabus.js` instead of duplicating it, restoring the documented single-owner contract so a layout change reaches both the shard build and the Anki export.
+- Removed the unused `ICON.play` glyph from `site/icons.js` (the lightbox uses a native `<video>` element).
 - Triage live coach now resets the shared worker KV cache before each turn — it re-feeds the full prompt every turn, so a reused populated cache double-counted the prefix and produced the same canned reply to every input.
 - Triage generation carries a requestId and the consumer drops replies whose requestId is stale, so an interrupted generation's late "complete" can no longer resolve the next turn.
 - Triage case-data load degrades to an error + retry panel instead of stalling forever on "loading cases…" when offline or interrupted mid-download.

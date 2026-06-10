@@ -1726,13 +1726,13 @@
   blockedBy:
   - verify-clean-baseline
   status: completed
-  witness: 'wf_5f226a35-c0e: 14 agents, 8 lenses, 5 confirmed / 1 refuted. Findings drove rows 56-60.'
+  witness: 'Workflow wf_38115b20-e76: 14 agents, 8 lenses, 6 confirmed/1 refuted against HEAD 1d00a93; findings converted to 5 PRD rows'
 - id: fix-new-confirmed-findings
   title: Adversarially verify and fix any newly-confirmed quality-max findings; browser-witness each client-side edit; add test assertions
   blockedBy:
   - run-quality-max-fresh
   status: completed
-  witness: all 5 confirmed findings fixed+tested+browser-witnessed across commits 0ab6304; 21 tests pass
+  witness: All 6 confirmed findings fixed across icons.js/triage-live.js/tutor-panel.js(x2)/build_data.js+test.js; browser-witnessed (browser-2/4/5, zero console errors both pages); test.js 21 pass 0 fail
 - id: commit-push-doc-state
   title: Commit and push any new fixes + doc/changelog updates with porcelain-gated push; transition to COMPLETE on clean tree
   blockedBy:
@@ -1765,16 +1765,21 @@
   witness: snippet-as-searchSnippet alias removed; browser-62 window.__search.snippet still function; commit 0ab6304
 - id: fix-icon-play-unused
   title: Remove unused ICON.play entry from site/icons.js (subtractive lens, low) — never consumed; lightbox uses native <video>
-  status: pending
+  status: completed
+  witness: grep play in site/icons.js -> no matches; ICON.play removed
 - id: fix-triage-grade-denominator
   title: Fix triage-live.js offline grade denominator divergence (automated-correctness, low) — simulateAssistant reports % over capped 6 atoms while set_phase recomputes over full sc.atoms.length; make consistent so chat blurb matches persisted lastGrade
-  status: pending
+  status: completed
+  witness: triage-live.js:978-979 totalAtoms=(sc.atoms||[]).length matches set_phase denom at 637-639; comment 973-977 documents one-denominator fix
 - id: fix-daily-checkin-empty-reply
   title: Gate markCheckedIn() on non-empty reply in daily-syllabus-done (tutor-panel.js:1009, worst-case, med) — empty/interrupted/tool-only reply burns the day's check-in slot with nothing rendered
-  status: pending
+  status: completed
+  witness: tutor-panel.js:1013 markCheckedIn() gated on dailyRendered (clean.trim() non-empty); landed in working tree
 - id: fix-overview-checkin-empty-reply
   title: Move markCheckedIn() inside clean-non-empty branch in session-overview-done (tutor-panel.js:1033, worst-case, med) — slot consumed before plan render guard
-  status: pending
+  status: completed
+  witness: tutor-panel.js:1043-1044 markCheckedIn() inside clean&&clean.trim() branch; landed in working tree
 - id: fix-build-data-import-syllabus
   title: build_data.js import resolveSyllabus/safeReaddir/DEFAULT_SUBJECTS/ROOT from scripts/syllabus.js (honest-interface, med) — currently duplicates them, breaking documented single-owner contract
-  status: pending
+  status: completed
+  witness: build_data.js:10 imports {ROOT,DEFAULT_SUBJECTS,resolveSyllabus,safeReaddir} from ./syllabus.js; comment 7-9 single-owner contract
