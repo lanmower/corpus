@@ -198,11 +198,19 @@ function statusIcon() {
 // Render the status pill's content (icon + label) into a given element.
 function paintPill(pill) {
     if (!pill) return;
-    pill.setAttribute('data-status', modelStatus);
-    const ic = statusIcon();
-    pill.innerHTML = (ic ? `<span class="tutor-pill-ic">${ic}</span>` : '') +
-        `<span class="tutor-pill-label"></span>`;
-    pill.querySelector('.tutor-pill-label').textContent = statusLabel();
+    // The icon only changes with modelStatus, which is constant across a token
+    // stream (stays 'thinking'). Re-parsing the SVG innerHTML every frame is
+    // wasted work, so rebuild the icon only when the status actually changed and
+    // otherwise just refresh the (cheap) text label.
+    const label = statusLabel();
+    if (pill.getAttribute('data-status') !== modelStatus) {
+        pill.setAttribute('data-status', modelStatus);
+        const ic = statusIcon();
+        pill.innerHTML = (ic ? `<span class="tutor-pill-ic">${ic}</span>` : '') +
+            `<span class="tutor-pill-label"></span>`;
+    }
+    const lbl = pill.querySelector('.tutor-pill-label');
+    if (lbl && lbl.textContent !== label) lbl.textContent = label;
 }
 
 function renderSdkChat() {
