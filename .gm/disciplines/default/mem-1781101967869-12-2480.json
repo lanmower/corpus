@@ -1,0 +1,15 @@
+## Corpus quality-max 6th run (2026-06-10 session 6)
+
+User re-issued 'make a workflow to maximize quality, fan out subagents, engineering-DNA, consider everything not yet considered'. Workflow ALREADY EXISTED (.claude/workflows/quality-max.js). RAN it (NOT rebuild, Principle 2/3): wf_f73fed01-088, 16 agents, 8 lenses, 8 raw findings -> 7 confirmed / 1 refuted.
+
+NEW residuals surfaced + FIXED (commit pending):
+1. HIGH (honest-interface): triage-live.js auto grading-turn (setTimeout ~line 663) posted {type:'generate'} DIRECTLY, bypassing KV-reset + requestId. FIX: extracted single postGenerate(messages) helper (interrupt+setGenerating+reset+requestId+generate); BOTH generateLLM and the grading turn route through it. Now exactly ONE {type:'generate'} site in the file (test asserts count===1).
+2. MEDIUM+LOW cluster (worst-case): els.* captured at triage-live.js:183-203 point to static #scenario-list/#model-detail/#progress nodes that sdk.mount(appRoot) at ~:1052 DETACHES. So case-load error+retry (:1218), WebGPU-absent guidance (:229), mid-download progress (:793) never reached the SDK-rendered screen. FIX: route through state.loadError / state.capDetail / state.loadPct; SDK #scenario-list renders error+retry from state.loadError; SDK C.Status left shows capDetail/loadPct; all els.* writes null-guarded; added state.render=render so render() is reachable from window.__triage for live-page witness.
+3. LOW (adversarial): tutor-store.saveConfig merged over DEFAULT_CONFIG not loadConfig() -> partial write silently reset siblings. FIX: {...loadConfig(), ...config} matching srs/schedule twins.
+4. LOW (automated-correctness): search.js buildSearchIndex prose anchor #L drifted on 3+ newline gaps (split(/
+
++/) collapsed run, +1 re-added one). FIX: line-by-line offset scan tracking true 1-based paraStart. Test asserts zz#L5 for a 4-newline gap.
+
+WITNESS: test.js run-6 block added (22 pass/0 fail); browser session 39 on live triage-live.html confirmed loadErrorRenders+retryBtn, statusActive 'WebGPU active tutor ready', statusUnsupported, statusPct (mid-download), loadErrorClears. window.__triage is the state global (NOT window.state). triage-live networkidle hangs on model worker -> use domcontentloaded.
+
+NOTE: app.js god-module finding (2923 lines) CONFIRMED but deferred (large refactor, no behavior bug) — not fixed this run. Shared-spool collision recurred: prd-resolve/6.txt resolved a concurrent session's row; use high unique N to avoid collision.

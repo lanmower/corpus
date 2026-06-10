@@ -1154,6 +1154,51 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const sdkJs = READ('site/247420.js');
         assert.ok(sdkJs.length > 100000, 'SDK bundle present');
     });
+    t('quality-max run-6: single postGenerate helper + SDK-path detached-DOM via state + tutor-store merge + search anchor offset', () => {
+        const live = READ('site/triage-live.js');
+        // HIGH: every worker generate routes through ONE postGenerate() helper that
+        // resets KV + stamps requestId. The auto-issued grading turn must not post
+        // {type:'generate'} directly (it would grade against a populated cache and
+        // accept a stale reply). After the refactor there is exactly one
+        // {type:'generate', messages, requestId} site — inside postGenerate.
+        assert.match(live, /function postGenerate\(messages\)/, 'postGenerate helper must exist');
+        assert.strictEqual((live.match(/postMessage\(\{ type: 'generate'/g) || []).length, 1,
+            'exactly one generate-post site (postGenerate) — grading turn must route through it, not post directly');
+        assert.match(live, /postGenerate\(\[\s*\{ role: 'system', content: buildSnapshot\('grading'\)/,
+            'grading turn must call postGenerate, not raw worker.postMessage');
+        // MEDIUM/LOW: capability/progress/load-error flow through state so the SDK
+        // render (the path the user sees) surfaces them — the static els.* nodes are
+        // detached by sdk.mount and can never reach the screen. Assert the state
+        // fields drive the SDK status/list and that els.* writes are null-guarded.
+        assert.match(live, /state\.loadError\s*\?/, 'SDK scenario-list must render error+retry from state.loadError');
+        assert.match(live, /state\.capDetail/, 'capability detail must flow through state.capDetail');
+        assert.match(live, /state\.loadPct/, 'download progress must flow through state.loadPct');
+        assert.ok(/if \(els\.capDot\)/.test(live) && /if \(els\.progressFill\)/.test(live),
+            'els.* writes must be null-guarded (nodes may be detached under SDK)');
+        assert.match(live, /state\.render = render/, 'render must be exposed on the state global for live-page witness');
+        // LOW (adversarial): tutor-store.saveConfig must merge over the PERSISTED
+        // config like its srs/schedule twins, not over DEFAULT_CONFIG (a partial
+        // write would otherwise silently reset sibling fields).
+        const storeSrc = READ('site/tutor-store.js');
+        assert.match(storeSrc, /JSON\.stringify\(\{ \.\.\.loadConfig\(\), \.\.\.config \}\)/,
+            'tutor-store.saveConfig must merge over loadConfig(), not DEFAULT_CONFIG');
+        global.localStorage.clear();
+        tutorStore.saveConfig({ proactiveCheckins: false, autoCoachOnReview: false, panelWidth: 40 });
+        tutorStore.saveConfig({ panelWidth: 52 }); // partial write must preserve the two flags
+        const merged = tutorStore.loadConfig();
+        assert.strictEqual(merged.panelWidth, 52);
+        assert.strictEqual(merged.proactiveCheckins, false, 'partial saveConfig must not reset proactiveCheckins');
+        assert.strictEqual(merged.autoCoachOnReview, false, 'partial saveConfig must not reset autoCoachOnReview');
+        // LOW (automated-correctness): search prose anchor #L must be the true source
+        // line. A body with a 3+ newline gap previously drifted because split(/\n\n+/)
+        // collapsed the run. The offset scan must place the anchor on the real line.
+        const body = 'first paragraph line one is long enough to index past forty chars here.\n\n\n\nsecond paragraph also long enough to be indexed as prose content here.';
+        const idx = search.buildSearchIndex({ subjects: [{ subject: 'zz' }] }, { zz: { cards: [], guide: { body, sections: [] } } });
+        const second = idx.find(x => x.kind === 'prose' && /second paragraph/.test(x.body));
+        assert.ok(second, 'second paragraph must be indexed');
+        // 4 newlines => second paragraph starts on source line 5 (1-based).
+        assert.strictEqual(second.id, 'zz#L5', 'anchor must be the true source line across a 3+ newline gap');
+    });
     function panelSrcS() { return READ('site/tutor-panel.js'); }
 
     console.log(`\n${pass} pass · ${fail} fail`);

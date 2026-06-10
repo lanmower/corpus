@@ -27,21 +27,33 @@ export function buildSearchIndex(manifest, shards) {
         });
         if (sh.guide && sh.guide.body) {
             const body = sh.guide.body;
-            const paras = body.split(/\n\n+/);
-            let lineCounter = 0;
-            for (const p of paras) {
-                const lines = p.split('\n').length;
-                lineCounter += lines + 1;
-                const trimmed = p.trim();
-                if (trimmed.length < 40) continue;
-                if (/^#{1,6}\s/.test(trimmed)) continue;
+            // Walk the original lines and accumulate paragraphs at blank-line
+            // boundaries, tracking each paragraph's true 1-based start line. The
+            // earlier split(/\n\n+/) collapsed any run of 3+ newlines to one
+            // separator while only re-adding one line, so the anchor #L drifted
+            // off the real source line on those gaps — this offset scan is exact.
+            const srcLines = body.split('\n');
+            let para = '';
+            let paraStart = 0; // 1-based line where the current paragraph began
+            const flush = (endLine) => {
+                const trimmed = para.trim();
+                para = '';
+                if (trimmed.length < 40) return;
+                if (/^#{1,6}\s/.test(trimmed)) return;
                 items.push({
                     kind: 'prose', subject: meta.subject,
-                    id: `${meta.subject}#L${lineCounter}`,
+                    id: `${meta.subject}#L${paraStart}`,
                     title: trimmed.slice(0, 80) + (trimmed.length > 80 ? '…' : ''),
                     body: trimmed
                 });
+            };
+            for (let i = 0; i < srcLines.length; i++) {
+                const line = srcLines[i];
+                if (line.trim() === '') { flush(i); continue; }
+                if (!para) paraStart = i + 1;
+                para += (para ? '\n' : '') + line;
             }
+            flush(srcLines.length);
         }
     }
     return items;

@@ -228,10 +228,12 @@ async function checkCapability() {
     }
     if (!navigator.gpu) {
         state.capability = 'unsupported';
-        els.capDot.className = 'dot warn';
-        els.capLabel.textContent = 'WebGPU required';
-        els.loadLLM.disabled = true;
-        els.modelDetail.textContent = 'this browser does not support WebGPU. open in Chrome or Edge for the live tutor. offline grading is still available.';
+        state.capDetail = 'WebGPU unavailable — open in Chrome or Edge for the live tutor. offline grading still works.';
+        if (els.capDot) els.capDot.className = 'dot warn';
+        if (els.capLabel) els.capLabel.textContent = 'WebGPU required';
+        if (els.loadLLM) els.loadLLM.disabled = true;
+        if (els.modelDetail) els.modelDetail.textContent = state.capDetail;
+        if (sdkRender) render();
         console.log('[triage-live] capability: gpu absent — using offline grading only');
         return;
     }
@@ -661,13 +663,15 @@ const TOOLS = {
             // Re-issue generation with answer-key snapshot so the LLM can grade.
             // Caller's current generation is the "asking" turn; we trigger a follow-up grading turn.
             setTimeout(() => {
-                if (state.workerReady && !state.generating) {
-                    const sys = buildSnapshot('grading');
-                    setGenerating(true);
-                    state.worker?.postMessage({ type: 'generate', messages: [
-                        { role: 'system', content: sys },
+                if (state.workerReady && !state.generating && state.worker) {
+                    // Route through postGenerate so this auto-issued grading turn
+                    // gets the same KV-reset + requestId contract as a user turn —
+                    // a direct {type:'generate'} here would grade against a
+                    // populated cache (canned output) and accept a stale reply.
+                    postGenerate([
+                        { role: 'system', content: buildSnapshot('grading') },
                         { role: 'user', content: 'grade the board now using the answer key above. emit highlight_card and add_card tools per the system prompt, then set_phase phase=graded.' }
-                    ] });
+                    ]);
                 }
             }, 50);
         }
@@ -789,21 +793,27 @@ function onWorkerMessage(e) {
     console.log('[triage-live] worker', m.status, m);
     debugLog('worker-msg', m);
     if (m.status === 'loading') {
-        els.progressText.textContent = 'loading tutor…';
+        state.loadPct = 0;
+        if (els.progressText) els.progressText.textContent = 'loading tutor…';
+        if (sdkRender) render();
     } else if (m.status === 'progress') {
         // The worker posts loaded/total/progress at the top level (see
         // triage-llm-worker.js) — there is no `payload` wrapper. Prefer the
         // byte ratio, fall back to the transformers.js percentage.
         const pct = m.total ? Math.round((m.loaded / m.total) * 100) : Math.round(m.progress || 0);
-        els.progressFill.style.width = pct + '%';
-        els.progressText.textContent = `loading tutor… ${pct}%`;
+        state.loadPct = pct;
+        if (els.progressFill) els.progressFill.style.width = pct + '%';
+        if (els.progressText) els.progressText.textContent = `loading tutor… ${pct}%`;
+        if (sdkRender) render();
     } else if (m.status === 'ready') {
         state.workerReady = true;
         state.llmStatus = 'ready';
-        els.modelStatus.textContent = 'ready';
-        els.progressFill.style.width = '100%';
-        els.progressText.textContent = 'tutor ready';
-        els.modelDetail.textContent = 'your private tutor is loaded and ready.';
+        state.loadPct = 100;
+        if (els.modelStatus) els.modelStatus.textContent = 'ready';
+        if (els.progressFill) els.progressFill.style.width = '100%';
+        if (els.progressText) els.progressText.textContent = 'tutor ready';
+        if (els.modelDetail) els.modelDetail.textContent = 'your private tutor is loaded and ready.';
+        if (sdkRender) render();
     } else if (m.status === 'start') {
         if (m.requestId != null && m.requestId !== state._activeReqId) return;
         state.streamBuffer = '';
@@ -861,24 +871,31 @@ async function loadLLM() {
     }
 }
 
-function generateLLM(userText) {
-    if (!state.worker || !state.workerReady) throw new Error('LLM not loaded');
-    const sys = buildSnapshot(state.phase);
-    const messages = [
-        { role: 'system', content: sys },
-        { role: 'user', content: userText }
-    ];
+// The ONLY admissible way to issue a generate to the worker. Every turn
+// re-feeds the FULL prompt (system snapshot changes per phase + growing
+// conversation), so reusing a populated KV cache across full-prompt calls
+// double-counts the cached prefix and yields the same canned reply to every
+// input (see tutor.js fresh-cache-per-generate). This helper resets KV first
+// and stamps an incrementing requestId into state._activeReqId so the
+// start/update/complete/error handlers can drop stale late replies. Posting
+// {type:'generate'} directly anywhere else re-introduces the canned-reply bug
+// and the stale-reply race — route through here instead.
+function postGenerate(messages) {
     if (state.generating) state.worker.postMessage({ type: 'interrupt' });
     setGenerating(true);
-    // Each turn re-feeds the FULL prompt (system snapshot changes per phase +
-    // growing conversation). Reusing a populated KV cache across full-prompt
-    // calls double-counts the cached prefix and yields the same canned reply to
-    // every input (see tutor.js fresh-cache-per-generate). Reset KV first so the
-    // worker rebuilds the cache from this prompt.
     state.worker.postMessage({ type: 'reset' });
     const requestId = (state._reqSeq = (state._reqSeq || 0) + 1);
     state._activeReqId = requestId;
     state.worker.postMessage({ type: 'generate', messages, requestId });
+}
+
+function generateLLM(userText) {
+    if (!state.worker || !state.workerReady) throw new Error('LLM not loaded');
+    const sys = buildSnapshot(state.phase);
+    postGenerate([
+        { role: 'system', content: sys },
+        { role: 'user', content: userText }
+    ]);
     return new Promise(resolve => { state._afterGenerate = resolve; });
 }
 state.generateLLM = generateLLM;
@@ -1044,7 +1061,12 @@ function render() {
         renderScratchpad();
         renderMessages();
     }
+    // Exposed on the state global so the live page is the debugger: a
+    // page.evaluate can drive a re-render after poking state (the documented
+    // "expose globals, evaluate in-browser" discipline). __triage already
+    // holds generateLLM/spawnWorker for the same reason.
 }
+state.render = render;
 
 async function setupSdkApp() {
     const { components: C } = sdk;
@@ -1088,6 +1110,13 @@ async function setupSdkApp() {
                 `${Object.keys(state.sessions).length} attempted · streak ${state.streak || 0} · last grade ${state.lastGrade != null ? state.lastGrade + '%' : '—'}`
             ),
             C.h('div', { id: 'scenario-list' },
+                // Case-data load failure surfaces here, in the SDK-rendered list
+                // the user actually sees — not the detached static #scenario-list.
+                state.loadError ? C.h('div', { class: 'load-error' },
+                    C.h('div', { class: 'label', style: 'color:var(--danger,#c0392b)' }, 'failed to load cases'),
+                    C.h('div', { class: 'label', style: 'margin-top:6px;opacity:.8' }, 'check your connection and retry.'),
+                    C.Btn({ variant: 'primary', onClick: () => location.reload(), children: 'retry' })
+                ) : null,
                 ...visibleScenarios().map(s => {
                     const sess = state.sessions[s.id];
                     const cards = sessionCards(sess);
@@ -1188,7 +1217,14 @@ async function setupSdkApp() {
             side: sidebar,
             main: mainContent,
             status: C.Status({
-                left: [C.h('span', { class: 'mono' }, state.capability === 'webgpu' ? 'WebGPU active' : 'WebGPU required')],
+                // capDetail/loadPct flow from checkCapability + the worker
+                // progress handler so the WebGPU-absent explanation and the
+                // mid-download percentage reach the rendered status bar — the
+                // detached static #model-detail/#progress nodes never could.
+                left: [C.h('span', { class: 'mono' },
+                    state.capability === 'webgpu'
+                        ? (state.llmStatus === 'loading' && state.loadPct != null ? `loading tutor… ${state.loadPct}%` : (state.llmStatus === 'ready' ? 'WebGPU active · tutor ready' : 'WebGPU active'))
+                        : (state.capDetail || 'WebGPU required'))],
                 right: [C.h('span', { class: 'mono' }, `v${window.__BUILD_VERSION__ || '0.1.0'}`)]
             })
         });
@@ -1215,7 +1251,13 @@ async function setupSdkApp() {
         render();
     } catch (e) {
         console.error('[triage-live] case data failed to load', e);
-        if (els.list) {
+        // Drive the error through state so the SDK render (the path the user
+        // actually sees) shows error+retry; render() also covers the legacy
+        // non-SDK path, where the SDK-less branch writes into the live #scenario-list.
+        state.loadError = true;
+        if (sdkRender) {
+            render();
+        } else if (els.list) {
             els.list.innerHTML = '';
             els.list.append(
                 ce('div', { class: 'label', style: 'color:var(--danger,#c0392b)' }, 'failed to load cases'),

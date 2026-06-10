@@ -122,11 +122,15 @@ export function loadConfig() {
 }
 
 export function saveConfig(config) {
-    // Returns false when the write was rejected (quota/disabled). safeSet already
-    // fires the corpus:storage-full banner in that case, but returning the result
-    // lets callers know this specific config change did not persist (honest
-    // interface — matches saveHistory's contract).
-    return safeSet(CONFIG_KEY, JSON.stringify({ ...DEFAULT_CONFIG, ...config }));
+    // Merge OVER the persisted config (not DEFAULT_CONFIG) so a partial write
+    // like saveConfig({panelWidth}) preserves the other fields — matching the
+    // merge contract of srs.saveConfig and schedule.saveConfig. Merging over
+    // DEFAULT_CONFIG would silently reset every sibling field a partial caller
+    // omitted (the exact misuse a confused maintainer hits).
+    // Returns false when the write was rejected (quota/disabled); safeSet fires
+    // the corpus:storage-full banner in that case, but returning the result lets
+    // callers know this specific config change did not persist.
+    return safeSet(CONFIG_KEY, JSON.stringify({ ...loadConfig(), ...config }));
 }
 
 // ----- daily check-in gate -----
