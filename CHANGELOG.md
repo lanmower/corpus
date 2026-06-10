@@ -7,6 +7,9 @@
 - Chat conversation region is now `role="log"` with `aria-atomic="false"`, so assistive tech announces appended messages as a conversation log.
 - Tutor settings popover is now a `role="dialog"` modal with a Tab focus trap (Escape and outside-click still close it).
 - Malformed-JSON and unknown-action tool blocks now log a warning instead of being silently dropped (still no-throw).
+- Daily check-in re-arms on local-date rollover, so a tab left open past midnight still fires the next day's check-in.
+- `saveConfig` returns its persist result so callers can detect a quota-rejected config write.
+- Collapse toggle exposes `aria-expanded` from first render (not only after the first responsive-width pass).
 
 ## 2026-05-07
 
