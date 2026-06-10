@@ -235,21 +235,6 @@ export function isEligible(card, state, ticksForSubject) {
     return Object.values(ticks).some(v => v === true);
 }
 
-export function getEligibleCards(cards, states = loadStates(), ticksAll = {}) {
-    return cards.filter(c => isEligible(c, states[c.id], ticksAll[c._subject] || {}));
-}
-
-export function getEligibleDueCards(cards, states = loadStates(), ticksAll = {}) {
-    const now = Date.now();
-    return cards.filter(c => {
-        const s = states[c.id];
-        if (!isIntroduced(s)) return false;
-        if (s.suspended) return false;
-        if ((s.dueAt ?? 0) > now) return false;
-        return true;
-    });
-}
-
 export function getNewEligibleCards(cards, states = loadStates(), ticksAll = {}) {
     return cards.filter(c => {
         if (isIntroduced(states[c.id])) return false;

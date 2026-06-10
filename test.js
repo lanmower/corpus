@@ -501,8 +501,21 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const syl = require('./scripts/syllabus.js');
         assert.ok(typeof syl.resolveSyllabus === 'function' && typeof syl.safeReaddir === 'function', 'scripts/syllabus.js must export resolveSyllabus + safeReaddir');
         assert.ok(syl.DEFAULT_SUBJECTS.includes('paediatrics') && syl.DEFAULT_SUBJECTS.includes('paediatrics-neonatal'), 'syllabus DEFAULT_SUBJECTS must include both paediatrics subjects');
+        // Triage grading invariants (quality-max sweep, 2026-06-10): highlight_card
+        // must ACCUMULATE — the grading prompt calls it once per correct atom, so
+        // single-select (`c.highlighted = c.id === id` for all cards) caps the hit
+        // count at 1 and under-scores. And the graded score must be re-persisted
+        // after state.lastGrade is set, else it lives only in a transient global and
+        // is lost on reload.
+        assert.ok(!/for \(const c of state\.cards\) c\.highlighted = \(c\.id === id\)/.test(liveSrc), 'highlight_card must accumulate, not single-select');
+        assert.match(liveSrc, /state\.streak = score >= 70[\s\S]{0,400}?persistActive\(\)/, 'graded score must be re-persisted after lastGrade is set');
         const ankiSrc = READ('scripts/anki_export.js');
         assert.match(ankiSrc, /require\('\.\/syllabus\.js'\)/, 'anki_export.js must use the shared syllabus resolver');
+        // build_data.js carries its own flat-layout fallback SUBJECTS list (it cannot
+        // import syllabus.js without risking the embedded NUL in stableCardId); that
+        // fallback must stay complete or `node scripts/build_data.js` silently drops
+        // the two paediatrics subjects when no syllabus.json is present.
+        assert.ok(/'paediatrics'/.test(build) && /'paediatrics-neonatal'/.test(build), 'build_data.js fallback SUBJECTS must include both paediatrics subjects');
         assert.ok(!/path\.join\(ROOT, s, 'srs-cards'\)/.test(ankiSrc), 'anki_export.js must not read the flat ROOT/<subj>/srs-cards layout');
         // It actually runs without throwing and emits notes.
         const cp = require('child_process');

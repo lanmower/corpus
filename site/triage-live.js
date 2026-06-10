@@ -585,7 +585,12 @@ const TOOLS = {
         return { ok: true };
     },
     highlight_card({ id }) {
-        for (const c of state.cards) c.highlighted = (c.id === id);
+        // Accumulate: the grading prompt calls this once per correct atom, so a
+        // card already highlighted must stay highlighted. Single-select here
+        // would cap the hit count at 1 and systematically under-score.
+        const c = state.cards.find(c => c.id === id);
+        if (!c) return { ok: false, error: 'not found' };
+        c.highlighted = true;
         renderScratchpad(); persistActive();
         return { ok: true };
     },
@@ -607,6 +612,12 @@ const TOOLS = {
             const score = atomCount ? Math.round(100 * hits / atomCount) : 0;
             state.lastGrade = score;
             state.streak = score >= 70 ? (state.streak || 0) + 1 : 0;
+            // Re-persist now that lastGrade is set: the persistActive() above ran
+            // before the score existed and wrote score:null, and saveSessions()
+            // only serializes state.sessions without re-deriving. Without this the
+            // grade lives only in the transient state.lastGrade global and is lost
+            // on reload (sessionScore -> null -> phase resets to 'asking').
+            persistActive();
             try {
                 const ch = ('BroadcastChannel' in self) ? new BroadcastChannel('corpus') : null;
                 ch?.postMessage({ type: 'case:graded', score: score / 100, scenarioId: sc?.id || sc?.name });
@@ -614,7 +625,12 @@ const TOOLS = {
             } catch {}
             saveSessions(); renderStats(); renderActive();
         }
-        if (phase === 'grading') {
+        if (phase === 'grading' && prev !== 'grading') {
+            // Reset highlights so a re-grade starts clean — highlight_card now
+            // accumulates, so stale highlights from a prior grade would inflate
+            // the next hit count.
+            for (const c of state.cards) c.highlighted = false;
+            persistActive();
             // Re-issue generation with answer-key snapshot so the LLM can grade.
             // Caller's current generation is the "asking" turn; we trigger a follow-up grading turn.
             setTimeout(() => {
@@ -668,12 +684,16 @@ function buildSnapshot(phase) {
         const ex = (sc.examples && sc.examples[0]) || {};
         answerKey = `\n\n=== ANSWER KEY (do not paraphrase verbatim — use to grade) ===\ncanonical atoms:\n${atoms}\nrecommended plan: ${ex.recommendation || '(not specified)'}\nreasoning: ${ex.reasoning || '(not specified)'}`;
     }
+    // Function replacements: card/scenario text is free LLM/user content that can
+    // contain `$&`, `$'`, `$1`.. which String.replace would special-case in a
+    // string replacement, silently mangling the prompt. A function replacement is
+    // inserted verbatim.
     return SYSTEM_PROMPT_TMPL
-        .replace('{{PHASE}}', phase)
-        .replace('{{STEM}}', stem)
-        .replace('{{N}}', state.cards.length)
-        .replace('{{CARDS}}', cardsText)
-        .replace('{{ANSWER_KEY}}', answerKey);
+        .replace('{{PHASE}}', () => phase)
+        .replace('{{STEM}}', () => stem)
+        .replace('{{N}}', () => String(state.cards.length))
+        .replace('{{CARDS}}', () => cardsText)
+        .replace('{{ANSWER_KEY}}', () => answerKey);
 }
 state.buildSnapshot = buildSnapshot;
 
