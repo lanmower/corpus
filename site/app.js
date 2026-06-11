@@ -2,7 +2,6 @@
 import './theme.js';
 import * as srs from './srs.js';
 import * as progress from './progress.js';
-import * as lastpos from './lastpos.js';
 import * as cram from './cram.js';
 import * as justread from './justread.js';
 import * as timer from './timer.js';
@@ -11,32 +10,14 @@ import * as drill from './drill.js';
 import * as flag from './flag.js';
 import * as undo from './undo.js';
 import * as late from './late.js';
-import * as usercards from './usercards.js';
-import * as confidence from './confidence.js';
-import * as newcards from './newcards.js';
 import * as schedule from './schedule.js';
 import * as calendar from './calendar.js';
-import * as mastery from './mastery.js';
 import * as toast from './toast.js';
-import { buildRows, computeWeakest, VERDICT_RANK } from './verdicts.js';
 import { buildSearchIndex, mountPalette } from './search.js';
 import { makeToggleButton } from './theme.js';
-import { showContextMenu, closeContextMenu } from './context-menu.js';
-import { initTutorPanel, wireWorkerToPanel, addTutorMessage, setTutorContext, syncTutorFromStorage, startDailySyllabus, setDailyPlanProvider, sendTutorMessage } from './tutor-panel.js';
-import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn, todayStamp as localDateStamp } from './tutor-store.js';
-import { ICON } from './icons.js';
-import { renderMarkdown } from './markdown.js';
-import { readSessions as readTriageSessions, sessionCards as triageSessionCards } from './triage-store.js';
-import { localDayISO } from './dates.js';
-import {
-    state, el, icon, iconLabel, appRoot, statusbar, statusbarMsg, DEBUG, log, warn,
-    fetchJson, loadManifest, loadShard, loadAllShards,
-    loadGuideTicks, saveGuideTicks, masteryFor, sectionCardCounts, exportSessionCards,
-    dueCountFor, totalDueAll, dueCountsBySubject, totalCasesQueued, casesDoneBySubject,
-    estReviewMinutes, todayPlanReviewTarget, channel, emit, updateFooter,
-    getStage, setStage, slugify, totalNewEligibleAll,
-} from './app-context.js';
-import { ROUTES, go, setDocTitle, onNav, setRenderer } from './router.js';
+import { initTutorPanel, wireWorkerToPanel, syncTutorFromStorage, setDailyPlanProvider } from './tutor-panel.js';
+import { state, el, icon, iconLabel, appRoot, DEBUG, log, warn, loadManifest, loadAllShards, loadGuideTicks, dueCountsBySubject, updateFooter, getStage, setStage } from './app-context.js';
+import { go, onNav, setRenderer } from './router.js';
 import { renderStats } from './views/stats.js';
 import { renderCalendar } from './views/calendar.js';
 import { renderSettings } from './views/settings.js';

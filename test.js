@@ -203,7 +203,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     console.log('# app.js wiring: features + IA + microcopy');
     t('imports + renderToday compressed + status-line + cram banner + resume-line + guide-aff + review-progress + verdict table + r-toggle + nav', () => {
         // module imports
-        for (const re of [/import \* as cram from '\.\/cram\.js'/, /import \* as justread from '\.\/justread\.js'/, /import \* as lastpos from '\.\/lastpos\.js'/, /from '\.\/verdicts\.js'/]) assert.match(appSrc, re);
+        for (const re of [/import \* as cram from '\.\/cram\.js'/, /import \* as justread from '\.\/justread\.js'/]) assert.match(appSrc, re);
+        // lastpos + verdicts moved into the views that use them (app.js-split)
+        assert.match(READ('site/views/today.js'), /import \* as lastpos from '\.\.\/lastpos\.js'/);
+        assert.match(READ('site/views/stats.js'), /from '\.\.\/verdicts\.js'/);
         // compressed today
         assert.match(READ('site/views/today.js'), /function renderToday\(\)/);
         assert.match(READ('site/views/subject.js'), /primary-action/);
@@ -226,7 +229,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(READ('site/views/today.js'), /today-primary/);
         // free-study fallback CTA — clamped to today's plan target, not full backlog
         assert.match(READ('site/views/today.js'), /or just review \(/);
-        assert.match(appSrc, /todayPlanReviewTarget/);
+        assert.match(READ('site/views/today.js'), /todayPlanReviewTarget/);
         // (renderStatusLine was dead code with no caller — removed in the app.js split)
         assert.match(READ('site/views/today.js'), /reviewed today/);
         // gamification removed
@@ -721,7 +724,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(typeof H.typoRefine, 'function');
         assert.strictEqual(typeof H.renderMarkdown, 'function');
         // app.js must consume the module, not redefine the helpers inline.
-        assert.match(appSrc, /import \{ renderMarkdown \} from '\.\/markdown\.js'/);
+        assert.match(READ('site/views/review.js'), /import \{ renderMarkdown \} from '\.\.\/markdown\.js'/);
         assert.ok(!/function renderMarkdown/.test(appSrc), 'renderMarkdown must live in markdown.js, not app.js');
         // disfluency removal
         assert.strictEqual(H.cleanDisfluencies('um, the patient, you know, has uh hypertension.'), 'the patient, has hypertension.');
@@ -739,7 +742,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const wrapped = H.softSplitPara(monster);
         assert.ok(wrapped.every(c => c.length <= 900), 'monster paragraph not hard-wrapped: ' + wrapped.map(c=>c.length).join(','));
         // app.js wiring (gamification stripped)
-        for (const re of [/import \* as mastery from '\.\/mastery\.js'/, /import \* as toast from '\.\/toast\.js'/]) assert.match(appSrc, re);
+        assert.match(appSrc, /import \* as toast from '\.\/toast\.js'/);
+        assert.match(READ('site/views/today.js'), /import \* as mastery from '\.\.\/mastery\.js'/);
         // gamification fully removed
         for (const re of [/import \* as game from/, /function renderXpChip/, /xp-chip/, /awardCardXP/, /pomodoro:done/]) assert.ok(!re.test(appSrc), 'app.js still has ' + re);
         // CSS tokens — toast container still present (toasts still used)
@@ -1106,7 +1110,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const wkr = READ('site/tutor.js').match(/const WORKER_CONTEXT_TURNS = (\d+)/);
         const store = READ('site/tutor-store.js').match(/export const WORKER_CONTEXT_TURNS = (\d+)/);
         assert.ok(wkr && store && wkr[1] === store[1], 'WORKER_CONTEXT_TURNS drifted between tutor.js and tutor-store.js');
-        assert.match(appSrc, /import \{ ICON \} from '\.\/icons\.js'/);
+        assert.match(READ('site/views/today.js'), /import \{ ICON \} from '\.\.\/icons\.js'/);
         // triage-live.css migrated off raw --ink/--paper to semantic --fg/--bg.
         assert.ok(!/var\(--ink\)|var\(--paper\)/.test(liveCss), 'triage-live.css must use semantic tokens');
         // statusbar refs are declared (were undeclared -> ReferenceError in updateFooter).
@@ -1265,7 +1269,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(!/casesDone\[id\] = casesDone\[id\]/.test(app), 'scenario-id-keyed casesDone construction must be gone');
         // MEDIUM (worst-case): triage session reads go through the shared store
         // (triage-store.js owns the {cards}/legacy-array normalization).
-        assert.match(app, /from '\.\/triage-store\.js'/, 'app.js imports triage-store');
+        assert.match(READ('site/app-context.js'), /from '\.\/triage-store\.js'/, 'app-context imports triage-store');
         assert.match(READ('site/app-context.js'), /triageSessionCards\(sessions\[id\]\)/, 'totalCasesQueued normalizes via shared sessionCards (app-context)');
         // Day-keys are LOCAL calendar dates end to end: schedule.isoDate, the app
         // plan filters, and the new-card cap — matching the local check-in gate.

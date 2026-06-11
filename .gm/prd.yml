@@ -2086,3 +2086,23 @@
   phase: EXECUTE
   status: completed
   witness: buildFlashcard had zero callers across site/; removed 34 lines + unused copyToClipboard import; browser-19 booted+reviewRenders ERRS=[]; test 24 pass
+- id: arch-prune-unused-imports
+  text: 'Remove the 43 now-unused imports from app.js (leaf-libs + spine symbols whose only callers moved to views/): rewrite each import statement keeping only body-referenced names, drop fully-unused imports. Verify via node test + browser boot.'
+  phase: EXECUTE
+  status: completed
+  witness: app.js imports 42->30; 12 unused removed (lastpos/usercards/confidence/newcards/mastery/verdicts/markdown/icons/triage-store/etc whose callers moved to views); browser-33 boot+6 routes render ERRS=[]; test 24 pass
+- id: arch-doc-update
+  text: 'Update AGENTS.md architecture section to reflect the new spine: app-context.js (substrate) + router.js + views/*.js (10 route views) + shortcuts.js; app.js is now a ~440-line orchestrator. The site-root bullet currently lists app.js/srs.js as the structure.'
+  phase: EXECUTE
+  status: completed
+  witness: AGENTS.md Site-root section gained an App-architecture bullet documenting the app-context/router/views spine + setRenderer/onNav injection + getStage/setStage + review keystone
+- id: arch-cleanup-temp
+  text: Remove scripts/.unused-imports-check.js temp detector (residual analysis artifact, not shippable).
+  phase: EXECUTE
+  status: completed
+  witness: removed scripts/.unused-imports-check.js + .prune-imports.js + .dead-export-check.js (analysis temp files); no temp scripts remain
+- id: arch-dead-export-sweep
+  text: Sweep new modules (app-context/router/views) for exports that are never imported anywhere (dead exports introduced by over-broad export marking); remove any found.
+  phase: EXECUTE
+  status: completed
+  witness: '.dead-export-check.js scanned app-context/router/shortcuts/views exports against all site source: zero dead exports (every export imported somewhere)'
