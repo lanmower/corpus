@@ -2014,7 +2014,8 @@
 - id: arch-router
   text: 'Create site/router.js: ROUTES/ROUTE_TITLES/ROUTE_ALIASES/setDocTitle/go/render. render dispatches via a view registry populated by registerViews(map) so router has no static import of views (breaks router->views->router cycle). go calls injected onNav hooks + render. Imports app-context only.'
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: site/router.js created (go/render/ROUTES/onNav/setRenderer/setDocTitle); app.js registers render via setRenderer + review-reset via onNav; browser-12 routerExports true, 10 routes render correct route state, ERRS=[]; test.js 24 pass
 - id: arch-view-today
   text: 'views/today.js: renderToday + renderTodayPrimary + renderStatusLine + renderCramBanner + renderResumeLine + renderWelcome + isFirstTimeVisitor + renderTutorOverviewPanel + renderExamDay. Import app-context + router.'
   phase: EXECUTE

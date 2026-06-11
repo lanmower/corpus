@@ -36,6 +36,7 @@ import {
     dueCountFor, totalDueAll, dueCountsBySubject, totalCasesQueued, casesDoneBySubject,
     estReviewMinutes, todayPlanReviewTarget, channel, emit, updateFooter,
 } from './app-context.js';
+import { ROUTES, go, setDocTitle, onNav, setRenderer } from './router.js';
 
 let sdk = null;
 let sdkRender = null;
@@ -48,33 +49,11 @@ const FRIENDLY_GRADES = [
     { friendly: 4, smscore: 5, label: 'easy', desc: 'instant' }
 ];
 
-const ROUTES = ['today', 'guides', 'review', 'cases', 'stats', 'subject', 'settings', 'calendar', 'mistakes', 'drill'];
-const ROUTE_TITLES = { today: 'today', guides: 'subjects', review: 'review',
-    cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings',
-    calendar: 'calendar', mistakes: 'mistakes', drill: 'drill' };
-const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review',
-    notes: 'today', quests: 'today', badges: 'today' };
-
-function setDocTitle(route, subject) {
-    const main = subject ? subject : (ROUTE_TITLES[route] || route);
-    document.title = `${main} · corpus`;
-}
-
-function go(route, subject) {
-    if (ROUTE_ALIASES[route]) route = ROUTE_ALIASES[route];
-    if (!ROUTES.includes(route)) route = 'today';
-    state.route = route;
-    if (subject !== undefined) state.currentSubject = subject;
+// Review-filter reset is the one app-specific side effect of a nav; register it
+// as a router onNav hook so the router stays free of view/queue concerns.
+onNav((route, subject) => {
     if (route === 'review' && subject) { state.reviewSubjectFilter = subject; resetReviewQueue(); }
-    document.querySelectorAll('.navlink').forEach(a => a.classList.toggle('active', a.dataset.route === route));
-    setDocTitle(route, subject);
-    progress.setLast(route, subject);
-    lastpos.save(route, subject);
-    // apply just-read on subject change
-    if (route === 'subject' && subject) justread.applyClass(justread.isOn(subject));
-    else justread.applyClass(false);
-    render();
-}
+});
 
 let __rendering = false;
 function render() {
@@ -100,6 +79,9 @@ function render() {
         } finally { __rendering = false; }
     }
 }
+// Wire the router's injected renderer to app.js's render so go()/router.render()
+// drive the real render-dispatch map (still owned here until views are extracted).
+setRenderer(render);
 
 // ---- shell-prompt status line ----
 function renderStatusLine(p, due) {

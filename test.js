@@ -270,7 +270,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /verdict-table/);
         assert.match(appSrc, /VERDICT_RANK/);
         // lastpos save on go()
-        assert.match(appSrc, /lastpos\.save\(route, subject\)/);
+        assert.match(READ('site/router.js'), /lastpos\.save\(route, subject\)/);
         // IA: nav has today guides review cases stats settings + tutor cta (subjects/cards removed)
         for (const lbl of ['today','guides','review','cases','stats']) {
             assert.ok(appSrc.includes(`['${lbl}', '${lbl}']`) || appSrc.includes(`'${lbl}'`));
@@ -279,15 +279,15 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.ok(!appSrc.includes(removed), 'nav still contains removed link: ' + removed);
         }
         assert.match(appSrc, /nav-cta/);
-        // route aliases home→today, triage→cases
-        assert.match(appSrc, /ROUTE_ALIASES/);
-        assert.match(appSrc, /home: 'today'/);
+        // route aliases home→today, triage→cases (now in router.js)
+        assert.match(READ('site/router.js'), /ROUTE_ALIASES/);
+        assert.match(READ('site/router.js'), /home: 'today'/);
         // operator vocab gated behind DEBUG only
         const userVisible = appSrc.replace(/DEBUG \?[^:]+:/g, '').replace(/if \(DEBUG\)[^}]+}/g, '');
         // workspace/hero gone
         for (const banned of [/your medical study workspace/i]) assert.ok(!banned.test(appSrc));
-        // setLast persists
-        assert.match(appSrc, /progress\.setLast/);
+        // setLast persists (now in router.js)
+        assert.match(READ('site/router.js'), /progress\.setLast/);
     });
 
     console.log('# progress + search + theme + a11y + telemetry');
@@ -626,10 +626,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(!fs.existsSync(path.join(ROOT, 'site/notes.js')), 'notes.js should be deleted');
         // app.js no longer references game/confetti/xp/awardXP
         for (const re of [/from '\.\/game\.js'/, /from '\.\/confetti\.js'/, /\bawardXP\b/, /\brenderXpChip\b/, /\brenderXpBarFull\b/, /\bawardCardXP\b/, /\bxp-chip\b/, /game\./, /confetti\./, /quests\.js/, /badges\.js/, /notes\.js/, /renderQuests\b/, /renderBadges\b/, /renderNotes\b/, /handleHighlightOrNote/, /runBadgeEvaluation/]) assert.ok(!re.test(appSrc), 'app.js still references ' + re);
-        // aliases in place
-        assert.match(appSrc, /notes:\s*'today'/);
-        assert.match(appSrc, /quests:\s*'today'/);
-        assert.match(appSrc, /badges:\s*'today'/);
+        // aliases in place (now in router.js)
+        assert.match(READ('site/router.js'), /notes:\s*'today'/);
+        assert.match(READ('site/router.js'), /quests:\s*'today'/);
+        assert.match(READ('site/router.js'), /badges:\s*'today'/);
         // mastery — empty shards => 0%
         const emptyShards = Object.fromEntries(SUBJECTS.map(s => [s, { cards: [], guide: { sections: [] }, triage: { scenarios: [] } }]));
         const m = masteryMod.overallProgress(MANIFEST, emptyShards);
