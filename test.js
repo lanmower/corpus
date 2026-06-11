@@ -258,9 +258,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(mdSrc, /icon-label[^>]*>\$\{ICON\.arrowRight\}<span>tutor/);
         assert.ok(!/→ practice/.test(appSrc));
         assert.ok(!/→ tutor/.test(appSrc), 'guide-aff should use SVG icon, not Unicode arrow');
-        // review progress line
-        assert.match(appSrc, /class: 'review-progress'/);
-        assert.match(appSrc, /to daily goal/);
+        // review progress line (now in views/review.js)
+        const reviewSrc = READ('site/views/review.js');
+        assert.match(reviewSrc, /class: 'review-progress'/);
+        assert.match(reviewSrc, /to daily goal/);
         // r-toggle for just-read
         assert.match(appSrc, /e\.key === 'r' \|\| e\.key === 'R'/);
         assert.match(appSrc, /justread\.toggle/);
@@ -433,7 +434,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const eff = progressMod.effectiveDateISO(at3am);
         assert.notStrictEqual(eff, at3am.toISOString().slice(0, 10));
         // app keys + routes
-        for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /renderSparkline/, /next-thing/, /schedule-checklist/, /exam-countdown/, /late-banner/, /undo-toast/]) assert.match(appSrc, re);
+        for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /renderSparkline/, /next-thing/, /schedule-checklist/, /exam-countdown/, /late-banner/]) assert.match(appSrc, re);
+        assert.match(READ('site/views/review.js'), /undo-toast/, 'undo-toast lives in views/review.js');
         for (const route of ['mistakes','drill']) assert.ok(appSrc.includes(`'${route}'`));
         // new shortcuts in modal
         const shortcutsSrc = READ('site/shortcuts.js');
@@ -941,10 +943,11 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // (which spammed 3 "model load timed out" turns).
         assert.ok(/pendingDailyPlan/.test(panelSrc) && /modelStatus !== 'ready'/.test(panelSrc.slice(panelSrc.indexOf('export function startDailySyllabus'), panelSrc.indexOf('export function startDailySyllabus') + 600)), 'daily walk defers until model ready (no load-timeout error spam)');
         assert.ok(/Walk me through today/.test(panelSrc), 'daily-walk starter chip present');
-        // app.js coaching uses the handler's real cmd, gated by config
+        // coaching uses the handler's real cmd, gated by config (gradeReview now in views/review.js)
         const app = READ('site/app.js');
-        assert.ok(/cmd: 'generate-coaching'/.test(app), 'app posts generate-coaching (matches worker handler)');
-        assert.ok(/autoCoachOnReview/.test(app) && /proactiveCheckins/.test(app), 'app gates coaching/checkin on config');
+        const reviewSrc2 = READ('site/views/review.js');
+        assert.ok(/cmd: 'generate-coaching'/.test(reviewSrc2), 'review posts generate-coaching (matches worker handler)');
+        assert.ok(/autoCoachOnReview/.test(reviewSrc2) && /proactiveCheckins/.test(app), 'review gates coaching + app gates checkin on config');
         // daily check-in now launches the interactive syllabus walk with real blocks
         assert.ok(/startDailySyllabus\(plan\)/.test(app) && /setDailyPlanProvider/.test(app), 'app launches daily-syllabus walk with today blocks');
         // empty/caught-up plan must NOT use the "present the FIRST block" prompt (that
@@ -1132,18 +1135,21 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // a STRING (build_data: line:heads[h].line vs sectionLine:String(best.line)). A bare ===
         // is always false -> section link always fell back to the generic title and never scrolled.
         // Both the builder and the post-nav click handler must coerce both sides to String.
-        assert.ok(!/sections\?\.find\(s => s\.line === card\.requires\.sectionLine\)/.test(app),
+        // section-ref lookups live in views/review.js now (renderReview)
+        const reviewSrc = READ('site/views/review.js');
+        const appAndReview = app + reviewSrc;
+        assert.ok(!/sections\?\.find\(s => s\.line === card\.requires\.sectionLine\)/.test(appAndReview),
             'section-ref builder uses bare number===string (always false)');
-        assert.ok(!/sections\?\.find\(s => s\.line === card\.requires\.sectionLine\)/.test(app.replace(/\?\./g, '.')),
+        assert.ok(!/sections\?\.find\(s => s\.line === card\.requires\.sectionLine\)/.test(appAndReview.replace(/\?\./g, '.')),
             'section-ref click-handler uses bare number===string');
-        assert.ok((app.match(/String\(s\.line\) === String\(card\.requires\.sectionLine\)/g) || []).length >= 2,
+        assert.ok((appAndReview.match(/String\(s\.line\) === String\(card\.requires\.sectionLine\)/g) || []).length >= 2,
             'both section-ref lookups must String()-coerce both sides');
         // Session-done "export cards" must export the retained session cards, not
         // state.reviewQueue (emptied by grade time -> always exported []).
         assert.match(READ('site/app-context.js'), /reviewSessionCards: \[\]/, 'state (app-context) must declare reviewSessionCards');
-        assert.match(app, /state\.reviewSessionCards\.push\(card0\)/, 'gradeReview must retain the graded card');
-        assert.match(app, /exportSessionCards\(state\.reviewSessionCards\.slice\(\)\)/, 'export must read retained session cards');
-        assert.ok(!/exportSessionCards\(state\.reviewQueue\.filter/.test(app), 'export must not filter the (empty) live queue');
+        assert.match(reviewSrc, /state\.reviewSessionCards\.push\(card0\)/, 'gradeReview must retain the graded card');
+        assert.match(reviewSrc, /exportSessionCards\(state\.reviewSessionCards\.slice\(\)\)/, 'export must read retained session cards');
+        assert.ok(!/exportSessionCards\(state\.reviewQueue\.filter/.test(appAndReview), 'export must not filter the (empty) live queue');
         // srs.saveConfig must merge over existing config so a partial write cannot wipe a field.
         assert.match(srs, /const merged = \{ \.\.\.loadConfig\(\), \.\.\.cfg \}/, 'saveConfig must merge over persisted config');
         assert.ok(!/localStorage\.setItem\(CONFIG_KEY, JSON\.stringify\(cfg\)\)/.test(srs), 'saveConfig must not write cfg verbatim');

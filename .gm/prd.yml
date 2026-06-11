@@ -2023,7 +2023,8 @@
 - id: arch-view-review
   text: 'views/review.js (HARDEST NODE - most state): renderReview + resetReviewQueue + flashcard render + grading controller gradeReview/undoLastGrade/suspendCurrentReview + review-queue state transitions. Import app-context + router. Prove the spine handles the most-coupled flow.'
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: site/views/review.js (renderReview+resetReviewQueue+gradeReview+undoLastGrade+skipReview+suspendCurrentReview+collectReviewTags+FRIENDLY_GRADES; ~13-import surface); app.js imports the 6 public verbs for keyboard+views+onNav+fns-map; slugify/totalNewEligibleAll pre-moved to context; browser-23 exports+route+renders true ERRS=[]; test 24 pass; app.js 2779->1620 lines
 - id: arch-view-guides
   text: 'views/guides.js: renderGuides + guide TOC/chunk builders (buildChunkedGuide etc). Import app-context + router + markdown.'
   phase: EXECUTE
