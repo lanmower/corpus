@@ -436,7 +436,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /renderSparkline/, /next-thing/, /schedule-checklist/, /exam-countdown/, /late-banner/, /undo-toast/]) assert.match(appSrc, re);
         for (const route of ['mistakes','drill']) assert.ok(appSrc.includes(`'${route}'`));
         // new shortcuts in modal
-        for (const s of ['quick add card', 'pomodoro', 'undo last grade', 'flag card', 'go mistakes']) assert.ok(appSrc.includes(s), 'missing shortcut: '+s);
+        const shortcutsSrc = READ('site/shortcuts.js');
+        for (const s of ['quick add card', 'pomodoro', 'undo last grade', 'flag card', 'go mistakes']) assert.ok(shortcutsSrc.includes(s), 'missing shortcut: '+s);
         // originals never surfaced — no medbak/audio-transcripts/book-texts/pages-NNN in shards or guides
         const fs2 = require('fs');
         assert.ok(!fs2.existsSync('site/data/medbak-index.json'), 'medbak-index.json should be deleted');
@@ -1252,7 +1253,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // call sites must use the shared builder.
         const app = READ('site/app.js');
         assert.match(READ('site/app-context.js'), /export function casesDoneBySubject\(\)/, 'shared casesDoneBySubject builder must exist (app-context)');
-        assert.strictEqual((app.match(/casesDoneBySubject\(\)/g) || []).length, 2, 'both regenerate sites call the shared builder');
+        assert.strictEqual(((app + READ('site/views/settings.js')).match(/casesDoneBySubject\(\)/g) || []).length, 2, 'both regenerate sites call the shared builder (app + settings)');
         assert.ok(!/casesDone\[id\] = casesDone\[id\]/.test(app), 'scenario-id-keyed casesDone construction must be gone');
         // MEDIUM (worst-case): triage session reads go through the shared store
         // (triage-store.js owns the {cards}/legacy-array normalization).
@@ -1263,7 +1264,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const sched = READ('site/schedule.js');
         assert.match(sched, /getFullYear\(\)/, 'schedule.isoDate must be local-date');
         assert.ok(!/toISOString\(\)\.slice\(0, 10\)/.test(READ('site/newcards.js')), 'newcards todayISO must be local-date');
-        assert.strictEqual(((app + READ('site/app-context.js')).match(/schedule\.isoDate\(new Date\(\)\)/g) || []).length, 7, 'app+context schedule day-key sites use schedule.isoDate');
+        assert.strictEqual(((app + READ('site/app-context.js') + READ('site/views/settings.js')).match(/schedule\.isoDate\(new Date\(\)\)/g) || []).length, 7, 'app+context+settings schedule day-key sites use schedule.isoDate');
         // data-first/subtractive (schedule.js): 10-subject fallback, srs config via
         // srs.loadConfig (sanitized), quota-guarded persist, dead exports removed.
         assert.ok(/paediatrics/.test(sched) && /paediatrics-neonatal/.test(sched), 'schedule fallback lists all 10 subjects');

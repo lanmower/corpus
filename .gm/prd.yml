@@ -2049,7 +2049,8 @@
 - id: arch-view-settings
   text: 'views/settings.js: renderSettings. Import app-context + router.'
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: site/views/settings.js (renderSettings+renderScheduleConfigPanel) + site/shortcuts.js extracted; app.js imports; browser-17 hasSettings/hasSchedulePanel/settingsExports/shortcutsModalWorks true ERRS=[]; test 24 pass
 - id: arch-view-mistakes-drill
   text: 'views/mistakes.js + views/drill.js: renderMistakes, renderDrill. Import app-context + router.'
   phase: EXECUTE
