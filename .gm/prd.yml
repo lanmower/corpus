@@ -2064,19 +2064,23 @@
 - id: arch-search-palette
   text: Extract mountSearchPalette wiring; keep memoized index. Lives in app.js boot or a small wiring module importing search.js + app-context.
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: mountSearchPalette kept in app.js boot (orchestrator-level wiring, memoized index from commit 3532a1c); imports buildSearchIndex/mountPalette from search.js; not a route view. Correct placement for the thin orchestrator.
 - id: arch-app-thin
   text: 'app.js reduced to thin orchestrator: imports context+router+all views, registerViews(map), SW registration, SDK bootstrap (setupSdkApp), online-status wiring, hashchange/boot. Target <400 lines.'
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: 'app.js reduced 2779->443 lines: imports + render() dispatch map + setRenderer + onNav hook + renderExamDay + openQuickAdd + showStorageFullBanner + keyboard handler + mountSearchPalette + setupSdkApp (SDK bootstrap) + boot. All 10 route views extracted to views/. Achieved orchestrator shape.'
 - id: arch-test-migration
   text: Migrate ~40 READ(site/app.js) regex assertions in test.js to the new module locations (assert each view/context/router module defines its functions + app.js imports them, mirroring prior markdown/clipboard split). 24+ pass.
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: All READ(site/app.js) source-grep assertions repointed to the new module locations (app-context/router/views/*) as each extraction landed; cross-file counts (isoDate, casesDoneBySubject) summed across modules; dead-code assertions (renderStatusLine/copy-id/buildFlashcard) dropped. test.js 24 pass.
 - id: arch-witness-all-routes
   text: Browser-witness every route renders live on index.html (today/guides/review/cases/stats/subject/settings/calendar/mistakes/drill) with zero console errors after the split; assert no ESM import-cycle boot break.
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: 'browser-31: all routes today/guides/subject/review/cases/stats/calendar/settings/mistakes render (drill hands off to review); ERRS=[] across the full nav sweep. No ESM import-cycle boot break.'
 - id: arch-remove-dead-buildflashcard
   text: buildFlashcard (app.js, 34 lines) has zero callers across site/ — dead code. Remove (Principle 2).
   phase: EXECUTE
