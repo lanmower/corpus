@@ -27,7 +27,6 @@ import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn, today
 import { ICON } from './icons.js';
 import { renderMarkdown } from './markdown.js';
 import { readSessions as readTriageSessions, sessionCards as triageSessionCards } from './triage-store.js';
-import { copyToClipboard } from './clipboard.js';
 import { localDayISO } from './dates.js';
 import {
     state, el, icon, iconLabel, appRoot, statusbar, statusbarMsg, DEBUG, log, warn,
@@ -1039,40 +1038,6 @@ function openInfographicLightbox(items, startIdx) {
     document.body.append(overlay);
     close.focus();
 }
-
-function buildFlashcard(c) {
-    const id = c.id;
-    const back = c.back || '';
-    const long = back.length > 300;
-    const card = el('div', {
-        class: 'flashcard' + (long ? ' long' : ''),
-        role: 'button', tabindex: '0', 'aria-label': `card: ${c.front?.slice(0, 60) || ''}`,
-        data: { cardId: id },
-        on: {
-            click: () => { if (state.flippedCards.has(id)) state.flippedCards.delete(id); else state.flippedCards.add(id); card.classList.toggle('flipped'); },
-            keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } },
-            contextmenu: e => {
-                e.preventDefault();
-                const isFlagged = flag.isFlagged(id);
-                showContextMenu(e.clientX, e.clientY, [
-                    { icon: isFlagged ? ICON.flag : ICON.flagOutline, label: isFlagged ? 'unflag' : 'flag', action: () => { flag.toggle(id); card.classList.toggle('flagged'); } },
-                    { icon: ICON.pause, label: 'suspend', action: () => { if (confirm('suspend this card?')) { srs.suspendCard(id, true); } } },
-                    { type: 'divider' },
-                    { icon: ICON.copy, label: 'copy id', action: () => { copyToClipboard(id, 'card id copied', 'copy failed'); } }
-                ]);
-            }
-        }
-    },
-        DEBUG ? el('div', { class: 'meta-line' }, el('span', {}, c.id || ''), el('span', {}, c.difficulty || 'medium')) : null,
-        el('div', { class: 'front' }, c.front),
-        el('div', { class: 'flip-hint' }, 'click to flip'),
-        el('div', { class: 'back markdown', html: renderMarkdown(back) }),
-        c.tags && c.tags.length ? el('div', { class: 'tags' }, ...c.tags.slice(0, 6).map(t => el('span', { class: 'tag' }, t))) : null
-    );
-    if (state.flippedCards.has(id)) card.classList.add('flipped');
-    return card;
-}
-
 
 async function renderReview() {
     getStage().innerHTML = '';

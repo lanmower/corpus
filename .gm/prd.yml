@@ -2072,3 +2072,8 @@
   text: Browser-witness every route renders live on index.html (today/guides/review/cases/stats/subject/settings/calendar/mistakes/drill) with zero console errors after the split; assert no ESM import-cycle boot break.
   phase: EXECUTE
   status: pending
+- id: arch-remove-dead-buildflashcard
+  text: buildFlashcard (app.js, 34 lines) has zero callers across site/ — dead code. Remove (Principle 2).
+  phase: EXECUTE
+  status: completed
+  witness: buildFlashcard had zero callers across site/; removed 34 lines + unused copyToClipboard import; browser-19 booted+reviewRenders ERRS=[]; test 24 pass

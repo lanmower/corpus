@@ -1153,11 +1153,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const clip = READ('site/clipboard.js');
         assert.match(clip, /export function copyToClipboard/, 'clipboard.js must export copyToClipboard');
         assert.match(clip, /export function fallbackCopy/, 'clipboard.js must export execCommand fallback');
-        assert.match(app, /import \{ copyToClipboard \} from '\.\/clipboard\.js'/, 'app must import copyToClipboard');
+        // exportSessionCards (the surviving copyToClipboard consumer) now lives in app-context.js.
+        const ctxSrc = READ('site/app-context.js');
+        assert.match(ctxSrc, /import \{ copyToClipboard \} from '\.\/clipboard\.js'/, 'app-context must import copyToClipboard');
         assert.ok(!/function copyToClipboard/.test(app), 'copyToClipboard must live in clipboard.js, not app.js');
-        assert.match(app, /copyToClipboard\(id,/, 'copy-id action must route through copyToClipboard');
-        assert.ok(!/navigator\.clipboard\.writeText\(id\)/.test(app), 'copy-id must not call navigator.clipboard.writeText unguarded');
-        assert.ok(!/navigator\.clipboard\.writeText\(tsv\)/.test(app), 'exportSessionCards must route through copyToClipboard');
+        assert.match(ctxSrc, /copyToClipboard\(lines\.join/, 'exportSessionCards must route through copyToClipboard');
+        assert.ok(!/navigator\.clipboard\.writeText\(tsv\)/.test(ctxSrc), 'exportSessionCards must route through copyToClipboard');
     });
     t('quality-max run-5: triage KV-reset + requestId guard + data-load failpath + dead branches + SDK latest', () => {
         const live = READ('site/triage-live.js'), app = READ('site/app.js');
