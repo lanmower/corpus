@@ -39,6 +39,7 @@ import {
 } from './app-context.js';
 import { ROUTES, go, setDocTitle, onNav, setRenderer } from './router.js';
 import { renderStats } from './views/stats.js';
+import { renderCalendar } from './views/calendar.js';
 
 let sdk = null;
 let sdkRender = null;
@@ -1634,14 +1635,6 @@ function collectReviewTags(allCards) {
     return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(x => x[0]);
 }
 
-
-function renderCalendar() {
-    getStage().append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'plan'), el('h2', {}, 'calendar')));
-    const mount = el('div', { class: 'cal-mount', id: 'cal-mount' });
-    getStage().append(mount);
-    calendar.mount(mount, { dueCountsFn: () => dueCountsBySubject() });
-}
 
 function debounce(fn, ms) { let h = null; return (...a) => { clearTimeout(h); h = setTimeout(() => fn(...a), ms); }; }
 

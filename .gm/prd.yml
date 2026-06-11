@@ -2044,7 +2044,8 @@
 - id: arch-view-calendar
   text: 'views/calendar.js: renderCalendar. Import app-context + router + calendar lib.'
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: site/views/calendar.js; app.js imports renderCalendar; browser-16 hasCalMount/modExport true route=calendar ERRS=[]; test 24 pass
 - id: arch-view-settings
   text: 'views/settings.js: renderSettings. Import app-context + router.'
   phase: EXECUTE
