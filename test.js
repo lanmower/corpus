@@ -469,7 +469,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const app = READ('site/app.js');
         assert.ok(/buildVideoHero/.test(app), 'app.js missing buildVideoHero');
         assert.ok(/class:\s*'panel video-hero'/.test(app), 'app.js missing .video-hero class');
-        assert.ok(/has-video/.test(app), 'app.js missing has-video badge wiring');
+        assert.ok(/has-video/.test(READ('site/views/guides.js')), 'guides.js missing has-video badge wiring');
         const search = READ('site/search.js');
         assert.ok(/kind:\s*'video'/.test(search), 'search.js missing video kind');
         const sw = READ('site/sw.js');

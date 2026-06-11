@@ -2028,7 +2028,8 @@
 - id: arch-view-guides
   text: 'views/guides.js: renderGuides + guide TOC/chunk builders (buildChunkedGuide etc). Import app-context + router + markdown.'
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: site/views/guides.js (renderGuides grid); app.js imports; browser-26 modExport/hasGrid true route=guides ERRS=[]; test 24 pass. Guide TOC/chunk builders stay with renderSubject (subject reader), to move under arch-view-subject.
 - id: arch-view-subject
   text: 'views/subject.js: renderSubject. Import app-context + router.'
   phase: EXECUTE
