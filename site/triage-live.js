@@ -359,7 +359,14 @@ function renderScenarios() {
                 'aria-pressed': String(state.activeScenarioId === sc.id),
                 on: {
                     click: () => selectScenario(sc.id),
-                    keydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectScenario(sc.id); } }
+                    // Delete/Backspace resets progress from the keyboard — the
+                    // contextmenu (right-click) path is unreachable on touch and
+                    // for keyboard-only users, so a saved attempt must be clearable
+                    // without a pointer.
+                    keydown: e => {
+                        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectScenario(sc.id); }
+                        else if ((e.key === 'Delete' || e.key === 'Backspace') && state.sessions[sc.id]) { e.preventDefault(); resetScenarioProgress(sc.id); }
+                    }
                 }
             },
                 ce('div', {}, sc.name),
@@ -371,17 +378,20 @@ function renderScenarios() {
                     const has = !!state.sessions[sc.id];
                     showContextMenu(e.clientX, e.clientY, [
                         { label: 'open this case', action: () => selectScenario(sc.id) },
-                        has ? { label: 'reset progress', action: () => {
-                            delete state.sessions[sc.id]; saveSessions();
-                            if (state.activeScenarioId === sc.id) { state.cards = []; state.lastGrade = null; state.phase = 'asking'; renderActive(); renderScratchpad(); }
-                            renderScenarios(); renderStats();
-                        } } : null
+                        has ? { label: 'reset progress (Del)', action: () => resetScenarioProgress(sc.id) } : null
                     ].filter(Boolean));
                 }).catch(() => {});
             });
             els.list.append(row);
         }
     }
+}
+
+function resetScenarioProgress(id) {
+    if (!state.sessions[id]) return;
+    delete state.sessions[id]; saveSessions();
+    if (state.activeScenarioId === id) { state.cards = []; state.lastGrade = null; state.phase = 'asking'; renderActive(); renderScratchpad(); }
+    renderScenarios(); renderStats();
 }
 
 function selectScenario(id) {

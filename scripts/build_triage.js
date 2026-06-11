@@ -92,7 +92,7 @@ function buildScenariosFor(subject) {
         tags: Array.isArray(c.tags) ? c.tags : []
     }));
 
-    // Cluster by source file → one scenario per lecture file (with at least 3 atoms)
+    // Cluster by source file -> one scenario per lecture file (with at least 3 atoms)
     const byFile = new Map();
     atoms.forEach((a, i) => {
         const k = a.card_source;
@@ -160,7 +160,7 @@ function main(targets) {
         const built = buildScenariosFor(s);
         if (!built) { console.log(`! ${s}: no cards, skipping`); continue; }
         fs.writeFileSync(out, emitYaml(s, built.atoms, built.scenarios));
-        console.log(`✓ ${s}: ${built.atoms.length} atoms, ${built.scenarios.length} scenarios → ${out}`);
+        console.log(`[ok] ${s}: ${built.atoms.length} atoms, ${built.scenarios.length} scenarios -> ${out}`);
     }
 }
 

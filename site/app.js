@@ -28,6 +28,7 @@ import { ICON } from './icons.js';
 import { renderMarkdown } from './markdown.js';
 import { readSessions as readTriageSessions, sessionCards as triageSessionCards } from './triage-store.js';
 import { copyToClipboard } from './clipboard.js';
+import { localDayISO } from './dates.js';
 
 // Render an icon as an inline element for el()/innerHTML contexts. Returns a span
 // node carrying the SVG so callers can drop it into el(...) children lists.
@@ -184,9 +185,10 @@ function dueCountFor(subject) {
 
 function totalDueAll() {
     let n = 0;
+    const states = srs.loadStates();
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject]; if (!sh) continue;
-        n += srs.getDueCards(sh.cards.map(c => c.id), srs.loadStates()).length;
+        n += srs.getDueCards(sh.cards.map(c => c.id), states).length;
     }
     return n;
 }
@@ -1954,7 +1956,7 @@ function renderHeatmap(history) {
     const cells = [];
     for (let i = days - 1; i >= 0; i--) {
         const d = new Date(today.getTime() - i * 86400000);
-        const k = d.toISOString().slice(0, 10);
+        const k = localDayISO(d);
         cells.push({ date: k, count: counts[k] || 0 });
     }
     const max = Math.max(1, ...cells.map(c => c.count));
@@ -2342,13 +2344,13 @@ function renderSparkline(history, days = 7) {
     const today = new Date(); today.setHours(0, 0, 0, 0);
     const counts = {};
     for (const h of (history || [])) counts[h.date] = h.graded || 0;
-    const todayKey = new Date().toISOString().slice(0, 10);
+    const todayKey = localDayISO();
     const todayP = progress.load();
     counts[todayKey] = (counts[todayKey] || 0) + (todayP.todayGraded || 0);
     const cells = [];
     for (let i = days - 1; i >= 0; i--) {
         const d = new Date(today.getTime() - i * 86400000);
-        cells.push(counts[d.toISOString().slice(0, 10)] || 0);
+        cells.push(counts[localDayISO(d)] || 0);
     }
     const max = Math.max(1, ...cells);
     const W = 80, H = 24, gap = 2, cw = (W - gap * (days - 1)) / days;
@@ -2564,8 +2566,19 @@ function mountBottomNav() {
 }
 
 function mountSearchPalette() {
+    // The index is O(corpus) to build (~2551 cards + 934KB prose). It is static
+    // for a given set of loaded shards, so memoize and rebuild only when more
+    // shards have loaded — never per keystroke.
+    let _idx = null, _idxKey = '';
+    const getItems = () => {
+        const key = Object.keys(state.shards || {}).sort().join(',');
+        if (_idx && key === _idxKey) return _idx;
+        _idx = buildSearchIndex(state.manifest, state.shards);
+        _idxKey = key;
+        return _idx;
+    };
     state.searchPaletteApi = mountPalette(document, '#search-palette',
-        () => buildSearchIndex(state.manifest, state.shards),
+        getItems,
         (item) => {
             if (item.kind === 'card') { go('subject', item.subject); }
             else if (item.kind === 'case') { location.href = `./triage-live.html#${encodeURIComponent(item.id)}`; }

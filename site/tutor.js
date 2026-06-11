@@ -31,7 +31,6 @@ const state = {
     guideIndex: []       // [{subject, title, body, level, line}]
 };
 
-const log = (...a) => self.postMessage({ event: 'log', msg: a.join(' ') });
 const warn = (...a) => self.postMessage({ event: 'warn', msg: a.join(' ') });
 
 async function loadModelOnce() {

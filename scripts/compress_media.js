@@ -64,11 +64,11 @@ function compressFile(src, kind) {
     if (fs.existsSync(dst) && sizeMB(dst) > 0.01) return { src, dst, status: 'skip', srcMB: sizeMB(src), dstMB: sizeMB(dst) };
     const subj = path.relative(SYLLABUS, src).split(path.sep)[1] || '?';
     if (ONLY.length && !ONLY.includes(subj)) return { src, status: 'filtered' };
-    console.log(`[${kind}] ${path.basename(src)} (${sizeMB(src).toFixed(1)}MB) → ${path.basename(dst)} ...`);
+    console.log(`[${kind}] ${path.basename(src)} (${sizeMB(src).toFixed(1)}MB) -> ${path.basename(dst)} ...`);
     const r = (kind === 'audio' ? ffmpegAudio : ffmpegVideo)(src, dst);
     if (r.status !== 0) { try { fs.unlinkSync(dst); } catch {} return { src, dst, status: 'fail', code: r.status }; }
     const out = { src, dst, status: 'ok', srcMB: sizeMB(src), dstMB: sizeMB(dst) };
-    console.log(`  → ${out.dstMB.toFixed(1)}MB (${(100 * out.dstMB / out.srcMB).toFixed(0)}%)`);
+    console.log(`  -> ${out.dstMB.toFixed(1)}MB (${(100 * out.dstMB / out.srcMB).toFixed(0)}%)`);
     if (REPLACE) fs.unlinkSync(src);
     return out;
 }
@@ -88,7 +88,7 @@ function main() {
     const srcSum = ok.reduce((n, r) => n + r.srcMB, 0);
     const dstSum = ok.reduce((n, r) => n + r.dstMB, 0);
     console.log(`\nDone. ok=${ok.length} skip=${skip.length} fail=${fail.length}`);
-    if (ok.length) console.log(`  Compressed: ${srcSum.toFixed(0)}MB → ${dstSum.toFixed(0)}MB (${(100 * dstSum / srcSum).toFixed(0)}%)`);
+    if (ok.length) console.log(`  Compressed: ${srcSum.toFixed(0)}MB -> ${dstSum.toFixed(0)}MB (${(100 * dstSum / srcSum).toFixed(0)}%)`);
     if (fail.length) { console.error('Failures:'); fail.forEach(f => console.error('  ' + f.src + ' code=' + f.code)); process.exit(1); }
 }
 

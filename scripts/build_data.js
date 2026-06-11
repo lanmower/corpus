@@ -368,7 +368,7 @@ function main() {
         manifest.totals.guideSections += shard.guide ? shard.guide.sections.length : 0;
         manifest.totals.videoCount += shard.guide && Array.isArray(shard.guide.videos) ? shard.guide.videos.length : 0;
         manifest.totals.audioCount += shard.guide && Array.isArray(shard.guide.audio) ? shard.guide.audio.length : 0;
-        console.log(`✓ ${s}: ${shard.cards.length} cards, ${shard.triage?.scenarioCount || 0} scenarios, guide=${rating} (${shard.guide?.sections?.length || 0} sections)`);
+        console.log(`[ok] ${s}: ${shard.cards.length} cards, ${shard.triage?.scenarioCount || 0} scenarios, guide=${rating} (${shard.guide?.sections?.length || 0} sections)`);
     }
     fs.writeFileSync(path.join(DATA, 'manifest.json'), JSON.stringify(manifest, null, 2));
     console.log(`\nTotals: ${manifest.totals.cards} cards, ${manifest.totals.scenarios} scenarios, ${manifest.totals.atoms} atoms, ${manifest.totals.guideSections} guide sections, ${(manifest.totals.guideChars/1024).toFixed(0)}KB guides`);

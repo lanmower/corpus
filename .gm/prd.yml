@@ -1936,3 +1936,73 @@
   validation: Triaged with witness this run; extraction lands only after app-context module exists
   status: completed
   witness: 'Triaged with witness: resetReviewQueue 18 call sites (app.js:119...2463), gradeReview/undoLastGrade in global keymap; blind extraction net-grows coupling (Principle 2); deferred behind app-context module, recorded in row subject'
+- id: qmax-add-4-lenses
+  text: 'Expand quality-max.js review lenses from 8 to 12: add physics-first(P5), empirical(P7), crucible(P11), human-value(P12) — the engineering-DNA principles not previously covered as review lenses. Witness: quality-max.js PRINCIPLES array.'
+  phase: EXECUTE
+  status: completed
+  witness: quality-max.js PRINCIPLES now 12 lenses incl physics-first/empirical/crucible/human-value; lenses_run confirmed 12 in wf_53f48815-fce output
+- id: qmax-run-12-lens
+  text: Run the expanded 12-lens quality-max workflow against corpus surfaces; adversarial-verify every finding; synthesize confirmed issues. Hardest node first.
+  phase: EXECUTE
+  status: completed
+  witness: 'wf_53f48815-fce: 36 agents, 12 lenses, 24 raw -> 17 confirmed / 7 refuted'
+- id: qmax-apply-fixes
+  text: Apply every confirmed finding from the run as a code fix; browser-witness any client-side edit; re-run test.js; commit+push.
+  phase: EXECUTE
+  status: completed
+  witness: all confirmed fixes applied; test.js 24 pass; browser-6/7 witnessed live
+- id: fix-timer-doublecount
+  text: 'timer.js: load() recompute + tick() manual decrement both subtract from remaining -> 2x speed. Make startedAt the single owner; tick derives remaining, persists startedAt.'
+  phase: EXECUTE
+  status: completed
+  witness: timer.js startedAt single owner; browser-6 timerRemaining=90 timerSingleOwner=true
+- id: fix-daykey-spine
+  text: app.js renderHeatmap(1957)/renderSparkline(2345) + mastery.js forecast(107/118) use UTC toISOString day-keys; data written via dates.js localDayISO. Route all through localDayISO.
+  phase: EXECUTE
+  status: completed
+  witness: app.js:1958/2345/2351 + mastery.js use localDayISO from dates.js; browser-6 modulesLoad=true
+- id: fix-search-index-memoize
+  text: app.js mountSearchPalette rebuilds full O(corpus) search index on every keystroke. Build once on open, reuse.
+  phase: EXECUTE
+  status: completed
+  witness: app.js mountSearchPalette memoizes index keyed by loaded-shard set
+- id: fix-totaldueall-parse
+  text: app.js totalDueAll calls srs.loadStates() inside 10-subject loop -> parses full store 10x/render. Hoist one loadStates(), pass states in.
+  phase: EXECUTE
+  status: completed
+  witness: app.js totalDueAll hoists single srs.loadStates() outside loop
+- id: fix-anki-migrate-zeroguard
+  text: anki_migrate.js migrateOne unconditionally rewrites source even when readCardsFromYml yields 0 notes -> silent data loss. Skip write when raw.length===0.
+  phase: EXECUTE
+  status: completed
+  witness: anki_migrate.js migrateOne skips write when raw.length===0; node run exit 0
+- id: fix-glyph-build-scripts
+  text: Decorative checkmark glyph in build_data.js:371, build_triage.js:163, build_guides.js:152 success logs. Convert to ASCII (full sweep).
+  phase: EXECUTE
+  status: completed
+  witness: build_data/build_guides/build_triage/compress_media checkmark+arrow glyphs -> ASCII; test.js glyph-clean PASS
+- id: add-srs-test-coverage
+  text: 'test.js: assert calcSM2 reps==1->6 and reps>=2->round(interval*ef); compressInterval NaN/0->1; migrate newer-version throw + legacy null upgrade.'
+  phase: EXECUTE
+  status: completed
+  witness: test.js asserts calcSM2 6/25, compressInterval NaN/0/normal, migrate newer-throw + legacy upgrade; 24 pass
+- id: fix-tutor-clearconv-race
+  text: 'tutor-panel.js clearConversation race: late coaching-done from in-flight gen repopulates+persists cleared chat and fires tool calls. Add epoch/requestId guard mirroring triage _activeReqId.'
+  phase: EXECUTE
+  status: completed
+  witness: tutor-panel.js genEpoch/activeGenEpoch guard; clear bumps epoch, done-handler drops stale; browser-6 tutor-panel imports clean
+- id: fix-search-scrollintoview
+  text: search.js arrow-key selection never scrollIntoView; keyboard selection goes off-screen in capped list. Add scrollIntoView({block:nearest}).
+  phase: EXECUTE
+  status: completed
+  witness: search.js render() calls list.children[active].scrollIntoView({block:nearest})
+- id: fix-triage-reset-keyboard
+  text: triage-live.js reset-progress only via right-click contextmenu; unreachable for touch/keyboard. Add accessible path.
+  phase: EXECUTE
+  status: completed
+  witness: triage-live.js resetScenarioProgress + Delete/Backspace keydown; browser-7 triageBooted=true
+- id: remove-dead-tutor-log
+  text: tutor.js:34 dead log helper (only emitter of log event) + dead consumer arm tutor-panel.js:917. Remove both, net-smaller.
+  phase: EXECUTE
+  status: completed
+  witness: tutor.js log helper removed + tutor-panel.js log case removed; test.js 24 pass

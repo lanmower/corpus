@@ -15,6 +15,13 @@ let sdk = null;
 let sdkRender = null;
 let isThinking = false;
 let streamingBuf = '';
+// Generation-epoch guard. The worker<->panel protocol carries no requestId, so a
+// late *-done from a generation that was interrupted by clearConversation would
+// otherwise repopulate (and persist + fire tool calls into) the just-cleared
+// thread. We stamp the epoch when a generation is dispatched and bump it on clear;
+// a done whose epoch != the current one is stale and dropped.
+let genEpoch = 0;
+let activeGenEpoch = null;
 let isPanelCollapsed = true;
 let config = { ...loadConfig() };
 let modelStatus = 'idle';     // idle | loading | downloading | ready | unavailable
@@ -715,6 +722,10 @@ function persist() {
 export function clearConversation() {
     tutorMessages = [];
     streamingBuf = '';
+    // Invalidate any in-flight generation: bumping the epoch makes its late
+    // *-done stale, and nulling the active epoch marks "cleared since dispatch".
+    genEpoch++;
+    activeGenEpoch = null;
     clearHistory();
     if (tutorWorker) {
         // Interrupt any in-flight generation before resetting so the worker's
@@ -840,6 +851,7 @@ export function sendTutorMessage(text, opts = {}) {
     // user-messages with no spinner. The worker processes in order; the first
     // coaching-start just confirms what we already reflect.
     isThinking = true;
+    activeGenEpoch = genEpoch;
     armThinkingWatchdog();
     if (modelStatus !== 'ready') {
         // First use while the model is still loading: tell the user the reply
@@ -860,6 +872,7 @@ let pendingDailyPlan = null;
 
 function postDailySyllabus(plan) {
     isThinking = true;
+    activeGenEpoch = genEpoch;
     armThinkingWatchdog();
     if (sdkRender) sdkRender();
     tutorWorker.postMessage({ cmd: 'daily-syllabus', plan, context: tutorContext });
@@ -914,7 +927,6 @@ export function wireWorkerToPanel(worker) {
         const { event, token, message, error, stage, progress, loaded, total, interrupted } = e.data || {};
 
         switch (event) {
-            case 'log': console.log('[tutor]', e.data.msg); break;
             case 'warn': console.warn('[tutor]', e.data.msg); break;
 
             case 'model-loading':
@@ -995,6 +1007,12 @@ export function wireWorkerToPanel(worker) {
             case 'daily-syllabus-done': {
                 isThinking = false;
                 clearThinkingWatchdog();
+                // Stale reply: the conversation was cleared while this generation
+                // was in flight. Dropping it prevents the cleared thread from being
+                // repopulated/persisted and stops a stale tool block from firing a
+                // page action after the user moved on.
+                if (activeGenEpoch === null) { streamingBuf = ''; if (sdkRender) sdkRender(); break; }
+                activeGenEpoch = null;
                 setChatLive('polite');
                 const clean = dispatchAndStrip(message);
                 streamingBuf = '';

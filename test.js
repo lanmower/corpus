@@ -65,6 +65,19 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     t('SM2 + learning + leech + history cap + fuzz + persist/migrate + export/import + stats + forecast + suspend', () => {
         let n = srs.calcSM2(srs.defaultCardState(), 1); assert.strictEqual(n.repetitions, 0); assert.strictEqual(n.interval, 1);
         assert.ok(srs.calcSM2(srs.defaultCardState(), 5).easeFactor > 2.5);
+        // SM-2 interval branches: 2nd review fixed 6 days; mature reviews multiply by EF.
+        assert.strictEqual(srs.calcSM2({ ...srs.defaultCardState(), repetitions: 1 }, 4).interval, 6);
+        assert.strictEqual(srs.calcSM2({ ...srs.defaultCardState(), repetitions: 2, interval: 10, easeFactor: 2.5 }, 4).interval, 25);
+        // compressInterval: non-finite/<=0 effectiveDays = max pressure -> 1 (poison-card guard); normal pressure halves.
+        assert.strictEqual(srs.compressInterval(10, NaN, 5), 1);
+        assert.strictEqual(srs.compressInterval(10, 0, 5), 1);
+        assert.strictEqual(srs.compressInterval(10, 5, 5), 5);
+        // migrate: a NEWER schema version is rejected (loadStates swallows the throw -> {}), never restamped.
+        global.localStorage.clear(); global.localStorage.setItem('corpus.srs.states', JSON.stringify({ version: 999, states: { z: srs.defaultCardState() } }));
+        assert.deepStrictEqual(srs.loadStates(), {});
+        // migrate: legacy version==null map upgrades each card to phase:'review'.
+        global.localStorage.clear(); global.localStorage.setItem('corpus.srs.states', JSON.stringify({ leg: { ...srs.defaultCardState(), phase: 'learning' } }));
+        assert.strictEqual(srs.loadStates()['leg'].phase, 'review');
         let s = srs.schedule(srs.defaultCardState(), 3, now, () => 0.5);
         assert.strictEqual(s.phase, 'learning');
         s = srs.schedule({ ...srs.defaultCardState(), phase: 'review', lapses: 7 }, 0, now);

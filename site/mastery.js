@@ -1,7 +1,14 @@
 // overall + per-subject progress. weighted: 0.4 cards + 0.3 sections + 0.2 cases + 0.1 mistakes
 import * as srs from './srs.js';
+import { localDayISO } from './dates.js';
 
-const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology'];
+// Canonical subject set is manifest.subjects (built from data/manifest.json).
+// Never hardcode the list here: a stale local copy silently drops subjects from
+// overall progress (paediatrics/paediatrics-neonatal regression). manifestSubjects
+// is the single source of truth, matching verdicts.js.
+function manifestSubjects(manifest) {
+    return (manifest?.subjects || []).map(s => s.subject || s).filter(Boolean);
+}
 
 function loadGuideTicks() {
     try { return JSON.parse(localStorage.getItem('corpus.guide.v1') || '{}'); } catch { return {}; }
@@ -50,7 +57,7 @@ function computeFromCards(manifest, shards, only) {
     let caseTotal = 0, casePass = 0;
     let mTotal = 0, mClear = 0;
     const now = Date.now();
-    const subjects = only ? [only] : SUBJECTS;
+    const subjects = only ? [only] : manifestSubjects(manifest);
     for (const s of subjects) {
         const sh = shards[s]; if (!sh) continue;
         for (const c of (sh.cards || [])) {
@@ -104,7 +111,7 @@ function pct(num, den) { return { pct: den ? Math.round(100 * num / den) : 0 }; 
 
 export function forecastTo100(manifest, shards) {
     const cur = overallProgress(manifest, shards).weighted;
-    if (cur >= 100) return new Date().toISOString().slice(0, 10);
+    if (cur >= 100) return localDayISO();
     let prog;
     try { prog = JSON.parse(localStorage.getItem('corpus.progress.v1') || '{}'); } catch { return null; }
     const hist = (prog.history || []).slice(-7);
@@ -115,7 +122,7 @@ export function forecastTo100(manifest, shards) {
     if (ratePerDay <= 0) return null;
     const days = Math.ceil((100 - cur) / ratePerDay);
     const eta = new Date(Date.now() + days * 86400000);
-    return eta.toISOString().slice(0, 10);
+    return localDayISO(eta);
 }
 
 if (typeof window !== 'undefined') window.__mastery = { overallProgress, subjectProgress, forecastTo100 };

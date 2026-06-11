@@ -9,15 +9,13 @@ export function load() {
         const raw = localStorage.getItem(KEY);
         if (!raw) return defaults();
         const t = JSON.parse(raw);
+        // startedAt is the single owner of elapsed time: remaining is derived
+        // from wall-clock here, never decremented independently elsewhere.
+        // Rollover is left to the caller (tick) so the done event/vibrate fire.
         if (t.running && t.startedAt) {
             const elapsed = Math.floor((Date.now() - t.startedAt) / 1000);
             t.remaining = Math.max(0, t.remaining - elapsed);
             t.startedAt = Date.now();
-            if (t.remaining === 0) {
-                t.mode = t.mode === 'work' ? 'break' : 'work';
-                t.remaining = t.mode === 'work' ? WORK : BREAK_;
-                t.running = false;
-            }
         }
         return { ...defaults(), ...t };
     } catch { return defaults(); }
@@ -45,14 +43,19 @@ export function mount(doc) {
         mode.textContent = t.mode;
         time.textContent = fmt(t.remaining);
         tog.textContent = t.running ? 'pause' : 'start';
-        if (t.running) { t.remaining = Math.max(0, t.remaining - 1); save(t); }
-        if (t.remaining === 0 && t.running) {
-            const wasWork = t.mode === 'work';
-            t.mode = wasWork ? 'break' : 'work';
-            t.remaining = t.mode === 'work' ? WORK : BREAK_;
-            t.running = false; save(t);
-            if (navigator.vibrate) navigator.vibrate(200);
-            if (wasWork) { try { window.dispatchEvent(new CustomEvent('pomodoro:done')); } catch {} }
+        if (t.running) {
+            if (t.remaining <= 0) {
+                const wasWork = t.mode === 'work';
+                t.mode = wasWork ? 'break' : 'work';
+                t.remaining = t.mode === 'work' ? WORK : BREAK_;
+                t.running = false; save(t);
+                time.textContent = fmt(t.remaining); mode.textContent = t.mode; tog.textContent = 'start';
+                if (navigator.vibrate) navigator.vibrate(200);
+                if (wasWork) { try { window.dispatchEvent(new CustomEvent('pomodoro:done')); } catch {} }
+            } else {
+                // Persist the wall-clock-derived remaining + reset startedAt.
+                save(t);
+            }
         }
     }
     setInterval(tick, 1000); tick();

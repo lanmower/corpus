@@ -131,6 +131,9 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
             li.addEventListener('click', () => { onSelect(it); close(); });
             list.appendChild(li);
         });
+        // Keep the keyboard-selected result visible: the list is height-capped
+        // and scrollable, so arrowing past the fold must scroll it into view.
+        list.children[active]?.scrollIntoView({ block: 'nearest' });
     };
     input.addEventListener('input', () => {
         const items = getItems();

@@ -149,7 +149,7 @@ function main(targets) {
         fs.mkdirSync(subjDir, { recursive: true });
         const out = path.join(subjDir, 'study_guide.md');
         fs.writeFileSync(out, md);
-        console.log(`✓ ${s}: ${md.length} chars → ${out}`);
+        console.log(`[ok] ${s}: ${md.length} chars -> ${out}`);
     }
 }
 
