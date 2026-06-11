@@ -22,8 +22,12 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
     e.waitUntil((async () => {
         try {
+            // Only evict OUR own stale caches. Deleting every bucket here also wiped
+            // transformers.js's `transformers-cache` (the ~260MB Bonsai model weights),
+            // so the model re-downloaded on every SW activation — every reload in dev
+            // (VERSION = dev-<timestamp>) and every deploy in prod. Scope to corpus-*.
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k).catch(() => null)));
+            await Promise.all(keys.filter(k => k.startsWith('corpus-') && k !== CACHE).map(k => caches.delete(k).catch(() => null)));
         } catch {}
         try { await self.clients.claim(); } catch {}
         try {

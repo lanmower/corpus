@@ -41,5 +41,11 @@ export const ICON = {
     // overlapping squares — "copy"
     copy: svg('<rect x="5.5" y="5.5" width="7" height="7" rx="1"/><path d="M3.5 10.5V4a.5.5 0 0 1 .5-.5h6.5"/>'),
     // skip-forward — "skip card"
-    skip: svg('<path d="M4 4l5 4-5 4z"/><path d="M11.5 4v8"/>')
+    skip: svg('<path d="M4 4l5 4-5 4z"/><path d="M11.5 4v8"/>'),
+    // microphone — "hold to talk" (push-to-talk voice input)
+    mic: svg('<rect x="6" y="2" width="4" height="7" rx="2"/><path d="M4 8a4 4 0 0 0 8 0"/><path d="M8 12v2.5"/>'),
+    // speaker with waves — "voice replies on"
+    soundOn: svg('<path d="M3 6.5v3h2L8 12V4L5 6.5H3Z"/><path d="M10.5 6a2.5 2.5 0 0 1 0 4"/><path d="M12.2 4.4a5 5 0 0 1 0 7.2"/>'),
+    // speaker muted — "voice replies off"
+    soundOff: svg('<path d="M3 6.5v3h2L8 12V4L5 6.5H3Z"/><path d="M11 6.5l3 3M14 6.5l-3 3"/>')
 };

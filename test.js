@@ -1331,6 +1331,41 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(READ('site/triage-live.js'), /from '\.\/triage-store\.js'/, 'triage-live imports shared store');
     });
 
+    console.log('# voice: KittenTTS + Whisper workers, controller, panel wiring');
+    t('voice flow: tts/stt workers + voice.js + opt-in speech + panel wiring + voices json + icons', () => {
+        const tts = READ('site/tts-worker.js'), stt = READ('site/stt-worker.js'), v = READ('site/voice.js');
+        // TTS worker: exact KittenTTS recipe (model id, ort options, inputs, 24kHz).
+        assert.match(tts, /KittenML\/kitten-tts-nano-0\.1/, 'tts uses KittenTTS nano model');
+        assert.match(tts, /kitten_tts_nano_v0_1\.onnx/, 'tts loads the repo onnx file');
+        assert.match(tts, /phonemizer/, 'tts phonemizes via espeak (phonemizer)');
+        for (const re of [/input_ids/, /style/, /speed/]) assert.match(tts, re, 'tts builds ' + re + ' tensor');
+        assert.match(tts, /graphOptimizationLevel:\s*'disabled'/, 'tts uses the disabled-optimization ort recipe');
+        assert.match(tts, /24000/, 'tts output is 24kHz');
+        // STT worker: whisper ASR.
+        assert.match(stt, /whisper/i, 'stt uses whisper');
+        assert.match(stt, /automatic-speech-recognition/, 'stt uses the ASR pipeline');
+        // Controller: required surface + opt-in (no auto-download) + fence-aware feed.
+        for (const re of [/export (async )?function startListening/, /export async function stopListening/, /export function feedText/, /export function flushSpeech/, /export function cancelSpeech/, /export function setSpeechEnabled/]) assert.match(v, re, 'voice.js missing ' + re);
+        assert.match(v, /let _speechEnabled = false/, 'spoken replies are opt-in (no unprompted 24MB download)');
+        assert.match(v, /```/, 'feedText is fence-aware (suppresses tool blocks)');
+        // Voices JSON: 8 voices, 256-dim style vectors.
+        const voices = JSON.parse(READ('site/voices.kitten.json'));
+        assert.strictEqual(Object.keys(voices).length, 8, '8 KittenTTS voices');
+        assert.strictEqual(voices[Object.keys(voices)[0]].length, 256, '256-dim style vectors');
+        // Icons added (no decorative glyphs — inline SVG).
+        for (const k of ['mic', 'soundOn', 'soundOff']) assert.ok(new RegExp(k + ':').test(READ('site/icons.js')), 'icons.js missing ' + k);
+        // Panel wiring: both surfaces import voice + feed the token stream.
+        const tp = READ('site/tutor-panel.js'), tl = READ('site/triage-live.js');
+        for (const s of [tp, tl]) {
+            assert.match(s, /import \* as voice from '\.\/voice\.js'/, 'panel imports voice');
+            assert.match(s, /voice\.feedText/, 'panel streams tokens to TTS');
+            assert.match(s, /voice\.flushSpeech/, 'panel flushes speech on done');
+            assert.match(s, /voice\.cancelSpeech/, 'panel cancels speech on new turn');
+        }
+        assert.match(tp, /mountVoiceBar/, 'tutor panel mounts the voice bar');
+        assert.match(tl, /mountTriageVoiceBar/, 'triage mounts the voice bar');
+    });
+
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
 })();

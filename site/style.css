@@ -1170,6 +1170,34 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
     .tutor-panel-root { transition: none !important; }
     body { transition: none !important; }
 }
+/* Voice bar: push-to-talk mic + spoken-reply toggle, overlaid top-right of panel. */
+.tutor-voice-bar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 6px;
+    z-index: 5;
+}
+.tutor-voice-bar .chip {
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 8px;
+}
+.tutor-voice-bar .tutor-voice-mic.listening {
+    background: var(--c-due, #c0392b);
+    color: #fff;
+    animation: tutorMicPulse 1s ease-in-out infinite;
+}
+.tutor-voice-bar .tutor-voice-mic.transcribing { opacity: 0.6; }
+.tutor-voice-bar .tutor-voice-speaker.active { color: var(--c-mastered, #2f7a3e); }
+@keyframes tutorMicPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(192,57,43,0.5); } 50% { box-shadow: 0 0 0 5px rgba(192,57,43,0); } }
+
 .tutor-panel-root .tutor-collapse-btn {
     position: absolute;
     left: -44px;

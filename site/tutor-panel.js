@@ -7,6 +7,8 @@ import {
     loadHistory, saveHistory, clearHistory, toWorkerHistory,
     loadCollapsed, saveCollapsed, loadConfig, saveConfig, markCheckedIn, shouldCheckInToday
 } from './tutor-store.js';
+import * as voice from './voice.js';
+import { ICON } from './icons.js';
 
 export let tutorMessages = [];
 export let tutorWorker = null;
@@ -219,6 +221,58 @@ function paintPill(pill) {
     if (lbl && lbl.textContent !== label) lbl.textContent = label;
 }
 
+// Voice bar: push-to-talk mic (Whisper STT -> send) + a speaker toggle (KittenTTS
+// streamed replies). Mounted ONCE as a DOM-overlay sibling of the panel root so the
+// SDK re-render never wipes it (same pattern the AICat controls use).
+function mountVoiceBar(root) {
+    if (!root || root.querySelector('.tutor-voice-bar')) return;
+    const bar = document.createElement('div');
+    bar.className = 'tutor-voice-bar';
+
+    const mic = document.createElement('button');
+    mic.type = 'button';
+    mic.className = 'tutor-voice-mic chip';
+    mic.setAttribute('aria-label', 'hold to talk');
+    mic.title = 'Hold to talk';
+    mic.innerHTML = ICON.mic;
+    const startMic = async (e) => {
+        e.preventDefault();
+        try { mic.classList.add('listening'); await voice.startListening(); }
+        catch (err) { mic.classList.remove('listening'); showTutorToast('Mic unavailable: ' + (err?.message || err)); }
+    };
+    const stopMic = async (e) => {
+        if (e) e.preventDefault();
+        if (!voice.isListening()) return;
+        mic.classList.remove('listening');
+        mic.classList.add('transcribing');
+        try { const text = await voice.stopListening(); if (text && text.trim()) sendTutorMessage(text.trim()); }
+        catch (err) { showTutorToast('Transcription failed'); }
+        finally { mic.classList.remove('transcribing'); }
+    };
+    mic.addEventListener('pointerdown', startMic);
+    mic.addEventListener('pointerup', stopMic);
+    mic.addEventListener('pointerleave', stopMic);
+    mic.addEventListener('pointercancel', stopMic);
+
+    const spk = document.createElement('button');
+    spk.type = 'button';
+    spk.className = 'tutor-voice-speaker chip' + (voice.speechEnabled() ? ' active' : '');
+    spk.setAttribute('aria-pressed', String(voice.speechEnabled()));
+    spk.title = 'Spoken replies';
+    spk.setAttribute('aria-label', 'toggle spoken replies');
+    spk.innerHTML = voice.speechEnabled() ? ICON.soundOn : ICON.soundOff;
+    spk.addEventListener('click', () => {
+        const on = !voice.speechEnabled();
+        voice.setSpeechEnabled(on);
+        spk.classList.toggle('active', on);
+        spk.setAttribute('aria-pressed', String(on));
+        spk.innerHTML = on ? ICON.soundOn : ICON.soundOff;
+    });
+
+    bar.append(mic, spk);
+    root.appendChild(bar);
+}
+
 function renderSdkChat() {
     if (!panelContainer) {
         panelContainer = document.createElement('div');
@@ -263,6 +317,7 @@ function renderSdkChat() {
         });
 
         document.body.appendChild(panelContainer);
+        mountVoiceBar(panelContainer);
     }
     applyResponsiveWidth();
 
@@ -520,6 +575,7 @@ function renderFallbackChat() {
         panelContainer.id = 'tutor-panel';
         panelContainer.className = 'tutor-panel-fallback tutor-panel-root';
         document.body.appendChild(panelContainer);
+        mountVoiceBar(panelContainer);
     }
     applyResponsiveWidth();
 
@@ -722,6 +778,7 @@ function persist() {
 export function clearConversation() {
     tutorMessages = [];
     streamingBuf = '';
+    try { voice.cancelSpeech(); } catch {} // stop any in-flight speech on clear
     // Invalidate any in-flight generation: bumping the epoch makes its late
     // *-done stale, and nulling the active epoch marks "cleared since dispatch".
     genEpoch++;
@@ -844,6 +901,9 @@ export function sendTutorMessage(text, opts = {}) {
         return;
     }
     preloadTutorModel(); // ensure the model is loading even if send precedes open
+    // New turn: stop any speech still playing/queued from the previous reply and
+    // reset the sentence buffer so streamed TTS starts clean.
+    try { voice.cancelSpeech(); voice.resetSpeech(); } catch {}
     if (!opts.isRegenerate) addTutorMessage(text, true);
     // Set thinking optimistically *now*, before the worker's coaching-start —
     // otherwise during the model-load window (status loading/downloading) the
@@ -995,6 +1055,7 @@ export function wireWorkerToPanel(worker) {
                     streamingBuf += token;
                     armThinkingWatchdog(); // streaming progress = worker alive
                     scheduleStreamRender();
+                    try { voice.feedText(token); } catch {} // streaming TTS (fence-aware)
                 }
                 break;
 
@@ -1022,6 +1083,7 @@ export function wireWorkerToPanel(worker) {
                     // so the marker never reloads into the thread or feeds back
                     // into the model's context on reseed.
                     addTutorMessage(clean, false, { interrupted: interrupted === true });
+                    try { voice.flushSpeech(); } catch {} // speak any buffered remainder
                 } else if (interrupted) {
                     showTutorToast('Stopped.');
                     if (sdkRender) sdkRender();

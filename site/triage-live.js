@@ -3,6 +3,7 @@ import * as progress from './progress.js';
 import { dispatchToolCalls as runToolCalls, stripToolBlocks } from './tool-dispatch.js';
 import { ICON } from './icons.js';
 import { PERSIST_KEY, SCHEMA_VERSION, readSessions, sessionCards, sessionScore } from './triage-store.js';
+import * as voice from './voice.js';
 
 let sdk = null;
 let sdkRender = null;
@@ -817,6 +818,7 @@ function onWorkerMessage(e) {
         const last = state.messages[state.messages.length - 1];
         // While streaming, show prose with tool blocks hidden so the chat stays readable.
         if (last && last.role === 'assistant') last.content = stripToolBlocks(state.streamBuffer) || state.streamBuffer;
+        try { voice.feedText(m.output || ''); } catch {} // streaming TTS (fence-aware)
         renderMessages();
     } else if (m.status === 'complete') {
         // An interrupted generation still emits its own 'complete'. Drop any
@@ -827,6 +829,7 @@ function onWorkerMessage(e) {
         const last = state.messages[state.messages.length - 1];
         if (last && last.role === 'assistant') last.content = stripToolBlocks(text);
         setGenerating(false);
+        try { voice.flushSpeech(); } catch {} // speak any buffered remainder
         renderMessages();
         runToolCalls(text, TOOLS);
         if (state.phase === 'graded') renderActive();
@@ -874,6 +877,7 @@ async function loadLLM() {
 function postGenerate(messages) {
     if (state.generating) state.worker.postMessage({ type: 'interrupt' });
     setGenerating(true);
+    try { voice.cancelSpeech(); voice.resetSpeech(); } catch {} // new turn: stop prior speech
     state.worker.postMessage({ type: 'reset' });
     const requestId = (state._reqSeq = (state._reqSeq || 0) + 1);
     state._activeReqId = requestId;
@@ -1224,6 +1228,47 @@ async function setupSdkApp() {
     });
 }
 
+// Voice bar for triage: push-to-talk mic (Whisper -> fills the reply + sends) +
+// a spoken-reply toggle (KittenTTS). Fixed overlay on document.body so the SDK
+// re-render of #app never wipes it.
+function mountTriageVoiceBar() {
+    if (document.querySelector('.triage-voice-bar')) return;
+    const bar = document.createElement('div');
+    bar.className = 'triage-voice-bar';
+
+    const mic = document.createElement('button');
+    mic.type = 'button'; mic.className = 'chip tutor-voice-mic';
+    mic.setAttribute('aria-label', 'hold to talk'); mic.title = 'Hold to talk';
+    mic.innerHTML = ICON.mic;
+    const startMic = async (e) => { e.preventDefault(); try { mic.classList.add('listening'); await voice.startListening(); } catch (err) { mic.classList.remove('listening'); console.warn('[triage-live] mic', err); } };
+    const stopMic = async (e) => {
+        if (e) e.preventDefault();
+        if (!voice.isListening()) return;
+        mic.classList.remove('listening'); mic.classList.add('transcribing');
+        try { const text = await voice.stopListening(); if (text && text.trim() && els.prompt) { els.prompt.value = text.trim(); send(false); } }
+        catch (err) { console.warn('[triage-live] transcribe', err); }
+        finally { mic.classList.remove('transcribing'); }
+    };
+    mic.addEventListener('pointerdown', startMic);
+    mic.addEventListener('pointerup', stopMic);
+    mic.addEventListener('pointerleave', stopMic);
+    mic.addEventListener('pointercancel', stopMic);
+
+    const spk = document.createElement('button');
+    spk.type = 'button'; spk.className = 'chip tutor-voice-speaker' + (voice.speechEnabled() ? ' active' : '');
+    spk.setAttribute('aria-pressed', String(voice.speechEnabled())); spk.title = 'Spoken replies';
+    spk.setAttribute('aria-label', 'toggle spoken replies');
+    spk.innerHTML = voice.speechEnabled() ? ICON.soundOn : ICON.soundOff;
+    spk.addEventListener('click', () => {
+        const on = !voice.speechEnabled(); voice.setSpeechEnabled(on);
+        spk.classList.toggle('active', on); spk.setAttribute('aria-pressed', String(on));
+        spk.innerHTML = on ? ICON.soundOn : ICON.soundOff;
+    });
+
+    bar.append(mic, spk);
+    document.body.appendChild(bar);
+}
+
 (async () => {
     const loaded = loadSessions();
     state.sessions = loaded.sessions;
@@ -1242,6 +1287,7 @@ async function setupSdkApp() {
     try {
         await loadManifestAndScenarios();
         render();
+        mountTriageVoiceBar();
     } catch (e) {
         console.error('[triage-live] case data failed to load', e);
         // Drive the error through state so the SDK render (the path the user
