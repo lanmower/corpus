@@ -265,10 +265,11 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /e\.key === 'r' \|\| e\.key === 'R'/);
         assert.match(appSrc, /justread\.toggle/);
         assert.match(appSrc, /justread\.applyClass/);
-        // verdict table
-        assert.match(appSrc, /renderVerdictTable/);
-        assert.match(appSrc, /verdict-table/);
-        assert.match(appSrc, /VERDICT_RANK/);
+        // verdict table (now in views/stats.js)
+        const statsSrc = READ('site/views/stats.js');
+        assert.match(statsSrc, /renderVerdictTable/);
+        assert.match(statsSrc, /verdict-table/);
+        assert.match(statsSrc, /VERDICT_RANK/);
         // lastpos save on go()
         assert.match(READ('site/router.js'), /lastpos\.save\(route, subject\)/);
         // IA: nav has today guides review cases stats settings + tutor cta (subjects/cards removed)

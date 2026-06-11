@@ -2035,7 +2035,8 @@
 - id: arch-view-stats
   text: 'views/stats.js: renderStats + renderVerdictTable + renderHeatmap + renderSparkline. Import app-context + router + verdicts.'
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: site/views/stats.js (renderStats+renderVerdictTable+renderDebugStats+renderHeatmap); app.js imports renderStats; browser-15 hasStats/hasVerdictTable/hasHeatmap/modExports true, ERRS=[]; test 24 pass
 - id: arch-view-cases
   text: 'views/cases.js: renderTriage. Import app-context + router.'
   phase: EXECUTE
