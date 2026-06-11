@@ -167,6 +167,26 @@ export function casesDoneBySubject() {
 
 export function estReviewMinutes(due) { return Math.max(1, Math.round(due * 0.4)); }
 
+// Anchor-id slug for guide sections (shared by today nav, the guide builders, and
+// the review->guide section link).
+export function slugify(t) { return String(t).toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''); }
+
+// Count of new-but-eligible cards across all subjects (today's "learn new" gate
+// and review's caught-up recommendation both read this).
+export function totalNewEligibleAll() {
+    const states = srs.loadStates();
+    const ticksAll = loadGuideTicks();
+    const out = {};
+    let total = 0;
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject]; if (!sh) continue;
+        const cards = sh.cards.map(c => ({ ...c, _subject: meta.subject }));
+        const n = srs.getNewEligibleCards(cards, states, ticksAll).length;
+        out[meta.subject] = n; total += n;
+    }
+    return { total, bySubject: out };
+}
+
 // Sum plannedReview+plannedNew across today's study blocks.
 export function todayPlanReviewTarget() {
     try {

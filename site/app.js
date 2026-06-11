@@ -34,7 +34,7 @@ import {
     loadGuideTicks, saveGuideTicks, masteryFor, sectionCardCounts, exportSessionCards,
     dueCountFor, totalDueAll, dueCountsBySubject, totalCasesQueued, casesDoneBySubject,
     estReviewMinutes, todayPlanReviewTarget, channel, emit, updateFooter,
-    getStage, setStage,
+    getStage, setStage, slugify, totalNewEligibleAll,
 } from './app-context.js';
 import { ROUTES, go, setDocTitle, onNav, setRenderer } from './router.js';
 import { renderStats } from './views/stats.js';
@@ -264,19 +264,6 @@ function renderTodayPrimary(due, newCount) {
         el('div', { class: 'primary-action muted' }, 'all caught up · browse subjects'));
 }
 
-function totalNewEligibleAll() {
-    const states = srs.loadStates();
-    const ticksAll = loadGuideTicks();
-    const out = {};
-    let total = 0;
-    for (const meta of state.manifest.subjects) {
-        const sh = state.shards[meta.subject]; if (!sh) continue;
-        const cards = sh.cards.map(c => ({ ...c, _subject: meta.subject }));
-        const n = srs.getNewEligibleCards(cards, states, ticksAll).length;
-        out[meta.subject] = n; total += n;
-    }
-    return { total, bySubject: out };
-}
 
 function nextUntickedSubject() {
     const ticksAll = loadGuideTicks();
@@ -653,7 +640,6 @@ async function renderSubject() {
     mountBackToTop();
 }
 
-function slugify(t) { return String(t).toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, ''); }
 
 function buildGuideToc(subj, shard, ticks) {
     const counts = sectionCardCounts(subj);
