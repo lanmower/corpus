@@ -14,6 +14,13 @@ import { readSessions as readTriageSessions, sessionCards as triageSessionCards 
 
 // ---- DOM refs ----
 export const appRoot = document.getElementById('app');
+// `stage` is the render target. It is reassigned when the SDK render path swaps in
+// a collector proxy, so it is owned here behind get/set accessors (an imported
+// `let` cannot reflect a reassignment to its importers). Views render into
+// getStage(); the SDK bootstrap swaps it via setStage().
+let _stage = document.getElementById('stage');
+export function getStage() { return _stage; }
+export function setStage(node) { _stage = node; }
 export const statusbar = document.querySelector('.statusbar');
 export const statusbarMsg = document.getElementById('statusbar-msg');
 export const DEBUG = new URLSearchParams(location.search).has('debug');

@@ -35,12 +35,12 @@ import {
     loadGuideTicks, saveGuideTicks, masteryFor, sectionCardCounts, exportSessionCards,
     dueCountFor, totalDueAll, dueCountsBySubject, totalCasesQueued, casesDoneBySubject,
     estReviewMinutes, todayPlanReviewTarget, channel, emit, updateFooter,
+    getStage, setStage,
 } from './app-context.js';
 import { ROUTES, go, setDocTitle, onNav, setRenderer } from './router.js';
 
 let sdk = null;
 let sdkRender = null;
-let stage = document.getElementById('stage');
 
 const FRIENDLY_GRADES = [
     { friendly: 1, smscore: 0, label: 'again', desc: "didn't know" },
@@ -63,8 +63,8 @@ function render() {
         __rendering = true;
         try {
             window.__lastRenderTs = Date.now();
-            if (stage) stage.innerHTML = '';
-            if (!state.manifest) { if (stage) stage.append(el('div', { class: 'loading' }, 'loading…')); return; }
+            if (getStage()) getStage().innerHTML = '';
+            if (!state.manifest) { if (getStage()) getStage().append(el('div', { class: 'loading' }, 'loading…')); return; }
             const r = state.route;
             // day-of-exam minimal mode — only mistakes + farewell
             const days = srs.daysUntilExam();
@@ -360,33 +360,33 @@ function renderToday() {
 
     // Welcome message for first-time visitors
     const welcomeEl = renderWelcome();
-    if (welcomeEl) stage.append(welcomeEl);
+    if (welcomeEl) getStage().append(welcomeEl);
 
     const resumeEl = renderResumeLine();
-    if (resumeEl) stage.append(resumeEl);
+    if (resumeEl) getStage().append(resumeEl);
 
     // Trigger tutor session overview (displays in tutor panel)
     renderTutorOverviewPanel(due, newCount);
 
     // Primary action — the ONE thing to do now
-    stage.append(renderTodayPrimary(due, newCount));
+    getStage().append(renderTodayPrimary(due, newCount));
 
     // Next reading recommendation — always visible so user knows what to read next
     const nextRead = nextUntickedSection();
-    if (nextRead) stage.append(renderNextReadingCard(nextRead));
+    if (nextRead) getStage().append(renderNextReadingCard(nextRead));
 
     // Compact stats strip
     const goal = p.dailyGoal || 30;
     const reviewed = p.todayGraded || 0;
     const progressPct = Math.min(100, Math.round(100 * reviewed / goal));
-    stage.append(el('div', { class: 'today-stats' },
+    getStage().append(el('div', { class: 'today-stats' },
         el('div', { class: 'today-stat' }, el('span', { class: 'num' }, String(p.streak || 0)), el('span', { class: 'lbl' }, 'streak')),
         el('div', { class: 'today-stat' }, el('span', { class: 'num' }, `${reviewed}/${goal}`), el('span', { class: 'lbl' }, 'today')),
         el('div', { class: 'today-stat' }, el('span', { class: 'num' }, String(due)), el('span', { class: 'lbl' }, 'due')),
         el('div', { class: 'today-stat' }, el('span', { class: 'num' }, String(newCount)), el('span', { class: 'lbl' }, 'new')),
     ));
 
-    stage.append(el('div', { class: 'today-progress' },
+    getStage().append(el('div', { class: 'today-progress' },
         el('div', { class: 'today-progress-bar' },
             el('div', { class: 'today-progress-fill', style: `width:${progressPct}%` })),
         el('div', { class: 'today-progress-label' }, `${reviewed} / ${goal} reviewed today`)
@@ -406,7 +406,7 @@ function renderToday() {
                         on: { click: () => { state.reviewSubjectFilter = m.subject; resetReviewQueue(); go('review'); } } }, 'review')
                 );
             });
-        if (subjectRows.length) stage.append(el('div', { class: 'today-subject-list' }, ...subjectRows));
+        if (subjectRows.length) getStage().append(el('div', { class: 'today-subject-list' }, ...subjectRows));
     }
 
     // Debug panels only with ?debug param
@@ -417,7 +417,7 @@ function renderToday() {
         const rows = buildRows(state.manifest, state.shards, states, ticks);
         const cases = totalCasesQueued();
         const mins = estReviewMinutes(due);
-        stage.append(el('p', { class: 'summary-line' },
+        getStage().append(el('p', { class: 'summary-line' },
             'today: ', el('span', { class: 'num' }, String(due)), ' due cards · ',
             el('span', { class: 'num' }, String(cases)), ' cases queued · ~',
             el('span', { class: 'num' }, String(mins)), ' min est.'));
@@ -432,11 +432,11 @@ function renderToday() {
                 on: { click: e => { e.preventDefault(); go('mistakes'); } } }, 'mistakes'),
             el('div', { class: 'sparkline-wrap', 'aria-label': '7-day activity' }, renderSparkline(p.history))
         );
-        stage.append(chipRow);
+        getStage().append(chipRow);
 
         const checklist = renderScheduleChecklist(rows);
-        if (checklist) stage.append(checklist);
-        stage.append(renderMasteryRing());
+        if (checklist) getStage().append(checklist);
+        getStage().append(renderMasteryRing());
 
         // Recommended cases + 5-day recap
         const recs = [];
@@ -448,7 +448,7 @@ function renderToday() {
             if (recs.length >= 3) break;
         }
         if (recs.length) {
-            stage.append(el('div', { class: 'panel' },
+            getStage().append(el('div', { class: 'panel' },
                 el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'debug · recommended cases')),
                 ...recs.map(({ meta, sc }) => el('div', { class: 'row' },
                     el('span', { class: 'code' }, meta.subject.slice(0, 4)),
@@ -458,7 +458,7 @@ function renderToday() {
         }
         if (p.history && p.history.length) {
             const recent = p.history.slice(-5).reverse();
-            stage.append(el('div', { class: 'panel' },
+            getStage().append(el('div', { class: 'panel' },
                 el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'debug · last 5 days')),
                 ...recent.map(d => el('div', { class: 'row' },
                     el('span', { class: 'code' }, d.date.slice(5)),
@@ -466,14 +466,14 @@ function renderToday() {
                     el('span', { class: 'meta' }, '')
                 ))));
         }
-        stage.append(el('div', { class: 'panel rail-flame' },
+        getStage().append(el('div', { class: 'panel rail-flame' },
             el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'debug · rail legend')),
             el('div', {}, 'rails neutralized — color reserved for due/mastered/missed/weak meaning')));
     }
 }
 
 function renderGuides() {
-    stage.append(el('div', { class: 'section-head' },
+    getStage().append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'guides'), el('h2', {}, 'study guides')));
     const grid = el('div', { class: 'subject-grid' });
     for (const meta of state.manifest.subjects) {
@@ -497,7 +497,7 @@ function renderGuides() {
             )
         ));
     }
-    stage.append(grid);
+    getStage().append(grid);
 }
 
 async function renderSubject() {
@@ -511,9 +511,9 @@ async function renderSubject() {
     const rows = buildRows(state.manifest, state.shards, states, ticksAll);
     const weakest = computeWeakest(rows);
     const cramEl = renderCramBanner(weakest);
-    if (cramEl) stage.append(cramEl);
+    if (cramEl) getStage().append(cramEl);
 
-    stage.append(el('div', { class: 'section-head' },
+    getStage().append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'subject'), el('h2', {}, subj)));
     const subjMastery = masteryFor(subj);
     const subjDue = dueCountFor(subj);
@@ -534,7 +534,7 @@ async function renderSubject() {
     } else {
         primaryCta = el('div', { class: 'primary-action muted' }, 'all caught up here');
     }
-    stage.append(el('div', { class: 'subject-hero' },
+    getStage().append(el('div', { class: 'subject-hero' },
         el('div', { class: 'subject-hero-ring', 'aria-label': `${subjMastery}% mastered` },
             el('div', { class: 'mini-ring', style: `--p:${subjMastery}` }, `${subjMastery}%`)),
         el('div', { class: 'subject-hero-cta' },
@@ -543,7 +543,7 @@ async function renderSubject() {
     ));
     // Next thing — promoted to a clickable scroll-to-section card
     const nextSec = subShard0?.guide?.sections?.find(s => !subTicks[String(s.line)]);
-    if (nextSec) stage.append(el('div', { class: 'next-thing-card', role: 'button', tabindex: '0',
+    if (nextSec) getStage().append(el('div', { class: 'next-thing-card', role: 'button', tabindex: '0',
         on: {
             click: () => { const e = document.getElementById(`g-section-${nextSec.line}`); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
             keydown: ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); const e = document.getElementById(`g-section-${nextSec.line}`); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
@@ -556,7 +556,7 @@ async function renderSubject() {
         el('div', { class: 'skeleton', style: 'width:60%;height:14px' }),
         el('div', { class: 'skeleton', style: 'width:90%' }),
         el('div', { class: 'skeleton', style: 'width:80%' }));
-    stage.append(placeholder);
+    getStage().append(placeholder);
     const shard = await loadShard(subj);
     placeholder.remove();
 
@@ -645,7 +645,7 @@ async function renderSubject() {
     const audioPanel = buildAudioPanel(shard.guide?.audio || [], subj);
     const right = el('div', {}, videoHero, audioPanel, cardsPanel, guideBodyPanel, infographicsPanel, triagePanel);
     const wrap = el('div', { class: 'deepdive', data: { cat: meta?.cat || 'green' } }, left, right);
-    stage.append(wrap);
+    getStage().append(wrap);
     mountBackToTop();
 }
 
@@ -1008,8 +1008,8 @@ function openInfographicLightbox(items, startIdx) {
     const close = el('button', { class: 'lightbox-close', type: 'button', 'aria-label': 'close', html: ICON.close });
     const prev = el('button', { class: 'lightbox-prev', type: 'button', 'aria-label': 'previous', html: ICON.arrowLeft });
     const next = el('button', { class: 'lightbox-next', type: 'button', 'aria-label': 'next', html: ICON.arrowRight });
-    const stage = el('div', { class: 'lightbox-stage' }, imgEl, caption);
-    const overlay = el('div', { id: 'infographic-lightbox', class: 'lightbox-overlay', role: 'dialog', 'aria-modal': 'true' }, close, prev, stage, next);
+    const lbStage = el('div', { class: 'lightbox-stage' }, imgEl, caption);
+    const overlay = el('div', { id: 'infographic-lightbox', class: 'lightbox-overlay', role: 'dialog', 'aria-modal': 'true' }, close, prev, lbStage, next);
     function show(i) {
         idx = (i + items.length) % items.length;
         imgEl.src = items[idx].src;
@@ -1069,20 +1069,20 @@ function buildFlashcard(c) {
 }
 
 async function renderTriage() {
-    stage.append(el('div', { class: 'section-head' },
+    getStage().append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'cases'), el('h2', {}, 'work a case')));
     const placeholder = el('div', { class: 'panel' }, el('div', { class: 'skeleton', style: 'width:60%;height:14px' }));
-    stage.append(placeholder);
+    getStage().append(placeholder);
     await loadAllShards();
     placeholder.remove();
-    stage.append(el('div', { class: 'panel' },
+    getStage().append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'live tutor')),
         el('div', { style: 'font-family:var(--ff-prose);font-size:14px;color:var(--panel-text-2);margin-bottom:10px' }, 'work a case with the in-browser study assistant — supply differentials, plan, investigations, then submit for grading.'),
         el('a', { class: 'primary-action', href: './triage-live.html' }, 'open live tutor')));
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject];
         if (!sh.triage || !sh.triage.scenarios.length) continue;
-        for (const sc of sh.triage.scenarios) stage.append(buildTriageWidget(meta, sh, sc));
+        for (const sc of sh.triage.scenarios) getStage().append(buildTriageWidget(meta, sh, sc));
     }
 }
 
@@ -1119,13 +1119,13 @@ function buildTriageWidget(meta, shard, sc) {
 }
 
 async function renderReview() {
-    stage.innerHTML = '';
+    getStage().innerHTML = '';
     const placeholderContainer = el('div', { class: 'panel is-loading' });
     const placeholder = el('div', { class: 'skeleton', style: 'width:60%;height:14px' });
     placeholderContainer.append(placeholder);
     placeholderContainer.append(el('div', { class: 'loading-text' },
         el('div', { class: 'loading-spinner' }), el('span', {}, 'loading cards...')));
-    stage.append(placeholderContainer);
+    getStage().append(placeholderContainer);
     const subjects = state.reviewSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.reviewSubjectFilter];
     await Promise.all(subjects.map(s => loadShard(s)));
     placeholderContainer.remove();
@@ -1211,12 +1211,12 @@ async function renderReview() {
     const idxOneBased = Math.min(state.reviewSessionGraded + 1, sessionTotal);
     const toGoal = Math.max(0, goal - p.todayGraded);
 
-    stage.append(el('div', { class: 'section-head' },
+    getStage().append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, state.learnMode ? 'learn' : 'review'),
         el('h2', {}, state.cramMode ? 'cram' : (state.learnMode ? 'learn new' : 'review'))));
 
     // tiny progress line — REQUIRED feature 3
-    stage.append(el('div', { class: 'review-progress' },
+    getStage().append(el('div', { class: 'review-progress' },
         el('span', { class: 'num' }, `${idxOneBased} of ${total || sessionTotal}`),
         ' · ',
         el('span', { class: 'goal' }, `${toGoal} to daily goal`)
@@ -1249,13 +1249,13 @@ async function renderReview() {
             'aria-label': `session size ${c ?? 'all'}`,
             on: { click: () => { state.reviewSessionCap = c; resetReviewQueue(); renderReview(); } }
         }, capLabels[c]));
-        stage.append(el('div', { class: 'session-picker' },
+        getStage().append(el('div', { class: 'session-picker' },
             el('span', { class: 'session-picker-label' }, 'session:'),
             ...pickerChips
         ));
     }
 
-    stage.append(el('div', { class: 'toolbar' }, chips, cramBtn), tagChips);
+    getStage().append(el('div', { class: 'toolbar' }, chips, cramBtn), tagChips);
 
     if (state.reviewQueue.length === 0) {
         if (state.reviewAgainPile.length > 0) {
@@ -1279,7 +1279,7 @@ async function renderReview() {
                     return Math.max(0, totalSections - tickedCount);
                 })()
                 : null;
-            stage.append(el('div', { class: 'panel' },
+            getStage().append(el('div', { class: 'panel' },
                 el('div', { class: 'panel-head' }, el('span', { class: 'title' }, wasLearn ? 'learning done' : 'session done')),
                 el('p', {}, wasLearn
                     ? `${reviewed} new card${reviewed === 1 ? '' : 's'} introduced · they'll come back for review tomorrow.`
@@ -1300,7 +1300,7 @@ async function renderReview() {
                 const tickedCount = Object.keys(ticks).length;
                 return sum + Math.max(0, totalSections - tickedCount);
             }, 0);
-            stage.append(el('div', { class: 'panel' },
+            getStage().append(el('div', { class: 'panel' },
                 el('div', { class: 'panel-head' }, el('span', { class: 'title' }, state.learnMode ? 'no new cards eligible' : 'all caught up')),
                 el('div', {}, state.learnMode
                     ? 'tick more guide sections to introduce more cards.'
@@ -1404,11 +1404,11 @@ const card = state.reviewQueue[state.reviewIndex];
         DEBUG ? el('div', { class: 'card-source' }, `source: ${card.source || card.sourceFile || ''}`) : null,
         card.tags && card.tags.length ? el('div', { class: 'tags' }, ...card.tags.slice(0, 6).map(t => el('span', { class: 'tag' }, t))) : null
     );
-    stage.append(reviewCard);
+    getStage().append(reviewCard);
 
     // Inline tutor coaching slot — the tutor LLM can render brief hints here mid-review
     // (rendered by tutor-panel.js when it receives coaching-done with target=inline).
-    stage.append(el('div', { id: 'tutor-card-coaching', class: 'tutor-inline-coach', 'aria-live': 'polite' }));
+    getStage().append(el('div', { id: 'tutor-card-coaching', class: 'tutor-inline-coach', 'aria-live': 'polite' }));
 
     // Right-click on the card -> context menu with quick actions
     reviewCard.addEventListener('contextmenu', (e) => {
@@ -1463,11 +1463,11 @@ const card = state.reviewQueue[state.reviewIndex];
         actions.append(el('button', { class: 'chip', id: 'review-suspend', 'aria-label': 'suspend card',
             on: { click: () => { if (confirm('suspend this card?')) suspendCurrentReview(); } } }, 'suspend'));
     }
-    stage.append(actions);
+    getStage().append(actions);
     const hint = DEBUG
         ? 'space=reveal · 0-5=grade · s=skip · 0 sends to revisit'
         : 'space=reveal · 1=again · 2=hard · 3=good · 4=easy · s=skip';
-    stage.append(el('div', { class: 'kbd-hint' }, hint));
+    getStage().append(el('div', { class: 'kbd-hint' }, hint));
 
     state.lastReviewDueCount = state.reviewQueue.length;
 }
@@ -1627,9 +1627,9 @@ document.addEventListener('keydown', e => {
 });
 
 async function renderStats() {
-    stage.append(el('div', { class: 'section-head' },
+    getStage().append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'stats'), el('h2', {}, 'stats')));
-    stage.append(el('div', { class: 'toolbar stats-deeplinks' },
+    getStage().append(el('div', { class: 'toolbar stats-deeplinks' },
         el('a', { class: 'chip', href: '#mistakes', on: { click: e => { e.preventDefault(); go('mistakes'); } } }, 'mistakes'),
         el('a', { class: 'chip', href: '#drill', on: { click: e => { e.preventDefault(); go('drill'); } } }, 'drill 10'),
         el('a', { class: 'chip', href: '#calendar', on: { click: e => { e.preventDefault(); go('calendar'); } } }, 'calendar')
@@ -1650,7 +1650,7 @@ async function renderStats() {
     const forecast = srs.getForecast(cardIds, 14, states);
     const p = progress.load();
 
-    stage.append(el('div', { class: 'panel heatmap-panel' },
+    getStage().append(el('div', { class: 'panel heatmap-panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study days'), 'last 9 weeks'),
         renderHeatmap(p.history || [])));
 
@@ -1660,7 +1660,7 @@ async function renderStats() {
             el('div', { class: 'forecast-bar', style: `height:${Math.round(b.count / maxF * 50) + 2}px` }),
             el('div', { class: 'forecast-label' }, String(b.day))
         )));
-    stage.append(el('div', { class: 'panel' },
+    getStage().append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'reviews coming up'), '14d'),
         forecastEl));
 
@@ -1669,7 +1669,7 @@ async function renderStats() {
     const last7 = hist.slice(-7).reduce((a, h) => a + (h.graded || 0), 0) + (p.todayGraded || 0);
     const prior7 = hist.slice(-14, -7).reduce((a, h) => a + (h.graded || 0), 0);
     const delta = last7 - prior7;
-    stage.append(el('div', { class: 'panel' },
+    getStage().append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'this week vs last')),
         el('div', { style: 'font-family:var(--ff-mono);font-size:13px' },
             `${last7} cards this week · ${prior7} prior · `,
@@ -1716,13 +1716,13 @@ function renderVerdictTable(rows) {
         )))
     );
     wrap.append(el('div', { class: 'table-scroll' }, tbl));
-    stage.append(wrap);
+    getStage().append(wrap);
 }
 
 function renderDebugStats(m, stats) {
     const days = srs.daysUntilExam();
     const eff = srs.effectiveDays();
-    stage.append(el('div', { class: 'panel', id: 'srs-stats' },
+    getStage().append(el('div', { class: 'panel', id: 'srs-stats' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'debug · raw scheduler'),
             `schema v${srs.SCHEMA_VERSION || 1} · localStorage corpus.srs.states`),
         el('div', { style: 'font-family:var(--ff-mono);font-size:11px;color:var(--panel-text-2);line-height:1.6' },
@@ -1774,10 +1774,10 @@ function renderHeatmap(history) {
 }
 
 function renderCalendar() {
-    stage.append(el('div', { class: 'section-head' },
+    getStage().append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'plan'), el('h2', {}, 'calendar')));
     const mount = el('div', { class: 'cal-mount', id: 'cal-mount' });
-    stage.append(mount);
+    getStage().append(mount);
     calendar.mount(mount, { dueCountsFn: () => dueCountsBySubject() });
 }
 
@@ -1910,7 +1910,7 @@ function renderScheduleConfigPanel() {
 }
 
 async function renderSettings() {
-    stage.append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'settings'), el('h2', {}, 'settings')));
+    getStage().append(el('div', { class: 'section-head' }, el('span', { class: 'eyebrow' }, 'settings'), el('h2', {}, 'settings')));
     const cfg = srs.loadConfig();
     const schedCfg = schedule.loadConfig();
     const p = progress.load();
@@ -1968,18 +1968,18 @@ async function renderSettings() {
         } } }, 'export to Anki (.txt)');
     const shortcutsBtn = el('button', { class: 'chip', 'aria-label': 'shortcuts',
         on: { click: () => openShortcutsModal() } }, 'shortcuts');
-    stage.append(el('div', { class: 'panel' },
+    getStage().append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study')),
         el('div', { class: 'toolbar' }, el('label', { for: 'exam-date' }, 'exam:'), examInput,
             el('label', {}, 'goal:'), goalInput, cramBtn)));
-    stage.append(el('div', { class: 'panel' },
+    getStage().append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'theme')),
         el('div', { class: 'toolbar' }, makeToggleButton(document))));
-    stage.append(el('div', { class: 'panel' },
+    getStage().append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'data')),
         el('div', { class: 'toolbar' }, exportBtn, importBtn, importInput, ankiBtn, resetBtn)));
-    stage.append(renderScheduleConfigPanel());
-    stage.append(el('div', { class: 'panel' },
+    getStage().append(renderScheduleConfigPanel());
+    getStage().append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'help')),
         el('div', { class: 'toolbar' }, shortcutsBtn,
             el('a', { class: 'chip', href: '?debug', 'aria-label': 'enable debug' }, 'debug mode'))));
@@ -2036,8 +2036,8 @@ function showStorageFullBanner() {
 }
 
 function renderExamDay() {
-    stage.innerHTML = '';
-    stage.append(el('div', { class: 'panel' },
+    getStage().innerHTML = '';
+    getStage().append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'exam day')),
         el('p', { style: 'font-family:var(--ff-prose);font-size:18px;line-height:1.6' }, 'good luck. trust your prep.'),
         el('div', { class: 'toolbar', style: 'margin-top:14px' },
@@ -2046,12 +2046,12 @@ function renderExamDay() {
 }
 
 async function renderMistakes() {
-    stage.append(el('div', { class: 'section-head' },
+    getStage().append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'mistakes'), el('h2', {}, 'mistake log')));
     await loadAllShards();
     const recent = mistakes.recent(50);
     if (!recent.length) {
-        stage.append(el('div', { class: 'empty-state' },
+        getStage().append(el('div', { class: 'empty-state' },
             el('div', { class: 'empty-title' }, 'no mistakes logged yet'),
             el('div', { class: 'empty-sub' }, 'cards graded again or hard show up here.')));
         return;
@@ -2059,13 +2059,13 @@ async function renderMistakes() {
     const cardById = {};
     for (const meta of state.manifest.subjects) for (const c of (state.shards[meta.subject]?.cards || [])) cardById[c.id] = { ...c, _subject: meta.subject };
     const grp = mistakes.bySubject(50);
-    stage.append(el('div', { class: 'toolbar' },
+    getStage().append(el('div', { class: 'toolbar' },
         el('button', { class: 'chip', 'aria-label': 'review mistakes',
             on: { click: () => { state.paletteReviewSet = mistakes.ids(); resetReviewQueue(); go('review'); } } }, el('span', { class: 'icon-label' }, el('span', {}, `review all ${recent.length}`), icon('arrowRight'))),
         el('button', { class: 'chip', on: { click: () => { if (confirm('clear mistake log?')) { mistakes.clear(); render(); } } } }, 'clear')));
     for (const subject of Object.keys(grp).sort()) {
         const arr = grp[subject];
-        stage.append(el('div', { class: 'panel' },
+        getStage().append(el('div', { class: 'panel' },
             el('div', { class: 'panel-head' }, el('span', { class: 'title' }, subject), `${arr.length}`),
             ...arr.map(m => {
                 const c = cardById[m.cardId];
@@ -2079,7 +2079,7 @@ async function renderMistakes() {
 }
 
 async function renderDrill() {
-    stage.append(el('div', { class: 'section-head' },
+    getStage().append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'drill'), el('h2', {}, 'drill 10')));
     await loadAllShards();
     let d = drill.active();
@@ -2426,18 +2426,20 @@ function setupSdkApp() {
             style: {}
         };
         
-        // We override the global 'stage' for the sub-renderers
-        const originalStage = stage;
-        stage = stageProxy;
-        
+        // Swap the shared stage for a collector proxy while the sub-renderers run,
+        // then restore. setStage is the single owner so the swap is observable to
+        // every view that reads getStage().
+        const originalStage = getStage();
+        setStage(stageProxy);
+
         const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
             review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
             settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
-        
+
         try {
             (fns[r] || renderToday)();
         } finally {
-            stage = originalStage;
+            setStage(originalStage);
         }
 
         return C.AppShell({
@@ -2560,9 +2562,9 @@ function setupSdkApp() {
         const route = routeRaw.split('?')[0];
         go(route, sub ? sub.split('?')[0] : undefined);
     } catch (e) {
-        if (stage) {
-            stage.innerHTML = '';
-            stage.append(el('div', { class: 'panel error-state' },
+        if (getStage()) {
+            getStage().innerHTML = '';
+            getStage().append(el('div', { class: 'panel error-state' },
                 el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'failed to load')),
                 el('div', {}, e.message),
                 el('button', { class: 'chip', on: { click: () => location.reload() } }, 'retry')));
