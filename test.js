@@ -205,7 +205,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // module imports
         for (const re of [/import \* as cram from '\.\/cram\.js'/, /import \* as justread from '\.\/justread\.js'/, /import \* as lastpos from '\.\/lastpos\.js'/, /from '\.\/verdicts\.js'/]) assert.match(appSrc, re);
         // compressed today
-        assert.match(appSrc, /function renderToday\(\)/);
+        assert.match(READ('site/views/today.js'), /function renderToday\(\)/);
         assert.match(appSrc, /primary-action/);
         // simplification pass — slim today, nav-more overflow, subject hero
         assert.match(appSrc, /nav-more/);
@@ -223,14 +223,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(/sdkRender = null/.test(sdkCatch) && /mountTopbar\(\)/.test(sdkCatch), 'SDK setup failure falls back to mountTopbar + legacy render');
         assert.match(appSrc, /subject-hero/);
         assert.match(appSrc, /chunked-guide|chunk-panel/);
-        assert.match(appSrc, /today-primary/);
+        assert.match(READ('site/views/today.js'), /today-primary/);
         // free-study fallback CTA — clamped to today's plan target, not full backlog
-        assert.match(appSrc, /or just review \(/);
+        assert.match(READ('site/views/today.js'), /or just review \(/);
         assert.match(appSrc, /todayPlanReviewTarget/);
-        // status-line shape: date · M due · X reviewed today (gamification stripped)
-        assert.match(appSrc, /renderStatusLine/);
-        assert.match(appSrc, /`\$\{due\} due`/);
-        assert.match(appSrc, /reviewed today/);
+        // (renderStatusLine was dead code with no caller — removed in the app.js split)
+        assert.match(READ('site/views/today.js'), /reviewed today/);
         // gamification removed
         assert.ok(!/`day \$\{day\}`/.test(appSrc), 'day chip removed from status line');
         assert.ok(!/`streak \$\{p\.streak\}`/.test(appSrc), 'streak chip removed from status line');
@@ -242,13 +240,14 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(appSrc, /mountBackToTop/);
         assert.match(appSrc, /back-to-top/);
         assert.match(appSrc, /applyTocFilter/);
-        // cram banner trigger
-        assert.match(appSrc, /renderCramBanner/);
-        assert.match(appSrc, /days > 14/);
-        assert.match(appSrc, /cram\.isDismissed/);
+        // cram banner trigger (now in views/today.js)
+        const todaySrc = READ('site/views/today.js');
+        assert.match(todaySrc, /renderCramBanner/);
+        assert.match(todaySrc, /days > 14/);
+        assert.match(todaySrc, /cram\.isDismissed/);
         // resume line
-        assert.match(appSrc, /renderResumeLine/);
-        assert.match(appSrc, /back after \$\{gap\}d/);
+        assert.match(todaySrc, /renderResumeLine/);
+        assert.match(todaySrc, /back after \$\{gap\}d/);
         // guide affordances — tutor only (practice/cards browser removed). The
         // arrow glyph is now an SVG icon-label (icons.js sweep), so assert the
         // icon-label tutor markup rather than the old Unicode arrow. The guide
@@ -434,7 +433,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const eff = progressMod.effectiveDateISO(at3am);
         assert.notStrictEqual(eff, at3am.toISOString().slice(0, 10));
         // app keys + routes
-        for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /renderSparkline/, /next-thing/, /schedule-checklist/, /exam-countdown/, /late-banner/]) assert.match(appSrc, re);
+        for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /next-thing/, /exam-countdown/, /late-banner/]) assert.match(appSrc, re);
+        for (const re of [/renderSparkline/, /schedule-checklist/]) assert.match(READ('site/views/today.js'), re);
         assert.match(READ('site/views/review.js'), /undo-toast/, 'undo-toast lives in views/review.js');
         for (const route of ['mistakes','drill']) assert.ok(appSrc.includes(`'${route}'`));
         // new shortcuts in modal
@@ -947,9 +947,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const app = READ('site/app.js');
         const reviewSrc2 = READ('site/views/review.js');
         assert.ok(/cmd: 'generate-coaching'/.test(reviewSrc2), 'review posts generate-coaching (matches worker handler)');
-        assert.ok(/autoCoachOnReview/.test(reviewSrc2) && /proactiveCheckins/.test(app), 'review gates coaching + app gates checkin on config');
+        assert.ok(/autoCoachOnReview/.test(reviewSrc2) && /proactiveCheckins/.test(READ('site/views/today.js')), 'review gates coaching + today gates checkin on config');
         // daily check-in now launches the interactive syllabus walk with real blocks
-        assert.ok(/startDailySyllabus\(plan\)/.test(app) && /setDailyPlanProvider/.test(app), 'app launches daily-syllabus walk with today blocks');
+        assert.ok(/startDailySyllabus\(plan\)/.test(READ('site/views/today.js')) && /setDailyPlanProvider/.test(app), 'today launches daily-syllabus walk; app wires provider');
         // empty/caught-up plan must NOT use the "present the FIRST block" prompt (that
         // contradicts the caught-up plan line and yields nonsense). A distinct
         // dailyCaughtUp prompt is selected when no actionable blocks exist.
@@ -967,7 +967,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // per-dimension coverage residuals:
         // SCHEDULING: the same-session check-in dedup flag re-arms when the local date
         // rolls over, so a tab open past midnight still fires the next day's check-in.
-        assert.ok(/tutorCheckinDate/.test(app) && /state\.tutorCheckinDate !== checkinToday/.test(app) && /state\.tutorCheckinPosted = false/.test(app), 'daily check-in dedup flag re-arms on date rollover');
+        assert.ok(/tutorCheckinDate/.test(READ('site/views/today.js')) && /state\.tutorCheckinDate !== checkinToday/.test(READ('site/views/today.js')) && /state\.tutorCheckinPosted = false/.test(READ('site/views/today.js')), 'daily check-in dedup flag re-arms on date rollover (today)');
         // CONFIG: saveConfig returns the write result (honest interface) instead of swallowing it.
         assert.ok(/return safeSet\(CONFIG_KEY/.test(READ('site/tutor-store.js')), 'saveConfig returns the persist result');
         // UX: collapse toggle exposes aria-expanded from first render.
@@ -1260,7 +1260,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // call sites must use the shared builder.
         const app = READ('site/app.js');
         assert.match(READ('site/app-context.js'), /export function casesDoneBySubject\(\)/, 'shared casesDoneBySubject builder must exist (app-context)');
-        assert.strictEqual(((app + READ('site/views/settings.js')).match(/casesDoneBySubject\(\)/g) || []).length, 2, 'both regenerate sites call the shared builder (app + settings)');
+        assert.strictEqual(((READ('site/views/today.js') + READ('site/views/settings.js')).match(/casesDoneBySubject\(\)/g) || []).length, 2, 'both regenerate sites call the shared builder (today + settings)');
         assert.ok(!/casesDone\[id\] = casesDone\[id\]/.test(app), 'scenario-id-keyed casesDone construction must be gone');
         // MEDIUM (worst-case): triage session reads go through the shared store
         // (triage-store.js owns the {cards}/legacy-array normalization).
@@ -1271,7 +1271,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const sched = READ('site/schedule.js');
         assert.match(sched, /getFullYear\(\)/, 'schedule.isoDate must be local-date');
         assert.ok(!/toISOString\(\)\.slice\(0, 10\)/.test(READ('site/newcards.js')), 'newcards todayISO must be local-date');
-        assert.strictEqual(((app + READ('site/app-context.js') + READ('site/views/settings.js')).match(/schedule\.isoDate\(new Date\(\)\)/g) || []).length, 7, 'app+context+settings schedule day-key sites use schedule.isoDate');
+        assert.strictEqual(((app + READ('site/app-context.js') + READ('site/views/settings.js') + READ('site/views/today.js')).match(/schedule\.isoDate\(new Date\(\)\)/g) || []).length, 6, 'app+context+settings+today schedule day-key sites use schedule.isoDate');
         // data-first/subtractive (schedule.js): 10-subject fallback, srs config via
         // srs.loadConfig (sanitized), quota-guarded persist, dead exports removed.
         assert.ok(/paediatrics/.test(sched) && /paediatrics-neonatal/.test(sched), 'schedule fallback lists all 10 subjects');
