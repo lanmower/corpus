@@ -42,6 +42,8 @@ import { renderCalendar } from './views/calendar.js';
 import { renderSettings } from './views/settings.js';
 import { renderTriage } from './views/cases.js';
 import { renderReview, resetReviewQueue, gradeReview, undoLastGrade, skipReview, FRIENDLY_GRADES } from './views/review.js';
+import { renderMistakes } from './views/mistakes.js';
+import { renderDrill } from './views/drill.js';
 import { openShortcutsModal, closeShortcutsModal } from './shortcuts.js';
 
 let sdk = null;
@@ -1084,87 +1086,6 @@ function renderExamDay() {
             el('a', { class: 'chip', href: '#settings', on: { click: e => { e.preventDefault(); go('settings'); } } }, 'settings'))));
 }
 
-async function renderMistakes() {
-    getStage().append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'mistakes'), el('h2', {}, 'mistake log')));
-    await loadAllShards();
-    const recent = mistakes.recent(50);
-    if (!recent.length) {
-        getStage().append(el('div', { class: 'empty-state' },
-            el('div', { class: 'empty-title' }, 'no mistakes logged yet'),
-            el('div', { class: 'empty-sub' }, 'cards graded again or hard show up here.')));
-        return;
-    }
-    const cardById = {};
-    for (const meta of state.manifest.subjects) for (const c of (state.shards[meta.subject]?.cards || [])) cardById[c.id] = { ...c, _subject: meta.subject };
-    const grp = mistakes.bySubject(50);
-    getStage().append(el('div', { class: 'toolbar' },
-        el('button', { class: 'chip', 'aria-label': 'review mistakes',
-            on: { click: () => { state.paletteReviewSet = mistakes.ids(); resetReviewQueue(); go('review'); } } }, el('span', { class: 'icon-label' }, el('span', {}, `review all ${recent.length}`), icon('arrowRight'))),
-        el('button', { class: 'chip', on: { click: () => { if (confirm('clear mistake log?')) { mistakes.clear(); render(); } } } }, 'clear')));
-    for (const subject of Object.keys(grp).sort()) {
-        const arr = grp[subject];
-        getStage().append(el('div', { class: 'panel' },
-            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, subject), `${arr.length}`),
-            ...arr.map(m => {
-                const c = cardById[m.cardId];
-                return el('div', { class: 'row' },
-                    el('span', { class: 'code' }, ['', 'again', 'hard'][m.score] || String(m.score)),
-                    el('div', {}, el('div', { class: 'title' }, c ? c.front.slice(0, 100) : m.cardId),
-                        el('div', { class: 'meta' }, new Date(m.ts).toLocaleString())),
-                    c ? el('a', { class: 'chip', href: `#card/${c.id}`, on: { click: e => { e.preventDefault(); go('card', c.id); } } }, 'open') : null);
-            })));
-    }
-}
-
-async function renderDrill() {
-    getStage().append(el('div', { class: 'section-head' },
-        el('span', { class: 'eyebrow' }, 'drill'), el('h2', {}, 'drill 10')));
-    await loadAllShards();
-    let d = drill.active();
-    if (!d) {
-        // pick weakest cluster
-        const states = srs.loadStates();
-        const ticks = loadGuideTicks();
-        const rows = buildRows(state.manifest, state.shards, states, ticks);
-        const w = computeWeakest(rows);
-        const sub = w?.subject || state.manifest.subjects[0].subject;
-        const sh = state.shards[sub];
-        const ids = sh.cards.slice(0, 30).map(c => c.id);
-        const due = srs.getDueCards(ids, states);
-        const pool = (due.length >= 10 ? due : ids).slice(0, 10);
-        d = drill.start(pool, sub);
-    }
-    state.paletteReviewSet = d.ids;
-    state.reviewSubjectFilter = 'all';
-    resetReviewQueue();
-    state.reviewQueueIds = [...d.ids];
-    state.reviewSessionStarted = d.ids.length;
-    go('review');
-}
-
-function openQuickAdd() {
-    if (document.getElementById('quickadd-modal')) return;
-    const m = el('div', { id: 'quickadd-modal', class: 'shortcuts-modal', role: 'dialog', 'aria-label': 'add card' });
-    const input = el('input', { type: 'text', class: 'search', placeholder: 'front | back | tag1,tag2',
-        style: 'width:100%;font-size:15px', 'aria-label': 'card text' });
-    const inner = el('div', { class: 'shortcuts-inner', style: 'min-width:480px' },
-        el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'quick add'),
-            el('button', { class: 'chip', on: { click: () => m.remove() } }, 'close')),
-        input,
-        el('div', { class: 'kbd-hint', style: 'margin-top:8px' }, 'enter to save · esc to cancel'));
-    m.append(inner);
-    document.body.appendChild(m);
-    setTimeout(() => input.focus(), 10);
-    input.addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-            const parsed = usercards.parseLine(input.value);
-            if (parsed && usercards.add(parsed.front, parsed.back, parsed.tags)) { m.remove(); render(); }
-            else { input.style.borderColor = 'var(--c-due, red)'; }
-        } else if (e.key === 'Escape') m.remove();
-    });
-    m.addEventListener('click', e => { if (e.target === m) m.remove(); });
-}
 
 function renderSparkline(history, days = 7) {
     const today = new Date(); today.setHours(0, 0, 0, 0);

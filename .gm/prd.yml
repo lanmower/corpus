@@ -2056,7 +2056,8 @@
 - id: arch-view-mistakes-drill
   text: 'views/mistakes.js + views/drill.js: renderMistakes, renderDrill. Import app-context + router.'
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: site/views/mistakes.js + views/drill.js; both import resetReviewQueue from review.js; app.js imports renderMistakes/renderDrill; browser-24 mExport/dExport/renders true; browser-25 drill hands off to review ERRS=[]; test 24 pass
 - id: arch-search-palette
   text: Extract mountSearchPalette wiring; keep memoized index. Lives in app.js boot or a small wiring module importing search.js + app-context.
   phase: EXECUTE
