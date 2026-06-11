@@ -2034,7 +2034,8 @@
 - id: arch-view-subject
   text: 'views/subject.js: renderSubject. Import app-context + router.'
   phase: EXECUTE
-  status: pending
+  status: completed
+  witness: site/views/subject.js (renderSubject + buildGuideToc/buildChunkedGuide/applyTocFilter/buildVideoHero/buildAudioPanel/buildInfographicsPanel/openInfographicLightbox/mountBackToTop); imports renderCramBanner from today.js; app.js imports renderSubject; browser-30 modExport/route/renders/hasHero true ERRS=[]; test 24 pass; app.js 2779->443 lines, ALL 10 route views extracted
 - id: arch-view-stats
   text: 'views/stats.js: renderStats + renderVerdictTable + renderHeatmap + renderSparkline. Import app-context + router + verdicts.'
   phase: EXECUTE

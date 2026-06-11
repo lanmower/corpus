@@ -206,7 +206,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (const re of [/import \* as cram from '\.\/cram\.js'/, /import \* as justread from '\.\/justread\.js'/, /import \* as lastpos from '\.\/lastpos\.js'/, /from '\.\/verdicts\.js'/]) assert.match(appSrc, re);
         // compressed today
         assert.match(READ('site/views/today.js'), /function renderToday\(\)/);
-        assert.match(appSrc, /primary-action/);
+        assert.match(READ('site/views/subject.js'), /primary-action/);
         // simplification pass — slim today, nav-more overflow, subject hero
         assert.match(appSrc, /nav-more/);
         // NAV FIX: bottom-nav must be populated unconditionally (the SDK shell can
@@ -221,8 +221,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // mid-mount SDK crash still yields a fully navigable page.
         const sdkCatch = appSrc.slice(appSrc.indexOf('SDK load failed, using fallback'), appSrc.indexOf('SDK load failed, using fallback') + 800);
         assert.ok(/sdkRender = null/.test(sdkCatch) && /mountTopbar\(\)/.test(sdkCatch), 'SDK setup failure falls back to mountTopbar + legacy render');
-        assert.match(appSrc, /subject-hero/);
-        assert.match(appSrc, /chunked-guide|chunk-panel/);
+        assert.match(READ('site/views/subject.js'), /subject-hero/);
+        assert.match(READ('site/views/subject.js'), /chunked-guide|chunk-panel/);
         assert.match(READ('site/views/today.js'), /today-primary/);
         // free-study fallback CTA — clamped to today's plan target, not full backlog
         assert.match(READ('site/views/today.js'), /or just review \(/);
@@ -234,12 +234,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(!/`streak \$\{p\.streak\}`/.test(appSrc), 'streak chip removed from status line');
         assert.ok(!/`goal \$\{p\.todayGraded\}\/\$\{p\.dailyGoal\}`/.test(appSrc), 'goal chip removed from status line');
         // TOC features
-        assert.match(appSrc, /buildGuideToc/);
-        assert.match(appSrc, /toc-filter/);
-        assert.match(appSrc, /toc-h2-progress/);
-        assert.match(appSrc, /mountBackToTop/);
-        assert.match(appSrc, /back-to-top/);
-        assert.match(appSrc, /applyTocFilter/);
+        assert.match(READ('site/views/subject.js'), /buildGuideToc/);
+        assert.match(READ('site/views/subject.js'), /toc-filter/);
+        assert.match(READ('site/views/subject.js'), /toc-h2-progress/);
+        assert.match(READ('site/views/subject.js'), /mountBackToTop/);
+        assert.match(READ('site/views/subject.js'), /back-to-top/);
+        assert.match(READ('site/views/subject.js'), /applyTocFilter/);
         // cram banner trigger (now in views/today.js)
         const todaySrc = READ('site/views/today.js');
         assert.match(todaySrc, /renderCramBanner/);
@@ -433,7 +433,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const eff = progressMod.effectiveDateISO(at3am);
         assert.notStrictEqual(eff, at3am.toISOString().slice(0, 10));
         // app keys + routes
-        for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /next-thing/, /exam-countdown/, /late-banner/]) assert.match(appSrc, re);
+        for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /exam-countdown/, /late-banner/]) assert.match(appSrc, re);
+        assert.match(READ('site/views/subject.js'), /next-thing/);
         for (const re of [/renderSparkline/, /schedule-checklist/]) assert.match(READ('site/views/today.js'), re);
         assert.match(READ('site/views/review.js'), /undo-toast/, 'undo-toast lives in views/review.js');
         for (const route of ['mistakes','drill']) assert.ok(appSrc.includes(`'${route}'`));
@@ -467,8 +468,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const subjectsWithVideos = MANIFEST.subjects.filter(m => m.videoCount > 0).length;
         assert.strictEqual(MANIFEST.totals.videoCount, subjectsWithVideos, 'manifest totals.videoCount mismatch');
         const app = READ('site/app.js');
-        assert.ok(/buildVideoHero/.test(app), 'app.js missing buildVideoHero');
-        assert.ok(/class:\s*'panel video-hero'/.test(app), 'app.js missing .video-hero class');
+        assert.ok(/buildVideoHero/.test(READ('site/views/subject.js')), 'subject.js missing buildVideoHero');
+        assert.ok(/class:\s*'panel video-hero'/.test(READ('site/views/subject.js')), 'subject.js missing .video-hero class');
         assert.ok(/has-video/.test(READ('site/views/guides.js')), 'guides.js missing has-video badge wiring');
         const search = READ('site/search.js');
         assert.ok(/kind:\s*'video'/.test(search), 'search.js missing video kind');
@@ -496,8 +497,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.strictEqual(meta.audioCount, 1, `${s} manifest audioCount`);
         }
         const app = READ('site/app.js');
-        assert.ok(/buildAudioPanel/.test(app), 'app.js missing buildAudioPanel');
-        assert.ok(/audio-panel/.test(app), 'app.js missing audio-panel class');
+        assert.ok(/buildAudioPanel/.test(READ('site/views/subject.js')), 'subject.js missing buildAudioPanel');
+        assert.ok(/audio-panel/.test(READ('site/views/subject.js')), 'subject.js missing audio-panel class');
         const ga = READ('.gitattributes');
         assert.ok(/\*\.m4a filter=lfs/.test(ga), '.gitattributes missing m4a LFS filter');
     });
@@ -672,13 +673,13 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             }
         }
         // app.js wires panel + lightbox
-        assert.match(appSrc, /buildInfographicsPanel/);
-        assert.match(appSrc, /openInfographicLightbox/);
-        assert.match(appSrc, /infographic-tile/);
-        assert.match(appSrc, /lightbox-overlay/);
+        assert.match(READ('site/views/subject.js'), /buildInfographicsPanel/);
+        assert.match(READ('site/views/subject.js'), /openInfographicLightbox/);
+        assert.match(READ('site/views/subject.js'), /infographic-tile/);
+        assert.match(READ('site/views/subject.js'), /lightbox-overlay/);
         assert.match(appSrc, /'Escape'/);
-        assert.match(appSrc, /'ArrowLeft'/);
-        assert.match(appSrc, /'ArrowRight'/);
+        assert.match(READ('site/views/subject.js'), /'ArrowLeft'/);
+        assert.match(READ('site/views/subject.js'), /'ArrowRight'/);
         // CSS for panel + lightbox
         assert.match(styleCss, /\.infographics-grid/);
         assert.match(styleCss, /\.lightbox-overlay/);

@@ -18,7 +18,7 @@ import { ICON } from '../icons.js';
 import { setTutorContext, startDailySyllabus } from '../tutor-panel.js';
 import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn, todayStamp as localDateStamp } from '../tutor-store.js';
 
-function renderCramBanner(weakest) {
+export function renderCramBanner(weakest) {
     const days = srs.daysUntilExam();
     if (days > 14) return null;
     if (cram.isDismissed()) return null;
