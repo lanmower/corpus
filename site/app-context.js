@@ -1,0 +1,200 @@
+// app-context.js — the dependency-free substrate the rest of the app hangs off.
+// This is the bottom of the composition spine: it owns the single `state` object,
+// the `el` DOM builder, the data-loading primitives, and the small cross-cutting
+// helpers that every view needs. It imports leaf libraries only (srs, schedule,
+// toast, clipboard, triage-store, icons) and NEVER imports a view, the router, or
+// app.js — so there is no upward edge and no import cycle. Views and the router
+// import their substrate from here.
+import * as srs from './srs.js';
+import * as schedule from './schedule.js';
+import * as toast from './toast.js';
+import { ICON } from './icons.js';
+import { copyToClipboard } from './clipboard.js';
+import { readSessions as readTriageSessions, sessionCards as triageSessionCards } from './triage-store.js';
+
+// ---- DOM refs ----
+export const appRoot = document.getElementById('app');
+export const statusbar = document.querySelector('.statusbar');
+export const statusbarMsg = document.getElementById('statusbar-msg');
+export const DEBUG = new URLSearchParams(location.search).has('debug');
+export const log = (...a) => console.log('[corpus]', ...a);
+export const warn = (...a) => console.warn('[corpus]', ...a);
+
+// ---- the single app state object ----
+export const state = {
+    manifest: null, shards: {}, route: 'today', currentSubject: null,
+    flippedCards: new Set(),
+    reviewSubjectFilter: 'all', reviewQueue: [], reviewQueueIds: [],
+    reviewAgainPile: [], reviewAllCardIds: [], reviewIndex: 0,
+    reviewRevealed: false, reviewSessionGraded: 0, reviewSessionStarted: 0, reviewSessionCards: [],
+    sessionFinished: false, searchPaletteApi: null, reviewSessionCap: null,
+    cramMode: false, learnMode: false, reviewTagFilter: new Set(),
+    paletteReviewSet: null, sectionFilter: null,
+    // Same-session dedup for the daily tutor check-in (see renderTutorOverviewPanel).
+    tutorCheckinPosted: false,
+    tutorCheckinDate: null
+};
+window.__corpus = state;
+window.__corpus.DEBUG = DEBUG;
+
+// ---- DOM builder ----
+export function el(tag, attrs = {}, ...kids) {
+    const e = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+        if (k === 'class') e.className = v;
+        else if (k === 'on') for (const [ev, h] of Object.entries(v)) e.addEventListener(ev, h);
+        else if (k === 'data') for (const [dk, dv] of Object.entries(v)) e.dataset[dk] = dv;
+        else if (k === 'html') e.innerHTML = v;
+        else if (v != null) e.setAttribute(k, v);
+    }
+    for (const c of kids) {
+        if (c == null) continue;
+        if (Array.isArray(c)) for (const cc of c) e.append(cc instanceof Node ? cc : document.createTextNode(String(cc)));
+        else e.append(c instanceof Node ? c : document.createTextNode(String(c)));
+    }
+    return e;
+}
+// Render an icon as an inline element for el()/innerHTML contexts.
+export function icon(name, cls = 'i') { return el('span', { class: cls, html: ICON[name] || '' }); }
+// Icon + text label as a small inline cluster (replaces "glyph text" strings).
+export function iconLabel(name, text) { return el('span', { class: 'icon-label' }, icon(name), el('span', {}, text)); }
+
+// ---- data loading ----
+export async function fetchJson(p) { const r = await fetch(p); if (!r.ok) throw new Error(`${p}: ${r.status}`); return r.json(); }
+export async function loadManifest() {
+    state.manifest = await fetchJson('./data/manifest.json');
+    try { schedule.setSubjectList(state.manifest.subjects.map(s => s.subject)); } catch {}
+}
+export async function loadShard(s) { if (state.shards[s]) return state.shards[s]; state.shards[s] = await fetchJson(`./data/${s}.json`); return state.shards[s]; }
+export async function loadAllShards() { await Promise.all(state.manifest.subjects.map(s => loadShard(s.subject))); }
+
+// ---- guide ticks + mastery helpers ----
+export function loadGuideTicks() {
+    try { return JSON.parse(localStorage.getItem('corpus.guide.v1') || '{}'); } catch { return {}; }
+}
+export function saveGuideTicks(t) { localStorage.setItem('corpus.guide.v1', JSON.stringify(t)); }
+export function masteryFor(subject) {
+    const ticks = loadGuideTicks()[subject] || {};
+    const total = state.shards[subject]?.guide?.sections?.length || 0;
+    if (!total) return 0;
+    return Math.round((Object.values(ticks).filter(Boolean).length / total) * 100);
+}
+
+// Map subject -> Map<sectionLine, count> of cards keyed by their `requires.sectionLine`.
+export function sectionCardCounts(subject) {
+    const sh = state.shards[subject];
+    const m = new Map();
+    if (!sh) return m;
+    for (const c of sh.cards) {
+        if (!c.requires || !c.requires.sectionLine) continue;
+        const k = String(c.requires.sectionLine);
+        m.set(k, (m.get(k) || 0) + 1);
+    }
+    return m;
+}
+
+export function exportSessionCards(cards) {
+    if (!cards || cards.length === 0) { toast.show('No cards to export'); return; }
+    const lines = [];
+    for (const card of cards) {
+        const front = (card.front || '').replace(/\t/g, ' ').replace(/\n/g, ' ');
+        const back = (card.back || '').replace(/\t/g, ' ').replace(/\n/g, ' ');
+        const subject = card._subject || 'unknown';
+        const section = card.requires?.sectionLine || '';
+        lines.push([front, back, subject, section].join('\t'));
+    }
+    copyToClipboard(lines.join('\n'),
+        `Copied ${cards.length} card${cards.length === 1 ? '' : 's'} to clipboard`,
+        'Failed to copy to clipboard');
+}
+
+// ---- due/queue counters ----
+export function dueCountFor(subject) {
+    const sh = state.shards[subject]; if (!sh) return 0;
+    const ids = sh.cards.map(c => c.id);
+    return srs.getDueCards(ids, srs.loadStates()).length;
+}
+export function totalDueAll() {
+    let n = 0;
+    const states = srs.loadStates();
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject]; if (!sh) continue;
+        n += srs.getDueCards(sh.cards.map(c => c.id), states).length;
+    }
+    return n;
+}
+export function dueCountsBySubject() {
+    const out = {};
+    if (!state.manifest) return out;
+    const states = srs.loadStates();
+    for (const meta of state.manifest.subjects) {
+        const sh = state.shards[meta.subject];
+        out[meta.subject] = sh ? srs.getDueCards(sh.cards.map(c => c.id), states).length : 0;
+    }
+    return out;
+}
+export function totalCasesQueued() {
+    let n = 0;
+    const { sessions } = readTriageSessions();
+    for (const id of Object.keys(sessions)) {
+        if (triageSessionCards(sessions[id]).length > 0) n++;
+    }
+    return n;
+}
+
+// Build the schedule extras' casesDone map keyed by SUBJECT.
+export function casesDoneBySubject() {
+    const out = {};
+    try {
+        const done = new Set(Object.keys(readTriageSessions().sessions));
+        if (!done.size) return out;
+        for (const [subj, sh] of Object.entries(state.shards || {})) {
+            for (const sc of sh?.triage?.scenarios || []) {
+                const id = sc.id || sc.name;
+                if (done.has(id)) (out[subj] = out[subj] || new Set()).add(id);
+            }
+        }
+    } catch {}
+    return out;
+}
+
+export function estReviewMinutes(due) { return Math.max(1, Math.round(due * 0.4)); }
+
+// Sum plannedReview+plannedNew across today's study blocks.
+export function todayPlanReviewTarget() {
+    try {
+        const today = schedule.isoDate(new Date());
+        const sched = schedule.loadSchedule();
+        const blocks = (sched.blocks || []).filter(b => b.date === today && b.kind === 'study');
+        let n = 0;
+        for (const b of blocks) n += (b.plannedReview || 0) + (b.plannedNew || 0);
+        return n;
+    } catch { return 0; }
+}
+
+// ---- cross-tab schedule broadcast ----
+let bc = null;
+export function channel() {
+    if (bc) return bc;
+    try { bc = ('BroadcastChannel' in (typeof self !== 'undefined' ? self : {})) ? new BroadcastChannel('corpus') : null; } catch { bc = null; }
+    return bc;
+}
+export function emit(reason) {
+    try { channel()?.postMessage({ type: 'schedule:updated', reason, ts: Date.now() }); } catch {}
+    try {
+        if (typeof window !== 'undefined' && window.dispatchEvent) {
+            window.dispatchEvent(new CustomEvent('schedule:updated', { detail: { reason, ts: Date.now() } }));
+        }
+    } catch {}
+}
+
+// ---- footer offline indicator ----
+export function updateFooter() {
+    if (!statusbar || !statusbarMsg) return;
+    if (!navigator.onLine) {
+        statusbar.classList.remove('hidden');
+        statusbarMsg.textContent = 'offline - saved locally';
+    } else {
+        statusbar.classList.add('hidden');
+    }
+}

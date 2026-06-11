@@ -2006,3 +2006,64 @@
   phase: EXECUTE
   status: completed
   witness: tutor.js log helper removed + tutor-panel.js log case removed; test.js 24 pass
+- id: arch-app-context
+  text: 'Create site/app-context.js: dependency-free substrate exported as the spine. Move state object, el/icon/iconLabel DOM helpers, dom refs (appRoot, getStage/setStage for mutable stage, statusbar), data-loading (fetchJson/loadManifest/loadShard/loadAllShards), shared helpers (loadGuideTicks/saveGuideTicks/masteryFor/sectionCardCounts/dueCountFor/totalDueAll/dueCountsBySubject/totalCasesQueued/casesDoneBySubject/estReviewMinutes/todayPlanReviewTarget/channel/emit/updateFooter). Zero imports from views/router/app. app.js imports from it.'
+  phase: EXECUTE
+  status: completed
+  witness: site/app-context.js created; app.js imports substrate; browser-9 bootState/ctxExports/elWorks/sameState all true, 8 routes render, ERRS=[]; test.js 24 pass
+- id: arch-router
+  text: 'Create site/router.js: ROUTES/ROUTE_TITLES/ROUTE_ALIASES/setDocTitle/go/render. render dispatches via a view registry populated by registerViews(map) so router has no static import of views (breaks router->views->router cycle). go calls injected onNav hooks + render. Imports app-context only.'
+  phase: EXECUTE
+  status: pending
+- id: arch-view-today
+  text: 'views/today.js: renderToday + renderTodayPrimary + renderStatusLine + renderCramBanner + renderResumeLine + renderWelcome + isFirstTimeVisitor + renderTutorOverviewPanel + renderExamDay. Import app-context + router.'
+  phase: EXECUTE
+  status: pending
+- id: arch-view-review
+  text: 'views/review.js (HARDEST NODE - most state): renderReview + resetReviewQueue + flashcard render + grading controller gradeReview/undoLastGrade/suspendCurrentReview + review-queue state transitions. Import app-context + router. Prove the spine handles the most-coupled flow.'
+  phase: EXECUTE
+  status: pending
+- id: arch-view-guides
+  text: 'views/guides.js: renderGuides + guide TOC/chunk builders (buildChunkedGuide etc). Import app-context + router + markdown.'
+  phase: EXECUTE
+  status: pending
+- id: arch-view-subject
+  text: 'views/subject.js: renderSubject. Import app-context + router.'
+  phase: EXECUTE
+  status: pending
+- id: arch-view-stats
+  text: 'views/stats.js: renderStats + renderVerdictTable + renderHeatmap + renderSparkline. Import app-context + router + verdicts.'
+  phase: EXECUTE
+  status: pending
+- id: arch-view-cases
+  text: 'views/cases.js: renderTriage. Import app-context + router.'
+  phase: EXECUTE
+  status: pending
+- id: arch-view-calendar
+  text: 'views/calendar.js: renderCalendar. Import app-context + router + calendar lib.'
+  phase: EXECUTE
+  status: pending
+- id: arch-view-settings
+  text: 'views/settings.js: renderSettings. Import app-context + router.'
+  phase: EXECUTE
+  status: pending
+- id: arch-view-mistakes-drill
+  text: 'views/mistakes.js + views/drill.js: renderMistakes, renderDrill. Import app-context + router.'
+  phase: EXECUTE
+  status: pending
+- id: arch-search-palette
+  text: Extract mountSearchPalette wiring; keep memoized index. Lives in app.js boot or a small wiring module importing search.js + app-context.
+  phase: EXECUTE
+  status: pending
+- id: arch-app-thin
+  text: 'app.js reduced to thin orchestrator: imports context+router+all views, registerViews(map), SW registration, SDK bootstrap (setupSdkApp), online-status wiring, hashchange/boot. Target <400 lines.'
+  phase: EXECUTE
+  status: pending
+- id: arch-test-migration
+  text: Migrate ~40 READ(site/app.js) regex assertions in test.js to the new module locations (assert each view/context/router module defines its functions + app.js imports them, mirroring prior markdown/clipboard split). 24+ pass.
+  phase: EXECUTE
+  status: pending
+- id: arch-witness-all-routes
+  text: Browser-witness every route renders live on index.html (today/guides/review/cases/stats/subject/settings/calendar/mistakes/drill) with zero console errors after the split; assert no ESM import-cycle boot break.
+  phase: EXECUTE
+  status: pending

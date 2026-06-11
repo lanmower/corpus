@@ -1104,8 +1104,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // triage-live.css migrated off raw --ink/--paper to semantic --fg/--bg.
         assert.ok(!/var\(--ink\)|var\(--paper\)/.test(liveCss), 'triage-live.css must use semantic tokens');
         // statusbar refs are declared (were undeclared -> ReferenceError in updateFooter).
-        assert.match(appSrc, /const statusbar = document\.querySelector\('\.statusbar'\)/);
-        assert.match(appSrc, /const statusbarMsg = document\.getElementById\('statusbar-msg'\)/);
+        assert.match(READ('site/app-context.js'), /const statusbar = document\.querySelector\('\.statusbar'\)/);
+        assert.match(READ('site/app-context.js'), /const statusbarMsg = document\.getElementById\('statusbar-msg'\)/);
         // conversational tutor now injects real study context into the chat prompt.
         const tutorSrc = READ('site/tutor.js');
         assert.match(tutorSrc, /function buildStudyContextLine/);
@@ -1138,7 +1138,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             'both section-ref lookups must String()-coerce both sides');
         // Session-done "export cards" must export the retained session cards, not
         // state.reviewQueue (emptied by grade time -> always exported []).
-        assert.match(app, /reviewSessionCards: \[\]/, 'state must declare reviewSessionCards');
+        assert.match(READ('site/app-context.js'), /reviewSessionCards: \[\]/, 'state (app-context) must declare reviewSessionCards');
         assert.match(app, /state\.reviewSessionCards\.push\(card0\)/, 'gradeReview must retain the graded card');
         assert.match(app, /exportSessionCards\(state\.reviewSessionCards\.slice\(\)\)/, 'export must read retained session cards');
         assert.ok(!/exportSessionCards\(state\.reviewQueue\.filter/.test(app), 'export must not filter the (empty) live queue');
@@ -1250,19 +1250,19 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // SUBJECT (the buildDayBlocks contract), not by scenario id; both regenerate
         // call sites must use the shared builder.
         const app = READ('site/app.js');
-        assert.match(app, /function casesDoneBySubject\(\)/, 'shared casesDoneBySubject builder must exist');
-        assert.strictEqual((app.match(/casesDoneBySubject\(\)/g) || []).length, 3, 'both regenerate sites use the shared builder');
+        assert.match(READ('site/app-context.js'), /export function casesDoneBySubject\(\)/, 'shared casesDoneBySubject builder must exist (app-context)');
+        assert.strictEqual((app.match(/casesDoneBySubject\(\)/g) || []).length, 2, 'both regenerate sites call the shared builder');
         assert.ok(!/casesDone\[id\] = casesDone\[id\]/.test(app), 'scenario-id-keyed casesDone construction must be gone');
         // MEDIUM (worst-case): triage session reads go through the shared store
         // (triage-store.js owns the {cards}/legacy-array normalization).
         assert.match(app, /from '\.\/triage-store\.js'/, 'app.js imports triage-store');
-        assert.match(app, /triageSessionCards\(sessions\[id\]\)/, 'totalCasesQueued normalizes via shared sessionCards');
+        assert.match(READ('site/app-context.js'), /triageSessionCards\(sessions\[id\]\)/, 'totalCasesQueued normalizes via shared sessionCards (app-context)');
         // Day-keys are LOCAL calendar dates end to end: schedule.isoDate, the app
         // plan filters, and the new-card cap — matching the local check-in gate.
         const sched = READ('site/schedule.js');
         assert.match(sched, /getFullYear\(\)/, 'schedule.isoDate must be local-date');
         assert.ok(!/toISOString\(\)\.slice\(0, 10\)/.test(READ('site/newcards.js')), 'newcards todayISO must be local-date');
-        assert.strictEqual((app.match(/schedule\.isoDate\(new Date\(\)\)/g) || []).length, 7, 'app schedule day-key sites use schedule.isoDate');
+        assert.strictEqual(((app + READ('site/app-context.js')).match(/schedule\.isoDate\(new Date\(\)\)/g) || []).length, 7, 'app+context schedule day-key sites use schedule.isoDate');
         // data-first/subtractive (schedule.js): 10-subject fallback, srs config via
         // srs.loadConfig (sanitized), quota-guarded persist, dead exports removed.
         assert.ok(/paediatrics/.test(sched) && /paediatrics-neonatal/.test(sched), 'schedule fallback lists all 10 subjects');
