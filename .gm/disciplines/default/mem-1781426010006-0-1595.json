@@ -1,0 +1,11 @@
+## Corpus quality-max 13th run (2026-06-14, commit e1b4d22)
+
+User re-issued 'workflow to maximize quality, fan out subagents, engineering-DNA, consider everything not yet considered'. Workflow ALREADY EXISTED (.claude/workflows/quality-max.js, 12 lenses). RAN it (NOT rebuild, Principle 2/3): wf_cd577b1b-098, 27 agents, 15 confirmed/0 refuted. ALL 15 FIXED this run (prior runs left findings for later; this run cleared the whole set):
+
+Subtractive: deleted site/confidence.js (dead, test-only) + its test block; removed toast.info alias + toast.bind() no-op + app.js:358 call; removed mastery.forecastTo100 + unused localDayISO import + its test.
+Correctness: context-menu.js arrow-nav guard (divider-only menu %0->NaN); triage-live.js send() reentrancy guard (state.generating) so 2nd send can't orphan generateLLM promise; triage-llm-worker.js genChain serialization (mirror tutor.js chatChain) for interrupt+reissue concurrency; progress.js load() migrate-forward (keep streak/history, only drop strictly-newer version).
+Physics-first: timer.js dropped 1 Hz localStorage write while running (load() derives remaining from wall-clock startedAt -> kills cross-tab render storm) + clearInterval while panel hidden.
+Human-value: added shared bindContextMenu(elm,itemsFor) long-press helper in context-menu.js (touchstart 500ms timer + slop cancel), wired review card + triage scratchpad card so flag/ask-tutor/highlight/reword reachable on touch.
+Empirical: added serve.js path-traversal guard test.
+
+test.js 25/25 pass; browser-witnessed all invariants true + triage-live.html zero pageErrors.
