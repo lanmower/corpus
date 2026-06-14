@@ -1,0 +1,182 @@
+# Epidemiology & Biostatistics (PublicHealth) - generated from srs-mccqe1
+cards:
+  - front: "What is the difference between incidence and prevalence?"
+    back: "Incidence: rate of NEW cases in a defined population over a time period; Prevalence: proportion of EXISTING cases (new + old) in a population at a given time — Point prevalence: at specific moment; Period prevalence: over defined time period\n\nPrevalence = Incidence × Duration (of disease). High incidence with short duration (recovery or death) → low prevalence (influenza). Low incidence with long duration (chronic disease) → higher prevalence than incidence (HIV/AIDS). Changing prevalence can reflect changing incidence, mortality, or disease duration."
+    difficulty: easy
+    tags: [incidence, prevalence, epidemiology, public health]
+  - front: "What is sensitivity vs. specificity of a screening test?"
+    back: "Sensitivity: proportion of TRUE POSITIVES correctly identified (TP/[TP+FN]); Specificity: proportion of TRUE NEGATIVES correctly identified (TN/[TN+FP]) — high sensitivity = few false negatives; high specificity = few false positives\n\nHigh sensitivity tests are best for screening (rule out disease — negative test rules disease out: SnNOUT). High specificity tests are best for confirmation (rule in disease — positive test rules disease in: SpPIN). Cancer screening tests prioritize sensitivity; confirmatory tests prioritize specificity."
+    difficulty: easy
+    tags: [sensitivity, specificity, screening test, epidemiology, public health]
+  - front: "What is positive predictive value (PPV) and how does disease prevalence affect it?"
+    back: "PPV = TP/(TP+FP) — probability of having disease given a positive test; NPV = TN/(TN+FN); PPV DECREASES when disease prevalence is low (more false positives relative to true positives)\n\nPPV and NPV are affected by disease prevalence (unlike sensitivity and specificity which are fixed characteristics of the test). Same test in a low-prevalence population will have lower PPV than in a high-prevalence population. Crucial when interpreting screening results in general vs. high-risk populations."
+    difficulty: medium
+    tags: [PPV, NPV, positive predictive value, prevalence, epidemiology, public health]
+  - front: "What is relative risk (RR) and how is it interpreted?"
+    back: "RR = Risk in exposed / Risk in unexposed; RR=1: no association; RR>1: increased risk; RR<1: decreased risk (protective); used for COHORT studies and RCTs\n\nRR is used for prospective studies. In case-control studies, use Odds Ratio (OR) because incidence cannot be calculated. OR approximates RR when disease is rare (<10%). Absolute risk reduction (ARR) = risk in control − risk in treatment; NNT = 1/ARR."
+    difficulty: easy
+    tags: [relative risk, cohort study, RR interpretation, epidemiology, public health]
+  - front: "What is the number needed to treat (NNT) and how is it calculated?"
+    back: "NNT = 1 / ARR (absolute risk reduction); ARR = control event rate − treatment event rate — NNT is the number of patients who need to be treated for one patient to benefit\n\nLow NNT = more effective treatment. NNT must always be interpreted with time frame (NNT at 1 year vs. 5 years). NNH (Number Needed to Harm) = 1/ARI (absolute risk increase). Clinicians should understand NNT to discuss treatment benefits meaningfully with patients."
+    difficulty: easy
+    tags: [NNT, number needed to treat, ARR, absolute risk reduction, epidemiology, public health]
+  - front: "What is selection bias and provide an example?"
+    back: "Selection bias: systematic error in how study participants are selected, resulting in non-representative sample; Example: Berkson bias (hospitalized patients more likely to have multiple diseases, making two conditions appear associated when they are not in the general population)\n\nSelection bias leads to study results that cannot be generalized. Healthy worker bias: employed workers are healthier than general population, making occupational studies underestimate mortality risk. Volunteer bias: participants who volunteer may have different characteristics than those who decline."
+    difficulty: medium
+    tags: [selection bias, Berkson bias, epidemiology, study design, public health]
+  - front: "What is confounding and how can it be controlled?"
+    back: "Confounding: third variable is associated with both the exposure and outcome, causing a spurious or biased association; Control methods: randomization (RCTs), restriction, matching, stratification, multivariable analysis (regression)\n\nExample: alcohol use appears protective against MI — but smokers drink more alcohol. Smoking is a confounder. Residual confounding: occurs when known confounders are not fully adjusted for. Unmeasured confounders are a limitation of observational studies."
+    difficulty: medium
+    tags: [confounding, confounder, epidemiology, bias, public health]
+  - front: "What is the attributable risk (AR) and population attributable risk (PAR)?"
+    back: "AR = Incidence in exposed − Incidence in unexposed (risk in exposed attributable to the exposure); PAR = Incidence in total population − Incidence in unexposed (proportion of disease that would be prevented if exposure eliminated from population)\n\nPAR is used in public health to prioritize interventions. If smoking causes 85% of lung cancers (PAR = 85%), eliminating smoking would prevent 85% of lung cancers. PAR depends on both the relative risk and the prevalence of exposure in the population."
+    difficulty: medium
+    tags: [attributable risk, PAR, population attributable risk, smoking, public health]
+  - front: "What is a systematic review vs. meta-analysis?"
+    back: "Systematic review: comprehensive, reproducible literature search and synthesis of evidence on a specific question; Meta-analysis: statistical method to pool results from multiple studies to calculate a summary effect size (gives more power and precision)\n\nLevels of evidence: meta-analysis/systematic reviews > RCTs > cohort studies > case-control > case series. GRADE (Grading of Recommendations Assessment, Development and Evaluation) framework used by Canadian guidelines to rate evidence quality and recommendation strength."
+    difficulty: easy
+    tags: [systematic review, meta-analysis, evidence hierarchy, GRADE, epidemiology, public health]
+  - front: "What is a randomized controlled trial (RCT) and why is it the gold standard?"
+    back: "RCT: participants randomly assigned to intervention vs. control — randomization eliminates selection bias and balances known and unknown confounders between groups, allowing causal inference\n\nRCT limitations: expensive, time-consuming, ethical constraints, external validity (generalizability). Double-blind RCT (neither participant nor assessor knows allocation) minimizes performance and detection bias. Intention-to-treat analysis preserves randomization benefits. CONSORT checklist for reporting RCTs."
+    difficulty: easy
+    tags: [RCT, randomized controlled trial, study design, internal validity, epidemiology, public health]
+  - front: "What is the difference between a type I error and a type II error?"
+    back: "Type I error (alpha error): false positive — rejecting null hypothesis when it is true; probability = p-value (typically <0.05); Type II error (beta error): false negative — failing to reject null hypothesis when it is false; probability = β (1-β = power, typically 80-90%)\n\nType I error consequences: accepting a treatment that is actually ineffective. Type II error consequences: missing a real treatment effect. Larger sample size reduces both types of errors. Power (1-β) reflects ability to detect a true effect if it exists."
+    difficulty: medium
+    tags: [type I error, type II error, alpha, beta, statistical power, epidemiology, public health]
+  - front: "What is the 95% confidence interval and what does it mean if it does not cross 1.0?"
+    back: "95% CI: range of values within which the true population parameter lies with 95% certainty; if 95% CI for RR or OR does NOT include 1.0 → statistically significant at p<0.05\n\nNarrow CI = more precise estimate (larger sample size). Wide CI = less precise (small sample). If CI crosses 1.0 for RR: result is NOT statistically significant. CI is more informative than p-value alone because it provides information about effect size and precision."
+    difficulty: easy
+    tags: [confidence interval, 95% CI, statistical significance, RR, epidemiology, public health]
+  - front: "What is lead time bias in screening studies?"
+    back: "Lead time bias: screening appears to prolong survival time because it detects disease earlier (advancing the apparent start of disease), but actual lifespan is not extended — survival appears longer without actually being longer\n\nScreening survival studies must use disease-specific mortality rather than 5-year survival to avoid lead time bias. Length bias: screening is more likely to detect slowly-growing cancers (more time to screen) vs. aggressive fast-growing cancers, making screened cohort appear to do better."
+    difficulty: medium
+    tags: [lead time bias, length bias, screening studies, survival bias, epidemiology, public health]
+  - front: "What is the basic reproduction number (R0) and its significance in infectious disease?"
+    back: "R0: average number of secondary cases generated by one infectious case in a fully susceptible population; R0 >1 = epidemic can spread; R0 <1 = outbreak dies out; herd immunity threshold = 1 - (1/R0) × 100%\n\nCOVID-19 original strain: R0 ~2-3; Omicron: R0 ~8-15; Measles: R0 12-18 (one of highest known). Herd immunity for measles: (1-1/15) × 100% = 93%. Vaccination coverage must exceed herd immunity threshold to prevent outbreaks. R0 changes with interventions (R effective, Rt)."
+    difficulty: medium
+    tags: [R0, basic reproduction number, herd immunity, epidemiology, public health]
+  - front: "What is the Cochrane Collaboration and how do Canadian physicians use it?"
+    back: "Cochrane Collaboration: independent network producing systematic reviews and meta-analyses of healthcare interventions; Cochrane Library contains >8000 systematic reviews; used by clinicians to find highest-quality evidence to inform clinical decisions\n\nCanadian clinical practice guidelines frequently cite Cochrane reviews as the primary evidence source. Cochrane reviews use GRADE to rate evidence quality. Limitations of meta-analysis: garbage in, garbage out — pooling poor-quality studies does not improve evidence quality. Publication bias can skew results."
+    difficulty: easy
+    tags: [Cochrane Collaboration, systematic review, evidence-based medicine, GRADE, public health]
+  - front: "How do you calculate NNT from absolute risk reduction?"
+    back: "NNT = 1/ARR. ARR = CER - EER (control event rate minus experimental event rate)\n\nNNT of 10 means treating 10 patients to prevent 1 event. NNH = 1/ARI. Relative risk reduction = ARR/CER. RRR can be misleading without baseline risk context."
+    difficulty: medium
+    tags: [NNT, biostatistics]
+  - front: "What is sensitivity vs specificity?"
+    back: "Sensitivity = TP/(TP+FN) = ability to detect disease (SnNout: sensitive test rules OUT). Specificity = TN/(TN+FP) = ability to detect non-disease (SpPin: specific test rules IN)\n\nPPV depends on prevalence. High prevalence increases PPV. Likelihood ratios: LR+ = sens/(1-spec), LR- = (1-sens)/spec. ROC curve plots sensitivity vs 1-specificity."
+    difficulty: medium
+    tags: [sensitivity, specificity]
+  - front: "What is the difference between incidence and prevalence?"
+    back: "Incidence: new cases/population/time (rate). Prevalence: total cases/population at a point (proportion). Prevalence ~ incidence x duration\n\nIncidence = risk (etiologic studies). Prevalence = burden (health services planning). Chronic diseases: high prevalence relative to incidence. High fatality: low prevalence relative to incidence."
+    difficulty: easy
+    tags: [incidence, prevalence, epidemiology]
+  - front: "Rank epidemiological study designs by evidence strength."
+    back: "1) SR/meta-analysis 2) RCT 3) Cohort 4) Case-control 5) Cross-sectional 6) Case series 7) Expert opinion. Cohort measures RR; case-control measures OR\n\nRCTs strongest for interventions but ethical limitations. Cohort: prospective, measures incidence. Case-control: efficient for rare diseases. Cross-sectional: prevalence only, no temporality. Ecological fallacy in aggregate studies."
+    difficulty: medium
+    tags: [study design, evidence hierarchy]
+  - front: "Differentiate relative risk, odds ratio, and hazard ratio."
+    back: "RR = risk exposed/risk unexposed (cohort). OR = (ad)/(bc) from 2x2 (case-control). HR = instantaneous risk ratio from survival analysis with censoring\n\nOR approximates RR when outcome is rare (<10%). Case-control cannot calculate RR directly. HR accounts for variable follow-up and censoring. All measure association not causation."
+    difficulty: hard
+    tags: [relative risk, odds ratio, hazard ratio]
+  - front: "What are the Bradford Hill criteria for causation?"
+    back: "Strength, Consistency, Specificity, Temporality (only absolute), Biological gradient, Plausibility, Coherence, Experiment, Analogy\n\nTemporality is the ONLY essential criterion. Strong associations less likely confounded. Originally applied to smoking and lung cancer (1965). Help distinguish causation from correlation in observational studies."
+    difficulty: medium
+    tags: [Bradford Hill, causation]
+  - front: "Differentiate confounding from effect modification."
+    back: "Confounding: third variable distorts exposure-outcome relationship (bias to eliminate). Effect modification: exposure effect differs across subgroups (biological finding to report stratified). Test: adjusted vs crude differs >10% = confounding\n\nAddress confounding: randomization, restriction, matching, stratification, multivariable analysis. Effect modification: report stratum-specific estimates. Residual confounding from unmeasured variables always possible in observational studies."
+    difficulty: hard
+    tags: [confounding, effect modification]
+  - front: "What is the difference between internal and external validity?"
+    back: "Internal: results free from bias within study (accuracy). External: results generalizable to other populations. Internal is necessary but not sufficient for external\n\nThreats to internal: selection bias, information bias, confounding. Threats to external: narrow inclusion, single-center, volunteer bias. RCTs often high internal but low external. Pragmatic trials sacrifice some internal for generalizability."
+    difficulty: medium
+    tags: [internal validity, external validity]
+  - front: "Define and differentiate key measures of disease frequency."
+    back: "Incidence rate = cases/person-time. Cumulative incidence = cases/population at risk. Attack rate = cases during outbreak/at-risk. Mortality rate = deaths/population. CFR = deaths/cases x 100%\n\nPerson-time accounts for variable follow-up. Age standardization allows population comparisons (Canada uses 2011 population for direct standardization). Attack rate used in outbreak settings."
+    difficulty: medium
+    tags: [incidence rate, mortality, epidemiology]
+  - front: "What are Type I and Type II errors?"
+    back: "Type I (alpha=0.05): false positive, rejecting true null. Type II (beta=0.20): false negative, failing to reject false null. Power = 1-beta >= 0.80\n\nLarger sample reduces both errors. Multiple comparisons inflate Type I (Bonferroni correction). Underpowered studies risk Type II. A priori sample size calculation essential. Non-significant result does not prove null."
+    difficulty: medium
+    tags: [Type I error, Type II error, power]
+  - front: "What do p-values and confidence intervals represent?"
+    back: "p-value: probability of results as extreme if null true. 95% CI: 95% of repeated CIs would contain true parameter. CI excluding null (0 for diff, 1 for ratio) = significant\n\np-value is NOT probability null is true. Wide CI = imprecision (small sample). CI more informative than p-value (gives effect size + precision). Statistical significance does not equal clinical significance."
+    difficulty: medium
+    tags: [p-value, confidence interval]
+  - front: "What are the key nationally notifiable diseases in Canada?"
+    back: "TB, HIV/AIDS, measles, invasive meningococcal, pertussis, syphilis, gonorrhea, hepatitis B/C, cholera, Ebola, mpox (~60 total). Report: clinician to local PH to province to PHAC\n\nMandated by provincial legislation. Urgent diseases (measles, meningococcal) require immediate reporting. PHAC coordinates via CNDSS. List varies slightly by jurisdiction."
+    difficulty: medium
+    tags: [notifiable diseases, PHAC, surveillance]
+  - front: "What are the steps in an outbreak investigation?"
+    back: "1) Verify diagnosis 2) Confirm outbreak (observed>expected) 3) Case definition 4) Case finding 5) Descriptive epi (person/place/time, epi curve) 6) Hypotheses 7) Analytical study 8) Control measures 9) Communicate\n\nEpi curve shape: point source (single peak), continuous (plateau), propagated (successive peaks). Do not delay control measures for investigation completion. R0 guides control: need 1-1/R0 reduction."
+    difficulty: hard
+    tags: [outbreak, investigation, epidemic curve]
+  - front: "Name and define the levels of prevention."
+    back: "Primary: prevent disease (vaccination). Secondary: early detection (screening). Tertiary: reduce disability (rehab). Quaternary: prevent overdiagnosis/overtreatment (deprescribing). Primordial: prevent risk factors (policy)\n\nPopulation-level primary prevention has greatest impact. Most screening is secondary. Periodic health exam incorporates all levels. Quaternary prevention increasingly emphasized to combat medicalization."
+    difficulty: easy
+    tags: [prevention levels, public health]
+  - front: "How are attributable risk and population attributable risk calculated and used?"
+    back: "AR = risk_exposed - risk_unexposed. AR% = AR/risk_exposed. PAR = risk_total - risk_unexposed. PAR% = PAR/risk_total. NNT = 1/AR\n\nPAR depends on both RR AND prevalence of exposure. High-prevalence modest-RR exposures may have larger PAR than rare high-RR exposures. PAR guides public health priority setting. AR guides individual patient counseling."
+    difficulty: hard
+    tags: [attributable risk, PAR, NNT]
+  - front: "What are the key elements of the Canadian Pandemic Influenza Preparedness plan?"
+    back: "Surveillance, public health measures (isolation/quarantine), mass vaccination, antiviral stockpiling (oseltamivir), healthcare surge capacity, risk communication, F/P/T coordination via PHAC\n\nCOVID-19 lessons: importance of early border measures, domestic vaccine manufacturing, equity in distribution, mental health supports. NESS maintains PPE stockpiles. Pandemic preparedness requires all-of-government approach."
+    difficulty: medium
+    tags: [pandemic, CPIP, PHAC]
+  - front: "What are the Canadian adult immunization schedule highlights?"
+    back: "Tdap x1 then Td q10y. Influenza annually >=6mo. PCV20 or PCV15+PPSV23 >=65 or high-risk. Shingrix >=50 x2 doses. HPV catch-up to 26. COVID per NACI\n\nNACI provides evidence-based recs; provinces implement variably. HCW requirements: influenza, HepB, varicella. Immunocompromised: avoid live vaccines (MMR, varicella, LAIV). Pregnancy: Tdap each pregnancy 27-32wk."
+    difficulty: medium
+    tags: [immunization, vaccines, NACI]
+  - front: "What are Choosing Wisely Canada's key recommendations?"
+    back: "Avoid: routine preop testing for low-risk surgery, imaging for uncomplicated low back pain <6wks, antibiotics for viral URI, Foley catheters without indication, benzodiazepines in elderly\n\nResource stewardship: ordering only tests/treatments with clear benefit. Overdiagnosis leads to overtreatment cascades. Shared decision-making helps patients understand benefit vs harm tradeoffs."
+    difficulty: medium
+    tags: [Choosing Wisely, stewardship]
+  - front: "What is Choosing Wisely Canada, and what are three of its most impactful recommendations for primary care?"
+    back: "Choosing Wisely Canada is a physician-led campaign to reduce unnecessary tests and treatments. Key primary care recommendations include: (1) Don't order imaging for uncomplicated low back pain within the first 6 weeks, (2) Don't use antibiotics for upper respiratory tract infections (most are viral), (3) Don't order routine preoperative tests (CBC, ECG, CXR) for low-risk surgeries in healthy patients.\n\nChoosing Wisely Canada was launched in 2014 and now includes recommendations from over 70 Canadian specialty societies. It is modeled on the American Board of Internal Medicine Foundation initiative. The campaign addresses overdiagnosis and overtreatment, which contribute to patient harm, healthcare costs, and resource waste in the Canadian publicly-funded system."
+    difficulty: easy
+    tags: [Choosing-Wisely, low-value-care, resource-stewardship, primary-care, overdiagnosis]
+  - front: "A 30-year-old healthy patient is scheduled for elective knee arthroscopy. The surgeon orders preoperative CBC, electrolytes, INR, ECG, and chest X-ray. Is this appropriate?"
+    back: "No. For a healthy patient under 50 undergoing low-risk surgery, routine preoperative testing is not recommended. Choosing Wisely Canada and the Canadian Anesthesiologists' Society recommend against routine preoperative tests in asymptomatic patients having low-risk procedures, as they rarely change management and can lead to false positives, anxiety, and unnecessary follow-up.\n\nThe Canadian Anesthesiologists' Society's Choosing Wisely recommendation specifically targets this scenario. Studies show routine preoperative testing in low-risk patients does not improve surgical outcomes. Preoperative tests should be guided by patient history, physical examination, and the nature of the procedure, not ordered by protocol."
+    difficulty: medium
+    tags: [preoperative-testing, Choosing-Wisely, low-value-care, resource-stewardship, overdiagnosis]
+  - front: "A 35-year-old presents with acute low back pain of 3 days duration, no red flags. They request an MRI. What is the evidence-based response?"
+    back: "Imaging is not indicated for acute low back pain without red flags (e.g., cauda equina syndrome, cancer, fracture, infection). Most acute low back pain is self-limiting. Explain that early imaging does not improve outcomes, may reveal incidental findings leading to unnecessary interventions, and recommend conservative management with reassurance, activity modification, and analgesia.\n\nThis is one of the top Choosing Wisely Canada recommendations. The Canadian Association of Radiologists endorses avoiding imaging for non-specific low back pain within the first 6 weeks. Studies show that early imaging leads to increased surgery, opioid use, and healthcare costs without improving patient outcomes. Red flags requiring imaging include progressive neurological deficits, suspected cancer, infection, or cauda equina syndrome."
+    difficulty: easy
+    tags: [low-back-pain, imaging, Choosing-Wisely, low-value-care, red-flags]
+  - front: "What is a QALY (Quality-Adjusted Life Year), and how is it used in Canadian healthcare decision-making?"
+    back: "A QALY combines quantity and quality of life: 1 QALY = 1 year of life in perfect health. A year of life at 0.5 quality = 0.5 QALYs. Cost-effectiveness is expressed as cost per QALY gained. In Canada, CADTH (Canadian Agency for Drugs and Technologies in Health) commonly uses a willingness-to-pay threshold of approximately $50,000-$100,000 per QALY to evaluate new health technologies.\n\nCADTH (formerly CCOHTA) uses cost-per-QALY analyses to make drug and technology funding recommendations to provincial formularies. The pan-Canadian Pharmaceutical Alliance (pCPA) negotiates drug prices informed by CADTH reviews. Understanding QALYs is essential for appreciating how Canada allocates finite healthcare resources in a publicly funded system."
+    difficulty: hard
+    tags: [QALY, cost-effectiveness, CADTH, resource-stewardship, health-economics]
+  - front: "What is overdiagnosis, and how does it differ from a false positive?"
+    back: "Overdiagnosis is the detection of a true condition that would never have caused symptoms or death during the patient's lifetime (e.g., indolent prostate cancer found on screening). A false positive is an abnormal test result in someone who does not actually have the condition. Overdiagnosis leads to real diagnoses and treatments that cause net harm; false positives lead to further testing before the diagnosis is excluded.\n\nOverdiagnosis is a major concern in cancer screening programs. For example, the Canadian Task Force on Preventive Health Care weighs overdiagnosis risks in PSA screening and thyroid cancer screening recommendations. Overdiagnosed patients receive unnecessary treatment with real side effects but experience no benefit, as their condition would never have become clinically significant."
+    difficulty: hard
+    tags: [overdiagnosis, screening, false-positive, Choosing-Wisely, resource-stewardship]
+  - front: "What is a 'cascade of care' (or diagnostic cascade), and how does it relate to low-value care?"
+    back: "A cascade of care occurs when an initial unnecessary test yields an incidental or borderline finding, prompting further tests, referrals, procedures, and treatments — each carrying its own risks — that ultimately provide no net benefit to the patient. Example: routine CXR reveals a benign pulmonary nodule, leading to CT, then PET scan, then biopsy with pneumothorax.\n\nCascades of care are a key concept in Choosing Wisely Canada's messaging. They illustrate how a single low-value test can trigger a chain of escalating interventions with cumulative risk and cost. Recognizing cascade potential is important for MCCQE1 questions about appropriate test ordering and explains why the initial decision to test must be clinically justified."
+    difficulty: medium
+    tags: [cascade-of-care, low-value-care, Choosing-Wisely, overdiagnosis, incidental-findings]
+  - front: "The Canadian Task Force on Preventive Health Care recommends against routine PSA screening for prostate cancer in average-risk men. What is the rationale?"
+    back: "The harms of PSA screening (overdiagnosis of indolent cancers, unnecessary biopsies with complications, overtreatment with side effects including incontinence and erectile dysfunction, anxiety) outweigh the modest reduction in prostate cancer mortality. Many men diagnosed through screening have cancers that would never become clinically significant in their lifetime.\n\nThe Canadian Task Force on Preventive Health Care issued this recommendation after systematic review. While PSA can detect cancer early, the majority of screen-detected prostate cancers are low-grade and indolent. Active surveillance for low-risk cancers is now preferred over immediate treatment, but screening itself generates cascades leading to overtreatment."
+    difficulty: medium
+    tags: [PSA-screening, prostate-cancer, overdiagnosis, CTFPHC, resource-stewardship]
+  - front: "A patient with a viral upper respiratory infection requests antibiotics. They insist they 'always get antibiotics' for colds. How should you manage this using resource stewardship principles?"
+    back: "Acknowledge the patient's concern, explain that antibiotics are ineffective against viruses and carry real risks (allergic reactions, C. diff, antimicrobial resistance), offer evidence-based symptomatic treatments, provide a safety-net plan (return if symptoms worsen or don't improve within expected timeframe), and consider a delayed prescription strategy if appropriate.\n\nUnnecessary antibiotic prescribing for URTIs is a top Choosing Wisely Canada target. Antimicrobial resistance is recognized by the WHO and Public Health Agency of Canada as a critical threat. The delayed prescription strategy (providing a prescription to fill only if symptoms worsen) has been shown to reduce antibiotic use by approximately 50% while maintaining patient satisfaction."
+    difficulty: easy
+    tags: [antibiotic-stewardship, URTI, Choosing-Wisely, resource-stewardship, antimicrobial-resistance]
+  - front: "What is the role of CADTH in Canadian healthcare resource allocation?"
+    back: "CADTH (Canadian Agency for Drugs and Technologies in Health) is an independent, not-for-profit organization that provides evidence-based assessments of drugs, medical devices, and clinical procedures. It conducts health technology assessments (HTAs), provides drug reviews for formulary listing decisions, and produces optimal use recommendations. Provincial drug plans use CADTH recommendations to guide funding decisions.\n\nCADTH serves all Canadian provinces and territories except Quebec (which has its own INESSS). Its Common Drug Review (CDR) and pan-Canadian Oncology Drug Review (pCODR) evaluate new drugs for cost-effectiveness. CADTH recommendations inform the pan-Canadian Pharmaceutical Alliance (pCPA) negotiations, directly impacting which drugs are publicly funded."
+    difficulty: medium
+    tags: [CADTH, HTA, drug-review, resource-stewardship, health-economics]
+  - front: "A colleague routinely orders daily CBC and electrolytes on all hospitalized patients regardless of clinical indication. What resource stewardship concerns does this raise, and how would you address it?"
+    back: "This represents low-value care: routine daily bloodwork in stable patients increases costs, contributes to hospital-acquired anemia (from repeated phlebotomy), causes patient discomfort, may yield incidental findings triggering cascades, and wastes laboratory resources. Address it through: respectful peer discussion, citing Choosing Wisely Canada recommendations, and supporting institutional initiatives to implement indication-based ordering.\n\nChoosing Wisely Canada's hospitalist recommendations specifically advise against routine daily bloodwork without clinical indication. Studies show that reducing routine lab ordering by 30-50% does not adversely affect patient outcomes. Many Canadian hospitals have implemented order sets that require clinical indication for laboratory tests, reducing low-value ordering and iatrogenic anemia."
+    difficulty: medium
+    tags: [routine-testing, low-value-care, Choosing-Wisely, resource-stewardship, hospital-medicine]
+  - front: "What is the Framingham Risk Score used for in dyslipidemia management?"
+    back: "The Framingham Risk Score (FRS) calculates 10-year risk of a major CVD event based on gender, age, total cholesterol, HDL-cholesterol, systolic BP, and smoking. Risk categories: >20% high-risk; 10-19.9% moderate risk; <10% low-risk.\n\nThe FRS is used to guide statin therapy decisions in primary prevention. Note that FRS does NOT apply to patients with familial hypercholesterolemia — all FH patients are considered high-risk regardless of FRS. The Reynolds Risk Score additionally incorporates hs-CRP and family history of MI."
+    difficulty: easy
+    tags: [Framingham Risk Score, CVD risk, dyslipidemia, primary prevention]
+  - front: "What are the GRADE categories of recommendation strength and evidence quality used by the Canadian Task Force on Preventive Health Care?"
+    back: "Recommendation Strength: Strong (confident that desirable effects outweigh undesirable effects — most individuals will benefit from recommended action) or Conditional (desirable effects probably outweigh undesirable effects — different choices appropriate for different individuals, requiring shared decision-making). Evidence Quality: High (confident true effect is close to estimate), Moderate (likely close but may differ), Low/Very Low (true effect may differ substantially from estimate).\n\nGRADE (Grading of Recommendations, Assessment, Development and Evaluations) is the standardized framework used by CTFPHC to communicate both the strength of recommendations and the quality of evidence. Understanding these distinctions is critical for interpreting screening and preventive care guidelines on the MCCQE1."
+    difficulty: medium
+    tags: [GRADE, evidence quality, recommendations, CTFPHC, evidence-based medicine]

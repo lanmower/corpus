@@ -1,0 +1,150 @@
+# Pancreatitis (Gastroenterology) - generated from srs-mccqe1
+cards:
+  - front: "A 45-year-old presents with severe epigastric pain radiating to the back, nausea, and vomiting after a heavy meal. Lipase is 5x upper limit of normal. Diagnosis and initial management?"
+    back: "Acute pancreatitis; aggressive IV fluid resuscitation (lactated Ringer preferred), NPO initially then early enteral nutrition, analgesia, monitor for complications\n\nRanson criteria and BISAP score predict severity. CGA guidelines recommend LR over NS in acute pancreatitis (reduces SIRS). Early enteral nutrition (within 24-48h) preferred over TPN. Antibiotics not routinely given unless infected necrosis suspected."
+    difficulty: hard
+    tags: [acute pancreatitis, lipase, fluid resuscitation, pancreatitis severity, gastroenterology]
+  - front: "What are the two most common causes of acute pancreatitis in Canada?"
+    back: "Gallstones (40-50%) and alcohol (25-35%) — mnemonic GET SMASHED for all causes: Gallstones, Ethanol, Trauma, Steroids, Mumps, Autoimmune, Scorpion, Hypercalcemia/Hypertriglyceridemia, ERCP/Drugs\n\nGallstone pancreatitis: early cholecystectomy (same admission) prevents recurrence. Alcoholic pancreatitis: abstinence education. Hypertriglyceridemia pancreatitis: >11 mmol/L is risk; treat with insulin infusion + fibrates long-term."
+    difficulty: easy
+    tags: [acute pancreatitis etiology, gallstones, alcohol, GET SMASHED, gastroenterology]
+  - front: "What criteria define severe acute pancreatitis?"
+    back: "Atlanta revised criteria: persistent organ failure >48h (respiratory, cardiovascular, or renal); BISAP score ≥3 or Ranson ≥3 predicts severity; CT severity index (CTSI) for pancreatic necrosis extent\n\nSevere acute pancreatitis has 20-30% mortality. Organ failure definition: Pa02/FiO2 <300, creatinine >170 μmol/L, systolic BP <90 after resuscitation. CT chest/abdomen 48-72h after admission for patients not improving."
+    difficulty: hard
+    tags: [severe pancreatitis, Atlanta criteria, organ failure, BISAP, CTSI, gastroenterology]
+  - front: "What is infected pancreatic necrosis and how is it managed?"
+    back: "Infected necrosis: secondary infection of pancreatic/peripancreatic necrosis (usually >2 weeks after onset); diagnose with CT (gas in necrosis) or FNA; treat with antibiotics (imipenem or meropenem) and drainage\n\nSterile necrosis: manage conservatively. Infected necrosis: step-up approach — antibiotics, then EUS-guided or CT-guided drainage, then minimally invasive necrosectomy (VARD or percutaneous). Open necrosectomy has been largely replaced."
+    difficulty: hard
+    tags: [infected necrosis, pancreatic necrosis, step-up, antibiotics, gastroenterology]
+  - front: "What is chronic pancreatitis and what are its main complications?"
+    back: "Chronic irreversible pancreatic inflammation causing exocrine insufficiency (malabsorption, steatorrhea), endocrine insufficiency (diabetes), chronic pain, and pancreatic ductal stones/pseudocysts\n\nMost common cause: alcohol (70-80%). Treat: pain management (analgesia, nerve block, endoscopic/surgical decompression), pancreatic enzyme replacement (PERT), diabetes management. Increased risk of pancreatic adenocarcinoma."
+    difficulty: medium
+    tags: [chronic pancreatitis, exocrine insufficiency, PERT, pancreatic enzymes, gastroenterology]
+  - front: "What is the role of ERCP in acute pancreatitis?"
+    back: "ERCP within 24h for cholangitis complicating gallstone pancreatitis; ERCP within 72h for ongoing biliary obstruction (CBD stone, dilated CBD) without cholangitis — NOT recommended routinely\n\nCGA guidelines limit ERCP to confirmed or strongly suspected bile duct stones with obstruction or cholangitis. Routine ERCP without biliary obstruction does not improve outcomes. MRCP or EUS less invasive for diagnosis."
+    difficulty: medium
+    tags: [ERCP, gallstone pancreatitis, cholangitis, biliary obstruction, gastroenterology]
+  - front: "A 60-year-old with history of alcohol use has a pancreatic pseudocyst found on CT. When should it be drained?"
+    back: "Drain if: symptomatic (pain, vomiting), infected, growing, compressing adjacent structures — asymptomatic pseudocysts can be observed regardless of size\n\nPancreatic pseudocysts develop 4-6 weeks after acute pancreatitis. Most resolve spontaneously. EUS-guided drainage is preferred over surgical or percutaneous drainage. Walled-off necrosis requires step-up approach."
+    difficulty: medium
+    tags: [pancreatic pseudocyst, drainage indications, EUS, gastroenterology]
+  - front: "What features on imaging suggest pancreatic adenocarcinoma vs. chronic pancreatitis?"
+    back: "Pancreatic cancer: hypoechoic/hypodense mass, upstream ductal dilation (double duct sign: dilated CBD + PD), vascular invasion; chronic pancreatitis: ductal stones, parenchymal calcifications, irregular ductal dilation\n\nDouble duct sign (dilated CBD and pancreatic duct) is classic for pancreatic head adenocarcinoma. CA 19-9 elevated but not specific. EUS + biopsy for tissue diagnosis. Most cases are unresectable at diagnosis."
+    difficulty: hard
+    tags: [pancreatic cancer, double duct sign, chronic pancreatitis, CA 19-9, gastroenterology]
+  - front: "What is autoimmune pancreatitis (AIP) and how does it differ from pancreatic cancer?"
+    back: "AIP Type 1 (IgG4-related): diffuse sausage-shaped pancreas, elevated IgG4, responds dramatically to steroids; Type 2: UC-associated, IgG4 normal\n\nAIP mimics pancreatic cancer on imaging. Key distinguishing features: diffuse pancreatic enlargement, halo/capsule-like rim, elevated serum IgG4 (>2x ULN in Type 1). Steroid trial appropriate when AIP suspected (avoid unnecessary Whipple)."
+    difficulty: hard
+    tags: [autoimmune pancreatitis, IgG4, AIP, pancreatic cancer mimicker, gastroenterology]
+  - front: "What is the management of pancreatic exocrine insufficiency?"
+    back: "Pancreatic enzyme replacement therapy (PERT) with meals: lipase ≥40,000 units with main meals, 20,000 units with snacks; monitor fat-soluble vitamin levels\n\nPERT taken with first bite of meal and immediately before eating fat-containing foods. Dose titrated to reduce steatorrhea. Fat-soluble vitamins (A, D, E, K) supplementation required. Proton pump inhibitors may improve PERT efficacy."
+    difficulty: medium
+    tags: [pancreatic exocrine insufficiency, PERT, enzyme replacement, steatorrhea, gastroenterology]
+  - front: "What are Ranson criteria at admission for pancreatitis?"
+    back: "Age>55, WBC>16k, glucose>11, LDH>350, AST>250. >=3 criteria = severe (15-40% mortality)\n\nBISAP simpler alternative. CT severity index assesses necrosis. Atlanta: mild/moderate/severe."
+    difficulty: hard
+    tags: [pancreatitis, Ranson]
+  - front: "What is initial management of acute pancreatitis?"
+    back: "Aggressive IV fluids (LR), analgesics, early oral feeding when tolerated, ERCP if cholangitis\n\nEarly enteral preferred. No prophylactic antibiotics for sterile necrosis. Cholecystectomy before discharge for gallstone pancreatitis."
+    difficulty: medium
+    tags: [pancreatitis, management]
+  - front: "What are the Ranson criteria for acute pancreatitis severity (on admission and at 48h)?"
+    back: "Admission: Age >55, WBC >16, Glucose >11 mmol/L, LDH >350, AST >250. At 48h: Hct drop >10%, BUN rise >1.8 mmol/L, Ca <2.0, PaO2 <60, base deficit >4, fluid sequestration >6L. ≥3 criteria = severe.\n\nRanson criteria are historical but still tested. APACHE II ≥8 at 48h or BISAP score are alternative severity scores. Revised Atlanta classification defines severity: mild (no organ failure/complications), moderate (transient organ failure <48h), severe (persistent organ failure >48h)."
+    difficulty: hard
+    tags: [pancreatitis, Ranson, severity, APACHE, GI]
+  - front: "What is the initial management of acute pancreatitis?"
+    back: "Aggressive IV fluid resuscitation (lactated Ringer's preferred, goal-directed 1.5 mL/kg/h initially), pain control (IV hydromorphone or fentanyl, avoid morphine historically though evidence weak), NPO initially then early oral feeding as tolerated (within 24h if mild), no prophylactic antibiotics.\n\nEarly aggressive fluid resuscitation reduces organ failure and necrosis. LR preferred over NS (less SIRS, lower CRP). Early enteral nutrition (within 24-48h) reduces infections and mortality compared to prolonged NPO. ERCP only indicated for cholangitis or persistent biliary obstruction."
+    difficulty: hard
+    tags: [pancreatitis, acute, fluid resuscitation, nutrition, management, GI]
+  - front: "When are antibiotics indicated in acute pancreatitis?"
+    back: "Only for: infected pancreatic necrosis (confirmed by CT-guided FNA or clinical deterioration with gas in necrosis on CT), concurrent cholangitis, or other documented infections. NOT for sterile necrosis prophylaxis.\n\nProphylactic antibiotics do NOT reduce mortality or infected necrosis in RCTs and increase fungal infections. If infected necrosis suspected: carbapenems (meropenem) have best pancreatic tissue penetration. Step-up approach: percutaneous drainage → endoscopic necrosectomy → surgical necrosectomy."
+    difficulty: hard
+    tags: [pancreatitis, antibiotics, necrosis, infected, GI]
+  - front: "What is the role and timing of ERCP in gallstone pancreatitis?"
+    back: "Urgent ERCP (<24h) ONLY if concurrent cholangitis or persistent biliary obstruction (rising bilirubin, dilated CBD). NOT indicated for predicted mild gallstone pancreatitis without obstruction. Cholecystectomy during same admission (within 48h of resolution) for mild disease.\n\nThe AGA/CAG recommend against routine early ERCP for gallstone pancreatitis without cholangitis. MRCP or EUS can assess for retained CBD stones. Same-admission cholecystectomy for mild pancreatitis reduces recurrence (interval cholecystectomy if severe, after 6 weeks)."
+    difficulty: hard
+    tags: [pancreatitis, ERCP, gallstone, cholangitis, cholecystectomy, GI]
+  - front: "What are the local complications of acute pancreatitis and when do they occur?"
+    back: "Early (<4 weeks): acute peripancreatic fluid collection (APFC), acute necrotic collection (ANC). Late (>4 weeks): pseudocyst (walled-off fluid without solid debris), walled-off necrosis (WON, encapsulated necrosis). Intervene only if symptomatic or infected.\n\nRevised Atlanta classification defines these by timing and content. Pseudocysts are rare and usually resolve spontaneously. WON may require drainage if infected or causing symptoms — endoscopic (transmural) drainage preferred over surgical. CT with IV contrast best performed after 72-96h to assess necrosis extent."
+    difficulty: hard
+    tags: [pancreatitis, complications, pseudocyst, necrosis, WON, GI]
+  - front: "What are the common etiologies of acute pancreatitis?"
+    back: "Gallstones (~40%) and alcohol (~30%) account for ~70%. Others: hypertriglyceridemia (>11.3 mmol/L), post-ERCP, drugs (azathioprine, valproic acid, didanosine, GLP-1 agonists), autoimmune, pancreas divisum, malignancy, hypercalcemia, trauma, scorpion sting.\n\nIf no clear etiology after initial workup (RUQ US, lipids, alcohol history): consider EUS (microlithiasis, small tumors), MRCP (anatomic variants), IgG4 (autoimmune pancreatitis). Idiopathic pancreatitis requires thorough investigation as 10-20% have occult biliary cause. Genetic testing (PRSS1, SPINK1, CFTR) for recurrent pancreatitis."
+    difficulty: medium
+    tags: [pancreatitis, etiology, gallstones, alcohol, drug-induced, GI]
+  - front: "What are the features of autoimmune pancreatitis (AIP) Type 1 vs Type 2?"
+    back: "Type 1: older males, elevated IgG4, sausage-shaped pancreas on CT, associated with IgG4-related disease (sclerosing cholangitis, retroperitoneal fibrosis). Type 2: younger, no IgG4 elevation, associated with IBD (UC), granulocytic epithelial lesions (GELs). Both respond dramatically to steroids.\n\nAIP Type 1 can mimic pancreatic cancer. Diagnosis: HISORt criteria (Histology, Imaging, Serology, Other organ involvement, Response to steroids). Elevated IgG4 >2x ULN is suggestive but not pathognomonic. Trial of steroids with response monitoring can help differentiate from malignancy."
+    difficulty: hard
+    tags: [pancreatitis, autoimmune, IgG4, AIP, IBD, GI]
+  - front: "What are the key features and management of chronic pancreatitis?"
+    back: "Features: chronic abdominal pain, exocrine insufficiency (steatorrhea, weight loss), endocrine insufficiency (diabetes). Diagnosis: CT (calcifications, duct dilation), MRCP/EUS. Management: pain control, pancreatic enzyme replacement (PERT) with meals, fat-soluble vitamin supplementation (ADEK), diabetes management, alcohol/smoking cessation.\n\nPERT dose: lipase 40,000-50,000 units with meals, 25,000 with snacks. Add PPI if poor response (acid degrades enzymes). Fecal elastase <200 μg/g confirms exocrine insufficiency. Endoscopic therapy or surgery (Frey/Puestow) for ductal obstruction. Increased pancreatic cancer risk (4-8%)."
+    difficulty: hard
+    tags: [pancreatitis, chronic, PERT, exocrine, steatorrhea, GI]
+  - front: "What is the BISAP score for acute pancreatitis?"
+    back: "B=BUN >25 mg/dL, I=Impaired mental status, S=SIRS (≥2 criteria), A=Age >60, P=Pleural effusion. Score ≥3 predicts severe pancreatitis, organ failure, and increased mortality.\n\nBISAP can be calculated within 24h of admission (advantage over Ranson which requires 48h). Simpler than APACHE II. SIRS criteria: HR >90, RR >20, Temp >38 or <36, WBC >12 or <4. Used alongside clinical assessment for disposition decisions (ICU vs ward)."
+    difficulty: medium
+    tags: [pancreatitis, BISAP, severity, scoring, prognosis, GI]
+  - front: "What are the systemic complications of severe acute pancreatitis?"
+    back: "Organ failure: respiratory (ARDS, most common), renal (AKI), cardiovascular (shock). Also: DIC, abdominal compartment syndrome, splanchnic vein thrombosis (splenic/portal/SMV), pseudoaneurysm with hemorrhage.\n\nPersistent organ failure (>48h) defines severe pancreatitis per Revised Atlanta and carries 30-50% mortality. Marshall scoring system (Cr, PaO2/FiO2, SBP) used for organ failure assessment. Splanchnic vein thrombosis occurs in 10-15% — anticoagulate only if symptomatic or extensive. Pseudoaneurysm bleeding: angiographic embolization first-line."
+    difficulty: hard
+    tags: [pancreatitis, severe, organ failure, ARDS, DIC, GI]
+  - front: "What are the endocrine and exocrine functions of the pancreas?"
+    back: "Endocrine (islets of Langerhans): alpha cells → glucagon; beta cells → insulin; delta cells → somatostatin. Exocrine: digestive enzymes including amylase, lipase, trypsin, chymotrypsin, and carboxypeptidase.\n\nThe pancreas has dual function. Endocrine products regulate blood glucose homeostasis. Exocrine products are secreted into the duodenum via the pancreatic duct to digest carbohydrates (amylase), fats (lipase), and proteins (trypsin, chymotrypsin, carboxypeptidase)."
+    difficulty: easy
+    tags: [pancreas, endocrine, exocrine, insulin, glucagon, digestive enzymes]
+  - front: "What are the 4 parts of the pancreas?"
+    back: "Head (includes uncinate process), Neck, Body, and Tail. The major pancreatic duct connects to the common bile duct just before the ampulla of Vater.\n\nThe head of the pancreas lies within the C-loop of the duodenum. Pancreatic cancer in the head causes obstructive jaundice (Courvoisier's sign). The tail of the pancreas is near the hilum of the spleen, explaining why splenic injury can accompany pancreatitis."
+    difficulty: easy
+    tags: [pancreas anatomy, ampulla of Vater, uncinate process, pancreatic duct]
+  - front: "What is the role of ERCP versus MRCP in the evaluation of pancreatic/biliary duct disease?"
+    back: "MRCP is nearly as sensitive as ERCP for determining bile duct obstruction but less accurate in determining the cause (tumour vs. stone vs. stricture). ERCP is indicated when therapeutic intervention is likely required (strong suspicion of stone, stenting, tissue sampling). EUS provides detailed anatomy with potential for sampling/intervention.\n\nMRCP is the non-invasive choice for diagnostic imaging of the biliary tree. ERCP carries procedural risks (post-ERCP pancreatitis ~3–5%) but offers therapeutic capability. EUS is valuable for characterizing pancreatic masses and biliary anatomy without radiation."
+    difficulty: medium
+    tags: [ERCP, MRCP, EUS, biliary obstruction, choledocholithiasis, cholangiopancreatography]
+  - front: "What are Ranson's criteria for acute pancreatitis, and how are they interpreted?"
+    back: "At admission: age >55, WBC >16×10⁹/L, glucose >11 mmol/L, LDH >350 U/L, AST >250 U/L. During initial 48h: Hct drop >10%, BUN rise >1.8 mmol/L, Ca <2 mmol/L, base deficit >4 mmol/L, fluid sequestration >6 L. Score <3 = severe pancreatitis unlikely (2% mortality); score ≥3 = severe pancreatitis likely.\n\nRanson's criteria help predict prognosis in acute pancreatitis. APACHE II score is used for severe acute pancreatitis. Gallstone pancreatitis accounts for ~45% of acute pancreatitis cases."
+    difficulty: hard
+    tags: [pancreatitis, Ranson, prognosis, severity]
+  - front: "What is the most sensitive and specific test for acute pancreatitis?"
+    back: "Serum lipase (more sensitive and specific than amylase). Elevated ALT >150 U/L or AST strongly suggests gallstone etiology.\n\nAmylase is elevated in gallstone pancreatitis but to a lesser degree than in alcoholic pancreatitis. Lipase remains elevated longer. Imaging with CT is reserved for severe cases to evaluate for complications."
+    difficulty: easy
+    tags: [pancreatitis, lipase, amylase, diagnosis]
+  - front: "When is cholecystectomy recommended after an episode of gallstone pancreatitis?"
+    back: "During the same admission. Recurrence is 25-60% if cholecystectomy is not performed.\n\nMost stones pass spontaneously (~90%). Urgent ERCP + sphincterotomy is indicated for impacted CBD stones or coexistent cholangitis. Antibiotics are not indicated for uncomplicated acute pancreatitis."
+    difficulty: medium
+    tags: [gallstone pancreatitis, cholecystectomy, ERCP, management]
+  - front: "What are the local and systemic complications of acute pancreatitis?"
+    back: "Local: acute fluid collections, walled-off pancreatic pseudocyst (>4 wk), abscess/infection, necrosis. Systemic: splenic/mesenteric/portal vein thrombosis, pancreatic ascites/pleural effusion, DM, ARDS/sepsis/multiorgan failure, coagulopathy/DIC, severe hypocalcemia.\n\nNecrotizing pancreatitis is managed with drain placement and debridement if refractory to medical management, septic, or without other sources of sepsis. Pancreatic pseudocysts develop a non-epithelialized fibrous wall and up to 40% resolve spontaneously."
+    difficulty: medium
+    tags: [pancreatitis, complications, pseudocyst, necrosis]
+  - front: "What are the indications for surgical management of chronic pancreatitis?"
+    back: "Failure of medical treatment (debilitating pain), pseudocyst complications (persistence, hemorrhage, infection, rupture), CBD/duodenal obstruction, pancreatic fistula, variceal hemorrhage from splenic vein obstruction, anatomical abnormality causing recurrent pancreatitis, rule out pancreatic cancer (present in 15%).\n\nPreoperative CT and/or ERCP are mandatory to delineate anatomy. The Puestow procedure (lateral pancreaticojejunostomy) improves pain in 80% of patients when the ductal system is dilated."
+    difficulty: hard
+    tags: [chronic pancreatitis, surgery, indications, Puestow]
+  - front: "What is a pancreatic pseudocyst, and when is drainage contraindicated?"
+    back: "A localized fluid collection rich in pancreatic enzymes with a non-epithelialized fibrous/granulation wall, complicating acute or chronic pancreatitis. Pseudoaneurysm is an absolute contraindication to endoscopic drainage; must embolize first.\n\nThe cyst wall must be mature (4-6 weeks) before drainage. Asymptomatic pseudocysts: expectant management with CT/MRI in 3-6 months. Symptomatic options: endoscopic drainage (transmural or transpapillary), surgical drainage (cystogastrostomy, cystoduodenostomy, cystojejunostomy), or percutaneous drainage."
+    difficulty: medium
+    tags: [pseudocyst, pancreatitis, drainage, pseudoaneurysm]
+  - front: "What is the most clearly established risk factor for pancreatic cancer?"
+    back: "Smoking (2-5x increased risk).\n\nPancreatic cancer is the 4th most common cause of cancer-related mortality in both men and women in Canada. Other risk factors include DM, chronic pancreatitis, obesity, heavy alcohol use, high fat/low fibre diet, partial gastrectomy, cholecystectomy, and chemical exposure (p-naphthylamine, benzidine)."
+    difficulty: easy
+    tags: [pancreatic cancer, risk factors, smoking]
+  - front: "Which location of pancreatic cancer tends to present later and is more often unresectable at diagnosis?"
+    back: "Body or tail of the pancreas (30% of cases); ~80% are unresectable at diagnosis.\n\nPancreatic head tumours (70%) present earlier with jaundice, steatorrhea, and weight loss. Body/tail tumours present with vague mid-epigastric pain and weight loss but without early jaundice, leading to later detection. Vague abdominal pain with weight loss in a patient >50 is pancreatic cancer until proven otherwise."
+    difficulty: medium
+    tags: [pancreatic cancer, presentation, body tail, resectability]
+  - front: "What is the most useful serum tumour marker for pancreatic cancer?"
+    back: "CA 19-9.\n\nCA 19-9 is used for monitoring response to treatment and detecting recurrence. It is not sensitive enough for screening. CEA may also be elevated. LFTs may show obstructive jaundice pattern (elevated ALP and bilirubin) in head-of-pancreas tumours."
+    difficulty: easy
+    tags: [pancreatic cancer, CA 19-9, tumour marker]
+  - front: "What are the criteria for resectable pancreatic cancer and what surgical procedure is performed?"
+    back: "Resectable: no involvement of liver, peritoneum, or major vasculature (hepatic artery, SMA, SMV, portal vein, IVC, aorta), no distant metastasis. Surgery: Whipple procedure (pancreaticoduodenectomy) for head tumours; distal pancreatectomy + splenectomy for body/tail tumours. Adjuvant chemotherapy recommended (gemcitabine + capecitabine or 5-FU/leucovorin).\n\nOnly 10-20% of pancreatic cancers are resectable. The Whipple procedure carries <5% mortality. Five-year survival after surgical resection is 20% vs. 1% overall. Palliative chemotherapy options include gemcitabine + nab-paclitaxel or FOLFIRINOX."
+    difficulty: hard
+    tags: [pancreatic cancer, Whipple, resectability, surgery]
+  - front: "What are the most important poor prognostic indicators for pancreatic cancer?"
+    back: "Lymph node status, margin status (R1), tumour size >3 cm, and perineural invasion.\n\nMedian survival for unresectable disease is 3-6 months if metastatic and 8-12 months if locally advanced. Overall 5-year survival for all patients is only 1%. Neoadjuvant chemoradiation improves survival in borderline resectable pancreatic cancer."
+    difficulty: medium
+    tags: [pancreatic cancer, prognosis, perineural invasion, lymph nodes]
+  - front: "A 60-year-old man presents with weight loss, vague mid-epigastric pain, and new onset diabetes. CT shows a 3 cm mass in the body of the pancreas. What percentage is likely unresectable and what is the expected 5-year survival?"
+    back: "~80% of body/tail tumours are unresectable at diagnosis. Overall 5-year survival for all pancreatic cancer patients is 1%; following surgical resection it rises to 20%.\n\nBody/tail pancreatic tumours present insidiously without early jaundice, leading to late detection. New onset diabetes in a patient >50 with weight loss and abdominal pain should raise suspicion for pancreatic cancer until proven otherwise."
+    difficulty: hard
+    tags: [pancreatic cancer, body tail, prognosis, unresectable]

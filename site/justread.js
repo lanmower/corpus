@@ -1,10 +1,11 @@
 // just-read mode -- distraction-free reading on subject pages. corpus.justread.v1
-const KEY = 'corpus.justread.v1';
+import { skey } from './syllabus.js';
+const KEY = () => skey('justread.v1');
 
 export function load() {
-    try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; }
+    try { return JSON.parse(localStorage.getItem(KEY()) || '{}'); } catch { return {}; }
 }
-export function save(map) { try { localStorage.setItem(KEY, JSON.stringify(map)); } catch {} }
+export function save(map) { try { localStorage.setItem(KEY(), JSON.stringify(map)); } catch {} }
 
 export function isOn(subject) {
     return !!load()[subject];

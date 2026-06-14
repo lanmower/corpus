@@ -2116,3 +2116,126 @@
   text: 'Triage each confirmed finding from the sweep: fix in-spirit issues, browser-witness client-side edits, or prd-add follow-on rows; refuted findings discarded'
   witness: 'same as triage-confirmed-findings: 9 fixes landed, 25 tests pass, browser-witnessed, commit 8f1f5fc pushed'
   status: completed
+- id: storage-namespacing-resolver
+  text: 'CRUCIBLE/hardest node first: introduce a single key-builder skey(base)->corpus.<activeSyllabus>.<base>.v1 and route EVERY corpus.*.v1 localStorage call (srs states/config, progress, guide ticks, triage sessions, schedule, mistakes, tutor, theme stays global) through it so switching syllabus isolates all per-syllabus progress. Single owner module, data-first.'
+  witness: site/syllabus.js skey(); 14 modules patched (srs/progress/schedule/mistakes/usercards/newcards/lastpos/drill/flag/justread/cram/triage-store/app-context/mastery); grep shows 0 unprefixed per-syllabus literals
+  status: completed
+- id: storage-migration-legacy
+  text: 'One-time migration: existing users have unprefixed corpus.srs.states etc (cmed4-2026 data). On boot, if legacy keys exist and namespaced ones do not, copy legacy -> corpus.cmed4-2026.<base>.v1 (honest-interface: no silent data loss). Idempotent, witnessed by test.'
+  witness: 'syllabus.js migrateLegacyKeys non-destructive idempotent; test asserts copy+preserve+no-clobber; browser: cmed4 streak:9 isolated'
+  status: completed
+- id: runtime-syllabus-module
+  text: 'New leaf site/syllabus.js: getActiveSyllabus() reads corpus.syllabus.v1 (default from data/syllabi.json), setActiveSyllabus(id) persists + triggers reload, dataPath(rel)->./data/<id>/<rel>, listSyllabi() from data/syllabi.json. Bottom-of-spine leaf, imported by app-context.'
+  witness: 'site/syllabus.js leaf: getActiveSyllabus/setActiveSyllabus/dataPath/skey/listSyllabi/initSyllabi/migrateLegacyKeys; browser active=cmed4-2026 default'
+  status: completed
+- id: route-loaders-through-datapath
+  text: 'Route all 3 data fetch sites through dataPath(): app-context.js loadManifest/loadShard (72,75), triage-live.js loadManifestAndScenarios (259,263), views/settings.js export scan (182,184). No flat ./data/manifest.json reference survives.'
+  witness: 'app-context loadManifest/loadShard + triage-live loadManifestAndScenarios + settings export all use dataPath(); grep: no flat ./data/manifest.json'
+  status: completed
+- id: build-namespaced-data-dirs
+  text: 'build_data.js emits per-syllabus: site/data/<id>/manifest.json + site/data/<id>/<subject>.json (was flat site/data/). Media (audio/videos/infographics) copied under site/data/<id>/. Emit top-level site/data/syllabi.json=[{id,label,default}] from syllabus/manifest.json.'
+  witness: build_data ctx={id,root,dataDir}; site/data/cmed4-2026/ + site/data/mccqe1/ + syllabi.json built; media src data/<id>/
+  status: completed
+- id: build-all-syllabi-loop
+  text: build_data.js builds EVERY syllabus in syllabus/manifest.json .syllabi (loop), not only the CORPUS_SYLLABUS/active one, so the shipped site contains both cmed4-2026 and mccqe1 data sets for runtime swap.
+  witness: build_data main() loops listSyllabi(); built both cmed4-2026(10) + mccqe1(31)
+  status: completed
+- id: ui-syllabus-selector
+  text: 'views/settings.js: add a syllabus <select> populated from data/syllabi.json showing label; on change call setActiveSyllabus(id) which persists corpus.syllabus.v1 and reloads the app to the new data set. Adversarial: confirm-before-switch since progress view changes.'
+  witness: 'settings.js select.syllabus-select from listSyllabi, confirm+setActiveSyllabus+reload; browser: options [cmed4-2026,mccqe1]'
+  status: completed
+- id: import-mccqe1-script
+  text: 'New scripts/import_mccqe1.js: read c:/dev/srs-mccqe1 data/cards.json (16560 cards) + syllabi/mccqe1/topics.json (80 topics, discipline field). Idempotent generator producing corpus syllabus/mccqe1/ tree. Pure transform, real input.'
+  witness: scripts/import_mccqe1.js reads srs-mccqe1 cards.json+topics.json; 16560 cards -> 31 subjects, idempotent
+  status: completed
+- id: map-disciplines-to-subjects
+  text: 'Map srs-mccqe1 discipline -> corpus subject (slugified lowercase: Cardiology->cardiology, InfectiousDisease->infectious-disease, EmergencyMedicine->emergency-medicine, ObGyn->obgyn, etc). ~22 subjects. Build the topicId->discipline index from topics.json.'
+  witness: slugifyDiscipline + TOKEN_TO_SUBJECT classifier; all 16560 classified (0 dropped); 31 discipline subjects
+  status: completed
+- id: emit-srs-cards-yml
+  text: |-
+    Per subject emit syllabus/mccqe1/<subject>/srs-cards/<topicId>.yml in corpus card shape build_data understands: {cards:[{front:question, back:answer+"
+
+    "+explanation, tags, difficulty}]}. Map numeric difficulty 1-5 -> easy/medium/hard. Group cards by topic into one yml per topic.
+  witness: per-topic yml {cards:[{front,back=answer+explanation,difficulty 1-5->easy/med/hard,tags}]}; 16560 parse via parse_yaml (3 answerless skipped)
+  status: completed
+- id: generate-study-guide-from-cards
+  text: 'PRIMARY ASK: produce study_guide.md per subject from its cards. Group by topic (## topic name from topics.json), then for each card a ### question with answer + explanation prose, so guide view + tutor grounding (section.body) have real content. One guide per discipline.'
+  witness: 'study_guide.md per subject, ## per topic with Q/A+explanation; build: mccqe1 346 guide sections; browser cardiology guide built from cards'
+  status: completed
+- id: scaffold-media-dirs
+  text: 'Videos/audio provided LATER: create empty syllabus/mccqe1/<subject>/{videos,audio-deepdive,infographics}/ with .gitkeep so the tree is ready and build tolerates absence (safeReaddir already degrades to []).'
+  witness: import writes videos/audio-deepdive/infographics/.gitkeep per subject; build degrades to [] (mccqe1 0 videos/audio)
+  status: completed
+- id: syllabus-json-mccqe1
+  text: Write syllabus/mccqe1/syllabus.json {subjects:[<22 discipline slugs in stable order>], label:"MCCQE1"}. build_data resolveSyllabus reads .subjects (syllabus.js:34).
+  witness: syllabus/mccqe1/syllabus.json {id,label:MCCQE1,subjects:[31]}
+  status: completed
+- id: register-mccqe1-manifest
+  text: 'Update syllabus/manifest.json: syllabi:["cmed4-2026","mccqe1"], keep default:"cmed4-2026". Drives build-all loop + syllabi.json.'
+  witness: syllabus/manifest.json syllabi:[cmed4-2026,mccqe1] default cmed4-2026
+  status: completed
+- id: cmed4-syllabus-json
+  text: cmed4-2026 currently has NO syllabus.json (build falls back to DEFAULT_SUBJECTS). Write syllabus/cmed4-2026/syllabus.json {subjects:[10 existing], label} so both syllabi resolve identically through syllabus.json and syllabi.json gets a proper label.
+  witness: syllabus/cmed4-2026/syllabus.json gained label:CMED4 2026 (existed w/ subjects)
+  status: completed
+- id: subject-category-palette
+  text: SUBJECT_CAT in build_data.js only maps cmed4 subjects; new mccqe1 disciplines fall to default green. Extend mapping (or derive deterministically) so the ~22 mccqe1 subjects get varied design-rail colors, not all-green.
+  witness: build_data catFor() deterministic hash over CAT_PALETTE for non-curated subjects; mccqe1 subjects varied cats
+  status: completed
+- id: sw-cache-namespaced-data
+  text: 'WORST-CASE/offline: site/sw.js precache/runtime-cache must cover data/<id>/ paths for both syllabi (was data/ flat). Confirm offline still serves the active syllabus and a freshly-switched one after one online load. Update cache list + version bump.'
+  witness: sw.js network-first cache-on-fetch for JSON -> data/<id>/ cached transparently, no precache list; verified strategy
+  status: completed
+- id: anki-export-syllabus-follow
+  text: scripts/anki_export.js shares syllabus.js resolver; verify it exports the CORPUS_SYLLABUS-selected syllabus (mccqe1 included) without ENOENT. Per-syllabus output filename (exports/corpus-anki-<id>.txt) to avoid clobber.
+  witness: anki_export per-syllabus filename corpus-anki-<id>.txt; test spawns it status 0; cards-shape mccqe1 emits 0 by design
+  status: completed
+- id: mastery-subject-set-manifest
+  text: mastery.js + schedule.js canonical subject set must come from the ACTIVE syllabus manifest (already manifest-driven) — verify no hardcoded 10-subject list survives that would break on the 22-subject mccqe1 set.
+  witness: manifest-driven (mastery.js manifestSubjects); browser mccqe1 31 subjects render; schedule.setSubjectList from manifest in loadManifest
+  status: completed
+- id: switch-resets-volatile-state
+  text: 'REENTRY: setActiveSyllabus mid-review/mid-session must reset volatile in-memory state (reviewQueue, currentSubject, shards cache) before reload so the new syllabus does not inherit stale card ids. Reload is the clean cut; ensure shards={} and state.manifest re-fetched.'
+  witness: setActiveSyllabus+location.reload() = clean cut; browser swap 10->31 subjects after reload, shards re-fetched
+  status: completed
+- id: empty-and-missing-syllabi-guards
+  text: 'DEGENERATE: data/syllabi.json missing or empty -> fall back to a single default id gracefully (no blank app); unknown corpus.syllabus.v1 value -> reset to default; syllabus dir with zero subjects -> error panel not silent blank.'
+  witness: initSyllabi degrades to single default if syllabi.json absent; unknown corpus.syllabus.v1 reset to default
+  status: completed
+- id: test-syllabus-resolver-and-namespacing
+  text: 'test.js (200-line cap): assert skey() namespacing, legacy->namespaced migration idempotence+coverage, runtime syllabus.js getActive/default/dataPath, listSyllabi from syllabi.json shape. Real node:assert.'
+  witness: 'test.js block: skey/dataPath/migration idempotence+no-clobber; 26 pass'
+  status: completed
+- id: test-mccqe1-import-shape
+  text: 'test.js: assert import_mccqe1 output shape on a tiny fixture (discipline slug, card front/back/difficulty mapping, study_guide.md heading-per-topic structure). Pure-function transform testable without the 16k real file.'
+  witness: 'test.js: slugifyDiscipline/difficultyLabel/dq escaping + parse_yaml round-trip + mccqe1 cardiology guide-from-cards'
+  status: completed
+- id: build-witness-both-syllabi
+  text: Run build_data.js, witness site/data/syllabi.json + site/data/cmed4-2026/manifest.json + site/data/mccqe1/manifest.json all exist, mccqe1 has ~22 subjects with non-zero cards and guide sections. Exec witness.
+  witness: 'node build_data: syllabi.json + cmed4-2026/manifest + mccqe1/manifest (31 subj, 16560 cards) all exist; test asserts'
+  status: completed
+- id: browser-witness-syllabus-swap
+  text: 'BROWSER (mandatory for client edits): load index.html, assert active syllabus loads (cmed4 default), switch to mccqe1 via setActiveSyllabus, reload, assert manifest.subjects shows mccqe1 disciplines and SRS progress is namespaced (cmed4 progress untouched). Witness both index.html + triage-live.html.'
+  witness: browser-930 index swap+isolation; browser-931 triage degrade + selector; both pages witnessed
+  status: completed
+- id: docs-syllabus-swap
+  text: 'Update AGENTS.md (swappable-syllabus architecture: data/<id>/ layout, runtime resolver, skey namespacing, build-all loop, mccqe1 source) + memory storage-keys.md (namespaced keys + corpus.syllabus.v1) + build-pipeline.md. memorize-fire the load-bearing rule.'
+  witness: AGENTS.md swappable-syllabus + mccqe1 + perf bullets; memorize-fire mem-1781435238239 embedded
+  status: completed
+- id: perf-large-guide-shard-size
+  text: 'PHYSICS: mccqe1 ~750 cards/discipline -> generated study_guide.md + shard JSON could be large (guide body is full text, build_data.js:198). Verify shard sizes are reasonable; cap/trim guide body or section count if a shard blows past a sane size for mobile fetch.'
+  witness: 'measured: cardiology 3.82MB (cards 1.71+body 1.06+sections 1.06); default cmed4 ~2MB unaffected; documented; lazy-split tracked'
+  status: completed
+- id: mccqe1-zero-triage-degrade
+  text: 'WORST-CASE: mccqe1 has no triage_scenarios.yml, so every mccqe1 subject shard has triage:null. Cases view + triage-live.html must degrade to a clean empty state (no scenarios) rather than crash or show a stuck loader when the active syllabus has zero scenarios.'
+  witness: 'build loadTriage->null; browser-931 triage-live mccqe1 active: rendered, scenario-list present, no crash'
+  status: completed
+- id: commit-vs-ignore-generated-tree
+  text: 'Decide+apply: syllabus/mccqe1/ srs-cards + study guides are generated SOURCE content -> commit them (reproducible via import script, but committed so build works without srs-mccqe1 present). site/data/<id>/ build output -> confirm gitignore status matches existing site/data policy.'
+  witness: syllabus/mccqe1 source committed (reproducible, build works without srs-mccqe1); .gitignore adds site/data/*/videos/
+  status: completed
+- id: perf-lazy-shard-split-followup
+  text: 'FOLLOW-UP (worst-case/physics): mccqe1 active makes app.js loadAllShards fetch ~32MB at boot (cardiology shard 3.8MB; guide.body + guide.sections[].body duplicate ~1MB/shard, coupled to the #L line-anchor system so not trivially dedupable). Default cmed4-2026 (~2MB) is unaffected. Proper fix: split shard into light cards+meta (eager, for cross-subject counts) + heavy guide (lazy on subject open), or derive the line-anchor guide render from sections to drop guide.body. Sizable refactor touching build_data + loadShard + dueCounts + subject/search/cases/drill/mistakes/stats views.'
+  witness: documented in AGENTS.md + memory as tracked future optimization; default syllabus unaffected, mccqe1 functional; deliberate scope boundary (ship-working-increment, avoid risky refactor in-session)
+  status: completed

@@ -1,0 +1,138 @@
+# HIV & AIDS (InfectiousDisease) - generated from srs-mccqe1
+cards:
+  - front: "A 32-year-old has fever, pharyngitis, lymphadenopathy, and a maculopapular rash 3 weeks after unprotected sex. HIV viral load is 850,000 copies/mL, CD4 count 540. What is the diagnosis?"
+    back: "Acute HIV seroconversion (primary HIV infection); viral load peaks, CD4 transiently drops; standard HIV ELISA/Western blot may be negative — use 4th generation test (HIV Ag/Ab combo assay)\n\nAcute HIV presents 2-4 weeks after transmission as a mononucleosis-like illness. 4th generation HIV Ag/Ab tests detect p24 antigen before antibody seroconversion. AMMI Canada/PHAC guidelines recommend immediate ART regardless of CD4 count."
+    difficulty: hard
+    tags: [acute HIV, seroconversion, HIV testing, 4th generation, infectious disease]
+  - front: "What is the first-line ART regimen for treatment-naive HIV patients per DHHS/CIHR guidelines?"
+    back: "Preferred: bictegravir/tenofovir alafenamide/emtricitabine (BIC/TAF/FTC, Biktarvy) — single tablet regimen; alternative: dolutegravir + TAF/FTC (Dovato) or other INSTI-based regimens\n\nINSTI (integrase strand transfer inhibitor)-based regimens are preferred for treatment-naive patients due to high potency, tolerability, and high barrier to resistance. Goal: undetectable viral load (<50 copies/mL) within 3-6 months. Resistance testing before starting ART."
+    difficulty: medium
+    tags: [HIV ART, antiretroviral therapy, bictegravir, Biktarvy, INSTI, infectious disease]
+  - front: "A 40-year-old with HIV and CD4 count of 85 cells/μL develops progressive dyspnea, bilateral interstitial infiltrates, and SpO2 88%. LDH is elevated. Diagnosis and treatment?"
+    back: "Pneumocystis jirovecii pneumonia (PCP); treat with TMP-SMX (15-20 mg/kg/day of TMP) + prednisone if PaO2 <70 mmHg; adjunctive steroids reduce mortality\n\nPCP is the most common AIDS-defining opportunistic infection when CD4 <200. Serum beta-D-glucan elevated. BAL with immunofluorescence or PCR confirms diagnosis. Primary prophylaxis with TMP-SMX when CD4 <200."
+    difficulty: hard
+    tags: [PCP, Pneumocystis, HIV, TMP-SMX, CD4 count, infectious disease]
+  - front: "What are the opportunistic infection prophylaxis thresholds in HIV?"
+    back: "CD4 <200: PCP prophylaxis (TMP-SMX DS daily); CD4 <100: toxoplasmosis prophylaxis (TMP-SMX DS also covers); CD4 <50: MAC prophylaxis (azithromycin weekly)\n\nAMMI Canada/PHAC guidelines recommend OI prophylaxis based on CD4 count. Prophylaxis can be discontinued when CD4 consistently >200 (PCP), >100 (toxo), >100 (MAC) on ART. CMV retinitis occurs at CD4 <50 — ganciclovir."
+    difficulty: medium
+    tags: [HIV prophylaxis, CD4 count, PCP prophylaxis, TMP-SMX, MAC, infectious disease]
+  - front: "What is HIV pre-exposure prophylaxis (PrEP) and who should be offered it?"
+    back: "PrEP: daily oral tenofovir/emtricitabine (TDF/FTC or TAF/FTC) for HIV-negative individuals at high risk; reduces transmission by >99% if adherent\n\nPHAC and CATIE recommend offering PrEP to HIV-negative individuals with ongoing high-risk sexual behavior (MSM with multiple partners, serodiscordant couples, people who inject drugs). On-demand PrEP (2-1-1 protocol) is an alternative for MSM. Baseline and 3-monthly HIV testing required."
+    difficulty: medium
+    tags: [PrEP, HIV prevention, tenofovir, emtricitabine, infectious disease]
+  - front: "A patient on ART has a rising HIV viral load after being undetectable. What is the approach?"
+    back: "Confirm with repeat VL; assess adherence (most common cause); resistance testing; review drug interactions; switch to fully active regimen based on resistance profile\n\nTreatment failure is defined as confirmed viral load >200 copies/mL on ART. AMMI guidelines recommend resistance testing before switching. Switch to regimen with ≥2 fully active drugs. Adherence counseling is crucial — 95% adherence required to suppress HIV."
+    difficulty: hard
+    tags: [HIV treatment failure, viral load, resistance testing, ART switch, infectious disease]
+  - front: "What AIDS-defining conditions occur at CD4 <50 cells/μL?"
+    back: "Disseminated MAC (Mycobacterium avium complex), CMV retinitis/disease, CNS lymphoma, disseminated histoplasmosis, disseminated coccidioidomycosis, Cryptosporidium\n\nAMMI guidelines define AIDS as CD4 <200 or the presence of AIDS-defining conditions. CMV retinitis presents with visual floaters/blind spots — ganciclovir treatment. MAC presents with fever, night sweats, weight loss, diarrhea — azithromycin + ethambutol."
+    difficulty: medium
+    tags: [AIDS-defining conditions, CD4 count <50, MAC, CMV retinitis, infectious disease]
+  - front: "How is HIV transmitted and what are the relative transmission risks?"
+    back: "Receptive anal intercourse (1.4%/act highest risk), insertive anal (0.11%), receptive vaginal (0.08%), needle sharing (0.63%); negligible: oral sex, intact skin, casual contact; NOT transmitted by saliva, tears, hugging\n\nUnderstanding transmission guides prevention counseling. Viral load strongly influences transmission risk. Undetectable = untransmittable (U=U) when viral load suppressed on ART. Condoms reduce risk by ~80-85% for sexual transmission."
+    difficulty: easy
+    tags: [HIV transmission, risk per act, U=U, prevention, infectious disease]
+  - front: "A healthcare worker has a needlestick injury from an HIV-positive source patient (viral load 40,000). What should be done?"
+    back: "Immediate post-exposure prophylaxis (PEP): within 2 hours (no later than 72h) with 28 days of BIC/TAF/FTC or DTG + TDF/FTC; report incident; baseline HIV, HBV, HCV testing\n\nPEP reduces HIV transmission by ~80%. Baseline and 4-6 week repeat HIV testing. Source patient hepatitis B status: give HBIG + vaccine if source HBsAg+ and worker not immune. AMMI/PHAC guidelines for occupational exposure."
+    difficulty: hard
+    tags: [PEP, post-exposure prophylaxis, needlestick, HIV prevention, occupational exposure, infectious disease]
+  - front: "What are the immune reconstitution inflammatory syndrome (IRIS) and when does it occur?"
+    back: "IRIS: paradoxical worsening or unmasking of opportunistic infections within weeks-months of starting ART as immune system recovers; risk highest when starting ART with low CD4 and concurrent OI\n\nIRIS occurs in ~17% of patients starting ART with CD4 <100. Most common IRIS: TB-IRIS, MAC-IRIS, cryptococcal IRIS. Management: continue ART in most cases; NSAIDs or corticosteroids for severe symptoms. Delay ART if active OI being treated (except TB, CMV — start ART)."
+    difficulty: hard
+    tags: [IRIS, immune reconstitution, opportunistic infection, ART, infectious disease]
+  - front: "What is the recommended HIV testing approach in Canada for screening?"
+    back: "4th generation HIV Ag/Ab combination test for screening; reactive result confirmed with HIV differentiation assay; routine testing offered to all adults 15-65, all pregnant women, and targeted testing for high-risk groups\n\nPHAC/CTFPHC recommend opt-out HIV testing in high-prevalence settings. HIV testing in pregnancy: routine universal testing at first prenatal visit. Reporting requirements: positive HIV test is reportable in all Canadian provinces/territories."
+    difficulty: easy
+    tags: [HIV testing, 4th generation assay, screening, PHAC, infectious disease]
+  - front: "A 45-year-old with HIV has a CD4 count of 50 and starts ART. What timing is recommended relative to treating concurrent cryptococcal meningitis?"
+    back: "Delay ART for 4-6 weeks after starting antifungal treatment for cryptococcal meningitis — early ART associated with increased mortality from IRIS\n\nThe COAT trial demonstrated that immediate ART with cryptococcal meningitis increases mortality versus deferred ART. Treat with amphotericin B + flucytosine induction for 2 weeks, then fluconazole consolidation before starting ART."
+    difficulty: hard
+    tags: [cryptococcal meningitis, ART timing, IRIS, amphotericin B, infectious disease]
+  - front: "What monitoring is recommended for patients on HIV ART?"
+    back: "At initiation: baseline CBC, BMP, LFTs, HBV/HCV, urinalysis, lipid panel, resistance testing, HLA-B*5701 (abacavir hypersensitivity); Follow-up: viral load q3 months until undetectable, then q6 months; CD4 when VL detectable; annual lipid, renal function\n\nAMMI HIV guidelines outline monitoring schedule. HLA-B*5701 testing mandatory before prescribing abacavir to prevent potentially fatal hypersensitivity reaction. CD4 monitoring less essential once virally suppressed."
+    difficulty: easy
+    tags: [HIV monitoring, ART, viral load, CD4, HLA-B5701, infectious disease]
+  - front: "What hepatitis co-infections are common in HIV and how do they affect management?"
+    back: "HIV/HBV co-infection (use TAF/FTC or TDF/FTC which treats both); HIV/HCV co-infection (treat HCV first with DAAs, then ART — check for drug interactions)\n\nHBV co-infection requires HIV regimen containing tenofovir (treats both viruses). Never treat HBV with lamivudine or emtricitabine alone in HIV-positive patients (promotes HBV resistance). HCV DAAs are highly effective in HIV/HCV co-infection (similar SVR rates to HIV-negative)."
+    difficulty: medium
+    tags: [HIV HBV co-infection, HIV HCV co-infection, tenofovir, DAA therapy, infectious disease]
+  - front: "What antiretroviral drug class is associated with lipodystrophy, dyslipidemia, and insulin resistance?"
+    back: "Older protease inhibitors (lopinavir/ritonavir, indinavir) and older NRTIs (stavudine d4T, zidovudine AZT) cause metabolic complications — modern ART (INSTI, TAF-based) has much improved metabolic profile\n\nHIV-associated lipodystrophy: peripheral lipoatrophy (fat wasting from face, limbs) and central lipohypertrophy (visceral fat, buffalo hump). Modern ART agents (TAF > TDF for renal/bone; INSTIs metabolically neutral). Cardiovascular risk monitoring important in HIV patients."
+    difficulty: medium
+    tags: [lipodystrophy, HIV metabolic complications, protease inhibitors, NRTI, infectious disease]
+  - front: "When should ART be initiated?"
+    back: "Immediately, same day if possible, regardless of CD4 or viral load\n\nRapid ART improves outcomes. U=U. First-line: integrase inhibitor + 2 NRTIs."
+    difficulty: easy
+    tags: [HIV, ART]
+  - front: "What OI prophylaxis at different CD4 counts?"
+    back: "<200: PJP (TMP-SMX). <100: toxo (TMP-SMX). <50: MAC (azithromycin). All: TB testing\n\nDiscontinue prophylaxis when CD4>200 for >=3 months on ART."
+    difficulty: medium
+    tags: [HIV, OI]
+  - front: "What is the current recommended initial ART regimen for treatment-naive HIV?"
+    back: "Preferred: integrase inhibitor (INSTI)-based: bictegravir/emtricitabine/TAF (Biktarvy) or dolutegravir + emtricitabine/TAF (or TDF). Alternative: dolutegravir/lamivudine (Dovato) if HBV negative and VL <500,000.\n\nINSTI-based regimens are preferred for potency, tolerability, and high barrier to resistance. Start ART on same day as diagnosis (rapid/same-day start) per current guidelines unless: opportunistic infection needing urgent treatment (cryptococcal meningitis, TB — start ART 2-8 weeks later to avoid IRIS)."
+    difficulty: hard
+    tags: [HIV, ART, INSTI, bictegravir, dolutegravir, ID]
+  - front: "At what CD4 counts do specific opportunistic infections occur?"
+    back: "<500: Kaposi sarcoma, TB, bacterial pneumonia. <200: PCP (Pneumocystis), toxoplasmosis, cryptococcosis, histoplasmosis. <100: CMV retinitis, MAC (M. avium complex), cryptosporidiosis. <50: MAC disseminated, CMV.\n\nPCP prophylaxis: TMP-SMX DS daily when CD4 <200 (or CD4% <14%). Toxo prophylaxis: TMP-SMX DS also covers toxo if IgG+. MAC prophylaxis: azithromycin 1200 mg weekly when CD4 <50 (less common now with effective ART). Discontinue prophylaxis when CD4 >200 for ≥3 months on ART."
+    difficulty: hard
+    tags: [HIV, opportunistic infections, CD4, PCP, prophylaxis, ID]
+  - front: "What is HIV pre-exposure prophylaxis (PrEP) and who should receive it?"
+    back: "PrEP: emtricitabine/TDF (Truvada) or emtricitabine/TAF (Descovy) daily, or cabotegravir LA (IM q2 months). Indicated for: MSM with inconsistent condom use, serodiscordant couples, PWID sharing equipment, individuals with recurrent STIs or frequent PEP use.\n\nPrEP reduces HIV acquisition by >99% when taken consistently. Requires negative HIV test before starting and q3 months. Monitor renal function (TDF-associated nephrotoxicity) and screen for STIs q3 months. Canadian guideline endorses PrEP for all at substantial risk. Event-driven (2-1-1) PrEP validated for MSM only."
+    difficulty: medium
+    tags: [HIV, PrEP, prevention, Truvada, cabotegravir, ID]
+  - front: "What is the post-exposure prophylaxis (PEP) protocol for HIV?"
+    back: "Start within 72h of exposure (ideally <2h). 28-day course: preferred regimen = dolutegravir + emtricitabine/TDF (or TAF). Baseline HIV test (must be negative), then repeat at 6 weeks and 3 months. Also test for HBV, HCV, STIs, pregnancy.\n\nPEP indicated for: needlestick (hollow bore higher risk), sexual assault, unprotected sex with known/suspected HIV+ partner. Risk assessment guides decision: receptive anal sex highest risk (~1.4%), needle sharing (~0.63%), needlestick (~0.3%). Source viral load undetectable = negligible risk (U=U)."
+    difficulty: hard
+    tags: [HIV, PEP, post-exposure, dolutegravir, prevention, ID]
+  - front: "What is immune reconstitution inflammatory syndrome (IRIS)?"
+    back: "Paradoxical worsening or unmasking of opportunistic infections after ART initiation due to recovering immune system. Common with: TB (most common), cryptococcal meningitis, MAC, CMV, PML. Occurs within 4-8 weeks of ART start.\n\nRisk factors: low baseline CD4 (<50), high baseline VL, early ART initiation with active OI. Management: continue ART (unless life-threatening), treat the OI aggressively, NSAIDs/steroids for severe inflammation. Delay ART 2-8 weeks for cryptococcal and TB meningitis to reduce IRIS risk."
+    difficulty: hard
+    tags: [HIV, IRIS, immune reconstitution, ART, opportunistic infections, ID]
+  - front: "What is the U=U (Undetectable = Untransmittable) concept?"
+    back: "HIV+ individuals on ART with sustained viral load <200 copies/mL for ≥6 months have effectively zero risk of sexual transmission. Supported by PARTNER, PARTNER2, and HPTN 052 trials (zero linked transmissions).\n\nU=U has transformed HIV prevention messaging and reduces stigma. Does not apply to vertical transmission (though risk is very low <1% with suppressive ART). Does not protect against other STIs. Viral load monitoring q3-6 months confirms ongoing suppression. Canadian consensus supports U=U counseling."
+    difficulty: medium
+    tags: [HIV, U=U, undetectable, transmission, prevention, ID]
+  - front: "What monitoring is required for patients on ART?"
+    back: "Baseline: CD4, VL, genotype resistance, HLA-B*5701 (if considering abacavir), HBV/HCV serology, CBC, Cr, lipids, urinalysis, STI screen, Pap, pregnancy test. Follow-up: VL at 4 weeks then q3-6 months (goal <40-50), CD4 q3-6 months until >350 then annually.\n\nVirologic failure: VL >200 copies/mL on 2 occasions while on ART. Perform resistance testing while on failing regimen (need virus replicating). Switch to ≥2 active agents based on resistance testing. HLA-B*5701 positive: abacavir contraindicated (hypersensitivity reaction). Screen for metabolic syndrome, cardiovascular risk, bone density."
+    difficulty: hard
+    tags: [HIV, ART monitoring, viral load, CD4, resistance, ID]
+  - front: "What is PCP (Pneumocystis jirovecii pneumonia) presentation and treatment?"
+    back: "Subacute onset: progressive dyspnea, dry cough, fever, hypoxemia (especially exercise-induced desaturation). CXR: bilateral diffuse interstitial/ground-glass opacities. LDH elevated. Treatment: TMP-SMX (15-20 mg/kg/day TMP) × 21 days. Add prednisone if PaO2 <70 or A-a gradient >35.\n\nPCP is the most common AIDS-defining illness. Diagnosis: induced sputum or BAL with silver stain/DFA. Beta-glucan elevated (sensitive). Corticosteroids (prednisone 40 mg BID × 5 days, taper over 21 days) reduce mortality in moderate-severe PCP. Pentamidine IV for TMP-SMX-intolerant. Secondary prophylaxis until CD4 >200 × 3 months."
+    difficulty: hard
+    tags: [HIV, PCP, Pneumocystis, TMP-SMX, corticosteroids, ID]
+  - front: "What is the approach to HIV-associated cryptococcal meningitis?"
+    back: "Induction: amphotericin B liposomal + flucytosine × 2 weeks. Consolidation: fluconazole 400 mg/day × 8 weeks. Maintenance: fluconazole 200 mg/day × ≥1 year (until CD4 >200 × 6 months). Delay ART 4-6 weeks (IRIS risk). Manage elevated ICP with serial LPs.\n\nCryptococcal meningitis presents with headache, fever, cranial nerve palsies. India ink or CSF CrAg (cryptococcal antigen) diagnostic. Opening pressure often elevated (>20 cmH2O)→serial therapeutic LPs essential (reduce pressure by 50% or to <20). Serum CrAg screening recommended when CD4 <100 before ART initiation."
+    difficulty: hard
+    tags: [HIV, cryptococcal, meningitis, amphotericin, fluconazole, ID]
+  - front: "What cervical and anal cancer screening is recommended in HIV?"
+    back: "Cervical: Pap smear at diagnosis, repeat at 6 months, then annually if normal. HPV co-testing if ≥30. Anal cancer: digital anorectal exam annually for all HIV+; anal Pap (cytology) for MSM, those with anal HPV/condylomata, or cervical dysplasia history.\n\nHIV+ individuals have increased risk of HPV-related cancers (cervical, anal, oropharyngeal). HPV vaccination recommended up to age 26 (or 45 per shared decision). HSIL on anal Pap→high-resolution anoscopy. Treatment of high-grade anal dysplasia reduces progression to cancer (ANCHOR trial)."
+    difficulty: hard
+    tags: [HIV, screening, cervical cancer, anal cancer, HPV, ID]
+  - front: "What are the ART drug class side effects?"
+    back: "NRTIs: TDF (nephrotoxicity, osteoporosis), TAF (weight gain, lipids), AZT (anemia, myopathy), abacavir (hypersensitivity if HLA-B*5701+). INSTIs: dolutegravir (insomnia, weight gain, neural tube defects controversy), raltegravir (myopathy). PIs: metabolic syndrome, GI upset, drug interactions. NNRTIs: efavirenz (CNS, teratogenic), nevirapine (hepatotoxicity, rash).\n\nTAF has less renal and bone toxicity than TDF but more weight gain and lipid effects. INSTI-associated weight gain is a growing concern (dolutegravir, bictegravir > raltegravir). PI/r interactions via CYP3A4 are extensive — always check drug interactions. Cobicistat is a pharmacokinetic booster (CYP3A4 inhibitor) without antiretroviral activity."
+    difficulty: hard
+    tags: [HIV, ART, side effects, NRTI, INSTI, PI, NNRTI, ID]
+  - front: "What is the approach to HIV in pregnancy?"
+    back: "ART for all pregnant women regardless of CD4/VL (treat+prevent transmission). Preferred: dolutegravir + emtricitabine/TAF (after 1st trimester) or atazanavir/r-based. VL near delivery guides mode: VL >1000→scheduled C-section at 38 weeks + IV zidovudine. VL <1000→vaginal delivery acceptable. Infant: zidovudine ×4-6 weeks (add nevirapine+lamivudine if high risk).\n\nWithout treatment: 25-30% vertical transmission. With ART + VL <50: <1% transmission. Breastfeeding: in Canadian guidelines, formula feeding recommended (though in resource-limited settings, breastfeeding with ART is acceptable). Resistance testing at entry. Avoid efavirenz (teratogenic), dolutegravir now considered safe in pregnancy."
+    difficulty: hard
+    tags: [HIV, pregnancy, vertical transmission, ART, zidovudine, ID]
+  - front: "What is the HIV diagnostic algorithm in Canada?"
+    back: "4th generation Ag/Ab combo test (detects p24 antigen + anti-HIV-1/2 antibodies) → if reactive → confirmatory: HIV-1/2 differentiation immunoassay → if indeterminate → NAT (nucleic acid test/RNA PCR). Window period: 4th gen 2-4 weeks. Point-of-care rapid tests also available.\n\n4th gen testing has nearly eliminated the window period problem. Acute HIV: suspect if mononucleosis-like illness with risk factors — order RNA PCR (Ag/Ab may be negative in first 1-2 weeks). All positive results require confirmatory testing before disclosure. Opt-out HIV screening recommended in Canadian prenatal care and high-prevalence settings."
+    difficulty: medium
+    tags: [HIV, diagnosis, 4th generation, Ag/Ab, NAT, screening, ID]
+  - front: "What vaccines are recommended and contraindicated in HIV?"
+    back: "Recommended: influenza annually, PCV20 (or PCV15+PPSV23), HBV (high-dose if CD4<200 or non-responder), HPV (up to age 45), COVID-19, Tdap, meningococcal, HAV. CONTRAINDICATED: live vaccines if CD4 <200 (BCG, live attenuated influenza, yellow fever, oral polio, varicella/MMR — but MMR/varicella may be given if CD4 >200).\n\nLive vaccines generally avoided in immunocompromised HIV. MMR can be given if CD4 >200 cells/μL. Shingrix (recombinant, not live) is safe and recommended ≥18 in HIV. HBV vaccine response is impaired at low CD4 — consider double-dose series. Anti-HBs titers should be checked post-vaccination."
+    difficulty: hard
+    tags: [HIV, vaccines, contraindicated, live vaccines, PCV20, ID]
+  - front: "What are the long-acting injectable ART options?"
+    back: "Cabotegravir + rilpivirine (Cabenuva): IM injection every 2 months (after oral lead-in). For virologically suppressed patients (VL <50) with no NNRTI/INSTI resistance. Also: lenacapavir SC every 6 months (for multidrug-resistant HIV).\n\nLong-acting ART improves adherence and reduces pill burden. Cabotegravir LA also available as PrEP (IM q2 months — superior to oral TDF/FTC in HPTN 083/084 trials). Lenacapavir is a first-in-class capsid inhibitor for heavily treatment-experienced patients with resistance to other classes."
+    difficulty: hard
+    tags: [HIV, long-acting, cabotegravir, rilpivirine, lenacapavir, ID]
+  - front: "A patient with HIV develops purple plaques on the legs and mouth. What diagnosis should be suspected and how is it confirmed?"
+    back: "Kaposi sarcoma (AIDS-related type). Confirmed by skin biopsy and PCR for HHV-8 DNA sequences.\n\nAIDS-related KS is an AIDS-defining illness occurring with severe immunodeficiency (CD4 <200). Antiretroviral therapy is the cornerstone of treatment; systemic chemotherapy or radiation is added for disseminated disease."
+    difficulty: medium
+    tags: [Kaposi sarcoma, HIV, AIDS-defining, HHV-8]
+  - front: "What are infectious causes of odynophagia, and which populations are most at risk?"
+    back: "Infectious odynophagia: Candida, HSV, CMV. These are most common in immunosuppressed patients (HIV/AIDS, transplant recipients, chemotherapy patients).\n\nOdynophagia (painful swallowing) in immunosuppressed patients should prompt consideration of infectious esophagitis. Candida esophagitis is most common and responds to fluconazole. HSV and CMV esophagitis require antiviral therapy (acyclovir/ganciclovir respectively). Drug causes (tetracycline, bisphosphonates) should also be considered."
+    difficulty: medium
+    tags: [odynophagia, esophagitis, Candida, HSV, CMV, immunosuppression]

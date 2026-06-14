@@ -1,0 +1,138 @@
+# Pneumonia & Lung Infections (Respirology) - generated from srs-mccqe1
+cards:
+  - front: "A 55-year-old presents with productive cough, fever, pleuritic chest pain, and CXR showing right lower lobe consolidation. WBC 18,000. How is severity assessed?"
+    back: "Use CURB-65 score: Confusion, Urea >7 mmol/L, RR ≥30, BP <90/60, Age ≥65; 0-1: outpatient; 2: inpatient; ≥3: ICU consideration\n\nCTS CAP guidelines recommend CURB-65 to guide site of care decisions. Pneumonia Severity Index (PSI) is an alternative. High-severity CAP (ICU) features include: shock, need for ventilation, multilobar infiltrates."
+    difficulty: medium
+    tags: [CAP, pneumonia, CURB-65, severity, respirology]
+  - front: "What are the most common organisms causing community-acquired pneumonia (CAP)?"
+    back: "Typical: Streptococcus pneumoniae (most common), Haemophilus influenzae; Atypical: Mycoplasma pneumoniae, Chlamydophila pneumoniae, Legionella pneumophila\n\nS. pneumoniae accounts for ~30-40% of CAP requiring hospitalization. Atypical organisms are more common in younger, healthier patients. Legionella associated with cooling towers, travel, smokers."
+    difficulty: easy
+    tags: [CAP, pneumonia organisms, Streptococcus pneumoniae, atypical, respirology]
+  - front: "What is the empiric antibiotic treatment for outpatient CAP in a healthy adult without comorbidities?"
+    back: "Amoxicillin 1g TID (preferred) OR doxycycline 100mg BID — macrolone alone not recommended due to increasing resistance in Canada\n\nCTS 2019 CAP guidelines recommend amoxicillin or doxycycline for outpatient CAP. Azithromycin alone no longer recommended due to S. pneumoniae macrolide resistance in Canada. Duration: 5-7 days for uncomplicated outpatient CAP."
+    difficulty: medium
+    tags: [CAP treatment, amoxicillin, doxycycline, outpatient pneumonia, respirology]
+  - front: "What antibiotic regimen is recommended for hospitalized non-ICU CAP?"
+    back: "Beta-lactam (ampicillin-sulbactam or ceftriaxone) PLUS azithromycin OR respiratory fluoroquinolone (levofloxacin/moxifloxacin) monotherapy\n\nCTS guidelines recommend combination beta-lactam + macrolide or monotherapy with respiratory fluoroquinolone for hospitalized non-ICU CAP. Combination therapy covers atypicals and reduces mortality."
+    difficulty: medium
+    tags: [CAP, hospitalized pneumonia, ceftriaxone, azithromycin, fluoroquinolone, respirology]
+  - front: "A 70-year-old with CAP is hypotensive, requires ICU admission. What additional antibiotic coverage is needed?"
+    back: "Add anti-pseudomonal beta-lactam (piperacillin-tazobactam or cefepime) if Pseudomonas risk factors; otherwise ceftriaxone + azithromycin ± oseltamivir (if influenza season)\n\nSevere CAP (ICU): beta-lactam + macrolide is standard. Anti-MRSA (vancomycin) added if post-influenza or necrotizing pneumonia. CTS recommends considering antifungal coverage in immunocompromised."
+    difficulty: hard
+    tags: [severe CAP, ICU pneumonia, Pseudomonas, antibiotic coverage, respirology]
+  - front: "What is the clinical presentation of Legionella pneumonia and how is it diagnosed?"
+    back: "High fever, headache, GI symptoms (diarrhea), confusion, hyponatremia, lymphopenia, elevated LFTs; diagnosis: urine Legionella antigen (90% sensitive for L. pneumophila serogroup 1)\n\nLegionella is associated with cooling towers, hot tubs, travel. Gram stain shows no organisms despite clinical pneumonia. Treatment: respiratory fluoroquinolone or azithromycin. Reportable disease in Canada."
+    difficulty: hard
+    tags: [Legionella, atypical pneumonia, urine antigen, respirology]
+  - front: "What is aspiration pneumonia vs. aspiration pneumonitis?"
+    back: "Pneumonitis: chemical aspiration of gastric acid causing sterile inflammatory response — supportive care only; Pneumonia: aspiration of oropharyngeal bacteria requiring antibiotics\n\nAspiration pneumonitis usually resolves in 24-48 hours without antibiotics. Aspiration pneumonia develops when bacteria are aspirated, typically in patients with impaired swallowing (stroke, ALS, intoxication). Antibiotics: ampicillin-sulbactam or clindamycin (anaerobic coverage)."
+    difficulty: hard
+    tags: [aspiration pneumonia, aspiration pneumonitis, antibiotic treatment, respirology]
+  - front: "What is the standard workup for hospitalized CAP?"
+    back: "Sputum Gram stain and culture, blood cultures x2, CBC, electrolytes, creatinine, LFTs, urine Legionella antigen, urine pneumococcal antigen, oxygen saturation, CXR\n\nCTS guidelines recommend blood cultures for hospitalized CAP — positive in 5-14% but guide de-escalation. Urine antigens have high specificity. Respiratory viral panel (influenza, COVID) in season. Repeat CXR at 6 weeks to confirm resolution."
+    difficulty: medium
+    tags: [CAP workup, blood cultures, urine antigens, hospitalized pneumonia, respirology]
+  - front: "When should a parapneumonic effusion be drained?"
+    back: "Drain if: pH <7.20, glucose <2.2 mmol/L, LDH >1000 IU/L, positive Gram stain or culture (empyema) — complicated parapneumonic effusion\n\nCTS guidelines use Light criteria to characterize parapneumonic effusions. Empyema (pus in pleural space) requires drainage (thoracocentesis or chest tube). VATS decortication for loculated/organized empyema."
+    difficulty: hard
+    tags: [parapneumonic effusion, empyema, thoracocentesis, Light criteria, respirology]
+  - front: "What is hospital-acquired pneumonia (HAP) vs. ventilator-associated pneumonia (VAP)?"
+    back: "HAP: pneumonia developing ≥48h after hospital admission, not intubated; VAP: pneumonia developing ≥48h after endotracheal intubation — both require broader antibiotic coverage than CAP\n\nHAP/VAP organisms include Pseudomonas aeruginosa, Klebsiella, MRSA, Acinetobacter. Empiric treatment: anti-pseudomonal beta-lactam ± aminoglycoside or fluoroquinolone ± MRSA coverage depending on risk."
+    difficulty: medium
+    tags: [HAP, VAP, hospital-acquired pneumonia, ventilator-associated, respirology]
+  - front: "What is Pneumocystis jirovecii pneumonia (PCP) and who gets it?"
+    back: "Fungal pneumonia in immunocompromised patients (HIV with CD4 <200, organ transplant, high-dose steroids); presents with subacute dyspnea, non-productive cough, bilateral interstitial infiltrates on CXR\n\nDiagnosis: BAL with immunofluorescence, serum beta-D-glucan. Treatment: TMP-SMX (trimethoprim-sulfamethoxazole) is drug of choice; add prednisone if PaO2 <70 mmHg. Prophylaxis: TMP-SMX when CD4 <200."
+    difficulty: hard
+    tags: [PCP, Pneumocystis, HIV, immunocompromised, respirology]
+  - front: "What is the CXR pattern in different pneumonia types?"
+    back: "Lobar/segmental consolidation: typical bacterial; Bilateral interstitial: atypical, viral, PCP; Cavitation: TB, Staph aureus, anaerobes, Klebsiella; Upper lobe: TB; Lower lobe: aspiration\n\nRadiographic patterns guide differential diagnosis but overlap is common. All hospitalized CAP patients require follow-up CXR at 6 weeks to confirm resolution and exclude underlying malignancy in smokers >50."
+    difficulty: medium
+    tags: [CXR pattern, pneumonia radiology, cavitation, atypical pneumonia, respirology]
+  - front: "When is antifungal treatment indicated for pneumonia?"
+    back: "Invasive fungal pneumonia in immunocompromised: Aspergillus (voriconazole), Candida pneumonia (fluconazole or echinocandin), Cryptococcus (amphotericin B + flucytosine then fluconazole)\n\nAspergillus pneumonia occurs in prolonged neutropenia or high-dose steroids. Galactomannan assay and CT (halo sign) help diagnose invasive aspergillosis. Cryptococcal pneumonia is associated with HIV; diagnose with serum cryptococcal antigen."
+    difficulty: hard
+    tags: [fungal pneumonia, Aspergillus, voriconazole, immunocompromised, respirology]
+  - front: "What are indications for influenza testing and treatment in pneumonia?"
+    back: "Test for influenza (rapid PCR or antigen test) during influenza season for all hospitalized pneumonia patients; treat with oseltamivir within 48 hours of symptom onset\n\nCTS recommends oseltamivir for hospitalized patients with confirmed or suspected influenza regardless of symptom duration. Influenza pneumonia can cause severe respiratory failure. Secondary bacterial pneumonia (Staph aureus, S. pneumoniae) should be treated with antibiotics."
+    difficulty: medium
+    tags: [influenza, oseltamivir, pneumonia treatment, respirology]
+  - front: "When is follow-up CXR required after community-acquired pneumonia?"
+    back: "CXR at 6-8 weeks post-discharge for smokers, patients >50 years, or incomplete clinical resolution — to exclude underlying malignancy\n\nStudies show lung cancer underlies CAP in up to 10-15% of adults >50. CTS CAP guidelines recommend routine follow-up imaging in higher-risk patients. CT chest is indicated if plain CXR does not clear at 6-8 weeks."
+    difficulty: medium
+    tags: [follow-up CXR, pneumonia, lung cancer, post-pneumonia, respirology]
+  - front: "What is CURB-65 and how does it guide CAP management?"
+    back: "Confusion, Urea>7, RR>=30, BP<90/60, age>=65. 0-1: outpatient; 2: admit; 3-5: ICU\n\nPSI is more validated but complex. IDSA/ATS major criteria for ICU: ventilation or vasopressors."
+    difficulty: medium
+    tags: [CAP, CURB-65]
+  - front: "What organisms cause HAP vs CAP?"
+    back: "HAP: Pseudomonas, Klebsiella, MRSA. CAP: S. pneumoniae, H. influenzae, atypicals\n\nHAP >=48h after admission. Empiric: anti-pseudomonal beta-lactam +/- MRSA coverage."
+    difficulty: medium
+    tags: [pneumonia, organisms]
+  - front: "What is the CRB-65/CURB-65 score and how does it guide pneumonia disposition?"
+    back: "Confusion, Urea >7 mmol/L (CURB only), RR ≥30, BP systolic <90 or diastolic ≤60, age ≥65. Score 0-1: outpatient; 2: consider admission; 3-5: ICU consideration.\n\nCURB-65 is recommended by CTS for CAP severity assessment. CRB-65 (without urea) can be used in community settings. Pneumonia Severity Index (PSI/PORT) is more complex but better validated for identifying low-risk patients suitable for outpatient care."
+    difficulty: medium
+    tags: [pneumonia, CURB-65, severity, CAP, disposition, respirology]
+  - front: "What is the empiric antibiotic treatment for outpatient CAP in a previously healthy adult with no comorbidities per CTS?"
+    back: "Amoxicillin 1g TID x 5 days (first-line) OR doxycycline 100 mg BID if penicillin-allergic. Macrolides only if local resistance <25%.\n\nCTS 2022 updated guidelines move away from empiric macrolide monotherapy due to rising S. pneumoniae macrolide resistance (~25% in Canada). Amoxicillin covers most typical pathogens. 5-day courses are non-inferior to longer courses if clinically improving."
+    difficulty: medium
+    tags: [pneumonia, CAP, antibiotics, amoxicillin, CTS, respirology]
+  - front: "What empiric therapy is recommended for inpatient CAP (non-ICU) per CTS guidelines?"
+    back: "Ampicillin IV + azithromycin OR respiratory fluoroquinolone (levofloxacin 750 mg daily or moxifloxacin 400 mg daily) monotherapy\n\nCTS recommends beta-lactam plus macrolide combination to cover typical and atypical organisms. Respiratory fluoroquinolones are reserved for patients with beta-lactam allergy or treatment failure. Ceftriaxone 1-2g IV daily is an alternative beta-lactam."
+    difficulty: medium
+    tags: [pneumonia, CAP, inpatient, antibiotics, CTS, respirology]
+  - front: "What defines hospital-acquired pneumonia (HAP) vs ventilator-associated pneumonia (VAP) and what are the key pathogens?"
+    back: "HAP: ≥48h after admission, not incubating at admission. VAP: ≥48h after endotracheal intubation. Key pathogens: MRSA, Pseudomonas, Acinetobacter, ESBL Enterobacteriaceae (in addition to typical CAP organisms).\n\nRisk factors for MDR organisms: IV antibiotics in prior 90 days, hospitalization ≥5 days, high local MRSA/Pseudomonas prevalence, septic shock. Empiric therapy should include anti-pseudomonal beta-lactam ± MRSA coverage based on risk factors."
+    difficulty: hard
+    tags: [pneumonia, HAP, VAP, MRSA, Pseudomonas, MDR, respirology]
+  - front: "What empiric antibiotics are recommended for severe CAP requiring ICU admission?"
+    back: "Beta-lactam (ceftriaxone or ampicillin-sulbactam) PLUS azithromycin OR fluoroquinolone. If Pseudomonas risk: anti-pseudomonal beta-lactam (pip-tazo, cefepime, meropenem) + fluoroquinolone.\n\nDual therapy is mandatory for ICU-level CAP. If MRSA risk present, add vancomycin or linezolid. CTS recommends obtaining sputum and blood cultures before antibiotics for all ICU admissions. Consider Legionella urinary antigen and pneumococcal urinary antigen."
+    difficulty: hard
+    tags: [pneumonia, CAP, ICU, severe, empiric, respirology]
+  - front: "What are the most common organisms causing CAP by patient population?"
+    back: "Overall: S. pneumoniae (#1), H. influenzae, M. pneumoniae, respiratory viruses. Elderly/comorbid: add S. aureus, gram-negatives. Alcoholics: Klebsiella, anaerobes. Post-influenza: S. aureus, S. pneumoniae.\n\nAtypical organisms (Mycoplasma, Chlamydophila, Legionella) are more common in younger patients. Legionella should be suspected with GI symptoms, hyponatremia, and liver enzyme elevation. Viral causes (influenza, SARS-CoV-2, RSV) are increasingly recognized."
+    difficulty: medium
+    tags: [pneumonia, CAP, pathogens, S. pneumoniae, Legionella, respirology]
+  - front: "What are the indications for chest tube drainage in parapneumonic effusion/empyema?"
+    back: "Complicated parapneumonic: pH <7.20, glucose <3.3 mmol/L, LDH >1000, positive Gram stain/culture, frank pus (empyema), loculated effusion. All require chest tube ± fibrinolytics or VATS.\n\nLight's criteria distinguish exudate from transudate. All parapneumonic effusions are exudates. Simple parapneumonic effusions (pH >7.20, sterile) can be treated with antibiotics alone. CTS recommends early thoracic surgery consultation for empyema or failed chest tube drainage."
+    difficulty: hard
+    tags: [pneumonia, empyema, parapneumonic, chest tube, Light criteria, respirology]
+  - front: "How is aspiration pneumonia different from aspiration pneumonitis and how is each managed?"
+    back: "Pneumonitis: chemical inflammation from gastric acid, onset hours, often self-limited, no antibiotics unless no improvement in 48h. Pneumonia: bacterial infection from oropharyngeal flora, onset days, requires antibiotics (amoxicillin-clavulanate or clindamycin).\n\nAspiration pneumonia involves anaerobes and oral flora (Bacteroides, Peptostreptococcus, Fusobacterium). Risk factors: impaired consciousness, dysphagia, GERD, NG tube. Lung segments affected depend on position: supine → superior segment of RLL or posterior segment of RUL."
+    difficulty: hard
+    tags: [pneumonia, aspiration, pneumonitis, anaerobes, respirology]
+  - front: "What clinical features suggest Legionella pneumonia?"
+    back: "High fever >40°C, relative bradycardia, GI symptoms (diarrhea, nausea), hyponatremia, elevated CK, liver enzyme elevation, mental status changes. CXR may show rapidly progressive consolidation.\n\nLegionella is transmitted via contaminated water systems (cooling towers, hospital water). Diagnosed by urinary antigen (detects serogroup 1 only, ~70% of cases) or culture on BCYE agar. Treated with azithromycin or fluoroquinolone (not beta-lactams)."
+    difficulty: hard
+    tags: [pneumonia, Legionella, atypical, hyponatremia, respirology]
+  - front: "When should MRSA coverage be added to empiric CAP therapy?"
+    back: "Prior MRSA infection/colonization, recent IV antibiotics, severe CAP with necrotizing/cavitary infiltrate, empyema, concurrent influenza, local MRSA prevalence >20%. Add vancomycin 15-20 mg/kg IV q8-12h or linezolid 600 mg IV/PO BID.\n\nMRSA CAP (often PVL-producing CA-MRSA) can cause necrotizing pneumonia with rapid deterioration. Linezolid may be preferred as it inhibits toxin production. De-escalate once cultures return negative. Nasal MRSA PCR has high negative predictive value."
+    difficulty: hard
+    tags: [pneumonia, MRSA, vancomycin, linezolid, CAP, respirology]
+  - front: "What is the Pneumonia Severity Index (PSI/PORT score) and how many classes are there?"
+    back: "20 variables including age, comorbidities, exam findings, labs. Class I-III (≤90 points): outpatient. Class IV (91-130): inpatient. Class V (>130): ICU consideration.\n\nPSI is better than CURB-65 at identifying low-risk patients. Class I: age <50, no comorbidities, normal vitals — no scoring needed. Limitations: may underestimate severity in young patients without comorbidities. CTS accepts either PSI or CURB-65 for disposition decisions."
+    difficulty: medium
+    tags: [pneumonia, PSI, PORT, severity, disposition, respirology]
+  - front: "What is the appropriate duration of antibiotic therapy for uncomplicated CAP?"
+    back: "Minimum 5 days, provided: afebrile ≥48h, no more than 1 sign of clinical instability (HR >100, RR >24, SBP <90, SpO2 <90%). CTS recommends clinical stability-guided discontinuation.\n\nShorter courses (5 days) are non-inferior to longer courses (7-10 days) for uncomplicated CAP. Longer courses needed for: empyema, lung abscess, MRSA, Pseudomonas, or slow clinical response. Procalcitonin-guided therapy can safely reduce antibiotic duration."
+    difficulty: medium
+    tags: [pneumonia, antibiotic duration, CAP, procalcitonin, respirology]
+  - front: "What are the risk factors and management of lung abscess?"
+    back: "Risk factors: aspiration (alcoholism, seizures, poor dentition), obstruction (tumor). Organisms: anaerobes, Klebsiella, S. aureus. Treatment: amoxicillin-clavulanate or clindamycin x 4-6 weeks minimum until CXR resolution.\n\nMost lung abscesses respond to prolonged antibiotics with postural drainage. CT-guided drainage or surgery if: failure to improve after 7 days of antibiotics, abscess >6 cm, suspected malignancy, massive hemoptysis. Bronchoscopy to rule out endobronchial obstruction."
+    difficulty: hard
+    tags: [pneumonia, lung abscess, aspiration, anaerobes, respirology]
+  - front: "What CXR patterns help differentiate typical from atypical pneumonia?"
+    back: "Typical (bacterial): lobar consolidation, air bronchograms, pleural effusion common. Atypical (Mycoplasma, viral): diffuse bilateral interstitial/patchy infiltrates, less consolidation, effusion uncommon.\n\nCXR patterns are suggestive but not diagnostic. S. pneumoniae classically causes lobar consolidation. Klebsiella may cause bulging fissure sign. Staphylococcal pneumonia can cause pneumatoceles. PCP in HIV shows bilateral perihilar ground-glass opacities."
+    difficulty: medium
+    tags: [pneumonia, CXR, radiology, typical, atypical, respirology]
+  - front: "What are the prevention strategies for pneumonia in Canada?"
+    back: "Pneumococcal vaccination (PCV20 for high-risk), annual influenza vaccine, smoking cessation, oral hygiene, aspiration precautions, HOB elevation in ventilated patients, hand hygiene\n\nPCV20 is now preferred over the sequential PCV15→PPSV23 approach for most adults per NACI. VAP prevention bundles include: HOB 30-45°, daily sedation interruption, DVT/peptic ulcer prophylaxis, oral chlorhexidine, and daily assessment for extubation readiness."
+    difficulty: medium
+    tags: [pneumonia, prevention, vaccination, PCV20, VAP bundle, respirology]
+  - front: "What are the indications for chest X-ray vs CT chest?"
+    back: "CXR first-line: cough, dyspnea, chest pain, pneumonia, CHF, pneumothorax. CT chest: PE (CTPA), lung nodule characterization, staging, interstitial lung disease, aortic dissection\n\nCXR findings: consolidation(pneumonia), Kerley B lines(CHF), bilateral hilar LAD(sarcoidosis), air-fluid levels(abscess), widened mediastinum(aortic dissection). CT angiography for PE: filling defect in pulmonary arteries."
+    difficulty: medium
+    tags: [CXR, CT chest, imaging]
+  - front: "What are the pediatric antibiotic regimens for community-acquired pneumonia organized by age group?"
+    back: "<3 months: IV ceftriaxone. 3 months–5 years: if discharged = amoxicillin or cefprozil; if admitted = ceftriaxone. >5 years: ampicillin/amoxicillin OR cefuroxime. Common pathogens include: <3 mo = viral, S. pneumoniae, C. trachomatis, B. pertussis, S. aureus, H. influenzae; 3 mo–5 yr = viral, S. pneumoniae, S. aureus, H. influenzae, Mycoplasma pneumoniae; >5 yr = as above.\n\nAtypical pathogens (Mycoplasma, Chlamydophila) become important after age 5 years and may require macrolide coverage. The most common bacterial cause across all pediatric ages is S. pneumoniae. Viral etiologies predominate in younger children, so antibiotics should be reserved for confirmed or highly suspected bacterial pneumonia."
+    difficulty: hard
+    tags: [pediatric pneumonia, antibiotics, amoxicillin, ceftriaxone, Mycoplasma]

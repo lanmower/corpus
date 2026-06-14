@@ -1,6 +1,7 @@
 // student progress -- streak, daily goal, today counters. corpus.progress.v1
 import { localDayISO, dayOffset } from './dates.js';
-const KEY = 'corpus.progress.v1';
+import { skey } from './syllabus.js';
+const KEY = () => skey('progress.v1');
 const VERSION = 1;
 
 function todayISO() { return localDayISO(); }
@@ -27,7 +28,7 @@ function defaults() {
 
 export function load() {
     try {
-        const raw = localStorage.getItem(KEY);
+        const raw = localStorage.getItem(KEY());
         if (!raw) return defaults();
         const p = JSON.parse(raw);
         // Migrate forward, never silently discard: streak/history/gradedBySubject
@@ -56,7 +57,7 @@ export function load() {
 // Quota-guarded: a setItem throw must degrade to the storage-full banner, not
 // escape into the grading/case-completion flow (same contract as srs/schedule).
 export function save(p) {
-    try { localStorage.setItem(KEY, JSON.stringify(p)); }
+    try { localStorage.setItem(KEY(), JSON.stringify(p)); }
     catch (e) {
         try { if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { source: 'progress', error: String(e) } })); } catch {}
     }
@@ -101,7 +102,7 @@ export function setLast(route, subject) {
     save(p); return p;
 }
 
-export function reset() { localStorage.removeItem(KEY); }
+export function reset() { localStorage.removeItem(KEY()); }
 
 if (typeof window !== 'undefined') {
     window.__progress = { load, save, bumpGraded, bumpCase, setGoal, setLast, rollStreak, reset };

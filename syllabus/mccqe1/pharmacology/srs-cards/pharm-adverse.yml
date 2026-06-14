@@ -1,0 +1,838 @@
+# Adverse Drug Reactions & Interactions (Pharmacology) - generated from srs-mccqe1
+cards:
+  - front: "A patient on amiodarone develops hypothyroidism 8 months after starting the drug. What is the mechanism?"
+    back: "Amiodarone contains 37% iodine by weight; chronic iodine excess inhibits thyroid hormone synthesis (Wolff-Chaikoff effect) → hypothyroidism (more common); or stimulates excess production → thyrotoxicosis (amiodarone-induced thyroiditis type 2)\n\nAmiodarone-induced thyroid dysfunction (AITD) occurs in 15–20% of patients. Monitor TFTs every 6 months. Hypothyroidism (more common): treat with levothyroxine while continuing amiodarone. Hyperthyroidism: may require amiodarone discontinuation, methimazole, or steroids."
+    difficulty: medium
+    tags: [amiodarone, thyroid, Wolff-Chaikoff, hypothyroidism, adverse-effects]
+  - front: "What is serotonin syndrome and which drug combinations most commonly cause it?"
+    back: "Potentially life-threatening condition from excess serotonergic activity: triad of agitation, autonomic instability, and neuromuscular abnormalities (clonus, hyperreflexia, diaphoresis); most common causes: SSRI + MAOI, SSRI + tramadol, SSRI + linezolid\n\nSerotonin syndrome vs. NMS: onset is rapid (hours) with clonus and hyperreflexia (vs. NMS: days, rigidity, bradyreflexia). Treatment: stop offending agents, cyproheptadine (5-HT antagonist), benzodiazepines, supportive care; severe: ICU, intubation."
+    difficulty: hard
+    tags: [serotonin-syndrome, SSRI, MAOI, clonus, cyproheptadine]
+  - front: "A patient on phenytoin develops nystagmus, ataxia, and confusion. What is the explanation?"
+    back: "Phenytoin toxicity — dose-dependent CNS adverse effects in order of severity: nystagmus (early), ataxia, slurred speech, drowsiness, confusion, coma (severe)\n\nPhenytoin has a narrow therapeutic window (40–80 µmol/L). Non-linear (zero-order) kinetics: small dose increase can cause dramatic level increase. Monitor levels, especially with enzyme inducers/inhibitors. Also watch for gingival hyperplasia, hirsutism, and long-term use causing cerebellar atrophy."
+    difficulty: medium
+    tags: [phenytoin, toxicity, nystagmus, ataxia, narrow-therapeutic-index]
+  - front: "Which antihypertensive class is the most common cause of drug-induced cough?"
+    back: "ACE inhibitors (bradykinin-mediated dry cough in 10–15% of patients, higher in Asian patients)\n\nACEi prevent bradykinin degradation → accumulates in lungs → stimulates cough receptors. Cough is not dose-dependent and resolves within weeks of stopping. Switch to ARB (does not affect bradykinin). ARBs do not cause cough."
+    difficulty: easy
+    tags: [ACE-inhibitor, cough, bradykinin, adverse-effect, ARB]
+  - front: "A patient on isoniazid for latent TB develops bilateral foot tingling and burning. What is the cause and treatment?"
+    back: "Peripheral neuropathy due to isoniazid-induced pyridoxine (vitamin B6) deficiency; treat with pyridoxine 25–50 mg/day\n\nINH competes with pyridoxine in pyridoxal phosphate synthesis. Neuropathy risk is higher in slow acetylators, malnutrition, diabetes, and alcohol use. Pyridoxine supplementation is recommended for all patients on INH, especially high-risk groups."
+    difficulty: easy
+    tags: [isoniazid, peripheral-neuropathy, pyridoxine, vitamin-B6, INH]
+  - front: "What is the mechanism of statin-induced myopathy and what are the risk factors?"
+    back: "Inhibition of HMG-CoA reductase reduces mevalonate → decreases CoQ10 and farnesyl pyrophosphate → mitochondrial dysfunction in muscle; risk factors: high-dose statins, CYP3A4 inhibitors (e.g., clarithromycin, amiodarone, diltiazem), hypothyroidism, renal/hepatic impairment\n\nCK elevation <10× ULN with symptoms = statin myopathy; >10× ULN = myositis; rhabdomyolysis if CK >10,000 and myoglobinuria. Hydrophilic statins (rosuvastatin, pravastatin) have lower myopathy risk than lipophilic (simvastatin)."
+    difficulty: medium
+    tags: [statin-myopathy, rhabdomyolysis, CYP3A4, CK, HMG-CoA]
+  - front: "What is QTc prolongation and which common drug classes cause it?"
+    back: "Prolonged QTc (>450 ms men, >470 ms women) increases risk of torsades de pointes (TdP) and sudden cardiac death; common QTc-prolonging drugs: antipsychotics, macrolides (azithromycin, erythromycin), fluoroquinolones (ciprofloxacin), antiarrhythmics (amiodarone, sotalol), methadone, ondansetron\n\nRisk factors for TdP: baseline QTc >500 ms, hypokalemia, hypomagnesemia, bradycardia, congenital LQTS, multiple QTc-prolonging drugs. CredibleMeds (AzCERT) risk stratification database for drug-induced QTc prolongation."
+    difficulty: medium
+    tags: [QTc-prolongation, torsades-de-pointes, antipsychotic, macrolide, fluoroquinolone]
+  - front: "A 50-year-old woman taking methotrexate for RA has a significant alcohol intake. Why is this combination especially dangerous?"
+    back: "Both methotrexate and alcohol are hepatotoxic; combined use significantly increases risk of liver fibrosis and cirrhosis\n\nMethotrexate causes hepatic fibrosis, especially with cumulative doses >1.5–3 g. Alcohol >14 units/week is a relative contraindication to MTX therapy. Monitor LFTs every 4–8 weeks; liver biopsy considered if persistent LFT elevation. FibroScan (transient elastography) is a non-invasive alternative."
+    difficulty: medium
+    tags: [methotrexate, alcohol, hepatotoxicity, liver-fibrosis, RA]
+  - front: "What is the most serious adverse effect of clozapine that requires mandatory monitoring?"
+    back: "Agranulocytosis (absolute neutrophil count <0.5 × 10⁹/L) — potentially fatal; requires weekly CBC for 6 months, then biweekly, then monthly\n\nClozapine is the most effective antipsychotic for treatment-resistant schizophrenia but causes agranulocytosis in 0.8–1% of patients. Monitoring protocol: hold clozapine if ANC <1.5 × 10⁹/L; discontinue if <0.5 × 10⁹/L. Also causes myocarditis, metabolic syndrome, and seizures."
+    difficulty: medium
+    tags: [clozapine, agranulocytosis, ANC, CBC-monitoring, treatment-resistant-schizophrenia]
+  - front: "A patient on lithium develops coarse tremor, vomiting, diarrhea, and confusion. Lithium level is 2.8 mEq/L. What is the management?"
+    back: "Stop lithium, IV hydration (0.9% NaCl to increase renal clearance), and hemodialysis for severe toxicity (level >2.5 mEq/L with symptoms, or >4 mEq/L regardless of symptoms)\n\nLithium toxicity triad: GI symptoms + neurological (tremor, ataxia, confusion, seizures) + cardiovascular. Therapeutic range: 0.6–1.2 mEq/L. Toxicity precipitants: NSAIDs, thiazide diuretics, ACEi, dehydration. Narrow therapeutic index requires regular monitoring."
+    difficulty: hard
+    tags: [lithium-toxicity, hemodialysis, lithium-level, NSAIDs, thiazide]
+  - front: "What is drug-induced lupus (DIL) and which medications most commonly cause it?"
+    back: "Drug-induced SLE-like syndrome with anti-histone antibodies; most common drugs: procainamide, hydralazine, isoniazid, minocycline, TNF inhibitors (etanercept, infliximab)\n\nDIL typically resolves within weeks of stopping the drug. Anti-histone antibodies are present in >95% of DIL cases (vs. 70% of idiopathic SLE). Anti-dsDNA is rare in DIL. Symptoms: arthralgia, serositis, rash — renal and CNS involvement rare (unlike idiopathic SLE)."
+    difficulty: medium
+    tags: [drug-induced-lupus, anti-histone, procainamide, hydralazine, DIL]
+  - front: "What is a Type A vs. Type B adverse drug reaction?"
+    back: "Type A (augmented): predictable, dose-dependent, pharmacologically expected (e.g., hypoglycemia with insulin, bleeding with anticoagulants) — 80% of ADRs; Type B (bizarre): unpredictable, not dose-dependent, often immunological (e.g., penicillin anaphylaxis, SJS)\n\nType A ADRs are managed by dose reduction or drug switch. Type B (idiosyncratic, immunological) require drug discontinuation. SJS/TEN is an extreme Type B reaction. Causality assessment tools: Naranjo algorithm."
+    difficulty: easy
+    tags: [adverse-drug-reaction, Type-A, Type-B, idiosyncratic, Naranjo]
+  - front: "What is Stevens-Johnson syndrome (SJS) and which drugs most commonly cause it?"
+    back: "Severe mucocutaneous blistering reaction with <10% BSA epidermal detachment (SJS) or >30% (TEN); most common drugs: allopurinol, carbamazepine, lamotrigine, sulfonamides, nevirapine, NSAIDs\n\nSJS/TEN: admit to burn unit, stop all suspect drugs, wound care, ophthalmology consult (eye scarring), IV fluids. Cyclosporine and IVIG are used for TEN. Mortality: SJS ~5%, TEN ~30%. HLA-B*1502 (carbamazepine SJS risk in Han Chinese) genetic testing recommended."
+    difficulty: hard
+    tags: [Stevens-Johnson-syndrome, TEN, SJS, allopurinol, carbamazepine]
+  - front: "A patient takes clarithromycin with simvastatin. What adverse drug interaction occurs and why?"
+    back: "Clarithromycin inhibits CYP3A4 → increases simvastatin plasma levels dramatically → severe myopathy and rhabdomyolysis risk\n\nSimvastatin and lovastatin are extensively metabolized by CYP3A4. Co-administration with strong CYP3A4 inhibitors (clarithromycin, itraconazole, HIV PIs, amiodarone, diltiazem, grapefruit) greatly increases statin exposure. Use pravastatin or rosuvastatin (less CYP3A4 dependence) instead."
+    difficulty: medium
+    tags: [clarithromycin, simvastatin, CYP3A4, drug-interaction, rhabdomyolysis]
+  - front: "A 68-year-old woman with AF and HFrEF (EF 28%) is started on digoxin 0.125mg daily to reduce AF-related hospitalizations. Her creatinine is 2.0 mg/dL. Three weeks later, she presents with nausea, blurred vision with yellow-green halos, bradycardia (HR 44), and a digoxin level of 2.8 nmol/L. ECG shows bidirectional VT. Which is the most appropriate management?\n\nA) Hold digoxin and administer atropine for bradycardia\nB) Administer digoxin-specific antibody fragments (Digibind/DigiFab) immediately\nC) Administer activated charcoal to reduce digoxin absorption\nD) Temporary pacing and close monitoring — digoxin toxicity resolves when drug is cleared"
+    back: "B) Administer digoxin-specific antibody fragments (Digibind/DigiFab) immediately\n\nDigoxin toxicity with bidirectional VT is a life-threatening emergency. Bidirectional VT (alternating QRS axis) + bradyarrhythmias are classic manifestations of severe toxicity. Digoxin-specific antibody fragments (Digibind/DigiFab) are the antidote — they bind free digoxin and rapidly reverse toxicity including ventricular arrhythmias. Calculate dose: each vial neutralizes ~0.5 mg digoxin. In life-threatening arrhythmias (VT/VF, complete heart block), empiric dosing is acceptable. Atropine can be used for bradycardia but is insufficient in severe toxicity. Charcoal is only useful if digoxin was recently ingested. CKD slows digoxin elimination — target level ≤ 1.0 nmol/L in HF."
+    difficulty: hard
+    tags: [Pharmacology, MCQ, Toronto Notes]
+  - front: "A 58-year-old man with NSTEMI is discharged on ticagrelor 90mg BID + aspirin 81mg. He returns at 6 weeks with a spontaneous intracranial hemorrhage (ICH). The neurologist recommends stopping all antithrombotics for at least 4 weeks. His coronary stent was placed 6 weeks ago (DES). What is the management of his antiplatelet therapy after 4 weeks of cessation?\n\nA) Restart full DAPT — 4 weeks off is insufficient; complete a full 12 months from DES\nB) Restart aspirin alone and hold ticagrelor indefinitely given high recurrent ICH risk\nC) Restart a single antiplatelet agent (P2Y12 inhibitor — clopidogrel preferred over ticagrelor) without aspirin\nD) Restart DAPT with aspirin + clopidogrel — switch ticagrelor to clopidogrel to reduce bleeding risk"
+    back: "C) Restart a single antiplatelet agent (P2Y12 inhibitor — clopidogrel preferred over ticagrelor) without aspirin\n\nPost-ICH antiplatelet restart in DES patients is a high-stakes clinical dilemma. Evidence from the RESTART (aspirin after ICH) and SENTINAL data suggests: (1) After ≥4 weeks post-ICH stabilization, antiplatelet therapy should be restarted; (2) Clopidogrel monotherapy (without aspirin) has lower re-bleeding risk than DAPT while maintaining stent thrombosis protection — preferred over full DAPT post-ICH. Ticagrelor has higher antiplatelet potency and bleeding risk than clopidogrel — switching to clopidogrel reduces bleeding without significant loss of anti-ischemic efficacy. Aspirin monotherapy leaves the stent thrombosis risk higher than P2Y12 monotherapy. 2023 ESC/AHA guidance: single P2Y12 agent (clopidogrel) preferred post-ICH within first 12 months of DES."
+    difficulty: hard
+    tags: [Pharmacology, MCQ, Toronto Notes]
+  - front: "A 72-year-old man with non-valvular AF and a CHA₂DS₂-VASc score of 5 is on rivaroxaban 20mg daily. He also takes amiodarone and atorvastatin. His eGFR is 48. Which pharmacokinetic interaction is most clinically significant in this regimen?\n\nA) Atorvastatin inhibits CYP3A4, reducing rivaroxaban levels and increasing stroke risk\nB) Amiodarone inhibits P-glycoprotein and CYP3A4, increasing rivaroxaban plasma levels and bleeding risk\nC) Rivaroxaban inhibits amiodarone metabolism, increasing amiodarone toxicity\nD) Atorvastatin competes with rivaroxaban for renal tubular secretion, increasing DOAC exposure"
+    back: "B) Amiodarone inhibits P-glycoprotein and CYP3A4, increasing rivaroxaban plasma levels and bleeding risk\n\nRivaroxaban is a substrate of both P-glycoprotein (P-gp) and CYP3A4. Amiodarone is a potent dual inhibitor of P-gp AND CYP3A4. Co-administration increases rivaroxaban AUC and Cmax by 50–60%, substantially increasing bleeding risk. This interaction is clinically relevant and warrants consideration of: dose reduction (rivaroxaban 15mg in moderate renal impairment + amiodarone), switching to dabigatran (P-gp substrate only, less affected by CYP3A4) with caution, or using warfarin with INR monitoring. Apixaban (CYP3A4 substrate + minor P-gp) is similarly affected. Atorvastatin is a weak CYP3A4 substrate — not a significant perpetrator of drug interactions."
+    difficulty: hard
+    tags: [Pharmacology, MCQ, Toronto Notes]
+  - front: "A 74-year-old man with HFrEF (EF 22%), AF (CHA₂DS₂-VASc 6), CKD stage 3b (eGFR 38), and type 2 diabetes is on apixaban, sacubitril/valsartan, bisoprolol, dapagliflozin, and eplerenone. His potassium is 5.7 mEq/L. Which of his current medications most significantly contributes to his hyperkalemia, and what is the most important management step?\n\nA) Dapagliflozin — SGLT2 inhibitors increase aldosterone release, causing hyperkalemia\nB) Apixaban — direct Xa inhibitors reduce renal potassium excretion\nC) Sacubitril/valsartan — ARB component blocks AT1R, reducing aldosterone secretion and impairing potassium excretion\nD) Bisoprolol — beta-blockade reduces transcellular potassium shift into cells"
+    back: "C) Sacubitril/valsartan — ARB component blocks AT1R, reducing aldosterone secretion and impairing potassium excretion\n\nSacubitril/valsartan contains valsartan (ARB), which blocks angiotensin II-mediated aldosterone secretion via AT1R blockade → reduced aldosterone → reduced potassium excretion → hyperkalemia. Combined with eplerenone (MRA — also blocks aldosterone's effect), the synergistic reduction of aldosterone action is the primary driver of hyperkalemia. Dapagliflozin actually reduces hyperkalemia (renal potassium wasting via SGLT2 inhibition + reduced aldosterone from volume-independent mechanisms). Management: consider patiromer or SZC (potassium binders) to enable continuation of RAAS/MRA. Bisoprolol can modestly impair extrarenal potassium handling but is not the primary culprit here."
+    difficulty: hard
+    tags: [Pharmacology, MCQ, Toronto Notes]
+  - front: "A 55-year-old woman with NYHA class III HFrEF (EF 22%) presents with volume overload. She is on torsemide 80 mg BID. Her physician wishes to add metolazone. Which pharmacokinetic property of metolazone distinguishes it from other thiazide diuretics and makes it effective in CKD?\n\nA) Metolazone undergoes hepatic metabolism only — not renally cleared\nB) Metolazone retains its action at the distal convoluted tubule even at GFR < 30, unlike HCTZ which requires adequate GFR\nC) Metolazone has a volume of distribution 10x larger than HCTZ, allowing superior tissue penetration\nD) Metolazone inhibits both Na-K-2Cl cotransporter (loop) and NCC (DCT), providing superior diuresis"
+    back: "B) Metolazone retains its action at the distal convoluted tubule even at GFR < 30, unlike HCTZ which requires adequate GFR\n\nThiazide diuretics (including HCTZ and chlorthalidone) lose their diuretic efficacy when GFR falls below 30 mL/min — they require active secretion into the tubular lumen to reach their site of action (NCC in DCT), which is reduced in CKD. Metolazone, however, retains significant diuretic efficacy even in severe CKD (GFR < 30) due to a different mechanism of tubular secretion and a prolonged half-life that allows sufficient tubular concentrations. This property makes metolazone the thiazide of choice for augmentation of loop diuretics in HF with CKD. The combination causes profound natriuresis — aggressive electrolyte monitoring (K+, Mg2+, Na+) is mandatory."
+    difficulty: hard
+    tags: [Pharmacology, MCQ, Toronto Notes]
+  - front: "What are the key drug interactions with warfarin?"
+    back: "Increase INR: amiodarone, metronidazole, fluconazole, TMP-SMX, cranberry. Decrease INR: rifampin, carbamazepine, phenytoin, St John's Wort, vitamin K\n\nWarfarin metabolized by CYP2C9 (S-warfarin, more potent) and CYP3A4 (R-warfarin). Monitor INR closely with any medication change. DOACs have fewer interactions but still affected by strong CYP3A4/P-gp modulators."
+    difficulty: medium
+    tags: [warfarin, interactions]
+  - front: "Which drugs commonly cause QT prolongation?"
+    back: "Antiarrhythmics (sotalol, amiodarone), antibiotics (macrolides, fluoroquinolones), antipsychotics (haloperidol, ziprasidone), antiemetics (ondansetron), methadone\n\nQTc >500ms or increase >60ms = high risk for torsades de pointes. Torsades treatment: IV magnesium, overdrive pacing. Risk factors: hypokalemia, hypomagnesemia, female sex, bradycardia."
+    difficulty: medium
+    tags: [QT prolongation, drugs]
+  - front: "Which drugs commonly cause QT prolongation and what is the risk?"
+    back: "Antiarrhythmics (sotalol, amiodarone, procainamide), antipsychotics (haloperidol, ziprasidone), antibiotics (macrolides, fluoroquinolones, azole antifungals), antiemetics (ondansetron, domperidone), methadone, TCAs\n\nQTc >500ms or increase >60ms from baseline: high risk of Torsades de Pointes. Risk factors: female sex, hypokalemia, hypomagnesemia, bradycardia, structural heart disease, multiple QT-prolonging drugs. Monitor ECG, maintain K>4.0, Mg>0.8. Torsades treatment: IV magnesium 2g, overdrive pacing."
+    difficulty: hard
+    tags: [QT prolongation, Torsades, drug safety]
+  - front: "What are the major drug interactions with warfarin?"
+    back: "Increase INR (bleeding risk): amiodarone, azole antifungals, macrolides, metronidazole, TMP-SMX, SSRIs, cranberry. Decrease INR (clot risk): rifampin, carbamazepine, phenytoin, St John Wort, vitamin K-rich foods\n\nWarfarin is metabolized by CYP2C9. Amiodarone is the most clinically significant (reduce warfarin dose by 30-50%). Always check interactions when starting new medications. Acetaminophen at high doses increases INR. Bridges should be monitored closely."
+    difficulty: hard
+    tags: [warfarin, drug interactions, CYP2C9]
+  - front: "What are the common and serious adverse effects of statins?"
+    back: "Common: myalgia (5-10%), GI. Serious: rhabdomyolysis (rare, CK>10x ULN with renal failure), hepatotoxicity (check LFTs at baseline), new-onset diabetes (slight increase). Drug interactions: CYP3A4 inhibitors increase statin levels\n\nMyalgia: try different statin, lower dose, intermittent dosing. Do not routinely monitor CK unless symptomatic. Statin + fibrate (especially gemfibrozil): increased rhabdomyolysis risk. Rosuvastatin and pravastatin have fewer CYP interactions. Benefits far outweigh risks in indicated patients."
+    difficulty: medium
+    tags: [statin, adverse effects, rhabdomyolysis]
+  - front: "What drugs require renal dose adjustment and what are the consequences of not adjusting?"
+    back: "Key drugs: metformin (stop eGFR<30), DOACs (adjust doses), gabapentin/pregabalin, lithium, digoxin, opioids (morphine metabolites accumulate), aminoglycosides, vancomycin, allopurinol\n\nFailure to adjust: drug accumulation, toxicity, prolonged effects. Check eGFR before prescribing and periodically. CKD patients: avoid NSAIDs, avoid gadolinium if eGFR<30, use low-osmolar contrast with hydration if CT needed. Pharmacist medication review for CKD patients."
+    difficulty: hard
+    tags: [renal dosing, CKD, drug adjustment]
+  - front: "What is serotonin syndrome: common drug combinations and management?"
+    back: "Combinations: SSRI + MAOI (most dangerous), SSRI + tramadol, SSRI + linezolid (MAOI activity), SSRI + triptans (rare). Clinical: altered mental status + neuromuscular hyperactivity (clonus) + autonomic instability\n\nTreatment: stop offending agents, benzodiazepines for agitation, cyproheptadine 12mg then 4mg q6h, cooling for hyperthermia. Avoid succinylcholine (hyperkalemia from rigidity). Usually resolves within 24-72h of drug cessation. Prevention: check combinations before prescribing."
+    difficulty: hard
+    tags: [serotonin syndrome, drug interactions, SSRI]
+  - front: "What are the high-risk medications in elderly patients (Beers Criteria highlights)?"
+    back: "Avoid: benzodiazepines (falls, confusion), anticholinergics (cognitive impairment - oxybutynin, diphenhydramine, TCA), long-acting sulfonylureas (hypoglycemia), meperidine (seizures), NSAIDs chronically (GI/renal/CV)\n\nAnticholinergic burden calculator: score cumulative anticholinergic load. First-gen antihistamines, antispasmodics, TCAs, antipsychotics all contribute. Each additional anticholinergic associated with 20% increase in cognitive decline. Regular medication review in elderly is essential."
+    difficulty: hard
+    tags: [Beers criteria, elderly, anticholinergic]
+  - front: "What drugs commonly cause hyponatremia?"
+    back: "SIADH-causing: SSRIs (most common drug cause), carbamazepine, oxcarbazepine, cyclophosphamide, desmopressin. Thiazide diuretics (not loops). Ecstasy/MDMA. Oxytocin\n\nSSRI-induced hyponatremia: usually within first 2 weeks, elderly and low BMI at highest risk. Check Na at 1-2 weeks when starting SSRI in elderly. Thiazides: impair diluting ability. Loop diuretics rarely cause hyponatremia (impair concentrating). Discontinue offending agent."
+    difficulty: medium
+    tags: [hyponatremia, SIADH, drug-induced]
+  - front: "What are the important drug interactions with CYP3A4?"
+    back: "Inhibitors (increase levels of substrates): azole antifungals, macrolides (NOT azithromycin), grapefruit, diltiazem, verapamil, HIV PIs. Inducers (decrease levels): rifampin, carbamazepine, phenytoin, phenobarbital, St John Wort\n\nCYP3A4 substrates: statins (simvastatin/atorvastatin), CCBs, cyclosporine, tacrolimus, DOACs, benzodiazepines (midazolam), opioids (fentanyl). Simvastatin + azole antifungal = rhabdomyolysis risk. Always check CYP interactions when prescribing. Use interaction checker tools."
+    difficulty: hard
+    tags: [CYP3A4, drug interactions, pharmacology]
+  - front: "What is drug-induced liver injury (DILI) and what drugs commonly cause it?"
+    back: "Hepatocellular (ALT elevation): acetaminophen, INH, statins, NSAIDs, anticonvulsants. Cholestatic (ALP/bilirubin): amox-clav, erythromycin, anabolic steroids, OCPs. Mixed: phenytoin, TMP-SMX, azathioprine\n\nDILI is diagnosis of exclusion. Hy's Law: hepatocellular + bilirubin >2x ULN = 10-50% mortality from liver failure. Causality assessment: RUCAM scale. Stop offending drug. Most resolve with cessation. NAC for acetaminophen. Report to Health Canada MedEffect program."
+    difficulty: hard
+    tags: [DILI, hepatotoxicity, drug-induced]
+  - front: "What are drug-induced causes of acute kidney injury?"
+    back: "Pre-renal: NSAIDs (afferent constriction), ACEi/ARB (efferent dilation), diuretics. Intrinsic: aminoglycosides (ATN), vancomycin, cisplatin, contrast nephropathy, NSAIDs (interstitial nephritis), PPIs (interstitial). Post-renal: anticholinergics (retention)\n\nPrevention: avoid nephrotoxins, hydrate before contrast, hold ACEi/ARB/diuretics during illness (sick day rules), therapeutic drug monitoring for aminoglycosides/vancomycin. Allergic interstitial nephritis: eosinophils in urine, rash, fever, eosinophilia. Stop drug, consider steroids."
+    difficulty: hard
+    tags: [drug-induced AKI, nephrotoxicity]
+  - front: "What drugs commonly cause drug-induced lupus, and which drugs cause Stevens-Johnson syndrome?"
+    back: "DIL: hydralazine, procainamide, INH, minocycline, TNFi. SJS/TEN: allopurinol (most common), carbamazepine/phenytoin/lamotrigine, sulfonamides (TMP-SMX), nevirapine\n\nSJS: <10% BSA detachment. SJS/TEN overlap: 10-30%. TEN: >30%. Mortality TEN: 25-30%. HLA-B*5801 testing before allopurinol in Southeast Asian/African descent reduces SJS risk. HLA-B*1502 testing before carbamazepine in Asian descent."
+    difficulty: hard
+    tags: [drug-induced lupus, SJS/TEN, adverse reactions]
+  - front: "What are the risks and monitoring for methotrexate therapy?"
+    back: "Adverse effects: myelosuppression (CBC), hepatotoxicity (LFTs), pneumonitis (cough/dyspnea), mucositis, teratogenic. Monitor: CBC + LFTs + creatinine q4-8 weeks. Give folic acid 1mg daily to reduce toxicity. Avoid in pregnancy, significant renal/liver disease\n\nMTX is cleared renally - dose-reduce or avoid in CKD. Drug interactions: TMP-SMX increases MTX toxicity (folate antagonism), NSAIDs increase MTX levels (reduced renal clearance). Hold MTX during serious infection. Interstitial pneumonitis: stop MTX, may need steroids."
+    difficulty: hard
+    tags: [methotrexate, adverse effects, monitoring]
+  - front: "What are the adverse effects of chronic corticosteroid therapy?"
+    back: "Metabolic: diabetes, dyslipidemia, weight gain, adrenal suppression. MSK: osteoporosis, AVN, myopathy. GI: PUD (with NSAIDs). Immune: infections. CNS: insomnia, psychosis, mood. Skin: thin skin, bruising. Eye: cataracts, glaucoma\n\nIf >7.5mg prednisone x3months: bone protection (calcium, vitamin D, bisphosphonate if high fracture risk). Monitor glucose, BP, lipids. Taper gradually if >2-3 weeks (adrenal suppression). Stress dose steroids for illness/surgery. PPI co-prescribe if concurrent NSAIDs."
+    difficulty: medium
+    tags: [corticosteroid, adverse effects, osteoporosis]
+  - front: "What drugs cause hyperkalemia and how is it managed?"
+    back: "Drugs: ACEi/ARB, K-sparing diuretics (spironolactone, amiloride), TMP-SMX, NSAIDs, heparin, calcineurin inhibitors, succinylcholine. Risk factors: CKD, diabetes, concurrent use of multiple K-raising drugs\n\nK>6.5 or ECG changes (peaked T, wide QRS, sine wave): emergency. Calcium gluconate (cardiac membrane stabilizer), insulin 10U + D50 (shift), salbutamol (shift), kayexalate/patiromer (excretion), hemodialysis. Monitor K when starting ACEi+spironolactone combination."
+    difficulty: hard
+    tags: [hyperkalemia, drug-induced, management]
+  - front: "What is the approach to adverse drug reaction reporting in Canada?"
+    back: "Report to Health Canada via MedEffect (online or phone). Report: serious reactions, unexpected reactions, reactions to new drugs/biologics/natural health products. Also report vaccine adverse events (CAEFISS). Reporting is voluntary for clinicians, mandatory for manufacturers\n\nPost-market surveillance depends on clinician reporting. Under-reporting is estimated at 90-95%. Special focus: new medications (within 5 years of market), biologics, and natural health products. Reporting contributes to safety signals that may lead to drug warnings or withdrawal."
+    difficulty: easy
+    tags: [adverse drug reaction, MedEffect, reporting]
+  - front: "Which CYP450 enzyme is responsible for metabolizing approximately 50% of all clinically used drugs, and name three potent inhibitors of this enzyme."
+    back: "CYP3A4 metabolizes ~50% of drugs. Potent inhibitors include ketoconazole, itraconazole, ritonavir, clarithromycin, and grapefruit juice.\n\nCYP3A4 is the most abundant CYP enzyme in the liver and intestine. Inhibition leads to increased levels of substrates such as cyclosporine, statins (simvastatin, atorvastatin), and calcium channel blockers, risking toxicity. Ritonavir is intentionally used as a pharmacokinetic booster in HIV therapy."
+    difficulty: medium
+    tags: [CYP450, CYP3A4, drug metabolism, enzyme inhibitors, pharmacokinetics]
+  - front: "CYP2D6 is subject to genetic polymorphism. What clinical consequences arise in poor metabolizers taking codeine, and what about ultrarapid metabolizers?"
+    back: "Poor metabolizers cannot convert codeine to morphine, resulting in no analgesic effect. Ultrarapid metabolizers produce excessive morphine, risking respiratory depression and death (especially in children).\n\nCodeine is a prodrug activated by CYP2D6 to morphine. Health Canada issued warnings about codeine use in children after fatalities in ultrarapid metabolizers post-tonsillectomy. CYP2D6 poor metabolizer prevalence is ~7-10% in Caucasians."
+    difficulty: hard
+    tags: [CYP2D6, codeine, pharmacogenomics, poor metabolizer, ultrarapid metabolizer]
+  - front: "Name four potent CYP3A4 inducers and explain the clinical consequence of enzyme induction on oral contraceptive pills."
+    back: "CYP3A4 inducers: rifampin, carbamazepine, phenytoin, St. John's wort. Induction increases OCP metabolism, reducing estrogen/progesterone levels and causing contraceptive failure.\n\nEnzyme induction takes days to weeks to develop and resolve, as it requires new protein synthesis. Rifampin is the most potent inducer and can reduce OCP efficacy by up to 50%. Patients on these inducers need alternative or supplemental contraception."
+    difficulty: medium
+    tags: [CYP3A4, enzyme inducers, rifampin, oral contraceptives, drug interaction]
+  - front: "CYP2C19 has clinically important polymorphisms affecting which commonly prescribed GI drug? What is the consequence in poor metabolizers?"
+    back: "Clopidogrel is a prodrug activated by CYP2C19. Poor metabolizers have reduced conversion to the active metabolite, leading to diminished antiplatelet effect and increased risk of cardiovascular events. Proton pump inhibitors (especially omeprazole) are also CYP2C19 substrates.\n\nCYP2C19 poor metabolizer status is more common in East Asian populations (~15-20%). The FDA recommends considering alternative antiplatelet agents (prasugrel, ticagrelor) in CYP2C19 poor metabolizers. Omeprazole inhibits CYP2C19 and may further reduce clopidogrel activation."
+    difficulty: hard
+    tags: [CYP2C19, clopidogrel, pharmacogenomics, antiplatelet, PPI interaction]
+  - front: "CYP2C9 metabolizes warfarin. What happens when a patient on warfarin is started on fluconazole (a CYP2C9 inhibitor)?"
+    back: "Fluconazole inhibits CYP2C9, decreasing warfarin metabolism, leading to supratherapeutic INR and increased bleeding risk. INR must be monitored closely and warfarin dose reduced.\n\nS-warfarin (the more potent enantiomer) is primarily metabolized by CYP2C9. Other CYP2C9 inhibitors include amiodarone, metronidazole, and TMP-SMX. Genetic variants CYP2C9*2 and *3 also reduce warfarin metabolism, requiring lower maintenance doses."
+    difficulty: medium
+    tags: [CYP2C9, warfarin, fluconazole, INR, bleeding risk]
+  - front: "A patient on tacrolimus (CYP3A4 substrate) is prescribed clarithromycin for pneumonia. What drug interaction should you anticipate and how should you manage it?"
+    back: "Clarithromycin inhibits CYP3A4, causing tacrolimus levels to rise dramatically, risking nephrotoxicity. Either use azithromycin (minimal CYP inhibition) or reduce tacrolimus dose and monitor drug levels closely.\n\nTacrolimus has a narrow therapeutic index and is highly dependent on CYP3A4 metabolism. Macrolide antibiotics vary in CYP inhibition: clarithromycin and erythromycin are potent inhibitors; azithromycin has negligible CYP3A4 inhibition and is the safer choice."
+    difficulty: hard
+    tags: [CYP3A4, tacrolimus, clarithromycin, nephrotoxicity, transplant]
+  - front: "Which CYP450 enzyme is inhibited by cimetidine and ciprofloxacin, and what is a clinically important substrate affected?"
+    back: "Cimetidine inhibits multiple CYP enzymes (1A2, 2D6, 3A4). Ciprofloxacin inhibits CYP1A2. Theophylline (CYP1A2 substrate) levels can rise to toxic levels, causing seizures and arrhythmias.\n\nCYP1A2 also metabolizes caffeine, clozapine, and olanzapine. Smoking induces CYP1A2, so smoking cessation can raise clozapine levels dangerously. Ciprofloxacin should be avoided in patients on theophylline; use levofloxacin instead."
+    difficulty: hard
+    tags: [CYP1A2, cimetidine, ciprofloxacin, theophylline, drug interaction]
+  - front: "A patient who smokes heavily is stabilized on clozapine. They quit smoking. What pharmacokinetic change occurs and what is the risk?"
+    back: "Smoking induces CYP1A2. Cessation removes induction, causing clozapine levels to rise by 50-70%, risking sedation, seizures, and agranulocytosis. Clozapine dose must be reduced by ~30-50% upon smoking cessation.\n\nPolycyclic aromatic hydrocarbons in smoke (not nicotine) induce CYP1A2. This interaction also applies to olanzapine. Nicotine replacement therapy does not cause this enzyme induction, so the interaction occurs specifically with smoking cessation, not with starting NRT."
+    difficulty: hard
+    tags: [CYP1A2, clozapine, smoking, enzyme induction, pharmacokinetics]
+  - front: "Which commonly used drugs require dose adjustment in renal failure (GFR <30 mL/min)? Name at least five."
+    back: "Metformin (contraindicated GFR <30), gabapentin, pregabalin, digoxin, aminoglycosides (gentamicin, tobramycin), vancomycin, lithium, allopurinol, ACE inhibitors/ARBs (monitor K+), enoxaparin, and DOACs (dabigatran, rivaroxaban).\n\nRenally cleared drugs accumulate in renal failure, increasing toxicity risk. Metformin is contraindicated below GFR 30 due to lactic acidosis risk. Aminoglycosides and vancomycin require therapeutic drug monitoring. Gabapentin dose must be reduced significantly (e.g., from 300mg TID to 300mg daily at GFR <15)."
+    difficulty: medium
+    tags: [renal dosing, GFR, metformin, aminoglycosides, drug adjustment]
+  - front: "A patient with CKD stage 4 (GFR 20 mL/min) has gout. Why is colchicine dangerous and what dose adjustment is needed for allopurinol?"
+    back: "Colchicine accumulates in renal failure, causing life-threatening toxicity (pancytopenia, multi-organ failure). Allopurinol starting dose should be reduced to 50-100 mg daily (normally 100-300 mg) and titrated slowly based on uric acid levels.\n\nColchicine has a narrow therapeutic index and renal clearance accounts for 10-20% of elimination; however, accumulation of active metabolites is clinically significant. Concurrent use of CYP3A4 inhibitors (clarithromycin) with colchicine in renal failure has caused deaths. Febuxostat is an alternative that does not require renal dose adjustment."
+    difficulty: hard
+    tags: [renal failure, colchicine, allopurinol, gout, dose adjustment]
+  - front: "At what GFR threshold should metformin be discontinued, and what is the feared complication?"
+    back: "Metformin should be dose-reduced at GFR <45 mL/min (max 1000 mg/day) and discontinued at GFR <30 mL/min. The feared complication is lactic acidosis, though this is rare.\n\nDiabetes Canada 2018 guidelines updated the threshold from the older eGFR <60 cutoff. Metformin should also be held before iodinated contrast procedures in patients with GFR <45 and restarted 48 hours after if renal function is stable. Metformin-associated lactic acidosis (MALA) carries >50% mortality."
+    difficulty: medium
+    tags: [metformin, renal failure, GFR, lactic acidosis, diabetes]
+  - front: "A patient with GFR 25 mL/min on dabigatran develops major bleeding. What are the concerns and what is the antidote?"
+    back: "Dabigatran is 80% renally cleared and accumulates significantly in renal failure (contraindicated if GFR <30). Antidote: idarucizumab (Praxbind) 5g IV, which specifically reverses dabigatran. For rivaroxaban/apixaban: andexanet alfa.\n\nDOACs require renal function assessment before prescribing. Dabigatran is the most renally dependent DOAC. Rivaroxaban and apixaban have lower renal clearance (~33% and ~27%) but still need dose reduction in moderate renal impairment. Dialysis can remove dabigatran but not the factor Xa inhibitors."
+    difficulty: hard
+    tags: [dabigatran, renal failure, idarucizumab, DOAC, bleeding]
+  - front: "Which drugs are hepatotoxic and should be avoided or used with extreme caution in hepatic failure?"
+    back: "Acetaminophen (reduced threshold in liver disease), methotrexate, isoniazid, valproic acid, amiodarone, statins (monitor LFTs), azathioprine, and ketoconazole. Avoid NSAIDs (GI bleeding risk with varices, renal effects in cirrhosis).\n\nIn cirrhosis, reduced hepatic blood flow and decreased CYP enzyme activity impair drug metabolism. Child-Pugh score guides dose adjustments. NSAIDs are particularly dangerous in cirrhosis due to impaired prostaglandin-mediated renal perfusion and increased GI bleeding risk from portal hypertension."
+    difficulty: medium
+    tags: [hepatotoxicity, liver failure, acetaminophen, cirrhosis, drug safety]
+  - front: "How does the Child-Pugh classification guide drug dosing in hepatic impairment?"
+    back: "Child-Pugh A (mild): usually no adjustment. Child-Pugh B (moderate): reduce dose of hepatically metabolized drugs by 25-50%. Child-Pugh C (severe): avoid hepatically metabolized drugs when possible or reduce by 50-75%. Parameters: bilirubin, albumin, INR, ascites, encephalopathy.\n\nUnlike renal dosing (GFR provides a quantitative guide), hepatic dosing is less precise because no single test reliably predicts drug clearance. Child-Pugh combines five parameters to estimate hepatic reserve. Many drug monographs provide Child-Pugh-specific dosing recommendations."
+    difficulty: medium
+    tags: [Child-Pugh, hepatic impairment, dose adjustment, cirrhosis, pharmacokinetics]
+  - front: "Why are benzodiazepines dangerous in hepatic failure, and which benzodiazepines are safer in liver disease?"
+    back: "Most benzodiazepines undergo hepatic oxidation (CYP-dependent), which is impaired in liver disease, causing accumulation and precipitating hepatic encephalopathy. Safer options: lorazepam, oxazepam, temazepam (LOT) — they undergo glucuronidation, which is preserved in liver disease.\n\nThe mnemonic 'LOT' (Lorazepam, Oxazepam, Temazepam) identifies benzodiazepines metabolized by phase II conjugation (glucuronidation) rather than phase I oxidation. Diazepam and midazolam have active metabolites that accumulate in liver failure. Benzodiazepines can worsen or precipitate hepatic encephalopathy."
+    difficulty: medium
+    tags: [benzodiazepines, hepatic failure, LOT, glucuronidation, hepatic encephalopathy]
+  - front: "Which drugs are known teratogens and absolutely contraindicated in pregnancy?"
+    back: "Warfarin (nasal hypoplasia, stippled epiphyses, CNS defects), isotretinoin (craniofacial, cardiac, CNS defects), valproic acid (neural tube defects), methotrexate (limb and craniofacial defects), ACE inhibitors/ARBs (renal dysgenesis, oligohydramnios in 2nd/3rd trimester), thalidomide (phocomelia).\n\nHealth Canada mandates pregnancy prevention programs for isotretinoin (iPLEDGE equivalent). Valproic acid carries a 1-2% neural tube defect risk (10x baseline). All women of reproductive age on valproate should take high-dose folic acid (5 mg/day) if alternatives are not possible."
+    difficulty: medium
+    tags: [teratogens, pregnancy, warfarin, isotretinoin, valproic acid, ACE inhibitors]
+  - front: "A pregnant patient requires anticoagulation for a mechanical heart valve. Warfarin is teratogenic. What is the safe alternative?"
+    back: "Low-molecular-weight heparin (LMWH, e.g., enoxaparin) or unfractionated heparin (UFH). Neither crosses the placenta. LMWH is preferred for most of pregnancy; some guidelines recommend warfarin in the 2nd trimester only for high-risk mechanical valves.\n\nWarfarin crosses the placenta and causes warfarin embryopathy (weeks 6-12: nasal hypoplasia, stippled epiphyses) and CNS defects (any trimester). DOACs are contraindicated in pregnancy (insufficient safety data). LMWH requires dose adjustment as pregnancy progresses due to increased volume of distribution."
+    difficulty: hard
+    tags: [pregnancy, anticoagulation, LMWH, warfarin, mechanical valve, teratogen]
+  - front: "A woman with epilepsy on valproic acid is planning pregnancy. What should you do?"
+    back: "Switch to a safer antiepileptic (lamotrigine or levetiracetam) before conception if seizure control allows. If valproate cannot be stopped, use the lowest effective dose and prescribe high-dose folic acid 5 mg/day (started 3 months pre-conception).\n\nValproate has the highest teratogenic risk among antiepileptics: 10% major malformation rate (NTDs, cardiac defects, hypospadias) and dose-dependent neurodevelopmental effects (lower IQ). Lamotrigine and levetiracetam have the best safety profiles in pregnancy among antiepileptics."
+    difficulty: hard
+    tags: [valproic acid, pregnancy, epilepsy, folic acid, lamotrigine, teratogen]
+  - front: "Which antibiotics are safe in pregnancy and which must be avoided?"
+    back: "Safe: penicillins, cephalosporins, azithromycin, erythromycin (not estolate). Avoid: tetracyclines (teeth discoloration, bone growth), fluoroquinolones (cartilage damage), TMP-SMX (1st trimester: folate antagonist; 3rd trimester: kernicterus), aminoglycosides (ototoxicity), metronidazole (controversial in 1st trimester, generally considered safe).\n\nPenicillins and cephalosporins are category B and have the most safety data in pregnancy. Nitrofurantoin is generally safe but avoided near term (hemolytic anemia in G6PD-deficient neonates). Fluoroquinolones are avoided due to animal data showing cartilage damage, though human risk may be low."
+    difficulty: medium
+    tags: [pregnancy, antibiotics, tetracyclines, penicillins, drug safety]
+  - front: "A pregnant patient at 30 weeks with chronic hypertension is on an ACE inhibitor. What is the risk and what antihypertensive should replace it?"
+    back: "ACE inhibitors and ARBs in 2nd/3rd trimester cause fetal renal dysgenesis, oligohydramnios, pulmonary hypoplasia, and skull ossification defects. Safe alternatives: labetalol (first-line in Canada), nifedipine, or methyldopa.\n\nACEi/ARBs are relatively safe in the 1st trimester but must be discontinued as soon as pregnancy is confirmed. Labetalol is the preferred antihypertensive in pregnancy per SOGC guidelines. Atenolol is avoided (associated with fetal growth restriction). Methyldopa has the longest safety record in pregnancy."
+    difficulty: medium
+    tags: [ACE inhibitors, pregnancy, hypertension, labetalol, teratogen, SOGC]
+  - front: "A patient on simvastatin 40 mg is prescribed clarithromycin for a respiratory infection. What is the risk and how should it be managed?"
+    back: "Clarithromycin inhibits CYP3A4, dramatically increasing simvastatin levels, risking rhabdomyolysis. Management: temporarily hold simvastatin during clarithromycin course, or use azithromycin instead (no CYP3A4 inhibition).\n\nSimvastatin and lovastatin are the most susceptible statins to CYP3A4 interactions. Atorvastatin is also a CYP3A4 substrate but less affected. Rosuvastatin and pravastatin are NOT CYP3A4 substrates and are safer with CYP3A4 inhibitors. Rhabdomyolysis presents with myalgias, dark urine, and elevated CK."
+    difficulty: hard
+    tags: [statins, clarithromycin, rhabdomyolysis, CYP3A4, drug interaction]
+  - front: "Why is the combination of an SSRI with a monoamine oxidase inhibitor (MAOI) contraindicated? What is the required washout period?"
+    back: "SSRI + MAOI causes serotonin syndrome (potentially fatal hyperthermia, rigidity, autonomic instability). Washout: stop SSRI 2 weeks before starting MAOI (5 weeks for fluoxetine due to long half-life of norfluoxetine). Stop MAOI 2 weeks before starting SSRI.\n\nMAOIs prevent serotonin degradation while SSRIs block reuptake, causing massive synaptic serotonin accumulation. Fluoxetine requires a 5-week washout due to its active metabolite norfluoxetine (half-life 4-16 days). This is a common exam question testing knowledge of dangerous drug combinations."
+    difficulty: hard
+    tags: [SSRI, MAOI, serotonin syndrome, washout period, drug interaction]
+  - front: "A patient on methotrexate for rheumatoid arthritis is prescribed TMP-SMX for a UTI. What is the dangerous interaction?"
+    back: "TMP-SMX inhibits renal tubular secretion of methotrexate AND both drugs are folate antagonists. Combined use causes methotrexate toxicity: pancytopenia, mucositis, hepatotoxicity, and potentially fatal bone marrow suppression.\n\nThis combination has caused deaths and is considered a contraindicated pair. TMP-SMX also displaces methotrexate from protein binding. Alternative antibiotics for UTI in methotrexate patients include nitrofurantoin or cephalexin. If TMP-SMX is unavoidable, hold methotrexate and monitor CBC closely."
+    difficulty: hard
+    tags: [methotrexate, TMP-SMX, folate antagonist, pancytopenia, drug interaction]
+  - front: "A patient on lithium for bipolar disorder starts ibuprofen for knee pain. What happens to lithium levels and why?"
+    back: "NSAIDs reduce renal prostaglandin synthesis, decreasing GFR and lithium clearance, causing lithium levels to rise by 15-50%. Risk of lithium toxicity (tremor, ataxia, renal failure, seizures). Use acetaminophen instead or monitor lithium levels closely.\n\nLithium has a very narrow therapeutic index (0.6-1.2 mmol/L). Other drugs that increase lithium levels: thiazide diuretics, ACE inhibitors, and dehydration. Sulindac may have less effect on renal prostaglandins but is not guaranteed safe. Patients on lithium should avoid NSAIDs when possible."
+    difficulty: hard
+    tags: [lithium, NSAIDs, drug interaction, bipolar disorder, nephrotoxicity]
+  - front: "A patient on warfarin is prescribed metronidazole for a dental abscess. What interaction occurs?"
+    back: "Metronidazole inhibits CYP2C9 (and possibly CYP3A4), reducing warfarin metabolism and increasing INR, with significant bleeding risk. INR should be checked within 3-5 days and warfarin dose reduced by ~25-50%.\n\nMetronidazole is one of many antibiotics that interact with warfarin. The interaction is both pharmacokinetic (CYP inhibition) and possibly pharmacodynamic (reduced vitamin K production by gut flora). Other common warfarin potentiators include TMP-SMX, fluconazole, amiodarone, and ciprofloxacin."
+    difficulty: medium
+    tags: [warfarin, metronidazole, INR, CYP2C9, drug interaction]
+  - front: "Describe the WHO analgesic ladder for cancer pain management."
+    back: "Step 1 (mild pain): non-opioid (acetaminophen, NSAIDs) +/- adjuvant. Step 2 (mild-moderate): weak opioid (codeine, tramadol) + non-opioid +/- adjuvant. Step 3 (moderate-severe): strong opioid (morphine, hydromorphone, fentanyl) + non-opioid +/- adjuvant.\n\nAdjuvant analgesics include gabapentin/pregabalin (neuropathic pain), TCAs (neuropathic), corticosteroids (bone pain, nerve compression), bisphosphonates (bone metastases). In Canada, the Canadian Pain Society recommends starting strong opioids at step 3 without requiring step 2 trial for moderate-severe cancer pain."
+    difficulty: easy
+    tags: [WHO pain ladder, cancer pain, opioids, adjuvant analgesics, palliative care]
+  - front: "What are the standard opioid equianalgesic doses relative to oral morphine 30 mg?"
+    back: "Oral morphine 30 mg = IV morphine 10 mg = oral hydromorphone 6 mg = IV hydromorphone 1.5 mg = oral oxycodone 20 mg = transdermal fentanyl ~12.5 mcg/h (approximate). Codeine 200 mg = morphine 30 mg oral.\n\nEquianalgesic tables guide opioid rotation. When switching opioids, reduce the calculated equianalgesic dose by 25-50% for incomplete cross-tolerance. Fentanyl patches should only be used in opioid-tolerant patients (receiving at least 60 mg oral morphine equivalents/day for one week)."
+    difficulty: hard
+    tags: [opioid equivalency, morphine, hydromorphone, equianalgesic, pain management]
+  - front: "What are adjuvant analgesics used for neuropathic pain and which are first-line in Canada?"
+    back: "First-line per Canadian Pain Society: gabapentin, pregabalin, duloxetine, or TCAs (amitriptyline, nortriptyline). Second-line: tramadol, topical lidocaine. Third-line: strong opioids, cannabinoids. Carbamazepine is first-line specifically for trigeminal neuralgia.\n\nNeuropathic pain (burning, shooting, allodynia) responds poorly to standard analgesics. Gabapentinoids work by binding alpha-2-delta calcium channel subunits. TCAs inhibit norepinephrine and serotonin reuptake in descending inhibitory pain pathways. Duloxetine (SNRI) is particularly useful for diabetic neuropathy."
+    difficulty: medium
+    tags: [neuropathic pain, gabapentin, pregabalin, adjuvant analgesics, Canadian guidelines]
+  - front: "Match the antidote to the poisoning: (1) N-acetylcysteine, (2) flumazenil, (3) naloxone, (4) digoxin-specific antibody fragments (DigiFab), (5) deferoxamine."
+    back: "(1) NAC — acetaminophen overdose, (2) flumazenil — benzodiazepine overdose (use with caution), (3) naloxone — opioid overdose, (4) DigiFab — digoxin toxicity, (5) deferoxamine — iron overdose.\n\nNAC replenishes glutathione to detoxify NAPQI; most effective within 8 hours of acetaminophen ingestion. Flumazenil risks seizures in chronic benzodiazepine users or mixed overdoses. Naloxone has a shorter half-life than most opioids, requiring repeat dosing or infusion. DigiFab binds free digoxin; monitor free digoxin levels (total levels become unreliable)."
+    difficulty: easy
+    tags: [antidotes, NAC, naloxone, flumazenil, DigiFab, toxicology]
+  - front: "A patient presents with bradycardia, hyperkalemia, nausea, and yellow-green visual halos. What is the diagnosis, what precipitated it, and what is the antidote?"
+    back: "Digoxin toxicity. Common precipitants: hypokalemia, hypomagnesemia, renal failure, or drug interactions (amiodarone, verapamil, clarithromycin increase digoxin levels). Antidote: DigiFab (digoxin-specific antibody fragments).\n\nDigoxin toxicity can cause almost any arrhythmia but classically causes increased automaticity with impaired conduction (e.g., atrial tachycardia with AV block, bidirectional VT). Hypokalemia potentiates toxicity because digoxin and potassium compete for the Na+/K+-ATPase binding site. Avoid calcium administration in digoxin toxicity."
+    difficulty: hard
+    tags: [digoxin, DigiFab, hyperkalemia, antidote, toxicology]
+  - front: "What additional antidote pairs should you know for MCCQE1 beyond the common ones (NAC, naloxone, flumazenil, DigiFab)?"
+    back: "Fomepizole — methanol/ethylene glycol; atropine + pralidoxime — organophosphate; hydroxocobalamin — cyanide; glucagon — beta-blocker overdose; high-dose insulin (+ dextrose) — calcium channel blocker overdose; vitamin K + FFP/PCC — warfarin; protamine — heparin; idarucizumab — dabigatran.\n\nGlucagon bypasses beta-receptors to increase cAMP directly via glucagon receptors, supporting cardiac output in beta-blocker overdose. High-dose insulin-euglycemic therapy (1 U/kg/h) is the preferred treatment for severe calcium channel blocker toxicity. Protamine dose: 1 mg per 100 units of heparin given in the last 2-3 hours."
+    difficulty: medium
+    tags: [antidotes, fomepizole, glucagon, protamine, hydroxocobalamin, toxicology]
+  - front: "Compare serotonin syndrome and neuroleptic malignant syndrome (NMS): onset, causative drugs, key distinguishing features, and treatment."
+    back: "Serotonin syndrome: ACUTE onset (hours), caused by serotonergic drugs (SSRIs, MAOIs, tramadol, fentanyl, linezolid), features clonus/hyperreflexia, mydriasis, diarrhea, agitation; treatment: stop drug, cyproheptadine, benzodiazepines. NMS: GRADUAL onset (days-weeks), caused by dopamine antagonists (antipsychotics, metoclopramide) or dopamine agonist withdrawal, features lead-pipe rigidity, hyporeflexia, mutism, diaphoresis; treatment: stop drug, dantrolene, bromocriptine.\n\nThe key distinguishing feature is clonus: present in serotonin syndrome, absent in NMS. Serotonin syndrome has hyperreflexia; NMS has normal or decreased reflexes. Both cause hyperthermia. NMS has markedly elevated CK (often >1000 IU/L). Serotonin syndrome resolves within 24-72 hours with drug cessation; NMS resolves over 1-2 weeks."
+    difficulty: hard
+    tags: [serotonin syndrome, NMS, clonus, cyproheptadine, dantrolene]
+  - front: "A patient on paroxetine and tramadol develops agitation, hyperthermia (39.5°C), clonus in both legs, hyperreflexia, and diarrhea. Diagnosis and management?"
+    back: "Serotonin syndrome caused by dual serotonergic agents (SSRI + tramadol). Management: discontinue both drugs, IV benzodiazepines for agitation and muscle rigidity, cyproheptadine 12 mg PO then 4 mg q6h, active cooling if hyperthermic, IV fluids.\n\nTramadol is often forgotten as a serotonergic agent. Other commonly overlooked serotonergic drugs: fentanyl, meperidine, linezolid, ondansetron, triptans, and dextromethorphan. Cyproheptadine is a serotonin antagonist (5-HT2A). Avoid paralysis with succinylcholine (risk of hyperkalemia from rhabdomyolysis); use non-depolarizing agents if needed."
+    difficulty: hard
+    tags: [serotonin syndrome, tramadol, SSRI, cyproheptadine, hyperthermia]
+  - front: "A patient on haloperidol develops fever (40°C), severe muscle rigidity ('lead-pipe'), altered consciousness, tachycardia, and CK of 12,000 IU/L over 3 days. Diagnosis and treatment?"
+    back: "Neuroleptic malignant syndrome (NMS). Treatment: immediately stop haloperidol, aggressive IV hydration, active cooling, dantrolene 1-2.5 mg/kg IV for rigidity, bromocriptine 2.5 mg PO/NG q8h (dopamine agonist). Monitor for rhabdomyolysis, renal failure, DIC.\n\nNMS occurs in 0.02-0.03% of patients on antipsychotics, more common with high-potency typical antipsychotics (haloperidol) but can occur with atypicals. Risk factors: dehydration, agitation, rapid dose escalation. Mortality is 5-10% with treatment. Dantrolene works by reducing calcium release from sarcoplasmic reticulum, relieving muscle rigidity."
+    difficulty: hard
+    tags: [NMS, haloperidol, dantrolene, bromocriptine, rhabdomyolysis]
+  - front: "What is the primary contraindication for Propofol in cardiac patients?"
+    back: "Patients who cannot tolerate sudden decreased BP (e.g., fixed cardiac output or cardiac failure/shock)\n\nPropofol causes significant vasodilation leading to hypotension, which is dangerous in patients with limited cardiac output or shock states."
+    difficulty: easy
+    tags: [anesthesia, propofol, contraindications, cardiac, toronto-notes, pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080]
+  - front: "What are the contraindications for Propofol (Diprivan®) use?"
+    back: "Patients who cannot tolerate sudden decreased BP (e.g., fixed cardiac output or cardiac failure, shock), and egg/soy allergies (formulation contains these)\n\nPropofol causes significant vasodilation resulting in ~30% decreased blood pressure, making it dangerous in hemodynamically unstable patients."
+    difficulty: easy
+    tags: [anesthesia, IV-induction-agents, propofol, contraindications, toronto-notes, pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080]
+  - front: "What are the most common immunosuppressive medication side effects after cardiac transplantation?"
+    back: "Prednisone (multiple side effects), cyclosporine nephrotoxicity, and tacrolimus (nephrotoxic effects) are common immunosuppressant-related complications\n\nLong-term immunosuppression with calcineurin inhibitors particularly affects renal function over time."
+    difficulty: medium
+    tags: [cardiac-transplantation, immunosuppression, side-effects, toronto-notes, pages-0141-0142-0143-0144-0145-0146-0147-0148-0149-0150]
+  - front: "What immunosuppressant medications used post-transplant can cause nephrotoxicity?"
+    back: "Cyclosporine and tacrolimus\n\nCalcineurin inhibitors are cornerstone immunosuppressants but cause dose-dependent nephrotoxicity through afferent arteriolar vasoconstriction."
+    difficulty: easy
+    tags: [immunosuppression, nephrotoxicity, calcineurin-inhibitors, toronto-notes, pages-0141-0142-0143-0144-0145-0146-0147-0148-0149-0150]
+  - front: "What is the most important side effect of warfarin and what unique complication can occur?"
+    back: "Bleeding is the most important side effect. Paradoxical thrombosis and skin necrosis can also occur.\n\nSkin necrosis typically occurs in protein C-deficient patients early in therapy when warfarin rapidly depletes the shorter-lived protein C."
+    difficulty: medium
+    tags: [cardiology, anticoagulants, side-effects, complications, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the notable side effects of ticlopidine?"
+    back: "Thrombotic thrombocytopenic purpura (TTP) and neutropenia\n\nDue to these serious hematologic adverse effects, ticlopidine has largely been replaced by clopidogrel and other P2Y12 inhibitors."
+    difficulty: easy
+    tags: [cardiology, antiplatelets, side-effects, thienopyridines, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are contraindications to nitroglycerin use?"
+    back: "Concurrent use of cyclic guanosine monophosphate phosphodiesterase inhibitors (e.g., sildenafil), angle closure glaucoma, increased intracranial pressure\n\nCombining nitrates with PDE5 inhibitors can cause severe hypotension due to synergistic vasodilation."
+    difficulty: medium
+    tags: [cardiology, nitrates, contraindications, drug-interactions, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the side effects of lidocaine?"
+    back: "Confusion, stupor, and seizures (CNS toxicity)\n\nLidocaine crosses the blood-brain barrier. CNS toxicity is dose-related and more likely with hepatic dysfunction or reduced cardiac output."
+    difficulty: easy
+    tags: [cardiology, antiarrhythmics, Class-Ib, side-effects, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the notable side effects of amiodarone?"
+    back: "Photosensitivity, pulmonary toxicity, hepatotoxicity, thyroid disease, increased INR (with warfarin)\n\nAmiodarone has Class I, II, III, and IV properties. Its side effect profile is broad, requiring monitoring of pulmonary, hepatic, and thyroid function."
+    difficulty: medium
+    tags: [cardiology, antiarrhythmics, Class-III, amiodarone, side-effects, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the major side effects of warfarin?"
+    back: "Bleeding (most important), paradoxical thrombosis, and skin necrosis\n\nBleeding risk requires regular INR monitoring. Skin necrosis occurs early in treatment, especially in protein C deficient patients."
+    difficulty: easy
+    tags: [cardiology, warfarin, side effects, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the contraindications for nitroglycerin?"
+    back: "Concurrent use of cyclic guanosine monophosphate phosphodiesterase inhibitors (e.g., sildenafil), angle closure glaucoma, increased intracranial pressure\n\nCombining nitrates with PDE5 inhibitors can cause severe hypotension due to synergistic vasodilation."
+    difficulty: medium
+    tags: [cardiology, nitrates, contraindications, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are contraindications to nitroglycerin?"
+    back: "Concurrent use of cyclic guanosine monophosphate phosphodiesterase inhibitors, angle closure glaucoma, increased intracranial pressure\n\nCombined use with PDE5 inhibitors (sildenafil, tadalafil) causes severe hypotension. Also contraindicated in angle closure glaucoma and elevated ICP."
+    difficulty: medium
+    tags: [cardiology, nitrates, contraindications, nitroglycerin, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "Which antiviral agents are affected by drug interactions with valacyclovir?"
+    back: "Cladribine, foscarnet, varicella vaccine, and zoster vaccine\n\nValacyclovir has potential interactions with drugs that affect renal function or immune response. Dose adjustment is needed for impaired renal function."
+    difficulty: medium
+    tags: [dermatology, valacyclovir, antiviral, drug-interactions, herpes, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What serious adverse effect requires monitoring when using itraconazole for onychomycosis?"
+    back: "Hepatotoxicity\n\nItraconazole can cause serious hepatotoxicity, ranging from asymptomatic transaminase elevation to fulminant hepatic failure, requiring baseline and periodic liver function monitoring."
+    difficulty: medium
+    tags: [dermatology, itraconazole, hepatotoxicity, onychomycosis, antifungal, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What are the contraindications and maximum duration for cyclosporine (Neoral®) in psoriasis?"
+    back: "Contraindications: abnormal renal function, uncontrolled hypertension, malignancy (except NMSC), uncontrolled infection, immunodeficiency (except autoimmune disease), hypersensitivity. Maximum duration: <2 years due to nephrotoxicity and hypertension risk\n\nCyclosporine is a calcineurin inhibitor used for severe psoriasis. Its long-term use is limited by nephrotoxicity and hypertension, requiring rotation with other agents."
+    difficulty: medium
+    tags: [cyclosporine, psoriasis, systemic-therapy, contraindications, nephrotoxicity, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What drug interaction is clinically significant with itraconazole and what medications are affected?"
+    back: "Itraconazole inhibits CYP3A4, increasing concentration of drugs metabolized by this enzyme including statins and diabetic medications\n\nAzole antifungals are potent CYP450 inhibitors. This interaction can cause dangerous accumulation of statins (rhabdomyolysis risk) and sulfonylureas (hypoglycemia risk)."
+    difficulty: medium
+    tags: [itraconazole, drug-interactions, CYP3A4, antifungal, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What are the contraindications to ivermectin?"
+    back: "No significant serious side effects reported; not licensed for use in Canada; caution in onchocerciasis with Loa loa co-infection (risk of encephalopathy)\n\nIvermectin has an excellent safety profile with minimal serious adverse effects, making it suitable for mass drug administration in parasitic diseases."
+    difficulty: easy
+    tags: [ivermectin, contraindications, safety, onchocerciasis, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What are the contraindications and key side effects of Imiquimod (Aldara®) 5% cream?"
+    back: "Avoid natural/artificial UV exposure. Side effects include local skin reactions (erythema, ulceration, edema), flu-like symptoms. Max duration 16 weeks.\n\nImiquimod is an immune response modifier used for genital warts, cutaneous warts, and superficial BCC. Works best for warts on mucosal surfaces."
+    difficulty: medium
+    tags: [dermatology, warts, imiquimod, topical therapy, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What are the contraindications and drug interactions for Itraconazole (Sporanox®)?"
+    back: "Contraindications: CHF, pregnancy. Drug interactions: inhibits CYP3A4, increases concentrations of statins and diabetic drugs. Take capsules with food.\n\nItraconazole is an azole antifungal used for onychomycosis and tinea infections. Side effects include serious hepatotoxicity."
+    difficulty: medium
+    tags: [dermatology, onychomycosis, itraconazole, antifungal, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What are the contraindications for itraconazole?"
+    back: "Congestive heart failure and serious hepatotoxicity\n\nItraconazole is contraindicated in CHF (negative inotropic effect) and should not be used in patients with serious hepatotoxicity. It inhibits CYP3A4"
+    difficulty: medium
+    tags: [itraconazole, onychomycosis, antifungal, contraindications, oral therapy, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What are the common side effects of topical tacrolimus?"
+    back: "Burning sensation at application site\n\nTopical tacrolimus causes burning (especially initially) but lacks the adverse effects of steroids. May be used on all skin surfaces including face and intertriginous areas"
+    difficulty: easy
+    tags: [tacrolimus, atopic dermatitis, topical therapy, calcineurin inhibitor, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What are other possible etiologies of hyperpyrexia to consider if heat stroke treatment fails?"
+    back: "Meningitis, thyroid storm, anticholinergic poisoning, delirium tremens, infections, adverse drug events/drug interactions\n\nThese conditions can present with hyperpyrexia and require specific treatment."
+    difficulty: hard
+    tags: [heat-stroke, differential-diagnosis, emergency-medicine, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "What are the common side effects of testosterone therapy?"
+    back: "Acne, fluid retention, weight gain, erythrocytosis, sleep apnea, benign prostatic hypertrophy\n\nTestosterone stimulates erythropoiesis and can cause polycythemia; it also promotes prostate growth and fluid retention."
+    difficulty: easy
+    tags: [endocrinology, testosterone, side-effects, toronto-notes, pages-0361-0362-0363-0364-0365-0366-0367-0368-0369-0370]
+  - front: "What are the side effects of testosterone replacement therapy?"
+    back: "Acne, fluid retention, weight gain, erythrocytosis, sleep apnea, benign prostatic hypertrophy, and uncertain effects on cardiac events/mortality in older men\n\nTestosterone has both anabolic and androgenic effects that can cause adverse effects in various organ systems."
+    difficulty: easy
+    tags: [endocrinology, testosterone, side effects, adverse effects, toronto-notes, pages-0361-0362-0363-0364-0365-0366-0367-0368-0369-0370]
+  - front: "What are the common side effects of testosterone replacement therapy?"
+    back: "Acne, fluid retention, weight gain, erythrocytosis, sleep apnea, and benign prostatic hypertrophy\n\nSide effects are related to androgen excess or conversion to estradiol; monitoring hematocrit and prostate health is essential during therapy."
+    difficulty: easy
+    tags: [endocrinology, testosterone, side effects, adverse effects, toronto-notes, pages-0361-0362-0363-0364-0365-0366-0367-0368-0369-0370]
+  - front: "What is a contraindication to naltrexone?"
+    back: "Opioid dependence (may trigger withdrawal)\n\nNaltrexone will precipitate withdrawal in opioid-dependent patients and must not be used."
+    difficulty: medium
+    tags: [alcohol, pharmacology, naltrexone, contraindication, toronto-notes, pages-0391-0392-0393-0394-0395-0396-0397-0398-0399-0400]
+  - front: "What are the common side effects of bupropion?"
+    back: "Insomnia, dry mouth\n\nThese side effects are related to dopaminergic and noradrenergic activity and are usually manageable."
+    difficulty: easy
+    tags: [smoking-cessation, pharmacology, bupropion, side-effects, toronto-notes, pages-0391-0392-0393-0394-0395-0396-0397-0398-0399-0400]
+  - front: "What are common side effects of SNRIs?"
+    back: "Insomnia, tremors, tachycardia, sweating\n\nSNRIs commonly cause insomnia, tremors, increased heart rate, and excessive sweating."
+    difficulty: easy
+    tags: [pharmacology, SNRI, side effects, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the side effects of SNRIs?"
+    back: "Insomnia, tremors, tachycardia, sweating\n\nSNRIs have similar side effects to SSRIs but also affect norepinephrine, causing more stimulant-like effects."
+    difficulty: medium
+    tags: [pharmacology, psychiatry, depression, SNRI, side effects, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the side effects of TCAs?"
+    back: "Sexual dysfunction, weight gain, tremors, tachycardia, sweating\n\nTCAs have significant anticholinergic and cardiovascular side effects due to their non-selective action."
+    difficulty: easy
+    tags: [TCA, amitriptyline, depression, pharmacology, side effects, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the side effects of TCAs that make them dangerous?"
+    back: "Narrow therapeutic window, lethal in overdose\n\nTCAs (e.g., amitriptyline) block serotonin and NE reuptake but have a narrow therapeutic index making overdose potentially fatal."
+    difficulty: medium
+    tags: [psychiatry, pharmacology, TCA, safety, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the side effects of TCAs that make them dangerous in overdose?"
+    back: "Sexual dysfunction, weight gain, tremors, tachycardia, sweating\n\nTCAs have a narrow therapeutic window and can be lethal in overdose, requiring careful monitoring."
+    difficulty: medium
+    tags: [psychiatry, depression, TCA, toxicology, safety, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the common side effects of SNRIs?"
+    back: "Insomnia, tremors, tachycardia, sweating\n\nSNRIs share some side effects with SSRIs but also affect norepinephrine, causing additional symptoms."
+    difficulty: medium
+    tags: [psychiatry, pharmacology, SNRI, side effects, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the common side effects of TCAs?"
+    back: "Sexual dysfunction, weight gain, tremors, tachycardia, sweating\n\nTCAs have significant anticholinergic and cardiovascular side effects due to their broader neurotransmitter effects."
+    difficulty: medium
+    tags: [psychiatry, pharmacology, TCA, side effects, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are common side effects of bupropion?"
+    back: "Insomnia and dry mouth\n\nThese are the most frequently reported side effects and patients should be counseled about them when starting therapy."
+    difficulty: easy
+    tags: [pharmacology, smoking-cessation, bupropion, side-effects, toronto-notes, pages-0391-0392-0393-0394-0395-0396-0397-0398-0399-0400]
+  - front: "What are the common side effects of SNRIs (e.g., venlafaxine)?"
+    back: "Insomnia, tremors, tachycardia, sweating\n\nSNRIs block serotonin and norepinephrine reuptake, causing sympathetic side effects like insomnia, tremors, tachycardia, and sweating."
+    difficulty: easy
+    tags: [psychiatry, pharmacology, SNRI, depression, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the side effects of SNRIs (e.g., venlafaxine)?"
+    back: "Insomnia, tremors, tachycardia, sweating\n\nSNRIs have similar side effects to SSRIs plus norepinephrine-related effects like tachycardia and sweating."
+    difficulty: medium
+    tags: [pharmacology, psychiatry, depression, SNRI, side effects, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are common side effects of SNRIs (e.g., venlafaxine)?"
+    back: "Insomnia, tremors, tachycardia, sweating\n\nSNRIs have similar side effects to SSRIs but additionally affect norepinephrine, causing more autonomic symptoms."
+    difficulty: easy
+    tags: [pharmacology, antidepressants, SNRI, side effects, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the four phases of clinical drug testing in order, and what is the primary purpose of each?"
+    back: "Phase I: PK and safety in healthy volunteers (small N); Phase II: efficacy, safety, dose range, PK in patients (small N); Phase III: safety and efficacy vs. placebo/standard of care in large RCTs; Phase IV: post-marketing surveillance for effectiveness and previously undetected ADRs.\n\nHealth Canada requires all four phases before a drug receives a Drug Identification Number (DIN). Phase III double-blinded RCTs provide the highest level of evidence for regulatory approval, while Phase IV detects rare adverse effects that were missed in pre-approval trials."
+    difficulty: easy
+    tags: [pharmacology, drug testing, clinical trials, phases, Health Canada]
+  - front: "A 55-year-old patient is prescribed sublingual nitroglycerin for angina. What pharmacokinetic advantage does the sublingual route have over the oral route?"
+    back: "Sublingual administration bypasses intestinal and hepatic first-pass metabolism, providing faster onset and higher bioavailability compared to oral nitroglycerin which undergoes extensive first-pass effect.\n\nNitroglycerin is almost completely metabolized by first-pass effect when taken orally, making it ineffective PO. The sublingual route delivers drug directly into the systemic circulation via the highly vascularized sublingual mucosa, achieving rapid therapeutic levels for acute angina relief."
+    difficulty: easy
+    tags: [sublingual, first-pass effect, bioavailability, nitroglycerin, angina]
+  - front: "Which route of drug administration has 100% bioavailability by definition?"
+    back: "Intravenous (IV) administration has 100% bioavailability (F = 1), as the drug is delivered directly into the systemic circulation with no absorption step required.\n\nBioavailability (F) is the proportion of a dose that reaches systemic circulation unchanged. The IV route bypasses all absorption and first-pass processes, so the entire dose is available; all other routes have F < 1 due to incomplete absorption or presystemic clearance."
+    difficulty: easy
+    tags: [bioavailability, IV, pharmacokinetics, routes of administration]
+  - front: "A patient taking oral simvastatin is started on erythromycin for a respiratory infection. What pharmacokinetic interaction should be anticipated and why?"
+    back: "Erythromycin is a CYP3A4 inhibitor. It inhibits simvastatin's metabolism (simvastatin is a CYP3A4 substrate), leading to markedly elevated simvastatin plasma levels and increased risk of myopathy/rhabdomyolysis.\n\nCYP3A4 inhibition by erythromycin (a macrolide antibiotic) reduces first-pass and systemic metabolism of simvastatin, substantially increasing its AUC. Canadian prescribing guidelines recommend avoiding this combination or temporarily discontinuing the statin during macrolide therapy to prevent statin-induced myotoxicity."
+    difficulty: medium
+    tags: [CYP3A4, drug interaction, simvastatin, erythromycin, myopathy, enzyme inhibition]
+  - front: "A patient drinks large amounts of grapefruit juice daily while taking simvastatin. What is the mechanism of the resulting drug interaction?"
+    back: "Grapefruit juice is a potent inhibitor of intestinal CYP3A4, markedly reducing first-pass metabolism of simvastatin and increasing its AUC up to 17-fold, raising the risk of statin toxicity (myopathy/rhabdomyolysis).\n\nCertain furanocoumarins in grapefruit juice irreversibly inhibit CYP3A4 in enterocytes, preventing pre-systemic metabolism of CYP3A4 substrates. Because grapefruit affects intestinal rather than hepatic CYP3A4, the interaction applies mainly to drugs with significant first-pass metabolism. Patients should be counselled to avoid grapefruit with many CYP3A4 substrates."
+    difficulty: medium
+    tags: [grapefruit, CYP3A4, drug interaction, simvastatin, first-pass effect, food-drug interaction]
+  - front: "A patient with epilepsy is started on carbamazepine. After several weeks, drug levels decline despite consistent dosing. What pharmacokinetic phenomenon explains this?"
+    back: "Carbamazepine induces its own metabolism (autoinduction) by upregulating CYP enzymes, increasing its own biotransformation rate over time and reducing its plasma levels.\n\nCarbamazepine is an enzyme inducer that enhances transcription of CYP enzymes (primarily CYP3A4), which metabolize carbamazepine itself. This autoinduction effect typically develops over 2-4 weeks and requires dose escalation to maintain therapeutic levels. This is a classic example of enzyme induction causing clinically significant pharmacokinetic changes."
+    difficulty: medium
+    tags: [carbamazepine, autoinduction, enzyme induction, CYP, pharmacokinetics, epilepsy]
+  - front: "A woman on oral contraceptive pills is started on phenobarbital for seizures. What pharmacokinetic interaction should be discussed?"
+    back: "Phenobarbital is a potent CYP enzyme inducer that increases the metabolism of oral contraceptives, reducing their plasma levels and potentially causing contraceptive failure.\n\nEnzyme-inducing anticonvulsants (phenobarbital, phenytoin, carbamazepine, rifampin) increase hepatic CYP-mediated metabolism of estrogen and progestin components of oral contraceptives. Canadian guidelines recommend using alternative or additional contraception (e.g., barrier methods) in women taking enzyme-inducing drugs with OCP."
+    difficulty: medium
+    tags: [phenobarbital, enzyme induction, oral contraceptives, drug interaction, CYP, contraception failure]
+  - front: "A chronic heavy alcohol user takes a standard dose of acetaminophen. Why is this patient at higher risk for hepatotoxicity compared to an occasional drinker?"
+    back: "Chronic alcohol consumption induces CYP2E1, which converts acetaminophen to its toxic metabolite NAPQI. With greater NAPQI production, hepatic glutathione stores are depleted more rapidly, leading to hepatocellular damage at lower acetaminophen doses.\n\nIn acute alcohol ingestion, CYP2E1 is competitively inhibited by ethanol, temporarily reducing NAPQI formation. However, chronic alcohol use upregulates CYP2E1 expression and depletes glutathione reserves, making the liver more vulnerable to acetaminophen-induced oxidative injury. Health Canada recommends caution with acetaminophen in those who consume 3 or more alcoholic drinks per day."
+    difficulty: medium
+    tags: [acetaminophen, hepatotoxicity, CYP2E1, NAPQI, alcohol, chronic, drug interaction]
+  - front: "A patient taking codeine for pain has an ultra-rapid CYP2D6 metabolizer genotype. What clinical concern does this raise?"
+    back: "Ultra-rapid CYP2D6 metabolizers convert codeine to morphine extremely rapidly and in large quantities, leading to dangerously high morphine concentrations with risk of opioid toxicity (respiratory depression) even at standard doses.\n\nCodeine is a prodrug activated by CYP2D6 to morphine. Health Canada has issued warnings about codeine use in ultra-rapid metabolizers — especially concerning in breastfeeding mothers (morphine transferred to infant) and children post-tonsillectomy, where deaths have been reported. Codeine is now contraindicated in children under 12 in Canada."
+    difficulty: hard
+    tags: [codeine, CYP2D6, pharmacogenomics, ultra-rapid metabolizer, morphine, opioid toxicity, prodrug]
+  - front: "A patient on warfarin is found to carry CYP2C9 loss-of-function alleles. How does this affect warfarin management?"
+    back: "CYP2C9 loss-of-function alleles reduce warfarin metabolism, leading to higher warfarin plasma concentrations and greater anticoagulant effect; these patients require lower warfarin doses to maintain therapeutic INR and are at higher risk of bleeding.\n\nWarfarin (specifically the more potent S-enantiomer) is primarily metabolized by CYP2C9. Genetic variants (e.g., CYP2C9*2, *3) significantly reduce enzyme activity, necessitating dose reductions of up to 50-90%. Pharmacogenomic testing for CYP2C9 and VKORC1 variants can guide initial warfarin dosing to reduce bleeding complications."
+    difficulty: hard
+    tags: [warfarin, CYP2C9, pharmacogenomics, anticoagulation, bleeding risk, INR]
+  - front: "A patient with severe liver disease requires dosing adjustment for which pharmacokinetic reason?"
+    back: "Hepatic dysfunction reduces drug-metabolizing enzyme activity, particularly CYP enzymes, leading to decreased first-pass metabolism and reduced clearance of hepatically-metabolized drugs, resulting in higher and prolonged drug concentrations.\n\nThe liver is the primary site of biotransformation for most drugs. Conditions such as cirrhosis, hepatitis, and hepatocellular carcinoma can decrease CYP enzyme activity and reduce hepatic blood flow. However, the liver has significant reserve capacity so clinically significant effects typically occur only with advanced disease (e.g., Child-Pugh B or C cirrhosis)."
+    difficulty: medium
+    tags: [liver disease, hepatic metabolism, CYP enzymes, drug clearance, dose adjustment, cirrhosis]
+  - front: "Why do neonates and elderly patients generally require dose reductions for many drugs compared to healthy adults?"
+    back: "Both neonates and elderly patients have reduced drug biotransformation capacity due to immature or declining CYP enzyme activity, respectively, leading to higher drug concentrations and prolonged effects at standard adult doses.\n\nNeonates lack fully developed hepatic CYP enzyme systems and have reduced renal function, while elderly patients experience progressive decline in both hepatic blood flow and renal function (approximately 7.5 mL/min GFR loss per decade). Additionally, altered Vd due to body composition changes in both populations further affects drug disposition. Canadian prescribing principles advocate 'start low, go slow' in elderly patients."
+    difficulty: easy
+    tags: [neonates, elderly, biotransformation, pharmacokinetics, dose adjustment, age]
+  - front: "What is the first-pass effect and which routes of administration avoid it?"
+    back: "The first-pass effect is drug metabolism occurring in the GI tract and/or liver before the drug reaches systemic circulation, reducing bioavailability. Routes that avoid it include: IV, sublingual, buccal, inhalation, transdermal, rectal (partially), and intranasal.\n\nWhen a drug is absorbed orally, it travels via the portal vein to the liver where significant metabolism can occur before reaching systemic circulation. Drugs with high first-pass effects (e.g., nitroglycerin, lidocaine, morphine) have much lower bioavailability when given orally compared to parenteral routes. Recognizing which drugs have high first-pass effects guides route selection in clinical practice."
+    difficulty: easy
+    tags: [first-pass effect, bioavailability, pharmacokinetics, routes of administration, liver metabolism]
+  - front: "What is volume of distribution (Vd) and what does a very large Vd indicate about a drug's pharmacological properties?"
+    back: "Vd is the theoretical volume into which a drug distributes, calculated as dose divided by initial plasma concentration. A large Vd (much greater than total body water ~40 L) indicates the drug extensively distributes into tissues (e.g., fat, muscle) and has low plasma concentrations relative to total body drug content.\n\nVd is a theoretical value that does not correspond to an actual anatomical compartment. Drugs with large Vd (e.g., chloroquine, amiodarone, digoxin) are difficult to remove by hemodialysis because most drug is tissue-bound rather than in plasma. Conversely, drugs with small Vd (e.g., warfarin, aminoglycosides) remain predominantly in plasma and are more amenable to dialysis."
+    difficulty: medium
+    tags: [volume of distribution, Vd, tissue distribution, pharmacokinetics, plasma protein binding]
+  - front: "An elderly patient with low serum albumin is started on phenytoin at a standard dose. What pharmacokinetic alteration should be anticipated?"
+    back: "Hypoalbuminemia reduces phenytoin protein binding, increasing the free (unbound) drug fraction. The measured total phenytoin level will appear low while the pharmacologically active free fraction is elevated, increasing the risk of phenytoin toxicity.\n\nPhenytoin is ~90% protein-bound to albumin. In hypoalbuminemia, fewer binding sites are available, increasing the free fraction and pharmacological effect. Standard total drug levels will underestimate drug activity. A Sheiner-Tozer correction formula is used clinically to adjust the reported level. Free phenytoin levels should be checked when hypoalbuminemia is present."
+    difficulty: hard
+    tags: [phenytoin, protein binding, hypoalbuminemia, free drug, pharmacokinetics, elderly, toxicity]
+  - front: "What is the elimination half-life of a drug and how many half-lives are required to reach steady-state?"
+    back: "The elimination half-life is the time for serum drug concentration to decrease by 50%. Approximately 4-5 half-lives are required to reach steady-state with repeated dosing (and for complete elimination after stopping a drug).\n\nSteady-state is reached when the rate of drug administration equals the rate of elimination. This principle applies to first-order kinetics (most drugs). Clinically, this means a drug with a 12-hour half-life reaches steady-state in approximately 2-3 days, while a drug with a 5-day half-life (e.g., amiodarone) takes weeks. Loading doses are used when rapid therapeutic levels are required."
+    difficulty: easy
+    tags: [half-life, steady-state, pharmacokinetics, first-order kinetics, elimination]
+  - front: "What are Phase I and Phase II drug metabolism reactions and how do they differ?"
+    back: "Phase I reactions (oxidation, reduction, hydrolysis) introduce polar groups via CYP enzymes, slightly increasing water solubility. Phase II reactions (conjugation with glucuronic acid, glutathione, sulfate, acetyl, methyl groups, or amino acids) dramatically increase water solubility, facilitating renal/biliary excretion.\n\nPhase I reactions place a polar 'handle' on lipophilic drugs to permit subsequent Phase II conjugation. Phase II reactions generally inactivate drugs (though some conjugates retain activity, e.g., morphine-6-glucuronide). Some drugs undergo only Phase II conjugation (e.g., morphine is directly glucuronidated without requiring Phase I modification). Understanding these pathways helps predict drug interactions and effects of hepatic or renal impairment."
+    difficulty: medium
+    tags: [Phase I metabolism, Phase II metabolism, CYP enzymes, conjugation, glucuronidation, biotransformation]
+  - front: "A patient on digoxin is started on clarithromycin. What drug interaction should be anticipated and what is its mechanism?"
+    back: "Clarithromycin (a macrolide antibiotic) inhibits P-glycoprotein (P-gp), a multidrug efflux pump. Digoxin is a P-gp substrate; inhibition of P-gp increases digoxin absorption and reduces its elimination, leading to elevated digoxin levels and risk of toxicity.\n\nP-glycoprotein (P-gp) in intestinal epithelium and renal proximal tubules normally effluxes digoxin back into the gut lumen and renal tubule, respectively. Most macrolide antibiotics inhibit P-gp, substantially increasing digoxin bioavailability and reducing renal excretion. Digoxin toxicity (nausea, visual changes, arrhythmias) can occur; monitoring of digoxin levels is essential when macrolides are co-prescribed."
+    difficulty: hard
+    tags: [P-glycoprotein, digoxin, clarithromycin, drug interaction, macrolide, efflux pump, toxicity]
+  - front: "A patient on rifampin for tuberculosis is also on cyclosporine post-transplant. What pharmacokinetic interaction occurs?"
+    back: "Rifampin is a potent P-gp and CYP inducer (especially CYP3A4). It markedly increases cyclosporine metabolism and efflux, dramatically reducing cyclosporine plasma levels, potentially leading to organ rejection.\n\nRifampin induces hepatic and intestinal CYP3A4 as well as P-gp, both of which are critical to cyclosporine disposition. Cyclosporine levels can drop by up to 80% when rifampin is co-administered. This interaction requires vigilant therapeutic drug monitoring and often necessitates substantially increased cyclosporine doses. Alternative anti-tuberculosis regimens should be considered in transplant recipients when possible."
+    difficulty: hard
+    tags: [rifampin, cyclosporine, P-glycoprotein, CYP3A4, enzyme induction, drug interaction, transplant]
+  - front: "What is enterohepatic recirculation and what is its clinical significance for drug therapy?"
+    back: "Enterohepatic recirculation occurs when drugs or their conjugated metabolites excreted into bile are deconjugated by gut bacteria in the intestine, reabsorbed, and returned to the liver. This cycle prolongs the drug's half-life and duration of effect.\n\nClinically relevant examples include oral contraceptives (disrupted by antibiotics that alter gut flora, reducing OCP effectiveness) and certain NSAIDs. Some drugs with high enterohepatic recirculation (e.g., cholestyramine can interrupt this cycle for digoxin toxicity treatment). Understanding this mechanism helps explain prolonged drug effects and some drug interactions mediated by gut microbiome disruption."
+    difficulty: medium
+    tags: [enterohepatic recirculation, pharmacokinetics, bile, gut bacteria, oral contraceptives, half-life]
+  - front: "How does renal drug excretion occur and what are the three major processes involved?"
+    back: "Renal drug excretion = glomerular filtration + tubular secretion − tubular reabsorption. Glomerular filtration is passive (free drug only); tubular secretion is an active saturable process (both bound and free drug); tubular reabsorption can be active or passive and reduces net drug excretion.\n\nRenal function decreases approximately 7.5 mL/min GFR per decade of age after 40. Most drugs requiring dose adjustment in renal impairment are renally eliminated. Probenecid inhibits tubular secretion of penicillin (sharing organic anion transporters), historically used to increase penicillin levels. Drug clearance via kidneys is assessed using serum creatinine to estimate GFR."
+    difficulty: medium
+    tags: [renal excretion, glomerular filtration, tubular secretion, tubular reabsorption, pharmacokinetics, renal clearance]
+  - front: "A patient with chronic kidney disease on multiple medications requires dose adjustment. What pharmacokinetic principles guide drug dosing in CKD?"
+    back: "In CKD: (1) renally-excreted drugs accumulate due to reduced GFR and tubular secretion; (2) protein binding may be altered (reduced albumin, uremic displacement); (3) drug metabolism is often reduced; (4) Vd may change. Dose adjustment (dose reduction or extended interval) is guided by degree of renal impairment (eGFR).\n\nMany drugs or their active/toxic metabolites accumulate in CKD, requiring dose reduction or interval extension. Additionally, uremia affects drug protein binding and may alter drug metabolism. Canadian guidelines recommend using eGFR (Cockcroft-Gault or CKD-EPI) to guide dosing of renally-cleared drugs such as antibiotics, anticoagulants (e.g., LMWH, DOACs), digoxin, and metformin."
+    difficulty: medium
+    tags: [CKD, renal impairment, dose adjustment, pharmacokinetics, eGFR, drug accumulation]
+  - front: "A geriatric patient is prescribed diazepam for procedural sedation. Why might this drug have a prolonged effect in this population?"
+    back: "In elderly patients, increased body fat serves as a depot for lipid-soluble drugs like diazepam, greatly increasing its volume of distribution (Vd), prolonging the elimination half-life and drug effect, in addition to reduced hepatic metabolism.\n\nDiazepam is highly lipophilic and accumulates in adipose tissue. Elderly patients have increased body fat and reduced lean body mass and total body water, significantly enlarging the Vd for fat-soluble drugs. Combined with reduced hepatic CYP activity and decreased albumin, this leads to prolonged benzodiazepine effects and increased risk of falls, sedation, and cognitive impairment. Shorter-acting, non-hepatically metabolized benzodiazepines (e.g., lorazepam, oxazepam) are preferred in elderly patients."
+    difficulty: medium
+    tags: [diazepam, benzodiazepine, elderly, lipophilic, volume of distribution, adipose, pharmacokinetics]
+  - front: "What is the Drug Identification Number (DIN) in Canada and how does it differ from a Natural Product Number (NPN)?"
+    back: "A DIN (Drug Identification Number) is assigned by Health Canada to each approved pharmaceutical drug. An NPN (Natural Product Number) is assigned to natural health products (excluding homeopathic medicines) regulated by the Natural and Non-Prescription Health Products Directorate (NNHPD).\n\nIn Canada, the DIN system ensures that approved drugs meet safety, efficacy, and quality standards. Natural health products with NPNs have a different, less rigorous regulatory pathway than prescription or OTC drugs with DINs. Homeopathic products carry a DIN-HM. Clinicians should be aware of this distinction when counselling patients about supplement-drug interactions, as NPN products may have limited safety data."
+    difficulty: easy
+    tags: [DIN, NPN, Health Canada, drug regulation, natural health products, pharmacology]
+  - front: "A patient is taking St. John's Wort as a herbal supplement along with apixaban for atrial fibrillation. What pharmacokinetic interaction should be anticipated?"
+    back: "St. John's Wort is a P-gp inducer. Apixaban is a P-gp substrate. Induction of P-gp by St. John's Wort increases apixaban efflux and elimination, reducing apixaban plasma levels and potentially increasing thromboembolic risk.\n\nP-gp inducers (e.g., rifampin, St. John's Wort) increase efflux activity in intestinal epithelium and renal proximal tubules, reducing absorption and increasing elimination of P-gp substrate drugs. For anticoagulants such as apixaban, rivaroxaban, and dabigatran that are P-gp substrates, concurrent use of P-gp inducers can reduce anticoagulant effectiveness and increase stroke risk in atrial fibrillation. Canadian CCS guidelines recommend avoiding concurrent use."
+    difficulty: hard
+    tags: [St. Johns Wort, P-glycoprotein, apixaban, DOAC, drug interaction, herbal, atrial fibrillation]
+  - front: "What is the Henderson-Hasselbalch equation's relevance to drug absorption, and which form of a weak acid drug crosses cell membranes more readily?"
+    back: "The Henderson-Hasselbalch equation determines the ratio of ionized to non-ionized drug based on compartment pH and drug pKa. The non-ionized (uncharged) form of drugs crosses cell membranes more readily by passive diffusion; weak acids are more non-ionized in acidic environments.\n\nFor a weak acid (e.g., ASA, pKa ~3.5), non-ionized form predominates in the acidic gastric environment, facilitating absorption there. In the more alkaline intestine and blood, more drug is ionized. This concept of 'ion trapping' is clinically used in urine alkalinization (e.g., sodium bicarbonate) to increase ionization of weak acid drugs (salicylates, barbiturates) in urine and enhance their renal elimination in overdose."
+    difficulty: hard
+    tags: [Henderson-Hasselbalch, ionization, drug absorption, weak acid, pH, passive diffusion, ion trapping]
+  - front: "A patient taking tacrolimus (a P-gp substrate) is started on a macrolide antibiotic. What is the expected pharmacokinetic consequence?"
+    back: "Macrolide antibiotics inhibit P-gp (and often CYP3A4), reducing the efflux and increasing the absorption and plasma concentration of tacrolimus, potentially causing tacrolimus toxicity (nephrotoxicity, neurotoxicity).\n\nTacrolimus has a narrow therapeutic index and is both a CYP3A4 substrate and P-gp substrate. Macrolide-mediated inhibition of both pathways can dramatically increase tacrolimus levels. Therapeutic drug monitoring of tacrolimus trough levels is essential whenever inhibitors or inducers of CYP3A4 or P-gp are initiated or discontinued in transplant patients."
+    difficulty: hard
+    tags: [tacrolimus, macrolide, P-glycoprotein, CYP3A4, drug interaction, transplant, narrow therapeutic index]
+  - front: "What are the advantages and disadvantages of transdermal drug delivery compared to oral administration?"
+    back: "Advantages of transdermal: avoids first-pass effect, no GI adverse effects, sustained/constant absorption, easy application, improved adherence. Disadvantages: delayed onset, site irritation, limited to lipid-soluble drugs with small molecular weight, lower drug loading capacity.\n\nTransdermal delivery is suitable for drugs requiring continuous systemic levels where first-pass effect would significantly reduce bioavailability (e.g., fentanyl, nicotine, estradiol, scopolamine). The delayed onset (12-24 hours for fentanyl patch) means this route is inappropriate for acute pain management. Canadian prescribing guidelines note that transdermal fentanyl is reserved for opioid-tolerant patients with chronic stable pain."
+    difficulty: easy
+    tags: [transdermal, drug delivery, first-pass effect, pharmacokinetics, routes of administration, fentanyl]
+  - front: "How does smoking affect the pharmacokinetics of clozapine, and what are the clinical implications?"
+    back: "Smoking induces CYP1A2, which is the primary enzyme metabolizing clozapine. Smokers require higher clozapine doses to achieve therapeutic plasma levels; if a patient stops smoking, CYP1A2 induction reverses and clozapine levels can rise dramatically, risking toxicity.\n\nPolycyclic aromatic hydrocarbons in tobacco smoke (not nicotine) induce CYP1A2. Clozapine plasma levels in smokers may be 30-50% lower than in non-smokers at equivalent doses. When a patient with schizophrenia stops smoking (e.g., during hospitalization), clozapine levels can rise and cause serious adverse effects including seizures, sedation, and agranulocytosis. Dose reduction by 25-40% is typically recommended upon smoking cessation."
+    difficulty: hard
+    tags: [clozapine, smoking, CYP1A2, enzyme induction, pharmacokinetics, schizophrenia, drug monitoring]
+  - front: "What is a prodrug? Give two clinically relevant examples and the enzymes responsible for activation."
+    back: "A prodrug is an inactive drug that requires biotransformation in the body to form an active metabolite. Examples: (1) Codeine → morphine via CYP2D6; (2) Tamoxifen → endoxifen via CYP2D6. Also: clopidogrel → active thienopyridine via CYP2C19.\n\nProdrug design exploits metabolic activation to improve bioavailability, reduce toxicity, or target drug delivery. Clinical implications include genetic polymorphisms affecting activation (e.g., CYP2D6 poor metabolizers have reduced analgesic response to codeine; CYP2C19 poor metabolizers have reduced antiplatelet effect with clopidogrel). Canadian guidelines recommend prasugrel or ticagrelor over clopidogrel in ACS patients where CYP2C19 poor metabolizer status is a concern."
+    difficulty: medium
+    tags: [prodrug, CYP2D6, codeine, tamoxifen, clopidogrel, pharmacogenomics, biotransformation]
+  - front: "Why is probenecid used to enhance the effect of penicillin, and what pharmacokinetic principle does this exploit?"
+    back: "Probenecid inhibits organic anion transporters responsible for tubular secretion of penicillin in the renal proximal tubule, reducing penicillin excretion and increasing its plasma half-life and concentration.\n\nTubular secretion is a saturable, active transport process. Penicillin and probenecid share the same organic anion transporter (OAT). By competing for this transporter, probenecid effectively blocks penicillin secretion, historically used to extend penicillin action when drug supply was limited. This principle of exploiting transporter competition is also relevant to understanding interactions between NSAIDs, diuretics, and other drugs sharing renal organic anion transport systems."
+    difficulty: medium
+    tags: [probenecid, penicillin, tubular secretion, organic anion transporter, renal excretion, drug interaction]
+  - front: "A patient requires rapid therapeutic levels of amiodarone for a new-onset ventricular arrhythmia. What pharmacokinetic principle justifies giving a loading dose, and after how many half-lives is steady-state achieved with maintenance dosing?"
+    back: "Loading doses are used for drugs with long half-lives to rapidly achieve therapeutic levels. Steady-state is achieved after approximately 4-5 half-lives of maintenance dosing.\n\nAmiodarone has an extremely long half-life (weeks), so without a loading dose it would take months to reach therapeutic levels. Steady-state concentration is reached when drug input equals elimination, typically after 4-5 half-lives."
+    difficulty: easy
+    tags: [pharmacokinetics, loading dose, steady-state, amiodarone, half-life]
+  - front: "Why is nitroprusside administered as a continuous infusion rather than intermittent doses?"
+    back: "Nitroprusside has a very short half-life, so continuous infusion maintains a steady therapeutic level; intermittent dosing would result in rapidly fluctuating (and inadequate) drug levels.\n\nDrugs with very short half-lives require continuous infusion to maintain therapeutic concentrations when long-term effect is needed and frequent repeated doses are impractical. This applies to nitroprusside, unfractionated heparin, and naloxone."
+    difficulty: easy
+    tags: [pharmacokinetics, continuous infusion, nitroprusside, half-life]
+  - front: "How is total body drug clearance (Cl) calculated from elimination rate constant (ke) and volume of distribution (Vd)?"
+    back: "Cl = ke × Vd, where ke = ln2 / half-life.\n\nClearance quantifies the volume of body fluid from which a substance is removed per unit time. Total body clearance equals the product of the elimination rate constant and the volume of distribution."
+    difficulty: medium
+    tags: [pharmacokinetics, clearance, volume of distribution, elimination rate constant]
+  - front: "A patient takes phenytoin at a dose that saturates hepatic enzymes. What type of elimination kinetics applies, and what is the clinical implication?"
+    back: "Zero-order (non-linear) kinetics: a constant amount of drug is eliminated per unit time regardless of concentration. Small dose increases can cause disproportionately large rises in serum levels, making dosing unpredictable.\n\nPhenytoin, alcohol, and high-dose aspirin can exhibit zero-order kinetics when elimination pathways become saturated. Unlike first-order kinetics, the concept of half-life does not apply, and drug-specific nomograms or therapeutic drug monitoring are required."
+    difficulty: medium
+    tags: [pharmacokinetics, zero-order kinetics, phenytoin, non-linear kinetics, TDM]
+  - front: "What is the graphical hallmark that distinguishes first-order from zero-order elimination kinetics when plotted?"
+    back: "First-order kinetics shows a linear (straight) relationship on a log-concentration vs. time plot. Zero-order kinetics shows a straight line on a linear concentration vs. time plot (curved on the log scale).\n\nFirst-order kinetics eliminates a constant proportion of drug per unit time; converting the concentration axis to log scale linearizes the relationship. Zero-order kinetics eliminates a constant amount per unit time, remaining linear on a regular (non-log) concentration-time graph."
+    difficulty: medium
+    tags: [pharmacokinetics, first-order kinetics, zero-order kinetics, elimination]
+  - front: "Drug A reaches 50% of its maximal effect at a concentration of 0.1 mg/L, while Drug B requires 1 mg/L. Both achieve the same maximal effect. Which drug is more potent and which is more efficacious?"
+    back: "Drug A is more potent (lower EC50). Both drugs have equal efficacy (same Emax).\n\nPotency is measured by EC50 — the concentration needed to produce 50% of maximal effect. Efficacy is measured by Emax — the maximal response achievable. A drug can be highly potent but have low efficacy (e.g., partial agonist) or vice versa."
+    difficulty: easy
+    tags: [pharmacodynamics, potency, efficacy, EC50, Emax]
+  - front: "What is the difference between ED50, TD50, and LD50, and how is the Therapeutic Index calculated?"
+    back: "ED50 = dose effective in 50% of population; TD50 = dose toxic in 50%; LD50 = dose lethal in 50%. Therapeutic Index (TI) = TD50/ED50 (or LD50/ED50 in animal studies). A higher TI means a safer drug.\n\nThe TI is a measure of relative drug safety. Drugs with a narrow TI (e.g., digoxin, lithium, warfarin, phenytoin, theophylline) require careful monitoring because the therapeutic dose is close to the toxic dose."
+    difficulty: easy
+    tags: [pharmacodynamics, therapeutic index, ED50, TD50, LD50, drug safety]
+  - front: "Which drugs classically have a narrow therapeutic window requiring therapeutic drug monitoring (TDM)? List at least five."
+    back: "Digoxin, warfarin, lithium, phenytoin, theophylline, cyclosporine, vancomycin, aminoglycosides (gentamicin, tobramycin).\n\nDrugs with narrow therapeutic indices have a small margin between therapeutic and toxic concentrations. TDM uses serum drug levels (ideally at steady-state after 4-5 half-lives) to optimize dosing and minimize toxicity or therapeutic failure."
+    difficulty: easy
+    tags: [TDM, therapeutic drug monitoring, narrow therapeutic index, digoxin, lithium, warfarin]
+  - front: "When should serum drug levels be drawn for therapeutic drug monitoring to be most useful?"
+    back: "At steady-state, which is reached after approximately 4-5 half-lives of consistent dosing.\n\nTDM is most useful once steady-state is achieved, because pre-steady-state levels do not reflect the true relationship between dose and effect. Timing of sample collection (trough vs. peak) also depends on the drug."
+    difficulty: easy
+    tags: [TDM, steady-state, therapeutic drug monitoring, pharmacokinetics]
+  - front: "A patient taking warfarin is started on ciprofloxacin and develops a supratherapeutic INR. What mechanism explains this drug interaction?"
+    back: "Ciprofloxacin (and macrolides like clarithromycin/erythromycin) inhibit CYP enzymes responsible for warfarin metabolism, increasing warfarin plasma concentrations and anticoagulant effect. Antibiotics may also reduce gut flora producing vitamin K.\n\nThis is a pharmacokinetic (PK) drug interaction via altered metabolism. CYP inhibition reduces warfarin clearance, elevating levels into the toxic range. Canadian prescribing guidelines recommend close INR monitoring when adding enzyme inhibitors to warfarin therapy."
+    difficulty: medium
+    tags: [drug interactions, warfarin, ciprofloxacin, CYP inhibition, INR, pharmacokinetics]
+  - front: "A patient taking selegiline (an irreversible MAO-B inhibitor) is started on an SSRI. What dangerous drug interaction can occur?"
+    back: "Serotonin syndrome — a potentially life-threatening condition caused by excess serotonergic activity, presenting with hyperthermia, clonus, agitation, and autonomic instability.\n\nThis is a pharmacodynamic (PD) drug interaction via additive/synergistic effects on serotonin. MAO inhibitors reduce serotonin breakdown while SSRIs block serotonin reuptake, leading to serotonin excess. This combination is contraindicated."
+    difficulty: medium
+    tags: [drug interactions, serotonin syndrome, MAOI, SSRI, selegiline, pharmacodynamics]
+  - front: "What are the five types of adverse drug reactions (A through E) with examples?"
+    back: "A (Augmented): dose-related extension of pharmacologic effect (e.g., beta-blockers → bradycardia). B (Bizarre): unpredictable, not dose-related (e.g., penicillin hypersensitivity, malignant hyperthermia). C (Chronic): cumulative dose-related (e.g., bisphosphonate → atypical femoral fracture). D (Delayed): occurs after drug use (e.g., doxorubicin → cardiotoxicity). E (End of use): withdrawal (e.g., opioid withdrawal).\n\nType A reactions account for >80% of all ADRs and are predictable from the drug's pharmacology. Type B reactions are idiosyncratic and unpredictable, often immune-mediated or genetic in origin. Recognition of ADR type guides management and reporting."
+    difficulty: medium
+    tags: [adverse drug reactions, ADR classification, Type A, Type B, drug safety]
+  - front: "Which adverse drug reactions must be reported to the Canadian Adverse Drug Reaction Monitoring Program (CADRMP)?"
+    back: "All suspected ADRs that are: 1) unexpected, 2) serious, or 3) reactions to recently marketed drugs (on the market <5 years), regardless of nature or severity.\n\nCanada's MedEffect/CADRMP program collects post-market safety data. Healthcare providers can report online through Health Canada. This pharmacovigilance is essential for detecting rare and delayed ADRs not captured in pre-market trials."
+    difficulty: easy
+    tags: [ADR reporting, pharmacovigilance, Health Canada, CADRMP, drug safety]
+  - front: "A patient with a penicillin allergy needs antibiotic treatment. What is the risk of cross-reactivity with cephalosporins? With carbapenems?"
+    back: "Cross-reactivity between penicillin and cephalosporins is <2%. Cross-reactivity between penicillin and carbapenems is <1%. Patients with history of severe immediate reaction (anaphylaxis) to penicillin require caution.\n\nThe historically cited 10% cross-reactivity between penicillin and cephalosporins is an overestimate. Modern evidence shows the actual rate is <2%. Canadian guidelines support using cephalosporins in most penicillin-allergic patients with appropriate assessment."
+    difficulty: medium
+    tags: [penicillin allergy, cross-reactivity, cephalosporins, carbapenems, drug allergy]
+  - front: "Does a 'sulfa allergy' to sulfamethoxazole-trimethoprim mean the patient will react to furosemide or hydrochlorothiazide?"
+    back: "No. Current evidence suggests cross-reactivity is unlikely between sulfonamide antibiotics and non-antibiotic sulfonamides such as loop diuretics (furosemide), thiazides (hydrochlorothiazide), sulfonylureas, and carbonic anhydrase inhibitors.\n\nThe term 'sulfa allergy' is often misapplied. Sulfonamide antibiotics contain an arylamine group at N4 responsible for most allergic reactions, which non-antibiotic sulfonamides lack. Clinical decisions should not withhold necessary medications based on unsubstantiated cross-reactivity fears."
+    difficulty: medium
+    tags: [sulfa allergy, cross-reactivity, furosemide, hydrochlorothiazide, drug allergy]
+  - front: "What is the Certain Safety Factor and how does it differ from the Therapeutic Index?"
+    back: "Certain Safety Factor = TD1/ED99. It compares the dose toxic in <1% of people with the dose effective in ≥99% of people. TI = TD50/ED50. The CSF is a more stringent safety measure; regulatory agencies often require it to exceed 100.\n\nThe Therapeutic Index uses median values (50th percentile) which may underestimate risk in real populations. The Certain Safety Factor examines the extremes of the dose-response curve, providing a more conservative estimate of whether a drug can be safe across diverse patients."
+    difficulty: hard
+    tags: [therapeutic index, certain safety factor, drug safety, pharmacodynamics, TD1, ED99]
+  - front: "What are common causes of variability in drug response between individual patients?"
+    back: "Age, genetics (e.g., CYP polymorphisms), disease states (liver/renal dysfunction), drug interactions, diet (e.g., grapefruit juice), medication adherence, altered absorption (vomiting, diarrhea), distribution (body composition, BBB integrity), and pharmacodynamic variability.\n\nInter-individual variability in drug response means population-average dosing recommendations may not be appropriate for all patients. Genetic polymorphisms in CYP enzymes and drug transporters are increasingly recognized as important contributors to variable drug response."
+    difficulty: easy
+    tags: [pharmacokinetics, drug variability, CYP polymorphism, personalized medicine, genetics]
+  - front: "Statins combined with gemfibrozil or clarithromycin significantly increase the risk of what serious adverse effect, and what is the mechanism?"
+    back: "Rhabdomyolysis. Gemfibrozil inhibits OATP1B1/OATP1B3 hepatic uptake transporters, and clarithromycin inhibits CYP3A4, both reducing statin clearance and causing elevated statin levels in muscle.\n\nThis is a pharmacokinetic interaction at the level of hepatic uptake transporters (OATP) and/or CYP3A4 metabolism. Elevated statin concentrations in skeletal muscle cause mitochondrial dysfunction and myocyte destruction (rhabdomyolysis), which can precipitate acute kidney injury."
+    difficulty: hard
+    tags: [drug interactions, statin, rhabdomyolysis, gemfibrozil, clarithromycin, OATP, CYP3A4]
+  - front: "Warfarin plus high-dose acetaminophen leads to elevated INR. What is the proposed mechanism?"
+    back: "NAPQI (the toxic metabolite of acetaminophen) inhibits enzymes in the vitamin K cycle, potentiating warfarin's anticoagulant effect. Acetaminophen may also inhibit CYP2C9-mediated warfarin metabolism.\n\nThe warfarin-acetaminophen interaction is clinically significant with higher acetaminophen doses and prolonged use. Patients on warfarin should avoid high-dose acetaminophen and have their INR monitored when using it regularly."
+    difficulty: hard
+    tags: [drug interactions, warfarin, acetaminophen, NAPQI, vitamin K, INR]
+  - front: "Match the following drug name endings to their drug class: -olol, -pril, -sartan, -statin, -azepam, -mab."
+    back: "-olol = beta-blocker (e.g., metoprolol); -pril = ACE inhibitor (e.g., captopril); -sartan = ARB (e.g., candesartan); -statin = HMG-CoA reductase inhibitor (e.g., atorvastatin); -azepam = benzodiazepine (e.g., lorazepam); -mab = monoclonal antibody (e.g., adalimumab).\n\nRecognizing drug name suffixes (stems) is an important clinical skill for identifying drug classes quickly, anticipating mechanisms of action, and anticipating class-specific adverse effects on MCCQE1."
+    difficulty: easy
+    tags: [drug nomenclature, drug suffixes, pharmacology, drug class identification]
+  - front: "Match these drug endings to their class: -afil, -nib, -terol, -prazole, -vir, -tidine."
+    back: "-afil = PDE-5 inhibitor (e.g., sildenafil); -nib = small molecule inhibitor (e.g., imatinib); -terol = beta-2 agonist (e.g., albuterol); -prazole = proton pump inhibitor (e.g., omeprazole); -vir = antiviral (e.g., acyclovir); -tidine = H2 antagonist (e.g., cimetidine).\n\nDrug name stems are standardized by WHO's International Nonproprietary Name (INN) program. Note exceptions: methimazole ends in -azole but is antithyroid; nystatin ends in -statin but is an antifungal."
+    difficulty: easy
+    tags: [drug nomenclature, drug suffixes, PDE5 inhibitor, antiviral, beta-2 agonist]
+  - front: "What dangerous abbreviation error is associated with writing 'U' for units, and what is the recommended correction?"
+    back: "'U' for units can be mistaken for '0' (zero), '4', or 'cc', leading to 10-fold dosing errors (e.g., 10U of insulin misread as 100). Always write out 'unit' in full.\n\nThe Institute for Safe Medication Practices Canada (ISMP Canada) identifies dangerous abbreviations that contribute to medication errors. Writing out full words (unit, daily, millilitre) rather than abbreviations is mandated in Canadian healthcare settings."
+    difficulty: easy
+    tags: [medication safety, dangerous abbreviations, ISMP, medication errors, unit]
+  - front: "What medication error can occur when a trailing zero is written (e.g., 1.0 mg), and how should it be corrected?"
+    back: "The decimal point may be overlooked, leading to a 10-fold overdose (1.0 mg misread as 10 mg). Never write a trailing zero — write 'X mg' not 'X.0 mg'. Always use a leading zero (e.g., 0.5 mg, not .5 mg).\n\nTrailing zeros and absent leading zeros are major sources of medication errors in Canada. ISMP Canada mandates their elimination. The inverse rule applies: always use a leading zero before a decimal point to prevent under-dosing by overlooking the decimal."
+    difficulty: easy
+    tags: [medication safety, trailing zero, leading zero, medication errors, ISMP Canada]
+  - front: "Why is writing 'QD' or 'QOD' for dosing frequency potentially dangerous?"
+    back: "'QD' (every day) can be misread as 'QID' (4 times daily) — a 4-fold dosing error. 'QOD' (every other day) can be confused with 'QD' or 'QID'. Correct alternatives: write 'daily' and 'every other day' in full.\n\nThese are among ISMP Canada's listed dangerous abbreviations. Handwritten 'Q' can be misinterpreted as '2', and the proximity of 'QD' and 'QID' in appearance has led to serious patient harm. Clear, unambiguous written instructions are a core patient safety principle."
+    difficulty: easy
+    tags: [medication safety, dangerous abbreviations, QD, QOD, ISMP, dosing frequency]
+  - front: "Writing 'MS' on a prescription is potentially dangerous. Why?"
+    back: "'MS' can be confused between morphine sulfate (MS/MSO4) and magnesium sulfate (MgSO4), which have very different indications and can cause serious harm if confused. Drug names should never be abbreviated.\n\nISMP Canada prohibits abbreviating drug names because similar abbreviations exist for multiple drugs. Confusion between MS (morphine) and MgSO4 (magnesium) has caused patient deaths. Full drug names must always be written."
+    difficulty: easy
+    tags: [medication safety, dangerous abbreviations, morphine, magnesium, medication errors]
+  - front: "Writing 'mcg' vs. 'μg' for micrograms — which is preferred and why?"
+    back: "'mcg' is preferred. The symbol 'μg' can be misread as 'mg', resulting in a 1000-fold overdose. Always write 'mcg' rather than the Greek symbol μ.\n\nISMP Canada identifies the μg symbol as a dangerous dose designation because handwritten versions are easily confused with 'mg'. A 1000-fold overdose of many drugs (e.g., fentanyl, levothyroxine) would be fatal."
+    difficulty: easy
+    tags: [medication safety, micrograms, dangerous abbreviations, dosing, ISMP]
+  - front: "What is 'DC' as a dangerous abbreviation in hospital prescribing?"
+    back: "'DC' intended to mean 'discharge' can be misinterpreted as 'discontinue', potentially leading nurses to stop all current medications when discharge medications are intended. Always write 'discharge' in full.\n\nThis is a common hospital medication safety issue. ISMP Canada mandates writing out full words rather than ambiguous abbreviations. Medication reconciliation at discharge is a required Canadian patient safety practice."
+    difficulty: easy
+    tags: [medication safety, discharge, DC abbreviation, medication errors, ISMP]
+  - front: "What are the origins of parasympathetic and sympathetic preganglionic fibres, and what neurotransmitters do they use?"
+    back: "Parasympathetic: cranial nerves III, VII, IX, X and sacral S2-S4 ('craniosacral'). Sympathetic: T1-L2/L3 ('thoracolumbar'). Both systems use ACh at preganglionic synapses (nicotinic receptors). Parasympathetic postganglionic → ACh (muscarinic). Sympathetic postganglionic → NE (adrenergic); exception: sweat glands use ACh (M3).\n\nUnderstanding autonomic anatomy is essential for predicting effects of autonomic drugs. Sympathetic ganglia are in paravertebral or prevertebral chains; parasympathetic ganglia are near/within target organs. This explains why ganglionic blockers have widespread effects."
+    difficulty: medium
+    tags: [autonomic nervous system, parasympathetic, sympathetic, ACh, NE, ganglia]
+  - front: "How is norepinephrine (NE) action terminated at the sympathetic synapse?"
+    back: "NE action is terminated by: 1) reuptake at the presynaptic membrane (primary), 2) diffusion from the synaptic cleft, and 3) enzymatic degradation by MAO and COMT.\n\nUnderstanding NE termination is clinically relevant: TCAs and SNRIs block reuptake increasing NE; MAOIs inhibit MAO preventing NE breakdown; cocaine blocks NE reuptake causing sympathomimetic effects. COMT inhibitors (entacapone) are used in Parkinson's disease."
+    difficulty: medium
+    tags: [norepinephrine, sympathetic nervous system, MAO, COMT, reuptake, autonomic]
+  - front: "What vascular receptor distribution determines the effect of alpha-1 adrenergic stimulation in skin/splanchnic vs. coronary vessels?"
+    back: "α1 receptors in skin and splanchnic vasculature cause vasoconstriction. Coronary vessels also express α1 and β2 receptors: α1 stimulation causes constriction while β2 stimulation causes dilation. Overall coronary flow depends on local metabolic autoregulation.\n\nThe differential receptor distribution explains why vasopressors (e.g., norepinephrine with α1 activity) can increase blood pressure via peripheral vasoconstriction while coronary perfusion is maintained through autoregulation. β2 stimulation by epinephrine causes coronary dilation."
+    difficulty: medium
+    tags: [autonomic nervous system, alpha-1 receptor, vasoconstriction, coronary vessels, adrenergic]
+  - front: "Which exception to parasympathetic innervation is clinically important — what structures lack parasympathetic supply?"
+    back: "Blood vessels (most), sweat glands, the spleen capsule, and the adrenal medulla lack parasympathetic innervation. These structures are regulated exclusively by the sympathetic system.\n\nThis explains why sympathetic blockade (e.g., spinal anesthesia) causes vasodilation from loss of sympathetic tone without any compensatory parasympathetic vasodilation. Sweat glands, though innervated by sympathetic fibres, use ACh as their neurotransmitter (M3 receptors)."
+    difficulty: medium
+    tags: [autonomic nervous system, parasympathetic, sweat glands, adrenal medulla, sympathetic]
+  - front: "In pharmacogenomics, what is the clinical significance of CYP2D6 polymorphism for codeine use?"
+    back: "CYP2D6 converts codeine to morphine. Poor metabolizers get no analgesia. Ultra-rapid metabolizers convert codeine too rapidly, producing dangerously high morphine levels — risk of respiratory depression and death, especially in children and breastfeeding mothers.\n\nHealth Canada and FDA have issued warnings against codeine use in pediatric patients and breastfeeding mothers due to CYP2D6 ultra-rapid metabolizer risk. CYP polymorphisms are a key example of biotransformation variability affecting drug response."
+    difficulty: hard
+    tags: [pharmacogenomics, CYP2D6, codeine, morphine, ultra-rapid metabolizer, drug variability]
+  - front: "Pharmacogenetic warfarin dosing was studied in the CoumaGen-I trial. What were the key findings?"
+    back: "Pharmacogenetic dosing algorithms were non-inferior to standard dosing, reduced out-of-range INRs (31% vs. 42% at 1 month), and increased time in therapeutic range (69% vs. 58% at 1 month) compared to standard care.\n\nThe CoumaGen-I trial (Circulation 2012) demonstrated that incorporating genetic information (CYP2C9 and VKORC1 polymorphisms) into warfarin dosing improves anticoagulation control. This supports the use of pharmacogenomics to personalize anticoagulation therapy."
+    difficulty: hard
+    tags: [warfarin, pharmacogenomics, CoumaGen, INR, therapeutic range, clinical trial]
+  - front: "A patient presents with an acute generalized eruption of sterile pustules following a new antibiotic. What is the diagnosis and its cause?"
+    back: "Acute generalized exanthematous pustulosis (AGEP): rapidly appearing sterile pustules on an erythematous base, most commonly caused by a drug reaction (especially antibiotics like penicillins and macrolides).\n\nAGEP typically resolves within 1–2 weeks after stopping the causative drug. It must be differentiated from pustular psoriasis (by drug history and rapid resolution). This is classified as a severe cutaneous adverse drug reaction."
+    difficulty: hard
+    tags: [dermatology, AGEP, drug reaction, pustule, antimicrobials]
+  - front: "What are the Naranjo criteria for classifying a drug reaction?"
+    back: "Four criteria: (1) temporal relationship between drug exposure and reaction, (2) recognized response to the suspected drug, (3) improvement after drug withdrawal, (4) recurrence on re-challenge. Definite = all 4 met; Probable = criteria 1-3; Possible = only criterion 1.\n\nThese criteria help establish causality in adverse drug reactions. The time course (7-14 days after drug initiation for exanthematous reactions) is a key temporal relationship."
+    difficulty: medium
+    tags: [drug reaction, Naranjo criteria, adverse drug reaction, pharmacovigilance]
+  - front: "What are the common causative agents and management of Exanthematous Drug Reaction?"
+    back: "Common agents: penicillin, sulfonamides, phenytoin. Onset 7-14 days after drug initiation. Management: weigh risks of drug discontinuation, antihistamines, emollients, topical corticosteroids.\n\nExanthematous (morbilliform) drug reaction is the most common cutaneous drug reaction. It presents as erythematous macules and papules that spread symmetrically from trunk to extremities and fades 7-14 days after withdrawal."
+    difficulty: easy
+    tags: [exanthematous drug reaction, morbilliform, penicillin, sulfonamides, phenytoin]
+  - front: "What is DRESS syndrome and what are its key features?"
+    back: "Drug Reaction with Eosinophilia and Systemic Symptoms (DRESS): morbilliform rash involving face/trunk/arms with facial edema, fever, malaise, cervical lymphadenopathy, and organ involvement (hepatitis, nephritis, pneumonitis). Onset 1-6 weeks after first drug exposure. 10% mortality if severe and untreated.\n\nCommon causative agents include anticonvulsants (phenytoin, phenobarbital, carbamazepine, lamotrigine), sulfonamides, and allopurinol. Management: discontinue offending drug + prednisone 0.5 mg/kg/day."
+    difficulty: medium
+    tags: [DRESS, drug hypersensitivity, eosinophilia, anticonvulsants, allopurinol, drug reaction]
+  - front: "Which drugs most commonly cause DRESS/Drug-Induced Hypersensitivity Syndrome?"
+    back: "Anticonvulsants (phenytoin, phenobarbital, carbamazepine, lamotrigine), sulfonamides, and allopurinol.\n\nDRESS has 10% mortality if severe, undiagnosed, and untreated, and may progress to erythroderma if the drug is not discontinued. Management includes discontinuing the drug and systemic corticosteroids."
+    difficulty: easy
+    tags: [DRESS, anticonvulsants, allopurinol, sulfonamides, drug hypersensitivity]
+  - front: "What is the most common cause of drug-induced angioedema and what is the mechanism?"
+    back: "ACE inhibitors are the most common cause of drug-induced angioedema (bradykinin-mediated, not IgE-mediated). Other causative agents include penicillins, analgesics/anti-inflammatories, and radiographic contrast media.\n\nDrug-induced urticaria and angioedema is the second most common cutaneous drug reaction. Management involves discontinuing the offending drug, antihistamines, oral corticosteroids, and epinephrine if anaphylactic."
+    difficulty: easy
+    tags: [angioedema, ACE inhibitor, bradykinin, drug-induced urticaria, anaphylaxis]
+  - front: "What is a Serum Sickness-Like Reaction and what are its common causative drugs?"
+    back: "Symmetrical urticarial eruption with malaise, low-grade fever, arthralgia, and lymphadenopathy. Appears 1-3 weeks after drug initiation, resolves 2-3 weeks after withdrawal. Common agents: cefaclor (children), bupropion (adults).\n\nMore prevalent in children (0.02-0.2%). Management involves discontinuing the drug and topical/oral corticosteroids. Unlike true serum sickness, it is not complement-mediated."
+    difficulty: medium
+    tags: [serum sickness-like reaction, cefaclor, bupropion, urticaria, drug reaction]
+  - front: "What is Acute Generalized Exanthematous Pustulosis (AGEP) and what drugs cause it?"
+    back: "AGEP: extensive erythematous edematous sterile pustules with high fever and leukocytosis (neutrophilia). Appears within 1 week of drug initiation. Common causative agents: aminopenicillins, cephalosporins, clindamycin, calcium channel blockers.\n\nAGEP is rare (1-5/million) and the pustules start in the face and intertriginous areas, spreading to trunk and extremities. Management: discontinue offending drug and systemic corticosteroids."
+    difficulty: medium
+    tags: [AGEP, pustular drug reaction, aminopenicillins, sterile pustules, drug reaction]
+  - front: "What are the most common causative drugs for SJS/TEN and which HLA types confer risk?"
+    back: "Common drugs: allopurinol, anti-epileptics (carbamazepine, phenobarbital, phenytoin, lamotrigine), sulfonamides, NSAIDs, cephalosporins, immune checkpoint inhibitors. HLA-B1502 (carbamazepine, especially East Asians); HLA-B5801 (allopurinol, Asian and White populations).\n\nDrugs are responsible for 50% of SJS and 80% of TEN cases. Viral and mycoplasma infections account for some SJS cases. Risk factors include SLE, HIV/AIDS."
+    difficulty: medium
+    tags: [SJS, TEN, allopurinol, carbamazepine, HLA-B1502, HLA-B5801, drug reaction]
+  - front: "What is Fixed Drug Eruption and what drugs commonly cause it?"
+    back: "Sharply demarcated erythematous oval patches on skin or mucous membranes that recur in the SAME location upon re-exposure. Common sites: face, mucosa, genitalia, acral. Common agents: antimicrobials (tetracycline, sulfonamides), anti-inflammatories, barbiturates, phenolphthalein.\n\nThe 'fixed' location upon re-challenge is the defining feature. Management involves discontinuing the drug, prednisone 1 mg/kg/day for 2 weeks for generalized lesions, and potent topical corticosteroids for non-eroded lesions."
+    difficulty: easy
+    tags: [fixed drug eruption, drug reaction, tetracycline, sulfonamides, recurrence]
+  - front: "What is the difference between a phototoxic and photoallergic drug reaction?"
+    back: "Phototoxic: 'exaggerated sunburn' (erythema, edema, vesicles, bullae) confined ONLY to sun-exposed areas; direct tissue injury mechanism. Photoallergic: pruritic eczematous eruption with papules, vesicles, scaling that may SPREAD beyond sun-exposed areas; type IV delayed hypersensitivity.\n\nCommon causative agents: chlorpromazine, doxycycline, thiazide diuretics, procainamide. Management: sun protection and topical/oral corticosteroids."
+    difficulty: medium
+    tags: [phototoxic, photoallergic, drug reaction, doxycycline, thiazides, chlorpromazine]
+  - front: "A 70-year-old patient on allopurinol for gout develops erosions of the oral mucosa, conjunctiva, and urogenital area, with flaccid bullae covering 35% of BSA and positive Nikolsky sign 2 weeks after starting therapy. What is the diagnosis and appropriate disposition?"
+    back: "Toxic Epidermal Necrolysis (TEN) — BSA >30%. Disposition: immediate discontinuation of allopurinol and admission to intensive care/burn unit. Supportive care: IV fluids, electrolytes, nutrition, wound care. Consider cyclosporine (best evidence for survival benefit).\n\nAllopurinol is one of the most common causes of TEN, particularly in patients with HLA-B5801 (Asian and White populations). SCORTEN score should be calculated at admission to predict mortality. Mortality in TEN is approximately 30%."
+    difficulty: hard
+    tags: [TEN, allopurinol, toxic epidermal necrolysis, HLA-B5801, burn unit, Nikolsky sign, SCORTEN]
+  - front: "What drugs can exacerbate acne?"
+    back: "Systemic: lithium, phenytoin, steroids, halogens, androgens, iodides, bromides, danazol. Topical: TCS (topical corticosteroids), tars, ointments, oily cosmetics. Mechanical: pressure or occlusion (leaning face on hands). Emotional stress is also an aggravating factor.\n\nDrug-induced acne should be considered especially when acne develops or worsens after starting a new medication. Unlike acne vulgaris, drug-induced acne often lacks comedones and may appear at unusual ages."
+    difficulty: medium
+    tags: [dermatology, acne, drug-induced, lithium, steroids]
+  - front: "What drug interaction causes pseudotumour cerebri in acne treatment, and which two drug classes are involved?"
+    back: "Concurrent use of isotretinoin (a systemic retinoid) AND tetracycline-class antibiotics (e.g., doxycycline, tetracycline) both independently and together increase the risk of pseudotumour cerebri (benign intracranial hypertension). This combination should be avoided.\n\nBoth isotretinoin and tetracyclines can independently raise intracranial pressure; when combined, the risk is significantly increased. Patients should be warned about symptoms such as headache and visual disturbances."
+    difficulty: medium
+    tags: [isotretinoin, tetracycline, pseudotumour cerebri, drug interaction, acne]
+  - front: "What are the local and systemic side effects of topical corticosteroids?"
+    back: "Local: skin atrophy, perioral dermatitis, steroid acne, rosacea, contact dermatitis, tachyphylaxis, telangiectasia, striae, hypertrichosis, hypopigmentation. Systemic (rare with significant absorption): HPA axis suppression, hyperglycemia, fluid/sodium retention, mood changes, weight gain.\n\nThe risk of systemic side effects from topical steroids is rare under normal clinical use, but can occur with very potent preparations over large body surface areas, especially under occlusion. Infants and thin-skinned sites are most vulnerable."
+    difficulty: medium
+    tags: [topical steroids, side effects, skin atrophy, HPA axis]
+  - front: "What is the maximum dose of lidocaine for local anesthesia in laceration repair?"
+    back: "7 mg/kg WITH epinephrine; 5 mg/kg WITHOUT epinephrine.\n\nEpinephrine causes local vasoconstriction, which delays systemic absorption and allows higher safe doses. The mnemonic 'epi adds 2' (5 → 7 mg/kg) aids recall. Historically epinephrine was avoided in digits/ears/nose/penis due to ischemia risk, but evidence supporting this is limited for digits at low concentrations."
+    difficulty: easy
+    tags: [lidocaine, local anesthesia, laceration, pharmacology]
+  - front: "What analgesics are used in acute extremity pain in the ED, and does opioid combination provide superior pain relief?"
+    back: "Options: ibuprofen 400 mg + acetaminophen 1000 mg; oxycodone 5 mg + acetaminophen 325 mg; hydrocodone 5 mg + acetaminophen 300 mg; codeine 30 mg + acetaminophen 300 mg. Evidence: No statistically significant difference in pain reduction at 2 hours among single doses of these combinations (NEJM study, P=0.053).\n\nThis 2017 NEJM trial showed ibuprofen + acetaminophen was equally effective as opioid combinations for acute extremity pain in the ED, with approximately 4-point reduction in NRS. This supports using non-opioid analgesia as first-line for acute musculoskeletal pain, reducing opioid exposure."
+    difficulty: easy
+    tags: [analgesia, extremity pain, opioids, ibuprofen, acetaminophen]
+  - front: "What are the ECG features of digitalis toxicity?"
+    back: "Range of arrhythmias: bidirectional VT (pathognomonic), supraventricular tachycardia with slow ventricular response, frequent PVCs. Risk for AV blocks and ventricular irritability.\n\nDigoxin toxicity causes increased vagal tone (AV block) and increased automaticity (ventricular arrhythmias). Bidirectional VT (alternating QRS axis) is the pathognomonic pattern. Hypokalemia and hypomagnesemia worsen toxicity. Treatment: digoxin-specific antibody fragments (Digibind/DigiFab), correct electrolytes, avoid calcium."
+    difficulty: medium
+    tags: [digoxin toxicity, ECG, arrhythmia, bidirectional VT]
+  - front: "What monitoring is recommended for patients on statin therapy?"
+    back: "Liver enzymes: measured at baseline and once after therapy initiated; both if patient has jaundice, RUQ pain, or dark urine. Lipids: measured annually once stabilized. CK: at baseline and if patient complains of myalgia. Discontinue statin if CK >10x upper limit of normal or persistent myalgia.\n\nStatin-related myopathy is the most clinically significant adverse effect. Rhabdomyolysis (rare but serious) can occur. Risk increases with high-dose statins, drug interactions (CYP3A4 inhibitors), hypothyroidism, and renal impairment. Routine LFT monitoring is no longer mandatory during treatment in most guidelines."
+    difficulty: easy
+    tags: [statin monitoring, myopathy, CK, liver enzymes, adverse effects]
+  - front: "What are the major adverse effects of the main antihyperglycemic drug classes for T2DM?"
+    back: "SGLT2i: UTI, rare DKA, genital mycotic infections. GLP-1 agonists: GI side effects (nausea, vomiting). DPP-4 inhibitors: rare (generally well tolerated). Sulfonylureas: hypoglycemia, weight gain. Insulin: hypoglycemia, weight gain. Thiazolidinediones (TZDs): edema, heart failure, fractures, weight gain.\n\nSGLT2 inhibitors cause euglycemic DKA (must be held before surgery). GLP-1 agonists are contraindicated in personal/family history of medullary thyroid carcinoma or MEN2. TZDs are contraindicated in heart failure. Choice of agent must consider the patient's comorbidities and risk profile."
+    difficulty: medium
+    tags: [antihyperglycemic adverse effects, SGLT2i, GLP-1, thiazolidinedione, sulfonylurea]
+  - front: "What drugs are known to induce diabetes mellitus?"
+    back: "Glucocorticoids (steroid-induced diabetes), thyroid hormone, beta-adrenergic agonists, thiazides, phenytoin, and antipsychotics (second-generation).\n\nGlucocorticoids cause insulin resistance and increased hepatic gluconeogenesis — the most clinically significant cause. Steroid-induced hyperglycemia often peaks in the afternoon (matching steroid peak), so afternoon glucose monitoring is especially important. Antipsychotics (clozapine, olanzapine) cause weight gain and direct metabolic effects."
+    difficulty: easy
+    tags: [drug-induced diabetes, glucocorticoids, steroid diabetes, antipsychotics, thiazides]
+  - front: "How does aging affect drug distribution for lipophilic vs. hydrophilic drugs?"
+    back: "Increased total body fat → larger volume of distribution for lipophilic drugs (longer half-life, slower elimination). Decreased lean body mass and total body water → decreased volume of distribution for hydrophilic drugs (higher plasma concentration at same dose).\n\nThese pharmacokinetic changes explain why lipophilic drugs (e.g., benzodiazepines, antipsychotics) accumulate in older adults, and why hydrophilic drugs (e.g., aminoglycosides, digoxin) have higher peak concentrations. Dose adjustments are necessary."
+    difficulty: medium
+    tags: [pharmacokinetics, geriatrics, drug distribution, lipophilic, hydrophilic]
+  - front: "How does aging affect drug protein binding, and what are the implications?"
+    back: "Increased α₁-glycoprotein → increased binding of basic drugs. Decreased albumin → decreased binding of acidic drugs (more free drug → increased pharmacologic effect and potential toxicity at standard doses).\n\nMany drugs used in older adults are acidic (e.g., warfarin, NSAIDs, phenytoin). Hypoalbuminemia (common in older adults) increases free fraction of these drugs, increasing both efficacy and toxicity risk."
+    difficulty: medium
+    tags: [pharmacokinetics, geriatrics, protein binding, albumin]
+  - front: "What is the approximate overall reduction in renal function with aging, and what are its pharmacokinetic implications?"
+    back: "Overall reduction in renal function of 30–50% due to decreased renal blood flow, GFR, and tubular secretion. Implication: renally cleared drugs accumulate → lower doses may be therapeutic (e.g., digoxin, aminoglycosides, metformin, direct oral anticoagulants).\n\nRenal function decline with aging may not be reflected in serum creatinine due to decreased muscle mass. Using CrCl (Cockcroft-Gault) or eGFR equations that account for age and weight is essential for dosing in older adults."
+    difficulty: easy
+    tags: [pharmacokinetics, geriatrics, renal function, dose adjustment]
+  - front: "Which drug classes have increased sensitivity in older adults, and which have decreased sensitivity?"
+    back: "Increased sensitivity: warfarin, sedatives, antipsychotics, anticholinergics, digoxin, narcotics. Decreased sensitivity: β-blockers and β-adrenergic stimulants (though may have increased sensitivity in some cases).\n\nAge-related pharmacodynamic changes alter receptor responsiveness and homeostatic reserve. Increased sensitivity to CNS-active drugs contributes to falls, delirium, and cognitive impairment in older adults."
+    difficulty: easy
+    tags: [pharmacodynamics, geriatrics, drug sensitivity, warfarin, sedatives]
+  - front: "What is a prescribing cascade, and what three questions should clinicians ask to identify one?"
+    back: "A prescribing cascade occurs when an ADR is misinterpreted as a new medical condition, and a new drug is prescribed to treat the drug-induced event. Three questions: (1) Is the new drug being prescribed to address an ADR from a previously prescribed drug? (2) Is the initial drug really needed, especially if causing a cascade? (3) Do the benefits of the initial drug outweigh the harms?\n\nClassic example: NSAID → edema → diuretic → urinary incontinence → anticholinergic. Recognizing cascades reduces polypharmacy and ADRs in older adults."
+    difficulty: medium
+    tags: [prescribing cascade, polypharmacy, geriatrics, ADR, inappropriate prescribing]
+  - front: "What is polypharmacy and how prevalent is it in Canadian older adults?"
+    back: "Polypharmacy = prescription, administration, or use of more medications than are clinically indicated. In Canada, >60% of older adults report using ≥5 medications. Hospitalized older adults receive an average of 10 medications during admission.\n\nPolypharmacy increases risks of ADRs, drug interactions, non-adherence, and prescribing cascades. It is a major geriatric health concern."
+    difficulty: easy
+    tags: [polypharmacy, geriatrics, epidemiology, Canada]
+  - front: "What are the intrinsic risk factors for adverse drug reactions in older adults?"
+    back: "Comorbidities (>5), age >85, low BMI, age-related changes in pharmacokinetics and pharmacodynamics, CrCl <50 mL/min.\n\nThese intrinsic factors synergize with extrinsic factors (>9 medications, >12 doses/day, multiple prescribers, unreliable drug history, prior ADR) to dramatically increase ADR risk in frail older adults."
+    difficulty: easy
+    tags: [ADR, adverse drug reaction, geriatrics, polypharmacy, risk factors]
+  - front: "What are the Beers Criteria and what drug classes are commonly listed?"
+    back: "The Beers Criteria is a list of medications to avoid in adults ≥65 years due to safety concerns (last updated 2024). Commonly listed: long-acting benzodiazepines, strong anticholinergics, high-dose sedatives. Categories include: inappropriate in most older adults, avoid with certain conditions, use with caution, drug-drug interactions, and drugs requiring renal dose adjustment.\n\nThe Beers Criteria is one of the most widely used screening tools for inappropriate prescribing. It should be used alongside clinical judgment, as some listed medications may be appropriate in individual cases."
+    difficulty: easy
+    tags: [Beers Criteria, inappropriate prescribing, geriatrics, polypharmacy]
+  - front: "What do STOPP and START stand for, and what population do they apply to?"
+    back: "STOPP = Screening Tool of Older Person's Prescriptions (systems-based list of medications contraindicated in adults ≥65 years in context of their diagnoses). START = Screening Tool to Alert physicians to Right Treatment (systems-based list of medications indicated in adults ≥65 years in context of their diagnoses). Together they address both over- and under-prescribing.\n\nSTOPP/START is the European counterpart to the Beers Criteria. START addresses the fact that older adults are often under-treated with proven medications such as ACEIs, ASA, beta-blockers, thrombolytics, and oral anticoagulants."
+    difficulty: easy
+    tags: [STOPP, START, inappropriate prescribing, geriatrics, polypharmacy]
+  - front: "Which drugs are most commonly listed as potentially inappropriate for older adults across prescribing criteria?"
+    back: "Benzodiazepines (diazepam listed in all 14 criteria reviewed), NSAIDs, antihistamines, and antipsychotics. Amitriptyline was listed in 13/14 criteria, doxepin in 12/14.\n\nThese drug classes carry particular risks in older adults: benzodiazepines → falls/delirium; NSAIDs → GI bleed/renal failure; antihistamines → anticholinergic effects; antipsychotics → stroke risk and mortality in dementia patients."
+    difficulty: easy
+    tags: [inappropriate prescribing, geriatrics, Beers, STOPP, benzodiazepines, NSAIDs]
+  - front: "What is an important note about docusate in the management of constipation in older adults?"
+    back: "Docusate has been shown to be INEFFECTIVE for the prevention or treatment of constipation in older adults and should not be routinely used.\n\nDespite being widely prescribed, evidence does not support docusate (a stool softener) for constipation in older adults. More effective options include osmotic laxatives (PEG, lactulose) and stimulant laxatives (senna, bisacodyl) when indicated."
+    difficulty: easy
+    tags: [constipation, docusate, laxatives, geriatrics, polypharmacy]
+  - front: "What are the mechanisms of the main laxative classes used in older adults?"
+    back: "Bulk-forming: psyllium, bran – absorb water and increase stool mass. Osmotic: lactulose, PEG 3350 (polyethylene glycol) – retain water in colon. Stimulant: senna, bisacodyl – stimulate colonic motility and secretion.\n\nPEG 3350 (Lax-A-Day) is well-tolerated and effective for older adults. Lactulose can cause excess gas/cramping. Stimulant laxatives are appropriate short-term but should be used cautiously in the context of bowel obstruction or inflammatory bowel disease."
+    difficulty: easy
+    tags: [laxatives, constipation, geriatrics, pharmacology]
+  - front: "A 70-year-old man is started on a calcium channel blocker for hypertension and develops ankle edema. His physician then starts furosemide. Two weeks later he develops urinary incontinence and is prescribed oxybutynin. What geriatric pharmacology concept does this illustrate?"
+    back: "This is a prescribing cascade: calcium channel blocker → ankle edema (ADR misinterpreted as new condition) → furosemide → urinary urgency/incontinence → oxybutynin (anticholinergic, on Beers Criteria for older adults). The solution is to identify and stop the offending drug rather than adding more medications.\n\nOxybutynin is a strong anticholinergic and is listed on the Beers Criteria as inappropriate for older adults due to risk of cognitive impairment, delirium, falls, and urinary retention. The cascade should be unwound by removing the CCB."
+    difficulty: hard
+    tags: [prescribing cascade, polypharmacy, geriatrics, Beers Criteria, ADR, anticholinergic]
+  - front: "What is the mechanism of action and key indications for elagolix (Orlissa) in gynecology?"
+    back: "Elagolix is a synthetic GnRH antagonist that induces a reversible hypoestrogenic state. Indications: pelvic pain associated with endometriosis; emerging evidence for fibroids and adenomyosis. Dosing: 150 mg PO daily or 400 mg PO BID. Side effects: hot flushing, nausea, headache. Contraindicated in: pregnancy, osteoporosis, undiagnosed vaginal bleeding, severe hepatic dysfunction.\n\nUnlike GnRH agonists that cause an initial flare before down-regulation, GnRH antagonists (like elagolix) achieve immediate suppression of FSH and LH without a flare effect. Hypoestrogenism reduces endometriotic implant activity and pain. Use is limited by the side effects of menopause (bone density loss with prolonged use)."
+    difficulty: medium
+    tags: [elagolix, GnRH antagonist, endometriosis, pharmacology]
+  - front: "What is the mechanism of action of clomiphene citrate, and what are its key indications and common side effects?"
+    back: "Clomiphene citrate: selective estrogen receptor modulator (SERM) that blocks estrogen feedback at the hypothalamus/pituitary, increasing output of FSH and LH to induce ovulation. Indication: patients with persistent ovulatory dysfunction (e.g. amenorrhea, PCOS) who desire pregnancy. Dosing: 50 mg daily × 5 days (can increase to 100 or 150 mg). Common side effects: hot flashes, abdominal discomfort, exaggerated cyclic ovarian enlargement, accentuation of Mittelschmerz. Rare: ovarian hyperstimulation syndrome, multiple pregnancy, visual blurring, birth defects. Note: No longer commercially available in Canada but may be available via compounding pharmacy.\n\nClomiphene is an anti-estrogen that acts at the hypothalamic-pituitary axis to increase gonadotropin release, driving follicular development. Contraindicated in pregnancy, liver disease, hormone-dependent tumours, ovarian cysts, and undiagnosed vaginal bleeding."
+    difficulty: medium
+    tags: [clomiphene, ovulation induction, PCOS, infertility, pharmacology]
+  - front: "What is the mechanism of action and key clinical applications of bromocriptine (Parlodel) in gynecology?"
+    back: "Bromocriptine is a dopaminomimetic (D2 agonist, D1 antagonist) that acts directly on anterior pituitary cells to inhibit prolactin synthesis and release. Indications: galactorrhea + amenorrhea secondary to hyperprolactinemia; prolactin-dependent menstrual disorders and infertility; prolactin-secreting adenomas (micro- and macroadenomas prior to surgery); IVF cycles. Dosing: start 1.25-2.5 mg PO at night with food; increase by 2.5 mg every 2-7 days; usual range 1.5-15 mg daily. Side effects: nausea/vomiting, headache, postural hypotension, somnolence.\n\nDopamine normally inhibits prolactin secretion from the anterior pituitary. Bromocriptine mimics this inhibitory effect. Contraindications include uncontrolled HTN, pregnancy-induced HTN, CAD, and breastfeeding. Drug interactions include domperidone, macrolides, and octreotide."
+    difficulty: medium
+    tags: [bromocriptine, hyperprolactinemia, galactorrhea, amenorrhea, pharmacology]

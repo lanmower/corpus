@@ -1,0 +1,66 @@
+# Hematology Blood Film (Hematology) - generated from srs-mccqe1
+cards:
+  - front: "What RBC morphology is pathognomonic for microangiopathic hemolytic anemia (MAHA)/TMA?"
+    back: "Schistocytes (helmet cells, fragmented RBCs) are the hallmark of MAHA/TMA.\n\nSchistocytes form due to traumatic disruption of the RBC membrane as cells pass through damaged microvasculature. Conditions causing schistocytes include HUS, aHUS, TTP, DIC, preeclampsia, HELLP syndrome, malignant hypertension, vasculitis, glomerulonephritis, and prosthetic heart valves. Identifying schistocytes on blood film is essential for diagnosing these life-threatening conditions."
+    difficulty: medium
+    tags: [hematology, schistocytes, MAHA, TMA, blood-film, TTP, HUS]
+  - front: "What conditions are associated with spherocytes on blood film?"
+    back: "Hereditary spherocytosis and immune hemolytic anemia (autoimmune hemolytic anemia).\n\nSpherocytes form due to membrane defects or loss of membrane, resulting in a spheroidal RBC with loss of central pallor. In hereditary spherocytosis, the cause is a membrane protein defect (e.g., ankyrin, spectrin). In immune hemolytic anemia, antibody-mediated membrane damage leads to spherocyte formation. Both present with hemolytic anemia with positive osmotic fragility test and positive DAT (in immune HA)."
+    difficulty: easy
+    tags: [hematology, spherocytes, hereditary-spherocytosis, autoimmune-hemolytic-anemia, blood-film]
+  - front: "What conditions are associated with target cells (codocytes) on blood film?"
+    back: "Liver disease, HbSC disease, thalassemia, iron deficiency anemia, and asplenia.\n\nTarget cells (codocytes) have a 'bull's eye' appearance due to excess RBC membrane relative to cell volume. This occurs when there is excess membrane lipid (liver disease) or reduced Hb content (thalassemia, iron deficiency). Asplenia removes the normal process of clearing these abnormal cells. The mnemonic HALT (HbSC/liver/asplenia/thalassemia) can help recall the causes."
+    difficulty: easy
+    tags: [hematology, target-cells, codocytes, liver-disease, thalassemia, blood-film]
+  - front: "What conditions are associated with dacrocytes (teardrop cells) on blood film?"
+    back: "Myelofibrosis (MF), myelodysplastic syndromes (MDS), beta-thalassemia, megaloblastic anemia, and bone marrow infiltration.\n\nDacrocytes (teardrop cells) have a single pointed end and form when RBCs are deformed as they squeeze past bone marrow fibrosis or infiltration. Myelofibrosis is the classic association. The presence of teardrop cells along with nucleated RBCs and immature myeloid cells is called leukoerythroblastosis and strongly suggests BM infiltration or fibrosis."
+    difficulty: medium
+    tags: [hematology, dacrocytes, teardrop-cells, myelofibrosis, blood-film]
+  - front: "What is the clinical significance of rouleaux formation on blood film?"
+    back: "Rouleaux (RBC stacks resembling coins) is most commonly caused by pregnancy; other causes include inflammatory conditions (polyclonal immunoglobulins) and plasma cell dyscrasias (monoclonal paraproteinemia, e.g., multiple myeloma, macroglobulinemia).\n\nRouleaux formation occurs due to increased plasma concentration of high molecular weight proteins (fibrinogen, immunoglobulins). In pregnancy, physiological increase in fibrinogen is the most common cause. In non-pregnant patients, unexplained rouleaux should raise suspicion for plasma cell dyscrasia (multiple myeloma), especially with other features like hypercalcemia, renal failure, or bone pain."
+    difficulty: medium
+    tags: [hematology, rouleaux, multiple-myeloma, blood-film, plasma-cell]
+  - front: "What are Howell-Jolly bodies and when are they seen?"
+    back: "Howell-Jolly bodies are small spherical nuclear remnants in RBCs, normally removed by the spleen. They are seen post-splenectomy, in hyposplenism (e.g., sickle cell disease), in neonates, and in megaloblastic anemia.\n\nDuring normal erythrocyte maturation, nuclear remnants are expelled and cleared by the spleen. When splenic function is absent or impaired, these remnants persist and appear as small dark inclusions near the periphery of the RBC. In sickle cell disease, autosplenectomy from repeated infarctions leads to Howell-Jolly bodies. Their presence on blood film is a useful indicator of functional asplenia."
+    difficulty: easy
+    tags: [hematology, Howell-Jolly, splenectomy, asplenia, RBC-inclusions, sickle-cell]
+  - front: "What are Heinz bodies and what conditions produce them?"
+    back: "Heinz bodies are denatured and precipitated hemoglobin inside RBCs, seen in G6PD deficiency (post-oxidant exposure), thalassemia, and unstable hemoglobin variants.\n\nHeinz bodies require special stains (crystal violet or brilliant cresyl blue) to visualize, as they are not visible on routine Giemsa-stained blood films. In G6PD deficiency, oxidative stress overwhelms the cell's antioxidant capacity (reduced GSH), precipitating Hb. The RBCs with Heinz bodies are then cleared by the spleen, and on routine film, 'bite cells' (degmacytes) may be seen instead."
+    difficulty: medium
+    tags: [hematology, Heinz-bodies, G6PD, thalassemia, RBC-inclusions]
+  - front: "What is basophilic stippling and what conditions cause it?"
+    back: "Basophilic stippling consists of deep blue granulations in RBCs indicating ribosome aggregation. Causes: thalassemia, heavy metal poisoning (Pb, Zn, Ag, Hg), megaloblastic anemia, MDS, and pyrimidine 5'-nucleotidase deficiency.\n\nNormally, reticulocyte ribosomes are degraded as cells mature. When ribosome degradation is impaired (lead poisoning, enzyme deficiency) or ribosome synthesis is accelerated (thalassemia), ribosomes clump and stain blue. Lead poisoning is a classic high-yield cause of basophilic stippling, alongside thalassemia. This is important in the differential for microcytic anemia in children."
+    difficulty: medium
+    tags: [hematology, basophilic-stippling, lead-poisoning, thalassemia, RBC-inclusions]
+  - front: "What is the significance of smudge cells on blood film?"
+    back: "Smudge cells are lymphocytes damaged during blood film preparation. They are associated with CLL and other lymphoproliferative disorders due to increased lymphocyte fragility.\n\nIn CLL, the malignant lymphocytes are mechanically fragile and rupture during the smearing process, producing smudge cells (also called basket cells). The presence of numerous smudge cells on blood film is characteristic of CLL, though their absence does not rule it out. CLL also presents with lymphocytosis, often incidentally found on CBC."
+    difficulty: easy
+    tags: [hematology, smudge-cells, CLL, blood-film, lymphoproliferative]
+  - front: "What are hypersegmented neutrophils and what do they suggest?"
+    back: "Hypersegmented neutrophils have >5 nuclear lobes and suggest a megaloblastic process (vitamin B12 or folate deficiency).\n\nNormally, neutrophils have 3-4 lobed nuclei. Hypersegmentation occurs in megaloblastic anemia due to impaired DNA synthesis affecting nuclear segmentation. Finding even a single neutrophil with 5 or more lobes is abnormal; finding neutrophils with 6+ lobes is virtually diagnostic of megaloblastic anemia. The CBC typically also shows macrocytosis (MCV >100 fL)."
+    difficulty: easy
+    tags: [hematology, neutrophils, hypersegmented, megaloblastic, B12-deficiency, folate]
+  - front: "What is a 'left shift' in hematology and what causes it?"
+    back: "A left shift is increased granulocyte precursors (bands, metamyelocytes, myelocytes, promyelocytes, blasts) in the peripheral blood. Causes include leukemoid reactions (acute infections, pregnancy, neonates, hypoxia, shock), MPNs (CML, MF), and G-CSF administration.\n\nThe term 'left shift' refers to the leftward shift on the maturation sequence, meaning earlier (more immature) cells are appearing in the blood. It is most commonly seen in severe bacterial infection driving the bone marrow to release immature neutrophil precursors. A leukoerythroblastic picture (left shift + nucleated RBCs) suggests bone marrow infiltration or fibrosis."
+    difficulty: easy
+    tags: [hematology, left-shift, leukemoid-reaction, neutrophils, blood-film]
+  - front: "What elliptocyte morphology is associated with iron deficiency anemia specifically?"
+    back: "In iron deficiency anemia, elliptocytes appear as narrow elongated 'pencil forms' (pencil cells), which are a specific variant of elliptocytes.\n\nElliptocytes/ovalocytes are oval-shaped elongated RBCs. While hereditary elliptocytosis causes classic elliptocytes, iron deficiency anemia specifically produces pencil-form elliptocytes as a result of severe iron depletion. Other conditions causing elliptocytes include megaloblastic anemia, myelofibrosis, and MDS. This morphologic distinction can help narrow the differential."
+    difficulty: medium
+    tags: [hematology, elliptocytes, iron-deficiency, pencil-cells, blood-film]
+  - front: "What are acanthocytes (spur cells) and in what conditions are they found?"
+    back: "Acanthocytes are distorted RBCs with irregularly distributed thorn-like projections due to abnormal membrane lipid or protein composition. Found in: severe liver disease (spur cell anemia), starvation/anorexia, and post-splenectomy.\n\nAcanthocytes differ from echinocytes (burr cells): echinocytes have numerous regularly-spaced small projections (from uremia, HUS, storage), while acanthocytes have irregularly distributed larger projections. In severe liver disease, altered plasma lipids are incorporated into the RBC membrane, creating spur cell anemia — a poor prognostic sign. Abetalipoproteinemia also causes acanthocytes."
+    difficulty: medium
+    tags: [hematology, acanthocytes, liver-disease, blood-film, RBC-morphology]
+  - front: "What conditions cause echinocytes (burr cells) on blood film?"
+    back: "Echinocytes (burr cells) — RBCs with numerous regularly spaced small spiny projections — are associated with uremia, HUS, burns, cardiopulmonary bypass, post-transfusion, and storage artifact.\n\nEchinocytes can be a storage artifact (false positive) but when found in clinical context, uremia is the most important cause. Distinguishing echinocytes from acanthocytes is important: echinocytes have regular, uniform, small projections, while acanthocytes have irregular, larger projections. In uremia, echinocytes may be accompanied by thrombocytopenia and increased risk of bleeding."
+    difficulty: medium
+    tags: [hematology, echinocytes, burr-cells, uremia, blood-film]
+  - front: "What are atypical lymphocytes on blood film and what causes them?"
+    back: "Atypical lymphocytes have pale blue cytoplasm with pink granules and cytoplasm indented by RBC edges. They are associated with viral infections (particularly EBV/infectious mononucleosis) and T-cell large granular lymphocyte (T-LGL) leukemia.\n\nIn infectious mononucleosis (EBV), atypical lymphocytes represent activated cytotoxic T cells responding to EBV-infected B cells. They are large with abundant cytoplasm that appears to wrap around adjacent RBCs. The presence of atypical lymphocytes with pharyngitis, lymphadenopathy, and splenomegaly in a young person is classic for infectious mononucleosis."
+    difficulty: easy
+    tags: [hematology, atypical-lymphocytes, EBV, infectious-mononucleosis, blood-film]
+  - front: "What is polychromasia on blood film and what does it indicate?"
+    back: "Polychromasia is the presence of pinkish-blue RBCs on blood film, indicating increased reticulocytes (immature erythrocytes). It suggests increased RBC production by the bone marrow.\n\nReticulocytes contain residual RNA that stains pinkish-blue with Romanowsky stains, giving polychromatic appearance. Polychromasia indicates an appropriate bone marrow response to anemia — seen in hemolytic anemia, acute blood loss recovery, or post-treatment of nutritional deficiency. It should be correlated with the absolute reticulocyte count."
+    difficulty: easy
+    tags: [hematology, polychromasia, reticulocytes, blood-film, hemolysis]

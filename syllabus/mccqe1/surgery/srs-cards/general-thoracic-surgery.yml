@@ -1,0 +1,582 @@
+# General Thoracic Surgery (Surgery) - generated from srs-mccqe1
+cards:
+  - front: "What are the four types of surgical drains and give an example of each?"
+    back: "1. Open drain (e.g., Penrose) — higher infection risk\n2. Closed gravity drain (e.g., Foley catheter)\n3. Closed underwater-seal drainage (e.g., chest tube)\n4. Closed suction drain (e.g., Jackson-Pratt)\n5. Sump drain (e.g., NG tube)\n\nDrains prevent fluid accumulation (blood, pus, serum, bile, urine) postoperatively and can assess third-space fluid. Closed systems reduce infection risk compared to open drains. They should exit through a separate incision and be removed when output is <30–50 cc/24 h."
+    difficulty: easy
+    tags: [surgical drains, postoperative care, general surgery]
+  - front: "What is the minimum drain output threshold at which a surgical drain should typically be removed?"
+    back: "Less than 30–50 cc per 24 hours.\n\nDrains should be removed as soon as practically possible to reduce the risk of ascending infection. Evidence does not support routine postoperative drainage of the abdominal cavity. Rigid drains can erode through internal structures and excessive suction can cause necrosis."
+    difficulty: easy
+    tags: [surgical drains, postoperative care]
+  - front: "What are the four wound classification categories and their associated infection rates?"
+    back: "1. Clean — ~2%\n2. Clean-Contaminated — ~3–4%\n3. Contaminated — ~10%\n4. Dirty/Infected — ~30–40%\n\nClean wounds involve sterile incisions with no hollow organ entry (e.g., hernia repair). Clean-contaminated involves controlled entry into hollow viscus (e.g., routine cholecystectomy). Contaminated has gross spillage (e.g., bowel obstruction with enterotomy). Dirty involves pre-existing infection (e.g., appendiceal abscess). Classification guides antibiotic prophylaxis decisions."
+    difficulty: easy
+    tags: [surgical site infection, wound classification, general surgery]
+  - front: "Which organisms are the most common causes of surgical site infections from skin and GI flora?"
+    back: "Skin flora: Gram-positive cocci (S. aureus, Streptococcus spp.)\nGI flora: Gram-positive (Enterococcus spp., Clostridium spp.), Gram-negative rods (E. coli), and anaerobic species.\n\nMost surgical wounds are contaminated by normal endogenous flora. The source depends on the type of surgery performed. SSI prophylaxis with appropriate antibiotics targeting the expected flora is essential for contaminated or high-risk clean-contaminated procedures."
+    difficulty: easy
+    tags: [surgical site infection, microbiology, general surgery]
+  - front: "What is the standard antibiotic prophylaxis regimen for most surgical procedures, and when should it be administered?"
+    back: "Cefazolin + metronidazole (or if beta-lactam allergy: clindamycin + gentamicin OR vancomycin). Administered within 1 hour pre-incision; can re-dose at 1–2 half-lives (~q4–8h) during the procedure.\n\nProphylactic antibiotics are not required for low-risk clean surgeries (elective thyroidectomy, cholecystectomy, hemorrhoidectomy, fistulotomy, sphincterotomy). Re-dosing is important if surgery exceeds the antibiotic half-life. Postoperative antibiotics are reserved for treatment of documented intra-abdominal infection."
+    difficulty: medium
+    tags: [antibiotic prophylaxis, surgical site infection, general surgery]
+  - front: "What are the non-antibiotic prophylactic measures to reduce surgical site infection (SSI)?"
+    back: "1. Normothermia (maintain 36–38°C in OR)\n2. Hyperoxygenation (consider FiO₂ 80% in OR)\n3. Chlorhexidine-alcohol wash of surgical site\n4. Hair removal only if necessary; clip (do not shave) at time of surgery\n5. Delayed primary closure of contaminated wounds\n6. Use sterile closing tray for laparotomy\n\nThese measures target different mechanisms of SSI. Maintaining normothermia prevents immune suppression from hypothermia. High FiO₂ improves tissue oxygenation to support neutrophil killing. Chlorhexidine-alcohol is superior to povidone iodine in reducing SSI in clean surgery per Cochrane review. Clipping is preferred to shaving to reduce skin micro-abrasions."
+    difficulty: medium
+    tags: [SSI prevention, surgical site infection, general surgery]
+  - front: "When do surgical site infections (SSI) typically present, and what are the key clinical features?"
+    back: "Typically fever on POD #5–8 (exception: Streptococcus and Clostridium can present in <24 h). Features: localized pain, blanchable erythema, induration, purulent discharge, warmth.\n\nComplications of SSI include fistula, sinus tracts, sepsis, abscess, suppressed wound healing, superinfection, spreading infection to myonecrosis or fascial necrosis (necrotizing fasciitis), wound dehiscence, evisceration, and hernia. Early presentation at <24h should raise concern for Streptococcal or Clostridial infection."
+    difficulty: easy
+    tags: [surgical site infection, clinical features, postoperative complications]
+  - front: "How is a surgical site infection treated?"
+    back: "1. Inspect wound, compress adjacent areas, swab drainage for C&S and Gram stain\n2. Reopen affected part of incision, drain, pack — heal by secondary intention\n3. For deeper or necrotizing infections: debride necrotic/non-viable tissue\n4. Antibiotics and demarcation of erythema only if cellulitis OR immunodeficiency is present\n\nRoutine antibiotic use for SSI without cellulitis or immunodeficiency is not recommended. Most SSIs can be managed with local wound opening and packing. Necrotizing fasciitis requires urgent surgical debridement as antibiotics alone are insufficient."
+    difficulty: medium
+    tags: [surgical site infection, treatment, general surgery]
+  - front: "What are the risk factors for wound hemorrhage/hematoma?"
+    back: "Anticoagulant therapy, coagulopathies, thrombocytopenia, DIC, severe liver disease, myeloproliferative disorders, severe arterial HTN, severe cough. More common with transverse incisions through muscle due to vascularity.\n\nWound hematoma is more clinically relevant in small working spaces such as breast or thyroid surgery where expanding hematoma can cause airway edema or compression. A rapidly expanding neck hematoma is a surgical emergency."
+    difficulty: easy
+    tags: [wound hematoma, postoperative complications, general surgery]
+  - front: "A patient develops a rapidly expanding neck hematoma following thyroid surgery. What is the immediate management priority?"
+    back: "Protect the airway — intubate immediately. Open the wound at bedside (a suture kit should be kept at bedside for all neck surgeries). Operative re-exploration to find source of bleeding may follow.\n\nA rapidly expanding neck hematoma can compress the trachea and cause airway compromise — this is a surgical emergency. The most critical initial step is securing the airway with intubation. Opening the wound emergently decompresses the hematoma. This is why a suture kit at bedside is standard of care after all neck operations."
+    difficulty: hard
+    tags: [neck hematoma, surgical emergency, thyroid surgery, airway management]
+  - front: "What is a seroma, and how is it managed?"
+    back: "A seroma is a fluid collection related to serous lymph drainage, secondary to transection of lymph vessels. Management: observation first; if needed, consider pressure dressing + needle aspiration (noting that drainage increases infection risk).\n\nSeromas commonly occur after procedures involving lymph node dissection (e.g., axillary dissection, mastectomy, inguinal dissection). They are usually self-limited. Aspiration relieves symptoms but carries infection risk, so conservative management is preferred unless symptomatic."
+    difficulty: easy
+    tags: [seroma, postoperative complications, general surgery]
+  - front: "What are the local and systemic risk factors for wound dehiscence?"
+    back: "Local: technical failure of closure, excessive tension, increased intra-abdominal pressure (COPD, ileus, bowel obstruction), hematoma, infection, poor blood supply, radiation, transverse incision.\nSystemic: male sex, smoking, malnutrition (hypoalbuminemia, vitamin C deficiency), connective tissue diseases, immunosuppression, pulmonary disease, ascites, steroids, chemotherapy, obesity, age, sepsis, uremia.\nNote: DM alone is NOT a risk factor.\n\nWound dehiscence is disruption of a primarily closed wound causing loss of skin or fascial barrier. It is important to distinguish DM (not a risk factor alone) from malnutrition and immunosuppression which are. Small bites technique for fascial closure is superior to large bites in reducing incisional hernia (Lancet 2015 RCT)."
+    difficulty: medium
+    tags: [wound dehiscence, risk factors, postoperative complications]
+  - front: "What is the classic presentation of wound dehiscence, and what does evisceration require?"
+    back: "Typical presentation: serosanguinous (salmon-coloured) drainage from wound on POD #1–3 or #7–10; absent or lost 'healing ridge' on palpation. Evisceration ('burst abdomen') is a surgical emergency requiring immediate operative re-closure.\n\nThe 'healing ridge' is a raised area of tissue palpable under the incision representing fascial healing; its absence suggests impending or established dehiscence. Evisceration means bowel/viscera are protruding through the wound — cover with a moist dressing and a binder, transfer immediately to OR."
+    difficulty: medium
+    tags: [wound dehiscence, evisceration, postoperative complications]
+  - front: "What is an incisional hernia and when does it typically develop?"
+    back: "A late complication of fascial dehiscence and failure of fascial closure where GI contents remain within a peritoneal sac but protrude through the abdominal wall defect. Typically develops 6–8 weeks postoperatively. Definitive treatment is surgical repair; large hernias with little risk of incarceration may be observed.\n\nSmaller fascial defects (e.g., laparoscopic port sites) have higher risk of incarceration than large hernias. Incisional hernias are aggravated by coughing or straining. The small bites technique for midline fascial closure (Lancet 2015) reduces incisional hernia rates (13% vs. 21% for large bites)."
+    difficulty: easy
+    tags: [incisional hernia, postoperative complications, general surgery]
+  - front: "What are the causes of postoperative urinary retention, and how is it treated?"
+    back: "Causes: General or (more commonly) spinal anesthesia; pelvic surgery with nerve manipulation; older males with BPH; anticholinergic medications.\nTreatment: In-and-out catheter to rest bladder then trial of voiding; alpha-blocker (tamsulosin, onset ~48h); if persistent, discharge home with Foley + leg bag with trial-of-void at follow-up within 1 week.\n\nPost-void residual urine >100 mL defines urinary retention. Tamsulosin is the alpha-blocker of choice but takes ~48 hours to work. Young healthy patients can also develop this complication. Prompt treatment prevents bladder injury from overdistension."
+    difficulty: medium
+    tags: [urinary retention, postoperative complications, urology]
+  - front: "What is the definition of oliguria and its most common postoperative cause?"
+    back: "Oliguria: urine output <0.5 cc/kg/h (e.g., <450 cc in 12 h in a 75 kg patient), with rising Cr and BUN.\nMost common postoperative cause: prerenal azotemia + ischemic ATN (acute tubular necrosis).\n\nPostoperative oliguria is classified as prerenal (hypovolemia, third-spacing), renal (ATN, AIN, acute GN), or postrenal (obstruction). Fluid deficit is treated with crystalloid (NS or Ringer's lactate). Identifying the cause is critical as treatment differs — renal causes require avoidance of nephrotoxins and supportive care."
+    difficulty: easy
+    tags: [oliguria, postoperative complications, renal]
+  - front: "What comprises 90% of postoperative pulmonary complications, and what are its risk factors?"
+    back: "Atelectasis comprises 90% of postoperative pulmonary complications.\nRisk factors: COPD, smoking, obesity, elderly; upper abdominal/thoracic surgery, oversedation, significant postoperative pain, poor inspiratory effort.\n\nPostoperative atelectasis may be asymptomatic or present with low-grade fever on POD #1, tachycardia, crackles, decreased breath sounds, bronchial breathing, and tachypnea. Prophylaxis includes incentive spirometry, deep breathing exercises, chest physiotherapy, early ambulation, minimizing respiratory depressant drugs, and adequate pain control. Smoking cessation >8 weeks preoperatively provides the greatest benefit."
+    difficulty: easy
+    tags: [atelectasis, postoperative complications, pulmonary]
+  - front: "What are the risk factors for postoperative aspiration pneumonitis/pneumonia?"
+    back: "Aspiration risk: general anesthetic, decreased LOC, GERD, full stomach, bowel/gastric outlet obstruction + non-functioning NG tube, pregnancy, seizure disorder.\nNon-aspiration risk: atelectasis, immobility, pre-existing respiratory disease.\n\nAspiration of gastric contents during induction or extubation causes chemical pneumonitis. Treatment includes immediate airway clearance, possible bronchoscopic aspiration, and empiric IV antibiotics covering oral/nosocomial aerobes and anaerobes (e.g., piperacillin-tazobactam, cefepime + metronidazole). Prophylaxis: NPO, NG tube, rapid sequence induction."
+    difficulty: medium
+    tags: [aspiration pneumonia, pneumonitis, postoperative complications]
+  - front: "When do postoperative pulmonary emboli most commonly occur, and what is the initial treatment?"
+    back: "Most commonly POD #8–10 (but can occur anytime, even after discharge).\nInitial treatment: IV heparin or subcutaneous LMWH, bridging to therapeutic anticoagulation for minimum 3 months (usually 6 months); longer duration for cancer or hypercoagulable states. Severe cases: endovascular thrombectomy/thrombolysis. If anticoagulation contraindicated: Greenfield (IVC) filter.\n\nDVT as source of PE presents with unilateral leg swelling/pain, sudden dyspnea, pleuritic chest pain, tachycardia, and fever. Diagnosis typically by CT chest. Prophylaxis includes subcutaneous heparin 5000 units BID/TID or LMWH, TED compression stockings, and sequential compression devices."
+    difficulty: medium
+    tags: [pulmonary embolism, DVT, postoperative complications, anticoagulation]
+  - front: "What is the mnemonic for treating pulmonary edema and what does each letter stand for?"
+    back: "LMNOP:\n- L: Lasix (furosemide)\n- M: Morphine (decreases dyspnea, venodilator, afterload reduction)\n- N: Nitrates (venodilator)\n- O: Oxygen + non-invasive ventilation\n- P: Position (sit patient upright)\n\nPulmonary edema postoperatively is usually cardiogenic (fluid overload, LV failure) or non-cardiogenic (ARDS, alveolar injury). Negative pressure pulmonary edema can result from inspiratory efforts against a closed glottis upon awakening from GA. Elderly patients should be treated as cardiogenic until proven otherwise."
+    difficulty: easy
+    tags: [pulmonary edema, LMNOP, postoperative complications]
+  - front: "What are the earliest manifestations of postoperative respiratory failure?"
+    back: "Tachypnea (RR >25) and hypoxemia (PaO₂ <60 mmHg).\n\nIf ABCs, oxygen, positive pressure ventilation, bronchodilators, and diuretics fail to maintain PaO₂ >60, consider ARDS. Respiratory failure treatment: ABCs, O₂ ± positive pressure ventilation, intubation, bronchodilators, diuretics for CHF, adequate blood pressure to maintain pulmonary perfusion."
+    difficulty: easy
+    tags: [respiratory failure, postoperative complications]
+  - front: "What is the incidence of postoperative MI, and when does it most typically occur?"
+    back: "Incidence: 0.5% in previously asymptomatic men >50 years; 40-fold increase in men >50 with previous MI. Typically occurs on day of operation or POD #3–4 (when third-space fluid shifts back into intravascular compartment).\n\nPostoperative MI is often silent — may only present with new-onset CHF (dyspnea), arrhythmias, or hypotension rather than classic chest pain. Risk factors include preoperative HTN, CHF, previous MI (highest risk <6 months, risk never returns to baseline), age, intraoperative hypotension, and surgeries >3 hours."
+    difficulty: medium
+    tags: [myocardial infarction, postoperative complications, cardiac]
+  - front: "What are the clinical and microbiological features of intra-abdominal abscess?"
+    back: "Clinical: persistent spiking fever, dull pain, weight loss; manifests at least 5–7 days after surgery (cannot form earlier). Lab: leukocytosis or leukopenia (immunocompromised/elderly). Common sites: pelvis, Morrison's pouch, subphrenic, paracolic gutters, lesser sac.\nMicrobiology: usually polymicrobial — Gram-negative bacteria and anaerobes; consider Gram-positives if coexisting cellulitis.\n\nIntra-abdominal abscess is a collection of pus walled off by inflammatory adhesions and viscera. Investigations include CBC, blood cultures ×2, CT with IV and water-soluble contrast, and C&S from drain. Treatment is drain placement by interventional radiology (preferred), plus antibiotics (ceftriaxone + metronidazole or piperacillin-tazobactam)."
+    difficulty: medium
+    tags: [intra-abdominal abscess, postoperative complications, general surgery]
+  - front: "What are the CT characteristics that distinguish a benign from a malignant solitary pulmonary nodule?"
+    back: "Benign: smooth/lobulated borders; calcified (diffuse, central, laminated, 'popcorn' pattern for hamartoma); thin smooth wall if cavitating; no satellite lesions; doubles in <20 or >400 days.\nMalignant: irregular/spiculated borders; usually not calcified (if calcified: eccentric or stippled); thick wall cavitation; pleural effusion; lymphadenopathy; doubles between 20–400 days.\n\nThe Fleischner Society 2017 guidelines govern management of incidentally found pulmonary nodules on CT. Nodules <3 cm are 'nodules'; >3 cm are 'masses.' Malignant nodules double every 20–400 days. PET scan can narrow the differential. Biopsy (bronchoscopic or percutaneous) is performed when imaging is inconclusive."
+    difficulty: medium
+    tags: [solitary pulmonary nodule, lung cancer, radiology, thoracic surgery]
+  - front: "According to Fleischner Society 2017 guidelines, what is the management of a single solid pulmonary nodule >8 mm in a high-risk patient?"
+    back: "Consider CT at 3 months, PET/CT, or tissue sampling.\n\nManagement is tiered by size, number (single vs. multiple), and patient risk (low vs. high). For solid single nodules: <6 mm low-risk = no routine follow-up; 6–8 mm = CT at 6–12 months then 18–24 months; >8 mm = CT at 3 months, PET/CT, or tissue sampling. High-risk patients have the same algorithm but with optional CT even for <6 mm nodules."
+    difficulty: medium
+    tags: [solitary pulmonary nodule, Fleischner guidelines, lung cancer screening]
+  - front: "What are the subtypes of non-small cell lung cancer (NSCLC) and their relative frequencies?"
+    back: "NSCLC comprises 85–90% of all lung cancers:\n- Squamous cell carcinoma (SCC): ~30% — central, strong smoking correlation, may cavitate\n- Adenocarcinoma: ~35% (M), ~40% (F) — peripheral, most common in non-smokers, increasing incidence\n- Large cell carcinoma: 10–15% — peripheral, strong smoking correlation\nSCLC: 10–15% — central, strong smoking correlation\n\nAdenocarcinoma is now the most common NSCLC subtype overall. Mucinous adenocarcinoma (formerly bronchioloalveolar carcinoma) grows along alveolar walls and may arise at sites of previous scarring. SCC arises from proximal respiratory epithelium. SCLC arises from endobronchial neuroendocrine cells and is virtually never surgically resected."
+    difficulty: medium
+    tags: [lung cancer, NSCLC, SCLC, thoracic surgery]
+  - front: "What is the Canadian Task Force on Preventive Health (2016) recommendation for lung cancer screening?"
+    back: "Annual low-dose CT scan (up to 3 years) for high-risk patients:\n- Age 55–74 years\n- ≥30 pack-year smoking history\n- Current smoker OR quit within the last 15 years\n\nLung cancer is the most common cause of cancer mortality in both men and women worldwide. Screening with low-dose CT in high-risk individuals reduces lung cancer mortality. This guideline mirrors the USPSTF criteria. Smoking cessation is the primary prevention strategy."
+    difficulty: medium
+    tags: [lung cancer, screening, Canadian guidelines, preventive health]
+  - front: "What paraneoplastic syndromes are most commonly associated with small cell lung cancer (SCLC)?"
+    back: "SCLC paraneoplastic syndromes:\n- Cushing's syndrome (ectopic ACTH)\n- SIADH (inappropriate ADH)\n- Lambert-Eaton myasthenic syndrome (neuromyopathic)\n- Subacute cerebellar degeneration\n- Spinocerebellar degeneration\n- Peripheral neuropathy\n- Carcinoid syndrome (bronchial carcinoid — related)\n\nParaneoplastic syndromes can be the presenting feature of lung cancer. Lambert-Eaton syndrome (proximal muscle weakness, unlike myasthenia gravis which affects ocular muscles first) is pathognomonic for SCLC. SIADH causes hyponatremia. Ectopic ACTH causes Cushing's. SCC causes hypercalcemia via PTHrP or osteolysis."
+    difficulty: hard
+    tags: [paraneoplastic syndromes, SCLC, lung cancer, endocrinology]
+  - front: "What paraneoplastic syndrome causes hypercalcemia and which lung cancer subtype is responsible?"
+    back: "Squamous cell carcinoma (SCC) of the lung causes hypercalcemia via PTHrP (parathyroid hormone-related protein) secretion or osteolysis.\n\nSCC is the most common cause of hypercalcemia due to malignancy via PTHrP. This is distinct from bone metastases causing hypercalcemia. Other SCC paraneoplastic features include hypophosphatemia. SCLC causes SIADH, Cushing's, and Lambert-Eaton. NSCLC causes hypertrophic pulmonary osteoarthropathy (HPOA) and clubbing."
+    difficulty: medium
+    tags: [paraneoplastic syndromes, hypercalcemia, SCC, lung cancer]
+  - front: "What is Pancoast tumour, and what clinical syndrome does it cause?"
+    back: "A Pancoast tumour is a lung apex tumour that compresses the cervical sympathetic plexus causing Horner's syndrome (miosis, ptosis, anhydrosis) and can cause brachial plexus palsy (most commonly C8 and T1 nerve roots).\n\nHorner's syndrome mnemonic: MAP of the Coast — Miosis, Anhydrosis, Ptosis. Pancoast tumours can also erode ribs and vertebrae, causing bone pain. Brachial plexus involvement causes ipsilateral arm weakness and paresthesias. These tumours are typically SCC or adenocarcinoma and present with superior sulcus syndrome."
+    difficulty: medium
+    tags: [Pancoast tumour, Horner syndrome, lung cancer, thoracic surgery]
+  - front: "What are the clinical features of Superior Vena Cava (SVC) syndrome in lung cancer?"
+    back: "SVC obstruction causes: neck and facial swelling, dyspnea, cough, hoarseness, tongue swelling, epistaxis, hemoptysis.\nPhysical findings: dilated neck veins, increased collateral veins on anterior chest wall, cyanosis, facial/arm/chest edema, Pemberton's sign (facial flushing, cyanosis, distension of neck veins on raising both arms above head).\n\nSVC syndrome is caused by extrinsic compression or invasion of the SVC by tumour (most often SCLC or lymphoma) or mediastinal lymph nodes. Milder symptoms occur if obstruction is above the azygos vein as collateral circulation is more available. Treatment targets the underlying malignancy."
+    difficulty: medium
+    tags: [SVC syndrome, lung cancer, oncology, thoracic surgery]
+  - front: "What are the SCLC staging system and corresponding treatments and median survivals?"
+    back: "Limited stage: confined to single radiation port (one hemithorax + regional nodes) → Radiation + chemotherapy + prophylactic cranial irradiation → Median survival 1–2 years (12 weeks without treatment).\nExtensive stage: beyond single radiation port → Chemotherapy alone → Median survival 6 months (5 weeks without treatment).\n\nSCLC is virtually never treated surgically because it is systemically disseminated at presentation. Prophylactic cranial irradiation is used in limited stage to reduce brain metastases, which are common. The prognosis is markedly worse in extensive stage. Key chemotherapy agents include cisplatin/etoposide."
+    difficulty: hard
+    tags: [SCLC, staging, lung cancer treatment, oncology]
+  - front: "What are the contraindications to surgical resection of NSCLC?"
+    back: "1. Spread to contralateral mediastinal lymph nodes or distant sites\n2. Poor pulmonary status (inability to tolerate lung resection)\n3. Postoperative estimated FEV₁ and DLCO must be at least 40% of predicted\n4. Note: mediastinal node sampling required since CT thorax is inaccurate in 20–40% of cases\n\nSurgery is the first-line treatment for resectable NSCLC (stages 0–IIA), typically VATS or open thoracotomy with possible adjuvant chemotherapy for stage IB and II. Pembrolizumab (anti-PD-1) is used when tumour PD-L1 expression is ≥50%. EGFR and ALK tyrosine kinase inhibitors target specific mutations in adenocarcinoma."
+    difficulty: hard
+    tags: [NSCLC, lung cancer surgery, surgical contraindications, thoracic surgery]
+  - front: "What targeted therapies are available for NSCLC and what mutations do they target?"
+    back: "1. EGFR tyrosine kinase inhibitors (e.g., gefitinib, erlotinib) — for EGFR mutations (common in adenocarcinoma, non-smokers, Asian patients)\n2. ALK tyrosine kinase inhibitors (e.g., crizotinib) — for ALK rearrangements\n3. Pembrolizumab (anti-PD-1 monoclonal antibody) — for tumours with PD-L1 expression ≥50% (monotherapy); <50% (combination with doublet chemotherapy)\n\nMolecular testing of tumour tissue is now standard of care for advanced NSCLC, particularly adenocarcinoma. EGFR mutations are most common in non-smoking women with adenocarcinoma. ALK rearrangements define a distinct subset responsive to ALK inhibitors. PD-L1 expression guides immunotherapy decisions."
+    difficulty: hard
+    tags: [targeted therapy, NSCLC, EGFR, ALK, pembrolizumab, lung cancer]
+  - front: "What is the differential diagnosis for a solitary pulmonary nodule — benign vs. malignant?"
+    back: "Benign (70%): infectious granuloma (histoplasmosis, coccidiomycosis, TB, atypical mycobacteria — most common), bacterial abscess, PCP, aspergilloma, hamartoma, lipoma, fibroma, AVM, bronchogenic cyst, granulomatosis with polyangiitis, rheumatoid nodule, sarcoidosis.\nMalignant (30%): bronchogenic carcinoma (adenocarcinoma, SCC, large cell, SCLC); metastases (breast, head/neck, melanoma, colon, kidney, sarcoma, germ cell tumours).\n\nThe most common benign cause is infectious granuloma. Compare all CXR findings with previous imaging. CT chest is the next step; PET scan narrows the differential. Biopsy by bronchoscopy, EBUS, or percutaneous CT-guided approach is pursued if imaging is inconclusive. Watchful waiting with repeat CT at 3, 6, 12 months is guided by Fleischner criteria."
+    difficulty: medium
+    tags: [solitary pulmonary nodule, lung cancer, differential diagnosis, thoracic surgery]
+  - front: "What are the four 'T's in the differential diagnosis of an anterior mediastinal mass?"
+    back: "The 4 T's:\n1. Thymoma\n2. Thyroid enlargement (goitre)\n3. Teratoma (germ cell tumour)\n4. Tumours (lymphoma, parathyroid, angiomatous tumours)\n\nThe anterior mediastinal compartment is the most common site for mediastinal masses. Thymoma is most common overall (associated with myasthenia gravis). Teratomas are germ cell tumours. Lymphoma (especially Hodgkin lymphoma) is a key cause in young patients. Thyroid goitres can extend substernally. CT with contrast is the primary diagnostic tool."
+    difficulty: easy
+    tags: [mediastinal mass, anterior mediastinum, thoracic surgery, differential diagnosis]
+  - front: "What are the features of complicated parapneumonic effusion vs. empyema?"
+    back: "Complicated parapneumonic effusion: persistent bacteria in pleural space but fluid is non-purulent; neutrophils, pH <7.20, glucose <40 mg/dL; often culture-negative.\nEmpyema: bacteria in pleural space with organisms on Gram stain or culture, OR grossly purulent fluid (positive culture NOT required for diagnosis).\n\nBoth conditions present with fever, pleuritic chest pain, dyspnea, and sputum production. Complicated parapneumonic effusion is treated with antibiotics + chest tube drainage. Empyema requires antibiotics for ≥4–6 weeks, complete pleural drainage with chest tube; if loculated, VATS or fibrinolysis with tPA/DNase (decortication) may be needed."
+    difficulty: medium
+    tags: [empyema, parapneumonic effusion, pleural disease, thoracic surgery]
+  - front: "What are the types of pneumothorax and their causes?"
+    back: "Traumatic: penetrating or non-penetrating chest injuries.\nIatrogenic: central venous catheter, thoracentesis, mechanical ventilation (barotrauma), surgery.\nPrimary spontaneous: no underlying lung disease; spontaneous rupture of apical subpleural bleb; risk factors: smoker, male, family history, Marfan syndrome.\nSecondary spontaneous: underlying lung disease (COPD, pneumonia, abscess, PCP, lung cancer, CF, TB, LAM, PLCH, sarcoma metastasis).\n\nAir enters the pleural space raising intrapleural pressure causing lung deflation. In tension pneumothorax, this progresses to mediastinal shift and cardiovascular collapse. Secondary spontaneous pneumothorax has a higher recurrence rate and mortality than primary, necessitating more aggressive management including VATS pleurodesis."
+    difficulty: medium
+    tags: [pneumothorax, thoracic surgery, pulmonary]
+  - front: "What are the clinical features of tension pneumothorax and how is it managed?"
+    back: "Clinical features: tracheal deviation (contralateral), shock, ipsilateral diminished chest expansion, decreased tactile/vocal fremitus, hyperresonance, ipsilateral absent breath sounds, tachycardia, tachypnea.\nManagement: immediate needle decompression (2nd intercostal space, midclavicular line), then chest tube insertion.\n\nTension pneumothorax is a clinical emergency — do NOT wait for imaging confirmation. Needle decompression converts tension to simple pneumothorax, followed by chest tube. Chest tube is inserted at the 4th/5th intercostal space, anterior axillary line, superior to the rib to avoid the neurovascular bundle."
+    difficulty: hard
+    tags: [tension pneumothorax, surgical emergency, thoracic surgery]
+  - front: "What is the management of primary spontaneous pneumothorax based on size and stability?"
+    back: "Small (<3 cm) and stable, minimal symptoms: observation + supplemental O₂.\nLarge (>3 cm) or symptomatic: aspiration or chest tube.\nUnstable/tension: needle decompression then chest tube; if unsuccessful (25–50% recurrence): VATS bullectomy + pleurodesis.\n\nSize in pneumothorax is measured as the distance between the lung and chest wall at the apex. O₂ supplementation increases reabsorption rate of pleural air. Recurrence rate for primary spontaneous pneumothorax is 25–50%, hence VATS with pleurodesis and/or bullectomy is recommended after a second episode."
+    difficulty: medium
+    tags: [pneumothorax, management, thoracic surgery]
+  - front: "What are the indications and complications of tube thoracostomy (chest tube)?"
+    back: "Indications: hemothorax, pleural effusion, chylothorax, empyema; pneumothorax (large/progressive, on mechanical ventilation, bronchopleural fistula, tension); symptomatic/recurrent pleural effusion; pleurodesis.\nFor malignant effusions: tunneled pleural catheter OR pleural drainage + talc pleurodesis.\nComplications: malposition (most common), bleeding, local infection/empyema, lung/liver/spleen/vascular perforation, re-expansion pulmonary edema (if >1.0–1.5 L removed rapidly). Overall complication rate: 1–3%.\n\nChest tube is inserted at the 4th/5th intercostal space, anterior axillary line, over the superior border of the rib to avoid the neurovascular bundle running along the inferior rib margin. Malposition (most common complication) is especially common with inexperienced operators; tubes may end up in the chest wall or below the diaphragm. Re-expansion pulmonary edema is prevented by draining <1.0–1.5 L at a time."
+    difficulty: hard
+    tags: [chest tube, tube thoracostomy, thoracic surgery, complications]
+  - front: "What are the key features of pulmonary hamartomas?"
+    back: "Comprise 10% of benign lung lesions. Composed of tissue normally present in the lung but in disorganized growth. Peak incidence age 60, more common in men. Usually peripheral and clinically silent. CXR/CT shows clustered 'popcorn' calcification pattern (pathognomonic). Management: peripheral hamartomas can be observed; symptomatic endobronchial hamartomas removed via rigid transbronchial resection.\n\nThe 'popcorn' calcification pattern on imaging is pathognomonic for pulmonary hamartoma and represents cartilaginous calcification. It is a benign lesion. Small peripheral hamartomas do not require resection. The popcorn pattern is the key distinguishing feature from malignant lesions, which typically have eccentric or stippled calcification."
+    difficulty: medium
+    tags: [hamartoma, solitary pulmonary nodule, lung benign lesion, thoracic surgery]
+  - front: "A 67-year-old male smoker (40 pack-years, quit 5 years ago) has an incidentally found single solid pulmonary nodule of 7 mm on CT. What is the next step per Fleischner Society 2017 guidelines?"
+    back: "This is a high-risk patient with a single solid nodule 6–8 mm. Recommendation: CT at 6–12 months, then at 18–24 months.\n\nHigh-risk features include age >50, significant smoking history (>30 pack-years), and quitting within the last 15 years (which also meets Canadian lung cancer screening criteria). For the 6–8 mm range in high-risk patients, the Fleischner Society recommends CT at 6–12 months followed by CT at 18–24 months. Low-risk patients in this size range need CT at 6–12 months and consideration at 18–24 months."
+    difficulty: hard
+    tags: [solitary pulmonary nodule, Fleischner guidelines, lung cancer screening, clinical reasoning]
+  - front: "What is the relative risk of lung cancer in workers exposed to asbestos, with and without smoking?"
+    back: "Asbestos without smoking: relative risk 5×. Asbestos with smoking: relative risk 92× (synergistic/multiplicative effect).\n\nCigarette smoking alone increases lung cancer risk 10–30× compared to non-smokers. Asbestos combined with smoking creates a multiplicative (not merely additive) risk increase to 92×. Other risk factors include cigar/pipe smoking, second-hand smoke, metals (chromium, arsenic, nickel), radon gas, ionizing radiation, and genetics."
+    difficulty: medium
+    tags: [lung cancer, risk factors, asbestos, occupational health]
+  - front: "What is the NSCLC 5-year survival rate for stage IA1 vs. stage IVB disease?"
+    back: "Stage IA1 (T1aN0M0): approximately 90–92% 5-year survival. Stage IVB (any T, any N, M1c): approximately <5% 5-year survival (treated with systemic/palliative therapy).\n\nSurvival decreases dramatically with advancing stage due to lymph node involvement and distant metastases. Surgery (VATS or open thoracotomy) is curative for early-stage NSCLC. Adjuvant chemotherapy is added from stage IB and stage II onwards. Immunotherapy (pembrolizumab) and targeted therapies (EGFR/ALK inhibitors) are first-line for advanced/metastatic disease."
+    difficulty: medium
+    tags: [NSCLC, staging, prognosis, lung cancer]
+  - front: "What is Endobronchial Ultrasound (EBUS) and what are its uses?"
+    back: "EBUS is a bronchoscopic technique that allows visualization of peri-bronchial structures and lung lesions. Uses: guided biopsy of lymph nodes and tumours, diagnosis and staging of lung cancer (assesses mediastinal lymph node involvement).\n\nEBUS has largely replaced mediastinoscopy for mediastinal lymph node staging due to its minimally invasive nature. It is superior to CT for staging mediastinal nodes, which is critical since CT thorax is inaccurate in 20–40% of cases. Combined with PET scan, EBUS-guided biopsy provides accurate staging to guide surgical candidacy."
+    difficulty: medium
+    tags: [EBUS, lung cancer staging, bronchoscopy, thoracic surgery]
+  - front: "What is the characteristic finding of carcinoid tumours of the lung, and how are they managed?"
+    back: "Most carcinoids are central and produce symptoms/signs of bronchial obstruction. Hemoptysis present in ~50%. Most have excellent prognosis (>90% 5-year survival). Assuming adequate pulmonary function, surgical resection (e.g., segmentectomy, lobectomy) is the treatment of choice.\n\nPulmonary carcinoids are neuroendocrine tumours — typical carcinoids are low-grade malignancies while atypical carcinoids are intermediate-grade. Unlike GI carcinoids, they rarely cause classic carcinoid syndrome unless metastatic. They can secrete ACTH (ectopic Cushing's). Surgery is curative in most cases."
+    difficulty: medium
+    tags: [carcinoid, lung tumour, neuroendocrine, thoracic surgery]
+  - front: "What is the difference between a true (congenital) diverticulum and a false (acquired) diverticulum?"
+    back: "True diverticulum: contains ALL layers of the colonic wall, often right-sided. False diverticulum: contains only mucosa and submucosa (mucosal herniation), often left-sided.\n\nTrue diverticula are congenital and involve full wall thickness. False diverticula are acquired and represent herniation of mucosa/submucosa through weak points in the muscular wall, typically where vasa recta penetrate."
+    difficulty: easy
+    tags: [diverticular disease, colorectal surgery, general surgery]
+  - front: "What percentage of the Western population has diverticulosis by age 85?"
+    back: "65% by age 85. Prevalence is age-dependent: <5% by age 40, 30% by age 60, 65% by age 85.\n\nDiverticulosis is extremely common in Western populations, with prevalence rising steeply with age. The sigmoid colon is involved in 95% of cases because it has the highest intraluminal pressures."
+    difficulty: easy
+    tags: [diverticular disease, epidemiology, colorectal surgery]
+  - front: "What are the risk factors for diverticulosis?"
+    back: "Diet (low-fibre, high fat, red meat), inactivity, elevated BMI, older age, smoking, and muscle wall weakness from aging or illness (e.g., Ehlers-Danlos, Marfan's syndrome).\n\nLow-fibre diets lead to increased intraluminal pressures, while muscle wall weakness creates points of vulnerability — particularly where vasa recta penetrate the circular muscle layer, also increasing hemorrhage risk."
+    difficulty: easy
+    tags: [diverticular disease, risk factors, colorectal surgery]
+  - front: "What are the complications of diverticulosis and their approximate frequencies?"
+    back: "Diverticulitis (15-25%); bleeding (5-15%) — painless rectal bleeding, accounts for 30-50% of massive LGIB; diverticular colitis (rare).\n\nMost patients with diverticulosis (70-80%) are asymptomatic. Of those who develop diverticulitis, 25% have complicated disease (abscess, obstruction, perforation, or fistula)."
+    difficulty: medium
+    tags: [diverticular disease, complications, LGIB]
+  - front: "What is the geographic difference in the location of diverticulitis?"
+    back: "95% left-sided (sigmoid) in Western populations; 75% right-sided in Asian populations.\n\nThis geographic variation reflects dietary and genetic differences. Western diets (low fibre) predominantly lead to left-sided disease, while Asian populations more commonly develop right-sided (cecal/ascending) diverticulitis."
+    difficulty: easy
+    tags: [diverticulitis, epidemiology, geography]
+  - front: "What is the pathogenesis of diverticulitis?"
+    back: "Erosion of the wall by increased intraluminal pressure or inspissated food particles → inflammation and focal necrosis → micro or macroscopic perforation. Usually walled off by pericolic fat/mesentery; poor containment results in free perforation and peritonitis.\n\nThe perforation is typically small and contained, but if not walled off by surrounding tissues, it can lead to free perforation and generalized feculent or purulent peritonitis."
+    difficulty: medium
+    tags: [diverticulitis, pathogenesis]
+  - front: "What is the test of choice for diagnosing and staging acute diverticulitis?"
+    back: "CT scan (with IV contrast) — 97% sensitive, 99% specific. Findings include increased soft tissue density in pericolic fat, bowel wall thickening, soft tissue mass/abscesses, and fistulae.\n\nCT is preferred for its high sensitivity/specificity and ability to assess severity, complications, and staging. Important: 10% of diverticulitis cannot be distinguished from carcinoma on CT."
+    difficulty: easy
+    tags: [diverticulitis, investigations, CT scan]
+  - front: "Describe the Hinchey staging system for diverticulitis and the appropriate treatment for each stage."
+    back: "Stage 1: Phlegmon/small pericolic abscess → Medical management. Stage 2: Large abscess/fistula → Medical + abscess drainage + resection with primary anastomosis. Stage 3: Purulent peritonitis (ruptured abscess) → Resection or Hartmann procedure. Stage 4: Feculent peritonitis → Hartmann procedure.\n\nThe Hinchey classification guides surgical decision-making. Stages 3-4 generally require operative intervention. Hartmann's procedure (colon resection + colostomy + rectal stump) is used for unstable or complex cases."
+    difficulty: medium
+    tags: [diverticulitis, Hinchey staging, surgery]
+  - front: "What is the Hartmann procedure and when is it indicated?"
+    back: "Hartmann procedure: colon resection + colostomy + rectal stump (closed off). Indicated for unstable patients with peritonitis and Hinchey stage 3-4 diverticulitis. Colostomy reversal is performed in 3-6 months.\n\nFor unstable or complex cases where primary anastomosis would be unsafe (due to contamination, instability, or inflammation), the Hartmann procedure provides definitive resection while deferring bowel continuity restoration."
+    difficulty: medium
+    tags: [diverticulitis, Hartmann procedure, surgery, colorectal surgery]
+  - front: "What are the mortality rates for purulent versus feculent peritonitis from diverticulitis?"
+    back: "Purulent peritonitis: 6% mortality. Feculent peritonitis: 35% mortality.\n\nFeculent peritonitis carries significantly higher mortality because fecal material causes severe contamination and sepsis. Recurrence rates after diverticulitis are 13-30% after first attack, 30-50% after second attack."
+    difficulty: medium
+    tags: [diverticulitis, prognosis, mortality]
+  - front: "What is the current recommendation regarding antibiotic use for uncomplicated acute diverticulitis?"
+    back: "Antibiotics should be AVOIDED for uncomplicated acute diverticulitis managed as outpatient. Non-antibiotic treatment (clear fluids only until improvement) is non-inferior to standard antibiotic treatment.\n\nRecent evidence (DINAMO trial) demonstrates no benefit of antibiotics in uncomplicated diverticulitis. IV antibiotics (e.g., ceftriaxone + metronidazole) are still indicated for hospitalized patients with severe or complicated presentations."
+    difficulty: medium
+    tags: [diverticulitis, antibiotics, management]
+  - front: "What are the indications for hospitalization in acute diverticulitis?"
+    back: "Severe presentation, inability to tolerate oral intake, significant comorbidities, or failure to improve with outpatient management. Inpatient treatment: NPO, IV fluids, IV antibiotics (e.g., IV ceftriaxone + metronidazole).\n\nMost uncomplicated cases can be managed outpatient with clear fluids. Hospitalization is reserved for those who cannot be safely managed at home due to clinical severity or social factors."
+    difficulty: easy
+    tags: [diverticulitis, management, hospitalization]
+  - front: "What is the most common type of fistula complicating diverticulitis?"
+    back: "Colovesical fistula (most common), followed by coloenteric, colovaginal, and colocutaneous fistulae.\n\nDiverticulitis can result in various fistulae as the pericolic inflammation erodes into adjacent structures. Colovesical fistula presents with pneumaturia and fecaluria. Women who have had hysterectomies are at higher risk for colovaginal fistulae."
+    difficulty: easy
+    tags: [diverticulitis, complications, fistula]
+  - front: "What are the types of colorectal polyps and their malignant potential?"
+    back: "Non-neoplastic (no malignant potential): hyperplastic (most common), mucosal, hamartomatous (juvenile, Peutz-Jeghers), inflammatory pseudopolyps, submucosal. Neoplastic/adenomatous (premalignant): tubular < tubulovillous < villous (highest malignant potential).\n\nAdenomatous polyps are considered carcinoma in situ if high-grade dysplasia is present. A 'malignant polyp' (3-9%) involves invasion into the submucosa."
+    difficulty: medium
+    tags: [colorectal polyps, adenoma, malignant potential]
+  - front: "Compare tubular versus villous adenomas in terms of incidence, size, attachment, and malignant potential."
+    back: "Tubular: common (60-80%), small (<2 cm), pedunculated, lower malignant potential, even distribution. Villous: less common (10%), large (usually >2 cm), sessile, higher malignant potential, left-sided predominance.\n\nThe progression of malignant potential from tubular → tubulovillous → villous reflects increasing proportion of villous architecture. Villous adenomas also have greater risk due to their larger size and sessile attachment."
+    difficulty: easy
+    tags: [colorectal polyps, adenoma, villous, tubular]
+  - front: "What are the indications for segmental resection (rather than endoscopic removal) of a malignant colorectal polyp?"
+    back: "1) Lymphovascular invasion; 2) Tumour budding; 3) Positive resection margin; 4) Poorly differentiated cells; 5) Evidence of regional or distant metastases on staging.\n\nThese features indicate a higher risk of residual disease or lymph node involvement that cannot be addressed by endoscopic resection alone. Most cases are discussed at multidisciplinary tumour boards."
+    difficulty: hard
+    tags: [colorectal polyps, malignant polyp, surgery, indications]
+  - front: "What is the recommended colonoscopy surveillance interval for high-risk adenomas?"
+    back: "Every 3 years for high-risk adenomas: 3-10 tubular adenomas, >10 mm tubular or serrated polyp, adenoma with villous features or high-grade dysplasia, or sessile serrated with dysplasia.\n\nLow-risk adenomas (<10 mm sessile serrated without dysplasia) are followed every 5 years. Other low-risk adenomas and non-adenomatous polyps may be followed with FIT every 5-10 years."
+    difficulty: medium
+    tags: [colorectal polyps, surveillance, colonoscopy]
+  - front: "What is Familial Adenomatous Polyposis (FAP)? What is the genetic basis and lifetime cancer risk?"
+    back: "FAP: autosomal dominant mutation in APC gene; de novo mutations in up to 25% of cases. Clinical: hundreds to thousands of colorectal adenomas by age 20. Virtually 100% lifetime risk of colon cancer (70% in attenuated FAP).\n\nFAP accounts for <1% of colorectal cancers. Without prophylactic surgery, nearly all patients will develop CRC. Annual colonoscopy from age 10-12 is recommended, with surgery by ages 17-20."
+    difficulty: medium
+    tags: [FAP, familial cancer syndromes, genetics, colorectal cancer]
+  - front: "What are the extracolonic manifestations of FAP?"
+    back: "Bile duct, pancreas, stomach, thyroid (large benign multinodular goitre), adrenal glands, small bowel tumours; congenital hypertrophy of retinal pigment epithelium (CHRPE) in 2/3 of patients (97% sensitivity for FAP).\n\nCHRPE is an early, asymptomatic finding that can be detected by ophthalmoscopy and is an important clinical marker for FAP. Gardner's syndrome (FAP + desmoid tumours, osteomas, sebaceous cysts) and Turcot syndrome (FAP + CNS tumours) are variants."
+    difficulty: medium
+    tags: [FAP, extracolonic manifestations, genetics]
+  - front: "What are Gardner's syndrome and Turcot syndrome?"
+    back: "Gardner's syndrome: FAP + extra-intestinal lesions (sebaceous cysts, osteomas, desmoid tumours). Turcot syndrome: FAP + central nervous system tumours (childhood cerebellar medulloblastoma).\n\nThese are variants of FAP with the same underlying APC mutation but additional extracolonic manifestations. Both carry the same high colon cancer risk as classic FAP and require the same surveillance and treatment protocols."
+    difficulty: medium
+    tags: [FAP, Gardner syndrome, Turcot syndrome, familial cancer syndromes]
+  - front: "What surgical procedure is indicated for FAP and at what age?"
+    back: "Surgery is indicated by ages 17-20. Options: total proctocolectomy with ileostomy, total colectomy with ileorectal anastomosis, or restorative proctocolectomy + ileal-pouch anal anastomosis (IPAA).\n\nBecause virtually all FAP patients will develop CRC, prophylactic colectomy is standard. IPAA (J-pouch) is preferred when feasible as it avoids a permanent ileostomy. NSAIDs are used for intra-abdominal desmoids."
+    difficulty: medium
+    tags: [FAP, surgery, proctocolectomy]
+  - front: "What is Lynch syndrome (HNPCC)? Describe its genetic basis and epidemiology."
+    back: "Most common inherited CRC susceptibility syndrome; accounts for 3% of CRC diagnoses. Autosomal dominant mutation in DNA mismatch repair genes (MSH2, MSH6, MLH1, PMS2) → microsatellite instability (MSI). MSI accounts for ~15% of all CRCs.\n\nLynch syndrome predisposes to multiple cancers due to faulty DNA repair. The resulting genomic instability leads to rapid accumulation of mutations in cells with high replication rates, particularly in the colon."
+    difficulty: medium
+    tags: [Lynch syndrome, HNPCC, genetics, colorectal cancer, MSI]
+  - front: "What are the Amsterdam Criteria ('3-2-1 rule') for Lynch syndrome (HNPCC)?"
+    back: "3 or more relatives with verified Lynch syndrome-associated cancers; 1 must be a 1st-degree relative of the other 2. 2 or more generations involved. 1 case diagnosed before age 50. FAP must be excluded.\n\nThe Amsterdam Criteria identify high-risk families for Lynch syndrome. Individuals fulfilling these criteria or the revised Bethesda Criteria should be referred for genetic screening and have annual colonoscopy starting at age 20."
+    difficulty: medium
+    tags: [Lynch syndrome, HNPCC, Amsterdam criteria, screening]
+  - front: "What are the clinical features of Lynch syndrome compared to FAP?"
+    back: "Lynch syndrome: early onset (mean age 44), right > left colon predominance, synchronous and metachronous lesions, lifetime risk 70-80% CRC, M>F. HNPCC II includes extracolonic tumours (endometrial, ovarian, hepatobiliary, small bowel, adrenal). No polyposis.\n\nUnlike FAP where polyp burden is massive, Lynch syndrome patients develop cancer from relatively few adenomas but at an early age and often in the right colon. Annual colonoscopy from age 20 is recommended."
+    difficulty: medium
+    tags: [Lynch syndrome, HNPCC, clinical features]
+  - front: "What is the treatment/surveillance for Lynch syndrome?"
+    back: "Colonoscopy annually starting age 20. Surveillance for extracolonic lesions. Surgical treatment: total colectomy and ileorectal anastomosis with annual proctoscopy.\n\nUnlike FAP (prophylactic surgery by ages 17-20), Lynch syndrome management involves intensive surveillance, with surgery reserved for those who develop cancer or high-risk lesions. Annual colonoscopy is critical given the high lifetime cancer risk."
+    difficulty: medium
+    tags: [Lynch syndrome, HNPCC, surveillance, treatment]
+  - front: "What is colorectal carcinoma's ranking among cancers in Canada?"
+    back: "3rd most common cancer (after lung and breast), 2nd most common cause of cancer death.\n\nCRC is a major public health concern. The dominant risk factor for sporadic cases is age >50, with mean age of presentation at 70. Early detection via screening (FIT, colonoscopy) significantly improves survival."
+    difficulty: easy
+    tags: [colorectal carcinoma, epidemiology, cancer]
+  - front: "What are the risk factors for colorectal carcinoma?"
+    back: "Age >50 (dominant sporadic risk); FAP, HNPCC, family history of CRC; adenomatous polyps (>1 cm, villous, multiple); IBD (UC: 1-2%/yr if >10 yr disease); previous CRC/gonadal/breast cancer; diet (high fat, red meat, low fibre), smoking; DM; acromegaly.\n\nInsulin and IGF-1 (elevated in DM and acromegaly) are growth factors for colonic mucosal cells, increasing CRC risk. UC carries a higher risk than Crohn's disease due to more extensive mucosal involvement."
+    difficulty: medium
+    tags: [colorectal carcinoma, risk factors]
+  - front: "Compare clinical features of right colon, left colon, and rectal cancer."
+    back: "Right colon (25%): weight loss, weakness, rarely obstruction, dark blood mixed with stool, Fe-deficiency anemia, RLQ mass, occult blood. Left colon (35%): constipation + overflow diarrhea, decreased stool calibre, rectal bleeding, BRBPR, LBO. Rectum (30%): obstruction, tenesmus, rectal bleeding, palpable mass on DRE, BRBPR.\n\nRight colon tumours present insidiously due to the liquid stool content and large lumen. Left colon tumours cause earlier obstruction due to solid stool and narrower lumen. Rectal tumours present with bleeding and tenesmus due to their location."
+    difficulty: medium
+    tags: [colorectal carcinoma, clinical features, symptoms]
+  - front: "What percentage of CRC patients present with distant metastatic disease? What are the most common metastatic sites?"
+    back: "20% at time of presentation. Most common: liver (via portal circulation). Lung is more common from distal rectal tumours (drain into IVC → lungs). Also: peritoneal seeding.\n\nThe liver is the most common metastatic site for colon cancer because venous drainage goes through the portal system. Rectal tumours, especially distal, can bypass the portal circulation via the inferior hemorrhoidal veins → IVC → lungs."
+    difficulty: medium
+    tags: [colorectal carcinoma, metastasis, staging]
+  - front: "What is the role of CEA in colorectal carcinoma management?"
+    back: "CEA is measured preoperatively as a baseline. Levels >5 ng/mL are associated with worse prognosis. Used for monitoring recurrence post-surgery (regular measurement for at least 3 years in stage II-III follow-up).\n\nCEA is not useful for initial diagnosis due to low sensitivity and specificity, but it is valuable for monitoring treatment response and detecting recurrence after curative resection. A rising CEA warrants imaging to evaluate for recurrence."
+    difficulty: medium
+    tags: [colorectal carcinoma, CEA, tumour markers]
+  - front: "Outline the TNM staging for colorectal carcinoma (key stages)."
+    back: "T: T1=submucosa, T2=muscularis propria, T3=through muscularis into pericolorectal tissues, T4a=through visceral peritoneum, T4b=invasion into other organs. N: N0=no nodes, N1a=1 node, N1b=2-3 nodes, N2a=4-6 nodes, N2b=≥7 nodes. M: M0=none, M1a=1 organ (no peritoneum), M1b=≥2 organs (no peritoneum), M1c=peritoneal metastasis.\n\nThe TNM system (AJCC/UICC 8th edition) guides treatment decisions and prognosis. Stage I has ~95% 5-year survival in younger patients; stage IV has ~20-27% survival."
+    difficulty: hard
+    tags: [colorectal carcinoma, TNM staging, AJCC]
+  - front: "What surgical procedures are used for rectal cancer and when is each indicated?"
+    back: "LAR (low anterior resection): curative procedure of choice if adequate distal margins (~2 cm) can be obtained; uses total mesorectal excision. APR (abdominoperineal resection): used when adequate distal margins cannot be obtained; removes distal sigmoid, rectum, and anus — requires permanent end colostomy. TAMIS: local excision for select T1 or less lesions/Tis not resectable by colonoscopy.\n\nTotal mesorectal excision (TME) is critical for LAR to minimize local recurrence. Neoadjuvant chemoradiotherapy is often used to downstage rectal cancers and improve surgical outcomes."
+    difficulty: hard
+    tags: [rectal cancer, LAR, APR, surgery, total mesorectal excision]
+  - front: "What adjuvant chemotherapy is used for colon cancer and for which stages?"
+    back: "Oxaliplatin-based chemotherapy is given adjuvantly for stage III colon cancer and is considered in select stage II patients (high-risk features).\n\nFOLFOX (oxaliplatin + leucovorin + 5-FU) or CAPOX (capecitabine + oxaliplatin) are the standard regimens. Stage II benefit is less clear and reserved for high-risk features (T4, perineural invasion, fewer than 12 nodes sampled, etc.)."
+    difficulty: medium
+    tags: [colorectal carcinoma, chemotherapy, adjuvant therapy]
+  - front: "What is the follow-up schedule for stage II-III colon cancer post-resection?"
+    back: "Regular follow-up every 3-6 months for 3 years, then every 6 months until 5 years. CEA measurement regularly for at least 3 years. Annual CT chest/abdomen/pelvis for at least 3 years. Colonoscopy at 1 year then at 5 years.\n\nIntensive follow-up improves detection of recurrence when it is still potentially resectable. CEA monitoring combined with CT imaging detects the majority of recurrences early. Colonoscopy detects metachronous lesions."
+    difficulty: medium
+    tags: [colorectal carcinoma, follow-up, surveillance]
+  - front: "What is angiodysplasia and what population is most commonly affected?"
+    back: "Vascular malformation: focal submucosal venous dilatation and tortuosity. Most frequent in the right colon of patients >60 years. Associated with end-stage renal disease, Von Willebrand disease, and aortic stenosis.\n\nAngiodysplasia is an important cause of LGIB in elderly patients. Bleeding is typically intermittent, rarely massive, and >90% stops spontaneously. Colonoscopy shows cherry red spots with a branching pattern from a central vessel."
+    difficulty: medium
+    tags: [angiodysplasia, LGIB, large bowel]
+  - front: "Why is barium enema contraindicated in the workup of angiodysplasia?"
+    back: "Barium enema obscures subsequent imaging — specifically it interferes with angiography, which may be needed to identify or treat the bleeding source.\n\nAngiography is a key investigation for angiodysplasia (shows early-filling vein, vascular tuft, delayed emptying vein). Barium in the bowel degrades angiographic image quality, potentially missing the diagnosis or preventing therapeutic embolization."
+    difficulty: medium
+    tags: [angiodysplasia, investigations, contraindication]
+  - front: "What is volvulus, which segments are most commonly affected, and what are the demographic differences?"
+    back: "Volvulus: rotation of a bowel segment about its mesenteric axis. Sigmoid (65%) in elderly >70 yr; cecal (30%) in adults 40-60 yr; transverse colon (3%); splenic flexure (2%). Midgut volvulus in neonates/infants. Accounts for 5-10% of large bowel obstructions.\n\nSigmoid volvulus is most common and associated with chronic constipation and institutionalization. Cecal volvulus is associated with a mobile cecum. Together they account for 25% of intestinal obstructions during pregnancy."
+    difficulty: medium
+    tags: [volvulus, large bowel obstruction, colorectal surgery]
+  - front: "What are the classic radiographic findings for sigmoid volvulus and cecal volvulus?"
+    back: "Both show 'coffee bean sign' on AXR: sigmoid → central cleft points to LLQ; cecal → central cleft points to RLQ. Sigmoid also shows 'omega/bent inner-tube sign.' Barium enema: 'ace of spades' or 'bird's beak' appearance. CT: 'whirl pattern' of mesenteric vessels.\n\nThe 'coffee bean sign' represents the massively dilated sigmoid or cecum on plain film. The 'bird's beak' on contrast enema reflects the tapered occlusion at the volvulus point. These classic signs help differentiate from other causes of obstruction."
+    difficulty: medium
+    tags: [volvulus, radiology, AXR, coffee bean sign]
+  - front: "What is the treatment approach for sigmoid versus cecal volvulus?"
+    back: "Sigmoid: initial decompression by rigid/flexible sigmoidoscopy + rectal tube past obstruction; elective resection in medically fit patients (50-70% recurrence). Cecal: surgical (right colectomy + ileotransverse anastomosis); nonoperative decompression should NOT be attempted (high perforation risk). Urgent surgery for strangulation, perforation, or failed endoscopic decompression.\n\nUnlike sigmoid volvulus, cecal volvulus cannot be safely decompressed endoscopically due to the risk of perforation. For sigmoid volvulus, endoscopic decompression is first-line but surgery is recommended electively to prevent recurrence."
+    difficulty: hard
+    tags: [volvulus, treatment, sigmoid, cecal]
+  - front: "What are the most common causes of toxic megacolon?"
+    back: "IBD (UC > Crohn's disease); infectious colitis: bacterial (C. difficile, Salmonella, Shigella, Campylobacter), viral (CMV), parasitic (E. histolytica).\n\nUC is the most common underlying cause. Infectious etiologies should always be considered. Triggers include hypokalemia, constipating agents (opioids, antidepressants, loperamide, anticholinergics), barium enema, and colonoscopy."
+    difficulty: easy
+    tags: [toxic megacolon, etiology, IBD, C. difficile]
+  - front: "What is the medical and surgical management of toxic megacolon?"
+    back: "Medical: NPO, NG tube, stop constipating agents, correct fluids/electrolytes, transfusion, serial AXRs, broad-spectrum antibiotics, treat underlying disease (steroids for IBD, metronidazole for C. difficile). Surgical indications (50% improve medically): worsening/persisting toxicity/dilation >48-72h, severe hemorrhage, perforation, high lactate/WBC. Procedure: subtotal colectomy + end ileostomy.\n\nSubtotal colectomy removes the diseased colon while avoiding a pelvic anastomosis in a septic, unstable patient. The rectal stump is left for possible later reconstruction. Caution: antidiarrheal agents are contraindicated in bloody diarrhea."
+    difficulty: hard
+    tags: [toxic megacolon, treatment, surgery]
+  - front: "What does the mnemonic FRIENDO describe in surgical context?"
+    back: "FRIENDO describes factors that keep fistulae open (why fistulae don't close): Foreign body, Radiation, Infection/Inflammation, Epithelialization, Neoplasia, Distal obstruction, (Steroids — inhibit closure but usually do not maintain fistula).\n\nUnderstanding why fistulae remain open is critical for management. Treatment focuses on eliminating these factors where possible. High-output fistulae may require NPO and TPN while awaiting closure."
+    difficulty: medium
+    tags: [fistula, FRIENDO, general surgery]
+  - front: "What is the difference between an end stoma and a loop stoma?"
+    back: "End stoma: proximal end of GI tract forms the stoma; distal end is not part of the stoma (e.g., Hartmann's with rectal stump). Loop stoma: a loop of GI tract is brought to skin and the antimesenteric surface is matured as a stoma — has both proximal (functional) and distal (mucous fistula/nonfunctional) limbs.\n\nLoop stomas (ileostomy or colostomy) are often used as temporary diverting stomas to protect a distal anastomosis. End stomas are more often permanent (e.g., sigmoid colostomy after APR)."
+    difficulty: easy
+    tags: [stoma, ileostomy, colostomy, colorectal surgery]
+  - front: "What are the complications of stomas (colostomy/ileostomy)?"
+    back: "Obstruction (herniation, stenosis at skin/abdominal wall, adhesive bands, volvulus); peri-ileostomy abscess and fistula; skin irritation; prolapse or retraction; diarrhea (excessive output) → fluid, electrolyte, and nutritional imbalances; chronic parastomal hernia (common).\n\nParastomal hernia is the most common long-term complication of colostomy. High-output ileostomies can cause significant dehydration and electrolyte disturbances (especially hyponatremia, hypokalemia) requiring careful monitoring."
+    difficulty: medium
+    tags: [stoma, complications, ileostomy, colostomy]
+  - front: "What is the difference between internal and external hemorrhoids in terms of anatomy and venous drainage?"
+    back: "Internal hemorrhoids: arise from superior hemorrhoidal veins, located ABOVE the dentate line, drain via portal circulation. External hemorrhoids: arise from inferior hemorrhoidal veins, located BELOW the dentate line, drain via systemic circulation.\n\nThe dentate line (pectinate line) is the key anatomical landmark. Internal hemorrhoids above it are insensate (no somatic innervation), explaining why they bleed painlessly. External hemorrhoids below the dentate line are exquisitely sensitive to pain."
+    difficulty: easy
+    tags: [hemorrhoids, anatomy, dentate line]
+  - front: "Describe the grading system for internal hemorrhoids and their respective treatments."
+    back: "Grade 1: bleed but do not prolapse → high fibre, sitz baths, topical agents, rubber band ligation, sclerotherapy. Grade 2: prolapse with straining, spontaneous reduction → rubber band ligation, photocoagulation. Grade 3: prolapse requiring manual reduction → rubber band ligation or closed hemorrhoidectomy. Grade 4: permanently prolapsed, cannot be reduced → closed hemorrhoidectomy.\n\nTreatment escalates with grade. Rubber band ligation is effective for grades 1-3 and can be done as an outpatient procedure. Grade 4 and some grade 3 hemorrhoids require surgical hemorrhoidectomy."
+    difficulty: medium
+    tags: [hemorrhoids, grading, treatment]
+  - front: "When should a patient with hemorrhoids and rectal bleeding be referred for endoscopic evaluation?"
+    back: "Indications for referral: history of melena, postural vital sign abnormalities, symptoms suggestive of malignancy (change in bowel habits, blood mixed with stool, constitutional symptoms), family history of inherited colorectal syndromes, or age >50 years.\n\nIn any patient of screening age (≥50 or per Canadian guidelines), rectal bleeding should only be attributed to hemorrhoids AFTER colon cancer has been ruled out. Rectal bleeding is never normal and requires proper evaluation."
+    difficulty: medium
+    tags: [hemorrhoids, rectal bleeding, referral, colorectal cancer screening]
+  - front: "What is the treatment for thrombosed external hemorrhoids?"
+    back: "Consider surgical decompression (excision) within first 48 hours of thrombosis for severe pain relief. After 48 hours, medical treatment is preferred as pain subsides naturally within 2 weeks; may leave excess skin = perianal skin tag.\n\nThrombosed external hemorrhoids are very painful due to the acute clot beneath somatic innervation. Early surgical evacuation provides dramatic pain relief but is not warranted beyond 48-72 hours as natural resolution is underway."
+    difficulty: medium
+    tags: [hemorrhoids, thrombosed hemorrhoid, treatment]
+  - front: "What is an anal fissure and what is its typical location?"
+    back: "Tear of anal canal below the dentate line (very sensitive squamous epithelium). 90% in posterior midline (poorly perfused posteromedial area); 10% anterior midline. Off-midline fissures suggest IBD, STIs, TB, leukemia, or anal carcinoma.\n\nThe posterior midline is most vulnerable due to poor blood supply. The cycle of sphincter spasm → ischemia → further tearing perpetuates chronicity. Off-midline location is a red flag for systemic disease."
+    difficulty: easy
+    tags: [anal fissure, anorectal, anatomy]
+  - front: "What is the classic triad of a chronic anal fissure?"
+    back: "Fissure + sentinel skin tag + hypertrophied papillae.\n\nThis triad distinguishes chronic from acute fissures. The sentinel skin tag is a fibrous skin tag at the distal end of the fissure. Hypertrophied papillae (anal polyp) form at the proximal end. These findings indicate a fissure that has failed to heal naturally."
+    difficulty: easy
+    tags: [anal fissure, chronic anal fissure, clinical features]
+  - front: "What is the treatment ladder for chronic anal fissures?"
+    back: "1st line: stool softeners, increased fibre, sitz baths. 2nd line: topical nitroglycerin or calcium channel blockers (nifedipine/diltiazem) — increase local blood flow, relieve sphincter spasm. 3rd line: Botulinum toxin A — inhibits ACh release, reduces sphincter spasm. Definitive (medically refractory): lateral internal anal sphincterotomy — most effective; 5% risk of fecal incontinence.\n\nLateral internal sphincterotomy divides part of the internal anal sphincter to permanently reduce sphincter pressure and improve blood flow, allowing healing. It is reserved for refractory cases due to incontinence risk."
+    difficulty: medium
+    tags: [anal fissure, treatment, sphincterotomy, botulinum toxin]
+  - front: "What is an anorectal abscess and what are the common organisms involved?"
+    back: "Infection typically originating within an obstructed anal crypt forming an abscess. Common organisms: E. coli, Proteus, Streptococci, Staphylococci, Bacteroides, and anaerobes.\n\nThe cryptoglandular theory suggests that blocked anal crypts (at the dentate line) lead to glandular infection, with abscess formation spreading along fascial planes to form perianal, intersphincteric, ischiorectal, or supralevator abscesses."
+    difficulty: easy
+    tags: [anorectal abscess, anorectal surgery, infection]
+  - front: "What is the difference between preoperative and postoperative chemoradiotherapy for locally advanced rectal cancer in terms of local recurrence and survival?"
+    back: "Preoperative CRT significantly reduces 10-year local recurrence compared to postoperative CRT (7.1% vs. 10.1%, P=0.048). However, overall survival (~60%), disease-free survival (~68.5%), and distant recurrence (~29.7%) at 10 years are similar between approaches.\n\nThe CAO/ARO/AIO-94 trial data support preoperative CRT as standard for locally advanced rectal cancer due to lower local recurrence, better tolerability, and potential for sphincter preservation — though no overall survival benefit exists."
+    difficulty: hard
+    tags: [rectal cancer, chemoradiotherapy, neoadjuvant therapy, evidence-based medicine]
+  - front: "What screening modalities are recommended for average-risk CRC screening in Canada?"
+    back: "FIT (fecal immunochemical test), colonoscopy, or flexible sigmoidoscopy for average-risk patients. For symptomatic patients (positive FIT, anemia, change in bowel habits, abnormal imaging): colonoscopy for case-finding.\n\nCanadian guidelines recommend starting CRC screening at age 50 for average-risk individuals. FIT is non-invasive and widely used as a first-line test; positive FIT requires follow-up colonoscopy. High-risk individuals (FAP, Lynch, IBD) require earlier and more intensive surveillance."
+    difficulty: easy
+    tags: [colorectal cancer screening, FIT, colonoscopy, Canadian guidelines]
+  - front: "What is the significance of liver metastases in colorectal carcinoma and how are they managed?"
+    back: "Liver is the most common site of CRC metastasis. Metastatic lesions confined to the liver can be resected with curative intent. Prognosis varies by stage: stage IVA (1 organ, no peritoneum) has better prognosis than IVB or IVC (peritoneal).\n\nHepatic resection of CRC metastases can achieve 5-year survival rates of 25-40%. Patient selection requires adequate hepatic reserve, resectable disease, and absence of uncontrollable extrahepatic disease. Neoadjuvant chemotherapy may downstage initially unresectable liver metastases."
+    difficulty: hard
+    tags: [colorectal carcinoma, liver metastases, surgery, prognosis]
+  - front: "What are the absolute contraindications to Breast Conservation Surgery (BCS)?"
+    back: "1. Inflammatory breast cancer\n2. High-risk of local recurrence (e.g., extensive malignant-type calcifications on mammogram)\n3. Multifocal primary tumours\n4. Failure to obtain tumour-free margins after re-excision\n5. Not suitable for radiation therapy (pregnancy, previous radiation, collagen vascular disease)\n\nBCS must always be combined with radiation therapy to achieve survival equivalent to mastectomy. These absolute contraindications exist because BCS without clear margins or adequate radiation leads to unacceptably high local recurrence rates. In Canada, patient preference guides BCS vs. mastectomy when contraindications are absent, as survival is equivalent when local control is achieved."
+    difficulty: medium
+    tags: [breast cancer, surgery, BCS, contraindications, oncology]
+  - front: "A 55-year-old woman has Stage I (T1N0M0) breast cancer. She asks about surgery options. What is the preferred approach and why?"
+    back: "Both BCS + radiotherapy and mastectomy are equivalent options for Stage I disease. The patient can choose based on preference, as there is no survival benefit of mastectomy over BCS plus radiation for Stage I/II disease. BCS must be combined with radiation to achieve equivalent survival.\n\nLarge meta-analyses (EBCTCG) and the Dutch population-based study (Lancet Oncology 2016) confirm that BCS + radiotherapy is at least equivalent to mastectomy for early breast cancer. Canadian practice supports shared decision-making; the choice of local treatment does not significantly affect survival if local control is achieved."
+    difficulty: easy
+    tags: [breast cancer, Stage I, BCS, mastectomy, radiotherapy, shared decision-making]
+  - front: "What are the three types of mastectomy and what does each remove?"
+    back: "1. Radical mastectomy (rare): removes all breast tissue, skin, pectoralis muscle, and axillary nodes\n2. Modified radical mastectomy (MRM): removes all breast tissue, skin, and axillary nodes (spares pectoralis muscle)\n3. Simple mastectomy: removes all breast tissue and skin only\n\nRadical mastectomy is rarely performed today due to high morbidity without survival benefit. MRM is the standard when mastectomy is required with nodal involvement. Simple mastectomy is used when axillary dissection is not indicated. Breast reconstruction options are discussed with Plastic Surgery."
+    difficulty: easy
+    tags: [mastectomy, breast cancer, surgery, types]
+  - front: "What are the indications for Sentinel Lymph Node Biopsy (SLNB) in breast cancer?"
+    back: "SLNB is performed in:\n1. Women with clinically node-negative invasive breast cancer\n2. Those with extensive DCIS undergoing mastectomy\n\nNote: Patients with clinically suspicious nodes should get U/S + FNA prior to deciding on SLNB.\n\nSLNB uses technetium-99 + blue dye injected at the tumour site to identify sentinel node(s). It has a 5% false negative rate. Proceed with ALND if >3 positive nodes are found; with 1-3 positive nodes, whole breast radiation therapy may be an alternative to ALND. SLNB avoids unnecessary full axillary dissection and its associated lymphedema risk."
+    difficulty: medium
+    tags: [SLNB, sentinel lymph node, breast cancer, axillary staging]
+  - front: "What are the indications for Axillary Lymph Node Dissection (ALND) in breast cancer?"
+    back: "ALND is performed in:\n1. Locally advanced (T4a, b, c) or inflammatory breast cancer\n2. Clinically node-positive axilla confirmed by FNA or core biopsy (when neoadjuvant chemotherapy is not planned)\n3. >3 positive sentinel nodes\n4. Sentinel/axillary nodes remaining positive after neoadjuvant chemotherapy\n5. Axillary recurrence following previous breast cancer treatment\n\nALND carries a 10-15% risk of arm lymphedema, especially when combined with radiation therapy. JAMA 2017 data showed no significant difference in 10-year overall survival between SLND alone vs. ALND in women with T1-T2 breast cancer and 1-2 positive sentinel nodes treated with breast-conserving therapy."
+    difficulty: medium
+    tags: [ALND, axillary dissection, breast cancer, lymph nodes, lymphedema]
+  - front: "What is the adjuvant hormonal therapy for breast cancer and when is it indicated?"
+    back: "Indications: ER-positive plus node-positive or high-risk node-negative breast cancer\n\nAgents:\n- Premenopausal: Tamoxifen (SERM) — optimal duration 5-10 years\n- Postmenopausal: Aromatase inhibitors (e.g., anastrozole)\n\nOther options: Ovarian ablation (goserelin/GnRH agonist, oophorectomy), progestins (megestrol acetate), androgens (fluoxymesterone)\n\nAlso used for palliation in metastatic disease.\n\nHormonal therapy exploits estrogen receptor positivity to suppress tumour growth. Tamoxifen increases risk of endometrial cancer, requiring regular gynecologic follow-up. Aromatase inhibitors are preferred postmenopausal as they block peripheral estrogen synthesis. Duration of 5-10 years reflects evidence of continued benefit with extended therapy."
+    difficulty: medium
+    tags: [breast cancer, hormonal therapy, tamoxifen, aromatase inhibitors, ER-positive]
+  - front: "When is chemotherapy indicated in breast cancer treatment?"
+    back: "Indications:\n1. ER-negative plus node-positive or high-risk node-negative\n2. Triple-negative disease (ER/PR and HER2-negative) — more common in younger and African-American women\n3. ER-positive and young age\n4. Stage disease at high-risk of recurrence (high grade, lymphovascular invasion)\n5. Palliation for metastatic disease\n\nFor HER2-positive breast cancer: add trastuzumab + pertuzumab to the chemotherapy regimen.\n\nTriple-negative breast cancer lacks targeted therapy options and relies on chemotherapy. HER2-positive disease benefits substantially from targeted biologics (trastuzumab, pertuzumab). Risk stratification guides chemotherapy decisions in node-negative, ER-positive disease — genomic assays (e.g., Oncotype DX) can help in Canada."
+    difficulty: medium
+    tags: [breast cancer, chemotherapy, triple-negative, HER2, trastuzumab]
+  - front: "What is the recommended post-treatment follow-up schedule after breast cancer treatment?"
+    back: "- Physical exam: q3-6 months × 3 years, then q6-12 months × 2 years, then annually thereafter\n- Following BCS: mammography q6-12 months; reduce to annual once stable\n- No other routine imaging unless clinically indicated\n- Women on tamoxifen: regular gynecologic follow-up (increased risk of endometrial cancer)\n\nSurveillance aims to detect local recurrence and contralateral breast cancer. Local/regional recurrence occurs at ~1% per year up to a maximum 15% risk. Risk of developing metastases is 5× increased with local recurrence. The most common sites of metastasis are bone > lungs > pleura > liver > brain."
+    difficulty: easy
+    tags: [breast cancer, follow-up, surveillance, tamoxifen, recurrence]
+  - front: "What is the overall survival of metastatic breast cancer and what are the most common metastatic sites in order?"
+    back: "Overall survival: 36-60 months\n\nMetastatic sites in order of frequency:\nBone > Lungs > Pleura > Liver > Brain\n\nTreatment is palliative: hormone therapy, chemotherapy, radiation.\n\nMetastatic breast cancer is not curable; treatment focuses on prolonging survival and maintaining quality of life. Bone metastases commonly present with pain or pathologic fractures. Brain metastases are a late complication and have poor prognosis. Bisphosphonates/denosumab are used for bone metastases in Canadian practice."
+    difficulty: easy
+    tags: [breast cancer, metastasis, prognosis, palliative]
+  - front: "What are the complications of thyroidectomy, distinguishing between lobectomy and total thyroidectomy?"
+    back: "Lobectomy complications:\n- Recurrent laryngeal nerve (RLN) palsy (hoarseness or swallowing issues)\n- Neck hematoma\n- 20-75% of patients need thyroxine after lobectomy\n\nTotal thyroidectomy (same as above PLUS):\n- Hypoparathyroidism/hypocalcemia\n- Bilateral RLN palsy (potentially requiring tracheostomy)\n- 100% of patients need thyroxine after total thyroidectomy\n\nBilateral RLN injury causing bilateral vocal cord paralysis requires emergency airway management. Hypocalcemia post-total thyroidectomy can be transient or permanent depending on whether parathyroid glands were inadvertently removed or devascularized. Patients must be monitored for tetany postoperatively."
+    difficulty: medium
+    tags: [thyroidectomy, complications, RLN palsy, hypocalcemia, hypoparathyroidism]
+  - front: "What are the indications for parathyroidectomy?"
+    back: "Indications:\n1. Symptomatic primary hyperparathyroidism (osteoporosis/stones)\n2. Asymptomatic primary hyperparathyroidism with specific criteria:\n   - Profoundly elevated serum Ca\n   - Hypercalciuria/asymptomatic kidney stones\n   - Creatinine clearance <30% normal\n   - Age <50 years\n\nContraindication: Familial hypocalciuric hypercalcemia (FHH)\n\nPrimary hyperparathyroidism from a parathyroid adenoma is the most common cause of asymptomatic hypercalcemia in outpatients. Preoperative localization uses technetium-99m sestamibi scanning with SPECT, U/S, and contrast CT. Complications include RLN/superior laryngeal nerve injury, postoperative hypocalcemia, infection, and bleeding."
+    difficulty: medium
+    tags: [parathyroidectomy, hyperparathyroidism, hypercalcemia, endocrine surgery]
+  - front: "What is an adrenal incidentaloma and what are the most common causes?"
+    back: "An adrenal incidentaloma is an adrenal mass >1 cm diameter discovered incidentally during investigation for unrelated symptoms.\n\nCauses by frequency:\n- Benign adenoma: 70-80%\n- Metastases to adrenal: ~22%\n- Cyst, carcinoma, pheochromocytoma, neuroblastoma: rare\n\nMetastasis to adrenal: Lung > Breast > Colon > Lymphoma > Melanoma > Kidney\n\nPeak incidence of carcinoma: females ages 50-60.\n\nAll adrenal incidentalomas require biochemical workup to rule out hormonal hypersecretion before any invasive testing. FNA biopsy is generally NOT appropriate because pheochromocytoma must be excluded first (can cause hypertensive crisis during biopsy). CT is the best imaging: size >4-6 cm is the best predictor of primary adrenal carcinoma (92% are >6 cm)."
+    difficulty: medium
+    tags: [adrenal incidentaloma, adrenal mass, endocrine surgery, carcinoma]
+  - front: "What investigations are required for an adrenal incidentaloma?"
+    back: "CT: Size >4-6 cm best predictor of primary adrenal carcinoma (92% are >6 cm); MRI not needed after CT\n\nFunctional studies:\n- Pheochromocytoma: plasma metanephrines (highly specific and sensitive); if unavailable, 24-h urine catecholamines\n- Cushing's: 24-h urine cortisol OR 1 mg overnight dexamethasone suppression test\n- Aldosteronoma: electrolytes, AM aldosterone, AM plasma renin activity, ARR (Aldosterone-Renin-Ratio); if inconclusive, saline suppression test\n- Adrenal androgens (17-OH progesterone and DHEAS): only if clinical suspicion\n\nFNA biopsy: NOT appropriate in most cases\n\nPheochromocytoma must be excluded before any procedure including FNA, as it can cause life-threatening hypertensive crisis. Plasma metanephrines are the preferred initial test. Cushing's syndrome from adrenal adenoma is often subclinical. Conn's syndrome (primary aldosteronism) is increasingly recognized as a cause of resistant hypertension."
+    difficulty: hard
+    tags: [adrenal incidentaloma, pheochromocytoma, Cushing, aldosteronoma, investigations]
+  - front: "What is the management of a non-functional adrenal incidentaloma based on size?"
+    back: "- >4 cm: Consider resection\n- <4 cm: Follow-up imaging in 6-12 months; resect if >1 cm enlargement\n\nFunctional tumour: Always resect (regardless of size)\n\nNote: Genetic testing is important for ALL pheochromocytoma/paragangliomas as >30% are related to genetic syndromes.\n\nThe size threshold reflects the risk of malignancy — adrenal carcinoma is rare but aggressive. Functional tumours carry additional risk from hormonal excess regardless of malignant potential. Pheochromocytoma surgery requires careful preoperative alpha-blockade (phenoxybenzamine) to prevent intraoperative hypertensive crisis."
+    difficulty: medium
+    tags: [adrenal incidentaloma, management, adrenalectomy, pheochromocytoma]
+  - front: "What is Whipple's triad and what condition does it characterize?"
+    back: "Whipple's triad characterizes insulinoma:\n1. Symptomatic fasting hypoglycemia\n2. Serum glucose <2.8 mmol/L\n3. Relief of symptoms when glucose is administered\n\nAssociated symptoms: palpitations, trembling, diaphoresis, confusion, seizure, personality changes.\n\nInsulinoma is the most common pancreatic endocrine neoplasm. Only 10% are malignant. 10% are associated with MEN1 syndrome. Investigations show decreased serum glucose with elevated serum insulin, C-peptide, and pro-insulin. CT, EUS, and MRI show insulinomas evenly distributed throughout head, body, and tail of the pancreas."
+    difficulty: easy
+    tags: [insulinoma, Whipples triad, hypoglycemia, pancreatic endocrine, MEN1]
+  - front: "What is the treatment for insulinoma?"
+    back: "- Enucleation of solitary insulinomas (may be done endoscopically)\n- Tumours >2 cm located close to the pancreatic duct may require pancreatectomy or pancreaticoduodenectomy\n- Only 10% are malignant\n- 10% are associated with MEN1 (screen for other MEN1 manifestations)\n\nInsulinoma is the most common surgically curable cause of fasting hypoglycemia. Most are benign, solitary, and <2 cm. EUS is particularly useful for localization. Intraoperative ultrasound helps identify small lesions. Medical management with diazoxide can temporize symptoms before surgery."
+    difficulty: medium
+    tags: [insulinoma, treatment, enucleation, pancreatectomy, pancreatic endocrine]
+  - front: "What is Zollinger-Ellison syndrome and how is gastrinoma diagnosed?"
+    back: "Zollinger-Ellison syndrome: caused by gastrinoma (tumour secreting gastrin) → excess gastric acid → PUD, severe esophagitis, multiple ulcers in atypical locations refractory to antacid therapy, diarrhea.\n\nAssociated with MEN1.\n\nDiagnosis:\n- Serum gastrin usually >1000 pg/mL\n- Secretin stimulation test\n- Endoscopy: 90% develop peptic ulcers\n- CT/EUS/MRI: 70-90% in Passaro's triangle (head of pancreas medially, 2nd duodenum inferiorly, confluence of cystic and CBD superiorly)\n- Somatostatin receptor scintigraphy scan\n\nPassaro's triangle (gastrinoma triangle) is the key anatomical landmark. 50% of gastrinomas are malignant. High-dose PPI controls acid hypersecretion. Surgical resection is preferred when localized. Octreotide (somatostatin analogue) is used for non-surgical candidates or metastatic disease."
+    difficulty: hard
+    tags: [gastrinoma, Zollinger-Ellison, MEN1, Passaros triangle, PUD, pancreatic endocrine]
+  - front: "What are the clinical features of a VIPoma (Vasoactive Intestinal Peptide-secreting tumour)?"
+    back: "- Severe watery diarrhea causing dehydration\n- Anorexia and weakness\n- Electrolyte imbalance: hypokalemia\n- Also known as WDHA syndrome (Watery Diarrhea, Hypokalemia, Achlorhydria) or Verner-Morrison syndrome\n- Commonly located in distal pancreas\n- Most are malignant\n\nVIPoma is diagnosed by elevated serum VIP levels plus CT/MRI/EUS for localization. Treatment involves fluid and electrolyte repletion, somatostatin analogues (octreotide) for symptom control, and surgical resection or palliative debulking. The massive secretory diarrhea can be life-threatening due to severe dehydration."
+    difficulty: medium
+    tags: [VIPoma, watery diarrhea, hypokalemia, pancreatic endocrine, WDHA]
+  - front: "What is the classic presentation of hypertrophic pyloric stenosis and what is the diagnostic finding?"
+    back: "Classic presentation:\n- Age 6-8 weeks (can present 1-20 weeks)\n- M:F = 4:1\n- Projectile, non-bilious vomiting 30-60 min after feeds\n- Hungry after vomiting\n- Visible left-to-right gastric contraction waves after feeding\n- Dehydration of variable severity\n- Palpable smooth oblong 1-2 cm 'olive' mass in RUQ above umbilicus\n\nMetabolic derangement: Hypochloremic, hypokalemic metabolic alkalosis with paradoxical aciduria\n\nDiagnosis: U/S (pyloric length ≥17 mm, muscle thickness >4 mm)\n\nParadoxical aciduria occurs because volume depletion triggers renal sodium retention; hydrogen ions are exchanged for sodium in the collecting duct despite systemic alkalosis. Treatment requires fluid resuscitation with NS (correct alkalosis first), then pyloromyotomy (Ramstedt procedure — open, transumbilical, or laparoscopic). Surgery should not proceed until metabolic abnormalities are corrected."
+    difficulty: medium
+    tags: [pyloric stenosis, pediatric surgery, projectile vomiting, metabolic alkalosis, pyloromyotomy]
+  - front: "What is the immediate management priority for hypertrophic pyloric stenosis?"
+    back: "1. Fluid resuscitation with normal saline (NS)\n2. Correct hypochloremic, hypokalemic metabolic alkalosis with D5, 1/2NS + 20 mEq/L KCl at maintenance rate\n3. NG tube decompression (not necessary)\n4. Correct electrolyte and acid/base abnormalities BEFORE surgery\n5. Then: Pyloromyotomy (Ramstedt procedure) — curative\n\nPyloric stenosis is a medical emergency requiring metabolic correction before surgical intervention. Proceeding with pyloromyotomy before correcting alkalosis risks respiratory depression from anesthesia. The alkalotic state can impair respiratory compensation and cause postoperative apnea. Pyloromyotomy is the definitive treatment; alternative therapies (TPN, atropine) are impractical."
+    difficulty: medium
+    tags: [pyloric stenosis, pyloromyotomy, metabolic alkalosis, fluid resuscitation, pediatric surgery]
+  - front: "What are the key features of congenital diaphragmatic hernia (CDH)?"
+    back: "Types: Posterolateral (Bochdalek) — most common; Left-sided 85%, Right-sided 13%; Anterior (Morgagni); Hiatus\n\nEpidemiology: 1 in 2000-5000 live births; M=F; >10% associated with other congenital anomalies\n\nPresentation: Early respiratory distress, cyanosis, scaphoid abdomen, bowel sounds in chest, displaced heart sounds\n\nKey investigations: CXR (bowel loops in chest, shifted heart), ABG, echocardiography\n\nTreatment: Intubate/ventilate → period of respiratory stabilization (for pulmonary hypertension) → surgical repair (hernia reduction + diaphragm closure)\n\nPrognosis: Neurodevelopmental impairment; hearing deficit (40%); associated GERD\n\nCDH causes pulmonary hypoplasia and pulmonary hypertension — the main causes of mortality. Stabilization before surgery is critical; premature surgery in an unstable patient worsens outcomes. ECMO may be required for severe pulmonary hypertension. Better outcomes occur with later presentations (less pulmonary hypoplasia)."
+    difficulty: hard
+    tags: [diaphragmatic hernia, CDH, Bochdalek, pediatric surgery, pulmonary hypoplasia]
+  - front: "What is the cardinal sign of malrotation, and what is the emergency treatment?"
+    back: "Cardinal sign: Bilious emesis (especially if abdomen is non-distended)\n\nEmergency treatment: EMERGENT LAPAROTOMY — Ladd procedure:\n1. Counterclockwise reduction of midgut volvulus\n2. Division of Ladd's bands\n3. Division of peritoneal attachments between cecum and abdominal wall\n4. Broadening of the mesentery\n5. Positioning bowel in non-rotational position (SBO in right abdomen, LBO in left abdomen)\n6. ± Appendectomy\n\nMalrotation occurs in 1 in 500 live births; 1/3 present by 1 week of age. Bilious emesis in a neonate is a surgical emergency until volvulus is excluded. Immediate UGI shows dilated duodenum, duodenojejunal segment right of midline. U/S shows 'whirlpool' sign. Mortality is related to length of bowel loss: 10% necrosis = 100% survival; 75% necrosis = 35% survival."
+    difficulty: hard
+    tags: [malrotation, volvulus, Ladd procedure, pediatric surgery, bilious emesis]
+  - front: "How do you differentiate gastroschisis from omphalocele?"
+    back: "Gastroschisis:\n- Defect lateral to cord (usually right)\n- NO sac covering viscera\n- NOT associated with genetic syndromes\n- 10% with intestinal atresia\n- Bowel may be inflamed, thickened, matted, foreshortened\n- Associated with younger maternal age, IUGR, smoking\n- >90% survival rate\n\nOmphalocele:\n- Defect at umbilical ring, sac PRESENT (amnion, Wharton's jelly, peritoneum) with cord attached\n- 30-70% associated with genetic syndromes (Pentalogy of Cantrell, congenital heart disease, Beckwith-Wiedemann, Trisomy 18)\n- Associated pulmonary hypoplasia\n- 40-70% survival rate\n\nThe presence or absence of a sac and the location relative to the umbilicus are the key distinguishing features. Omphalocele's association with genetic syndromes (especially Trisomy 18 and cardiac defects) drives its higher mortality. Both are diagnosed prenatally with elevated MS-AFP. Treatment for omphalocele: small (<2 cm) = primary closure; larger = silver sulfadiazine dressing or Silo pouch."
+    difficulty: medium
+    tags: [gastroschisis, omphalocele, abdominal wall defect, pediatric surgery, genetic syndromes]
+  - front: "What is Hirschsprung's disease (congenital aganglionic megacolon)?"
+    back: "Definition: Defect in migration of neural crest cells to intestine → aganglionic bowel that fails to peristalse + internal sphincter fails to relax (internal anal sphincter achalasia) → functional/partial mechanical obstruction\n\nEpidemiology: 1 in 5000 births; M:F = 3-4:1 (approaches 1:1 with whole colon involvement)\n\nPresentation: Failure to pass meconium within 48 hours of life (95% pass within 24 hours), abdominal distension, constipation, bilious emesis, failure to thrive, enterocolitis/sepsis\n\nKey: Starts in rectum and extends proximally; RET mutation in familial cases (<5%)\n\nDiagnosis: Rectal biopsy (gold standard — look for aganglionosis and neural hypertrophy)\n\nThe 'squirt/blast sign' on rectal exam (explosive release of stool/gas upon withdrawal of finger) is characteristic. Contrast enema shows narrow rectum with transition zone. Anal manometry is unreliable in infants. Treatment is Duhamel pull-through procedure — resection of aganglionic segment with anastomosis to anus. Postoperative enterocolitis is the main complication."
+    difficulty: hard
+    tags: [Hirschsprungs disease, aganglionic megacolon, pediatric surgery, meconium, RET mutation]
+  - front: "What is the gold standard investigation for Hirschsprung's disease?"
+    back: "Rectal biopsy — looks for:\n1. Aganglionosis (absence of ganglion cells)\n2. Neural hypertrophy\n\nOther investigations:\n- AXR\n- Contrast enema: narrow rectum with transition zone\n- Anal manometry: unreliable in infants (classic finding is absence of rectoanal inhibitory reflex)\n\nTreatment: Duhamel pull-through procedure (surgical resection of aganglionic segment + anastomosis to anus)\n\nRectal biopsy is definitive because it directly demonstrates the absence of ganglion cells in Auerbach's (myenteric) and Meissner's (submucosal) plexuses. Suction rectal biopsy can be performed without anesthesia in newborns. Contrast enema helps identify the transition zone but biopsy confirms the diagnosis."
+    difficulty: medium
+    tags: [Hirschsprungs disease, rectal biopsy, diagnosis, aganglionosis]
+  - front: "What is the classic triad of intussusception and what is the preferred non-operative treatment?"
+    back: "Classic triad:\n1. Episodic 'colicky' abdominal pain\n2. Vomiting ± bilious\n3. Currant-jelly stool (suggests mucosal necrosis and sloughing)\n\nPlus: Sausage-shaped upper abdominal mass on palpation\n\nNon-operative management: Air contrast enema reduction (preferred in hemodynamically stable patients)\n\nOperative: If peritonitis, failed enema reduction, or compromised bowel → open or laparoscopic reduction ± resection\n\nIntussusception is the most common cause of bowel obstruction between 6-36 months. Usually idiopathic (starts at ileocecal junction). Pathologic lead points (Meckel's diverticulum, polyps, lymphoma) more common in older children or with recurrence. 10% recurrence rate after enema reduction. Allow 2 weeks for edema resolution before SBFT to rule out lead points in older children."
+    difficulty: medium
+    tags: [intussusception, pediatric surgery, currant-jelly stool, air enema, bowel obstruction]
+  - front: "What is the VACTERL association and which condition is it associated with?"
+    back: "VACTERL association is associated with Tracheoesophageal Fistula (TEF):\n- V: Vertebral anomalies\n- A: Anal atresia\n- C: Cardiac defects\n- TE: TracheoEsophageal fistula\n- R: Renal anomalies\n- L: Limb defects\n\nAssociated anomalies present in 50% of TEF cases.\n\nTEF occurs in 1 in 3000-4500 live births due to defect in lateral septation of foregut into esophagus and trachea. Typically occurs with esophageal atresia. History of maternal polyhydramnios is common. Presentation: frothy bubbles of mucus in mouth/nose, coughing/cyanosis with feeds, non-bilious vomiting, respiratory distress. Early surgical ligation prevents lung damage. Complications after repair: esophageal stenosis/strictures at repair site, GERD, poor swallowing."
+    difficulty: medium
+    tags: [TEF, tracheoesophageal fistula, VACTERL, esophageal atresia, pediatric surgery]
+  - front: "What is the management of cryptorchidism (undescended testes)?"
+    back: "Investigations:\n- Infant: U/S, FSH, LH, karyotype, MIS, 17-hydroxyprogesterone\n- Older child: LH, FSH, Mullerian inhibiting substance, hCG stimulation test\n- Non-palpable testis: exam under anesthesia, exploratory laparoscopy\n\nTreatment:\n- hCG to stimulate testosterone production and descent (medical)\n- Orchidopexy: especially if undescended by 6 months-2 years\n\nBenefits of orchidopexy:\n- Decreased risk of torsion and blunt trauma\n- Preserves spermatogenesis if performed by 1 year\n- NO effect on malignant potential of testicle\n\nCryptorchidism affects 2-5% of term males but most descend spontaneously by 6 months. 1% do not spontaneously descend. Retractile testes (hyperactive cremasteric muscle) can be 'milked' into scrotum and are not truly undescended. Orchidopexy does not reduce the increased cancer risk but allows easier surveillance for testicular malignancy."
+    difficulty: medium
+    tags: [cryptorchidism, undescended testes, orchidopexy, pediatric surgery, testicular cancer]
+  - front: "What are the differences between duodenal atresia and jejunoileal atresia in terms of pathophysiology and associations?"
+    back: "Duodenal atresia:\n- Pathophysiology: Failure of bowel to recanalize after endodermal epithelium proliferation (weeks 8-10)\n- Associated with: Down syndrome (24-28%), tracheoesophageal fistula, cardiac, renal, vertebral anomalies\n- X-ray: 'Double-bubble' sign (dilated stomach + duodenum)\n- Prognosis: 86% long-term survival\n- Treatment: Duodenoduodenostomy or duodenojejunostomy\n\nJejunoileal atresia:\n- Pathophysiology: Vascular disruption → ischemic necrosis → resorption of necrotic tissue\n- Associated with: CF\n- Prognosis: 84% long-term survival\n- Treatment: Primary anastomosis (or end stoma if short bowel)\n\nColonic atresia:\n- 100% long-term survival\n\nThe double-bubble sign on X-ray (or prenatal U/S) is pathognomonic for duodenal atresia. All intestinal atresias present with bilious vomiting and abdominal distension within 24-72 hours of birth. Treatment requires NPO, NG decompression, IV fluids, broad-spectrum antibiotics, and TPN before surgical correction."
+    difficulty: hard
+    tags: [intestinal atresia, duodenal atresia, double-bubble sign, Down syndrome, pediatric surgery]
+  - front: "What are the key features of pediatric inguinal hernias?"
+    back: "Epidemiology: 5% of term newborns; M:F = 4:1; 2× risk and more likely bilateral if preterm\n\nPathophysiology: ALL infant hernias are indirect — descent through internal inguinal ring via patent tunica vaginalis\n\nPresentation: Painless intermittent mass in groin ± extension into scrotum\n\nRisk: 1/5 inguinal hernias will become incarcerated if patient is <1 year old; incarceration more common in females\n\nManagement:\n- Reducible: repair within a few weeks if <1 year; elective if >1 year\n- Incarcerated: repair immediately (emergency); attempt manual reduction in ER first\n\nTreatment: Herniorrhaphy (laparoscopic or open) with high ligation of sac\n\nRecurrence: <3% after repair\n\nThe 'silk sign' (palpable thickening of cord over pubic tubercle, like rubbing silk on silk) suggests indirect hernia. Hydrocele (scrotal mass without inguinal mass, transilluminates) must be distinguished — communicating hydroceles increase in size with standing/Valsalva. Always attempt reduction to confirm hernia is not incarcerated before proceeding."
+    difficulty: medium
+    tags: [inguinal hernia, pediatric surgery, indirect hernia, incarceration, herniorrhaphy]
+  - front: "What is a communicating versus non-communicating hydrocele in pediatric patients?"
+    back: "Communicating hydrocele:\n- Processus vaginalis connects peritoneum with tunica vaginalis\n- Peritoneal fluid flows freely between the two\n- Potential for contents to enter groin (i.e., inguinal hernia)\n- Size increases with standing or Valsalva; absent in morning, large in evening\n- 'Silk glove sign': gently palpating hydrocele sac over pubic tubercle feels like rubbing silk on silk\n\nNon-communicating hydrocele:\n- Processus vaginalis is closed\n- More fluid produced than absorbed in tunica vaginalis\n- In older children may be secondary to testicular pathology (reactive hydrocele)\n\nMost resolve spontaneously by 1 year\n\nHydroceles occur in 1-2% of live births with M:F = 6:1. The key distinguishing feature is whether the processus vaginalis is patent (communicating) or closed (non-communicating). Surgical repair is indicated for: persistence >2 years, pain, fluctuating size (suggesting communication), cosmetic reasons, or infection. Transillumination confirms fluid-filled scrotal mass."
+    difficulty: medium
+    tags: [hydrocele, pediatric surgery, communicating hydrocele, processus vaginalis, inguinal hernia]
+  - front: "What are common DVT prophylaxis regimens used in surgical patients in Canada?"
+    back: "DVT Prophylaxis options:\n- Heparin: 5000 units SC BID (non-cancer patient); 5000 units SC TID/BID (cancer patient)\n- Dalteparin (Fragmin): 5000 units SC daily\n- Enoxaparin (Lovenox): 40 mg SC daily\n\nCancer patients are at higher VTE risk and require more aggressive prophylaxis. Low-molecular-weight heparins (LMWH) like dalteparin and enoxaparin are preferred over unfractionated heparin in most surgical patients due to once-daily dosing and predictable pharmacokinetics. Sequential compression devices (SCDs) are used as mechanical prophylaxis adjuncts."
+    difficulty: easy
+    tags: [DVT prophylaxis, heparin, enoxaparin, dalteparin, surgical medications]
+  - front: "What are the key antibiotic choices for common surgical infections?"
+    back: "Key surgical antibiotics:\n- Cefazolin (Ancef): Gram-positive (except Enterococcus), limited Gram-negative (E. coli, Klebsiella, Proteus) — 1g IV/IM perioperative prophylaxis\n- Metronidazole (Flagyl): Anaerobes — 500 mg PO/IV BID (TID for C. difficile)\n- Piperacillin/tazobactam: GP, GN, and anaerobes — 3.375g IV q6h\n- Vancomycin: GP and MRSA — 1g IV q12h\n- Ciprofloxacin: GN including Pseudomonas — 400 mg IV q12h or 500 mg PO BID\n- Ceftriaxone: Broad coverage including Pseudomonas — 1-2g IM/IV q24h\n- Gentamicin: GN including Pseudomonas — 3-5 mg/kg/day divided q8h (monitor creatinine and levels)\n\nCefazolin is the standard perioperative prophylactic antibiotic for most clean and clean-contaminated surgical procedures. For bowel surgery, coverage should include anaerobes (add metronidazole or use piperacillin/tazobactam). Vancomycin is reserved for MRSA coverage or penicillin allergy. Gentamicin requires monitoring for nephrotoxicity and ototoxicity."
+    difficulty: medium
+    tags: [antibiotics, surgical prophylaxis, cefazolin, metronidazole, vancomycin, MRSA]
+  - front: "What is the adrenal cortex anatomy (zones and hormones)?"
+    back: "From outer to inner (GFR = Salt, Sugar, Sex):\n- Glomerulosa (outermost): Mineralocorticoids (aldosterone)\n- Fasciculata (middle): Glucocorticoids (cortisol)\n- Reticularis (inner): Sex steroids (androgens)\n\nAdrenal medulla: Catecholamines (epinephrine, norepinephrine)\n\nMnemonic: 'GFR — the deeper you go, the sweeter it gets' (salt → sugar → sex). This zonal organization is important for understanding adrenal tumours: Conn's syndrome (aldosteronoma — glomerulosa), Cushing's syndrome (glucocorticoma — fasciculata), virilizing tumours (reticularis), pheochromocytoma (medulla). Each zone has distinct embryologic origin and regulatory mechanisms."
+    difficulty: easy
+    tags: [adrenal cortex, aldosterone, cortisol, adrenal anatomy, pheochromocytoma]
+  - front: "What is the key clinical message from the CHOCOLATE trial regarding acute cholecystitis?"
+    back: "CHOCOLATE trial (BMJ 2018): In high-risk patients with acute calculous cholecystitis, laparoscopic cholecystectomy is SUPERIOR to percutaneous catheter drainage:\n- Complication rate: 12% (cholecystectomy) vs. 65% (drainage)\n- Drainage group had: higher reintervention rate, more recurrent biliary disease, longer length of stay\n- Mortality rate did not differ significantly between groups\n\nConclusion: Laparoscopic cholecystectomy reduces major complications in high-risk patients with acute cholecystitis compared with percutaneous drainage.\n\nDespite concerns about operating on high-risk patients, this trial showed that definitive surgical treatment (cholecystectomy) had far better outcomes than temporizing with percutaneous drainage. Percutaneous drainage leaves the gallbladder in place, leading to recurrent disease requiring multiple interventions. This supports early cholecystectomy even in higher-risk patients when technically feasible."
+    difficulty: medium
+    tags: [CHOCOLATE trial, acute cholecystitis, laparoscopic cholecystectomy, percutaneous drainage, landmark trials]
+  - front: "What are the clinical features and treatment of umbilical hernias in children?"
+    back: "Epidemiology: Incidence 2-11%; increases with prematurity; M:F = 1.5:1\n\nFeatures:\n- Majority asymptomatic and resolve spontaneously by 4 years (95% by age 4)\n- Defects >1.5 cm in infancy will not close spontaneously\n- Incarceration prior to age 5 is very rare\n\nTreatment:\n- Repair if NOT spontaneously closed by age 5\n- Earlier repair of large 'proboscoid' hernias with extensive skin stretching (cosmetic reasons)\n- Simple primary closure of fascial defect\n\nRecurrence: Low risk\n\nUmbilical hernias result from incomplete closure of peritoneal and fascial layers. They differ from other hernias in that incarceration is rare in childhood. The size of the fascial defect determines chances of spontaneous closure. Most symptoms occur in late adolescence or adulthood if not closed. Unlike epigastric hernias, umbilical hernias usually resolve without intervention."
+    difficulty: easy
+    tags: [umbilical hernia, pediatric surgery, spontaneous resolution, hernia repair]
+  - front: "What is the significance of bilious emesis in a neonate?"
+    back: "Bilious emesis in a neonate is a SURGICAL EMERGENCY until proven otherwise.\n\nMain concern: Malrotation with midgut volvulus\n\nImmediate management:\n- IV antibiotics and fluid resuscitation\n- AXR and immediate UGI series (shows 'corkscrew' sign or dilated duodenum with duodenojejunal segment right of midline)\n- U/S: 'whirlpool' sign, abnormal SMA/SMV relationship\n- If volvulus confirmed: EMERGENT LAPAROTOMY (Ladd procedure)\n\nOther causes to consider: Intestinal atresia, Hirschsprung's disease, meconium ileus\n\nThe non-distended abdomen with bilious emesis is the classic presentation of malrotation with volvulus — the bowel twists around the superior mesenteric artery. Delayed diagnosis leads to massive bowel infarction and short bowel syndrome. Mortality is directly related to the extent of bowel necrosis. Every hour counts — this is a true surgical emergency."
+    difficulty: hard
+    tags: [bilious emesis, malrotation, volvulus, neonatal emergency, pediatric surgery]
+  - front: "What does the 'double-bubble' sign on X-ray indicate and what conditions cause it?"
+    back: "Double-bubble sign: Two gas-filled bubbles — one in stomach and one in proximal duodenum — with no distal gas\n\nCauses:\n1. Duodenal atresia (most common)\n2. Duodenal stenosis\n3. Annular pancreas\n4. Ladd's bands (malrotation) compressing duodenum\n\nAssociation: Duodenal atresia is associated with Down syndrome (Trisomy 21) in 24-28% of cases\n\nThe double-bubble sign can be seen prenatally on U/S or postnatally on plain AXR. No distal gas distinguishes complete atresia from stenosis (which may have some distal gas). The clinical presentation is bilious vomiting shortly after birth. Duodenal atresia results from failure of recanalization during bowel development (weeks 8-10), distinct from the vascular disruption mechanism of jejunoileal atresia."
+    difficulty: medium
+    tags: [double-bubble sign, duodenal atresia, Down syndrome, pediatric surgery, radiology]
+  - front: "What percentage of thyroid lobectomy and total thyroidectomy patients require thyroxine replacement?"
+    back: "- Lobectomy: 20-75% of patients need thyroxine after lobectomy\n- Total thyroidectomy: 100% of patients need thyroxine after total thyroidectomy\n\nThe wide range for lobectomy (20-75%) reflects variable function of the remaining lobe; patients with pre-existing subclinical hypothyroidism or Hashimoto's thyroiditis are more likely to require replacement. After total thyroidectomy, permanent thyroxine replacement is mandatory. TSH monitoring guides appropriate dosing — over-replacement increases fracture risk and can cause AF."
+    difficulty: easy
+    tags: [thyroidectomy, thyroxine, hypothyroidism, lobectomy, total thyroidectomy]
+  - front: "What is the role of neoadjuvant therapy in Stage III breast cancer?"
+    back: "Stage IIIA-IIIC breast cancer:\n- Primary treatment: Likely mastectomy + axillary node dissection + radiotherapy after chemotherapy (neoadjuvant)\n- Neoadjuvant (preoperative) therapy should be considered especially if not immediately resectable\n- Goals of neoadjuvant therapy:\n  1. Downstage tumour to achieve resectability\n  2. Assess tumour chemosensitivity in vivo\n  3. Eradicate micrometastases\n- Adjuvant radiation and chemotherapy may also be appropriate postoperatively\n\nInflammatory breast cancer:\n- Mastectomy + axillary node dissection + radiotherapy\n- Neoadjuvant therapy is standard\n\nNeoadjuvant chemotherapy for locally advanced breast cancer allows assessment of pathological complete response (pCR), which is a strong prognostic indicator. In HER2-positive disease, adding trastuzumab + pertuzumab to neoadjuvant chemotherapy significantly improves pCR rates. Inflammatory breast cancer (T4d) requires systemic therapy before any surgery."
+    difficulty: medium
+    tags: [breast cancer, neoadjuvant, Stage III, inflammatory breast cancer, locally advanced]
+  - front: "What is the Meckel scan and what does it detect?"
+    back: "Meckel scan (Tc-99m pertechnetate scan):\n- Detects ectopic gastric mucosa in Meckel's diverticulum\n- Technetium-99m pertechnetate is taken up by gastric mucosa (parietal cells)\n- Sensitivity: 85%\n- Specificity: 95%\n\nAlternative imaging: AXR (may show lower abdominal tenderness/distension)\n\nIndication: Painless BRBPR (bright red blood per rectum) in a child near the umbilicus, especially if <5 years old\n\nOnly the 50% of Meckel's diverticula that contain ectopic gastric mucosa are detectable by this scan. False negatives occur when gastric mucosa is absent. False positives can occur with other conditions that uptake pertechnetate. The scan is performed IV and images are taken sequentially. Treatment is surgical resection by laparotomy or laparoscopy + incidental appendectomy."
+    difficulty: medium
+    tags: [Meckel scan, Tc-99m pertechnetate, Meckels diverticulum, ectopic gastric mucosa, BRBPR]
+  - front: "What are the common surgical analgesic options and their dosing?"
+    back: "Surgical analgesics:\n- Acetaminophen + codeine (Tylenol #3): 1-2 tabs q4-6h PO/PR prn\n- Hydromorphone: 1-2 tabs PO q4h prn; 0.5-2 mg IV q3-4h prn\n- Ibuprofen: 200-400 mg PO q4-6h prn\n- Morphine: 2.5-10 mg IM/SC q4-6h prn; 1-2 mg IV q1h prn for breakthrough\n- Ketorolac (Toradol): 30-60 mg IM/IV q6h prn\n- Acetaminophen/oxycodone (Percocet): 325/5 mg, 1-2 tabs PO q4-6h prn\n\nMultimodal analgesia (combining non-opioid agents with opioids) reduces opioid requirements and side effects. NSAIDs (ibuprofen, ketorolac) provide anti-inflammatory analgesia but should be used cautiously in patients with renal impairment, peptic ulcer disease, or post-GI surgery. Ketorolac is the parenteral NSAID option for moderate-severe pain."
+    difficulty: easy
+    tags: [surgical analgesia, opioids, morphine, ketorolac, multimodal analgesia]
+  - front: "What is the treatment approach for metastatic (Stage IV) breast cancer?"
+    back: "Stage IV (any T, any N, M1):\n- Primary treatment is systemic therapy: chemotherapy and/or hormone therapy\n- Surgery: as appropriate for local control only\n- Radiation: palliative\n- Overall survival: 36-60 months (not curable)\n\nMetastatic sites in order: Bone > Lungs > Pleura > Liver > Brain\n\nStage IV breast cancer is treated with palliative intent. Treatment selection depends on ER/PR/HER2 status, prior therapy, performance status, and sites of metastasis. Bone-directed therapy (bisphosphonates, denosumab) is used for bone metastases. Targeted therapies (CDK4/6 inhibitors, mTOR inhibitors) have expanded options for ER-positive metastatic disease in Canadian practice."
+    difficulty: easy
+    tags: [breast cancer, Stage IV, metastatic, palliative, systemic therapy]

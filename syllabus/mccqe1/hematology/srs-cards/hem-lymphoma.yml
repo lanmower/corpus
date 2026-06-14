@@ -1,0 +1,206 @@
+# Lymphoma & Leukemia (Hematology) - generated from srs-mccqe1
+cards:
+  - front: "What is the most common presenting symptom of Hodgkin lymphoma (HL)?"
+    back: "Painless cervical or supraclavicular lymphadenopathy\n\nHL affects young adults (bimodal: 15–35 and >55 years) and presents with painless lymphadenopathy in cervical/mediastinal region. B symptoms (fever >38°C, night sweats, >10% weight loss) are adverse prognostic factors. Reed-Sternberg cells are pathognomonic."
+    difficulty: easy
+    tags: [Hodgkin-lymphoma, lymphadenopathy, Reed-Sternberg, B-symptoms, prognosis]
+  - front: "What is the Ann Arbor staging system for lymphoma?"
+    back: "Stage I: one lymph node region; II: two or more regions same side of diaphragm; III: both sides; IV: extranodal dissemination; A=no B symptoms, B=B symptoms present\n\nAnn Arbor staging guides treatment intensity. For HL, stages I-II are early disease (curable with combined chemo-RT); stages III-IV require ABVD chemotherapy (doxorubicin, bleomycin, vinblastine, dacarbazine) × 6 cycles."
+    difficulty: easy
+    tags: [Ann-Arbor-staging, lymphoma, Hodgkin, staging, ABVD]
+  - front: "What distinguishes diffuse large B-cell lymphoma (DLBCL) from follicular lymphoma?"
+    back: "DLBCL is aggressive (grows rapidly, often symptomatic) and potentially curable; follicular lymphoma is indolent (slow-growing, often asymptomatic) but generally incurable with conventional therapy\n\nDLBCL is the most common NHL. Treatment: R-CHOP (rituximab, cyclophosphamide, doxorubicin, vincristine, prednisone) × 6 cycles. Follicular lymphoma: watch-and-wait if asymptomatic, rituximab-based therapy when treatment indicated."
+    difficulty: medium
+    tags: [DLBCL, follicular-lymphoma, NHL, R-CHOP, rituximab]
+  - front: "What is the mechanism of action of rituximab in lymphoma treatment?"
+    back: "Anti-CD20 monoclonal antibody that causes complement-dependent cytotoxicity, ADCC, and direct apoptosis of B cells\n\nCD20 is expressed on mature B cells and >90% of B-cell NHLs. Rituximab + chemotherapy (R-CHOP) is standard for most B-cell lymphomas. Side effects: infusion reactions, hepatitis B reactivation (must screen all patients before rituximab)."
+    difficulty: medium
+    tags: [rituximab, CD20, B-cell-lymphoma, mechanism, R-CHOP]
+  - front: "A 65-year-old man with CLL develops autoimmune hemolytic anemia. What is the treatment?"
+    back: "Corticosteroids (prednisone) ± rituximab for AIHA; CLL treatment with ibrutinib or venetoclax if CLL itself requires therapy\n\nAIHA complicates 10–25% of CLL. Warm AIHA responds to steroids. Rituximab is effective for steroid-refractory cases. Avoid fludarabine in CLL patients with AIHA as it can worsen it."
+    difficulty: medium
+    tags: [CLL, autoimmune-hemolytic-anemia, prednisone, rituximab, ibrutinib]
+  - front: "What is the recommended initial workup for newly diagnosed lymphoma?"
+    back: "Excisional lymph node biopsy (not FNA), CT chest/abdomen/pelvis, PET scan for staging, bone marrow biopsy (for NHL), CBC, LDH, uric acid, hepatitis B/C serology, HIV\n\nFNA is insufficient for lymphoma subtyping — architectural pattern assessment requires excisional or core needle biopsy. PET-CT is standard for HL and DLBCL staging. LDH is a prognostic marker in NHL."
+    difficulty: medium
+    tags: [lymphoma-workup, excisional-biopsy, PET-CT, staging, LDH]
+  - front: "What is the International Prognostic Index (IPI) used for in lymphoma?"
+    back: "Predicting prognosis in aggressive NHL (DLBCL); risk factors: age >60, elevated LDH, ECOG PS >1, Stage III/IV, >1 extranodal site\n\nIPI scores 0–5: low (0–1), low-intermediate (2), high-intermediate (3), high (4–5) risk. 5-year OS ranges from ~70% (low) to ~30% (high). Adapted R-IPI is used in rituximab era."
+    difficulty: medium
+    tags: [IPI, DLBCL, prognosis, NHL, R-IPI]
+  - front: "What is the cure rate for early-stage (Stage I-II) classical Hodgkin lymphoma with combined modality therapy?"
+    back: ">90% cure rate with ABVD chemotherapy + involved-field radiation therapy\n\nHL is one of the most curable cancers. Long-term survivorship issues include secondary malignancies (breast cancer in women irradiated for mediastinal disease), cardiac disease, pulmonary toxicity (bleomycin), and infertility."
+    difficulty: easy
+    tags: [Hodgkin-lymphoma, cure-rate, ABVD, combined-modality, survivorship]
+  - front: "A patient on long-term immunosuppression post-renal transplant develops lymphadenopathy and B symptoms. Biopsy shows EBV-positive large B-cell proliferation. What is the diagnosis?"
+    back: "Post-transplant lymphoproliferative disorder (PTLD)\n\nPTLD occurs in 1–3% of solid organ transplants, driven by EBV-positive B-cell proliferation in the setting of impaired T-cell immunity. First step: reduce immunosuppression. Rituximab for CD20+ PTLD. Chemotherapy for aggressive forms."
+    difficulty: medium
+    tags: [PTLD, post-transplant, EBV, immunosuppression, rituximab]
+  - front: "Which lymphoma subtype is strongly associated with H. pylori infection?"
+    back: "Gastric MALT lymphoma (mucosa-associated lymphoid tissue lymphoma)\n\nH. pylori-driven chronic antigenic stimulation leads to gastric MALT lymphoma. Eradication of H. pylori with triple therapy results in regression of early-stage gastric MALT in 70–80% of cases. H. pylori eradication is first-line therapy."
+    difficulty: easy
+    tags: [MALT-lymphoma, H-pylori, gastric, eradication, B-cell-lymphoma]
+  - front: "What is Ann Arbor staging for lymphoma?"
+    back: "I: single node region. II: >=2 node regions same side of diaphragm. III: both sides of diaphragm. IV: diffuse extranodal. A=no B symptoms, B=fever/night sweats/weight loss >10%\n\nHodgkin: bimodal (20s and 60s), Reed-Sternberg cells, contiguous spread. Treatment: ABVD chemotherapy +/- radiation. NHL: more heterogeneous, often presents at advanced stage. R-CHOP for DLBCL."
+    difficulty: medium
+    tags: [lymphoma, staging]
+  - front: "What is the Ann Arbor staging system for lymphoma?"
+    back: "Stage I: single lymph node region. II: >=2 regions same side of diaphragm. III: both sides of diaphragm. IV: disseminated extranodal (bone marrow, liver). B symptoms: fever >38, night sweats, >10% weight loss 6mo\n\nStaging determines treatment approach. PET-CT is standard for FDG-avid lymphomas (most HL, DLBCL). CT for low-grade NHL. B symptoms confer worse prognosis. Lugano classification has replaced Ann Arbor for response assessment."
+    difficulty: hard
+    tags: [Ann Arbor, staging, lymphoma]
+  - front: "How is Hodgkin lymphoma diagnosed and treated?"
+    back: "Diagnosis: Reed-Sternberg cells (owl-eye) on biopsy, CD15+/CD30+. Treatment: early favorable: ABVD x2 + radiation. Early unfavorable/advanced: ABVD x4-6. PET-adapted: escalate to BEACOPP if PET+ after 2 cycles\n\nHL: bimodal age (20s and >60). Excellent prognosis: early stage >90% cure. Contiguous spread pattern. ABVD: doxorubicin, bleomycin, vinblastine, dacarbazine. Bleomycin pulmonary toxicity: monitor PFTs. Long-term: secondary malignancies, CV disease from radiation."
+    difficulty: hard
+    tags: [Hodgkin lymphoma, ABVD, Reed-Sternberg]
+  - front: "What are the major subtypes of non-Hodgkin lymphoma and their management?"
+    back: "Aggressive: DLBCL (most common NHL) - treat with R-CHOP x6, curable in ~60%. Indolent: follicular lymphoma - watch-and-wait if asymptomatic, BR or R-CHOP when symptomatic. Very aggressive: Burkitt - urgent intensive chemo + CNS prophylaxis\n\nNHL is much more common than HL. Non-contiguous spread (any stage at presentation). Aggressive NHL is potentially curable with chemo. Indolent NHL is generally incurable but has long natural history. Transformation of indolent to aggressive is a feared complication."
+    difficulty: hard
+    tags: [NHL, DLBCL, R-CHOP, follicular]
+  - front: "What is the approach to a patient presenting with lymphadenopathy?"
+    back: "Red flags: >2cm, supraclavicular, fixed/hard, >4-6wk, B symptoms, weight loss, hepatosplenomegaly. Workup: CBC, LDH, imaging (CT), excisional biopsy (NOT FNA for suspected lymphoma)\n\nMost lymphadenopathy is reactive/infectious. Supraclavicular (especially left/Virchow) highly suspicious for malignancy. Excisional biopsy preserves architecture for diagnosis. FNA insufficient for lymphoma subtyping. Generalized: consider HIV, SLE, lymphoma, infections."
+    difficulty: medium
+    tags: [lymphadenopathy, biopsy, workup]
+  - front: "What is tumor lysis syndrome and how is it prevented?"
+    back: "Lab: hyperuricemia, hyperkalemia, hyperphosphatemia, hypocalcemia, elevated LDH, elevated Cr. Prevention: IV hydration + allopurinol (moderate risk) or rasburicase (high risk). Treat: aggressive hydration, rasburicase, cardiac monitoring, dialysis if needed\n\nTLS risk highest in rapidly proliferating tumors: Burkitt, ALL, high tumor burden. Can be spontaneous. Cairo-Bishop criteria for diagnosis. Rasburicase (recombinant urate oxidase) rapidly reduces uric acid. CI in G6PD deficiency. Monitor labs q6-8h during treatment."
+    difficulty: hard
+    tags: [tumor lysis syndrome, rasburicase, prevention]
+  - front: "What is the approach to chronic lymphocytic leukemia (CLL)?"
+    back: "Diagnosis: lymphocytosis >5x10^9/L with clonal B-cells (CD5+/CD19+/CD23+). Rai/Binet staging. Many patients watch-and-wait. Treat indications: cytopenias, B symptoms, rapid doubling, bulky nodes. First-line: BTKi (ibrutinib) or venetoclax-based\n\nCLL most common adult leukemia. Smudge cells on smear. Richter transformation to DLBCL in 5-10%. Hypogammaglobulinemia increases infection risk. AIHA and ITP can complicate CLL. Del(17p)/TP53 mutation: poor prognosis, BTKi or venetoclax preferred."
+    difficulty: hard
+    tags: [CLL, ibrutinib, venetoclax]
+  - front: "What is multiple myeloma: diagnosis, staging, and treatment?"
+    back: "Diagnostic criteria: clonal BM plasma cells >=10% + myeloma-defining event (CRAB: Calcium elevated, Renal failure, Anemia, Bone lesions) or biomarker (>=60% BM plasma cells, FLC ratio >=100, >1 MRI lesion)\n\nSPEP/UPEP, serum free light chains, BM biopsy. Staging: R-ISS. Treatment: induction with triplet (VRd: bortezomib, lenalidomide, dex) then autologous SCT if eligible. Bone protection: zoledronic acid. Avoid nephrotoxins. Skeletal survey or low-dose whole-body CT (not bone scan)."
+    difficulty: hard
+    tags: [multiple myeloma, CRAB, VRd]
+  - front: "What oncologic emergencies should be recognized in hematologic malignancies?"
+    back: "Febrile neutropenia (ANC<0.5+fever): blood cultures + empiric broad-spectrum abx immediately (piperacillin-tazobactam or meropenem). Tumor lysis syndrome. Hyperviscosity (myeloma): plasmapheresis. Leukostasis (WBC>100k): leukapheresis\n\nFebrile neutropenia: mortality risk. Do NOT wait for cultures to start antibiotics. Door-to-antibiotic time <60min. SVC syndrome: urgent radiation or stenting. Spinal cord compression: urgent MRI + dexamethasone + radiation/surgery."
+    difficulty: hard
+    tags: [oncologic emergency, febrile neutropenia, leukostasis]
+  - front: "What is the approach to an incidental finding of elevated WBC?"
+    back: "Reactive leukocytosis (most common): infection, stress, steroids, smoking. If persistent or very high (>50k): check peripheral smear for blasts. CLL: mature lymphocytes >5k. CML: left shift with all stages of myeloid maturation, BCR-ABL+\n\nCML: Philadelphia chromosome BCR-ABL. Treatment: TKI (imatinib) with excellent prognosis. AML: blasts >20% in marrow, Auer rods. ALL: blasts, more common in children. Leukemoid reaction: very high WBC from infection/inflammation, LAP score high (low in CML)."
+    difficulty: medium
+    tags: [leukocytosis, CML, leukemia]
+  - front: "What is monoclonal gammopathy of undetermined significance (MGUS)?"
+    back: "MGUS: M-protein <30g/L, BM plasma cells <10%, no CRAB criteria, no amyloidosis. 1% per year risk of progression to myeloma. Monitor annually: SPEP, CBC, calcium, creatinine\n\nMGUS is common (3% of >50yr). Smouldering myeloma: M-protein 30g/L or 10-60% BM plasma cells, no CRAB. Higher risk of progression (10%/yr for first 5yr). Risk stratification: M-protein size, non-IgG type, abnormal FLC ratio predict progression."
+    difficulty: medium
+    tags: [MGUS, myeloma, monoclonal]
+  - front: "What is the staging workup for Hodgkin lymphoma and how do the common NHL subtypes differ?"
+    back: "Hodgkin lymphoma staging (Ann Arbor): I: single node region; II: ≥2 node regions same side of diaphragm; III: nodes on both sides; IV: extranodal involvement (liver, bone marrow). Suffix: A (no B symptoms), B (fever >38°C, night sweats, >10% weight loss in 6 months). Workup: PET-CT (gold standard for staging), bone marrow biopsy (being replaced by PET), excisional lymph node biopsy (Reed-Sternberg cells), CBC, LDH, ESR, LFTs, hepatitis B/C, HIV. NHL subtypes: DLBCL (most common aggressive NHL — 'curable' with R-CHOP); Follicular (most common indolent — 'watch and wait' if asymptomatic, rituximab-based when treatment needed); Burkitt (highly aggressive, starry-sky pattern, associated with EBV/HIV, t(8;14) c-myc translocation — intensive chemo, high cure rate); Mantle cell (intermediate, t(11;14) cyclin D1).\n\nPET-CT has revolutionized lymphoma staging and response assessment (Deauville criteria). Hodgkin lymphoma is one of the most curable cancers (>85% cure rate with ABVD chemotherapy). Lymphoma Canada and Canadian Cancer Trials Group coordinate lymphoma research and provide patient resources. R-CHOP (rituximab + cyclophosphamide, doxorubicin, vincristine, prednisone) is the standard of care for DLBCL."
+    difficulty: hard
+    tags: [Hodgkin lymphoma, NHL, DLBCL, follicular, Burkitt, staging, hematology]
+  - front: "What is the approach to non-Hodgkin lymphoma (NHL) treatment and how does DLBCL management differ from follicular lymphoma?"
+    back: "DLBCL (aggressive): R-CHOP (rituximab, cyclophosphamide, doxorubicin, vincristine, prednisone) × 6 cycles — goal is CURE (~60-70% cure rate); PET-CT for response assessment (Deauville criteria); CNS prophylaxis (intrathecal methotrexate) for high-risk patients (testicular, breast, kidney involvement, high IPI score); relapsed: salvage chemo + autologous stem cell transplant, CAR-T cell therapy. Follicular lymphoma (indolent): if asymptomatic (low tumor burden): watch and wait (no survival benefit from early treatment); if symptomatic/bulky: rituximab + bendamustine or R-CHOP, maintenance rituximab; NOT curable with standard therapy — characterized by relapsing-remitting course; transformation to DLBCL occurs in ~3%/year (biopsy any rapidly growing node).\n\nThe IPI (International Prognostic Index) stratifies DLBCL risk: age >60, elevated LDH, ECOG ≥2, stage III-IV, >1 extranodal site. CAR-T cell therapy (axicabtagene ciloleucel, tisagenlecleucel) has revolutionized relapsed/refractory DLBCL treatment and is available at select Canadian centres. Lymphoma Canada coordinates patient support and clinical trial access."
+    difficulty: hard
+    tags: [DLBCL, follicular lymphoma, R-CHOP, rituximab, CAR-T, hematology]
+  - front: "What are the clinical features of Mycosis Fungoides (cutaneous T-cell lymphoma)?"
+    back: "Slightly atrophic scaling, erythematous patches/plaques/nodules/tumours, possibly pruritic and poikilodermic (atrophy, telangiectasia, hyper/hypopigmentation); common sites: trunk, buttocks, proximal limbs.\n\nMycosis fungoides is the most common primary cutaneous T-cell lymphoma. Early disease has an excellent prognosis. The hypopigmented subtype is most common in children with deeper skin tones."
+    difficulty: medium
+    tags: [mycosis fungoides, cutaneous T-cell lymphoma, lymphoma]
+  - front: "What distinguishes Sézary syndrome from mycosis fungoides?"
+    back: "Sézary syndrome is a widespread systemic variant with erythroderma, lymphadenopathy, and WBC >20×10⁹/L with Sézary cells; it is associated with intense pruritus, alopecia, and high mortality.\n\nSézary syndrome can evolve from mycosis fungoides or arise de novo. Flow cytometry showing CD4:CD8 ratio >10 is characteristic. It has a significantly worse prognosis than localized mycosis fungoides."
+    difficulty: medium
+    tags: [Sézary syndrome, erythroderma, cutaneous T-cell lymphoma]
+  - front: "What is the cell of origin in cutaneous T-cell lymphoma (mycosis fungoides/Sézary syndrome)?"
+    back: "Clonal proliferation of skin-homing CD4+ T-cells.\n\nThe malignant cells in CTCL are memory T-helper (CD4+) cells that aberrantly home to the skin. Skin biopsy with T-cell receptor gene rearrangement studies is key to diagnosis."
+    difficulty: medium
+    tags: [cutaneous T-cell lymphoma, CD4, pathophysiology]
+  - front: "What are the key morphologic differences between AML blasts and ALL blasts?"
+    back: "AML: large blasts, abundant cytoplasm, 3-5 nucleoli, granules and Auer rods, myeloperoxidase/Sudan black positive. ALL: small blasts, scant cytoplasm, 1-3 nucleoli, no granules or Auer rods, PAS positive.\n\nThe mnemonic 'Big and SmALL' helps: AML has big blasts (adults, more cytoplasm, more nucleoli, Auer rods) while ALL has small blasts (children, less cytoplasm, fewer nucleoli). Myeloperoxidase positivity confirms myeloid lineage in AML."
+    difficulty: easy
+    tags: [AML, ALL, leukemia, morphology, Auer rods, myeloperoxidase]
+  - front: "What are the Ann Arbor stages for lymphoma?"
+    back: "Stage I: single lymph node region or extralymphatic site (IE). Stage II: ≥2 lymph node regions or extralymphatic site + >1 node region on SAME side of diaphragm. Stage III: lymph node regions on BOTH sides of diaphragm. Stage IV: diffuse involvement of ≥1 extralymphatic organs including bone marrow.\n\nThe Ann Arbor system stratifies disease extent. Suffix 'E' denotes extralymphatic involvement, 'A' denotes absence of B-symptoms, 'B' denotes presence of B-symptoms. Stage dictates treatment approach and prognosis."
+    difficulty: easy
+    tags: [lymphoma, staging, Ann Arbor, Hodgkin, NHL]
+  - front: "What chromosomal translocations are associated with common lymphoid malignancies?"
+    back: "t(2;5) → ALK mutation → Anaplastic large cell lymphoma. t(8;14) → Myc activation → Burkitt lymphoma. t(14;18) → Bcl-2 activation → Follicular lymphoma. t(11;14) → Cyclin D1 overexpression → Mantle cell lymphoma. t(11;18) → MALT1 activation → MALT lymphoma.\n\nEach translocation activates a specific oncogene. Bcl-2 prevents apoptosis in follicular lymphoma; Myc drives rapid proliferation in Burkitt; Cyclin D1 promotes cell cycle entry in mantle cell lymphoma."
+    difficulty: medium
+    tags: [chromosomal translocations, lymphoma, Burkitt, follicular, mantle cell, MALT]
+  - front: "What are the hallmark features of Hodgkin Lymphoma (HL)?"
+    back: "Malignant proliferation of lymphoid cells with Reed-Sternberg cells. Bimodal age distribution (peaks at 20 yr and >50 yr). Associated with EBV in up to 50% of cases. Classically presents with non-tender, rubbery cervical/supraclavicular lymphadenopathy (60-80%). Can present with B-symptoms, mediastinal mass, pruritus.\n\nReed-Sternberg cells (large binucleated cells with prominent 'owl-eye' nucleoli) are pathognomonic for HL. HL spreads contiguously from one node to adjacent nodes, unlike NHL which often presents at multiple non-contiguous sites."
+    difficulty: easy
+    tags: [Hodgkin lymphoma, Reed-Sternberg, EBV, B-symptoms, lymphadenopathy]
+  - front: "What is the treatment approach for Hodgkin Lymphoma by stage?"
+    back: "Stage I-II: ABVD chemotherapy (adriamycin, bleomycin, vinblastine, dacarbazine) followed by involved-field or involved-site radiotherapy (XRT). Stage III-IV: ABVD, brentuximab-AVD, or BEACOPP + XRT for bulky disease. Relapsed/refractory: high-dose chemo + autologous stem cell transplant, anti-CD30 Ab, pembrolizumab.\n\nABVD is the standard first-line regimen. BEACOPP is more intensive and used for advanced disease. PET scan is essential for assessing response. Treatment complications include cardiac disease (adriamycin), pulmonary toxicity (bleomycin), and secondary malignancies."
+    difficulty: medium
+    tags: [Hodgkin lymphoma, ABVD, BEACOPP, chemotherapy, radiotherapy, treatment]
+  - front: "What are the Hasenclever adverse prognostic factors for advanced Hodgkin Lymphoma?"
+    back: "Seven adverse factors: (1) serum albumin <40 g/L, (2) Hb <105 g/L, (3) male sex, (4) stage IV disease, (5) age ≥45 yr, (6) leukocytosis (WBC >15 × 10⁹/L), (7) lymphocytopenia (<0.06 × 10⁹/L or <8% of WBC). Each additional factor decreases 5-year freedom from progression (FFP).\n\nWith 4 adverse factors, 5-year FFP is approximately 51%; with ≥5 factors, it drops to ~60% reduction from baseline. This international prognostic score guides risk stratification and intensity of therapy for advanced-stage HL."
+    difficulty: hard
+    tags: [Hodgkin lymphoma, prognosis, Hasenclever, IPS, advanced disease]
+  - front: "What complications can result from treatment of Hodgkin Lymphoma?"
+    back: "Cardiac disease (secondary to XRT or adriamycin cardiomyopathy in ~1%). Pulmonary disease (bleomycin-induced interstitial pneumonitis). Infertility (<3% with ABVD; discuss sperm banking/egg retrieval before treatment). Secondary malignancies: solid tumours of lung or breast (>8 yr after treatment), non-Hodgkin lymphoma. Hypothyroidism (post-XRT).\n\nLong-term survivors of HL face significant treatment-related morbidity. Bleomycin pulmonary toxicity is cumulative and dose-dependent. Secondary breast cancers are especially relevant for young women receiving chest irradiation, requiring enhanced screening."
+    difficulty: medium
+    tags: [Hodgkin lymphoma, treatment complications, bleomycin, adriamycin, secondary malignancy, infertility]
+  - front: "How is Non-Hodgkin Lymphoma (NHL) classified by natural history?"
+    back: "WHO/REAL classification: (1) Indolent (35-40%): e.g. follicular lymphoma, SLL/CLL, mantle cell lymphoma — slow growing, rarely curable. (2) Aggressive (~50%): e.g. diffuse large B-cell lymphoma (DLBCL) — rapidly progressive but potentially curable. (3) Highly aggressive (~5%): e.g. Burkitt lymphoma — very rapid growth, requires intensive treatment.\n\nMost NHL (85%) originates from B-cells. Indolent lymphomas have long natural histories but are rarely cured with standard therapy; the goal is symptom management. Aggressive lymphomas are potentially curable with combination chemotherapy."
+    difficulty: easy
+    tags: [NHL, classification, indolent, aggressive, follicular, DLBCL, Burkitt]
+  - front: "What is the treatment approach for aggressive Non-Hodgkin Lymphoma (e.g., DLBCL)?"
+    back: "Goal is curative. CHOP (cyclophosphamide, hydroxydoxorubicin/adriamycin, vincristine/Oncovin, prednisone) + rituximab (anti-CD20) if B-cell lymphoma (R-CHOP). XRT for localized/bulky disease. CNS prophylaxis with high-dose methotrexate if testicular or >2 extranodal sites involved. Relapse: high-dose chemo + autologous SCT or CAR T-cell therapy.\n\nR-CHOP is the standard of care for DLBCL. Rituximab targets CD20 on B-cells. CAR T-cell therapy (e.g. axicabtagene ciloleucel) is approved for relapsed/refractory DLBCL after ≥2 lines of therapy. 5-year survival ranges from 26-73% based on IPI score."
+    difficulty: medium
+    tags: [DLBCL, NHL, R-CHOP, rituximab, CAR T-cell, aggressive lymphoma]
+  - front: "What are the International Prognostic Index (IPI) adverse factors for DLBCL?"
+    back: "Five adverse factors: (1) age >60 yr, (2) Ann Arbor stage III-IV, (3) performance status ECOG 2-4, (4) elevated LDH, (5) >1 extranodal site. Based on number of factors, 5-year survival ranges from 26-73%. ~40% cure rate overall.\n\nIPI is the standard prognostic tool for aggressive NHL. Low-risk (0-1 factors) has ~73% 5-year OS; high-risk (4-5 factors) has ~26% 5-year OS. Higher-risk patients may warrant more intensive upfront therapy or clinical trial enrollment."
+    difficulty: medium
+    tags: [DLBCL, IPI, prognosis, NHL, prognostic index]
+  - front: "What are the distinguishing features of follicular lymphoma versus mantle cell lymphoma?"
+    back: "Follicular lymphoma: t(14;18) Bcl-2 activation, 22-30% of NHL, indolent, widespread painless LAD + BM involvement, 3% annual risk of transformation to DLBCL, 5-year survival 53-91%. Mantle cell lymphoma: t(11;14) cyclin D1 overexpression, 6% of NHL, indolent but poor prognosis (5-year survival 25%), often stage IV at presentation with GI involvement (lymphomatous polyposis).\n\nDespite both being classified as indolent, mantle cell lymphoma has a significantly worse prognosis than follicular lymphoma. GI involvement (lymphomatous polyposis) and Waldeyer's ring involvement are characteristic of mantle cell lymphoma."
+    difficulty: hard
+    tags: [follicular lymphoma, mantle cell lymphoma, NHL, t(14;18), t(11;14), prognosis]
+  - front: "What are the features and treatment of Burkitt lymphoma?"
+    back: "t(8;14) → Myc activation. Very aggressive (<5% adult NHL, 30% childhood NHL). Endemic form: massive jaw LAD, EBV-associated, African origin. 'Starry-sky' histology (macrophages engulfing apoptotic tumour cells). High risk of tumour lysis syndrome (TLS). Treatment: short bursts of intensive chemotherapy (CODOX-M + IVAC with rituximab) + CNS and TLS prophylaxis.\n\nBurkitt lymphoma is one of the fastest-growing human tumours (doubling time ~24 h). The 'starry-sky' pattern reflects high apoptotic rate. Early aggressive hydration and allopurinol/rasburicase are critical to prevent fatal TLS upon treatment initiation."
+    difficulty: medium
+    tags: [Burkitt lymphoma, t(8;14), Myc, EBV, TLS, starry-sky, NHL]
+  - front: "What are the diagnostic features of Chronic Lymphocytic Leukemia (CLL)?"
+    back: "Most common leukemia in Western world; median age 70, M>F. CBC: clonal B-lymphocytes >5 × 10⁹/L. Peripheral blood: small mature lymphocytes + smudge cells. Flow cytometry: CD5+, CD20dim, CD23+, light chain restriction. Cytogenetics by FISH for prognosis (e.g. 17p deletion = poor prognosis, p53 mutation).\n\nSmudge cells in CLL result from fragile malignant lymphocytes rupturing during slide preparation. CD5 co-expression with B-cell markers (CD20, CD23) distinguishes CLL from other lymphoproliferative disorders. 17p deletion/TP53 mutation predicts resistance to standard chemoimmunotherapy."
+    difficulty: medium
+    tags: [CLL, smudge cells, CD5, CD20, CD23, flow cytometry, 17p deletion]
+  - front: "What are the treatment options for CLL based on cytogenetic status?"
+    back: "Observation if early, stable, asymptomatic. For fit patients age <65 without 17p deletion: venetoclax + obinutuzumab (fixed-duration), or FCR (fludarabine + cyclophosphamide + rituximab, now less commonly used). For patients with unmutated IgVH and/or 17p deletion/p53 positivity: ibrutinib, acalabrutinib, or zanubrutinib (BTK inhibitors). Autoimmune phenomena: corticosteroids, rituximab.\n\n17p deletion (involving TP53) confers resistance to alkylating agents and purine analogues, necessitating BTK inhibitor-based therapy. Venetoclax (Bcl-2 inhibitor) with obinutuzumab offers a fixed-duration option. Novel targeted therapies have largely replaced traditional chemoimmunotherapy."
+    difficulty: hard
+    tags: [CLL, BTK inhibitor, ibrutinib, venetoclax, 17p deletion, FCR, treatment]
+  - front: "What is Richter's transformation in CLL?"
+    back: "Approximately 5% of CLL patients undergo aggressive transformation to diffuse large B-cell lymphoma (DLBCL). Associated with chromosomal abnormalities. Presents with rapid enlargement of nodes, systemic symptoms, elevated LDH. Poor prognosis; requires aggressive chemotherapy.\n\nRichter's transformation represents a clonal evolution from indolent CLL to an aggressive lymphoma. It should be suspected when a CLL patient develops rapidly progressive adenopathy, B-symptoms, or markedly elevated LDH. Diagnosis confirmed by lymph node biopsy showing DLBCL morphology."
+    difficulty: medium
+    tags: [CLL, Richters transformation, DLBCL, transformation, complication]
+  - front: "What defines Multiple Myeloma (MM) by the SLiM CRAB criteria?"
+    back: "SLiM CRAB criteria — any ONE is sufficient for diagnosis: S: ≥60% clonal plasma cells on BM. Li: Light chain ratio (involved/uninvolved) ≥100. M: MRI with >1 bone lesion ≥5mm. CRAB: hyperCalcemia, Renal failure (Cr >176 μmol/L), Anemia, Bone lesions (lytic lesions or osteoporosis with fracture).\n\nSLiM criteria represent biomarkers of malignancy that indicate near-certain progression, justifying treatment even before overt organ damage (CRAB) develops. The updated criteria allow earlier intervention to prevent irreversible end-organ damage."
+    difficulty: medium
+    tags: [multiple myeloma, SLiM CRAB, diagnosis criteria, plasma cell, myeloma]
+  - front: "What are the clinical features and complications of Multiple Myeloma?"
+    back: "Bone disease: back pain, bony tenderness, pathologic fractures, lytic lesions (skull, spine, proximal long bones). Anemia (BM suppression). Infections (S. pneumoniae, Gram-negatives — suppression of normal plasma cells). Hypercalcemia (N/V, confusion, polyuria). Renal failure (cast nephropathy). Hyperviscosity (rare, more common in Waldenstrom's). Amyloidosis (cardiac, GI, neurologic). Neurologic: spinal cord compression (10-20%, medical emergency).\n\nMM causes end-organ damage through multiple mechanisms: osteoclast activation (bone disease), M-protein deposition (renal cast nephropathy, amyloidosis), and marrow infiltration (cytopenias). Bone scans are NOT useful as they detect osteoblast activity; skeletal surveys and MRI/PET are preferred."
+    difficulty: medium
+    tags: [multiple myeloma, CRAB, lytic lesions, renal failure, amyloidosis, spinal cord compression]
+  - front: "What investigations confirm Multiple Myeloma and detect M protein?"
+    back: "CBC: normocytic anemia, thrombocytopenia, leukopenia; rouleaux on peripheral film. SPEP: M-protein spike in 80%. UPEP: Bence-Jones protein (light chains in urine) in 15% who secrete only light chains. Immunofixation: confirms M protein and identifies Ig type. Serum free light chain quantification (kappa/lambda ratio). BM aspirate/biopsy: >10% plasma cells. Skeletal series (X-ray), MRI, PET. Note: routine urinalysis does NOT detect light chains (dipstick detects albumin only).\n\nRoutine urinalysis misses Bence-Jones proteinuria — a critical MCCQE1 teaching point. 24-hour urine collection with UPEP is required. Decreased anion gap can occur due to positively charged M-protein. Elevated β2-microglobulin and LDH with low albumin indicate poor prognosis."
+    difficulty: medium
+    tags: [multiple myeloma, SPEP, UPEP, Bence-Jones protein, rouleaux, BM biopsy, free light chains]
+  - front: "How is Multiple Myeloma treated?"
+    back: "Non-curative. Goals: improve QoL, prevent progression. Transplant-eligible (<70 yr, no comorbidities): 4-6 months cytoreductive therapy (steroid + novel agents: IMIDs or proteasome inhibitors (PI)) followed by autologous SCT. Transplant-ineligible: combinations of prednisone, cyclophosphamide, bortezomib (PI), revlimid (IMID), daratumumab (anti-CD38). Supportive: bisphosphonates (bone lesions), XRT (bone pain, cord compression), kyphoplasty, hydration for hypercalcemia, EPO, DVT prophylaxis. All patients relapse.\n\nBisphosphonates require renal dose adjustment. Daratumumab (anti-CD38 monoclonal antibody) has become an important component of frontline and relapsed therapy. PIs (bortezomib, carfilzomib) and IMIDs (thalidomide, lenalidomide) are cornerstones of myeloma treatment."
+    difficulty: hard
+    tags: [multiple myeloma, treatment, autologous SCT, bortezomib, daratumumab, bisphosphonates, IMIDs]
+  - front: "What is Monoclonal Gammopathy of Unknown Significance (MGUS) and when does it require treatment?"
+    back: "MGUS: M protein in serum WITHOUT clinical/lab evidence of plasma cell dyscrasia. Diagnosed by: M protein <30 g/L, <10% plasma cells in BM, absence of SLiM CRAB criteria. Incidence: 5% in people >70 yr. Rate of malignant transformation: 0.3-1% per year. Higher risk if: M protein ≥15 g/L, abnormal free light chain ratio, or IgA/IgM MGUS. Monitoring: history + labs q6-12 months. No treatment required.\n\nMGUS is a pre-malignant condition that does not require treatment but warrants surveillance. Abnormal serum free light chain ratio is an independent risk factor for progression (landmark Blood 2005 study). Patients with high-risk features need more frequent monitoring."
+    difficulty: medium
+    tags: [MGUS, monoclonal gammopathy, pre-malignant, plasma cell, surveillance, myeloma precursor]
+  - front: "How does Multiple Myeloma differ from CLL and Lymphoplasmacytic Lymphoma in a comparison table?"
+    back: "MM: plasma cells, IgG/A (rarely IgM), rare lymphadenopathy, rare hepatosplenomegaly, COMMON bone lesions + hypercalcemia + renal failure. CLL: lymphocytes, IgM if present, very common LAD + hepatosplenomegaly, rare bone/Ca/renal. LPL: plasmacytoid lymphocytes, IgM, common LAD + hepatosplenomegaly, rare bone/Ca/renal, HYPERVISCOSITY common.\n\nThe cell of origin determines the clinical phenotype. MM is a plasma cell disorder causing osteolytic lesions via osteoclast activation. LPL (Waldenstrom's) secretes large IgM molecules that stay intravascular, causing hyperviscosity. CLL is a circulating B-cell malignancy with nodal/splenic involvement."
+    difficulty: medium
+    tags: [multiple myeloma, CLL, LPL, Waldenstroms, comparison, hyperviscosity, bone lesions]
+  - front: "What is Waldenstrom's Macroglobulinemia (Lymphoplasmacytic Lymphoma) and how is it treated?"
+    back: "LPL/Waldenstrom's: proliferation of lymphoplasmacytoid cells secreting monoclonal IgM. Median age 64 yr. Features: anemia, hyperviscosity (headache, vertigo, visual changes, bleeding), splenomegaly, hepatomegaly, peripheral neuropathy, cold hemagglutinin disease (Raynaud's, hemolytic anemia). Accounts for 85% of hyperviscosity syndrome cases. Treatment: chemotherapy + rituximab (bendamustine + rituximab). Plasmapheresis for acute hyperviscosity. If HCV positive, treat HCV first.\n\nIgM is a large pentameric molecule confined mainly to the intravascular space, making hyperviscosity more common than in MM. Plasmapheresis rapidly reduces IgM levels for acute viscosity crises. Bone lesions and hypercalcemia are rare (unlike MM)."
+    difficulty: medium
+    tags: [Waldenstroms macroglobulinemia, LPL, IgM, hyperviscosity, plasmapheresis, rituximab]
+  - front: "What is hyperviscosity syndrome and how is it treated?"
+    back: "Clinical sequelae of increased blood viscosity (relative serum viscosity >5-6 units). Caused by increased serum Igs (MM, Waldenstrom's) or cellular components (leukemia, polycythemia vera). Waldenstrom's accounts for 85% of cases. Features: CHF (hypervolemia), headache, vertigo, ataxia, stroke (decreased cerebral blood flow), retinal venous engorgement/hemorrhages, bleeding diathesis (impaired platelet function). ESR usually very low (paradoxically). Treatment: plasmapheresis + chemotherapy.\n\nParadoxically low ESR in hyperviscosity is due to the high protein concentration hindering RBC rouleaux formation needed for sedimentation. Plasmapheresis removes the pathologic Ig and is the acute intervention of choice before definitive chemotherapy."
+    difficulty: medium
+    tags: [hyperviscosity syndrome, Waldenstroms, plasmapheresis, multiple myeloma, retinal changes, ESR]
+  - front: "What is Tumour Lysis Syndrome (TLS) and how is it prevented and treated?"
+    back: "Metabolic complications from spontaneous or treatment-related cancer cell lysis. Common in high-grade lymphoma and acute leukemia (large tumour burden, high proliferative rate). Metabolic abnormalities: elevated K⁺, uric acid, PO₄³⁻; decreased Ca²⁺ (PO₄ binds Ca). Complications: lethal cardiac arrhythmia (hyperkalemia), AKI. Prevention: aggressive IV hydration, allopurinol (prevents uric acid accumulation) or rasburicase (degrades existing uric acid), correct pre-existing metabolic abnormalities. Alkalinization NOT recommended (risk of calcium phosphate/xanthine precipitation). Treatment: dialysis if needed.\n\nTLS prevention is critical before initiating therapy for Burkitt lymphoma or acute leukemia. Rasburicase (recombinant urate oxidase) is preferred for high-risk cases as it actively degrades uric acid, whereas allopurinol only prevents new formation. Rasburicase is contraindicated in G6PD deficiency."
+    difficulty: medium
+    tags: [tumour lysis syndrome, TLS, hyperkalemia, hyperuricemia, rasburicase, allopurinol, AKI]
+  - front: "What are the IgM-specific features of Waldenstrom's Macroglobulinemia that make it clinically distinct from Multiple Myeloma?"
+    back: "IgM is large and pentameric, confined mainly to intravascular space → causes hyperviscosity syndrome (85% of cases). Bone lesions are RARE (unlike MM). Hypercalcemia is RARE. Cold hemagglutinin disease possible (Raynaud's, hemolytic anemia in cold weather). IgM can cause peripheral neuropathy. No lytic bone lesions on skeletal survey. Bone scans and skeletal survey less relevant.\n\nThe intravascular confinement of IgM (due to its large size) distinguishes LPL/Waldenstrom's hyperviscosity from MM hyperviscosity. In MM, hyperviscosity is rare because IgG and IgA distribute into extravascular spaces. This difference explains why plasmapheresis is particularly effective in Waldenstrom's."
+    difficulty: hard
+    tags: [Waldenstroms macroglobulinemia, IgM, hyperviscosity, multiple myeloma, comparison, plasmapheresis]

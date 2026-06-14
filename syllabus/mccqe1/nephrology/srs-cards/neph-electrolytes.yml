@@ -1,0 +1,174 @@
+# Electrolyte Disorders (Nephrology) - generated from srs-mccqe1
+cards:
+  - front: "A 70-year-old on HCTZ has Na+ 122 mEq/L, clinically euvolemic. Urine Na+ 40 mEq/L, urine osmolality 520 mOsm/kg. Diagnosis and management?"
+    back: "SIADH (syndrome of inappropriate ADH secretion); restrict water (500-1000 mL/day), correct Na+ slowly (max 8-10 mEq/L per 24h to prevent osmotic demyelination)\n\nSIADH diagnosis: hyponatremia, hypo-osmolality, urine osmolality >100 mOsm/kg (concentrated urine despite hyponatremia), urine Na+ >20 mEq/L, euvolemia. Causes: CNS, pulmonary, malignancy, drugs (HCTZ, SSRIs). Vaptans (tolvaptan) for refractory cases."
+    difficulty: hard
+    tags: [SIADH, hyponatremia, water restriction, vaptans, nephrology]
+  - front: "What is the danger of correcting hyponatremia too rapidly and what is the safe correction rate?"
+    back: "Osmotic demyelination syndrome (ODS/central pontine myelinolysis): correction >10 mEq/L/24h or >18 mEq/L/48h in chronic hyponatremia causes permanent neurological damage\n\nChronic hyponatremia (>48h) is most dangerous to correct rapidly because brain cells adapt by losing osmolytes. ODS presents with locked-in syndrome, dysarthria, quadriplegia days after correction. Target: 4-8 mEq/L in first 24h for chronic hyponatremia. Symptomatic hyponatremia: 1-2 mEq/L/hour for 1-2 hours with hypertonic saline then slow down."
+    difficulty: hard
+    tags: [hyponatremia correction, osmotic demyelination, ODS, hypertonic saline, nephrology]
+  - front: "Classify hyponatremia by volume status with urine findings."
+    back: "Hypovolemic (urine Na+ <20: extrarenal loss — GI, skin; urine Na+ >20: renal loss — diuretics, cerebral salt wasting); Euvolemic (SIADH, hypothyroidism, adrenal insufficiency); Hypervolemic (urine Na+ <20: cirrhosis, HF, nephrotic; urine Na+ >20: CKD, AKI)\n\nVolume status assessment is the first step in hyponatremia evaluation. Clinical exam + urine Na+/osmolality guide etiology. Pseudohyponatremia: high lipids or protein. Hyperosmolar hyponatremia: hyperglycemia, mannitol."
+    difficulty: medium
+    tags: [hyponatremia classification, volume status, urine sodium, SIADH, nephrology]
+  - front: "A patient develops confusion, muscle weakness, and ECG changes (peaked T waves, wide QRS) with K+ 6.8 mEq/L. Immediate treatment?"
+    back: "IV calcium gluconate (1-2 g) immediately to stabilize cardiac membrane, then insulin 10 units IV + dextrose 50g, sodium bicarbonate if acidotic, then definitive removal (kayexalate, patiromer, or dialysis)\n\nCalcium gluconate stabilizes cardiac membrane within minutes but does not lower K+. Insulin + dextrose shifts K+ into cells (K+ drops 0.5-1.5 mEq/L within 30 min). Beta-agonists (albuterol) also shift K+. Definitive removal requires 1-2 hours (kayexalate, patiromer) or dialysis."
+    difficulty: hard
+    tags: [hyperkalemia treatment, calcium gluconate, insulin, kayexalate, nephrology]
+  - front: "What are the ECG findings and clinical features of hypokalemia?"
+    back: "K+ <3.5: muscle weakness, fatigue, constipation; ECG: U waves, T wave flattening, QT prolongation, ventricular arrhythmias (risk of TdP); severe (<2.5): paralysis, rhabdomyolysis\n\nHypokalemia causes: GI losses (vomiting, diarrhea), diuretics, hyperaldosteronism, renal tubular acidosis, hypomagnesemia. Treat underlying cause. Replace K+ cautiously: maximum IV rate 10-20 mEq/h through peripheral line. Correct Mg2+ simultaneously."
+    difficulty: medium
+    tags: [hypokalemia, U waves, potassium replacement, ECG changes, nephrology]
+  - front: "What is the approach to hypercalcemia and what are the most common causes?"
+    back: "Causes by frequency: hyperparathyroidism (PTH-mediated, ambulatory) and malignancy (PTHrP or bone metastases, inpatient); others: sarcoidosis, vitamin D toxicity, milk-alkali syndrome\n\nSymptoms (symptoms of hypercalcemia): bones (fractures), moans (constipation, peptic ulcer), groans (muscle weakness, polyuria/polydipsia), stones (nephrolithiasis), psychic overtones (depression, confusion). Severe hypercalcemia (>3.5 mmol/L or symptomatic): IV NS, bisphosphonates (zoledronic acid), dialysis."
+    difficulty: medium
+    tags: [hypercalcemia, hyperparathyroidism, malignancy, PTH, bones moans groans stones, nephrology]
+  - front: "How is hypernatremia classified and managed?"
+    back: "Hypernatremia = Na+ >145 mEq/L; always hyperosomolar; causes: water deficit (diabetes insipidus, fever, diarrhea) or sodium gain (hypertonic saline); correct slowly (max 10 mEq/L/24h) with free water (D5W PO/IV or NG water)\n\nCorrection rate: max 10 mEq/L per 24h to prevent cerebral edema. Central DI: DDAVP (desmopressin) treatment. Nephrogenic DI: treat cause, thiazide diuretics reduce free water excretion paradoxically. Water deficit = 0.6 × weight × [(Na/140) - 1]."
+    difficulty: hard
+    tags: [hypernatremia, diabetes insipidus, free water deficit, correction rate, nephrology]
+  - front: "A patient with chronic hyponatremia is given IV hypertonic saline and overcorrects to Na+ 136 mEq/L from 118 mEq/L in 18 hours. What should be done?"
+    back: "Re-lower sodium with DDAVP + D5W infusion (3% saline relowering protocol) to prevent osmotic demyelination syndrome\n\nOvercorrection is a medical emergency. DDAVP (desmopressin) 2 mcg IV plus D5W 6 mL/kg/h can re-lower sodium by 1-2 mEq/L/hour. Prevention is key: use DDAVP-clamp method in high-risk patients (Na+ <120, malnutrition, alcohol use, hypokalemia)."
+    difficulty: hard
+    tags: [hyponatremia overcorrection, DDAVP clamp, osmotic demyelination, relowering protocol, nephrology]
+  - front: "What causes metabolic alkalosis and how is it classified?"
+    back: "Saline-responsive (urine Cl- <25 mEq/L): vomiting, nasogastric suction, diuretic use — treat with IV normal saline; Saline-resistant (urine Cl- >25 mEq/L): hyperaldosteronism, Cushing syndrome, severe hypokalemia\n\nMetabolic alkalosis: HCO3- >26 mEq/L, pH >7.40. Maintenance: hypovolemia stimulates aldosterone (retains HCO3-) and hypokalemia drives H+ into cells. Saline-responsive metabolic alkalosis is most common (GI losses, diuretics)."
+    difficulty: medium
+    tags: [metabolic alkalosis, saline-responsive, chloride, vomiting, nephrology]
+  - front: "What is the anion gap and when is it elevated?"
+    back: "AG = Na - (Cl + HCO3), normal 8-12 mEq/L; elevated in: MUDPILES: Methanol, Uremia, DKA, Propylene glycol, Isoniazid/Iron, Lactic acidosis, Ethylene glycol, Salicylates\n\nElevated AG metabolic acidosis requires urgent identification and treatment of cause. Delta ratio: if (elevated AG - 12) / (24 - HCO3) >2, suggests concurrent metabolic alkalosis; <1 suggests concurrent non-AG metabolic acidosis."
+    difficulty: easy
+    tags: [anion gap, metabolic acidosis, MUDPILES, AG metabolic acidosis, nephrology]
+  - front: "What is the management of diabetic ketoacidosis (DKA) with electrolyte focus?"
+    back: "IV insulin infusion + isotonic saline, potassium replacement (IV K+ when K+ <5.5 and urine output adequate), sodium bicarbonate only for pH <6.9, monitor glucose hourly and electrolytes q2-4h\n\nDKA causes total body K+ depletion despite initial serum K+ appearing normal/high (acidosis shifts K+ extracellularly). Potassium must be given before insulin if K+ <3.5 mEq/L. Phosphate replacement for severe hypophosphatemia (<0.32 mmol/L)."
+    difficulty: hard
+    tags: [DKA, potassium replacement, insulin infusion, electrolytes in DKA, nephrology]
+  - front: "A 45-year-old has serum phosphate 0.4 mmol/L, muscle weakness, and respiratory failure. What is the management?"
+    back: "Severe hypophosphatemia (<0.32 mmol/L): IV phosphate replacement (sodium phosphate or potassium phosphate); mild-moderate: oral phosphate supplements\n\nCauses of hypophosphatemia: refeeding syndrome, DKA treatment, alcoholism, hyperparathyroidism, antacids. Severe hypophosphatemia causes: hemolytic anemia, rhabdomyolysis, cardiac dysfunction, respiratory muscle weakness. IV replacement rate: 0.16-0.32 mmol/kg over 4-6h."
+    difficulty: hard
+    tags: [hypophosphatemia, refeeding syndrome, IV phosphate, respiratory failure, nephrology]
+  - front: "What are the causes and treatment of hypomagnesemia?"
+    back: "Causes: poor intake (alcoholism), GI losses (diarrhea, malabsorption), renal losses (diuretics, cisplatin, PPIs), diabetes; treat with IV magnesium sulfate for symptomatic or severe (<0.4 mmol/L)\n\nHypomagnesemia is common in hospitalized patients. It causes: hypokalemia (resistant to K+ replacement unless Mg2+ corrected), hypocalcemia, cardiac arrhythmias (TdP). PPIs can cause chronic magnesium wasting. IV MgSO4 2-4g for acute symptomatic hypomagnesemia."
+    difficulty: medium
+    tags: [hypomagnesemia, magnesium replacement, hypokalemia, cardiac arrhythmia, nephrology]
+  - front: "What is refeeding syndrome and how is it prevented?"
+    back: "Hypophosphatemia, hypokalemia, hypomagnesemia occurring 1-4 days after refeeding malnourished patients; prevent by correcting electrolytes before feeding, start feeds slowly, supplement thiamine\n\nRefeeding syndrome occurs due to rapid intracellular shift of phosphate, K+, and Mg2+ during anabolism after starvation. Risk groups: malnutrition, alcoholism, anorexia nervosa, prolonged fasting, post-surgery. Thiamine deficiency causes Wernicke encephalopathy if carbohydrates given without thiamine."
+    difficulty: hard
+    tags: [refeeding syndrome, hypophosphatemia, thiamine, malnutrition, nephrology]
+  - front: "How is diabetes insipidus (DI) diagnosed and differentiated from psychogenic polydipsia?"
+    back: "Water deprivation test: DI fails to concentrate urine (osmolality <300 mOsm/kg); central DI responds to DDAVP; nephrogenic DI does not respond to DDAVP; psychogenic polydipsia: concentrated urine after restriction\n\nCentral DI: ADH deficiency from pituitary/hypothalamic damage (trauma, tumors, surgery). Nephrogenic DI: ADH resistance (lithium toxicity, hypercalcemia, hypokalemia, hereditary). Serum ADH/copeptin levels can aid diagnosis before water deprivation."
+    difficulty: hard
+    tags: [diabetes insipidus, water deprivation test, DDAVP, central vs nephrogenic, nephrology]
+  - front: "How correct hyponatremia based on chronicity?"
+    back: "Acute/symptomatic: 3% NaCl 1-2mEq/h. Chronic: limit <=8-10mEq/24h to prevent ODS\n\nODS risk: Na<120, hypokalemia, malnutrition, liver disease. If overcorrected: D5W + desmopressin."
+    difficulty: hard
+    tags: [hyponatremia, ODS]
+  - front: "What is emergency hyperkalemia treatment with ECG changes?"
+    back: "1)IV calcium gluconate 2)Insulin 10U+D50W 3)Salbutamol nebs 4)Kayexalate/dialysis\n\nECG: peaked T -> prolonged PR -> wide QRS -> sine wave. Calcium stabilizes membrane, doesn't lower K."
+    difficulty: medium
+    tags: [hyperkalemia, emergency]
+  - front: "What is the sodium correction formula for hypernatremia and what is the safe rate of correction?"
+    back: "Free water deficit = TBW × [(Na/140) - 1], where TBW = 0.6 × weight (men) or 0.5 × weight (women). Correct Na by ≤10 mmol/L per 24h for chronic hypernatremia. Replace deficit with D5W or hypotonic saline over 48-72h.\n\nRapid correction of chronic hypernatremia risks cerebral edema. Acute hypernatremia (<48h, e.g., salt poisoning) can be corrected faster (1-2 mmol/L/h). Most common cause in elderly: inadequate water intake (cognitive impairment, immobility). Also: diabetes insipidus, osmotic diuresis. Monitor Na q4-6h during correction."
+    difficulty: hard
+    tags: [electrolytes, hypernatremia, free water deficit, correction, nephrology]
+  - front: "What is the approach to hyponatremia and what correction rate prevents osmotic demyelination?"
+    back: "Acute symptomatic (<48h): 3% hypertonic saline 100-150 mL bolus, target 4-6 mmol/L rise in first 6h. Chronic: do NOT exceed 8 mmol/L per 24h (some guidelines say 10). High risk for osmotic demyelination: hypokalemia, malnutrition, alcoholism, liver disease.\n\nOsmotic demyelination syndrome (central pontine myelinolysis) is devastating and irreversible — presents 2-6 days after overcorrection with dysarthria, quadriparesis, locked-in syndrome. If overcorrected: give DDAVP 2 μg IV q8h + D5W to re-lower sodium. Always assess volume status: hypovolemic, euvolemic (SIADH), hypervolemic."
+    difficulty: hard
+    tags: [electrolytes, hyponatremia, osmotic demyelination, 3% saline, SIADH, nephrology]
+  - front: "What is SIADH and how is it diagnosed?"
+    back: "Diagnosis requires ALL: serum Na <135, serum osm <275, urine osm >100, urine Na >30, euvolemia, normal thyroid/adrenal function, no diuretics. Causes: CNS (stroke, SAH, meningitis), pulmonary (pneumonia, TB, small cell lung cancer), drugs (SSRIs, carbamazepine, cyclophosphamide).\n\nSIADH is a diagnosis of exclusion — must rule out hypothyroidism, adrenal insufficiency, and renal impairment first. Treatment: fluid restriction (1-1.5 L/day) first-line; salt tablets + loop diuretic; vaptans (tolvaptan) for refractory cases (monitor closely for overcorrection). Treat underlying cause. Demeclocycline rarely used (nephrotoxic)."
+    difficulty: hard
+    tags: [electrolytes, SIADH, hyponatremia, diagnosis, urine osmolality, nephrology]
+  - front: "What are the ECG changes of hyperkalemia in order of severity?"
+    back: "Mild (5.5-6.5): peaked T waves (earliest), shortened QT. Moderate (6.5-7.5): prolonged PR, flattened P waves, widened QRS. Severe (>7.5): sine wave pattern, VF, asystole. Loss of P waves = atrial standstill.\n\nECG changes do not always correlate perfectly with K+ levels — some patients arrest at 6.5, others tolerate 8.0. Any ECG changes with hyperkalemia warrant immediate IV calcium. Pseudohyperkalemia: hemolyzed sample, prolonged tourniquet, extreme leukocytosis or thrombocytosis — always repeat if unexpected."
+    difficulty: medium
+    tags: [electrolytes, hyperkalemia, ECG, peaked T waves, nephrology]
+  - front: "What is the differential diagnosis and workup for hypokalemia?"
+    back: "Losses: GI (diarrhea, vomiting — actually renal loss from alkalosis), renal (diuretics, hyperaldosteronism, RTA, Mg depletion). Shift: insulin, beta-agonists, alkalosis. Workup: spot urine K/Cr ratio or 24h urine K (>30 mmol/day = renal loss). Check Mg. Check BP (elevated: think hyperaldosteronism).\n\nAlways check and replace magnesium — hypomagnesemia causes refractory hypokalemia (Mg needed for ROMK channel function). Vomiting causes hypokalemia via metabolic alkalosis-driven renal K wasting (not GI K loss). Hypokalemia + hypertension: screen for primary aldosteronism (aldosterone:renin ratio)."
+    difficulty: hard
+    tags: [electrolytes, hypokalemia, differential, magnesium, aldosteronism, nephrology]
+  - front: "How is hypokalemia corrected and what are the dangers?"
+    back: "Oral preferred if mild (3.0-3.5, asymptomatic): KCl 40-80 mEq/day. IV if severe (<3.0 or symptomatic/ECG changes): KCl max 10-20 mEq/h peripherally (40 mEq/h via central line with cardiac monitoring). Replace Mg concurrently. Each 10 mEq raises K+ by ~0.1.\n\nIV KCl must be diluted and given slowly — rapid infusion causes cardiac arrest. Never give IV potassium as bolus push. K+ <2.5 is life-threatening (respiratory paralysis, rhabdomyolysis, cardiac arrest). Recheck K+ after each 40 mEq replacement. Total body deficit can be 200-400 mEq even with modest hypokalemia."
+    difficulty: hard
+    tags: [electrolytes, hypokalemia, KCl, IV replacement, magnesium, nephrology]
+  - front: "What is the approach to metabolic acidosis using the anion gap?"
+    back: "AG = Na - (Cl + HCO3). Normal ~12. AGMA (AG >12): MUDPILES (Methanol, Uremia, DKA, Propylene glycol, Isoniazid/Iron, Lactic acid, Ethylene glycol, Salicylates). NAGMA: diarrhea, RTA, normal saline excess, acetazolamide, ureteral diversion.\n\nAlways calculate delta-delta ratio (ΔAG/ΔHCO3): >2 = concurrent metabolic alkalosis; <1 = concurrent NAGMA. Serum osmolal gap >10 suggests toxic alcohol ingestion. Lactic acidosis: Type A (tissue hypoxia — shock, sepsis) vs Type B (no hypoxia — metformin, liver failure, malignancy). Treat underlying cause."
+    difficulty: hard
+    tags: [electrolytes, metabolic acidosis, anion gap, MUDPILES, delta-delta, nephrology]
+  - front: "What are the types of renal tubular acidosis (RTA)?"
+    back: "Type 1 (distal): cannot secrete H+, urine pH >5.5, hypoK+, nephrolithiasis/nephrocalcinosis. Type 2 (proximal): cannot reabsorb HCO3, urine pH variable, hypoK+, Fanconi syndrome. Type 4 (hyperkalemic): hypoaldosteronism, urine pH <5.5, hyperK+.\n\nType 1 causes: autoimmune (Sjögren, SLE), amphotericin B, lithium, medullary sponge kidney. Type 2: multiple myeloma, carbonic anhydrase inhibitors, heavy metals. Type 4: diabetic nephropathy, ACEi/ARBs, spironolactone, TMP-SMX, heparin. Type 3 is rare (combined 1+2). All are NAGMA."
+    difficulty: hard
+    tags: [electrolytes, RTA, acidosis, NAGMA, hypokalemia, nephrology]
+  - front: "What are the causes and management of hypercalcemia?"
+    back: "Most common: primary hyperparathyroidism (outpatient) and malignancy (inpatient). Others: granulomatous disease, vitamin D toxicity, thyrotoxicosis, immobilization, thiazides, milk-alkali. Management: IV NS (200-300 mL/h), calcitonin (rapid but transient), zoledronic acid (definitive for malignancy), treat underlying cause.\n\nPTH-dependent: primary hyperparathyroidism (elevated PTH, elevated Ca). PTH-independent (PTH suppressed): malignancy (PTHrP, bone metastases, 1,25-vit D from lymphoma). Severe hypercalcemia (>3.5 mmol/L): emergency — aggressive saline, calcitonin 4 IU/kg q12h, denosumab if bisphosphonate-refractory. Dialysis for life-threatening."
+    difficulty: hard
+    tags: [electrolytes, hypercalcemia, PTH, malignancy, bisphosphonate, nephrology]
+  - front: "What is the approach to hypocalcemia?"
+    back: "Symptoms: perioral tingling, Chvostek sign (facial twitch), Trousseau sign (carpal spasm with BP cuff), QTc prolongation, seizures, laryngospasm. Correct albumin first: corrected Ca = measured Ca + 0.02 × (40 - albumin g/L). Acute symptomatic: IV calcium gluconate 1-2 amps in 50-100 mL D5W over 10 min. Chronic: oral calcium + vitamin D.\n\nMost common cause: post-thyroidectomy (parathyroid damage). Also: CKD, vitamin D deficiency, hypomagnesemia (impairs PTH secretion), pancreatitis. Always check and correct Mg — hypomagnesemia causes PTH resistance. Phosphate level helps differentiate: high PO4 + low Ca = hypoparathyroid or CKD; low PO4 + low Ca = vitamin D deficiency."
+    difficulty: hard
+    tags: [electrolytes, hypocalcemia, Chvostek, Trousseau, calcium gluconate, nephrology]
+  - front: "What are the causes and management of hypomagnesemia?"
+    back: "Causes: GI losses (diarrhea, malabsorption, PPI use), renal losses (diuretics, alcohol, aminoglycosides, cisplatin, calcineurin inhibitors). Management: mild: oral Mg oxide/gluconate. Severe (<0.5 mmol/L) or symptomatic: IV MgSO4 1-2g over 1h. Replace before correcting K+ or Ca.\n\nHypomagnesemia causes refractory hypokalemia and hypocalcemia. PPI-associated hypomagnesemia occurs after >1 year of use and resolves with PPI cessation. Torsades de pointes: IV MgSO4 2g bolus even if Mg is normal. Chronic alcohol use is the most common cause — depletes Mg via renal wasting and poor intake."
+    difficulty: medium
+    tags: [electrolytes, hypomagnesemia, PPI, refractory hypokalemia, MgSO4, nephrology]
+  - front: "What is the approach to hyperphosphatemia in CKD?"
+    back: "Dietary phosphate restriction (processed foods, dairy). Phosphate binders with meals: calcium carbonate/acetate (avoid if Ca >2.54 or PTH suppressed), sevelamer (no calcium load, may reduce vascular calcification), lanthanum carbonate. Dialysis removes phosphate. Target PO4: within normal range.\n\nHyperphosphatemia drives secondary hyperparathyroidism and vascular calcification (CKD-MBD). Calcium × phosphate product >4.4 mmol²/L² increases soft tissue calcification risk. Sevelamer may be preferred in patients with vascular calcification. Phosphate binders must be taken WITH meals to bind dietary phosphate."
+    difficulty: medium
+    tags: [electrolytes, hyperphosphatemia, CKD, phosphate binders, sevelamer, nephrology]
+  - front: "What is diabetes insipidus and how do you differentiate central from nephrogenic?"
+    back: "Both: polyuria (>3L/day), dilute urine (osm <300), polydipsia. Central DI (low ADH): responds to DDAVP (urine concentrates >50% increase). Nephrogenic DI (ADH resistance): no response to DDAVP. Water deprivation test + DDAVP trial differentiates.\n\nCentral DI causes: pituitary surgery/trauma, tumors (craniopharyngioma), infiltrative (sarcoid, histiocytosis), idiopathic. Nephrogenic DI: lithium (most common drug cause), hypercalcemia, hypokalemia, CKD. Treatment: central = DDAVP intranasal/oral; nephrogenic = thiazide diuretic (paradoxical) + amiloride + low-salt diet + NSAIDs."
+    difficulty: hard
+    tags: [electrolytes, diabetes insipidus, DDAVP, central, nephrogenic, nephrology]
+  - front: "How is the serum osmolal gap calculated and when is it clinically useful?"
+    back: "Osmolal gap = measured Osm - calculated Osm. Calculated Osm = 2×Na + glucose (mmol/L) + urea (mmol/L). Normal gap <10 mOsm/kg. Gap >10: suspect unmeasured osmoles — toxic alcohols (methanol, ethylene glycol, isopropanol), propylene glycol.\n\nOsmolal gap is most useful early after toxic alcohol ingestion (before metabolism). As toxic alcohol is metabolized to acids, osmolal gap falls while anion gap rises. Ethylene glycol: calcium oxalate crystals in urine, fluorescence under Wood lamp. Methanol: visual symptoms, optic disc edema. Treat both with fomepizole + dialysis."
+    difficulty: hard
+    tags: [electrolytes, osmolal gap, toxic alcohols, methanol, ethylene glycol, nephrology]
+  - front: "What is the cerebral salt wasting vs SIADH differentiation?"
+    back: "Both: hyponatremia, elevated urine Na, elevated urine Osm. Key difference: CSW = hypovolemic (negative fluid balance, orthostatic hypotension, elevated BUN, elevated hematocrit); SIADH = euvolemic. CSW: treat with IV NS + salt. SIADH: fluid restrict.\n\nCSW occurs after neurosurgery, SAH, or brain injury — natriuretic peptide release causes renal Na wasting with volume depletion. Critical to differentiate because treatment is opposite: NS for CSW vs fluid restriction for SIADH. Volume status assessment is key. CSW is self-limited (resolves in weeks)."
+    difficulty: hard
+    tags: [electrolytes, CSW, SIADH, hyponatremia, neurosurgery, nephrology]
+  - front: "How do you interpret an ABG for acid-base disorders?"
+    back: "1) pH acidemia/alkalemia. 2) Primary disorder: CO2 for respiratory, HCO3 for metabolic. 3) Compensation: Winter's formula (metabolic acidosis: expected pCO2 = 1.5×HCO3+8±2). 4) Anion gap = Na-(Cl+HCO3), normal 8-12\n\nMUDPILES for anion gap metabolic acidosis: Methanol, Uremia, DKA, Propylene glycol, INH/Iron, Lactic acidosis, Ethylene glycol, Salicylates. Non-gap: RTA, diarrhea, normal saline excess."
+    difficulty: hard
+    tags: [ABG, acid-base]
+  - front: "A patient on an ACE inhibitor and spironolactone is given trimethoprim-sulfamethoxazole for a UTI. What electrolyte complication can occur and why?"
+    back: "Hyperkalemia. Trimethoprim blocks sodium reabsorption in the distal tubule (similar to potassium-sparing diuretics), and combined with RAAS inhibitors/spironolactone, can cause dangerous potassium retention.\n\nThis is a pharmacodynamic interaction causing additive reduction in renal potassium excretion. TMP/SMX-induced hyperkalemia is particularly dangerous in elderly patients on RAAS inhibitors and has been associated with sudden cardiac death."
+    difficulty: hard
+    tags: [drug interactions, trimethoprim, hyperkalemia, ACE inhibitor, spironolactone, renal]
+  - front: "What ECG changes are associated with hyperkalemia, in order of progression?"
+    back: "Early: tall peaked T-waves. Then: PR prolongation, QRS widening, loss of P waves. Finally: sinusoidal pattern, then PEA/VFib/Asystole.\n\nHyperkalemia progressively impairs cardiac conduction. The progression from peaked T-waves to sinusoidal pattern and cardiac arrest can be rapid. Treatment priorities: calcium gluconate/chloride for membrane stabilization; bicarbonate, insulin + dextrose, and salbutamol to shift K+ intracellularly; dialysis or Kayexalate for removal."
+    difficulty: medium
+    tags: [hyperkalemia, ECG, emergency, electrolytes]
+  - front: "What ECG findings are associated with hypokalemia?"
+    back: "P wave flattening, QRS widening and flattening, U waves appear, flattened T waves.\n\nU waves (positive deflection after T wave, best seen in V2–V3) are the hallmark of hypokalemia. Hypokalemia increases the risk of ventricular arrhythmias, especially in the setting of digoxin use or cardiac disease. Treatment: oral or IV potassium replacement based on severity."
+    difficulty: easy
+    tags: [hypokalemia, ECG, U waves, electrolytes]
+  - front: "What is the maximum safe rate of sodium correction in hypernatremia, and why?"
+    back: "No more than 12 mmol/L in 24 hours (0.5 mmol/L/h). Rapid correction risks cerebral edema, seizures, and death.\n\nIn chronic hypernatremia, brain cells have adapted by generating osmoles to maintain volume. Rapid lowering of serum sodium causes water to move into brain cells, causing cerebral edema. Begin with normal saline until hemodynamically stable, then switch to half-normal saline."
+    difficulty: medium
+    tags: [hypernatremia, sodium, correction, electrolytes, emergency]
+  - front: "What is the maximum safe rate of sodium correction in hyponatremia, and what syndrome does rapid correction risk?"
+    back: "Maximum 8 mmol/L in 24 hours (0.25 mmol/L/h). Rapid correction risks Osmotic Demyelinating Syndrome (ODS), previously called central pontine myelinolysis.\n\nIn chronic hyponatremia, the brain has adapted to low osmolarity. Rapid correction causes rapid water efflux from brain cells, damaging the myelin sheath of neurons—particularly in the pons. ODS presents with quadriplegia, dysphagia, dysarthria, and can be fatal."
+    difficulty: hard
+    tags: [hyponatremia, ODS, osmotic demyelination, sodium correction, electrolytes]
+  - front: "When is 3% hypertonic saline indicated for hyponatremia?"
+    back: "When hyponatremia causes seizures or coma (severe symptomatic hyponatremia).\n\nSevere symptomatic hyponatremia with seizures or coma requires urgent partial correction with 3% hypertonic saline to relieve cerebral edema. The goal is to raise sodium by 1-2 mmol/L/h until symptoms resolve, not to fully normalize sodium. Total 24-hour rise should still not exceed 8 mmol/L."
+    difficulty: medium
+    tags: [hyponatremia, hypertonic saline, seizures, emergency, treatment]
+  - front: "What are the ECG changes seen in hyperkalemia, in order of severity?"
+    back: "Peaked/narrow T waves → decreased P waves → prolonged PR interval → widening of QRS → sine wave → AV block → VFib/bradycardia.\n\nHyperkalemia progressively depolarizes the myocardium. Early changes (peaked T waves) reflect altered repolarization; later changes (widened QRS, sine wave) reflect conduction failure. VFib is the terminal event. This progression guides treatment urgency—calcium gluconate for membrane stabilization when ECG changes are present."
+    difficulty: hard
+    tags: [hyperkalemia, ECG, potassium, electrolytes, emergency]
+  - front: "What are the three strategies for treating hyperkalemia and give an example of each?"
+    back: "1) Protect heart (membrane stabilization): calcium gluconate. 2) Shift K+ into cells: D50W + insulin, NaHCO3, salbutamol. 3) Remove K+ from body: IV fluids + furosemide, or dialysis.\n\nTreatment of hyperkalemia uses a tiered approach: membrane stabilization is immediate (minutes) but temporary; intracellular shifting buys time (1-4 hours); actual removal of potassium from the body provides lasting correction. All three strategies may be needed simultaneously in severe cases."
+    difficulty: medium
+    tags: [hyperkalemia, treatment, calcium gluconate, insulin, dialysis]
+  - front: "What ECG finding is most important in hypokalemia?"
+    back: "U waves (most important finding). Also: flattened/inverted T waves, prolonged QT, depressed ST segment.\n\nU waves are deflections following the T wave, most prominent in leads V2-V3, and are the hallmark ECG finding of hypokalemia. They indicate delayed ventricular repolarization. Severe hypokalemia can cause ventricular dysrhythmias. Note that magnesium often needs to be repleted alongside potassium, as hypomagnesemia causes renal potassium wasting."
+    difficulty: medium
+    tags: [hypokalemia, ECG, U waves, potassium, electrolytes]
+  - front: "What are the signs of hypocalcemia and what ECG change does it cause?"
+    back: "Laryngospasm, hyperreflexia, paresthesia, tetany, Chvostek's sign (tapping CN VII causes facial twitch), Trousseau's sign (BP cuff inflation causes carpal spasm). ECG: prolonged QT interval (can cause dysrhythmias).\n\nHypocalcemia increases neuromuscular excitability. Ionized calcium <0.7 mmol/L requires immediate IV calcium gluconate 1-2 g over 10-20 minutes, followed by slow infusion. Common causes include hypoalbuminemia (check ionized calcium), post-thyroid surgery, and hypoparathyroidism."
+    difficulty: medium
+    tags: [hypocalcemia, Chvostek, Trousseau, QT prolongation, electrolytes]

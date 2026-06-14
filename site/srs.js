@@ -2,9 +2,12 @@
 // Schema-versioned localStorage. Browser + node compatible.
 
 import { localDayISO } from './dates.js';
+import { skey } from './syllabus.js';
 
-const STATES_KEY = 'corpus.srs.states';
-const CONFIG_KEY = 'corpus.srs.config';
+// Per-syllabus keys: corpus.<activeSyllabus>.srs.states / .srs.config. Resolved per
+// call so the post-boot active syllabus (and a mid-session switch+reload) is honored.
+const STATES_KEY = () => skey('srs.states');
+const CONFIG_KEY = () => skey('srs.config');
 const DEFAULT_EXAM_DATE = '2026-06-15';
 const SCHEMA_VERSION = 1;
 const LEARNING_STEPS_MIN = [1, 10];
@@ -150,11 +153,11 @@ function migrate(payload) {
 
 export function loadStates() {
     try {
-        const raw = localStorage.getItem(STATES_KEY);
+        const raw = localStorage.getItem(STATES_KEY());
         if (!raw) return {};
         const parsed = JSON.parse(raw);
         const migrated = migrate(parsed);
-        if (parsed.version !== SCHEMA_VERSION) localStorage.setItem(STATES_KEY, JSON.stringify(migrated));
+        if (parsed.version !== SCHEMA_VERSION) localStorage.setItem(STATES_KEY(), JSON.stringify(migrated));
         return migrated.states || {};
     } catch (e) {
         // An unsupported (newer) schema is rejected by migrate() to protect the
@@ -170,7 +173,7 @@ export function loadStates() {
 
 export function saveStates(states) {
     try {
-        localStorage.setItem(STATES_KEY, JSON.stringify({ version: SCHEMA_VERSION, states }));
+        localStorage.setItem(STATES_KEY(), JSON.stringify({ version: SCHEMA_VERSION, states }));
         if (typeof window !== 'undefined') window.dispatchEvent(new Event('corpus:srs-changed'));
     } catch (e) {
         const quota = e && (e.name === 'QuotaExceededError' || /quota/i.test(String(e.message)));
@@ -205,7 +208,7 @@ export function importState(json) {
 
 export function loadConfig() {
     try {
-        const raw = localStorage.getItem(CONFIG_KEY);
+        const raw = localStorage.getItem(CONFIG_KEY());
         const cfg = raw ? JSON.parse(raw) : {};
         const out = { examDate: DEFAULT_EXAM_DATE, sessionGoal: 30, ...cfg };
         // A hand-edited / legacy / unparseable examDate would make new Date() an
@@ -226,7 +229,7 @@ export function saveConfig(cfg) {
     // Mirror saveStates' quota guard: a full quota degrades to the storage-full
     // banner instead of throwing an uncaught error out of an exam-date / goal edit.
     try {
-        localStorage.setItem(CONFIG_KEY, JSON.stringify(merged));
+        localStorage.setItem(CONFIG_KEY(), JSON.stringify(merged));
     } catch (e) {
         const quota = e && (e.name === 'QuotaExceededError' || /quota/i.test(String(e.message)));
         if (quota && typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { source: 'srs', error: String(e) } }));
@@ -348,7 +351,7 @@ export function getForecast(cardIds, days = 14, states = loadStates()) {
     return buckets;
 }
 
-export function resetAll() { localStorage.removeItem(STATES_KEY); }
+export function resetAll() { localStorage.removeItem(STATES_KEY()); }
 
 if (typeof window !== 'undefined') {
     window.__srs = {

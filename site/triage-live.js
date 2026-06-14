@@ -3,6 +3,7 @@ import * as progress from './progress.js';
 import { dispatchToolCalls as runToolCalls, stripToolBlocks } from './tool-dispatch.js';
 import { ICON } from './icons.js';
 import { PERSIST_KEY, SCHEMA_VERSION, readSessions, sessionCards, sessionScore } from './triage-store.js';
+import { initSyllabi, dataPath } from './syllabus.js';
 import * as voice from './voice.js';
 
 let sdk = null;
@@ -149,7 +150,7 @@ function loadSessions() {
 }
 function saveSessions() {
     const ls = safeStore(); if (!ls) return;
-    try { ls.setItem(PERSIST_KEY, JSON.stringify({ version: SCHEMA_VERSION, sessions: state.sessions, streak: state.streak || 0, savedAt: Date.now() })); }
+    try { ls.setItem(PERSIST_KEY(), JSON.stringify({ version: SCHEMA_VERSION, sessions: state.sessions, streak: state.streak || 0, savedAt: Date.now() })); }
     catch (e) { console.warn('persist failed', e); }
 }
 function persistActive() {
@@ -256,11 +257,12 @@ async function fetchJson(url) {
 }
 
 async function loadManifestAndScenarios() {
-    state.manifest = await fetchJson('./data/manifest.json');
+    await initSyllabi(fetchJson);
+    state.manifest = await fetchJson(dataPath('manifest.json'));
     const all = [];
     const subjects = state.manifest.subjects.map(s => s.subject);
     await Promise.all(subjects.map(async s => {
-        const sh = await fetchJson(`./data/${s}.json`);
+        const sh = await fetchJson(dataPath(`${s}.json`));
         const meta = state.manifest.subjects.find(x => x.subject === s);
         if (sh.triage && Array.isArray(sh.triage.scenarios)) {
             for (let i = 0; i < sh.triage.scenarios.length; i++) {

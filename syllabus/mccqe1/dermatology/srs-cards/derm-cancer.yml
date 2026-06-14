@@ -1,0 +1,242 @@
+# Skin Cancer & Melanoma (Dermatology) - generated from srs-mccqe1
+cards:
+  - front: "What is the most important prognostic factor for cutaneous melanoma?"
+    back: "Breslow thickness (depth of invasion in mm)\n\nBreslow thickness is the single most important prognostic factor, determining T stage in AJCC staging. Tumors <0.8 mm have >95% 5-year survival; >4 mm have <50%. Clark level and ulceration are also prognostic."
+    difficulty: easy
+    tags: [melanoma, Breslow-thickness, prognosis, AJCC-staging]
+  - front: "A 72-year-old farmer has a 1.5 cm scaly, indurated lesion on his lower lip with central ulceration. What is the most likely diagnosis?"
+    back: "Squamous cell carcinoma (SCC)\n\nSCC on the lip has higher metastatic potential than SCC at other sites. Risk factors: UV, chronic inflammation, HPV, tobacco. Sentinel node biopsy may be considered for high-risk lesions. Wide local excision is treatment of choice."
+    difficulty: medium
+    tags: [squamous-cell-carcinoma, SCC, lip, metastasis, UV-exposure]
+  - front: "What is the recommended surgical margin for a primary melanoma with Breslow thickness 1.01–2.0 mm?"
+    back: "1 cm margin\n\nAJCC and Canadian guidelines: <1 mm Breslow → 1 cm margin; 1–2 mm → 1 cm (some guidelines 1–2 cm); >2 mm → 2 cm; >4 mm → 2 cm. Sentinel lymph node biopsy is offered for tumors ≥0.8 mm."
+    difficulty: medium
+    tags: [melanoma, surgical-margin, Breslow, sentinel-node, excision]
+  - front: "Which virus is strongly associated with Merkel cell carcinoma (MCC)?"
+    back: "Merkel cell polyomavirus (MCV)\n\nMCV is present in ~80% of MCC cases and promotes tumorigenesis. MCC is a rare but aggressive neuroendocrine skin cancer occurring in elderly, immunocompromised patients. Treatment: wide excision + sentinel lymph node biopsy + adjuvant radiotherapy."
+    difficulty: easy
+    tags: [Merkel-cell-carcinoma, MCV, polyomavirus, neuroendocrine, skin-cancer]
+  - front: "What is actinic keratosis and why is it clinically significant?"
+    back: "Precancerous UV-induced keratotic lesion with risk of progression to SCC (1–10% per year)\n\nAK (solar keratosis) appears as rough, scaly patches on sun-damaged skin. Treatment: cryotherapy, topical 5-FU, imiquimod, or diclofenac gel. Multiple AKs indicate field cancerization and high future SCC risk."
+    difficulty: medium
+    tags: [actinic-keratosis, SCC, precancerous, cryotherapy, 5-FU]
+  - front: "What is the recommended follow-up interval after excision of a stage IB melanoma?"
+    back: "Clinical exam every 3–6 months for 3 years, then annually\n\nStage I-II melanoma has risk of local recurrence and systemic metastasis. Skin and lymph node examination is recommended. Routine imaging (CT, PET) is not recommended for stage I unless symptomatic."
+    difficulty: easy
+    tags: [melanoma, follow-up, staging, surveillance]
+  - front: "A patient presents with multiple BCCs, jaw cysts, and calcification of the falx cerebri. What is the diagnosis?"
+    back: "Nevoid basal cell carcinoma syndrome (Gorlin syndrome) — PTCH1 mutation\n\nGorlin syndrome is an autosomal dominant condition with multiple BCCs starting at a young age, odontogenic keratocysts, bifid ribs, and calcified falx cerebri. Avoid radiotherapy as it triggers additional BCCs. Vismodegib (hedgehog pathway inhibitor) is used for extensive disease."
+    difficulty: medium
+    tags: [Gorlin-syndrome, BCC, PTCH1, hedgehog-pathway, vismodegib]
+  - front: "What is the first-line immunotherapy for unresectable or metastatic melanoma?"
+    back: "Pembrolizumab or nivolumab (anti-PD-1 checkpoint inhibitors)\n\nAnti-PD-1 agents have revolutionized melanoma treatment, achieving durable responses in ~40% of patients. BRAF V600E-mutant melanoma can also receive BRAF+MEK inhibitors (dabrafenib+trametinib). Combination ipilimumab+nivolumab offers higher response rates with more toxicity."
+    difficulty: medium
+    tags: [melanoma, immunotherapy, pembrolizumab, nivolumab, checkpoint-inhibitor]
+  - front: "Which skin cancer has the highest metastatic potential among common skin cancers?"
+    back: "Merkel cell carcinoma (higher than SCC; much higher than BCC)\n\nAmong common skin cancers: MCC >SCC >BCC for metastatic potential. However, melanoma is the most lethal overall. High-risk SCC features: >2 cm, deep invasion, perineural invasion, immunosuppression, ear/lip location."
+    difficulty: easy
+    tags: [Merkel-cell, SCC, BCC, metastasis, skin-cancer]
+  - front: "What is the indication for sentinel lymph node biopsy (SLNB) in melanoma?"
+    back: "Breslow thickness ≥0.8 mm (or ≥0.75 mm with ulceration or mitoses) — T1b and above\n\nSLNB provides staging information and guides adjuvant therapy decisions. Positive SLNB may warrant adjuvant immunotherapy (pembrolizumab) or targeted therapy. It does not improve survival in node-negative patients but identifies those at higher risk."
+    difficulty: medium
+    tags: [melanoma, sentinel-node-biopsy, SLNB, staging, adjuvant-therapy]
+  - front: "What is the ABCDE rule for melanoma?"
+    back: "Asymmetry, Border irregularity, Color variation, Diameter >6mm, Evolving (changing size/shape/color)\n\nBreslow thickness is the most important prognostic factor. Excisional biopsy preferred. Sentinel lymph node biopsy if >1mm. Immunotherapy (pembrolizumab, nivolumab) for advanced melanoma."
+    difficulty: easy
+    tags: [melanoma, ABCDE]
+  - front: "What are the types of skin cancer and clinical features?"
+    back: "BCC (80%): pearly papule, telangiectasia, rolled borders. SCC (15%): scaly keratotic plaque on sun-damaged skin. Melanoma (5%): ABCDE features, most lethal\n\nBCC subtypes: nodular, superficial, morpheaform (aggressive). SCC risk: UV, immunosuppression, chronic wounds. AK precursor to SCC. Transplant recipients: 65-250x SCC risk."
+    difficulty: medium
+    tags: [skin cancer, BCC, SCC, melanoma]
+  - front: "How does Breslow thickness guide melanoma management?"
+    back: "In situ: 0.5cm margin. <=1mm: 1cm. 1-2mm: 1-2cm. >2mm: 2cm margin. SLNB for >=0.8mm or ulcerated. Breslow is strongest prognostic factor\n\nClark level less important. Stage I (thin, node-neg): 95% 5yr survival. Stage IV: immunotherapy transformed prognosis. SLNB positive: adjuvant immunotherapy considered."
+    difficulty: hard
+    tags: [melanoma, Breslow, excision margins]
+  - front: "What are the indications for Mohs surgery?"
+    back: "BCC/SCC in critical areas (face, ears, hands, genitals), recurrent tumors, ill-defined borders, aggressive subtypes (morpheaform BCC, perineural SCC), immunosuppressed\n\n99% cure BCC primary, 95% recurrent. 100% margin examination in real-time. Tissue-sparing for cosmetic sites. Standard excision with margins appropriate for trunk/extremity low-risk tumors."
+    difficulty: hard
+    tags: [Mohs surgery, BCC, SCC]
+  - front: "How are actinic keratoses managed?"
+    back: "Individual: cryotherapy. Field: 5-FU topical 4wk, imiquimod 4-16wk, PDT. Sun protection to prevent recurrence. SCC transformation <1%/yr per lesion but cumulative risk significant\n\nField cancerization: entire sun-damaged area at risk. SCC arising in AK: hard, thickened, non-healing - biopsy. Multiple AKs warrant field therapy. Diclofenac gel is gentler alternative."
+    difficulty: medium
+    tags: [actinic keratosis, cryotherapy, 5-FU]
+  - front: "What melanoma follow-up is recommended after treatment?"
+    back: "Stage IA-IIA: exam q6-12mo x5yr then annually. IIB+: q3-6mo x3yr, then q6-12mo to 5yr, then annually. Imaging for IIB+. Lifelong skin surveillance. Self-skin exam education\n\n80% recurrence within 3yr. Adjuvant pembrolizumab for IIB-IIIC. Family: 2-3x risk increase, consider genetics if multiple melanomas or CDKN2A pattern."
+    difficulty: hard
+    tags: [melanoma, follow-up, surveillance]
+  - front: "What is dermoscopy and how does it aid diagnosis?"
+    back: "10x magnification with polarized light. BCC: arborizing vessels, blue-gray nests. Melanoma: irregular network, blue-white veil, irregular dots. Improves melanoma sensitivity 70%->90%+\n\nTwo-step: 1) melanocytic? 2) benign or suspicious? Reduces unnecessary biopsies 42%. Requires training. Structured approaches: pattern analysis, ABCD dermoscopy score."
+    difficulty: medium
+    tags: [dermoscopy, diagnosis, skin cancer]
+  - front: "What systemic treatments exist for advanced melanoma?"
+    back: "Immunotherapy: anti-PD1 (nivolumab, pembrolizumab) +/- anti-CTLA4 (ipilimumab). Targeted: BRAFi (dabrafenib) + MEKi (trametinib) for BRAF V600E. Combination immunotherapy ~60% response\n\n5yr survival metastatic now ~50% with immunotherapy (was <10%). BRAF mutation in ~50%. Immune-related AE: colitis, pneumonitis, hepatitis, endocrinopathies - prompt recognition essential."
+    difficulty: hard
+    tags: [melanoma, immunotherapy, BRAF]
+  - front: "How is BCC managed by risk level?"
+    back: "Low-risk nodular/superficial: excision (4mm margin) or C&E. High-risk (morpheaform, recurrent, facial): Mohs. Superficial: imiquimod/5-FU/PDT options. Advanced: vismodegib (hedgehog inhibitor)\n\nBCC rarely metastasizes (<0.5%) but locally destructive. Gorlin syndrome: multiple BCCs, PTCH1 mutation. Vismodegib for unresectable. 5yr recurrence: standard 5-8%, Mohs 1%."
+    difficulty: medium
+    tags: [BCC, management, vismodegib]
+  - front: "What melanoma screening/prevention is recommended for transplant recipients?"
+    back: "Annual dermatology from 1yr post-transplant. Monthly self-exam. SCC 65-250x, BCC 10x, melanoma 2-5x risk. Aggressive sun protection. Consider acitretin for SCC chemoprevention\n\nSkin cancer most common malignancy in transplant. SCC>BCC (reverse of general population). HPV contributes. Consider mTOR inhibitor (sirolimus) switch to reduce skin cancer risk."
+    difficulty: hard
+    tags: [transplant, skin cancer, screening]
+  - front: "What is the approach to a suspected SCC?"
+    back: "Biopsy any non-healing, keratotic nodule/plaque on sun-damaged skin. Staging for high-risk: >2cm, >2mm depth, perineural invasion, immunosuppressed. Excision with 4-6mm margins or Mohs for high-risk\n\nSCC metastatic potential 2-5% (higher in immunosuppressed, lip, ear). High-risk SCC: consider adjuvant radiation. Cemiplimab (anti-PD1) for advanced/unresectable SCC. Differentiate from keratoacanthoma (rapid growth, keratin plug)."
+    difficulty: hard
+    tags: [SCC, biopsy, management]
+  - front: "Describe the clinical features that distinguish basal cell carcinoma, squamous cell carcinoma, and melanoma."
+    back: "Basal cell carcinoma (BCC): pearly/translucent papule or nodule with telangiectasias, rolled borders, central ulceration (rodent ulcer); most common skin cancer, locally invasive, rarely metastasizes; sun-exposed areas (nose most common). Squamous cell carcinoma (SCC): keratinized, scaly, firm papule/nodule, may ulcerate; can arise from actinic keratosis; has metastatic potential (2–5%). Melanoma: asymmetric, irregular borders, color variation, diameter >6mm, evolving (ABCDE criteria); highest mortality of skin cancers; types include superficial spreading (most common), nodular (worst prognosis), lentigo maligna, acral lentiginous.\n\nCanada has among the highest rates of skin cancer globally. The Canadian Dermatology Association's sun awareness program promotes prevention. BCC and SCC are treated primarily with surgical excision (Mohs micrographic surgery for high-risk facial BCC). Melanoma staging uses the Breslow depth (most important prognostic factor) and sentinel lymph node biopsy for tumors >1 mm thick."
+    difficulty: medium
+    tags: [BCC, SCC, melanoma, ABCDE, skin-cancer, Breslow-depth]
+  - front: "What is the Breslow depth, and how does it guide melanoma management and prognosis?"
+    back: "Breslow depth is the thickness of the melanoma measured from the granular layer of the epidermis to the deepest point of tumor invasion, in millimeters. It is the single most important prognostic factor. <1 mm: excellent prognosis (>95% 5-year survival), wide local excision with 1 cm margins. 1–2 mm: wide local excision with 1–2 cm margins + sentinel lymph node biopsy (SLNB). >2 mm: wide local excision with 2 cm margins + SLNB. Positive SLNB may warrant completion lymph node dissection and adjuvant therapy (immunotherapy: nivolumab, pembrolizumab).\n\nCanadian melanoma guidelines align with NCCN and recommend SLNB for melanomas >0.8 mm or with ulceration. Adjuvant checkpoint inhibitor immunotherapy (anti-PD-1) has significantly improved survival in stage III melanoma and is funded by most Canadian provincial drug programs. Regular skin surveillance is recommended for patients with a history of melanoma."
+    difficulty: hard
+    tags: [Breslow-depth, melanoma-staging, sentinel-lymph-node, immunotherapy, wide-local-excision]
+  - front: "An elderly patient on the lower leg has a non-healing, well-demarcated, erythematous scaly plaque that has been present for months. Biopsy shows full-thickness epidermal dysplasia. What is the diagnosis?"
+    back: "Squamous cell carcinoma in situ (Bowen disease). Full-thickness epidermal dysplasia without dermal invasion. Treatment options: surgical excision, topical 5-fluorouracil, imiquimod, photodynamic therapy, or cryotherapy. If left untreated, 3–5% progress to invasive SCC.\n\nBowen disease is distinguished from actinic keratosis (partial-thickness dysplasia) by having full-thickness atypia. Risk factors include chronic sun exposure, arsenic exposure, and HPV. The Canadian Dermatology Association recommends excisional biopsy for lesions suspicious for invasive SCC, especially if nodularity or induration develops within a Bowen disease lesion."
+    difficulty: medium
+    tags: [Bowen-disease, SCC-in-situ, full-thickness-dysplasia, 5-fluorouracil, skin-cancer]
+  - front: "What are the risk factors for actinic keratosis and what is the risk of progression to squamous cell carcinoma?"
+    back: "Risk factors: chronic UV exposure, fair skin (Fitzpatrick I–II), age >50, male sex, immunosuppression (organ transplant recipients have 65× increased SCC risk). Actinic keratoses are premalignant: individual lesion risk of progression to SCC is 0.025–16% per year, but the field often contains multiple lesions. Treatment: cryotherapy, topical 5-fluorouracil, imiquimod, photodynamic therapy, or diclofenac gel.\n\nActinic keratoses represent a field cancerization effect where the surrounding skin also has subclinical dysplasia. The Canadian Dermatology Association recommends field-directed therapy (5-FU, imiquimod, PDT) rather than lesion-directed therapy alone when multiple AKs are present. Organ transplant recipients require regular dermatologic surveillance due to dramatically increased skin cancer risk."
+    difficulty: medium
+    tags: [actinic-keratosis, UV-exposure, SCC-precursor, cryotherapy, field-cancerization]
+  - front: "What are the features of melanoma that warrant urgent referral, and what does the 'ugly duckling sign' refer to?"
+    back: "Urgent referral criteria (ABCDE): Asymmetry, Border irregularity, Color variation (multiple shades of brown, black, red, white, blue), Diameter >6 mm, Evolution (any changing lesion). The ugly duckling sign: a nevus that looks different from all the patient's other nevi — it stands out as the outlier. This sign has high sensitivity for melanoma detection, especially in patients with many nevi.\n\nThe Canadian Dermatology Association promotes the ugly duckling sign as a complement to ABCDE criteria. Dermoscopy performed by trained clinicians improves diagnostic accuracy by 10–30%. Any lesion with rapid change, new pigmentation, bleeding, or ulceration warrants excisional biopsy with 2 mm margins for histologic assessment. Shave biopsies should be avoided if melanoma is suspected to preserve Breslow depth measurement."
+    difficulty: easy
+    tags: [melanoma, ABCDE-criteria, ugly-duckling-sign, dermoscopy, skin-cancer-screening]
+  - front: "What is the Leser-Trelat sign and what malignancy should it raise concern for?"
+    back: "Leser-Trelat sign is the sudden appearance of multiple seborrheic keratoses, which can be a paraneoplastic phenomenon most commonly associated with gastric adenocarcinoma.\n\nAlthough seborrheic keratoses are individually benign, rapid eruptive appearance of many lesions should prompt investigation for internal malignancy, especially GI tract tumours."
+    difficulty: medium
+    tags: [dermatology, seborrheic keratosis, paraneoplastic, Leser-Trelat, gastric cancer]
+  - front: "What is the ABCDE rule for evaluating pigmented lesions, and when should excisional biopsy be considered?"
+    back: "ABCDE: Asymmetry, Border irregularity, Colour variation, Diameter >6 mm, Evolution (change). Excisional biopsy should be considered for rapid change, asymmetry, varied colours, irregular borders, persistent pain, or persistent bleeding.\n\nThe ABCDE criteria help identify melanoma risk in pigmented lesions. Any new or changing pigmented lesion warrants evaluation; excisional biopsy with narrow margins is preferred to ensure complete histological assessment."
+    difficulty: easy
+    tags: [dermatology, melanoma, ABCDE, biopsy, pigmented lesion]
+  - front: "What are congenital nevomelanocytic nevi (CNN) and what is their malignant transformation risk?"
+    back: "CNN (congenital hairy nevi): sharply demarcated pigmented papule/plaque with coarse hairs. Malignant transformation rate is 1–5% and correlates with lesion size. Giant CNN can cause neurocutaneous melanosis.\n\nCNN are classified by size: small (<1.5 cm), medium, large (>20 cm), and giant (>40 cm). Giant lesions carry the highest melanoma risk. MRI should be considered if neurological involvement is suspected."
+    difficulty: medium
+    tags: [dermatology, congenital nevus, melanoma risk, CNN]
+  - front: "What is an atypical (dysplastic) nevus and what is its clinical significance?"
+    back: "Atypical nevus: variegated macule/papule with irregular borders, distinct melanocytes in the basal layer. Five or more atypical nevi increases melanoma risk. Familial atypical mole and melanoma syndrome (FAMM) involves numerous dysplastic nevi.\n\nAtypical nevi require baseline photography, close surveillance, and whole-body skin examinations. Excisional biopsy is indicated if a lesion is changing or highly atypical. Family history of melanoma markedly increases risk."
+    difficulty: medium
+    tags: [dermatology, dysplastic nevus, atypical nevus, melanoma risk, FAMM]
+  - front: "What is xeroderma pigmentosum and what is its management?"
+    back: "Xeroderma pigmentosum: rare autosomal recessive disorder of DNA repair (nucleotide excision repair gene mutations), causing extreme UV sensitivity, blistering, xerosis, skin colour changes, high skin cancer risk, and possible neurological involvement. Management: strict sun avoidance, anticancer drugs (isotretinoin, fluorouracil) in adults.\n\nXeroderma pigmentosum patients have markedly elevated rates of skin malignancies (BCC, SCC, melanoma). UV damage is irreversible, making prevention the cornerstone of management."
+    difficulty: hard
+    tags: [dermatology, xeroderma pigmentosum, UV sensitivity, DNA repair, skin cancer]
+  - front: "What is the classification of Stevens-Johnson Syndrome (SJS) vs Toxic Epidermal Necrolysis (TEN) based on body surface area?"
+    back: "SJS: <10% BSA epidermal detachment; SJS/TEN overlap: 10-30% BSA; TEN: >30% BSA. Prognosis: 5% mortality in SJS, 30% in TEN.\n\nSJS/TEN are characterized by full-thickness epidermal loss, positive Nikolsky sign, mucosal erosions, and flaccid bullae. The SCORTEN score (age ≥40, malignancy, BSA ≥10%, tachycardia >120, urea >10 mmol, glucose >14, bicarbonate <20) predicts mortality."
+    difficulty: easy
+    tags: [Stevens-Johnson syndrome, SJS, TEN, toxic epidermal necrolysis, BSA, mortality]
+  - front: "What is the management of Stevens-Johnson Syndrome/Toxic Epidermal Necrolysis?"
+    back: "Discontinue offending drug, admit to intermediate/intensive care or burn unit, supportive care (IV fluids, electrolytes, nutrition, pain control, wound care, sterile handling, monitor for infection). Consider IVIg, cyclosporine, corticosteroids, or etanercept.\n\nEvidence suggests cyclosporine is most associated with survival benefit (OR 0.1; 95% CI 0.0-0.4). Glucocorticoids also showed benefit in systematic review. IVIg had no demonstrated benefit."
+    difficulty: medium
+    tags: [SJS, TEN, burn unit, cyclosporine, IVIg, supportive care]
+  - front: "What is the SCORTEN score and how does it predict mortality in TEN?"
+    back: "SCORTEN assigns one point each for: age ≥40, malignancy, BSA detached ≥10%, tachycardia >120 bpm, urea >10 mmol/L, glucose >14 mmol/L, bicarbonate <20 mmol/L. Score at admission predicts survival: 94% (score 0-1), 87% (score 2), 53% (score 3), 25% (score 4), 17% (score ≥5).\n\nSCORTEN is validated for predicting mortality in TEN and guides clinical management decisions including appropriate level of care. It can be used to determine whether patients should be treated in a burn unit."
+    difficulty: hard
+    tags: [SCORTEN, TEN, toxic epidermal necrolysis, prognosis, mortality prediction]
+  - front: "What are actinic keratoses (AK), and what is their risk of malignant transformation?"
+    back: "AK are ill-defined, scaly, erythematous papules/plaques on sun-damaged skin with a gritty 'sandpaper' texture. They result from UV (UVB) radiation damage and p53 mutation in keratinocytes. Risk of transformation to SCC: <1 in 1000 per year, but higher if persistent, immunosuppressed, or prior skin cancer.\n\nAK are pre-malignant lesions found on sun-exposed areas (face, helices, scalp, dorsal hands/forearms). Risk factors for progression to SCC include immunosuppression, history of skin cancer, and persistence of the lesion."
+    difficulty: easy
+    tags: [actinic keratosis, solar keratosis, pre-malignant, SCC, UV radiation]
+  - front: "What are the treatment options for actinic keratoses?"
+    back: "Destructive: cryotherapy, shave excision with curettage ± electrodesiccation. Topical: 5-fluorouracil cream (2–4 weeks), imiquimod 5% (twice weekly for 16 weeks), diclofenac sodium 3% (BID for 90 days), tirbanibulin 1% (once daily for 5 days). Other: photodynamic therapy, chemical peels (TCA, phenol), laser resurfacing, excision.\n\nCochrane review found cryotherapy, diclofenac, 5-fluorouracil, imiquimod, ingenol mebutate, photodynamic therapy, and TCA peels all effective. Photodynamic therapy and imiquimod had better cosmetic outcomes."
+    difficulty: medium
+    tags: [actinic keratosis, treatment, 5-fluorouracil, imiquimod, cryotherapy]
+  - front: "What is leukoplakia and what are its risk factors and significance?"
+    back: "A morphologic term for homogeneous or speckled white plaques with sharply demarcated borders on the oropharynx (floor of mouth, soft palate, ventral/lateral tongue). It is precancerous and can progress to oral SCC. Strongly associated with tobacco use and alcohol consumption.\n\nLeukoplakia has 1–5% prevalence in adults >30 years; M>F, fair-skinned; most common oral mucosal pre-malignant lesion. Low-risk lesions require elimination of carcinogens and follow-up; moderate/dysplastic lesions require excision or cryotherapy. Biopsy is mandatory."
+    difficulty: easy
+    tags: [leukoplakia, oral cancer, pre-malignant, tobacco, SCC]
+  - front: "What is the most common type of skin cancer in humans, and what are its subtypes?"
+    back: "Basal cell carcinoma (BCC) — most common malignancy in humans (75% of malignant skin tumours in >40 year-olds). Subtypes: (1) Nodular BCC (most common): pearly, telangiectatic rolled border with central ulceration. (2) Pigmented BCC: pigment in translucent lesion, mimics melanoma. (3) Superficial BCC: least aggressive. (4) Morpheaform/sclerosing BCC: flesh/yellow shiny plaque with indistinct borders, most aggressive.\n\nBCC arises from malignant proliferation of basal keratinocytes. It is locally aggressive but rarely metastatic. Over 80% occur on sun-exposed sites, with a latency of 20–50 years between UV damage and BCC onset. Risk factors include male sex, skin phototypes I–II, and arsenic exposure."
+    difficulty: easy
+    tags: [basal cell carcinoma, BCC, skin cancer, nonmelanoma, dermatology]
+  - front: "When is Mohs surgery indicated and what are its advantages?"
+    back: "Mohs surgery is indicated for BCC and SCC on the face or in areas difficult to reconstruct; can also be considered for lentigo maligna and melanoma in situ. Advantages: highest cure rate, best cosmetic results, preserves healthy skin tissue, provides immediate margin control.\n\nMohs surgery is expensive and resource-intensive. For BCC <2 cm treated early, the overall cure rate is 95%. Traditional excision, electrodesiccation/curettage, and cryotherapy are other options for appropriate lesions."
+    difficulty: medium
+    tags: [Mohs surgery, BCC, SCC, skin cancer treatment, dermatology]
+  - front: "What systemic agents are used for metastatic basal cell carcinoma and squamous cell carcinoma?"
+    back: "Vismodegib: for metastatic BCC and Gorlin Syndrome (multiple BCCs); side effects include muscle spasms, hair loss, abnormal taste, weight loss, nausea, amenorrhea. Cemiplimab: for metastatic SCC and metastatic BCC refractory to vismodegib; side effects include musculoskeletal pain, fatigue, nausea.\n\nVismodegib is a hedgehog pathway inhibitor. Gorlin Syndrome (basal cell nevus syndrome) is a genetic predisposition to multiple BCCs. Cemiplimab is a PD-1 checkpoint inhibitor."
+    difficulty: hard
+    tags: [BCC, SCC, vismodegib, cemiplimab, metastatic skin cancer]
+  - front: "What is Bowen's disease and how does it differ from invasive SCC?"
+    back: "Bowen's disease is squamous cell carcinoma in situ — a sharply demarcated erythematous patch/thin plaque with scale/crusting, typically 1–3 cm. It is confined to the epidermis. It evolves to invasive SCC in 10–20% of cutaneous lesions and >20% of mucosal lesions.\n\nBowen's disease is treated similarly to superficial BCC — options include topical imiquimod, cryotherapy, 5-fluorouracil, and electrodesiccation/curettage. Progression to invasive SCC involves breach of the basement membrane."
+    difficulty: medium
+    tags: [Bowens disease, SCC in situ, squamous cell carcinoma, skin cancer, dermatology]
+  - front: "What are the clinical features and prognosis of squamous cell carcinoma (SCC) of the skin?"
+    back: "Hyperkeratotic, indurated pink/red papule/plaque/nodule with surface scale/crust ± ulceration on sun-exposed sites (face, ears, scalp, forearms, dorsum of hands). More rapid enlargement than BCC. Rate of metastasis: 2–5%. Higher risk if diameter >2 cm, depth >2 mm, recurrent, involving bone/muscle/nerve, on scalp/ears/nose/lips, immunosuppressed, or arising from scar/chronic ulcer.\n\nSCC is the second most common cutaneous neoplasm in less-pigmented skin types and the most common in immunocompromised patients (e.g., organ transplant recipients). Risk factors include UV radiation, HPV 16/18, arsenic, and chronic inflammation (discoid lupus, hidradenitis suppurativa)."
+    difficulty: medium
+    tags: [squamous cell carcinoma, SCC, skin cancer, metastasis, dermatology]
+  - front: "What are the clinical features of keratoacanthoma and how is it managed?"
+    back: "Rapidly growing, firm, dome-shaped, erythematous or skin-coloured volcano-like nodule with a central keratin-filled crater on sun-exposed skin; may spontaneously regress. Considered a low-grade variant of SCC; treat as SCC until proven otherwise. Management: surgical excision or saucerization (shave biopsy) with electrodesiccation of the base, or intralesional methotrexate/5-fluorouracil injection.\n\nKeratoacanthoma is an epithelial neoplasm with atypical keratinocytes, most common in adults >50 years. Etiology includes HPV, UV radiation, and chemical carcinogens (tar, mineral oil). It must be differentiated from nodular BCC, MCC, and SCC."
+    difficulty: medium
+    tags: [keratoacanthoma, SCC, skin cancer, volcano nodule, dermatology]
+  - front: "What is the ABCDE mnemonic for recognizing malignant melanoma?"
+    back: "A — Asymmetry. B — Border (irregular and/or indistinct). C — Colour (varied). D — Diameter (increasing or >6 mm). E — Evolution (change in colour, size, or shape). Sensitivity 92%, specificity 100% for distinguishing melanoma from benign moles.\n\nApproximately 2/3 of melanomas arise de novo without a pre-existing nevus. Dermoscopic features and the ABCDE criteria aid clinical diagnosis. Excisional biopsy is preferred for histologic confirmation."
+    difficulty: easy
+    tags: [melanoma, ABCDE, skin cancer, diagnosis, dermatology]
+  - front: "What are the clinical subtypes of malignant melanoma listed from most to least common?"
+    back: "1) Superficial spreading melanoma (60–70%): lateral spread in epidermis then dermis; irregular indurated enlarging plaque. 2) Nodular melanoma (15–30%): vertical growth, blue-black nodule, rapidly fatal; EFG = elevated, firm, growing. 3) Lentigo maligna / lentigo maligna melanoma (5–15%): elderly, flat brown macule expanding radially. 4) Acral lentiginous melanoma (5–10%): palmar, plantar, subungual; most common in Type 6 skin. 5) Amelanotic melanoma (2–8%): pink/red, no pigment, often delayed diagnosis.\n\nSuperficial spreading melanoma is most likely associated with a pre-existing nevus. Nodular melanoma may present as amelanotic (pink). Acral lentiginous melanoma is the most common subtype in patients with darker skin types and has poor prognosis on mucous membranes."
+    difficulty: medium
+    tags: [melanoma, subtypes, superficial spreading, nodular melanoma, acral lentiginous]
+  - front: "What are the risk factors for malignant melanoma?"
+    back: "Sun exposure (sunburns), tanning beds, fair skin/blue eyes/red or fair hair, freckling, immunosuppression (e.g., renal transplantation), dysplastic nevi, >50 common nevi, large congenital nevi (>20 cm), familial dysplastic nevus syndrome, positive personal/family history of melanoma, increasing age.\n\nIn Canada, melanoma occurs in approximately 1 in 75 individuals. Most common sites are the back in men and calves in women. Worse prognosis is associated with male sex, scalp/hand/foot location, late lesion, and absence of pre-existing nevus."
+    difficulty: easy
+    tags: [melanoma, risk factors, tanning beds, dysplastic nevi, dermatology]
+  - front: "How is malignant melanoma managed surgically?"
+    back: "Excisional biopsy is preferred (margin determined by Breslow depth); otherwise incisional biopsy. Full depth of dermis must be removed, extending beyond edges of lesion after histologic diagnosis. Sentinel lymph node biopsy is assessed at time of wide excision. Sentinel lymph node dissection is controversial.\n\nSentinel lymph node biopsy is offered to patients with stage IB or higher melanoma (>1 mm Breslow thickness OR 0.8–1 mm with ulceration OR any thickness with ulceration). Lesions that appear to regress may be deeper than anticipated."
+    difficulty: hard
+    tags: [melanoma, excision, sentinel lymph node, Breslow depth, surgery]
+  - front: "What is the 'EFG' mnemonic used for in dermatology and what does it represent?"
+    back: "EFG stands for Elevated, Firm, Growing — a mnemonic for nodular melanoma, which is the subtype that grows primarily vertically with little lateral spread. Nodular melanoma is uniformly ulcerated, blue-black, and rapidly fatal, but may be amelanotic (pink).\n\nNodular melanoma accounts for 15–30% of all melanomas. Because it lacks the classic ABCDE features initially, the EFG mnemonic helps identify this rapidly growing variant before extensive invasion occurs."
+    difficulty: medium
+    tags: [nodular melanoma, EFG, melanoma, diagnosis, dermatology]
+  - front: "What are the indications, dosing schedule, and key adverse effects of imiquimod 5% cream (Aldara®)?"
+    back: "Imiquimod 5% cream is applied 3x/week overnight (6–10 h then wash off) for up to 16 weeks. Indications include genital warts, cutaneous warts, actinic keratosis (AK), and superficial basal cell carcinoma (BCC). Side effects include local erythema, ulceration, edema, and flu-like symptoms.\n\nImiquimod is an immune response modifier (toll-like receptor 7 agonist) that induces local cytokine production; it works best on mucosal warts. Patients should avoid natural/artificial UV exposure during treatment."
+    difficulty: easy
+    tags: [imiquimod, genital warts, actinic keratosis, BCC, topical immunomodulator]
+  - front: "What did the BRIM-3 trial demonstrate about vemurafenib in metastatic melanoma, and what mutation must be present?"
+    back: "BRIM-3 (NEJM 2011) showed that vemurafenib, a BRAF kinase inhibitor, improved overall survival (84% vs. 64% at 6 months) and progression-free survival compared to dacarbazine in patients with untreated metastatic melanoma with BRAF V600E mutation. Vemurafenib reduced risk of death by 63%. Common adverse events: arthralgia, rash, alopecia, keratoacanthoma, photosensitivity.\n\nBRAF V600E mutation must be confirmed before vemurafenib is used. This was a landmark trial establishing targeted therapy as superior to chemotherapy in BRAF-mutated metastatic melanoma. Keratoacanthomas and cutaneous SCCs can arise during vemurafenib therapy."
+    difficulty: hard
+    tags: [vemurafenib, BRAF V600E, melanoma, targeted therapy, BRIM-3]
+  - front: "What was demonstrated in the landmark ipilimumab trial (NCT00094653) for metastatic melanoma?"
+    back: "In this NEJM 2010 trial of 676 HLA-A*0201-positive patients with unresectable stage III/IV melanoma, ipilimumab ± gp100 vaccine showed median survival of 10–10.1 months vs. 6.4 months with gp100 alone. Grade 3–4 immune-related adverse events occurred in 10–15% of ipilimumab-treated patients.\n\nIpilimumab is a CTLA-4 blocking antibody that enhances anti-tumour immune responses. This was the first agent to demonstrate improved overall survival in metastatic melanoma and established checkpoint inhibition as a therapeutic strategy."
+    difficulty: hard
+    tags: [ipilimumab, CTLA-4, melanoma, checkpoint inhibitor, immunotherapy]
+  - front: "What did the RELATIVITY-047 trial establish about dual checkpoint blockade in untreated advanced melanoma?"
+    back: "RELATIVITY-047 (NEJM 2022) showed that relatlimab (LAG-3 inhibitor) plus nivolumab (PD-1 inhibitor) achieved median progression-free survival of 10.1 months vs. 4.6 months with nivolumab alone (HR 0.75, p=0.006) in previously untreated stage III/IV melanoma.\n\nLAG-3 is an immune checkpoint that, when combined with PD-1 blockade, produces additive immunostimulatory effects. This trial established dual checkpoint inhibition as a new standard of care for advanced melanoma, superior to single-agent PD-1 blockade."
+    difficulty: hard
+    tags: [relatlimab, nivolumab, LAG-3, PD-1, melanoma]
+  - front: "In the NCT03698019 trial, what did neoadjuvant-adjuvant pembrolizumab show for resectable advanced melanoma?"
+    back: "NCT03698019 (NEJM 2023) in patients with resectable stage IIIB–IVC melanoma (n=313) showed event-free survival of 72% (neoadjuvant-adjuvant pembrolizumab) vs. 49% (adjuvant-only pembrolizumab) at follow-up (p=0.004). Neoadjuvant + adjuvant PD-1 blockade was superior to adjuvant therapy alone.\n\nPembrolizumab (anti-PD-1) given before and after surgery for resectable advanced melanoma produces greater event-free survival than post-surgical therapy alone, likely by priming the immune response to micrometastatic disease present at surgery."
+    difficulty: hard
+    tags: [pembrolizumab, neoadjuvant, melanoma, PD-1, event-free survival]
+  - front: "What is the AJCC staging and approximate 5-year survival for melanoma with Breslow thickness <1.0 mm (no ulceration)?"
+    back: "Stage I (T1a-T2a); approximately 90% 5-year survival.\n\nBreslow thickness is the most important prognostic factor in melanoma. Thin (<1 mm) non-ulcerated melanomas have an excellent prognosis with 5-year survival ~90%."
+    difficulty: easy
+    tags: [melanoma, staging, Breslow, prognosis]
+  - front: "What is the approximate 5-year survival for Stage IV melanoma (any metastases, T4 >4.0 mm)?"
+    back: "Approximately 10% 5-year survival.\n\nStage IV melanoma with distant metastases carries a very poor prognosis (~10% 5-year survival). Systemic therapies including immunotherapy (anti-PD1, anti-CTLA-4) and BRAF inhibitors have improved outcomes in recent years."
+    difficulty: easy
+    tags: [melanoma, staging, prognosis, metastatic]
+  - front: "Which targeted therapy is used for unresectable or metastatic melanoma with a BRAF V600E mutation?"
+    back: "BRAF inhibitors such as vemurafenib (small molecule targeted therapy).\n\nBRAF V600E mutations occur in ~50% of melanomas. Targeted BRAF inhibitors provide significant tumour response but are limited to patients with confirmed BRAF mutations."
+    difficulty: medium
+    tags: [melanoma, BRAF, targeted therapy, vemurafenib]
+  - front: "What immunotherapy agents are used for unresectable/metastatic melanoma?"
+    back: "Anti-CTLA-4 (ipilimumab), anti-PD1 agents (nivolumab, pembrolizumab), and high-dose IFN.\n\nImmune checkpoint inhibitors targeting CTLA-4 and PD-1 pathways have revolutionized treatment of advanced melanoma, improving durable response rates and overall survival."
+    difficulty: medium
+    tags: [melanoma, immunotherapy, checkpoint inhibitors, ipilimumab, pembrolizumab]
+  - front: "What virus causes Kaposi sarcoma, and what are the 4 clinical types?"
+    back: "Human herpesvirus 8 (HHV-8). The 4 types are: classical (Mediterranean older adults), endemic (sub-Saharan Africa), iatrogenic (immunosuppression/renal transplant), and AIDS-related.\n\nKaposi sarcoma is an angioproliferative neoplasm requiring HHV-8 infection. AIDS-related KS is the most aggressive form and is an AIDS-defining illness."
+    difficulty: medium
+    tags: [Kaposi sarcoma, HHV-8, HIV, AIDS]
+  - front: "Describe the typical skin lesions of Kaposi sarcoma."
+    back: "Purplish, reddish-blue, or dark brown/black macules, plaques, and nodules; typically on distal extremities; can ulcerate and bleed; also affects GI tract and lymphatics causing lymphedema.\n\nKS lesions are vascular in origin. Diagnosis is confirmed by biopsy and HHV-8 PCR. Treatment varies by extent — superficial lesions may be treated locally; systemic disease requires radiation or chemotherapy."
+    difficulty: easy
+    tags: [Kaposi sarcoma, skin lesions, HIV]
+  - front: "What are the causes and distinguishing features of Stevens-Johnson Syndrome (SJS) vs. Toxic Epidermal Necrolysis (TEN)?"
+    back: "Both caused by drugs (phenytoin, sulfas, penicillins, NSAIDs), bone marrow transplantation, or blood transfusions. SJS: <10% BSA involvement. SJS/TEN overlap: 10-30% BSA. TEN: >30% BSA. Both show diffuse erythema, necrosis, severe mucous membrane involvement, and entire epidermis desquamation. TEN mortality >50%.\n\nSJS and TEN are severe mucocutaneous reactions predominantly drug-induced (onset usually 1-3 weeks after starting causative drug). Key management: stop precipitating medication, fluid resuscitation, wound care. Early transfer to burn centre improves outcomes. Corticosteroids are controversial (may increase infection risk)."
+    difficulty: medium
+    tags: [SJS, TEN, Stevens-Johnson, toxic epidermal necrolysis, drug reaction, dermatology]

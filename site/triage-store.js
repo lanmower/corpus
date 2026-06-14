@@ -1,12 +1,13 @@
 // Shared reader for the triage session store (corpus.triage.v1). triage-live.js
+import { skey } from './syllabus.js';
 // owns the writes; every other page (home-page case counts in app.js) reads
 // through this module so the schema normalization lives in exactly one place.
-export const PERSIST_KEY = 'corpus.triage.v1';
+export const PERSIST_KEY = () => skey('triage.v1');
 export const SCHEMA_VERSION = 1;
 
 export function readSessions() {
     try {
-        const raw = localStorage.getItem(PERSIST_KEY);
+        const raw = localStorage.getItem(PERSIST_KEY());
         if (!raw) return { sessions: {}, streak: 0 };
         const obj = JSON.parse(raw);
         if (obj && obj.version === SCHEMA_VERSION && obj.sessions && typeof obj.sessions === 'object' && !Array.isArray(obj.sessions)) {

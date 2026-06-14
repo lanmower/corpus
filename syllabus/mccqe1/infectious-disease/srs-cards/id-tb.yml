@@ -1,0 +1,94 @@
+# Tuberculosis (InfectiousDisease) - generated from srs-mccqe1
+cards:
+  - front: "A 35-year-old immigrant from a TB-endemic country has a positive IGRA (QuantiFERON-TB Gold). CXR is normal. No symptoms. What is the diagnosis and management?"
+    back: "Latent TB infection (LTBI); treat with isoniazid 9 months (INH 9H) or rifampin 4 months (RIF 4R) or isoniazid + rifapentine (1HP) once weekly x12 weeks (DOTS)\n\nAMMI Canada and CATSS guidelines recommend LTBI treatment for all immunocompetent adults <50 years with positive IGRA/TST. Rifampin 4 months (4R) has equivalent efficacy to INH 9 months with better completion rates. INH requires pyridoxine to prevent peripheral neuropathy."
+    difficulty: medium
+    tags: [LTBI, latent TB, isoniazid, IGRA, tuberculosis, infectious disease]
+  - front: "A 40-year-old with productive cough, hemoptysis, weight loss, and night sweats for 3 months. CXR shows upper lobe cavitation. AFB smear is positive. Diagnosis and initial treatment?"
+    back: "Active pulmonary tuberculosis; initiate 4-drug therapy: RIPE (Rifampin + Isoniazid + Pyrazinamide + Ethambutol) for 2 months, then Rifampin + Isoniazid for 4 months (total 6 months)\n\nAMMI Canada TB guidelines recommend standard 6-month DOTS therapy (directly observed therapy short-course). RIPE initiation phase x2 months, followed by 4-month RI continuation phase. Drug sensitivity testing guides modifications. Isolate patient in negative-pressure room during infectious period."
+    difficulty: hard
+    tags: [active tuberculosis, RIPE, directly observed therapy, pulmonary TB, infectious disease]
+  - front: "What is the role of drug susceptibility testing (DST) in TB management?"
+    back: "All initial Mycobacterium tuberculosis isolates should have DST performed; guides treatment modifications; MDR-TB (resistant to INH + RIF) requires specialized regimens\n\nMDR-TB (multidrug-resistant) requires 18-20+ month treatment with second-line drugs. XDR-TB additionally resistant to fluoroquinolones and second-line injectables. Bedaquiline, linezolid, and pretomanid are newer agents for MDR-TB. All TB in Canada is reportable."
+    difficulty: medium
+    tags: [MDR-TB, drug susceptibility, DST, tuberculosis treatment, infectious disease]
+  - front: "What are the side effects of isoniazid (INH) and how are they monitored?"
+    back: "Peripheral neuropathy (prevented by pyridoxine 25-50mg/day), hepatotoxicity (hold if ALT >3-5x ULN), drug-induced lupus\n\nINH hepatotoxicity risk increases with age, alcohol use, and pre-existing liver disease. Monitor LFTs monthly in patients at risk. INH inhibits CYP2E1 and is a MAO inhibitor — dietary interactions (tyramine). INH inhibits metabolism of phenytoin and warfarin."
+    difficulty: medium
+    tags: [isoniazid side effects, INH hepatotoxicity, pyridoxine, tuberculosis treatment, infectious disease]
+  - front: "A patient with HIV and CD4 count 80 cells/μL is diagnosed with active TB. When should ART be initiated?"
+    back: "Start ART within 2-8 weeks of starting TB therapy (regardless of CD4 count) — early ART reduces mortality in HIV/TB co-infection\n\nAMMI Canada guidelines recommend early ART in HIV-TB co-infection (SAPIT trial). Exception: CD4 >50 and extrapulmonary TB other than meningitis — can delay 8 weeks. TB meningitis: delay ART 8 weeks due to higher IRIS risk (worsens mortality). Rifampin induces CYP3A4 — dose-adjust certain ARVs."
+    difficulty: hard
+    tags: [HIV TB co-infection, ART timing, IRIS, rifampin, infectious disease]
+  - front: "How is TB infection diagnosed in Canada — when to use TST vs. IGRA?"
+    back: "IGRA (QuantiFERON-TB Gold, T-SPOT.TB) preferred for: BCG-vaccinated, immunocompromised; TST (tuberculin skin test) preferred for: children <5, prior positive IGRA; either acceptable for most adults\n\nCATSS/AMMI guidelines recommend IGRA over TST in BCG-vaccinated individuals as BCG causes false-positive TST. IGRA is also preferred in immunocompromised patients. Two-step TST used in healthcare worker surveillance programs."
+    difficulty: easy
+    tags: [IGRA, TST, TB testing, BCG, tuberculosis, infectious disease]
+  - front: "What are the public health obligations when a new case of active TB is identified?"
+    back: "Mandatory reporting to public health within 24h; contact investigation to identify exposed individuals; LTBI testing and treatment for close contacts; DOT (directly observed therapy) for high-risk patients\n\nAMMI Canada and PHAC guidelines require that all active TB cases be reported to the local health unit. Contact investigations use the concentric-circle approach. Priority contacts: household, close contacts. High-risk contacts (children <5, immunocompromised) receive LTBI prophylaxis."
+    difficulty: medium
+    tags: [TB public health, mandatory reporting, contact investigation, DOT, infectious disease]
+  - front: "What radiographic findings are typical of primary vs. post-primary (reactivation) TB?"
+    back: "Primary: lower or mid-lobe consolidation, hilar lymphadenopathy, pleural effusion; Reactivation: upper lobe cavitation, fibrosis, calcified nodules (Ghon complex)\n\nPrimary TB occurs with initial infection — lymphadenopathy and lower lobe infiltrate from haematogenous spread. Reactivation TB: upper lobe predilection (high O2 tension) with classic cavitation and apical scarring. Miliary TB: hematogenous dissemination, diffuse 1-2mm nodules."
+    difficulty: medium
+    tags: [TB radiology, primary TB, reactivation TB, cavitation, infectious disease]
+  - front: "What is extensively drug-resistant TB (XDR-TB) and what treatment options exist?"
+    back: "XDR-TB: MDR-TB + resistance to fluoroquinolones; newer regimens: BPaL (bedaquiline + pretomanid + linezolid) — ~90% treatment success in clinical trials (ZeNix, TB-PRACTECAL trials)\n\nXDR-TB was previously almost untreatable. BPaL regimen (ZeNix trial) showed 90% success at 26 weeks — revolutionizing MDR/XDR-TB treatment. Bedaquiline + delamanid combinations also used. All cases require specialized MDR-TB centres for management."
+    difficulty: hard
+    tags: [XDR-TB, MDR-TB, bedaquiline, BPaL, pretomanid, infectious disease]
+  - front: "What are the indications for LTBI treatment in immunocompromised patients in Canada?"
+    back: "All HIV-positive patients (regardless of IGRA/TST result if from endemic country), patients starting anti-TNF therapy, organ transplant recipients, patients starting high-dose steroids — treat LTBI before immunosuppression when possible\n\nCATSS guidelines recommend LTBI testing and treatment before biologic therapies (especially anti-TNF). TNF inhibitors increase TB reactivation risk 5-25 fold. Repeat LTBI testing annually in high-risk groups. Rifampin preferred over INH when on biologic therapy (shorter duration)."
+    difficulty: hard
+    tags: [LTBI treatment, immunocompromised, anti-TNF, HIV, tuberculosis, infectious disease]
+  - front: "What is standard TB treatment?"
+    back: "2 months RIPE then 4 months RI. Total 6 months. DOT recommended\n\nINH: hepatotoxicity, neuropathy (give B6). Rifampin: CYP450 inducer, orange secretions."
+    difficulty: medium
+    tags: [TB, RIPE]
+  - front: "What is the standard treatment regimen for active pulmonary TB?"
+    back: "Intensive phase: 2 months of RIPE (rifampin + isoniazid + pyrazinamide + ethambutol). Continuation phase: 4 months of rifampin + isoniazid. Total: 6 months. DOT (directly observed therapy) recommended for all.\n\nCanadian Tuberculosis Standards recommend DOT. Add pyridoxine (vitamin B6) 25-50 mg daily with INH to prevent peripheral neuropathy. Monitor LFTs monthly (INH, RIF, PZA all hepatotoxic). Ethambutol: baseline and monthly visual acuity/color vision (optic neuritis). Extend to 9 months if cavitary disease + 2-month culture-positive."
+    difficulty: hard
+    tags: [TB, RIPE, treatment, DOT, rifampin, isoniazid, ID]
+  - front: "What is latent TB infection (LTBI) and how is it treated?"
+    back: "Positive TST (≥5mm, ≥10mm, or any induration depending on risk) or positive IGRA with no clinical/radiographic active TB. Treatment options: isoniazid 9 months daily, rifampin 4 months daily (preferred for INH-resistant or INH intolerance), or isoniazid+rifapentine weekly × 12 weeks (3HP).\n\nCanadian TB Standards: TST ≥5mm positive in HIV, close contacts, immunosuppressed, fibronodular CXR. ≥10mm for other risk groups (recent immigrants <5 yr, healthcare workers, homeless, PWID). Rifampin 4 months has best completion rates and fewer hepatotoxic events than 9-month INH. 3HP (DOT or self-administered) increasingly preferred."
+    difficulty: hard
+    tags: [TB, LTBI, TST, IGRA, isoniazid, rifampin, prophylaxis, ID]
+  - front: "What infection control measures are required for suspected active pulmonary TB?"
+    back: "Airborne precautions: negative pressure isolation room, N95 respirator for HCWs, surgical mask on patient during transport. 3 negative sputum AFB smears (8-24h apart, at least one early morning) to discontinue isolation. Report to public health.\n\nTB is transmitted via aerosolized droplet nuclei (1-5 μm). Contact tracing is public health responsibility. Smear-positive patients are most infectious. Smear-negative but culture-positive patients are less infectious but can still transmit. Respiratory isolation until: 3 negative smears AND clinically improving AND on effective therapy for ≥2 weeks."
+    difficulty: medium
+    tags: [TB, infection control, airborne, N95, isolation, ID]
+  - front: "What are the side effects of anti-TB medications?"
+    back: "INH: hepatotoxicity (#1), peripheral neuropathy (prevent with B6), drug-induced lupus. RIF: hepatotoxicity, orange discoloration (fluids), drug interactions (CYP inducer — reduces warfarin, OCPs, antiretrovirals). PZA: hepatotoxicity, hyperuricemia, arthralgias. EMB: optic neuritis (dose-dependent, reversible).\n\nINH hepatotoxicity increases with age, alcohol, and concurrent rifampin. Monitor ALT monthly; stop if >3× ULN with symptoms or >5× ULN asymptomatic. Rifampin: most important drug interactions — induces CYP3A4, 2C9, etc. Reduces efficacy of OCPs (advise alternative contraception), warfarin, PIs, methadone. Rifabutin used instead with certain ARTs."
+    difficulty: hard
+    tags: [TB, side effects, INH, rifampin, hepatotoxicity, drug interactions, ID]
+  - front: "When should TB be suspected and what is the diagnostic workup?"
+    back: "Suspect if: cough >2-3 weeks, night sweats, weight loss, hemoptysis, fever, especially in high-risk groups (immigrants from endemic areas, Indigenous communities, homeless, HIV+, immunosuppressed). Workup: CXR, 3 sputum samples for AFB smear + culture + NAAT (GeneXpert MTB/RIF), TST or IGRA.\n\nCXR findings: upper lobe cavities (reactivation), miliary pattern (disseminated), hilar LAD + Ghon complex (primary). GeneXpert MTB/RIF provides rapid diagnosis + rifampin resistance detection in 2 hours. Culture remains gold standard (drug susceptibility testing). Induced sputum or bronchoscopy if unable to produce spontaneous sputum."
+    difficulty: medium
+    tags: [TB, diagnosis, CXR, GeneXpert, sputum, AFB, ID]
+  - front: "What is the approach to TB-HIV coinfection?"
+    back: "Start ART for all TB-HIV patients. Timing: start ART within 2 weeks if CD4 <50; within 8 weeks if CD4 ≥50 (delay reduces IRIS). Preferred ART: dolutegravir (dose-adjusted with rifampin: 50 mg BID) or efavirenz. Avoid PIs with rifampin (use rifabutin instead).\n\nTB-HIV: higher mortality, higher risk of extrapulmonary TB, atypical CXR (lower lobe, miliary, non-cavitary). Sputum may be smear-negative more often. IRIS occurs in 10-40% of TB-HIV patients starting ART. Paradoxical TB-IRIS: worsening symptoms despite good ART/TB treatment response — usually self-limited, steroids for severe cases."
+    difficulty: hard
+    tags: [TB, HIV, coinfection, ART, IRIS, rifampin, ID]
+  - front: "What populations in Canada are at highest risk for TB?"
+    back: "Indigenous peoples (especially Inuit: 300× higher incidence), foreign-born from high-incidence countries, homeless/underhoused, incarcerated, HIV+, immunosuppressed (anti-TNF therapy, transplant), people living in congregate settings.\n\nCanada's overall TB incidence is ~5/100,000 but rates are extremely disparate. Inuit TB rates are among highest in developed world. Determinants include overcrowding, food insecurity, barriers to healthcare access, and historical colonization impacts. TB elimination requires addressing social determinants alongside biomedical interventions."
+    difficulty: medium
+    tags: [TB, Canada, Indigenous, epidemiology, social determinants, ID]
+  - front: "What is multidrug-resistant TB (MDR-TB)?"
+    back: "MDR-TB: resistant to at least INH + rifampin. XDR-TB: MDR + resistance to any fluoroquinolone + at least one injectable (amikacin, capreomycin, kanamycin) — updated definition: MDR + FQ resistance + bedaquiline/linezolid resistance. Treat with ≥4 effective drugs for 9-20 months including bedaquiline, linezolid, fluoroquinolone.\n\nSuspect MDR-TB if: prior TB treatment, contact with MDR case, origin from high MDR-prevalence region (Eastern Europe, Central Asia). GeneXpert detects rifampin resistance rapidly. MDR-TB requires specialized centres. New drugs (bedaquiline, pretomanid, delamanid) have improved outcomes. BPaL regimen (bedaquiline, pretomanid, linezolid) for XDR-TB."
+    difficulty: hard
+    tags: [TB, MDR, XDR, bedaquiline, resistance, ID]
+  - front: "What are the forms of extrapulmonary TB?"
+    back: "Lymph node (most common extrapulmonary in Canada), pleural, skeletal (Pott disease = vertebral), genitourinary, meningeal, peritoneal, miliary (disseminated), pericardial. Treatment: same RIPE regimen but extend to 9-12 months for CNS TB and bone/joint TB.\n\nExtrapulmonary TB more common in immunocompromised (HIV) and children. TB meningitis: add dexamethasone (reduces mortality and neurological complications). CSF: lymphocytic pleocytosis, high protein, low glucose (similar to fungal). Tissue biopsy showing caseating granulomas + AFB is diagnostic. Pott disease: vertebral body destruction with paraspinal abscess."
+    difficulty: hard
+    tags: [TB, extrapulmonary, meningitis, Pott disease, miliary, ID]
+  - front: "When should LTBI treatment be offered vs deferred?"
+    back: "Treat LTBI if: HIV+, close contact of active case, immunosuppressed (starting anti-TNF, transplant), fibronodular changes on CXR (old untreated TB), recent TST conversion (<2 years). Defer/observe if: low reactivation risk, prior complete treatment, concerns about hepatotoxicity in elderly.\n\nDecision: weigh reactivation risk vs treatment toxicity. High reactivation risk (HIV, recent conversion, immunosuppression): treat. Low risk (remote infection, elderly, liver disease): shared decision. All anti-TNF candidates must be screened and treated for LTBI before starting biologic (2 months of treatment before anti-TNF). Canadian TB Standards guide risk stratification."
+    difficulty: hard
+    tags: [TB, LTBI, treatment, anti-TNF, risk stratification, ID]
+  - front: "A patient on rifampin for tuberculosis treatment has a subtherapeutic INR despite being on warfarin. Why?"
+    back: "Rifampin is a potent inducer of CYP enzymes (especially CYP2C9), which accelerates warfarin metabolism, reducing plasma warfarin levels and anticoagulant effect.\n\nCYP enzyme induction is a pharmacokinetic interaction that increases drug clearance. Rifampin is one of the most potent known enzyme inducers and significantly reduces efficacy of warfarin and oral contraceptive pills."
+    difficulty: medium
+    tags: [drug interactions, rifampin, warfarin, CYP induction, pharmacokinetics, TB]
+  - front: "What is the PHE recommendation for TB screening in high-risk groups?"
+    back: "Mantoux skin testing (Grade A) for TB high-risk groups. INH prophylaxis for household contacts or skin test converters (Grade B), and INH prophylaxis for other high-risk subgroups (Grade B).\n\nTB screening with TST (Mantoux) targets high-risk groups: immigrants from endemic countries, homeless individuals, immunocompromised patients, close contacts of active TB cases, and healthcare workers. Positive TST in these groups warrants IGRA testing and/or treatment for latent TB infection to prevent reactivation."
+    difficulty: easy
+    tags: [TB, tuberculosis, TST, Mantoux, INH, preventive health, latent TB]

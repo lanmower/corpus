@@ -1,5 +1,6 @@
 // overall + per-subject progress. weighted: 0.4 cards + 0.3 sections + 0.2 cases + 0.1 mistakes
 import * as srs from './srs.js';
+import { skey } from './syllabus.js';
 
 // Canonical subject set is manifest.subjects (built from data/manifest.json).
 // Never hardcode the list here: a stale local copy silently drops subjects from
@@ -10,13 +11,13 @@ function manifestSubjects(manifest) {
 }
 
 function loadGuideTicks() {
-    try { return JSON.parse(localStorage.getItem('corpus.guide.v1') || '{}'); } catch { return {}; }
+    try { return JSON.parse(localStorage.getItem(skey('guide.v1')) || '{}'); } catch { return {}; }
 }
 function loadTriage() {
-    try { return JSON.parse(localStorage.getItem('corpus.triage.v1') || '{}'); } catch { return {}; }
+    try { return JSON.parse(localStorage.getItem(skey('triage.v1')) || '{}'); } catch { return {}; }
 }
 function loadMistakes() {
-    try { return JSON.parse(localStorage.getItem('corpus.mistakes.v1') || '[]'); } catch { return []; }
+    try { return JSON.parse(localStorage.getItem(skey('mistakes.v1')) || '[]'); } catch { return []; }
 }
 
 function cardMastered(state) {

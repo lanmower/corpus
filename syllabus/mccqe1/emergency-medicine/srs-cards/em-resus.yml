@@ -1,0 +1,450 @@
+# Resuscitation & Cardiac Arrest (EmergencyMedicine) - generated from srs-mccqe1
+cards:
+  - front: "A 55-year-old collapses in the ED. He is pulseless with VF on monitor. What are the immediate steps?"
+    back: "Immediately: start CPR (30:2), defibrillate (200J biphasic) as soon as defibrillator available, call for help; continue CPR 2 min, then rhythm check — ACLS algorithm\n\nAHA/ACLS guidelines (adopted by Canadian emergency medicine): high-quality CPR is the most important intervention. Minimize interruptions (<10 seconds). Defibrillation within 2 minutes for shockable rhythms (VF/pVT). After shock: immediately resume CPR for 2 min before rhythm check."
+    difficulty: hard
+    tags: [cardiac arrest, VF, defibrillation, CPR, emergency medicine]
+  - front: "What is the ACLS algorithm for VF/pulseless VT?"
+    back: "Defibrillate → CPR 2 min → rhythm check → if shockable: defibrillate → CPR 2 min → IV/IO epinephrine 1mg q3-5 min → after 3rd shock: amiodarone 300mg IV → continue cycle\n\nACLS 2020: epinephrine should be given as soon as IV/IO access is established (after 1st shock if available, or during CPR cycles). Amiodarone 300 mg after 3rd shock (second dose 150 mg), or lidocaine as alternative. Avoid prolonged interruptions."
+    difficulty: medium
+    tags: [VF, pulseless VT, ACLS, amiodarone, epinephrine, emergency medicine]
+  - front: "What is the ACLS algorithm for PEA (pulseless electrical activity) and asystole?"
+    back: "CPR + IV epinephrine 1mg q3-5 min (no shock — non-shockable); search for and treat reversible causes (5Hs + 5Ts)\n\n5Hs: Hypovolemia, Hypoxia, Hydrogen ions (acidosis), Hypo/hyperkalemia, Hypothermia; 5Ts: Tamponade, Tension pneumothorax, Thrombosis (PE or MI), Toxins, Trauma — identification and treatment of reversible causes is the key to ROSC in PEA/asystole."
+    difficulty: medium
+    tags: [PEA, asystole, ACLS, 5H5T, reversible causes, emergency medicine]
+  - front: "What are the components of high-quality CPR?"
+    back: "Rate 100-120/min, depth 5-6 cm (adults), full chest recoil between compressions, minimize interruptions (<10 sec), avoid hyperventilation (10 breaths/min with advanced airway), rotate compressors every 2 min to prevent fatigue\n\nACLS 2020 guidelines: compression fraction >60% (time chest compressed during CPR). Avoid pausing CPR for rhythm check beyond 10 seconds. Switch compressors every 2 minutes. Continuous waveform capnography: ETCO2 <10 mmHg indicates poor CPR quality."
+    difficulty: easy
+    tags: [high-quality CPR, chest compressions, ACLS guidelines, compression depth, emergency medicine]
+  - front: "What is ETCO2 monitoring and how is it used during cardiac arrest?"
+    back: "End-tidal CO2 (ETCO2): measures exhaled CO2; during CPR reflects cardiac output; ETCO2 <10 mmHg = poor CPR quality; ETCO2 sudden spike to >40 mmHg = ROSC; persistent ETCO2 <10 mmHg after 20 min = poor prognosis\n\nACLS 2020: continuous ETCO2 monitoring recommended during CPR. Used to assess CPR quality, confirm ET tube placement, and identify ROSC. ETCO2 can guide the decision to terminate resuscitation (controversial — other factors must be considered)."
+    difficulty: medium
+    tags: [ETCO2, capnography, cardiac arrest monitoring, ROSC, emergency medicine]
+  - front: "A patient achieves ROSC after cardiac arrest. What is the immediate post-resuscitation care?"
+    back: "Post-cardiac arrest care: targeted temperature management (TTM) 33-36°C for 24h if unconscious, hemodynamic optimization (MAP ≥65 mmHg), avoid hypoxia (SpO2 94-98%) and hypercapnia (PaCO2 35-45), ECG for STEMI, brain CT, urgent coronary angiography if cardiac cause suspected\n\nTTM/hypothermia reduces neurological injury. ACLS 2020: TTM is recommended for unconscious post-arrest patients with shockable rhythm; reasonable for non-shockable. Avoid fever (>37.5°C) in all post-arrest patients. Emergent coronary angiography for ST elevation or suspected cardiac cause."
+    difficulty: hard
+    tags: [post-cardiac arrest, targeted temperature management, TTM, ROSC care, emergency medicine]
+  - front: "What is the pediatric BLS sequence for a child (1-8 years)?"
+    back: "Single rescuer: C-A-B; 30:2 compressions-to-breaths (2-hand or 2-finger for infant), defibrillate (2 J/kg initial dose) for shockable rhythms — two rescuers: 15:2 ratio\n\nPediatric cardiac arrest is usually respiratory in origin (not cardiac). Airway management and ventilation are more critical than in adults. Epinephrine 0.01 mg/kg IV/IO (max 1mg). Shockable rhythms (VF/pVT) are less common in children. Amiodarone 5 mg/kg IV/IO."
+    difficulty: medium
+    tags: [pediatric BLS, pediatric CPR, child cardiac arrest, 30:2, emergency medicine]
+  - front: "What is the recommended approach to airway management in cardiac arrest?"
+    back: "Bag-valve-mask (BVM) ventilation preferred initially; advanced airway (ET tube or supraglottic) only when provider can place without interrupting CPR; after advanced airway: 10 breaths/min asynchronous with compressions\n\nACLS 2020: BVM ventilation by experienced rescuers may be as effective as ETI with less interruption. Video laryngoscopy preferred for ETI. Confirm ETI with ETCO2 and clinical assessment. Supraglottic airways (LMA, King LT) are alternatives to ETI."
+    difficulty: easy
+    tags: [airway management, cardiac arrest, BVM, endotracheal intubation, emergency medicine]
+  - front: "When should cardiac resuscitation efforts be terminated?"
+    back: "Termination of resuscitation (TOR) in pre-hospital VF: unwitnessed + no bystander CPR + no ROSC after 3 cycles of ACLS and transport time >30 min — Bystanderr CPR rule: transport if ROSC, shockable rhythm, or bystander CPR initiated\n\nPre-hospital TOR rules (Canadian): BLS TOR rule: arrest not witnessed by EMS, no bystander CPR, no AED use before EMS, no ROSC after 3 ACLS cycles — consider field termination (high specificity for no survival). Exceptions: hypothermia, drowning, pregnancy, children."
+    difficulty: hard
+    tags: [termination of resuscitation, TOR, pre-hospital cardiac arrest, BLS, emergency medicine]
+  - front: "What are the shockable vs. non-shockable rhythms in cardiac arrest?"
+    back: "Shockable: Ventricular Fibrillation (VF) and Pulseless Ventricular Tachycardia (pVT) — defibrillate; Non-shockable: Pulseless Electrical Activity (PEA) and Asystole — NO defibrillation, focus on CPR and reversible causes\n\nDefibrillation only works for VF/pVT by synchronously depolarizing myocardium. Attempting to defibrillate asystole or PEA is futile and wastes time. VF should be detected and defibrillated within 2 minutes — each minute of VF without defibrillation reduces survival by 10%."
+    difficulty: easy
+    tags: [shockable rhythms, VF, PEA, asystole, defibrillation, emergency medicine]
+  - front: "What is therapeutic hypothermia (targeted temperature management) and who qualifies?"
+    back: "TTM 33-36°C for 24 hours: all adult patients who remain comatose after ROSC from cardiac arrest; evidence strongest for VF/pVT rhythms; also reasonable for non-shockable rhythms\n\nTTM works by reducing cerebral metabolic rate (6-10% per degree decrease), reducing excitotoxicity and free radical production. Complications: bradycardia (expected), coagulopathy, electrolyte shifts, infection. Active fever prevention (normothermia 37°C) for all post-arrest patients not undergoing TTM."
+    difficulty: medium
+    tags: [TTM, targeted temperature management, therapeutic hypothermia, post-cardiac arrest, emergency medicine]
+  - front: "What is the management of bradycardia with hemodynamic instability?"
+    back: "Atropine 0.5 mg IV q3-5 min (max 3 mg total); if no response: transcutaneous pacing immediately, then dopamine 2-10 mcg/kg/min or epinephrine 2-10 mcg/min IV infusion — identify and treat underlying cause\n\nACLS bradycardia algorithm: atropine first if hemodynamically unstable. Atropine may be ineffective for high-degree AV block (infranodal) or post-cardiac transplant — use transcutaneous pacing immediately for these. Transvenous pacing for definitive management while awaiting permanent pacemaker."
+    difficulty: medium
+    tags: [bradycardia ACLS, atropine, transcutaneous pacing, hemodynamic instability, emergency medicine]
+  - front: "What is the management of unstable tachycardia?"
+    back: "Synchronized cardioversion (not defibrillation): narrow complex SVT 50-100J, AF 120-200J, VT with pulse 100J — sedate if patient is conscious; do NOT delay for rhythm interpretation if hemodynamically unstable\n\nACLS: unstable tachycardia = hypotension, altered consciousness, chest pain, or acute pulmonary edema from arrhythmia. Synchronized cardioversion delivers shock during QRS (avoids R-on-T phenomenon). For conscious patients: procedural sedation (ketamine, etomidate, midazolam)."
+    difficulty: hard
+    tags: [synchronized cardioversion, unstable tachycardia, ACLS, SVT, AF, emergency medicine]
+  - front: "What is return of spontaneous circulation (ROSC) and how is it confirmed?"
+    back: "ROSC: resumption of palpable pulse after cardiac arrest; confirmed by: palpable pulse, ETCO2 spike >40 mmHg, arterial waveform, SpO2 tracing\n\nClinical signs of ROSC: patient movement, spontaneous breathing, return of pulse. ETCO2 provides real-time confirmation during CPR. After ROSC: post-cardiac arrest bundle (TTM, hemodynamic optimization, 12-lead ECG, coronary angiography if appropriate, neurological assessment)."
+    difficulty: easy
+    tags: [ROSC, return of spontaneous circulation, cardiac arrest, ETCO2, emergency medicine]
+  - front: "What is the advanced airway approach in pediatric resuscitation?"
+    back: "BVM ventilation with 2-person technique preferred; ETI: uncuffed ET tube (children <8y, size = age/4 + 4), or cuffed tube (age/4 + 3.5) confirmed by ETCO2 and CXR\n\nPediatric ETI: confirm tube size with broselow tape or formula. Atropine no longer routinely recommended for pediatric RSI. Ketamine + succinylcholine or rocuronium for RSI. Supraglottic airways acceptable if ETI not possible."
+    difficulty: medium
+    tags: [pediatric airway, ETI, pediatric RSI, BVM, emergency medicine]
+  - front: "What is the sodium bicarbonate indication in cardiac arrest?"
+    back: "Sodium bicarbonate (1 mEq/kg IV) is indicated for: pre-existing hyperkalemia, sodium channel blocker toxicity (TCA overdose), prolonged arrest with severe metabolic acidosis (pH <7.1) — NOT routine in cardiac arrest\n\nACLS: routine bicarbonate administration does not improve outcomes in cardiac arrest and may worsen intracellular acidosis. Hyperkalemia-induced arrest: bicarbonate shifts K+ into cells. TCA overdose with wide QRS: 1-2 mEq/kg bicarbonate for QRS >100ms or hemodynamic instability."
+    difficulty: medium
+    tags: [sodium bicarbonate, cardiac arrest, hyperkalemia, TCA overdose, emergency medicine]
+  - front: "A 25-year-old is found drowning in an icy lake. He is in cardiac arrest with temperature 28°C. What is different about his resuscitation?"
+    back: "Hypothermic cardiac arrest: CPR, warm IV fluids, active external/internal rewarming; do NOT terminate resuscitation until patient is warm (≥32-35°C) — \"No one is dead until they are warm and dead\"\n\nACLS hypothermia guidelines: hypothermic hearts may be in refractory VF until rewarmed — warm first, then attempt defibrillation. ECMO (extracorporeal rewarming) is most effective for severe hypothermia with cardiac arrest. Target rewarming 1-2°C per hour with active techniques."
+    difficulty: hard
+    tags: [hypothermic cardiac arrest, drowning, rewarming, ECMO, emergency medicine]
+  - front: "What is pericardial tamponade and how is it relieved in cardiac arrest?"
+    back: "Tamponade: Beck triad (hypotension, JVD, muffled heart sounds); FAST exam shows pericardial fluid; causes PEA arrest; treat with pericardiocentesis (subxiphoid approach) or surgical thoracotomy in cardiac arrest\n\nTamponade is a reversible cause of PEA arrest (5Ts). Pericardiocentesis: needle inserted at 45° angle between xiphoid and left costal margin, directed toward left shoulder, aspirate blood. Emergency thoracotomy for traumatic tamponade provides direct access to heart."
+    difficulty: hard
+    tags: [pericardial tamponade, Beck triad, pericardiocentesis, PEA, emergency medicine]
+  - front: "What is the role of extracorporeal CPR (ECPR) in cardiac arrest?"
+    back: "ECPR (VA-ECMO during CPR): bridge for refractory cardiac arrest in selected patients (witnessed arrest, <60-65 years, treatable cause, no ROSC after ≥20 min of conventional ACLS)\n\nECPR provides perfusion while definitive treatment is applied (PCI for MI, warmed for hypothermia, LVAD bridge for cardiomyopathy). SAVE-J and ELSO data show improved survival in selected patients. Limited by availability of ECMO expertise and equipment. CANUCKS/ARREST trials ongoing."
+    difficulty: hard
+    tags: [ECPR, ECMO cardiac arrest, extracorporeal CPR, refractory arrest, emergency medicine]
+  - front: "What are the determinants of successful defibrillation?"
+    back: "Time to defibrillation (most important), biphasic vs. monophasic waveform (biphasic more effective, lower energy), paddle/pad placement (correct position and contact), patient factors (metabolic, drug state)\n\nACLS: for every minute of VF without defibrillation, survival decreases by 10%. Public access defibrillation (AED) programs in public spaces significantly reduce out-of-hospital cardiac arrest mortality. Biphasic defibrillators (120-200J) are more effective than monophasic (360J) at lower energies."
+    difficulty: easy
+    tags: [defibrillation, AED, biphasic, time to shock, emergency medicine]
+  - front: "What is the ACLS algorithm for pulseless VT/VF?"
+    back: "CPR -> Shock 200J biphasic -> CPR 2min -> Epinephrine 1mg q3-5min -> Shock -> Amiodarone 300mg then 150mg -> repeat\n\nH's and T's for reversible causes. ROSC: targeted temperature management 32-36C for 24h. Epinephrine for all pulseless rhythms."
+    difficulty: medium
+    tags: [ACLS, VF]
+  - front: "What is rapid sequence intubation (RSI) protocol?"
+    back: "Preoxygenate -> Induction (propofol/ketamine/etomidate) -> Paralysis (succinylcholine 1-2mg/kg or rocuronium 1.2mg/kg) -> Intubate -> Confirm (ETCO2, bilateral breath sounds, CXR)\n\nKetamine preferred if hypotensive/asthmatic. Etomidate: adrenal suppression risk. Succinylcholine contraindicated in hyperkalemia, burns>48h, denervation injuries."
+    difficulty: hard
+    tags: [RSI, intubation]
+  - front: "In adult ACLS, what is the recommended dose of epinephrine during cardiac arrest?"
+    back: "Epinephrine 1 mg IV/IO every 3-5 minutes\n\nPer AHA/HSFC 2020 guidelines, epinephrine 1 mg (1:10,000) IV/IO every 3-5 min. For shockable rhythms give after 2nd shock. For non-shockable rhythms give immediately upon IV/IO access."
+    difficulty: hard
+    tags: [ACLS, epinephrine, cardiac arrest]
+  - front: "List the Hs and Ts of reversible causes of cardiac arrest."
+    back: "Hs: Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, Hypothermia. Ts: Tension pneumothorax, Tamponade, Toxins, Thrombosis (PE/coronary)\n\nSystematic evaluation of reversible causes is critical during each rhythm check. In Canada hypothermia arrests are particularly relevant given climate. Do not declare death until rewarmed to 32C."
+    difficulty: medium
+    tags: [ACLS, cardiac arrest, reversible causes]
+  - front: "When and at what dose should amiodarone be given in shock-refractory VF/pVT?"
+    back: "Amiodarone 300 mg IV after 3rd shock, then 150 mg for recurrent VF/pVT. Alternative: lidocaine 1-1.5 mg/kg\n\nALPS trial showed amiodarone and lidocaine improved survival to hospital admission vs placebo for witnessed VF. Per HSFC amiodarone is first-line antiarrhythmic for refractory VF."
+    difficulty: hard
+    tags: [ACLS, amiodarone, VF]
+  - front: "What defibrillation energies are used for adult VF/pVT?"
+    back: "Biphasic: 120-200 J initial (device-specific), same or higher for subsequent. Monophasic: 360 J all shocks. If unknown use max energy.\n\nMinimize peri-shock pause to less than 10 seconds. Resume compressions immediately post-shock without rhythm check. CPR quality (rate 100-120, depth 5-6cm, full recoil) is the strongest predictor of ROSC."
+    difficulty: medium
+    tags: [defibrillation, VF, ACLS]
+  - front: "What drugs and doses are used for Rapid Sequence Intubation?"
+    back: "Induction: Ketamine 1-2 mg/kg or Propofol 1-2 mg/kg. Paralytic: Succinylcholine 1-1.5 mg/kg (onset 45s) or Rocuronium 1.2 mg/kg (onset 60s)\n\nKetamine preferred in hemodynamic instability and asthma. Propofol causes hypotension. Etomidate 0.3 mg/kg is another option but may cause adrenal suppression. Preoxygenation with 100% O2 for 3 min or 8 vital capacity breaths."
+    difficulty: hard
+    tags: [RSI, intubation, ketamine, rocuronium]
+  - front: "What are the contraindications to succinylcholine?"
+    back: "Hyperkalemia, burns/crush >48h, denervation injury, malignant hyperthermia susceptibility, neuromuscular disease, penetrating eye injury, prolonged immobilization\n\nSuccinylcholine causes 0.5 mEq/L K+ rise normally. Upregulated extrajunctional AChRs in burns/denervation cause potentially fatal hyperkalemia. Use rocuronium 1.2 mg/kg instead, reversible with sugammadex 16 mg/kg."
+    difficulty: hard
+    tags: [RSI, succinylcholine, contraindications]
+  - front: "What is targeted temperature management after cardiac arrest?"
+    back: "Maintain 32-36C for at least 24h in comatose patients with ROSC. Rewarm at 0.25-0.5C/h. Neuroprognostication deferred to 72h+ using multimodal assessment.\n\nTTM2 trial: no benefit of 33C vs 36C but fever prevention is critical. Active cooling devices preferred. Monitor for shivering (treat with sedation). Avoid hyperthermia during rewarming phase."
+    difficulty: hard
+    tags: [TTM, post-cardiac arrest, hypothermia]
+  - front: "Describe the ACLS algorithm for symptomatic bradycardia."
+    back: "Atropine 1 mg IV q3-5 min (max 3 mg). If ineffective: transcutaneous pacing, dopamine 5-20 mcg/kg/min, or epinephrine 2-10 mcg/min infusion\n\nAtropine ineffective in infranodal block (Mobitz II, complete heart block). Start transcutaneous pacing immediately if high-degree block. Verify capture by palpating femoral pulse. Transvenous pacing is definitive."
+    difficulty: hard
+    tags: [bradycardia, ACLS, atropine, pacing]
+  - front: "What is the stepwise management of stable SVT?"
+    back: "Vagal maneuvers (modified Valsalva) then adenosine 6mg rapid IV push then 12mg then 12mg. Refractory: diltiazem 0.25 mg/kg IV or metoprolol\n\nModified Valsalva with passive leg raise has higher conversion rate than standard. Adenosine requires rapid push with saline flush at proximal site. Contraindicated in pre-excited AF and severe asthma. Half-life only 6 seconds."
+    difficulty: hard
+    tags: [SVT, adenosine, tachycardia]
+  - front: "How is unstable tachycardia managed?"
+    back: "Synchronized cardioversion with procedural sedation. Energy: narrow regular 50-100J, narrow irregular 120-200J, wide regular 100J, wide irregular use defibrillation dose\n\nUnstable = hypotension, AMS, ischemic chest pain, acute HF. Do NOT synchronize for VF or polymorphic VT (use defibrillation). Ensure sync markers align with R waves before delivering shock."
+    difficulty: hard
+    tags: [cardioversion, unstable tachycardia]
+  - front: "What is the first-line vasopressor and target in septic shock?"
+    back: "Norepinephrine targeting MAP 65 mmHg. Second-line: vasopressin 0.03 U/min. Third: epinephrine. Add hydrocortisone 200 mg/d for refractory shock\n\nSSC 2021 guidelines: start vasopressors after 30 mL/kg crystalloid if still hypotensive. Dynamic measures (pulse pressure variation, passive leg raise) guide further fluids. Balanced crystalloids (RL) preferred over NS for large-volume resuscitation."
+    difficulty: hard
+    tags: [septic shock, norepinephrine, vasopressors]
+  - front: "What are the indications and technique for emergency cricothyrotomy?"
+    back: "Indication: CICO (cannot intubate, cannot oxygenate). Technique: vertical skin incision, horizontal stab through cricothyroid membrane, bougie, 6.0 cuffed ETT. Contraindicated in children <8 (needle cric instead)\n\nFinal step in difficult airway algorithm after failed intubation and failed supraglottic airway. Landmark: palpable depression between thyroid and cricoid cartilages in midline. Scalpel-bougie-tube technique is fastest and most reliable."
+    difficulty: hard
+    tags: [cricothyrotomy, difficult airway, CICO]
+  - front: "How is tension pneumothorax managed emergently?"
+    back: "Needle decompression (14G) at 4th/5th ICS anterior axillary line (preferred) or 2nd ICS MCL, followed by chest tube insertion\n\nClinical diagnosis: do not delay for CXR. Signs: hypotension, JVD, tracheal deviation, absent breath sounds. Finger thoracostomy is an alternative in intubated patients. 4th/5th ICS AAL preferred due to thinner chest wall."
+    difficulty: hard
+    tags: [tension pneumothorax, needle decompression]
+  - front: "What is the massive transfusion protocol?"
+    back: "1:1:1 ratio pRBC:FFP:platelets. TXA 1g IV within 3h of injury. Permissive hypotension (SBP 80-90) until surgical control in penetrating trauma\n\nPROPPR and CRASH-2 trials provide evidence. Activate for anticipated >10u pRBC/24h or >4u/1h. Avoid lethal triad (hypothermia, acidosis, coagulopathy). POC testing (TEG/ROTEM) guides component therapy. Warm all products."
+    difficulty: hard
+    tags: [massive transfusion, hemorrhagic shock, TXA]
+  - front: "What are the components and scoring of the Glasgow Coma Scale?"
+    back: "Eye 1-4, Verbal 1-5, Motor 1-6. Total 3-15. Severe TBI: 3-8 (intubate). Moderate: 9-12. Mild: 13-15. Motor is most prognostic.\n\nAssess after resuscitation. Record intubated verbal as 1T. GCS has inter-rater variability limitations. FOUR score is an alternative for intubated patients. Serial GCS monitoring detects deterioration."
+    difficulty: medium
+    tags: [GCS, trauma, neurological assessment]
+  - front: "What does each eFAST view assess in trauma?"
+    back: "RUQ: hepatorenal recess (Morrisons). LUQ: splenorenal. Suprapubic: pelvic free fluid. Subxiphoid: pericardial effusion. Bilateral anterior lung: pneumothorax\n\nSensitivity ~85% for free fluid, improves with serial exams. Positive eFAST + hemodynamic instability = OR. Absent lung sliding on anterior views suggests pneumothorax. M-mode shows barcode sign (PTX) vs seashore sign (normal)."
+    difficulty: medium
+    tags: [eFAST, trauma, ultrasound]
+  - front: "What are weight-based pediatric cardiac arrest drug doses?"
+    back: "Epi: 0.01 mg/kg (0.1 mL/kg of 1:10,000) q3-5min. Defib: 2J/kg first, 4J/kg subsequent. Amiodarone: 5mg/kg (max 300mg). IO preferred if no rapid IV.\n\nPediatric arrests usually respiratory etiology. Most common rhythm: PEA/asystole. Use Broselow tape for unknown weight. Compressions: infants 4cm depth, children 5cm, rate 100-120. 15:2 compression-ventilation ratio with 2 rescuers."
+    difficulty: hard
+    tags: [pediatric, cardiac arrest, PALS]
+  - front: "What are the criteria, dosing, and contraindications for IV alteplase in acute ischemic stroke?"
+    back: "0.9 mg/kg (max 90mg), 10% bolus then 60min infusion within 4.5h onset. CI: active bleeding, BP >185/110, PLT <100k, INR >1.7, recent surgery\n\nCanadian Stroke Best Practice Guidelines. Extended window (3-4.5h) excludes age >80, DM+prior stroke, NIHSS >25. EVT for large vessel occlusion up to 24h with perfusion imaging. BP must be controlled before and 24h after tPA."
+    difficulty: hard
+    tags: [stroke, tPA, alteplase]
+  - front: "Outline the ABCDE primary survey in trauma."
+    back: "A: Airway + C-spine protection. B: Breathing (assess/treat pneumothorax). C: Circulation (hemorrhage control, 2 large-bore IVs). D: Disability (GCS, pupils). E: Exposure + environmental control\n\nATLS systematic approach: address life threats as found. Primary survey <5 min. C-spine immobilized until cleared. Adjuncts: monitoring, Foley, NG/OG, CXR, pelvis XR, eFAST."
+    difficulty: medium
+    tags: [ATLS, trauma, primary survey]
+  - front: "How does cardiac arrest management differ in pregnancy?"
+    back: "Standard ACLS + manual left uterine displacement + IV access above diaphragm. If no ROSC by 4 min, perimortem cesarean by 5 min if >=23 weeks gestation\n\nPerimortem C-section relieves aortocaval compression improving maternal resuscitation AND neonatal outcomes. Same defibrillation doses. Remove fetal monitors before shock. Consider amniotic fluid embolism, eclampsia, hemorrhage as causes."
+    difficulty: hard
+    tags: [cardiac arrest, pregnancy, perimortem cesarean]
+  - front: "A 60-year-old diabetic is found unresponsive. GCS is 6 (E1V2M3). Glucose is 35 mg/dL. What is the immediate management, and what mnemonic covers the differential for altered level of consciousness?"
+    back: "Immediate IV dextrose (D50W) and thiamine (before glucose if alcoholism/malnutrition suspected to prevent Wernicke encephalopathy). The DIMS mnemonic for altered LOC: Drugs/toxins (opioids, benzodiazepines, alcohol), Infections (meningitis, encephalitis, sepsis), Metabolic (hypoglycemia, DKA, hepatic encephalopathy, uremia, electrolytes), Structural (stroke, hemorrhage, trauma, mass).\n\nHypoglycemia is the most rapidly reversible cause of altered LOC and must be checked immediately in all patients. GCS <8 generally indicates need for airway protection (intubation). The mnemonic DIMS (or AEIOU-TIPS) provides a systematic approach to avoid missing treatable causes of coma."
+    difficulty: medium
+    tags: [altered-LOC, GCS, DIMS, hypoglycemia, emergency, coma]
+  - front: "Explain the Glasgow Coma Scale (GCS) components and the scores indicating severe, moderate, and mild impairment."
+    back: "Eye opening (E): 4-spontaneous, 3-to voice, 2-to pain, 1-none. Verbal (V): 5-oriented, 4-confused, 3-inappropriate words, 2-incomprehensible sounds, 1-none. Motor (M): 6-obeys commands, 5-localizes pain, 4-withdraws, 3-abnormal flexion (decorticate), 2-extension (decerebrate), 1-none. Total: 3-15. Severe ≤8, Moderate 9-12, Mild 13-15.\n\nThe motor component is the most prognostically significant element of the GCS. A GCS of 8 or less is generally the threshold for endotracheal intubation for airway protection. Decorticate posturing (flexion) indicates damage above the red nucleus, while decerebrate posturing (extension) indicates brainstem damage below the red nucleus."
+    difficulty: easy
+    tags: [altered-LOC, GCS, emergency, neurology, trauma]
+  - front: "A 22-year-old is brought to the ED unresponsive with pinpoint pupils and a respiratory rate of 6. What is the most likely cause and immediate treatment?"
+    back: "Opioid overdose. Immediate treatment: naloxone (0.4-2 mg IV/IM/IN, repeat every 2-3 minutes as needed) and airway management with bag-valve-mask ventilation. Monitor for re-sedation as naloxone's half-life (30-90 min) is shorter than most opioids.\n\nThe classic triad of opioid toxicity is respiratory depression, altered consciousness, and miosis (pinpoint pupils). Naloxone is a competitive opioid antagonist that reverses all effects. With potent synthetic opioids like fentanyl, higher and repeated doses of naloxone may be required. Observation for at least 4-6 hours post-naloxone is essential."
+    difficulty: easy
+    tags: [altered-LOC, opioid-overdose, naloxone, emergency, toxicology]
+  - front: "What are the 4 types of shock and their hemodynamic profiles?"
+    back: "Hypovolemic: low CVP, low CO, high SVR. Cardiogenic: high CVP, low CO, high SVR. Distributive: low CVP, high CO, low SVR. Obstructive: high CVP, low CO, high SVR\n\nDistributive includes septic (most common), anaphylactic, neurogenic. Obstructive: PE, tamponade, tension pneumothorax. Treatment targets the underlying cause + fluid/vasopressor support."
+    difficulty: medium
+    tags: [shock, hemodynamics]
+  - front: "What is massive transfusion protocol?"
+    back: "1:1:1 ratio of pRBCs:FFP:platelets. Activate when anticipated need >10 units pRBCs in 24h or >4 units in 1h. Give tranexamic acid within 3h of bleeding\n\nCRASH-2 trial: TXA reduces mortality in trauma. Monitor for complications: hypothermia, hypocalcemia (citrate toxicity), hyperkalemia, DIC. Type O negative blood for emergencies before crossmatch."
+    difficulty: hard
+    tags: [transfusion, massive]
+  - front: "What are transfusion reactions and their management?"
+    back: "Acute hemolytic: ABO incompatibility, fever/flank pain/hemoglobinuria — stop transfusion, IV fluids. Febrile non-hemolytic: most common, antipyretics. Allergic: urticaria/anaphylaxis. TRALI: non-cardiogenic pulmonary edema within 6h\n\nTACO vs TRALI: TACO has volume overload (elevated BNP, responds to diuretics). TRALI has bilateral infiltrates, hypoxia, no fluid overload. TRALI: supportive care, no diuretics."
+    difficulty: hard
+    tags: [transfusion reactions]
+  - front: "What are the hemodynamic profiles (CVP, CO, SVR) for the four types of shock: hypovolemic, cardiogenic, distributive, and obstructive?"
+    back: "Hypovolemic: low CVP, low CO, high SVR. Cardiogenic: high CVP, low CO, high SVR. Distributive: low CVP, high CO, low SVR. Obstructive: high CVP, low CO, high SVR.\n\nDistributive shock (septic, anaphylactic, neurogenic) is unique in having low SVR due to inappropriate vasodilation. Cardiogenic and obstructive share similar profiles but differ in etiology — pump failure vs. mechanical obstruction. CVP helps differentiate hypovolemic (low preload) from cardiogenic (high preload)."
+    difficulty: medium
+    tags: [shock, hemodynamics, CVP, cardiac output, SVR]
+  - front: "A trauma patient presents with hypotension, distended neck veins, and muffled heart sounds. What is the diagnosis, and what is the immediate management?"
+    back: "Beck's triad indicates cardiac tamponade (obstructive shock). Immediate management is pericardiocentesis or emergent thoracotomy if unstable.\n\nCardiac tamponade is a form of obstructive shock where fluid in the pericardial space compresses the heart, impairing diastolic filling. Pulsus paradoxus (>10 mmHg drop in systolic BP on inspiration) is another classic finding. Bedside echocardiography confirms the diagnosis rapidly."
+    difficulty: medium
+    tags: [cardiac tamponade, Becks triad, obstructive shock, pericardiocentesis]
+  - front: "In septic shock, what is the first-line vasopressor, and when should vasopressin be added?"
+    back: "Norepinephrine is first-line. Vasopressin (up to 0.03 U/min) is added as a second agent when norepinephrine alone is insufficient to maintain MAP ≥65 mmHg.\n\nNorepinephrine provides potent alpha-1 vasoconstriction with modest beta-1 effects, increasing SVR and MAP. Vasopressin acts on V1 receptors and may be particularly useful in vasodilatory shock refractory to catecholamines. The Surviving Sepsis Campaign recommends against dopamine as first-line except in select bradycardic patients."
+    difficulty: medium
+    tags: [septic shock, norepinephrine, vasopressin, vasopressors, Surviving Sepsis]
+  - front: "When is dobutamine indicated in shock management, and what is its mechanism of action?"
+    back: "Dobutamine is indicated in cardiogenic shock with low cardiac output despite adequate volume resuscitation. It is a beta-1 agonist that increases cardiac contractility and heart rate.\n\nDobutamine increases myocardial contractility (positive inotropy) and can improve cardiac output in pump failure. It may cause hypotension due to peripheral beta-2 vasodilation, so it is often combined with norepinephrine. It is not appropriate as a sole agent in undifferentiated shock."
+    difficulty: medium
+    tags: [dobutamine, cardiogenic shock, inotrope, beta-1 agonist]
+  - front: "What is the recommended initial fluid resuscitation in septic shock, and why are balanced crystalloids (Ringer's lactate) preferred over normal saline?"
+    back: "Give 30 mL/kg of crystalloid within the first 3 hours. Balanced crystalloids are preferred because normal saline's high chloride content (154 mEq/L) can cause hyperchloremic metabolic acidosis and acute kidney injury.\n\nThe SMART trial demonstrated lower rates of major adverse kidney events with balanced crystalloids versus NS in critically ill patients. Ringer's lactate has a chloride concentration closer to plasma (109 mEq/L). Colloids (albumin) have not shown survival benefit over crystalloids in most settings."
+    difficulty: medium
+    tags: [fluid resuscitation, crystalloid, Ringers lactate, normal saline, sepsis]
+  - front: "What is the massive transfusion protocol ratio, and when should it be activated?"
+    back: "1:1:1 ratio of packed RBCs, fresh frozen plasma, and platelets. Activate when >10 units pRBC anticipated in 24 hours, or >4 units in 1 hour, with ongoing hemorrhage.\n\nThe 1:1:1 ratio mimics whole blood and prevents dilutional coagulopathy. The PROPPR trial showed that a 1:1:1 ratio achieved hemostasis more effectively than 1:1:2. Tranexamic acid (TXA) should be given within 3 hours of injury per the CRASH-2 trial."
+    difficulty: hard
+    tags: [massive transfusion, MTP, 1:1:1 ratio, PROPPR, trauma resuscitation]
+  - front: "What are the four types of transfusion reactions, their timing, and key distinguishing features?"
+    back: "Acute hemolytic (minutes, ABO incompatibility, fever/flank pain/hemoglobinuria), febrile non-hemolytic (during/after, cytokine-mediated, fever/chills), allergic/anaphylactic (minutes, urticaria to shock), and TRALI (within 6 hours, non-cardiogenic pulmonary edema).\n\nAcute hemolytic reactions are the most dangerous and usually result from ABO mismatch clerical errors. TRALI is the leading cause of transfusion-related mortality and presents with bilateral infiltrates, hypoxia, and no evidence of volume overload. TACO (transfusion-associated circulatory overload) is the main differential for TRALI."
+    difficulty: hard
+    tags: [transfusion reactions, TRALI, hemolytic reaction, blood products]
+  - front: "What is the difference between type and screen versus crossmatch in blood banking?"
+    back: "Type and screen determines ABO/Rh type and screens for unexpected antibodies. Crossmatch mixes donor RBCs with patient serum to confirm compatibility before transfusion.\n\nType and screen is sufficient when transfusion is unlikely but should be available (e.g., elective surgery with low bleeding risk). Crossmatch is required before non-emergency transfusion. In massive hemorrhage, uncrossmatched O-negative (or O-positive for males) blood can be given immediately."
+    difficulty: easy
+    tags: [type and screen, crossmatch, blood banking, transfusion]
+  - front: "What are the initial ventilator settings for a patient with ARDS using lung-protective ventilation?"
+    back: "Tidal volume 6 mL/kg ideal body weight, plateau pressure ≤30 cmH2O, PEEP titrated per FiO2-PEEP table, respiratory rate 20-35 to maintain pH >7.25, target SpO2 88-95%.\n\nThe ARDSNet trial showed a 9% absolute mortality reduction with low tidal volume (6 mL/kg IBW) versus 12 mL/kg. Ideal body weight is based on height, not actual weight, to prevent overdistension. Permissive hypercapnia is acceptable as long as pH remains above 7.20."
+    difficulty: hard
+    tags: [ARDS, lung-protective ventilation, ARDSNet, tidal volume, PEEP]
+  - front: "Compare the ventilator modes: Assist-Control (AC), SIMV, and Pressure Support (PS)."
+    back: "AC: every breath (triggered or mandatory) delivers full set tidal volume/pressure. SIMV: mandatory breaths at set rate, spontaneous breaths unsupported (or with PS). PS: patient-triggered only, clinician sets pressure, patient controls rate/volume.\n\nAC is commonly used for initial ventilation as it guarantees minute ventilation. PS is a weaning mode where the patient must initiate all breaths. SIMV was historically used for weaning but is falling out of favor as it may increase work of breathing during spontaneous breaths."
+    difficulty: medium
+    tags: [ventilator modes, assist-control, SIMV, pressure support, mechanical ventilation]
+  - front: "During a Code Blue, what are the key team roles and the recommended epinephrine dosing schedule?"
+    back: "Team roles: team leader, airway manager, compressor, medication/IV nurse, recorder, defibrillator operator. Epinephrine 1 mg IV every 3-5 minutes for non-shockable rhythms (PEA/asystole); for shockable rhythms, give after the second shock.\n\nEffective team dynamics with closed-loop communication are critical to resuscitation outcomes. High-quality CPR (rate 100-120/min, depth 5-6 cm, full chest recoil, minimal interruptions) is the single most important intervention. Epinephrine improves short-term ROSC but has uncertain neurological outcome benefit."
+    difficulty: medium
+    tags: [Code Blue, ACLS, epinephrine, team roles, cardiac arrest]
+  - front: "What is targeted temperature management (TTM) post-cardiac arrest, and what are the current recommendations?"
+    back: "TTM involves actively controlling body temperature to 32-36°C for at least 24 hours in comatose patients after ROSC. Fever prevention (≤37.5°C) for 72 hours is essential.\n\nThe TTM2 trial showed no benefit of 33°C over 36°C with strict fever prevention, shifting practice toward normothermia with aggressive fever avoidance. Hypothermia reduces cerebral metabolic demand and may attenuate reperfusion injury. Shivering must be managed as it increases metabolic demand."
+    difficulty: hard
+    tags: [TTM, post-ROSC, targeted temperature management, cardiac arrest, neuroprotection]
+  - front: "What are the reversible causes of cardiac arrest (H's and T's)?"
+    back: "H's: Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, Hypothermia. T's: Tension pneumothorax, Tamponade, Toxins, Thrombosis (pulmonary/coronary).\n\nIdentifying and treating reversible causes is critical during cardiac arrest, especially for PEA and asystole which are non-shockable. Bedside ultrasound can rapidly identify tamponade, PE, and hypovolemia. Hyperkalemia is suggested by peaked T waves and wide QRS on the defibrillator monitor."
+    difficulty: easy
+    tags: [Hs and Ts, cardiac arrest, reversible causes, PEA, ACLS]
+  - front: "A patient in septic shock remains hypotensive after 30 mL/kg crystalloid and norepinephrine at 0.5 mcg/kg/min. What additional interventions should be considered?"
+    back: "Add vasopressin (0.03 U/min), consider stress-dose hydrocortisone (200 mg/day IV), reassess volume status with dynamic measures (passive leg raise, pulse pressure variation), and evaluate for source control.\n\nCorticosteroids are recommended in septic shock refractory to fluids and vasopressors, per the ADRENAL and APROCCHSS trials. Dynamic measures of fluid responsiveness are superior to static measures like CVP. Inadequate source control (e.g., undrained abscess) is a common reason for refractory shock."
+    difficulty: hard
+    tags: [refractory septic shock, hydrocortisone, vasopressin, source control, fluid responsiveness]
+  - front: "What are the indications for giving uncrossmatched O-negative blood versus waiting for type-specific or crossmatched blood?"
+    back: "Give uncrossmatched O-negative blood in life-threatening hemorrhage when there is no time for type and screen (typically <10 minutes). Type-specific blood can be given once ABO/Rh is known (~10-15 min). Fully crossmatched blood requires ~45-60 minutes.\n\nO-negative is the universal donor for RBCs as it lacks A, B, and Rh-D antigens. O-positive can be used for Rh-negative males in emergencies since Rh sensitization is only clinically relevant in pregnancy. Emergency release protocols should be established in all trauma centers."
+    difficulty: medium
+    tags: [emergency transfusion, O-negative blood, crossmatch, hemorrhage, trauma]
+  - front: "Why is Desflurane not used for inhalational induction?"
+    back: "Desflurane is an airway irritant that can provoke breath holding, laryngospasm, and salivation\n\nThese airway reflexes make Desflurane unsuitable for mask induction, particularly in pediatric patients."
+    difficulty: easy
+    tags: [anesthesia, desflurane, airway, induction, toronto-notes, pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080]
+  - front: "What is MAC-intubation?"
+    back: "The MAC of anesthetic that inhibits movement and coughing during endotracheal intubation; generally 1.3 MAC\n\nThis higher concentration is required to suppress airway reflexes during laryngoscopy and intubation."
+    difficulty: easy
+    tags: [anesthesia, MAC, intubation, toronto-notes, pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080]
+  - front: "What are the clinical indications for muscle relaxants?"
+    back: "Facilitate intubation, assist mechanical ventilation, prevent muscle stretch reflex and decrease muscle tone, allow surgical field access\n\nMuscle relaxation provides optimal conditions for airway management and surgical procedures."
+    difficulty: easy
+    tags: [anesthesia, muscle relaxants, indications, toronto-notes, pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080]
+  - front: "What is the recommended compression depth for adult CPR according to 2020 AHA guidelines?"
+    back: "2-2.4 inches (5-6 cm)\n\nAdult CPR requires compressions of 2-2.4 inches depth, pushing hard and fast with complete chest wall recoil between compressions."
+    difficulty: easy
+    tags: [CPR, AHA Guidelines, Emergency Medicine, Resuscitation, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is the compression-to-ventilation ratio for adult CPR?"
+    back: "30 compressions to 2 ventilations\n\nAdult CPR uses a 30:2 ratio - 30 chest compressions followed by 2 rescue breaths, with a rate of 100-120 compressions per minute."
+    difficulty: easy
+    tags: [CPR, AHA Guidelines, Emergency Medicine, Resuscitation, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is hands-only CPR and when is it preferred?"
+    back: "Compression-only CPR; preferred if bystander is not trained, does not feel confident, or chooses to use compressions only\n\nHands-only CPR (continuous chest compressions without rescue breaths) is recommended for untrained bystanders or those unwilling to perform conventional CPR, as it simplifies resuscitation for lay rescuers."
+    difficulty: easy
+    tags: [CPR, Bystander CPR, AHA Guidelines, Resuscitation, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What are the two airway maneuvers in CPR and when is each used?"
+    back: "Head tilt-chin lift (standard), and jaw thrust without head extension (if concern for spinal injury)\n\nThe head tilt-chin lift is the standard maneuver to open the airway. The jaw thrust is used when cervical spine injury is suspected, as it opens the airway without extending the neck."
+    difficulty: easy
+    tags: [Airway Management, CPR, C-Spine, Emergency Medicine, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is the compression-to-ventilation ratio for adult CPR according to 2020 AHA guidelines?"
+    back: "30:2 (30 compressions to 2 ventilations)\n\nStandard adult CPR uses 30 compressions followed by 2 rescue breaths. This applies to adults and children over 8 years old."
+    difficulty: easy
+    tags: [CPR, AHA guidelines, resuscitation, adult, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is the recommended compression depth for adult CPR?"
+    back: "2-2.4 inches (5-6 cm)\n\nAHA guidelines recommend pushing hard and fast to a depth of at least 2 inches (5 cm) but not exceeding 2.4 inches (6 cm)."
+    difficulty: easy
+    tags: [CPR, compression depth, resuscitation, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is the compression landmark for adult CPR?"
+    back: "Center of the chest, lower half of the sternum\n\nCompressions should be performed on the lower half of the sternum, between the nipples."
+    difficulty: easy
+    tags: [CPR, compression landmark, resuscitation, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is the compression landmark for infant CPR?"
+    back: "Just below the nipple line\n\nInfant compressions are performed just below the nipple line using 2 fingers or thumbs."
+    difficulty: easy
+    tags: [CPR, infant, pediatric, resuscitation, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "When is hands-only CPR preferred?"
+    back: "When the bystander is not trained, does not feel confident in conventional CPR, or if trained but chooses compressions only\n\nHands-only CPR is an acceptable alternative and is preferred in many out-of-hospital cardiac arrest situations."
+    difficulty: easy
+    tags: [CPR, hands-only, bystander, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "According to 2020 AHA CPR Guidelines, what is the compression-to-ventilation ratio for adult CPR?"
+    back: "30:2 (30 compressions to 2 ventilations)\n\nThe 2020 AHA guidelines maintain the 30:2 ratio for adult CPR, which allows for adequate chest compressions while providing essential ventilations."
+    difficulty: easy
+    tags: [CPR, AHA Guidelines, resuscitation, adult, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is the recommended compression method for infant CPR (<1 year)?"
+    back: "2 fingers or thumbs encircling the chest\n\nFor infants, use 2 fingers (or thumbs) placed just below the nipple line, compressing about 1/3 to 1/2 the depth of the chest."
+    difficulty: easy
+    tags: [CPR, infant, pediatric, resuscitation, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "When is hands-only CPR preferred over conventional CPR?"
+    back: "When the bystander is not trained, does not feel confident, or chooses to use compressions only\n\nHands-only CPR is recommended for untrained bystanders or those who are not confident in providing rescue breaths, as continuous compressions are better than no CPR."
+    difficulty: easy
+    tags: [CPR, hands-only, bystander CPR, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is the airway technique for patients with suspected spinal injury?"
+    back: "Jaw thrust without head extension (instead of head tilt-chin lift)\n\nJaw thrust maintains cervical spine alignment while opening the airway in patients with potential spinal injury."
+    difficulty: easy
+    tags: [airway, spinal injury, C-spine, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is the maneuver for severe foreign body airway obstruction in an infant?"
+    back: "Back blows and chest compressions\n\nInfants receive back blows and chest thrusts rather than abdominal thrusts due to risk of organ injury."
+    difficulty: easy
+    tags: [airway obstruction, infant, choking, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What is the volume of one breath in adult CPR?"
+    back: "1 second per breath, enough to see chest rise\n\nEach breath should be delivered over 1 second, pausing between breaths, and stopped once chest rise is observed."
+    difficulty: easy
+    tags: [CPR, ventilation, resuscitation, toronto-notes, pages-0251-0252-0253-0254-0255-0256-0257-0258-0259-0260]
+  - front: "What are the immediate steps in managing status epilepticus?"
+    back: "Protect airway with positioning, intubate if airway compromised; monitor vitals, ECG, oximetry; check POCT capillary blood glucose; establish IV access; give benzodiazepine (lorazepam 2mg IV or midazolam 5mg IM); fluid resuscitation; give IV dextrose if glucose <3 mmol/L\n\nThese steps should be initiated simultaneously within the first minutes of status epilepticus management."
+    difficulty: hard
+    tags: [seizures, status epilepticus, emergency management, toronto-notes, pages-0271-0272-0273-0274-0275-0276-0277-0278-0279-0280]
+  - front: "What is the treatment for classical heat stroke?"
+    back: "Cool with water mist and fans or ice water immersion, secure airway, give fluid resuscitation if hypotensive, avoid vasoconstrictors and antipyretics\n\nRapid cooling is critical; avoid drugs that impair heat dissipation or vasoconstriction"
+    difficulty: easy
+    tags: [heat-stroke, emergency-medicine, treatment, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "What is the approach to cardiac arrest in a hypothermic patient?"
+    back: "Focus on active core re-warming (preferably ECMO), intubate if needed with warmed humidified O2, check pulse for 1 min, if any pulse do NOT do CPR, if VFib try up to 3 defibrillation attempts if temp <30°C\n\nBradycardia may be physiologic; medications may be ineffective at low temperatures"
+    difficulty: medium
+    tags: [hypothermia, cardiac-arrest, emergency-medicine, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "What is the Parkland formula for burn fluid resuscitation?"
+    back: "4mL × weight (kg) × %TBSA for 2nd/3rd degree burns; give half in first 8 hours from burn time, remainder over next 16 hours\n\nThis formula guides replacement of insensate fluid losses in major burns"
+    difficulty: medium
+    tags: [burns, treatment, fluid-resuscitation, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "When is airway establishment indicated in burn patients?"
+    back: "Indicated with burns >40% BSA, smoke inhalation injury, or signs of significant upper airway burns\n\nEarly airway management is crucial as edema can rapidly compromise breathing"
+    difficulty: medium
+    tags: [burns, airway, emergency-medicine, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "What are the indications for airway establishment in burn patients?"
+    back: "Burns >40% BSA, smoke inhalation injury, or signs of significant upper airway burns\n\nEarly airway assessment is critical in major burns. Upper airway burns can cause rapid swelling and airway obstruction."
+    difficulty: medium
+    tags: [EmergencyMedicine, Burns, PlasticSurgery, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "What are the steps in immediate management of status epilepticus?"
+    back: "1) Protect airway with positioning, intubate if compromised; 2) Monitor vital signs, ECG, oximetry, POCT glucose; 3) Establish IV access; 4) Give benzodiazepine (lorazepam 2mg IV or midazolam 5mg IM); 5) Fluid resuscitation; 6) IV dextrose if glucose <3 mmol/L\n\nEarly seizure termination is crucial in status epilepticus to prevent neuronal damage from prolonged seizure activity."
+    difficulty: hard
+    tags: [Neurology, Status Epilepticus, Management, Emergency, toronto-notes, pages-0271-0272-0273-0274-0275-0276-0277-0278-0279-0280]
+  - front: "How do you treat heat stroke?"
+    back: "Cool body temperature with water mist and fans or ice water immersion, secure airway, give fluid resuscitation, avoid β-agonists and antipyretics\n\nRapid cooling is critical; avoid medications that affect thermoregulation or vasoconstriction."
+    difficulty: medium
+    tags: [heat-stroke, emergency-medicine, treatment, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "When is airway establishment indicated in burn management?"
+    back: "Burns >40% BSA or smoke inhalation injury or signs of significant upper airway burns\n\nEarly airway intervention is critical before edema compromises the airway."
+    difficulty: medium
+    tags: [burns, airway, emergency-medicine, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "What are the indications for intubation in burn patients?"
+    back: "Burns >40% BSA, smoke inhalation injury, signs of significant upper airway burns\n\nEarly intubation is critical as airway edema can progress rapidly, making later attempts difficult or impossible."
+    difficulty: medium
+    tags: [burns, airway-management, emergency-medicine, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "What are the key differences in fluid management between DKA and HHS?"
+    back: "HHS requires more aggressive fluid resuscitation due to more severe dehydration (10-12L deficit vs 6L in DKA)\n\nHHS has a more gradual onset leading to greater fluid depletion. Initial rate may be 1-2L/h NS until euvolemic."
+    difficulty: hard
+    tags: [HHS, DKA, fluids, treatment, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Why is the intraosseous (IO) route of drug administration particularly valuable in emergency medicine?"
+    back: "The IO route provides rapid and reliable vascular access for drug and fluid administration when IV access has failed, with similar pharmacokinetics to IV administration. It can be established quickly and is suitable for emergency situations including cardiac arrest.\n\nThe IO route delivers drugs and fluids directly into the bone marrow sinusoids, which drain into the venous system. Onset and pharmacokinetics closely mirror IV administration. Canadian emergency guidelines (based on ACLS/PALS) recommend IO access as an alternative to IV when vascular access cannot be rapidly achieved, particularly in pediatric resuscitation."
+    difficulty: easy
+    tags: [intraosseous, IO, emergency, vascular access, resuscitation, drug administration]
+  - front: "In the COACT trial, what was shown about immediate coronary angiography vs. delayed angiography in cardiac arrest survivors without STEMI?"
+    back: "Immediate angiography did not improve 1-year clinical outcomes (survival, MI, revascularization, HF hospitalization) compared to delayed angiography after neurological recovery\n\nCOACT (JAMA Cardiol 2020) demonstrated no significant improvement in 1-year outcomes with immediate post-arrest angiography in the absence of STEMI. Current guidelines recommend delayed angiography after neurological stabilization in OHCA without STEMI, reserving immediate angiography for STEMI."
+    difficulty: hard
+    tags: [COACT, cardiac arrest, coronary angiography, STEMI, OHCA, resuscitation]
+  - front: "What are the 4 steps in the approach to a critically ill patient in the emergency department?"
+    back: "1. Rapid Primary Survey (RPS) — ABCDE (Airway, Breathing, Circulation, Disability, Exposure/Environment); 2. Resuscitation — concurrent with RPS, attend to ABCs; 3. Detailed Secondary Survey; 4. Definitive Care.\n\nIn cardiac arrest, the approach shifts to CABs (Compressions, Airway, Breathing). In massive trauma with exsanguination, CAB prioritization treats hypovolemic shock. Changes in hemodynamic or neurological status necessitate returning to primary survey."
+    difficulty: easy
+    tags: [primary survey, ABCDE, resuscitation, critical care, emergency medicine]
+  - front: "What are the signs of airway obstruction and indications for endotracheal intubation (the '4 Ps')?"
+    back: "Signs of airway obstruction: agitation/confusion, 'universal choking sign,' respiratory distress, failure to speak/dysphonia, stridor, cyanosis. The 4 Ps of intubation: Patent airway maintenance, Protects against aspiration (GCS <8), Positive pressure ventilation needed, Pulmonary toilet (suction).\n\nIn trauma, C-spine immobilization with in-line stabilization is required during intubation. Orotracheal RSI is preferred; nasotracheal may be used in conscious patients. Surgical airway (cricothyrotomy) is the backup if unable to intubate or ventilate."
+    difficulty: easy
+    tags: [airway obstruction, intubation, 4 Ps, RSI, emergency airway]
+  - front: "What drugs can be delivered via endotracheal tube (ETT), and what mnemonic is used?"
+    back: "NAVEL: Naloxone (Narcan®), Atropine, Salbutamol (Ventolin®), Epinephrine, Lidocaine. These can be administered via ETT when IV/IO access is unavailable.\n\nEndotracheal drug delivery is a last-resort option during resuscitation. Doses administered via ETT are typically 2–2.5 times the IV dose, diluted in 10 mL of normal saline, followed by several positive pressure ventilations to distribute the drug."
+    difficulty: easy
+    tags: [NAVEL, ETT medications, resuscitation, endotracheal tube, emergency pharmacology]
+  - front: "What are the oxygen delivery methods and their approximate FiO2 ranges?"
+    back: "Nasal prongs: 25–40% at 1–6 L/min; Simple face mask: 40–60%; Non-rebreather mask: 80–90% at 15 L/min; High-flow nasal cannula: up to 100% at 15–60 L/min. CPAP/BiPAP provide supplemental ventilation beyond face masks.\n\nIn the emergency department, oxygen delivery is escalated based on severity of hypoxia and response. High-flow nasal cannula (HFNC) provides humidified oxygen and positive airway pressure, bridging between conventional oxygen and non-invasive ventilation."
+    difficulty: easy
+    tags: [oxygen delivery, FiO2, nasal prongs, non-rebreather, HFNC]
+  - front: "What are the four major types of shock and an example cause of each?"
+    back: "1. Hypovolemic: hemorrhage, severe burns, dehydration; 2. Cardiogenic: myocardial ischemia, dysrhythmias, cardiomyopathy; 3. Distributive: septic, anaphylactic, neurogenic (spinal cord injury); 4. Obstructive: cardiac tamponade, tension pneumothorax, PE, aortic stenosis.\n\nShock in trauma patients is hemorrhagic until proven otherwise. Key clinical findings: early shock presents with tachycardia, tachypnea, narrow pulse pressure, cool extremities (except neurogenic/septic); late shock adds hypotension, altered mental status, and oliguria."
+    difficulty: easy
+    tags: [shock, hemorrhagic, cardiogenic, distributive, obstructive]
+  - front: "What are the maintenance fluid rates using the 4-2-1 rule, and what is the shortcut formula for patients ≥20 kg?"
+    back: "4-2-1 rule: 0–10 kg = 4 cc/kg/h; 10–20 kg = 2 cc/kg/h; remaining weight = 1 cc/kg/h. Shortcut for ≥20 kg: Fluid rate (cc/h) = 40 + patient's weight in kg. Replace ongoing losses and deficits (assume 10% body weight for deficits).\n\nThe 4-2-1 rule (Holliday-Segar method) calculates daily fluid maintenance needs based on metabolic demands proportional to body weight. In resuscitation, initial bolus is given while monitoring HR, BP, and urine output, with early escalation to blood products in hemorrhagic shock."
+    difficulty: easy
+    tags: [4-2-1 rule, maintenance fluids, fluid resuscitation, pediatric, Holliday-Segar]
+  - front: "What investigations are ordered during resuscitation in the emergency department?"
+    back: "CBC, electrolytes, BUN, creatinine, glucose, amylase, INR/PTT, beta-hCG, liver panel, VBG, lactate, troponin, toxicology screen, group and screen. ECG, BP, and O2 monitors are applied continuously. Foley catheter and NG tube are inserted if indicated.\n\nThese investigations are obtained concurrently with the primary survey to identify life-threatening abnormalities (e.g., coagulopathy, metabolic acidosis, pregnancy) that guide resuscitation decisions. Lactate elevation indicates tissue hypoperfusion even when BP is maintained."
+    difficulty: easy
+    tags: [resuscitation investigations, emergency labs, lactate, troponin, group and screen]
+  - front: "What are 'rescue' airway management techniques and when are they used?"
+    back: "Rescue techniques include: bougie (used as a guidewire to guide ETT placement), video laryngoscopy (indirect visualization), and laryngeal mask airway (LMA) or Combitube® as supraglottic devices. These are used when direct laryngoscopy fails or is anticipated to be difficult.\n\nA failed airway algorithm progresses from optimized direct laryngoscopy → video laryngoscopy → supraglottic airway device → surgical airway (cricothyrotomy). Provider safety considerations (e.g., COVID-19 requiring full PPE) may preclude certain airway interventions."
+    difficulty: medium
+    tags: [rescue airway, bougie, video laryngoscopy, LMA, difficult airway]
+  - front: "What are the compression-to-ventilation ratios in adult vs. child/infant CPR (AHA 2020 guidelines)?"
+    back: "Adults: 30 compressions to 2 ventilations (single or dual rescuer). Children/infants: 30:2 for single rescuer, 15:2 for dual rescuer.\n\nThe 15:2 ratio for pediatric two-rescuer CPR reflects the proportionally higher respiratory contribution to pediatric cardiac arrest compared with adults. Hands-only CPR is acceptable for bystanders not confident in ventilation technique."
+    difficulty: easy
+    tags: [CPR, BLS, resuscitation, pediatrics]
+  - front: "What compression rate and depth are recommended for adult CPR per AHA 2020 guidelines?"
+    back: "Rate: 100–120/min. Depth: 2–2.4 inches (approximately 5–6 cm). Allow complete chest wall recoil between compressions.\n\nAdequate rate and depth optimise cardiac output during CPR. Incomplete recoil impairs venous return and reduces coronary perfusion pressure. Rate >120/min is associated with inadequate depth."
+    difficulty: easy
+    tags: [CPR, BLS, resuscitation]
+  - front: "When is immediate defibrillation indicated during cardiac arrest resuscitation?"
+    back: "Immediately if a shockable rhythm (ventricular fibrillation or pulseless ventricular tachycardia) is identified. For unwitnessed arrest, perform 5 cycles/2 min of CPR first, then use AED.\n\nEarly defibrillation is the single most important determinant of survival in VF/VT arrest. In unwitnessed arrest, a period of CPR first allows restoration of some metabolic substrate before the defibrillation shock."
+    difficulty: easy
+    tags: [defibrillation, VF, VT, AED, resuscitation]
+  - front: "What is the mnemonic METABOLIC for the causes of coma?"
+    back: "M — Major organ failure; E — Electrolyte/Endocrine; T — Toxins/Temperature; A — Acid disorders; B — Base disorders; O — decreased Oxygen level; L — Lactate; I — Insulin/Infection (sepsis); C — Cardiac/hyperCalcemia.\n\nToxic-metabolic causes are the majority cause of coma. Structural causes (minority) include hemorrhage, ischemia, and mass lesions. The key clinical distinction: toxic-metabolic coma typically has symmetric findings and preserved upper brainstem reflexes (equal reactive pupils), while structural coma often has asymmetric findings and focal deficits."
+    difficulty: easy
+    tags: [coma, altered mental status, toxic-metabolic, mnemonic]
+  - front: "What are the red flag features for back pain that require urgent investigation?"
+    back: "Fracture risk (osteoporosis, age >50, mild trauma), infection (fever, IV drug use, recent spinal intervention, immunosuppression), cancer, vascular causes (cardiac risk factors), neurological deficits (saddle anesthesia, bowel/bladder dysfunction), constant pain, paresthesias.\n\nThe CORE Back Tool helps screen for common mechanical back pain syndromes. Extraspinal emergencies (aortic dissection, AAA, PE, MI, retroperitoneal bleed, pancreatitis) and spinal emergencies (osteomyelitis, cauda equina syndrome, epidural abscess/hematoma, discitis, spinal fracture, malignancy) must be excluded. Urgent MRI is indicated for neurological findings."
+    difficulty: easy
+    tags: [back pain, red flags, emergency, cauda equina]
+  - front: "What imaging is appropriate for emergency back pain evaluation?"
+    back: "CT if trauma or fracture risk; urgent MRI if neurological findings; X-ray and MRI if risk of infection or malignancy. Reserve imaging for neurological deficits, metastases, and patients at high-risk of fracture, infection, cancer, or vascular cause.\n\nRoutine imaging is not indicated for typical musculoskeletal back pain (moderate, worse with movement or cough, no visceral symptoms). Selective imaging prevents unnecessary radiation and cost while ensuring dangerous pathology is not missed."
+    difficulty: easy
+    tags: [back pain, imaging, emergency]
+  - front: "What are the high-mortality and high-morbidity causes of dyspnea that must be excluded first?"
+    back: "Respiratory: airway obstruction (foreign body, epiglottitis, abscess, anaphylaxis), pneumo/hemothorax, pulmonary edema/PE/pneumonia/acute asthma/COPD exacerbation. Cardiac: CHF, MI, valvular disease, tamponade, arrhythmia. Metabolic: metabolic acidosis, toxin ingestion. Neuromuscular: myasthenia gravis, diaphragmatic paralysis.\n\nDyspnea is the subjective sensation of SOB. History and physical identify the cause in ~2/3 of cases. Life-threatening causes must be excluded immediately. Pulse oximetry, CXR, ECG, and ABG/VBG are initial investigations. CT chest is indicated when PE is suspected. NIPPV reduces need for intubation in severe COPD/CHF."
+    difficulty: medium
+    tags: [dyspnea, differential diagnosis, shortness of breath, emergency]
+  - front: "What are the indications and dosing for lorazepam in the ED?"
+    back: "Anxiety: 0.5–2 mg PO/IM/IV q6–8h. Status epilepticus: 4 mg IV, repeat up to q5 min. Alcohol withdrawal: 10–20 mg PO/IV q1h, titrated to signs/symptoms.\n\nLorazepam is the benzodiazepine of choice for status epilepticus due to its rapid onset and longer duration of action compared to diazepam. In alcohol withdrawal, benzodiazepines prevent progression to delirium tremens and seizures by cross-reacting with GABA-A receptors. Symptom-triggered dosing protocols are as effective as fixed dosing."
+    difficulty: easy
+    tags: [lorazepam, status epilepticus, alcohol withdrawal, benzodiazepine, emergency medicine]
+  - front: "What are the key properties of fentanyl and midazolam used for procedural sedation?"
+    back: "Fentanyl: 0.5–1.0 mcg/kg IV; very short-acting narcotic, complication = apnea. Midazolam: 1–5 mg IV as starting dose, titrate PRN; short-acting benzodiazepine, complication = apnea (especially when used with a narcotic). Often used together for procedural sedation.\n\nThe combination of opioid + benzodiazepine provides synergistic analgesia and sedation at lower doses of each drug. The primary risk is respiratory depression requiring close monitoring with pulse oximetry and capnography. Reversal agents: naloxone for opioid, flumazenil for benzodiazepine."
+    difficulty: easy
+    tags: [procedural sedation, fentanyl, midazolam, apnea, emergency medicine]
+  - front: "What is the approach to dizziness in the ED, and what are the four types to distinguish?"
+    back: "Four types: 1) Vertigo (room spinning — vestibular), 2) Lightheadedness (disconnected from environment — psychogenic/hyperventilation), 3) Presyncope (almost blacking out — cardiovascular), 4) Dysequilibrium (unstable/off-balance — neurological/cerebellar). Always rule out stroke as cause of dizziness.\n\nDistinguishing dizziness type guides workup. Vertigo is further classified as peripheral (BPPV, labyrinthitis, Meniere's) vs. central (stroke, MS, tumor). Central vertigo red flags: direction-changing nystagmus, inability to stand, other neurological signs, new severe headache. HINTS exam (Head Impulse, Nystagmus, Test of Skew) distinguishes central from peripheral vertigo."
+    difficulty: medium
+    tags: [dizziness, vertigo, presyncope, emergency, neurology]

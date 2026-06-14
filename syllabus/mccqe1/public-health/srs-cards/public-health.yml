@@ -1,0 +1,186 @@
+# Public Health (PublicHealth) - generated from srs-mccqe1
+cards:
+  - front: "What is the difference between incidence rate and prevalence?"
+    back: "Incidence rate measures the number of NEW cases in a population over a specific time period, while prevalence measures the TOTAL number of existing cases at a point or over a period of time.\n\nPrevalence is a function of incidence rate and disease duration. Prevalence favors chronic over acute cases and is useful for measuring disease burden and planning services. Point prevalence is assessed at one time, while period prevalence includes new cases and excludes terminations over a defined period."
+    difficulty: easy
+    tags: [public health, epidemiology, biostatistics]
+  - front: "A study finds that countries with higher red wine consumption have lower rates of heart disease and concludes that red wine prevents heart disease. What type of fallacy is this?"
+    back: "Ecological fallacy\n\nAn ecological fallacy occurs when population-level data is erroneously used to draw conclusions about individuals. Just because countries with higher red wine consumption have lower heart disease rates does not mean that individuals who drink red wine have lower heart disease risk. Individual-level data is needed to support such conclusions."
+    difficulty: easy
+    tags: [public health, epidemiology, study design, bias]
+  - front: "What are the five levels of evidence in evidence-based medicine?"
+    back: "Level I: large RCTs or meta-analyses of RCTs. Level II: small RCTs (may show non-significant trends). Level III: non-randomized studies (cohort, case-control, cross-sectional). Level IV: expert committees/consensus guidelines. Level V: individual expert opinion.\n\nThese levels reflect the nature of evidence, not direct evaluations of quality. While RCTs tend to be most credible, Level III evidence gains credibility when multiple studies from different locations report consistent findings. Level IV-V reflects decision-making necessary in the absence of published evidence."
+    difficulty: easy
+    tags: [public health, evidence-based medicine, study design]
+  - front: "In Canada, which diseases require IMMEDIATE reporting to the Medical Officer of Health?"
+    back: "Diseases marked with asterisk (*) including: anthrax, botulism, cholera, diphtheria, Ebola, measles, plague, poliomyelitis, rabies, SARS, smallpox, and novel coronavirus (COVID-19), among others. These must be reported immediately by telephone or fax.\n\nMandatory disease reporting is required by provincial law. Failure to report can result in suspension of medical license. Reasons include: outbreak identification/control, preventing spread of significant threats, immunization-preventable diseases, surveillance, and cases requiring education/treatment/partner notification. Other diseases can be reported the next working day."
+    difficulty: easy
+    tags: [public health, mandatory reporting, infectious disease, Canadian law]
+  - front: "What is a DALY and how is it calculated?"
+    back: "Disability Adjusted Life Year = years of life lost due to premature mortality + years lost due to disability, where 0 = perfect health and 1 = death. Used to assess burden of diseases in a population.\n\nDALYs account for both premature death and time spent with disability (physical or mental). In contrast, QALYs (Quality Adjusted Life Years) weight years of life by quality (utility), ranging from 0 (death) to 1 (perfect health), and are used as an economic measure for medical interventions. Top causes of DALYs in Canada include neoplasms, cardiovascular disease, and musculoskeletal disorders."
+    difficulty: easy
+    tags: [public health, epidemiology, health economics, disease burden]
+  - front: "What occupational and workplace prevention strategies exist, and what rights do workers have under occupational health legislation?"
+    back: "Workers have the right to: (1) know about workplace hazards, (2) participate in health/safety committees, (3) refuse dangerous work, (4) stop dangerous work. Prevention follows the hierarchy of controls: elimination/substitution > engineering controls > administrative controls > PPE.\n\nWorkplace primary prevention uses the hierarchy of controls to minimize exposure. Secondary prevention involves medical surveillance (e.g., blood lead testing, PFTs for asthma, audiograms for hearing loss). Tertiary prevention focuses on treatment and return-to-work planning. Physicians distinguish between restrictions, limitations, abilities, and tolerance."
+    difficulty: easy
+    tags: [public health, occupational health, workplace safety]
+  - front: "What are the six core functions of public health in Canada?"
+    back: "1. Health protection, 2. Health surveillance, 3. Disease and injury prevention, 4. Population health assessment, 5. Health promotion, 6. Emergency preparedness and response.\n\nThese functions are delivered by local public health units across Canada. Health protection involves regulation (e.g., safe water/food), while health promotion involves advocating for improved health through community and government measures as outlined in the Ottawa Charter."
+    difficulty: easy
+    tags: [public-health, Canada]
+  - front: "What are the five key strategies of the Ottawa Charter for Health Promotion (1986)?"
+    back: "1. Building healthy public policy, 2. Creating supportive environments, 3. Strengthening community action, 4. Developing personal skills, 5. Re-orienting health services.\n\nThe Ottawa Charter defines health promotion as the process of enabling people to increase control over their health. It emphasizes that health promotion is primarily done at the population level by public health professionals, though it can also occur through clinical interactions."
+    difficulty: easy
+    tags: [public-health, health-promotion]
+  - front: "What is the mnemonic SPIN and SNOUT for interpreting diagnostic tests?"
+    back: "SPIN: A SPecific test rules IN a diagnosis (few false positives, so a positive result is likely true). SNOUT: A SeNsitive test rules OUT a diagnosis (few false negatives, so a negative result is likely true).\n\nSensitivity and specificity are characteristics of the test itself and do not depend on disease prevalence. PPV and NPV, however, depend on the prevalence of the disease in the population being tested."
+    difficulty: easy
+    tags: [public-health, epidemiology, biostatistics]
+  - front: "What is the formula for Number Needed to Treat (NNT)?"
+    back: "NNT = 1 / Absolute Risk Reduction (ARR), where ARR = CER - EER (control event rate minus experimental event rate).\n\nNNT represents the number of patients who need to be treated to achieve one additional favorable outcome. A lower NNT indicates a more effective treatment. NNT must be interpreted in context of the severity of the outcome being prevented."
+    difficulty: medium
+    tags: [public-health, epidemiology, biostatistics]
+  - front: "What are the Bradford Hill criteria for causation?"
+    back: "1. Strength of association, 2. Consistency, 3. Specificity, 4. Temporal relationship, 5. Biological gradient, 6. Biological plausibility, 7. Coherence, 8. Experimental evidence, 9. Analogy.\n\nNot all criteria must be fulfilled to establish causation. Modern EBM emphasizes experimental evidence as superior. Temporal relationship (exposure before outcome) is considered the most essential criterion for establishing causation."
+    difficulty: medium
+    tags: [public-health, epidemiology, causation]
+  - front: "What distinguishes lead-time bias from length-time bias in screening?"
+    back: "Lead-time bias: overestimation of survival time from earlier detection by screening rather than truly improved outcomes. Length-time bias: screening detects more slowly progressing (less aggressive) cases, overestimating survival.\n\nBoth are important biases in evaluating screening programs. Lead-time bias occurs because screening advances the time of diagnosis without necessarily changing the time of death. Length-time bias occurs because aggressive, fast-moving diseases are less likely to be caught by periodic screening."
+    difficulty: medium
+    tags: [public-health, epidemiology, screening]
+  - front: "What is the difference between Type I and Type II errors in statistical testing?"
+    back: "Type I (alpha) error: falsely rejecting the null hypothesis (concluding an effect exists when it doesn't). Type II (beta) error: falsely accepting the null hypothesis (missing a real effect).\n\nStudies are typically designed to minimize Type I error since it can have larger clinical significance. Power = 1 - beta, representing the probability of correctly rejecting a false null hypothesis. Increasing sample size decreases both types of errors."
+    difficulty: medium
+    tags: [public-health, biostatistics]
+  - front: "What are the ideal criteria for a screening test?"
+    back: "Disease: causes significant suffering, understood natural history, detectable asymptomatic stage, early intervention improves outcomes. Test: high sensitivity, safe, rapid, easy, inexpensive, acceptable. System: adequate capacity for follow-up and treatment, cost effective, sustainable.\n\nScreening differs from diagnostic testing in that it targets apparently healthy individuals. Universal screening tests the entire population (e.g., PKU in newborns), while selective screening targets high-risk subgroups (e.g., mammography in women >50)."
+    difficulty: medium
+    tags: [public-health, screening]
+  - front: "What are the three levels of disease prevention with examples?"
+    back: "Primary: prevent disease onset (immunization, smoking cessation). Secondary: early detection of subclinical disease (mammography, Pap smears). Tertiary: treat/rehabilitate to prevent progression (DM monitoring with HbA1c, medication management).\n\nPrimordial prevention is an additional level that aims to prevent the development of risk factors themselves, such as childhood education about healthy behaviors. Each level progressively addresses disease further along its natural history."
+    difficulty: easy
+    tags: [public-health, prevention]
+  - front: "What are the ten steps to control a disease outbreak?"
+    back: "1. Identify investigation team, 2. Establish existence of outbreak, 3. Verify diagnosis, 4. Define a case, 5. Find cases systematically, 6. Perform descriptive epidemiology, 7. Evaluate hypotheses, 8. Implement control measures, 9. Communicate findings, 10. Continue surveillance.\n\nCase definition requires three components: Person, Place, Time. Epidemic curves are created during step 6 and can be point source, continuous source, or propagated. Control measures can be implemented at any stage of the investigation."
+    difficulty: medium
+    tags: [public-health, outbreak-management]
+  - front: "What additional precautions are needed for airborne infections like TB, measles, and varicella?"
+    back: "N95 mask (fit-tested) and negative pressure room.\n\nContact precautions (gloves, gown, dedicated equipment) are used for gastroenteritis, scabies, and conjunctivitis. Droplet precautions (mask/respirator with eye protection) are used for mumps, pertussis, and meningococcal disease. Seasonal influenza and COVID-19 require contact + droplet precautions."
+    difficulty: easy
+    tags: [public-health, infection-control]
+  - front: "What are the mandatory reporting requirements for physicians in Ontario?"
+    back: "Reportable diseases to public health, live births/stillbirths/deaths to Registrar General, child abuse to CAS, gunshot/stab wounds to police, unfit to drive to Ministry of Transportation, abuse of LTC residents to regulatory authority.\n\nFailure to report can result in suspension of license to practice. Self-inflicted knife wounds are NOT reportable. Diseases marked with asterisk require immediate reporting by phone/fax; others can be reported the next working day. Each province has similar but specific legislation."
+    difficulty: medium
+    tags: [public-health, legal, mandatory-reporting]
+  - front: "What is the Walkerton tragedy and its public health significance?"
+    back: "In May 2000, Walkerton, Ontario's drinking water was contaminated with E. coli O157:H7 and Campylobacter jejuni. Over 2300 people became ill, 27 developed hemolytic uremic syndrome, and 7 died.\n\nThis event highlighted the importance of water safety regulation and public health infrastructure. Water biological hazards include E. coli, Salmonella, Pseudomonas, Shigella, Giardia, and Cryptosporidium. Indigenous peoples, Black Nova Scotians, and rural Canadians are at higher risk for waterborne disease."
+    difficulty: easy
+    tags: [public-health, environmental-health, water-safety]
+  - front: "What is the Stages of Change (Transtheoretical) Model?"
+    back: "1. Precontemplation (not considering change), 2. Contemplation (considering change within 6 months), 3. Preparation (planning change within 30 days), 4. Action (actively making change), 5. Maintenance (sustaining change), with potential Relapse at any stage.\n\nThis model provides a framework for facilitating behaviour change and is applied to health behaviours such as smoking cessation. Behaviour results from predisposing factors (knowledge, attitudes), enabling factors (skills, supports), and reinforcing factors (HCPs, social context)."
+    difficulty: easy
+    tags: [public-health, behaviour-change]
+  - front: "What is the difference between efficacy, effectiveness, and efficiency in healthcare?"
+    back: "Efficacy: beneficial result under ideal conditions (e.g., RCT). Effectiveness: benefit under usual clinical care conditions. Efficiency: economy of an intervention with known effectiveness (optimal use of resources).\n\nA treatment may have high efficacy in trials but lower effectiveness in practice due to poor adherence, limited access, or suboptimal administration. Efficiency considers cost, time, and personnel in addition to the known effectiveness of an intervention."
+    difficulty: easy
+    tags: [public-health, epidemiology]
+  - front: "What is the Precede-Proceed model in health program planning?"
+    back: "PRECEDE: Phase 1-4 identify desired results, health issues, predisposing/enabling/reinforcing factors, and administrative/policy factors. PROCEED: Phase 5-8 cover implementation, process evaluation, impact evaluation, and outcome evaluation.\n\nThis is a comprehensive tool for designing, implementing, and evaluating health interventions. It moves from identifying the ultimate desired result backward to determining what factors influence the behaviors and conditions that need to change, then forward through implementation and evaluation."
+    difficulty: medium
+    tags: [public-health, health-planning]
+  - front: "What are the Truth and Reconciliation Commission (TRC) Calls to Action relevant to healthcare?"
+    back: "The TRC Final Report (2015) includes 94 Calls to Action, some directed to HCPs and medical schools, calling for culturally safe care, addressing intergenerational trauma from residential schools, and physicians playing an active role in reconciliation with Indigenous peoples.\n\nResidential schools (1870s-1996) caused lasting physical, mental, emotional, and spiritual harm. Survivors report poorer health, increased chronic/infectious diseases, depression, substance use, and suicide. These outcomes extend to subsequent generations through intergenerational trauma."
+    difficulty: medium
+    tags: [public-health, indigenous-health, TRC]
+  - front: "What is environmental racism?"
+    back: "The deliberate and disproportionate development of environmental hazards and toxic facilities near communities without a strong voice (Indigenous, immigrant, racialized groups, lower SES).\n\nExamples in Canada include oil and gas industries on Indigenous lands without permission, lack of access to potable water (e.g., Attawapiskat), and mercury contamination at Grassy Narrows. Colonial and racist practices contribute to diminished political power to advocate against these hazards."
+    difficulty: easy
+    tags: [public-health, environmental-health, indigenous-health]
+  - front: "What are the key differences between a cohort study and a case-control study?"
+    back: "Cohort: starts with exposed/unexposed groups, follows forward for outcomes, calculates relative risk. Case-control: starts with cases/controls (outcome), looks back at exposures, calculates odds ratio. Cohort is better for common outcomes; case-control is better for rare diseases.\n\nCohort studies provide stronger evidence for causation and can assess multiple outcomes. Case-control studies are less costly and time-consuming but are subject to recall bias and selection bias. Neither is randomized, so confounding remains a concern in both designs."
+    difficulty: medium
+    tags: [public-health, epidemiology, study-design]
+  - front: "What is population health, as defined in public health medicine?"
+    back: "Population health refers to the health of defined groups of people, their health determinants, trends in health, and health inequalities. It is influenced by physical, biological, social, environmental, and economic factors; personal health behaviours; and access to and quality of healthcare services. It accounts for socioeconomic, policy, and historical issues.\n\nPopulation health is distinct from individual clinical care — it focuses on groups rather than individual patients. This perspective informs public health interventions, policy decisions, and health equity initiatives."
+    difficulty: easy
+    tags: [population health, public health, SDOH, epidemiology]
+  - front: "What is the definition of public health?"
+    back: "An organized effort by society to promote, protect, improve, and when necessary, restore the health of individuals, specified groups, or the entire population. It is a combination of sciences, skills, and values that function through collective societal activities involving programs, services, and institutions aimed at protecting and improving population health.\n\nPublic health in Canada operates at federal (PHAC), provincial (e.g., Public Health Ontario), and municipal/local levels. It is usually organized and funded separately from the healthcare system."
+    difficulty: easy
+    tags: [public health, definition, PHAC, epidemiology]
+  - front: "What are the six core functions/essential activities of public health in Canada?"
+    back: "1) Health protection: measures for population-level health risk management through regulation (e.g., safe water/food supply). 2) Health surveillance. 3) Health promotion. 4) Disease prevention. 5) Health emergency preparedness and response. 6) Population health assessment.\n\nThese core functions guide the work of all public health units in Canada. The Public Health Agency of Canada (federal), provincial agencies, and local public health units all carry out these functions at their respective levels."
+    difficulty: easy
+    tags: [public health, core functions, health protection, PHAC, Canada]
+  - front: "What is epidemiology?"
+    back: "The study of the distribution and determinants of health-related states or events in specified populations, and the application of this study to the control of health problems.\n\nEpidemiology is the foundational science of public health. It describes 'who gets disease, where, when, and why' and uses this to develop and evaluate interventions. Key measures include incidence, prevalence, relative risk, and odds ratios."
+    difficulty: easy
+    tags: [epidemiology, public health, definition]
+  - front: "What is the mission of the Public Health Agency of Canada (PHAC)?"
+    back: "To promote and protect the health of Canadians through leadership, partnership, innovation, preparedness, and action in public health.\n\nPHAC operates at the federal level and coordinates national public health strategies, emergency preparedness, infectious disease surveillance, and health promotion. Provincial agencies (e.g., Public Health Ontario) work in parallel at the provincial level."
+    difficulty: easy
+    tags: [PHAC, Public Health Agency of Canada, public health, Canada]
+  - front: "What are the key acronyms and their definitions for public health epidemiology measures: AR, RR, OR, NNT, NNH, PPV, NPV?"
+    back: "AR: attributable risk. RR: relative risk. OR: odds ratio. NNT: number needed to treat. NNH: number needed to harm. PPV: positive predictive value. NPV: negative predictive value.\n\nThese measures are foundational for interpreting epidemiological studies and clinical research. RR is used in cohort studies; OR is used in case-control studies. NNT and NNH quantify clinical significance of treatment effects."
+    difficulty: easy
+    tags: [epidemiology, statistics, RR, OR, NNT, PPV, NPV, public health]
+  - front: "What are the 5 main reasons that certain diseases are mandatorily reportable in Canada?"
+    back: "1. To identify and control an outbreak\n2. To prevent spread if the disease presents a significant threat to individuals or a subset of the population (e.g., Lassa Fever)\n3. If the disease is preventable with immunization (e.g., polio, diphtheria, congenital rubella)\n4. If infected individuals require education, treatment, and/or partner notification (e.g., gonorrhea, TB)\n5. Surveillance (to monitor disease trends over time)\n\nIn Canada, mandatory disease reporting is a legal obligation under provincial law and is also outlined by provincial physician licensing Colleges (e.g., CPSO). Failure to report can result in suspension of a license to practice. The rationale encompasses outbreak control, prevention, immunization-preventable disease tracking, contact tracing, and ongoing epidemiological surveillance."
+    difficulty: easy
+    tags: [public health, mandatory reporting, communicable disease, epidemiology]
+  - front: "Which reportable diseases in Canada must be reported IMMEDIATELY (by telephone or fax) to the Medical Officer of Health?"
+    back: "Diseases marked with * in the reportable disease list must be reported immediately. Key examples include: Anthrax, Botulism, Brucellosis, Cholera, COVID-19 (novel coronavirus including SARS and MERS), Diphtheria, Ebola virus disease, Marburg virus disease, Lassa Fever, Hantavirus pulmonary syndrome, Hemorrhagic fevers, Meningococcal disease (invasive), Plague, Poliomyelitis, Q Fever, Rabies, SARS, Smallpox and other Orthopoxviruses (including Monkeypox), Tuberculosis, Tularemia. Also Influenza in institutions must be reported immediately.\n\nDiseases marked with an asterisk (*) represent diseases of public health significance that require IMMEDIATE reporting by phone or fax to the Medical Officer of Health. Other diseases can be reported the next working day by fax, phone, or mail. The immediacy requirement reflects the potential for rapid spread and the need for urgent public health response."
+    difficulty: medium
+    tags: [public health, mandatory reporting, communicable disease, notifiable diseases]
+  - front: "A physician fails to report a reportable disease to public health authorities. What is the potential consequence?"
+    back: "Suspension of the physician's license to practice medicine.\n\nPhysician reporting of certain diseases is required by provincial law in Canada and is also outlined by provincial physician licensing Colleges (e.g., CPSO in Ontario). Failure to comply with mandatory reporting obligations can result in disciplinary action including suspension of the license to practice."
+    difficulty: easy
+    tags: [public health, mandatory reporting, medical ethics, physician licensing]
+  - front: "A physician suspects a patient has been the victim of child abuse. What is the legal obligation in Ontario?"
+    back: "The physician must report to the local Children's Aid Society (CAS). This obligation applies when there are 'reasonable grounds to suspect' child abuse or neglect, including physical harm, emotional harm, sexual harm, and neglect. There is an ongoing duty to report — if additional reasonable grounds are suspected, a further report to CAS is necessary.\n\nIn Ontario, child abuse reporting is mandatory under provincial child welfare legislation. The threshold is 'reasonable grounds to suspect' — not certainty. This is deliberately a low threshold to protect vulnerable children. The ongoing duty to report means each new suspicion triggers a fresh reporting obligation, even if a previous report has already been made."
+    difficulty: easy
+    tags: [public health, mandatory reporting, child abuse, medical ethics]
+  - front: "A patient with a gunshot wound presents to the emergency department. What is the physician's reporting obligation? What about self-inflicted stab wounds?"
+    back: "All patients with gunshot or stab wounds must be reported to the local Police Service as soon as is practical. However, self-inflicted knife wounds are NOT reportable.\n\nIn Ontario, gunshot and stab wounds are mandatorily reportable to police, reflecting public safety concerns about interpersonal violence. The exception for self-inflicted knife wounds recognizes that these represent a different public safety context (self-harm rather than violence by another party), and over-reporting could deter patients from seeking care."
+    difficulty: medium
+    tags: [public health, mandatory reporting, trauma, medical ethics]
+  - front: "A physician has a patient with dementia who continues to drive. What is the physician's legal reporting obligation?"
+    back: "The physician must report to the Provincial Ministry of Transportation. Physicians are legally required to report all patients with a medical condition (e.g., dementia, untreated epilepsy, ophthalmological conditions) that may impede their driving ability. If a physician does not report and the driver gets into an accident, the physician may be held liable.\n\nFitness-to-drive reporting is a mandatory physician obligation in Ontario (reported to the Ministry of Transportation). This protects both the driver and the public. Physicians can be held liable for failure to report if the patient subsequently causes a motor vehicle accident. This creates tension with patient confidentiality, but public safety takes precedence."
+    difficulty: easy
+    tags: [public health, mandatory reporting, fitness to drive, medical ethics]
+  - front: "Under what circumstances must a physician contact a coroner or police regarding a patient's death?"
+    back: "Physicians must contact a coroner or police if the patient is suspected to have died:\n1. From violence, misadventure, negligence, misconduct, or malpractice\n2. By unfair means\n3. During pregnancy or postpartum from circumstances attributed to pregnancy\n4. Suddenly and unexpectedly\n5. From an illness not treated by a legally qualified medical practitioner\n6. Under circumstances that may require investigation\n\nIn Ontario, while all live and stillbirths must be reported to the Registrar General within 2 business days, deaths that fall outside normal expected death from disease require coroner notification. The coroner's role is to investigate circumstances of death to protect public safety and identify systemic issues. Sudden unexpected death, deaths in pregnancy, and medically unattended deaths are key triggers."
+    difficulty: medium
+    tags: [public health, mandatory reporting, coroner, death certification]
+  - front: "What is the mandatory reporting obligation for physicians regarding residents of long-term care homes or retirement homes?"
+    back: "Any resident suspected of being subject to or at risk of improper or incompetent treatment or care, abuse or neglect, or unlawful conduct (including financial abuse) must be reported IMMEDIATELY to the Registrar of the Retirement Homes Regulatory Authority or Long-Term Care Home Director.\n\nLong-term care and retirement home residents are a vulnerable population with heightened legal protections. The mandatory reporting obligation is immediate and encompasses a broad range of harms including physical abuse, neglect, incompetent care, and financial exploitation. This reflects the power imbalance between residents and care providers."
+    difficulty: medium
+    tags: [public health, mandatory reporting, elder abuse, long-term care]
+  - front: "What did the Swedish Two-County Trial demonstrate about mammographic screening?"
+    back: "At 29 years of follow-up, mammographic screening led to a large significant reduction in breast cancer mortality (relative risk = 0.69; 95% CI: 0.56–0.84). Invitation to mammographic screening leads to a large significant decrease in breast cancer-related mortality.\n\nThe Swedish Two-County Trial (published in Radiology 2011) is a landmark randomized trial involving 133,065 women aged 40–74 years. It demonstrated a ~31% relative reduction in breast cancer mortality with mammographic screening over 29 years of follow-up. This trial forms the evidentiary basis for mammography screening programs in Canada."
+    difficulty: medium
+    tags: [public health, cancer screening, mammography, breast cancer, preventive medicine]
+  - front: "What did the MASS trial demonstrate regarding abdominal aortic aneurysm (AAA) screening?"
+    back: "In men screened for AAA by ultrasound, there was a 48% relative reduction in AAA-related mortality (0.46% vs. 0.87% deaths) over 10 years. The cost-effectiveness ratio was £7,600 per life-year gained, with cost-effectiveness increasing over time.\n\nThe MASS trial (BMJ 2009) demonstrated sustained mortality benefit for men screened for AAA by ultrasound at 10 years of follow-up. This evidence supports one-time ultrasound screening for AAA in men aged 65–75 years who have ever smoked, which is recommended in several Canadian guidelines."
+    difficulty: medium
+    tags: [public health, cancer screening, aortic aneurysm, preventive medicine, vascular surgery]
+  - front: "What did the COLONPREV trial show comparing colonoscopy vs. FIT testing for colorectal cancer screening?"
+    back: "CRC incidence did not differ between colonoscopy and FIT groups (0.1% in each group; OR 0.99, p=0.99). More advanced adenomas were detected with colonoscopy (1.9% vs. 0.9%). Participation was higher in the FIT group (34.2% vs. 24.6% for colonoscopy). Conclusion: Colonoscopy and FIT have equivalent CRC detection rates, but participation is higher with FIT.\n\nThe COLONPREV trial (NEJM 2012) compared one-time colonoscopy to FIT every 2 years in adults aged 50–69 at average CRC risk. The higher adenoma detection with colonoscopy did not translate to lower CRC incidence in this study. The higher participation rate with FIT is clinically important — a test with better compliance may offer superior population-level benefit even if per-test sensitivity is lower."
+    difficulty: medium
+    tags: [public health, cancer screening, colorectal cancer, colonoscopy, FIT, preventive medicine]
+  - front: "What were the key results of the NLST trial regarding lung cancer screening with low-dose CT?"
+    back: "In high-risk patients (heavy smokers), low-dose CT screening resulted in a 20% relative reduction in lung cancer mortality compared to chest X-ray (95% CI 6.8–26.7; p=0.004). Positive screening test rates were 24.2% (CT) vs. 6.9% (CXR). Lung cancer incidence: 645 vs. 572 cases per 100,000 person-years in CT vs. CXR groups.\n\nThe NLST trial (NEJM 2011) enrolled 53,454 high-risk patients (heavy smokers aged 55–74) randomized to annual low-dose CT vs. CXR for 3 years. The 20% relative mortality reduction with LDCT is the basis for lung cancer screening recommendations in Canada (e.g., for patients aged 55–74 with ≥30 pack-year smoking history). The high false-positive rate (24.2%) with CT is an important limitation requiring careful patient selection."
+    difficulty: medium
+    tags: [public health, cancer screening, lung cancer, CT screening, preventive medicine]
+  - front: "What did the VAXICOL trial show about influenza vaccination of nursing home staff?"
+    back: "Staff vaccination rates were 69.9% (vaccination arm) vs. 31.8% (control arm). A strong inverse correlation between staff vaccination coverage and all-cause mortality of residents was found (correlation coefficient = -0.42, p=0.007). Conclusion: Vaccinating nursing home staff against influenza reduces all-cause mortality of residents.\n\nThe VAXICOL trial (JAGS 2009) used a cluster-randomized design across 40 nursing homes. The finding that vaccinating STAFF reduces RESIDENT mortality demonstrates the concept of indirect protection (herd immunity). This supports mandatory or strongly encouraged influenza vaccination programs for healthcare workers in long-term care settings — a recommendation adopted in many Canadian provinces."
+    difficulty: medium
+    tags: [public health, vaccination, influenza, nursing home, preventive medicine]
+  - front: "What was the efficacy of the BNT162b2 mRNA COVID-19 vaccine in the pivotal RCT?"
+    back: "95% efficacy in preventing COVID-19 in people aged 16 and older (8 cases in vaccine group vs. 162 in placebo group; 95% CI: 90.3–97.6). Serious adverse events were low and comparable between groups.\n\nThe BNT162b2 (Pfizer-BioNTech) vaccine trial (NEJM 2020, NCT04368728) enrolled 43,548 participants. The 95% efficacy result was the basis for emergency authorization and subsequent approval. The mRNA vaccine platform represents a novel approach using lipid nanoparticle-delivered mRNA encoding the SARS-CoV-2 spike protein."
+    difficulty: easy
+    tags: [public health, vaccination, COVID-19, mRNA vaccine, preventive medicine]
+  - front: "A physician has a patient who is a flight crew member or air traffic controller with a medical condition affecting aviation safety. What is the reporting obligation?"
+    back: "The physician must report to the Federal Ministry of Transportation (NOT provincial). This applies to all patients believed to be flight crew members or air traffic controllers with a medical or optometric condition that is likely to constitute a hazard to aviation safety.\n\nAviation safety reporting is a FEDERAL obligation (unlike driving fitness which is provincial). This distinction is tested — driving = provincial Ministry of Transportation; flying = federal Ministry of Transportation. The threshold is any condition 'likely to constitute a hazard to aviation safety,' reflecting the catastrophic public safety implications of impaired pilot performance."
+    difficulty: medium
+    tags: [public health, mandatory reporting, aviation safety, fitness to fly]

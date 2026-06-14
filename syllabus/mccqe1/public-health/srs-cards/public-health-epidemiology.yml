@@ -1,0 +1,170 @@
+# Public Health Epidemiology (PublicHealth) - generated from srs-mccqe1
+cards:
+  - front: "What is the Standardized Mortality Ratio (SMR) and why is standardization important in comparing mortality rates?"
+    back: "SMR = observed number of deaths / expected number of deaths. Standardization prevents bias when comparing crude rates from dissimilar populations (e.g., crude death rates over decades are not comparable because the population age distribution has changed over time).\n\nWithout standardization, differences in underlying population demographics (particularly age) can make crude mortality rates misleading. The SMR adjusts for these differences, allowing valid comparison across groups or time periods."
+    difficulty: easy
+    tags: [epidemiology, mortality, standardization, SMR, public health]
+  - front: "Define Life Expectancy, Crude Death Rate, Infant Mortality Rate (IMR), and Maternal Mortality Rate (MMR)."
+    back: "Life Expectancy: expected years to be lived by a newborn based on age-specific mortality rates at a selected time. Crude Death Rate: mortality from all causes per 1000 in the population. IMR: deaths among children <1 yr per 1000 live births per year. MMR: deaths of women during pregnancy and due to puerperal causes per 1000 live births in the same year.\n\nThese are core mortality measures used in public health surveillance. IMR is especially sensitive and often used as a proxy for overall healthcare quality and socioeconomic development in a population."
+    difficulty: easy
+    tags: [mortality measures, life expectancy, IMR, MMR, public health]
+  - front: "What is the difference between PYLL, DALY, and QALY as measures of disease burden?"
+    back: "PYLL (Potential Years of Life Lost): difference between actual age at death and expected age at death; gives increased weighting to mortality at younger ages. DALY (Disability-Adjusted Life Year): years lost to premature mortality + years lived with disability (0 = perfect health, 1 = death). QALY (Quality-Adjusted Life Year): years of life weighted by quality/utility (0 = death, 1 = perfect health); used as an economic measure to assess value of medical interventions.\n\nDALYs are used by WHO for global burden of disease comparisons and account for both premature death and disability. QALYs are more often used in health economic evaluations (cost-utility analysis) and can be negative for states considered worse than death."
+    difficulty: medium
+    tags: [DALY, QALY, PYLL, disease burden, health economics, public health]
+  - front: "What are the top causes of DALYs in Canada (2019)?"
+    back: "1. Neoplasms, 2. Cardiovascular diseases, 3. Musculoskeletal disorders, followed by mental disorders, neurological disorders, other non-communicable diseases, unintentional injuries, chronic respiratory diseases, and substance use disorders.\n\nThe burden of disease in Canada is dominated by non-communicable diseases. Understanding the top contributors to DALYs informs health policy priorities and resource allocation in Canada."
+    difficulty: medium
+    tags: [DALY, disease burden, Canada, non-communicable disease, public health]
+  - front: "What is the difference between probability and non-probability sampling? Give examples of each."
+    back: "Probability sampling: all individuals have a known chance of selection. Types: simple random (equal chance), systematic random (every nth person), stratified random (randomly selected from subgroups), cluster (groups selected rather than individuals). Non-probability sampling: chance of selection not known. Types: convenience (accessible persons), snowball (existing subjects recruit others — useful for hidden populations like persons who inject drugs).\n\nProbability sampling reduces selection bias and allows statistical inference to the population. Non-probability sampling is quicker and cheaper but limits generalizability. Snowball sampling is valuable for studying stigmatized or hard-to-reach populations."
+    difficulty: easy
+    tags: [sampling, epidemiology, study design, public health]
+  - front: "What is selection bias? Describe three types including Berkson's bias."
+    back: "Selection bias: a systematic error in recruitment or retention of study participants. Types: (1) Berkson's bias — in case-control studies using hospitalized controls, controls may not represent the general population due to complexity of their hospital admission. (2) Non-response bias — volunteers may be healthier than non-participants. (3) Loss to follow-up bias — dropout rates differ between groups and dropouts differ from completers.\n\nSelection bias threatens the internal validity of a study by making the comparison group unrepresentative. Berkson's bias is classically tested because hospitalized controls share risk factors for hospitalization that may correlate with the exposure of interest."
+    difficulty: medium
+    tags: [bias, selection bias, Berksons bias, epidemiology, study design]
+  - front: "What is information bias? Describe recall bias and interviewer bias."
+    back: "Information bias: the way information is collected about study participants is inadequate. Recall bias: individuals with disease are more likely to incorrectly recall/believe they were exposed to a possible risk factor than those without disease (common in case-control studies). Interviewer bias: interviewers are unblinded to outcome status, and this knowledge biases their behaviour.\n\nInformation bias distorts measured associations. Recall bias is particularly important in case-control studies because cases are more motivated to identify exposures. Blinding interviewers to case/control status minimizes interviewer bias."
+    difficulty: medium
+    tags: [bias, information bias, recall bias, interviewer bias, epidemiology]
+  - front: "What is a confounder and how can confounding be minimized in a study?"
+    back: "A confounder is a variable related to both the exposure and outcome but is not in the causal pathway. It distorts the estimated effect of an exposure. Confounding can be minimized by: randomization, stratification, matching, and regression modelling — usually by balancing confounders equally across comparison groups rather than eliminating their presence.\n\nLate maternal age confounding the relationship between high birth order and Down syndrome is a classic example. Randomization is the only method that can control for both known and unknown confounders simultaneously."
+    difficulty: medium
+    tags: [confounding, epidemiology, bias, study design]
+  - front: "Define sensitivity and specificity and their formulas."
+    back: "Sensitivity = TP/(TP+FN): proportion of people WITH disease who have a POSITIVE test. Specificity = TN/(TN+FP): proportion of people WITHOUT disease who have a NEGATIVE test. Sensitivity and specificity are characteristics of the test and do not depend on disease prevalence.\n\nThe mnemonic SPIN (SPecific test rules IN disease — very few false positives) and SNOUT (SENsitive test rules OUT disease — very few false negatives) help with clinical interpretation. Unlike PPV/NPV, sensitivity and specificity are not affected by prevalence."
+    difficulty: easy
+    tags: [sensitivity, specificity, diagnostic testing, epidemiology]
+  - front: "What is the SPIN/SNOUT mnemonic in clinical test interpretation?"
+    back: "SPIN: use a SPecific test to rule IN a diagnosis. A specific test has very few false positives — if the test is positive, it is likely a true positive. SNOUT: use a SENsitive test to rule OUT a diagnosis. A sensitive test has very few false negatives — if the test is negative, it is likely a true negative.\n\nThese mnemonics are widely used in clinical reasoning. For example, a highly sensitive test like D-dimer is used to rule out PE (SNOUT), whereas a highly specific test like biopsy is used to confirm/rule in disease (SPIN)."
+    difficulty: easy
+    tags: [SPIN, SNOUT, sensitivity, specificity, clinical reasoning]
+  - front: "What are Positive Predictive Value (PPV) and Negative Predictive Value (NPV), and what do they depend on?"
+    back: "PPV = TP/(TP+FP): proportion of people with a positive test who have the disease. NPV = TN/(TN+FN): proportion of people with a negative test who are free of disease. PPV and NPV depend on disease PREVALENCE in the population, unlike sensitivity and specificity.\n\nIn a low-prevalence population, even a highly specific test will have a low PPV because there are many more true negatives than true positives. This is crucial when interpreting screening test results in different clinical settings."
+    difficulty: medium
+    tags: [PPV, NPV, predictive value, prevalence, diagnostic testing]
+  - front: "What is the Likelihood Ratio (LR+) and LR-, and what are their formulas?"
+    back: "LR+ = Sensitivity / (1−Specificity) = [TP/(TP+FN)] / [FP/(TN+FP)]: how much the probability of disease INCREASES if the test is positive. LR− = (1−Sensitivity) / Specificity = [FN/(TP+FN)] / [TN/(TN+FP)]: how much the probability of disease DECREASES if the test is negative. LR depends on test characteristics (not prevalence).\n\nPost-test odds = pre-test odds × LR. A high LR+ (>10) significantly increases disease probability; a low LR− (<0.1) significantly decreases it. LR is useful because it is prevalence-independent, unlike PPV/NPV."
+    difficulty: hard
+    tags: [likelihood ratio, LR+, LR-, diagnostic testing, pre-test probability]
+  - front: "What is pre-test probability and how does it relate to post-test probability?"
+    back: "Pre-test probability: probability that a patient has a given disease before test results are known. Post-test probability: revised probability after a test result. Post-test odds = pre-test odds × LR+ (for positive test) or × LR− (for negative test). Recall: odds = probability/(1−probability). After each test, post-test probability becomes the new pre-test probability for subsequent investigations.\n\nClinical reasoning sequentially updates disease probability. Starting from clinical impression (pre-test probability), test results via LR modify the probability. This forms the basis for Bayesian reasoning in medicine, illustrated by Fagan's nomogram."
+    difficulty: medium
+    tags: [pre-test probability, post-test probability, Bayes, Fagan nomogram, diagnostic reasoning]
+  - front: "What is the difference between efficacy, effectiveness, and efficiency of an intervention?"
+    back: "Efficacy: beneficial result under IDEAL conditions (e.g., RCT with high adherence, close monitoring). Effectiveness: benefit under USUAL conditions of clinical care — considers both efficacy and real-world impact (access, adherence, proper administration). Efficiency: economy of an intervention with known effectiveness — considers optimal use of resources (cost, time, personnel).\n\nA vaccine may be 95% efficacious in an RCT (ideal) but only 70% effective in the real world due to cold chain failures or low uptake. Efficiency goes further to weigh cost-effectiveness, which is critical for healthcare resource allocation."
+    difficulty: medium
+    tags: [efficacy, effectiveness, efficiency, interventions, public health]
+  - front: "What is Number Needed to Treat (NNT), how is it calculated, and what factors influence its interpretation?"
+    back: "NNT = 1/ARR (absolute risk reduction). ARR = CER − EER (control event rate minus experimental event rate). It represents the number of patients who need to be treated to achieve one additional favourable outcome. Interpretation depends on: cost, feasibility, severity of outcome (a higher NNT is acceptable when preventing death vs. a minor outcome).\n\nExample: if 40% die on drug A vs. 50% on placebo, ARR = 10%, NNT = 1/0.1 = 10. Do not be swayed by large relative risk reductions alone — the NNT and absolute risk reduction provide a clinically meaningful picture. Find NNT summaries at thennt.com."
+    difficulty: medium
+    tags: [NNT, ARR, number needed to treat, clinical epidemiology, EBM]
+  - front: "What is Number Needed to Harm (NNH)?"
+    back: "NNH: the number of patients who, if they received the experimental treatment, would lead to one additional patient being harmed compared with the control treatment. It is calculated as 1/absolute risk increase.\n\nNNH is the harm-equivalent of NNT. Comparing NNT and NNH helps clinicians weigh therapeutic benefit against potential harm. A treatment with NNT of 20 and NNH of 100 is generally favourable."
+    difficulty: easy
+    tags: [NNH, number needed to harm, clinical epidemiology, EBM]
+  - front: "Why can a large relative risk (RR) be misleading? How does absolute risk reduction (ARR) provide additional context?"
+    back: "A large RR can appear impressive even when the absolute risk difference is tiny. For example, reducing an event from 0.10% to 0.05% in a population gives a RR of 50% (relative), but ARR is only 0.05% — clinically unimpressive. ARR and NNT provide clinically meaningful estimates of benefit.\n\nThis distinction is critical in evidence-based medicine. Pharmaceutical marketing often highlights RR to make modest effects appear dramatic. Clinicians should always calculate ARR (and NNT) to properly assess the value of an intervention."
+    difficulty: medium
+    tags: [relative risk, absolute risk, ARR, NNT, EBM, critical appraisal]
+  - front: "Compare qualitative vs. quantitative study designs in terms of approach, purpose, and output."
+    back: "Qualitative: bottom-up, generates hypotheses (Why? What does it mean?), observation → pattern → hypothesis → theory, narrative rich contextual data from small samples. Quantitative: top-down, tests hypotheses (What? How much?), theory → hypothesis → observation → confirmation, numeric frequency/severity/associations from large samples.\n\nQualitative methods (e.g., interviews, focus groups) are used to explore meanings and generate theory. Quantitative methods (e.g., RCTs, cohort studies) provide numerical evidence to test hypotheses. Both are complementary in health research."
+    difficulty: easy
+    tags: [qualitative, quantitative, study design, research methods, epidemiology]
+  - front: "What is an ecological study design, what is its main advantage, and what is its key limitation?"
+    back: "Ecological study: units of analysis are populations or groups rather than individuals. Advantage: quick, easy, uses readily available data, generates hypotheses. Key limitation: ecological fallacy — incorrect inference from group-level data to individuals (e.g., countries with higher red wine consumption have lower CVD rates, but this does not mean individuals who drink red wine have lower CVD risk).\n\nThe ecological fallacy is a fundamental pitfall of population-level data. Ecological studies can identify associations for hypothesis generation but cannot establish causation at the individual level, making them low in the evidence hierarchy."
+    difficulty: medium
+    tags: [ecological study, ecological fallacy, study design, epidemiology]
+  - front: "Compare cross-sectional, case-control, and cohort study designs: definition, advantages, and disadvantages."
+    back: "Cross-sectional: exposure and outcome measured at one point in time. Advantage: quick, cheap, estimates prevalence. Disadvantage: cannot determine temporal relationship or causation. Case-control: samples based on outcome (cases vs. controls), assesses past exposure retrospectively. Advantage: good for rare diseases and long latency; measures OR. Disadvantage: recall bias, selection bias, can only measure one outcome. Cohort: samples based on exposure, follows forward for outcomes. Advantage: can assess multiple outcomes, provides incidence/RR/AR, stronger causal evidence. Disadvantage: costly, time-consuming, confounding, loss to follow-up.\n\nRichard Doll's case-control study linked tobacco to lung cancer; the Framingham Heart Study is a classic cohort study. Knowing which study design produces which measure of association (OR vs. RR) is essential for MCCQE1."
+    difficulty: medium
+    tags: [case-control, cohort study, cross-sectional, study design, epidemiology]
+  - front: "For a case-control study: what measure of association is calculated, and what is the formula for the odds ratio (OR)?"
+    back: "Measure of association: Odds Ratio (OR). Formula: OR = (A×D)/(B×C), where A = exposed cases, B = unexposed cases, C = exposed controls, D = unexposed controls in a 2×2 table.\n\nThe OR approximates the RR when disease prevalence is low (<10%). Case-control studies are retrospective — cases are identified first, then controls are selected to represent the general population. Matching controls to cases on key variables reduces confounding."
+    difficulty: medium
+    tags: [odds ratio, case-control, measure of association, epidemiology]
+  - front: "What is a Randomized Controlled Trial (RCT)? Why is it the gold standard for evidence?"
+    back: "RCT: participants randomly allocated to intervention or control groups; outcomes compared after follow-up. Gold standard because: randomization minimizes confounding (including unmeasured confounders) and self-selection bias; allows prospective assessment; minimizes threats to validity with sufficient sample size. Blinding (single/double/triple) further reduces bias.\n\nRandomization is unique among study designs in its ability to control for both measured and unmeasured confounders. RCTs form the basis of evidence-based medicine. Limitations include ethical constraints, poor generalizability, cost, and difficulty studying rare events."
+    difficulty: easy
+    tags: [RCT, randomized controlled trial, gold standard, EBM, study design]
+  - front: "What are the advantages and disadvantages of randomized controlled trials (RCTs)?"
+    back: "Advantages: gold standard for causation, minimizes confounding and self-selection bias, prospective assessment, strong internal validity. Disadvantages: some exposures cannot be randomized (ethical/feasibility issues), difficult to study rare events (requires large samples), costly, contamination/co-intervention/loss to follow-up can limit inferences, poor generalizability if trial participants are healthier than the average patient.\n\nDespite being the gold standard, RCTs are often not feasible for studying harmful exposures (e.g., smoking), rare diseases, or conditions requiring very long follow-up. Pragmatic RCTs attempt to improve generalizability by using broader inclusion criteria."
+    difficulty: medium
+    tags: [RCT, study design, advantages, disadvantages, EBM]
+  - front: "What is the difference between per-protocol (PP) analysis and intention-to-treat (ITT) analysis in RCTs?"
+    back: "Per-protocol (PP) analysis: only patients who complete the entire study are counted in results. Intention-to-treat (ITT) analysis: groups are analyzed exactly as they existed upon randomization — includes all patients, even those who did not complete the study.\n\nITT analysis preserves the benefits of randomization and provides a conservative estimate of treatment efficacy, reflecting real-world adherence. PP analysis may overestimate efficacy by excluding non-compliant patients. ITT is preferred to avoid bias from differential dropout."
+    difficulty: medium
+    tags: [ITT, per-protocol, RCT analysis, intention-to-treat, EBM]
+  - front: "What is a meta-analysis? What are its advantages and disadvantages?"
+    back: "Meta-analysis: statistical aggregation of all relevant studies addressing the same research question to increase statistical precision. Advantages: overcomes reduced power of small studies; can answer subgroup questions. Disadvantages: studies may be heterogeneous (different populations, exposures, outcomes), making combination inappropriate; publication bias (negative studies less likely to be published) can skew results toward finding an effect.\n\nMeta-analyses sit near the top of the evidence pyramid. Publication bias is a major concern — tools like funnel plots can help detect it. Heterogeneity can be assessed statistically (e.g., I² statistic). The Cochrane Library is the gold-standard source for meta-analyses."
+    difficulty: medium
+    tags: [meta-analysis, systematic review, publication bias, EBM, study design]
+  - front: "What is the difference between a systematic review, a narrative review, and a scoping review?"
+    back: "Systematic review: rigorous synthesis aimed at a specific question with explicit methodology and appraisal to inform practice/policy. Narrative review: less rigorous, provides overview of general or specific topic by identifying patterns and trends; limited for concrete clinical guidance. Scoping review: maps key concepts and identifies types of evidence and knowledge gaps for a given topic; does not produce a critically appraised answer to a specific clinical question.\n\nSystematic reviews and meta-analyses are at the top of the evidence pyramid. Scoping reviews are used when the field is emerging and it is unclear what specific questions can be answered. Narrative reviews are useful for education but prone to author bias."
+    difficulty: medium
+    tags: [systematic review, scoping review, narrative review, EBM, evidence synthesis]
+  - front: "Describe the normal distribution. What percentage of observations fall within 1 and 2 standard deviations of the mean?"
+    back: "Normal (Gaussian) distribution: bell-shaped, symmetric. Mean = median = mode. 68% of observations fall within 1 SD of the mean; 95% of observations fall within 2 SDs of the mean. For skewed distributions, median is a better measure of central tendency than mean.\n\nUnderstanding the normal distribution is fundamental to interpreting confidence intervals and p-values. In a negatively skewed distribution, the mean is pulled left of the median. In positively skewed data, the mean is pulled right."
+    difficulty: easy
+    tags: [normal distribution, standard deviation, statistics, epidemiology]
+  - front: "What are the 4 levels of measurement in quantitative data?"
+    back: "1. Categorical (nominal): blood type, marital status — no order. 2. Ordinal: ordered categories (low, medium, high) — differences not meaningful. 3. Interval: ordered with meaningful differences but no true zero (°C, time of day). 4. Ratio: ordered, meaningful differences, and true zero (serum cholesterol, hemoglobin, age).\n\nThe level of measurement determines which statistical tests are appropriate. Parametric tests (t-test, ANOVA) require at least interval data; non-parametric tests are used for ordinal or non-normal data. Confusing levels of measurement is a common analysis error."
+    difficulty: easy
+    tags: [levels of measurement, statistics, categorical, ordinal, interval, ratio]
+  - front: "What is the difference between Type I (alpha) error and Type II (beta) error in statistical testing?"
+    back: "Type I (alpha) error: null hypothesis is FALSELY REJECTED — concluding an intervention is effective when it is not (false positive). Probability = p-value. Type II (beta) error: null hypothesis is FALSELY ACCEPTED — concluding an intervention is ineffective when it is (false negative). Power = 1 − beta = probability of correctly rejecting a false null hypothesis.\n\nStudies are typically designed to minimize Type I error (usually alpha = 0.05). By convention, a higher level of beta error is accepted (often 0.20). Increasing sample size reduces both error types and increases power."
+    difficulty: medium
+    tags: [Type I error, Type II error, alpha, beta, power, statistical testing]
+  - front: "What is statistical power and how is it affected by sample size?"
+    back: "Power = 1 − beta = probability of correctly rejecting a null hypothesis when it is false (i.e., finding a true difference when one exists). Power increases with increasing sample size. Power decreases with smaller effect sizes and greater variability.\n\nA study with low power (< 80%) risks a Type II error — missing a true treatment effect. Power calculations are performed before a study to determine the sample size needed to detect a clinically meaningful effect at a given significance level (alpha) with adequate power (typically ≥ 80%)."
+    difficulty: medium
+    tags: [power, sample size, Type II error, statistics, study design]
+  - front: "What is a confidence interval (CI), and how should a 95% CI be interpreted?"
+    back: "A 95% CI provides a range of values that would contain the true population parameter in 95 out of 100 repetitions of the study. A wider CI implies less precision; a narrower CI implies more precision. Increasing sample size narrows the CI (increases precision).\n\nCI and p-value are complementary. If the 95% CI for a RR or OR does not cross 1.0, the result is statistically significant at p < 0.05. Unlike p-values, CIs also convey the magnitude and direction of the effect, making them more clinically informative."
+    difficulty: medium
+    tags: [confidence interval, CI, statistical significance, precision, epidemiology]
+  - front: "What is the difference between statistical significance and clinical significance?"
+    back: "Statistical significance: probability that the association is due to random chance; usually set at p < 0.05. Clinical significance: measure of clinical usefulness — a result can be statistically significant but clinically meaningless (e.g., 1 mmHg BP reduction). Clinical significance depends on cost, availability, adherence, side effects, and patient-important outcomes.\n\nWith very large sample sizes, tiny and clinically irrelevant differences can become statistically significant. Clinicians must always interpret results in terms of both statistical AND clinical significance to make sound decisions."
+    difficulty: medium
+    tags: [statistical significance, clinical significance, p-value, EBM]
+  - front: "What is the difference between validity and reliability (of a measurement tool)?"
+    back: "Validity (accuracy): how closely a measurement reflects the entity it claims to measure. Reliability (precision): how consistent multiple measurements are when the underlying subject has not changed. Types of reliability: inter-rater reliability (different observers at same time) and test-retest reliability (same observer under different conditions). A test can be reliable without being valid.\n\nThe classic analogy is archery: tight grouping = reliable; hitting the bullseye = valid. A scale that consistently reads 5 kg too heavy is reliable but not valid. Internal validity = findings truly represent the study population; external validity (generalizability) = findings apply to other populations."
+    difficulty: easy
+    tags: [validity, reliability, measurement, internal validity, external validity]
+  - front: "When should you use a Chi-squared test vs. ANOVA vs. t-test?"
+    back: "Chi-squared test: tests whether two categorical variables are independent (e.g., family history of breast cancer and having breast cancer). ANOVA: compares means of a continuous outcome across 2+ groups (e.g., BP across 3 towns). Two-sample t-test (Z-test): compares means of a continuous outcome between 2 groups (e.g., average BP between men and women).\n\nChoosing the right statistical test depends on the type of dependent and independent variables and the number of groups. Chi-squared requires expected cell counts ≥5. ANOVA requires normally distributed data and equal variances. Using the wrong test is a common exam pitfall."
+    difficulty: medium
+    tags: [chi-squared, ANOVA, t-test, statistical tests, epidemiology]
+  - front: "What is the difference between linear regression and logistic regression?"
+    back: "Linear regression: models the relationship between a continuous dependent variable and one or more explanatory variables. Logistic regression: models the relationship between a categorical (usually dichotomous) dependent variable and one or more explanatory variables. Logistic regression produces odds ratios; linear regression produces coefficients (slopes).\n\nLinear regression assumes a linear relationship and normally distributed errors; logistic regression assumes linearity on the logit scale. Both require independent observations and no highly influential outliers. Logistic regression is commonly used in epidemiology for binary outcomes (e.g., disease vs. no disease)."
+    difficulty: medium
+    tags: [linear regression, logistic regression, statistics, epidemiology]
+  - front: "List the 9 Bradford Hill criteria for causation."
+    back: "1. Strength of association, 2. Consistency (across populations/study designs), 3. Specificity (unique exposure-outcome link), 4. Temporal relationship (exposure precedes outcome), 5. Biological gradient (dose-response), 6. Biological plausibility, 7. Coherence (consistent with current knowledge), 8. Experimental evidence (improvement with removal of exposure), 9. Analogy (similar associations exist).\n\nNot all 9 criteria must be fulfilled; temporal relationship is the most essential — exposure MUST precede outcome. Modern EBM emphasizes experimental evidence (RCTs) as superior. The criteria are used when a causal relationship is proposed from observational data."
+    difficulty: medium
+    tags: [Bradford Hill, causation, epidemiology, criteria, causal inference]
+  - front: "What are the five levels of evidence used in guideline/consensus statement classifications?"
+    back: "Level I: RCTs or meta-analyses of RCTs — low risk of FP/FN. Level II: small RCTs — may show positive trends but non-significant, or high FN risk. Level III: non-randomized controlled, cohort, case series, case-control, or cross-sectional studies. Level IV: expert opinion/consensus conferences/guidelines. Level V: opinion of guideline authors based on experience/knowledge.\n\nThese levels reflect the nature of the evidence, not direct quality assessments. RCT-based evidence (Level I) is most credible, but Level III gains credibility with consistent findings across multiple studies. Level IV/V guides decisions when published evidence is absent."
+    difficulty: medium
+    tags: [levels of evidence, EBM, guidelines, critical appraisal]
+  - front: "How do you calculate the relative risk (RR) and attributable risk (AR) in a cohort study?"
+    back: "Relative Risk (RR) = (Incidence in exposed) / (Incidence in unexposed) = [A/(A+B)] / [C/(C+D)]. Attributable Risk (AR) = Incidence in exposed − Incidence in unexposed = A/(A+B) − C/(C+D). AR represents the rate of disease in exposed individuals that can be attributed to the exposure.\n\nRR >1 indicates increased risk in exposed; RR <1 indicates protection. AR is important for public health — it estimates how much disease could be prevented by eliminating the exposure. Cohort studies are the only observational design that directly provides RR."
+    difficulty: medium
+    tags: [relative risk, attributable risk, cohort study, epidemiology, measures of association]
+  - front: "What is Pearson's correlation coefficient? What do values of -1, 0, and +1 represent?"
+    back: "Pearson's correlation coefficient assesses the strength of the linear relationship between two continuous variables. Values range from -1 (perfect negative association) to +1 (perfect positive association); 0 indicates no linear relationship. It requires both variables to be continuous and normally distributed.\n\nPearson's r is used for interval/ratio data. Spearman's rank correlation is used for ordinal or non-normal data. Correlation does not imply causation — a strong correlation may reflect confounding, reverse causation, or coincidence."
+    difficulty: easy
+    tags: [Pearson correlation, correlation, statistics, linear relationship]
+  - front: "What is the three-step critical appraisal framework for evaluating a research study?"
+    back: "A. Are the results valid? (study design, bias, randomization, blinding). B. What are the results? (treatment effect size, confidence intervals, power, precision). C. Will the results help my patients? (clinical significance, applicability, all outcomes considered, benefits vs. harm and cost).\n\nCritical appraisal is the cornerstone of evidence-based medicine. Reading a study requires systematic evaluation — even a well-conducted RCT may not apply to a clinician's patient population if external validity is poor. This 3-step framework is widely used in Canadian medical education."
+    difficulty: easy
+    tags: [critical appraisal, EBM, study validity, clinical application]
+  - front: "A screening test for colon cancer (FOBT) is applied to a population. Of 284 people with advanced neoplasia, 68 test positive. Of 2381 people without advanced neoplasia, 2234 test negative. Calculate sensitivity, specificity, and NPV."
+    back: "Sensitivity = TP/(TP+FN) = 68/284 = 23.9%. Specificity = TN/(TN+FP) = 2234/2381 = 93.8%. NPV = TN/(TN+FN) = 2234/(2234+216) = 91.2% (approximately). Note: 216 = 284−68 = false negatives.\n\nFOBT has low sensitivity for detecting advanced neoplasia on a single digital rectal examination sample — most cancers are missed. Its high specificity means a positive result is fairly reliable. NPV is high because the disease prevalence is low in the screened population. This illustrates why sensitivity is critical for screening tests."
+    difficulty: hard
+    tags: [FOBT, screening, sensitivity, specificity, NPV, colon cancer]
+  - front: "What increases sample size does NOT affect in a study?"
+    back: "Increasing sample size does NOT alter the risk of bias or confounding. It DOES increase statistical precision (narrower CIs), and decrease the probability of both Type I and Type II errors.\n\nThis is a classic exam distinction. No matter how large the sample size, if the study design has systematic bias (e.g., recall bias, selection bias), increasing N will not correct it. Bias must be addressed through study design, not sample size."
+    difficulty: medium
+    tags: [sample size, bias, confounding, precision, epidemiology]

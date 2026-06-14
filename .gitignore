@@ -47,7 +47,9 @@
 # >>> gm managed (do not edit between markers)
 
 # build output — videos copied from <subject>/videos/ at build time
+# (flat legacy path + per-syllabus namespaced path site/data/<id>/videos/)
 site/data/videos/
+site/data/*/videos/
 
 # audio + video tracked via git-lfs (see .gitattributes)
 *.mp4

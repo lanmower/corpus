@@ -1,0 +1,106 @@
+# Emergency Medicine (EmergencyMedicine) - generated from srs-mccqe1
+cards:
+  - front: "What are the classes of hemorrhagic shock, and at what class does blood pressure decrease?"
+    back: "Class I: <750 mL (<15% blood volume), normal BP. Class II: 750-1500 mL (15-30%), normal BP. Class III: 1500-2000 mL (30-40%), decreased BP, HR >120. Class IV: >2000 mL (>40%), decreased BP, HR >140. Blood pressure does not decrease until Class III (30-40% loss).\n\nCompensatory mechanisms (vasoconstriction, tachycardia) maintain blood pressure through Classes I and II. Tachycardia is an earlier sign than hypotension. Permissive hypotension with pRBC transfusion is the management approach, with massive transfusion protocol for severe hemorrhage."
+    difficulty: medium
+    tags: [emergency medicine, hemorrhagic shock, trauma, fluid resuscitation]
+  - front: "What is the Glasgow Coma Scale, and what score constitutes a severe head injury?"
+    back: "GCS = Eyes (1-4) + Verbal (1-5) + Motor (1-6), total 3-15. Mild: 13-15, Moderate: 9-12, Severe: <8. Best motor response is the most prognostically useful component. Change in GCS over time is more relevant than absolute number. If intubated, score is out of 10 with T notation.\n\nThe GCS is used for trauma patients with decreased LOC. It is a good indicator of injury severity and neurosurgical prognosis. A deteriorating GCS requires immediate attention. It is less meaningful for metabolic coma."
+    difficulty: easy
+    tags: [emergency medicine, GCS, trauma, neurological assessment]
+  - front: "What are the components of the PERC rule for pulmonary embolism, and when should it be applied?"
+    back: "PERC criteria (score 1 for each): HR >100, O2 sat <95% on room air, prior DVT/PE history, recent trauma or surgery, hemoptysis, exogenous estrogen, clinical signs of DVT, age >=50. A score of 0/8 in a patient with low clinical suspicion effectively rules out PE without further investigation.\n\nThe PERC rule should only be applied when the clinician already has low gestalt or low Wells score for PE. It avoids unnecessary D-dimer testing in very low-risk patients. It should not be used in patients on beta-blockers or pregnant women, as these were excluded from the original study."
+    difficulty: medium
+    tags: [emergency medicine, pulmonary embolism, PERC rule, clinical decision rules]
+  - front: "What is the diagnostic triad of diabetic ketoacidosis, and what are the key initial management steps?"
+    back: "Triad: hyperglycemia, ketosis, and metabolic acidosis due to severe insulin deficiency. Initial management: (1) Rehydration with NS bolus then high-rate infusion, (2) Potassium replacement (KCl 20 mEq/L if K+ <5.5 and patient voiding), (3) Insulin infusion. Correct pseudohyponatremia (add 3 Na+ per 10 glucose above 5.5 mmol/L).\n\nDKA is precipitated by infection, insulin omission, MI, or SGLT2 inhibitors (euglycemic DKA). Potassium must be replaced before or with insulin to avoid fatal hypokalemia. Cerebral edema is a risk in pediatric patients with overhydration."
+    difficulty: medium
+    tags: [emergency medicine, endocrinology, DKA, diabetic ketoacidosis, insulin]
+  - front: "A patient presents 48 hours after their last alcoholic drink with confusion, agitation, hallucinations, tachycardia, and diaphoresis. What is this condition and how is it managed?"
+    back: "Delirium tremens (DT), occurring 3-5 days after last drink in ~5% of untreated withdrawal patients. Management: diazepam 10-20 mg IV/PO (or lorazepam if liver dysfunction) titrated using CIWA protocol until score <10. Add phenobarbital if no improvement. Give thiamine 200 mg IM/IV. Admit for monitoring. High mortality rate if untreated.\n\nAlcohol withdrawal progresses from mild (6-8h: tremor, anxiety), to hallucinations (12-48h), to seizures (8h-2d), to DT (3-5d). The goal is early treatment with benzodiazepines to prevent seizures and DT. Thiamine must be given before dextrose to prevent Wernicke encephalopathy."
+    difficulty: medium
+    tags: [emergency medicine, psychiatry, alcohol withdrawal, delirium tremens, CIWA]
+  - front: "What is the approach to a patient presenting with an acute monoarticular joint that is warm, swollen, and erythematous with fever?"
+    back: "Suspect septic arthritis until proven otherwise. Investigations: CBC, ESR, CRP, blood cultures, joint X-ray, bedside U/S to identify effusion, joint aspiration for culture, WBC, Gram stain, and crystals. Management: empiric IV antibiotics plus orthopedic consultation for joint decompression and drainage.\n\nSeptic arthritis is a surgical emergency requiring urgent drainage. Crystal arthropathies (gout, pseudogout) are the main differential and can be distinguished by crystal analysis of joint aspirate. Do not use allopurinol during acute gout flares as it may worsen the attack."
+    difficulty: medium
+    tags: [emergency medicine, rheumatology, septic arthritis, joint aspiration]
+  - front: "An unconscious trauma patient has a unilateral dilated, non-reactive pupil. What are the most important differential diagnoses?"
+    back: "Focal mass lesion causing uncal herniation (most critical), epidural hematoma (especially with 'talk and die' presentation), subdural hematoma, or traumatic mydriasis from direct iris sphincter muscle damage. The patient needs immediate CT head and neurosurgical consultation.\n\nUncal herniation compresses CN III causing ipsilateral pupil dilation. An epidural hematoma classically presents with a lucid interval followed by rapid deterioration. Any patient with deteriorating GCS needs immediate attention and imaging."
+    difficulty: medium
+    tags: [emergency medicine, neurosurgery, trauma, pupil dilation, herniation]
+  - front: "What is the Canadian CT Head Rule and when does it apply?"
+    back: "Applies to minor head injury (GCS 13-15) patients. CT required if any high-risk criteria (GCS <15 at 2h, suspected skull fracture, signs of basal skull fracture, ≥2 episodes vomiting, age ≥65) or medium-risk criteria (amnesia before impact >30 min, dangerous mechanism).\n\nThe rule does not apply to non-trauma cases, GCS <13, age <16, or patients on Coumadin/anticoagulants. High-risk criteria predict need for neurological intervention. Medium-risk criteria predict brain injury on CT."
+    difficulty: medium
+    tags: [emergency medicine, neurosurgery, head injury, clinical decision rules]
+  - front: "What are the signs of basal skull fracture?"
+    back: "Battle's sign (bruised mastoid process), hemotympanum, raccoon eyes (periorbital bruising), CSF rhinorrhea/otorrhea.\n\nBasal skull fractures typically occur through the floor of the anterior cranial fossa. They can be diagnosed radiologically or clinically. NG tube insertion is contraindicated in the presence of basal skull fracture due to risk of intracranial placement."
+    difficulty: easy
+    tags: [emergency medicine, trauma, skull fracture]
+  - front: "What is Beck's triad and what condition does it indicate?"
+    back: "Hypotension, distended neck veins, and muffled heart sounds. It indicates cardiac tamponade.\n\nCardiac tamponade results from pericardial fluid accumulation impairing ventricular function. Additional signs include tachycardia, tachypnea, Kussmaul's sign (increased JVP with inspiration), and pulsus paradoxus (>10mmHg BP drop with inspiration). FAST/echocardiogram confirms diagnosis."
+    difficulty: easy
+    tags: [emergency medicine, cardiology, cardiac tamponade]
+  - front: "What is the management of tension pneumothorax?"
+    back: "Needle thoracostomy (large bore needle at 2nd ICS mid-clavicular line) or finger thoracostomy. Definitive management is a chest tube. This is a clinical diagnosis — do not wait for imaging.\n\nTension pneumothorax is caused by a one-way valve mechanism accumulating air in the pleural space. Signs include respiratory distress, tachycardia, distended neck veins, tracheal deviation away from the pneumothorax, hyperresonance, and absent breath sounds."
+    difficulty: medium
+    tags: [emergency medicine, trauma, pneumothorax]
+  - front: "What is neurogenic shock and how does it differ from hypovolemic shock?"
+    back: "Neurogenic shock: loss of vasomotor/SNS tone causing hypotension, bradycardia, and poikilothermia (warm, dry skin). Occurs with SCI at T6 or above. Hypovolemic shock: tachycardia, cool/clammy skin, peripheral vasoconstriction.\n\nNeurogenic shock occurs within 30 minutes of SCI and lasts up to 6 weeks. Treatment includes fluids, atropine for bradycardia, and vasopressors. It differs from spinal shock (absence of all reflexes below injury level)."
+    difficulty: medium
+    tags: [emergency medicine, trauma, spinal cord injury, shock]
+  - front: "In blunt abdominal trauma, what is the most commonly injured solid organ?"
+    back: "Spleen (most common), followed by liver (second most common).\n\nBlunt trauma causes solid organ injury while penetrating trauma usually causes hollow organ or liver injury. FAST exam identifies free fluid but cannot identify specific organ injuries. CT is the most specific test but should be used with caution in hemodynamically unstable patients."
+    difficulty: easy
+    tags: [emergency medicine, trauma, abdominal trauma]
+  - front: "What is the Ottawa Subarachnoid Hemorrhage (SAH) Rule?"
+    back: "Investigate if ≥1 high-risk variable: age ≥40, neck pain/stiffness, witnessed LOC, onset during exertion, thunderclap headache (instantly peaking), limited neck flexion. Has 100% sensitivity for identifying SAH.\n\nSAH presents with sudden onset 'worst headache of life' with maximum intensity within minutes. New generation CT is 100% sensitive within 6 hours of onset. LP for xanthochromia is needed if CT is normal after 6 hours."
+    difficulty: medium
+    tags: [emergency medicine, neurology, subarachnoid hemorrhage, clinical decision rules]
+  - front: "What are the HEART score components for chest pain risk stratification?"
+    back: "History (0-2 pts), ECG (0-2 pts), Age (0-2 pts), Risk factors (0-2 pts), Troponin (0-2 pts). Low risk 0-3: 0.6-1.7% MACE; intermediate 4-6: 16.6%; high 7-10: 50.1%.\n\nThe HEART score helps risk-stratify patients with chest pain in the emergency department. It incorporates clinical history, ECG findings, patient age, cardiovascular risk factors, and initial troponin levels to guide disposition decisions."
+    difficulty: medium
+    tags: [emergency medicine, cardiology, chest pain, risk stratification]
+  - front: "What is Waddell's triad in pediatric pedestrian-automobile injuries?"
+    back: "1) Tibia-fibula or femur fracture, 2) Truncal or abdominal injury, 3) Craniofacial injury.\n\nChildren struck by vehicles tend to have a characteristic pattern of injuries because of their smaller stature. Adults tend to be struck in lower legs, impacted against the car causing truncal injuries, and thrown to the ground causing head injury."
+    difficulty: easy
+    tags: [emergency medicine, pediatrics, trauma]
+  - front: "What is the approach to febrile infants <28 days old?"
+    back: "Admit. Full septic workup (CBC, CRP/procalcitonin, blood C&S, urinalysis, urine C&S, LP based on risk stratification, ± stool C&S, ± CXR). Treat empirically with broad-spectrum IV antibiotics (ampicillin + ceftazidime or cefepime or gentamicin).\n\nFebrile infants <28 days are at high risk for serious bacterial infection and require aggressive workup and empiric treatment. Add acyclovir if HSV is suspected and vancomycin when indicated. For ages 28-90 days, risk stratification tools (PECARN, Step-by-Step) guide management."
+    difficulty: medium
+    tags: [emergency medicine, pediatrics, neonatology, sepsis]
+  - front: "What are the 4 D's of epiglottitis and what should you NOT do?"
+    back: "4 D's: Drooling, Dyspnea, Dysphagia, Dysphonia (+ tripod sitting). Do NOT examine the oropharynx or agitate the patient. Call anesthesia/ENT immediately for intubation.\n\nEpiglottitis is now rare with Hib vaccination. Caused by H. influenzae type B, it presents with high fever and rapid onset. Thumb sign on lateral neck x-ray is characteristic. After securing the airway, treat with IV fluids, antibiotics, and blood cultures."
+    difficulty: easy
+    tags: [emergency medicine, pediatrics, epiglottitis, airway]
+  - front: "What is the treatment of fomepizole and when is it used?"
+    back: "Fomepizole 15mg/kg IV bolus is the treatment of choice for toxic alcohol ingestion (methanol and ethylene glycol). Alternative: 10% ethanol IV to achieve blood level of 22mmol/L.\n\nToxic alcohols initially produce a high osmolar gap that drops as the alcohol is metabolized, producing an anion gap metabolic acidosis. The goal of treatment is to block this metabolic pathway. Urgent hemodialysis may be required. Ethanol co-ingestion is protective."
+    difficulty: medium
+    tags: [emergency medicine, toxicology, toxic alcohols]
+  - front: "A patient with chronic alcohol use presents with AST/ALT ratio >2. What diagnosis does this suggest?"
+    back: "Alcoholic hepatitis. An AST/ALT ratio >2 suggests alcohol as the cause of hepatitis.\n\nOther GI abnormalities in chronic alcohol use include gastritis (common cause of GI bleed), pancreatitis (elevated lipase), spontaneous bacterial peritonitis (in cirrhosis, diagnosed by paracentesis), and variceal bleeding (treated with octreotide)."
+    difficulty: easy
+    tags: [emergency medicine, gastroenterology, alcoholic liver disease]
+  - front: "What are the CXR features suggestive of aortic tear (mnemonic ABC WHITE)?"
+    back: "Abnormal aortic contour, Blurred aortic knob, Calcium sign (>6mm separation), Widened mediastinum (most consistent), Hemothorax, Indistinct aortic knuckle, Tracheal deviation to right, Esophageal (depressed left mainstem bronchus).\n\n90% of aortic tears occur at the subclavian (near ligamentum arteriosum). Most patients die at scene. Diagnosis requires CT angiogram. Management: reduce BP and HR, classify as Type A (ascending aorta — urgent surgery) vs Type B (not ascending — medical management)."
+    difficulty: hard
+    tags: [emergency medicine, cardiology, aortic dissection, radiology]
+  - front: "What is the Canadian C-Spine Rule for clearing the cervical spine?"
+    back: "Can clear if: alert (GCS 15), stable, oriented, no paresthesias, no intoxication, no midline tenderness, no focal deficits, no painful distracting injuries, AND able to rotate neck 45° each direction without midline tenderness.\n\nCT of the spine is the screening modality of choice (97-100% sensitivity). MRI is preferred for soft tissue injuries. The rule applies only to alert, stable trauma patients where C-spine injury is a concern. If any criteria are not met, C-spine imaging is required."
+    difficulty: medium
+    tags: [emergency medicine, trauma, C-spine, clinical decision rules]
+  - front: "What are the typical vs atypical features of febrile seizures?"
+    back: "Typical: <5 min duration, generalized, only 1 in 24 hours. Atypical: >5 min, focal features, >1 in 24 hours.\n\nFebrile seizures occur in children age 6 months to 6 years with fever. They have a normal neurological exam afterward and no evidence of intracranial infection. There is often a positive family history. Management: treat fever and look for source of fever."
+    difficulty: easy
+    tags: [emergency medicine, pediatrics, febrile seizures]
+  - front: "What are the Wells' criteria used for and what investigation follows a positive result?"
+    back: "Wells' criteria assess clinical probability of pulmonary embolism. High/moderate probability: CT pulmonary angiogram. Low probability: D-dimer first; if negative and low pretest probability, PE is effectively ruled out.\n\nPE presents with pleuritic chest pain (75%) and dyspnea with risk factors for VTE. Classic findings include tachycardia and hypoxemia. Management includes anticoagulation and consideration of thrombolysis for massive PE (hypotension/cardiovascular collapse)."
+    difficulty: medium
+    tags: [emergency medicine, respirology, pulmonary embolism, clinical decision rules]
+  - front: "What is the OPEN mnemonic for managing open fractures?"
+    back: "Actually the mnemonic is STAND: Splint, Tetanus prophylaxis, Antibiotics (1st gen cephalosporin + aminoglycoside), Neurovascular status (before and after), Dressings (to cover wound).\n\nOpen fractures have communication between fracture site and external skin surface, increasing risk of osteomyelitis. Standard of care is definitive surgical management within 6 hours. Remove gross debris, irrigate, and cover with sterile dressing."
+    difficulty: easy
+    tags: [emergency medicine, orthopedics, open fracture]
+  - front: "What is the treatment approach for tension pneumothorax?"
+    back: "Immediate needle decompression (2nd intercostal space, midclavicular line) followed by chest tube insertion.\n\nTension pneumothorax presents with tracheal deviation contralateral to the affected side, hypotension/shock, distended neck veins, absent breath sounds, and hyperresonance. It is a clinical diagnosis - do not wait for imaging."
+    difficulty: easy
+    tags: [emergency medicine, surgery, pneumothorax]

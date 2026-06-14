@@ -1,0 +1,774 @@
+# Thyroid Disorders (Endocrinology) - generated from srs-mccqe1
+cards:
+  - front: "A 35-year-old woman presents with weight loss, palpitations, heat intolerance, tremor, and exophthalmos. TSH is undetectable, free T4 is elevated. Diagnosis and management?"
+    back: "Graves disease (most common cause of hyperthyroidism); treat with antithyroid drugs (methimazole first-line), radioactive iodine ablation, or thyroidectomy\n\nCTS thyroid guidelines recommend methimazole (preferred) over PTU for Graves hyperthyroidism (except in first trimester pregnancy and thyroid storm). Beta-blockers (propranolol) provide symptomatic relief. Ophthalmopathy managed separately with steroids/surgery."
+    difficulty: hard
+    tags: [Graves disease, hyperthyroidism, methimazole, exophthalmos, endocrinology]
+  - front: "What are the signs and symptoms of hypothyroidism?"
+    back: "Fatigue, cold intolerance, weight gain, constipation, dry skin, hair loss, bradycardia, delayed relaxation of deep tendon reflexes, goiter, myxedema in severe cases\n\nMost common cause in Canada: Hashimoto thyroiditis (autoimmune). Diagnosis: elevated TSH, low free T4. Treatment: levothyroxine (T4) — start low in elderly/cardiac disease (25 mcg), titrate to TSH 0.5-2.5 mIU/L."
+    difficulty: easy
+    tags: [hypothyroidism, Hashimoto, levothyroxine, TSH, endocrinology]
+  - front: "What is subclinical hypothyroidism and when should it be treated?"
+    back: "Elevated TSH (4.5-10 mIU/L) with normal free T4 and no symptoms; treat when: TSH >10, symptoms present, pregnancy planned or ongoing, strong family history or positive TPO antibodies\n\nCTS guidelines recommend treating subclinical hypothyroidism when TSH >10 mIU/L or with symptoms. In asymptomatic patients with TSH 5-10, treat if TPO antibodies positive (higher progression risk). Annual monitoring if not treated."
+    difficulty: medium
+    tags: [subclinical hypothyroidism, TSH, levothyroxine, TPO antibodies, endocrinology]
+  - front: "A 60-year-old with known thyroid disease presents with confusion, hypothermia, bradycardia, and hypoventilation. Labs show TSH >100, T4 undetectable. Diagnosis and treatment?"
+    back: "Myxedema coma (severe hypothyroidism); treat with IV levothyroxine (300-500 mcg loading, then 50-100 mcg daily), IV T3 in critical illness, stress-dose steroids (hydrocortisone), supportive care\n\nMyxedema coma has ~30-60% mortality. Precipitants: infection, cold exposure, surgery, medications (amiodarone, lithium). IV steroids given because of possible coexisting secondary adrenal insufficiency. Slow external rewarming."
+    difficulty: hard
+    tags: [myxedema coma, hypothyroidism, IV levothyroxine, endocrinology]
+  - front: "What is thyroid storm and how is it managed?"
+    back: "Thyroid storm: life-threatening exaggerated hyperthyroidism (Burch-Wartofsky score ≥45); treat with PTU (blocks T4 to T3 conversion) + potassium iodide (1h after PTU), beta-blockers, IV corticosteroids, ICU care\n\nPrecipitants of thyroid storm: surgery, infection, radioiodine, trauma. PTU is preferred over methimazole in thyroid storm due to additional inhibition of peripheral T4→T3 conversion. Lugol iodine given 1h after PTU to prevent thyroid hormone synthesis from iodine."
+    difficulty: hard
+    tags: [thyroid storm, PTU, Lugol iodine, hyperthyroidism emergency, endocrinology]
+  - front: "What is the approach to a thyroid nodule found on imaging?"
+    back: "Ultrasound evaluation → TIRADS classification; FNA (fine needle aspiration) if ≥1 cm with suspicious features or ≥1.5-2 cm regardless of features\n\nCTS/ACR-TIRADS guidelines recommend biopsy based on nodule size and ultrasound features: hypoechoic, irregular margins, taller-than-wide, calcifications, extrathyroidal extension. Bethesda cytology classification guides management."
+    difficulty: medium
+    tags: [thyroid nodule, TIRADS, FNA, ultrasound, endocrinology]
+  - front: "What are the Bethesda categories for thyroid FNA and their malignancy risk?"
+    back: "I: non-diagnostic (repeat); II: benign (1-3%); III: atypia of undetermined significance (5-15%); IV: follicular neoplasm (15-30%); V: suspicious for malignancy (60-75%); VI: malignant (97-99%)\n\nBethesda III typically requires repeat FNA or molecular testing. Bethesda IV — lobectomy or molecular testing. Bethesda V/VI — thyroidectomy. Papillary thyroid carcinoma is most common thyroid cancer and has excellent prognosis."
+    difficulty: medium
+    tags: [Bethesda classification, thyroid FNA, thyroid cancer, malignancy risk, endocrinology]
+  - front: "What is Hashimoto thyroiditis and how is it diagnosed?"
+    back: "Autoimmune thyroiditis (most common cause of hypothyroidism in developed countries); elevated anti-TPO antibodies, elevated TSH, possibly goiter; treat with levothyroxine when hypothyroid\n\nHashimoto thyroiditis has female predominance (7:1). Lymphocytic infiltration and germinal center formation on histology. Most patients progress to hypothyroidism over years. Associated with other autoimmune diseases (T1DM, vitiligo, pernicious anemia, SLE)."
+    difficulty: easy
+    tags: [Hashimoto thyroiditis, TPO antibodies, hypothyroidism, autoimmune, endocrinology]
+  - front: "A 28-year-old woman is 10 weeks pregnant with TSH 0.1 mIU/L and free T4 normal. What is the likely diagnosis?"
+    back: "Gestational hyperthyroidism — transient, caused by hCG stimulating TSH receptors; usually self-limiting and does not require antithyroid drugs\n\nhCG shares alpha-subunit with TSH and cross-stimulates the TSH receptor. Gestational hyperthyroidism is most common in the first trimester, peaks with hCG. Hyperemesis gravidarum is associated. If free T4 elevated and symptomatic, consider methimazole (after 10 weeks — PTU in first trimester due to methimazole embryopathy)."
+    difficulty: hard
+    tags: [gestational hyperthyroidism, hCG, pregnancy, PTU, methimazole, endocrinology]
+  - front: "What is the role of TSH in monitoring thyroid replacement therapy?"
+    back: "TSH is the most sensitive marker for adequacy of thyroid hormone replacement; target TSH 0.5-2.5 mIU/L for most patients; recheck 6-8 weeks after dose change\n\nCTS guidelines recommend TSH as primary monitoring test for levothyroxine therapy. Avoid over-replacement (low TSH) which causes atrial fibrillation and bone loss. Increased levothyroxine requirements in pregnancy (increase dose by 25-30% immediately upon pregnancy confirmation)."
+    difficulty: easy
+    tags: [TSH monitoring, levothyroxine, thyroid replacement, pregnancy, endocrinology]
+  - front: "What are the most common types of thyroid cancer and their prognosis?"
+    back: "Papillary (80%, excellent prognosis, 10-year survival >95%); Follicular (10%, good prognosis); Medullary (5%, MEN2-associated, intermediate prognosis, calcitonin marker); Anaplastic (<1%, extremely aggressive, median survival <6 months)\n\nPapillary thyroid carcinoma spreads via lymphatics. BRAF mutation common. Treatment: thyroidectomy ± radioiodine. Medullary thyroid carcinoma: screen for RET mutation and MEN2. Anaplastic carcinoma: no effective treatment, palliative care."
+    difficulty: medium
+    tags: [thyroid cancer, papillary, follicular, medullary, anaplastic, endocrinology]
+  - front: "How does amiodarone affect thyroid function?"
+    back: "Amiodarone contains 37% iodine and causes thyrotoxicosis (type 1: excess iodine in pre-existing thyroid disease; type 2: destructive thyroiditis) or hypothyroidism (most common — block of T4→T3 conversion)\n\nAmiodarone-induced thyroid disease occurs in 15-20% of patients. TSH should be checked every 6 months. Type 1 thyrotoxicosis: antithyroid drugs; type 2: corticosteroids; mixed: combination treatment. Hypothyroidism: levothyroxine; may continue amiodarone."
+    difficulty: medium
+    tags: [amiodarone, thyroid dysfunction, hypothyroidism, thyrotoxicosis, endocrinology]
+  - front: "What is de Quervain (subacute granulomatous) thyroiditis?"
+    back: "Self-limited thyroiditis following viral illness; painful thyroid, initial hyperthyroidism then hypothyroidism then recovery; ESR elevated, thyroglobulin antibodies negative, radioiodine uptake low\n\nDe Quervain thyroiditis phases: hyperthyroid (2-8 weeks) → hypothyroid → recovery (~months). NSAIDs for pain (aspirin of choice). Prednisone for severe cases. Beta-blockers for symptomatic hyperthyroidism. Low RAI uptake distinguishes from Graves."
+    difficulty: medium
+    tags: [de Quervain thyroiditis, subacute thyroiditis, viral thyroiditis, hyperthyroidism, endocrinology]
+  - front: "What is postpartum thyroiditis?"
+    back: "Autoimmune thyroiditis within 1 year postpartum: hyperthyroid phase (1-4 months) followed by hypothyroid phase (4-8 months) then recovery; elevated TPO antibodies\n\nPostpartum thyroiditis occurs in 5-9% of women. Distinguished from Graves: no eye disease, RAI uptake low. Hypothyroid phase may require levothyroxine if symptomatic. 20-30% develop permanent hypothyroidism. Recurs in subsequent pregnancies."
+    difficulty: medium
+    tags: [postpartum thyroiditis, autoimmune thyroiditis, TPO antibodies, postpartum, endocrinology]
+  - front: "What is the diagnostic approach to hyperthyroidism?"
+    back: "Step 1: TSH (suppressed); Step 2: free T4 and free T3 (elevated); Step 3: etiology — TSH receptor antibodies (TRAb/TSIG) for Graves, thyroid scan and RAI uptake, ultrasound for nodules\n\nElevated RAI uptake: Graves disease, toxic multinodular goiter, toxic adenoma; Low RAI uptake: thyroiditis (subacute, postpartum, amiodarone type 2), exogenous thyroid hormone, iodine excess. TRAb positive in 90-95% of Graves."
+    difficulty: medium
+    tags: [hyperthyroidism workup, TSH, RAI uptake, TRAb, Graves diagnosis, endocrinology]
+  - front: "What is diagnostic workup for thyroid nodule?"
+    back: "TSH first. Low TSH: scan (hot=benign). Normal/high TSH: US -> FNA if >=1cm with suspicious features\n\nBethesda: I-VI. Molecular testing for indeterminate III/IV. Suspicious: hypoechoic, irregular, calcifications."
+    difficulty: hard
+    tags: [thyroid, nodule]
+  - front: "What is thyroid storm management?"
+    back: "PTU first (blocks synthesis+conversion), beta-blocker, iodine 1h after PTU, corticosteroids, cooling\n\nBurch-Wartofsky >=45. Mortality 20-30%. Never give iodine before thionamide."
+    difficulty: hard
+    tags: [thyroid storm]
+  - front: "What is the diagnostic approach to a thyroid nodule?"
+    back: "TSH first. If low TSH → thyroid scan (hot nodule = likely benign). If normal/high TSH → US. FNA if ≥1 cm with suspicious US features (microcalcifications, irregular margins, taller-than-wide, hypoechoic). Use TI-RADS.\n\n5-10% of nodules are malignant. Bethesda FNA cytology: I (non-diagnostic), II (benign), III (AUS), IV (follicular neoplasm→lobectomy), V (suspicious→surgery), VI (malignant→surgery). Molecular testing (Afirma, ThyroSeq) for Bethesda III/IV to avoid diagnostic surgery."
+    difficulty: hard
+    tags: [thyroid, nodule, FNA, TI-RADS, Bethesda, endocrinology]
+  - front: "What is thyroid storm and how is it managed?"
+    back: "Life-threatening thyrotoxicosis: fever >40°C, tachycardia/AFib, AMS, GI symptoms, HF. Burch-Wartofsky >45. Treatment ORDER: 1) propranolol, 2) PTU (blocks synthesis+T4→T3), 3) iodine 1h AFTER PTU, 4) hydrocortisone 100mg q8h, 5) supportive.\n\nIodine 1h after PTU prevents using iodine as substrate. PTU preferred over methimazole in storm (blocks peripheral T4→T3). Precipitants: infection, surgery, DKA, contrast. ICU required. Cholestyramine may reduce thyroid hormone enterohepatic recirculation."
+    difficulty: hard
+    tags: [thyroid, storm, PTU, iodine, emergency, endocrinology]
+  - front: "What differentiates Graves from toxic multinodular goiter?"
+    back: "Graves: autoimmune (TRAb+), diffuse goiter, ophthalmopathy, pretibial myxedema, young women, diffuse uptake on scan. TMNG: autonomous nodules, elderly, nodular goiter, NO ophthalmopathy, patchy uptake. Toxic adenoma: single hot nodule.\n\nTRAb 97% sensitive/99% specific for Graves. Graves ophthalmopathy: proptosis, lid retraction, diplopia — treat with selenium, steroids, teprotumumab. First-line Graves treatment in Canada: methimazole (PTU in 1st trimester pregnancy only)."
+    difficulty: hard
+    tags: [thyroid, Graves, TMNG, TRAb, endocrinology]
+  - front: "What is the management of Graves hyperthyroidism?"
+    back: "1) Methimazole 15-30 mg/day (first-line Canada), taper 12-18 months; 30-50% remission. 2) RAI: definitive, causes hypothyroidism. 3) Total thyroidectomy: if large goiter, suspicious nodule, severe ophthalmopathy. ATD major risk: agranulocytosis (0.3%).\n\nMethimazole preferred over PTU (less hepatotoxicity) EXCEPT 1st trimester pregnancy (methimazole teratogenic). RAI contraindicated in pregnancy and moderate-severe ophthalmopathy. If fever/sore throat on ATDs → stop and check WBC immediately."
+    difficulty: hard
+    tags: [thyroid, Graves, methimazole, RAI, surgery, endocrinology]
+  - front: "What are causes of hypothyroidism and levothyroxine dosing?"
+    back: "Primary: Hashimoto (#1 in Canada, anti-TPO+), post-RAI, post-surgical, drugs (amiodarone, lithium). Central: pituitary disease. LT4: 1.6 μg/kg/day young healthy; start 25-50 μg if elderly/cardiac, titrate q4-6 weeks. Check TSH 6 weeks after dose change.\n\nSubclinical hypothyroidism: treat if TSH >10, symptomatic, pregnant, or anti-TPO+ with TSH 5-10. Take LT4 fasting 30-60 min before food. Pregnancy: increase dose 30-50%. Interference: calcium, iron, PPI reduce absorption — separate by 4h."
+    difficulty: medium
+    tags: [thyroid, hypothyroidism, Hashimoto, levothyroxine, endocrinology]
+  - front: "What is myxedema coma and its management?"
+    back: "Severe hypothyroidism: hypothermia, AMS, bradycardia, hypoventilation, hyponatremia, hypoglycemia. Treatment: IV LT4 200-400 μg load then 50-100 μg/day + IV hydrocortisone 100 mg q8h (before/with thyroid hormone) + supportive.\n\n30-60% mortality. Give steroids before thyroid hormone to prevent adrenal crisis. Precipitants: cold, infection, sedatives. Avoid active rewarming (vasodilation→shock). IV T3 may be added in severe cases. ICU admission mandatory."
+    difficulty: hard
+    tags: [thyroid, myxedema coma, emergency, levothyroxine, endocrinology]
+  - front: "How does amiodarone affect the thyroid?"
+    back: "37% iodine by weight. AIH (hypothyroid): treat with LT4, can continue amiodarone. AIT1 (thyrotoxicosis, underlying thyroid disease): methimazole. AIT2 (destructive thyroiditis): steroids. Mixed: both.\n\nCheck TFTs before starting and q6 months. AIT1 vs AIT2: Doppler US (AIT1=increased, AIT2=decreased vascularity). Amiodarone has 100-day half-life. If life-threatening AIT unresponsive to treatment: thyroidectomy."
+    difficulty: hard
+    tags: [thyroid, amiodarone, AIT, endocrinology]
+  - front: "What is thyroid cancer approach by type?"
+    back: "Papillary (80%): excellent prognosis, LN mets, total thyroidectomy±RAI. Follicular (10%): hematogenous spread, total thyroidectomy+RAI. Medullary (5%): C-cells, calcitonin, screen MEN2/RET. Anaplastic (<5%): aggressive, poor prognosis, palliative.\n\nPapillary: >95% 10-year survival. Post-op: TSH suppression, thyroglobulin monitoring, neck US. Medullary: no RAI uptake. RET mutation→prophylactic thyroidectomy in MEN2 families."
+    difficulty: hard
+    tags: [thyroid, cancer, papillary, medullary, endocrinology]
+  - front: "What is subacute (de Quervain) thyroiditis?"
+    back: "Viral, painful tender thyroid, elevated ESR, low RAI uptake. Phases: hyperthyroid→hypothyroid→euthyroid (self-limited over months). Treatment: NSAIDs, steroids if severe. Postpartum thyroiditis: painless, similar phases, anti-TPO+.\n\nAll destructive thyroiditis: low RAI uptake during thyrotoxic phase (vs Graves=high). Subacute: follows URI, jaw/ear pain, tender gland. Beta-blockers for symptomatic thyrotoxicosis. Most recover fully."
+    difficulty: hard
+    tags: [thyroid, thyroiditis, de Quervain, subacute, endocrinology]
+  - front: "How is thyroid function managed in pregnancy?"
+    back: "TSH targets: 1st trimester <2.5 or trimester-specific range. Overt hypothyroidism: increase LT4 30-50%. PTU in 1st trimester, methimazole 2nd-3rd. RAI absolutely contraindicated. Check TRAb in 3rd trimester if Graves history.\n\nhCG has TSH-like activity→physiologic TSH suppression in 1st trimester. Uncontrolled hypothyroidism impairs fetal neurodevelopment. TRAb crosses placenta→neonatal thyrotoxicosis risk."
+    difficulty: hard
+    tags: [thyroid, pregnancy, PTU, levothyroxine, endocrinology]
+  - front: "What is TRAb significance in Graves disease?"
+    back: "Pathognomonic for Graves (97% sens, 99% spec). Uses: confirm diagnosis, predict relapse after ATDs (persistent TRAb=higher relapse), assess neonatal thyrotoxicosis risk in pregnant Graves patients (TRAb crosses placenta).\n\nCheck TRAb at ATD discontinuation: negative predicts 70% remission. Elevated in 3rd trimester→monitor neonate for thyrotoxicosis. Also called thyroid-stimulating immunoglobulin (TSI)."
+    difficulty: hard
+    tags: [thyroid, Graves, TRAb, antibodies, endocrinology]
+  - front: "What drugs interfere with thyroid function tests?"
+    back: "Biotin: falsely low TSH, high T4 (stop 2 days before). Estrogen/OCPs: increase TBG→high total T4, normal TSH. Glucocorticoids/dopamine: suppress TSH. Phenytoin: lower total T4. Heparin: falsely high free T4.\n\nSick euthyroid (non-thyroidal illness): low T3, low/normal T4, low/normal TSH — do not treat, reassess after recovery. Metformin may modestly lower TSH. Amiodarone and lithium affect thyroid directly."
+    difficulty: hard
+    tags: [thyroid, drug interactions, TFTs, biotin, endocrinology]
+  - front: "What is subclinical hyperthyroidism management?"
+    back: "TSH low, free T4/T3 normal. Repeat in 3-6 months. If persistent + TSH <0.1: thyroid scan and consider treatment. Treat if: TSH <0.1, age >65, osteoporosis, CV risk/AFib.\n\nTSH 0.1-0.4: observe. TSH <0.1: higher AFib risk (2-3x), fractures. In elderly, subclinical hyperthyroidism increases mortality. Treatment based on etiology (ATDs, RAI, or surgery)."
+    difficulty: hard
+    tags: [thyroid, subclinical, hyperthyroidism, AFib, endocrinology]
+  - front: "What are thyroidectomy complications?"
+    back: "Immediate: hemorrhage/hematoma (airway emergency→open at bedside). Early: hypocalcemia from hypoparathyroidism (most common, 20-30% transient), unilateral RLN injury (hoarseness). Late: permanent hypoparathyroidism (1-2%), hypothyroidism. Bilateral RLN injury: stridor, cord paralysis→intubation.\n\nMonitor Ca q6-12h post-op x 24h. Symptomatic hypocalcemia (tingling, Chvostek/Trousseau): IV calcium gluconate, then oral Ca+calcitriol. Check vocal cords pre- and post-op."
+    difficulty: hard
+    tags: [thyroid, thyroidectomy, complications, hypocalcemia, RLN, endocrinology]
+  - front: "How are incidental thyroid nodules on imaging managed?"
+    back: "Found on CT/MRI/PET: assess with dedicated thyroid US + TSH. Apply TI-RADS for FNA. Not all need FNA. Focal FDG-PET uptake: 30-50% malignancy→FNA. Diffuse FDG uptake: thyroiditis (benign).\n\nThyroid incidentalomas on CT very common (~16-18%). Size alone should not determine FNA — US features matter. Follow up incidental findings with dedicated thyroid US."
+    difficulty: medium
+    tags: [thyroid, incidentaloma, PET, TI-RADS, endocrinology]
+  - front: "What conditions and drugs cause QTc prolongation?"
+    back: "Genetic long QT syndrome (channelopathies), antiarrhythmics (Class I, III), antipsychotics (haloperidol, ziprasidone), antidepressants (citalopram), antibiotics (macrolides), electrolyte abnormalities (hypocalcemia, hypokalemia, hypomagnesemia), hypothyroidism, hypothermia, cardiomyopathy\n\nProlonged QTc increases risk of Torsades de Pointes, a potentially lethal polymorphic VT."
+    difficulty: medium
+    tags: [ECG, QT interval, Torsades, toronto-notes, pages-0101-0102-0103-0104-0105-0106-0107-0108-0109-0110]
+  - front: "What causes shortened QTc interval and what is the associated risk?"
+    back: "Hypercalcemia, digoxin, hyperthyroidism. Risk: VFib (very rare)\n\nShort QT syndrome is associated with increased sudden cardiac death risk due to shortened refractory period."
+    difficulty: medium
+    tags: [ECG, QT interval, VFib, toronto-notes, pages-0101-0102-0103-0104-0105-0106-0107-0108-0109-0110]
+  - front: "What factors increase myocardial oxygen demand?"
+    back: "Increased heart rate (hyperthyroidism, exercise, anemia, pregnancy), increased contractility (hyperthyroidism), and increased wall stress (myocardial hypertrophy, aortic stenosis)\n\nMyocardial oxygen demand is determined by heart rate, contractility, and wall stress (governed by the Law of Laplace)."
+    difficulty: easy
+    tags: [cardiology, pathophysiology, myocardial-demand, toronto-notes, pages-0121-0122-0123-0124-0125-0126-0127-0128-0129-0130]
+  - front: "What conditions cause HIGH-OUTPUT heart failure?"
+    back: "Anemia, thiamine deficiency (beriberi), hyperthyroidism, arteriovenous fistula or left-to-right shunting, Paget's disease, renal disease, hepatic disease\n\nHigh-output states increase metabolic demand, which can decompensate patients with marginal cardiac reserve or exacerbate existing heart failure."
+    difficulty: medium
+    tags: [heart failure, high-output, etiology, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is high-output heart failure and what conditions cause it?"
+    back: "Heart failure caused by demand for increased CO; DDx includes anemia, thiamine deficiency (beriberi), hyperthyroidism, A-V fistula or L-R shunting, Paget's disease, renal disease, hepatic disease\n\nHigh-output HF occurs when normal cardiac output is insufficient to meet metabolic demands, often unmasking underlying cardiac pathology or occurring with systemic hypermetabolic states."
+    difficulty: medium
+    tags: [heart failure, high-output heart failure, etiology, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What are the non-infectious causes of pericarditis mentioned in Toronto Notes?"
+    back: "Post-MI (acute or Dressler's syndrome), post-cardiac surgery/trauma, uremia, hypothyroidism, malignancy (Hodgkin's, breast, lung, renal, melanoma, lymphoma), autoimmune diseases (SLE, polyarteritis, RA, scleroderma), drugs (hydralazine), radiation, sarcoidosis\n\nPericarditis has numerous non-infectious etiologies requiring different management approaches, from immunosuppression for autoimmune causes to chemotherapy for malignant pericarditis."
+    difficulty: medium
+    tags: [cardiology, pericarditis, etiology, autoimmune, toronto-notes, pages-0151-0152-0153-0154-0155-0156-0157-0158-0159-0160]
+  - front: "What are the side effects of amiodarone?"
+    back: "Photosensitivity, pulmonary toxicity, hepatotoxicity, thyroid disease (hypo/hyperthyroidism), increased INR\n\nAmiodarone has numerous extracardiac toxicities requiring monitoring of pulmonary function, liver enzymes, and thyroid function."
+    difficulty: medium
+    tags: [cardiology, antiarrhythmics, amiodarone, side effects, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the major precipitants of Telogen Effluvium? (SEND mnemonic)"
+    back: "Stress (biological/psychological), Endocrine (hypothyroidism), Nutritional (iron/protein deficiency), Drugs (acitretin, heparin, lithium, IFN, beta-blockers, valproic acid, SSRIs)\n\nAny physiological stress can shift anagen hairs prematurely into telogen. The 'SEND' mnemonic covers the most common causes."
+    difficulty: hard
+    tags: [telogen effluvium, precipitants, alopecia, dermatology, toronto-notes, pages-0231-0232-0233-0234-0235-0236-0237-0238-0239-0240]
+  - front: "What are precipitants of telogen effluvium (SEND mnemonic)?"
+    back: "Stress (biological/psychological), Endocrine (hypothyroidism), Nutritional (iron/protein deficiency), Drugs (acitretin, heparin, lithium, IFN, beta-blockers, valproic acid, SSRIs)\n\nTelogen effluvium can be triggered by various systemic insults that force hair follicles prematurely into the resting phase."
+    difficulty: medium
+    tags: [telogen effluvium, alopecia, precipitants, dermatology, toronto-notes, pages-0231-0232-0233-0234-0235-0236-0237-0238-0239-0240]
+  - front: "What are causes of non-scarring alopecia?"
+    back: "Autoimmune (alopecia areata), endocrine (hypothyroidism, androgens), micronutrient deficiencies, toxins (heavy metals, chemotherapy, vitamin A excess), trauma (traction/tight ponytail/braiding), other (syphilis, severe illness, childbirth)\n\nUnlike scarring alopecia, these conditions preserve the hair follicle stem cells, allowing potential for regrowth."
+    difficulty: medium
+    tags: [dermatology, non-scarring alopecia, causes, toronto-notes, pages-0231-0232-0233-0234-0235-0236-0237-0238-0239-0240]
+  - front: "What are common causes of non-scarring alopecia?"
+    back: "Alopecia areata (autoimmune), androgenetic alopecia, telogen effluvium, anagen effluvium, hypothyroidism, nutritional deficiencies, traction, syphilis\n\nNon-scarring alopecias preserve the hair follicle stem cells, making spontaneous or treatment-induced regrowth possible."
+    difficulty: medium
+    tags: [non-scarring-alopecia, etiology, dermatology, toronto-notes, pages-0231-0232-0233-0234-0235-0236-0237-0238-0239-0240]
+  - front: "What is the Breslow thickness threshold for T4 melanoma staging?"
+    back: ">4.0 mm\n\nT4 melanomas have the worst prognosis with approximately 10% 5-year survival, indicating very deep invasion."
+    difficulty: medium
+    tags: [melanoma, AJCC, breslow, staging, toronto-notes, pages-0231-0232-0233-0234-0235-0236-0237-0238-0239-0240]
+  - front: "What are common causes of hyponatremia?"
+    back: "Hypovolemic (GI, renal, skin, blood loss), euvolemic (SIADH, adrenal insufficiency, hypothyroid), hypervolemic (CHF, cirrhosis, nephrotic syndrome).\n\nDetermining volume status is crucial for guiding treatment."
+    difficulty: medium
+    tags: [hyponatremia, causes, emergency medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What are the categories and causes of hyponatremia?"
+    back: "Hypovolemic (GI, renal, skin, blood loss), Euvolemic (SIADH, adrenal insufficiency, hypothyroid), Hypervolemic (CHF, cirrhosis, nephrotic syndrome)\n\nHyponatremia is classified by volume status which guides underlying cause and treatment."
+    difficulty: medium
+    tags: [hyponatremia, causes, classification, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What investigations are indicated for a first psychiatric presentation?"
+    back: "Blood glucose, urine and serum toxicology, pregnancy test, electrolytes, TSH, AST/ALT, bilirubin, serum Cr, BUN, osmolality, CT head if neurological etiology suspected\n\nThese tests rule out organic causes of psychiatric symptoms including metabolic disorders, infection, intoxication, and structural brain lesions."
+    difficulty: medium
+    tags: [psychiatry, investigations, organic workup, toronto-notes, pages-0301-0302-0303-0304-0305-0306-0307-0308-0309-0310]
+  - front: "What are the causes of hyponatremia?"
+    back: "Causes include: hypovolemic (GI, renal, skin, blood loss), euvolemic (SIADH, stress, adrenal insufficiency, hypothyroid), and hypervolemic (CHF, cirrhosis, nephrotic syndrome).\n\nClassifying hyponatremia by volume status guides appropriate treatment."
+    difficulty: medium
+    tags: [electrolytes, hyponatremia, nephrology, emergency medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What are causes of secondary hypercholesterolemia?"
+    back: "Hypothyroidism, nephrotic syndrome, CKD, cholestatic liver disease, anorexia nervosa, drugs (cyclosporine, steroids)\n\nThese conditions affect lipid metabolism and can cause elevated LDL cholesterol levels."
+    difficulty: easy
+    tags: [secondary dyslipidemia, hypothyroidism, nephrotic, toronto-notes, pages-0311-0312-0313-0314-0315-0316-0317-0318-0319-0320]
+  - front: "What causes secondary hypercholesterolemia?"
+    back: "Hypothyroidism, nephrotic syndrome, CKD, cholestatic liver disease (e.g., primary biliary cirrhosis), anorexia nervosa, drugs (cyclosporine, carbamazepine, steroids), monoclonal gammopathy\n\nSecondary causes must be excluded and treated when managing dyslipidemias."
+    difficulty: medium
+    tags: [secondary dyslipidemia, hypothyroidism, nephrotic syndrome, toronto-notes, pages-0311-0312-0313-0314-0315-0316-0317-0318-0319-0320]
+  - front: "What are the investigations for first-presentation psychosis?"
+    back: "Blood glucose, urine and serum toxicology, pregnancy test, electrolytes, TSH, AST/ALT, bilirubin, serum Cr, BUN, osmolality, medication levels; CT head if neurological etiology suspected; LP if indicated\n\nFirst-presentation psychosis requires ruling out organic causes through comprehensive testing including metabolic panel, thyroid function, toxicology, and neuroimaging as indicated."
+    difficulty: medium
+    tags: [psychosis, investigations, first episode, toronto-notes, pages-0301-0302-0303-0304-0305-0306-0307-0308-0309-0310]
+  - front: "What endocrine condition causes hypercholesterolemia with small dense LDL?"
+    back: "Hypothyroidism\n\nHypothyroidism reduces LDL receptor activity and can cause elevated total cholesterol with small dense LDL particles."
+    difficulty: easy
+    tags: [secondary dyslipidemia, hypothyroidism, endocrine, toronto-notes, pages-0311-0312-0313-0314-0315-0316-0317-0318-0319-0320]
+  - front: "What is the order of hormone loss in hypopituitarism following pituitary infarction (e.g., Sheehan's syndrome)?"
+    back: "GH → LH/FSH → TSH → ACTH → PRL (anterior pituitary, in that sequence)\n\nThe anterior pituitary has different vascular supply zones. GH-secreting cells are most vulnerable to ischemia, followed by gonadotrophs, thyrotrophs, corticotrophs, and finally lactotrophs."
+    difficulty: hard
+    tags: [pituitary, hypopituitarism, endocrinology, Sheehan, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are the clinical features of central hypothyroidism (TSH deficiency)?"
+    back: "Tiredness, cold intolerance, constipation, weight gain\n\nCentral hypothyroidism results from TSH deficiency. It is usually milder than primary hypothyroidism because TSH is low rather than elevated, and some residual thyroid hormone production may persist."
+    difficulty: easy
+    tags: [pituitary, TSH, hypothyroidism, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is pituitary apoplexy and how does it present?"
+    back: "Acute hemorrhage or infarction of a pituitary tumor. Presents with sudden severe headache, altered level of consciousness, and acute deficiency of all pituitary hormones (GH, LH, FSH, TSH, ACTH, PRL).\n\nPituitary apoplexy is a surgical emergency. The expanding hemorrhage causes sudden increased intracranial pressure and compression of surrounding structures."
+    difficulty: medium
+    tags: [pituitary, apoplexy, emergency, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the first-line test for evaluating thyroid function?"
+    back: "TSH (thyroid-stimulating hormone)\n\nTSH is the most sensitive test because most thyroid disorders are primary. If TSH is normal, primary thyroid dysfunction is ruled out. Secondary thyroid disorders require both TSH and free T4."
+    difficulty: easy
+    tags: [thyroid, TSH, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What percentage of thyroid hormone secreted is T4?"
+    back: "More than 90%\n\nThe thyroid secretes predominantly T4 (thyroxine). T3 (triiodothyronine) is the more metabolically active form, but most circulating T3 comes from peripheral conversion of T4."
+    difficulty: easy
+    tags: [thyroid, T4, T3, hormones, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "How does the potency of T3 compare to T4?"
+    back: "T3 is approximately 4 times more biologically potent than T4\n\nT3 has a higher affinity for thyroid hormone receptors and produces more rapid metabolic effects. This is why T4 is considered a prohormone."
+    difficulty: easy
+    tags: [thyroid, T3, T4, potency, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the Wolff-Chaikoff effect?"
+    back: "An autoregulatory mechanism where excess iodine temporarily inhibits thyroid hormone synthesis\n\nThis is an intrathyroid negative feedback mechanism. High iodine concentrations reduce thyroid sensitivity to TSH and decrease hormone production. It is the basis for using iodine in hyperthyroidism treatment."
+    difficulty: hard
+    tags: [thyroid, iodine, Wolff-Chaikoff, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the Jod-Basedow effect?"
+    back: "Hyperthyroidism induced by excess iodine in patients with underlying thyroid autonomy\n\nIn patients with Graves' disease or autonomous thyroid nodules, iodine supplementation can trigger hyperthyroidism because the thyroid can produce excess hormone without normal feedback inhibition."
+    difficulty: hard
+    tags: [thyroid, iodine, Jod-Basedow, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "How do thyroid hormones increase basal metabolic rate?"
+    back: "By increasing Na+/K+ ATPase activity, O2 consumption, respiration, heat generation, and cardiovascular activity\n\n thyroid hormones uncouple oxidative phosphorylation in mitochondria, increasing heat production (non-shivering thermogenesis) and driving overall metabolic rate upward."
+    difficulty: medium
+    tags: [thyroid, metabolism, BMR, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are the thyroid function test patterns in primary vs secondary hyperthyroidism?"
+    back: "Primary: low TSH with elevated T4/T3. Secondary: inappropriately normal or elevated TSH with elevated T4/T3\n\nPrimary hyperthyroidism is due to thyroid gland dysfunction (negative feedback suppresses TSH). Secondary hyperthyroidism is due to pituitary TSH-secreting adenoma (TSH not suppressed despite high thyroid hormones)."
+    difficulty: medium
+    tags: [thyroid, hyperthyroidism, TSH, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are the thyroid function test patterns in primary vs secondary hypothyroidism?"
+    back: "Primary: elevated TSH (most sensitive) with low T4/T3. Secondary: low or inappropriately normal TSH with low T4/T3\n\nPrimary hypothyroidism: thyroid gland failure → lack of negative feedback → high TSH. Secondary hypothyroidism: pituitary/hypothalamic disease → low TSH → low thyroid hormones."
+    difficulty: medium
+    tags: [thyroid, hypothyroidism, TSH, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What screening tests are used to evaluate pituitary function?"
+    back: "8am cortisol, PRL, TSH, Free T4, LH, FSH, Estradiol or Testosterone, GH, IGF-1, Na, Osmolality\n\nThese baseline tests evaluate all anterior pituitary hormone axes. The 8am cortisol is crucial because cortisol follows a diurnal rhythm."
+    difficulty: medium
+    tags: [pituitary, diagnosis, screening, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are common causes of secondary hypercholesterolemia?"
+    back: "Hypothyroidism, nephrotic syndrome, CKD, cholestatic liver disease, monoclonal gammopathy, drugs (cyclosporine, carbamazepine, steroids)\n\nSecondary causes should be ruled out before diagnosing primary dyslipidemia."
+    difficulty: easy
+    tags: [secondary dyslipidemia, hypercholesterolemia, etiologies, toronto-notes, pages-0311-0312-0313-0314-0315-0316-0317-0318-0319-0320]
+  - front: "In what order are pituitary hormones typically lost in hypopituitarism?"
+    back: "GH, LH/FSH, TSH, ACTH, then PRL (in that sequence)\n\nThe mnemonic 'Go Look For The Adenoma Please' helps recall: GH, LH/FSH, TSH, ACTH, PRL."
+    difficulty: hard
+    tags: [pituitary, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are the steps of thyroid hormone synthesis?"
+    back: "Iodide trapping (NIS), oxidation (TPO), iodination of thyroglobulin (organification), coupling of MIT/DIT, proteolysis and release of T4/T3\n\nThyroid peroxidase enzyme catalyzes the oxidation, organification, and coupling reactions in the follicular colloid."
+    difficulty: medium
+    tags: [thyroid, physiology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "How does T3 potency compare to T4?"
+    back: "T3 is approximately 4 times more potent than T4\n\nDespite being more potent, T3 is present in smaller quantities and has a shorter half-life compared to T4."
+    difficulty: easy
+    tags: [thyroid, pharmacology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What percentage of circulating T4 and T3 are free (biologically active)?"
+    back: "Free T4 is 0.02% and free T3 is 0.3%\n\nThe majority of thyroid hormones are bound to TBG, albumin, and transthyretin, which renders them biologically inactive."
+    difficulty: medium
+    tags: [thyroid, physiology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "Why is TSH the best test for assessing thyroid function?"
+    back: "Most functional thyroid disorders are primary, and TSH is the most sensitive indicator of primary thyroid dysfunction\n\nIf TSH is normal, a primary thyroid disorder is ruled out, though secondary disorders require free T4 testing as well."
+    difficulty: medium
+    tags: [thyroid, diagnosis, laboratory, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the TSH pattern in primary vs secondary hyperthyroidism?"
+    back: "Primary: low TSH (negative feedback from high T4/T3); Secondary: inappropriately normal or increased TSH\n\nSecondary hyperthyroidism originates from pituitary or hypothalamic disease, so TSH fails to suppress appropriately."
+    difficulty: medium
+    tags: [thyroid, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the TSH pattern in primary vs secondary hypothyroidism?"
+    back: "Primary: increased TSH (most sensitive test); Secondary: low or inappropriately normal TSH\n\nPrimary hypothyroidism shows high TSH due to loss of negative feedback, while secondary shows pituitary failure."
+    difficulty: medium
+    tags: [thyroid, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are the actions of thyroid hormones on metabolism?"
+    back: "Increase basal metabolic rate via Na+/K+ ATPase activity, O2 consumption, heat generation, and cardiovascular activity\n\nT3 increases sensitivity to catecholamines and potentiates the actions of GH, glucagon, and cortisol."
+    difficulty: medium
+    tags: [thyroid, physiology, metabolism, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are clinical features of central hypothyroidism (TSH deficiency)?"
+    back: "Tiredness, cold intolerance, constipation, weight gain\n\nSymptoms are similar to primary hypothyroidism but typically milder; TSH will be low or inappropriately normal."
+    difficulty: easy
+    tags: [thyroid, pituitary, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the function of the sodium iodide cotransporter (NIS) in thyroid cells?"
+    back: "Actively transports iodide from blood into thyroid follicular cells\n\nThis is the first step in thyroid hormone synthesis and is the target for radioactive iodine therapy."
+    difficulty: medium
+    tags: [thyroid, physiology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the order of hormone loss in Sheehan's syndrome?"
+    back: "GH, LH, FSH, TSH, ACTH, PRL (in that order)\n\nSheehan's syndrome is pituitary infarction due to postpartum hemorrhage. Hormones are lost in a predictable sequence starting with GH."
+    difficulty: medium
+    tags: [pituitary, Sheehans syndrome, hypopituitarism, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What investigation is the best test for assessing thyroid function and why?"
+    back: "TSH (Thyroid Stimulating Hormone)\n\nTSH is the most sensitive test because most functional thyroid disorders are primary. If TSH is normal, a functional disorder is unlikely (unless secondary disorder is suspected)."
+    difficulty: easy
+    tags: [thyroid, TSH, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the relative potency of T3 compared to T4?"
+    back: "T3 is approximately 4 times more potent than T4\n\nDespite being more potent, T3 has a shorter half-life and is present in smaller quantities in the blood."
+    difficulty: easy
+    tags: [thyroid, T3, T4, potency, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What percentage of T4 is converted to T3 or reverse T3 in the periphery?"
+    back: "85%\n\nMost peripheral T4 is converted to either active T3 or inactive reverse T3 by deiodinase enzymes."
+    difficulty: easy
+    tags: [thyroid, T4, T3, deiodinase, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the normal TSH pattern in primary vs secondary hyperthyroidism?"
+    back: "Primary: low TSH (due to negative feedback); Secondary: increased or inappropriately normal TSH\n\nIn primary hyperthyroidism, the thyroid itself is overproducing hormone, suppressing TSH. In secondary (pituitary-driven), TSH is inappropriately normal or elevated."
+    difficulty: medium
+    tags: [thyroid, TSH, hyperthyroidism, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the normal TSH pattern in primary vs secondary hypothyroidism?"
+    back: "Primary: increased TSH (most sensitive test); Secondary: low or inappropriately normal TSH\n\nIn primary hypothyroidism, the thyroid cannot produce hormone, leading to elevated TSH. In secondary hypothyroidism, the pituitary cannot produce TSH."
+    difficulty: medium
+    tags: [thyroid, TSH, hypothyroidism, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the normal sequence of pituitary hormone loss in hypopituitarism (mnemonic)?"
+    back: "Go Look For The Adenoma Please (GH, LH/FSH, TSH, ACTH, PRL)\n\nThis mnemonic helps remember the usual order of hormone deficiency, with GH and gonadotropins typically affected first."
+    difficulty: medium
+    tags: [pituitary, hypopituitarism, mnemonic, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are the three main steps in thyroid hormone synthesis?"
+    back: "Iodide trapping (NIS), iodination of thyroglobulin (organification), and proteolysis with release of T4/T3\n\nThyroid hormones are synthesized on thyroglobulin within the follicular colloid, then released into the bloodstream."
+    difficulty: medium
+    tags: [thyroid, hormone synthesis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the role of thyroid peroxidase enzyme in thyroid hormone synthesis?"
+    back: "Catalyzes iodination of tyrosine residues on thyroglobulin and coupling of MIT/DIT to form T3 and T4\n\nTPO is the key enzyme in thyroid hormone synthesis and is the target of anti-TPO antibodies in autoimmune thyroid disease."
+    difficulty: medium
+    tags: [thyroid, TPO, enzyme, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "Why are thyroid hormones required for normal fetal growth?"
+    back: "They stimulate GH release in synergism with cortisol, essential for CNS development and growth\n\nMaternal thyroid hormones cross the placenta and are crucial for fetal brain development, especially in the first trimester."
+    difficulty: medium
+    tags: [thyroid, fetal growth, GH, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the treatment sequence for combined adrenal insufficiency and hypothyroidism due to pituitary disease?"
+    back: "Treat adrenal insufficiency first with glucocorticoids, then treat hypothyroidism\n\nGiving thyroid hormone before glucocorticoids can precipitate adrenal crisis by increasing metabolic rate without cortisol coverage."
+    difficulty: medium
+    tags: [pituitary, treatment, adrenal insufficiency, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What endocrine conditions cause secondary dyslipidemia?"
+    back: "Hypothyroidism (causes small dense LDL), obesity/metabolic syndrome, diabetes mellitus\n\nEndocrine disorders significantly affect lipid metabolism and are common causes of secondary dyslipidemia."
+    difficulty: easy
+    tags: [secondary dyslipidemia, hypothyroidism, diabetes, toronto-notes, pages-0311-0312-0313-0314-0315-0316-0317-0318-0319-0320]
+  - front: "What is the order of hormone loss following pituitary infarction (e.g., Sheehan's syndrome)?"
+    back: "GH, LH, FSH, TSH, ACTH, PRL (in that order, with posterior pituitary hormones ADH and oxytocin affected last)\n\nThe anterior pituitary loses hormones in a sequential pattern following infarction, with GH and gonadotropins affected first."
+    difficulty: hard
+    tags: [pituitary, hypopituitarism, Sheehan, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the best initial test for assessing thyroid function and why?"
+    back: "TSH - it is the most sensitive test for primary thyroid disorders and normal TSH rules out functional thyroid disease\n\nTSH provides a sensitive indicator of thyroid status because most thyroid disorders are primary (thyroid-origin)."
+    difficulty: easy
+    tags: [thyroid, TSH, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What percentage of thyroid hormone secreted is T4 vs T3?"
+    back: "More than 90% is T4; T3 is secreted in smaller quantities\n\nThe thyroid primarily secretes T4 (levothyroxine), which is converted to the more active T3 peripherally."
+    difficulty: easy
+    tags: [thyroid, T4, T3, hormones, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the hormonally active fraction of thyroid hormones?"
+    back: "Free T4 (0.02%) and free T3 (0.3%)\n\nOnly the unbound (free) fractions are biologically active; the majority is bound to TBG, albumin, and transthyretin."
+    difficulty: medium
+    tags: [thyroid, T4, T3, free hormones, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the relative potency and half-life of T3 vs T4?"
+    back: "T3 is approximately 4x more potent than T4 but has a shorter half-life\n\nT3 is the active form that binds nuclear receptors, while T4 serves as a prohormone with longer duration of action."
+    difficulty: easy
+    tags: [thyroid, T3, T4, potency, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "Where does most of the plasma T3 pool come from?"
+    back: "Peripheral conversion of T4 by deiodinase enzymes\n\nApproximately 85% of T4 is converted to T3 or reverse T3 in the periphery, making most circulating T3 derived from T4."
+    difficulty: medium
+    tags: [thyroid, T3, deiodinase, conversion, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "In primary vs secondary hypothyroidism, what are the TSH findings?"
+    back: "Primary: increased TSH; Secondary: low or inappropriately normal TSH\n\nPrimary hypothyroidism shows elevated TSH due to loss of negative feedback. Secondary hypothyroidism has pituitary dysfunction with inadequate TSH."
+    difficulty: medium
+    tags: [thyroid, hypothyroidism, TSH, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "In primary vs secondary hyperthyroidism, what are the TSH findings?"
+    back: "Primary: low TSH (due to negative feedback); Secondary: increased or inappropriately normal TSH\n\nPrimary hyperthyroidism suppresses TSH via negative feedback. Secondary hyperthyroidism has inappropriate TSH secretion from pituitary."
+    difficulty: medium
+    tags: [thyroid, hyperthyroidism, TSH, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the treatment order for combined adrenal insufficiency and hypothyroidism from hypopituitarism?"
+    back: "Treat glucocorticoids first, then thyroid hormone\n\nGiving thyroid hormone before corticosteroids can precipitate adrenal crisis by increasing metabolic clearance of cortisol."
+    difficulty: hard
+    tags: [pituitary, treatment, adrenal, thyroid, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "In pituitary adenoma, which hormone deficiencies should be recognized urgently?"
+    back: "Adrenal insufficiency and hypothyroidism - these should be treated with glucocorticoids first, then thyroid hormone\n\nConcurrent adrenal insufficiency and hypothyroidism require glucocorticoid replacement before thyroid hormone to prevent adrenal crisis from increased metabolic demand."
+    difficulty: medium
+    tags: [pituitary, emergency, endocrinology, adenoma, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What investigations are used to assess pituitary function?"
+    back: "8am cortisol, PRL, TSH, Free T4, LH, FSH, Estradiol/Testosterone, GH, IGF-1, Na+, Osmolality\n\nThis panel assesses all anterior and posterior pituitary hormones. 8am cortisol is crucial as cortisol follows a diurnal rhythm."
+    difficulty: easy
+    tags: [pituitary, investigation, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the biologically active fraction of thyroid hormones?"
+    back: "Free T4 (0.02%) and free T3 (0.3%)\n\nMost thyroid hormones are bound to TBG, albumin, and transthyretin. Only the free fractions are hormonally active."
+    difficulty: easy
+    tags: [thyroid, T4, T3, free hormones, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "How much more potent is T3 compared to T4?"
+    back: "Approximately 4 times more potent\n\nT3 has greater receptor affinity and faster onset of action, but has a shorter half-life compared to T4."
+    difficulty: easy
+    tags: [thyroid, T3, T4, potency, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "Why is TSH the best initial test for assessing thyroid function?"
+    back: "Most functional thyroid disorders are primary - if TSH is normal, a functional disorder is ruled out\n\nTSH is extremely sensitive to thyroid hormone levels due to negative feedback. It detects primary thyroid dysfunction before T4/T3 abnormalities become apparent."
+    difficulty: easy
+    tags: [thyroid, TSH, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What TSH pattern would you see in primary hyperthyroidism?"
+    back: "Low TSH due to negative feedback from elevated T4 and T3\n\nPrimary hyperthyroidism (thyroid gland overproduction) causes high thyroid hormone levels that suppress pituitary TSH secretion."
+    difficulty: easy
+    tags: [thyroid, TSH, hyperthyroidism, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What TSH pattern would you see in primary hypothyroidism?"
+    back: "Increased TSH (most sensitive test) due to less negative feedback from T4 and T3\n\nPrimary hypothyroidism causes low thyroid hormone levels, removing negative feedback and resulting in elevated TSH from the pituitary."
+    difficulty: easy
+    tags: [thyroid, TSH, hypothyroidism, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What TSH pattern would you see in secondary (pituitary) hyperthyroidism?"
+    back: "Increased TSH (or inappropriately normal) with elevated T4 and T3\n\nSecondary hyperthyroidism is caused by a pituitary adenoma secreting TSH, causing high TSH with correspondingly elevated thyroid hormones."
+    difficulty: medium
+    tags: [thyroid, TSH, pituitary, hyperthyroidism, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What TSH pattern would you see in secondary (pituitary) hypothyroidism?"
+    back: "Low or inappropriately normal TSH with low T4\n\nSecondary hypothyroidism results from pituitary TSH deficiency. The TSH is low rather than elevated, distinguishing it from primary hypothyroidism."
+    difficulty: medium
+    tags: [thyroid, TSH, pituitary, hypothyroidism, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the order of pituitary hormone loss in hypopituitarism?"
+    back: "GH, LH, FSH, TSH, ACTH, PRL (in that sequence typically)\n\nThe classic sequence is 'Go Look For The Adenoma Please' - GH, LH/FSH, TSH, ACTH, PRL. However, any pattern is possible depending on cause."
+    difficulty: medium
+    tags: [pituitary, hypopituitarism, hormones, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the triple bolus test used to assess?"
+    back: "Combined test of GH, LH/FSH, and TSH reserve\n\nThis rarely-performed test uses insulin, GnRH, and TRH to stimulate pituitary hormone release and assess anterior pituitary function."
+    difficulty: hard
+    tags: [pituitary, diagnosis, triple bolus, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the initial screening test for suspected hypopituitarism?"
+    back: "8am cortisol, PRL, TSH, Free T4, LH, FSH, Estradiol or Testosterone, GH, IGF-1\n\nMultiple hormone levels are checked simultaneously to assess both anterior and posterior pituitary function. 8am cortisol is used because cortisol follows a diurnal rhythm."
+    difficulty: medium
+    tags: [pituitary, diagnosis, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What percentage of thyroid hormone secreted by the thyroid is T4?"
+    back: "More than 90%\n\nT4 (thyroxine) is the major secretory product, while T3 (triiodothyronine) is more biologically potent but secreted in smaller amounts."
+    difficulty: easy
+    tags: [thyroid, hormones, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the free (biologically active) fraction of T4 and T3?"
+    back: "Free T4: 0.02%, Free T3: 0.3%\n\nThe majority of thyroid hormones are bound to TBG, albumin, and transthyretin. Only the free fraction is metabolically active."
+    difficulty: easy
+    tags: [thyroid, hormones, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "How does T3 compare to T4 in potency and half-life?"
+    back: "T3 is approximately 4x more potent than T4 but has a shorter half-life\n\nT4 serves as a prohormone and is converted to T3 in peripheral tissues by deiodinase enzymes. Most plasma T3 comes from peripheral conversion."
+    difficulty: easy
+    tags: [thyroid, hormones, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What happens to T4 conversion in peripheral tissues in hypothyroidism?"
+    back: "Increased conversion of T4 to T3 (active) and decreased conversion to reverse T3 (inactive)\n\nThis is a compensatory mechanism - in hypothyroidism, more T4 is converted to the active T3 form to maintain tissue thyroid hormone activity despite low T4 levels."
+    difficulty: medium
+    tags: [thyroid, hormones, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are the metabolic effects of thyroid hormones?"
+    back: "Increase basal metabolic rate through increased Na+/K+ ATPase activity, O2 consumption, heat generation, and cardiovascular activity\n\nThyroid hormones increase resting energy expenditure, heart rate and contractility, and respiratory rate - explaining symptoms of hyperthyroidism."
+    difficulty: easy
+    tags: [thyroid, metabolism, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the expected TSH pattern in primary vs secondary hyperthyroidism?"
+    back: "Primary: low TSH (negative feedback); Secondary: increased or inappropriately normal TSH with elevated T4/T3\n\nSecondary hyperthyroidism is rare and due to a pituitary tumor secreting TSH, causing inappropriate TSH levels that should be suppressed but aren't."
+    difficulty: medium
+    tags: [thyroid, TSH, hyperthyroidism, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the most sensitive test for primary hypothyroidism?"
+    back: "Elevated TSH\n\nTSH rises early in primary hypothyroidism as the pituitary attempts to compensate for low thyroid hormone levels, making it more sensitive than T4 measurements."
+    difficulty: easy
+    tags: [thyroid, TSH, hypothyroidism, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the role of thyroglobulin in thyroid hormone synthesis?"
+    back: "It is the protein scaffold on which thyroid hormones are synthesized via iodination of tyrosine residues\n\nThyroglobulin is secreted into the follicular colloid and serves as the substrate for hormone synthesis. After iodination and coupling, it is proteolytically cleaved to release T4 and T3."
+    difficulty: easy
+    tags: [thyroid, synthesis, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the mnemonic for remembering anterior pituitary hormones?"
+    back: "Go Look For The Adenoma Please (GH, LH/FSH, TSH, ACTH, PRL)\n\nThis helpful mnemonic organizes the anterior pituitary hormones in the typical order they are lost in hypopituitarism."
+    difficulty: easy
+    tags: [pituitary, hormones, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the definition of a thyroid nodule?"
+    back: "A discrete lesion that can be distinguished sonographically from the rest of the thyroid parenchyma\n\nThyroid nodules have a 19-67% prevalence based on incidentally found nodules on ultrasound."
+    difficulty: easy
+    tags: [thyroid, endocrinology, definitions, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What are the etiologies of thyroid nodules?"
+    back: "Benign tumors (e.g., follicular adenoma), thyroid malignancy, hyperplastic area in multinodular goiter, or cyst (true cyst or area of cystic degeneration)\n\nThe majority of thyroid nodules are benign; only a small percentage represent malignancy."
+    difficulty: easy
+    tags: [thyroid, endocrinology, pathology, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "How does the approach to thyroid nodules differ based on TSH level?"
+    back: "Low TSH suggests autonomous functioning (hot nodule); normal/elevated TSH suggests non-functioning (cold nodule). Hot nodules are treated for hyperthyroidism; cold nodules may require US-guided biopsy if suspicious.\n\nA hot nodule produces excess thyroid hormone, suppressing TSH, while a cold nodule does not function actively."
+    difficulty: medium
+    tags: [thyroid, endocrinology, diagnostics, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What is the prevalence of incidentally found thyroid nodules on ultrasound?"
+    back: "19-67%\n\nA large proportion of thyroid nodules are discovered incidentally during ultrasound imaging for other reasons."
+    difficulty: easy
+    tags: [endocrinology, thyroid, epidemiology, ultrasound, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "List the etiologies of thyroid nodules"
+    back: "Benign tumors (e.g., follicular adenoma), thyroid malignancy, hyperplastic area in multinodular goiter, cyst (true cyst or area of cystic degeneration)\n\nThe majority of thyroid nodules are benign, but malignancy must be ruled out through appropriate investigation."
+    difficulty: easy
+    tags: [endocrinology, thyroid, pathology, differential-diagnosis, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What are the main etiologies of thyroid nodules?"
+    back: "Benign tumors (follicular adenoma), thyroid malignancy, hyperplastic area in multinodular goiter, or cyst (true cyst or area of cystic degeneration)\n\nThe vast majority of thyroid nodules are benign, but malignancy must be ruled out."
+    difficulty: easy
+    tags: [endocrinology, thyroid, pathology, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "How is a hot nodule on thyroid scan managed?"
+    back: "If TSH is suppressed and the nodule is hot, treat hyperthyroidism; if TSH normal/elevated, treat thyroiditis based on US characteristics\n\nHot nodules are almost never malignant but require management of associated hyperthyroidism."
+    difficulty: medium
+    tags: [endocrinology, thyroid, management, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What is the order in which pituitary hormones are lost in pituitary apoplexy?"
+    back: "GH, LH, FSH, TSH, ACTH, PRL (anterior pituitary), then ADH and oxytocin (posterior pituitary)"
+    difficulty: hard
+    tags: [pituitary apoplexy, endocrine emergency, pathology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the treatment approach for concurrent adrenal insufficiency and hypothyroidism in hypopituitarism?"
+    back: "Treat adrenal insufficiency first, then add thyroid hormone"
+    difficulty: medium
+    tags: [treatment, adrenal insufficiency, hypothyroidism, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "Where is most plasma T3 derived from?"
+    back: "Peripheral conversion of T4"
+    difficulty: easy
+    tags: [T3, deiodinase, peripheral conversion, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What triggers the negative feedback mechanism for TSH?"
+    back: "T3 acts on the anterior pituitary to inhibit TSH and on the hypothalamus to inhibit TRH"
+    difficulty: easy
+    tags: [TSH, negative feedback, hypothalamus, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the best test for assessing thyroid function and why?"
+    back: "TSH, because most functional thyroid disorders are primary"
+    difficulty: easy
+    tags: [TSH, thyroid function tests, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the TSH pattern in primary hyperthyroidism?"
+    back: "Low TSH due to negative feedback from elevated T4 and T3"
+    difficulty: easy
+    tags: [TSH, hyperthyroidism, interpretation, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the TSH pattern in primary hypothyroidism?"
+    back: "Increased TSH (most sensitive test)"
+    difficulty: easy
+    tags: [TSH, hypothyroidism, interpretation, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the TSH pattern in secondary (central) hyperthyroidism?"
+    back: "Increased or inappropriately normal TSH with elevated T4 and T3"
+    difficulty: medium
+    tags: [TSH, secondary hyperthyroidism, central, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the initial test for suspected hypopituitarism?"
+    back: "8am cortisol, PRL, TSH, Free T4, LH, FSH, Estradiol or Testosterone, GH, IGF-1, Na, Osmolality"
+    difficulty: medium
+    tags: [hypopituitarism, investigations, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What are the common etiologies of thyroid nodules?"
+    back: "Benign tumors (follicular adenoma), thyroid malignancy, hyperplastic area in multinodular goiter, and cysts (true cysts or areas of cystic degeneration)\n\nThe majority of thyroid nodules are benign, but malignancy must be ruled out through appropriate investigation."
+    difficulty: easy
+    tags: [endocrinology, thyroid, pathology, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What is the approach to a hot nodule on thyroid scan?"
+    back: "If the nodule is hot (functioning) and TSH is suppressed, treat hyperthyroidism; if TSH is normal/elevated, treat thyroiditis\n\nHot nodules are typically benign and functioning, while cold nodules require biopsy if suspicious."
+    difficulty: medium
+    tags: [endocrinology, thyroid, management, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "How is a hot nodule on thyroid scan typically managed?"
+    back: "Hot nodules are managed by treating hyperthyroidism, as they are usually functioning adenomas producing excess thyroid hormone"
+    difficulty: easy
+    tags: [thyroid, endocrinology, treatment, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What is the PTH level in primary hyperparathyroidism?"
+    back: "PTH is high or inappropriately normal\n\nPrimary hyperparathyroidism causes hypersecretion of PTH from parathyroid adenoma (81%) or hyperplasia (15%)."
+    difficulty: easy
+    tags: [hypercalcemia, PTH, primary hyperparathyroidism, toronto-notes, pages-0351-0352-0353-0354-0355-0356-0357-0358-0359-0360]
+  - front: "What is tertiary hyperparathyroidism?"
+    back: "Increased PTH after prolonged secondary hyperparathyroidism (usually due to renal failure) - autonomous PTH secretion develops\n\nLong-term stimulation of parathyroid glands in secondary hyperparathyroidism leads to nodular hyperplasia and autonomous secretion."
+    difficulty: medium
+    tags: [hyperparathyroidism, PTH, renal failure, toronto-notes, pages-0351-0352-0353-0354-0355-0356-0357-0358-0359-0360]
+  - front: "What is the most common cause of primary hyperparathyroidism?"
+    back: "Solitary adenoma (81%), followed by hyperplasia (15%) and carcinoma (4%).\n\nPrimary hyperparathyroidism is a common cause of outpatient hypercalcemia and is usually due to a single benign adenoma."
+    difficulty: easy
+    tags: [hyperparathyroidism, primary, adenoma, toronto-notes, pages-0351-0352-0353-0354-0355-0356-0357-0358-0359-0360]
+  - front: "What are the causes of tertiary hyperparathyroidism?"
+    back: "Prolonged secondary hyperparathyroidism (usually due to renal failure) leading to autonomous PTH hypersecretion even after the trigger is removed.\n\nTertiary hyperparathyroidism develops after long-standing secondary hyperparathyroidism, typically in patients on dialysis."
+    difficulty: medium
+    tags: [hyperparathyroidism, tertiary, renal failure, toronto-notes, pages-0351-0352-0353-0354-0355-0356-0357-0358-0359-0360]
+  - front: "What medical conditions are associated with gynecomastia?"
+    back: "Hypogonadism, cirrhosis, CKD, hyperthyroidism, testicular/germ cell tumors, HIV treatment (lipodystrophy)\n\nThese conditions alter hormone metabolism or cause hormonal imbalances."
+    difficulty: medium
+    tags: [endocrinology, gynecomastia, disease, toronto-notes, pages-0361-0362-0363-0364-0365-0366-0367-0368-0369-0370]
+  - front: "What medical conditions cause gynecomastia?"
+    back: "Male hypogonadism, cirrhosis, CKD, hyperthyroidism, testicular/germ-cell neoplasms, Klinefelter syndrome\n\nThese conditions disrupt hormonal balance between estrogens and androgens."
+    difficulty: medium
+    tags: [endocrinology, gynecomastia, medical conditions, toronto-notes, pages-0361-0362-0363-0364-0365-0366-0367-0368-0369-0370]
+  - front: "What is the difference between a hot nodule and a cold nodule on thyroid scan?"
+    back: "Hot nodules are hyperfunctioning (take up more radioactive iodine) and are usually benign; cold nodules are hypofunctioning and have higher malignancy risk\n\nHot nodules are associated with low TSH and are treated for hyperthyroidism; cold nodules require ultrasound-guided biopsy if suspicious."
+    difficulty: easy
+    tags: [Thyroid, Diagnostic, Endocrinology, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "In the approach to thyroid nodules, what does a 'hot nodule' indicate?"
+    back: "A hot nodule suggests hyperfunctioning thyroid tissue that typically appears on radionuclide scan as areas of increased uptake\n\nHot nodules are usually benign and may be associated with hyperthyroidism; management includes treating hyperthyroidism."
+    difficulty: easy
+    tags: [thyroid, endocrinology, diagnostics, nuclear medicine, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "In the approach to thyroid nodules, what does a 'cold nodule' indicate?"
+    back: "A cold nodule shows decreased uptake on radionuclide scan and requires further evaluation with ultrasound-guided biopsy\n\nCold nodules have a higher risk of malignancy compared to hot nodules and warrant further investigation."
+    difficulty: easy
+    tags: [thyroid, endocrinology, diagnostics, nuclear medicine, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "How are thyroid nodules with hot nodules on scan managed?"
+    back: "Hot nodules are treated by addressing the underlying hyperthyroidism; they are typically suppressive rather than requiring biopsy\n\nHot nodules concentrate radioactive iodine and are usually функционирующие, indicating excess hormone production."
+    difficulty: medium
+    tags: [thyroid, endocrinology, management, hyperthyroidism, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "How are cold nodules on thyroid scan managed?"
+    back: "Cold nodules require ultrasound-guided biopsy if they have suspicious sonographic characteristics\n\nCold nodules do not concentrate radioactive iodine and have a higher risk of malignancy compared to hot nodules."
+    difficulty: medium
+    tags: [thyroid, endocrinology, diagnostic, biopsy, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What are causes of hypoparathyroidism?"
+    back: "Surgical removal, autoimmune destruction, congenital absence, magnesium deficiency (functional)\n\nLack of PTH leads to inadequate bone resorption, reduced renal calcium reabsorption, and decreased vitamin D activation."
+    difficulty: easy
+    tags: [hypocalcemia, hypoparathyroidism, PTH, toronto-notes, pages-0351-0352-0353-0354-0355-0356-0357-0358-0359-0360]
+  - front: "What is the relationship between magnesium and calcium?"
+    back: "Severe magnesium deficiency causes functional hypoparathyroidism (impaired PTH secretion) and end-organ resistance to PTH\n\nMagnesium is required for PTH release and action. Correction of magnesium is required before calcium can be normalized."
+    difficulty: medium
+    tags: [hypocalcemia, magnesium, PTH, toronto-notes, pages-0351-0352-0353-0354-0355-0356-0357-0358-0359-0360]
+  - front: "What investigations should be considered for unexplained sensorineural hearing loss?"
+    back: "Blood glucose, CBC, TSH, syphilis testing, and MRI to exclude vestibular schwannoma\n\nThese tests help identify potentially reversible causes and exclude tumors."
+    difficulty: medium
+    tags: [hearing loss, investigations, otolaryngology, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "List 6 etiologies of secondary headaches"
+    back: "Drug-related (withdrawal, medication overuse, side effects), Infectious (meningitis, encephalitis, abscess), Vascular (aneurysm, stroke, SAH, HTN, temporal arteritis), Endocrine (thyroid disease, pheochromocytoma), Neoplastic (tumour), Trauma (TMJ, c-spine injury, subdural hematoma)\n\nSecondary headaches require urgent evaluation as they may indicate serious or life-threatening conditions."
+    difficulty: hard
+    tags: [headache, etiology, neurology, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the management for hearing impairment?"
+    back: "Counsel about noise control/hearing protection, treat sudden unilateral sensorineural hearing loss urgently with steroids, consider blood glucose/CBC/TSH/syphilis testing for unexplained sensorineural loss, MRI for progressive asymmetric loss (exclude vestibular schwannoma), refer to ENT for unknown etiology or sudden hearing loss, hearing aids/assistive devices/cochlear implants\n\nManagement depends on etiology and may include amplification devices which significantly improve quality of life."
+    difficulty: hard
+    tags: [hearing, management, treatment, otolaryngology, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the management of sudden sensorineural hearing loss?"
+    back: "Urgent treatment with steroids; consider glucose, CBC, TSH, syphilis testing; MRI to exclude vestibular schwannoma\n\nSudden onset requires urgent ENT referral for potential steroid treatment and workup."
+    difficulty: hard
+    tags: [hearing, emergency, management, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the management for sudden unilateral sensorineural hearing loss?"
+    back: "Urgent treatment with steroids; consider blood glucose, CBC, TSH, syphilis testing; refer to ENT for MRI to exclude vestibular schwannoma\n\nSudden sensorineural hearing loss is an ENT emergency requiring prompt evaluation and treatment to preserve hearing."
+    difficulty: hard
+    tags: [hearing, emergency, management, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the management of hearing impairment?"
+    back: "Counsel about noise control and hearing protection, treat sudden unilateral sensorineural hearing loss urgently with steroids, consider blood glucose/CBC/TSH/syphilis testing for unexplained sensorineural loss, consider MRI for progressive asymmetric sensorineural loss to exclude vestibular schwannoma, refer to ENT specialist, amplification (hearing aids), assistive listening devices, cochlear implants\n\nManagement includes prevention, treatment of reversible causes, and rehabilitation."
+    difficulty: medium
+    tags: [hearing-loss, management, treatment, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "List the conditions strongly associated with secondary osteoporosis"
+    back: "Primary hyperparathyroidism, TIDM, osteogenesis imperfecta, uncontrolled hyperthyroidism, hypogonadism or premature menopause (<45 yr), Cushing's disease, chronic malnutrition or malabsorption, chronic liver disease, COPD, and chronic inflammatory conditions (e.g., IBD)\n\nThese conditions can cause bone loss through various mechanisms including hormonal imbalances, malabsorption, or chronic inflammation."
+    difficulty: easy
+    tags: [osteoporosis, secondary-causes, endocrine, chronic-disease, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "List 5 conditions strongly associated with secondary osteoporosis"
+    back: "Primary hyperparathyroidism, TIDM, osteogenesis imperfecta, uncontrolled hyperthyroidism, hypogonadism or premature menopause (<45 yr), Cushing's disease, chronic malnutrition or malabsorption, chronic liver disease, COPD, chronic inflammatory conditions (IBD)\n\nThese conditions affect bone metabolism through various mechanisms including hormone imbalances, nutrient malabsorption, and chronic inflammation."
+    difficulty: medium
+    tags: [osteoporosis, secondary-causes, endocrinology, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "List 10 conditions strongly associated with secondary osteoporosis"
+    back: "Primary hyperparathyroidism, TIDM, osteogenesis imperfecta, uncontrolled hyperthyroidism, hypogonadism or premature menopause (<45 yr), Cushing's disease, chronic malnutrition/malabsorption, chronic liver disease, COPD, IBD\n\nThese conditions are strongly associated with secondary osteoporosis and should prompt earlier BMD testing."
+    difficulty: medium
+    tags: [osteoporosis, secondary-causes, endocrine, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "List 8 conditions strongly associated with secondary osteoporosis"
+    back: "Primary hyperparathyroidism, TIDM, osteogenesis imperfecta, uncontrolled hyperthyroidism, hypogonadism or premature menopause (<45 yr), Cushing's disease, chronic malnutrition or malabsorption, chronic liver disease, COPD, and chronic inflammatory conditions (IBD)\n\nThese conditions are known to cause secondary osteoporosis through various mechanisms affecting bone metabolism."
+    difficulty: hard
+    tags: [osteoporosis, secondary-causes, endocrine, chronic-disease, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "Which conditions are strongly associated with secondary osteoporosis?"
+    back: "Primary hyperparathyroidism, TIDM, osteogenesis imperfecta, uncontrolled hyperthyroidism, hypogonadism or premature menopause (<45 yr), Cushing's disease, chronic malnutrition or malabsorption, chronic liver disease, COPD, and chronic inflammatory conditions (IBD)\n\nThese conditions are recognized by Canadian guidelines as causes of secondary osteoporosis requiring specific management."
+    difficulty: medium
+    tags: [osteoporosis, secondary-causes, risk-factors, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are the primary risk factors strongly associated with osteoporosis?"
+    back: "Primary hyperparathyroidism, TIDM, osteogenesis imperfecta, uncontrolled hyperthyroidism, hypogonadism or premature menopause (<45 yr), Cushing's disease\n\nThese conditions directly affect bone metabolism and are strongly associated with the development of osteoporosis."
+    difficulty: easy
+    tags: [osteoporosis, risk-factors, endocrine, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are causes of secondary osteoporosis?"
+    back: "Primary hyperparathyroidism, uncontrolled hyperthyroidism, hypogonadism, Cushing's disease, chronic malnutrition/malabsorption, chronic liver disease, COPD, IBD, TIDM, osteogenesis imperfecta\n\nThese conditions increase bone loss through various mechanisms and should be considered when evaluating patients with osteoporosis, especially those with typical risk factors."
+    difficulty: medium
+    tags: [osteoporosis, secondary-causes, differential, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What is the management approach to hearing loss?"
+    back: "Counsel about noise control and hearing protection, treat sudden unilateral sensorineural hearing loss urgently with steroids, consider blood glucose, CBC, TSH, syphilis testing for unexplained sensorineural loss, consider MRI for progressive asymmetric loss to exclude vestibular schwannoma, refer to ENT for unknown etiology or sudden hearing loss, and consider hearing aids, assistive devices, or cochlear implants\n\nManagement depends on etiology. Sudden sensorineural hearing loss is a medical emergency requiring prompt ENT referral."
+    difficulty: medium
+    tags: [hearing, management, treatment, otolaryngology, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the conditions strongly associated with secondary osteoporosis?"
+    back: "Primary hyperparathyroidism, TIDM, osteogenesis imperfecta, uncontrolled hyperthyroidism, hypogonadism or premature menopause (<45 yr), Cushing's disease, chronic malnutrition or malabsorption, chronic liver disease, COPD, and chronic inflammatory conditions (e.g., IBD)\n\nThese conditions can cause bone loss through various mechanisms including hormonal imbalances, malabsorption, or chronic inflammation."
+    difficulty: easy
+    tags: [osteoporosis, secondary-causes, endocrine, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are the secondary causes of osteoporosis strongly associated with the condition?"
+    back: "Primary hyperparathyroidism, TIDM, osteogenesis imperfecta, uncontrolled hyperthyroidism, hypogonadism or premature menopause (<45 yr), Cushing's disease, chronic malnutrition or malabsorption, chronic liver disease, COPD, and chronic inflammatory conditions (e.g., IBD)\n\nThese conditions either affect bone remodeling, hormone levels, or nutrient absorption necessary for bone health."
+    difficulty: medium
+    tags: [osteoporosis, secondary-causes, endocrine, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What is prucalopride and how does it work?"
+    back: "A 5-HT4 inhibitor prokinetic agent used for constipation\n\nPrucalopride stimulates gut motility by acting as a serotonin receptor agonist. Used for chronic constipation."
+    difficulty: medium
+    tags: [constipation, treatment, prokinetic, 5-HT4, gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What metabolic causes of constipation should be considered?"
+    back: "Diabetes mellitus, hypothyroidism, hypercalcemia, hypokalemia, uremia\n\nMetabolic disorders can affect gut motility through various mechanisms including autonomic neuropathy (DM) and electrolyte disturbances."
+    difficulty: medium
+    tags: [constipation, metabolic, etiology, hypothyroidism, gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What is prucalopride and what is its mechanism?"
+    back: "Prokinetic agent, 5-HT4 inhibitor, used for chronic constipation\n\nPrucalopride stimulates intestinal motility through serotonin receptor agonism."
+    difficulty: medium
+    tags: [constipation, treatment, prucalopride, prokinetic, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What are the metabolic causes of constipation?"
+    back: "Diabetes mellitus, hypothyroidism, hypercalcemia, hypokalemia, and uremia.\n\nMetabolic derangements affect gut motility through various mechanisms including autonomic dysfunction (DM) and electrolyte disturbances."
+    difficulty: medium
+    tags: [Constipation, Metabolic, Gastroenterology, Hypothyroidism, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What are prokinetic agents used for constipation and give an example?"
+    back: "Prucalopride - a 5-HT4 inhibitor that enhances gut motility. Used when other treatments fail.\n\nPrucalopride stimulates 5-HT4 receptors in the GI tract, increasing peristalsis and reducing transit time. It is used for chronic idiopathic constipation."
+    difficulty: medium
+    tags: [Constipation, Prokinetic, 5-HT4, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What metabolic causes can lead to constipation?"
+    back: "Diabetes mellitus, hypothyroidism, hypercalcemia, and uremia\n\nMetabolic disorders affect gut motility through various mechanisms including autonomic dysfunction, slowed metabolism, and electrolyte imbalances."
+    difficulty: medium
+    tags: [Constipation, Metabolic, Diabetes, Hypothyroidism, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "List metabolic causes of constipation"
+    back: "Diabetes mellitus, hypothyroidism, hypercalcemia, hypokalemia, uremia\n\nMetabolic disturbances affect gut motility and can cause constipation."
+    difficulty: easy
+    tags: [constipation, metabolic, etiology, gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What prokinetic agent is used for constipation?"
+    back: "Prucalopride, a 5-HT4 inhibitor\n\nPrucalopride stimulates colonic motility to improve transit."
+    difficulty: medium
+    tags: [constipation, prokinetic, treatment, pharmacology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "Name 3 metabolic causes of constipation"
+    back: "Diabetes mellitus, hypothyroidism, hypercalcemia, hypokalemia, uremia\n\nMetabolic disturbances affect gut motility and should be considered in the evaluation of constipation."
+    difficulty: easy
+    tags: [Gastroenterology, Constipation, Metabolic, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What are the common metabolic causes of constipation?"
+    back: "Diabetes mellitus, hypothyroidism, hypercalcemia, hypokalemia, and uremia\n\nMetabolic abnormalities affect bowel motility. Hypothyroidism and hypercalcemia are particularly well-known causes of slowed transit."
+    difficulty: medium
+    tags: [Constipation, Metabolic, Causes, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What is prucalopride and what is its mechanism of action?"
+    back: "Prucalopride is a prokinetic agent and 5-HT4 inhibitor used for constipation\n\nPrucalopride stimulates colonic motility by acting as a selective serotonin 5-HT4 receptor agonist."
+    difficulty: medium
+    tags: [Constipation, Prucalopride, Prokinetic, 5-HT4, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What are prokinetic agents used for constipation?"
+    back: "Prucalopride - a 5-HT4 inhibitor\n\nPrucalopride stimulates gut motility by activating 5-HT4 receptors."
+    difficulty: medium
+    tags: [Constipation, Treatment, Prokinetic, 5-HT4, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What metabolic causes of constipation are mentioned?"
+    back: "Diabetes mellitus, hypothyroidism, hypercalcemia, hypokalemia, uremia\n\nMetabolic abnormalities affect gut motility and can cause or contribute to constipation."
+    difficulty: easy
+    tags: [Constipation, Etiology, Metabolic, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What is the role of TSH in constipation investigation?"
+    back: "Consider TSH to rule out hypothyroidism as metabolic cause of constipation\n\nHypothyroidism is a treatable metabolic cause of constipation and should be considered in the workup."
+    difficulty: medium
+    tags: [Constipation, Investigations, TSH, Hypothyroidism, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What are the common causes of constipation?"
+    back: "Most common: functional/idiopathic. Medication side effects (narcotics, antidepressants) most common organic cause. Also: DM, hypothyroidism, hypercalcemia, hypokalemia, Parkinson disease, MS, scleroderma, anal fissures.\n\nA careful medication review is essential as drug-induced constipation is very common and often reversible."
+    difficulty: medium
+    tags: [Constipation, Etiology, Differential Diagnosis, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What monitoring is required for patients with PBC?"
+    back: "Liver enzymes and LFTs q3-6mo, TSH annually, BMD q2-4yr (pending baseline)\n\nRegular monitoring of liver function, thyroid function (autoimmune association), and bone density (high osteoporosis risk) is essential."
+    difficulty: medium
+    tags: [PBC, monitoring, osteoporosis, follow-up, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What monitoring is required for PBC patients?"
+    back: "Liver enzymes and LFTs q3-6 months, TSH annually, BMD q2-4 years (pending baseline)\n\nRegular monitoring tracks disease progression and treatment response. Thyroid disease and osteoporosis are common associations requiring surveillance."
+    difficulty: medium
+    tags: [PBC, monitoring, follow-up, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "Which autoimmune conditions are associated with PBC?"
+    back: "Sjogren's syndrome, scleroderma, CREST syndrome (calcinosis, Raynaud's, esophageal dysfunction, sclerodactyly, telangiectasia), RA, thyroiditis\n\nPBC has strong autoimmune associations, particularly in middle-aged women"
+    difficulty: easy
+    tags: [Gastroenterology, Hepatology, Autoimmune, PBC, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "When is preoperative antibiotic prophylaxis NOT required?"
+    back: "Low-risk or clean surgery such as elective thyroidectomy, cholecystectomy, hemorrhoidectomy, fistulotomy, and sphincterotomy for fissure.\n\nThese procedures have very low SSI rates and prophylactic antibiotics provide minimal benefit while adding risk of antibiotic complications."
+    difficulty: easy
+    tags: [surgery, SSI, prophylaxis, toronto-notes, pages-0501-0502-0503-0504-0505-0506-0507-0508-0509-0510]
+  - front: "What prokinetic and secretagogue agents are used for constipation?"
+    back: "Prokinetic: prucalopride (5-HT4 inhibitor). Secretagogues: linaclotide, plecanatide (increase water secretion into intestinal lumen). NHE3 inhibitor: tenapanor.\n\nThese agents are used when simpler laxatives fail; they target specific mechanisms of constipation."
+    difficulty: medium
+    tags: [Gastroenterology, Constipation, Treatment, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "List causes of hypoventilation leading to hypercapnia"
+    back: "Restrictive: chest wall disorders (e.g., severe kyphoscoliosis); Central: brainstem stroke, hypothyroidism, metabolic alkalosis, drugs (opiates, benzodiazepines); Neuromuscular: myasthenia gravis, Guillain-Barré, phrenic nerve injury, muscular dystrophy, polymyositis\n\nHypoventilation means low minute ventilation - either the brain fails to drive breathing or the muscles cannot respond to the drive."
+    difficulty: medium
+    tags: [hypercapnia, hypoventilation, causes, neuromuscular, toronto-notes, pages-1481-1482-1483-1484-1485-1486-1487-1488-1489-1490]
+  - front: "What extraglandular manifestations can occur in Sjogren's syndrome?"
+    back: "Fatigue, low-grade fever, autoimmune thyroid dysfunction, arthralgias/arthritis, subclinical ILD, xerotrachea with dry cough, renal disease/glomerulonephritis, palpable purpura, vasculitis, peripheral neuropathy\n\nSystemic involvement occurs in ~20% of patients, affecting multiple organ systems."
+    difficulty: medium
+    tags: [Sjogrens, Systemic, Extraglandular, toronto-notes, pages-1511-1512-1513-1514-1515-1516-1517-1518-1519-1520]
+  - front: "What are the risk factors for pseudogout (CPPD)?"
+    back: "Old age, advanced osteoarthritis, neuropathic joints, hyperparathyroidism, hypothyroidism, hypomagnesemia, hypophosphatasia, hemochromatosis\n\nCPPD is associated with metabolic disorders and typically affects elderly patients."
+    difficulty: hard
+    tags: [pseudogout, CPPD, risk factors, rheumatology, toronto-notes, pages-1521-1522-1523-1524-1525-1526-1527-1528-1529-1530]
+  - front: "What skin findings are associated with hypothyroidism?"
+    back: "Cool, dry, scaly, thickened, hyperpigmented skin; coarse dry hair; brittle nails; non-pitting myxedema; alopecia (including loss of lateral 1/3 of eyebrows — 'Queen Anne's sign').\n\nHypothyroid skin changes result from mucopolysaccharide deposition in the dermis (myxedema). TSH is the key screening test. Loss of the lateral eyebrows is a classic but non-specific sign."
+    difficulty: easy
+    tags: [hypothyroidism, myxedema, skin changes, Queen Anne sign]
+  - front: "What skin findings are specific to hyperthyroidism?"
+    back: "Moist warm skin, pretibial myxedema (in Graves'), acropachy, onycholysis, toxic alopecia, hyperpigmentation, seborrhea, acne.\n\nPretibial myxedema and acropachy (clubbing-like periosteal new bone formation) are pathognomonic of Graves' disease. Onycholysis in hyperthyroidism is called Plummer's nails."
+    difficulty: medium
+    tags: [hyperthyroidism, Graves disease, pretibial myxedema, acropachy]
+  - front: "What is a thyroid nodule and what is its prevalence on ultrasound?"
+    back: "A discrete lesion distinguishable sonographically from the rest of the thyroid parenchyma. Prevalence is 19–67% based on incidentally found nodules on ultrasound.\n\nThyroid nodules are common incidental findings. The TIRADS scoring system (Thyroid Imaging Reporting and Data System) uses ultrasound characteristics to stratify which nodules require biopsy, avoiding unnecessary procedures for benign or very small low-risk nodules."
+    difficulty: easy
+    tags: [thyroid, nodule, TIRADS, ultrasound]
+  - front: "What is the TIRADS scoring system used for in the evaluation of thyroid nodules?"
+    back: "TIRADS is a scoring system based on ultrasound characteristics used to determine which thyroid nodules require biopsy. Benign or very small low-risk nodules do not need ongoing surveillance; small suspicious nodules require up to 5 years of surveillance; larger suspicious nodules require biopsy.\n\nTIRADS stratifies thyroid nodule management by sonographic risk features (composition, echogenicity, shape, margins, echogenic foci). This systematic approach avoids overinvestigation while identifying malignant nodules early."
+    difficulty: easy
+    tags: [thyroid, nodule, TIRADS, biopsy, ultrasound]
+  - front: "In the evaluation of a thyroid nodule with LOW TSH, what is the next step?"
+    back: "Perform a radionuclide thyroid scan. A 'hot' nodule (autonomous) is treated as hyperthyroidism. A 'cold' nodule proceeds to ultrasound-guided biopsy based on US characteristics.\n\nLow TSH suggests a hyperfunctioning nodule. Hot nodules on scintigraphy are almost never malignant. Cold nodules carry a higher malignancy risk and require further evaluation with ultrasound and biopsy."
+    difficulty: medium
+    tags: [thyroid, nodule, TSH, radionuclide scan, hot nodule]

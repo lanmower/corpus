@@ -1,0 +1,734 @@
+# Respirology (Respirology) - generated from srs-mccqe1
+cards:
+  - front: "What mnemonic helps remember the causes of metabolic acidosis with an elevated anion gap?"
+    back: "MUDPILES CAT: Methanol, Uremia, Diabetic ketoacidosis, Phenformin/Paraldehyde, Isoniazid/Iron/Ibuprofen, Lactic acidosis, Ethylene glycol, Salicylates, Carbon monoxide/Cyanide, Aminoglycosides, Toluene/Theophylline\n\nAn elevated anion gap metabolic acidosis indicates the presence of unmeasured anions (acids) in the blood. The most common causes include diabetic ketoacidosis, lactic acidosis, renal failure (uremia), and toxic ingestions. Identifying the cause is critical for appropriate management."
+    difficulty: easy
+    tags: [respirology, nephrology, acid-base, metabolic acidosis]
+  - front: "What conditions cause a DECREASED DLCO (diffusion capacity for carbon monoxide), and what conditions cause an INCREASED DLCO?"
+    back: "Decreased: ILD, pulmonary vascular disease, anemia, emphysema. Increased: asthma, obesity, left-to-right intracardiac shunt, polycythemia, post-exercise.\n\nDLCO measures the ability of the lungs to transfer gas from inhaled air to the blood. It decreases when the alveolar-capillary membrane is damaged (ILD, emphysema) or when there is reduced hemoglobin (anemia) or blood flow (pulmonary vascular disease). It increases when pulmonary blood volume increases."
+    difficulty: medium
+    tags: [respirology, pulmonary function tests, DLCO]
+  - front: "A 35-year-old farmer presents with dyspnea, cough, fever, and chills 5 hours after working in a hay barn. What is the most likely diagnosis and the pathophysiology?"
+    back: "Hypersensitivity pneumonitis (farmer's lung) caused by immune response to inhaled Thermophilic actinomycetes\n\nAcute hypersensitivity pneumonitis presents 4-6 hours after antigen exposure with dyspnea, cough, fever, chills, and malaise lasting 18-24 hours. Farmer's lung is caused by sensitization to Thermophilic actinomycetes in moldy hay. Acute/subacute HP is mediated by immune complex formation, while chronic HP involves type IV hypersensitivity."
+    difficulty: medium
+    tags: [respirology, hypersensitivity pneumonitis, occupational medicine, ILD]
+  - front: "What are the two acute sarcoidosis syndromes and their clinical features?"
+    back: "Löfgren's syndrome: fever, erythema nodosum, bilateral hilar lymphadenopathy, arthralgias. Heerfordt-Waldenström syndrome: fever, parotid enlargement, anterior uveitis, facial nerve palsy.\n\nSarcoidosis is an idiopathic non-infectious granulomatous multi-system disease with lung involvement in 90%. It typically affects young and middle-aged patients and is characterized by non-necrotizing granulomas. Serum ACE levels are elevated but non-specific. 85% of stage I disease resolves spontaneously within 2 years."
+    difficulty: medium
+    tags: [respirology, sarcoidosis, ILD]
+  - front: "What CXR staging system is used for sarcoidosis?"
+    back: "Stage 0: normal. Stage I: bilateral hilar lymphadenopathy (BHL). Stage II: BHL + pulmonary infiltrates. Stage III: pulmonary infiltrates alone. Stage IV: pulmonary fibrosis.\n\nSarcoidosis staging is based on CXR findings. Stage I has the best prognosis with 85% spontaneous resolution within 2 years. Stage II resolves spontaneously in 50% within 5 years. Treatment is indicated for symptoms, declining lung function, hypercalcemia, or eye/CNS/kidney/heart involvement, not for abnormal CXR alone."
+    difficulty: easy
+    tags: [respirology, sarcoidosis, radiology]
+  - front: "A patient with suspected PE has a low clinical probability. The D-dimer is negative. What is the next step?"
+    back: "PE is ruled out; no further testing needed.\n\nD-dimer is highly sensitive and can exclude DVT/PE when pretest probability is already low. A negative D-dimer in low clinical probability effectively rules out PE. If D-dimer is positive or clinical probability is moderate/high, CT pulmonary angiography is indicated. The PERC criteria can also help exclude PE in very low-risk patients without any testing."
+    difficulty: easy
+    tags: [respirology, pulmonary embolism, diagnostic algorithm]
+  - front: "What landmark trial demonstrated that low tidal volume ventilation (6 mL/kg) reduces mortality in ARDS compared to traditional ventilation (12 mL/kg)?"
+    back: "The ARDS Network trial (NEJM 2000)\n\nThe ARDS Network trial showed that low tidal volume ventilation (6 mL/kg predicted body weight) reduced mortality from 39.8% to 31.0% and increased ventilator-free days in patients with ARDS. This established lung-protective ventilation as the standard of care for ARDS management."
+    difficulty: easy
+    tags: [respirology, ARDS, critical care, landmark trials]
+  - front: "The PROSEVA trial demonstrated what benefit of prone positioning in severe ARDS?"
+    back: "Early prone positioning (>16 h/day) reduced 28-day mortality from 32.8% to 16.0% in severe ARDS\n\nThe PROSEVA trial (NEJM 2013) randomized patients with severe ARDS to prone positioning for >16 hours or supine position. Prone positioning decreased 28-day mortality (HR 0.39) and 90-day mortality (23.6% vs 41.0%). The incidence of complications did not differ significantly between groups."
+    difficulty: medium
+    tags: [respirology, ARDS, critical care, landmark trials]
+  - front: "What is the BODE index and what does it predict in COPD?"
+    back: "A 10-point index predicting risk of death in COPD using: Body mass index (<21), Obstruction (FEV1), Dyspnea (mMRC), and Exercise capacity (6-min walk distance).\n\nThe BODE index helps predict mortality in COPD patients. Higher scores indicate greater probability of death from COPD. FEV1 <1L gives 50% 5-year survival, and FEV1 <0.75L gives 33% 5-year survival. The frequency and severity of acute exacerbations is the single best predictor of prognosis."
+    difficulty: medium
+    tags: [respirology, COPD, prognosis]
+  - front: "What is the approach to hypoxemic respiratory failure? List the types and their response to supplemental oxygen."
+    back: "Types: (1) Low FiO2 - improves with O2. (2) Hypoventilation - improves with O2 and ventilation. (3) Physiologic shunt/V-Q mismatch - less effective with O2, improves with ventilation/PEEP. (4) Anatomic R-to-L shunt - O2 has no effect. (5) Low mixed venous O2 - improves with increased cardiac output. (6) Diffusion impairment - improves with O2.\n\nHypoxemic respiratory failure is defined as PaO2 <60 mmHg with normal or decreased PaCO2. A-a gradient helps distinguish causes: normal A-a gradient in low FiO2 and hypoventilation, elevated A-a gradient in shunt, V/Q mismatch, and diffusion impairment. True anatomic shunt (right-to-left) does not respond to supplemental O2."
+    difficulty: hard
+    tags: [respirology, respiratory failure, critical care, hypoxemia]
+  - front: "What mnemonic helps remember asthma triggers?"
+    back: "THE ACHES: Temperature/humidity, Humidity, Exercise, Allergens (pet dander, dust mites, cockroaches, seasonal), Cigarette smoke/air pollution, Hormonal fluctuations, Emotion/anxiety, Strong scents, plus URTIs, GERD, NSAIDs (Samter's triad), beta-blockers.\n\nAsthma is a chronic inflammatory disorder with reversible bronchospasm affecting 10.8% of Canadians. Samter's triad is the combination of asthma, NSAID sensitivity, and nasal polyps. Non-cardioselective beta-blockers are especially dangerous. Well-controlled asthma has daytime symptoms <2 d/wk, night symptoms <1 night/wk, FEV1 ≥90% personal best, and SABA use <2 times/wk."
+    difficulty: easy
+    tags: [respirology, asthma, triggers]
+  - front: "What is mesothelioma and what is the primary risk factor?"
+    back: "Mesothelioma is a primary malignancy of the pleura that develops decades after asbestos exposure, even with limited exposure. Smoking is NOT a risk factor for mesothelioma, but asbestos and smoking synergistically increase lung cancer risk.\n\nMesothelioma presents with chest pain, dyspnea, cough, bloody pleural effusion, and weight loss. Paraneoplastic syndromes may include hypercalcemia, hemolytic anemia, and hypoglycemia. Needle biopsy may seed the needle tract with tumor. Treatment involves multimodal approach (chemotherapy, radiation, surgical resection), but prognosis is poor."
+    difficulty: medium
+    tags: [respirology, mesothelioma, asbestos, oncology]
+  - front: "What is the definition of asthma and what are the PFT criteria for diagnosis?"
+    back: "Asthma is a chronic inflammatory airway disorder with reversible bronchospasm. Diagnosis requires: FEV1/FVC below lower limit of normal AND FEV1 increase ≥12% (and >200 mL in adults) after bronchodilator, or positive methacholine challenge (FEV1 decrease ≥20% at dose <4 mg/mL).\n\nAsthma affects 10.8% of Canadians. It is often associated with atopy. Work-related asthma includes occupational asthma from sensitizer exposure. A significant bronchodilator response is being redefined as >10% of predicted value."
+    difficulty: medium
+    tags: [respirology, asthma, PFTs]
+  - front: "What is the stepwise approach to asthma management?"
+    back: "Step 1: Low-dose ICS (or ICS-formoterol PRN for ages ≥12). Step 2: Add LABA to low-dose ICS (combination inhaler). Step 3: Escalate ICS dose. Step 4: Consider LTRA, long-acting anticholinergics, oral corticosteroids, biologics (anti-IgE, anti-IL5, anti-IL-4/13).\n\nAny patient with poor control or at risk of exacerbations should be on an ICS-containing regimen. Risk of exacerbation includes history of prior exacerbation requiring steroids/ED/hospitalization, poorly controlled asthma, SABA overuse (>2 inhalers/year), or current smoking."
+    difficulty: medium
+    tags: [respirology, asthma, management]
+  - front: "What is the spirometric definition of COPD?"
+    back: "Post-bronchodilator FEV1/FVC <0.70 (or below lower limit of normal).\n\nCOPD is progressive and irreversible, with two phenotypes: chronic bronchitis (productive cough most days for ≥3 consecutive months in 2 successive years) and emphysema (dilation and destruction of air spaces distal to terminal bronchioles). Smoking is the #1 risk factor in Western countries."
+    difficulty: easy
+    tags: [respirology, COPD]
+  - front: "What three interventions prolong survival in COPD?"
+    back: "1. Smoking cessation, 2. Home oxygen (>15 h/d if PaO2 <55 mmHg or 56-59 with cor pulmonale/polycythemia), 3. LAMA/LABA/ICS triple therapy (in patients at high risk of exacerbations with FEV1 <80% predicted).\n\nSmoking cessation is the single most important intervention. Annual influenza and pneumococcal vaccinations are also recommended. Pulmonary rehabilitation may reduce mortality if offered within 2 weeks after hospitalization for an acute exacerbation."
+    difficulty: medium
+    tags: [respirology, COPD, management]
+  - front: "What is the BODE index in COPD?"
+    back: "A 10-point index predicting mortality using: Body mass index (<21 = 1 pt), Obstruction/FEV1 (50-64% = 1, 36-49% = 2, <35% = 3), Dyspnea/mMRC scale (1-3 pts), Exercise capacity/6-min walk distance (1-3 pts).\n\nA higher BODE score indicates higher probability of death from COPD. It can also predict hospitalization. The frequency and severity of acute exacerbations is the single best predictor of prognosis in COPD."
+    difficulty: medium
+    tags: [respirology, COPD, prognosis]
+  - front: "What oxygen saturation target should be maintained for COPD patients who are CO2 retainers?"
+    back: "88-92% SaO2.\n\nCO2 retainers have chronically elevated CO2 with near-normal pH due to metabolic compensation. Excessive oxygen can worsen hypercapnia through worsening V/Q mismatch, the Haldane effect, and decreased respiratory drive. However, oxygen should not be withheld if the patient is hypoxic."
+    difficulty: medium
+    tags: [respirology, COPD, oxygen-therapy]
+  - front: "What are the diagnostic criteria for IPF (Idiopathic Pulmonary Fibrosis)?"
+    back: "Pulmonary fibrosis of unknown cause with UIP pattern on CT (reticulation, subpleural/basal predominant, honeycombing + traction bronchiectasis) or biopsy, in patients typically >50 years.\n\nIPF is the most common ILD. It is progressive and irreversible. Treatment includes antifibrotic therapy (pirfenidone or nintedanib), smoking cessation, pulmonary rehab, and lung transplantation for advanced disease. Biopsy is only needed if CT shows indeterminate or alternative diagnosis pattern."
+    difficulty: hard
+    tags: [respirology, ILD, IPF]
+  - front: "What are the radiographic stages of sarcoidosis?"
+    back: "Stage 0: normal CXR. Stage I: bilateral hilar lymphadenopathy. Stage II: bilateral hilar lymphadenopathy + pulmonary infiltrates. Stage III: pulmonary infiltration alone. Stage IV: pulmonary fibrosis.\n\n85% of Stage I and 50% of Stage II resolve spontaneously. Treatment (prednisone) is indicated for symptoms, declining lung function, hypercalcemia, or involvement of eyes, CNS, kidney, or heart -- not for abnormal CXR alone. Sarcoidosis is characterized by non-caseating granulomas."
+    difficulty: medium
+    tags: [respirology, sarcoidosis]
+  - front: "What are the CXR patterns that distinguish asbestosis from silicosis?"
+    back: "Asbestosis: lower lobe > upper lobe involvement. Silicosis: upper lobe > lower lobe involvement.\n\nAsbestosis causes slowly progressive diffuse interstitial fibrosis with possible pleural plaques and calcifications. Asbestos exposure increases risk of bronchogenic carcinoma and malignant mesothelioma, synergistically with smoking. Silicosis shows nodular disease that can coalesce into progressive massive fibrosis."
+    difficulty: easy
+    tags: [respirology, pneumoconiosis, occupational-health]
+  - front: "What is the Wells score for pulmonary embolism?"
+    back: "Clinical signs/symptoms of DVT (3.0), PE more likely than alternative (3.0), immobilization/surgery in past 4 weeks (1.5), HR >100 (1.5), previous DVT/PE (1.5), hemoptysis (1.0), malignancy (1.0). Low <2, intermediate 2-6, high >6.\n\nClinical probability determines the next diagnostic step. A negative D-dimer can exclude PE if pretest probability is low. CTA has 83% sensitivity and 96% specificity but PPV varies by pretest probability. V/Q scan is used when CT is contraindicated."
+    difficulty: medium
+    tags: [respirology, PE, diagnosis]
+  - front: "What is the long-term anticoagulation strategy for pulmonary embolism?"
+    back: "First-line: DOAC (rivaroxaban, apixaban, edoxaban, dabigatran) for most patients. Duration: 3-6 months for reversible cause, 6 months to indefinite for unprovoked, indefinite for ongoing major risk factors (active cancer, APLA).\n\nLMWH is preferred over warfarin for pregnancy, active cancer, or high bleeding risk. If using warfarin, overlap with LMWH/heparin for ≥5 days until INR 2-3 for ≥2 days. IV thrombolytics are reserved for massive PE with hypotension or right heart failure."
+    difficulty: hard
+    tags: [respirology, PE, anticoagulation]
+  - front: "What are the Berlin Criteria for ARDS?"
+    back: "Acute onset within 7 days of known insult or new/worsening respiratory symptoms; bilateral opacities on CT/CXR consistent with pulmonary edema; not fully explained by cardiac failure/fluid overload. Severity: Mild PaO2/FiO2 200-300, Moderate 100-200, Severe <100.\n\nARDS treatment is based on the ARDSNet protocol: low tidal volumes (<6 mL/kg), optimal PEEP, and treatment of the underlying cause. Prone ventilation, inhaled nitric oxide, and ECMO may be considered if conventional treatment fails. Mortality is 30-40%."
+    difficulty: hard
+    tags: [respirology, ARDS, critical-care]
+  - front: "What defines sepsis and septic shock?"
+    back: "Sepsis: life-threatening organ dysfunction from dysregulated host response to infection (SOFA score ≥2). Septic shock: sepsis with persisting hypotension requiring vasopressors to maintain MAP ≥65 mmHg AND lactate >2 mmol/L despite adequate fluid resuscitation.\n\nQuick SOFA (qSOFA) criteria for bedside assessment: respiratory rate ≥22/min, altered mentation (GCS <15), systolic BP ≤100 mmHg. A positive qSOFA (≥2 criteria) should prompt SOFA scoring and evaluation for infection and organ dysfunction."
+    difficulty: medium
+    tags: [respirology, critical-care, sepsis]
+  - front: "What are the four categories of shock and their distinguishing features?"
+    back: "Hypovolemic: cold extremities, decreased JVP. Cardiogenic: bilateral crackles, increased JVP. Obstructive: may see pulsus paradoxus, Kussmaul's sign, tracheal deviation. Distributive: warm extremities, decreased JVP.\n\nHypovolemia is the most common cause of shock. Treatment modalities include fluid resuscitation (not in cardiogenic), inotropes, vasopressors, revascularization, and needle decompression for tension pneumothorax. The goal is to normalize critical organ perfusion."
+    difficulty: medium
+    tags: [respirology, critical-care, shock]
+  - front: "What are the causes of obstructive vs restrictive patterns on PFTs?"
+    back: "Obstructive (decreased FEV1/FVC): asthma, COPD, bronchiolitis, bronchiectasis/CF. Restrictive (normal/elevated FEV1/FVC, decreased TLC): ILD, pleural disease, neuromuscular disease, chest wall disease.\n\nIn obstruction, flow rates are decreased (especially during expiration) with air trapping (increased RV/TLC) and hyperinflation (increased TLC). In restriction, lung volumes and compliance are decreased. DLCO is decreased in ILD and emphysema but normal or increased in asthma."
+    difficulty: medium
+    tags: [respirology, PFTs]
+  - front: "What factors shift the oxygen-hemoglobin dissociation curve to the right?"
+    back: "CADET face right: CO2, Acid, 2,3-DPG (now 2,3-BPG), Exercise, Temperature (increased).\n\nA right shift means hemoglobin has decreased oxygen affinity, releasing more oxygen to tissues. This is beneficial in exercising muscles and acidotic tissues. A left shift (opposite factors) means increased oxygen affinity, holding onto oxygen more tightly."
+    difficulty: easy
+    tags: [respirology, physiology, oxygen-hemoglobin]
+  - front: "What is the differential diagnosis for clubbing?"
+    back: "Pulmonary: lung CA, bronchiectasis, pulmonary fibrosis, abscess, CF, TB, empyema, AV fistula (NOT COPD). Cardiac: cyanotic congenital heart disease, endocarditis. GI: IBD, celiac, liver cirrhosis, neoplasm. Endocrine: Graves' disease.\n\nClubbing is assessed by comparing interphalangeal depth (IPD) to distal phalangeal depth (DPD): clubbing is present when DPD > IPD. Schamroth's sign (loss of diamond-shaped window between nail beds) is another clinical test. Importantly, clubbing is NOT seen in COPD — its presence should suggest malignancy."
+    difficulty: easy
+    tags: [respirology, clinical-signs, clubbing]
+  - front: "What are Light's criteria for distinguishing exudative from transudative pleural effusions?"
+    back: "Exudate if ANY of: pleural/serum protein >0.5, pleural/serum LDH >0.6, pleural LDH >2/3 upper limit of normal serum LDH. Sensitivity 98%, specificity 83%.\n\nCommon transudates include CHF, cirrhosis, and nephrotic syndrome. Common exudates include infections, malignancy, inflammatory conditions, and PE. A complicated parapneumonic effusion (needs drainage) has: loculation, >1/2 hemithorax, pH <7.2, glucose <2.2, LDH >1000, or positive gram stain/culture."
+    difficulty: medium
+    tags: [respirology, pleural-effusion]
+  - front: "What is the definition of OSA and how is severity graded?"
+    back: "Episodic decreases in airflow during sleep measured by Apnea-Hypopnea Index (AHI = apneas + hypopneas per hour). Mild: AHI 5-15, Moderate: 15-30, Severe: >30 events/hour.\n\nOSA risk factors include obesity, crowded oropharynx, large neck circumference (>43 cm men, >40.6 cm women). Complications include hypertension, cardiovascular disease, stroke, and motor vehicle collisions. CPAP is very effective but compliance-limited. Weight loss and avoiding supine sleep may help."
+    difficulty: easy
+    tags: [respirology, sleep-apnea, OSA]
+  - front: "What is the anion gap formula and what causes an elevated anion gap metabolic acidosis?"
+    back: "Anion gap = [Na+] - ([Cl-] + [HCO3-]); normal 5-14 mmol/L. Elevated AG causes: MUDPILESCAT — Methanol, Uremia, DKA/starvation ketoacidosis, Phenformin/Paraldehyde, Isoniazid/Iron/Ibuprofen, Lactic acidosis, Ethylene glycol, Salicylates, Carbon monoxide/Cyanide, Toluene/Theophylline.\n\nWhen evaluating metabolic acidosis, calculate the anion gap first. If elevated, check if the change in bicarbonate matches the change in anion gap (delta-delta) to detect mixed metabolic disorders. An abnormal osmolar gap (>10) suggests the presence of alcohols."
+    difficulty: medium
+    tags: [respirology, acid-base, metabolic-acidosis]
+  - front: "What are the 5 WHO classifications of pulmonary hypertension?"
+    back: "Group I: Pulmonary arterial HTN (idiopathic, CTD, congenital heart disease). Group II: Left heart disease. Group III: Lung disease/hypoxia. Group IV: Chronic thromboembolic. Group V: Unclear multifactorial mechanisms.\n\nDiagnosis requires mean pulmonary arterial pressure >20 mmHg with PAWP <15 mmHg and PVR ≥3 Wood units on right heart catheterization. Treatment depends on classification. Only Group I PAH responds to advanced therapies (prostanoids, ERAs, PDE5 inhibitors). Home oxygen has proven mortality benefit for Group III."
+    difficulty: medium
+    tags: [respirology, pulmonary-hypertension]
+  - front: "What is the sweat chloride test diagnostic threshold for cystic fibrosis?"
+    back: "Chloride concentration >60 mmol/L on two occasions supports the diagnosis.\n\nCF is caused by CFTR gene mutations (autosomal recessive, >2100 mutations). Clinical features include sinusitis, chronic pulmonary disease, pancreatic insufficiency, and azoospermia. CFTR modulators (ivacaftor, lumacaftor-ivacaftor, tezacaftor-ivacaftor, Trikafta) target specific mutation classes and improve lung function and quality of life."
+    difficulty: easy
+    tags: [respirology, cystic-fibrosis, diagnosis]
+  - front: "What is the Virchow's triad for venous thromboembolism?"
+    back: "1. Venous stasis, 2. Endothelial cell damage, 3. Hypercoagulable states.\n\nLower extremity DVTs are the source of most clinically recognized PEs. Risk factors include immobilization, surgery, malignancy, estrogen use, pregnancy, prior DVT/PE, and inherited thrombophilias (Factor V Leiden, prothrombin 20210A, antithrombin/protein C/S deficiency). PE is one of the most common causes of preventable death in hospital."
+    difficulty: easy
+    tags: [respirology, VTE, PE]
+  - front: "What is the most common cause of hemoptysis?"
+    back: "Bronchitis (acute or chronic).\n\n90% of massive hemoptysis originates from bronchial arteries. Massive hemoptysis is variably defined as ≥600 mL/24h or bleeding rate >100 mL/h. Other causes include bronchiectasis, bronchogenic carcinoma, pneumonia, PE, and vasculitis (GPA, Goodpasture's). The differential also includes vascular malformations and elevated pulmonary venous pressure."
+    difficulty: easy
+    tags: [respirology, hemoptysis]
+  - front: "What are the 'Big Three' causes of chronic cough in non-smoking patients with a normal CXR?"
+    back: "1. GERD, 2. Asthma, 3. Postnasal drip (upper airway cough syndrome).\n\nACEI-induced cough should also be considered. Chronic cough is defined as cough lasting >3 months. Other causes include chronic bronchitis, bronchiectasis, neoplasm, ILD, CHF, and drug-induced (ACEI). A systematic approach evaluating these common causes usually identifies the etiology."
+    difficulty: easy
+    tags: [respirology, chronic-cough]
+  - front: "A patient with OSA has an apnea-hypopnea index of 25 events/hour. What are the cardiovascular consequences of untreated OSA, and what is the primary treatment?"
+    back: "Cardiovascular consequences: HTN (2x risk), CAD (3x risk), stroke (4x risk), arrhythmias, pulmonary HTN, cor pulmonale. Primary treatment: CPAP (maintains patent airway in 95% of cases).\n\nOSA is diagnosed by nocturnal polysomnography with >15 apneic/hypopneic episodes per hour. OSA is an independent risk factor for CAD. Patients must be reported to the Ministry of Transportation if OSA is not controlled by CPAP."
+    difficulty: medium
+    tags: [respirology, sleep-apnea, cardiology, family-medicine]
+  - front: "A patient presents with acute onset of pleuritic chest pain and dyspnea. CXR shows absence of lung markings at the left apex with a visible pleural line. Trachea is midline and the patient is hemodynamically stable. What is the diagnosis and management?"
+    back: "Primary spontaneous pneumothorax. If small (<3 cm) with minimal symptoms: observation + supplemental O2. If large (>3 cm) or symptomatic: aspiration or chest tube.\n\nPrimary spontaneous pneumothorax occurs from rupture of apical subpleural blebs, typically in young male smokers. Tension pneumothorax (tracheal deviation, shock) requires immediate needle decompression followed by chest tube. VATS bullectomy and pleurodesis for recurrence."
+    difficulty: medium
+    tags: [respirology, general-surgery, pneumothorax, emergency-medicine]
+  - front: "What is the diagnosis of OSA based on polysomnography?"
+    back: ">15 apneic/hypopneic episodes per hour of sleep. Apnea is defined as no breathing for ≥10 seconds from partial or complete upper airway obstruction.\n\nOSA consequences include HTN (2x risk), CAD (3x risk), stroke (4x risk), morning headache from hypercapnia, and cor pulmonale. CPAP is the primary treatment, maintaining patent airway in 95% of cases."
+    difficulty: medium
+    tags: [respirology, sleep medicine, OSA]
+  - front: "What are the risk factors for OSA?"
+    back: "Male gender, BMI >30, large neck circumference, children with large tonsils/adenoids, aging (decreased muscle tone), alcohol use, sedative use, smoking, and family history.\n\nOSA is an independent risk factor for CAD. Patients must be reported to the Ministry of Transportation if OSA is not controlled by CPAP. Surgical options include UPPP and tonsillectomy."
+    difficulty: easy
+    tags: [respirology, sleep medicine, OSA]
+  - front: "Describe the 5 abnormal respiration patterns and their causes."
+    back: "1. Bradypnea (slow RR): drug-induced respiratory depression, diabetic coma (nonketotic), increased ICP\n2. Kussmaul's breathing (fast and deep): metabolic acidosis, exercise, anxiety\n3. Biot's/Ataxic (irregular with long apneic periods): drug-induced respiratory depression, increased ICP, brain damage (especially medullary)\n4. Cheyne-Stokes (cyclical crescendo-decrescendo between apneas): drug-induced respiratory depression, brain damage (especially cerebral), uremia\n5. Apneustic (prolonged inspiratory pause): pontine lesion\n\nAbnormal breathing patterns reflect dysfunction at different levels of the respiratory control system. Cheyne-Stokes is most commonly associated with severe heart failure or cerebral pathology. Biot's/Ataxic breathing implies medullary damage. Apneustic breathing specifically indicates a pontine lesion. Kussmaul's is a physiological compensation for severe metabolic acidosis (e.g., diabetic ketoacidosis)."
+    difficulty: medium
+    tags: [respirology, clinical examination, respiratory patterns, neurology]
+  - front: "What is obstructive vs. restrictive lung disease pattern on pulmonary function tests (PFTs)?"
+    back: "Obstructive: Decreased flow rates (especially expiration), air trapping (increased RV/TLC), hyperinflation (increased TLC), REDUCED FEV1/FVC ratio, TLC elevated or normal, RV elevated or normal. DDx: Asthma, COPD, bronchiolitis, bronchiectasis/CF.\n\nRestrictive: Decreased lung compliance, decreased lung volumes, FEV1/FVC ELEVATED or normal, TLC REDUCED, RV reduced/normal/elevated. DDx: ILD, pleural disease, neuromuscular disease, chest wall disease.\n\nThe FEV1/FVC ratio is the key discriminator: <0.70 (or <lower limit of normal) indicates obstruction; normal or elevated suggests restriction. In restriction, all volumes are reduced proportionally, so the ratio is preserved or high. In obstruction, air trapping raises RV and may raise TLC, while FEV1 falls more than FVC. DLCO is reduced in emphysema (loss of surface area) and ILD."
+    difficulty: easy
+    tags: [respirology, pulmonary function tests, obstructive lung disease, restrictive lung disease]
+  - front: "What is the FEV1/FVC ratio in obstructive vs. restrictive lung disease, and what does each indicate?"
+    back: "Obstructive: FEV1/FVC REDUCED (<0.70 or below lower limit of normal). Indicates air flow limitation — patient cannot expire quickly because of airway narrowing or loss of elastic recoil.\n\nRestrictive: FEV1/FVC ELEVATED or normal. The ratio is preserved because both FEV1 and FVC are reduced proportionally due to decreased lung compliance or volume.\n\nThe FEV1/FVC ratio is the cornerstone of PFT interpretation. Obstruction means airway resistance is increased (asthma, COPD) or elastic recoil is lost (emphysema), limiting expiratory flow. Restriction means the lung or chest wall cannot expand adequately, reducing all volumes but maintaining the proportion of air expelled in the first second."
+    difficulty: easy
+    tags: [respirology, pulmonary function tests, spirometry, FEV1, FVC]
+  - front: "What lung volumes are INCREASED vs. DECREASED in obstructive lung disease (e.g., COPD)?"
+    back: "INCREASED in obstruction: RV (residual volume due to air trapping), TLC (total lung capacity, due to hyperinflation), RV/TLC ratio, FRC (functional residual capacity).\n\nDECREASED in obstruction: FEV1, FEV1/FVC ratio, FEF (forced expiratory flow rates).\n\nIn obstructive disease, incomplete exhalation leads to air trapping, progressively increasing RV. Hyperinflation develops as the lung operates at higher volumes. This is why COPD patients have barrel chests. The flattened diaphragm on CXR reflects the hyperinflated, air-trapped lungs."
+    difficulty: medium
+    tags: [respirology, pulmonary function tests, COPD, obstructive lung disease, lung volumes]
+  - front: "What conditions cause DLCO (diffusing capacity for CO) to DECREASE vs. INCREASE?"
+    back: "DLCO DECREASES in: ILD (fibrosis reduces diffusion), pulmonary vascular disease (reduced surface area), anemia (less hemoglobin to bind CO), emphysema (loss of alveolar surface area).\n\nDLCO INCREASES in/with: Asthma, obesity (increased pulmonary blood volume), left-to-right intracardiac shunt (more blood in pulmonary circulation), polycythemia (more hemoglobin), post-exercise physiology.\n\nDLCO measures the lung's ability to transfer gas across the alveolar-capillary membrane. It is reduced when the membrane is thickened (ILD), surface area is lost (emphysema), or the blood's capacity to carry CO is reduced (anemia). It is paradoxically increased in asthma (possibly due to increased pulmonary blood volume) and in conditions that increase pulmonary blood volume (polycythemia, left-to-right shunt)."
+    difficulty: medium
+    tags: [respirology, pulmonary function tests, DLCO, diffusion capacity]
+  - front: "What is Schamroth's sign and what does it indicate?"
+    back: "Schamroth's sign: When the dorsal surfaces of the terminal phalanges of corresponding fingers are placed together, a small diamond-shaped window (Schamroth's window) is normally visible. In clubbing, this window is obliterated (Schamroth's sign is positive).\n\nClubbing indicates chronic hypoxia or chronic disease: pulmonary (lung cancer, bronchiectasis, pulmonary fibrosis, CF, TB, lung abscess, A-V fistula), cardiac (cyanotic congenital heart disease, endocarditis), GI (IBD, celiac, cirrhosis), endocrine (Graves'), other malignancy.\n\nDigital clubbing is characterized by increased distal phalangeal finger depth (DPD) relative to interphalangeal depth (IPD) — DPD > IPD. Schamroth's sign is a bedside test. The loss of the diamond window is diagnostic. Importantly, COPD alone does NOT cause clubbing — its presence in a COPD patient should prompt investigation for malignancy."
+    difficulty: medium
+    tags: [respirology, clinical examination, clubbing, Schamroths sign]
+  - front: "Clubbing is seen in COPD: True or False? What should you think if a COPD patient has clubbing?"
+    back: "FALSE. Clubbing is NOT seen in COPD. If a COPD patient has clubbing, think MALIGNANCY (lung cancer). Clubbing prompts investigation for an underlying etiology beyond COPD alone.\n\nThis is a high-yield MCCQE1 teaching point. COPD causes hypoxia but NOT clubbing. The mechanism of clubbing is not fully understood but is associated with platelet-derived growth factor released from megakaryocytes that bypass the pulmonary circulation (e.g., in cyanotic congenital heart disease) or chronic hypoxia with other mediators. COPD causes airway and parenchymal disease but not the vascular changes that lead to clubbing."
+    difficulty: easy
+    tags: [respirology, COPD, clubbing, lung cancer, clinical examination]
+  - front: "What are the signs of respiratory distress on clinical examination?"
+    back: "1. Tachypnea (increased RR)\n2. Central/peripheral cyanosis\n3. Tachycardia\n4. Inability to speak in full sentences\n5. Nasal flaring\n6. Tracheal tug\n7. Intercostal indrawing (use of accessory muscles)\n8. Tripod position (sitting leaning forward on outstretched arms)\n9. Paradoxical breathing (abdominal movement opposite to chest)\n\nThese signs reflect the body's physiological response to impaired gas exchange or increased work of breathing. Tripod position optimizes accessory muscle mechanics. Paradoxical breathing suggests diaphragm fatigue or paralysis. Tracheal tug reflects severe upper airway obstruction or lung hyperinflation. Inability to speak in full sentences is a simple bedside marker of severe dyspnea."
+    difficulty: easy
+    tags: [respirology, clinical examination, respiratory distress, emergency medicine]
+  - front: "What are the most common causes of chronic cough (>3 months) in a non-smoking patient with a normal CXR?"
+    back: "The 'Big Three' causes of chronic cough in non-smokers with normal CXR:\n1. Postnasal drip (upper airway cough syndrome)\n2. GERD (gastroesophageal reflux disease)\n3. Asthma\n\nAlso: ACEI-induced cough (important medication cause to identify)\n\nThese four causes account for the vast majority of chronic cough cases in non-smokers. ACEI-induced cough (dry, persistent, affecting up to 10–15% of ACEI users, more common in women and Asians) resolves within weeks of stopping the medication. Postnasal drip causes cough via posterior pharyngeal stimulation. Asthma may present with cough as the only symptom (cough-variant asthma)."
+    difficulty: easy
+    tags: [respirology, cough, differential diagnosis, GERD, asthma, postnasal drip]
+  - front: "What are the most common causes of hemoptysis? What is the most common cause of MASSIVE hemoptysis and which vessels are responsible?"
+    back: "Most common cause of hemoptysis overall: ACUTE OR CHRONIC BRONCHITIS\n\nMost common cause of massive hemoptysis: Bronchitis (and bronchiectasis)\n90% of massive hemoptysis originates from BRONCHIAL ARTERIES (not pulmonary arteries)\n\nMassive hemoptysis is often defined as >600 mL/24 hours or bleeding rate >100 mL/hour.\n\nThe bronchial arteries (systemic circulation, high pressure) are responsible for 90% of massive hemoptysis. This is why bronchial artery embolization (BAE) is the primary treatment for massive hemoptysis. Pulmonary arteries (low pressure) contribute to a minority. Other major causes include bronchiectasis, bronchogenic carcinoma, TB (Rasmussen aneurysm), and fungal infections (aspergilloma)."
+    difficulty: medium
+    tags: [respirology, hemoptysis, bronchitis, bronchial artery, emergency medicine]
+  - front: "What CXR pattern is seen with consolidation vs. reticular (interstitial) vs. nodular patterns, and what are the differential diagnoses for each?"
+    back: "CONSOLIDATION ('airspace disease'): Air bronchogram, silhouette sign, less visible blood vessels. DDx: Acute — CHF (water), pneumonia (pus), hemorrhage (blood). Chronic — neoplasm (lymphoma, BAC), inflammatory (eosinophilic pneumonia, organizing pneumonia), infection (TB, fungal).\n\nRETICULAR ('interstitial disease'): Increased linear markings, honeycombing (IPF, RA, asbestosis). DDx: ILD (IPF, collagen vascular disease, asbestosis, drugs, HP).\n\nNODULAR: Cavitary — neoplasm (squamous cell CA), infection (anaerobic/GN bacteria, TB, fungal), inflammatory (RA, GPA/Wegener's). Non-cavitary — same plus sarcoidosis, Kaposi's (HIV), silicosis, coal worker's pneumoconiosis.\n\nCXR pattern recognition is fundamental to respirology. Honeycombing (clustered cystic changes) is most characteristic of IPF but also seen in RA and asbestosis. The silhouette sign (loss of normal cardiac or diaphragm border) helps localize consolidation. Air bronchogram confirms that airways remain patent within consolidated lung, distinguishing true consolidation from pleural effusion or mass."
+    difficulty: medium
+    tags: [respirology, chest X-ray, radiology, consolidation, interstitial lung disease]
+  - front: "How do you approach acid-base interpretation using arterial blood gas (ABG) in 5 steps?"
+    back: "Step 1: Is pH acidemic (<7.35), alkalemic (>7.45), or normal (7.35–7.45)?\nStep 2: What is the primary disturbance? Metabolic = HCO3 and pH move in SAME direction. Respiratory = HCO3 and pH move in OPPOSITE directions.\nStep 3: Is there appropriate compensation? (see expected compensation formulas)\nStep 4: If metabolic acidosis, calculate anion gap = [Na+] - ([Cl-] + [HCO3-]); normal 5–14 mmol/L. Also osmolar gap = measured - calculated osmolarity (2[Na+] + glucose + urea); normal <10 mmol/L.\nStep 5: If elevated anion gap, check if delta-delta ratio is consistent (change in AG should match change in HCO3; if not, consider mixed disorder).\n\nSystematic ABG interpretation prevents errors. A 'normal' pH with abnormal PaCO2 or HCO3 suggests a mixed disorder. Inadequate compensation suggests a second primary disorder. The anion gap identifies unmeasured anions (lactate, ketones, toxins). The delta-delta (or delta ratio) detects superimposed non-anion gap metabolic acidosis or metabolic alkalosis in a high-AG acidosis."
+    difficulty: medium
+    tags: [respirology, acid-base, arterial blood gas, metabolic acidosis, respiratory acidosis]
+  - front: "What are the expected compensatory changes for the 4 primary acid-base disorders?"
+    back: "Respiratory Acidosis:\n- Acute: for every +10 PaCO2, HCO3 rises +1\n- Chronic: for every +10 PaCO2, HCO3 rises +3\n\nRespiratory Alkalosis:\n- Acute: for every -10 PaCO2, HCO3 falls -2\n- Chronic: for every -10 PaCO2, HCO3 falls -5\n\nMetabolic Acidosis: PaCO2 = (1.5 × HCO3) + 8 ± 2 (Winter's formula), OR for every -1 HCO3, PaCO2 falls -1\n\nMetabolic Alkalosis: for every +10 HCO3, PaCO2 rises +7 (OR for every +1 HCO3, PaCO2 rises +0.7)\n\nCompensation is NEVER complete — it brings the pH toward normal but not to normal. If compensation is absent, inadequate, or excessive, a second primary acid-base disorder should be suspected. Renal compensation (for respiratory disorders) takes 2–3 days; respiratory compensation (for metabolic disorders) occurs immediately via chemoreceptors."
+    difficulty: hard
+    tags: [respirology, acid-base, arterial blood gas, compensation, nephrology]
+  - front: "What is the mnemonic MUDPILESCAT for causes of high anion gap metabolic acidosis?"
+    back: "M — Methanol\nU — Uremia\nD — Diabetic ketoacidosis / starvation ketoacidosis\nP — Phenformin / Paraldehyde\nI — Isoniazid, Iron, Ibuprofen\nL — Lactic acidosis\nE — Ethylene glycol\nS — Salicylates\nC — CO (Carbon monoxide)\nA — Alcoholic ketoacidosis\nT — Toluene, Theophylline\n\n(Note: SELACEET is an alternative mnemonic)\n\nHigh anion gap metabolic acidosis (AG >14 mmol/L) is caused by addition of unmeasured acids. The most common in clinical practice are DKA, lactic acidosis (sepsis, shock), uremia, and salicylate poisoning. Methanol and ethylene glycol ingestion also cause an elevated osmolar gap. Recognizing the specific cause directs targeted treatment."
+    difficulty: medium
+    tags: [respirology, acid-base, metabolic acidosis, anion gap, toxicology]
+  - front: "What is Kussmaul's breathing and what causes it?"
+    back: "Kussmaul's breathing is a breathing pattern characterized by rapid, deep respirations (hyperpnea). It is caused by:\n- Metabolic acidosis (most classically diabetic ketoacidosis)\n- Exercise\n- Anxiety\n\nIt represents respiratory compensation for metabolic acidosis — the increased minute ventilation blows off CO2 to raise pH.\n\nKussmaul's breathing is a physiological response to severe metabolic acidosis. The increased respiratory drive is triggered by chemoreceptors responding to low pH. It is most classically associated with DKA but can also be seen in any severe metabolic acidosis (lactic acidosis, uremia, salicylate poisoning). The rapid deep breathing can reduce PaCO2 from 40 to as low as 10–15 mmHg in severe acidosis."
+    difficulty: easy
+    tags: [respirology, respiratory patterns, metabolic acidosis, diabetic ketoacidosis]
+  - front: "What is the CADET mnemonic for factors that shift the oxygen-hemoglobin dissociation curve to the RIGHT?"
+    back: "CADET, face right! (Right shift = decreased O2 affinity = increased O2 delivery to tissues)\nC — CO2 (increased)\nA — Acid (increased H+, lower pH)\nD — 2,3-DPG (2,3-bisphosphoglycerate) (increased)\nE — Exercise\nT — Temperature (increased)\n\nA right shift means O2 is released MORE EASILY to tissues (lower O2 affinity of Hb).\n\nThe Bohr effect describes how increased CO2 and decreased pH (increased H+) shift the curve right, facilitating O2 unloading in metabolically active tissues. 2,3-BPG (formerly called 2,3-DPG) is produced by red blood cells during glycolysis and competes with O2 for binding to Hb. A LEFT shift (increased O2 affinity, impaired O2 release) occurs with decreased CO2, alkalosis, decreased 2,3-BPG, decreased temperature, and fetal Hb."
+    difficulty: medium
+    tags: [respirology, oxygen-hemoglobin dissociation curve, physiology, 23-BPG]
+  - front: "What are the causes of respiratory ACIDOSIS (increased PaCO2)?"
+    back: "Respiratory acidosis = hypoventilation leading to CO2 retention:\n1. Respiratory Centre Depression (decreased RR): Drugs (anesthesia, sedatives, narcotics), trauma, encephalitis, stroke, central apnea, supplemental O2 in chronic CO2 retainers (e.g., COPD)\n2. Neuromuscular Disorders (decreased VC): Myasthenia gravis, Guillain-Barré syndrome, botulism, poliomyelitis, muscular dystrophies, ALS, myopathies, chest wall disease (obesity, kyphoscoliosis)\n3. Lung Disease: Chronic — COPD, CF; Acute — asthma, pulmonary edema, pneumothorax, pneumonia, ILD (late stage), ARDS\n4. Mechanical Hypoventilation (inadequate mechanical ventilation)\n\nAny condition that reduces alveolar ventilation can cause CO2 retention. In chronic COPD patients who are chronic CO2 retainers, administering high-flow O2 can worsen hypoventilation by removing the hypoxic drive to breathe (the Haldane effect also contributes via reduced CO2 carrying capacity). Target SpO2 88–92% in known CO2 retainers."
+    difficulty: medium
+    tags: [respirology, acid-base, respiratory acidosis, hypoventilation, COPD]
+  - front: "What are the causes of respiratory ALKALOSIS (decreased PaCO2)?"
+    back: "Respiratory alkalosis = hyperventilation leading to CO2 loss:\n1. Systemic diseases: Hypoxic pulmonary disease (pneumonia, edema, PE, acute asthma), severe anemia, heart failure, Gram-negative sepsis, pregnancy\n2. Respiratory Centre Stimulation: Drugs (ASA, progesterone, theophylline, catecholamines, psychotropics, nicotine, salicylates), hepatic failure, anxiety, pain\n3. Mechanical Hyperventilation (excessive ventilator settings)\n\nHyperventilation blows off CO2, raising blood pH. In pregnancy, progesterone stimulates the respiratory center causing physiological hyperventilation (PaCO2 normally ~30 mmHg). Salicylate toxicity directly stimulates the respiratory center, causing a primary respiratory alkalosis often combined with metabolic acidosis (mixed picture). Hepatic failure causes respiratory alkalosis through stimulation of the respiratory center by ammonia and other toxins."
+    difficulty: medium
+    tags: [respirology, acid-base, respiratory alkalosis, hyperventilation]
+  - front: "How do you calculate the alveolar-arterial (A-a) oxygen gradient, and what is normal?"
+    back: "A-aDO2 = (150 - 1.25 × PaCO2) - PaO2\n(At sea level on room air: FiO2 = 0.21, RQ = 0.8)\n\nNormal A-a gradient: <15 mmHg (increases with age)\nIn pediatric patients: normal <15 mmHg (~5–10 mmHg)\n\nIncreased A-a gradient indicates V/Q mismatch, diffusion impairment, or shunt.\n\nThe A-a gradient reflects the efficiency of gas exchange across the alveolar-capillary membrane. A normal A-a gradient with low PaO2 suggests hypoventilation (the lungs are working fine, but not enough gas is moving). An increased A-a gradient indicates a lung problem: V/Q mismatch (most common, e.g., PE, pneumonia), diffusion impairment (ILD), or intracardiac/intrapulmonary shunt."
+    difficulty: hard
+    tags: [respirology, acid-base, arterial blood gas, A-a gradient, hypoxemia]
+  - front: "What is the concept of V/Q mismatch and how does it cause hypoxemia?"
+    back: "V/Q mismatch occurs when ventilation (V) and perfusion (Q) are not matched:\n- Low V/Q (shunt-like): blood perfuses poorly ventilated areas → venous blood added to arterial circulation → hypoxemia\n- High V/Q (dead space-like): ventilated areas not perfused → wasted ventilation, CO2 retention\n\nPulmonary shunt: blood bypasses alveolar membrane via abnormal circulation (true shunt) or passes through severely consolidated areas (shunt-like physiology). A true shunt does NOT respond to supplemental O2.\n\nV/Q mismatch is the most common cause of hypoxemia in clinical medicine. In pneumonia, consolidated lung has low V/Q (blood perfuses but no O2 exchange). In PE, lung is ventilated but not perfused (high V/Q, dead space). In pulmonary edema or ARDS, fluid-filled alveoli create shunt physiology. The key clinical test: if hypoxemia corrects with supplemental O2, it is V/Q mismatch; if it does NOT correct, it is a true shunt."
+    difficulty: hard
+    tags: [respirology, hypoxemia, V/Q mismatch, shunt, physiology]
+  - front: "What are the differential diagnoses of acute dyspnea (onset over minutes to days)?"
+    back: "CARDIAC:\n- Acute coronary syndrome / AMI\n- Acute decompensated heart failure / CHF exacerbation\n- Cardiac tamponade\n- Arrhythmia\n- Pericarditis\n- Myocarditis\n\nPULMONARY:\n- Upper airway obstruction (anaphylaxis, aspiration, croup, EBV)\n- Airway disease (asthma, COPD exacerbation, bronchitis)\n- Parenchymal disease (ARDS, pneumonia)\n- Pulmonary vascular disease (PE, vasculitis)\n- Pleural disease (pneumothorax, tension pneumothorax, pleural effusion)\n\nNEUROLOGIC/PSYCHOGENIC:\n- Metabolic acidosis\n- Anxiety / panic attack\n\nThe approach to acute dyspnea requires rapidly identifying life-threatening causes: tension pneumothorax, cardiac tamponade, pulmonary embolism, and acute MI must be excluded first. The history (onset speed, associated symptoms, risk factors) combined with O2 saturation, ECG, and CXR guides initial assessment. Anxiety/panic disorder is a diagnosis of exclusion."
+    difficulty: easy
+    tags: [respirology, dyspnea, differential diagnosis, emergency medicine]
+  - front: "What are the common causes of digital clubbing (organized by system)?"
+    back: "PULMONARY (most common): Lung cancer (CA), bronchiectasis, pulmonary fibrosis, lung abscess, cystic fibrosis (CF), TB, empyema, A-V fistula/malformation. NOTE: NOT COPD.\n\nCARDIAC: Cyanotic congenital heart disease, infective endocarditis.\n\nGI: Inflammatory bowel disease (IBD), celiac disease, liver cirrhosis, GI neoplasm.\n\nENDOCRINE: Graves' disease (thyroid acropachy).\n\nOTHER: Other malignancy, primary hypertrophic osteoarthropathy.\n\nClubbing results from platelet-derived growth factor and VEGF acting on the periosteum and soft tissues of the digits. In cyanotic heart disease, platelet clumps that normally fragment in the lung reach systemic circulation intact. COPD does not cause clubbing — this distinction is repeatedly tested. When a COPD patient has clubbing, bronchogenic carcinoma must be ruled out urgently."
+    difficulty: easy
+    tags: [respirology, clubbing, lung cancer, clinical examination, differential diagnosis]
+  - front: "What is the purpose of bronchoscopy and what procedures can be performed through it?"
+    back: "Purpose: Diagnosis and therapy of airway and pulmonary diseases.\n\nProcedures:\n- Bronchial and bronchoalveolar lavage (BAL): for culture, cell count analysis, cytology\n- Endobronchial or transbronchial tissue biopsies\n- Removal of secretions, foreign bodies, blood\n- Laser resections\n- Airway stenting\n- Endobronchial ultrasound (EBUS): sampling of mediastinal lymph nodes using bronchoscope with US probe\n\nFlexible bronchoscopy allows direct visualization of airways down to the subsegmental level. EBUS is a major advance allowing real-time ultrasound-guided sampling of mediastinal and hilar lymph nodes without surgery — critical for lung cancer staging (N2/N3 disease). BAL is essential for diagnosing opportunistic infections (PCP, CMV) in immunocompromised patients. Rigid bronchoscopy is preferred for massive hemoptysis management."
+    difficulty: easy
+    tags: [respirology, bronchoscopy, EBUS, procedures, lung cancer staging]
+  - front: "What is the relationship between electrolyte abnormalities and acid-base disorders?"
+    back: "Acidosis is associated with HYPERKALEMIA (H+ enters cells in exchange for K+ leaving).\nAlkalosis is associated with HYPOKALEMIA (H+ exits cells in exchange for K+ entering).\n\nFor every 0.1 unit change in pH, K+ changes by approximately 0.5–0.6 mEq/L in the OPPOSITE direction.\n\nThis reciprocal relationship between pH and potassium has critical clinical implications. Treating DKA with insulin and fluids corrects acidosis and drives K+ into cells, causing rapid hypokalemia — aggressive K+ replacement is required. Conversely, metabolic alkalosis (from vomiting, diuretics) causes hypokalemia, and hypokalemia itself perpetuates the alkalosis (K+ exits cells in exchange for H+ entering). Always check K+ with any acid-base disorder."
+    difficulty: medium
+    tags: [respirology, acid-base, electrolytes, potassium, nephrology]
+  - front: "What is the normal anion gap and what formula is used to calculate it? What does an elevated osmolar gap indicate?"
+    back: "Anion gap (AG) = [Na+] - ([Cl-] + [HCO3-])\nNormal: 5–14 mmol/L\n\nOsmolar gap = measured osmolarity - calculated osmolarity\nCalculated osmolarity = 2[Na+] + glucose + urea\n(Mnemonic: '2 salts and a sticky BUN')\nNormal osmolar gap: <10 mmol/L\n\nAbnormal osmolar gap indicates presence of ALCOHOLS (methanol, ethanol, isopropanol, ethylene glycol).\n\nThe anion gap represents unmeasured anions (proteins, phosphate, sulfate, organic acids). An elevated AG identifies MUDPILESCAT causes. The osmolar gap is calculated to detect unmeasured osmoles — specifically toxic alcohols that are not sodium, glucose, or urea. An elevated osmolar gap with high AG acidosis strongly suggests methanol or ethylene glycol poisoning."
+    difficulty: medium
+    tags: [respirology, acid-base, anion gap, osmolar gap, toxicology]
+  - front: "What lung disease condition does bronchiectasis mimic on PFTs and why?"
+    back: "Bronchiectasis can cause an OBSTRUCTIVE or MIXED pattern on PFTs (unlike most of the other bronchiectasis features which resemble restrictive disease). This is because permanently dilated, damaged airways impair expiratory airflow similar to COPD, while the underlying structural destruction can reduce lung volumes.\n\nBronchiectasis is a chronic condition of irreversibly dilated bronchi due to chronic infection/inflammation. The PFT pattern depends on severity — early disease may show obstruction only, while severe disease shows a mixed obstructive-restrictive pattern. This distinguishes it from simple COPD (purely obstructive) and ILD (purely restrictive). CF is the most common cause in young adults."
+    difficulty: medium
+    tags: [respirology, bronchiectasis, pulmonary function tests, cystic fibrosis]
+  - front: "What are the 3 components of a bronchodilator response on spirometry, and when is it considered significant?"
+    back: "A significant bronchodilator response is defined as:\n- Traditional/widely used definition: ≥12% AND ≥200 mL increase in FEV1 (or FVC) after bronchodilator\n- NEW definition (emerging): >10% of PREDICTED VALUE for FEV1\n\nA significant response suggests reversible airway obstruction (favoring asthma over COPD, which typically shows incomplete or no reversibility).\n\nThe bronchodilator response helps differentiate asthma (largely reversible) from COPD (poorly reversible). However, overlap exists — COPD patients can show partial reversibility. The new definition (>10% predicted) is not yet widely implemented but will likely change clinical practice. Full reversibility to normal (post-BD FEV1/FVC ≥0.70) strongly supports asthma."
+    difficulty: medium
+    tags: [respirology, pulmonary function tests, spirometry, bronchodilator response, asthma, COPD]
+  - front: "What is the 'Big Three' mnemonic for the most common causes of pleuritic chest pain?"
+    back: "Common causes of PLEURITIC chest pain (worse with inspiration/movement):\n- Pulmonary: Pneumonia, PE, pneumothorax, pleurisy, hemothorax\n- Cardiac: Pericarditis, Dressler's syndrome\n- MSK: Costochondritis, fractured rib/flail chest, myositis, herpes zoster\n- Other: Subphrenic abscess, neoplasm, esophageal rupture\n\nKey distinction from nonpleuritic: Pleuritic pain is sharp, worse with breathing/coughing/movement; nonpleuritic is dull/pressure-like.\n\nPleuritic chest pain arises from parietal pleural inflammation — the visceral pleura has no pain receptors. PE classically causes pleuritic pain when it causes infarction and pleural involvement. Pericarditis causes pleuritic-type pain relieved by leaning forward (reduces pressure on pericardium). Distinguishing pleuritic from nonpleuritic pain is important for narrowing the DDx."
+    difficulty: easy
+    tags: [respirology, chest pain, differential diagnosis, pleurisy, PE]
+  - front: "What are the two acute sarcoidosis syndromes and their defining features?"
+    back: "1. Lofgren's syndrome: fever, erythema nodosum, bilateral hilar lymphadenopathy, arthralgias. 2. Heerfordt-Waldenstrom syndrome: fever, parotid enlargement, anterior uveitis, facial nerve palsy.\n\nThese two syndromes represent acute presentations of sarcoidosis. Lofgren's syndrome has a relatively good prognosis with spontaneous resolution in many cases. Heerfordt-Waldenstrom involves cranial nerve involvement including the parotid gland and facial nerve."
+    difficulty: medium
+    tags: [sarcoidosis, acute syndromes, respirology, extrapulmonary]
+  - front: "What are the CXR staging criteria for sarcoidosis (Stages 0–IV)?"
+    back: "Stage 0: normal radiograph. Stage I: bilateral hilar lymphadenopathy + paratracheal lymphadenopathy. Stage II: bilateral hilar lymphadenopathy with pulmonary infiltration. Stage III: pulmonary infiltration alone (reticulonodular or nodular pattern). Stage IV: pulmonary fibrosis (upper lobe volume loss, honeycombing uncommon).\n\nRadiographic staging guides prognosis and management decisions in sarcoidosis. Approximately 85% of Stage I and 50% of Stage II cases resolve spontaneously. Stage IV represents end-stage irreversible fibrosis."
+    difficulty: medium
+    tags: [sarcoidosis, CXR staging, respirology]
+  - front: "What are the indications for treating sarcoidosis (rather than observation)?"
+    back: "Treatment is indicated for symptoms, declining lung function, hypercalcemia, or involvement of the eye, CNS, kidney, or heart. An abnormal CXR alone is NOT an indication for treatment.\n\nMost Stage I sarcoidosis resolves spontaneously without treatment. First-line treatment is prednisone. Methotrexate or other immunosuppressives can be used as adjuncts if steroid response is unsatisfactory or as steroid-sparing agents."
+    difficulty: medium
+    tags: [sarcoidosis, treatment, respirology]
+  - front: "What laboratory finding is associated with sarcoidosis and reflects total body granuloma burden?"
+    back: "Elevated serum ACE (angiotensin-converting enzyme). It is non-specific and non-sensitive but reflects total body granuloma load. Hypercalcemia/hypercalciuria also occurs due to vitamin D activation by granulomas.\n\nSarcoid granulomas produce ACE and also activate vitamin D (1,25-dihydroxyvitamin D), leading to hypercalcemia. ACE is not reliable for diagnosis or disease monitoring due to poor sensitivity and specificity."
+    difficulty: easy
+    tags: [sarcoidosis, lab findings, ACE, hypercalcemia, respirology]
+  - front: "What extrapulmonary manifestations are commonly seen in sarcoidosis?"
+    back: "Common: anterior or posterior uveitis, skin lesions (papules, erythema nodosum, lupus pernio), peripheral lymphadenopathy, arthralgia, hepatomegaly, splenomegaly. Less common: bone, CNS, kidney, cardiac involvement (arrhythmias, sudden death, CHF).\n\nSarcoidosis is a systemic granulomatous disease affecting multiple organs. Uveitis can lead to blindness if untreated, so routine slit-lamp examination is recommended. Cardiac sarcoidosis can cause life-threatening arrhythmias."
+    difficulty: easy
+    tags: [sarcoidosis, extrapulmonary, uveitis, respirology]
+  - front: "What are the key differences between asbestosis, silicosis, and coal workers' pneumoconiosis (CWP) in terms of CXR findings?"
+    back: "Asbestosis: lower lobe reticulonodular pattern, IPF-like honeycombing, pleural plaques (± calcification). Silicosis: upper > lower lobe nodular disease; late progressive massive fibrosis; hilar 'eggshell' calcification. CWP simple: multiple upper lobe nodular opacities; complicated: opacities coalesce (progressive massive fibrosis).\n\nAsbestosis is distinguished by lower lobe involvement and pleural plaques. Silicosis and CWP predominantly affect upper lobes. 'Eggshell' calcification of hilar nodes is characteristic of silicosis. Ferruginous bodies (yellow-brown macrophage-coated fibres) are the microscopic hallmark of asbestosis."
+    difficulty: medium
+    tags: [pneumoconiosis, asbestosis, silicosis, CWP, CXR, respirology]
+  - front: "What complications are associated with asbestos exposure?"
+    back: "Increased risk of bronchogenic carcinoma (dramatically increased in smokers), malignant mesothelioma, pleural plaques (± calcification), pleural effusion, round atelectasis, and asbestosis (parenchymal fibrosis).\n\nAsbestos and smoking act synergistically to increase lung cancer risk (but NOT mesothelioma risk — smoking is not a risk factor for mesothelioma). Microscopic examination reveals ferruginous bodies. Latency period for disease development is typically 20–30 years."
+    difficulty: medium
+    tags: [asbestosis, mesothelioma, lung cancer, pneumoconiosis, respirology]
+  - front: "Which drugs are associated with drug-induced interstitial lung disease?"
+    back: "Antibiotics (nitrofurantoin, penicillin, sulfonamide); cardiovascular drugs (amiodarone, tocainide); anti-inflammatory agents (methotrexate, penicillamine, etanercept, gold salts); biologics (rituximab, anti-TNF-α agents, immunotherapy); chemotherapy (bleomycin); recreational drugs (heroin, methadone).\n\nDrug-induced ILD should be considered in any patient on these medications who develops new respiratory symptoms or imaging abnormalities. Bleomycin causes pulmonary toxicity in a dose-dependent fashion. Amiodarone causes both acute and chronic pulmonary toxicity."
+    difficulty: medium
+    tags: [drug-induced ILD, interstitial lung disease, respirology]
+  - front: "What is the hemodynamic definition of pulmonary hypertension?"
+    back: "Mean pulmonary arterial pressure (mPAP) >20 mmHg with a pulmonary arterial wedge pressure (PAWP) <15 mmHg and pulmonary vascular resistance (PVR) ≥3 Wood units, measured by right heart catheterization in supine position at rest.\n\nRight heart catheterization (Swan-Ganz catheter) is the gold standard for diagnosing pulmonary hypertension. The PAWP distinguishes pre-capillary (Group I, III, IV, V) from post-capillary (Group II — left heart disease) pulmonary hypertension."
+    difficulty: medium
+    tags: [pulmonary hypertension, hemodynamics, respirology]
+  - front: "What are the 5 WHO classifications of pulmonary hypertension and representative examples of each?"
+    back: "Group I: Pulmonary Arterial HTN (PAH) — idiopathic, hereditary (BMPR2 mutation), collagen vascular disease, Eisenmenger syndrome, HIV, portopulmonary. Group II: Left heart disease — HFpEF, HFrEF, valvular disease. Group III: Lung disease/hypoxia — COPD, ILD, sleep-disordered breathing. Group IV: Chronic thromboembolic PH (CTEPH). Group V: Unclear/multifactorial — sarcoidosis, sickle cell, hematologic disorders.\n\nClassification is critical as treatment differs by group. Group I PAH is treated with advanced vasodilator therapies (prostanoids, ERAs, PDE5 inhibitors, CCBs). Group III is managed by treating underlying lung disease and correcting hypoxia. CTEPH is treated with anticoagulation and pulmonary thromboendarterectomy."
+    difficulty: hard
+    tags: [pulmonary hypertension, WHO classification, respirology]
+  - front: "What is idiopathic pulmonary arterial hypertension (IPAH) and what are its histologic features?"
+    back: "IPAH is pulmonary HTN in the absence of a demonstrable cause (WHO Group I). Histology includes medial arterial hypertrophy, intimal fibrosis, and plexiform arteriopathy. It predominantly affects adults aged 50–65, with female predominance in younger patients.\n\nMost cases are sporadic; familial cases account for <5% and are often linked to BMPR2 mutations. The pathophysiology involves vasoconstriction, vascular proliferation, and obstructive remodeling, increasing pulmonary vascular resistance."
+    difficulty: medium
+    tags: [IPAH, primary pulmonary hypertension, respirology]
+  - front: "What are the signs and symptoms of pulmonary hypertension?"
+    back: "Symptoms: dyspnea, fatigue, retrosternal chest pain, syncope, palpitations, peripheral edema, symptoms of underlying disease. Signs: loud/palpable P2, RV heave, right-sided S4 (due to RVH), systolic murmur (tricuspid regurgitation). In right ventricular failure: right-sided S3, increased JVP, positive hepatojugular reflux, peripheral edema, TR.\n\nPhysical exam may be unremarkable in early disease. Syncope in pulmonary HTN indicates severe disease and carries a poor prognosis. A loud/palpable P2 is a hallmark sign of pulmonary hypertension reflecting elevated RV afterload."
+    difficulty: medium
+    tags: [pulmonary hypertension, signs and symptoms, respirology]
+  - front: "What investigations are used to diagnose pulmonary hypertension?"
+    back: "CXR (enlarged central pulmonary arteries, RV enlargement filling retrosternal space); ECG (RVH/right-sided strain); 2D echo Doppler (RV systolic pressure); right heart catheterization (gold standard — confirms mPAP, PAWP, PVR, cardiac output); PFTs (DLCO usually reduced); CT angiogram (assess parenchyma, rule out PE); V/Q scan (rule out CTEPH); serology (ANA positive in 30% with primary PH).\n\nRight heart catheterization with a Swan-Ganz catheter is required to confirm the diagnosis. Vasoreactivity testing using short-acting agents (IV epoprostenol, IV adenosine, inhaled NO) identifies patients who may benefit from long-term CCB therapy."
+    difficulty: hard
+    tags: [pulmonary hypertension, investigations, respirology]
+  - front: "What is a positive vasodilator response in pulmonary arterial hypertension and what is its clinical implication?"
+    back: "Positive response: decrease in mPAP ≥10 mmHg to <40 mmHg with stable or increased cardiac output during vasoreactivity testing. Clinical implication: patient should be considered a candidate for trial of oral calcium channel blocker (CCB) therapy.\n\nVasoreactivity testing uses short-acting agents such as IV epoprostenol, IV adenosine, or inhaled NO. Only a minority of PAH patients respond; those who do have improved survival with high-dose CCBs."
+    difficulty: hard
+    tags: [pulmonary hypertension, vasoreactivity testing, CCB, respirology]
+  - front: "What is pulmonary embolism and how is it classified?"
+    back: "PE is mechanical obstruction of the pulmonary vasculature leading to obstruction of blood flow. Classified temporally as acute, subacute, or chronic. Acute PE further classified as massive (hypotension/clinical right heart failure), sub-massive, or low-risk.\n\nLower extremity deep vein thrombi are the source of most clinically recognized PEs. Thrombi often start in calf veins and must propagate into proximal veins to produce a sufficiently large thrombus for clinically significant PE. VTE affects approximately 1–2 per 1,000 adults per year."
+    difficulty: easy
+    tags: [pulmonary embolism, PE, DVT, VTE, respirology]
+  - front: "What are the components of Virchow's Triad and how do they relate to PE risk factors?"
+    back: "Virchow's Triad: 1. Venous stasis (immobilization, paralysis, obesity, CHF, chronic venous insufficiency, prolonged travel). 2. Endothelial cell damage (postoperative injury, trauma). 3. Hypercoagulable states (malignancy, OCP, pregnancy, inherited thrombophilias such as Factor V Leiden, antiphospholipid antibody syndrome).\n\nFactor V Leiden is the most common inherited thrombophilia. Oral contraceptive pills and exogenous estrogen increase VTE risk by promoting hypercoagulability. Underlying malignancy (especially adenocarcinoma) is strongly associated with VTE."
+    difficulty: easy
+    tags: [Virchows triad, PE, DVT, risk factors, respirology]
+  - front: "What are the Wells criteria for pulmonary embolism and how are they interpreted?"
+    back: "Points: Clinical signs/symptoms of DVT (3.0), PE most likely diagnosis (3.0), HR >100 bpm (1.5), immobilization/surgery in previous 4 weeks (1.5), prior DVT/PE (1.5), hemoptysis (1.0), malignancy (1.0). Probability: Low (<2 points) ~2%, Intermediate (3–6 points) ~17%, High (>6 points) ~65%.\n\nThe Wells criteria are a validated clinical decision tool. Low pretest probability plus negative D-dimer effectively excludes PE. High pretest probability warrants direct CT pulmonary angiography without waiting for D-dimer."
+    difficulty: medium
+    tags: [Wells criteria, PE, clinical decision tool, respirology]
+  - front: "What is the PERC rule and when is it used?"
+    back: "PERC (PE Rule Out Criteria) can exclude PE without further testing if ALL criteria met: age <50, HR <100 bpm, O2 sat ≥95%, no hemoptysis, no prior DVT/PE, no unilateral leg swelling, no surgery/trauma requiring hospitalization within 4 weeks, no exogenous estrogen use. Used only in patients with low gestalt clinical probability.\n\nIf all 8 PERC criteria are satisfied in a low pretest probability patient, PE can be excluded without D-dimer or imaging. If any criterion is positive, further diagnostic testing (D-dimer) is required."
+    difficulty: medium
+    tags: [PERC rule, PE, clinical decision tool, respirology]
+  - front: "What are the CXR findings in pulmonary embolism?"
+    back: "Frequently normal. May show: atelectasis (subsegmental), elevation of a hemidiaphragm, pleural effusion (usually small), Hampton's hump (cone-shaped peripheral opacification representing infarction), Westermark's sign (dilated proximal pulmonary artery with distal oligemia/decreased vascular markings), dilatation of proximal pulmonary artery (rare).\n\nCXR is neither sensitive nor specific for PE but helps exclude alternative diagnoses. Hampton's hump is a classic but uncommon finding representing pulmonary infarction. Westermark's sign indicates abrupt cutoff of pulmonary vascularity."
+    difficulty: medium
+    tags: [PE, CXR, Hamptons hump, Westermarks sign, respirology]
+  - front: "What is the classic ECG finding in massive pulmonary embolism?"
+    back: "S1Q3T3 pattern (deep S in lead I, Q wave in lead III, inverted T wave in lead III). Sinus tachycardia is the most common ECG finding in PE. May also see non-specific ST/T changes, RV strain, RAD, and right bundle branch block (RBBB).\n\nECG findings in PE are neither sensitive nor specific. Sinus tachycardia is the most common finding. S1Q3T3 occurs in massive PE due to acute right heart strain. RBBB can also develop with acute RV overload."
+    difficulty: easy
+    tags: [PE, ECG, S1Q3T3, respirology]
+  - front: "When is a V/Q scan preferred over CT pulmonary angiography for PE diagnosis?"
+    back: "V/Q scan is preferred when: normal CXR with no COPD, contraindication to CT contrast (allergy or renal dysfunction), or pregnancy. Avoid V/Q scan if: CXR is abnormal or patient has COPD, suspected massive PE, or is an inpatient.\n\nV/Q scan is very sensitive but less specific than CT angiography. A normal V/Q scan excludes PE. A high-probability V/Q scan only confirms PE if clinical suspicion is high. Approximately 60% of V/Q scans are non-diagnostic, requiring additional workup."
+    difficulty: medium
+    tags: [PE, V/Q scan, CT angiography, diagnosis, respirology]
+  - front: "What is the role and interpretation of D-dimer in the evaluation of PE?"
+    back: "D-dimer has high sensitivity and high negative predictive value (useful to rule out PE in low probability patients). It has poor specificity and poor positive predictive value. D-dimer is elevated with: increased age, recent surgery, cancer, inflammation, infection, pregnancy, and severe renal dysfunction.\n\nA negative D-dimer combined with low or intermediate pretest probability effectively excludes PE. D-dimer is NOT useful to confirm PE due to its non-specificity. In high pretest probability patients, proceed directly to CT angiography."
+    difficulty: easy
+    tags: [D-dimer, PE, diagnosis, respirology]
+  - front: "What is the acute anticoagulation treatment for pulmonary embolism?"
+    back: "Options: therapeutic-dose SC LMWH (dalteparin 200 units/kg once daily, enoxaparin 1 mg/kg BID, or fondaparinux 5–10 mg once daily), OR IV unfractionated heparin (bolus 75 units/kg then infusion 20 units/kg/h, target aPTT 2–3× control), OR direct oral anticoagulants (rivaroxaban, apixaban, edoxaban, dabigatran). Start ASAP.\n\nAnticoagulation stops clot propagation, prevents new clots, and allows the endogenous fibrinolytic system to dissolve existing thromboemboli. LMWH requires no lab monitoring but dose should be reduced in renal dysfunction. UFH is preferred for severe renal insufficiency."
+    difficulty: medium
+    tags: [PE, treatment, anticoagulation, LMWH, heparin, respirology]
+  - front: "What is the recommended duration of anticoagulation after pulmonary embolism?"
+    back: "Reversible cause (surgery, injury, pregnancy): 3–6 months. Unprovoked PE: 6 months to indefinite. Ongoing major risk factor (active cancer, antiphospholipid antibody syndrome): indefinite anticoagulation.\n\nFor most non-pregnant patients without renal insufficiency or active cancer, first-line long-term anticoagulation is a DOAC (rivaroxaban, apixaban, edoxaban, or dabigatran) rather than warfarin. LMWH is preferred in pregnancy, active cancer, or high bleeding risk patients."
+    difficulty: medium
+    tags: [PE, anticoagulation duration, DVT, treatment, respirology]
+  - front: "When is IV thrombolytic therapy indicated in pulmonary embolism?"
+    back: "Thrombolytics are indicated for massive PE (hemodynamic instability/hypotension or clinical right heart failure) with no contraindications. Thrombolysis hastens resolution of PE but may not improve survival or long-term outcome, and doubles the risk of major bleeding.\n\nCatheter-directed thrombolysis is an alternative for massive PE but is NOT recommended over systemic thrombolysis. IVC filter use is reserved for patients with recent proximal DVT and an absolute contraindication to anticoagulation."
+    difficulty: medium
+    tags: [PE, thrombolysis, massive PE, treatment, respirology]
+  - front: "What VTE risk categories guide thromboprophylaxis choice in hospital patients?"
+    back: "Low risk (fully mobile medical patients or surgery <30 min): no specific prophylaxis, frequent ambulation. Moderate risk (most general/gynecologic/urologic surgery, sick medical patients): LMWH, low-dose UFH, or fondaparinux. High risk (arthroplasty, hip fracture, major trauma, spinal cord injury): LMWH, fondaparinux, warfarin (INR 2–3), dabigatran, apixaban, rivaroxaban. High bleeding risk (neurosurgery, intracranial bleed, active bleeding): TED stockings, pneumatic compression devices.\n\nThromboprophylaxis is cost-effective and mandatory for most hospital patients. It should be started ASAP and continued at least until discharge (extended for 35 days post-operatively after major orthopedic surgery)."
+    difficulty: medium
+    tags: [VTE prophylaxis, thromboprophylaxis, DVT prevention, respirology]
+  - front: "What are the key features of Granulomatosis with Polyangiitis (GPA, formerly Wegener's Granulomatosis)?"
+    back: "Definition: systemic vasculitis of medium and small arteries. Pulmonary: necrotizing granulomatous lesions — tracheal/bronchial stenosis, nodules, ILD, alveolar hemorrhage. Extra-pulmonary: nasal/sinus/ear disease, crescentic glomerulonephritis. Investigations: CXR/CT (nodules, cavities, alveolar opacities), c-ANCA positive in 90%, PR3 antibodies. Treatment: corticosteroids + cyclophosphamide or rituximab; PLEX in severe disease.\n\nGPA is the most common pulmonary vasculitis. c-ANCA (anti-PR3) positivity is highly characteristic. With treatment, 65–90% achieve full remission. PLEX (plasma exchange) is used for pulmonary hemorrhage, severe renal failure, or concomitant anti-GBM disease."
+    difficulty: hard
+    tags: [GPA, Wegeners granulomatosis, vasculitis, ANCA, respirology]
+  - front: "How does Eosinophilic Granulomatosis with Polyangiitis (EGPA, Churg-Strauss) differ from GPA?"
+    back: "EGPA: multisystem disorder characterized by allergic rhinitis, asthma (prodromal phase), and prominent peripheral eosinophilia. Involves small- and medium-sized vessels. Extra-pulmonary: life-threatening vasculitis of pericardium, heart, kidneys, skin, PNS (mononeuritis multiplex). p-ANCA/MPO may be positive. Treatment: corticosteroids ± cyclophosphamide (based on Five Factor Score) or rituximab; 90% achieve clinical remission.\n\nAsthma is the hallmark prodromal feature of EGPA distinguishing it from GPA and MPA. Peripheral eosinophilia is the most common finding on lab work. CXR can be normal in 30–60% of cases but may show transient patchy opacities."
+    difficulty: hard
+    tags: [EGPA, Churg-Strauss, vasculitis, eosinophilia, respirology]
+  - front: "What is anti-GBM disease (Goodpasture's syndrome) and how is it diagnosed?"
+    back: "Disorder characterized by diffuse alveolar hemorrhage and glomerulonephritis caused by anti-GBM antibodies that cross-react with basement membranes of the kidney and lung. Presentations: dyspnea, cough, hemoptysis, anemia, acute renal failure. Investigations: ELISA for anti-GBM antibodies, renal biopsy/immunofluorescence showing linear staining. Treatment: corticosteroids, plasmapheresis, cyclophosphamide.\n\nMay be triggered by influenza infection or other lung injury. Linear IgG deposition on immunofluorescence of renal biopsy is the hallmark. Plasmapheresis removes circulating anti-GBM antibodies and is a critical component of acute management."
+    difficulty: hard
+    tags: [Goodpastures, anti-GBM disease, alveolar hemorrhage, vasculitis, respirology]
+  - front: "How are pleural effusions classified and what is Light's criteria?"
+    back: "Classified as transudative or exudative using Light's Criteria (98% sensitivity, 83% specificity for exudates). Exudate if ANY of: pleural/serum protein >0.5, pleural/serum LDH >0.6, pleural LDH >2/3 upper limit of normal serum LDH.\n\nTransudates result from alterations in Starling forces (CHF, cirrhosis, nephrotic syndrome). Exudates result from increased capillary permeability or lymphatic dysfunction (infection, malignancy, inflammatory causes). Modified Light's criteria uses pleural LDH >0.45 upper limit of normal serum LDH."
+    difficulty: medium
+    tags: [pleural effusion, Lights criteria, transudate, exudate, respirology]
+  - front: "What are common causes of transudative pleural effusions?"
+    back: "CHF (usually bilateral, right > left), hepatic hydrothorax from cirrhosis (diaphragmatic deficit), nephrotic syndrome, protein-losing enteropathy, pulmonary embolism (may cause transudate, more often exudate), peritoneal dialysis with transdiaphragmatic flow, hypothyroidism, urinothorax.\n\nCHF is the most common cause of bilateral pleural effusions. Hepatic hydrothorax results from ascitic fluid moving through diaphragmatic defects into the pleural space. An isolated right-sided effusion in CHF is common."
+    difficulty: easy
+    tags: [pleural effusion, transudate, CHF, cirrhosis, respirology]
+  - front: "What are common causes of exudative pleural effusions?"
+    back: "Infectious: parapneumonic effusion, empyema, TB pleuritis. Malignancy: lung CA (35%), breast metastases (25%), lymphoma (10%), mesothelioma. Inflammatory: RA, SLE, pancreatitis, benign asbestos effusion, PE, post-CABG. Intra-abdominal: subphrenic abscess, pancreatic pseudocyst. Trauma: hemothorax, chylothorax. Intra-thoracic: esophageal perforation.\n\nParapneumonic effusions are the most common cause of exudative effusions. The most common malignant cause is lung cancer (35%). Meigs' syndrome (ovarian fibroma with ascites and hydrothorax) can be either transudate or exudate."
+    difficulty: medium
+    tags: [pleural effusion, exudate, malignancy, parapneumonic, respirology]
+  - front: "What are the clinical signs and symptoms of pleural effusion?"
+    back: "Often asymptomatic. Symptoms: dyspnea, pleuritic chest pain, shoulder pain (referred via phrenic nerve C3–C5). Signs: ipsilateral decreased expansion, tracheal deviation away from effusion (if large and rapid), decreased tactile fremitus, dullness to percussion, decreased breath sounds, bronchial breathing and egophony just above the fluid level, pleural friction rub (if inflammatory with minimal fluid).\n\nThe minimum fluid required to detect blunting of lateral costophrenic angle on PA CXR is ~200 mL. As little as 50 mL may blunt the posterior costophrenic angle on lateral CXR. Tracheal deviation indicates a large effusion or tension physiology."
+    difficulty: easy
+    tags: [pleural effusion, clinical signs, respirology]
+  - front: "What pleural fluid analysis findings indicate a complicated parapneumonic effusion requiring drainage?"
+    back: "Any of: loculation, >1/2 hemithorax of fluid, pH <7.2, glucose <2.2 mmol/L, LDH >1000 IU/L, positive Gram stain or culture, frank pus on tap (empyema). Empyema always requires drainage.\n\nComplicated parapneumonic effusions cannot resolve with antibiotics alone and require tube drainage. tPA/DNase instillation can improve drainage of infected/loculated effusions. Surgical management may be required in refractory cases."
+    difficulty: hard
+    tags: [parapneumonic effusion, empyema, thoracentesis, pleural fluid, respirology]
+  - front: "What pleural fluid glucose and pH values suggest specific diagnoses?"
+    back: "Low glucose (pleural:serum <0.5) and very low pH (<7.0): rheumatoid arthritis, TB, empyema, malignancy, esophageal rupture. Normal pleural pH is ~7.6. Esophageal rupture also associated with elevated salivary amylase in pleural fluid.\n\nRA is notorious for causing very low pleural fluid glucose and pH. A pleural fluid pH <7.2 in a parapneumonic effusion indicates complicated effusion requiring drainage. Esophageal rupture is a rare but life-threatening cause of exudative effusion."
+    difficulty: medium
+    tags: [pleural fluid analysis, pleural effusion, pH, glucose, respirology]
+  - front: "What is mesothelioma and how does it differ from lung cancer in relation to asbestos and smoking?"
+    back: "Mesothelioma is a primary malignancy of the pleura occurring decades after asbestos exposure (even with limited exposure). Smoking is NOT a risk factor for mesothelioma (unlike lung cancer). However, asbestos exposure and smoking synergistically increase the risk of lung cancer.\n\nCT thorax and biopsy (pleuroscopic or open) are required for diagnosis. Needle biopsy risks seeding the needle tract with tumour. Treatment involves a multidisciplinary trimodal approach (chemotherapy, radiation, surgical resection), but prognosis is poor and palliation is often the primary goal."
+    difficulty: medium
+    tags: [mesothelioma, asbestos, pleural malignancy, respirology]
+  - front: "What are the non-malignant pleural manifestations of asbestos exposure?"
+    back: "1. Benign asbestos pleural effusion (BAPE): exudative effusion, typically ~10 years after exposure, often resolves spontaneously. 2. Round atelectasis: commonly seen peripherally, associated with calcified pleural plaques. 3. Pleural plaques (± calcification): marker of exposure, usually an asymptomatic radiologic finding.\n\nPleural plaques are the most common manifestation of asbestos exposure and are generally benign. BAPE must be distinguished from mesothelioma or pleural metastases (cytology may be needed). Round atelectasis is a benign condition caused by pleural disease folding adjacent lung tissue."
+    difficulty: medium
+    tags: [asbestos, pleural disease, BAPE, pleural plaques, respirology]
+  - front: "What are the most common mediastinal masses by location (anterior, middle, posterior)?"
+    back: "Anterior (4 Ts): Thymoma, Teratoma (and other germ cell tumors), Thyroid enlargement (goiter), Terrible lymphoma. Middle: heart, pericardium, trachea, great vessels, lymph nodes. Posterior: esophagus, descending aorta, sympathetic chain, azygous venous system.\n\nThe '4 Ts' mnemonic helps recall the anterior mediastinal masses. Thymoma is associated with myasthenia gravis. Lymphoma can occur in both the anterior and middle mediastinum. Neurogenic tumors (schwannoma, neurofibroma) are the most common posterior mediastinal masses."
+    difficulty: medium
+    tags: [mediastinal masses, 4 Ts, respirology, thoracic surgery]
+  - front: "What is acute mediastinitis, its causes, signs/symptoms, and treatment?"
+    back: "Causes: perforation of esophagus or trachea (Boerhaave's, penetrating trauma, instrumentation, carcinoma erosion), direct extension from dental/lung/pleural/pericardial infections, postoperative sternotomy or mediastinoscopy complications, primary mediastinal infections (e.g. inhalational anthrax). Signs/Symptoms: fever, substernal pain, dramatic acute onset, irritability, restlessness, sense of impending doom, pneumomediastinum, Hamman's sign (auscultatory 'crunch' during cardiac systole). Treatment: IV antibiotics (vancomycin + 3rd gen cephalosporin), drainage, ± surgical closure of perforation.\n\nBoerhaave's syndrome (esophageal perforation due to vomiting) is a life-threatening cause of mediastinitis. Hamman's sign is a classic physical exam finding representing mediastinal air. Early surgical intervention is often required."
+    difficulty: hard
+    tags: [mediastinitis, Boerhaaves, Hammans sign, respirology]
+  - front: "What is the role of radiation-induced lung disease and when do the two phases occur?"
+    back: "Two phases: 1. Acute pneumonitis: typically 4–12 weeks post-exposure. 2. Late fibrosis: 6–12 months post-exposure. Infiltrates conform to the shape of the radiation field (distinguishing feature).\n\nRadiation-induced lung disease is an important complication of thoracic radiation therapy. The radiation field-shaped distribution of infiltrates is a key radiographic clue. Risk is increased with larger radiation volumes, higher doses, and concurrent chemotherapy."
+    difficulty: easy
+    tags: [radiation-induced ILD, pneumonitis, pulmonary fibrosis, respirology]
+  - front: "Which pleural fluid cell count findings suggest specific diagnoses?"
+    back: "Neutrophil predominance: acute processes (parapneumonic, PE). Lymphocytic effusion: TB, cancer, lymphoma, RA. Eosinophilic: pneumothorax, hemothorax, drug reactions, PE, eosinophilic granulomatosis, asbestos-related, malignancy, parasitic. High RBC: traumatic, malignancy, PE with infarction, TB, hemothorax.\n\nCell count and differential guide the diagnostic workup. A lymphocytic effusion strongly suggests TB or malignancy, warranting further investigations including pleural biopsy if cytology is non-diagnostic. Eosinophilic effusion has a broad differential."
+    difficulty: medium
+    tags: [pleural fluid, cell count, pleural effusion, respirology]
+  - front: "What is the difference between chylothorax and chyliform effusion on pleural fluid analysis?"
+    back: "Chylothorax: elevated triglycerides in pleural fluid due to thoracic duct leakage (mostly from trauma or lymphoma). Chyliform effusion: elevated cholesterol and chylomicrons but different pathology — seen in chronic inflammation (e.g., TB, RA).\n\nChylothorax results from injury to the thoracic duct, causing lymphatic fluid rich in chylomicrons to accumulate in the pleural space. It appears milky. Measuring triglycerides and cholesterol/chylomicrons helps distinguish the two entities."
+    difficulty: medium
+    tags: [chylothorax, pleural effusion, thoracic duct, respirology]
+  - front: "What are the defining blood gas criteria for respiratory failure?"
+    back: "Hypoxemia (PaO2 <60 mmHg) and/or hypercapnia (PaCO2 >50 mmHg), reflecting failure to maintain normal gas exchange.\n\nRespiratory failure is classified as hypoxemic (Type I: low PaO2, normal/low PaCO2) or hypercapnic (Type II: high PaCO2, low PaO2). Chronic respiratory failure activates compensatory mechanisms (e.g., renal bicarbonate retention) that blunt pH changes."
+    difficulty: easy
+    tags: [respiratory failure, ABG, hypoxemia, hypercapnia, critical care]
+  - front: "A patient has hypoxemia with an elevated A-a O2 gradient and no response to supplemental oxygen. What type of hypoxemia does this represent, and what is the mechanism?"
+    back: "Anatomic (right-to-left) shunt. Deoxygenated blood bypasses ventilated alveoli entirely, so supplemental O2 cannot correct the hypoxemia because no additional O2 reaches the shunted blood.\n\nIn anatomic shunts (e.g., VSD with R→L shunt, intrapulmonary shunts in hepatopulmonary syndrome), the shunted blood never contacts ventilated alveoli. Unlike V/Q mismatch or diffusion impairment, increasing FiO2 has minimal effect. PEEP/BiPAP may worsen shunt by increasing pulmonary vascular resistance."
+    difficulty: hard
+    tags: [shunt, hypoxemia, A-a gradient, oxygen therapy, respiratory failure]
+  - front: "What are the 6 types of hypoxemia, and which have an elevated A-a O2 gradient?"
+    back: "1. Low FiO2 (normal A-a), 2. Hypoventilation (normal A-a), 3. Physiologic shunt/V/Q mismatch (elevated A-a), 4. Anatomic R→L shunt (elevated A-a), 5. Low mixed venous O2 content (elevated A-a), 6. Diffusion impairment (elevated A-a). Types 1 and 2 have normal A-a gradient.\n\nThe A-a gradient is the difference between alveolar and arterial PO2. A normal gradient with hypoxemia points to low FiO2 or pure hypoventilation. An elevated gradient indicates a lung-based mechanism (V/Q mismatch, shunt, or diffusion problem) or low mixed venous O2 (e.g., in shock)."
+    difficulty: hard
+    tags: [A-a gradient, hypoxemia, V/Q mismatch, diffusion impairment, respiratory failure]
+  - front: "In hypoxemic respiratory failure with a physiologic shunt (e.g., ARDS, pneumonia), what is the expected PaCO2 and how does oxygen therapy respond?"
+    back: "PaCO2 is normal or decreased (due to hyperventilation), and supplemental O2 is less effective than in other types of hypoxemia because shunted blood cannot be oxygenated.\n\nV/Q mismatch with low V (physiologic shunt) creates areas where blood passes through unventilated lung. Increasing FiO2 helps somewhat by improving O2 delivery to partially ventilated areas, but true shunt units do not respond. PEEP recruits collapsed alveoli and reduces effective shunt fraction."
+    difficulty: medium
+    tags: [physiologic shunt, ARDS, PEEP, oxygen therapy, hypoxemia]
+  - front: "What are the three major pathophysiologic mechanisms causing hypercapnic respiratory failure?"
+    back: "1. Increased CO2 production (fever, sepsis, seizure, high carbohydrate load), 2. Increased dead space ventilation (COPD, CF — normal/increased minute ventilation but low alveolar ventilation), 3. Hypoventilation (low minute ventilation from neuromuscular disease, CNS depression, restrictive chest wall disease).\n\nDead space is ventilation without perfusion. In COPD, emphysematous destruction increases dead space, forcing greater minute ventilation to clear CO2; when reserves are exhausted, PaCO2 rises. Hypoventilation from opiates, benzodiazepines, or neuromuscular disease reduces total alveolar ventilation regardless of dead space."
+    difficulty: medium
+    tags: [hypercapnic respiratory failure, dead space, hypoventilation, CO2 production, pathophysiology]
+  - front: "When should noninvasive or mechanical ventilation be initiated for hypercapnic respiratory failure?"
+    back: "When PaCO2 >50 mmHg and pH <7.35 (i.e., uncompensated respiratory acidosis).\n\nA rising PaCO2 with acidosis indicates the patient cannot maintain adequate alveolar ventilation. NIV (BiPAP) is preferred first-line for COPD exacerbation, neuromuscular disease, and obesity-hypoventilation. Intubation is indicated if NIV fails or the patient cannot protect the airway."
+    difficulty: medium
+    tags: [hypercapnic respiratory failure, mechanical ventilation, BiPAP, NIV, pH]
+  - front: "What is the concern with giving high-flow oxygen to COPD patients with chronic hypercapnia ('CO2 retainers')?"
+    back: "High-flow O2 can worsen hypoxemia and hypercapnia via: (1) worsening V/Q mismatch (Haldane effect and hypoxic pulmonary vasoconstriction relief), (2) reduced hypoxic respiratory drive. However, O2 should NOT be denied if the patient is hypoxic — target SpO2 88-92%.\n\nThe Haldane effect describes CO2 displacement from hemoglobin by O2, raising PaCO2. Relief of hypoxic vasoconstriction redistributes blood to poorly ventilated areas, worsening V/Q mismatch. The physiologic importance is debated, but controlled O2 titration to SpO2 88-92% is the Canadian/international standard to avoid both hypoxia and CO2 retention."
+    difficulty: hard
+    tags: [COPD, oxygen therapy, CO2 retention, Haldane effect, hypoxic drive]
+  - front: "State the Berlin Criteria for ARDS diagnosis."
+    back: "All four must be met: (1) Acute onset within 7 days of clinical insult or new/worsening respiratory symptoms; (2) Bilateral opacities on CXR or CT not fully explained by effusions, collapse, or nodules; (3) Not fully explained by cardiac failure/fluid overload (objective assessment with echo if no risk factor); (4) PaO2/FiO2 ≤300 mmHg with PEEP ≥5 cmH2O.\n\nThe Berlin Definition replaced the 1994 AECC definition and eliminated the ALI category. Severity is stratified by P:F ratio: Mild 200-300 (mortality ~27-30%), Moderate 100-200 (mortality ~32-34%), Severe <100 (mortality ~45-48%). ALI (P:F <300) was removed as a separate entity."
+    difficulty: medium
+    tags: [ARDS, Berlin criteria, P:F ratio, diagnosis, critical care]
+  - front: "What are the direct vs. indirect causes of ARDS?"
+    back: "Direct (lung injury): aspiration, pneumonia, inhalation injury, pulmonary embolism (fat/amniotic fluid), reperfusion injury. Indirect (systemic): sepsis, shock, polytrauma, massive blood transfusion, pancreatitis, head trauma, drug overdose (opioids, sedatives, TCAs), intracranial hemorrhage.\n\nThe common pathophysiology is disruption of the alveolar-capillary barrier leading to non-cardiogenic pulmonary edema. Sepsis is the most common indirect cause. Aspiration of gastric contents is a classic direct cause, particularly in patients with decreased consciousness, upper GI disorders, or neurologic conditions."
+    difficulty: medium
+    tags: [ARDS, etiology, aspiration, sepsis, pancreatitis]
+  - front: "Describe the two phases of ARDS and their clinical characteristics."
+    back: "Exudative phase (first 7 days): alveolar-capillary endothelial and type I pneumocyte injury → protein-rich edema, dyspnea, tachypnea, respiratory fatigue/failure. Fibroproliferative phase (after day 7): ongoing dyspnea/hypoxemia but most patients wean from ventilation; some develop fibrosis requiring long-term O2 or ventilation (associated with increased mortality).\n\nDuring the exudative phase, loss of the tight alveolar barrier allows fluid and protein to flood alveoli, reducing compliance and causing shunting. The fibroproliferative phase involves type II pneumocyte proliferation and fibroblast activation. Most ARDS survivors regain near-normal lung function, though mild diffusion capacity reduction is common."
+    difficulty: medium
+    tags: [ARDS, exudative phase, fibroproliferative phase, pathophysiology, prognosis]
+  - front: "What is the cornerstone of ARDS mechanical ventilation management per the ARDS Network protocol?"
+    back: "Low tidal volume ventilation: <6 mL/kg of ideal body weight (predicted body weight). This reduces barotrauma/volutrauma. Optimize PEEP to recruit alveoli and allow lower FiO2. ARDS Network trial showed 22% mortality reduction vs. 12 mL/kg.\n\nHigh tidal volumes cause ventilator-induced lung injury (VILI) through cyclic stretch (volutrauma) and alveolar overdistension (barotrauma). PEEP prevents derecruitment atelectrauma. Plateau pressure should be kept <30 cmH2O. Adjuncts for refractory hypoxemia include prone positioning, inhaled nitric oxide, neuromuscular blockade (<48 h), and ECMO."
+    difficulty: medium
+    tags: [ARDS, mechanical ventilation, low tidal volume, PEEP, ARDS Network]
+  - front: "What is the overall mortality of ARDS and what are common causes of death?"
+    back: "Mortality is 30-40%, and death is usually due to non-pulmonary complications (multi-organ failure, sepsis) rather than refractory hypoxemia. Most survivors regain near-normal lung function with mildly reduced diffusion capacity.\n\nThe sequelae of ARDS include residual pulmonary impairment (especially reduced DLCO), severe debilitation, polyneuropathy (ICU-acquired weakness), and psychological difficulties (PTSD, depression). These gradually improve over months to years. The P:F ratio correlates with mortality: severe ARDS (<100) carries ~45-48% mortality."
+    difficulty: easy
+    tags: [ARDS, mortality, prognosis, complications, critical care]
+  - front: "Define obstructive sleep apnea (OSA) and its AHI-based severity classification."
+    back: "OSA is episodic upper airway obstruction during sleep causing absent/reduced airflow despite persistent respiratory effort. Severity by Apnea-Hypopnea Index (AHI): Mild 5-15 events/h, Moderate 15-30 events/h, Severe >30 events/h. OSA is present if AHI ≥5 events/h.\n\nThe AHI counts apneas (complete cessation of airflow ≥10 s) and hypopneas (≥30% airflow reduction from baseline for ≥10 s with O2 desaturation or arousal) per hour of sleep. OSA is more common in males, obese individuals, and those with craniofacial abnormalities or crowded oropharynx."
+    difficulty: easy
+    tags: [OSA, AHI, sleep apnea, classification, polysomnography]
+  - front: "What are the nocturnal and daytime symptoms of OSA?"
+    back: "Nocturnal: loud snoring, witnessed apneas, choking/gasping spells, nocturnal awakenings, nocturia, unrefreshing sleep. Daytime: excessive daytime somnolence, irritability, depression, memory loss, morning headaches.\n\nRepetitive arousal from sleep to restore airway patency causes sleep fragmentation and non-restorative sleep. Morning headaches reflect nocturnal CO2 retention and hypoxia. The Epworth Sleepiness Scale quantifies subjective daytime somnolence. Untreated OSA significantly impairs quality of life and increases motor vehicle accident risk."
+    difficulty: easy
+    tags: [OSA, symptoms, snoring, daytime somnolence, morning headaches]
+  - front: "What are the systemic complications of untreated OSA?"
+    back: "Hypertension (most common), cardiovascular disease (CAD, CHF, arrhythmia), stroke, type 2 diabetes mellitus, pulmonary hypertension, polycythemia, and increased motor vehicle collision risk.\n\nRecurrent hypoxia and sympathetic nervous system activation from arousals drive hypertension and cardiovascular disease. OSA is an independent risk factor for treatment-resistant hypertension. CPAP treatment reduces blood pressure, cardiovascular events, and daytime somnolence, and decreases motor vehicle accident risk."
+    difficulty: easy
+    tags: [OSA, complications, hypertension, cardiovascular disease, polycythemia]
+  - front: "Outline the treatment hierarchy for OSA."
+    back: "1. Modifiable risk factors: weight loss, avoid alcohol/sedatives, treat nasal congestion, positional therapy (avoid supine). 2. CPAP — most effective at reducing AHI but limited by compliance. 3. Oral appliances (mandibular advancement devices) — less effective but better tolerated by some. 4. Surgical (tonsillectomy, UPPP, tongue base/jaw procedures, tracheostomy) for select patients.\n\nCPAP acts as a pneumatic splint maintaining upper airway patency. Systematic reviews confirm CPAP reduces AHI, blood pressure, sleepiness, and motor vehicle accident risk. Oral appliances are appropriate for mild-moderate OSA or CPAP-intolerant patients. Bariatric surgery improves OSA in morbidly obese patients."
+    difficulty: medium
+    tags: [OSA, CPAP, oral appliances, surgery, treatment]
+  - front: "Differentiate central sleep apnea (CSA) subtypes: hypercapnic vs. hypocapnic (Cheyne-Stokes)."
+    back: "Hypercapnic CSA: decreased CNS drive to breathe, seen in hypoventilation syndromes (obesity, neuromuscular disease); associated with daytime hypercapnia and somnolence; treated with BiPAP. Hypocapnic CSA (Cheyne-Stokes): crescendo-decrescendo breathing alternating with apnea; seen in CHF, AF, stroke; CO2 swings drive periodic breathing; adaptive servo-ventilation (ASV) may cause harm (not recommended in CHF with reduced EF).\n\nCheyne-Stokes breathing occurs when cardiac output is low, delaying chemoreceptor feedback. During the hyperpneic phase, CO2 is blown off below the apneic threshold, causing central apnea, then CO2 rises again triggering hyperventilation. Treatment focuses on optimizing heart failure. ASV was shown to increase mortality in HFrEF (SERVE-HF trial)."
+    difficulty: hard
+    tags: [central sleep apnea, Cheyne-Stokes, CHF, BiPAP, ASV]
+  - front: "What is polysomnography (PSG) and what does it measure?"
+    back: "PSG is an in-laboratory sleep study attended by a technologist. It measures: sleep stages and arousals (EEG, EOG, EMG), airflow, ribcage and abdominal movement, ECG, SaO2, limb movements, snoring, body position, and video recording.\n\nPSG is the gold standard for diagnosing sleep disorders. Indications include: suspected sleep-disordered breathing, evaluation of non-respiratory causes of excessive daytime sleepiness, selected insomnia and parasomnias, PAP titration, and assessment of response to interventions. Home sleep apnea testing is limited to patients with suspected OSA without significant cardiopulmonary comorbidities."
+    difficulty: easy
+    tags: [polysomnography, sleep study, OSA diagnosis, AHI, sleep testing]
+  - front: "When is home sleep apnea testing (HSAT) appropriate vs. polysomnography?"
+    back: "HSAT is appropriate for evaluation of suspected OSA in patients without significant cardiopulmonary comorbidities. PSG is required when: non-respiratory causes of sleepiness are suspected, parasomnias or insomnia need evaluation, PAP titration is needed, or significant cardiopulmonary comorbidities exist that may confound HSAT.\n\nHSAT measures a limited number of cardiorespiratory parameters (airflow, oximetry, respiratory effort) without EEG. Because sleep time is estimated rather than measured, AHI from HSAT may underestimate severity. False negatives are more common in patients with complex sleep disorders or low-risk profiles for OSA."
+    difficulty: medium
+    tags: [HSAT, polysomnography, OSA, sleep testing, indications]
+  - front: "What is the obesity-hypoventilation syndrome (Pickwickian syndrome)?"
+    back: "OHS is defined as BMI >30 kg/m2 with daytime hypercapnia (PaCO2 >45 mmHg) not explained by another cause of hypoventilation. Nocturnal hypoventilation (often with superimposed OSA) blunts the central CO2 response over time. Treatment: nocturnal BiPAP, weight loss.\n\nThe term 'Pickwickian' comes from the obese, somnolent boy in Dickens' Pickwick Papers. Excess weight reduces chest wall compliance and functional residual capacity, promoting hypoventilation especially during sleep. OHS is distinguished from OSA alone by daytime hypercapnia. BiPAP provides both airway splinting and ventilatory support."
+    difficulty: medium
+    tags: [obesity-hypoventilation syndrome, Pickwickian, BiPAP, hypercapnia, sleep]
+  - front: "What are the goals and monitoring targets of an ICU arterial line?"
+    back: "Arterial lines provide continuous beat-to-beat blood pressure monitoring and easy access for serial ABG sampling. Common sites: radial (preferred) and femoral arteries.\n\nRadial arterial lines are preferred due to collateral ulnar circulation (Allen test). Femoral lines are used when radial access is not available or when the patient is in shock with poor peripheral perfusion. Arterial lines allow real-time waveform analysis for fluid responsiveness (pulse pressure variation)."
+    difficulty: easy
+    tags: [arterial line, ICU, blood pressure monitoring, ABG, critical care]
+  - front: "What does pulmonary capillary wedge pressure (PCWP) reflect and what are the absolute contraindications to pulmonary artery catheter insertion?"
+    back: "PCWP reflects left atrial and left ventricular diastolic pressure (barring pulmonary venous or mitral valve disease). Absolute contraindications: tricuspid/pulmonary valve mechanical prosthesis, right heart mass (thrombus or tumour), tricuspid/pulmonary valve endocarditis.\n\nThe pulmonary artery catheter (Swan-Ganz) is balloon-tipped; when wedged in a distal pulmonary artery, flow ceases and the catheter 'sees' downstream left atrial pressure. PCWP >18 mmHg suggests cardiogenic pulmonary edema (vs. ARDS). Its use has declined due to lack of mortality benefit and complications (arrhythmia, PA rupture, infection)."
+    difficulty: medium
+    tags: [pulmonary artery catheter, PCWP, Swan-Ganz, ICU, contraindications]
+  - front: "What is the SOFA score and what SOFA score reflects a >10% overall mortality risk in suspected infection?"
+    back: "SOFA (Sequential Organ Failure Assessment) scores dysfunction in 6 systems: respiratory (P:F ratio), coagulation (platelets), liver (bilirubin), cardiovascular (MAP/vasopressors), CNS (GCS), and renal (creatinine/urine output). A SOFA score ≥2 reflects an overall mortality risk of approximately 10% in suspected infection.\n\nThe Sepsis-3 definitions (2016) replaced SIRS criteria with SOFA for identifying organ dysfunction in sepsis. Each domain is scored 0-4 based on severity of dysfunction. A change from baseline SOFA ≥2 defines organ dysfunction attributable to infection, supporting sepsis diagnosis. SOFA requires laboratory data, making qSOFA more practical at the bedside."
+    difficulty: medium
+    tags: [SOFA score, sepsis, organ dysfunction, Sepsis-3, critical care]
+  - front: "What are the three qSOFA (quick SOFA) criteria used to screen for poor outcomes in suspected infection?"
+    back: "1. Respiratory rate ≥22/min, 2. Altered mental status (GCS <15), 3. Systolic blood pressure ≤100 mmHg. A positive qSOFA (≥2 criteria) should prompt full SOFA assessment.\n\nqSOFA is a bedside screening tool that does not require laboratory tests. Its positive predictive value for poor outcomes (prolonged ICU stay, death) is good, but sensitivity is lower than SOFA. Absence of ≥2 qSOFA criteria should NOT delay investigation or treatment if clinical suspicion for infection remains high."
+    difficulty: easy
+    tags: [qSOFA, sepsis screening, Sepsis-3, bedside assessment, critical care]
+  - front: "Define septic shock per Sepsis-3 criteria."
+    back: "Septic shock = sepsis + persisting hypotension requiring vasopressors to maintain MAP ≥65 mmHg AND serum lactate >2 mmol/L (18 mg/dL) despite adequate fluid resuscitation.\n\nSepsis-3 (JAMA 2016) defines sepsis as life-threatening organ dysfunction due to dysregulated host response to infection (SOFA ≥2). Septic shock is a subset with circulatory/cellular/metabolic abnormalities that substantially increase mortality (in-hospital mortality >40%). Both vasopressor requirement AND elevated lactate must be present, distinguishing it from simple sepsis."
+    difficulty: easy
+    tags: [septic shock, Sepsis-3, vasopressors, MAP, lactate]
+  - front: "What are the initial resuscitation targets in the first 6 hours for sepsis-induced hypotension or lactate >4 mmol/L?"
+    back: "CVP 8-12 mmHg (with IV crystalloids/colloids), MAP ≥65 mmHg (vasopressors: first-line norepinephrine), urine output ≥0.5 mL/kg/h, central venous O2 saturation (SVC) ≥70% or mixed venous ≥65%, and normalize lactate in patients with elevated lactate.\n\nThese are the Surviving Sepsis Campaign goals based on early goal-directed therapy (EGDT) principles. Norepinephrine is the first-line vasopressor for septic shock. Corticosteroids are NOT indicated if hemodynamic stability is achieved with fluids and vasopressors. Empiric antibiotics should be administered within the first hour of sepsis recognition."
+    difficulty: medium
+    tags: [sepsis resuscitation, Surviving Sepsis Campaign, norepinephrine, CVP, MAP]
+  - front: "What is the first-line vasopressor for septic shock, and when should corticosteroids be added?"
+    back: "Norepinephrine (Levophed) is first-line. Corticosteroid replacement therapy is NOT indicated if adequate hemodynamic stability is achieved with fluid resuscitation and vasopressor therapy.\n\nNorepinephrine increases MAP primarily through vasoconstriction (alpha-1) with modest inotropy (beta-1). Vasopressin can be added as a second agent to reduce norepinephrine dose. Hydrocortisone is considered in refractory septic shock (vasopressor-dependent despite adequate fluids) to address relative adrenal insufficiency."
+    difficulty: medium
+    tags: [septic shock, norepinephrine, vasopressors, corticosteroids, sepsis management]
+  - front: "What are the four categories of shock and their hemodynamic profiles (HR, BP, CO, extremities)?"
+    back: "Hypovolemic: ↑HR, ↓BP, ↓CO, cold extremities. Cardiogenic: ↑HR, ↓BP, ↓CO, cold extremities + bilateral crackles/signs of LHF. Obstructive: ↑HR, ↓BP, ↓CO, variable (may have pulsus paradoxus, Kussmaul's sign, or tracheal deviation). Distributive: ↑HR, ↓BP, ↑CO (initially), warm extremities.\n\nDistributive shock (sepsis, anaphylaxis, neurogenic) has vasodilation with initially high cardiac output and warm periphery. The diagnostic 'warm shock' of distributive states contrasts with the 'cold shock' of hypovolemic and cardiogenic states. Obstructive shock (PE, tamponade, tension pneumothorax) impedes cardiac filling or outflow."
+    difficulty: medium
+    tags: [shock, hemodynamics, cardiogenic shock, distributive shock, obstructive shock]
+  - front: "What is SIRS and what are its diagnostic criteria?"
+    back: "Systemic Inflammatory Response Syndrome: a generalized inflammatory reaction caused by infectious or non-infectious triggers, defined by ≥2 of: Temperature >38°C or <36°C, Heart rate >90/min, Respiratory rate >20/min or PaCO2 <32 mmHg, WBC >12,000/mL or <4,000/mL or >10% bands.\n\nSIRS is a clinical descriptor, not a diagnosis. While superseded by qSOFA/SOFA for sepsis identification (Sepsis-3), SIRS criteria remain useful for recognizing systemic inflammation from non-infectious causes (e.g., pancreatitis, burns, surgery). Sepsis was previously defined as SIRS due to infection; the newer definition focuses on organ dysfunction."
+    difficulty: easy
+    tags: [SIRS, sepsis, systemic inflammation, diagnostic criteria, critical care]
+  - front: "What are the mechanisms by which tension pneumothorax causes obstructive shock, and what is the emergency treatment?"
+    back: "Tension pneumothorax causes progressive air accumulation in the pleural space, compressing the ipsilateral lung and shifting mediastinum contralaterally, impairing venous return to the right heart and reducing cardiac output. Emergency treatment: immediate needle decompression (2nd intercostal space, midclavicular line) followed by tube thoracostomy.\n\nObstructive shock impedes cardiac filling (preload) or ejection. Tension pneumothorax is recognized by tracheal deviation away from affected side, absent breath sounds, hypotension, and JVD. It is a clinical diagnosis — do NOT wait for CXR. The obstructive shock table shows increased JVP, absent/reduced breath sounds, and possible pulsus paradoxus."
+    difficulty: medium
+    tags: [tension pneumothorax, obstructive shock, needle decompression, tube thoracostomy, emergency]
+  - front: "What is the formula for mean arterial pressure (MAP) and what MAP target is used in septic shock?"
+    back: "MAP = 1/3 sBP + 2/3 dBP = dBP + 1/3 pulse pressure. Target MAP ≥65 mmHg in septic shock (using vasopressors if fluid resuscitation is insufficient).\n\nMAP reflects average perfusion pressure throughout the cardiac cycle. Since diastole is ~2/3 of the cycle, diastolic pressure is weighted more heavily. MAP ≥65 mmHg ensures adequate perfusion to vital organs including the kidneys (urine output target ≥0.5 mL/kg/h) and brain. Higher MAP targets (e.g., ≥80) may benefit patients with chronic hypertension."
+    difficulty: easy
+    tags: [MAP, septic shock, hemodynamics, vasopressors, ICU formulas]
+  - front: "What is the P:F ratio (P/F ratio) and how is it used in clinical practice?"
+    back: "P:F ratio = PaO2 / FiO2. It quantifies oxygenation efficiency. Normal: ~400-500 mmHg. Used in ARDS Berlin classification (Mild: 200-300, Moderate: 100-200, Severe: <100) and SOFA respiratory scoring (≥400=0, <400=1, <300=2, <200 with RS=3, <100 with RS=4).\n\nThe P:F ratio normalizes PaO2 for the fraction of oxygen delivered. A P:F <300 suggests significant pulmonary dysfunction. In ARDS, all severity categories require PEEP ≥5 cmH2O. P:F ratio is also used in the SOFA score and is a key monitoring parameter in mechanically ventilated patients."
+    difficulty: easy
+    tags: [P:F ratio, ARDS, SOFA, oxygenation, mechanical ventilation]
+  - front: "What are the indications for a pulmonary artery catheter (Swan-Ganz) in the ICU?"
+    back: "Diagnosis and management of: shock (differentiating shock types), primary pulmonary hypertension, valvular disease, intracardiac shunts, cardiac tamponade, PE; assessment of hemodynamic response to therapies; differentiating high-pressure (cardiogenic) vs. low-pressure (ARDS) pulmonary edema; complicated MI; multiorgan failure; severe burns; hemodynamic instability post-cardiac surgery.\n\nDespite these indications, the pulmonary artery catheter is now seldom used due to associated complications (arrhythmias, pulmonary artery rupture, thrombosis, infection) and lack of demonstrated mortality benefit in randomized trials. It has largely been replaced by point-of-care echocardiography and less invasive hemodynamic monitoring."
+    difficulty: medium
+    tags: [pulmonary artery catheter, Swan-Ganz, indications, hemodynamic monitoring, ICU]
+  - front: "What is the mechanism of action and key clinical role of short-acting beta-2 agonists (SABAs) in respiratory disease?"
+    back: "SABAs (e.g., salbutamol/albuterol) stimulate beta-2 receptors in bronchial smooth muscle, causing bronchodilation. They are used as rescue bronchodilators in acute COPD exacerbations and asthma. Onset: minutes; duration: 4-6 hours.\n\nBeta-2 receptor activation increases cAMP, relaxing airway smooth muscle. Cardiovascular side effects (tachycardia, palpitations, hypokalemia) result from beta-1 crossover and systemic absorption. Salbutamol (Ventolin) is the prototypical SABA in Canada. Overuse of SABAs without ICS in asthma is a marker of poor control."
+    difficulty: easy
+    tags: [SABA, salbutamol, bronchodilator, asthma, COPD]
+  - front: "What are the side effects of inhaled corticosteroids (ICS) and what systemic complication is of particular concern in COPD?"
+    back: "Local: oropharyngeal candidiasis, dysphonia, throat irritation. Systemic: growth velocity reduction in children/adolescents, HPA axis suppression, and in COPD patients specifically — increased risk of pneumonia.\n\nICS reduce airway inflammation and are cornerstone therapy in asthma. In COPD, ICS (particularly fluticasone) are associated with increased pneumonia risk without mortality benefit when used in moderate COPD. They are indicated in COPD with frequent exacerbations, eosinophilia, or concomitant asthma features. Rinsing the mouth after use reduces candidiasis."
+    difficulty: medium
+    tags: [inhaled corticosteroids, ICS, pneumonia risk, candidiasis, COPD]
+  - front: "What is the role of roflumilast (Daxas) in COPD and what are its key side effects?"
+    back: "Roflumilast is a PDE-4 inhibitor indicated for chronic bronchitis with frequent exacerbations (reduces exacerbation rate). Dose: 500 mcg PO once daily. Key side effects: weight loss, suicidal ideation (black box warning).\n\nPhosphodiesterase-4 inhibition increases intracellular cAMP in inflammatory cells, reducing neutrophilic airway inflammation. Roflumilast is not a bronchodilator but reduces exacerbation frequency in the COPD chronic bronchitis phenotype (productive cough ≥3 months/year for 2+ consecutive years). Weight loss is common and limits use in underweight patients."
+    difficulty: medium
+    tags: [roflumilast, PDE-4 inhibitor, COPD, chronic bronchitis, exacerbations]
+  - front: "What is the first-line antibiotic for community-acquired pneumonia (CAP) in Canada, and what are alternatives?"
+    back: "For outpatient CAP: macrolide (azithromycin, clarithromycin) or doxycycline as first-line. Fluoroquinolone (levofloxacin, moxifloxacin) is an alternative. For inpatient CAP: beta-lactam + macrolide, or respiratory fluoroquinolone monotherapy.\n\nMacrolides cover Streptococcus pneumoniae, atypical organisms (Mycoplasma, Chlamydophila, Legionella). Doxycycline is an alternative with similar coverage. Fluoroquinolones cover both typical and atypical pathogens and are used when macrolide resistance is a concern or patient has risk factors for resistant organisms. Key macrolide side effect: prolonged QT interval."
+    difficulty: medium
+    tags: [community-acquired pneumonia, antibiotics, macrolide, azithromycin, fluoroquinolone]
+  - front: "What antibiotics are used for hospital-acquired pneumonia (HAP) with suspected Pseudomonas vs. suspected MRSA?"
+    back: "Suspected Pseudomonas: piperacillin-tazobactam (4.5 g IV q6-8h), imipenem (500 mg IV q6h), or meropenem (1 g IV q8h), combined with a fluoroquinolone or macrolide. Suspected MRSA: add vancomycin (1 g IV BID x7-10 days). 4th-gen cephalosporin (cefepime) covers MSSA.\n\nHAP (occurring ≥48h after hospital admission) involves more resistant organisms. Risk factors for Pseudomonas: structural lung disease, recent broad-spectrum antibiotics, ICU admission. MRSA risk: prior MRSA colonization, dialysis, skin/soft tissue infection. Vancomycin's 'red man syndrome' (flushing, hypotension) is rate-related, not allergic — slow the infusion."
+    difficulty: medium
+    tags: [hospital-acquired pneumonia, Pseudomonas, MRSA, vancomycin, piperacillin-tazobactam]
+  - front: "What is the mechanism of action and key toxicity of theophylline?"
+    back: "Theophylline is a methylxanthine that inhibits phosphodiesterase, increases cAMP, and blocks adenosine receptors, causing bronchodilation and mild anti-inflammatory effects. Used for reversible airway obstruction in COPD. Toxicity (narrow therapeutic window): nausea/vomiting, seizures, arrhythmias. Toxic levels cause persistent vomiting and seizures.\n\nTheophylline has a narrow therapeutic index (target serum level 5-15 mg/L). Many drug interactions alter its metabolism (erythromycin, ciprofloxacin increase levels; rifampin, phenytoin decrease levels). Seizures from theophylline toxicity can be refractory. GI upset is a common dose-related side effect even at therapeutic levels."
+    difficulty: medium
+    tags: [theophylline, COPD, bronchodilator, toxicity, narrow therapeutic window]
+  - front: "What is the role of omalizumab (Xolair) in asthma and how is it administered?"
+    back: "Omalizumab is an anti-IgE biologic monoclonal antibody indicated for moderate-to-severe persistent allergic asthma not controlled with standard therapy. Dose: 150-375 mg SC every 2-4 weeks (weight- and IgE-dependent). Key side effects: anaphylaxis, HA, sinusitis, URTI, thrombocytopenia.\n\nOmalizumab binds free IgE, preventing it from binding to mast cell and basophil receptors and inhibiting the allergic cascade. It reduces exacerbations, hospitalizations, and oral corticosteroid use in IgE-mediated asthma. Anaphylaxis risk mandates 30-min observation after each injection. Other biologics (dupilumab, mepolizumab) target eosinophilic asthma."
+    difficulty: medium
+    tags: [omalizumab, anti-IgE, severe asthma, biologics, allergic asthma]
+  - front: "What are the indications for systemic corticosteroids in respiratory disease and their major side effects?"
+    back: "Indications: acute COPD exacerbation, severe/persistent asthma, status asthmaticus, Pneumocystis jirovecii pneumonia (PCP). Typical dose: prednisone 40-60 mg/d PO or methylprednisolone 125 mg q8h IV. Major side effects: Cushing's syndrome, DM/glucose intolerance, HPA axis suppression, avascular necrosis, osteoporosis, cataracts, glaucoma, psychiatric effects, easy bruising.\n\nShort courses (5-7 days) for COPD exacerbation reduce treatment failure and hospitalization duration. PCP adjunctive corticosteroids are indicated when PaO2 <70 mmHg or A-a gradient >35 mmHg, reducing mortality. Long-term systemic corticosteroids require monitoring for metabolic, bone, and ophthalmologic complications."
+    difficulty: medium
+    tags: [systemic corticosteroids, prednisone, asthma, COPD, PCP]
+  - front: "What is montelukast's mechanism and indication, and what are its neuropsychiatric side effects?"
+    back: "Montelukast is a leukotriene receptor antagonist (LTRA) that blocks cysteinyl leukotriene receptors, reducing bronchoconstriction and inflammation. Indicated for chronic asthma and prophylaxis of exercise-induced bronchoconstriction. Dose: 10 mg PO once daily. Neuropsychiatric side effects: anxiety, depression, agitation, attention/memory impairment, insomnia — prompted an FDA/Health Canada black box warning.\n\nLeukotrienes (LTC4, LTD4, LTE4) are potent bronchoconstrictors produced via the 5-lipoxygenase pathway. Montelukast is particularly useful in aspirin-exacerbated respiratory disease (aspirin/NSAID-sensitive asthma) and allergic rhinitis comorbidity. It is less effective than ICS for asthma control but has a role as an add-on therapy."
+    difficulty: medium
+    tags: [montelukast, leukotriene antagonist, asthma, neuropsychiatric side effects, exercise-induced asthma]
+  - front: "Compare CPAP vs. BiPAP: mechanism, indications in sleep/respiratory disorders."
+    back: "CPAP delivers a single constant positive pressure throughout inspiration and expiration — splints upper airway open. Indicated for OSA. BiPAP delivers higher inspiratory pressure (IPAP) and lower expiratory pressure (EPAP) — provides ventilatory support in addition to airway splinting. Indicated for: hypoventilation syndromes (obesity-hypoventilation, neuromuscular disease), hypercapnic respiratory failure, hypercapnic CSA, acute COPD exacerbation with hypercapnia.\n\nCPAP is sufficient when the problem is airway obstruction (OSA) without hypoventilation. BiPAP augments tidal volume by cycling between IPAP and EPAP, reducing work of breathing and improving alveolar ventilation. The pressure support (IPAP-EPAP difference) drives tidal volume. BiPAP is the mode of choice for acute hypercapnic exacerbations of COPD (reduces intubation rate and mortality)."
+    difficulty: medium
+    tags: [CPAP, BiPAP, NIV, OSA, hypoventilation syndromes]
+  - front: "A patient presents with hypoxemia and septic shock. Their mixed venous O2 is very low. How does this type of hypoxemia differ mechanistically from other types?"
+    back: "Low mixed venous O2 content (Type 5 hypoxemia) occurs when peripheral tissues extract more O2 (e.g., in shock with reduced cardiac output). Even normal lungs cannot fully reoxygenate blood that arrives severely desaturated. The A-a gradient is elevated because venous blood is so desaturated that even matched V/Q units return reduced PaO2. Treatment: improve cardiac output/O2 delivery.\n\nIn shock, reduced CO forces higher O2 extraction (widened a-vO2 difference, low SvO2). This mixed venous desaturation 'loads' pulmonary capillaries with more deoxygenated blood. Supplemental O2 and BiPAP may help modestly, but the key intervention is increasing cardiac output (fluids, vasopressors, inotropes). This explains why SvO2 monitoring guides resuscitation in sepsis."
+    difficulty: hard
+    tags: [mixed venous O2, hypoxemia, shock, cardiac output, oxygen delivery]
+  - front: "What are the sepsis bundle management priorities (Surviving Sepsis Campaign) in the first hour?"
+    back: "Within 1 hour: (1) Measure lactate (if >2 mmol/L or septic shock suspected, initiate full bundle); (2) Blood cultures x2 before antibiotics; (3) Administer broad-spectrum IV antibiotics; (4) 30 mL/kg IV crystalloid for hypotension or lactate ≥4 mmol/L; (5) Start vasopressors (norepinephrine) if MAP <65 mmHg despite fluids.\n\nEarly source identification (blood cultures, imaging) guides de-escalation. Antibiotics within 1 hour of sepsis recognition is associated with improved survival. The 1-hour bundle replaced the previous 3-hour and 6-hour bundles (2018 update). Lactate normalization serves as a resuscitation endpoint when initial lactate is elevated."
+    difficulty: medium
+    tags: [sepsis bundle, Surviving Sepsis Campaign, antibiotics, blood cultures, lactate]
+  - front: "What are the ICU sedative options for mechanically ventilated patients and their key side effects?"
+    back: "Fentanyl (opioid): 50-100 mcg bolus then infusion — sedation/analgesia; bradycardia, respiratory depression, hypotension, apnea. Propofol (anesthetic): 1-3 mg/kg then 0.3-5 mg/kg/h IV — sedation (good for ventilator sedation, allows rapid awakening); bradycardia, hypotension, propofol infusion syndrome (rare).\n\nPropofol's short context-sensitive half-life makes it ideal for daily sedation interruption ('awakening trials') and neurological assessment. Fentanyl provides analgesia and sedation, addressing pain which is a major driver of agitation in ventilated patients. Benzodiazepines (lorazepam, midazolam) are now avoided in favor of analgesia-first sedation protocols to reduce ICU delirium."
+    difficulty: medium
+    tags: [ICU sedation, propofol, fentanyl, mechanical ventilation, critical care medications]
+  - front: "What are the side effects of vancomycin, and what is 'red man syndrome'?"
+    back: "Vancomycin side effects: ototoxicity, nephrotoxicity (interstitial nephritis, renal failure), red man syndrome, CNS effects (drug fever, chills), hematologic (eosinophilia). Red man syndrome: flushing, erythema, and hypotension due to histamine release from rapid infusion — NOT an allergic reaction; managed by slowing the infusion rate.\n\nVancomycin requires therapeutic drug monitoring (trough levels or AUC/MIC ratio). It is used for MRSA, serious Gram-positive infections, and C. difficile colitis (oral route). Red man syndrome occurs with infusion rates >10 mg/min. Premedication with antihistamines can prevent it. True vancomycin allergy (urticaria, anaphylaxis) is rare but precludes use."
+    difficulty: medium
+    tags: [vancomycin, red man syndrome, MRSA, nephrotoxicity, ototoxicity]
+  - front: "A patient in the ICU has septic shock with MAP 55 mmHg after 2L IV crystalloid. What vasopressor is first-line and what is the target MAP?"
+    back: "First-line vasopressor: norepinephrine (Levophed). Target MAP: ≥65 mmHg. Norepinephrine primarily acts on alpha-1 receptors (vasoconstriction) with some beta-1 activity (inotropy), effectively raising MAP in distributive shock.\n\nDopamine was previously used but is now avoided as first-line due to higher rates of arrhythmia and increased mortality in cardiogenic shock subgroups (SOAP II trial). Vasopressin (0.03 units/min) can be added as a norepinephrine-sparing agent. Phenylephrine (pure alpha-1) is used in anesthesia-related hypotension or when tachycardia is a concern."
+    difficulty: medium
+    tags: [septic shock, norepinephrine, vasopressors, MAP, sepsis management]
+  - front: "What did the ARDS Network trial (NEJM 2000) demonstrate about tidal volume strategy in ARDS?"
+    back: "Low tidal volume ventilation (6 mL/kg) reduced mortality compared to traditional tidal volume (12 mL/kg): 31.0% vs. 39.8% mortality (P=0.007), and increased ventilator-free days.\n\nLung-protective ventilation using low tidal volumes (6 mL/kg of ideal body weight) is now standard of care for ARDS in Canadian ICUs, reducing barotrauma and volutrauma-related mortality. This is a cornerstone trial that established the low-tidal-volume strategy for all mechanically ventilated ARDS patients."
+    difficulty: easy
+    tags: [ARDS, mechanical ventilation, tidal volume, ICU, landmark trial]
+  - front: "What was the key finding of the ACURASYS trial regarding neuromuscular blockade in early severe ARDS?"
+    back: "Early cisatracurium besylate for 48 hours in severe ARDS reduced 90-day mortality (31.6% vs. 40.7%) and decreased ventilator time, without increasing ICU-acquired paresis.\n\nACURASYS (NEJM 2010) demonstrated that early neuromuscular blockade improves survival in severe ARDS. This is relevant to Canadian ICU practice for patients with P/F ratio <150 mmHg, though subsequent ROSE trial showed no benefit in all ARDS — context of severe ARDS is key."
+    difficulty: medium
+    tags: [ARDS, neuromuscular blockade, cisatracurium, ICU, landmark trial]
+  - front: "What did the OSCILLATE trial (NEJM 2013) show about high-frequency oscillatory ventilation (HFOV) in moderate-to-severe ARDS?"
+    back: "HFOV increased in-hospital mortality compared to conventional ventilation: 47% vs. 35% (RR 1.33; P=0.005). Early HFOV may be harmful in moderate-to-severe ARDS.\n\nOSCILLATE showed that HFOV, despite theoretical advantages (sustained lung recruitment, reduced volutrauma), actually worsened outcomes in ARDS, likely due to increased sedation and vasopressor requirements. This trial led to abandonment of routine HFOV use in ARDS in Canadian ICUs."
+    difficulty: medium
+    tags: [ARDS, HFOV, mechanical ventilation, ICU, landmark trial]
+  - front: "What were the main results of the PROSEVA trial on prone positioning in severe ARDS?"
+    back: "Prone positioning sessions >16 hours/day in severe ARDS reduced 28-day mortality from 32.8% to 16.0% (HR 0.39; P<0.001) and 90-day mortality from 41.0% to 23.6% (HR 0.44; P<0.001).\n\nPROSEVA (NEJM 2013) established prolonged prone positioning (>16 hrs/day) as a life-saving intervention in severe ARDS (P/F ratio <150 with FiO2 ≥0.6 and PEEP ≥5). This is now standard care in Canadian ICUs for severe ARDS, markedly reducing mortality without significant increase in complications."
+    difficulty: easy
+    tags: [ARDS, prone positioning, ICU, landmark trial, mechanical ventilation]
+  - front: "What safety concern did the SMART trial (Chest 2006) identify about salmeterol in asthma?"
+    back: "Salmeterol added to usual asthma care increased the risk of respiratory-related and asthma-related deaths, particularly among African American patients not using baseline ICS.\n\nThe SMART trial led to a black box warning for LABAs as monotherapy in asthma. In Canadian asthma guidelines (CTS), LABAs must always be combined with ICS in asthma management. LABAs should never be used as monotherapy for asthma."
+    difficulty: easy
+    tags: [asthma, salmeterol, LABA, safety, landmark trial]
+  - front: "What did the EXTRA trial (Ann Intern Med 2011) demonstrate about omalizumab in severe allergic asthma?"
+    back: "Omalizumab added to high-dose ICS plus LABA in inadequately controlled severe allergic asthma reduced exacerbation rates (0.66 vs. 0.88; P=0.006) without increasing serious adverse events.\n\nOmalizumab is a monoclonal anti-IgE antibody indicated for severe allergic asthma inadequately controlled on maximum inhaler therapy. In Canada, it is approved for adults and children ≥6 years with severe persistent allergic asthma confirmed by elevated IgE and positive skin test/RAST."
+    difficulty: medium
+    tags: [asthma, omalizumab, biologics, severe asthma, landmark trial]
+  - front: "What is the mechanism of action of tezepelumab, and what did the PATHWAY trial show?"
+    back: "Tezepelumab is an anti-TSLP (thymic stromal lymphopoietin) monoclonal antibody. In PATHWAY (NEJM 2017), it reduced asthma exacerbation rates by 62–71% vs. placebo in patients uncontrolled on LABA and medium-to-high dose ICS.\n\nTezepelumab targets TSLP, an upstream epithelial cytokine that drives type 2 and non-type 2 inflammation. It is unique among biologics in that it works regardless of eosinophil count, making it appropriate for a broader asthma population with uncontrolled disease despite LABA+ICS therapy."
+    difficulty: hard
+    tags: [asthma, tezepelumab, biologics, TSLP, landmark trial]
+  - front: "What did the Novel START trial (NEJM 2019) show about as-needed budesonide-formoterol vs. SABA alone in mild asthma?"
+    back: "As-needed budesonide-formoterol reduced annualized exacerbation rate vs. albuterol alone (RR 0.49; P<0.01) and was non-inferior to regular budesonide maintenance therapy.\n\nThis trial established that as-needed ICS-formoterol (rather than SABA alone) is a safe and effective strategy in mild asthma. Canadian CTS guidelines now recommend as-needed low-dose ICS-formoterol as a preferred option for mild asthma, reducing cumulative ICS dose while maintaining exacerbation protection."
+    difficulty: medium
+    tags: [asthma, budesonide-formoterol, mild asthma, ICS, landmark trial]
+  - front: "What did the PrimoTinA-asthma trials show about adding tiotropium to LABA+ICS in uncontrolled asthma?"
+    back: "Adding tiotropium to LABA+ICS improved peak FEV1 (86–154 mL above placebo) and delayed time to first severe exacerbation by 56 days in patients with asthma uncontrolled on dual therapy.\n\nTiotropium (a long-acting muscarinic antagonist, LAMA) added as a third controller agent (triple therapy) in asthma uncontrolled on LABA+ICS improves lung function and reduces exacerbations. This is recommended in Canadian guidelines as a step-up option before escalating to biologics."
+    difficulty: medium
+    tags: [asthma, tiotropium, LAMA, triple therapy, landmark trial]
+  - front: "What were the key findings of the TORCH trial regarding LABA+ICS combination therapy in COPD?"
+    back: "Salmeterol+fluticasone combination showed a trend toward reduced all-cause mortality vs. placebo (12.6% vs. 15.2%; HR 0.825; P=0.052, not significant) and significantly reduced exacerbations. Neither salmeterol nor fluticasone alone reduced mortality.\n\nTORCH (NEJM 2007) showed that ICS+LABA combination improves symptoms and reduces exacerbations in COPD, though the mortality benefit did not reach statistical significance. It established ICS+LABA as superior to monotherapy for exacerbation-prone COPD, which is reflected in Canadian CTS COPD guidelines."
+    difficulty: medium
+    tags: [COPD, ICS, LABA, salmeterol, fluticasone, landmark trial]
+  - front: "What did the UPLIFT trial (NEJM 2008) demonstrate about tiotropium's effect on FEV1 decline in COPD?"
+    back: "Tiotropium maintained better FEV1 (87–103 mL better before bronchodilation) and reduced exacerbations compared to placebo over 4 years, but did not significantly alter the rate of FEV1 decline.\n\nUPLIFT established that tiotropium (LAMA) improves symptoms and reduces exacerbations in COPD but does not modify disease progression as measured by FEV1 decline rate. This distinction is important: LAMAs are preferred for symptom control and exacerbation prevention, not disease modification."
+    difficulty: medium
+    tags: [COPD, tiotropium, LAMA, FEV1, landmark trial]
+  - front: "In the POET-COPD trial (NEJM 2011), which agent was superior for preventing COPD exacerbations: tiotropium or salmeterol?"
+    back: "Tiotropium was superior to salmeterol: it increased time to first exacerbation with a 17% risk reduction (HR 0.83; P<0.001) and reduced moderate and severe exacerbations (0.64 vs. 0.72; P=0.002).\n\nPOET-COPD demonstrated that LAMAs (tiotropium) are preferred over LABAs (salmeterol) for preventing exacerbations in moderate-to-severe COPD. Canadian CTS guidelines recommend LAMAs as first-line bronchodilator therapy for COPD patients with exacerbations."
+    difficulty: medium
+    tags: [COPD, tiotropium, salmeterol, exacerbations, landmark trial]
+  - front: "What did the REDUCE trial (JAMA 2013) establish about corticosteroid duration for acute COPD exacerbations?"
+    back: "A 5-day course of prednisone 40 mg was non-inferior to a 14-day course for acute COPD exacerbations, with no difference in time to next exacerbation, mortality, or recovery of lung function.\n\nREDUCE established that shorter (5-day) oral corticosteroid courses are as effective as conventional 14-day courses for acute COPD exacerbations. Current Canadian guidelines recommend 5 days of prednisone 40 mg for COPD exacerbations, minimizing corticosteroid side effects."
+    difficulty: easy
+    tags: [COPD, exacerbation, prednisone, corticosteroids, landmark trial]
+  - front: "What did the FLAME trial (NEJM 2016) show about LABA+LAMA vs. LABA+ICS in COPD?"
+    back: "Indacaterol-glycopyrronium (LABA+LAMA) reduced COPD exacerbation rate by 11% compared to salmeterol-fluticasone (LABA+ICS): rate ratio 0.89 (P=0.003), with lower moderate-severe exacerbations.\n\nFLAME demonstrated that dual bronchodilation (LABA+LAMA) is superior to LABA+ICS for preventing exacerbations in COPD patients at high risk (≥1 exacerbation in prior year). Canadian CTS guidelines now favor LABA+LAMA over LABA+ICS as dual therapy in most COPD patients, reserving ICS for those with concomitant asthma features or eosinophilia."
+    difficulty: medium
+    tags: [COPD, LABA, LAMA, ICS, dual bronchodilation, landmark trial]
+  - front: "What did the IMPACT trial (NEJM 2018) demonstrate about triple therapy (ICS+LAMA+LABA) in COPD?"
+    back: "Triple therapy (fluticasone+umeclidinium+vilanterol) reduced moderate-to-severe exacerbations vs. dual therapy: rate 0.91/yr vs. 1.07/yr (fluticasone+vilanterol) and 1.21/yr (umeclidinium+vilanterol). Hospitalization rate was also lower.\n\nIMPACT established triple inhaler therapy (ICS+LAMA+LABA) as the most effective regimen for reducing exacerbations and hospitalizations in high-risk COPD. In Canadian practice, triple therapy is recommended for patients with frequent exacerbations not controlled on dual therapy."
+    difficulty: medium
+    tags: [COPD, triple therapy, ICS, LAMA, LABA, landmark trial]
+  - front: "What critical safety finding did the PANTHER trial (NEJM 2012) reveal about combination therapy for IPF?"
+    back: "Triple therapy (prednisone + azathioprine + N-acetylcysteine) for IPF increased mortality (8 vs. 1 deaths) and hospitalization (23 vs. 7) compared to placebo. The trial was terminated early.\n\nPANTHER overturned prior assumptions that immunosuppression might benefit IPF. It confirmed IPF is not primarily an inflammatory disease and that immunosuppression is harmful. Canadian guidelines now contraindicate triple therapy (prednisone+azathioprine+NAC) in IPF."
+    difficulty: medium
+    tags: [IPF, interstitial lung disease, azathioprine, prednisone, landmark trial]
+  - front: "What did the INPULSIS trials show about nintedanib in IPF?"
+    back: "Nintedanib 150 mg BID significantly slowed FVC decline in IPF compared to placebo: difference of ~125 mL/year (INPULSIS-1) and ~94 mL/year (INPULSIS-2), with a reduction in acute IPF exacerbations but no mortality difference.\n\nNintedanib is a tyrosine kinase inhibitor that slows fibrosis progression in IPF. Along with pirfenidone, it is a first-line antifibrotic agent for IPF in Canada. The main side effect is GI toxicity (diarrhea, nausea). It also showed benefit in progressive fibrosing ILDs (INBUILD trial)."
+    difficulty: medium
+    tags: [IPF, nintedanib, antifibrotic, FVC, landmark trial]
+  - front: "What did the ASCEND trial (NEJM 2014) demonstrate about pirfenidone in IPF?"
+    back: "Pirfenidone 2403 mg/day reduced the proportion of patients with ≥10% FVC decline by 47.9% compared to placebo (P<0.001) and improved progression-free survival, with no significant difference in mortality in this trial alone.\n\nPirfenidone is an antifibrotic agent (mechanism not fully understood, likely anti-TGF-β effects) that slows disease progression in IPF. It is approved in Canada alongside nintedanib as first-line antifibrotic therapy. Main side effects include photosensitivity and GI upset."
+    difficulty: medium
+    tags: [IPF, pirfenidone, antifibrotic, FVC, landmark trial]
+  - front: "What did the INBUILD trial (NEJM 2019) show about nintedanib in progressive fibrosing ILDs beyond IPF?"
+    back: "Nintedanib reduced annual FVC decline in progressive fibrosing ILDs of any cause: -80.8 mL/year vs. -187.8 mL/year with placebo; benefit was most pronounced in patients with UIP pattern on imaging.\n\nINBUILD established that nintedanib's antifibrotic benefit extends to non-IPF progressive fibrosing ILDs (e.g., connective tissue disease-associated ILD, hypersensitivity pneumonitis with progressive fibrosis). This broadened its approval indications in Canada."
+    difficulty: hard
+    tags: [interstitial lung disease, nintedanib, progressive fibrosing ILD, UIP, landmark trial]
+  - front: "What did the EINSTEIN-PE trial (NEJM 2012) demonstrate about rivaroxaban for pulmonary embolism treatment?"
+    back: "Rivaroxaban was non-inferior to standard therapy (enoxaparin then vitamin K antagonist) for symptomatic PE: 2.1% vs. 1.8% recurrent VTE (HR 1.12; non-inferiority P=0.003), with similar major bleeding rates.\n\nEINSTEIN-PE established rivaroxaban as an effective oral DOAC for both initial and long-term treatment of PE, replacing the need for parenteral bridging therapy. Canadian Thrombosis guidelines now recommend DOACs (rivaroxaban, apixaban, dabigatran) as preferred agents over warfarin for VTE treatment."
+    difficulty: easy
+    tags: [pulmonary embolism, rivaroxaban, DOAC, VTE, landmark trial]
+  - front: "What did the PEITHO trial (NEJM 2014) show about thrombolysis (tenecteplase) for intermediate-risk PE?"
+    back: "Tenecteplase reduced death or hemodynamic decompensation within 7 days (2.6% vs. 5.6%; OR 0.44; P=0.02) but significantly increased extracranial bleeding (6.3% vs. 1.2%) and stroke (2.4% vs. 0.2%; P=0.003).\n\nPEITHO demonstrated that systemic thrombolysis prevents hemodynamic deterioration in intermediate-risk (submassive) PE but at significant hemorrhagic cost. Canadian guidelines reserve systemic thrombolysis for massive PE with hemodynamic instability; for intermediate-risk PE, anticoagulation alone is standard, with rescue thrombolysis if deterioration occurs."
+    difficulty: hard
+    tags: [pulmonary embolism, thrombolysis, tenecteplase, intermediate risk PE, landmark trial]
+  - front: "What did the SAVE trial (NEJM 2016) show about CPAP in obstructive sleep apnea and cardiovascular outcomes?"
+    back: "CPAP with standard care did not reduce cardiovascular events (death, MI, stroke, hospitalization for CHF/ACS/TIA) compared to standard care alone in patients with OSA (HR 1.10; P=0.34).\n\nThe SAVE trial showed CPAP does not prevent cardiovascular events in OSA patients who already have established cardiovascular disease. However, CPAP remains indicated for symptomatic OSA (excessive daytime somnolence, impaired quality of life). Canadian guidelines recommend CPAP for symptom relief, not solely for cardiovascular risk reduction."
+    difficulty: medium
+    tags: [sleep apnea, OSA, CPAP, cardiovascular, landmark trial]
+  - front: "What did the NICE-SUGAR trial (NEJM 2009) show about intensive glucose control in critically ill patients?"
+    back: "Intensive glucose control (target 81–108 mg/dL) increased 90-day mortality vs. conventional control (target ≤180 mg/dL): OR for death 1.14 (95% CI 1.02–1.28; P=0.02).\n\nNICE-SUGAR established that tight glycemic control (targeting normoglycemia) is harmful in ICU patients, primarily due to hypoglycemic events. Current Canadian Critical Care guidelines recommend targeting blood glucose ≤10 mmol/L (180 mg/dL) in critically ill patients, avoiding both hyperglycemia and hypoglycemia."
+    difficulty: medium
+    tags: [ICU, glucose control, critical care, glycemic control, landmark trial]
+  - front: "What did the ARISE trial (NEJM 2014) demonstrate about early goal-directed therapy (EGDT) in septic shock?"
+    back: "EGDT did not reduce all-cause mortality compared to usual care in patients with early septic shock: absolute risk difference -0.3% (95% CI -4.1% to 3.6%; P=0.90).\n\nARISE (along with ProCESS and ProMISe trials) showed that the rigid EGDT protocol from the original Rivers trial did not improve outcomes over current usual care. This led to simplification of sepsis bundles; modern Surviving Sepsis Campaign guidelines focus on early antibiotics, fluid resuscitation, and vasopressors as needed rather than rigid hemodynamic targets."
+    difficulty: medium
+    tags: [sepsis, septic shock, EGDT, goal-directed therapy, ICU, landmark trial]

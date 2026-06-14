@@ -1,0 +1,162 @@
+# GERD & Peptic Ulcer Disease (Gastroenterology) - generated from srs-mccqe1
+cards:
+  - front: "A 45-year-old has heartburn and regurgitation for 6 months, worse after meals and when lying down. No alarm symptoms. Diagnosis and first-line treatment?"
+    back: "GERD; first-line: lifestyle modifications + PPI (omeprazole, pantoprazole) for 4-8 weeks — endoscopy only if alarm symptoms or PPI failure\n\nCGA guidelines recommend empiric PPI trial as first-line management for typical GERD without alarm symptoms. Lifestyle changes: elevate head of bed, avoid triggers (caffeine, alcohol, fatty foods), lose weight, avoid late meals."
+    difficulty: medium
+    tags: [GERD, PPI, heartburn, gastroenterology]
+  - front: "What alarm symptoms in GERD warrant immediate upper endoscopy?"
+    back: "Dysphagia, odynophagia, unexplained weight loss, GI bleeding, iron deficiency anemia, vomiting, age >60 with new symptoms, failure to respond to PPI\n\nAlarm symptoms indicate possible malignancy or complicated GERD (stricture, Barrett esophagus). CGA guidelines recommend endoscopy for alarm features to exclude esophageal adenocarcinoma or other serious pathology."
+    difficulty: easy
+    tags: [GERD alarm symptoms, endoscopy indications, Barrett esophagus, dysphagia, gastroenterology]
+  - front: "What is Barrett esophagus and how is it managed?"
+    back: "Intestinal metaplasia of esophageal squamous epithelium from chronic acid exposure; surveillance endoscopy: no dysplasia q3-5 years, low-grade dysplasia q6-12 months, high-grade dysplasia → endoscopic ablation\n\nBarrett esophagus increases esophageal adenocarcinoma risk 30-40x. Endoscopic eradication therapy (radiofrequency ablation) for dysplastic Barrett. Indefinite PPI therapy to suppress acid. CGA guidelines recommend H. pylori testing in all dyspepsia patients."
+    difficulty: hard
+    tags: [Barrett esophagus, intestinal metaplasia, esophageal adenocarcinoma, RFA, surveillance, gastroenterology]
+  - front: "A 50-year-old has epigastric pain, early satiety, and belching for 3 months. H. pylori test is positive. What is the treatment?"
+    back: "Test-and-treat strategy for H. pylori: triple therapy (PPI + amoxicillin + clarithromycin x14 days) or bismuth quadruple therapy — confirm eradication 4 weeks after treatment\n\nCGA guidelines recommend H. pylori eradication for all infected patients with peptic ulcer disease and functional dyspepsia. Bismuth quadruple therapy preferred in regions with high clarithromycin resistance or prior macrolide use."
+    difficulty: medium
+    tags: [H. pylori, peptic ulcer, eradication, triple therapy, gastroenterology]
+  - front: "What is the difference between GERD and functional dyspepsia?"
+    back: "GERD: acid reflux causing heartburn and regurgitation; Functional dyspepsia: epigastric pain/discomfort, early satiety, fullness without organic cause on endoscopy — two Rome IV subtypes: EPS and PDS\n\nRome IV criteria define functional dyspepsia. Functional dyspepsia has no reflux predominance. Trial of PPI for 4 weeks; if no response, consider H. pylori testing, prokinetics (domperidone), or low-dose TCA."
+    difficulty: medium
+    tags: [functional dyspepsia, GERD, Rome IV, PPI trial, gastroenterology]
+  - front: "What are the complications of long-term PPI use?"
+    back: "C. difficile infection, hypomagnesemia, vitamin B12 deficiency, calcium and iron malabsorption, osteoporosis/fractures, community-acquired pneumonia, fundic gland polyps\n\nPPIs alter gastric acid pH, affecting mineral absorption and microbiome. CGA recommends using PPIs at lowest effective dose for the shortest duration. H2 blockers are alternatives for mild GERD. De-prescribe PPIs when indication is unclear."
+    difficulty: medium
+    tags: [PPI side effects, long-term PPI, hypomagnesemia, C. difficile, gastroenterology]
+  - front: "How does peptic ulcer disease differ in NSAID-induced vs. H. pylori-associated ulcers?"
+    back: "NSAID ulcers: often asymptomatic until perforation/bleeding, more gastric ulcers, anterior surface; H. pylori: duodenal ulcers more common, epigastric pain relieved by eating\n\nNSAIDs inhibit COX-1 reducing prostaglandin synthesis and mucosal protection. Prophylaxis: PPI with chronic NSAID use. H. pylori eradication heals 95% of duodenal ulcers. Test all peptic ulcer patients for H. pylori."
+    difficulty: medium
+    tags: [peptic ulcer, NSAID, H. pylori, duodenal ulcer, gastroenterology]
+  - front: "What is the management of an actively bleeding peptic ulcer?"
+    back: "IV PPI (pantoprazole bolus 80mg then 8mg/h infusion), IV fluids, transfuse to Hgb >70-80 g/L, urgent endoscopy within 24h — high-risk stigmata: active bleeding or visible vessel require endoscopic hemostasis\n\nForrest classification guides endoscopic management: Ia (spurting) and Ib (oozing) = active bleeding requiring treatment; IIa (visible vessel) and IIb (adherent clot) = high risk for rebleeding. Rebleeding or failed endoscopy → surgery or interventional radiology."
+    difficulty: hard
+    tags: [peptic ulcer bleeding, PPI infusion, endoscopy, Forrest classification, gastroenterology]
+  - front: "When is H. pylori eradication confirmed and how?"
+    back: "Confirm eradication ≥4 weeks after completing antibiotics and ≥2 weeks after stopping PPI; use urea breath test (UBT) or stool antigen test — serology is NOT useful for confirming eradication\n\nFalse-negative UBT and stool antigen tests occur if PPI not stopped ≥2 weeks before testing (PPI suppresses H. pylori activity without eradicating). Serology remains positive for years after eradication."
+    difficulty: medium
+    tags: [H. pylori eradication, urea breath test, confirmation, stool antigen, gastroenterology]
+  - front: "What is Zollinger-Ellison syndrome (ZES) and how is it diagnosed?"
+    back: "ZES: gastrin-secreting tumor (gastrinoma) causing multiple recurrent peptic ulcers and diarrhea; diagnose with fasting serum gastrin >1000 pg/mL (or gastrin >10x ULN with gastric pH <2)\n\nGastrinomas are in the pancreas or duodenum (gastrinoma triangle). 25-30% are part of MEN1 syndrome. Secretin stimulation test: paradoxical gastrin rise. CT/MRI/octreotide scan to localize. Treatment: high-dose PPI, surgical resection when possible."
+    difficulty: hard
+    tags: [Zollinger-Ellison, gastrinoma, ZES, gastrin, peptic ulcer, gastroenterology]
+  - front: "What are GERD alarm features requiring endoscopy?"
+    back: "Dysphagia, odynophagia, weight loss, GI bleeding, persistent vomiting, age >50 new onset\n\nRule out Barrett's, stricture, malignancy. Barrett surveillance q3-5y if no dysplasia."
+    difficulty: easy
+    tags: [GERD, alarm]
+  - front: "What are the alarm features in GERD that warrant urgent endoscopy?"
+    back: "Dysphagia, odynophagia, weight loss, anemia/GI bleeding, recurrent vomiting, age >50 with new symptoms, family history of upper GI cancer\n\nAlarm features suggest possible complications (stricture, Barrett, adenocarcinoma) or alternative diagnoses (peptic ulcer, malignancy). CAG recommends EGD for alarm features rather than empiric PPI trial. Most GERD is diagnosed clinically without endoscopy."
+    difficulty: medium
+    tags: [GERD, alarm features, endoscopy, dysphagia, GI]
+  - front: "What is Barrett esophagus and its surveillance protocol?"
+    back: "Intestinal metaplasia (goblet cells) replacing normal squamous epithelium in distal esophagus. Surveillance: no dysplasia → EGD every 3-5 years; low-grade dysplasia → every 6-12 months or endoscopic ablation; high-grade dysplasia → endoscopic eradication therapy (RFA or EMR).\n\nBarrett carries 0.5% annual risk of progression to esophageal adenocarcinoma. Risk factors: chronic GERD, male, Caucasian, age >50, obesity, smoking. High-dose PPI indefinitely. Endoscopic eradication with RFA has replaced esophagectomy for HGD and intramucosal carcinoma."
+    difficulty: hard
+    tags: [GERD, Barrett, surveillance, dysplasia, RFA, GI]
+  - front: "What is the stepwise approach to GERD management?"
+    back: "Step 1: lifestyle modifications (elevate HOB, weight loss, avoid triggers, avoid eating 3h before bed). Step 2: PPI once daily 30 min before breakfast x 8 weeks. Step 3: double-dose PPI. Step 4: pH testing/impedance if refractory. Step 5: anti-reflux surgery (Nissen fundoplication).\n\nPPIs are superior to H2RAs for erosive esophagitis healing. After 8 weeks, step down to lowest effective PPI dose or H2RA. Refractory GERD: reassess diagnosis (functional heartburn, eosinophilic esophagitis, achalasia). Long-term PPI risks: C. difficile, osteoporosis, hypomagnesemia, B12 deficiency."
+    difficulty: medium
+    tags: [GERD, PPI, management, Nissen, lifestyle, GI]
+  - front: "What is the H. pylori test-and-treat strategy?"
+    back: "Test patients with: dyspepsia <60 without alarm features, PUD history, gastric MALT lymphoma, before long-term NSAID/ASA, ITP, unexplained iron deficiency anemia. Test with urea breath test (UBT) or stool antigen. Treat with 14-day quadruple therapy: PPI BID + bismuth + metronidazole + tetracycline.\n\nCAG recommends bismuth quadruple therapy as first-line in Canada due to high clarithromycin resistance (~15-20%). Confirm eradication 4 weeks after treatment with UBT or stool antigen (stop PPI 2 weeks prior, antibiotics 4 weeks prior). Concomitant therapy (PPI + amoxicillin + clarithromycin + metronidazole) is alternative."
+    difficulty: hard
+    tags: [GERD, H pylori, UBT, quadruple therapy, CAG, GI]
+  - front: "What are the complications of long-term PPI use?"
+    back: "C. difficile infection (1.5-2x risk), community-acquired pneumonia, hypomagnesemia, B12 deficiency, calcium malabsorption/osteoporotic fractures (hip), fundic gland polyps (benign), acute/chronic interstitial nephritis\n\nDespite these associations, PPIs remain safe when indicated. CAG recommends periodic reassessment of need, using lowest effective dose, and not stopping PPIs based solely on long-term use concerns when clearly indicated (Barrett, severe erosive esophagitis, high-risk NSAID use)."
+    difficulty: medium
+    tags: [GERD, PPI, adverse effects, C difficile, osteoporosis, GI]
+  - front: "What diagnostic tests are used for refractory GERD?"
+    back: "24h ambulatory pH monitoring (gold standard for acid exposure), pH-impedance testing (detects non-acid reflux), high-resolution esophageal manometry (rule out motility disorders like achalasia), EGD with biopsy (rule out eosinophilic esophagitis).\n\nRefractory GERD: first ensure PPI adherence and proper timing (30 min before meals). pH-impedance testing done ON PPI differentiates true refractory GERD from functional heartburn. If DeMeester score >14.7 or acid exposure >4.2%: pathologic reflux confirmed."
+    difficulty: hard
+    tags: [GERD, refractory, pH monitoring, impedance, manometry, GI]
+  - front: "What are the indications for anti-reflux surgery (Nissen fundoplication)?"
+    back: "Confirmed GERD (objective pH testing) with: intolerance to PPIs, preference against long-term medications, large hiatal hernia with mechanical symptoms, refractory symptoms with proven acid reflux, volume regurgitation not controlled by PPI\n\nNissen (360° wrap) is the most common procedure; Toupet (270° posterior) for patients with impaired motility. Laparoscopic approach is standard. Pre-op manometry mandatory to exclude achalasia. Complications: dysphagia (10-15%), gas-bloat, inability to belch/vomit."
+    difficulty: hard
+    tags: [GERD, Nissen, fundoplication, surgery, hiatal hernia, GI]
+  - front: "How is eosinophilic esophagitis (EoE) differentiated from GERD?"
+    back: "EoE: dysphagia to solids (especially), food impaction, atopic history, male predominance. EGD shows rings (trachealization), linear furrows, white plaques. Biopsy: ≥15 eos/hpf in esophageal mucosa despite 8-week PPI trial. GERD: heartburn predominant, responds to PPI.\n\nEoE is increasingly recognized as a cause of refractory dysphagia. Treatment: PPI (40% respond), swallowed topical corticosteroid (fluticasone or budesonide slurry), elimination diet (6-food or 2-food), dupilumab (anti-IL-4Rα, approved for EoE). Esophageal dilation for strictures."
+    difficulty: hard
+    tags: [GERD, EoE, eosinophilic esophagitis, dysphagia, biopsy, GI]
+  - front: "What are the differences between erosive and non-erosive reflux disease?"
+    back: "Erosive (ERD): mucosal breaks on EGD, graded by LA classification (A-D). Non-erosive (NERD): typical GERD symptoms but normal EGD (~60% of GERD patients). NERD responds less well to PPI and has higher functional heartburn overlap.\n\nLA grade A: mucosal breaks <5mm. B: >5mm, not bridging folds. C: bridging folds, <75% circumference. D: ≥75% circumference. LA C/D require long-term PPI (high relapse). NERD patients should be evaluated with pH-impedance if refractory to confirm true reflux."
+    difficulty: medium
+    tags: [GERD, erosive, NERD, LA classification, endoscopy, GI]
+  - front: "What is the pathophysiology of GERD?"
+    back: "Primary mechanism: transient lower esophageal sphincter relaxations (TLESRs) — non-swallow-related LES relaxation allowing reflux. Contributing factors: reduced LES tone, hiatal hernia (disrupts crural diaphragm barrier), impaired esophageal clearance, delayed gastric emptying, obesity.\n\nTLESRs account for ~70% of reflux events. Hiatal hernia creates an acid pocket above the diaphragm. Esophageal mucosal damage depends on: duration of acid contact, pepsin activity, and mucosal resistance. Baclofen (GABA-B agonist) reduces TLESRs but limited by CNS side effects."
+    difficulty: medium
+    tags: [GERD, pathophysiology, TLESR, LES, hiatal hernia, GI]
+  - front: "What are the red flag symptoms (VBAD) in dyspepsia that warrant urgent investigation?"
+    back: "VBAD: Vomiting, Bleeding/anemia, Abdominal mass, Dysphagia. Also: weight loss, persistent vomiting, GI bleeding (hematemesis, hematochezia, melena).\n\nRed flag features in dyspepsia suggest organic pathology including malignancy, peptic ulcer disease with complications, or obstructing lesions. These warrant prompt upper endoscopy regardless of age."
+    difficulty: easy
+    tags: [dyspepsia, red flags, VBAD, endoscopy, GI]
+  - front: "How should new-onset dyspepsia be investigated based on patient age?"
+    back: "<60 years without high-risk features: test for H. pylori using urea breath test, stool antigen test, or serology. ≥60 years: undergo upper endoscopy to rule out organic pathology.\n\nThe age cutoff of 60 reflects increased prevalence of gastric cancer in older patients. H. pylori testing is appropriate in younger patients as H. pylori is the most common cause of PUD-related dyspepsia."
+    difficulty: easy
+    tags: [dyspepsia, H. pylori, endoscopy, urea breath test, gastric cancer]
+  - front: "What are the two H. pylori eradication regimens used in Canada?"
+    back: "1. Bismuth Quadruple Therapy (PBMT): PPI standard dose BID + Bismuth + Tetracycline 500 mg + Metronidazole 500 mg. 2. Concomitant Non-Bismuth Quadruple (PAMC): PPI standard dose BID + Amoxicillin 1000 mg BID + Clarithromycin 500 mg BID + Metronidazole 500 mg BID.\n\nBismuth quadruple therapy is preferred in areas with high clarithromycin resistance. Concomitant therapy is an alternative. Triple therapy (PPI + clarithromycin + amoxicillin) is no longer recommended due to high resistance rates."
+    difficulty: medium
+    tags: [H. pylori, eradication, bismuth, PPI, clarithromycin, metronidazole]
+  - front: "What is the Canadian Choosing Wisely recommendation regarding PPIs in dyspepsia?"
+    back: "Do not keep patients on PPI without at least 1 trial off the medication per year. (https://choosingwiselycanada.org/perspective/ppi-toolkit/)\n\nChronic PPI use is associated with risks including C. difficile infection, hypomagnesemia, B12 deficiency, and increased fracture risk. Periodic reassessment of PPI necessity is part of good stewardship."
+    difficulty: easy
+    tags: [PPI, dyspepsia, Choosing Wisely Canada, deprescribing, overuse]
+  - front: "What is the definition of functional dyspepsia?"
+    back: "Functional dyspepsia is defined as dyspepsia (epigastric pain or discomfort) with a negative upper endoscopy.\n\nFunctional dyspepsia accounts for the majority of dyspepsia cases. Treatment options include gastric acid suppression (H2 blockers, PPIs), TCAs, or prokinetics (e.g., metoclopramide). Lifestyle modifications are first-line."
+    difficulty: easy
+    tags: [functional dyspepsia, endoscopy, gastroenterology, diagnosis]
+  - front: "What are the 5 anatomical parts of the stomach?"
+    back: "Cardia, Fundus, Body, Antrum, Pylorus.\n\nThe stomach receives food from the esophagus via the cardia, stores it in the fundus and body, and processes it in the antrum before passage through the pylorus to the duodenum. Parietal cells in the body/fundus secrete HCl and intrinsic factor; G cells in the antrum secrete gastrin."
+    difficulty: easy
+    tags: [stomach anatomy, gastric anatomy, GI tract]
+  - front: "What are the key anatomical differences between the jejunum and ileum?"
+    back: "Jejunum: deep red, 2–4 cm thick, heavy walls, large/tall closely packed plicae circulares, long vasa recta, scant mesenteric fat, few Peyer's patches. Ileum: paler pink, 2–3 cm thick, thin/light walls, small/sparse plicae circulares, more mesenteric fat, many Peyer's patches.\n\nThese anatomical features reflect functional differences: the jejunum is the primary site of nutrient absorption, while the ileum absorbs bile salts and vitamin B12 (the only site for B12 absorption). Peyer's patches in the ileum are important for immune surveillance."
+    difficulty: medium
+    tags: [jejunum, ileum, small bowel anatomy, Peyers patches, plicae circulares]
+  - front: "What is the only site of vitamin B12 absorption in the GI tract?"
+    back: "The terminal ileum is the only site of vitamin B12 absorption (requires intrinsic factor secreted by gastric parietal cells).\n\nIntrinsic factor (IF) binds to B12 in the stomach/proximal small bowel. The IF-B12 complex is absorbed at specific receptors in the terminal ileum. Conditions affecting the terminal ileum (Crohn's disease, ileal resection) or gastric parietal cells (pernicious anemia, gastrectomy) cause B12 deficiency."
+    difficulty: easy
+    tags: [vitamin B12, terminal ileum, intrinsic factor, absorption, malabsorption]
+  - front: "What hormone does the duodenum release in response to low duodenal pH, and what is its effect?"
+    back: "Secretin is released in response to low duodenal pH (acidic chyme). It reduces gastric acid secretion and increases bicarbonate secretion from the pancreas to neutralize duodenal pH.\n\nSecretin is a key negative feedback hormone for gastric acid. Cholecystokinin (CCK) is also released from the duodenum to stimulate gallbladder contraction and pancreatic enzyme secretion. Both are released in response to duodenal luminal contents."
+    difficulty: easy
+    tags: [secretin, duodenum, gastric acid, bicarbonate, CCK]
+  - front: "What is the preferred initial imaging modality for dysphagia before endoscopy, and why?"
+    back: "Barium swallow should be considered first if there is dysphagia, decreased level of consciousness (risk of aspiration), inability to cooperate (risk of pharyngeal trauma), or possible fistulae before performing EGD.\n\nEGD provides the best mucosal visualization and allows therapeutic intervention, but carries risk of aspiration and trauma in certain circumstances. Barium swallow is safer in these scenarios and can identify structural causes prior to endoscopy."
+    difficulty: medium
+    tags: [dysphagia, barium swallow, EGD, esophagoscopy, imaging]
+  - front: "What are absolute indications for gastroscopy (EGD) in suspected GERD?"
+    back: "1. Heartburn with red flags (bleeding, weight loss, dysphagia, persistent vomiting, family history of GI cancer). 2. Persistent reflux symptoms or prior severe erosive esophagitis after 4–8 weeks of PPI BID trial. 3. History suggesting esophageal stricture (especially dysphagia). 4. High-risk for Barrett's esophagus (male, age >50, obese, white, tobacco use, long symptom history).\n\nEGD is essential to rule out complications of GERD such as Barrett's esophagus, esophageal adenocarcinoma, and severe esophagitis. Red-flag symptoms should prompt urgent endoscopy."
+    difficulty: medium
+    tags: [GERD, EGD, gastroscopy, red flags, Barretts esophagus]
+  - front: "What is the definition of GERD and its most common pathophysiologic cause?"
+    back: "GERD is a condition that develops when the reflux of gastric content causes troublesome symptoms or complications. The most common cause is increased number of transient lower esophageal sphincter (LES) relaxations.\n\nOther contributing mechanisms include low basal LES tone (especially in scleroderma), delayed esophageal clearance, delayed gastric emptying, obesity, pregnancy, and acid hypersecretion (rare—Zollinger-Ellison syndrome). Hiatal hernia worsens but does not cause GERD."
+    difficulty: easy
+    tags: [GERD, LES, lower esophageal sphincter, transient LES relaxation, pathophysiology]
+  - front: "What are the typical and atypical esophageal symptoms of GERD?"
+    back: "Typical: heartburn (pyrosis) and acid regurgitation (together 80% sensitive and specific). Atypical esophageal: chest pain, dysphagia (late), odynophagia (rare). Non-esophageal: chronic cough, wheezing, aspiration pneumonia (respiratory); sore throat, hoarseness, dental erosions (non-respiratory).\n\nHeartburn and regurgitation are the cardinal symptoms. Non-esophageal manifestations (ENT, respiratory) can make diagnosis challenging. These extraesophageal symptoms are poor predictors of underlying reflux and should not be the sole diagnostic criteria."
+    difficulty: easy
+    tags: [GERD symptoms, heartburn, regurgitation, extraesophageal, chronic cough]
+  - front: "What are the two management goals based on GERD classification at gastroscopy?"
+    back: "Non-erosive reflux disease (NERD): aim for symptom relief only (PPI PRN or surgical fundoplication). Esophagitis: aim to heal inflammation (PPI indefinitely).\n\nGastroscopy classifies GERD into NERD and erosive esophagitis. Treatment intensity differs: NERD requires only symptom control, while esophagitis requires sustained PPI therapy to prevent complications (stricture, Barrett's esophagus)."
+    difficulty: medium
+    tags: [GERD management, NERD, esophagitis, PPI, fundoplication]
+  - front: "What are the established side effects of long-term PPI use?"
+    back: "Established associations: C. difficile diarrhea, hypomagnesemia, vitamin B12 deficiency, small bowel bacterial overgrowth. Uncertain/no clear pathophysiology: pneumonia, fractures, chronic kidney disease, dementia. Stopping PPIs can cause rebound acid hypersecretion. May increase IBD risk with prolonged use.\n\nLong-term PPI safety is an important clinical consideration. While some side effects (C. diff, hypomagnesemia, B12 deficiency) have clear mechanisms related to acid suppression, other associations (CKD, dementia) lack established pathophysiology. Risk-benefit assessment is essential for each patient."
+    difficulty: medium
+    tags: [PPI, proton pump inhibitor, long-term side effects, C. difficile, hypomagnesemia]
+  - front: "What are the mechanical and motility causes of dysphagia, and how do they differ clinically?"
+    back: "Mechanical (solids only): peptic stricture/cancer, eosinophilic esophagitis (with stricture), extrinsic compression, Schatzki ring/web, Zenker's diverticulum. Motility (solids AND liquids): achalasia, distal esophageal spasm (DES), scleroderma, eosinophilic esophagitis (without stricture).\n\nThe distinction between solids-only vs. solids-and-liquids dysphagia is clinically important. Mechanical obstruction affects solids first (progressively worsening suggests malignancy). Motility disorders affect both liquids and solids from the outset. Achalasia is the classic motility disorder (failure of LES relaxation)."
+    difficulty: medium
+    tags: [dysphagia, achalasia, esophageal cancer, Zenkers diverticulum, motility disorders]
+  - front: "What is the definition of dyspepsia and how does it differ from GERD?"
+    back: "Dyspepsia is defined as postprandial fullness, early satiety, or epigastric pain or burning. It may overlap with GERD but is a broader symptom complex that includes functional dyspepsia, PUD, gastric cancer, and GERD.\n\nDyspepsia is distinct from GERD (which emphasizes heartburn and regurgitation due to reflux). Functional dyspepsia has no identifiable cause after investigation. Alarm features (weight loss, bleeding, dysphagia) warrant urgent investigation for malignancy."
+    difficulty: easy
+    tags: [dyspepsia, functional dyspepsia, GERD, epigastric pain, postprandial fullness]
+  - front: "What foods/substances may aggravate GERD symptoms?"
+    back: "Alcohol (EtOH), caffeine, tobacco, fatty/fried foods, peppermint, spicy foods, citrus fruit juices. Note: These aggravate symptoms but do NOT change the underlying disease process.\n\nDietary modification provides symptomatic benefit in GERD but does not alter disease course. The LES is transiently relaxed by many of these substances. Lifestyle modifications (dietary changes, weight loss, avoiding recumbency after meals, elevating head of bed) are first-line adjuncts to pharmacotherapy."
+    difficulty: easy
+    tags: [GERD, dietary triggers, LES relaxation, lifestyle modification, heartburn]
+  - front: "What are the four parts of the duodenum and what makes them anatomically distinct?"
+    back: "Superior (5 cm), Descending (7–10 cm), Horizontal (6–8 cm), Ascending (5 cm). The first (superior) part is intraperitoneal; the rest are retroperitoneal.\n\nThe duodenum is the first and shortest part of the small intestine. The major duodenal papilla (ampulla of Vater) opens into the descending (second) part, where bile and pancreatic juice enter. The retroperitoneal location of D2-D4 is relevant to trauma classification."
+    difficulty: easy
+    tags: [duodenum anatomy, retroperitoneal, ampulla of Vater, small bowel]

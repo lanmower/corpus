@@ -1,0 +1,558 @@
+# Arrhythmias & ECG Interpretation (Cardiology) - generated from srs-mccqe1
+cards:
+  - front: "A patient has an ECG showing irregularly irregular rhythm with no discernible P waves and ventricular rate 110 bpm. Diagnosis and initial management?"
+    back: "Atrial fibrillation with rapid ventricular response; rate control with beta-blocker or diltiazem, assess for anticoagulation (CHA2DS2-VASc)\n\nAF is the most common sustained arrhythmia. Initial management focuses on rate control (target HR <100-110 bpm). CCS mandates anticoagulation assessment: score ≥2 in men or ≥3 in women warrants OAC."
+    difficulty: medium
+    tags: [atrial fibrillation, rate control, anticoagulation, ECG, arrhythmia]
+  - front: "What is CHA2DS2-VASc and when is anticoagulation recommended in AF?"
+    back: "CHF(1), HTN(1), Age≥75(2), Diabetes(1), Stroke/TIA(2), Vascular disease(1), Age 65-74(1), Sex female(1); anticoagulate if score ≥2 men or ≥3 women\n\nCCS AF guidelines recommend DOACs (apixaban, rivaroxaban, dabigatran, edoxaban) preferred over warfarin for non-valvular AF. Valvular AF (mechanical valve or moderate-severe MS) requires warfarin."
+    difficulty: easy
+    tags: [CHA2DS2-VASc, AF, anticoagulation, stroke prevention, arrhythmia]
+  - front: "What rhythm control options are available for AF?"
+    back: "Electrical cardioversion (DCCV), pharmacological cardioversion (flecainide/propafenone for no structural disease; amiodarone for structural disease), or catheter ablation (pulmonary vein isolation)\n\nEAST-AFNET 4 showed early rhythm control reduces CV outcomes. Catheter ablation is first-line for symptomatic AF refractory to or intolerant of antiarrhythmics. Anticoagulation ≥3 weeks or TEE before cardioversion."
+    difficulty: hard
+    tags: [AF, rhythm control, cardioversion, ablation, amiodarone, arrhythmia]
+  - front: "A 35-year-old has delta waves, short PR interval, and wide QRS on ECG. Diagnosis and main concern?"
+    back: "Wolff-Parkinson-White syndrome; concern is pre-excited AF rapidly conducted through accessory pathway potentially causing VF\n\nAvoid AV nodal blockers (adenosine, beta-blockers, CCBs, digoxin) in WPW with AF — may paradoxically accelerate conduction through accessory pathway. Treatment: procainamide IV or DCCV."
+    difficulty: hard
+    tags: [WPW, pre-excitation, delta wave, AF, accessory pathway, arrhythmia]
+  - front: "What ECG pattern defines first-degree AV block and is treatment needed?"
+    back: "Prolonged PR interval >200 ms with all P waves conducted; no treatment needed — benign finding\n\nFirst-degree AV block is a conduction delay at the AV node. All P waves are followed by QRS. Causes: increased vagal tone, inferior MI, digoxin toxicity, electrolyte abnormalities. No pacing required."
+    difficulty: easy
+    tags: [AV block, first-degree, PR interval, ECG, arrhythmia]
+  - front: "Distinguish Mobitz type I from Mobitz type II second-degree AV block."
+    back: "Mobitz I: progressive PR prolongation then dropped QRS (Wenckebach); Mobitz II: constant PR with sudden dropped QRS — Mobitz II is more serious and often requires pacemaker\n\nMobitz I is usually benign (nodal level, often inferior MI). Mobitz II is infranodal with high risk of progression to complete heart block and usually requires permanent pacemaker."
+    difficulty: medium
+    tags: [Mobitz, AV block, second-degree, Wenckebach, pacemaker, arrhythmia]
+  - front: "A patient has complete P-wave to QRS dissociation, HR 38 bpm, and syncope. Diagnosis and management?"
+    back: "Third-degree (complete) AV block; urgent temporary transvenous pacing then permanent pacemaker\n\nComplete heart block: no atrial impulses conduct to ventricles. Causes: inferior MI (usually transient), Lyme disease, infiltrative disease, drug toxicity. Atropine may bridge temporarily. CCS recommends permanent pacemaker."
+    difficulty: hard
+    tags: [complete heart block, pacemaker, syncope, arrhythmia]
+  - front: "What are the ECG criteria for LBBB and its clinical significance?"
+    back: "QRS ≥120 ms, broad notched R in I, aVL, V5-V6; rS or QS in V1; new LBBB with chest pain treated as STEMI equivalent\n\nLBBB obscures ST changes making ischemia diagnosis difficult. Sgarbossa criteria can be applied. Chronic LBBB with HFrEF (EF ≤35%, QRS ≥150ms) is an indication for CRT."
+    difficulty: medium
+    tags: [LBBB, bundle branch block, ECG, STEMI equivalent, arrhythmia]
+  - front: "A patient with HR 170 bpm, narrow complex regular tachycardia is given adenosine 6 mg IV, which terminates it. Likely diagnosis?"
+    back: "AVNRT — most common cause of regular narrow complex tachycardia in adults\n\nAVNRT accounts for 60% of SVT. Reentrant circuit in AV node. P waves buried in or after QRS. Long-term: beta-blockers, CCBs, or catheter ablation (95% cure rate). Vagal maneuvers (Valsalva) may terminate it."
+    difficulty: medium
+    tags: [AVNRT, SVT, adenosine, narrow complex tachycardia, arrhythmia]
+  - front: "What ECG changes occur in hyperkalemia and at what K+ levels?"
+    back: "Peaked T waves (>5.5); PR prolongation and wide QRS (>6.5); sine wave, VF, asystole (>8.0)\n\nProgressive ECG changes with rising K+. Treatment: calcium gluconate stabilizes cardiac membrane, insulin + dextrose shifts K+ intracellularly, sodium bicarbonate in acidosis, kayexalate/patiromer for elimination."
+    difficulty: medium
+    tags: [hyperkalemia, ECG changes, peaked T waves, electrolytes, arrhythmia]
+  - front: "A patient on sotalol has QTc 520 ms with runs of polymorphic VT. Diagnosis and management?"
+    back: "Torsades de pointes; IV magnesium sulfate 2g IV, remove offending drug, consider temporary pacing if bradycardia-dependent\n\nTdP is polymorphic VT associated with QT prolongation, characteristic twisting pattern. Risk factors: QT-prolonging drugs, hypokalemia, hypomagnesemia, bradycardia. Correct electrolytes and stop offending drug."
+    difficulty: hard
+    tags: [torsades de pointes, QT prolongation, polymorphic VT, magnesium, arrhythmia]
+  - front: "How do you manage stable wide complex tachycardia of unknown etiology?"
+    back: "Treat as VT until proven otherwise; IV amiodarone 150 mg over 10 min or procainamide; DCCV if hemodynamically unstable\n\nWide complex tachycardia is VT until proven otherwise. Avoid verapamil (may cause degeneration to VF in VT). Adenosine may be used for presumed SVT with aberrancy if hemodynamically stable."
+    difficulty: hard
+    tags: [ventricular tachycardia, wide complex tachycardia, amiodarone, arrhythmia]
+  - front: "A 65-year-old with ischemic cardiomyopathy has recurrent sustained VT despite amiodarone. Next therapeutic option?"
+    back: "Catheter ablation of VT circuit, or consider ICD if not already implanted\n\nCatheter ablation for VT targets scar-related reentrant circuits; 50-70% success in ischemic cardiomyopathy. CCS recommends ablation for recurrent VT causing ICD shocks or amiodarone intolerance."
+    difficulty: hard
+    tags: [VT, catheter ablation, ICD, amiodarone, arrhythmia]
+  - front: "What ECG changes suggest posterior STEMI?"
+    back: "ST depression in V1-V3 with tall R waves and upright T waves (reciprocal); confirm with posterior leads V7-V9 showing ST elevation\n\nPosterior STEMI caused by circumflex or dominant RCA occlusion. CCS guidelines recommend posterior leads when posterior STEMI suspected. Treatment is emergent primary PCI."
+    difficulty: hard
+    tags: [posterior STEMI, ECG, posterior leads, arrhythmia, ACS]
+  - front: "What is the significance of ST elevation in lead aVR?"
+    back: "Suggests left main or proximal LAD occlusion, or diffuse subendocardial ischemia — mandates urgent coronary angiography\n\nST elevation in aVR with diffuse ST depression indicates global subendocardial ischemia or LMCA occlusion. This is a high-risk ACS presentation per CCS guidelines."
+    difficulty: hard
+    tags: [aVR, ST elevation, left main occlusion, ECG, ACS, arrhythmia]
+  - front: "How do you distinguish atrial flutter from AF on ECG?"
+    back: "Flutter: regular sawtooth flutter waves 250-350 bpm with regular ventricular rate (usually 2:1 = ~150 bpm); AF: irregularly irregular, no discernible P waves\n\nTypical atrial flutter involves cavo-tricuspid isthmus — catheter ablation achieves >95% cure. Rate control and anticoagulation managed similarly to AF. Flutter waves best seen in II, III, aVF."
+    difficulty: easy
+    tags: [atrial flutter, AF, flutter waves, ECG, arrhythmia]
+  - front: "How long must a patient be anticoagulated before elective DCCV for AF?"
+    back: "3 weeks of therapeutic anticoagulation before elective cardioversion, OR TEE to exclude left atrial thrombus if earlier cardioversion needed\n\nCCS guidelines require ≥3 weeks therapeutic OAC before elective DCCV to prevent thromboembolic events. Anticoagulation must continue ≥4 weeks post-cardioversion regardless of success."
+    difficulty: easy
+    tags: [cardioversion, AF, anticoagulation, TEE, arrhythmia]
+  - front: "What is the Brugada pattern and its clinical significance?"
+    back: "Coved-type ST elevation ≥2mm in V1-V2 with RBBB morphology; associated with risk of VF and sudden cardiac death in structurally normal hearts\n\nBrugada syndrome is an SCN5A channelopathy. ICD for survivors of cardiac arrest or symptomatic patients. Avoid sodium channel blockers and treat fever aggressively. Type 1 (coved) pattern is diagnostic."
+    difficulty: hard
+    tags: [Brugada, ECG, sudden cardiac death, channelopathy, arrhythmia]
+  - front: "A patient has sinus bradycardia 38 bpm with hypotension unresponsive to atropine. Management?"
+    back: "Transcutaneous or transvenous pacing; identify and treat reversible causes (inferior MI, hypothyroidism, beta-blocker toxicity)\n\nBradycardia unresponsive to atropine may indicate infranodal block. Transcutaneous pacing is immediate bridge; transvenous pacing more reliable. Permanent pacemaker for symptomatic sinus node dysfunction."
+    difficulty: medium
+    tags: [sinus bradycardia, pacing, sick sinus syndrome, atropine, arrhythmia]
+  - front: "What are the main indications for permanent pacemaker?"
+    back: "Symptomatic sinus node dysfunction, complete/high-degree AV block, symptomatic Mobitz II AV block, chronotropic incompetence\n\nCCS pacemaker guidelines recommend implantation for symptomatic bradyarrhythmias with established symptom-rhythm correlation, or high-risk conduction abnormalities. Asymptomatic first-degree AV block does not require pacing."
+    difficulty: easy
+    tags: [pacemaker, indications, AV block, sick sinus, arrhythmia]
+  - front: "A 58-year-old woman with paroxysmal AF (CHA₂DS₂-VASc = 3) has been in AF for 36 hours. She is hemodynamically stable with HR 110 and BP 130/80. She wants cardioversion. What is the most appropriate management?\n\nA) Cardiovert immediately — duration < 48 hours is safe without anticoagulation\nB) Start anticoagulation, perform TEE to exclude thrombus, then cardiovert\nC) Start anticoagulation now; cardiovert after 3 weeks of therapeutic anticoagulation\nD) Rate control only; cardioversion is not indicated unless refractory to rate control"
+    back: "B) Start anticoagulation, perform TEE to exclude thrombus, then cardiovert\n\nAF duration < 48 hours generally allows cardioversion without prior anticoagulation (low thrombus risk, < 0.8%). However, this patient is at 36 hours — and importantly, the EXACT onset is often uncertain. For AF of uncertain or borderline duration, the safest approach is TEE to exclude LAA thrombus prior to cardioversion. Alternatively, 3 weeks of therapeutic anticoagulation before cardioversion is used when TEE is unavailable or not desired. Given the 3-week approach requires prolonged waiting, TEE-guided early cardioversion is preferred for a stable patient who wants cardioversion. Anticoagulation should continue for ≥4 weeks post-cardioversion regardless (cardioversion itself increases thrombus risk transiently)."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 72-year-old man with permanent AF and EF 35% is on warfarin (INR 2.4) and digoxin. His ventricular rate is 105 bpm at rest and 145 with moderate exertion. Which rate-control regimen change is most appropriate?\n\nA) Add diltiazem for better rate control\nB) Increase digoxin dose\nC) Switch warfarin to apixaban and add metoprolol\nD) Add bisoprolol and target resting HR 60–80 bpm"
+    back: "D) Add bisoprolol and target resting HR 60–80 bpm\n\nIn AF with HFrEF, rate control targets are: resting HR < 80 bpm (lenient 80–110 is acceptable per RACE II trial). Beta-blockers (bisoprolol, metoprolol, carvedilol) are the preferred rate-control agents in HF — they also provide prognostic benefit. Non-DHP CCBs (diltiazem, verapamil) are CONTRAINDICATED in HFrEF (negative inotropy worsens failure). Digoxin has limited effect on exertional rate (does not work on AV node during sympathetic activation) and has a narrow therapeutic index. Switching to apixaban can be considered (superior to warfarin) but doesn't address rate control."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 65-year-old man has symptomatic persistent AF. He has been cardioverted twice. He is on flecainide for rhythm control. His echo shows mild LV hypertrophy (septal thickness 13mm) and EF 60%. An outpatient ECG shows PR 210ms, narrow QRS, no delta wave. His BP is 148/86. What is the BEST rhythm-control strategy at this point?\n\nA) Continue flecainide — two cardioversions do not indicate drug failure\nB) Switch to amiodarone for more effective rhythm control\nC) Catheter ablation — superior to antiarrhythmic drugs for AF recurrence reduction\nD) Switch to dofetilide — better evidence in structural heart disease"
+    back: "C) Catheter ablation — superior to antiarrhythmic drugs for AF recurrence reduction\n\nFlecainide is contraindicated in structural heart disease (LV hypertrophy, reduced EF, CAD) — flecainide can provoke proarrhythmia (1C VT) in scarred/hypertrophied myocardium. This patient has LV hypertrophy + hypertension = structural disease. Amiodarone is the most effective antiarrhythmic but has significant long-term toxicity. Catheter ablation (pulmonary vein isolation) has been shown in multiple RCTs (CABANA, CASTLE-AF, EAST-AFNET 4) to be superior to drug therapy for AF recurrence reduction, symptom improvement, and in HF patients, mortality. Given recurrent AF on flecainide, ablation is now the recommended next step."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 44-year-old woman with no structural heart disease has frequent premature ventricular contractions (PVCs) at 28,000/24 hours on Holter. She is asymptomatic. Echo shows EF 50% (down from 62% two years ago). What is the most likely cause of her declining EF?\n\nA) Coincidental viral myocarditis\nB) Progression to arrhythmogenic RV cardiomyopathy\nC) PVC-induced cardiomyopathy\nD) Hypertensive cardiomyopathy"
+    back: "C) PVC-induced cardiomyopathy\n\nPVC-induced cardiomyopathy occurs when PVC burden exceeds 10,000–20,000/day (especially >15% of total beats) and is characterized by progressive LV systolic dysfunction. The dyssynchronous contraction pattern from frequent PVCs leads to maladaptive remodeling. This is a reversible cause of cardiomyopathy — catheter ablation of the PVC focus (often RVOT) results in EF recovery (reverse remodeling) in 80% of cases. This patient's 28,000 PVCs/day with declining EF is classic PVC-induced cardiomyopathy. Holter-confirmed PVC burden >15% with unexplained LV dysfunction should prompt ablation consideration."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 68-year-old man presents with sudden-onset palpitations and dyspnea. ECG shows a regular wide-complex tachycardia at 175 bpm. Vagal maneuvers do not terminate it. The Brugada criteria are applied and strongly suggest ventricular tachycardia. He is hemodynamically stable (BP 110/70). What is the most appropriate IMMEDIATE management?\n\nA) Adenosine 6mg IV — may terminate if actually SVT with aberrancy\nB) Synchronized DC cardioversion 200J\nC) IV procainamide or IV amiodarone\nD) IV verapamil — most effective for hemodynamically stable VT"
+    back: "C) IV procainamide or IV amiodarone\n\nStable wide-complex tachycardia that is likely VT: first-line pharmacological treatment is IV procainamide (superior efficacy with fewer side effects than lidocaine, CLASS I recommendation) or IV amiodarone. Verapamil is DANGEROUS in VT — it causes hemodynamic collapse if the rhythm is actually VT. Adenosine can be considered for SVT with aberrancy but is lower priority if VT is likely and can provoke VF. DC cardioversion is appropriate if the patient deteriorates hemodynamically. In stable WCT suspected VT: IV procainamide or amiodarone first-line; synchronized cardioversion if unstable or drug failure."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 25-year-old man has a syncopal episode during a football game. His ECG shows a QTc of 510ms. His father died suddenly at age 30. Gene panel shows a pathogenic variant in the KCNQ1 gene. What is the diagnosis and which triggers should specifically be avoided?\n\nA) Long QT type 2 (LQT2) — avoid sudden auditory stimuli (alarm clocks, doorbells)\nB) Long QT type 1 (LQT1) — avoid swimming and intense physical exercise\nC) Long QT type 3 (LQT3) — arrhythmias occur at rest/sleep; restrict nocturnal activity\nD) Catecholaminergic polymorphic VT (CPVT) — avoid exercise and catecholamine surge"
+    back: "B) Long QT type 1 (LQT1) — avoid swimming and intense physical exercise\n\nKCNQ1 mutations → LQT1. Trigger: exercise/swimming/emotional stress (adrenergic-mediated). The IKs channel (slow delayed rectifier K+ current encoded by KCNQ1) is most important during adrenergic stimulation — hence arrhythmias occur with exercise. LQT1 patients respond well to beta-blockers. LQT2 (KCNH2) — sudden auditory triggers. LQT3 (SCN5A) — arrhythmias at rest/sleep, bradycardia-dependent; mexiletine used. Swimming in cold water is particularly dangerous in LQT1 — vagal response + QTc prolongation. Beta-blockers are first-line therapy for LQT1."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 65-year-old woman with EF 38% and LBBB (QRS 165ms) undergoes CRT implantation. After the procedure, her 12-lead ECG shows a QRS of 145ms with a right bundle branch block pattern. Chest X-ray shows the LV lead in the anterolateral position. What does the RBBB pattern on ECG post-CRT suggest?\n\nA) Successful LV pacing — RBBB pattern is expected when pacing from the LV\nB) Lead dislodgement — the LV lead has migrated to the RV\nC) Appropriate RV sensing with LV pacing only\nD) Phrenic nerve stimulation — requires threshold reduction"
+    back: "A) Successful LV pacing — RBBB pattern is expected when pacing from the LV\n\nWhen the LV is paced from a lateral or posterolateral vein (LV lateral wall), the electrical impulse travels from left to right — producing a RIGHT bundle branch block (RBBB) pattern on surface ECG, since the right ventricle is depolarized late. This is the expected appearance of successful LV pacing in CRT. If the lead were in the RV (dislodged), it would show a LEFT bundle branch block pattern. The narrowing of QRS from 165ms to 145ms and RBBB pattern confirm effective biventricular resynchronization."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 55-year-old man with structurally normal heart has atrial flutter with typical sawtooth flutter waves at 300 bpm. He is rate-controlled with a ventricular rate of 75. Which statement about typical atrial flutter is TRUE?\n\nA) Typical flutter is a macro-re-entrant circuit through the crista terminalis in the left atrium\nB) The CTI (cavotricuspid isthmus) is the critical slow zone; ablation of this achieves >95% cure rate\nC) Anticoagulation is not required for flutter as thrombus formation is less common than in AF\nD) Atrial flutter requires more aggressive rate control than AF due to risk of 1:1 conduction"
+    back: "B) The CTI (cavotricuspid isthmus) is the critical slow zone; ablation of this achieves >95% cure rate\n\nTypical (isthmus-dependent) atrial flutter is a right atrial macro-re-entrant circuit rotating counterclockwise around the tricuspid annulus. The cavotricuspid isthmus (CTI) — between the inferior vena cava and tricuspid valve — is the critical slow conduction zone. CTI ablation achieves >95% long-term cure rate and is the treatment of choice. Anticoagulation IS required for flutter — same CHA₂DS₂-VASc thresholds as AF (thrombus can form in the LAA). Rate control is often more difficult in flutter — 2:1 conduction at 150 bpm is common; 1:1 conduction with AV conduction enhancers is dangerous."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 78-year-old woman has complete heart block (third-degree AV block) following inferior MI. Her escape rhythm is 42 bpm with a narrow QRS. Blood pressure is 88/60. She is symptomatic with presyncope. What is the most appropriate IMMEDIATE treatment?\n\nA) Transcutaneous pacing as a bridge to transvenous pacing\nB) Permanent pacemaker implantation within 24 hours\nC) IV atropine 0.5mg — vagally-mediated AV block responds well\nD) IV isoproterenol infusion to accelerate the escape rhythm"
+    back: "A) Transcutaneous pacing as a bridge to transvenous pacing\n\nComplete AV block post-inferior MI is usually transient (RCA occlusion → ischemia of AV node) and may resolve within 1–2 weeks in up to 40% of cases. However, if hemodynamically unstable, TEMPORARY pacing is required immediately — transvenous temporary pacing is definitive, preceded by transcutaneous pacing as an immediate bridge. Atropine can accelerate AV nodal conduction in vagally-mediated (inferior MI) block — and is a reasonable initial pharmacological step, but with BP 88/60 and presyncope, the priority is transcutaneous pacing as the most reliable bridge. Permanent pacing can be reconsidered at 7–10 days if block does not resolve."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 70-year-old man with sick sinus syndrome has a dual-chamber pacemaker (DDD mode). His paced ECG shows a paced P wave followed by a native QRS. Over time, he develops RV pacing-induced cardiomyopathy with EF falling from 60% to 38%. Which programming change or intervention is most appropriate?\n\nA) Switch to VOO mode to avoid oversensing\nB) Upgrade to CRT-P (biventricular pacemaker) if RV pacing >40%\nC) Switch to AAI mode only — eliminate RV pacing entirely\nD) No intervention — cardiomyopathy is not caused by RV pacing"
+    back: "B) Upgrade to CRT-P (biventricular pacemaker) if RV pacing >40%\n\nRV pacing-induced cardiomyopathy occurs when cumulative RV pacing burden >40% leads to dyssynchronous LV contraction (similar to LBBB physiology), causing progressive LV dysfunction. Management: (1) minimize RV pacing (program AV delay optimization or mode switch to AAI/AAIR in SSS with intact AV conduction); (2) if EF already reduced and RV pacing mandatory, upgrade to biventricular (CRT) pacing. The BLOCK-HF trial showed CRT superior to RV pacing in patients with AV block and mild-moderate LV dysfunction. With EF now 38%, CRT upgrade is strongly indicated."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 35-year-old woman has palpitations. A 14-day patch monitor shows frequent short bursts of narrow-complex tachycardia at 180 bpm that terminate abruptly with a P wave visible just after the QRS (RP interval < 70ms). What is the most likely mechanism?\n\nA) Atrial tachycardia — focal automatic origin in right atrial appendage\nB) AVNRT (typical slow-fast) — retrograde P wave near or within QRS\nC) AVRT using accessory pathway — long RP tachycardia\nD) Junctional ectopic tachycardia"
+    back: "B) AVNRT (typical slow-fast) — retrograde P wave near or within QRS\n\nTypical AVNRT (slow-fast) is the most common cause of paroxysmal SVT in women. The circuit uses the slow pathway (antegrade) and fast pathway (retrograde). Retrograde atrial activation occurs nearly simultaneously with ventricular activation — hence the P wave is buried within or immediately after the QRS (RP interval < 70ms, often < 100ms). Short RP tachycardia differentials: AVNRT, AVRT with fast accessory pathway. Long RP tachycardia: atypical AVNRT, atrial tachycardia, PJRT. The pseudo-R' in V1 or pseudo-S in inferior leads is the buried retrograde P wave — pathognomonic of typical AVNRT."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 62-year-old man undergoes EP study for recurrent VT. Mapping reveals a scar in the inferior LV wall. During tachycardia, entrainment mapping from within the scar demonstrates a post-pacing interval (PPI) of 30ms above the tachycardia cycle length (TCL). What does this indicate and what ablation strategy should be used?\n\nA) PPI = TCL + 30ms suggests this site is within the circuit; ablate here\nB) PPI 30ms above TCL indicates this site is a bystander; ablate elsewhere\nC) PPI < 20ms above TCL would be needed to indicate within the reentry circuit\nD) PPI results are unreliable in scar-related VT — only activation mapping is valid"
+    back: "A) PPI = TCL + 30ms suggests this site is within the circuit; ablate here\n\nDuring entrainment of a re-entrant VT: the post-pacing interval (PPI) reflects how far pacing is from the tachycardia circuit. PPI – TCL (the 'entrained interval') < 30ms indicates the pacing site is WITHIN or very close to the critical circuit isthmus — ablation here is likely effective. PPI – TCL of 30–50ms = within or near circuit. PPI – TCL > 50ms = bystander/remote site. The concealed entrainment concept (pacing at TCL without morphology change + PPI≈TCL) is the classic entrainment criterion for identifying the central isthmus. This site (PPI = TCL + 30ms) is within the circuit — ideal ablation target."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 48-year-old man with Brugada syndrome (Type 1 ECG pattern, spontaneous) has had one episode of syncope at rest. EP study is performed. Which finding during EP study would most support ICD implantation?\n\nA) Inducible VF with a single premature extrastimulus\nB) Inducible VF requiring triple extrastimuli — highly non-specific\nC) Sinus node dysfunction on EP study\nD) Prolonged HV interval > 100ms"
+    back: "D) Prolonged HV interval > 100ms\n\nEP-guided ICD decision in Brugada is controversial. In the PRELUDE registry and consensus statements: (1) Inducibility of VF with 1–2 extrastimuli is more specific and relevant. (2) Triple extrastimuli induction is non-specific (high false positive). (3) An HV interval > 70ms (especially >100ms) indicates significant His-Purkinje disease and predicts worse prognosis with risk of AV block — supports ICD implantation. In a patient with spontaneous Type 1 Brugada + syncope (intermediate risk): EP study findings (particularly HV interval) and ICD are guided by risk stratification. Quinidine is an alternative to ICD in some patients."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 77-year-old man has symptomatic bradycardia from sinus node dysfunction (sick sinus syndrome) with no documented AV block. A permanent pacemaker is being considered. Which pacing mode is most appropriate to PREVENT pacemaker syndrome?\n\nA) VVI — simple, appropriate for AF patients\nB) VVIR — rate-responsive ventricular pacing\nC) AAIR — rate-responsive atrial pacing only\nD) DDDR — dual-chamber rate-responsive pacing with AV delay optimization"
+    back: "D) DDDR — dual-chamber rate-responsive pacing with AV delay optimization\n\nPacemaker syndrome (retrograde VA conduction → atrial contraction against closed AV valves → hypotension, cannon A waves, fatigue) occurs with VVI pacing due to AV dyssynchrony. DDDR (dual-chamber, dual-sense, dual-response, rate-responsive) maintains AV synchrony by sensing the atrium and pacing the ventricle after an appropriate AV delay — preventing retrograde VA conduction and pacemaker syndrome. In sick sinus syndrome without AV block, AAIR is physiologically ideal (preserves native AV conduction) but risks pacing failure if AV block develops. DDDR is the most comprehensive and guideline-preferred mode for SSS."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "A 60-year-old man on amiodarone for AF presents with exertional dyspnea over 3 months. PFTs show: TLC 68% predicted, DLCO 52% predicted, FEV1/FVC ratio 0.82. His chest CT shows bilateral ground-glass opacities and peripheral consolidations. What is the most appropriate management?\n\nA) Start high-dose prednisone — amiodarone pulmonary toxicity requires aggressive immunosuppression\nB) Discontinue amiodarone and substitute with dofetilide\nC) Discontinue amiodarone; add corticosteroids for severe cases; substitute with dronedarone if EF normal\nD) Continue amiodarone at lower dose — the lung changes are likely non-specific"
+    back: "C) Discontinue amiodarone; add corticosteroids for severe cases; substitute with dronedarone if EF normal\n\nAmiodarone pulmonary toxicity (APT) occurs in 2–7% of patients and is the most serious non-cardiac complication. Diagnosis: new pulmonary infiltrates + PFTs (restrictive pattern + reduced DLCO) + clinical context. Management: (1) Discontinue amiodarone — mandatory; (2) Corticosteroids for moderate-severe cases (prednisone 40–60 mg/day tapering over months — prevents fibrosis progression); (3) Alternative antiarrhythmic — dronedarone (if EF ≥ 35% and no decompensated HF), sotalol, or dofetilide. Dronedarone shares amiodarone structure but lacks iodine, reducing pulmonary/thyroid toxicity. Note: amiodarone has a 40–55 day half-life — effects persist weeks after stopping."
+    difficulty: hard
+    tags: [Arrhythmias, MCQ, Toronto Notes]
+  - front: "What is the Vaughan-Williams classification of antiarrhythmic drugs?"
+    back: "Class I (Na channel): IA (procainamide), IB (lidocaine), IC (flecainide, propafenone). Class II: beta-blockers. Class III (K channel): amiodarone, sotalol, dofetilide. Class IV: non-DHP CCBs (diltiazem, verapamil)\n\nClass IC: contraindicated in structural heart disease and post-MI (CAST trial: increased mortality). Class III: QT prolongation risk. Amiodarone: most effective but toxic (thyroid, pulmonary, hepatic, corneal, skin). Sotalol: class II+III, requires QT monitoring. Dronedarone: less toxic but less effective than amiodarone."
+    difficulty: hard
+    tags: [antiarrhythmics, Vaughan-Williams, classification]
+  - front: "How is atrial fibrillation rate vs rhythm control decided?"
+    back: "Rate control preferred for: asymptomatic/mildly symptomatic, elderly, persistent AF, significant comorbidities. Rhythm control preferred for: symptomatic despite rate control, young, paroxysmal, HFrEF (EAST-AFNET 4: early rhythm control may improve outcomes)\n\nCCS AF guidelines. Rate control targets: <100 bpm resting (lenient) or <80 (strict - no difference per RACE II). Drugs: beta-blocker or diltiazem first-line. Digoxin adjunct only. Rhythm control: cardioversion, antiarrhythmics (flecainide for no structural HD, amiodarone/sotalol if structural), catheter ablation."
+    difficulty: hard
+    tags: [atrial fibrillation, rate control, rhythm control]
+  - front: "How is the stroke risk assessed in AF and when is anticoagulation indicated?"
+    back: "CHA2DS2-VASc: CHF(1), HTN(1), Age>=75(2), DM(1), Stroke/TIA(2), Vascular disease(1), Age 65-74(1), Sex female(1). Score >=2 males or >=3 females: anticoagulate. Score 1 male: consider. 0: no anticoagulation\n\nCCS recommends DOACs over warfarin (less ICH, no monitoring). Apixaban, rivaroxaban, edabigatran, edoxaban. LAA occlusion (Watchman) for patients who cannot tolerate long-term anticoagulation. HAS-BLED assesses bleeding risk but should NOT be used to withhold indicated anticoagulation."
+    difficulty: hard
+    tags: [CHA2DS2-VASc, AF, anticoagulation]
+  - front: "What is the approach to new-onset atrial fibrillation?"
+    back: "Assess hemodynamic stability. Unstable: cardioversion. Stable: rate control + anticoagulation assessment. Determine cause: thyroid, PE, sepsis, alcohol, post-surgical. Duration <48h: cardiovert or rate control. >48h or unknown: anticoagulate >=3wk before cardioversion or TEE-guided\n\nCCS guidelines. New AF workup: ECG, TSH, CBC, lytes, echo (valvular disease, LA size, EF). Post-cardioversion: anticoagulate >=4wk regardless (atrial stunning). Long-term anticoagulation based on CHA2DS2-VASc. Lone AF in young: low stroke risk but still assess."
+    difficulty: medium
+    tags: [new AF, cardioversion, rate control]
+  - front: "What is Wolff-Parkinson-White syndrome and how is it managed?"
+    back: "ECG: short PR (<120ms), delta wave, wide QRS. Accessory pathway (bundle of Kent). Risk: rapid AF conducting via pathway causing VF. Treatment: catheter ablation (curative). Avoid AV nodal blockers (digoxin, CCB, adenosine) in pre-excited AF\n\nWPW with AF: irregular wide-complex tachycardia. AV nodal blockers can paradoxically increase conduction via accessory pathway causing VF. Treat with procainamide or cardioversion. Asymptomatic WPW: risk stratification with EP study. High-risk features: short SPERRI (<250ms)."
+    difficulty: hard
+    tags: [WPW, accessory pathway, ablation]
+  - front: "What are the types and management of ventricular tachycardia?"
+    back: "Monomorphic VT: single QRS morphology, usually structural heart disease. Hemodynamically stable: IV amiodarone 150mg over 10min. Unstable: synchronized cardioversion. Pulseless VT: defibrillation. Polymorphic VT (Torsades): IV magnesium 2g, overdrive pacing\n\nPost-MI VT: ICD indication. VT storm (>=3 episodes in 24h): amiodarone infusion + beta-blocker optimization + catheter ablation. Brugada syndrome: ICD for high-risk, avoid Na channel blockers/fever. Long QT: beta-blocker, avoid QT-prolonging drugs, ICD if high-risk."
+    difficulty: hard
+    tags: [ventricular tachycardia, amiodarone, ICD]
+  - front: "What are the indications for permanent pacemaker?"
+    back: "Symptomatic bradycardia (sinus node dysfunction with symptoms). Complete heart block or Mobitz II (even if asymptomatic). Symptomatic 2:1 block. Tachy-brady syndrome needing rate control drugs. Post-cardiac surgery with persistent block\n\nMobitz I (Wenckebach): usually benign, does NOT need pacemaker unless symptomatic. Pacemaker types: single chamber (VVI for AF + bradycardia), dual chamber (DDD for sinus node + AV node), CRT (for HF + LBBB). Complications: lead displacement, infection, pneumothorax, pacemaker syndrome."
+    difficulty: hard
+    tags: [pacemaker, heart block, bradycardia]
+  - front: "How is atrial flutter diagnosed and managed?"
+    back: "ECG: sawtooth flutter waves at ~300/min (best seen II, III, aVF, V1). Usually 2:1 block giving rate ~150. Unstable: cardioversion (lower energy than AF, 50-100J). Anticoagulation: same as AF based on CHA2DS2-VASc. Catheter ablation (CTI line) is curative\n\nAtrial flutter has higher stroke risk than often appreciated - anticoagulate same as AF. Antiarrhythmics poorly effective. Catheter ablation of cavo-tricuspid isthmus is first-line for typical flutter (>95% success). Rate control more difficult than AF (often resistant to drugs)."
+    difficulty: hard
+    tags: [atrial flutter, ablation, anticoagulation]
+  - front: "What is the approach to syncope evaluation?"
+    back: "History most important: prodrome, triggers, position, witnesses. Cardiac syncope (high-risk): exertional, supine, palpitations, FHx sudden death, structural HD, abnormal ECG. Vasovagal: standing/pain trigger, prodrome, young. Workup: ECG (all), echo if structural suspected, Holter/loop if arrhythmic\n\nCanadian Cardiovascular Society syncope guidelines. Admit if: suspected cardiac cause, significant injury, high-risk features. Tilt table test for recurrent suspected vasovagal. Implantable loop recorder for recurrent unexplained. Driving restrictions: CCS guidelines vary by cause (cardiac syncope: typically 3-12mo restriction)."
+    difficulty: medium
+    tags: [syncope, evaluation, cardiac]
+  - front: "What is catheter ablation and for which arrhythmias is it indicated?"
+    back: "AF: PVI (pulmonary vein isolation) for symptomatic paroxysmal AF, increasingly first-line for persistent and HF. Atrial flutter: CTI ablation (curative >95%). SVT (AVNRT/AVRT): curative >95%. WPW: pathway ablation. VT: for recurrent VT/VT storm\n\nCCS recommends ablation as first-line or early therapy for many supraventricular arrhythmias. AF ablation: PVI using radiofrequency or cryoballoon. Success: ~70-80% for paroxysmal AF. Complications: stroke, tamponade, PV stenosis, esophageal injury (rare). CASTLE-AF: ablation improves mortality in HFrEF+AF."
+    difficulty: hard
+    tags: [catheter ablation, PVI, AF]
+  - front: "What is the systematic approach to ECG interpretation?"
+    back: "Rate, rhythm, axis, intervals (PR, QRS, QT), P waves, ST/T changes, Q waves. Normal: rate 60-100, regular, axis -30 to +90, PR 120-200ms, QRS <120ms, QTc <440ms(M)/<460ms(F)\n\nCritical findings to identify immediately: STEMI (ST elevation in contiguous leads), complete heart block, wide complex tachycardia, hyperkalemia (peaked T), PE (S1Q3T3, right heart strain)."
+    difficulty: medium
+    tags: [ECG, interpretation]
+  - front: "A 70-year-old male with a history of aortic stenosis experiences sudden loss of consciousness while climbing stairs. He regained consciousness within 30 seconds. What type of syncope is this, and why is it high-risk?"
+    back: "Cardiac syncope (exertional syncope due to fixed obstruction from aortic stenosis). This is high-risk because it indicates the cardiac output cannot meet demand, and it is associated with sudden cardiac death. Urgent echocardiography and cardiology consultation are required.\n\nSyncope during exertion is cardiac until proven otherwise and should never be attributed to vasovagal. Other high-risk features include syncope while supine, preceding palpitations, family history of sudden death, and abnormal ECG. The Canadian Syncope Risk Score helps stratify patients in the ED."
+    difficulty: medium
+    tags: [syncope, cardiac, aortic-stenosis, cardiology, risk-stratification]
+  - front: "How do you differentiate cardiac syncope from vasovagal syncope from orthostatic hypotension based on history?"
+    back: "Vasovagal: prodrome (lightheadedness, warmth, nausea, diaphoresis), triggered by prolonged standing/emotional stress/pain, gradual onset, rapid full recovery. Cardiac: sudden onset without prodrome, exertional, preceding palpitations, family history of sudden death. Orthostatic: occurs on standing, associated with volume depletion, medications (antihypertensives), or autonomic dysfunction.\n\nOrthostatic hypotension is confirmed by a drop of ≥20 mmHg systolic or ≥10 mmHg diastolic within 3 minutes of standing. Vasovagal is the most common cause of syncope overall, but cardiac causes carry the highest mortality risk and must always be excluded first."
+    difficulty: medium
+    tags: [syncope, vasovagal, orthostatic, differential-diagnosis, cardiology]
+  - front: "What investigations should be ordered for a patient presenting with syncope of unclear etiology?"
+    back: "Initial workup: 12-lead ECG (all patients), orthostatic vitals, CBC, glucose, electrolytes, troponin (if cardiac suspected). Extended: echocardiography (structural heart disease), Holter monitor (24-48h) or event recorder (paroxysmal arrhythmia), tilt-table test (recurrent vasovagal suspected), implantable loop recorder (recurrent unexplained syncope).\n\nECG is the single most important initial test and can reveal arrhythmias, long QT, Brugada pattern, WPW, or hypertrophic cardiomyopathy. Holter monitors capture 24-48 hours continuously but miss infrequent events. Implantable loop recorders can monitor for up to 3 years for rare but recurrent episodes."
+    difficulty: medium
+    tags: [syncope, workup, ECG, Holter, tilt-table, cardiology]
+  - front: "A 25-year-old woman has recurrent episodes of syncope in crowded, warm environments preceded by nausea and tunnel vision. Each episode lasts <1 minute with full recovery. Cardiac workup is normal. What is the diagnosis and management?"
+    back: "Vasovagal (neurocardiogenic) syncope. Management: patient education, recognition and avoidance of triggers, counter-pressure maneuvers (leg crossing, hand gripping), adequate hydration and salt intake. Tilt-table testing can confirm the diagnosis. Midodrine may be considered for refractory cases.\n\nVasovagal syncope results from a paradoxical reflex causing bradycardia and vasodilation. It is benign but can significantly impact quality of life. Physical counter-pressure maneuvers have the strongest evidence for prevention and can abort an impending episode if performed during the prodrome."
+    difficulty: easy
+    tags: [syncope, vasovagal, management, cardiology]
+  - front: "How do you identify RBBB vs LBBB on ECG?"
+    back: "RBBB: rsR' in V1-V2 (M-shaped), wide S in I/V6. LBBB: broad notched R in I/V5-V6, QS or rS in V1. Both: QRS >120ms\n\nNew LBBB + chest pain = treat as STEMI (Sgarbossa criteria if STEMI suspected in LBBB). RBBB: often benign but can indicate RV strain (PE). LBBB: usually pathological (HTN, cardiomyopathy)."
+    difficulty: medium
+    tags: [ECG, BBB]
+  - front: "What ECG leads correspond to which coronary territories?"
+    back: "Anterior (V1-V4): LAD. Inferior (II,III,aVF): RCA. Lateral (I,aVL,V5-V6): LCx. Posterior: tall R in V1-V2 (mirror image). RV: ST elevation V4R\n\nReciprocal changes increase specificity for STEMI. Inferior STEMI: always get right-sided leads (V4R) to check for RV involvement — avoid nitrates and volume depletion if RV infarct."
+    difficulty: medium
+    tags: [ECG, coronary territories]
+  - front: "What is the WPW pattern on ECG and why is it dangerous?"
+    back: "Short PR (<120ms), delta wave (slurred QRS upstroke), wide QRS. Danger: AF with rapid conduction down accessory pathway can cause VF. AVOID AV nodal blockers (adenosine, CCB, digoxin, beta-blockers)\n\nWPW + AF: treat with procainamide or electrical cardioversion. AV nodal blockers enhance accessory pathway conduction. Definitive treatment: catheter ablation of accessory pathway."
+    difficulty: hard
+    tags: [WPW, ECG]
+  - front: "What are the causes of left axis deviation (LAD) and right axis deviation (RAD) on ECG?"
+    back: "LAD (axis < -30°): left anterior fascicular block, inferior MI, LVH, WPW (posterior pathway). RAD (axis > +90°): right ventricular hypertrophy, left posterior fascicular block, PE, lateral MI, COPD, pediatric normal variant.\n\nLAD is most commonly caused by left anterior fascicular block, which shifts the axis leftward because the remaining left posterior fascicle depolarizes the ventricle from inferior to superior. RAD is less common and left posterior fascicular block is a diagnosis of exclusion, as it requires ruling out RVH and other causes."
+    difficulty: medium
+    tags: [axis deviation, LAD, RAD, fascicular block, ECG interpretation]
+  - front: "What are the ECG criteria for right bundle branch block (RBBB) versus left bundle branch block (LBBB)?"
+    back: "RBBB: QRS ≥120 ms, rsR' pattern in V1-V2 (M-shaped), wide slurred S in I and V6. LBBB: QRS ≥120 ms, broad notched R in I, aVL, V5-V6, absent Q in I and V6, rS or QS in V1.\n\nRBBB can be a normal finding or indicate right heart strain (PE, RVH). New LBBB is always pathological and may indicate acute MI (per Sgarbossa criteria), cardiomyopathy, or conduction disease. LBBB makes standard ST-segment interpretation unreliable for MI diagnosis."
+    difficulty: medium
+    tags: [RBBB, LBBB, bundle branch block, QRS morphology, ECG]
+  - front: "Which ECG leads correspond to which coronary artery territories: anterior, inferior, and lateral MI?"
+    back: "Anterior (V1-V4): LAD. Inferior (II, III, aVF): RCA (85%) or LCx (15%). Lateral (I, aVL, V5-V6): LCx. Posterior: reciprocal ST depression in V1-V3, tall R waves in V1.\n\nAnterior STEMI from proximal LAD occlusion carries the highest mortality due to large area of myocardium at risk. Inferior MI should prompt a right-sided ECG (V4R) to assess for RV involvement, which changes fluid management. Posterior MI is easily missed without posterior leads (V7-V9)."
+    difficulty: medium
+    tags: [STEMI, coronary territories, LAD, RCA, LCx, ECG localization]
+  - front: "How do you differentiate pericarditis from STEMI on ECG?"
+    back: "Pericarditis: diffuse concave-up ST elevation, PR depression (especially in II), ST elevation in lead II > III, no reciprocal changes, Spodick sign (downsloping TP segment). STEMI: convex or straight ST elevation in a coronary territory, reciprocal ST depression, pathological Q waves.\n\nThe ratio of ST elevation to T-wave amplitude in V6 >0.25 favors pericarditis over early repolarization. PR depression is the most specific ECG finding for pericarditis. STEMI has reciprocal changes (e.g., inferior ST elevation with lateral ST depression), which pericarditis lacks."
+    difficulty: hard
+    tags: [pericarditis, STEMI, ST elevation, PR depression, ECG differential]
+  - front: "What is Wellens syndrome, and why is it a critical ECG diagnosis?"
+    back: "Wellens syndrome shows biphasic T waves (Type A) or deep symmetric T-wave inversions (Type B) in V2-V3 during pain-free intervals, indicating critical proximal LAD stenosis. Stress testing is contraindicated.\n\nWellens pattern represents a pre-infarction state with >90% proximal LAD stenosis. These patients are at high risk for extensive anterior MI without intervention. Troponin may be normal or minimally elevated. The pattern appears when the patient is pain-free, not during active ischemia."
+    difficulty: hard
+    tags: [Wellens syndrome, LAD stenosis, T-wave inversion, STEMI equivalent, ECG]
+  - front: "What is the de Winter ECG pattern, and what does it signify?"
+    back: "De Winter pattern shows upsloping ST depression at the J-point with tall, symmetric T waves in precordial leads (V1-V6), often with subtle ST elevation in aVR. It represents acute LAD occlusion and is a STEMI equivalent.\n\nDe Winter pattern is present in ~2% of acute LAD occlusions and does not evolve into classic ST elevation. It should be treated with emergent PCI despite not meeting traditional STEMI criteria. It is important to recognize because these patients may be triaged incorrectly as NSTEMI."
+    difficulty: hard
+    tags: [de Winter, STEMI equivalent, LAD occlusion, ST depression, ECG]
+  - front: "What are the common causes of prolonged QTc, and how is torsades de pointes managed?"
+    back: "Causes: drugs (antiarrhythmics, macrolides, antipsychotics, methadone), hypokalemia, hypomagnesemia, hypocalcemia, congenital long QT. Torsades management: IV magnesium 2g, overdrive pacing, isoproterenol; avoid further QT-prolonging drugs.\n\nQTc >500 ms significantly increases torsades risk. Magnesium is effective even with normal serum levels. Overdrive pacing at 90-110 bpm shortens the QT interval and suppresses the pause-dependent triggered activity. Standard antiarrhythmics (amiodarone, procainamide) are contraindicated as they prolong QT further."
+    difficulty: hard
+    tags: [long QT, torsades de pointes, magnesium, QTc prolongation, drug-induced arrhythmia]
+  - front: "What are the ECG findings in Wolff-Parkinson-White (WPW) syndrome, and what is the dangerous arrhythmia to watch for?"
+    back: "WPW: short PR interval (<120 ms), delta wave (slurred QRS upstroke), widened QRS. The dangerous arrhythmia is pre-excited atrial fibrillation, which can degenerate to ventricular fibrillation.\n\nIn WPW, an accessory pathway (Bundle of Kent) bypasses the AV node, allowing rapid conduction. AV nodal blockers (beta-blockers, calcium channel blockers, digoxin, adenosine) are contraindicated in pre-excited AF as they may enhance accessory pathway conduction. Procainamide or electrical cardioversion are appropriate treatments."
+    difficulty: hard
+    tags: [WPW, delta wave, pre-excitation, accessory pathway, pre-excited AF]
+  - front: "How do you distinguish digoxin effect from digoxin toxicity on ECG?"
+    back: "Digoxin effect (therapeutic): ST scooping ('Salvador Dali mustache'), shortened QTc, flattened/inverted T waves. Digoxin toxicity: any arrhythmia, classically bidirectional VT, accelerated junctional rhythm, atrial tachycardia with block, frequent PVCs.\n\nDigoxin effect on ECG does not indicate toxicity. Digoxin toxicity is diagnosed clinically (nausea, visual changes, arrhythmias) and by elevated levels (>2.0 ng/mL). Hypokalemia predisposes to toxicity despite normal drug levels. Treatment of severe toxicity is digoxin-specific antibody fragments (Digibind/DigiFab)."
+    difficulty: hard
+    tags: [digoxin, digoxin toxicity, bidirectional VT, ST scooping, ECG]
+  - front: "What are the ECG findings in Brugada syndrome, and what are the two types of Brugada patterns?"
+    back: "Type 1 (diagnostic): coved ST elevation ≥2 mm in V1-V3 with negative T wave. Type 2 (suggestive): saddleback ST elevation in V1-V3 with positive/biphasic T wave. Type 1 is required for diagnosis.\n\nBrugada syndrome is a sodium channelopathy causing sudden cardiac death from polymorphic VT/VF, typically in young males during sleep or fever. Type 2 pattern requires provocation with ajmaline or procainamide to convert to Type 1 for diagnosis. An ICD is the only proven treatment to prevent sudden death."
+    difficulty: hard
+    tags: [Brugada syndrome, coved ST elevation, channelopathy, sudden cardiac death, ECG]
+  - front: "What are the Sgarbossa criteria for diagnosing acute MI in the setting of LBBB?"
+    back: "Original Sgarbossa: (1) concordant ST elevation ≥1 mm (5 points), (2) concordant ST depression ≥1 mm in V1-V3 (3 points), (3) discordant ST elevation ≥5 mm (2 points). Score ≥3 is specific for MI. Modified Sgarbossa replaces criterion 3 with ST/S ratio ≥0.25.\n\nLBBB makes standard ST-segment analysis unreliable because baseline repolarization is altered. Concordant ST changes (same direction as QRS) are highly specific for acute MI. The modified Smith-Sgarbossa criteria using the ST/S ratio improve sensitivity without sacrificing specificity."
+    difficulty: hard
+    tags: [Sgarbossa criteria, LBBB, acute MI, STEMI equivalent, ECG]
+  - front: "What ECG findings suggest hyperkalemia, and at what potassium levels do they typically appear?"
+    back: "K+ 5.5-6.5: peaked T waves. K+ 6.5-7.5: prolonged PR, flattened P waves, QRS widening. K+ 7.5-8.0: sine wave pattern. K+ >8.0: VF/asystole.\n\nThe progression is predictable but individual variation exists; some patients develop lethal arrhythmias at lower levels. IV calcium gluconate stabilizes the myocardial membrane within minutes but does not lower potassium. Insulin/dextrose, bicarbonate, and salbutamol shift potassium intracellularly, while kayexalate and dialysis remove it."
+    difficulty: medium
+    tags: [hyperkalemia, peaked T waves, sine wave, ECG, electrolyte emergency]
+  - front: "A patient presents with a regular narrow-complex tachycardia at 150 bpm. What diagnosis should you consider, and what is the initial management?"
+    back: "A rate of exactly 150 bpm should raise suspicion for atrial flutter with 2:1 block. Initial management: vagal maneuvers, then adenosine 6 mg rapid IV push to unmask flutter waves if diagnosis uncertain. If flutter confirmed, rate control or cardioversion.\n\nAtrial flutter has an atrial rate of ~300 bpm, so 2:1 block produces a ventricular rate of ~150 bpm. Adenosine transiently blocks AV conduction, revealing sawtooth flutter waves in II, III, aVF. Unlike SVT, adenosine will not terminate flutter but helps with diagnosis."
+    difficulty: medium
+    tags: [atrial flutter, narrow complex tachycardia, adenosine, 2:1 block, ECG]
+  - front: "What are the ECG findings of right ventricular MI, and how does it change management of an inferior STEMI?"
+    back: "ST elevation ≥1 mm in V4R (right-sided ECG) with inferior ST elevation. Management: avoid nitrates and diuretics (preload-dependent), give IV fluids for hypotension, and pursue emergent PCI.\n\nThe RV is preload-dependent, so nitrates and diuretics can cause catastrophic hypotension by reducing venous return. RV infarction complicates ~30-50% of inferior MIs and is associated with higher mortality. Hypotension in inferior MI should prompt immediate right-sided ECG."
+    difficulty: hard
+    tags: [RV infarction, V4R, inferior MI, preload dependent, ECG]
+  - front: "What is the approach to differentiating wide-complex tachycardia as VT versus SVT with aberrancy?"
+    back: "Favor VT: AV dissociation, fusion/capture beats, concordance in precordial leads, northwest axis, Brugada criteria positive, history of structural heart disease. If uncertain, treat as VT (safer assumption).\n\nVT accounts for ~80% of wide-complex tachycardias, especially in patients with prior MI or cardiomyopathy. The Brugada algorithm (not syndrome) uses a stepwise approach: RS absence in all precordial leads, RS interval >100 ms, AV dissociation, and morphology criteria. Adenosine should be avoided if VT is suspected."
+    difficulty: hard
+    tags: [wide complex tachycardia, VT vs SVT, AV dissociation, Brugada algorithm, ECG]
+  - front: "What are the ECG hallmarks of atrial fibrillation (AFib)?"
+    back: "Absent P waves, may have fibrillatory waves, irregularly irregular ventricular rhythm\n\nAFib results from chaotic atrial electrical activity, causing an irregularly irregular heartbeat."
+    difficulty: easy
+    tags: [ECG, arrhythmia, atrial fibrillation, toronto-notes, pages-0101-0102-0103-0104-0105-0106-0107-0108-0109-0110]
+  - front: "What defines first-degree AV block on ECG?"
+    back: "Fixed, prolonged P-R interval (>200 msec), but every P wave has a QRS following it\n\nFirst-degree block indicates slowed AV conduction but no dropped beats."
+    difficulty: easy
+    tags: [ECG, AV block, conduction abnormality, toronto-notes, pages-0101-0102-0103-0104-0105-0106-0107-0108-0109-0110]
+  - front: "What characterizes second-degree Mobitz Type I (Wenckebach) AV block?"
+    back: "Gradual prolongation of the P-R interval precedes a dropped QRS complex (non-conducted P wave)\n\nWenckebach blocks typically occur at the AV node level and are often benign and reversible."
+    difficulty: medium
+    tags: [ECG, AV block, arrhythmia, toronto-notes, pages-0101-0102-0103-0104-0105-0106-0107-0108-0109-0110]
+  - front: "What characterizes second-degree Mobitz Type II (Hay) AV block?"
+    back: "Fixed P-R interval with a consistent ratio of atrial to dropped ventricular beats (e.g., 3:1 = 3 atrial beats for every 1 ventricular beat)\n\nMobitz II blocks occur distal to the AV node and are more dangerous than Mobitz I, often requiring pacing."
+    difficulty: medium
+    tags: [ECG, AV block, arrhythmia, toronto-notes, pages-0101-0102-0103-0104-0105-0106-0107-0108-0109-0110]
+  - front: "What ECG findings indicate third-degree (complete) AV block?"
+    back: "Constant P-P and R-R intervals but variable P-R intervals; P waves and QRS complexes are independent\n\nComplete heart block results from complete interruption of conduction between atria and ventricles."
+    difficulty: easy
+    tags: [ECG, AV block, arrhythmia, toronto-notes, pages-0101-0102-0103-0104-0105-0106-0107-0108-0109-0110]
+  - front: "What ECG findings characterize trifascicular block?"
+    back: "Long PR segment (first-degree AV block) combined with bifascicular block (typically RBBB + left anterior or posterior fascicular block)\n\nTrifascicular block indicates disease in all three fascicles and carries risk of progression to complete heart block."
+    difficulty: hard
+    tags: [ECG, conduction abnormality, bundle branch block, toronto-notes, pages-0101-0102-0103-0104-0105-0106-0107-0108-0109-0110]
+  - front: "What are the ECG findings characteristic of third-degree (complete) AV block?"
+    back: "Wide or narrow QRS, constant P-P and R-R intervals with variable PR intervals, and no relationship between P waves and QRS complexes ('P waves marching through'), with more P waves than QRS complexes\n\nIn complete heart block, the atria and ventricles beat independently because no impulses conduct through the AV node. An escape pacemaker distal to the block initiates ventricular depolarization."
+    difficulty: easy
+    tags: [cardiology, arrhythmias, ECG, AV block, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What ECG findings differentiate atrial flutter from atrial fibrillation?"
+    back: "Atrial flutter shows 'sawtooth' flutter waves (250-350 bpm, usually 300 bpm) with regular or regularly irregular ventricular response, while AFib shows absent P waves with fibrillatory baseline and irregularly irregular ventricular response\n\nThe 'sawtooth' pattern of atrial flutter is due to macro-reentry circuit in the right atrium, typically involving the isthmus between the tricuspid annulus and IVC."
+    difficulty: medium
+    tags: [cardiology, atrial flutter, atrial fibrillation, ECG, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What is the most common sustained arrhythmia?"
+    back: "Atrial fibrillation (AFib)\n\nAFib is the most prevalent sustained cardiac arrhythmia worldwide, with increasing prevalence with age and associated cardiovascular conditions."
+    difficulty: easy
+    tags: [cardiology, atrial fibrillation, arrhythmias, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "How does 'lone' AFib differ from other types?"
+    back: "'Lone' AFib occurs in persons under 65 years with no clinical or echocardiographic causes identified\n\nPatients with lone AFib have better prognosis as they lack structural heart disease or other identifiable triggers that promote arrhythmia recurrence."
+    difficulty: easy
+    tags: [cardiology, atrial fibrillation, classification, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What are the ECG findings in atrial fibrillation?"
+    back: "No organized P waves (chaotic fibrillatory baseline from rapid atrial activity at 350-600 bpm) and irregularly irregular ventricular response\n\nThe AV node irregularly filters incoming atrial impulses, producing the characteristic irregularly irregular rhythm without discernible atrial activity."
+    difficulty: easy
+    tags: [cardiology, atrial fibrillation, ECG, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What is the typical atrial rate in atrial flutter and why does it cause variable AV block?"
+    back: "Atrial rate is 250-350 bpm (usually 300 bpm); AV block usually occurs because the AV node cannot conduct all atrial impulses, resulting in 2:1, 3:1, or 4:1 block\n\nThe AV node's refractory period protects the ventricles from excessively rapid rates. Fixed or variable block ratios determine ventricular rate."
+    difficulty: medium
+    tags: [cardiology, atrial flutter, AV block, physiology, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What is the concern with combining non-dihydropyridine CCBs (verapamil/diltiazem) with beta-blockers?"
+    back: "Risk of symptomatic sinus bradycardia or AV block due to combined negative chronotropic effects\n\nBoth drug classes suppress cardiac conduction, and the combination can cause dangerous bradyarrhythmias requiring pacemaker placement."
+    difficulty: medium
+    tags: [cardiology, angina, calcium channel blockers, drug interactions, toronto-notes, pages-0121-0122-0123-0124-0125-0126-0127-0128-0129-0130]
+  - front: "What is the hallmark ECG finding in third-degree (complete) AV block?"
+    back: "P waves and QRS complexes are completely dissociated with no relationship between them (P waves 'march through' the QRS complexes). There are more P waves than QRS complexes, and PR intervals vary randomly.\n\nThird-degree AV block represents complete failure of conduction from atria to ventricles. The ventricles are driven by an escape pacemaker distal to the block, which may be narrow or wide depending on its location."
+    difficulty: easy
+    tags: [cardiology, arrhythmias, AV block, ECG interpretation, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What is the management approach for third-degree AV block?"
+    back: "Permanent electrical pacing (pacemaker) is the definitive treatment for symptomatic third-degree AV block.\n\nPatients with third-degree AV block are at high risk for syncope and sudden cardiac death due to unreliable ventricular conduction. A pacemaker ensures reliable heart rate."
+    difficulty: easy
+    tags: [cardiology, arrhythmias, AV block, treatment, pacemaker, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What are the characteristic ECG findings of atrial flutter?"
+    back: "'Sawtooth' flutter waves (best seen in inferior leads II, III, aVF), narrow QRS complexes (unless aberrancy exists), and atrial rate of 250-350 bpm (usually 300 bpm). AV block is usually present (commonly 2:1, giving a ventricular rate of ~150 bpm).\n\nAtrial flutter results from a macro re-entry circuit in the right atrium, typically involving the isthmus between the tricuspid annulus and IVC. Carotid massage or adenosine can slow AV conduction to better visualize the flutter waves."
+    difficulty: medium
+    tags: [cardiology, arrhythmias, atrial flutter, ECG, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What is 'lone' atrial fibrillation?"
+    back: "AF occurring in persons under 65 years of age with no clinical or echocardiographic evidence of underlying heart disease.\n\nLone AF carries a lower thromboembolic risk than AF with structural heart disease, though anticoagulation decisions still require individual risk assessment."
+    difficulty: easy
+    tags: [cardiology, arrhythmias, atrial fibrillation, classification, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What is the mechanism of atrial fibrillation maintenance?"
+    back: "Tachycardia causes atrial structural and electrophysiological remodeling. The longer a patient remains in AF, the more the atria remodel, creating more substrate for AF maintenance - making it progressively harder to restore normal sinus rhythm.\n\nThis concept of 'AF begets AF' explains why early intervention (rhythm control) may be beneficial and why anticoagulation becomes increasingly important with longer AF duration."
+    difficulty: hard
+    tags: [cardiology, arrhythmias, atrial fibrillation, pathophysiology, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What caution is needed when combining verapamil/diltiazem with beta-blockers?"
+    back: "May cause symptomatic sinus bradycardia or AV block\n\nBoth drug classes suppress cardiac conduction, and their combination can cause dangerous bradyarrhythmias."
+    difficulty: medium
+    tags: [cardiology, CCB, beta-blockers, drug-interactions, toronto-notes, pages-0121-0122-0123-0124-0125-0126-0127-0128-0129-0130]
+  - front: "What are the advantages of TAVR over SAVR in intermediate-risk patients with aortic stenosis?"
+    back: "TAVR resulted in larger aortic valve areas, lower rates of AKI, less severe bleeding, and less new-onset atrial fibrillation\n\nThe transcatheter approach demonstrated benefits in renal protection and bleeding complications, though surgical replacement showed advantages in vascular complications and paravalvular regurgitation."
+    difficulty: medium
+    tags: [cardiology, TAVR, SAVR, aortic stenosis, comparative outcomes, toronto-notes, pages-0151-0152-0153-0154-0155-0156-0157-0158-0159-0160]
+  - front: "What are the key side effects of digoxin?"
+    back: "Bidirectional VT, bradyarrhythmias, AV block, blurred or yellow vision (van Gogh syndrome), anorexia, nausea/vomiting\n\nDigoxin has a narrow therapeutic index. Visual changes and arrhythmias are particularly concerning signs of toxicity."
+    difficulty: easy
+    tags: [cardiology, inotropes, side-effects, toxicity, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the side effects of beta-blockers used as antiarrhythmics?"
+    back: "Bronchospasm, negative inotropy, bradycardia, AV block, impotence, fatigue\n\nBeta-blockers are contraindicated in severe bradycardia, AV block, decompensated heart failure, and severe asthma."
+    difficulty: easy
+    tags: [cardiology, antiarrhythmics, Class-II, beta-blockers, side-effects, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What serious arrhythmia can Class III antiarrhythmics cause?"
+    back: "Torsades de Pointes (polymorphic ventricular tachycardia associated with QT prolongation)\n\nThe QT-prolonging effect of Class III drugs predisposes to Torsades de Pointes, particularly in patients with hypokalemia or congenital long QT."
+    difficulty: medium
+    tags: [cardiology, antiarrhythmics, Class-III, Torsades, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the side effects of verapamil and diltiazem?"
+    back: "Bradycardia, AV block, and hypotension\n\nClass IV antiarrhythmics should be avoided in heart failure with reduced ejection fraction due to their negative inotropic effects."
+    difficulty: easy
+    tags: [cardiology, antiarrhythmics, Class-IV, calcium-channel-blockers, side-effects, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "In which clinical scenarios would you use dabigatran versus warfarin?"
+    back: "Dabigatran is used for AFib and venous thrombosis/PE in patients without severe renal impairment or recent surgery. Warfarin is preferred for patients with mechanical heart valves and those requiring frequent INR monitoring.\n\nDOACs (including dabigatran) are generally preferred for non-valvular AFib due to lower bleeding risk and no monitoring requirement, but warfarin remains standard for mechanical valves."
+    difficulty: hard
+    tags: [cardiology, anticoagulants, DOACs, warfarin, clinical-decision, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the contraindications for digoxin?"
+    back: "2nd or 3rd degree AV block, AV junctional tachycardia, bidirectional VT, bradyarrhythmias, hypokalemia, blurred or yellow vision (van Gogh syndrome)\n\nDigoxin's vagotonic effects on the AV node make it dangerous in conditions with pre-existing conduction abnormalities."
+    difficulty: medium
+    tags: [cardiology, digoxin, contraindications, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the beta-blocker antiarrhythmics (Class II) and their side effects?"
+    back: "Propranolol, metoprolol, and others. Side effects: bronchospasm, negative inotropy, bradycardia, AV block, impotence, fatigue\n\nClass II antiarrhythmics decrease phase 4 spontaneous depolarization. Used for SVT and AFib rate control."
+    difficulty: easy
+    tags: [cardiology, antiarrhythmics, Class II, beta-blockers, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the Class IV antiarrhythmic drugs (calcium channel blockers)?"
+    back: "Verapamil SR and diltiazem. Side effects: bradycardia, AV block, hypotension\n\nClass IV drugs slow phase 4 spontaneous depolarization and slow AV node conduction. Used for AFib rate control."
+    difficulty: easy
+    tags: [cardiology, antiarrhythmics, Class IV, calcium channel blockers, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What does the 2020 Canadian Cardiovascular Society/Canadian Heart Rhythm Society guideline cover?"
+    back: "Comprehensive Guidelines for the Management of Atrial Fibrillation"
+    difficulty: easy
+    tags: [cardiology, atrial-fibrillation, guidelines, CCS, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What are the contraindications to digoxin?"
+    back: "2nd or 3rd degree AV block, AV block with junctional tachycardia, bidirectional VT, bradyarrhythmias, hypokalemia, blurred or yellow vision (van Gogh syndrome)\n\nDigoxin can worsen AV block and is contraindicated in conduction abnormalities. Visual changes and hypokalemia increase toxicity risk."
+    difficulty: medium
+    tags: [cardiology, digoxin, contraindications, toxicity, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the side effects of beta-blockers as antiarrhythmics?"
+    back: "Bronchospasm, negative inotropy, bradycardia, AV block, impotence, fatigue\n\nNon-selective beta-blockade affects both cardiac (beta-1) and pulmonary (beta-2) receptors, causing these well-known adverse effects."
+    difficulty: easy
+    tags: [cardiology, beta blockers, side effects, contraindications, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the side effects of Class IV antiarrhythmics?"
+    back: "Bradycardia, AV block, hypotension\n\nVerapamil and diltiazem can cause significant bradycardia and conduction abnormalities. Verapamil has more negative inotropic effects than diltiazem."
+    difficulty: easy
+    tags: [cardiology, Class IV, antiarrhythmics, verapamil, diltiazem, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What is the Canadian approach to managing atrial fibrillation according to the 2020 CCS/CHRS guidelines?"
+    back: "Comprehensive guidelines covering anticoagulation, rhythm control, rate control, and catheter ablation\n\nThe 2020 Canadian Cardiovascular Society/Canadian Heart Rhythm Society guidelines provide comprehensive recommendations for AF management."
+    difficulty: easy
+    tags: [atrial fibrillation, guidelines, Canadian, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "Which organization publishes the Canadian Cardiovascular Society (CCS) Guidelines for atrial fibrillation management?"
+    back: "Canadian Cardiovascular Society (CCS) in partnership with Canadian Heart Rhythm Society (CHRS)\n\nThe 2020 CCS/CHRS comprehensive guidelines provide evidence-based recommendations for atrial fibrillation management tailored to Canadian clinical practice, including anticoagulation, rate/rhythm control, and catheter ablation strategies."
+    difficulty: easy
+    tags: [cardiology, atrial fibrillation, arrhythmia, Canadian guidelines, anticoagulation, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What are the ECG findings in hyperkalemia?"
+    back: "Peaked narrow T waves, decreased P wave, prolonged PR interval, widening QRS, sine wave pattern, AV block, ventricular fibrillation, bradycardia\n\nProgressive ECG changes reflect potassium's effects on cardiac conduction, from early peaked T waves to fatal dysrhythmias."
+    difficulty: easy
+    tags: [Electrolytes, Hyperkalemia, ECG, Emergency Medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What are the complications of hypothermia?"
+    back: "Coagulopathy, acidosis, dysrhythmias (AFib, VFib, profound bradycardia, asystole), and volume/electrolyte depletion\n\nCold diuresis causes volume depletion; cardiac irritability increases with decreasing temperature"
+    difficulty: medium
+    tags: [hypothermia, complications, emergency-medicine, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "What ECG findings are characteristic of hyperkalemia?"
+    back: "Peaked/narrow T wave, decreased P wave, prolonged PR interval, widening of QRS, sine wave, AV block, VFib, bradycardia.\n\nHyperkalemia causes life-threatening cardiac dysrhythmias. Peaked T waves are the earliest sign."
+    difficulty: medium
+    tags: [hyperkalemia, ECG, emergency medicine, cardiac, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What are complications of hypothermia?"
+    back: "Coagulopathy, acidosis, dysrhythmias (AFib, VFib, profound bradycardia, asystole), volume/electrolyte depletion\n\nCold diuresis leads to volume depletion; core temperature affects all organ systems."
+    difficulty: medium
+    tags: [hypothermia, complications, emergency medicine, toronto-notes, pages-0291-0292-0293-0294-0295-0296-0297-0298-0299-0300]
+  - front: "What are the serious adverse events that were significantly increased in the intensive BP arm of the ACCORD trial?"
+    back: "Bradycardia or arrhythmia (0.5% vs 0.13%, p=0.02) and hyperkalemia (0.4% vs 0.04%, p=0.01)\n\nIntensive BP control to <120 mmHg was associated with significantly more adverse events including bradycardia/arrhythmia and hyperkalemia compared to standard therapy."
+    difficulty: hard
+    tags: [diabetes, T2DM, blood-pressure, adverse-events, clinical-trial, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What serious adverse events were significantly increased with intensive BP control in ACCORD?"
+    back: "All serious adverse events (3.3% vs 1.27%, P<0.001), particularly bradycardia/arrhythmia (0.5% vs 0.13%, P=0.02) and hyperkalemia (0.4% vs 0.04%, P=0.01)\n\nIntensive BP control in T2DM required more medications (3.4 vs 2.1 at 1 year) and caused significantly more adverse events."
+    difficulty: hard
+    tags: [diabetes, blood-pressure, adverse-events, clinical-trials, endocrinology, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What serious adverse events were increased with intensive BP control in ACCORD?"
+    back: "Bradycardia/arrhythmia and hyperkalemia\n\nSerious adverse events: bradycardia/arrhythmia (0.5% vs 0.13%, P=0.02) and hyperkalemia (0.4% vs 0.04%, P=0.01)."
+    difficulty: hard
+    tags: [diabetes, blood-pressure, adverse-events, clinical-trials, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What were the side effects of intensive BP control in the ACCORD trial?"
+    back: "Increased serious adverse events (3.3% vs. 1.27%, P<0.001), specifically bradycardia/arrhythmia (0.5% vs. 0.13%, P=0.02) and hyperkalemia (0.4% vs. 0.04%, P=0.01)\n\nThe intensive BP arm required more medications (mean 3.4 vs. 2.1 at 1 year) and had significantly more adverse events, though these were not the primary outcome."
+    difficulty: medium
+    tags: [diabetes, blood-pressure, adverse-effects, clinical-trials, T2DM, ACCORD, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What serious adverse events were more common with intensive BP control in ACCORD?"
+    back: "Bradycardia or arrhythmia (0.5% vs 0.13%, P=0.02) and hyperkalemia (0.4% vs 0.04%, P=0.01) were significantly more common with intensive BP therapy.\n\nThe ACCORD BP trial showed intensive treatment increased all serious adverse events (3.3% vs 1.27%, P<0.001), highlighting the risks of aggressive BP lowering in T2DM with CV risk factors."
+    difficulty: hard
+    tags: [diabetes, blood-pressure, adverse-events, ACCORD, safety, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What serious adverse events were more common with intensive blood pressure therapy in the ACCORD BP Trial?"
+    back: "Bradycardia/arrhythmia (0.5% vs 0.13%, P=0.02) and hyperkalemia (0.4% vs 0.04%, P=0.01)\n\nIntensive BP therapy (sBP <120 mmHg) required more medications (3.4 vs 2.1 at 1 year) and had higher rates of serious adverse events overall (3.3% vs 1.27%, P<0.001)"
+    difficulty: hard
+    tags: [diabetes, blood-pressure, adverse-events, clinical-trials, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In the ACCORD BP trial, what serious adverse events were significantly more common with intensive BP control?"
+    back: "Intensive BP control (<120 mmHg) was associated with significantly more bradycardia or arrhythmia (0.5% vs 0.13%, P=0.02) and hyperkalemia (0.4% vs 0.04%, P=0.01).\n\nThe intensive arm used a mean of 3.4 medications at 1 year vs 2.1 in the standard arm, leading to more serious adverse events overall (3.3% vs 1.27%, P<0.001)."
+    difficulty: hard
+    tags: [diabetes, hypertension, T2DM, clinical-trials, ACCORD, adverse-effects, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "According to the Vaughan-Williams classification, which class of antiarrhythmic drug prolongs phase 3 repolarization by blocking K+ channels, and what is a major adverse effect?"
+    back: "Class III (e.g., amiodarone, sotalol); major adverse effect is Torsades de Pointes (and for amiodarone: pulmonary toxicity, thyroid disease, hepatotoxicity, photosensitivity)\n\nClass III agents block K+ channels, prolonging the action potential and refractory period. Amiodarone also has class I, II, and IV properties. The prolonged QT interval predisposes to Torsades de Pointes, particularly with sotalol."
+    difficulty: medium
+    tags: [antiarrhythmics, Class III, amiodarone, sotalol, Torsades de Pointes, Vaughan-Williams]
+  - front: "A patient on procainamide (Class Ia antiarrhythmic) develops arthralgia, rash, and positive ANA. What is the likely adverse effect?"
+    back: "Drug-induced lupus (lupus-like syndrome)\n\nProcainamide is classically associated with drug-induced lupus, which occurs in up to 30% of patients on long-term therapy. The syndrome resolves upon discontinuation. Class Ia agents also risk Torsades de Pointes."
+    difficulty: medium
+    tags: [procainamide, drug-induced lupus, Class Ia, antiarrhythmic]
+  - front: "Which antiarrhythmic class includes lidocaine, and in what clinical scenario is IV lidocaine used?"
+    back: "Class Ib; IV lidocaine is used for ventricular arrhythmias (e.g., VT) in the acute setting\n\nClass Ib agents mildly block Na+ channels and shorten phase 3 repolarization. Lidocaine is primarily used for acute ventricular arrhythmias. CNS toxicity (confusion, stupor, seizures) can occur with high doses."
+    difficulty: easy
+    tags: [lidocaine, Class Ib, antiarrhythmic, ventricular tachycardia]
+  - front: "What is the mechanism of Class IV antiarrhythmics (e.g., verapamil, diltiazem) and what are their main indications?"
+    back: "Calcium channel blockers; slow phase 4 spontaneous depolarization and AV node conduction. Used for SVT and rate control in AFib\n\nClass IV agents block Ca2+ channels in the AV node, slowing conduction and ventricular rate. They are negative inotropes and chronotropes; major adverse effects include bradycardia, AV block, and hypotension. They are contraindicated in decompensated HF."
+    difficulty: easy
+    tags: [calcium channel blockers, verapamil, diltiazem, Class IV, AFib, SVT]
+  - front: "AFFIRM trial compared rate control vs. rhythm control for AFib. What was the key conclusion?"
+    back: "No significant difference in mortality between rate control and rhythm control strategies for AFib\n\nAFFIRM (NEJM 2002) demonstrated that rhythm control with antiarrhythmics was not superior to rate control in terms of mortality, and was associated with more hospitalizations and adverse drug events. Rate control is generally preferred as initial strategy for most AFib patients."
+    difficulty: medium
+    tags: [AFFIRM, AFib, rate control, rhythm control, antiarrhythmic]
+  - front: "ARISTOTLE trial compared apixaban vs. warfarin in AFib with additional stroke risk factors. What were the key findings?"
+    back: "Apixaban reduced stroke/systemic embolism, major bleeding, and mortality compared to warfarin in AFib\n\nARISTOTLE (NEJM 2011) demonstrated apixaban 5mg BID reduced stroke (1.27% vs. 1.60%/yr), major bleeding (2.13% vs. 3.09%/yr), and hemorrhagic stroke compared to warfarin. Canadian guidelines recommend DOACs over warfarin for non-valvular AFib stroke prevention."
+    difficulty: medium
+    tags: [ARISTOTLE, apixaban, warfarin, AFib, stroke prevention, DOAC]
+  - front: "RE-LY trial compared two doses of dabigatran (110 mg vs. 150 mg BID) against warfarin for stroke prevention in AFib. What was the conclusion?"
+    back: "Dabigatran 150 mg BID was superior to warfarin for stroke reduction; 110 mg was non-inferior with less major bleeding than warfarin\n\nRE-LY (NEJM 2009) showed 150 mg dabigatran reduced stroke to 1.17%/yr vs. 1.69%/yr with warfarin, while 110 mg had lower major bleeding (2.71% vs. 3.36%/yr). In Canada, 150 mg is standard; 110 mg is used in elderly or high-bleeding-risk patients."
+    difficulty: medium
+    tags: [RE-LY, dabigatran, warfarin, AFib, stroke prevention, DOAC]
+  - front: "ROCKET-AF compared rivaroxaban to warfarin in nonvalvular AFib. What was concluded about rivaroxaban's efficacy and bleeding profile?"
+    back: "Rivaroxaban was non-inferior to warfarin for stroke/systemic embolism prevention, with similar major bleeding rates\n\nROCKET-AF (NEJM 2011) demonstrated rivaroxaban 20 mg daily was non-inferior to warfarin for stroke prevention in nonvalvular AFib, with a trend toward reduction in hemorrhagic stroke. Unlike apixaban (ARISTOTLE), major bleeding was similar between groups."
+    difficulty: medium
+    tags: [ROCKET-AF, rivaroxaban, warfarin, AFib, nonvalvular, DOAC]
+  - front: "The ETOH-AFib trial studied alcohol abstinence in AFib patients who drink >10 standard drinks/week. What was demonstrated?"
+    back: "Alcohol abstinence significantly reduced AFib recurrence rates (53% vs. 73%) and AFib burden over 6 months\n\nETOH-AFib (NEJM 2020) provided evidence that alcohol cessation is a modifiable risk factor for AFib secondary prevention, reducing recurrence by nearly half. This supports lifestyle modification counseling as part of AFib management in Canadian clinical practice."
+    difficulty: medium
+    tags: [AFib, alcohol abstinence, ETOH-AFib, secondary prevention, lifestyle]
+  - front: "A Class Ic antiarrhythmic drug (e.g., flecainide, propafenone) is being considered. What is the major adverse effect that limits their use in structural heart disease?"
+    back: "Proarrhythmic effect — Exacerbation of ventricular tachycardia (VT); all Class Ic agents also cause negative inotropy and bradycardia/heart block\n\nThe CAST trial demonstrated that flecainide and encainide increased mortality in post-MI patients with asymptomatic ventricular arrhythmias, establishing that Class Ic agents are contraindicated in structural heart disease. They are reserved for patients with structurally normal hearts (e.g., lone AFib)."
+    difficulty: medium
+    tags: [Class Ic, flecainide, propafenone, proarrhythmic, CAST, structural heart disease]
+  - front: "What is the clinical significance of amiodarone's multi-class antiarrhythmic properties?"
+    back: "Amiodarone has Class I, II, III, and IV properties — making it broadly effective but also increasing its adverse effect profile (pulmonary toxicity, thyroid dysfunction, hepatotoxicity, photosensitivity, Torsades de Pointes)\n\nAs a Class III agent, amiodarone blocks K+ channels and prolongs repolarization; it also blocks Na+ channels (Class I), has beta-blocking properties (Class II), and blocks Ca2+ channels (Class IV). Its long half-life (~50 days) means side effects can persist for months after discontinuation. Thyroid function tests and PFTs should be monitored annually."
+    difficulty: medium
+    tags: [amiodarone, Class III, antiarrhythmic, adverse effects, thyroid, pulmonary toxicity]
+  - front: "What receptor mediates sympathetic effects on the sinoatrial node, and what is the physiological effect? What about parasympathetic effects?"
+    back: "Sympathetic: β1 receptors → increased heart rate (chronotropy). Parasympathetic: M (muscarinic) receptors → decreased conduction (negative chronotropy/dromotropy).\n\nThe autonomic dual innervation of the heart allows precise control of heart rate and conduction. β1-blockers reduce HR and contractility; muscarinic antagonists (atropine) increase HR by blocking parasympathetic tone, useful in symptomatic bradycardia."
+    difficulty: easy
+    tags: [autonomic nervous system, beta-1 receptor, heart rate, muscarinic, SA node, sympathetic]
+  - front: "A patient on a new anticoagulant (rivaroxaban) is concerned about QT prolongation. What does the evidence show?"
+    back: "Rivaroxaban does not cause significant QT interval prolongation compared to placebo, based on randomized crossover studies. It has a favorable cardiac safety profile in this regard.\n\nQT prolongation increases risk of torsades de pointes. Unlike some anticoagulants and other cardiovascular drugs, rivaroxaban's mechanism (direct factor Xa inhibition) does not involve cardiac ion channel effects. This distinction is important when choosing anticoagulants in patients at risk for QT prolongation."
+    difficulty: medium
+    tags: [rivaroxaban, QT prolongation, anticoagulation, arrhythmia, DOAC, cardiac safety]
+  - front: "What are the classic features, diagnostic findings, and management of acute pericarditis?"
+    back: "Classic: viral prodrome, anterior precordial pain, pleuritic, relieved by sitting up and leaning forward. ECG: sinus tachycardia, diffuse ST elevation, PR depression in leads I/II/III/aVF/V4-6, reciprocal PR elevation and ST depression in aVR+V1. Management: rule out MI, high-dose NSAIDs + colchicine; consult if chronic/recurrent, large effusion, or non-viral cause.\n\nThe most sensitive ECG finding in pericarditis is Spodick's sign (downsloping TP segment), followed by ST depressions, then absence of PR depressions. Diffuse (vs. regional) ST elevation and PR depression help differentiate from STEMI. Reciprocal changes in STEMI are in the opposite territory — pericarditis lacks this pattern."
+    difficulty: medium
+    tags: [pericarditis, chest pain, ECG, management]
+  - front: "What is Beck's triad and what condition does it suggest?"
+    back: "Beck's triad: hypotension + elevated JVP + muffled heart sounds = cardiac tamponade. Additional findings: tachycardia, pulsus paradoxus >10 mmHg, electrical alternans on ECG, cardiomegaly on CXR.\n\nCardiac tamponade occurs when pericardial fluid accumulates under pressure, compressing cardiac chambers and reducing ventricular filling. Pulsus paradoxus (>10 mmHg drop in systolic BP on inspiration) is a key finding. POCUS is diagnostic. Pericardiocentesis is definitive treatment if hemodynamically unstable."
+    difficulty: easy
+    tags: [cardiac tamponade, Becks triad, pericardiocentesis, emergency]
+  - front: "What is Brugada syndrome and what ECG pattern is diagnostic?"
+    back: "Brugada syndrome: susceptibility to deadly dysrhythmias (VFib). Type 1 ECG ('Brugada sign'): coved ST segment elevation >2 mm in ≥1 of V1–V3, followed by inverted T wave (only type that is diagnostic). Syndrome requires Brugada sign PLUS one of: family history of sudden cardiac death <45 yr, arrhythmia symptoms (syncope, seizures), or documented ventricular arrhythmias.\n\nBrugada syndrome is a channelopathy (Na+ channel mutation) associated with sudden cardiac death, often in young men at rest or during sleep. There are 3 ECG repolarization patterns in V1–V3 but only Type 1 is diagnostic. Management includes ICD implantation in high-risk patients."
+    difficulty: hard
+    tags: [Brugada syndrome, ECG, VFib, sudden cardiac death, channelopathy]
+  - front: "What are the ECG criteria for ventricular tachycardia (VT)?"
+    back: "3 or more consecutive premature ventricular beats at rate >100 bpm with QRS >120 ms.\n\nVT is a life-threatening arrhythmia. Sustained VT (>30 seconds) requires immediate cardioversion if hemodynamically unstable. Other dangerous ventricular arrhythmias: Torsades de pointes (twisting pattern, 160–250 bpm), ventricular flutter (smooth sine wave ~200 bpm), ventricular fibrillation (erratic, no identifiable waves)."
+    difficulty: easy
+    tags: [ventricular tachycardia, ECG, arrhythmia, emergency]
+  - front: "What are the causes of cardiogenic syncope?"
+    back: "Dysrhythmia, outflow obstruction (PE, pulmonary HTN), MI, valvular disease.\n\nCardiogenic syncope carries the highest mortality risk among syncope etiologies. Key features suggesting cardiogenic cause include sudden loss of consciousness without warning/prodrome, occurrence during exertion, and syncope in the supine position. ECG is mandatory in all syncope evaluations."
+    difficulty: easy
+    tags: [syncope, cardiology, arrhythmia, emergency]
+  - front: "What investigations are indicated for all patients presenting with syncope?"
+    back: "ECG (tachycardia, bradycardia, blocks, WPW, long QT, Brugada, RV strain, ARVD, HCM), POCT capillary blood glucose, blood work (CBC, electrolytes, BUN/Cr, VBG, troponin, Ca²⁺, Mg²⁺, beta-hCG, D-dimer), consider toxicology screen.\n\nECG is the single most important initial investigation for syncope as it can identify life-threatening arrhythmias and structural heart disease. Troponin is important to exclude MI as a cause. Beta-hCG must be checked in women of childbearing age to exclude ectopic pregnancy."
+    difficulty: medium
+    tags: [syncope, investigations, ECG]
+  - front: "Describe the ECG features and management of AV conduction blocks."
+    back: "1st degree: PR >200 ms, no treatment. 2nd degree Mobitz I: progressively prolonging PR then dropped QRS (Wenckebach), usually benign. Mobitz II: fixed PR with dropped QRS, can progress to 3rd degree — needs pacemaker. 3rd degree: P waves unrelated to QRS (PP and RR intervals regular but independent), treat with atropine + transcutaneous/transvenous pacing if unstable; long-term pacemaker.\n\nMobitz II and complete heart block carry significant risk of progression to hemodynamic compromise and cardiac arrest. Atropine is used with caution in Mobitz II and 3rd degree block as it may paradoxically worsen AV conduction. Dopamine and epinephrine IV are alternatives if pacing unavailable."
+    difficulty: medium
+    tags: [AV block, Mobitz, pacemaker, bradycardia, ECG]
+  - front: "What is the emergency management of AVRT/AVNRT (paroxysmal supraventricular tachycardia)?"
+    back: "1. Vagal maneuvers (carotid massage, modified Valsalva — have patient blow into 10 cc syringe at 40 mmHg for 15 s, then lay flat with legs raised 45° for 15 s). 2. Adenosine 6 mg IV push; if no conversion, 12 mg; can repeat 12 mg once. 3. Electrical cardioversion if adenosine fails.\n\nModified Valsalva maneuver is effective in up to 43% of SVT cases. Adenosine blocks AV nodal conduction transiently, interrupting the reentrant circuit. Warn patients about side effects (chest pain, nausea, flushing). Continuous 12-lead ECG during maneuvers helps identify underlying rhythm and etiology."
+    difficulty: medium
+    tags: [SVT, AVNRT, AVRT, adenosine, Valsalva, cardioversion]
+  - front: "What are the causes of atrial fibrillation (the PIRATES mnemonic)?"
+    back: "P — Pulmonary (PE, COPD); I — Ischaemia/Infarction; R — Rheumatic/valvular disease; A — Anemia; T — Thyroid (hyperthyroidism); E — EtOH, Elevated blood pressure; S — Sick sinus, Stress (surgery, sepsis). Also: Cardiomyopathy.\n\nAFib is the most common sustained dysrhythmia and decreases cardiac output by 20–30% due to loss of organized atrial contraction. Identifying and treating the underlying cause is a key treatment principle alongside stroke prevention and symptom management."
+    difficulty: medium
+    tags: [AFib, causes, PIRATES, atrial fibrillation]
+  - front: "When is it safe to cardiovert atrial fibrillation without transesophageal echocardiography (TEE)?"
+    back: "Safe to cardiovert if: >3 weeks of adequate anticoagulation; OR <3 weeks of adequate anticoagulation with no history of TIA/stroke, no valvular heart disease, AND one of: onset <12 h, or onset 12–48 h with CHADS2 <2.\n\nCardioversion carries risk of thromboembolism if a clot has formed in the left atrial appendage. TEE can exclude thrombus when anticoagulation criteria are not met. If cardioversion cannot be done safely, start appropriate anticoagulation and arrange TEE. Electrical cardioversion uses synchronized cardioversion; chemical options include procainamide, flecainide, propafenone."
+    difficulty: hard
+    tags: [AFib, cardioversion, anticoagulation, TEE, CHADS2]
+  - front: "Why are AV-nodal blocking agents dangerous in atrial fibrillation with Wolff-Parkinson-White syndrome?"
+    back: "AV-nodal blocking agents (adenosine, digoxin, diltiazem, verapamil, beta-blockers) block the AV node and preferentially conduct impulses down the accessory bypass tract at very rapid rates, leading to ventricular fibrillation and cardiac arrest. Use procainamide or direct cardioversion instead.\n\nIn WPW with AFib, the accessory pathway allows antegrade conduction at rates that can trigger VFib. This is a potentially lethal interaction. Procainamide slows conduction in the accessory pathway. Recognition of a delta wave and wide-complex irregular tachycardia in AFib should prompt avoidance of all AV-nodal blocking agents."
+    difficulty: hard
+    tags: [WPW, AFib, accessory pathway, procainamide, cardiac arrest]
+  - front: "What is torsades de pointes and how is it treated?"
+    back: "A form of polymorphic VTach with QRS 'rotating around the baseline' (changing axis and amplitude — twisted ribbon appearance), associated with prolonged QT. Causes: drugs (quinidine, TCAs, erythromycin, quinolones), hypokalemia, hypomagnesemia, congenital long QT. Treatment: IV magnesium, temporary overdrive pacing, isoproterenol, correct underlying cause.\n\nProlonged QT prolongs phase 3 repolarization, creating conditions for early afterdepolarizations and reentrant arrhythmias. IV magnesium sulfate is first-line even in patients with normal Mg levels. Overdrive pacing shortens the QT interval. Avoid antiarrhythmics that further prolong QT."
+    difficulty: hard
+    tags: [torsades de pointes, long QT, VTach, magnesium, polymorphic VT]
+  - front: "What did the REDUCE-IT trial show about icosapent ethyl (omega-3 fatty acid) for hypertriglyceridemia in patients on statins?"
+    back: "Icosapent ethyl (2 g BID) in patients with elevated triglycerides (1.52-5.63 mmol/L) on statin therapy significantly reduced the composite primary endpoint (CV death, nonfatal MI, nonfatal stroke, coronary revascularization, unstable angina) by 25% relative risk (17.2% vs. 22.0%, HR 0.75). It was associated with significantly higher rates of atrial fibrillation/flutter (3.1% vs. 2.1%).\n\nREDUCE-IT (n=8,179) established icosapent ethyl as a CV risk-reducing therapy for patients with residual hypertriglyceridemia on statin therapy. The AF risk is an important adverse effect to counsel patients about. Regular omega-3 supplements (EPA+DHA) did not show the same benefit in other trials."
+    difficulty: hard
+    tags: [triglycerides, icosapent ethyl, omega-3, statin, REDUCE-IT, cardiovascular outcomes, atrial fibrillation]

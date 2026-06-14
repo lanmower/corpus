@@ -1,0 +1,306 @@
+# Anemia & Hemoglobin Disorders (Hematology) - generated from srs-mccqe1
+cards:
+  - front: "What is the MCV cut-off that distinguishes microcytic from normocytic anemia?"
+    back: "MCV <80 fL = microcytic; 80–100 fL = normocytic; >100 fL = macrocytic\n\nMCV-based classification narrows the differential: microcytic (iron deficiency, thalassemia, sideroblastic, ACD in chronic inflammation); normocytic (acute blood loss, hemolysis, ACD, aplastic anemia); macrocytic (B12/folate deficiency, hypothyroidism, alcohol, medications)."
+    difficulty: easy
+    tags: [anemia, MCV, microcytic, normocytic, macrocytic]
+  - front: "A 30-year-old vegetarian woman has Hb 88 g/L, MCV 72 fL, low serum ferritin (8 µg/L), and low transferrin saturation. What is the diagnosis and first-line treatment?"
+    back: "Iron deficiency anemia; treat with oral ferrous sulfate 325 mg (elemental iron ~65 mg) TID between meals\n\nIDA is the most common nutritional anemia globally. Ferritin <15 µg/L confirms iron deficiency. Oral iron is first-line; IV iron (ferric carboxymaltose) for intolerance or malabsorption. Treat underlying cause (menorrhagia, GI blood loss)."
+    difficulty: easy
+    tags: [iron-deficiency-anemia, ferritin, ferrous-sulfate, IV-iron]
+  - front: "What distinguishes thalassemia trait from iron deficiency anemia on CBC?"
+    back: "Thalassemia trait: low MCV with normal/high RBC count and normal ferritin; iron deficiency: low MCV with low ferritin and low RBC\n\nMentzer index (<13 suggests thalassemia, >13 suggests IDA). Thalassemia trait is confirmed by Hb electrophoresis (elevated HbA2 >3.5% in beta-thalassemia trait). Iron supplementation does not help thalassemia trait."
+    difficulty: medium
+    tags: [thalassemia, iron-deficiency, Mentzer-index, Hb-electrophoresis, MCV]
+  - front: "A 65-year-old woman has Hb 92 g/L, MCV 110 fL, hypersegmented neutrophils, and low serum B12. What is the most likely underlying cause?"
+    back: "B12 deficiency from pernicious anemia or dietary insufficiency (veganism)\n\nMacrocytic megaloblastic anemia with hypersegmented neutrophils (>5 lobes, or any 6-lobed PMN) is characteristic of B12 or folate deficiency. Anti-intrinsic factor antibodies confirm pernicious anemia. Treat with IM B12 (cyanocobalamin) or high-dose oral B12."
+    difficulty: medium
+    tags: [macrocytic-anemia, B12-deficiency, pernicious-anemia, hypersegmented-neutrophils, cyanocobalamin]
+  - front: "What is anemia of chronic disease (ACD) and which test best distinguishes it from IDA?"
+    back: "ACD is caused by inflammatory cytokines reducing EPO and iron utilization; ferritin is normal or elevated in ACD (vs. low in IDA)\n\nIn ACD, hepcidin (acute-phase reactant) sequesters iron in macrophages. Ferritin is an acute-phase reactant — elevated in inflammation even with depleted stores. Serum transferrin receptor (sTfR) is elevated in IDA but normal in ACD. sTfR/log ferritin ratio distinguishes them."
+    difficulty: medium
+    tags: [anemia-of-chronic-disease, ACD, ferritin, transferrin-receptor, hepcidin]
+  - front: "A 45-year-old man with sickle cell disease presents with sudden-onset pallor, Hb drops from 85 to 55 g/L, reticulocyte count near zero, and fever. What is the diagnosis?"
+    back: "Aplastic crisis due to Parvovirus B19 infection\n\nParvovirus B19 infects erythroid precursors, halting RBC production. In patients with hemolytic anemias (SCD, thalassemia, spherocytosis), rapid Hb drop occurs. Reticulocytopenia is key. Treatment: supportive (transfusion); parvovirus infection is self-limited."
+    difficulty: hard
+    tags: [sickle-cell, aplastic-crisis, parvovirus-B19, reticulocytopenia, hemolytic-anemia]
+  - front: "What is the direct antiglobulin test (DAT / Coombs test) used to detect?"
+    back: "IgG or complement (C3d) coating the surface of red blood cells, indicating immune-mediated hemolysis\n\nPositive DAT indicates warm (IgG) or cold (IgM/complement) autoimmune hemolytic anemia, drug-induced hemolysis, or hemolytic transfusion reaction. Warm AIHA: treat with steroids ± rituximab. Cold agglutinin disease: avoid cold, treat underlying cause."
+    difficulty: easy
+    tags: [DAT, Coombs-test, AIHA, autoimmune-hemolytic-anemia, hemolysis]
+  - front: "A 55-year-old woman on methyldopa develops anemia with positive DAT, elevated indirect bilirubin, and low haptoglobin. What is the diagnosis?"
+    back: "Drug-induced immune hemolytic anemia (DIIHA) due to methyldopa\n\nMethyldopa (and other drugs: penicillin, cephalosporins, NSAIDs, quinine) causes DIIHA via drug-hapten, immune complex, or autoantibody mechanisms. Discontinue offending drug; hemolysis usually resolves in days to weeks."
+    difficulty: medium
+    tags: [drug-induced-hemolytic-anemia, methyldopa, DAT, haptoglobin, DIIHA]
+  - front: "What is the hallmark peripheral blood finding of microangiopathic hemolytic anemia (MAHA)?"
+    back: "Schistocytes (fragmented RBCs) on blood film\n\nMAHA occurs in TTP, HUS, DIC, and malignant hypertension. Schistocytes result from mechanical shearing of RBCs at fibrin strands. Combined with thrombocytopenia, elevated LDH, low haptoglobin, and elevated indirect bilirubin."
+    difficulty: easy
+    tags: [MAHA, schistocytes, TTP, HUS, DIC]
+  - front: "What is hereditary spherocytosis and what is its most common complication?"
+    back: "Autosomal dominant defect in RBC membrane proteins (ankyrin, spectrin, band 3) causing spherical, osmotically fragile RBCs; most common complication is pigment gallstones (bilirubin cholelithiasis)\n\nHS presents with hemolytic anemia, splenomegaly, and jaundice. Osmotic fragility test and EMA binding test confirm diagnosis. Splenectomy reduces hemolysis but increases infection risk (pneumococcal vaccines mandatory)."
+    difficulty: medium
+    tags: [hereditary-spherocytosis, splenomegaly, gallstones, splenectomy, osmotic-fragility]
+  - front: "What is the treatment for aplastic anemia in a 25-year-old with a compatible sibling donor?"
+    back: "Allogeneic hematopoietic stem cell transplant (HSCT) from matched sibling — curative\n\nSevere aplastic anemia (SAA): pancytopenia with hypocellular marrow. Young patients with matched sibling should proceed to HSCT. Older patients or no donor: immunosuppression with anti-thymocyte globulin (ATG) + cyclosporine + eltrombopag."
+    difficulty: medium
+    tags: [aplastic-anemia, HSCT, immunosuppression, ATG, eltrombopag]
+  - front: "What is the threshold for red blood cell transfusion in a hemodynamically stable hospitalized adult without cardiac disease?"
+    back: "Hb <70 g/L (restrictive transfusion strategy)\n\nTRICC trial and Canadian Blood Services guidelines support restrictive transfusion (Hb <70 g/L) in stable patients. Liberal transfusion (Hb <100 g/L) threshold is used in acute MI, ACS, and post-cardiac surgery. Each unit raises Hb by ~10 g/L."
+    difficulty: easy
+    tags: [RBC-transfusion, transfusion-threshold, restrictive, TRICC, hemoglobin]
+  - front: "A 70-year-old man with CKD stage 4 has Hb 88 g/L, reticulocyte count 0.5%, and ferritin 450 µg/L. What is the likely cause of his anemia?"
+    back: "Renal anemia (anemia of CKD) due to decreased erythropoietin production\n\nEPO deficiency in CKD causes normocytic, normochromic anemia with low reticulocyte count. Iron studies: ferritin often elevated due to inflammation. IV iron may be needed if TSAT <20%. If iron replete, ESA (darbepoetin, epoetin alfa) is indicated when Hb <100 g/L."
+    difficulty: medium
+    tags: [renal-anemia, CKD, erythropoietin, ESA, darbepoetin]
+  - front: "What is the normal range for hemoglobin and what defines anemia in adult females?"
+    back: "Normal Hb in adult women: 120–160 g/L; anemia defined as Hb <120 g/L (WHO) or <115 g/L (some guidelines)\n\nWHO defines anemia as Hb <120 g/L in non-pregnant women, <130 g/L in men, <110 g/L in pregnant women. Canadian Blood Services uses similar thresholds. Severity: mild 100–119 g/L, moderate 70–99 g/L, severe <70 g/L."
+    difficulty: easy
+    tags: [hemoglobin, anemia, WHO-definition, normal-range]
+  - front: "A 35-year-old woman from Southeast Asia has Hb 98 g/L, MCV 64 fL, normal ferritin, and HbA2 5.8% on electrophoresis. What is the diagnosis?"
+    back: "Beta-thalassemia trait (carrier state)\n\nHbA2 >3.5% confirms beta-thalassemia trait. These patients have mild microcytic anemia and should not receive unnecessary iron supplementation. Genetic counseling is important if partner is also a carrier (risk of beta-thalassemia major in offspring)."
+    difficulty: medium
+    tags: [beta-thalassemia, HbA2, Hb-electrophoresis, microcytic, genetic-counseling]
+  - front: "How do you interpret iron studies for different anemias?"
+    back: "Iron deficiency: low ferritin, low iron, high TIBC, low transferrin sat. Anemia of chronic disease: low/normal iron, high ferritin, low TIBC, low transferrin sat\n\nFerritin is acute phase reactant — may be normal/elevated in ACD even with concurrent iron deficiency. Soluble transferrin receptor elevated in true iron deficiency. Reticulocyte count helps assess marrow response."
+    difficulty: hard
+    tags: [anemia, iron studies]
+  - front: "How is anemia classified by MCV and what are common causes?"
+    back: "Microcytic (MCV<80): iron deficiency, thalassemia, chronic disease, sideroblastic. Normocytic (80-100): chronic disease, renal, acute blood loss, hemolysis, bone marrow failure. Macrocytic (>100): B12/folate, liver disease, hypothyroid, MDS, drugs\n\nFirst step: check MCV. Reticulocyte count distinguishes production (low retic) from destruction/loss (high retic). Iron deficiency is most common cause worldwide. Always investigate cause - never just treat the number."
+    difficulty: medium
+    tags: [anemia, MCV, classification]
+  - front: "How are iron studies interpreted in iron deficiency vs anemia of chronic disease?"
+    back: "IDA: low ferritin (<30), low iron, high TIBC, low transferrin sat (<20%). ACD: normal/high ferritin (acute phase reactant), low iron, low TIBC, low transferrin sat. Combined: low ferritin settles it\n\nFerritin <30 is diagnostic of IDA (most useful single test). Ferritin 30-100 is indeterminate (may have coexistent IDA+ACD). Ferritin >100 essentially excludes IDA. Soluble transferrin receptor elevated in IDA, normal in ACD."
+    difficulty: hard
+    tags: [iron studies, IDA, anemia of chronic disease]
+  - front: "What is the workup and management of iron deficiency anemia?"
+    back: "Workup: identify cause (menstrual loss, GI loss - scope if male or postmenopausal). Treatment: oral ferrous sulfate 300mg daily-TID (elemental iron 60-200mg/d) on empty stomach. IV iron if intolerant/malabsorption/severe\n\nTake oral iron with vitamin C, avoid with tea/coffee/calcium/antacids. GI side effects common - try alternate-day dosing (better absorbed anyway per recent evidence). Check reticulocyte response at 1wk, Hb at 4-6wk. Continue 3-6mo to replete stores."
+    difficulty: medium
+    tags: [IDA, iron replacement, management]
+  - front: "How is B12 deficiency diagnosed and treated?"
+    back: "Diagnosis: low serum B12 (<148 pmol/L), elevated methylmalonic acid (more specific), elevated homocysteine. Causes: pernicious anemia, vegan diet, metformin, malabsorption. Treat: IM B12 1000mcg daily x7, then weekly x4, then monthly\n\nNeurological symptoms (subacute combined degeneration: dorsal columns + corticospinal tracts) may be irreversible if treatment delayed. Check folate simultaneously. Do NOT give folate alone if B12 deficient (worsens neuro). Oral B12 1000-2000mcg daily is acceptable if adherent."
+    difficulty: hard
+    tags: [B12 deficiency, pernicious anemia, treatment]
+  - front: "What is the approach to hemolytic anemia?"
+    back: "Suspect if: normocytic anemia + high reticulocytes + high LDH + high indirect bilirubin + low haptoglobin. DAT (Coombs) positive: autoimmune. DAT negative: consider mechanical, intrinsic RBC defects\n\nIntravascular: hemoglobinuria, very low haptoglobin (TTP/HUS, PNH, mechanical valves). Extravascular: splenomegaly (autoimmune, spherocytosis). Peripheral smear: schistocytes (MAHA), spherocytes (AIHA/HS), sickle cells, target cells (thalassemia)."
+    difficulty: hard
+    tags: [hemolytic anemia, DAT, reticulocyte]
+  - front: "What are the causes and management of autoimmune hemolytic anemia?"
+    back: "Warm AIHA (IgG, 70%): idiopathic, lymphoma, SLE, drugs. Treat: prednisone 1mg/kg, rituximab, splenectomy. Cold agglutinin (IgM): infections (mycoplasma, EBV), lymphoma. Treat: avoid cold, rituximab\n\nDAT positive confirms autoimmune etiology. Warm AIHA: do not transfuse unless life-threatening (crossmatch difficult). Cold AIHA: warm blood products through warmer. Corticosteroids less effective in cold AIHA. Always investigate for underlying lymphoma or SLE."
+    difficulty: hard
+    tags: [AIHA, warm, cold agglutinin]
+  - front: "What is thalassemia and how does it differ from iron deficiency?"
+    back: "Both microcytic. Thalassemia: normal/high ferritin, target cells, elevated RBC count (elevated RDW in IDA), Mentzer index <13 (MCV/RBC). Alpha-thal: Hb electrophoresis may be normal. Beta-thal minor: elevated HbA2 >3.5%\n\nThalassemia trait: mild anemia, NO iron deficiency. Do NOT give iron (risk of overload). Beta-thal major: transfusion-dependent, chelation needed. Beta-thal intermedia: variable. HbH disease (3 alpha deletions): moderate anemia, Hb Bart in neonates."
+    difficulty: medium
+    tags: [thalassemia, iron deficiency, MCV]
+  - front: "What is the approach to pancytopenia?"
+    back: "DDx: aplastic anemia, MDS, leukemia (marrow infiltration), megaloblastic anemia, hypersplenism, infections (HIV, TB), medications. Workup: CBC with smear, reticulocytes, B12/folate, HIV, bone marrow biopsy\n\nAplastic anemia: hypocellular marrow. MDS: dysplastic marrow. Leukemia: blast infiltration. Megaloblastic: hypersegmented neutrophils, oval macrocytes. Drug causes: MTX, phenytoin, chemotherapy. Refer hematology urgently for suspected marrow failure."
+    difficulty: hard
+    tags: [pancytopenia, aplastic anemia, MDS]
+  - front: "What is thrombotic thrombocytopenic purpura (TTP) and how is it managed?"
+    back: "Pentad: MAHA (schistocytes), thrombocytopenia, renal dysfunction, neuro symptoms, fever. ADAMTS13 <10% diagnostic. Treatment: EMERGENT plasma exchange + steroids + caplacizumab. Do NOT transfuse platelets\n\nTTP is a hematologic emergency (untreated mortality >90%). PLASMIC score predicts ADAMTS13 deficiency. Plasma exchange removes autoantibodies and replenishes ADAMTS13. Platelet transfusion WORSENS thrombosis. Caplacizumab (anti-vWF) reduces time to remission."
+    difficulty: hard
+    tags: [TTP, ADAMTS13, plasma exchange]
+  - front: "How is sickle cell disease managed in Canada?"
+    back: "Hydroxyurea (first-line disease-modifying): increases HbF. Voxelotor (Hb S polymerization inhibitor). Crizanlizumab (anti-P-selectin). Transfusion for severe anemia/stroke prevention. Curative: bone marrow transplant\n\nAcute crises: pain (IV fluids, opioids, NSAIDs), chest (antibiotics, transfusion, O2), stroke (exchange transfusion), splenic sequestration (transfusion). Penicillin prophylaxis until age 5. Pneumococcal vaccine. Newborn screening in all Canadian provinces."
+    difficulty: hard
+    tags: [sickle cell, hydroxyurea, management]
+  - front: "When should anemia be investigated vs monitored in primary care?"
+    back: "Investigate immediately: symptomatic, Hb <100, rapid decline, unexpected. Refer hematology: unexplained cytopenias, suspected marrow failure, hemolysis, suspected malignancy. Transfuse: Hb <70 (restrictive strategy)\n\nTRICC trial: restrictive transfusion (Hb<70) equivalent or superior to liberal (Hb<100) in most patients. Exception: ACS threshold Hb<80. Each unit raises Hb ~10g/L. Type and screen before transfusion. Monitor for transfusion reactions."
+    difficulty: medium
+    tags: [anemia, transfusion, investigation]
+  - front: "What peripheral blood smear findings are diagnostic?"
+    back: "Schistocytes: MAHA (TTP/HUS/DIC). Spherocytes: AIHA, hereditary spherocytosis. Target cells: thalassemia, liver disease. Teardrop: myelofibrosis. Rouleaux: myeloma. Hypersegmented neutrophils: megaloblastic\n\nSmear is often the most informative single test in anemia workup. Also look for: blasts (leukemia), Howell-Jolly bodies (asplenia), basophilic stippling (lead, thalassemia), bite cells (G6PD). Always correlate with clinical context."
+    difficulty: medium
+    tags: [blood smear, schistocytes, hematology]
+  - front: "What are the causes and workup of macrocytic anemia?"
+    back: "Megaloblastic: B12/folate deficiency (hypersegmented neutrophils, oval macrocytes). Non-megaloblastic: liver disease, hypothyroid, MDS, reticulocytosis, drugs (MTX, hydroxyurea, AZT), alcohol\n\nCheck B12, folate, TSH, LFTs, reticulocyte count. If B12/folate normal and no obvious cause: bone marrow biopsy to evaluate for MDS. Alcohol causes macrocytosis even without anemia. MCV >115 strongly suggests megaloblastic or MDS."
+    difficulty: medium
+    tags: [macrocytic anemia, B12, MDS]
+  - front: "What is G6PD deficiency and how does it present?"
+    back: "X-linked recessive. Episodic hemolysis triggered by oxidative stress: infections, fava beans, drugs (dapsone, primaquine, sulfonamides, nitrofurantoin). Smear: bite cells, Heinz bodies\n\nG6PD level may be NORMAL during acute hemolysis (young RBCs have higher G6PD). Retest 2-3 months after episode. Self-limited episode. Avoid known triggers. Common in Mediterranean, African, Asian descent."
+    difficulty: medium
+    tags: [G6PD, hemolytic anemia, oxidative stress]
+  - front: "What is the approach to an elevated ferritin?"
+    back: "DDx: iron overload (hereditary hemochromatosis, transfusional), inflammation/infection, liver disease, malignancy, metabolic syndrome, hyperthyroidism. Check transferrin saturation: if >45% suspect hemochromatosis (HFE gene testing)\n\nFerritin is an acute phase reactant - elevated in inflammation. Hemochromatosis: autosomal recessive C282Y HFE mutation. Screen first-degree relatives. Treatment: phlebotomy targeting ferritin <50. Complications: cirrhosis, DM, cardiomyopathy, arthropathy, bronze skin."
+    difficulty: medium
+    tags: [ferritin, hemochromatosis, iron overload]
+  - front: "What CBC findings suggest specific diagnoses?"
+    back: "Microcytic anemia: iron deficiency, thalassemia, chronic disease. Macrocytic: B12/folate, alcohol, hypothyroid, MDS. Pancytopenia: aplastic anemia, leukemia, B12 deficiency. Eosinophilia: parasites, allergy, drug reaction\n\nPeripheral smear findings: schistocytes(DIC/TTP), target cells(thalassemia/liver disease), spherocytes(hereditary spherocytosis/autoimmune), Howell-Jolly bodies(asplenia)."
+    difficulty: medium
+    tags: [CBC, interpretation]
+  - front: "What are the factors that decrease myocardial oxygen supply?"
+    back: "Decreased luminal diameter (atherosclerosis, vasospasm), decreased duration of diastole (tachycardia), decreased hemoglobin (anemia), decreased SaO2 (hypoxemia), and congenital anomalies\n\nMyocardial oxygen supply depends on coronary blood flow (which occurs mainly in diastole), oxygen-carrying capacity (hemoglobin), and oxygen saturation."
+    difficulty: easy
+    tags: [cardiology, pathophysiology, myocardial-ischemia, toronto-notes, pages-0121-0122-0123-0124-0125-0126-0127-0128-0129-0130]
+  - front: "What are less emergent causes of dyspnea?"
+    back: "Deconditioning, anxiety, respiratory splinting due to unrelated pain, NYD (not yet diagnosed), toxin ingestion, anemia, hemoglobinopathy, CNS lesion, primary muscle weakness\n\nThese causes should be considered after ruling out life-threatening conditions"
+    difficulty: easy
+    tags: [Emergency Medicine, Dyspnea, Differential Diagnosis, toronto-notes, pages-0271-0272-0273-0274-0275-0276-0277-0278-0279-0280]
+  - front: "In which conditions is HbA1C misleading for diabetes diagnosis?"
+    back: "Hemoglobinopathies, iron deficiency, hemolytic anemia, severe hepatic or renal disease"
+    difficulty: medium
+    tags: [endocrinology, diabetes, diagnosis, HbA1c, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "List 4 disadvantages/limitations of HbA1C"
+    back: "Cost, misleading in hemoglobinopathies, iron deficiency, hemolytic anemia, severe hepatic or renal disease, altered by ethnicity and aging, not for diagnostic use in children/adolescents, pregnant women, those with CF, or suspected T1DM\n\nHbA1C can be inaccurate in conditions that affect red blood cell turnover or hemoglobin structure."
+    difficulty: hard
+    tags: [endocrinology, diabetes, HbA1C, limitations, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the disadvantages of HbA1C?"
+    back: "Cost, misleading in hemoglobinopathies, iron deficiency, hemolytic anemia, severe hepatic/renal disease, altered by ethnicity and aging, requires standardized validated assay, not for diagnostic use in children/adolescents, pregnant women, CF, or suspected T1DM\n\nHbA1C has limitations in certain populations and clinical conditions."
+    difficulty: medium
+    tags: [endocrinology, diabetes, HbA1C, limitations, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "List 3 disadvantages of using HbA1C"
+    back: "Cost, misleading in hemoglobinopathies/iron deficiency/hemolytic anemia/hepatic or renal disease, altered by ethnicity and aging, not for diagnostic use in children/adolescents/pregnant women/CF/suspected T1DM\n\nHbA1C has limitations in certain populations and medical conditions where hemoglobin or red blood cell turnover is affected."
+    difficulty: medium
+    tags: [endocrinology, diabetes, diagnosis, HbA1C, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the disadvantages of HbA1c testing?"
+    back: "Cost, misleading in hemoglobinopathies/iron deficiency/hemolytic anemia/hepatic/renal disease, altered by ethnicity and aging, not for diagnostic use in children/adolescents/pregnant women/CF/suspected T1DM\n\nHbA1c can be unreliable in various medical conditions and certain populations, requiring a standardized validated assay."
+    difficulty: medium
+    tags: [endocrinology, diabetes, diagnosis, HbA1c, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the disadvantages of using HbA1C?"
+    back: "Cost, misleading in hemoglobinopathies, iron deficiency, hemolytic anemia, severe hepatic/renal disease, altered by ethnicity and aging, not for diagnostic use in children/adolescents, pregnant women, CF, or suspected T1DM\n\nHbA1C has limitations in certain medical conditions and populations where it may give misleading results."
+    difficulty: medium
+    tags: [endocrinology, diabetes, diagnosis, HbA1C, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the disadvantages of HbA1C for diabetes diagnosis?"
+    back: "Cost, misleading in hemoglobinopathies, iron deficiency, hemolytic anemia, severe hepatic or renal disease, altered by ethnicity and aging, requires standardized validated assay, not for diagnostic use in children/adolescents, pregnant women (routine GDM screening), CF patients, or suspected T1DM\n\nHbA1C has limitations in certain clinical situations where alternative testing is needed."
+    difficulty: medium
+    tags: [endocrinology, diabetes, diagnosis, HbA1C, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are disadvantages of HbA1C for diabetes diagnosis?"
+    back: "Cost, misleading in hemoglobinopathies, iron deficiency, hemolytic anemia, severe hepatic/renal disease, altered by ethnicity and aging\n\nHbA1C can be unreliable in various conditions affecting hemoglobin or red blood cell turnover."
+    difficulty: medium
+    tags: [endocrinology, diabetes, HbA1C, diagnosis, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the clinical triad of hemolytic uremic syndrome (HUS)?"
+    back: "Microangiopathic hemolytic anemia, thrombocytopenia, and acute kidney injury\n\nHUS is characterized by the triad of hemolytic anemia, low platelets, and renal impairment, often following EHEC infection."
+    difficulty: hard
+    tags: [gastroenterology, hus, renal, hematology, toronto-notes, pages-0451-0452-0453-0454-0455-0456-0457-0458-0459-0460]
+  - front: "What is the mechanism of STEC-related HUS?"
+    back: "Shiga toxin damages endothelial cells, causing microangiopathic hemolytic anemia, thrombocytopenia, and acute kidney injury\n\nShiga toxin from EHEC/STEC binds to endothelial cells in kidneys, causing endothelial damage that leads to the triad of HUS."
+    difficulty: hard
+    tags: [gastroenterology, ehec, hus, pathogenesis, toronto-notes, pages-0451-0452-0453-0454-0455-0456-0457-0458-0459-0460]
+  - front: "What are causes of secondary hemochromatosis?"
+    back: "Parenteral iron overload (transfusions, hemodialysis, IV iron), excessive oral iron intake, other liver diseases (EtOH, NAFLD, viral hepatitis), iron-loading anemias (hemolytic, sideroblastic, aplastic, thalassemia major)\n\nSecondary hemochromatosis results from various conditions causing iron overload, often requiring chelation therapy rather than phlebotomy."
+    difficulty: medium
+    tags: [Hemochromatosis, etiology, secondary, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What are the causes of secondary hemochromatosis?"
+    back: "Parenteral iron overload (transfusions, hemodialysis, IV iron), excessive oral iron intake, other liver diseases (EtOH, NAFLD, viral hepatitis), iron-loading anemias (thalassemia, sideroblastic), ineffective erythropoiesis\n\nSecondary hemochromatosis results from conditions that either add iron externally or cause ineffective erythropoiesis with increased intestinal absorption."
+    difficulty: medium
+    tags: [hemochromatosis, secondary, etiology, iron overload, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "List the causes of secondary hemochromatosis"
+    back: "Parenteral iron overload (transfusions, hemodialysis, parenteral iron), excessive oral iron intake, other liver diseases (EtOH, NAFLD, viral hepatitis), iron-loading anemias (hemolytic, sideroblastic, aplastic, thalassemia major), ineffective erythropoiesis\n\nSecondary hemochromatosis results from conditions causing iron overload through repeated blood transfusions, excessive intake, or ineffective erythropoiesis driving increased iron absorption."
+    difficulty: medium
+    tags: [hemochromatosis, etiology, hepatology, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the hallmark finding of sideroblastic anemia on bone marrow examination?"
+    back: "Ring sideroblasts — iron deposits in mitochondria forming large, abnormal granules that encircle the nucleus of erythroid precursors.\n\nIn sideroblastic anemia, defects in heme biosynthesis cause iron to accumulate in mitochondria (which surround the nucleus), creating the ring sideroblast. This is the diagnostic hallmark distinguishing it from other causes of microcytic anemia."
+    difficulty: easy
+    tags: [sideroblastic anemia, ring sideroblasts, heme biosynthesis, bone marrow]
+  - front: "What are the reversible causes of sideroblastic anemia?"
+    back: "Drugs (isoniazid, chloramphenicol), alcohol, lead poisoning, copper deficiency, zinc toxicity, and hypothyroidism.\n\nReversible sideroblastic anemia results from acquired toxins or metabolic disturbances that disrupt heme biosynthesis. Identifying and removing the precipitating cause leads to resolution. Isoniazid is a classic MCCQE1 cause, as it inhibits pyridoxine (B6), a cofactor in heme synthesis."
+    difficulty: easy
+    tags: [sideroblastic anemia, reversible causes, isoniazid, alcohol, lead]
+  - front: "What is the treatment for X-linked hereditary sideroblastic anemia?"
+    back: "High-dose pyridoxine (vitamin B6) in some cases.\n\nX-linked sideroblastic anemia is caused by mutations in ALAS2, the pyridoxine-dependent enzyme initiating heme synthesis. High-dose B6 supplementation can partially correct the enzyme deficiency in pyridoxine-responsive patients. Median survival is approximately 10 years."
+    difficulty: medium
+    tags: [sideroblastic anemia, pyridoxine, X-linked, vitamin B6]
+  - front: "In lead poisoning, at what blood lead level do symptoms typically appear, and what is the diagnostic threshold?"
+    back: "Symptoms may appear at ≥50 µg/dL; diagnostic threshold is blood lead level >80 µg/dL.\n\nLead poisoning should be considered in any child with microcytic anemia living in a house built before 1977. Lead inhibits heme biosynthesis at multiple steps, causing sideroblastic (microcytic) anemia with basophilic stippling. The mnemonic LEAD describes key features: Lead lines, Encephalopathy, Abdominal colic/Anemia, Drops (wrist/foot drop)."
+    difficulty: easy
+    tags: [lead poisoning, blood lead level, microcytic anemia, children]
+  - front: "What defines aplastic anemia and what are the key bone marrow findings?"
+    back: "Destruction of hematopoietic cells leading to pancytopenia and a hypocellular bone marrow (<25% cellularity) with adipose tissue replacement and no evidence of malignant infiltration or fibrosis.\n\nAplastic anemia is a BM failure syndrome where pancytopenia results from loss of hematopoietic stem cells. The hypocellular marrow is the cornerstone diagnostic finding. Idiopathic aplastic anemia is commonly T-cell mediated. PNH is found in ~50% of aplastic anemia patients and must be excluded."
+    difficulty: easy
+    tags: [aplastic anemia, pancytopenia, bone marrow failure, hypocellular marrow]
+  - front: "What are the causes of aplastic anemia?"
+    back: "Congenital (Fanconi syndrome, Shwachman-Diamond, dyskeratosis congenita); acquired: idiopathic (T-cell mediated), ionizing radiation, drugs (dose-related: chemotherapy; idiosyncratic: chloramphenicol, antimalarials, phenylbutazone), toxins (benzene, DDT), viral infections (parvovirus B19, EBV, HBV, HHV6, HIV), autoimmune (SLE, GVHD), PNH, pregnancy, anorexia nervosa, thymoma.\n\nAplastic anemia has many causes. Idiosyncratic drug reactions (especially chloramphenicol) are classic exam causes. Parvovirus B19 targets erythroid precursors but also causes aplastic crises in patients with chronic hemolysis. Identifying the cause guides management."
+    difficulty: medium
+    tags: [aplastic anemia, etiology, Fanconi, chloramphenicol, parvovirus]
+  - front: "What is the treatment for idiopathic aplastic anemia?"
+    back: "Immunosuppressive therapy (horse or rabbit anti-thymocyte globulin + cyclosporine) for non-transplant candidates; allogeneic bone marrow transplant is potentially curative. Eltrombopag (TPO receptor agonist) is also effective. G-CSF and EPO are NOT effective.\n\nSince idiopathic aplastic anemia is T-cell mediated, immunosuppression with ATG + cyclosporine achieves 40-50% response. Allogeneic BMT is preferred in young patients with matched donors. Eltrombopag stimulates residual stem cells. Note that EPO and G-CSF are ineffective in aplastic anemia."
+    difficulty: medium
+    tags: [aplastic anemia, immunosuppression, ATG, bone marrow transplant, eltrombopag]
+  - front: "What investigations differentiate intravascular from extravascular hemolysis?"
+    back: "Intravascular: schistocytes on blood film, free Hb in serum, hemoglobinuria, hemosiderinuria (most sensitive delayed marker). Extravascular: positive direct Coombs (DAT) detecting IgG or complement on RBCs, spherocytes on film. Both share: elevated LDH, decreased haptoglobin, elevated unconjugated bilirubin, reticulocytosis.\n\nHaptoglobin mops up free Hb; it decreases in both types but more profoundly in intravascular hemolysis. Hemosiderinuria is the most sensitive delayed marker of intravascular hemolysis. The DAT is key for extravascular (immune) hemolysis. Schistocytes indicate mechanical RBC destruction (MAHA) — an intravascular process."
+    difficulty: medium
+    tags: [hemolytic anemia, intravascular, extravascular, Coombs test, haptoglobin, schistocytes]
+  - front: "What does the direct antiglobulin test (DAT/direct Coombs) detect and when is it indicated?"
+    back: "Detects IgG or complement bound to the surface of patient's RBCs. Indicated in: hemolytic disease of the newborn, autoimmune hemolytic anemia (AIHA), and hemolytic transfusion reactions.\n\nThe DAT adds anti-IgG or anti-complement antibody to the patient's washed RBCs; agglutination = positive. This identifies antibody-coated RBCs undergoing extravascular hemolysis. The indirect Coombs (IAT) detects antibodies in the patient's serum and is used for cross-matching and screening during pregnancy."
+    difficulty: easy
+    tags: [direct Coombs, DAT, AIHA, hemolytic anemia, transfusion reaction]
+  - front: "What Hb electrophoresis pattern is diagnostic of β-thalassemia minor?"
+    back: "Elevated HbA2 (3.5–5%; normal 1.5–3.5%). About 50% also have a slight increase in HbF.\n\nβ-thalassemia minor (trait) results from a single defective β-globin allele. Despite microcytosis (MCV <70 fL), anemia is mild (Hb 100–140 g/L). The compensatory increase in δ-chain synthesis raises HbA2, making it the specific diagnostic marker. No treatment is required; genetic counselling is essential."
+    difficulty: easy
+    tags: [beta-thalassemia minor, HbA2, hemoglobin electrophoresis, microcytic anemia]
+  - front: "What are the key features and treatment of β-thalassemia major?"
+    back: "Severe microcytic anemia (Hb <60 g/L) appearing at 6–12 months; HbF 90–100%, HbA 0–10%. Features: jaundice, gross hepatosplenomegaly, iron overload (hemochromatosis), stunted growth, 'hair-on-end' skull x-ray. Treatment: lifelong RBC transfusions, iron chelation (deferoxamine, deferasirox, deferiprone), folic acid, allogeneic BMT (curative).\n\nβ-thalassemia major (Cooley's anemia) is autosomal recessive — both β-globin alleles are defective. HbF persists as compensation. Iron overload from transfusions and ineffective erythropoiesis causes organ damage (ABCDI: Arrhythmia/cardiomyopathy, Bronze skin, Cirrhosis, Diabetes, Hypogonadism). Gene therapy (CRISPR-Cas9) is an emerging curative option."
+    difficulty: medium
+    tags: [beta-thalassemia major, iron overload, transfusion, iron chelation, hair-on-end]
+  - front: "How does α-thalassemia severity relate to the number of defective α-globin genes?"
+    back: "1 gene (aa/a-): silent carrier, normal Hb, normal MCV. 2 genes (aa/-- or a-/a-): normal Hb, decreased MCV. 3 genes (a-/--): HbH (β4) disease, decreased Hb, decreased MCV, splenomegaly. 4 genes (--/--): Hb Barts (γ4)/hydrops fetalis, usually incompatible with life.\n\nα-thalassemia results from deletions of α-globin genes (normally 4 copies). Cis 2-gene deletion (--/αα) is more common in Southeast Asia and increases risk of hydrops fetalis in offspring; trans deletion (α-/α-) is more common in Africa, with lower fetal risk. HbH disease is similar to β-thalassemia intermedia in management."
+    difficulty: medium
+    tags: [alpha-thalassemia, HbH, hydrops fetalis, globin gene, gene deletion]
+  - front: "What is the molecular basis of sickle cell disease and which populations are most affected?"
+    back: "Autosomal recessive Glu→Val substitution at position 6 of the β-globin chain (chromosome 11), producing HbS instead of HbA. Most common in Sub-Saharan African, Indian, Middle Eastern, and Mediterranean populations. HbS allele is thought to confer protection against malaria.\n\nSCD occurs when an individual is homozygous (HbSS) or compound heterozygous (HbS-β-thal, HbSC). At low pO2, deoxyHbS polymerizes into rigid rods that distort RBCs into the sickle shape, causing hemolysis and vaso-occlusion. Sickling is worsened by acidemia, increased CO2, 2,3-DPG, fever, and hyperosmolality."
+    difficulty: easy
+    tags: [sickle cell disease, HbS, beta-globin, vasoocclusion, pathophysiology]
+  - front: "What are the four types of acute crises in sickle cell disease (HbSS)?"
+    back: "1. Aplastic crisis — BM suppression (especially parvovirus B19) causing Hb drop. 2. Splenic sequestration crisis — acute Hb drop from massive splenic pooling (mainly in children). 3. Vaso-occlusive crisis — microcirculation infarction causing ischemia-reperfusion injury, pain, fever, leukocytosis. 4. Acute chest syndrome — fever/respiratory symptoms + new pulmonary infiltrate (precipitated by infection, fat emboli, pulmonary infarction).\n\nVaso-occlusive crises are the most common and are precipitated by infections, dehydration, temperature change, pregnancy, menses, and alcohol. Acute chest syndrome is a medical emergency with high mortality. Splenic sequestration occurs mainly in young children as adults develop functional asplenia from repeated infarctions."
+    difficulty: medium
+    tags: [sickle cell disease, vaso-occlusive crisis, aplastic crisis, acute chest syndrome, splenic sequestration]
+  - front: "What is the mechanism of action of hydroxyurea in sickle cell disease and what are its major short-term adverse effects?"
+    back: "Mechanism: inhibits repression of the fetal Hb γ-gene, increasing HbF production; HbF reduces polymerization and precipitation of HbS. Short-term adverse effects: dose-related leukopenia, thrombocytopenia, anemia, decreased reticulocyte count; decreased sperm production, mucositis, skin ulcers.\n\nHydroxyurea (hydroxycarbamide) is the cornerstone disease-modifying therapy for SCD. Increased HbF dilutes HbS and impairs sickling. RCT evidence (8 trials, 899 patients) shows significant reductions in pain crises, hospitalizations, acute chest syndrome, and need for transfusions. Long-term concerns include potential teratogenicity and cancer risk."
+    difficulty: medium
+    tags: [hydroxyurea, sickle cell disease, HbF, disease-modifying therapy]
+  - front: "What vaccinations and prophylaxis are recommended in sickle cell disease to prevent infection?"
+    back: "Vaccinations: S. pneumoniae, N. meningitidis, H. influenzae type b (in childhood). Prophylactic penicillin from age 3 months to 5 years.\n\nFunctional asplenia (from repeated infarction) in SCD markedly increases susceptibility to encapsulated organisms: S. pneumoniae (most common), H. influenzae, N. meningitidis, and Salmonella (osteomyelitis). Penicillin prophylaxis and vaccination are standard of care per Canadian guidelines."
+    difficulty: easy
+    tags: [sickle cell disease, functional asplenia, vaccination, penicillin prophylaxis, encapsulated organisms]
+  - front: "What are the indications for exchange transfusion in sickle cell disease?"
+    back: "SCD complications: acute chest syndrome, aplastic crises, hepatic or splenic sequestration, stroke; prevention of complications; and preoperative preparation.\n\nExchange transfusion rapidly reduces HbS percentage and replaces sickled cells with normal RBCs, avoiding the iron overload of simple transfusion. It is preferred over simple transfusion for serious acute complications like stroke and acute chest syndrome. The SWiTCH trial confirmed transfusions + chelation remain preferred for secondary stroke prevention in children."
+    difficulty: medium
+    tags: [sickle cell disease, exchange transfusion, acute chest syndrome, stroke, preoperative]
+  - front: "How does warm AIHA differ from cold AIHA in antibody type, Coombs result, and first-line management?"
+    back: "Warm (75-90%): IgG antibody, agglutination at 37°C, DAT positive for IgG ± complement; first-line = corticosteroids. Cold: IgM antibody, agglutination at 4°C, DAT positive for complement only; first-line = avoid cold + rituximab-based regimen.\n\nWarm AIHA is often primary or secondary to autoimmune disease (SLE), lymphoproliferative disorders, or drugs (penicillin, methyldopa). Cold agglutinin disease is associated with Mycoplasma pneumoniae, EBV, and CLL. Blood film shows spherocytes in warm AIHA and RBC agglutination clumps in cold AIHA."
+    difficulty: medium
+    tags: [AIHA, warm AIHA, cold AIHA, Coombs, corticosteroids, rituximab]
+  - front: "What conditions cause microangiopathic hemolytic anemia (MAHA)/TMA, and what is the key blood film finding?"
+    back: "Schistocytes on blood film (mechanical RBC fragmentation). Causes: TTP, HUS, aHUS, DIC, eclampsia/HELLP, malignant hypertension, vasculitis, malfunctioning heart valves, metastatic carcinoma, drugs (calcineurin inhibitors, quinine, simvastatin), catastrophic APS, severe infections (CMV, meningococcus).\n\nMAHA results from fibrin or platelet thrombi in small vessels shearing RBCs into schistocytes. Unlike immune hemolysis, the DAT (Coombs) is negative in MAHA. Recognizing the TMA pentad (MAHA + thrombocytopenia + renal failure + fever + neurological changes) should prompt urgent investigation for TTP."
+    difficulty: medium
+    tags: [MAHA, TMA, schistocytes, TTP, HUS, DIC, Coombs negative]
+  - front: "What is the genetic basis of hereditary spherocytosis and what are its key diagnostic features?"
+    back: "Autosomal dominant (variable penetrance) abnormality in RBC membrane proteins (e.g. spectrin), causing spherocytes with elevated MCHC, increased osmotic fragility, splenomegaly, jaundice, and pigmented gallstones.\n\nHereditary spherocytosis is the most common hereditary hemolytic anemia. Spectrin deficiency leads to loss of RBC membrane lipids, creating rigid spheres with decreased deformability that are destroyed in the spleen. Splenectomy is effective in severe cases but deferred in early childhood; pre-splenectomy vaccination against pneumococcus, meningococcus, and H. influenzae is mandatory."
+    difficulty: easy
+    tags: [hereditary spherocytosis, spectrin, osmotic fragility, MCHC, splenectomy]
+  - front: "What triggers hemolysis in G6PD deficiency and what are the key blood film findings?"
+    back: "Triggers: oxidative stress, drugs (sulfonamides, antimalarials, nitrofurantoin), infections, and fava beans. Blood film: Heinz bodies (denatured Hb clumps) and bite cells (oxidative hemolysis marker).\n\nG6PD deficiency (X-linked recessive; common in African, Asian, Mediterranean populations) impairs the pentose phosphate pathway, reducing glutathione and increasing RBC oxidative damage. G6PD assay should not be done during acute crisis as reticulocytes (high G6PD) give false-normal results. Management: stop offending agent, avoid triggers, transfuse in severe cases."
+    difficulty: medium
+    tags: [G6PD deficiency, Heinz bodies, bite cells, oxidative hemolysis, X-linked]
+  - front: "What distinguishes megaloblastic from non-megaloblastic macrocytic anemia on blood film?"
+    back: "Megaloblastic: large oval macrocytes (ovalocytes) + hypersegmented neutrophils (≥5 lobes); pathophysiology = failure of DNA synthesis causing asynchronous nuclear-cytoplasmic maturation. Non-megaloblastic: large round macrocytes without hypersegmented neutrophils; reflects membrane abnormality/abnormal cholesterol metabolism (e.g. alcohol, liver disease, hypothyroidism).\n\nKey megaloblastic causes: B12 deficiency, folate deficiency, drugs (methotrexate, hydroxyurea, AZT). Non-megaloblastic causes include the ABCDEF mnemonic: Alcoholism/liver disease, B12 deficiency (early), Compensatory reticulocytosis, Drugs/Dysplasia (MDS), Endocrine (hypothyroidism), Folate deficiency/Fetus (pregnancy). MDS is a non-megaloblastic macrocytic anemia with oval macrocytosis and hypolobated neutrophils."
+    difficulty: medium
+    tags: [megaloblastic anemia, macrocytic anemia, hypersegmented neutrophils, B12, folate]
+  - front: "What are the neurological manifestations of vitamin B12 deficiency?"
+    back: "Peripheral neuropathy (symmetrical, legs > arms); subacute combined degeneration of the spinal cord (posterior columns: loss of vibration/proprioception/2-point discrimination; pyramidal tracts: spastic weakness, ataxia); cerebral (confusion, delirium, dementia — reversible with B12); rare cranial nerve involvement (optic atrophy).\n\nB12 is essential for myelin synthesis. Neurological damage from B12 deficiency can occur even without significant anemia and may be irreversible if untreated (spinal cord damage). Treating with folate alone (without B12) when both are deficient can correct the anemia but allow neurological deterioration to continue — a critical MCCQE1 concept."
+    difficulty: medium
+    tags: [B12 deficiency, subacute combined degeneration, posterior columns, neuropathy, pernicious anemia]
+  - front: "What is the pathophysiology and diagnostic investigation for pernicious anemia?"
+    back: "Pernicious anemia: auto-antibodies against intrinsic factor (IF) or gastric parietal cells → achlorhydria + lack of IF → decreased ileal absorption of B12. Investigations: anti-parietal cell Ab (more sensitive), anti-intrinsic factor Ab (more specific), elevated gastrin, upper endoscopy (atrophic gastritis; screen for gastric malignancy).\n\nPernicious anemia is the most common cause of B12 deficiency in adults. Auto-antibodies destroy parietal cells, reducing both acid secretion and IF. IF is required to bind B12 for absorption in the terminal ileum. Associated with other autoimmune conditions (polyglandular insufficiency). Most common in Northern European White populations, median age 60."
+    difficulty: medium
+    tags: [pernicious anemia, intrinsic factor, B12 deficiency, anti-parietal cell, atrophic gastritis]
+  - front: "What is the treatment for vitamin B12 deficiency and what electrolyte complication must be monitored?"
+    back: "Treatment: B12 1000–1200 µg PO daily (if absorption intact) or 1000 µg IM weekly. Maintenance: 1000 µg PO daily or 1000 µg IM monthly. Monitor for hypokalemia and rebound thrombocytosis when treating severe megaloblastic anemia.\n\nRapid erythropoiesis with B12 treatment causes high potassium uptake into new RBCs, precipitating hypokalemia. Rebound thrombocytosis can occur as megakaryocyte production normalizes. Route depends on the underlying cause: IM is required when GI absorption is impaired (pernicious anemia, ileal disease)."
+    difficulty: medium
+    tags: [B12 deficiency treatment, cyanocobalamin, hypokalemia, thrombocytosis, IM injection]
+  - front: "What are the main causes of folate deficiency and why is folate deficiency dangerous in pregnancy?"
+    back: "Causes: poor diet/alcohol use, malabsorption (celiac, IBD), drugs (methotrexate, phenytoin, trimethoprim, pyrimethamine, OCP, alcohol), increased demand (pregnancy, hemolysis, prematurity, hemodialysis, exfoliative dermatitis). Maternal folate deficiency causes fetal neural tube defects.\n\nUnlike B12 (stored 3–4 years), folate stores deplete within 3–6 months. Folate is essential for DNA synthesis and neural tube closure. Canadian guidelines recommend folate 0.4–1 mg/day pre-conception and in first trimester (higher dose 4–5 mg for high-risk women). Treatment: folic acid 1–5 mg PO daily x 1–4 months."
+    difficulty: easy
+    tags: [folate deficiency, neural tube defect, pregnancy, methotrexate, megaloblastic anemia]
+  - front: "What monitoring is recommended for patients with sickle cell disease?"
+    back: "Regular CBC, reticulocytes, iron indices, BUN, LFTs, creatinine; urinalysis annually (proteinuria/glomerulopathy); transcranial Doppler annually until age 16 (stroke prevention); retinal exams annually from age 8 (retinopathy); echocardiography once in late childhood/early adulthood (pulmonary hypertension).\n\nSystematic screening prevents SCD complications. Transcranial Doppler detects elevated cerebral blood flow velocity (>200 cm/s) indicating stroke risk — these patients benefit from regular transfusion therapy. Retinal screening detects proliferative retinopathy (more common in HbSC). Pulmonary hypertension is a major cause of death in adults with SCD."
+    difficulty: medium
+    tags: [sickle cell disease, monitoring, transcranial Doppler, retinopathy, pulmonary hypertension]
+  - front: "What is the significance of cis vs. trans α-globin gene deletions in α-thalassemia?"
+    back: "Cis 2-gene deletion (--/αα) is more common in Southeast Asia and creates risk of offspring inheriting 4-gene deletion (hydrops fetalis/Hb Barts) if partner is also a carrier. Trans 2-gene deletion (α-/α-) is more common in Africa and has lower risk of producing severely affected offspring.\n\nIn cis deletion, both genes are absent from one chromosome; a carrier can pass the chromosome with no α genes to offspring. If both parents carry cis deletions, there is a 1 in 4 chance of Hb Barts (4-gene deletion = lethal). Trans deletions distribute the deleted genes across two chromosomes, making 4-gene deletion in offspring much less likely."
+    difficulty: hard
+    tags: [alpha-thalassemia, cis deletion, trans deletion, hydrops fetalis, genetic counselling]
+  - front: "What is HbSC disease and how does it differ from HbSS?"
+    back: "HbSC disease: compound heterozygote with one HbS allele and one HbC allele; most common compound heterozygote SCD. Milder anemia than HbSS; similar complications but less frequent — EXCEPT proliferative sickle cell retinopathy, glomerulonephritis, and avascular necrosis are comparably prevalent. Spleen may not be atrophic in adults.\n\nHbSC occurs in approximately 1 in 833 African-American live births. HbC (Glu→Lys at position 6) has less polymerization tendency than HbS. The milder clinical course can lead to delayed diagnosis. Ophthalmic complications are notably as severe or worse than HbSS, making regular retinal screening essential."
+    difficulty: medium
+    tags: [HbSC disease, sickle cell, compound heterozygote, retinopathy, avascular necrosis]

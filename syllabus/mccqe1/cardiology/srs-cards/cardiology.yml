@@ -1,0 +1,174 @@
+# Cardiology (Cardiology) - generated from srs-mccqe1
+cards:
+  - front: "How is the ECG P-R interval interpreted and what are causes of prolongation and shortening?"
+    back: "Normal PR interval: 120-200 msec. Prolonged (>200 msec): first-degree AV block, drugs (beta-blockers, CCBs, digoxin), high vagal tone, hypokalemia. Short (<120 msec): pre-excitation syndrome (WPW with delta wave), low atrial rhythm.\n\nThe PR interval represents conduction from the SA node through the atria, AV node, and bundle of His to the ventricles. Second-degree Mobitz I (Wenckebach) shows progressive PR prolongation before a dropped beat. Second-degree Mobitz II has a fixed PR with intermittent dropped beats and higher risk of progressing to complete heart block."
+    difficulty: easy
+    tags: [cardiology, ECG, AV block]
+  - front: "What are the causes and ECG features of a prolonged QTc interval?"
+    back: "Normal QTc: 360-450 msec (males), 360-460 msec (females). Causes of prolongation: genetic long QT syndrome (channelopathies), drugs (class I/III antiarrhythmics, haloperidol, citalopram, erythromycin/azithromycin), low Ca2+/K+/Mg2+, hypothyroidism, hypothermia, cardiomyopathy. Risk: Torsades de Pointes.\n\nQTc is calculated using Bazett's formula: QTc = QT / √RR. Prolonged QTc (>500 msec especially) predisposes to Torsades de Pointes, a potentially lethal polymorphic ventricular tachycardia. Management of Torsades includes IV magnesium, overdrive pacing, and correcting the underlying cause."
+    difficulty: medium
+    tags: [cardiology, ECG, QT prolongation, Torsades de Pointes]
+  - front: "What are the types of AV block and their management?"
+    back: "First degree: prolonged PR >200 msec, all P waves conducted — no treatment. Second degree Mobitz I (Wenckebach): progressive PR prolongation then dropped QRS, usually AV nodal — atropine if symptomatic. Second degree Mobitz II: fixed PR with intermittently dropped QRS, usually infra-nodal — pacing (high risk of complete block). Third degree: complete AV dissociation, P-P and R-R constant but independent — pacing required.\n\nMobitz I is usually proximal (AV node) and often reversible (increased vagal tone, RCA ischemia). Mobitz II is distal (bundle of His) and more dangerous with risk of progressing to complete heart block. Third-degree block shows more P waves than QRS complexes with no relationship between them."
+    difficulty: medium
+    tags: [cardiology, ECG, AV block, arrhythmia]
+  - front: "What is the CHADS2 score and how does it guide anticoagulation in atrial fibrillation?"
+    back: "C: CHF (1 point), H: HTN (1), A: Age >75 (1), D: Diabetes (1), S2: prior Stroke/TIA (2). Score 0: low risk (1.9%/yr stroke). Score 1: low-moderate (2.8%/yr). Score ≥2: moderate-high risk — anticoagulation recommended. CCS CHADS-65: anticoagulate all AFib patients ≥65 or with CHADS2 ≥1.\n\nFor non-valvular AFib, DOACs (apixaban, dabigatran, rivaroxaban, edoxaban) are preferred over warfarin. ASA 81 mg is only recommended for patients <65 with no CHADS2 risk factors who have arterial disease. All valvular AFib (mechanical valves, moderate-severe mitral stenosis) requires anticoagulation regardless of CHADS2 score."
+    difficulty: easy
+    tags: [cardiology, atrial fibrillation, CHADS2, anticoagulation]
+  - front: "What are the ECG features and management of atrial fibrillation?"
+    back: "ECG: no organized P waves (chaotic fibrillatory baseline), irregularly irregular ventricular response (100-180 bpm), narrow QRS unless aberrancy. Management: 1) Rate control (beta-blockers, diltiazem, verapamil), 2) Anticoagulation based on CHADS2/CHADS-65, 3) Rhythm control if symptomatic (cardioversion, antiarrhythmics, RF ablation).\n\nAFib is the most common sustained arrhythmia. Risk factors include age, HTN, HF, valvular disease, and alcohol. Stroke prevention with anticoagulation is crucial (4-5% annual stroke risk without treatment). An initial rhythm control strategy for newly diagnosed AFib is associated with reduced cardiovascular death and stroke."
+    difficulty: medium
+    tags: [cardiology, atrial fibrillation, arrhythmia, rate control]
+  - front: "What is atrial flutter and how does it differ from atrial fibrillation?"
+    back: "Flutter: regular macro re-entry circuit in RA, atrial rate ~300 bpm with fixed AV block (commonly 2:1 giving ventricular rate ~150 bpm), sawtooth flutter waves in inferior leads. AFib: chaotic multiple re-entry circuits, atrial rate 350-600 bpm, irregularly irregular rhythm, no organized P waves.\n\nIn atrial flutter with 2:1 block, carotid sinus massage or adenosine can slow AV conduction to reveal flutter waves. Treatment of typical flutter is RF ablation of the cavotricuspid isthmus (treatment of choice, >90% success). Anticoagulation guidelines are the same as for AFib."
+    difficulty: medium
+    tags: [cardiology, atrial flutter, arrhythmia]
+  - front: "What is AVNRT and how is it managed?"
+    back: "AV Nodal Re-Entrant Tachycardia: re-entry circuit using dual pathways (fast and slow) in/near AV node. Fast regular rhythm 150-250 bpm, narrow QRS, accounts for 60-70% of paroxysmal SVTs. Acute: vagal maneuvers, then adenosine. Long-term: RF ablation (>98% cure rate, first-line), beta-blockers, diltiazem.\n\nAVNRT presents with sudden onset/offset, often described as neck pounding. Retrograde P waves may be seen but are usually obscured within the QRS. It is typically initiated by a premature beat. RF ablation of the slow pathway is curative with <1% complication rate, making it the preferred long-term treatment."
+    difficulty: medium
+    tags: [cardiology, AVNRT, SVT, arrhythmia]
+  - front: "What are the ECG features of Wolff-Parkinson-White (WPW) syndrome and why are AV nodal blockers dangerous in AFib with WPW?"
+    back: "ECG: PR interval <120 msec, delta wave (slurred QRS upstroke), widened QRS, secondary ST/T changes. AV nodal blockers (digoxin, beta-blockers, CCBs) are dangerous because they increase conduction through the bypass tract, potentially causing VFib.\n\nWPW involves an accessory pathway (bundle of Kent) that bypasses the AV node. During AFib, rapid atrial impulses conducted through the unfiltered bypass tract can produce extremely rapid ventricular rates (>200 bpm). Treatment of pre-excited AFib: electrical cardioversion, IV procainamide, or IV amiodarone. Long-term: ablation of bypass tract."
+    difficulty: hard
+    tags: [cardiology, WPW, pre-excitation, arrhythmia]
+  - front: "What are the ECG features that differentiate ventricular tachycardia from SVT with aberrancy?"
+    back: "Favoring VT: AV dissociation, capture/fusion beats, QRS >140 msec, extreme axis deviation, positive or negative QRS concordance across V1-V6, history of MI/structural heart disease, age >65. In patients with prior MI or structural heart disease, >95% chance of VT.\n\nVT is defined as 3 or more consecutive ventricular ectopic beats at >100 bpm. Monomorphic VT has uniform morphology (usually re-entry). Polymorphic VT has changing morphology and is more hemodynamically unstable. Sustained VT (>30s) is an emergency requiring cardioversion. All patients with sustained VT/VFib and structural heart disease should be considered for ICD."
+    difficulty: hard
+    tags: [cardiology, VT, wide complex tachycardia, arrhythmia]
+  - front: "What is Torsades de Pointes and how is it managed?"
+    back: "A polymorphic VT occurring in the setting of prolonged QTc, with characteristic 'twisting of the points' QRS morphology. Management: IV magnesium sulfate (first-line), overdrive pacing to increase heart rate, correct underlying cause (stop offending drugs, correct electrolytes). Isoproterenol may be used temporarily.\n\nTorsades results from early afterdepolarizations in the setting of QT prolongation. Common triggers include hypokalemia, hypomagnesemia, and drugs that block potassium channels. Unlike monomorphic VT, standard antiarrhythmics (especially class III agents) can worsen Torsades. Prevention involves avoiding QT-prolonging drugs and maintaining normal electrolytes."
+    difficulty: hard
+    tags: [cardiology, Torsades de Pointes, arrhythmia, QT prolongation]
+  - front: "What cardiac biomarkers are used in acute coronary syndromes and what are their timing characteristics?"
+    back: "High-sensitivity troponin I/T: peaks at 12-24h, elevated up to 2 weeks. CK-MB: peaks at 1 day, elevated for 3 days. Troponin is more specific; CK-MB elevation can diagnose re-infarction. BNP/NT-proBNP: secreted in response to increased ventricular wall stress, used for HF diagnosis.\n\nHigh-sensitivity troponin assays detect elevations earlier than traditional assays. DDx of elevated troponin includes MI, CHF, AFib, PE, aortic dissection, myocarditis, pericarditis, renal insufficiency, sepsis, and stroke. Elevated BNP can also occur with AFib, PE, and pulmonary HTN."
+    difficulty: easy
+    tags: [cardiology, troponin, cardiac biomarkers, ACS]
+  - front: "What are the indications and absolute contraindications for exercise stress testing?"
+    back: "Indications: intermediate pretest probability of ischemia (10-90%). Absolute contraindications: acute MI (within 2 days), unstable angina, uncontrolled symptomatic arrhythmia, symptomatic severe aortic stenosis, uncontrolled HF, active endocarditis/myocarditis/pericarditis, acute aortic dissection, acute PE.\n\nThe Duke Treadmill Score (DTS) stratifies risk: exercise time - (5 × max ST deviation) - (4 × angina index). DTS ≥5: low risk (0.25% 1-year mortality). DTS -10 to 4: intermediate risk. DTS <-10: high risk (5.25% 1-year mortality). Patients with LBBB or abnormal baseline ECG should undergo stress imaging instead."
+    difficulty: medium
+    tags: [cardiology, stress testing, ischemic heart disease]
+  - front: "What is cardiac tamponade and what is Beck's triad?"
+    back: "Cardiac tamponade: accumulation of fluid/blood/clots in the pericardium causing life-threatening cardiac compression. Beck's triad: hypotension, elevated JVP, muffled heart sounds. Classic quartet adds pulsus paradoxus (inspiratory fall in SBP >10 mmHg).\n\nPathophysiology: high intrapericardial pressure → decreased venous return → decreased diastolic filling → decreased CO → hypotension. ECG shows electrical alternans (pathognomonic) and low voltage. Echo is the diagnostic modality of choice. Treatment: urgent pericardiocentesis. Avoid diuretics and vasodilators (decrease preload). IV fluids may temporarily increase CO."
+    difficulty: medium
+    tags: [cardiology, cardiac tamponade, pericardial disease]
+  - front: "What are the causes of acute pericarditis and its diagnostic criteria?"
+    back: "Most common: idiopathic (presumed viral). Other: viral (Coxsackie B most common), bacterial, post-MI (Dressler's syndrome 2-8 weeks post-MI), uremia, neoplasm, autoimmune (SLE, RA), radiation. Diagnosis requires 2 of 4: 1) Chest pain (sharp, pleuritic, improved sitting forward), 2) Pericardial friction rub, 3) ECG changes (diffuse ST elevation, PR depression), 4) New/worsening pericardial effusion.\n\nECG shows 4 stages: Stage 1 — diffuse ST elevation with PR depression; Stage 2 — normalization; Stage 3 — T-wave inversion; Stage 4 — normalization. Treatment: NSAIDs/ASA as mainstay, colchicine to reduce recurrence. Corticosteroids are reserved for refractory cases or autoimmune etiologies. Exercise restriction until symptom resolution."
+    difficulty: medium
+    tags: [cardiology, pericarditis, pericardial disease]
+  - front: "How do you differentiate constrictive pericarditis from cardiac tamponade?"
+    back: "Constrictive pericarditis: Kussmaul's sign present, pulsus paradoxus uncommon, pericardial knock present, variable hypotension, prominent y descent in JVP. Cardiac tamponade: Kussmaul's sign absent, pulsus paradoxus always present, no pericardial knock, severe hypotension, blunted y descent in JVP.\n\nConstrictive pericarditis results from chronic fibrosis/calcification of the pericardium restricting diastolic filling, mimicking right-sided HF. Kussmaul's sign (paradoxical JVP increase with inspiration) occurs because the rigid pericardium prevents normal cardiac expansion. Treatment is pericardiectomy for chronic/permanent cases. Prognosis is worst in post-radiation constrictive pericarditis."
+    difficulty: hard
+    tags: [cardiology, constrictive pericarditis, cardiac tamponade, pericardial disease]
+  - front: "What are the classes of antiarrhythmic drugs in the Vaughan-Williams classification?"
+    back: "Class I (Na+ channel blockers): Ia (quinidine, procainamide — moderate block, prolongs repolarization), Ib (lidocaine — mild block, shortens repolarization), Ic (flecainide, propafenone — marked block). Class II: Beta-blockers. Class III: K+ channel blockers (amiodarone, sotalol — prolong repolarization). Class IV: CCBs (verapamil, diltiazem — slow AV conduction).\n\nAll antiarrhythmics have proarrhythmic potential. Amiodarone has properties of all four classes and is used for both SVT and VT, but has significant side effects: pulmonary toxicity, thyroid disease (both hypo- and hyper-), hepatotoxicity, photosensitivity, and corneal deposits. Class Ia and III agents prolong QT and risk Torsades de Pointes."
+    difficulty: medium
+    tags: [cardiology, antiarrhythmics, pharmacology]
+  - front: "What are the major classes of cardiac medications for heart failure and their mechanisms?"
+    back: "ACEIs (ramipril): inhibit angiotensin II production. ARBs (candesartan): block AT-II receptors. ARNI (sacubitril/valsartan): neprilysin inhibitor + ARB for HFrEF. Beta-blockers (bisoprolol, carvedilol, metoprolol): reduce HR and myocardial O2 demand. MRAs (spironolactone): aldosterone antagonist. SGLT2 inhibitors (dapagliflozin): osmotic diuresis and natriuresis. Loop diuretics (furosemide): volume management.\n\nGuideline-directed medical therapy for HFrEF includes ACEIs/ARBs/ARNI + beta-blockers + MRAs + SGLT2 inhibitors. Beta-blockers should be started low and titrated slowly in HF. ACEIs are contraindicated in bilateral renal artery stenosis and pregnancy. Common ACEI side effect is dry cough (10%), which may necessitate switch to ARB."
+    difficulty: medium
+    tags: [cardiology, heart failure, pharmacology]
+  - front: "What are the indications and contraindications for the different types of anticoagulants?"
+    back: "Warfarin: AFib, mechanical valves, VTE (CI: pregnancy, active bleeding). Heparin/LMWH: acute ACS, PE, VTE (CI: HIT, active bleeding). DOACs — Dabigatran (direct thrombin inhibitor): AFib, VTE (CI: severe renal impairment; reversal: idarucizumab). Rivaroxaban/Apixaban (factor Xa inhibitors): AFib, VTE (CI: hepatic disease; reversal: andexanet alfa).\n\nDOACs are preferred over warfarin for non-valvular AFib due to more predictable pharmacokinetics and fewer drug-food interactions. Warfarin is still required for mechanical heart valves and moderate-severe mitral stenosis. Key warfarin side effects include bleeding (most important) and paradoxical skin necrosis (via protein C depletion)."
+    difficulty: medium
+    tags: [cardiology, anticoagulation, pharmacology]
+  - front: "What is the significance of the HOPE trial for cardiovascular prevention?"
+    back: "HOPE showed that ramipril (ACE inhibitor) reduces MI, stroke, and cardiovascular death in high-risk patients WITHOUT heart failure or low ejection fraction. Ramipril reduced primary endpoint (CV death, MI, stroke) from 17.8% to 14.0% over 5 years.\n\nThis landmark trial established ACE inhibitors as beneficial beyond their blood pressure-lowering effects. Ramipril also reduced revascularization, cardiac arrest, heart failure, and diabetes complications. This extended the indication for ACEIs to secondary prevention in all high-risk patients with vascular disease or diabetes plus additional risk factors."
+    difficulty: medium
+    tags: [cardiology, HOPE trial, ACE inhibitors, secondary prevention]
+  - front: "What does the CURE trial demonstrate about dual antiplatelet therapy in ACS?"
+    back: "Clopidogrel plus ASA (vs. ASA alone) reduces the composite of CV death, non-fatal MI, and stroke in non-ST elevation ACS (9.3% vs 11.4%, RR 0.80, P<0.001), but increases major bleeding (3.7% vs 2.7%).\n\nThe CURE trial established dual antiplatelet therapy as standard of care in ACS. The benefit-risk balance must be considered, as bleeding risk increases. The DAPT trial later showed continuing dual antiplatelet therapy beyond 12 months after drug-eluting stents further reduces stent thrombosis and CV events but increases bleeding."
+    difficulty: medium
+    tags: [cardiology, CURE trial, antiplatelet therapy, ACS]
+  - front: "What is the clinical approach to a patient with a wide complex tachycardia?"
+    back: "Assume VT until proven otherwise, especially if age >65 or history of MI/structural heart disease (>95% chance VT). If hemodynamically unstable: electrical cardioversion. If stable: look for AV dissociation, capture/fusion beats, QRS concordance, extreme axis deviation. Adenosine may terminate SVT with aberrancy but rarely VT.\n\nWide complex tachycardias include VT, SVT with aberrant conduction, SVT with pre-existing BBB, and antidromic AVRT in WPW. Key distinguishing features favoring VT: AV dissociation (most specific), QRS >140 msec, extreme axis deviation, and lack of typical BBB morphology. When in doubt, treat as VT — it is the most common and dangerous cause."
+    difficulty: hard
+    tags: [cardiology, wide complex tachycardia, VT, arrhythmia]
+  - front: "What are the mechanisms of cardiac arrhythmias?"
+    back: "1) Altered impulse formation: abnormal automaticity (e.g., sinus tachycardia/bradycardia), triggered activity (early afterdepolarizations → Torsades, delayed afterdepolarizations → digitalis toxicity). 2) Altered impulse conduction: re-entry circuits (most sustained tachyarrhythmias), conduction block (AV blocks, BBBs). 3) Bypass tracts (WPW).\n\nRe-entry requires: unidirectional block in one pathway, slow conduction in the alternate pathway, and recovery of excitability allowing retrograde conduction through the previously blocked pathway. Early afterdepolarizations occur during repolarization (QT prolongation states). Delayed afterdepolarizations occur after full repolarization (high intracellular calcium, catecholamine excess)."
+    difficulty: hard
+    tags: [cardiology, arrhythmia mechanisms, electrophysiology]
+  - front: "What are the ECG features of right and left atrial enlargement?"
+    back: "RAE (P pulmonale): tall P wave >2.5 mm in lead II or V1. LAE (P mitrale): biphasic P wave with negative deflection >1 mm deep or >1 mm wide in V1, wide (>100 msec) notched P wave in lead II.\n\nAtrial enlargement changes P wave morphology because P wave represents atrial depolarization. RAE is associated with cor pulmonale, pulmonary HTN, and tricuspid disease. LAE is associated with mitral valve disease, LV failure, and hypertension. The P wave is best assessed in leads II (frontal plane) and V1 (biphasic in normal)."
+    difficulty: easy
+    tags: [cardiology, ECG, atrial enlargement]
+  - front: "What are the indications for transesophageal echocardiography (TEE) over transthoracic echocardiography (TTE)?"
+    back: "TEE provides better visualization of: valves (especially mitral/aortic), vegetations (infective endocarditis), left atrial appendage thrombus (pre-cardioversion in AFib), aortic dissection, prosthetic valve dysfunction, intracardiac shunts. Used when TTE is technically inadequate or for specific diagnostic questions.\n\nTEE has better resolution than TTE because the esophageal probe is closer to cardiac structures without lung/chest wall interference. Serious complications are rare (<1 in 5000) but include esophageal perforation and GI bleeding. TEE is the key test for evaluating LA appendage thrombus before cardioversion or ablation in AFib/flutter."
+    difficulty: easy
+    tags: [cardiology, echocardiography, TEE, investigations]
+  - front: "What are the normal pressures in the cardiac chambers and when does cardiogenic shock occur?"
+    back: "RA: 1-8 mmHg. RV: 18-30/0-8 mmHg. PA: 18-30/4-12 mmHg. PCWP: 4-12 mmHg. LV end-diastolic: 4-12 mmHg. Cardiac Index (CI) = CO/BSA; normal 2.6-4.2 L/min/m². Cardiogenic shock: CI <1.8 L/min/m² with PCWP >15 mmHg.\n\nRight heart catheterization (Swan-Ganz) provides these measurements. PCWP reflects left atrial pressure in the absence of pulmonary venous disease. Right heart catheterization is indicated in unexplained shock, severe cardiogenic shock, suspected tamponade, and known pulmonary HTN. Major complications (death, MI, stroke) occur in 0.2-0.3% within 24 hours."
+    difficulty: medium
+    tags: [cardiology, hemodynamics, cardiac catheterization]
+  - front: "What are the causes and management of sinus tachycardia?"
+    back: "Causes: anxiety, exercise, fever, pain, hypovolemia, anemia, CHF, MI, PE, thyrotoxicosis, pheochromocytoma, drugs (cocaine, caffeine, beta-agonists), idiopathic/POTS. Management: treat the underlying cause; consider beta-blocker if symptomatic; ivabradine for inappropriate sinus tachycardia.\n\nSinus tachycardia is a physiologic response, not a primary arrhythmia. The key is identifying and treating the underlying cause. The rate is typically 100-150 bpm with normal P wave morphology. It should be distinguished from other SVTs: AVNRT/AVRT have sudden onset/offset, while sinus tachycardia gradually increases and decreases."
+    difficulty: easy
+    tags: [cardiology, sinus tachycardia, arrhythmia]
+  - front: "What is the differential diagnosis of ST elevation on ECG?"
+    back: "STEMI, Prinzmetal (vasospastic) angina, acute pericarditis (diffuse, with PR depression), early repolarization (normal variant), LV aneurysm, hyperkalemia (diffuse changes), hypothermia (Osborne/J waves), Brugada syndrome, Takotsubo cardiomyopathy.\n\nThe mnemonic for ST elevation differentials is based on clinical context. STEMI shows ST elevation in a coronary territory with reciprocal depression. Pericarditis shows diffuse ST elevation with PR depression. Early repolarization is a normal variant in young patients. Always compare with prior ECGs when available. ST depression differential (WAR SHIP): WPW, Acute posterior MI, Reciprocal changes, Subendocardial ischemia, Hypertrophy, Hypokalemia, digoxin."
+    difficulty: medium
+    tags: [cardiology, ECG, ST elevation, differential diagnosis]
+  - front: "What is pericardial effusion and when does it require drainage?"
+    back: "Fluid accumulation in the pericardial sac (normally 10-50 mL). Common causes: idiopathic (50%), cancer (10-25%), infections (15-30%), iatrogenic (15-20%). TB predominates in developing countries (>60%). Drainage indications: cardiac tamponade, symptomatic moderate-large effusion unresponsive to medical therapy, suspected bacterial/neoplastic etiology.\n\nClinical consequences depend on rate of fluid accumulation, volume, and underlying cardiac disease. Slowly accumulating effusions can reach 1-2L without hemodynamic compromise due to pericardial stretch. Rapidly accumulating effusions (e.g., trauma, aortic dissection) can cause tamponade with as little as 100-200 mL. Echo is the procedure of choice for diagnosis and guiding pericardiocentesis."
+    difficulty: medium
+    tags: [cardiology, pericardial effusion, pericardial disease]
+  - front: "What is Dressler's syndrome?"
+    back: "An autoimmune pericarditis occurring 2-8 weeks post-MI (or post-cardiac surgery/procedure). Presents with fever, pleuritic chest pain, pericardial friction rub, and pericardial effusion. Treat with NSAIDs/ASA and colchicine.\n\nDressler's syndrome is distinct from early post-MI pericarditis (1-7 days, direct extension of myocardial inflammation). It is an immune-mediated response to myocardial antigens released during infarction. Incidence has decreased with modern reperfusion therapy. Corticosteroids are reserved for refractory cases."
+    difficulty: easy
+    tags: [cardiology, Dressler syndrome, pericarditis, post-MI]
+  - front: "What medications can cause QT prolongation?"
+    back: "Class Ia antiarrhythmics (quinidine, procainamide), Class III antiarrhythmics (amiodarone, sotalol), antipsychotics (haloperidol, ziprasidone), antidepressants (citalopram), macrolide antibiotics (erythromycin, azithromycin), fluoroquinolones, methadone, ondansetron.\n\nQT prolongation predisposes to Torsades de Pointes, especially when QTc >500 msec. Risk is compounded by concurrent hypokalemia, hypomagnesemia, or hypocalcemia. Before starting any QT-prolonging medication, a baseline ECG should be obtained. Drug-drug interactions can potentiate QT prolongation. Online databases (e.g., CredibleMeds) track QT-prolonging medications."
+    difficulty: medium
+    tags: [cardiology, pharmacology, QT prolongation, drug safety]
+  - front: "What are the indications for coronary angiography?"
+    back: "Disabling chronic stable angina (CCS class III-IV) despite medical therapy, high-risk criteria on non-invasive testing, serious ventricular arrhythmia or CHF, uncertain diagnosis after non-invasive testing, inability to undergo non-invasive testing, evaluation of coronary anatomy for revascularization planning.\n\nCoronary angiography is the gold standard for localizing and quantifying coronary artery stenosis. Hemodynamically significant stenosis is generally defined as >70% diameter reduction (>50% for left main). Contraindications include severe renal failure due to contrast toxicity. Major complications (death, MI, stroke) occur in <3 per 1000 procedures."
+    difficulty: medium
+    tags: [cardiology, coronary angiography, CAD, investigations]
+  - front: "What did the ISCHEMIA trial show about invasive vs. conservative strategy for stable coronary disease?"
+    back: "In patients with stable CAD and moderate/severe ischemia, initial invasive strategy (angiography + revascularization) plus medical therapy did NOT reduce the risk of CV death, MI, or other ischemic events compared to conservative (medical therapy alone) at 5 years.\n\nThis landmark trial enrolled 5,179 patients and challenged the assumption that revascularization improves outcomes in stable ischemic heart disease. It supports optimizing medical therapy as the initial approach. However, the trial excluded patients with left main disease (>50%) and did not address symptomatic relief, which may still benefit from revascularization."
+    difficulty: medium
+    tags: [cardiology, ISCHEMIA trial, stable CAD, revascularization]
+  - front: "What is the COMPASS trial's significance for secondary cardiovascular prevention?"
+    back: "Rivaroxaban 2.5 mg BID plus ASA reduced the composite of CV death, stroke, and MI compared to ASA alone (4.1% vs 5.4%, HR 0.76, P<0.001) in patients with stable atherosclerosis, but increased major bleeding (3.1% vs 1.9%).\n\nThe COMPASS trial established low-dose rivaroxaban plus ASA as a secondary prevention strategy in stable atherosclerotic disease. The net clinical benefit favored combination therapy despite increased bleeding. This is particularly relevant for patients with polyvascular disease (CAD + peripheral arterial disease)."
+    difficulty: medium
+    tags: [cardiology, COMPASS trial, rivaroxaban, secondary prevention]
+  - front: "What is the treatment approach for pericarditis?"
+    back: "First-line: NSAIDs/ASA (e.g., ibuprofen, ASA) + colchicine (reduces recurrence). Corticosteroids: reserved for incomplete response to NSAIDs, autoimmune etiology, or immune checkpoint inhibitor-associated pericarditis. Purulent pericarditis: pericardial drainage + targeted antibiotics. TB pericarditis: multidrug anti-TB regimen. Activity restriction until symptom resolution.\n\nColchicine significantly reduces recurrence rates and symptom persistence. Corticosteroids should be avoided as first-line because they increase recurrence risk. CRP elevation predicts recurrence risk. Negative prognostic factors requiring hospitalization include fever >38°C, large effusion >20mm, tamponade, subacute onset, and failure to respond to 1 week of anti-inflammatory treatment."
+    difficulty: medium
+    tags: [cardiology, pericarditis, treatment]
+  - front: "What is the significance of electrical alternans on ECG?"
+    back: "Electrical alternans (beat-to-beat variation in R wave amplitude) is pathognomonic for cardiac tamponade with large pericardial effusion. It results from the heart swinging within the fluid-filled pericardial sac. It is highly specific but not sensitive enough to exclude tamponade.\n\nElectrical alternans combined with low voltage and sinus tachycardia on ECG should prompt immediate bedside echo to evaluate for pericardial effusion and tamponade. Other ECG findings of pericardial effusion include low voltage QRS complexes and flat T waves. Treatment of tamponade is urgent pericardiocentesis."
+    difficulty: medium
+    tags: [cardiology, ECG, electrical alternans, cardiac tamponade]
+  - front: "What is the JUPITER trial's significance for statin therapy?"
+    back: "Rosuvastatin 20 mg daily significantly reduced major CV events (HR 0.56, P<0.00001) in apparently healthy patients with normal LDL (<130 mg/dL) but elevated CRP (>2.0 mg/L), compared to placebo.\n\nJUPITER expanded statin indications beyond traditional lipid criteria by showing benefit in patients with elevated inflammatory markers (CRP) without hyperlipidemia. The trial was stopped early due to overwhelming benefit. However, rosuvastatin was associated with a higher rate of diabetes. This supports the role of inflammation in atherosclerosis and use of CRP as a risk marker."
+    difficulty: medium
+    tags: [cardiology, JUPITER trial, statin, primary prevention]
+  - front: "What are the roles of digoxin in cardiology and its toxicity signs?"
+    back: "Indications: CHF (increases contractility via Na+/K+-ATPase inhibition) and AFib rate control (slows AV nodal conduction). Toxicity signs: AV block, junctional tachycardia, bidirectional VT, bradyarrhythmias, anorexia, nausea/vomiting, blurred/yellow vision ('van Gogh syndrome'). Contraindications: 2nd/3rd degree AV block, hypokalemia (increases toxicity).\n\nDigoxin inhibits Na+/K+-ATPase, increasing intracellular Na+ and consequently Ca2+ (via Na+/Ca2+ exchanger), enhancing contractility. It has a narrow therapeutic window. Hypokalemia potentiates toxicity because both digoxin and K+ compete for binding sites on the Na+/K+-ATPase. Treatment of toxicity includes digoxin-specific antibody fragments (Digibind)."
+    difficulty: medium
+    tags: [cardiology, digoxin, pharmacology, drug toxicity]
+  - front: "A 72-year-old man has an office blood pressure of 158/92 mmHg on three separate visits using automated office BP measurement. According to Hypertension Canada guidelines, how would you confirm the diagnosis and what is the BP target?"
+    back: "Confirm with ambulatory BP monitoring (ABPM) or home BP monitoring (HBPM) to rule out white coat HTN. ABPM daytime mean >135/85 or 24h mean >130/80 confirms HTN. Target: <140/90 mmHg (or <130/80 if diabetic).\n\nWhite coat HTN occurs when clinic BP is elevated but home and ambulatory readings are normal. AOBP >135/85 or conventional OBPM >=140/90 requires confirmation. For high-risk patients (Framingham >20%, age >50), target sBP <130 mmHg."
+    difficulty: medium
+    tags: [cardiology, hypertension, family-medicine, diagnosis]
+  - front: "Which antihypertensive classes are first-line for uncomplicated hypertension in adults, and which should NOT be used as first-line monotherapy?"
+    back: "First-line: thiazide/thiazide-like diuretics (longer-acting preferred), ACEi, ARBs, long-acting CCBs, or beta-blockers (if <60 years). NOT recommended as monotherapy: alpha-blockers. Beta-blockers not recommended first-line if age >=60.\n\nCanadian guidelines recommend single-pill combination therapy for many patients. Key combinations include ACEi+CCB, ARB+CCB, or ACEi/ARB+diuretic. Avoid combining non-DHP CCB with beta-blocker, or ACEi with ARB."
+    difficulty: medium
+    tags: [cardiology, hypertension, pharmacology, family-medicine]
+  - front: "What is the DASH diet, and what blood pressure reductions were demonstrated in hypertensive patients?"
+    back: "DASH diet is rich in fruits, vegetables, and low-fat dairy products with reduced saturated and total fat. In hypertensive patients, it reduced systolic BP by 11.4 mmHg and diastolic BP by 5.5 mmHg compared to control diet.\n\nThe DASH trial (NEJM 1997) showed significant BP reduction even in normotensive individuals (5.5/3.0 mmHg). The SPRINT trial further showed that intensive BP target of <120 mmHg systolic reduced cardiovascular events in high-risk patients."
+    difficulty: easy
+    tags: [cardiology, hypertension, nutrition, preventive-medicine, landmark-trials]
+  - front: "What defines hypertensive emergency vs. hypertensive urgency?"
+    back: "Emergency: severe HTN (dBP >120) WITH acute target-organ damage (acute HF, MI, aortic dissection, AKI, encephalopathy, retinopathy). Urgency: sBP >210 or dBP >120 with minimal or no target-organ damage.\n\nHypertensive emergency requires immediate IV antihypertensive therapy in an ICU setting. Malignant HTN specifically features papilledema. White coat HTN is high clinic BP with normal home/ambulatory BP."
+    difficulty: medium
+    tags: [cardiology, hypertension, emergency]
+  - front: "What are the first-line antihypertensives, and which combination should be avoided?"
+    back: "First-line: thiazide/thiazide-like diuretics, ACEIs, ARBs, long-acting CCBs, beta-blockers (not first-line if age ≥60). Avoid: non-DHP CCB + beta-blocker, and ACEI + ARB combination.\n\nTarget BP is <140/90 or <130/80 if diabetic. Beta-blockers are not recommended as first-line monotherapy for patients ≥60 years. ACEI is less effective as monotherapy in Black patients."
+    difficulty: medium
+    tags: [cardiology, hypertension, pharmacology]
+  - front: "What is the treatment approach for pulmonary edema (LMNOP)?"
+    back: "Lasix (furosemide), Morphine (venodilator, decreases dyspnea), Nitrates (venodilator), Oxygen + non-invasive ventilation, Position (sit patient up).\n\nCardiogenic pulmonary edema is more common with pre-existing cardiac disease. Negative pressure pulmonary edema can occur upon awakening from general anesthesia due to inspiratory efforts against a closed glottis."
+    difficulty: easy
+    tags: [cardiology, emergency medicine, pulmonary edema]

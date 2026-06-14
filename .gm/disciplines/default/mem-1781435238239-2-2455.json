@@ -1,0 +1,15 @@
+## Corpus swappable syllabus + mccqe1 import (2026-06-14)
+
+User: 'make syllabus swappable; set up mccqe1 from c:/dev/srs-mccqe1; videos/audio later; produce study guide from cards'. Decisions (AskUserQuestion): runtime UI selector + per-syllabus storage namespacing; discipline-level subjects.
+
+ARCHITECTURE:
+- syllabus/<id>/ source -> site/data/<id>/ output. syllabus/manifest.json {default,syllabi:[]} drives build_data.js which now BUILDS ALL syllabi (buildSyllabus loop) + emits site/data/syllabi.json [{id,label,default}].
+- Build resolver scripts/syllabus.js: listSyllabi/resolveSyllabusById/resolveSyllabus(CORPUS_SYLLABUS env). build_data threads ctx={id,root,dataDir} through loaders; media src namespaced data/<id>/{audio,videos,infographics}/<subj>/.
+- Runtime leaf site/syllabus.js: getActiveSyllabus() (key corpus.syllabus.v1, default from syllabi.json), dataPath(rel)->./data/<active>/<rel> (app-context loadManifest/loadShard + triage-live + settings export route through it), skey(suffix)->corpus.<active>.<suffix> namespaces ALL per-syllabus localStorage. migrateLegacyKeys copies pre-namespacing keys into default namespace once (non-destructive/idempotent). initSyllabi(fetchJson) runs at boot BEFORE loadManifest.
+- PER-SYLLABUS keys (namespaced via skey): srs.states/config, progress.v1, guide.v1, schedule.v1/config, triage.v1, mistakes/usercards/newcards(+cap)/lastpos/drill/flagged/justread/cram.dismissed. GLOBAL (not namespaced): theme, timer, tutor.*, welcome, corpus.syllabus.v1.
+- Selector in views/settings.js: <select> from listSyllabi(), confirm + setActiveSyllabus + location.reload().
+- mccqe1: scripts/import_mccqe1.js reads srs-mccqe1 cards.json(16560)+topics.json; classifies card->discipline (topics.json | topicId-prefix TOKEN_TO_SUBJECT map | tag-scan | general-medicine); emits {cards:[{front:Q,back:A+explanation,difficulty(1-5->easy/med/hard),tags}]} yml per topic + study_guide.md generated from cards (## per topic). 31 subjects, no triage (views degrade). YAML emit uses dq() double-quote escaping that parse_yaml round-trips.
+
+PERF residual (tracked, not fixed): mccqe1 active = loadAllShards ~32MB boot (cardiology 3.8MB; guide.body+sections[].body duplicate ~1MB but coupled to #L line anchors). cmed4 default ~2MB unaffected. Lazy shard split = future work.
+
+Browser-witnessed: cmed4(10)->mccqe1(31) swap, cmed4 progress isolated from mccqe1 namespace, triage degrades, selector shows both. 26 tests pass.

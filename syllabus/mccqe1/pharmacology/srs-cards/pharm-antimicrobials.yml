@@ -1,0 +1,162 @@
+# Antimicrobial Pharmacology (Pharmacology) - generated from srs-mccqe1
+cards:
+  - front: "What is the mechanism of action of beta-lactam antibiotics?"
+    back: "Inhibit bacterial cell wall synthesis by binding to penicillin-binding proteins (PBPs), blocking transpeptidation of peptidoglycan cross-links → cell lysis\n\nBeta-lactams (penicillins, cephalosporins, carbapenems, monobactams) are bactericidal. Resistance mechanisms: beta-lactamase production (cleaves beta-lactam ring), altered PBPs (MRSA), and porins changes (gram-negatives)."
+    difficulty: easy
+    tags: [beta-lactam, mechanism, PBP, peptidoglycan, bactericidal]
+  - front: "A patient with a penicillin allergy labelled as \"anaphylaxis\" requires antibiotic treatment for a serious gram-positive infection. What is the safest alternative?"
+    back: "Vancomycin (for gram-positive infections) or aztreonam (for gram-negative coverage if needed)\n\nCross-reactivity between penicillin and cephalosporins: ~1–2% (much lower than previously thought, only with same R1 side chain). For true penicillin anaphylaxis: avoid all beta-lactams; use vancomycin, clindamycin, or TMP-SMX depending on indication. Penicillin allergy delabeling should be performed when feasible."
+    difficulty: medium
+    tags: [penicillin-allergy, cross-reactivity, vancomycin, aztreonam, allergy-delabeling]
+  - front: "What class of antibiotics inhibits protein synthesis by binding to the 30S ribosomal subunit and what are their major side effects?"
+    back: "Aminoglycosides (gentamicin, tobramycin, amikacin); major side effects: nephrotoxicity and ototoxicity (cochlear and vestibular)\n\nAminoglycosides are bactericidal. Once-daily dosing reduces nephrotoxicity. Drug levels (trough) must be monitored. Contraindicated in myasthenia gravis (neuromuscular blockade) and pregnancy (congenital deafness). Synergistic with beta-lactams for enterococcal endocarditis."
+    difficulty: easy
+    tags: [aminoglycoside, 30S-ribosome, nephrotoxicity, ototoxicity, gentamicin]
+  - front: "What is the mechanism of macrolide resistance and which macrolide has the fewest drug interactions?"
+    back: "Macrolide resistance: methylation of 23S rRNA (erm genes), efflux pumps (mef genes); azithromycin has fewer drug interactions than clarithromycin (which is a strong CYP3A4 inhibitor)\n\nMacrolides (azithromycin, clarithromycin, erythromycin) inhibit 50S ribosome. Erythromycin causes GI side effects and multiple drug interactions. Azithromycin has a long tissue half-life (3 days) allowing Z-pack regimens. Use with caution in QTc prolongation."
+    difficulty: medium
+    tags: [macrolide, resistance, CYP3A4, azithromycin, clarithromycin]
+  - front: "What is the clinical indication for metronidazole and why must alcohol be strictly avoided?"
+    back: "Metronidazole: anaerobic bacteria and protozoal infections (C. difficile, Trichomonas, Giardia, amoebiasis, BV); inhibits aldehyde dehydrogenase → disulfiram-like reaction with alcohol (flushing, nausea, vomiting, headache)\n\nMetronidazole is the drug of choice for mild-moderate C. difficile and BV. Avoid with alcohol during treatment and 48 hours after last dose. Side effects: metallic taste, peripheral neuropathy (with prolonged use)."
+    difficulty: easy
+    tags: [metronidazole, anaerobes, disulfiram-reaction, alcohol, C-difficile]
+  - front: "What is the mechanism of fluoroquinolone resistance and which fluoroquinolone is approved for community-acquired pneumonia (CAP)?"
+    back: "Resistance: mutations in DNA gyrase (gyrA) and topoisomerase IV (parC); levofloxacin and moxifloxacin are \"respiratory fluoroquinolones\" approved for CAP with atypical and S. pneumoniae coverage\n\nFluoroquinolones inhibit DNA gyrase and topoisomerase IV. Ciprofloxacin lacks adequate S. pneumoniae coverage. Fluoroquinolones prolong QTc, cause tendinopathy (especially Achilles), peripheral neuropathy, and are associated with C. difficile. Avoid in pregnancy and children."
+    difficulty: medium
+    tags: [fluoroquinolone, levofloxacin, CAP, gyrA, QTc-prolongation]
+  - front: "What is the first-line treatment for MRSA bacteremia?"
+    back: "Vancomycin IV (target trough 15–20 mg/L or AUC/MIC 400–600) or daptomycin 6–8 mg/kg IV daily\n\nMRSA bacteremia requires bactericidal therapy for minimum 14 days (uncomplicated) or 4–6 weeks (endocarditis, metastatic infection). Source control (catheter removal, debridement) is essential. IDSA 2022 prefers AUC-guided vancomycin dosing."
+    difficulty: medium
+    tags: [MRSA, vancomycin, daptomycin, bacteremia, AUC-guided-dosing]
+  - front: "What antibiotic is used for prophylaxis against Pneumocystis jirovecii pneumonia (PJP) in immunocompromised patients?"
+    back: "Trimethoprim-sulfamethoxazole (TMP-SMX) 1 DS tablet daily or 3×/week\n\nPJP prophylaxis is indicated when CD4 count <200 cells/µL (HIV), high-dose steroids (>20 mg/day for >1 month), hematological malignancy, or solid organ transplant. Alternative if TMP-SMX intolerant: dapsone, atovaquone, or pentamidine inhaler."
+    difficulty: easy
+    tags: [PJP-prophylaxis, TMP-SMX, immunocompromised, CD4, dapsone]
+  - front: "What is the mechanism of action of vancomycin?"
+    back: "Inhibits bacterial cell wall synthesis by binding to D-Ala-D-Ala terminus of peptidoglycan precursors, blocking transglycosylation and transpeptidation\n\nVancomycin is bactericidal against gram-positive organisms but does not penetrate gram-negative outer membrane. VRE (vancomycin-resistant enterococci) have modified D-Ala-D-Lac (vanA/vanB genes). Infusion-related \"Red Man Syndrome\" is rate-dependent, not true allergy."
+    difficulty: easy
+    tags: [vancomycin, mechanism, D-Ala-D-Ala, VRE, Red-Man-Syndrome]
+  - front: "What is carbapenem-resistant Enterobacteriaceae (CRE) and why is it clinically important?"
+    back: "Gram-negative bacilli resistant to carbapenems (last-resort antibiotics) via KPC, NDM, OXA, or VIM carbapenemases; associated with >50% mortality in bloodstream infections\n\nCRE are pan-resistant or nearly pan-resistant organisms. Treatment options: ceftazidime-avibactam (for KPC), meropenem-vaborbactam, cefiderocol, colistin (last resort). Contact precautions and enhanced infection control are essential."
+    difficulty: medium
+    tags: [CRE, carbapenem-resistance, KPC, ceftazidime-avibactam, antimicrobial-resistance]
+  - front: "Which antibiotic class is associated with tendon rupture and how should patients be counseled?"
+    back: "Fluoroquinolones (ciprofloxacin, levofloxacin); counsel patients to stop the drug and seek care if they develop tendon pain or swelling, especially Achilles tendon\n\nFluoroquinolone tendinopathy: 3–4x increased risk of Achilles tendon rupture. Risk factors: age >60, concomitant corticosteroids, renal failure, prior tendon disease. Health Canada black box warning. Also associated with peripheral neuropathy and aortic aneurysm."
+    difficulty: medium
+    tags: [fluoroquinolone, tendon-rupture, Achilles, corticosteroid, black-box-warning]
+  - front: "What is antibiotic stewardship and what are its core principles?"
+    back: "Coordinated interventions to improve antibiotic use, minimize resistance, and reduce adverse effects: use narrowest-spectrum effective agent, shortest effective duration, route conversion PO when possible, de-escalation based on cultures\n\nAntibiotic stewardship programs (ASPs) are mandated in Canadian hospitals. Key tools: prospective audit and feedback, prior authorization, clinical pathways. Reduces C. difficile rates, VRE/MRSA rates, and costs."
+    difficulty: easy
+    tags: [antibiotic-stewardship, ASP, de-escalation, antimicrobial-resistance, C-difficile]
+  - front: "What is the appropriate duration of antibiotic treatment for uncomplicated community-acquired pneumonia in a hospitalized patient?"
+    back: "5 days if clinically stable (temperature <37.8°C, HR <100, RR <24, SpO2 >90%, tolerating PO) — shorter courses are equivalent to longer courses\n\nIDSA/ATS CAP guidelines: minimum 5 days; discontinue when afebrile ×48–72 h and ≤1 abnormal vital sign. Procalcitonin-guided therapy reduces duration. Short courses reduce C. difficile, side effects, and antibiotic resistance."
+    difficulty: medium
+    tags: [CAP, antibiotic-duration, stewardship, procalcitonin, IDSA-guidelines]
+  - front: "Which antibiotic class is contraindicated in pregnancy due to risk of grey baby syndrome?"
+    back: "Chloramphenicol (inhibits 50S ribosome, used for aplastic anemia-associated cases; neonatal grey baby syndrome from immature glucuronyl transferase leading to drug accumulation)\n\nGrey baby syndrome: cardiovascular collapse, grey skin, hypothermia, abdominal distension in neonates. Chloramphenicol is rarely used today. Tetracyclines (tooth staining, bone growth inhibition) and fluoroquinolones (cartilage toxicity) are also contraindicated in pregnancy."
+    difficulty: easy
+    tags: [chloramphenicol, grey-baby-syndrome, pregnancy, 50S-ribosome, antibiotic-contraindication]
+  - front: "What antibiotic combination is used for empiric treatment of intra-abdominal infections requiring surgery?"
+    back: "Piperacillin-tazobactam (monotherapy) or cefazolin + metronidazole (for mild-moderate) or meropenem + vancomycin (for severe/healthcare-associated)\n\nIntra-abdominal infections require coverage for gram-negatives (E. coli, Klebsiella) and anaerobes (Bacteroides fragilis). Source control (drainage/resection) is equally important to antibiotics. Duration: 4–7 days post source control."
+    difficulty: medium
+    tags: [intra-abdominal-infection, piperacillin-tazobactam, metronidazole, source-control, peritonitis]
+  - front: "What is the approach to empiric antibiotic selection for common infections?"
+    back: "CAP: amoxicillin or macrolide (outpatient). UTI: nitrofurantoin. Cellulitis: cephalexin. Pharyngitis: penicillin V. Intra-abdominal: pip-tazo or ceftriaxone+metronidazole\n\nConsider local antibiogram, allergies, renal function, drug interactions. Narrow spectrum when possible. De-escalate based on cultures. Duration: shortest effective course."
+    difficulty: medium
+    tags: [empiric antibiotics]
+  - front: "What is the empiric antibiotic selection for community-acquired pneumonia by severity?"
+    back: "Outpatient mild: amoxicillin 1g TID. Outpatient with comorbidities: amox-clav + azithromycin or respiratory FQ (levofloxacin). Inpatient: ceftriaxone + azithromycin. ICU: ceftriaxone + azithromycin (add vanc if MRSA risk)\n\nCTS/AMMI 2023 CAP guidelines. Atypical coverage (azithromycin/doxycycline/FQ) needed if comorbidities or inpatient. Respiratory FQ reserved for beta-lactam allergy or treatment failure. Anti-pseudomonal coverage if structural lung disease or recent hospitalization."
+    difficulty: hard
+    tags: [CAP, empiric antibiotics, pneumonia]
+  - front: "What is the empiric antibiotic selection for skin and soft tissue infections?"
+    back: "Nonpurulent cellulitis: cephalexin 500mg QID or cloxacillin. Purulent/abscess: I&D +/- TMP-SMX or doxycycline (MRSA coverage). Necrotizing fasciitis: pip-tazo or meropenem + vancomycin + clindamycin (toxin inhibitor)\n\nIDSA/AMMI guidelines. Clindamycin added in NF for toxin suppression. Mild cellulitis: oral antibiotics. Moderate: consider IV. Diabetic foot: broad-spectrum (pip-tazo, ertapenem) covering gram-neg + anaerobes. Duration: typically 5-7d for uncomplicated."
+    difficulty: medium
+    tags: [SSTI, cellulitis, empiric antibiotics]
+  - front: "What empiric antibiotics are used for bacterial meningitis by age?"
+    back: "Neonate: ampicillin + cefotaxime. Infant-child: ceftriaxone + vancomycin. Adult 18-50: ceftriaxone + vancomycin. >50 or immunocompromised: + ampicillin (Listeria coverage). Add dexamethasone BEFORE or WITH first antibiotic dose\n\nDexamethasone 0.15mg/kg q6h x4d reduces mortality in pneumococcal meningitis (de Gans trial). Give before or with antibiotics. LP if safe (no papilledema, no focal deficits, no coagulopathy). Do NOT delay antibiotics for CT/LP."
+    difficulty: hard
+    tags: [meningitis, empiric antibiotics, dexamethasone]
+  - front: "What is the empiric treatment for sepsis and septic shock?"
+    back: "Broad-spectrum within 1 hour: pip-tazo or meropenem. Add vancomycin if: MRSA risk, catheter, skin source. Antifungal if: prolonged ICU, TPN, prior antibiotics, immunosuppressed. Narrow based on cultures at 48-72h\n\nSSC 2021: each hour of antibiotic delay increases mortality 7% in septic shock. Blood cultures BEFORE antibiotics (but do not delay abx for cultures). De-escalation at 48-72h based on cultures is essential antimicrobial stewardship. Procalcitonin guides duration."
+    difficulty: hard
+    tags: [sepsis, empiric antibiotics, antimicrobial stewardship]
+  - front: "What are the antibiotic-associated adverse effects that must be monitored?"
+    back: "Aminoglycosides: nephrotoxicity + ototoxicity (monitor levels, creatinine). Vancomycin: nephrotoxicity, red man syndrome (infuse slowly). Fluoroquinolones: tendon rupture, QT prolongation, aortic dissection, C. diff. Linezolid: serotonin syndrome, thrombocytopenia, lactic acidosis\n\nMetronidazole: disulfiram reaction with alcohol, peripheral neuropathy with prolonged use. TMP-SMX: hyperkalemia, rash (Stevens-Johnson), myelosuppression. Penicillin allergy: 90% not true allergy, can safely give cephalosporin if mild reaction (cross-reactivity <2%)."
+    difficulty: hard
+    tags: [antibiotic adverse effects, monitoring]
+  - front: "What is the approach to Clostridioides difficile infection?"
+    back: "Initial non-severe: vancomycin 125mg PO QID x10d (preferred) or fidaxomicin 200mg BID x10d. Severe (WBC>15k, Cr>133): vancomycin PO. Fulminant (hypotension, ileus, megacolon): vancomycin PO + PR + IV metronidazole. Recurrence: fidaxomicin or vancomycin taper + bezlotoxumab\n\nCDI risk: antibiotics (clindamycin, FQ, cephalosporins), PPI, hospitalization, age>65. Diagnosis: toxin A/B EIA or NAAT on unformed stool. Do NOT test for cure. Fecal microbiota transplant for >=2 recurrences (>90% cure). Infection prevention: contact precautions, hand washing (alcohol gel does not kill spores)."
+    difficulty: hard
+    tags: [C. difficile, vancomycin, fidaxomicin]
+  - front: "What are the principles of antimicrobial stewardship?"
+    back: "Right drug, right dose, right duration, right route. De-escalate based on cultures. IV to PO switch when clinically improving. Avoid unnecessary broad-spectrum. Procalcitonin-guided duration. Formulary restriction of high-risk agents\n\nCanadian antimicrobial stewardship programs mandated in acute care by Accreditation Canada. Key metrics: DOT (days of therapy), antibiotic-related C. diff rates, time to de-escalation. Outpatient: delayed prescriptions for viral URTIs reduce unnecessary antibiotic use by 50%."
+    difficulty: medium
+    tags: [antimicrobial stewardship, de-escalation]
+  - front: "What is the empiric treatment for intra-abdominal infection?"
+    back: "Mild-moderate community: ceftriaxone + metronidazole or amox-clav. Severe/hospital: pip-tazo or meropenem. Post-surgical: + vancomycin + antifungal if risk factors. Source control (drainage/surgery) is essential\n\nSource control is more important than antibiotic selection. Percutaneous drainage for abscesses when feasible. Appendicitis: ceftriaxone + metronidazole pre-op then short course (24h if uncomplicated, 4-7d if complicated). STOP-IT trial: 4d post-source-control equivalent to longer courses."
+    difficulty: hard
+    tags: [intra-abdominal infection, empiric, source control]
+  - front: "What antifungal agents are used for common fungal infections?"
+    back: "Candidiasis: fluconazole (mucosal/systemic), echinocandin (severe/azole-resistant). Aspergillus: voriconazole (first-line), isavuconazole. Cryptococcal meningitis: amphotericin B + flucytosine induction then fluconazole maintenance. Dermatophytes: terbinafine\n\nFluconazole: well-tolerated, hepatotoxicity, QT prolongation, CYP2C19/3A4 inhibitor (increases warfarin, statin levels). Voriconazole: visual disturbances, hepatotoxicity, photosensitivity (skin cancer risk), drug levels needed. Amphotericin B: nephrotoxicity (liposomal formulation safer)."
+    difficulty: hard
+    tags: [antifungal, fluconazole, voriconazole]
+  - front: "What is the empiric antibiotic selection for UTI in different settings?"
+    back: "Uncomplicated cystitis: nitrofurantoin 100mg BID x5d (1st) or TMP-SMX x3d (2nd). Pyelonephritis: ciprofloxacin x7d or TMP-SMX x14d PO; IV ceftriaxone if admission. Catheter UTI: broader based on local resistance\n\nAvoid fluoroquinolones for uncomplicated cystitis (reserve for pyelo). Fosfomycin 3g single dose alternative. Check local antibiogram for resistance patterns. E. coli is most common uropathogen (75-90%). TMP-SMX resistance >20% in many Canadian regions."
+    difficulty: medium
+    tags: [UTI, empiric antibiotics, nitrofurantoin]
+  - front: "What is the approach to penicillin allergy in patients who need beta-lactams?"
+    back: "True anaphylaxis: avoid all penicillins. Mild reaction (rash): 98% can safely receive cephalosporins (cross-reactivity <2%). Consider penicillin skin testing (gold standard) to confirm or rule out allergy. Carbapenems safe in penicillin allergy\n\nMost reported penicillin allergies are not true allergies. Delabeling reduces use of broad-spectrum alternatives (vancomycin, fluoroquinolones) and improves outcomes. Allergist referral for skin testing. Graded challenge protocol for low-risk histories."
+    difficulty: medium
+    tags: [penicillin allergy, cross-reactivity, delabeling]
+  - front: "What is the treatment of latent tuberculosis infection in Canada?"
+    back: "First-line: isoniazid (INH) 300mg daily x9mo + pyridoxine (B6) 25mg. Alternative: rifampin 600mg daily x4mo (better completion). 3HP: INH + rifapentine weekly x12 doses. Monitor: LFTs monthly, hepatitis symptoms\n\nLTBI treatment prevents reactivation (90% lifetime reduction). Test before biologics, transplant, HIV. IGRA (QuantiFERON) preferred over TST (not affected by BCG vaccination). INH hepatotoxicity: age>35 increases risk, monitor LFTs. Drug interactions: rifampin is potent CYP inducer."
+    difficulty: hard
+    tags: [latent TB, isoniazid, rifampin]
+  - front: "What antibiotic prophylaxis is recommended for common surgical procedures?"
+    back: "Cardiac/orthopedic: cefazolin 2g IV within 60min. Abdominal/colorectal: cefazolin + metronidazole. GU: ciprofloxacin. Allergy: vancomycin or clindamycin. Single dose usually sufficient (redose if >3-4h surgery). Stop within 24h\n\nSurgical site infection prevention: timely antibiotic, appropriate hair removal (clipper not razor), normothermia, glucose control. Extended prophylaxis (>24h) not recommended and increases resistance/C.diff. NICE/CCS guidelines."
+    difficulty: medium
+    tags: [surgical prophylaxis, cefazolin, antibiotics]
+  - front: "What are the mechanisms of antibiotic resistance and key resistant organisms?"
+    back: "MRSA: altered PBP (mecA gene). ESBL: beta-lactamase (treat with carbapenem). VRE: altered cell wall target. CRE: carbapenemase (limited options: ceftazidime-avibactam, meropenem-vaborbactam). MDRTB: rifampin resistance\n\nAntibiotic resistance is a global crisis. Canadian AMR rates: MRSA ~25% of S.aureus, ESBL E.coli increasing. Infection control: hand hygiene, contact precautions, surveillance cultures. Stewardship reduces resistance development. New antibiotics in pipeline but slow development."
+    difficulty: hard
+    tags: [antibiotic resistance, MRSA, ESBL, CRE]
+  - front: "What empiric antibiotics are used for febrile neutropenia?"
+    back: "Anti-pseudomonal beta-lactam monotherapy: piperacillin-tazobactam, meropenem, or cefepime. Add vancomycin if: hemodynamic instability, skin/soft tissue, MRSA colonized, catheter. Add antifungal if fever persists >4-7 days\n\nANC <0.5 + single temp >38.3 or sustained >38.0. Blood cultures x2 (one from each lumen if central line). Door-to-antibiotic <60 min. MASCC score risk stratifies for outpatient oral therapy (ciprofloxacin + amox-clav) in low-risk. G-CSF for prolonged neutropenia."
+    difficulty: hard
+    tags: [febrile neutropenia, piperacillin-tazobactam, empiric]
+  - front: "What is the empiric antibiotic choice for community-acquired pneumonia (CAP) in an otherwise healthy outpatient in Canada?"
+    back: "Amoxicillin 1g TID (first-line per Canadian Thoracic Society). If atypical coverage needed or penicillin allergy: a respiratory fluoroquinolone (moxifloxacin or levofloxacin) or a macrolide (azithromycin/clarithromycin) if local resistance is <25%.\n\nCanadian guidelines differ from US guidelines by favoring high-dose amoxicillin as first-line for low-risk CAP. Macrolide resistance in S. pneumoniae is rising in Canada. For moderate-severity CAP requiring hospitalization, a beta-lactam plus macrolide or a respiratory fluoroquinolone alone is used."
+    difficulty: medium
+    tags: [CAP, amoxicillin, empiric antibiotics, pneumonia, Canadian guidelines]
+  - front: "What is the spectrum of vancomycin? What organisms does it NOT cover?"
+    back: "Vancomycin covers gram-positive organisms only: MRSA, MSSA, Streptococci, Enterococci (except VRE), C. difficile (oral only). It has NO gram-negative coverage and does NOT cover atypicals or anaerobes.\n\nVancomycin is a glycopeptide that inhibits cell wall synthesis by binding D-Ala-D-Ala. It cannot penetrate the outer membrane of gram-negatives. IV vancomycin does not achieve therapeutic colonic levels, so oral vancomycin or fidaxomicin is used for C. difficile colitis."
+    difficulty: medium
+    tags: [vancomycin, MRSA, gram-positive, antibiotic spectrum, C. difficile]
+  - front: "A patient presents with a complicated urinary tract infection. What is the empiric antibiotic choice and what organisms must be covered?"
+    back: "Empiric: ceftriaxone IV or ciprofloxacin (if local E. coli resistance <10%). Must cover E. coli (most common), Klebsiella, Proteus, and Enterococcus. For uncomplicated cystitis: nitrofurantoin or TMP-SMX first-line in Canada.\n\nFluoroquinolone resistance in E. coli is increasing in Canada. Nitrofurantoin achieves high urinary but not systemic levels, so it is appropriate only for lower UTI. TMP-SMX should be avoided if local resistance exceeds 20%. ESBL-producing organisms may require carbapenems."
+    difficulty: medium
+    tags: [UTI, empiric antibiotics, E. coli, ceftriaxone, fluoroquinolone resistance]
+  - front: "What is the antibiotic coverage gap of cephalosporins? Which organisms are intrinsically resistant?"
+    back: "Cephalosporins do NOT cover: Enterococcus spp. (intrinsic resistance), MRSA (except ceftaroline), Listeria monocytogenes, and atypical organisms. First-gen cephalosporins have limited gram-negative coverage.\n\nThis is a classic exam pitfall: cephalosporins should never be used to treat Enterococcal infections (e.g., Enterococcal endocarditis or UTI). Ampicillin is the drug of choice for Enterococcus and Listeria. Third-gen cephalosporins (ceftriaxone) have excellent gram-negative coverage but lose some gram-positive activity."
+    difficulty: medium
+    tags: [cephalosporins, Enterococcus, MRSA, Listeria, coverage gap]
+  - front: "What empiric antibiotics are used for bacterial meningitis in an adult aged 18-50 in Canada?"
+    back: "Ceftriaxone 2g IV q12h + vancomycin 15-20 mg/kg IV q8-12h. Add ampicillin if age >50 or immunocompromised (for Listeria coverage). Dexamethasone 0.15 mg/kg IV before or with first antibiotic dose.\n\nVancomycin is added for penicillin-resistant S. pneumoniae coverage. Dexamethasone reduces mortality and neurological sequelae in pneumococcal meningitis. Listeria is not covered by cephalosporins, necessitating ampicillin in at-risk groups (neonates, elderly, immunocompromised)."
+    difficulty: hard
+    tags: [meningitis, ceftriaxone, vancomycin, dexamethasone, Listeria, empiric antibiotics]
+  - front: "What is the difference between narrow-spectrum and broad-spectrum antibiotics? Give two examples of each."
+    back: "Narrow-spectrum: target specific organisms (e.g., penicillin G for Streptococci/Treponema; isoniazid for M. tuberculosis). Broad-spectrum: cover gram-positives and gram-negatives (e.g., piperacillin-tazobactam; meropenem). Broad-spectrum increases C. difficile risk.\n\nAntimicrobial stewardship programs in Canadian hospitals emphasize de-escalation from broad to narrow spectrum based on culture results. Carbapenems (meropenem, ertapenem) are reserved for ESBL and multi-drug resistant organisms. Overuse of broad-spectrum agents drives resistance."
+    difficulty: easy
+    tags: [antibiotic spectrum, narrow spectrum, broad spectrum, antimicrobial stewardship]
+  - front: "Calcium carbonate is taken simultaneously with a fluoroquinolone antibiotic. How does this affect antibiotic efficacy?"
+    back: "Calcium complexes with fluoroquinolones in the GI lumen, forming insoluble chelates that impair absorption, significantly reducing bioavailability and antibiotic efficacy.\n\nThis is a pharmacokinetic interaction affecting absorption. Fluoroquinolones (e.g., ciprofloxacin) should be separated from divalent/trivalent cations (calcium, magnesium, iron, aluminum) by at least 2 hours to avoid chelation and ensure adequate drug absorption."
+    difficulty: medium
+    tags: [drug interactions, fluoroquinolone, calcium, chelation, absorption, pharmacokinetics]
+  - front: "What are the indications, major contraindication, and key drug interaction of itraconazole (Sporanox®)?"
+    back: "Itraconazole is used for onychomycosis, tinea corporis, cruris, pedis, versicolor, and capitis. Major contraindication: CHF. Key drug interaction: inhibits CYP3A4, increasing concentrations of drugs metabolized by this enzyme (e.g., statins, diabetic drugs). Can cause serious hepatotoxicity.\n\nItraconazole capsules must be taken with food and swallowed whole for adequate absorption. The pulse dosing regimen (200 mg BID x 3 days per month x 3 cycles) is used for toenail onychomycosis."
+    difficulty: medium
+    tags: [itraconazole, onychomycosis, CYP3A4, antifungal, drug interaction]
+  - front: "What is terbinafine's (Lamisil) mechanism, key drug interaction concern, and duration of treatment for onychomycosis?"
+    back: "Terbinafine 250 mg PO daily inhibits fungal squalene epoxidase. Duration: fingernails 6 weeks, toenails 12 weeks. It is a potent inhibitor of CYP2D6; use with caution with beta-blockers, certain antiarrhythmics, MAO-I type B, and antipsychotics. Contraindicated in pregnancy and chronic/active liver disease.\n\nTerbinafine concentrates rapidly in skin, hair, and nails at fungicidal levels. Diagnosis of onychomycosis should be confirmed prior to treatment (e.g., KOH prep or culture) to avoid unnecessary prolonged antifungal therapy."
+    difficulty: medium
+    tags: [terbinafine, onychomycosis, CYP2D6, antifungal, drug interaction]

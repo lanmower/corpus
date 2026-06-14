@@ -1,0 +1,222 @@
+# Pulmonary Embolism & DVT (Respirology) - generated from srs-mccqe1
+cards:
+  - front: "A 45-year-old woman on OCP presents with sudden onset dyspnea and pleuritic chest pain. HR 112, SpO2 92%, RR 24. ECG shows sinus tachycardia. What is the pretest probability and next step?"
+    back: "Calculate Wells PE score; moderate-high probability → CT pulmonary angiography (CTPA); low probability → D-dimer first\n\nWells PE criteria: clinical signs of DVT (3), no alternative diagnosis (3), HR >100 (1.5), immobilization/surgery (1.5), prior DVT/PE (1.5), hemoptysis (1), malignancy (1). Score >4 = moderate probability."
+    difficulty: hard
+    tags: [pulmonary embolism, Wells score, CTPA, D-dimer, respirology]
+  - front: "What is the PERC rule and when can it safely exclude PE without further testing?"
+    back: "PERC: all 8 criteria must be met — age <50, HR <100, SpO2 ≥95%, no unilateral leg swelling, no hemoptysis, no recent surgery/trauma, no prior DVT/PE, no estrogen use — reduces PE miss rate to <2%\n\nPERC rule is used in low pretest probability PE to avoid unnecessary testing. If any criterion is positive, proceed to D-dimer. CTS guidelines endorse PERC in low-risk patients to reduce overtesting."
+    difficulty: medium
+    tags: [PERC rule, pulmonary embolism, low probability, D-dimer, respirology]
+  - front: "A pregnant woman has suspected PE. What is the preferred diagnostic imaging?"
+    back: "V/Q scan preferred in pregnancy (lower radiation dose to fetus); CTPA is alternative if CXR abnormal\n\nSOGC and CTS guidelines recommend V/Q scan as first-line in pregnancy due to lower fetal radiation exposure. D-dimer is unreliable in pregnancy (physiologically elevated). Bilateral leg Doppler may avoid further imaging if positive."
+    difficulty: hard
+    tags: [PE in pregnancy, V/Q scan, CTPA, radiation, respirology, SOGC]
+  - front: "What is massive PE and how is it managed?"
+    back: "Massive PE: hemodynamic instability (SBP <90 mmHg or 40 mmHg drop ≥15 min) caused by PE — requires systemic thrombolysis (alteplase 100mg over 2h) or catheter-directed therapy/surgical embolectomy\n\nCCS/CTS guidelines recommend systemic thrombolysis for massive PE without absolute contraindications. Anticoagulation alone is insufficient for hemodynamic compromise. ECMO as bridge in cardiac arrest."
+    difficulty: hard
+    tags: [massive PE, thrombolysis, hemodynamic instability, alteplase, respirology]
+  - front: "What are the preferred anticoagulants for acute PE management?"
+    back: "DOAC preferred (rivaroxaban or apixaban — no parenteral bridging needed); LMWH + warfarin if DOAC contraindicated; LMWH preferred in cancer-associated VTE (rivaroxaban/apixaban also acceptable per CTS 2023)\n\nCTS VTE guidelines support DOAC monotherapy for most acute PE. Rivaroxaban 15mg BID x21 days then 20mg OD; apixaban 10mg BID x7 days then 5mg BID. Avoid DOACs in antiphospholipid syndrome (triple positive) — use warfarin."
+    difficulty: medium
+    tags: [PE anticoagulation, DOAC, rivaroxaban, apixaban, VTE treatment, respirology]
+  - front: "How long should anticoagulation be continued for PE?"
+    back: "Provoked PE (transient risk factor): 3 months; Unprovoked PE: minimum 3 months then reassess for extended therapy; Cancer-associated PE: until cancer resolved or indefinitely\n\nCTS guidelines recommend extended anticoagulation for unprovoked PE if bleeding risk is low/moderate, as recurrence risk is 30% at 5 years. Risk stratification tools (DASH, Vienna score) guide duration decisions."
+    difficulty: medium
+    tags: [PE duration, anticoagulation duration, VTE, provoked unprovoked, respirology]
+  - front: "What is the ECG finding classically described in PE and how sensitive is it?"
+    back: "S1Q3T3 pattern (S wave in lead I, Q wave and inverted T wave in lead III) — sensitivity only ~20%, non-specific\n\nThe most common ECG findings in PE are sinus tachycardia and right heart strain (RBBB, right axis deviation). S1Q3T3 is classically taught but rarely seen and not diagnostic. ECG primarily helps exclude other diagnoses (ACS, pericarditis)."
+    difficulty: easy
+    tags: [PE ECG, S1Q3T3, sinus tachycardia, right heart strain, respirology]
+  - front: "What is submassive (intermediate-risk) PE and when should thrombolysis be considered?"
+    back: "Submassive PE: hemodynamically stable but with RV dysfunction on echo/CT and/or elevated troponin/BNP; thrombolysis controversial — consider catheter-directed therapy in deteriorating patients\n\nCTS guidelines recommend anticoagulation alone for most submassive PE. Escalation to thrombolysis or catheter-directed therapy (EKOS) for clinical deterioration. PEITHO trial showed benefit of thrombolysis offset by increased bleeding."
+    difficulty: hard
+    tags: [submassive PE, intermediate risk, RV dysfunction, thrombolysis, catheter-directed, respirology]
+  - front: "A 55-year-old with DVT of the right leg is confirmed by Doppler. No symptoms of PE. How is DVT managed?"
+    back: "Anticoagulation with DOAC (rivaroxaban, apixaban) for 3 months for provoked, longer for unprovoked — LMWH + warfarin if DOAC contraindicated\n\nCTS guidelines treat proximal DVT (above knee: popliteal, femoral, iliac) with systemic anticoagulation. Distal DVT (below-knee isolated) managed on individual basis — may monitor or treat depending on symptoms and risk. IVC filter not recommended routinely."
+    difficulty: medium
+    tags: [DVT, anticoagulation, DOAC, deep vein thrombosis, respirology]
+  - front: "What are the risk factors for venous thromboembolism (VTE)?"
+    back: "Strong: surgery, major trauma, hospitalization, prior VTE, cancer, antiphospholipid syndrome; Moderate: OCP, HRT, pregnancy, obesity; Weak: immobility, age, varicose veins\n\nVirchow triad: stasis, hypercoagulability, endothelial injury. Thrombophilia testing indicated in select patients: unprovoked VTE <50 years, family history, unusual site. Timing of testing: after anticoagulation discontinued."
+    difficulty: easy
+    tags: [VTE risk factors, DVT, PE, thrombophilia, Virchow triad, respirology]
+  - front: "What is an IVC filter and when is it indicated?"
+    back: "IVC filter indicated when anticoagulation is absolutely contraindicated AND patient has acute proximal DVT or PE — retrievable filters preferred\n\nCTS guidelines limit IVC filter use to patients with absolute contraindication to anticoagulation. Filters prevent PE but increase DVT recurrence and do not reduce overall mortality. Must restart anticoagulation as soon as safe and retrieve filter if retrievable."
+    difficulty: medium
+    tags: [IVC filter, anticoagulation contraindication, VTE, DVT, respirology]
+  - front: "What is chronic thromboembolic pulmonary hypertension (CTEPH) and how is it diagnosed?"
+    back: "Persistent pulmonary hypertension (mean PAP ≥25 mmHg) due to unresolved PE clots after ≥3 months of anticoagulation; diagnosed with V/Q scan and right heart catheterization\n\nCTEPH occurs in 2-4% of PE survivors. V/Q scan is more sensitive than CTPA for CTEPH. Treatment: pulmonary endarterectomy (PEA) is curative if operable; riociguat for inoperable disease. Lifelong anticoagulation required."
+    difficulty: hard
+    tags: [CTEPH, chronic thromboembolic, pulmonary hypertension, VTE complication, respirology]
+  - front: "When should thrombophilia testing be performed after VTE?"
+    back: "After completing anticoagulation (≥3 months), not during acute event or anticoagulation; test: Factor V Leiden, prothrombin gene mutation, antiphospholipid antibodies, protein C/S, antithrombin\n\nAnticoagulants affect thrombophilia tests: DOAC/heparin affects AT, warfarin affects protein C/S. Antiphospholipid antibodies should be repeated at 12 weeks to confirm diagnosis. Testing affects duration of anticoagulation decisions."
+    difficulty: medium
+    tags: [thrombophilia testing, VTE, antiphospholipid, Factor V Leiden, respirology]
+  - front: "What compression stocking regimen reduces post-thrombotic syndrome after DVT?"
+    back: "Graduated compression stockings (30-40 mmHg knee-high) for 2 years after proximal DVT — reduces PTS development\n\nPost-thrombotic syndrome (PTS) occurs in 20-50% of proximal DVT and causes chronic leg pain, swelling, and skin changes. Elastic compression stockings reduce PTS severity. SOX trial found below-knee stockings do not reduce PTS in non-severe cases."
+    difficulty: medium
+    tags: [post-thrombotic syndrome, compression stockings, DVT complication, VTE, respirology]
+  - front: "A 60-year-old with unprovoked PE has completed 3 months of anticoagulation. What factors guide decision for extended therapy?"
+    back: "Low bleeding risk + unprovoked PE → extend anticoagulation indefinitely; weigh annual recurrence risk (5-10%/year) vs. major bleeding risk (~1-2%/year on DOAC)\n\nCTS guidelines recommend extended anticoagulation for most unprovoked PE in patients with low-moderate bleeding risk. Low-dose rivaroxaban (10mg OD) or apixaban (2.5mg BID) extended therapy reduces recurrence with less bleeding than full-dose."
+    difficulty: hard
+    tags: [unprovoked PE, extended anticoagulation, bleeding risk, VTE recurrence, respirology]
+  - front: "What is the Wells score for PE?"
+    back: "DVT signs(3), PE most likely(3), HR>100(1.5), immobilization(1.5), prior VTE(1.5), hemoptysis(1), cancer(1). <=4 unlikely, >4 likely\n\nIf unlikely: D-dimer. If likely or D-dimer positive: CTPA. PERC rule excludes PE in very low risk."
+    difficulty: medium
+    tags: [PE, Wells]
+  - front: "What defines massive PE and its treatment?"
+    back: "Sustained SBP<90 for >=15min or cardiac arrest. Treatment: systemic thrombolysis (alteplase 100mg IV/2h)\n\nSubmassive: RV dysfunction but stable. Consider catheter-directed therapy if thrombolysis contraindicated."
+    difficulty: hard
+    tags: [PE, thrombolysis]
+  - front: "What is the Wells score for pulmonary embolism and its components?"
+    back: "Clinical signs of DVT: 3 pts; PE most likely diagnosis: 3 pts; HR >100: 1.5; immobilization/surgery <4 wks: 1.5; previous DVT/PE: 1.5; hemoptysis: 1; malignancy: 1. ≤4: PE unlikely; >4: PE likely.\n\nWells score dichotomizes patients for D-dimer utility. If PE unlikely (≤4) + negative age-adjusted D-dimer → PE excluded. If PE likely (>4) → proceed directly to CTPA. Canadian Emergency Department guidelines recommend this two-tier approach."
+    difficulty: medium
+    tags: [PE, Wells score, DVT, diagnosis, respirology]
+  - front: "How is the age-adjusted D-dimer cutoff calculated and applied?"
+    back: "For patients >50 years: cutoff = age × 10 μg/L (e.g., 65-year-old: 650 μg/L instead of standard 500). Applied only when Wells score ≤4 (PE unlikely).\n\nAge-adjusted D-dimer increases specificity while maintaining sensitivity, reducing unnecessary CTPAs in elderly by ~12%. Only validated for excluding PE in low/intermediate probability patients. D-dimer should never be used to rule IN PE."
+    difficulty: hard
+    tags: [PE, D-dimer, age-adjusted, diagnosis, respirology]
+  - front: "What is the PERC rule and when can it safely exclude PE without D-dimer?"
+    back: "If clinical suspicion is LOW (<15%) AND all 8 PERC criteria met: age <50, HR <100, SpO2 >94%, no hemoptysis, no estrogen use, no prior DVT/PE, no unilateral leg swelling, no recent surgery/trauma → PE excluded, no testing needed.\n\nPERC rule has <2% miss rate when applied to truly low-pretest-probability patients. Must NOT be applied if Wells >4 or if clinical gestalt suggests PE. Reduces unnecessary testing and false-positive cascades. Validated in Canadian ED populations."
+    difficulty: hard
+    tags: [PE, PERC, clinical decision rule, ED, respirology]
+  - front: "What is the initial anticoagulation for confirmed acute PE?"
+    back: "DOAC preferred: rivaroxaban 15 mg BID x 21 days then 20 mg daily, OR apixaban 10 mg BID x 7 days then 5 mg BID. Alternative: LMWH bridge to warfarin (INR 2-3).\n\nThrombosis Canada and CCS guidelines recommend DOACs over warfarin for most PE patients (non-inferior efficacy, less major bleeding). Exceptions requiring LMWH/warfarin: antiphospholipid syndrome, severe renal impairment (CrCl <25-30), pregnancy (LMWH only)."
+    difficulty: medium
+    tags: [PE, anticoagulation, DOAC, rivaroxaban, apixaban, Thrombosis Canada, respirology]
+  - front: "What defines massive (high-risk) PE and what is the treatment?"
+    back: "Massive PE: sustained hypotension (SBP <90 for >15 min) or requiring vasopressors, or cardiac arrest. Treatment: systemic thrombolysis (alteplase 100 mg IV over 2h) + anticoagulation + hemodynamic support.\n\nMassive PE has >50% short-term mortality without treatment. Thrombolysis reduces mortality despite bleeding risk (major bleeding ~10%, ICH ~2%). If thrombolysis contraindicated or failed: catheter-directed therapy or surgical embolectomy. Thrombosis Canada recommends immediate thrombolysis."
+    difficulty: hard
+    tags: [PE, massive, thrombolysis, alteplase, hemodynamic, respirology]
+  - front: "What is submassive PE and how is it managed?"
+    back: "Submassive: hemodynamically stable BUT RV dysfunction (RV/LV ratio >0.9 on CT or echo) AND/OR elevated troponin/BNP. Managed with anticoagulation + close monitoring; thrombolysis reserved for clinical deterioration.\n\nsPESI score helps risk-stratify. Submassive PE has 3-15% mortality. The PEITHO trial showed reduced hemodynamic collapse with tenecteplase but increased ICH. Current approach: anticoagulate, monitor in intermediate care, escalate to thrombolysis only if decompensation occurs."
+    difficulty: hard
+    tags: [PE, submassive, RV dysfunction, troponin, thrombolysis, respirology]
+  - front: "What are the indications for IVC filter placement in PE?"
+    back: "Absolute contraindication to anticoagulation (active major bleeding) with acute proximal DVT/PE. Consider if recurrent PE despite adequate anticoagulation. Retrievable filters preferred; remove when anticoagulation can resume.\n\nIVC filters do not treat PE — they prevent new emboli from legs. They increase DVT risk long-term. Thrombosis Canada recommends retrieval within 3 months. Prophylactic IVC filters are NOT recommended in trauma or surgical patients who can receive pharmacologic prophylaxis."
+    difficulty: hard
+    tags: [PE, IVC filter, anticoagulation, contraindication, Thrombosis Canada, respirology]
+  - front: "How long should anticoagulation be continued after acute PE?"
+    back: "Provoked (surgery/transient risk): 3 months. Unprovoked first episode: minimum 3 months then reassess for indefinite (consider HERDOO2 for women). Recurrent unprovoked or active cancer: indefinite.\n\nThrombosis Canada recommends indefinite anticoagulation for most unprovoked PE if bleeding risk is low. HERDOO2 rule identifies low-risk women who may safely stop after initial treatment. Men with unprovoked PE have higher recurrence and generally warrant indefinite therapy."
+    difficulty: hard
+    tags: [PE, anticoagulation duration, provoked, unprovoked, HERDOO2, respirology]
+  - front: "What is the pathophysiology of hemodynamic compromise in massive PE?"
+    back: "Large clot burden → acute RV pressure overload → RV dilation → interventricular septum bows into LV (D-sign) → decreased LV preload → decreased cardiac output → obstructive shock → coronary hypoperfusion → RV ischemia → death spiral\n\nThis explains why the primary cause of death in massive PE is RV failure, not hypoxemia. Acute RV cannot generate mean PA pressure >40 mmHg. Hypoxemia results from V/Q mismatch, right-to-left shunting through PFO, and low mixed venous O2."
+    difficulty: hard
+    tags: [PE, pathophysiology, RV failure, obstructive shock, respirology]
+  - front: "What are the classic but often absent ECG findings in PE?"
+    back: "Sinus tachycardia (most common), S1Q3T3 pattern (~20%), right axis deviation, RBBB, RV strain (T-wave inversions V1-V4), P pulmonale\n\nS1Q3T3 is suggestive but not sensitive or specific for PE. Sinus tachycardia is the most common ECG finding. RV strain pattern (TWI V1-V4) correlates with RV dysfunction and worse prognosis. Normal ECG does not exclude PE. AFib can also occur acutely."
+    difficulty: medium
+    tags: [PE, ECG, S1Q3T3, RV strain, RBBB, respirology]
+  - front: "When is V/Q scan preferred over CTPA for PE diagnosis?"
+    back: "Renal insufficiency (avoid contrast), contrast allergy, pregnancy (lower breast radiation than CTPA), young women. V/Q scan is most useful when CXR is normal (higher chance of diagnostic result).\n\nV/Q scan reports as normal, low, intermediate, or high probability. High probability V/Q with high clinical suspicion has >95% PPV. Intermediate probability is non-diagnostic and may require further testing (CTPA or leg ultrasound). SPECT V/Q improves diagnostic accuracy."
+    difficulty: hard
+    tags: [PE, V/Q scan, CTPA, pregnancy, diagnosis, respirology]
+  - front: "How is PE managed in pregnancy?"
+    back: "LMWH therapeutic dose throughout pregnancy (DOACs and warfarin contraindicated). Switch to IV UFH around delivery (shorter half-life). LMWH safe in breastfeeding. Postpartum: can transition to warfarin or DOAC (avoid rivaroxaban/apixaban if breastfeeding per older data).\n\nPregnancy is a hypercoagulable state (5-10x VTE risk). CTPA or V/Q scan both acceptable for diagnosis. D-dimer rises in normal pregnancy, limiting its utility. LMWH does not cross placenta. Warfarin is teratogenic (6-12 weeks: nasal hypoplasia, stippled epiphyses)."
+    difficulty: hard
+    tags: [PE, pregnancy, LMWH, anticoagulation, respirology]
+  - front: "What is chronic thromboembolic pulmonary hypertension (CTEPH) and how is it managed?"
+    back: "Persistent organized thrombi causing PH after ≥3 months of anticoagulation. Diagnosed by V/Q scan (screening test of choice), confirmed by right heart catheterization and pulmonary angiography. Treatment: pulmonary endarterectomy (PEA) is curative if surgically accessible.\n\nCTEPH develops in 2-4% of PE survivors. All PE patients should be assessed for persistent symptoms at 3-6 month follow-up. PEA at expert centres has excellent outcomes. Riociguat or balloon pulmonary angioplasty for inoperable cases. Lifelong anticoagulation required."
+    difficulty: hard
+    tags: [PE, CTEPH, pulmonary hypertension, PEA, V/Q scan, respirology]
+  - front: "What is the role of compression ultrasonography in the PE diagnostic algorithm?"
+    back: "If CTPA is unavailable or contraindicated, positive proximal leg CUS (DVT found) in a patient with suspected PE can justify starting anticoagulation without CTPA. Negative CUS does not exclude PE.\n\n30-50% of PE patients have concurrent DVT detectable by CUS. A positive CUS changes management identically to confirmed PE (anticoagulation). Serial CUS at 1 week can be used for low-probability patients with non-diagnostic V/Q scans."
+    difficulty: hard
+    tags: [PE, CUS, DVT, ultrasound, diagnosis, respirology]
+  - front: "What are the contraindications to systemic thrombolysis for PE?"
+    back: "Absolute: active internal bleeding, recent hemorrhagic stroke, intracranial neoplasm, recent cranial surgery (<3 months), suspected aortic dissection. Relative: recent surgery, recent non-hemorrhagic stroke, anticoagulant use, pregnancy, uncontrolled HTN.\n\nIn life-threatening massive PE, many relative contraindications can be overridden given the ~50% mortality without treatment. Half-dose thrombolysis (alteplase 50 mg) may be considered for submassive PE or when bleeding risk is elevated, though evidence is limited."
+    difficulty: hard
+    tags: [PE, thrombolysis, contraindications, alteplase, bleeding, respirology]
+  - front: "A 30-year-old woman on oral contraceptives presents with acute dyspnea, pleuritic chest pain, and tachycardia after a long flight. Her D-dimer is elevated. What is the most likely diagnosis and the gold standard confirmatory test?"
+    back: "Pulmonary embolism (PE). CT pulmonary angiography (CTPA) is the standard confirmatory imaging. V/Q scan is an alternative if CT contrast is contraindicated (e.g., renal failure, contrast allergy).\n\nOCP use, prolonged immobilization, pleuritic pain, and tachycardia with elevated D-dimer strongly suggest PE. The Wells score helps stratify pre-test probability. A negative D-dimer in a low-probability patient effectively excludes PE, but a positive D-dimer requires imaging confirmation."
+    difficulty: medium
+    tags: [dyspnea, pulmonary-embolism, DVT, respirology, emergency]
+  - front: "How do you differentiate acute decompensated heart failure from pneumonia as a cause of acute dyspnea at the bedside?"
+    back: "CHF: orthopnea, PND, bilateral crackles, elevated JVP, S3 gallop, peripheral edema, BNP >400 pg/mL. Pneumonia: fever, productive cough, unilateral crackles/bronchial breath sounds, leukocytosis, consolidation on CXR. CHF shows bilateral pulmonary edema with cephalization on CXR.\n\nBNP/NT-proBNP is a key discriminator — values >400 strongly suggest CHF, while <100 make it unlikely. CXR findings of Kerley B lines, bilateral effusions, and upper lobe cephalization favor CHF, while lobar consolidation with air bronchograms favors pneumonia."
+    difficulty: medium
+    tags: [dyspnea, CHF, pneumonia, differential-diagnosis, BNP]
+  - front: "A 22-year-old tall, thin male presents with sudden-onset unilateral pleuritic chest pain and dyspnea. Breath sounds are absent on the left. What is the diagnosis, and when does this condition require emergent intervention?"
+    back: "Primary spontaneous pneumothorax. Emergent needle decompression (2nd intercostal space, midclavicular line) is required if tension pneumothorax is suspected (tracheal deviation, hemodynamic instability, distended neck veins). Otherwise, management depends on size: observation if small (<2 cm), aspiration or chest tube if large.\n\nTall, thin young males have the highest risk of primary spontaneous pneumothorax due to apical blebs. Tension pneumothorax is a clinical diagnosis — do not delay treatment for imaging. Secondary pneumothorax in patients with underlying lung disease (e.g., COPD) generally requires chest tube drainage."
+    difficulty: medium
+    tags: [dyspnea, pneumothorax, emergency, respirology]
+  - front: "What is the systematic approach to differentiating the five major causes of acute dyspnea (PE, pneumonia, CHF, asthma, pneumothorax) using bedside assessment and initial investigations?"
+    back: "1) History: onset (sudden = PE/pneumothorax), fever (pneumonia), orthopnea (CHF), wheezing/triggers (asthma). 2) Exam: unilateral absent breath sounds (pneumothorax), bilateral crackles + JVD (CHF), unilateral crackles + fever (pneumonia), diffuse wheeze (asthma). 3) Investigations: CXR (all), D-dimer/CTPA (PE), BNP (CHF), peak flow (asthma), ABG (all).\n\nA structured approach combining tempo of onset, associated symptoms, physical exam, and targeted investigations allows rapid differentiation. CXR is the single most useful initial test as it can identify pneumothorax, CHF, and pneumonia. Normal CXR with hypoxia should raise concern for PE."
+    difficulty: hard
+    tags: [dyspnea, differential-diagnosis, clinical-approach, emergency]
+  - front: "What is the pathophysiology of pulmonary embolism causing hemodynamic compromise?"
+    back: "Large PE obstructs pulmonary vasculature, increasing PVR, causing RV pressure overload, RV dilation, decreased LV filling (interventricular septum shift), reduced CO, and systemic hypotension\n\nMassive PE: >50% vascular bed occluded. Humoral mediators (serotonin, thromboxane) also cause vasoconstriction. RV ischemia develops from increased wall stress and decreased coronary perfusion pressure."
+    difficulty: hard
+    tags: [PE, pathophysiology]
+  - front: "Interpret CHADS2 scores and their clinical implications"
+    back: "Score 0: Low risk (~1.9%/yr) - no anticoagulation needed. Score 1: Low-moderate risk (~2.8%/yr) - anticoagulation may be considered. Scores 4-6: High risk (~8.5-18.2%/yr) - anticoagulation strongly indicated.\n\nThis risk stratification helps guide the decision to initiate anticoagulation. The benefit of anticoagulation must be weighed against bleeding risk in each patient."
+    difficulty: medium
+    tags: [cardiology, arrhythmias, atrial fibrillation, stroke prevention, risk stratification, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "How do heparins (unfractionated and LMWH) work?"
+    back: "They are antithrombin III agonists, leading to decreased clotting factor activity (primarily factor IIa and Xa)\n\nLMWHs like enoxaparin have more predictable pharmacokinetics and less risk of heparin-induced thrombocytopenia compared to unfractionated heparin."
+    difficulty: easy
+    tags: [cardiology, anticoagulants, pharmacology, mechanism, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What is heparin-induced thrombocytopenia (HIT) and how does it differ between UFH and LMWH?"
+    back: "HIT is an immune-mediated reaction where antibodies form against heparin-platelet factor 4 complexes, causing platelet activation and thrombosis. HIT is less common with LMWHs than unfractionated heparin.\n\nHIT typically occurs 5-10 days after heparin exposure. Suspicion of HIT requires immediate heparin discontinuation and alternative anticoagulation."
+    difficulty: hard
+    tags: [cardiology, anticoagulants, heparin, HIT, complications, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What is the mechanism of action of heparins (unfractionated and LMWH)?"
+    back: "Antithrombin III agonist, leading to decreased clotting factor activity (primarily factors IIa and Xa)\n\nUFH and LMWHs provide immediate anticoagulation, used for ACS, PE, and venous thrombosis."
+    difficulty: easy
+    tags: [cardiology, anticoagulants, heparin, mechanism, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What are the key components of deep venous thrombosis and pulmonary embolism management according to referenced guidelines?"
+    back: "Diagnosis, prophylaxis, and treatment of DVT and PE"
+    difficulty: medium
+    tags: [cardiology, DVT, pulmonary-embolism, venous-thromboembolism, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What are the key management strategies for deep venous thrombosis and pulmonary embolism?"
+    back: "Diagnosis, prophylaxis, and treatment including anticoagulation and thrombolysis in selected cases\n\nAlexander and Giangola reviewed diagnosis, prophylaxis, and treatment approaches for DVT and PE in vascular surgery literature."
+    difficulty: easy
+    tags: [DVT, pulmonary embolism, anticoagulation, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What is the clinical use of continuous IV infusion?"
+    back: "Continuous infusion is used for drugs with a very short half-life when there is a need for long-term effect and multiple/frequently repeated doses would be inconvenient (e.g., nitroprusside, unfractionated heparin, naloxone).\n\nContinuous infusions maintain steady drug levels and avoid the peaks and valleys associated with intermittent dosing."
+    difficulty: easy
+    tags: [pharmacokinetics, continuous-infusion, dosing, toronto-notes, pages-0181-0182-0183-0184-0185-0186-0187-0188-0189-0190]
+  - front: "What is the management of tension pneumothorax in the ED?"
+    back: "Needle decompression: 2nd intercostal space (ICS) at mid-clavicular line OR 5th ICS in mid-axillary line if patient is unstable. Follow with finger thoracostomy; urgent surgical consult and chest tube (4th ICS). Tracheal deviation is away from the tension pneumothorax (toward non-tension side).\n\nTension pneumothorax is a clinical diagnosis — do not delay treatment for imaging. Air accumulates under pressure in the pleural space, causing mediastinal shift, decreased venous return, and cardiovascular collapse. The 5th ICS mid-axillary line is increasingly preferred over the 2nd ICS mid-clavicular line as it is more reliable and avoids vascular structures."
+    difficulty: medium
+    tags: [tension pneumothorax, needle decompression, chest tube, emergency]
+  - front: "What is the Wells criteria used for in the context of chest pain evaluation and what diagnostic test follows?"
+    back: "Wells criteria is used for pulmonary embolism (PE) risk stratification. Based on Wells score: low probability + D-dimer <1000 ng/mL can rule out PE without imaging; moderate probability requires D-dimer <500 ng/mL to rule out. If D-dimer elevated or high probability: CT pulmonary angiogram (most sensitive) or V/Q scan.\n\nThe YEARS algorithm and PERC criteria are alternative PE risk stratification tools. CT pulmonary angiogram is the gold standard for PE diagnosis. D-dimer is highly sensitive but non-specific — useful to rule out PE in low-probability patients. Massive PE (hypotension + cardiovascular collapse) warrants thrombolysis consideration."
+    difficulty: medium
+    tags: [PE, pulmonary embolism, Wells criteria, D-dimer, CT pulmonary angiogram]
+  - front: "What is the management of a primary spontaneous pneumothorax in the ED?"
+    back: "Unstable: needle decompression at 2nd ICS mid-clavicular line (or 5th ICS mid-axillary line) → finger thoracostomy → chest tube (4th ICS). Stable moderate-to-large: conservative management (observation) is non-inferior to immediate interventional management and results in fewer serious adverse events. Small primary spontaneous pneumothorax: observation and discharge with follow-up may be appropriate.\n\nA landmark 2020 NEJM trial showed conservative management of primary spontaneous pneumothorax was non-inferior to interventional management (re-expansion within 8 weeks: 95% vs. 94%), with lower risk of serious adverse events and recurrence. This has shifted practice toward conservative management in stable patients."
+    difficulty: medium
+    tags: [pneumothorax, spontaneous pneumothorax, chest tube, conservative management]
+  - front: "What are the components of Virchow's triad and the clinical risk factors for VTE?"
+    back: "Virchow's triad: alterations in blood flow (venous stasis), endothelial injury (smoking, HTN, surgery, catheter, trauma), hypercoagulable state (pregnancy, OCP, malignancy). Risk factors mnemonic CT MARRBS OI: Cancer, Trauma/travel, Medications (OCPs), Age >60, Recent surgery, Reduced mobility, Blood disorders, Birth control, Surgery, Obesity/obstetrics, Immobilization, Sickness (CHF, MI, nephrotic syndrome, vasculitis).\n\nUnderstanding risk factors guides pre-test probability scoring (Wells criteria for DVT and PE). High-risk features increase the pre-test probability and influence whether D-dimer or direct imaging is warranted. Hypercoagulable states (thrombophilia) should be investigated in unprovoked or recurrent VTE."
+    difficulty: medium
+    tags: [VTE, DVT, PE, Virchow triad, risk factors]
+  - front: "How is D-dimer used in the diagnosis of DVT and PE, and what are its limitations?"
+    back: "D-dimer is only useful for RULING OUT DVT/PE — it has high sensitivity but low specificity. A negative D-dimer in a low-to-moderate risk patient excludes DVT/PE. False positives occur in: elderly, infection, recent surgery, trauma, hemorrhage, late pregnancy, liver disease, cancer.\n\nD-dimer measures fibrin degradation products and is elevated whenever clot is being broken down — hence its low specificity. In high-risk patients (high Wells score), D-dimer adds little value and imaging should proceed directly. Age-adjusted D-dimer cutoffs (age x 10 ng/mL in patients >50 years) improve specificity."
+    difficulty: medium
+    tags: [D-dimer, DVT, PE, sensitivity, specificity]
+  - front: "What is the Wells criteria scoring for DVT and how does it guide management?"
+    back: "Wells DVT criteria include: active cancer (+1), paralysis/plaster cast (+1), bedridden >3 days or surgery in 4 wk (+1), tenderness along deep venous system (+1), entire leg swollen (+1), calf swelling ≥3 cm vs contralateral (+1), pitting edema of symptomatic leg (+1), collateral superficial veins (+1), alternative diagnosis as likely or more likely (−2). Score ≤0: low probability; 1–2: moderate; ≥3: high probability.\n\nLow probability + negative D-dimer: DVT excluded. Low/moderate + negative D-dimer: DVT excluded. Positive D-dimer or high probability: proceed to compression ultrasound. If US negative and moderate-high risk: repeat US in 5–7 days. US has 73% sensitivity for calf DVT (higher for proximal clots)."
+    difficulty: hard
+    tags: [DVT, Wells criteria, diagnosis, ultrasound]
+  - front: "What is the PERC score and how is it used for PE evaluation?"
+    back: "PERC (Pulmonary Embolism Rule-out Criteria) score: Age <50, HR <100, O2 sat ≥95% on room air, no prior DVT/PE, no recent trauma or surgery, no hemoptysis, no exogenous estrogen, no clinical signs of DVT. If all 8 criteria met (score = 0) in a LOW-risk patient, PE is excluded without further investigation.\n\nPERC is only valid in patients with low pre-test gestalt probability of PE. If any criterion is positive (score ≥1), proceed to D-dimer. PERC should not be used in pregnant women or patients on beta-blockers (excluded from original study). The YEARS algorithm is useful in pregnant patients."
+    difficulty: medium
+    tags: [PE, PERC score, pulmonary embolism, risk stratification]
+  - front: "What are the radiological signs of PE on CXR and ECG?"
+    back: "CXR (rare, specific): Hampton's hump (triangular/wedge-shaped density abutting pleura — pulmonary infarct), Westermark's sign (abrupt tapering/dilatation of vessels proximal to obstruction with collapse distally). CXR often normal. ECG: sinus tachycardia (most common), S1Q3T3 pattern (right heart strain), T-wave inversions in anterior and inferior leads, AFib.\n\nCXR and ECG are primarily useful to exclude other diagnoses (ACS, pneumonia, pneumothorax) and provide supporting evidence for PE rather than to diagnose PE definitively. About 50% of CXRs show only non-specific findings (effusion, atelectasis, infiltrates). CT pulmonary angiography is the gold standard for diagnosis."
+    difficulty: medium
+    tags: [PE, CXR, ECG, Hampton hump, Westermark sign, S1Q3T3]
+  - front: "What are the indications for thrombolysis in pulmonary embolism?"
+    back: "Massive PE defined as acute PE with sustained hypotension (sBP <90 mmHg for ≥15 min, or requiring inotropic support, not due to another cause). Catheter-directed thrombolysis or surgical thrombectomy may be considered in massive PE or if anticoagulation is contraindicated.\n\nSubmassive PE (right ventricular dysfunction without hypotension) is a gray zone — systemic thrombolysis carries bleeding risk and current guidelines do not recommend it routinely. The treatment duration for PE is the same as DVT: 3 months if transient cause, 6 months if unprovoked, lifelong if ongoing coagulopathy."
+    difficulty: hard
+    tags: [PE, thrombolysis, massive PE, anticoagulation]
+  - front: "What is the DOAC dosing for DVT/PE treatment?"
+    back: "Rivaroxaban: 15 mg PO BID for first 21 days, then 20 mg PO once daily. Apixaban: 10 mg PO BID for first 7 days, then 5 mg PO BID. LMWH alternative: dalteparin 200 IU/kg SC q24h or enoxaparin 1 mg/kg SC q24h (avoid in renal failure).\n\nDOACs are preferred over LMWH for most patients with DVT/PE due to equivalent efficacy, better convenience, and no requirement for monitoring. LMWH may be preferred in cancer-associated VTE (check local guidelines). IVC filter or surgical thrombectomy if anticoagulation contraindicated. Calf/distal DVT management varies — serial venous Doppler vs. anticoagulation are both options."
+    difficulty: medium
+    tags: [DVT, PE, DOAC, rivaroxaban, apixaban, LMWH, anticoagulation]
+  - front: "What is the YEARS algorithm for PE evaluation, and in which patients is it particularly useful?"
+    back: "YEARS items: clinical signs of DVT, hemoptysis, PE as most likely diagnosis. If 0 YEARS items AND D-dimer <1000 ng/mL → PE excluded. If ≥1 YEARS item AND D-dimer <500 ng/mL → PE excluded. All other patients → CTPA. Particularly useful in hemodynamically stable patients >18 years and pregnant patients (if DVT excluded).\n\nThe YEARS algorithm uses a higher D-dimer threshold (1000 ng/mL) in patients with no YEARS items, which reduces CT scanning without compromising safety. It was validated in pregnant patients where radiation exposure is a concern. V/Q scan is preferred over CTPA in pregnancy when available."
+    difficulty: hard
+    tags: [PE, YEARS algorithm, D-dimer, pregnancy, CTPA]

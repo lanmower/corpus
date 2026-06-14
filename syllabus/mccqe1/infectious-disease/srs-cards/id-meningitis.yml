@@ -1,0 +1,106 @@
+# Meningitis & Encephalitis (InfectiousDisease) - generated from srs-mccqe1
+cards:
+  - front: "A 22-year-old college student has sudden onset of severe headache, high fever, nuchal rigidity, and photophobia. Kernig and Brudzinski signs are positive. What is the diagnosis and immediate management?"
+    back: "Bacterial meningitis; give IV dexamethasone 0.15 mg/kg q6h + IV ceftriaxone 2g q12h immediately — do NOT delay for CT or LP if clinical diagnosis clear\n\nAMMI Canada guidelines recommend immediate empiric antibiotics in suspected bacterial meningitis without awaiting LP if CT or LP would be delayed >30-60 minutes. Add ampicillin if age >50 or immunocompromised (Listeria coverage). Dexamethasone 20 min before first antibiotic dose reduces neurological sequelae."
+    difficulty: hard
+    tags: [bacterial meningitis, ceftriaxone, dexamethasone, immediate treatment, infectious disease]
+  - front: "What CSF findings differentiate bacterial from viral meningitis?"
+    back: "Bacterial: WBC >1000 (PMN predominance), protein >1 g/L, glucose <2.2 mmol/L (CSF:serum ratio <0.4), positive Gram stain 60-90%; Viral: WBC 10-500 (lymphocytes), normal/mildly elevated protein, normal glucose\n\nAdditional CSF tests for bacterial meningitis: procalcitonin, lactate (>3.5 mmol/L suggests bacterial). PCR panels can rapidly identify pathogens (N. meningitidis, S. pneumoniae, L. monocytogenes, HSV). Opening pressure elevated in bacterial meningitis (>25 cm H2O)."
+    difficulty: medium
+    tags: [CSF findings, bacterial meningitis, viral meningitis, LP interpretation, infectious disease]
+  - front: "What organisms cause bacterial meningitis by age group?"
+    back: "Neonates: Group B Strep, E. coli, Listeria; Adults <50: S. pneumoniae, N. meningitidis; Adults >50: S. pneumoniae, Listeria, Gram-negatives; HIV: Cryptococcus, Listeria; Post-neurosurgery: Staphylococcus, Gram-negatives\n\nEmpiric treatment must cover likely pathogens for age group. Ampicillin added for Listeria coverage in elderly, pregnant, immunocompromised. Meningococcal meningitis: droplet precautions, prophylactic rifampin/ciprofloxacin for close contacts."
+    difficulty: medium
+    tags: [meningitis organisms, S. pneumoniae, N. meningitidis, Listeria, infectious disease]
+  - front: "When is CT head required before lumbar puncture in suspected meningitis?"
+    back: "CT required before LP if: new focal neurological deficit, papilledema, new onset seizures, altered consciousness, or immunocompromised — risk of herniation\n\nAMMI Canada guidelines recommend CT only in patients with risk factors for herniation. Normal CT does not completely exclude elevated ICP or prevent herniation. If CT required, do not delay antibiotics — blood cultures + antibiotics before CT, then LP."
+    difficulty: medium
+    tags: [CT before LP, meningitis, herniation risk, lumbar puncture, infectious disease]
+  - front: "What is meningococcal prophylaxis and who requires it?"
+    back: "Rifampin 600mg PO BID x2 days OR ciprofloxacin 500mg PO single dose — for household contacts, childcare contacts, anyone with direct exposure to oral secretions within 7 days of illness onset\n\nPHAC guidelines: close contacts of meningococcal meningitis require prophylaxis within 24 hours (no benefit after 14 days). Chemoprophylaxis eliminates nasopharyngeal carriage. Ceftriaxone is alternative in pregnancy (rifampin and cipro relatively contraindicated)."
+    difficulty: medium
+    tags: [meningococcal prophylaxis, rifampin, ciprofloxacin, contacts, infectious disease]
+  - front: "A 65-year-old is HIV-positive with CD4 count 40 and has subacute meningitis with headache and confusion. India ink stain of CSF shows encapsulated yeast. Diagnosis and treatment?"
+    back: "Cryptococcal meningitis; treat with amphotericin B + flucytosine (induction 2 weeks) then fluconazole consolidation x8 weeks, then maintenance fluconazole until CD4 >200 on ART\n\nCryptococcal meningitis: opening pressure often elevated (>30 cm H2O) — therapeutic LP to reduce ICP (remove 20-30 mL CSF). Serum and CSF cryptococcal antigen has high sensitivity. Delay ART 4-6 weeks after starting antifungal therapy (COAT trial: early ART increases mortality)."
+    difficulty: hard
+    tags: [cryptococcal meningitis, amphotericin B, fluconazole, HIV, infectious disease]
+  - front: "What is viral (aseptic) meningitis and how is it managed?"
+    back: "Aseptic meningitis: lymphocytic CSF pleocytosis with negative bacterial cultures; most common causes: enteroviruses, HSV-2; treatment is supportive — start IV acyclovir empirically for HSV if encephalitis features\n\nEnteroviral meningitis is most common in summer/fall. CSF PCR for enterovirus is diagnostic. HSV meningitis (HSV-2): may recur (Mollaret meningitis). IV acyclovir started empirically when HSV cannot be excluded, especially if encephalitis features (altered consciousness, focal deficits)."
+    difficulty: medium
+    tags: [viral meningitis, aseptic meningitis, enterovirus, HSV, acyclovir, infectious disease]
+  - front: "What are the clinical features of herpes simplex encephalitis (HSE)?"
+    back: "Fever, headache, altered mental status, focal neurological deficits, seizures; MRI shows temporal lobe involvement (T2/FLAIR hyperintensity); CSF PCR for HSV-1 is diagnostic\n\nHSE is the most common cause of fatal sporadic encephalitis. HSV-1 causes temporal lobe encephalitis via retrograde neuronal spread from olfactory nerves. Empiric IV acyclovir 10 mg/kg q8h must be started immediately — do not wait for PCR results. Treatment duration: 14-21 days."
+    difficulty: hard
+    tags: [HSE, herpes simplex encephalitis, temporal lobe, acyclovir, PCR, infectious disease]
+  - front: "What are the meningococcal vaccine indications in Canada?"
+    back: "Routine immunization: meningococcal C conjugate at 12 months, Men ACWY at 12 years; high-risk groups: asplenia, complement deficiency, travel to endemic areas, lab workers, close contacts of cases\n\nNACI (National Advisory Committee on Immunization) Canada recommends meningococcal ACWY vaccine for adolescents and at-risk groups. Meningococcal B vaccine (Bexsero or Trumenba) recommended for high-risk groups; not in routine schedule."
+    difficulty: easy
+    tags: [meningococcal vaccine, NACI, immunization, meningitis prevention, infectious disease]
+  - front: "How is tuberculous meningitis (TBM) distinguished from other meningitides?"
+    back: "TBM: subacute onset (weeks), lymphocytic pleocytosis, low glucose, very high protein, CSF AFB smear low sensitivity, CSF Xpert MTB/RIF; CT/MRI: basilar meningeal enhancement, hydrocephalus, tuberculomas\n\nTBM requires 4-drug anti-TB therapy (RIPE) for minimum 12 months. Dexamethasone reduces mortality and neurological complications in TBM. Hydrocephalus may require ventriculoperitoneal shunt. Prognosis depends on clinical grade at presentation."
+    difficulty: hard
+    tags: [tuberculous meningitis, TBM, CSF findings, anti-TB treatment, infectious disease]
+  - front: "What is empiric meningitis treatment in adults?"
+    back: "Ceftriaxone + vancomycin + dexamethasone. Add ampicillin if >50y (Listeria)\n\nDex reduces mortality for S. pneumoniae. Don't delay antibiotics for LP."
+    difficulty: hard
+    tags: [meningitis, empiric]
+  - front: "What CSF findings distinguish bacterial vs viral vs TB meningitis?"
+    back: "Bacterial: PMN>1000, low glucose, high protein. Viral: lymph 10-500, normal glucose. TB: lymph, very low glucose, very high protein\n\nOpening pressure high in bacterial. Gram stain positive 60-90%. PCR for HSV/enterovirus."
+    difficulty: hard
+    tags: [meningitis, CSF]
+  - front: "What is the empiric antibiotic regimen for bacterial meningitis by age group?"
+    back: "Neonates (<1 month): ampicillin + cefotaxime (or gentamicin). 1 month-50 years: ceftriaxone + vancomycin. >50 years or immunocompromised: ceftriaxone + vancomycin + ampicillin (Listeria coverage). ADD dexamethasone 0.15 mg/kg q6h × 4 days (give BEFORE or WITH first antibiotic dose).\n\nDexamethasone reduces mortality and neurological sequelae in pneumococcal meningitis (de Gans trial). Give before/with antibiotics — no benefit if given after. Vancomycin ensures coverage for penicillin-resistant S. pneumoniae. Do NOT delay antibiotics for LP — if LP will be delayed, draw blood cultures + give antibiotics immediately."
+    difficulty: hard
+    tags: [meningitis, empiric, antibiotics, dexamethasone, ceftriaxone, ID]
+  - front: "What are the CSF findings in bacterial vs viral vs TB/fungal meningitis?"
+    back: "Bacterial: WBC >1000 (neutrophils), protein >1g/L, glucose <2.2 (CSF:serum ratio <0.4), cloudy. Viral: WBC 10-500 (lymphocytes), protein mildly elevated, glucose normal, clear. TB/fungal: WBC 50-500 (lymphocytes), protein very high, glucose very low, clear/fibrinous.\n\nPartially treated bacterial meningitis can resemble viral (lymphocytic shift). Opening pressure: bacterial >30 cmH2O, viral usually normal, cryptococcal often very elevated. Gram stain positive in 60-90% of bacterial meningitis. Bacterial antigen testing and multiplex PCR panels increase diagnostic yield. CSF lactate >3.5 suggests bacterial."
+    difficulty: medium
+    tags: [meningitis, CSF, analysis, bacterial, viral, TB, ID]
+  - front: "When should CT be done before LP in suspected meningitis?"
+    back: "CT BEFORE LP if: immunocompromised, history of CNS disease, new-onset seizures, papilledema, altered consciousness, focal neurological deficit. If CT needed: draw blood cultures + give antibiotics BEFORE CT → then LP when safe.\n\nMost patients do NOT need CT before LP. Delaying LP (and thus antibiotics) for CT worsens outcomes. Contraindications to LP: signs of raised ICP with mass effect (not from meningitis alone), coagulopathy (INR >1.5, platelets <50,000), infection at LP site. Antibiotics should NEVER be delayed for imaging."
+    difficulty: hard
+    tags: [meningitis, CT, LP, contraindications, antibiotics, ID]
+  - front: "What are the most common organisms causing bacterial meningitis by age?"
+    back: "Neonates: Group B Strep, E. coli, Listeria. Children: S. pneumoniae, N. meningitidis. Adults (18-50): S. pneumoniae (#1), N. meningitidis. Elderly/immunocompromised: S. pneumoniae, Listeria, gram-negatives.\n\nS. pneumoniae is the #1 cause of bacterial meningitis in adults in Canada with the highest mortality (~20-30%). H. influenzae type b meningitis has become rare due to vaccination. N. meningitidis: outbreaks in close quarters (dormitories, military). Listeria: unpasteurized dairy, deli meats in elderly/pregnant/immunocompromised."
+    difficulty: medium
+    tags: [meningitis, organisms, S. pneumoniae, N. meningitidis, Listeria, ID]
+  - front: "What chemoprophylaxis is given to close contacts of meningococcal meningitis?"
+    back: "Ciprofloxacin 500 mg PO × 1 dose (adults, preferred in Canada) OR rifampin 600 mg BID × 2 days OR ceftriaxone 250 mg IM × 1 (pregnancy). Give within 24h of diagnosis. Close contacts: household, daycare, kissing contacts, HCWs performing mouth-to-mouth/intubation.\n\nChemoprophylaxis reduces secondary attack rate by 89-95%. The index patient should also receive prophylaxis before discharge if treated with penicillin (doesn't eradicate nasopharyngeal carriage — ceftriaxone does). Public health must be notified immediately. Meningococcal vaccine offered to contacts during outbreaks."
+    difficulty: hard
+    tags: [meningitis, meningococcal, chemoprophylaxis, ciprofloxacin, rifampin, ID]
+  - front: "What is the approach to viral (aseptic) meningitis?"
+    back: "Most common cause: enteroviruses (summer/fall). HSV-2 (Mollaret recurrent meningitis). Presentation: headache, fever, neck stiffness, photophobia but relatively well-appearing. CSF: lymphocytic, normal glucose, mildly elevated protein. Treatment: supportive for enteroviral. Consider IV acyclovir if HSV suspected.\n\nEnteroviral meningitis is self-limited (5-14 days). Distinguish from HSV ENCEPHALITIS (temporal lobe, altered consciousness, seizures — requires IV acyclovir 10 mg/kg q8h × 14-21 days). Multiplex CSF PCR panels can rapidly identify viral pathogens. Mumps, HIV, VZV, and arboviruses (West Nile) also cause viral meningitis."
+    difficulty: medium
+    tags: [meningitis, viral, enterovirus, HSV, aseptic, ID]
+  - front: "What are the complications of bacterial meningitis?"
+    back: "Acute: cerebral edema, seizures (20-30%), hydrocephalus, cranial nerve palsies (III, VI, VII, VIII), cerebral venous thrombosis, subdural empyema, DIC (meningococcal). Long-term: sensorineural hearing loss (most common long-term sequel), cognitive deficits, focal neurological deficits.\n\nHearing loss occurs in 10-30% — audiometry recommended for all survivors. Waterhouse-Friderichsen syndrome: adrenal hemorrhagic necrosis in fulminant meningococcemia → adrenal crisis. Repeat LP if: no clinical improvement at 48-72h, gram-negative organisms, or concern for antibiotic failure."
+    difficulty: hard
+    tags: [meningitis, complications, hearing loss, Waterhouse-Friderichsen, seizures, ID]
+  - front: "What meningococcal vaccines are available in Canada?"
+    back: "MenC conjugate: routine at 12 months. MenACWY conjugate: grade 7 booster and high-risk. MenB (Bexsero or Trumenba): recommended for high-risk (asplenia, complement deficiency, outbreaks), optional for 14-25. NACI recommends MenACWY and MenB for certain high-risk groups.\n\nMeningococcal disease in Canada: ~150-300 cases/year. Serogroup B accounts for ~50% of cases in young adults — not covered by MenACWY. Provincial programs vary. High-risk: functional/anatomic asplenia, complement deficiency, eculizumab use, HIV, lab workers, travelers to meningitis belt. Outbreak response includes mass vaccination + chemoprophylaxis."
+    difficulty: medium
+    tags: [meningitis, meningococcal, vaccine, MenB, MenACWY, NACI, ID]
+  - front: "What is the approach to cryptococcal meningitis in non-HIV patients?"
+    back: "Organ transplant/immunosuppressed: same treatment as HIV (amphotericin B liposomal + flucytosine × 2 weeks → fluconazole consolidation/maintenance). Opening pressure management with serial LPs. Reduce immunosuppression if possible. Duration of maintenance: ≥12 months.\n\nCryptococcal meningitis in non-HIV immunosuppressed patients has worse outcomes than in HIV (higher mortality). India ink and CSF CrAg diagnostic. CT may show hydrocephalus — requires VP shunt if persistent. Non-immunosuppressed patients with cryptococcal meningitis: 6 weeks induction (2 wk amph B then 6 wk fluconazole) with serial LP."
+    difficulty: hard
+    tags: [meningitis, cryptococcal, transplant, amphotericin, fluconazole, ID]
+  - front: "What is the role of dexamethasone in meningitis?"
+    back: "Bacterial meningitis (adults): dexamethasone 0.15 mg/kg IV q6h × 4 days, given BEFORE or WITH first antibiotic dose. Proven benefit for S. pneumoniae (reduces mortality from ~34% to ~14% and hearing loss). Less clear benefit for other organisms. NOT recommended for neonatal meningitis.\n\nde Gans (2002) and Cochrane meta-analyses support dexamethasone in suspected bacterial meningitis in high-income settings. Mechanism: reduces subarachnoid inflammation and BBB disruption. May reduce vancomycin CSF penetration — some experts recommend higher vancomycin doses. If antibiotics already given, starting steroids later has no benefit."
+    difficulty: hard
+    tags: [meningitis, dexamethasone, corticosteroids, S. pneumoniae, outcomes, ID]
+  - front: "What are the clinical features that suggest meningitis as a cause of headache?"
+    back: "At least 2 of: fever, neck stiffness, altered mental status. Other possible findings: nausea, focal neurologic signs, seizure, papilledema, petechial rash, high CSF WBC, positive blood cultures.\n\nThe classic triad of meningitis is fever + neck stiffness + altered mental status. Not all features need to be present. Petechial/purpuric rash suggests meningococcal disease. Kernig's and Brudzinski's signs are classic but have low sensitivity. CT head should be done before LP if papilledema or neurologic deficits are present."
+    difficulty: easy
+    tags: [meningitis, headache, clinical features, emergency]
+  - front: "What is the empiric antibiotic regimen for bacterial meningitis in the ED, and when should steroids be given?"
+    back: "Empiric antibiotics: high-dose ceftriaxone + vancomycin + ampicillin (if age >50 yr or immunocompromised) + acyclovir (for HSV encephalitis coverage). Steroids (dexamethasone): administer based on clinical suspicion — give WITH or BEFORE the first dose of antibiotics. DO NOT delay antibiotics for LP. DO NOT wait for LP results before giving dexamethasone.\n\nEarly empiric antibiotics save lives. Dexamethasone reduces inflammatory cascade, decreasing hearing loss and neurological sequelae, particularly in pneumococcal meningitis. In practice, the order is: dexamethasone → antibiotics → CT head (if indicated) → LP. Ceftriaxone covers N. meningitidis and S. pneumoniae; ampicillin covers Listeria in the elderly and immunocompromised."
+    difficulty: hard
+    tags: [meningitis, antibiotics, dexamethasone, ceftriaxone, emergency]
+  - front: "What antibiotics are used for pediatric bacterial meningitis, organized by age group?"
+    back: "Neonatal: ampicillin + cefotaxime (covers GBS, E. coli, Listeria, Gram-negatives). 1–3 months: ceftriaxone/cefotaxime + vancomycin + ampicillin (if immunocompromised). >3 months: ceftriaxone + vancomycin (covers S. pneumoniae, H. influenzae type b [>5yr], meningococcus).\n\nListeria monocytogenes is resistant to cephalosporins; ampicillin is essential for neonates and immunocompromised patients. Vancomycin is added for >3 months to cover penicillin-resistant S. pneumoniae. Dexamethasone as adjunctive therapy reduces hearing loss in H. influenzae and S. pneumoniae meningitis."
+    difficulty: hard
+    tags: [meningitis, pediatric, antibiotics, ceftriaxone, vancomycin, ampicillin]
+  - front: "What is Meningococcemia and what is the characteristic rash?"
+    back: "Caused by Gram-negative Neisseria meningitidis. Presents with: flu-like symptoms (headache, myalgia, N/V) → petechial, macular, or maculopapular lesions with grey vesicular centres, usually a few millimeters. Lesions can become confluent and hemorrhagic (purpura fulminans). Signs of meningeal irritation: Brudzinski, Kernig, jolt accentuation test.\n\nMeningococcemia is a rapidly fatal emergency. The petechial/purpuric rash reflects endothelial damage and DIC. Non-blanching petechiae in a febrile patient is meningococcemia until proven otherwise. Immediate IV penicillin G or ceftriaxone and supportive care are required. Close contacts need chemoprophylaxis (rifampin, ciprofloxacin, or ceftriaxone)."
+    difficulty: medium
+    tags: [meningococcemia, Neisseria meningitidis, petechiae, purpura, emergency, meningitis]

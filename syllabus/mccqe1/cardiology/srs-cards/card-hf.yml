@@ -1,0 +1,690 @@
+# Heart Failure (Cardiology) - generated from srs-mccqe1
+cards:
+  - front: "A 70-year-old presents with dyspnea, orthopnea, bilateral leg edema, and basal crackles. BNP 850 pg/mL. Echo EF 30%. Diagnosis and initial management?"
+    back: "HFrEF; start ACE inhibitor, beta-blocker, MRA, SGLT2 inhibitor, and loop diuretic for symptom relief\n\nCCS Heart Failure Guidelines define HFrEF as EF <40%. The four pillars are ACEi/ARB/ARNI, beta-blocker, MRA, and SGLT2 inhibitor. Loop diuretics relieve congestion but do not improve mortality."
+    difficulty: hard
+    tags: [HFrEF, heart failure, BNP, ACE inhibitor, cardiology]
+  - front: "What are the four GDMT pillars for HFrEF per CCS 2021 guidelines?"
+    back: "ACEi/ARB or ARNI (sacubitril-valsartan), beta-blocker (carvedilol/metoprolol succinate/bisoprolol), MRA (spironolactone/eplerenone), SGLT2 inhibitor (dapagliflozin/empagliflozin)\n\nSGLT2 inhibitors were added as the fourth pillar based on DAPA-HF and EMPEROR-Reduced trials. Sacubitril-valsartan is superior to ACEi for reducing mortality in ambulatory HFrEF patients."
+    difficulty: easy
+    tags: [GDMT, HFrEF, heart failure, SGLT2 inhibitor, ARNI, cardiology]
+  - front: "A 68-year-old has HF with EF 55%. What is the diagnosis and how does management differ from HFrEF?"
+    back: "HFpEF (EF ≥50%); management focuses on symptom relief with diuretics, BP control, comorbidity treatment, and SGLT2 inhibitors\n\nEMPEROR-Preserved and DELIVER trials showed empagliflozin and dapagliflozin reduce HF hospitalization in HFpEF. CCS guidelines now recommend SGLT2 inhibitors for HFpEF. Diuretics manage congestion."
+    difficulty: hard
+    tags: [HFpEF, heart failure, SGLT2, cardiology]
+  - front: "What BNP/NT-proBNP thresholds help diagnose acute HF in the ED?"
+    back: "BNP >100 pg/mL or NT-proBNP >300 pg/mL supports HF; BNP <100 or NT-proBNP <300 makes HF unlikely\n\nNatriuretic peptides have high NPV for excluding HF in dyspneic patients. CCS guidelines recommend BNP/NT-proBNP in evaluation of suspected HF. Elevated levels also occur in PE, RV failure, and CKD."
+    difficulty: easy
+    tags: [BNP, NT-proBNP, heart failure, diagnosis, cardiology]
+  - front: "A patient with HFrEF on ACE inhibitor remains symptomatic. What is the preferred next step per CCS?"
+    back: "Switch ACEi to sacubitril-valsartan (ARNI) if symptomatic despite ACEi and SBP >100 mmHg — 36-hour washout required before switching\n\nPARADIGM-HF showed sacubitril-valsartan reduced CV death and HF hospitalization by 20% vs. enalapril. CCS recommends ARNI as preferred RAS blocker for symptomatic HFrEF. Washout prevents angioedema."
+    difficulty: medium
+    tags: [ARNI, sacubitril-valsartan, HFrEF, ACE inhibitor, cardiology]
+  - front: "What are indications for ICD in heart failure?"
+    back: "HFrEF with EF ≤35% despite ≥3 months optimal GDMT, NYHA class II-III, expected survival >1 year\n\nCCS guidelines recommend ICD for primary prevention of sudden cardiac death in HFrEF. EF must be reassessed after 3 months of GDMT. CRT-D indicated when EF ≤35% with LBBB, QRS ≥150ms, NYHA II-III."
+    difficulty: medium
+    tags: [ICD, HFrEF, sudden cardiac death, CRT, cardiology]
+  - front: "A 75-year-old with HFrEF has BP 85/60, cold extremities, oliguria. Hemodynamic profile and treatment?"
+    back: "Cardiogenic shock (cold and wet): low CO, high PCWP — dobutamine for inotropy, norepinephrine for MAP >65; consider mechanical circulatory support\n\nCardiogenic shock management includes IV dobutamine and norepinephrine. Mechanical circulatory support (IABP, Impella, ECMO) may be required. Urgent coronary angiography if ischemia is suspected."
+    difficulty: hard
+    tags: [cardiogenic shock, heart failure, inotropes, hemodynamics, cardiology]
+  - front: "What is CRT and who benefits?"
+    back: "Biventricular pacing to coordinate LV contraction; indicated for HFrEF (EF ≤35%), LBBB with QRS ≥150ms, NYHA II-IV on optimal GDMT\n\nCARE-HF and COMPANION trials showed CRT improves mortality and quality of life. CCS recommends CRT-D when both ICD and CRT criteria are met. LBBB morphology predicts better response than RBBB."
+    difficulty: medium
+    tags: [CRT, cardiac resynchronization, HFrEF, LBBB, cardiology]
+  - front: "What drug classes should be AVOIDED in HFrEF?"
+    back: "Non-DHP CCBs (diltiazem, verapamil), NSAIDs, thiazolidinediones, most antiarrhythmics (except amiodarone), type IC antiarrhythmics\n\nNon-DHP CCBs have negative inotropic effects. NSAIDs cause sodium retention and antagonize diuretics. Type IC antiarrhythmics (flecainide, propafenone) increase mortality in structural heart disease."
+    difficulty: easy
+    tags: [drug avoidance, HFrEF, CCB, NSAIDs, cardiology]
+  - front: "A patient with HFrEF on lisinopril, spironolactone, and furosemide has K+ 5.8 mEq/L. What adjustment is needed?"
+    back: "Hold or reduce spironolactone; consider reducing ACEi dose — MRA should be held when K+ >5.5 mEq/L\n\nCCS guidelines recommend electrolyte monitoring within 1-2 weeks of starting MRA. Novel potassium binders (patiromer, sodium zirconium cyclosilicate) may allow continuation of GDMT in patients with hyperkalemia."
+    difficulty: hard
+    tags: [hyperkalemia, spironolactone, MRA, HFrEF, electrolytes, cardiology]
+  - front: "What is the NYHA classification of heart failure?"
+    back: "Class I: no symptoms; Class II: mild symptoms with moderate exertion; Class III: symptoms with minimal exertion; Class IV: symptoms at rest\n\nNYHA classification guides HF treatment decisions. GDMT benefits demonstrated across NYHA II-IV. Class IV refractory patients should be assessed for advanced therapies (LVAD, cardiac transplantation)."
+    difficulty: easy
+    tags: [NYHA, heart failure classification, symptoms, cardiology]
+  - front: "How does spironolactone benefit HFrEF and what monitoring is required?"
+    back: "30% mortality reduction in NYHA III-IV HFrEF (RALES trial); monitor K+ and creatinine within 1 week of initiation\n\nMRAs block aldosterone, reducing fibrosis and sodium retention. CCS recommends MRA for HFrEF with EF ≤35% and NYHA II-IV. Contraindicated in GFR <30 or baseline K+ >5.0 mEq/L."
+    difficulty: medium
+    tags: [spironolactone, MRA, HFrEF, potassium monitoring, cardiology]
+  - front: "How is acute pulmonary edema managed in the ED?"
+    back: "IV furosemide, IV nitroglycerin if SBP >90, supplemental O2/NIV (BiPAP), sit upright, treat precipitating cause\n\nNIV (BiPAP/CPAP) reduces intubation need and improves oxygenation. IV nitroglycerin reduces preload rapidly. Identify and treat precipitants: ACS, hypertensive emergency, arrhythmia, infection."
+    difficulty: hard
+    tags: [pulmonary edema, acute HF, furosemide, BiPAP, cardiology]
+  - front: "Which beta-blockers are guideline-recommended for HFrEF and when should they be started?"
+    back: "Carvedilol, metoprolol succinate (XL), bisoprolol — started when patient is euvolemic, NOT during acute decompensation\n\nThree beta-blockers have proven mortality benefit: carvedilol (COPERNICUS), metoprolol succinate (MERIT-HF), bisoprolol (CIBIS-II). Continue in patients already on them during acute decompensation."
+    difficulty: easy
+    tags: [beta-blocker, HFrEF, carvedilol, metoprolol, cardiology]
+  - front: "What follow-up does CCS recommend after HF discharge?"
+    back: "Follow-up within 1-2 weeks of discharge; reassess EF in 3-6 months after optimization of GDMT\n\nEarly post-discharge follow-up reduces 30-day readmission. Medication titration, fluid status, and electrolyte monitoring are priorities. EF reassessment guides ICD/CRT decision-making."
+    difficulty: medium
+    tags: [heart failure, follow-up, discharge planning, CCS guidelines, cardiology]
+  - front: "A 72-year-old woman presents with dyspnea and bilateral leg edema. Echo shows EF 62%, concentric LV hypertrophy, grade III diastolic dysfunction with E/A ratio 0.8, E/e' ratio 18, and left atrial volume index 42 mL/m². BNP is 420 pg/mL. What is the most appropriate treatment to reduce her risk of HF hospitalization?\n\nA) Start digoxin to improve diastolic filling\nB) Start an SGLT2 inhibitor (empagliflozin or dapagliflozin)\nC) Start spironolactone to reduce aldosterone-mediated fibrosis\nD) Start an ACE inhibitor to reduce afterload"
+    back: "B) Start an SGLT2 inhibitor (empagliflozin or dapagliflozin)\n\nHFpEF (EF ≥ 50%) treatment options are limited. The EMPEROR-Preserved and DELIVER trials (2021–2022) established SGLT2 inhibitors (empagliflozin, dapagliflozin) as the first drug class to reduce cardiovascular death and HF hospitalization in HFpEF. This is now a Class I recommendation in the 2023 ESC and ACC/AHA guidelines. Spironolactone showed borderline benefit in TOPCAT (significant in Americas subgroup). ACE inhibitors and beta-blockers have not demonstrated mortality benefit in HFpEF in randomized trials."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 58-year-old man with ischemic cardiomyopathy (EF 28%) on lisinopril 10mg, carvedilol 25mg BID, and furosemide presents in acute decompensated heart failure (ADHF). His BP is 90/60, HR 112, creatinine 2.1 (baseline 1.6), and Na+ 128. He is oliguric. What is the MOST appropriate initial management?\n\nA) IV furosemide 80mg bolus\nB) Start low-dose dobutamine for inotropy and diuresis facilitation\nC) Discontinue lisinopril and carvedilol; start IV vasopressors\nD) Urgent ultrafiltration"
+    back: "B) Start low-dose dobutamine for inotropy and diuresis facilitation\n\nThis patient has hypoperfused (cold/wet) ADHF — low BP, elevated creatinine, low urine output indicate inadequate perfusion. In the 'cold and wet' profile, vasodilators (nitroglycerin) are contraindicated and diuretics alone are insufficient due to poor renal perfusion. Low-dose dobutamine (2–5 mcg/kg/min) improves cardiac output, renal perfusion (opening venous sinuses), and facilitates diuresis. Discontinuing carvedilol acutely is appropriate if in cardiogenic shock, but abrupt withdrawal is harmful. Ultrafiltration is a later consideration if refractory to medical therapy (CARRESS-HF — no advantage over diuretics in first instance)."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 60-year-old man with HFrEF (EF 30%) is on sacubitril/valsartan 97/103mg BID, carvedilol 25mg BID, and eplerenone 50mg. His potassium is 5.6 mEq/L and eGFR is 32. He remains NYHA class III. Which additional therapy is most appropriate?\n\nA) Add digoxin 0.125mg daily to improve symptoms\nB) Add dapagliflozin 10mg daily\nC) Add ivabradine if resting HR > 70 (check HR first)\nD) Add hydralazine-nitrate combination"
+    back: "B) Add dapagliflozin 10mg daily\n\nThe 2022 AHA/ACC and 2021 ESC HF guidelines establish FOUR pillars for HFrEF: (1) RAS/ARNI, (2) beta-blocker, (3) MRA, (4) SGLT2 inhibitor. With all three other pillars present, dapagliflozin (DAPA-HF trial) or empagliflozin (EMPEROR-Reduced) should be added — they reduce cardiovascular death, HF hospitalization, and also protect renal function (eGFR can be as low as 25 for dapagliflozin). Ivabradine requires HR ≥ 70 and sinus rhythm — check HR. Digoxin is a symptom reliever with no mortality benefit. Hydralazine-nitrate is an alternative if ARNI/ACEi/ARB is contraindicated (e.g., African-American or renal failure)."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 55-year-old man with non-ischemic dilated cardiomyopathy (EF 22%) is initiated on carvedilol. After 4 weeks, his EF is re-measured at 15% and he feels worse. What is the most appropriate action?\n\nA) Discontinue carvedilol — his cardiomyopathy is worsening\nB) Continue carvedilol at current dose — initial worsening is expected\nC) Halve the carvedilol dose and reassess in 4 weeks\nD) Switch to bisoprolol — carvedilol is not recommended in EF < 20%"
+    back: "B) Continue carvedilol at current dose — initial worsening is expected\n\nBeta-blockers cause initial negative inotropy, leading to temporary worsening of symptoms and EF in the first 4–8 weeks of initiation in HFrEF. This is a well-recognized pharmacological phenomenon — the 'early beta-blocker paradox.' Long-term use (3–6 months) reverses maladaptive remodeling and significantly improves EF, symptoms, and mortality (MERIT-HF, COPERNICUS, CIBIS-II). The key is not to discontinue carvedilol unless the patient is in overt hemodynamic decompensation. Reassess EF at 3 months."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 78-year-old woman with HFpEF is admitted for decompensation. Her BNP is 1800. After IV diuresis, BNP is 900 at discharge. She asks about her prognosis. Which statement is most accurate regarding natriuretic peptides in HFpEF?\n\nA) BNP is a superior predictor of adverse outcomes compared to NT-proBNP in HFpEF\nB) The degree of BNP elevation correlates directly with EF in HFpEF\nC) Obesity paradox: lower BNP in obese HFpEF patients despite worse clinical status\nD) BNP normalization at discharge predicts sustained clinical remission"
+    back: "C) Obesity paradox: lower BNP in obese HFpEF patients despite worse clinical status\n\nThe 'obesity paradox' in HFpEF is clinically important: obese patients have lower BNP levels due to increased BNP degradation by adipose tissue (neprilysin) and decreased hepatic expression. This means BNP can be deceptively low in obese HFpEF patients despite severe disease. NT-proBNP is generally preferred in obese patients (less affected by adipose clearance). Neither peptide reliably differentiates HFpEF subtypes. BNP at discharge predicts readmission but does not guarantee remission — a significant proportion of patients redevelop congestion."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 64-year-old man with HFrEF (EF 28%) is on optimal medical therapy. ECG shows sinus rhythm, QRS 160ms, LBBB morphology. He is NYHA class II. What is the class I indication threshold for CRT in this patient?\n\nA) LBBB with QRS ≥ 120ms in NYHA II\nB) LBBB with QRS ≥ 130ms in NYHA II\nC) LBBB with QRS ≥ 150ms in NYHA II\nD) LBBB with QRS ≥ 150ms in NYHA II–III on OMT for ≥ 3 months"
+    back: "D) LBBB with QRS ≥ 150ms in NYHA II–III on OMT for ≥ 3 months\n\nPer 2021 ESC HF Guidelines: CRT is recommended (Class I, Level A) for symptomatic HF patients (NYHA II–IV) with EF ≤ 35%, LBBB morphology, and QRS duration ≥ 150ms despite ≥ 3 months of OMT. For QRS 130–149ms with LBBB, it is Class IIa. For non-LBBB morphology, thresholds are higher and benefit less certain. The 3-month OMT requirement ensures patients haven't improved adequately with medical therapy alone (reverse remodeling). This patient at 160ms and NYHA II with LBBB clearly meets Class I criteria."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 49-year-old patient with HFrEF is started on sacubitril/valsartan (ARNI). Which condition represents an absolute contraindication to ARNI initiation?\n\nA) eGFR 28 mL/min/1.73m²\nB) Serum potassium 5.4 mEq/L\nC) History of angioedema while on ACE inhibitor\nD) Systolic BP 92 mmHg"
+    back: "C) History of angioedema while on ACE inhibitor\n\nARNI contains valsartan (ARB) and sacubitril (neprilysin inhibitor). Sacubitril inhibits neprilysin, which normally degrades bradykinin. ACE inhibitors also increase bradykinin. Using both creates unacceptable risk of angioedema — hence ARNI is absolutely contraindicated if there is history of ACE inhibitor-induced angioedema, AND ACEi must be withheld ≥ 36 hours before starting ARNI (to allow bradykinin clearance). Other listed options are relative contraindications requiring dose adjustment. This is a critical safety point tested frequently."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 67-year-old man with ischemic cardiomyopathy (EF 25%) on sacubitril/valsartan, bisoprolol, eplerenone, and dapagliflozin presents with NYHA class III symptoms. His hemoglobin is 9.2 g/dL, ferritin 45 ng/mL, transferrin saturation 14%. What is the most appropriate intervention?\n\nA) Oral iron supplementation\nB) IV iron sucrose or ferric carboxymaltose\nC) Erythropoiesis-stimulating agent\nD) Blood transfusion"
+    back: "B) IV iron sucrose or ferric carboxymaltose\n\nIron deficiency (ferritin <100 ng/mL OR ferritin 100–299 with TSAT <20%) is present in ~50% of HFrEF patients and is independently associated with worse outcomes. IV iron (ferric carboxymaltose — FAIR-HF, CONFIRM-HF; ferric derisomaltose — AFFIRM-AHF) improves quality of life, exercise capacity, and reduces HF hospitalizations. Oral iron has poor absorption in HF due to hepcidin upregulation and gut edema — IV iron is preferred. ESAs have not shown benefit in HF and carry thrombotic risk. Blood transfusion is not indicated for Hb >8 in stable HF."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 66-year-old woman with HFrEF (EF 25%) has been maximally optimized medically. Her echocardiogram shows LVEDD 72mm. Cardiac MRI confirms viable myocardium with no fibrosis. No inducible ischemia on stress testing. She is NYHA III and INTERMACS 3. She has no contraindications. What surgical option offers the best long-term survival?\n\nA) Surgical ventricular reconstruction (Dor procedure)\nB) Left ventricular assist device (LVAD) as destination therapy\nC) Cardiac transplantation\nD) Mitral valve repair for functional MR"
+    back: "C) Cardiac transplantation\n\nCardiac transplantation remains the gold standard for end-stage HF with 1-year survival >85% and 5-year survival ~75%. INTERMACS profile 3 ('dependent stable' — on inotropes or frequent hospitalizations) is appropriate for listing. LVAD as bridge-to-transplant is appropriate while waiting; as destination therapy, LVAD has inferior long-term outcomes compared to transplant due to device failures, bleeding, and stroke. Surgical ventricular reconstruction (STICH trial extension) did not improve outcomes over CABG alone. Functional MR repair in severe LV dysfunction has mixed results (RESHAPE-HF2 — positive; COAPT — positive for functional MR)."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 55-year-old woman with hypertensive heart disease presents with shortness of breath. Echo: EF 65%, E/A = 0.6, E/e' = 8, LA volume index 28 mL/m². BNP is 85 pg/mL. She has no signs of pulmonary congestion. Which grade of diastolic dysfunction does she have?\n\nA) Grade I (impaired relaxation) — abnormal diastolic function but no elevated filling pressures\nB) Grade II (pseudonormal)\nC) Grade III (restrictive physiology)\nD) Indeterminate — insufficient parameters to grade"
+    back: "A) Grade I (impaired relaxation) — abnormal diastolic function but no elevated filling pressures\n\nASE 2016 diastolic dysfunction grading: Grade I (impaired relaxation): E/A <0.8 + E/e' ≤8 + normal LAVI (≤34) + normal TR velocity (<2.8 m/s) — LV filling pressures are NORMAL despite impaired relaxation. This patient: E/A 0.6 (reduced), E/e' 8 (not elevated), LAVI 28 (normal), BNP 85 (borderline low) → Grade I. Grade II would show E/A 0.8–2.0 with elevated filling pressures (E/e' >14 or elevated LAVI). Grade III shows E/A >2.0, restrictive filling. Grade I has an excellent prognosis without overt HFpEF."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 70-year-old man with severe HFrEF presents with progressive symptomatic hypotension (BP 82/50) despite being on bisoprolol 10mg. He is not on any vasodilators. Creatinine is 1.5. What is the most appropriate management of his bisoprolol?\n\nA) Increase bisoprolol dose — higher doses provide more mortality benefit\nB) Stop bisoprolol abruptly — it is causing the hypotension\nC) Halve the bisoprolol dose gradually and reassess hemodynamics\nD) Maintain bisoprolol dose and add midodrine for hypotension support"
+    back: "C) Halve the bisoprolol dose gradually and reassess hemodynamics\n\nIn ADHF with hypotension, beta-blockers should NOT be abruptly discontinued (rebound tachycardia, arrhythmias, worsening ischemia). They should be cautiously halved and uptitrated only after stabilization. Abrupt discontinuation is associated with worse short-term outcomes. Midodrine may help orthostatic hypotension but does not address the underlying issue. Beta-blocker dose reduction allows the heart rate to rise slightly and improve CO. After optimization, beta-blockers should be re-uptitrated. This is different from cardiogenic shock where temporary discontinuation may be needed."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 61-year-old man with HFrEF (EF 22%) is admitted with diuretic-refractory congestion (still 4+ pitting edema, severe orthopnea on 200 mg furosemide daily). His creatinine is 2.8 (baseline 2.1). BNP is 3200. What is the most appropriate diuretic strategy?\n\nA) Double furosemide dose to 400mg daily\nB) Switch to torsemide — better bioavailability in gut edema\nC) Add metolazone (thiazide-like diuretic) to achieve sequential nephron blockade\nD) Initiate ultrafiltration immediately"
+    back: "C) Add metolazone (thiazide-like diuretic) to achieve sequential nephron blockade\n\nDiuretic resistance in HF often involves activation of distal tubular sodium reabsorption (compensating for loop diuretic blockade). Sequential nephron blockade — adding a thiazide (metolazone, hydrochlorothiazide) to a loop diuretic — blocks both thick ascending limb (furosemide) AND distal convoluted tubule (metolazone), dramatically enhancing natriuresis. Metolazone is preferred due to efficacy at low GFR. Monitor closely for hypokalemia and azotemia. Torsemide has better oral bioavailability than furosemide (TRANSFORM-HF — no mortality difference). Ultrafiltration is reserved for truly refractory congestion (CARRESS-HF showed non-superiority over stepped medical therapy)."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 68-year-old man with HFrEF (EF 18%) and NYHA IV receives an LVAD. Three months later, he develops fever, bacteremia with Staphylococcus aureus, and purulent discharge at the driveline exit site. Blood cultures remain positive after 5 days of appropriate IV antibiotics. What is the most appropriate management?\n\nA) Prolonged IV antibiotics (6 weeks) and continue LVAD\nB) Urgent LVAD exchange\nC) Urgent cardiac transplantation\nD) Driveline revision surgery with pocket washout"
+    back: "C) Urgent cardiac transplantation\n\nLVAD driveline infections with S. aureus bacteremia that persists despite antibiotics represent a life-threatening complication. Persistent S. aureus bacteremia on a driveline or pump is an INTERMACS listing emergency — these patients should be urgently listed or expedited for cardiac transplantation if they are candidates, as the device itself harbors the infection and cannot be sterilized. LVAD exchange may occasionally be performed but carries very high operative risk. Prolonged antibiotics alone for persistent S. aureus bacteremia on a foreign body (LVAD) is associated with very high mortality. Transplantation remains the optimal intervention."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 57-year-old man with non-ischemic dilated cardiomyopathy (EF 30%) undergoes genetic testing and is found to have a pathogenic variant in the LMNA gene (Lamin A/C). He is currently asymptomatic with no sustained arrhythmias on Holter. What is the most appropriate management recommendation?\n\nA) ICD implantation is not recommended until symptomatic VT or EF < 35%\nB) ICD implantation should be considered even with EF > 35% given LMNA mutation\nC) Genetic counseling only — no cardiac intervention required\nD) Initiate amiodarone prophylactically"
+    back: "B) ICD implantation should be considered even with EF > 35% given LMNA mutation\n\nLMNA mutations carry a very high risk of sudden cardiac death (SCD) from malignant ventricular arrhythmias, often BEFORE EF drops to <35% and sometimes even with normal EF. The EHRA/HRS/APHRS guidelines and 2023 ESC Cardiomyopathy Guidelines give a Class IIa recommendation for ICD in LMNA mutation carriers with: ≥2 of these risk factors — NSVT, LVEF < 45%, male sex, non-missense mutation. Even asymptomatic LMNA carriers warrant close surveillance and early ICD consideration, differing from other DCM etiologies where EF < 35% is the standard threshold."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 74-year-old woman with HFrEF and persistent NYHA III symptoms despite OMT has a resting HR of 78 in sinus rhythm. She is on carvedilol 12.5mg BID, sacubitril/valsartan, and eplerenone. Is she a candidate for ivabradine, and what is the physiological rationale?\n\nA) Yes — ivabradine reduces mortality by inhibiting the HCN 'funny' current (If) in the SA node\nB) No — she must be on a selective beta-1 blocker (bisoprolol or metoprolol) for ivabradine to be indicated\nC) Yes — ivabradine improves EF through direct positive inotropic action on cardiomyocytes\nD) No — resting HR 78 is below the 80 bpm threshold for ivabradine indication"
+    back: "B) No — she must be on a selective beta-1 blocker (bisoprolol or metoprolol) for ivabradine to be indicated\n\nIvabradine is indicated in HFrEF patients with sinus rhythm, LVEF ≤ 35%, HR ≥ 70 bpm (ESC) or ≥ 77 bpm (FDA/SHIFT trial) despite maximum tolerated beta-blocker dose — but critically, the SHIFT trial enrolled patients predominantly on bisoprolol or carvedilol at target doses. The guidelines specify ivabradine should be considered when patients are already on maximum TOLERATED beta-blocker. Carvedilol is acceptable, but the key issue here is whether the carvedilol dose is maximum tolerated (12.5mg BID may not be). The ESC guideline requires maximum tolerated beta-blocker AND HR ≥ 70. HR 78 ≥ 70 qualifies. The dose should be maximized first."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 65-year-old man with ischemic HFrEF (EF 25%) and secondary mitral regurgitation (vena contracta 8mm, EROA 0.42 cm², regurgitant volume 55 mL) remains NYHA III despite CRT-D and OMT. He is high surgical risk (STS 6%). Echo shows LVEDD 65mm. Which intervention is most appropriate based on current evidence?\n\nA) Surgical MV repair — mitral regurgitation correction is mandatory\nB) Transcatheter edge-to-edge repair (MitraClip) — Class IIa indication\nC) Continue medical optimization — LVEDD too large for MitraClip benefit\nD) Add digoxin to reduce functional MR by slowing HR"
+    back: "B) Transcatheter edge-to-edge repair (MitraClip) — Class IIa indication\n\nThe COAPT trial (2018) demonstrated that transcatheter MV repair (MitraClip) in HFrEF patients with ≥moderate-severe secondary MR — who remain symptomatic despite OMT + CRT — significantly reduces HF hospitalizations and mortality at 2 years. Patient selection criteria: EROA ≥ 0.30cm², symptomatic despite OMT, LVEDD ≤ 70mm, LVEF 20–50%, PCWP ≤ 36. This patient meets criteria. The key is adequate device eligibility assessment. In MITRA-FR (different selection criteria — more severe LV dysfunction) there was no benefit — illustrating the importance of the 'proportionate' MR concept (EROA proportionate to LV size)."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 72-year-old woman with HFrEF is on torsemide 40mg daily for chronic edema management. She presents with muscle cramps, weakness, BP 148/88, and an ECG showing flattened T waves and U waves. Labs: K+ 2.9, Mg2+ 0.6 mEq/L, creatinine 1.4. Which electrolyte should be repleted FIRST?\n\nA) Replace potassium alone — hypokalemia is the primary concern\nB) Replace magnesium first — hypomagnesemia prevents effective potassium repletion\nC) Replace sodium — hyponatremia is the cause of her symptoms\nD) Replace calcium — U waves indicate hypocalcemia"
+    back: "B) Replace magnesium first — hypomagnesemia prevents effective potassium repletion\n\nHypomagnesemia is a critical cofactor for potassium repletion. Magnesium is required for proper function of the Na-K-ATPase pump, which maintains intracellular potassium. If magnesium is not repleted first, potassium supplementation will be ineffective — the kidneys will continue to waste potassium regardless of how much is given. This is a classic electrolyte trap in diuretic-treated HF patients. ECG changes (U waves, flat T waves) reflect hypokalemia but magnesium must be corrected concurrently. IV magnesium sulfate should precede or accompany potassium supplementation."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 59-year-old man with NYHA II HFrEF (EF 28%) is initiated on lisinopril 5mg. After 2 weeks, his creatinine rises from 1.2 to 1.7 mg/dL (42% increase) and potassium rises from 4.2 to 5.1 mEq/L. He is asymptomatic. Blood pressure is 118/74 mmHg. What should you do?\n\nA) Discontinue lisinopril immediately — this rise indicates renal artery stenosis\nB) Continue lisinopril — creatinine rise up to 30% is acceptable; this 42% rise warrants discontinuation\nC) Continue lisinopril — a rise of up to 50% is acceptable if the patient is asymptomatic; check renal artery duplex ultrasound\nD) Halve the dose of lisinopril and recheck in 1–2 weeks"
+    back: "C) Continue lisinopril — a rise of up to 50% is acceptable if the patient is asymptomatic; check renal artery duplex ultrasound\n\nACE inhibitors and ARBs reduce intraglomerular pressure by dilating the efferent arteriole, causing a predictable, expected rise in creatinine. The ACC/AHA guidelines consider a creatinine rise of UP TO 50% above baseline (and up to 3.0 mg/dL absolute) acceptable and do not require drug discontinuation. This 42% rise (1.2→1.7) is within acceptable limits. However, a bilateral renal artery stenosis or high-grade unilateral stenosis should be considered if the rise exceeds these limits. Continuing therapy with close monitoring is appropriate here."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 68-year-old man is on sacubitril/valsartan, carvedilol, eplerenone, and dapagliflozin for HFrEF. His K+ is 5.9 mEq/L. His physician wants to start a novel potassium-binding agent. Which agent specifically approved for chronic use in HF/CKD to enable MRA use is most appropriate?\n\nA) Sodium polystyrene sulfonate (Kayexalate)\nB) Patiromer (Veltassa) or sodium zirconium cyclosilicate (Lokelma)\nC) Calcium gluconate\nD) Insulin + dextrose"
+    back: "B) Patiromer (Veltassa) or sodium zirconium cyclosilicate (Lokelma)\n\nNovel potassium-binding agents — patiromer (Veltassa) and sodium zirconium cyclosilicate (Lokelma) — are approved specifically for chronic hyperkalemia management in patients who would otherwise require dose reduction or discontinuation of RAAS inhibitors/MRAs. The DIAMOND trial showed patiromer enabled MRA initiation and uptitration in HFrEF with hyperkalemia, improving outcomes. These are non-absorbed cation exchangers with better safety profiles than sodium polystyrene sulfonate (risk of intestinal necrosis, not approved for chronic use). This is a key management point from recent HF guidelines."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 77-year-old woman with class IV HF, EF 18%, in the ICU on dobutamine and norepinephrine develops progressive renal failure (creatinine 5.2, rising). She is not a transplant candidate due to age and comorbidities. Her family asks about goals of care. Which statement best describes the role of chronic inotropes in this context?\n\nA) Chronic dobutamine infusion has been shown to improve survival as destination therapy\nB) Chronic inotropes are a palliative strategy that improves symptoms but does not improve mortality\nC) Phosphodiesterase inhibitors (milrinone) provide superior outcomes to catecholamines in chronic use\nD) Levosimendan IV infusions every 2 weeks improve survival and are standard of care"
+    back: "B) Chronic inotropes are a palliative strategy that improves symptoms but does not improve mortality\n\nChronic inotropic therapy (dobutamine, milrinone) in end-stage HF is used exclusively as palliation or bridge-to-transplant/LVAD. Randomized trials (OPTIME-CHF, PROMISE) showed NO mortality benefit and possible harm with chronic phosphodiesterase inhibition (increased arrhythmias, mortality). Levosimendan has not demonstrated a mortality benefit in recurrent IV infusion strategies (LeoDor, LION-HEART trials). In a patient not eligible for LVAD or transplant, chronic inotropes represent comfort-focused therapy — the family must understand this is palliative."
+    difficulty: hard
+    tags: [Heart Failure, MCQ, Toronto Notes]
+  - front: "A 28-year-old male athlete complains of palpitations and presyncope during intense exercise. He has a family history of sudden cardiac death (brother at age 23). ECG shows deep T-wave inversions in V1–V4 and epsilon waves. Cardiac MRI shows RV dilation (RVEDV 130 mL/m²), RV wall motion abnormalities, and late gadolinium enhancement of the RV free wall in a subepicardial pattern. What is the diagnosis and recommended management?\n\nA) HCM — ICD and restriction from competitive sport\nB) ARVC — ICD implantation and restriction from competitive sport\nC) Dilated cardiomyopathy — cardiac transplant evaluation\nD) Sarcoid cardiomyopathy — PET scan and immunosuppression"
+    back: "B) ARVC — ICD implantation and restriction from competitive sport\n\nARVC (Arrhythmogenic Right Ventricular Cardiomyopathy) diagnosis uses the 2010 Task Force Criteria — Major criteria: epsilon waves on ECG, RVEDV > 110 mL/m² (male), RV wall motion abnormalities. This patient meets multiple major criteria. Desmosomal gene mutations (PKP2, DSP, DSG2) are identified in 50–60%. Exercise is a major trigger for arrhythmias and disease progression in ARVC — competitive sport prohibition is mandatory. ICD is recommended for syncope/VT history + structural disease. Exercise must be strictly limited regardless of ICD (ICD shocks + exercise-induced VF in ARVC can be fatal)."
+    difficulty: hard
+    tags: [Cardiomyopathy, MCQ, Toronto Notes]
+  - front: "A 32-year-old woman is found to have an echocardiogram showing a hypertrophied LV with maximum wall thickness 22mm at the basal septum, SAM (systolic anterior motion) of the mitral valve, and a resting LVOT gradient of 65 mmHg. She is dyspneic (NYHA III) and on maximally tolerated metoprolol 200mg and disopyramide 300mg BID. She has no syncope or NSVT. What is the most appropriate next intervention?\n\nA) Implant ICD — LVOT gradient > 50 mmHg is a surgical contraindication\nB) Septal reduction therapy — either surgical myectomy or alcohol septal ablation (ASA)\nC) Add verapamil — superior to disopyramide for LVOT obstruction reduction\nD) Add mavacamten — novel cardiac myosin inhibitor approved for obstructive HCM"
+    back: "D) Add mavacamten — novel cardiac myosin inhibitor approved for obstructive HCM\n\nMavacamten (Camzyos) is the first cardiac myosin inhibitor approved (FDA 2022, Health Canada 2023) for symptomatic obstructive HCM (NYHA class II–III) to reduce LVOT obstruction and symptoms. The EXPLORER-HCM trial showed significant reduction in LVOT gradient, improved NYHA class, and improved exercise capacity. It is now a guideline-recommended (Class IIa, 2024 ACC HCM) option for patients on maximally tolerated pharmacotherapy before invasive septal reduction. In a young woman without syncope/NSVT (lower SCD risk), trying mavacamten before invasive septal reduction is appropriate. ICD indications are based on SCD risk score."
+    difficulty: hard
+    tags: [Cardiomyopathy, MCQ, Toronto Notes]
+  - front: "A 45-year-old man is diagnosed with hypertrophic cardiomyopathy (HCM). His 5-year SCD risk is estimated at 6% using the HCM Risk-SCD calculator. His maximum wall thickness is 24mm, he had one episode of unexplained syncope 8 months ago, and family history includes a first-degree relative with HCM-related SCD. What is the ICD recommendation?\n\nA) ICD not recommended — 5-year SCD risk < 6% threshold\nB) ICD recommended (Class IIa) — 5-year SCD risk ≥ 6% warrants consideration\nC) ICD mandatory (Class I) — syncope alone is an absolute ICD indication in HCM\nD) ICD not recommended — syncope in HCM is usually vasovagal, not arrhythmic"
+    back: "B) ICD recommended (Class IIa) — 5-year SCD risk ≥ 6% warrants consideration\n\nThe 2014 ESC and 2020 ACC/AHA guidelines use the HCM Risk-SCD tool. 5-year SCD risk ≥ 6% → ICD reasonable (Class IIa). 5-year risk 4–6% → ICD may be considered (Class IIb). Risk > 6% + additional risk factors (syncope within 5 years is a risk factor in the ESC model; family SCD; maximal wall thickness ≥ 30mm; massive LV hypertrophy, LVOT obstruction, LGE) → ICD strongly recommended. This patient: risk 6% + syncope + family SCD history → clearly Class IIa/IIb with compelling features → ICD implantation. The ACC/AHA 2020 guidelines focus more on individualizing major risk factors rather than strictly the score."
+    difficulty: hard
+    tags: [Cardiomyopathy, MCQ, Toronto Notes]
+  - front: "A 55-year-old man presents with progressive exertional dyspnea, bilateral leg swelling, and a 10-kg weight gain over 3 months. Echo shows: EF 30%, markedly thickened LV walls (septum 20mm, PW 18mm) with sparkling appearance, biatrial enlargement, restrictive filling pattern, and a small pericardial effusion. His BNP is 840 pg/mL, protein electrophoresis shows an M-spike, and urine Bence-Jones proteins are positive. What is the cause of his cardiomyopathy?\n\nA) Hypertensive cardiomyopathy with concentric hypertrophy\nB) Cardiac amyloidosis — light-chain (AL) type\nC) Cardiac sarcoidosis — granulomatous cardiomyopathy\nD) HCM — sarcomeric mutation cardiomyopathy"
+    back: "B) Cardiac amyloidosis — light-chain (AL) type\n\nCardiac amyloidosis: thickened walls + sparkling echo + restrictive filling + biatrial enlargement + small pericardial effusion + low-voltage ECG (classic). The M-spike + Bence-Jones proteins = multiple myeloma/plasma cell dyscrasia → AL (light-chain) amyloidosis. Distinguish from ATTR (transthyretin) amyloidosis: age > 65, wild-type or hereditary TTR variant, no M-spike, pyrophosphate scan (DPD/PYP) positive. Diagnosis: endomyocardial biopsy (gold standard) or cardiac MRI (LGE pattern). Treatment of AL: chemotherapy (bortezomib-based) ± daratumumab. Tafamidis (ATTR stabilizer) is not appropriate for AL-type. Bone marrow biopsy + free light chain assay required."
+    difficulty: hard
+    tags: [Cardiomyopathy, MCQ, Toronto Notes]
+  - front: "A 40-year-old woman of West African descent presents with dyspnea, bilateral hilar lymphadenopathy on CXR, skin nodules, and uveitis. Echo shows a thickened, hyper-echogenic myocardium, EF 38%, and QRS fragmentation on ECG. Her FDG-PET shows patchy myocardial uptake. Holter shows nonsustained VT. What is the most appropriate cardiac management?\n\nA) Immunosuppression with prednisone alone — resolves cardiac involvement in 80%\nB) Immunosuppression + ICD given NSVT and EF < 40% in cardiac sarcoidosis\nC) Antifungal therapy — cardiac histoplasmosis mimics sarcoidosis\nD) Cardiac transplantation — no effective therapy for cardiac sarcoidosis"
+    back: "B) Immunosuppression + ICD given NSVT and EF < 40% in cardiac sarcoidosis\n\nCardiac sarcoidosis (CS) presents with cardiomyopathy, conduction disease, and ventricular arrhythmias. FDG-PET with patchy uptake (active inflammation) and LGE on MRI confirm CS. Management: (1) Immunosuppression — prednisone ± methotrexate (reduces inflammation and may improve EF); (2) ICD — strongly recommended when EF < 35% or with NSVT/syncope (JMHRS guidelines, HRS consensus 2014). Sarcoidosis VT is refractory to antiarrhythmics and carries high SCD risk. Catheter ablation is an adjunct for VT storm. This patient: EF 38% + NSVT = ICD Class I per most guidelines + immunosuppression."
+    difficulty: hard
+    tags: [Cardiomyopathy, MCQ, Toronto Notes]
+  - front: "How is BNP/NT-proBNP interpreted in heart failure?"
+    back: "BNP <100 or NT-proBNP <300: HF very unlikely (high NPV). BNP >400 or NT-proBNP >900 (age-adjusted): HF very likely. Grey zone: further investigation needed. Obesity lowers BNP. Renal failure elevates NT-proBNP\n\nBNP/NT-proBNP useful for: diagnosis of acute dyspnea (HF vs non-HF), prognosis (higher = worse), monitoring treatment response (target >30% reduction). CCS HF guidelines. Age-adjusted NT-proBNP cutoffs for acute HF: <50yr: >450, 50-75: >900, >75: >1800 pg/mL."
+    difficulty: hard
+    tags: [BNP, NT-proBNP, heart failure, diagnosis]
+  - front: "What is the quadruple therapy for HFrEF (EF<=40%)?"
+    back: "1) ACEi/ARB or ARNI (sacubitril-valsartan). 2) Beta-blocker (bisoprolol, carvedilol, metoprolol succinate). 3) MRA (spironolactone or eplerenone). 4) SGLT2i (dapagliflozin or empagliflozin). All reduce mortality - initiate early and titrate to target doses\n\nCCS 2022 HF update. ARNI superior to ACEi (PARADIGM-HF). Start ACEi first, switch to ARNI when stable. SGLT2i: benefit regardless of diabetes status (DAPA-HF, EMPEROR-Reduced). MRA: monitor K+ (risk hyperkalemia with ACEi). Titrate to target over weeks-months."
+    difficulty: hard
+    tags: [HFrEF, quadruple therapy, ARNI, SGLT2i]
+  - front: "What are the indications for ICD and CRT in heart failure?"
+    back: "ICD for primary prevention: EF<=35% despite >=3mo optimal medical therapy, NYHA II-III, expected survival >1yr. CRT (biventricular pacing): EF<=35% + LBBB + QRS>=150ms + NYHA II-IV on optimal therapy\n\nICD secondary prevention: survived cardiac arrest or sustained VT. CRT improves symptoms and survival in selected patients. CRT-D: combination device. Non-LBBB with QRS 120-149: weaker indication. Reassess EF after 3 months of optimal medical therapy before implant decision."
+    difficulty: hard
+    tags: [ICD, CRT, heart failure, device]
+  - front: "How is acute decompensated heart failure managed?"
+    back: "LMNOP: Lasix (furosemide IV), Morphine (limited evidence, caution), Nitrates (NTG SL/IV if SBP>100), Oxygen (only if hypoxic), Position (upright). IV furosemide 40-80mg (or 2x home dose). BiPAP for respiratory distress. Vasopressors if cardiogenic shock\n\nCCS acute HF guidelines. Wet and warm (most common): diuretics + vasodilators. Wet and cold: inotrope (dobutamine/milrinone) + cautious diuretics. Monitor: daily weights, I/O, creatinine, K+. Decongestion target: euvolemia (no JVD, no edema, flat weight). Continue GDMT unless hypotensive."
+    difficulty: hard
+    tags: [acute HF, decompensated, furosemide]
+  - front: "What is HFpEF and how does its management differ from HFrEF?"
+    back: "HFpEF: EF>=50%, diastolic dysfunction, exercise intolerance. Diagnosis: symptoms + elevated BNP/NT-proBNP + echocardiographic diastolic dysfunction. Treatment: diuretics for congestion, SGLT2i (EMPEROR-Preserved), treat comorbidities (HTN, AF, obesity, CAD)\n\nHFpEF has limited evidence-based therapies compared to HFrEF. SGLT2i are the only drug class shown to reduce HF hospitalizations in HFpEF. No mortality benefit proven. ARNi, MRA showed trends. Focus on comorbidities: AF rate control, BP control, weight loss, exercise training."
+    difficulty: hard
+    tags: [HFpEF, diastolic dysfunction, SGLT2i]
+  - front: "What is the NYHA functional classification of heart failure?"
+    back: "I: no limitation (asymptomatic). II: slight limitation, symptoms with ordinary activity. III: marked limitation, symptoms with less-than-ordinary activity. IV: symptoms at rest\n\nNYHA class guides treatment decisions and prognosis. Class I-II: lower mortality risk, focus on neurohormonal blockade. Class III-IV: consider advanced HF therapies (ICD/CRT, LVAD, transplant). NYHA class can fluctuate with treatment and decompensation."
+    difficulty: easy
+    tags: [NYHA, heart failure, classification]
+  - front: "What are the causes and management of new-onset heart failure?"
+    back: "Ischemic (most common, 60-70%): coronary angiography. Non-ischemic: dilated CM (idiopathic, alcohol, peripartum, viral), hypertensive, valvular, tachycardia-mediated. Workup: echo, BNP, ECG, CXR, CBC, lytes, Cr, TSH, ferritin, cardiac MRI\n\nReversible causes: revascularization for ischemic, valve surgery, rate control for tachycardia-mediated, alcohol cessation, thyroid correction, iron replacement (IV iron for ferritin<100 or 100-300 with Tsat<20%). Cardiac MRI: distinguishes ischemic from non-ischemic, detects infiltrative diseases."
+    difficulty: hard
+    tags: [heart failure, etiology, workup]
+  - front: "What is the role of diuretics in heart failure management?"
+    back: "Loop diuretics (furosemide, torsemide, bumetanide): mainstay for volume overload. Not mortality-reducing. Titrate to euvolemia. IV > PO bioavailability in decompensated HF. Resistance: add metolazone (thiazide) 30min before loop\n\nMonitor: weight, creatinine, K+, Mg2+. Overdiuresis: pre-renal AKI, hypotension. Worsening creatinine with decongestion (hemoconcentration) is acceptable if patient improving clinically. Torsemide may be superior to furosemide (TRANSFORM-HF neutral but better oral bioavailability)."
+    difficulty: medium
+    tags: [diuretics, furosemide, heart failure]
+  - front: "What medications should be avoided or used with caution in HF?"
+    back: "Avoid: NSAIDs (fluid retention, worsens HF/renal), non-DHP CCBs (negative inotropy - diltiazem, verapamil), thiazolidinediones (fluid retention), most antiarrhythmics except amiodarone. Caution: metformin now safe in stable HF\n\nRate-limiting CCBs (diltiazem, verapamil) reduce contractility and can worsen HFrEF. Amlodipine is safe. Dronedarone contraindicated in NYHA III-IV (ANDROMEDA trial: increased mortality). Pregabalin can cause fluid retention. Type I antiarrhythmics contraindicated."
+    difficulty: hard
+    tags: [heart failure, contraindicated drugs, NSAIDs]
+  - front: "What are the criteria for advanced heart failure and when to refer for transplant/LVAD?"
+    back: "Advanced HF: persistent NYHA III-IV despite optimal therapy, recurrent hospitalizations (>=2/yr), need for inotropes, declining renal function, cardiac cachexia, refractory congestion. Refer for transplant evaluation if: <70yr, no irreversible organ damage, compliant, good social support\n\nLVAD as bridge to transplant or destination therapy. 2-year survival with LVAD ~50-60%. Complications: bleeding, stroke, driveline infection, RV failure. Heart transplant: median survival >12 years. Canada has ~200 heart transplants/year. Palliative care discussion alongside advanced therapies."
+    difficulty: hard
+    tags: [advanced HF, transplant, LVAD]
+  - front: "A 55-year-old male with known heart failure presents with bilateral lower extremity pitting edema, elevated JVP, and hepatojugular reflux. What is the mechanism of edema, and what investigation confirms the diagnosis?"
+    back: "Right-sided heart failure causing elevated venous pressures leading to transudative edema. Elevated JVP and hepatojugular reflux confirm elevated right atrial pressure. BNP/NT-proBNP will be elevated. Echocardiography is the key investigation to assess cardiac function, EF, and right heart pressures.\n\nIn CHF, increased hydrostatic pressure from venous congestion drives fluid into the interstitium. The edema is bilateral, symmetric, pitting, and gravity-dependent. It improves with diuresis (furosemide) and elevation. Unilateral edema should prompt evaluation for DVT rather than CHF."
+    difficulty: easy
+    tags: [edema, CHF, heart-failure, cardiology, fluid-balance]
+  - front: "How do you differentiate the four major causes of bilateral peripheral edema: CHF, nephrotic syndrome, cirrhosis, and venous insufficiency?"
+    back: "CHF: elevated JVP, S3, pulmonary crackles, elevated BNP. Nephrotic: periorbital edema (especially morning), proteinuria >3.5 g/day, hypoalbuminemia, hyperlipidemia. Cirrhosis: ascites, spider angiomata, caput medusae, palmar erythema, low albumin. Venous insufficiency: stasis dermatitis, varicose veins, hemosiderin deposits, no systemic findings.\n\nCHF edema results from increased hydrostatic pressure, while nephrotic syndrome and cirrhosis cause edema primarily through decreased oncotic pressure (hypoalbuminemia). Serum albumin, urinalysis for proteinuria, BNP, and liver function tests are essential initial investigations to differentiate these causes."
+    difficulty: hard
+    tags: [edema, differential-diagnosis, CHF, nephrotic, cirrhosis, clinical-approach]
+  - front: "A 40-year-old woman presents with acute unilateral left leg swelling, warmth, and calf tenderness. She recently had a long hospitalization. What is the diagnosis, and what is the diagnostic approach?"
+    back: "Deep vein thrombosis (DVT). Apply the Wells score for DVT. If score is low probability, check D-dimer — if negative, DVT is excluded. If high probability or D-dimer positive, perform compression ultrasonography of the lower extremity. Treatment is anticoagulation (LMWH bridging to warfarin, or DOAC).\n\nUnilateral leg swelling is DVT until proven otherwise, especially with risk factors (immobilization, surgery, malignancy, OCP). Bilateral edema is more likely systemic (CHF, nephrotic, cirrhosis). Homan's sign (calf pain with dorsiflexion) is unreliable. Compression ultrasound is the imaging modality of choice."
+    difficulty: medium
+    tags: [edema, DVT, unilateral, Wells-score, anticoagulation]
+  - front: "What is the significance of periorbital (facial) edema in the evaluation of generalized edema?"
+    back: "Periorbital edema, especially worse in the morning, strongly suggests nephrotic syndrome because the loose periorbital tissue easily accumulates fluid from low oncotic pressure. It can also be seen in angioedema (allergic, ACEi-related, hereditary), hypothyroidism (myxedema — non-pitting), and superior vena cava syndrome.\n\nGravity-dependent edema (legs worse at end of day) suggests hydrostatic causes like CHF or venous insufficiency. Periorbital edema that is worse in the morning points to low oncotic pressure states. The distinction between pitting edema (fluid) and non-pitting edema (myxedema, lymphedema) is also clinically important."
+    difficulty: medium
+    tags: [edema, periorbital, nephrotic-syndrome, differential-diagnosis]
+  - front: "What is the pathophysiology of heart failure with reduced ejection fraction (HFrEF)?"
+    back: "Myocardial injury (MI, cardiomyopathy) leads to decreased contractility, reduced CO, neurohormonal activation (RAAS, SNS), maladaptive remodeling (ventricular dilation, hypertrophy), further dysfunction\n\nCompensatory mechanisms initially maintain CO but worsen long-term: increased preload (volume overload), increased afterload (vasoconstriction), tachycardia. This is why ACEi/ARB/ARNI, beta-blockers, and MRA are foundational."
+    difficulty: hard
+    tags: [HF, pathophysiology]
+  - front: "What side effects may occur with excessive naloxone dosing?"
+    back: "Nausea, agitation, sweating, tachycardia, HTN, re-emergence of pain, pulmonary edema, and seizures—essentially opioid withdrawal symptoms\n\nNaloxone competitively displaces opioids from receptors, precipitating acute withdrawal in opioid-dependent patients."
+    difficulty: medium
+    tags: [naloxone, opioid withdrawal, adverse effects, toronto-notes, pages-0081-0082-0083-0084-0085-0086-0087-0088-0089-0090]
+  - front: "What does HFpEF stand for?"
+    back: "Heart Failure with Preserved Ejection Fraction\n\nHFpEF accounts for approximately 50% of heart failure cases. Patients have symptoms of HF but LVEF remains normal (>50%)."
+    difficulty: easy
+    tags: [heart-failure, HFpEF, cardiology-terminology, toronto-notes, pages-0091-0092-0093-0094-0095-0096-0097-0098-0099-0100]
+  - front: "What does HFrEF stand for?"
+    back: "Heart Failure with Reduced Ejection Fraction\n\nHFrEF is defined as LVEF ≤40%. First-line therapies include ACEI/ARB/ARNI, beta-blockers, MRAs, and SGLT2 inhibitors."
+    difficulty: easy
+    tags: [heart-failure, HFrEF, cardiology-terminology, toronto-notes, pages-0091-0092-0093-0094-0095-0096-0097-0098-0099-0100]
+  - front: "What does BNP stand for and what does it measure?"
+    back: "Brain Natriuretic Peptide - a hormone released from cardiac ventricles in response to wall stress\n\nBNP and NT-proBNP are used to diagnose heart failure, assess severity, and guide management. Elevated levels indicate volume overload or myocardial injury."
+    difficulty: easy
+    tags: [heart-failure, biomarkers, cardiology-terminology, toronto-notes, pages-0091-0092-0093-0094-0095-0096-0097-0098-0099-0100]
+  - front: "What does NYHA stand for and what does it classify?"
+    back: "New York Heart Association - a functional classification system for heart failure severity (Class I-IV)\n\nNYHA classification is based on symptom limitation during physical activity. It guides therapeutic decisions and prognosis in heart failure patients."
+    difficulty: easy
+    tags: [heart-failure, clinical-classification, cardiology-terminology, toronto-notes, pages-0091-0092-0093-0094-0095-0096-0097-0098-0099-0100]
+  - front: "What are the risk factors for developing atrial fibrillation?"
+    back: "Older age, hypertension, heart failure, valvular disease (especially dilated LA), recent cardiac surgery, lung disease, excessive alcohol consumption, sepsis, and obstructive sleep apnea\n\nThese conditions promote atrial remodeling, inflammation, and structural changes that create a substrate for AFib development."
+    difficulty: easy
+    tags: [cardiology, atrial fibrillation, risk factors, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What causes tachycardia-induced cardiomyopathy and is it reversible?"
+    back: "Untreated tachycardias of long duration (days) can cause tachycardia-induced cardiomyopathy; it is potentially reversible with treatment of the underlying SVT\n\nProlonged rapid heart rates cause ventricular remodeling and dysfunction. Early recognition and rate/rhythm control can restore cardiac function."
+    difficulty: medium
+    tags: [cardiology, SVT, cardiomyopathy, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "What are the major risk factors for atrial fibrillation?"
+    back: "Older age, hypertension, heart failure, valvular disease (especially leading to dilated left atrium), recent cardiac surgery, lung disease, excessive alcohol consumption, sepsis (particularly pneumonia), and obstructive sleep apnea.\n\nThese conditions promote atrial remodeling, dilation, and fibrosis, creating the substrate for multiple wavelets of re-entry that maintain atrial fibrillation."
+    difficulty: easy
+    tags: [cardiology, arrhythmias, atrial fibrillation, risk factors, toronto-notes, pages-0111-0112-0113-0114-0115-0116-0117-0118-0119-0120]
+  - front: "Why are CCBs contraindicated in LV systolic dysfunction?"
+    back: "Due to negative inotropic effects that can further impair cardiac contractility\n\nNon-dihydropyridine CCBs (verapamil, diltiazem) have significant negative inotropic effects that worsen heart failure."
+    difficulty: medium
+    tags: [cardiology, CCB, heart-failure, toronto-notes, pages-0121-0122-0123-0124-0125-0126-0127-0128-0129-0130]
+  - front: "What are the backward (venous congestion) signs and symptoms of LEFT-sided heart failure?"
+    back: "Dyspnea, orthopnea, PND (paroxysmal nocturnal dyspnea), cough, crackles, S3 gallop\n\nLeft ventricular failure leads to increased left-sided filling pressures, causing pulmonary congestion and these respiratory symptoms."
+    difficulty: easy
+    tags: [heart failure, cardiology, clinical findings, pulmonary, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What compensatory mechanisms are activated when heart failure causes decreased cardiac output?"
+    back: "Sympathetic nervous system (SNS) activation causing tachycardia, and Renin-Angiotensin-Aldosterone System (RAAS) causing sodium and water retention\n\nBoth compensatory mechanisms initially maintain perfusion but ultimately increase cardiac demand, leading to eventual decompensation if unchecked."
+    difficulty: medium
+    tags: [heart failure, pathophysiology, compensatory mechanisms, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the definition of Heart Failure with Reduced Ejection Fraction (HFrEF)?"
+    back: "LVEF <40%\n\nHFrEF is characterized by impaired myocardial contractile function leading to decreased LVEF and stroke volume."
+    difficulty: easy
+    tags: [heart failure, HFrEF, classification, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What are the clinical findings in HFrEF?"
+    back: "Displaced apex beat, S3 gallop, cardiothoracic ratio >0.5 on CXR, decreased LVEF, LV dilatation\n\nThese findings reflect the volume-overloaded phenotype typical of systolic heart failure with reduced ejection fraction."
+    difficulty: easy
+    tags: [heart failure, HFrEF, clinical findings, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What are the common causes of HFrEF?"
+    back: "Ischemic heart disease (extensive CAD, previous MI), hypertension, diabetes, ethanol and other toxins, viral myocarditis, dilated cardiomyopathy, tachycardia-induced cardiomyopathy\n\nBoth ischemic and non-ischemic causes can lead to systolic dysfunction characterized by reduced ejection fraction."
+    difficulty: easy
+    tags: [heart failure, HFrEF, etiology, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the definition of Heart Failure with Preserved Ejection Fraction (HFpEF)?"
+    back: "LVEF ≥50%\n\nHFpEF was previously known as 'diastolic heart failure' and is characterized by concentric remodeling with a stiff left ventricle."
+    difficulty: easy
+    tags: [heart failure, HFpEF, classification, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the typical phenotype and clinical findings in HFpEF?"
+    back: "Concentric remodeling with stiff LV; findings include HTN, sustained apex beat, S4 gallop, normal-sized heart on CXR, LVH on ECG/echo, normal EF\n\nReduced LV compliance causes increased filling pressures and pulmonary congestion despite preserved systolic function."
+    difficulty: medium
+    tags: [heart failure, HFpEF, clinical findings, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What population is most commonly affected by HFpEF?"
+    back: "Elderly patients and females\n\nHFpEF is more common in these populations due to age-related changes in cardiac compliance and higher prevalence of hypertension."
+    difficulty: easy
+    tags: [heart failure, HFpEF, epidemiology, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What percentage of heart failure patients have preserved ejection fraction?"
+    back: ">50%\n\nHFpEF accounts for over half of all heart failure cases and confers a similar prognosis to HFrEF."
+    difficulty: easy
+    tags: [heart failure, HFpEF, epidemiology, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What are the causes of permanent HFpEF?"
+    back: "Severe hypertrophy (HTN, AS, HCM), restrictive cardiomyopathy (e.g., amyloidosis), prior MI\n\nThese conditions cause irreversible structural changes that impair diastolic filling."
+    difficulty: easy
+    tags: [heart failure, HFpEF, etiology, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the definition of Heart Failure with Mid-Range Ejection Fraction (HFmrEF)?"
+    back: "LVEF 41-49%\n\nHFmrEF includes patients recovering from HFrEF, declining from HFpEF, and those transitioning between the two phenotypes."
+    difficulty: easy
+    tags: [heart failure, HFmrEF, classification, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What treatment is recommended for HFmrEF according to 2022 AHA/ACC/HFSA guidelines?"
+    back: "Diuretics as needed (Class 1), SGLT2 inhibitors (Class IIa), ACEI/ARB/ARNI (Class IIb), MRA (Class IIb), and evidence-based beta-blockers for HFrEF\n\nThese recommendations acknowledge the overlap between HFrEF and HFpEF in this intermediate ejection fraction range."
+    difficulty: hard
+    tags: [heart failure, HFmrEF, treatment, guidelines, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What laboratory investigations should be ordered in suspected heart failure?"
+    back: "CBC, electrolytes (including K+, Na+, Mg2+), BUN, Cr, fasting glucose, HbA1c, lipid profile, LFTs, TSH, ferritin, BNP (>100 pg/mL), NT-proBNP, uric acid, urinalysis\n\nThese tests help identify precipitating factors, assess severity, and guide treatment in patients with suspected heart failure."
+    difficulty: medium
+    tags: [heart failure, investigations, laboratory, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What BNP scoring algorithm is used for diagnosing acute heart failure in the ED, and what are the cutoff values?"
+    back: "Score <6 has sensitivity of 96% and specificity of 84% for ruling out acute HF (developed by Baggish et al.); scores >6 indicate higher likelihood of acute HF\n\nThis clinical scoring system uses history and physical exam findings to probabilistically diagnose acute decompensated heart failure."
+    difficulty: hard
+    tags: [heart failure, diagnosis, BNP, emergency medicine, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What does echocardiography assess in heart failure evaluation?"
+    back: "Systolic function (LVEF), diastolic function (E/A ratio, E/e'), cardiac dimensions, wall motion abnormalities, RV systolic pressure (from TR jet), valvular disease, pericardial effusion\n\nEchocardiography is the cornerstone of heart failure assessment, providing comprehensive structural and functional cardiac information."
+    difficulty: easy
+    tags: [heart failure, investigations, echocardiography, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the mnemonic for acute treatment of pulmonary edema in heart failure?"
+    back: "LMNOPP: Lasix (furosemide 40-500mg IV), Morphine (2-4mg IV), Nitroglycerin (topical/IV/SL), Oxygen, Position (sit up with legs dangling), Positive airway pressure (CPAP/BiPAP)\n\nThis systematic approach addresses preload reduction, anxiety relief, afterload reduction, oxygenation, and respiratory support."
+    difficulty: easy
+    tags: [heart failure, treatment, pulmonary edema, emergency, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "Why should nitroglycerin be used with caution in certain heart failure patients?"
+    back: "Use with caution in preload-dependent patients (e.g., right heart failure or RV infarction) as venodilation may precipitate cardiovascular collapse\n\nWhile nitroglycerin reduces preload, patients with right-sided failure or RV infarction depend on adequate preload for cardiac output."
+    difficulty: medium
+    tags: [heart failure, treatment, nitroglycerin, contraindications, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What do Kerley B lines on chest X-ray indicate?"
+    back: "Interlobular septal edema, typically seen in pulmonary edema secondary to left heart failure\n\nKerley B lines are short horizontal lines in the lower lung fields representing engorged interlobular lymphatics due to increased pulmonary capillary pressure."
+    difficulty: easy
+    tags: [heart failure, CXR, pulmonary edema, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What S3 and S4 gallops indicate in heart failure?"
+    back: "S3 indicates rapid ventricular filling (volume overload, systolic dysfunction, seen in HFrEF); S4 indicates atrial contraction against stiff ventricle (diastolic dysfunction, seen in HFpEF)\n\nThese extra heart sounds reflect underlying pathophysiology: S3 reflects impaired contractility while S4 reflects impaired relaxation."
+    difficulty: medium
+    tags: [heart failure, physical exam, auscultation, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What are the backward failure symptoms of left heart failure?"
+    back: "Dyspnea, orthopnea, PND (paroxysmal nocturnal dyspnea), cough, crackles, and hepatomegaly (if right-sided)\n\nLeft heart failure causes pulmonary congestion due to elevated left-sided pressures, resulting in dyspnea, orthopnea, PND, bibasilar crackles, and cough."
+    difficulty: easy
+    tags: [heart failure, left heart failure, clinical symptoms, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "How does pressure overload (e.g., aortic stenosis, hypertension) lead to heart failure?"
+    back: "Pressure overload causes compensatory concentric hypertrophy, eventually progressing to interstitial fibrosis\n\nChronic pressure overload triggers myocyte thickening as compensation, which over time leads to stiffening and fibrosis of the ventricular wall."
+    difficulty: medium
+    tags: [heart failure, pathophysiology, pressure overload, hypertrophy, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "How does volume overload (e.g., aortic insufficiency) lead to heart failure?"
+    back: "Volume overload causes ventricular dilatation (eccentric remodelling)\n\nChronic volume overload stretches the ventricle, leading to chamber enlargement and eccentric remodelling as the heart attempts to accommodate increased preload."
+    difficulty: medium
+    tags: [heart failure, pathophysiology, volume overload, dilatation, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What compensatory mechanisms are activated in heart failure and what are their effects?"
+    back: "SNS activation causes tachycardia; RAAS activation causes sodium and water retention, increasing preload and afterload; net result is increased cardiac demand leading to decompensation\n\nThe neurohormonal response to decreased cardiac output paradoxically worsens heart failure by increasing cardiac workload through sympathetic stimulation and fluid retention."
+    difficulty: medium
+    tags: [heart failure, pathophysiology, compensatory mechanisms, RAAS, SNS, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is HFrEF and what is its LVEF threshold?"
+    back: "Heart Failure with Reduced Ejection Fraction; LVEF <40%\n\nHFrEF represents impaired myocardial contractile function with significantly reduced ejection fraction, typically presenting with volume overload."
+    difficulty: easy
+    tags: [heart failure, HFrEF, LVEF, classification, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is HFmrEF and what is its LVEF range?"
+    back: "Heart Failure with Mid-Range Ejection Fraction; LVEF 41-49%\n\nHFmrEF represents a transitional category including patients recovering from HFrEF, declining from HFpEF, or transitioning between the two."
+    difficulty: easy
+    tags: [heart failure, HFmrEF, LVEF, classification, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "According to 2022 AHA/ACC/HFSA guidelines, what treatments are recommended for symptomatic HFmrEF patients?"
+    back: "Diuretics (class 1), SGLT2 inhibitors (class IIa), ACEI/ARB/ARNI (class IIb), MRA (class IIb), evidence-based beta-blockers for HFrEF (class IIb)\n\nHFmrEF management includes guideline-directed medical therapy with diuretics as first-line and neurohormonal modifiers showing benefit in this population."
+    difficulty: hard
+    tags: [heart failure, HFmrEF, treatment guidelines, AHA/ACC, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is HFpEF and what is its LVEF threshold?"
+    back: "Heart Failure with Preserved Ejection Fraction; LVEF ≥50%\n\nHFpEF, formerly called 'diastolic heart failure,' occurs with a stiff, non-compliant ventricle that cannot fill properly despite normal contractile function."
+    difficulty: easy
+    tags: [heart failure, HFpEF, LVEF, classification, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the typical phenotype and mechanism of HFpEF?"
+    back: "Concentric remodelling with a 'stiff' LV; reduced LV compliance causes increased LV filling pressures, increased LA pressure/volume, and pulmonary congestion\n\nHFpEF is characterized by ventricular stiffening that impairs diastolic filling, leading to elevated pressures and pulmonary congestion despite normal ejection fraction."
+    difficulty: medium
+    tags: [heart failure, HFpEF, pathophysiology, diastolic dysfunction, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What percentage of heart failure patients have preserved EF and what is its prognosis?"
+    back: ">50% of HF patients have preserved EF; it confers similar prognosis to HFrEF\n\nHFpEF accounts for the majority of heart failure cases and carries comparable mortality to reduced EF heart failure, making it equally serious."
+    difficulty: easy
+    tags: [heart failure, HFpEF, epidemiology, prognosis, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What population is most affected by HFpEF?"
+    back: "Elderly patients and females\n\nHFpEF is more common in elderly individuals and women, likely related to higher prevalence of hypertension, obesity, and distinct cardiac remodeling patterns."
+    difficulty: easy
+    tags: [heart failure, HFpEF, epidemiology, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What are the clinical findings in HFpEF?"
+    back: "Hypertension, sustained apex beat, S4 heart sound, normal-sized heart on CXR, LVH on ECG/echo, normal EF\n\nHFpEF presents with signs of diastolic dysfunction and hypertension, including fourth heart sound, left ventricular hypertrophy, and preserved ejection fraction."
+    difficulty: easy
+    tags: [heart failure, HFpEF, clinical findings, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What are the causes of HFpEF?"
+    back: "Transient: ischemia (CAD, MI); Permanent: severe hypertrophy (HTN, AS, HCM), restrictive cardiomyopathy (e.g., amyloid), prior MI\n\nHFpEF results from conditions that stiffen the ventricle, including hypertensive heart disease, hypertrophic conditions, and infiltrative/restrictive cardiomyopathies."
+    difficulty: easy
+    tags: [heart failure, HFpEF, etiology, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What blood work should be ordered for heart failure workup?"
+    back: "CBC, electrolytes (K+, Na+, Mg2+), BUN, Cr, fasting glucose, HbA1c, lipid profile, LFTs, TSH, ferritin, BNP (>100 pg/mL), NT-proBNP, uric acid, urinalysis\n\nComprehensive laboratory assessment in HF evaluates renal function, electrolytes, metabolic causes, thyroid status, iron stores, and cardiac biomarkers."
+    difficulty: easy
+    tags: [heart failure, investigations, laboratory, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What CXR findings are seen in heart failure?"
+    back: "Cardiomegaly, pleural effusion, redistribution, Kerley B lines, bronchiolar-alveolar cuffing\n\nChest X-ray in HF shows signs of pulmonary congestion and cardiomegaly, with specific findings like Kerley B lines indicating elevated left atrial pressures."
+    difficulty: easy
+    tags: [heart failure, CXR, investigations, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What does echocardiography evaluate in heart failure?"
+    back: "Systolic function (LVEF), diastolic function (E/A ratio, E/e'), cardiac dimensions, wall motion abnormalities, RV systolic pressure (from TR jet), valvular disease, pericardial effusion\n\nEchocardiography is the primary imaging modality for HF assessment, providing comprehensive evaluation of cardiac structure and function including both systolic and diastolic parameters."
+    difficulty: easy
+    tags: [heart failure, echocardiography, investigations, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What additional diagnostic tests may be used in heart failure evaluation?"
+    back: "Cardiac catheterization, cardiopulmonary exercise testing, CMR, myocardial perfusion imaging (MPI), MUGA scan, CT scan\n\nAdvanced imaging and functional testing in HF is used when standard testing is inconclusive or to assess for reversible causes and candidacy for interventions."
+    difficulty: easy
+    tags: [heart failure, investigations, advanced testing, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the acute treatment for pulmonary edema in heart failure (LMNOPP approach)?"
+    back: "L: Lasix (furosemide) 40-500mg IV; M: Morphine 2-4mg IV; N: Nitroglycerin (caution in preload-dependent patients); O: Oxygen; P: Positive airway pressure (CPAP/BiPAP); P: Position (sit up with legs hanging down unless hypotensive)\n\nAcute pulmonary edema management focuses on reducing preload and anxiety while improving oxygenation, with position and pharmacotherapy as first-line interventions."
+    difficulty: medium
+    tags: [heart failure, pulmonary edema, acute treatment, emergency, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the normal cutoff for BNP in heart failure diagnosis?"
+    back: ">100 pg/mL\n\nBNP levels above 100 pg/mL support heart failure diagnosis, with higher values correlating with greater severity and worse prognosis."
+    difficulty: easy
+    tags: [BNP, heart failure, diagnosis, biomarkers, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the apex beat characteristic in HFrEF vs HFpEF?"
+    back: "HFrEF: displaced apex beat; HFpEF: sustained apex beat\n\nThe displaced apex in HFrEF reflects LV dilatation, while the sustained apex in HFpEF reflects the smaller, stiff ventricle without chamber enlargement."
+    difficulty: medium
+    tags: [heart failure, HFrEF, HFpEF, physical exam, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the difference between S3 and S4 heart sounds in heart failure?"
+    back: "S3 = rapid ventricular filling (volume overload, HFrEF); S4 = atrial contraction against stiff ventricle (diastolic dysfunction, HFpEF)\n\nS3 and S4 gallops indicate different hemodynamic disturbances: S3 reflects rapid early diastolic filling seen in dilated ventricles, while S4 reflects late diastolic contraction against a stiff ventricle."
+    difficulty: medium
+    tags: [heart failure, S3, S4, heart sounds, physical exam, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the role of SGLT2 inhibitors in HFrEF treatment based on DAPA-HF trial?"
+    back: "DAPA-HF demonstrated efficacy of dapagliflozin in reducing mortality and HF hospitalization in HFrEF patients, including those without diabetes\n\nThe DAPA-HF trial established SGLT2 inhibitors as guideline-directed medical therapy for HFrEF, showing benefit independent of glycemic status."
+    difficulty: hard
+    tags: [SGLT2 inhibitors, HFrEF, DAPA-HF, treatment, toronto-notes, pages-0131-0132-0133-0134-0135-0136-0137-0138-0139-0140]
+  - front: "What is the HFSS and what survival outcomes does it predict?"
+    back: "Heart Failure Survival Score - an algorithm incorporating HR, serum sodium, ischemic cardiomyopathy, LVEF, peak VO2, MAP, and interventricular conduction delay. Medium risk (7.2-8.1) predicts 73% 1-year survival; high risk (<7.2) predicts 43% 1-year survival\n\nThe HFSS risk-stratifies patients with advanced heart failure to identify those who benefit most from transplant listing."
+    difficulty: hard
+    tags: [heart-failure, HFSS, risk-stratification, toronto-notes, pages-0141-0142-0143-0144-0145-0146-0147-0148-0149-0150]
+  - front: "What is the Heart Failure Survival Score (HFSS) and what risk categories determine transplant benefit?"
+    back: "HFSS incorporates HR, serum sodium, ischemic cardiomyopathy, LVEF, peak VO2, MAP, and interventricular conduction delay. Medium-risk (7.2-8.1, 73% 1-yr survival) and high-risk (<7.2, 43% 1-yr survival) patients benefit from transplant.\n\nThe HFSS is a validated risk stratification tool that identifies patients whose survival benefit from transplantation outweighs its risks."
+    difficulty: hard
+    tags: [heart-failure, risk-stratification, HFSS, toronto-notes, pages-0141-0142-0143-0144-0145-0146-0147-0148-0149-0150]
+  - front: "What is the Heart Failure Survival Score (HFSS) and what risk categories predict transplant benefit?"
+    back: "HFSS is an algorithm incorporating HR, serum sodium, ischemic cardiomyopathy, LVEF, peak VO2, MAP, and interventricular conduction delay. Medium-risk (7.2-8.1, 73% 1-yr survival) and high-risk (<7.2, 43% 1-yr survival) patients benefit from transplant\n\nThe HFSS helps stratify patients with advanced heart failure to identify those who would benefit from transplantation versus continued medical management."
+    difficulty: hard
+    tags: [heart-failure, HFSS, risk-stratification, cardiac-transplantation, toronto-notes, pages-0141-0142-0143-0144-0145-0146-0147-0148-0149-0150]
+  - front: "What is the recommended age consideration for cardiac transplantation candidacy?"
+    back: "Cardiac transplantation is recommended for consideration in heart failure patients under 70 years of age\n\nWhile age >70 is a relative contraindication, individual patient assessment including frailty evaluation is recommended, with careful consideration of surgical risk."
+    difficulty: easy
+    tags: [cardiac-transplantation, patient-selection, age, toronto-notes, pages-0141-0142-0143-0144-0145-0146-0147-0148-0149-0150]
+  - front: "What were the key results of the COAPT trial regarding hospitalization for heart failure?"
+    back: "Primary endpoint was 35.8% per patient-year in the TMVR group versus 67.9% per patient-year in the control group (HR 0.53, P<0.001)\n\nTMVR with MitraClip significantly reduced HF hospitalizations, demonstrating that addressing functional MR in HF patients improves outcomes."
+    difficulty: hard
+    tags: [cardiology, MitraClip, heart failure, mitral regurgitation, clinical trials, toronto-notes, pages-0151-0152-0153-0154-0155-0156-0157-0158-0159-0160]
+  - front: "What classification system is endorsed by the World Heart Federation for phenotype-genotype nomenclature of cardiomyopathy?"
+    back: "MOGE(S) classification\n\nThe MOGE(S) classification was endorsed by the World Heart Federation in 2013 to standardize the description of cardiomyopathy phenotypes and their genetic basis."
+    difficulty: medium
+    tags: [cardiology, cardiomyopathy, classification, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What is the classification of cardiomyopathy types covered in Hurst's The Heart?"
+    back: "Dilated cardiomyopathy, Left Ventricular Noncompaction, and Restrictive Heart Diseases"
+    difficulty: medium
+    tags: [cardiology, cardiomyopathy, classification, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What classification system is used for cardiomyopathy phenotype-genotype nomenclature, endorsed by the World Heart Federation?"
+    back: "MOGE(S) classification\n\nThe MOGE(S) classification was endorsed by the World Heart Federation in 2013 to standardize phenotype-genotype nomenclature of cardiomyopathies."
+    difficulty: easy
+    tags: [cardiomyopathy, classification, genetics, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What are the types of cardiomyopathy described in Hurst's The Heart?"
+    back: "Dilated cardiomyopathy, Left Ventricular Noncompaction, and Restrictive Heart Diseases\n\nArbustini et al. described these major cardiomyopathy types in Hurst's The Heart textbook."
+    difficulty: easy
+    tags: [cardiomyopathy, classification, pathology, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What is diastolic heart failure?"
+    back: "Heart failure with preserved ejection fraction (HFpEF) characterized by impaired ventricular relaxation\n\nAurigemma and Gaasch described diastolic heart failure as a clinical syndrome with normal ejection fraction but impaired filling."
+    difficulty: easy
+    tags: [heart failure, diastolic dysfunction, HFpEF, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What classification system is endorsed by the World Heart Federation for cardiomyopathy phenotype-genotype nomenclature?"
+    back: "MOGE(S) classification\n\nThe MOGE(S) classification was endorsed by the World Heart Federation in 2013 to provide a standardized phenotype-genotype nomenclature for cardiomyopathies. It encodes Morphology, Organ involvement, Genetics, Etiology, and Stage (S)."
+    difficulty: medium
+    tags: [cardiology, cardiomyopathy, classification, genetics, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What are the main categories of cardiomyopathy according to the MOGE(S) classification system?"
+    back: "Dilated (D), Hypertrophic (H), Restrictive (R), Left Ventricular Noncompaction (N), and Unclassified (U)\n\nThe MOGE(S) classification categorizes cardiomyopathies based on morphological phenotype (D, H, R, N, U), with each category including descriptors for Organ involvement, Genetics, Etiology, and Stage."
+    difficulty: hard
+    tags: [cardiology, cardiomyopathy, classification, dilated cardiomyopathy, HCM, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What is the purpose of the MOGE(S) cardiomyopathy classification system?"
+    back: "To provide a phenotype-genotype nomenclature for cardiomyopathy that incorporates morphology, organ involvement, genetics, etiology, and functional class\n\nThe MOGE(S) system endorsed by the World Heart Federation allows standardized communication about cardiomyopathy subtypes."
+    difficulty: medium
+    tags: [cardiomyopathy, classification, genetics, phenotype, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What do the 2009 ACCF/AHA heart failure guidelines in adults address?"
+    back: "Diagnosis, staging, and management of heart failure with reduced and preserved ejection fraction\n\nHeart failure guidelines cover pharmacotherapy, device therapy, lifestyle modifications, and advanced therapies."
+    difficulty: easy
+    tags: [heart failure, guidelines, cardiomyopathy, toronto-notes, pages-0171-0172-0173-0174-0175-0176-0177-0178-0179-0180]
+  - front: "What are the contraindications to itraconazole?"
+    back: "Pregnancy and congestive heart failure (CHF)\n\nItraconazole inhibits CYP3A4 and can cause serious hepatotoxicity. It increases concentrations of statins and diabetic drugs. Caution is needed with other CYP3A4 substrates."
+    difficulty: medium
+    tags: [itraconazole, antifungal, contraindications, CYP3A4, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What are the common causes of dyspnea with high mortality that require emergent intervention?"
+    back: "Airway obstruction (foreign body, epiglottitis, abscess, anaphylaxis), pneumothorax/hemothorax, pulmonary embolism, gas exchange disturbances (pulmonary edema, pneumonia, acute asthma/COPD exacerbation)\n\nThese conditions require immediate recognition and treatment in the emergency department."
+    difficulty: hard
+    tags: [dyspnea, emergency, respiratory, toronto-notes, pages-0271-0272-0273-0274-0275-0276-0277-0278-0279-0280]
+  - front: "What are the high-mortality causes of dyspnea listed in Table 17?"
+    back: "Airway obstruction (foreign body, epiglottitis, abscess, anaphylaxis), pneumothorax/hemothorax, and gas exchange emergencies (pulmonary edema, PE, pneumonia, asthma/COPD exacerbation)\n\nThese conditions require immediate recognition and intervention as they can be rapidly fatal."
+    difficulty: medium
+    tags: [Emergency Medicine, Dyspnea, Differential Diagnosis, Respiratory, toronto-notes, pages-0271-0272-0273-0274-0275-0276-0277-0278-0279-0280]
+  - front: "What was the target systolic BP in the intensive arm of the ACCORD BP Trial?"
+    back: "Less than 120 mmHg\n\nThe ACCORD BP Trial compared intensive BP control (<120 mmHg) vs standard control (<140 mmHg) in 4733 T2DM patients with CV risk factors."
+    difficulty: easy
+    tags: [diabetes, blood-pressure, clinical-trials, t2dm, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was the target systolic blood pressure in the intensive arm of the ACCORD BP Trial?"
+    back: "Less than 120 mmHg\n\nThe ACCORD BP Trial compared intensive BP control (<120 mmHg) versus standard control (<140 mmHg) in 4733 patients with T2DM and CV risk factors."
+    difficulty: easy
+    tags: [Diabetes, Hypertension, Clinical Trial, T2DM, Blood Pressure, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What cardiovascular complications are associated with problem drinking?"
+    back: "Hypertension, alcoholic cardiomyopathy\n\nChronic alcohol use can cause both hypertension and alcoholic heart muscle disease."
+    difficulty: medium
+    tags: [alcohol, complications, cardiovascular, toronto-notes, pages-0391-0392-0393-0394-0395-0396-0397-0398-0399-0400]
+  - front: "What is the target systolic blood pressure for intensive therapy in T2DM with CV risk factors per ACCORD?"
+    back: "Less than 120 mmHg (intensive) vs less than 140 mmHg (standard)\n\nThe ACCORD BP trial tested intensive control to systolic BP <120 mmHg versus standard <140 mmHg. Intensive therapy required more medications (3.4 vs 2.1 at 1 year) and had more serious adverse events."
+    difficulty: easy
+    tags: [diabetes, blood-pressure, targets, ACCORD, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What are the cardiovascular complications of alcohol use disorder?"
+    back: "Hypertension and alcoholic cardiomyopathy\n\nChronic alcohol use causes direct cardiotoxicity leading to heart failure and arrhythmias."
+    difficulty: medium
+    tags: [alcohol, complications, cardiovascular, toronto-notes, pages-0391-0392-0393-0394-0395-0396-0397-0398-0399-0400]
+  - front: "The DASH trial showed what regarding blood pressure?"
+    back: "The combination diet (rich in fruits, vegetables, and low-fat dairy) reduced systolic BP by 11.4 mmHg and diastolic by 5.5 mmHg in hypertensive patients\n\nDASH (Dietary Approaches to Stop Hypertension) demonstrated that dietary modifications significantly lower blood pressure, with the combination diet being most effective."
+    difficulty: medium
+    tags: [hypertension, diet, clinical trial, DASH, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What did the SPRINT trial conclude about intensive blood pressure control?"
+    back: "Intensive treatment (target systolic BP <120 mmHg) in high-risk patients significantly reduced cardiovascular events compared to standard treatment (target <140 mmHg)\n\nSPRINT showed that intensive BP control to systolic <120 mmHg reduced MI, acute coronary syndromes, stroke, heart failure, and death in high-risk patients."
+    difficulty: medium
+    tags: [hypertension, clinical trial, SPRINT, cardiovascular, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What did the IRONMAN trial conclude about IV ferric derisomaltose in heart failure?"
+    back: "IV ferric derisomaltose in heart failure patients with reduced ejection fraction and iron deficiency reduced recurrent hospital admissions for HF and CV death (22.4 vs 27.5 per 100 patient-years)\n\nIRONMAN demonstrated that IV iron supplementation (ferric derisomaltose) benefits HF patients with iron deficiency, reducing CV events."
+    difficulty: hard
+    tags: [heart failure, iron deficiency, clinical trial, IRONMAN, cardiology, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What were the key findings of the DASH diet trial?"
+    back: "The combination diet (fruits, vegetables, low-fat dairy) reduced systolic/diastolic BP by 5.5/3.0 mmHg in normotensives and 11.4/5.5 mmHg in hypertensives vs. control diet\n\nThe DASH diet demonstrated significant blood pressure reduction through dietary modification, with greater effects in hypertensive patients."
+    difficulty: medium
+    tags: [cardiology, hypertension, diet, clinical trial, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What did the IRONMAN trial demonstrate about ferric derisomaltose in heart failure?"
+    back: "Ferric derisomaltose reduced primary endpoints (HF hospitalizations + CV death) to 22.4/100 patient-years vs 27.5/100 patient-years with standard care (RR 0.82)\n\nIV ferric derisomaltose demonstrated benefit in patients with HFrEF and iron deficiency, reducing cardiovascular events."
+    difficulty: hard
+    tags: [cardiology, heart failure, iron deficiency, clinical trial, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What was the key finding of the DASH trial regarding blood pressure?"
+    back: "The combination diet (rich in fruits, vegetables, and low-fat dairy) reduced systolic BP by 5.5 mmHg and diastolic by 3.0 mmHg in normotensive patients, and 11.4/5.5 mmHg in hypertensive patients compared to control diet\n\nThe DASH diet is now a cornerstone of hypertension management and lifestyle modification."
+    difficulty: easy
+    tags: [cardiology, hypertension, diet, clinical trial, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What was the SPRINT trial comparing and what were its findings?"
+    back: "Intensive BP control (target systolic <120 mmHg) vs standard control (<140 mmHg) in high-risk patients. Intensive treatment reduced CV events to 1.65%/year vs 2.19%/year in standard group\n\nSPRINT demonstrated benefit of intensive BP control in high-risk patients, though careful patient selection is needed."
+    difficulty: medium
+    tags: [cardiology, hypertension, clinical trial, cardiovascular, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What did the IRONMAN trial show about IV ferric derisomaltose in heart failure?"
+    back: "In patients with HFrEF (EF <45%) and iron deficiency, IV ferric derisomaltose reduced recurrent HF hospitalizations and CV death (RR 0.82; 95% CI 0.66-1.02) with fewer serious cardiac adverse events\n\nIron deficiency correction is now recommended in heart failure with reduced ejection fraction."
+    difficulty: medium
+    tags: [cardiology, heart failure, iron deficiency, clinical trial, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What were the results of the DASH trial regarding blood pressure?"
+    back: "The combination diet (fruits, vegetables, low-fat dairy) reduced systolic BP by 5.5 mmHg and diastolic by 3.0 mmHg in normotensive patients, and 11.4/5.5 mmHg in hypertensive patients vs. control diet\n\nThe DASH diet significantly lowers blood pressure in both normotensive and hypertensive individuals."
+    difficulty: medium
+    tags: [cardiology, hypertension, diet, clinical trial, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What was the target blood pressure in the intensive arm of the SPRINT trial?"
+    back: "Target systolic BP <120 mmHg\n\nSPRINT compared intensive (<120 mmHg) vs. standard (<140 mmHg) BP targets in high-risk patients."
+    difficulty: medium
+    tags: [cardiology, hypertension, clinical trial, SPRINT, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What was the conclusion of the IRONMAN trial regarding heart failure?"
+    back: "Ferric derisomaltose (IV iron) in patients with HF with reduced ejection fraction and iron deficiency reduced recurrent HF hospitalizations and CV death (RR 0.82; 95% CI 0.66-1.02)\n\nIV ferric derisomaltose significantly reduced serious cardiac adverse events (difference -7.0%; p=0.016) in HF patients with iron deficiency."
+    difficulty: hard
+    tags: [cardiology, heart failure, iron deficiency, clinical trial, IRONMAN, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What did the IRONMAN trial conclude about IV iron in heart failure patients?"
+    back: "IV ferric derisomaltose in heart failure patients with iron deficiency reduced primary endpoints (22.4 vs 27.5 per 100 patient-years) and fewer serious cardiac adverse events (p=0.016)\n\nIRONMAN supports IV iron supplementation for patients with HFrEF and iron deficiency."
+    difficulty: hard
+    tags: [cardiology, heart failure, iron deficiency, clinical trial, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What did the SPRINT trial find about intensive BP control?"
+    back: "SPRINT (NEJM 2015): Intensive treatment to target systolic BP <120 mmHg (vs. <140 mmHg) significantly reduced cardiovascular events in high-risk patients - 1.65%/year vs 2.19%/year\n\nIntensive control reduced major CV events by 25% but requires careful patient selection due to increased adverse effects."
+    difficulty: medium
+    tags: [hypertension, cardiovascular, landmark trial, prevention, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What were the key results of the DASH trial regarding blood pressure?"
+    back: "The combination diet (fruits, vegetables + low-fat dairy) reduced systolic/diastolic BP by 5.5/3.0 mmHg in normotensive and 11.4/5.5 mmHg in hypertensive patients vs. control diet\n\nThe DASH diet is now a cornerstone of hypertension management. The low-fat dairy component appears crucial for the BP-lowering effect."
+    difficulty: medium
+    tags: [cardiology, hypertension, nutrition, clinical-trials, DASH, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What was the SPRINT trial outcome regarding intensive vs standard blood pressure control?"
+    back: "Intensive treatment (target systolic BP <120 mmHg) significantly reduced CV events vs standard target (<140 mmHg): 1.65%/year vs 2.19%/year after 3 years\n\nSPRINT showed that more intensive BP control in high-risk patients (systolic >130 mmHg) reduces major cardiovascular complications and mortality."
+    difficulty: medium
+    tags: [cardiology, hypertension, clinical-trials, SPRINT, treatment-targets, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What was the IRONMAN trial finding regarding IV ferric derisomaltose in heart failure?"
+    back: "Ferric derisomaltose reduced primary endpoints (HF hospitalizations + CV death): 22.4 vs 27.5 per 100 patient-years (RR 0.82; 95%CI 0.66-1.02), with fewer serious cardiac adverse events (p=0.016)\n\nIRONMAN supports IV iron supplementation in HF patients with reduced ejection fraction and iron deficiency to improve outcomes."
+    difficulty: medium
+    tags: [cardiology, heart-failure, iron-deficiency, clinical-trials, IRONMAN, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What was the IRONMAN trial conclusion about IV iron in heart failure?"
+    back: "IV ferric derisomaltose in HF patients with reduced ejection fraction (<45%) and iron deficiency reduced primary endpoints (HF hospitalization + CV death) from 27.5 to 22.4 per 100 patient-years\n\nIron deficiency was defined as transferrin saturation <20% or serum ferritin <100 μg/L."
+    difficulty: hard
+    tags: [heart failure, iron deficiency, clinical trial, IRONMAN, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What were the key findings of the DASH trial?"
+    back: "The combination diet (rich in fruits, vegetables, and low-fat dairy) reduced systolic BP by 5.5 mmHg and diastolic by 3.0 mmHg in normotensive patients, and 11.4/5.5 mmHg in hypertensive patients\n\nDASH trial showed that dietary modifications, particularly the combination diet, significantly lower blood pressure in both normotensive and hypertensive individuals."
+    difficulty: easy
+    tags: [hypertension, clinical trials, nutrition, DASH, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What were the results of the SPRINT trial regarding intensive BP control?"
+    back: "Intensive treatment (target systolic BP <120 mmHg) significantly reduced cardiovascular complications compared to standard treatment (1.65%/year vs 2.19%/year)\n\nSPRINT demonstrated that intensive BP control in high-risk patients with systolic BP >130 mmHg reduces major cardiovascular events."
+    difficulty: medium
+    tags: [hypertension, clinical trials, SPRINT, cardiovascular, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What were the findings of the DASH trial regarding blood pressure?"
+    back: "The combination diet (fruits, vegetables, low-fat dairy) reduced systolic BP by 5.5 mmHg and diastolic by 3.0 mmHg in normotensives, and 11.4/5.5 mmHg in hypertensives vs. control diet\n\nDASH demonstrated that dietary modifications significantly lower blood pressure, supporting lifestyle intervention as first-line hypertension management."
+    difficulty: medium
+    tags: [hypertension, clinical trial, nutrition, DASH, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What did the IRONMAN trial demonstrate about intravenous ferric derisomaltose in heart failure?"
+    back: "Ferric derisomaltose reduced primary endpoints (HF hospitalizations and CV death) to 22.4 per 100 patient-years vs 27.5 in standard care (RR 0.82), with fewer serious cardiac adverse events\n\nIRONMAN showed IV iron supplementation benefits patients with HFrEF and iron deficiency, reducing cardiovascular events."
+    difficulty: hard
+    tags: [heart failure, iron deficiency, clinical trial, IRONMAN, cardiology, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What does the mnemonic RECT represent for hemochromatosis clinical features?"
+    back: "R- Arthralgia; E- Bronze skin; C- Cardiomyopathy/cirrhosis; T- Diabetes (pancreatic damage)\n\nHypogonadism from anterior pituitary damage is also a key manifestation."
+    difficulty: medium
+    tags: [hemochromatosis, clinical features, mnemonic, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What are the classic clinical features of hemochromatosis? (RECT mnemonic)"
+    back: "R - Arthralgia, E - Bronze skin, C - Cardiomyopathy and cirrhosis, T - Diabetes (pancreatic damage), Hypogonadism\n\nThe RECT mnemonic summarizes the classic presentation: arthralgia, bronze skin, cardiomyopathy/cirrhosis, diabetes, and hypogonadism from pituitary damage."
+    difficulty: medium
+    tags: [Hemochromatosis, clinical features, diagnosis, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What are the clinical features of hemochromatosis (RECT)?"
+    back: "Arthralgia, Bronze skin, Cardiomyopathy, Cirrhosis, Diabetes (pancreatic damage), Hypogonadism (pituitary damage)\n\nThe RECT mnemonic summarizes classic manifestations: Rheumatic (arthralgia), Endocrine (diabetes, hypogonadism), Cardiac (cardiomyopathy), Tegumentary (bronze skin), and cirrhosis."
+    difficulty: medium
+    tags: [hemochromatosis, clinical-manifestations, rect, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What cardiac manifestations occur in hemochromatosis?"
+    back: "Diastolic dysfunction and arrhythmias in early stages, progressing to dilated cardiomyopathy in later stages\n\nCardiac iron deposition causes restrictive cardiomyopathy with diastolic dysfunction before systolic impairment develops."
+    difficulty: medium
+    tags: [hemochromatosis, cardiology, cardiomyopathy, arrhythmia, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the RECT mnemonic for hemochromatosis clinical features?"
+    back: "Arthralgia, Bronze skin, Cardiomyopathy (and cirrhosis), Diabetes (pancreatic damage), Hypogonadism (anterior pituitary damage)\n\nRECT captures the classic triad of bronze skin, diabetes, and cirrhosis, plus arthralgia (especially MCP joints), cardiomyopathy, and hypogonadism."
+    difficulty: medium
+    tags: [hemochromatosis, clinical features, signs and symptoms, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What does the RECT mnemonic stand for in hemochromatosis clinical features?"
+    back: "Arthralgia, Bronze skin, Cardiomyopathy/cirrhosis of liver, Diabetes (pancreatic damage), Hypogonadism (anterior pituitary damage)\n\nThese represent the classic multiorgan manifestations. Bronze/grey skin is due to melanin, not iron. Arthralgia commonly affects metacarpophalangeal joints."
+    difficulty: medium
+    tags: [hemochromatosis, clinical-features, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What cardiac manifestations are seen in hemochromatosis?"
+    back: "Diastolic dysfunction and arrhythmias in early stages, progressing to dilated cardiomyopathy in later stages\n\nCardiac involvement is a serious complication. When cardiomyopathy develops, it may contraindicate phlebotomy, requiring chelation therapy instead."
+    difficulty: medium
+    tags: [hemochromatosis, cardiology, clinical-features, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "Which bacteria causes hemochromatosis-like findings (bronze skin, cardiomyopathy, diabetes)?"
+    back: "This is not from bacterial diarrhea - refers to hereditary hemochromatosis\n\nThis appears to be a confused reference. The page discusses hereditary hemochromatosis separately as a liver disorder, not infectious diarrhea."
+    difficulty: easy
+    tags: [gastroenterology, hemochromatosis, toronto-notes, pages-0451-0452-0453-0454-0455-0456-0457-0458-0459-0460]
+  - front: "A patient with CHF and AFib is started on digoxin. Which electrolyte abnormality significantly increases the risk of digoxin toxicity?"
+    back: "Hypokalemia\n\nDigoxin inhibits Na+/K+-ATPase; hypokalemia potentiates this effect, increasing risk of digoxin toxicity including bradyarrhythmias and bidirectional VT. Canadian guidelines recommend monitoring and correcting electrolytes in all patients on digoxin."
+    difficulty: easy
+    tags: [digoxin, toxicity, hypokalemia, CHF, AFib]
+  - front: "A patient on digoxin reports blurred vision with a yellow tint ('van Gogh syndrome') and nausea. What is the most likely diagnosis and what should be checked immediately?"
+    back: "Digoxin toxicity; check serum digoxin level, potassium, ECG for arrhythmias\n\nVisual disturbances (yellow-green halos), GI symptoms (anorexia, nausea/vomiting), and arrhythmias are hallmarks of digoxin toxicity. Hypokalemia and renal impairment are precipitating factors; digoxin-specific antibody fragments (Digibind) are used for severe toxicity."
+    difficulty: easy
+    tags: [digoxin, toxicity, visual disturbance, van Gogh]
+  - front: "The RALES trial showed spironolactone reduces mortality in severe HF. What were the patient criteria and primary outcome?"
+    back: "Severe HF (Class III/IV) with LVEF <35% on ACEi + loop diuretic + digoxin; spironolactone reduced all-cause mortality (35% vs. 46%) and HF hospitalizations\n\nRALES (NEJM 1999) demonstrated that aldosterone antagonism with spironolactone 25 mg daily in severe HF (LVEF ≤35%) significantly reduced all-cause mortality (RR 0.70) and HF hospitalizations (RR 0.65). Risk of hyperkalemia requires monitoring."
+    difficulty: medium
+    tags: [RALES, spironolactone, HFrEF, aldosterone antagonist, mortality]
+  - front: "What did the PARADIGM-HF trial establish about sacubitril/valsartan (LCZ696) in HFrEF?"
+    back: "Sacubitril/valsartan (ARNI) was superior to enalapril in reducing CV death and HF hospitalization in HFrEF (LVEF <40%)\n\nPARADIGM-HF (NEJM 2014) showed LCZ696 (valsartan + neprilysin inhibitor) reduced the primary composite of CV death or HF hospitalization from 26.5% to 21.8% (HR 0.80) versus enalapril. Canadian HF guidelines recommend ARNI as a first-line agent replacing ACEi in HFrEF."
+    difficulty: medium
+    tags: [PARADIGM-HF, sacubitril/valsartan, ARNI, HFrEF, neprilysin]
+  - front: "DAPA-HF and EMPEROR-Reduced trials both studied SGLT2 inhibitors in HFrEF. What was the common conclusion?"
+    back: "SGLT2 inhibitors (dapagliflozin and empagliflozin) significantly reduced worsening HF events and CV death in HFrEF, regardless of diabetes status\n\nBoth trials demonstrated ~25-26% relative risk reduction in the composite of worsening HF or CV death with SGLT2 inhibitors in HFrEF. Benefits were independent of T2DM status, establishing SGLT2 inhibitors as a pillar of HFrEF therapy alongside ACEi/ARNI, beta-blockers, and MRAs."
+    difficulty: medium
+    tags: [DAPA-HF, EMPEROR-Reduced, SGLT2 inhibitor, dapagliflozin, empagliflozin, HFrEF]
+  - front: "DELIVER and EMPEROR-Preserved trials studied SGLT2 inhibitors in HFpEF (EF >40%). What was demonstrated?"
+    back: "SGLT2 inhibitors (dapagliflozin and empagliflozin) reduced worsening HF events and CV death in HFpEF/HFmrEF, regardless of diabetes status\n\nBoth DELIVER (NEJM 2022) and EMPEROR-Preserved (NEJM 2021) demonstrated significant reductions in the primary composite of CV mortality or HF hospitalization with SGLT2 inhibitors in HF with preserved EF. SGLT2 inhibitors are now recommended in HFpEF, where few therapies had previously shown benefit."
+    difficulty: hard
+    tags: [DELIVER, EMPEROR-Preserved, SGLT2 inhibitor, HFpEF, dapagliflozin, empagliflozin]
+  - front: "The SCD-HeFT trial compared amiodarone vs. ICD vs. placebo in mild-to-moderate HF (LVEF <35%). What was the conclusion about amiodarone?"
+    back: "Amiodarone had no mortality benefit compared to placebo; ICD reduced mortality by 23%\n\nSCD-HeFT (NEJM 2005) demonstrated that in mild-to-moderate CHF with LVEF ≤35%, ICD (shock-only) significantly reduced all-cause mortality (HR 0.77) while amiodarone did not differ from placebo (HR 1.06). This supported primary prevention ICD implantation in HFrEF."
+    difficulty: medium
+    tags: [SCD-HeFT, ICD, amiodarone, HF, sudden cardiac death, primary prevention]
+  - front: "CIBIS-II showed which beta-blocker significantly reduced all-cause mortality in HFrEF patients with LVEF <35%?"
+    back: "Bisoprolol (cardioselective B1 blocker) significantly reduced all-cause mortality from 17.3% to 11.8% (HR 0.66)\n\nCIBIS-II (Lancet 1999) was stopped early due to bisoprolol's significant mortality benefit in CHF patients with LVEF <35%. COPERNICUS similarly showed carvedilol's benefit in severe HF (EF <25%). Both support beta-blocker use as core HFrEF therapy."
+    difficulty: medium
+    tags: [CIBIS-II, bisoprolol, beta-blocker, HFrEF, mortality]
+  - front: "COMET compared carvedilol vs. metoprolol in chronic HFrEF. Which agent showed lower all-cause mortality?"
+    back: "Carvedilol (non-selective beta-blocker with alpha-1 blockade) had lower all-cause mortality than metoprolol (34% vs. 40%, HR 0.83)\n\nCOMET (Lancet 2003) demonstrated carvedilol's superiority over short-acting metoprolol in CHF, likely due to its additional alpha-1 blocking properties and non-selective B1/B2 blockade. Note the comparator was metoprolol tartrate (not succinate), limiting direct comparisons."
+    difficulty: medium
+    tags: [COMET, carvedilol, metoprolol, HFrEF, mortality]
+  - front: "A patient with HFpEF (LVEF >45%) is started on irbesartan (ARB) for symptom management based on the I-PRESERVE trial. What did this trial conclude?"
+    back: "Irbesartan did NOT improve mortality or CV morbidity in HFpEF compared to placebo — ARBs have no proven mortality benefit in HFpEF\n\nI-PRESERVE (NEJM 2008) showed irbesartan 300 mg daily vs. placebo resulted in similar primary outcomes (all-cause mortality or CV hospitalization) in HFpEF patients. Unlike HFrEF, few pharmacological therapies had established mortality benefit in HFpEF until SGLT2 inhibitors."
+    difficulty: medium
+    tags: [I-PRESERVE, irbesartan, ARB, HFpEF, no benefit]
+  - front: "What are the precipitants of acute decompensated heart failure (ADHF)? Use the FAILURE mnemonic."
+    back: "F — Forgot medication; A — Arrhythmia/Anemia; I — Ischaemia/Infarction/Infection; L — Lifestyle (high salt); U — Upregulation of cardiac output (pregnancy, hyperthyroidism); R — Renal failure; E — Embolism (pulmonary).\n\nIdentifying and treating the precipitant is essential to managing ADHF. AFib is a common precipitant — rate or rhythm control is key. Infections increase metabolic demand. Medication non-compliance is the most common precipitant in outpatients. Each precipitant requires specific management in addition to diuretics and vasodilators."
+    difficulty: medium
+    tags: [heart failure, ADHF, precipitants, FAILURE mnemonic]
+  - front: "What are the CXR findings in congestive heart failure?"
+    back: "Pulmonary vascular redistribution (upper lobe vessels prominent), perihilar infiltrates, interstitial edema with Kerley B lines, alveolar edema with bilateral infiltrates ('bat wings'), cardiomegaly, pleural effusion (usually right-sided), peribronchial cuffing.\n\nCXR is the most useful initial test for CHF. Findings progress with severity: first vascular redistribution, then interstitial edema (Kerley B lines at costophrenic angles), then alveolar edema. Note that CXR can lag behind clinical improvement or deterioration. Lung ultrasound (B-lines) may have higher sensitivity than CXR for acute pulmonary edema."
+    difficulty: medium
+    tags: [heart failure, CXR, Kerley B lines, pulmonary edema]
+  - front: "What is the acute treatment mnemonic for CHF, and what are the management steps?"
+    back: "LMNOP: Lasix (furosemide 0.5–1 mg/kg IV), Morphine (reduces preload and anxiety), Nitroglycerin (0.4 mg SL q5 min if sBP >100 mmHg, or IV nitroglycerin), Oxygen (100% by mask), Position (sit upright) + Pressure (BiPAP). If sBP <90 mmHg: norepinephrine first-line; add dobutamine or epinephrine; milrinone for refractory cases.\n\nFurosemide provides rapid venodilation (within minutes) before diuresis begins. Nitroglycerin reduces preload and afterload. BiPAP reduces respiratory work and preload. Inotropes/vasopressors are reserved for cardiogenic shock (sBP <90 mmHg). Treat precipitating factors simultaneously."
+    difficulty: medium
+    tags: [heart failure, CHF, LMNOP, furosemide, nitroglycerin, BiPAP]
+  - front: "What are the indications for hospital admission in heart failure?"
+    back: "Acute MI, pulmonary edema or severe respiratory distress, severe complicating medical illness (e.g. pneumonia), anasarca, symptomatic hypotension or syncope, refractory to outpatient therapy, thromboembolic complications requiring intervention, clinically significant dysrhythmias.\n\nPatients with mild-moderate CHF exacerbation may be managed in the ED observation unit or rapid access clinic. A walk test with SpO2 monitoring can identify patients with occult hypoxia. BNP/NT-proBNP levels guide diagnosis and risk stratification. Cardiology or medicine consult is appropriate for most admitted patients."
+    difficulty: medium
+    tags: [heart failure, admission criteria, CHF]
+  - front: "What are the indications and key cautions for furosemide (Lasix) in the ED?"
+    back: "Indications: CHF (40–80 mg IV), hypertension (10–40 mg PO BID). Key cautions: monitor for electrolyte imbalances (hypokalemia, hyponatremia, hypomagnesemia); risk of ototoxicity with high doses.\n\nFurosemide is a loop diuretic that blocks the Na-K-2Cl cotransporter in the thick ascending limb. In acute decompensated heart failure, IV furosemide provides rapid preload reduction. High-dose furosemide can cause permanent hearing loss, particularly in patients also receiving aminoglycosides."
+    difficulty: easy
+    tags: [furosemide, Lasix, CHF, diuretic, ototoxicity, emergency medicine]
+  - front: "What did the SGLT2 inhibitor DAPA-HF and DELIVER trials demonstrate about dapagliflozin in heart failure?"
+    back: "DAPA-HF demonstrated dapagliflozin benefit in HFrEF (reduced ejection fraction). DELIVER demonstrated benefit in HFmrEF/HFpEF (mildly reduced or preserved ejection fraction). Together, these trials established SGLT2 inhibitors as effective across the spectrum of heart failure ejection fractions.\n\nSGLT2 inhibitors (dapagliflozin, empagliflozin) are now guideline-recommended for heart failure across all ejection fraction categories. The mechanism of benefit in heart failure extends beyond glucose lowering and likely includes volume regulation, cardiac energy metabolism, and anti-inflammatory effects."
+    difficulty: hard
+    tags: [SGLT2 inhibitor, dapagliflozin, heart failure, HFrEF, HFpEF, DAPA-HF, DELIVER]

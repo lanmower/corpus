@@ -1,0 +1,591 @@
+{
+  "subject": "anesthesia",
+  "cat": "sun",
+  "cards": [
+    {
+      "id": "anesthesia-09cdf6d6d5",
+      "front": "What is the ASA (American Society of Anesthesiology) physical status classification system?",
+      "back": "ASA 1: healthy patient. ASA 2: mild systemic disease (e.g., controlled DM, HTN, obesity). ASA 3: severe systemic disease limiting activity (e.g., stable CAD, COPD). ASA 4: severe systemic disease that is a constant threat to life (e.g., unstable CAD, renal failure). ASA 5: moribund, not expected to survive 24h without surgery. ASA 6: brain dead organ donor. Add 'E' for emergencies.\n\nThe ASA classification is a gross predictor of overall surgical outcome but is NOT used as specific anesthetic risk stratification. It is used universally in preoperative assessment to communicate patient fitness for surgery.",
+      "tags": [
+        "anesthesia",
+        "preoperative assessment",
+        "ASA classification"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-750a4f9ffa",
+      "front": "What are the fasting guidelines prior to elective surgery according to the Canadian Anesthesiologists' Society?",
+      "back": "6 hours for solids and non-human milk; 4 hours for breast milk; 2 hours for clear fluids (adults); 1 hour for clear fluids (infants/children).\n\nThese guidelines minimize aspiration risk. Clear fluids include water, pulp-free juice, and tea/coffee without milk. For emergent procedures, the risk of delaying surgery must be weighed against aspiration risk. Patients with conditions causing delayed gastric emptying (e.g., diabetes, GLP-1 agonist use) may require longer fasting.",
+      "tags": [
+        "anesthesia",
+        "preoperative optimization",
+        "fasting guidelines"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-02a171e941",
+      "front": "What is the Mallampati classification and what does it predict?",
+      "back": "A classification (I-IV) of oral opening that predicts intubation difficulty. Class I: full view of uvula, tonsils, and soft palate. Class II: partial view of uvula. Class III: base of uvula only. Class IV: hard palate only. Class III/IV predicts difficult intubation.\n\nMallampati classification is part of the airway assessment performed during preoperative evaluation. No single test reliably excludes difficult intubation; history of prior difficult intubation is the strongest predictor. Other assessments include the 3-3-2 rule, thyromental distance, and mandibular subluxation.",
+      "tags": [
+        "anesthesia",
+        "airway assessment",
+        "Mallampati"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-05b2ced0db",
+      "front": "What is the LEMON mnemonic for evaluating difficult airways?",
+      "back": "L: Look externally (obesity, beard, small facial features, neck abnormalities). E: Evaluate 3-3-2 rule. M: Mallampati score. O: Obstruction (epiglottitis, abscess, tumor). N: Neck mobility.\n\nLEMON is a systematic approach to airway assessment. The 3-3-2 rule checks: 3 finger breadths mouth opening, 3 fingers mentum-to-hyoid, and 2 fingers thyroid-to-hyoid. Restricted neck mobility (e.g., cervical spine disease, ankylosing spondylitis) impairs the sniffing position needed for intubation.",
+      "tags": [
+        "anesthesia",
+        "difficult airway",
+        "LEMON"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-b2443ec3a3",
+      "front": "What is the gold standard for confirming endotracheal tube (ETT) placement?",
+      "back": "End-tidal CO2 (ETCO2) measured by capnography.\n\nETCO2 is the gold standard for confirming tracheal (vs. esophageal) ETT placement. Esophageal intubation is suspected when ETCO2 is zero or near-zero. Additional confirmation includes bilateral breath sounds, absence of epigastric sounds, bilateral chest rise, and water vapor condensation in the ETT. CXR confirms tip position but not tracheal vs. esophageal location.",
+      "tags": [
+        "anesthesia",
+        "intubation",
+        "capnography"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-4595f85feb",
+      "front": "What are the indications for rapid sequence induction (RSI)?",
+      "back": "Patients at risk of aspiration: not fasted appropriately, decreased LOC, delayed gastric emptying (diabetes, opioids, GLP-1 agonists), decreased LES competence (GERD, hiatal hernia, pregnancy), increased intra-abdominal pressure (pregnancy, obesity, bowel obstruction).\n\nRSI differs from routine induction: predetermined drug doses are given rapidly, no bag-mask ventilation is performed (to avoid gastric insufflation), cricoid pressure (Sellick maneuver) may be applied, and a rapid-onset muscle relaxant (succinylcholine or high-dose rocuronium) is used immediately after induction.",
+      "tags": [
+        "anesthesia",
+        "RSI",
+        "aspiration risk"
+      ],
+      "difficulty": "medium",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-994e4d4314",
+      "front": "What are the reversible causes of pulseless electrical activity (PEA) arrest?",
+      "back": "5 Hs: Hypothermia, Hypovolemia, Hypoxia, Hydrogen ions (acidosis), Hypo/hyperkalemia. 5 Ts: Tamponade (cardiac), Thrombosis (pulmonary), Thrombosis (coronary), Tension pneumothorax, Toxins (overdose/poisoning).\n\nPEA and asystole are non-shockable rhythms. Key to survival is good early CPR and identification/treatment of reversible causes. During anesthesia, additional causes include local anesthetic systemic toxicity (LAST) and excessive anesthetic dosing. Shockable rhythms (VF and pulseless VT) require early defibrillation.",
+      "tags": [
+        "anesthesia",
+        "ACLS",
+        "cardiac arrest",
+        "PEA"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml",
+      "requires": {
+        "subject": "anesthesia",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "anesthesia-fbde7f3067",
+      "front": "What is the 4-2-1 rule for calculating maintenance IV fluid requirements?",
+      "back": "4 mL/kg/h for first 10 kg + 2 mL/kg/h for next 10 kg + 1 mL/kg/h for each additional kg. Example: 70 kg patient = 40 + 20 + 50 = 110 mL/h.\n\nThis calculates hourly maintenance fluid needs. Maintenance requirements are increased with fever, GI losses, and sweating, and decreased with anuria, SIADH, and CHF. Fluid deficit from preoperative fasting must be added. Goal-directed fluid therapy is preferred over predetermined calculations to reduce postoperative complications.",
+      "tags": [
+        "anesthesia",
+        "fluid management",
+        "IV fluids"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-bc04a31152",
+      "front": "What are the differences between crystalloids and colloids for IV fluid resuscitation?",
+      "back": "Crystalloids (e.g., Ringer's lactate, NS): distribute in ECF, require 3:1 replacement ratio for blood loss. Colloids (e.g., albumin): distribute in intravascular space, 1:1 replacement ratio. Balanced crystalloids (Ringer's lactate) are preferred over NS to avoid hyperchloremic metabolic acidosis.\n\nCochrane meta-analyses show no mortality difference between colloids and crystalloids. HES solutions are controversial due to renal and coagulopathic side effects, especially in septic patients. IV fluids improve perfusion but do NOT improve O2 carrying capacity — only blood products do that.",
+      "tags": [
+        "anesthesia",
+        "fluid resuscitation",
+        "crystalloid",
+        "colloid"
+      ],
+      "difficulty": "medium",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-bf89b508c3",
+      "front": "What is malignant hyperthermia and how is it managed?",
+      "back": "A life-threatening hypermetabolic crisis triggered by volatile anesthetic agents (e.g., isoflurane, sevoflurane) or succinylcholine in genetically susceptible individuals (often autosomal dominant RYR1 mutation). Treatment: immediate dantrolene, stop triggering agents, active cooling, and supportive care.\n\nMalignant hyperthermia causes uncontrolled skeletal muscle metabolism leading to hyperthermia, tachycardia, hypercarbia, metabolic acidosis, hyperkalemia, and rhabdomyolysis. Family history should be elicited preoperatively. TIVA (total intravenous anesthesia) with propofol is used as an alternative in susceptible patients.",
+      "tags": [
+        "anesthesia",
+        "malignant hyperthermia",
+        "dantrolene"
+      ],
+      "difficulty": "medium",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml",
+      "requires": {
+        "subject": "anesthesia",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "anesthesia-00229497b8",
+      "front": "What oxygen delivery rates and FiO2 do nasal cannula, simple face mask, and non-rebreather mask provide?",
+      "back": "Nasal cannula: 1-6 L/min, FiO2 24-44% (add 4% per L). Simple face mask: ≥6 L/min, FiO2 up to 55%. Non-rebreather mask: 10-15 L/min, FiO2 up to 80%. Venturi mask: precise FiO2 24-50%.\n\nLow-flow systems (nasal cannula) dilute O2 with room air, so FiO2 varies with minute ventilation. High-flow systems (Venturi mask, high-flow nasal cannula up to 50-60 L/min) deliver consistent FiO2. The goal is to maintain SaO2 >90%, since small decreases below 90% correspond to large drops in PaO2 due to the sigmoid shape of the oxyhemoglobin dissociation curve.",
+      "tags": [
+        "anesthesia",
+        "oxygen therapy",
+        "respiratory"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-f9f094e0bb",
+      "front": "What are the different modes of mechanical ventilation and their key features?",
+      "back": "ACV/VC: preset tidal volume and rate, patient can trigger extra breaths. PCV: preset inspiratory pressure, tidal volume varies with compliance. SIMV: combination of controlled and spontaneous breaths. PSV: patient-initiated breaths with pressure support, useful for weaning. BiPAP: non-invasive, increased pressure on inspiration, PEEP on expiration.\n\nChoice of mode depends on patient factors and reason for ventilation. Complications include ventilator-induced lung injury (barotrauma, volutrauma), VAP, reduced venous return causing hypotension, diaphragm atrophy, and auto-PEEP. A pneumothorax during mechanical ventilation requires chest tube drainage.",
+      "tags": [
+        "anesthesia",
+        "mechanical ventilation",
+        "respiratory"
+      ],
+      "difficulty": "medium",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-b09ff41a1f",
+      "front": "What preoperative medications should be held on the day of surgery?",
+      "back": "Hold: oral antihyperglycemics, ACE inhibitors and ARBs (controversial), warfarin (consider bridging), antiplatelet agents (clopidogrel), factor Xa inhibitors, direct thrombin inhibitors, herbal supplements (stop 1 week prior). Continue: most cardiac and respiratory medications, beta-blockers.\n\nACEIs/ARBs increase risk of post-induction hypotension but evidence on holding vs. continuing is mixed. Beta-blockers should be continued if the patient is already taking them, as abrupt withdrawal can precipitate rebound tachycardia and ischemia. Insulin requires dose adjustment, not complete cessation. Target blood glucose is <10 mmol/L in critical patients.",
+      "tags": [
+        "anesthesia",
+        "preoperative optimization",
+        "medications"
+      ],
+      "difficulty": "medium",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-c98dde743d",
+      "front": "What is the sniffing position and when is it contraindicated?",
+      "back": "Flexion of the lower C-spine (C5-C6) with extension of the upper C-spine at the atlanto-occipital joint (C1), aligning the oral, pharyngeal, and laryngeal axes for optimal visualization during intubation. Contraindicated in known or suspected C-spine fracture/instability.\n\nProper positioning is essential for successful intubation. In patients with suspected C-spine injury, manual in-line stabilization should be maintained during intubation. Alternative techniques include video laryngoscopy, fiberoptic intubation, or surgical airway if intubation fails.",
+      "tags": [
+        "anesthesia",
+        "intubation",
+        "airway management"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-e6985f957e",
+      "front": "What are the types of intraoperative shock and their distinguishing features?",
+      "back": "Hypovolemic (most common): low JVP, tachycardia. Cardiogenic: high JVP, increased SVR, decreased CO. Obstructive (PE, tamponade, tension pneumo): high JVP, insufficient CO. Septic: warm skin, low SVR. Neurogenic/spinal: hypotension WITHOUT tachycardia, warm skin. Endocrine: Addisonian crisis, thyrotoxicosis.\n\nThe mnemonic SHOCKED can help: Septic, Hypovolemic, Obstructive, Cardiogenic, K (anaphylaxis), Endocrine, Drugs. BP = CO × SVR, where CO = SV × HR. Stroke volume depends on preload, afterload, and contractility. Treatment targets the underlying cause while supporting hemodynamics.",
+      "tags": [
+        "anesthesia",
+        "shock",
+        "hemodynamics"
+      ],
+      "difficulty": "medium",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-8f4b7650db",
+      "front": "What intravenous induction agents are used in anesthesia and what are their key properties?",
+      "back": "Propofol: most common, decreases BP/SVR/ICP, antiemetic. Ketamine: dissociative, increases HR/BP/SVR, bronchodilator — used in hemodynamic instability and asthma. Etomidate: minimal cardiac effects — used in hemodynamically unstable patients. Thiopental: barbiturate, decreases BP/ICP.\n\nPropofol acts at GABA synapses and is the standard induction agent. A continuous propofol infusion (TIVA) is indicated when volatile agents are contraindicated (e.g., malignant hyperthermia susceptibility). Ketamine acts on NMDA receptors and is unique in maintaining hemodynamic stability — making it ideal for trauma, hypovolemia, and sepsis. Etomidate preserves hemodynamics but may cause adrenal suppression.",
+      "tags": [
+        "anesthesia",
+        "induction agents",
+        "pharmacology"
+      ],
+      "difficulty": "medium",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml",
+      "requires": {
+        "subject": "anesthesia",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "anesthesia-1617e71cf7",
+      "front": "What are the complications of hypothermia during surgery?",
+      "back": "Increased wound infections (impaired immune function), prolonged hospitalization, reduced platelet function and impaired coagulation (increased bleeding and transfusion), tripled incidence of VT and morbid cardiac events, decreased anesthetic metabolism (prolonged recovery).\n\nIntraoperative hypothermia (<36°C) occurs in ~90% of cases due to transcutaneous heat loss. Prevention includes forced-air warming blankets, warmed IV fluids, heated humidified gases, and increased OR temperature. Even mild hypothermia (34-36°C) significantly increases complication rates.",
+      "tags": [
+        "anesthesia",
+        "hypothermia",
+        "perioperative complications"
+      ],
+      "difficulty": "easy",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-76b05aaa43",
+      "front": "What is the formula for calculating acceptable blood loss (ABL) during surgery?",
+      "back": "ABL = [(Hb initial - Hb final) / Hb initial] × EBV. Estimated Blood Volume (EBV): adult male ~70 mL/kg, adult female ~60 mL/kg. Example: 70 kg male with Hb 150, transfusion trigger Hb 70: ABL = [(150-70)/150] × 4900 = 2613 mL.\n\nThis calculation determines how much blood can be lost before transfusion is needed. The transfusion trigger (typically Hb 70 g/L for stable patients) is set based on patient comorbidities. Crystalloid replaces blood loss at a 3:1 ratio for volume, while colloid is 1:1. Neither improves O2 carrying capacity — only blood products do that.",
+      "tags": [
+        "anesthesia",
+        "blood loss",
+        "transfusion",
+        "fluid management"
+      ],
+      "difficulty": "medium",
+      "source": "anesthesia",
+      "sourceFile": "anesthesia.yml"
+    },
+    {
+      "id": "anesthesia-09364d7a9d",
+      "front": "What is the status of Thiopental in North America?",
+      "back": "As of 2021, Thiopental has been discontinued from production for North America\n\nThiopental (sodium thiopental) was previously used for IV induction but is no longer available for clinical use in North America.",
+      "tags": [
+        "anesthesia",
+        "thiopental",
+        "pharmacology",
+        "clinical availability",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-9a7690defc",
+      "front": "What is the volatile inhalational agent with the lowest MAC?",
+      "back": "Desflurane has the lowest MAC at 6.0%\n\nMAC represents the concentration needed to prevent movement in 50% of patients, with lower values indicating more potent agents.",
+      "tags": [
+        "anesthesia",
+        "volatile agents",
+        "MAC",
+        "desflurane",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-5d1d8e8ead",
+      "front": "Which volatile agent has the highest MAC value?",
+      "back": "Nitrous oxide (N2O) with MAC of 104% (only achievable in a pressurized chamber)\n\nN2O is a weak anesthetic requiring high concentrations, so it is typically combined with other agents.",
+      "tags": [
+        "anesthesia",
+        "nitrous oxide",
+        "MAC",
+        "volatile agents",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-f436655fa5",
+      "front": "Which volatile agents increase ICP?",
+      "back": "Sevoflurane, Desflurane, Enflurane, and Halothane all increase ICP; also increases cerebral metabolic rate (sevoflurane, desflurane)\n\nVolatile anesthetics cause cerebral vasodilation, which increases cerebral blood flow and intracranial pressure.",
+      "tags": [
+        "anesthesia",
+        "volatile agents",
+        "ICP",
+        "neurosurgery",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-b8f07be62d",
+      "front": "How does age affect MAC of volatile anesthetics?",
+      "back": "MAC decreases by approximately 6% per additional decade of age in adults\n\nElderly patients require lower concentrations of volatile anesthetics, reflecting increased sensitivity to anesthetic effects.",
+      "tags": [
+        "anesthesia",
+        "MAC",
+        "geriatric",
+        "pharmacokinetics",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-75281a933d",
+      "front": "What is MAC-awake?",
+      "back": "The MAC at which a patient will open their eyes to command; generally 0.3-0.4 of usual MAC\n\nThis represents the endpoint for recovery from anesthesia and awareness during emergence.",
+      "tags": [
+        "anesthesia",
+        "MAC",
+        "emergence",
+        "awareness",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml",
+      "requires": {
+        "subject": "anesthesia",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "anesthesia-aa3eb438bc",
+      "front": "What is MAC-BAR?",
+      "back": "MAC-blocking adrenergic response; the MAC necessary to blunt sympathetic response to noxious stimuli; generally 1.5 MAC\n\nThis represents the level needed to prevent hemodynamic stress responses to surgical stimulation.",
+      "tags": [
+        "anesthesia",
+        "MAC",
+        "sympathetic response",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-c4b1a3f647",
+      "front": "What receptor do muscle relaxants block?",
+      "back": "Nicotinic cholinergic receptors at the neuromuscular junction\n\nBy blocking these postsynaptic receptors, muscle relaxants prevent acetylcholine-induced depolarization and muscle contraction.",
+      "tags": [
+        "anesthesia",
+        "muscle relaxants",
+        "receptors",
+        "NMJ",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-ca0f9621d7",
+      "front": "What is the Train of Four (TOF) nerve stimulator used for?",
+      "back": "Assess the degree of nerve block intraoperatively; no twitch response indicates complete neuromuscular blockade\n\nTOF monitoring quantifies the depth of neuromuscular blockade to guide dosing and reversal.",
+      "tags": [
+        "anesthesia",
+        "monitoring",
+        "neuromuscular",
+        "TOF",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-2aafaa898e",
+      "front": "How is Succinylcholine metabolized?",
+      "back": "Hydrolyzed by plasma cholinesterase (pseudocholinesterase), found in plasma and NOT at the NMJ\n\nThis extrajunctional metabolism explains why SCh duration is affected by conditions altering plasma cholinesterase activity.",
+      "tags": [
+        "anesthesia",
+        "succinylcholine",
+        "metabolism",
+        "pseudocholinesterase",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "medium",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-1391e812e8",
+      "front": "What skeletal muscles are paralyzed by muscle relaxants, and which are spared?",
+      "back": "Skeletal muscle paralysis including the diaphragm occurs; involuntary muscles (heart and smooth muscle) are spared\n\nThis differential effect occurs because muscle relaxants act at nicotinic receptors, which have different subtypes in skeletal vs. cardiac/smooth muscle.",
+      "tags": [
+        "anesthesia",
+        "muscle relaxants",
+        "pharmacology",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-b2aaf2a896",
+      "front": "What is the intubating dose of succinylcholine?",
+      "back": "1-1.5 mg/kg IV\n\nThis dose provides rapid intubating conditions with onset of 30-60 seconds and duration of 3-5 minutes.",
+      "tags": [
+        "anesthesia",
+        "muscle-relaxants",
+        "succinylcholine",
+        "dosing",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-4602ed8cd1",
+      "front": "What enzyme metabolizes succinylcholine?",
+      "back": "Plasma cholinesterase (pseudocholinesterase) - found in plasma only, not at the NMJ\n\nUnlike acetylcholinesterase at the synapse, pseudocholinesterase is produced by the liver and circulates in plasma.",
+      "tags": [
+        "anesthesia",
+        "muscle-relaxants",
+        "succinylcholine",
+        "metabolism",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "medium",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-5a910c879f",
+      "front": "How does MAC change with age?",
+      "back": "MAC decreases by approximately 6% per additional decade of age in adults\n\nElderly patients require lower concentrations of volatile anesthetics, which must be considered during anesthetic dosing.",
+      "tags": [
+        "anesthesia",
+        "inhalational-agents",
+        "MAC",
+        "pharmacokinetics",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "medium",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-02b77b879c",
+      "front": "What is the 'second gas effect' with nitrous oxide?",
+      "back": "N2O rapidly enters the bloodstream and dilutes alveolar gases, increasing the alveolar concentration of the second (companion) anesthetic gas\n\nThis effect accelerates the uptake of other anesthetic agents, speeding induction.",
+      "tags": [
+        "anesthesia",
+        "inhalational-agents",
+        "nitrous-oxide",
+        "pharmacokinetics",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "medium",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-1eecdba844",
+      "front": "What is the train-of-four (TOF) nerve stimulation used for?",
+      "back": "To assess the degree of neuromuscular blockade intraoperatively - no twitch response indicates complete neuromuscular blockade\n\nTOF monitoring ensures appropriate paralysis depth and guides reversal agent administration.",
+      "tags": [
+        "anesthesia",
+        "muscle-relaxants",
+        "monitoring",
+        "neuromuscular",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-129ced64e6",
+      "front": "Which volatile agent causes the most significant increase in ICP?",
+      "back": "Sevoflurane, desflurane, and enflurane all increase ICP; halothane also increases cerebral blood flow and ICP\n\nVolatile anesthetics affect cerebral vasculature - this is clinically significant in patients with elevated ICP.",
+      "tags": [
+        "anesthesia",
+        "inhalational-agents",
+        "CNS-effects",
+        "ICP",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "medium",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-6cccbe8451",
+      "front": "What MAC values do the volatile anesthetics have?",
+      "back": "Sevoflurane: 2%, Desflurane: 6%, Isoflurane: 1.2%, Enflurane: 1.7%, Halothane: 0.8%, N2O: 104%\n\nLower MAC indicates higher potency. N2O's MAC of 104% is only achievable in a pressurized chamber.",
+      "tags": [
+        "anesthesia",
+        "inhalational-agents",
+        "MAC",
+        "potency",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "easy",
+      "source": "general",
+      "sourceFile": "general.yml"
+    },
+    {
+      "id": "anesthesia-5113cc06ef",
+      "front": "What does combining rocuronium with thiopental cause?",
+      "back": "Precipitates to form insoluble compounds\n\nThis physical incompatibility means these drugs should not be mixed in the same IV line.",
+      "tags": [
+        "anesthesia",
+        "drug-interactions",
+        "rocuronium",
+        "thiopental",
+        "toronto-notes",
+        "pages-0071-0072-0073-0074-0075-0076-0077-0078-0079-0080"
+      ],
+      "difficulty": "medium",
+      "source": "general",
+      "sourceFile": "general.yml"
+    }
+  ],
+  "triage": null,
+  "guide": {
+    "chars": 16978,
+    "lines": 229,
+    "sections": [
+      {
+        "level": 1,
+        "title": "Anesthesia",
+        "line": 0,
+        "body": ""
+      },
+      {
+        "level": 2,
+        "title": "General",
+        "line": 2,
+        "body": "**Q:** What is the status of Thiopental in North America?\n\n**A:** As of 2021, Thiopental has been discontinued from production for North America\n\nThiopental (sodium thiopental) was previously used for IV induction but is no longer available for clinical use in North America.\n\n**Q:** What is the volatile inhalational agent with the lowest MAC?\n\n**A:** Desflurane has the lowest MAC at 6.0%\n\nMAC represents the concentration needed to prevent movement in 50% of patients, with lower values indicating more potent agents.\n\n**Q:** Which volatile agent has the highest MAC value?\n\n**A:** Nitrous oxide (N2O) with MAC of 104% (only achievable in a pressurized chamber)\n\nN2O is a weak anesthetic requiring high concentrations, so it is typically combined with other agents.\n\n**Q:** Which volatile agents increase ICP?\n\n**A:** Sevoflurane, Desflurane, Enflurane, and Halothane all increase ICP; also increases cerebral metabolic rate (sevoflurane, desflurane)\n\nVolatile anesthetics cause cerebral vasodilation, which increases cerebral blood flow and intracranial pressure.\n\n**Q:** How does age affect MAC of volatile anesthetics?\n\n**A:** MAC decreases by approximately 6% per additional decade of age in adults\n\nElderly patients require lower concentrations of volatile anesthetics, reflecting increased sensitivity to anesthetic effects.\n\n**Q:** What is MAC-awake?\n\n**A:** The MAC at which a patient will open their eyes to command; generally 0.3-0.4 of usual MAC\n\nThis represents the endpoint for recovery from anesthesia and awareness during emergence.\n\n**Q:** What is MAC-BAR?\n\n**A:** MAC-blocking adrenergic response; the MAC necessary to blunt sympathetic response to noxious stimuli; generally 1.5 MAC\n\nThis represents the level needed to prevent hemodynamic stress responses to surgical stimulation.\n\n**Q:** What receptor do muscle relaxants block?\n\n**A:** Nicotinic cholinergic receptors at the neuromuscular junction\n\nBy blocking these postsynaptic receptors, muscle relaxants prevent acetylcholine-induced depolarization and muscle contraction.\n\n**Q:** What is the Train of Four (TOF) nerve stimulator used for?\n\n**A:** Assess the degree of nerve block intraoperatively; no twitch response indicates complete neuromuscular blockade\n\nTOF monitoring quantifies the depth of neuromuscular blockade to guide dosing and reversal.\n\n**Q:** How is Succinylcholine metabolized?\n\n**A:** Hydrolyzed by plasma cholinesterase (pseudocholinesterase), found in plasma and NOT at the NMJ\n\nThis extrajunctional metabolism explains why SCh duration is affected by conditions altering plasma cholinesterase activity.\n\n**Q:** What skeletal muscles are paralyzed by muscle relaxants, and which are spared?\n\n**A:** Skeletal muscle paralysis including the diaphragm occurs; involuntary muscles (heart and smooth muscle) are spared\n\nThis differential effect occurs because muscle relaxants act at nicotinic receptors, which have different subtypes in skeletal vs. cardiac/smooth muscle.\n\n**Q:** What is the intubating dose of succinylcholine?\n\n**A:** 1-1.5 mg/kg IV\n\nThis dose provides rapid intubating conditions with onset of 30-60 seconds and duration of 3-5 minutes.\n\n**Q:** What enzyme metabolizes succinylcholine?\n\n**A:** Plasma cholinesterase (pseudocholinesterase) - found in plasma only, not at the NMJ\n\nUnlike acetylcholinesterase at the synapse, pseudocholinesterase is produced by the liver and circulates in plasma.\n\n**Q:** How does MAC change with age?\n\n**A:** MAC decreases by approximately 6% per additional decade of age in adults\n\nElderly patients require lower concentrations of volatile anesthetics, which must be considered during anesthetic dosing.\n\n**Q:** What is the 'second gas effect' with nitrous oxide?\n\n**A:** N2O rapidly enters the bloodstream and dilutes alveolar gases, increasing the alveolar concentration of the second (companion) anesthetic gas\n\nThis effect accelerates the uptake of other anesthetic agents, speeding induction.\n\n**Q:** What is the train-of-four (TOF) nerve stimulation used for?\n\n**A:** To assess the degree of neuromuscular blockade intraoperatively - no twitch response indicates complete neuromuscular blockade\n\nTOF monitoring ensures appropriate paralysis depth and guides reversal agent administration.\n\n**Q:** Which volatile agent causes the most significant increase in ICP?\n\n**A:** Sevoflurane, desflurane, and enflurane all increase ICP; halothane also increases cerebral blood flow and ICP\n\nVolatile anesthetics affect cerebral vasculature - this is clinically significant in patients with elevated ICP.\n\n**Q:** What MAC values do the volatile anesthetics have?\n\n**A:** Sevoflurane: 2%, Desflurane: 6%, Isoflurane: 1.2%, Enflurane: 1.7%, Halothane: 0.8%, N2O: 104%\n\nLower MAC indicates higher potency. N2O's MAC of 104% is only achievable in a pressurized chamber.\n\n**Q:** What does combining rocuronium with thiopental cause?\n\n**A:** Precipitates to form insoluble compounds\n\nThis physical incompatibility means these drugs should not be mixed in the same IV line."
+      },
+      {
+        "level": 2,
+        "title": "Anesthesia",
+        "line": 118,
+        "body": "**Q:** What is the ASA (American Society of Anesthesiology) physical status classification system?\n\n**A:** ASA 1: healthy patient. ASA 2: mild systemic disease (e.g., controlled DM, HTN, obesity). ASA 3: severe systemic disease limiting activity (e.g., stable CAD, COPD). ASA 4: severe systemic disease that is a constant threat to life (e.g., unstable CAD, renal failure). ASA 5: moribund, not expected to survive 24h without surgery. ASA 6: brain dead organ donor. Add 'E' for emergencies.\n\nThe ASA classification is a gross predictor of overall surgical outcome but is NOT used as specific anesthetic risk stratification. It is used universally in preoperative assessment to communicate patient fitness for surgery.\n\n**Q:** What are the fasting guidelines prior to elective surgery according to the Canadian Anesthesiologists' Society?\n\n**A:** 6 hours for solids and non-human milk; 4 hours for breast milk; 2 hours for clear fluids (adults); 1 hour for clear fluids (infants/children).\n\nThese guidelines minimize aspiration risk. Clear fluids include water, pulp-free juice, and tea/coffee without milk. For emergent procedures, the risk of delaying surgery must be weighed against aspiration risk. Patients with conditions causing delayed gastric emptying (e.g., diabetes, GLP-1 agonist use) may require longer fasting.\n\n**Q:** What is the Mallampati classification and what does it predict?\n\n**A:** A classification (I-IV) of oral opening that predicts intubation difficulty. Class I: full view of uvula, tonsils, and soft palate. Class II: partial view of uvula. Class III: base of uvula only. Class IV: hard palate only. Class III/IV predicts difficult intubation.\n\nMallampati classification is part of the airway assessment performed during preoperative evaluation. No single test reliably excludes difficult intubation; history of prior difficult intubation is the strongest predictor. Other assessments include the 3-3-2 rule, thyromental distance, and mandibular subluxation.\n\n**Q:** What is the LEMON mnemonic for evaluating difficult airways?\n\n**A:** L: Look externally (obesity, beard, small facial features, neck abnormalities). E: Evaluate 3-3-2 rule. M: Mallampati score. O: Obstruction (epiglottitis, abscess, tumor). N: Neck mobility.\n\nLEMON is a systematic approach to airway assessment. The 3-3-2 rule checks: 3 finger breadths mouth opening, 3 fingers mentum-to-hyoid, and 2 fingers thyroid-to-hyoid. Restricted neck mobility (e.g., cervical spine disease, ankylosing spondylitis) impairs the sniffing position needed for intubation.\n\n**Q:** What is the gold standard for confirming endotracheal tube (ETT) placement?\n\n**A:** End-tidal CO2 (ETCO2) measured by capnography.\n\nETCO2 is the gold standard for confirming tracheal (vs. esophageal) ETT placement. Esophageal intubation is suspected when ETCO2 is zero or near-zero. Additional confirmation includes bilateral breath sounds, absence of epigastric sounds, bilateral chest rise, and water vapor condensation in the ETT. CXR confirms tip position but not tracheal vs. esophageal location.\n\n**Q:** What are the indications for rapid sequence induction (RSI)?\n\n**A:** Patients at risk of aspiration: not fasted appropriately, decreased LOC, delayed gastric emptying (diabetes, opioids, GLP-1 agonists), decreased LES competence (GERD, hiatal hernia, pregnancy), increased intra-abdominal pressure (pregnancy, obesity, bowel obstruction).\n\nRSI differs from routine induction: predetermined drug doses are given rapidly, no bag-mask ventilation is performed (to avoid gastric insufflation), cricoid pressure (Sellick maneuver) may be applied, and a rapid-onset muscle relaxant (succinylcholine or high-dose rocuronium) is used immediately after induction.\n\n**Q:** What are the reversible causes of pulseless electrical activity (PEA) arrest?\n\n**A:** 5 Hs: Hypothermia, Hypovolemia, Hypoxia, Hydrogen ions (acidosis), Hypo/hyperkalemia. 5 Ts: Tamponade (cardiac), Thrombosis (pulmonary), Thrombosis (coronary), Tension pneumothorax, Toxins (overdose/poisoning).\n\nPEA and asystole are non-shockable rhythms. Key to survival is good early CPR and identification/treatment of reversible causes. During anesthesia, additional causes include local anesthetic systemic toxicity (LAST) and excessive anesthetic dosing. Shockable rhythms (VF and pulseless VT) require early defibrillation.\n\n**Q:** What is the 4-2-1 rule for calculating maintenance IV fluid requirements?\n\n**A:** 4 mL/kg/h for first 10 kg + 2 mL/kg/h for next 10 kg + 1 mL/kg/h for each additional kg. Example: 70 kg patient = 40 + 20 + 50 = 110 mL/h.\n\nThis calculates hourly maintenance fluid needs. Maintenance requirements are increased with fever, GI losses, and sweating, and decreased with anuria, SIADH, and CHF. Fluid deficit from preoperative fasting must be added. Goal-directed fluid therapy is preferred over predetermined calculations to reduce postoperative complications.\n\n**Q:** What are the differences between crystalloids and colloids for IV fluid resuscitation?\n\n**A:** Crystalloids (e.g., Ringer's lactate, NS): distribute in ECF, require 3:1 replacement ratio for blood loss. Colloids (e.g., albumin): distribute in intravascular space, 1:1 replacement ratio. Balanced crystalloids (Ringer's lactate) are preferred over NS to avoid hyperchloremic metabolic acidosis.\n\nCochrane meta-analyses show no mortality difference between colloids and crystalloids. HES solutions are controversial due to renal and coagulopathic side effects, especially in septic patients. IV fluids improve perfusion but do NOT improve O2 carrying capacity — only blood products do that.\n\n**Q:** What is malignant hyperthermia and how is it managed?\n\n**A:** A life-threatening hypermetabolic crisis triggered by volatile anesthetic agents (e.g., isoflurane, sevoflurane) or succinylcholine in genetically susceptible individuals (often autosomal dominant RYR1 mutation). Treatment: immediate dantrolene, stop triggering agents, active cooling, and supportive care.\n\nMalignant hyperthermia causes uncontrolled skeletal muscle metabolism leading to hyperthermia, tachycardia, hypercarbia, metabolic acidosis, hyperkalemia, and rhabdomyolysis. Family history should be elicited preoperatively. TIVA (total intravenous anesthesia) with propofol is used as an alternative in susceptible patients.\n\n**Q:** What oxygen delivery rates and FiO2 do nasal cannula, simple face mask, and non-rebreather mask provide?\n\n**A:** Nasal cannula: 1-6 L/min, FiO2 24-44% (add 4% per L). Simple face mask: ≥6 L/min, FiO2 up to 55%. Non-rebreather mask: 10-15 L/min, FiO2 up to 80%. Venturi mask: precise FiO2 24-50%.\n\nLow-flow systems (nasal cannula) dilute O2 with room air, so FiO2 varies with minute ventilation. High-flow systems (Venturi mask, high-flow nasal cannula up to 50-60 L/min) deliver consistent FiO2. The goal is to maintain SaO2 >90%, since small decreases below 90% correspond to large drops in PaO2 due to the sigmoid shape of the oxyhemoglobin dissociation curve.\n\n**Q:** What are the different modes of mechanical ventilation and their key features?\n\n**A:** ACV/VC: preset tidal volume and rate, patient can trigger extra breaths. PCV: preset inspiratory pressure, tidal volume varies with compliance. SIMV: combination of controlled and spontaneous breaths. PSV: patient-initiated breaths with pressure support, useful for weaning. BiPAP: non-invasive, increased pressure on inspiration, PEEP on expiration.\n\nChoice of mode depends on patient factors and reason for ventilation. Complications include ventilator-induced lung injury (barotrauma, volutrauma), VAP, reduced venous return causing hypotension, diaphragm atrophy, and auto-PEEP. A pneumothorax during mechanical ventilation requires chest tube drainage.\n\n**Q:** What preoperative medications should be held on the day of surgery?\n\n**A:** Hold: oral antihyperglycemics, ACE inhibitors and ARBs (controversial), warfarin (consider bridging), antiplatelet agents (clopidogrel), factor Xa inhibitors, direct thrombin inhibitors, herbal supplements (stop 1 week prior). Continue: most cardiac and respiratory medications, beta-blockers.\n\nACEIs/ARBs increase risk of post-induction hypotension but evidence on holding vs. continuing is mixed. Beta-blockers should be continued if the patient is already taking them, as abrupt withdrawal can precipitate rebound tachycardia and ischemia. Insulin requires dose adjustment, not complete cessation. Target blood glucose is <10 mmol/L in critical patients.\n\n**Q:** What is the sniffing position and when is it contraindicated?\n\n**A:** Flexion of the lower C-spine (C5-C6) with extension of the upper C-spine at the atlanto-occipital joint (C1), aligning the oral, pharyngeal, and laryngeal axes for optimal visualization during intubation. Contraindicated in known or suspected C-spine fracture/instability.\n\nProper positioning is essential for successful intubation. In patients with suspected C-spine injury, manual in-line stabilization should be maintained during intubation. Alternative techniques include video laryngoscopy, fiberoptic intubation, or surgical airway if intubation fails.\n\n**Q:** What are the types of intraoperative shock and their distinguishing features?\n\n**A:** Hypovolemic (most common): low JVP, tachycardia. Cardiogenic: high JVP, increased SVR, decreased CO. Obstructive (PE, tamponade, tension pneumo): high JVP, insufficient CO. Septic: warm skin, low SVR. Neurogenic/spinal: hypotension WITHOUT tachycardia, warm skin. Endocrine: Addisonian crisis, thyrotoxicosis.\n\nThe mnemonic SHOCKED can help: Septic, Hypovolemic, Obstructive, Cardiogenic, K (anaphylaxis), Endocrine, Drugs. BP = CO × SVR, where CO = SV × HR. Stroke volume depends on preload, afterload, and contractility. Treatment targets the underlying cause while supporting hemodynamics.\n\n**Q:** What intravenous induction agents are used in anesthesia and what are their key properties?\n\n**A:** Propofol: most common, decreases BP/SVR/ICP, antiemetic. Ketamine: dissociative, increases HR/BP/SVR, bronchodilator — used in hemodynamic instability and asthma. Etomidate: minimal cardiac effects — used in hemodynamically unstable patients. Thiopental: barbiturate, decreases BP/ICP.\n\nPropofol acts at GABA synapses and is the standard induction agent. A continuous propofol infusion (TIVA) is indicated when volatile agents are contraindicated (e.g., malignant hyperthermia susceptibility). Ketamine acts on NMDA receptors and is unique in maintaining hemodynamic stability — making it ideal for trauma, hypovolemia, and sepsis. Etomidate preserves hemodynamics but may cause adrenal suppression.\n\n**Q:** What are the complications of hypothermia during surgery?\n\n**A:** Increased wound infections (impaired immune function), prolonged hospitalization, reduced platelet function and impaired coagulation (increased bleeding and transfusion), tripled incidence of VT and morbid cardiac events, decreased anesthetic metabolism (prolonged recovery).\n\nIntraoperative hypothermia (<36°C) occurs in ~90% of cases due to transcutaneous heat loss. Prevention includes forced-air warming blankets, warmed IV fluids, heated humidified gases, and increased OR temperature. Even mild hypothermia (34-36°C) significantly increases complication rates.\n\n**Q:** What is the formula for calculating acceptable blood loss (ABL) during surgery?\n\n**A:** ABL = [(Hb initial - Hb final) / Hb initial] × EBV. Estimated Blood Volume (EBV): adult male ~70 mL/kg, adult female ~60 mL/kg. Example: 70 kg male with Hb 150, transfusion trigger Hb 70: ABL = [(150-70)/150] × 4900 = 2613 mL.\n\nThis calculation determines how much blood can be lost before transfusion is needed. The transfusion trigger (typically Hb 70 g/L for stable patients) is set based on patient comorbidities. Crystalloid replaces blood loss at a 3:1 ratio for volume, while colloid is 1:1. Neither improves O2 carrying capacity — only blood products do that."
+      }
+    ],
+    "firstParagraph": "**Q:** What is the status of Thiopental in North America?\n\n**A:** As of 2021, Thiopental has been discontinued from production for North America",
+    "body": "# Anesthesia\n\n## General\n\n**Q:** What is the status of Thiopental in North America?\n\n**A:** As of 2021, Thiopental has been discontinued from production for North America\n\nThiopental (sodium thiopental) was previously used for IV induction but is no longer available for clinical use in North America.\n\n**Q:** What is the volatile inhalational agent with the lowest MAC?\n\n**A:** Desflurane has the lowest MAC at 6.0%\n\nMAC represents the concentration needed to prevent movement in 50% of patients, with lower values indicating more potent agents.\n\n**Q:** Which volatile agent has the highest MAC value?\n\n**A:** Nitrous oxide (N2O) with MAC of 104% (only achievable in a pressurized chamber)\n\nN2O is a weak anesthetic requiring high concentrations, so it is typically combined with other agents.\n\n**Q:** Which volatile agents increase ICP?\n\n**A:** Sevoflurane, Desflurane, Enflurane, and Halothane all increase ICP; also increases cerebral metabolic rate (sevoflurane, desflurane)\n\nVolatile anesthetics cause cerebral vasodilation, which increases cerebral blood flow and intracranial pressure.\n\n**Q:** How does age affect MAC of volatile anesthetics?\n\n**A:** MAC decreases by approximately 6% per additional decade of age in adults\n\nElderly patients require lower concentrations of volatile anesthetics, reflecting increased sensitivity to anesthetic effects.\n\n**Q:** What is MAC-awake?\n\n**A:** The MAC at which a patient will open their eyes to command; generally 0.3-0.4 of usual MAC\n\nThis represents the endpoint for recovery from anesthesia and awareness during emergence.\n\n**Q:** What is MAC-BAR?\n\n**A:** MAC-blocking adrenergic response; the MAC necessary to blunt sympathetic response to noxious stimuli; generally 1.5 MAC\n\nThis represents the level needed to prevent hemodynamic stress responses to surgical stimulation.\n\n**Q:** What receptor do muscle relaxants block?\n\n**A:** Nicotinic cholinergic receptors at the neuromuscular junction\n\nBy blocking these postsynaptic receptors, muscle relaxants prevent acetylcholine-induced depolarization and muscle contraction.\n\n**Q:** What is the Train of Four (TOF) nerve stimulator used for?\n\n**A:** Assess the degree of nerve block intraoperatively; no twitch response indicates complete neuromuscular blockade\n\nTOF monitoring quantifies the depth of neuromuscular blockade to guide dosing and reversal.\n\n**Q:** How is Succinylcholine metabolized?\n\n**A:** Hydrolyzed by plasma cholinesterase (pseudocholinesterase), found in plasma and NOT at the NMJ\n\nThis extrajunctional metabolism explains why SCh duration is affected by conditions altering plasma cholinesterase activity.\n\n**Q:** What skeletal muscles are paralyzed by muscle relaxants, and which are spared?\n\n**A:** Skeletal muscle paralysis including the diaphragm occurs; involuntary muscles (heart and smooth muscle) are spared\n\nThis differential effect occurs because muscle relaxants act at nicotinic receptors, which have different subtypes in skeletal vs. cardiac/smooth muscle.\n\n**Q:** What is the intubating dose of succinylcholine?\n\n**A:** 1-1.5 mg/kg IV\n\nThis dose provides rapid intubating conditions with onset of 30-60 seconds and duration of 3-5 minutes.\n\n**Q:** What enzyme metabolizes succinylcholine?\n\n**A:** Plasma cholinesterase (pseudocholinesterase) - found in plasma only, not at the NMJ\n\nUnlike acetylcholinesterase at the synapse, pseudocholinesterase is produced by the liver and circulates in plasma.\n\n**Q:** How does MAC change with age?\n\n**A:** MAC decreases by approximately 6% per additional decade of age in adults\n\nElderly patients require lower concentrations of volatile anesthetics, which must be considered during anesthetic dosing.\n\n**Q:** What is the 'second gas effect' with nitrous oxide?\n\n**A:** N2O rapidly enters the bloodstream and dilutes alveolar gases, increasing the alveolar concentration of the second (companion) anesthetic gas\n\nThis effect accelerates the uptake of other anesthetic agents, speeding induction.\n\n**Q:** What is the train-of-four (TOF) nerve stimulation used for?\n\n**A:** To assess the degree of neuromuscular blockade intraoperatively - no twitch response indicates complete neuromuscular blockade\n\nTOF monitoring ensures appropriate paralysis depth and guides reversal agent administration.\n\n**Q:** Which volatile agent causes the most significant increase in ICP?\n\n**A:** Sevoflurane, desflurane, and enflurane all increase ICP; halothane also increases cerebral blood flow and ICP\n\nVolatile anesthetics affect cerebral vasculature - this is clinically significant in patients with elevated ICP.\n\n**Q:** What MAC values do the volatile anesthetics have?\n\n**A:** Sevoflurane: 2%, Desflurane: 6%, Isoflurane: 1.2%, Enflurane: 1.7%, Halothane: 0.8%, N2O: 104%\n\nLower MAC indicates higher potency. N2O's MAC of 104% is only achievable in a pressurized chamber.\n\n**Q:** What does combining rocuronium with thiopental cause?\n\n**A:** Precipitates to form insoluble compounds\n\nThis physical incompatibility means these drugs should not be mixed in the same IV line.\n\n## Anesthesia\n\n**Q:** What is the ASA (American Society of Anesthesiology) physical status classification system?\n\n**A:** ASA 1: healthy patient. ASA 2: mild systemic disease (e.g., controlled DM, HTN, obesity). ASA 3: severe systemic disease limiting activity (e.g., stable CAD, COPD). ASA 4: severe systemic disease that is a constant threat to life (e.g., unstable CAD, renal failure). ASA 5: moribund, not expected to survive 24h without surgery. ASA 6: brain dead organ donor. Add 'E' for emergencies.\n\nThe ASA classification is a gross predictor of overall surgical outcome but is NOT used as specific anesthetic risk stratification. It is used universally in preoperative assessment to communicate patient fitness for surgery.\n\n**Q:** What are the fasting guidelines prior to elective surgery according to the Canadian Anesthesiologists' Society?\n\n**A:** 6 hours for solids and non-human milk; 4 hours for breast milk; 2 hours for clear fluids (adults); 1 hour for clear fluids (infants/children).\n\nThese guidelines minimize aspiration risk. Clear fluids include water, pulp-free juice, and tea/coffee without milk. For emergent procedures, the risk of delaying surgery must be weighed against aspiration risk. Patients with conditions causing delayed gastric emptying (e.g., diabetes, GLP-1 agonist use) may require longer fasting.\n\n**Q:** What is the Mallampati classification and what does it predict?\n\n**A:** A classification (I-IV) of oral opening that predicts intubation difficulty. Class I: full view of uvula, tonsils, and soft palate. Class II: partial view of uvula. Class III: base of uvula only. Class IV: hard palate only. Class III/IV predicts difficult intubation.\n\nMallampati classification is part of the airway assessment performed during preoperative evaluation. No single test reliably excludes difficult intubation; history of prior difficult intubation is the strongest predictor. Other assessments include the 3-3-2 rule, thyromental distance, and mandibular subluxation.\n\n**Q:** What is the LEMON mnemonic for evaluating difficult airways?\n\n**A:** L: Look externally (obesity, beard, small facial features, neck abnormalities). E: Evaluate 3-3-2 rule. M: Mallampati score. O: Obstruction (epiglottitis, abscess, tumor). N: Neck mobility.\n\nLEMON is a systematic approach to airway assessment. The 3-3-2 rule checks: 3 finger breadths mouth opening, 3 fingers mentum-to-hyoid, and 2 fingers thyroid-to-hyoid. Restricted neck mobility (e.g., cervical spine disease, ankylosing spondylitis) impairs the sniffing position needed for intubation.\n\n**Q:** What is the gold standard for confirming endotracheal tube (ETT) placement?\n\n**A:** End-tidal CO2 (ETCO2) measured by capnography.\n\nETCO2 is the gold standard for confirming tracheal (vs. esophageal) ETT placement. Esophageal intubation is suspected when ETCO2 is zero or near-zero. Additional confirmation includes bilateral breath sounds, absence of epigastric sounds, bilateral chest rise, and water vapor condensation in the ETT. CXR confirms tip position but not tracheal vs. esophageal location.\n\n**Q:** What are the indications for rapid sequence induction (RSI)?\n\n**A:** Patients at risk of aspiration: not fasted appropriately, decreased LOC, delayed gastric emptying (diabetes, opioids, GLP-1 agonists), decreased LES competence (GERD, hiatal hernia, pregnancy), increased intra-abdominal pressure (pregnancy, obesity, bowel obstruction).\n\nRSI differs from routine induction: predetermined drug doses are given rapidly, no bag-mask ventilation is performed (to avoid gastric insufflation), cricoid pressure (Sellick maneuver) may be applied, and a rapid-onset muscle relaxant (succinylcholine or high-dose rocuronium) is used immediately after induction.\n\n**Q:** What are the reversible causes of pulseless electrical activity (PEA) arrest?\n\n**A:** 5 Hs: Hypothermia, Hypovolemia, Hypoxia, Hydrogen ions (acidosis), Hypo/hyperkalemia. 5 Ts: Tamponade (cardiac), Thrombosis (pulmonary), Thrombosis (coronary), Tension pneumothorax, Toxins (overdose/poisoning).\n\nPEA and asystole are non-shockable rhythms. Key to survival is good early CPR and identification/treatment of reversible causes. During anesthesia, additional causes include local anesthetic systemic toxicity (LAST) and excessive anesthetic dosing. Shockable rhythms (VF and pulseless VT) require early defibrillation.\n\n**Q:** What is the 4-2-1 rule for calculating maintenance IV fluid requirements?\n\n**A:** 4 mL/kg/h for first 10 kg + 2 mL/kg/h for next 10 kg + 1 mL/kg/h for each additional kg. Example: 70 kg patient = 40 + 20 + 50 = 110 mL/h.\n\nThis calculates hourly maintenance fluid needs. Maintenance requirements are increased with fever, GI losses, and sweating, and decreased with anuria, SIADH, and CHF. Fluid deficit from preoperative fasting must be added. Goal-directed fluid therapy is preferred over predetermined calculations to reduce postoperative complications.\n\n**Q:** What are the differences between crystalloids and colloids for IV fluid resuscitation?\n\n**A:** Crystalloids (e.g., Ringer's lactate, NS): distribute in ECF, require 3:1 replacement ratio for blood loss. Colloids (e.g., albumin): distribute in intravascular space, 1:1 replacement ratio. Balanced crystalloids (Ringer's lactate) are preferred over NS to avoid hyperchloremic metabolic acidosis.\n\nCochrane meta-analyses show no mortality difference between colloids and crystalloids. HES solutions are controversial due to renal and coagulopathic side effects, especially in septic patients. IV fluids improve perfusion but do NOT improve O2 carrying capacity — only blood products do that.\n\n**Q:** What is malignant hyperthermia and how is it managed?\n\n**A:** A life-threatening hypermetabolic crisis triggered by volatile anesthetic agents (e.g., isoflurane, sevoflurane) or succinylcholine in genetically susceptible individuals (often autosomal dominant RYR1 mutation). Treatment: immediate dantrolene, stop triggering agents, active cooling, and supportive care.\n\nMalignant hyperthermia causes uncontrolled skeletal muscle metabolism leading to hyperthermia, tachycardia, hypercarbia, metabolic acidosis, hyperkalemia, and rhabdomyolysis. Family history should be elicited preoperatively. TIVA (total intravenous anesthesia) with propofol is used as an alternative in susceptible patients.\n\n**Q:** What oxygen delivery rates and FiO2 do nasal cannula, simple face mask, and non-rebreather mask provide?\n\n**A:** Nasal cannula: 1-6 L/min, FiO2 24-44% (add 4% per L). Simple face mask: ≥6 L/min, FiO2 up to 55%. Non-rebreather mask: 10-15 L/min, FiO2 up to 80%. Venturi mask: precise FiO2 24-50%.\n\nLow-flow systems (nasal cannula) dilute O2 with room air, so FiO2 varies with minute ventilation. High-flow systems (Venturi mask, high-flow nasal cannula up to 50-60 L/min) deliver consistent FiO2. The goal is to maintain SaO2 >90%, since small decreases below 90% correspond to large drops in PaO2 due to the sigmoid shape of the oxyhemoglobin dissociation curve.\n\n**Q:** What are the different modes of mechanical ventilation and their key features?\n\n**A:** ACV/VC: preset tidal volume and rate, patient can trigger extra breaths. PCV: preset inspiratory pressure, tidal volume varies with compliance. SIMV: combination of controlled and spontaneous breaths. PSV: patient-initiated breaths with pressure support, useful for weaning. BiPAP: non-invasive, increased pressure on inspiration, PEEP on expiration.\n\nChoice of mode depends on patient factors and reason for ventilation. Complications include ventilator-induced lung injury (barotrauma, volutrauma), VAP, reduced venous return causing hypotension, diaphragm atrophy, and auto-PEEP. A pneumothorax during mechanical ventilation requires chest tube drainage.\n\n**Q:** What preoperative medications should be held on the day of surgery?\n\n**A:** Hold: oral antihyperglycemics, ACE inhibitors and ARBs (controversial), warfarin (consider bridging), antiplatelet agents (clopidogrel), factor Xa inhibitors, direct thrombin inhibitors, herbal supplements (stop 1 week prior). Continue: most cardiac and respiratory medications, beta-blockers.\n\nACEIs/ARBs increase risk of post-induction hypotension but evidence on holding vs. continuing is mixed. Beta-blockers should be continued if the patient is already taking them, as abrupt withdrawal can precipitate rebound tachycardia and ischemia. Insulin requires dose adjustment, not complete cessation. Target blood glucose is <10 mmol/L in critical patients.\n\n**Q:** What is the sniffing position and when is it contraindicated?\n\n**A:** Flexion of the lower C-spine (C5-C6) with extension of the upper C-spine at the atlanto-occipital joint (C1), aligning the oral, pharyngeal, and laryngeal axes for optimal visualization during intubation. Contraindicated in known or suspected C-spine fracture/instability.\n\nProper positioning is essential for successful intubation. In patients with suspected C-spine injury, manual in-line stabilization should be maintained during intubation. Alternative techniques include video laryngoscopy, fiberoptic intubation, or surgical airway if intubation fails.\n\n**Q:** What are the types of intraoperative shock and their distinguishing features?\n\n**A:** Hypovolemic (most common): low JVP, tachycardia. Cardiogenic: high JVP, increased SVR, decreased CO. Obstructive (PE, tamponade, tension pneumo): high JVP, insufficient CO. Septic: warm skin, low SVR. Neurogenic/spinal: hypotension WITHOUT tachycardia, warm skin. Endocrine: Addisonian crisis, thyrotoxicosis.\n\nThe mnemonic SHOCKED can help: Septic, Hypovolemic, Obstructive, Cardiogenic, K (anaphylaxis), Endocrine, Drugs. BP = CO × SVR, where CO = SV × HR. Stroke volume depends on preload, afterload, and contractility. Treatment targets the underlying cause while supporting hemodynamics.\n\n**Q:** What intravenous induction agents are used in anesthesia and what are their key properties?\n\n**A:** Propofol: most common, decreases BP/SVR/ICP, antiemetic. Ketamine: dissociative, increases HR/BP/SVR, bronchodilator — used in hemodynamic instability and asthma. Etomidate: minimal cardiac effects — used in hemodynamically unstable patients. Thiopental: barbiturate, decreases BP/ICP.\n\nPropofol acts at GABA synapses and is the standard induction agent. A continuous propofol infusion (TIVA) is indicated when volatile agents are contraindicated (e.g., malignant hyperthermia susceptibility). Ketamine acts on NMDA receptors and is unique in maintaining hemodynamic stability — making it ideal for trauma, hypovolemia, and sepsis. Etomidate preserves hemodynamics but may cause adrenal suppression.\n\n**Q:** What are the complications of hypothermia during surgery?\n\n**A:** Increased wound infections (impaired immune function), prolonged hospitalization, reduced platelet function and impaired coagulation (increased bleeding and transfusion), tripled incidence of VT and morbid cardiac events, decreased anesthetic metabolism (prolonged recovery).\n\nIntraoperative hypothermia (<36°C) occurs in ~90% of cases due to transcutaneous heat loss. Prevention includes forced-air warming blankets, warmed IV fluids, heated humidified gases, and increased OR temperature. Even mild hypothermia (34-36°C) significantly increases complication rates.\n\n**Q:** What is the formula for calculating acceptable blood loss (ABL) during surgery?\n\n**A:** ABL = [(Hb initial - Hb final) / Hb initial] × EBV. Estimated Blood Volume (EBV): adult male ~70 mL/kg, adult female ~60 mL/kg. Example: 70 kg male with Hb 150, transfusion trigger Hb 70: ABL = [(150-70)/150] × 4900 = 2613 mL.\n\nThis calculation determines how much blood can be lost before transfusion is needed. The transfusion trigger (typically Hb 70 g/L for stable patients) is set based on patient comorbidities. Crystalloid replaces blood loss at a 3:1 ratio for volume, while colloid is 1:1. Neither improves O2 carrying capacity — only blood products do that.\n\n",
+    "infographics": [],
+    "videos": [],
+    "audio": []
+  }
+}

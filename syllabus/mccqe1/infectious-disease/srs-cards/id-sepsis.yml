@@ -1,0 +1,226 @@
+# Sepsis & Septic Shock (InfectiousDisease) - generated from srs-mccqe1
+cards:
+  - front: "A 68-year-old has altered consciousness, fever 39.5°C, BP 88/52, HR 124, RR 28, lactate 3.2 mmol/L. What is the diagnosis and the Surviving Sepsis 1-hour bundle?"
+    back: "Septic shock (sepsis + vasopressor requirement OR lactate ≥2 mmol/L); 1-hour bundle: blood cultures, IV broad-spectrum antibiotics, 30 mL/kg IV crystalloid, vasopressors for MAP <65 if no response\n\nSepsis-3 definition: life-threatening organ dysfunction from infection. SOFA score ≥2 acute change. Quick-SOFA (altered mental status, RR ≥22, SBP ≤100) identifies high-risk patients outside ICU. Surviving Sepsis Campaign 2021: 1-hour bundle."
+    difficulty: hard
+    tags: [septic shock, Surviving Sepsis, 1-hour bundle, SOFA score, infectious disease]
+  - front: "What are the diagnostic criteria for sepsis vs. septic shock per Sepsis-3?"
+    back: "Sepsis: suspected infection + acute SOFA score ≥2; Septic shock: sepsis + vasopressor requirement to maintain MAP ≥65 AND serum lactate >2 mmol/L despite adequate fluid resuscitation\n\nSepsis-3 eliminated SIRS criteria for sepsis definition. SOFA (Sequential Organ Failure Assessment) assesses respiratory, coagulation, liver, cardiovascular, CNS, renal. Previous definitions (severe sepsis) are no longer used."
+    difficulty: easy
+    tags: [Sepsis-3, SOFA, septic shock, sepsis definition, infectious disease]
+  - front: "What is the first-line vasopressor in septic shock and what is the MAP target?"
+    back: "Norepinephrine is first-line vasopressor; target MAP ≥65 mmHg — higher targets (80-85) may benefit patients with chronic hypertension\n\nSurviving Sepsis guidelines recommend norepinephrine as first-line due to lower arrhythmia risk vs. dopamine (SOAP II trial). Vasopressin (0.03 units/min) added as second agent to reduce norepinephrine dose or for refractory shock. Epinephrine as third-line. Dopamine only if low tachyarrhythmia risk."
+    difficulty: medium
+    tags: [norepinephrine, vasopressor, septic shock, MAP target, infectious disease]
+  - front: "How should blood cultures be obtained in sepsis and when should antibiotics be given?"
+    back: "2-3 sets of blood cultures (aerobic + anaerobic) from 2 different sites before antibiotics; antibiotics within 1 hour for septic shock, 3 hours for sepsis without shock\n\nSurviving Sepsis 2021: delay antibiotics to get cultures should not exceed 45 minutes. Each hour delay in antibiotics in septic shock increases mortality ~7%. Give broad-spectrum empiric coverage, then narrow based on cultures and sensitivities (antibiotic stewardship)."
+    difficulty: medium
+    tags: [blood cultures, antibiotics timing, sepsis, antibiotic stewardship, infectious disease]
+  - front: "What IV fluid is recommended in early sepsis resuscitation?"
+    back: "30 mL/kg balanced crystalloid (Lactated Ringer preferred, or NS); SMART trial showed LR reduces mortality and AKI compared to normal saline\n\nSurviving Sepsis recommends 30 mL/kg IV crystalloid in first 3 hours. Albumin may be added if large volumes of crystalloid required. Reassess after each fluid bolus using dynamic measures (passive leg raise, pulse pressure variation). Avoid fluid overload — associated with worse outcomes."
+    difficulty: medium
+    tags: [IV fluids, fluid resuscitation, Lactated Ringer, sepsis, balanced crystalloid, infectious disease]
+  - front: "When are corticosteroids indicated in septic shock?"
+    back: "IV hydrocortisone 200 mg/day (50mg q6h or 200mg continuous infusion) in septic shock refractory to adequate fluids and vasopressors (norepinephrine >0.25 μg/kg/min)\n\nAPROCCHSS trial showed hydrocortisone + fludrocortisone reduces mortality in severe septic shock. Surviving Sepsis recommends IV hydrocortisone for vasopressor-refractory septic shock. ACTH stimulation test is NOT required before giving steroids."
+    difficulty: hard
+    tags: [corticosteroids, septic shock, hydrocortisone, vasopressor-refractory, infectious disease]
+  - front: "What empiric antibiotic coverage is recommended for community-acquired sepsis of unknown source?"
+    back: "Broad-spectrum coverage: piperacillin-tazobactam or a carbapenem (meropenem/imipenem) + coverage for community MRSA (vancomycin) if risk factors (IV drug use, prior MRSA, healthcare contact)\n\nAntibiotic choice depends on suspected source, local resistance patterns, and patient risk factors. De-escalation after 24-48h based on culture results. Duration should be as short as effective (7-10 days for most community sepsis). Source control (drain abscesses, remove infected lines) is essential."
+    difficulty: hard
+    tags: [empiric antibiotics, sepsis, piperacillin-tazobactam, MRSA, antibiotic stewardship, infectious disease]
+  - front: "What is source control in sepsis and what are examples?"
+    back: "Rapid intervention to control the infectious source: drain abscess (percutaneous or surgical), remove infected IV line/catheter, debride infected tissue, restore bowel continuity for perforated viscus\n\nSurviving Sepsis guidelines recommend source control within 6-12 hours. Infected central venous catheters should be removed as soon as possible. ECMO or surgical intervention for severe necrotizing fasciitis or gas gangrene. Antibiotic therapy alone is insufficient when a nidus of infection remains."
+    difficulty: medium
+    tags: [source control, sepsis management, abscess drainage, infected catheter, infectious disease]
+  - front: "What is DIC (disseminated intravascular coagulation) in the context of sepsis?"
+    back: "DIC: systemic activation of coagulation cascade leading to microthrombi and consumption coagulopathy; labs: low platelets, prolonged PT/INR, low fibrinogen, elevated D-dimer; treat underlying sepsis\n\nDIC complicates severe sepsis, trauma, and obstetric emergencies. Paradoxically causes both thrombosis (organ failure) and bleeding (factor consumption). Treat underlying cause. Replace blood products for active bleeding: platelets (PLT <50), FFP, cryoprecipitate (low fibrinogen <1.5 g/L)."
+    difficulty: hard
+    tags: [DIC, disseminated intravascular coagulation, sepsis complication, coagulopathy, infectious disease]
+  - front: "What is the Surviving Sepsis Bundle for mechanical ventilation in septic shock?"
+    back: "Lung-protective ventilation: tidal volume 6 mL/kg ideal body weight, plateau pressure <30 cmH2O, PEEP titration, permissive hypercapnia; prone positioning if PaO2/FiO2 <150\n\nARDSNET and PROSEVA trials support low-tidal volume ventilation and prone positioning in ARDS (common in severe sepsis). Avoid high plateau pressures — cause ventilator-induced lung injury (VILI). Target SpO2 94-98%."
+    difficulty: hard
+    tags: [mechanical ventilation, lung protective, ARDS, prone positioning, sepsis management, infectious disease]
+  - front: "What is procalcitonin (PCT) and how is it used in sepsis management?"
+    back: "PCT rises with bacterial infections (but not viral); elevated PCT supports bacterial sepsis diagnosis; serial PCT used to guide antibiotic discontinuation (PCT-guided de-escalation reduces antibiotic exposure)\n\nPRORATA trial showed PCT-guided antibiotic discontinuation reduces antibiotic days without worsening outcomes. PCT is most useful for guiding antibiotic duration (stop when PCT falls to 80% of peak or <0.5 ng/mL). Less useful for diagnosis as it can be elevated in non-infectious conditions."
+    difficulty: medium
+    tags: [procalcitonin, PCT, antibiotic stewardship, sepsis diagnosis, de-escalation, infectious disease]
+  - front: "What glycemic target is recommended in ICU patients with sepsis?"
+    back: "Maintain blood glucose 7.8-10 mmol/L with insulin infusion — avoid both hyperglycemia and hypoglycemia\n\nNICE-SUGAR trial showed moderate glucose control (≤10 mmol/L) reduces mortality compared to tight control (≤6.1 mmol/L), which increased hypoglycemia. Intensive insulin therapy associated with increased severe hypoglycemia events. Surviving Sepsis recommends insulin when glucose >10 mmol/L x2."
+    difficulty: medium
+    tags: [glucose control, ICU, insulin, glycemic target, sepsis, infectious disease]
+  - front: "What is lactate-guided resuscitation in sepsis?"
+    back: "Measure serum lactate at presentation; if ≥4 mmol/L indicates severe hypoperfusion — resuscitate to achieve lactate clearance ≥10-20% per 2 hours; repeat lactate 2h after initial resuscitation\n\nLACTATE trial showed early lactate measurement and lactate-guided resuscitation reduces mortality. Lactate ≥2 mmol/L = criterion for septic shock. Persistently elevated lactate despite resuscitation suggests occult hypoperfusion."
+    difficulty: medium
+    tags: [lactate, sepsis resuscitation, tissue hypoperfusion, lactate clearance, infectious disease]
+  - front: "What is the FAST-HUG mnemonic for daily ICU care in sepsis patients?"
+    back: "Feeding (enteral nutrition), Analgesia, Sedation (minimizing), Thromboprophylaxis, Head-of-bed elevation (30-45°), Ulcer prophylaxis (stress ulcer), Glucose control\n\nSurviving Sepsis guidelines recommend light sedation (target RASS 0 to -1), early enteral nutrition, DVT prophylaxis (LMWH preferred), HOB elevation to prevent VAP, stress ulcer prophylaxis with PPI (if high risk), glycemic control."
+    difficulty: easy
+    tags: [FAST-HUG, ICU care bundle, sepsis management, sedation, DVT prophylaxis, infectious disease]
+  - front: "What is the qSOFA score and how is it used?"
+    back: "qSOFA: RR ≥22/min (1), altered mentation (1), SBP ≤100 mmHg (1); score ≥2 identifies patients with suspected infection at risk of poor outcomes — use outside ICU to identify high-risk patients\n\nqSOFA is a bedside screening tool that does not require labs. Positive qSOFA (≥2) should prompt full SOFA assessment and consideration of ICU-level care. Not as sensitive as SIRS for identifying all sepsis, but more specific for poor outcomes."
+    difficulty: easy
+    tags: [qSOFA, sepsis screening, SOFA, organ dysfunction, infectious disease]
+  - front: "What are Sepsis-3 criteria?"
+    back: "Suspected infection + SOFA increase >=2. Septic shock: vasopressors for MAP>=65 + lactate>2 despite fluids\n\nqSOFA for screening: RR>=22, altered mentation, SBP<=100. Hour-1 bundle critical."
+    difficulty: medium
+    tags: [sepsis, SOFA]
+  - front: "What is the Sepsis-3 definition and how is septic shock defined?"
+    back: "Sepsis: life-threatening organ dysfunction caused by dysregulated host response to infection. Operationally: suspected infection + SOFA score increase ≥2. Septic shock: sepsis + vasopressors to maintain MAP ≥65 + lactate >2 mmol/L despite adequate fluid resuscitation.\n\nqSOFA (bedside screen): RR ≥22, altered mentation, SBP ≤100 — ≥2 suggests possible sepsis (not diagnostic, prompts further assessment). SIRS criteria no longer define sepsis in Sepsis-3 but remain useful for screening. Septic shock mortality: 40-50%."
+    difficulty: hard
+    tags: [sepsis, Sepsis-3, SOFA, qSOFA, septic shock, ID]
+  - front: "What is the Surviving Sepsis Campaign Hour-1 bundle?"
+    back: "Within 1 hour: 1) Measure lactate (remeasure if >2). 2) Blood cultures before antibiotics (do NOT delay ABx for cultures). 3) Broad-spectrum antibiotics. 4) Crystalloid 30 mL/kg for hypotension or lactate ≥4. 5) Vasopressors if hypotension persists during/after fluid resuscitation (target MAP ≥65).\n\nSSC 2021 update emphasizes time-zero = triage time, not ICU admission. Each hour delay in antibiotics increases mortality ~4-8%. Balanced crystalloids (LR, Plasmalyte) preferred over NS. Norepinephrine is first-line vasopressor. Do not delay antibiotics to obtain cultures if cultures cannot be drawn promptly."
+    difficulty: hard
+    tags: [sepsis, SSC, Hour-1 bundle, antibiotics, fluid resuscitation, ID]
+  - front: "What is the vasopressor hierarchy in septic shock?"
+    back: "First-line: norepinephrine (target MAP ≥65). Second-line: add vasopressin 0.03 U/min (allows NE dose reduction). Third-line: add epinephrine. Inotrope: dobutamine if cardiac dysfunction (low CO despite adequate filling). Avoid dopamine (more arrhythmias).\n\nSSC 2021 recommends norepinephrine over dopamine. Vasopressin added at NE 0.25-0.5 μg/kg/min to reduce NE requirements (not as rescue). Angiotensin II (Giapreza) for refractory shock. Phenylephrine only for tachyarrhythmia limiting NE use. Monitor with arterial line, consider echocardiography for hemodynamic assessment."
+    difficulty: hard
+    tags: [sepsis, vasopressors, norepinephrine, vasopressin, septic shock, ID]
+  - front: "When should corticosteroids be used in septic shock?"
+    back: "IV hydrocortisone 200 mg/day (50 mg q6h) if shock is refractory to fluids + vasopressors (NE ≥0.25 μg/kg/min for ≥4 hours). Do NOT use random cortisol or cosyntropin test to guide decision. Taper when vasopressors discontinued.\n\nSSC 2021 suggests corticosteroids for refractory shock. ADRENAL and APROCCHSS trials showed faster shock resolution and possible mortality benefit. Fludrocortisone optional (APROCCHSS used it). Stress-dose steroids should NOT be given to all sepsis patients — only vasopressor-dependent shock."
+    difficulty: hard
+    tags: [sepsis, corticosteroids, hydrocortisone, refractory shock, SSC, ID]
+  - front: "What empiric antibiotic strategies are used for common sepsis sources?"
+    back: "Unknown source: pip-tazo or meropenem ± vancomycin. Urinary: ceftriaxone or pip-tazo. Pulmonary (CAP): ceftriaxone + azithromycin. Intra-abdominal: pip-tazo or meropenem (covers anaerobes). Skin/soft tissue: cefazolin ± clindamycin; necrotizing fasciitis: meropenem + vancomycin + clindamycin.\n\nDe-escalate antibiotics based on culture results within 48-72h. SSC recommends daily reassessment of antibiotic need. Procalcitonin-guided discontinuation can safely reduce antibiotic duration. Duration: 7-8 days for most infections (shorter courses non-inferior). MRSA coverage if risk factors present. Antifungal if candidiasis risk (TPN, broad-spectrum ABx, surgery)."
+    difficulty: hard
+    tags: [sepsis, empiric antibiotics, pip-tazo, meropenem, de-escalation, ID]
+  - front: "What is the role of lactate in sepsis management?"
+    back: "Initial lactate guides resuscitation intensity (≥4 mmol/L = aggressive fluids + vasopressors). Serial lactate monitoring: target clearance ≥20% every 2 hours. Persistent elevation despite treatment = poor prognosis. Normal lactate with infection does NOT exclude sepsis.\n\nLactate in sepsis reflects tissue hypoperfusion and anaerobic metabolism, but also accelerated aerobic glycolysis (stress response). Other causes of elevated lactate: liver failure, seizures, medications (metformin, epinephrine), thiamine deficiency. Lactate clearance is a dynamic resuscitation target alongside MAP, UO, and clinical assessment."
+    difficulty: medium
+    tags: [sepsis, lactate, resuscitation, clearance, prognosis, ID]
+  - front: "What fluid resuscitation strategy is recommended in sepsis?"
+    back: "Initial bolus: 30 mL/kg crystalloid within first 3 hours for hypotension or lactate ≥4. Balanced crystalloids (LR, Plasmalyte) preferred over NS. After initial resuscitation: use dynamic measures of fluid responsiveness (PLR, pulse pressure variation) to guide further fluids. Avoid fluid overload.\n\nSMART trial showed balanced crystalloids may reduce AKI and death vs NS. Albumin can be used as adjunct if large volumes required. SSC 2021 discourages hydroxyethyl starch (HES) — increases AKI and mortality. After initial resuscitation, liberal fluids are harmful — assess fluid responsiveness before each bolus."
+    difficulty: hard
+    tags: [sepsis, fluid resuscitation, crystalloid, balanced, fluid responsiveness, ID]
+  - front: "What is the SOFA score and how is it calculated?"
+    back: "Sequential Organ Failure Assessment: 6 organ systems, each 0-4 points. Respiration (PaO2/FiO2), Coagulation (platelets), Liver (bilirubin), Cardiovascular (MAP/vasopressors), CNS (GCS), Renal (Cr/UO). Score ≥2 increase from baseline = sepsis. Higher scores = higher mortality.\n\nSOFA ≥2 has ~10% mortality risk. Used both for sepsis diagnosis (Sepsis-3) and for tracking organ dysfunction over time in ICU. Baseline SOFA assumed 0 if no pre-existing organ dysfunction. Cannot be calculated at bedside quickly → qSOFA used for bedside screening."
+    difficulty: medium
+    tags: [sepsis, SOFA, organ dysfunction, scoring, ICU, ID]
+  - front: "What blood glucose target is recommended in sepsis?"
+    back: "Target glucose <10 mmol/L (180 mg/dL). Avoid tight glucose control (<6.1/110 — increases hypoglycemia without mortality benefit per NICE-SUGAR trial). Use insulin infusion protocol. Monitor q1-2h.\n\nNICE-SUGAR trial (2009) ended the intensive insulin therapy era in ICU. Hypoglycemia (<3.9) independently increases mortality. Stress hyperglycemia is common in sepsis (counter-regulatory hormones). Nutrition should be initiated early (enteral preferred) alongside glucose management."
+    difficulty: medium
+    tags: [sepsis, glucose, insulin, NICE-SUGAR, ICU, ID]
+  - front: "What is the transfusion threshold in sepsis?"
+    back: "Restrictive: Hb <70 g/L for most sepsis patients. Exception: active hemorrhage, acute myocardial ischemia, or severe hypoxemia may warrant higher threshold (Hb <90-100). Avoid routine platelet transfusion unless <10,000 or <20,000 with active bleeding.\n\nTRICC and TRISS trials showed no benefit of liberal (Hb <100) vs restrictive (Hb <70) transfusion in critically ill/sepsis. Restrictive approach reduces transfusion-related complications (TACO, TRALI, infection). FFP: only for active bleeding or invasive procedures with coagulopathy, not for lab correction alone."
+    difficulty: medium
+    tags: [sepsis, transfusion, hemoglobin, restrictive, ICU, ID]
+  - front: "What is the source control concept in sepsis?"
+    back: "Identify and control the infection source within 6-12 hours: drain abscesses, debride necrotic tissue, remove infected devices/catheters, repair perforated viscus. Source control is ESSENTIAL — antibiotics alone may be insufficient without it.\n\nCommon sources requiring intervention: intra-abdominal abscess (percutaneous drainage), cholangitis (ERCP), necrotizing fasciitis (emergent surgical debridement), infected central line (remove catheter), empyema (chest tube), urinary obstruction (catheterize/stent). Delayed source control independently increases mortality."
+    difficulty: hard
+    tags: [sepsis, source control, drainage, debridement, surgery, ID]
+  - front: "What VTE prophylaxis is recommended in sepsis?"
+    back: "LMWH (enoxaparin 40 mg SC daily) preferred over UFH for VTE prophylaxis in all critically ill sepsis patients unless contraindicated (active bleeding, platelets <50,000, severe coagulopathy). Mechanical prophylaxis (compression devices) if anticoagulation contraindicated.\n\nSSC 2021 recommends pharmacologic VTE prophylaxis for all sepsis/septic shock patients. LMWH has lower DVT rates and possibly lower PE rates vs UFH. Combine with mechanical prophylaxis when possible. Do not use pharmacologic prophylaxis if active DIC with major bleeding. Monitor for HIT."
+    difficulty: medium
+    tags: [sepsis, VTE, prophylaxis, LMWH, enoxaparin, ID]
+  - front: "What is the role of procalcitonin in sepsis management?"
+    back: "PCT >0.5 μg/L supports bacterial infection (not specific). Serial monitoring: PCT decline guides antibiotic de-escalation/discontinuation — stop antibiotics when PCT <0.5 or ≥80% decline from peak. NOT useful for initial antibiotic decision (treat first, use PCT to guide duration).\n\nPCT is more specific for bacterial infection than CRP or WBC. Rises within 4-6h, peaks at 24h. NOT elevated in viral infections (usually). Elevated in: bacterial sepsis, surgery, trauma, burns, cardiogenic shock. SSC 2021 suggests using PCT + clinical assessment to guide antibiotic duration. Can safely reduce duration by 2-3 days."
+    difficulty: hard
+    tags: [sepsis, procalcitonin, biomarker, antibiotic stewardship, de-escalation, ID]
+  - front: "What are the major pathophysiologic mechanisms of septic shock?"
+    back: "Infection→PAMPs activate innate immunity (TLR)→pro-inflammatory cascade (TNF-α, IL-1, IL-6)→endothelial dysfunction→vasodilation (distributive shock)+capillary leak→relative hypovolemia+tissue edema. Coagulation activation→DIC. Mitochondrial dysfunction→cytopathic hypoxia.\n\nSeptic shock is distributive: low SVR, high CO initially (warm shock), progressing to cold shock (myocardial depression, low CO). Microcirculatory dysfunction explains why tissue hypoxia persists despite normalized macro-hemodynamics. Multi-organ dysfunction results from combination of hypoperfusion, cytokine storm, and microvascular thrombosis."
+    difficulty: hard
+    tags: [sepsis, pathophysiology, cytokines, vasodilation, DIC, ID]
+  - front: "What is the approach to antibiotic de-escalation in sepsis?"
+    back: "Review cultures at 48-72h: narrow to targeted therapy based on organism and susceptibilities. Discontinue empiric MRSA/pseudomonal coverage if not isolated. Use PCT to guide duration. Most infections: 7-8 days sufficient (some exceptions: endocarditis, osteomyelitis, S. aureus bacteremia ≥4 weeks).\n\nAntibiotic stewardship in sepsis reduces resistance emergence, C. difficile, and adverse effects without increasing mortality. SSC 2021 recommends daily reassessment. Infectious disease consultation for complex infections (S. aureus bacteremia, candidemia) improves outcomes. Blood cultures should be repeated 48-72h for documented bacteremia to confirm clearance."
+    difficulty: hard
+    tags: [sepsis, de-escalation, antibiotic stewardship, cultures, duration, ID]
+  - front: "What is the classic definition of fever of unknown origin (FUO), and what are the three main diagnostic categories?"
+    back: "Classic FUO (Petersdorf & Beeson criteria): fever >38.3°C on several occasions, lasting >3 weeks, with no diagnosis after 1 week of inpatient investigation (or 3 outpatient visits). Three main categories: Infections (25-30%, e.g., TB, endocarditis, abscess), Malignancy (20-25%, e.g., lymphoma, RCC, leukemia), Autoimmune/inflammatory (15-20%, e.g., adult Still's disease, SLE, vasculitis).\n\nDespite extensive workup, 10-20% of FUO cases remain undiagnosed, and these generally have a favorable prognosis. The relative proportion of causes has shifted over time, with fewer infections (due to better diagnostics) and more autoimmune causes being identified. Drug fever is an important and often overlooked cause."
+    difficulty: medium
+    tags: [FUO, fever, differential-diagnosis, infectious-disease, definition]
+  - front: "What is the systematic workup approach for a patient meeting criteria for fever of unknown origin?"
+    back: "Tier 1: Detailed history (travel, exposures, medications, family history), CBC with differential, blood cultures (x3 from different sites), ESR/CRP, LDH, urinalysis + culture, CXR, liver enzymes, ANA, RF. Tier 2: CT chest/abdomen/pelvis, echocardiography (endocarditis), peripheral blood smear. Tier 3: PET-CT (localizing occult infection/malignancy), temporal artery biopsy (>50 yo), bone marrow biopsy, liver biopsy.\n\nThe FUO workup should be systematic and guided by clinical clues from the history and physical exam. PET-CT has emerged as a valuable tool, especially for identifying occult abscesses, vasculitis, and lymphoma. Empiric antibiotics should be avoided unless the patient is deteriorating, as they may mask the diagnosis."
+    difficulty: hard
+    tags: [FUO, workup, diagnostic-approach, infectious-disease]
+  - front: "A 45-year-old IV drug user presents with FUO, new cardiac murmur, splinter hemorrhages, and Janeway lesions. What is the most likely diagnosis?"
+    back: "Infective endocarditis. Diagnosis is based on the modified Duke criteria. Major criteria: positive blood cultures (typical organisms in 2 separate cultures) and evidence of endocardial involvement on echocardiography (vegetation, abscess, new valvular regurgitation). TEE is more sensitive than TTE for detecting vegetations.\n\nEndocarditis is one of the classic infectious causes of FUO. The peripheral manifestations (Janeway lesions, Osler nodes, splinter hemorrhages, Roth spots) result from septic emboli and immune complex deposition. At least 3 sets of blood cultures from different sites should be drawn before starting antibiotics."
+    difficulty: medium
+    tags: [FUO, endocarditis, Duke-criteria, infectious-disease, cardiology]
+  - front: "What is the pathophysiology of sepsis and organ dysfunction?"
+    back: "Dysregulated host response: PAMPs activate innate immunity (TLRs, cytokines TNF/IL-1/IL-6), causing endothelial dysfunction, microvascular thrombosis, vasodilation, capillary leak, and mitochondrial dysfunction\n\nOrgan failure results from tissue hypoperfusion and cellular metabolic crisis — not just hypotension. Coagulopathy (DIC), ARDS, AKI, hepatic dysfunction, and encephalopathy are common organ failures."
+    difficulty: hard
+    tags: [sepsis, pathophysiology]
+  - front: "What is the approach to fever in a returning traveller?"
+    back: "Always rule out malaria first (thick/thin smear x3). DDx by incubation: <2wk (dengue, chikungunya, typhoid, malaria). 2-6wk (malaria, TB, hepatitis, HIV seroconversion). >6wk (TB, HIV, visceral leishmaniasis)\n\nKey history: destination, activities, prophylaxis, sexual exposure, animal/insect contact. Dengue: thrombocytopenia, rash. Typhoid: relative bradycardia, rose spots. Malaria: cyclic fevers, P. falciparum can be fatal."
+    difficulty: hard
+    tags: [travel medicine, fever]
+  - front: "What malaria prophylaxis options are available?"
+    back: "Atovaquone-proguanil (Malarone): start 1-2d before, daily, 7d after. Doxycycline: start 1-2d before, daily, 28d after. Mefloquine: start 2wk before, weekly, 4wk after. Chloroquine: only for P. vivax/sensitive areas\n\nChoice depends on destination resistance patterns, duration, side effects, cost. Mefloquine: neuropsychiatric side effects. Doxycycline: photosensitivity. All travellers: mosquito bite prevention (DEET, permethrin-treated nets)."
+    difficulty: medium
+    tags: [malaria, prophylaxis]
+  - front: "What vaccines and prophylaxis should be discussed at a pre-travel consultation for a Canadian patient travelling to sub-Saharan Africa?"
+    back: "Routine vaccines: ensure up-to-date (Tdap, MMR, varicella, influenza, COVID-19, polio). Travel-specific: hepatitis A, hepatitis B (or Twinrix), typhoid (oral Ty21a or injectable Vi polysaccharide), yellow fever (required for entry to many African countries), meningococcal ACWY. Malaria prophylaxis: atovaquone-proguanil (Malarone — start 1-2 days before, daily, continue 7 days after), OR doxycycline (start 1-2 days before, daily, continue 4 weeks after), OR mefloquine (start 2 weeks before, weekly, continue 4 weeks after). Also: traveller's diarrhea counseling, insect bite prevention (DEET ≥20%), travel insurance.\n\nCATMAT (Committee to Advise on Tropical Medicine and Travel) provides Canada-specific travel medicine guidelines. Yellow fever vaccine is a live vaccine — contraindicated in immunocompromised patients. Malarone is preferred for short trips due to fewer side effects and shorter post-travel course. Mefloquine is contraindicated in psychiatric illness and seizure disorders."
+    difficulty: medium
+    tags: [travel medicine, malaria prophylaxis, vaccines, CATMAT, infectious disease]
+  - front: "What is the most common cause of traveller's diarrhea and how should it be managed?"
+    back: "Most common cause: enterotoxigenic E. coli (ETEC). Other: Campylobacter, Salmonella, Shigella, norovirus. Management: Mild (tolerable, not distressing): oral rehydration, loperamide as needed. Moderate (distressing but not incapacitating): azithromycin 1000 mg single dose OR 500 mg daily x 3 days (preferred in South/Southeast Asia due to fluoroquinolone-resistant Campylobacter). Severe (incapacitating/bloody/febrile): azithromycin + seek medical care. Prevention: boil it, cook it, peel it, or forget it; bismuth subsalicylate prophylaxis for high-risk travellers.\n\nCATMAT recommends azithromycin as first-line for self-treatment of traveller's diarrhea, replacing fluoroquinolones due to increasing resistance. Loperamide should be avoided in bloody/febrile diarrhea (risk of toxic megacolon with invasive pathogens). Most traveller's diarrhea is self-limited within 3-5 days."
+    difficulty: medium
+    tags: [travellers diarrhea, ETEC, azithromycin, travel medicine, infectious disease]
+  - front: "How do you diagnose malaria and what distinguishes P. falciparum from P. vivax?"
+    back: "Diagnosis: thick smear (sensitive — detects parasites), thin smear (specific — identifies species and quantifies parasitemia), rapid diagnostic test (RDT — detects antigens, useful when microscopy unavailable). P. falciparum: most lethal, no hypnozoites, can infect RBCs of all ages (high parasitemia), causes cerebral malaria/severe disease, banana-shaped gametocytes, chloroquine-resistant in most areas. P. vivax: causes relapsing malaria (hypnozoites in liver), infects only reticulocytes (lower parasitemia), rarely fatal, requires primaquine for radical cure (check G6PD first), chloroquine-sensitive in most areas.\n\nAny febrile patient returning from a malaria-endemic area must have malaria ruled out — it is a medical emergency. P. falciparum can progress to severe malaria within hours. In Canada, malaria is a reportable disease. CATMAT recommends artemisinin-based combination therapy (ACT) for P. falciparum and chloroquine + primaquine for P. vivax."
+    difficulty: hard
+    tags: [malaria, P. falciparum, P. vivax, thick thin smear, infectious disease]
+  - front: "What is the treatment of malaria for P. falciparum vs P. vivax?"
+    back: "P. falciparum (uncomplicated): artemisinin-based combination therapy (ACT) — artemether-lumefantrine (Coartem) or atovaquone-proguanil (Malarone). Severe P. falciparum (parasitemia >2%, cerebral malaria, organ failure): IV artesunate (first-line), then oral ACT when able to take PO. P. vivax/ovale: chloroquine (still sensitive in most regions) PLUS primaquine 14-day course for radical cure (eliminates liver hypnozoites). Must check G6PD before primaquine — causes hemolytic anemia in G6PD-deficient patients. Alternative: tafenoquine (single dose, also requires G6PD testing).\n\nIV artesunate replaced IV quinine as first-line for severe malaria per WHO and CATMAT guidelines — faster parasite clearance and lower mortality. Artesunate is available in Canada through the Canadian Malaria Network (special access). Primaquine without G6PD testing is a common exam trap."
+    difficulty: hard
+    tags: [malaria treatment, ACT, artesunate, primaquine, G6PD, infectious disease]
+  - front: "A traveller returns from Southeast Asia with high fever, severe headache, retro-orbital pain, myalgia, and a maculopapular rash. Platelets are 85. What is the diagnosis and what are the warning signs for severe disease?"
+    back: "Dengue fever. Warning signs for severe dengue (occurring around defervescence, days 3-7): abdominal pain/tenderness, persistent vomiting, clinical fluid accumulation (ascites, pleural effusion), mucosal bleeding, lethargy/restlessness, hepatomegaly >2 cm, rising hematocrit with rapid decline in platelets. Severe dengue: severe plasma leakage (shock, respiratory distress), severe bleeding, severe organ impairment (liver AST/ALT >1000, CNS, cardiac). Management: supportive — aggressive IV fluid resuscitation for shock, NO aspirin/NSAIDs (bleeding risk), monitor hematocrit and platelets closely.\n\nDengue is caused by a flavivirus transmitted by Aedes aegypti mosquitoes. There are 4 serotypes — secondary infection with a different serotype increases risk of severe dengue via antibody-dependent enhancement. There is no specific antiviral treatment. Dengue is an increasingly common diagnosis in Canadian travellers returning from tropical regions."
+    difficulty: hard
+    tags: [dengue, severe dengue, travel medicine, thrombocytopenia, infectious disease]
+  - front: "How do you diagnose and treat Giardia lamblia infection?"
+    back: "Presentation: foul-smelling, fatty, watery diarrhea (steatorrhea), bloating, flatulence, abdominal cramps, nausea; can cause chronic diarrhea and malabsorption. Acquired from contaminated water (campers/travellers). Diagnosis: stool ova and parasites (O&P) x3 (cysts shed intermittently), stool Giardia antigen (more sensitive), stool PCR. Treatment: metronidazole 250 mg TID x 5-7 days (first-line in Canada) or tinidazole 2g single dose (higher cure rate, better tolerated). Alternative: nitazoxanide.\n\nGiardia is the most common parasitic cause of diarrhea in Canada — found in contaminated lakes/streams (beaver fever). Cysts survive chlorination. Stool O&P has sensitivity ~50-70% for a single sample; send 3 samples on different days. Giardia antigen testing has >90% sensitivity and is preferred for diagnosis."
+    difficulty: medium
+    tags: [Giardia, parasitology, metronidazole, travellers diarrhea, infectious disease]
+  - front: "What parasites should be considered in a returning traveller and how are Entamoeba histolytica, hookworm, and Strongyloides diagnosed and treated?"
+    back: "Entamoeba histolytica: bloody diarrhea (amoebic dysentery), liver abscess; Dx: stool antigen, serology for abscess, O&P (must distinguish from non-pathogenic E. dispar); Tx: metronidazole (tissue) THEN paromomycin (luminal cyst eradication). Hookworm (Ancylostoma/Necator): iron-deficiency anemia, eosinophilia; Dx: stool O&P (eggs); Tx: albendazole 400 mg x1. Strongyloides stercoralis: eosinophilia, larva currens (serpiginous urticaria), can cause hyperinfection syndrome in immunosuppressed (fatal dissemination); Dx: stool O&P (larvae, not eggs), serology; Tx: ivermectin 200 μg/kg x 2 days.\n\nStrongyloides screening (serology) is mandatory before immunosuppression (e.g., corticosteroids, chemotherapy) in anyone from endemic areas — hyperinfection syndrome has >70% mortality. CATMAT recommends screening refugees and immigrants from tropical regions for Strongyloides. Amoebic liver abscess is treated with metronidazole — aspiration only if large or failing medical therapy."
+    difficulty: hard
+    tags: [Entamoeba, hookworm, Strongyloides, parasitology, infectious disease]
+  - front: "A 35-year-old returns from India with 2 weeks of fever, and blood cultures grow Salmonella typhi. What is the diagnosis, management, and public health significance?"
+    back: "Typhoid (enteric) fever. Presentation: stepwise rising fever, relative bradycardia, rose spots (salmon-colored macules on trunk), hepatosplenomegaly, constipation (more common than diarrhea), leukopenia. Dx: blood culture (gold standard — positive in 40-80%), bone marrow culture (most sensitive — 80-95%). Tx: azithromycin (first-line for uncomplicated, due to fluoroquinolone resistance in South Asia) or ceftriaxone for severe/complicated disease. Complications: intestinal perforation, GI hemorrhage, encephalopathy. Public health: reportable disease in Canada; household contacts require screening.\n\nTyphoid vaccine (injectable Vi polysaccharide or oral Ty21a) is only 50-80% effective — travelers should still practice food/water precautions. Fluoroquinolone resistance is widespread in South/Southeast Asia, making azithromycin first-line per CATMAT. Chronic carriers (e.g., gallbladder) can be a source of outbreaks."
+    difficulty: hard
+    tags: [typhoid fever, Salmonella typhi, travel medicine, azithromycin, infectious disease]
+  - front: "What is the differential diagnosis and workup for fever in a returning traveller?"
+    back: "Differential by incubation: Short (<2 wk): malaria, dengue, Zika, chikungunya, traveller's diarrhea, typhoid, rickettsia. Medium (2-6 wk): malaria (P. vivax can be delayed), typhoid, hepatitis A/E, acute HIV, leptospirosis, acute schistosomiasis (Katayama fever). Long (>6 wk): malaria (P. vivax/ovale), TB, visceral leishmaniasis, amoebic liver abscess, brucellosis. Workup: malaria smears x3 (STAT — cannot wait), CBC with differential, blood cultures x2, LFTs, urinalysis, CXR, stool O&P if diarrhea, dengue/Zika serology if epidemiologically appropriate, HIV test.\n\nThe #1 rule: always rule out malaria first in any febrile returning traveller from an endemic area — it can kill within 24-48 hours. Three negative smears 12-24 hours apart are needed to exclude malaria. In Canada, Tropical Disease Units (Toronto, Montreal, Ottawa, Vancouver) provide expert consultation for complex cases."
+    difficulty: hard
+    tags: [fever returning traveller, malaria, differential diagnosis, travel medicine, infectious disease]
+  - front: "What are the malaria prophylaxis options and their key side effects and contraindications?"
+    back: "Atovaquone-proguanil (Malarone): start 1-2 days before, daily during, 7 days after travel. SE: GI upset, headache. CI: severe renal impairment (CrCl <30), pregnancy. Preferred for short trips. Doxycycline: start 1-2 days before, daily during, 28 days after. SE: photosensitivity, esophagitis, vaginal candidiasis. CI: pregnancy, children <8 years. Cheapest option. Mefloquine: start 2-3 weeks before (to test tolerance), weekly during, 4 weeks after. SE: neuropsychiatric (vivid dreams, anxiety, psychosis — rare), dizziness. CI: psychiatric history, seizure disorder, cardiac conduction abnormalities. Best for long trips (weekly dosing).\n\nCATMAT recommends starting mefloquine 2-3 weeks before travel to identify neuropsychiatric side effects before departure. Chloroquine is only used for travel to the few remaining chloroquine-sensitive areas (Central America, Caribbean). No prophylaxis is 100% effective — insect bite prevention (DEET, permethrin-treated clothing, bed nets) is always essential."
+    difficulty: medium
+    tags: [malaria prophylaxis, Malarone, doxycycline, mefloquine, CATMAT, infectious disease]
+  - front: "What did the CLASSIC trial find about IV fluid restriction in septic shock?"
+    back: "In patients with septic shock, IV fluid restriction (median 1798 mL) did NOT result in fewer deaths within 90 days compared to standard IV fluid therapy (median 3811 mL). Mortality was 42.3% vs. 42.1% respectively, with similar serious adverse events.\n\nThe CLASSIC trial challenged aggressive fluid restriction in septic shock, showing it is safe but not superior to standard fluid management. Earlier trials (FEAST, ProCESS, ARISE) have also challenged aggressive resuscitation protocols. The current approach favors individualized fluid therapy guided by dynamic measures of fluid responsiveness."
+    difficulty: hard
+    tags: [septic shock, CLASSIC trial, IV fluids, fluid restriction, landmark trial]
+  - front: "Define SIRS criteria."
+    back: "Two or more of: Temperature >38°C or <36°C, HR >90 bpm, RR >20 breaths/min, WBC >12 × 10⁹/L.\n\nSIRS criteria identify a non-specific systemic inflammatory response that may be due to infection or non-infectious causes (trauma, pancreatitis). When SIRS is present with a suspected infection source, it meets the older definition of sepsis. Current definitions emphasize organ dysfunction (SOFA score ≥2)."
+    difficulty: easy
+    tags: [SIRS, sepsis, criteria, emergency, infectious disease]
+  - front: "What defines septic shock in current definitions?"
+    back: "Sepsis plus either: initial lactate >4 mmol/L OR hypotension (MAP <65 mmHg) requiring vasopressors despite adequate fluid resuscitation.\n\nSeptic shock indicates severe circulatory failure with tissue hypoperfusion. Lactate ≥4 mmol/L indicates anaerobic metabolism even without hypotension ('cryptic shock'). Both hypotension and elevated lactate independently increase mortality and warrant aggressive management."
+    difficulty: medium
+    tags: [septic shock, lactate, hypotension, sepsis, emergency]
+  - front: "What are the key components of sepsis bundle management?"
+    back: "1) Early recognition + lactate measurement (remeasure if >2 mmol/L), 2) Blood cultures before antibiotics, 3) Broad-spectrum antibiotics early, 4) IV fluid resuscitation (30 mL/kg crystalloid for hypotension or lactate ≥4), 5) Vasopressors for persistent hypotension to maintain MAP ≥65 mmHg, 6) Source control.\n\nThe Surviving Sepsis Campaign bundle emphasizes early, time-sensitive interventions. Updated bundles consolidated the 3-hour and 6-hour bundles into a 1-hour bundle. Goal-directed management should not be delayed for laboratory values in septic shock."
+    difficulty: medium
+    tags: [sepsis, bundle, antibiotics, fluid resuscitation, vasopressors]
+  - front: "When should glucocorticoids be considered in septic shock?"
+    back: "In treatment-refractory hypotension (septic shock not responding to vasopressors), to treat relative adrenal insufficiency.\n\nCritical illness-related corticosteroid insufficiency (CIRCI) occurs in severe sepsis/septic shock. Hydrocortisone (200 mg/day IV) is recommended by some guidelines when shock is not responsive to fluids and vasopressors. The ADRENAL trial showed no mortality benefit but did show faster shock reversal."
+    difficulty: medium
+    tags: [septic shock, corticosteroids, adrenal insufficiency, vasopressors]
+  - front: "What is the pathophysiology and presentation of Toxic Shock Syndrome (TSS)?"
+    back: "Caused by superantigen from S. aureus or Group A Streptococcus (GAS) that activates T-cells and cytokines non-specifically. Presents with: shock, multi-organ failure, fever, diffuse erythematous macular rash, ≥3 organ systems involved (CNS, respiratory, GI, muscular, mucous membranes, renal, liver, hematologic, skin). May have vesiculobullous lesions or necrotizing fasciitis.\n\nSuperantigens bypass normal antigen presentation, causing massive T-cell activation and cytokine storm (TNF-α, IL-1, IL-6). TSS can be menstrual (tampon-associated S. aureus) or non-menstrual. Streptococcal TSS is associated with necrotizing fasciitis and has higher mortality. Treatment: aggressive fluid resuscitation, source control, IV antibiotics, IVIG in refractory cases."
+    difficulty: hard
+    tags: [toxic shock syndrome, TSS, superantigen, S. aureus, GAS, dermatology]
+  - front: "What are the SOFA score criteria and what score indicates high risk for in-hospital mortality in sepsis?"
+    back: "SOFA ≥2 indicates high risk for in-hospital mortality in sepsis. Quick SOFA (qSOFA) screening: altered mental status + RR ≥22/min + sBP ≤100 mmHg (2 of 3 = positive screen). qSOFA should not be used as a sole screening tool due to poor sensitivity.\n\nThe Sequential Organ Failure Assessment (SOFA) score evaluates respiratory (PaO2/FiO2), coagulation (platelets), liver (bilirubin), cardiovascular (vasopressor requirement/MAP), CNS (GCS), and renal (creatinine/urine output) function. A change in total SOFA ≥2 points from baseline represents organ dysfunction."
+    difficulty: medium
+    tags: [SOFA, qSOFA, sepsis, organ dysfunction, mortality]
+  - front: "What are the common causes of bloody acute diarrhea (inflammatory)?"
+    back: "Bacterial (bloody diarrhea): Shigella, Salmonella, Campylobacter, Yersinia, E. coli (EHEC O157:H7), ischemia. Protozoal: E. histolytica (amoebiasis). Also: IBD.\n\nBloody diarrhea suggests mucosal invasion or toxin-mediated damage. EHEC O157:H7 is particularly important due to risk of hemolytic uremic syndrome (HUS). E. histolytica causes amoebic dysentery. IBD (Crohn's/UC) is a non-infectious cause of bloody diarrhea."
+    difficulty: medium
+    tags: [bloody diarrhea, infectious colitis, Shigella, EHEC, IBD, E. histolytica]
+  - front: "What distinguishes inflammatory from non-inflammatory diarrhea clinically and on stool examination?"
+    back: "Inflammatory diarrhea: damage to mucosal lining → passive protein-rich fluid loss, decreased fluid reabsorption; associated with abdominal pain, fever, chills; stool positive for white blood cells (WBCs). Non-inflammatory diarrhea: no mucosal damage; nausea/vomiting may occur; NO fever, chills, blood, or severe pain; stool negative for WBCs.\n\nDifferentiating inflammatory from non-inflammatory diarrhea guides investigation and empiric management. Inflammatory causes require targeted therapy (e.g., antibiotics for Shigella, specific antifungals for amoebiasis), while non-inflammatory causes are often self-limited."
+    difficulty: medium
+    tags: [diarrhea, inflammatory, non-inflammatory, stool WBC, fecal leukocytes]

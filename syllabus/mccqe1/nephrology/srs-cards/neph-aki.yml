@@ -1,0 +1,142 @@
+# Acute Kidney Injury (Nephrology) - generated from srs-mccqe1
+cards:
+  - front: "A 65-year-old post-operative patient has urine output 15 mL/h and rising creatinine. Urine Na+ is 8 mEq/L, FENa is 0.3%. Diagnosis and management?"
+    back: "Pre-renal AKI from hypovolemia; treat with IV fluid resuscitation — FENa <1% (or FEUrea <35%) suggests pre-renal cause\n\nKDIGO AKI criteria: creatinine rise ≥26.5 μmol/L in 48h, ≥1.5x baseline in 7 days, or urine output <0.5 mL/kg/h for ≥6h. FENa <1% indicates avid sodium reabsorption (pre-renal). FENa less reliable in CKD, contrast nephropathy, or myoglobinuria."
+    difficulty: medium
+    tags: [pre-renal AKI, FENa, urine sodium, fluid resuscitation, nephrology]
+  - front: "What are the KDIGO stages of AKI?"
+    back: "Stage 1: creatinine ×1.5-1.9 baseline or rise ≥26.5 μmol/L, UO <0.5 mL/kg/h for 6-12h; Stage 2: creatinine ×2-2.9 baseline, UO <0.5 mL/kg/h for ≥12h; Stage 3: creatinine ×3 or >354 μmol/L, UO <0.3 mL/kg/h for ≥24h or anuria ≥12h\n\nKDIGO 2012 AKI guidelines define staging for prognosis and management. Higher stages are associated with increased mortality and need for renal replacement therapy. Any AKI requires follow-up at 3 months to assess for CKD development."
+    difficulty: easy
+    tags: [KDIGO staging, AKI, creatinine, urine output, nephrology]
+  - front: "What are the main intrinsic causes of AKI organized by nephron segment?"
+    back: "Tubular: ATN (ischemia, nephrotoxins — aminoglycosides, contrast, myoglobin); Glomerular: GN, vasculitis, TTP/HUS; Interstitial: AIN (drugs, infection); Vascular: renal artery/vein thrombosis\n\nATN from ischemia or nephrotoxins is the most common cause of intrinsic AKI in hospital. Urine sediment: muddy brown granular casts = ATN; RBC casts = GN; WBC casts, eosinophils = AIN."
+    difficulty: medium
+    tags: [intrinsic AKI, ATN, AIN, glomerulonephritis, nephrology]
+  - front: "What medications should be held during AKI?"
+    back: "ACEi/ARBs, NSAIDs, diuretics (if volume-depleted), aminoglycosides, metformin (risk of lactic acidosis), contrast agents, methotrexate — adjust doses for renally-cleared drugs\n\nACEi/ARBs reduce GFR by dilating efferent arteriole, which is beneficial in stable CKD but harmful in hypovolemic states or bilateral renal artery stenosis. NSAID-induced renal vasoconstriction worsens pre-renal AKI."
+    difficulty: medium
+    tags: [drug nephrotoxicity, AKI medications, ACE inhibitor, NSAIDs, nephrology]
+  - front: "What is contrast-induced nephropathy (CIN) and how is it prevented?"
+    back: "Transient AKI within 24-48h of contrast administration; prevention: pre-hydration with IV NS or sodium bicarbonate, minimize contrast volume, use iso-osmolar/low-osmolar contrast, hold nephrotoxic drugs\n\nCIN risk factors: CKD (eGFR <60), diabetes, volume depletion, heart failure, large contrast volume, multiple exposures. NAC is no longer recommended for CIN prevention (PRESERVE trial). Metformin held for 48h post-contrast if AKI occurs."
+    difficulty: hard
+    tags: [contrast nephropathy, CIN, prevention, hydration, nephrology]
+  - front: "A 70-year-old has sudden oliguria, creatinine rose from 90 to 320 μmol/L in 24 hours with no medication changes. U/A shows RBC casts. Diagnosis?"
+    back: "Rapidly progressive glomerulonephritis (RPGN) — emergency: requires urgent renal biopsy and immunosuppression\n\nRPGN has three patterns: anti-GBM (Goodpasture), pauci-immune (ANCA-associated vasculitis — most common), and immune complex GN (lupus, IgA). Diagnosis requires urgent renal biopsy. Treatment: pulse IV methylprednisolone + cyclophosphamide ± plasma exchange."
+    difficulty: hard
+    tags: [RPGN, rapidly progressive GN, RBC casts, ANCA vasculitis, nephrology]
+  - front: "What are the indications for emergent renal replacement therapy (RRT) in AKI?"
+    back: "AEIOU: Acidosis (pH <7.2), Electrolyte disorder (K+ >6.5 or refractory), Ingestion (toxin removable by dialysis), Overload (refractory pulmonary edema), Uremia (encephalopathy, pericarditis, bleeding)\n\nRRT modalities: hemodialysis (HD) for hemodynamically stable; continuous RRT (CVVHDF) for hemodynamically unstable. Timing: do not delay when absolute indications present. AKIKI and IDEAL trials guide timing for non-urgent situations."
+    difficulty: hard
+    tags: [RRT indications, dialysis emergencies, AEIOU, AKI, nephrology]
+  - front: "What is acute interstitial nephritis (AIN) and what drugs cause it?"
+    back: "AIN: immune-mediated tubulointerstitial inflammation; most common drug causes: NSAIDs, PPIs (most common), penicillins, sulfonamides, allopurinol, rifampin, checkpoint inhibitors\n\nClassic triad of AIN: fever + rash + eosinophilia (present in only 10% of drug-induced AIN). Urine eosinophils unreliable. Renal biopsy is gold standard. Treatment: stop offending drug; corticosteroids if no improvement in 5-7 days."
+    difficulty: hard
+    tags: [AIN, acute interstitial nephritis, drug-induced, PPIs, NSAIDs, nephrology]
+  - front: "A 55-year-old has AKI, thrombocytopenia, microangiopathic hemolytic anemia (MAHA), and neurological symptoms. What is the diagnosis?"
+    back: "Thrombotic thrombocytopenic purpura (TTP) — pentad: MAHA + thrombocytopenia + neurological symptoms + fever + renal failure; ADAMTS13 activity <10%\n\nTTP is a medical emergency: treat with plasma exchange (plasmapheresis) to replace ADAMTS13 and remove antibodies. HUS (hemolytic uremic syndrome) is more renal-predominant, usually from Shiga toxin-producing E. coli 0157:H7 in children."
+    difficulty: hard
+    tags: [TTP, thrombotic thrombocytopenic purpura, MAHA, ADAMTS13, plasma exchange, nephrology]
+  - front: "How does rhabdomyolysis cause AKI and how is it managed?"
+    back: "Myoglobin causes tubular toxicity and cast formation; manage with aggressive IV saline (200-1000 mL/h) to maintain urine output >200 mL/h until myoglobin cleared\n\nRhabdomyolysis causes: trauma (crush injury), seizures, strenuous exercise, drugs (statins, cocaine), hyperthermia. CK >10x ULN with elevated creatinine indicates rhabdomyolysis. Target urine output high to prevent cast formation in tubules."
+    difficulty: hard
+    tags: [rhabdomyolysis, myoglobin, AKI, fluid resuscitation, CK, nephrology]
+  - front: "What is the urinalysis finding in different types of AKI?"
+    back: "Pre-renal: hyaline casts, concentrated urine; ATN: muddy brown granular casts, tubular epithelial cells; AIN: WBC casts, RBC casts, possibly eosinophiluria; RPGN: RBC casts, dysmorphic RBCs; Post-renal: may be normal or have WBCs\n\nUrinalysis with microscopy is essential in AKI workup. RBC casts indicate glomerular origin of bleeding (GN). WBC casts indicate tubular or interstitial infection/inflammation. Muddy brown casts indicate tubular necrosis."
+    difficulty: easy
+    tags: [urinalysis, AKI, urine sediment, casts, nephrology]
+  - front: "What is the initial evaluation of a patient presenting with AKI?"
+    back: "History (medications, contrast, urinary symptoms), physical exam (volume status), urine dipstick and microscopy, urine electrolytes (FENa, FEUrea), urine:serum creatinine ratio, renal ultrasound (exclude obstruction)\n\nRenal ultrasound should be performed in all unexplained AKI to exclude obstruction (post-renal AKI). Bilateral hydronephrosis suggests bladder outlet obstruction. Post-renal AKI is reversible with prompt decompression."
+    difficulty: easy
+    tags: [AKI evaluation, urinalysis, renal ultrasound, FENa, nephrology]
+  - front: "A 60-year-old man has complete anuria for 24 hours. What is the most likely diagnosis and immediate management?"
+    back: "Bladder outlet obstruction (BPH, prostate cancer, urethral stricture) causing post-renal AKI — insert Foley catheter immediately\n\nComplete anuria strongly suggests urinary obstruction. Post-renal AKI accounts for 5-10% of AKI cases. Renal ultrasound confirms hydronephrosis. Prompt decompression is essential as prolonged obstruction causes irreversible tubular damage. Post-obstructive diuresis can cause life-threatening electrolyte disorders."
+    difficulty: hard
+    tags: [post-renal AKI, obstruction, BPH, Foley catheter, nephrology]
+  - front: "What are the main differences between AKI and CKD on investigation?"
+    back: "AKI: acute onset, often reversible, normal or near-normal kidney size on U/S, no prior creatinine elevation; CKD: gradual onset, bilateral small echogenic kidneys, prior elevated creatinine\n\nDistinguishing AKI from CKD affects treatment decisions. Small kidneys on ultrasound indicate longstanding CKD with fibrosis. Normal or enlarged kidneys in CKD suggest: diabetic nephropathy, amyloidosis, polycystic kidney disease, HIV nephropathy."
+    difficulty: medium
+    tags: [AKI vs CKD, kidney size, ultrasound, creatinine, nephrology]
+  - front: "What is the approach to AKI in a patient with suspected sepsis?"
+    back: "Fluid resuscitation with 30 mL/kg crystalloid bolus for sepsis-induced AKI, vasopressors (norepinephrine) for MAP <65, remove nephrotoxic drugs, avoid aminoglycosides, treat infection source\n\nSepsis-associated AKI is the most common cause of AKI in ICU. Surviving Sepsis Campaign and KDIGO guidelines recommend avoiding hyperchloremic solutions (excess NS); balanced crystalloids (LR) preferred to reduce AKI risk. Aggressive fluid therapy beyond initial resuscitation may worsen outcomes."
+    difficulty: hard
+    tags: [sepsis-associated AKI, fluid resuscitation, vasopressors, nephrology]
+  - front: "What are KDIGO AKI staging criteria?"
+    back: "Stage 1: Cr 1.5-1.9x or >=26.5 rise or UO<0.5/6-12h. Stage 2: 2-2.9x. Stage 3: >=3x or >=353.6 or RRT\n\nUnified from RIFLE/AKIN. AKI defined as Cr increase >=26.5 within 48h OR >=1.5x within 7 days."
+    difficulty: medium
+    tags: [AKI, KDIGO]
+  - front: "How differentiate prerenal from intrinsic AKI?"
+    back: "Prerenal: FENa<1%, UOsm>500, BUN/Cr>20. ATN: FENa>2%, UOsm<350, BUN/Cr<15\n\nFENa unreliable with diuretics - use FEUrea<35%. Muddy brown casts = ATN. RBC casts = GN."
+    difficulty: hard
+    tags: [AKI, FENa]
+  - front: "What are emergent dialysis indications?"
+    back: "AEIOU: Acidosis refractory, Electrolytes (K>6.5 refractory), Intoxication, Overload, Uremia (encephalopathy/pericarditis)\n\nIHD for stable patients, CRRT for hemodynamically unstable ICU patients."
+    difficulty: medium
+    tags: [dialysis, indications]
+  - front: "What are the KDIGO staging criteria for AKI?"
+    back: "Stage 1: Cr rise ≥26.5 μmol/L in 48h OR 1.5-1.9x baseline within 7 days OR UO <0.5 mL/kg/h x 6-12h. Stage 2: Cr 2.0-2.9x baseline OR UO <0.5 mL/kg/h x ≥12h. Stage 3: Cr ≥3x baseline OR Cr ≥353.6 μmol/L OR initiation of RRT OR UO <0.3 mL/kg/h x ≥24h OR anuria x 12h.\n\nKDIGO unified RIFLE and AKIN criteria. Any AKI stage independently increases mortality and CKD risk. Cr may lag 24-48h behind actual GFR decline. Oliguria (<0.5 mL/kg/h) is often an earlier marker than Cr rise. Novel biomarkers (NGAL, KIM-1) may detect AKI earlier."
+    difficulty: hard
+    tags: [AKI, KDIGO, staging, creatinine, urine output, nephrology]
+  - front: "How do you differentiate prerenal, intrinsic renal, and postrenal AKI using urine indices?"
+    back: "Prerenal: FENa <1%, UOsm >500, urine Na <20, BUN:Cr >40:1, bland sediment. Intrinsic (ATN): FENa >2%, UOsm <350, urine Na >40, BUN:Cr <20:1, muddy brown casts. Postrenal: variable indices, hydronephrosis on US.\n\nFENa = (UNa × PCr)/(PNa × UCr) × 100. FENa is unreliable with diuretic use — use FEUrea instead (<35% prerenal, >50% intrinsic). Urine microscopy is essential: RBC casts = glomerulonephritis, WBC casts = interstitial nephritis/pyelonephritis, muddy brown granular casts = ATN."
+    difficulty: hard
+    tags: [AKI, FENa, urinalysis, prerenal, ATN, nephrology]
+  - front: "What are the emergent indications for dialysis in AKI (mnemonic AEIOU)?"
+    back: "A=Acidosis (severe metabolic pH <7.1 refractory to bicarb), E=Electrolytes (refractory hyperkalemia >6.5 with ECG changes), I=Ingestion (toxic alcohols, lithium, salicylates), O=Overload (fluid overload refractory to diuretics), U=Uremia (encephalopathy, pericarditis, bleeding).\n\nThese are absolute indications where delay in RRT increases mortality. Relative indications: progressive azotemia, electrolyte derangements trending toward dangerous levels. CRRT (continuous RRT) preferred in hemodynamically unstable ICU patients. Intermittent HD for stable patients or urgent toxin removal."
+    difficulty: medium
+    tags: [AKI, dialysis, indications, AEIOU, hyperkalemia, nephrology]
+  - front: "What is the stepwise management of hyperkalemia?"
+    back: "1) Stabilize myocardium: IV calcium gluconate 10% 10mL over 2-3 min (if ECG changes). 2) Shift K+ intracellularly: IV insulin 10U + D50W, salbutamol nebs 10-20mg. 3) Remove K+: sodium polystyrene sulfonate (Kayexalate), loop diuretics (if volume tolerant), dialysis if refractory.\n\nCalcium gluconate does NOT lower K+ — it stabilizes cardiac membrane within minutes, lasts 30-60 min. Insulin+glucose works in 15-30 min, lasts 4-6h (monitor for hypoglycemia). Sodium bicarbonate only effective if concurrent acidosis. IV calcium chloride via central line if cardiac arrest. Patiromer/SZC for chronic hyperkalemia."
+    difficulty: hard
+    tags: [AKI, hyperkalemia, calcium gluconate, insulin, dialysis, nephrology]
+  - front: "What are the common nephrotoxic drugs that cause AKI?"
+    back: "Prerenal: NSAIDs (afferent constriction), ACEi/ARBs (efferent dilation), calcineurin inhibitors. ATN: aminoglycosides, amphotericin B, cisplatin, IV contrast (CI-AKI), vancomycin. AIN: NSAIDs, penicillins, cephalosporins, PPIs, sulfonamides, allopurinol. Crystalline: acyclovir, methotrexate, sulfonamides.\n\nDrug-induced AKI accounts for 20% of hospital AKI. Contrast-induced AKI: prevent with IV saline hydration pre/post-procedure; NAC benefit unproven. AIN triad (rash, fever, eosinophilia) present in <30%; eosinophiluria supportive. Stop offending agent; steroids for AIN if no recovery in 5-7 days."
+    difficulty: hard
+    tags: [AKI, nephrotoxic, drugs, AIN, ATN, contrast, nephrology]
+  - front: "What is the approach to oliguric AKI in the ICU?"
+    back: "1) Assess volume status (JVP, lung exam, IVC US). 2) If hypovolemic: IV crystalloid challenge (250-500mL bolus). 3) If euvolemic/hypervolemic with no response: avoid further fluids, trial of furosemide stress test (1-1.5 mg/kg IV). 4) Persistent oliguria: consider CRRT.\n\nFurosemide stress test: UO >200 mL in 2h after 1.5 mg/kg IV furosemide predicts recovery. Failure predicts stage 3 AKI and need for RRT. Avoid dopamine for 'renal dose' — no benefit and potential harm. Goal-directed fluid management prevents both hypovolemia and fluid overload-associated AKI."
+    difficulty: hard
+    tags: [AKI, oliguria, ICU, furosemide, CRRT, nephrology]
+  - front: "What is contrast-induced AKI (CI-AKI) and how is it prevented?"
+    back: "Cr rise ≥26.5 μmol/L or ≥25% within 48-72h of contrast. Prevention: IV NS or NaHCO3 1-3 mL/kg/h starting 1h pre-procedure. Minimize contrast volume. Avoid concurrent nephrotoxins. Hold metformin (restart 48h post if Cr stable). NAC benefit uncertain.\n\nRisk factors: CKD (eGFR <30 highest risk), diabetes, heart failure, hypovolemia, high contrast volume, arterial > venous contrast. Iso-osmolar contrast may be safer. CI-AKI is usually self-limited (peaks day 3-5, resolves 7-14 days) but can progress to dialysis-requiring AKI in high-risk patients."
+    difficulty: medium
+    tags: [AKI, contrast, CI-AKI, prevention, metformin, nephrology]
+  - front: "What is hepatorenal syndrome and how is it differentiated from other causes of AKI in cirrhosis?"
+    back: "HRS: AKI in cirrhosis with ascites, no improvement after 2 days of albumin (1g/kg/day, max 100g/day) and diuretic withdrawal, no shock, no nephrotoxins, no parenchymal kidney disease (bland urine sediment, no proteinuria, normal renal US).\n\nHRS is a diagnosis of exclusion. FENa is <1% (similar to prerenal) because the tubules are functioning normally — the problem is extreme renal vasoconstriction. Treatment: terlipressin + albumin (or norepinephrine + albumin in ICU). Liver transplant is definitive treatment."
+    difficulty: hard
+    tags: [AKI, HRS, cirrhosis, terlipressin, diagnosis of exclusion, nephrology]
+  - front: "What is rhabdomyolysis-induced AKI and how is it managed?"
+    back: "Massive muscle breakdown → myoglobin release → renal tubular obstruction + direct tubular toxicity + renal vasoconstriction. Diagnosis: CK >5x ULN (typically >5000-10000), dark urine (dipstick positive for blood, no RBCs on microscopy). Management: aggressive IV NS (target UO 200-300 mL/h), avoid bicarbonate unless severe acidosis.\n\nCommon causes: crush injury, statins, seizures, neuroleptic malignant syndrome, compartment syndrome. Complications: hyperkalemia (severe, early), hyperphosphatemia, hypocalcemia (early), hypercalcemia (recovery phase), DIC. Monitor CK, K+, Ca, phosphate q6-8h. Dialysis for refractory hyperkalemia or volume overload."
+    difficulty: hard
+    tags: [AKI, rhabdomyolysis, myoglobin, CK, IV fluids, nephrology]
+  - front: "What is the RIFLE classification for AKI?"
+    back: "Risk: Cr 1.5x or UO <0.5 mL/kg/h x 6h. Injury: Cr 2x or UO <0.5 x 12h. Failure: Cr 3x or Cr >354 or UO <0.3 x 24h or anuria x 12h. Loss: persistent AKI >4 weeks. ESKD: persistent >3 months.\n\nRIFLE was the first consensus AKI definition (2004), followed by AKIN (2007), then KDIGO (2012) which unified both. KDIGO is now the standard. All systems use Cr rise and/or UO decrease. KDIGO added the absolute Cr rise ≥26.5 criterion for earlier detection (from AKIN)."
+    difficulty: medium
+    tags: [AKI, RIFLE, classification, creatinine, nephrology]
+  - front: "What is thrombotic microangiopathy (TMA) and how do HUS and TTP present?"
+    back: "TMA triad: microangiopathic hemolytic anemia (schistocytes, negative Coombs), thrombocytopenia, organ damage. HUS: AKI-predominant (often diarrhea-associated E. coli O157:H7 in children — Shiga toxin). TTP: neurological symptoms predominant, ADAMTS13 <10%.\n\nTypical HUS (STEC-HUS): supportive care only, NO antibiotics (may increase toxin release), NO platelets. Atypical HUS: complement-mediated, treat with eculizumab (anti-C5). TTP: URGENT plasma exchange (PEX) + steroids + caplacizumab (anti-vWF). Do not delay PEX for ADAMTS13 result if clinical suspicion high."
+    difficulty: hard
+    tags: [AKI, TMA, HUS, TTP, ADAMTS13, eculizumab, nephrology]
+  - front: "What is the cardiorenal syndrome classification?"
+    back: "Type 1: acute heart failure → AKI. Type 2: chronic heart failure → progressive CKD. Type 3: AKI → acute cardiac dysfunction. Type 4: CKD → chronic cardiac disease. Type 5: systemic condition (sepsis, amyloid) → both cardiac and renal dysfunction.\n\nType 1 is most common in clinical practice. Mechanism: low cardiac output → renal hypoperfusion + venous congestion → AKI. Management: careful diuresis (decongestion improves renal function despite Cr rise from hemoconcentration), avoid excessive fluid restriction. Ultrafiltration if diuretic-resistant."
+    difficulty: hard
+    tags: [AKI, cardiorenal, heart failure, classification, nephrology]
+  - front: "What are the risk factors for AKI in hospitalized patients?"
+    back: "Pre-existing CKD (strongest risk factor), diabetes, heart failure, liver disease, age >65, hypovolemia/sepsis, nephrotoxic drug exposure, major surgery (especially cardiac), IV contrast, obstruction, multiple myeloma\n\nHospital-acquired AKI occurs in 10-15% of admissions, >50% in ICU. Prevention: avoid nephrotoxins when possible, goal-directed fluid therapy, monitor UO and Cr, hold ACEi/ARBs and diuretics in acute illness. AKI survivors have increased long-term CKD and mortality risk — follow-up with Cr monitoring."
+    difficulty: medium
+    tags: [AKI, risk factors, prevention, CKD, nephrology]
+  - front: "What is abdominal compartment syndrome and how does it cause AKI?"
+    back: "Intra-abdominal pressure (IAP) >20 mmHg with new organ dysfunction. Causes AKI by compressing renal veins and parenchyma → decreased renal perfusion and GFR. Measured via intravesical (bladder) pressure transducer.\n\nRisk factors: massive fluid resuscitation, abdominal surgery, pancreatitis, trauma, liver transplant. IAP >12 = intra-abdominal hypertension; >20 with organ failure = abdominal compartment syndrome. Treatment: decompressive laparotomy if medical measures (NG drainage, sedation, neuromuscular blockade) fail."
+    difficulty: hard
+    tags: [AKI, compartment syndrome, intra-abdominal pressure, surgery, nephrology]
+  - front: "What is tumor lysis syndrome (TLS) and how does it cause AKI?"
+    back: "Rapid lysis of tumor cells (high tumor burden hematologic malignancies) releasing K+, phosphate, uric acid, nucleic acids. AKI from uric acid crystal and calcium phosphate deposition in tubules. Labs: hyperuricemia, hyperkalemia, hyperphosphatemia, hypocalcemia.\n\nPrevention (high risk: Burkitt, ALL, aggressive NHL): aggressive IV hydration + allopurinol or rasburicase (urate oxidase, breaks down uric acid — contraindicated in G6PD deficiency). Monitor q6-8h. Treatment: rasburicase, RRT if refractory. Cairo-Bishop criteria define laboratory and clinical TLS."
+    difficulty: hard
+    tags: [AKI, tumor lysis, TLS, rasburicase, hyperuricemia, nephrology]
+  - front: "What urinalysis findings point to specific diagnoses?"
+    back: "WBC+nitrites: UTI. RBC casts: glomerulonephritis. WBC casts: pyelonephritis/interstitial nephritis. Muddy brown casts: ATN. Oval fat bodies: nephrotic syndrome. Crystals: kidney stones (calcium oxalate, uric acid)\n\nDipstick protein detects albumin only (not light chains — need urine protein electrophoresis for myeloma). Myoglobinuria: positive blood on dipstick, negative RBCs on microscopy."
+    difficulty: hard
+    tags: [urinalysis, interpretation]
+  - front: "What is the pathophysiology of acute kidney injury in prerenal, intrinsic, and postrenal causes?"
+    back: "Prerenal: decreased renal perfusion (hypovolemia, HF, sepsis) with intact nephrons. Intrinsic: direct nephron damage (ATN, GN, AIN). Postrenal: urinary outflow obstruction (BPH, stones, tumor)\n\nPrerenal → intrinsic if prolonged: sustained hypoperfusion causes ATN. Intrinsic damage: ischemic ATN (tubular necrosis from hypoperfusion), toxic ATN (aminoglycosides, contrast), GN (immune complex), AIN (drug-induced)."
+    difficulty: medium
+    tags: [AKI, pathophysiology]

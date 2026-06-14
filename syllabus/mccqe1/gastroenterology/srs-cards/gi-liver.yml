@@ -1,0 +1,626 @@
+# Liver Disease & Cirrhosis (Gastroenterology) - generated from srs-mccqe1
+cards:
+  - front: "A 55-year-old alcoholic has jaundice, ascites, spider angiomata, palmar erythema, and asterixis. Labs: bilirubin 85 μmol/L, INR 2.1, albumin 22 g/L. Child-Pugh score?"
+    back: "Child-Pugh C (severe cirrhosis): ascites (2), encephalopathy (2), bilirubin >51 μmol/L (3), INR >2.2 (3 pts? score >10 = class C)\n\nChild-Pugh score assesses cirrhosis severity using 5 parameters: bilirubin, albumin, INR, ascites, encephalopathy. Class A (5-6): compensated; Class B (7-9): moderately advanced; Class C (10-15): severely decompensated. Guides liver transplant listing."
+    difficulty: hard
+    tags: [Child-Pugh, cirrhosis, liver failure, ascites, hepatology, gastroenterology]
+  - front: "What is the MELD score and how is it used?"
+    back: "MELD = 3.78×ln(bilirubin μmol/L÷17) + 11.2×ln(INR) + 9.57×ln(creatinine μmol/L÷88.4) + 6.43; predicts 90-day mortality — used for liver transplant prioritization\n\nMELD score was originally developed to predict mortality after TIPS. It is now used for organ allocation in liver transplantation. MELD >15 indicates benefit from transplant. MELD >25: high 90-day mortality without transplant."
+    difficulty: medium
+    tags: [MELD score, liver transplant, cirrhosis prognosis, gastroenterology]
+  - front: "A cirrhotic patient develops increasing abdominal girth. Paracentesis shows fluid with SAAG >11 g/L. What is the diagnosis and initial management?"
+    back: "Ascites from portal hypertension (SAAG ≥11 g/L); first-line treatment: sodium restriction (88 mmol/day) + spironolactone 100mg ± furosemide 40mg\n\nSAAG (serum-ascites albumin gradient) ≥11 g/L indicates portal hypertension. Spironolactone blocks aldosterone and is more effective than furosemide alone in cirrhotic ascites. AASLD/CJS guidelines: spironolactone:furosemide ratio 100:40 to maintain normokalemia."
+    difficulty: hard
+    tags: [ascites, SAAG, cirrhosis, spironolactone, portal hypertension, gastroenterology]
+  - front: "What is spontaneous bacterial peritonitis (SBP) and how is it diagnosed and treated?"
+    back: "SBP: infection of ascites without apparent source; diagnose by paracentesis with PMN >250 cells/μL; treat with IV cefotaxime 2g q8h or ceftriaxone for 5-7 days + IV albumin\n\nSBP occurs in 10-30% of hospitalized cirrhotics with ascites. Most common organism: E. coli. IV albumin (1.5 g/kg on Day 1, 1 g/kg on Day 3) reduces hepatorenal syndrome and mortality. Secondary prophylaxis: norfloxacin or TMP-SMX."
+    difficulty: hard
+    tags: [SBP, spontaneous bacterial peritonitis, ascites, ceftriaxone, albumin, gastroenterology]
+  - front: "What is hepatic encephalopathy (HE) and how is it managed?"
+    back: "HE: neuropsychiatric dysfunction from liver failure; manage with lactulose (goal 2-3 soft stools/day), rifaximin for secondary prophylaxis, identify and treat precipitants\n\nPrecipitants of HE: infection (SBP), GI bleeding, constipation, electrolyte abnormalities, benzodiazepines, sedatives. Lactulose reduces ammonia absorption. Rifaximin 550mg BID added for recurrent/persistent HE. Protein restriction is outdated — maintain adequate protein intake."
+    difficulty: hard
+    tags: [hepatic encephalopathy, lactulose, rifaximin, cirrhosis, ammonia, gastroenterology]
+  - front: "A cirrhotic patient vomits large amounts of fresh blood. What is the immediate management?"
+    back: "Resuscitate with blood products (target Hgb 70-80 g/L), IV terlipressin or somatostatin analogue (octreotide), prophylactic antibiotics (ceftriaxone), urgent endoscopy within 12 hours\n\nAcute variceal hemorrhage has 20-30% in-hospital mortality. Octreotide/terlipressin reduces portal pressure. Ceftriaxone prevents bacterial infections that precipitate HE and renal failure. TIPS considered for refractory bleeding. Propranolol/ISMN or EVL for secondary prophylaxis."
+    difficulty: hard
+    tags: [variceal hemorrhage, portal hypertension, octreotide, endoscopy, cirrhosis, gastroenterology]
+  - front: "What are the diagnostic criteria for alcoholic hepatitis and how is severity assessed?"
+    back: "Acute liver injury in heavy alcohol use: jaundice, hepatomegaly, AST:ALT ratio typically >2:1 (both usually <400 IU/L); severity: Maddrey Discriminant Function (MDF) ≥32 = severe disease\n\nMDF = 4.6 × (PT - control time) + bilirubin (μmol/L) / 17.1. MDF ≥32 or MELD ≥21 indicates severe alcoholic hepatitis with high 30-day mortality. Treatment: prednisolone 40mg/day for 28 days if no infection. Pentoxifylline no longer recommended."
+    difficulty: hard
+    tags: [alcoholic hepatitis, Maddrey, prednisolone, MDF, liver disease, gastroenterology]
+  - front: "What is non-alcoholic fatty liver disease (NAFLD) and when does it progress to NASH?"
+    back: "NAFLD: hepatic steatosis without significant alcohol use; NASH (non-alcoholic steatohepatitis): steatosis + inflammation + ballooning ± fibrosis — risk of cirrhosis and hepatocellular carcinoma\n\nNAFLD is the most common liver disease in Canada (25% prevalence). Risk factors: obesity, T2DM, metabolic syndrome. CJS guidelines: weight loss (>7-10% body weight) is most effective treatment. No approved pharmacotherapy; semaglutide and pioglitazone show promise."
+    difficulty: medium
+    tags: [NAFLD, NASH, liver steatosis, metabolic, gastroenterology]
+  - front: "What is the most common cause of acute liver failure in Canada and how is it managed?"
+    back: "Acetaminophen overdose (most common); treat with N-acetylcysteine (NAC) regardless of time since ingestion; transfer to transplant centre for King criteria assessment\n\nNAC replenishes glutathione and prevents hepatotoxicity. Effective up to 24h; still beneficial in late presentation. King College Criteria for transplant: pH <7.30 OR all three: PT >100s, creatinine >300 μmol/L, grade III-IV encephalopathy. Call Poison Control."
+    difficulty: hard
+    tags: [acute liver failure, acetaminophen, NAC, King College Criteria, liver transplant, gastroenterology]
+  - front: "What hepatitis B serology pattern indicates acute infection vs. immunity?"
+    back: "Acute infection: HBsAg+, anti-HBc IgM+, anti-HBs−; Recovery/immunity (natural): HBsAg−, anti-HBc IgG+, anti-HBs+; Vaccine immunity: anti-HBs+ only (no anti-HBc)\n\nHBV serology interpretation is essential. HBeAg indicates high viral replication. HBV DNA >2000 IU/mL = active replication. Chronic HBV: HBsAg+ >6 months. AMMI Canada guidelines recommend treatment when HBV DNA and ALT elevated with significant fibrosis."
+    difficulty: medium
+    tags: [hepatitis B, serology, HBsAg, anti-HBc, gastroenterology]
+  - front: "When should antiviral treatment be initiated for chronic hepatitis B?"
+    back: "HBeAg-positive: HBV DNA >20,000 IU/mL + elevated ALT; HBeAg-negative: HBV DNA >2,000 IU/mL + elevated ALT; treat regardless of ALT if cirrhosis, HCC family history, immunosuppression\n\nAMMI Canada HBV guidelines recommend tenofovir alafenamide (TAF) or entecavir as first-line agents. Pegylated interferon for selected patients (finite duration). Monitor for HCC with ultrasound every 6 months in high-risk patients."
+    difficulty: medium
+    tags: [hepatitis B treatment, antiviral, tenofovir, entecavir, HCC surveillance, gastroenterology]
+  - front: "A 45-year-old has positive HCV antibody and HCV RNA. What is the treatment in Canada?"
+    back: "Direct-acting antivirals (DAAs): sofosbuvir-based regimens (e.g., sofosbuvir/velpatasvir) or glecaprevir/pibrentasvir — 8-12 weeks, >95% sustained virological response (SVR)\n\nCJS guidelines recommend pan-genotypic DAA therapy for all patients with chronic HCV regardless of fibrosis stage. SVR is considered virological cure and reduces liver-related mortality, cirrhosis progression, and HCC risk. Testing should be universal in Canada given high rate of undiagnosed HCV."
+    difficulty: medium
+    tags: [hepatitis C, DAA, sofosbuvir, SVR, gastroenterology]
+  - front: "What is the screening and treatment approach for hepatocellular carcinoma (HCC) in cirrhosis?"
+    back: "Ultrasound ± AFP every 6 months; if nodule >1cm on US → multi-phase CT or MRI; LI-RADS 5 = definite HCC → treat (resection, ablation, TACE, sorafenib, liver transplant based on Milan criteria)\n\nMilan criteria for liver transplant: single nodule ≤5cm or ≤3 nodules each ≤3cm, no vascular invasion. CJS and CCA guidelines recommend HCC surveillance in all cirrhosis patients and chronic HBV carriers at high risk."
+    difficulty: hard
+    tags: [HCC, hepatocellular carcinoma, surveillance, cirrhosis, Milan criteria, gastroenterology]
+  - front: "What is hepatorenal syndrome (HRS) and how is it treated?"
+    back: "HRS: acute renal failure in cirrhosis from splanchnic vasodilation reducing renal perfusion; Type 1 (AKI >50% creatinine rise in <2 weeks); treat with IV albumin + vasoconstrictors (terlipressin or norepinephrine)\n\nHRS is diagnosed by: cirrhosis with ascites, serum creatinine >133 μmol/L, no improvement with fluid resuscitation, absence of shock/nephrotoxins, no proteinuria or hematuria. Terlipressin + albumin is most effective. Liver transplantation is definitive treatment."
+    difficulty: hard
+    tags: [hepatorenal syndrome, HRS, cirrhosis, terlipressin, albumin, gastroenterology]
+  - front: "What are the indications for TIPS (transjugular intrahepatic portosystemic shunt)?"
+    back: "Refractory ascites, recurrent variceal hemorrhage refractory to endoscopic/pharmacological therapy, Budd-Chiari syndrome, hepatic hydrothorax\n\nTIPS creates a shunt reducing portal pressure. Contraindications: heart failure, severe hepatic encephalopathy (HE), active sepsis. TIPS worsens HE in ~25% of patients. MELD >18 predicts poor survival post-TIPS."
+    difficulty: medium
+    tags: [TIPS, portal hypertension, refractory ascites, variceal hemorrhage, gastroenterology]
+  - front: "What is Child-Pugh classification?"
+    back: "Bilirubin, albumin, INR, ascites, encephalopathy. Each 1-3. A(5-6), B(7-9), C(10-15 decompensated)\n\nClass C: 1-year mortality ~55%. MELD score preferred for transplant listing."
+    difficulty: medium
+    tags: [cirrhosis, Child-Pugh]
+  - front: "How is spontaneous bacterial peritonitis managed?"
+    back: "Ceftriaxone 2g IV. Diagnose by ascitic PMN >250. Albumin 1.5g/kg day1 + 1g/kg day3\n\nCommon organisms: E. coli, Klebsiella. Prophylaxis: norfloxacin for prior SBP or GI bleed."
+    difficulty: hard
+    tags: [SBP, cirrhosis]
+  - front: "What are indications for TIPS?"
+    back: "Refractory variceal bleeding, refractory ascites, hepatic hydrothorax, Budd-Chiari\n\nContraindications: severe encephalopathy, heart failure. Main complication: hepatic encephalopathy 30-50%."
+    difficulty: medium
+    tags: [TIPS, portal HTN]
+  - front: "What is the Child-Pugh classification and how is it calculated?"
+    back: "5 variables, each 1-3 points: bilirubin, albumin, INR, ascites, encephalopathy. Class A: 5-6 (well-compensated); Class B: 7-9 (significant functional compromise); Class C: 10-15 (decompensated). 1-year survival: A=100%, B=80%, C=45%.\n\nChild-Pugh is used for prognosis, surgical risk assessment, and liver transplant listing. Limitations: subjective grading of ascites/encephalopathy, does not include renal function. MELD score has largely replaced Child-Pugh for transplant allocation in Canada."
+    difficulty: medium
+    tags: [liver, Child-Pugh, cirrhosis, prognosis, GI]
+  - front: "What is the MELD score, how is it calculated, and what is it used for?"
+    back: "MELD = 3.78×ln(bilirubin mg/dL) + 11.2×ln(INR) + 9.57×ln(creatinine mg/dL) + 6.43. Range 6-40. Used for liver transplant allocation (higher score = higher priority) and 3-month mortality prediction. MELD-Na includes sodium (improves accuracy).\n\nMELD is the standard for organ allocation in Canada (Canadian Blood Services). MELD >15: consider transplant referral. MELD >20: transplant listing. Exception points given for HCC, hepatopulmonary syndrome. MELD-Na better predicts mortality in hyponatremic patients."
+    difficulty: hard
+    tags: [liver, MELD, transplant, cirrhosis, prognosis, GI]
+  - front: "What is the management of acute variceal bleeding?"
+    back: "Resuscitate (target Hb 70-80 g/L), IV octreotide (bolus 50 μg then 50 μg/h x 2-5 days), IV ceftriaxone 1g daily x 7 days prophylaxis, emergent endoscopy within 12h for band ligation. TIPS if refractory.\n\nRestrictive transfusion (Hb target 70) improves survival by avoiding portal pressure increase. Antibiotic prophylaxis reduces mortality and rebleeding. PPI is NOT indicated for variceal bleeding. Pre-emptive TIPS within 72h for Child-Pugh C or B with active bleeding on endoscopy reduces mortality."
+    difficulty: hard
+    tags: [liver, variceal bleeding, octreotide, band ligation, TIPS, GI]
+  - front: "What is the primary and secondary prophylaxis for esophageal varices?"
+    back: "Primary prophylaxis: NSBB (propranolol/nadolol, target HR 55-60) OR carvedilol 6.25-12.5 mg daily for medium/large varices. Secondary prophylaxis: combination NSBB + endoscopic band ligation (EBL) until varix obliteration.\n\nScreen with EGD at cirrhosis diagnosis. Small varices without red signs: NSBB or surveillance. Carvedilol has both beta-blocking and alpha-blocking effects, reducing portal pressure more effectively. NSBB contraindicated in refractory ascites with SBP <90 or AKI."
+    difficulty: hard
+    tags: [liver, varices, NSBB, propranolol, EBL, prophylaxis, GI]
+  - front: "How is spontaneous bacterial peritonitis (SBP) diagnosed and treated?"
+    back: "Diagnosis: ascitic fluid PMN >250 cells/mm³. Treatment: IV ceftriaxone 2g daily (or cefotaxime 2g q8h) x 5 days + IV albumin 1.5 g/kg day 1, 1 g/kg day 3 (if Cr >88 μmol/L, BUN >10.7 mmol/L, or bilirubin >68 μmol/L).\n\nSBP occurs in ~15% of cirrhotics with ascites. Most common organisms: E. coli, Klebsiella, S. pneumoniae. IV albumin reduces hepatorenal syndrome and mortality. Secondary prophylaxis: norfloxacin 400 mg daily or TMP-SMX indefinitely. Culture-negative SBP (PMN>250, negative culture) treated identically."
+    difficulty: hard
+    tags: [liver, SBP, ascites, peritonitis, albumin, ceftriaxone, GI]
+  - front: "What is the diagnostic approach to ascites including the serum-ascites albumin gradient (SAAG)?"
+    back: "SAAG ≥11 g/L: portal hypertension (cirrhosis, heart failure, Budd-Chiari). SAAG <11 g/L: non-portal hypertension (peritoneal carcinomatosis, TB peritonitis, nephrotic syndrome, pancreatitis).\n\nSAAG replaces the old transudate/exudate classification for ascites. Total protein helps further classify: SAAG ≥11 + protein >25 g/L = cardiac ascites; SAAG ≥11 + protein <25 g/L = cirrhotic ascites. Always send cell count, culture (inoculate blood culture bottles at bedside), albumin, total protein."
+    difficulty: medium
+    tags: [liver, ascites, SAAG, paracentesis, portal hypertension, GI]
+  - front: "What is the management of refractory ascites in cirrhosis?"
+    back: "Salt restriction (<2g Na/day) + diuretics (spironolactone:furosemide 100:40 mg ratio, max 400:160). Refractory: serial large-volume paracentesis (LVP) with albumin replacement (6-8 g per L removed if >5L) or TIPS. Consider liver transplant.\n\nDiuretic-resistant ascites (no response to max diuretics) or diuretic-intractable (complications prevent adequate doses) defines refractory ascites. TIPS improves ascites but risks encephalopathy — contraindicated if MELD >18, severe encephalopathy, or heart failure. Median survival 6 months without transplant."
+    difficulty: hard
+    tags: [liver, ascites, refractory, spironolactone, TIPS, LVP, GI]
+  - front: "What are the grades of hepatic encephalopathy and its management?"
+    back: "West Haven: Grade 1 (mild confusion, short attention), Grade 2 (lethargy, disorientation), Grade 3 (somnolent but arousable, marked confusion), Grade 4 (coma). Treat with lactulose (titrate to 2-3 soft stools/day) + rifaximin 550 mg BID for secondary prophylaxis.\n\nHE is caused by ammonia and other toxins bypassing hepatic clearance. Precipitants: GI bleeding, infection, constipation, dehydration, sedatives, hypokalemia, alkalosis. Lactulose (first-line) acidifies colon lumen trapping NH4+. Rifaximin reduces ammonia-producing bacteria and reduces HE recurrence by 50%."
+    difficulty: hard
+    tags: [liver, hepatic encephalopathy, lactulose, rifaximin, West Haven, GI]
+  - front: "What is hepatorenal syndrome (HRS) and how is it classified and treated?"
+    back: "HRS-AKI (formerly Type 1): rapid Cr rise ≥26.5 μmol/L in 48h or ≥50% in 7 days, progressive renal failure. HRS-CKD (Type 2): stable moderate renal failure. Treatment: IV albumin + terlipressin (first-line) or norepinephrine + albumin. Definitive: liver transplant.\n\nHRS is functional renal failure due to splanchnic vasodilation and renal vasoconstriction — kidneys are structurally normal. Must exclude other causes: no improvement with albumin challenge (1g/kg x 2 days), no nephrotoxins, no obstruction, no parenchymal disease. Terlipressin is now approved in Canada."
+    difficulty: hard
+    tags: [liver, HRS, hepatorenal, terlipressin, albumin, AKI, GI]
+  - front: "What is the workup for newly diagnosed cirrhosis?"
+    back: "Etiology: hepatitis B/C serology, alcohol history, ferritin/transferrin sat (hemochromatosis), ceruloplasmin (Wilson), ANA/ASMA/IgG (autoimmune), AMA (PBC). Assess severity: bloodwork (CBC, INR, albumin, bilirubin, Cr), EGD for varices, US for HCC screening, MELD score.\n\nLiver biopsy may not be needed if diagnosis is clear clinically. Transient elastography (FibroScan) is non-invasive assessment of fibrosis. HCC screening: abdominal US ± AFP every 6 months. Bone density screening (osteoporosis risk). Vaccinate for HepA/B if non-immune."
+    difficulty: medium
+    tags: [liver, cirrhosis, workup, hepatitis, HCC screening, GI]
+  - front: "What are the diagnostic criteria for alcohol-associated hepatitis?"
+    back: "Heavy alcohol use (>40 g/day women, >60 g/day men) for >6 months with <60 days abstinence, jaundice onset <8 weeks, AST >50 (AST:ALT ratio >1.5), bilirubin >50 μmol/L. Maddrey discriminant function ≥32: severe, consider prednisolone 40 mg x 28 days.\n\nMaddrey DF = 4.6 × (PT patient - PT control) + bilirubin (mg/dL). MELD >20 also predicts poor prognosis. Lille score at day 7 assesses steroid response: >0.45 = non-responder, stop steroids. Pentoxifylline is no longer recommended (STOPAH trial). Contraindications to steroids: active GI bleeding, uncontrolled infection."
+    difficulty: hard
+    tags: [liver, alcoholic hepatitis, Maddrey, Lille score, steroids, GI]
+  - front: "What is the approach to HCC screening and management in cirrhosis?"
+    back: "Screen with abdominal ultrasound ± AFP every 6 months. Suspicious lesion >1 cm: contrast-enhanced CT or MRI (arterial enhancement + washout = diagnostic). Management: BCLC staging → surgical resection, liver transplant (Milan criteria: single ≤5cm or ≤3 nodules each ≤3cm), ablation, TACE, sorafenib/atezolizumab-bevacizumab.\n\nMilan criteria define transplant eligibility for HCC. Beyond Milan: some centres use UCSF criteria. First-line systemic therapy for advanced HCC: atezolizumab + bevacizumab (IMbrave150 trial). HCC screening applies to all cirrhotics and chronic HBV carriers even without cirrhosis."
+    difficulty: hard
+    tags: [liver, HCC, screening, Milan criteria, BCLC, transplant, GI]
+  - front: "What are the features and management of non-alcoholic fatty liver disease (NAFLD/MASLD)?"
+    back: "Spectrum: steatosis → steatohepatitis (NASH/MASH) → fibrosis → cirrhosis. Risk factors: metabolic syndrome, obesity, T2DM. Diagnosis: exclude alcohol (>20g/day women, 30g/day men) and other causes. FibroScan or FIB-4 for fibrosis assessment. Management: weight loss ≥7-10%, exercise, treat metabolic syndrome. Pioglitazone or vitamin E for biopsy-proven NASH without diabetes.\n\nNAFLD is the most common liver disease globally. Renamed MASLD (metabolic-associated steatotic liver disease) in 2023. Resmetirom (thyroid hormone receptor agonist) is FDA-approved for NASH with fibrosis. GLP-1 agonists (semaglutide) show benefit. Bariatric surgery improves NASH in obese patients."
+    difficulty: hard
+    tags: [liver, NAFLD, NASH, MASLD, metabolic, fibrosis, GI]
+  - front: "What drugs should be avoided or dose-adjusted in cirrhosis?"
+    back: "Avoid: NSAIDs (renal, bleeding), ACEi/ARBs (hypotension, renal), aminoglycosides, metformin (in decompensated), sedatives/opioids (encephalopathy). Dose-adjust: acetaminophen (max 2g/day), statins (monitor closely). Prefer: lactulose, rifaximin, spironolactone.\n\nNSAIDs cause renal vasoconstriction (reduce prostaglandin-mediated afferent dilation) worsening ascites and precipitating HRS. ACEi/ARBs further reduce effective circulating volume. Acetaminophen in reduced doses is safer than NSAIDs for pain. Avoid gadolinium MRI contrast if GFR <30 (NSF risk)."
+    difficulty: hard
+    tags: [liver, cirrhosis, drug safety, NSAIDs, pharmacology, GI]
+  - front: "What are the indications and contraindications for TIPS (transjugular intrahepatic portosystemic shunt)?"
+    back: "Indications: refractory variceal bleeding despite endoscopic therapy, refractory ascites, Budd-Chiari syndrome, hepatic hydrothorax. Contraindications: severe hepatic encephalopathy, heart failure (right-sided), MELD >18 (relative), hepatic malignancy, uncontrolled sepsis.\n\nTIPS creates a portosystemic shunt reducing portal pressure. Main complication is hepatic encephalopathy (30-50%). Covered stents (PTFE) have better patency. Pre-emptive TIPS within 72h of variceal bleeding in high-risk patients (Child B with active bleeding or Child C 10-13) reduces mortality."
+    difficulty: hard
+    tags: [liver, TIPS, portal hypertension, varices, ascites, GI]
+  - front: "How do you interpret liver function tests (LFTs)?"
+    back: "Hepatocellular: ALT>AST (viral hepatitis), AST>ALT 2:1 (alcoholic). Cholestatic: elevated ALP+GGT+bilirubin (obstructive). Synthetic: low albumin, elevated INR (chronic liver disease)\n\nIsolated elevated ALP: check GGT (if normal, bone source). Very high ALT (>1000): acute viral hepatitis, ischemic hepatitis, toxin (acetaminophen). Conjugated hyperbilirubinemia = post-hepatic obstruction."
+    difficulty: medium
+    tags: [LFTs, interpretation]
+  - front: "A newborn presents with jaundice on day 1 of life. Indirect (unconjugated) bilirubin is markedly elevated. What is the most likely category of jaundice, the most important diagnosis to consider, and the urgency?"
+    back: "Pre-hepatic (hemolytic) jaundice. The most important diagnosis is hemolytic disease of the newborn (Rh or ABO incompatibility). This is urgent because severe unconjugated hyperbilirubinemia can cause kernicterus (bilirubin encephalopathy). Immediate workup includes blood type, Coombs test, CBC with reticulocyte count, and peripheral smear.\n\nJaundice within the first 24 hours of life is ALWAYS pathological and requires urgent evaluation. Physiological jaundice does not appear until day 2-3. Pre-hepatic causes produce unconjugated (indirect) hyperbilirubinemia because the liver cannot conjugate the excess bilirubin load from hemolysis."
+    difficulty: hard
+    tags: [jaundice, neonatal, hemolytic, pre-hepatic, unconjugated, pediatrics]
+  - front: "How do you classify jaundice as pre-hepatic, hepatic, or post-hepatic using bilirubin fractions, urine, and stool findings?"
+    back: "Pre-hepatic: elevated unconjugated bilirubin, normal/dark urine urobilinogen, dark stool, no bilirubinuria. Hepatic: elevated both conjugated and unconjugated, bilirubinuria present, variable urine urobilinogen. Post-hepatic (obstructive): elevated conjugated bilirubin, bilirubinuria (dark urine/tea-colored), pale/clay-colored stool (acholic), absent urine urobilinogen.\n\nUnconjugated bilirubin is albumin-bound and cannot be filtered by the kidneys, so bilirubinuria only occurs with conjugated hyperbilirubinemia. Clay-colored stools indicate complete biliary obstruction preventing bilirubin from reaching the gut. These simple bedside clues direct the workup efficiently."
+    difficulty: medium
+    tags: [jaundice, bilirubin, differential-diagnosis, GI, hepatology]
+  - front: "A 60-year-old presents with painless progressive jaundice, weight loss, and a palpable non-tender gallbladder. What is the most likely diagnosis?"
+    back: "Pancreatic head cancer (periampullary carcinoma). The palpable non-tender gallbladder with painless jaundice is Courvoisier's sign/law, which states that painless jaundice with a palpable gallbladder is unlikely to be due to gallstones (which cause a fibrosed, contracted gallbladder) and more likely malignant obstruction.\n\nCourvoisier's sign has limited sensitivity but reasonable specificity for malignant biliary obstruction. Initial workup includes abdominal ultrasound followed by CT pancreas protocol or MRCP. CA 19-9 is a tumor marker that supports but does not confirm the diagnosis. ERCP with stenting may be needed for biliary decompression."
+    difficulty: medium
+    tags: [jaundice, post-hepatic, Courvoisier, pancreatic-cancer, surgery]
+  - front: "What are the key laboratory patterns that differentiate hepatocellular jaundice from obstructive (cholestatic) jaundice?"
+    back: "Hepatocellular: markedly elevated AST/ALT (transaminases, often >1000 in acute hepatitis), moderately elevated ALP/GGT, elevated conjugated and unconjugated bilirubin, prolonged PT (not corrected by vitamin K). Cholestatic/obstructive: markedly elevated ALP/GGT (>3x normal), mild-moderate AST/ALT elevation, elevated conjugated bilirubin, prolonged PT (corrected by vitamin K since fat-soluble vitamin malabsorption is the cause).\n\nThe AST/ALT vs ALP pattern is the critical discriminator. In obstructive jaundice, PT prolongation responds to vitamin K because the coagulopathy results from malabsorption of fat-soluble vitamins due to absent bile salts. In hepatocellular disease, the liver itself cannot synthesize clotting factors, so vitamin K is ineffective."
+    difficulty: hard
+    tags: [jaundice, liver-enzymes, hepatocellular, cholestatic, laboratory]
+  - front: "What is the pathophysiology of cirrhosis and portal hypertension?"
+    back: "Chronic liver injury causes fibrosis (stellate cell activation), architectural distortion, increased intrahepatic resistance, portal HTN (HVPG >5mmHg), splanchnic vasodilation, and hyperdynamic circulation\n\nConsequences: varices (HVPG>10), ascites (HVPG>12), hepatorenal syndrome (splanchnic steal), hepatic encephalopathy (portosystemic shunting of ammonia), coagulopathy (decreased synthetic function)."
+    difficulty: hard
+    tags: [cirrhosis, pathophysiology]
+  - front: "What is the SAAG and how does it classify ascites?"
+    back: "SAAG = serum albumin - ascitic albumin. >=11g/L: portal hypertension (cirrhosis, CHF, Budd-Chiari). <11g/L: non-portal HTN (peritoneal carcinomatosis, TB, nephrotic, pancreatitis)\n\nDiagnostic paracentesis: cell count (PMN>250 = SBP), albumin, protein, culture. Therapeutic: large volume (>5L) with albumin replacement (6-8g per liter removed) to prevent circulatory dysfunction."
+    difficulty: medium
+    tags: [SAAG, ascites, paracentesis]
+  - front: "What is the approach to chronic hepatitis C treatment?"
+    back: "Direct-acting antivirals (DAAs): sofosbuvir-based regimens achieve >95% SVR (cure) in 8-12 weeks. Pan-genotypic: sofosbuvir/velpatasvir or glecaprevir/pibrentasvir. Screen all born 1945-1975\n\nCASL guidelines. No more interferon. Minimal side effects. Check: genotype, fibrosis stage (FibroScan), HBV co-infection status before treatment. SVR at 12 weeks post-treatment = cure. Reinfection possible."
+    difficulty: medium
+    tags: [hepatitis C, DAA, treatment]
+  - front: "What is the current approach to screening and treating chronic hepatitis B and hepatitis C?"
+    back: "Hepatitis B screening: HBsAg, anti-HBs, anti-HBc; screen immigrants from endemic areas, IVDU, MSM, HIV+, household/sexual contacts. Chronic HBV treatment indications: elevated ALT + HBV DNA >2000 IU/mL (HBeAg-negative) or >20,000 (HBeAg-positive), significant fibrosis, cirrhosis regardless of ALT. Treatment: tenofovir (TDF or TAF) or entecavir — lifelong in most cases; pegylated interferon-alpha (48 weeks, finite) for select patients. Hepatitis C screening: one-time for baby boomers (born 1945-1975), IVDU, HIV+, incarcerated, recipients of blood products before 1992. Treatment: direct-acting antivirals (DAAs) — cure rate >95% in 8-12 weeks; pan-genotypic regimens: sofosbuvir/velpatasvir (Epclusa) or glecaprevir/pibrentasvir (Maviret). Treat ALL patients with chronic HCV (no longer need to wait for advanced fibrosis).\n\nDAAs have transformed HCV from a chronic disease to a curable one. Canada has committed to WHO hepatitis elimination targets by 2030. Maviret (8-week course) is the most commonly used pan-genotypic regimen in Canada. For HBV, abrupt discontinuation of antivirals can cause severe hepatitis flares — close monitoring required. CASL (Canadian Association for the Study of the Liver) provides national hepatitis treatment guidelines."
+    difficulty: hard
+    tags: [hepatitis B, hepatitis C, DAAs, tenofovir, entecavir, screening, GI]
+  - front: "What is the significance of hepatitis B serologic markers: HBsAg, anti-HBs, anti-HBc IgM vs IgG, HBeAg, and HBV DNA?"
+    back: "HBsAg+: active infection (acute or chronic — chronic if persists >6 months). Anti-HBs+: immunity (from vaccination if isolated; from resolved infection if with anti-HBc). Anti-HBc IgM+: acute infection (or reactivation). Anti-HBc IgG+: past exposure (resolved or chronic). HBeAg+: high replication, high infectivity. Anti-HBe+: lower replication (seroconversion). HBV DNA: quantifies viral load, guides treatment decisions. Patterns: Immune (vaccinated): anti-HBs+ only. Resolved infection: anti-HBs+ AND anti-HBc+. Chronic active: HBsAg+, anti-HBc IgG+, HBeAg+ or HBeAg-, HBV DNA detectable. Occult HBV: HBsAg-, anti-HBc+, low-level HBV DNA (risk of reactivation with immunosuppression).\n\nThis is one of the most commonly tested serology interpretation topics on licensing exams. Occult HBV (isolated anti-HBc positive) is important — rituximab, chemotherapy, and other immunosuppressants can reactivate HBV, requiring prophylactic antivirals. CASL guidelines recommend HBV screening before all immunosuppressive therapy."
+    difficulty: hard
+    tags: [hepatitis B, serology, HBsAg, anti-HBs, HBeAg, infectious disease, GI]
+  - front: "What is the treatment approach for hepatitis C with direct-acting antivirals (DAAs)?"
+    back: "Pan-genotypic regimens (treat all genotypes): Glecaprevir/pibrentasvir (Maviret): 8 weeks for treatment-naive without cirrhosis (all genotypes); 12 weeks with compensated cirrhosis. Sofosbuvir/velpatasvir (Epclusa): 12 weeks for all genotypes ± cirrhosis. Pre-treatment workup: HCV genotype (may affect regimen choice), fibrosis assessment (FIB-4 index, FibroScan, or liver biopsy), hepatic function (Child-Pugh — decompensated cirrhosis needs specialist), HBV co-infection screening (risk of HBV reactivation during DAA treatment), drug interactions (especially with HIV antiretrovirals, PPIs, statins). SVR12 (sustained virologic response at 12 weeks post-treatment) = CURE (>95%). Post-cure: if cirrhosis, continue HCC surveillance (ultrasound q6 months) — SVR does not eliminate HCC risk in cirrhotics.\n\nDAAs have a >95% cure rate and are well-tolerated (minimal side effects compared to interferon era). All Canadian provinces now cover DAAs without fibrosis restrictions — treat all patients with chronic HCV. HBV reactivation during DAA treatment can be fatal — screen for HBV and consider prophylaxis. CASL guidelines recommend treating HCV as early as possible to prevent transmission and liver disease progression."
+    difficulty: hard
+    tags: [hepatitis C, DAAs, Maviret, Epclusa, SVR, GI, infectious disease]
+  - front: "What are the complications of chronic hepatitis B and when is liver transplant considered?"
+    back: "Complications: cirrhosis (15-40% of chronic HBV over 20 years), hepatocellular carcinoma (HCC — can occur even WITHOUT cirrhosis in HBV, unlike HCV), portal hypertension (varices, ascites, hepatic encephalopathy, hepatorenal syndrome), decompensated liver disease. HCC surveillance: abdominal ultrasound ± AFP every 6 months for: all cirrhotics, Asian males >40, Asian females >50, Africans >20, family history of HCC, HBV with high viral load. Liver transplant indications: decompensated cirrhosis (Child-Pugh ≥B7, MELD ≥15), HCC within Milan criteria (single ≤5cm or ≤3 nodules each ≤3cm, no vascular invasion, no extrahepatic disease), acute liver failure. Post-transplant: HBV recurrence prevented with HBIG + antiviral (tenofovir/entecavir) — excellent outcomes.\n\nUnlike HCV, HBV can cause HCC without cirrhosis through direct viral oncogenesis (HBV DNA integration into hepatocyte genome). This is why HCC surveillance is recommended for non-cirrhotic HBV patients based on demographic risk. Canadian Organ Replacement Register tracks transplant outcomes — 5-year survival for liver transplant is ~75%. CASL guidelines provide detailed HCC surveillance recommendations stratified by risk."
+    difficulty: hard
+    tags: [hepatitis B, HCC, cirrhosis, liver transplant, Milan criteria, GI]
+  - front: "What clinical conditions are associated with spider angiomas due to hyperestrogenic states?"
+    back: "Liver disease (cirrhosis), pregnancy, and oral contraceptive pill (OCP) use.\n\nHyperestrogenic states increase the likelihood of developing spider angiomas, making them a physical exam finding suggestive of underlying liver disease."
+    difficulty: easy
+    tags: [dermatology, vascular tumors, spider angioma, liver disease, toronto-notes, pages-0201-0202-0203-0204-0205-0206-0207-0208-0209-0210]
+  - front: "What are the risk factors/associations with Porphyria Cutanea Tarda?"
+    back: "Hemochromatosis, alcohol abuse, diabetes mellitus, estrogen therapy, NSAIDs, HIV, hepatitis C, and elevated iron indices\n\nThese conditions share oxidative stress and iron accumulation mechanisms that worsen uroporphyrinogen decarboxylase inhibition"
+    difficulty: easy
+    tags: [dermatology, porphyria-cutanea-tarda, risk-factors, metabolism, toronto-notes, pages-0211-0212-0213-0214-0215-0216-0217-0218-0219-0220]
+  - front: "What AST/ALT ratio suggests alcohol as the cause of hepatitis?"
+    back: "AST/ALT ratio >2\n\nAlcoholic hepatitis typically causes higher AST than ALT with this characteristic ratio"
+    difficulty: easy
+    tags: [alcohol, hepatitis, liver function, toronto-notes, pages-0301-0302-0303-0304-0305-0306-0307-0308-0309-0310]
+  - front: "What conditions are associated with gynecomastia? (4 major categories)"
+    back: "Drugs, congenital (Klinefelter syndrome), tumors (especially germ cell tumors), and chronic diseases (cirrhosis, CKD)\n\nThese conditions alter estrogen/androgen balance or metabolism."
+    difficulty: easy
+    tags: [endocrinology, gynecomastia, associations, toronto-notes, pages-0361-0362-0363-0364-0365-0366-0367-0368-0369-0370]
+  - front: "Why does cirrhosis cause gynecomastia?"
+    back: "Reduced ability of liver to metabolize and inactivate estrogens\n\nLiver dysfunction leads to increased estrogen levels relative to androgens, stimulating breast tissue."
+    difficulty: hard
+    tags: [endocrinology, gynecomastia, cirrhosis, toronto-notes, pages-0361-0362-0363-0364-0365-0366-0367-0368-0369-0370]
+  - front: "Which STIs should individuals at increased risk be screened for?"
+    back: "Hepatitis B, HIV, and syphilis\n\nThese blood-borne STIs have significant morbidity and require early detection and treatment."
+    difficulty: easy
+    tags: [STI, screening, blood-borne, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What is the recommended hepatitis B vaccine indication in STI management?"
+    back: "Offer hepatitis B vaccine if not immune\n\nHepatitis B is a vaccine-preventable blood-borne STI that can be transmitted sexually."
+    difficulty: easy
+    tags: [STI, hepatitis-B, vaccination, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "List the less common STIs mentioned in Toronto Notes"
+    back: "Hepatitis B, HIV, syphilis, trichomoniasis\n\nThese are less common than chlamydia, gonorrhea, HPV, and genital herpes but still clinically significant."
+    difficulty: easy
+    tags: [STI, epidemiology, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "List 4 less common STIs"
+    back: "Hepatitis B, HIV, syphilis, trichomoniasis\n\nThese infections have significant morbidity and require prompt treatment."
+    difficulty: easy
+    tags: [STI, epidemiology, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What investigations are recommended for individuals at increased STI risk?"
+    back: "Screen for hepatitis B, HIV, and syphilis\n\nThese bloodborne infections have significant long-term health implications if untreated."
+    difficulty: medium
+    tags: [STI, screening, HIV, hepatitis-B, syphilis, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are the less common STIs mentioned in Toronto Notes?"
+    back: "Hepatitis B, HIV, syphilis, trichomoniasis\n\nThese infections are less common but have significant health implications and require specific screening."
+    difficulty: easy
+    tags: [STI, epidemiology, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What STI screening is recommended for individuals at increased risk?"
+    back: "Hepatitis B, HIV, and syphilis screening\n\nThese blood-borne infections require specific screening in high-risk individuals."
+    difficulty: easy
+    tags: [STI, screening, blood-borne, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What STI vaccines are recommended and to whom?"
+    back: "Hepatitis B vaccine if not immune; Gardasil for females ages 9-27, and women ≥27 if at risk of ongoing exposure\n\nVaccination provides primary prevention against these infections and their complications."
+    difficulty: easy
+    tags: [STI, vaccination, prevention, HPV, hepatitis-B, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are the STI prevention strategies through vaccination?"
+    back: "Offer hepatitis B vaccine if not immune; offer Gardasil to females 9-27 or women 27+ at risk\n\nPrimary prevention through vaccination is more effective than treating STI sequelae."
+    difficulty: easy
+    tags: [STI, prevention, vaccination, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are the less common STIs in Canada?"
+    back: "Hepatitis B, HIV, syphilis, trichomoniasis\n\nThese STIs are less common than chlamydia, gonorrhea, and HPV but still seen regularly in clinical practice."
+    difficulty: easy
+    tags: [STI, epidemiology, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What STIs should individuals at increased risk be screened for?"
+    back: "Hepatitis B, HIV, and syphilis\n\nThese infections have significant morbidity and transmission implications, warranting routine screening in high-risk populations."
+    difficulty: easy
+    tags: [STI, screening, HIV, hepatitis-B, syphilis, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What is the approach to primary prevention of STIs?"
+    back: "Vaccination (hepatitis B, HPV), education, condom use, reducing number of sexual partners\n\nPrimary prevention is more effective than treating STIs and their sequelae, including infertility and cancer."
+    difficulty: easy
+    tags: [STI, prevention, public-health, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What less common STIs should be aware of?"
+    back: "Hepatitis B, HIV, syphilis, trichomoniasis; rare: chancroid, granuloma inguinale, lymphogranuloma venereum\n\nWhile less common, these infections still occur and may have serious complications if untreated."
+    difficulty: easy
+    tags: [STI, epidemiology, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What less common STIs are mentioned?"
+    back: "Hepatitis B, HIV, syphilis, trichomoniasis\n\nThese infections are less common but have significant health implications."
+    difficulty: easy
+    tags: [STI, epidemiology, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are the less common and rare STIs?"
+    back: "Less common: hepatitis B, HIV, syphilis, trichomoniasis; Rare: chancroid, granuloma inguinale, lymphogranuloma venereum\n\nThese STIs are less prevalent but important to recognize due to their potential complications."
+    difficulty: easy
+    tags: [STI, epidemiology, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are the screening recommendations for STIs in Canada?"
+    back: "Annual screening for gonorrhea and chlamydia in all sexually active people under 30; Pap test every 3 years for anyone with a cervix aged 25-69 who has ever been sexually active; individuals at increased risk should be screened for hepatitis B, HIV, and syphilis\n\nRegular screening is essential for early detection and prevention of STI complications and transmission."
+    difficulty: easy
+    tags: [STI, screening, guidelines, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What is the approach to STI management in terms of prevention?"
+    back: "Primary prevention is vastly more effective than treating STIs and their sequelae; offer hepatitis B vaccine if not immune\n\nPrevention through vaccination and counseling is more effective than treatment of established infections."
+    difficulty: easy
+    tags: [STI, prevention, management, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are the less common STIs?"
+    back: "Hepatitis B, HIV, syphilis, trichomoniasis\n\nThese infections are less common but have significant health implications."
+    difficulty: easy
+    tags: [STI, epidemiology, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What STI vaccines are available?"
+    back: "Hepatitis B vaccine and Gardasil (HPV vaccine)\n\nGardasil is indicated for females ages 9-27, and women ≥27 if at risk of ongoing exposure."
+    difficulty: easy
+    tags: [STI, vaccine, prevention, HPV, hepatitis-B, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What is the recommended hepatitis B vaccination approach?"
+    back: "Offer hepatitis B vaccine if not immune\n\nHepatitis B vaccination should be offered to all non-immune individuals as part of STI prevention."
+    difficulty: easy
+    tags: [sti, hepatitis-b, vaccination, toronto-notes, pages-0421-0422-0423-0424-0425-0426-0427-0428-0429-0430]
+  - front: "What are the three most common clinical manifestations of Wilson's disease affecting the liver, eyes, and CNS?"
+    back: "Liver: chronic active hepatitis/cirrhosis; Eyes: Kayser-Fleischer rings; CNS: basal ganglia degeneration (wing-flapping tremor, Parkinsonism)\n\nKayser-Fleischer rings are copper deposits in Descemet's membrane, visible via slit-lamp exam, and occur in ~50% of liver-only presentations."
+    difficulty: medium
+    tags: [wilsons disease, clinical features, hepatology, neurology, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What are the three histological features of alcoholic hepatitis on liver biopsy?"
+    back: "1) Ballooned (swollen) hepatocytes; 2) Mallory bodies (eosinophilic intracellular aggregates of cytokeratins); 3) Chicken-wire fibrosis (pericellular network)\n\nThese findings distinguish alcoholic hepatitis from other causes of liver injury."
+    difficulty: medium
+    tags: [alcoholic hepatitis, histology, pathology, liver biopsy, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the approximate percentage of individuals with alcohol use disorder who develop each stage of alcohol-related liver disease?"
+    back: "Steatotic liver disease: common (most); Acute alcoholic hepatitis: 35%; Cirrhosis: 10-15%\n\nSteatosis is reversible with alcohol cessation, but cirrhosis represents permanent architectural changes."
+    difficulty: easy
+    tags: [alcoholic liver disease, epidemiology, progression, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the risk of hepatocellular carcinoma (HCC) in patients with hemochromatosis and cirrhosis?"
+    back: "200x increased risk compared to general population\n\nThis justifies HCC screening in all patients with hemochromatosis-related cirrhosis."
+    difficulty: medium
+    tags: [hemochromatosis, HCC, cancer risk, screening, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "List the clinical manifestations of Wilson's disease involving the liver"
+    back: "Acute hepatitis, acute liver failure, chronic active hepatitis, cirrhosis; low risk of HCC\n\nLiver involvement is the most common presentation, ranging from acute hepatitis to chronic active hepatitis and cirrhosis. Patients typically present before age 40."
+    difficulty: easy
+    tags: [Wilsons disease, hepatology, liver, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "When is liver biopsy indicated in hemochromatosis?"
+    back: "To detect cirrhosis or if there is a potential for other causes of liver disease (e.g., NAFLD, excess EtOH, hepatitis); especially in compound heterozygotes\n\nBiopsy is indicated when there are markers of advanced fibrosis (age >40, elevated LFTs, ferritin >1000 ng/mL) or when other liver diseases are suspected."
+    difficulty: hard
+    tags: [Hemochromatosis, diagnosis, biopsy, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the prognosis of hemochromatosis with treatment?"
+    back: "Normal life expectancy if treated before development of cirrhosis or diabetes\n\nEarly diagnosis and treatment prevent irreversible organ damage. Once cirrhosis or diabetes develops, prognosis is significantly worse."
+    difficulty: easy
+    tags: [Hemochromatosis, prognosis, outcome, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the spectrum of alcohol-related liver disease?"
+    back: "1) Steatotic liver disease (reversible with abstinence), 2) Acute alcoholic hepatitis (35% of cases, often reversible), 3) Cirrhosis (10-15%, permanent architectural changes)\n\nAlcohol-related liver disease exists on a spectrum from reversible fatty liver to irreversible cirrhosis."
+    difficulty: easy
+    tags: [Alcoholic liver disease, spectrum, pathology, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "A patient with history of heavy alcohol use presents with jaundice. Labs show elevated AST > ALT (ratio >2), and biopsy shows Mallory bodies. What is the most likely diagnosis?"
+    back: "Alcoholic hepatitis\n\nAST:ALT ratio >2, history of heavy alcohol use, and presence of Mallory bodies on biopsy are classic for alcoholic hepatitis."
+    difficulty: medium
+    tags: [Alcoholic liver disease, case, clinical reasoning, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the risk of HCC in hemochromatosis with cirrhosis?"
+    back: "200x increased risk compared to general population\n\nPatients with hemochromatosis and cirrhosis require HCC screening due to this markedly elevated risk."
+    difficulty: medium
+    tags: [Hemochromatosis, HCC, screening, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "When should HCC screening be initiated in hemochromatosis?"
+    back: "Once cirrhosis is present, screening for HCC should begin\n\nHCC surveillance is recommended in all patients with cirrhosis, including those with hemochromatosis."
+    difficulty: easy
+    tags: [Hemochromatosis, HCC, screening, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the role of liver transplant in Wilson's disease?"
+    back: "Used in severe cases of acute liver failure or end-stage liver disease not responding to medical therapy\n\nLiver transplant can be curative in Wilson's disease as it provides normal ATP7B function."
+    difficulty: easy
+    tags: [Wilsons disease, treatment, transplant, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What are the hepatic manifestations of Wilson's disease?"
+    back: "Acute hepatitis, acute liver failure (ALF), chronic active hepatitis, cirrhosis, and low risk of HCC\n\nLiver involvement is often the initial presentation, ranging from mild hepatitis to fulminant liver failure."
+    difficulty: medium
+    tags: [wilsons-disease, hepatology, liver, cirrhosis, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the prognosis of treated hemochromatosis?"
+    back: "Normal life expectancy if treated before development of cirrhosis or diabetes\n\nEarly detection and treatment prevents complications. Once cirrhosis or diabetes develops, prognosis is significantly worse."
+    difficulty: easy
+    tags: [hemochromatosis, prognosis, treatment-outcome, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the spectrum of Alcohol-Related Liver Disease (ALD)?"
+    back: "Steatotic liver disease (reversible) → Acute alcoholic hepatitis (35%, often reversible) → Cirrhosis (10-15%, permanent architectural changes)\n\nALD progresses through three stages. Cirrhosis is irreversible though fibrosis may improve with alcohol cessation."
+    difficulty: medium
+    tags: [alcohol-liver-disease, spectrum, steatosis, hepatitis, cirrhosis, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the HCC risk in hemochromatosis?"
+    back: "200x increased risk of hepatocellular carcinoma if cirrhosis develops\n\nCirrhosis from hemochromatosis carries a very high HCC risk, making surveillance essential."
+    difficulty: medium
+    tags: [hemochromatosis, hcc, cancer-risk, cirrhosis, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What are the late-stage manifestations of Primary Biliary Cholangitis?"
+    back: "Jaundice, melanosis (darkening skin), xanthelasma, hepatocellular failure, portal HTN, ascites\n\nChronic cholestasis leads to skin changes including melanosis and xanthelasma, with end-stage disease showing hepatocellular failure and portal hypertension."
+    difficulty: medium
+    tags: [PBC, cholestasis, portal hypertension, jaundice, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "Does treatment with non-selective beta-blockers (propranolol or carvedilol) reduce decompensation in compensated cirrhosis patients with clinically significant portal hypertension?"
+    back: "Yes. Beta-blockers significantly reduce decompensation (16% vs 27% with placebo, HR 0.51, p=0.041), primarily by reducing ascites incidence (HR 0.42, p=0.03).\n\nThe PREDESCI trial (Lancet 2019) showed that lowering hepatic venous pressure gradient with beta-blockers increases decompensation-free survival in cirrhosis patients with CSPH."
+    difficulty: hard
+    tags: [cirrhosis, portal-hypertension, beta-blockers, ascites, clinical-trial, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What are the histologic features of alcoholic hepatitis?"
+    back: "Ballooned (swollen) hepatocytes, Mallory bodies (intracellular eosinophilic aggregates of cytokeratins), and chicken-wire fibrosis (network pattern)\n\nThese histologic findings are characteristic but not specific to alcoholic hepatitis. Mallory bodies can also be seen in other conditions."
+    difficulty: hard
+    tags: [alcohol-liver-disease, pathology, histology, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is the risk of HCC in hemochromatosis patients with cirrhosis?"
+    back: "200x increased risk compared to general population\n\nPatients with cirrhosis from hemochromatosis require HCC screening. This dramatically elevated risk justifies regular surveillance."
+    difficulty: medium
+    tags: [hemochromatosis, oncology, screening, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What are the three components of the alcohol-related liver disease spectrum?"
+    back: "Steatotic liver disease (reversible), Alcoholic hepatitis (35% of cases, often reversible), Cirrhosis (10-15%, chronic architectural changes)\n\nALD progresses from reversible fatty liver to alcoholic hepatitis, and finally to cirrhosis. The latter involves permanent architectural changes, though fibrosis may improve with abstinence."
+    difficulty: easy
+    tags: [alcoholic-liver-disease, hepatology, pathology, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What are Mallory bodies in the context of alcoholic hepatitis?"
+    back: "Intracellular eosinophilic aggregates of cytokeratins (ballooned degenerated hepatocytes)\n\nMallory bodies are characteristic histologic findings in alcoholic hepatitis, representing cytoskeletal aggregates in damaged hepatocytes."
+    difficulty: medium
+    tags: [alcoholic-liver-disease, histology, hepatology, pathology, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What is 'chicken-wire fibrosis' in alcoholic liver disease?"
+    back: "A network-like pericellular fibrosis surrounding hepatocytes, characteristic of alcoholic hepatitis\n\nChicken-wire fibrosis refers to the delicate perisinusoidal fibrous network that develops around central veins in alcoholic hepatitis, representing early architectural changes."
+    difficulty: medium
+    tags: [alcoholic-liver-disease, histology, hepatology, fibrosis, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What was the primary endpoint in the PREDESCI trial regarding beta-blockers in cirrhosis?"
+    back: "Incidence of cirrhosis decompensation or death\n\nThe PREDESCI trial tested whether lowering hepatic venous pressure gradient with beta-blockers decreases decompensation risk in compensated cirrhosis with clinically significant portal hypertension."
+    difficulty: medium
+    tags: [cirrhosis, portal hypertension, beta-blockers, PREDESCI trial, ascites, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What specific complication of cirrhosis was reduced by beta-blockers in the PREDESCI trial?"
+    back: "Ascites\n\nThe difference in the primary endpoint was driven by a reduced incidence of ascites (HR 0.42, 95% CI 0.19-0.92, P=0.03)."
+    difficulty: medium
+    tags: [cirrhosis, ascites, beta-blockers, portal hypertension, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What was the conclusion of the PREDESCI trial regarding beta-blocker therapy in cirrhosis with CSPH?"
+    back: "Long-term treatment with beta-blockers increases decompensation-free survival in patients with cirrhosis and CSPH, mainly by reducing the incidence of ascites\n\nThe trial demonstrated that beta-blockers significantly reduced the risk of decompensation or death, with a favorable safety profile (similar adverse events to placebo)."
+    difficulty: medium
+    tags: [beta-blockers, cirrhosis, portal hypertension, decompensation, PREDESCI trial, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What is the effect of beta-blockers on decompensation in cirrhosis patients with clinically significant portal hypertension (CSPH)?"
+    back: "Beta-blockers (propranolol/carvedilol) reduce decompensation risk from 27% to 16% (HR 0.51, P=0.041), primarily by reducing ascites incidence (HR 0.42, P=0.03)\n\nThe PREDESCI trial randomized 201 patients with compensated cirrhosis and CSPH to beta-blockers vs placebo, showing improved decompensation-free survival with treatment"
+    difficulty: hard
+    tags: [hepatology, cirrhosis, portal hypertension, beta-blockers, PREDESCI trial, ascites, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What was the primary endpoint in the PREDESCI trial for cirrhosis with CSPH?"
+    back: "Incidence of cirrhosis decompensation (ascites, variceal bleeding, hepatic encephalopathy) or death\n\nThe PREDESCI trial studied whether lowering hepatic venous pressure gradient with beta-blockers prevents clinical deterioration in compensated cirrhosis patients"
+    difficulty: hard
+    tags: [hepatology, clinical trials, PREDESCI trial, endpoint, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What does the PREDESCI trial demonstrate about beta-blockers in cirrhosis with clinically significant portal hypertension (CSPH)?"
+    back: "Beta-blockers (propranolol/carvedilol) significantly reduce cirrhosis decompensation and death (16% vs 27%, HR 0.51, p=0.041), primarily by reducing ascites incidence (HR 0.42, p=0.03).\n\nThe PREDESCI trial (Lancet 2019) enrolled 201 patients with compensated cirrhosis and CSPH, showing that HVPG-lowering with beta-blockers improves decompensation-free survival."
+    difficulty: hard
+    tags: [cirrhosis, portal-hypertension, beta-blockers, ascites, clinical-trials, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What was the primary endpoint of the PREDESCI trial?"
+    back: "Incidence of cirrhosis decompensation (ascites, variceal bleeding, hepatic encephalopathy) or death.\n\nThe PREDESCI trial measured decompensation-free survival as its primary outcome, comparing beta-blocker therapy to placebo in patients with clinically significant portal hypertension."
+    difficulty: medium
+    tags: [cirrhosis, clinical-trials, primary-endpoint, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What is the mechanism by which beta-blockers reduce decompensation in cirrhosis with CSPH?"
+    back: "Lowering hepatic venous pressure gradient (HVPG), which reduces portal pressure and prevents progression to decompensation.\n\nBeta-blockers reduce cardiac output and splanchnic blood flow, decreasing portal venous inflow and thereby lowering HVPG, which is the pathophysiological driver of decompensation."
+    difficulty: hard
+    tags: [portal-hypertension, hvpg, pathophysiology, beta-blockers, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What diagnostic criteria define non-alcoholic fatty liver disease (NAFLD) according to US gastroenterology guidelines?"
+    back: "NAFLD is defined by hepatic steatosis in the absence of secondary causes (alcohol, medications, viral hepatitis), with NASH representing the inflammatory subset\n\nThe AGA/AASLD/ACG practice guideline (Gastroenterology 2012) establishes diagnostic criteria requiring imaging or biopsy confirmation of steatosis plus exclusion of other etiologies"
+    difficulty: hard
+    tags: [NAFLD, NASH, fatty liver, diagnosis, guidelines, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What viral infections can cause Acute Pancreatitis?"
+    back: "Mumps, rubella, varicella, viral hepatitis, CMV, EBV, HIV, Coxsackie virus, echovirus, adenovirus\n\nMultiple viruses have been implicated in viral-induced pancreatitis as part of the GET SMASHED mnemonic."
+    difficulty: medium
+    tags: [pancreatitis, viral, infection, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What does the PREDESCI trial demonstrate about beta-blockers in cirrhosis patients with clinically significant portal hypertension (CSPH)?"
+    back: "Long-term beta-blocker treatment (propranolol/carvedilol) increases decompensation-free survival, primarily by reducing ascites incidence (HR 0.42, p=0.03). Primary endpoint occurred in 16% vs 27% (HR 0.51, p=0.041).\n\nThe PREDESCI trial (Lancet 2019) studied 201 patients with compensated cirrhosis and CSPH, showing that lowering hepatic venous pressure gradient with beta-blockers decreases decompensation risk."
+    difficulty: medium
+    tags: [cirrhosis, portal-hypertension, beta-blockers, ascites, hepatology, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What was the primary endpoint in the PREDESCI trial?"
+    back: "Incidence of cirrhosis decompensation (ascites, variceal bleeding, hepatic encephalopathy) or death.\n\nThe trial aimed to determine if lowering hepatic venous pressure gradient with beta-blockers decreases the risk of decompensation in compensated cirrhosis patients with CSPH."
+    difficulty: easy
+    tags: [cirrhosis, clinical-trials, hepatology, decompensation, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "In the PREDESCI trial, what was the relative risk reduction for ascites with beta-blockers?"
+    back: "58% relative risk reduction (HR 0.42, 95% CI 0.19-0.92, p=0.03)\n\nThe reduction in ascites incidence accounted for the primary difference between treatment and placebo groups, making it the main benefit of beta-blocker therapy."
+    difficulty: medium
+    tags: [ascites, beta-blockers, risk-reduction, hepatology, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What is the primary endpoint of the PREDESCI trial?"
+    back: "Incidence of cirrhosis decompensation or death\n\nThe PREDESCI trial studied whether lowering hepatic venous pressure gradient with beta-blockers decreases risk of decompensation in patients with compensated cirrhosis and clinically significant portal hypertension."
+    difficulty: easy
+    tags: [cirrhosis, portal hypertension, clinical trial, hepatology, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What was the primary mechanism by which beta-blockers reduced decompensation in the PREDESCI trial?"
+    back: "Reduced incidence of ascites (HR 0.42, 95% CI 0.19-0.92, P=0.03)\n\nThe difference in the primary endpoint was primarily due to a reduced incidence of ascites in the beta-blocker group compared to placebo."
+    difficulty: medium
+    tags: [cirrhosis, ascites, beta-blockers, hepatology, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What is the conclusion of the PREDESCI trial regarding beta-blocker therapy in cirrhosis with CSPH?"
+    back: "Long-term treatment with beta-blockers increases decompensation-free survival in patients with cirrhosis and CSPH, mainly by reducing the incidence of ascites\n\nThe trial demonstrated that beta-blockers (propranolol or carvedilol) significantly reduce the risk of first decompensation event, primarily through prevention of ascites development."
+    difficulty: medium
+    tags: [cirrhosis, portal hypertension, beta-blockers, ascites, hepatology, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What are the exclusion criteria for Sjogren's syndrome classification?"
+    back: "Prior head/neck radiation, active hepatitis C (PCR-confirmed), AIDS, sarcoidosis, amyloidosis, graft-versus-host disease, or IgG4-related disease\n\nThese conditions can cause similar sicca symptoms and must be excluded."
+    difficulty: medium
+    tags: [Sjogrens, Diagnosis, Differential, toronto-notes, pages-1511-1512-1513-1514-1515-1516-1517-1518-1519-1520]
+  - front: "What skin manifestations are associated with liver disease?"
+    back: "Pruritus, jaundice, hyperpigmentation, spider nevi, palmar erythema, Terry's nails (white nails), porphyria cutanea tarda, xanthomas, hair loss.\n\nSpider nevi (>5 may be pathological) and palmar erythema are signs of hyperestrogenism in cirrhosis. Porphyria cutanea tarda causes photosensitive blistering on sun-exposed skin and is associated with HCV and alcohol."
+    difficulty: medium
+    tags: [liver disease, spider nevi, palmar erythema, pruritus]
+  - front: "What AST/ALT ratio suggests alcoholic hepatitis rather than other causes of hepatitis?"
+    back: "AST/ALT ratio >2 suggests alcohol as the cause of hepatitis.\n\nAlcohol preferentially damages mitochondria (which are rich in AST) and depletes pyridoxine (needed for ALT synthesis), leading to a disproportionate rise in AST. In viral hepatitis, both enzymes typically rise proportionately."
+    difficulty: easy
+    tags: [alcoholic hepatitis, AST, ALT, liver, emergency medicine]
+  - front: "What are the common pathogens in spontaneous bacterial peritonitis (SBP), and what is the diagnostic procedure?"
+    back: "Common pathogens: E. coli, Klebsiella, Streptococcus. Diagnosis: paracentesis (PMN >250 cells/mm³ is diagnostic). Albumin infusion improves outcomes in SBP patients.\n\nSBP occurs in cirrhotic patients with ascites, where bacterial translocation from the gut leads to peritoneal infection. Paracentesis is essential for diagnosis and culture. IV albumin at the time of diagnosis reduces hepatorenal syndrome and mortality."
+    difficulty: medium
+    tags: [SBP, spontaneous bacterial peritonitis, cirrhosis, paracentesis, ascites]
+  - front: "What is the treatment for variceal GI bleeding in a patient with known cirrhosis?"
+    back: "Octreotide (somatostatin analogue) for variceal bleeds. For minor GI bleeds: PPI. For severe or recurrent bleeds: endoscopy.\n\nOctreotide reduces splanchnic blood flow and portal pressure, decreasing variceal bleeding. Endoscopic band ligation or sclerotherapy provides definitive hemostasis. Most GI bleeds in cirrhotic patients are actually from gastritis or ulcers even if varices are known."
+    difficulty: medium
+    tags: [variceal bleed, cirrhosis, octreotide, GI bleeding, emergency medicine]
+  - front: "What is the blood supply to the liver and what is the proportion from each source?"
+    back: "The liver receives blood from two sources: the portal vein (75–80%) and the hepatic artery (20–25%).\n\nThe dual blood supply makes the liver unique. The portal vein delivers nutrient-rich blood from the GI tract; the hepatic artery provides oxygenated blood. This dual supply also means the liver is relatively protected from arterial occlusion alone."
+    difficulty: easy
+    tags: [liver anatomy, hepatic blood supply, portal vein, hepatic artery]
+  - front: "What are the common causes of upper GI bleeding (UGIB)?"
+    back: "Common: peptic ulcers (H. pylori, ASA, NSAIDs), esophageal varices, Mallory-Weiss tears, erosive esophagitis, erosive gastritis. Uncommon: tumours, arteriovenous malformation (AVM), Dieulafoy's lesion, GAVE (gastric antral vascular ectasia). Rare: aorto-enteric fistulae, hemobilia.\n\nPeptic ulcer disease is the most common cause of UGIB (~50%). Risk stratification (Rockford/Blatchford score) guides management. Prior to EGD, endotracheal intubation is indicated if massive UGIB, acidemia, or inability to protect airway."
+    difficulty: medium
+    tags: [upper GI bleed, UGIB, peptic ulcer, varices, Mallory-Weiss, Dieulafoy]
+  - front: "What are the causes of conjugated hyperbilirubinemia (jaundice)?"
+    back: "Hepatocellular disease: drugs, cirrhosis (any cause), hepatitis (any cause), infiltrative disease (hemochromatosis), familial disorders (Rotor syndrome, Dubin-Johnson syndrome, cholestasis of pregnancy), sepsis, post-operative/TPN. Biliary obstruction — Intraductal: gallstones, stricture, parasites, malignancy (cholangiocarcinoma), PSC, PBC. Extraductal: malignancy (pancreatic cancer, lymphoma), metastases in periportal nodes, pancreatitis.\n\nConjugated bilirubin is water-soluble and appears in urine (tea-coloured urine). The key distinction is hepatocellular (elevated ALT/AST) vs. cholestatic (elevated ALP/GGT) pattern. Imaging (ultrasound) is used to distinguish intra- vs. extra-hepatic obstruction."
+    difficulty: hard
+    tags: [conjugated hyperbilirubinemia, jaundice, cholestasis, hepatocellular, biliary obstruction]
+  - front: "What are the causes of unconjugated hyperbilirubinemia?"
+    back: "Overproduction: hemolysis, ineffective erythropoiesis (megaloblastic anemias). Decreased conjugation: drug inhibition (e.g., chloramphenicol), Crigler-Najjar syndromes type I and II, Gilbert's syndrome, neonatal jaundice.\n\nUnconjugated bilirubin is not water-soluble and does not appear in urine. Gilbert's syndrome is the most common inherited cause (benign, intermittent jaundice with fasting/illness). Crigler-Najjar type I is severe (requires liver transplant); type II is less severe (responds to phenobarbital)."
+    difficulty: medium
+    tags: [unconjugated bilirubin, jaundice, Gilberts syndrome, hemolysis, Crigler-Najjar]
+  - front: "Define upper GI bleeding (UGIB) and list the most common etiologies in order of frequency."
+    back: "Bleeding proximal to the ligament of Treitz (75% of GI bleeds). Etiology by frequency: gastric/duodenal ulcer (most common, ~40%), erosive gastritis (20%), esophageal varices (10–30%), Mallory-Weiss tear (10%), esophagitis, gastric cancer, Dieulafoy's lesion (rare), aortoenteric fistula (rare).\n\nThe ligament of Treitz is the suspensory ligament at the junction of the 4th portion of the duodenum and jejunum. Peptic ulcer disease remains the most common cause of UGIB. Varices carry the highest mortality per bleeding episode."
+    difficulty: easy
+    tags: [UGIB, upper GI bleeding, peptic ulcer, varices, etiology]
+  - front: "What are the clinical features of UGIB listed in order of likely decreasing severity?"
+    back: "Hematochezia (brisk UGIB) > hematemesis > melena > coffee-ground emesis > occult blood in stool.\n\nHematochezia from an upper GI source implies brisk bleeding with rapid transit. Coffee-ground emesis indicates slower bleeding with hemoglobin oxidation in the stomach. Melena (black tarry stool) results from digestion of blood during intestinal transit."
+    difficulty: easy
+    tags: [UGIB, hematochezia, hematemesis, melena, clinical features]
+  - front: "What is the Forrest classification for peptic ulcer bleeding, and what are the associated rebleed risks?"
+    back: "Class Ia: arterial bleeding (spurting) — 55–100% rebleed risk. Class Ib: oozing — 55–100%. Class IIa: visible vessel — 43%. Class IIb: sentinel clot — 22%. Class IIc: hematin-covered flat spot — 10%. Class III: no stigmata of recent hemorrhage — 5%.\n\nThe Forrest classification guides endoscopic intervention. High-risk stigmata (Ia, Ib, IIa) require endoscopic therapy. IV PPI therapy is used to stabilize clots and reduce rebleeding in patients with high-risk features."
+    difficulty: hard
+    tags: [Forrest classification, peptic ulcer, rebleed risk, UGIB]
+  - front: "What is the recommended management of acute UGIB including pre-endoscopic and endoscopic steps?"
+    back: "1. Stabilize: 1–2 large-bore IVs, IV fluids, NPO, monitoring. 2. Labs: CBC, cross/type, platelets, PT, PTT, electrolytes, BUN, Cr, LFTs. 3. IV PPI (to stabilize clot). 4. IV octreotide + antibiotics for suspected variceal bleed. 5. Consider IV erythromycin/metoclopramide for gastric emptying. 6. Endoscopy within 24h — epinephrine injection + thermal hemostasis (dual therapy standard of care). Hb transfusion threshold <80 g/L (higher if cardiovascular disease).\n\nDual endoscopic therapy (epinephrine + thermal or mechanical) outperforms single therapy. H2-antagonists are not useful as they have minimal impact on rebleeding. The restrictive transfusion strategy (threshold <80 g/L) showed better survival than liberal strategy in trials."
+    difficulty: hard
+    tags: [UGIB, management, endoscopy, PPI, octreotide, transfusion]
+  - front: "What is the prognosis of UGIB from peptic ulcers, and what endoscopic predictors indicate high risk of rebleeding?"
+    back: "80% stop spontaneously. Mortality is low (2%) unless rebleeding occurs (25% of patients, 10% mortality). High-risk endoscopic predictors: spurting/oozing blood, visible vessel, fibrin clot (Forrest class Ia, Ib, IIa). Patients with clean ulcer base and no comorbidities can be discharged after endoscopy.\n\nIdentifying high-risk endoscopic stigmata allows risk stratification and guides the decision to admit vs discharge. High-dose IV PPI for 72h post-endoscopy is recommended for high-risk lesions that have been treated endoscopically."
+    difficulty: medium
+    tags: [UGIB, prognosis, rebleeding, Forrest, PPI]
+  - front: "What is the risk of variceal bleeding and rebleeding, and what is the initial management of variceal hemorrhage?"
+    back: "Bleeding risk: 30% in 1st year. Rebleeding risk: 50–70% (20% mortality at 6 weeks). Management: (1) Hemodynamic stabilization and resuscitation. (2) IV octreotide (splanchnic vasoconstriction, decreases portal pressure). (3) Broad-spectrum antibiotics (e.g. ceftriaxone — lowers sepsis and SBP risk, reduces rebleed rate and mortality). (4) Endoscopic variceal ligation (EVL) or sclerotherapy.\n\nEarly empirical antibiotics are strongly recommended as soon as variceal bleeding is suspected — they reduce infectious complications and rebleeding mortality. Octreotide decreases portal collateral circulation. EVL is preferred over sclerotherapy for esophageal varices."
+    difficulty: hard
+    tags: [esophageal varices, variceal bleeding, octreotide, EVL, antibiotics, portal hypertension]
+  - front: "What is a Mallory-Weiss tear, and how is it managed?"
+    back: "Longitudinal laceration in the gastric mucosa on the lesser curvature near the GE junction, caused by rapid increases in gastric pressure from retching/vomiting against a closed glottis. Often associated with hiatus hernia. Classically: hematemesis following an episode of retching without blood. Management: 90% stop spontaneously; if persistent — endoscopy with epinephrine injection + clips or surgical repair.\n\nThe classical history of initial retching without blood followed by hematemesis distinguishes Mallory-Weiss tear from other UGIB causes. The tear is caused by the pressure differential during forceful vomiting. Spontaneous resolution is the rule."
+    difficulty: easy
+    tags: [Mallory-Weiss tear, UGIB, hematemesis, retching, endoscopy]
+  - front: "What are the causes of lower GI bleeding (LGIB), and what is the mnemonic?"
+    back: "Mnemonic CHAND: Colitis (radiation, infectious, ischemic, IBD — UC > CD), Hemorrhoids/fissure, Angiodysplasia, Neoplasm (polyps, post-polypectomy, cancer), Diverticular disease. Also includes vascular malformations (AVM).\n\nDiverticular bleeding is the most common cause of significant LGIB (painless, acute hematochezia, 80% resolve spontaneously). Angiodysplasia is common in elderly patients. Hemorrhoids are the most common cause of minor rectal bleeding."
+    difficulty: easy
+    tags: [LGIB, lower GI bleeding, CHAND, diverticular, angiodysplasia]
+  - front: "What is the initial investigation of choice for lower GI bleeding, and when should angiography be considered?"
+    back: "Initial investigation of choice: colonoscopy. If bleeding is severe or ongoing, consider radionuclide imaging or angiography (requires estimated bleeding rate >0.5 cc/min for angiography). Always exclude upper GI source before localizing to lower GI tract.\n\nUpper GI source must be excluded first as brisk UGIB can present as hematochezia. Colonoscopy identifies the bleeding site and allows therapeutic intervention. Radionuclide scan is more sensitive than angiography but cannot guide treatment."
+    difficulty: medium
+    tags: [LGIB, colonoscopy, angiography, hematochezia, management]
+  - front: "What are the features of diverticular bleeding?"
+    back: "Painless hematochezia with acute onset. Stool ranges from bright red to dark maroon; gelatinous clots often mixed in. Bleeding is most common from the right colon (thinner walled). 80% resolve spontaneously. Due to herniation of diverticula exposing vasa recta.\n\nThe painless nature differentiates diverticular bleeding from ischemic or inflammatory causes. Right-sided diverticular bleeding explains why the blood can be maroon rather than bright red. Colonoscopy rarely identifies the specific bleeding site."
+    difficulty: medium
+    tags: [diverticular bleeding, LGIB, hematochezia, right colon]
+  - front: "What are the main liver function tests (LFTs), what do they reflect, and how should an elevated PT/INR be interpreted?"
+    back: "PT/INR: hepatic protein synthesis (all coagulation factors except VIII); elevated with hepatocellular dysfunction or vitamin K deficiency. Serum albumin: hepatic protein synthesis; decreased by hepatocellular dysfunction, malnutrition, renal/GI losses, inflammation, malignancy. Direct bilirubin: hepatic excretion; increased with liver dysfunction (conjugation preserved even in end-stage liver failure). PT/INR corrects with vitamin K if deficiency is the cause, but NOT if due to hepatocellular dysfunction.\n\nDistinguishing vitamin K deficiency from hepatocellular dysfunction via PT/INR response to vitamin K administration is clinically important. Factor VIII is synthesized in the endothelium (not just liver), so it is NOT decreased in cirrhosis — this is why bleeding risk does not correlate closely with INR in cirrhosis."
+    difficulty: hard
+    tags: [liver function tests, PT/INR, albumin, bilirubin, hepatocellular function]
+  - front: "How do you interpret a hepatocellular vs. cholestatic pattern on liver enzyme testing?"
+    back: "Hepatocellular: elevated ALT and AST (both elevated highly suggestive of liver injury). Cholestatic: elevated ALP and GGT (if ALP elevated alone, rule out bone disease by fractionating ALP and/or checking GGT). If ALP elevation is disproportionate to ALT/AST elevation, consider: obstruction of CBD (pancreatic cancer, stones, cholangiocarcinoma, sclerosing cholangitis), destruction of microscopic ducts (PBC), bile acid transporter defects (drugs, intrahepatic cholestasis of pregnancy), liver infiltration (metastases, lymphoma, granulomas, amyloid).\n\nGGT is used to confirm hepatic origin of elevated ALP (as ALP also comes from bone, placenta, intestine). ALT is more liver-specific than AST. In acute biliary obstruction from a stone, a hepatocellular pattern may predominate initially as ALP is an inducible enzyme that takes time to rise."
+    difficulty: hard
+    tags: [liver enzymes, ALT, AST, ALP, GGT, cholestasis, hepatocellular]
+  - front: "What causes transaminases >1000 U/L?"
+    back: "Viral hepatitis, drugs/toxins (especially acetaminophen overdose), autoimmune hepatitis, hepatic ischemia ('shock liver'), and less commonly, acute biliary obstruction from a common bile duct stone.\n\nMarkedly elevated transaminases (>1000) typically indicate acute hepatocellular necrosis. Alcoholic hepatitis usually causes a more modest rise (typically AST <300) with AST:ALT ratio >2:1. The pattern helps narrow the differential."
+    difficulty: medium
+    tags: [transaminases, ALT, AST, hepatocellular necrosis, differential diagnosis]
+  - front: "What is the AST:ALT ratio pattern in alcoholic hepatitis vs. other hepatitis causes?"
+    back: "ALT > AST: most causes of hepatitis (viral, autoimmune, drug-induced, MASLD). AST > ALT (ratio typically >2:1): alcoholic liver disease or other causes that have progressed to advanced cirrhosis. AST in alcoholic hepatitis is usually <300 U/L.\n\nThe AST:ALT ratio >2 in alcoholic hepatitis is due to alcohol-induced mitochondrial damage (where AST localizes) and pyridoxine deficiency (which is required for ALT synthesis more than AST). This pattern is a useful clinical clue."
+    difficulty: medium
+    tags: [AST, ALT, ratio, alcoholic hepatitis, liver disease]
+  - front: "What are the clinical features of acute viral hepatitis?"
+    back: "Most are subclinical. Flu-like prodrome 1–2 weeks before jaundice: N/V, anorexia, headaches, fatigue, myalgia, low-grade fever, arthralgia, urticaria. Only some progress to icteric phase (lasting days to weeks): pale stools and dark urine 1–5 days prior to jaundice, hepatomegaly with RUQ pain, splenomegaly and cervical lymphadenopathy (10–20%).\n\nThe prodrome reflects systemic immune activation. Pale stools (acholic) and dark urine indicate conjugated hyperbilirubinemia (intrahepatic cholestasis). Not all patients develop jaundice — subclinical infection is common, especially in children."
+    difficulty: easy
+    tags: [acute viral hepatitis, clinical features, jaundice, prodrome]
+  - front: "What investigations are done in acute viral hepatitis and what are poor prognostic indicators?"
+    back: "Investigations: AST and ALT (>10–20x normal in hepatocellular necrosis), ALP minimally elevated, viral serology (anti-HAV IgM, anti-HBc IgM). Poor prognostic indicators: comorbidities, persistently high bilirubin (>340 mmol/L), increased INR, decreased albumin, hypoglycemia. Indications for hospitalization: encephalopathy, coagulopathy, severe vomiting, hypoglycemia.\n\nMarkedly elevated bilirubin, prolonged INR, and hypoglycemia reflect failing hepatic synthetic function. Coagulopathy in the context of acute hepatitis implies significant hepatocellular necrosis and risk of acute liver failure."
+    difficulty: medium
+    tags: [acute viral hepatitis, investigations, prognosis, ALF, hospitalization]
+  - front: "What are the key features of Hepatitis A Virus (HAV)?"
+    back: "RNA picornavirus. Fecal-oral transmission. Incubation 4–6 weeks. Diagnosed by elevated transaminases + positive anti-HAV IgM. In children: characteristically asymptomatic. In adults: fatigue, nausea, arthralgia, fever, jaundice, hepatomegaly. Can cause ALF and death (<1–5%). Can relapse (rarely) but NEVER becomes chronic. Treatment: supportive. Preventable by vaccination (Havrix, 2 doses q6mo, or Twinrix combined). Post-exposure prophylaxis available.\n\nHAV's fecal-oral transmission makes it endemic in areas with poor sanitation. Unlike HBV and HCV, HAV never becomes chronic. The vaccine is recommended for travellers to endemic regions and high-risk groups."
+    difficulty: easy
+    tags: [Hepatitis A, HAV, fecal-oral, anti-HAV IgM, vaccination]
+  - front: "Interpret the Hepatitis B serology pattern for: (a) Acute HBV, (b) Chronic HBe-Ag positive HBV, (c) Chronic HBe-Ag negative HBV, (d) Resolved infection, (e) Immunization."
+    back: "(a) Acute HBV: HBsAg+, anti-HBs−, HBeAg+, anti-HBe−, anti-HBc IgM+. (b) Chronic HBeAg+: HBsAg+, anti-HBs−, HBeAg+, anti-HBe−, anti-HBc IgG+. (c) Chronic HBeAg−: HBsAg+, anti-HBs−, HBeAg−, anti-HBe+, anti-HBc IgG+. (d) Resolved: HBsAg−, anti-HBs+, HBeAg−, anti-HBe+, anti-HBc IgG+. (e) Immunization: HBsAg−, anti-HBs+, HBeAg−, anti-HBe−, anti-HBc−.\n\nAnti-HBc is the key marker distinguishing resolved infection from immunization (both have anti-HBs+). Anti-HBc IgM indicates acute infection. HBsAg positivity defines current infection. Anti-HBs is the protective antibody."
+    difficulty: hard
+    tags: [Hepatitis B, HBV serology, HBsAg, anti-HBs, HBeAg, anti-HBc]
+  - front: "Describe the 4 phases of chronic hepatitis B infection."
+    back: "1. Immune tolerance: very high HBV-DNA (>20,000 IU/mL), HBeAg+, normal ALT/AST; minimal liver damage; characteristic of perinatal infection. 2. Immune clearance (immunoactive): high HBV-DNA (>20,000 IU/mL), HBeAg+; immune attack causes liver damage, progressive fibrosis — benefits from treatment. 3. Chronic inactive (immune control): low HBV-DNA (<2,000 IU/mL), HBeAg−, anti-HBe+, normal ALT/AST; risk of reactivation with immunosuppression. 4. HBeAg-negative chronic hepatitis (immune escape): elevated HBV-DNA (>2,000 IU/mL), HBeAg− (pre-core mutant), anti-HBe+, elevated ALT/AST; progressive fibrosis — benefits from treatment.\n\nPhases 2 and 4 require treatment. Phase 3 patients need monitoring for reactivation, especially if receiving immunosuppressive therapy (e.g. corticosteroids, chemotherapy, biologics). Not all carriers progress through all phases."
+    difficulty: hard
+    tags: [chronic hepatitis B, HBV phases, immune tolerance, immune clearance, HBeAg]
+  - front: "What are the indications for pharmacological treatment of chronic hepatitis B, and what drugs are used?"
+    back: "Indications: (1) HBeAg+ with HBV-DNA >20,000 IU/mL and elevated ALT. (2) HBeAg− with HBV-DNA >2,000 IU/mL and elevated ALT ± stage ≥2 fibrosis. (3) Before immunosuppressive therapy (steroids, chemotherapy, biologics) to prevent flare. Treatment drugs: tenofovir (preferred), entecavir (preferred), lamivudine (not preferred — high resistance rate). Treatment goal: undetectable serum HBV-DNA.\n\nTenofovir and entecavir have high barrier to resistance and are first-line. Reducing HBV-DNA to undetectable levels reduces risk of cirrhosis, HCC, and liver-related death. HAV vaccination is also recommended if serology is negative."
+    difficulty: hard
+    tags: [chronic hepatitis B, treatment, tenofovir, entecavir, antiviral, HBV-DNA]
+  - front: "Who should receive HCC surveillance in the context of hepatitis B, and what is the recommended test and interval?"
+    back: "Ultrasound (U/S) every 6 months, especially for patients with: high serum HBV-DNA levels, cirrhosis, male sex, Asian men age >40, Asian women age >50, African descent age >20.\n\nHCC risk in HBV increases with age (surrogate for progressive fibrosis/cirrhosis) and with serum HBV-DNA levels. HCV and HBV treatment both lower HCC risk. Surveillance U/S allows detection at an early, potentially curable stage."
+    difficulty: medium
+    tags: [HCC surveillance, hepatitis B, ultrasound, cirrhosis, HBV]
+  - front: "What is Hepatitis D virus (HDV), and what is the difference between coinfection and superinfection?"
+    back: "HDV is a defective RNA virus requiring HBsAg for hepatocyte entry — it only infects patients with HBV. Coinfection: acquire HDV and HBV simultaneously (increased acute severity but HDV does NOT increase risk of chronic hepatitis). Superinfection: new HDV acquisition in a patient with chronic HBV (increases progression to cirrhosis, can cause ALF). Treatment: low-dose interferon (20% response) and liver transplant for end-stage disease.\n\nThe distinction between coinfection and superinfection is clinically important: superinfection has a worse prognosis because the patient already has established chronic HBV infection, allowing HDV to cause accelerated disease progression."
+    difficulty: hard
+    tags: [Hepatitis D, HDV, coinfection, superinfection, HBV, cirrhosis]
+  - front: "What are the key features of Hepatitis C virus (HCV) including transmission, diagnosis, and treatment?"
+    back: "RNA virus, 7 genotypes (genotype 1 most common in North America). Blood-borne transmission; sexual transmission is 'inefficient'. Major risk factor: injection drug use. Other risks: blood transfusion before 1992, tattoos, intranasal cocaine use. Diagnosis: elevated ALT/AST + anti-HCV (screening), confirmed by detectable HCV-RNA in serum. Note: normal enzymes do NOT rule out active disease or advanced fibrosis. Treatment: direct-acting antivirals (DAAs) — glecaprevir/pibrentasvir (Maviret) or sofosbuvir/velpatasvir (Epclusa); check for HBV before starting DAAs (risk of HBV reactivation).\n\nHCV is now curable in >95% of patients with 8–12 weeks of pan-genotypic DAA therapy. Importantly, normal liver enzymes can occur with chronic HCV, so clinical suspicion should drive serology testing regardless of enzyme levels."
+    difficulty: medium
+    tags: [Hepatitis C, HCV, DAA, glecaprevir, sofosbuvir, injection drug use]
+  - front: "What is the prognosis of Hepatitis C and what extrahepatic complications can occur?"
+    back: "70–80% of acute HCV becomes chronic; of these, 20% develop cirrhosis within 20 years. Risk of HCC if cirrhotic. Extrahepatic: cryoglobulinemia, membranoproliferative glomerulonephritis, B-cell non-Hodgkin lymphoma.\n\nHCV is unique among hepatitis viruses in that it is often asymptomatic in the acute phase, leading to undiagnosed chronicity. The extrahepatic manifestations reflect immune complex deposition and B-cell dysregulation driven by chronic viral infection."
+    difficulty: medium
+    tags: [Hepatitis C, HCV, prognosis, cirrhosis, cryoglobulinemia, lymphoma]
+  - front: "What is autoimmune hepatitis (AIH), what are the key diagnostic features, and how is it treated?"
+    back: "Chronic inflammatory liver disease from loss of tolerance to liver antigens. Diagnosis of exclusion (rule out viral, drug/alcohol, metabolic, genetic causes). 40% mortality at 6 months without treatment. Key features: hypergammaglobulinemia (elevated IgG), positive ANA and/or anti-smooth muscle antibody (SMA), anti-LKM (especially in children), false-positive anti-HCV, biopsy showing periportal (zone 1) interface inflammation and necrosis. Extrahepatic: sicca, Raynaud's, thyroiditis, Sjogren's, arthralgias. Treatment: corticosteroids (80% respond) + azathioprine (prevents relapse during steroid taper).\n\nAIH can overlap with PSC and PBC. Azathioprine is added to allow steroid tapering — most patients relapse if steroids are withdrawn without azathioprine. Anti-LKM is more common in children (Type 2 AIH) while ANA/SMA characterize Type 1 AIH."
+    difficulty: hard
+    tags: [autoimmune hepatitis, AIH, ANA, anti-smooth muscle, azathioprine, corticosteroids]
+  - front: "What are the two types of hepatotoxins (predictable vs. idiosyncratic), and give examples of each?"
+    back: "Predictable (intrinsic): dose-dependent, short latency (hours to days), host factors not important. Examples: acetaminophen, CCl4. Idiosyncratic: not dose-dependent, longer latency (weeks to months), host factors very important. Examples: phenytoin, isoniazid (INH).\n\nMost drug-induced liver injury is idiosyncratic, making it unpredictable. Acetaminophen is the major exception — it causes predictable hepatotoxicity above threshold doses (10–15 g in healthy individuals, 4–6 g in those with depleted glutathione from alcohol use disorder, malnutrition, or anticonvulsant use)."
+    difficulty: medium
+    tags: [drug-induced liver injury, DILI, acetaminophen, isoniazid, hepatotoxins]
+  - front: "What are the key drug-induced liver injury patterns for isoniazid (INH), methotrexate (MTX), chlorpromazine, and amiodarone?"
+    back: "INH: 20% develop elevated transaminases, <1% clinically significant disease; susceptibility increases with age (idiosyncratic hepatotoxicity). MTX: causes fibrosis/cirrhosis; risk increased with obesity, DM, alcoholism (pre-existing fatty liver); develops without symptoms or enzyme changes — may need biopsy in long-term use. Chlorpromazine: cholestasis in 1% after 4 weeks, often with fever, rash, jaundice, pruritus, eosinophilia. Amiodarone: can cause same histology and clinical outcome as alcoholic hepatitis.\n\nAntimicrobials are the most common overall class causing drug-induced liver injury (amoxicillin-clavulanate, INH, nitrofurantoin, TMP-SMX). MTX hepatotoxicity is silent — routine LFTs are unreliable for monitoring; cumulative dose guides decision for biopsy."
+    difficulty: hard
+    tags: [drug-induced liver injury, isoniazid, methotrexate, chlorpromazine, amiodarone, DILI]
+  - front: "Compare the hepatitis viruses: which have RNA vs DNA genomes, which are fecal-oral vs parenteral, and which cause chronic infection?"
+    back: "DNA: HBV. RNA: HAV, HCV, HDV, HEV, CMV (DNA), EBV (DNA). Fecal-oral: HAV, HEV. Parenteral/sexual: HBV, HCV, HDV. Chronicity: None (HAV, HEV). HBV: 5% adults, 90% infants. HCV: 70–80%. HDV: 5%. CMV/EBV: common latent infections.\n\nThe route of transmission drives prevention strategies. HAV and HEV prevention relies on hygiene and vaccination; HBV/HCV/HDV requires blood and body fluid precautions. Chronicity risk is inversely related to age at HBV acquisition (reflects immune maturity)."
+    difficulty: medium
+    tags: [viral hepatitis, comparison, chronicity, transmission, HAV HBV HCV HDV HEV]
+  - front: "What are the unique features of Hepatitis E virus (HEV)?"
+    back: "RNA calicivirus. Fecal-oral transmission. Endemic in Africa, Asia, Central America, India, Pakistan. Incubation 2–8 weeks. Acute onset. Does NOT cause chronic infection. Mortality: 1–2% overall, but 10–20% in pregnancy (third trimester). Serology: anti-HEV IgG/IgM. No vaccine available.\n\nHEV is particularly dangerous in pregnancy, especially in the third trimester, where it can cause fulminant hepatic failure with up to 20% mortality. This makes it an important consideration in pregnant travellers returning from endemic regions."
+    difficulty: medium
+    tags: [Hepatitis E, HEV, pregnancy, fecal-oral, endemic]
+  - front: "What are the diagnostic tests used for specific liver diseases (quick reference)?"
+    back: "Viral hepatitis: anti-HAV IgM, HBsAg, anti-HCV. Autoimmune hepatitis: ANA, SMA (anti-smooth muscle antibody), anti-LKM, IgG levels. Wilson's disease: ceruloplasmin, liver biopsy. Hereditary hemochromatosis: iron saturation, ferritin, HFE genetic testing. Alpha-1-antitrypsin deficiency: alpha-1-antitrypsin levels, genotyping, liver biopsy. Drug-induced liver injury: careful medication history, liver biopsy. MASLD: uric acid, metabolic testing, liver biopsy after excluding other causes.\n\nThe diagnostic approach to liver disease starts with identifying the pattern (hepatocellular vs. cholestatic) then using targeted serologic tests. Liver biopsy remains the gold standard for fibrosis staging but non-invasive tests (FibroScan) are increasingly used."
+    difficulty: medium
+    tags: [liver disease, diagnostic tests, autoimmune hepatitis, Wilsons, hemochromatosis, alpha-1-antitrypsin]
+  - front: "What is the DDx for hepatomegaly?"
+    back: "Congestive: right heart failure, Budd-Chiari syndrome. Malignant: primary (HCC), secondary (metastases), lymphoproliferative disease, leukemia. Benign: fatty liver, cysts, hemochromatosis, extramedullary hematopoiesis, amyloid. Infectious: viral hepatitis, tuberculosis, abscess, echinococcus. Inflammatory: granulomas (sarcoidosis), histiocytosis X.\n\nA systematic approach to hepatomegaly uses CMIBI categories. Congestive hepatomegaly from right heart failure often presents with tender hepatomegaly and elevated JVP. Budd-Chiari (hepatic vein thrombosis) can present acutely with RUQ pain and ascites."
+    difficulty: medium
+    tags: [hepatomegaly, differential diagnosis, Budd-Chiari, HCC, right heart failure]
+  - front: "What is the approach to iron deficiency anemia with a GI source, and when is wireless capsule endoscopy indicated?"
+    back: "If overt GI bleeding (hematochezia or melena): upper and lower endoscopy. Rule out non-GI sources (menorrhagia, hemolysis). If source found — treat. If no source found: wireless endoscopy capsule or double balloon endoscopy for small bowel. If overt bleeding is hemodynamically significant (estimated >0.5 cc/min): angiography. CT enterography if capsule/double balloon not available.\n\nWireless capsule endoscopy is the investigation of choice for suspected small bowel bleeding after negative upper and lower endoscopy. It helps localize the lesion to guide double balloon enteroscopy for therapeutic intervention."
+    difficulty: hard
+    tags: [iron deficiency anemia, GI bleeding, capsule endoscopy, double balloon enteroscopy, angiography]
+  - front: "What is the venous drainage of the GI tract, and where does it ultimately drain?"
+    back: "GI venous blood drains into the portal vein, which receives:\n- Superior mesenteric vein (SMV): drains small bowel and right colon\n- Splenic vein: drains spleen, stomach; receives the inferior mesenteric vein (IMV) which drains left colon and rectum\n- Left gastric (coronary) vein, right gastric vein, cystic vein, and paraumbilical veins\nThe portal vein drains to the liver via the hepatic sinusoids, then to hepatic veins → inferior vena cava.\n\nPortal hypertension causes reversal of flow in portosystemic anastomoses (e.g., esophageal varices from left gastric-azygos, caput medusae from paraumbilical veins, anorectal varices from superior rectal-middle/inferior rectal). Understanding portal venous anatomy is essential for managing variceal bleeding and planning liver surgery."
+    difficulty: medium
+    tags: [anatomy, portal vein, venous drainage, portal hypertension]
+  - front: "How do you differentiate hepatocellular jaundice from obstructive (cholestatic) jaundice biochemically?"
+    back: "Hepatocellular jaundice: elevated bilirubin + elevated ALT/AST\nObstructive/cholestatic jaundice: elevated bilirubin + elevated ALP/GGT + duct dilatation on biliary ultrasound\nHemolytic jaundice: decreased haptoglobin + elevated LDH (indirect hyperbilirubinemia)\n\nThis biochemical differentiation guides further investigation. Cholestatic jaundice with bile duct dilatation on ultrasound suggests mechanical obstruction (stone, stricture, malignancy) and warrants ERCP or MRCP. Hepatocellular pattern with elevated transaminases suggests viral hepatitis, drug toxicity, or alcoholic hepatitis."
+    difficulty: easy
+    tags: [jaundice, bilirubin, hepatocellular, cholestatic, biochemistry]
+  - front: "What is the PREDESCI trial and its key findings regarding beta-blockers in cirrhosis?"
+    back: "PREDESCI (Lancet 2019): randomized double-blind placebo-controlled trial of 201 patients with compensated cirrhosis and clinically significant portal hypertension (CSPH).\nIntervention: propranolol or carvedilol vs. placebo\nResult: Primary endpoint (decompensation or death) occurred in 16% of beta-blocker group vs. 27% placebo (HR 0.51, 95% CI 0.26-0.97, p=0.041)\nEffect driven by: reduced incidence of ascites (HR 0.42, p=0.03)\nConclusion: Long-term beta-blocker treatment increases decompensation-free survival in compensated cirrhosis with CSPH, mainly by reducing ascites.\n\nClinically significant portal hypertension (HVPG ≥10 mmHg) in compensated cirrhosis predicts decompensation. Beta-blockers (especially carvedilol) reduce portal pressure by decreasing cardiac output (β1) and splanchnic vasoconstriction (β2/α1 for carvedilol). This trial supports primary prophylaxis with beta-blockers before the first decompensating event (ascites, variceal bleed, hepatic encephalopathy)."
+    difficulty: hard
+    tags: [cirrhosis, portal hypertension, beta-blockers, PREDESCI, clinical trial]
+  - front: "What are the major risk factors for cholangiocarcinoma?"
+    back: "Ages 50-70, gallstones, ulcerative colitis (UC), primary sclerosing cholangitis (PSC), choledochal cyst, Clonorchis sinensis (liver fluke), hepatolithiasis, Lynch syndrome, CF, BAP1 tumour predisposition syndrome.\n\nPSC is one of the most important risk factors for cholangiocarcinoma in Canada. The overall 5-year survival is poor: 30% localized, 24% regional, and only 2% for distant disease."
+    difficulty: medium
+    tags: [cholangiocarcinoma, risk factors, PSC, liver fluke]
+  - front: "What is the surgical treatment for lower third vs. upper third cholangiocarcinoma?"
+    back: "Upper third: duct resection + Roux-en-Y hepaticojejunostomy ± liver resection. Middle third (uncommon): duct resection + Roux-en-Y hepaticojejunostomy. Lower third: Whipple procedure (pancreaticoduodenectomy).\n\nResectability requires wide excision margins. Unresectable lesions are palliated with biliary stent or choledochojejunostomy (surgical bypass) plus chemotherapy and/or radiotherapy."
+    difficulty: hard
+    tags: [cholangiocarcinoma, surgery, Whipple, hepaticojejunostomy]
+  - front: "A 55-year-old presents with painless progressive jaundice, pruritis, dark urine, and pale stools. CA 19-9 is elevated. What is the most likely diagnosis and what investigation best determines resectability?"
+    back: "Cholangiocarcinoma. ERCP or percutaneous transhepatic cholangiography (PTC) or endoscopic U/S (EUS) is used to determine resectability and obtain biopsies.\n\nCholangiocarcinoma classically presents with gradual biliary obstruction symptoms. LFTs show an obstructive pattern. CT and U/S show dilated ducts. ERCP/PTC allows tissue sampling and assessment of extent of disease."
+    difficulty: hard
+    tags: [cholangiocarcinoma, jaundice, ERCP, resectability]

@@ -1,0 +1,58 @@
+# Emergency Environmental (EmergencyMedicine) - generated from srs-mccqe1
+cards:
+  - front: "What are the key differences between heat exhaustion and heat stroke in terms of body temperature and neurological findings?"
+    back: "Heat exhaustion: temp <40.5°C (often near normal), NO coma or seizures, dehydration signs (tachycardia, orthostatic hypotension). Heat stroke: temp usually >40.5°C, altered mental status, seizures, delirium, or coma.\n\nHeat exhaustion results from volume loss due to heat stress; it may progress to heat stroke if untreated. Heat stroke is a life-threatening emergency from failure of compensatory heat-shedding mechanisms. When diagnosis is uncertain, treat as heat stroke."
+    difficulty: easy
+    tags: [environmental, heat stroke, heat exhaustion, emergency medicine]
+  - front: "What is the primary cooling method for heat stroke, and what monitoring is required to avoid complications?"
+    back: "Cool body temperature with water mist (spray bottle) and standing fans. Ice water immersion is also effective. Monitor body temperature closely using a rectal thermometer to avoid hypothermic overshoot.\n\nRapid cooling is the cornerstone of heat stroke management. Rectal thermometry is essential because surface cooling can mask ongoing hyperthermia or cause overshoot hypothermia. Airway should be secured due to seizure/aspiration risk."
+    difficulty: easy
+    tags: [heat stroke, cooling, emergency medicine, environmental]
+  - front: "Which medications should be AVOIDED in the treatment of heat stroke and why?"
+    back: "Avoid beta-agonists (e.g., epinephrine), peripheral vasoconstrictors, and antipyretics (e.g., ASA). These worsen heat dissipation or are ineffective for the underlying pathophysiology.\n\nHeat stroke hyperthermia is due to failure of thermoregulation, not prostaglandin-mediated fever, so antipyretics like ASA are ineffective. Vasoconstrictors impair cutaneous heat loss. Beta-agonists increase heat production."
+    difficulty: medium
+    tags: [heat stroke, pharmacology, contraindications, emergency medicine]
+  - front: "What distinguishes classical from exertional heat stroke regarding patient demographics and skin findings?"
+    back: "Classical: older, sedentary/immobile patients; occurs in high ambient temperature; skin is DRY and hot. Exertional: younger, more active patients; high endogenous heat production (exercise); skin is often DIAPHORETIC.\n\nExertional heat stroke may also be complicated by DIC, acute renal failure, rhabdomyolysis, and marked lactic acidosis — complications less common in classical heat stroke. Both present with temp >40.5°C and altered mental status."
+    difficulty: medium
+    tags: [heat stroke, environmental, clinical features]
+  - front: "Define hypothermia and list its three broad etiological categories."
+    back: "Hypothermia = core temperature <35°C. Causes: (1) Increased heat loss (e.g., environmental exposure); (2) Decreased heat production (e.g., endocrine disease); (3) Impaired regulation (e.g., CNS failure).\n\nTreatment is based on re-warming and supporting cardiorespiratory function. Predisposing risk factors in Canada include ethanol use, homelessness, psychiatric disease, and older age."
+    difficulty: easy
+    tags: [hypothermia, environmental, emergency medicine]
+  - front: "What are the temperature thresholds and key clinical findings for mild, moderate, and severe hypothermia?"
+    back: "Mild (32–34.9°C): tachypnea, tachycardia, ataxia, dysarthria, shivering. Moderate (28–31.9°C): loss of shivering, dysrhythmias, Osborne (J) waves on ECG, decreased LOC, combative behaviour, muscle rigidity, dilated pupils. Severe (<28°C): unresponsive, hypotension, acidemia, VFib/AFib/asystole, flaccidity, apnea.\n\nThe J (Osborne) wave on ECG is a classic finding of moderate hypothermia. As temperature drops below 30°C, cardiac irritability increases dramatically and defibrillation is less effective."
+    difficulty: medium
+    tags: [hypothermia, classification, ECG, emergency medicine]
+  - front: "What is the 'afterdrop' phenomenon in hypothermia management, and how is it avoided?"
+    back: "Afterdrop is the paradoxical decrease in core temperature when cold blood from extremities returns to the core after peripheral vasodilation from external warming. It is avoided by using active core re-warming in conjunction with active external re-warming (not external re-warming alone).\n\nActive external re-warming (warming blankets) alone can worsen the afterdrop by vasodilating periphery before the core is warm. Active core re-warming (warmed O2, IV fluids, ECMO) prevents this phenomenon."
+    difficulty: medium
+    tags: [hypothermia, rewarming, afterdrop, emergency medicine]
+  - front: "What is the preferred method of active core re-warming for severe hypothermia or hypothermic cardiac arrest?"
+    back: "Extracorporeal membrane oxygenation (ECMO) is the most effective and fastest method of active core re-warming. Transfer to an ECMO-capable centre as soon as possible.\n\nECMO avoids the afterdrop phenomenon and can simultaneously support cardiac and respiratory function. Alternative core re-warming methods include warmed humidified oxygen, IV fluids, and peritoneal/bladder/pleural irrigation with warm fluids."
+    difficulty: medium
+    tags: [hypothermia, ECMO, cardiac arrest, rewarming]
+  - front: "In hypothermic cardiac arrest, what is the maximum number of defibrillation attempts if core temperature is below 30°C?"
+    back: "Up to a maximum of 3 shocks if in VFib with core temperature <30°C. Focus remains on active core re-warming.\n\nAt temperatures <30°C, the myocardium is refractory to defibrillation and antidysrhythmics. Re-warming is the definitive treatment. Medications (vasopressors, antidysrhythmics) may not be effective at low temperatures."
+    difficulty: medium
+    tags: [hypothermia, cardiac arrest, defibrillation, emergency medicine]
+  - front: "What are the grades of frostbite and what structures are involved at each grade?"
+    back: "Grade 1: no initial lesion (superficial). Grade 2: initial lesion on distal phalanx. Grade 3: initial lesion on intermediate and proximal phalanx. Grade 4: initial lesion on carpal/tarsal bones.\n\nFrostbite grading is based on the extent of the initial lesion assessed at day 0 after rapid rewarming. Higher grades indicate deeper tissue injury with greater risk of amputation."
+    difficulty: medium
+    tags: [frostbite, environmental, classification]
+  - front: "What is the recommended rewarming protocol for frostbite and what key principle must be followed after thawing?"
+    back: "Immerse in 37–39°C agitated water for 10–30 min with adequate analgesia. Never allow a thawed area to re-chill or refreeze. Consider tPA and/or iloprost for severe cases with specialist advice.\n\nRefreezing a thawed area causes far more tissue damage than the initial freeze. Rewarming is painful and requires opioid analgesia. Tetanus prophylaxis and consideration of antibiotics (high infection risk) are also required."
+    difficulty: medium
+    tags: [frostbite, rewarming, emergency medicine]
+  - front: "What are the disposition criteria for non-fatal drowning patients in the emergency department?"
+    back: "Asymptomatic: discharge if no respiratory impairment, normal vitals, normal mentation. Symptomatic but never hypoxemic: discharge after 6–8h observation if resolving symptoms, normal vitals, normal mentation. CNS symptoms or hypoxemia: admit. Severe hypoxemia, decreased LOC: ICU.\n\nDelayed pulmonary complications can occur in drowning; hence observation even for initially 'well-appearing' symptomatic patients. CXR is only indicated for abnormal lung exam or abnormal O2 saturation."
+    difficulty: medium
+    tags: [drowning, disposition, emergency medicine]
+  - front: "In non-fatal drowning, when should prophylactic antibiotics be given and for what organisms?"
+    back: "Prophylactic antibiotics are NOT necessary for most drowning cases. They should be given if the water was contaminated or if hot tub drowning occurred (cover Pseudomonas).\n\nMost drowning-related pneumonia is treated when it manifests. Contaminated water (sewage, hot tubs) increases risk of Pseudomonas and other gram-negative organisms, warranting prophylaxis."
+    difficulty: medium
+    tags: [drowning, antibiotics, pneumonia, emergency medicine]
+  - front: "What are the risk factors for non-fatal drowning in the Canadian context?"
+    back: "Inability to swim effectively, missing/inadequate pool fencing, improper/absent personal flotation device use, risk-taking behaviour, alcohol and substance use, prescription medications causing drowsiness, inadequate supervision, acute medical issues (e.g., seizures), occupational/recreational water activities.\n\nDrowning is most common in children <4 years and teenagers. Prevention strategies targeting pool fencing, supervision, and PFD use are key public health measures in Canada."
+    difficulty: easy
+    tags: [drowning, risk factors, prevention, emergency medicine, public health]

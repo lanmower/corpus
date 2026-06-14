@@ -1,0 +1,146 @@
+# Chronic Kidney Disease (Nephrology) - generated from srs-mccqe1
+cards:
+  - front: "How is CKD defined and staged per KDIGO guidelines?"
+    back: "CKD: kidney damage or eGFR <60 mL/min/1.73m2 for ≥3 months; Stages: G1 (≥90), G2 (60-89), G3a (45-59), G3b (30-44), G4 (15-29), G5 (<15); also staged by albuminuria (A1/A2/A3)\n\nKDIGO 2012 CKD guidelines define CKD by chronicity (≥3 months) to distinguish from AKI. Prognosis determined by combined GFR stage + albuminuria category. High-risk CKD: G3b-G5 or high albuminuria (A3 = ACR ≥30 mg/mmol)."
+    difficulty: easy
+    tags: [CKD staging, KDIGO, eGFR, albuminuria, nephrology]
+  - front: "What are the two most common causes of CKD in Canada?"
+    back: "Diabetes mellitus (30-40%) and hypertension (25-30%) — together account for most CKD cases requiring dialysis\n\nDiabetic nephropathy typically presents with microalbuminuria progressing to macroalbuminuria then declining GFR. CKD Canada guidelines recommend RAAS blockade (ACEi/ARB) for all CKD patients with albuminuria regardless of BP."
+    difficulty: easy
+    tags: [CKD etiology, diabetes, hypertension, nephrology]
+  - front: "What pharmacological interventions slow CKD progression?"
+    back: "ACEi/ARB (reduce proteinuria and intraglomerular pressure), SGLT2 inhibitors (canagliflozin/dapagliflozin reduce CKD progression), strict BP control, blood glucose control in diabetes, avoid nephrotoxins\n\nCREDENCE and DAPA-CKD trials showed SGLT2 inhibitors reduce CKD progression and cardiovascular events in CKD patients regardless of diabetes status. CKD Canada 2022 guidelines recommend SGLT2 inhibitors for CKD G2-4 with ACR ≥20 mg/mmol."
+    difficulty: medium
+    tags: [CKD progression, SGLT2 inhibitors, ACE inhibitor, CREDENCE, nephrology]
+  - front: "A 58-year-old diabetic with CKD has Hgb 95 g/L, MCV normal, ferritin 180 ng/mL, transferrin saturation 22%. Diagnosis and treatment?"
+    back: "Anemia of CKD (normocytic normochromic anemia from reduced erythropoietin); treat with erythropoiesis-stimulating agent (ESA) + iron to maintain Hgb 100-115 g/L — ensure iron replete first\n\nCKD Canada guidelines recommend iron supplementation to achieve ferritin >200 ng/mL and TSAT >20% before starting ESA. ESA (darbepoetin, epoetin alfa) target Hgb 100-115 g/L (not higher — increased stroke/thrombosis risk). Oral vs. IV iron based on severity."
+    difficulty: hard
+    tags: [anemia of CKD, ESA, erythropoietin, iron supplementation, nephrology]
+  - front: "What is the cause and management of hyperphosphatemia in CKD?"
+    back: "Reduced phosphate excretion in CKD → secondary hyperparathyroidism → renal osteodystrophy; treat with dietary phosphate restriction, phosphate binders (calcium carbonate, sevelamer, lanthanum)\n\nCKD-MBD (mineral bone disease): hyperphosphatemia + hypocalcemia → elevated PTH → bone resorption. Sevelamer and lanthanum preferred over calcium-based binders to avoid calcium loading. Activated vitamin D (calcitriol) suppresses PTH."
+    difficulty: medium
+    tags: [hyperphosphatemia, CKD-MBD, phosphate binders, sevelamer, secondary hyperparathyroidism, nephrology]
+  - front: "What BP target and agents are recommended for CKD patients with hypertension?"
+    back: "Target <130/80 mmHg; ACEi or ARB first-line for CKD with proteinuria (A2/A3) — provide nephroprotection beyond BP lowering\n\nRAAS blockade reduces intraglomerular pressure and proteinuria. Monitor creatinine and potassium at 1-2 weeks after initiation. Up to 30% creatinine rise acceptable if stable. Combination ACEi + ARB increases AKI and hyperkalemia risk — avoid."
+    difficulty: easy
+    tags: [CKD hypertension, ACE inhibitor, ARB, blood pressure target, nephrology]
+  - front: "What metabolic acidosis occurs in CKD and when should it be treated?"
+    back: "Type 4 RTA (hyperkalemic distal RTA) in early CKD; later, reduced NH4+ excretion; treat metabolic acidosis when serum bicarbonate <22 mmol/L with sodium bicarbonate supplements\n\nKDIGO guidelines recommend treating metabolic acidosis in CKD (target bicarbonate ≥22 mmol/L) to slow CKD progression, prevent muscle catabolism, and prevent bone buffering. Sodium bicarbonate 0.5-1 mmol/kg/day titrated to bicarbonate >22."
+    difficulty: medium
+    tags: [metabolic acidosis, CKD, bicarbonate supplementation, renal tubular acidosis, nephrology]
+  - front: "When should patients with CKD be referred to nephrology?"
+    back: "eGFR <30 (G4-G5), rapid eGFR decline (>5 mL/min/year), ACR >300 mg/mmol, resistant hypertension, unexplained AKI, hereditary kidney disease, suspected GN\n\nCKD Canada guidelines recommend nephrology referral to prepare for renal replacement therapy, manage CKD-MBD, anemia, and cardiovascular risk. Early referral (eGFR 30-60) improves outcomes and reduces late referral (<3 months before dialysis)."
+    difficulty: easy
+    tags: [CKD referral, nephrology, eGFR, KDIGO, nephrology]
+  - front: "What are the renal replacement therapy options for end-stage kidney disease?"
+    back: "Hemodialysis (in-centre or home), peritoneal dialysis (CAPD or APD), or kidney transplantation — preferred in order of outcome benefit: transplant > PD or home HD > in-centre HD\n\nCKD Canada recommends kidney transplant as the optimal RRT. Living donor transplant preferred over deceased donor. Peritoneal dialysis is equivalent to hemodialysis in appropriate patients and may be preferred for residual renal function preservation."
+    difficulty: medium
+    tags: [RRT, dialysis, transplant, ESKD, hemodialysis, peritoneal dialysis, nephrology]
+  - front: "What dietary recommendations are made for CKD patients?"
+    back: "Protein restriction 0.6-0.8 g/kg/day (stage 3-5 not on dialysis), sodium <2.3 g/day, phosphate restriction, potassium restriction (if hyperkalemic), adequate caloric intake\n\nCKD Canada dietary guidelines recommend low-protein diet to reduce uremic solute accumulation and slow CKD progression. Dialysis patients need higher protein (1.0-1.2 g/kg/day) to replace dialysis-related losses."
+    difficulty: medium
+    tags: [CKD diet, protein restriction, low sodium, nephrology]
+  - front: "A 65-year-old with CKD G4 has PTH 450 pg/mL and calcium 2.55 mmol/L. Management?"
+    back: "Secondary hyperparathyroidism in CKD; treat with vitamin D receptor activator (calcitriol or paricalcitol) and phosphate binder — cinacalcet if PTH remains elevated despite these measures\n\nPTH targets in CKD-MBD: CKD G3-G5 not on dialysis: maintain PTH in 2-9x upper limit of normal. Calcitriol suppresses PTH synthesis. Cinacalcet (calcimimetic) reduces PTH by sensitizing calcium-sensing receptor. Parathyroidectomy for severe refractory hyperparathyroidism."
+    difficulty: hard
+    tags: [secondary hyperparathyroidism, PTH, calcitriol, cinacalcet, CKD-MBD, nephrology]
+  - front: "What cardiovascular risk does CKD impose and how should it be managed?"
+    back: "CKD is an independent cardiovascular risk factor; high-intensity statin recommended for all CKD patients (SHARP trial), blood pressure control, lifestyle modification, aspirin for secondary prevention\n\nCKD patients have 10-20x higher cardiovascular mortality than age-matched general population. SHARP trial showed rosuvastatin/ezetimibe reduces major atherosclerotic events in CKD. Statin reduces LDL but survival benefit less clear once dialysis dependent."
+    difficulty: medium
+    tags: [CKD cardiovascular risk, statin, SHARP trial, dyslipidemia, nephrology]
+  - front: "What is the approach to managing potassium in CKD patients?"
+    back: "Dietary potassium restriction (avoid high-K+ foods: bananas, citrus, potatoes), adjust medications (reduce/hold ACEi/ARB if K+ >5.5), consider patiromer or sodium zirconium cyclosilicate\n\nHyperkalemia is common in CKD, especially with RAAS blockade. Novel potassium binders allow continuation of life-saving GDMT (ACEi/ARB, MRA, SGLT2i). Emergency hyperkalemia: calcium gluconate, insulin + dextrose, sodium bicarbonate, kayexalate, dialysis."
+    difficulty: medium
+    tags: [hyperkalemia, CKD, potassium binders, patiromer, RAAS, nephrology]
+  - front: "What is diabetic nephropathy and how does it progress?"
+    back: "Diabetic nephropathy progression: hyperfiltration → microalbuminuria (ACR 3-30 mg/mmol) → macroalbuminuria (ACR >30 mg/mmol) → declining GFR → ESKD\n\nTight glycemic control (HbA1c <7%) and RAAS blockade slow progression. SGLT2 inhibitors further reduce proteinuria and CKD progression independent of glucose control. Annual ACR and eGFR monitoring in all diabetics per CDA guidelines."
+    difficulty: medium
+    tags: [diabetic nephropathy, microalbuminuria, ACR, SGLT2, nephrology]
+  - front: "When is vascular access planning initiated for hemodialysis in CKD?"
+    back: "Nephrology referral at eGFR <30; arteriovenous fistula (AVF) creation when eGFR <15-20 or within 6 months of anticipated dialysis start — AVF is preferred over graft over tunneled catheter\n\nAVF has lowest infection and thrombosis rates and best long-term patency. CKD Canada recommends protecting non-dominant forearm veins (avoid IV lines and blood draws in that arm) in CKD patients who may need hemodialysis."
+    difficulty: medium
+    tags: [hemodialysis access, AVF, arteriovenous fistula, CKD preparation, nephrology]
+  - front: "What are KDIGO CKD stages?"
+    back: "G1:>=90(with damage), G2:60-89, G3a:45-59, G3b:30-44, G4:15-29, G5:<15\n\nCKD = abnormalities >3 months. Albuminuria: A1<30, A2 30-300, A3>300 mg/g. Both determine risk."
+    difficulty: easy
+    tags: [CKD, stages]
+  - front: "What BP target for CKD with albuminuria?"
+    back: "<130/80 with ACEi or ARB first-line. Without albuminuria: <140/90\n\nNo ACEi+ARB combo. Tolerate 30% Cr rise. SGLT2i now recommended for CKD eGFR 20-75."
+    difficulty: medium
+    tags: [CKD, BP]
+  - front: "What are the KDIGO CKD stages by GFR and albuminuria?"
+    back: "G1: GFR ≥90; G2: 60-89; G3a: 45-59; G3b: 30-44; G4: 15-29; G5: <15. Albuminuria: A1 <3 mg/mmol; A2 3-30 (moderately increased); A3 >30 (severely increased). CKD diagnosis requires abnormality >3 months.\n\nStaging uses both GFR and albuminuria (heat map). A patient with GFR 55 and ACR 35 is G3aA3 — high risk for progression. eGFR calculated by CKD-EPI equation (race-free in Canada since 2022). Cause-GFR-Albuminuria (CGA) classification recommended."
+    difficulty: medium
+    tags: [CKD, KDIGO, staging, GFR, albuminuria, nephrology]
+  - front: "When should nephrology referral occur in CKD?"
+    back: "eGFR <30 (G4-G5), rapidly declining GFR (>5 mL/min/year), ACR >60 mg/mmol, refractory hypertension, persistent hyperkalemia, unexplained CKD, suspected glomerulonephritis, hereditary kidney disease\n\nEarly nephrology referral (eGFR <30) allows dialysis access planning (AVF creation takes 3-6 months to mature), transplant workup, management of CKD complications, and advance care planning. Canadian Kidney Knowledge Translation and Generation Network (CANN-NET) supports multidisciplinary CKD care."
+    difficulty: medium
+    tags: [CKD, referral, nephrology, AVF, dialysis planning]
+  - front: "What is the management of CKD-mineral bone disease (CKD-MBD)?"
+    back: "Monitor Ca, PO4, PTH, vitamin D. Restrict dietary phosphate; phosphate binders (calcium-based if Ca normal, or non-calcium: sevelamer, lanthanum). Correct 25-OH vitamin D deficiency. Active vitamin D (calcitriol) or analogues for secondary hyperparathyroidism in G4-5. Target: avoid extreme PTH values.\n\nKDIGO recommends treating trends rather than specific PTH targets. Progressively elevated PTH with high phosphate indicates secondary hyperparathyroidism. Calcimimetics (cinacalcet) for dialysis patients with persistent hyperparathyroidism. Parathyroidectomy for refractory tertiary hyperparathyroidism. CKD-MBD increases fracture and cardiovascular risk."
+    difficulty: hard
+    tags: [CKD, MBD, phosphate, PTH, vitamin D, nephrology]
+  - front: "How is anemia of CKD managed?"
+    back: "Target Hb 100-115 g/L (do not normalize). First: replete iron (ferritin >500, TSAT >30% target in dialysis patients; IV iron preferred). Then: ESA (erythropoietin/darbepoetin) if Hb <100 despite iron repletion. HIF-PHI (roxadustat) is oral alternative.\n\nCKD anemia results from decreased EPO production + iron deficiency + uremic toxins + shortened RBC survival. Higher Hb targets (>130) with ESAs increase cardiovascular events, stroke, and death (TREAT, CREATE trials). Check reticulocyte count, iron studies, B12/folate before starting ESA."
+    difficulty: hard
+    tags: [CKD, anemia, ESA, erythropoietin, iron, nephrology]
+  - front: "What medications slow CKD progression?"
+    back: "ACEi/ARBs (first-line for proteinuric CKD, target BP <130/80). SGLT2 inhibitors (dapagliflozin, empagliflozin — benefit regardless of diabetes status if eGFR ≥20 and ACR >20). Finerenone (non-steroidal MRA) for diabetic CKD. GLP-1 agonists (semaglutide) for diabetic CKD.\n\nDAPA-CKD and EMPA-KIDNEY trials showed SGLT2i reduce CKD progression by 30-40% in both diabetic and non-diabetic CKD. Start even with initial eGFR dip (hemodynamic, expected, reversible). Do not combine ACEi + ARB (ONTARGET — no benefit, more hyperkalemia). Canadian guidelines integrate SGLT2i as standard of care."
+    difficulty: hard
+    tags: [CKD, ACEi, SGLT2i, dapagliflozin, finerenone, nephrology]
+  - front: "What are the dialysis modalities and how do patients choose?"
+    back: "Hemodialysis (HD): in-centre (3x/week x 4h) or home HD (nocturnal or short daily). Peritoneal dialysis (PD): continuous ambulatory (CAPD, 4 exchanges/day) or automated (APD, cycler overnight). PD offers lifestyle flexibility, home-based; HD is more efficient per session.\n\nIn Canada, PD-first approach is encouraged when appropriate. AVF is preferred vascular access (lowest infection/thrombosis); create when eGFR <15-20 or expected dialysis within 6-12 months. Catheter HD has highest complication rates. Shared decision-making considering patient preference, social situation, and comorbidities is essential."
+    difficulty: medium
+    tags: [CKD, dialysis, hemodialysis, peritoneal dialysis, AVF, nephrology]
+  - front: "What is the conservative/palliative approach to advanced CKD?"
+    back: "Conservative kidney management (CKM): maximal medical management without dialysis for patients who choose not to start or to withdraw from dialysis. Includes symptom management, advance care planning, palliative care referral, dietary modification, and psychosocial support.\n\nFor elderly patients (>80) with multiple comorbidities, dialysis may not improve quality or quantity of life compared to CKM. Canadian Society of Nephrology supports shared decision-making and recognizes CKM as a valid choice. Important to address prognosis honestly — surprise question: 'Would you be surprised if this patient died within 12 months?'"
+    difficulty: medium
+    tags: [CKD, conservative, palliative, advance care planning, nephrology]
+  - front: "What dietary modifications are recommended in CKD?"
+    back: "Protein: 0.8 g/kg/day (G3-5, not on dialysis); higher on dialysis (1.2 g/kg/day). Sodium <2g/day. Potassium restriction if hyperkalemic (G4-5). Phosphate restriction (processed foods, dairy). Adequate caloric intake (25-35 kcal/kg/day).\n\nProtein restriction slows CKD progression but must balance against malnutrition risk (PEW: protein-energy wasting). Renal dietitian referral is essential. On dialysis, protein needs increase (dialysate losses). Plant-based proteins may be preferred (lower phosphorus bioavailability). DASH diet modified for CKD (watch K+ and PO4)."
+    difficulty: medium
+    tags: [CKD, diet, protein, sodium, potassium, phosphate, nephrology]
+  - front: "What cardiovascular risk management is needed in CKD?"
+    back: "CKD is a coronary risk equivalent. BP target <130/80 (ACEi/ARB first-line). Statins: atorvastatin in G3-5 not on dialysis (SHARP trial). ASA for secondary prevention. SGLT2i for cardiorenal protection. Avoid starting statins on dialysis (4D, AURORA trials showed no benefit).\n\nCV disease is the #1 cause of death in CKD (not ESKD). CKD accelerates atherosclerosis AND vascular calcification. LVH is common due to volume overload, anemia, and hypertension. Smoking cessation, glycemic control (A1C target ~7%, but less reliable in advanced CKD — use CGM), and weight management are all important."
+    difficulty: hard
+    tags: [CKD, cardiovascular, statins, hypertension, SGLT2i, nephrology]
+  - front: "What is the metabolic acidosis management in CKD?"
+    back: "CKD causes non-anion gap metabolic acidosis (impaired ammoniagenesis) progressing to anion gap in advanced CKD. Maintain serum bicarb ≥22 mmol/L. Treatment: oral sodium bicarbonate 0.5-1 mEq/kg/day. Slows CKD progression and reduces muscle wasting.\n\nMetabolic acidosis in CKD contributes to muscle catabolism, bone disease, hyperkalemia, and accelerated GFR decline. Fruits and vegetables (alkali-producing diet) can also help correct mild acidosis. Monitor sodium load with bicarbonate supplementation in patients with edema/hypertension."
+    difficulty: medium
+    tags: [CKD, metabolic acidosis, bicarbonate, nephrology]
+  - front: "What are the indications and types of kidney transplantation?"
+    back: "Indications: ESKD or eGFR <20 with progressive decline. Types: living donor (related or unrelated — best outcomes), deceased donor (brain death or donation after circulatory death). Pre-emptive transplant (before dialysis) has best outcomes.\n\nKidney transplant offers superior survival and quality of life compared to dialysis. Canadian Blood Services manages organ allocation. Contraindications: active malignancy, active infection, severe cardiac/pulmonary disease, active substance abuse, non-adherence. ABO-incompatible and paired kidney exchange programs expand donor pools."
+    difficulty: medium
+    tags: [CKD, transplant, living donor, deceased donor, ESKD, nephrology]
+  - front: "What drugs require dose adjustment in CKD?"
+    back: "Renally cleared drugs needing adjustment: metformin (hold if eGFR <30), DOACs (reduce dose per eGFR), digoxin, gabapentin/pregabalin, opioids (avoid morphine/meperidine — active metabolites), aminoglycosides, vancomycin, allopurinol, lithium, methotrexate.\n\nAlways check eGFR before prescribing and at dose changes. Metformin: safe down to eGFR 30, dose reduce at 30-45, contraindicated <30. DOACs: apixaban safest in CKD (partly hepatic), rivaroxaban/dabigatran avoid if CrCl <25-30. Morphine's M6G metabolite accumulates causing respiratory depression. Use hydromorphone or fentanyl instead."
+    difficulty: hard
+    tags: [CKD, drug dosing, metformin, DOACs, opioids, pharmacology, nephrology]
+  - front: "What are the causes of CKD in Canada by prevalence?"
+    back: "1. Diabetes (35-40%), 2. Hypertension/renovascular (20%), 3. Glomerulonephritis (10-15%), 4. Polycystic kidney disease (5-10%), 5. Obstructive uropathy, 6. Interstitial nephritis, 7. Unknown/other. Indigenous populations have disproportionately higher rates.\n\nDiabetic kidney disease is the leading cause of ESKD in Canada. ADPKD is the most common hereditary cause — screen family members with renal US at age 18-40. Indigenous Canadians have 2-4x higher ESKD rates due to diabetes prevalence and barriers to care. Canadian Organ Replacement Register (CORR) tracks data."
+    difficulty: medium
+    tags: [CKD, etiology, diabetes, ADPKD, Indigenous, Canada, nephrology]
+  - front: "What is the approach to hypertension in CKD?"
+    back: "Target <130/80 (or <120 systolic per SPRINT in non-diabetic CKD). First-line: ACEi or ARB (especially if proteinuria). Add: CCB (amlodipine) or diuretic (thiazide-like if eGFR >30, loop if <30). Monitor K+ and Cr after ACEi/ARB initiation. Tolerate up to 30% Cr rise if stable.\n\nACEi/ARBs reduce proteinuria and slow progression independently of BP lowering. Initial Cr rise reflects reduced glomerular hyperfiltration — beneficial hemodynamic effect. Discontinue only if Cr rises >30% or K+ >5.5 despite optimization. Do not combine ACEi + ARB. SGLT2i provide additional BP lowering (~5 mmHg)."
+    difficulty: hard
+    tags: [CKD, hypertension, ACEi, ARB, BP target, SPRINT, nephrology]
+  - front: "What vaccinations are recommended in CKD/ESKD?"
+    back: "All standard vaccines PLUS: hepatitis B (high-dose 40 μg x 4 series, check anti-HBs titers), annual influenza, pneumococcal (PCV20), COVID-19 per NACI, shingles (Shingrix). Administer vaccines early in CKD — response diminishes as GFR declines.\n\nCKD causes uremic immunodeficiency with impaired vaccine responses. HBV vaccination ideally before dialysis (better seroconversion). Anti-HBs <10 IU/L requires booster. Live vaccines generally avoided in transplant patients on immunosuppression. NACI recommends additional doses for immunocompromised."
+    difficulty: medium
+    tags: [CKD, vaccination, hepatitis B, immunodeficiency, NACI, nephrology]
+  - front: "What skin finding is specific to chronic renal failure?"
+    back: "Pruritus, pigmentation ('half-and-half nails' — proximal white, distal brown), perforating dermatosis, calciphylaxis.\n\nHalf-and-half nails (Lindsay's nails) are seen in up to 50% of CKD patients. Calciphylaxis (calcific uremic arteriolopathy) causes painful ischemic skin necrosis and is a life-threatening complication of CKD."
+    difficulty: medium
+    tags: [chronic renal failure, half-and-half nails, calciphylaxis, skin manifestations]
+  - front: "What did the CREDENCE trial demonstrate about canagliflozin (SGLT2 inhibitor) in T2DM with CKD?"
+    back: "Canagliflozin 100 mg daily in T2DM patients with CKD significantly reduced the composite primary outcome (end-stage kidney disease, doubling of serum creatinine, or death from renal or CV causes) by 30% (HR 0.70). The trial was stopped early after median 2.6 years of follow-up.\n\nCREDENCE (n=4,401) established the first renal outcome benefit of an SGLT2 inhibitor in T2DM with CKD, leading to Health Canada approval of canagliflozin for renal protection. SGLT2 inhibitors are now recommended as second-line agents in T2DM with CKD to reduce progression of kidney disease."
+    difficulty: medium
+    tags: [SGLT2 inhibitor, canagliflozin, CKD, T2DM, CREDENCE, renal outcomes]
+  - front: "What did the DAPA-CKD trial demonstrate about dapagliflozin in CKD (with or without T2DM)?"
+    back: "Dapagliflozin 10 mg/day in patients with CKD (eGFR 25-75 mL/min/1.73m², urinary ACR 200-5000) reduced the composite outcome (sustained ≥50% eGFR decline, end-stage kidney disease, or death from renal or CV causes) by 39% (9.2% vs. 14.5%, HR 0.61). Effects were similar in patients with and without T2DM.\n\nDAPA-CKD (n=4,304) expanded the renal protection indication of SGLT2 inhibitors beyond T2DM — patients with CKD from any cause (including IgA nephropathy) benefited. This led to guideline recommendations for dapagliflozin in CKD regardless of diabetes status."
+    difficulty: medium
+    tags: [SGLT2 inhibitor, dapagliflozin, CKD, DAPA-CKD, renal outcomes, non-diabetic CKD]
+  - front: "What did the EMPA-KIDNEY trial demonstrate about empagliflozin in CKD patients?"
+    back: "Empagliflozin in at-risk CKD patients (n=6,609) reduced the incidence of kidney disease progression or cardiovascular death (13.1% vs. 16.9% placebo) with consistent results across diabetes status and eGFR ranges, and no significant difference in adverse events.\n\nEMPA-KIDNEY (NEJM 2023) further confirmed the benefit of SGLT2 inhibitors across the spectrum of CKD regardless of diabetes. The consistent benefit across different eGFR ranges supports use even in lower eGFR ranges than previously studied."
+    difficulty: medium
+    tags: [SGLT2 inhibitor, empagliflozin, CKD, EMPA-KIDNEY, renal outcomes]

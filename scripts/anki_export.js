@@ -35,7 +35,11 @@ function main() {
     }
     const exportsDir = path.join(ROOT, 'exports');
     fs.mkdirSync(exportsDir, { recursive: true });
-    const file = path.join(exportsDir, 'corpus-anki.txt');
+    // Per-syllabus filename so exporting one syllabus never clobbers another's TSV.
+    // Only the Anki `notes` shape is exportable; syllabi authored as `cards` (mccqe1)
+    // emit 0 notes here by design.
+    const sid = SYLLABUS.id || 'cmed4-2026';
+    const file = path.join(exportsDir, `corpus-anki-${sid}.txt`);
     fs.writeFileSync(file, out.join('\n') + '\n');
     console.log(`wrote ${file} — ${count} notes, ${out.length} lines`);
 }

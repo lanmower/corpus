@@ -1,0 +1,982 @@
+# Obstetrics (ObGyn) - generated from srs-mccqe1
+cards:
+  - front: "What is the most common cause of DIC in pregnancy?"
+    back: "Placental abruption\n\nPlacental abruption is the most common cause of DIC in pregnancy, occurring in approximately 20% of abruptions. DIC results from release of thromboplastin from the damaged placenta into the maternal circulation."
+    difficulty: medium
+    tags: [obstetrics, placental-abruption, DIC]
+  - front: "How is vasa previa differentiated from other causes of antepartum bleeding using bedside testing?"
+    back: "Apt test: NaOH mixed with blood — fetal blood turns the supernatant pink, maternal blood turns it yellow\n\nThe Apt test uses sodium hydroxide to distinguish fetal from maternal hemoglobin. Fetal hemoglobin is resistant to denaturation by NaOH, keeping the supernatant pink, while adult hemoglobin denatures and turns yellow-brown."
+    difficulty: hard
+    tags: [obstetrics, vasa-previa, antepartum-hemorrhage]
+  - front: "What is the perinatal mortality rate of undiagnosed vasa previa, and what is survival if diagnosed antenatally?"
+    back: "Undiagnosed: 50% mortality (75% if membranes rupture). Diagnosed antenatally: 97% survival.\n\nVasa previa carries extremely high mortality when undiagnosed because rupture of the unprotected fetal vessels causes fetal exsanguination. Antenatal diagnosis by ultrasound allows planned cesarean delivery at 35-36 weeks, dramatically improving survival."
+    difficulty: medium
+    tags: [obstetrics, vasa-previa]
+  - front: "What is the most important risk factor for spontaneous preterm labour?"
+    back: "Prior history of spontaneous preterm labour\n\nA previous spontaneous preterm birth is the single most important predictor of recurrent preterm labour. Other risk factors include short cervical length, cervical procedures, infections, and multiple gestation."
+    difficulty: easy
+    tags: [obstetrics, preterm-labour]
+  - front: "What cervical length measurement on transvaginal ultrasound has a high negative predictive value for preterm labour before 34 weeks?"
+    back: ">30 mm\n\nA cervical length greater than 30 mm measured by transvaginal ultrasound has a high negative predictive value for preterm labour before 34 weeks GA. Transvaginal ultrasound is the preferred route for cervical assessment."
+    difficulty: medium
+    tags: [obstetrics, preterm-labour, ultrasound]
+  - front: "What is the role of fetal fibronectin in predicting preterm labour, and what is its key clinical value?"
+    back: "Positive if >50 ng/mL. Main value is its high NPV (>95%): a negative result means delivery is unlikely in 7-14 days.\n\nFetal fibronectin is a glycoprotein found in amniotic fluid and placental tissue. Its negative predictive value exceeds 95%, making it most useful for ruling out imminent delivery. It is done at 24-34 weeks with intact membranes and <3 cm dilation."
+    difficulty: medium
+    tags: [obstetrics, preterm-labour, fetal-fibronectin]
+  - front: "What are the tocolytic requirements (all must be satisfied) before tocolysis can be given for preterm labour?"
+    back: "Live immature fetus, intact membranes, cervical dilatation <4 cm, absence of maternal or fetal contraindications\n\nTocolysis does not inhibit preterm labour completely but delays delivery up to 48 hours to allow administration of betamethasone for fetal lung maturity and/or transfer to an appropriate care centre."
+    difficulty: medium
+    tags: [obstetrics, preterm-labour, tocolysis]
+  - front: "What is the dosing regimen for antenatal corticosteroids for fetal lung maturity?"
+    back: "Betamethasone 12 mg IM q24h × 2 doses OR dexamethasone 6 mg IM q12h × 4 doses, given between 24-34+6 weeks GA if delivery expected within 7 days\n\nAntenatal corticosteroids enhance fetal lung maturity and reduce perinatal death, severe RDS, IVH, necrotizing enterocolitis, and neonatal sepsis. Active TB is a specific maternal contraindication."
+    difficulty: medium
+    tags: [obstetrics, antenatal-corticosteroids, preterm-labour]
+  - front: "What is the role of MgSO4 in preterm labour, and at what gestational age is it indicated?"
+    back: "Neuroprotection — reduces risk of cerebral palsy. Given as 4 g bolus + 1 g/h infusion for ≥4 hours if imminent delivery expected at <33+6 weeks GA.\n\nMgSO4 is given for neuroprotection in preterm labour, not as a tocolytic. It reduces the risk of cerebral palsy in premature infants when administered before delivery."
+    difficulty: medium
+    tags: [obstetrics, MgSO4, neuroprotection]
+  - front: "How is membrane rupture confirmed on sterile speculum exam?"
+    back: "Pooling of fluid in posterior fornix, cascading (fluid leaking from cervix with cough/Valsalva), positive nitrazine test (blue), and ferning on microscopy\n\nNitrazine tests the pH of amniotic fluid which is basic, turning the paper blue. However, it has low specificity as blood, urine, and semen can also cause a positive result. Ferning occurs due to salt crystallization in amniotic fluid."
+    difficulty: easy
+    tags: [obstetrics, PROM, PPROM]
+  - front: "At what gestational age is induction recommended for PROM at term?"
+    back: "≥37 weeks GA — induction of labour is recommended since the risk of death from sepsis is greater than from RDS\n\nPROM management is guided by gestational age. At ≥37 weeks, the risk of neonatal sepsis from prolonged ROM outweighs the risk of respiratory distress syndrome, so induction is recommended."
+    difficulty: easy
+    tags: [obstetrics, PROM, induction]
+  - front: "What antibiotic should NOT be used for PPROM and why?"
+    back: "Amoxicillin/clavulanic acid — increased risk of necrotizing enterocolitis in neonates\n\nWhile antibiotics are used in PPROM to increase latency to delivery and reduce maternal/neonatal morbidity, amoxicillin/clavulanic acid is specifically avoided due to its association with neonatal necrotizing enterocolitis. Amoxicillin alone is safe."
+    difficulty: medium
+    tags: [obstetrics, PPROM, antibiotics]
+  - front: "What defines a postterm pregnancy, and when is induction recommended?"
+    back: "Postterm = pregnancy >42 weeks GA. Induction is recommended at 41+3 weeks GA if no contraindications to vaginal delivery.\n\nPerinatal mortality is 2-3x higher after 42 weeks due to progressive uteroplacental insufficiency. Induction at 41+3 weeks reduces risks of stillbirth, macrosomia, and meconium aspiration."
+    difficulty: easy
+    tags: [obstetrics, postterm-pregnancy]
+  - front: "What differentiates symmetric (Type I) from asymmetric (Type II) IUGR?"
+    back: "Symmetric (25-30%): early onset, reduced head AND abdomen, associated with congenital anomalies/TORCH. Asymmetric (70%): late onset, abdomen smaller than head (brain sparing), associated with placental insufficiency, better prognosis.\n\nIn asymmetric IUGR, blood flow is preferentially redirected to the brain (brain sparing effect), resulting in a disproportionately smaller abdomen compared to the head. The HC/AC ratio is increased."
+    difficulty: medium
+    tags: [obstetrics, IUGR]
+  - front: "What is the definition of macrosomia, and at what estimated fetal weight is planned cesarean delivery reasonable?"
+    back: "Macrosomia = >90th percentile for GA or >4000 g. Planned CD reasonable if EFW >5000 g (non-diabetic) or >4500 g (diabetic).\n\nMacrosomia increases the risk of CPD, shoulder dystocia, and birth injuries. The threshold for planned CD is lower in diabetic patients due to the different body fat distribution in diabetic macrosomic infants."
+    difficulty: medium
+    tags: [obstetrics, macrosomia]
+  - front: "What is the definition and clinical significance of polyhydramnios and oligohydramnios?"
+    back: "Polyhydramnios: AFI >25 cm or single deepest pocket >8 cm. Oligohydramnios: AFI <5 cm or single deepest pocket <2 cm.\n\nPolyhydramnios is associated with fetal anomalies (GI atresia, anencephaly), maternal diabetes, and multiple gestation. Oligohydramnios is associated with IUGR, renal anomalies, uteroplacental insufficiency, and ruptured membranes."
+    difficulty: easy
+    tags: [obstetrics, polyhydramnios, oligohydramnios]
+  - front: "What defines preeclampsia?"
+    back: "Pre-existing or gestational HTN (sBP ≥140 or dBP ≥90 after 20 weeks GA) with new-onset proteinuria (protein:creatinine ratio >30 mg/mmol) or adverse conditions (end-organ dysfunction)\n\nPreeclampsia is caused by placental malperfusion leading to release of soluble factors that cause maternal vascular endothelial injury, hypertension, and multi-organ damage. It can progress to eclampsia."
+    difficulty: easy
+    tags: [obstetrics, preeclampsia, hypertension]
+  - front: "What is HELLP syndrome?"
+    back: "Hemolysis, Elevated Liver enzymes, Low Platelets — a severe complication of preeclampsia\n\nHELLP syndrome represents a severe form of preeclampsia with microangiopathic hemolytic anemia, hepatocellular injury, and thrombocytopenia. It requires urgent delivery and supportive care."
+    difficulty: easy
+    tags: [obstetrics, HELLP, preeclampsia]
+  - front: "What is the first-line treatment and prophylaxis for eclamptic seizures?"
+    back: "MgSO4 — 4 g IV loading dose, then 1 g/h maintenance. Continue for 12-24 hours postpartum.\n\nMgSO4 is used for both treatment and prophylaxis of eclamptic seizures. The risk of seizure is highest in the first 24 hours postpartum. Definitive treatment of eclampsia is delivery after maternal stabilization."
+    difficulty: medium
+    tags: [obstetrics, eclampsia, MgSO4]
+  - front: "Which antihypertensives are contraindicated in pregnancy?"
+    back: "ACE inhibitors, ARBs, diuretics (unless pulmonary edema/cardiac failure), prazosin, and atenolol\n\nACEIs and ARBs are teratogenic and can cause fetal renal failure and oligohydramnios. Safe options include labetalol, nifedipine, and methyldopa. For severe HTN, IV labetalol, nifedipine, or hydralazine are used."
+    difficulty: medium
+    tags: [obstetrics, hypertension, pharmacology]
+  - front: "What is the 2-step screening approach for gestational diabetes recommended in Canada?"
+    back: "Step 1: Random 50 g OGCT at 24-28 weeks. Normal if 1h PG <7.8. GDM if ≥11.1. If 7.8-11.0, proceed to Step 2: Fasting 75 g OGTT — GDM if ≥1 of: FPG ≥5.3, 1h PG ≥10.6, 2h PG ≥9.0 mmol/L.\n\nThe Canadian Diabetes Association recommends this 2-step screening approach for all pregnant women at 24-28 weeks GA. First-line management of GDM is diet modification and exercise; insulin if glycemic targets not met within 2 weeks."
+    difficulty: hard
+    tags: [obstetrics, gestational-diabetes, screening]
+  - front: "What are the glycemic targets during pregnancy for women with diabetes?"
+    back: "FPG <5.3 mmol/L, 1h postprandial PG <7.8 mmol/L, 2h postprandial PG <6.7 mmol/L\n\nTight glycemic control is essential in pregnancy to prevent macrosomia, congenital anomalies (in pre-existing DM), and neonatal hypoglycemia. During labour, blood glucose should be maintained between 4.0-7.0 mmol/L."
+    difficulty: medium
+    tags: [obstetrics, diabetes, glycemic-targets]
+  - front: "What are the congenital anomalies associated with pre-gestational diabetes (T1DM/T2DM) in pregnancy?"
+    back: "2-7x increased risk of cardiac (VSD), neural tube defects, GU (cystic kidneys), GI (anal atresia), and MSK (sacral agenesis) anomalies\n\nThese anomalies occur in T1DM and T2DM but NOT in GDM, because GDM develops after the critical period of organogenesis in the first trimester. Pre-conception glycemic control (HbA1c <7%) reduces this risk."
+    difficulty: medium
+    tags: [obstetrics, diabetes, congenital-anomalies]
+  - front: "When should GBS prophylaxis be given in labour, and what is the first-line antibiotic?"
+    back: "Penicillin G 5 million IU IV then 2.5 million IU q4h until delivery. Should be given ≥4 hours prior to delivery to be considered adequate.\n\nGBS screening is done at 35-37 weeks GA. Prophylaxis is indicated for positive GBS culture, GBS bacteriuria, previous infant with GBS disease, unknown GBS status with risk factors (preterm, ROM >18h, fever ≥38°C)."
+    difficulty: medium
+    tags: [obstetrics, GBS, antibiotics]
+  - front: "Why should asymptomatic bacteriuria be treated in pregnancy?"
+    back: "Increased risk of progression to cystitis, pyelonephritis, and probable increased risk of preterm labour\n\nUTI is the most common medical complication of pregnancy. Asymptomatic bacteriuria occurs in 2-7% of pregnant women and should be treated due to the increased urinary stasis from mechanical and hormonal factors of pregnancy."
+    difficulty: easy
+    tags: [obstetrics, UTI, bacteriuria]
+  - front: "Why is warfarin contraindicated in pregnancy?"
+    back: "Warfarin crosses the placenta and has teratogenic effects (nasal hypoplasia, stippled epiphyses). LMWH is preferred for anticoagulation in pregnancy.\n\nWarfarin is a vitamin K antagonist that crosses the placenta and can cause warfarin embryopathy. LMWH does not cross the placenta and should be discontinued at least 24 hours prior to delivery."
+    difficulty: easy
+    tags: [obstetrics, VTE, anticoagulation]
+  - front: "What are the cardinal movements of the fetus during delivery?"
+    back: "Engagement → Descent → Flexion → Internal rotation → Extension → Restitution (external rotation) → Expulsion\n\nThese movements allow the fetus to navigate the maternal pelvis. The head enters in the occiput transverse position, rotates to occiput anterior during internal rotation, and extends to deliver over the perineum."
+    difficulty: easy
+    tags: [obstetrics, labour, cardinal-movements]
+  - front: "What are the components of the Bishop Score?"
+    back: "Position, Consistency, Effacement, Dilatation, and Station of fetal head. Score <3 = unfavourable cervix; ≥6 = favourable; 9-13 = high likelihood of vaginal delivery.\n\nThe Bishop Score predicts the likelihood of successful labour induction. An unfavourable cervix (score <6) warrants cervical ripening with prostaglandins or mechanical methods (Foley catheter) prior to induction."
+    difficulty: medium
+    tags: [obstetrics, Bishop-score, induction]
+  - front: "What are the three types of fetal heart rate decelerations, and which is ominous?"
+    back: "Early (head compression, benign), Variable (cord compression, most common in labour), Late (uteroplacental insufficiency — ominous sign)\n\nLate decelerations begin after the peak of contractions and reflect uteroplacental insufficiency with fetal hypoxia/acidemia. They are the most concerning pattern and warrant urgent evaluation and possible delivery."
+    difficulty: medium
+    tags: [obstetrics, fetal-monitoring, decelerations]
+  - front: "What is the 'turtle sign' and what does it indicate?"
+    back: "The fetal head delivers but retracts against the perineum — indicates shoulder dystocia\n\nShoulder dystocia occurs when the anterior shoulder is impacted above the pubic symphysis. It is a life-threatening emergency managed with the ALARMER mnemonic: Ask for help, Legs (McRoberts), Anterior shoulder disimpaction (suprapubic pressure), etc."
+    difficulty: medium
+    tags: [obstetrics, shoulder-dystocia]
+  - front: "What maneuvers are used for shoulder dystocia, and which combination resolves 90% of cases?"
+    back: "McRoberts maneuver (legs in full flexion) + suprapubic pressure resolves 90% of cases. Additional maneuvers: posterior shoulder rotation (Wood's corkscrew), delivery of posterior arm, Zavanelli maneuver.\n\nMcRoberts maneuver flattens the lumbar lordosis and rotates the pubic symphysis cephalad, which often frees the impacted anterior shoulder. Suprapubic pressure is applied to disimpact the anterior shoulder."
+    difficulty: medium
+    tags: [obstetrics, shoulder-dystocia, maneuvers]
+  - front: "What is the most common breech presentation, and which type is most likely to be delivered vaginally?"
+    back: "Frank breech (60%) is most common and most likely to be delivered vaginally. Complete breech is 10%, incomplete/footling is 30%.\n\nIn frank breech, the hips are flexed and knees extended with the buttocks presenting. External cephalic version (ECV) should be offered at >36 weeks GA with a 40-60% success rate."
+    difficulty: easy
+    tags: [obstetrics, breech-presentation]
+  - front: "What is twin-twin transfusion syndrome (TTTS)?"
+    back: "Arteriovenous placental anastomoses in monochorionic twins causing unequal blood flow: donor twin develops IUGR, anemia, oligohydramnios; recipient twin develops hypervolemia, CHF, polyhydramnios.\n\nTTTS occurs in 10% of monochorionic twins. Treatment is fetoscopic laser ablation of placental vascular anastomoses (preferred at 16-26 weeks GA). Serial amniocentesis can decompress the recipient twin."
+    difficulty: hard
+    tags: [obstetrics, TTTS, multiple-gestation]
+  - front: "What are the risk factors and management of uterine rupture?"
+    back: "Risk: previous uterine scar (especially classical incision, 12% risk), oxytocin tachysystole, grand multiparity. Presents with sudden abdominal pain, FHR abnormalities, loss of station. Emergency CD required.\n\nUterine rupture is a complete separation of all layers of the uterine wall. The incidence is 0.5-0.8% overall but up to 12% with classical incision. It is a catastrophic emergency requiring immediate surgical intervention."
+    difficulty: hard
+    tags: [obstetrics, uterine-rupture]
+  - front: "A pregnant woman at 20 weeks gestation has chronic hypertension with BP 145/95 mmHg. What antihypertensives are safe to use and which must be avoided?"
+    back: "Safe first-line: labetalol, methyldopa, long-acting oral nifedipine. MUST AVOID: ACE inhibitors and ARBs (fetotoxic to renal system). Also avoid thiazide diuretics.\n\nACEi and ARBs cause fetal renal toxicity and are absolutely contraindicated in pregnancy. The CHAP trial showed that treating mild chronic HTN in pregnancy (target <140/90) reduces preeclampsia and adverse outcomes."
+    difficulty: medium
+    tags: [obstetrics, hypertension, pharmacology, teratology]
+  - front: "What medications should be avoided in pregnancy for HTN management, and what are first-line options?"
+    back: "Avoid: ACEIs, ARBs (fetotoxic to renal system), thiazide diuretics. First-line: labetalol, methyldopa, long-acting oral nifedipine.\n\nThe CHAP trial demonstrated that treating mild chronic HTN (<140/90) in pregnancy with antihypertensives reduces preeclampsia, preterm birth, and fetal/neonatal death compared to no treatment."
+    difficulty: medium
+    tags: [obstetrics, hypertension, pharmacology]
+  - front: "What is the first-line pharmacological treatment for nausea and vomiting of pregnancy (NVP)?"
+    back: "Pyridoxine (vitamin B6) monotherapy OR doxylamine/pyridoxine (Diclectin®) combination: 4 tablets/day (1 q AM, 1 q lunch, 2 q HS), up to 8 tablets/day maximum.\n\nDiclectin® (doxylamine + pyridoxine) is the only Health Canada-approved medication specifically for NVP. It is recommended as first-line pharmacological therapy by SOGC guidelines before escalating to H1 antagonists, metoclopramide, phenothiazines, or ondansetron."
+    difficulty: easy
+    tags: [obstetrics, nausea and vomiting of pregnancy, pharmacology, first trimester]
+  - front: "A pregnant patient at 10 weeks GA has intractable vomiting, ketonuria, and electrolyte disturbances. What is the diagnosis, and what complication must be prevented with early supplementation?"
+    back: "Hyperemesis gravidarum. Wernicke's encephalopathy must be prevented with thiamine supplementation.\n\nHyperemesis gravidarum affects ~1% of pregnancies. Thiamine (vitamin B1) deficiency from prolonged vomiting can cause Wernicke's encephalopathy (confusion, ophthalmoplegia, ataxia). Thiamine supplementation must be given before IV dextrose to avoid precipitating encephalopathy."
+    difficulty: medium
+    tags: [obstetrics, hyperemesis gravidarum, Wernickes encephalopathy, thiamine, complications]
+  - front: "What steroid should be avoided in T1 for hyperemesis gravidarum and why?"
+    back: "Methylprednisolone (steroids) should be avoided in the first trimester due to increased risk of oral clefting in the fetus.\n\nWhile steroids (methylprednisolone) can be effective for refractory hyperemesis gravidarum, their use in T1 is associated with an increased risk of cleft palate/lip. They may be used with caution after T1 if other therapies have failed."
+    difficulty: medium
+    tags: [obstetrics, hyperemesis gravidarum, teratogenicity, pharmacology]
+  - front: "What is the SOGC-recommended prenatal visit schedule for uncomplicated pregnancies?"
+    back: "Every 4-6 weeks until 30 weeks GA, every 2-3 weeks from 30-36 weeks GA, then every 1-2 weeks from 36 weeks GA until delivery.\n\nThis schedule balances adequate surveillance for common complications (hypertension, GDM, preterm labour) with minimizing unnecessary healthcare utilization. High-risk pregnancies require more frequent monitoring."
+    difficulty: easy
+    tags: [obstetrics, prenatal care, SOGC guidelines]
+  - front: "At what gestational age does the uterine fundus reach the umbilicus, and what does SFH less than dates suggest?"
+    back: "The fundus reaches the umbilicus at 20 weeks GA. SFH < dates suggests: date miscalculation, oligohydramnios, IUGR, fetal demise, or early engagement.\n\nSymphysis-fundal height (SFH) in centimetres should roughly equal gestational age in weeks (±2 cm) from 20-36 weeks. Fundus at umbilicus = 20 wks, halfway between symphysis and umbilicus = 16 wks. Discordance prompts further investigation including ultrasound."
+    difficulty: easy
+    tags: [obstetrics, prenatal care, symphysis-fundal height, Leopolds maneuvers]
+  - front: "What are the four Leopold's maneuvers and what does each determine?"
+    back: "1st: which fetal part is furthest from pelvic inlet (fundal); 2nd: location of fetal back; 3rd: which fetal part is above the pelvic inlet (presenting part); 4th: location of fetal brow/degree of engagement.\n\nLeopold's maneuvers are performed after 30-32 weeks GA to determine fetal lie, presentation, position, and engagement. They help plan delivery and identify abnormal presentations requiring further assessment."
+    difficulty: easy
+    tags: [obstetrics, prenatal care, Leopolds maneuvers, physical exam]
+  - front: "Which populations require carrier screening for Tay-Sachs disease, and what test is used?"
+    back: "Ashkenazi Jewish, French Canadians, and Cajun populations. Test: enzyme assay for hexosaminidase A (HEXA) or DNA analysis of the HEXA gene.\n\nTay-Sachs is an autosomal recessive lysosomal storage disorder. If both partners are Ashkenazi Jewish, also screen for Canavan disease and Familial Dysautonomia. If both partners screen positive, refer for genetic counselling."
+    difficulty: medium
+    tags: [obstetrics, prenatal screening, Tay-Sachs, genetic screening, carrier testing]
+  - front: "What investigations are performed at the first prenatal visit (8-12 weeks GA) in Canada?"
+    back: "CBC, blood group and Rh status, antibody screen, ferritin; HIV, VDRL, HBsAg, Rubella IgG; urine R&M and C&S, urine PCR for chlamydia/gonorrhea; dating U/S; possible Pap smear; varicella IgG if no history; parvovirus IgG/IgM if high risk.\n\nThe first prenatal visit establishes baseline risk and screens for asymptomatic infections. Early detection of HIV, syphilis, rubella non-immunity, and bacteriuria can significantly reduce maternal and fetal morbidity."
+    difficulty: medium
+    tags: [obstetrics, prenatal screening, first trimester, investigations]
+  - front: "What does the enhanced First Trimester Screen (eFTS) measure and at what gestational age?"
+    back: "At 11-13+3 weeks GA. It combines: nuchal translucency (NT) ultrasound + β-hCG + PAPP-A + placental growth factor + MSAFP to screen for trisomy 21, 18, and other aneuploidies.\n\nThe eFTS has ~85% sensitivity for trisomy 21 with a 5% false positive rate. It is the preferred screening test when results are desired in T1. An increased NT also warrants cardiac assessment. Positive results should be followed by CVS, amniocentesis, or NIPT."
+    difficulty: medium
+    tags: [obstetrics, prenatal screening, first trimester screen, nuchal translucency, aneuploidy]
+  - front: "What is the Maternal Serum Screen (MSS/Triple/Quadruple Screen)? When is it done and what does it measure?"
+    back: "Done at 15-20 weeks GA. Measures: 1) MSAFP, 2) β-hCG, 3) unconjugated estriol (uE3), and (if Quad Screen) 4) Inhibin A. Screens for NTDs (elevated MSAFP), trisomy 21, and trisomy 18.\n\nThe MSS (Triple Screen) or Quad Screen is offered if the patient missed eFTS. For trisomy 21: decreased MSAFP + increased β-hCG + decreased uE3 + increased inhibin A, sensitivity ~65-80%. For NTD: elevated MSAFP (sensitivity 80-90%)."
+    difficulty: medium
+    tags: [obstetrics, prenatal screening, maternal serum screening, NTD, trisomy 21]
+  - front: "What are the detection rate and false positive rate of NIPT for trisomy 21?"
+    back: "Detection rate: 99%; False positive rate: 0.1%. NIPT is a screening test, not diagnostic — positive results must be confirmed with CVS or amniocentesis.\n\nNIPT analyzes cell-free fetal DNA (ccffDNA) in maternal blood from 10 weeks GA onward. While highly accurate for common trisomies and sex chromosome aneuploidies, it does not screen for open neural tube defects and requires confirmatory invasive testing."
+    difficulty: easy
+    tags: [obstetrics, NIPT, prenatal screening, trisomy 21, cell-free fetal DNA]
+  - front: "What are two major disadvantages of NIPT compared to amniocentesis or CVS?"
+    back: "1) Does not screen for open neural tube defects (ONTDs). 2) Is a screening test — positive results must be confirmed with invasive testing (CVS or amniocentesis). Also: not universally publicly funded in Canada, and may fail if fetal fraction is insufficient (especially with elevated BMI).\n\nNIPT gives no result in 1-5% of cases due to insufficient fetal fraction. BMI >30 is associated with lower fetal fraction. Insufficient fetal fraction is itself a risk factor for aneuploidy and should not simply be repeated without clinical assessment."
+    difficulty: medium
+    tags: [obstetrics, NIPT, prenatal screening, limitations, fetal fraction]
+  - front: "What is amniocentesis, when is it performed, and what are its key advantages and risks?"
+    back: "Ultrasound-guided transabdominal extraction of amniotic fluid, performed from 15 weeks GA onward. Advantages: screens for ONTDs (96% accurate), karyotyping, L/S ratio for fetal lung maturity. Risk: 1/200-1/900 procedure-related pregnancy loss.\n\nAmniocentesis is more accurate than CVS and also screens for NTDs via acetylcholinesterase and amniotic AFP. In women >40 years, the risk of chromosomal anomaly (1/180) exceeds the procedural risk of miscarriage. Results take 14-28 days (QF-PCR/FISH can provide preliminary results in 24 hours)."
+    difficulty: medium
+    tags: [obstetrics, amniocentesis, prenatal diagnosis, procedure risks]
+  - front: "What is chorionic villus sampling (CVS), when is it performed, and what are its key advantages and disadvantages compared to amniocentesis?"
+    back: "Biopsy of fetal-derived chorion via transabdominal needle or transcervical catheter at 10-12 weeks GA. Advantages: earlier results than amniocentesis, rapid karyotyping in 48 hours. Disadvantages: 1% miscarriage risk (higher than amniocentesis), does NOT screen for ONTDs, 1-2% genetic mosaicism causing false negatives.\n\nCVS enables earlier pregnancy termination if a severe anomaly is found. The inability to screen for ONTDs is an important limitation — amniocentesis remains the diagnostic test for NTD confirmation. Mosaicism is a significant source of false-negative results with CVS."
+    difficulty: medium
+    tags: [obstetrics, CVS, chorionic villus sampling, prenatal diagnosis, comparison]
+  - front: "What is the mechanism of Rh isoimmunization and how common is it in an Rh-negative mother with an ABO-compatible Rh-positive infant?"
+    back: "Rh-negative mother is sensitized to Rh antigen from fetal RBCs crossing the placenta, producing anti-Rh IgG antibodies that can cross the placenta in subsequent pregnancies and cause fetal hemolytic anemia. Risk of sensitization is 16% without prophylaxis.\n\nSensitization is more likely to occur with ABO compatibility (incompatibility provides some natural protection). The first Rh-positive pregnancy rarely causes problems as initial sensitization produces IgM (does not cross placenta), but subsequent pregnancies trigger an IgG response that does cross the placenta."
+    difficulty: medium
+    tags: [obstetrics, Rh isoimmunization, Rhogam, hemolytic disease of newborn]
+  - front: "When and to whom is Rhogam® (Rh IgG) administered in pregnancy?"
+    back: "Given to all Rh-negative, antibody screen-negative patients: 1) Routinely at 28 weeks GA (lasts ~12 weeks); 2) Within 72 hours of birth of Rh-positive infant; 3) After any invasive procedure (CVS, amniocentesis); 4) With ectopic pregnancy; 5) After miscarriage/therapeutic abortion; 6) After antepartum hemorrhage; 7) After trauma.\n\nRhogam® 300 mcg provides sufficient prophylaxis for 30 mL of fetal Rh-positive whole blood. If >30 mL fetal blood in maternal circulation (detected by Kleihauer-Betke test or flow cytometry), additional doses are required. If the antibody screen is already positive, Rhogam® provides no benefit."
+    difficulty: medium
+    tags: [obstetrics, Rhogam, Rh isoimmunization, prophylaxis, Rh-negative]
+  - front: "What test is used to determine the volume of fetomaternal hemorrhage, and when is additional Rhogam® required?"
+    back: "Kleihauer-Betke test or flow cytometry. Additional Rhogam® is required if >30 mL of fetal blood enters the maternal circulation (standard 300 mcg dose covers only 30 mL).\n\nThe Kleihauer-Betke test identifies fetal hemoglobin-containing cells in maternal blood. One additional 10 mcg of Rhogam® is given for every 1 mL of fetal blood over 30 mL. Middle cerebral artery Dopplers are used to assess degree of fetal anemia non-invasively."
+    difficulty: hard
+    tags: [obstetrics, Kleihauer-Betke, fetomaternal hemorrhage, Rhogam, fetal anemia]
+  - front: "What is hydrops fetalis and what causes it in the context of Rh isoimmunization?"
+    back: "Hydrops fetalis is edema in at least two fetal compartments (e.g., ascites, pleural effusion, pericardial effusion, skin edema) due to fetal heart failure secondary to severe anemia caused by maternal anti-Rh IgG antibodies destroying fetal RBCs.\n\nAnti-Rh IgG crosses the placenta and causes fetal RBC hemolysis → fetal anemia → high-output cardiac failure → generalized edema/hydrops. Erythroblastosis fetalis refers to the hemolytic anemia itself. Treatment involves intrauterine transfusion of O-negative packed RBCs between 18-35 weeks GA."
+    difficulty: hard
+    tags: [obstetrics, hydrops fetalis, erythroblastosis fetalis, Rh isoimmunization, fetal anemia]
+  - front: "What constitutes a normal Non-Stress Test (NST) for a fetus >32 weeks GA?"
+    back: "At least 2 accelerations of FHR ≥15 bpm above baseline, each lasting ≥15 seconds, within a 20-minute period.\n\nThe NST assesses fetal wellbeing using the relationship between fetal movement and FHR accelerations. For fetuses <32 weeks GA, the criteria are lower (≥10 bpm for ≥10 seconds). An abnormal NST is <2 accelerations in 40 minutes, prompting further assessment with BPP or delivery planning."
+    difficulty: easy
+    tags: [obstetrics, NST, non-stress test, fetal surveillance, fetal monitoring]
+  - front: "What are the four parameters scored on the ultrasound component of the Biophysical Profile (BPP), and which is a marker of chronic vs. acute hypoxia?"
+    back: "Four ultrasound parameters (2 points each): 1) Tone (limb extension then flexion), 2) Movement (3 discrete movements), 3) Breathing (≥1 episode ≥30 seconds), 4) Amniotic Fluid Volume (fluid pocket ≥2 cm in 2 axes). AFV is a marker of CHRONIC hypoxia; all others indicate ACUTE hypoxia.\n\nThe BPP combines the NST (2 points) with 4 U/S parameters for a total of 10/10. A score of 8/10 with normal fluid or 10/10 has a perinatal mortality of 1:1000. A score of 0-4/10 has perinatal mortality of 91-600:1000 and delivery should be considered."
+    difficulty: medium
+    tags: [obstetrics, biophysical profile, BPP, fetal surveillance, amniotic fluid]
+  - front: "What BPP score indicates possible fetal compromise requiring consideration of delivery?"
+    back: "BPP 0-4/10: perinatal mortality rate 91-600:1000 — consider delivery for fetal indications.\n\nBPP interpretation: 8-10/10 normal fluid = reassuring (1:1000 mortality); 6-8/10 abnormal fluid = perinatal mortality 9:1000 (deliver at term, continue surveillance if <34 wks); 6/10 normal fluid = equivocal (repeat in 24 hours); 0-4/10 = consider immediate delivery."
+    difficulty: medium
+    tags: [obstetrics, biophysical profile, fetal distress, delivery indications]
+  - front: "What are the EFM tracing classifications and what defines an abnormal (Category 3) tracing?"
+    back: "Category 3 (Abnormal): Baseline bradycardia <100 bpm; absent variability (<5 bpm) for >80 min; sinusoidal pattern; repetitive complicated variable decelerations; recurrent late decelerations; single prolonged deceleration >3 min. Indicates possible fetal compromise — requires urgent intervention.\n\nCategory 1 (Normal): baseline 110-160 bpm, moderate variability 6-25 bpm, no significant decelerations. Category 2 (Atypical): intermediate features requiring clinical interpretation. Category 3 prompts urgent assessment and delivery planning. Per SOGC Fetal Health Surveillance guidelines (2020)."
+    difficulty: hard
+    tags: [obstetrics, EFM, fetal monitoring, intrapartum, category 3 tracing]
+  - front: "What are the folate supplementation recommendations in Canada for women at standard and high risk for NTDs?"
+    back: "Standard risk: 0.4-1 mg/day starting 2-3 months preconception until 4-6 weeks postpartum. High risk (e.g., prior NTD, antiepileptic drugs, DM): 4 mg/day starting at least 3 months preconception until 12 weeks GA, then 0.4-1 mg until 4-6 weeks postpartum or while breastfeeding.\n\nFolate supplementation reduces NTD incidence by 50-70%. Iron is the only known nutrient whose requirements in pregnancy cannot be met by diet alone. High-risk factors for NTD include previous child with NTD (risk increases to 2-5%), maternal DM, antiepileptic drugs (especially valproate/carbamazepine), and consanguinity."
+    difficulty: medium
+    tags: [obstetrics, folate, neural tube defects, prenatal nutrition, supplementation]
+  - front: "What is the recommended calcium, vitamin D, and iron intake during pregnancy?"
+    back: "Calcium: 1200-1500 mg/day; Vitamin D: 1000-2000 IU/day; Iron: 16-20 mg elemental iron/day (supplementation required as dietary intake is insufficient).\n\nIron is unique among pregnancy nutrients because requirements cannot be met by diet alone — supplementation is mandatory. Calcium maintains maternal bone integrity and fetal skeletal development. Vitamin D promotes calcium absorption. Iron supports maternal blood volume expansion and fetal/placental tissue growth."
+    difficulty: easy
+    tags: [obstetrics, prenatal nutrition, iron, calcium, vitamin D, supplementation]
+  - front: "What is the safe upper limit of caffeine consumption during pregnancy?"
+    back: "Less than 300 mg/day is considered safe. SOGC states 1-2 cups of coffee per day are safe.\n\nCaffeine readily crosses the placenta and acts as a diuretic and stimulant. The relationship between caffeine and IUGR is unclear. Common caffeine content: 8 oz coffee ~135 mg, 12 oz cola ~46 mg, Red Bull ~67 mg, dark chocolate bar ~10 mg."
+    difficulty: easy
+    tags: [obstetrics, caffeine, pregnancy lifestyle, counselling]
+  - front: "What are the absolute contraindications to physical activity during pregnancy?"
+    back: "Ruptured membranes, preterm labour, hypertensive disorders of pregnancy, incompetent cervix, IUGR, multiple gestations (>3), placenta previa after 28 weeks GA, persistent T2/T3 bleeding, uncontrolled T1DM, uncontrolled thyroid disease, serious cardiovascular or respiratory disease.\n\nPregnant women without contraindications should aim for 150 minutes of moderate-intensity exercise per week. The 'talk test' (able to speak while exercising) indicates appropriate intensity. The supine position should be avoided after 20 weeks GA due to aortocaval compression."
+    difficulty: medium
+    tags: [obstetrics, exercise in pregnancy, contraindications, lifestyle counselling]
+  - front: "What are the effects of smoking during pregnancy?"
+    back: "Increased risk of: decreased birth weight, placenta previa, placental abruption, spontaneous abortion, preterm labour (PTL), and stillbirth.\n\nSmoking cessation is strongly encouraged. Psychosocial interventions are first-line. Nicotine replacement therapy (NRT) is preferred over pharmacotherapy if counselling alone fails. Bupropion and varenicline have limited safety data in pregnancy. Intermittent/low-dose NRT is preferred to minimize fetal exposure."
+    difficulty: easy
+    tags: [obstetrics, smoking, pregnancy complications, lifestyle counselling]
+  - front: "What are the fetal risks associated with alcohol, cocaine, and cannabis use in pregnancy?"
+    back: "Alcohol: fetal alcohol spectrum disorder, spontaneous abortion, stillbirth, congenital anomalies — NO safe amount. Cocaine: microcephaly, growth retardation, prematurity, placental abruption. Cannabis: low birth weight, neurobehavioural abnormalities in childhood.\n\nNo amount of alcohol has been proven safe in pregnancy — abstinence is recommended. Cannabis is increasingly used but is associated with adverse neurodevelopmental outcomes. Cocaine causes vasoconstriction leading to placental insufficiency and abruption."
+    difficulty: easy
+    tags: [obstetrics, substance use, fetal alcohol spectrum disorder, cocaine, cannabis, pregnancy]
+  - front: "What medications are contraindicated in pregnancy and what are their specific fetal effects?"
+    back: "ACE inhibitors: fetal renal defects, IUGR, oligohydramnios. Valproate: congenital malformations (NTD) up to 9%. Warfarin: fetal warfarin syndrome (nasal hypoplasia, epiphyseal stippling, optic atrophy, ICH). Retinoids (Accutane): CNS/craniofacial/cardiac/thymic anomalies. Tetracycline: stains teeth, bone effects. Lithium: Ebstein's anomaly. NSAIDs after 30 weeks: premature ductus arteriosus closure.\n\nThe preferred analgesic in pregnancy is acetaminophen. NSAIDs (specifically indomethacin) can be used before 30 weeks for tocolysis but cause premature ductus arteriosus closure if used after 30 weeks. Warfarin crosses the placenta — switch to LMWH for anticoagulation in pregnancy."
+    difficulty: hard
+    tags: [obstetrics, teratogenicity, contraindicated medications, fetal effects, pharmacology]
+  - front: "What vaccines are safe and which are contraindicated during pregnancy?"
+    back: "Safe: tetanus toxoid, diphtheria, influenza (recommended for all), hepatitis B, pertussis (Tdap every pregnancy, ideally 27-32 weeks GA). Contraindicated/Avoid: live vaccines — MMR, varicella, oral poliovirus, oral typhoid.\n\nPublic Health Agency of Canada recommends all pregnant patients receive influenza vaccine and Tdap every pregnancy regardless of immunization history. Live vaccines pose risk of placental/fetal infection. Rubella vaccine should be given postpartum to non-immune patients, with pregnancy deferred ≥1 month post-vaccination."
+    difficulty: medium
+    tags: [obstetrics, immunizations, vaccines in pregnancy, Tdap, influenza]
+  - front: "What is the threshold radiation dose to cause miscarriage vs. fetal malformations, and which imaging studies deliver the highest fetal dose?"
+    back: "Miscarriage: >5 cGy. Malformations: >20-30 cGy. Highest fetal doses: CT pelvis (~25 cGy), CT lumbar spine (0-24 cGy), CT abdomen (0-8 cGy), plain pelvis (~1.5 cGy). Chest X-ray: <0.001 cGy (safe).\n\nUltrasound and MRI have no known adverse fetal effects (gadolinium should be avoided if possible — long-term effects unknown). Radioactive iodine isotopes are absolutely contraindicated. CT of the chest delivers negligible fetal dose. When imaging is clinically indicated for maternal health, it should be performed."
+    difficulty: medium
+    tags: [obstetrics, radiation, pregnancy safety, CT scan, teratogenicity]
+  - front: "What is the differential diagnosis of vaginal bleeding in the third trimester?"
+    back: "Most common physiologic cause: bloody show (cervical changes/early dilation). Most common pathological cause: placental abruption. Others: placenta previa, vasa previa, cervical lesion (cervicitis/polyp/cancer), uterine rupture, bleeding from bowel/bladder, coagulopathy.\n\nThird-trimester bleeding requires urgent evaluation. Digital vaginal exam must be avoided until placenta previa is excluded by ultrasound. Placenta previa presents with painless bright red bleeding; abruption typically presents with painful bleeding and uterine tenderness."
+    difficulty: medium
+    tags: [obstetrics, third trimester bleeding, placenta previa, placental abruption, differential diagnosis]
+  - front: "Compare placenta previa and placental abruption in terms of presentation, risk factors, and epidemiology."
+    back: "Placenta previa: 0.5-0.8% of pregnancies, PAINLESS bright red bleeding, risk factors include previous previa (4-8% recurrence), multiparity, advanced age, prior uterine surgery, multiple gestation, fibroids. Abruption: 1-2% of pregnancies, usually PAINFUL bleeding, risk factors include previous abruption (5-16% recurrence), maternal HTN (50% of abruptions), smoking, cocaine, multiparity, trauma, rapid uterine decompression.\n\nPlacenta previa: placenta implanted in lower uterine segment covering the internal os — do NOT perform digital vaginal exam. Abruption: premature separation of a normally implanted placenta after 20 weeks GA — may have concealed hemorrhage. Both can lead to maternal and fetal compromise."
+    difficulty: medium
+    tags: [obstetrics, placenta previa, placental abruption, third trimester bleeding, comparison]
+  - front: "What is the dating ultrasound, when is it performed, and what is its margin of error?"
+    back: "The dating ultrasound is performed at 8-12 weeks GA (measures crown-rump length, CRL). Margin of error: ±5 days. EDD should be based on T1 ultrasound if available. A pregnancy without U/S confirmation of EDD prior to 22+0/7 weeks GA is considered sub-optimally dated.\n\nT1 U/S is the most accurate method for establishing GA up to 13+6/7 weeks. The T2 U/S (18-20 weeks) has a margin of error of ±10 days and is less accurate for dating. Dating U/S should be offered when the fetus has a CRL of at least 10 mm or is ≥7+0 weeks GA. Changes to EDD must be documented and discussed."
+    difficulty: easy
+    tags: [obstetrics, dating ultrasound, gestational age, crown-rump length, EDD]
+  - front: "What are the nucleotide markers for trisomy 21 on the MSS/Quad Screen?"
+    back: "Trisomy 21 (Down syndrome) on MSS: decreased MSAFP + increased β-hCG + decreased unconjugated estriol (uE3) + increased Inhibin A. Sensitivity ~65-80%.\n\nThe memory mnemonic for T21 on MSS: 'Down is down' — MSAFP ↓, uE3 ↓, but β-hCG ↑ and Inhibin A ↑. For trisomy 18 (Edwards): all four analytes are decreased (↓MSAFP, ↓β-hCG, ↓uE3, ↓Inhibin A), sensitivity ~80%."
+    difficulty: hard
+    tags: [obstetrics, maternal serum screening, trisomy 21, trisomy 18, quad screen]
+  - front: "What are the risk factors for neural tube defects (NTDs)?"
+    back: "Previous child with NTD (risk increases from 0.1% to 2-5%), consanguinity, chromosomal abnormalities, Hispanic ethnicity (3-fold higher than African Americans), insufficient folate or zinc, maternal DM, antiepileptic drug use (especially valproate, carbamazepine — NTD risk 1-2% and 12% respectively).\n\nThe general population NTD risk is 0.1%. High-risk patients should receive 4 mg folate daily starting at least 3 months preconception. Carbamazepine use in pregnancy carries a 1% NTD risk. Both amniocentesis (96% accurate) and elevated MSAFP can detect ONTDs, but CVS cannot."
+    difficulty: medium
+    tags: [obstetrics, neural tube defects, NTD, risk factors, folate, antiepileptic drugs]
+  - front: "What fetal condition is assessed using the L/S (lecithin-sphingomyelin) ratio from amniocentesis, and what value is reassuring?"
+    back: "Fetal lung maturity. An L/S ratio >2:1 indicates sufficient surfactant production and that respiratory distress syndrome (RDS) is less likely to occur after delivery.\n\nAmniocentesis in T3 can assess fetal lung maturity to guide timing of delivery. This is particularly relevant when early delivery is being considered (e.g., maternal complications, IUGR). An L/S ratio <2:1 suggests immature lungs and risk of neonatal RDS."
+    difficulty: medium
+    tags: [obstetrics, amniocentesis, fetal lung maturity, L/S ratio, RDS]
+  - front: "When should fetal movement (FM) counting begin, and what finding requires urgent assessment?"
+    back: "FM counting is recommended after 26 weeks GA. Normally ≥6 perceived movements in 2 hours. If it takes more than 2 hours to feel 6 discrete movements, further assessment is indicated and the patient should present to labour and delivery triage.\n\nFetal movement (quickening) is first noticed at 18-20 weeks in primigravidas, 1-2 weeks earlier in multigravidas, and 1-2 weeks later if the placenta is anterior. Decreased FM may indicate fetal demise, decreased amniotic fluid, fetal sleep cycle, or hypoxia. NST and BPP are used for further assessment."
+    difficulty: easy
+    tags: [obstetrics, fetal movement, fetal surveillance, decreased fetal movements]
+  - front: "What weight gain is recommended during pregnancy based on pre-pregnancy BMI?"
+    back: "BMI <18.5 (underweight): 12.5-18 kg. BMI 18.5-24.9 (normal): 11.5-16 kg. BMI 25-29.9 (overweight): 7-11.5 kg. BMI ≥30 (obese): 5-9 kg. Caloric increase: ~100 kcal/day in T1, ~300 kcal/day in T2/T3, ~450 kcal/day during lactation.\n\nGestational weight gain recommendations are based on Institute of Medicine guidelines adapted for Canadian practice. BMI ≥30 at baseline already increases risk of GDM, preeclampsia, and DVT — excessive weight gain amplifies these risks. Women with BMI >25 should gain less during lactation."
+    difficulty: medium
+    tags: [obstetrics, weight gain in pregnancy, BMI, nutrition, counselling]
+  - front: "What is the significance of an Rh antibody titre ≥1:16 during pregnancy?"
+    back: "A positive titre (≥1:16) indicates an increased risk of fetal hemolytic anemia. The mother should be followed with serial monthly antibody titres, serial ultrasounds, and serial amniocentesis as needed. Rhogam® provides no benefit if the antibody screen is already positive.\n\nOnce sensitization has occurred (antibody screen positive), Rhogam® prophylaxis is ineffective because B cells and antibodies are already in circulation. Management focuses on surveillance of fetal anemia via MCA Dopplers (peak systolic velocity correlates with anemia severity), intrauterine transfusion, or early delivery."
+    difficulty: hard
+    tags: [obstetrics, Rh isoimmunization, antibody titre, fetal anemia, MCA Doppler]
+  - front: "What is the nuchal translucency (NT) measurement used for, and what conditions can an increased NT detect?"
+    back: "NT measures the fluid behind the fetal neck at 11-13+3 weeks GA. Increased NT is an early screen for: trisomy 21 (Down syndrome), trisomy 18, Turner syndrome, other aneuploidies, and cardiac anomalies.\n\nNT is a component of the eFTS (combined with β-hCG and PAPP-A). NT measurement is mandatory for the eFTS. Isolated increased NT without chromosomal anomaly warrants detailed cardiac anatomy assessment. NT >3.5 mm is associated with significant increase in aneuploidy risk."
+    difficulty: medium
+    tags: [obstetrics, nuchal translucency, first trimester screening, trisomy 21, aneuploidy]
+  - front: "What are the indications for diagnostic prenatal testing (CVS or amniocentesis)?"
+    back: "Age >40 years, risk factors in current pregnancy, abnormal ultrasound, abnormal prenatal screening (eFTS, MSS, or NIPT), previous chromosomal anomaly or genetic disease, either parent a known carrier of a genetic disorder or balanced translocation, or consanguinity.\n\nIn women >40 years, the risk of chromosomal anomaly (1/180) exceeds the procedural risk of amniocentesis (1/200-1/900), making invasive testing appropriate. Screening tests (NIPT, eFTS, MSS) are not diagnostic — positive results require CVS or amniocentesis for confirmation."
+    difficulty: medium
+    tags: [obstetrics, prenatal diagnosis, CVS, amniocentesis, indications]
+  - front: "What are the intimate partner violence (IPV) screening recommendations during prenatal care?"
+    back: "Screen ALL pregnant patients — not just those with suspicious presentations. Screen as early as possible in pregnancy. Warning signs: bruising, improbable injuries, depression, late prenatal care (presenting in T2/T3), missed prenatal visits, appointments cancelled on short notice.\n\nIPV is common and underdiagnosed in pregnancy. Universal screening is recommended regardless of perceived risk. A private, non-judgmental approach is essential. Documentation and referral to appropriate resources (social work, shelters) should follow positive screens."
+    difficulty: easy
+    tags: [obstetrics, intimate partner violence, IPV, prenatal care, screening]
+  - front: "What are the complications of hyperemesis gravidarum for both mother and fetus?"
+    back: "Maternal: dehydration, electrolyte and acid-base disturbances, Mallory-Weiss tear, Wernicke's encephalopathy, death. Fetal: usually none; however, IUGR is 15x more common in patients losing >5% of pre-pregnancy weight.\n\nHyperemesis gravidarum causes significant maternal morbidity. Wernicke's encephalopathy (from thiamine deficiency) is a potentially fatal complication. Despite severe maternal illness, fetal outcomes are generally preserved unless significant maternal weight loss occurs (>5% of pre-pregnancy weight)."
+    difficulty: medium
+    tags: [obstetrics, hyperemesis gravidarum, complications, IUGR, Wernickes]
+  - front: "What is the lithium-associated cardiac malformation in neonates exposed in utero?"
+    back: "Ebstein's anomaly (downward displacement of the tricuspid valve into the right ventricle), along with goitre and hyponatremia.\n\nLithium is used for bipolar disorder but is teratogenic. Ebstein's anomaly is associated with T1 lithium exposure. Women requiring mood stabilization in pregnancy may need to switch medications — valproate (NTD risk up to 9%) and carbamazepine (NTD risk 1%) also pose significant risks. Risk-benefit analysis is essential."
+    difficulty: medium
+    tags: [obstetrics, lithium, teratogenicity, Ebsteins anomaly, cardiac malformation]
+  - front: "What foods should pregnant women avoid due to risk of Listeria and Toxoplasma?"
+    back: "Avoid: raw/undercooked meat and fish, raw hotdogs, raw eggs, raw sprouts (especially alfalfa), unpasteurized dairy products/juices, unpasteurized soft cheeses, deli meats, smoked salmon, and patés (Listeria risk). Also avoid top predator fish (shark, swordfish, king mackerel, tilefish) due to mercury.\n\nListeria monocytogenes causes listeriosis, which can lead to miscarriage, stillbirth, premature delivery, or severe neonatal infection. Toxoplasma gondii is acquired from raw meat and cat feces. Mercury in top predator fish can cause fetal neurotoxicity — Health Canada recommends limiting these fish."
+    difficulty: easy
+    tags: [obstetrics, food safety in pregnancy, Listeria, Toxoplasma, mercury, counselling]
+  - front: "What are the absolute contraindications to External Cephalic Version (ECV)?"
+    back: "Absolute contraindications include: (1) conditions where vaginal delivery is contraindicated (placenta previa, previous classical caesarean section, previous myomectomy), (2) PROM, (3) uteroplacental insufficiency, (4) abnormal NST, (5) multiple gestation.\n\nECV is a procedure using external uterine pressure to turn a non-vertex fetus to vertex. Absolute contraindications represent situations where the procedure would be unsafe or futile. Relative contraindications include mild/moderate oligohydramnios, suspected IUGR, HTN, previous T3 bleed, and nuchal cord."
+    difficulty: medium
+    tags: [obstetrics, breech, ECV, contraindications]
+  - front: "What are the eligibility criteria for External Cephalic Version (ECV)?"
+    back: "Criteria: (1) >36 weeks GA, (2) singleton pregnancy, (3) unengaged presenting part, (4) reactive NST, (5) intact membranes.\n\nECV has an overall success rate of 40-60%. It is performed with external pressure on the uterus under U/S guidance with intermittent FHR assessment. Rh-negative patients require Rhogam after the procedure. Better prognosis if multiparous, good fluid volume, small baby, skilled obstetrician, and posterior placenta."
+    difficulty: easy
+    tags: [obstetrics, breech, ECV]
+  - front: "What are the risks of ECV (External Cephalic Version)?"
+    back: "Risks include: abruption, cord compression, cord accident, ROM, labour, fetal bradycardia requiring CD (<1% risk), alloimmunization, and fetal death (1/5000).\n\nECV risk of emergency CD due to fetal bradycardia is <1%. Rhogam must be given post-procedure if the patient is Rh-negative to prevent alloimmunization. These risks must be discussed when obtaining informed consent."
+    difficulty: medium
+    tags: [obstetrics, breech, ECV, complications]
+  - front: "What are the contraindications to vaginal breech delivery?"
+    back: "Contraindications: (1) cord presentation, (2) footling breech, (3) fetal factors incompatible with vaginal delivery (e.g., hydrocephalus, macrosomia, IUGR), (4) clinically inadequate maternal pelvis.\n\nVaginal breech delivery is associated with risks including head entrapment, prolapsed umbilical cord, birth trauma, and perinatal death. CD is recommended if the breech has not descended to the perineum in the second stage after 2 h without active pushing, or if vaginal delivery is not imminent after 1 h of active pushing."
+    difficulty: medium
+    tags: [obstetrics, breech, vaginal delivery]
+  - front: "Define pre-existing hypertension in pregnancy."
+    back: "sBP ≥140 mmHg or dBP ≥90 mmHg prior to 20 weeks GA; BP must be elevated on >2 occasions at least 15 minutes apart, on the same arm, seated with an appropriately sized cuff.\n\nIf HTN persists >12 weeks postpartum, the diagnosis is 'revised' to pre-existing HTN that was masked by the early pregnancy physiologic decrease in BP. Pre-existing HTN is associated with increased risk of gestational HTN, placental abruption, IUGR, IUFD, and CD."
+    difficulty: easy
+    tags: [obstetrics, hypertension, preeclampsia]
+  - front: "Define gestational hypertension."
+    back: "sBP ≥140 mmHg or dBP ≥90 mmHg after 20 weeks GA without proteinuria in a patient known to be normotensive before pregnancy.\n\nGestational HTN (de novo) is distinguished from pre-existing HTN by its onset after 20 weeks. If it persists >12 weeks postpartum, it is reclassified as pre-existing HTN. It is a risk factor for progression to preeclampsia."
+    difficulty: easy
+    tags: [obstetrics, hypertension, gestational HTN]
+  - front: "Define preeclampsia."
+    back: "Pre-existing or gestational HTN with new onset proteinuria (urinary protein:creatinine ratio >30 mg/mmol) OR adverse conditions (end-organ dysfunction).\n\nPreeclampsia results from placental malperfusion leading to soluble factor release, maternal vascular endothelial injury, hypertension, and multi-organ injury. Adverse maternal conditions include sBP >160 mmHg, thrombocytopenia, elevated creatinine, oliguria <500 mL/day, pulmonary edema, elevated liver enzymes, and neurologic symptoms. Adverse fetal conditions include IUGR, oligohydramnios, and absent/reversed umbilical artery end-diastolic flow."
+    difficulty: medium
+    tags: [obstetrics, preeclampsia, hypertension]
+  - front: "Define eclampsia."
+    back: "The occurrence of ≥1 generalized convulsion and/or coma in the setting of preeclampsia and in the absence of other neurologic conditions.\n\nEclamptic seizures occur in approximately 0.5% of mildly preeclamptic patients and 2-3% of severely preeclamptic patients. Seizures are typically tonic-clonic, lasting 60-75 seconds. Approximately 25% of cases present in the postpartum period. Women with typical eclamptic seizures without focal neurologic deficits or prolonged coma generally do not require neuroimaging."
+    difficulty: easy
+    tags: [obstetrics, eclampsia, seizure]
+  - front: "What are the risk factors for hypertensive disorders of pregnancy?"
+    back: "Key risk factors: primigravida (80-90% of gestational HTN), first conception with new partner, PMHx/FMHx of gestational HTN or preeclampsia, DM, chronic HTN, renal insufficiency, obesity, APS or inherited thrombophilia, extremes of maternal age (<18 or >40 yr), previous stillbirth/IUFD, vascular/connective tissue disease, placental abruption in previous pregnancy, IUGR, oligohydramnios, multiple gestation, fetal hydrops ('mirror syndrome').\n\nThese risk factors help identify patients who should receive early preventive intervention such as low-dose ASA (150-162 mg/d) from before 16 weeks GA to 36 weeks GA. Calcium supplementation (<900 mg/d) is also recommended for calcium-deficient women."
+    difficulty: medium
+    tags: [obstetrics, preeclampsia, risk factors]
+  - front: "What is the management of non-severe hypertension (BP 140-159/90-109 mmHg) in pregnancy?"
+    back: "Target BP <140/90 mmHg (without comorbidities) or <140/85 mmHg (with comorbidities). First-line antihypertensives: labetalol 100-400 mg PO BID-TID, nifedipine XL 20-60 mg PO once daily or BID, or alpha-methyldopa 250-500 mg PO BID-TID.\n\nACEIs, ARBs, diuretics (except for pulmonary edema/cardiac failure), prazosin, and atenolol are contraindicated in pregnancy. For initial treatment of non-severe HTN (BP 140-159/90-109 mmHg), labetalol, nifedipine, or methyldopa are preferred per SOGC guidelines."
+    difficulty: medium
+    tags: [obstetrics, hypertension, antihypertensives, management]
+  - front: "What is the management of severe hypertension (BP ≥160/110 mmHg) in pregnancy?"
+    back: "Target sBP <160 mmHg and dBP <110 mmHg. Options: (1) labetalol 20 mg IV, then 20-80 mg IV q30 min (max 300 mg), then switch to oral; (2) nifedipine immediate release 5-10 mg capsule q30 min; (3) hydralazine 5 mg IV, repeat 5-10 mg IV q30 min or 0.5-10 mg/h IV (max 20 mg IV or 30 mg IM).\n\nSevere HTN in pregnancy requires prompt IV treatment to prevent hemorrhagic stroke (accounts for 50% of deaths). ACEIs, ARBs, atenolol, and prazosin remain contraindicated. Diuretics may be used in cases of pulmonary edema or cardiac failure."
+    difficulty: hard
+    tags: [obstetrics, severe hypertension, emergency, management]
+  - front: "What is the management of preeclampsia based on gestational age?"
+    back: "• Stable, no adverse conditions (24-33+6 wk GA): expectant management; delivery as approaching 34-36 wk GA. Consider antenatal corticosteroids if <35 wk GA.\n• ≥37 wk GA: delivery recommended.\n• Severe preeclampsia: stabilize and deliver regardless of GA.\n• Seizure prevention: MgSO₄ 4 g IV loading dose, then 1 g/h.\n\nPost-delivery, risk of seizure is highest in the first 24 hours postpartum — continue MgSO₄ for 12-24 hours after delivery. Most patients return to a normotensive BP within 2 weeks postpartum. Continuous FHR monitoring and hourly I&O are required during labour in severe preeclampsia."
+    difficulty: hard
+    tags: [obstetrics, preeclampsia, management, MgSO4]
+  - front: "What is the first-line treatment for eclampsia and its definitive management?"
+    back: "First-line treatment for prevention of recurrent convulsions: MgSO₄ (treatment and prophylaxis). Definitive treatment: delivery after maternal stabilization, irrespective of GA or fetal distress.\n\nAcute eclampsia management: ABCs, left lateral decubitus position, supplemental O₂, bed rails up. Aggressive antihypertensive therapy for sustained sBP ≥160 mmHg or dBP ≥110 mmHg with hydralazine or labetalol. Delivery is definitive to reduce maternal morbidity/mortality; mode depends on clinical situation."
+    difficulty: medium
+    tags: [obstetrics, eclampsia, MgSO4, management]
+  - front: "What are the components of HELLP syndrome?"
+    back: "HELLP = Hemolysis, Elevated Liver enzymes, Low Platelets. It is a severe complication of preeclampsia.\n\nHELLP syndrome is one of the most serious complications of hypertensive disorders of pregnancy. It can lead to DIC (from release of placental thromboplastin causing consumptive coagulopathy), hepatic dysfunction, and renal dysfunction. Hemorrhagic stroke accounts for 50% of maternal deaths from preeclampsia/eclampsia."
+    difficulty: easy
+    tags: [obstetrics, HELLP, preeclampsia, complication]
+  - front: "What laboratory evaluation should be done for hypertensive disorders of pregnancy?"
+    back: "CBC (evaluate for thrombocytopenia), PTT/INR/fibrinogen (if abnormal LFTs or bleeding), ALT/AST, creatinine, uric acid, 24-hour urine protein or protein:creatinine ratio. Consider PIGF testing or sFlt-1:PIGF ratio as early screening for suspected preeclampsia.\n\nLow-risk normotensive women should not be routinely screened for proteinuria. Home blood pressure monitoring can be used to monitor BP between visits. Lab workup identifies end-organ involvement that defines adverse conditions in preeclampsia."
+    difficulty: medium
+    tags: [obstetrics, preeclampsia, investigations, laboratory]
+  - front: "What ASA regimen is recommended to prevent preeclampsia, and when should it be started?"
+    back: "Low-dose ASA 150-162 mg/day at night, started before 16 weeks GA and continued until 36 weeks GA, for women at increased risk of preeclampsia.\n\nPer SOGC guidelines, low-dose ASA is recommended for high-risk women (e.g., those with prior preeclampsia, DM, chronic HTN, renal disease, multiple gestation, APS). It is also recommended for pre-existing DM patients to reduce the risk of preeclampsia."
+    difficulty: medium
+    tags: [obstetrics, preeclampsia, prevention, ASA]
+  - front: "What is the management of iron deficiency anemia in pregnancy?"
+    back: "Prevention (non-anemic): 30 mg elemental iron daily (met by most prenatal vitamins). Treatment (anemic): 30-120 mg elemental iron daily. Note: mother needs 1g of elemental iron per fetus.\n\nIron deficiency is responsible for 80% of non-physiologic anemia during pregnancy. Iron requirements increase due to fetal/placental growth (500 mg), increased maternal RBC mass (500 mg), and losses (200 mg). Common preparations: ferrous sulfate 325 mg = 65 mg elemental Fe; ferrous fumarate 325 mg = 106 mg elemental Fe; ferrous gluconate 325 mg = 36 mg elemental Fe."
+    difficulty: medium
+    tags: [obstetrics, anemia, iron deficiency, management]
+  - front: "What are the fetal complications of iron deficiency anemia in pregnancy?"
+    back: "Decreased oxygen-carrying capacity leading to fetal distress, IUGR, low birth weight, and impaired fetal neurodevelopment.\n\nMaternal complications include angina, CHF, infection, slower recuperation, and preterm labour. Iron requirements are greater for multiple gestations. Folate deficiency (not iron deficiency) is associated with neural tube defects."
+    difficulty: easy
+    tags: [obstetrics, anemia, iron deficiency, fetal complications]
+  - front: "What are the fetal complications of folate deficiency in pregnancy?"
+    back: "Neural tube defects (T1), low birth weight, and prematurity.\n\nFolic acid is necessary for neural tube closure by 28 days GA. Prevention requires 0.4-1 mg folic acid PO daily for 1-3 months preconceptually and throughout T1. Minimum daily requirement is 0.4 mg. Folate deficiency is most often associated with iron deficiency anemia."
+    difficulty: easy
+    tags: [obstetrics, folate deficiency, neural tube defects, fetal complications]
+  - front: "What is the etiology of gestational diabetes mellitus (GDM)?"
+    back: "Anti-insulin factors produced by the placenta and high maternal cortisol levels create increased peripheral insulin resistance, leading to GDM and/or exacerbating pre-existing DM.\n\nGDM complicates 2-6% of pregnancies and is usually tested for at 24-28 weeks GA. Unlike T1DM and T2DM, GDM develops after the critical period of organogenesis, so it does not manifest an increased risk of congenital anomalies."
+    difficulty: easy
+    tags: [obstetrics, GDM, diabetes, etiology]
+  - front: "Describe the 2-step screening process for gestational diabetes mellitus (GDM) recommended by the Canadian Diabetes Association."
+    back: "Step 1: Random non-fasting 50 g OGCT. 1h PG <7.8 mmol/L = normal; ≥11.1 mmol/L = GDM; 7.8-11.0 mmol/L → proceed to Step 2.\nStep 2: Fasting 75 g OGTT; GDM if ≥1 of: FPG ≥5.3 mmol/L, 1h PG ≥10.6 mmol/L, 2h PG ≥9.0 mmol/L.\n\nScreening is performed between 24-28 weeks GA in all pregnant women. An alternative 1-step fasting 75 g OGTT can be used: GDM if FPG ≥5.1, 1h PG ≥10.0, or 2h PG ≥8.5 mmol/L. Fasting plasma glucose values appear to be the most effective for determining pregnancy outcomes."
+    difficulty: hard
+    tags: [obstetrics, GDM, screening, OGTT]
+  - front: "What are the glycemic targets during pregnancy for patients with GDM?"
+    back: "FPG <5.3 mmol/L (95 mg/dL); 1-hour postprandial PG <7.8 mmol/L (140 mg/dL); 2-hour postprandial PG <6.7 mmol/L (120 mg/dL).\n\nFirst-line management of GDM is diet modification and increased physical activity. Insulin therapy is initiated if glycemic targets are not achieved within 2 weeks of lifestyle modification. Metformin can be used (off-label) and is safe during breastfeeding. Other oral antihyperglycemic agents should not be used during pregnancy."
+    difficulty: medium
+    tags: [obstetrics, GDM, glycemic targets, management]
+  - front: "What are the intrapartum glucose management goals for diabetic patients in labour?"
+    back: "Maintain blood glucose between 4.0-7.0 mmol/L during labour (using insulin and dextrose drip for T1DM/T2DM, monitoring q1h) to reduce the risk of neonatal hypoglycemia.\n\nAfter delivery, insulin requirements dramatically drop with expulsion of the placenta (the source of insulin antagonists). Monitor glucose q6h postpartum; restart insulin at two-thirds of pre-pregnancy dosage when glucose >8 mmol/L. For GDM, stop insulin and diabetic diet postpartum and follow up with 75g OGTT at 6 weeks to 6 months postpartum."
+    difficulty: medium
+    tags: [obstetrics, GDM, diabetes, labour management]
+  - front: "What are the risk factors for GDM?"
+    back: "Age >35 yr, obesity (BMI >30 kg/m²), ethnicity (Indigenous, Hispanic, South Asian, Asian, African), family history of DM, previous history of GDM, previous infant birthweight >4.0 kg, polycystic ovarian syndrome, current use of glucocorticoids, essential HTN or pregnancy-related HTN.\n\nGDM affects 2-6% of pregnancies. Women with previous GDM have a 50% risk of developing T2DM in the next 20 years. Breastfeeding for 3-4 months postpartum is encouraged to prevent childhood obesity and diabetes."
+    difficulty: easy
+    tags: [obstetrics, GDM, risk factors]
+  - front: "What congenital anomalies are associated with pre-existing diabetes (T1DM/T2DM) in pregnancy but NOT with GDM?"
+    back: "Cardiac (ventricular septal defect), neural tube defects, GU (cystic kidneys), GI (anal atresia), and MSK (sacral agenesis) anomalies — 2-3x increased risk. GDM does NOT increase congenital anomaly risk.\n\nGDM develops after organogenesis (which occurs in the first trimester), so it does not cause congenital anomalies. In contrast, T1DM and T2DM cause hyperglycemia during organogenesis. Sacral agenesis is a pathognomonic association with maternal diabetes."
+    difficulty: medium
+    tags: [obstetrics, diabetes, congenital anomalies, GDM]
+  - front: "What are the neonatal complications of maternal diabetes in pregnancy?"
+    back: "Hypoglycemia (pancreatic hyperplasia → excess insulin), hyperbilirubinemia/jaundice (prematurity and polycythemia), hypocalcemia (possible functional hypoparathyroidism), polycythemia (hyperglycemia stimulates fetal erythropoietin production).\n\nMacrosomia results from maternal hyperglycemia → fetal hyperinsulinism → accelerated anabolism. Macrosomia increases risk of shoulder dystocia and birth trauma. Fetal lung immaturity (RDS) results from hyperglycemia interfering with surfactant synthesis. Elective CD is considered for predicted birth weight >4500 g."
+    difficulty: medium
+    tags: [obstetrics, diabetes, neonatal complications]
+  - front: "Why does maternal hyperglycemia cause polyhydramnios?"
+    back: "Maternal hyperglycemia → fetal hyperglycemia → fetal polyuria → increased amniotic fluid (polyhydramnios). Fetal urine is a major source of amniotic fluid.\n\nThis is a direct consequence of the glucose osmotic effect. The increased urine output from the fetal kidneys leads to polyhydramnios. Conversely, IUGR from placental vascular insufficiency in diabetes can cause oligohydramnios."
+    difficulty: medium
+    tags: [obstetrics, diabetes, polyhydramnios, pathophysiology]
+  - front: "What are the risk factors for early-onset neonatal Group B Streptococcus (GBS) disease?"
+    back: "<37 weeks GA at birth, prolonged ROM ≥18 hours, maternal intrapartum GBS colonization in current pregnancy, GBS bacteriuria at any time in current pregnancy, previous infant with invasive GBS disease, maternal fever (temperature ≥38°C).\n\nThe recto-vaginal GBS carrier rate is 15-40%. GBS increases risk of endometritis, vertical transmission (neonatal sepsis, meningitis, pneumonia, death). GBS bacteriuria at any trimester warrants intrapartum prophylaxis. Screening with vaginal and anorectal swabs is offered at 35-37 weeks GA."
+    difficulty: medium
+    tags: [obstetrics, GBS, neonatal infection, risk factors]
+  - front: "What antibiotic regimens are used for intrapartum GBS prophylaxis?"
+    back: "First-line: penicillin G 5 million IU IV, then 2.5 million IU IV q4h until delivery (give ≥4h before delivery for adequate prophylaxis). Penicillin allergy (low anaphylaxis risk): cefazolin 2g IV, then 1g q8h. Penicillin allergy (high anaphylaxis risk): vancomycin 1g IV q12h OR clindamycin 900 mg q8h (only if susceptible isolate).\n\nVancomycin and clindamycin levels in amniotic fluid do not reach therapeutic levels; all babies should be screened for GBS despite treatment. If maternal fever occurs, broad-spectrum antibiotic coverage is given regardless of GBS status and GA. If <37 wk GA in labour or with ROM, IV GBS prophylaxis for minimum 48 hours."
+    difficulty: hard
+    tags: [obstetrics, GBS, prophylaxis, antibiotics]
+  - front: "Why must asymptomatic bacteriuria be treated in pregnancy?"
+    back: "Asymptomatic bacteriuria in pregnancy carries increased risk of progression to cystitis, pyelonephritis, and probable increased risk of preterm labour (PTL).\n\nUTI is the most common medical complication of pregnancy, with asymptomatic bacteriuria occurring in 2-7% of pregnant women. Increased urinary stasis from mechanical and hormonal (progesterone) factors predisposes to infection. Complications if untreated include acute cystitis, pyelonephritis, and possible PTL."
+    difficulty: easy
+    tags: [obstetrics, UTI, bacteriuria, pregnancy complication]
+  - front: "What is the first-line antibiotic treatment for uncomplicated UTI in pregnancy?"
+    back: "First-line: amoxicillin 250-500 mg PO q8h x 7 days. Alternatives: nitrofurantoin 100 mg PO BID x 7 days or cephalosporins. Follow with monthly urine cultures.\n\nMajor organisms causing pyelonephritis: E. coli, Klebsiella, Enterobacter, Proteus. Pyelonephritis requires hospitalization and IV antibiotics. Recurrence is common; offer continuous or post-coital prophylaxis with nitrofurantoin or cephalexin, except during the last 4 weeks of pregnancy (avoid nitrofurantoin near term)."
+    difficulty: medium
+    tags: [obstetrics, UTI, antibiotics, management]
+  - front: "What are the fetal effects and management of varicella (chickenpox) infection during pregnancy?"
+    back: "Fetal effects: congenital varicella syndrome (limb aplasia, chorioretinitis, cataracts, cutaneous scars, cortical atrophy, IUGR, hydrops) — greatest risk at 13-30 weeks GA and 5 days pre- to 2 days post-delivery. Management: Varicella-zoster immunoglobulin (VZIG) for exposed patient; if maternal infection 5 days before delivery, give infant VZIG. Do NOT administer live attenuated vaccine during pregnancy.\n\nVertical transmission can occur transplacentally. The live attenuated varicella vaccine is contraindicated in pregnancy. VZIG administered to the exposed patient decreases risk of congenital varicella syndrome."
+    difficulty: medium
+    tags: [obstetrics, infections, varicella, TORCH]
+  - front: "What are the fetal effects of Cytomegalovirus (CMV) infection during pregnancy?"
+    back: "5-10% of infected infants develop CNS involvement: mental retardation, cerebral calcification, hydrocephalus, microcephaly, deafness, and chorioretinitis.\n\nCMV is a DNA herpes family virus. Transmission to baby is transplacental, during delivery, or via breast milk. Mother may be asymptomatic or have flu-like symptoms. Diagnosis by serology and virus isolated from urine or secretion culture. No specific treatment; maintain good hygiene and avoid high-risk situations."
+    difficulty: medium
+    tags: [obstetrics, infections, CMV, TORCH]
+  - front: "What are the fetal effects of Parvovirus B19 (Fifth Disease) during pregnancy?"
+    back: "Greatest risk at 10-20 weeks GA: spontaneous abortion, stillbirth, hydrops fetalis (in utero). If fetal hydrops occurs, consider fetal transfusion.\n\nParvovirus B19 is transmitted by respiratory droplets and infected blood products. Mother may be asymptomatic or have flu-like symptoms, rash, and arthritis. Diagnosis: serology, viral PCR, maternal AFP. If maternal IgM is present, follow fetus with U/S for hydrops."
+    difficulty: medium
+    tags: [obstetrics, infections, parvovirus, hydrops]
+  - front: "What is the management of Hepatitis B in pregnancy and the neonate?"
+    back: "Screen all pregnancies serologically. Treat neonate with Hepatitis B immunoglobulin (HBIG) and vaccine at birth, 1 month, and 6 months — 90% effective. Vertical transmission rate: 10% if asymptomatic and HBsAg+; 85-90% if both HBsAg and HBeAg positive.\n\nHBV is a DNA virus transmitted via blood, saliva, semen, and vaginal secretions. Fetal effects include prematurity, low birth weight, and neonatal death. Mother may present with fever, N/V, fatigue, jaundice, and elevated liver enzymes. Transmission to baby is transplacental or through breast milk."
+    difficulty: medium
+    tags: [obstetrics, infections, hepatitis B, neonatal]
+  - front: "When is elective caesarean delivery indicated for HIV-positive pregnant women?"
+    back: "Elective CD is indicated if: no previous antiviral treatment or monotherapy only, viral load unknown or >500 RNA copies/mL, unknown prenatal care, or patient request.\n\nHIV in pregnancy is managed with triple antiretroviral therapy, which decreases transmission to <1%. Transmission routes to baby are in utero (1/3), at delivery (1/3), and breastfeeding (1/3). All pregnant women are offered HIV screening. Fetal effects include IUGR, PTL, and PROM."
+    difficulty: medium
+    tags: [obstetrics, infections, HIV, caesarean section]
+  - front: "What are the features of congenital rubella syndrome?"
+    back: "Hearing loss, cataracts, cardiovascular lesions (mitral regurgitation), IUGR, hepatitis, CNS defects, and osseous changes.\n\nRubella is highly contagious (ssRNA togavirus). Greatest fetal risk is in T1. Maternal symptoms: rash (50%), fever, posterior auricular/occipital lymphadenopathy, arthralgia. Do NOT administer live attenuated vaccine during pregnancy; offer vaccination following pregnancy. No specific treatment."
+    difficulty: medium
+    tags: [obstetrics, infections, rubella, TORCH, congenital]
+  - front: "What is the treatment for syphilis in pregnancy?"
+    back: "Benzathine penicillin G 2.4 million IU IM x1 dose for early syphilis; 3 doses for late syphilis. Monitor VDRL monthly. No approved alternatives in pregnancy; if beta-lactam allergy, recommend desensitization then treat with penicillin.\n\nSyphilis is caused by Treponema pallidum (spirochete), transmitted sexually to the mother and transplacentally to the baby. Greatest fetal risk is in T1. VDRL screening is performed for all pregnancies; positive results require confirmatory testing. Fetal effects include PTL, multisystem involvement, and fetal death."
+    difficulty: hard
+    tags: [obstetrics, infections, syphilis, treatment]
+  - front: "What is the timing and management of toxoplasmosis transmission during pregnancy?"
+    back: "Greatest fetal transmission risk in T3, but most severe fetal effects if infected in T1. Management: spiramycin decreases fetal morbidity but not rate of transmission. Diagnosis: IgM and IgG serology; PCR of amniotic fluid.\n\nToxoplasma gondii is a protozoa transmitted via raw meat, unpasteurized goat's milk, and cat feces/urine. Most mothers are subclinical; may have flu-like symptoms. Congenital toxoplasmosis: chorioretinitis, hydrocephaly, intracranial calcification, microcephaly — 75% initially asymptomatic at birth. Only primary infection during pregnancy is concerning."
+    difficulty: medium
+    tags: [obstetrics, infections, toxoplasmosis, TORCH]
+  - front: "What are the VTE risk factors specific to pregnancy?"
+    back: "Hypercoagulability: increased factors II, V, VII, VIII, IX, X, XI, fibrinogen; increased platelet aggregation; decreased protein S, tPA, factors XI, XIII; increased resistance to activated protein C; antithrombin can be normal or reduced. Stasis: increased venous distensibility, decreased venous tone, 50% decrease in venous flow in lower extremity by T3, uterus mechanically impedes venous return. Endothelial damage: vascular damage at delivery (CD or SVD), uterine instrumentation, peripartum pelvic surgery.\n\nThese factors correspond to Virchow's Triad (hypercoagulability, stasis, endothelial damage). Incidence of DVT is 12.1/10,000 and PE is 5.4/10,000 pregnancies. Highest DVT risk is in T3; highest PE risk is in the first 6 weeks postpartum. Most DVTs occur in iliofemoral or calf veins with predilection for the left leg."
+    difficulty: medium
+    tags: [obstetrics, VTE, DVT, PE, risk factors]
+  - front: "What is the management of VTE in pregnancy?"
+    back: "Preferred: LMWH (discontinue ≥24h before delivery). Alternative: unfractionated heparin 80 IU/kg bolus (max 5000 IU) → 18 IU/kg/h infusion; maintain aPTT 1.5-2x normal. Warfarin is CONTRAINDICATED in pregnancy (teratogenic).\n\nBefore initiating treatment, obtain baseline CBC including platelets and aPTT. HIT occurs in approximately 3% with unfractionated heparin. VTE prophylaxis postpartum should be considered if absolute risk >1.0%. Women on long-term anticoagulation require full therapeutic anticoagulation throughout pregnancy and 6-12 weeks postpartum."
+    difficulty: hard
+    tags: [obstetrics, VTE, LMWH, anticoagulation]
+  - front: "How is warfarin different from heparin in terms of safety during pregnancy?"
+    back: "Warfarin is CONTRAINDICATED in pregnancy due to teratogenic effects. LMWH is preferred for VTE treatment and does not cross the placenta; unfractionated heparin is an alternative.\n\nThis distinction is clinically important: warfarin crosses the placenta and is a known teratogen (warfarin embryopathy). Heparins (both LMWH and unfractionated) do not cross the placenta and are safe in pregnancy. Postpartum VTE prophylaxis considerations include risk factors such as BMI >30, smoking >10 cigarettes/day, preeclampsia, emergency CD, and blood loss >1L."
+    difficulty: easy
+    tags: [obstetrics, VTE, anticoagulation, teratogen]
+  - front: "Define the stages of labour and their cervical dilatation."
+    back: "First stage: 0-10 cm cervical dilatation (latent phase: 0-4 cm; active phase: 4-10 cm). Second stage: 10 cm to delivery of the baby. Third stage: delivery of placenta. Fourth stage: first postpartum hours.\n\nDuration of first stage: nulliparous latent phase 6-18h (multiparous 2-10h); nulliparous active phase: dilatation >1.0 cm/h; multiparous >1.2 cm/h. Second stage: nulliparous up to 3h (or 4h with epidural); multiparous up to 30 min (or 1h with epidural). Third stage: 5-30 min for both."
+    difficulty: easy
+    tags: [obstetrics, labour, stages of labour]
+  - front: "Differentiate true labour from false labour (Braxton-Hicks contractions)."
+    back: "True labour: regular, painful contractions of increasing intensity associated with progressive cervical dilatation, effacement, and descent. False labour (Braxton-Hicks): irregular contractions with unchanged intensity and long intervals, not associated with cervical changes, often relieved by rest or hydration.\n\nThe key differentiator is progressive cervical change (dilatation + effacement) and descent of presenting part in true labour. Bishop score is used to assess cervical readiness. Latent phase has slow dilatation to 4 cm; active phase has rapid dilatation to 10 cm with contractions every 2-3 min lasting 45-60 seconds."
+    difficulty: easy
+    tags: [obstetrics, labour, Braxton-Hicks]
+  - front: "Define fetal station in labour."
+    back: "Station describes the position of the presenting bony part of the fetal skull relative to the ischial spines, measured in 1 cm intervals. Station 0 = at ischial spines = engaged; -5 to -1 = above spines; +1 to +5 = below spines.\n\nStation is determined by vaginal examination. Engagement means the leading edge of the skull has reached the level of the ischial spines (station 0). Progress is measured by descent in relation to maternal ischial spines during the second stage of labour."
+    difficulty: easy
+    tags: [obstetrics, labour, fetal station, engagement]
+  - front: "What are the fetal positions and which is most common?"
+    back: "Most common: occiput anterior (OA), specifically left OA. Other positions: occiput posterior (OP) — most rotate spontaneously to OA but may cause prolonged second stage; occiput transverse (OT) — if persistent, leads to arrest of dilatation.\n\nNormally, the fetal head enters the maternal pelvis and engages in the OT position, then rotates to OA (or OP in a small percentage). OP presentations may require rotational manoeuvres or result in operative delivery. Fetal position is described using the reference point of the presenting part (occiput for cephalic, sacrum for breech, mentum for face)."
+    difficulty: medium
+    tags: [obstetrics, labour, fetal position, occiput]
+  - front: "What fetal attitudes/head presentations require caesarean delivery?"
+    back: "Brow presentation (head partially extended) requires CD. Mentum posterior (face presentation with fully extended head) always requires CD. Mentum anterior can deliver vaginally.\n\nVertex presentation (head fully flexed) is normal. Face presentation (head fully extended) can deliver vaginally if mentum anterior. Brow presentation cannot deliver vaginally due to the largest presenting diameter. These are assessed via vaginal examination and/or U/S."
+    difficulty: medium
+    tags: [obstetrics, labour, malpresentation, fetal attitude]
+  - front: "What are the signs of placental separation during the third stage of labour?"
+    back: "Gush of blood, lengthening of the cord, and uterus becomes globular (fundie rise).\n\nThe third stage of labour is from delivery of the baby to delivery of the placenta. Signs of placental separation indicate it is ready to be delivered. Active management of the third stage (oxytocin administration) reduces postpartum hemorrhage risk. Duration is 5-30 minutes for both nulliparous and multiparous women."
+    difficulty: easy
+    tags: [obstetrics, labour, third stage, placental separation]
+  - front: "What is asynclitism in the context of labour?"
+    back: "Asynclitism is the lateral tilt of the sagittal suture relative to the axis of the birth canal. It can be anterior (sagittal suture displaced posteriorly) or posterior (sagittal suture displaced anteriorly), and may impact descent during labour.\n\nSynclitism is the normal alignment where the sagittal suture is equidistant from the symphysis and sacral promontory. Asynclitism is a normal mechanism of labour allowing the fetal head to navigate the pelvis but can also indicate cephalopelvic disproportion if persistent."
+    difficulty: medium
+    tags: [obstetrics, labour, asynclitism, fetal descent]
+  - front: "What are the HbA1c targets for pre-existing diabetes (T1DM/T2DM) before and during pregnancy?"
+    back: "Before pregnancy: optimize glycemic control (HbA1c <7%). During pregnancy: aim for HbA1c <6.5%.\n\nPreconception planning includes commencing folic acid 1.0 mg daily (3 months prior), reviewing medications (discontinue ACEIs, ARBs, statins), and assessing for complications. During pregnancy, fetal echocardiogram is performed in T2 if HbA1c was high in T1. Start 162 mg ASA at night before 16 weeks GA to reduce preeclampsia risk."
+    difficulty: medium
+    tags: [obstetrics, diabetes, HbA1c, glycemic control]
+  - front: "A patient with preeclampsia at 35 weeks GA develops a tonic-clonic seizure lasting 70 seconds. What is the first-line treatment to prevent recurrent seizures?"
+    back: "MgSO₄ (magnesium sulfate) is the first-line treatment for eclampsia, used for both treatment and prophylaxis of convulsions. Loading dose: 4g IV, then 1g/h maintenance.\n\nManagement also includes: ABCs, left lateral decubitus position (prevent aspiration), supplemental O₂, bed rails up for safety, and aggressive antihypertensive therapy if sBP ≥160 mmHg or dBP ≥110 mmHg. Definitive treatment is delivery after maternal stabilization, irrespective of GA. The seizure risk is highest in the first 24h postpartum — continue MgSO₄ for 12-24h after delivery."
+    difficulty: hard
+    tags: [obstetrics, eclampsia, MgSO4, emergency management]
+  - front: "A GDM patient has inadequate glycemic control after 2 weeks of diet and exercise. What medication is initiated, and what are the glycemic targets?"
+    back: "Initiate insulin therapy. Glycemic targets: FPG <5.3 mmol/L, 1-hour PG <7.8 mmol/L, 2-hour PG <6.7 mmol/L. Metformin can be used off-label after discussion with patient.\n\nMetformin and glyburide are safe during breastfeeding; other antihyperglycemic agents should not be used due to lack of safety data. IOL is offered between 38-39 weeks GA for GDM on insulin or metformin. Breastfeeding for 3-4 months is encouraged to prevent childhood obesity and diabetes."
+    difficulty: medium
+    tags: [obstetrics, GDM, insulin, management]
+  - front: "What are the TORCH infections in pregnancy?"
+    back: "TORCH = Toxoplasmosis, Other (syphilis, varicella, parvovirus B19, HIV, Hepatitis B, influenza), Rubella, Cytomegalovirus, Herpes Simplex Virus.\n\nTORCH infections are important causes of congenital infection and fetal anomaly. All are transmitted transplacentally. Key distinguishing features: CMV is the most common congenital viral infection; toxoplasmosis is worst if infected in T1 despite greatest transmission risk in T3; rubella causes the classic triad of hearing loss, cataracts, and cardiac defects."
+    difficulty: easy
+    tags: [obstetrics, TORCH, infections, congenital]
+  - front: "What are the fetal complications of placenta previa?"
+    back: "Perinatal mortality (low but higher than normal pregnancy), prematurity (bleeding often dictates early CD), intrauterine hypoxia (acute or IUGR), fetal malpresentation, PPROM, risk of fetal blood loss from placenta (especially if incised during CD).\n\nPlacenta previa creates a physical barrier at the cervical os, predisposing to preterm delivery and compromised placental perfusion. Fetal malpresentation occurs because the previa occupies the lower uterine segment. Fetal blood loss risk is highest if the placenta is inadvertently incised during caesarean delivery."
+    difficulty: medium
+    tags: [placenta previa, obstetric hemorrhage, antepartum hemorrhage, fetal complications]
+  - front: "What are the major maternal complications of placenta previa?"
+    back: "<1% maternal mortality; hemorrhage and hypovolemic shock; anemia; acute renal failure; pituitary necrosis (Sheehan syndrome); placenta accreta (especially with previous uterine surgery or anterior previa); hysterectomy.\n\nMassive hemorrhage from placenta previa can cause hypovolemic shock leading to renal cortical necrosis and, classically, Sheehan syndrome from pituitary ischemia. Anterior placentas overlying previous uterine scars carry the highest risk of morbidly adherent placenta (accreta spectrum), often necessitating hysterectomy."
+    difficulty: medium
+    tags: [placenta previa, obstetric hemorrhage, Sheehan syndrome, placenta accreta, maternal complications]
+  - front: "Which imaging modality is most accurate for diagnosing placenta previa, and when should it be repeated?"
+    back: "Transvaginal ultrasound (TVU) is more accurate than transabdominal U/S at any gestational age. If the placenta covers the internal os by <20 mm at 20 weeks, spontaneous resolution is likely; TVU should be repeated in the third trimester as the distance from the cervix typically increases.\n\nThe lower uterine segment elongates with advancing gestation, often drawing an apparent previa away from the os — a phenomenon called placental migration. TVU is safe in placenta previa and provides superior visualization of the cervical os. Repeat scanning in T3 confirms resolution or persistence."
+    difficulty: medium
+    tags: [placenta previa, transvaginal ultrasound, investigations, obstetrics]
+  - front: "Outline the expectant management of placenta previa at <37 weeks with minimal bleeding."
+    back: "Admit to hospital; limited physical activity; pelvic rest (no douching, enemas, or sexual intercourse); consider corticosteroids for fetal lung maturity; deliver when fetus is mature or hemorrhage indicates maternal/fetal compromise. Rhogam if Rh-negative; large bore IV, volume replacement, O2 for hypotensive patients; EFM; U/S assessment.\n\nThe goal is to prolong the pregnancy until the risks of prematurity are outweighed by those of continued expectant management. Pelvic rest prevents mechanical stimulation of the lower uterine segment. Corticosteroids accelerate fetal lung maturity if preterm delivery becomes necessary. Delivery by CD at ≥37 weeks is standard."
+    difficulty: medium
+    tags: [placenta previa, expectant management, antenatal corticosteroids, obstetrics]
+  - front: "Define placental abruption and state the most significant maternal haematologic complication."
+    back: "Partial or total premature placental detachment caused by bleeding at the decidual-placental interface, occurring after 20 weeks GA. The most significant haematologic complication is DIC (disseminated intravascular coagulation), which occurs in 20% of abruptions. Placental abruption is the most common cause of DIC in pregnancy.\n\nThe decidual-placental interface hemorrhage releases thromboplastin into the maternal circulation, triggering consumptive coagulopathy. DIC in abruption is associated with concealed hemorrhage and fetal demise. Fibrinogen, FDP, PTT/PT, and platelet counts must be monitored closely."
+    difficulty: medium
+    tags: [placental abruption, DIC, obstetric hemorrhage, antepartum hemorrhage]
+  - front: "Differentiate external (revealed) from internal (concealed) placental abruption."
+    back: "External/revealed/apparent (majority): blood dissects downward toward cervix → presents with vaginal bleeding. Internal/concealed/occult (20%): blood dissects upward toward the fetus; may not have visible vaginal bleeding. Most are mixed. Shock and anemia may be out of proportion to apparent blood loss in concealed abruption.\n\nBecause concealed hemorrhage is not visible externally, the degree of blood loss may be severely underestimated. This makes clinical signs of shock disproportionate to apparent bleeding a key diagnostic clue. Concealed abruption also carries higher risk of DIC due to larger volume of retroplacental hematoma."
+    difficulty: medium
+    tags: [placental abruption, concealed hemorrhage, revealed hemorrhage, obstetrics]
+  - front: "What are the classic clinical features of placental abruption?"
+    back: "Painful (80%) vaginal bleeding (not always present if concealed); uterine tenderness; uterine contractions/hypertonus (lack of relaxation between contractions); sudden onset, constant pain localized to lower back and uterus; shock/anemia out of proportion to apparent blood loss; fetal distress or demise (15% present with demise); bloody amniotic fluid; coagulopathy.\n\nThe combination of painful vaginal bleeding with uterine rigidity ('board-like uterus') and fetal distress is the hallmark triad. Fetal presentation is typically normal. The pain in abruption is constant (unlike labour contractions) because the retroplacental hematoma causes sustained uterine tension."
+    difficulty: easy
+    tags: [placental abruption, clinical features, obstetrics, antepartum hemorrhage]
+  - front: "What is the sensitivity of ultrasound for diagnosing placental abruption, and what is the primary basis for diagnosis?"
+    back: "U/S sensitivity for diagnosing abruption is only 15%. Placental abruption is primarily a clinical diagnosis based on history and examination findings.\n\nThe retroplacental hematoma can be isoechoic with the placenta on U/S, making it difficult to detect. A negative U/S does not exclude abruption. Clinical features (painful bleeding, uterine rigidity, fetal distress, disproportionate shock) remain the cornerstone of diagnosis."
+    difficulty: medium
+    tags: [placental abruption, ultrasound, diagnosis, investigations]
+  - front: "Outline the management of severe placental abruption with fetal/maternal compromise."
+    back: "Hydrate and restore blood loss; correct coagulation defect if present; vaginal delivery if no contraindication and no fetal/maternal distress; CD if live fetus with fetal or maternal distress develops despite resuscitation, labour fails to progress, or vaginal delivery is otherwise contraindicated.\n\nRapid delivery is essential to prevent ongoing fetal hypoxia and to allow uterine contraction to tamponade bleeding. Blood products (red cells, platelets, cryoprecipitate) must be available due to DIC risk. Vaginal delivery is preferred when safe as it achieves uterine contraction more rapidly than CD in some situations."
+    difficulty: hard
+    tags: [placental abruption, management, caesarean delivery, DIC, obstetrics]
+  - front: "Define vasa previa and explain why it carries high perinatal mortality."
+    back: "Vasa previa: unprotected fetal vessels pass over the cervical os, associated with velamentous cord insertion or succenturiate lobe. Undiagnosed: 50% perinatal mortality (75% if membranes rupture) because the vessels are fetal — even a small amount of blood loss causes fetal exsanguination. If diagnosed antenatally: 97% survival with planned CD at 35-36 weeks.\n\nUnlike placenta previa where bleeding is maternal, bleeding in vasa previa is entirely fetal. Rupture of membranes tears these unprotected vessels, and the fetus can exsanguinate rapidly because fetal blood volume is small. The Apt test (NaOH — pink = fetal blood) or Wright's stain for nucleated RBCs can confirm fetal source."
+    difficulty: hard
+    tags: [vasa previa, antepartum hemorrhage, fetal exsanguination, obstetrics]
+  - front: "What is the Apt test and when is it used?"
+    back: "The Apt test mixes blood with NaOH: if the supernatant turns pink → fetal blood (fetal Hb is alkali-resistant); if yellow → maternal blood (adult Hb is denatured). Used immediately when vasa previa or other fetal vessel rupture is suspected to distinguish fetal from maternal source of vaginal bleeding.\n\nFetal hemoglobin (HbF) resists alkali denaturation, maintaining the pink colour. Adult hemoglobin (HbA) is denatured, turning yellow-brown. This bedside test is rapid and critical in vasa previa where confirming fetal source mandates immediate emergency CD to prevent exsanguination."
+    difficulty: medium
+    tags: [vasa previa, Apt test, antepartum hemorrhage, fetal blood, obstetrics]
+  - front: "Define preterm labour (PTL) and state its incidence."
+    back: "Labour between 20 and 37 weeks GA. Complicates approximately 10% of pregnancies. It is the most common cause of neonatal mortality in the United States and among the top 5 causes of neonatal mortality in Canada.\n\nThe 20–37 week window defines PTL; before 20 weeks is classified as abortion. The neonatal consequences of prematurity — respiratory distress, IVH, NEC, sepsis — drive the high morbidity and mortality, making PTL prevention a major obstetric priority."
+    difficulty: easy
+    tags: [preterm labour, epidemiology, neonatal mortality, obstetrics]
+  - front: "What is the single most important risk factor for preterm labour?"
+    back: "Prior history of spontaneous preterm labour is the most important risk factor for PTL.\n\nA previous spontaneous PTL increases recurrence risk approximately 2-3 fold. Other important risk factors include cervical length <25 mm on TVU, bacterial vaginosis, multiple gestation, prior cervical procedures (cone biopsy, D&C), smoking, and cocaine use. Identifying high-risk women allows targeted prevention strategies."
+    difficulty: easy
+    tags: [preterm labour, risk factors, obstetrics]
+  - front: "What cervical length on transvaginal U/S has high negative predictive value for PTL before 34 weeks?"
+    back: "Cervical length >30 mm on transvaginal ultrasound has a high negative predictive value for PTL before 34 weeks GA. A short cervix (<25 mm at <24 weeks GA) is an indication for progesterone therapy.\n\nTransvaginal ultrasonography (not transabdominal) is the preferred and more accurate method for cervical length assessment. A long cervix (>30 mm) effectively excludes imminent PTL. Progesterone (200 mg vaginally daily from diagnosis to 36 weeks) reduces PTL risk in women with a short cervix in singleton pregnancies."
+    difficulty: medium
+    tags: [preterm labour, cervical length, transvaginal ultrasound, prevention, obstetrics]
+  - front: "What is fetal fibronectin (fFN) and how is it used clinically in suspected preterm labour?"
+    back: "Fetal fibronectin is a glycoprotein found in amniotic fluid and placental tissue. Positive if >50 ng/mL in cervicovaginal secretions at 22-34 weeks GA. NPV >95%: a negative result means very unlikely to deliver in 7-14 days. Positive result indicates increased risk of delivery — may prompt admission, tocolysis, and/or corticosteroids. Contraindicated if cerclage, active vaginal bleeding, vaginal exam or sex in last 24 hours.\n\nfFN serves best as a rule-out test (high NPV). A positive result has low PPV (~25%) but identifies women at increased risk who may benefit from corticosteroids and/or transfer to a tertiary centre. It is only valid with intact membranes, cervical dilation <3 cm, and established fetal well-being."
+    difficulty: medium
+    tags: [preterm labour, fetal fibronectin, prediction, tocolysis, obstetrics]
+  - front: "What are the indications and definition of cervical cerclage?"
+    back: "Cerclage = placement of cervical sutures at the level of the internal os (usually end of T1 or T2, removed in T3). Indication: cervical incompetence (cervical dilation and effacement without increased uterine contractility). Diagnosis based on: Hx of silent cervical dilation, recurrent T2 losses, prior cervical procedures. Proven benefit in women with primary structural cervical abnormality or connective tissue disorders. Cerclage is inferior to progesterone for preventing PTL in singletons not due to cervical incompetence.\n\nCervical cerclage mechanically reinforces the internal os. TVU of cervical length is recommended only for high-risk pregnancies before 28 weeks GA. Physical examination-indicated cerclage (for visible dilation) is associated with significant reductions in perinatal mortality and preterm birth. Progesterone is superior for cervical shortening without true incompetence."
+    difficulty: hard
+    tags: [cervical cerclage, cervical incompetence, preterm labour prevention, obstetrics]
+  - front: "What are the requirements (all must be satisfied) to use tocolysis in preterm labour?"
+    back: "Live, immature fetus; intact membranes; cervical dilatation <4 cm; absence of maternal or fetal contraindications.\n\nTocolysis does not stop PTL completely but may delay delivery up to 48 hours, allowing betamethasone (antenatal corticosteroids) to enhance fetal lung maturity and/or arrange transfer to a tertiary centre. It is not used when delivery is safer than continuation of pregnancy."
+    difficulty: medium
+    tags: [tocolysis, preterm labour, obstetrics]
+  - front: "List the contraindications to tocolysis."
+    back: "Maternal contraindications: bleeding (placenta previa or abruption), maternal disease (HTN, DM, heart disease), preeclampsia or eclampsia, chorioamnionitis. Fetal contraindications: erythroblastosis fetalis, severe congenital anomalies, fetal distress/demise, IUGR, multiple gestation (relative).\n\nIn these conditions, continuation of pregnancy is more dangerous than preterm delivery, making tocolysis inappropriate. Chorioamnionitis is an absolute contraindication because prolonging pregnancy risks overwhelming fetal and maternal sepsis."
+    difficulty: medium
+    tags: [tocolysis, contraindications, preterm labour, obstetrics]
+  - front: "What are the tocolytic agents used in preterm labour and their key dosing?"
+    back: "1. Nifedipine (calcium channel blocker): 20 mg PO loading → 20 mg PO 90 min later → 20 mg q3-8h for 72h (max 180 mg); or 10 mg PO q20 min x4 doses. 2. Indomethacin (prostaglandin synthesis inhibitor): for early PTL (<32 wk) or polyhydramnios; 50-100 mg PR loading → 25-50 mg q6h x8 doses for 48h. Absolute contraindication to nifedipine: maternal CHF, aortic stenosis.\n\nNifedipine relaxes smooth muscle by blocking L-type calcium channels in the myometrium. Indomethacin inhibits prostaglandin production, reducing uterine contractility; avoid after 32 weeks due to fetal ductal constriction risk. Both agents delay delivery by up to 48 hours but do not prevent PTL."
+    difficulty: hard
+    tags: [tocolysis, nifedipine, indomethacin, preterm labour, pharmacology, obstetrics]
+  - front: "What are the indications, dosing, and benefits of antenatal corticosteroids in preterm labour?"
+    back: "Betamethasone valerate (Celestone) 12 mg IM q24h x2 doses OR dexamethasone 6 mg IM q12h x4 doses. Given at 24–34+6 weeks GA if expected delivery within 7 days. Benefits: enhance fetal lung maturity; reduce perinatal death; reduce severe RDS, IVH, necrotizing enterocolitis, and neonatal sepsis. Specific contraindication: active TB.\n\nAntenatal corticosteroids are one of the most impactful interventions in preterm labour, reducing neonatal mortality by ~30%. At 22+0–23+6 weeks, multidisciplinary counselling is required and steroids considered if early intensive care is requested. Betamethasone is preferred in most Canadian centres."
+    difficulty: medium
+    tags: [antenatal corticosteroids, betamethasone, preterm labour, neonatal outcomes, obstetrics]
+  - front: "What is MgSO4 used for in preterm labour and what is the dosing?"
+    back: "MgSO4 is used for fetal neuroprotection: reduces the risk of cerebral palsy. Dose: 4 g IV bolus followed by 1 g/h infusion for at least 4 hours, given if imminent delivery is expected and GA is <33+6 weeks.\n\nMgSO4 neuroprotection is now standard of care at <34 weeks when preterm delivery is imminent. The mechanism is thought to involve stabilization of neuronal membranes and reduction of glutamate-mediated excitotoxicity. It is distinct from MgSO4 used for eclampsia prevention."
+    difficulty: medium
+    tags: [magnesium sulfate, neuroprotection, cerebral palsy, preterm labour, obstetrics]
+  - front: "What are the gestational age-based survival rates for preterm infants?"
+    back: "24 weeks GA: ~50% survival (may be higher in tertiary centres with level 3-4 NICU). 30 weeks GA or 1500 g: ~90% survival. 33 weeks GA or 2000 g: ~99% survival.\n\nThese benchmarks inform counselling and decision-making around tocolysis and delivery. Below 24 weeks, intensive care is often considered non-beneficial; the 22-24 week 'grey zone' requires individualized multidisciplinary discussion with parents. Improved NICU care continues to push viability thresholds lower."
+    difficulty: easy
+    tags: [prematurity, survival rates, NICU, neonatal outcomes, obstetrics]
+  - front: "What are the morbidities associated with prematurity?"
+    back: "Respiratory distress syndrome (RDS), intraventricular hemorrhage (IVH), apnea, feeding difficulties, seizures, asphyxia/hypoxia, sepsis, thermal instability, retinopathy of prematurity, bronchopulmonary dysplasia, necrotizing enterocolitis.\n\nPrematurity is the leading cause of perinatal morbidity and mortality. Each week of additional gestation significantly reduces the incidence of these complications. This drives the rationale for antenatal corticosteroids (reduces RDS, IVH, NEC) and MgSO4 (reduces cerebral palsy)."
+    difficulty: easy
+    tags: [prematurity, neonatal morbidity, RDS, IVH, NEC, obstetrics]
+  - front: "Define PROM, prolonged ROM, and PPROM."
+    back: "PROM: prelabour rupture of membranes (at any gestational age). Prolonged ROM: >18 hours elapsed between ROM and onset of labour. PPROM: preterm (before 37 weeks GA) prelabour rupture of membranes.\n\nThese definitions are critical for clinical management. PPROM before 34 weeks usually warrants expectant management with antibiotics to extend latency. Prolonged ROM (>18h) increases GBS transmission risk and is an indication for GBS prophylaxis if GBS status is unknown."
+    difficulty: easy
+    tags: [PROM, PPROM, prelabour rupture of membranes, obstetrics]
+  - front: "How is PROM/PPROM confirmed clinically?"
+    back: "Sterile speculum exam (avoid digital exam to minimize infection risk): pooling of fluid in posterior fornix; cascading (fluid leaking from cervix with cough/Valsalva); nitrazine test (amniotic fluid is basic — turns nitrazine paper blue, but low specificity as blood, urine, semen also positive); ferning (amniotic fluid crystallizes in fern pattern on microscopy). Decreased AFV on U/S.\n\nThe combination of pooling, cascading, ferning, and nitrazine is highly sensitive. Nitrazine alone is non-specific (false positives with blood, urine, semen). Ferning is more specific — amniotic fluid forms a fern pattern due to sodium chloride crystallization. U/S finding of oligohydramnios supports PROM."
+    difficulty: medium
+    tags: [PROM, diagnosis, nitrazine, ferning, speculum exam, obstetrics]
+  - front: "Outline the PROM management by gestational age."
+    back: "22-25 wk: individual consideration with parental counselling regarding risks of prematurity. 26-34 wk: expectant management (prematurity complications are significant). 34-36 wk ('grey zone'): risk of death from RDS equals risk of death from neonatal sepsis. ≥37 wk: induction of labour (risk of death from sepsis > risk from RDS).\n\nThe key decision point is when the risk of infection (chorioamnionitis, neonatal sepsis) exceeds the risk of prematurity. At ≥37 weeks, expectant management risks overwhelming sepsis without benefit. At 26-34 weeks, benefits of continued gestation outweigh infection risk with antibiotic prophylaxis."
+    difficulty: hard
+    tags: [PROM, PPROM, management, gestational age, obstetrics]
+  - front: "What antibiotics are recommended for PPROM, and which combination should be avoided?"
+    back: "Recommended options (from large PPROM RCTs): (1) Ampicillin 2g IV q6h + erythromycin 250mg IV q6h followed by amoxicillin + erythromycin orally; OR (2) Erythromycin 250mg orally for 10 days. Amoxicillin/clavulanic acid (co-amoxiclav) must NOT be used due to increased risk of necrotizing enterocolitis in neonates. Amoxicillin without clavulanic acid is safe.\n\nAntibiotics in PPROM extend the latency period (time from ROM to delivery), reducing chorioamnionitis and neonatal morbidity. The clavulanate component of co-amoxiclav has been specifically associated with NEC in neonates in the ORACLE trial — a critical Canadian licensing point."
+    difficulty: hard
+    tags: [PPROM, antibiotics, amoxicillin-clavulanate, NEC, obstetrics, pharmacology]
+  - front: "What are the complications of PROM?"
+    back: "Cord prolapse; intrauterine infection (chorioamnionitis); premature delivery; limb contracture; pulmonary hypoplasia (especially with very early GA PROM); maternal coagulopathy.\n\nPulmonary hypoplasia results from prolonged oligohydramnios (lack of amniotic fluid for fetal breathing movements) and is most severe with PROM before 22 weeks. Chorioamnionitis is the most common serious infectious complication and mandates urgent delivery regardless of gestational age."
+    difficulty: medium
+    tags: [PROM, complications, pulmonary hypoplasia, chorioamnionitis, obstetrics]
+  - front: "Define postterm pregnancy and state its management recommendation."
+    back: "Postterm pregnancy: >42 weeks GA (up to 27% reach 41 weeks; 5.5% exceed 42 weeks). Management: labour induction is recommended at 41+3 weeks GA if no contraindications to vaginal delivery.\n\nPostterm pregnancy carries 2-3x higher perinatal mortality due to progressive uteroplacental insufficiency. Canadian guidelines (SOGC) recommend induction at 41+3 weeks to prevent this excess mortality. Most cases are idiopathic; rare causes include placental sulfatase deficiency and anencephaly."
+    difficulty: medium
+    tags: [postterm pregnancy, labour induction, obstetrics, SOGC]
+  - front: "What are the complications of postterm pregnancy (>42 weeks)?"
+    back: "Perinatal mortality 2-3x higher (progressive uteroplacental insufficiency); intrauterine infection; asphyxia; meconium aspiration syndrome; placental insufficiency/ageing/infarction; macrosomia; dystocia; fetal distress; operative deliveries; pneumonia; seizures; NICU admission; stillbirth.\n\nThe post-mature placenta undergoes progressive degeneration, reducing oxygen and nutrient delivery. Oligohydramnios with cord compression and meconium passage into reduced amniotic fluid drives the increased risk. Macrosomia from prolonged nutrient delivery paradoxically coexists with uteroplacental insufficiency in late postterm."
+    difficulty: medium
+    tags: [postterm pregnancy, complications, meconium aspiration, macrosomia, obstetrics]
+  - front: "Define intrauterine fetal demise (IUFD) and state its incidence in Canada."
+    back: "IUFD: fetal demise in utero after 20 weeks GA (before 20 weeks = spontaneous abortion). Incidence: <1% of pregnancies; in 2021, there were 3,174 stillbirths in Canada.\n\nThe 20-week threshold distinguishes stillbirth from miscarriage in Canadian vital statistics and clinical practice. IUFD is increased in high-risk pregnancies (HTN, DM, APS, congenital anomalies). Approximately 50% are idiopathic; the remaining 50% have identifiable causes."
+    difficulty: easy
+    tags: [intrauterine fetal demise, stillbirth, epidemiology, Canada, obstetrics]
+  - front: "What investigations should be ordered after intrauterine fetal demise?"
+    back: "Maternal: HbA1c, fasting glucose, TSH, Kleihauer-Betke, VDRL, ANA, CBC, anticardiolipins, antibody screens, INR/PTT, serum/urine toxicology, cervical and vaginal cultures, TORCH screen. Fetal: karyotype, cord blood, skin biopsy, genetics evaluation, autopsy, amniotic fluid culture for CMV, parvovirus B19, herpes. Placenta: pathology, bacterial cultures.\n\nA systematic workup identifies the cause in ~50% of cases. APS (antiphospholipid syndrome — anticardiolipins, lupus anticoagulant) is an important and treatable cause. Kleihauer-Betke identifies fetomaternal hemorrhage. TORCH infections (Toxoplasma, Rubella, CMV, Herpes) are a key fetal cause."
+    difficulty: hard
+    tags: [intrauterine fetal demise, investigations, stillbirth workup, obstetrics]
+  - front: "How is intrauterine fetal demise managed, and what complication must be monitored?"
+    back: "IOL with vaginal misoprostol (Cytotec) for >20 weeks GA. Monitor for maternal coagulopathy (10% risk of DIC). Provide parental psychological care/bereavement support per hospital protocol. Comprehensive discussion within 3 months about investigation results and plans for future pregnancies.\n\nDIC risk in IUFD results from release of thromboplastin from degenerating fetal and placental tissue into the maternal circulation. Risk increases with time since fetal death. Serial fibrinogen, PT/PTT, and platelet counts guide blood product use. Misoprostol is preferred for cervical ripening and induction in IUFD."
+    difficulty: medium
+    tags: [intrauterine fetal demise, management, misoprostol, DIC, obstetrics]
+  - front: "Define IUGR and differentiate symmetric (Type I) from asymmetric (Type II) IUGR."
+    back: "IUGR: failure of a fetus to reach its biologically determined growth potential due to pathological factors. Symmetric (Type I, 25-30%): early onset, reduced growth of both head and abdomen; HC/AC ratio may be normal; associated with congenital anomalies or TORCH infections. Asymmetric (Type II, 70%): late onset; fetal abdomen disproportionately smaller than head (brain spared → HC/AC ratio increased); associated with placental insufficiency; more favourable prognosis.\n\nIn asymmetric IUGR, the fetus preferentially shunts blood to the brain (brain-sparing reflex), preserving head growth at the expense of liver glycogen and subcutaneous fat. This is detected by an increased HC/AC ratio. Symmetric IUGR affecting all organs suggests an early insult (chromosomal, infectious) before organ differentiation."
+    difficulty: hard
+    tags: [IUGR, symmetric IUGR, asymmetric IUGR, brain sparing, obstetrics]
+  - front: "What are the neonatal complications of IUGR?"
+    back: "Meconium aspiration; asphyxia; polycythemia; hypoglycemia; hypocalcemia; hypophosphatemia; hyponatremia; intellectual disability; greater risk of perinatal morbidity and mortality.\n\nChronic intrauterine hypoxia in IUGR stimulates erythropoietin release, causing polycythemia. Depleted glycogen stores cause hypoglycemia. IUGR fetuses have reduced stress tolerance during labour, increasing caesarean delivery rates. Long-term sequelae include Barker hypothesis cardiovascular and metabolic programming."
+    difficulty: medium
+    tags: [IUGR, neonatal complications, hypoglycemia, polycythemia, obstetrics]
+  - front: "How is IUGR investigated and managed?"
+    back: "Investigations: SFH at every visit; if high-risk or SFH lags >2 cm: U/S (BPD, HC/AC ratio, FL, EFW, AFV), BPP, Doppler umbilical cord blood flow analysis. Management: risk modification (smoking, alcohol, nutrition, treat maternal illness); serial BPP; delivery when extrauterine existence is less dangerous (abnormal function tests, absent growth, severe oligohydramnios) especially if >34 wk; betamethasone + MgSO4 if anticipated preterm delivery; IUGR fetuses are more likely to require CD.\n\nAbsent or reversed end-diastolic flow on umbilical Doppler indicates severe placental insufficiency and is a critical sign requiring urgent delivery. Serial monitoring allows timing of delivery to minimize prematurity while avoiding stillbirth from progressive placental failure."
+    difficulty: hard
+    tags: [IUGR, management, umbilical Doppler, BPP, obstetrics]
+  - front: "Define macrosomia and state the thresholds for planned caesarean delivery."
+    back: "Macrosomia: infant weight >90th percentile for GA or >4000 g. Planned CD is reasonable when: EFW >5000 g in non-diabetic patients; EFW >4500 g in diabetic patients.\n\nDiabetic macrosomia causes disproportionate shoulder and trunk growth (not head), increasing shoulder dystocia risk at lower birth weights than non-diabetic macrosomia. Ultrasound EFW has a ±10-20% error, so clinical judgment is required. Prevention focuses on glycemic control in diabetes and limiting excessive gestational weight gain."
+    difficulty: medium
+    tags: [macrosomia, shoulder dystocia, caesarean delivery, diabetes, obstetrics]
+  - front: "Define polyhydramnios and oligohydramnios by AFI and single deepest pocket (SDP) criteria."
+    back: "Polyhydramnios: AFI >25 cm OR single deepest pocket >8 cm. Oligohydramnios: AFI <5 cm OR single deepest pocket <2 cm.\n\nAFI (amniotic fluid index) sums the deepest fluid pockets in four uterine quadrants. The SDP method measures only the largest vertical pocket. Both methods are used; SDP may be preferred in multiple gestations. Amniotic fluid normally decreases after 35 weeks GA, and oligohydramnios is common in pregnancies >41 weeks (~12%)."
+    difficulty: easy
+    tags: [polyhydramnios, oligohydramnios, amniotic fluid index, obstetrics]
+  - front: "What are the causes of polyhydramnios?"
+    back: "Idiopathic (most common). Maternal: T1DM (abnormal transchorionic flow). Maternal-fetal: chorioangiomas, multiple gestation, fetal hydrops. Fetal: chromosomal anomaly (up to 2/3 of fetuses with severe polyhydramnios); CNS anomalies (anencephaly, hydrocephalus, meningocele); GI anomalies (TE fistula, duodenal atresia, facial clefts — interfere with swallowing); respiratory (cystic adenomatoid malformed lung); fetal demise/chronic hypoxemia.\n\nPolyhydramnios arises from either overproduction or impaired reabsorption of amniotic fluid. GI obstruction prevents fetal swallowing (a key route of fluid reabsorption). CNS anomalies impair the swallowing reflex. Chromosomal anomalies are found in up to 2/3 of severe cases, making genetic workup essential."
+    difficulty: medium
+    tags: [polyhydramnios, etiology, chromosomal anomaly, GI anomalies, obstetrics]
+  - front: "What are the causes of oligohydramnios?"
+    back: "Idiopathic (most common). Maternal: uteroplacental insufficiency (preeclampsia, nephropathy); medications (ACE inhibitors). Fetal: congenital urinary tract anomalies (renal agenesis/bilateral agenesis = Potter sequence, obstruction, posterior urethral valves); fetal demise/chronic hypoxemia (blood shunted away from kidneys to brain). IUGR. Ruptured membranes (prolonged amniotic fluid leak). Amniotic fluid normally decreases after 35 weeks.\n\nFetal urine is the primary source of amniotic fluid after 16 weeks. Renal agenesis (Potter sequence) → absent urine production → severe oligohydramnios → pulmonary hypoplasia + limb deformities. ACE inhibitors are teratogenic in T2/T3, causing renal tubular dysgenesis and oligohydramnios — a critical prescribing safety point."
+    difficulty: hard
+    tags: [oligohydramnios, etiology, Potter sequence, renal agenesis, ACE inhibitors, obstetrics]
+  - front: "What are the obstetrical complications of polyhydramnios vs. oligohydramnios?"
+    back: "Polyhydramnios: cord prolapse, placental abruption, malpresentation, PTL, uterine dysfunction, PPH (uterine atony from overdistension); maternal pressure symptoms (dyspnea, edema, hydronephrosis). Oligohydramnios: cord compression; pulmonary hypoplasia (late onset); fetal anomalies (15-25%); amniotic fluid bands (T1) → Potter facies, limb deformities, abdominal wall defects; marker for infants who may not tolerate labour well.\n\nOver-distension in polyhydramnios leads to uterine atony and PPH. The large fluid volume allows cord prolapse with membrane rupture. Oligohydramnios removes the cushioning effect around the cord, causing compression during labour contractions — a sign of fetal compromise on CTG (variable decelerations)."
+    difficulty: hard
+    tags: [polyhydramnios, oligohydramnios, complications, cord prolapse, cord compression, obstetrics]
+  - front: "How is severe polyhydramnios managed?"
+    back: "Determine underlying cause; screen for maternal disease/infection; complete fetal U/S evaluation. Mild-to-moderate: no treatment required. Severe: hospitalize and consider therapeutic amniocentesis (decompression). Prognosis: 2-5 fold increase in perinatal mortality risk.\n\nTherapeutic amnioreduction relieves maternal pressure symptoms and may reduce preterm labour from uterine overdistension. Addressing the underlying cause (e.g., glycemic control in T1DM) is paramount. Chromosomal anomaly workup is important given the high association in severe cases."
+    difficulty: medium
+    tags: [polyhydramnios, management, therapeutic amniocentesis, obstetrics]
+  - front: "What is antenatal depression, its incidence, and first-line treatment?"
+    back: "Major depression occurring during pregnancy (onset may pre-date pregnancy). Incidence: 7-9% of pregnancies. Screening: 10-item Edinburgh Postnatal Depression Scale (most widely used). First-line treatment for mild-to-moderate cases without prior MDD history: structured psychotherapy. Antidepressants + psychotherapy ± ECT for: severe features, psychosis, catatonia, high suicide risk, food/fluid refusal.\n\nAntenatal depression is associated with adverse pregnancy outcomes (preterm birth, IUGR), abnormal infant development, and increased risk of postpartum depression and conversion to bipolar disorder. Screening at the first antenatal visit is recommended. SSRIs are generally considered safe in pregnancy when benefits outweigh risks."
+    difficulty: medium
+    tags: [antenatal depression, Edinburgh scale, psychotherapy, screening, obstetrics, psychiatry]
+  - front: "What are the risk factors for antenatal depression?"
+    back: "Prior history of depression or anxiety; unintended or unwanted pregnancy; life stress; intimate partner violence or history of abuse; poor social support; chronic medical conditions (especially hypothyroidism).\n\nHypothyroidism is specifically highlighted as a risk factor for antenatal depression — thyroid function testing (TSH) is warranted in at-risk patients. Screening with the Edinburgh Postnatal Depression Scale (also validated antenatally) should be done for all pregnant women at the first prenatal visit per SOGC guidelines."
+    difficulty: easy
+    tags: [antenatal depression, risk factors, hypothyroidism, obstetrics]
+  - front: "State the incidence and chorionicity features of twin pregnancies."
+    back: "Twins: 1 in 80; triplets: 1 in 6400 in North America. 2/3 of twins are dizygotic (fraternal). Monozygous twinning occurs at a constant rate worldwide (1 in 250). Risk factors for dizygotic twins: IVF, increased maternal age, newly discontinued OCP, ethnicity. Chorionicity must be determined by U/S within T1 (ideally 8-12 weeks).\n\nChorionicity (number of placentas) is the most important prognostic factor in twin pregnancies. Monochorionic twins share a placenta and are at risk for twin-twin transfusion syndrome (TTTS). Chorionicity determination is most accurate in T1 (lambda sign = dichorionic; T-sign = monochorionic)."
+    difficulty: medium
+    tags: [multiple gestation, twins, chorionicity, zygosity, obstetrics]
+  - front: "What are the maternal complications of multiple gestation?"
+    back: "Hyperemesis gravidarum; gestational HTN; anemia; increased physiological stress on all systems; increased compressive symptoms; thrombosis; postpartum depression.\n\nMultiple gestation doubles or triples the physiological demands of pregnancy. The higher circulating blood volume and uterine size increase preeclampsia risk 3-fold. Uterine overdistension predisposes to PTL, malpresentation, PPH from atony, and cord prolapse."
+    difficulty: medium
+    tags: [multiple gestation, maternal complications, twins, obstetrics]
+  - front: "What is twin-twin transfusion syndrome (TTTS), what is its incidence, and how is it treated?"
+    back: "TTTS: placental intertwin vascular anastomoses cause arterial blood from donor twin to pass into veins of recipient twin. Occurs in 10% of monochorionic twins; concern if >30% EFW discordance. Donor: IUGR, hypovolemia, hypotension, anemia, oligohydramnios. Recipient: hypervolemia, HTN, CHF, polycythemia, edema, polyhydramnios, kernicterus. Treatment: fetoscopic laser ablation of placental anastomoses (preferred 16-26 weeks GA); therapeutic serial amniocentesis; intrauterine blood transfusion to donor if necessary.\n\nTTTS is the most serious complication specific to monochorionic twins. Without treatment, mortality is >80%. Fetoscopic laser coagulation (Nd:YAG laser) is the preferred treatment between 16-26 weeks as it addresses the underlying vascular connections, achieving survival in ~75% of cases."
+    difficulty: hard
+    tags: [twin-twin transfusion syndrome, TTTS, monochorionic twins, fetoscopic laser, obstetrics]
+  - front: "What are the types of breech presentation and their relative frequencies?"
+    back: "Frank breech (60%): hips flexed, knees extended — buttocks at cervix; most common type; most common to be delivered vaginally. Complete breech (10%): hips and knees both flexed. Incomplete/footling breech (30%): both or one hip partially flexed with feet or knees presenting first. Overall incidence: 3-4% at term (25% at <28 weeks GA).\n\nMost fetuses are breech in early pregnancy and convert to vertex by 36 weeks. Frank breech is the most favourable for vaginal delivery as the presenting part is uniformly firm. Footling breech carries the highest risk of cord prolapse and is generally a contraindication to vaginal delivery."
+    difficulty: medium
+    tags: [breech presentation, frank breech, complete breech, footling breech, obstetrics]
+  - front: "What are the criteria for vaginal breech delivery?"
+    back: "Complete or frank breech at ≥36 weeks GA; EFW 2500-3800 g (5.5-8.5 lb) based on clinical and U/S assessment; adequate pelvis; continuous fetal monitoring; two experienced obstetricians, assistant, and anesthetist present; ability to perform emergency CD within 30 minutes if required; mother motivated and understands risks and benefits.\n\nThe Term Breech Trial (2000) shifted most centres toward routine CD for breech. However, SOGC acknowledges that vaginal breech delivery remains an acceptable option in experienced centres when strict criteria are met. External cephalic version (ECV) at 36-37 weeks should be offered first to all eligible women."
+    difficulty: hard
+    tags: [breech presentation, vaginal breech delivery, caesarean delivery, criteria, obstetrics]
+  - front: "What is the Kleihauer-Betke test used for in obstetrics?"
+    back: "The Kleihauer-Betke test quantifies fetal cells in the maternal circulation (fetomaternal hemorrhage). It is used to: (1) determine the extent of fetomaternal transfusion and guide Rhogam dosing in Rh-negative women; (2) may help confirm placental abruption (not diagnostic); (3) part of the IUFD workup to detect large fetomaternal hemorrhage as a cause.\n\nFetal RBCs resist acid elution (due to HbF) and appear as bright pink cells on an acid-eluted smear, while adult RBCs appear as ghost cells. Flow cytometry is an alternative. The standard 300 mcg Rhogam dose covers 30 mL of fetal blood; larger hemorrhages require proportionally higher doses calculated from the Kleihauer-Betke result."
+    difficulty: hard
+    tags: [Kleihauer-Betke, fetomaternal hemorrhage, Rhogam, abruption, IUFD, obstetrics]
+  - front: "What is the role of progesterone in preventing preterm labour, and what is the recommended dosing?"
+    back: "Progesterone maintains uterine quiescence (exact mechanism unclear). Indicated if cervical length <25 mm at <24 weeks GA: 200 mg vaginally once daily from diagnosis to 36 weeks. If risk factors or history of PTL: start vaginally at 16-20 weeks GA. Superior to cerclage for preventing PTL in singletons without cervical incompetence.\n\nVaginal progesterone is the first-line intervention for cervical shortening without frank incompetence. It reduces preterm birth before 34 weeks in women with short cervix by approximately 45%. The mechanism may involve reducing gap junction formation, inhibiting prostaglandin production, and blocking oxytocin receptor expression."
+    difficulty: medium
+    tags: [progesterone, preterm labour prevention, cervical length, obstetrics]
+  - front: "Why should amoxicillin-clavulanic acid (Augmentin) NOT be used in PPROM?"
+    back: "Amoxicillin-clavulanic acid is contraindicated in PPROM because of an increased risk of necrotizing enterocolitis (NEC) in neonates, demonstrated in the ORACLE I trial. Amoxicillin alone (without clavulanic acid) is safe.\n\nThe ORACLE I trial showed that while antibiotics in PPROM reduce chorioamnionitis and extend latency, co-amoxiclav was associated with a significantly higher rate of NEC in neonates. The clavulanate component is believed to disrupt the neonatal gut microbiome. This is a key prescribing safety point tested on the MCCQE1."
+    difficulty: hard
+    tags: [PPROM, antibiotics, amoxicillin-clavulanate, NEC, contraindication, pharmacology, obstetrics]
+  - front: "What are the mode of delivery recommendations for twin pregnancies based on chorionicity?"
+    back: "Dichorionic diamniotic or monochorionic diamniotic twins: may attempt vaginal delivery if twin A is vertex and growth discordance <25% (otherwise CD). 40-50% of twin deliveries are by CD; 10% of cases have twin A vaginally and twin B by CD. Monochorionic monoamniotic (MCMA) twins: all must be delivered by CD.\n\nMCMA twins have a single amniotic cavity, creating risk of cord entanglement and interlocking — making CD mandatory. For other twin types, vaginal delivery is feasible when twin A presents cephalic. If twin B becomes non-cephalic after delivery of twin A, internal podalic version and breech extraction are options."
+    difficulty: medium
+    tags: [twin delivery, caesarean delivery, monochorionic monoamniotic, chorionicity, obstetrics]
+  - front: "What is Sheehan syndrome and which obstetric conditions cause it?"
+    back: "Sheehan syndrome (pituitary necrosis): ischemic necrosis of the anterior pituitary gland due to severe postpartum hemorrhage and hypovolemic shock. The enlarged pituitary gland of pregnancy is particularly susceptible to ischemia. Associated obstetric conditions: placenta previa, placental abruption, and any cause of massive obstetric hemorrhage.\n\nThe pituitary gland enlarges during pregnancy due to lactotroph hyperplasia, making it vulnerable to ischemia during severe hypotension. Clinical features of Sheehan syndrome include failure of lactation (first sign — loss of prolactin), amenorrhea, hypothyroidism, adrenal insufficiency, and diabetes insipidus — presenting months to years later."
+    difficulty: hard
+    tags: [Sheehan syndrome, pituitary necrosis, obstetric hemorrhage, placenta previa, placental abruption, obstetrics]
+  - front: "A 28-year-old G2P1 at 30 weeks presents with painless bright red vaginal bleeding. She had a prior uterine surgery. What is the most likely diagnosis and what complication must be specifically anticipated?"
+    back: "Most likely diagnosis: placenta previa (painless bleeding is the hallmark). With prior uterine surgery and anterior placenta previa, the most important anticipated complication is placenta accreta spectrum (morbidly adherent placenta), which may require hysterectomy. Transvaginal U/S is the investigation of choice. Rhogam if Rh-negative.\n\nPainless antepartum bleeding in T3 is placenta previa until proven otherwise. Prior uterine incision creates a decidua basalis defect that the placenta invades (accreta), penetrates (increta), or perforates through (percreta). This risk increases with each additional uterine surgery. Planning in a centre with interventional radiology and blood bank support is critical."
+    difficulty: hard
+    tags: [placenta previa, placenta accreta, antepartum hemorrhage, clinical scenario, obstetrics]
+  - front: "A 32-week pregnant woman presents with sudden onset severe abdominal pain, uterine rigidity, and fetal bradycardia. Her blood pressure is 80/50 mmHg with minimal vaginal bleeding. What is the diagnosis and what blood product should be prepared?"
+    back: "Diagnosis: concealed placental abruption (internal/occult abruption — shock disproportionate to visible blood loss, uterine rigidity, fetal distress). Blood products to prepare: red blood cells, platelets, cryoprecipitate (for DIC) — DIC occurs in 20% of abruptions, and abruption is the most common cause of DIC in pregnancy.\n\nThe concealed nature explains why shock is disproportionate to visible bleeding. The uterus is hypertonic because the retroplacental hematoma causes sustained tension. Fibrinogen is the first clotting factor to fall in obstetric DIC — cryoprecipitate is the most efficient fibrinogen replacement. Emergency CD is indicated given fetal distress."
+    difficulty: hard
+    tags: [placental abruption, concealed abruption, DIC, clinical scenario, obstetrics]
+  - front: "What is the definition of an episiotomy and what are the two main types?"
+    back: "An episiotomy is an incision in the perineal body at the time of delivery — essentially a controlled 2nd degree laceration. Types: (1) Midline: incision through central tendinous portion of perineal body — heals better but increases risk of extension to 3rd/4th degree tear. (2) Mediolateral: incision at 60° from midline through bulbocavernosus, superficial transverse perineal, and levator ani muscles — reduces risk of extensive tear but more painful.\n\nMidline episiotomies are easier to repair and heal better but carry higher risk of sphincter injury (3rd/4th degree tears). Mediolateral (preferred in many Canadian centres) reduces severe perineal trauma. Current evidence (restricted use) favours allowing perineum to tear naturally and repair as needed rather than routine episiotomy."
+    difficulty: easy
+    tags: [obstetrics, episiotomy, perineal laceration, delivery]
+  - front: "What does current evidence recommend regarding episiotomy use during vaginal delivery?"
+    back: "Current evidence supports RESTRICTED use of episiotomy — it is preferable to let the perineum tear naturally and repair as needed rather than routine episiotomy. Episiotomy should be reserved for specific indications such as unyielding perineum obstructing delivery, expediting delivery (abnormal FHR), or instrumental delivery.\n\nCochrane reviews and SOGC guidelines support selective/restricted use. Routine episiotomy does not prevent severe perineal trauma and increases morbidity. Mediolateral episiotomy is preferred when an episiotomy is needed to reduce sphincter injury risk."
+    difficulty: easy
+    tags: [obstetrics, episiotomy, evidence-based medicine, delivery]
+  - front: "What are the complications of episiotomy?"
+    back: "Infection, hematoma, pain, extension into anal musculature or rectal mucosa (3rd/4th degree tear), fistula formation, and incontinence (fecal or urinary).\n\nExtension into anal sphincter (3rd degree) or rectal mucosa (4th degree) is the most serious complication and is more common with midline episiotomy. Fistula formation between rectum and vagina is rare but devastating."
+    difficulty: easy
+    tags: [obstetrics, episiotomy, complications]
+  - front: "What is the overall rate of Caesarean delivery (CD) in Canada and what are the main indications?"
+    back: "Overall CD rate in Canada is approximately 28% (range 18.5–35.3% by province/territory). Indications: Maternal — obstruction (fibroids), active herpetic vulvar lesion, invasive cervical cancer, previous uterine surgery (most common), eclampsia, HELLP, heart disease. Maternal-fetal — failure to progress, placental abruption/previa, vasa previa. Fetal — abnormal FHR, malpresentation, cord prolapse, certain congenital anomalies, some multiple gestations.\n\nPrevious CD is the most common indication for repeat CD. Active genital herpes at time of labour is a maternal indication because of risk of neonatal herpes transmission. Canada's CD rate has risen substantially over recent decades."
+    difficulty: easy
+    tags: [obstetrics, caesarean delivery, indications]
+  - front: "What are the two main skin incision types for Caesarean delivery and their advantages/disadvantages?"
+    back: "1) Transverse (e.g., Pfannenstiel or Joel-Cohen): decreased abdominal exposure but improved strength, cosmesis, and reduced pain. 2) Vertical midline: rapid peritoneal entry and increased exposure (e.g., large fibroids, emergency), but increased risk of dehiscence.\n\nPfannenstiel is the standard for elective and most emergency CDs. Vertical midline is reserved for obese patients, massive fibroids, or situations requiring rapid access (e.g., maternal cardiac arrest). Joel-Cohen (higher, more transverse) is associated with less blood loss and faster recovery than Pfannenstiel."
+    difficulty: easy
+    tags: [obstetrics, caesarean delivery, surgical technique]
+  - front: "What are the three types of uterine incisions for Caesarean delivery and when is each used?"
+    back: "1) Low transverse (most common): in non-contractile lower uterine segment — decreased chance of rupture in subsequent pregnancies. 2) Low vertical: for very preterm infants or poorly developed lower uterine segment. 3) Classical (rare): in thick, contractile upper segment — used for transverse lie with fetal back down, preterm breech, fetal anomaly, >2 fetuses, lower segment adhesions, obstructing fibroid, morbid obesity.\n\nLow transverse incision is standard as it heals well and permits TOLAC. Classical incision carries ~6% rupture risk in subsequent pregnancies (vs. 0.47% for low transverse) and is a contraindication to TOLAC. Low vertical may extend upward into the contractile segment."
+    difficulty: medium
+    tags: [obstetrics, caesarean delivery, uterine incision, TOLAC]
+  - front: "What prophylactic antibiotic should be given for Caesarean delivery and what is the dosing?"
+    back: "Cefazolin: 2 g IV if <120 kg, 3 g IV if ≥120 kg. Should be administered as a single dose approximately 30–60 minutes prior to skin incision.\n\nProphylactic antibiotics significantly reduce the risk of post-CD endometritis and wound infection. Weight-based dosing ensures adequate tissue concentrations in obese patients. This is a SOGC-endorsed practice aligned with ACOG guidelines."
+    difficulty: easy
+    tags: [obstetrics, caesarean delivery, antibiotic prophylaxis, cefazolin]
+  - front: "What are the risks/complications of Caesarean delivery?"
+    back: "Anesthetic complications (aspiration), hemorrhage (~1000 mL blood loss), infection (UTI, wound, endometritis), injury to surrounding structures (bowel, bladder, ureter, uterus), thromboembolism (DVT, PE), increased recovery time/hospital stay, maternal mortality (<0.1%), subsequent placenta accreta spectrum.\n\nPlacenta accreta spectrum is an increasingly important long-term complication of prior CD — risk increases with each subsequent CD. Compared to vaginal delivery, CD carries higher short-term maternal morbidity but may be necessary for maternal or fetal indications."
+    difficulty: easy
+    tags: [obstetrics, caesarean delivery, complications]
+  - front: "What is TOLAC and who should be offered it? What is the success rate?"
+    back: "Trial of Labour after Caesarean (TOLAC) should be recommended to patients with no contraindications after a previous low transverse uterine incision. Success rate varies with indication for previous CD, generally 60–80%. Risk of uterine rupture is 0.47% with prior low transverse incision; increased by inter-delivery interval <18 months and oxytocin use.\n\nSOGC and ACOG recommend offering TOLAC as the relative risk of maternal death is actually higher with elective repeat CD than TOLAC, though absolute risks are low for both. Successful TOLAC (VBAC) avoids the morbidity of repeat surgery."
+    difficulty: medium
+    tags: [obstetrics, TOLAC, VBAC, uterine rupture]
+  - front: "What are the contraindications to TOLAC (Trial of Labour after Caesarean)?"
+    back: "1) Previous classical, inverted-T, or unknown uterine incision, or complete transection of uterus (6% rupture risk). 2) Any contraindication to vaginal birth (e.g., placenta previa). 3) Inadequate facilities or personnel for emergency CD.\n\nThe type of previous uterine incision is the key determinant of TOLAC eligibility. Classical incision carries ~6% rupture risk making TOLAC unsafe. Unknown scar type is treated as classical. Facilities must be capable of performing emergency CD within 30 minutes (the 'decision to incision' standard)."
+    difficulty: medium
+    tags: [obstetrics, TOLAC, contraindications, uterine rupture]
+  - front: "What is the definition of postpartum hemorrhage (PPH)?"
+    back: "Loss of >1000 mL of blood after CD, >500 mL after vaginal delivery, OR bleeding associated with signs/symptoms of hypovolemia within 24 hours of the birthing process regardless of mode of delivery. Primary PPH: within first 24 h. Secondary PPH: after 24 h but within first 12 weeks postpartum.\n\nThe updated definition aligns with SOGC Guideline No. 431 (2022). Clinical signs of hypovolemia are used when blood loss estimation is difficult. Incidence is 5–15%. PPH remains a leading cause of maternal mortality globally."
+    difficulty: easy
+    tags: [obstetrics, postpartum hemorrhage, PPH, definition]
+  - front: "What are the 4 Ts of postpartum hemorrhage etiology?"
+    back: "1) Tone (uterine atony) — most common cause (>80%): overdistended uterus, muscle exhaustion, distortion, infection, or bladder distension. 2) Tissue — retained placental products, blood clots, GTN, abnormal placentation (accreta). 3) Trauma — laceration, episiotomy, hematoma, uterine rupture, inversion. 4) Thrombin — coagulopathy (hemophilia, DIC, ITP, TTP, VWD, therapeutic anticoagulation).\n\nUterine atony accounts for >80% of PPH. Active management of the 3rd stage (oxytocin + uterine massage + cord traction) prevents atony. Late PPH (>24h) is most commonly due to retained products of conception or endometritis."
+    difficulty: easy
+    tags: [obstetrics, postpartum hemorrhage, 4Ts, uterine atony]
+  - front: "What is active management of the third stage of labour and why is it important?"
+    back: "Active management involves three components: 1) Oxytocin administration (10 IU IM preferred for low-risk vaginal deliveries). 2) Uterine massage. 3) Umbilical cord traction for placental delivery. This approach prevents uterine atony — the most common cause of PPH (>80%).\n\nSOGC Clinical Practice Guideline No. 235 supports active management of the third stage. Oxytocin is the uterotonic of choice. Studies show active management reduces PPH incidence compared to expectant management."
+    difficulty: easy
+    tags: [obstetrics, third stage, PPH prevention, oxytocin, active management]
+  - front: "What is the initial management of postpartum hemorrhage?"
+    back: "ABCs, call for help. 2 large bore IVs, run crystalloids wide open. Labs: CBC, coagulation profile, fibrinogen, cross and type packed RBCs. Foley catheter to empty bladder and monitor urine output. Treat underlying cause (based on 4 Ts).\n\nRapid resuscitation and identifying the cause are simultaneous priorities. Red-top tube clot test: no clot in 7–10 minutes indicates coagulopathy. Massive transfusion protocol should be activated for severe hemorrhage with a 1:1:1 ratio of RBCs:FFP:platelets."
+    difficulty: medium
+    tags: [obstetrics, PPH management, resuscitation]
+  - front: "What are the medical therapies for uterine atony causing PPH?"
+    back: "1) Oxytocin 10 IU IM (preferred low-risk vaginal) or IV infusion 20–40 IU in 1000 mL at 150 mL/h. 2) Carbetocin 100 µg IV bolus over 1 min for elective CD or 100 µg IM for vaginal delivery with ≥1 PPH risk factor. 3) Methylergonovine (Ergotamine®) 0.25 mg IM/slow IV q2h (contraindicated in HTN). 4) Carboprost (Hemabate®) 250 µg IM/IMM q15 min, max 2 mg (contraindicated in asthma, CV, renal, hepatic disease). 5) Misoprostol 600–800 µg PO/SL or PR/PV. 6) Tranexamic acid 1 g IV.\n\nCarbetocin is a long-acting oxytocin analogue used as a single dose for elective CD, avoiding need for continuous infusion. Methylergonovine causes vasoconstriction — contraindicated in hypertension. Carboprost (PGF2α) is highly effective but has major side effects. Tranexamic acid is an antifibrinolytic that reduces mortality from PPH."
+    difficulty: hard
+    tags: [obstetrics, PPH, uterotonic, oxytocin, carboprost, tranexamic acid]
+  - front: "What local/mechanical control measures are used for uterine atony in PPH?"
+    back: "1) Bimanual uterine massage (elevate and compress uterus through abdomen). 2) Uterine packing (mesh with antibiotic treatment). 3) Bakri Balloon tamponade — slows hemorrhage, allows time for coagulopathy correction or OR preparation. 4) Manual removal if retained placenta.\n\nBakri balloon is particularly useful as a temporizing measure. The intrauterine balloon is inflated with 250–500 mL saline. If balloon + medical therapy fails, surgical intervention is required."
+    difficulty: medium
+    tags: [obstetrics, PPH, uterine atony, Bakri balloon, bimanual massage]
+  - front: "What surgical options are available for intractable PPH due to uterine atony?"
+    back: "1) Embolization of uterine artery or internal iliac artery (interventional radiology). 2) Laparotomy with bilateral uterine artery ligation or internal iliac artery ligation + compression sutures (B-Lynch or Cho sutures). 3) Hysterectomy (last resort) — with angiographic embolization if post-hysterectomy bleeding.\n\nB-Lynch suture compresses the uterus longitudinally to reduce blood flow; fertility-preserving. Hysterectomy is definitive but means permanent loss of fertility. Uterine artery embolization is minimally invasive and preserves uterus but requires IR capability."
+    difficulty: hard
+    tags: [obstetrics, PPH, surgical management, B-Lynch, hysterectomy, embolization]
+  - front: "What is retained placenta and how is it defined and managed?"
+    back: "Definition: Placenta undelivered after 30 minutes postpartum. Causes: trapped/incarcerated placenta (behind partially closed cervix), placenta adherens (adherent to wall), or abnormal implantation (accreta/increta/percreta). Management: 2 large bore IVs, type & screen; Brandt maneuver (cord traction + suprapubic counterpressure); oxytocin 10 IU in 20 mL NS into umbilical vein; manual removal if above fails; D&C (U/S guided); cefazolin 2 g IV if manual removal or D&C.\n\nThe Brandt maneuver prevents uterine inversion by supporting the uterus at the suprapubic level while applying cord traction. Placenta accreta spectrum may require hysterectomy. Risk factors include placenta previa, prior CD, prior curettage."
+    difficulty: medium
+    tags: [obstetrics, retained placenta, Brandt maneuver, PPH]
+  - front: "What is uterine inversion and how is it managed?"
+    back: "Definition: Inversion of the uterus through the cervix ± vaginal introitus. Often iatrogenic (excessive cord traction with fundal placenta). Epidemiology: 1 in 1500–2000 deliveries; more common in grand multiparous women. Features: profound vasovagal response — bradycardia, vasodilation, hypovolemic shock disproportionate to blood loss. Management: urgent — call anesthesia, ABCs + IV crystalloids; tocolytic or nitroglycerin IV to relax uterus; replace uterus WITHOUT removing placenta first; then manually remove placenta and withdraw slowly; oxytocin IV ONLY after uterus replaced; re-explore uterus; may require GA + laparotomy.\n\nThe key teaching point is to NOT remove the placenta before replacing the uterus — doing so increases blood loss and makes replacement more difficult. Oxytocin before replacement would contract cervix and trap the inverted uterus. Nitroglycerin is the fastest-acting uterine relaxant."
+    difficulty: hard
+    tags: [obstetrics, uterine inversion, PPH, emergency obstetrics]
+  - front: "What is the definition of postpartum fever?"
+    back: "Fever >38°C on any two of the first 10 days postpartum, EXCEPT the first day (day 1 excluded due to normal physiologic response to delivery).\n\nThis is a clinical definition used to trigger investigation and treatment of puerperal infections. The exclusion of day 1 avoids over-diagnosing fever from the stress of delivery itself."
+    difficulty: easy
+    tags: [obstetrics, postpartum fever, puerperal fever, definition]
+  - front: "What is the mnemonic for causes of postpartum fever and list the causes?"
+    back: "Mnemonic: The '5 Ws' or 'B-5W': Breast (engorgement, mastitis), Wound (episiotomy, CD site infection), Walking (DVT, thrombophlebitis), Womb (endometritis), Wind (atelectasis, pneumonia) + UTI. Key causes: endometritis (most common), wound infection, mastitis/breast engorgement, UTI, atelectasis/pneumonia, DVT/pelvic thrombophlebitis.\n\nEndometritis is the most common cause of significant postpartum fever. Timing helps distinguish causes: breast engorgement (day 3–4), wound infection (day 5+), endometritis (day 2–5). Pelvic thrombophlebitis should be considered if fever persists despite adequate antibiotic therapy."
+    difficulty: easy
+    tags: [obstetrics, postpartum fever, endometritis, mastitis, 5Ws]
+  - front: "How is postpartum endometritis treated?"
+    back: "Treatment depends on severity: oral antibiotics if well; IV antibiotics with hospitalization for moderate-to-severe cases (ensure no retained products of conception). Empiric IV: clindamycin + gentamicin/tobramycin. Risk factors: CD, intrapartum chorioamnionitis, prolonged labour, prolonged ROM, multiple vaginal exams. Prophylaxis: cefazolin 2–4 g IV (based on BMI) 30 min prior to skin incision for CD.\n\nClindamycin + gentamicin covers the polymicrobial flora of postpartum endometritis (including anaerobes and GBS). Failure to improve on this regimen should prompt consideration of pelvic abscess or resistant organisms. Ruling out RPOC (retained products) is critical."
+    difficulty: medium
+    tags: [obstetrics, endometritis, postpartum infection, clindamycin, gentamicin]
+  - front: "Compare lactational vs. non-lactational mastitis."
+    back: "Lactational: more common; often 2–3 wk postpartum; caused by S. aureus; unilateral localized pain, tenderness, erythema; treatment = heat/ice packs + continue nursing/pumping + cloxacillin/cephalexin; abscess requires I&D + IV antibiotics (nafcillin/oxacillin). Non-lactational (periductal mastitis): most common type in non-lactating; mean age 32 yr; may be sterile or S. aureus/anaerobes; smoking is risk factor; subareolar pain, possible subareolar mass, nipple inversion, variable discharge; treatment = broad-spectrum antibiotics + I&D; total duct excision is definitive; may develop mammary duct fistula.\n\nPeriductal mastitis is associated with smoking and mammary duct ectasia. It tends to recur and may require total duct excision. Must rule out inflammatory breast carcinoma. Non-lactational abscess tends to recur more than lactational abscess."
+    difficulty: medium
+    tags: [obstetrics, mastitis, lactational mastitis, non-lactational mastitis]
+  - front: "What is the antibiotic of choice for lactational mastitis and what if penicillin-allergic?"
+    back: "First-line: cloxacillin OR cephalexin. If penicillin-allergic: erythromycin. For abscess requiring hospitalization: nafcillin or oxacillin IV + incision and drainage (I&D).\n\nS. aureus (including occasionally MRSA) is the predominant pathogen in lactational mastitis. Cloxacillin/cephalexin cover penicillinase-producing S. aureus. Continued breastfeeding or pumping from the affected breast is recommended to prevent engorgement and worsening."
+    difficulty: easy
+    tags: [obstetrics, mastitis, antibiotics, cloxacillin]
+  - front: "Define postpartum blues, postpartum depression, and postpartum psychosis and distinguish them."
+    back: "Blues: onset day 3–10 postpartum; 40–80% of mothers; self-limited — resolves within 2 weeks; mood lability, tearfulness, anxiety, irritability, poor concentration — normal hormonal adjustment. PPD: major depression within 6 months of childbirth; 10–15%; risk of recurrence 50%; suspect if blues last >2 wk or severe symptoms (disinterest in baby, suicidal/infanticidal ideation); treat with antidepressants, psychotherapy, ECT if refractory. Postpartum Psychosis: acute psychosis within first 2 weeks (can last months); rare (0.2%); 50% recurrence in next pregnancy; psychiatric emergency — risk of infanticide; treat with hospitalization, mood stabilizer, antipsychotics.\n\nEdinburgh Postnatal Depression Scale (EPDS) is the validated screening tool for PPD in Canada. Bipolar disorder and prior psychotic illness are major risk factors for postpartum psychosis. Postpartum psychosis is a psychiatric emergency requiring immediate hospitalization."
+    difficulty: medium
+    tags: [obstetrics, postpartum depression, postpartum blues, postpartum psychosis, mental health]
+  - front: "What are the risk factors for postpartum depression (PPD)?"
+    back: "Personal or family history of depression (including PPD), prenatal depression or anxiety, stressful life situation, poor support system, unwanted pregnancy, colicky or sick infant. Recurrence risk is 50%.\n\nPPD affects 10–15% of new mothers and is likely underdiagnosed. Screening with the Edinburgh Postnatal Depression Scale (EPDS) is recommended routinely in Canada. PPD interferes with mother-infant bonding and may have long-term effects on child development."
+    difficulty: easy
+    tags: [obstetrics, postpartum depression, risk factors, EPDS]
+  - front: "What is the epidemiology and treatment of postpartum psychosis?"
+    back: "Epidemiology: rare (0.2%), but 50% recurrence risk in next pregnancy. Increased risk with bipolar disorder, schizoaffective disorder, schizophrenia, other psychotic illness, or personal/family history of postpartum psychosis. Treatment: psychiatric emergency (risk of infanticide) — typically requires hospitalization, mood stabilizer, and antipsychotics.\n\nPostpartum psychosis usually presents within the first 2 weeks postpartum with rapid onset of psychotic symptoms — hallucinations, delusions, disorganized thinking. The risk of harm to self or infant necessitates immediate psychiatric assessment and usually inpatient care."
+    difficulty: medium
+    tags: [obstetrics, postpartum psychosis, psychiatric emergency, bipolar]
+  - front: "What are the 10 Bs of postpartum office visit care?"
+    back: "1) Be careful (no douches/tampons 4–6 wk). 2) Be fit (walking, Kegel exercises). 3) Birth control assessment. 4) Breastfeeding (not reliable contraception alone). 5) Bladder (urinary incontinence). 6) Blood pressure (especially if gestational HTN). 7) Blood tests (CBC, TSH, 75g OGTT if GDM). 8) Blues (postpartum mood assessment). 9) Bowel (fluids, fibre, laxatives; hemorrhoid treatment). 10) Breast and pelvic exam (+ Pap smear if due).\n\nThe 6-week postpartum visit is a comprehensive assessment. Blood tests are targeted: CBC if PPH occurred, TSH if subclinical hypothyroidism in pregnancy, OGTT if gestational diabetes. Lactational amenorrhea is WHO-approved contraception for up to 6 months if: amenorrheic + fully/nearly fully breastfeeding (no interval >4–6h) + <6 months postpartum."
+    difficulty: easy
+    tags: [obstetrics, postpartum care, postpartum visit, 10Bs]
+  - front: "What are the criteria for lactational amenorrhea as contraception and how long is it approved?"
+    back: "WHO-approved for up to 6 months postpartum if ALL three criteria met: 1) Amenorrhea (no menstrual periods). 2) Fully or nearly fully breastfeeding (no interval of >4–6 hours between breastfeeds). 3) Less than 6 months postpartum.\n\nLactational amenorrhea method (LAM) suppresses ovulation via prolactin-mediated GnRH suppression. Failure of any one criterion significantly reduces efficacy. Non-lactating patients resume ovulation ~45 days after birth; lactating patients ovulate later but timing is unpredictable."
+    difficulty: medium
+    tags: [obstetrics, contraception, lactational amenorrhea, breastfeeding, postpartum]
+  - front: "Describe the normal physiological changes of lochia postpartum."
+    back: "Lochia is normal vaginal discharge postpartum due to uterine decidual tissue sloughing. Sequence: Lochia rubra (red, days 1–3, erythrocytes) → Lochia serosa (pale) → Lochia alba (white/yellow, residual leukorrhea) over 3–6 weeks. Foul-smelling lochia suggests endometritis.\n\nLochia progression reflects normal uterine involution. Abnormal findings include excessive bleeding (PPH), foul odour (infection), or resumption of red lochia after transition to serosa/alba (retained products or infection). The uterus should involute approximately 1 cm below the umbilicus per day in the first 4–5 days."
+    difficulty: easy
+    tags: [obstetrics, lochia, postpartum physiology, uterine involution]
+  - front: "What are the postpartum physiological changes in the uterus and when does ovulation resume?"
+    back: "Uterine weight diminishes rapidly through catabolism; cervix loses elasticity and regains firmness. Uterus involutes ~1 cm below umbilicus per day in first 4–5 days; reaches non-pregnant state in 4–6 weeks postpartum. Ovulation resumes ~45 days after birth; non-lactating patients usually ovulate sooner than lactating patients.\n\nUterine involution is facilitated by breastfeeding (oxytocin release). Subinvolution (failure to involute) may indicate endometritis or retained products. Return of ovulation before first menses means contraception is needed before the 6-week visit if pregnancy is not desired."
+    difficulty: easy
+    tags: [obstetrics, postpartum physiology, uterine involution, ovulation]
+  - front: "What is the management of postpartum bladder dysfunction?"
+    back: "Pelvic floor prolapse and stress/urge urinary incontinence are common after vaginal delivery. Risk increased with instrumental delivery or prolonged second stage. Conservative management: pelvic floor retraining with Kegel exercises/pelvic physiotherapy, vaginal cones or pessaries, lifestyle modifications (limit fluid/caffeine), and local vaginal estrogen in breastfeeding patients to strengthen vaginal mucosa.\n\nUrinary incontinence postpartum is often underreported. Pelvic floor physiotherapy is first-line per SOGC guidelines. Surgical options (mid-urethral slings) are deferred until childbearing is complete. Stress incontinence is most common after vaginal delivery."
+    difficulty: easy
+    tags: [obstetrics, postpartum, urinary incontinence, pelvic floor, Kegel exercises]
+  - front: "Which drugs are safe during breastfeeding and which are contraindicated?"
+    back: "SAFE: Analgesics (acetaminophen, NSAIDs), anticoagulants (heparin), antidepressants (sertraline, fluoxetine, TCAs), antiepileptics (phenytoin, carbamazepine, valproic acid), antihistamines, antimicrobials (penicillins, aminoglycosides, cephalosporins), β-adrenergics (propranolol, labetalol), insulin, steroids, low-dose OCP (though estrogen may decrease milk production). CONTRAINDICATED: Chloramphenicol (bone marrow suppression), cyclophosphamide (immune suppression), sulfonamides (hemolysis in G6PD deficiency), nitrofurantoin (hemolysis in G6PD deficiency), tetracycline, lithium, phenindione, bromocriptine, antineoplastics/immunosuppressants, psychotropic drugs (relative CI).\n\nThis is high-yield for MCCQE1. Key points: warfarin is safe (does not cross into breast milk in significant amounts) — heparin listed as safe; lithium crosses into milk causing toxicity; tetracycline causes staining of infant's developing teeth; sulfonamides and nitrofurantoin cause hemolysis only if infant has G6PD deficiency."
+    difficulty: hard
+    tags: [obstetrics, breastfeeding, drug safety, pharmacology, lactation]
+  - front: "What are the dosing and indications for betamethasone and dexamethasone for fetal lung maturity?"
+    back: "Betamethasone valerate (Celestone®): 12 mg IM q24h × 2 doses. Dexamethasone: 6 mg IM q12h × 4 doses. Both used for enhancement of fetal pulmonary maturity in preterm labour (PTL).\n\nAntenatal corticosteroids are indicated between 24–34 weeks (and up to 36+6 in some guidelines) when preterm birth is anticipated within 7 days. They reduce RDS, IVH, NEC, and neonatal mortality. Betamethasone is preferred over dexamethasone in most centres (fewer doses, evidence of lower IVH risk)."
+    difficulty: easy
+    tags: [obstetrics, corticosteroids, fetal lung maturity, preterm labour, betamethasone]
+  - front: "What are the dosing and indications for Rh immunoglobulin (RhIgG/RhoGAM®)?"
+    back: "Dose: 300 µg IM × 1 (50 µg IM for first trimester events). Indications: Rh-negative women — routinely at 28 weeks GA; within 72 hours of birth of Rh+ fetus; positive Kleihauer-Betke test; any invasive procedure in pregnancy; ectopic pregnancy; antepartum hemorrhage; first trimester bleeding; miscarriage or therapeutic abortion (50 µg IM dose).\n\nRhIgG prevents sensitization of Rh-negative mothers by Rh-positive fetal red cells. If sensitization occurs (positive anti-D antibody), subsequent pregnancies are at risk for hemolytic disease of the fetus and newborn. Kleihauer-Betke test quantifies feto-maternal hemorrhage to determine if additional RhIgG is needed."
+    difficulty: medium
+    tags: [obstetrics, Rh immunoglobulin, RhoGAM, Rh incompatibility, alloimmunization]
+  - front: "What is the dosing of oxytocin for induction/augmentation of labour and for PPH prevention/treatment?"
+    back: "Induction/augmentation: 0.5–2.0 mU/min IV, increase by 1–2 mU/min q20–60 min. PPH prevention (3rd stage): 10 IU IM at delivery of anterior shoulder (or after placenta). PPH treatment: 20 IU/L normal saline or Ringer's lactate IV continuous infusion.\n\nOxytocin is the most important uterotonic. Low-dose protocols reduce hyperstimulation risk during induction. For elective CD, the bolus regimen (5–10 IU slow IV) is used. Carbetocin (single bolus) may be preferred for elective CD to avoid need for continuous infusion."
+    difficulty: medium
+    tags: [obstetrics, oxytocin, induction, augmentation, PPH, dosing]
+  - front: "What is the dosing and indication for carbetocin?"
+    back: "Carbetocin (long-acting oxytocin): 100 µg IV bolus over 1 minute for elective CD, OR 100 µg IM for vaginal deliveries with ≥1 risk factor for PPH (instead of continuous oxytocin infusion).\n\nCarbetocin has a longer half-life than oxytocin, allowing a single-dose administration instead of continuous infusion. It is particularly useful in elective CD where continuous IV oxytocin infusion would otherwise be needed. Not used for induction of labour."
+    difficulty: medium
+    tags: [obstetrics, carbetocin, PPH prevention, uterotonic]
+  - front: "What is the dosing and contraindications of carboprost (Hemabate®) for PPH?"
+    back: "Carboprost (synthetic PGF2α analog): 250 µg IM/intramyometrial (IMM) q15 min to maximum 2 mg total. Contraindicated in cardiovascular disease, pulmonary disease (especially asthma), renal dysfunction, and hepatic dysfunction. Major prostaglandin side effects (diarrhea, nausea, vomiting, fever, bronchospasm).\n\nPGF2α causes uterine contraction and vasoconstriction. Bronchospasm is the key contraindication in asthma patients. Despite side effects, it is highly effective for atony unresponsive to oxytocin. The maximum dose of 2 mg (8 doses) limits its use."
+    difficulty: medium
+    tags: [obstetrics, carboprost, PPH, uterotonic, prostaglandin, asthma contraindication]
+  - front: "What are the dosing and indications for misoprostol (Cytotec®) in obstetrics?"
+    back: "PPH treatment: 600–1000 µg PR × 1 dose. Medical abortion/retained products: 400 µg PO/SL × 1 dose or 800 µg PV × 1 dose (3–7 days after methotrexate). Note: misoprostol 600–800 µg PO/SL or PR/PV — side effect of pyrexia if >600 µg.\n\nMisoprostol is a PGE1 analogue, orally active, inexpensive, and stable at room temperature — key advantages in resource-limited settings. Fever is common with doses >600 µg. Sublingual route has faster absorption than oral. It can be used for PPH when IV access is unavailable."
+    difficulty: medium
+    tags: [obstetrics, misoprostol, PPH, medical abortion, prostaglandin]
+  - front: "What are the dosing and indications for methylergonovine (Ergotamine®) and its key contraindication?"
+    back: "Methylergonovine maleate: 0.25 mg IM or slow IV q2h, up to maximum 1.25 mg; or IV bolus 0.125 mg. Indication: treatment of uterine atony (PPH). Key contraindication: HYPERTENSION (causes vasoconstriction and severe HTN).\n\nMethylergonovine acts on smooth muscle causing sustained uterine contraction and vasoconstriction. It must never be given IV rapidly (causes acute HTN and stroke). Contraindicated in preeclampsia, gestational HTN, or any hypertensive state."
+    difficulty: medium
+    tags: [obstetrics, methylergonovine, ergotamine, PPH, uterotonic, hypertension]
+  - front: "What is the TOLAC success rate and what factors increase failure?"
+    back: "General TOLAC success rate (achieving VBAC): 60–80%. Factors affecting success: the indication for previous CD influences success rate (e.g., non-recurring indication like malpresentation has higher success than prior CPD). Factors increasing failure/rupture risk: inter-delivery interval <18 months, oxytocin use during TOLAC.\n\nPatients with a non-recurring indication (e.g., breech presentation) have the highest VBAC success rates (~85–90%). Those with prior CPD or failure to progress have lower rates (~50–60%). Oxytocin augmentation during TOLAC increases rupture risk but is not absolutely contraindicated."
+    difficulty: medium
+    tags: [obstetrics, TOLAC, VBAC, uterine rupture, success rate]
+  - front: "What is the Meis Trial (NEJM 2003) and its significance for preterm labour?"
+    back: "The Meis Trial (NEJM 2003) studied 17α-hydroxyprogesterone caproate (17P) for prevention of recurrent preterm birth. Women with prior spontaneous preterm delivery received weekly 250 mg IM 17P or placebo until delivery or 36 weeks GA. Results: 17P significantly reduced delivery at <37 wk (36.3% vs. 54.9%), <35 wk, and <32 wk. Infants had lower rates of enterocolitis, IVH, and need for supplemental oxygen. Conclusion: 17P substantially reduces recurrent preterm delivery.\n\nThis landmark trial established 17P as a standard preventive therapy for women with prior spontaneous preterm birth. It is administered weekly from 16–36 weeks gestation. Note: subsequent meta-analyses and the PROLONG trial (2020) have questioned its efficacy, leading to re-evaluation of its use."
+    difficulty: hard
+    tags: [obstetrics, preterm labour, 17-hydroxyprogesterone, landmark trial, Meis trial]
+  - front: "What did the Twin Birth Study (NEJM 2013) conclude about planned CD vs. vaginal delivery in twins?"
+    back: "The Twin Birth Study (NEJM 2013) randomized women at 32–38+6 weeks GA with twin pregnancy and first twin in cephalic position to planned CD vs. planned vaginal delivery. Results: NO significant difference in composite adverse perinatal outcomes between groups (2.2% vs. 1.9%; p=0.49). Conclusion: No benefit from planned CD over planned vaginal delivery of twins at 32–38 weeks if first twin is cephalic.\n\nThis trial changed practice — previously many centres routinely performed CD for twins. The results support vaginal delivery as safe when the leading twin is cephalic at 32–38 weeks. The second twin's presentation does not need to be cephalic, as internal podalic version or breech extraction can be performed."
+    difficulty: hard
+    tags: [obstetrics, twin pregnancy, caesarean delivery, landmark trial, Twin Birth Study]
+  - front: "What did the TermPROM Trial (NEJM 1992) find regarding management of PROM at term?"
+    back: "TermPROM Trial compared immediate induction (oxytocin or PGE2) vs. expectant management in 5041 women with PROM at ≥37 weeks GA. Results: Neonatal infection and CD rates were similar across all groups (2–3% and 9.6–10.9%). Chorioamnionitis rate was lower with oxytocin induction than expectant management (4.0% vs. 8.6%, p<0.001), as was postpartum fever (1.9% vs. 3.6%). Conclusion: IV oxytocin induction results in lower maternal infection risk; similar neonatal infection and CD rates as expectant management.\n\nThis trial supports active management (induction) rather than watchful waiting for PROM at term. Delayed delivery after PROM increases infection risk. Current Canadian practice recommends induction at term PROM — typically with IV oxytocin, especially if GBS positive."
+    difficulty: hard
+    tags: [obstetrics, PROM, induction of labour, landmark trial, TermPROM]
+  - front: "What did the Canadian Multicenter Post-term Pregnancy Trial (NEJM 1996) find?"
+    back: "Randomized 3407 women with uncomplicated post-term pregnancies (≥41 weeks) to induction of labour vs. serial antenatal monitoring. Results: Induction had LOWER CD rate than serial monitoring (21.2% vs. 24.5%, p=0.03), with fewer CDs due to fetal distress (5.7% vs. 8.3%). Perinatal and neonatal mortality rates were similar. Conclusion: In post-term pregnancy, induction results in lower CD rate than serial antenatal monitoring.\n\nThis landmark Canadian trial countered the belief that induction of labour increases CD rates in post-term pregnancies. Current SOGC guidelines recommend induction at 41+0 to 42+0 weeks. Serial monitoring is an acceptable alternative but carries higher CD rates due to fetal distress."
+    difficulty: hard
+    tags: [obstetrics, post-term pregnancy, induction of labour, landmark trial, Canadian trial]
+  - front: "What are the dosing schedules and indications for penicillin and cefazolin for GBS prophylaxis?"
+    back: "Penicillin (preferred): 5 million IU IV loading dose, then 2.5 million IU IV q4h until delivery. Cefazolin (for penicillin-allergic, not at risk for anaphylaxis): 2 g IV loading dose, then 1 g IV q8h until delivery. Indication: GBS prophylaxis during labour.\n\nGroup B Streptococcus (GBS) prophylaxis is recommended for GBS-positive women, those with unknown GBS status and risk factors, or prior GBS-affected infant. Penicillin is preferred due to narrow spectrum. For patients at high risk of anaphylaxis to penicillin, clindamycin or vancomycin is used based on sensitivity testing."
+    difficulty: medium
+    tags: [obstetrics, GBS prophylaxis, penicillin, cefazolin, group B streptococcus]
+  - front: "What are the indications and dosing of folic acid supplementation in pregnancy?"
+    back: "Standard dose: 0.4–1 mg PO daily — start 1–3 months preconception and continue through first trimester. Indication: Prevention of neural tube defects (NTD). High-risk dose: 4 mg PO daily — for women with previous NTD or at high risk (anti-epileptics, diabetes, obesity, family history of NTD).\n\nFolate reduces the risk of spina bifida and anencephaly by ~70%. The higher dose (4 mg) is required when there is a prior NTD-affected pregnancy. SOGC recommends universal preconception folic acid supplementation. Food fortification in Canada (since 1998) has reduced NTD rates significantly."
+    difficulty: easy
+    tags: [obstetrics, folic acid, neural tube defects, preconception, prevention]
+  - front: "What is the dosing of erythromycin for preterm premature rupture of membranes (PPROM) and what is its role?"
+    back: "Erythromycin: 250 mg PO q6h × 10 days. Indication: To prolong pregnancy and decrease maternal and neonatal morbidity in patients NOT in labour with PPROM.\n\nThe ORACLE trial established erythromycin as the antibiotic of choice for PPROM not in labour. It reduces chorioamnionitis, prolongs latency, and reduces neonatal complications. Amoxicillin-clavulanate (co-amoxiclav) should be avoided in PPROM due to increased risk of neonatal necrotizing enterocolitis."
+    difficulty: medium
+    tags: [obstetrics, PPROM, erythromycin, preterm labour, antibiotic]
+  - front: "What is doxylamine succinate (Diclectin®) and how is it used for nausea and vomiting in pregnancy?"
+    back: "Doxylamine succinate (Diclectin®): each tablet contains 10 mg doxylamine succinate + vitamin B6 (pyridoxine). Dosing: 2 tablets at hs + 1 tablet in AM + 1 tablet in PM (max 8 tablets/day). First-line treatment for nausea and vomiting in pregnancy, including hyperemesis gravidarum.\n\nDiclectin® is the only Health Canada-approved medication specifically for NVP. Delayed-release formulation targets nighttime and early morning dosing. If Diclectin® is insufficient, antihistamines, metoclopramide, ondansetron, and corticosteroids can be added stepwise."
+    difficulty: easy
+    tags: [obstetrics, nausea vomiting pregnancy, doxylamine, Diclectin, hyperemesis gravidarum]
+  - front: "What is dinoprostone (Cervidil®) and how is it used?"
+    back: "Dinoprostone (Cervidil®): PGE2-impregnated vaginal thread, 10 mg PV (remove after 12 hours), maximum 3 doses. Indication: Induction of labour (cervical ripening). Key advantage: Can be removed if uterine tachysystole (hyperstimulation) occurs.\n\nCervidil is the controlled-release PGE2 insert used for cervical ripening. Its removability is a significant advantage over PGE2 gel (Prostin® gel) in the event of hyperstimulation. PGE2 gel: 1 mg or 2 mg PV q6–12h, max 3 doses."
+    difficulty: medium
+    tags: [obstetrics, induction of labour, dinoprostone, Cervidil, cervical ripening]
+  - front: "A 28-year-old G2P1 presents with heavy vaginal bleeding 15 minutes after vaginal delivery of a 4.2 kg infant. The uterus is soft and boggy. What is the most likely diagnosis and initial management?"
+    back: "Uterine atony (most common cause of PPH, >80%). Management: ABCs, call for help; 2 large-bore IVs + crystalloids; bimanual uterine massage; empty bladder (Foley); labs (CBC, coagulation, fibrinogen, type & crossmatch); uterotonics in order — oxytocin IV infusion, then methylergonovine (if normotensive), then carboprost (if no asthma/CV/hepatic/renal disease), then misoprostol PR/SL; Bakri balloon if refractory; surgery if all else fails.\n\nMacrosomia (4.2 kg) is a risk factor for atony due to overdistension. Uterine massage and oxytocin should be initiated immediately. Rapid escalation to surgical management (B-Lynch suture, uterine artery embolization, hysterectomy) is required if medical therapy fails. Active management of third stage prevents this complication."
+    difficulty: hard
+    tags: [obstetrics, PPH, uterine atony, clinical scenario, management]
+  - front: "A patient 2 hours after vaginal delivery develops sudden hemorrhagic shock with blood loss disproportionate to visible bleeding. Exam shows a smooth round mass protruding through the cervix. What is the diagnosis and immediate management?"
+    back: "Uterine inversion. Immediate management: Call anesthesia urgently; ABCs + IV crystalloids; DO NOT remove placenta (removal increases bleeding and makes replacement harder); use tocolytic (e.g., nitroglycerin IV) to relax uterus; manually replace uterus; THEN remove placenta; administer IV oxytocin ONLY AFTER uterus is replaced; re-explore; may require GA + laparotomy.\n\nKey distinguishing feature: shock disproportionate to visible blood loss (vasovagal mechanism). The most critical error is removing the placenta before replacing the uterus. The cervical ring contracts around the inverted uterus and worsens with time — urgent replacement is essential."
+    difficulty: hard
+    tags: [obstetrics, uterine inversion, obstetric emergency, clinical scenario]
+  - front: "Which drugs are contraindicated during breastfeeding and why?"
+    back: "Chloramphenicol (bone marrow suppression in infant), cyclophosphamide (immune suppression), sulfonamides (hemolysis in G6PD-deficient infant), nitrofurantoin (hemolysis in G6PD deficiency), tetracycline (staining/abnormality of developing teeth), lithium (toxicity — apnea, cyanosis, hypotonia), phenindione (anticoagulant effect in infant), bromocriptine (suppresses lactation), antineoplastics/immunosuppressants, psychotropic drugs (relative contraindication).\n\nLithium concentrations in breast milk are 40–50% of maternal plasma levels — significant neonatal toxicity. Tetracycline causes permanent discoloration of deciduous teeth. Most antibiotics are safe. Warfarin (not listed) is actually safe in breastfeeding. This is a common MCCQE1 topic."
+    difficulty: medium
+    tags: [obstetrics, breastfeeding, contraindicated drugs, lithium, tetracycline]
+  - front: "A patient 4 days postpartum develops fever, foul-smelling lochia, uterine tenderness, and foul vaginal discharge. What is the diagnosis and treatment?"
+    back: "Postpartum endometritis. Treatment: mild cases — oral antibiotics; moderate-to-severe — hospitalization with IV antibiotics (clindamycin + gentamicin/tobramycin); ensure no retained products of conception (RPOC). Risk factors: CD, intrapartum chorioamnionitis, prolonged labour, prolonged ROM, multiple vaginal exams.\n\nClindamycin covers anaerobes and gram-positives; gentamicin covers gram-negatives — together they provide broad spectrum coverage for the polymicrobial flora of endometritis. Failure to improve in 48–72 hours suggests RPOC, abscess, or resistant organism. RPOC can be diagnosed by ultrasound and managed with D&C."
+    difficulty: medium
+    tags: [obstetrics, endometritis, postpartum infection, clinical scenario]

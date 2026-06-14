@@ -12,11 +12,14 @@ global.window = { dispatchEvent: () => {}, addEventListener: () => {}, removeEve
 global.CustomEvent = class { constructor(t, d) { this.type = t; this.detail = d; } };
 const READ = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
 // Load manifest first to derive subject list (supports 8+ subjects dynamically)
-const MANIFEST = JSON.parse(READ('site/data/manifest.json'));
+// Per-syllabus data layout: build writes site/data/<id>/. cmed4-2026 is the default.
+const DDIR = 'site/data/cmed4-2026';
+const MANIFEST = JSON.parse(READ(`${DDIR}/manifest.json`));
 const SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','pulmonology','rheumatology']; // Core 8 with full assets
-const SHARDS = SUBJECTS.map(s => JSON.parse(READ(`site/data/${s}.json`)));
+const SHARDS = SUBJECTS.map(s => JSON.parse(READ(`${DDIR}/${s}.json`)));
 const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
 (async () => {
+    const { skey } = await import('./site/syllabus.js');
     const srs = await import('./site/srs.js');
     const progress = await import('./site/progress.js');
     const search = await import('./site/search.js');
@@ -45,7 +48,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // coverage in this test — additional syllabus subjects (e.g. paediatrics-neonatal)
         // still contribute to the manifest totals via build_data.js.
         const allShardScenarios = MANIFEST.subjects.reduce((n, m) => {
-            const sh = JSON.parse(READ(`site/data/${m.subject}.json`));
+            const sh = JSON.parse(READ(`${DDIR}/${m.subject}.json`));
             return n + (sh.triage?.scenarios.length || 0);
         }, 0);
         assert.strictEqual(allShardScenarios, MANIFEST.totals.scenarios); assert.ok(allShardScenarios >= 60);
@@ -73,10 +76,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(srs.compressInterval(10, 0, 5), 1);
         assert.strictEqual(srs.compressInterval(10, 5, 5), 5);
         // migrate: a NEWER schema version is rejected (loadStates swallows the throw -> {}), never restamped.
-        global.localStorage.clear(); global.localStorage.setItem('corpus.srs.states', JSON.stringify({ version: 999, states: { z: srs.defaultCardState() } }));
+        global.localStorage.clear(); global.localStorage.setItem(skey('srs.states'), JSON.stringify({ version: 999, states: { z: srs.defaultCardState() } }));
         assert.deepStrictEqual(srs.loadStates(), {});
         // migrate: legacy version==null map upgrades each card to phase:'review'.
-        global.localStorage.clear(); global.localStorage.setItem('corpus.srs.states', JSON.stringify({ leg: { ...srs.defaultCardState(), phase: 'learning' } }));
+        global.localStorage.clear(); global.localStorage.setItem(skey('srs.states'), JSON.stringify({ leg: { ...srs.defaultCardState(), phase: 'learning' } }));
         assert.strictEqual(srs.loadStates()['leg'].phase, 'review');
         let s = srs.schedule(srs.defaultCardState(), 3, now, () => 0.5);
         assert.strictEqual(s.phase, 'learning');
@@ -180,7 +183,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(cram.isDismissed(), false);
         cram.dismiss();
         assert.strictEqual(cram.isDismissed(), true);
-        assert.match(global.localStorage.getItem('corpus.cram.dismissed.v1'), /date/);
+        assert.match(global.localStorage.getItem(skey('cram.dismissed.v1')), /date/);
         // lastpos
         global.localStorage.clear();
         assert.strictEqual(lastpos.load(), null);
@@ -321,7 +324,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(progress.load().streak, 1);
         const eff = (() => { const now = new Date(); if (now.getHours() < 6) return new Date(now.getTime() - 6 * 3600 * 1000); return now; })();
         const twoAgo = new Date(eff.getTime() - 2 * 86400000).toISOString().slice(0, 10);
-        global.localStorage.setItem('corpus.progress.v1', JSON.stringify({ ...progress.load(), lastActiveDate: twoAgo, todayDate: new Date().toISOString().slice(0, 10), streak: 7 }));
+        global.localStorage.setItem(skey('progress.v1'), JSON.stringify({ ...progress.load(), lastActiveDate: twoAgo, todayDate: new Date().toISOString().slice(0, 10), streak: 7 }));
         progress.bumpGraded(1);
         assert.strictEqual(progress.load().streak, 1);
         progress.setGoal(50); assert.strictEqual(progress.load().dailyGoal, 50);
@@ -462,7 +465,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const fs2 = require('fs');
         assert.ok(!fs2.existsSync('site/data/medbak-index.json'), 'medbak-index.json should be deleted');
         for (const s of ['cardiology','rheumatology','pulmonology']) {
-            const j = JSON.parse(READ(`site/data/${s}.json`));
+            const j = JSON.parse(READ(`${DDIR}/${s}.json`));
             const body = (j.guide && j.guide.body) || '';
             assert.ok(!/pages-\d|audio-transcripts|book-texts|medbak/i.test(body), `${s} guide body leaks original-source refs`);
             const titles = (j.guide.sections || []).map(x => x.title || '').join('|');
@@ -476,7 +479,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.ok(Array.isArray(sh.guide.videos) && sh.guide.videos.length >= 1, `${s} missing videos`);
             const v = sh.guide.videos[0];
             assert.ok(v.filename && /\.(mp4|webm)$/i.test(v.filename), `${s} video filename`);
-            assert.ok(v.src && v.src.startsWith(`data/videos/${s}/`), `${s} video src path`);
+            assert.ok(v.src && v.src.startsWith(`data/cmed4-2026/videos/${s}/`), `${s} video src path`);
             const meta = MANIFEST.subjects.find(x => x.subject === s);
             assert.strictEqual(meta.videoCount, sh.guide.videos.length, `${s} manifest videoCount mismatch`);
             assert.ok(fs.existsSync(path.join(ROOT, 'site', v.src)), `${s} video file missing on disk`);
@@ -503,7 +506,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.ok(Array.isArray(sh.guide.audio) && sh.guide.audio.length === 1, `${s} guide.audio length`);
             const a = sh.guide.audio[0];
             assert.ok(/\.(m4a|opus)$/i.test(a.filename), `${s} audio filename ext`);
-            assert.ok(a.src.startsWith(`data/audio/${s}/`), `${s} audio src path`);
+            assert.ok(a.src.startsWith(`data/cmed4-2026/audio/${s}/`), `${s} audio src path`);
             assert.ok(fs.existsSync(path.join(ROOT, 'site', a.src)), `${s} audio file copied to site/data`);
             // Source file exists if original m4a is in archive; compressed opus also counts
             const origExists = fs.existsSync(path.join(SUBJ_ROOT, s, 'audio-deepdive', a.filename));
@@ -535,19 +538,22 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.ok(!fs.existsSync(path.join(ROOT, `${s}_triage_scenarios.yml`)), `${s} legacy triage at root must be gone`);
         }
         const build = READ('scripts/build_data.js');
-        // build_data.js must DELEGATE to the single-owner resolver, not reimplement
-        // it — the CORPUS_SYLLABUS env hook now lives once in scripts/syllabus.js so a
-        // layout change reaches both the shard build and the Anki export. Asserting the
-        // import (not a copied literal) is what keeps the single-owner contract honest.
+        // build_data.js delegates to the single-owner resolver and now builds EVERY
+        // registered syllabus into site/data/<id>/ (swappable layout). The CORPUS_SYLLABUS
+        // env hook still lives once in scripts/syllabus.js (consumed by anki_export).
         assert.ok(/require\(['"]\.\/syllabus\.js['"]\)/.test(build), 'build_data.js must import scripts/syllabus.js (single-owner resolver), not duplicate it');
-        assert.ok(/resolveSyllabus/.test(build) && /CORPUS_SYLLABUS/.test(READ('scripts/syllabus.js')), 'CORPUS_SYLLABUS env hook must live in syllabus.js and be consumed by build_data.js');
-        assert.ok(/SUBJ_ROOT/.test(build), 'build_data.js missing SUBJ_ROOT');
-        // anki_export.js + build_data.js share one syllabus-path resolver so the
-        // documented `node scripts/anki_export.js` cannot drift into an ENOENT
-        // crash again (it hardcoded the pre-syllabus flat layout before).
+        assert.ok(/listSyllabi/.test(build), 'build_data.js must build all syllabi via listSyllabi');
+        assert.ok(/CORPUS_SYLLABUS/.test(READ('scripts/syllabus.js')), 'CORPUS_SYLLABUS env hook must live in syllabus.js');
         const syl = require('./scripts/syllabus.js');
-        assert.ok(typeof syl.resolveSyllabus === 'function' && typeof syl.safeReaddir === 'function', 'scripts/syllabus.js must export resolveSyllabus + safeReaddir');
+        assert.ok(typeof syl.resolveSyllabus === 'function' && typeof syl.listSyllabi === 'function' && typeof syl.safeReaddir === 'function', 'scripts/syllabus.js must export resolveSyllabus + listSyllabi + safeReaddir');
         assert.ok(syl.DEFAULT_SUBJECTS.includes('paediatrics') && syl.DEFAULT_SUBJECTS.includes('paediatrics-neonatal'), 'syllabus DEFAULT_SUBJECTS must include both paediatrics subjects');
+        // swappable layout: per-syllabus data dirs + the selector index syllabi.json.
+        const syllabiIdx = JSON.parse(READ('site/data/syllabi.json'));
+        assert.ok(Array.isArray(syllabiIdx) && syllabiIdx.some(x => x.id === 'cmed4-2026' && x.default), 'syllabi.json must list cmed4-2026 as default');
+        assert.ok(syllabiIdx.some(x => x.id === 'mccqe1'), 'syllabi.json must include mccqe1');
+        assert.ok(fs.existsSync(path.join(ROOT, 'site/data/mccqe1/manifest.json')), 'mccqe1 data set must be built');
+        const mq = JSON.parse(READ('site/data/mccqe1/manifest.json'));
+        assert.ok(mq.subjects.length >= 20 && mq.totals.cards > 10000, 'mccqe1 must have 20+ subjects and the full card set');
         // Triage grading invariants (quality-max sweep, 2026-06-10): highlight_card
         // must ACCUMULATE — the grading prompt calls it once per correct atom, so
         // single-select (`c.highlighted = c.id === id` for all cards) caps the hit
@@ -562,13 +568,50 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // syllabus.js (asserted complete at line 503), so it can never drift out of
         // sync with the resolver — a layout change updates one list, both consumers
         // follow. `node scripts/build_data.js` ran clean above proving the import works.
-        assert.ok(/SUBJECTS = SYLLABUS\.subjects \|\| DEFAULT_SUBJECTS/.test(build), 'build_data.js must fall back to the shared DEFAULT_SUBJECTS, not a duplicated list');
+        assert.ok(/id === 'cmed4-2026'.*DEFAULT_SUBJECTS|DEFAULT_SUBJECTS\.slice/.test(READ('scripts/syllabus.js')), 'syllabus.js resolveSyllabusById must fall back to shared DEFAULT_SUBJECTS for cmed4-2026');
         assert.ok(!/path\.join\(ROOT, s, 'srs-cards'\)/.test(ankiSrc), 'anki_export.js must not read the flat ROOT/<subj>/srs-cards layout');
         // It actually runs without throwing and emits notes.
         const cp = require('child_process');
         const r = cp.spawnSync(process.execPath, [path.join(ROOT, 'scripts', 'anki_export.js')], { encoding: 'utf8' });
         assert.strictEqual(r.status, 0, 'anki_export.js exited non-zero: ' + (r.stderr || '').slice(0, 300));
         assert.match(r.stdout || '', /wrote .* — \d+ notes/, 'anki_export.js did not report notes written');
+    });
+
+    await ta('swappable syllabus: skey namespacing + legacy migration + mccqe1 import transforms', async () => {
+        const sylRt = await import('./site/syllabus.js');
+        global.localStorage.clear();
+        // default active syllabus -> keys namespaced under cmed4-2026.
+        assert.strictEqual(sylRt.getActiveSyllabus(), 'cmed4-2026');
+        assert.strictEqual(sylRt.skey('srs.states'), 'corpus.cmed4-2026.srs.states');
+        assert.strictEqual(sylRt.dataPath('manifest.json'), './data/cmed4-2026/manifest.json');
+        // legacy migration: unprefixed key copied into the default namespace, non-destructive + idempotent.
+        global.localStorage.setItem('corpus.srs.states', '{"legacy":1}');
+        sylRt.migrateLegacyKeys('cmed4-2026');
+        assert.strictEqual(global.localStorage.getItem('corpus.cmed4-2026.srs.states'), '{"legacy":1}');
+        assert.strictEqual(global.localStorage.getItem('corpus.srs.states'), '{"legacy":1}', 'legacy key preserved');
+        global.localStorage.setItem('corpus.cmed4-2026.srs.states', '{"new":1}');
+        sylRt.migrateLegacyKeys('cmed4-2026'); // must NOT clobber newer namespaced data
+        assert.strictEqual(global.localStorage.getItem('corpus.cmed4-2026.srs.states'), '{"new":1}');
+        global.localStorage.clear();
+        // import transforms (pure, no 16k file needed).
+        const imp = require('./scripts/import_mccqe1.js');
+        assert.strictEqual(imp.slugifyDiscipline('InfectiousDisease'), 'infectious-disease');
+        assert.strictEqual(imp.slugifyDiscipline('ObGyn'), 'ob-gyn');
+        assert.strictEqual(imp.difficultyLabel(1), 'easy');
+        assert.strictEqual(imp.difficultyLabel(3), 'medium');
+        assert.strictEqual(imp.difficultyLabel(5), 'hard');
+        assert.strictEqual(imp.dq('a "b": c\nd'), '"a \\"b\\": c\\nd"', 'dq escapes quotes + newlines for parse_yaml');
+        // generated cards round-trip through the real parser into build_data's card shape.
+        const { parseYaml } = require('./scripts/parse_yaml.js');
+        const yml = `cards:\n  - front: ${imp.dq('Q: with colon')}\n    back: ${imp.dq('line1\nline2')}\n    difficulty: hard\n    tags: ${imp.tagSeq(['a', 'b'])}\n`;
+        const parsed = parseYaml(yml);
+        assert.strictEqual(parsed.cards[0].front, 'Q: with colon');
+        assert.strictEqual(parsed.cards[0].back, 'line1\nline2');
+        assert.deepStrictEqual(parsed.cards[0].tags, ['a', 'b']);
+        // mccqe1 study guides are generated FROM cards (one ## section per topic).
+        const guide = READ('site/data/mccqe1/cardiology.json');
+        const cj = JSON.parse(guide);
+        assert.ok(cj.guide && cj.guide.sections.length >= 1 && cj.cards.length > 100, 'mccqe1 cardiology guide built from cards');
     });
 
     console.log('# phase 1: schedule engine + calendar + settings + nav');

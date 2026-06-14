@@ -1,0 +1,898 @@
+# Nephrology (Nephrology) - generated from srs-mccqe1
+cards:
+  - front: "What is the normal GFR, and how does the CKD-EPI equation estimate it?"
+    back: "Normal GFR is ~125 mL/min/1.73 m² (180 L/day). CKD-EPI uses serum creatinine, age, biological sex, and race to estimate GFR.\n\nGFR is the sum of filtration across all nephrons, with 99% of the filtrate reabsorbed. CKD-EPI is the most accurate equation currently available. Creatinine-based estimates are limited by factors affecting creatinine production such as muscle mass."
+    difficulty: easy
+    tags: [nephrology, renal function, GFR]
+  - front: "What is the filtration fraction and how is it maintained in renal artery stenosis?"
+    back: "FF = GFR/RPF, normally 20%. In renal artery stenosis, angiotensin II constricts the efferent arteriole, increasing FF to maintain GFR despite decreased renal blood flow.\n\nThis is why ACEIs/ARBs can cause a significant drop in GFR in patients with bilateral renal artery stenosis — they dilate the efferent arteriole, removing the compensatory mechanism that maintains GFR."
+    difficulty: hard
+    tags: [nephrology, renal hemodynamics, renal artery stenosis]
+  - front: "What does a FENa <1% vs. >2% indicate in AKI?"
+    back: "FENa <1% suggests prerenal cause (kidneys appropriately retaining sodium). FENa >2% suggests intrinsic renal cause (e.g. ATN, kidneys unable to reabsorb sodium).\n\nFENa = (urine Na × plasma Cr) / (plasma Na × urine Cr) × 100. In prerenal states, the kidneys respond to hypoperfusion by maximally reabsorbing sodium. In ATN, damaged tubules cannot reabsorb sodium effectively."
+    difficulty: medium
+    tags: [nephrology, AKI, FENa]
+  - front: "What urine findings help differentiate prerenal AKI from ATN?"
+    back: "Prerenal: bland sediment, urine Na <20, urine osmolality >500, FENa <1%. ATN: pigmented granular (muddy brown) casts, urine Na ~40, urine osmolality <350, FENa >1%.\n\nIn prerenal AKI, the tubules are intact and appropriately concentrate urine and reabsorb sodium. In ATN, tubular damage leads to impaired concentrating ability and sodium wasting. Muddy brown casts are the hallmark of ATN."
+    difficulty: medium
+    tags: [nephrology, AKI, ATN]
+  - front: "What is the maximum rate of sodium correction in chronic hyponatremia, and what complication occurs with overcorrection?"
+    back: "Maximum 8 mmol/L in 24 hours. Overcorrection causes osmotic demyelination syndrome (central pontine myelinolysis).\n\nIn chronic hyponatremia, brain cells have adapted by losing intracellular osmolytes. Rapid correction causes brain cell shrinkage and demyelination, presenting as dysarthria, dysphagia, paresis, and potentially quadriplegia with locked-in syndrome."
+    difficulty: medium
+    tags: [nephrology, electrolytes, hyponatremia]
+  - front: "What are the ECG changes in hyperkalemia in order of progression?"
+    back: "Peaked T waves → decreased P wave amplitude/loss of P waves → prolonged PR → widened QRS → sine wave pattern → ventricular fibrillation/asystole.\n\nHyperkalemia depolarizes the resting membrane potential, impairing cardiac conduction. Peaked T waves are the earliest finding. ECG changes do not correlate well with serum potassium levels, so treatment should not be delayed."
+    difficulty: easy
+    tags: [nephrology, electrolytes, hyperkalemia, ECG]
+  - front: "What is the acute treatment of life-threatening hyperkalemia?"
+    back: "1. Calcium gluconate (stabilize myocardium). 2. Insulin + D50W and/or nebulized salbutamol (shift K into cells). 3. Furosemide, cation exchangers, or dialysis (enhance K removal).\n\nCalcium gluconate does not lower potassium but protects the heart within minutes. Insulin shifts K into cells within 15-30 min, lowering serum K by ~0.8 mmol/L. Definitive removal requires renal excretion or dialysis. Mnemonic: C BIG K DICED."
+    difficulty: medium
+    tags: [nephrology, electrolytes, hyperkalemia, emergency]
+  - front: "What is the mnemonic for causes of increased anion gap metabolic acidosis?"
+    back: "MUDPILES CAT: Methanol, Uremia, DKA, Paraldehyde, Iron/Isopropyl/Ibuprofen/Indomethacin, Lactic acidosis, Ethylene glycol, Salicylates, Cyanide/CO, Alcoholic ketoacidosis, Toluene.\n\nThe anion gap (AG = Na - Cl - HCO3) is normally 10-14. For each 10 g/L fall in albumin, lower the baseline AG by 3. An elevated AG indicates accumulation of unmeasured anions from these conditions."
+    difficulty: easy
+    tags: [nephrology, acid-base, metabolic acidosis]
+  - front: "How do you use the urine anion gap to distinguish renal from non-renal causes of normal anion gap metabolic acidosis?"
+    back: "UAG = (urine Na + K) - urine Cl. If UAG is negative → adequate NH4+ excretion (non-renal cause, e.g. diarrhea). If UAG is positive → inadequate NH4+ in urine (renal cause, e.g. distal RTA).\n\nIn normal AG metabolic acidosis, the kidney should excrete NH4+ (with Cl-) to compensate. A negative UAG reflects high unmeasured cation (NH4+) in the urine, indicating intact renal acidification. A positive UAG means the kidneys are not appropriately excreting acid."
+    difficulty: hard
+    tags: [nephrology, acid-base, RTA]
+  - front: "What are the diagnostic criteria for SIADH?"
+    back: "1. Urine inappropriately concentrated for serum osmolality. 2. Urine sodium >20-40 mmol/L (reflecting euvolemia). 3. FENa >1%.\n\nSIADH causes euvolemic hyponatremia through inappropriate ADH-mediated water retention. Common causes include CNS disorders, pulmonary disease, medications (SSRIs, carbamazepine), and malignancy (especially small cell lung cancer). Treatment includes fluid restriction and addressing the underlying cause."
+    difficulty: medium
+    tags: [nephrology, electrolytes, SIADH, hyponatremia]
+  - front: "How do you differentiate central from nephrogenic diabetes insipidus using the water deprivation test?"
+    back: "After water deprivation fails to concentrate urine (Uosm <300): give DDAVP. If Uosm rises >300 → central DI (responds to exogenous ADH). If Uosm does not rise → nephrogenic DI (kidneys resist ADH).\n\nCentral DI is caused by deficient ADH production (neurosurgery, trauma, granulomatous disease). Nephrogenic DI is caused by renal resistance to ADH (lithium, hypercalcemia, hypokalemia). Central DI is treated with DDAVP; nephrogenic DI with thiazides and treating the underlying cause."
+    difficulty: medium
+    tags: [nephrology, diabetes insipidus, electrolytes]
+  - front: "What are the four features that define nephrotic syndrome?"
+    back: "1. Heavy proteinuria (>3.5 g/1.73 m²/day). 2. Hypoalbuminemia. 3. Peripheral edema. 4. Hyperlipidemia.\n\nAdditional features include lipiduria (oval fat bodies, fatty casts) and hypercoagulable state from urinary losses of antithrombin III, protein C, and protein S. Common causes include minimal change disease (children), membranous nephropathy (adults), FSGS, and diabetic nephropathy."
+    difficulty: easy
+    tags: [nephrology, nephrotic syndrome, glomerular disease]
+  - front: "What is the triad of nephritic syndrome?"
+    back: "Hematuria (with RBC casts/dysmorphic RBCs), azotemia (elevated Cr and urea), and hypertension (from salt and water retention).\n\nNephritic syndrome reflects glomerular inflammation. Proteinuria is present but typically <3.5 g/day (sub-nephrotic). Mnemonic: PHAROH — Proteinuria, Hematuria, Azotemia, RBC casts, Oliguria, Hypertension."
+    difficulty: easy
+    tags: [nephrology, nephritic syndrome, glomerular disease]
+  - front: "What is IgA nephropathy and how does it typically present?"
+    back: "Most common primary glomerular disease worldwide. Presents with gross hematuria after a viral upper respiratory tract infection, with mesangial IgA and C3 deposits on immunofluorescence.\n\nIgA nephropathy (Berger's disease) is more common in White and Asian populations in the 2nd-3rd decades. Unlike post-streptococcal GN where hematuria occurs 2-3 weeks after infection, IgA nephropathy presents within days (synpharyngitic). Treatment includes RAAS blockers for proteinuria."
+    difficulty: medium
+    tags: [nephrology, IgA nephropathy, glomerular disease]
+  - front: "What are the three types of crescentic (rapidly progressive) glomerulonephritis classified by immunofluorescence?"
+    back: "Type I: anti-GBM mediated (15%). Type II: immune complex mediated (24%). Type III: pauci-immune/ANCA-associated (60%).\n\nRPGN is the most aggressive form of GN with crescent formation on biopsy. Anti-GBM disease (Goodpasture's) shows linear IgG deposits. Type II shows granular deposits. Type III (most common) shows little or no immune staining and is associated with ANCA vasculitis."
+    difficulty: hard
+    tags: [nephrology, RPGN, glomerulonephritis]
+  - front: "What are the urinalysis findings that suggest active parenchymal kidney disease vs. bland sediment?"
+    back: "Active: RBC casts, WBC casts, muddy-brown granular casts, >2 RBCs/HPF, >4 WBCs/HPF. Bland: only hyaline casts, small quantities of crystals, <2 RBCs/HPF.\n\nActive sediment suggests intrinsic kidney disease requiring further workup. RBC casts are pathognomonic of glomerulonephritis, WBC casts suggest pyelonephritis or interstitial nephritis, and muddy-brown casts indicate ATN."
+    difficulty: medium
+    tags: [nephrology, urinalysis, urine microscopy]
+  - front: "What drugs commonly cause acute interstitial nephritis (AIN)?"
+    back: "Antibiotics (beta-lactams, sulfonamides, rifampin, quinolones), NSAIDs, allopurinol, PPIs, furosemide, thiazides, phenytoin.\n\nAIN presents with AKI typically 7-10 days after drug exposure. The classic triad of fever, rash, and eosinophilia is seen mainly with antibiotics. Urine shows sterile pyuria, WBC casts, and eosinophils. Treatment is stopping the offending drug; steroids may be used for allergic or immune causes."
+    difficulty: medium
+    tags: [nephrology, AIN, drug reactions]
+  - front: "What are the stages of diabetic nephropathy?"
+    back: "Stage 1: hyperfiltration (GFR 120-150%). Stage 2: A2 albuminuria (30-300 mg/day), normal GFR. Stage 3: A3 albuminuria (>300 mg/day), declining GFR. Stage 4: sclerosed glomeruli, ESRD.\n\nMicroalbuminuria (A2) is the earliest sign of diabetic nephropathy and is a risk factor for both renal and cardiovascular progression. Once overt nephropathy (A3) is established, 50% reach ESRD within 7-10 years. First-line treatment is ACEI or ARB plus SGLT2 inhibitor."
+    difficulty: medium
+    tags: [nephrology, diabetic nephropathy, diabetes]
+  - front: "What are the priorities in managing diabetic nephropathy?"
+    back: "1. Vascular protection (ACEI, BP control, glycemic control, SGLT2i, lipid control). 2. BP optimization (<130/80). 3. Renal protection with ACEI/ARB even without HTN. 4. Smoking cessation.\n\nSGLT2 inhibitors (canagliflozin, dapagliflozin, empagliflozin) provide renoprotection independent of glycemic effects. Finerenone (mineralocorticoid receptor antagonist) adds renoprotection on top of RAAS blockade. Combination ACEI + ARB is NOT recommended."
+    difficulty: medium
+    tags: [nephrology, diabetic nephropathy, management]
+  - front: "What are the KDIGO stages of CKD and what GFR defines each?"
+    back: "G1: ≥90 (normal/high). G2: 60-89 (mildly decreased). G3a: 45-59. G3b: 30-44. G4: 15-29 (severely decreased). G5: <15 (kidney failure).\n\nCKD is classified by both GFR and albuminuria categories. Higher albuminuria and lower GFR both independently increase risk of progression and complications. 'D' is added to G5 for patients on dialysis."
+    difficulty: easy
+    tags: [nephrology, CKD, KDIGO]
+  - front: "What is the mnemonic NEPHRON for managing CKD complications?"
+    back: "N: non-AG metabolic acidosis (NaHCO3). E: electrolytes and BP. P: phosphate (binders with meals). H: HTN. R: RBCs/anemia (EPO, iron). O: osteodystrophy (vitamin D, calcium). N: nephrotoxins (avoid NSAIDs).\n\nCKD management requires addressing multiple complications simultaneously. Target SBP <120 mmHg, use ACEI/ARB and SGLT2i, treat anemia with ESA if Hb <100, and manage calcium/phosphate disorders to prevent renal osteodystrophy."
+    difficulty: medium
+    tags: [nephrology, CKD, management]
+  - front: "What is autosomal dominant polycystic kidney disease (ADPKD) and what are its key extrarenal manifestations?"
+    back: "Caused by PKD1 (chr 16) or PKD2 (chr 4) mutations. Extrarenal: hepatic cysts (33%), mitral valve prolapse (25%), intracranial aneurysms (10%), diverticulosis, hernias.\n\nADPKD accounts for ~10% of ESRD cases. Kidneys are normal at birth but enlarge massively. Clinical manifestations are rare before age 20-25. Treatment includes BP control with ACEI, free water intake >2-3 L/day, and tolvaptan (V2R antagonist) to slow decline."
+    difficulty: medium
+    tags: [nephrology, ADPKD, cystic kidney disease]
+  - front: "What are the absolute indications for dialysis in CKD (mnemonic AEIOU)?"
+    back: "A: Acidosis (refractory). E: Electrolyte imbalance (refractory hyperkalemia). I: Intoxication. O: Overload (volume, refractory). U: Uremia (encephalopathy, pericarditis, bleeding).\n\nDialysis is generally started when GFR reaches ~10 mL/min, but initiation should be symptom-driven. Either hemodialysis or peritoneal dialysis can be used. Renal transplantation provides the best outcomes and should be offered to all suitable patients."
+    difficulty: easy
+    tags: [nephrology, ESRD, dialysis]
+  - front: "What are the differences between hemodialysis and peritoneal dialysis?"
+    back: "HD: fast, uses semipermeable artificial membrane, hydrostatic ultrafiltration, requires vascular access. PD: slow, uses peritoneal membrane, osmotic ultrafiltration, home-based, preserves residual renal function better.\n\nAV fistula is the preferred vascular access for HD (lower infection and thrombosis rates). PD advantages include independence and fewer dietary restrictions. PD complications include peritonitis and encapsulating peritoneal sclerosis; HD complications include disequilibrium syndrome and central venous stenosis."
+    difficulty: medium
+    tags: [nephrology, dialysis, ESRD]
+  - front: "What is the most common cause of renal artery stenosis, and what clinical features suggest it?"
+    back: "Atherosclerotic plaques (90%), affecting proximal 1/3 of renal artery in males >55. Features: severe/refractory HTN, asymmetric renal size, epigastric bruits, spontaneous hypokalemia, rising Cr with ACEI/ARB, flash pulmonary edema.\n\nFibromuscular dysplasia (10%) affects the distal 2/3 in young females. Renovascular HTN is the most common cause of secondary HTN (1-2% of all hypertensive patients). Per the CORAL trial, stenting offers no benefit over medical therapy alone."
+    difficulty: medium
+    tags: [nephrology, renovascular HTN, renal artery stenosis]
+  - front: "What renal complications occur in multiple myeloma?"
+    back: "Light chain cast nephropathy ('myeloma kidney'), hypercalcemia, AL amyloidosis, monoclonal Ig deposition disease, hyperuricemia, and infection.\n\nLight chains are filtered at the glomerulus and appear as Bence-Jones proteins in urine (not detected on dipstick, requires immunoelectrophoresis). Cast nephropathy can rapidly progress to kidney failure. Myeloma patients are poor candidates for kidney transplantation."
+    difficulty: medium
+    tags: [nephrology, multiple myeloma, renal complications]
+  - front: "What is scleroderma renal crisis and how is it treated?"
+    back: "Occurs in 10-15% of scleroderma patients (especially early disease, on prednisone >15 mg/d): malignant HTN, acute renal failure, microangiopathy, volume overload. Treatment: ACEI (mainstay, even if AKI present).\n\nScleroderma renal crisis is associated with 'onion skin' hypertrophy of small renal arteries and fibrinoid necrosis. 50% of scleroderma patients have some renal involvement. ACEI slows disease progression and is the cornerstone of treatment even during the crisis."
+    difficulty: hard
+    tags: [nephrology, scleroderma, renal crisis]
+  - front: "What is the Cockcroft-Gault equation for estimating creatinine clearance?"
+    back: "CrCl = 1.2 × (140 - age) × weight (kg) / [Cr]. For women, multiply by 0.85.\n\nThis equation is mainly used to dose renally excreted medications (e.g. antibiotics) in CKD. It is less accurate than CKD-EPI for estimating GFR. Key limitations: requires steady-state creatinine, affected by muscle mass, and overestimates GFR due to tubular creatinine secretion."
+    difficulty: medium
+    tags: [nephrology, renal function, pharmacology]
+  - front: "What urine crystal shapes are associated with specific conditions?"
+    back: "Envelope-shaped (calcium oxalate): ethylene glycol poisoning. Coffin-lid shaped (triple phosphate/struvite): UTI with urease-producing bacteria. Rosette/needle-shaped (uric acid): acidic urine, tumor lysis syndrome.\n\nCrystal identification on urine microscopy can provide important diagnostic clues. Calcium oxalate crystals in the setting of metabolic acidosis should raise suspicion for ethylene glycol poisoning. Struvite crystals suggest infection with Klebsiella or Proteus."
+    difficulty: medium
+    tags: [nephrology, urinalysis, crystals]
+  - front: "What are the complications of renal transplantation?"
+    back: "Leading cause of mortality: cardiovascular disease. Other: infections (bacterial, viral including CMV, fungal), new-onset DM (from prednisone/tacrolimus), graft rejection, BK virus nephropathy, malignancy (skin cancer, non-Hodgkin's lymphoma), calcineurin inhibitor nephropathy.\n\n1-year allograft survival is ≥90%. Maintenance immunosuppression typically includes corticosteroids, a calcineurin inhibitor (tacrolimus or cyclosporine), and an anti-metabolite (mycophenolate). Leading causes of late graft loss are interstitial fibrosis/tubular atrophy and death with functioning graft."
+    difficulty: medium
+    tags: [nephrology, renal transplant, complications]
+  - front: "Why does hypomagnesemia make hypokalemia and hypocalcemia resistant to correction?"
+    back: "Magnesium is required for proper function of the Na-K-ATPase pump (K homeostasis) and for PTH secretion/action (Ca homeostasis). Without correcting Mg first, K and Ca cannot be effectively repleted.\n\nCauses of hypomagnesemia include alcoholism, diuretics (loop and thiazide), diarrhea, PPIs, and early post-renal transplant. Clinical features include tremors, seizures, Chvostek/Trousseau signs, and cardiac arrhythmias including Torsades de Pointes."
+    difficulty: medium
+    tags: [nephrology, electrolytes, hypomagnesemia]
+  - front: "What is the treatment of methanol or ethylene glycol poisoning?"
+    back: "Fomepizole (alcohol dehydrogenase inhibitor), vitamins (folate for methanol; pyridoxine and thiamine for ethylene glycol), and dialysis if metabolic acidosis or symptoms of toxicity develop.\n\nMethanol is metabolized to formic acid (toxic to brain and retina, can cause blindness). Ethylene glycol is metabolized to oxalic acid (toxic to brain and kidneys; envelope-shaped calcium oxalate crystals in urine). Both cause increased anion gap metabolic acidosis with increased osmolar gap."
+    difficulty: hard
+    tags: [nephrology, toxicology, metabolic acidosis]
+  - front: "What is the Kimmelstiel-Wilson lesion?"
+    back: "Nodular glomerulosclerosis, the classic histological lesion of diabetic nephropathy, found in 15-20% of cases.\n\nThe more common histological pattern is diffuse glomerulosclerosis with uniform increase in mesangial matrix. Diabetic nephropathy is the most common cause of ESRD in North America. The classic lesion was first described by Kimmelstiel and Wilson in 1936."
+    difficulty: medium
+    tags: [nephrology, diabetic nephropathy, pathology]
+  - front: "What is the most common cause of secondary hypertension related to renal disease?"
+    back: "Renovascular hypertension from renal artery stenosis (1-2% of all hypertensive patients). Mechanism: decreased renal perfusion → increased renin → angiotensin II (vasoconstriction) and aldosterone (Na/water retention).\n\nClues suggesting renovascular HTN include severe/refractory HTN, negative family history, asymmetric renal size, epigastric bruits, spontaneous hypokalemia, and rising creatinine with ACEI/ARB. Duplex Doppler U/S is a good screening test; renal arteriography is the gold standard."
+    difficulty: medium
+    tags: [nephrology, hypertension, renovascular]
+  - front: "From which embryological structures does the definitive kidney (metanephros) develop?"
+    back: "The metanephros develops from: (1) the metanephric blastema (forms the nephrons: glomeruli, Bowman's capsule, PCT, loop of Henle, DCT) and (2) the ureteric bud of the mesonephric duct (forms the collecting system: collecting ducts, calyces, renal pelvis, ureters).\n\nThe pronephros degenerates by week 4, the mesonephros degenerates and its remnants form the Wolffian duct of the male reproductive system, and the metanephros develops in week 5 as the definitive kidney. Understanding this embryology is testable on MCCQE1 in the context of renal developmental anomalies."
+    difficulty: easy
+    tags: [nephrology, embryology, kidney development, metanephros, ureteric bud]
+  - front: "What is the sequence of kidney embryological development in humans?"
+    back: "Pronephros (end of week 3, degenerates by end of week 4) → Mesonephros (week 4, degenerates; remnants form Wolffian/mesonephric duct of male reproductive system) → Metanephros (week 5, becomes the definitive kidney). All originate from the urogenital ridge of the intermediate mesoderm.\n\nThe kidneys ascend from the pelvis into the retroperitoneum during development, gaining their blood supply from the abdominal aorta. Failure of ascent results in a pelvic kidney."
+    difficulty: easy
+    tags: [nephrology, embryology, pronephros, mesonephros, metanephros]
+  - front: "What are the five major kidney functions?"
+    back: "1. Waste excretion (glomerular filtration, tubular secretion, tubular catabolism of drugs/hormones)\n2. Electrolyte balance and osmoregulation (NaCl/water reabsorption, K⁺/H⁺ secretion, HCO₃⁻ synthesis)\n3. Hormonal synthesis (erythropoietin, vitamin D activation, renin production)\n4. Blood pressure regulation (Na⁺ excretion alters ECF volume; renin alters vascular resistance)\n5. Glucose homeostasis (gluconeogenesis; clearance of circulating insulin)\n\nThese functions underlie many clinical manifestations of chronic kidney disease, including anemia (erythropoietin deficiency), renal osteodystrophy (vitamin D deficiency), hypertension (RAAS activation), and metabolic acidosis (impaired H⁺ secretion)."
+    difficulty: easy
+    tags: [nephrology, kidney function, erythropoietin, vitamin D, RAAS]
+  - front: "What are the three cell types that form the glomerular filtration barrier?"
+    back: "1. Fenestrated capillary endothelial cells (with glycocalyx) — provide size and charge selectivity\n2. Glomerular basement membrane (GBM) — collagen IV and laminin\n3. Visceral epithelial cells (podocytes) — interdigitated foot processes with slit diaphragms\n\nThe barrier restricts molecules >5000 daltons and negatively charged molecules (e.g., albumin).\n\nDisruption of any component of this barrier leads to proteinuria. For example, minimal change disease affects podocyte foot processes, membranous nephropathy affects the GBM, and anti-GBM disease (Goodpasture) attacks the GBM directly."
+    difficulty: medium
+    tags: [nephrology, glomerulus, filtration barrier, podocytes, GBM]
+  - front: "What is the role of juxtaglomerular cells and what stimulates renin release?"
+    back: "Juxtaglomerular cells are modified smooth muscle cells in the afferent arteriole adjacent to the macula densa. They produce, store, and secrete renin.\n\nRenin is released in response to:\n1. Low afferent arteriolar blood pressure (decreased stretch)\n2. Sympathetic nervous system activation (via β-adrenergic receptors)\n3. Decreased Cl⁻/NaCl delivery to the macula densa (indicator of decreased RPF)\n\nRenin cleaves angiotensinogen → angiotensin I, which is converted by ACE (in the lungs) → angiotensin II. This activates the RAAS pathway leading to vasoconstriction, aldosterone release, sodium retention, and ADH release — all aimed at restoring perfusion pressure."
+    difficulty: medium
+    tags: [nephrology, RAAS, renin, juxtaglomerular apparatus, macula densa]
+  - front: "What is the filtration fraction (FF) and what is its normal value? How does angiotensin II affect FF?"
+    back: "FF = GFR / RPF; normal value is approximately 0.2 (20%).\n\nAngiotensin II preferentially constricts the efferent arteriole, which:\n- Increases hydrostatic pressure in glomerular capillaries\n- Increases FF\n- Thereby maintains GFR even when RPF is reduced (e.g., in volume depletion)\n\nThis is why ACE inhibitors (which reduce angiotensin II) can cause acute kidney injury in patients with bilateral renal artery stenosis — they dilate the efferent arteriole, reduce FF and GFR, and the kidney can no longer maintain filtration pressure. This is a classic MCCQE1 clinical scenario."
+    difficulty: medium
+    tags: [nephrology, filtration fraction, angiotensin II, renal hemodynamics, ACEI]
+  - front: "What are the three mechanisms of renal autoregulation that maintain constant GFR over mean arterial pressures of 70–180 mmHg?"
+    back: "1. Myogenic mechanism: low BP directly causes afferent arteriole smooth muscle to dilate (and high BP causes constriction), preserving renal blood flow\n2. Release of vasoactive factors: low GFR → decreased perfusion pressure → prostaglandin release → afferent arteriolar dilation → increased GFR\n3. Tubuloglomerular feedback: reduced NaCl delivery to macula densa → decreased afferent arteriolar tone → increased GFR (and vice versa)\n\nNSAIDs inhibit prostaglandin synthesis and impair mechanism #2, which is why NSAIDs can precipitate AKI in patients with low effective circulating volume (e.g., heart failure, cirrhosis, dehydration). This is an important clinical pearl for MCCQE1."
+    difficulty: medium
+    tags: [nephrology, renal autoregulation, GFR, tubuloglomerular feedback, myogenic mechanism]
+  - front: "What is the gold standard for measuring GFR and what is used clinically?"
+    back: "Gold standard: inulin clearance or iothalamate radiotracer (freely filtered, not secreted or reabsorbed) — rarely used clinically.\n\nClinical estimation:\n1. CKD-EPI equation (most accurate; uses serum Cr, age, sex, race)\n2. 24-hour urine creatinine clearance: CrCl = (urine [Cr] × 24h urine volume) / plasma [Cr]\n3. Cockcroft-Gault equation: CrCl = 1.2 × (140 – age) × weight (kg) / [Cr] (×0.85 for women) — primarily used for drug dosing in CKD\n4. New CKD-EPI equation with Cr + cystatin C (excludes race variable; more accurate)\n\nNormal average GFR is 180 L/day or 125 mL/min/1.73 m². GFR peaks in early adulthood and declines after age 40. The CKD-EPI equation is the preferred method in Canadian clinical practice for staging CKD."
+    difficulty: easy
+    tags: [nephrology, GFR, CKD-EPI, Cockcroft-Gault, creatinine clearance]
+  - front: "What are the five major limitations of using serum creatinine to estimate GFR?"
+    back: "1. Must be in steady state — serum Cr lags behind acute falls in GFR by days\n2. GFR must fall substantially before plasma [Cr] rises above normal (compensatory hyperfiltration by remaining nephrons)\n3. Cr production varies with muscle mass (falsely normal Cr in elderly, female, low weight)\n4. Tubular secretion of Cr increases as GFR decreases → overestimates GFR; drugs (cimetidine, trimethoprim) inhibit tubular Cr secretion raising Cr without falling GFR\n5. Measurement errors: high bilirubin → falsely low Cr; acetoacetate and cefoxitin → falsely high Cr\n\nA classic MCCQE1 example: an 80-year-old woman with plasma [Cr] of 100 µmol/L may have a GFR of only 30.6 mL/min, while a 20-year-old 100 kg man with the same Cr may have a GFR of 144 mL/min. Always consider muscle mass and age when interpreting creatinine."
+    difficulty: medium
+    tags: [nephrology, creatinine, GFR estimation, limitations, cystatin C]
+  - front: "What is cystatin C and when is it preferred over creatinine for GFR estimation?"
+    back: "Cystatin C is a newly discovered biomarker for GFR estimation that is NOT affected by muscle mass. It can be used with age and sex (excluding race variable) to estimate GFR more accurately than CKD-EPI with race omitted.\n\nPreferred in:\n- Patients with abnormal muscle mass (elderly, amputees, bodybuilders)\n- Situations where creatinine-based equations are unreliable\n\nThe combined Cr + cystatin C CKD-EPI equation is now considered more accurate than creatinine-alone equations and is being used more widely. Its clinical use remains limited pending greater availability and testing standardization."
+    difficulty: medium
+    tags: [nephrology, cystatin C, GFR, biomarker, CKD-EPI]
+  - front: "What is the normal urea-to-creatinine ratio in serum (SI units) and what causes a disproportionate rise in urea?"
+    back: "Normal ratio: urea:creatinine = 1:12 (using mmol/L for urea and µmol/L for creatinine).\n\nDisproportionately HIGH urea (high ratio) occurs with:\n- Increased protein catabolism: GI hemorrhage, sepsis, trauma, corticosteroids, cytotoxic agents\n- High protein diet\n- ECF volume depletion (50%+ urea reabsorption increases)\n\nDisproportionately LOW urea:\n- Low protein diet\n- Liver disease (decreased urea synthesis)\n\nIn prerenal AKI due to volume depletion, the urea:creatinine ratio rises disproportionately because urea (unlike creatinine) is significantly reabsorbed in the tubule when flow is slow — a useful clinical distinction from intrinsic renal disease."
+    difficulty: medium
+    tags: [nephrology, urea, creatinine ratio, prerenal, AKI]
+  - front: "What is 'isosthenuria' and in what condition is it characteristically seen?"
+    back: "Isosthenuria is a urine specific gravity of approximately 1.010, reflecting a urine osmolality equal to that of plasma (~300 mOsm/kg).\n\nIt is characteristically seen in chronic kidney disease (CKD), where impairment of both urinary concentration AND dilution results in urine that is fixed near plasma osmolality, regardless of fluid intake.\n\nNormal specific gravity ranges from 1.001–1.030. Values <1.010 reflect dilute urine; values >1.020 reflect concentrated urine. In CKD, the remaining nephrons lose the ability to modulate urine concentration, resulting in isosthenuria — this is a marker of tubular dysfunction."
+    difficulty: easy
+    tags: [nephrology, urinalysis, specific gravity, isosthenuria, CKD]
+  - front: "What are the four causes of glycosuria (glucose in urine)?"
+    back: "1. Hyperglycemia >9–11.1 mmol/L (filtration exceeds tubular reabsorption capacity — most common, e.g., diabetes mellitus)\n2. Increased GFR (e.g., pregnancy — PCT unable to reabsorb filtered glucose/amino acids)\n3. Proximal tubule dysfunction (e.g., Fanconi syndrome — generalized PCT defect)\n4. SGLT2 inhibitors (e.g., empagliflozin, dapagliflozin) — lower renal glucose threshold intentionally\n\nGlucose is freely filtered and normally completely reabsorbed in the proximal tubule via SGLT transporters. Glycosuria without hyperglycemia (e.g., Fanconi syndrome, SGLT2 inhibitor use) is important to recognize on MCCQE1."
+    difficulty: easy
+    tags: [nephrology, glycosuria, urinalysis, Fanconi syndrome, SGLT2 inhibitors]
+  - front: "What proteins does the urine dipstick detect, and what is the gold standard for measuring proteinuria?"
+    back: "Dipstick only detects albumin — it MISSES:\n- Bence-Jones proteins (monoclonal light chains in myeloma)\n- Immunoglobulins\n- Tamm-Horsfall protein\n\nGold standard: 24-hour timed urine collection for total protein (always order 24h urine creatinine to confirm collection completeness).\n\nMicroalbuminuria (ACR 2.0–20 mg/mmol morning) is NOT detected by standard dipstick. To estimate 24h albumin excretion from ACR: multiply ACR × 10 (women) or × 15 (men).\n\nIn multiple myeloma, urine dipstick may be negative despite significant proteinuria from light chains (Bence-Jones proteins). Always order urine protein electrophoresis or urine immunofixation when myeloma is suspected. This is a classic MCCQE1 clinical trap."
+    difficulty: medium
+    tags: [nephrology, proteinuria, urinalysis, dipstick, Bence-Jones protein, microalbuminuria]
+  - front: "What is the significance of leukocyte esterase and nitrites on urine dipstick? What bacteria produce nitrites?"
+    back: "Leukocyte esterase: enzyme found in WBCs; positive = WBCs in urine, indicating infection (UTI) or inflammation (AIN, prostatitis, ureteritis, pyelonephritis).\n\nNitrites: endogenous nitrates converted to nitrites by bacteria. High specificity but LOW sensitivity for UTI.\n- Nitrite-POSITIVE bacteria: mostly Gram-negative (Enterobacteriaceae e.g., E. coli, Klebsiella)\n- Nitrite-NEGATIVE bacteria: Enterococci, Staphylococci\n\nA negative nitrite does NOT rule out UTI, since common organisms like Enterococcus and Staphylococcus saprophyticus (common in young women) do not produce nitrites. Always interpret dipstick findings with clinical context."
+    difficulty: easy
+    tags: [nephrology, urinalysis, UTI, nitrites, leukocyte esterase, dipstick]
+  - front: "What causes persistent sterile pyuria (>4 WBCs/HPF with negative culture)?"
+    back: "Causes of sterile pyuria:\n- Chronic urethritis\n- Prostatitis\n- Interstitial nephritis (AIN)\n- Urolithiasis/calculi\n- Allergic cystitis\n- Interstitial cystitis\n- Papillary necrosis\n- Renal tuberculosis\n- Viral infections\n- N. gonorrhoeae or C. trachomatis infection (STIs — require special cultures)\n\nSterile pyuria is a classic finding in renal tuberculosis on MCCQE1. TB affects the kidney hematogenously; organisms are not detected on standard urine cultures and require specific mycobacterial cultures. Always ask about TB risk factors when sterile pyuria is found."
+    difficulty: medium
+    tags: [nephrology, urinalysis, sterile pyuria, renal tuberculosis, AIN]
+  - front: "How do you interpret urine casts on microscopy? Match each cast type to its clinical significance."
+    back: "- Hyaline casts: physiologic (concentrated urine, fever, exercise)\n- Granular casts: AKD (general), ATN (less specific)\n- RBC casts: glomerular bleeding (proliferative GN, vasculitis) — pathognomonic\n- WBC casts: pyelonephritis (infection); interstitial nephritis (inflammation)\n- Pigmented granular casts (muddy brown/heme): ATN; acute proliferative GN\n- Fatty/lipid casts: nephrotic syndrome (proteinuria >3.5 g/day)\n\nCasts form from intratubular precipitation of uromodulin (Tamm-Horsfall protein) with trapped cells; they originate ONLY from the nephron.\n\nRBC casts are pathognomonic for glomerulonephritis — their presence distinguishes glomerular hematuria from lower urinary tract bleeding. Muddy brown granular casts are the hallmark of ATN. Fatty casts with oval fat bodies (maltese cross pattern) indicate nephrotic-range proteinuria."
+    difficulty: medium
+    tags: [nephrology, urine microscopy, casts, ATN, glomerulonephritis, nephrotic syndrome]
+  - front: "What is the difference between dysmorphic and isomorphic RBCs on urine microscopy?"
+    back: "- Dysmorphic RBCs (acanthocytes) ± RBC casts → glomerular origin bleeding (e.g., proliferative GN, IgA nephropathy, vasculitis)\n- Isomorphic RBCs, no casts → extraglomerular (non-glomerular) bleeding (e.g., bladder cancer, kidney stones, UTI)\n\nHematuria is defined as ≥3 RBCs per HPF.\n\nDysmorphic RBCs are distorted as they pass through the damaged glomerular filtration barrier and tubules. This distinction is critical: glomerular hematuria warrants workup for GN (complement, ANCA, anti-GBM, ANA, serology), while non-glomerular hematuria in adults over 35–40 warrants cystoscopy to rule out bladder malignancy."
+    difficulty: medium
+    tags: [nephrology, hematuria, urine microscopy, dysmorphic RBCs, glomerulonephritis]
+  - front: "What do the following urine crystal shapes indicate: (1) envelope-shaped, (2) coffin-lid shaped, (3) rosette or needle-shaped?"
+    back: "1. Envelope-shaped crystals → calcium oxalate; consider hyperoxaluria, ethylene glycol poisoning, nephrolithiasis\n2. Coffin-lid shaped crystals → triple phosphate (struvite); consider UTI with urease-producing organisms (e.g., Klebsiella, Proteus)\n3. Rosette or needle-shaped crystals → uric acid; consider acidic urine, hyperuricosuria, tumour lysis syndrome\n\nOther crystals: calcium phosphate (alkaline urine), sulfur crystals (sulfa antibiotics), acyclovir crystals (crystalluria from acyclovir). Ethylene glycol poisoning producing calcium oxalate crystals with an osmolar gap is a classic toxicology-nephrology crossover question on MCCQE1."
+    difficulty: medium
+    tags: [nephrology, urinalysis, crystals, nephrolithiasis, ethylene glycol, uric acid]
+  - front: "What is the fractional excretion of sodium (FENa) and how is it used to differentiate causes of AKI?"
+    back: "FENa = (urine [Na⁺] × plasma [Cr]) / (plasma [Na⁺] × urine [Cr]) × 100\n\nInterpretation:\n- FENa <1%: prerenal AKI (kidneys avidly retaining sodium — appropriate response to decreased perfusion)\n- FENa >2%: intrinsic renal AKI (e.g., ATN — tubules unable to reabsorb sodium properly)\n\nCaveat: FENa may be low (<1%) in contrast nephropathy, myoglobinuria, and early obstruction despite intrinsic damage.\n\nFENa is most useful when diuretics have NOT been given (diuretics will artificially raise urine Na⁺ and falsely elevate FENa). In patients on diuretics, use fractional excretion of urea (FEUrea <35% = prerenal) instead."
+    difficulty: hard
+    tags: [nephrology, FENa, AKI, prerenal, ATN, urine biochemistry]
+  - front: "What are the two key principles of sodium homeostasis and how do hypo- and hypernatremia differ from disorders of Na⁺ balance?"
+    back: "Key principles:\n1. Hypo- and hypernatremia are disorders of WATER balance (not sodium balance)\n   - Hyponatremia = too much water relative to Na⁺ in ECF\n   - Hypernatremia = too little water relative to Na⁺ in ECF\n\n2. ECF volume is determined by Na⁺ CONTENT (not concentration)\n   - Na⁺ deficiency → ECF volume contraction\n   - Na⁺ excess → ECF volume expansion\n\nSolutes that cannot cross the plasma membrane (Na⁺, K⁺, glucose) contribute to effective osmolality and drive transcellular water shifts.\n\nThis fundamental distinction is critical: treating hyponatremia requires addressing the water excess, not sodium deficiency. Symptoms of hypo/hypernatremia are primarily neurological because brain cells swell (hyponatremia) or shrink (hypernatremia) in response to osmotic changes."
+    difficulty: medium
+    tags: [nephrology, sodium homeostasis, hyponatremia, hypernatremia, osmolality]
+  - front: "Define hyponatremia and classify it by volume status."
+    back: "Hyponatremia: serum [Na⁺] <135 mmol/L\n\nClassification by volume status:\n1. Hypovolemic hyponatremia: water loss proportionally less than sodium loss (e.g., vomiting, diarrhea, diuretics, adrenal insufficiency)\n2. Hypervolemic hyponatremia: water gain proportionally greater than sodium gain (e.g., CHF, cirrhosis, nephrotic syndrome)\n3. Euvolemic hyponatremia: water gain with neutral sodium balance (e.g., SIADH, hypothyroidism, psychogenic polydipsia)\n\nCan be associated with hypo-osmolality (most common), iso-osmolality, or hyperosmolality.\n\nDistinguishing volume status guides treatment: hypovolemic hyponatremia requires volume repletion with isotonic saline; hypervolemic requires fluid restriction and diuresis; euvolemic (SIADH) requires free water restriction ± vasopressin antagonists. Osmolality assessment is the next diagnostic step."
+    difficulty: medium
+    tags: [nephrology, hyponatremia, SIADH, volume status, electrolytes]
+  - front: "What is the maximum safe rate of sodium correction in chronic hyponatremia, and why?"
+    back: "Maximum correction rate: ≤8 mmol/L per 24 hours in chronic hyponatremia (>48 hours duration).\n\nRapid correction risks osmotic demyelination syndrome (ODS)/central pontine myelinolysis because:\n- Brain cells adapted to low Na⁺ by losing intracellular electrolytes (hours) and organic osmolytes (days)\n- Rapid restoration of tonicity causes rapid shrinkage of brain cells that have adapted\n- Results in demyelination of pontine and extrapontine neurons\n\nException: acute hyponatremia (<48 h) — can correct up to 12 mmol/L/24h; if symptomatic, rapidly correct by 4–6 mmol/L in first hour using 3% NaCl boluses (100–150 cc).\n\nOsmotic demyelination syndrome causes dysarthria, dysphagia, paresis — symptoms delayed 2–6 days. Risk factors: serum [Na⁺] <120 mmol/L, duration >48h, hypokalemia, malnutrition, liver disease, alcoholism. High urine output of dilute urine is the FIRST sign of dangerously rapid autocorrection."
+    difficulty: hard
+    tags: [nephrology, hyponatremia, sodium correction, osmotic demyelination, central pontine myelinolysis]
+  - front: "What are the risk factors for osmotic demyelination syndrome (ODS) in hyponatremia?"
+    back: "Risk factors for ODS:\n1. Low serum [Na⁺] ≤120 mmol/L at presentation (especially <106 mmol/L)\n2. Duration of hyponatremia >2 days (chronic)\n3. Associated hypokalemia\n4. Malnutrition\n5. Liver disease\n6. Alcoholism\n7. Overly rapid correction of [Na⁺]: rise >8 mmol/L/24h\n\nInadvertent rapid correction often occurs when the stimulus for ADH is abruptly removed — e.g., stopping thiazides, replacing corticosteroids in Addison disease, stopping SSRIs, or giving an antiemetic (resolution of nausea → cessation of SIADH → free water diuresis). Monitoring urine output and osmolality is critical."
+    difficulty: hard
+    tags: [nephrology, osmotic demyelination, hyponatremia, ODS, SIADH, risk factors]
+  - front: "What are the clinical features of acute versus chronic hyponatremia?"
+    back: "Acute hyponatremia (<48 h):\n- More symptomatic (cerebral edema, raised ICP)\n- Symptoms: headache, nausea, malaise, lethargy, seizures, decreased LOC, brain herniation, death\n- Less cellular adaptation has occurred\n- Can correct more rapidly (up to 12 mmol/L/24h)\n\nChronic hyponatremia (>48 h):\n- Less symptomatic (brain adapts by losing intracellular electrolytes and organic osmolytes)\n- Risk of osmotic demyelination if corrected too rapidly\n- Correct ≤8 mmol/L/24h\n\nThe brain's adaptation to chronic hyponatremia is protective against edema but creates the risk of ODS upon rapid correction. Postoperative hyponatremia and marathon runner hyponatremia are typically acute and require rapid correction if symptomatic."
+    difficulty: medium
+    tags: [nephrology, hyponatremia, cerebral edema, acute hyponatremia, chronic hyponatremia]
+  - front: "What is the treatment approach for symptomatic acute hyponatremia?"
+    back: "If symptomatic (seizures, decreased LOC):\n1. Correct rapidly with 3% NaCl boluses: 100–150 cc (or 2 cc/kg)\n2. Aim for rapid increase of 4–6 mmol/L within the first hour → should resolve symptoms\n3. Continue 3% NaCl at ~1 mmol/L/h to increase serum [Na⁺] to ~130 mmol/L\n4. Limit rise to 12 mmol/L/24h if duration >24h\n\nKey concentration facts:\n- 0.45% NaCl: [Na⁺] = 77 mmol/L\n- 0.9% NaCl: [Na⁺] = 154 mmol/L\n- 3% NaCl: [Na⁺] = 513 mmol/L\n- D5W: [Na⁺] = 0 mmol/L\n\nFor chronic hyponatremia with severe symptoms (seizures, decreased LOC), use the same acute strategy but limit total rise to 8 mmol/L in 24h. General measures for all hyponatremia: restrict free water, treat underlying cause, monitor serum Na⁺, urine volume, and urine osmolality frequently."
+    difficulty: hard
+    tags: [nephrology, hyponatremia, 3% NaCl, treatment, acute hyponatremia]
+  - front: "What are the clinical signs used to assess ECF volume status (hypovolemia vs hypervolemia)?"
+    back: "Hypovolemia signs:\n- Low BP with orthostatic drop\n- Tachycardia\n- Decreased skin turgor\n- Absent dependent edema\n- Decreased urine output\n- Decreased body weight\n- Increased hematocrit and serum protein\n- IVC diameter <2.1 cm; IVC collapse on inspiration >50%\n\nHypervolemia signs:\n- Normal to increased BP; S3 heart sound\n- Inspiratory crackles on lung auscultation\n- Edema present\n- Increased body weight\n- Decreased hematocrit and serum protein\n- IVC diameter >2.1 cm; IVC collapse <50%\n- B-lines on lung ultrasound\n\nIVC ultrasound during respiration assesses central venous pressure/right atrial pressure and is increasingly used at the bedside. Urine sodium in hypovolemia can be increased (renal losses) or decreased (extrarenal losses), making it less reliable than clinical assessment alone."
+    difficulty: medium
+    tags: [nephrology, ECF volume, hypovolemia, hypervolemia, clinical assessment]
+  - front: "Which tubular segment of the nephron reabsorbs the most sodium and what percentage of filtered sodium does it reclaim?"
+    back: "The proximal convoluted tubule (PCT) reabsorbs approximately 80% of filtered sodium (also reabsorbs 90% of HCO₃⁻, 90% of amino acids, and the majority of glucose, phosphate, and potassium).\n\nAdditional reabsorption:\n- Loop of Henle (ascending thick limb): ~10% of filtered Na⁺ via Na⁺-K⁺-2Cl⁻ cotransporter (target of loop diuretics)\n- Distal tubule: ~7% via NaCl cotransporter (target of thiazide diuretics)\n- Collecting duct: ~3% via ENaC (target of aldosterone and amiloride/spironolactone)\n\nUnderstanding which diuretic targets which tubular segment is essential for MCCQE1. Loop diuretics (furosemide) are most potent because they block the highest-capacity Na⁺ transporter. Osmotic diuretics act at the proximal tubule and descending limb."
+    difficulty: medium
+    tags: [nephrology, proximal tubule, sodium reabsorption, tubular segments, diuretics]
+  - front: "What are oval fat bodies in urine microscopy and what is their clinical significance?"
+    back: "Oval fat bodies are tubular epithelial cells or macrophages laden with lipid droplets. They are seen in heavy proteinuria (proteinuria >3.5 g/day), characteristic of nephrotic syndrome.\n\nThey appear as a 'Maltese cross' pattern under polarized light. They are found alongside fatty/lipid casts.\n\nHeavy proteinuria causes tubular cells to absorb filtered lipoproteins, producing oval fat bodies. Their presence, along with fatty casts, supports a diagnosis of nephrotic syndrome. Causes include minimal change disease, membranous nephropathy, focal segmental glomerulosclerosis (FSGS), and diabetic nephropathy."
+    difficulty: medium
+    tags: [nephrology, urine microscopy, oval fat bodies, nephrotic syndrome, proteinuria]
+  - front: "What urine biochemistry findings support a diagnosis of prerenal AKI versus intrinsic renal AKI?"
+    back: "Prerenal AKI (avid sodium retention):\n- Urine [Na⁺] <20 mmol/L\n- Urine [Cl⁻] <20 mmol/L\n- FENa <1%\n- Urine osmolality >500 mOsm/kg (concentrated urine — ADH acting)\n- Urine:plasma creatinine ratio >40\n\nIntrinsic renal AKI (tubular dysfunction — unable to concentrate or retain Na):\n- Urine [Na⁺] >20–40 mmol/L\n- FENa >2%\n- Urine osmolality <350 mOsm/kg (isosthenuric)\n\nIn patients on diuretics: use FE urea (<35% = prerenal) instead of FENa.\n\nIn hypokalemia, the expected renal response is to retain K⁺ (urine K⁺ excretion <20 mmol/day). If urine K⁺ >20 mmol/day in hypokalemia, this suggests renal K⁺ wasting (e.g., hyperaldosteronism, diuretics, renal tubular acidosis)."
+    difficulty: hard
+    tags: [nephrology, urine biochemistry, prerenal AKI, ATN, FENa, urine sodium]
+  - front: "What urine osmolality suggests water diuresis (DI or psychogenic polydipsia) in the workup of polyuria?"
+    back: "Urine osmolality <100 mOsm/kg\n\nUrine osmolality <100 mOsm/kg indicates dilute urine consistent with water diuresis, pointing to diabetes insipidus or psychogenic polydipsia. Values 100-300 suggest mixed (partial DI or CKD); >300 suggests osmotic diuresis."
+    difficulty: easy
+    tags: [nephrology, polyuria, diabetes insipidus, urine osmolality]
+  - front: "What urine volume defines significant polyuria in adults on 24-hour urine collection?"
+    back: ">3 L in adults\n\nA 24-hour urine collection >3 L in adults defines clinically significant polyuria requiring further investigation. This cutoff initiates a systematic workup including urine osmolality and water deprivation testing."
+    difficulty: easy
+    tags: [nephrology, polyuria, urine collection]
+  - front: "What urine osmolality range suggests osmotic diuresis (e.g., hyperglycemia, excess solute intake) in the workup of polyuria?"
+    back: "Urine osmolality >300 mOsm/kg\n\nUrine osmolality >300 mOsm/kg suggests an osmotic diuresis caused by hyperglycemia, azotemia, or excess solute intake. This is distinguished from water diuresis (<100 mOsm/kg) and mixed causes (100-300 mOsm/kg)."
+    difficulty: easy
+    tags: [nephrology, polyuria, osmotic diuresis, urine osmolality]
+  - front: "What are the KDIGO stages of AKI based on serum creatinine?"
+    back: "Stage 1: 1.5-1.9x baseline or ≥0.3 mg/dL increase; Stage 2: 2.0-2.9x baseline; Stage 3: ≥3x baseline, Cr ≥4.0 mg/dL, initiation of RRT, or eGFR <35 mL/min/1.73m² in patients <18 yr\n\nKDIGO staging classifies AKI severity by creatinine rise or urine output. Stage 1 is the mildest; Stage 3 is the most severe and includes anyone requiring renal replacement therapy. Staging guides management intensity."
+    difficulty: easy
+    tags: [nephrology, AKI, KDIGO, staging, creatinine]
+  - front: "What urine output criteria define oliguria in the context of AKI?"
+    back: "<0.5 mL/kg/h for >6 hours\n\nAKI can manifest as anuria, oliguria (<0.5 mL/kg/h for >6 h), or occasionally polyuria. Oliguria is an important clinical feature of AKI alongside azotemia and edema."
+    difficulty: easy
+    tags: [nephrology, AKI, oliguria, urine output]
+  - front: "What are the two most common causes of AKI in hospitalized patients?"
+    back: "Prerenal azotemia (decreased perfusion) and acute tubular necrosis (ATN)\n\nPrerenal azotemia from decreased renal perfusion is the most common cause; ATN (often from ischemia or nephrotoxins) is the most common intrinsic renal cause. Importantly, sustained prerenal failure can progress to ATN."
+    difficulty: easy
+    tags: [nephrology, AKI, prerenal, ATN]
+  - front: "How do you differentiate prerenal AKI from ATN using urine indices?"
+    back: "Prerenal: Urine Na <20 mEq/L, FENa <1%, urine osmolality >500 mOsm/kg, BUN:Cr ratio >20, normal urine microscopy. ATN: Urine Na ~40 mEq/L, FENa >2%, urine osmolality <350 mOsm/kg, pigmented granular casts\n\nIn prerenal AKI, intact tubular function conserves sodium (low urine Na, low FENa) and concentrates urine. In ATN, damaged tubules cannot reabsorb sodium or concentrate urine. Pigmented granular (muddy brown) casts are hallmark of ATN."
+    difficulty: medium
+    tags: [nephrology, AKI, prerenal, ATN, FENa, urine indices]
+  - front: "What clinical clues suggest a prerenal etiology in AKI?"
+    back: "Decreased BP, increased HR, orthostatic changes, oliguria, urea rise disproportionate to creatinine rise (BUN:Cr >20), urine Na <10-20 mmol/L, urine osmolality >500 mOsm/kg, FENa <1%\n\nPrerenal AKI results from reduced renal perfusion. Volume depletion signs and intact tubular conservation (low urine Na, concentrated urine, low FENa) are hallmarks. The disproportionate urea rise reflects enhanced proximal tubular reabsorption."
+    difficulty: easy
+    tags: [nephrology, AKI, prerenal, clinical features]
+  - front: "What clues suggest postrenal AKI?"
+    back: "Known solitary kidney, older male with prostatic hypertrophy, recent retroperitoneal surgery, anuria, palpable bladder, hydronephrosis on ultrasound, FENa >2-3%, urine osmolality 250-300 mOsm/kg\n\nPostrenal AKI from obstruction requires functional solitary kidney or bilateral obstruction. Anuria is a key clue. Ultrasound showing hydronephrosis confirms obstruction. FENa is elevated because obstruction impairs tubular function."
+    difficulty: easy
+    tags: [nephrology, AKI, postrenal, obstruction, hydronephrosis]
+  - front: "What drugs cause disordered autoregulation leading to prerenal AKI?"
+    back: "NSAIDs (impair afferent arteriole dilation), ACEIs/ARBs (impair efferent arteriole constriction), calcineurin inhibitors (cyclosporine, tacrolimus), hypercalcemia\n\nThese medications interfere with the renal autoregulatory mechanisms that maintain GFR under low-perfusion states. NSAIDs block prostaglandin-mediated afferent vasodilation; ACEIs/ARBs block angiotensin-mediated efferent vasoconstriction."
+    difficulty: medium
+    tags: [nephrology, AKI, prerenal, drugs, NSAIDs, ACEI, ARB]
+  - front: "What are indications for renal biopsy in AKI?"
+    back: "Diagnosis uncertain, prerenal azotemia or ATN is unlikely, RPGN or significant glomerular disease (proteinuria + RBC casts) with normal kidney size/echogenicity, and to inform prognosis (degree of scarring/fibrosis guides decision on immunosuppression)\n\nRenal biopsy is reserved for cases where the diagnosis cannot be established clinically and where the result will change management. It is particularly useful when glomerulonephritis or interstitial nephritis is suspected."
+    difficulty: medium
+    tags: [nephrology, AKI, renal biopsy, indications]
+  - front: "According to the STARRT-AKI trial (NEJM 2020), what is the optimal timing for initiating renal replacement therapy in critically ill patients with AKI?"
+    back: "Standard (non-accelerated) strategy is preferred. Accelerated RRT initiation was not associated with lower 90-day mortality and had higher rates of adverse events including catheter-related complications.\n\nThe STARRT-AKI RCT found no mortality benefit to accelerated RRT initiation (90-day mortality ~43.9% in both groups). Accelerated strategy led to more adverse events. Standard strategy waits for specific clinical indications before starting RRT."
+    difficulty: hard
+    tags: [nephrology, AKI, RRT, dialysis, STARRT-AKI, evidence-based]
+  - front: "What are the indications for dialysis in AKI?"
+    back: "Refractory volume overload, refractory metabolic acidosis, refractory hyperkalemia, uremic encephalopathy, uremic pericarditis (AEIOU mnemonic: Acidosis, Electrolytes, Ingestions, Overload, Uremia)\n\nDialysis is initiated when conservative management fails to control life-threatening complications of AKI. Early (prophylactic) dialysis in critically ill patients without these indications has not been shown to improve outcomes."
+    difficulty: easy
+    tags: [nephrology, AKI, dialysis, RRT, indications]
+  - front: "What histological terms describe the number and extent of glomeruli affected in glomerular disease?"
+    back: "Number affected: Diffuse (majority abnormal) vs. Focal (some abnormal). Extent of individual glomerulus: Global (entire glomerulus) vs. Segmental (only part of glomerulus)\n\nThese histological descriptors are crucial for classifying glomerular diseases. For example, FSGS = focal segmental glomerulosclerosis (some glomeruli affected, only in part). Diffuse global changes indicate more severe, widespread disease."
+    difficulty: easy
+    tags: [nephrology, glomerular disease, histology, pathology]
+  - front: "What is crescent formation in the kidney and what does it signify?"
+    back: "Parietal epithelial cell (Bowman's capsule lining) proliferation and mononuclear cell infiltration forming crescent shapes in Bowman's space. It is the hallmark of inflammatory glomerulonephritis and is most commonly seen in RPGN.\n\nCrescents represent severe glomerular injury with proliferation of parietal epithelial cells into Bowman's space. Crescentic GN is the most aggressive form of glomerular disease and is frequently seen in RPGN, requiring urgent immunosuppression."
+    difficulty: medium
+    tags: [nephrology, glomerulonephritis, crescent formation, RPGN, histology]
+  - front: "What are the clinical syndromes of glomerular disease on the nephritic-nephrotic spectrum?"
+    back: "Pure nephrotic end: proteinuria, minimal hematuria (MCD, membranous, FSGS). Intermediate: MPGN, focal proliferative GN, IgA nephropathy. Pure nephritic end: hematuria, RBC casts, decreased GFR (diffuse proliferative GN, crescentic GN)\n\nGlomerular disease exists on a spectrum. Nephrotic syndrome is characterized by heavy proteinuria and edema. Nephritic syndrome features hematuria, RBC casts, hypertension, and azotemia. Many conditions overlap across the spectrum."
+    difficulty: medium
+    tags: [nephrology, glomerular disease, nephritic, nephrotic, spectrum]
+  - front: "What is the upper limit of normal daily protein excretion, and what defines microalbuminuria?"
+    back: "Normal: <150 mg total protein/day and <30 mg albumin/day. Microalbuminuria: ACR ≥2.0 mg/mmol (or 30-300 mg albumin/day). Nephrotic range proteinuria: >3500 mg total protein/1.73m²/day (ACR >220 mg/mmol)\n\nMicroalbuminuria (ACR ≥2.0 mg/mmol) is the earliest sign of diabetic nephropathy and a marker of vascular endothelial dysfunction. Persistent albuminuria >3 months is considered CKD. Nephrotic range proteinuria defines nephrotic syndrome."
+    difficulty: easy
+    tags: [nephrology, proteinuria, microalbuminuria, diabetic nephropathy, ACR]
+  - front: "What are the three mechanisms of pathologic proteinuria?"
+    back: "1. Glomerular: damage to filtration barrier allows albumin and high MW proteins to pass. 2. Tubular: impaired reabsorption of normally filtered low MW proteins (proximal tubule dysfunction). 3. Overflow: overproduction of low MW proteins exceeding reabsorptive capacity (e.g., light chains in myeloma)\n\nUnderstanding the mechanism of proteinuria guides diagnosis. Glomerular proteinuria (albumin-predominant) suggests GN. Tubular proteinuria suggests AIN or Fanconi syndrome. Overflow proteinuria suggests paraprotein disorders like multiple myeloma."
+    difficulty: medium
+    tags: [nephrology, proteinuria, mechanisms, glomerular, tubular, overflow]
+  - front: "What is IgA nephropathy (Berger's disease) and how does it present?"
+    back: "Most common primary glomerular disease worldwide. Presents most frequently with gross hematuria episodically after upper respiratory tract infection (synpharyngitic). More common in White and Asian populations, 2nd-3rd decades. Immunofluorescence shows mesangial IgA and C3 deposits.\n\nIgA nephropathy differs from post-streptococcal GN by its synpharyngitic onset (hematuria concurrent with URI, not 2-3 weeks later). It may be associated with cirrhosis, HIV, celiac disease. Treatment includes RAAS blockers for proteinuria; immunosuppression for progressive disease."
+    difficulty: easy
+    tags: [nephrology, IgA nephropathy, Bergers disease, glomerulonephritis, hematuria]
+  - front: "What is Alport Syndrome and what are its key features?"
+    back: "Hereditary nephritis from Type IV collagen mutation. X-linked nephritis associated with sensorineural hearing loss and ocular abnormalities. Presents with hematuria and proteinuria <2 g/d. Progresses to ESRD.\n\nAlport syndrome results from mutations in Type IV collagen genes (COL4A3, COL4A4, COL4A5). The X-linked form (COL4A5) is most common and primarily affects males. The triad of nephritis, sensorineural hearing loss, and ocular abnormalities distinguishes it from thin basement membrane disease."
+    difficulty: easy
+    tags: [nephrology, Alport syndrome, hereditary nephritis, collagen IV, hearing loss]
+  - front: "What is the classic triad of nephritic syndrome?"
+    back: "1. Hematuria (microscopic or macroscopic) with RBC casts and/or dysmorphic RBCs. 2. Azotemia (increased Cr and urea). 3. Hypertension (due to salt and water retention)\n\nNephritic syndrome reflects glomerular inflammation causing disruption of the filtration barrier (hematuria), reduced GFR (azotemia), and sodium/water retention (HTN and edema). Proteinuria is usually sub-nephrotic (<3.5 g/day)."
+    difficulty: easy
+    tags: [nephrology, nephritic syndrome, hematuria, azotemia, hypertension]
+  - front: "What are the three immunofluorescence types of RPGN and their associated conditions?"
+    back: "Type I (15%): Anti-GBM mediated (Goodpasture's). Type II (24%): Immune complex mediated (post-infectious GN, lupus, IgA, MPGN). Type III (60%): Pauci-immune (ANCA-associated vasculitis — GPA, MPA). Type IV: Double-antibody positive (anti-GBM + ANCA)\n\nClassifying RPGN by immunofluorescence pattern directs targeted therapy. Anti-GBM disease (Type I) requires plasmapheresis + immunosuppression. ANCA vasculitis (Type III, most common) requires steroids + cyclophosphamide or rituximab."
+    difficulty: medium
+    tags: [nephrology, RPGN, crescentic GN, ANCA, anti-GBM, immunofluorescence]
+  - front: "What is the treatment for RPGN?"
+    back: "Depends on type. General: corticosteroids (pulse steroids) + cyclophosphamide or other cytotoxic agents (azathioprine, mycophenolate mofetil, rituximab). Plasmapheresis for anti-GBM disease (Type I). RAAS blockade for BP control. Monitor for ESRD progression.\n\nRPGN is a nephrology emergency — rapid diagnosis and treatment is essential to preserve renal function. Anti-GBM disease requires urgent plasmapheresis to remove circulating antibodies. ANCA-associated RPGN responds to immunosuppression. Post-infectious RPGN may resolve with treatment of underlying infection."
+    difficulty: medium
+    tags: [nephrology, RPGN, treatment, plasmapheresis, cyclophosphamide, rituximab]
+  - front: "What are the defining features of nephrotic syndrome?"
+    back: "Heavy proteinuria >3.5 g/24h (or >3.5 g/1.73m²/day), hypoalbuminemia (<3 g/dL), peripheral edema, hyperlipidemia (elevated LDL), lipiduria (fatty casts and oval fat bodies), and hypercoagulable state (loss of antithrombin III, Protein C and S)\n\nNephrotic syndrome results from increased glomerular permeability. Hypoalbuminemia reduces oncotic pressure causing edema. Increased hepatic lipoprotein synthesis causes hyperlipidemia. Urinary loss of anticoagulants predisposes to renal vein thrombosis and VTE."
+    difficulty: easy
+    tags: [nephrology, nephrotic syndrome, proteinuria, hypoalbuminemia, edema, hyperlipidemia]
+  - front: "What is minimal change disease (MCD) and what is its classic presentation and treatment?"
+    back: "Glomeruli appear normal on light microscopy (foot-process effacement on EM). Classic presentation: child with sudden-onset nephrotic syndrome. Secondary causes: Hodgkin's lymphoma. Drug causes: NSAIDs. Treatment: corticosteroids (highly responsive)\n\nMCD is the most common cause of nephrotic syndrome in children. The term 'minimal change' refers to normal light microscopy — electron microscopy reveals diffuse podocyte foot-process effacement. It is exquisitely steroid-sensitive, distinguishing it from FSGS."
+    difficulty: easy
+    tags: [nephrology, minimal change disease, nephrotic syndrome, steroids, children]
+  - front: "What are the secondary causes of membranous glomerulopathy?"
+    back: "HBV, SLE, solid tumours (lung, breast, GI). Drug causes: Gold, penicillamine. Treatment: Reduce BP, ACEI, steroids, rituximab, cytotoxic agents (cyclophosphamide), calcineurin inhibitors, immunosuppressive agents\n\nMembranous glomerulopathy is the most common cause of nephrotic syndrome in adults. It should prompt a search for secondary causes, especially malignancy in older patients. PLA2R antibody is positive in ~75% of primary cases."
+    difficulty: medium
+    tags: [nephrology, membranous glomerulopathy, nephrotic syndrome, secondary causes, HBV]
+  - front: "What are the secondary causes of FSGS?"
+    back: "Reflux nephropathy, HIV (collapsing FSGS), obesity, sickle cell disease, heroin (drug cause). Treatment: ACEI/ARB for proteinuria, steroids and cytotoxic agents (cyclophosphamide) for RPGN or declining function\n\nFSGS can be primary (podocyte injury) or secondary to hyperfiltration states (obesity, solitary kidney, sickle cell) or direct podocyte toxins (HIV, heroin). HIV-associated nephropathy causes collapsing FSGS and is most common in African Americans with Apo-L1 risk genotypes."
+    difficulty: medium
+    tags: [nephrology, FSGS, HIV nephropathy, secondary causes, obesity]
+  - front: "What is the most common cause of nodular glomerulosclerosis?"
+    back: "Diabetes mellitus (Kimmelstiel-Wilson nodules) and amyloidosis. These are the most common secondary causes of glomerular disease overall.\n\nNodular glomerulosclerosis forms discrete nodular deposits in the mesangium. In DM, these are Kimmelstiel-Wilson nodules from advanced glycation end products. In amyloidosis, amyloid deposits form similar-appearing nodules but stain with Congo red."
+    difficulty: easy
+    tags: [nephrology, nodular glomerulosclerosis, diabetic nephropathy, amyloidosis, Kimmelstiel-Wilson]
+  - front: "What serological workup is used when investigating glomerular disease?"
+    back: "ANA (lupus), p-ANCA/MPO and c-ANCA/PR3 (vasculitis), C3/C4 (complement levels), anti-GBM, HBV, HCV, HIV, ASOT (post-streptococcal), VDRL, serum immunoelectrophoresis (amyloid/myeloma), cryoglobulins, ESR, serum free light chain assay\n\nA comprehensive serological screen is necessary to identify secondary causes of glomerular disease. Low complement with ANA and anti-dsDNA suggests lupus nephritis. ANCA is essential for vasculitis. Anti-GBM is critical for Goodpasture's disease."
+    difficulty: medium
+    tags: [nephrology, glomerular disease, serology, ANCA, ANA, complement, anti-GBM]
+  - front: "What are the ISN/RPS classes of lupus nephritis and their treatments?"
+    back: "Class I (minimal mesangial): no treatment. Class II (mesangial proliferative): lowest dose steroids + observation. Class III (focal): steroids + cytotoxic drugs. Class IV (diffuse, most severe): steroids + cytotoxic drugs. Class V (membranous): controversial steroids. Class VI (advanced sclerotic): ESRD planning (dialysis or transplant)\n\nLupus nephritis classification guides management. Class IV diffuse lupus nephritis is the most severe and requires aggressive immunosuppression with steroids and cyclophosphamide or mycophenolate mofetil. Low complement (C3/C4) and high anti-dsDNA indicate active lupus nephritis."
+    difficulty: medium
+    tags: [nephrology, lupus nephritis, SLE, ISN classification, treatment]
+  - front: "What are the key features of IgA vasculitis (Henoch-Schönlein Purpura)?"
+    back: "Systemic IgA vasculitis with IgA1-dominant immune complex deposition in small vessels. More common in children. Classic tetrad: palpable purpura (buttocks and legs), abdominal pain, arthralgia, and renal disease. IgA + C3 on mesangial immunofluorescence. Usually self-limiting; 10% progress to CKD.\n\nHSP/IgA vasculitis is the most common systemic vasculitis in children. The palpable purpura on dependent areas (buttocks, legs) distinguishes it from other causes of purpura. Renal involvement (hematuria, proteinuria) occurs in up to 50% and determines long-term prognosis."
+    difficulty: easy
+    tags: [nephrology, HSP, IgA vasculitis, Henoch-Schonlein, vasculitis, children]
+  - front: "What ANCA subtypes are associated with granulomatosis with polyangiitis (GPA) vs. microscopic polyangiitis (MPA)?"
+    back: "c-ANCA (anti-PR3/Proteinase 3): most commonly associated with GPA (Wegener's granulomatosis). p-ANCA (anti-MPO/Myeloperoxidase): most commonly associated with microscopic polyangiitis.\n\nANCA-associated vasculitis causes pauci-immune RPGN (crescents with no immune staining on IF). Both forms cause focal segmental necrotizing GN. Treatment is steroids + cyclophosphamide or rituximab; plasmapheresis for severe renal disease or pulmonary hemorrhage."
+    difficulty: easy
+    tags: [nephrology, ANCA, GPA, Wegeners, MPA, vasculitis, PR3, MPO]
+  - front: "What is the most common infectious association with cryoglobulinemic vasculitis?"
+    back: "Hepatitis C virus (HCV) — present in at least 50% of patients with cryoglobulinemia\n\nCryoglobulinemia presents with purpura, fever, Raynaud's phenomenon, arthralgias, and AKI. Decreased serum complement (especially C4) is characteristic. Treatment targets the underlying cause (antiviral for HCV) plus plasmapheresis, steroids, and cyclophosphamide."
+    difficulty: easy
+    tags: [nephrology, cryoglobulinemia, HCV, vasculitis, complement]
+  - front: "What organism most commonly causes shunt nephritis, and what is the treatment?"
+    back: "Staphylococcus epidermidis. Treatment: remove the infected shunt and administer appropriate antibiotics. Consider ventriculoperitoneal shunt (lowest risk for shunt nephritis).\n\nShunt nephritis is immune-complex mediated nephritis associated with chronically infected ventriculo-atrial shunts. It presents as acute nephritic syndrome with decreased complement and can progress to nephrotic range proteinuria. Removing the source of infection is essential."
+    difficulty: medium
+    tags: [nephrology, shunt nephritis, S. epidermidis, immune complex, ventriculoatrial shunt]
+  - front: "What are the histological and clinical features of HIV-associated nephropathy (HIVAN)?"
+    back: "Histology: collapsing FSGS with tubular cystic dilation and tubulo-reticular inclusions. Clinical: predominantly African American men, heavy proteinuria, rapid progressive renal insufficiency. Apo-L1 risk genotypes. Progresses to kidney failure within 1 year without treatment. Treatment: HAART, short-term high-dose steroids, ACEI.\n\nHIVAN is the most common cause of ESRD in HIV+ African Americans. Apo-L1 gene variants (G1, G2) dramatically increase risk. The collapsing variant of FSGS is characteristic. HAART is the cornerstone of treatment and has markedly reduced HIVAN incidence."
+    difficulty: medium
+    tags: [nephrology, HIVAN, HIV nephropathy, FSGS, African American, HAART]
+  - front: "What renal manifestations are caused by Hepatitis B vs. Hepatitis C?"
+    back: "Hepatitis B: membranous nephropathy, membranoproliferative GN, polyarteritis nodosa. Hepatitis C: membranous nephropathy, membranoproliferative GN, cryoglobulinemia (Type II/III)\n\nBoth hepatitis B and C can cause membranous and membranoproliferative GN. HBV uniquely causes polyarteritis nodosa. HCV is the most common cause of cryoglobulinemia. These associations are tested frequently on the MCCQE1."
+    difficulty: medium
+    tags: [nephrology, hepatitis B, hepatitis C, glomerulonephritis, membranous, cryoglobulinemia]
+  - front: "What is tubulointerstitial nephritis (TIN) and how does it differ from glomerular disease?"
+    back: "TIN involves cellular infiltrates primarily affecting the renal interstitium and tubular cells. Key feature: tubular functional defects (Fanconi syndrome, RTA, DI) are disproportionately greater than the decrease in GFR, distinguishing it from glomerular disease which prominently affects filtration.\n\nIn TIN, tubular dysfunction manifests as glycosuria, aminoaciduria, RTA, or concentrating defects depending on which tubular segment is affected. Proteinuria is typically mild and non-nephrotic. AKI from TIN is often reversible if the offending agent is removed."
+    difficulty: medium
+    tags: [nephrology, tubulointerstitial nephritis, TIN, tubular dysfunction, Fanconi syndrome]
+  - front: "What tubular dysfunction syndromes arise from proximal vs. distal vs. collecting duct injury?"
+    back: "Proximal tubule: Fanconi syndrome (glycosuria, aminoaciduria, phosphaturia, hyperuricosuria), Type II RTA. Distal tubule: Type I RTA (decreased H+ secretion), Na-wasting nephropathy, Type IV RTA (from hyperkalemia). Collecting duct: urinary concentrating defect (nephrogenic DI), polyuria.\n\nThe site of tubular injury determines the clinical manifestations. Proximal tubule injury from heavy metals, myeloma, or genetic causes causes Fanconi syndrome. Distal injury from amyloidosis or obstruction impairs acid secretion and sodium handling."
+    difficulty: hard
+    tags: [nephrology, tubular dysfunction, Fanconi syndrome, RTA, collecting duct, nephrogenic DI]
+  - front: "What antibiotic classes most commonly cause acute tubulointerstitial nephritis (AIN)?"
+    back: "Beta-lactams (most common), sulfonamides, rifampin, quinolones, cephalosporins\n\nDrug-induced AIN is a hypersensitivity reaction occurring 7-10 days after drug exposure. Beta-lactams are the most common culprits. NSAIDs, PPIs, allopurinol, thiazides, and furosemide also cause AIN. The triad of fever, rash, and eosinophilia is classic but only seen in ~10% of cases."
+    difficulty: easy
+    tags: [nephrology, AIN, acute interstitial nephritis, beta-lactams, drug reaction]
+  - front: "What are the urine findings in acute interstitial nephritis (AIN)?"
+    back: "Mild, non-nephrotic range proteinuria and microscopic hematuria, sterile pyuria, WBC casts, and eosinophiluria (not sole finding). Blood: eosinophilia, elevated Cr and urea, normal anion gap metabolic acidosis (RTA), hypophosphatemia, hypo- or hyperkalemia.\n\nWBC casts are the hallmark of tubulointerstitial inflammation (AIN, pyelonephritis). Eosinophiluria has low sensitivity but high negative predictive value. Normal anion gap acidosis results from impaired tubular acid secretion (RTA). Gallium scan shows intense renal uptake."
+    difficulty: medium
+    tags: [nephrology, AIN, WBC casts, eosinophiluria, pyuria, RTA]
+  - front: "What is the clinical triad of allergic/hypersensitivity AIN?"
+    back: "Fever, eosinophilia, and skin rash (serum sickness-like syndrome). Drug-induced AIN typically occurs 7-10 days after drug exposure. Rifampin characteristically causes serum sickness-like syndrome.\n\nWhile the classic triad of fever, rash, and eosinophilia is taught, it is only present in a minority of AIN cases. AKI occurring 7-10 days after starting a new medication should raise suspicion for AIN. Treatment is removal of the offending agent and, if immune/allergic etiology, early corticosteroids."
+    difficulty: easy
+    tags: [nephrology, AIN, hypersensitivity, fever, eosinophilia, rash, rifampin]
+  - front: "What is the most important cause of chronic tubulointerstitial nephritis (TIN)?"
+    back: "Urinary tract obstruction (tumours, stones, bladder outlet obstruction, vesicoureteral reflux)\n\nChronic TIN is characterized by slowly progressive renal failure with moderate proteinuria and tubular dysfunction. Obstruction is the most important cause; others include chronic pyelonephritis, nephrotoxins (analgesics, lithium, cisplatin), heavy metals, multiple myeloma, and granulomatous disease."
+    difficulty: easy
+    tags: [nephrology, chronic TIN, obstruction, vesicoureteral reflux, nephrotoxins]
+  - front: "What are the nephrotoxic drugs most commonly associated with chronic tubulointerstitial nephritis?"
+    back: "Analgesics: NSAIDs (most common), acetaminophen. Chemotherapy: cisplatin. Immunosuppressants: cyclosporine, tacrolimus, lithium. Heavy metals: lead, cadmium, mercury, arsenic. Herbal: aristolochic acid (Chinese herbs).\n\nAnalgesic nephropathy from chronic NSAID use is a common cause of CKD. Lithium causes nephrogenic DI acutely and chronic TIN with prolonged use. Aristolochic acid (found in some Chinese herbal preparations) causes rapidly progressive TIN — an important association to know."
+    difficulty: medium
+    tags: [nephrology, chronic TIN, nephrotoxins, NSAIDs, lithium, cisplatin, aristolochic acid]
+  - front: "What are the key findings in chronic tubulointerstitial nephritis (TIN)?"
+    back: "Non-anion gap metabolic acidosis, hyperkalemia out of proportion to renal insufficiency, polyuria, nocturia, partial or complete Fanconi syndrome, progressive renal failure with azotemia. Urine: mild proteinuria, few RBCs and WBCs, no RBC casts. Ultrasound: shrunken kidneys with irregular contours.\n\nShrunken, scarred kidneys on ultrasound differentiate chronic from acute TIN (which shows normal or enlarged kidneys). The absence of RBC casts (which are hallmarks of GN) and the presence of tubular dysfunction help distinguish TIN from glomerular disease."
+    difficulty: medium
+    tags: [nephrology, chronic TIN, metabolic acidosis, hyperkalemia, Fanconi syndrome, shrunken kidneys]
+  - front: "What are the three phases of acute tubular necrosis (ATN) and their features?"
+    back: "1. Oliguric phase: decreased urine output, azotemia, uremia — lasts 10-14 days. 2. Diuretic phase: urine output >500 mL/day as retained water/solutes are excreted, but tubular damage persists. 3. Recovery phase: tubular function recovers.\n\nDuring the oliguric phase, hyperkalemia and metabolic acidosis are life-threatening complications. The diuretic phase can paradoxically cause electrolyte losses and dehydration despite recovering GFR. Full renal recovery may take weeks to months."
+    difficulty: easy
+    tags: [nephrology, ATN, oliguric phase, diuretic phase, recovery, phases]
+  - front: "What are the causes of acute tubular necrosis (ATN)?"
+    back: "Ischemic: sustained prerenal AKI (hypotension, sepsis, hemorrhage, cardiac failure). Nephrotoxic: contrast agents, aminoglycosides, amphotericin B, cisplatin, heavy metals, rhabdomyolysis (myoglobin), hemolysis (hemoglobin)\n\nATN is the most common cause of non-prerenal AKI in hospitalized patients. Ischemic ATN results from prolonged prerenal hypoperfusion. Nephrotoxic ATN results from direct tubular cell toxicity. Rhabdomyolysis and hemolysis cause pigment nephropathy (myoglobin/hemoglobin are directly tubulotoxic)."
+    difficulty: easy
+    tags: [nephrology, ATN, ischemic, nephrotoxic, rhabdomyolysis, contrast nephropathy]
+  - front: "What are the urine findings in acute tubular necrosis (ATN)?"
+    back: "High FENa (>2%), pigmented granular (muddy brown) casts, urine osmolality <350 mOsm/kg, urine Na ~40 mEq/L\n\nPigmented granular (muddy brown) casts are the hallmark of ATN, formed from necrotic tubular epithelial cells. High FENa reflects loss of tubular sodium reabsorptive capacity. A fluid challenge will NOT correct serum creatinine in ATN, helping differentiate from prerenal AKI."
+    difficulty: easy
+    tags: [nephrology, ATN, pigmented granular casts, FENa, muddy brown casts]
+  - front: "What are the life-threatening complications of ATN?"
+    back: "Hyperkalemia (can cause arrhythmias — most urgent), metabolic acidosis, hypocalcemia, hyperphosphatemia, hypoalbuminemia\n\nHyperkalemia is the most immediately dangerous complication of ATN, causing fatal arrhythmias. It requires urgent management including IV calcium gluconate, insulin/dextrose, salbutamol, sodium bicarbonate, and dialysis if refractory."
+    difficulty: easy
+    tags: [nephrology, ATN, hyperkalemia, complications, metabolic acidosis]
+  - front: "How do you prevent contrast-induced AKI (contrast nephropathy)?"
+    back: "Pre- and post-procedure isotonic saline hydration. Hold diuretics, NSAIDs, ACEIs/ARBs, cyclosporine on morning of procedure. Use low-dose non-ionic, iso- or low-osmolal contrast agents. Note: IV sodium bicarbonate and N-acetylcysteine NOT shown to be beneficial (PRESERVE trial, NEJM 2018).\n\nThe PRESERVE trial (NEJM 2018) showed no benefit of IV sodium bicarbonate over IV saline, and no benefit of oral N-acetylcysteine over placebo in preventing contrast-associated AKI or composite outcomes at 90 days. Adequate hydration with isotonic saline remains the evidence-based intervention."
+    difficulty: medium
+    tags: [nephrology, contrast nephropathy, AKI prevention, PRESERVE trial, N-acetylcysteine, isotonic saline]
+  - front: "What does the PRESERVE trial (NEJM 2018) show about contrast-induced AKI prevention?"
+    back: "IV sodium bicarbonate was NOT superior to IV 0.9% sodium chloride, and oral N-acetylcysteine was NOT superior to oral placebo in preventing contrast-associated AKI, death, need for dialysis, or persistent decline in kidney function at 90 days.\n\nThis landmark trial definitively showed that commonly used interventions (bicarb and NAC) for preventing contrast nephropathy are ineffective. Isotonic saline hydration remains the standard. The findings changed clinical practice guidelines regarding pre-procedure prophylaxis."
+    difficulty: hard
+    tags: [nephrology, PRESERVE trial, contrast nephropathy, evidence-based, N-acetylcysteine, sodium bicarbonate]
+  - front: "What urine cast types are associated with which renal conditions?"
+    back: "RBC casts: glomerulonephritis (pathognomonic). WBC casts: tubulointerstitial nephritis, pyelonephritis. Pigmented granular (muddy brown) casts: ATN. Fatty casts/oval fat bodies: nephrotic syndrome. Waxy/broad casts: advanced CKD (wide casts from dilated tubules). Hyaline casts: normal or dehydration.\n\nUrine cast identification is a high-yield MCCQE1 skill. RBC casts are pathognomonic for glomerulonephritis. WBC casts indicate tubular inflammation. Fatty casts with oval fat bodies are seen in heavy proteinuria. Cast type narrows the differential diagnosis of AKI or kidney disease."
+    difficulty: easy
+    tags: [nephrology, urine casts, RBC casts, WBC casts, granular casts, fatty casts, urinalysis]
+  - front: "When is renal biopsy indicated in the workup of glomerular disease?"
+    back: "When proteinuria >0.5 g/d with casts and/or hematuria and specific diagnosis needed. Required for: RPGN, unexplained nephrotic syndrome in adults, suspected AIN or GN where diagnosis is uncertain, to assess prognosis (degree of fibrosis guides decision on immunosuppression). Contraindicated in solitary kidney, uncontrolled hypertension, bleeding disorders.\n\nRenal biopsy with light microscopy, immunofluorescence, and electron microscopy is essential to classify glomerular disease and guide therapy. In children with nephrotic syndrome (presumed MCD), biopsy is typically deferred and empirical steroids are given first."
+    difficulty: medium
+    tags: [nephrology, renal biopsy, indications, glomerular disease, diagnosis]
+  - front: "What is amyloidosis of the kidney and how does it present?"
+    back: "Nodular deposits of amyloid in the mesangium (usually amyloid light chain — AL type). Presents as nephrotic range proteinuria (albuminuria) with progressive renal insufficiency. Can be primary or secondary to multiple myeloma, TB, rheumatoid arthritis, inflammatory diseases, or malignancy.\n\nRenal amyloidosis is an important secondary cause of glomerular disease. Congo red staining shows apple-green birefringence under polarized light. AA amyloid (secondary) is associated with chronic inflammatory conditions. AL amyloid (primary/myeloma-associated) is more common and requires treatment of the underlying plasma cell disorder."
+    difficulty: medium
+    tags: [nephrology, amyloidosis, nephrotic syndrome, multiple myeloma, mesangial deposits]
+  - front: "What is the renal-ocular syndrome (idiopathic acute TIN)?"
+    back: "Acute tubulointerstitial nephritis (AIN) plus uveitis (TINU syndrome). Idiopathic etiology — not caused by drugs or infections. Treated with corticosteroids.\n\nTINU (Tubulointerstitial Nephritis and Uveitis) syndrome is an uncommon idiopathic condition predominantly affecting adolescent females. The uveitis can precede, coincide with, or follow the nephritis. Corticosteroids treat both the renal and ocular components."
+    difficulty: medium
+    tags: [nephrology, TINU, acute TIN, uveitis, renal-ocular syndrome]
+  - front: "Why is edema seen in nephrotic syndrome, and what two mechanisms contribute?"
+    back: "1. Primary mechanism: hypoalbuminemia reduces plasma oncotic pressure → fluid shifts to interstitium. 2. Secondary mechanism: enhanced renal tubular reabsorption of sodium and water (possibly via filtered proteins stimulating cortical collecting duct epithelial sodium channels), causing primary sodium retention even before hypoalbuminemia develops.\n\nThe 'underfill' hypothesis (hypoalbuminemia → reduced oncotic pressure → edema → compensatory sodium retention) is complemented by the 'overfill' hypothesis (primary renal sodium retention independent of oncotic pressure). Both mechanisms likely contribute to edema in nephrotic syndrome."
+    difficulty: hard
+    tags: [nephrology, nephrotic syndrome, edema, mechanism, hypoalbuminemia, sodium retention]
+  - front: "What is thin basement membrane disease and how does it differ from Alport syndrome?"
+    back: "Thin basement membrane disease: usually autosomal dominant, benign, presents with hematuria WITHOUT proteinuria, does not progress to ESRD. Alport syndrome: X-linked Type IV collagen mutation, associated with sensorineural hearing loss and ocular abnormalities, proteinuria <2 g/d, progresses to ESRD.\n\nBoth conditions cause persistent microscopic hematuria but have very different prognoses. Thin basement membrane disease is the most common cause of benign familial hematuria. Alport syndrome requires aggressive management to slow ESRD progression. Genetics and extrarenal findings distinguish them."
+    difficulty: medium
+    tags: [nephrology, thin basement membrane disease, Alport syndrome, hematuria, prognosis]
+  - front: "What are the indications for urology consult and possible cystoscopy in the workup of hematuria?"
+    back: "Age >50, risk factors for bladder cancer (smoking, occupational chemical exposure, prior pelvic radiation), or low suspicion for renal/glomerular cause of hematuria\n\nHematuria can be from either renal (glomerular, tubulointerstitial) or urological (bladder, ureteral, prostate) causes. In older patients or those with bladder cancer risk factors, anatomical causes must be excluded. Glomerular hematuria typically presents with RBC casts and dysmorphic RBCs."
+    difficulty: easy
+    tags: [nephrology, hematuria, cystoscopy, bladder cancer, urology]
+  - front: "What systemic diseases can cause MPGN (membranoproliferative GN) as a secondary cause?"
+    back: "HCV (most common), HBV, SLE, malaria, leukemia, lymphoma, shunt nephritis. MPGN on the nephritic-nephrotic spectrum: has both hematuria and variable proteinuria.\n\nMPGN is classified by immunofluorescence into immune complex-mediated (Type I, caused by HCV, HBV, SLE, cryoglobulinemia, and infections) and complement-mediated (Type II = dense deposit disease). Treatment addresses the underlying cause; immune complex MPGN may respond to ACE inhibition or immunosuppression."
+    difficulty: medium
+    tags: [nephrology, MPGN, membranoproliferative GN, HCV, secondary causes]
+  - front: "Which cancer types are most commonly associated with SIADH?"
+    back: "Small cell lung cancer (most classic), bronchogenic carcinoma, pancreatic adenocarcinoma, Hodgkin's lymphoma, thymoma, leukemia.\n\nSmall cell lung cancer is the prototypical ectopic ADH-secreting tumour. Any malignancy can cause paraneoplastic SIADH, but small cell lung cancer is by far the most frequently tested. This is a common MCCQE1 question pairing hyponatremia with lung malignancy."
+    difficulty: easy
+    tags: [nephrology, SIADH, paraneoplastic, oncology, small cell lung cancer]
+  - front: "Which drug classes are associated with SIADH?"
+    back: "Antidepressants (TCAs, SSRIs), antineoplastics (vincristine, cyclophosphamide), anti-epileptics (carbamazepine, barbiturates), chlorpropamide, ACE inhibitors, DDAVP, oxytocin, nicotine.\n\nSSRIs and carbamazepine are the most commonly tested drug causes of SIADH. Carbamazepine both enhances ADH secretion and potentiates its renal effects. Cyclophosphamide at high doses causes SIADH through direct enhancement of ADH action."
+    difficulty: medium
+    tags: [nephrology, SIADH, pharmacology, drug-induced]
+  - front: "What formula estimates the change in serum [Na+] from 1 L of any IV fluid?"
+    back: "Change in serum [Na+] = {(IV [Na+] + [K+]) − patient's serum [Na+]} / (TBW + 1)\n\nWhere TBW = 0.6 × weight (kg) for men; 0.5 × weight (kg) for women.\n\nThis Adrogue-Madias formula is essential for calculating safe sodium correction rates. Adding 1 to TBW accounts for the litre of infused fluid added to total body water. Both the sodium AND potassium content of the IV fluid affect serum sodium, as potassium is also osmotically active."
+    difficulty: hard
+    tags: [nephrology, hyponatremia, IV fluids, formula, sodium correction]
+  - front: "How is overly-rapid sodium correction managed?"
+    back: "1. Give free water (IV D5W) to re-lower sodium\n2. Administer DDAVP (1-4 mcg IV q8h) to stop ongoing water diuresis and prevent further sodium rise\n\nDDAVP acts as a synthetic ADH analogue, causing water retention and re-dilution of serum sodium. This 'proactive' DDAVP strategy (giving DDAVP alongside hypertonic saline) is increasingly used to control the rate of correction and prevent ODS."
+    difficulty: hard
+    tags: [nephrology, hyponatremia, DDAVP, osmotic demyelination, treatment]
+  - front: "Define hypernatremia and list its main causes."
+    back: "Serum [Na+] >145 mmol/L — always a hyperosmolar state.\n\nCauses:\n• Reduced intake: elderly, infants, coma, post-surgical\n• Extrarenal losses: GI (diarrhea, fistulas), insensible losses (exercise, seizures)\n• Renal losses: Central DI, nephrogenic DI, osmotic diuresis (hyperglycemia, mannitol, urea, polyethylene glycol)\n\nHypernatremia = too little water relative to sodium. It is less common than hyponatremia because intact thirst mechanism and ADH secretion are protective. Most patients who develop hypernatremia have impaired access to water or impaired thirst."
+    difficulty: easy
+    tags: [nephrology, hypernatremia, electrolytes, fluid balance]
+  - front: "What fluids are used to treat hypernatremia and how much free water do they provide?"
+    back: "• IV D5W: ~1 L free water per litre\n• IV 0.45% NS (half-normal saline): ~500 mL free water per litre\n• IV 2/3 & 1/3 (3.3% dextrose + 0.3% NaCl): intermediate free water\n\nFirst correct hemodynamic instability with 0.9% NS bolus if volume depleted, then switch to hypotonic solution.\n\nD5W is isotonic in the bag but provides essentially free water after glucose is metabolized. 0.45% NS is the most commonly used solution for chronic hypernatremia correction. If the patient is hemodynamically unstable, isotonic saline takes priority over sodium correction."
+    difficulty: medium
+    tags: [nephrology, hypernatremia, IV fluids, treatment]
+  - front: "What is the water deficit formula used in hypernatremia?"
+    back: "H2O deficit = TBW × ([Na+]plasma / 140 − 1)\n\nTBW = 0.6 × weight (kg) for men; 0.5 × weight (kg) for women\n\nThis formula estimates the free water deficit needed to restore serum sodium to normal (140 mmol/L). The calculated deficit must be corrected over the appropriate time frame — within 24h for acute, or at 8-10 mmol/L/24h for chronic hypernatremia — and adjusted for ongoing losses."
+    difficulty: hard
+    tags: [nephrology, hypernatremia, water deficit, formula]
+  - front: "Define diabetes insipidus (DI) and distinguish central from nephrogenic."
+    back: "DI: collecting tubule impermeable to water due to absence of or impaired response to ADH → hypotonic polyuria.\n\n• Central DI: deficient ADH release from posterior pituitary (neurosurgery, trauma, granulomatous disease, malignancy)\n• Nephrogenic DI: renal resistance to ADH (lithium, amyloidosis, sickle cell, Sjögren, polycystic kidney, hypercalcemia, hypokalemia)\n\nBoth types present with hypotonic polyuria and hypernatremia (if access to water is limited). The dehydration test distinguishes them: after depriving water until hypernatremia develops, give DDAVP — urine concentrates (Uosm >300) in central DI but not in nephrogenic DI."
+    difficulty: medium
+    tags: [nephrology, diabetes insipidus, polyuria, ADH, hypernatremia]
+  - front: "How is the dehydration (water deprivation) test performed and interpreted?"
+    back: "1. Deprive patient of water under supervision until: Uosm >300 mOsm/kg, serum [Na+] >146, OR 3% body weight loss\n2. Administer DDAVP 2 mcg IV\n3. Interpret:\n   • If Uosm rises >300 after DDAVP → Central DI (responds to exogenous ADH)\n   • If Uosm fails to rise → Nephrogenic DI (renal resistance to ADH)\n   • If Uosm concentrated before DDAVP → Primary polydipsia\n\nThe test is used when the patient is not already hypernatremic at assessment. Copeptin (a stable surrogate for vasopressin) measured after hypertonic saline infusion has shown superior diagnostic accuracy compared to the water deprivation test in recent studies."
+    difficulty: hard
+    tags: [nephrology, diabetes insipidus, dehydration test, DDAVP, diagnosis]
+  - front: "What is the treatment of central DI vs. nephrogenic DI?"
+    back: "Central DI:\n• DDAVP 10 mcg intranasally or 2 mcg SC/IV\n\nNephrogenic DI:\n• Maintain fluid intake to match losses (PO water, IV D5W, IV 0.45% NS)\n• Treat underlying cause\n• Thiazide diuretics (paradoxically reduce urine output via volume depletion → proximal tubular reabsorption → less delivery to collecting duct)\n• Low-sodium, low-protein diet\n\nDDAVP is ineffective in nephrogenic DI because the kidney cannot respond to ADH. Thiazides work paradoxically by inducing mild volume depletion, stimulating proximal tubular sodium and water reabsorption, thereby reducing the volume of filtrate delivered to the ADH-unresponsive collecting duct."
+    difficulty: medium
+    tags: [nephrology, diabetes insipidus, DDAVP, thiazide, treatment]
+  - front: "What are the ECG changes of hypokalemia in order of severity?"
+    back: "1. U waves (most characteristic — low amplitude wave after T wave)\n2. Flattened or inverted T waves\n3. Depressed ST segment\n4. Prolonged QT interval\n5. Sinus bradycardia\n6. (Severe) PR prolongation, wide QRS, arrhythmias (VF, VT)\n\nNote: ECG changes are more predictive of clinical picture than serum [K+].\n\nU waves are the hallmark ECG finding of hypokalemia, reflecting delayed ventricular repolarization. Hypokalemia is particularly dangerous in patients on digoxin (potentiates toxicity), those with CAD, or co-existing hypomagnesemia. ECG monitoring is essential when [K+] <3.0 mmol/L."
+    difficulty: medium
+    tags: [nephrology, hypokalemia, ECG, electrolytes, cardiology]
+  - front: "How is renal vs. non-renal K+ loss distinguished in hypokalemia?"
+    back: "Spot urine K:Cr ratio:\n• <1.5 mEq/mmol → GI loss (non-renal; e.g., diarrhea, vomiting)\n• >1.5 mEq/mmol → Renal loss\n\nIf renal loss: check BP and acid-base status, plasma renin and aldosterone, serum Mg2+.\n\n24-hour urine K+ excretion can also be used.\n\nThe spot urine K:Cr ratio is a practical bedside tool to differentiate the cause of hypokalemia. Renal K+ wasting indicates diuretic use, hyperaldosteronism, RTA, or Mg2+ deficiency. Urine K+ <20 mmol/L suggests extrarenal losses (GI or poor intake)."
+    difficulty: medium
+    tags: [nephrology, hypokalemia, urine potassium, diagnosis]
+  - front: "What are the key principles of potassium replacement in hypokalemia?"
+    back: "• Oral KCl preferred (8 mmol/tablet or 20 mmol/tablet; liquid solution also available)\n• IV: KCl in saline — max 40 mmol/L via peripheral vein, 60 mmol/L via central vein, max infusion rate 20 mmol/h\n• Avoid dextrose solutions (insulin release worsens hypokalemia)\n• Replace Mg2+ before or concurrently (can't correct K+ if Mg2+ depleted)\n• Caution if renal impairment, DM, or elderly (risk of hyperkalemia)\n• K+-sparing diuretics can prevent renal K+ loss\n\nOral replacement is safer and preferred. IV potassium must never be given as bolus — rapid infusion causes fatal arrhythmias. Hypomagnesemia causes persistent renal K+ wasting by increasing K+ secretion in the collecting duct — magnesium must be repleted first."
+    difficulty: medium
+    tags: [nephrology, hypokalemia, potassium replacement, treatment, IV fluids]
+  - front: "Why does hypokalemia often coexist with metabolic alkalosis?"
+    back: "• K+ shifts from cells to ECF → H+ shifts into cells → intracellular acidosis\n• Plasma [HCO3-] increases (alkalosis)\n• Renal tubular cells respond to low intracellular pH by secreting H+ into lumen and reabsorbing HCO3- (perpetuating alkalosis)\n• Conversely, metabolic alkalosis drives K+ into cells, worsening hypokalemia\n\nThe K+/H+ exchange across cell membranes creates a bidirectional relationship: hypokalemia causes alkalosis and alkalosis worsens hypokalemia. This cycle is maintained by renal compensation. Conditions like vomiting and diuretics cause both simultaneously."
+    difficulty: hard
+    tags: [nephrology, hypokalemia, metabolic alkalosis, acid-base, physiology]
+  - front: "What are the ECG changes of hyperkalemia in order of severity?"
+    back: "1. Peaked, narrow, symmetric T waves (earliest)\n2. Decreased amplitude/loss of P waves\n3. Prolonged PR interval\n4. Widening of QRS → eventual merging with T wave (sine-wave pattern)\n5. AV block\n6. Ventricular fibrillation / asystole\n\nHyperkalemia progressively depolarizes cardiac membranes. Peaked T waves appear at [K+] ~6 mEq/L; sine-wave pattern and VF risk occur above 7-8 mEq/L. ECG changes are the primary indication for emergent treatment, not the absolute potassium level alone."
+    difficulty: medium
+    tags: [nephrology, hyperkalemia, ECG, cardiology, electrolytes]
+  - front: "What are the most common causes of pseudohyperkalemia?"
+    back: "• Sample hemolysis (most common)\n• Prolonged time from venipuncture to analysis\n• Sample taken from vein where IV KCl is running\n• Prolonged tourniquet use\n• Extreme leukocytosis or thrombocytosis\n\nManagement: repeat blood test with proper technique (no prolonged tourniquet, rapid processing).\n\nPseudohyperkalemia is important to exclude before treating, as unnecessary treatment of hyperkalemia can cause dangerous hypokalemia. Hemolysis releases intracellular K+ into the sample. Extreme thrombocytosis or leukocytosis releases K+ during clotting in the test tube."
+    difficulty: easy
+    tags: [nephrology, hyperkalemia, pseudohyperkalemia, lab artifact]
+  - front: "What causes hyperkalemia with a normal GFR (via hypoaldosteronism)?"
+    back: "Three mechanisms:\n1. Decreased aldosterone stimulus (low renin, low aldosterone): diabetic nephropathy, NSAIDs, chronic interstitial nephritis, HIV, ACEi, ARBs, heparin\n2. Decreased aldosterone production (normal renin, low aldosterone): Addison disease, AIDS, metastatic cancer, CAH (21-hydroxylase deficiency)\n3. Aldosterone resistance: K+-sparing diuretics (spironolactone, eplerenone, finerenone, amiloride, triamterene), renal tubulointerstitial disease\n\nType IV RTA (hyporenin-hypoaldosteronism) is the most common cause of hyperkalemia with normal GFR, especially in diabetic nephropathy. NSAIDs reduce renin release. ACEi/ARBs reduce angiotensin II, reducing aldosterone. Hyperkalemia here requires evaluation of the RAAS axis."
+    difficulty: hard
+    tags: [nephrology, hyperkalemia, hypoaldosteronism, type IV RTA, RAAS]
+  - front: "Outline the stepwise acute treatment of life-threatening hyperkalemia."
+    back: "1. Stabilize myocardium: Calcium gluconate 10 mL of 10% solution (1-2 amps) IV → onset minutes, lasts 30-60 min; no effect on serum [K+]\n\n2. Shift K+ into cells:\n   • Insulin (regular) 10 units IV + D50W 50-100 mL (monitor glucose q1h)\n   • Salbutamol (Ventolin) 10-20 mg nebulized or 0.5 mg IV\n\n3. Enhance K+ removal:\n   • Via urine: furosemide 40 mg IV; fludrocortisone if aldosterone deficient\n   • Via GI: patiromer (Veltassa) 8.4 g PO OD; sodium zirconium cyclosilicate (SZC/Lokelma) 10 g TID x 48h; sodium polystyrene sulfonate (Kayexalate) with caution\n   • Dialysis: if renal failure or unresponsive to above\n\nMnemonic: BIG K → B-agonist, Insulin, Glucose, Kayexalate\n\nCalcium gluconate does not lower K+ but protects the cardiac membrane by raising the action potential threshold. Shifts are temporary (4-6h for insulin). Definitive removal requires excretion via kidney or GI tract. Kayexalate should be used with caution due to risk of colonic necrosis, especially with sorbitol."
+    difficulty: hard
+    tags: [nephrology, hyperkalemia, emergency, treatment, calcium gluconate, insulin]
+  - front: "Why must dextrose be given with insulin in hyperkalemia treatment, and what precaution applies?"
+    back: "Insulin drives K+ into cells but simultaneously lowers blood glucose → hypoglycemia risk.\n• Give D50W (50 mL of 50% dextrose) with insulin 10 units IV\n• Monitor capillary blood glucose q1h\n• Caution: do NOT give dextrose before or without insulin if hyperkalemia is severe — hypertonic glucose raises osmolality → extracellular K+ shift → may worsen hyperkalemia and cause arrhythmia\n\nThe correct sequence is insulin first (or simultaneously with dextrose), never dextrose alone. Hypertonic glucose without insulin causes osmotic shift that temporarily raises serum K+. Regular insulin lowers K+ by ~0.8 mmol/L at 1 hour and its effect lasts 4-6 hours."
+    difficulty: medium
+    tags: [nephrology, hyperkalemia, insulin, dextrose, hypoglycemia, treatment]
+  - front: "What is the danger of sodium polystyrene sulfonate (Kayexalate) in hyperkalemia treatment?"
+    back: "Risk of colonic necrosis and intestinal perforation, especially when used in combination with sorbitol.\n\nUse with caution; patiromer (Veltassa) and sodium zirconium cyclosilicate (SZC/Lokelma) are newer, better-tolerated alternatives but are more expensive.\n\nKayexalate is a cation exchange resin that exchanges Na+ for K+ in the GI tract. The sorbitol co-administered to prevent constipation causes the dangerous intestinal injury. Patiromer and SZC are preferred when available due to better GI safety profiles, though cost limits widespread use."
+    difficulty: medium
+    tags: [nephrology, hyperkalemia, Kayexalate, GI complications, treatment]
+  - front: "Define hyperphosphatemia and list its main causes."
+    back: "Serum phosphate >1.45 mmol/L.\n\nCauses:\n• Increased phosphate load: GI intake (e.g., rectal enemas), IV phosphate, tumour lysis syndrome, rhabdomyolysis, hemolysis, lactic/ketoacidosis\n• Reduced renal clearance: AKI/CKD, hypoparathyroidism, acromegaly, tumour calcinosis\n• Pseudohyperphosphatemia: hyperglobulinemia, hyperlipidemia, hyperbilirubinemia\n\nIn CKD, hyperphosphatemia is nearly universal in advanced stages due to reduced phosphate excretion. Phosphate binds calcium → hypocalcemia → secondary hyperparathyroidism. Phosphate also deposits in soft tissues and vessels causing calciphylaxis and cardiovascular disease."
+    difficulty: medium
+    tags: [nephrology, hyperphosphatemia, CKD, electrolytes]
+  - front: "How is hyperphosphatemia treated?"
+    back: "• Acute: IV saline; hemodialysis if symptomatic\n• Chronic:\n  - Low phosphate diet\n  - Phosphate binders taken WITH meals: calcium carbonate (CaCO3), lanthanum carbonate, sevelamer\n\nPhosphate binders must be taken with meals to bind dietary phosphate in the GI tract before absorption. Calcium-based binders can worsen vascular calcification in CKD patients. Non-calcium binders (sevelamer, lanthanum) are preferred in CKD with vascular calcification or hypercalcemia."
+    difficulty: easy
+    tags: [nephrology, hyperphosphatemia, phosphate binders, CKD, treatment]
+  - front: "What are the causes of hypophosphatemia?"
+    back: "• Inadequate intake: starvation, malabsorption, antacid use (bind phosphate), alcoholism\n• Renal losses: hyperparathyroidism, diuretics, Fanconi syndrome, X-linked/autosomal dominant hypophosphatemic rickets, multiple myeloma, early post-renal transplant\n• Excessive skeletal mineralization: osteoblastic metastases, hungry bone syndrome (post-parathyroidectomy)\n• Shift into cells: recovery from metabolic acidosis, respiratory alkalosis, refeeding (insulin-stimulated), DKA treatment\n\nRefeeding syndrome is a classic MCCQE1 scenario: severely malnourished patients given carbohydrates release insulin → phosphate shifts into cells → severe hypophosphatemia causing respiratory failure, arrhythmias, and hemolysis. Hungry bone syndrome occurs after parathyroidectomy when suddenly avid bone reabsorbs calcium and phosphate."
+    difficulty: hard
+    tags: [nephrology, hypophosphatemia, refeeding syndrome, hungry bone, electrolytes]
+  - front: "What are the clinical features of severe hypophosphatemia (<0.32 mmol/L)?"
+    back: "• Muscle weakness, respiratory depression (ventilatory failure)\n• Low cardiac output / CHF (weakened cardiac muscle)\n• Neurological: irritability, encephalopathy, seizures, coma\n• Hemolytic anemia\n• Decreased O2 delivery (low 2,3-DPG, O2 stuck to hemoglobin)\n• Impaired leukocyte and platelet function (infections, bleeding)\n\nAll manifestations stem from depleted intracellular ATP and 2,3-DPG. Symptoms typically arise only when phosphate <0.32 mmol/L. Respiratory muscle weakness causing ventilatory failure is a life-threatening complication of severe hypophosphatemia, especially in ICU patients being weaned from ventilator."
+    difficulty: medium
+    tags: [nephrology, hypophosphatemia, ATP, respiratory failure, hemolytic anemia]
+  - front: "When and how is hypophosphatemia treated?"
+    back: "• Initiate treatment when serum [PO4] <0.64 mmol/L\n• PO therapy: if asymptomatic OR symptomatic with [PO4] >0.32 mmol/L\n  - 2-4 g/day divided BID-QID (start 1 g/day to minimize diarrhea), encourage phosphate-rich diet\n• IV therapy: if symptomatic AND [PO4] <0.32 mmol/L\n\nOral phosphate is preferred when tolerated, but diarrhea limits the dose. IV phosphate is reserved for severe symptomatic cases (respiratory failure, severe hemolysis). Monitor calcium during replacement as phosphate can bind serum calcium causing hypocalcemia."
+    difficulty: medium
+    tags: [nephrology, hypophosphatemia, treatment, IV phosphate]
+  - front: "Define hypermagnesemia, its causes, and treatment."
+    back: "Serum magnesium >1.05 mmol/L.\n\nCauses: AKI/CKD, Mg2+-containing antacids or enemas, IV magnesium sulphate (e.g., eclampsia treatment).\n\nFeatures: drowsiness, hyporeflexia (loss of patellar reflex is early warning), respiratory depression, heart block, cardiac arrest, hypotension.\n\nTreatment:\n• Discontinue Mg2+-containing products\n• Calcium gluconate 10% 10-20 mL IV (antagonizes Mg2+)\n• Hemodialysis if renal failure\n\nHypermagnesemia is rare with normal renal function because kidneys efficiently excrete magnesium. Loss of deep tendon reflexes (patellar reflex) is an early clinical sign and is used to monitor for toxicity in obstetric patients receiving IV MgSO4 for eclampsia. Calcium gluconate reverses magnesium toxicity acutely."
+    difficulty: medium
+    tags: [nephrology, hypermagnesemia, calcium gluconate, eclampsia, electrolytes]
+  - front: "Define hypomagnesemia, its causes, and why it matters clinically."
+    back: "Serum magnesium <0.70 mmol/L.\n\nCauses:\n• GI losses: starvation, vomiting/diarrhea, alcoholism, acute pancreatitis, malabsorption\n• Renal losses: hyperaldosteronism (cirrhosis, CHF), hyperglycemia, loop/thiazide diuretics, nephrotoxic drugs, PPIs, early post-renal transplant\n\nClinical importance: Hypomagnesemia prevents correction of hypokalemia and hypocalcemia — must replete Mg2+ first.\n\nMagnesium is required for proper Na/K-ATPase function and for PTH secretion and action. Without adequate Mg2+, K+ continues to be wasted renally and PTH cannot mobilize calcium. PPIs are an increasingly recognized cause of chronic hypomagnesemia in clinical practice."
+    difficulty: medium
+    tags: [nephrology, hypomagnesemia, electrolytes, hypokalemia, hypocalcemia]
+  - front: "What are the clinical features and ECG changes of hypomagnesemia?"
+    back: "Clinical:\n• Tremors, nausea/vomiting, lethargy/weakness\n• Seizures, paresis\n• Chvostek and Trousseau signs (secondary hypocalcemia)\n\nECG:\n• Widened QRS\n• Prolonged PR interval\n• T-wave abnormalities\n• Torsades de Pointes (TdP) — potentially fatal ventricular arrhythmia\n\nTorsades de Pointes is the most feared arrhythmia of hypomagnesemia — magnesium IV is the treatment of choice for TdP regardless of serum magnesium levels. Chvostek and Trousseau signs reflect secondary hypocalcemia from PTH dysfunction."
+    difficulty: medium
+    tags: [nephrology, hypomagnesemia, Torsades de Pointes, ECG, hypocalcemia]
+  - front: "What is the anion gap (AG) formula, its normal range, and how does albumin affect it?"
+    back: "AG = [Na+] − ([Cl−] + [HCO3−])\nNormal range: 10-14 mEq/L (baseline ~12)\n\nAlbumin correction: For each 10 g/L fall in serum albumin below normal (40 g/L), lower expected AG by 3 mEq/L.\n• Example: albumin = 20 g/L → expected AG = 6 mEq/L (not 12)\n\nAlbumin is a negatively charged protein — the main unmeasured anion in normal plasma. Hypoalbuminemia lowers the normal AG, so a 'normal' measured AG in a hypoalbuminemic patient may actually represent a high AG metabolic acidosis. Always correct AG for albumin in critically ill patients."
+    difficulty: medium
+    tags: [nephrology, anion gap, acid-base, albumin, metabolic acidosis]
+  - front: "What is the osmolar gap, how is it calculated, and what does an elevated value suggest?"
+    back: "Osmolar gap = Measured serum osmolality − Calculated serum osmolality\nNormal: <10 mOsm/kg\n\nCalculated osmolality = 2[Na+] + [Urea] + [Glucose] (all in mmol/L)\nMnemonic: 'Two Salts and a Sticky BUN'\n\nElevated OG (>10): suggests presence of unmeasured osmoles:\n• Toxic alcohols: methanol, ethylene glycol, isopropyl alcohol, ethanol\n• Mannitol\n• Post-TURP (sorbitol or glycine irrigation)\n\nIn toxic alcohol ingestion, the osmolar gap is elevated early (before metabolism) while the anion gap becomes elevated later (as alcohols are metabolized to acids). Measuring both simultaneously helps identify the stage of toxicity and guide urgency of treatment (fomepizole, dialysis)."
+    difficulty: medium
+    tags: [nephrology, osmolar gap, toxic alcohol, methanol, ethylene glycol, acid-base]
+  - front: "List the causes of high anion gap metabolic acidosis using the MUDPILES CAT mnemonic."
+    back: "M — Methanol\nU — Uremia (advanced renal failure)\nD — Diabetic ketoacidosis (also starvation and alcoholic ketoacidosis)\nP — Paraldehyde\nI — Isopropyl alcohol / Iron / Ibuprofen / Indomethacin\nL — Lactic acidosis (Type A: hypoperfusion; Type B: metformin, liver disease, thiamine deficiency, antiretrovirals)\nE — Ethylene glycol\nS — Salicylates\n\nCAT:\nC — Cyanide / Carbon monoxide\nA — Alcoholic ketoacidosis\nT — Toluene (glue sniffing)\n\nLactic acidosis (especially Type A from shock) and DKA are the most common causes of high AG metabolic acidosis in clinical practice. Methanol and ethylene glycol are classic toxicology causes. Metformin causes Type B lactic acidosis by inhibiting the electron transport chain."
+    difficulty: medium
+    tags: [nephrology, metabolic acidosis, anion gap, MUDPILES, lactic acidosis, DKA]
+  - front: "Distinguish Type A from Type B lactic acidosis."
+    back: "Type A lactic acidosis (hypoxic):\n• Due to tissue hypoperfusion → anaerobic metabolism\n• Causes: any cause of shock, ischemic bowel, profound hypoxemia\n\nType B lactic acidosis (non-hypoxic):\n• Failure to metabolize normally produced lactic acid\n• Most common: severe liver disease\n• Others: excessive alcohol, thiamine deficiency, metformin (ETC inhibition), certain antiretrovirals, large tumours, mitochondrial myopathies, cyanide poisoning\n\nNote: Lactic acidosis and ketoacidosis generally do NOT cause hyperkalemia because lactate/ketoacid anions enter cells along with H+, preventing the usual K+/H+ exchange. This distinguishes them from mineral acid acidoses (e.g., HCl) which do cause hyperkalemia."
+    difficulty: hard
+    tags: [nephrology, lactic acidosis, Type A, Type B, metabolic acidosis, metformin]
+  - front: "List the causes of normal AG (hyperchloremic) metabolic acidosis using HARDUPSAY."
+    back: "H — Hyperalimentation\nA — Acetazolamide / Addison's disease\nR — RTA (Type I, II, IV)\nD — Diarrhea (most common)\nU — Ureteroenteric fistula / Ureterosigmoidostomy\nP — Pancreaticoduodenal fistula\nS — Saline (high volume IV normal saline)\nA — A component of DKA\nY — (various other)\n\nKey: HCO3- is lost or replaced by Cl−\n\nIn normal AG metabolic acidosis, the 'missing' bicarbonate is replaced by chloride (hence hyperchloremia). Diarrhea causes direct HCO3- loss from the GI tract. High-volume normal saline causes 'dilutional' or 'hyperchloremic' acidosis by diluting bicarbonate and providing excess Cl-."
+    difficulty: medium
+    tags: [nephrology, metabolic acidosis, normal anion gap, HARDUPSAY, RTA, diarrhea]
+  - front: "How does the urine anion gap help distinguish causes of normal AG metabolic acidosis?"
+    back: "Urine AG = (Urine Na+ + Urine K+) − Urine Cl−\n\n• Urine AG <0 (negative): adequate NH4+ excretion → non-renal cause (e.g., diarrhea)\n• Urine AG >0 (positive): inadequate NH4+ excretion → renal cause (e.g., distal RTA Type I)\n\nNH4+ (unmeasured cation) is excreted with Cl−; high NH4+ excretion → high urine Cl− → negative UAG.\n\nIn diarrhea, the kidney appropriately increases NH4+ excretion to compensate for HCO3- loss, leading to high urine Cl- and negative UAG. In distal RTA, the kidney cannot secrete H+ → cannot produce NH4+ → urine Cl- is low → positive UAG. This is the key test to distinguish these two common causes."
+    difficulty: hard
+    tags: [nephrology, urine anion gap, RTA, diarrhea, normal AG metabolic acidosis]
+  - front: "Compare the four types of renal tubular acidosis (RTA)."
+    back: "Type I (Distal RTA):\n• Defect: inability to secrete H+ in collecting duct\n• Result: impaired NH4+ excretion, very low urine pH (<5.5 cannot be achieved)\n• Causes: Sjögren, lupus, amphotericin B, obstructive uropathy\n\nType II (Proximal RTA):\n• Defect: impaired HCO3- reabsorption in proximal tubule\n• Result: urinary HCO3- loss until new lower threshold reached\n• Associated with Fanconi syndrome\n\nType III: Combination of I and II — extremely rare\n\nType IV (Hyperkalemic RTA):\n• Defect: reduced ammoniagenesis due to hyperkalemia (from aldosterone deficiency/resistance)\n• Most common RTA; associated with diabetic nephropathy, hyporenin-hypoaldosteronism\n\nType IV is the most clinically common, presenting as hyperkalemia + metabolic acidosis with normal GFR (e.g., diabetic nephropathy on ACEi). Type I is associated with nephrolithiasis and nephrocalcinosis (alkaline urine promotes calcium phosphate stone formation). Type II is associated with Fanconi syndrome (global proximal tubule dysfunction)."
+    difficulty: hard
+    tags: [nephrology, RTA, renal tubular acidosis, metabolic acidosis, type IV RTA]
+  - front: "What are the specific treatments for toxic alcohol poisoning (methanol and ethylene glycol)?"
+    back: "Both:\n• Fomepizole (alcohol dehydrogenase inhibitor) — blocks conversion to toxic metabolites\n• Dialysis (often required, especially if metabolic acidosis or symptoms of toxicity present)\n\nMethanol:\n• Folate supplementation (enhances formate metabolism)\n• Metabolized to formic acid → toxic to optic nerve (blindness) and brain\n\nEthylene glycol:\n• Pyridoxine + thiamine supplementation (enhance oxalate metabolism)\n• Metabolized to oxalic acid → oxalate crystals in urine (envelope-shaped), nephrotoxicity\n\nFomepizole is the antidote of choice for both because it blocks alcohol dehydrogenase, preventing formation of toxic metabolites (formate from methanol; oxalate and other acids from ethylene glycol). Ethanol was the historical antidote but fomepizole is preferred. Calcium oxalate crystals in urine are pathognomonic for ethylene glycol."
+    difficulty: hard
+    tags: [nephrology, toxic alcohol, methanol, ethylene glycol, fomepizole, toxicology]
+  - front: "When is sodium bicarbonate (NaHCO3) indicated in metabolic acidosis and what are its risks?"
+    back: "Indications:\n• Severe reduction in [HCO3-] (e.g., <8 mmol/L) especially with pH <7.0\n• No metabolizable anion (salicylate, formate, oxalate, sulphate) — note: lactate and ketoacid anions can be metabolized to HCO3-\n\nRisks:\n• Hypokalemia (K+ shifts into cells — correct K+ first)\n• ECF volume overload (Na+ load → pulmonary edema)\n• Overshoot alkalosis (partial conversion of organic anions to HCO3- + persisting hyperventilation)\n\nNaHCO3 is NOT routinely given for lactic acidosis or DKA because as the underlying cause is treated, lactate and ketone anions are metabolized to HCO3-, often causing overshoot alkalosis. NaHCO3 is most appropriate when there is no metabolizable anion (e.g., uremic acidosis, RTA, salicylate poisoning via alkaline diuresis)."
+    difficulty: hard
+    tags: [nephrology, metabolic acidosis, sodium bicarbonate, treatment, risks]
+  - front: "What characterizes metabolic alkalosis and what are its main causes?"
+    back: "Metabolic alkalosis: pH >7.45 + increased [HCO3-]\n\nRequires: precipitating event AND maintenance factors.\n\nPrecipitating causes (CLEVERPD):\n• Chloride loss (vomiting, NG suction)\n• Licorice (chronic ingestion)\n• Endocrine: Cushing's/Conn's syndrome, Bartter's syndrome\n• Volume contraction (contraction alkalosis)\n• Exogenous alkali (NaHCO3, milk-alkali syndrome)\n• Refeeding\n• Post-hypercapnia\n• Diuretics (loop/thiazide)\n\nMaintenance factors: volume depletion, hypokalemia, hyperaldosteronism\n\nThe kidney is capable of excreting large amounts of bicarbonate, so persistent alkalosis requires a maintenance factor that impairs HCO3- excretion. Volume depletion drives proximal HCO3- reabsorption. Hypokalemia stimulates ammoniagenesis and HCO3- generation. Without these, alkalosis self-corrects."
+    difficulty: medium
+    tags: [nephrology, metabolic alkalosis, acid-base, CLEVERPD]
+  - front: "How is metabolic alkalosis classified by urine chloride, and how does this guide treatment?"
+    back: "Saline-sensitive (most common):\n• Urine Cl− <20 mEq/L\n• Features: ECF volume contraction, hypokalemia\n• Causes: vomiting, NG suction, diuretics (remote use)\n• Treatment: IV 0.9% NaCl + replenish K+/Mg2+; carbonic anhydrase inhibitor (acetazolamide) to increase urinary HCO3- loss (ensure K+ is normal first)\n\nSaline-resistant:\n• Urine Cl− >20 mEq/L\n• Features: ECF expansion, hypertension, increased mineralocorticoids\n• Causes: primary hyperaldosteronism (Conn's), Cushing's, Bartter's syndrome\n• Treatment: remove source of aldosterone/glucocorticoid + spironolactone\n\nUrine chloride <20 mEq/L indicates the kidney is avidly reabsorbing chloride (and bicarbonate) due to volume depletion — responds to saline. Urine Cl- >20 in the setting of alkalosis indicates an ongoing mineralocorticoid excess — saline will not help and may worsen hypertension."
+    difficulty: hard
+    tags: [nephrology, metabolic alkalosis, urine chloride, saline-sensitive, hyperaldosteronism]
+  - front: "What is the expected respiratory compensation for metabolic alkalosis?"
+    back: "Hypoventilation to retain CO2.\n\nExpected: arterial pCO2 rises by 0.7 mmHg for each 1 mmol/L rise in [HCO3-]\n\nImportant limitation: an upper limit to compensation exists — the brain's hypoxic drive prevents complete apnea, so pCO2 rarely rises above ~55-60 mmHg in compensation.\n\nIf pCO2 does not rise appropriately, a concurrent respiratory alkalosis is present. If pCO2 rises more than expected, concurrent respiratory acidosis exists. The upper limit of compensation prevents life-threatening hypoxemia from hypoventilation."
+    difficulty: medium
+    tags: [nephrology, metabolic alkalosis, respiratory compensation, acid-base]
+  - front: "Define polyuria and distinguish water diuresis from solute diuresis."
+    back: "Polyuria: urine output >3 L/day in adults (or >2 L/m2 in children).\nDistinguish from urinary frequency (multiple voids but total volume <3 L/day).\n\nWater diuresis:\n• Diabetes insipidus (central or nephrogenic)\n• Primary polydipsia\n• Drugs (diuretics)\n\nSolute diuresis:\n• Glucose (uncontrolled diabetes mellitus)\n• Salt (high sodium intake, IV fluids)\n• Urea (resolution of azotemia, high protein intake, tissue breakdown)\n\nThe distinction between water and solute diuresis guides workup. Urine osmolality helps: in water diuresis, urine is dilute (Uosm <300 mOsm/kg); in solute diuresis, urine osmolality may be isotonic (~300 mOsm/kg). Glucosuria in uncontrolled DM is the most common cause of solute diuresis."
+    difficulty: easy
+    tags: [nephrology, polyuria, water diuresis, solute diuresis, diabetes insipidus]
+  - front: "What is the delta-delta ratio in metabolic acidosis and how is it interpreted?"
+    back: "Delta-delta = (Increase in AG above normal) / (Decrease in HCO3- below normal)\n\n• If increase in AG < decrease in HCO3-: co-existing normal AG metabolic acidosis\n• If increase in AG > decrease in HCO3-: co-existing metabolic alkalosis\n• If equal: pure high AG metabolic acidosis\n\nIn a pure high AG metabolic acidosis, each mEq/L rise in AG should correspond to a 1 mEq/L fall in HCO3- (1:1 ratio). If HCO3- is lower than expected by the AG rise alone, there is an additional acid source without an anion (normal AG acidosis). If HCO3- is higher than expected, something is also generating alkali (metabolic alkalosis)."
+    difficulty: hard
+    tags: [nephrology, delta-delta, anion gap, metabolic acidosis, mixed disorder, acid-base]
+  - front: "What is the approach to acid-base analysis (5 steps)?"
+    back: "1. Identify primary disturbance (pH, HCO3-, pCO2)\n2. Evaluate compensation (check if appropriate — inappropriate = second disorder)\n3. Calculate plasma anion gap = [Na+] − ([Cl−] + [HCO3−]); correct for albumin\n4. Calculate osmolar gap = measured − calculated osmolality (if AG elevated, consider toxic alcohols)\n5. If AG elevated, calculate delta-delta: compare rise in AG vs. fall in HCO3- to identify co-existing disorders\n\nA systematic approach prevents missing mixed disorders. Compensation always occurs in the same direction as the primary disturbance (e.g., metabolic acidosis → low pCO2; metabolic alkalosis → high pCO2). Overcompensation never occurs — if pH normalizes, a mixed disorder exists."
+    difficulty: medium
+    tags: [nephrology, acid-base, anion gap, osmolar gap, diagnosis, approach]
+  - front: "What are the factors that increase renal potassium excretion?"
+    back: "1. Hyperkalemia itself\n2. Increased distal tubular urine flow rate and Na+ delivery (thiazides and loop diuretics increase K+ loss)\n3. Elevated aldosterone → activates ENaC in cortical collecting duct → Na+ reabsorption → K+ excretion\n4. Metabolic alkalosis (increases K+ secretion)\n5. Hypomagnesemia (promotes renal K+ wasting)\n6. Increased non-resorbable anions in tubule lumen (HCO3-, penicillin, salicylate) → increased tubular flow → more K+ secretion\n\nUnderstanding these factors explains why vomiting (metabolic alkalosis + volume depletion activating RAAS), loop diuretics, and hypomagnesemia all cause renal K+ wasting. Non-resorbable anions act like diuretics by increasing luminal electronegativity and flow rate, driving K+ secretion."
+    difficulty: hard
+    tags: [nephrology, potassium, renal K+ excretion, aldosterone, physiology]
+  - front: "What are the three key steps in treating asymptomatic hyponatremia?"
+    back: "1. Water restriction to <1 L/day\n2. Consider IV 0.9% NS + furosemide (reduces urine osmolality and augments free water excretion)\n3. Consider NaCl tablets as oral sodium source\n\nFor refractory cases:\n• Furosemide + oral salt tablets\n• Oral urea (osmotic aquaresis)\n• Vasopressin receptor 2 antagonists (vaptans, e.g., tolvaptan) — most effective for SIADH\n\nNote: If patient is volume-expanded, avoid NaCl; if volume-depleted, avoid furosemide.\n\nTolvaptan (a V2 receptor antagonist/vaptan) is the most specific treatment for SIADH, causing electrolyte-free water excretion (aquaresis). However, it carries a risk of overly rapid sodium correction if fluid restriction is maintained, and has hepatotoxicity concerns limiting use to specialist settings."
+    difficulty: medium
+    tags: [nephrology, hyponatremia, SIADH, water restriction, tolvaptan, treatment]
+  - front: "How does salicylate (ASA) overdose cause a mixed acid-base disorder?"
+    back: "Salicylate causes BOTH:\n1. Respiratory alkalosis: direct stimulation of respiratory center → hyperventilation\n2. High AG metabolic acidosis:\n   - Salicylic acid itself contributes to AG\n   - Lactic acidosis (salicylate impairs electron transport chain at toxic levels)\n   - Ketoacidosis (salicylate activates fat breakdown)\n\nNet result: often pH close to normal (mixed disorder), but both disorders present simultaneously.\n\nTreatment: alkaline diuresis (sodium bicarbonate IV to alkalinize urine and trap ionized salicylate) + dialysis for severe cases.\n\nSalicylate poisoning is a classic MCCQE1 scenario for mixed acid-base disorders. In adults, metabolic acidosis predominates; in children, respiratory alkalosis may predominate early. Alkalinization of urine to pH >7.5 significantly increases renal clearance of salicylate (ion trapping)."
+    difficulty: hard
+    tags: [nephrology, salicylate, ASA overdose, mixed acid-base, respiratory alkalosis, metabolic acidosis]
+  - front: "What are the insulin, B2-agonist, and calcium gluconate mechanisms in treating hyperkalemia?"
+    back: "Calcium gluconate:\n• Antagonizes hyperkalemia-induced membrane depolarization\n• Raises action potential threshold → protects cardiac conduction\n• Does NOT change serum [K+]; onset: minutes; duration: 30-60 min\n\nInsulin (regular 10 units IV + D50W):\n• Stimulates Na/K-ATPase → drives K+ into cells\n• Lowers K+ by ~0.8 mmol/L at 1h; onset: 15-30 min; duration: 4-6h\n\nSalbutamol (B2-agonist, 10-20 mg nebulized):\n• Stimulates Na/K-ATPase → drives K+ into cells\n• Onset: 30-90 min; additive to insulin effect\n\nCalcium gluconate is the first-line emergency agent when ECG changes are present, given its rapid cardiac protection. Insulin and B2-agonists provide temporary cellular shift. All three are temporizing — definitive K+ removal requires furosemide, cation exchangers, or dialysis."
+    difficulty: medium
+    tags: [nephrology, hyperkalemia, calcium gluconate, insulin, salbutamol, mechanism]
+  - front: "What symptoms are associated with hypocalcemia (secondary to hyperphosphatemia)?"
+    back: "• Tetany\n• Seizures\n• Hypotension\n• QT prolongation (cardiac arrhythmias)\n• Papilledema\n• Psychiatric manifestations\n\nClassic signs: Chvostek sign (facial twitch with tapping CN VII) and Trousseau sign (carpal spasm with BP cuff inflation).\n\nHyperphosphatemia causes hypocalcemia by: 1) direct calcium phosphate precipitation in blood/tissues, and 2) stimulating PTH secretion (secondary hyperparathyroidism in CKD). QT prolongation from hypocalcemia can cause life-threatening ventricular arrhythmias. Papilledema is a rare but MCCQE1-testable manifestation."
+    difficulty: medium
+    tags: [nephrology, hypocalcemia, hyperphosphatemia, tetany, QT prolongation, CKD]
+  - front: "What are the causes of transcellular K+ shift causing hyperkalemia?"
+    back: "• Intravascular hemolysis\n• Rhabdomyolysis\n• Tumour lysis syndrome\n• Insulin deficiency (insulin normally drives K+ into cells)\n• Hyperglycemia (osmotic shift of water out of cells carries K+)\n• Metabolic acidosis due to mineral acids (H+ enters cells, K+ exits)\n• Beta-blockers (block β2-mediated Na/K-ATPase stimulation)\n• Digitalis overdose (blocks Na/K-ATPase)\n• Succinylcholine (depolarizing NMJ blocker → massive K+ release from muscle)\n\nNote: Lactic and ketoacidosis generally do NOT cause hyperkalemia.\n\nSuccinylcholine is a particularly important cause of hyperkalemia in certain clinical settings (burns, denervation injuries, prolonged immobility) where it can cause massive K+ release and cardiac arrest. Digitalis toxicity blocks the Na/K-ATPase, preventing K+ re-entry into cells."
+    difficulty: hard
+    tags: [nephrology, hyperkalemia, transcellular shift, succinylcholine, digitalis, rhabdomyolysis]
+  - front: "What are the absolute indications for initiating dialysis in chronic kidney disease?"
+    back: "Volume overload (refractory), hyperkalemia (refractory), severe metabolic acidosis (refractory), neurologic signs/symptoms of uremia (encephalopathy, neuropathy, seizures), uremic pericarditis, refractory accelerated HTN, clinically significant bleeding diathesis, persistent severe nausea/vomiting.\n\nPer KDIGO 2024 guidelines, absolute indications reflect life-threatening complications of uremia that cannot be managed medically. These are distinguished from relative indications (anorexia, fatigue, pruritus, restless legs, cognitive decline) which guide individualized decision-making. Dialysis is generally initiated when GFR reaches <10 mL/min."
+    difficulty: easy
+    tags: [nephrology, dialysis, CKD, ESRD, indications]
+  - front: "What are the relative (vs. absolute) indications for initiating dialysis?"
+    back: "Relative indications: anorexia and dysgeusia, decreased cognitive functioning, profound fatigue and weakness, severe anemia unresponsive to erythropoietin, persistent severe pruritus, restless leg syndrome, progressive deterioration in nutritional status refractory to dietary intervention.\n\nRelative indications guide individualized decision-making alongside eGFR trajectory and patient preferences. KDIGO 2024 emphasizes symptom-driven initiation rather than a fixed eGFR threshold, though dialysis is generally started when GFR is approximately <10 mL/min."
+    difficulty: medium
+    tags: [nephrology, dialysis, CKD, ESRD]
+  - front: "A patient with CKD stage 5 has refractory hyperkalemia and uremic encephalopathy. Using the AEIOU mnemonic, list the indications for emergency dialysis."
+    back: "AEIOU: Acidosis (severe metabolic), Electrolyte imbalance (refractory hyperkalemia), Intoxication (dialyzable toxins), Overload (volume — refractory pulmonary edema), Uremia (pericarditis, encephalopathy; urea >35–50 mM).\n\nThe AEIOU mnemonic provides a bedside framework for identifying when urgent/emergent dialysis is required. In this scenario, both hyperkalemia (E) and encephalopathy/uremia (U) are present. Uremic pericarditis is a classic absolute indication given the risk of tamponade."
+    difficulty: easy
+    tags: [nephrology, dialysis, emergency, AEIOU, uremia]
+  - front: "At what eGFR should patients with CKD be referred for vascular access surgery for AV fistula creation?"
+    back: "When eGFR is <15–20 mL/min, or within 1 year of anticipated need for hemodialysis.\n\nAV fistulas (surgically connecting artery to vein) are the preferred vascular access for hemodialysis because they have lower infection and thrombosis rates compared to AV grafts or central venous catheters. Early referral allows maturation time (typically several months) before dialysis is needed."
+    difficulty: easy
+    tags: [nephrology, hemodialysis, AV fistula, vascular access, CKD]
+  - front: "Compare peritoneal dialysis and hemodialysis regarding rate, mechanism of ultrafiltration, and membrane used."
+    back: "PD: slow rate; osmotic pressure drives ultrafiltration; peritoneum is the membrane. HD: fast rate; hydrostatic pressure drives ultrafiltration; semi-permeable artificial membrane (e.g., polysulfone).\n\nBoth modalities use concentration gradient and convection for solute removal. PD uses an indwelling peritoneal catheter and glucose-based dialysate; HD uses extracorporeal blood circuit through a dialysis machine. PD allows greater independence and is preferred when residual renal function is present."
+    difficulty: medium
+    tags: [nephrology, peritoneal dialysis, hemodialysis, comparison]
+  - front: "What are the major complications of peritoneal dialysis compared to hemodialysis?"
+    back: "PD complications: bacterial peritonitis, infection at catheter site, metabolic effects of glucose absorption, encapsulating peritoneal sclerosis (rare). HD complications: central venous stenosis/thrombosis, bacteremia (catheter-related), bleeding (due to heparin), hemodynamic stress of extracorporeal circuit, disequilibrium syndrome.\n\nDisequilibrium syndrome (headache, cerebral edema, hypotension, nausea, muscle cramps) occurs during early HD sessions due to rapid solute/water flux. Bacterial peritonitis is the most feared complication of PD and is treated with intraperitoneal antibiotics. PD is preferred in patients with hemodynamic instability or residual renal function."
+    difficulty: medium
+    tags: [nephrology, peritoneal dialysis, hemodialysis, complications]
+  - front: "What are the two available forms of peritoneal dialysis and how do they differ?"
+    back: "CAPD (continuous ambulatory peritoneal dialysis): 2–5 manual exchanges per day, performed by patient. Automated PD (APD): uses a cycler machine at night while patient sleeps.\n\nBoth CAPD and APD allow dialysis at home, offering greater patient independence than in-centre HD. Advantages of PD include fewer dietary restrictions, better rehabilitation rates, and preservation of residual renal function. Home hemodialysis is also possible and allows nocturnal dialysis (3–7 nights/week, 4–8 hours/session)."
+    difficulty: easy
+    tags: [nephrology, peritoneal dialysis, CAPD, APD]
+  - front: "When is peritoneal dialysis preferred over hemodialysis, and when is hemodialysis preferred over PD?"
+    back: "PD preferred: residual renal function present, patient preference for home therapy. HD preferred: intraperitoneal adhesions present, home conditions non-conducive, hemodynamic instability.\n\nResidual renal function (RRF) is better preserved with PD than HD. Intraperitoneal adhesions from prior surgery or peritonitis contraindicate PD. Hemodynamically unstable patients (e.g., sepsis, heart failure) may not tolerate PD adequacy due to impaired peritoneal perfusion."
+    difficulty: medium
+    tags: [nephrology, peritoneal dialysis, hemodialysis, indications]
+  - front: "What is the preferred renal replacement therapy for ESRD, and what immunosuppression protocol is used post-transplant?"
+    back: "Renal transplantation is preferred for all suitable patients. Immunosuppression: induction with IV thymoglobulin or basiliximab, followed by maintenance oral regimen (corticosteroids + calcineurin inhibitor [cyclosporine or tacrolimus] + anti-metabolite [mycophenolate mofetil or azathioprine]).\n\nRenal transplant provides maximum GFR replacement and best reverses uremic signs/symptoms. The 1-year allograft survival is ≥90%. Living donor transplants have better short- and long-term outcomes than deceased donor transplants. Native kidneys are usually left in situ; the transplanted kidney is placed in the iliac fossa with renal artery anastomosed to the external iliac artery."
+    difficulty: medium
+    tags: [nephrology, renal transplant, immunosuppression, ESRD]
+  - front: "What is the leading cause of mortality in renal transplant recipients, and what are the major long-term complications?"
+    back: "Leading cause of mortality: cardiovascular disease. Major complications: infections (bacterial, viral, fungal, opportunistic — especially CMV, PJP between 1–6 months post-transplant), new-onset DM (from prednisone/tacrolimus), graft rejection, BK virus nephropathy, malignancy (skin cancer, Kaposi's sarcoma, non-Hodgkin's lymphoma), cyclosporine/tacrolimus nephropathy.\n\nImmunosuppression increases infection and malignancy risk. CMV and PJP prophylaxis is standard in the first 6 months. BK virus (polyomavirus) reactivates under over-immunosuppression and can cause graft loss. Late allograft failure is primarily due to interstitial fibrosis/tubular atrophy and death with a functioning graft."
+    difficulty: medium
+    tags: [nephrology, renal transplant, complications, immunosuppression]
+  - front: "A renal transplant recipient presents 3 months post-transplant with rising creatinine, low-grade fever, and graft site tenderness. What is the most likely diagnosis and what causes late allograft loss?"
+    back: "Most likely: acute rejection (cellular or humoral). Note: symptoms are often absent/subtle. Late allograft loss is caused by: interstitial fibrosis/tubular atrophy, death with functioning graft, and factors including HTN, hyperlipidemia, donor age, new-onset DM, and chronic antibody-mediated injury (transplant glomerulopathy).\n\nAcute rejection presents with rising Cr, fever, hematuria, and graft tenderness, though many cases are asymptomatic and detected on protocol biopsy. Early allograft damage from acute rejection and peritransplant injuries contributes to chronic allograft nephropathy. Long-term monitoring of calcineurin inhibitor levels (cyclosporine, tacrolimus) is essential."
+    difficulty: hard
+    tags: [nephrology, renal transplant, acute rejection, allograft]
+  - front: "What are the mechanisms of action and major adverse effects of loop diuretics?"
+    back: "Mechanism: inhibit Na⁺/K⁺/2Cl⁻ transporter in thick ascending limb of Loop of Henle; cause renal and peripheral vasodilation. Major adverse effects: hypokalemia, hyponatremia, hypocalcemia, hypercalciuria (with stone formation), volume depletion with metabolic alkalosis, gout precipitation, allergy in sulfa-sensitive individuals.\n\nExamples: furosemide, bumetanide, ethacrynic acid, torsemide. IV furosemide is equivalent to 2× the oral dose. Used for edema (CHF, nephrotic syndrome, cirrhosis), SIADH-induced hyponatremia (free water clearance), and HTN. Less effective for HTN due to short action. Ethacrynic acid is the only loop diuretic safe in sulfa allergy."
+    difficulty: easy
+    tags: [nephrology, diuretics, loop diuretics, furosemide, pharmacology]
+  - front: "What are the clinical indications, mechanism, and key adverse effects of thiazide diuretics?"
+    back: "Mechanism: inhibit Na⁺/Cl⁻ transporter in distal convoluted tubule. Indications: first-line essential HTN, edema, idiopathic hypercalciuria/nephrolithiasis, nephrogenic diabetes insipidus. Adverse effects: hypokalemia, elevated serum urate/gout precipitation, hypercalcemia, elevated lipids, glucose intolerance.\n\nThiazides cause Ca²⁺ retention (unlike loop diuretics), making them useful for hypercalciuria and calcium stones. They paradoxically reduce urine volume in nephrogenic DI by causing mild volume depletion, increasing proximal tubular reabsorption. Examples: HCTZ, chlorthalidone (longer-acting, preferred for CV risk reduction), indapamide, metolazone."
+    difficulty: medium
+    tags: [nephrology, diuretics, thiazide, HCTZ, pharmacology]
+  - front: "What is the mechanism of potassium-sparing diuretics, and what is their major adverse effect?"
+    back: "Mechanism: spironolactone is an aldosterone antagonist; triamterene and amiloride block Na⁺ channels in cortical collecting duct. Major adverse effect: hyperkalemia (caution with ACEIs). Additional: triamterene can cause nephrotoxicity and nephrolithiasis; spironolactone causes gynecomastia (estrogenic effect).\n\nPotassium-sparing diuretics reduce K⁺ loss caused by other diuretics. Spironolactone is specifically used for severe CHF, ascites, and hyperaldosteronism. Amiloride is used in cystic fibrosis to decrease viscosity of secretions. Combining with ACEIs/ARBs significantly increases hyperkalemia risk."
+    difficulty: medium
+    tags: [nephrology, diuretics, spironolactone, amiloride, pharmacology]
+  - front: "What is the mechanism of osmotic diuretics and what are their main indications?"
+    back: "Mechanism: non-reabsorbable solutes (mannitol, glycerol, urea) increase osmotic pressure of glomerular filtrate in renal tubules, inhibiting water reabsorption and increasing urinary excretion of toxic material. Indications: reduce intracranial or intraocular pressure, mobilize excess fluid in renal failure or edematous states.\n\nMannitol (0.25–2 g/kg IV over 30–60 min) is the prototypical osmotic diuretic used in neurosurgery and traumatic brain injury for ICP management. A transient volume expansion occurs before diuresis, which is a key adverse effect. Electrolyte abnormalities (↓Na, ↓K) also occur."
+    difficulty: medium
+    tags: [nephrology, diuretics, mannitol, osmotic diuretics, pharmacology]
+  - front: "What are the renal indications, mechanism, and major adverse effects of ACE inhibitors in nephrology?"
+    back: "Indications: HTN, renoprotection (diabetic and non-diabetic nephropathy), cardioprotection. Mechanism: inhibit ACE → prevent angiotensin II formation → vasodilation + reduced aldosterone → ↓Na/H₂O retention → ↓BP. Also reduce fibrosis and atherogenesis. Adverse effects: cough (most common), angioedema, hyperkalemia, AKI, teratogenicity, agranulocytosis (captopril).\n\nACEIs reduce efferent arteriolar resistance, lowering intraglomerular pressure and proteinuria — independent of BP lowering. BENEDICT trial: ACEIs (trandolapril) prevent microalbuminuria in T2DM + HTN. REIN trial: ramipril is renoprotective in non-diabetic nephropathy with non-nephrotic proteinuria. ACEIs are teratogenic (contraindicated in pregnancy)."
+    difficulty: medium
+    tags: [nephrology, ACE inhibitors, renoprotection, pharmacology]
+  - front: "How do ARBs compare to ACEIs in mechanism and clinical use in nephrology, and what are their key adverse effects?"
+    back: "ARBs: competitive antagonists at angiotensin II type 1 (AT1) receptor. Similar indications to ACEIs: HTN, renoprotection, cardioprotection. Key advantage: no ACE-inhibitor cough. Adverse effects: hyperkalemia, AKI, teratogenicity; reduce dose in hepatic impairment. Examples: losartan, candesartan, irbesartan, valsartan, telmisartan.\n\nDETAIL trial: ARB telmisartan = ACEI enalapril in slowing renal deterioration in T2DM. IDNT trial: irbesartan reduced ESRD by 23% vs. placebo and amlodipine in T2DM nephropathy independently of BP. RENAAL trial: losartan reduced ESRD by 28%. VA-NEPHRON-D showed ACEI + ARB combination increases hyperkalemia and AKI without added benefit — combination is contraindicated."
+    difficulty: medium
+    tags: [nephrology, ARB, renoprotection, pharmacology, diabetic nephropathy]
+  - front: "What is the mechanism of SGLT2 inhibitors and what are their renal and cardiovascular benefits supported by landmark trials?"
+    back: "Mechanism: inhibit SGLT2 in proximal tubules → increased glucose and sodium excretion in urine → osmotic diuresis, natriuresis, reduced BP, weight loss. Benefits: renoprotection and cardioprotection in T2DM and CKD. Key trials: CREDENCE (canagliflozin — 30% reduction in composite renal endpoint in T2DM CKD), DAPA-CKD (dapagliflozin — safe in CKD with and without T2DM), EMPA-KIDNEY (empagliflozin — reduced kidney disease progression in broad CKD population).\n\nSGLT2i reduce intraglomerular hypertension by causing afferent arteriolar constriction via tubuloglomerular feedback (increased NaCl delivery to macula densa). Adverse effects: GU infections, euglycemic DKA (hold perioperatively), nausea, constipation. Canagliflozin has increased risk of lower limb amputation and fractures."
+    difficulty: medium
+    tags: [nephrology, SGLT2 inhibitors, canagliflozin, dapagliflozin, empagliflozin, CKD, pharmacology]
+  - front: "What did the CREDENCE trial demonstrate regarding SGLT2 inhibitors in diabetic nephropathy?"
+    back: "Canagliflozin 100 mg daily reduced the composite primary endpoint (ESRD, doubling of serum Cr, or death from renal/CV causes) by 30% (HR 0.70) in T2DM patients with albuminuric CKD (eGFR 30–90, ACR >300–5000) on RAAS blockade. Also reduced CV death/MI/stroke (HR 0.85).\n\nCREDENCE was the first dedicated renal outcomes trial for an SGLT2i and was stopped early due to efficacy. All patients were on background RAAS blockade (ACEI or ARB), confirming additive renoprotection. This established canagliflozin as a standard of care in T2DM with CKD."
+    difficulty: hard
+    tags: [nephrology, CREDENCE, canagliflozin, SGLT2, diabetic nephropathy, landmark trials]
+  - front: "What did the DAPA-CKD trial demonstrate and why was it significant?"
+    back: "Dapagliflozin (10 mg daily) reduced the composite of ≥50% eGFR reduction, ESRD, or death from cardiorenal causes by 39% (HR 0.61) in patients with CKD (eGFR 25–75, ACR 200–5000), both with and without T2DM. Trial was stopped early for efficacy.\n\nDAPA-CKD was significant because it extended SGLT2i benefits to non-diabetic CKD patients, establishing dapagliflozin as renoprotective regardless of diabetic status. NNT to prevent one primary outcome event was 19. This supports the use of SGLT2i in proteinuric CKD broadly."
+    difficulty: hard
+    tags: [nephrology, DAPA-CKD, dapagliflozin, SGLT2, CKD, landmark trials]
+  - front: "What did the EMPA-KIDNEY trial show about empagliflozin in CKD?"
+    back: "Empagliflozin 10 mg daily reduced kidney disease progression or cardiovascular death (13.1% vs. 16.9%) in a broad CKD population (eGFR as low as ~20 mL/min/1.73m², with or without T2DM). Fewer hospitalizations; no significant effect on heart failure or cardiovascular death individually. Serious adverse event rates were similar.\n\nEMPA-KIDNEY enrolled the broadest CKD population of the SGLT2i trials, including patients with lower eGFR values and non-diabetic etiologies. This trial further solidified SGLT2i as a cornerstone therapy in CKD management, complementing RAAS blockade."
+    difficulty: hard
+    tags: [nephrology, EMPA-KIDNEY, empagliflozin, CKD, SGLT2, landmark trials]
+  - front: "What did the FLOW trial show about semaglutide in CKD with T2DM?"
+    back: "Semaglutide 1 mg weekly reduced major kidney disease events (kidney failure, significant eGFR reduction, or death from kidney/CV causes) by 24% in patients with T2DM and CKD. Also reduced major CV events and all-cause mortality. Serious adverse events less common with semaglutide (49.6% vs. 53.8%).\n\nFLOW was a landmark trial establishing GLP-1 receptor agonists (semaglutide) as renoprotective in T2DM + CKD, independent of glycemic control. This expands the treatment toolkit for diabetic nephropathy alongside RAAS blockade and SGLT2i."
+    difficulty: hard
+    tags: [nephrology, FLOW, semaglutide, GLP-1, CKD, T2DM, landmark trials]
+  - front: "What did the FIDELIO-DKD trial show about finerenone in CKD + T2DM?"
+    back: "Finerenone (non-steroidal MRA) reduced the composite of kidney failure, ≥40% reduction in GFR, and death from renal causes by 18% (HR 0.82) vs. placebo in patients with T2DM and CKD. Hyperkalemia-related treatment discontinuation was more frequent with finerenone.\n\nFinerenone is a selective, non-steroidal mineralocorticoid receptor antagonist with less hyperkalemia than spironolactone/eplerenone. FIDELIO-DKD established kidney and cardiovascular benefits in T2DM + CKD on background RAAS blockade, with finerenone now part of evidence-based CKD management."
+    difficulty: hard
+    tags: [nephrology, finerenone, FIDELIO-DKD, MRA, CKD, T2DM, landmark trials]
+  - front: "What was the key finding of the VA-NEPHRON-D trial regarding combination RAAS blockade?"
+    back: "Combining ACEIs (lisinopril) + ARBs (losartan) in T2DM with proteinuric nephropathy provided no significant benefit over ARB monotherapy on primary endpoint (eGFR decline, ESRD, or death), and significantly increased risk of hyperkalemia and AKI. The trial was stopped early for safety.\n\nThe VA-NEPHRON-D trial definitively showed that dual RAAS blockade (ACEI + ARB) is harmful — higher adverse events without additional renoprotective benefit. This is now a contraindicated combination in CKD management. Patients should receive ACEI or ARB monotherapy, not both."
+    difficulty: hard
+    tags: [nephrology, VA-NEPHRON-D, dual RAAS blockade, ACE inhibitor, ARB, diabetic nephropathy, landmark trials]
+  - front: "What were the conclusions of the IDEAL trial regarding timing of dialysis initiation in CKD?"
+    back: "Early initiation (eGFR 10–14) vs. late initiation (eGFR 5–7) of dialysis in progressive CKD showed no significant difference in all-cause mortality (37.6% vs. 36.6%; HR 1.04, P=0.75). No differences in frequency of adverse events.\n\nIDEAL confirmed that symptom-driven, rather than eGFR-threshold-driven, dialysis initiation is appropriate. Earlier dialysis initiation did not improve survival or clinical outcomes, supporting the current KDIGO recommendation to initiate dialysis based on symptoms and clinical indicators rather than a fixed eGFR cutoff."
+    difficulty: hard
+    tags: [nephrology, IDEAL trial, dialysis initiation, CKD, landmark trials]
+  - front: "What did the STARRT-AKI trial show about timing of renal replacement therapy in AKI?"
+    back: "Accelerated (early) vs. standard initiation of RRT in critically ill patients with severe AKI showed no significant difference in 90-day all-cause mortality. The accelerated strategy group had higher rates of RRT and adverse events, and survivors had greater dependence on RRT.\n\nSTARRT-AKI mirrors the IDEAL trial findings for CKD — earlier is not necessarily better for dialysis initiation. Unnecessary early RRT may expose patients to procedure-related risks and may impede native kidney recovery. Standard (watchful waiting) approach is preferred in AKI unless absolute indications are met."
+    difficulty: hard
+    tags: [nephrology, STARRT-AKI, AKI, RRT, dialysis timing, landmark trials]
+  - front: "What did the CONVINCE trial show about hemodiafiltration vs. hemodialysis?"
+    back: "High-dose hemodiafiltration reduced all-cause mortality compared to conventional high-flux hemodialysis (17.3% vs. 21.9%) in patients with kidney failure over a median 30-month follow-up.\n\nHemodiafiltration (HDF) combines diffusion (like HD) with high-volume convection, removing a broader range of middle molecules. The CONVINCE trial suggests high-dose HDF provides a survival benefit over standard HD, potentially making HDF the preferred modality in eligible patients. The mean convection volume was 25.3 L/session."
+    difficulty: hard
+    tags: [nephrology, CONVINCE, hemodiafiltration, hemodialysis, landmark trials]
+  - front: "What did the FHN trial demonstrate about hemodialysis frequency?"
+    back: "Frequent hemodialysis (6×/week) vs. conventional (3×/week) was associated with significant benefits in left ventricular mass reduction and physical health scores (primary outcomes), and improved control of HTN and hyperphosphatemia.\n\nThe FHN trial supports the benefit of increased HD frequency over conventional thrice-weekly dialysis for cardiovascular and physical outcomes. More frequent dialysis removes more fluid and solutes, reducing hemodynamic burden on the heart. Home nocturnal HD is one way to achieve this frequency."
+    difficulty: medium
+    tags: [nephrology, FHN trial, hemodialysis frequency, landmark trials]
+  - front: "What did the HEMO trial show about dialysis dose and membrane flux?"
+    back: "High-dose dialysis vs. standard-dose dialysis, and high-flux vs. low-flux dialyzer membranes in thrice-weekly hemodialysis showed no significant differences in all-cause mortality. Neither higher dose nor higher flux improved survival.\n\nThe HEMO trial established that for conventional 3×/week HD, increasing dose (Kt/V) or switching to high-flux membranes beyond standard parameters does not further reduce mortality. This contrasts with the FHN trial which showed frequency (6×/week) does matter."
+    difficulty: medium
+    tags: [nephrology, HEMO trial, hemodialysis, flux, landmark trials]
+  - front: "What were the findings of the CHOIR and CREATE trials regarding hemoglobin targets in CKD anemia?"
+    back: "CHOIR: targeting Hb 13.5 g/dL (higher) vs. 11.3 g/dL with epoetin alfa resulted in MORE primary events (death, MI, CHF hospitalization, stroke; HR 1.34) — higher target is harmful. CREATE: complete Hb correction to 13–15 g/dL vs. 10.5–11.5 g/dL did not reduce CV events.\n\nBoth trials establish that targeting normal hemoglobin in CKD anemia with ESAs is harmful. Current practice targets Hb 10–12 g/dL (avoiding levels >13 g/dL with ESAs). The TREAT trial further showed darbepoetin alfa did not reduce death/CV/ESRD events and increased stroke risk. ESA use should be minimized and iron optimized first."
+    difficulty: hard
+    tags: [nephrology, CHOIR, CREATE, anemia, CKD, erythropoietin, landmark trials]
+  - front: "What did the SHARP trial demonstrate about lipid-lowering therapy in CKD?"
+    back: "Simvastatin 20 mg + ezetimibe 10 mg daily vs. placebo in CKD patients with no prior MI reduced first major atherosclerotic events by 17% (11.3% vs. 13.4%), with significant reductions in non-hemorrhagic strokes and arterial revascularization.\n\nSHARP was a landmark trial establishing that LDL lowering with statin/ezetimibe combination is beneficial in CKD. Statins do not improve survival in dialysis patients (AURORA trial — rosuvastatin showed no benefit in HD patients), but benefit pre-dialysis CKD patients. ALERT trial showed fluvastatin in renal transplant recipients reduced cardiac deaths/non-fatal MI but not overall major adverse cardiac events."
+    difficulty: hard
+    tags: [nephrology, SHARP, statins, CKD, ezetimibe, landmark trials]
+  - front: "What did the SPRINT trial demonstrate about blood pressure targets in high-risk non-diabetic patients?"
+    back: "Intensive BP target (<120 mmHg systolic) vs. standard (<140 mmHg) in high-risk non-diabetic patients reduced the composite of CV events and all-cause mortality, but the intensive group experienced higher rates of certain serious adverse events (hypotension, syncope, AKI, electrolyte abnormalities). Trial stopped early for benefit.\n\nSPRINT enrolled 9,361 patients without DM. Results support intensive BP control in high-risk patients; however, this must be balanced against adverse effects. In CKD, KDIGO 2021 guidelines recommend BP target <120 mmHg systolic when tolerated, using standardized office measurement. The benefit must be weighed against risk of AKI and electrolyte disturbances."
+    difficulty: hard
+    tags: [nephrology, SPRINT, blood pressure, CKD, cardiovascular, landmark trials]
+  - front: "What did the TEMPO 3:4 and REPRISE trials demonstrate about tolvaptan in ADPKD?"
+    back: "TEMPO 3:4: tolvaptan slowed total kidney volume increase (2.8% vs. 5.5%/year) and improved composite clinical progression endpoints in ADPKD patients aged 18–50 with relatively preserved function. REPRISE: tolvaptan in later-stage ADPKD (eGFR 25–44) also showed slower eGFR decline (-2.34 vs. -3.61 mL/min/1.73m²) over 12 months. Both had higher discontinuation rates due to aquaresis and hepatic adverse events.\n\nTolvaptan is a vasopressin V2-receptor antagonist that reduces cyst growth by decreasing cAMP-driven fluid secretion. It is the only approved disease-modifying therapy for ADPKD in Canada. Monitoring for hepatotoxicity is required. It is contraindicated in patients who cannot sense or respond to thirst."
+    difficulty: hard
+    tags: [nephrology, ADPKD, tolvaptan, TEMPO, REPRISE, landmark trials]
+  - front: "What did the MAINRITSAN trial show about maintenance therapy in ANCA-associated vasculitis?"
+    back: "Rituximab (500 mg q6 months) was significantly superior to daily azathioprine for maintaining remission in ANCA-associated vasculitis at 28 months (major relapse: 5% vs. 29%; HR 6.61). Serious adverse events were comparable.\n\nANCA-associated vasculitis (GPA, MPA) causes rapidly progressive GN and requires aggressive initial induction (cyclophosphamide or rituximab + steroids) followed by maintenance therapy. MAINRITSAN established rituximab as the preferred maintenance agent. PEXIVAS showed plasma exchange does NOT reduce death or ESRD in severe ANCA vasculitis, and reduced-dose glucocorticoids are non-inferior to standard dose."
+    difficulty: hard
+    tags: [nephrology, MAINRITSAN, ANCA vasculitis, rituximab, azathioprine, landmark trials]
+  - front: "What did the PEXIVAS trial show about plasma exchange and glucocorticoid dosing in ANCA-associated vasculitis?"
+    back: "Plasma exchange did NOT reduce death or ESRD compared to no plasma exchange in severe ANCA-associated vasculitis (28.4% vs. 31.0%; no significant difference). Reduced-dose glucocorticoid regimen was non-inferior to standard dose and resulted in fewer serious infections.\n\nPEXIVAS definitively ended routine use of plasma exchange for severe ANCA vasculitis, which was previously a common practice. Additionally, reduced-dose glucocorticoids achieve equivalent disease control with less infectious morbidity. These results have substantially changed treatment protocols for ANCA vasculitis."
+    difficulty: hard
+    tags: [nephrology, PEXIVAS, ANCA vasculitis, plasma exchange, glucocorticoids, landmark trials]
+  - front: "What did the AURORA1 and BLISS-LN trials demonstrate about novel agents for lupus nephritis?"
+    back: "AURORA1: voclosporin (calcineurin inhibitor) + standard therapy achieved complete renal response in 41% vs. 23% with placebo (OR 2.65) at 52 weeks. BLISS-LN: belimumab (anti-BLyS biologic) + standard therapy achieved primary efficacy renal response in 43% vs. 32% with placebo at 104 weeks, with lower risk of renal events or death (HR 0.51).\n\nBoth trials used standard therapy (MMF or cyclophosphamide-azathioprine) as background. Voclosporin is a novel calcineurin inhibitor with favorable dosing (no TDM required). Belimumab targets B-lymphocyte stimulator (BLyS), reducing autoantibody production. These agents represent advances in lupus nephritis management beyond traditional immunosuppression."
+    difficulty: hard
+    tags: [nephrology, lupus nephritis, voclosporin, belimumab, AURORA1, BLISS-LN, landmark trials]
+  - front: "What did the CORAL trial show about renal artery stenting for atherosclerotic renal artery stenosis?"
+    back: "Renal artery stenting + medical therapy vs. medical therapy alone for atherosclerotic renal artery stenosis showed NO significant difference in prevention of adverse CV or renal events (35.1% vs. 35.8%; HR 0.94, P=0.58). Stenting provided no additional benefit.\n\nCORAL definitively showed that renal artery stenting does not add benefit over optimal medical therapy in atherosclerotic renal artery stenosis. Medical management (RAAS blockade, statins, antiplatelets, smoking cessation) remains the standard of care. Revascularization is reserved for select cases: rapidly worsening renal function, flash pulmonary edema, or bilateral RAS."
+    difficulty: hard
+    tags: [nephrology, CORAL, renal artery stenosis, stenting, landmark trials]
+  - front: "What did the BICAR-ICU trial show about sodium bicarbonate therapy in severe metabolic acidosis?"
+    back: "Sodium bicarbonate infusion in critically ill ICU patients with severe metabolic acidemia had no effect on the primary outcome (death + organ failure at day 28 in the overall population), but benefited those with acute kidney injury. Adverse events were more common in the bicarbonate group.\n\nBICAR-ICU showed bicarbonate may benefit a specific subgroup (AKI patients with severe acidemia) but is not beneficial for all critically ill patients with metabolic acidosis. This informs individualized use of bicarbonate therapy in the ICU, rather than routine administration."
+    difficulty: hard
+    tags: [nephrology, BICAR-ICU, metabolic acidosis, sodium bicarbonate, AKI, landmark trials]
+  - front: "What did the SALT trial show about tolvaptan for hyponatremia?"
+    back: "Tolvaptan (oral vasopressin V2-receptor antagonist) significantly increased serum Na⁺ concentrations in patients with euvolemic or hypervolemic hyponatremia during days 1–4 and at 30 days (P<0.001 for both). Side effects: dry mouth, thirst, increased urination.\n\nTolvaptan is a vaptane/aquaretic agent that selectively blocks ADH V2 receptors, causing free water excretion without sodium loss. It is indicated for SIADH-induced euvolemic hyponatremia and hypervolemic hyponatremia (CHF, cirrhosis). Rapid correction risk: overshoot correction can cause osmotic demyelination syndrome — must monitor carefully."
+    difficulty: medium
+    tags: [nephrology, SALT trial, tolvaptan, hyponatremia, SIADH, landmark trials]
+  - front: "What did the SMART trial demonstrate about IV fluid choice in the emergency department?"
+    back: "Balanced crystalloids (lactated Ringer's/Plasma-Lyte) vs. normal saline in non-critically ill adults: hospital-free days were similar, but incidence of major adverse kidney events within 30 days was LOWER with balanced crystalloids.\n\nNormal saline causes hyperchloremic non-anion gap metabolic acidosis and may worsen renal outcomes due to renal vasoconstriction. Balanced crystalloids (lower chloride content) are now preferred for IV fluid therapy. The SMART trial was the non-critically ill complement to the SMART-ICU trial, both favoring balanced crystalloids."
+    difficulty: medium
+    tags: [nephrology, SMART trial, IV fluids, balanced crystalloids, normal saline, AKI, landmark trials]
+  - front: "What did the OPAL-HK trial show about patiromer for hyperkalemia in CKD on RAAS inhibitors?"
+    back: "Patiromer (potassium binder) in CKD patients on RAAS inhibitors with serum K⁺ 5.1–6.5 mmol/L significantly reduced serum K⁺ over 4 weeks. In the randomized withdrawal phase, recurrence of hyperkalemia occurred in 60% of placebo vs. 15% of patiromer patients.\n\nPatiromer is an oral cation exchange polymer that binds potassium in the GI tract. It enables continuation of RAAS inhibitors (which cause hyperkalemia but are renoprotective) in patients with CKD. Sodium zirconium cyclosilicate (SZC) is another approved K⁺ binder. Both are now guideline-recommended for chronic hyperkalemia management in CKD on RAAS therapy."
+    difficulty: medium
+    tags: [nephrology, OPAL-HK, patiromer, hyperkalemia, CKD, RAAS, landmark trials]
+  - front: "What did the BENEDICT trial demonstrate about prevention of microalbuminuria in T2DM?"
+    back: "In T2DM with HTN and normoalbuminuria, trandolapril (ACEI) alone or combined with verapamil (non-DHP CCB) significantly reduced development of persistent microalbuminuria (6% trandolapril, 5.7% combination) vs. placebo (10%) and verapamil alone (11.9%). ACEIs are superior to non-DHP CCBs alone.\n\nBENEDICT established ACEIs as renoprotective in T2DM even before microalbuminuria develops, supporting their use for primary prevention of diabetic nephropathy in high-risk patients. Non-DHP CCBs (verapamil, diltiazem) have some antiproteinuric effects but are less effective than ACEIs. DHP CCBs (amlodipine) increase proteinuria and are not renoprotective."
+    difficulty: hard
+    tags: [nephrology, BENEDICT, ACE inhibitor, diabetic nephropathy, microalbuminuria, T2DM, landmark trials]
+  - front: "What are the CNS, hematologic, and endocrine complications of chronic kidney disease/uremia?"
+    back: "CNS: encephalopathy, decreased LOC, stupor, seizure. Hematologic: normocytic anemia (EPO deficiency), bleeding tendency (platelet dysfunction), increased infection risk. Endocrine: decreased testosterone/estrogen/progesterone, increased FSH/LH, insulin resistance (decreased insulin requirements), hypertriglyceridemia, accelerated atherogenesis.\n\nUremic toxins cause platelet dysfunction (adhesion/aggregation impaired), explaining the bleeding tendency in ESRD despite normal platelet counts. Decreased insulin requirements in diabetic patients approaching ESRD is an important clinical clue — insulin is renally cleared. Hypertriglyceridemia in CKD accelerates cardiovascular disease."
+    difficulty: medium
+    tags: [nephrology, CKD complications, uremia, ESRD]
+  - front: "What is renal osteodystrophy and how does CKD lead to secondary hyperparathyroidism?"
+    back: "CKD → decreased GFR → decreased Ca²⁺, increased PO₄³⁻, decreased 1,25-OH vitamin D3 (active) → secondary hyperparathyroidism → osteitis fibrosa cystica. Also: calciphylaxis (vascular Ca²⁺ deposition causing skin necrosis).\n\nIn CKD, the failing kidney cannot activate vitamin D (1α-hydroxylation) and cannot excrete phosphate. Low Ca²⁺ and low active vitamin D stimulate PTH secretion. Elevated PTH causes bone resorption (osteitis fibrosa cystica), pathological fractures, and cardiovascular calcification. Treatment includes phosphate binders, active vitamin D analogs, and calcimimetics (cinacalcet)."
+    difficulty: medium
+    tags: [nephrology, renal osteodystrophy, secondary hyperparathyroidism, CKD, calcium phosphate]
+  - front: "What are the cardiovascular and dermatologic complications of CKD/ESRD?"
+    back: "Cardiovascular: cardiomyopathy, CHF, arrhythmia, pericarditis, accelerated atherosclerosis. Dermatologic: pruritus, ecchymosis, hematoma, calciphylaxis (vascular calcium deposition causing skin and subcutaneous tissue necrosis).\n\nUremic pericarditis is an absolute indication for dialysis (BUN typically >35–50 mM). Calciphylaxis is a severe complication of CKD-related calcium-phosphate dysregulation causing painful ischemic skin ulcers, typically on the thighs, abdomen, or buttocks. It carries high mortality. Treatment includes sodium thiosulfate, wound care, and correction of calcium-phosphate product."
+    difficulty: medium
+    tags: [nephrology, CKD complications, calciphylaxis, uremic pericarditis, ESRD]
+  - front: "What did the EVOLVE trial show about cinacalcet in dialysis patients with secondary hyperparathyroidism?"
+    back: "Cinacalcet (calcimimetic) vs. placebo in hemodialysis patients with moderate-severe secondary hyperparathyroidism did NOT significantly reduce the composite of death, MI, hospitalization for unstable angina/HF, or peripheral vascular events (48.3% vs. 49.2%; HR 0.93, P=0.11).\n\nDespite cinacalcet effectively lowering PTH and calcium-phosphate product, it did not translate to improved cardiovascular outcomes in the EVOLVE trial. Cinacalcet remains used for management of secondary hyperparathyroidism in dialysis (reducing PTH, Ca, PO₄), but its CV benefit is unproven. It can cause hypocalcemia and nausea."
+    difficulty: hard
+    tags: [nephrology, EVOLVE, cinacalcet, secondary hyperparathyroidism, dialysis, landmark trials]
+  - front: "What did the CLiCK trial show about chlorthalidone in advanced CKD with poorly controlled HTN?"
+    back: "Chlorthalidone (thiazide-like diuretic) vs. placebo in stage 4 CKD with poorly controlled HTN reduced systolic BP by 11.0 vs. 0.5 mmHg at 12 weeks (P<0.001). Adverse events (hypokalemia, hyperglycemia, dizziness, hyperuricemia) were more frequent with chlorthalidone.\n\nCLiCK challenged the dogma that thiazide diuretics are ineffective in advanced CKD (eGFR <30). Chlorthalidone retained antihypertensive efficacy even in stage 4 CKD, expanding treatment options for this difficult population. Adverse effects must be monitored closely. This supports the role of thiazide-like diuretics as adjunctive BP agents in advanced CKD."
+    difficulty: hard
+    tags: [nephrology, CLiCK trial, chlorthalidone, advanced CKD, HTN, landmark trials]
+  - front: "What does the Kidney Failure Risk Equation provide and when is it applied?"
+    back: "The Kidney Failure Risk Equation provides the 2-year and 5-year probability of treated kidney failure for patients with CKD stage 3–5. It helps guide discussions about dialysis planning and referral for vascular access surgery.\n\nThe Kidney Failure Risk Equation uses variables such as age, sex, eGFR, and urine albumin-to-creatinine ratio to predict risk of ESRD. It identifies patients who would benefit from early referral to nephrology, vascular access creation (AV fistula when eGFR <15–20), and renal transplant evaluation."
+    difficulty: medium
+    tags: [nephrology, CKD, kidney failure risk equation, ESRD prediction, dialysis planning]
+  - front: "What did the AASK trial show about ACE inhibitors in hypertensive nephrosclerosis?"
+    back: "Ramipril (ACEI) caused a 36% slower mean GFR decline vs. amlodipine (DHP CCB) in hypertensive renal disease (P=0.006). Ramipril also slowed proteinuria progression. No significant differences vs. metoprolol (beta-blocker).\n\nAASK established ACEI as preferred antihypertensive agents in Black patients with hypertensive nephrosclerosis, who are at high risk of CKD progression. DHP CCBs (amlodipine) worsen proteinuria relative to ACEIs in this population, making them less preferred as first-line agents when proteinuria is present."
+    difficulty: hard
+    tags: [nephrology, AASK trial, ACEI, hypertensive nephrosclerosis, ramipril, landmark trials]
+  - front: "What did the REIN trial show about ACE inhibitors in non-diabetic nephropathy?"
+    back: "Ramipril (ACEI) vs. conventional antihypertensive therapy in non-diabetic nephropathy with non-nephrotic proteinuria: ramipril significantly reduced progression to ESRD (RR 2.72) and to overt proteinuria (RR 2.40), independent of BP effects.\n\nREIN (Ramipril Efficacy in Nephropathy) established renoprotective effects of ACEIs in non-diabetic proteinuric nephropathy. REIN-2 showed that intensified BP control (diastolic <130 vs. <90) with addition of a CCB to ACEI provided no further benefit for ESRD prevention in non-diabetic CKD on ACEI. Both trials support ACEI as cornerstone therapy in proteinuric CKD."
+    difficulty: hard
+    tags: [nephrology, REIN trial, ACEI, non-diabetic nephropathy, proteinuria, landmark trials]
+  - front: "What is the ELITE-SYMPHONY trial and what is its implication for renal transplant immunosuppression?"
+    back: "ELITE-SYMPHONY compared immunosuppressive regimens in renal transplant recipients: low-dose tacrolimus (with daclizumab induction + MMF + corticosteroids) achieved the highest mean GFR at 12 months (65.4 mL/min/1.73m²) compared to standard cyclosporine or low-dose cyclosporine/sirolimus regimens. Low-dose sirolimus had the most serious adverse events.\n\nELITE-SYMPHONY established low-dose tacrolimus-based immunosuppression as the preferred maintenance regimen post-renal transplant. Tacrolimus is more potent but more nephrotoxic than cyclosporine at standard doses; low-dose tacrolimus preserves renal function better. Sirolimus (mTOR inhibitor) avoids nephrotoxicity but has worse outcomes in this setting."
+    difficulty: hard
+    tags: [nephrology, ELITE-SYMPHONY, renal transplant, tacrolimus, immunosuppression, landmark trials]
+  - front: "What is disequilibrium syndrome in hemodialysis and when does it occur?"
+    back: "Disequilibrium syndrome: headache, cerebral edema, hypotension, nausea, muscle cramps related to solute/water flux — typically occurs during first few hemodialysis sessions at the start of ESRD treatment.\n\nRapid removal of urea and solutes from the blood creates an osmotic gradient where the brain temporarily has higher solute concentration, drawing water in and causing cerebral edema. Prevention includes shorter, slower initial HD sessions, using a higher sodium dialysate, and administering mannitol. It is distinct from MELAS or other neurologic emergencies."
+    difficulty: medium
+    tags: [nephrology, hemodialysis, disequilibrium syndrome, complications, ESRD]
+  - front: "What is the preferred vascular access for hemodialysis and how is it created?"
+    back: "Preferred: AV fistula (native). Created by surgically connecting an artery (usually radial) to an adjacent vein (usually cephalic), which increases vein diameter and wall thickness, allowing easy cannulation. Hierarchy: AV fistula > AV graft > central venous catheter (last resort due to infection/thrombosis risk).\n\nAV fistulas have the lowest complication rates (infection, stenosis, thrombosis) and longest longevity. They require 6–8 weeks to mature before use. AV grafts use synthetic material and mature faster but have higher thrombosis rates. Central venous catheters carry the highest infection risk (bacteremia) and cause central venous stenosis."
+    difficulty: easy
+    tags: [nephrology, hemodialysis, AV fistula, vascular access]

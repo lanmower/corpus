@@ -1,0 +1,674 @@
+# Hypertension (Cardiology) - generated from srs-mccqe1
+cards:
+  - front: "What are the Hypertension Canada diagnostic thresholds for hypertension by measurement method?"
+    back: "Office BP ≥140/90 (≥2 visits); ABPM 24h average ≥130/80; home BP ≥135/85; AOBP ≥135/85\n\nHypertension Canada 2020 recommends AOBP as preferred measurement. ABPM is gold standard for white coat and masked hypertension. Single-visit diagnosis allowed if BP ≥180/110."
+    difficulty: easy
+    tags: [hypertension, diagnosis, ABPM, AOBP, Hypertension Canada]
+  - front: "What are BP targets per Hypertension Canada for general adults vs. high-risk patients?"
+    back: "General: <140/90 mmHg; high-risk (diabetes, CKD, CVD, Framingham risk >15%): <130/80 mmHg\n\nSPRINT trial evidence supports lower targets for high-risk patients. Canadian guidelines adopt <130/80 for high-risk as balance between benefit and risk of adverse events."
+    difficulty: easy
+    tags: [hypertension, BP target, high-risk, CKD, Hypertension Canada]
+  - front: "A 55-year-old Black man has BP 158/95 on three visits. No comorbidities. First-line antihypertensive?"
+    back: "Long-acting DHP-CCB (amlodipine) or thiazide diuretic (indapamide or HCTZ) — ACEi less effective as monotherapy in Black patients\n\nBlack patients have lower renin activity, so CCBs and thiazide diuretics are preferred. ACEi/ARB are still important if diabetes or CKD present. Combination therapy often required."
+    difficulty: medium
+    tags: [hypertension, amlodipine, thiazide, treatment, Hypertension Canada]
+  - front: "A 62-year-old with HTN, type 2 diabetes, and microalbuminuria (ACR 45 mg/mmol). Preferred antihypertensive?"
+    back: "ACE inhibitor (e.g., ramipril) or ARB — nephroprotective via reducing intraglomerular pressure and proteinuria\n\nACEi/ARB are first-line for HTN with diabetes and microalbuminuria per Hypertension Canada and CDA guidelines. SGLT2 inhibitors also recommended for cardiorenal protection in diabetic CKD."
+    difficulty: medium
+    tags: [hypertension, diabetes, ACE inhibitor, diabetic nephropathy, microalbuminuria]
+  - front: "Define hypertensive emergency and urgency."
+    back: "Emergency: BP >180/120 with acute target organ damage (encephalopathy, HF, stroke, AKI, aortic dissection); Urgency: BP >180/120 without target organ damage\n\nHypertensive emergency requires IV treatment and BP reduction by 20-25% in first hour (not to normal — risk of ischemic stroke). Urgency managed with oral agents and close follow-up."
+    difficulty: hard
+    tags: [hypertensive emergency, urgency, target organ damage, hypertension]
+  - front: "A patient has BP 220/130, severe headache, papilledema, and confusion. How rapidly should BP be lowered?"
+    back: "Reduce MAP by 20-25% in first hour with IV labetalol or nicardipine — do NOT normalize BP rapidly\n\nRapid normalization causes watershed ischemia as cerebral autoregulation is shifted. Target: reduce MAP by 10-15% in 30-60 min, then to 160/100 over 2-6 hours. CT head to exclude hemorrhagic stroke."
+    difficulty: hard
+    tags: [hypertensive encephalopathy, hypertensive emergency, BP reduction, labetalol, hypertension]
+  - front: "What secondary causes of hypertension should be investigated in a young patient with resistant HTN?"
+    back: "Renal artery stenosis, primary hyperaldosteronism, pheochromocytoma, Cushing syndrome, coarctation of aorta, sleep apnea, drugs (NSAIDs, OCP)\n\nSecondary HTN is more common in young patients or with clinical clues. Primary hyperaldosteronism is the most common secondary cause (5-10% of all HTN). Hypertension Canada recommends secondary workup for resistant HTN."
+    difficulty: medium
+    tags: [secondary hypertension, resistant hypertension, primary hyperaldosteronism, pheochromocytoma, renal artery stenosis]
+  - front: "How is resistant hypertension defined and what is the best add-on agent?"
+    back: "BP ≥140/90 despite ≥3 agents at maximum doses including a diuretic; add spironolactone as 4th agent (PATHWAY-2 trial evidence)\n\nPATHWAY-2 showed spironolactone is most effective add-on for resistant HTN. Confirm adherence, rule out white coat HTN (ABPM), and eliminate drug interactions before diagnosing true resistance."
+    difficulty: hard
+    tags: [resistant hypertension, spironolactone, PATHWAY-2, hypertension]
+  - front: "What lifestyle modifications reduce BP in hypertension?"
+    back: "DASH diet, sodium <2000 mg/day, weight loss, aerobic exercise 30-60 min 4-7 days/week, limit alcohol ≤2 drinks/day, smoking cessation\n\nHypertension Canada quantifies benefit: DASH diet ~11 mmHg, sodium restriction ~5 mmHg, weight loss ~1 mmHg/kg, exercise ~4-9 mmHg. Lifestyle changes can achieve targets without medication in stage 1 HTN."
+    difficulty: easy
+    tags: [lifestyle, DASH diet, sodium, exercise, hypertension management]
+  - front: "A 70-year-old has isolated systolic hypertension (BP 168/72). Preferred antihypertensive?"
+    back: "Long-acting DHP-CCB (amlodipine) or thiazide-like diuretic (indapamide) — most evidence for isolated systolic HTN in elderly\n\nSHEP and Syst-Eur trials demonstrated benefit of treating isolated systolic HTN. Target SBP <140 in elderly. Slow titration to avoid postural hypotension."
+    difficulty: medium
+    tags: [isolated systolic hypertension, elderly, amlodipine, indapamide, hypertension]
+  - front: "What causes ACE inhibitor cough and what is the alternative?"
+    back: "ACEi cough from bradykinin accumulation; switch to ARB which does not affect bradykinin metabolism\n\nACEi cough occurs in 5-20% (more common in Asians, women, non-smokers). Class effect — switching to another ACEi will not help. ACEi and ARBs should not be combined due to AKI and hyperkalemia risk."
+    difficulty: easy
+    tags: [ACE inhibitor, cough, bradykinin, ARB, hypertension]
+  - front: "What antihypertensives are safe in pregnancy?"
+    back: "Labetalol, methyldopa, nifedipine XL are safe; avoid ACEi and ARBs (teratogenic — fetal renal agenesis, oligohydramnios)\n\nSOGC guidelines recommend treatment for BP ≥140/90 in pregnancy. Severe HTN (≥160/110) requires urgent treatment to prevent maternal stroke. Magnesium sulfate for seizure prophylaxis in severe preeclampsia."
+    difficulty: hard
+    tags: [hypertension in pregnancy, labetalol, methyldopa, preeclampsia, SOGC]
+  - front: "What is the CV risk reduction from antihypertensive therapy?"
+    back: "Each 10 mmHg reduction in SBP reduces stroke risk ~35-40%, MI risk ~20-25%, heart failure ~50%\n\nMeta-analyses confirm significant CV benefit from BP lowering regardless of drug class, proportional to degree of reduction. Absolute risk reduction depends on baseline risk."
+    difficulty: medium
+    tags: [cardiovascular risk, blood pressure reduction, stroke, MI prevention, hypertension]
+  - front: "A 45-year-old has BP 152/96 and 10-year CV risk of 18%. When should pharmacotherapy start?"
+    back: "Treat when BP ≥130/80 for high-risk patients (10-year CV risk ≥15%); lifestyle modification accompanies pharmacotherapy\n\nHypertension Canada 2020 incorporates global CV risk. For high-risk patients, treatment threshold is lower and target is <130/80 mmHg, based on SPRINT evidence."
+    difficulty: medium
+    tags: [CV risk, Framingham, treatment threshold, high-risk hypertension]
+  - front: "What is the role of beta-blockers in hypertension per Hypertension Canada?"
+    back: "NOT first-line for uncomplicated HTN in patients ≥60 years; preferred for compelling indications: post-MI, HFrEF, angina, AF rate control\n\nHypertension Canada downgraded beta-blockers due to inferior stroke prevention in elderly (LIFE trial). Acceptable option in patients <60 without compelling indication."
+    difficulty: medium
+    tags: [beta-blockers, hypertension, first-line, compelling indications, Hypertension Canada]
+  - front: "A patient on amlodipine 10mg and ramipril 10mg has BP 148/94. Next step?"
+    back: "Add thiazide-like diuretic (indapamide SR 1.5mg or HCTZ 25mg) — triple therapy ACEi + CCB + diuretic\n\nHypertension Canada recommends ACEi + CCB + diuretic as the preferred triple regimen. Three-drug combination more effective than any dual combination."
+    difficulty: medium
+    tags: [combination therapy, triple therapy, indapamide, hypertension management]
+  - front: "What BP target and preferred agents for CKD without diabetes?"
+    back: "Target <140/90; ACEi or ARB for nephroprotection — avoid combining ACEi + ARB\n\nACEi/ARB recommended for CKD with proteinuria (ACR >30 mg/mmol) to reduce intraglomerular pressure. Up to 30% creatinine rise acceptable if K+ remains <5.5 mEq/L."
+    difficulty: medium
+    tags: [CKD, hypertension, ACE inhibitor, ARB, renal protection]
+  - front: "A hypertensive patient has hypokalemia (K+ 2.9), suppressed renin, and elevated aldosterone/renin ratio. Diagnosis?"
+    back: "Primary hyperaldosteronism; most common cause is bilateral adrenal hyperplasia (60%) or aldosterone-producing adenoma (35%)\n\nScreen: aldosterone/renin ratio >30 with aldosterone >15 ng/dL. Confirm with saline suppression test. CT then adrenal vein sampling to lateralize. Treatment: adenoma → adrenalectomy; bilateral hyperplasia → spironolactone."
+    difficulty: hard
+    tags: [primary hyperaldosteronism, Conn syndrome, aldosterone, renin ratio, secondary hypertension]
+  - front: "How is pheochromocytoma diagnosed and what is the pre-operative treatment priority?"
+    back: "Diagnose with plasma free metanephrines or 24h urine catecholamines; pre-op: alpha-blockade first (phenoxybenzamine), THEN beta-blockade\n\nPlasma free metanephrines have highest sensitivity (96%). MRI/CT adrenal localizes tumor. Never start beta-blocker before alpha-blocker — risk of hypertensive crisis from unopposed alpha stimulation."
+    difficulty: hard
+    tags: [pheochromocytoma, hypertension, metanephrines, alpha-blockade, secondary hypertension]
+  - front: "How should BP be properly measured per Hypertension Canada?"
+    back: "Rest 5 min, no caffeine/smoking 30 min prior, empty bladder, seated back supported, arm at heart level, appropriate cuff size, average 2-3 readings — prefer AOBP\n\nAOBP eliminates white-coat effect. AOBP measures 5 consecutive readings while patient is alone; mean of readings 2-5 is used. Measurement errors are a common cause of apparent treatment failure."
+    difficulty: easy
+    tags: [BP measurement, AOBP, technique, Hypertension Canada, white coat hypertension]
+  - front: "A 38-year-old woman presents with severe headache, BP 230/135 mmHg, confusion, and bilateral papilledema. Creatinine is 2.8 (baseline unknown). Urinalysis shows 3+ protein and red cell casts. Her Hgb is 7.8 g/dL with schistocytes on peripheral smear. What is this condition and what is the immediate management?\n\nA) Hypertensive emergency with microangiopathic hemolytic anemia — IV labetalol, target 25% MAP reduction in first hour\nB) Malignant hypertension — immediate reversal to normal BP to prevent permanent renal failure\nC) Hypertensive urgency — oral antihypertensives over 24–48 hours\nD) Eclampsia — magnesium sulfate and delivery"
+    back: "A) Hypertensive emergency with microangiopathic hemolytic anemia — IV labetalol, target 25% MAP reduction in first hour\n\nHypertensive emergency with target organ damage (encephalopathy, acute kidney injury, microangiopathic hemolytic anemia/TMA) requires immediate IV antihypertensive therapy. Key principle: reduce MAP by no more than 25% in the first hour (to avoid cerebral hypoperfusion — risk of ischemic stroke, watershed infarcts). Over 2–6 hours, reduce to 160/100, then normalize over 24–48 hours. IV labetalol, nicardipine, or clevidipine are first-line. Nitroprusside for truly refractory cases. The schistocytes + renal failure + severe hypertension = hypertensive TMA (malignant hypertension-associated TMA) — distinct from TTP/HUS but treated by BP control."
+    difficulty: hard
+    tags: [Hypertension, MCQ, Toronto Notes]
+  - front: "A 55-year-old man with resistant hypertension (BP 162/98 on 3 drugs including a diuretic at maximum tolerated doses) undergoes workup. Plasma aldosterone-to-renin ratio (ARR) is 38 (elevated, > 30). CT adrenal shows a 1.8cm left adrenal adenoma. What is the next diagnostic step before treatment?\n\nA) Start spironolactone — the adenoma is the culprit\nB) Proceed directly to laparoscopic left adrenalectomy — CT is diagnostic\nC) Adrenal vein sampling (AVS) to confirm lateralization\nD) 24-hour urine free cortisol to exclude Cushing's syndrome"
+    back: "C) Adrenal vein sampling (AVS) to confirm lateralization\n\nCT adrenal has poor sensitivity/specificity for diagnosing primary aldosteronism (PA) lateralization — CT can miss microadenomas, misattribute bilateral PA to a visible incidentaloma, or identify non-functional adenomas. Adrenal Vein Sampling (AVS) is the gold standard to confirm lateralization BEFORE surgery. AVS compares aldosterone-to-cortisol ratio in left vs. right adrenal vein — lateralization ratio >4:1 (with ACTH stimulation) confirms unilateral disease → adrenalectomy. Bilateral disease → spironolactone/eplerenone. Proceeding to surgery based on CT alone misclassifies up to 37% of patients (Endocrine Society guidelines — AVS mandatory before surgery)."
+    difficulty: hard
+    tags: [Hypertension, MCQ, Toronto Notes]
+  - front: "A 32-year-old woman presents with uncontrolled hypertension, headaches, palpitations, and diaphoresis. 24-hour urine shows elevated metanephrines (4x upper limit of normal) and normetanephrines (3x upper limit of normal). BP is 185/110 on amlodipine 10mg and lisinopril 10mg. CT shows a 3cm right adrenal mass. What is the FIRST medication to add before surgery?\n\nA) IV phentolamine — immediate alpha blockade for the hypertensive crisis\nB) Oral phenoxybenzamine — non-selective alpha-blockade for 10–14 days pre-op\nC) Propranolol — beta-blockade to control heart rate\nD) Metyrosine — catecholamine synthesis inhibitor to reduce tumor secretion"
+    back: "B) Oral phenoxybenzamine — non-selective alpha-blockade for 10–14 days pre-op\n\nPheochromocytoma management pre-operatively: (1) Alpha-blockade FIRST (10–14 days) with phenoxybenzamine (irreversible non-selective) or doxazosin (selective alpha-1). This is mandatory before surgery to prevent hypertensive crisis during tumor manipulation. (2) THEN add beta-blockade (propranolol) — never give beta-blockers first (unopposed alpha stimulation → severe hypertension). (3) Salt and fluid loading to correct volume depletion from chronic vasoconstriction. (4) Surgery (laparoscopic adrenalectomy) after adequate alpha blockade confirmed (target BP < 130/80, mild orthostatic drop). Phentolamine IV is for acute crisis management."
+    difficulty: hard
+    tags: [Hypertension, MCQ, Toronto Notes]
+  - front: "A 55-year-old Black man has stage 2 hypertension (BP 158/96) with no diabetes and no proteinuria. His creatinine is normal. Which first-line antihypertensive class is most appropriate as initial monotherapy based on current evidence and guidelines?\n\nA) ACE inhibitor — superior cardiovascular protection in all patient groups\nB) Thiazide diuretic or calcium channel blocker\nC) Beta-blocker — preferred for its sympatholytic effects in high-renin hypertension\nD) ARB — equivalent to ACE inhibitor without cough risk"
+    back: "B) Thiazide diuretic or calcium channel blocker\n\nBlack patients have lower renin activity and respond less well to renin-angiotensin system inhibitors (ACE inhibitors, ARBs) as monotherapy — these agents have lower antihypertensive efficacy and reduced HF/stroke prevention efficacy in this population when used as single agents. The ALLHAT trial confirmed thiazide diuretics (chlorthalidone) and CCBs are superior in reducing BP and cardiovascular outcomes in Black patients with stage 2 HTN. ACE inhibitors as monotherapy are also associated with higher rates of angioedema in Black patients. CCBs and thiazides are first-line in guidelines (JNC 8, NICE, Hypertension Canada) for Black patients."
+    difficulty: hard
+    tags: [Hypertension, MCQ, Toronto Notes]
+  - front: "A 62-year-old woman with hypertension is started on hydrochlorothiazide 25mg. Two months later, BP is controlled but her fasting glucose is 6.8 mmol/L (previously 5.6), Na+ is 131 mEq/L, K+ is 3.1 mEq/L. Which thiazide-related metabolic adverse effect is MOST clinically significant in a patient with pre-diabetes?\n\nA) Hyponatremia — directly increases risk of osmotic demyelination\nB) New-onset diabetes mellitus — thiazides worsen insulin resistance\nC) Hypokalemia — increases risk of arrhythmias\nD) Hyperuricemia — increases risk of gout"
+    back: "B) New-onset diabetes mellitus — thiazides worsen insulin resistance\n\nThiazide diuretics cause a constellation of metabolic effects: hypokalemia (which itself worsens insulin resistance and impairs beta-cell insulin secretion), hyponatremia, hyperuricemia, hypercalcemia, and hyperlipidemia. In a pre-diabetic patient, the progression to new-onset diabetes is the most clinically significant long-term complication — new-onset diabetes associated with antihypertensives carries the same cardiovascular risk as pre-existing diabetes (ALLHAT, VALUE trials). In this patient, considering switching to a CCB or ACE inhibitor + potassium repletion is prudent. Chlorthalidone (more potent, longer half-life) has superior CV outcomes but causes more metabolic derangements than HCTZ."
+    difficulty: hard
+    tags: [Hypertension, MCQ, Toronto Notes]
+  - front: "How is hypertension diagnosed per Hypertension Canada?"
+    back: "Office BP >=140/90 on >=2 visits OR >=130/85 on office then confirmed with out-of-office measurement: ABPM daytime mean >=135/85 or HBPM mean >=135/85. ABPM is gold standard (rules out white coat HTN)\n\nHypertension Canada 2020. Automated office BP (AOBP) preferred over manual. White coat HTN (elevated office, normal out-of-office): 15-30%, monitor but may not need treatment. Masked HTN (normal office, elevated out-of-office): treat as hypertensive. Home BP lower thresholds than office."
+    difficulty: medium
+    tags: [hypertension, diagnosis, ABPM]
+  - front: "What are the first-line antihypertensive drug classes and how are they selected?"
+    back: "First-line: ACEi/ARB, thiazide/thiazide-like (chlorthalidone preferred), long-acting DHP-CCB (amlodipine). With diabetes/CKD+proteinuria: ACEi/ARB mandatory. Black patients: CCB or thiazide first. Young white: ACEi/ARB\n\nHypertension Canada. Most patients need >=2 drugs. Single pill combinations improve adherence. Target: <140/90 general, <130/80 diabetes. Do NOT combine ACEi+ARB. Beta-blockers not first-line for uncomplicated HTN (inferior stroke prevention). Thiazide-like (chlorthalidone, indapamide) preferred over HCTZ."
+    difficulty: hard
+    tags: [antihypertensive, first-line, Hypertension Canada]
+  - front: "What is the workup for resistant hypertension?"
+    back: "Definition: BP above target despite 3 drugs at optimal doses including a diuretic. Confirm: rule out non-adherence (most common), white coat effect (ABPM), secondary causes. Workup: aldosterone/renin ratio, renal artery doppler, catecholamines, cortisol, TSH, sleep study\n\nSecondary HTN causes: primary aldosteronism (most common, ARR screening), renal artery stenosis (young female=FMD, older=atherosclerotic), pheochromocytoma (episodic), Cushing, OSA, coarctation, thyroid. Fourth-line drug: spironolactone 25-50mg (PATHWAY-2 trial)."
+    difficulty: hard
+    tags: [resistant HTN, secondary causes, aldosteronism]
+  - front: "What is primary aldosteronism and how is it screened and diagnosed?"
+    back: "Screening: aldosterone-to-renin ratio (ARR). Positive: ARR>100 pmol/L per ng/mL/h AND aldosterone >416 pmol/L. Confirm with salt loading or fludrocortisone suppression test. Subtype: CT adrenals + adrenal vein sampling. Treat: unilateral adenoma=surgery, bilateral=spironolactone\n\nMost common cause of secondary HTN (5-10% of all HTN, up to 20% of resistant). Screen: resistant HTN, hypokalemia, adrenal incidentaloma, early-onset HTN, FHx. Hold interfering drugs: spironolactone 6wk, ACEi/ARB 2wk before testing (though practically difficult)."
+    difficulty: hard
+    tags: [primary aldosteronism, ARR, screening]
+  - front: "How is hypertensive urgency vs emergency managed?"
+    back: "Urgency: severe HTN (>=180/120) WITHOUT end-organ damage. Manage: oral agents (captopril, clonidine, amlodipine), lower BP over 24-48h in outpatient setting. Emergency: severe HTN WITH end-organ damage (encephalopathy, ACS, aortic dissection, eclampsia, acute HF, papilledema). IV agents in ICU\n\nHypertensive emergency IV agents: labetalol, nicardipine, nitroglycerin (ACS/HF), nitroprusside (aortic dissection, but cyanide risk). Target: 25% reduction in first hour, then to 160/100 over next 2-6h. Exception: aortic dissection (SBP<120 in 20min) and stroke (permissive HTN unless >220/120 or tPA candidate)."
+    difficulty: hard
+    tags: [hypertensive emergency, urgency, IV antihypertensive]
+  - front: "How is hypertension managed in pregnancy?"
+    back: "Chronic HTN: target <140/90. Drugs: labetalol (first-line), nifedipine XL, methyldopa. AVOID: ACEi/ARB (teratogenic), atenolol (IUGR). Preeclampsia prevention: ASA 162mg from 12wk if high-risk. Severe HTN (>=160/110): urgent IV labetalol or PO nifedipine\n\nPreeclampsia: HTN + proteinuria or end-organ dysfunction after 20wk. Severe features: SBP>=160, thrombocytopenia, liver dysfunction, renal, pulmonary edema, visual/cerebral. Definitive treatment: delivery. Magnesium sulfate for seizure prophylaxis. CHIPS trial: tight vs less-tight control both acceptable."
+    difficulty: hard
+    tags: [hypertension, pregnancy, preeclampsia]
+  - front: "What lifestyle modifications reduce blood pressure?"
+    back: "DASH diet: 8-14 mmHg reduction. Sodium restriction <2000mg/d: 2-8 mmHg. Weight loss: 1 mmHg per kg lost. Exercise 30-60min 4-7d/wk: 4-9 mmHg. Alcohol reduction: 2-4 mmHg. Smoking cessation: reduces CV risk but minimal direct BP effect\n\nHypertension Canada recommends lifestyle as first-line for stage 1 HTN without target organ damage. Combination of interventions is additive. DASH diet: rich in fruits, vegetables, low-fat dairy, reduced saturated fat. Potassium supplementation beneficial if not on ACEi/ARB."
+    difficulty: easy
+    tags: [lifestyle, hypertension, DASH diet]
+  - front: "What are the target organ damages of hypertension?"
+    back: "Brain: stroke, TIA, hypertensive encephalopathy, vascular dementia. Heart: LVH, HF, CAD, AF. Kidney: CKD, proteinuria, hypertensive nephrosclerosis. Eye: hypertensive retinopathy (AV nicking, cotton-wool spots, flame hemorrhages, papilledema). Aorta: dissection, aneurysm\n\nScreen for TOD in all hypertensives: ECG (LVH), urine ACR (proteinuria), creatinine (CKD), fundoscopy if severe/emergency. LVH on echo is stronger predictor than ECG. Regression of LVH with treatment improves prognosis. ACEi/ARB are nephroprotective in proteinuric CKD."
+    difficulty: medium
+    tags: [target organ damage, HTN, LVH]
+  - front: "What are the side effects of common antihypertensives?"
+    back: "ACEi: cough (10-15%), angioedema (rare), hyperkalemia, AKI. ARB: similar but no cough. Thiazide: hypokalemia, hyponatremia, hyperuricemia, hyperglycemia. CCB (DHP): edema, headache, flushing. Beta-blocker: fatigue, bradycardia, bronchospasm, masking hypoglycemia\n\nACEi cough: switch to ARB. Angioedema: do NOT switch to ARB (small cross-reactivity). Thiazide hypokalemia: add K+ supplement or switch to K-sparing. DHP CCB edema: not improved by diuretics (arteriolar, not volume). Combination ACEi+CCB reduces edema."
+    difficulty: medium
+    tags: [antihypertensive, side effects, ACEi]
+  - front: "When should pheochromocytoma be suspected and how is it diagnosed?"
+    back: "Suspect: paroxysmal HTN, headache, diaphoresis, palpitations (classic triad), resistant HTN, adrenal incidentaloma, family history (MEN2, VHL, NF1). Diagnosis: plasma free metanephrines (most sensitive) or 24h urine catecholamines/metanephrines. Imaging: CT/MRI after biochemical confirmation\n\nPheo is rare but potentially lethal if undiagnosed (hypertensive crisis during surgery/anesthesia). Rule of 10s: 10% bilateral, 10% extra-adrenal (paraganglioma), 10% malignant, 30% familial. Pre-operative preparation: alpha-blocker first (phenoxybenzamine/doxazosin) then add beta-blocker. NEVER beta-block first (unopposed alpha crisis)."
+    difficulty: hard
+    tags: [pheochromocytoma, metanephrines, MEN2]
+  - front: "What are the causes of secondary hypertension and when to suspect them?"
+    back: "Young onset (<30), resistant HTN, sudden onset, hypokalemia (hyperaldo), renal bruits (renovascular), truncal obesity/striae (Cushing), paroxysmal HTN/palpitations (pheochromocytoma)\n\nWorkup: renin/aldosterone ratio (hyperaldo), renal US Doppler (renovascular), 24h urine catecholamines (pheo), overnight dex suppression (Cushing), sleep study (OSA). Most common secondary cause: renal parenchymal disease."
+    difficulty: hard
+    tags: [HTN, secondary, workup]
+  - front: "What defines resistant hypertension and how is it managed?"
+    back: "BP above target despite 3 agents at optimal doses (including a diuretic). Confirm with 24h ABPM. Rule out pseudoresistance (non-adherence, white coat) and secondary causes\n\nHypertension Canada: add spironolactone as 4th agent (PATHWAY-2 trial). Consider renal denervation in select patients. Device-based therapy emerging. Ensure adequate diuretic dosing (chlorthalidone preferred)."
+    difficulty: hard
+    tags: [HTN, resistant, management]
+  - front: "What are the Hypertension Canada 2020 BP targets?"
+    back: "Standard risk: <140/90. High risk (diabetes, CKD, high CV risk): <130/80. SPRINT-eligible (high CV risk, no diabetes): <120 systolic (automated office BP)\n\nMeasure with automated office BP (AOBP) — lower thresholds than manual. Home BP: average >=135/85 = HTN. 24h ABPM: daytime >=135/85 or 24h >=130/80 = HTN."
+    difficulty: medium
+    tags: [HTN, targets, Hypertension Canada]
+  - front: "What is the first-line antihypertensive selection based on comorbidities?"
+    back: "ACEi/ARB: diabetes, CKD, proteinuria, HF. CCB: isolated systolic HTN, Black patients. Thiazide: uncomplicated HTN, elderly. Beta-blocker: recent MI, HFrEF, rate control\n\nHypertension Canada recommends any of ACEi/ARB, CCB, or thiazide for uncomplicated. Avoid ACEi+ARB combo. Beta-blockers NOT first-line unless specific indication. SGLT2i additive benefit in diabetic HTN."
+    difficulty: medium
+    tags: [HTN, antihypertensives, selection]
+  - front: "What distinguishes hypertensive emergency from urgency?"
+    back: "Emergency: BP >180/120 WITH acute end-organ damage (encephalopathy, AKI, aortic dissection, pulmonary edema, retinal hemorrhage). Urgency: severely elevated BP WITHOUT end-organ damage\n\nEmergency: IV antihypertensives (labetalol, nicardipine, nitroprusside), ICU, reduce MAP 25% in first hour. Urgency: oral agents, reduce over 24-48h. Aortic dissection target HR<60, SBP<120 with IV esmolol+nitroprusside."
+    difficulty: hard
+    tags: [HTN, emergency, urgency]
+  - front: "What is white coat hypertension and how is it confirmed?"
+    back: "Office BP elevated but normal out-of-office (ABPM daytime <135/85 or home BP <135/85). Prevalence 15-30% of diagnosed HTN. Lower CV risk than sustained HTN but higher than normotension\n\nHypertension Canada: confirm HTN diagnosis with ABPM or home BP monitoring in most patients. Masked HTN is opposite: normal office, elevated out-of-office — higher risk, often underdiagnosed."
+    difficulty: medium
+    tags: [HTN, white coat, ABPM]
+  - front: "What distinguishes a hypertensive emergency from a hypertensive urgency?"
+    back: "Hypertensive emergency: severely elevated BP (often >180/120) WITH acute end-organ damage (encephalopathy, AKI, aortic dissection, pulmonary edema, eclampsia). Requires IV antihypertensives in ICU with goal to reduce MAP by 20-25% in the first hour. Hypertensive urgency: severely elevated BP WITHOUT end-organ damage; treat with oral agents.\n\nThe critical distinction is end-organ damage, not a specific BP threshold. Hypertension Canada guidelines emphasize that overly rapid BP reduction can cause watershed ischemia. Exceptions: aortic dissection targets SBP <120 in 20 minutes."
+    difficulty: medium
+    tags: [hypertensive-emergency, urgency, end-organ-damage, BP-management, ICU]
+  - front: "List the key investigations to assess end-organ damage in a hypertensive emergency."
+    back: "Fundoscopy (retinopathy, papilledema), ECG (LVH, ischemia), troponin, CBC with smear (MAHA), creatinine/BUN, urinalysis (proteinuria, hematuria, casts), electrolytes, chest X-ray (pulmonary edema, widened mediastinum), CT head if neurological symptoms.\n\nEnd-organ damage assessment must be systematic and rapid. Microangiopathic hemolytic anemia (schistocytes) indicates malignant hypertension. Hypertension Canada emphasizes fundoscopy as a bedside tool often underutilized in acute settings."
+    difficulty: medium
+    tags: [end-organ-damage, investigations, hypertensive-emergency, fundoscopy, workup]
+  - front: "A 35-year-old woman has office BP 150/95 but home BP averaging 125/80. What is the diagnosis and management?"
+    back: "White coat hypertension. Confirm with 24-hour ABPM: if daytime average <135/85 and 24-hour average <130/80, no pharmacotherapy needed. Monitor annually as 30-40% progress to sustained HTN.\n\nHypertension Canada defines white coat HTN as elevated office BP with normal out-of-office BP confirmed by ABPM or home BP monitoring. These patients have lower cardiovascular risk than sustained HTN but higher risk than normotensives."
+    difficulty: medium
+    tags: [white-coat-HTN, ABPM, home-BP, diagnosis, Hypertension-Canada]
+  - front: "What is masked hypertension and why is it clinically significant?"
+    back: "Normal office BP (<140/90) but elevated out-of-office BP (home >=135/85 or 24-hour ABPM >=130/80). Carries cardiovascular risk equivalent to sustained hypertension and is often undiagnosed, affecting 10-15% of the population.\n\nMasked HTN is associated with increased LVH, carotid intima-media thickness, and cardiovascular events. Hypertension Canada recommends considering ABPM in patients with normal office BP but evidence of target organ damage. Treatment is indicated when confirmed."
+    difficulty: medium
+    tags: [masked-HTN, ABPM, cardiovascular-risk, underdiagnosis, screening]
+  - front: "A 28-year-old with refractory hypertension, hypokalemia, and abdominal bruit. Most likely diagnosis and workup?"
+    back: "Renovascular hypertension from fibromuscular dysplasia (FMD). Workup: CTA or MRA of renal arteries (string-of-beads appearance), plasma renin and aldosterone, duplex ultrasonography as alternative screening.\n\nFMD is the most common cause of renovascular HTN in young women. Atherosclerotic renal artery stenosis predominates in older patients. Hypertension Canada recommends imaging when clinical suspicion exists. Percutaneous angioplasty is first-line for FMD."
+    difficulty: hard
+    tags: [renovascular-HTN, FMD, renal-artery-stenosis, secondary-HTN, workup]
+  - front: "Which IV antihypertensive is preferred for hypertensive emergency with acute aortic dissection?"
+    back: "IV esmolol first-line to reduce HR to <60 bpm and SBP to <120 mmHg within 20 minutes. If BP remains elevated after adequate HR control, add IV nicardipine or nitroprusside. Never use vasodilators alone (reflex tachycardia worsens dissection).\n\nBeta-blockade must precede vasodilation to prevent reflex tachycardia and increased dP/dt. Labetalol is an acceptable alternative. CCS guidelines emphasize urgent surgical consultation for Type A dissection."
+    difficulty: hard
+    tags: [aortic-dissection, esmolol, IV-antihypertensive, emergency, beta-blocker]
+  - front: "What are Hypertension Canada's recommended first-line agents for uncomplicated essential hypertension?"
+    back: "Thiazide-like diuretics (chlorthalidone, indapamide preferred over HCTZ), ACE inhibitors, ARBs, or long-acting dihydropyridine CCBs (amlodipine). Beta-blockers are NOT first-line for uncomplicated HTN in patients >=60 years.\n\nHypertension Canada 2020 guidelines specifically recommend thiazide-like diuretics over HCTZ due to superior outcome data. Single-pill combinations are encouraged when BP is >20/10 above target. ACEi/ARB combination is contraindicated per ONTARGET trial."
+    difficulty: easy
+    tags: [first-line, antihypertensive, Hypertension-Canada, thiazide, ACEi]
+  - front: "A patient with CKD (eGFR 35) and proteinuria has BP 155/95. What is the target BP and preferred agent?"
+    back: "Target BP <130/80. ACEi or ARB first-line to reduce proteinuria and slow CKD progression. Tolerate up to 30% rise in creatinine. Add loop diuretic (preferred when eGFR <30) if needed.\n\nHypertension Canada recommends ACEi/ARB for hypertensive CKD with proteinuria (ACR >30 mg/mmol). REIN and RENAAL trials demonstrated renoprotective benefits independent of BP lowering. Never combine ACEi + ARB."
+    difficulty: medium
+    tags: [CKD, proteinuria, ACEi, target-BP, renoprotection]
+  - front: "What is Hypertension Canada's recommended algorithm for diagnosing hypertension?"
+    back: "If office BP >=180/110, diagnose immediately. If 140-179/90-109, confirm with out-of-office measurement: ABPM preferred (daytime >=135/85 or 24-hour >=130/80 confirms HTN), or home BP series (duplicate morning/evening readings for 7 days, discard first day).\n\nHypertension Canada emphasizes out-of-office BP measurement to avoid treating white coat HTN. ABPM is the gold standard and detects masked HTN and nocturnal patterns. Automated office BP (AOBP) with patient resting alone is preferred in-office method."
+    difficulty: medium
+    tags: [diagnosis, ABPM, home-BP, Hypertension-Canada, algorithm]
+  - front: "A patient on 3 antihypertensives including a diuretic at optimal doses still has BP 160/100. What secondary causes should be investigated?"
+    back: "Primary aldosteronism (aldosterone-to-renin ratio), renal artery stenosis (CTA/MRA), pheochromocytoma (24-hour urine metanephrines), Cushing syndrome (overnight dexamethasone suppression), obstructive sleep apnea (polysomnography), thyroid disease.\n\nResistant hypertension affects 10-15% of treated hypertensives. Primary aldosteronism prevalence is 8-20% in this group. Hypertension Canada recommends screening for secondary causes and confirming adherence. Spironolactone is effective add-on therapy per the PATHWAY-2 trial."
+    difficulty: hard
+    tags: [resistant-HTN, secondary-HTN, aldosteronism, pheochromocytoma, workup]
+  - front: "What alternative exists for patients intolerant to ACE inhibitors?"
+    back: "ARBs (Angiotensin Receptor Blockers)\n\nARBs provide similar cardiovascular protection by blocking the renin-angiotensin system at the receptor level."
+    difficulty: easy
+    tags: [cardiology, angina, ARB, toronto-notes, pages-0121-0122-0123-0124-0125-0126-0127-0128-0129-0130]
+  - front: "Why is irreversible pulmonary hypertension a contraindication to cardiac transplantation?"
+    back: "The donor heart is denervated and cannot compensate for increased pulmonary vascular resistance; it will fail in the presence of fixed pulmonary hypertension\n\nWithout the ability to increase cardiac output through sympathetic stimulation, a transplanted heart cannot overcome elevated pulmonary pressures."
+    difficulty: hard
+    tags: [pulmonary-hypertension, cardiac-transplant, pathophysiology, toronto-notes, pages-0141-0142-0143-0144-0145-0146-0147-0148-0149-0150]
+  - front: "What are the alpha-2 agonist drugs and their uses?"
+    back: "Clonidine, methyldopa - used for hypertension (centrally acting), sedation\n\nAlpha-2 agonists act centrally to reduce sympathetic outflow, lowering blood pressure. Methyldopa is safe in pregnancy."
+    difficulty: easy
+    tags: [pharmacology, alpha agonists, antihypertensives, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What is clonidine's mechanism and use?"
+    back: "Alpha-2 agonist used for hypertension and pain management\n\nClonidine stimulates central alpha-2 receptors, reducing sympathetic outflow and causing hypotension. Also used as an adjunct for chronic pain."
+    difficulty: easy
+    tags: [pharmacology, clonidine, alpha-2 agonist, hypertension, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What is the mechanism of prazosin?"
+    back: "Selective alpha-1 antagonist used for hypertension and benign prostatic hyperplasia\n\nPrazosin blocks alpha-1 receptors, causing vasodilation and reducing peripheral vascular resistance. First-dose hypotension is a known adverse effect."
+    difficulty: easy
+    tags: [pharmacology, prazosin, alpha blocker, hypertension, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What conditions are associated with porphyria cutanea tarda?"
+    back: "Hemochromatosis, alcohol abuse, diabetes mellitus, estrogen therapy, NSAIDs, HIV, hepatitis C, increased iron indices - all cause uroporphyrinogen decarboxylase deficiency\n\nMultiple factors can inhibit the enzyme responsible for heme synthesis, leading to accumulation of porphyrins that deposit in the skin and cause photosensitivity."
+    difficulty: medium
+    tags: [dermatology, porphyria, associated-conditions, risk-factors, toronto-notes, pages-0211-0212-0213-0214-0215-0216-0217-0218-0219-0220]
+  - front: "What enzyme deficiency causes Porphyria Cutanea Tarda?"
+    back: "Uroporphyrinogen decarboxylase deficiency leads to excess heme precursors (uroporphyrins).\n\nThis enzyme normally converts uroporphyrinogen to coproporphyrinogen; its deficiency causes porphyrin accumulation and photosensitivity."
+    difficulty: medium
+    tags: [porphyria-cutanea-tarda, pathophysiology, enzyme-deficiency, toronto-notes, pages-0211-0212-0213-0214-0215-0216-0217-0218-0219-0220]
+  - front: "What causes the photosensitivity in Porphyria Cutanea Tarda?"
+    back: "Uroporphyrinogen decarboxylase deficiency leads to excess heme precursors (uroporphyrins) that absorb UV light and generate reactive oxygen species in the skin\n\nPorphyrins act as photosensitizers; their accumulation in the skin causes phototoxic reactions, particularly in sun-exposed areas"
+    difficulty: hard
+    tags: [dermatology, porphyria-cutanea-tarda, pathophysiology, photosensitivity, toronto-notes, pages-0211-0212-0213-0214-0215-0216-0217-0218-0219-0220]
+  - front: "What are the three types of lice and their typical locations?"
+    back: "Phthirus pubis (pubic lice), Pediculus humanus capitis (scalp lice), Pediculus humanus humanus (body lice). Each attaches to its respective body hair and feeds on the nearby body site.\n\nLice are species-specific寄生虫. Identifying the type helps determine transmission route and treatment approach."
+    difficulty: easy
+    tags: [lice, pediculosis, etiology, dermatology, toronto-notes, pages-0221-0222-0223-0224-0225-0226-0227-0228-0229-0230]
+  - front: "What are the treatment options for unresectable or metastatic melanoma?"
+    back: "Anti-CTLA-4 agents (ipilimumab), anti-PD1 agents (nivolumab, pembrolizumab), high-dose IFN, chemotherapy (dacarbazine), and BRAF inhibitors (vemurafenib) for BRAF V600E mutations\n\nMetastatic melanoma treatment includes immunotherapy with checkpoint inhibitors and targeted therapy for BRAF-mutated tumors, with radiotherapy as adjunctive treatment."
+    difficulty: medium
+    tags: [melanoma, treatment, immunotherapy, targeted therapy, toronto-notes, pages-0231-0232-0233-0234-0235-0236-0237-0238-0239-0240]
+  - front: "What is the maximum duration of cyclosporine therapy and why?"
+    back: "Maximum 2 years due to long-term effects including nephrotoxicity and hypertension\n\nCyclosporine 2.5-4mg/kg/d is used for psoriasis, lichen planus, and recalcitrant urticaria. Long-term effects preclude use beyond 2 years; earlier discontinuation is preferred when possible."
+    difficulty: easy
+    tags: [cyclosporine, psoriasis, oral therapy, nephrotoxicity, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "Why must isotretinoin be stopped before tetracycline antibiotics?"
+    back: "Both drug classes can cause pseudotumor cerebri (benign intracranial hypertension)\n\nConcurrent use of isotretinoin and tetracyclines increases the risk of pseudotumor cerebri. Minocycline and doxycycline should be discontinued before starting isotretinoin."
+    difficulty: medium
+    tags: [isotretinoin, tetracyclines, drug interactions, pseudotumor cerebri, toronto-notes, pages-0241-0242-0243-0244-0245-0246-0247-0248-0249-0250]
+  - front: "What are the first-line treatment options for unresectable or metastatic melanoma?"
+    back: "Anti-CTLA-4 agents (ipilimumab), anti-PD1 agents (nivolumab, pembrolizumab), high-dose IFN, and chemotherapy (dacarbazine)\n\nImmunotherapy with checkpoint inhibitors is the mainstay of treatment for advanced melanoma, with combination therapy often used for better response rates."
+    difficulty: medium
+    tags: [melanoma, oncology, immunotherapy, dermatology, toronto-notes, pages-0231-0232-0233-0234-0235-0236-0237-0238-0239-0240]
+  - front: "When is bicarbonate indicated in DKA?"
+    back: "Only when patient is at risk of shock or death (typically pH <7.0)\n\nBicarbonate is not routinely given in DKA due to risk of paradoxical acidosis, hypokalemia, and cerebral edema; it is reserved for severe acidemia with hemodynamic compromise."
+    difficulty: medium
+    tags: [DKA, Acidosis, Emergency Medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What are the expected pH and bicarbonate values in HHS?"
+    back: "pH >7.3 and bicarbonate >18 mEq/L\n\nUnlike DKA, HHS lacks significant metabolic acidosis; these values help distinguish between the two hyperglycemic emergencies."
+    difficulty: easy
+    tags: [HHS, DKA, Blood Gas, Emergency Medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "When is bicarbonate therapy indicated in DKA?"
+    back: "Bicarbonate is not given unless patient is at risk of shock or death (typically pH <7.0).\n\nRoutine bicarbonate use in DKA is avoided as it can cause paradoxical CNS acidosis and hypokalemia."
+    difficulty: medium
+    tags: [DKA, bicarbonate, emergency medicine, acid-base, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What are the expected pH and bicarbonate values in HHS (vs DKA)?"
+    back: "pH >7.3 and bicarbonate >18 mEq/L (in contrast to DKA which has acidosis).\n\nHHS lacks significant ketoacidosis, which differentiates it from DKA."
+    difficulty: medium
+    tags: [HHS, DKA, acid-base, emergency medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What is the lag time for pneumonitis after hydrocarbon ingestion or smoke inhalation?"
+    back: "6-8 hours\n\nPneumonitis may not be immediately apparent; observation and repeated examination are required"
+    difficulty: medium
+    tags: [hydrocarbons, inhalation, pneumonitis, toronto-notes, pages-0301-0302-0303-0304-0305-0306-0307-0308-0309-0310]
+  - front: "When should bicarbonate be given in DKA?"
+    back: "Only when patient is at risk of shock or death (typically pH <7.0)\n\nBicarbonate is not routinely given in DKA; it is reserved for severe acidemia with hemodynamic compromise."
+    difficulty: medium
+    tags: [DKA, bicarbonate, emergency medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What are typical pH and bicarbonate values in HHS (not DKA)?"
+    back: "pH >7.3, bicarbonate >18 mEq/L\n\nHHS lacks significant ketoacidosis, so pH and bicarbonate are preserved compared to DKA."
+    difficulty: medium
+    tags: [HHS, pH, bicarbonate, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "Why should patients with hydrocarbon or smoke inhalation be observed for 6-8 hours?"
+    back: "Pneumonitis may lag 6-8 hours after ingestion/inhalation\n\nChemical pneumonitis from hydrocarbon aspiration can have a delayed presentation, requiring observation for clinical and radiographic changes."
+    difficulty: medium
+    tags: [hydrocarbons, pneumonitis, observation, toronto-notes, pages-0301-0302-0303-0304-0305-0306-0307-0308-0309-0310]
+  - front: "When is bicarbonate indicated in DKA management?"
+    back: "Bicarbonate is NOT given unless patient is at risk of shock or death, typically when pH <7.0.\n\nRoutine bicarbonate use in DKA is avoided as it can cause paradoxical acidosis and other complications."
+    difficulty: hard
+    tags: [DKA, diabetes, emergency medicine, acid-base, bicarbonate, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What causes secondary hypertriglyceridemia?"
+    back: "Obesity/metabolic syndrome, DM, drugs (corticosteroids, estrogen, hydrochlorothiazide, retinoic acid, beta-blockers, anti-retrovirals, antipsychotics, OCPs), alcohol, high carbohydrate/high fat diet, pregnancy\n\nSevere hypertriglyceridemia (>10 mmol/L) increases risk of pancreatitis."
+    difficulty: medium
+    tags: [secondary dyslipidemia, hypertriglyceridemia, alcohol, toronto-notes, pages-0311-0312-0313-0314-0315-0316-0317-0318-0319-0320]
+  - front: "Why should patients with hydrocarbon/smoke inhalation be observed for 6-8 hours?"
+    back: "Pneumonitis may lag 6-8 hours\n\nChemical pneumonitis from hydrocarbon aspiration may be delayed and not appear clinically or radiographically for 6-8 hours post-ingestion."
+    difficulty: easy
+    tags: [hydrocarbon, smoke inhalation, pneumonitis, toronto-notes, pages-0301-0302-0303-0304-0305-0306-0307-0308-0309-0310]
+  - front: "In insulin pump therapy, how is mealtime bolus calculated?"
+    back: "Based on carbohydrate:insulin ratios programmed by the patient\n\nAt meals, patients program the pump to deliver insulin boluses calculated using their individual carbohydrate-to-insulin ratios."
+    difficulty: easy
+    tags: [endocrinology, insulin, pump, dosing, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In DKA, what happens to serum bicarbonate?"
+    back: "Decreased (metabolic acidosis)\n\nSerum HCO3- decreases in DKA due to consumption of bicarbonate by ketoacids in the setting of anion gap metabolic acidosis."
+    difficulty: easy
+    tags: [endocrinology, DKA, acid-base, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What are the key features of insulin pump therapy (CSII)?"
+    back: "External device providing continuous basal rapid-acting insulin; patient programs bolus based on carb:insulin ratios; improved quality of life/flexibility; risk of DKA if disconnected\n\nUses rapid-acting analogues (aspart, glulisine, lispro). Coverage varies by province for T1DM."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin_pump, csii, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is theinsulin:carbohydrate ratio used in pump therapy?"
+    back: "Patient programs the pump based on carbohydrate:insulin ratios\n\nAt mealtimes, patients program the insulin pump to deliver boluses based on carbohydrate intake and individualized ratios."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin pump, CSII, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What inhibits the renin-angiotensin-aldosterone system?"
+    back: "Dopamine, prostaglandins, and ANP (atrial natriuretic peptide) inhibit renin release; ACE inhibitors and ARBs block the cascade\n\nThese factors reduce aldosterone production and promote natriuresis."
+    difficulty: medium
+    tags: [RAAS, pharmacology, endocrinology, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What is the function of cortisol?"
+    back: "Glucocorticoid involved in metabolism regulation, supports blood pressure and vasomotor tone, and involved in behavioural regulation and immunosuppression\n\nCortisol is regulated by the HPA axis and has widespread effects on multiple organ systems."
+    difficulty: easy
+    tags: [endocrinology, cortisol, glucocorticoid, HPA-axis, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What medications can interfere with primary aldosteronism testing and may need to be held prior to testing?"
+    back: "Various antihypertensives and diuretics can interfere with screening and confirmatory tests for primary aldosteronism\n\nMedications affecting the RAAS axis can cause false positive or negative results."
+    difficulty: medium
+    tags: [endocrinology, testing, medications, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "Which drugs can cause hypercalcemia?"
+    back: "Thiazide diuretics, lithium, theophylline, estrogen, tamoxifen, vitamin A, excessive calcium carbonate or vitamin D supplements\n\nMultiple drugs affect calcium homeostasis through different mechanisms - thiazides reduce calcium excretion, lithium increases PTH secretion"
+    difficulty: easy
+    tags: [endocrinology, hypercalcemia, drugs, iatrogenic, toronto-notes, pages-0351-0352-0353-0354-0355-0356-0357-0358-0359-0360]
+  - front: "What is the function of the renin-angiotensin-aldosterone system (RAAS)?"
+    back: "Regulates blood pressure, sodium balance, and potassium balance through angiotensin II-mediated vasoconstriction and aldosterone release\n\nRAAS activation leads to renal Na+ retention, K+ excretion, arteriolar vasoconstriction, and promotion of ADH release."
+    difficulty: easy
+    tags: [RAAS, endocrinology, physiology, blood pressure, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What BP target was considered 'intensive' in the ACCORD Blood Pressure Trial?"
+    back: "sBP <120 mmHg\n\nThe ACCORD BP Trial randomized T2DM patients with CV risk factors to intensive (sBP <120 mmHg) vs standard (sBP <140 mmHg) blood pressure control."
+    difficulty: easy
+    tags: [endocrinology, diabetes, hypertension, clinical-trials, T2DM, ACCORD, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In the ACCORD Blood Pressure trial, did intensive BP control (<120 mmHg) reduce major CV events compared to standard control (<140 mmHg)?"
+    back: "No significant reduction in primary outcome (major CV events), but significant reduction in any stroke (0.32%/yr vs 0.53%/yr, p=0.01)\n\nIntensive BP lowering reduced stroke risk but did not reduce the composite major CV event rate in T2DM patients with CV risk factors."
+    difficulty: hard
+    tags: [diabetes, T2DM, blood-pressure, stroke-prevention, clinical-trial, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was the population size in the ACCORD Blood Pressure trial?"
+    back: "4733 patients with T2DM\n\nThe ACCORD BP trial enrolled 4733 patients with T2DM and CV risk factors who had systolic BP between 130-180 mmHg."
+    difficulty: easy
+    tags: [diabetes, T2DM, ACCORD, clinical-trial, population, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In the ACCORD BP trial, did intensive blood pressure control (<120 mmHg) reduce major CV events in T2DM?"
+    back: "No - there was no significant difference in primary outcome (major CV events) between intensive and standard groups\n\nWhile intensive therapy did significantly reduce any stroke (0.32%/yr vs 0.53%/yr, P=0.01) and nonfatal stroke, it did not reduce the composite major CV event rate."
+    difficulty: hard
+    tags: [diabetes, blood-pressure, stroke, clinical-trials, endocrinology, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was the mean number of antihypertensive medications at 1 year in the intensive arm of ACCORD BP?"
+    back: "3.4 medications (95% CI 3.4-3.5)\n\nThis was compared to 2.1 medications (95% CI 2.1-2.2) in the standard arm, demonstrating the intensive treatment required significantly more drugs."
+    difficulty: easy
+    tags: [diabetes, blood-pressure, clinical-trials, endocrinology, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What is the optimal blood pressure target for diabetics?"
+    back: "<130/80 mmHg\n\nBlood pressure control in diabetics targets <130/80 to reduce cardiovascular complications."
+    difficulty: easy
+    tags: [endocrinology, diabetes, management, targets, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "In the ACCORD BP Trial, did intensive blood pressure control (<120 mmHg) reduce major cardiovascular events in T2DM patients?"
+    back: "No, intensive BP control did not reduce major CV events, but it did significantly reduce stroke incidence (0.32%/yr vs 0.53%/yr, P=0.01)\n\nThe ACCORD BP Trial studied 4733 T2DM patients with CV risk factors comparing intensive (sBP <120 mmHg) vs standard (sBP <140 mmHg) therapy for 4.7 years"
+    difficulty: medium
+    tags: [diabetes, blood-pressure, cardiovascular, clinical-trials, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What medications should be considered in diabetes management?"
+    back: "ACEI/ARB (renal protection), Statin (cardiovascular risk reduction), ASA (secondary prevention)\n\nDiabetes patients often require cardioprotective and renoprotective medications beyond glycemic control."
+    difficulty: medium
+    tags: [endocrinology, diabetes, pharmacology, treatment, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What medications are recommended in diabetes management for CV risk reduction?"
+    back: "Consider ACE-I/ARB, Statin, and ASA\n\nCardiovascular risk reduction is a key component of diabetes management."
+    difficulty: medium
+    tags: [endocrinology, diabetes, pharmacology, prevention, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the diabetes quick reference for optimal control?"
+    back: "HbA1C <7%, BP <130/80, Cholesterol LDL-C <2 mmol/L if treating, consider ACEi/ARB, Statin, ASA, Exercise/Eating, Smoking Cessation\n\nThese targets represent evidence-based optimal control goals to prevent diabetes complications."
+    difficulty: easy
+    tags: [diabetes, treatment targets, goals, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "List the key drug classes to consider in diabetes management"
+    back: "ACEi/ARB (for blood pressure/renal protection), Statin (for cholesterol), ASA (for cardiovascular protection)\n\nDiabetes management includes considering ACE inhibitors or ARBs for blood pressure and renal protection, statins for cholesterol, and ASA for cardiovascular protection."
+    difficulty: easy
+    tags: [endocrinology, diabetes, pharmacology, management, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the blood pressure thresholds for diagnosing hypertension in non-diabetic patients using automated office BP?"
+    back: ">135/85 mmHg\n\nFor non-diabetic patients, AOBP >135/85 mmHg or OBPM ≥140/90 mmHg suggests hypertension."
+    difficulty: easy
+    tags: [hypertension, diagnosis, blood pressure, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the blood pressure thresholds for diagnosing hypertension in diabetic patients?"
+    back: ">130/80 mmHg\n\nDiabetic patients have lower thresholds due to increased cardiovascular risk."
+    difficulty: easy
+    tags: [hypertension, diabetes, blood pressure, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the ABPM thresholds for diagnosing hypertension?"
+    back: "Daytime mean >135/85 mmHg or 24-hour mean >130/80 mmHg\n\nABPM provides more accurate assessment and rules out white coat hypertension."
+    difficulty: easy
+    tags: [hypertension, diagnosis, ABPM, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What symptoms may suggest hypertension based on organ-specific effects?"
+    back: "Occipital headache upon awakening, shortness of breath, chest pain, visual changes\n\nSymptoms are usually absent early; when present, they suggest end-organ damage or severe hypertension."
+    difficulty: easy
+    tags: [hypertension, symptoms, clinical presentation, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the management of hypertension based on underlying disorder?"
+    back: "Treatment is individualized based on etiology, comorbidities, and severity\n\nSee updated guidelines at http://guidelines.hypertension.ca/ for current recommendations."
+    difficulty: easy
+    tags: [hypertension, treatment, management, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the blood pressure thresholds for hypertension diagnosis?"
+    back: "Diabetic: office BP >130/80 mmHg; Non-diabetic (AOBP): >135/85 mmHg or OBPM ≥140/90 mmHg; ABPM daytime: >135/85 mmHg or 24hr mean >130/80 mmHg\n\nHypertension definitions vary by measurement method and diabetic status. White coat hypertension must be ruled out."
+    difficulty: medium
+    tags: [hypertension, diagnosis, blood-pressure, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "Why are symptoms usually absent in hypertension?"
+    back: "Hypertension is typically asymptomatic because there are no specific symptoms; patients may have an occipital headache upon awakening or no symptoms at all until organ damage occurs\n\nThis is why hypertension is called the 'silent killer' and regular screening is essential."
+    difficulty: easy
+    tags: [hypertension, symptoms, diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the target blood pressure for diabetics?"
+    back: "Less than 130/80 mmHg\n\nOptimal blood pressure control for diabetics is <130/80 to reduce cardiovascular risk."
+    difficulty: easy
+    tags: [endocrinology, diabetes, treatment goals, hypertension, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What medications are considered for cardiovascular protection in diabetics?"
+    back: "ACE-I/ARB, Statin, ASA\n\nDiabetics with cardiovascular risk should consider ACE inhibitors/ARBs, statins, and aspirin for cardioprotection."
+    difficulty: easy
+    tags: [endocrinology, diabetes, pharmacology, prevention, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the definition of hypertension in diabetic patients?"
+    back: "Office BP >130/80 mmHg for ≥3 measurements on different days\n\nDiabetic patients have lower threshold - target is tighter for cardiovascular protection."
+    difficulty: easy
+    tags: [hypertension, diabetes, diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the definition of hypertension in non-diabetic patients?"
+    back: "AOBP >135/85 mmHg OR OBPM ≥140/90 mmHg, confirmed on different days\n\nConfirmation on multiple visits rules out white coat hypertension before treatment."
+    difficulty: easy
+    tags: [hypertension, diagnosis, bp, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What defines hypertension on ambulatory BP monitoring?"
+    back: "ABPM daytime mean >135/85 mmHg OR 24hr mean >130/80 mmHg\n\nABPM is gold standard for confirming true hypertension vs white coat effect."
+    difficulty: medium
+    tags: [hypertension, diagnosis, abpm, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are symptoms of hypertension?"
+    back: "Usually asymptomatic; may have occipital headache on awakening or organ-specific symptoms\n\nHypertension is often called 'silent killer' - screening essential as most patients have no symptoms."
+    difficulty: easy
+    tags: [hypertension, symptoms, presentation, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the blood pressure threshold for hypertension diagnosis in diabetic patients?"
+    back: "Office BP measurement >130/80 mmHg for ≥3 measurements on different days\n\nDiabetic patients have a lower threshold for hypertension diagnosis and treatment due to increased cardiovascular risk."
+    difficulty: easy
+    tags: [hypertension, diabetes, diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the blood pressure threshold for hypertension diagnosis in non-diabetic patients?"
+    back: "Automated office BP >135/85 mmHg or office BP ≥140/90 mmHg\n\nNon-diabetic patients are diagnosed with hypertension at higher thresholds than diabetics."
+    difficulty: easy
+    tags: [hypertension, diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the ambulatory BP monitoring (ABPM) criteria for hypertension?"
+    back: "Daytime mean >135/85 mmHg or 24-hour mean >130/80 mmHg\n\nABPM provides a more accurate assessment by eliminating white coat effect and measuring true ambulatory blood pressure."
+    difficulty: medium
+    tags: [hypertension, diagnosis, ABPM, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is white coat hypertension?"
+    back: "Elevated office BP measurements in patients with normal BP outside the clinical setting\n\nWhite coat hypertension should be ruled out by confirming with ABPM or home BP monitoring before diagnosing true hypertension."
+    difficulty: easy
+    tags: [hypertension, diagnosis, white coat, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are common symptoms of hypertension?"
+    back: "Usually asymptomatic; may have occipital headache upon awakening or organ-specific symptoms\n\nMost patients are asymptomatic, which is why hypertension is often called the 'silent killer'; symptoms typically only appear with severe elevation or end-organ damage."
+    difficulty: easy
+    tags: [hypertension, symptoms, clinical presentation, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the definition of hypertension in diabetics?"
+    back: "Office BP measurement >130/80 mmHg for ≥3 measurements on different days\n\nLower thresholds are used for diabetics due to their higher cardiovascular risk."
+    difficulty: easy
+    tags: [hypertension, diabetes, diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the definition of hypertension in non-diabetics?"
+    back: "Automated office BP >135/85 mmHg OR office BP >140/90 mmHg, rule out white coat HTN\n\nABPM daytime mean >135/85 mmHg or 24hr mean >130/80 mmHg also confirms diagnosis."
+    difficulty: easy
+    tags: [hypertension, diagnosis, blood-pressure, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the definition of hypertension by ABPM?"
+    back: "ABPM daytime mean >135/85 mmHg or ABPM 24 hr mean >130/80 mmHg\n\nAmbulatory BP monitoring is the gold standard for confirming hypertension and ruling out white coat hypertension."
+    difficulty: easy
+    tags: [hypertension, diagnostic criteria, ABPM, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "Why are symptoms of hypertension usually absent?"
+    back: "Hypertension is typically asymptomatic; patients may have an occipital headache upon awakening or organ-specific symptoms late in the disease course\n\nThis is why hypertension is called the 'silent killer.' Symptoms only appear with severe elevation or end-organ damage."
+    difficulty: easy
+    tags: [hypertension, symptoms, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the target blood pressure for optimal control in diabetes?"
+    back: "<130/80 mmHg\n\nBlood pressure control is crucial for reducing cardiovascular complications in diabetic patients."
+    difficulty: easy
+    tags: [endocrinology, diabetes, hypertension, treatment goals, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the diagnostic threshold for hypertension in diabetics?"
+    back: "Office BP >130/80 mmHg for ≥3 measurements on different days\n\nDiabetics have lower BP targets due to increased cardiovascular risk."
+    difficulty: easy
+    tags: [hypertension, diagnosis, diabetes, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the diagnostic thresholds for hypertension using different methods?"
+    back: "AOBP >135/85 mmHg or OBPM ≥140/90 mmHg; ABPM daytime >135/85 mmHg or 24hr >130/80 mmHg\n\nMultiple measurement methods exist; ABPM is gold standard for confirming diagnosis."
+    difficulty: easy
+    tags: [hypertension, diagnosis, ABPM, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the blood pressure threshold for hypertension in diabetic patients?"
+    back: "Office BP >130/80 mmHg on ≥3 different days\n\nIn diabetic patients, office BP >130/80 mmHg on at least 3 different days suggests probable hypertension."
+    difficulty: easy
+    tags: [Hypertension, Diabetes, Diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the blood pressure threshold for hypertension in non-diabetic patients using automated office BP?"
+    back: "AOBP >135/85 mmHg or OBPM ≥140/90 mmHg\n\nFor non-diabetic patients, hypertension is defined as AOBP >135/85 mmHg or office BP ≥140/90 mmHg."
+    difficulty: easy
+    tags: [Hypertension, Diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the ambulatory BP monitoring (ABPM) threshold for hypertension?"
+    back: "Daytime mean >135/85 mmHg or 24-hour mean >130/80 mmHg\n\nABPM defines hypertension as daytime mean >135/85 mmHg or 24-hour mean >130/80 mmHg."
+    difficulty: easy
+    tags: [Hypertension, Diagnosis, ABPM, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What symptoms may patients with hypertension experience?"
+    back: "Usually no symptoms; may have occipital headache upon awakening or organ-specific symptoms\n\nHTN is usually asymptomatic; patients may present with occipital headache on awakening or symptoms of end-organ damage."
+    difficulty: easy
+    tags: [Hypertension, Symptoms, Presentation, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the diagnostic criteria for hypertension in patients with diabetes?"
+    back: "Office BP measurement >130/80 mmHg for ≥3 measurements on different days, after ruling out white coat hypertension\n\nLower thresholds are used for diabetic patients due to increased cardiovascular risk."
+    difficulty: medium
+    tags: [hypertension, diabetes, diagnosis, BP, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the diagnostic criteria for hypertension in non-diabetic patients?"
+    back: "Automated office BP (AOBP) >135/85 mmHg or office BP measurement (OBPM) >140/90 mmHg, after ruling out white coat hypertension\n\nThese thresholds apply to non-diabetic adults for hypertension diagnosis."
+    difficulty: medium
+    tags: [hypertension, diagnosis, BP, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the optimal blood pressure control target in diabetes?"
+    back: "<130/80 mmHg\n\nBlood pressure should be controlled to below 130/80 mmHg in patients with diabetes to reduce cardiovascular risk."
+    difficulty: easy
+    tags: [endocrinology, diabetes, blood pressure, treatment goals, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the target blood pressure for diabetes patients?"
+    back: "Less than 130/80 mmHg\n\nBP target <130/80 reduces cardiovascular and renal complications in diabetic patients."
+    difficulty: easy
+    tags: [endocrinology, diabetes, treatment targets, blood pressure, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the SMART goals for diabetes management?"
+    back: "A1C: Optimal <7%, BP: Optimal <130/80, Cholesterol: LDL-C <2 mmol/L if treating, consider ACEI/ARB, Statin, ASA, Exercise/Eating, Smoking Cessation\n\nSMART goals provide targets for comprehensive diabetes management to reduce complications."
+    difficulty: medium
+    tags: [endocrinology, diabetes, management, goals, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What medications are recommended for diabetes patients with cardiovascular risk?"
+    back: "Consider ACEI/ARB (for blood pressure), Statin (for cholesterol), ASA (for antiplatelet effect)\n\nCardiovascular protection is a key component of diabetes management with these medication classes."
+    difficulty: easy
+    tags: [endocrinology, diabetes, cardiovascular, prevention, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the diagnostic threshold for hypertension in diabetic patients?"
+    back: "Office BP measurement >130/80 mmHg for ≥3 measurements on different days = probable hypertension (rule out white coat)\n\nDiabetic patients have lower BP targets due to increased cardiovascular risk"
+    difficulty: easy
+    tags: [hypertension, diabetes, diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the diagnostic threshold for hypertension in non-diabetic patients?"
+    back: "Automated office BP >135/85 mmHg OR office BP ≥140/90 mmHg = probable hypertension (rule out white coat)\n\nConfirmation requires excluding white coat hypertension"
+    difficulty: easy
+    tags: [hypertension, diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the diagnostic criteria for hypertension using ABPM and home BP?"
+    back: "ABPM daytime mean >135/85 mmHg or 24hr mean >130/80 mmHg = hypertension. Home BP monitoring criteria also available\n\nAmbulatory and home monitoring help confirm true hypertension and rule out white coat"
+    difficulty: easy
+    tags: [hypertension, diagnosis, diagnostics, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What was the DASH trial studying and what was its conclusion?"
+    back: "The DASH trial showed that a diet rich in fruits, vegetables, and low-fat dairy products significantly reduces blood pressure - by 11.4/5.5 mmHg in hypertensive patients and 5.5/3.0 mmHg in normotensive patients\n\nThe Dietary Approaches to Stop Hypertension (DASH) diet is now a cornerstone recommendation for blood pressure management."
+    difficulty: medium
+    tags: [cardiology, hypertension, nutrition, clinical trial, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What are the diagnostic criteria for hypertension (HTN) in non-diabetic patients?"
+    back: "Automated office BP >135/85 mmHg OR office BP >140/90 mmHg on 3 separate days, confirmed by home BP or ABPM\n\nMultiple measurements on different days confirm diagnosis; white coat hypertension must be ruled out before treatment."
+    difficulty: medium
+    tags: [hypertension, diagnosis, cardiology, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the diagnostic criteria for hypertension in diabetic patients?"
+    back: "Office BP >130/80 mmHg for ≥3 measurements on different days\n\nDiabetic patients have lower BP targets due to increased cardiovascular risk; white coat HTN should still be ruled out."
+    difficulty: medium
+    tags: [hypertension, diabetes, cardiology, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the ambulatory BP monitoring (ABPM) criteria for diagnosing hypertension?"
+    back: "Daytime mean >135/85 mmHg OR 24-hour mean >130/80 mmHg\n\nABPM provides more accurate diagnosis by eliminating white coat effect and assessing diurnal patterns; correlates better with outcomes."
+    difficulty: medium
+    tags: [hypertension, diagnosis, ambulatory monitoring, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the symptoms of hypertension?"
+    back: "Usually no symptoms; patients may have occipital headache upon awakening or organ-specific symptoms\n\nHypertension is often asymptomatic, which is why it is called the 'silent killer'."
+    difficulty: easy
+    tags: [hypertension, symptoms, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What are the diagnostic criteria for hypertension in diabetic vs. non-diabetic patients?"
+    back: "Diabetic: office BP >130/80 mmHg for ≥3 measurements on different days. Non-diabetic: automated office BP >135/85 mmHg or office BP ≥140/90 mmHg. Confirm with ABPM: daytime mean >135/85 mmHg or 24-hour mean >130/80 mmHg\n\nLower thresholds apply to diabetic patients due to increased cardiovascular risk. Home BP monitoring and ABPM help rule out white coat hypertension."
+    difficulty: medium
+    tags: [hypertension, diagnosis, cardiology, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What was the DASH trial and what diet showed the best blood pressure reduction?"
+    back: "DASH trial (NEJM 1997): A diet rich in fruits, vegetables, and low-fat dairy products (combination diet) reduced BP more than control or fruits/vegetables alone - 5.5/3.0 mmHg in normotensive and 11.4/5.5 mmHg in hypertensive patients\n\nThe DASH diet is now recommended as first-line lifestyle intervention for hypertension and prehypertension."
+    difficulty: medium
+    tags: [hypertension, nutrition, landmark trial, prevention, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What did the SPRINT trial demonstrate about intensive blood pressure control?"
+    back: "Intensive treatment (target SBP <120 mmHg) vs. standard (<140 mmHg) significantly reduced cardiovascular events (1.65%/year vs 2.19%/year) in high-risk patients over 3 years\n\nSPRINT showed that more intensive BP control in high-risk patients reduces major cardiovascular complications and mortality."
+    difficulty: hard
+    tags: [hypertension, clinical trial, cardiovascular, SPRINT, toronto-notes, pages-0431-0432-0433-0434-0435-0436-0437-0438-0439-0440]
+  - front: "What antibiotics cover ascending cholangitis?"
+    back: "Broad spectrum covering Gram-negatives, Enterococcus, and anaerobes: ampicillin+sulbactam, piperacillin/tazobactam, metronidazole+3rd gen cephalosporin or fluoroquinolone, or carbapenem monotherapy\n\nAntibiotic choice should cover the typical organisms (E. coli, Klebsiella, Enterobacter, Enterococcus) and anaerobes, especially during CBD manipulation."
+    difficulty: medium
+    tags: [cholangitis, antibiotics, treatment, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What are the late-stage signs of Primary Biliary Cholangitis?"
+    back: "Jaundice, melanosis (darkening skin), xanthelasma, hepatocellular failure, portal hypertension, ascites\n\nChronic cholestasis leads to skin changes, xanthelasma (yellow bumps around eyes), and eventually end-stage liver disease with failure and portal hypertension."
+    difficulty: medium
+    tags: [PBC, cholestasis, portal hypertension, liver failure, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What antibiotics should be considered for Ascending Cholangitis?"
+    back: "Broad spectrum covering Gram-negatives, Enterococcus, and anaerobes: ampicillin+sulbactam, piperacillin/tazobactam, metronidazole+3rd gen cephalosporin/fluoroquinolone, or carbapenem monotherapy\n\nCoverage must include E. coli, Klebsiella, Enterobacter, Enterococcus, and anaerobes (especially after CBD manipulation)."
+    difficulty: medium
+    tags: [cholangitis, antibiotics, treatment, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What complications are associated with PBC?"
+    back: "High incidence of osteoporosis, hepatocellular failure, portal hypertension, ascites\n\nChronic cholestasis leads to malabsorption of fat-soluble vitamins and bone loss. End-stage disease results in liver failure and portal hypertension."
+    difficulty: medium
+    tags: [PBC, complications, osteoporosis, portal hypertension, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What antibiotics are used for ascending cholangitis?"
+    back: "Ampicillin + sulbactam OR piperacillin/tazobactam; OR metronidazole + 3rd generation cephalosporin or fluoroquinolone; OR carbapenem monotherapy\n\nCoverage must include Gram-negatives, Enterococcus, and anaerobes, especially during CBD manipulation"
+    difficulty: medium
+    tags: [Gastroenterology, Cholangitis, Treatment, Antibiotics, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What is clinically significant portal hypertension (CSPH) in cirrhosis?"
+    back: "Portal hypertension sufficient to increase risk of decompensation, typically defined by hepatic venous pressure gradient ≥10 mmHg\n\nCSPH represents the threshold at which patients with compensated cirrhosis become at risk for decompensation events like ascites, varices, or hepatic encephalopathy."
+    difficulty: medium
+    tags: [portal hypertension, cirrhosis, HVPG, decompensation, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What is the definition of clinically significant portal hypertension (CSPH)?"
+    back: "Hepatic venous pressure gradient (HVPG) ≥10 mmHg, associated with increased risk of decompensation.\n\nCSPH (HVPG ≥10 mmHg) marks the threshold at which patients with cirrhosis develop varices and are at risk for decompensation events like ascites and variceal bleeding."
+    difficulty: medium
+    tags: [portal-hypertension, hvpg, cirrhosis, diagnosis, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What are the late-stage complications of Primary Biliary Cholangitis?"
+    back: "Hepatocellular failure, portal hypertension, and ascites\n\nEnd-stage PBC leads to liver failure and complications of portal hypertension due to chronic cholestasis and fibrosis."
+    difficulty: medium
+    tags: [PBC, complications, cirrhosis, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What is clinically significant portal hypertension (CSPH) defined as in the PREDESCI trial?"
+    back: "Hepatic venous pressure gradient (HVPG) ≥10 mmHg\n\nCSPH is a key predictor of cirrhosis decompensation and is defined hemodynamically by an HVPG of 10 mmHg or greater."
+    difficulty: medium
+    tags: [portal-hypertension, HVPG, cirrhosis, diagnostic-criteria, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What is clinically significant portal hypertension (CSPH) in the context of cirrhosis?"
+    back: "Portal hypertension with hepatic venous pressure gradient ≥10 mmHg, associated with increased risk of cirrhosis decompensation\n\nCSPH is defined by a hepatic venous pressure gradient of 10 mmHg or higher and marks the transition from compensated to decompensated cirrhosis risk."
+    difficulty: medium
+    tags: [portal hypertension, cirrhosis, HVPG, hepatology, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What are the risk factors for wound hemorrhage and hematoma?"
+    back: "Anticoagulant therapy, coagulopathies, thrombocytopenia, DIC, severe liver disease, myeloproliferative disorders, severe arterial hypertension, and severe cough; more common with transverse muscle incisions.\n\nThese conditions impair hemostasis or increase pressure on the wound, leading to bleeding into the surgical site."
+    difficulty: easy
+    tags: [surgery, hemorrhage, hematoma, risk factors, toronto-notes, pages-0501-0502-0503-0504-0505-0506-0507-0508-0509-0510]
+  - front: "What foods should be avoided in gout (mnemonic)?"
+    back: "FACT - Feverfew, Alcohol, Cyclosporine, Thiazide diuretics; and SALT - Seafood, Alcohol, Liver, Turkey\n\nThese foods and drugs can precipitate gout attacks by increasing uric acid levels or reducing excretion."
+    difficulty: hard
+    tags: [gout, diet, precipitants, rheumatology, toronto-notes, pages-1521-1522-1523-1524-1525-1526-1527-1528-1529-1530]
+  - front: "What is the mnemonic for gout precipitants?"
+    back: "FACT (Feverfew, Alcohol, Cyclosporine, Thiazide) and SALT (Seafood, Alcohol, Liver, Turkey)\n\nThese help remember common triggers that can precipitate acute gout attacks."
+    difficulty: medium
+    tags: [gout, precipitants, mnemonic, rheumatology, toronto-notes, pages-1521-1522-1523-1524-1525-1526-1527-1528-1529-1530]
+  - front: "What are the indications for surgical treatment of vesicoureteral reflux?"
+    back: "Failure of medical management, renal scarring (renal insufficiency, hypertension), breakthrough UTIs, or persistent high-grade (IV or V) reflux\n\nSurgical options include ureteral reimplantation or subureteric injection with bulking agents (Deflux or Macroplastique)."
+    difficulty: medium
+    tags: [VUR, surgical treatment, indications, toronto-notes, pages-1571-1572-1573-1574-1575-1576-1577-1578-1579-1580]
+  - front: "What receptor does clonidine act on, and what is its primary clinical use?"
+    back: "Alpha-2 (a2) agonist; primary use is hypertension (also used for opioid/alcohol withdrawal and ADHD)\n\nClonidine stimulates central a2 receptors, reducing sympathetic outflow and lowering blood pressure. It can cause rebound hypertension upon abrupt discontinuation. Methyldopa, another a2 agonist, is safe in pregnancy for hypertension management."
+    difficulty: medium
+    tags: [clonidine, alpha-2 agonist, hypertension, adrenergic]
+  - front: "Beta-1 selective adrenergic blockers (e.g., metoprolol, atenolol) are preferred over non-selective beta-blockers in patients with which comorbidity?"
+    back: "Reactive airway disease (asthma/COPD) — beta-1 selective agents have less bronchospasm risk than non-selective agents like propranolol\n\nNon-selective beta-blockers (propranolol, timolol) block both B1 and B2 receptors; B2 blockade causes bronchoconstriction. Cardioselective (B1-selective) agents like metoprolol and atenolol are relatively safer in obstructive airway disease but should still be used cautiously."
+    difficulty: easy
+    tags: [beta-blockers, metoprolol, atenolol, asthma, selectivity, adrenergic]
+  - front: "SPRINT trial compared intensive SBP control (<120 mmHg) to standard control (<140 mmHg) in high-CV-risk patients without diabetes. What was found?"
+    back: "Intensive BP control (<120 mmHg) significantly reduced major CV events and all-cause mortality compared to standard control (<140 mmHg)\n\nSPRINT (NEJM 2015) showed intensive SBP control reduced the primary composite by 25% (HR 0.75) and all-cause mortality by 27% (HR 0.73) in non-diabetic high-CV-risk patients. This influenced Canadian Hypertension guidelines toward lower BP targets."
+    difficulty: medium
+    tags: [SPRINT, hypertension, blood pressure target, intensive control, cardiovascular risk]
+  - front: "HYVET trial studied antihypertensive treatment in patients aged >80 with SBP >160. What was the key finding?"
+    back: "Indapamide (with or without perindopril) reduced stroke risk, stroke death, and all-cause mortality in patients over 80 with hypertension\n\nHYVET (NEJM 2008) demonstrated that treating hypertension in octogenarians with indapamide SR 2.5 mg (±perindopril) resulted in a 30% reduction in stroke and 21% reduction in all-cause mortality. This challenged the previous concern that aggressive BP treatment in the elderly was harmful."
+    difficulty: medium
+    tags: [HYVET, hypertension, elderly, indapamide, perindopril, octogenarian]
+  - front: "What is the key difference between alpha-1 (a1) and alpha-2 (a2) receptor effects on cardiovascular physiology?"
+    back: "a1 receptors cause vasoconstriction of skin, skeletal muscle, and splanchnic vessels with increased myocardial contractility; a2 receptors peripherally modulate vessel tone (both vasoconstrict and dilate) and decrease HR\n\na1 blockade (e.g., prazosin) reduces peripheral vascular resistance and is used in hypertension. a2 agonism (e.g., clonidine) reduces central sympathetic outflow. Understanding receptor subtypes guides selection of adrenergic drugs in clinical practice."
+    difficulty: medium
+    tags: [alpha receptors, adrenergic, vasoconstriction, pharmacology]
+  - front: "Define hypertensive emergency and name the end organs that can be damaged."
+    back: "Severe BP elevation with evidence of end-organ damage. Affected organs: CNS (stroke, encephalopathy, seizures), retinal (hemorrhage, papilledema), cardiovascular (dissection, ACS, CHF), renal (elevated creatinine, proteinuria, hematuria), GI (N/V, elevated liver enzymes). In pregnancy: HELLP syndrome.\n\nThe key distinction from hypertensive urgency (asymptomatic severe HTN) is end-organ damage. The degree of BP elevation alone does not define an emergency—it is the presence of target organ injury that mandates urgent treatment."
+    difficulty: easy
+    tags: [hypertensive emergency, end-organ damage, emergency, hypertension]
+  - front: "What is the BP reduction strategy for hypertensive emergency?"
+    back: "Lower BP by 25% over the initial 60 minutes, then gradually over 24-48 hours. Do NOT rapidly normalize BP (risk of ischemia to adapted organs).\n\nChronically hypertensive patients have autoregulatory curves shifted to tolerate higher BP. Rapid normalization removes perfusion pressure from vital organs, causing ischemic stroke, AKI, or coronary ischemia. Exception: aortic dissection requires rapid reduction of sBP to 110-120 mmHg STAT."
+    difficulty: medium
+    tags: [hypertensive emergency, BP reduction, labetalol, treatment]
+  - front: "Why are non-selective beta-blockers avoided in hypertensive emergencies caused by cocaine/pheochromocytoma?"
+    back: "They block β-mediated vasodilation while leaving α-adrenergic vasoconstriction unopposed, worsening hypertension. Use phentolamine (α-blocker) instead.\n\nIn states of catecholamine excess (cocaine, pheochromocytoma), both α- and β-receptors are stimulated. β-blockers only block vasodilation (β2), allowing the pressor α1 effect to dominate, causing a paradoxical BP rise. Labetalol (combined α+β blocker) is acceptable, or use phentolamine for pure α-blockade."
+    difficulty: hard
+    tags: [hypertensive emergency, cocaine, pheochromocytoma, beta-blockers, phentolamine]
+  - front: "What is the management of hypertensive emergency in aortic dissection?"
+    back: "Rapid reduction of sBP to 110-120 mmHg STAT. Use esmolol + sodium nitroprusside. Do NOT resuscitate with IV fluids.\n\nAortic dissection is propagated by high BP and aortic wall shear stress (dP/dt). Unlike other hypertensive emergencies, the goal is rapid—not gradual—BP reduction. Esmolol controls heart rate and reduces dP/dt; nitroprusside (or nicardipine) reduces afterload. IV fluids increase cardiac output and worsen dissection."
+    difficulty: hard
+    tags: [aortic dissection, hypertensive emergency, esmolol, treatment]
+  - front: "What is the initial drug of choice for most hypertensive emergencies and what are its contraindications?"
+    back: "Labetalol (IV). Contraindications: acute CHF, heart block >1st degree, severe asthma (relative).\n\nLabetalol is a combined α1 + β (nonselective) blocker that reduces BP without causing reflex tachycardia. It is preferred in most hypertensive emergencies including eclampsia. Its onset is 5-10 minutes and duration is 3-6 hours. It should be avoided in acute decompensated CHF (β-blockade worsens cardiac output)."
+    difficulty: easy
+    tags: [labetalol, hypertensive emergency, treatment, pharmacology]
+  - front: "According to CTFPHC guidelines, what is the recommended blood pressure measurement standard for the periodic health examination?"
+    back: "BP measurement should be performed using techniques described in CHEP (Canadian Hypertension Education Program) guidelines (Grade A recommendation in PHE table).\n\nThe CHEP guidelines specify proper BP measurement technique: patient seated quietly for 5 minutes, two measurements taken at least 1 minute apart, automated oscillometric devices preferred for office measurement, and out-of-office (home or ambulatory) BP measurement to confirm hypertension diagnosis. This is a Grade A recommendation in the Canadian PHE."
+    difficulty: easy
+    tags: [blood pressure, hypertension, CHEP, periodic health exam, screening, CTFPHC]
+  - front: "What are the key results and conclusion of the DASH trial?"
+    back: "The DASH diet (combination diet rich in fruits, vegetables, and low-fat dairy) reduced systolic/diastolic BP by 5.5/3.0 mmHg in normotensive patients and by 11.4/5.5 mmHg in hypertensive patients compared to a control diet. Conclusion: Dietary modification can significantly reduce blood pressure.\n\nThe DASH trial demonstrated that dietary patterns have a clinically meaningful effect on blood pressure. This supports lifestyle modification as first-line management for hypertension, consistent with Canadian Hypertension guidelines (Hypertension Canada)."
+    difficulty: medium
+    tags: [DASH diet, hypertension, blood pressure, lifestyle modification, landmark trial]
+  - front: "What was the SPRINT trial and what were its key findings?"
+    back: "SPRINT (2015) compared intensive BP target (systolic <120 mmHg) vs. standard target (<140 mmHg) in 9,361 high-CV-risk patients. Results: intensive treatment reduced CV complications (1.65%/yr vs. 2.19%/yr). Conclusion: Intensive BP control in high-risk patients reduces major CV events.\n\nSPRINT influenced guidelines supporting lower BP targets (systolic <120 mmHg) in high-CV-risk patients. However, the method of BP measurement (unattended automated) differs from typical office measurement, a key contextual point for the MCCQE1."
+    difficulty: medium
+    tags: [SPRINT trial, hypertension, intensive BP control, cardiovascular risk, landmark trial]

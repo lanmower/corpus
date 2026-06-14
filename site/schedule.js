@@ -1,9 +1,10 @@
 // schedule engine — corpus.schedule.v1 (blocks) + corpus.schedule.config.v1 (config)
 // Deterministic per (config, exam date, due-counts, weights). Re-run from same inputs -> same output.
 import { loadConfig as srsLoadConfig } from './srs.js';
+import { skey } from './syllabus.js';
 
-const KEY = 'corpus.schedule.v1';
-const CFG_KEY = 'corpus.schedule.config.v1';
+const KEY = () => skey('schedule.v1');
+const CFG_KEY = () => skey('schedule.config.v1');
 let SUBJECTS = ['cardiology','diabetes','endocrine','gastroenterology','geriatric','nephrology','paediatrics','paediatrics-neonatal','pulmonology','rheumatology'];
 
 export function setSubjectList(list) {
@@ -44,7 +45,7 @@ export function defaultConfig() { return fillSubjectMaps(JSON.parse(JSON.stringi
 
 export function loadConfig() {
     try {
-        const raw = localStorage.getItem(CFG_KEY);
+        const raw = localStorage.getItem(CFG_KEY());
         const cfg = raw ? JSON.parse(raw) : {};
         // Priority: schedule config examDate > SRS config examDate > default
         let examDate = cfg.examDate;
@@ -70,17 +71,17 @@ export function saveConfig(cfg) {
     if (!Number.isFinite(merged.breakLen) || merged.breakLen < 1) merged.breakLen = DEFAULT_CONFIG.breakLen;
     if (!INTENSITY_FACTOR[merged.intensity]) merged.intensity = DEFAULT_CONFIG.intensity;
     if (!merged.examDate) merged.examDate = DEFAULT_CONFIG.examDate;
-    persist(CFG_KEY, JSON.stringify(merged));
+    persist(CFG_KEY(), JSON.stringify(merged));
     emit('config');
     return merged;
 }
 
 export function loadSchedule() {
-    try { return JSON.parse(localStorage.getItem(KEY) || '{"blocks":[],"generatedAt":0}'); }
+    try { return JSON.parse(localStorage.getItem(KEY()) || '{"blocks":[],"generatedAt":0}'); }
     catch { return { blocks: [], generatedAt: 0 }; }
 }
 
-export function saveSchedule(s) { persist(KEY, JSON.stringify(s)); emit('schedule'); }
+export function saveSchedule(s) { persist(KEY(), JSON.stringify(s)); emit('schedule'); }
 
 // Quota-guarded write: the schedule blob is the largest periodic write in the
 // app, and saveSchedule runs from the boot-time staleness regenerate — a quota

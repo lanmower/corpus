@@ -1,0 +1,1346 @@
+# Diabetes Mellitus Management (Endocrinology) - generated from srs-mccqe1
+cards:
+  - front: "A 52-year-old obese patient with fasting glucose 7.8 mmol/L and HbA1c 7.4% (57 mmol/mol) on two separate occasions. Diagnosis and initial management?"
+    back: "Type 2 diabetes mellitus; first-line: lifestyle modification (diet, exercise, weight loss) + metformin unless contraindicated\n\nCDA/Diabetes Canada 2018 guidelines diagnose T2DM with: fasting glucose ≥7.0 mmol/L, random glucose ≥11.1 mmol/L, 2h OGTT ≥11.1 mmol/L, or HbA1c ≥6.5% — confirmed with a second test unless symptomatic. Metformin reduces HbA1c by 1-1.5%."
+    difficulty: medium
+    tags: [type 2 diabetes, diagnosis, metformin, HbA1c, endocrinology]
+  - front: "What are the HbA1c targets in diabetes management per Diabetes Canada guidelines?"
+    back: "Most adults: HbA1c ≤7.0%; if high hypoglycemia risk or frail elderly: ≤8.0-8.5%; if low hypoglycemia risk with shorter duration and multiple risk factors: ≤6.5%\n\nDiabetes Canada guidelines individualize HbA1c targets. Tighter control (≤7%) reduces microvascular complications (retinopathy, nephropathy, neuropathy). Looser control in elderly or hypoglycemia-prone patients. UKPDS and DCCT support intensive control."
+    difficulty: easy
+    tags: [HbA1c target, glycemic control, Diabetes Canada, type 2 diabetes, endocrinology]
+  - front: "Which class of antidiabetic agents reduces cardiovascular mortality in T2DM patients with established CVD?"
+    back: "SGLT2 inhibitors (empagliflozin, canagliflozin, dapagliflozin) and GLP-1 receptor agonists (liraglutide, semaglutide) have cardiovascular outcome benefit — SGLT2i preferred with HF or CKD; GLP-1 RA preferred with atherosclerotic CVD\n\nDiabetes Canada guidelines recommend SGLT2 inhibitor or GLP-1 RA as second-line after metformin for patients with established CVD, HF, or CKD — regardless of glycemic control. EMPA-REG, CANVAS, LEADER, SUSTAIN-6 trials established these benefits."
+    difficulty: medium
+    tags: [SGLT2 inhibitors, GLP-1 receptor agonist, cardiovascular benefit, T2DM, empagliflozin, endocrinology]
+  - front: "A 25-year-old with type 1 diabetes has nausea, abdominal pain, blood glucose 28 mmol/L, blood gases pH 7.18, bicarbonate 10 mmol/L, ketones 4+. Diagnosis and immediate management?"
+    back: "Diabetic ketoacidosis (DKA); immediate IV regular insulin infusion (0.1 units/kg/h), IV isotonic saline, potassium replacement (before insulin if K+ <3.5), identify and treat precipitant\n\nDKA diagnostic criteria: glucose >14 mmol/L (may be normal in euglycemic DKA), ketonemia/ketonuria, pH <7.30, bicarbonate <15 mmol/L. Fluid deficit is 3-5L. Insulin drip continued until anion gap closed. Transition to subcutaneous insulin with overlap."
+    difficulty: hard
+    tags: [DKA, diabetic ketoacidosis, insulin, potassium, endocrinology]
+  - front: "What is hyperosmolar hyperglycemic state (HHS) and how does it differ from DKA?"
+    back: "HHS: glucose >33 mmol/L, osmolality >320 mOsm/kg, minimal ketones, no significant acidosis (pH >7.30) — occurs in T2DM; DKA: significant ketosis and acidosis, occurs in T1DM (and T2DM)\n\nHHS has higher mortality than DKA (5-20% vs <1%). Fluid deficit larger (8-10L). Correct volume deficit first, then reduce glucose slowly (5 mmol/L/h). Insulin infusion at lower rates. Heparin prophylaxis for DVT risk."
+    difficulty: hard
+    tags: [HHS, hyperosmolar hyperglycemic state, DKA, hyperglycemia, endocrinology]
+  - front: "A T1DM patient has recurrent hypoglycemic episodes. What is hypoglycemia unawareness and how is it managed?"
+    back: "Hypoglycemia unawareness: loss of autonomic warning symptoms due to recurrent hypoglycemia; manage by strict hypoglycemia avoidance (higher glucose targets for 2-3 weeks to restore awareness) and CGM\n\nDiabetes Canada guidelines recommend continuous glucose monitoring (CGM) and insulin pump therapy (CSII) for T1DM patients with hypoglycemia unawareness to reduce severe hypoglycemia. Relaxing glycemic targets temporarily restores counter-regulatory response."
+    difficulty: hard
+    tags: [hypoglycemia unawareness, T1DM, CGM, insulin pump, endocrinology]
+  - front: "What screening does Diabetes Canada recommend for complications of diabetes?"
+    back: "Annual: HbA1c q3months until stable then q6months, annual urine ACR and eGFR, annual dilated eye exam (ophthalmology), foot exam at every visit, lipid profile and BP annually\n\nDiabetes Canada guidelines recommend systematic monitoring for microvascular (retinopathy, nephropathy, neuropathy) and macrovascular complications. Eye exam within 5 years of T1DM onset; at diagnosis for T2DM. Monofilament testing for peripheral neuropathy."
+    difficulty: easy
+    tags: [diabetes complications screening, annual monitoring, ACR, retinopathy, Diabetes Canada, endocrinology]
+  - front: "What medications should be avoided or used with caution in T2DM with CKD?"
+    back: "Metformin: hold if eGFR <30, reduce dose if eGFR 30-45; SGLT2 inhibitors: less effective eGFR <45 but cardioprotective; avoid certain sulfonylureas (glibenclamide — renal clearance); adjust insulin doses\n\nCDA/Diabetes Canada guidelines provide drug-specific guidance by eGFR level. SGLT2 inhibitors (specifically canagliflozin and dapagliflozin) have nephroprotective effects at eGFR 25-60. Metformin lactic acidosis risk in renal failure."
+    difficulty: medium
+    tags: [diabetes and CKD, metformin, SGLT2i, renal dosing, endocrinology]
+  - front: "What is the Somogyi effect vs. the dawn phenomenon in diabetes?"
+    back: "Somogyi effect (disputed): rebound hyperglycemia after nocturnal hypoglycemia; Dawn phenomenon: physiologic early morning hyperglycemia from GH and cortisol surge — both cause high morning glucose\n\nDawn phenomenon is well-established; Somogyi effect is controversial. Differentiation: check 3 AM glucose — low (Somogyi/nocturnal hypoglycemia) vs. normal (dawn phenomenon). Treatment: dawn phenomenon → increase evening basal insulin or use CSII."
+    difficulty: medium
+    tags: [Somogyi effect, dawn phenomenon, morning hyperglycemia, T1DM, endocrinology]
+  - front: "What is the mechanism of metformin and its main contraindications?"
+    back: "Metformin decreases hepatic gluconeogenesis (reduces hepatic glucose production); contraindications: eGFR <30, active liver disease, heart failure requiring hospitalization, metabolic acidosis\n\nMetformin does not cause hypoglycemia when used alone. It reduces HbA1c 1-1.5%, is weight-neutral, and has CV benefits (UKPDS). Hold metformin perioperatively and 48h after IV contrast if AKI risk. Vitamin B12 deficiency with long-term use."
+    difficulty: easy
+    tags: [metformin, mechanism, contraindications, T2DM, endocrinology]
+  - front: "What are the benefits and adverse effects of SGLT2 inhibitors in T2DM?"
+    back: "Benefits: HbA1c reduction 0.5-1%, weight loss, BP reduction, SGLT2i CV and renal benefits; side effects: genital mycotic infections, UTI, DKA (euglycemic DKA — especially with fasting/surgery), volume depletion, lower limb amputations (canagliflozin)\n\nDiabetes Canada guidelines recommend SGLT2 inhibitors for patients with T2DM and CVD, HF, or CKD. Hold 3-4 days before surgery to prevent euglycemic DKA. Genital infections more common in women."
+    difficulty: medium
+    tags: [SGLT2 inhibitors, side effects, genital mycotic, euglycemic DKA, endocrinology]
+  - front: "A T2DM patient on metformin + glyburide has a blood glucose of 2.1 mmol/L after skipping lunch. What is the immediate treatment and long-term adjustment?"
+    back: "Hypoglycemia: immediate treatment with 15g fast-acting carbohydrate (glucose tablets, juice); recheck in 15 min; long-term: switch from glyburide to lower-risk agent (SGLT2i, DPP4i) or reduce glyburide dose\n\nSulfonylureas (especially glyburide) cause prolonged hypoglycemia due to long duration of action. Elderly patients and those with irregular meals or CKD are at highest risk. DPP4 inhibitors, SGLT2i, and GLP-1 RA have lower hypoglycemia risk."
+    difficulty: hard
+    tags: [hypoglycemia, sulfonylurea, glyburide, 15g rule, endocrinology]
+  - front: "What are the diagnostic criteria for pre-diabetes?"
+    back: "Impaired fasting glucose: fasting glucose 6.1-6.9 mmol/L; Impaired glucose tolerance: 2h OGTT 7.8-11.0 mmol/L; HbA1c 6.0-6.4% (42-46 mmol/mol)\n\nDiabetes Canada recommends lifestyle intervention (weight loss ≥5-7%, 150 min/week moderate exercise) for pre-diabetes — reduces progression to T2DM by 58% (DPP trial). Metformin is an option for high-risk pre-diabetes patients."
+    difficulty: easy
+    tags: [pre-diabetes, IFG, IGT, HbA1c, endocrinology]
+  - front: "What is the recommended approach to diabetes management in pregnancy?"
+    back: "Type 1/2 DM in pregnancy: insulin is the only recommended agent (oral agents except metformin are not approved); tight glycemic targets (fasting <5.3, 1h post-meal <7.8, 2h <6.7 mmol/L)\n\nGestational diabetes mellitus (GDM) is diagnosed by 75g OGTT at 24-28 weeks. Initial management: medical nutrition therapy; add insulin if targets not met within 2 weeks. Metformin acceptable as second-line in GDM per Diabetes Canada/SOGC."
+    difficulty: hard
+    tags: [diabetes in pregnancy, GDM, gestational diabetes, insulin, SOGC, endocrinology]
+  - front: "What is the target blood pressure in patients with diabetes and hypertension?"
+    back: "BP target <130/80 mmHg in diabetes per Diabetes Canada and Hypertension Canada — ACEi or ARB preferred agents for nephroprotection\n\nTight BP control in diabetes reduces stroke, MI, and nephropathy progression. ACCORD-BP trial: SBP target <120 vs. <140 — no CV mortality reduction but lower stroke rates with tighter control. CDA recommends individualized targets."
+    difficulty: easy
+    tags: [diabetes hypertension, BP target, ACE inhibitor, nephroprotection, endocrinology]
+  - front: "A patient with T2DM on metformin has HbA1c 8.4% despite maximum metformin dose. What is the preferred second-line agent if they have established CVD?"
+    back: "SGLT2 inhibitor (empagliflozin, canagliflozin) or GLP-1 receptor agonist (liraglutide, semaglutide) — both have proven cardiovascular mortality reduction in established CVD\n\nDiabetes Canada 2022 guidelines prioritize SGLT2i and GLP-1 RA as second-line agents for patients with established CVD, HF, or CKD. The choice between them is guided by comorbidities: SGLT2i preferred with HF/CKD, GLP-1 RA preferred with high ASCVD risk."
+    difficulty: medium
+    tags: [T2DM second-line, SGLT2i, GLP-1 RA, established CVD, empagliflozin, endocrinology]
+  - front: "What are the microvascular complications of diabetes and how are they prevented?"
+    back: "Retinopathy (leading cause of blindness in adults), nephropathy (leading cause of ESKD), neuropathy (peripheral: burning/numbness, autonomic: gastroparesis, orthostatic hypotension); prevented by tight glycemic control and BP management\n\nDCCT (T1DM) and UKPDS (T2DM) trials established that HbA1c reduction significantly reduces microvascular complications. Every 1% HbA1c reduction reduces retinopathy risk by 35-40%, nephropathy by 25-35%. ACEi/ARB nephroprotective in diabetic nephropathy."
+    difficulty: easy
+    tags: [diabetic microvascular, retinopathy, nephropathy, neuropathy, endocrinology]
+  - front: "What is the treatment of diabetic peripheral neuropathy pain?"
+    back: "First-line: duloxetine (SNRI) or pregabalin/gabapentin; second-line: tricyclic antidepressants (amitriptyline), venlafaxine; topical capsaicin or lidocaine for localized pain\n\nTight glycemic control is the primary prevention strategy. Pregabalin (FDA-approved for DPN), duloxetine (FDA-approved), and amitriptyline (off-label but effective) are first-line options per Diabetes Canada pain guidelines. Opioids are not recommended."
+    difficulty: medium
+    tags: [diabetic neuropathy, pain management, pregabalin, duloxetine, amitriptyline, endocrinology]
+  - front: "What are the screening criteria for type 2 diabetes in Canada?"
+    back: "Screen adults ≥40 years every 3 years with fasting glucose or HbA1c; screen at any age with risk factors: obesity (BMI ≥30), first-degree family history, high-risk ethnicity (South Asian, African, Indigenous, Hispanic), prior GDM, prediabetes, CVD, medications causing hyperglycemia\n\nDiabetes Canada 2022 guidelines recommend risk-stratified screening. CANRISK questionnaire can identify high-risk individuals. High-risk ethnic groups have higher T2DM prevalence and lower BMI thresholds."
+    difficulty: easy
+    tags: [T2DM screening, Diabetes Canada, CANRISK, high-risk ethnicity, endocrinology]
+  - front: "What is the sick day management protocol for T1DM patients?"
+    back: "Never stop insulin during illness; increase blood glucose monitoring (q2-4h), check ketones, maintain hydration, adjust insulin dose; insulin requirements typically INCREASE during illness\n\nIllness, stress, and infection cause insulin resistance requiring more insulin. DKA commonly triggered by missed insulin doses or insufficient sick-day management. Diabetes Canada sick day rules: check glucose and ketones q4h, maintain at least basal insulin, seek care if vomiting prevents oral intake or ketones are rising."
+    difficulty: medium
+    tags: [sick day management, T1DM, insulin, illness, DKA prevention, endocrinology]
+  - front: "What are DKA diagnostic criteria?"
+    back: "Glucose>14, pH<7.30, bicarb<18, AG>12, positive ketones\n\nManage: IV fluids, insulin 0.1U/kg/hr, K replacement when<5.3. Switch subQ when AG closes and eating."
+    difficulty: medium
+    tags: [DKA]
+  - front: "How does HHS differ from DKA?"
+    back: "HHS: glucose>33.3, osm>320, minimal ketosis, pH>7.30. More dehydration (8-12L), higher mortality\n\nMore aggressive fluids. Lower insulin dose. Correct Na for glucose: add 1.6 per 5.6mmol/L above normal."
+    difficulty: hard
+    tags: [HHS, DKA]
+  - front: "What is CDA approach to T2DM glycemic management?"
+    back: "A1C<=7%. Metformin+lifestyle. Add SGLT2i or GLP-1RA if CVD/HF/CKD. Then other agents.\n\nSGLT2i preferred for HF/CKD. GLP-1RA for ASCVD. Insulin if A1C>10% or symptomatic."
+    difficulty: medium
+    tags: [T2DM, CDA]
+  - front: "What are the key differences between DKA and HHS?"
+    back: "DKA: Type 1 (or 2), glucose 14-30, pH <7.3, bicarb <18, AG >12, ketones positive, mental status variable. HHS: Type 2, glucose >33.3, pH >7.3, bicarb >18, minimal ketones, Osm >320, profound dehydration, altered mental status. HHS mortality higher (5-20% vs 1-5%).\n\nDKA results from absolute insulin deficiency → lipolysis → ketogenesis. HHS results from relative insulin deficiency sufficient to prevent ketosis but not hyperglycemia → severe osmotic diuresis → dehydration. Both: precipitated by infection, non-adherence, new-onset DM. Some patients have overlap (ketosis-prone T2DM)."
+    difficulty: hard
+    tags: [DKA, HHS, diabetes, emergency, endocrinology]
+  - front: "What is the DKA management protocol?"
+    back: "1) IV NS 1-1.5 L/h first hour. 2) Insulin: regular insulin 0.1 U/kg bolus then 0.1 U/kg/h infusion (or 0.14 U/kg/h no bolus). 3) Potassium: if K <3.3 hold insulin, replace K first; if 3.3-5.3 add 20-40 mEq/L to fluids; if >5.3 monitor q2h. 4) When glucose <14: switch to D5+½NS, reduce insulin to 0.02-0.05 U/kg/h.\n\nResolution criteria: glucose <11.1, pH >7.3, bicarb >18, AG ≤12. Overlap SC basal insulin 2h before stopping IV insulin to prevent rebound DKA. Bicarbonate ONLY if pH <6.9 (100 mmol NaHCO3). Monitor glucose q1h, lytes q2-4h. Cerebral edema risk in children — avoid aggressive fluid resuscitation."
+    difficulty: hard
+    tags: [DKA, insulin, protocol, potassium, IV fluids, endocrinology]
+  - front: "What are the Diabetes Canada A1C targets and when should they be individualized?"
+    back: "Most adults with T2DM: A1C ≤7.0%. Functional elderly or those at risk of hypoglycemia: ≤8.0-8.5%. Type 1 or newly diagnosed young T2DM without CV disease: consider ≤6.5% if safely achievable. Pregnancy: ≤6.5% preconception, ≤6.1% in pregnancy.\n\nDiabetes Canada 2024 guidelines emphasize individualized targets. UKPDS showed microvascular benefit of intensive control in T2DM. ACCORD showed increased mortality with A1C <6.0% target in high-CV-risk patients — hence relaxed targets for complex/elderly patients. A1C unreliable in conditions affecting RBC lifespan (hemolysis, transfusion, CKD)."
+    difficulty: medium
+    tags: [diabetes, A1C, targets, Diabetes Canada, individualized, endocrinology]
+  - front: "What is the Diabetes Canada pharmacotherapy algorithm for T2DM?"
+    back: "Step 1: Metformin + lifestyle (unless A1C >1.5% above target → start dual). If CV disease: add SGLT2i or GLP-1 RA regardless of A1C. If CKD: add SGLT2i. If heart failure: add SGLT2i. Step 2: add second agent based on clinical profile. Insulin if A1C remains above target.\n\nDiabetes Canada 2024 prioritizes cardiorenal-protective agents (SGLT2i, GLP-1 RA) for patients with established CVD, CKD, or HF — independent of A1C. GLP-1 RA preferred if weight loss desired (semaglutide, liraglutide). DPP-4i: weight-neutral, no CV benefit. TZDs: weight gain, edema, fractures. SUs: hypoglycemia risk, weight gain."
+    difficulty: hard
+    tags: [diabetes, T2DM, metformin, SGLT2i, GLP-1, Diabetes Canada, endocrinology]
+  - front: "What are the mechanisms and side effects of SGLT2 inhibitors?"
+    back: "Mechanism: block sodium-glucose cotransporter 2 in proximal tubule → glycosuria → lowers glucose, weight (2-3 kg), BP (3-5 mmHg), reduces intraglomerular pressure. Side effects: genital mycotic infections, UTI, euglycemic DKA, volume depletion, Fournier gangrene (rare), amputations (canagliflozin).\n\nSGLT2i (empagliflozin, dapagliflozin, canagliflozin) have proven CV benefit (EMPA-REG, CANVAS) and renal protection (CREDENCE, DAPA-CKD). Euglycemic DKA: rare but dangerous, triggered by illness/surgery — hold perioperatively 3 days before. Approved for HFrEF and CKD regardless of diabetes status."
+    difficulty: hard
+    tags: [diabetes, SGLT2i, empagliflozin, dapagliflozin, mechanism, endocrinology]
+  - front: "What insulin regimens are used in T2DM and T1DM?"
+    back: "T2DM: start basal insulin (glargine/detemir/degludec) at 10 U or 0.1-0.2 U/kg, titrate by 2-4 U q3-4 days to fasting target. Add prandial (rapid-acting) if needed. T1DM: basal-bolus (MDI) or insulin pump (CSII). Total daily dose ~0.5-1.0 U/kg; 50% basal, 50% bolus divided across meals.\n\nDiabetes Canada recommends insulin initiation when A1C >1.5% above target or symptomatic hyperglycemia. Basal insulin analogues (glargine, degludec) preferred over NPH (less hypoglycemia, more predictable). Insulin degludec has longest duration (>42h) and lowest hypoglycemia. ICR (insulin-to-carb ratio) and ISF (correction factor) used for bolus dosing in T1DM."
+    difficulty: hard
+    tags: [diabetes, insulin, basal-bolus, glargine, T1DM, T2DM, endocrinology]
+  - front: "What are the microvascular complications of diabetes and their screening protocols?"
+    back: "Retinopathy: dilated eye exam at diagnosis T2DM (5 yrs T1DM), then annually. Nephropathy: ACR + eGFR annually from diagnosis T2DM (5 yrs T1DM). Neuropathy: 10g monofilament + 128Hz tuning fork annually. Foot exam annually.\n\nDiabetes Canada screening recommendations: retinopathy screening can be extended to q2 years if consistently normal. Albuminuria first detected → confirm with repeat in 3 months. ACEi/ARBs for confirmed albuminuria (ACR >2 men, >2.8 women) regardless of BP. SGLT2i added for cardiorenal protection. Tight glycemic + BP control prevents/slows all microvascular complications."
+    difficulty: medium
+    tags: [diabetes, complications, retinopathy, nephropathy, neuropathy, screening, endocrinology]
+  - front: "What is the management of hypoglycemia and what defines severe hypoglycemia?"
+    back: "Mild-moderate (conscious): glucose <4.0 mmol/L → 15g fast-acting carbs (3-4 glucose tabs, 150 mL juice), recheck in 15 min, repeat if still <4.0, then snack. Severe (altered consciousness, unable to self-treat): glucagon 1 mg IM/SC or nasal glucagon 3 mg, or IV dextrose 50% (D50W) 25-50 mL.\n\nDiabetes Canada defines hypoglycemia by blood glucose <4.0 mmol/L. Severe hypoglycemia = requires assistance. Recurrent severe hypoglycemia: reassess targets (relax A1C), review medications (reduce/stop SUs or insulin), consider hypoglycemia unawareness (raise targets to >5.0 for 2-3 weeks to restore awareness). Glucagon now available OTC as nasal spray."
+    difficulty: medium
+    tags: [diabetes, hypoglycemia, glucagon, severe, treatment, endocrinology]
+  - front: "What is the cardiovascular risk management approach in diabetes per Diabetes Canada?"
+    back: "All T2DM >40 or with microvascular disease: statin therapy (moderate-high intensity). BP target <130/80. ACEi/ARB if albuminuria, CVD, or age ≥55 with additional CV risk factor. ASA: secondary prevention only (not primary). SGLT2i or GLP-1 RA if established CVD.\n\nDiabetes is a CV risk equivalent. 10-year CV risk assessment using Framingham Risk Score modified for diabetes. LDL target <2.0 mmol/L or >50% reduction. PCSK9 inhibitors if statin-intolerant or not at target. Smoking cessation is the single most impactful intervention. Exercise: 150 min/week moderate-vigorous aerobic + resistance training 2-3x/week."
+    difficulty: hard
+    tags: [diabetes, cardiovascular, statin, SGLT2i, GLP-1, risk management, endocrinology]
+  - front: "What is gestational diabetes (GDM) screening and management?"
+    back: "Screen all at 24-28 weeks with 50g GCT (threshold ≥7.8 → 75g OGTT) or direct 75g OGTT. Diagnostic: FPG ≥5.3 or 1h ≥10.6 or 2h ≥9.0 (one abnormal value). Management: diet + exercise first → insulin if targets not met (FBG <5.3, 1h post-meal <7.8, 2h post-meal <6.7).\n\nDiabetes Canada uses IADPSG-based criteria. GDM increases risk of macrosomia, shoulder dystocia, preeclampsia, neonatal hypoglycemia, and future T2DM in mother (50% lifetime risk). Metformin is alternative to insulin (crosses placenta but increasingly accepted). Glyburide no longer recommended. Screen with 75g OGTT at 6 weeks postpartum."
+    difficulty: hard
+    tags: [diabetes, gestational, GDM, screening, OGTT, insulin, pregnancy, endocrinology]
+  - front: "What are the diagnostic criteria for diabetes mellitus?"
+    back: "FPG ≥7.0 mmol/L (fasting ≥8h), OR 2h PG ≥11.1 on 75g OGTT, OR A1C ≥6.5% (standardized lab), OR random PG ≥11.1 with symptoms. Two abnormal tests required if asymptomatic (can be same sample, two different tests). Single test sufficient if symptomatic + random ≥11.1.\n\nDiabetes Canada 2024 diagnostic criteria. A1C 6.0-6.4% = prediabetes (high risk). A1C unreliable in: hemoglobinopathies, iron deficiency, CKD, hemolytic anemia, pregnancy. Screen high-risk individuals annually (age ≥40, first-degree relative, high-risk ethnic group, GDM history, impaired glucose tolerance, metabolic syndrome)."
+    difficulty: medium
+    tags: [diabetes, diagnosis, FPG, OGTT, A1C, Diabetes Canada, endocrinology]
+  - front: "What are the GLP-1 receptor agonists and their clinical benefits?"
+    back: "Agents: liraglutide, semaglutide (SC or oral), dulaglutide, exenatide. Benefits: A1C reduction 1.0-1.8%, weight loss 3-6 kg (semaglutide up to 15%), CV benefit (LEADER, SUSTAIN-6, REWIND), renal protection (FLOW trial — semaglutide). Side effects: GI (nausea, vomiting), pancreatitis risk (theoretical).\n\nGLP-1 RAs are incretin mimetics that stimulate glucose-dependent insulin secretion, suppress glucagon, slow gastric emptying, and promote satiety. Semaglutide 2.4 mg (Wegovy) approved for obesity. Contraindicated in personal/family history of medullary thyroid carcinoma or MEN2 (thyroid C-cell tumors in rodent studies). Tirzepatide (dual GIP/GLP-1) offers even greater A1C and weight reduction."
+    difficulty: hard
+    tags: [diabetes, GLP-1, semaglutide, liraglutide, weight loss, CV benefit, endocrinology]
+  - front: "What is the perioperative diabetes management approach?"
+    back: "Hold metformin day of surgery (restart when eating, normal renal function). Hold SGLT2i 3 days before (euglycemic DKA risk). Continue basal insulin at 80% dose night before/morning of. Hold bolus insulin and oral agents day of surgery. Use IV insulin infusion if glucose >10-12 mmol/L. Target glucose 5-10 mmol/L perioperatively.\n\nDiabetes Canada recommends tight but safe glucose control perioperatively to reduce wound infections and complications. Reduce basal insulin to 60-80% to prevent hypoglycemia while fasting. Monitor glucose q1-2h. Resume home regimen when eating normally. DKA can occur perioperatively in T1DM — never completely hold insulin."
+    difficulty: hard
+    tags: [diabetes, perioperative, insulin, surgery, SGLT2i, endocrinology]
+  - front: "What is the diabetic foot assessment and management approach?"
+    back: "Annual screening: 10g monofilament (4 sites per foot), 128Hz tuning fork, visual inspection, pedal pulses. High risk: calluses, deformity (Charcot), peripheral neuropathy, PAD, prior ulcer/amputation. Ulcer management: offloading (total contact cast), debridement, infection control, revascularization if ischemic.\n\nWagner classification grades ulcers 0-5. Diabetic foot infections: mild (superficial, <2cm cellulitis) → oral antibiotics. Moderate (deeper, >2cm cellulitis) → IV antibiotics. Severe (systemic toxicity, osteomyelitis) → IV antibiotics + surgical debridement. MRI best for osteomyelitis diagnosis. Probe-to-bone test positive has high PPV for osteomyelitis."
+    difficulty: hard
+    tags: [diabetes, foot, neuropathy, ulcer, Wagner, offloading, endocrinology]
+  - front: "What is the sick day management protocol for diabetes?"
+    back: "Never stop insulin completely (T1DM: maintain basal at minimum). Monitor BG q2-4h + ketones. Increase fluids (sugar-free if BG >14, sugary if BG <14). Hold metformin, SGLT2i, ACEi/ARBs, diuretics, NSAIDs if dehydrated/vomiting ('sick day drugs'). Seek medical attention if persistent vomiting, BG >20 with ketones, or unable to maintain hydration.\n\nDiabetes Canada publishes sick day management guides for patients. SGLT2i carry euglycemic DKA risk during illness — hold early. T1DM patients should have ketone testing supplies at home. Supplemental rapid-acting insulin doses based on correction factor if BG elevated. Prevention of DKA is key — education is critical."
+    difficulty: medium
+    tags: [diabetes, sick day, DKA prevention, SGLT2i, management, endocrinology]
+  - front: "What is the screening schedule for diabetic complications?"
+    back: "Eyes: annual dilated exam from diagnosis (T2DM) or 5 years (T1DM). Feet: every visit. Kidneys: annual ACR + eGFR. Neuropathy: annual monofilament/vibration. CV: lipids, BP every visit\n\nCDA guidelines. Early referral: proliferative retinopathy, eGFR<30, foot ulcer/Charcot. A1C q3 months if not at target, q6 months if stable. Dental exam annually."
+    difficulty: medium
+    tags: [diabetes, complications, screening]
+  - front: "What are the insulin initiation and titration strategies for T2DM?"
+    back: "Basal insulin (glargine/detemir): start 10U or 0.2U/kg at bedtime. Titrate by 2U q3 days to fasting glucose 4-7mmol/L. Add prandial if A1C still above target: rapid-acting before largest meal\n\nCDA: basal-bolus or basal-plus regimens. Hypoglycemia prevention: glucose monitoring, patient education, avoid SU with basal insulin. Weight gain expected ~2-4kg. GLP-1RA can be combined with basal insulin."
+    difficulty: medium
+    tags: [insulin, T2DM, titration]
+  - front: "What is the pathophysiology of type 1 vs type 2 diabetes?"
+    back: "T1DM: autoimmune destruction of pancreatic beta cells (anti-GAD, anti-IA2) causing absolute insulin deficiency. T2DM: insulin resistance + relative insulin deficiency from progressive beta-cell dysfunction\n\nT1DM: immune-mediated, often HLA-DR3/DR4 associated. T2DM: obesity/visceral fat drives insulin resistance via adipokines, free fatty acids. Beta-cell failure is progressive — eventually need insulin."
+    difficulty: medium
+    tags: [diabetes, pathophysiology]
+  - front: "How does pregestational diabetes management differ in pregnancy?"
+    back: "Target A1C <6.5% preconception, strict glycemic targets (fasting <5.3, 1h PP <7.8, 2h PP <6.7). Insulin is preferred. Stop ACEi/ARB/statins. Start folic acid 5mg. Retinal screening each trimester\n\nPregestational DM has higher risk than GDM: congenital anomalies (NTD, cardiac) if poor periconception control. Insulin needs increase 2-3x by third trimester. Hypoglycemia risk increases in first trimester."
+    difficulty: hard
+    tags: [diabetes, pregnancy]
+  - front: "What is the approach to hypoglycemia unawareness?"
+    back: "Loss of adrenergic warning symptoms (tremor, sweating, palpitations) due to recurrent hypoglycemia. Management: raise glucose targets for 2-3 weeks to restore awareness, CGM, glucagon kit, patient education\n\nCaused by defective counter-regulatory response. Risk factors: long-standing T1DM, tight control, autonomic neuropathy. Impaired awareness hypoglycemia affects 25% of T1DM patients. CGM with alarms reduces severe episodes."
+    difficulty: hard
+    tags: [hypoglycemia, T1DM]
+  - front: "Outline the diabetic foot ulcer assessment algorithm."
+    back: "1) Probe-to-bone test (positive = high probability osteomyelitis). 2) Classify with Wagner or UT system. 3) Vascular assessment (ABI, toe pressures). 4) Offloading (total contact cast for plantar ulcers). 5) Debridement. 6) Antibiotics if infected (mild=oral, moderate/severe=IV per Diabetes Canada). 7) MRI if osteomyelitis suspected.\n\nDiabetes Canada recommends annual comprehensive foot exams with monofilament and pedal pulses. Probe-to-bone has ~90% specificity for osteomyelitis. Total contact casting is gold standard for offloading neuropathic ulcers. Multidisciplinary foot care teams reduce amputation by 50%."
+    difficulty: hard
+    tags: [diabetic-foot, ulcer, osteomyelitis, offloading, wound-care]
+  - front: "What is hypoglycemia unawareness and how is it managed?"
+    back: "Loss of autonomic warning symptoms at glucose <4.0 mmol/L due to repeated hypoglycemia shifting the glycemic threshold downward. Management: strict hypoglycemia avoidance for 2-3 weeks, relaxed A1C targets (7.5-8.0%), CGM with alarms, glucagon kit prescription.\n\nAffects ~25% of type 1 patients, increasing severe hypoglycemia risk 6-fold. Diabetes Canada recommends Clarke or Gold questionnaires to screen. CGM with low-glucose suspend technology significantly reduces events. Recurrent severe hypoglycemia is an indication for islet cell transplantation in Canada."
+    difficulty: hard
+    tags: [hypoglycemia-unawareness, CGM, type-1-diabetes, patient-safety, glucagon]
+  - front: "How does management of pregestational diabetes differ from gestational diabetes (GDM)?"
+    back: "Pregestational: optimize A1C <6.5% pre-conception, insulin is preferred (metformin acceptable in type 2), folic acid 5 mg, retinal/renal screening each trimester, tight targets (fasting 4.0-5.3, 1h post-meal <7.8). GDM: diagnosed 24-28 weeks by OGTT, lifestyle first, insulin if targets not met in 2 weeks.\n\nPregestational diabetes carries higher congenital anomaly risk (cardiac, NTDs) if poorly controlled in the first trimester. Both require postpartum glucose testing: 75g OGTT at 6 weeks for GDM. SOGC and Diabetes Canada guidelines align on these recommendations."
+    difficulty: hard
+    tags: [pregestational-diabetes, GDM, pregnancy, insulin, SOGC]
+  - front: "What are the indications and key metrics of continuous glucose monitoring (CGM)?"
+    back: "Indications: all type 1 diabetes, type 2 on intensive insulin, hypoglycemia unawareness, pregnancy with pregestational diabetes. Key metrics: time-in-range 3.9-10.0 (goal >70%), time below range (<4% below 3.9), glucose management indicator (GMI).\n\nDiabetes Canada 2024 guidelines recommend CGM for all type 1 patients. Flash glucose monitoring (FreeStyle Libre) is widely available with variable provincial coverage. CGM reduces A1C by 0.3-0.5% and significantly reduces hypoglycemia frequency."
+    difficulty: medium
+    tags: [CGM, time-in-range, type-1-diabetes, glucose-monitoring, technology]
+  - front: "What are key complications specific to insulin pump therapy?"
+    back: "DKA risk from pump failure/site occlusion (no basal depot, DKA can develop in 4-6 hours), infusion site infections, lipohypertrophy. Must rotate sites every 2-3 days, always carry backup insulin pens, and have sick-day management plans.\n\nInsulin pumps deliver only rapid-acting insulin, so any interruption causes rapid hyperglycemia. Diabetes Canada recommends ketone testing access for all pump users. Hybrid closed-loop systems automate basal adjustments and reduce hypoglycemia but require user engagement for bolusing."
+    difficulty: medium
+    tags: [insulin-pump, CSII, DKA-risk, infusion-site, closed-loop]
+  - front: "What is the A1C target for most adults with type 2 diabetes per Diabetes Canada, and when should it differ?"
+    back: "Target <=7.0% for most. Consider <=6.5% if achievable without significant hypoglycemia (reduces CKD/retinopathy risk). Consider 7.1-8.5% in elderly, limited life expectancy, frailty, or recurrent severe hypoglycemia.\n\nDiabetes Canada emphasizes individualized targets. The ACCORD trial showed increased mortality with aggressive targets (<6.0%) in high-risk patients. SGLT2 inhibitors and GLP-1 RAs are preferred second-line for cardiovascular and renal benefit regardless of A1C."
+    difficulty: easy
+    tags: [A1C-target, Diabetes-Canada, individualized, glycemic-control, type-2-diabetes]
+  - front: "A type 2 diabetic with established CVD has A1C 8.2% on metformin. What agent to add next?"
+    back: "SGLT2 inhibitor (empagliflozin, canagliflozin) or GLP-1 RA (liraglutide, semaglutide, dulaglutide) with proven CV benefit, irrespective of A1C. SGLT2i preferred if HF/CKD predominates; GLP-1 RA if ASCVD predominates.\n\nDiabetes Canada 2024 guidelines prioritize cardiorenal benefit over A1C when selecting second-line therapy. EMPA-REG, CANVAS, LEADER, SUSTAIN-6 trials demonstrated CV outcome benefits. These agents can be combined for additive benefit."
+    difficulty: medium
+    tags: [SGLT2i, GLP-1-RA, cardiovascular, metformin, type-2-diabetes]
+  - front: "What are the diagnostic criteria for DKA vs HHS?"
+    back: "DKA: glucose >14 mmol/L, pH <7.3, bicarbonate <18, anion gap >12, positive ketones. HHS: glucose >33.3 mmol/L, osmolality >320, pH >7.3, minimal ketones, profound dehydration. DKA more common in type 1; HHS in elderly type 2.\n\nDKA results from absolute insulin deficiency causing ketogenesis. HHS from relative deficiency preventing ketosis but not hyperglycemia. HHS mortality is higher (10-20% vs 1-5%). Both require IV fluids, insulin, and potassium monitoring. Diabetes Canada recommends standardized order sets."
+    difficulty: medium
+    tags: [DKA, HHS, ketoacidosis, hyperosmolar, diagnosis]
+  - front: "What is euglycemic DKA and what are its causes?"
+    back: "DKA with blood glucose <14 mmol/L. Most commonly from SGLT2 inhibitor use. Also seen with reduced carbohydrate intake, pregnancy, partial insulin treatment, or alcohol. Presents with metabolic acidosis and ketonemia despite near-normal glucose.\n\nSGLT2 inhibitors cause glucosuria, lowering glucose while ketogenesis continues. Health Canada has issued safety warnings. Hold SGLT2i 3 days before elective surgery per Diabetes Canada. Always check ketones and blood gas in an ill diabetic on SGLT2i."
+    difficulty: hard
+    tags: [euglycemic-DKA, SGLT2i, ketoacidosis, normal-glucose, diagnosis]
+  - front: "What screening is recommended for microvascular complications at type 2 diabetes diagnosis?"
+    back: "At diagnosis: dilated eye exam, uACR + eGFR, monofilament + tuning fork foot exam. Then: eyes every 1-2 years, uACR/eGFR annually, foot exam annually. Type 1: screening starts 5 years post-diagnosis (post-pubertal).\n\nDiabetes Canada recommends immediate screening at type 2 diagnosis since the disease may have been present years prior. ACEi/ARB is indicated when uACR >20 mg/mmol to slow nephropathy. Early detection of retinopathy enables timely laser/anti-VEGF treatment."
+    difficulty: easy
+    tags: [microvascular, screening, retinopathy, nephropathy, neuropathy]
+  - front: "What metabolic effects are associated with beta-adrenergic receptor activation?"
+    back: "Liver: gluconeogenesis and glycogenolysis. Fat cells: lipolysis. Pancreatic beta cells: increased insulin secretion\n\nBeta-adrenergic stimulation mobilizes energy substrates (glucose and free fatty acids) during stress, supporting the fight-or-flight response."
+    difficulty: medium
+    tags: [cardiology, adrenergic-receptors, beta-receptors, metabolism, toronto-notes, pages-0161-0162-0163-0164-0165-0166-0167-0168-0169-0170]
+  - front: "What is physiological (functional) antagonism?"
+    back: "Drugs that produce opposite physiological effects through different receptors (e.g., insulin decreases glucose vs. glucagon raises glucose)\n\nBoth drugs act through different receptors but produce opposing physiological responses, providing a form of physiological antagonism."
+    difficulty: easy
+    tags: [pharmacodynamics, functional antagonism, physiological antagonism, toronto-notes, pages-0181-0182-0183-0184-0185-0186-0187-0188-0189-0190]
+  - front: "Give a clinical example of physiological/functional antagonism"
+    back: "Insulin decreases blood glucose via insulin receptors vs. glucagon raises blood glucose via glucagon receptors - opposite physiological effects\n\nThese drugs work through different mechanisms to produce opposing effects, useful when one system is pathologically overactive."
+    difficulty: easy
+    tags: [pharmacodynamics, physiological-antagonism, clinical-examples, toronto-notes, pages-0181-0182-0183-0184-0185-0186-0187-0188-0189-0190]
+  - front: "What is the insulin infusion rate for DKA management?"
+    back: "0.05-0.1 U/kg/h continuous IV infusion\n\nLow-dose insulin infusion at 0.05-0.1 U/kg/h is the standard approach for DKA management, achieving adequate ketogenesis suppression while minimizing hypoglycemia risk."
+    difficulty: easy
+    tags: [DKA, Diabetes, Insulin, Emergency Medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What are the most common causes of hypoglycemia in the emergency setting?"
+    back: "Excessive insulin use in the setting of poor PO intake.\n\nMost hypoglycemia presenting to ED is iatrogenic from insulin or sulfonylureas."
+    difficulty: easy
+    tags: [hypoglycemia, causes, emergency medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What is unique about hypoglycemia due to long-acting insulin or sulfonylureas?"
+    back: "Watch for prolonged hypoglycemia due to long half-life; may require admission for monitoring.\n\nThese agents can cause prolonged hypoglycemia requiring extended observation."
+    difficulty: medium
+    tags: [hypoglycemia, insulin, sulfonylureas, emergency medicine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What is the most common cause of hypoglycemia in outpatients?"
+    back: "Excessive insulin use in setting of poor PO intake\n\nIatrogenic insulin overdose with inadequate carbohydrate intake is the most frequent cause."
+    difficulty: easy
+    tags: [hypoglycemia, causes, insulin, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What rare causes of hypoglycemia should be considered?"
+    back: "Insulinomas, hypopituitarism, adrenal insufficiency, liver failure, medication side effects\n\nThese endocrine and hepatic disorders can cause hypoglycemia through impaired gluconeogenesis or excess insulin."
+    difficulty: medium
+    tags: [hypoglycemia, rare causes, endocrine, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What are common causes of hypoglycemia to investigate after treatment?"
+    back: "Common causes include: exogenous insulin, alcohol, or sulfonylureas. Also consider insulinomas, hypopituitarism, adrenal insufficiency.\n\nIdentifying the underlying cause prevents recurrent episodes."
+    difficulty: medium
+    tags: [hypoglycemia, diagnosis, etiology, diabetes, toronto-notes, pages-0281-0282-0283-0284-0285-0286-0287-0288-0289-0290]
+  - front: "What is the starting dose of basal insulin for T2DM according to Diabetes Canada 2018 guidelines?"
+    back: "10U at bedtime (lower for lean patients <50kg)\n\nStarting at a low dose reduces risk of hypoglycemia. Titrate by 1U nightly until fasting BG reaches 4-7 mmol/L target."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, treatment, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the target fasting blood glucose for basal insulin titration in T2DM?"
+    back: "4-7 mmol/L\n\nThis is the fasting BG target used to titrate basal insulin doses in T2DM management per Diabetes Canada 2018 guidelines."
+    difficulty: easy
+    tags: [endocrinology, diabetes, target, glucose, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Calculate the correction factor for a patient with total daily insulin dose of 50 units"
+    back: "CF = 100/50 = 2 mmol/L per unit of insulin\n\nCorrection Factor = 100/TDD. This represents the expected decrease in blood glucose per unit of insulin administered."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, calculation, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the typical total daily insulin (TDI) requirement for basal-bolus regimen in T2DM?"
+    back: "0.3-0.5 U/kg\n\nFor a 100kg patient, this equals 30-50U total daily dose, with 40% as basal and 60% as prandial bolus."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In a basal-bolus regimen, what percentage of TDI is allocated to basal insulin vs bolus insulin?"
+    back: "40% basal, 60% bolus (or 40% basal, 20% each meal)\n\nBasal insulin is 40% of TDI, while bolus (prandial) insulin is 60% of TDI, typically divided equally before each meal."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, regimen, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What are the target postprandial blood glucose levels for bolus insulin adjustment?"
+    back: "5-10 mmol/L\n\nPostprandial BG should be 5-10 mmol/L. Preprandial BG for subsequent meals should be 4-7 mmol/L."
+    difficulty: easy
+    tags: [endocrinology, diabetes, glucose targets, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the typical insulin requirement for most T2DM patients to achieve target BG?"
+    back: "40-50 units/day\n\nMost T2DM patients will need 40-50 U/day to achieve glycemic targets, though there is no maximum dose."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin dosing, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What should be done if fasting hypoglycemia occurs with basal insulin?"
+    back: "Reduce the dose of bedtime basal insulin\n\nFasting hypoglycemia indicates the basal dose is too high and should be reduced. Daytime hypoglycemia may require reducing oral agents, especially secretagogues."
+    difficulty: medium
+    tags: [endocrinology, diabetes, hypoglycemia, insulin adjustment, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Which oral antihyperglycemic agents are typically continued when adding bolus insulin?"
+    back: "Metformin is continued; secretagogues are typically stopped\n\nMetformin is continued as it does not cause hypoglycemia. Insulin secretagogues (e.g., sulfonylureas) are typically discontinued when prandial insulin is added."
+    difficulty: easy
+    tags: [endocrinology, diabetes, oral antihyperglycemics, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What type of insulin is used in insulin pump therapy (CSII)?"
+    back: "Rapid-acting insulin analogues (aspart, glulisine, or lispro)\n\nCSII uses continuous subcutaneous infusion of rapid-acting insulin, with boluses programmed for meals based on carb:insulin ratios."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin pump, CSII, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the major risk of insulin pump therapy if disconnected or malfunctioning?"
+    back: "Diabetic Ketoacidosis (DKA)\n\nIf the pump is disconnected or malfunctions, there is no basal insulin delivery, leading to rapid insulin deficiency and DKA risk."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin pump, DKA risk, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Distinguish DKA pathophysiology from HHS in terms of insulin deficiency"
+    back: "DKA: absolute insulin deficiency; HHS: partial/relative insulin deficiency\n\nDKA occurs with complete or near-complete insulin deficiency. HHS has enough insulin to inhibit lipolysis and prevent ketosis but insufficient glucose utilization."
+    difficulty: medium
+    tags: [endocrinology, DKA, HHS, pathophysiology, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Why does DKA have metabolic acidosis while HHS typically does not?"
+    back: "DKA has absolute insulin deficiency → unchecked lipolysis → increased FFA → ketone production → metabolic acidosis. HHS has enough insulin to inhibit lipolysis → no significant ketosis.\n\nThe presence of ketones distinguishes DKA from HHS. Even with high glucose, partial insulin in HHS prevents ketone formation."
+    difficulty: hard
+    tags: [endocrinology, DKA, HHS, ketones, metabolic acidosis, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "When should insulin be held in DKA treatment?"
+    back: "When serum K+ <3.3 mmol/L\n\nIf K+ is <3.3 mmol/L, give 40 mEq/L K+ replacement and hold insulin until potassium is ≥3.3 mmol/L to prevent life-threatening hypokalemia."
+    difficulty: medium
+    tags: [endocrinology, DKA, insulin, potassium, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Why is urine ketones usually positive in DKA but negative in HHS?"
+    back: "DKA has absolute insulin deficiency → unchecked lipolysis → ketone production. HHS has relative insulin deficiency → enough insulin to inhibit lipolysis and ketone production.\n\nThe presence or absence of ketones is a key differentiator between DKA and HHS."
+    difficulty: medium
+    tags: [endocrinology, DKA, HHS, ketones, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Which type of diabetes is more commonly associated with DKA?"
+    back: "Type 1 Diabetes Mellitus (T1DM)\n\nDKA typically occurs in T1DM due to absolute insulin deficiency. It can occur in T2DM but is less common."
+    difficulty: easy
+    tags: [endocrinology, DKA, T1DM, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Which type of diabetes is more commonly associated with HHS?"
+    back: "Type 2 Diabetes Mellitus (T2DM)\n\nHHS typically occurs in T2DM, often in elderly patients with partial insulin deficiency."
+    difficulty: easy
+    tags: [endocrinology, HHS, T2DM, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the insulin titration for basal-bolus: for a 70kg patient starting at 0.5 U/kg TDI?"
+    back: "TDI = 35U: Basal = 14U at bedtime, Bolus = 7U with each meal\n\n70kg × 0.5 = 35U TDI. Basal 40% = 14U, Bolus 60% = 21U (7U per meal)."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, calculation, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the formula for calculating the correction factor (CF) in insulin dosing?"
+    back: "CF = 100/Total Daily Dose (TDD) = change in blood glucose per unit of insulin\n\nThe correction factor represents how much 1 unit of insulin will lower blood glucose. For example, if TDD is 50U, CF = 2 mmol/L reduction per unit."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, calculations, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the target fasting blood glucose for patients with T2DM on insulin therapy?"
+    back: "4-7 mmol/L\n\nDiabetes Canada 2018 guidelines recommend fasting BG target of 4-7 mmol/L for most patients with T2DM on insulin therapy."
+    difficulty: easy
+    tags: [endocrinology, diabetes, target, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In a basal-bolus insulin regimen, what percentage of total daily insulin (TDI) should be basal vs bolus?"
+    back: "40% basal, 60% bolus (distributed as 20% with each of 3 meals)\n\nFor basal-bolus: TDI = 0.3-0.5 U/kg, with 40% as basal insulin and 60% as prandial bolus insulin divided before each meal."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, regimen, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What type of diabetes is Diabetic Ketoacidosis (DKA) typically associated with?"
+    back: "Type 1 Diabetes Mellitus (T1DM)\n\nDKA usually occurs in T1DM due to absolute insulin deficiency, though it can occur in T2DM under stress conditions."
+    difficulty: easy
+    tags: [endocrinology, DKA, T1DM, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What type of diabetes is Hyperosmolar Hyperglycemic State (HHS) typically associated with?"
+    back: "Type 2 Diabetes Mellitus (T2DM)\n\nHHS occurs predominantly in T2DM due to partial insulin deficiency that prevents ketosis but allows extreme hyperglycemia."
+    difficulty: easy
+    tags: [endocrinology, HHS, T2DM, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Why does total body potassium deplete in DKA despite normal or elevated serum K+?"
+    back: "Insulin deficiency and plasma osmolality shift K+ from ICF to ECF\n\nLack of insulin and high plasma osmolality cause potassium to shift from intracellular to extracellular compartment, masking total body depletion."
+    difficulty: hard
+    tags: [endocrinology, DKA, electrolytes, pathophysiology, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the insulin pump (CSII) delivery mechanism?"
+    back: "Continuous subcutaneous infusion of rapid-acting insulin analogue (aspart, glulisine, or lispro) via external battery-operated device\n\nInsulin pumps deliver continuous basal insulin through a small subcutaneous catheter, with patient-programmed boluses at meals based on carbohydrate ratios."
+    difficulty: easy
+    tags: [endocrinology, insulin, pump, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the major risk of insulin pump therapy?"
+    back: "DKA if pump is inadvertently disconnected or malfunctions\n\nSince pumps only use rapid-acting insulin, any interruption in delivery can quickly lead to insulin deficiency and DKA."
+    difficulty: easy
+    tags: [endocrinology, insulin, pump, complications, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the postprandial blood glucose target for patients on insulin therapy?"
+    back: "5-10 mmol/L\n\nPostprandial BG target is 5-10 mmol/L, while preprandial BG for subsequent meals should be 4-7 mmol/L."
+    difficulty: easy
+    tags: [endocrinology, diabetes, targets, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In HHS, why is potassium depletion less severe than in DKA?"
+    back: "HHS patients typically have less profound insulin deficiency and less acidosis\n\nThe partial insulin deficiency in HHS causes less potassium shift from ICF and less osmotic diuresis compared to the absolute insulin deficiency in DKA."
+    difficulty: hard
+    tags: [endocrinology, HHS, DKA, electrolytes, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What should be done regarding oral antihyperglycemic agents when basal insulin is started?"
+    back: "Continue metformin, consider stopping secretagogues\n\nMetformin is typically continued with insulin therapy, but secretagogues (sulfonylureas) should be stopped to reduce hypoglycemia risk."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, OAD, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "When are insulin secretagogues typically stopped in T2DM management?"
+    back: "When bolus (prandial) insulin is added\n\nInsulin secretagogues are stopped when bolus insulin is added to avoid redundant therapy and reduce hypoglycemia risk."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, secretagogues, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the blood glucose threshold for calling physician in insulin correction dosing?"
+    back: "BG <4 mmol/L\n\nWhen BG is <4 mmol/L, the physician should be called and the patient should receive 15g of rapid-acting carbohydrates, rechecking in 15 minutes."
+    difficulty: easy
+    tags: [endocrinology, insulin, hypoglycemia, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In correction factor dosing, what is the insulin dose if BG is between 8 and (8+CF)?"
+    back: "Give 1 additional unit\n\nCorrection factor dosing: BG 8 to (8+CF) = 1 unit; (8+CF) to (8+2CF) = 2 units; (8+2CF) to (8+3CF) = 3 units."
+    difficulty: medium
+    tags: [endocrinology, insulin, correction, calculations, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the normal response in an insulin tolerance test?"
+    back: "Hypoglycemia induced by insulin should stimulate increased GH and cortisol secretion\n\nThe insulin tolerance test evaluates the entire hypothalamic-pituitary-adrenal axis and GH axis. Hypoglycemia is a physiologic stressor that should trigger ACTH and GH release."
+    difficulty: hard
+    tags: [pituitary, insulin tolerance test, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the starting dose and titration approach for basal insulin in T2DM according to Diabetes Canada 2018 guidelines?"
+    back: "Start at 10U at bedtime; increase by 1U every night until fasting BG reaches target of 4-7 mmol/L\n\nMost patients need 40-50 units/day to achieve target. If fasting hypoglycemia occurs, reduce bedtime basal dose."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, t2dm, treatment, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "For a basal-bolus insulin regimen, how is the total daily insulin (TDI) divided?"
+    back: "TDI = 0.3-0.5 U/kg; 40% basal (bedtime), 60% bolus (20% before each meal)\n\nBasal insulin controls fasting glucose while bolus insulin covers postprandial glucose levels."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, t2dm, treatment, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the correction factor formula for insulin dosing?"
+    back: "CF = 100/Total Daily Dose (TDD) = change in blood glucose per unit of insulin\n\nExample: if TDD = 50U, CF = 100/50 = 2 mmol/L, meaning 1 unit of insulin lowers BG by 2 mmol/L."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, calculations, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What insulin correction dosing should be given when BG is between 8 and (8 + CF) mmol/L?"
+    back: "Give one additional unit of insulin\n\nThis is part of the insulin correction scale: 8 to (8+CF) = 1 unit, (8+CF) to (8+2CF) = 2 units, etc."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, correction, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "How does the pathophysiology of DKA differ from HHS?"
+    back: "DKA: complete insulin deficiency with ketogenesis (occurs in T1DM); HHS: partial/relative insulin deficiency prevents ketosis (occurs in T2DM)\n\nA small amount of insulin in HHS prevents lipolysis and ketone production while still allowing some glucose utilization."
+    difficulty: hard
+    tags: [endocrinology, diabetes, dka, hhs, pathophysiology, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the treatment approach for DKA regarding potassium replacement?"
+    back: "If serum K+ <3.3 mmol/L, give 40 mEq/L K+ replacement and hold insulin until [K+] ≥3.3 mmol/L\n\nInsulin drives K+ into cells, potentially causing life-threatening hypokalemia if K+ is not replaced first."
+    difficulty: medium
+    tags: [endocrinology, diabetes, dka, potassium, treatment, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the typical insulin requirement (TDI) for most T2DM patients to achieve target?"
+    back: "40-50 U/day (no maximum dose)\n\nThis applies to basal, basal-bolus, and premixed insulin regimens."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, t2dm, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Which oral antihyperglycemic is typically continued when adding bolus insulin?"
+    back: "Metformin\n\nInsulin secretagogues (sulfonylureas) are typically stopped when bolus insulin is added to avoid hypoglycemia."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, metformin, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What causes low HDL secondary to endocrine disorders?"
+    back: "Obesity/metabolic syndrome and diabetes mellitus\n\nLow HDL is part of the metabolic syndrome phenotype and improves with weight loss and glycemic control."
+    difficulty: easy
+    tags: [low HDL, metabolic syndrome, diabetes, toronto-notes, pages-0311-0312-0313-0314-0315-0316-0317-0318-0319-0320]
+  - front: "What is the starting dose for basal insulin in T2DM according to Diabetes Canada 2018 guidelines?"
+    back: "10 units at bedtime (lower for lean patients <50 kg)\n\nStarting dose is 10U at bedtime, titrated by 1U every night until fasting BG reaches 4-7 mmol/L target."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, T2DM, treatment, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the target fasting blood glucose level for insulin titration in T2DM?"
+    back: "4-7 mmol/L\n\nTarget fasting BG is 4-7 mmol/L. Dose is increased by 1U nightly until target is achieved."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, target, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "How is the correction factor (CF) calculated for insulin dosing?"
+    back: "CF = 100/Total Daily Dose (TDD)\n\nCorrection factor represents the change in blood glucose (mmol/L) per unit of insulin administered."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, calculation, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the typical total daily insulin (TDI) requirement for basal-bolus regimen?"
+    back: "0.3-0.5 U/kg\n\nTDI of 0.3-0.5 U/kg is split: 40% basal insulin, 60% as prandial bolus divided before each meal."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, basal-bolus, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In a basal-bolus regimen, what percentage of TDI is allocated to basal vs prandial insulin?"
+    back: "40% basal, 60% prandial (bolus)\n\nBasal insulin is 40% of TDI to maintain fasting BG, while bolus (prandial) is 60% distributed before meals."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, basal-bolus, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What insulin is used in insulin pump therapy (CSII)?"
+    back: "Rapid-acting insulin analogues (aspart, glulisine, or lispro)\n\nCSII uses external battery-operated devices delivering continuous basal rapid-acting insulin through subcutaneous catheter."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin pump, CSII, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is a major risk of insulin pump therapy?"
+    back: "Diabetic ketoacidosis (DKA) if pump is disconnected or malfunctions\n\nRisk of DKA exists if the pump is inadvertently disconnected or malfunctions, interrupting insulin delivery."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin pump, CSII, DKA, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Which type of diabetes is DKA typically associated with?"
+    back: "Type 1 Diabetes Mellitus (T1DM)\n\nDKA usually occurs in T1DM due to absolute insulin deficiency, though it can occur in T2DM with stress."
+    difficulty: easy
+    tags: [endocrinology, diabetes, DKA, T1DM, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Which type of diabetes is HHS typically associated with?"
+    back: "Type 2 Diabetes Mellitus (T2DM)\n\nHHS occurs in T2DM, though it can occasionally occur in T1DM. Characterized by hyperglycemia without ketosis."
+    difficulty: easy
+    tags: [endocrinology, diabetes, HHS, T2DM, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Why does ketosis typically not develop in HHS?"
+    back: "Presence of a small amount of insulin inhibits lipolysis\n\nPartial or relative insulin deficiency in HHS prevents ketogenesis by inhibiting lipolysis, unlike absolute insulin deficiency in DKA."
+    difficulty: medium
+    tags: [endocrinology, diabetes, HHS, pathophysiology, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the K+ replacement threshold in DKA treatment?"
+    back: "Hold insulin and give 40 mEq/L K+ if serum K+ <3.3 mmol/L\n\nIf serum potassium is <3.3 mmol/L, give potassium replacement and hold insulin until K+ is ≥3.3 mmol/L."
+    difficulty: medium
+    tags: [endocrinology, diabetes, DKA, treatment, electrolytes, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the target postprandial blood glucose level for bolus insulin adjustment?"
+    back: "5-10 mmol/L\n\nBolus insulin is adjusted to achieve postprandial BG levels of 5-10 mmol/L, while preprandial BG for subsequent meals should be 4-7 mmol/L."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, target, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "When using correction factor dosing, what is the insulin dose for blood glucose between 8 and (8+CF)?"
+    back: "Give 1 additional unit\n\nFor BG between 8 to (8+CF), give one additional unit of rapid-acting insulin on top of the meal bolus."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, correction factor, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What diabetes medication is typically continued when starting basal insulin?"
+    back: "Metformin\n\nMetformin is typically continued as it improves insulin sensitivity and has low hypoglycemia risk, while secretagogues may be stopped."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, metformin, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the typical maximum dose of basal insulin needed to achieve target?"
+    back: "40-50 units/day (no maximum dose)\n\nMost patients need 40-50 U/day to achieve target, but there is no maximum dose - doses can be much higher if needed."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the main difference in insulin therapy between DKA and HHS?"
+    back: "DKA requires more aggressive insulin therapy to resolve ketoacidosis; HHS has less severe K+ depletion\n\nIn DKA, insulin is critical to resolve acidosis (not just hyperglycemia), while HHS patients have less severe potassium depletion."
+    difficulty: hard
+    tags: [endocrinology, diabetes, DKA, HHS, treatment, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the initial test for evaluating suspected hypopituitarism with low 8am cortisol?"
+    back: "Cosyntropin stimulation test; if equivocal, proceed to insulin tolerance test\n\nThe insulin tolerance test checks both cortisol and GH reserve by inducing hypoglycemia to stimulate hormone release."
+    difficulty: hard
+    tags: [pituitary, diagnosis, laboratory, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What does the insulin tolerance test evaluate?"
+    back: "The pituitary's ability to release GH and cortisol in response to hypoglycemia\n\nInsulin-induced hypoglycemia should stimulate increased GH and cortisol. A normal response indicates intact pituitary function."
+    difficulty: medium
+    tags: [pituitary, insulin tolerance test, GH, cortisol, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the target fasting blood glucose range for insulin titration?"
+    back: "4-7 mmol/L\n\nThis is the target range for fasting BG when titrating basal insulin in T2DM patients."
+    difficulty: easy
+    tags: [insulin, target, blood glucose, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "How is Total Daily Insulin (TDI) calculated in basal-bolus regimen?"
+    back: "0.3-0.5 U/kg\n\nTDI is calculated as 0.3-0.5 units per kilogram of body weight, with 40% as basal and 60% as bolus."
+    difficulty: medium
+    tags: [insulin, TDI, basal-bolus, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In a basal-bolus regimen, what percentage of TDI is allocated to basal insulin?"
+    back: "40% of TDI\n\nBasal insulin comprises 40% of total daily insulin in a standard basal-bolus regimen."
+    difficulty: easy
+    tags: [insulin, basal, TDI, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In a basal-bolus regimen, what percentage of TDI is allocated to bolus (prandial) insulin?"
+    back: "60% of TDI (20% per meal)\n\nBolus insulin is 60% of TDI, typically divided as 10% of TDI (or 10U per meal from 50U example) before each meal."
+    difficulty: easy
+    tags: [insulin, bolus, prandial, TDI, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the correction factor (CF) formula for insulin?"
+    back: "CF = 100/Total Daily Dose (TDD)\n\nThe correction factor represents the change in blood glucose (mmol/L) per unit of insulin administered."
+    difficulty: medium
+    tags: [insulin, correction factor, sliding scale, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "For blood glucose 8-10 mmol/L with CF=2, how many additional units of insulin are given?"
+    back: "1 additional unit\n\nBG between 8 and (8+CF) = give 1 additional unit. With CF=2, range is 8-10 mmol/L."
+    difficulty: medium
+    tags: [insulin, sliding scale, correction, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "For blood glucose 10-12 mmol/L with CF=2, how many additional units of insulin are given?"
+    back: "2 additional units\n\nBG between (8+CF) and (8+2CF) = give 2 additional units. With CF=2, range is 10-12 mmol/L."
+    difficulty: medium
+    tags: [insulin, sliding scale, correction, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "When should insulin secretagogues be stopped in basal-bolus regimen?"
+    back: "When bolus (prandial) insulin is added\n\nInsulin secretagogues are typically stopped when bolus insulin is initiated, while metformin is continued."
+    difficulty: easy
+    tags: [insulin, secretagogues, metformin, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the major risk if insulin pump is disconnected or malfunctions?"
+    back: "Diabetic Ketoacidosis (DKA)\n\nRisk of DKA exists if pump is inadvertently disconnected or malfunctions due to lack of basal insulin delivery."
+    difficulty: easy
+    tags: [insulin pump, CSII, DKA, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "DKA typically occurs in which type of diabetes?"
+    back: "Type 1 Diabetes Mellitus (T1DM)\n\nDKA usually occurs in T1DM due to absolute insulin deficiency, but can also occur in T2DM under stress."
+    difficulty: easy
+    tags: [DKA, T1DM, pathophysiology, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "HHS typically occurs in which type of diabetes?"
+    back: "Type 2 Diabetes Mellitus (T2DM)\n\nHyperosmolar Hyperglycemic State occurs predominantly in T2DM, though can rarely occur in T1DM."
+    difficulty: easy
+    tags: [HHS, T2DM, pathophysiology, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the primary pathophysiological mechanism of DKA?"
+    back: "Insulin deficiency with increased counterregulatory hormones\n\nLack of insulin + elevated glucagon, cortisol, catecholamines, and GH leads to hyperglycemia, lipolysis, and ketone production."
+    difficulty: medium
+    tags: [DKA, pathophysiology, ketosis, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Why is ketosis present in DKA but not HHS?"
+    back: "HHS has partial/relative insulin deficiency that inhibits lipolysis\n\nThe small amount of insulin present in HHS prevents ketogenesis by inhibiting lipolysis, unlike the absolute insulin deficiency in DKA."
+    difficulty: hard
+    tags: [DKA, HHS, ketosis, pathophysiology, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Why is K+ typically normal or elevated in DKA despite total body depletion?"
+    back: "Shift from ICF to ECF due to lack of insulin and increased plasma osmolality\n\nInsulin deficiency and hyperosmolality cause K+ to shift from intracellular to extracellular space, masking total body depletion."
+    difficulty: hard
+    tags: [DKA, potassium, electrolytes, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the test of choice for confirming central adrenal insufficiency?"
+    back: "Insulin tolerance test - insulin-induced hypoglycemia should stimulate increased GH and cortisol\n\nIf 8am cortisol is low/borderline, the insulin tolerance test assesses the hypothalamic-pituitary-adrenal axis response to stress."
+    difficulty: hard
+    tags: [pituitary, adrenal, ACTH, diagnosis, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the gold standard test for evaluating ACTH and GH reserve in suspected hypopituitarism?"
+    back: "Insulin tolerance test (ITT)\n\nInsulin-induced hypoglycemia stimulates ACTH and GH release. A normal response is an increase in both cortisol and GH. Contraindicated in patients with seizures or heart disease."
+    difficulty: hard
+    tags: [pituitary, diagnosis, endocrinology, toronto-notes, pages-0331-0332-0333-0334-0335-0336-0337-0338-0339-0340]
+  - front: "What is the fasting blood glucose target for patients on basal insulin therapy?"
+    back: "4-7 mmol/L\n\nThis target is used to guide titration of basal insulin doses in T2DM management."
+    difficulty: easy
+    tags: [insulin, diabetes, target, fasting glucose, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "How is Total Daily Insulin (TDI) calculated for a basal-bolus regimen?"
+    back: "0.3-0.5 U/kg of body weight\n\nFor a 100kg patient, TDI would be 30-50 units total, distributed as 40% basal and 60% bolus (prandial)."
+    difficulty: medium
+    tags: [insulin, basal-bolus, TDI, dosing calculation, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In a basal-bolus insulin regimen, what percentage of TDI is given as basal vs bolus insulin?"
+    back: "40% basal, 60% bolus (prandial)\n\nBasal insulin provides background coverage while bolus insulin covers meals. For a 100kg patient with TDI of 50U: 20U basal, 30U bolus (10U per meal)."
+    difficulty: easy
+    tags: [insulin, basal-bolus, dosing, TDI, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the correction factor formula for insulin?"
+    back: "CF = 100 / Total Daily Dose (TDD)\n\nThe correction factor represents the change in blood glucose (mmol/L) per unit of insulin. For example, if TDD is 50U, CF = 2 mmol/L per unit."
+    difficulty: medium
+    tags: [insulin, correction factor, bolus, sliding scale, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What are the postprandial and preprandial blood glucose targets for bolus insulin adjustment?"
+    back: "Postprandial: 5-10 mmol/L; Preprandial for subsequent meals: 4-7 mmol/L\n\nBolus insulin is titrated to achieve these targets, separate from fasting glucose targets for basal insulin."
+    difficulty: easy
+    tags: [insulin, bolus, postprandial, targets, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What type of diabetes is Diabetic Ketoacidosis (DKA) most commonly associated with?"
+    back: "Type 1 Diabetes Mellitus (T1DM)\n\nDKA occurs due to absolute insulin deficiency. It can also occur in T2DM under stress, but T1DM is the classic association."
+    difficulty: easy
+    tags: [DKA, diabetes, T1DM, acute complication, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What type of diabetes is Hyperosmolar Hyperglycemic State (HHS) most commonly associated with?"
+    back: "Type 2 Diabetes Mellitus (T2DM)\n\nHHS occurs in T2DM due to partial insulin deficiency sufficient to prevent ketosis but inadequate to control hyperglycemia."
+    difficulty: easy
+    tags: [HHS, diabetes, T2DM, acute complication, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the key pathophysiological difference between DKA and HHS?"
+    back: "DKA has absolute insulin deficiency leading to ketosis; HHS has partial/relative insulin deficiency that prevents ketosis\n\nThe small amount of insulin in HHS inhibits lipolysis and ketone production, preventing metabolic acidosis despite extreme hyperglycemia."
+    difficulty: hard
+    tags: [DKA, HHS, pathophysiology, ketosis, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "Why may serum potassium be normal or elevated in DKA despite total body potassium depletion?"
+    back: "Insulin deficiency and hyperosmolality cause potassium shift from ICF to ECF\n\nTotal body K+ is depleted due to osmotic diuresis, but serum levels appear normal or high due to extracellular shift."
+    difficulty: hard
+    tags: [DKA, potassium, electrolytes, pathophysiology, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the potassium replacement threshold in DKA treatment?"
+    back: "If serum K+ <3.3 mmol/L, give 40 mEq/L K+ and hold insulin until K+ ≥3.3 mmol/L\n\nInsulin drives K+ intracellularly, so hypokalemia must be corrected before starting insulin to prevent life-threatening arrhythmias."
+    difficulty: hard
+    tags: [DKA, treatment, potassium, electrolytes, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What are the advantages of insulin pump therapy (CSII)?"
+    back: "Improved quality of life and flexibility\n\nCSII uses a battery-operated device delivering continuous basal rapid-acting insulin with mealtime boluses programmed by the patient."
+    difficulty: easy
+    tags: [insulin pump, CSII, therapy, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "In insulin titration, if fasting hypoglycemia occurs, what adjustment should be made?"
+    back: "Reduce the dose of bedtime basal insulin\n\nFasting hypoglycemia suggests overnight basal insulin is too high. Daytime hypoglycemia may require reducing oral antihyperglycemic agents, especially secretagogues."
+    difficulty: easy
+    tags: [insulin, titration, hypoglycemia, adjustment, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What is the recommended approach when adding bolus insulin to a basal-bolus regimen?"
+    back: "Stop insulin secretagogues; continue metformin\n\nSecretagogues (sulfonylureas) increase hypoglycemia risk when combined with bolus insulin. Metformin can be continued as it does not cause hypoglycemia."
+    difficulty: medium
+    tags: [insulin, basal-bolus, metformin, secretagogues, toronto-notes, pages-0321-0322-0323-0324-0325-0326-0327-0328-0329-0330]
+  - front: "What are the physiological effects of cortisol?"
+    back: "Cortisol stimulates hepatic glucose production (gluconeogenesis), increases insulin resistance, increases protein catabolism, stimulates leukocytosis and lymphopenia, increases cardiac output, vascular tone, and Na+ retention, increases PTH release and urine calcium excretion\n\nCortisol also supports blood pressure, vasomotor tone, behavioral regulation, and immunosuppression."
+    difficulty: medium
+    tags: [cortisol, glucocorticoid, endocrinology, physiology, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "List the stimulatory effects of glucocorticoids"
+    back: "Stimulate hepatic glucose production (gluconeogenesis), increase insulin resistance in peripheral tissues, increase protein catabolism, stimulate leukocytosis and lymphopenia, increase cardiac output, vascular tone, Na+ retention, increase PTH release and urine calcium excretion\n\nGlucocorticoids have widespread metabolic effects that increase available energy substrates."
+    difficulty: medium
+    tags: [endocrinology, glucocorticoids, cortisol, physiology, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What are the effects of cortisol on glucose metabolism?"
+    back: "Stimulates hepatic glucose production (gluconeogenesis) and increases insulin resistance in peripheral tissues"
+    difficulty: easy
+    tags: [cortisol, endocrinology, metabolism, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What effect does cortisol have on glucose metabolism?"
+    back: "Stimulates hepatic glucose production (gluconeogenesis) and increases insulin resistance in peripheral tissues"
+    difficulty: easy
+    tags: [cortisol, glucose, endocrinology, physiology, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What are the stimulatory effects of glucocorticoids?"
+    back: "Stimulate hepatic glucose production (gluconeogenesis), increase insulin resistance, increase protein catabolism, stimulate leukocytosis and lymphopenia, increase cardiac output, vascular tone, Na+ retention, increase PTH release and urine calcium excretion\n\nGlucocorticoids also stimulate bone resorption and inhibit bone formation."
+    difficulty: medium
+    tags: [glucocorticoids, cortisol, endocrinology, physiology, toronto-notes, pages-0341-0342-0343-0344-0345-0346-0347-0348-0349-0350]
+  - front: "What was the primary outcome of the 4T Trial comparing insulin regimens in T2DM?"
+    back: "Three-year HbA1c levels\n\nThe 4T Trial compared thrice-daily prandial, twice-daily biphasic, and once-daily basal insulin regimens in 708 T2DM patients over 3 years."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, clinical-trials, T2DM, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was a major adverse effect of intensive insulin therapy in the DCCT?"
+    back: "Increased severe hypoglycemia\n\nIntensive therapy was associated with an increase in the occurrence of severe hypoglycemia compared to conventional therapy."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T1DM, clinical-trials, DCCT, hypoglycemia, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In UKPDS 34, how did metformin compare to sulfonylureas/insulin in overweight T2DM?"
+    back: "Metformin was superior for diabetes-related endpoints, all-cause mortality, and stroke\n\nMetformin showed risk reductions of 32% for any diabetes-related endpoint (P=0.002), 42% for diabetes-related death (P=0.017), and 36% for all-cause mortality (P=0.011)."
+    difficulty: hard
+    tags: [endocrinology, diabetes, T2DM, clinical-trials, UKPDS, metformin, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "Why is metformin considered first-line therapy for overweight T2DM per UKPDS 34?"
+    back: "Reduces diabetes-related endpoints with less weight gain and hypoglycemia than sulfonylureas/insulin\n\nMetformin decreases risk of diabetes-related endpoints in overweight patients with less weight gain and fewer hypoglycemic episodes compared to sulfonylureas or insulin."
+    difficulty: medium
+    tags: [endocrinology, diabetes, T2DM, clinical-trials, UKPDS, metformin, treatment, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "Which insulin regimen had the highest withdrawal rate in the 4T Trial?"
+    back: "Prandial insulin (11.7%)\n\nThere was a significant difference in withdrawal rates: 5.1% biphasic, 11.7% prandial, and 8.5% basal regimens (P=0.04)."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, clinical-trials, T2DM, 4T, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What percentage of patients reached HbA1c <7.0% in the biphasic arm vs other arms in 4T Trial?"
+    back: "Smaller proportion in the biphasic arm\n\nA smaller proportion of patients reached HbA1c <6.5% or <7.0% in the biphasic arm compared to prandial and basal arms."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, clinical-trials, T2DM, 4T, HbA1c, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In UKPDS 34, what was the HbA1c difference between metformin and conventional therapy?"
+    back: "7.4% vs 8.0% (0.6% lower with metformin)\n\nPatients allocated to metformin had reduced HbA1c of 7.4% compared to 8.0% in the conventional therapy group."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T2DM, clinical-trials, UKPDS, metformin, HbA1c, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In UKPDS 34, how did metformin compare to sulfonylureas/insulin for intensive glucose control in overweight T2DM patients?"
+    back: "Metformin was superior to sulfonylureas or insulin for any diabetes-related endpoint (p=0.0034), all-cause mortality (p=0.021), and stroke (p=0.032)\n\nUKPDS 34 showed metformin reduced diabetes-related endpoints by 32%, diabetes-related death by 42%, and all-cause mortality by 36% in overweight T2DM patients, with less weight gain and hypoglycemia than sulfonylureas/insulin."
+    difficulty: hard
+    tags: [diabetes, T2DM, metformin, UKPDS, first-line-therapy, clinical-trial, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "Which insulin regimen in the 4T Trial had the highest rate of patient withdrawal?"
+    back: "Prandial insulin aspart (11.7% withdrawal rate)\n\nThe 4T Trial showed significant differences in withdrawal rates: 5.1% biphasic, 11.7% prandial, and 8.5% basal regimens (p=0.04)."
+    difficulty: hard
+    tags: [diabetes, T2DM, insulin, 4T-trial, clinical-trial, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "According to UKPDS 34, what were the HbA1c levels achieved with metformin vs conventional therapy?"
+    back: "Metformin: 7.4%; Conventional: 8.0%\n\nPatients randomized to metformin achieved lower HbA1c (7.4% vs 8.0%) along with reduced risk of diabetes-related complications."
+    difficulty: medium
+    tags: [diabetes, T2DM, metformin, HbA1c, UKPDS, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In the 4T Trial comparing insulin regimens in T2DM, which insulin regimen provided the best glycemic control over 3 years?"
+    back: "Basal insulin detemir - it had better HbA1c control, fewer hypoglycemic events, and less weight gain compared to prandial and biphasic regimens\n\nThe 4T Trial (NEJM 2009) randomized 708 T2DM patients to thrice-daily prandial, twice-daily biphasic, or once-daily basal insulin. Basal had the least weight gain and fewest severe hypoglycemic events."
+    difficulty: medium
+    tags: [diabetes, insulin, clinical-trials, endocrinology, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In UKPDS 34, how did metformin compare to sulfonylurea or insulin for intensive glucose control in overweight T2DM?"
+    back: "Metformin was superior - it reduced risk of any diabetes-related endpoint by 32% (P=0.002), diabetes-related death by 42% (P=0.017), and all-cause mortality by 36% (P=0.011), with less weight gain and hypoglycemia\n\nUKPDS 34 (Lancet 1998) showed metformin is preferred first-line intensive therapy for overweight T2DM patients, with better outcomes than sulfonylureas or insulin."
+    difficulty: hard
+    tags: [diabetes-type-2, metformin, sulfonylurea, clinical-trials, endocrinology, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was unique about the 4T Trial's patient population regarding prior therapy?"
+    back: "Patients were on maximal metformin and sulfonylurea therapy, not on insulin or thiazolidinedione therapy before randomization\n\nThe 4T Trial enrolled 708 T2DM patients failing oral therapy to compare different insulin intensification strategies."
+    difficulty: easy
+    tags: [diabetes, insulin, clinical-trials, endocrinology, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In the DCCT, what were the two treatment arms compared?"
+    back: "Intensive therapy: 3+ daily insulin injections or insulin pump with BG monitoring QID and strict targets; Conventional therapy: 1-2 insulin injections daily with daily BG monitoring\n\nThe DCCT (NEJM 1993) investigated whether maintaining normal blood glucose reduces complications in T1DM."
+    difficulty: easy
+    tags: [diabetes-type-1, insulin-therapy, clinical-trials, endocrinology, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "Why is metformin considered first-line therapy for overweight T2DM according to UKPDS 34?"
+    back: "It decreases risk of diabetes-related endpoints with less weight gain and hypoglycemia than sulfonylureas or insulin\n\nMetformin was superior to sulfonylureas or insulin for any diabetes-related endpoint (P=0.0034), all-cause mortality (P=0.021), and stroke (P=0.032)."
+    difficulty: hard
+    tags: [diabetes, t2dm, metformin, first-line, clinical-trials, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was the HbA1c target in the intensive glucose control arms of UKPDS?"
+    back: "FPG <6 mmol/L\n\nBoth UKPDS 33 and UKPDS 34 used FPG <6 mmol/L as the target for intensive glucose control, compared to conventional target of <15 mmol/L without symptoms."
+    difficulty: easy
+    tags: [diabetes, t2dm, glucose-targets, fpg, clinical-trials, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In overweight T2DM patients, how does metformin compare to sulfonylureas/insulin for diabetes-related endpoints?"
+    back: "Metformin was superior - 32% risk reduction for any diabetes-related endpoint, 42% for diabetes-related death, 36% for all-cause mortality\n\nUKPDS 34 showed metformin in overweight T2DM patients had better outcomes than sulfonylureas/insulin with less weight gain and hypoglycemia."
+    difficulty: hard
+    tags: [T2DM, metformin, UKPDS, overweight, first-line therapy, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What did UKPDS 33 find about intensive glucose control in newly diagnosed T2DM?"
+    back: "Intensive therapy with sulfonylurea or insulin reduced risk of any diabetes-related endpoint by 12% (P=0.029) and improved HbA1c, but did not significantly reduce diabetes-related death (10%, P=0.34) or all-cause mortality (6%, P=0.44).\n\nUKPDS 33 randomized 3867 newly diagnosed T2DM patients to intensive treatment (target FPG <6 mmol/L) vs. conventional treatment (target FPG <15 mmol/L). Benefits were primarily microvascular, not macrovascular."
+    difficulty: hard
+    tags: [diabetes, T2DM, intensive-therapy, sulfonylurea, clinical-trials, UKPDS, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "How did metformin compare to sulfonylureas and insulin in overweight T2DM patients (UKPDS 34)?"
+    back: "Metformin was superior to sulfonylureas and insulin for any diabetes-related endpoint (P=0.0034), all-cause mortality (P=0.021), and stroke (P=0.032), with less weight gain and hypoglycemia.\n\nUKPDS 34 randomized 753 overweight T2DM patients to metformin vs. conventional therapy. Metformin reduced HbA1c (7.4% vs 8.0%), diabetes-related endpoints by 32% (P=0.002), diabetes-related death by 42% (P=0.017), and all-cause mortality by 36% (P=0.011)."
+    difficulty: hard
+    tags: [diabetes, T2DM, metformin, first-line-therapy, clinical-trials, UKPDS, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was the primary outcome measure in the 4T trial?"
+    back: "Three-year HbA1c levels\n\nThe 4T Trial studied three insulin regimens over 3 years in 708 T2DM patients, with HbA1c as the primary outcome measure comparing prandial, biphasic, and basal insulin regimens."
+    difficulty: easy
+    tags: [diabetes, insulin, HbA1c, clinical-trials, T2DM, 4T-trial, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was unique about the UKPDS 34 findings regarding different intensive therapy regimens?"
+    back: "Among intensive glucose control regimens, metformin was superior to sulfonylureas or insulin for any diabetes-related endpoint, all-cause mortality, and stroke\n\nUKPDS 34 found that metformin provided better outcomes than sulfonylurea or insulin-based intensive therapy in overweight T2DM patients, with less weight gain and hypoglycemia."
+    difficulty: hard
+    tags: [diabetes, T2DM, metformin, sulfonylurea, insulin, clinical-trials, UKPDS, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In the 4T trial, which insulin regimen had the most serious adverse effects?"
+    back: "Biphasic insulin (insulin aspart) had the most serious adverse effects\n\nThe 4T trial found that the biphasic insulin arm had the most serious adverse effects, while the basal arm had the fewest severe hypoglycemic events per patient year."
+    difficulty: medium
+    tags: [diabetes, insulin, biphasic-insulin, adverse-effects, clinical-trials, T2DM, 4T-trial, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What proportion of patients reached HbA1c <6.5% or <7.0% in the biphasic arm of the 4T trial?"
+    back: "A smaller proportion of patients reached HbA1c <6.5% or <7.0% in the biphasic arm compared to other arms\n\nThe 4T trial found that while there were no significant differences in median HbA1c between all three arms from years 1-3, the biphasic arm had a smaller proportion of patients achieving target HbA1c levels."
+    difficulty: medium
+    tags: [diabetes, insulin, HbA1c, clinical-trials, T2DM, 4T-trial, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was unique about metformin in UKPDS 34 compared to sulfonylureas/insulin?"
+    back: "Metformin reduced risk of diabetes-related endpoints with less weight gain and hypoglycemia\n\nUKPDS 34 showed metformin was superior to sulfonylureas or insulin for any diabetes-related endpoint, all-cause mortality, and stroke in overweight T2DM patients."
+    difficulty: hard
+    tags: [Diabetes, T2DM, Clinical Trial, UKPDS, Metformin, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "Why is metformin preferred over sulfonylureas or insulin for intensive glucose control in overweight T2DM?"
+    back: "Metformin reduced diabetes-related endpoints by 32% (P=0.002), diabetes-related death by 42% (P=0.017), and all-cause mortality by 36% (P=0.011), with less weight gain and hypoglycemia than sulfonylureas/insulin.\n\nUKPDS 34 (Lancet 1998) showed metformin was superior to sulfonylureas or insulin for any diabetes-related endpoint (P=0.0034), all-cause mortality (P=0.021), and stroke (P=0.032) in overweight T2DM patients."
+    difficulty: hard
+    tags: [diabetes, T2DM, UKPDS, metformin, first-line-therapy, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In the 4T Trial, which insulin regimen had the highest rate of patient withdrawal?"
+    back: "Prandial insulin aspart had the highest withdrawal rate at 11.7%, compared to 8.5% for basal and 5.1% for biphasic (P=0.4).\n\nThe 4T Trial showed significant differences in withdrawal rates (P=0.04), with prandial regimen having the highest dropout rate, possibly due to the burden of thrice-daily injections."
+    difficulty: medium
+    tags: [diabetes, insulin, clinical-trial, T2DM, 4T-trial, adherence, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "Define Diabetes Mellitus according to Toronto Notes 2025"
+    back: "A metabolic disorder characterized by the presence of hyperglycemia due to defective insulin secretion, defective insulin action, or both\n\nDM is fundamentally a disorder of glucose metabolism due to inadequate insulin action or secretion."
+    difficulty: easy
+    tags: [endocrinology, diabetes, definition, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the major complications of diabetes mellitus?"
+    back: "Leading cause of new-onset blindness and renal dysfunction\n\nDiabetic retinopathy is the leading cause of blindness, and diabetic nephropathy is a major cause of renal failure."
+    difficulty: easy
+    tags: [endocrinology, diabetes, complications, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the recommended screening for T2DM in average-risk adults?"
+    back: "FBG or HbA1C in everyone ≥40 years old every 3 years\n\nStandard screening recommendation is to test adults age 40+ every 3 years using fasting blood glucose or HbA1c."
+    difficulty: easy
+    tags: [endocrinology, diabetes, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the advantage of HbA1C over fasting blood glucose for diabetes diagnosis?"
+    back: "Better predictor of CVD than FBG or 2-hour OGTT; reflects long-term glucose; convenient (any time of day); slow day-to-day variability\n\nHbA1c provides a better measure of chronic glucose exposure and cardiovascular risk prediction."
+    difficulty: medium
+    tags: [endocrinology, diabetes, diagnosis, HbA1c, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the optimal HbA1C target for diabetes management?"
+    back: "Usually <7%\n\nOptimal glycemic control is generally defined as HbA1c below 7% to reduce complications."
+    difficulty: easy
+    tags: [endocrinology, diabetes, management, targets, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the TIDM insulin requirement estimate?"
+    back: "0.5-0.7 units/kg/day\n\nType 1 diabetes typically requires approximately 0.5-0.7 units of insulin per kg body weight daily."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the T2DM insulin requirement estimate?"
+    back: "0.3 units/kg/day\n\nType 2 diabetes typically requires lower insulin doses (approximately 0.3 units/kg/day) due to residual insulin secretion."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What non-pharmacological interventions can reduce HbA1C?"
+    back: "Diet and exercise can reduce HbA1C by 1-2%\n\nLifestyle modifications including diet and physical activity have significant impact on glycemic control."
+    difficulty: easy
+    tags: [endocrinology, diabetes, management, lifestyle, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the primary conclusion of the 4T Trial regarding insulin regimens in T2DM?"
+    back: "Basal insulin (detemir) provides the best glycemic control over 3 years with better HbA1c, fewer hypoglycemic events, and less weight gain compared to prandial and biphasic insulin\n\nThe 4T Trial compared three insulin regimens in 708 T2DM patients on maximal metformin and sulfonylurea therapy over 3 years"
+    difficulty: medium
+    tags: [diabetes, insulin, clinical-trials, treatment, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was the main adverse effect of intensive insulin therapy in the DCCT?"
+    back: "Severe hypoglycemia\n\nWhile intensive therapy significantly reduced microvascular complications in T1DM, it was associated with an increased occurrence of severe hypoglycemic events"
+    difficulty: easy
+    tags: [type-1-diabetes, hypoglycemia, intensive-therapy, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "Why is metformin recommended as first-line therapy for overweight T2DM patients?"
+    back: "It decreases risk of diabetes-related endpoints with less weight gain and fewer hypoglycemic episodes compared to sulfonylureas or insulin\n\nUKPDS 34 showed metformin was superior to sulfonylureas/insulin for any diabetes-related endpoint (P=0.0034), all-cause mortality (P=0.021), and stroke (P=0.032)"
+    difficulty: easy
+    tags: [type-2-diabetes, metformin, treatment-guidelines, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What was the difference in hypoglycemia rates between intensive and conventional therapy in UKPDS?"
+    back: "Intensive therapy (sulfonylurea or insulin) induced more hypoglycemic episodes than conventional therapy\n\nUKPDS 33 and 34 both demonstrated that intensive glucose control with sulfonylureas or insulin increased hypoglycemia risk compared to conventional treatment"
+    difficulty: easy
+    tags: [type-2-diabetes, hypoglycemia, intensive-therapy, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What is the approximate prevalence of diabetes mellitus in Canadians?"
+    back: "Up to 10%\n\nDiabetes is a major health concern in Canada, affecting approximately 10% of the population, with rising incidence due to obesity and sedentary lifestyle."
+    difficulty: easy
+    tags: [endocrinology, diabetes, epidemiology, Canada, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the complications of diabetes mellitus?"
+    back: "Blindness (leading cause of new-onset), renal dysfunction, CAD, CVD, PVD\n\nDiabetes causes both microvascular (retinopathy, nephropathy, neuropathy) and macrovascular (CAD, CVD, PVD) complications."
+    difficulty: easy
+    tags: [endocrinology, diabetes, complications, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "List 5 risk factors for Type 2 Diabetes Mellitus"
+    back: "First-degree relative with DM, age ≥40yr, obesity (especially abdominal), HTN, hyperlipidemia, CAD, vascular disease, prior gestational diabetes, macrosomic baby >4kg, PCOS, history of IGT or IFG, member of high-risk population (Indigenous, Hispanic, Asian, African descent), certain medications (glucocorticoids, atypical antipsychotics, HAART)\n\nT2DM has multiple modifiable and non-modifiable risk factors; screening should be individualized based on risk profile."
+    difficulty: medium
+    tags: [endocrinology, diabetes, risk factors, T2DM, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "List 3 risk factors for Type 1 Diabetes Mellitus"
+    back: "Personal or family history of autoimmune disease\n\nT1DM is an autoimmune condition characterized by destruction of pancreatic beta cells, often associated with other autoimmune disorders."
+    difficulty: easy
+    tags: [endocrinology, diabetes, risk factors, T1DM, autoimmune, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the screening test and frequency for T2DM in average-risk adults ≥40?"
+    back: "FBG or HbA1C every 3 years\n\nScreening should begin at age 40 for average-risk adults using FBG or HbA1C, with more frequent testing for higher-risk individuals."
+    difficulty: easy
+    tags: [endocrinology, diabetes, screening, prevention, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "Calculate the estimated total daily insulin requirement for a 70kg patient with T1DM"
+    back: "Approximately 35.5 units/day (0.5 × 70kg)\n\nThe starting estimate for total daily insulin is 0.5-0.7 units/kg/day for T1DM, divided between basal and bolus insulin."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, calculation, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "Calculate the estimated total daily insulin requirement for a 80kg patient with T2DM"
+    back: "Approximately 24 units/day (0.3 × 80kg)\n\nT2DM patients typically start at 0.3 units/kg/day as they often have residual insulin secretion."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, calculation, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What dietary modifications can reduce HbA1C?"
+    back: "Can reduce HbA1C by 1-2%\n\nMedical nutrition therapy is foundational in diabetes management and can significantly improve glycemic control."
+    difficulty: easy
+    tags: [endocrinology, diabetes, nutrition, diet, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the prevalence of diabetes mellitus in Canada?"
+    back: "Up to 10% of Canadians\n\nDiabetes is a major health concern affecting approximately 10% of the Canadian population."
+    difficulty: easy
+    tags: [endocrinology, diabetes, epidemiology, Canada, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "List the risk factors for Type 2 Diabetes Mellitus"
+    back: "First-degree relative with DM, age ≥40yr, obesity (especially abdominal), HTN, hyperlipidemia, CAD, vascular disease, prior gestational diabetes/macrosomic baby >4kg, PCOS, history of IGT or IFG, presence of DM complications, PCOS, acanthosis nigricans, psychiatric disorders, HIV, medications (glucocorticoids, atypical antipsychotics, HAART), high-risk ethnic background\n\nT2DM has multiple modifiable and non-modifiable risk factors."
+    difficulty: medium
+    tags: [endocrinology, diabetes, risk factors, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the risk factors for Type 1 Diabetes Mellitus?"
+    back: "Personal or family history of autoimmune disease\n\nT1DM is an autoimmune condition with strong association with other autoimmune diseases."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T1DM, risk factors, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the recommended screening for T2DM?"
+    back: "FBG or HbA1C in everyone ≥40 q3yr, or at high-risk using CANRISK calculator; more frequent/earlier testing if >1 risk factor present\n\nScreening recommendations allow for risk-stratified testing in high-risk individuals."
+    difficulty: medium
+    tags: [endocrinology, diabetes, screening, prevention, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the daily insulin requirement calculation for T1DM?"
+    back: "0.5-0.7 units/kg/day\n\nT1DM patients typically require 0.5-0.7 units/kg/day of total insulin."
+    difficulty: medium
+    tags: [endocrinology, diabetes, T1DM, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the daily insulin requirement calculation for T2DM?"
+    back: "0.3 units/kg/day\n\nT2DM patients typically require less insulin than T1DM patients."
+    difficulty: medium
+    tags: [endocrinology, diabetes, T2DM, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What dietary interventions can reduce HbA1C?"
+    back: "Can reduce HbA1C by 1-2%\n\nDietary modification is a cornerstone of diabetes management."
+    difficulty: easy
+    tags: [endocrinology, diabetes, nutrition, lifestyle, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What investigations are done for initial diabetes assessment?"
+    back: "FBG, HbA1C, fasting lipids, Cr, urine ACR, baseline ECG\n\nBaseline investigations establish the patient's metabolic status and guide treatment."
+    difficulty: medium
+    tags: [endocrinology, diabetes, diagnosis, investigations, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "Define Diabetes Mellitus"
+    back: "Metabolic disorder characterized by hyperglycemia due to defective insulin secretion, defective insulin action, or both\n\nDiabetes mellitus is a group of metabolic diseases characterized by chronic hyperglycemia."
+    difficulty: easy
+    tags: [diabetes, definition, endocrinology, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the recommended screening test for T2DM?"
+    back: "FBG (fasting blood glucose) or HbA1C in everyone ≥40 q3yr, or at high-risk using CANRISK calculator\n\nScreening should begin earlier and be more frequent with presence of multiple risk factors."
+    difficulty: easy
+    tags: [diabetes, T2DM, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "How much insulin is typically required for T1DM?"
+    back: "0.5-0.7 units/kg/day\n\nT1DM patients require insulin replacement; starting dose is approximately 0.5-0.7 units/kg/day."
+    difficulty: easy
+    tags: [diabetes, T1DM, insulin, pharmacology, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "How much insulin is typically required for T2DM?"
+    back: "0.3 units/kg/day\n\nT2DM patients typically require lower insulin doses compared to T1DM due to residual insulin secretion."
+    difficulty: easy
+    tags: [diabetes, T2DM, insulin, pharmacology, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "How often should HbA1C be monitored in diabetes?"
+    back: "Every 3 months\n\nRegular HbA1C monitoring assesses long-term glycemic control and treatment efficacy."
+    difficulty: easy
+    tags: [diabetes, monitoring, HbA1C, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What percentage of Canadians are affected by diabetes mellitus?"
+    back: "Up to 10%\n\nDiabetes is a major health concern affecting up to 10% of Canadians. The incidence of T2DM is rising due to obesity, sedentary lifestyle, and aging population."
+    difficulty: easy
+    tags: [endocrinology, diabetes, epidemiology, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the recommended screening test for Type 2 Diabetes?"
+    back: "FBG (Fasting Blood Glucose) or HbA1C in everyone ≥40 q3yr, or earlier if high-risk using CANRISK calculator\n\nScreening for T2DM should begin at age 40 every 3 years, or earlier and more frequently with additional risk factors."
+    difficulty: easy
+    tags: [endocrinology, diabetes, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the total daily insulin requirement for Type 1 Diabetes?"
+    back: "0.5-0.7 units/kg/day\n\nTotal insulin requirement for T1DM is approximately 0.5-0.7 units/kg/day (0.507 units/kg/d as per Toronto Notes)."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the total daily insulin requirement for Type 2 Diabetes?"
+    back: "0.3 units/kg/day\n\nTotal insulin requirement for T2DM is approximately 0.3 units/kg/day."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "How much can dietary changes reduce HbA1C in diabetes?"
+    back: "1-2%\n\nDietary modifications can reduce HbA1C by 1-2% in diabetic patients. Moderate weight loss (5%) also improves glycemic control."
+    difficulty: easy
+    tags: [endocrinology, diabetes, diet, management, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the leading cause of new-onset blindness in Canadian adults?"
+    back: "Diabetes Mellitus\n\nDiabetes is the leading cause of new-onset blindness and renal dysfunction in Canadian adults."
+    difficulty: easy
+    tags: [endocrinology, diabetes, complications, ophthalmology, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "Why is metformin considered first-line therapy for overweight patients with T2DM?"
+    back: "Metformin reduces HbA1c (7.4% vs 8.0%) and decreases risk of diabetes-related endpoints (32%, P=0.002), diabetes-related death (42%, P=0.017), and all-cause mortality (36%, P=0.011) with less weight gain and hypoglycemia than sulfonylureas or insulin.\n\nUKPDS 34 (n=753 overweight patients) showed metformin was superior to sulfonylureas/insulin for any diabetes-related endpoint (P=0.0034), all-cause mortality (P=0.021), and stroke (P=0.032)."
+    difficulty: hard
+    tags: [diabetes, T2DM, metformin, clinical-trials, UKPDS, first-line-therapy, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "In the DCCT, what was the major downside of intensive insulin therapy in T1DM?"
+    back: "Intensive therapy was associated with a significant increase in severe hypoglycemia episodes.\n\nWhile intensive treatment reduced microvascular complications, the trade-off was more frequent severe hypoglycemic events requiring assistance."
+    difficulty: medium
+    tags: [diabetes, T1DM, hypoglycemia, clinical-trials, DCCT, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What proportion of T2DM patients in the 4T Trial reached HbA1c targets <6.5% or <7.0%?"
+    back: "A smaller proportion of patients in the biphasic insulin arm reached HbA1c <6.5% or <7.0% compared to the other arms.\n\nThe 4T Trial compared three insulin regimens over 3 years and found the biphasic arm had the lowest proportion achieving glycemic targets."
+    difficulty: medium
+    tags: [diabetes, insulin, HbA1c, T2DM, clinical-trials, 4T-trial, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "Which intensive glucose control regimen was superior to sulfonylureas and insulin for stroke prevention in overweight T2DM?"
+    back: "Metformin was superior to sulfonylureas and insulin for stroke prevention (P=0.032) in overweight patients with T2DM.\n\nUKPDS 34 showed metformin had multiple advantages over sulfonylureas/insulin including reduced all-cause mortality (P=0.021) and stroke (P=0.032)."
+    difficulty: hard
+    tags: [diabetes, T2DM, metformin, stroke, clinical-trials, UKPDS, toronto-notes, pages-0371-0372-0373-0374-0375-0376-0377-0378-0379-0380]
+  - front: "What is the screening test for T2DM in adults ≥40 years?"
+    back: "FBG or HbA1c every 3 years\n\nScreening is recommended for everyone ≥40 q3 years, or earlier/more frequently with risk factors using the CANRISK calculator."
+    difficulty: easy
+    tags: [endocrinology, diabetes, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the daily insulin requirement estimate for T1DM?"
+    back: "0.5-0.7 units/kg/day\n\nT1DM typically requires 0.5-0.7 units/kg/day, while T2DM requires ~0.3 units/kg/day."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What percentage HbA1c reduction can diet alone achieve?"
+    back: "1-2%\n\nDietary modification can reduce HbA1c by 1-2%, and moderate weight loss (5%) improves glycemic control."
+    difficulty: easy
+    tags: [endocrinology, diabetes, lifestyle, diet, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "How often should HbA1c be monitored in diabetics?"
+    back: "Every 3 months (q3 months)\n\nHbA1c should be monitored every 3 months to assess long-term glycemic control."
+    difficulty: easy
+    tags: [endocrinology, diabetes, monitoring, HbA1c, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are high-risk populations for Type 2 Diabetes?"
+    back: "Indigenous peoples, African, Arab, Asian, Hispanic, or South Asian descent\n\nCertain ethnic groups have increased risk of T2DM and should be screened earlier and more frequently."
+    difficulty: easy
+    tags: [endocrinology, diabetes, epidemiology, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the typical daily insulin requirement for Type 1 DM?"
+    back: "0.5-0.7 units/kg/day\n\nT1DM typically requires approximately 0.5-0.7 units of insulin per kg of body weight daily."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the typical daily insulin requirement for Type 2 DM?"
+    back: "0.3 units/kg/day\n\nT2DM typically requires approximately 0.3 units of insulin per kg of body weight daily."
+    difficulty: easy
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "How much can diet reduce HbA1C in diabetes?"
+    back: "By 1-2%\n\nNutritional management can significantly improve glycemic control, reducing HbA1C by 1-2%."
+    difficulty: easy
+    tags: [endocrinology, diabetes, lifestyle, nutrition, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the recommended screening test and frequency for T2DM in average-risk individuals age ≥40?"
+    back: "FBG (Fasting Blood Glucose) or HbA1C every 3 years\n\nScreening is recommended every 3 years for average-risk adults age 40 and older."
+    difficulty: easy
+    tags: [endocrinology, diabetes, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "When is gestational diabetes mellitus screening performed?"
+    back: "Between 24-28 weeks gestation\n\nAll pregnant individuals should be screened for gestational diabetes between 24-28 weeks gestation."
+    difficulty: easy
+    tags: [obstetrics, endocrinology, gestational diabetes, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the estimated total insulin requirement for T1DM?"
+    back: "0.5-0.7 units/kg/day\n\nT1DM patients typically require approximately 0.5-0.7 units/kg/day of total insulin."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the estimated total insulin requirement for T2DM?"
+    back: "~0.3 units/kg/day\n\nT2DM patients typically require approximately 0.3 units/kg/day of total insulin."
+    difficulty: medium
+    tags: [endocrinology, diabetes, insulin, dosing, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What non-pharmacologic interventions can reduce HbA1C in diabetes?"
+    back: "Diet (can reduce HbA1C by 1-2%) and physical activity/exercise\n\nLifestyle modifications are foundational for diabetes management and can significantly improve glycemic control."
+    difficulty: easy
+    tags: [endocrinology, diabetes, lifestyle, treatment, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the screening recommendation for T2DM in average-risk individuals ≥40 years?"
+    back: "FBG or HbA1C every 3 years\n\nEveryone age 40 or older should be screened for diabetes every 3 years using fasting blood glucose or HbA1C."
+    difficulty: easy
+    tags: [endocrinology, diabetes, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "When should gestational diabetes mellitus screening occur?"
+    back: "Between 24-28 weeks gestation\n\nAll pregnant individuals should be screened for gestational diabetes between 24-28 weeks gestation."
+    difficulty: easy
+    tags: [obstetrics, diabetes, gestational diabetes, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the impact of diet on HbA1C in diabetes management?"
+    back: "Can reduce HbA1C by 1-2%\n\nDietary modifications can reduce HbA1C by 1-2% in diabetic patients."
+    difficulty: easy
+    tags: [endocrinology, diabetes, diet, treatment, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the risk factors for Type 2 Diabetes Mellitus?"
+    back: "First-degree relative with DM, age ≥40yr, obesity, HTN, hyperlipidemia, CAD, vascular disease, prior gestational diabetes, macrosomic baby >4kg, PCOS, IGT/IFG, certain ethnicities (Indigenous, African, Arab, Asian, Hispanic, South Asian)\n\nT2DM is associated with metabolic syndrome, genetic predisposition, and high-risk ethnic backgrounds."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T2DM, risk factors, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the estimated daily insulin requirement for Type 1 Diabetes?"
+    back: "0.5-0.7 units/kg/day\n\nT1DM patients typically require 0.5-0.7 units of insulin per kg of body weight daily."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T1DM, insulin, treatment, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the estimated daily insulin requirement for Type 2 Diabetes?"
+    back: "0.3 units/kg/day\n\nT2DM patients typically require lower insulin doses (0.3 units/kg/day) compared to T1DM."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T2DM, insulin, treatment, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "How often should HbA1C be monitored in diabetic patients?"
+    back: "Every 3 months (q3 months)\n\nHbA1C should be measured every 3 months to assess long-term glycemic control."
+    difficulty: easy
+    tags: [endocrinology, diabetes, monitoring, HbA1c, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the screening recommendation for T2DM?"
+    back: "FBG or HbA1C in everyone ≥40 q3yr, or at high-risk using CANRISK calculator; more frequent/earlier testing if >1 risk factor present\n\nEarly screening allows for prevention and early intervention of diabetes complications."
+    difficulty: medium
+    tags: [endocrinology, diabetes, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the initial insulin requirement calculation for T1DM?"
+    back: "0.5-0.7 units/kg/day\n\nT1DM patients require insulin replacement, typically starting at 0.5-0.7 units/kg/day."
+    difficulty: medium
+    tags: [endocrinology, diabetes, T1DM, insulin, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the initial insulin requirement calculation for T2DM?"
+    back: "0.3 units/kg/day\n\nT2DM patients typically start with lower insulin doses than T1DM due to residual insulin secretion."
+    difficulty: medium
+    tags: [endocrinology, diabetes, T2DM, insulin, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What should be included in the initial diabetes assessment?"
+    back: "History (symptoms of hyperglycemia, ketoacidosis, hypoglycemia), past medical history, family history, risk factors, medications, sexual function, lifestyle, physical exam (height, weight, BMI, BP, WC, fundoscopy, thyroid, cardiovascular, neurological), investigations (FBG, HbA1C, fasting lipids, Cr, urine ACR, ECG)\n\nComprehensive initial assessment establishes baseline and guides management."
+    difficulty: medium
+    tags: [endocrinology, diabetes, assessment, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What monitoring is required for diabetes patients?"
+    back: "HbA1C q2-4mo (q3mo if at goal), fasting lipid profile annually, random urine ACR and Cr annually, foot exam (10g monofilament), retinopathy screening annually, BP at each visit, influenza/pneumococcal vaccination\n\nRegular monitoring helps prevent and detect diabetes complications early."
+    difficulty: medium
+    tags: [endocrinology, diabetes, monitoring, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are major complications of diabetes mellitus?"
+    back: "Leading cause of new-onset blindness and renal dysfunction; Canadian adults with DM are twice as likely to die prematurely\n\nDiabetes causes significant microvascular (retinopathy, nephropathy) and macrovascular (CVD) complications."
+    difficulty: easy
+    tags: [endocrinology, diabetes, complications, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are risk factors for Type 1 Diabetes Mellitus?"
+    back: "Personal or family history of autoimmune disease\n\nT1DM is an autoimmune condition with strong association with other autoimmune disorders and family history."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T1DM, risk factors, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are risk factors for Type 2 Diabetes Mellitus?"
+    back: "First-degree relative with DM, age ≥40yr, obesity (especially abdominal), HTN, hyperlipidemia, CAD, vascular disease, prior gestational diabetes, macrosomic baby >4kg, PCOS, IGT or IFG, high-risk ethnicity, certain medications (glucocorticoids, atypical antipsychotics, HAART)\n\nT2DM has multiple modifiable and non-modifiable risk factors including metabolic syndrome components and genetic predisposition."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T2DM, risk factors, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the initial insulin dose calculation for Type 1 DM?"
+    back: "0.5-0.7 units/kg/day\n\nT1DM patients typically require approximately 0.5-0.7 units of insulin per kg body weight daily."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T1DM, insulin, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What is the initial insulin dose calculation for Type 2 DM?"
+    back: "0.3 units/kg/day\n\nT2DM patients typically start with lower insulin doses (~0.3 units/kg/day) due to residual insulin sensitivity."
+    difficulty: easy
+    tags: [endocrinology, diabetes, T2DM, insulin, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are the components of diabetes monitoring assessment?"
+    back: "Initial: FBG, HbA1c, fasting lipids, Cr, urine ACR, baseline ECG. Ongoing: HbA1c q3mo, fasting lipids annually, random urine ACR and Cr annually\n\nRegular monitoring helps assess glycemic control and detect complications early."
+    difficulty: medium
+    tags: [endocrinology, diabetes, monitoring, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What screening tests are recommended for T2DM?"
+    back: "FBG (fasting blood glucose) or HbA1C in everyone ≥40 q3yr, or at high-risk using CANRISK calculator\n\nScreening guidelines recommend testing adults ≥40 years every 3 years, with earlier/more frequent testing for high-risk individuals."
+    difficulty: easy
+    tags: [endocrinology, diabetes, screening, toronto-notes, pages-0401-0402-0403-0404-0405-0406-0407-0408-0409-0410]
+  - front: "What are causes of secondary achalasia?"
+    back: "Scleroderma and diabetes mellitus (DM)\n\nSecondary achalasia (pseudoachalasia) can result from systemic diseases like scleroderma affecting esophageal smooth muscle function."
+    difficulty: medium
+    tags: [achalasia, scleroderma, diabetes, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the causes of esophageal motor disorders?"
+    back: "Idiopathic, achalasia, scleroderma, diabetes mellitus, and distal esophageal spasm (DES)\n\nThese disorders present with dysphagia to solids, liquids, or both, sometimes with chest pain. Manometry is required for definitive diagnosis."
+    difficulty: medium
+    tags: [esophageal motor disorders, achalasia, scleroderma, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the patient-specific risk factors for surgical site infection?"
+    back: "Age, diabetes mellitus, steroids, immunosuppression, smoking, obesity, burns, malnutrition, other infections, traumatic wounds, radiation, and chemotherapy.\n\nThese patient factors impair wound healing and increase susceptibility to infection through various mechanisms including impaired immunity and tissue perfusion."
+    difficulty: easy
+    tags: [surgery, SSI, risk factors, toronto-notes, pages-0501-0502-0503-0504-0505-0506-0507-0508-0509-0510]
+  - front: "GLP-1 receptor agonists (liraglutide, semaglutide, dulaglutide) have demonstrated what cardiovascular benefit beyond glycemic control in T2DM patients?"
+    back: "Reduced major adverse cardiovascular events (MACE: CV death, non-fatal MI, non-fatal stroke) in high-risk T2DM patients\n\nMultiple trials (LEADER, SUSTAIN-6, REWIND, HARMONY-OUTCOMES) consistently showed GLP-1 receptor agonists reduce MACE in T2DM patients at high CV risk. Canadian Diabetes Association guidelines recommend GLP-1 RAs with proven CV benefit for T2DM patients with established CVD."
+    difficulty: medium
+    tags: [GLP-1, liraglutide, semaglutide, MACE, T2DM, cardiovascular]
+  - front: "CANVAS trial found canagliflozin (SGLT2 inhibitor) reduced cardiovascular events in T2DM but also increased risk of what serious adverse event?"
+    back: "Lower limb amputation (particularly at the toe/forefoot level)\n\nCANVAS (NEJM 2017) showed canagliflozin reduced MACE but doubled amputation risk (6.3 vs. 3.4 per 1000 patient-years). This risk appears to be a class effect but is most pronounced with canagliflozin. Canadian guidelines recommend caution in patients with peripheral artery disease or prior amputations."
+    difficulty: medium
+    tags: [CANVAS, canagliflozin, SGLT2 inhibitor, amputation, T2DM]
+  - front: "EMPA-REG OUTCOME demonstrated empagliflozin's benefit in T2DM with high CV risk. What was the notable finding regarding hospitalization for heart failure?"
+    back: "Empagliflozin significantly reduced hospitalization for heart failure and CV death, but did not significantly reduce MI or stroke rates\n\nEMPA-REG OUTCOME (NEJM 2015) showed empagliflozin reduced HF hospitalization and CV death by ~35%, with a specific HF benefit that appeared early in the trial. Genital infections were more common with empagliflozin. This established SGLT2 inhibitors as cardioprotective beyond glucose lowering."
+    difficulty: hard
+    tags: [EMPA-REG, empagliflozin, SGLT2 inhibitor, heart failure, T2DM, cardiovascular]
+  - front: "A patient with T2DM at high CV risk is asking about oral semaglutide (GLP-1 agonist) for CV protection. According to PIONEER 6, what can you tell them?"
+    back: "Oral semaglutide's CV risk profile was non-inferior to placebo — it demonstrated CV safety but was not shown to be superior in the PIONEER 6 trial\n\nPIONEER 6 (NEJM 2019) was primarily a safety trial demonstrating that oral semaglutide was non-inferior to placebo for MACE in T2DM patients at high CV risk. However, subcutaneous semaglutide (SUSTAIN-6) showed superior CV outcomes, supporting injectable semaglutide for CV risk reduction."
+    difficulty: hard
+    tags: [PIONEER 6, oral semaglutide, GLP-1, T2DM, cardiovascular safety]
+  - front: "What skin manifestations are associated with diabetes mellitus?"
+    back: "Acanthosis nigricans, necrobiosis lipoidica diabeticorum, granuloma annulare, eruptive xanthomas, diabetic bullae, infections (boils, candidiasis, tinea), pruritus, diabetic foot.\n\nNecrobiosis lipoidica diabeticorum presents as waxy yellow-orange plaques with telangiectasias on the pretibial areas. Acanthosis nigricans reflects insulin resistance. These skin findings may precede formal DM diagnosis."
+    difficulty: medium
+    tags: [diabetes mellitus, acanthosis nigricans, necrobiosis lipoidica, skin manifestations]
+  - front: "What is acanthosis nigricans and what conditions is it associated with?"
+    back: "Velvety hyperpigmentation of flexural skin (most commonly peri-nuchal). Associated with insulin resistance, DM, obesity, other endocrine disorders, and malignancy (especially GI adenocarcinoma).\n\nAcanthosis nigricans is a cutaneous marker of insulin resistance. Malignant acanthosis nigricans is typically more extensive and rapidly progressive, often associated with gastric adenocarcinoma."
+    difficulty: medium
+    tags: [acanthosis nigricans, insulin resistance, diabetes, malignancy]
+  - front: "What is the triad of diabetic ketoacidosis (DKA)?"
+    back: "Hyperglycemia, ketosis (ketonemia/ketonuria), and metabolic acidosis — caused by severe insulin deficiency with counter-regulatory hormone excess.\n\nDKA most commonly affects young patients with T1DM, though it can be the first presentation of undiagnosed T2DM. SGLT2 inhibitors can cause euglycemic DKA (normal blood glucose). Precipitating factors include infection, cardiac or mesenteric ischemia, MI, intoxication, and insulin omission."
+    difficulty: easy
+    tags: [DKA, diabetes, ketoacidosis, triad]
+  - front: "What are the clinical features of DKA from early to late?"
+    back: "Early: polyuria, polydipsia, malaise, nocturia, weight loss, abdominal pain. Late GI: anorexia, nausea, vomiting, worsening abdominal pain. Neurological: fatigue, drowsiness, stupor, coma. Respiratory: Kussmaul's respiration (deep, laboured), dyspnea (compensatory for acidosis), fruity ketotic breath.\n\nKussmaul breathing is a deep, sighing respiratory pattern that represents respiratory compensation for metabolic acidosis — the body attempts to blow off CO2 to increase pH. Fruity breath results from acetone (a ketone) exhalation. Altered consciousness correlates with severity of acidosis and osmolality."
+    difficulty: easy
+    tags: [DKA, clinical features, Kussmaul, ketosis]
+  - front: "What investigations are required in DKA?"
+    back: "Blood work: CBC, electrolytes, Ca²⁺, Mg²⁺, PO4³⁻, Cr, BUN, glucose, ketones, osmolality, AST/ALT/ALP, troponin. Urine: glucose and ketones. VBG (pH, bicarbonate, pCO2). ECG (electrolyte disturbances → dysrhythmia; MI rarely precipitant).\n\nPotassium is particularly critical: DKA causes total body potassium depletion (cellular K+ shifts to extracellular space due to acidosis), but serum K+ may be normal or elevated initially. As insulin is given, K+ shifts intracellularly and hypokalemia can develop rapidly — continuous cardiac monitoring is required."
+    difficulty: medium
+    tags: [DKA, investigations, potassium, VBG]
+  - front: "How is pseudohyponatremia corrected in DKA?"
+    back: "Add 3 mmol/L of sodium for every 10 mmol/L of glucose above 5.5 mmol/L. This corrects for the dilutional effect of hyperglycemia on measured serum sodium.\n\nHyperglycemia draws water from cells into the extracellular space, diluting plasma sodium. The corrected sodium reflects the true sodium once glucose is normalized. Using uncorrected sodium overestimates hyponatremia severity and can lead to under-treatment of sodium imbalance."
+    difficulty: hard
+    tags: [DKA, pseudohyponatremia, sodium correction, hyperglycemia]
+  - front: "What are the key principles of initial fluid resuscitation in DKA?"
+    back: "Bolus of normal saline (NS), then high-rate NS infusion. Beware of overhydration and cerebral edema (especially in pediatric patients). Replace KCl 20 mEq/L only if patient is voiding, has adequate renal function, and initial K+ <5.5 mmol/L. Use cardiac monitoring if potassium is normal or low.\n\nFluid resuscitation is the first priority in DKA to restore intravascular volume and correct hyperosmolality. Aggressive IV fluid replacement also dilutes glucose and ketones. Pediatric patients are at higher risk of cerebral edema with rapid fluid administration — a common cause of DKA mortality in children."
+    difficulty: medium
+    tags: [DKA, fluid resuscitation, normal saline, potassium, cerebral edema]
+  - front: "What is Whipple's triad for hypoglycemia?"
+    back: "1) Low plasma glucose, 2) Symptoms suggestive of hypoglycemia, 3) Prompt resolution of symptoms when glucose is administered.\n\nWhipple's triad is the classic diagnostic criterion for hypoglycemia. All three components must be present to confirm the diagnosis. The most common cause in the ED is excessive insulin use in the setting of poor oral intake."
+    difficulty: easy
+    tags: [hypoglycemia, emergency, endocrinology, diagnosis]
+  - front: "A hypoglycemic patient cannot take oral glucose and has no IV access. What is the next step?"
+    back: "Glucagon 1-2 mg IM, repeat in 10-20 minutes.\n\nWhen neither oral glucose nor IV access is available, IM glucagon is the treatment of choice. Glucagon stimulates hepatic glycogenolysis and gluconeogenesis to raise blood glucose. If IV access is later obtained, D50W 50 mL IV push is the preferred treatment."
+    difficulty: easy
+    tags: [hypoglycemia, glucagon, emergency, treatment]
+  - front: "Why must thiamine be given before dextrose in a suspected alcoholic with hypoglycemia?"
+    back: "To prevent Wernicke's encephalopathy. Glucose metabolism without thiamine (vitamin B1) in thiamine-deficient patients precipitates acute Wernicke's. Thiamine 300 mg IM should be given first.\n\nPatients with alcohol use disorder are at high risk for thiamine deficiency. Administering dextrose without thiamine drives pyruvate into a pathway that depletes remaining thiamine stores, precipitating Wernicke's encephalopathy (confusion, ataxia, ophthalmoplegia)."
+    difficulty: easy
+    tags: [hypoglycemia, alcohol, thiamine, Wernicke, emergency]
+  - front: "When should insulin NOT be given in DKA management?"
+    back: "When potassium is <3.3 mmol/L. Insulin drives K+ into cells and will worsen hypokalemia, risking fatal dysrhythmias.\n\nInsulin therapy is critical in DKA to inhibit ketogenesis and gluconeogenesis, but administering it in the setting of hypokalemia can cause life-threatening cardiac arrhythmias. Potassium must be repleted to ≥3.3 mmol/L before starting insulin."
+    difficulty: medium
+    tags: [DKA, insulin, potassium, hypokalemia, emergency]
+  - front: "At what blood glucose level should dextrose be added to IV fluids in DKA management?"
+    back: "When blood glucose drops below 14 mmol/L. Dextrose is added to maintain euglycemia while insulin continues to suppress ketogenesis.\n\nInsulin must continue until ketoacidosis resolves (pH >7.3, bicarbonate >18 mEq/L, anion gap normalized), even after glucose normalizes. Adding dextrose to IVF at glucose <14 mmol/L prevents hypoglycemia while allowing continued insulin infusion."
+    difficulty: medium
+    tags: [DKA, dextrose, glucose, insulin, emergency]
+  - front: "How does Hyperosmolar Hyperglycemic State (HHS) differ from DKA in typical presentation?"
+    back: "HHS: older T2DM patients, glucose ≥33.3 mmol/L, fewer GI symptoms, more neurological deficits (mental disturbances, coma, seizures), symptoms evolving over days to weeks, larger fluid losses. Expected pH >7.3 and bicarbonate >18 mEq/L (no significant ketoacidosis).\n\nHHS results from relative insulin deficiency causing extreme hyperglycemia and osmotic diuresis without significant ketosis. The neurological manifestations predominate due to hyperosmolarity. DKA typically has metabolic acidosis with ketosis and more GI symptoms."
+    difficulty: medium
+    tags: [HHS, DKA, hyperglycemia, emergency, comparison]
+  - front: "What drugs have been associated with precipitating HHS?"
+    back: "Diuretics, glucocorticoids, lithium, and atypical antipsychotics. HHS can also follow cardiac surgery.\n\nUnlike DKA which has classic precipitants (infection, missed insulin), HHS has additional drug-related precipitants. Atypical antipsychotics cause insulin resistance and impair insulin secretion. This is important to recognize in patients on these medications who present with altered mental status."
+    difficulty: medium
+    tags: [HHS, precipitants, medications, emergency]
+  - front: "What is the role of HDL in lipid transport?"
+    back: "HDL transports cholesterol from peripheral tissues to the liver (reverse cholesterol transport) and acts as a reservoir for apolipoproteins.\n\nHDL-mediated reverse cholesterol transport is cardioprotective. High HDL levels are associated with decreased CVD and mortality. LCAT (lecithin-cholesterol acyltransferase) esterifies cholesterol in HDL. HDL also receives phospholipids and gives cholesterol esters in exchange with IDL."
+    difficulty: easy
+    tags: [HDL, reverse cholesterol transport, cardiovascular protection]
+  - front: "What enzyme is required to activate lipoprotein lipase (LPL), and what is its significance?"
+    back: "ApoC-II is required to activate lipoprotein lipase. Deficiency of LPL or ApoC-II causes hereditary chylomicronemia with severe hypertriglyceridemia.\n\nLPL degrades TG in chylomicrons and VLDL at capillary surfaces of adipose tissue and muscle. ApoC-II is an obligate cofactor. Both LPL deficiency and ApoC-II deficiency lead to familial chylomicronemia syndrome with markedly elevated TG and risk of pancreatitis."
+    difficulty: easy
+    tags: [lipoprotein lipase, ApoC-II, hypertriglyceridemia, familial chylomicronemia]
+  - front: "What is Familial Hypercholesterolemia (FH), and what are its key clinical features?"
+    back: "FH is an autosomal dominant disorder caused by defects in LDLR (most common), PCSK9, or ApoB, leading to markedly elevated LDL cholesterol. Clinical features include tendinous xanthomata (Achilles, patellar, extensor tendons of hand), arcus cornealis, and xanthelasmata.\n\nFH heterozygotes have 50% risk of MI in men by age 30. FH homozygotes manifest CAD and vascular disease early in childhood (can be fatal before age 20). Risk calculators (Framingham, SCORE) do not apply to FH patients — all adults with FH should be considered 'high-risk.'"
+    difficulty: easy
+    tags: [familial hypercholesterolemia, LDLR, PCSK9, xanthoma, LDL]
+  - front: "What is the treatment approach for Familial Hypercholesterolemia?"
+    back: "1st line: maximally tolerated statin. 2nd line: add ezetimibe and/or PCSK9 inhibitor. 3rd line (homozygotes): portacaval shunt, LDL apheresis, or potential liver transplant.\n\nFH homozygotes have extremely high LDL levels and often require LDL apheresis due to lack of functional LDL receptors in the liver. PCSK9 inhibitors work by blocking PCSK9-mediated LDLR degradation, increasing hepatic LDL clearance. Drug-resistant cases should be referred to a lipid specialist."
+    difficulty: medium
+    tags: [familial hypercholesterolemia, statin, PCSK9 inhibitor, ezetimibe, LDL apheresis]
+  - front: "What are the key features of Familial Combined Hyperlipidemia?"
+    back: "Elevated ApoB, elevated TG, and elevated LDL (multiple phenotypes). Caused by increased hepatic production of ApoB-100-containing lipoproteins. Associated with premature coronary heart disease, xanthelasma, and obesity.\n\nFamilial combined hyperlipidemia (FCHL) is the most common primary dyslipidemia causing premature CAD. Unlike FH, it can present with elevated LDL, elevated TG, or both. Treatment: statin 1st; add ezetimibe/PCSK9 inhibitor if LDL not controlled; fibrate if TG >10 mmol/L."
+    difficulty: medium
+    tags: [familial combined hyperlipidemia, ApoB, hypertriglyceridemia, premature CAD]
+  - front: "What is Tangier Disease and what are its characteristic clinical features?"
+    back: "Tangier Disease is an autosomal recessive disorder caused by ABCA1 gene mutations, resulting in very low HDL cholesterol. Characteristic features include enlarged orange-coloured tonsils, neuropathy, splenomegaly, hepatomegaly, corneal clouding, mild hypertriglyceridemia, and premature atherosclerosis.\n\nABCA1 is essential for HDL-mediated cholesterol efflux from macrophages. Without it, cholesterol accumulates in tissues (hence the orange tonsils from cholesterol-laden macrophages). Treatment focuses on lifestyle modifications and managing coexisting lipid abnormalities to reduce atherosclerosis risk."
+    difficulty: medium
+    tags: [Tangier disease, HDL, ABCA1, orange tonsils, rare dyslipidemia]
+  - front: "What are the secondary causes of hypertriglyceridemia?"
+    back: "Endocrine: obesity/metabolic syndrome, DM. Renal: nephrotic syndrome, CKD. Drugs: corticosteroids, estrogen, hydrochlorothiazide, retinoic acid, beta-blockers (without ISA), antiretrovirals, atypical antipsychotics, OCPs. Lifestyle: alcohol, high carbohydrate/high fat diet. Other: pregnancy.\n\nSecondary causes of dyslipidemia are much more common than primary genetic causes. Identifying and treating the underlying cause is essential. Insulin resistance (obesity, DM) promotes excess VLDL production by the liver, leading to hypertriglyceridemia."
+    difficulty: medium
+    tags: [hypertriglyceridemia, secondary dyslipidemia, drugs, metabolic syndrome]
+  - front: "What are the secondary causes of hypercholesterolemia?"
+    back: "Endocrine: hypothyroidism. Renal: nephrotic syndrome, CKD. Immunologic: monoclonal gammopathy. Hepatic: cholestatic liver disease (e.g. primary biliary cirrhosis). Nutritional: anorexia nervosa. Drugs: cyclosporin, carbamazepine, steroids. Lifestyle: smoking, obesity.\n\nHypothyroidism causes elevated LDL due to decreased LDL receptor activity and reduced bile acid synthesis. Nephrotic syndrome causes elevated LDL due to increased hepatic lipoprotein synthesis in response to hypoalbuminemia. Treating the underlying condition is the first step."
+    difficulty: medium
+    tags: [hypercholesterolemia, secondary dyslipidemia, hypothyroidism, nephrotic syndrome]
+  - front: "What is the LDL-lowering effect of statins, ezetimibe, and PCSK9 inhibitors?"
+    back: "Statins lower LDL by ~30-40%. Ezetimibe lowers LDL by ~18%. PCSK9 inhibitors lower LDL by ~50%. Each 1.0 mmol/L decrease in LDL corresponds to approximately 20-25% relative risk reduction in cardiovascular disease. Doubling the statin dose only adds ~6% further LDL reduction.\n\nThe rule of 6: each doubling of statin dose provides approximately a 6% incremental reduction in LDL beyond the initial response. This is why combining agents (ezetimibe, PCSK9 inhibitors) is preferred over simply escalating statin dose for patients who need greater LDL reduction."
+    difficulty: easy
+    tags: [statin, ezetimibe, PCSK9 inhibitor, LDL reduction, cardiovascular risk reduction]
+  - front: "According to CCS 2021 guidelines, when should lipid-lowering therapy be intensified with ezetimibe and/or PCSK9 inhibitors?"
+    back: "In patients with established ASCVD who have LDL-C ≥1.8 mmol/L (or non-HDL cholesterol ≥2.4 mmol/L or ApoB >0.7 g/L) despite maximally tolerated statin therapy.\n\nPatients with clinical atherosclerosis, AAA, LDL-C ≥5.0 mmol/L, and most with diabetes or CKD should be started on statin therapy. For ASCVD patients not at LDL target on max statin, add ezetimibe first, then PCSK9 inhibitor if still above target."
+    difficulty: medium
+    tags: [ASCVD, LDL target, ezetimibe, PCSK9 inhibitor, CCS guidelines 2021]
+  - front: "What are the diagnostic criteria for pre-diabetes (impaired glucose tolerance/impaired fasting glucose) per Diabetes Canada 2018?"
+    back: "IFG: fasting plasma glucose 6.1–6.9 mmol/L. IGT: 2h 75g OGTT 7.8–11.0 mmol/L. A1C: 6.0–6.4%.\n\nPre-diabetes carries significant cardiovascular risk. Approximately 15% per year progress to diabetes; 50-80% revert to normal glucose tolerance. Lifestyle modifications reduce progression by 58%; metformin reduces it by 31%. Weight loss of 5-10% of body weight can improve glucose tolerance."
+    difficulty: easy
+    tags: [pre-diabetes, IFG, IGT, Diabetes Canada, fasting glucose]
+  - front: "What are the diagnostic criteria for diabetes mellitus per Diabetes Canada 2018?"
+    back: "Any ONE of: FPG ≥7.0 mmol/L (fasting = no caloric intake ≥8h); A1C ≥6.5% (adults only; not for T1DM, children, adolescents, or pregnant women); 2h PG in 75g OGTT ≥11.1 mmol/L; Random PG ≥11.1 mmol/L. In the ABSENCE of hyperglycemia symptoms, a confirmatory test on another day is required.\n\nIf the patient has hyperglycemia symptoms (polyuria, polydipsia, polyphagia, weight loss, blurry vision), a single abnormal test is sufficient. A1C is not used to diagnose T1DM, in children/adolescents, or in pregnant women, as factors like hemolysis or hemoglobinopathies can affect A1C accuracy."
+    difficulty: easy
+    tags: [diabetes diagnosis, fasting glucose, A1C, OGTT, Diabetes Canada 2018]
+  - front: "What are the main differences between Type 1 and Type 2 diabetes mellitus?"
+    back: "T1DM: onset usually <30 yr, 5-10% of DM, autoimmune/idiopathic beta-cell destruction, absolute insulin deficiency, HLA DR3/DR4 association, islet cell antibodies in 60-85%, normal to thin body habitus, treated with insulin. T2DM: onset usually >40 yr, 90% of DM, multifactorial insulin resistance + secretion impairment, treated with lifestyle + non-insulin agents ± insulin.\n\nT1DM monozygotic twin concordance is 30-40%; T2DM is 70-90%, reflecting greater heritability. The most common autoantibody in T1DM is against glutamic acid decarboxylase (GAD). T2DM involves the 'ominous octet': impaired insulin secretion, enhanced glucagon, increased hepatic glucose production, decreased incretin effect, increased lipolysis, decreased muscle glucose uptake, increased renal reabsorption, neurotransmitter dysfunction."
+    difficulty: easy
+    tags: [T1DM, T2DM, diabetes comparison, autoimmune, HLA]
+  - front: "What are the causes of diabetes mellitus due to diseases of the exocrine pancreas?"
+    back: "Pancreatitis, pancreatectomy, neoplasia, cystic fibrosis, and hemochromatosis ('bronze diabetes').\n\nThese represent Type 3c diabetes (pancreatogenic/exocrine pancreas disease-related). Hemochromatosis causes iron deposition in the pancreas (and liver, heart, gonads, skin), leading to 'bronze diabetes.' Cystic fibrosis-related diabetes (CFRD) is increasingly common as CF patients live longer."
+    difficulty: easy
+    tags: [diabetes etiology, pancreatogenic diabetes, hemochromatosis, cystic fibrosis, Type 3c]
+  - front: "Which endocrinopathies can cause secondary diabetes mellitus?"
+    back: "Acromegaly (excess GH causes insulin resistance), Cushing's syndrome (cortisol causes insulin resistance), glucagonoma (excess glucagon promotes gluconeogenesis), pheochromocytoma (catecholamines inhibit insulin secretion), and hyperthyroidism (accelerated glucose metabolism and insulin resistance).\n\nCounter-regulatory hormones (GH, cortisol, glucagon, catecholamines, thyroid hormone) all antagonize insulin action. Treatment of the underlying endocrinopathy may improve glycemic control. Recognition is important as these conditions may be curable (e.g., surgical resection of an adrenal adenoma in Cushing's)."
+    difficulty: easy
+    tags: [secondary diabetes, acromegaly, Cushing syndrome, glucagonoma, pheochromocytoma]
+  - front: "What infections are associated with causing diabetes mellitus?"
+    back: "Congenital rubella, cytomegalovirus (CMV), and coxsackievirus are associated with causing diabetes mellitus (Type 1 pathogenesis).\n\nViral infections can trigger autoimmune destruction of pancreatic beta cells in genetically susceptible individuals. Molecular mimicry (viral antigens resembling islet cell proteins) is one proposed mechanism. These are categorized under the 'Other Specific Causes' of DM in the etiologic classification."
+    difficulty: easy
+    tags: [diabetes etiology, viral diabetes, congenital rubella, CMV, coxsackievirus]
+  - front: "What is the honeymoon period in Type 1 Diabetes?"
+    back: "After initial T1DM presentation, a honeymoon period often occurs where glycemic control can be achieved with little or no insulin as residual beta cells are still able to produce insulin. Once these cells are destroyed, complete insulin deficiency results.\n\nThe honeymoon period (partial remission phase) typically lasts weeks to months. During this time, insulin requirements are very low. It is important to continue some insulin therapy during this phase to preserve remaining beta cells and avoid ketoacidosis. Eventually, progressive autoimmune destruction leads to absolute insulin deficiency."
+    difficulty: easy
+    tags: [T1DM, honeymoon period, partial remission, beta cell]
+  - front: "What is the A1C target for most adults with T1DM or T2DM, and when might a higher or lower target be appropriate?"
+    back: "Target A1C <7.0% for most patients. Lower target <6.5% may be set to further reduce nephropathy/retinopathy risk if no significant hypoglycemia. Higher targets 7.1-8.5% are appropriate for limited life expectancy, greater functional dependency, or history of recurrent severe hypoglycemia.\n\nA1C reflects average glucose over ~3 months and should be measured every 3-6 months. Targets must be personalized. More intensive control (A1C <6.0%) may cause harm (ACCORD trial). A1C can be falsely elevated in iron/B12 deficiency, alcoholism, CKD; falsely lowered in chronic liver disease, reticulocytosis, ASA/vitamin C use."
+    difficulty: easy
+    tags: [A1C target, glycemic control, T1DM, T2DM, Diabetes Canada]
+  - front: "What are the time-in-range targets for glucose monitoring in diabetes?"
+    back: "Time in range (glucose 3.9-10 mmol/L): >70%. Time above range: <25%. Time below range (hypoglycemia): <4%.\n\nContinuous glucose monitoring (CGM) provides time-in-range metrics that supplement A1C. Time-in-range has been associated with reduced risk of microvascular complications. CGM devices can be recommended for some people with diabetes to optimize self-management."
+    difficulty: easy
+    tags: [time in range, CGM, glucose monitoring, diabetes targets]
+  - front: "What are the nutritional recommendations for patients with diabetes?"
+    back: "45-60% carbohydrates, 15-20% protein, <35% fats as a percentage of total daily energy. <7% saturated fats and <10% polyunsaturated fats. Replace high-glycemic-index with low-glycemic-index carbohydrates. Increase fibre. Limit sodium, alcohol, caffeine. Nutritional therapy can reduce A1C by 1-2%.\n\nIn T1DM, carbohydrate counting is used to determine prandial insulin dosing. In T2DM, weight reduction is the primary dietary goal to improve insulin sensitivity and glycemic control. Personalized dietary patterns based on values and preferences are encouraged by Diabetes Canada guidelines."
+    difficulty: easy
+    tags: [diabetes nutrition, carbohydrate counting, glycemic index, dietary therapy]
+  - front: "What are the exercise recommendations for T2DM?"
+    back: "At least 150 minutes per week of moderate-vigorous aerobic exercise and at least 2 sessions per week of resistance exercise.\n\nRegular physical exercise improves insulin sensitivity, lowers lipid concentrations, and helps control blood pressure. Losing 5-10% of initial body weight can improve insulin sensitivity, glycemic control, hypertension, and dyslipidemia. Smoking cessation and psychosocial support are also important components of T2DM management."
+    difficulty: easy
+    tags: [diabetes, exercise, T2DM, lifestyle modification]
+  - front: "When should pharmacologic therapy be initiated in T2DM?"
+    back: "Initiate non-insulin antihyperglycemic therapy within 3 months if lifestyle management does not achieve adequate glycemic control. If initial A1C is more than 1.5% above the patient's target, start pharmacologic therapy immediately and consider combination therapy. If presenting in metabolic decompensation, start insulin + metformin.\n\nThe 'treat to target' approach requires adjusting therapy in a timely fashion to achieve target A1C within 3-6 months of diagnosis. Metformin remains the preferred initial agent due to high efficacy, low hypoglycemia risk, weight-neutral or weight-lowering effect, low cost, and cardiovascular safety."
+    difficulty: easy
+    tags: [T2DM treatment, metformin, pharmacotherapy initiation, glycemic control]
+  - front: "What are the key properties of metformin as initial therapy for T2DM?"
+    back: "Metformin: high A1C-lowering efficacy, low hypoglycemia risk, weight neutral/loss effect, low cost. Main side effect: lactic acidosis (rare). Should be held when patient is ill and unable to maintain fluid intake or has acute decline in renal function (part of 'SAD MANS' medications to hold when sick).\n\nSAD MANS = Sulfonylureas, ACEIs, Diuretics/direct renin inhibitors, Metformin, ARBs, NSAIDs, SGLT2i — medications to hold on sick days to prevent acute kidney injury, electrolyte disturbances, and lactic acidosis. Metformin is contraindicated or should be dose-adjusted in significant renal impairment."
+    difficulty: easy
+    tags: [metformin, T2DM, sick day management, SAD MANS, lactic acidosis]
+  - front: "What is the 'SAD MANS' mnemonic for sick day medication management in diabetes?"
+    back: "SAD MANS = Sulfonylureas, ACEIs, Diuretics and direct renin inhibitors, Metformin, ARBs, NSAIDs, SGLT2i. These should be held when a diabetic patient is ill, unable to maintain fluid intake, or has acute renal function decline.\n\nSick day management is critical in diabetes. Holding these medications prevents acute kidney injury (NSAIDs, ACEIs, ARBs, diuretics), lactic acidosis (metformin), hypoglycemia (sulfonylureas), euglycemic DKA (SGLT2i), and electrolyte disturbances. Blood glucose should be monitored more frequently when ill."
+    difficulty: easy
+    tags: [sick day management, SAD MANS, diabetes, AKI prevention]
+  - front: "What are the 8 I's that precipitate diabetic ketoacidosis (DKA)?"
+    back: "The 8 I's precipitating DKA: Infection, Ischemia or Infarction, Iatrogenic (glucocorticoids), Intoxication, Insulin missed, Inflammation (pancreatitis, cholecystitis), Intraoperative/perioperative stress, Infant (pregnancy-related).\n\nDKA occurs primarily in T1DM but can also occur in T2DM (especially with SGLT2i). Identifying and treating the precipitating cause is essential alongside insulin and fluid resuscitation. The most common precipitant is infection. Missed insulin is preventable through patient education."
+    difficulty: easy
+    tags: [DKA precipitants, 8 Is, diabetic ketoacidosis, T1DM]
+  - front: "What are the second-line add-on therapy options for T2DM, and what factors guide selection?"
+    back: "Options include: SGLT2 inhibitors, GLP-1 receptor agonists, DPP-4 inhibitors, sulfonylureas, insulin (usually basal), thiazolidinediones, and other agents. Selection is guided by: CV risk, kidney disease, heart failure, GFR, glucose-lowering effectiveness, hypoglycemia risk, and effect on body weight.\n\nSGLT2 inhibitors and GLP-1 receptor agonists have demonstrated cardiovascular and renal protective benefits beyond glucose lowering in high-risk patients. Sulfonylureas have the highest efficacy but carry hypoglycemia risk and weight gain. Thiazolidinediones cause edema, heart failure risk, and fractures. Cost also varies significantly between agents."
+    difficulty: medium
+    tags: [T2DM, antihyperglycemic agents, SGLT2i, GLP-1, DPP-4, sulfonylurea]
+  - front: "What is the onset, peak, and duration of rapid-acting insulin analogues (e.g., aspart, lispro, glulisine)?"
+    back: "Onset: 10-15 minutes. Peak: 1-1.5 hours. Duration: 3.5-4.75 hours. Insulin faster aspart (Fiasp) has faster onset of ~4 minutes.\n\nRapid-acting analogues are given just before or at mealtime (prandial/bolus insulin). They mimic the normal physiological insulin spike after meals. Their faster onset compared to regular insulin (30 min onset, 2-3h peak, 6.5h duration) allows more flexible meal timing."
+    difficulty: easy
+    tags: [insulin pharmacokinetics, rapid-acting insulin, bolus insulin, aspart, lispro]
+  - front: "What are the long-acting basal insulin analogues and their durations?"
+    back: "Insulin detemir (Levemir): 16-24 hours. Insulin glargine 100 units/mL (Lantus/Basaglar): 24 hours. Insulin glargine 300 units/mL (Toujeo): >30 hours. Insulin degludec (Tresiba): ~42 hours.\n\nLong-acting insulins have no pronounced peak, providing stable background insulin coverage. Glargine 300 and degludec have lower hypoglycemia risk due to flatter profiles. Detemir may require twice-daily dosing. These basal insulins are used in both T1DM (with bolus) and T2DM (with oral agents initially)."
+    difficulty: easy
+    tags: [basal insulin, glargine, detemir, degludec, long-acting insulin]
+  - front: "What is the basal-bolus insulin regimen for T1DM?"
+    back: "Estimated total insulin requirement: 0.5-0.7 units/kg/day. 40% given as basal insulin at bedtime. 20% given as bolus insulin before each of breakfast, lunch, and dinner (i.e., 60% total as bolus, split equally between 3 meals).\n\nBasal-bolus (multiple daily injections, MDI) is the standard regimen for T1DM. Alternatively, a continuous subcutaneous insulin infusion (CSII/insulin pump) can be used. When paired with continuous glucose monitoring, automated insulin delivery ('artificial pancreas') significantly improves time-in-range."
+    difficulty: easy
+    tags: [T1DM insulin regimen, basal-bolus, MDI, insulin pump, CSII]
+  - front: "How do you titrate insulin for hyperglycemia readings throughout the day?"
+    back: "High AM sugar → increase bedtime basal insulin. High lunch sugar → increase AM rapid/regular insulin. High supper sugar → increase lunch rapid/regular insulin OR increase AM basal insulin. High bedtime sugar → increase supper rapid/regular insulin.\n\nPattern management of blood glucose requires systematic identification of which insulin dose is responsible for which time period. AM glucose reflects overnight basal control; post-meal readings reflect bolus coverage. This logical approach helps avoid overcorrecting with incorrect insulin type or timing."
+    difficulty: medium
+    tags: [insulin titration, blood glucose pattern, basal insulin, bolus insulin, diabetes management]
+  - front: "What genetic syndromes are associated with development of diabetes mellitus?"
+    back: "Down's syndrome (trisomy 21), Klinefelter's syndrome (47,XXY), and Turner's syndrome (45,XO) are all associated with increased risk of diabetes mellitus.\n\nThese chromosomal abnormalities are categorized under 'genetic syndromes associated with DM.' Down syndrome is associated with both T1DM and T2DM. Klinefelter syndrome is associated with hypogonadism and metabolic syndrome increasing T2DM risk. Turner syndrome is associated with autoimmune T1DM risk."
+    difficulty: easy
+    tags: [diabetes genetics, Down syndrome, Klinefelter, Turner syndrome, chromosomal abnormalities]
+  - front: "What are the glycemic targets for patients with diabetes as per Diabetes Canada guidelines?"
+    back: "Fasting/preprandial plasma glucose: 4-7 mmol/L. 2h post-prandial glucose: 5-10 mmol/L (5-8 mmol/L if A1C not at target and can be safely achieved). LDL-C: <2.0 mmol/L or 50% reduction. Blood pressure: <130/80 mmHg.\n\nThese comprehensive targets reflect the multifactorial nature of diabetes management — not just glucose but also lipid and BP control are critical. The combination of glycemic control, BP management, and statin therapy has additive benefits in reducing microvascular and macrovascular complications."
+    difficulty: easy
+    tags: [diabetes targets, glucose targets, LDL target, blood pressure target, Diabetes Canada]
+  - front: "What are the autoantibodies associated with Type 1 Diabetes?"
+    back: "Islet cell antibodies present in up to 60-85% of T1DM patients. Most common is anti-glutamic acid decarboxylase (anti-GAD). Up to 60% have antibodies against insulin. Pancreatic islet autoantibodies (Stages 1-2) can be detected as a subclinical prodrome in first- and second-degree relatives.\n\nScreening first-degree relatives for islet autoantibodies can identify pre-symptomatic T1DM (Stage 1: two or more autoantibodies, normoglycemia; Stage 2: dysglycemia; Stage 3: symptomatic). LADA (latent autoimmune diabetes in adults) is classified under T1DM and presents with slow autoimmune beta-cell destruction."
+    difficulty: easy
+    tags: [T1DM autoantibodies, anti-GAD, islet cell antibodies, LADA, T1DM staging]
+  - front: "What is icosapent ethyl (Vascepa) and in what clinical context is it used in Canada?"
+    back: "Icosapent ethyl is a purified EPA (eicosapentaenoic acid) omega-3 fatty acid used to decrease cardiovascular event risk in patients with ASCVD or with diabetes plus ≥1 CVD risk factor who have TG 1.5-5.6 mmol/L even on maximally tolerated statin therapy (per CCS 2021 guidelines).\n\nThe REDUCE-IT trial demonstrated significant CV event reduction with icosapent ethyl. A substudy showed it had minimal effect on Lp(a), homocysteine, oxidized LDL, interleukin-6, and hs-CRP, while the mineral oil comparator increased these biomarkers — suggesting the mineral oil may have attenuated the true benefit seen in REDUCE-IT."
+    difficulty: medium
+    tags: [icosapent ethyl, REDUCE-IT, omega-3, hypertriglyceridemia, CCS 2021, ASCVD]
+  - front: "What is Maturity-Onset Diabetes of the Young (MODY)?"
+    back: "MODY (also known as monogenic diabetes) is a type of diabetes caused by genetic defects in beta-cell function (category III of DM etiologic classification). It presents typically in young people, is autosomal dominant, and mimics either T1DM or T2DM depending on the subtype.\n\nMODY is often misdiagnosed as T1DM or T2DM. Key features: strong family history (autosomal dominant), onset usually <25 years, non-obese, absent islet autoantibodies. Different MODY subtypes have different genes affected (e.g., MODY2: GCK mutations; MODY3: HNF1A). Genetic testing is required for definitive diagnosis."
+    difficulty: medium
+    tags: [MODY, monogenic diabetes, beta-cell defect, diabetes genetics, young onset diabetes]
+  - front: "What was the primary conclusion of the 4T Trial (ATTrial) regarding insulin regimens in T2DM?"
+    back: "The basal insulin (detemir) regimen provided the best glycemic control over 3 years, with fewer severe hypoglycemic events and less weight gain compared to prandial or biphasic insulin regimens.\n\nThe 4T Trial compared thrice-daily prandial aspart, twice-daily biphasic aspart, and once-daily basal detemir over 3 years. Despite no significant difference in median HbA1c between arms, basal insulin had the fewest hypoglycemic events and least weight gain, making it the preferred starting insulin regimen."
+    difficulty: medium
+    tags: [diabetes, insulin, T2DM, basal insulin, clinical trials]
+  - front: "What did the ACCORD Blood Pressure Trial conclude about intensive BP control (target <120 mmHg) in T2DM patients with CV risk factors?"
+    back: "Intensive BP lowering to <120 mmHg (vs. 140 mmHg) in T2DM patients with CV risk factors did NOT reduce major CV events (composite nonfatal MI, nonfatal stroke, CV death), but did significantly reduce stroke rates. It increased adverse events including bradycardia/arrhythmia and hyperkalemia.\n\nThe ACCORD BP trial (n=4733) found no significant difference in the composite primary outcome with intensive vs. standard BP control. However, stroke rates were significantly reduced (0.32%/yr vs. 0.53%/yr). Intensive therapy required more medications (mean 3.4 vs. 2.1) and caused more serious adverse events."
+    difficulty: medium
+    tags: [diabetes, blood pressure, T2DM, ACCORD, cardiovascular outcomes]
+  - front: "What did the ACCORD Lipid Trial conclude about adding fibrate therapy to statin therapy in T2DM?"
+    back: "Adding fibrate therapy to statin therapy in T2DM did NOT reduce major cardiovascular events (nonfatal MI, nonfatal stroke, or CV death).\n\nThe ACCORD Lipid Trial (n=5518, mean follow-up 4.7 years) found no significant differences in the primary composite outcome, all MI, all stroke, or all-cause mortality between statin + fibrate vs. statin alone. This does not support routine combination therapy for CV risk reduction in T2DM."
+    difficulty: medium
+    tags: [diabetes, lipids, fibrate, statin, ACCORD, T2DM]
+  - front: "What were the key findings of the DCCT trial regarding intensive insulin therapy in T1DM?"
+    back: "Intensive therapy (≥3 daily injections or insulin pump with QID BG monitoring) significantly reduced retinopathy development/progression, microalbuminuria, albuminuria, and clinical neuropathy compared to conventional therapy (1-2 injections/day). It increased severe hypoglycemia.\n\nThe DCCT trial (n=1441 T1DM patients) demonstrated that tight glycemic control reduces microvascular complications. This established the evidence base for intensive insulin therapy in T1DM. The tradeoff is increased risk of severe hypoglycemia."
+    difficulty: easy
+    tags: [T1DM, DCCT, microvascular complications, intensive insulin, retinopathy]
+  - front: "What did the EDIC study (post-DCCT follow-up) show about the long-term cardiovascular benefits of intensive therapy in T1DM?"
+    back: "Over 17-year follow-up, intensive therapy reduced the risk of any cardiovascular event by 42% and nonfatal MI, stroke, or CV death by 57% compared to conventional therapy.\n\nThe EDIC follow-up of DCCT patients demonstrated 'metabolic memory' — the CV protective effects of intensive glycemic control during the DCCT persisted long after glycemic differences were equalized. This supports early intensive glucose control in T1DM for both micro- and macrovascular benefit."
+    difficulty: medium
+    tags: [T1DM, EDIC, DCCT, cardiovascular outcomes, metabolic memory]
+  - front: "What did UKPDS 33 demonstrate about intensive glucose control with sulfonylurea or insulin in newly diagnosed T2DM?"
+    back: "Intensive glucose control (target FPG <6 mmol/L) reduced microvascular complications by 25% and any diabetes-related endpoint by 12%, but did NOT significantly reduce macrovascular events or all-cause mortality. It increased hypoglycemia and weight gain.\n\nUKPDS 33 (n=3867 newly diagnosed T2DM) established that intensive glycemic control primarily benefits microvascular outcomes. The lack of macrovascular benefit with sulfonylurea/insulin (unlike metformin in UKPDS 34) guided subsequent treatment algorithms."
+    difficulty: medium
+    tags: [T2DM, UKPDS, sulfonylurea, insulin, microvascular, glycemic control]
+  - front: "What did UKPDS 34 show about metformin as first-line therapy in overweight T2DM patients?"
+    back: "Metformin reduced any diabetes-related endpoint by 32%, diabetes-related death by 42%, and all-cause mortality by 36% in overweight T2DM. It outperformed sulfonylureas and insulin for diabetes-related endpoints, all-cause mortality, and stroke, with less weight gain and hypoglycemia.\n\nUKPDS 34 established metformin as the preferred first-line agent in overweight T2DM, as it provided both microvascular AND macrovascular benefits — unlike sulfonylurea/insulin in UKPDS 33. This remains foundational to Canadian Diabetes guidelines recommending metformin as first-line therapy."
+    difficulty: medium
+    tags: [T2DM, UKPDS, metformin, overweight, macrovascular, first-line therapy]
+  - front: "What is the key concept of 'legacy effect' or 'metabolic memory' demonstrated by the UKPDS Extension (10-year follow-up)?"
+    back: "Despite early loss of between-group HbA1c differences after the trial ended, sustained reductions in microvascular risk and emergent risk reductions for MI and all-cause mortality persisted in both the sulfonylurea/insulin and metformin groups over 10 years of post-trial follow-up.\n\nThe UKPDS Extension showed that early intensive glucose control produces durable benefits even after glycemic equalization — the 'legacy effect.' The metformin group showed 33% reduction in MI and 27% reduction in all-cause mortality at 10 years. This supports early glycemic optimization."
+    difficulty: hard
+    tags: [T2DM, UKPDS, legacy effect, metabolic memory, macrovascular, long-term outcomes]
+  - front: "What did the Steno-2 study demonstrate about multifactorial intervention in T2DM with microalbuminuria?"
+    back: "Intensified, target-driven multifactorial therapy (combination of medications and focused behavior modification) significantly reduced all-cause mortality, cardiovascular mortality, cardiovascular events, progression to end-stage renal disease, and rates of retinal photocoagulation compared to conventional treatment.\n\nSteno-2 (n=160 T2DM patients with microalbuminuria) demonstrated that addressing multiple risk factors simultaneously (BP, lipids, glucose, lifestyle) yields greater benefits than treating each factor in isolation. This supports comprehensive risk factor management in high-risk T2DM."
+    difficulty: medium
+    tags: [T2DM, Steno-2, multifactorial, microalbuminuria, cardiovascular outcomes]
+  - front: "What did the FIELD study show about fenofibrate in T2DM patients?"
+    back: "Fenofibrate in T2DM patients not on statin therapy significantly reduced non-fatal MI (HR 0.76) and total cardiovascular events (HR 0.89), but did NOT significantly reduce coronary events or CHD mortality. Overall, it did not significantly reduce the primary coronary event endpoint.\n\nFIELD (n=9,795 T2DM patients) showed modest benefit of fenofibrate for total CV events but failed the primary coronary endpoint. Combined with the neutral ACCORD Lipid result, this does not support routine fibrate use for primary CV risk reduction in T2DM, especially when added to statin therapy."
+    difficulty: medium
+    tags: [fenofibrate, fibrate, T2DM, FIELD, lipids, cardiovascular outcomes]
+  - front: "What additional cardiovascular and renal outcomes trials are relevant for GLP-1 agonists in T2DM (list key trials)?"
+    back: "Key GLP-1 agonist CV outcome trials: REWIND (dulaglutide, Lancet 2019), SUSTAIN-6 (semaglutide, NEJM 2016), PIONEER 6 (oral semaglutide, NEJM 2019), HARMONY-OUTCOMES (albiglutide, Lancet 2018), AMPLITUDE-O (efpeglenatide, NEJM 2021). SELECT trial (semaglutide in obesity without diabetes, NEJM 2023) showed CV benefit even without T2DM.\n\nMultiple GLP-1 receptor agonists have demonstrated cardiovascular benefits beyond glucose lowering in T2DM. The SELECT trial established that semaglutide reduces major adverse cardiovascular events (MACE) in obese patients without T2DM, expanding the indication for weight management with CV benefit."
+    difficulty: hard
+    tags: [GLP-1 agonist, semaglutide, dulaglutide, cardiovascular outcomes, T2DM, obesity]
+  - front: "What is the Canadian screening recommendation for Type 2 diabetes in adults without risk factors?"
+    back: "Screen all adults ≥40 years with FBG or HbA1C every 3 years. Use the CANRISK calculator to identify high-risk individuals who may need earlier/more frequent testing.\n\nDiabetes Canada recommends population-level screening starting at age 40 every 3 years. More frequent/earlier testing is required if ≥1 risk factor is present. The CANRISK calculator assesses individual risk."
+    difficulty: easy
+    tags: [diabetes, T2DM, screening, HbA1C, FBG, CANRISK]
+  - front: "What are the key risk factors for Type 2 diabetes in Canada?"
+    back: "First-degree relative with DM; age ≥40; obesity (especially abdominal); HTN, hyperlipidemia, CAD, vascular disease; prior gestational DM or macrosomic baby (>4 kg); PCOS; history of IGT or IFG; acanthosis nigricans; medications (glucocorticoids, atypical antipsychotics, HAART); high-risk populations (Indigenous, Hispanic, Asian, African descent).\n\nIndigenous Canadians have particularly high rates of T2DM — 1 in 5 Indigenous people has diabetes. Risk factors reflect both metabolic predispositions and social determinants of health."
+    difficulty: easy
+    tags: [T2DM, risk factors, diabetes, Indigenous, PCOS, gestational diabetes]
+  - front: "What are the advantages and disadvantages of HbA1C as a screening/monitoring tool for diabetes?"
+    back: "Advantages: convenient (any time of day), single sample, predicts microvascular complications, better CVD predictor than FBG, low day-to-day variability, reflects long-term glucose. Disadvantages: costly, misleading in hemoglobinopathies/iron deficiency/hemolytic anemia/severe hepatic or renal disease, altered by ethnicity and aging, NOT for diagnosis in children/adolescents, pregnant women, CF, or suspected T1DM.\n\nHbA1C reflects average blood glucose over ~3 months (RBC lifespan). Its accuracy is compromised in conditions affecting RBC turnover or structure. Standardized, validated assays are required."
+    difficulty: medium
+    tags: [HbA1C, diabetes monitoring, limitations, screening]
+  - front: "What are the SMART goals for diabetes management in Canada?"
+    back: "A1C: <7% (optimal glycemic control); BP: <130/80 mmHg; Cholesterol: LDL-C <2 mmol/L if treating; Drugs: consider ACEi/ARB, Statin, and ASA; Exercise/Eating; Smoking Cessation.\n\nThe SMART mnemonic captures the multifactorial targets in diabetes management. Achieving multiple targets simultaneously reduces microvascular and macrovascular complications more effectively than glycemic control alone."
+    difficulty: easy
+    tags: [diabetes, SMART goals, A1C, blood pressure, LDL, cardiovascular risk]
+  - front: "What is the initial pharmacologic approach for a newly diagnosed T2DM patient with HbA1C >1.5% above target?"
+    back: "Start metformin PLUS a second agent (rather than metformin alone). If symptomatic hyperglycemia or metabolic decompensation is present, start insulin + metformin.\n\nDiabetes Canada guidelines recommend more aggressive initial therapy when HbA1C is substantially above target. Dual therapy from the start speeds attainment of glycemic goals and reduces time-to-target."
+    difficulty: medium
+    tags: [T2DM, metformin, pharmacology, dual therapy, insulin, HbA1C]
+  - front: "Which T2DM pharmacologic agents have demonstrated cardiorenal benefits and when should they be prioritized?"
+    back: "SGLT2 inhibitors (empagliflozin, dapagliflozin, canagliflozin) and GLP-1 receptor agonists (liraglutide, semaglutide, dulaglutide) have cardiorenal benefits. Prioritize SGLT2i for patients with atherosclerotic CVD, CKD, or heart failure (especially with reduced ejection fraction). GLP-1 RA preferred if ASCVD with MACE risk or weight loss needed.\n\nPer 2020 Diabetes Canada CPG, SGLT2i are the preferred add-on for HF and CKD. GLP-1 RAs are preferred for ASCVD with prominent MACE risk. Both classes reduce CV mortality beyond glucose lowering."
+    difficulty: hard
+    tags: [SGLT2 inhibitors, GLP-1 agonists, cardiorenal, T2DM, cardiovascular, CKD, heart failure]
+  - front: "When should an ACEi/ARB be used in a diabetic patient?"
+    back: "Use ACEi or ARB in DM patients with: clinical macrovascular disease; age ≥55; OR age <55 with microvascular complications.\n\nACEi/ARBs reduce progression of diabetic nephropathy and provide cardiovascular protection. They are recommended regardless of blood pressure status when the above criteria are met."
+    difficulty: easy
+    tags: [ACEi, ARB, diabetes, nephropathy, macrovascular, microvascular]
+  - front: "When should a statin be prescribed in a diabetic patient?"
+    back: "Prescribe statin if: clinical macrovascular disease; age ≥40; OR age <40 with diabetes duration >15 yr and age >30 yr, microvascular complications, or other CV risk factors.\n\nStatins reduce cardiovascular events in diabetic patients. The age-based thresholds reflect increasing absolute CV risk with advancing age and disease duration."
+    difficulty: easy
+    tags: [statin, diabetes, cardiovascular risk, LDL, T2DM]
+  - front: "What are the non-pharmacologic management strategies for T2DM?"
+    back: "Diet: reduce HbA1C by 1-2%, moderate weight loss (5%) improves glycemic control, see registered dietician, decrease saturated + trans fats to <10% calories, avoid simple sugars, low glycemic index foods. Physical activity: ≥150 min aerobic exercise + 2 resistance training sessions/week; encourage 30-45 min moderate exercise 4-7 days/week.\n\nLifestyle interventions are the cornerstone of T2DM management. Even modest weight loss of 5% meaningfully improves glycemic control and cardiovascular risk. Exercise increases insulin sensitivity and lowers BP."
+    difficulty: easy
+    tags: [T2DM, lifestyle, diet, exercise, non-pharmacologic, weight loss]
+  - front: "What is the definition of T2DM remission and what weight loss is required?"
+    back: "T2DM remission: achieving prediabetes or normal HbA1C levels without antihyperglycemic medications for a minimum of 3 months. Sustained weight loss of ≥15 kg from initial body weight is associated with the greatest probability of remission.\n\nRemission is most achievable in early T2DM in overweight/obese patients with motivation for weight loss. It is not appropriate for patients with significant eating disorders, mental health conditions, atherosclerotic CVD, CHF, or CKD."
+    difficulty: medium
+    tags: [T2DM, remission, weight loss, HbA1C, diabetes]
+  - front: "List the oral pharmacologic agents used for T2DM."
+    back: "Biguanides (metformin); Thiazolidinediones (pioglitazone, rosiglitazone); α-glucosidase inhibitors (acarbose); Non-sulfonylurea insulin secretagogues (repaglinide); Sulfonylureas (glyburide, glimepiride, gliclazide); DPP-4 inhibitors (sitagliptin, linagliptin); SGLT2 inhibitors (canagliflozin, dapagliflozin, empagliflozin).\n\nEach class has different mechanisms, side effect profiles, and cardiorenal implications. Metformin remains first-line. SGLT2i and GLP-1 RAs have added cardiorenal benefits beyond glucose lowering."
+    difficulty: easy
+    tags: [T2DM, oral agents, metformin, SGLT2, DPP4, sulfonylureas]
+  - front: "What is the recommended physical activity target for type 2 diabetic patients?"
+    back: "At least 150 minutes of aerobic exercise per week plus 2 sessions of resistance training per week. Encourage 30-45 minutes of moderate exercise 4-7 days/week. Promotes cardiovascular fitness, increases insulin sensitivity, lowers BP, and improves lipid profile.\n\nExercise is a cornerstone of T2DM management with effects on multiple risk factors. Patients using insulin may need to adjust diet, insulin regimen, injection sites, and blood glucose monitoring around exercise."
+    difficulty: easy
+    tags: [T2DM, exercise, physical activity, insulin sensitivity, lifestyle]

@@ -16,7 +16,8 @@ import * as toast from './toast.js';
 import { buildSearchIndex, mountPalette } from './search.js';
 import { makeToggleButton } from './theme.js';
 import { initTutorPanel, wireWorkerToPanel, syncTutorFromStorage, setDailyPlanProvider } from './tutor-panel.js';
-import { state, el, icon, iconLabel, appRoot, DEBUG, log, warn, loadManifest, loadAllShards, loadGuideTicks, dueCountsBySubject, updateFooter, getStage, setStage } from './app-context.js';
+import { state, el, icon, iconLabel, appRoot, DEBUG, log, warn, loadManifest, loadAllShards, loadGuideTicks, dueCountsBySubject, updateFooter, getStage, setStage, fetchJson } from './app-context.js';
+import { initSyllabi } from './syllabus.js';
 import { go, onNav, setRenderer } from './router.js';
 import { renderStats } from './views/stats.js';
 import { renderCalendar } from './views/calendar.js';
@@ -307,6 +308,9 @@ function setupSdkApp() {
 
 (async () => {
     try {
+        // Resolve the active syllabus + migrate legacy keys BEFORE any data fetch or
+        // per-syllabus storage access, so loaders hit ./data/<active>/ and skey() is correct.
+        await initSyllabi(fetchJson);
         await loadManifest();
         await loadAllShards();
 

@@ -1,9 +1,10 @@
 // mistake log -- every grade <=2. corpus.mistakes.v1
-const KEY = 'corpus.mistakes.v1';
+import { skey } from './syllabus.js';
+const KEY = () => skey('mistakes.v1');
 const CAP = 200;
 
-export function load() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } }
-export function save(arr) { try { localStorage.setItem(KEY, JSON.stringify(arr.slice(-CAP))); } catch {} }
+export function load() { try { return JSON.parse(localStorage.getItem(KEY()) || '[]'); } catch { return []; } }
+export function save(arr) { try { localStorage.setItem(KEY(), JSON.stringify(arr.slice(-CAP))); } catch {} }
 export function logMistake(cardId, subject, score) {
     if (score > 2) return;
     const arr = load();
@@ -16,7 +17,7 @@ export function bySubject(n = 50) {
     for (const m of recent(n)) (out[m.subject] = out[m.subject] || []).push(m);
     return out;
 }
-export function clear() { try { localStorage.removeItem(KEY); } catch {} }
+export function clear() { try { localStorage.removeItem(KEY()); } catch {} }
 export function ids() { return [...new Set(load().map(m => m.cardId))]; }
 
 if (typeof window !== 'undefined') window.__mistakes = { load, logMistake, recent, bySubject, clear, ids };

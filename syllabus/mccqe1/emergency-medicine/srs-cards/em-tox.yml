@@ -1,0 +1,190 @@
+# Toxicology & Overdose (EmergencyMedicine) - generated from srs-mccqe1
+cards:
+  - front: "A 22-year-old presents after intentional overdose of unknown pills. GCS 13, miosis, RR 8, oxygen saturation 88%. What is the toxidrome and treatment?"
+    back: "Opioid toxidrome (miosis, respiratory depression, altered consciousness); administer naloxone 0.4-2 mg IV/IM/intranasal, support airway with BVM, titrate to adequate respiration (not full reversal)\n\nACEP/CAEP toxicology guidelines: opioid toxidrome is life-threatening primarily through respiratory depression. Naloxone is short-acting — monitor for re-narcotization (especially with long-acting opioids or fentanyl). May need naloxone infusion. Poison Control Centre: 1-800-268-9017 (Ontario) or regional numbers."
+    difficulty: hard
+    tags: [opioid overdose, naloxone, toxidrome, respiratory depression, emergency medicine]
+  - front: "What are the key toxidromes and their distinguishing features?"
+    back: "Opioid: miosis, bradypnea, sedation; Sympathomimetic: mydriasis, tachycardia, hyperthermia, diaphoresis; Anticholinergic: mydriasis, dry skin, hyperthermia, urinary retention, ileus, confusion (mad as hatter, hot as hare, dry as bone, blind as bat, red as beet); Cholinergic: SLUDGE/DUMBELS; Serotonin: clonus, hyperreflexia, hyperthermia, agitation\n\nACLS toxicology: matching clinical features to toxidrome guides antidote selection and management. Anticholinergic toxidrome (antihistamines, TCAs, atropine) treated with physostigmine for severe cases. Cholinergic (organophosphate): atropine + pralidoxime. Serotonin syndrome: cyproheptadine + benzodiazepines."
+    difficulty: medium
+    tags: [toxidromes, anticholinergic, sympathomimetic, cholinergic, serotonin syndrome, emergency medicine]
+  - front: "A patient with acetaminophen overdose presents 4 hours after ingestion. Serum acetaminophen level is 250 mg/L. What is the management?"
+    back: "Plot level on Rumack-Matthew nomogram; if above treatment line: N-acetylcysteine (NAC) IV or oral; if within 4 hours: activated charcoal 1 g/kg (if patient cooperative)\n\nNAC replenishes glutathione, preventing toxic NAPQI from causing hepatotoxicity. Most effective if started within 8 hours. IV NAC: 150 mg/kg over 1h, then 50 mg/kg over 4h, then 100 mg/kg over 16h (21h regimen) — anaphylactoid reactions in 15-20% (managed by slowing infusion, diphenhydramine)."
+    difficulty: hard
+    tags: [acetaminophen overdose, NAC, Rumack-Matthew, N-acetylcysteine, toxicology, emergency medicine]
+  - front: "A patient on TCAs (tricyclic antidepressants) presents with hypotension, QRS >120 ms, and seizures. What is the first-line antidote?"
+    back: "Sodium bicarbonate 1-2 mEq/kg IV bolus for QRS >100 ms or hemodynamic instability from TCA toxicity\n\nTCA toxicity causes sodium channel blockade (wide QRS), alpha blockade (hypotension), and antimuscarinic effects. Sodium bicarbonate (target serum pH 7.45-7.55) reverses sodium channel blockade. Avoid physostigmine (can worsen conduction) and flumazenil (lowers seizure threshold). Intralipid for refractory TCA toxicity."
+    difficulty: hard
+    tags: [TCA toxicity, sodium bicarbonate, QRS widening, sodium channel, emergency medicine]
+  - front: "What are the features of serotonin syndrome and how does it differ from NMS?"
+    back: "Serotonin syndrome: ACUTE onset, hyperreflexia, clonus (especially in lower limbs), hyperthermia, agitation, diarrhea — caused by excess serotonergic stimulation; NMS: GRADUAL onset over days, lead-pipe rigidity, no clonus, no diarrhea\n\nSerotonin syndrome causes: SS + MAOI, two serotonergic agents (SSRI + tramadol, SSRI + triptans, SSRI + fentanyl). Treatment: remove precipitating agent, benzodiazepines for agitation/hyperthermia, cyproheptadine (serotonin antagonist) for moderate-severe cases, active cooling."
+    difficulty: hard
+    tags: [serotonin syndrome, NMS, toxicology, cyproheptadine, emergency medicine]
+  - front: "What is the management of digoxin toxicity?"
+    back: "Digoxin toxicity: nausea, visual changes (yellow-green halos), bradycardia, AV block, hyperkalemia; antidote: digoxin-specific antibody fragments (DigiFab); dose: 10 vials (acute), calculate based on serum level for chronic\n\nDigoxin toxicity triggers: renal failure, hypokalemia, hypomagnesemia, drug interactions (amiodarone, verapamil, macrolides). Hypokalemia potentiates digoxin toxicity. Avoid calcium gluconate in digoxin toxicity (may worsen cardiac effects). DigiFab reverses toxicity within 30 minutes."
+    difficulty: hard
+    tags: [digoxin toxicity, DigiFab, AV block, hyperkalemia, toxicology, emergency medicine]
+  - front: "How is organophosphate (pesticide) poisoning treated?"
+    back: "Large doses of atropine (1-4 mg IV q5-10 min until bronchospasm resolves and secretions dry) + pralidoxime (2-PAM) 1-2 g IV (within 24-48h — reactivates acetylcholinesterase); decontaminate skin, protect rescuers\n\nOrganophosphate poisoning: cholinergic toxidrome (SLUDGE: Salivation, Lacrimation, Urination, Defecation, GI distress, Emesis) + CNS effects (seizures). Pralidoxime works best if given early before enzyme aging. Benzodiazepines for seizures. Atropine (not glycopyrrolate) penetrates CNS for CNS effects."
+    difficulty: hard
+    tags: [organophosphate, cholinergic, atropine, pralidoxime, SLUDGE, emergency medicine]
+  - front: "What is the antidote for benzodiazepine overdose and when should it be used?"
+    back: "Flumazenil (Romazicon) is the antidote but rarely used — can precipitate seizures (in chronic BZD users or mixed TCA/BZD overdose), and has short half-life (re-sedation common); reserved for procedural sedation reversal\n\nCAEP toxicology: flumazenil is generally NOT recommended for benzodiazepine overdose in the ED due to seizure risk, especially in patients with chronic BZD dependence or suspected co-ingestion with TCA or other proconvulsants. Supportive care (airway management) is preferred."
+    difficulty: hard
+    tags: [flumazenil, benzodiazepine overdose, seizure risk, toxicology, emergency medicine]
+  - front: "A patient has methanol poisoning. What are the clinical features and treatment?"
+    back: "Methanol: latent period 12-24h, then anion gap metabolic acidosis, visual disturbances (snowfield vision), fundoscopy shows optic disc hyperemia; treat with fomepizole (preferred) or ethanol to block alcohol dehydrogenase; hemodialysis for severe toxicity\n\nMethanol → formaldehyde → formic acid (causes optic nerve toxicity and metabolic acidosis). Fomepizole (4-MP) blocks alcohol dehydrogenase without sedation. Folinic acid enhances formate elimination. Hemodialysis if: pH <7.15, visual symptoms, serum methanol >15 mmol/L."
+    difficulty: hard
+    tags: [methanol poisoning, fomepizole, anion gap metabolic acidosis, visual disturbance, toxicology, emergency medicine]
+  - front: "What is the treatment for iron overdose?"
+    back: "Iron overdose: abdominal pain, vomiting (may have bloody), anion gap metabolic acidosis (Phases I-IV); antidote: deferoxamine IV (chelates free iron) for: symptomatic toxicity, serum iron >90 μmol/L, anion gap acidosis\n\nIron toxicity phase: I (0-6h: GI symptoms), II (6-24h: apparent improvement), III (12-48h: systemic toxicity — shock, acidosis), IV (2-5 days: hepatic failure), V (chronic: GI scarring). Deferoxamine chelates iron → ferrioxamine → excreted in urine (vin rosé urine color)."
+    difficulty: hard
+    tags: [iron overdose, deferoxamine, iron toxicity, antidote, toxicology, emergency medicine]
+  - front: "What is the management of cyanide poisoning?"
+    back: "Cyanide poisoning (house fires with synthetic materials, nitroprusside toxicity): hydroxocobalamin (Cyanokit) 5g IV is antidote — also sodium nitrite + sodium thiosulfate as alternative\n\nCyanide inhibits cytochrome c oxidase → cellular hypoxia → lactic acidosis. Signs: high anion gap metabolic acidosis, cherry red skin (classic), normal PaO2 despite profound toxicity. Hydroxocobalamin chelates cyanide to form cyanocobalamin. 100% O2 to increase O2 delivery."
+    difficulty: hard
+    tags: [cyanide poisoning, hydroxocobalamin, house fire, metabolic acidosis, toxicology, emergency medicine]
+  - front: "What is the role of activated charcoal in overdose management?"
+    back: "Activated charcoal 1 g/kg (max 50g) within 1-2 hours of ingestion for most oral overdoses (exceptions: iron, lithium, alcohols, hydrocarbons, caustics — not adsorbed by charcoal); risk: aspiration if airway not protected\n\nACEP toxicology: activated charcoal is most effective within 1 hour. After 2 hours, benefit is much less. Contraindications: unprotected airway, caustic ingestion, ileus, bowel obstruction. Multi-dose activated charcoal for salicylates, carbamazepine, phenobarbital, theophylline."
+    difficulty: medium
+    tags: [activated charcoal, overdose decontamination, aspiration risk, toxicology, emergency medicine]
+  - front: "A patient has severe metabolic acidosis and high anion gap after ingestion of antifreeze. What is the diagnosis and management?"
+    back: "Ethylene glycol poisoning; antidote: fomepizole 15 mg/kg IV bolus (preferred) or ethanol; aggressive IV hydration; hemodialysis for: pH <7.3, renal failure, serum ethylene glycol >8 mmol/L\n\nEthylene glycol → glycolic acid → oxalic acid → calcium oxalate crystals (damage renal tubules). Urine: oxalate crystals (monohydrate and dihydrate), Woods lamp fluorescence if fluorescein in antifreeze. Aggressive treatment to prevent permanent renal failure."
+    difficulty: hard
+    tags: [ethylene glycol, antifreeze, fomepizole, metabolic acidosis, toxicology, emergency medicine]
+  - front: "What are the features and management of local anesthetic systemic toxicity (LAST)?"
+    back: "LAST: CNS (metallic taste, perioral tingling, seizures, coma) and cardiovascular toxicity (arrhythmias, cardiac arrest); treat with 20% lipid emulsion (Intralipid 1.5 mL/kg IV bolus) + CPR if arrest\n\nLipid rescue (Intralipid) is the specific antidote for LAST — sequesters lipophilic local anesthetic in lipid sink. Prevention: aspirate before injection, slow injection rate, use lowest effective dose. Bupivacaine is the most cardiotoxic local anesthetic. Max dose epinephrine-containing lidocaine: 7 mg/kg."
+    difficulty: hard
+    tags: [LAST, local anesthetic toxicity, Intralipid, lipid rescue, toxicology, emergency medicine]
+  - front: "What is the GHB (gamma-hydroxybutyrate) toxidrome and management?"
+    back: "GHB: date rape drug; CNS and respiratory depression mimicking opioids, but NOT reversed by naloxone; management: supportive (airway, O2), short-duration (1-4h); agitation: benzodiazepines\n\nGHB has a very steep dose-response curve — small dose increase causes sudden profound coma. Patients may appear deeply unconscious then wake up abruptly. Distinguish from opioids (naloxone ineffective) and alcohol (shorter duration). GHB withdrawal (chronic users): similar to alcohol/benzodiazepine withdrawal."
+    difficulty: medium
+    tags: [GHB, date rape drug, CNS depression, toxidrome, emergency medicine]
+  - front: "What are the classic toxidromes?"
+    back: "Anticholinergic: hot/dry/red/blind/mad. Cholinergic: DUMBELS (diarrhea/urination/miosis/bronchospasm/emesis/lacrimation/salivation). Sympathomimetic: HTN/tachycardia/mydriasis/diaphoresis. Opioid: miosis/respiratory depression/decreased LOC\n\nSerotonin syndrome: clonus, hyperthermia, agitation (vs NMS: rigidity). Antidotes: naloxone(opioid), flumazenil(benzo-caution), N-acetylcysteine(acetaminophen), fomepizole(methanol/EG)."
+    difficulty: medium
+    tags: [toxidromes, toxicology]
+  - front: "What is the acetaminophen overdose protocol?"
+    back: "Rumack-Matthew nomogram at 4h post-ingestion. NAC if above treatment line. NAC: 150mg/kg over 1h, then 50mg/kg over 4h, then 100mg/kg over 16h (21h protocol)\n\nToxic dose >150mg/kg. AST/ALT may be normal initially. NAC most effective within 8h but beneficial even late. Check INR, creatinine, lactate. King's College Criteria for transplant referral."
+    difficulty: hard
+    tags: [acetaminophen, NAC]
+  - front: "Name the 5 classic toxidromes with distinguishing features."
+    back: "Sympathomimetic: tachy, HTN, diaphoresis, mydriasis. Anticholinergic: tachy, DRY hot skin, mydriasis, urinary retention. Cholinergic: SLUDGE-BBB. Opioid: miosis, resp depression. Sedative-hypnotic: CNS depression\n\nKey difference anticholinergic vs sympathomimetic: DRY skin vs diaphoresis. Serotonin syndrome overlaps sympathomimetic but has clonus/hyperreflexia. Toxidrome recognition directs empiric antidote therapy."
+    difficulty: hard
+    tags: [toxidromes, toxicology]
+  - front: "What is the antidote, dosing, and decision criteria for acetaminophen overdose?"
+    back: "NAC: IV protocol 150/50/100 mg/kg over 21h. Treat if level above Rumack-Matthew treatment line (150 mcg/mL at 4h) or staggered ingestion with any detectable level + ALT elevation\n\nMost effective within 8h but beneficial up to 24h+. Draw 4h level (earlier level uninterpretable). In Canada IV NAC preferred for liver failure. King College Criteria predict need for transplant in fulminant failure."
+    difficulty: hard
+    tags: [acetaminophen, NAC, Rumack-Matthew]
+  - front: "How is salicylate toxicity managed?"
+    back: "Activated charcoal if <2h. IV NaHCO3 targeting urine pH 7.5-8 and serum pH 7.45-7.55. Hemodialysis for level >100 mg/dL, renal failure, cerebral edema, or clinical deterioration\n\nCRITICAL: do NOT intubate unless absolutely necessary - losing hyperventilatory compensation causes rapid acidemia and cardiovascular collapse. Correct hypokalemia before alkalinization (K+ must be adequate for renal HCO3 retention). Mixed resp alkalosis + met acidosis is classic."
+    difficulty: hard
+    tags: [salicylate, toxicology, hemodialysis]
+  - front: "What are the signs and management of TCA overdose?"
+    back: "Wide QRS >100ms, R in aVR >3mm, anticholinergic signs, seizures, hypotension. Treat: NaHCO3 1-2 mEq/kg IV boluses until QRS <100ms. Intralipid for refractory CV toxicity\n\nSodium channel blockade causes QRS widening. Alkalinization increases protein binding of drug and overcomes sodium channel block. Avoid phenytoin and class IA/IC antiarrhythmics. Seizures: benzodiazepines only."
+    difficulty: hard
+    tags: [TCA, overdose, sodium bicarbonate]
+  - front: "When is flumazenil contraindicated in benzodiazepine overdose?"
+    back: "Chronic BZD use (seizure risk), co-ingestion with proconvulsant (TCA, cocaine), unknown ingestion, seizure disorder. Half-life shorter than most BZDs causing re-sedation\n\nIn practice flumazenil is rarely used in overdose due to seizure risk. Supportive care with airway protection is preferred. If used: 0.2mg IV, repeat q1min to max 3mg. Main role: reversal of procedural sedation with known short-acting BZD."
+    difficulty: hard
+    tags: [flumazenil, benzodiazepine, contraindications]
+  - front: "How is toxic alcohol (methanol/ethylene glycol) poisoning managed?"
+    back: "Fomepizole 15 mg/kg IV loading (blocks alcohol dehydrogenase). Hemodialysis for level >50 mg/dL, visual symptoms (methanol), renal failure (EG), or severe acidosis\n\nEarly: elevated osmol gap. Late: anion gap metabolic acidosis as parent metabolized to toxic metabolites (formic acid causes blindness in methanol, oxalic acid causes renal failure in EG). Adjuncts: folate for methanol, thiamine/pyridoxine for EG."
+    difficulty: hard
+    tags: [toxic alcohol, methanol, fomepizole]
+  - front: "Describe the management of organophosphate poisoning."
+    back: "Atropine 2-4 mg IV doubled q5min until secretions dry (no maximum dose). Pralidoxime 1-2g IV over 30 min. Full decontamination with PPE\n\nAtropine treats muscarinic effects only - titrate to secretion drying NOT heart rate. Pralidoxime reactivates AChE before permanent aging (give within 24-48h). Nicotinic effects (fasciculations, paralysis) only respond to pralidoxime. PPE essential to prevent secondary exposure."
+    difficulty: hard
+    tags: [organophosphate, atropine, pralidoxime]
+  - front: "What is the systematic approach to the unknown overdose patient?"
+    back: "ABCs, check glucose, naloxone 0.04mg IV titrate up, ECG (QRS and QTc), acetaminophen + salicylate levels, osmol gap, VBG/lactate, consider charcoal if <1-2h with protected airway\n\nWide QRS: consider TCA, class I antiarrhythmics (treat with NaHCO3). Long QTc: multiple drug classes. Elevated osmol gap: toxic alcohols. Thiamine before glucose in malnourished/alcoholic patients."
+    difficulty: hard
+    tags: [unknown overdose, toxicology]
+  - front: "What are the indications, dosing, and limitations of activated charcoal?"
+    back: "1 g/kg (max 50g) PO within 1-2h of adsorbable substance. Not adsorbed: iron, lithium, alcohols, heavy metals, potassium (PHAILS). CI: unprotected airway, caustics, hydrocarbons\n\nMulti-dose AC (MDAC q4h) enhances elimination of carbamazepine, dapsone, phenobarbital, quinine, theophylline via GI dialysis. Whole bowel irrigation (PEG-ELS) for sustained-release, iron, body packers."
+    difficulty: medium
+    tags: [activated charcoal, decontamination]
+  - front: "How is beta-blocker overdose managed?"
+    back: "Glucagon 5-10mg IV bolus then 1-5mg/h (first-line). High-dose insulin: 1 U/kg bolus then 1-10 U/kg/h with dextrose. Intralipid for lipophilic agents. Vasopressors as adjuncts\n\nGlucagon bypasses beta-receptors via own receptor-cAMP pathway. High-dose insulin improves inotropy. Signs: bradycardia, hypotension, hypoglycemia (except with sotalol), bronchospasm, seizures (propranolol). ECMO as rescue for refractory cardiogenic shock."
+    difficulty: hard
+    tags: [beta-blocker, overdose, glucagon]
+  - front: "How is calcium channel blocker overdose managed?"
+    back: "Calcium: CaCl 1-3g or Ca gluconate 3-6g IV. High-dose insulin euglycemia: 1U/kg bolus then 1-10 U/kg/h. Vasopressors. Intralipid. Consider ECMO\n\nMost lethal cardiovascular poisoning. Hyperglycemia at presentation predicts severity and good insulin response. Maintain glucose 8-12 mmol/L with dextrose infusion during high-dose insulin. Methylene blue emerging for refractory vasoplegia."
+    difficulty: hard
+    tags: [CCB, overdose, high-dose insulin]
+  - front: "How do serotonin syndrome and neuroleptic malignant syndrome differ in presentation and management?"
+    back: "SS: rapid onset hours, clonus, hyperreflexia, diaphoresis, diarrhea. Rx: cyproheptadine. NMS: onset days, lead-pipe rigidity, hyperthermia, normal/decreased reflexes. Rx: dantrolene, bromocriptine\n\nSS: excess serotonin (SSRI+MAOI, SSRI+tramadol, linezolid combinations). NMS: dopamine blockade (antipsychotics). Both: elevated CK, AMS, autonomic instability. Key differentiator: clonus/hyperreflexia (SS) vs rigidity (NMS)."
+    difficulty: hard
+    tags: [serotonin syndrome, NMS]
+  - front: "What is the management of acute opioid overdose including dosing and monitoring?"
+    back: "Naloxone 0.04mg IV initially, titrate q2-3min to RR >12 (not full consciousness). Observe for re-sedation. Infusion: 2/3 of effective bolus dose per hour for long-acting opioids\n\nCommunity naloxone: intranasal 4mg or IM 0.4mg. Titrate to respiratory effort to avoid precipitating withdrawal. Fentanyl may need multiple doses. Canada Good Samaritan Drug Overdose Act provides legal protection for calling 911."
+    difficulty: hard
+    tags: [opioid, naloxone, overdose]
+  - front: "What are the features and management of lithium toxicity?"
+    back: "Mild (1.5-2.5): hold + IV NS. Moderate (2.5-3.5): consider HD. Severe (>3.5 or symptomatic): emergent HD. Signs: tremor, ataxia, confusion, seizures, arrhythmias. Charcoal NOT effective\n\nNarrow therapeutic index 0.6-1.2 mEq/L. Toxicity potentiated by dehydration, NSAIDs, ACEi, thiazides. Chronic toxicity more dangerous at lower levels than acute. SILENT syndrome: irreversible neurological damage post-toxicity."
+    difficulty: hard
+    tags: [lithium, toxicity, hemodialysis]
+  - front: "Describe the stages and management of iron overdose."
+    back: "Stage I (0-6h): GI hemorrhage. II (6-24h): apparent improvement. III (12-48h): systemic shock. IV (2-4d): hepatic necrosis. V (2-6wk): GI scarring. Rx: WBI + deferoxamine 15mg/kg/h for level >500\n\nCharcoal does not adsorb iron. Deferoxamine chelates free iron producing vin rose urine. AXR may show radiopaque pills. Stop deferoxamine at 24h (ARDS risk). Serum iron >350 at 4-6h = significant toxicity."
+    difficulty: hard
+    tags: [iron, overdose, deferoxamine]
+  - front: "Naloxone reverses opioid toxicity by competing with morphine at the mu-opioid receptor. What type of antagonism is this, and can it be overcome?"
+    back: "Naloxone is a reversible competitive antagonist. Its effect can be overcome by increasing concentrations of the agonist (morphine), or clinically, by repeated naloxone dosing since it has a shorter half-life than many opioids.\n\nReversible competitive antagonists bind non-covalently to the active receptor site and can be displaced by high agonist concentrations. This contrasts with irreversible antagonists that form covalent bonds and cannot be displaced."
+    difficulty: easy
+    tags: [pharmacodynamics, competitive antagonism, naloxone, opioid reversal, reversible]
+  - front: "What are the universal antidotes given in coma management (mnemonic DONT)?"
+    back: "D — D50W (50 mL IV) if hypoglycemic on POCT; O — Oxygen if needed; N — Naloxone 0.4 mg IV (up to 10 mg) if opiate overdose suspected; T — Thiamine 100 mg IV if history of EtOH or malnourished.\n\nThiamine must be given BEFORE or WITH glucose in alcoholic or malnourished patients to prevent precipitating Wernicke encephalopathy (thiamine-dependent glucose metabolism). Naloxone may require repeated dosing given its short half-life relative to opioids like methadone or fentanyl. CT head is required for all suspected structural coma."
+    difficulty: easy
+    tags: [coma, antidotes, naloxone, thiamine, DONT]
+  - front: "What pupil findings are caused by opioid toxicity vs. anticholinergic toxicity in coma?"
+    back: "Opioids (e.g., heroin, fentanyl): constricted (miotic) pupils — EXCEPT meperidine which causes dilated pupils. Anticholinergic agents (e.g., atropine, tricyclic antidepressants): dilated (mydriatic) pupils.\n\nPupil examination is a critical part of coma assessment. Cholinergic agents (e.g., organophosphates) also cause constricted pupils. Dilated pupils in coma can be caused by anoxia, anticholinergics, cocaine, methanol, hallucinogens, or serotonin syndrome. Constricted pupils in coma strongly suggest opioid toxicity (exception: meperidine)."
+    difficulty: medium
+    tags: [coma, pupils, opioid toxicity, anticholinergic, toxicology]
+  - front: "What is the treatment of choice for toxic alcohol (methanol or ethylene glycol) poisoning, and what is the alternative?"
+    back: "Fomepizole 15 mg/kg IV bolus is the treatment of choice. Alternatively, 10% ethanol IV bolus and infusion to achieve a blood level of 22 mmol/L (ethanol loading may also be done PO). Urgent hemodialysis may also be required.\n\nFomepizole and ethanol both inhibit alcohol dehydrogenase, blocking conversion of toxic alcohols to their toxic metabolites. Fomepizole is preferred due to its predictable pharmacokinetics and fewer side effects compared to ethanol. Hemodialysis removes the toxic alcohol and its metabolites directly."
+    difficulty: medium
+    tags: [toxic alcohol, methanol, ethylene glycol, fomepizole, toxicology, emergency medicine]
+  - front: "How does the anion gap and osmolar gap change as toxic alcohol (methanol/ethylene glycol) is metabolized?"
+    back: "Initially there is a HIGH osmolar gap with a normal anion gap. As the toxic alcohol is metabolized, the osmolar gap drops and an anion gap metabolic acidosis develops. Co-ingested ethanol is protective by competing for alcohol dehydrogenase.\n\nThe parent toxic alcohol contributes to the osmolar gap (osmotically active but not ionized). As it is metabolized to acidic metabolites (formate from methanol, oxalate/glycolate from ethylene glycol), the osmolar gap decreases and the anion gap rises due to accumulation of these organic acids."
+    difficulty: hard
+    tags: [toxic alcohol, osmolar gap, anion gap, metabolic acidosis, toxicology]
+  - front: "Which adjunct vitamins are used in methanol versus ethylene glycol poisoning, and why?"
+    back: "Folic acid for methanol (helps convert formate to CO2/H2O). Pyridoxine and thiamine for ethylene glycol (help divert oxalate metabolism to less toxic metabolites). Both reduce conversion to active toxic metabolites.\n\nFolate-dependent pathway converts formate (methanol's toxic metabolite) to CO2. Pyridoxine and thiamine shift ethylene glycol metabolism away from oxalate production toward less toxic products, reducing risk of acute tubular necrosis and crystalluria."
+    difficulty: hard
+    tags: [methanol, ethylene glycol, folic acid, pyridoxine, thiamine, toxicology]
+  - front: "What electrolyte abnormalities are commonly associated with chronic alcohol use?"
+    back: "Hypomagnesemia, hypophosphatemia, hypocalcemia, hypoglycemia, and hypokalemia.\n\nChronic alcohol use impairs renal tubular reabsorption of magnesium and phosphate. Poor nutritional intake combined with vomiting and diarrhea contribute to multiple electrolyte deficiencies. Hypoglycemia results from impaired gluconeogenesis and glycogen depletion."
+    difficulty: easy
+    tags: [alcohol, electrolytes, hypomagnesemia, hypophosphatemia, emergency medicine]
+  - front: "What criteria must be met before discharging an intoxicated alcohol patient from the ED?"
+    back: "Before discharge: stable vital signs, can walk unassisted, and is fully oriented. Also explore need for social services, housing, addictions services, or detox program, and ensure the patient can obtain prescribed medications and complete follow-up.\n\nAlcohol intoxication requires clinical sobriety before safe discharge. Ongoing social determinants of health should be addressed at each ED visit as an opportunity for intervention. Patients with methanol or ethylene glycol ingestion must be admitted."
+    difficulty: easy
+    tags: [alcohol, ED discharge, disposition, emergency medicine]
+  - front: "What is the disposition for a patient who overdosed on TCAs (tricyclic antidepressants) with sinus tachycardia but no other ECG abnormalities?"
+    back: "Sinus tachycardia alone with TCA overdose warrants observation in the ED and consultation with a poison centre. If asymptomatic with no clinical signs of intoxication after proper decontamination and no ECG abnormalities: 6 hours of ED observation is adequate. Prolonged/delayed cardiotoxicity warrants admission to a monitored bed.\n\nTCAs can cause delayed cardiotoxicity (QRS widening, ventricular arrhythmias) due to sodium channel blockade. The 6-hour observation window is based on the time needed for peak toxicity to manifest. QRS >100 ms or right axis deviation are high-risk signs warranting sodium bicarbonate and ICU admission."
+    difficulty: medium
+    tags: [TCA, tricyclic antidepressant, overdose, disposition, cardiotoxicity]
+  - front: "What are the naloxone dosing guidelines for opioid overdose in the ED, including for cardiorespiratory arrest?"
+    back: "Administer naloxone IV in incremental doses 0.2–1 mg. In cardiorespiratory arrest following possible opioid overdose: give minimum 2 mg naloxone. If a naloxone infusion is needed (ICU): start at 2/3 of the minimum effective bolus dose per hour. Admit and observe for 24 hours; offer a naloxone kit.\n\nIncremental naloxone dosing avoids precipitating acute opioid withdrawal and agitation in dependent patients. The infusion rule (2/3 of effective bolus dose/hour) maintains adequate reversal. Naloxone kits for take-home harm reduction are standard of care in Canada."
+    difficulty: medium
+    tags: [naloxone, opioid overdose, emergency medicine, resuscitation]
+  - front: "What is the role of thiamine in the ED, and when is caution needed?"
+    back: "Thiamine 100 mg IV/IM initially, then 50–100 mg IM/IV/PO once daily. Used to treat or prevent Wernicke's encephalopathy (in alcohol-dependent patients and malnourished patients). Caution: use in pregnancy.\n\nWernicke's encephalopathy (confusion, ophthalmoplegia, ataxia) results from thiamine deficiency, commonly seen in chronic alcoholics. Thiamine must be given BEFORE glucose in at-risk patients, as glucose administration can precipitate acute Wernicke's by depleting thiamine stores. IV formulation has a small risk of anaphylaxis."
+    difficulty: easy
+    tags: [thiamine, Wernickes encephalopathy, alcohol, emergency medicine, vitamin]
+  - front: "What is the dosing and key indication for activated charcoal in the ED?"
+    back: "Activated charcoal: 30–100 g PO in 250 mL water for poisoning/overdose. Efficacy and safety are case-dependent and are a source of debate; most effective within 1 hour of ingestion.\n\nActivated charcoal adsorbs many drugs in the GI tract, preventing absorption. It is contraindicated for hydrocarbons, caustics, metals (iron, lithium), and alcohols (poorly adsorbed). It should not be used in patients with impaired airway reflexes due to aspiration risk. Multi-dose activated charcoal may enhance elimination of some drugs (theophylline, carbamazepine)."
+    difficulty: easy
+    tags: [activated charcoal, poisoning, overdose, GI decontamination, emergency medicine]
+  - front: "What are the indications for admission of oral hypoglycemic agent overdose patients?"
+    back: "Admit ALL patients for a minimum of 24 hours if hypoglycemic, and 12 hours after the last octreotide dose. Observe asymptomatic patients for at least 8 hours.\n\nSulfonylureas and other oral hypoglycemic agents cause delayed and prolonged hypoglycemia due to ongoing insulin stimulation. Octreotide (somatostatin analogue) is used to suppress endogenous insulin secretion. The prolonged observation period accounts for the drug's duration of action and risk of recurrent hypoglycemia after initial treatment."
+    difficulty: medium
+    tags: [oral hypoglycemic, sulfonylurea, overdose, octreotide, hypoglycemia, disposition]
+  - front: "What is the mechanism of acetaminophen hepatotoxicity, what is the timeline of presentation, and how is it treated?"
+    back: "Mechanism: high doses saturate glucuronidation and sulfation pathways → reactive metabolite NAPQI (N-acetyl-p-benzoquinone imine) forms → covalently binds hepatocyte membranes. Timeline: 0–24h: N/V (within 4–12h of overdose); 24–48h: asymptomatic but ongoing hepatic necrosis (rising transaminases); >48h: continued necrosis, possible ALF. Treatment: gastric lavage/emesis if <2h, oral activated charcoal, IV or PO N-acetylcysteine (NAC/Mucomyst) — most effective within 8–10h but give regardless of time; determines treatment using Rumack-Matthew nomogram.\n\nNAC works by replenishing glutathione stores, which is the rate-limiting molecule in NAPQI detoxification. No recorded fatal outcomes if NAC is given before transaminase elevation. Depleted glutathione (alcohol use disorder, malnutrition, anticonvulsants) lowers the toxic threshold to 4–6 g."
+    difficulty: hard
+    tags: [acetaminophen toxicity, NAPQI, NAC, N-acetylcysteine, Rumack-Matthew, hepatotoxicity]
+  - front: "What is the first-line chelation therapy for lead poisoning?"
+    back: "Dimercaprol (BAL) and EDTA (calcium disodium edetate) are first-line chelating agents.\n\nDimercaprol and EDTA bind lead and facilitate its urinary excretion. In severe cases (encephalopathy), dimercaprol is given first to mobilize lead from tissues before EDTA is added. Succimer (DMSA) is an oral alternative used in less severe pediatric cases."
+    difficulty: medium
+    tags: [lead poisoning, chelation, dimercaprol, EDTA]

@@ -1,0 +1,38 @@
+# Nephrology Ckd (Nephrology) - generated from srs-mccqe1
+cards:
+  - front: "How is Chronic Kidney Disease (CKD) defined?"
+    back: "Abnormalities of kidney structure or function, present for a minimum of 3 months, with implications for health.\n\nCKD is classified based on cause, GFR category (G1-G5), and albuminuria category (A1-A3). A duration of ≥3 months distinguishes CKD from acute processes. Many patients are asymptomatic until later stages. The KDIGO 2024 guidelines updated the classification system."
+    difficulty: easy
+    tags: [nephrology, CKD, definition, KDIGO]
+  - front: "What are the KDIGO 2024 GFR categories for CKD staging?"
+    back: "G1: ≥90 mL/min/1.73m² (normal or high). G2: 60-89 (mildly decreased). G3a: 45-59 (mildly to moderately decreased). G3b: 30-44 (moderately to severely decreased). G4: 15-29 (severely decreased). G5: <15 (kidney failure). 'D' is added to G5 for patients requiring dialysis.\n\nCKD classification incorporates cause (C), GFR category (G), and albuminuria category (A) — the CGA system. Risk of progression and complications is determined by cause, GFR, and degree of albuminuria. Green = low risk; Yellow = moderately increased; Orange = high risk; Red = very high risk."
+    difficulty: easy
+    tags: [nephrology, CKD, GFR, staging, KDIGO]
+  - front: "What are the clinical features of CKD by organ system?"
+    back: "Cardiovascular: HTN, CHF, pericarditis (uremia). GI: N/V, anorexia, dysgeusia (typically only in CKD G5). Neurologic: lethargy, confusion, neuropathy, seizures, asterixis, hyperreflexia, restless leg syndrome, encephalopathy. Hematologic: normocytic normochromic anemia (reduced EPO), platelet dysfunction (uremic bleeding). Endocrine/Metabolic: hyperphosphatemia, hypocalcemia, secondary hyperparathyroidism, reduced 1,25-dihydroxy vitamin D. Reproductive: hypothalamic-pituitary disturbances, infertility. Other: pruritus.\n\nUremic syndrome results from retention of uremic toxins and hormone deficiencies (EPO, activated vitamin D). GI symptoms (anorexia, N/V, dysgeusia) typically only manifest in CKD G5. Uremic pericarditis is an indication for urgent dialysis."
+    difficulty: medium
+    tags: [nephrology, CKD, uremia, anemia, secondary hyperparathyroidism, clinical features]
+  - front: "What are the strongest predictor of progression to ESRD?"
+    back: "The amount of daily proteinuria (strongest predictor). Other risk factors: hypertension, age, history of chronic renal insufficiency, DM, tobacco use, analgesic use, ethnicity, lower socioeconomic status, obesity, hyperuricemia, and family history of kidney disease.\n\nProteinuria causes direct tubular toxicity through activation of complement and inflammatory cascades, as well as contributing to interstitial fibrosis. Reducing proteinuria with ACEI/ARB is a primary renoprotective strategy in CKD management."
+    difficulty: easy
+    tags: [nephrology, ESRD, proteinuria, risk factors, progression, CKD]
+  - front: "What dietary and lifestyle modifications are recommended in CKD management?"
+    back: "Physical activity ≥150 min/wk. Low-protein diet: 0.8 g/kg/d in adults with CKD G3-G5 (not in children — protein needed for growth). Sodium restriction: <2 g/d if HTN, CHF, or oliguria. Potassium restriction: 40-60 mmol/d for hyperkalemia. Phosphate restriction: 1 g/d for hyperphosphatemia. Avoid nephrotoxins (NSAIDs, COX2 inhibitors, IV contrast if eGFR <60). Stop tobacco products.\n\nLow-protein diet reduces urea generation and may slow CKD progression, though evidence in some populations is conflicted. Sodium restriction helps control hypertension and volume overload. Phosphate binders (calcium carbonate, sevelamer, lanthanum) are used when dietary restriction is insufficient."
+    difficulty: medium
+    tags: [nephrology, CKD, diet, protein restriction, sodium restriction, management]
+  - front: "How is anemia of CKD managed?"
+    back: "IV vs PO iron if TSAT <20% or ferritin <200 AND an increase in Hb or decrease in ESA dose is desired (avoid IV iron in active systemic infections). Erythropoiesis-Stimulating Agents (ESAs): initiate if Hb <100 g/L, target Hb 95-110 g/L. ESAs: epoetin-alfa or darbepoetin. Contraindications to ESAs: active malignancy, history of stroke, history of malignancy.\n\nAnemia in CKD is normocytic normochromic, primarily due to reduced EPO production. Iron deficiency is common due to poor intake and dialysis-related losses. Overtreatment of anemia with ESAs (targeting higher Hb levels) is associated with increased cardiovascular risk. Platelet dysfunction causing uremic bleeding is treated with DDAVP (desmopressin) for clinical bleeding or invasive procedures."
+    difficulty: medium
+    tags: [nephrology, CKD, anemia, EPO, ESA, iron, erythropoietin]
+  - front: "How is hyperphosphatemia and secondary hyperparathyroidism managed in CKD?"
+    back: "Phosphate binders: calcium carbonate (if not hypercalcemic); sevelamer or lanthanum salts if BOTH hypercalcemic AND hyperphosphatemic. Vitamin D and calcitriol (1,25-dihydroxyvitamin D) for secondary hyperparathyroidism. For tertiary hyperparathyroidism: parathyroidectomy or cinacalcet (sensitizes parathyroid gland to Ca²⁺, decreasing PTH secretion).\n\nIn CKD, reduced renal activation of vitamin D → hypocalcemia → secondary hyperparathyroidism. Phosphate retention further suppresses calcitriol and directly stimulates PTH. Calcium carbonate is avoided when hypercalcemic as it worsens hypercalcemia. Sevelamer is a non-calcium, non-aluminum phosphate binder. Cinacalcet is a calcimimetic used for tertiary (autonomous) hyperparathyroidism."
+    difficulty: medium
+    tags: [nephrology, CKD, hyperphosphatemia, hyperparathyroidism, sevelamer, cinacalcet, vitamin D]
+  - front: "What SGLT2 inhibitor indications exist in non-diabetic CKD?"
+    back: "SGLT2 inhibitors (e.g., dapagliflozin, empagliflozin) are indicated in CKD with eGFR ≥20 mL/min/1.73m² AND urine ACR ≥20 mg/mmol, OR in patients with heart failure (irrespective of albuminuria level), regardless of diabetic status.\n\nSGLT2i reduce intraglomerular pressure via tubuloglomerular feedback, independent of glucose lowering. Evidence from trials like DAPA-CKD shows benefit in non-diabetic CKD patients. They should be continued until kidney replacement therapy is initiated unless not tolerated."
+    difficulty: hard
+    tags: [nephrology, SGLT2 inhibitor, CKD, dapagliflozin, renoprotection, non-diabetic]
+  - front: "What is the blood pressure target for CKD patients without kidney transplant vs. those with kidney transplant?"
+    back: "Without transplant: ACEI/ARB, target SBP <120 mmHg. With kidney transplant: CCB/ARB, target BP <130/80 mmHg.\n\nIntensive BP control (SBP <120 mmHg) is supported by evidence in non-transplant CKD. In transplant recipients, calcineurin inhibitors (which cause vasoconstriction) and immunosuppressive regimens complicate BP management; CCBs are particularly effective as they counteract CNI-induced vasoconstriction. Statin therapy is recommended for CKD patients not on dialysis (target LDL <2 mmol/L); initiation is not recommended for dialysis-dependent CKD."
+    difficulty: medium
+    tags: [nephrology, CKD, blood pressure, transplant, ACEI, ARB, CCB]

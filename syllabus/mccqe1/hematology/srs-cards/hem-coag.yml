@@ -1,0 +1,230 @@
+# Coagulation Disorders & Thrombosis (Hematology) - generated from srs-mccqe1
+cards:
+  - front: "A 6-year-old boy has recurrent hemarthroses and deep muscle bleeds. PTT is prolonged, PT is normal, and platelet count is normal. What is the diagnosis?"
+    back: "Hemophilia A (factor VIII deficiency)\n\nHemophilia A is X-linked recessive. Prolonged PTT with normal PT indicates intrinsic pathway defect (factors VIII, IX, XI, XII). Hemophilia A (factor VIII) is 4x more common than B (factor IX). Diagnosis confirmed by factor assay."
+    difficulty: easy
+    tags: [hemophilia-A, factor-VIII, hemarthrosis, PTT, X-linked]
+  - front: "What is von Willebrand disease type 1 and what is first-line treatment for minor bleeding?"
+    back: "Partial quantitative deficiency of vWF; first-line is desmopressin (DDAVP) IV/SC/intranasal\n\nDDAVP stimulates endothelial release of stored vWF and factor VIII. Effective for vWD type 1 and mild hemophilia A. Not effective for types 2B (may cause thrombocytopenia) or type 3. vWF concentrate used for major bleeding."
+    difficulty: medium
+    tags: [von-Willebrand-disease, DDAVP, desmopressin, vWF, bleeding]
+  - front: "What is the mechanism of disseminated intravascular coagulation (DIC)?"
+    back: "Systemic activation of coagulation by circulating triggers (e.g., sepsis, trauma, malignancy), leading to consumption of clotting factors and platelets, causing simultaneous bleeding and microvascular thrombosis\n\nDIC laboratory: low platelets, low fibrinogen, elevated PT/PTT, elevated D-dimer/FDPs, and schistocytes. Treat the underlying cause. Transfuse FFP/cryoprecipitate for active bleeding. Low-dose hepcidin for thrombotic-predominant DIC (controversial)."
+    difficulty: medium
+    tags: [DIC, disseminated-intravascular-coagulation, sepsis, coagulopathy, fibrinogen]
+  - front: "A 55-year-old woman on warfarin for AF has an INR of 9.2 but no active bleeding. What is the management?"
+    back: "Hold warfarin and give low-dose oral vitamin K (1–2.5 mg)\n\nFor INR >8 without bleeding: hold warfarin + give oral vitamin K 1–2.5 mg (not IV, which causes erratic correction). For major/life-threatening bleeding with supratherapeutic INR: 4-factor PCC (prothrombin complex concentrate) + IV vitamin K 10 mg."
+    difficulty: medium
+    tags: [warfarin, supratherapeutic-INR, vitamin-K, PCC, anticoagulation]
+  - front: "What is the antidote for dabigatran (direct thrombin inhibitor) in life-threatening bleeding?"
+    back: "Idarucizumab (Praxbind) — humanized monoclonal antibody fragment that binds and neutralizes dabigatran\n\nIdarucizumab (5 g IV) reverses dabigatran within minutes. For factor Xa inhibitors (apixaban, rivaroxaban): andexanet alfa (Ondexxya) or 4-factor PCC if andexanet unavailable. Dialysis can remove dabigatran (small volume of distribution)."
+    difficulty: medium
+    tags: [dabigatran, idarucizumab, reversal, anticoagulation, bleeding]
+  - front: "Heparin-induced thrombocytopenia (HIT) — what is the pathophysiology and when does it typically occur?"
+    back: "Immune-mediated: IgG antibodies against PF4-heparin complex activate platelets, causing thrombocytopenia and thrombosis; typically occurs 4–14 days after heparin exposure\n\nHIT is paradoxically prothrombotic. Key: platelet count falls >50% or to <100, with new thrombosis. 4T score assesses probability. Immediately stop all heparin and start non-heparin anticoagulation (argatroban, bivalirudin, fondaparinux, or DOAC)."
+    difficulty: hard
+    tags: [HIT, heparin-induced-thrombocytopenia, PF4, 4T-score, argatroban]
+  - front: "What thrombophilia is most commonly associated with venous thromboembolism in Canada?"
+    back: "Factor V Leiden mutation (resistance to activated protein C)\n\nFactor V Leiden is the most common inherited thrombophilia (5% prevalence in Caucasians). Heterozygotes have 3–5x increased VTE risk; homozygotes 50–100x. Does not generally require long-term anticoagulation unless recurrent or unprovoked VTE."
+    difficulty: easy
+    tags: [Factor-V-Leiden, thrombophilia, VTE, APC-resistance, hereditary]
+  - front: "What is the appropriate duration of anticoagulation for a first unprovoked proximal DVT?"
+    back: "Minimum 3 months with reassessment for extended therapy based on bleeding risk and patient preference\n\nCanadian guidelines (Thrombosis Canada): 3 months for provoked VTE; extended anticoagulation (indefinite) for unprovoked proximal DVT if low-moderate bleeding risk. DOACs (rivaroxaban, apixaban) are preferred. Use PADUA, HASBLED scores to guide decision."
+    difficulty: medium
+    tags: [DVT, anticoagulation-duration, DOAC, unprovoked-VTE, Thrombosis-Canada]
+  - front: "What is the treatment of choice for immune thrombocytopenic purpura (ITP) with platelet count <20 × 10⁹/L?"
+    back: "Corticosteroids (prednisone 1 mg/kg/day) ± IVIG for faster response in bleeding or pre-procedure\n\nITP is autoimmune destruction of platelets by anti-GPIIb/IIIa or anti-GPIb/IX antibodies. Corticosteroids are first-line. IVIG provides faster platelet increase (used before surgery or in active bleeding). Rituximab and thrombopoietin receptor agonists (eltrombopag) for refractory ITP."
+    difficulty: medium
+    tags: [ITP, thrombocytopenia, prednisone, IVIG, splenectomy]
+  - front: "A 35-year-old pregnant woman develops microangiopathic hemolytic anemia, thrombocytopenia, and acute renal failure in her first trimester. What is the most likely diagnosis?"
+    back: "Thrombotic thrombocytopenic purpura (TTP) — ADAMTS13 deficiency\n\nTTP pentad: MAHA + thrombocytopenia + neurological symptoms + renal failure + fever. ADAMTS13 activity <10% confirms congenital or immune TTP. Treatment: emergent plasma exchange (PEX) + caplacizumab + steroids. Without treatment, 90% mortality."
+    difficulty: hard
+    tags: [TTP, ADAMTS13, plasma-exchange, MAHA, caplacizumab]
+  - front: "What is the mechanism of action of clopidogrel and when is dual antiplatelet therapy (DAPT) indicated?"
+    back: "Clopidogrel irreversibly inhibits P2Y12 ADP receptor on platelets; DAPT (ASA + clopidogrel) is indicated for 12 months post-ACS or PCI with stent placement\n\nClopidogrel is a prodrug requiring CYP2C19 activation. Ticagrelor and prasugrel are more potent and reliable P2Y12 inhibitors. CYP2C19 poor metabolizers on clopidogrel have higher MACE rates. DAPT duration depends on stent type and bleeding risk."
+    difficulty: medium
+    tags: [clopidogrel, P2Y12, DAPT, ACS, PCI]
+  - front: "What is the normal platelet count range and at what level does spontaneous bleeding risk increase significantly?"
+    back: "Normal: 150–400 × 10⁹/L; spontaneous bleeding risk increases significantly below 10–20 × 10⁹/L\n\nPlatelet thresholds for procedures: >50 × 10⁹/L for major surgery, >80 × 10⁹/L for neuraxial anesthesia, >100 × 10⁹/L for neurosurgery. Spontaneous intracranial bleeding risk increases below 10 × 10⁹/L."
+    difficulty: easy
+    tags: [platelets, thrombocytopenia, bleeding-risk, transfusion-threshold]
+  - front: "A 60-year-old man has a persistently elevated PT and aPTT, and a mixing study corrects both. What does this suggest?"
+    back: "Factor deficiency (correction with mixing study = factor deficiency; failure to correct = inhibitor/lupus anticoagulant)\n\nMixing study: 1:1 mix of patient plasma with normal plasma. Correction suggests factor deficiency (e.g., liver disease, warfarin, factor deficiency). Non-correction (incubated) suggests factor inhibitor (e.g., acquired hemophilia A) or lupus anticoagulant."
+    difficulty: medium
+    tags: [mixing-study, coagulopathy, factor-deficiency, inhibitor, lupus-anticoagulant]
+  - front: "What is the primary hemostatic defect in Bernard-Soulier syndrome?"
+    back: "Deficiency or dysfunction of GPIb-IX-V complex — the platelet receptor for von Willebrand factor\n\nBernard-Soulier syndrome is a rare autosomal recessive platelet disorder with giant platelets, thrombocytopenia, and prolonged bleeding time. GPIb is critical for platelet adhesion to damaged vascular wall via vWF. Compare with Glanzmann thrombasthenia (GPIIb/IIIa defect — platelet aggregation defect)."
+    difficulty: medium
+    tags: [Bernard-Soulier, GPIb, platelet-adhesion, vWF, giant-platelets]
+  - front: "What are D-dimers and what is their clinical utility in diagnosing VTE?"
+    back: "Fibrin degradation products elevated in VTE, PE, DIC, and many other conditions; high sensitivity (~95%) but low specificity — useful for ruling OUT VTE when pre-test probability is low\n\nD-dimers should only be ordered when pre-test probability is low (Wells score ≤1 for DVT, ≤4 for PE). A negative D-dimer effectively rules out VTE. Positive D-dimer requires imaging (ultrasound for DVT, CTPA for PE). Do not order with high pre-test probability."
+    difficulty: medium
+    tags: [D-dimer, VTE, sensitivity, Wells-score, CTPA]
+  - front: "What are the diagnostic criteria for DIC?"
+    back: "ISTH scoring: platelets <100k(1), <50k(2) + elevated D-dimer(mild 2, severe 3) + prolonged PT(3-6s=1, >6s=2) + low fibrinogen(<1g/L=1). Score >=5 = overt DIC\n\nDIC causes: sepsis, trauma, malignancy (APL), obstetric emergencies. Treatment: treat underlying cause, replace (FFP, cryoprecipitate, platelets if bleeding). Heparin controversial."
+    difficulty: hard
+    tags: [DIC, criteria]
+  - front: "What are the DIC diagnostic criteria and management?"
+    back: "ISTH DIC score: platelets, fibrin markers (D-dimer), PT prolongation, fibrinogen level. Score >=5 = overt DIC. Management: treat underlying cause + supportive (platelets if <50k+bleeding, cryo if fibrinogen <1.5, FFP if PT prolonged+bleeding)\n\nDIC is always secondary: sepsis, trauma, malignancy, obstetric (abruption, AFE), transfusion. Schistocytes on smear. Lab: low platelets, low fibrinogen, prolonged PT/PTT, elevated D-dimer. Do NOT give heparin routinely (only for thrombotic-predominant DIC)."
+    difficulty: hard
+    tags: [DIC, coagulopathy, fibrinogen]
+  - front: "How is heparin-induced thrombocytopenia (HIT) diagnosed and managed?"
+    back: "4T score: Thrombocytopenia (>50% drop), Timing (5-10d), Thrombosis, no oTher cause. Confirm: anti-PF4/heparin ELISA then serotonin release assay. Manage: STOP all heparin, start non-heparin anticoagulant (argatroban, fondaparinux, DOAC)\n\nHIT is prothrombotic despite low platelets - do NOT transfuse platelets. Occurs with both UFH and LMWH (more common UFH). 4T score low probability: continue heparin. Intermediate/high: stop heparin and test. Transition to warfarin only after platelets recover >150k."
+    difficulty: hard
+    tags: [HIT, heparin, thrombocytopenia]
+  - front: "What is the approach to an elevated INR/bleeding on warfarin?"
+    back: "INR 4.5-10 no bleeding: hold warfarin. INR >10 no bleeding: hold + oral vitamin K 2.5-5mg. Serious bleeding: hold warfarin + IV vitamin K 10mg + PCC (4-factor preferred) or FFP\n\nKcentra (4-factor PCC) reverses warfarin faster than FFP with lower volume. Fresh frozen plasma: 15mL/kg. Vitamin K IV onset 6-8h, PO 12-24h. For DOAC reversal: idarucizumab for dabigatran, andexanet alfa for factor Xa inhibitors, or PCC."
+    difficulty: hard
+    tags: [warfarin, INR, vitamin K, PCC]
+  - front: "What is the approach to a prolonged PTT with normal PT?"
+    back: "DDx: heparin contamination (most common), factor VIII/IX/XI/XII deficiency, von Willebrand disease, lupus anticoagulant. Mixing study: corrects = factor deficiency; does not correct = inhibitor (LA or factor inhibitor)\n\nvWD is most common inherited bleeding disorder (1%). Type 1 (80%): quantitative. Type 2: qualitative. Type 3: absent. Treatment: DDAVP (type 1), vWF concentrate. Lupus anticoagulant paradoxically causes thrombosis not bleeding."
+    difficulty: hard
+    tags: [PTT, coagulation, mixing study]
+  - front: "How is von Willebrand disease diagnosed and managed?"
+    back: "Diagnosis: bleeding history + low vWF antigen and/or activity (ristocetin cofactor) + low factor VIII. Type 1: DDAVP trial (desmopressin 0.3mcg/kg IV). Type 2/3: vWF-containing concentrate. Avoid ASA/NSAIDs\n\nvWD most common inherited bleeding (affects 1%). Symptoms: mucocutaneous bleeding (menorrhagia, epistaxis, bruising, post-procedural). Perioperative: DDAVP 30min pre-procedure for Type 1 or vWF concentrate. Tranexamic acid as adjunct for mucosal bleeding."
+    difficulty: medium
+    tags: [von Willebrand, DDAVP, bleeding disorder]
+  - front: "What is the approach to suspected DVT/PE?"
+    back: "DVT: Wells score then D-dimer (if low probability) or US. PE: Wells/Geneva score then D-dimer or CTPA. Treatment: DOAC first-line (apixaban or rivaroxaban no bridging needed) x3-6mo. Provoked vs unprovoked determines duration\n\nDOAC preferred over warfarin (no INR monitoring, fewer interactions). Exceptions: APS (warfarin), severe renal (warfarin), pregnancy (LMWH), cancer (LMWH or DOAC). Unprovoked VTE: consider extended anticoagulation. Massive PE: thrombolysis or embolectomy."
+    difficulty: hard
+    tags: [DVT, PE, anticoagulation, DOAC]
+  - front: "What are the indications for thrombophilia testing?"
+    back: "Consider testing: unprovoked VTE <50yr, recurrent VTE, unusual site (cerebral, splanchnic, hepatic), strong family history, recurrent pregnancy loss. Do NOT test: provoked VTE, acute VTE (false results), on anticoagulation\n\nCommon thrombophilias: Factor V Leiden (most common), prothrombin G20210A, protein C/S deficiency, antithrombin deficiency, antiphospholipid syndrome. Testing rarely changes management. Do not test the general population or before OCP use routinely."
+    difficulty: medium
+    tags: [thrombophilia, VTE, Factor V Leiden]
+  - front: "How is immune thrombocytopenia (ITP) managed?"
+    back: "Adults: observation if PLT>30k and no bleeding. Treatment if <30k or bleeding: prednisone 1mg/kg x2-4wk, IVIG for rapid rise (pre-procedure), rituximab, TPO-RA (eltrombopag, romiplostim). Splenectomy for refractory\n\nITP is diagnosis of exclusion: isolated thrombocytopenia, normal smear (except large platelets), no other cause. Rule out pseudothrombocytopenia (EDTA-dependent clumping). In adults consider secondary causes: HIV, HCV, SLE, CLL. Platelet transfusion only for life-threatening bleeding."
+    difficulty: hard
+    tags: [ITP, thrombocytopenia, management]
+  - front: "What transfusion reactions should be recognized and how are they managed?"
+    back: "Acute hemolytic: ABO incompatibility, fever/chills/flank pain/hemoglobinuria. STOP transfusion, IV NS, send samples. Febrile non-hemolytic: most common, premedicate. Allergic: urticaria (antihistamine). Anaphylactic: IgA deficiency. TRALI: respiratory distress 6h\n\nTRALI: non-cardiogenic pulmonary edema within 6h, supportive care. TACO: volume overload, diuretics. Delayed hemolytic: 3-28 days, extravascular hemolysis from anamnestic response. Bacterial contamination: platelets > RBCs. Report all reactions to blood bank."
+    difficulty: hard
+    tags: [transfusion reaction, TRALI, TACO]
+  - front: "What is the perioperative management of anticoagulation?"
+    back: "Warfarin: stop 5d before, bridge with LMWH if high-risk (mechanical valve, recent VTE). DOACs: stop 2-3d before (renal-dependent). Restart 24-72h post-op depending on bleeding risk. ASA: continue for most procedures\n\nBRIDGE trial: no bridging needed for most AF patients on warfarin (lower bleeding, similar stroke). High-risk bridging: mechanical mitral valve, recent VTE <3mo. PAUSE trial guides DOAC timing by CrCl and procedure bleeding risk."
+    difficulty: hard
+    tags: [perioperative, anticoagulation, bridging]
+  - front: "What coagulation studies abnormality patterns indicate specific disorders?"
+    back: "Elevated PT/INR only: warfarin, vitamin K deficiency, factor VII. Elevated PTT only: heparin, hemophilia A/B, vWD. Both elevated: DIC, liver disease, massive transfusion. Normal with bleeding: platelet disorder\n\nMixing study: corrects = factor deficiency; doesn't correct = inhibitor (lupus anticoagulant). D-dimer: elevated in PE, DIC, post-surgery — high sensitivity, low specificity."
+    difficulty: hard
+    tags: [coagulation, PT, PTT]
+  - front: "What is the approach to managing anticoagulation perioperatively?"
+    back: "Low bleed risk surgery: continue anticoagulation. High bleed risk: hold warfarin 5 days (bridge with LMWH if high thrombotic risk — mechanical valve, recent VTE <3mo). DOACs: hold 24-48h based on renal function and bleed risk\n\nCCS/Thrombosis Canada guidelines. Bridge anticoagulation NOT needed for most AF patients (BRIDGE trial). Resume 24-72h post-op based on hemostasis. DOAC-specific reversal: idarucizumab (dabigatran), andexanet alfa (factor Xa inhibitors)."
+    difficulty: hard
+    tags: [anticoagulation, perioperative, bridging]
+  - front: "What are the diagnostic criteria for heparin-induced thrombocytopenia (HIT)?"
+    back: "4T score: Thrombocytopenia (>50% fall=2), Timing (5-10 days=2), Thrombosis (new=2), oTher causes excluded(2). Score >=6 high probability. Confirm with ELISA + serotonin release assay\n\nHIT type II is immune-mediated (PF4-heparin antibodies). Paradoxically causes thrombosis not bleeding. Treatment: stop ALL heparin, start alternative anticoagulant (argatroban, fondaparinux, DOAC). Contraindicated: warfarin (during acute phase)."
+    difficulty: hard
+    tags: [HIT, 4T score, diagnosis]
+  - front: "What is the VTE prophylaxis regimen for orthopedic surgery?"
+    back: "LMWH, rivaroxaban, or apixaban for 14 days (knee) or 35 days (hip) post-arthroplasty. Start 12h post-op (LMWH) or 6-10h (DOAC)\n\nThrombosis Canada guidelines. ASA alone is inferior to pharmacological prophylaxis. Add mechanical (IPC) in all patients. Extended prophylaxis critical for hip fracture/replacement."
+    difficulty: medium
+    tags: [VTE, prophylaxis, orthopedic]
+  - front: "What is the management of warfarin over-anticoagulation?"
+    back: "INR 4.5-10 no bleeding: hold warfarin, recheck. INR >10 no bleeding: hold + vitamin K 2.5-5mg PO. Major bleeding: hold + IV vitamin K 10mg + PCC (4-factor) or FFP\n\nPCC (Octaplex/Beriplex) preferred over FFP: faster onset, smaller volume, no ABO matching needed. Resume warfarin at lower dose when INR therapeutic. Consider switching to DOAC if labile INRs."
+    difficulty: hard
+    tags: [warfarin, reversal, bleeding]
+  - front: "What distinguishes TTP from HUS?"
+    back: "TTP: ADAMTS13 deficiency (<10%), neurological symptoms predominate, adults. HUS: Shiga toxin (E. coli O157:H7), renal failure predominates, children post-diarrheal illness. Both: MAHA + thrombocytopenia\n\nTTP pentad: MAHA, thrombocytopenia, renal failure, neuro symptoms, fever (full pentad rare). Treatment: TTP = plasma exchange urgently. HUS = supportive (no antibiotics for STEC). Atypical HUS: complement-mediated, treat with eculizumab."
+    difficulty: hard
+    tags: [TTP, HUS, MAHA]
+  - front: "A 45-year-old woman undergoes total knee replacement with normal renal function. What is the recommended VTE prophylaxis per Thrombosis Canada guidelines?"
+    back: "LMWH (enoxaparin 40 mg SC daily or dalteparin 5000 IU SC daily) starting 12-24 hours postoperatively, continued for minimum 10-14 days with extended prophylaxis up to 35 days. Rivaroxaban 10 mg daily is an accepted alternative.\n\nThrombosis Canada and CCS guidelines recommend extended-duration LMWH or DOAC for major orthopedic surgery. VTE risk persists beyond discharge. The RECORD trials established rivaroxaban as non-inferior to enoxaparin for orthopedic prophylaxis."
+    difficulty: medium
+    tags: [VTE, prophylaxis, orthopedic, LMWH, thrombosis]
+  - front: "A patient on warfarin (INR 8.5) has gross hematuria but is hemodynamically stable with no life-threatening bleeding. How should you manage reversal?"
+    back: "Hold warfarin and give oral vitamin K 2.5-5 mg. Recheck INR in 24 hours. Do not give PCC or FFP unless major/life-threatening bleeding develops.\n\nFor supratherapeutic INR without life-threatening bleeding, oral vitamin K provides gradual sustained reversal. Thrombosis Canada reserves 4-factor PCC for major hemorrhage. IV vitamin K acts faster but carries small anaphylactoid risk."
+    difficulty: medium
+    tags: [warfarin, reversal, vitamin-K, INR, anticoagulation]
+  - front: "A patient on rivaroxaban presents with massive GI bleed requiring emergent surgery. What is the reversal strategy?"
+    back: "Administer 4-factor PCC 50 IU/kg as immediate measure. If available, andexanet alfa is the specific reversal agent for factor Xa inhibitors. Supportive care with transfusion, hold rivaroxaban, activated charcoal if last dose within 2 hours.\n\nAndexanet alfa is Health Canada-approved for reversal of rivaroxaban and apixaban in life-threatening bleeding. When unavailable, 4-factor PCC is the recommended alternative. Idarucizumab is specific to dabigatran only."
+    difficulty: hard
+    tags: [DOAC, rivaroxaban, reversal, andexanet, GI-bleed]
+  - front: "What laboratory findings distinguish DIC from primary fibrinolysis?"
+    back: "DIC: prolonged PT/aPTT, low fibrinogen, elevated D-dimer, thrombocytopenia, schistocytes on smear. Primary fibrinolysis: similar coagulation abnormalities but platelet count is typically normal and no schistocytes.\n\nDIC involves systemic activation of both coagulation and fibrinolysis with microangiopathic hemolysis. The ISTH DIC scoring system uses platelet count, D-dimer, fibrinogen, and PT prolongation. Schistocytes reflect the microangiopathic process unique to DIC."
+    difficulty: hard
+    tags: [DIC, fibrinolysis, coagulopathy, schistocytes, lab-diagnosis]
+  - front: "How do you differentiate TTP from HUS clinically and by laboratory findings?"
+    back: "TTP: severely reduced ADAMTS13 activity (<10%) is the diagnostic hallmark, with thrombocytopenia, MAHA, neurological symptoms, fever, renal impairment. HUS: predominantly renal failure with MAHA and thrombocytopenia, often preceded by bloody diarrhea (STEC-HUS). ADAMTS13 is normal in HUS.\n\nADAMTS13 assay is the key differentiator. Typical HUS follows Shiga toxin-producing E. coli (O157:H7) infection. Atypical HUS involves complement dysregulation and may respond to eculizumab. Avoid antibiotics and antimotility agents in STEC-HUS."
+    difficulty: hard
+    tags: [TTP, HUS, ADAMTS13, thrombotic-microangiopathy, MAHA]
+  - front: "A medical inpatient with pneumonia has a Padua score of 5. What VTE prophylaxis is recommended?"
+    back: "Pharmacologic prophylaxis with LMWH (enoxaparin 40 mg SC daily or dalteparin 5000 IU SC daily) for the duration of hospitalization or until fully mobile.\n\nPadua Prediction Score >=4 identifies medical inpatients at high VTE risk warranting pharmacologic prophylaxis. Canadian guidelines align with this risk-stratified approach. Mechanical prophylaxis alone is reserved for patients with contraindications to anticoagulation."
+    difficulty: medium
+    tags: [VTE, prophylaxis, medical-inpatient, Padua-score, LMWH]
+  - front: "A patient on dabigatran develops intracranial hemorrhage. What is the specific reversal agent and dose?"
+    back: "Idarucizumab 5 g IV (two 2.5 g boluses no more than 15 minutes apart). Provides immediate, complete, and sustained reversal of dabigatran.\n\nIdarucizumab binds dabigatran with 350-fold greater affinity than thrombin. The RE-VERSE AD trial demonstrated complete reversal within minutes. It does not reverse other DOACs. Andexanet alfa or PCC is used for factor Xa inhibitors."
+    difficulty: medium
+    tags: [dabigatran, idarucizumab, reversal, ICH, DOAC]
+  - front: "What are the components of the ISTH scoring system for overt DIC?"
+    back: "Score >=5 = overt DIC. Platelet count (>100=0, 50-100=1, <50=2); D-dimer (no increase=0, moderate=2, strong=3); prolonged PT (<3s=0, 3-6s=1, >6s=2); fibrinogen (>1.0=0, <1.0=1). Repeat every 24-48 hours.\n\nThe ISTH DIC score should only be applied in patients with an underlying disorder known to cause DIC (sepsis, trauma, malignancy, obstetric complications). Serial monitoring guides response to treatment of the underlying cause. A score of 5 or more is compatible with overt DIC."
+    difficulty: hard
+    tags: [DIC, ISTH-score, coagulopathy, diagnosis, scoring-system]
+  - front: "When should you suspect heparin-induced thrombocytopenia (HIT) and what is the initial workup?"
+    back: "Suspect HIT when platelet count drops >50% from baseline or to <150, typically 5-10 days after heparin exposure. Calculate 4Ts score. If intermediate/high probability, send anti-PF4/heparin ELISA and switch to non-heparin anticoagulant (argatroban or fondaparinux).\n\nThe 4Ts score stratifies pretest probability: low (0-3), intermediate (4-5), high (6-8). A negative PF4 ELISA effectively rules out HIT. All heparin products must be stopped immediately including flushes, and warfarin must not be started until platelets recover."
+    difficulty: hard
+    tags: [HIT, 4Ts-score, thrombocytopenia, heparin, PF4]
+  - front: "A pregnant woman at 28 weeks develops a DVT. What is the recommended anticoagulation?"
+    back: "Weight-adjusted LMWH (enoxaparin 1 mg/kg SC q12h) for the duration of pregnancy and at least 6 weeks postpartum (minimum total 3 months). Warfarin and DOACs are contraindicated in pregnancy.\n\nLMWH does not cross the placenta. Warfarin is teratogenic (nasal hypoplasia, stippled epiphyses) particularly in the first trimester. DOACs lack safety data in pregnancy. SOGC guidelines recommend switching to warfarin postpartum if desired."
+    difficulty: hard
+    tags: [pregnancy, DVT, LMWH, anticoagulation, SOGC]
+  - front: "A patient with prosthetic heart valves and warfarin is found to have active GI bleeding. Which reversal agent is most appropriate?"
+    back: "Vitamin K (phytonadione) and/or four-factor prothrombin complex concentrate (4F-PCC) for urgent reversal\n\nWarfarin blocks synthesis of clotting factors II, VII, IX, and X via vitamin K antagonism. For urgent reversal, 4F-PCC provides faster INR correction than vitamin K alone; fresh frozen plasma is an alternative per Canadian guidelines."
+    difficulty: medium
+    tags: [warfarin, reversal, bleeding, anticoagulant]
+  - front: "What is the FDA-approved reversal agent for dabigatran in the setting of life-threatening bleeding?"
+    back: "Idarucizumab (Praxbind)\n\nIdarucizumab is a monoclonal antibody fragment that binds dabigatran with high affinity, rapidly reversing its anticoagulant effect. It is indicated for life-threatening or uncontrolled bleeding in patients on dabigatran."
+    difficulty: easy
+    tags: [dabigatran, idarucizumab, reversal, DOAC]
+  - front: "A patient on apixaban for AFib presents with intracranial hemorrhage. What reversal agent should be given?"
+    back: "Andexanet alfa\n\nAndexanet alfa is an FDA/Health Canada approved reversal agent for apixaban and rivaroxaban (direct factor Xa inhibitors). It acts as a decoy receptor that binds and sequesters the anticoagulant."
+    difficulty: medium
+    tags: [apixaban, rivaroxaban, andexanet alfa, reversal, factor Xa]
+  - front: "A patient develops HIT (heparin-induced thrombocytopenia) while on unfractionated heparin post-CABG. How does HIT risk compare between UFH and LMWH?"
+    back: "HIT is less common with LMWHs than with unfractionated heparin\n\nUFH carries a higher risk of HIT than LMWHs due to greater platelet factor 4 binding. Upon HIT diagnosis, all heparin products must be stopped and an alternative anticoagulant (e.g., argatroban) should be initiated per Canadian guidelines."
+    difficulty: medium
+    tags: [HIT, heparin, LMWH, thrombocytopenia]
+  - front: "What are the four phases of hemostasis?"
+    back: "1. Primary hemostasis — platelet plug formation via adhesion (VWF-collagen), activation (granule release), and aggregation (GPIIb/IIIa). 2. Secondary hemostasis — fibrin clot reinforcement via extrinsic (initiation) and intrinsic (amplification) coagulation pathways converging on thrombin generation. 3. Fibrin stabilization — soluble fibrin converted to insoluble cross-linked clot. 4. Fibrinolysis — clot dissolution by the fibrinolytic system.\n\nPrimary hemostasis addresses mucocutaneous bleeding rapidly. Defects in primary hemostasis (thrombocytopenia, VWD, aspirin) cause petechiae/mucocutaneous bleeding. Defects in secondary hemostasis (factor deficiencies, hemophilia) cause deep/delayed bleeding. Both pathways converge at factor X activation leading to thrombin and fibrin generation."
+    difficulty: easy
+    tags: [hemostasis, platelet plug, coagulation cascade, fibrin, VWF, GPIIb/IIIa]
+  - front: "What are ABO blood group antigens and antibodies?"
+    back: "Group O: H antigen on RBC, Anti-A and Anti-B in serum (universal donor). Group A: A antigen, Anti-B in serum. Group B: B antigen, Anti-A in serum. Group AB: A and B antigens, no antibodies in serum (universal recipient).\n\nABO incompatibility is the most common cause of acute hemolytic transfusion reactions, usually due to clerical errors. Understanding antigen-antibody relationships is essential for safe blood product selection and cross-matching."
+    difficulty: easy
+    tags: [ABO blood groups, blood type, transfusion, universal donor, universal recipient]
+  - front: "What are the indications for packed red blood cell (pRBC) transfusion?"
+    back: "Hb <70 g/L in most patients. Maintain Hb 70-90 g/L during active bleeding. Consider higher threshold (Hb 80 g/L) for: CAD/unstable coronary syndromes, uncontrolled/unpredictable bleeding. 1 unit of pRBC raises Hb by approximately 10 g/L. Transfuse minimum units necessary to relieve symptoms or achieve safe Hb range.\n\nCanadian guidelines (Canadian Society of Hematology Choosing Wisely) advocate restrictive transfusion strategies (target Hb 70-80 g/L) in stable non-cardiac patients, as liberal transfusion does not improve outcomes and may cause harm (TACO, transfusion reactions)."
+    difficulty: easy
+    tags: [RBC transfusion, transfusion threshold, Hb 70, packed RBC, restrictive transfusion]
+  - front: "What are the indications for platelet transfusion by platelet count threshold?"
+    back: "<10 × 10⁹/L: non-immune thrombocytopenia (prophylactic). <20 × 10⁹/L: procedures not associated with significant blood loss. <50 × 10⁹/L: procedures associated with blood loss or major surgery (>500 mL EBL). <100 × 10⁹/L: pre-neurosurgery or head trauma. Any count: platelet dysfunction (or antiplatelet agents) with marked bleeding.\n\nPlatelet transfusion thresholds vary by clinical context. Relative contraindications include TTP, HIT, post-transfusion purpura, and HELLP syndrome, where platelet transfusion may worsen thrombotic microangiopathy or platelet consumption."
+    difficulty: medium
+    tags: [platelet transfusion, thrombocytopenia, transfusion threshold, neurosurgery, HIT, TTP]
+  - front: "What coagulation factor products are available and what are their indications?"
+    back: "Fresh Plasma (FP/FFP): multiple factor depletion (sepsis, DIC, liver disease), emergency warfarin reversal. Cryoprecipitate (enriched fibrinogen, VWF, VIII, XIII): hemophilia A, VWD (emergencies), hypofibrinogenemia. Fibrinogen concentrate: hypofibrinogenemia. Factor VIII concentrate: hemophilia A. Factor IX concentrate: hemophilia B. Recombinant factor VIIa: factor VII deficiency, hemophilia A/B with inhibitors, Glanzmann's thrombasthenia. PCC (Octaplex, Beriplex): warfarin reversal, vitamin K deficiency, urgent reversal of direct Xa inhibitors.\n\nPCC contains factors II, VII, IX, X and is preferred over FFP for urgent warfarin reversal due to faster administration and smaller volume. Cryoprecipitate is particularly useful for fibrinogen replacement in massive hemorrhage. Factor concentrates are preferred over cryoprecipitate for hemophilia when available."
+    difficulty: medium
+    tags: [coagulation factors, FFP, cryoprecipitate, PCC, hemophilia, warfarin reversal, VWD]
+  - front: "What is an Acute Hemolytic Transfusion Reaction (AHTR) and how is it managed?"
+    back: "ABO incompatibility → intravascular hemolysis via complement activation; occurs immediately post-transfusion. Most commonly due to incorrect patient identification. Risk: <1/40,000. Presentation: fever, chills, hypotension, back/flank pain, dyspnea, hemoglobinuria, acute renal failure, DIC. Management: STOP transfusion immediately, notify blood bank, check clerical error, send hemolysis labs (CBC, bilirubin, LDH, reticulocytes, DAT), maintain BP (IV fluids + inotropes), maintain urine output (diuretics, crystalloids, dopamine).\n\nAHTR is a potentially fatal emergency. The most common cause is clerical error (wrong blood, wrong patient). Hemoglobinuria ('port-wine' urine) indicates massive intravascular hemolysis. Early and aggressive IV fluid resuscitation prevents acute tubular necrosis from hemoglobin precipitation."
+    difficulty: medium
+    tags: [acute hemolytic transfusion reaction, AHTR, ABO incompatibility, hemoglobinuria, DIC, transfusion reaction]
+  - front: "What is a Febrile Nonhemolytic Transfusion Reaction (FNHTR) and when should you stop the transfusion?"
+    back: "Due to alloantibodies to donor WBCs/platelets or cytokine release. Occurs within 6 hours. Risk: 1/100 (minor) to 1/10,000-40,000 (severe). Presents with fever, rigors, flushing, headache, myalgia. If temperature <39°C and no serious symptoms: continue transfusion at slower rate + antipyretics. If temperature ≥39°C or serious symptoms (shaking, chills, hypotension, tachycardia, dyspnea, back/chest pain, N/V): STOP transfusion, investigate, supportive measures.\n\nFNHTR is the most common transfusion reaction. Leukodepletion (standard in Canada) reduces its incidence by removing the WBCs responsible for cytokine release. The critical step is ruling out a more serious hemolytic reaction before attributing fever to FNHTR."
+    difficulty: medium
+    tags: [febrile nonhemolytic transfusion reaction, FNHTR, leukodepletion, transfusion fever, management]
+  - front: "What is TRALI (Transfusion-Related Acute Lung Injury) and how does it differ from TACO?"
+    back: "TRALI: new-onset acute lung injury within 6 h of transfusion. Features: profound hypoxemia (PaO2/FiO2 <300), bilateral pulmonary edema on imaging, NO evidence of left atrial hypertension. Pathogenesis: donor Abs bind recipient WBCs → mediator release → increased pulmonary capillary permeability. Occurs 2-4 h post-transfusion, resolves in 24-72 h. Risk: 1/10,000. LEADING cause of transfusion-related morbidity/mortality. Treatment: supportive (oxygen). TACO: due to cardiac dysfunction or rapid transfusion → hypertensive pulmonary edema; treated with diuretics.\n\nTRALI vs TACO distinction is key: TRALI is noncardiogenic (normal or low pulmonary wedge pressure) while TACO is cardiogenic (elevated filling pressures, hypertension, responds to diuretics). TRALI treatment is supportive only; diuretics are NOT indicated."
+    difficulty: hard
+    tags: [TRALI, TACO, transfusion reaction, acute lung injury, pulmonary edema, transfusion complication]
+  - front: "What are the risk factors and features of Transfusion-Associated Circulatory Overload (TACO)?"
+    back: "Due to impaired cardiac function or excessively rapid transfusion. Incidence: 1/100. Risk factors: age >70, heart failure, history of MI, renal failure, positive fluid balance. Presentation: dyspnea, orthopnea, hypertension, tachycardia, crackles at lung bases, increased venous pressure. Treatment: stop transfusion, diuretics, oxygen; transfuse at lower rate with diuretics to prevent in high-risk patients.\n\nTACO is the second most common serious transfusion complication after TRALI. Prevention in high-risk patients includes slower transfusion rates and pre-treatment with furosemide. Unlike TRALI, TACO responds to diuresis."
+    difficulty: medium
+    tags: [TACO, transfusion overload, heart failure, diuretics, transfusion complication, pulmonary edema]
+  - front: "What are irradiated blood products and when are they indicated?"
+    back: "Irradiated blood products prevent proliferation of donor T-cells in recipients at risk of transfusion-associated graft-versus-host disease (TA-GvHD). Indicated for: severe T-cell immunodeficiency, patients on purine analogue chemotherapy, Hodgkin lymphoma patients, candidates for BM transplant, directed transfusions from first-degree relatives, HLA-matched products, intrauterine transfusions.\n\nTA-GvHD occurs when donor T-cells engraft and attack the immunocompromised host, with near-100% fatality. Irradiation renders donor T-cells incapable of proliferation. Leukodepletion (standard in Canada) is NOT sufficient to prevent TA-GvHD — irradiation is required."
+    difficulty: medium
+    tags: [irradiated blood products, TA-GvHD, immunocompromised, Hodgkin lymphoma, BMT, transfusion]
+  - front: "What is the difference between a Group & Screen (G&S) and a cross-match?"
+    back: "Group & Screen: determines ABO blood group + Rh status, plus screens for auto- or alloantibodies against major/minor blood group antigens in patient plasma. Cross-match: mixes recipient blood with potential donor blood to look for agglutination (takes 30-45 min). Emergency blood selection hierarchy: (1st) fully crossmatched blood; (2nd) same ABO/Rh group; (3rd) O- for reproductive-age females, O+ for all others.\n\nElectronic cross-match is increasingly used where available. O-negative blood is reserved for reproductive-age females to prevent Rh sensitization that could cause hemolytic disease of the newborn. For males and post-menopausal females, O-positive is acceptable in emergencies."
+    difficulty: easy
+    tags: [group and screen, crossmatch, blood bank, Rh factor, emergency transfusion, O negative]

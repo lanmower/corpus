@@ -11,6 +11,7 @@ import * as toast from './toast.js';
 import { ICON } from './icons.js';
 import { copyToClipboard } from './clipboard.js';
 import { readSessions as readTriageSessions, sessionCards as triageSessionCards } from './triage-store.js';
+import { skey, dataPath } from './syllabus.js';
 
 // ---- DOM refs ----
 export const appRoot = document.getElementById('app');
@@ -69,17 +70,17 @@ export function iconLabel(name, text) { return el('span', { class: 'icon-label' 
 // ---- data loading ----
 export async function fetchJson(p) { const r = await fetch(p); if (!r.ok) throw new Error(`${p}: ${r.status}`); return r.json(); }
 export async function loadManifest() {
-    state.manifest = await fetchJson('./data/manifest.json');
+    state.manifest = await fetchJson(dataPath('manifest.json'));
     try { schedule.setSubjectList(state.manifest.subjects.map(s => s.subject)); } catch {}
 }
-export async function loadShard(s) { if (state.shards[s]) return state.shards[s]; state.shards[s] = await fetchJson(`./data/${s}.json`); return state.shards[s]; }
+export async function loadShard(s) { if (state.shards[s]) return state.shards[s]; state.shards[s] = await fetchJson(dataPath(`${s}.json`)); return state.shards[s]; }
 export async function loadAllShards() { await Promise.all(state.manifest.subjects.map(s => loadShard(s.subject))); }
 
 // ---- guide ticks + mastery helpers ----
 export function loadGuideTicks() {
-    try { return JSON.parse(localStorage.getItem('corpus.guide.v1') || '{}'); } catch { return {}; }
+    try { return JSON.parse(localStorage.getItem(skey('guide.v1')) || '{}'); } catch { return {}; }
 }
-export function saveGuideTicks(t) { localStorage.setItem('corpus.guide.v1', JSON.stringify(t)); }
+export function saveGuideTicks(t) { localStorage.setItem(skey('guide.v1'), JSON.stringify(t)); }
 export function masteryFor(subject) {
     const ticks = loadGuideTicks()[subject] || {};
     const total = state.shards[subject]?.guide?.sections?.length || 0;

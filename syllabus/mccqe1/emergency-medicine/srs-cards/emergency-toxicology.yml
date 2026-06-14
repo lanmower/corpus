@@ -1,0 +1,114 @@
+# Emergency Toxicology (EmergencyMedicine) - generated from srs-mccqe1
+cards:
+  - front: "What are the classic clinical signs and toxin for cyanide poisoning, and what is the treatment?"
+    back: "Classic signs: cherry red skin, bitter almond odour (often absent clinically). High lactate suggests cyanide toxicity. Treatment: hydroxocobalamin 70 mg/kg IV over 15 min (max 5 g), up to two doses. Obtain labs immediately as hydroxocobalamin alters lab results.\n\nCyanide poisoning should be suspected in all fire victims, especially with elevated lactate disproportionate to clinical picture. CO poisoning often co-exists. Hydroxocobalamin (Cyanokit) is the preferred antidote in Canada."
+    difficulty: medium
+    tags: [cyanide poisoning, inhalation injury, toxicology, emergency medicine]
+  - front: "Why does pulse oximetry give falsely normal readings in carbon monoxide poisoning?"
+    back: "Pulse oximetry cannot differentiate carboxyhemoglobin from oxyhemoglobin, so SpO2 reads falsely normal or near-normal. Co-oximetry or direct carboxyhemoglobin measurement is required.\n\nThis is a critical clinical pearl: a patient with CO poisoning appears 'normal' on standard pulse oximetry. ABG with co-oximetry is required to detect carboxyhemoglobin. Treatment is 100% O2 ± hyperbaric O2."
+    difficulty: easy
+    tags: [CO poisoning, pulse oximetry, inhalation injury, emergency medicine]
+  - front: "What is the mnemonic 'DONT' in toxicology universal antidotes, and what does each letter stand for?"
+    back: "D = Dextrose (glucose); O = Oxygen; N = Naloxone; T = Thiamine. These are the universal antidotes given empirically to any undifferentiated overdose patient.\n\nThiamine MUST be given BEFORE dextrose to prevent precipitating Wernicke's encephalopathy in thiamine-deficient patients. Naloxone reverses opioid toxicity. Oxygen treats hypoxia. Dextrose treats hypoglycemia."
+    difficulty: easy
+    tags: [toxicology, antidotes, DONT, emergency medicine]
+  - front: "What is the naloxone dosing protocol for an adult opioid overdose, and why is a maintenance infusion often required?"
+    back: "Adults: 0.05 or 0.1 mg IV with stepwise escalation PRN. During cardiac arrest: 2 mg IV/IM q3 min up to max 12 mg. Maintenance infusion at 2/3 of the initial effective rousing dose per hour, because naloxone's half-life (30–80 min) is shorter than most opioids.\n\nStepwise delivery minimizes precipitation of acute opioid withdrawal in dependent patients. Without a maintenance infusion, re-narcotization is likely as naloxone wears off before the opioid does."
+    difficulty: medium
+    tags: [naloxone, opioid overdose, toxicology, emergency medicine]
+  - front: "What is the 'GOLDMARK' mnemonic for causes of elevated anion gap metabolic acidosis?"
+    back: "G = Glycols (ethylene glycol, propylene glycol); O = Oxoproline (acetaminophen metabolite); L = L-lactate; D = D-lactate; M = Methanol; A = ASA; R = Renal failure; K = Ketoacidosis (DKA, EtOH, starvation).\n\nThe anion gap = Na – Cl – HCO3 (normal <12 mmol/L). Elevated AG metabolic acidosis from toxic causes most commonly involves methanol, ethylene glycol, ASA, and metformin-associated lactic acidosis."
+    difficulty: easy
+    tags: [anion gap, metabolic acidosis, GOLDMARK, toxicology]
+  - front: "What is the 'MAEDIE' mnemonic for causes of elevated osmolar gap, and what is the formula for osmolar gap?"
+    back: "M = Methanol; A = Acetone; E = Ethanol; D = Diuretics (glycerol, mannitol, sorbitol); I = Isopropanol; E = Ethylene glycol. Osmolar gap = [2×Na + Glu + Urea] – measured osmolality. Normal <10. A normal osmolar gap does NOT rule out toxic alcohol ingestion.\n\nToxic alcohols (methanol, ethylene glycol) elevate the osmolar gap early before metabolism to their toxic metabolites. As metabolism proceeds, the osmolar gap normalizes but the anion gap rises. A normal osmolar gap does NOT exclude toxic alcohol ingestion."
+    difficulty: medium
+    tags: [osmolar gap, toxic alcohols, MAEDIE, toxicology]
+  - front: "What ECG findings are associated with TCA overdose, and what is the acute treatment for wide QRS or seizures?"
+    back: "TCA overdose: wide QRS complex. Treatment for wide QRS or seizures: sodium bicarbonate (NaHCO3) IV bolus. Also consider intralipid therapy, cardiac and hypotension support, seizure control.\n\nTCAs cause sodium channel blockade leading to QRS widening, which predicts seizures and ventricular arrhythmias. NaHCO3 alkalinizes plasma and improves sodium channel function. Flumazenil is contraindicated in combined TCA and benzodiazepine overdose."
+    difficulty: medium
+    tags: [TCA overdose, toxicology, ECG, sodium bicarbonate]
+  - front: "What are the key features of the anticholinergic toxidrome and the mnemonic to remember them?"
+    back: "'Hot as a hare' (hyperthermia), 'Blind as a bat' (dilated pupils), 'Dry as a bone' (dry skin), 'Red as a beet' (vasodilation/flushing), 'Mad as a hatter' (agitation/hallucinations), plus ileus, urinary retention, and tachycardia.\n\nCommon causative agents include TCAs, antihistamines (diphenhydramine), cyclobenzaprine, antipsychotics, antiparkinsonians, and belladonna alkaloids (atropine). Dry axillae is a useful clinical sign of anticholinergic toxicity."
+    difficulty: easy
+    tags: [anticholinergic, toxidrome, toxicology, emergency medicine]
+  - front: "What is the cholinergic toxidrome and what is the mnemonic 'DUMBELS'?"
+    back: "D = Diaphoresis/Diarrhea/Decreased BP; U = Urination; M = Miosis; B = Bronchospasm/Bronchorrhea/Bradycardia; E = Emesis/Excitation of skeletal muscle; L = Lacrimation; S = Salivation/Seizures. Caused by organophosphates, carbamates, nerve agents, anticholinesterases.\n\nThe cholinergic toxidrome is the opposite of anticholinergic. Treatment involves 100% O2, intubation, atropine (for secretions), and pralidoxime (2-PAM) to reactivate cholinesterase. Succinylcholine has prolonged duration in organophosphate poisoning."
+    difficulty: easy
+    tags: [cholinergic, toxidrome, DUMBELS, organophosphates, toxicology]
+  - front: "What is the serotonin syndrome triad and what drug classes are implicated?"
+    back: "Triad: (1) Mental status changes; (2) Autonomic hyperactivity; (3) Neuromuscular hyperactivity, plus hyperthermia, diarrhea, HTN. Implicated drugs: MAOIs, TCAs, SSRIs, opiate analgesics (e.g., tramadol, meperidine), cough medicines, weight reduction medications.\n\nSerotonin syndrome typically results from combinations of serotonergic drugs. It is distinguished from neuroleptic malignant syndrome (NMS) by onset (faster, hours vs. days), neuromuscular findings (clonus/hyperreflexia vs. rigidity), and causative agents."
+    difficulty: medium
+    tags: [serotonin syndrome, toxidrome, toxicology, emergency medicine]
+  - front: "What is the single-dose activated charcoal dose and its key contraindications?"
+    back: "Dose: 10 g/g drug ingested or 1 g/kg body weight. Contraindications: unprotected airway, late presentation (>1–2h post ingestion), small bowel obstruction, poor toxin adsorption.\n\nActivated charcoal decreases toxin bioavailability by adsorption in the GI tract. Evidence for effectiveness is debated among toxicologists and risk of aspiration is significant. Its use should be discussed with Poison Control."
+    difficulty: easy
+    tags: [activated charcoal, decontamination, toxicology, emergency medicine]
+  - front: "What toxins are amenable to multi-dose activated charcoal, and what is the mechanism?"
+    back: "Carbamazepine, phenobarbital, quinine, theophylline, and toxins undergoing enterohepatic recirculation. Mechanism: draws drug back into GI tract from systemic circulation (reverse diffusion/gut dialysis), removing drug already absorbed.\n\nMulti-dose activated charcoal (MDAC) works as 'gut dialysis' — the charcoal creates a concentration gradient that pulls drug from blood back into the bowel lumen. Typical regimens: 12.5 g q1h or 25 g q2h."
+    difficulty: medium
+    tags: [activated charcoal, multi-dose, toxicology, pharmacokinetics]
+  - front: "What are the criteria for using hemodialysis in poisoning, and which specific toxins are amenable?"
+    back: "Criteria: high water solubility, low protein binding, low molecular weight, adequate concentration gradient, small volume of distribution, rapid plasma equilibration, or clinical deterioration despite maximal support. Toxins: methanol, ethylene glycol, salicylates, lithium, phenobarbital, chloral hydrate, theophylline, carbamazepine, valproate, methotrexate.\n\nHemodialysis is particularly important for methanol and ethylene glycol (prevents conversion to toxic metabolites), and for severe salicylate toxicity (intractable acidosis, end-organ damage, inability to diurese)."
+    difficulty: medium
+    tags: [hemodialysis, toxicology, elimination, emergency medicine]
+  - front: "What is urine alkalinization used for in toxicology, and how is it achieved?"
+    back: "Used for: ASA, methotrexate, phenobarbital, chlorpropamide. Mechanism: weakly acidic substances are 'ion trapped' in alkaline urine (pH >7.5), preventing reabsorption and increasing elimination. Achieve with 3 amps NaHCO3/L of D5W at 1.5× maintenance; add 20–40 mEq/L KCl if able to urinate.\n\nHypokalemia must be corrected for urine alkalinization to work: the kidney reabsorbs K+ in exchange for H+, acidifying the urine. Monitor serum pH and drug levels closely; K+ supplementation is often required."
+    difficulty: medium
+    tags: [urine alkalinization, ASA overdose, toxicology, emergency medicine]
+  - front: "What is the treatment for severe beta-blocker or calcium channel blocker overdose?"
+    back: "Decontamination (activated charcoal ± whole bowel irrigation for extended-release). Then: IV glucagon, IV calcium chloride, IV high-dose insulin (with dextrose), IV lipid emulsification (intralipid). Order ECG and electrolytes.\n\nHigh-dose insulin-euglycemia therapy (HIET) is increasingly used for CCB and beta-blocker overdose. Glucagon bypasses beta-receptor blockade. Lipid emulsion 'sinks' lipophilic drugs away from cardiac tissue."
+    difficulty: hard
+    tags: [beta-blocker overdose, calcium channel blocker, toxicology, emergency medicine]
+  - front: "Why are beta-blockers contraindicated in acute cocaine toxicity?"
+    back: "Beta-blockers in cocaine toxicity cause unopposed alpha-adrenergic stimulation, worsening coronary vasospasm and hypertension. Benzodiazepines are first-line for any major cocaine side effects (agitation, hypertension, tachycardia).\n\nCocaine has both sympathomimetic and sodium channel blocking effects. Beta-blockade removes the compensatory beta-2 vasodilation, leaving alpha-1 vasoconstriction unopposed, which can precipitate myocardial ischemia."
+    difficulty: medium
+    tags: [cocaine, toxicology, beta-blockers, contraindications]
+  - front: "What is the antidote for digoxin toxicity, and what are the indications for its use?"
+    back: "Digoxin-specific antibody fragments (Fab). Indications: life-threatening dysrhythmias unresponsive to conventional therapy, 6h serum digoxin >12 nmol/L, initial K+ >5 mmol/L, ingestion >10 mg (adult) or >4 mg (child). 10–20 vials IV if acute; 3–6 vials if chronic. 1 vial (40 mg) neutralizes 0.5 mg digoxin.\n\nCommon digoxin dysrhythmias include VFib, bidirectional tachycardia, and conduction blocks. Hyperkalemia (K+ >5) from Na/K-ATPase inhibition is an important indication for Fab therapy and correlates with severity."
+    difficulty: hard
+    tags: [digoxin, toxicology, Fab fragments, antidote]
+  - front: "What is the treatment for ethylene glycol and methanol poisoning, and what cofactors are used?"
+    back: "Fomepizole (4-methylpyrazole): 15 mg/kg IV load over 30 min, then 10 mg/kg q12h. Alternative: ethanol 10% 10 mL/kg over 30 min then 1.5 mL/h. Consider hemodialysis. Cofactors: folinic acid for methanol; pyridoxine and thiamine for ethylene glycol.\n\nFomepizole inhibits alcohol dehydrogenase, preventing conversion of methanol to formic acid and ethylene glycol to oxalic acid (the toxic metabolites). These metabolites cause metabolic acidosis, blindness (methanol), and renal failure (ethylene glycol)."
+    difficulty: hard
+    tags: [methanol, ethylene glycol, fomepizole, toxicology]
+  - front: "What is the acetaminophen toxic dose and what investigation is used to guide treatment?"
+    back: "Toxic dose: >200 mg/kg or >7.5 g in adults. Measure serum acetaminophen level at 4h post-ingestion and use the Rumack-Matthew nomogram (single ingestion). Treatment: N-acetylcysteine. Monitor liver enzymes, INR, PTT, BUN, Cr. Liver/renal damage delayed >24h.\n\nAcetaminophen poisoning is often clinically silent initially. The Rumack-Matthew nomogram guides NAC therapy based on serum level and time post-ingestion. Hypoglycemia, metabolic acidosis, and encephalopathy are poor prognostic signs."
+    difficulty: medium
+    tags: [acetaminophen, overdose, N-acetylcysteine, toxicology]
+  - front: "What are the warfarin overdose management thresholds according to INR?"
+    back: "INR <5.0: cessation and observation. INR 5.1–9.0: hold warfarin; vitamin K 1–2 mg PO if bleeding risk. INR 9.1–20.0: hold warfarin, vitamin K 2–4 mg PO. INR >20.0: hold warfarin, vitamin K 10 mg IV over 10 min. PCC (e.g., Octaplex) for any elevated INR with life-threatening bleeding or surgery within 6h.\n\nIV vitamin K takes 4–6h to work; PCC (prothrombin complex concentrate) provides immediate factor replacement. Vitamin K IV is preferred over PO for fastest reversal in urgent situations."
+    difficulty: medium
+    tags: [warfarin, INR, reversal, toxicology, anticoagulation]
+  - front: "What are the CHIPES radiopaque substances visible on abdominal X-ray in overdose?"
+    back: "C = Calcium; C = Chloral hydrate; C = CCl4 (carbon tetrachloride); H = Heavy metals; I = Iron; P = Potassium; E = Enteric-coated salicylates; S = Some foreign bodies.\n\nThe mnemonic CHIPES helps identify radiopaque ingestions on abdominal X-ray. This can confirm certain ingestions and guide management (e.g., whole bowel irrigation for iron or enteric-coated tablets)."
+    difficulty: easy
+    tags: [toxicology, radiopaque, CHIPES, abdominal X-ray, emergency medicine]
+  - front: "What are the indications and contraindications for whole bowel irrigation (WBI) in toxicology?"
+    back: "Indications: delayed-release product, drug/toxin not bound to charcoal, drug packages (if breakage → emergency surgery), recent toxin ingestion, awake and alert patients. Contraindications: evidence of ileus, perforation, or obstruction. Dose: 500 mL/h (child) to 2000 mL/h (adult) polyethylene glycol until clear rectal effluent.\n\nWBI is used when activated charcoal is ineffective (e.g., iron, lithium, sustained-release medications) or when toxin packets are present. It physically flushes toxin through the GI tract before systemic absorption occurs."
+    difficulty: medium
+    tags: [whole bowel irrigation, decontamination, toxicology, emergency medicine]
+  - front: "What is lipid emulsion therapy used for in toxicology and what is the dosing?"
+    back: "Used for cardiogenic shock due to lipophilic toxins: local anesthetics (lidocaine), beta-blockers, calcium channel blockers, TCA overdose. Dose: 20% lipid solution 1.5 mL/kg bolus over 3 min, then infusion at 0.25 mL/kg/min.\n\nLipid emulsion ('fat emulsion') therapy creates a 'lipid sink' that sequesters lipophilic drugs away from cardiac tissue, reducing their effect. This is used as rescue therapy when conventional measures fail."
+    difficulty: hard
+    tags: [lipid emulsion, intralipid, toxicology, emergency medicine]
+  - front: "What toxidrome does ASA poisoning mimic and what investigations help distinguish it?"
+    back: "ASA poisoning mimics the sympathomimetic toxidrome. Distinguish with serum salicylate levels, ABG (respiratory alkalosis early, metabolic acidosis late — mixed picture), and anion gap. Hypoglycemia can also occur.\n\nASA causes direct stimulation of the respiratory centre (hyperventilation → respiratory alkalosis), then uncouples oxidative phosphorylation causing metabolic acidosis. The mixed respiratory alkalosis + metabolic acidosis is classic."
+    difficulty: medium
+    tags: [ASA overdose, salicylate, toxidrome, toxicology]
+  - front: "What is the treatment for acute dystonic reactions and what is a potential complication of benztropine?"
+    back: "Benztropine 1–2 mg IM/IV then 2 mg PO for 3 days, OR diphenhydramine 1–2 mg/kg IV then 25 mg PO TID × 3 days. Note: benztropine (Cogentin) has euphoric effects and potential for misuse.\n\nAcute dystonic reactions are extrapyramidal side effects of antipsychotics and other dopamine antagonists. Anticholinergic agents (benztropine, diphenhydramine) provide rapid relief by restoring the dopamine/acetylcholine balance."
+    difficulty: easy
+    tags: [acute dystonia, extrapyramidal, benztropine, toxicology, emergency medicine]
+  - front: "Why is flumazenil restricted in the ED, and when can it be safely used?"
+    back: "Flumazenil is only safe in iatrogenic overdose (e.g., operative oversedation). Extensive contraindications include: mixed overdose (especially with TCAs or pro-convulsants), history of alcohol use disorder, history of seizures. Supportive care is the mainstay for benzodiazepine overdose.\n\nFlumazenil can precipitate severe seizures in benzodiazepine-dependent patients or in mixed overdoses where benzodiazepines are protecting against seizures from another agent (e.g., TCAs, cocaine). It is generally avoided in the ED."
+    difficulty: medium
+    tags: [flumazenil, benzodiazepines, toxicology, emergency medicine]
+  - front: "What are the features of the sympathomimetic toxidrome and which drugs cause it?"
+    back: "Features: increased temperature, CNS excitation (including seizures), tachycardia, hypertension, N/V, diaphoresis, dilated pupils. Caused by: amphetamines, caffeine, cocaine, LSD, phencyclidine, ephedrine/decongestants, thyroid hormone, sedative or EtOH withdrawal.\n\nThe sympathomimetic toxidrome results from excess catecholamine activity. ASA poisoning and hypoglycemia can mimic this syndrome. Note that EtOH/sedative withdrawal also presents with sympathomimetic features."
+    difficulty: easy
+    tags: [sympathomimetic, toxidrome, toxicology, cocaine, amphetamines]
+  - front: "What ECG changes are associated with calcium channel blocker and digoxin overdose?"
+    back: "CCB and digoxin: atrioventricular (AV) block. Digoxin: also bradyarrhythmias, bidirectional tachycardia, VFib. Prolonged QT: terfenadine, astemizole, antipsychotics, hydroxychloroquine.\n\nCCBs reduce calcium-dependent conduction in the AV node, causing heart block. Digoxin inhibits the Na/K-ATPase and increases vagal tone, causing bradycardia and various degrees of AV block. Bidirectional VT is pathognomonic of digoxin toxicity."
+    difficulty: medium
+    tags: [ECG, toxicology, digoxin, calcium channel blocker, QT prolongation]

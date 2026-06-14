@@ -1,0 +1,538 @@
+# Gi Upper (Gastroenterology) - generated from srs-mccqe1
+cards:
+  - front: "What is the first-line treatment for classic GERD symptoms?"
+    back: "Empiric 8-week trial of PPIs\n\nPPIs are the most effective therapy for GERD. After 8 weeks, discontinue if no Barrett's or erosive esophagitis, but symptoms may recur."
+    difficulty: easy
+    tags: [GERD, treatment, pharmacology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the only beneficial lifestyle changes for GERD?"
+    back: "Weight loss (if obese/significant weight gain) and elevating head of bed (for nocturnal symptoms)\n\nDiet helps symptoms but not the disease. Avoid EtOH, coffee, spices, tomatoes, and citrus juices - these reduce symptoms but don't alter disease progression."
+    difficulty: medium
+    tags: [GERD, lifestyle, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the complications of GERD?"
+    back: "Esophageal stricture disease (scarring causing dysphagia to solids), esophagitis (ulceration/bleeding), Barrett's esophagus, and esophageal adenocarcinoma\n\nComplications range from benign strictures to premalignant Barrett's and最终的 adenocarcinoma. Chronic GERD is the key risk factor."
+    difficulty: easy
+    tags: [GERD, complications, pathology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is Barrett's esophagus?"
+    back: "Metaplasia of normal squamous esophageal epithelium to intestinal columnar epithelium\n\nAcquired via long-standing GERD and consequent damage to squamous epithelium. Endoscopy shows salmon pink mucosa in distal esophagus; diagnosis requires biopsy showing specialized intestinal epithelium."
+    difficulty: easy
+    tags: [Barretts, pathology, metaplasia, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the risk factors for Barrett's esophagus?"
+    back: "Male sex, age >50, White individuals, smokers, overweight, hiatus hernia, and long history of reflux symptoms\n\nIn North America and Western Europe, 0.5-20% of adults have BE. Up to 10% of GERD patients have developed BE by time of presentation."
+    difficulty: medium
+    tags: [Barretts, epidemiology, risk factors, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the malignant transformation rate of Barrett's esophagus?"
+    back: "Approximately 0.12% per year for all BE patients prior to dysplasia; 32-59% over 5-8 years in high-grade dysplasia\n\nRisk is very low in non-dysplastic BE but significantly higher once high-grade dysplasia develops, warranting intensive surveillance or intervention."
+    difficulty: medium
+    tags: [Barretts, oncology, risk, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "How is Barrett's esophagus managed?"
+    back: "High-dose PPI indefinitely (or fundoplication) to reduce transformation; surveillance gastroscopy every 3-5 years if no dysplasia\n\nHigh-grade dysplasia requires intensive biopsy surveillance, endoscopic ablation/resection, or esophagectomy. Evidence increasingly favors endoscopic ablation with mucosal resection or radiofrequency ablation."
+    difficulty: medium
+    tags: [Barretts, treatment, management, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the role of esophageal manometry in GERD?"
+    back: "Indicated in patients with non-cardiac chest pain and/or dysphagia with normal gastroscopy; diagnoses peristalsis abnormalities and decreased LES tone\n\nCannot detect presence of reflux but is essential before surgical fundoplication to ensure intact esophageal function; excludes alternative diagnoses like scleroderma and achalasia."
+    difficulty: medium
+    tags: [GERD, diagnosis, esophageal manometry, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "When is 24-hour pH monitoring indicated in GERD?"
+    back: "Most accurate test for reflux; most useful if PPIs do not improve symptoms\n\nNot required or performed in most cases, but valuable for confirming reflux in PPI-refractory symptoms before considering surgical intervention."
+    difficulty: medium
+    tags: [GERD, diagnosis, pH monitoring, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What key questions differentiate oropharyngeal from esophageal dysphagia?"
+    back: "Oropharyngeal: difficulty initiating swallowing, choking, coughing, nasal regurgitation. Esophageal: inability to move food down the esophagus\n\nAlso assess: associated symptoms (regurgitation, chest pain, voice change, weight loss), solid vs liquid vs both, intermittent vs progressive, and presence of GERD."
+    difficulty: medium
+    tags: [dysphagia, diagnosis, clinical, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the causes of oropharyngeal dysphagia?"
+    back: "Neurological: cortical, bulbar. Muscular: muscular dystrophy, polymyositis, myasthenia gravis. Structural: Zenker's diverticulum, cricopharyngeal, thyromegaly\n\nRequires careful neurological exam. Key distinguishing features include difficulty initiating swallow, choking, coughing, and nasal regurgitation."
+    difficulty: medium
+    tags: [dysphagia, neurology, etiology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the approach to a patient <50 with dysphagia and no alarm features but concomitant GERD?"
+    back: "Trial of PPIs first before proceeding to endoscopy\n\nIf no alarm features (dysphagia, odynophagia, weight loss, anemia, GI bleeding) and patient has GERD symptoms, empiric PPI trial is appropriate first step."
+    difficulty: medium
+    tags: [dysphagia, treatment, GERD, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the difference between dysphagia and odynophagia?"
+    back: "Dysphagia = difficulty in swallowing. Odynophagia = pain on swallowing\n\nThese are distinct symptoms with different etiologies. Dysphagia suggests mechanical or motility issue; odynophagia suggests inflammatory or ulcerative process."
+    difficulty: easy
+    tags: [definitions, symptoms, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the recommended surveillance protocol for non-dysplastic Barrett's esophagus?"
+    back: "Surveillance gastroscopy every 3-5 years\n\nIf low-grade dysplasia: every 6 months for 1 year then annually. High-grade dysplasia requires intensive surveillance with biopsy, endoscopic ablation/resection, or esophagectomy."
+    difficulty: medium
+    tags: [Barretts, surveillance, endoscopy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are alarm features in GERD that warrant endoscopy?"
+    back: "Anorexia, weight loss, bleeding, dysphagia (suggesting complicated disease)\n\nChronic GERD or symptoms suggestive of complicated disease warrant EGD. Also: chronic GERD patients should be evaluated for Barrett's risk factors."
+    difficulty: easy
+    tags: [GERD, endoscopy, alarm features, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the most accurate test for diagnosing gastroesophageal reflux disease (GERD)?"
+    back: "24-hour pH monitoring\n\n24-hour pH monitoring is the most accurate test for reflux, though not required in most cases. It is most useful when PPIs do not improve symptoms."
+    difficulty: easy
+    tags: [GERD, diagnosis, gastroenterology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the only beneficial lifestyle changes for GERD symptoms?"
+    back: "Weight loss (if obese or significant weight gain) and elevating the head of bed (if nocturnal symptoms)\n\nWhile diet may help symptoms, it does not change the underlying disease. Only weight loss and head-of-bed elevation have proven benefit."
+    difficulty: easy
+    tags: [GERD, treatment, lifestyle, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the gold standard treatment for GERD?"
+    back: "Proton pump inhibitors (PPIs)\n\nPPIs are the most effective therapy for GERD. An empiric 8-week trial is recommended for patients with classic symptoms."
+    difficulty: easy
+    tags: [GERD, treatment, pharmacology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are complications of untreated/complicated GERD?"
+    back: "Esophageal stricture (scarring causing dysphagia to solids), esophagitis (ulceration, bleeding), and Barrett's esophagus leading to adenocarcinoma\n\nChronic GERD can lead to scarring causing strictures, mucosal damage causing esophagitis, and metaplasia (Barrett's) that can progress to cancer."
+    difficulty: medium
+    tags: [GERD, complications, oncology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is Barrett's esophagus defined as histologically?"
+    back: "Replacement of normal squamous esophageal epithelium with intestinal columnar epithelium (specialized intestinal metaplasia)\n\nDiagnosis requires biopsy demonstrating specialized intestinal epithelium of any length within the esophagus, seen endoscopically as salmon pink mucosa."
+    difficulty: medium
+    tags: [Barretts esophagus, pathology, gastroenterology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are risk factors for Barrett's esophagus?"
+    back: "Male sex, age >50, White race, smokers, overweight/obesity, hiatus hernia, and long history of reflux symptoms\n\nBarrett's is more common in males over 50 with chronic GERD, particularly those with obesity, hiatus hernia, and smoking history."
+    difficulty: easy
+    tags: [Barretts esophagus, epidemiology, risk factors, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the annual malignant transformation rate for Barrett's esophagus without dysplasia?"
+    back: "Approximately 0.12% per year\n\nThe rate of malignant transformation is very low (0.12%/year) for all BE patients prior to dysplasia, but significantly higher (32-59% over 5-8 years) in high-grade dysplasia."
+    difficulty: medium
+    tags: [Barretts esophagus, oncology, prognosis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "How is Barrett's esophagus with high-grade dysplasia managed?"
+    back: "Regular intensive biopsy surveillance, endoscopic ablation/mucosal resection, or esophagectomy\n\nEvidence increasingly favours endoscopic ablation (RFA) with mucosal resection over esophagectomy for high-grade dysplasia in BE."
+    difficulty: medium
+    tags: [Barretts esophagus, treatment, endoscopy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "How do you distinguish oropharyngeal from esophageal dysphagia on history?"
+    back: "Oropharyngeal: difficulty initiating swallowing, choking, coughing, nasal regurgitation. Esophageal: inability to move food down the esophagus\n\nOropharyngeal dysphagia presents with problems starting to swallow (transfer problem), while esophageal dysphagia is a passage problem."
+    difficulty: medium
+    tags: [dysphagia, diagnosis, clinical skills, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the most common cause of esophageal stricture?"
+    back: "Peptic stricture (from chronic GERD)\n\nPeptic strictures from chronic GERD are the most common cause of esophageal structural narrowing, causing dysphagia to solids."
+    difficulty: easy
+    tags: [dysphagia, pathology, GERD, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the recommended surveillance interval for Barrett's esophagus without dysplasia?"
+    back: "Every 3-5 years\n\nPatients with BE and no dysplasia should undergo surveillance gastroscopy every 3-5 years to monitor for dysplasia progression."
+    difficulty: easy
+    tags: [Barretts esophagus, surveillance, gastroenterology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the first-line treatment approach for a patient <50 years with dysphagia and no alarm features who also has GERD symptoms?"
+    back: "Empiric 8-week PPI trial before proceeding to endoscopy\n\nIn younger patients with dysphagia and GERD symptoms without alarm features, an empiric PPI trial is recommended as first-line before endoscopy."
+    difficulty: medium
+    tags: [dysphagia, GERD, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What lifestyle modifications have been shown to benefit GERD symptoms?"
+    back: "Weight loss (if obese or significant weight gain) and elevating the head of bed (for nocturnal symptoms)\n\nWhile diet may help symptoms, it doesn't change the disease. Only weight loss and head-of-bed elevation are evidence-based lifestyle changes."
+    difficulty: easy
+    tags: [GERD, lifestyle, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the alarm features in GERD that warrant endoscopy?"
+    back: "Dysphagia, odynophagia, weight loss, anorexia, anemia, GI bleeding\n\nEGD is recommended for patients with chronic GERD or symptoms suggestive of complicated disease including anorexia, weight loss, bleeding, or dysphagia."
+    difficulty: easy
+    tags: [GERD, endoscopy, alarm features, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the annual malignant transformation rate for Barrett's esophagus patients without dysplasia?"
+    back: "Approximately 0.12% per year\n\nThe rate of malignant transformation is approximately 0.12% per year for all BE patients prior to dysplasia, but is significantly higher in high-grade dysplasia (32-59% over 5-8 years)."
+    difficulty: medium
+    tags: [Barretts esophagus, carcinogenesis, oncology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "How often should surveillance endoscopy be performed in Barrett's esophagus without dysplasia?"
+    back: "Every 3-5 years\n\nFor Barrett's esophagus without dysplasia, surveillance gastroscopy is recommended every 3-5 years, with more intensive surveillance for high-grade dysplasia."
+    difficulty: easy
+    tags: [Barretts esophagus, surveillance, gastroenterology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the preferred treatment for high-grade dysplasia in Barrett's esophagus?"
+    back: "Endoscopic ablation with mucosal resection or radiofrequency ablation (RFA)\n\nEvidence increasingly favors endoscopic ablation with mucosal resection or radiofrequency ablation over esophagectomy for high-grade dysplasia."
+    difficulty: medium
+    tags: [Barretts esophagus, treatment, endoscopy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What type of dysphagia (solid foods only vs. solids and liquids) suggests a mechanical obstruction versus a neuromuscular disorder?"
+    back: "Solid food only suggests mechanical obstruction; solids, liquids, or both suggests neuromuscular disorder\n\nIn the approach to dysphagia, solid food alone points to mechanical obstruction, while involvement of both solids and liquids indicates a neuromuscular disorder."
+    difficulty: easy
+    tags: [dysphagia, diagnosis, differential, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the key distinguishing feature of oropharyngeal dysphagia?"
+    back: "Difficulty initiating swallowing, choking, coughing, nasal regurgitation\n\nOropharyngeal dysphagia presents with difficulty initiating the act of swallowing, choking, coughing, and nasal regurgitation, as opposed to esophageal dysphagia."
+    difficulty: easy
+    tags: [dysphagia, oropharyngeal, clinical presentation, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "In a patient <50 years old with dysphagia and no alarm features but with GERD, what is the initial management before endoscopy?"
+    back: "Empiric 8-week PPI trial\n\nIf concomitant GERD symptoms in patients <50 with no alarm features, a trial of PPI first before proceeding to endoscopy is recommended."
+    difficulty: medium
+    tags: [dysphagia, GERD, treatment algorithm, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the complications of untreated/advanced GERD?"
+    back: "Esophageal stricture (leading to dysphagia), esophagitis (ulceration, bleeding), Barrett's esophagus, and esophageal adenocarcinoma\n\nGERD can lead to scarring causing stricture with dysphagia to solids, esophagitis with ulceration and bleeding, Barrett's esophagus, and progression to adenocarcinoma."
+    difficulty: easy
+    tags: [GERD, complications, carcinogenesis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What finding on endoscopy suggests Barrett's esophagus?"
+    back: "Salmon pink mucosa in the distal esophagus\n\nEndoscopy shows salmon pink mucosa in the distal esophagus, and diagnosis is confirmed by biopsy showing specialized intestinal epithelium."
+    difficulty: easy
+    tags: [Barretts esophagus, endoscopy, findings, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "For low-grade dysplasia in Barrett's esophagus, what are the management options?"
+    back: "Surveillance every 6 months for 1 year then annually, OR endoscopic ablation/resection\n\nBoth surveillance and endoscopic ablation/resection are satisfactory options for low-grade dysplasia in Barrett's esophagus."
+    difficulty: medium
+    tags: [Barretts esophagus, low-grade dysplasia, management, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What foods/substances should GERD patients avoid that may worsen symptoms?"
+    back: "Alcohol, coffee, spices, tomatoes, and citrus juices\n\nWhile diet helps symptoms but not the disease, patients are advised to avoid alcohol, coffee, spices, tomatoes, and citrus juices."
+    difficulty: easy
+    tags: [GERD, diet, lifestyle, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the recommended management for PPI-refractory GERD with reflux-related symptoms?"
+    back: "Consider surgical treatment (laparoscopic Nissen fundoplication) - showed 67% success vs 28% in medical therapy in RCT\n\nA 2019 NEJM randomized trial showed surgical treatment achieved significantly greater success (67%) than medical therapy (28%) for PPI-refractory reflux-related heartburn."
+    difficulty: hard
+    tags: [GERD, refractory, fundoplication, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the most accurate test for diagnosing GERD?"
+    back: "24-hour pH monitoring\n\nWhile esophageal manometry diagnoses motility abnormalities and endoscopy visualizes structural issues, 24h pH monitoring is most accurate for detecting reflux."
+    difficulty: easy
+    tags: [GERD, diagnosis, investigations, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "Which lifestyle modifications have been shown to improve GERD symptoms?"
+    back: "Weight loss (if obese or significant weight gain) and elevating the head of bed (for nocturnal symptoms)\n\nWhile diet may help symptoms, it does not change the underlying disease. Only weight loss and head-of-bed elevation are truly beneficial."
+    difficulty: easy
+    tags: [GERD, lifestyle, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the complications of untreated GERD?"
+    back: "Esophageal stricture (scarring causing dysphagia to solids), esophagitis (ulceration, bleeding), and Barrett's esophagus leading to adenocarcinoma\n\nChronic GERD can lead to multiple complications including stricture formation, inflammatory changes, and the premalignant condition Barrett's esophagus."
+    difficulty: medium
+    tags: [GERD, complications, pathology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "How is Barrett's esophagus diagnosed?"
+    back: "Endoscopy shows salmon pink mucosa in distal esophagus; diagnosis confirmed by biopsy showing specialized intestinal epithelium\n\nEndoscopic appearance alone is insufficient - biopsy demonstrating intestinal metaplasia is required for definitive diagnosis."
+    difficulty: medium
+    tags: [Barretts esophagus, diagnosis, endoscopy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the annual malignant transformation rate for Barrett's esophagus (prior to dysplasia)?"
+    back: "Approximately 0.12% per year\n\nThe risk of progression to adenocarcinoma is low in non-dysplastic BE but significantly higher in high-grade dysplasia (32-59% over 5-8 years)."
+    difficulty: medium
+    tags: [Barretts esophagus, cancer risk, epidemiology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the recommended surveillance for Barrett's esophagus without dysplasia?"
+    back: "Surveillance gastroscopy every 3-5 years\n\nNon-dysplastic Barrett's requires periodic surveillance, though the exact interval depends on segment length and other risk factors."
+    difficulty: medium
+    tags: [Barretts esophagus, management, surveillance, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "How is high-grade dysplasia in Barrett's esophagus managed?"
+    back: "Intensive surveillance with frequent biopsies, endoscopic ablation (radiofrequency ablation), endoscopic mucosal resection, or esophagectomy\n\nEvidence increasingly favors endoscopic ablation with mucosal resection or radiofrequency ablation over surgical esophagectomy."
+    difficulty: medium
+    tags: [Barretts esophagus, treatment, high-grade dysplasia, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the treatment for low-grade dysplasia in Barrett's esophagus?"
+    back: "Surveillance every 6 months for 1 year then annually, OR endoscopic ablation/resection - both are acceptable options\n\nBoth surveillance and endoscopic intervention are satisfactory approaches for low-grade dysplasia."
+    difficulty: medium
+    tags: [Barretts esophagus, treatment, low-grade dysplasia, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is dysphagia?"
+    back: "Difficulty swallowing\n\nDysphagia refers to difficulty initiating swallowing (oropharyngeal) or moving food down the esophagus (esophageal)."
+    difficulty: easy
+    tags: [dysphagia, definition, symptoms, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "In a patient <50 years old with dysphagia and no alarm features, what is the initial management?"
+    back: "Empiric PPI trial before proceeding to endoscopy\n\nFor younger patients with dysphagia and concomitant GERD symptoms without alarm features, a PPI trial is recommended as first-line."
+    difficulty: medium
+    tags: [dysphagia, management, GERD, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the clinical features of esophageal motor disorders?"
+    back: "Dysphagia with solids or liquids (or both) and chest pain\n\nMotor disorders present with variable dysphagia and sometimes chest pain, depending on the specific disorder."
+    difficulty: easy
+    tags: [esophageal motility, clinical features, symptoms, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "When is 24-hour pH monitoring most useful in GERD?"
+    back: "Most useful if PPIs do not improve symptoms\n\nWhile the most accurate test for reflux, 24h pH monitoring is not routinely required - it's reserved for PPI-refractory cases."
+    difficulty: medium
+    tags: [GERD, pH monitoring, diagnosis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What foods should be avoided in GERD?"
+    back: "Alcohol, coffee, spices, tomatoes, and citrus juices\n\nThese dietary triggers may worsen GERD symptoms but do not affect the underlying disease process."
+    difficulty: easy
+    tags: [GERD, diet, lifestyle, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "When should PPIs be continued as maintenance therapy in GERD?"
+    back: "If symptoms recur after discontinuation, or if patient has Barrett's esophagus or erosive esophagitis\n\nMaintenance PPI is indicated for complicated GERD, but can be discontinued in recovered patients without BE or erosive esophagitis."
+    difficulty: medium
+    tags: [GERD, PPI, maintenance therapy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is on-demand therapy appropriate for in GERD?"
+    back: "Non-erosive esophagitis (NERD)\n\nPatients with NERD can use on-demand therapy with antacids, alginates, H2-blockers, or PPIs rather than daily therapy."
+    difficulty: medium
+    tags: [GERD, NERD, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the classic endoscopic appearance of Barrett's esophagus?"
+    back: "Salmon pink mucosa in the distal esophagus\n\nThe salmon-pink (or reddish) appearance in the distal esophagus is the classic endoscopic finding, though biopsy confirmation is required."
+    difficulty: easy
+    tags: [Barretts esophagus, endoscopy, appearance, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What causes esophageal stricture in GERD?"
+    back: "Scarring from chronic inflammation\n\nChronic GERD leads to repeated injury and healing, resulting in fibrosis and stricture formation that causes dysphagia to solids."
+    difficulty: easy
+    tags: [GERD, esophageal stricture, pathology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the most accurate diagnostic test for gastroesophageal reflux disease (GERD)?"
+    back: "24-hour pH monitoring\n\n24-hour pH monitoring is the most accurate test for reflux, though it is not required in most cases. It is most useful when PPIs do not improve symptoms."
+    difficulty: easy
+    tags: [GERD, diagnosis, gastroenterology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the alarm features in GERD that warrant endoscopic evaluation?"
+    back: "Dysphagia, odynophagia, weight loss, anemia, gastrointestinal bleeding, anorexia\n\nEGD is recommended for patients with chronic GERD or symptoms suggestive of complicated disease including anorexia, weight loss, bleeding, and dysphagia."
+    difficulty: easy
+    tags: [GERD, endoscopy, alarm symptoms, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the definition of Barrett's esophagus?"
+    back: "Metaplastic change of normal squamous esophageal epithelium to intestinal columnar epithelium in the distal esophagus\n\nBarrett's esophagus is a precursor to esophageal adenocarcinoma. Diagnosis relies on endoscopy showing salmon pink mucosa and biopsy demonstrating specialized intestinal epithelium."
+    difficulty: easy
+    tags: [Barretts esophagus, pathophysiology, gastroenterology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the annual risk of malignant transformation in Barrett's esophagus without dysplasia?"
+    back: "Approximately 0.12% per year\n\nThe rate of malignant transformation is approximately 0.12% per year for all BE patients prior to dysplasia. The risk is significantly higher in high-grade dysplasia (32-59% over 5-8 years)."
+    difficulty: medium
+    tags: [Barretts esophagus, cancer risk, oncology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What treatment options exist for high-grade dysplasia in Barrett's esophagus?"
+    back: "Regular and frequent surveillance with intensive biopsy, endoscopic ablation/resection, or esophagectomy\n\nEvidence increasingly favors endoscopic ablation with mucosal resection or radiofrequency ablation (RFA) over surgical options for high-grade dysplasia."
+    difficulty: medium
+    tags: [Barretts esophagus, treatment, endoscopy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the gold standard treatment for refractory GERD with documented reflux?"
+    back: "Laparoscopic Nissen fundoplication\n\nSurgical fundoplication (wrapping gastric fundus around lower esophagus) is more likely to alleviate symptoms if lower esophageal pressure is diminished. A 2019 NEJM study showed 67% success with surgery vs 28% with medical therapy."
+    difficulty: medium
+    tags: [GERD, fundoplication, surgery, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the two main categories of dysphagia?"
+    back: "Oropharyngeal (difficulty initiating swallowing) and Esophageal (inability to move food down the esophagus)\n\nOropharyngeal dysphagia presents with choking, coughing, nasal regurgitation. Esophageal dysphagia presents with food getting stuck in the chest."
+    difficulty: easy
+    tags: [dysphagia, classification, diagnosis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "In a patient <50 years old with dysphagia and no alarm features, what is the first step in management?"
+    back: "Empiric 8-week PPI trial before proceeding to endoscopy\n\nIf concomitant GERD symptoms in patients <50 with no alarm features, consider trial of PPI first before endoscopy. Age >50 with weight loss requires prompt endoscopic evaluation."
+    difficulty: medium
+    tags: [dysphagia, management, PPI, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the alarm features in dysphagia that warrant urgent endoscopy?"
+    back: "Weight loss, progressive symptoms, solid foods and liquids both, onset >50 years old\n\nProgressive dysphagia, combined solid and liquid dysphagia, and age >50 with weight loss suggest structural obstruction or malignancy requiring prompt evaluation."
+    difficulty: easy
+    tags: [dysphagia, alarm features, endoscopy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the typical presentation of esophageal stricture?"
+    back: "Dysphagia to solids (progressing to liquids if untreated)\n\nEsophageal stricture is a complication of GERD causing scarring. Patients present with progressive dysphagia, initially for solids only."
+    difficulty: easy
+    tags: [esophageal stricture, complication, dysphagia, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the recommended empiric treatment duration for classic GERD symptoms?"
+    back: "8-week trial of PPI\n\nEmpiric 8-week PPI trial is recommended for patients with classic GERD symptoms. PPIs are the most effective therapy and may need to be continued as maintenance."
+    difficulty: easy
+    tags: [GERD, PPI, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "When can PPI therapy be discontinued in GERD patients?"
+    back: "After 8 weeks in recovered patients without Barrett's esophagus or erosive esophagitis\n\nPPIs can be discontinued after 8 weeks in patients who have recovered without BE or erosive esophagitis, though symptoms may recur."
+    difficulty: easy
+    tags: [GERD, PPI, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the recommended management for low-grade dysplasia in Barrett's esophagus?"
+    back: "Surveillance every 6 months for 1 year then annually, OR endoscopic ablation/resection\n\nBoth surveillance and endoscopic ablation/resection are satisfactory options for low-grade dysplasia in Barrett's esophagus."
+    difficulty: medium
+    tags: [Barretts esophagus, dysplasia, management, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the two only lifestyle modifications proven to benefit GERD symptoms?"
+    back: "Weight loss (if obese or significant weight gain) and elevating the head of bed (for nocturnal symptoms)\n\nWhile diet modifications (avoiding EtOH, coffee, spices, tomatoes, citrus) may help symptoms, they do not alter the underlying disease. Only weight loss and head-of-bed elevation have evidence-based benefit."
+    difficulty: easy
+    tags: [GERD, lifestyle modification, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the risk of malignant transformation in high-grade dysplasia in Barrett's esophagus?"
+    back: "32-59% transformation rate over 5-8 years\n\nHigh-grade dysplasia carries a significantly higher risk of progression to adenocarcinoma compared to non-dysplastic Barrett's, requiring intensive surveillance or intervention."
+    difficulty: hard
+    tags: [Barretts esophagus, high-grade dysplasia, cancer risk, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the treatment options for high-grade dysplasia in Barrett's esophagus?"
+    back: "Intensive surveillance with frequent biopsies, endoscopic ablation (radiofrequency ablation), endoscopic mucosal resection, or esophagectomy\n\nEvidence increasingly favours endoscopic ablation with radiofrequency ablation or mucosal resection as first-line treatment, with esophagectomy reserved for certain cases."
+    difficulty: hard
+    tags: [Barretts esophagus, high-grade dysplasia, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "Define dysphagia versus odynophagia"
+    back: "Dysphagia = difficulty swallowing; Odynophagia = pain on swallowing\n\nThis distinction is clinically important as dysphagia suggests mechanical or motility issues while odynophagia often indicates mucosal inflammation or ulceration."
+    difficulty: easy
+    tags: [dysphagia, symptom definition, esophageal disorders, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What key question helps differentiate oropharyngeal from esophageal dysphagia?"
+    back: "Whether the difficulty is in initiating swallowing (oropharyngeal) versus moving food down the esophagus (esophageal)\n\nOropharyngeal dysphagia involves difficulty initiating swallowing with choking, coughing, nasal regurgitation, while esophageal dysphagia is the inability to move food down the esophagus."
+    difficulty: medium
+    tags: [dysphagia, clinical assessment, differential diagnosis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "In a patient <50 years with dysphagia and no alarm features but with concomitant GERD, what is the initial management before endoscopy?"
+    back: "Empiric 8-week PPI trial\n\nFor patients under 50 without alarm features who also have GERD symptoms, an empiric PPI trial is recommended as first-line therapy before proceeding to endoscopy."
+    difficulty: medium
+    tags: [dysphagia, GERD, treatment algorithm, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "When should PPIs be discontinued in GERD patients?"
+    back: "After 8 weeks in recovered patients without Barrett's esophagus or erosive esophagitis\n\nPPIs can be stopped after 8 weeks in patients who have recovered and lack risk factors (no BE or erosive esophagitis), though symptoms may recur."
+    difficulty: easy
+    tags: [GERD, PPI therapy, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the endoscopy finding characteristic of Barrett's esophagus?"
+    back: "Salmon pink mucosa in the distal esophagus\n\nThe salmon-pink color distinguishes Barrett's metaplastic columnar epithelium from the pale pink squamous epithelium of the normal esophagus."
+    difficulty: easy
+    tags: [Barretts esophagus, endoscopy, diagnosis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the mechanism of esophageal manometry in evaluating GERD candidates for fundoplication?"
+    back: "To ensure intact esophageal peristalsis before surgery, as abnormal peristalsis predicts poor surgical outcomes\n\nManometry is indicated before fundoplication to exclude alternative diagnoses (achalasia, scleroderma) and assess peristaltic function, which predicts surgical success."
+    difficulty: hard
+    tags: [esophageal manometry, fundoplication, pre-operative assessment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What symptoms suggest oropharyngeal (transfer) dysphagia?"
+    back: "Difficulty initiating swallowing, choking, coughing, nasal regurgitation, change in voice pitch\n\nThese symptoms indicate problems with the transfer of food from the oropharynx to esophagus, often due to neurological or muscular disorders."
+    difficulty: easy
+    tags: [oropharyngeal dysphagia, symptoms, neurological, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the characteristic dysphagia pattern in mechanical obstruction versus neuromuscular disorders?"
+    back: "Mechanical: solids only; Neuromuscular: solids, liquids, or both (progressive)\n\nSolid-food-only dysphagia suggests mechanical narrowing, while involvement of both solids and liquids suggests neuromuscular dysmotility."
+    difficulty: medium
+    tags: [dysphagia, differential diagnosis, clinical assessment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the most accurate diagnostic test for GERD?"
+    back: "24-hour pH monitoring\n\n24h pH monitoring is the most accurate test for reflux but is not required in most cases; most useful when PPIs do not improve symptoms."
+    difficulty: medium
+    tags: [GERD, diagnosis, gastroenterology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the first-line empiric treatment for classic GERD symptoms?"
+    back: "8-week trial of PPI\n\nAn empiric 8-week trial of PPI is indicated in patients with classic GERD symptoms; PPIs are the most effective therapy."
+    difficulty: easy
+    tags: [GERD, treatment, pharmacology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "When should PPI therapy be discontinued in GERD patients?"
+    back: "After 8 weeks in patients without Barrett's esophagus or erosive esophagitis\n\nPPIs can be discontinued after 8 weeks in recovered patients without Barrett's esophagus or erosive esophagitis, though symptoms may recur."
+    difficulty: easy
+    tags: [GERD, treatment, pharmacology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What does Barrett's esophagus appear like endoscopically?"
+    back: "Salmon pink mucosa in the distal esophagus\n\nEndoscopy shows salmon pink mucosa in the distal esophagus; diagnosis requires biopsy showing specialized intestinal epithelium."
+    difficulty: easy
+    tags: [Barretts, diagnosis, endoscopy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the malignant transformation rate for high-grade dysplasia in Barrett's esophagus?"
+    back: "32-59% over 5-8 years of surveillance\n\nThe risk of malignant transformation in high-grade dysplasia is significantly higher, with studies reporting 32-59% over 5-8 years."
+    difficulty: medium
+    tags: [Barretts, high-grade dysplasia, oncology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the recommended surveillance protocol for low-grade dysplasia in Barrett's esophagus?"
+    back: "Every 6 months for 1 year, then annually\n\nFor low-grade dysplasia, surveillance every 6 months for 1 year then annually is satisfactory, though endoscopic ablation/resection is also an option."
+    difficulty: medium
+    tags: [Barretts, surveillance, guidelines, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "Define dysphagia"
+    back: "Difficulty in swallowing\n\nDysphagia refers to difficulty in swallowing, which can be oropharyngeal (difficulty initiating) or esophageal (inability to move food down)."
+    difficulty: easy
+    tags: [dysphagia, symptom, definition, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What type of dysphagia suggests mechanical obstruction?"
+    back: "Solid food only\n\nSolid food only dysphagia suggests mechanical obstruction, while solids and liquids suggests neuromuscular disorder."
+    difficulty: medium
+    tags: [dysphagia, diagnosis, approach, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What type of dysphagia suggests neuromuscular disorder?"
+    back: "Both solids and liquids\n\nDysphagia with both solids and liquids suggests a neuromuscular disorder, as opposed to mechanical obstruction which typically affects solids first."
+    difficulty: medium
+    tags: [dysphagia, diagnosis, neuromuscular, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "In a patient <50 years old with GERD symptoms and no alarm features, what is the initial management before endoscopy?"
+    back: "Trial of PPI first\n\nIf concomitant GERD symptoms in patients <50 with no alarm features, consider a trial of PPI first before proceeding to endoscopy."
+    difficulty: medium
+    tags: [dysphagia, GERD, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What does Barrett's esophagus predispose the esophageal lining to?"
+    back: "Premalignant changes characterized as low or high-grade dysplasia\n\nBE predisposes the esophageal lining to premalignant changes characterized as low or high-grade dysplasia, which can progress to adenocarcinoma."
+    difficulty: medium
+    tags: [Barretts, dysplasia, pathophysiology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is indicated for patients with chronic GERD and alarm features?"
+    back: "EGD (esophagogastroduodenoscopy)\n\nEGD is recommended for patients with chronic GERD or symptoms suggestive of complicated disease like anorexia, weight loss, bleeding, or dysphagia."
+    difficulty: easy
+    tags: [GERD, screening, endoscopy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the surgical treatment for GERD?"
+    back: "Fundoplication (wrapping of gastric fundus around the lower end of the esophagus)\n\nSurgical fundoplication wraps the gastric fundus around the lower esophagus; more likely to help if lower esophageal pressure is diminished."
+    difficulty: easy
+    tags: [GERD, surgery, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What type of dysphagia pattern suggests progressive disease?"
+    back: "Progressive (worsening over time)\n\nProgressive dysphagia that worsens over time suggests concerning pathology and requires investigation."
+    difficulty: medium
+    tags: [dysphagia, progression, diagnosis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are oropharyngeal dysphagia symptoms?"
+    back: "Difficulty initiating swallowing, choking, coughing, nasal regurgitation\n\nOropharyngeal dysphagia involves difficulty initiating swallowing, choking, coughing, and nasal regurgitation."
+    difficulty: easy
+    tags: [dysphagia, oropharyngeal, symptoms, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are esophageal dysphagia symptoms?"
+    back: "Inability to move food down the esophagus\n\nEsophageal dysphagia is characterized by the inability to move food down the esophagus after swallowing."
+    difficulty: easy
+    tags: [dysphagia, esophageal, symptoms, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the prevalence of BE in GERD patients who seek medical attention?"
+    back: "Up to 10%\n\nUp to 10% of GERD patients will have already developed BE by the time they seek medical attention."
+    difficulty: medium
+    tags: [Barretts, epidemiology, prevalence, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the definition of upper GI bleeding?"
+    back: "Bleeding proximal to the ligament of Treitz\n\nThe ligament of Treitz is the suspensory ligament where the fourth portion of duodenum transitions to jejunum. Upper GI bleeds account for 75% of GI bleeds."
+    difficulty: easy
+    tags: [upper GI bleeding, definition, ligament of Treitz, gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "Define Upper GI Bleeding"
+    back: "Bleeding proximal to the ligament of Treitz (where 4th portion of duodenum transitions to jejunum); accounts for 75% of GI bleeds\n\nThe ligament of Treitz is the anatomic landmark separating upper and lower GI bleeding."
+    difficulty: easy
+    tags: [GI bleeding, upper GI, anatomy, ligament of Treitz, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What lifestyle modifications have proven benefit in GERD?"
+    back: "Weight loss (if obese or significant weight gain) and elevating the head of bed (for nocturnal symptoms)\n\nWhile dietary modifications may help symptoms, only weight loss and head-of-bed elevation have demonstrated true disease modification."
+    difficulty: easy
+    tags: [GERD, lifestyle, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is Barrett's esophagus (BE)?"
+    back: "Metaplasia of normal squamous esophageal epithelium to intestinal columnar epithelium in the distal esophagus\n\nBE is acquired via long-standing GERD and consequent damage to squamous epithelium, increasing risk for esophageal adenocarcinoma."
+    difficulty: easy
+    tags: [Barretts esophagus, pathology, gastroenterology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the malignant transformation risk in Barrett's esophagus?"
+    back: "Approximately 0.12% per year for all BE patients prior to dysplasia; 32-59% over 5-8 years in high-grade dysplasia"
+    difficulty: medium
+    tags: [Barretts esophagus, oncology, risk factors, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "How is Barrett's esophagus without dysplasia managed?"
+    back: "Acid suppressive therapy with high-dose PPI indefinitely, plus surveillance gastroscopy every 3-5 years"
+    difficulty: medium
+    tags: [Barretts esophagus, treatment, surveillance, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is oropharyngeal dysphagia characterized by?"
+    back: "Difficulty initiating swallowing, choking, coughing, and nasal regurgitation"
+    difficulty: easy
+    tags: [dysphagia, diagnosis, symptoms, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is esophageal dysphagia characterized by?"
+    back: "Inability to move food down the esophagus"
+    difficulty: easy
+    tags: [dysphagia, diagnosis, symptoms, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "In a patient <50 with dysphagia and no alarm features but with GERD, what is the initial management?"
+    back: "Empiric 8-week PPI trial before proceeding to endoscopy"
+    difficulty: medium
+    tags: [dysphagia, GERD, treatment algorithm, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the first-line surgical treatment for GERD?"
+    back: "Laparoscopic Nissen fundoplication (wrapping gastric fundus around the lower esophagus)"
+    difficulty: easy
+    tags: [GERD, surgery, fundoplication, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "Can diet cure GERD?"
+    back: "No, diet helps symptoms but does not cure the disease"
+    difficulty: easy
+    tags: [GERD, diet, myth, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the epidemiology of Barrett's esophagus in Western populations?"
+    back: "0.5-20% of adults; up to 10% of GERD patients have developed BE by time of presentation"
+    difficulty: medium
+    tags: [Barretts esophagus, epidemiology, statistics, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the relationship between GERD and Barrett's esophagus?"
+    back: "Barrett's is thought to be acquired via long-standing GERD and consequent damage to squamous epithelium"
+    difficulty: easy
+    tags: [GERD, Barretts esophagus, pathophysiology, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are causes of oropharyngeal (transfer) dysphagia?"
+    back: "Neurological: cortical, bulbar; Muscular: dystrophy, polymyositis, myasthenia gravis; Structural: Zenker's diverticulum, thyromegaly, cervical spur"
+    difficulty: medium
+    tags: [dysphagia, etiology, differential diagnosis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are causes of esophageal dysphagia?"
+    back: "Mechanical obstruction (strictures, rings, carcinoma), neuromuscular disorders (achalasia, scleroderma, DES), and motility disorders"
+    difficulty: medium
+    tags: [dysphagia, etiology, differential diagnosis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the characteristic endoscopy finding in Barrett's esophagus?"
+    back: "Salmon pink mucosa in the distal esophagus"
+    difficulty: easy
+    tags: [Barretts esophagus, endoscopy, findings, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the red flag features in chronic GERD that warrant EGD?"
+    back: "Anorexia, weight loss, bleeding, and dysphagia"
+    difficulty: easy
+    tags: [GERD, endoscopy, red flags, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "In which esophageal motor disorder do patients present with dysphagia to both solids and liquids?"
+    back: "Achalasia (due to failure of LES relaxation)"
+    difficulty: easy
+    tags: [achalasia, dysphagia, presentation, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the indications for esophageal manometry?"
+    back: "Patients with non-cardiac chest pain and/or dysphagia with normal gastroscopy; to diagnose peristalsis abnormalities and decreased LES tone; to exclude scleroderma and achalasia; before surgical fundoplication\n\nEsophageal manometry studies motility but cannot detect presence of reflux. It is essential before fundoplication to ensure intact esophageal function."
+    difficulty: medium
+    tags: [esophageal manometry, dysphagia, pre-operative, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What lifestyle modifications have been shown to benefit GERD?"
+    back: "Weight loss (if obese or significant weight gain) and elevating the head of bed (if nocturnal symptoms)\n\nOnly these two lifestyle changes are beneficial. Diet helps symptoms but not the disease - avoid EtOH, coffee, spices, tomatoes, and citrus juices."
+    difficulty: easy
+    tags: [GERD, lifestyle, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the epidemiology of Barrett's esophagus?"
+    back: "0.5-20% of adults in North America/Western Europe; up to 10% of GERD patients; more common in males, ages >50, White individuals, smokers, overweight, with hiatus hernia and long reflux history\n\nBarrett's is a common condition strongly associated with chronic GERD. Key risk factors include male sex, age over 50, and white race."
+    difficulty: medium
+    tags: [Barretts esophagus, epidemiology, risk factors, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the annual malignant transformation rate of Barrett's esophagus?"
+    back: "Approximately 0.12% per year for all BE patients prior to dysplasia\n\nThe risk is relatively low but increases significantly in high-grade dysplasia, with studies reporting 32-59% transformation rate over 5-8 years."
+    difficulty: easy
+    tags: [Barretts esophagus, malignancy risk, prognosis, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the treatment approach for Barrett's esophagus without dysplasia?"
+    back: "Acid suppressive therapy with high-dose PPI indefinitely (or surgical fundoplication) to reduce transformation, plus surveillance gastroscopy every 3-5 years\n\nEven without dysplasia, indefinite acid suppression is recommended to potentially reduce progression to dysplasia."
+    difficulty: medium
+    tags: [Barretts esophagus, treatment, surveillance, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the treatment for high-grade dysplasia in Barrett's esophagus?"
+    back: "Regular intensive biopsy surveillance, endoscopic ablation/mucosal resection, or esophagectomy - with increasing evidence favoring endoscopic ablation (RFA or EMR)\n\nHigh-grade dysplasia has high transformation risk (32-59% over 5-8 years) and requires aggressive intervention."
+    difficulty: medium
+    tags: [Barretts esophagus, high-grade dysplasia, treatment, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are the key distinguishing features between oropharyngeal and esophageal dysphagia?"
+    back: "Oropharyngeal: difficulty initiating swallowing, choking, coughing, nasal regurgitation; Esophageal: inability to move food down esophagus, associated with reflux symptoms\n\nOropharyngeal dysphagia originates from neuromuscular disorders (cortical, bulbar, peripheral), while esophageal dysphagia can be mechanical or neuromuscular."
+    difficulty: medium
+    tags: [dysphagia, diagnosis, differential, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "In a patient with dysphagia, what features suggest proceeding directly to endoscopy vs. trial of PPI?"
+    back: "If age >50 with alarm features (weight loss, dysphagia progression) → endoscopy; If age <50 with no alarm features and concomitant GERD → trial PPI first\n\nAge and alarm features guide the approach. Progressive symptoms, weight loss, and older age warrant earlier endoscopic evaluation."
+    difficulty: medium
+    tags: [dysphagia, management, endoscopy, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the endoscopic appearance of Barrett's esophagus?"
+    back: "Salmon pink mucosa in the distal esophagus\n\nThe characteristic salmon-pink (versus pink) color difference between gastric and esophageal mucosa helps identify Barrett's during endoscopy."
+    difficulty: easy
+    tags: [Barretts esophagus, endoscopy, findings, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What is the management approach for low-grade dysplasia in Barrett's esophagus?"
+    back: "Either surveillance (every 6 months for 1 year then annually) OR endoscopic ablation/resection are satisfactory options\n\nLow-grade dysplasia has more treatment options than high-grade, with both surveillance and intervention being acceptable approaches."
+    difficulty: medium
+    tags: [Barretts esophagus, low-grade dysplasia, management, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What are alarm features in GERD that warrant EGD?"
+    back: "Anorexia, weight loss, bleeding, dysphagia - especially in chronic GERD or symptoms suggestive of complicated disease\n\nAlarm features suggest possible complications or malignancy and warrant endoscopic evaluation regardless of duration of symptoms."
+    difficulty: easy
+    tags: [GERD, endoscopy, alarm features, toronto-notes, pages-0441-0442-0443-0444-0445-0446-0447-0448-0449-0450]
+  - front: "What CNS manifestations are seen in Wilson's disease?"
+    back: "Basal ganglia (wing flapping tremor, Parkinsonism), cerebellum (dysarthria, dysphagia, incoordination, ataxia), cerebrum (psychosis, affective disorder)\n\nNeurological involvement results from basal ganglia degeneration, with patients presenting with movement disorders, cerebellar signs, and psychiatric symptoms."
+    difficulty: medium
+    tags: [Wilsons disease, neurology, movement disorders, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What proportion of GI bleeds are upper GI?"
+    back: "75% of GI bleeds are upper gastrointestinal\n\nMost GI bleeding originates from the upper GI tract proximal to the ligament of Treitz."
+    difficulty: easy
+    tags: [UGIB, Epidemiology, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What is the transfusion threshold for acute upper GI bleeding?"
+    back: "Transfuse at hemoglobin <70-80 g/L (or <100 g/L in patients with cardiovascular disease)\n\nRestrictive transfusion strategy (targeting 70-80 g/L) is associated with better outcomes in UGIB."
+    difficulty: hard
+    tags: [UGIB, Transfusion, Treatment, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What are the neurological manifestations of Wilson's disease?"
+    back: "Basal ganglia (wing-flapping tremor, Parkinsonism), cerebellum (dysarthria, dysphagia, incoordination, ataxia), cerebrum (psychosis, affective disorder)\n\nNeurological involvement typically presents in younger patients with movement disorders, psychiatric symptoms, and cognitive decline due to copper deposition in the brain."
+    difficulty: medium
+    tags: [Wilsons disease, neurology, movement disorders, psychiatry, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What CNS manifestations can occur in Wilson's disease?"
+    back: "Basal ganglia (wing-flapping tremor, Parkinsonism), cerebellum (dysarthria, dysphagia, incoordination, ataxia), cerebrum (psychosis, affective disorder)\n\nNeurological involvement in Wilson's disease results from copper deposition in the basal ganglia, cerebellum, and cerebral cortex, causing movement disorders, psychiatric symptoms, and cognitive changes."
+    difficulty: medium
+    tags: [wilsons-disease, neurology, hepatology, psychiatry, toronto-notes, pages-0471-0472-0473-0474-0475-0476-0477-0478-0479-0480]
+  - front: "What are the key components of the Canadian consensus for H. pylori infection management in adults?"
+    back: "The Canadian Helicobacter pylori consensus conference provides updated recommendations for diagnosis, treatment, and eradication in adult patients\n\nThe Canadian consensus (J Gastroenterol 1999) addresses screening, treatment regimens, and follow-up for H. pylori infection in Canada"
+    difficulty: medium
+    tags: [H. pylori, Canadian guidelines, GERD, peptic ulcer, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "When is IVIG indicated in dermatomyositis?"
+    back: "Severe or refractory muscle weakness, particularly with dysphagia and/or dyspnea\n\nIVIG provides rapid improvement in severe cases with significant weakness or respiratory involvement."
+    difficulty: medium
+    tags: [Dermatomyositis, IVIG, Treatment, toronto-notes, pages-1511-1512-1513-1514-1515-1516-1517-1518-1519-1520]

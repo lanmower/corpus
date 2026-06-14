@@ -1,0 +1,362 @@
+# Inflammatory Bowel Disease (Gastroenterology) - generated from srs-mccqe1
+cards:
+  - front: "A 28-year-old has bloody diarrhea 8x/day, crampy abdominal pain, and fever. Colonoscopy shows continuous mucosal inflammation from rectum to splenic flexure. Diagnosis and initial management?"
+    back: "Ulcerative colitis (left-sided); initial treatment with oral and rectal 5-ASA for mild-moderate disease, or systemic corticosteroids for moderate-severe\n\nUC is characterized by continuous mucosal inflammation starting at the rectum. Extent classifications: proctitis, left-sided (to splenic flexure), extensive (beyond splenic flexure). CCS IBD guidelines recommend 5-ASA for induction and maintenance of mild-moderate UC."
+    difficulty: hard
+    tags: [ulcerative colitis, IBD, 5-ASA, colonoscopy, gastroenterology]
+  - front: "How does Crohn disease differ from ulcerative colitis pathologically and clinically?"
+    back: "Crohn: transmural inflammation, skip lesions, any GI tract from mouth to anus, cobblestone mucosa, fistulae/abscesses, non-bloody diarrhea; UC: mucosal/submucosal, continuous from rectum, bloody diarrhea\n\nCrohn disease complications include strictures, fistulae, and abscesses from transmural inflammation. UC complications: toxic megacolon, colorectal cancer. Both have extraintestinal manifestations (joints, eyes, skin, liver)."
+    difficulty: easy
+    tags: [Crohn disease, UC, IBD, transmural, gastroenterology]
+  - front: "A patient with Crohn disease is steroid-dependent. What is the next management step?"
+    back: "Immunomodulator (azathioprine/6-MP or methotrexate) or biologic therapy (anti-TNF: infliximab, adalimumab) — steroids should not be used for maintenance\n\nCCS IBD guidelines recommend against long-term corticosteroid use in IBD. Thiopurines (AZA/6-MP) or anti-TNF are first-line for maintenance. Anti-TNF + immunomodulator combination therapy reduces immunogenicity and improves outcomes."
+    difficulty: hard
+    tags: [Crohn disease, steroid-dependence, azathioprine, anti-TNF, IBD, gastroenterology]
+  - front: "What is the Montreal classification for ulcerative colitis severity?"
+    back: "Mild: <4 stools/day, no systemic symptoms; Moderate: 4-6 stools/day, minimal systemic features; Severe (Truelove-Witts): >6 bloody stools/day + systemic features (fever, tachycardia, anemia, elevated CRP)\n\nSevere UC (Truelove-Witts criteria) requires hospitalization for IV corticosteroids (methylprednisolone 60 mg/day). Failure to respond within 3-5 days → IV cyclosporine or infliximab rescue or colectomy discussion."
+    difficulty: medium
+    tags: [UC severity, Montreal classification, Truelove-Witts, severe UC, gastroenterology]
+  - front: "What is the indication for colectomy in ulcerative colitis?"
+    back: "Medically refractory UC, toxic megacolon (not responding to medical therapy), severe hemorrhage, dysplasia/cancer, or failure of rescue therapy (cyclosporine/infliximab)\n\nProctocolectomy with ileal pouch-anal anastomosis (IPAA/J-pouch) is the preferred surgical approach. Colectomy is curative for UC. CCS guidelines define rescue therapy failure as lack of response after 3-5 days of optimal medical therapy."
+    difficulty: hard
+    tags: [UC colectomy, surgery IBD, toxic megacolon, IPAA, gastroenterology]
+  - front: "What medications are used to maintain remission in Crohn disease?"
+    back: "Azathioprine/6-mercaptopurine, methotrexate (for methotrexate responders), anti-TNF (infliximab, adalimumab), vedolizumab (gut-selective), ustekinumab (IL12/23 blocker)\n\nCCS guidelines recommend immunomodulators or biologics for maintenance in Crohn disease. Combination anti-TNF + immunomodulator superior for maintaining remission. Vedolizumab is preferred in patients with significant infections history. Ustekinumab for moderate-severe CD."
+    difficulty: medium
+    tags: [Crohn maintenance, azathioprine, infliximab, vedolizumab, ustekinumab, gastroenterology]
+  - front: "What is toxic megacolon and how is it managed?"
+    back: "Toxic megacolon: acute non-obstructive dilation of colon ≥6cm on AXR with systemic toxicity (fever, tachycardia, leukocytosis) — usually complicates severe UC or Clostridioides difficile\n\nManagement: bowel rest, IV fluids, IV corticosteroids, IV antibiotics (if infectious), NG decompression, roll patient frequently, avoid opioids/anticholinergics that slow motility. Surgical consult immediately — colectomy if no improvement in 24-72 hours."
+    difficulty: hard
+    tags: [toxic megacolon, UC complication, IBD emergency, colectomy, gastroenterology]
+  - front: "What colorectal cancer surveillance is recommended for IBD patients?"
+    back: "Colonoscopy 8-10 years after IBD onset, then every 1-3 years depending on extent and activity; every 1-2 years for pancolitis or left-sided colitis with active inflammation\n\nIBD is associated with increased CRC risk, especially pancolitis (relative risk 2x), increasing with disease duration. Chromoendoscopy improves dysplasia detection. CCS guidelines recommend surveillance starting 8-10 years after symptom onset."
+    difficulty: medium
+    tags: [IBD colorectal cancer, surveillance colonoscopy, dysplasia, CRC screening, gastroenterology]
+  - front: "What extraintestinal manifestations are associated with IBD activity (parallel bowel disease) vs. independent?"
+    back: "Parallel (correlate with bowel activity): peripheral arthropathy, erythema nodosum, oral aphthous ulcers; Independent: axial arthropathy (ankylosing spondylitis), primary sclerosing cholangitis, uveitis\n\nPrimary sclerosing cholangitis (PSC) is strongly associated with UC (80% of PSC patients have UC). PSC increases CRC and cholangiocarcinoma risk. ALP and GGT elevated. Diagnosis: MRCP or ERCP."
+    difficulty: medium
+    tags: [extraintestinal manifestations, IBD, PSC, erythema nodosum, gastroenterology]
+  - front: "What screening/monitoring is required for patients on thiopurines (azathioprine)?"
+    back: "CBC regularly (risk of myelosuppression), LFTs, TPMT genotype before starting (predicts thiopurine metabolism), screen for lymphoma risk with regular skin exam\n\nTPMT deficiency increases thiopurine toxicity (severe myelosuppression). Standard dosing: AZA 2.0-2.5 mg/kg or 6-MP 1.0-1.5 mg/kg. Monitor CBC every 2-3 months once stable. Risk of EBV-related lymphoma (EATL) with long-term use."
+    difficulty: medium
+    tags: [azathioprine, thiopurines, TPMT, myelosuppression, IBD monitoring, gastroenterology]
+  - front: "What is the role of 5-ASA (mesalamine) in IBD?"
+    back: "First-line induction and maintenance for mild-moderate UC; combined oral + rectal route most effective; NOT effective in Crohn disease (no evidence for maintenance)\n\n5-ASA acts locally on colonic mucosa by reducing prostaglandin synthesis. Oral formulations differ in release site. Rectal 5-ASA (enema/suppository) is superior for proctitis and left-sided UC. CCS guidelines: 5-ASA has no role in Crohn disease maintenance."
+    difficulty: easy
+    tags: [5-ASA, mesalamine, UC treatment, Crohn disease, gastroenterology]
+  - front: "A patient with Crohn disease has an enterocutaneous fistula. What medications are most effective?"
+    back: "Anti-TNF therapy (infliximab) has highest evidence for fistula healing in Crohn disease — combine with drainage of septic collections before starting biologic\n\nInfliximab (ACCENT II trial) achieved fistula closure in ~55% of patients. MRI pelvis to assess fistula anatomy before treatment. Combined seton drain + infliximab for complex perianal fistulae. Surgical consultation for complex or septic fistulae."
+    difficulty: hard
+    tags: [Crohn fistula, infliximab, perianal Crohn, anti-TNF, gastroenterology]
+  - front: "What is primary sclerosing cholangitis (PSC) and its association with IBD?"
+    back: "PSC: chronic fibro-inflammatory biliary stricturing disease causing progressive biliary obstruction; strongly associated with UC (70-80% of PSC patients have IBD)\n\nPSC diagnosed with MRCP showing beaded biliary tree. No effective medical therapy to halt progression. Annual colonoscopy in PSC-IBD for CRC surveillance. Liver transplantation for advanced PSC. Increased risk: cholangiocarcinoma, colorectal cancer."
+    difficulty: medium
+    tags: [PSC, primary sclerosing cholangitis, UC, IBD, cholangiocarcinoma, gastroenterology]
+  - front: "What vaccines should IBD patients on immunosuppressives receive?"
+    back: "Annual influenza (inactivated), pneumococcal, Hepatitis A and B, HPV, Tdap, COVID-19; AVOID live vaccines (MMR, varicella, yellow fever, oral typhoid) when on biologics/immunomodulators\n\nCCS IBD guidelines recommend vaccination before starting immunosuppression when possible. Patients on biologics should not receive live attenuated vaccines. Inactivated vaccines are safe on immunosuppression but may have reduced immunogenicity."
+    difficulty: medium
+    tags: [IBD vaccines, immunosuppression, live vaccines, biologics, gastroenterology]
+  - front: "What is the Crohn Disease Activity Index (CDAI) and how is it used clinically?"
+    back: "CDAI: composite of stool frequency, abdominal pain, general well-being, extraintestinal features, antidiarrheals, abdominal mass, hematocrit, weight; <150 = remission; >450 = severe\n\nCDAI is used in clinical trials and for treatment decisions. HBI (Harvey-Bradshaw Index) is simpler clinical tool. CCS guidelines recommend objective markers (CRP, fecal calprotectin, endoscopy) alongside clinical scores for disease monitoring."
+    difficulty: easy
+    tags: [CDAI, Crohn disease activity, remission criteria, IBD monitoring, gastroenterology]
+  - front: "What distinguishes Crohn's from UC?"
+    back: "Crohn: skip lesions, transmural, any GI location, granulomas, fistulas. UC: continuous from rectum, mucosal, bloody diarrhea\n\nCrohn complications: fistulas, B12 deficiency. UC: toxic megacolon, CRC risk after 8-10 years."
+    difficulty: medium
+    tags: [IBD]
+  - front: "What is step-up treatment for moderate-severe Crohn's?"
+    back: "Steroids for induction -> immunomodulators (azathioprine/MTX) -> biologics (infliximab, adalimumab, vedolizumab, ustekinumab)\n\nTop-down approach increasingly favored for high-risk features. Combo anti-TNF+immunomod superior to mono."
+    difficulty: hard
+    tags: [Crohn, biologics]
+  - front: "What extraintestinal IBD manifestations correlate with disease activity?"
+    back: "Erythema nodosum, peripheral arthritis type 1, oral aphthous ulcers, episcleritis\n\nActivity-independent: pyoderma gangrenosum, AS, PSC, uveitis. PSC more common in UC."
+    difficulty: medium
+    tags: [IBD, extraintestinal]
+  - front: "What are the key differentiating features between Crohn disease and ulcerative colitis on histology?"
+    back: "Crohn: transmural inflammation, non-caseating granulomas (30-50%), skip lesions, fissuring ulcers, fibrosis. UC: mucosal/submucosal inflammation only, crypt abscesses, crypt distortion, continuous involvement, pseudopolyps.\n\nTransmural inflammation in Crohn explains complications like fistulae, strictures, and abscesses that are rare in UC. Granulomas, when present, are highly suggestive of Crohn but absent in ~50% of cases. 10% of colonic IBD remains indeterminate."
+    difficulty: medium
+    tags: [IBD, Crohn, UC, histology, GI]
+  - front: "What is the anatomic distribution pattern of Crohn vs UC?"
+    back: "Crohn: any GI segment mouth-to-anus; terminal ileum most common (70%); skip lesions; perianal disease (30%). UC: starts at rectum, extends proximally in continuous fashion; never above ileocecal valve (except backwash ileitis).\n\nUC classification by extent: proctitis (rectum only), left-sided (to splenic flexure), extensive/pancolitis (beyond splenic flexure). Crohn phenotype: inflammatory (B1), stricturing (B2), penetrating (B3) per Montreal classification. Perianal disease modifier (p)."
+    difficulty: medium
+    tags: [IBD, Crohn, UC, anatomy, Montreal classification, GI]
+  - front: "What extraintestinal manifestations of IBD parallel disease activity vs are independent?"
+    back: "Parallel activity: peripheral arthritis (type 1), erythema nodosum, episcleritis, oral aphthous ulcers. Independent: axial spondyloarthropathy, uveitis, pyoderma gangrenosum, PSC (UC association).\n\nPSC is strongly associated with UC (70% of PSC patients have UC) and increases CRC risk further. Axial arthropathy does not improve with colectomy. Erythema nodosum is the most common skin manifestation. Pyoderma gangrenosum may worsen with debridement (pathergy)."
+    difficulty: hard
+    tags: [IBD, extraintestinal, PSC, arthritis, skin, GI]
+  - front: "What is the step-up vs top-down approach in Crohn disease management?"
+    back: "Step-up: start with 5-ASA/budesonide → immunomodulators (AZA/6-MP/MTX) → biologics. Top-down: early biologic ± immunomodulator for high-risk patients (young, perianal, deep ulcers, extensive disease, steroid-dependent).\n\nCanadian consensus favors risk-stratified approach. High-risk Crohn patients benefit from early biologic therapy (anti-TNF: infliximab, adalimumab) to prevent structural damage. Combo therapy (infliximab + AZA) superior to monotherapy (SONIC trial). Treat-to-target: endoscopic remission."
+    difficulty: hard
+    tags: [IBD, Crohn, biologics, anti-TNF, treat-to-target, GI]
+  - front: "What are the indications for surgery in Crohn disease?"
+    back: "Failure of medical therapy, obstruction not responding to medical management, abscess requiring drainage, fistulae refractory to biologics, perforation, hemorrhage, malignancy, growth retardation in children\n\nSurgery is NOT curative in Crohn — 50% recurrence within 5 years at anastomotic site. Strictureplasty preferred over resection when possible to preserve bowel length. Post-op prophylaxis: metronidazole 3 months + immunomodulator or biologic. Endoscopic assessment at 6-12 months post-op."
+    difficulty: hard
+    tags: [IBD, Crohn, surgery, strictureplasty, recurrence, GI]
+  - front: "What are the indications for colectomy in ulcerative colitis?"
+    back: "Fulminant/toxic megacolon not responding to IV steroids + rescue therapy (infliximab or cyclosporine), dysplasia/CRC, refractory disease despite biologics, intractable symptoms\n\nUnlike Crohn, colectomy is curative for UC. Total proctocolectomy with ileal pouch-anal anastomosis (IPAA/J-pouch) is standard. Pouchitis occurs in 50% of patients (treat with ciprofloxacin or metronidazole). CRC surveillance: colonoscopy at 8 years post-diagnosis, then every 1-2 years."
+    difficulty: hard
+    tags: [IBD, UC, colectomy, IPAA, toxic megacolon, GI]
+  - front: "What defines toxic megacolon and how is it managed?"
+    back: "Transverse colon diameter >6 cm on AXR + systemic toxicity (fever >38.6, HR >120, WBC >10.5, anemia). Manage with NPO, NG suction, IV steroids (hydrocortisone 100 mg q8h), IV antibiotics. Surgery if no improvement in 48-72h.\n\nToxic megacolon can complicate UC (more common) or Crohn colitis. Avoid anticholinergics, opioids, colonoscopy, and barium enema (risk of perforation). Serial AXR to monitor colon diameter. C. difficile must be excluded. Mortality 30-50% if perforation occurs."
+    difficulty: hard
+    tags: [IBD, toxic megacolon, emergency, surgery, UC, GI]
+  - front: "What biologic therapies are available for IBD in Canada?"
+    back: "Anti-TNF: infliximab, adalimumab, golimumab (UC only). Anti-integrin: vedolizumab (gut-selective α4β7). Anti-IL-12/23: ustekinumab. Anti-IL-23: risankizumab, guselkumab. JAK inhibitors: tofacitinib, upadacitinib (UC). S1P modulator: ozanimod (UC).\n\nVedolizumab has a favorable safety profile (gut-selective, lower infection risk) and is often preferred in elderly or infection-prone patients. Ustekinumab is effective in both Crohn and UC. Tofacitinib carries risk of VTE and herpes zoster. Choice depends on phenotype, safety, and prior exposures."
+    difficulty: hard
+    tags: [IBD, biologics, vedolizumab, ustekinumab, tofacitinib, GI]
+  - front: "What is the role of 5-ASA in IBD?"
+    back: "First-line for mild-moderate UC (oral + topical rectal). Sulfasalazine useful for IBD-related arthritis. 5-ASA has minimal to no role in Crohn disease (except possibly mild colonic Crohn).\n\n5-ASA works topically on colonic mucosa (anti-inflammatory via PPARγ and NF-κB). Mesalamine formulations: Asacol (pH-release, terminal ileum/colon), Pentasa (time-release, small bowel+colon), Salofalk. Topical (rectal) 5-ASA is more effective than oral for proctitis/left-sided UC."
+    difficulty: medium
+    tags: [IBD, 5-ASA, mesalamine, UC, GI]
+  - front: "What are the thiopurine (AZA/6-MP) considerations including TPMT testing?"
+    back: "Check TPMT genotype/phenotype before starting: deficient (0.3%) → contraindicated (fatal myelosuppression); intermediate (11%) → dose reduce 50%; normal → standard dose. Monitor CBC q1-2 weeks initially, then q3 months. Risk: myelosuppression, hepatotoxicity, pancreatitis, lymphoma.\n\nTPMT testing is mandatory per Canadian guidelines. Thiopurines take 8-12 weeks for effect. NUDT15 testing also recommended (especially East Asian patients). Risk of hepatosplenic T-cell lymphoma in young males on combo therapy (thiopurine + anti-TNF) — consider alternatives."
+    difficulty: hard
+    tags: [IBD, thiopurine, TPMT, azathioprine, pharmacogenomics, GI]
+  - front: "What is the CRC screening protocol for IBD patients?"
+    back: "Start screening colonoscopy 8 years after symptom onset (for extensive colitis) or 15 years (left-sided). Then every 1-2 years with chromoendoscopy or random biopsies (4 per 10 cm). PSC patients: annual from diagnosis.\n\nIBD-associated CRC risk is 2-5x general population, higher with: extent of disease, duration, PSC, family history of CRC, persistent inflammation. Chromoendoscopy with targeted biopsies is superior to random biopsies. Dysplasia management: visible lesion → endoscopic resection if feasible; invisible flat dysplasia → colectomy."
+    difficulty: hard
+    tags: [IBD, CRC, screening, colonoscopy, dysplasia, GI]
+  - front: "How is acute severe UC (ASUC) managed in hospital?"
+    back: "IV methylprednisolone 60 mg/day (or hydrocortisone 100 mg q8h). Assess response at day 3 (Travis criteria: >8 stools/day or 3-8 stools + CRP >45). Non-responders: rescue therapy with infliximab or cyclosporine. Surgery if rescue therapy fails.\n\nASUC is a medical emergency with 1% mortality. Travis criteria predict colectomy need. Exclude CMV colitis and C. difficile. VTE prophylaxis is mandatory (high VTE risk). Do not delay surgery if deteriorating — subtotal colectomy with end-ileostomy preserves future IPAA option."
+    difficulty: hard
+    tags: [IBD, UC, ASUC, severe, steroids, rescue therapy, GI]
+  - front: "What is the management of perianal Crohn disease?"
+    back: "Simple fistula: antibiotics (metronidazole + ciprofloxacin), seton placement if needed. Complex fistula: EUA + seton + anti-TNF (infliximab preferred — ACCENT II trial). MRI pelvis for mapping. Abscess: surgical drainage before starting biologics.\n\nPerianal Crohn affects 30% of patients and is a marker of aggressive disease. Always drain abscesses before immunosuppression. Combination of surgical (seton) and medical (anti-TNF) therapy is most effective. Vedolizumab and ustekinumab are alternatives if anti-TNF fails."
+    difficulty: hard
+    tags: [IBD, Crohn, perianal, fistula, seton, infliximab, GI]
+  - front: "What nutritional considerations are important in IBD?"
+    back: "Crohn: check iron, B12, folate, vitamin D, calcium, zinc; exclusive enteral nutrition (EEN) is first-line for pediatric Crohn (as effective as steroids for induction). UC: iron deficiency common. Both: monitor BMI, albumin; avoid prolonged steroids for growth in children.\n\nEEN (polymeric formula for 6-8 weeks) achieves mucosal healing in pediatric Crohn without steroid side effects. In adults, supplemental EN can support nutrition. IV iron (ferric carboxymaltose) preferred for severe iron deficiency anemia (oral iron may worsen symptoms)."
+    difficulty: medium
+    tags: [IBD, nutrition, EEN, iron, vitamin D, pediatric, GI]
+  - front: "What is the difference in fecal calprotectin use in IBD?"
+    back: "Fecal calprotectin >250 μg/g: highly suggestive of active IBD inflammation. Used to: distinguish IBD from IBS, monitor disease activity non-invasively, predict relapse, assess response to therapy. Does not distinguish Crohn from UC.\n\nCalprotectin is released by neutrophils and correlates with endoscopic inflammation. More accurate than CRP for assessing intestinal inflammation. Target calprotectin <150-250 as treatment goal. Can reduce unnecessary colonoscopies. Elevated in infections, NSAIDs, CRC — not specific for IBD."
+    difficulty: medium
+    tags: [IBD, calprotectin, biomarker, monitoring, GI]
+  - front: "What is the diagnostic approach to celiac disease?"
+    back: "Screen with tissue transglutaminase IgA (TTG-IgA) + total IgA. If positive: confirm with duodenal biopsy (villous atrophy, crypt hyperplasia, intraepithelial lymphocytes). Must be on gluten-containing diet for testing\n\nAssociated: type 1 DM, thyroiditis, dermatitis herpetiformis, IgA deficiency (use IgG-based tests). Treatment: strict lifelong gluten-free diet. Monitor: TTG-IgA, nutritional deficiencies (iron, B12, folate, calcium, vitamin D)."
+    difficulty: medium
+    tags: [celiac, TTG-IgA]
+  - front: "How is celiac disease diagnosed and what are the associated conditions?"
+    back: "Diagnosis: Serology: tissue transglutaminase IgA (TTG-IgA) — most sensitive and specific screening test; check total IgA (2-3% of celiac patients are IgA-deficient → false-negative TTG-IgA, use TTG-IgG or deamidated gliadin peptide IgG instead). Biopsy: duodenal biopsy showing villous atrophy, crypt hyperplasia, intraepithelial lymphocytosis (Marsh classification). Patient MUST be on gluten-containing diet during testing. Genetic: HLA-DQ2 (95%) or HLA-DQ8 — high NPV (if absent, celiac very unlikely). Associated conditions: type 1 diabetes (8-10% have celiac), autoimmune thyroid disease, IgA deficiency, dermatitis herpetiformis (pathognomonic skin manifestation), iron deficiency anemia, osteoporosis, infertility, lymphoma (enteropathy-associated T-cell lymphoma — EATL).\n\nCeliac disease affects ~1% of Canadians, though many are undiagnosed. The Canadian Celiac Association recommends screening first-degree relatives (10-15% prevalence). A strict lifelong gluten-free diet is the only treatment — even trace amounts can cause intestinal damage. Dermatitis herpetiformis (intensely pruritic vesicles on elbows, knees, buttocks) responds to dapsone and gluten-free diet."
+    difficulty: medium
+    tags: [celiac disease, TTG-IgA, villous atrophy, gluten-free diet, dermatitis herpetiformis, GI]
+  - front: "What are the dermatologic manifestations of celiac disease and how is dermatitis herpetiformis diagnosed and treated?"
+    back: "Dermatitis herpetiformis (DH): intensely pruritic grouped vesicles and papules on extensor surfaces (elbows, knees, buttocks, scalp, back). Considered the skin manifestation of celiac disease — nearly all DH patients have celiac on biopsy (though often asymptomatic GI). Diagnosis: skin biopsy from PERILESIONAL skin (not the lesion itself) showing granular IgA deposits at dermal papillae on direct immunofluorescence (gold standard); also check TTG-IgA. Treatment: dapsone (rapid symptomatic relief within 24-48h — check G6PD before starting) + strict gluten-free diet (takes months to control DH but is the definitive long-term treatment). Monitor for dapsone side effects: methemoglobinemia, hemolytic anemia, agranulocytosis.\n\nDH is pathognomonic for celiac disease — its presence confirms celiac even without GI symptoms. The biopsy must be taken from uninvolved perilesional skin for immunofluorescence, as the vesicle itself shows only non-specific inflammation. Gluten-free diet alone can control DH in most patients but takes 6-12 months. Dapsone does not treat the underlying intestinal disease."
+    difficulty: hard
+    tags: [dermatitis herpetiformis, celiac disease, dapsone, IgA, dermatology, GI]
+  - front: "What are the extra-intestinal manifestations of celiac disease and which conditions are associated?"
+    back: "Dermatologic: dermatitis herpetiformis. Hematologic: iron deficiency anemia (most common presentation in adults), folate/B12 deficiency, unexplained thrombocytosis. Bone: osteoporosis/osteopenia (from calcium and vitamin D malabsorption). Neurologic: peripheral neuropathy, cerebellar ataxia (gluten ataxia), epilepsy. Reproductive: infertility, recurrent miscarriage, delayed puberty. Hepatic: elevated transaminases (often mild, reversible with GFD). Dental: enamel defects. Associated autoimmune conditions: type 1 diabetes (screen all T1DM), autoimmune thyroid disease, IgA deficiency, primary biliary cholangitis, Sjogren syndrome, Turner syndrome, Down syndrome. Malignancy risk: enteropathy-associated T-cell lymphoma (EATL), small bowel adenocarcinoma.\n\nMany patients with celiac disease present with extra-intestinal manifestations rather than classic diarrhea/malabsorption. Canadian Celiac Association recommends celiac screening in all patients with unexplained iron deficiency anemia, osteoporosis in young patients, and type 1 diabetes. Strict gluten-free diet reduces (but may not eliminate) the lymphoma risk."
+    difficulty: medium
+    tags: [celiac disease, extra-intestinal, iron deficiency, osteoporosis, type 1 diabetes, GI]
+  - front: "Is colonoscopy recommended as a screening test for colorectal cancer in average-risk patients?"
+    back: "No, colonoscopy is not recommended as a screening test for CRC (weak recommendation, low quality evidence)\n\nColonoscopy is not recommended for average-risk CRC screening due to limited evidence and potential harms including complications, cost, and resource implications."
+    difficulty: easy
+    tags: [colorectal cancer, screening, colonoscopy, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "What is the recommended colorectal cancer screening for patients with a first-degree relative with CRC?"
+    back: "Colonoscopy starting at age 50, or 10 years earlier than the relative's age at diagnosis, whichever occurs first\n\nPatients with one or more first-degree relatives with CRC require colonoscopy due to increased risk. Start at age 50 or 10 years before relative's diagnosis age."
+    difficulty: medium
+    tags: [colorectal cancer, screening, family history, risk assessment, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "A patient has a first-degree relative with colorectal cancer. At what age should screening begin and with what modality?"
+    back: "Colonoscopy starting at age 50, or 10 years earlier than the relative's age at diagnosis, whichever occurs first\n\nPatients with one or more first-degree relatives with CRC require earlier and more intensive screening with colonoscopy."
+    difficulty: medium
+    tags: [colorectal cancer, screening, family history, genetics, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "What does the Canadian Task Force recommend regarding colonoscopy for colorectal cancer screening?"
+    back: "Recommend NOT using colonoscopy as a screening test for CRC (weak recommendation, low quality evidence)\n\nColonoscopy is not recommended as a primary screening tool for colorectal cancer in average-risk patients according to Canadian guidelines."
+    difficulty: medium
+    tags: [colorectal cancer, screening, colonoscopy, preventive medicine, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "A patient has a first-degree relative with colorectal cancer. At what age should colonoscopy screening begin?"
+    back: "Start colonoscopy at age 50, or 10 years earlier than the age their relative was diagnosed, whichever occurs first\n\nPatients with one or more first-degree relatives with CRC should begin colonoscopy at age 50 or 10 years before the relative's diagnosis age, whichever is earlier."
+    difficulty: medium
+    tags: [colorectal cancer, screening, family history, colonoscopy, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "Which test is NOT recommended for colorectal cancer screening in average-risk patients?"
+    back: "Colonoscopy\n\nColonoscopy is not recommended as a screening test for average-risk patients; it is reserved for diagnostic evaluation of symptomatic patients or those at increased risk."
+    difficulty: easy
+    tags: [colorectal cancer, screening, colonoscopy, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "What does the 2016 Canadian Task Force recommend regarding colonoscopy as a screening test for colorectal cancer?"
+    back: "Recommend NOT using colonoscopy as a screening test for CRC (weak recommendation, low quality evidence)\n\nColonoscopy is not recommended as a primary screening tool due to lack of evidence for its effectiveness and potential for harm compared to FOBT."
+    difficulty: easy
+    tags: [colorectal cancer, screening, colonoscopy, guidelines, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "Why is colonoscopy NOT recommended as a first-line screening test for average-risk colorectal cancer?"
+    back: "Weak recommendation, low quality evidence against its use; colonoscopy has higher risks, resource requirements, and no clear advantage over FOBT/FIT for population screening\n\nThe Canadian Task Force recommends against colonoscopy as screening due to lack of evidence for benefit over FOBT and significant resource implications."
+    difficulty: medium
+    tags: [colorectal cancer, screening, colonoscopy, evidence, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "Is colonoscopy recommended as a screening test for colorectal cancer?"
+    back: "No - recommend not using colonoscopy as a screening test for CRC (weak recommendation, low quality evidence)\n\nDespite its common use, colonoscopy is not recommended as a primary screening test for average-risk colorectal cancer by the Canadian Task Force."
+    difficulty: easy
+    tags: [colorectal cancer, screening, colonoscopy, preventive medicine, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "What screening test does the Canadian Task Force recommend AGAINST for colorectal cancer?"
+    back: "Colonoscopy (weak recommendation, low quality evidence)\n\nColonoscopy is not recommended as a primary screening test for CRC due to lack of evidence and resource implications."
+    difficulty: easy
+    tags: [colorectal cancer, screening, colonoscopy, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "According to the 2016 Canadian Task Force guidelines, should colonoscopy be used for average-risk colorectal cancer screening?"
+    back: "No - colonoscopy is not recommended as a screening test for CRC (weak recommendation, low quality evidence)\n\nColonoscopy is not recommended for average-risk patients due to low quality evidence showing lack of benefit."
+    difficulty: easy
+    tags: [colorectal cancer, screening, colonoscopy, preventive medicine, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "What is the recommended colorectal cancer screening for a patient with a first-degree relative diagnosed with colorectal cancer?"
+    back: "Colonoscopy starting at age 50, or 10 years earlier than the relative's age at diagnosis, whichever occurs first\n\nPatients with one or more FDRs with CRC should undergo colonoscopy. Take a complete family history and refer for genetic assessment if hereditary syndrome suspected."
+    difficulty: medium
+    tags: [colorectal cancer, screening, family history, colonoscopy, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "List 4 categories in the differential diagnosis of fever"
+    back: "Infection, Cancer, Medications, Other (e.g., inflammatory bowel disease, collagen vascular disease)\n\nFever has broad etiologies. Common medication causes include allopurinol, nifedipine, captopril, diuretics, and antihistamines."
+    difficulty: medium
+    tags: [fever, differential, diagnosis, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "What is the recommended screening approach for colorectal cancer in patients with a first-degree relative with colorectal cancer?"
+    back: "Colonoscopy starting at age 50, or 10 years earlier than the relative's age at diagnosis, whichever comes first\n\nIf hereditary cancer syndrome suspected, refer for genetic assessment. Take complete family cancer history."
+    difficulty: medium
+    tags: [colorectal cancer, screening, family history, prevention, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "Why is colonoscopy not recommended as a primary screening test for colorectal cancer in average-risk patients?"
+    back: "Low quality evidence does not support its use as a screening test for CRC in average-risk populations\n\nThe Canadian Task Force gives a weak recommendation against colonoscopy for average-risk screening due to low quality evidence."
+    difficulty: medium
+    tags: [colorectal cancer, colonoscopy, screening, evidence, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "What are the 4 main categories in the differential diagnosis of fever?"
+    back: "Infection, Cancer, Medications, and Other (e.g., inflammatory bowel disease, collagen vascular disease)\n\nThis framework helps systematically consider causes of fever in clinical assessment."
+    difficulty: easy
+    tags: [fever, differential, infection, oncology, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "Which screening test does the Canadian Task Force recommend NOT using for colorectal cancer screening?"
+    back: "Colonoscopy (weak recommendation, low quality evidence)\n\nDespite its common use, colonoscopy is not recommended as a screening test for CRC by the Canadian Task Force."
+    difficulty: easy
+    tags: [colorectal cancer, screening, colonoscopy, guidelines, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "A patient has a first-degree relative diagnosed with colorectal cancer at age 45. When should screening begin and what test should be used?"
+    back: "Colonoscopy starting at age 50, or 10 years earlier than relative's diagnosis (age 35), whichever occurs first\n\nPatients with one or more first-degree relatives with CRC should undergo colonoscopy beginning at age 50 or 10 years before the relative's age at diagnosis."
+    difficulty: medium
+    tags: [colorectal cancer, screening, family history, colonoscopy, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "Which of the following is NOT a recommended test for colorectal cancer screening in average-risk patients: FOBT, flexible sigmoidoscopy, or colonoscopy?"
+    back: "Colonoscopy is NOT recommended for average-risk screening\n\nFor patients at average risk, colonoscopy is not recommended as a screening test for colorectal cancer."
+    difficulty: easy
+    tags: [colorectal cancer, screening, guidelines, toronto-notes, pages-0381-0382-0383-0384-0385-0386-0387-0388-0389-0390]
+  - front: "What are the four categories in the differential diagnosis of fever?"
+    back: "Infection, Cancer, Medications, and Other (e.g., inflammatory bowel disease, collagen vascular disease)\n\nFever has multiple etiologies spanning infectious, malignant, pharmacologic, and inflammatory causes."
+    difficulty: easy
+    tags: [fever, differential, infection, cancer, toronto-notes, pages-0411-0412-0413-0414-0415-0416-0417-0418-0419-0420]
+  - front: "When should colonoscopy be considered in IBS?"
+    back: "If alarm features present, family history of IBD or colorectal cancer, or age >50\n\nColonoscopy with random biopsies if normal appearance helps rule out microscopic colitis and other organic colonic disease."
+    difficulty: medium
+    tags: [IBS, colonoscopy, diagnosis, gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What test is likely more reliable than celiac serology to rule out IBD in suspected IBS?"
+    back: "Fecal calprotectin\n\nFecal calprotectin is a marker of intestinal inflammation and is more reliable for ruling out IBD than celiac serology."
+    difficulty: medium
+    tags: [IBS, IBD, fecal calprotectin, diagnosis, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "When should colonoscopy be considered in suspected IBS?"
+    back: "When alarm features are present, family history of IBD or colorectal cancer, or age >50 years\n\nColonoscopy is not routine for IBS but indicated when there are red flags or increased risk for organic colonic disease."
+    difficulty: medium
+    tags: [IBS, colonoscopy, diagnosis, colorectal cancer, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "When should colonoscopy be considered in IBS evaluation?"
+    back: "Consider colonoscopy if alarm features present, family history of IBD or colorectal cancer, or age >50 years. If normal, random colonic biopsies should be taken.\n\nColonoscopy rules out organic colonic pathology. Random biopsies can detect microscopic colitis even when the colon appears normal."
+    difficulty: medium
+    tags: [IBS, Colonoscopy, Gastroenterology, Screening, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What is the role of fecal calprotectin in IBS workup?"
+    back: "Fecal calprotectin is a reliable test to rule out IBD (inflammatory bowel disease) if available\n\nFecal calprotectin is a marker of intestinal inflammation and helps differentiate IBS (functional) from IBD (organic inflammatory disease)."
+    difficulty: medium
+    tags: [IBS, Fecal Calprotectin, IBD, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "When is colonoscopy indicated in suspected IBS?"
+    back: "If alarm features present, family history of IBD or colorectal cancer, or age >50 years\n\nColonoscopy with random biopsies should be performed if organic disease is suspected."
+    difficulty: easy
+    tags: [IBS, colonoscopy, screening, gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What are the risk factors for severe traveler's diarrhea requiring treatment?"
+    back: "Chronic renal failure, CHF, diabetes mellitus, IBD, immunosuppression\n\nPatients with these conditions are at higher risk for severe complications from traveler's diarrhea and may warrant more aggressive treatment."
+    difficulty: medium
+    tags: [travel-medicine, risk-factors, toronto-notes, pages-0451-0452-0453-0454-0455-0456-0457-0458-0459-0460]
+  - front: "Which test is more reliable than CBC to rule out IBD in a patient with suspected IBS symptoms?"
+    back: "Fecal calprotectin\n\nFecal calprotectin is a marker of intestinal inflammation and is more reliable than basic blood tests for ruling out IBD in patients with IBS-like symptoms."
+    difficulty: easy
+    tags: [Gastroenterology, IBD, Fecal Calprotectin, Investigations, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "When should colonoscopy with random biopsies be considered in suspected IBS?"
+    back: "If alarm features are present, family history of IBD or colorectal cancer, or patient age >50 years\n\nColonoscopy is not routinely needed for IBS diagnosis but should be performed when red flag symptoms or risk factors for organic disease exist."
+    difficulty: easy
+    tags: [Gastroenterology, IBS, Colonoscopy, Screening, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What is the role of fecal calprotectin in the workup of suspected IBS?"
+    back: "Fecal calprotectin is used to rule out inflammatory bowel disease (IBD) and is likely more reliable than other tests in this setting\n\nFecal calprotectin is a marker of intestinal inflammation and helps differentiate IBS (functional) from IBD (organic inflammatory condition)."
+    difficulty: medium
+    tags: [IBS, Fecal Calprotectin, IBD, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "When should colonoscopy be considered in a patient with suspected IBS?"
+    back: "Colonoscopy is indicated if alarm features are present, there is a family history of IBD or colorectal cancer, or patient age >50 years\n\nIf colonoscopy is performed and appears normal, random colonic biopsies should be taken to rule out microscopic colitis."
+    difficulty: medium
+    tags: [IBS, Colonoscopy, Gastroenterology, Colorectal Cancer, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What investigations are required for suspected IBS?"
+    back: "If Rome IV criteria met with no alarm symptoms and no family history of IBD/colorectal cancer: limited to CBC and celiac serology. Consider fecal calprotectin, TSH, stool cultures if indicated. Colonoscopy if alarm features, family history, or age >50.\n\nGoal is to rule out diseases that mimic IBS (celiac disease, IBD). Minimal testing needed in typical IBS without red flags."
+    difficulty: medium
+    tags: [IBS, Investigations, Gastroenterology, Diagnostic Approach, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "When should colonoscopy be performed in constipation workup?"
+    back: "If red flag symptoms present (rectal bleeding, weight loss, anemia), family history of IBD, or age >50. Random colonic biopsies should be taken if colonoscopy appears normal.\n\nColonoscopy rules out organic causes like colorectal cancer, IBD, or microscopic colitis."
+    difficulty: medium
+    tags: [Constipation, Colonoscopy, Colorectal Cancer Screening, Gastroenterology, toronto-notes, pages-0461-0462-0463-0464-0465-0466-0467-0468-0469-0470]
+  - front: "What is the role of risankizumab in Crohn's disease based on the FORTIFY trial?"
+    back: "Risankizumab is effective as maintenance therapy for moderately to severely active Crohn's disease, demonstrated in the phase 3 FORTIFY maintenance trial\n\nThe FORTIFY trial (Lancet 2022) was a multicenter, randomized, double-blind, placebo-controlled study showing risankizumab's efficacy for Crohn's disease maintenance"
+    difficulty: hard
+    tags: [Crohns disease, risankizumab, IBD, biologic therapy, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "What is the impact of inflammatory bowel disease in Canada according to the 2018 scientific report?"
+    back: "The 2018 impact report from the Canadian gastrointestinal epidemiology consortium to Crohn's and Colitis Canada provides comprehensive data on IBD prevalence, incidence, and burden in Canada\n\nThis scientific report (J Can Assoc Gastroenterol 2019) documents the epidemiology and effects of IBD across Canadian populations"
+    difficulty: medium
+    tags: [IBD, Crohns, colitis, Canada, epidemiology, toronto-notes, pages-0491-0492-0493-0494-0495-0496-0497-0498-0499-0500]
+  - front: "Which condition is more commonly associated with ulcerative colitis: PSC or PBC?"
+    back: "Primary Sclerosing Cholangitis (PSC)\n\nPSC has a strong association with IBD, especially ulcerative colitis, while PBC is associated with other autoimmune disorders like Sjogren's, CREST, and RA."
+    difficulty: easy
+    tags: [PSC, PBC, IBD, UC, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What autoimmune conditions are associated with Acute Pancreatitis?"
+    back: "IgG4-related disease, SLE, polyarteritis nodosa (PAN), Crohn's disease\n\nAutoimmune pancreatitis can be part of systemic autoimmune conditions or present as isolated IgG4-related disease."
+    difficulty: medium
+    tags: [pancreatitis, autoimmune, IgG4, toronto-notes, pages-0481-0482-0483-0484-0485-0486-0487-0488-0489-0490]
+  - front: "What cutaneous manifestations are seen in inflammatory bowel disease (Crohn's/UC)?"
+    back: "Pyoderma gangrenosum, erythema nodosum, Sweet's syndrome (acute febrile neutrophilic dermatosis).\n\nPyoderma gangrenosum presents as painful ulcers with a violaceous undermined border and is more common in UC. Erythema nodosum is the most common extraintestinal skin manifestation of IBD and correlates with disease activity."
+    difficulty: medium
+    tags: [IBD, pyoderma gangrenosum, erythema nodosum, extraintestinal]
+  - front: "What are the main causes of chronic secretory diarrhea?"
+    back: "Stimulant laxatives, post-ileal resection/cholecystectomy (bile salt malabsorption), bacterial toxins, neoplasia (e.g., VIPoma causing vasoactive intestinal peptide excess, carcinoid), Addison's disease, congenital syndromes.\n\nSecretory diarrhea persists with fasting (unlike osmotic diarrhea which improves). VIPomas cause profuse watery diarrhea. Bile salt diarrhea after ileal resection is treated with cholestyramine. Addison's disease causes GI symptoms due to cortisol deficiency."
+    difficulty: medium
+    tags: [secretory diarrhea, VIPoma, bile salt, chronic diarrhea, Addisons]
+  - front: "What is a wireless endoscopy capsule and what is its main contraindication?"
+    back: "A wireless capsule endoscope is a 26 x 11 mm swallowed capsule that transmits images to a computer — used to visualize the small bowel. Main contraindication: bowel obstruction or known strictures (risk of capsule retention).\n\nCapsule endoscopy is the most sensitive method for visualizing small bowel mucosa, especially for obscure GI bleeding and Crohn's disease assessment. It does not provide therapeutic intervention. Prior small bowel imaging to rule out strictures is recommended before use."
+    difficulty: medium
+    tags: [capsule endoscopy, small bowel, wireless endoscopy, bowel obstruction, contraindication]
+  - front: "What are the main causes of chronic steatorrhea?"
+    back: "Giardia lamblia (fat malabsorption), celiac disease, chronic pancreatitis (exocrine insufficiency), chronic cholestasis (bile salt deficiency for fat emulsification).\n\nSteatorrhea indicates fat malabsorption. Pancreatic exocrine insufficiency (chronic pancreatitis, cystic fibrosis) impairs lipase secretion. Celiac disease damages intestinal villi reducing absorptive surface. Bile salt deficiency (cholestasis, ileal disease) impairs fat emulsification. Sudan stain and fecal fat quantification aid diagnosis."
+    difficulty: medium
+    tags: [steatorrhea, fat malabsorption, chronic pancreatitis, celiac disease, Giardia]
+  - front: "Which 'red flag' features make a diagnosis of IBS less likely and warrant further investigation?"
+    back: "Weight loss, anemia, fever, blood or pus in stool, nocturnal defecation, abnormal gross findings on endoscopy.\n\nThese alarm features suggest organic pathology (e.g., IBD, colorectal cancer, infection) rather than functional IBS. Their presence mandates investigation including colonoscopy and biopsy rather than empirical IBS management."
+    difficulty: easy
+    tags: [IBS, red flags, alarm features, differential diagnosis]
+  - front: "What is the recommended initial investigation workup for a patient meeting Rome IV IBS criteria with no alarm features and no family history of IBD or colorectal cancer?"
+    back: "Limited workup: CBC and celiac serology. Fecal calprotectin (if available) is a reliable test to rule out IBD. Consider TSH and stool cultures depending on clinical circumstances. Colonoscopy only if alarm features, family history of IBD, or age >50.\n\nThe goal of limited investigation is to rule out IBS mimickers, particularly celiac disease and IBD. Extensive workup is not cost-effective in low-risk patients meeting Rome IV criteria. Fecal calprotectin is more reliable than serology alone for excluding IBD."
+    difficulty: medium
+    tags: [IBS, investigations, celiac, IBD, fecal calprotectin]
+  - front: "What dietary intervention has the best evidence for IBS symptoms of pain, bloating, gas, and diarrhea?"
+    back: "Low FODMAP diet (Fermentable Oligo-, Di-, Monosaccharides And Polyols).\n\nFODMAPs are poorly absorbed short-chain carbohydrates that are fermented by gut bacteria, producing gas and osmotic effects. A low-FODMAP diet reduces fermentable substrate and has good evidence for overall IBS symptom relief across subtypes."
+    difficulty: easy
+    tags: [IBS, FODMAP, diet, treatment]
+  - front: "What are the pharmacological treatment options for IBS-D (diarrhea-predominant IBS)?"
+    back: "Increase soluble fibre (bran or psyllium), eluxadoline, rifaximin. Antispasmodics before meals (hyoscine, pinaverium, trimebutine) for pain. TCAs, SNRIs for pain. SSRIs only if anxiety/depression is the main contributor.\n\nRifaximin is a minimally absorbed antibiotic that targets gut flora; phase 3 trials showed it provides adequate relief of global IBS-D symptoms and bloating vs placebo. Eluxadoline is a mixed opioid receptor agonist/antagonist approved for IBS-D."
+    difficulty: medium
+    tags: [IBS-D, rifaximin, eluxadoline, treatment, antispasmodics]
+  - front: "What are the pharmacological treatment options for IBS-C (constipation-predominant IBS)?"
+    back: "Increase soluble fibre, PEG 3350 (alters stool form but not pain), linaclotide, plecanatide, tenapanor, osmotic or other laxatives.\n\nLinaclotide and plecanatide are guanylate cyclase-C agonists that increase water secretion into the intestinal lumen and have both laxative and visceral analgesic effects. Tenapanor is an NHE3 (sodium-proton) inhibitor. These are preferred over osmotic laxatives for abdominal pain component."
+    difficulty: medium
+    tags: [IBS-C, linaclotide, plecanatide, tenapanor, treatment]
+  - front: "What is the definition of constipation, and what is the most common cause?"
+    back: "Passage of infrequent/hard stools and/or difficult stool evacuation (straining, sensation of anorectal blockage). Most common cause: functional/idiopathic. Among organic causes, medication side effects (especially narcotics, antidepressants) are most common.\n\nConstipation is defined symptomatically rather than by stool frequency alone. Organic causes are unlikely if constipation is the only symptom. The mnemonic DOPED covers: Drugs, Obstruction, Pain, Endocrine dysfunction, Depression."
+    difficulty: easy
+    tags: [constipation, etiology, DOPED, functional]
+  - front: "List the metabolic and neurologic causes of constipation."
+    back: "Metabolic: DM, hypothyroidism, hypercalcemia, hypokalemia, uremia. Neurologic: intestinal pseudo-obstruction, Parkinson's disease, MS, collagen vascular disease (e.g. scleroderma), painful anal conditions (e.g. fissures).\n\nMetabolic and neurologic causes of constipation should be considered in patients with systemic symptoms or in elderly patients. Hypothyroidism is particularly important to exclude as it is common and reversible."
+    difficulty: medium
+    tags: [constipation, metabolic causes, neurologic causes, hypothyroidism]
+  - front: "What investigation is indicated when constipation is the only presenting symptom?"
+    back: "CBC (per 2013 American Gastroenterology Association recommendation). Also consider TSH, calcium, glucose, and abdominal X-ray in the correct clinical context. Colonoscopy/CT colonography if red flag symptoms (rectal bleeding, weight loss, anemia) or age >50.\n\nUnderlying disease is rarely found when constipation is the sole symptom, so extensive workup is not warranted. However, CBC screens for anemia (occult bleeding or hemolytic cause), and other basic tests rule out common metabolic contributors."
+    difficulty: medium
+    tags: [constipation, investigations, colonoscopy, red flags]
+  - front: "List the treatment options for constipation in order of increasing potency."
+    back: "1. Dietary fibre (30 g/day, increase slowly — useful for mild/moderate). 2. Surface-acting agents (docusate, mineral oils — limited efficacy). 3. Osmotic agents (PEG 3350, lactulose, sorbitol, magnesium salts — effective in 2–3 days). 4. Cathartics/stimulants (senna, bisacodyl — effective in 24 h). 5. Enemas/suppositories. 6. Prokinetics (prucalopride, HT4 agonist). 7. Secretagogues (linaclotide, plecanatide). 8. NHE3 inhibitors (tenapanor).\n\nTreatment should be stepped up based on severity. Dietary fibre is ineffective for severe constipation. Prucalopride targets the 5-HT4 receptor to enhance colonic motility. Secretagogues increase luminal water secretion via guanylate cyclase-C activation."
+    difficulty: medium
+    tags: [constipation, treatment, laxatives, prucalopride, linaclotide]
+  - front: "What are the surgical indications for Crohn's disease, and what are the key surgical principles?"
+    back: "Indications: failure of medical management; SBO from stricture/inflammation (50% of surgical cases); abscess, fistula (enterocolic, vesicular, vaginal, cutaneous), perforation, hemorrhage, quality of life, chronic disability, failure to thrive (children), perianal disease. Key principles: surgery is NOT curative (~70% of Crohn's patients will eventually need surgery). Resection margins only need to be free of gross disease (microscopic disease does not affect prognosis). Surgery should be elective and ideally performed off steroids.\n\nUnlike UC, Crohn's disease recurs after resection. Conservative resection (limited margins) is preferred to preserve bowel length and avoid short gut syndrome. Stricturoplasty is used for chronically scarred bowel to relieve obstruction without resection. Contraindicated in acute inflammation. Three major patterns: ileocecal (40%), small bowel (15%), colonic (25%)."
+    difficulty: medium
+    tags: [Crohns disease, surgical management, stricturoplasty, fistula, IBD surgery]
+  - front: "What are the metabolic complications following terminal ileum resection in Crohn's disease?"
+    back: "Gallstones: decreased bile salt reabsorption → increased cholesterol precipitation. Kidney stones: diarrhea causes calcium loss in stool → increased oxalate absorption → hyperoxaluria → calcium oxalate stones. Fat malabsorption (steatorrhea): bile salt deficiency. Vitamin B12 deficiency: megaloblastic anemia (terminal ileum is the only site of active B12 absorption).\n\nThe terminal ileum is uniquely responsible for active bile salt and vitamin B12 absorption. Loss of this segment has systemic consequences beyond malabsorption. The gallstone risk is from lithogenic bile (increased cholesterol:bile acid ratio). Oxalate stones form because calcium normally binds oxalate in the gut; when calcium is lost in stool, free oxalate is absorbed in the colon."
+    difficulty: medium
+    tags: [Crohns disease, terminal ileum, gallstones, oxalate stones, vitamin B12, short gut]
+  - front: "What are the surgical options for ulcerative colitis and when is surgery indicated?"
+    back: "Indications: failure of medical management (including inability to taper steroids); emergencies — hemorrhage, colonic perforation, toxic megacolon, fulminant/toxic colitis; obstruction and failure to thrive; cancer risk reduction (1-2% per year after 10 years of disease). Procedures: restorative proctocolectomy + ileal pouch-anal anastomosis (IPAA) + rectal mucosectomy (operation of choice). Total proctocolectomy + permanent end ileostomy (poor sphincter function or medically ill). Total abdominal colectomy + ileorectal anastomosis (young women wishing to preserve fertility). Emergency: total colectomy + ileostomy + Hartmann closure of rectum.\n\nUnlike Crohn's, UC is curable with total proctocolectomy. IPAA (ileal J-pouch) preserves continence and is the preferred elective operation. Pouchitis is a common late complication. Total proctocolectomy eliminates cancer risk. Perforation of the colon is the leading cause of death in UC. Emergency surgery uses Hartmann procedure to minimize anastomotic leak risk in an acutely inflamed, unprepared colon."
+    difficulty: medium
+    tags: [ulcerative colitis, proctocolectomy, IPAA, toxic megacolon, IBD surgery]

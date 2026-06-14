@@ -7,19 +7,17 @@ const { parseYaml } = require('./parse_yaml.js');
 // Single-owner syllabus/subject contract — import, never re-implement, so a
 // layout change in syllabus.js reaches the shard build and Anki export alike
 // (see scripts/syllabus.js header). safeReaddir/DEFAULT_SUBJECTS come from there too.
-const { ROOT, DEFAULT_SUBJECTS, resolveSyllabus, safeReaddir } = require('./syllabus.js');
+const { ROOT, DEFAULT_SUBJECTS, listSyllabi, readManifest, safeReaddir } = require('./syllabus.js');
 
 function stableCardId(subject, front, source) {
     const h = crypto.createHash('sha1').update(`${front}\0${source || ''}`).digest('hex').slice(0, 10);
     return `${subject}-${h}`;
 }
 
+// Output root. Each syllabus writes its shards + manifest under DATA/<id>/ so the
+// runtime can swap syllabi by changing which subtree it fetches. A top-level
+// syllabi.json lists the available sets for the in-app selector.
 const DATA = path.join(ROOT, 'site', 'data');
-
-const SYLLABUS = resolveSyllabus();
-const SUBJ_ROOT = SYLLABUS.root;
-
-const SUBJECTS = SYLLABUS.subjects || DEFAULT_SUBJECTS;
 
 // Category palette mapping for design rails
 const SUBJECT_CAT = {
@@ -41,8 +39,8 @@ function readFileSafe(p) {
     try { return fs.readFileSync(p, 'utf8'); } catch { return null; }
 }
 
-function loadCards(subject) {
-    const dir = path.join(SUBJ_ROOT, subject, 'srs-cards');
+function loadCards(subject, ctx) {
+    const dir = path.join(ctx.root, subject, 'srs-cards');
     const out = [];
     for (const f of safeReaddir(dir)) {
         if (!f.endsWith('.yml') && !f.endsWith('.yaml')) continue;
@@ -139,9 +137,9 @@ function normalizeScenario(sc, idx) {
     };
 }
 
-function loadTriage(subject) {
-    const nested = path.join(SUBJ_ROOT, subject, 'triage_scenarios.yml');
-    const legacy = path.join(SUBJ_ROOT, `${subject}_triage_scenarios.yml`);
+function loadTriage(subject, ctx) {
+    const nested = path.join(ctx.root, subject, 'triage_scenarios.yml');
+    const legacy = path.join(ctx.root, `${subject}_triage_scenarios.yml`);
     const f = safeStat(nested) ? nested : legacy;
     const text = readFileSafe(f);
     if (!text) return null;
@@ -162,8 +160,8 @@ function loadTriage(subject) {
     }
 }
 
-function loadGuide(subject) {
-    const f = path.join(SUBJ_ROOT, subject, 'study_guide.md');
+function loadGuide(subject, ctx) {
+    const f = path.join(ctx.root, subject, 'study_guide.md');
     const text = readFileSafe(f);
     if (!text) return null;
     const lines = text.split(/\r?\n/);
@@ -195,9 +193,9 @@ function loadGuide(subject) {
         sections: sections.slice(0, 50),
         firstParagraph: text.split('\n\n').slice(2, 4).join('\n\n').slice(0, 600),
         body: text,
-        infographics: loadInfographics(subject),
-        videos: loadVideos(subject),
-        audio: loadAudio(subject)
+        infographics: loadInfographics(subject, ctx),
+        videos: loadVideos(subject, ctx),
+        audio: loadAudio(subject, ctx)
     };
 }
 
@@ -206,11 +204,11 @@ function preferCompressed(files, compressedExt) {
     return files.filter(f => path.extname(f).toLowerCase() === compressedExt || !bases.has(f.replace(/\.[^.]+$/, '')));
 }
 
-function loadAudio(subject) {
-    const dir = path.join(SUBJ_ROOT, subject, 'audio-deepdive');
+function loadAudio(subject, ctx) {
+    const dir = path.join(ctx.root, subject, 'audio-deepdive');
     const out = [];
     if (!safeStat(dir)) return out;
-    const destDir = path.join(DATA, 'audio', subject);
+    const destDir = path.join(ctx.dataDir, 'audio', subject);
     const files = preferCompressed(safeReaddir(dir), '.opus');
     for (const f of files) {
         if (!/\.(m4a|mp3|wav|ogg|aac|opus)$/i.test(f)) continue;
@@ -222,23 +220,23 @@ function loadAudio(subject) {
         out.push({
             filename: f,
             title: `${subject} deep dive`,
-            src: `data/audio/${subject}/${f}`,
+            src: `data/${ctx.id}/audio/${subject}/${f}`,
             sizeMB: +(stat.size / (1024 * 1024)).toFixed(1)
         });
     }
     return out;
 }
 
-function loadVideos(subject) {
-    const dir = path.join(SUBJ_ROOT, subject, 'videos');
+function loadVideos(subject, ctx) {
+    const dir = path.join(ctx.root, subject, 'videos');
     const out = [];
     if (!safeStat(dir)) return out;
-    const manifestPath = path.join(SUBJ_ROOT, subject, 'videos.json');
+    const manifestPath = path.join(ctx.root, subject, 'videos.json');
     let manifest = [];
     const mtext = readFileSafe(manifestPath);
     if (mtext) { try { manifest = JSON.parse(mtext); } catch {} }
     const byName = Object.fromEntries((manifest || []).map(m => [m.filename, m]));
-    const destDir = path.join(DATA, 'videos', subject);
+    const destDir = path.join(ctx.dataDir, 'videos', subject);
     const files = preferCompressed(safeReaddir(dir), '.webm');
     for (const f of files) {
         if (!/\.(mp4|webm|mov|m4v|mkv)$/i.test(f)) continue;
@@ -252,7 +250,7 @@ function loadVideos(subject) {
         out.push({
             filename: f,
             title: meta.title || base.replace(/_/g, ' '),
-            src: `data/videos/${subject}/${f}`,
+            src: `data/${ctx.id}/videos/${subject}/${f}`,
             sizeMB: meta.sizeMB || +(stat.size / (1024 * 1024)).toFixed(1),
             durationMin: meta.durationMin || null,
             url: meta.url || null
@@ -261,10 +259,10 @@ function loadVideos(subject) {
     return out;
 }
 
-function loadInfographics(subject) {
-    const dir = path.join(SUBJ_ROOT, subject, 'infographics');
+function loadInfographics(subject, ctx) {
+    const dir = path.join(ctx.root, subject, 'infographics');
     const out = [];
-    const destDir = path.join(DATA, 'infographics', subject);
+    const destDir = path.join(ctx.dataDir, 'infographics', subject);
     for (const f of safeReaddir(dir)) {
         if (!/\.(png|jpe?g|svg|webp)$/i.test(f)) continue;
         const src = path.join(dir, f);
@@ -277,7 +275,7 @@ function loadInfographics(subject) {
             filename: f,
             title,
             alt: `${subject} infographic: ${base}`,
-            src: `data/infographics/${subject}/${f}`
+            src: `data/${ctx.id}/infographics/${subject}/${f}`
         });
     }
     return out;
@@ -312,15 +310,25 @@ function attachRequires(cards, sections, subject) {
     }
 }
 
-function buildShard(subject) {
-    const cards = loadCards(subject);
-    const guide = loadGuide(subject);
+// Deterministic design-rail color for subjects not in the curated cmed4 palette
+// (e.g. the ~31 mccqe1 disciplines) so they are not all the same green.
+const CAT_PALETTE = ['mascot', 'sun', 'purple', 'flame', 'sky', 'green'];
+function catFor(subject) {
+    if (SUBJECT_CAT[subject]) return SUBJECT_CAT[subject];
+    let h = 0;
+    for (let i = 0; i < subject.length; i++) h = (h * 31 + subject.charCodeAt(i)) >>> 0;
+    return CAT_PALETTE[h % CAT_PALETTE.length];
+}
+
+function buildShard(subject, ctx) {
+    const cards = loadCards(subject, ctx);
+    const guide = loadGuide(subject, ctx);
     if (guide && guide.sections) attachRequires(cards, guide.sections, subject);
     return {
         subject,
-        cat: SUBJECT_CAT[subject] || 'green',
+        cat: catFor(subject),
         cards,
-        triage: loadTriage(subject),
+        triage: loadTriage(subject, ctx),
         guide
     };
 }
@@ -336,17 +344,21 @@ function ratingFor(shard) {
     return 'stub';                         // flame
 }
 
-function main() {
-    fs.mkdirSync(DATA, { recursive: true });
+// Build one syllabus into DATA/<id>/: per-subject shard + manifest.json.
+function buildSyllabus(syl) {
+    const dataDir = path.join(DATA, syl.id);
+    const ctx = { id: syl.id, root: syl.root, dataDir };
+    fs.mkdirSync(dataDir, { recursive: true });
     const manifest = {
         generated: new Date().toISOString(),
+        syllabus: syl.id,
+        label: syl.label || syl.id,
         subjects: [],
         totals: { cards: 0, scenarios: 0, atoms: 0, guideChars: 0, guideSections: 0, videoCount: 0, audioCount: 0 }
     };
-    for (const s of SUBJECTS) {
-        const shard = buildShard(s);
-        const file = path.join(DATA, `${s}.json`);
-        fs.writeFileSync(file, JSON.stringify(shard, null, 2));
+    for (const s of syl.subjects) {
+        const shard = buildShard(s, ctx);
+        fs.writeFileSync(path.join(dataDir, `${s}.json`), JSON.stringify(shard, null, 2));
         const rating = ratingFor(shard);
         manifest.subjects.push({
             subject: s,
@@ -368,12 +380,27 @@ function main() {
         manifest.totals.guideSections += shard.guide ? shard.guide.sections.length : 0;
         manifest.totals.videoCount += shard.guide && Array.isArray(shard.guide.videos) ? shard.guide.videos.length : 0;
         manifest.totals.audioCount += shard.guide && Array.isArray(shard.guide.audio) ? shard.guide.audio.length : 0;
-        console.log(`[ok] ${s}: ${shard.cards.length} cards, ${shard.triage?.scenarioCount || 0} scenarios, guide=${rating} (${shard.guide?.sections?.length || 0} sections)`);
+        console.log(`  [ok] ${syl.id}/${s}: ${shard.cards.length} cards, ${shard.triage?.scenarioCount || 0} scenarios, guide=${rating} (${shard.guide?.sections?.length || 0} sections)`);
     }
-    fs.writeFileSync(path.join(DATA, 'manifest.json'), JSON.stringify(manifest, null, 2));
-    console.log(`\nTotals: ${manifest.totals.cards} cards, ${manifest.totals.scenarios} scenarios, ${manifest.totals.atoms} atoms, ${manifest.totals.guideSections} guide sections, ${(manifest.totals.guideChars/1024).toFixed(0)}KB guides`);
+    fs.writeFileSync(path.join(dataDir, 'manifest.json'), JSON.stringify(manifest, null, 2));
+    return manifest.totals;
+}
+
+function main() {
+    fs.mkdirSync(DATA, { recursive: true });
+    const syllabi = listSyllabi();
+    const def = readManifest().default;
+    for (const syl of syllabi) {
+        console.log(`# syllabus ${syl.id} (${syl.subjects.length} subjects)${syl.id === def ? ' [default]' : ''}`);
+        const totals = buildSyllabus(syl);
+        console.log(`  totals: ${totals.cards} cards, ${totals.scenarios} scenarios, ${totals.guideSections} sections, ${(totals.guideChars / 1024).toFixed(0)}KB guides`);
+    }
+    // Top-level index the in-app selector reads to populate the syllabus picker.
+    const index = syllabi.map(s => ({ id: s.id, label: s.label || s.id, default: s.id === def }));
+    fs.writeFileSync(path.join(DATA, 'syllabi.json'), JSON.stringify(index, null, 2));
+    console.log(`\nwrote site/data/syllabi.json: ${index.map(s => s.id).join(', ')}`);
 }
 
 if (require.main === module) main();
 
-module.exports = { buildShard, SUBJECTS, SUBJECT_CAT, stableCardId };
+module.exports = { buildShard, buildSyllabus, catFor, SUBJECT_CAT, stableCardId };

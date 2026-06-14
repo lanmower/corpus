@@ -1,13 +1,14 @@
 // last-position memory -- corpus.lastpos.v1.
-const KEY = 'corpus.lastpos.v1';
+import { skey } from './syllabus.js';
+const KEY = () => skey('lastpos.v1');
 
 export function load() {
-    try { const raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : null; }
+    try { const raw = localStorage.getItem(KEY()); return raw ? JSON.parse(raw) : null; }
     catch { return null; }
 }
 
 export function save(route, subjectAnchor) {
-    try { localStorage.setItem(KEY, JSON.stringify({ route, subjectAnchor: subjectAnchor || null, ts: Date.now() })); }
+    try { localStorage.setItem(KEY(), JSON.stringify({ route, subjectAnchor: subjectAnchor || null, ts: Date.now() })); }
     catch {}
 }
 

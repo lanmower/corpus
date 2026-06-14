@@ -10,6 +10,7 @@ import * as schedule from '../schedule.js';
 import * as progress from '../progress.js';
 import { makeToggleButton } from '../theme.js';
 import { openShortcutsModal } from '../shortcuts.js';
+import { dataPath, listSyllabi, getActiveSyllabus, setActiveSyllabus } from '../syllabus.js';
 
 function debounce(fn, ms) { let h = null; return (...a) => { clearTimeout(h); h = setTimeout(() => fn(...a), ms); }; }
 
@@ -179,9 +180,9 @@ export async function renderSettings() {
         on: { click: async () => {
             const lines = ['#separator:tab', '#html:true', '#guid column:1', '#notetype column:2', '#deck column:3', '#tags column:6'];
             try {
-                const mf = await fetch('data/manifest.json').then(r => r.json());
+                const mf = await fetch(dataPath('manifest.json')).then(r => r.json());
                 for (const s of mf.subjects) {
-                    const sh = await fetch(`data/${s.subject}.json`).then(r => r.json());
+                    const sh = await fetch(dataPath(`${s.subject}.json`)).then(r => r.json());
                     for (const c of sh.cards) {
                         const deck = c._deck || `Corpus::${s.subject}::${c.source || 'general'}`;
                         const noteType = c._noteType || 'Basic';
@@ -198,6 +199,27 @@ export async function renderSettings() {
         } } }, 'export to Anki (.txt)');
     const shortcutsBtn = el('button', { class: 'chip', 'aria-label': 'shortcuts',
         on: { click: () => openShortcutsModal() } }, 'shortcuts');
+    // syllabus selector — switching reloads the app onto the chosen data set; all
+    // study progress is namespaced per syllabus so the two never mix.
+    const syllabi = listSyllabi();
+    if (syllabi.length > 1) {
+        const active = getActiveSyllabus();
+        const sel = el('select', { class: 'syllabus-select', 'aria-label': 'active syllabus' },
+            ...syllabi.map(s => el('option', { value: s.id, ...(s.id === active ? { selected: '' } : {}) }, s.label || s.id)));
+        sel.addEventListener('change', () => {
+            const id = sel.value;
+            if (id === getActiveSyllabus()) return;
+            if (!confirm(`Switch to "${syllabi.find(s => s.id === id)?.label || id}"? Your ${active} progress is kept and restored when you switch back.`)) {
+                sel.value = getActiveSyllabus();
+                return;
+            }
+            setActiveSyllabus(id);
+            location.reload();
+        });
+        getStage().append(el('div', { class: 'panel' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'syllabus')),
+            el('div', { class: 'toolbar' }, el('label', { for: 'syllabus-select' }, 'active:'), sel)));
+    }
     getStage().append(el('div', { class: 'panel' },
         el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'study')),
         el('div', { class: 'toolbar' }, el('label', { for: 'exam-date' }, 'exam:'), examInput,

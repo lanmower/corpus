@@ -1,0 +1,234 @@
+# Multimorbidity & Chronic Disease Management (FamilyMedicine) - generated from srs-mccqe1
+cards:
+  - front: "A 72-year-old man has HTN, T2DM, CKD stage 3, and osteoarthritis. He takes metformin, ramipril, amlodipine, and naproxen. Which medication should be stopped first?"
+    back: "Naproxen\n\nNSAIDs worsen CKD, raise BP, increase CV risk, and antagonize antihypertensive agents. In multimorbid elderly patients, NSAIDs are high-priority deprescribing targets. Acetaminophen is preferred for OA pain."
+    difficulty: hard
+    tags: [multimorbidity, polypharmacy, NSAIDs, CKD, deprescribing]
+  - front: "What framework is most useful for prioritizing treatment goals in patients with multimorbidity?"
+    back: "Patient-centred goal-setting using shared decision-making\n\nGuidelines designed for single diseases may conflict in multimorbid patients. Shared decision-making to identify the patient's priorities (e.g., functional independence vs. longevity) helps tailor care. The NICE multimorbidity guideline recommends this approach."
+    difficulty: medium
+    tags: [multimorbidity, shared-decision-making, patient-centred]
+  - front: "Which validated tool helps identify potentially inappropriate medications in older adults with multimorbidity?"
+    back: "STOPP/START criteria (Screening Tool of Older Persons' Prescriptions / Screening Tool to Alert to Right Treatment)\n\nSTOPP lists explicit criteria for medications to stop; START lists evidence-based medications to consider adding. They are more sensitive than the Beers Criteria for detecting drug-related hospital admissions in older Canadians."
+    difficulty: medium
+    tags: [polypharmacy, STOPP-START, elderly, deprescribing]
+  - front: "A 68-year-old woman with heart failure (EF 35%), T2DM, and CKD stage 3b (eGFR 38) is started on an SGLT2 inhibitor. What additional benefit does this provide beyond glycemic control?"
+    back: "Reduction in HF hospitalizations and slowing of CKD progression\n\nSGLT2 inhibitors (e.g., empagliflozin, dapagliflozin) reduce HF hospitalization and CV death in HFrEF and slow CKD progression independent of glycemic effect. They are now guideline-directed therapy for both HFrEF and CKD."
+    difficulty: hard
+    tags: [SGLT2i, heart-failure, CKD, multimorbidity, empagliflozin]
+  - front: "What is the primary goal of the \"4Ms\" framework used in age-friendly health systems for older adults with multimorbidity?"
+    back: "To focus care on What Matters, Medication, Mentation, and Mobility\n\nThe 4Ms framework (IHI/AHA) ensures care addresses patient priorities (What Matters), avoids harmful medications, manages cognitive/mood issues (Mentation), and maintains Mobility — all simultaneously across conditions."
+    difficulty: easy
+    tags: [4Ms, age-friendly, multimorbidity, geriatrics]
+  - front: "A 75-year-old with COPD, depression, and T2DM has poor medication adherence. Which intervention most improves adherence in multimorbid patients?"
+    back: "Medication reconciliation plus simplified regimens (dose consolidation, pill organizers, blister packs)\n\nReducing pill burden, synchronizing refills, and using compliance aids significantly improve adherence. A pharmacist-led medication review is effective and recommended in Canadian practice."
+    difficulty: medium
+    tags: [adherence, polypharmacy, multimorbidity, pharmacist]
+  - front: "Which condition is most commonly associated with multimorbidity as an \"anchor\" diagnosis in primary care?"
+    back: "Hypertension\n\nHTN co-occurs with DM, CKD, CVD, stroke, and atrial fibrillation more than any other condition. It serves as the central node in most multimorbidity clusters seen in Canadian family practice."
+    difficulty: easy
+    tags: [hypertension, multimorbidity, primary-care]
+  - front: "A 70-year-old man with AF, CKD stage 4 (eGFR 22), and HTN requires anticoagulation. Which agent is preferred?"
+    back: "Warfarin (vitamin K antagonist) with careful INR monitoring\n\nDOACs (apixaban, rivaroxaban) are generally avoided when eGFR <15–25 mL/min due to renal elimination. Warfarin remains the anticoagulant of choice in advanced CKD with AF, though apixaban has emerging evidence down to eGFR 25."
+    difficulty: hard
+    tags: [anticoagulation, CKD, atrial-fibrillation, warfarin, DOAC]
+  - front: "What is \"treatment burden\" in the context of multimorbidity?"
+    back: "The effort required of patients to carry out recommended treatments across multiple conditions\n\nTreatment burden includes pill-taking, monitoring, lifestyle modifications, appointments, and costs. High treatment burden is associated with non-adherence and poorer outcomes in multimorbid patients."
+    difficulty: easy
+    tags: [treatment-burden, multimorbidity, patient-centred]
+  - front: "A 65-year-old woman with T2DM and CKD stage 3 develops hypertension. Which drug class is first-line for both nephroprotection and BP control?"
+    back: "ACE inhibitor or ARB\n\nACEi/ARBs reduce intraglomerular pressure and proteinuria in diabetic nephropathy. They are first-line for CKD with proteinuria per Hypertension Canada and Diabetes Canada guidelines."
+    difficulty: easy
+    tags: [ACEi, ARB, CKD, nephroprotection, HTN]
+  - front: "Which mental health condition is most prevalent in patients with multimorbidity and significantly worsens outcomes?"
+    back: "Depression\n\nDepression occurs in 20–30% of patients with two or more chronic conditions. It impairs self-management, medication adherence, and is independently associated with increased mortality in patients with CVD, DM, and COPD."
+    difficulty: medium
+    tags: [depression, multimorbidity, mental-health]
+  - front: "What is the recommended approach to statin therapy in a frail 82-year-old with CVD, dementia, and limited life expectancy?"
+    back: "Consider deprescribing statins if the patient's life expectancy is short and QoL is the priority\n\nStatins provide primary/secondary prevention over 3–5+ year horizons. In frail elderly with dementia and limited life expectancy, the harms (myopathy, interactions, pill burden) may outweigh benefits. Shared decision-making and goals of care should guide deprescribing."
+    difficulty: hard
+    tags: [statins, deprescribing, frailty, end-of-life, multimorbidity]
+  - front: "A 78-year-old with HF, CKD, and T2DM has hemoglobin of 95 g/L. What is the most likely cause?"
+    back: "Anemia of chronic kidney disease (renal anemia)\n\nCKD causes decreased erythropoietin production. In patients with multimorbidity involving CKD, renal anemia is common. Check iron studies first; if iron replete, consider erythropoiesis-stimulating agents if eGFR <60 and Hb <100."
+    difficulty: medium
+    tags: [anemia, CKD, erythropoietin, multimorbidity]
+  - front: "What is the role of a comprehensive geriatric assessment (CGA) in multimorbid older adults?"
+    back: "To evaluate functional status, cognition, mental health, nutrition, medications, and social support to create an integrated care plan\n\nCGA identifies reversible contributors to functional decline, guides appropriate investigation intensity, and prioritizes interventions. It is recommended for frail older adults with multiple chronic conditions."
+    difficulty: medium
+    tags: [CGA, geriatrics, frailty, multimorbidity]
+  - front: "A 73-year-old man with COPD, HF, and anxiety is prescribed a beta-blocker for HF. What is the appropriate approach given his COPD?"
+    back: "Use a cardioselective beta-blocker (e.g., bisoprolol, metoprolol succinate) — COPD is not an absolute contraindication\n\nCardioselective beta-blockers have minimal effect on beta-2 receptors at low doses. The mortality benefit of beta-blockers in HFrEF outweighs risk of mild COPD exacerbation. They should not be withheld in clinically stable COPD."
+    difficulty: hard
+    tags: [beta-blocker, COPD, HF, cardioselective, multimorbidity]
+  - front: "What is polypharmacy and why is it a concern in multimorbid patients?"
+    back: "Polypharmacy: >=5 concurrent medications. Problematic polypharmacy: more medications than clinically indicated. Risks: ADRs (doubled with >=5 meds), falls, cognitive impairment, non-adherence, drug interactions\n\n~30% Canadian seniors on 5+ medications. Prescribing cascades: drug A causes side effect treated by drug B. Apply Beers Criteria and STOPP/START criteria. Deprescribing.org provides Canadian evidence-based deprescribing guidelines."
+    difficulty: hard
+    tags: [polypharmacy, multimorbidity, deprescribing]
+  - front: "What are the principles of deprescribing?"
+    back: "1) Identify medications to discontinue. 2) Prioritize by harm risk. 3) Plan tapering schedule. 4) Monitor for withdrawal/disease recurrence. 5) Shared decision-making with patient. Use deprescribing.org algorithms\n\nKey targets: PPIs (taper over 4-8wk), benzodiazepines (10% reduction q1-2wk), anticholinergics, opioids, antipsychotics in elderly. Deprescribing reduces falls, improves cognition, reduces ADRs. STOPP criteria identify potentially inappropriate prescriptions."
+    difficulty: hard
+    tags: [deprescribing, polypharmacy, medication safety]
+  - front: "How should diabetes be managed in the context of multimorbidity?"
+    back: "Individualize A1c targets: <=7.0% generally, <=8.0% or <=8.5% for frail elderly with limited life expectancy. Avoid hypoglycemia. Prefer agents with low hypo risk (metformin, SGLT2i, GLP1-RA). Simplify regimens\n\nDiabetes Canada 2018. SGLT2i (empagliflozin, dapagliflozin) have CV and renal benefits. GLP1-RA reduce CV events. Deprescribe sulfonylureas and insulin where possible in frail elderly. Renal dosing: metformin to eGFR 30, SGLT2i to eGFR 20-25."
+    difficulty: hard
+    tags: [diabetes, multimorbidity, A1c targets]
+  - front: "How is chronic pain managed in patients with multiple comorbidities?"
+    back: "Multimodal approach: non-pharmacological first (exercise, CBT, physiotherapy). Pharmacological: acetaminophen, topical NSAIDs, duloxetine/gabapentinoids for neuropathic. Avoid systemic NSAIDs if CKD/CV/GI risk. Opioids last resort\n\nCanadian Pain Guidelines 2017 emphasize non-opioid multimodal analgesia. If opioids needed: lowest effective dose, reassess regularly, naloxone co-prescribing if >=50 MME/day. Monitor with PMP (provincial prescription monitoring programs)."
+    difficulty: hard
+    tags: [chronic pain, multimodal, multimorbidity]
+  - front: "What is the approach to treatment burden in multimorbid patients?"
+    back: "Assess patient capacity vs treatment workload. Minimize visits, simplify regimens, coordinate care, set realistic goals. Use ARIADNE principles: assess interactions, rank priorities, individualize, decide together, evaluate regularly\n\nTreatment burden includes medications, appointments, monitoring, lifestyle changes, self-management tasks. Minimally disruptive medicine framework. Single-disease guidelines may not apply. Focus on patient-centered outcomes not disease-specific targets."
+    difficulty: medium
+    tags: [treatment burden, multimorbidity, patient-centered]
+  - front: "How is hypertension managed in patients with CKD and diabetes?"
+    back: "Target <130/80 per Hypertension Canada. First-line: ACEi or ARB (renal protection). Monitor creatinine and K+ at 1-2 weeks. Accept up to 30% rise in creatinine. Add thiazide-like or CCB as needed\n\nDo not combine ACEi+ARB (ONTARGET trial: no benefit, more harm). Hold ACEi/ARB for acute illness (sick day rules). SGLT2i provide additional renal and CV benefit. Avoid NSAIDs (worsen CKD and HTN). Refer nephrology if eGFR <30 or rapidly declining."
+    difficulty: hard
+    tags: [hypertension, CKD, diabetes, ACEi]
+  - front: "What drug interactions should be monitored in multimorbid patients on anticoagulation?"
+    back: "Warfarin: CYP2C9 interactions (amiodarone increases INR, rifampin decreases). DOACs: P-gp inhibitors (amiodarone, dronedarone increase levels). All anticoagulants + NSAIDs/ASA = increased bleeding. Check renal function for DOACs\n\nCommon dangerous interactions: macrolides + warfarin, antifungals + DOACs, SSRIs increase bleeding risk. Dose-adjust DOACs for renal function and age/weight. INR monitoring for warfarin q4-12wk when stable. Fall risk alone is NOT a contraindication to anticoagulation."
+    difficulty: hard
+    tags: [drug interactions, anticoagulation, warfarin, DOAC]
+  - front: "How is heart failure managed in patients with concurrent COPD?"
+    back: "Cardioselective beta-blockers (bisoprolol, metoprolol) are SAFE in COPD-HF. Avoid non-selective (carvedilol with caution). LAMA/LABA preferred over ICS for COPD. Avoid systemic corticosteroids if possible (fluid retention)\n\nBeta-blockers reduce HF mortality and should NOT be withheld for COPD. Cardioselective agents at appropriate doses do not significantly worsen FEV1. Short-acting beta-agonists safe in HF. Diuretics for volume management must balance COPD dehydration."
+    difficulty: hard
+    tags: [heart failure, COPD, beta-blocker, multimorbidity]
+  - front: "What are the Beers Criteria and STOPP/START criteria?"
+    back: "Beers: list of potentially inappropriate medications in >=65 (AGS updated 2023). STOPP: screening tool for older persons prescriptions to STOP. START: screening tool to START indicated but omitted medications\n\nBeers high-risk drugs: anticholinergics, benzodiazepines, NSAIDs, long-acting sulfonylureas, meperidine, first-gen antipsychotics. STOPP/START more applicable to Canadian practice than Beers alone. Both tools reduce ADRs and inappropriate prescribing in elderly."
+    difficulty: hard
+    tags: [Beers criteria, STOPP/START, elderly, inappropriate prescribing]
+  - front: "How should chronic kidney disease be managed in primary care?"
+    back: "Classify by eGFR and albuminuria (KDIGO). ACEi/ARB for proteinuria. SGLT2i (dapagliflozin/empagliflozin) for eGFR 20-90 with albuminuria. BP <130/80. Avoid nephrotoxins. Finerenone for DKD\n\nRefer nephrology: eGFR <30, rapid decline (>5/yr), nephrotic proteinuria, refractory HTN, electrolyte abnormalities. Adjust medications for GFR. Avoid gadolinium if eGFR <30. Annual monitoring: eGFR, ACR, electrolytes, CBC, PTH, vitamin D."
+    difficulty: hard
+    tags: [CKD, KDIGO, SGLT2i, nephrology]
+  - front: "What is the approach to managing depression in patients with chronic medical illness?"
+    back: "SSRIs first-line (sertraline/escitalopram). Consider drug interactions (CYP2D6 inhibitors, bleeding with anticoagulants). Avoid TCAs in cardiac disease. Combine with CBT/behavioral activation. Address pain/sleep\n\nDepression occurs in 20-30% of chronic disease patients and worsens outcomes. Treat comorbid depression to improve adherence and quality of life. Exercise is evidence-based adjunct. Collaborative care models improve outcomes. Screen with PHQ-9."
+    difficulty: hard
+    tags: [depression, chronic disease, SSRI]
+  - front: "How is atrial fibrillation managed in elderly multimorbid patients?"
+    back: "Anticoagulation: CHADS2-VASc score >=2 (most elderly). DOACs preferred over warfarin (less ICH). Rate control preferred: bisoprolol or diltiazem (not both). Target HR <100 resting. Avoid rhythm control if asymptomatic\n\nFalls are NOT a reason to withhold anticoagulation (need 295 falls/year for bleeding risk to exceed stroke prevention benefit). Dose-adjust DOACs: apixaban 2.5mg BID if >=2 of: age>=80, weight<=60kg, Cr>=133. Assess bleeding risk (HAS-BLED) but do not use to withhold therapy."
+    difficulty: hard
+    tags: [atrial fibrillation, anticoagulation, elderly]
+  - front: "What are the sick day rules for patients on chronic medications?"
+    back: "Hold during acute illness: ACEi/ARB, diuretics, NSAIDs, metformin, SGLT2i, sulfonylureas (SADMANS mnemonic). Resume when eating/drinking normally. Educate patients proactively\n\nSADMANS: Sulfonylureas, ACEi, Diuretics/Direct-acting anticoagulants, Metformin, ARBs, NSAIDs, SGLT2i. Prevents AKI, hypoglycemia, hyperkalemia during volume depletion. Especially important in elderly, CKD, HF. Provide written instructions."
+    difficulty: medium
+    tags: [sick day rules, AKI prevention, SADMANS]
+  - front: "How is the patient with diabetes, CKD, and heart failure optimally treated pharmacologically?"
+    back: "Metformin (if eGFR>30) + SGLT2i (triple benefit: glycemic, renal, cardiac) + ACEi/ARB + beta-blocker (bisoprolol/carvedilol/metoprolol) + MRA if symptomatic HF + statin. Finerenone if DKD\n\nSGLT2i (empagliflozin/dapagliflozin) have evidence in all three conditions (EMPA-REG, DAPA-CKD, DAPA-HF). Quadruple HFrEF therapy: ACEi/ARB/ARNI + BB + MRA + SGLT2i. Adjust doses for renal function. Monitor K+ closely with ACEi+MRA combination."
+    difficulty: hard
+    tags: [diabetes, CKD, heart failure, SGLT2i]
+  - front: "What role does advance care planning play in multimorbidity management?"
+    back: "Early discussions about goals of care, values, acceptable outcomes. Document SDM/POA. Use Serious Illness Conversation Guide. Reassess with disease progression. Integrate palliative approach early\n\nAdvance Care Planning Canada provides tools. Discussions improve goal-concordant care, reduce unwanted ICU admissions, improve family satisfaction. Not just about resuscitation status - explores values, fears, hopes. GCD (Goals of Care Designation) standardized in many provinces."
+    difficulty: medium
+    tags: [advance care planning, goals of care, palliative]
+  - front: "What is the approach to chronic pain management using non-opioid strategies?"
+    back: "Multimodal: exercise/PT, CBT/psychological therapy, acetaminophen, NSAIDs, gabapentinoids, TCAs/SNRIs, topical agents, interventional procedures. Opioids last resort with monitoring\n\nCanadian Pain Task Force guidelines. Chronic pain affects 1 in 5 Canadians. Risk assessment before opioids: current substance use, mental health, sleep apnea. Opioid agreements, urine drug testing, naloxone prescription."
+    difficulty: medium
+    tags: [chronic pain, non-opioid]
+  - front: "What is the SBAR handover communication framework?"
+    back: "Situation (patient ID, chief concern), Background (relevant history), Assessment (current status, vitals), Recommendation (what you need/suggest)\n\nReduces communication errors during handovers. I-PASS alternative: Illness severity, Patient summary, Action list, Situation awareness, Synthesis by receiver. Standardized handover reduces adverse events."
+    difficulty: easy
+    tags: [communication, SBAR, handover]
+  - front: "What are the roles of interprofessional team members in primary care?"
+    back: "NP: autonomous diagnosis/prescribing. Pharmacist: medication management/review. PT: mobility/rehab. OT: functional/ADL assessment. SW: psychosocial/resources. RD: nutrition. Psych: mental health\n\nPatient-centred medical home model. Collaborative practice improves chronic disease outcomes. Scope of practice varies by province. Physician as consultant/collaborator, not gatekeeper."
+    difficulty: easy
+    tags: [interprofessional, team roles]
+  - front: "What is the Beers Criteria and what are the key medications to avoid in elderly?"
+    back: "AGS Beers: potentially inappropriate medications in >=65. Avoid: benzodiazepines (falls, confusion), anticholinergics (delirium), NSAIDs long-term (GI bleed, renal), sulfonylureas (hypoglycemia), first-gen antihistamines (sedation)\n\nSTOPP/START complementary tool. START identifies beneficial drugs often underused in elderly (e.g., osteoporosis treatment, anticoagulation for AF). Deprescribing.org provides tapering algorithms."
+    difficulty: medium
+    tags: [Beers criteria, elderly, deprescribing]
+  - front: "What are the roles and scope of practice of a Nurse Practitioner (NP) in Canadian primary care?"
+    back: "NPs in Canada can independently assess patients, order and interpret diagnostic tests, diagnose conditions, prescribe medications (including controlled substances in most provinces), perform procedures within their scope, and refer to specialists. Their scope varies by province but generally enables them to provide comprehensive primary care independently.\n\nNP scope of practice is regulated provincially. In Ontario, NPs are authorized prescribers under the Nursing Act. NP-led clinics have expanded across Canada to address primary care shortages, particularly in rural and underserved areas. NPs hold graduate-level education and national certification through the Canadian Nurses Association."
+    difficulty: easy
+    tags: [nurse-practitioner, scope-of-practice, interprofessional, primary-care, collaboration]
+  - front: "What is the SBAR communication tool, and when is it used in healthcare?"
+    back: "SBAR stands for: Situation (what is happening now), Background (relevant clinical context), Assessment (what you think the problem is), Recommendation (what you think should be done). It is used for structured clinical handover, escalation of patient concerns, and interprofessional communication, particularly during urgent situations.\n\nSBAR was adapted from the US Navy for healthcare use and is mandated by Accreditation Canada as a standardized communication tool. Research shows SBAR reduces communication errors during handovers and improves patient safety. It is especially useful when nursing staff communicate concerns to physicians about deteriorating patients."
+    difficulty: easy
+    tags: [SBAR, handover, communication-tool, patient-safety, interprofessional]
+  - front: "What is the I-PASS handover system, and what does each component stand for?"
+    back: "I-PASS stands for: Illness severity (stable/watcher/unstable), Patient summary (brief clinical summary), Action list (to-do items and timeline), Situation awareness and contingency planning (what to watch for, 'if-then' plans), and Synthesis by receiver (read-back and clarifying questions). It was developed to reduce medical errors during transitions of care.\n\nThe I-PASS study demonstrated a 30% reduction in medical errors after implementation in pediatric residency programs. It has been adopted across Canadian academic centres. Unlike SBAR (which is for escalation), I-PASS is specifically designed for shift-to-shift patient handover and includes a synthesis step requiring active receiver participation."
+    difficulty: medium
+    tags: [I-PASS, handover, transitions-of-care, patient-safety, interprofessional]
+  - front: "A pharmacist on the interprofessional team identifies a potential drug interaction in a patient's medication list and contacts you. What is the pharmacist's scope within the Canadian healthcare team?"
+    back: "Canadian pharmacists can review medication therapy, identify drug interactions and adverse effects, recommend medication adjustments, provide medication counselling, administer vaccinations (in most provinces), prescribe for minor ailments (expanding across provinces), adapt prescriptions (e.g., change dose or formulation), and conduct medication reconciliation.\n\nPharmacist scope has expanded significantly across Canadian provinces. In Alberta, pharmacists can prescribe independently for a broad range of conditions. Pharmacist-led medication reconciliation is a Required Organizational Practice by Accreditation Canada. Collaborative pharmacy practice has been shown to improve chronic disease outcomes, particularly for diabetes and hypertension."
+    difficulty: easy
+    tags: [pharmacist, scope-of-practice, drug-interactions, interprofessional, medication-reconciliation]
+  - front: "A conflict arises between the attending physician and a nurse regarding a patient's pain management plan. What approaches to conflict resolution are recommended in healthcare teams?"
+    back: "Recommended approaches include: addressing the conflict directly and respectfully, focusing on the patient's best interest rather than professional hierarchy, using 'I' statements, active listening, seeking to understand the other's clinical perspective, involving a neutral third party if needed, and using graded assertiveness tools like CUS (Concerned-Uncomfortable-Safety issue) for escalation.\n\nThe Canadian Patient Safety Institute (now Healthcare Excellence Canada) and Accreditation Canada emphasize psychological safety in healthcare teams, where all members feel safe to speak up. The CUS framework provides escalating language for safety concerns: 'I am Concerned,' 'I am Uncomfortable,' 'This is a Safety issue.' Hierarchical silence contributes to preventable adverse events."
+    difficulty: medium
+    tags: [conflict-resolution, interprofessional, CUS-framework, team-communication, patient-safety]
+  - front: "What is the Patient's Medical Home (PMH) model endorsed by the College of Family Physicians of Canada?"
+    back: "The PMH is a model of primary care featuring: a personal family physician, team-based care, timely access, comprehensive scope of services, continuity of care, electronic medical records, patient participation in practice governance, and accountability through quality improvement. It is the CFPC's vision for strengthening primary care in Canada.\n\nThe College of Family Physicians of Canada (CFPC) developed the Patient's Medical Home model as Canada's adaptation of the patient-centred medical home concept. It aligns with the Starfield principles of primary care (first-contact access, longitudinality, comprehensiveness, coordination). Provinces are funding primary care teams and interprofessional models such as Ontario's Family Health Teams to realize this vision."
+    difficulty: medium
+    tags: [patient-medical-home, CFPC, primary-care, interprofessional, team-based-care]
+  - front: "Differentiate the roles of physiotherapy (PT), occupational therapy (OT), and social work (SW) in the rehabilitation of a stroke patient."
+    back: "PT focuses on mobility, gait, balance, strength, and motor recovery. OT addresses activities of daily living (dressing, bathing, cooking), cognitive rehabilitation, home modifications, and adaptive equipment. SW provides psychosocial support, facilitates access to community resources, assists with discharge planning, caregiver support, and navigates financial/insurance issues.\n\nInterprofessional stroke rehabilitation is standard of care in Canadian Stroke Best Practice Recommendations (Heart & Stroke Foundation). Clear understanding of each discipline's scope prevents duplication and ensures comprehensive patient care. The CanMEDS Collaborator competency specifically tests understanding of team member roles."
+    difficulty: easy
+    tags: [PT, OT, social-work, stroke-rehab, interprofessional, scope-of-practice]
+  - front: "What is scope of practice overlap, and how should it be managed in interprofessional teams?"
+    back: "Scope of practice overlap occurs when multiple professionals are authorized to perform similar activities (e.g., both NPs and physicians can prescribe). It should be managed through: clear team agreements defining roles, mutual respect for competencies, collaborative practice agreements, patient-centred task allocation based on availability and expertise, and regular team communication.\n\nIn Canada, the Regulated Health Professions Act (Ontario) and equivalent legislation in other provinces defines scopes of practice, but overlapping controlled acts are common. The CanMEDS Collaborator competency emphasizes that physicians must work effectively within teams, negotiate role clarity, and avoid turf conflicts that compromise patient care."
+    difficulty: medium
+    tags: [scope-overlap, interprofessional, collaboration, team-management, CanMEDS]
+  - front: "A Physician Assistant (PA) is working in your emergency department. What is the PA's scope of practice in Canada?"
+    back: "PAs in Canada work in a dependent practice model under physician supervision. They can perform history and physical examinations, order and interpret tests, formulate diagnoses, develop treatment plans, perform procedures, and assist in surgery. Their scope is determined by their supervising physician's scope and the practice setting. PAs are not independently licensed in most provinces.\n\nThe PA profession in Canada is relatively newer compared to the US. The Canadian Association of Physician Assistants (CAPA) and the Canadian PA Education Association (CanPAEA) support the profession. PAs are increasingly employed in Canadian Forces, emergency departments, and surgical services. Manitoba was the first province to formally regulate PAs."
+    difficulty: medium
+    tags: [physician-assistant, scope-of-practice, interprofessional, emergency-medicine]
+  - front: "During a complex discharge planning meeting, the interprofessional team disagrees on whether a patient is safe to go home. What is the recommended approach?"
+    back: "The team should: hold a structured meeting with all disciplines present, allow each member to share their assessment using their professional expertise, focus on objective functional criteria and safety risks, involve the patient and family in the discussion, document each discipline's recommendations, and develop a compromise plan with appropriate community supports and follow-up if discharge proceeds.\n\nAccreditation Canada's Required Organizational Practices include safe transitions of care. The CanMEDS Collaborator role requires physicians to participate in, and contribute to, interprofessional team decisions rather than unilaterally overriding them. When disagreement persists, a patient-centred approach that weighs autonomy against safety should guide the final decision."
+    difficulty: hard
+    tags: [discharge-planning, interprofessional, team-decision-making, patient-safety, collaboration]
+  - front: "What are the STOPP criteria and how are they applied in medication review for elderly patients?"
+    back: "STOPP (Screening Tool of Older People's Prescriptions) identifies potentially inappropriate prescribing in patients >=65. Examples: long-acting benzodiazepines (fall risk), anticholinergics with dementia, NSAIDs with CKD or heart failure, PPI >8 weeks without indication. Applied systematically during comprehensive medication review.\n\nSTOPP/START criteria are endorsed by Canadian Geriatrics Society for medication optimization. STOPP identifies drugs to discontinue; START identifies drugs that should be initiated but are missing. Application reduces adverse drug events by 35% and healthcare costs. Should be applied at every care transition."
+    difficulty: medium
+    tags: [STOPP, polypharmacy, elderly, medication-review, inappropriate-prescribing]
+  - front: "What are the START criteria? Give 3 examples of commonly missed medications in elderly patients."
+    back: "START (Screening Tool to Alert to Right Treatment) identifies medications that should be prescribed but are omitted. Examples: 1) Statin for documented CVD (unless end-of-life). 2) ACEi/ARB for heart failure with reduced EF. 3) Bisphosphonate for osteoporosis with fragility fracture. 4) Anticoagulation for AF with CHA2DS2-VASc >=2.\n\nPrescribing omission is as clinically significant as inappropriate prescribing. START criteria complement STOPP by identifying under-treatment. Canadian Geriatrics Society emphasizes that therapeutic nihilism in elderly patients leads to preventable morbidity. Each omission should be evaluated against individual goals of care."
+    difficulty: medium
+    tags: [START, under-treatment, elderly, medication-review, prescribing-omission]
+  - front: "What is a systematic approach to deprescribing in elderly patients?"
+    back: "1) Identify all medications and indications. 2) Assess ongoing need (original indication still present?). 3) Evaluate risk-benefit in current context (life expectancy, goals of care). 4) Prioritize discontinuation (highest risk, least benefit first). 5) Taper gradually (especially benzodiazepines, opioids, antidepressants). 6) Monitor for withdrawal/disease recurrence.\n\nCanadian Deprescribing Network provides evidence-based algorithms for PPIs, antipsychotics, benzodiazepines, and cholinesterase inhibitors. Deprescribing reduces falls, hospitalizations, and mortality in frail elderly. Patient engagement is essential; the Bruyere Research Institute deprescribing guidelines are free Canadian resources."
+    difficulty: medium
+    tags: [deprescribing, polypharmacy, elderly, Canadian-Deprescribing-Network, tapering]
+  - front: "What non-opioid approaches should be considered for chronic non-cancer pain management?"
+    back: "Pharmacologic: acetaminophen, NSAIDs (short-term), SNRIs (duloxetine), TCAs (low-dose amitriptyline/nortriptyline), gabapentinoids, topical agents (capsaicin, lidocaine, diclofenac). Non-pharmacologic: exercise, CBT, physiotherapy, acupuncture, mindfulness-based stress reduction, self-management programs.\n\nCanadian guideline for opioid prescribing (2017) recommends optimizing non-opioid therapies before considering opioids. Exercise has the strongest evidence for chronic low back pain and osteoarthritis. Multidisciplinary pain programs show superior outcomes. SNRIs are first-line for neuropathic pain and fibromyalgia."
+    difficulty: medium
+    tags: [chronic-pain, non-opioid, multimodal, exercise, Canadian-guideline]
+  - front: "How should treatment priorities be established in a patient with multiple chronic conditions?"
+    back: "1) Identify patient goals and values (what matters most). 2) Assess disease burden and prognosis. 3) Evaluate treatment complexity and interaction potential. 4) Prioritize conditions causing most symptoms/functional impairment. 5) Apply minimally disruptive medicine principles. 6) Reassess priorities regularly as conditions evolve.\n\nThe Ariadne principles guide multimorbidity management: assess interactions, prioritize patient preferences, individualize treatment, and reassess regularly. NICE multimorbidity guidelines recommend against applying single-disease guidelines additively. Canadian Family Physician literature emphasizes shared decision-making and treatment burden reduction."
+    difficulty: hard
+    tags: [multimorbidity, treatment-prioritization, Ariadne-principles, patient-centered, complexity]
+  - front: "What are the key drug-drug interactions to watch for in elderly multimorbid patients?"
+    back: "QTc prolongation (antipsychotics + SSRIs + domperidone), hyperkalemia (ACEi + spironolactone + potassium supplements), bleeding (warfarin + NSAIDs/SSRIs), serotonin syndrome (SSRI + tramadol + triptans), anticholinergic burden (multiple anticholinergics), hypoglycemia (sulfonylurea + fluoroquinolone).\n\nAnticholinergic burden is a major concern — the Anticholinergic Cognitive Burden (ACB) scale quantifies cumulative risk. Canadian Geriatrics Society recommends calculating anticholinergic burden and reducing it when possible. Electronic prescribing alerts help but clinical judgment remains essential."
+    difficulty: hard
+    tags: [drug-interactions, polypharmacy, anticholinergic-burden, QTc, elderly]
+  - front: "What is the evidence-based approach to deprescribing proton pump inhibitors (PPIs)?"
+    back: "Step 1: Confirm ongoing indication (Barrett's esophagus, severe GERD, chronic NSAID use with risk factors = continue). Step 2: If no ongoing indication, taper over 4-8 weeks (reduce dose by 50% every 1-2 weeks). Step 3: Switch to H2RA or on-demand PPI. Step 4: Non-pharmacologic measures (elevate HOB, avoid triggers).\n\nCanadian Deprescribing Network PPI algorithm is evidence-based and widely used. Long-term PPI risks include C. difficile, hypomagnesemia, osteoporotic fractures, and vitamin B12 deficiency. Rebound acid hypersecretion occurs in ~50%, peaking at 2 weeks — gradual taper minimizes this."
+    difficulty: medium
+    tags: [PPI-deprescribing, tapering, rebound-acid, Canadian-Deprescribing, long-term-risks]
+  - front: "When should the frailty index be applied and how does it influence management decisions?"
+    back: "Apply when considering treatment intensity in elderly patients. Clinical Frailty Scale (CFS, 1-9): 1-3 = fit, 4-5 = vulnerable/mildly frail, 6-7 = moderately/severely frail, 8-9 = very severely frail/terminally ill. Frailty influences BP targets (less aggressive), glycemic targets (relaxed), cancer screening (may discontinue), and surgical risk assessment.\n\nThe Rockwood Clinical Frailty Scale is widely used in Canadian practice. CFS >=5 is associated with increased mortality, hospitalization, and adverse drug reactions. Canadian Cardiovascular Society uses frailty to modify anticoagulation decisions. Frailty assessment is mandatory in Canadian LTC admission protocols."
+    difficulty: medium
+    tags: [frailty, Clinical-Frailty-Scale, elderly, treatment-targets, prognosis]
+  - front: "What are Choosing Wisely Canada recommendations relevant to elderly multimorbid patients?"
+    back: "Don't prescribe benzodiazepines for insomnia in elderly. Don't order routine screening tests in patients with limited life expectancy. Don't use antipsychotics as first-line for BPSD in dementia. Don't prescribe antibiotics for asymptomatic bacteriuria. Don't order ECG as routine screening in asymptomatic patients.\n\nChoosing Wisely Canada aims to reduce low-value care. The Canadian Geriatrics Society list specifically addresses overtreatment and overinvestigation in elderly. Engaging patients in these conversations using shared decision-making tools improves outcomes and reduces harm from unnecessary interventions."
+    difficulty: easy
+    tags: [Choosing-Wisely, overtreatment, elderly, low-value-care, Canadian]
+  - front: "How should chronic kidney disease be managed in the context of multimorbidity in elderly patients?"
+    back: "Avoid nephrotoxins (NSAIDs, gadolinium if eGFR <30, aminoglycosides). Adjust renally-cleared medications (metformin hold if eGFR <30, DOACs dose-adjusted, gabapentin reduced). ACEi/ARB for proteinuria. SGLT2i for CKD with or without diabetes (if eGFR >=20). BP target <130/80 per Hypertension Canada. Monitor potassium.\n\nKDIGO and Canadian guidelines recommend SGLT2 inhibitors for CKD regardless of diabetes status based on DAPA-CKD and EMPA-KIDNEY trials. Medication dose adjustment is the most common preventable adverse event in CKD. Finerenone is a newer agent for diabetic CKD with cardiovascular benefit."
+    difficulty: hard
+    tags: [CKD, multimorbidity, dose-adjustment, SGLT2i, nephrotoxins]
+  - front: "What are the four principles of family medicine as defined by the College of Family Physicians of Canada?"
+    back: "1. The family physician is a skilled clinician (expert generalist, collaborates on management of undifferentiated disease, multimorbidity, chronic disease). 2. Family medicine is a community-based discipline (adapts to community needs, lifespan care, multidisciplinary collaboration). 3. The family physician is a resource to a defined practice population (self-directed learning, health advocacy, resource stewardship). 4. The patient-physician relationship is central (whole-person care in family/social context, continuity, privacy, and longitudinal relationship).\n\nThese four principles distinguish family medicine from specialty medicine and underpin the MCCQE1 CanMEDS-Family Medicine competency framework. Family physicians are described as 'experts in generalism' with a commitment to person-centred, holistic, integrated care."
+    difficulty: easy
+    tags: [family medicine, CFPC, principles, generalism, patient-physician relationship]
+  - front: "What is the differential diagnosis of fatigue using the PS VINDICATE mnemonic?"
+    back: "P-Psychogenic (depression, anxiety, CFS, fibromyalgia); Physiologic (pregnancy, caregiving); S-Sleep disturbance (OSA, BPH, shiftwork); Sedentary lifestyle; V-Vascular (stroke); I-Infectious (mono, hepatitis, HIV, TB); N-Neoplastic; Nutrition (anemia); Neurogenic (MS, MG, Parkinson's); D-Drugs (β-blockers, antihistamines, benzodiazepines); I-Idiopathic; C-Chronic illness (HF, COPD, renal failure); A-Autoimmune (SLE, RA, PMR); T-Toxin (alcohol, heavy metals); E-Endocrine (hypothyroidism, DM, Cushing's, adrenal insufficiency).\n\nPsychogenic causes are the most common (especially if <6 months duration). 50% of patients presenting with fatigue have associated psychological complaints. Physical causes usually have associated signs/symptoms on focused history and exam."
+    difficulty: medium
+    tags: [fatigue, differential diagnosis, PS VINDICATE, depression, hypothyroidism]
+  - front: "What are the diagnostic criteria for Chronic Fatigue Syndrome (CFS)?"
+    back: "Requires ALL 3: (1) Substantial reduction in activity from pre-illness level, lasting >6 months, with new-onset fatigue not alleviated by rest, not from excessive exertion; (2) Post-exertional malaise*; (3) Unrefreshing sleep*. PLUS at least one of: cognitive impairment* OR orthostatic intolerance. (*frequency and severity must be evaluated)\n\nCFS (also called ME/CFS — myalgic encephalomyelitis) is a diagnosis of exclusion. It affects mostly women in their 30s and White individuals. Etiology is unknown but likely multifactorial (infectious, immunological, neurohormonal). Exercise therapy may have positive effects on fatigue but evidence is limited."
+    difficulty: medium
+    tags: [chronic fatigue syndrome, CFS, ME/CFS, post-exertional malaise, diagnostic criteria]
+  - front: "What are the key investigations for unexplained fatigue?"
+    back: "CBC and differential, electrolytes, BUN, Cr, ESR, glucose, TSH, ferritin, vitamin B12, serum protein electrophoresis, Bence-Jones protein, albumin, LFTs (AST, ALT, ALP, bilirubin), calcium, phosphate, ANA, β-hCG. Also: urinalysis, CXR, ECG. Additional: serologies (Lyme, hepatitis B/C, HIV, ANA), Mantoux skin test.\n\nInvestigation should be guided by history and physical exam. Psychosocial causes are common — minimal investigation is usually warranted unless physical cause is suspected. After 1 year, 40% of patients with fatigue are no longer fatigued."
+    difficulty: easy
+    tags: [fatigue, investigations, TSH, CBC, ferritin, B12, workup]
