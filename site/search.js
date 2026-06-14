@@ -5,7 +5,7 @@ export function buildSearchIndex(manifest, shards) {
     for (const meta of manifest.subjects) {
         const sh = shards[meta.subject];
         if (!sh) continue;
-        for (const c of sh.cards) items.push({
+        for (const c of (sh.cards || [])) items.push({
             kind: 'card', subject: meta.subject, id: c.id,
             title: c.front, body: c.back || '', tags: c.tags || []
         });

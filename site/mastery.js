@@ -32,7 +32,13 @@ function cardReady(state) {
 
 function casePassed(session) {
     if (!session) return false;
-    if (typeof session.score === 'number') return session.score >= 0.8;
+    // triage-live persists score as a 0..100 integer percent (triage-live.js
+    // set_phase: Math.round(100*hits/atomCount)). A bare `>= 0.8` would treat
+    // any non-zero percent as a pass. Accept both scales: a value >= 1 is a
+    // percent (pass at >= 80), otherwise a 0..1 fraction (pass at >= 0.8).
+    if (typeof session.score === 'number') {
+        return session.score >= 1 ? session.score >= 80 : session.score >= 0.8;
+    }
     if (session.graded) return true;
     return false;
 }

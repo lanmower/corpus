@@ -197,6 +197,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(justread.toggle('cardiology'), false);
         // verdicts thresholds
         assert.strictEqual(verdicts.verdictFor({ mastery: 80, trend: 0.5, backlog: 5, scheduled: 100 }), 'solid');
+        // high mastery but DECLINING trend (t<0) must demote out of 'solid' -- pins the t>=0 guard.
+        assert.strictEqual(verdicts.verdictFor({ mastery: 80, trend: -0.5, backlog: 5, scheduled: 100 }), 'getting there');
+        // high mastery but heavy backlog (b>=10) also demotes -- pins the b<10 guard.
+        assert.strictEqual(verdicts.verdictFor({ mastery: 80, trend: 0.5, backlog: 20, scheduled: 100 }), 'getting there');
         assert.strictEqual(verdicts.verdictFor({ mastery: 60, trend: 0, backlog: 5, scheduled: 100 }), 'getting there');
         assert.strictEqual(verdicts.verdictFor({ mastery: 30, trend: -0.5, backlog: 50, scheduled: 100 }), 'weak');
         assert.strictEqual(verdicts.verdictFor({ mastery: 10, trend: 0, backlog: 0, scheduled: 100 }), 'cold');

@@ -36,10 +36,6 @@ export const ICON = {
     book: svg('<path d="M8 4v9"/><path d="M8 4C6.5 3 4 3 2.5 3.5v8C4 11 6.5 11 8 12c1.5-1 4-1 5.5-.5v-8C12 3 9.5 3 8 4Z"/>'),
     // x — "close / dismiss"
     close: svg('<path d="M4 4l8 8M12 4l-8 8"/>'),
-    // two vertical bars — "suspend / pause"
-    pause: svg('<path d="M6 3.5v9M10 3.5v9"/>'),
-    // overlapping squares — "copy"
-    copy: svg('<rect x="5.5" y="5.5" width="7" height="7" rx="1"/><path d="M3.5 10.5V4a.5.5 0 0 1 .5-.5h6.5"/>'),
     // skip-forward — "skip card"
     skip: svg('<path d="M4 4l5 4-5 4z"/><path d="M11.5 4v8"/>'),
     // microphone — "hold to talk" (push-to-talk voice input)

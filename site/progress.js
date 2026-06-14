@@ -85,10 +85,6 @@ export function bumpGraded(n = 1, subject = null) {
     return p;
 }
 
-export function bumpGradedSubject(subject, n = 1) {
-    return bumpGraded(n, subject);
-}
-
 export function bumpCase(n = 1) {
     const p = load();
     rollStreak(p);
@@ -108,7 +104,7 @@ export function setLast(route, subject) {
 export function reset() { localStorage.removeItem(KEY); }
 
 if (typeof window !== 'undefined') {
-    window.__progress = { load, save, bumpGraded, bumpGradedSubject, bumpCase, setGoal, setLast, rollStreak, reset };
+    window.__progress = { load, save, bumpGraded, bumpCase, setGoal, setLast, rollStreak, reset };
 }
 
 

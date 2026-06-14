@@ -35,7 +35,7 @@ export function calcSM2(state, score) {
     if (state.repetitions === 0) interval = 1;
     else if (state.repetitions === 1) interval = 6;
     else interval = Math.round(state.interval * ef);
-    return { easeFactor: ef, interval, repetitions: state.repetitions + 1 };
+    return { ...state, easeFactor: ef, interval, repetitions: state.repetitions + 1 };
 }
 
 export function fuzzInterval(days, rng = Math.random) {
@@ -156,7 +156,16 @@ export function loadStates() {
         const migrated = migrate(parsed);
         if (parsed.version !== SCHEMA_VERSION) localStorage.setItem(STATES_KEY, JSON.stringify(migrated));
         return migrated.states || {};
-    } catch { return {}; }
+    } catch (e) {
+        // An unsupported (newer) schema is rejected by migrate() to protect the
+        // backup from being relabeled. We still return {} so callers never crash,
+        // but signal it so the reset isn't silent - the stored payload is left
+        // untouched (the throw happens before any setItem), so the data is safe.
+        if (e && /unsupported schema version/.test(String(e.message)) && typeof window !== 'undefined') {
+            window.dispatchEvent(new CustomEvent('corpus:storage-incompatible', { detail: { source: 'srs', error: String(e.message) } }));
+        }
+        return {};
+    }
 }
 
 export function saveStates(states) {

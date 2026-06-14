@@ -1687,10 +1687,9 @@
   status: completed
   witness: 'toast.js exports show() (info aliases). browser-100: toastShow=true, toastShowRuns=true (was TypeError). test asserts show export.'
 - id: run-quality-max-workflow
-  text: Run existing .claude/workflows/quality-max.js Workflow (12 engineering-DNA review lenses, fan-out subagents, adversarial verify) against corpus site+tutor; do NOT rebuild (Principle 2/3 - it already exists)
-  deps: []
-  status: completed
-  witness: 'wf_cd577b1b-098: 27 agents, 12 lenses, 15 confirmed/0 refuted findings (task w30cpxokt output)'
+  text: Run .claude/workflows/quality-max.js (13 engineering-DNA lenses, adversarial-verify each finding) over corpus site+scripts; collect confirmed findings
+  witness: workflow file read; 13 lenses present
+  status: pending
 - id: fix-confirmed-findings
   title: Fix every adversarially-confirmed finding the workflow returns; add test guardrails; browser-witness client-side edits
   detail: Only fix MY slice + shared issues; leave peer-owned uncommitted files unless finding is in code I can own. Skip refuted findings.
@@ -2113,3 +2112,7 @@
   - triage-confirmed-findings
   status: completed
   witness: 'git_finalize: commit e1b4d22 committed+pushed to origin/master'
+- id: land-confirmed-findings
+  text: 'Triage each confirmed finding from the sweep: fix in-spirit issues, browser-witness client-side edits, or prd-add follow-on rows; refuted findings discarded'
+  witness: workflow confirmed[] output
+  status: pending

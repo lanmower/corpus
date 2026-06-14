@@ -415,7 +415,7 @@ export function gradeReview(cardId, score) {
     // queue: state.reviewQueue is empty by the time the done screen renders (each
     // graded id is spliced out of reviewQueueIds), so filtering it always yielded [].
     if (card0) state.reviewSessionCards.push(card0);
-    if (!state.cramMode) progress.bumpGradedSubject(card0?._subject || null, 1);
+    if (!state.cramMode) progress.bumpGraded(1, card0?._subject || null);
     if (score === 0) state.reviewAgainPile.push(cardId);
     // Mistake log
     const card = state.reviewQueue?.[state.reviewIndex];

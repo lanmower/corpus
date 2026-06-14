@@ -778,6 +778,11 @@ function persist() {
 export function clearConversation() {
     tutorMessages = [];
     streamingBuf = '';
+    // A daily-syllabus plan deferred while the model was still loading would
+    // otherwise fire from the 'ready' handler and repopulate the just-cleared
+    // thread (and burn the day's check-in slot). Disarm it on clear, mirroring
+    // the 'unavailable' handler.
+    pendingDailyPlan = null;
     try { voice.cancelSpeech(); } catch {} // stop any in-flight speech on clear
     // Invalidate any in-flight generation: bumping the epoch makes its late
     // *-done stale, and nulling the active epoch marks "cleared since dispatch".

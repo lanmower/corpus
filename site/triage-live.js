@@ -583,6 +583,23 @@ function renderMessages() {
     els.messages.scrollTop = els.messages.scrollHeight;
 }
 
+// rAF-batch streaming renders: a full message-list teardown/rebuild plus a
+// stripToolBlocks scan of the whole accumulated buffer on every single token is
+// O(n^2) main-thread work at Bonsai token rates. Coalesce token bursts into one
+// strip + render per frame (mirrors tutor-panel.js scheduleStreamRender).
+let streamRenderQueued = false;
+function scheduleStreamRender() {
+    if (streamRenderQueued) return;
+    streamRenderQueued = true;
+    const raf = (typeof requestAnimationFrame === 'function') ? requestAnimationFrame : (cb) => setTimeout(cb, 16);
+    raf(() => {
+        streamRenderQueued = false;
+        const last = state.messages[state.messages.length - 1];
+        if (last && last.role === 'assistant') last.content = stripToolBlocks(state.streamBuffer) || state.streamBuffer;
+        renderMessages();
+    });
+}
+
 const CARD_KINDS = new Set(['differential', 'recommendation', 'warning', 'vital', 'plan', 'note', 'investigation']);
 
 const TOOLS = {
@@ -812,11 +829,10 @@ function onWorkerMessage(e) {
     } else if (m.status === 'update') {
         if (m.requestId != null && m.requestId !== state._activeReqId) return;
         state.streamBuffer += m.output || '';
-        const last = state.messages[state.messages.length - 1];
-        // While streaming, show prose with tool blocks hidden so the chat stays readable.
-        if (last && last.role === 'assistant') last.content = stripToolBlocks(state.streamBuffer) || state.streamBuffer;
+        // While streaming, show prose with tool blocks hidden so the chat stays
+        // readable. The strip + DOM rebuild is coalesced to one pass per frame.
         try { voice.feedText(m.output || ''); } catch {} // streaming TTS (fence-aware)
-        renderMessages();
+        scheduleStreamRender();
     } else if (m.status === 'complete') {
         // An interrupted generation still emits its own 'complete'. Drop any
         // reply whose requestId does not match the active turn so a stale
