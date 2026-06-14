@@ -52,18 +52,27 @@ export function mount(doc) {
                 time.textContent = fmt(t.remaining); mode.textContent = t.mode; tog.textContent = 'start';
                 if (navigator.vibrate) navigator.vibrate(200);
                 if (wasWork) { try { window.dispatchEvent(new CustomEvent('pomodoro:done')); } catch {} }
-            } else {
-                // Persist the wall-clock-derived remaining + reset startedAt.
-                save(t);
             }
+            // No per-second persist: load() reconstructs `remaining` from the
+            // wall-clock startedAt, so the running tick needs no write. We persist
+            // only on state transitions (start/pause/reset) and on rollover above.
+            // This avoids a 1 Hz synchronous localStorage write that, via app.js's
+            // storage listener, drives a full-route re-render in every other tab.
         }
     }
-    setInterval(tick, 1000); tick();
+    // Only run the 1 Hz tick while the panel is visible. The panel mounts hidden,
+    // so the clock/IO cost is paid only when the user actually has it open; on
+    // re-show, load() reconstructs `remaining` from wall-clock so no time is lost.
+    let timerId = null;
+    function startTicking() { if (!timerId) { timerId = setInterval(tick, 1000); } tick(); }
+    function stopTicking() { if (timerId) { clearInterval(timerId); timerId = null; } }
     tog.addEventListener('click', () => { toggle(); tick(); });
     rs.addEventListener('click', () => { reset(); tick(); });
-    cl.addEventListener('click', () => { el.classList.add('hidden'); });
-    return { show: () => el.classList.remove('hidden'), hide: () => el.classList.add('hidden'),
-        toggleVis: () => el.classList.toggle('hidden') };
+    cl.addEventListener('click', () => { el.classList.add('hidden'); stopTicking(); });
+    const show = () => { el.classList.remove('hidden'); startTicking(); };
+    const hide = () => { el.classList.add('hidden'); stopTicking(); };
+    return { show, hide,
+        toggleVis: () => { el.classList.toggle('hidden'); el.classList.contains('hidden') ? stopTicking() : startTicking(); } };
 }
 
 if (typeof window !== 'undefined') window.__timer = { load, save, start, pause, reset, toggle, fmt };

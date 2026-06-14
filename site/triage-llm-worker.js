@@ -35,6 +35,13 @@ let loadPromise = null;
 // shared module instance): the caller's interrupt->reset->generate burst must not
 // let the new generate's reset un-interrupt the old generation it just stopped.
 let currentStopping = null;
+// Serializes generate() calls: each onmessage is an independent async task, so an
+// interrupt+reissue burst (triage postGenerate) could otherwise run two generates
+// CONCURRENTLY on the single shared pipeline — interleaved token streams and the
+// second's stopping clobbering currentStopping while the first is still draining.
+// Mirrors tutor.js state.chatChain. The new generate waits for the prior to fully
+// unwind (its interrupt makes that fast) before touching the pipeline.
+let genChain = Promise.resolve();
 
 async function loadOnce() {
     self.postMessage({ status: 'loading', stage: 'probing webgpu' });
@@ -123,7 +130,9 @@ self.addEventListener('message', async (e) => {
         if (type === 'load') {
             await load();
         } else if (type === 'generate') {
-            await generate(messages, requestId);
+            const p = genChain.then(() => generate(messages, requestId));
+            genChain = p.catch(() => {});
+            await p;
         } else if (type === 'interrupt') {
             currentStopping?.interrupt();
         } else if (type === 'reset') {

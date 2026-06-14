@@ -139,6 +139,20 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const serveSrc = READ('scripts/serve.js');
         assert.match(serveSrc, /cross-origin-opener-policy[^,]*same-origin/i);
         assert.match(serveSrc, /cross-origin-embedder-policy[^,]*require-corp/i);
+        // Path-traversal guard: the security boundary of the dev server. Exercise
+        // the exact predicate (normalize(join) -> relative -> startsWith('..'))
+        // serve.js uses, so a refactor that opens traversal fails here.
+        const path = require('path');
+        const ROOT = path.resolve(__dirname, 'site');
+        const blocked = (url) => {
+            const p = decodeURIComponent(url.split('?')[0]) || '/index.html';
+            const full = path.normalize(path.join(ROOT, p));
+            return path.relative(ROOT, full).startsWith('..');
+        };
+        assert.strictEqual(blocked('/../package.json'), true);
+        assert.strictEqual(blocked('/..%2f..%2ftest.js'), true);
+        assert.strictEqual(blocked('/index.html'), false);
+        assert.strictEqual(blocked('/data/manifest.json'), false);
     });
 
     console.log('# restyle: tokens + lowercase + no archivo + no hero + meaningful color');
@@ -356,7 +370,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         }
     });
 
-    console.log('# new modules: timer + plan + mistakes + drill + flag + undo + late + usercards + confidence');
+    console.log('# new modules: timer + plan + mistakes + drill + flag + undo + late + usercards');
     t('new modules export expected APIs and round-trip storage', async () => {
         global.localStorage.clear();
         const timer = await import('./site/timer.js');
@@ -367,7 +381,6 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const undo = await import('./site/undo.js');
         const late = await import('./site/late.js');
         const usercards = await import('./site/usercards.js');
-        const confidence = await import('./site/confidence.js');
         // timer
         assert.strictEqual(timer.fmt(65), '1:05');
         let tt = timer.load(); assert.strictEqual(tt.running, false); assert.strictEqual(tt.remaining, 25*60);
@@ -401,9 +414,6 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const c = usercards.add('front?', 'back!', ['t1']); assert.ok(c.id.startsWith('user-'));
         assert.strictEqual(usercards.load().length, 1);
         const parsed = usercards.parseLine('front | back | a,b'); assert.deepStrictEqual(parsed, { front: 'front', back: 'back', tags: ['a','b'] });
-        // confidence
-        confidence.set('cardiology', 5, 4); assert.strictEqual(confidence.get('cardiology', 5), 4);
-        confidence.set('cardiology', 8, 3); assert.strictEqual(confidence.avgFor('cardiology'), 3.5);
     });
 
     console.log('# integration: SW v4 + manifest + index html + app.js wiring + theme contrast + search prose snippet + streak grace + archive isolation');
@@ -646,9 +656,6 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const m2 = masteryMod.overallProgress(MANIFEST, SHARDMAP);
         assert.ok(m2.cards.total > 0 && m2.sections.total > 0 && m2.cases.total > 0);
         assert.ok(typeof m2.weighted === 'number');
-        // forecast — zero rate => null
-        global.localStorage.setItem('corpus.progress.v1', JSON.stringify({ version: 1, history: [{ date: '2026-05-01', graded: 0 }, { date: '2026-05-02', graded: 0 }] }));
-        assert.strictEqual(masteryMod.forecastTo100(MANIFEST, SHARDMAP), null);
         // SW v13 + new modules
         const sw = READ('site/sw.js');
         assert.ok(sw.includes('__BUILD_VERSION__') || /corpus-v\d+/.test(sw));

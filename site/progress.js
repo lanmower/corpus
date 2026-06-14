@@ -30,7 +30,13 @@ export function load() {
         const raw = localStorage.getItem(KEY);
         if (!raw) return defaults();
         const p = JSON.parse(raw);
-        if (p.version !== VERSION) return defaults();
+        // Migrate forward, never silently discard: streak/history/gradedBySubject
+        // are authored only here and are not recomputable from other stores
+        // (mirrors srs.migrate). A strictly-newer blob is from a future build we
+        // cannot interpret — fall back to defaults rather than corrupt it. Any
+        // older/unversioned shape is merged forward by the `{...defaults(), ...p}`
+        // spread below, preserving every field the user accumulated.
+        if (typeof p.version === 'number' && p.version > VERSION) return defaults();
         // Day rollover
         const today = todayISO();
         if (p.todayDate !== today) {

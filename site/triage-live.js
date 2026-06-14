@@ -552,25 +552,22 @@ function renderScratchpad() {
             ce('div', { class: 'title' }, c.title),
             ce('div', { class: 'body' }, c.body || '')
         );
-        // Right-click on a scratchpad card -> context menu (LLM-aware actions)
-        card.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            import('./context-menu.js').then(({ showContextMenu }) => {
-                showContextMenu(e.clientX, e.clientY, [
-                    { label: 'remove card', action: () => removeCard(c.id) },
-                    { label: c.highlighted ? 'unhighlight' : 'highlight', action: () => TOOLS.highlight_card({ id: c.id }) },
-                    { type: 'divider' },
-                    { label: 'ask tutor why this matters', action: () => {
-                        els.prompt.value = `why is "${c.title}" relevant in this case?`;
-                        els.prompt.focus();
-                    } },
-                    { label: 'reword this card', action: () => {
-                        els.prompt.value = `reword my "${c.kind}" card titled "${c.title}" more precisely.`;
-                        els.prompt.focus();
-                    } }
-                ]);
-            }).catch(() => {});
-        });
+        // Right-click or touch long-press on a scratchpad card -> context menu (LLM-aware actions)
+        import('./context-menu.js').then(({ bindContextMenu }) => {
+            bindContextMenu(card, () => [
+                { label: 'remove card', action: () => removeCard(c.id) },
+                { label: c.highlighted ? 'unhighlight' : 'highlight', action: () => TOOLS.highlight_card({ id: c.id }) },
+                { type: 'divider' },
+                { label: 'ask tutor why this matters', action: () => {
+                    els.prompt.value = `why is "${c.title}" relevant in this case?`;
+                    els.prompt.focus();
+                } },
+                { label: 'reword this card', action: () => {
+                    els.prompt.value = `reword my "${c.kind}" card titled "${c.title}" more precisely.`;
+                    els.prompt.focus();
+                } }
+            ]);
+        }).catch(() => {});
         els.scratchpad.append(card);
     }
 }
@@ -897,6 +894,12 @@ state.generateLLM = generateLLM;
 state.spawnWorker = spawnWorker;
 
 async function send(forceSim = false) {
+    // Reentrancy guard: a second send() while a generation is in flight would
+    // call generateLLM() again, overwriting state._afterGenerate with the new
+    // resolver — the first await would then hang forever (its 'complete' is
+    // dropped on the stale requestId). The static prompt/grade controls are not
+    // disabled like the SDK composer, so this path is reachable; refuse it.
+    if (state.generating) return;
     const txt = els.prompt.value.trim();
     if (!txt) return;
     if (!currentScenario()) {

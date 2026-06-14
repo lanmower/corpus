@@ -1,6 +1,5 @@
 // overall + per-subject progress. weighted: 0.4 cards + 0.3 sections + 0.2 cases + 0.1 mistakes
 import * as srs from './srs.js';
-import { localDayISO } from './dates.js';
 
 // Canonical subject set is manifest.subjects (built from data/manifest.json).
 // Never hardcode the list here: a stale local copy silently drops subjects from
@@ -109,23 +108,7 @@ function computeFromCards(manifest, shards, only) {
 
 function pct(num, den) { return { pct: den ? Math.round(100 * num / den) : 0 }; }
 
-export function forecastTo100(manifest, shards) {
-    const cur = overallProgress(manifest, shards).weighted;
-    if (cur >= 100) return localDayISO();
-    let prog;
-    try { prog = JSON.parse(localStorage.getItem('corpus.progress.v1') || '{}'); } catch { return null; }
-    const hist = (prog.history || []).slice(-7);
-    if (hist.length < 2) return null;
-    const totalGraded = hist.reduce((n, h) => n + (h.graded || 0), 0);
-    if (totalGraded <= 0) return null;
-    const ratePerDay = totalGraded / hist.length / 50;
-    if (ratePerDay <= 0) return null;
-    const days = Math.ceil((100 - cur) / ratePerDay);
-    const eta = new Date(Date.now() + days * 86400000);
-    return localDayISO(eta);
-}
-
-if (typeof window !== 'undefined') window.__mastery = { overallProgress, subjectProgress, forecastTo100 };
+if (typeof window !== 'undefined') window.__mastery = { overallProgress, subjectProgress };
 
 
 

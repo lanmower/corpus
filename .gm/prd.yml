@@ -1687,10 +1687,10 @@
   status: completed
   witness: 'toast.js exports show() (info aliases). browser-100: toastShow=true, toastShowRuns=true (was TypeError). test asserts show export.'
 - id: run-quality-max-workflow
-  title: Run existing .claude/workflows/quality-max.js against current corpus state (8 engineering-DNA lenses, adversarial verify)
-  phase: EXECUTE
+  text: Run existing .claude/workflows/quality-max.js Workflow (12 engineering-DNA review lenses, fan-out subagents, adversarial verify) against corpus site+tutor; do NOT rebuild (Principle 2/3 - it already exists)
+  deps: []
   status: completed
-  witness: 'wf_6490f4c6-884: 16 agents, 8 raw -> 7 confirmed / 1 refuted (task w4p1abfm6 output)'
+  witness: 'wf_cd577b1b-098: 27 agents, 12 lenses, 15 confirmed/0 refuted findings (task w30cpxokt output)'
 - id: fix-confirmed-findings
   title: Fix every adversarially-confirmed finding the workflow returns; add test guardrails; browser-witness client-side edits
   detail: Only fix MY slice + shared issues; leave peer-owned uncommitted files unless finding is in code I can own. Skip refuted findings.
@@ -1702,10 +1702,11 @@
   status: completed
   witness: commit b05282e pushed af5b176..b05282e; 4 explicit files (triage-live.js srs.js build_data.js test.js); peer slice already committed by peer; .gm/prd.yml left unstaged
 - id: triage-confirmed-findings
-  title: Convert each confirmed finding from workflow run into its own PRD fix row with witness; refuted ones discarded
-  phase: EXECUTE
+  text: Triage confirmed findings from quality-max run into fix PRD rows; apply fixes with browser-witness for client-side edits
+  deps:
+  - run-quality-max-workflow
   status: completed
-  witness: '7 confirmed findings fixed: app.js:389 local-date dedup, serve.js:28 dead interval removed, build_data.js:205 guide body, theme.js:55 contrast listener, srs.js:112 NaN guard + loadConfig validate, triage-live.js setGenerating watchdog, srs.js:131 future-schema reject'
+  witness: All 15 findings fixed; node test.js 25/25 pass; browser-3 witness all-true (toastInfoGone/forecastGone/confidenceGone/progressKeepsStreak/progressFutureDropped/bindContextMenuExported/timerShowHide); browser-4 triage-live.html zero pageErrors
 - id: fix-and-verify-findings
   title: Fix every confirmed finding, browser-witness any client-side edit, run test.js, commit+push
   phase: EXECUTE
@@ -2106,3 +2107,8 @@
   phase: EXECUTE
   status: completed
   witness: '.dead-export-check.js scanned app-context/router/shortcuts/views exports against all site source: zero dead exports (every export imported somewhere)'
+- id: commit-push-clean
+  text: 'git_finalize: porcelain-gate, commit, push all touched tracked files + memorize-fire session learnings'
+  deps:
+  - triage-confirmed-findings
+  status: pending

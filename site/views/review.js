@@ -317,27 +317,23 @@ const card = state.reviewQueue[state.reviewIndex];
     // (rendered by tutor-panel.js when it receives coaching-done with target=inline).
     getStage().append(el('div', { id: 'tutor-card-coaching', class: 'tutor-inline-coach', 'aria-live': 'polite' }));
 
-    // Right-click on the card -> context menu with quick actions
-    reviewCard.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-        import('../context-menu.js').then(({ showContextMenu }) => {
-            const items = [
-                { icon: isFlag ? ICON.flag : ICON.flagOutline, label: isFlag ? 'unflag card' : 'flag card', shortcut: 'f',
-                  action: () => { flag.toggle(card.id); renderReview(); } },
-                { icon: ICON.skip, label: 'skip card', shortcut: 's', action: () => skipReview() },
-                { type: 'divider' },
-                { icon: ICON.help, label: 'ask tutor about this', action: () => {
-                    // Route through sendTutorMessage so the panel records the user
-                    // turn too — posting straight to the worker recorded only the
-                    // assistant reply and diverged worker/panel history (single
-                    // source of truth = the panel's thread).
-                    sendTutorMessage(`explain the concept behind this card: "${card.front}" — answer is: ${card.back}`);
-                } },
-                { icon: ICON.book, label: 'open subject guide', action: () => { location.hash = `#guides/${card._subject}`; } }
-            ];
-            showContextMenu(e.clientX, e.clientY, items);
-        }).catch(() => {});
-    });
+    // Right-click or touch long-press on the card -> context menu with quick actions
+    import('../context-menu.js').then(({ bindContextMenu }) => {
+        bindContextMenu(reviewCard, () => [
+            { icon: isFlag ? ICON.flag : ICON.flagOutline, label: isFlag ? 'unflag card' : 'flag card', shortcut: 'f',
+              action: () => { flag.toggle(card.id); renderReview(); } },
+            { icon: ICON.skip, label: 'skip card', shortcut: 's', action: () => skipReview() },
+            { type: 'divider' },
+            { icon: ICON.help, label: 'ask tutor about this', action: () => {
+                // Route through sendTutorMessage so the panel records the user
+                // turn too — posting straight to the worker recorded only the
+                // assistant reply and diverged worker/panel history (single
+                // source of truth = the panel's thread).
+                sendTutorMessage(`explain the concept behind this card: "${card.front}" — answer is: ${card.back}`);
+            } },
+            { icon: ICON.book, label: 'open subject guide', action: () => { location.hash = `#guides/${card._subject}`; } }
+        ]);
+    }).catch(() => {});
 
 
     const actions = el('div', { class: 'toolbar review-actions', id: 'review-actions' });

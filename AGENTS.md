@@ -37,3 +37,5 @@ node D:/corpus/test.js                   # tests (single-file, node:assert; keep
 - GitHub: `https://github.com/lanmower/corpus.git` (master)
 - Pages: `https://lanmower.github.io/corpus/`
 - LFS: `*.mp4`, `*.m4a` via git-lfs (history retains old blobs but new clones don't fetch)
+
+@.gm/next-step.md

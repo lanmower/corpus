@@ -355,7 +355,6 @@ function setupSdkApp() {
             if (m) { const banner = el('div', { class: 'late-banner', role: 'status' }, m); document.body.appendChild(banner); }
         }
         registerSW();
-        toast.bind();
         updateOnlineStatus();
         window.addEventListener('online', updateOnlineStatus);
         window.addEventListener('offline', updateOnlineStatus);

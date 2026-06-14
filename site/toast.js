@@ -35,18 +35,10 @@ function push(kind, text, icon) {
     return t;
 }
 
-// Generic notification. `show` is the canonical name (app.js calls toast.show);
-// `info` is kept as an alias for older call sites.
+// Generic notification. `show` is the canonical name (app.js calls toast.show).
 export function show(text) { return push('info', text, ''); }
-export const info = show;
 
-let bound = false;
-export function bind() {
-    if (bound || typeof window === 'undefined') return;
-    bound = true;
-}
-
-if (typeof window !== 'undefined') window.__toast = { show, info, bind };
+if (typeof window !== 'undefined') window.__toast = { show };
 
 
 
