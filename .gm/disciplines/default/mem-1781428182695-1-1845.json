@@ -1,0 +1,14 @@
+## Corpus quality-max 14th run (2026-06-14, commit 8f1f5fc)
+
+User re-issued 'workflow to maximize quality, fan out subagents, engineering-DNA, consider everything not yet considered'. Workflow ALREADY EXISTED (.claude/workflows/quality-max.js, 12 lenses + glyph). RAN it (NOT rebuild, Principle 2/3): wf_c8f4d30e-10f, 24 agents, 12 raw -> 9 confirmed / 3 refuted. ALL 9 FIXED + browser-witnessed + pushed:
+1. mastery.js casePassed: triage persists score as 0..100 percent not 0..1 fraction -> any non-zero counted as pass. Fix: sc>=1?sc>=80:sc>=0.8.
+2. srs.js calcSM2 score>=3 branch now spreads ...state (was dropping phase/lapses for direct callers).
+3. srs.js loadStates: dispatch corpus:storage-incompatible on rejected newer-schema (was silent reset). test.js still asserts {} return.
+4. search.js buildSearchIndex: guard sh.cards||[] (one malformed shard killed whole Ctrl-K palette).
+5. icons.js: removed dead pause/copy entries (timer uses textContent string, tutor-panel has own ICONS.copy).
+6. progress.js: removed single-use bumpGradedSubject arg-flip wrapper; review.js:418 -> bumpGraded(1,subj).
+7. triage-live.js: rAF-coalesce streamed-token render via scheduleStreamRender (was per-token O(n^2) stripToolBlocks + full DOM rebuild; tutor-panel already had this).
+8. tutor-panel.js clearConversation: pendingDailyPlan=null (deferred daily walk repopulated cleared thread on 'ready').
+9. test.js: verdictFor declining-trend(t<0) + heavy-backlog(b>=10) demotion assertions.
+
+CAVEAT: shared-spool concurrent-session collision recurred - browser/git_finalize verb responses returned FOREIGN session's script + stale sha (e1b4d22). Mitigation: use HIGH unique request N (browser/917,918) to dodge numbering collision; ALWAYS verify git_finalize with a real git log/rev-parse (actual commit was 8f1f5fc, verb summary lied). 25 tests pass.

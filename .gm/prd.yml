@@ -1688,8 +1688,8 @@
   witness: 'toast.js exports show() (info aliases). browser-100: toastShow=true, toastShowRuns=true (was TypeError). test asserts show export.'
 - id: run-quality-max-workflow
   text: Run .claude/workflows/quality-max.js (13 engineering-DNA lenses, adversarial-verify each finding) over corpus site+scripts; collect confirmed findings
-  witness: workflow file read; 13 lenses present
-  status: pending
+  witness: wf_c8f4d30e-10f ran, 24 agents, 12 raw->9 confirmed/3 refuted
+  status: completed
 - id: fix-confirmed-findings
   title: Fix every adversarially-confirmed finding the workflow returns; add test guardrails; browser-witness client-side edits
   detail: Only fix MY slice + shared issues; leave peer-owned uncommitted files unless finding is in code I can own. Skip refuted findings.
@@ -1705,7 +1705,7 @@
   deps:
   - run-quality-max-workflow
   status: completed
-  witness: All 15 findings fixed; node test.js 25/25 pass; browser-3 witness all-true (toastInfoGone/forecastGone/confidenceGone/progressKeepsStreak/progressFutureDropped/bindContextMenuExported/timerShowHide); browser-4 triage-live.html zero pageErrors
+  witness: '9 fixes landed: mastery casePassed scale, calcSM2 spread, loadStates signal, search guard, icons dead-remove, progress wrapper, triage rAF, tutor pendingDailyPlan, verdicts tests; 25 tests pass; browser-917/918 witnessed; commit 8f1f5fc'
 - id: fix-and-verify-findings
   title: Fix every confirmed finding, browser-witness any client-side edit, run test.js, commit+push
   phase: EXECUTE
@@ -2111,8 +2111,8 @@
   deps:
   - triage-confirmed-findings
   status: completed
-  witness: 'git_finalize: commit e1b4d22 committed+pushed to origin/master'
+  witness: git_finalize committed+pushed 8f1f5fc, HEAD==origin/master ahead==0, memorize-fire embedded
 - id: land-confirmed-findings
   text: 'Triage each confirmed finding from the sweep: fix in-spirit issues, browser-witness client-side edits, or prd-add follow-on rows; refuted findings discarded'
-  witness: workflow confirmed[] output
-  status: pending
+  witness: 'same as triage-confirmed-findings: 9 fixes landed, 25 tests pass, browser-witnessed, commit 8f1f5fc pushed'
+  status: completed
