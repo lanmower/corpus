@@ -1,0 +1,28 @@
+## Corpus quality-max 16th run (2026-06-19, commit b87d5e7)
+
+User re-issued loop '/gm-skill maximize quality'. Workflow ALREADY EXISTED (.claude/workflows/quality-max.js, 12 lenses). RAN it (NOT rebuild): wf_26c2d86e-569, 21 confirmed / 10 refuted (2 dupes = 19 unique).
+
+FIXES LANDED (browser-witnessed session 18, 28 tests pass):
+1. fix-session-overview-epoch: tutor-panel.js session-overview-done branch adds activeGenEpoch===null guard (matches coaching-done/guide-answer-done pattern)
+2. fix-pointerleave-mic: tutor-panel.js mic button removes pointerleave stop handler (keep pointercancel only)
+3. fix-tutor-indexed-subjects: app-context.js state.tutorIndexedSubjects:new Set() replaces module-scoped Set in subject.js
+4. fix-dead-channel-emit: app-context.js channel()/emit() exports removed (no consumers)
+5. fix-el-html-xss: app-context.js el() html branch gets XSS warning comment
+6. fix-today-spine-violation: today.js no longer imports from tutor-panel.js; routes setTutorContext/startDailySyllabus via window.__tutorActions (app.js exposes both)
+7. fix-lateral-view-cram-banner: site/cram-banner.js extracted as shared leaf; today.js and subject.js both import from it
+8. fix-render-tutor-overview-name: renderTutorOverviewPanel -> triggerTutorCheckin(due), newCount param removed
+9. fix-guide-ticks-multi-parse: renderToday hoists loadGuideTicks() once, passes ticksAll to all helpers
+10. fix-schedule-checklist-double-parse: renderScheduleChecklist reuses states0 for second reference
+11. fix-undo-grade-counter: undo.js record() stores newSubject; review.js undoLastGrade reverses progress.bumpGraded(-1) + newcards.bump(r.newSubject,-1)
+12. fix-voice-transcribe-null: voice.js transcribe() try/catch around sttWorker() call before .then()
+13. fix-drill-null-shard: drill.js null-guard on shard after fallback subject selection
+14. fix-triage-webgpu-null-guards: triage-live.js WebGPU success/error paths guard all els.* accesses
+15. fix-stt-chunk-length: stt-worker.js removes chunk_length_s:30/stride_length_s:5 from asr call
+16. fix-trend-cutoff-test: test.js adds stale trendFor test (8-day-old entry -> returns 0)
+DEFERRED: fix-script-processor-deprecated (AudioWorklet large scope), fix-voice-logic-tests (needs AudioContext mock)
+
+KEY PATTERNS:
+- Spine law: views never import orchestrators; route via window.__tutorActions registered in app.js
+- activeGenEpoch guard: `if (activeGenEpoch === null) { streamingBuf = ''; if (sdkRender) sdkRender(); break; }` in ALL done-event handlers
+- Shared leaf extraction: renderCramBanner in site/cram-banner.js avoids lateral view dependency
+- State over module scope: mutable state always on `state` object, never module-scoped variable
