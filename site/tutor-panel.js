@@ -85,27 +85,6 @@ function keepScrolledToBottom() {
     if (stuck) scroller.scrollTop = scroller.scrollHeight;
 }
 
-// Inline SVG icons (crisp at any DPI, theme-colored via currentColor) — replace
-// the Unicode-glyph button labels that read as machine-shaped tells. Each returns
-// an <svg> string sized to the em-box; stroke uses currentColor so theming is free.
-const ICONS = {
-    // circular-arrow "new conversation"
-    new: '<svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9"/><path d="M13.5 2.5V5H11"/></svg>',
-    // gear "settings"
-    settings: '<svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.4v1.6M8 13v1.6M3.1 3.1l1.1 1.1M11.8 11.8l1.1 1.1M1.4 8h1.6M13 8h1.6M3.1 12.9l1.1-1.1M11.8 4.2l1.1-1.1"/></svg>',
-    // overlapping-squares "copy"
-    copy: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.3"/><path d="M10.5 5.5V3.8A1.3 1.3 0 0 0 9.2 2.5H3.8A1.3 1.3 0 0 0 2.5 3.8v5.4a1.3 1.3 0 0 0 1.3 1.3h1.7"/></svg>',
-    // refresh "retry"
-    retry: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8a5.5 5.5 0 1 1 1.6 3.9"/><path d="M2.5 13.5V11H5"/></svg>',
-    // filled square "stop"
-    stop: '<svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><rect x="3.5" y="3.5" width="9" height="9" rx="1.4"/></svg>',
-    // collapse/expand chevrons
-    chevronLeft: '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>',
-    chevronRight: '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>',
-    // spinner-dot for loading / warning triangle for unavailable (status pill)
-    spinner: '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" class="tutor-spin"><path d="M8 2a6 6 0 1 0 6 6" opacity="0.9"/></svg>',
-    warn: '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2 14.5 13.5H1.5L8 2.2Z"/><path d="M8 6.5v3M8 11.5v.01"/></svg>'
-};
 
 const STARTER_PROMPTS = [
     'Plan my study session',
@@ -197,8 +176,8 @@ function statusLabel() {
 function statusIcon() {
     switch (modelStatus) {
         case 'loading':
-        case 'downloading': return ICONS.spinner;
-        case 'unavailable': return ICONS.warn;
+        case 'downloading': return ICON.spinner;
+        case 'unavailable': return ICON.warn;
         default: return '';
     }
 }
@@ -407,8 +386,8 @@ function updateHeaderControls() {
         b.addEventListener('click', fn);
         return b;
     };
-    host.appendChild(mk(ICONS.new, 'New conversation', clearConversation));
-    host.appendChild(mk(ICONS.settings, 'Tutor settings', toggleSettings));
+    host.appendChild(mk(ICON.new, 'New conversation', clearConversation));
+    host.appendChild(mk(ICON.gear, 'Tutor settings', toggleSettings));
     if (showSettings) host.appendChild(buildSettingsPopover());
     host.dataset.built = '1';
 }
@@ -533,11 +512,11 @@ function updateActionBar() {
         return b;
     };
     // Copy is meaningless on an error turn; only offer retry there.
-    if (!last.err) bar.appendChild(mkBtn(ICONS.copy, 'copy', 'Copy answer', () => copyText(last.text)));
+    if (!last.err) bar.appendChild(mkBtn(ICON.copy, 'copy', 'Copy answer', () => copyText(last.text)));
     // Retry whenever there is a real preceding user turn to resend — including
     // after an error turn, so "use retry below" is a real affordance.
     if (lastRegenerableUserText()) {
-        bar.appendChild(mkBtn(ICONS.retry, 'retry', 'Regenerate answer', regenerateLast));
+        bar.appendChild(mkBtn(ICON.retry, 'retry', 'Regenerate answer', regenerateLast));
     }
 }
 
@@ -550,7 +529,7 @@ function renderStopRow(C, composer) {
             onClick: stopGeneration,
             // AICat's h() escapes text children; the icon is trusted static SVG, so
             // inject it as raw HTML the same way the imperative buttons do.
-            dangerouslySetInnerHTML: { __html: `${ICONS.stop}<span>stop</span>` }
+            dangerouslySetInnerHTML: { __html: `${ICON.stop}<span>stop</span>` }
         }),
         composer
     );
@@ -560,7 +539,7 @@ function makeToggleBtn() {
     const toggleBtn = document.createElement('button');
     toggleBtn.id = 'tutor-collapse-btn';
     toggleBtn.className = 'tutor-collapse-btn';
-    toggleBtn.innerHTML = isPanelCollapsed ? ICONS.chevronLeft : ICONS.chevronRight;
+    toggleBtn.innerHTML = isPanelCollapsed ? ICON.chevronLeft : ICON.chevronRight;
     toggleBtn.setAttribute('aria-label', 'Toggle study coach panel');
     // Set aria-expanded at creation (not only later in applyResponsiveWidth) so AT
     // reports the collapsed/expanded state from first render.
@@ -586,8 +565,8 @@ function renderFallbackChat() {
                 <span id="tutor-status-pill" class="tutor-status-pill">starting…</span>
             </div>
             <div style="display:flex;gap:4px;">
-                <button id="tutor-clear-btn" class="tutor-hdr-btn" title="New conversation" aria-label="New conversation">${ICONS.new}</button>
-                <button id="tutor-collapse-btn" class="tutor-collapse-btn" title="Collapse panel" aria-label="Collapse panel">${ICONS.chevronRight}</button>
+                <button id="tutor-clear-btn" class="tutor-hdr-btn" title="New conversation" aria-label="New conversation">${ICON.new}</button>
+                <button id="tutor-collapse-btn" class="tutor-collapse-btn" title="Collapse panel" aria-label="Collapse panel">${ICON.chevronRight}</button>
             </div>
         </div>
         <div id="tutor-messages" aria-live="polite" aria-label="coaching messages" class="tutor-fallback-msgs"></div>
@@ -666,7 +645,7 @@ function applyResponsiveWidth() {
         if (isPanelCollapsed && mobile) {
             toggleBtn.innerHTML = '<span class="tutor-collapse-label">Coach</span>';
         } else {
-            toggleBtn.innerHTML = isPanelCollapsed ? ICONS.chevronLeft : ICONS.chevronRight;
+            toggleBtn.innerHTML = isPanelCollapsed ? ICON.chevronLeft : ICON.chevronRight;
         }
         toggleBtn.setAttribute('aria-expanded', String(!isPanelCollapsed));
         toggleBtn.setAttribute('aria-label', isPanelCollapsed ? 'Open study coach' : 'Collapse study coach');
@@ -697,6 +676,7 @@ export function preloadTutorModel() {
 function toggleSettings() {
     showSettings = !showSettings;
     if (showSettings) {
+        config = { ...loadConfig() };
         // Close on outside-click or Escape. Registered on the next tick so the
         // click that opened the popover doesn't immediately close it.
         setTimeout(() => {

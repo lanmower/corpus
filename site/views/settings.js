@@ -11,6 +11,7 @@ import * as progress from '../progress.js';
 import { makeToggleButton } from '../theme.js';
 import { openShortcutsModal } from '../shortcuts.js';
 import { dataPath, listSyllabi, getActiveSyllabus, setActiveSyllabus } from '../syllabus.js';
+import { confirmModal } from '../modal.js';
 
 function debounce(fn, ms) { let h = null; return (...a) => { clearTimeout(h); h = setTimeout(() => fn(...a), ms); }; }
 
@@ -43,32 +44,38 @@ export function renderScheduleConfigPanel() {
     panel.append(chronoRow);
 
     // pomodoro + break sliders
+    const pomoSpan = el('span', { class: 'mono cfg-val' }, `${cfg.pomodoro}m`);
+    const savePomoDebounced = debounce((v) => { schedule.saveConfig({ pomodoro: v }); regenAndPreview(); }, 200);
     const pomoRow = el('div', { class: 'cfg-row' }, el('label', {}, 'pomodoro'),
         el('input', { type: 'range', min: '15', max: '60', step: '5', value: String(cfg.pomodoro),
             'aria-label': 'pomodoro length',
-            on: { input: debounce(e => { schedule.saveConfig({ pomodoro: parseInt(e.target.value, 10) }); regenAndPreview(); }, 200) } }),
-        el('span', { class: 'mono cfg-val' }, `${cfg.pomodoro}m`));
+            on: { input: e => { const v = parseInt(e.target.value, 10); pomoSpan.textContent = `${v}m`; savePomoDebounced(v); } } }),
+        pomoSpan);
     panel.append(pomoRow);
+    const brkSpan = el('span', { class: 'mono cfg-val' }, `${cfg.breakLen}m`);
+    const saveBrkDebounced = debounce((v) => { schedule.saveConfig({ breakLen: v }); regenAndPreview(); }, 200);
     const brkRow = el('div', { class: 'cfg-row' }, el('label', {}, 'break'),
         el('input', { type: 'range', min: '3', max: '20', step: '1', value: String(cfg.breakLen),
             'aria-label': 'break length',
-            on: { input: debounce(e => { schedule.saveConfig({ breakLen: parseInt(e.target.value, 10) }); regenAndPreview(); }, 200) } }),
-        el('span', { class: 'mono cfg-val' }, `${cfg.breakLen}m`));
+            on: { input: e => { const v = parseInt(e.target.value, 10); brkSpan.textContent = `${v}m`; saveBrkDebounced(v); } } }),
+        brkSpan);
     panel.append(brkRow);
 
     // availability — 7 rows
     const availPanel = el('div', { class: 'cfg-availability' }, el('div', { class: 'cfg-sublabel' }, 'availability (minutes/day)'));
     const dows = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
     for (const d of dows) {
+        const availSpan = el('span', { class: 'mono cfg-val' }, `${cfg.availability[d] || 0}m`);
+        const saveAvailDebounced = debounce((v) => {
+            const av = { ...schedule.loadConfig().availability, [d]: v };
+            schedule.saveConfig({ availability: av }); regenAndPreview();
+        }, 200);
         availPanel.append(el('div', { class: 'cfg-row dow-row' },
             el('label', {}, d),
             el('input', { type: 'range', min: '0', max: '480', step: '15', value: String(cfg.availability[d] || 0),
                 'aria-label': `${d} availability`,
-                on: { input: debounce(e => {
-                    const av = { ...schedule.loadConfig().availability, [d]: parseInt(e.target.value, 10) };
-                    schedule.saveConfig({ availability: av }); regenAndPreview();
-                }, 200) } }),
-            el('span', { class: 'mono cfg-val' }, `${cfg.availability[d] || 0}m`)));
+                on: { input: e => { const v = parseInt(e.target.value, 10); availSpan.textContent = `${v}m`; saveAvailDebounced(v); } } }),
+            availSpan));
     }
     panel.append(availPanel);
 
@@ -167,7 +174,7 @@ export async function renderSettings() {
     const importInput = el('input', { type: 'file', accept: '.json', style: 'display:none',
         on: { change: async e => {
             const f = e.target.files?.[0]; if (!f) return;
-            if (!confirm('import overwrites current progress. continue?')) return;
+            if (!await confirmModal('import overwrites current progress. continue?')) return;
             const text = await f.text();
             try { const n = srs.importState(text); alert(`imported ${n} cards`); render(); }
             catch (err) { alert('import failed: ' + err.message); }
@@ -175,7 +182,7 @@ export async function renderSettings() {
     const importBtn = el('button', { class: 'chip', 'aria-label': 'import',
         on: { click: () => importInput.click() } }, 'import');
     const resetBtn = el('button', { class: 'chip', 'aria-label': 'reset',
-        on: { click: () => { if (confirm('reset all progress?')) { srs.resetAll(); state.reviewSessionGraded = 0; render(); } } } }, 'reset');
+        on: { click: async () => { if (await confirmModal('reset all progress?')) { srs.resetAll(); state.reviewSessionGraded = 0; render(); } } } }, 'reset');
     const ankiBtn = el('button', { class: 'chip', 'aria-label': 'export to Anki',
         on: { click: async () => {
             const lines = ['#separator:tab', '#html:true', '#guid column:1', '#notetype column:2', '#deck column:3', '#tags column:6'];
@@ -206,10 +213,10 @@ export async function renderSettings() {
         const active = getActiveSyllabus();
         const sel = el('select', { class: 'syllabus-select', 'aria-label': 'active syllabus' },
             ...syllabi.map(s => el('option', { value: s.id, ...(s.id === active ? { selected: '' } : {}) }, s.label || s.id)));
-        sel.addEventListener('change', () => {
+        sel.addEventListener('change', async () => {
             const id = sel.value;
             if (id === getActiveSyllabus()) return;
-            if (!confirm(`Switch to "${syllabi.find(s => s.id === id)?.label || id}"? Your ${active} progress is kept and restored when you switch back.`)) {
+            if (!await confirmModal(`Switch to "${syllabi.find(s => s.id === id)?.label || id}"? Your ${active} progress is kept and restored when you switch back.`)) {
                 sel.value = getActiveSyllabus();
                 return;
             }

@@ -11,6 +11,8 @@ import * as lastpos from '../lastpos.js';
 import { buildRows, computeWeakest } from '../verdicts.js';
 import { ICON } from '../icons.js';
 
+const _tutorIndexedSubjects = new Set();
+
 export async function renderSubject() {
     const subj = state.currentSubject;
     if (!subj) { go('guides'); return; }
@@ -71,8 +73,9 @@ export async function renderSubject() {
     const shard = await loadShard(subj);
     placeholder.remove();
 
-    // Send guide shard to tutor worker for Q&A indexing
-    if (state.tutorWorker && shard.guide) {
+    // Send guide shard to tutor worker for Q&A indexing (idempotent — skip if already posted)
+    if (state.tutorWorker && shard.guide && !_tutorIndexedSubjects.has(subj)) {
+        _tutorIndexedSubjects.add(subj);
         state.tutorWorker.postMessage({ cmd: 'load-guide-shard', shard: { subject: subj, guide: shard.guide } });
     }
 

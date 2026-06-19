@@ -15,7 +15,7 @@ import * as calendar from './calendar.js';
 import * as toast from './toast.js';
 import { buildSearchIndex, mountPalette } from './search.js';
 import { makeToggleButton } from './theme.js';
-import { initTutorPanel, wireWorkerToPanel, syncTutorFromStorage, setDailyPlanProvider } from './tutor-panel.js';
+import { initTutorPanel, wireWorkerToPanel, syncTutorFromStorage, setDailyPlanProvider, sendTutorMessage } from './tutor-panel.js';
 import { state, el, icon, iconLabel, appRoot, DEBUG, log, warn, loadManifest, loadAllShards, loadGuideTicks, dueCountsBySubject, updateFooter, getStage, setStage, fetchJson } from './app-context.js';
 import { initSyllabi } from './syllabus.js';
 import { go, onNav, setRenderer } from './router.js';
@@ -30,6 +30,10 @@ import { renderGuides } from './views/guides.js';
 import { renderToday } from './views/today.js';
 import { renderSubject } from './views/subject.js';
 import { openShortcutsModal, closeShortcutsModal } from './shortcuts.js';
+
+const ROUTE_FNS = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
+    review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
+    settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
 
 let sdk = null;
 let sdkRender = null;
@@ -56,10 +60,7 @@ function render() {
             if (days === 0 && r !== 'mistakes' && r !== 'settings') {
                 renderExamDay(); updateFooter(); return;
             }
-            const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
-                review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
-                settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
-            (fns[r] || renderToday)();
+            (ROUTE_FNS[r] || renderToday)();
             updateFooter();
         } finally { __rendering = false; }
     }
@@ -91,7 +92,6 @@ document.addEventListener('keydown', e => {
     if (e.key === 't' && !e.ctrlKey && !e.metaKey && state.route !== 'review') {
         e.preventDefault(); state.timerApi?.toggleVis(); return;
     }
-    if (e.key === '+' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openQuickAdd(); return; }
     if (e.key === 'u' && !e.ctrlKey && !e.metaKey && undo.peek()) { e.preventDefault(); undoLastGrade(); return; }
     if (e.key === 'Escape') {
         if (document.body.classList.contains('just-read') && state.route === 'subject') {
@@ -276,12 +276,8 @@ function setupSdkApp() {
         const originalStage = getStage();
         setStage(stageProxy);
 
-        const fns = { today: renderToday, calendar: renderCalendar, guides: renderGuides,
-            review: renderReview, cases: renderTriage, stats: renderStats, subject: renderSubject,
-            settings: renderSettings, mistakes: renderMistakes, drill: renderDrill };
-
         try {
-            (fns[r] || renderToday)();
+            (ROUTE_FNS[r] || renderToday)();
         } finally {
             setStage(originalStage);
         }
@@ -386,6 +382,7 @@ function setupSdkApp() {
 
         // Expose page-control actions for LLM tool dispatch.
         window.__tutorActions = {
+            sendTutorMessage(msg) { sendTutorMessage(msg); },
             navigate(args) {
                 const route = String(args?.route || '').replace(/^#/, '');
                 if (!route) return;

@@ -15,8 +15,8 @@ import * as mistakes from '../mistakes.js';
 import * as undo from '../undo.js';
 import { renderMarkdown } from '../markdown.js';
 import { ICON } from '../icons.js';
-import { sendTutorMessage } from '../tutor-panel.js';
 import { loadConfig as loadTutorConfig } from '../tutor-store.js';
+import { confirmModal } from '../modal.js';
 
 export const FRIENDLY_GRADES = [
     { friendly: 1, smscore: 0, label: 'again', desc: "didn't know" },
@@ -329,7 +329,7 @@ const card = state.reviewQueue[state.reviewIndex];
                 // turn too — posting straight to the worker recorded only the
                 // assistant reply and diverged worker/panel history (single
                 // source of truth = the panel's thread).
-                sendTutorMessage(`explain the concept behind this card: "${card.front}" — answer is: ${card.back}`);
+                window.__tutorActions?.sendTutorMessage?.(`explain the concept behind this card: "${card.front}" — answer is: ${card.back}`);
             } },
             { icon: ICON.book, label: 'open subject guide', action: () => { location.hash = `#guides/${card._subject}`; } }
         ]);
@@ -364,7 +364,7 @@ const card = state.reviewQueue[state.reviewIndex];
         actions.append(el('button', { class: 'chip', id: 'review-skip', 'aria-label': 'skip',
             on: { click: () => skipReview() } }, 'skip (s)'));
         actions.append(el('button', { class: 'chip', id: 'review-suspend', 'aria-label': 'suspend card',
-            on: { click: () => { if (confirm('suspend this card?')) suspendCurrentReview(); } } }, 'suspend'));
+            on: { click: async () => { if (await confirmModal('suspend this card?')) suspendCurrentReview(); } } }, 'suspend'));
     }
     getStage().append(actions);
     const hint = DEBUG
@@ -391,11 +391,6 @@ export function resetReviewQueue() {
 function clearStickyFilters() {
     state.paletteReviewSet = null;
     state.sectionFilter = null;
-}
-
-function exitLearnMode() {
-    state.learnMode = false;
-    resetReviewQueue();
 }
 
 export function skipReview() {

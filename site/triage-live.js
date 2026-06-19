@@ -151,7 +151,7 @@ function loadSessions() {
 function saveSessions() {
     const ls = safeStore(); if (!ls) return;
     try { ls.setItem(PERSIST_KEY(), JSON.stringify({ version: SCHEMA_VERSION, sessions: state.sessions, streak: state.streak || 0, savedAt: Date.now() })); }
-    catch (e) { console.warn('persist failed', e); }
+    catch (e) { console.warn('persist failed', e); if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('corpus:storage-full', { detail: { key: PERSIST_KEY(), error: e } })); }
 }
 function persistActive() {
     if (!state.activeScenarioId) return;

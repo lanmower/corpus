@@ -4,6 +4,7 @@ import { getStage, el, icon, loadAllShards, state } from '../app-context.js';
 import { go, render } from '../router.js';
 import { resetReviewQueue } from './review.js';
 import * as mistakes from '../mistakes.js';
+import { confirmModal } from '../modal.js';
 
 export async function renderMistakes() {
     getStage().append(el('div', { class: 'section-head' },
@@ -22,7 +23,7 @@ export async function renderMistakes() {
     getStage().append(el('div', { class: 'toolbar' },
         el('button', { class: 'chip', 'aria-label': 'review mistakes',
             on: { click: () => { state.paletteReviewSet = mistakes.ids(); resetReviewQueue(); go('review'); } } }, el('span', { class: 'icon-label' }, el('span', {}, `review all ${recent.length}`), icon('arrowRight'))),
-        el('button', { class: 'chip', on: { click: () => { if (confirm('clear mistake log?')) { mistakes.clear(); render(); } } } }, 'clear')));
+        el('button', { class: 'chip', on: { click: async () => { if (await confirmModal('clear mistake log?')) { mistakes.clear(); render(); } } } }, 'clear')));
     for (const subject of Object.keys(grp).sort()) {
         const arr = grp[subject];
         getStage().append(el('div', { class: 'panel' },

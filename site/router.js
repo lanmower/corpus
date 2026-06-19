@@ -14,8 +14,7 @@ export const ROUTES = ['today', 'guides', 'review', 'cases', 'stats', 'subject',
 const ROUTE_TITLES = { today: 'today', guides: 'subjects', review: 'review',
     cases: 'cases', stats: 'stats', subject: 'subject', settings: 'settings',
     calendar: 'calendar', mistakes: 'mistakes', drill: 'drill' };
-const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review',
-    notes: 'today', quests: 'today', badges: 'today' };
+const ROUTE_ALIASES = { home: 'today', triage: 'cases', subjects: 'guides', cards: 'review' };
 
 let _render = () => {};
 const _navHooks = [];

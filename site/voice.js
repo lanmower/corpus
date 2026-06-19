@@ -30,7 +30,8 @@ function ttsWorker() {
     _ttsReady = new Promise((resolve, reject) => {
         const onMsg = (e) => {
             const d = e.data || {};
-            if (d.status === 'ready') { _voiceList = d.voices || []; resolve(d); }
+            if (d.status === 'ready') { _voiceList = d.voices || []; _tts.removeEventListener('message', onMsg); resolve(d); }
+            else if (d.status === 'error' && !d.requestId) { _tts.removeEventListener('message', onMsg); reject(new Error(d.error || 'tts load failed')); }
         };
         _tts.addEventListener('message', onMsg);
         _tts.addEventListener('error', (ev) => reject(new Error('tts worker: ' + (ev.message || ev.filename || '?'))));
@@ -42,7 +43,11 @@ function sttWorker() {
     if (_stt) return _stt;
     _stt = new Worker(new URL('./stt-worker.js', import.meta.url), { type: 'module' });
     _sttReady = new Promise((resolve, reject) => {
-        const onMsg = (e) => { if ((e.data || {}).status === 'ready') resolve(e.data); };
+        const onMsg = (e) => {
+            const d = e.data || {};
+            if (d.status === 'ready') { _stt.removeEventListener('message', onMsg); resolve(d); }
+            else if (d.status === 'error' && !d.requestId) { _stt.removeEventListener('message', onMsg); reject(new Error(d.error || 'stt load failed')); }
+        };
         _stt.addEventListener('message', onMsg);
         _stt.addEventListener('error', (ev) => reject(new Error('stt worker: ' + (ev.message || ev.filename || '?'))));
     });
@@ -62,9 +67,14 @@ export function isListening() { return _listening; }
 
 export async function startListening() {
     if (_listening) return;
-    _listening = true;
     _micChunks = [];
-    _micStream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true } });
+    try {
+        _micStream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true } });
+    } catch (err) {
+        _micChunks = null;
+        throw err;
+    }
+    _listening = true;
     // A 16kHz context resamples the (typically 48kHz) mic input to Whisper's rate.
     _micCtx = new (self.AudioContext || self.webkitAudioContext)({ sampleRate: 16000 });
     _micSrc = _micCtx.createMediaStreamSource(_micStream);
@@ -97,10 +107,14 @@ function transcribe(audio) {
     sttWorker();
     return _sttReady.then(() => new Promise((resolve) => {
         const id = 'stt-' + (++_reqSeq);
+        const timer = setTimeout(() => { _stt.removeEventListener('message', onMsg); resolve(''); }, 30000);
         const onMsg = (e) => {
             const d = e.data || {};
-            if (d.requestId === id && d.status === 'transcript') { _stt.removeEventListener('message', onMsg); resolve(d.text || ''); }
-            else if (d.requestId === id && d.status === 'error') { _stt.removeEventListener('message', onMsg); resolve(''); }
+            if (d.requestId === id && (d.status === 'transcript' || d.status === 'error')) {
+                clearTimeout(timer);
+                _stt.removeEventListener('message', onMsg);
+                resolve(d.text || '');
+            }
         };
         _stt.addEventListener('message', onMsg);
         _stt.postMessage({ type: 'transcribe', audio, requestId: id }, [audio.buffer]);

@@ -89,6 +89,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         for (let i = 0; i < 60; i++) h = srs.schedule(h, 4, now + i * 60000, () => 0.5);
         assert.ok(h.history.length <= 50);
         assert.strictEqual(srs.fuzzInterval(1, () => 0), 1);
+        assert.ok(srs.fuzzInterval(100, () => 0) >= 95 && srs.fuzzInterval(100, () => 0) <= 105);
+        assert.ok(srs.fuzzInterval(100, () => 1) >= 95 && srs.fuzzInterval(100, () => 1) <= 105);
+        assert.ok(srs.fuzzInterval(20, () => 0.5) >= 1);
         global.localStorage.clear(); srs.saveStates({ 'x': { ...srs.defaultCardState(), interval: 13 } });
         const blob = srs.exportState(); global.localStorage.clear(); srs.importState(blob);
         assert.strictEqual(srs.loadStates()['x'].interval, 13);
@@ -453,14 +456,14 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         const eff = progressMod.effectiveDateISO(at3am);
         assert.notStrictEqual(eff, at3am.toISOString().slice(0, 10));
         // app keys + routes
-        for (const re of [/openQuickAdd/, /undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /exam-countdown/, /late-banner/]) assert.match(appSrc, re);
+        for (const re of [/undoLastGrade/, /gPrefixTs/, /renderMistakes/, /renderDrill/, /renderExamDay/, /exam-countdown/, /late-banner/]) assert.match(appSrc, re);
         assert.match(READ('site/views/subject.js'), /next-thing/);
         for (const re of [/renderSparkline/, /schedule-checklist/]) assert.match(READ('site/views/today.js'), re);
         assert.match(READ('site/views/review.js'), /undo-toast/, 'undo-toast lives in views/review.js');
         for (const route of ['mistakes','drill']) assert.ok(appSrc.includes(`'${route}'`));
         // new shortcuts in modal
         const shortcutsSrc = READ('site/shortcuts.js');
-        for (const s of ['quick add card', 'pomodoro', 'undo last grade', 'flag card', 'go mistakes']) assert.ok(shortcutsSrc.includes(s), 'missing shortcut: '+s);
+        for (const s of ['pomodoro', 'undo last grade', 'flag card', 'go mistakes']) assert.ok(shortcutsSrc.includes(s), 'missing shortcut: '+s);
         // originals never surfaced — no medbak/audio-transcripts/book-texts/pages-NNN in shards or guides
         const fs2 = require('fs');
         assert.ok(!fs2.existsSync('site/data/medbak-index.json'), 'medbak-index.json should be deleted');
@@ -691,10 +694,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(!fs.existsSync(path.join(ROOT, 'site/notes.js')), 'notes.js should be deleted');
         // app.js no longer references game/confetti/xp/awardXP
         for (const re of [/from '\.\/game\.js'/, /from '\.\/confetti\.js'/, /\bawardXP\b/, /\brenderXpChip\b/, /\brenderXpBarFull\b/, /\bawardCardXP\b/, /\bxp-chip\b/, /game\./, /confetti\./, /quests\.js/, /badges\.js/, /notes\.js/, /renderQuests\b/, /renderBadges\b/, /renderNotes\b/, /handleHighlightOrNote/, /runBadgeEvaluation/]) assert.ok(!re.test(appSrc), 'app.js still references ' + re);
-        // aliases in place (now in router.js)
-        assert.match(READ('site/router.js'), /notes:\s*'today'/);
-        assert.match(READ('site/router.js'), /quests:\s*'today'/);
-        assert.match(READ('site/router.js'), /badges:\s*'today'/);
+        // dead aliases removed from router.js
+        for (const re of [/notes:\s*'today'/, /quests:\s*'today'/, /badges:\s*'today'/]) assert.ok(!re.test(READ('site/router.js')), 'dead alias still present: ' + re);
         // mastery — empty shards => 0%
         const emptyShards = Object.fromEntries(SUBJECTS.map(s => [s, { cards: [], guide: { sections: [] }, triage: { scenarios: [] } }]));
         const m = masteryMod.overallProgress(MANIFEST, emptyShards);
@@ -1104,8 +1105,8 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // multi-tab history sync + personalized starters
         assert.ok(/syncTutorFromStorage/.test(panelSrc) && /syncTutorFromStorage/.test(app), 'multi-tab history sync wired');
         assert.ok(/setTutorContext/.test(panelSrc) && /starterPrompts/.test(panelSrc), 'starter chips personalize from real state');
-        // tutor controls use inline SVG icons (not Unicode-glyph button tells)
-        assert.ok(/const ICONS = \{/.test(panelSrc) && /<svg/.test(panelSrc), 'tutor controls use inline SVG icons');
+        // tutor controls use inline SVG icons via shared icons.js (not local ICONS or Unicode glyphs)
+        assert.ok(!panelSrc.includes('const ICONS =') && /ICON\./.test(panelSrc), 'tutor controls use ICON from icons.js (local ICONS const removed)');
         assert.ok(!/[←-⇿⌀-➿⬀-⯿■-◿☀-⛿]/.test(panelSrc), 'no decorative unicode glyphs in tutor-panel.js');
         // model load retries after an unavailable (preloadKicked latch is released)
         assert.ok(/preloadKicked = false/.test(panelSrc) && /preloadKicked = true/.test(panelSrc), 'preloadKicked reset on unavailable so load can retry');
@@ -1383,6 +1384,42 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(!/setCap|canIntroduce|__newcards/.test(READ('site/newcards.js')), 'newcards dead gating API removed');
         // triage-store is the shared schema owner; triage-live consumes it.
         assert.match(READ('site/triage-live.js'), /from '\.\/triage-store\.js'/, 'triage-live imports shared store');
+    });
+
+    t('quality-max run-15: dead code removed + voice resilience + srs merge-write + icon consolidation + state decl', () => {
+        const app15 = READ('site/app.js'), router15 = READ('site/router.js'), voice15 = READ('site/voice.js'), srs15 = READ('site/srs.js');
+        const tp15 = READ('site/tutor-panel.js'), ctx15 = READ('site/app-context.js'), icons15 = READ('site/icons.js');
+        // openQuickAdd dead call removed
+        assert.ok(!app15.includes('openQuickAdd()'), 'app.js: dead openQuickAdd() call removed');
+        // route dispatch table deduplicated
+        assert.match(app15, /const ROUTE_FNS =/, 'app.js: ROUTE_FNS module-level const');
+        // dead route aliases removed
+        assert.ok(!router15.includes("notes: 'today'"), 'router.js: dead notes alias removed');
+        assert.ok(!router15.includes("quests: 'today'"), 'router.js: dead quests alias removed');
+        // voice.js: _listening set after getUserMedia
+        assert.ok(voice15.indexOf('_listening = true') > voice15.indexOf('getUserMedia'), 'voice.js: _listening set after getUserMedia');
+        // voice.js: tts/stt error rejection + listener cleanup
+        assert.match(voice15, /d\.status === 'error' && !d\.requestId/, 'voice.js: tts/stt error rejects _ready promise');
+        assert.match(voice15, /removeEventListener.*onMsg|onMsg.*removeEventListener/, 'voice.js: ready listener removed after settle');
+        // voice.js: transcribe timeout
+        assert.match(voice15, /setTimeout.*30000|30000.*setTimeout/, 'voice.js: 30s transcribe timeout');
+        // srs.js: merge-write reduces two-tab clobber
+        assert.match(srs15, /const fresh = loadStates\(\)/, 'srs.js: merge-write in updateCard');
+        // ICONS consolidated into icons.js; tutor-panel no longer has local const ICONS
+        assert.ok(!tp15.includes('const ICONS ='), 'tutor-panel.js: local ICONS const removed');
+        for (const k of ['new', 'copy', 'retry', 'stop', 'chevronLeft', 'chevronRight', 'spinner', 'warn']) {
+            assert.ok(icons15.includes(`${k}:`), `icons.js: ${k} icon added`);
+        }
+        // state has _reviewBacklog + lastReviewDueCount declared
+        assert.match(ctx15, /_reviewBacklog/, 'app-context.js: _reviewBacklog declared on state');
+        assert.match(ctx15, /lastReviewDueCount/, 'app-context.js: lastReviewDueCount declared on state');
+        // WORKER_CONTEXT_TURNS value matches in tutor.js and tutor-store.js
+        const tutorSrc = READ('site/tutor.js'), storeSrc = READ('site/tutor-store.js');
+        const tutorMatch = tutorSrc.match(/WORKER_CONTEXT_TURNS\s*=\s*(\d+)/);
+        const storeMatch = storeSrc.match(/WORKER_CONTEXT_TURNS\s*=\s*(\d+)/);
+        assert.ok(tutorMatch && storeMatch && tutorMatch[1] === storeMatch[1], `WORKER_CONTEXT_TURNS must match in tutor.js (${tutorMatch?.[1]}) and tutor-store.js (${storeMatch?.[1]})`);
+        // tutor-panel: config re-read on settings open
+        assert.match(tp15, /loadConfig\(\).*toggleSettings|toggleSettings[\s\S]{0,200}loadConfig/, 'tutor-panel.js: config refreshed on settings open');
     });
 
     console.log('# voice: KittenTTS + Whisper workers, controller, panel wiring');

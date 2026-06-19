@@ -310,8 +310,11 @@ export function updateCard(cardId, score, allCardIds = null) {
             next.dueDate = dateOf(next.dueAt);
         }
     }
-    states[cardId] = next;
-    saveStates(states);
+    // Merge-write: re-read fresh state immediately before save to reduce the
+    // two-tab clobber window from the full review interval to near-zero.
+    const fresh = loadStates();
+    fresh[cardId] = next;
+    saveStates(fresh);
     return next;
 }
 

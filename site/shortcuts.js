@@ -9,7 +9,6 @@ const SHORTCUTS = [
     ['esc', 'close modals · exit just-read'],
     ['r', 'just-read mode (subject)'],
     ['t', 'pomodoro timer toggle'],
-    ['+', 'quick add card'],
     ['u', 'undo last grade'],
     ['f', 'flag card (review)'],
     ['g h', 'go home (today)'],

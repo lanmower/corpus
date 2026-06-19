@@ -38,6 +38,7 @@ export const state = {
     sessionFinished: false, searchPaletteApi: null, reviewSessionCap: null,
     cramMode: false, learnMode: false, reviewTagFilter: new Set(),
     paletteReviewSet: null, sectionFilter: null,
+    _reviewBacklog: [], lastReviewDueCount: 0,
     // Same-session dedup for the daily tutor check-in (see renderTutorOverviewPanel).
     tutorCheckinPosted: false,
     tutorCheckinDate: null
@@ -122,19 +123,17 @@ export function dueCountFor(subject) {
     const ids = sh.cards.map(c => c.id);
     return srs.getDueCards(ids, srs.loadStates()).length;
 }
-export function totalDueAll() {
+export function totalDueAll(states = srs.loadStates()) {
     let n = 0;
-    const states = srs.loadStates();
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject]; if (!sh) continue;
         n += srs.getDueCards(sh.cards.map(c => c.id), states).length;
     }
     return n;
 }
-export function dueCountsBySubject() {
+export function dueCountsBySubject(states = srs.loadStates()) {
     const out = {};
     if (!state.manifest) return out;
-    const states = srs.loadStates();
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject];
         out[meta.subject] = sh ? srs.getDueCards(sh.cards.map(c => c.id), states).length : 0;
@@ -174,8 +173,7 @@ export function slugify(t) { return String(t).toLowerCase().replace(/[^\w]+/g, '
 
 // Count of new-but-eligible cards across all subjects (today's "learn new" gate
 // and review's caught-up recommendation both read this).
-export function totalNewEligibleAll() {
-    const states = srs.loadStates();
+export function totalNewEligibleAll(states = srs.loadStates()) {
     const ticksAll = loadGuideTicks();
     const out = {};
     let total = 0;

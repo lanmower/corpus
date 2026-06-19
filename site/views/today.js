@@ -262,8 +262,9 @@ function renderNextReadingCard(next) {
 
 export function renderToday() {
     const p = progress.load();
-    const due = totalDueAll();
-    const newEl = totalNewEligibleAll();
+    const srsStates = srs.loadStates();
+    const due = totalDueAll(srsStates);
+    const newEl = totalNewEligibleAll(srsStates);
     const newCount = newEl.total;
 
     // Welcome message for first-time visitors
@@ -302,7 +303,7 @@ export function renderToday() {
 
     // Subject-by-subject due breakdown (permanently visible)
     if (due > 0) {
-        const dueCounts = dueCountsBySubject();
+        const dueCounts = dueCountsBySubject(srsStates);
         const subjectRows = state.manifest.subjects
             .filter(m => (dueCounts[m.subject] || 0) > 0)
             .map(m => {

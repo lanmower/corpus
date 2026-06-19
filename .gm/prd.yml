@@ -2239,3 +2239,181 @@
   text: 'FOLLOW-UP (worst-case/physics): mccqe1 active makes app.js loadAllShards fetch ~32MB at boot (cardiology shard 3.8MB; guide.body + guide.sections[].body duplicate ~1MB/shard, coupled to the #L line-anchor system so not trivially dedupable). Default cmed4-2026 (~2MB) is unaffected. Proper fix: split shard into light cards+meta (eager, for cross-subject counts) + heavy guide (lazy on subject open), or derive the line-anchor guide render from sections to drop guide.body. Sizable refactor touching build_data + loadShard + dueCounts + subject/search/cases/drill/mistakes/stats views.'
   witness: documented in AGENTS.md + memory as tracked future optimization; default syllabus unaffected, mccqe1 functional; deliberate scope boundary (ship-working-increment, avoid risky refactor in-session)
   status: completed
+- id: scope-expand-quality-max
+  title: Expand quality-max.js SCOPE to real file tree
+  detail: 'Current SCOPE lists non-existent site/llm-worker.js and omits ~24 modules created since last set: app-context.js, router.js, dates.js, shortcuts.js, syllabus.js, triage-store.js, voice.js, stt-worker.js, tts-worker.js, all 10 views/*.js, scripts/import_mccqe1.js, build_kitten_voices.js, compress_media.js, fix_mojibake.js. Remove llm-worker.js, add the real modules, fix stale ''7 prior sweeps'' count. Workflow file is non-client-side (no browser-witness needed).'
+  severity: high
+  status: completed
+  witness: '.claude/workflows/quality-max.js SCOPE rewritten to exact real tree (exec_js-2 readdir: 42 site/*.js + 10 views + 12 scripts). Removed 3 phantom files (llm-worker.js, confidence.js, drag.js - none exist per readdir). Added spine (app-context/router/shortcuts/views x10), voice subsystem (voice/stt-worker/tts-worker), dates/syllabus/triage-store, scripts import_mccqe1/build_kitten_voices/compress_media/fix_mojibake. Reviewer prompt steers scrutiny to newly-in-scope surfaces. quality-max.js is a Node workflow file (not browser-loaded) - turn-browser-edits.json empty confirms gate ignores it.'
+- id: review-voice-subsystem
+  title: Review never-reviewed voice subsystem
+  detail: voice.js + stt-worker.js + tts-worker.js + scripts/build_kitten_voices.js are a whole feature surface added after SCOPE was last set; quality-max has NEVER swept them. Ensure the expanded run's lenses (worst-case WebGPU/mic-absent, physics-first audio buffer, crucible mid-generate interrupt, honest-interface worker-cmd contract) cover them; land any confirmed findings.
+  severity: high
+  status: completed
+  witness: quality-max.js:31-33 voice.js/stt-worker.js/tts-worker.js/build_kitten_voices.js in SCOPE; prompt line 112 explicitly names voice subsystem for concentrated scrutiny
+- id: run-quality-max-15
+  title: Run expanded quality-max workflow vs HEAD fae2271
+  detail: Run .claude/workflows/quality-max.js after SCOPE expansion. 12 lenses x adversarial-verify pipeline over the full real file tree incl new spine + voice modules. Collect confirmed (refuted===false) findings; each confirmed finding spawns its own land+witness row this turn.
+  severity: high
+  status: completed
+  witness: 'workflow wf_rq15 completed: 28 confirmed findings -> PRD rows, 4 refuted'
+- id: browser-witness-client-edits
+  title: Browser-witness every client-side edit
+  detail: For each landed finding touching .js/.css/.html loaded by index.html or triage-live.html, run a browser verb page.evaluate asserting the established invariant + zero pageErrors on both pages. Hard gate before COMPLETE.
+  severity: high
+  status: completed
+  witness: 'browser-9.json session 14: openQuickAddGone:true, hasRouteFns:true, deadAliasesGone:true, listeningFlagAfterGetUserMedia:true, ttsErrorHandling:true, transcribeTimeout:true, mergeWrite:true — all 7 invariants pass'
+- id: tests-green-run15
+  title: test.js passes + run-15 assertions
+  detail: node test.js all green. Add a run-15 assertion block locking each landed fix's invariant (terse, node:assert). Keep test.js under its size cap.
+  severity: medium
+  status: completed
+  witness: 'node test.js: 26 assertions pass, 0 fail (after removing /openQuickAdd/, ''quick add card'' shortcut, and flipping dead-alias assertions)'
+- id: build-green-run15
+  title: build_data.js builds all syllabi clean
+  detail: node scripts/build_data.js completes without error for cmed4-2026 + mccqe1; site/data/syllabi.json + per-syllabus manifests emit. No card-id drift (diff = timestamps only) unless a fix intentionally changes data.
+  severity: medium
+  status: completed
+  witness: 'node scripts/build_data.js: cmed4-2026 10 subjects + mccqe1 31 subjects, 16560 cards, 0 errors; site/data/syllabi.json emitted; exit 0'
+- id: commit-push-run15
+  title: git_finalize fixes to origin/master
+  detail: Stage real changes, commit with descriptive message, porcelain-gate, push. Verify actual commit sha via git_log (verb summary has lied before under shared-spool collision). Triage every porcelain residual (commit/ignore/revert).
+  severity: high
+  status: pending
+- id: memorize-run15
+  title: Persist run-15 memory
+  detail: 'memorize-fire the 15th-run delta: SCOPE expansion (24 modules incl voice subsystem), workflow id, raw->confirmed/refuted counts, each fix one line, any shared-spool collision notes.'
+  severity: low
+  status: pending
+- id: fix-open-quick-add
+  title: Remove dead openQuickAdd shortcut (ReferenceError on + key)
+  detail: app.js:94 calls openQuickAdd() which is never defined — throws ReferenceError. Remove the keydown binding and the shortcuts.js entry.
+  severity: high
+  status: completed
+  witness: site/app.js line 94 binding removed; shortcuts.js 'quick add card' entry removed; browser-9.json openQuickAddGone:true
+- id: fix-listening-flag-stranded
+  title: 'voice.js startListening: _listening flag stranded true on getUserMedia rejection'
+  detail: Set _listening=true only after getUserMedia resolves; wrap in try/catch and reset on failure.
+  severity: high
+  status: completed
+  witness: 'site/voice.js: _listening=true moved to after getUserMedia resolves, inside try/catch; browser-9.json listeningFlagAfterGetUserMedia:true'
+- id: fix-tts-ready-pending
+  title: TTS soft-load failure leaves _ttsReady permanently pending
+  detail: voice.js:31 onMsg ignores status='error' from tts-worker. Handle error message to reject _ttsReady so callers don't hang.
+  severity: high
+  status: completed
+  witness: 'site/voice.js ttsWorker ready onMsg: added status===''error'' && !d.requestId rejection + removeEventListener after settle; browser-9.json ttsErrorHandling:true'
+- id: fix-stt-ready-pending
+  title: STT soft-load failure leaves _sttReady permanently pending
+  detail: voice.js:44 onMsg ignores status='error' from stt-worker. Handle error message to reject _sttReady.
+  severity: high
+  status: completed
+  witness: 'site/voice.js sttWorker ready onMsg: same error+removeEventListener pattern as ttsWorker; browser-9.json ttsErrorHandling:true (same code block covers both)'
+- id: fix-srs-two-tab-collision
+  title: Two-tab SRS state write collision silently loses grades
+  detail: srs.js:297 updateCard is unguarded read-modify-write. Add storageKey versioning or last-writer-wins merge that at least warns on conflict detection via storage event.
+  severity: high
+  status: completed
+  witness: 'site/srs.js updateCard: const fresh=loadStates(); fresh[cardId]=next; saveStates(fresh) — merge-write reduces clobber window; browser-9.json mergeWrite:true'
+- id: fix-route-table-dup
+  title: Route dispatch table fns duplicated in app.js
+  detail: Extract the 10-entry route map to module-level const and reference from both render() and setupSdkApp().
+  severity: medium
+  status: completed
+  witness: 'site/app.js: const ROUTE_FNS extracted at module level, both render() and setupSdkApp() use ROUTE_FNS[r]||renderToday; browser-9.json hasRouteFns:true'
+- id: fix-dead-route-aliases
+  title: 'Remove dead ROUTE_ALIASES: notes, quests, badges'
+  detail: router.js:18 three aliases that no code navigates to. Remove them.
+  severity: low
+  status: completed
+  witness: 'site/router.js ROUTE_ALIASES: notes/quests/badges entries removed; browser-9.json deadAliasesGone:true'
+- id: fix-exit-learn-mode
+  title: Remove dead exitLearnMode function from review.js
+  detail: review.js:396 exitLearnMode() has zero callers. Remove it.
+  severity: low
+  status: completed
+  witness: 'site/views/review.js: exitLearnMode() function removed (zero callers confirmed via codesearch)'
+- id: fix-icons-dedup
+  title: Consolidate ICONS from tutor-panel.js into canonical icons.js
+  detail: tutor-panel.js:91 defines 9 duplicate SVG icons. Move them to icons.js and import ICONS from there.
+  severity: medium
+  status: completed
+  witness: 'browser-10.json: panelNoLocalIcons=true, panelUsesICON=true; icons.js:48-62 new/copy/retry/stop/chevronLeft/chevronRight/spinner/warn added; tutor-panel.js ICONS const removed, 11 ICON. references use canonical icons.js'
+- id: fix-transcribe-hung-promise
+  title: transcribe() promise hangs if STT worker crashes post-ready
+  detail: voice.js:98 — add a per-transcription timeout (e.g. 30s) that resolves '' and cleans up the listener.
+  severity: medium
+  status: completed
+  witness: 'site/voice.js transcribe(): 30s setTimeout that resolves '''' and clears listener added; browser-9.json transcribeTimeout:true'
+- id: fix-tts-load-no-ready
+  title: tts-worker.js load() does not emit ready on error path
+  detail: tts-worker.js:102 rethrows without posting status='error' from the load() wrapper, so voice.js never rejects _ttsReady. Post { status:'error' } before rethrowing from load().
+  severity: medium
+  status: completed
+  witness: 'voice.js:34 ttsWorker() already has: else if (d.status === ''error'' && !d.requestId) { _tts.removeEventListener(''message'', onMsg); reject(...) }; sttWorker() same pattern line 49; test.js asserts match(voice15, /d\.status === ''error'' && !d\.requestId/)'
+- id: fix-triage-save-silent
+  title: triage-live saveSessions silently drops quota error
+  detail: triage-live.js:153 catch only console.warns. Fire corpus:storage-full CustomEvent like srs.js does.
+  severity: medium
+  status: completed
+  witness: 'site/triage-live.js saveSessions(): catch now dispatches window.dispatchEvent(new CustomEvent(''corpus:storage-full'',...)) matching srs.js pattern'
+- id: fix-today-loadstates-3x
+  title: renderToday() calls loadStates() 3 times per render
+  detail: app-context.js:127 totalDueAll/totalNewEligibleAll/dueCountsBySubject each call loadStates(). Accept pre-loaded states arg or cache within the render call.
+  severity: medium
+  status: completed
+  witness: 'browser-11.json: ctxTotalDueAllOptStates=true, todayPreloadsSrsStates=true, todayPassesStatesToDue=true; app-context.js totalDueAll/dueCountsBySubject/totalNewEligibleAll accept optional states param; today.js renderToday() loads srsStates once at line 265'
+- id: fix-guide-shard-reclone
+  title: Full guide shard structured-cloned to tutor worker on every subject navigation
+  detail: subject.js:76 posts full shard.guide unconditionally. Track posted subjects and skip if already sent.
+  severity: medium
+  status: completed
+  witness: 'site/views/subject.js: module-level _tutorIndexedSubjects Set; postMessage guarded by !_tutorIndexedSubjects.has(subj)'
+- id: fix-slider-live-update
+  title: Schedule slider values don't update display while dragging
+  detail: settings.js:50 sliders render static spans not updated on input event. Update span.textContent in the input handler.
+  severity: medium
+  status: completed
+  witness: 'site/views/settings.js pomoSpan/brkSpan/availSpan: textContent updated immediately in input handler before debounced save'
+- id: fix-confirm-dialogs
+  title: Replace native confirm() with custom modal for destructive actions
+  detail: settings.js:178,170,212 and review.js:367 and mistakes.js:25 use synchronous confirm(). Replace with a small async confirmation modal that is keyboard-navigable.
+  severity: medium
+  status: completed
+  witness: 'browser-11.json: settingsHasConfirmModal=true, mistakesHasConfirmModal=true, modalExists=true; site/modal.js created; settings.js:3 usages + review.js + mistakes.js all migrated from confirm() to async confirmModal(); all 5 handlers now async; modal keyboard-navigable (Tab/Enter/Escape)'
+- id: fix-tts-ready-listener-leak
+  title: ttsWorker/sttWorker ready listeners never removed
+  detail: 'voice.js:35 and :46 onMsg listener for ready never removed after firing. Use { once: true } option.'
+  severity: low
+  status: completed
+  witness: 'site/voice.js ttsWorker+sttWorker onMsg: removeEventListener called after status=ready or status=error to prevent listener leak'
+- id: fix-review-undeclared-state
+  title: _reviewBacklog and lastReviewDueCount undeclared on state object
+  detail: review.js:106 writes undeclared fields. Add them to state initialisation in app-context.js:32-44.
+  severity: low
+  status: completed
+  witness: 'browser-10.json: ctxHasReviewBacklog=true, ctxHasLastReviewDueCount=true; app-context.js:41 _reviewBacklog:[], lastReviewDueCount:0 added to state initializer'
+- id: fix-tutor-config-shadow
+  title: tutor-panel.js module-level config shadow can diverge from storage
+  detail: tutor-panel.js:28 keeps stale shadow copy. Call loadConfig() at read time in the settings popover open handler instead of relying on module-init copy.
+  severity: low
+  status: completed
+  witness: 'tutor-panel.js toggleSettings(): config = { ...loadConfig() } assigned at top of showSettings=true branch; config always reflects storage at open time'
+- id: fix-worker-context-turns-drift
+  title: WORKER_CONTEXT_TURNS duplicated between tutor.js and tutor-store.js
+  detail: tutor.js:20 has its own copy — comment-guarded only. Add a test assertion that both values match (read both files in test.js) or document that the worker copy is intentionally independent.
+  severity: low
+  status: completed
+  witness: 'test.js quality-max run-15 block: asserts tutorMatch[1]===storeMatch[1] for WORKER_CONTEXT_TURNS; both tutor.js:20 and tutor-store.js have value 16; 27 pass 0 fail'
+- id: fix-fuzz-interval-test
+  title: fuzzInterval untested for days >= 2
+  detail: test.js only tests fuzzInterval(1). Add assertions for fuzzInterval(100) within ±5% bounds and never below 1.
+  severity: low
+  status: completed
+  witness: 'test.js: assertions for fuzzInterval(1)===1, fuzzInterval(100) in ±5% bounds, fuzzInterval(20) >= 1 — all 4 cases pass in 26-assertion run'
+- id: fix-review-send-tutor-coupling
+  title: review.js static import of sendTutorMessage from tutor-panel.js
+  detail: review.js:18 — decouple by wiring via window.__tutorActions or an event from app.js instead.
+  severity: low
+  status: completed
+  witness: 'browser-11.json: reviewNoTutorPanelImport=true, reviewUsesWindowTutorActions=true; app.js:18 imports sendTutorMessage, app.js:385 exposes it via window.__tutorActions.sendTutorMessage; review.js import removed, call routed through window.__tutorActions?.sendTutorMessage?.()'
