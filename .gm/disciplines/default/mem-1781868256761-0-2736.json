@@ -1,0 +1,27 @@
+## Corpus quality-max 17th run (2026-06-19, commit 224de20)
+
+User re-issued loop '/gm-skill maximize quality'. Workflow ALREADY EXISTED (.claude/workflows/quality-max.js, 12 lenses). RAN it (NOT rebuild): wf run-17, 23 PRD rows, 21 confirmed / 2 refuted.
+
+FIXES LANDED (browser-witnessed session 2, 29 tests pass):
+1. fix-unsafe-html-rename: `html:` -> `unsafeHtml:` in el()/ce() across app-context.js, triage-live.js, review.js, today.js, subject.js — XSS misuse now structurally visible at call sites
+2. fix-storage-full-banner: showStorageFullBanner was private in review.js but called from app.js:404 via corpus:storage-full event — exported + imported
+3. fix-cardbyid-o-n2: O(n^2) allCards.find inside sectionFilter pool.filter — hoisted cardById map before both filter blocks
+4. fix-clear-sticky-reviewtagfilter: clearStickyFilters() didn't clear reviewTagFilter — added state.reviewTagFilter = new Set()
+5. fix-triple-loadstates-today: renderScheduleChecklist called dueCountsBySubject() without states (triggers loadStates), then loadStates() again — hoisted states0 once, reused
+6. fix-tts-poison-promise: pumpSynth catch resets _tts=null/_ttsReady=null so a rejected TTS init doesn't poison forever
+7. fix-stt-timeout-silent: 30s STT timeout was resolve('') silently — changed to reject(new Error('transcription timed out'))
+8. fix-negative-floor-newcards: bump() in newcards.js could store negatives on undo — Math.max(0,...)
+9. fix-negative-floor-progress: bumpGraded() in progress.js could store negatives — Math.max(0,...)
+10. fix-syllabus-empty-id-guard: setActiveSyllabus('') would persist empty string — added throw on falsy id
+11. fix-mic-keyboard-accessibility: mic button had no keyboard Space handler — added keydown/keyup for Space key
+12. fix-tutor-placeholder: generic 'Ask me anything...' -> 'Ask your study coach...'
+13. fix-subject-duplicate-loadstates: subject.js line 81 called srs.loadStates() again when states already loaded at line 21 — reused
+14. fix-dead-online-status: updateOnlineStatus function + 3 event listeners in app.js did nothing visible — removed
+15. fix-today-dead-reexport: today.js had dead `export { renderCramBanner } from cram-banner.js` — removed
+16. fix-agents-md-kv-cache-inversion: AGENTS.md said KV cache MUST be reset but actually per-generate, no double-count — corrected
+17. Compressor partial-pressure tests added to test.js
+18. REFUTED: fix-async-view-stage-loss (stageProxy wraps real persistent DOM), fix-session-overview-dead-handler (has active epoch guard)
+
+BROWSER WITNESS: session 2, http://localhost:8765/, unsafeHtml rename verified ({usesUnsafeHtml:true, oldHtmlIsAttribute:true})
+TESTS: 29 pass, 0 fail
+COMMIT: 224de20 pushed to master
