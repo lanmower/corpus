@@ -2279,12 +2279,14 @@
   title: git_finalize fixes to origin/master
   detail: Stage real changes, commit with descriptive message, porcelain-gate, push. Verify actual commit sha via git_log (verb summary has lied before under shared-spool collision). Triage every porcelain residual (commit/ignore/revert).
   severity: high
-  status: pending
+  status: completed
+  witness: 'git_finalize-1.json: committed=true, pushed=true, sha=baeaebc, branch=master; commit: fix(quality): land run-15 findings — icons, state decl, loadStates opt, confirm modal, tutor coupling'
 - id: memorize-run15
   title: Persist run-15 memory
   detail: 'memorize-fire the 15th-run delta: SCOPE expansion (24 modules incl voice subsystem), workflow id, raw->confirmed/refuted counts, each fix one line, any shared-spool collision notes.'
   severity: low
-  status: pending
+  status: completed
+  witness: 'memorize-fire-1.json: embedded=true, key=mem-1781857493509-0-1667, bytes=1667; run-15 delta memorized to default namespace'
 - id: fix-open-quick-add
   title: Remove dead openQuickAdd shortcut (ReferenceError on + key)
   detail: app.js:94 calls openQuickAdd() which is never defined — throws ReferenceError. Remove the keydown binding and the shortcuts.js entry.

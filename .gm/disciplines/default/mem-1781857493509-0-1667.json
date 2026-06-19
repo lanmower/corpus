@@ -1,0 +1,17 @@
+## Corpus quality-max 15th run (2026-06-19, commit baeaebc)
+
+User re-issued loop '/gm-skill maximize quality'. Workflow ALREADY EXISTED (.claude/workflows/quality-max.js, 12 lenses). RAN it (NOT rebuild): wf_wqki95j5a, 28 confirmed / 4 refuted.
+
+FIXES LANDED (all browser-witnessed, 27 tests pass):
+1. fix-icons-dedup: 9 local SVGs in tutor-panel.js consolidated into site/icons.js; 11 ICONS.->ICON. refs; gear key for settings
+2. fix-review-undeclared-state: _reviewBacklog:[], lastReviewDueCount:0 added to state in app-context.js
+3. fix-tutor-config-shadow: toggleSettings() now calls loadConfig() on open; stale shadow gone
+4. fix-worker-context-turns-drift: test.js asserts WORKER_CONTEXT_TURNS matches tutor.js==tutor-store.js (both 16)
+5. fix-tts-load-no-ready: voice.js already had status='error' && !requestId reject + removeEventListener — verified
+6. fix-today-loadstates-3x: totalDueAll/dueCountsBySubject/totalNewEligibleAll accept optional states param; renderToday() pre-loads srsStates once (3x->1x)
+7. fix-confirm-dialogs: site/modal.js created with confirmModal() (keyboard-nav: Tab/Enter/Escape); 5 native confirm() calls migrated (settings.js x3, review.js, mistakes.js)
+8. fix-review-send-tutor-coupling: review.js static import of tutor-panel.js removed; sendTutorMessage exposed via window.__tutorActions.sendTutorMessage from app.js
+
+REFUTED: fix-tutor-context-truncation, fix-calendar-cell-overlap, fix-drill-empty-state, fix-stt-transcript-clobber (no real issues found)
+
+Scope: 24 modules including voice subsystem. Build clean (16560 mccqe1 + cmed4-2026 cards). 27 tests pass. Browser-witnessed all edits via session 14 (localhost:9222).
