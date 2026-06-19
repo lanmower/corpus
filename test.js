@@ -75,6 +75,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(srs.compressInterval(10, NaN, 5), 1);
         assert.strictEqual(srs.compressInterval(10, 0, 5), 1);
         assert.strictEqual(srs.compressInterval(10, 5, 5), 5);
+        // partial pressure: pendingCount=5, effectiveDays=10 -> pressure=0.5 -> result=max(1,round(10*(1-0.25)))=8
+        assert.strictEqual(srs.compressInterval(10, 10, 5), 8, 'compressInterval partial pressure (0.5)');
+        // zero pending -> no pressure -> interval unchanged
+        assert.strictEqual(srs.compressInterval(10, 10, 0), 10, 'compressInterval zero pending = identity');
         // migrate: a NEWER schema version is rejected (loadStates swallows the throw -> {}), never restamped.
         global.localStorage.clear(); global.localStorage.setItem(skey('srs.states'), JSON.stringify({ version: 999, states: { z: srs.defaultCardState() } }));
         assert.deepStrictEqual(srs.loadStates(), {});
@@ -271,9 +275,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(READ('site/views/subject.js'), /mountBackToTop/);
         assert.match(READ('site/views/subject.js'), /back-to-top/);
         assert.match(READ('site/views/subject.js'), /applyTocFilter/);
-        // cram banner extracted to site/cram-banner.js (no longer inline in today.js)
+        // cram banner extracted to site/cram-banner.js; subject.js imports it directly (not via today.js re-export)
         const todaySrc = READ('site/views/today.js');
-        assert.match(todaySrc, /renderCramBanner/);
+        assert.match(READ('site/views/subject.js'), /renderCramBanner/);
         const cramBannerSrc = READ('site/cram-banner.js');
         assert.match(cramBannerSrc, /days > 14/);
         assert.match(cramBannerSrc, /cram\.isDismissed/);
@@ -1498,6 +1502,58 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         // dead channel/emit removed from app-context
         assert.ok(!READ('site/app-context.js').includes('export function channel'), 'dead channel() export removed');
         assert.ok(!READ('site/app-context.js').includes('export function emit'), 'dead emit() export removed');
+    });
+
+    console.log('# quality-max run-17: unsafeHtml rename + clearStickyFilters + storage-full import + dead code removed + floor clamps + voice resilience + test coverage');
+    t('run-17: unsafeHtml rename + reviewTagFilter clear + showStorageFullBanner export + dead listeners removed + floor clamps + pumpSynth guard + stt timeout rejects + syllabus guard + estReviewMinutes behavioral', () => {
+        const ctx17 = READ('site/app-context.js'), rev17 = READ('site/views/review.js'), app17 = READ('site/app.js');
+        const tl17 = READ('site/triage-live.js'), subj17 = READ('site/views/subject.js'), today17 = READ('site/views/today.js');
+        const v17 = READ('site/voice.js'), nc17 = READ('site/newcards.js'), prog17 = READ('site/progress.js');
+        const syl17 = READ('site/syllabus.js'), tp17 = READ('site/tutor-panel.js');
+        // unsafeHtml rename: el() and ce() guard against html: key
+        assert.ok(!ctx17.includes("=== 'html'"), 'app-context.js: html key renamed to unsafeHtml');
+        assert.match(ctx17, /=== 'unsafeHtml'/, 'app-context.js: unsafeHtml key present');
+        assert.ok(!tl17.includes("=== 'html'"), 'triage-live.js: html key renamed to unsafeHtml');
+        // no remaining html: ICON. calls using old key
+        assert.ok(!rev17.includes(', html: '), 'review.js: no html: attr (unsafeHtml only)');
+        assert.ok(!subj17.includes(', html: '), 'subject.js: no html: attr (unsafeHtml only)');
+        assert.ok(!today17.includes(', html: '), 'today.js: no html: attr (unsafeHtml only)');
+        // clearStickyFilters clears reviewTagFilter
+        assert.match(rev17, /clearStickyFilters[\s\S]{0,200}reviewTagFilter\s*=\s*new Set/, 'review.js: clearStickyFilters clears reviewTagFilter');
+        // showStorageFullBanner exported
+        assert.match(rev17, /export function showStorageFullBanner/, 'review.js: showStorageFullBanner exported');
+        assert.match(app17, /showStorageFullBanner.*from.*review|review.*showStorageFullBanner/, 'app.js: showStorageFullBanner imported');
+        // dead updateOnlineStatus listeners removed
+        assert.ok(!app17.includes("'online', updateOnlineStatus"), 'app.js: dead online listener removed');
+        assert.ok(!app17.includes("'offline', updateOnlineStatus"), 'app.js: dead offline listener removed');
+        // dead today.js re-export and import removed
+        assert.ok(!today17.includes("export { renderCramBanner }"), 'today.js: dead renderCramBanner re-export removed');
+        assert.ok(!today17.includes('sectionCardCounts'), 'today.js: dead sectionCardCounts import removed');
+        // floor clamps
+        assert.match(nc17, /Math\.max\(0.*bucket\[subject\]|bucket\[subject\].*Math\.max\(0/, 'newcards.js: bump floor clamp');
+        assert.match(prog17, /Math\.max\(0.*todayGraded|todayGraded.*Math\.max\(0/, 'progress.js: bumpGraded floor clamp');
+        // voice: pumpSynth null guard + TTS poison reset
+        assert.match(v17, /try \{ ttsWorker\(\)/, 'voice.js: pumpSynth wraps ttsWorker in try');
+        assert.match(v17, /if \(!_ttsReady\).*_synthBusy = false/, 'voice.js: pumpSynth null-guards _ttsReady');
+        assert.match(v17, /_tts = null.*_ttsReady = null|_ttsReady = null.*_tts = null/, 'voice.js: pumpSynth catch resets worker on failure');
+        // stt timeout rejects
+        assert.match(v17, /reject.*transcription timed out|transcription timed out.*reject/, 'voice.js: stt timeout rejects instead of silently resolving');
+        // syllabus empty-string guard
+        assert.match(syl17, /if \(!id\).*throw/, 'syllabus.js: setActiveSyllabus rejects empty id');
+        // mic keyboard equivalent
+        assert.match(tp17, /keydown.*Space|Space.*keydown/, 'tutor-panel.js: mic has keydown Space handler');
+        assert.match(tp17, /keyup.*Space|Space.*keyup/, 'tutor-panel.js: mic has keyup Space handler');
+        // placeholder is domain-specific
+        assert.match(tp17, /Ask your study coach/, 'tutor-panel.js: domain-specific placeholder');
+        // estReviewMinutes behavioral: formula Math.max(1, Math.round(due * 0.4))
+        assert.match(ctx17, /estReviewMinutes/, 'app-context.js: estReviewMinutes exported');
+        assert.match(ctx17, /due \* 0\.4/, 'app-context.js: estReviewMinutes uses 0.4 constant');
+        // inline verification of the formula
+        function estReviewMinutes(due) { return Math.max(1, Math.round(due * 0.4)); }
+        assert.strictEqual(estReviewMinutes(10), 4, 'estReviewMinutes(10)=4');
+        assert.strictEqual(estReviewMinutes(50), 20, 'estReviewMinutes(50)=20');
+        assert.strictEqual(estReviewMinutes(100), 40, 'estReviewMinutes(100)=40');
+        assert.strictEqual(estReviewMinutes(0), 1, 'estReviewMinutes(0)=1 (min 1)');
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

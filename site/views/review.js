@@ -52,9 +52,9 @@ export async function renderReview() {
     if (!state.reviewQueueIds || state.reviewQueueIds.length === 0) {
         const states = srs.loadStates();
         let pool = cardIds;
+        const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
         if (state.paletteReviewSet && state.paletteReviewSet.length) pool = pool.filter(id => state.paletteReviewSet.includes(id));
         if (state.reviewTagFilter.size > 0) {
-            const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
             pool = pool.filter(id => {
                 const tags = cardById[id]?.tags || [];
                 for (const t of tags) if (state.reviewTagFilter.has(t)) return true;
@@ -64,11 +64,10 @@ export async function renderReview() {
         // Section filter - show only cards from a specific section
         if (state.sectionFilter) {
             pool = pool.filter(id => {
-                const card = allCards.find(c => c.id === id);
+                const card = cardById[id];
                 return card && String(card.requires?.sectionLine) === String(state.sectionFilter);
             });
         }
-        const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
         const ticksAll = loadGuideTicks();
         let dueIds;
         if (state.learnMode) {
@@ -307,7 +306,7 @@ const card = state.reviewQueue[state.reviewIndex];
             DEBUG ? el('span', {}, `EF ${cardState.easeFactor.toFixed(2)} · ${cardState.phase} · ${cardState.interval}d`) : null
         ),
         el('div', { class: 'front' }, card.front),
-        el('div', { class: 'back markdown', html: renderMarkdown(card.back || '') }),
+        el('div', { class: 'back markdown', unsafeHtml: renderMarkdown(card.back || '') }),
         DEBUG ? el('div', { class: 'card-source' }, `source: ${card.source || card.sourceFile || ''}`) : null,
         card.tags && card.tags.length ? el('div', { class: 'tags' }, ...card.tags.slice(0, 6).map(t => el('span', { class: 'tag' }, t))) : null
     );
@@ -391,6 +390,7 @@ export function resetReviewQueue() {
 function clearStickyFilters() {
     state.paletteReviewSet = null;
     state.sectionFilter = null;
+    state.reviewTagFilter = new Set();
 }
 
 export function skipReview() {
@@ -481,7 +481,7 @@ function collectReviewTags(allCards) {
 
 
 
-function showStorageFullBanner() {
+export function showStorageFullBanner() {
     if (document.getElementById('storage-full-banner')) return;
     const b = el('div', { id: 'storage-full-banner', class: 'storage-full-banner', role: 'alert' },
         el('span', {}, 'browser storage full. export, then reset to free space.'),

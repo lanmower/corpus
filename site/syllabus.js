@@ -34,6 +34,7 @@ export function getActiveSyllabus() {
 }
 
 export function setActiveSyllabus(id) {
+    if (!id) throw new Error('syllabus id must be non-empty');
     try { localStorage.setItem(ACTIVE_KEY, id); } catch {}
     _active = id;
 }

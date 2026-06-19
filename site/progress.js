@@ -76,7 +76,7 @@ export function rollStreak(p, now = effectiveDateISO()) {
 export function bumpGraded(n = 1, subject = null) {
     const p = load();
     rollStreak(p);
-    p.todayGraded = (p.todayGraded || 0) + n;
+    p.todayGraded = Math.max(0, (p.todayGraded || 0) + n);
     p.lastReviewedAt = Date.now();
     if (subject) {
         p.gradedBySubject = p.gradedBySubject || {};

@@ -231,6 +231,8 @@ function mountVoiceBar(root) {
     mic.addEventListener('pointerdown', startMic);
     mic.addEventListener('pointerup', stopMic);
     mic.addEventListener('pointercancel', stopMic);
+    mic.addEventListener('keydown', e => { if (e.code === 'Space' || e.key === ' ') { e.preventDefault(); startMic(e); } });
+    mic.addEventListener('keyup', e => { if (e.code === 'Space' || e.key === ' ') { e.preventDefault(); stopMic(e); } });
 
     const spk = document.createElement('button');
     spk.type = 'button';
@@ -331,7 +333,7 @@ function renderSdkChat() {
         // is ready, so the input would look frozen. The placeholder explains why.
         const loading = modelStatus === 'loading' || modelStatus === 'downloading';
         const composer = C.ChatComposer({
-            placeholder: isThinking ? 'Coach is thinking…' : (loading ? 'Starting the coach…' : 'Ask me anything…'),
+            placeholder: isThinking ? 'Coach is thinking…' : (loading ? 'Starting the coach…' : 'Ask your study coach…'),
             onSend: (text) => sendTutorMessage(text),
             disabled: isThinking || loading
         });

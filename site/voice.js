@@ -110,7 +110,7 @@ function transcribe(audio) {
     if (!_sttReady) return Promise.reject(new Error('microphone unavailable'));
     return _sttReady.then(() => new Promise((resolve) => {
         const id = 'stt-' + (++_reqSeq);
-        const timer = setTimeout(() => { _stt.removeEventListener('message', onMsg); resolve(''); }, 30000);
+        const timer = setTimeout(() => { _stt.removeEventListener('message', onMsg); reject(new Error('transcription timed out')); }, 30000);
         const onMsg = (e) => {
             const d = e.data || {};
             if (d.requestId === id && (d.status === 'transcript' || d.status === 'error')) {
@@ -174,7 +174,8 @@ function pumpSynth() {
     const job = _synthQueue.shift();
     if (!job) return;
     _synthBusy = true;
-    ttsWorker();
+    try { ttsWorker(); } catch { _synthBusy = false; return; }
+    if (!_ttsReady) { _synthBusy = false; return; }
     _ttsReady.then(() => {
         if (job.epoch !== _playEpoch) { _synthBusy = false; pumpSynth(); return; } // cancelled
         const id = 'tts-' + (++_reqSeq);
@@ -190,7 +191,7 @@ function pumpSynth() {
         };
         _tts.addEventListener('message', onMsg);
         _tts.postMessage({ type: 'speak', text: job.text, voice: _voice, requestId: id });
-    }).catch(() => { _synthBusy = false; });
+    }).catch(() => { _tts = null; _ttsReady = null; _synthBusy = false; });
 }
 
 function schedulePcm(pcm, sr) {

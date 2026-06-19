@@ -1,7 +1,7 @@
 // views/today.js — the home/today route: primary action (review/learn), next-reading
 // card, compact stats + progress, per-subject due breakdown, the daily tutor check-in
 // trigger, and (under ?debug) sparkline/mastery-ring/schedule-checklist panels.
-import { getStage, el, icon, iconLabel, state, loadGuideTicks, saveGuideTicks, dueCountsBySubject, casesDoneBySubject, totalDueAll, totalNewEligibleAll, totalCasesQueued, estReviewMinutes, todayPlanReviewTarget, sectionCardCounts, masteryFor, slugify, warn } from '../app-context.js';
+import { getStage, el, icon, iconLabel, state, loadGuideTicks, saveGuideTicks, dueCountsBySubject, casesDoneBySubject, totalDueAll, totalNewEligibleAll, totalCasesQueued, estReviewMinutes, todayPlanReviewTarget, masteryFor, slugify, warn } from '../app-context.js';
 import { go, render } from '../router.js';
 import { resetReviewQueue } from './review.js';
 import * as srs from '../srs.js';
@@ -15,7 +15,6 @@ import { buildRows } from '../verdicts.js';
 import { localDayISO } from '../dates.js';
 import { ICON } from '../icons.js';
 import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn, todayStamp as localDateStamp } from '../tutor-store.js';
-export { renderCramBanner } from '../cram-banner.js';
 
 // ---- soft resume line ----
 function renderResumeLine() {
@@ -420,12 +419,12 @@ function renderScheduleChecklist(rows, ticksAll) {
     if (!state.manifest) return null;
     if (!ticksAll) ticksAll = loadGuideTicks();
     const today = schedule.isoDate(new Date());
-    const dueCounts = dueCountsBySubject();
+    const states0 = srs.loadStates();
+    const dueCounts = dueCountsBySubject(states0);
     const casesDone = casesDoneBySubject();
     // Regenerate plan with current eligibility-gated due counts and tick state.
     // Eligibility changes (ticking sections, introducing cards) shift what should be planned.
     const dueCountsForPlan = {};
-    const states0 = srs.loadStates();
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject];
         dueCountsForPlan[meta.subject] = sh ? srs.getDueCards(sh.cards.map(c => c.id), states0).length : 0;
@@ -498,7 +497,7 @@ function renderScheduleChecklist(rows, ticksAll) {
         }
         for (const it of items) {
             const row = el('div', { class: `checklist-row${it.done ? ' done' : ''} kind-${it.kind}` },
-                el('span', { class: 'check', html: it.done ? ICON.check : ICON.circle }),
+                el('span', { class: 'check', unsafeHtml: it.done ? ICON.check : ICON.circle }),
                 it.href
                     ? el('a', { href: it.href, class: 'cl-label' }, it.label)
                     : el('a', { href: '#', class: 'cl-label', on: { click: e => { e.preventDefault(); it.click && it.click(); } } }, it.label)

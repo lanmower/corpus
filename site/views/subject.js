@@ -78,7 +78,7 @@ export async function renderSubject() {
         state.tutorWorker.postMessage({ cmd: 'load-guide-shard', shard: { subject: subj, guide: shard.guide } });
     }
 
-    const due = srs.getDueCards(shard.cards.map(c => c.id), srs.loadStates()).length;
+    const due = srs.getDueCards(shard.cards.map(c => c.id), states).length;
     const ticks = loadGuideTicks()[subj] || {};
     const masteryData = mastery.subjectProgress(state.manifest, state.shards, subj);
     const m = masteryData.weighted;
@@ -517,9 +517,9 @@ function openInfographicLightbox(items, startIdx) {
     if (existing) existing.remove();
     const imgEl = el('img', { class: 'lightbox-img', src: items[idx].src, alt: items[idx].alt });
     const caption = el('div', { class: 'lightbox-caption' }, items[idx].title);
-    const close = el('button', { class: 'lightbox-close', type: 'button', 'aria-label': 'close', html: ICON.close });
-    const prev = el('button', { class: 'lightbox-prev', type: 'button', 'aria-label': 'previous', html: ICON.arrowLeft });
-    const next = el('button', { class: 'lightbox-next', type: 'button', 'aria-label': 'next', html: ICON.arrowRight });
+    const close = el('button', { class: 'lightbox-close', type: 'button', 'aria-label': 'close', unsafeHtml: ICON.close });
+    const prev = el('button', { class: 'lightbox-prev', type: 'button', 'aria-label': 'previous', unsafeHtml: ICON.arrowLeft });
+    const next = el('button', { class: 'lightbox-next', type: 'button', 'aria-label': 'next', unsafeHtml: ICON.arrowRight });
     const lbStage = el('div', { class: 'lightbox-stage' }, imgEl, caption);
     const overlay = el('div', { id: 'infographic-lightbox', class: 'lightbox-overlay', role: 'dialog', 'aria-modal': 'true' }, close, prev, lbStage, next);
     function show(i) {

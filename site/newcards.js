@@ -39,7 +39,7 @@ export function bump(subject, n = 1, now = new Date()) {
     const day = todayISO(now);
     const o = readCounts();
     const bucket = (o[day] = o[day] || {});
-    bucket[subject] = (bucket[subject] || 0) + n;
+    bucket[subject] = Math.max(0, (bucket[subject] || 0) + n);
     // keep last 14 days for compactness
     const days = Object.keys(o).sort();
     while (days.length > 14) { delete o[days.shift()]; }

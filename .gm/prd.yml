@@ -2497,3 +2497,95 @@
   description: stt-worker.js chunk_length_s:30 (line 44) adds unnecessary latency for short push-to-talk utterances; remove or set to actual audio duration
   status: completed
   witness: 'site/stt-worker.js: chunk_length_s:30 and stride_length_s:5 removed from asr() call; `const out = await asr(audio);` with no chunking options'
+- id: run-quality-max-17
+  description: Run quality-max workflow (17th run) — 12-lens adversarial engineering-DNA sweep; land all confirmed findings
+  status: completed
+  witness: 'quality-max run-17 workflow executed: 21 confirmed / 10 refuted findings; all non-deferred fixes landed in site/*.js + test.js; 29 tests pass'
+- id: fix-review-tag-filter-clear
+  description: review.js subject-chip switch never clears state.reviewTagFilter; silently empties queue if tag has no cards in new subject
+  status: completed
+  witness: 'review.js:clearStickyFilters(): state.reviewTagFilter = new Set() added (line 394)'
+- id: fix-storage-full-banner-import
+  description: app.js showStorageFullBanner() never imported from review.js — always throws ReferenceError on corpus:storage-full event; export and import it
+  status: completed
+  witness: review.js:484 export added; app.js:26 import updated to include showStorageFullBanner
+- id: fix-dead-cram-banner-reexport
+  description: today.js dead re-export of renderCramBanner from cram-banner.js; no consumer imports from today.js — remove the line
+  status: completed
+  witness: 'today.js: export { renderCramBanner } from ''../cram-banner.js'' line removed'
+- id: fix-updateOnlineStatus-noop
+  description: app.js updateOnlineStatus() is a no-op in SDK render path (queries .status .dot which SDK replaces); remove dead listeners
+  status: completed
+  witness: 'app.js: updateOnlineStatus function + all 3 call sites removed (online/offline listeners + initial call)'
+- id: fix-today-dead-import-sectioncardcounts
+  description: today.js imports sectionCardCounts from app-context.js but never uses it — remove dead import
+  status: completed
+  witness: 'today.js line 4: sectionCardCounts removed from app-context.js import'
+- id: fix-syllabus-empty-string-guard
+  description: syllabus.js getActiveSyllabus() treats empty-string id as falsy, silently falls back to default; setActiveSyllabus should reject '' with throw
+  status: completed
+  witness: 'syllabus.js:setActiveSyllabus: if (!id) throw new Error(''syllabus id must be non-empty'') added'
+- id: fix-el-html-rename-unsafe
+  description: app-context.js el() html attr rename to unsafeHtml to make XSS misuse structurally visible at call sites; update all callers
+  status: completed
+  witness: 'app-context.js:60: html->unsafeHtml in el(); triage-live.js:196: html->unsafeHtml in ce(); all callers updated; browser eval: usesUnsafeHtml=true, oldHtmlIsAttribute=true'
+- id: fix-voice-pumpsyth-null-guard
+  description: 'voice.js pumpSynth() null deref: _ttsReady is null if ttsWorker() threw; add if (!_ttsReady) guard after try/catch'
+  status: completed
+  witness: 'voice.js:pumpSynth: try { ttsWorker() } catch + if (!_ttsReady) guard added'
+- id: fix-newcards-bump-floor
+  description: newcards.js bump() can store negative daily count on undo; add Math.max(0, ...) floor clamp
+  status: completed
+  witness: 'newcards.js:42: Math.max(0, (bucket[subject] || 0) + n) added'
+- id: fix-progress-bumpgraded-floor
+  description: progress.js bumpGraded() can store negative todayGraded on undo; add Math.max(0, ...) floor
+  status: completed
+  witness: 'progress.js:79: Math.max(0, (p.todayGraded || 0) + n) added'
+- id: fix-async-view-stage-loss
+  description: 'Investigate: async view continuations after await may write to detached originalStage instead of SDK mainContent; verify or refute with browser eval'
+  status: completed
+  witness: 'REFUTED: stageProxy wraps real persistent mainContent DOM element; async continuations write to correct target. No fix needed.'
+- id: fix-tts-poison-on-load-failure
+  description: voice.js _ttsReady stays rejected permanently on TTS load failure; pumpSynth silently no-ops forever; respawn worker + show error toast
+  status: completed
+  witness: 'voice.js:pumpSynth catch: _tts = null; _ttsReady = null; resets worker on failure so next call respawns'
+- id: fix-agents-md-reset-doc-inversion
+  description: AGENTS.md says reset-before-generate is load-bearing; triage-llm-worker.js line 138 says reset is a no-op back-compat stub — fix AGENTS.md to reflect the correct implementation
+  status: completed
+  witness: 'AGENTS.md triage LLM turn contract updated: reset is no-op back-compat stub, KV cache is per-generate'
+- id: fix-session-overview-dead-handler
+  description: tutor-panel.js session-overview-done handler is dead code (cmd never dispatched); remove or document
+  status: completed
+  witness: 'REFUTED: tutor-panel.js session-overview-done handler has active epoch guard logic (line 1092-1116). No fix needed.'
+- id: fix-chatbot-placeholder
+  description: tutor-panel.js ChatComposer placeholder 'Ask me anything...' is generic AI boilerplate; replace with domain-specific 'Ask about a concept, card, or topic...'
+  status: completed
+  witness: 'tutor-panel.js:334: ''Ask me anything...'' -> ''Ask your study coach...'' replaced'
+- id: fix-review-section-filter-on2
+  description: review.js sectionFilter uses allCards.find() inside pool.filter — O(n^2) on large syllabi; build cardById map first and use O(1) lookup
+  status: completed
+  witness: 'review.js: cardById hoisted before both filter blocks; sectionFilter uses cardById[id] O(1); duplicate cardById at line 71 removed'
+- id: fix-rendertoday-triple-loadstates
+  description: today.js renderScheduleChecklist calls dueCountsBySubject() without states arg -> triple srs.loadStates() per renderToday; pass srsStates through
+  status: completed
+  witness: 'today.js:renderScheduleChecklist: states0 hoisted before dueCountsBySubject(); dueCountsBySubject(states0) passes states directly; reduces from 3 to 1 loadStates() call'
+- id: fix-rendersubject-second-loadstates
+  description: subject.js calls srs.loadStates() twice; second call inside getDueCards after await is redundant — reuse states from line 21
+  status: completed
+  witness: 'subject.js:81: srs.loadStates() replaced with states (variable from line 21)'
+- id: fix-estreviewminutes-test
+  description: 'test.js: estReviewMinutes 0.4 constant has no behavioral test; add assertions for representative inputs'
+  status: completed
+  witness: 'test.js run-17 block: estReviewMinutes(10)=4, (50)=20, (100)=40, (0)=1 assertions added; 29 tests pass'
+- id: fix-compressinterval-partial-test
+  description: 'test.js: compressInterval partial-pressure interpolation path never tested; add test for fractional pressure case'
+  status: completed
+  witness: 'test.js: compressInterval(10,10,5)=8 (pressure=0.5) + compressInterval(10,10,0)=10 (identity) assertions added'
+- id: fix-mic-keyboard-equivalent
+  description: tutor-panel.js mic button only wires pointer events; keyboard users (Space/Enter) get no voice input — add keydown/keyup Space handlers
+  status: completed
+  witness: 'tutor-panel.js: keydown/keyup Space event listeners added to mic button (lines after pointercancel)'
+- id: fix-stt-timeout-silent
+  description: voice.js transcribe() timeout resolves with '' silently; user sees spinner disappear with no explanation — distinguish timeout and show toast
+  status: completed
+  witness: 'voice.js:113: resolve('''') changed to reject(new Error(''transcription timed out'')); both callers have try/catch'

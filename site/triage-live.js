@@ -193,7 +193,7 @@ function ce(tag, attrs = {}, ...kids) {
         if (k === 'class') e.className = v;
         else if (k === 'on') for (const [n, h] of Object.entries(v)) e.addEventListener(n, h);
         else if (k === 'data') for (const [dk, dv] of Object.entries(v)) e.dataset[dk] = dv;
-        else if (k === 'html') e.innerHTML = v;
+        else if (k === 'unsafeHtml') e.innerHTML = v;
         else if (v != null) e.setAttribute(k, v);
     }
     for (const k of kids) {
@@ -493,7 +493,7 @@ function renderActive() {
     ];
     const checklistEl = ce('div', { class: 'checklist' },
         ...checklist.map(item => ce('div', { class: 'checklist-row' + ((counts[item.kind] || 0) >= item.target ? ' done' : '') },
-            ce('span', { class: 'tick', html: (counts[item.kind] || 0) >= item.target ? ICON.dot : ICON.diamond }),
+            ce('span', { class: 'tick', unsafeHtml: (counts[item.kind] || 0) >= item.target ? ICON.dot : ICON.diamond }),
             ce('span', {}, `${item.label}: ${counts[item.kind] || 0} / ${item.target}`)
         ))
     );
@@ -549,7 +549,7 @@ function renderScratchpad() {
             class: 'scratch-card' + (c.highlighted ? ' highlighted' : ''),
             data: { id: c.id, kind: c.kind }
         },
-            ce('button', { class: 'closer', on: { click: () => removeCard(c.id) }, 'aria-label': 'remove card', html: ICON.close }),
+            ce('button', { class: 'closer', on: { click: () => removeCard(c.id) }, 'aria-label': 'remove card', unsafeHtml: ICON.close }),
             ce('div', { class: 'kind' }, c.kind),
             ce('div', { class: 'title' }, c.title),
             ce('div', { class: 'body' }, c.body || '')

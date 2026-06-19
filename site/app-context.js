@@ -56,8 +56,8 @@ export function el(tag, attrs = {}, ...kids) {
         if (k === 'class') e.className = v;
         else if (k === 'on') for (const [ev, h] of Object.entries(v)) e.addEventListener(ev, h);
         else if (k === 'data') for (const [dk, dv] of Object.entries(v)) e.dataset[dk] = dv;
-        // html: trusted SVG/HTML only — never pass user or LLM text here (XSS)
-        else if (k === 'html') e.innerHTML = v;
+        // unsafeHtml: trusted SVG/HTML only — never pass user or LLM text here (XSS)
+        else if (k === 'unsafeHtml') e.innerHTML = v;
         else if (v != null) e.setAttribute(k, v);
     }
     for (const c of kids) {
@@ -68,7 +68,7 @@ export function el(tag, attrs = {}, ...kids) {
     return e;
 }
 // Render an icon as an inline element for el()/innerHTML contexts.
-export function icon(name, cls = 'i') { return el('span', { class: cls, html: ICON[name] || '' }); }
+export function icon(name, cls = 'i') { return el('span', { class: cls, unsafeHtml: ICON[name] || '' }); }
 // Icon + text label as a small inline cluster (replaces "glyph text" strings).
 export function iconLabel(name, text) { return el('span', { class: 'icon-label' }, icon(name), el('span', {}, text)); }
 

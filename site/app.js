@@ -23,7 +23,7 @@ import { renderStats } from './views/stats.js';
 import { renderCalendar } from './views/calendar.js';
 import { renderSettings } from './views/settings.js';
 import { renderTriage } from './views/cases.js';
-import { renderReview, resetReviewQueue, gradeReview, undoLastGrade, skipReview, FRIENDLY_GRADES } from './views/review.js';
+import { renderReview, resetReviewQueue, gradeReview, undoLastGrade, skipReview, FRIENDLY_GRADES, showStorageFullBanner } from './views/review.js';
 import { renderMistakes } from './views/mistakes.js';
 import { renderDrill } from './views/drill.js';
 import { renderGuides } from './views/guides.js';
@@ -223,14 +223,6 @@ function mountSearchPalette() {
         });
 }
 
-function updateOnlineStatus() {
-    const dot = document.querySelector('.status .dot');
-    const lbl = document.getElementById('status-label');
-    if (!dot || !lbl) return;
-    dot.classList.remove('loading');
-    if (navigator.onLine) { dot.classList.remove('offline'); dot.classList.add('live'); lbl.textContent = 'online'; }
-    else { dot.classList.remove('live'); dot.classList.add('offline'); lbl.textContent = 'offline'; }
-}
 
 function registerSW() {
     if (!('serviceWorker' in navigator)) return;
@@ -355,9 +347,6 @@ function setupSdkApp() {
             if (m) { const banner = el('div', { class: 'late-banner', role: 'status' }, m); document.body.appendChild(banner); }
         }
         registerSW();
-        updateOnlineStatus();
-        window.addEventListener('online', updateOnlineStatus);
-        window.addEventListener('offline', updateOnlineStatus);
         window.addEventListener('storage', e => {
             if (__rendering) return;
             // Tutor history written by another tab: re-sync the panel's in-memory
