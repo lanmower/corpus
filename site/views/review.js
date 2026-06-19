@@ -415,8 +415,8 @@ export function gradeReview(cardId, score) {
     // Mistake log
     const card = state.reviewQueue?.[state.reviewIndex];
     if (score <= 2 && card) mistakes.logMistake(cardId, card._subject, score);
-    // Undo record
-    undo.record(cardId, prev);
+    // Undo record — snapshot wasNew + subject so undoLastGrade can reverse counters
+    undo.record(cardId, prev, wasNew && !state.cramMode ? card0?._subject || null : null);
     showUndoToast();
 
     // Send to tutor for coaching (non-blocking). Gated by config; uses the
@@ -456,6 +456,9 @@ export function undoLastGrade() {
     const states = srs.loadStates();
     states[r.cardId] = r.prevState;
     srs.saveStates(states);
+    // Reverse the graded-count and new-card cap that gradeReview incremented
+    progress.bumpGraded(-1, null);
+    if (r.newSubject) newcards.bump(r.newSubject, -1);
     const t = document.getElementById('undo-toast'); if (t) t.remove();
     if (state.route === 'review') renderReview();
 }

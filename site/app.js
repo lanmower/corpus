@@ -15,7 +15,7 @@ import * as calendar from './calendar.js';
 import * as toast from './toast.js';
 import { buildSearchIndex, mountPalette } from './search.js';
 import { makeToggleButton } from './theme.js';
-import { initTutorPanel, wireWorkerToPanel, syncTutorFromStorage, setDailyPlanProvider, sendTutorMessage } from './tutor-panel.js';
+import { initTutorPanel, wireWorkerToPanel, syncTutorFromStorage, setDailyPlanProvider, sendTutorMessage, setTutorContext, startDailySyllabus } from './tutor-panel.js';
 import { state, el, icon, iconLabel, appRoot, DEBUG, log, warn, loadManifest, loadAllShards, loadGuideTicks, dueCountsBySubject, updateFooter, getStage, setStage, fetchJson } from './app-context.js';
 import { initSyllabi } from './syllabus.js';
 import { go, onNav, setRenderer } from './router.js';
@@ -383,6 +383,8 @@ function setupSdkApp() {
         // Expose page-control actions for LLM tool dispatch.
         window.__tutorActions = {
             sendTutorMessage(msg) { sendTutorMessage(msg); },
+            setTutorContext(ctx) { setTutorContext(ctx); },
+            startDailySyllabus(plan) { startDailySyllabus(plan); },
             navigate(args) {
                 const route = String(args?.route || '').replace(/^#/, '');
                 if (!route) return;

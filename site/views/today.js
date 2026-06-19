@@ -8,34 +8,14 @@ import * as srs from '../srs.js';
 import * as progress from '../progress.js';
 import * as mastery from '../mastery.js';
 import * as schedule from '../schedule.js';
-import * as cram from '../cram.js';
 import * as lastpos from '../lastpos.js';
 import * as newcards from '../newcards.js';
 import * as flag from '../flag.js';
 import { buildRows } from '../verdicts.js';
 import { localDayISO } from '../dates.js';
 import { ICON } from '../icons.js';
-import { setTutorContext, startDailySyllabus } from '../tutor-panel.js';
 import { loadConfig as loadTutorConfig, shouldCheckInToday, markCheckedIn, todayStamp as localDateStamp } from '../tutor-store.js';
-
-export function renderCramBanner(weakest) {
-    const days = srs.daysUntilExam();
-    if (days > 14) return null;
-    if (cram.isDismissed()) return null;
-    const w = weakest;
-    const sh = w ? state.shards[w.subject] : null;
-    const recs = sh?.triage?.scenarios?.slice(0, 2) || [];
-    return el('div', { class: 'cram-banner', role: 'alert' },
-        el('span', { class: 'label' }, `exam in ${days} day${days === 1 ? '' : 's'}`),
-        el('span', {}, '·'),
-        el('span', {}, `weakest: ${w ? w.subject : '—'}`),
-        el('span', {}, '·'),
-        el('span', {}, 'focus there'),
-        ...recs.map((sc, i) => el('a', { class: 'chip', href: `./triage-live.html#${encodeURIComponent(sc.id || sc.name || (w.subject + '-' + i))}` }, sc.name)),
-        el('button', { class: 'dismiss', 'aria-label': 'dismiss',
-            on: { click: e => { e.target.closest('.cram-banner').remove(); cram.dismiss(); } } }, 'dismiss')
-    );
-}
+export { renderCramBanner } from '../cram-banner.js';
 
 // ---- soft resume line ----
 function renderResumeLine() {
@@ -81,9 +61,10 @@ function renderWelcome() {
     );
 }
 
-// Tutor session overview panel for SRS daily page
-function renderTutorOverviewPanel(due, newCount) {
-    if (!state.tutorWorker) return null;
+// Trigger the tutor's proactive daily check-in and feed real study state.
+// Always returns undefined (pure side-effect; named to match what it does).
+function triggerTutorCheckin(due) {
+    if (!state.tutorWorker) return;
 
     // Find weakest subject by progress
     let weakestSubject = null;
@@ -96,32 +77,22 @@ function renderTutorOverviewPanel(due, newCount) {
                 weakestPct = pct;
                 weakestSubject = subj.subject;
             }
-        } catch (err) {
-            // skip on error
-        }
+        } catch { /* skip on error */ }
     }
 
-    // Days until exam from the user's configured exam date (was hardcoded to 30,
-    // which made the coach's urgency advice always wrong).
+    // Days until exam from the user's configured exam date.
     let examDaysLeft = null;
     try { examDaysLeft = srs.daysUntilExam(); } catch { examDaysLeft = null; }
 
     // Feed real study state to the panel so starter chips can be personalized.
-    try { setTutorContext({ weakestSubject: weakestSubject || '', dueCount: due || 0, examDaysLeft }); } catch {}
+    // Routes through window.__tutorActions to avoid a view -> orchestrator import.
+    try { window.__tutorActions?.setTutorContext?.({ weakestSubject: weakestSubject || '', dueCount: due || 0, examDaysLeft }); } catch {}
 
     // Proactive daily check-in: only when enabled in config and not yet greeted today.
     try {
         const cfg = loadTutorConfig();
-        // Decide here; the panel calls markCheckedIn() only on session-overview-done,
-        // so a WebGPU-less device doesn't silently consume the daily greeting.
-        // markCheckedIn is deferred to the worker reply, so guard with a session
-        // flag too: re-rendering the daily page (nav back) before the reply lands
-        // must not post a second session-overview and duplicate the plan in-thread.
         // Re-arm the same-session dedup flag when the local date rolls over, so a
-        // tab left open past midnight still fires the next day's check-in. Must use
-        // the LOCAL date (matching tutor-store's shouldCheckInToday()/todayStamp()),
-        // not UTC: a UTC stamp re-arms at the wrong boundary, so a user behind UTC
-        // would have the gate re-open at local midnight while this flag stayed set.
+        // tab left open past midnight still fires the next day's check-in.
         const checkinToday = localDateStamp();
         if (state.tutorCheckinDate !== checkinToday) {
             state.tutorCheckinDate = checkinToday;
@@ -129,10 +100,6 @@ function renderTutorOverviewPanel(due, newCount) {
         }
         if (cfg.proactiveCheckins && shouldCheckInToday() && !state.tutorCheckinPosted) {
             state.tutorCheckinPosted = true;
-            // The daily check-in is now an INTERACTIVE syllabus walk (srs-mccqe1
-            // pattern) rather than a one-shot greeting: hand the coach today's real
-            // schedule blocks so it presents the plan step by step and the student
-            // can drive it through the chat path.
             const today = schedule.isoDate(new Date());
             let plan = null;
             try {
@@ -140,13 +107,11 @@ function renderTutorOverviewPanel(due, newCount) {
                 const blocks = (sched.blocks || []).filter(b => b.date === today);
                 plan = { date: today, blocks };
             } catch { plan = { date: today, blocks: [] }; }
-            startDailySyllabus(plan);
+            window.__tutorActions?.startDailySyllabus?.(plan);
         }
     } catch (err) {
         warn('tutor session overview failed', err.message);
     }
-
-    return null;
 }
 
 // ---- compressed today ----
@@ -182,8 +147,8 @@ function renderTodayPrimary(due, newCount) {
 }
 
 
-function nextUntickedSubject() {
-    const ticksAll = loadGuideTicks();
+function nextUntickedSubject(ticksAll) {
+    if (!ticksAll) ticksAll = loadGuideTicks();
     for (const meta of state.manifest.subjects) {
         const sh = state.shards[meta.subject]; if (!sh) continue;
         const t = ticksAll[meta.subject] || {};
@@ -193,8 +158,8 @@ function nextUntickedSubject() {
     return null;
 }
 
-function nextUntickedSection() {
-    const ticksAll = loadGuideTicks();
+function nextUntickedSection(ticksAll) {
+    if (!ticksAll) ticksAll = loadGuideTicks();
     const lp = lastpos.load();
     if (lp?.subjectAnchor) {
         const sh = state.shards[lp.subjectAnchor];
@@ -213,11 +178,11 @@ function nextUntickedSection() {
     return null;
 }
 
-function renderNextReadingCard(next) {
+function renderNextReadingCard(next, ticksAll) {
     if (!next) return null;
     const subj = next.subject;
     const sec = next.section;
-    const ticks = loadGuideTicks()[subj] || {};
+    const ticks = (ticksAll || loadGuideTicks())[subj] || {};
     const tickedCount = Object.keys(ticks).filter(k => ticks[k]).length;
     const isFirstRead = tickedCount === 0;
     const totalSections = (state.shards[subj]?.guide?.sections || []).filter(s => s.level === 2 || s.level === 3).length;
@@ -263,6 +228,7 @@ function renderNextReadingCard(next) {
 export function renderToday() {
     const p = progress.load();
     const srsStates = srs.loadStates();
+    const ticksAll = loadGuideTicks();
     const due = totalDueAll(srsStates);
     const newEl = totalNewEligibleAll(srsStates);
     const newCount = newEl.total;
@@ -275,14 +241,14 @@ export function renderToday() {
     if (resumeEl) getStage().append(resumeEl);
 
     // Trigger tutor session overview (displays in tutor panel)
-    renderTutorOverviewPanel(due, newCount);
+    triggerTutorCheckin(due);
 
     // Primary action — the ONE thing to do now
     getStage().append(renderTodayPrimary(due, newCount));
 
     // Next reading recommendation — always visible so user knows what to read next
-    const nextRead = nextUntickedSection();
-    if (nextRead) getStage().append(renderNextReadingCard(nextRead));
+    const nextRead = nextUntickedSection(ticksAll);
+    if (nextRead) getStage().append(renderNextReadingCard(nextRead, ticksAll));
 
     // Compact stats strip
     const goal = p.dailyGoal || 30;
@@ -321,8 +287,8 @@ export function renderToday() {
     // Debug panels only with ?debug param
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('debug')) {
-        const states = srs.loadStates();
-        const ticks = loadGuideTicks();
+        const states = srsStates;
+        const ticks = ticksAll;
         const rows = buildRows(state.manifest, state.shards, states, ticks);
         const cases = totalCasesQueued();
         const mins = estReviewMinutes(due);
@@ -343,7 +309,7 @@ export function renderToday() {
         );
         getStage().append(chipRow);
 
-        const checklist = renderScheduleChecklist(rows);
+        const checklist = renderScheduleChecklist(rows, ticksAll);
         if (checklist) getStage().append(checklist);
         getStage().append(renderMasteryRing());
 
@@ -450,12 +416,11 @@ function renderMasteryRing() {
 // Today's plan: schedule-driven checklist. Schedule is recommendation, not gate.
 // Reconciles actuals (newcards.bumps + grade history + section ticks + cases) and
 // surfaces rollover/surplus as informational text.
-function renderScheduleChecklist(rows) {
+function renderScheduleChecklist(rows, ticksAll) {
     if (!state.manifest) return null;
+    if (!ticksAll) ticksAll = loadGuideTicks();
     const today = schedule.isoDate(new Date());
     const dueCounts = dueCountsBySubject();
-    // Build extras for plannedSections / plannedCases
-    const ticksAll = loadGuideTicks();
     const casesDone = casesDoneBySubject();
     // Regenerate plan with current eligibility-gated due counts and tick state.
     // Eligibility changes (ticking sections, introducing cards) shift what should be planned.
@@ -470,7 +435,7 @@ function renderScheduleChecklist(rows) {
     const sched = schedule.loadSchedule();
     // Build actuals from tracked data
     const p = progress.load();
-    const states = srs.loadStates();
+    const states = states0; // reuse — same snapshot used for due-count planning above
     const actualBySubject = {};
     for (const meta of state.manifest.subjects) {
         const subj = meta.subject;

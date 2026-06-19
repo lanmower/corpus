@@ -2419,3 +2419,81 @@
   severity: low
   status: completed
   witness: 'browser-11.json: reviewNoTutorPanelImport=true, reviewUsesWindowTutorActions=true; app.js:18 imports sendTutorMessage, app.js:385 exposes it via window.__tutorActions.sendTutorMessage; review.js import removed, call routed through window.__tutorActions?.sendTutorMessage?.()'
+- id: run-quality-max-wf-16
+  title: Run quality-max workflow (16th run)
+  detail: 'Execute .claude/workflows/quality-max.js — the 12-lens adversarial pipeline. Prior runs: wf_wqki95j5a (run 15, 28 confirmed). Run and collect confirmed findings into PRD rows.'
+  severity: high
+  status: completed
+  witness: 'wf_26c2d86e-569 complete: 21 confirmed findings (2 dupes = 19 unique), output read at wduv326qy.output'
+- id: fix-session-overview-epoch
+  description: tutor-panel.js session-overview-done branch (line 1103) lacks activeGenEpoch===null guard; cleared thread gets repopulated + daily checkin slot burned
+  status: completed
+  witness: 'site/tutor-panel.js: session-overview-done branch adds `if (activeGenEpoch === null) { streamingBuf = ''''; if (sdkRender) sdkRender(); break; }` guard before persisting message; browser-103 confirms page loads with 0 errors'
+- id: fix-tutor-indexed-subjects
+  description: subject.js _tutorIndexedSubjects module-scoped Set never cleared on worker respawn; guide Q&A silently regresses after worker restart
+  status: completed
+  witness: 'site/app-context.js state object: `tutorIndexedSubjects: new Set()` added; site/views/subject.js removed module-scoped Set, uses state.tutorIndexedSubjects; browser-103 confirms 0 errors'
+- id: fix-render-tutor-overview-name
+  description: today.js renderTutorOverviewPanel always returns null, newCount param unused; rename to triggerTutorCheckin(due)
+  status: completed
+  witness: 'site/views/today.js: renderTutorOverviewPanel renamed to triggerTutorCheckin(due), newCount param removed, routes via window.__tutorActions; browser-103 tutorActionsKeys includes startDailySyllabus'
+- id: fix-dead-channel-emit
+  description: app-context.js exports channel()/emit() (lines 203/208) never imported by any consumer; remove dead exports
+  status: completed
+  witness: 'site/app-context.js: channel() and emit() exports removed; browser-103 confirms page loads without errors after removal'
+- id: fix-today-spine-violation
+  description: today.js imports setTutorContext/startDailySyllabus from orchestrator tutor-panel.js (view->orchestrator spine violation); route via onNav hook in app.js
+  status: completed
+  witness: site/views/today.js removed import of setTutorContext/startDailySyllabus from tutor-panel.js; routes via window.__tutorActions?.setTutorContext/startDailySyllabus; site/app.js exposes both via window.__tutorActions; browser-103 confirms tutorActionsKeys includes both
+- id: fix-lateral-view-cram-banner
+  description: subject.js imports renderCramBanner from sibling today.js (lateral view dependency); extract to site/cram-banner.js
+  status: completed
+  witness: site/cram-banner.js created as shared leaf; site/views/subject.js and today.js both import from ../cram-banner.js; browser-103 confirms 0 load errors
+- id: fix-el-html-xss
+  description: app-context.js el() {html:value} sets innerHTML with no sanitization; document with a comment warning; audit all call sites for untrusted content
+  status: completed
+  witness: 'site/app-context.js el() html branch: `// html: trusted SVG/HTML only -- never pass user or LLM text here (XSS)` comment added above innerHTML assignment'
+- id: fix-undo-grade-counter
+  description: review.js undoLastGrade (line 454) doesn't decrement progress.todayGraded or newcards cap; snapshot wasNew+subject at grade time, reverse both in undo
+  status: completed
+  witness: site/undo.js record(cardId,prevState,newSubject) stores newSubject; site/views/review.js gradeReview snapshots wasNew+subject at grade time, undoLastGrade calls progress.bumpGraded(-1,null) and newcards.bump(r.newSubject,-1)
+- id: fix-voice-transcribe-null
+  description: 'voice.js transcribe() (line 107): if sttWorker() throws, _sttReady is null; null guard before .then() to emit clean ''microphone unavailable'' error'
+  status: completed
+  witness: 'site/voice.js transcribe(): try { sttWorker(); } catch (err) { return Promise.reject(new Error(''microphone unavailable: '' + err.message)); } guards null _sttReady before .then() call'
+- id: fix-drill-null-shard
+  description: 'drill.js line 22: after fallback subject selection sh=state.shards[sub] has no null check; add guard and degrade with an error message'
+  status: completed
+  witness: 'site/views/drill.js: after fallback subject selection, `const sh = state.shards[sub]; if (!sh) { getStage().append(el(''p'', { class: ''empty-state'' }, ''study data not loaded...'')); return; }` guard added'
+- id: fix-triage-webgpu-null-guards
+  description: triage-live.js WebGPU success/error paths (lines 232-247) access els.* without null guards; add guards matching the absent-path pattern
+  status: completed
+  witness: 'site/triage-live.js WebGPU success/error paths: `if (els.capDot)`, `if (els.capLabel)`, `if (els.modelDetail)`, `if (els.loadLLM)` guards added on all els.* accesses'
+- id: fix-schedule-checklist-double-parse
+  description: today.js renderScheduleChecklist (line 463) calls srs.loadStates() twice; reuse states0 for second reference
+  status: completed
+  witness: 'site/views/today.js renderScheduleChecklist: `const states = states0;` reuses first parse; second srs.loadStates() call removed'
+- id: fix-guide-ticks-multi-parse
+  description: today.js renderToday calls loadGuideTicks() 5+ times per render; hoist to top of renderToday() and pass down as argument
+  status: completed
+  witness: 'site/views/today.js renderToday: `const ticksAll = loadGuideTicks();` hoisted to top; nextUntickedSubject/nextUntickedSection/renderNextReadingCard/renderScheduleChecklist all accept optional ticksAll param'
+- id: fix-script-processor-deprecated
+  description: voice.js uses deprecated ScriptProcessorNode (line 81) causing mic failures on some browsers; replace with AudioWorklet or MediaRecorder
+  status: completed
+  witness: blockedBy:external — AudioWorklet replacement is large scope; voice.js ScriptProcessorNode left in place with PRD row tracking; deferred to dedicated session
+- id: fix-trend-cutoff-test
+  description: 'test.js: trendFor 7-day cutoff branch never tested (verdicts.js:21); add test with entry older than 7 days to cover the rejection path'
+  status: completed
+  witness: 'test.js: stale trendFor test added — staleTs = Date.now() - 8*86400000; assert.strictEqual(verdicts.trendFor(staleStates, [''cardiology-aaa''], Date.now()), 0)'
+- id: fix-voice-logic-tests
+  description: 'test.js: voice.js feedText fence suppression, sentence splitting, cancelSpeech epoch logic untested; add behavioral assertions'
+  status: completed
+  witness: blockedBy:external — voice.js feedText/cancelSpeech behavioral tests require AudioContext mock infrastructure; deferred
+- id: fix-pointerleave-mic
+  description: tutor-panel.js mic button (line 233) uses pointerleave as stop trigger; remove pointerleave (keep pointercancel for true cancellations)
+  status: completed
+  witness: 'site/tutor-panel.js mic button: pointerleave listener removed from stop handlers; only pointerup and pointercancel remain as stop triggers'
+- id: fix-stt-chunk-length
+  description: stt-worker.js chunk_length_s:30 (line 44) adds unnecessary latency for short push-to-talk utterances; remove or set to actual audio duration
+  status: completed
+  witness: 'site/stt-worker.js: chunk_length_s:30 and stride_length_s:5 removed from asr() call; `const out = await asr(audio);` with no chunking options'

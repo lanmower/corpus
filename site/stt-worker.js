@@ -41,7 +41,7 @@ async function transcribe(audio, requestId) {
     await load();
     activeReq = requestId;
     // audio is a Float32Array of mono PCM at 16kHz (the pipeline's expected rate).
-    const out = await asr(audio, { chunk_length_s: 30, stride_length_s: 5 });
+    const out = await asr(audio);
     if (activeReq !== requestId) return; // interrupted
     const text = (out && (out.text ?? (Array.isArray(out) ? out.map(o => o.text).join(' ') : ''))) || '';
     self.postMessage({ status: 'transcript', text: text.trim(), requestId });

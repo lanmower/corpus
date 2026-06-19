@@ -216,6 +216,10 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(verdicts.backlogFor(states, ['cardiology-aaa'], Date.now()), 1);
         const tr = verdicts.trendFor(states, ['cardiology-aaa'], Date.now());
         assert.ok(tr === 0); // 1 pos + 1 neg = 0
+        // trendFor stale cutoff: entry older than 7 days must be excluded (exercises the rejection branch)
+        const staleTs = Date.now() - 8 * 86400000;
+        const staleStates = { 'cardiology-aaa': { dueAt: 0, history: [{ ts: staleTs, score: 5 }] } };
+        assert.strictEqual(verdicts.trendFor(staleStates, ['cardiology-aaa'], Date.now()), 0); // excluded -> net 0
         const ticks = { cardiology: { '5': true, '10': true } };
         const rows = verdicts.buildRows(MANIFEST, SHARDMAP, {}, ticks);
         assert.strictEqual(rows.length, SUBJECTS.length);
@@ -267,11 +271,12 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(READ('site/views/subject.js'), /mountBackToTop/);
         assert.match(READ('site/views/subject.js'), /back-to-top/);
         assert.match(READ('site/views/subject.js'), /applyTocFilter/);
-        // cram banner trigger (now in views/today.js)
+        // cram banner extracted to site/cram-banner.js (no longer inline in today.js)
         const todaySrc = READ('site/views/today.js');
         assert.match(todaySrc, /renderCramBanner/);
-        assert.match(todaySrc, /days > 14/);
-        assert.match(todaySrc, /cram\.isDismissed/);
+        const cramBannerSrc = READ('site/cram-banner.js');
+        assert.match(cramBannerSrc, /days > 14/);
+        assert.match(cramBannerSrc, /cram\.isDismissed/);
         // resume line
         assert.match(todaySrc, /renderResumeLine/);
         assert.match(todaySrc, /back after \$\{gap\}d/);
@@ -1009,7 +1014,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(/cmd: 'generate-coaching'/.test(reviewSrc2), 'review posts generate-coaching (matches worker handler)');
         assert.ok(/autoCoachOnReview/.test(reviewSrc2) && /proactiveCheckins/.test(READ('site/views/today.js')), 'review gates coaching + today gates checkin on config');
         // daily check-in now launches the interactive syllabus walk with real blocks
-        assert.ok(/startDailySyllabus\(plan\)/.test(READ('site/views/today.js')) && /setDailyPlanProvider/.test(app), 'today launches daily-syllabus walk; app wires provider');
+        assert.ok(/startDailySyllabus/.test(READ('site/views/today.js')) && /setDailyPlanProvider/.test(app), 'today triggers daily-syllabus walk (via __tutorActions); app wires provider');
         // empty/caught-up plan must NOT use the "present the FIRST block" prompt (that
         // contradicts the caught-up plan line and yields nonsense). A distinct
         // dailyCaughtUp prompt is selected when no actionable blocks exist.
@@ -1455,6 +1460,44 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         }
         assert.match(tp, /mountVoiceBar/, 'tutor panel mounts the voice bar');
         assert.match(tl, /mountTriageVoiceBar/, 'triage mounts the voice bar');
+    });
+
+    console.log('# quality-max run-16: epoch guard + spine fix + cram-banner extract + undo counters + null guards');
+    t('run-16: session-overview epoch guard + no pointerleave + cram-banner.js + tutorIndexedSubjects on state + triggerTutorCheckin + __tutorActions setTutorContext/startDailySyllabus + undo newSubject + voice transcribe null guard + drill shard null guard + triage null guards + stt chunk removed + stale trendFor', () => {
+        const panelSrc = READ('site/tutor-panel.js');
+        // session-overview-done epoch guard
+        assert.match(panelSrc, /session-overview-done[\s\S]{0,300}activeGenEpoch === null/, 'session-overview-done has epoch guard');
+        // no pointerleave on mic button
+        assert.ok(!panelSrc.includes("'pointerleave', stopMic"), 'pointerleave removed from mic stop handlers');
+        // cram-banner.js exists as a shared leaf
+        const cramSrc = READ('site/cram-banner.js');
+        assert.match(cramSrc, /export function renderCramBanner/, 'cram-banner.js exports renderCramBanner');
+        assert.ok(!READ('site/views/subject.js').includes("from './today.js'"), 'subject.js no longer imports from today.js');
+        // _tutorIndexedSubjects moved to state
+        assert.ok(!READ('site/views/subject.js').includes('const _tutorIndexedSubjects'), 'no module-scoped _tutorIndexedSubjects in subject.js');
+        assert.match(READ('site/app-context.js'), /tutorIndexedSubjects: new Set/, 'tutorIndexedSubjects on state');
+        // today.js triggerTutorCheckin + spine decoupled
+        const todaySrc2 = READ('site/views/today.js');
+        assert.match(todaySrc2, /triggerTutorCheckin/, 'today uses triggerTutorCheckin');
+        assert.ok(!todaySrc2.includes("from '../tutor-panel.js'"), 'today.js no longer imports tutor-panel.js directly');
+        // app.js exposes setTutorContext + startDailySyllabus via __tutorActions
+        const appSrc2 = READ('site/app.js');
+        assert.match(appSrc2, /setTutorContext.*__tutorActions|__tutorActions[\s\S]{0,200}setTutorContext/);
+        // undo records newSubject
+        assert.match(READ('site/undo.js'), /newSubject/, 'undo stores newSubject');
+        assert.match(READ('site/views/review.js'), /r\.newSubject/, 'undoLastGrade reverses newSubject counter');
+        // voice transcribe null guard
+        assert.match(READ('site/voice.js'), /microphone unavailable/, 'voice transcribe emits clean error');
+        // drill shard null guard
+        assert.match(READ('site/views/drill.js'), /if \(!sh\)/, 'drill.js null-guards shard');
+        // triage null guards
+        const tl2 = READ('site/triage-live.js');
+        assert.match(tl2, /if \(els\.capDot\) els\.capDot\.className = 'dot ok'/, 'triage success path null-guards capDot');
+        // stt chunk_length_s removed
+        assert.ok(!READ('site/stt-worker.js').includes('chunk_length_s'), 'stt-worker chunk_length_s removed');
+        // dead channel/emit removed from app-context
+        assert.ok(!READ('site/app-context.js').includes('export function channel'), 'dead channel() export removed');
+        assert.ok(!READ('site/app-context.js').includes('export function emit'), 'dead emit() export removed');
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

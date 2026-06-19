@@ -104,7 +104,10 @@ export async function stopListening() {
 }
 
 function transcribe(audio) {
-    sttWorker();
+    try { sttWorker(); } catch (err) {
+        return Promise.reject(new Error('microphone unavailable: ' + err.message));
+    }
+    if (!_sttReady) return Promise.reject(new Error('microphone unavailable'));
     return _sttReady.then(() => new Promise((resolve) => {
         const id = 'stt-' + (++_reqSeq);
         const timer = setTimeout(() => { _stt.removeEventListener('message', onMsg); resolve(''); }, 30000);

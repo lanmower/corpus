@@ -4,14 +4,13 @@
 import { getStage, el, icon, iconLabel, state, loadShard, loadGuideTicks, saveGuideTicks, masteryFor, dueCountFor, sectionCardCounts, slugify } from '../app-context.js';
 import { go } from '../router.js';
 import { resetReviewQueue } from './review.js';
-import { renderCramBanner } from './today.js';
+import { renderCramBanner } from '../cram-banner.js';
 import * as srs from '../srs.js';
 import * as mastery from '../mastery.js';
 import * as lastpos from '../lastpos.js';
 import { buildRows, computeWeakest } from '../verdicts.js';
 import { ICON } from '../icons.js';
 
-const _tutorIndexedSubjects = new Set();
 
 export async function renderSubject() {
     const subj = state.currentSubject;
@@ -74,8 +73,8 @@ export async function renderSubject() {
     placeholder.remove();
 
     // Send guide shard to tutor worker for Q&A indexing (idempotent — skip if already posted)
-    if (state.tutorWorker && shard.guide && !_tutorIndexedSubjects.has(subj)) {
-        _tutorIndexedSubjects.add(subj);
+    if (state.tutorWorker && shard.guide && !state.tutorIndexedSubjects.has(subj)) {
+        state.tutorIndexedSubjects.add(subj);
         state.tutorWorker.postMessage({ cmd: 'load-guide-shard', shard: { subject: subj, guide: shard.guide } });
     }
 

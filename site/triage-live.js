@@ -229,9 +229,9 @@ async function checkCapability() {
         try { info = await a.requestAdapterInfo?.() || {}; } catch {}
         state.capability = 'webgpu';
         state.gpuInfo = { features, fp16, info };
-        els.capDot.className = 'dot ok';
-        els.capLabel.textContent = 'tutor loading';
-        els.modelDetail.textContent = 'preparing your private tutor (~250MB once, then cached).';
+        if (els.capDot) els.capDot.className = 'dot ok';
+        if (els.capLabel) els.capLabel.textContent = 'tutor loading';
+        if (els.modelDetail) els.modelDetail.textContent = 'preparing your private tutor (~250MB once, then cached).';
         // Start the model download immediately so it's ready by the time the user picks a case.
         // The shared worker only downloads once; selectScenario's later attempt is a no-op.
         try { loadLLM(); } catch (e) { console.warn('[triage-live] eager auto-load failed', e); }
@@ -242,9 +242,9 @@ async function checkCapability() {
         }
     } catch (e) {
         state.capability = 'unsupported';
-        els.capDot.className = 'dot warn';
-        els.capLabel.textContent = 'offline tutor only';
-        els.loadLLM.disabled = true;
+        if (els.capDot) els.capDot.className = 'dot warn';
+        if (els.capLabel) els.capLabel.textContent = 'offline tutor only';
+        if (els.loadLLM) els.loadLLM.disabled = true;
         console.warn('[triage-live] adapter-error', e);
         debugLog('adapter-error', String(e));
     }

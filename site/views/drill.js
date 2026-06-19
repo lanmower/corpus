@@ -20,6 +20,7 @@ export async function renderDrill() {
         const w = computeWeakest(rows);
         const sub = w?.subject || state.manifest.subjects[0].subject;
         const sh = state.shards[sub];
+        if (!sh) { getStage().append(el('p', { class: 'empty-state' }, 'study data not loaded — try again in a moment.')); return; }
         const ids = sh.cards.slice(0, 30).map(c => c.id);
         const due = srs.getDueCards(ids, states);
         const pool = (due.length >= 10 ? due : ids).slice(0, 10);

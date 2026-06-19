@@ -230,7 +230,6 @@ function mountVoiceBar(root) {
     };
     mic.addEventListener('pointerdown', startMic);
     mic.addEventListener('pointerup', stopMic);
-    mic.addEventListener('pointerleave', stopMic);
     mic.addEventListener('pointercancel', stopMic);
 
     const spk = document.createElement('button');
@@ -1101,6 +1100,10 @@ export function wireWorkerToPanel(worker) {
                     if (inline) inline.textContent = clean;
                 }
                 if (event === 'session-overview-done') {
+                    // Guard: drop stale in-flight replies after clearConversation().
+                    // clearConversation() nulls activeGenEpoch; matches the pattern used
+                    // by coaching-done/guide-answer-done/daily-syllabus-done.
+                    if (activeGenEpoch === null) { streamingBuf = ''; if (sdkRender) sdkRender(); break; }
                     // Daily greeting: consume the check-in slot only once the plan
                     // actually rendered. An empty (interrupted/error/whitespace) reply
                     // must not burn the day's slot and leave the greeting silently gone

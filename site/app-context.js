@@ -39,9 +39,12 @@ export const state = {
     cramMode: false, learnMode: false, reviewTagFilter: new Set(),
     paletteReviewSet: null, sectionFilter: null,
     _reviewBacklog: [], lastReviewDueCount: 0,
-    // Same-session dedup for the daily tutor check-in (see renderTutorOverviewPanel).
+    // Same-session dedup for the daily tutor check-in (see triggerTutorCheckin).
     tutorCheckinPosted: false,
-    tutorCheckinDate: null
+    tutorCheckinDate: null,
+    // Guide shards sent to the tutor worker for Q&A indexing; tied to tutorWorker lifetime.
+    // Cleared on worker respawn so new workers aren't silently assumed to have prior shards.
+    tutorIndexedSubjects: new Set()
 };
 window.__corpus = state;
 window.__corpus.DEBUG = DEBUG;
@@ -53,6 +56,7 @@ export function el(tag, attrs = {}, ...kids) {
         if (k === 'class') e.className = v;
         else if (k === 'on') for (const [ev, h] of Object.entries(v)) e.addEventListener(ev, h);
         else if (k === 'data') for (const [dk, dv] of Object.entries(v)) e.dataset[dk] = dv;
+        // html: trusted SVG/HTML only — never pass user or LLM text here (XSS)
         else if (k === 'html') e.innerHTML = v;
         else if (v != null) e.setAttribute(k, v);
     }
@@ -196,22 +200,6 @@ export function todayPlanReviewTarget() {
         for (const b of blocks) n += (b.plannedReview || 0) + (b.plannedNew || 0);
         return n;
     } catch { return 0; }
-}
-
-// ---- cross-tab schedule broadcast ----
-let bc = null;
-export function channel() {
-    if (bc) return bc;
-    try { bc = ('BroadcastChannel' in (typeof self !== 'undefined' ? self : {})) ? new BroadcastChannel('corpus') : null; } catch { bc = null; }
-    return bc;
-}
-export function emit(reason) {
-    try { channel()?.postMessage({ type: 'schedule:updated', reason, ts: Date.now() }); } catch {}
-    try {
-        if (typeof window !== 'undefined' && window.dispatchEvent) {
-            window.dispatchEvent(new CustomEvent('schedule:updated', { detail: { reason, ts: Date.now() } }));
-        }
-    } catch {}
 }
 
 // ---- footer offline indicator ----
