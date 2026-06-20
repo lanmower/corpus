@@ -1,0 +1,836 @@
+{
+  "subject": "exponents",
+  "cat": "sky",
+  "cards": [
+    {
+      "id": "exponents-5f5844f17e",
+      "front": "Correct the false statement (Q10.1): x² + x² = 2x⁴. What is the right-hand side?",
+      "back": "It is FALSE. x² + x² are LIKE terms (same base and exponent), so you ADD the coefficients, you do NOT add exponents.\nx² + x² = 2x².\nThe exponent stays 2; only the count of terms (the coefficient) becomes 2.\nAdding exponents is for MULTIPLYING (x²·x² = x⁴), not for adding.",
+      "tags": [
+        "exponents",
+        "common-mistake"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-cb20908f96",
+      "front": "Correct the false statement (Q10.2): 1/(6x⁻²) = 6x². What is correct?",
+      "back": "It is FALSE. The 6 is NOT affected by the negative exponent — only x⁻² is.\n1/(6x⁻²) = 1/(6 · 1/x²) = 1/(6/x²) = x²/6.\nSo 1/(6x⁻²) = x²/6 (= (1/6)x²), NOT 6x².\nMethod: x⁻² in the denominator moves up as x²; the 6 stays in the denominator.",
+      "tags": [
+        "exponents",
+        "negative-exponents",
+        "common-mistake"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-c2efc2f690",
+      "front": "True or False, correcting if false (Q11.1–11.4): 2a⁻³ = 1/(2a³)? (−1)⁵ = −1? (2ab)³ = 6a³b⁹? a⁰ = 0?",
+      "back": "Q11.1 2a⁻³ = 1/(2a³): FALSE. Only a is to the −3, so 2a⁻³ = 2/a³ (the 2 stays on top).\nQ11.2 (−1)⁵ = −1: TRUE (odd power keeps the negative).\nQ11.3 (2ab)³ = 6a³b⁹: FALSE. = 2³a³b³ = 8a³b³ (cube 2 → 8, and b³ not b⁹).\nQ11.4 a⁰ = 0: FALSE. a⁰ = 1 (for a ≠ 0).",
+      "tags": [
+        "exponents",
+        "true-false"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-efc7d33406",
+      "front": "True or False, correcting if false (Q11.5–11.8): 2⁻¹ = −2? a⁻³a² = 1/a? (3/4)⁻¹ = 4/3? a³b³/(ab⁷) = (a/b)²?",
+      "back": "Q11.5 2⁻¹ = −2: FALSE. 2⁻¹ = 1/2.\nQ11.6 a⁻³a² = 1/a: TRUE. a^(−3+2) = a⁻¹ = 1/a.\nQ11.7 (3/4)⁻¹ = 4/3: TRUE (a negative power flips the fraction).\nQ11.8 a³b³/(ab⁷) = (a/b)²: FALSE. = a^(3−1)b^(3−7) = a²b⁻⁴ = a²/b⁴, which is (a/b²)², not (a/b)².",
+      "tags": [
+        "exponents",
+        "true-false"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-7ee93cb3e3",
+      "front": "True or False, correcting if false (Q11.9–11.10): 2³ × 2⁴ = 4⁷? 5²÷5⁵ = 1/5³?",
+      "back": "Q11.9 2³ × 2⁴ = 4⁷: FALSE. Same base: add exponents but KEEP the base. 2³×2⁴ = 2⁷ (not 4⁷).\nQ11.10 5² ÷ 5⁵ = 1/5³: TRUE. 5^(2−5) = 5⁻³ = 1/5³.\nKey rule: when multiplying/dividing same-base powers, the base never changes — only exponents are added/subtracted.",
+      "tags": [
+        "exponents",
+        "true-false"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-dbe8f7685c",
+      "front": "Substitution (Ex 4.2 Q1): Calculate a × bᶜ where a = 3, b = 2, c = −1.",
+      "back": "Substitute carefully: a × bᶜ = 3 × 2⁻¹.\n2⁻¹ = 1/2.\n= 3 × ½ = 3/2 = 1½.\nMethod: work out the power bᶜ first (2⁻¹ = ½), then multiply by a.",
+      "tags": [
+        "exponents",
+        "substitution"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-44b139f6d8",
+      "front": "Substitution (Ex 4.2 Q2): Calculate (ab)ᶜ where a = 1, b = 5, c = −2.",
+      "back": "(ab)ᶜ = (1×5)⁻² = 5⁻² = 1/5² = 1/25.\nMethod: simplify inside the bracket first (1×5 = 5), then apply the negative exponent: 5⁻² = 1/25.",
+      "tags": [
+        "exponents",
+        "substitution"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-cd8a99b47d",
+      "front": "Substitution (Ex 4.2 Q3): Calculate aᵇ + bᶜ where a = 2, b = −1, c = 3.",
+      "back": "aᵇ + bᶜ = 2⁻¹ + (−1)³.\n2⁻¹ = ½.\n(−1)³ = −1 (odd power keeps the sign).\n= ½ + (−1) = ½ − 1 = −½.\nMethod: evaluate each power separately (mind the sign of (−1)³), then add.",
+      "tags": [
+        "exponents",
+        "substitution"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-e2028f38f1",
+      "front": "How do you solve an exponential equation like 2ˣ = 2³ (Ex 4.3, the method)?",
+      "back": "Method (equal-base method): rewrite BOTH sides as powers of the SAME base. Once the bases are equal, the exponents must be equal — drop the bases and solve for x.\nExample 1.1: 2ˣ = 2³ ⇒ x = 3.\nExample 1.2: 5^(x−1) = 5² ⇒ x − 1 = 2 ⇒ x = 3.\nIf a side is not already a power of the base, convert it (e.g. 9 = 3², 64 = 2⁶, 81 = 3⁴).",
+      "tags": [
+        "exponents",
+        "exponential-equations",
+        "method"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-35a92084e7",
+      "front": "Solve for x (Ex 4.3): 3^(2x) = 3⁶ (1.3) and 3ˣ = 9 (1.4).",
+      "back": "1.3: 3^(2x) = 3⁶ ⇒ 2x = 6 ⇒ x = 3.\n1.4: 3ˣ = 9. Write 9 = 3². So 3ˣ = 3² ⇒ x = 2.\nMethod: make bases equal, then equate exponents.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-522d35ed29",
+      "front": "Solve for x (Ex 4.3): 8ˣ = 64 (1.5) and 2ˣ = ¼ (1.6).",
+      "back": "1.5: 8ˣ = 64. Use base 2: 8 = 2³, 64 = 2⁶, so 2^(3x) = 2⁶ ⇒ 3x = 6 ⇒ x = 2. (Or directly 8² = 64.)\n1.6: 2ˣ = ¼ = 1/2² = 2⁻². So 2ˣ = 2⁻² ⇒ x = −2.\nMethod: convert each number to a power of the common base, including reciprocals as negative exponents.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-80aae5ee1b",
+      "front": "Solve for x (Ex 4.3): 7ˣ = 1 (1.7) and 5^(2x) = 5 (1.8).",
+      "back": "1.7: 7ˣ = 1. Since any non-zero base to the power 0 is 1, 7ˣ = 7⁰ ⇒ x = 0.\n1.8: 5^(2x) = 5 = 5¹ ⇒ 2x = 1 ⇒ x = ½.\nMethod: recognise 1 = base⁰ and a lone base = base¹.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-8811619bdc",
+      "front": "Solve for x (Ex 4.3): 11ˣ = 121 (1.9) and 10ˣ = 0,1 (1.10).",
+      "back": "1.9: 11ˣ = 121 = 11² ⇒ x = 2.\n1.10: 10ˣ = 0,1 = 1/10 = 10⁻¹ ⇒ x = −1.\nMethod: rewrite the right side as a power of the base (0,1 = 10⁻¹).",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-350b51b4d4",
+      "front": "Solve for x (Ex 4.3): 3^(x−2) = 81 (1.11) and (1/3)ˣ = 3 (1.13).",
+      "back": "1.11: 81 = 3⁴, so 3^(x−2) = 3⁴ ⇒ x − 2 = 4 ⇒ x = 6.\n1.13: (1/3)ˣ = 3. Write 1/3 = 3⁻¹, so 3⁻ˣ = 3¹ ⇒ −x = 1 ⇒ x = −1.\nMethod: convert to common base 3; a reciprocal base becomes a negative exponent.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-6d42bf4902",
+      "front": "Solve for x (Ex 4.3): 9ˣ = 27 (1.14) and 2ˣ = 0,125 (1.15).",
+      "back": "1.14: 9ˣ = 27. Base 3: 9 = 3², 27 = 3³, so 3^(2x) = 3³ ⇒ 2x = 3 ⇒ x = 3/2.\n1.15: 2ˣ = 0,125 = 1/8 = 1/2³ = 2⁻³ ⇒ x = −3.\nMethod: pick the smallest common base (3 and 2 respectively); express decimals as fractions then powers.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-c9f977c327",
+      "front": "Solve for x (Ex 4.3): 5ˣ = 0,04 (1.16) and 3^(2x+1) = 3^(x+3) (1.17).",
+      "back": "1.16: 5ˣ = 0,04 = 4/100 = 1/25 = 1/5² = 5⁻² ⇒ x = −2.\n1.17: bases already equal, so equate exponents: 2x + 1 = x + 3 ⇒ x = 2.\nMethod: equal-base method; when both exponents are expressions, set them equal and solve the linear equation.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-4be178eba1",
+      "front": "Solve for x (Ex 4.3): 2ˣ·2³ = 32 (1.18) and (4ˣ)² = 64 (1.19).",
+      "back": "1.18: 2ˣ·2³ = 2^(x+3) = 32 = 2⁵ ⇒ x + 3 = 5 ⇒ x = 2.\n1.19: (4ˣ)² = 4^(2x) = 64. Base 4: 64 = 4³, so 4^(2x) = 4³ ⇒ 2x = 3 ⇒ x = 3/2.\nMethod: first combine the left side using exponent laws into a single power, then match bases.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-cdb9c21821",
+      "front": "Solve for x (Ex 4.3): 5ˣ/5² = 125 (1.20) and 8^(x+1) = 1/8 (1.21).",
+      "back": "1.20: 5ˣ/5² = 5^(x−2) = 125 = 5³ ⇒ x − 2 = 3 ⇒ x = 5.\n1.21: 8^(x+1) = 1/8 = 8⁻¹ ⇒ x + 1 = −1 ⇒ x = −2.\nMethod: simplify the left to one power (Law 2), then equate exponents; 1/8 = 8⁻¹.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-bfa773ce44",
+      "front": "Solve for x (Ex 4.3): 7^(x−2) = 1 (1.22) and 9^(x−2) = 81 (1.23).",
+      "back": "1.22: 7^(x−2) = 1 = 7⁰ ⇒ x − 2 = 0 ⇒ x = 2.\n1.23: 9^(x−2) = 81. Base 3: 9 = 3², 81 = 3⁴, so 3^(2(x−2)) = 3⁴ ⇒ 2(x−2) = 4 ⇒ x − 2 = 2 ⇒ x = 4. (Or base 9: 81 = 9² ⇒ x−2 = 2 ⇒ x = 4.)\nMethod: 1 = base⁰; otherwise equal-base method.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-64db5add8b",
+      "front": "Solve for x (Ex 4.3, cubic-type): x³ = −8 (1.24) and 2x³ = 54 (1.25).",
+      "back": "1.24: x³ = −8 ⇒ x = ∛(−8) = −2 (since (−2)³ = −8).\n1.25: 2x³ = 54 ⇒ x³ = 27 ⇒ x = ∛27 = 3.\nMethod: isolate x³, then take the cube root. Unlike square roots, a cube root of a negative number is negative.",
+      "tags": [
+        "exponents",
+        "cube-root"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-db19ed7c52",
+      "front": "Solve for x (Ex 4.3): x = ∛27 (1.26), x⁻¹ = ½ (1.27) and x⁻² = 4/9 (1.28).",
+      "back": "1.26: x = ∛27 = 3.\n1.27: x⁻¹ = ½ means 1/x = ½ ⇒ x = 2.\n1.28: x⁻² = 4/9 means 1/x² = 4/9 ⇒ x² = 9/4 ⇒ x = ±√(9/4) = ±3/2.\nMethod: a negative exponent means reciprocal; for x² remember TWO answers (±).",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-283d968152",
+      "front": "Ex 4.3 Q2: Determine x if (p⁵)³ = p²·pˣ. Q3: find product of x and y if 2ˣ + 3ʸ = 41, x,y natural.",
+      "back": "Q2: (p⁵)³ = p¹⁵ and p²·pˣ = p^(2+x). Equate: 15 = 2 + x ⇒ x = 13.\nQ3: need 2ˣ + 3ʸ = 41 with natural numbers. Try powers: 2⁵ = 32 and 3² = 9 ⇒ 32 + 9 = 41 ✓. So x = 5, y = 2.\nProduct x·y = 5 × 2 = 10.",
+      "tags": [
+        "exponents",
+        "exponential-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-db28706bdf",
+      "front": "Ex 4.3 Q4: with x = 3 and y = −2, which sign (<, >, =) goes in each box? 4.1 y² □ x²  4.2 (3³)³ □ (y²)²  4.3 (x·y)⁴ □ 4ˣʸ",
+      "back": "4.1 y² = (−2)² = 4; x² = 3² = 9. So 4 < 9 ⇒ y² < x².\n4.2 (3³)³ = 3⁹ = 19683; (y²)² = ((−2)²)² = 4² = 16. So 19683 > 16 ⇒ (3³)³ > (y²)².\n4.3 (x·y)⁴ = (3×−2)⁴ = (−6)⁴ = 1296; 4ˣʸ = 4^(3×−2) = 4⁻⁶ = 1/4096. So 1296 > 1/4096 ⇒ (x·y)⁴ > 4ˣʸ.\nMethod: substitute, evaluate both sides fully, then compare.",
+      "tags": [
+        "exponents",
+        "substitution",
+        "compare"
+      ],
+      "difficulty": "medium",
+      "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+    },
+    {
+      "id": "exponents-764f82c90a",
+      "front": "Law 1 of exponents: state the multiplication law and give a worked example.",
+      "back": "Law 1: aᵐ × aⁿ = aᵐ⁺ⁿ.\nWhen you MULTIPLY powers of the SAME base, you ADD the exponents.\nWorked example (1.1): x⁵ × 2x³ = 2·x⁵⁺³ = 2x⁸.\n(The coefficient 2 just multiplies through; only the matching x-bases combine.)\nNote: bases must be equal. 3x² × 2x³ = 6x⁵, but x² × y³ cannot be combined.",
+      "tags": [
+        "exponents",
+        "law-product"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-9c253c1560",
+      "front": "Simplify 3x² × 2x³ (Law 1) and also 2⁻⁴ × 2⁵ × 2⁰.",
+      "back": "3x² × 2x³ = (3×2)·x²⁺³ = 6x⁵.\n2⁻⁴ × 2⁵ × 2⁰ = 2⁻⁴⁺⁵⁺⁰ = 2¹ = 2.\nMethod: multiply coefficients, ADD exponents of the same base; remember 2⁰ = 1 so it contributes 0 to the exponent sum.",
+      "tags": [
+        "exponents",
+        "law-product"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-736f09d5e9",
+      "front": "Law 2 of exponents: state the division law and give a worked example.",
+      "back": "Law 2: aᵐ ÷ aⁿ = aᵐ⁻ⁿ.\nWhen you DIVIDE powers of the SAME base, you SUBTRACT the exponents (top minus bottom).\nWorked example (1.4): 2⁵ ÷ 2² = 2⁵⁻² = 2³ = 8.\nExample (1.5): p⁷ ÷ p³ = p⁷⁻³ = p⁴.\nExample (1.6): a²/a⁻¹ = a²⁻⁽⁻¹⁾ = a³.",
+      "tags": [
+        "exponents",
+        "law-quotient"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-6ca1b0622d",
+      "front": "Law 3 of exponents: state the power-of-a-power law with a worked example.",
+      "back": "Law 3: (aᵐ)ⁿ = aᵐⁿ.\nA power raised to a power: MULTIPLY the exponents.\nWorked example (1.7): (2³)² = 2³ˣ² = 2⁶ = 64.\nExample (1.8): (s³)⁵ = s¹⁵.\nExample (1.9): (3ˣ)² = 3²ˣ.\nCommon mistake: do NOT add here — (2³)² is 2⁶, not 2⁵.",
+      "tags": [
+        "exponents",
+        "law-power-of-power"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-d18294607d",
+      "front": "Law 4 of exponents: state the power-of-a-product law with a worked example.",
+      "back": "Law 4: (ab)ᵐ = aᵐbᵐ.\nA product inside a bracket raised to a power: give EACH factor that power.\nWorked example (1.10): (2×5)² = 2²×5² = 4×25 = 100 (= 10² ✓).\nExample (1.11): (3x³)³ = 3³·x³ˣ³ = 27x⁹.\nExample (1.12): (−4a⁵b³)³ = (−4)³·a¹⁵·b⁹ = −64a¹⁵b⁹.\nWatch the coefficient: it is also raised to the power.",
+      "tags": [
+        "exponents",
+        "law-power-of-product"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-2f436a8211",
+      "front": "Law 5 (the zero-exponent law): what is a⁰ and what is the restriction?",
+      "back": "Law 5: a⁰ = 1, provided a ≠ 0.\nANY non-zero base to the power 0 equals 1.\nExamples (1.13–1.15): 5⁰ = 1; 7a⁰ = 7×1 = 7 (only the a is to the power 0, not the 7); 3p⁰ + (3p)⁰ = 3×1 + 1 = 4.\nTrap: in 7a⁰ the exponent applies only to a, so 7a⁰ = 7, NOT 1. But (3p)⁰ = 1 because the whole bracket is to the power 0.",
+      "tags": [
+        "exponents",
+        "law-zero"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-5ff26d3769",
+      "front": "Law 6 (negative-exponent law): state it and simplify 2⁻³, a³·b⁻⁴ and x⁻⁴.",
+      "back": "Law 6: a⁻ⁿ = 1/aⁿ (and 1/a⁻ⁿ = aⁿ), with a ≠ 0.\nA negative exponent means take the RECIPROCAL of the positive power.\n2⁻³ = 1/2³ = 1/8.\na³·b⁻⁴ = a³/b⁴.\nx⁻⁴ = 1/x⁴.\nMethod: move a factor across the fraction line to flip the sign of its exponent.",
+      "tags": [
+        "exponents",
+        "law-negative"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-21732d976c",
+      "front": "The sign trap: what is (−3)² versus −3², and (−3)⁰ versus −3⁰?",
+      "back": "(−3)² = (−3)(−3) = 9  — the bracket squares the sign too.\nBut −3² = −(3²) = −9  — here only the 3 is squared, the minus stays in front.\n(−3)⁰ = 1  — whole bracket to power 0.\nBut −3⁰ = −(3⁰) = −1  — only the 3 is to the power 0.\nRULE: without a bracket, the exponent binds tighter than the leading minus sign.",
+      "tags": [
+        "exponents",
+        "sign-trap"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-b3b364d2ae",
+      "front": "List all 6 exponent laws (the summary using algebra).",
+      "back": "1. aᵐ × aⁿ = aᵐ⁺ⁿ (multiply → add exponents)\n2. aᵐ ÷ aⁿ = aᵐ⁻ⁿ (divide → subtract exponents)\n3. (aᵐ)ⁿ = aᵐⁿ (power of power → multiply)\n4. (a×b)ⁿ = aⁿ × bⁿ (distribute power over a product)\n5. a⁰ = 1, a ≠ 0\n6. a⁻ⁿ = 1/aⁿ = (1/a)ⁿ, a ≠ 0",
+      "tags": [
+        "exponents",
+        "laws-summary"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-f6e9b0ccdf",
+      "front": "Simplify 3a·2ab·3abc (Q2.1) and 2a⁴ × 4a² (Q2.3).",
+      "back": "3a·2ab·3abc: multiply coefficients 3×2×3 = 18; add exponents of each base: a^(1+1+1)=a³, b^(1+1)=b², c¹.\n= 18a³b²c.\n2a⁴ × 4a² = (2×4)a⁴⁺² = 8a⁶.\nMethod: coefficients multiply; same-base exponents add (Law 1).",
+      "tags": [
+        "exponents",
+        "simplify"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-4834ddf8ae",
+      "front": "Simplify x³(x²)³·x⁻² (Q2.5) and 6a⁵ ÷ a ÷ 3a² (Q2.6).",
+      "back": "x³(x²)³x⁻²: first (x²)³ = x⁶ (Law 3). Then x³·x⁶·x⁻² = x^(3+6−2) = x⁷.\n6a⁵ ÷ a ÷ 3a² = 6a⁵ /(a · 3a²) = 6a⁵/(3a³) = 2a⁵⁻³ = 2a².\nMethod: apply Law 3 inside brackets first, then combine with Laws 1 and 2.",
+      "tags": [
+        "exponents",
+        "simplify"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-7d7cacfa27",
+      "front": "Simplify 5x³y³ × 3x⁻¹y² (Q2.7) and 8y³ × ¼y² (Q2.8).",
+      "back": "5x³y³ × 3x⁻¹y²: coefficients 5×3 = 15; x^(3+(−1)) = x²; y^(3+2) = y⁵.\n= 15x²y⁵.\n8y³ × ¼y² = (8×¼)y^(3+2) = 2y⁵.\nMethod: multiply coefficients (including fractions), add exponents per base; a negative exponent in the sum just subtracts.",
+      "tags": [
+        "exponents",
+        "simplify"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-d576609d12",
+      "front": "Simplify (a²b²c)/(a·b²·c³) (Q2.9) and (5²·5³·x³·y²)/(5⁶·x²·y²) (Q2.10).",
+      "back": "(a²b²c)/(a b²c³) = a^(2−1)·b^(2−2)·c^(1−3) = a¹·b⁰·c⁻² = a/c².\n(5²·5³·x³y²)/(5⁶x²y²): top 5-power = 5⁵; 5⁵/5⁶ = 5⁻¹ = 1/5; x^(3−2)=x; y^(2−2)=y⁰=1.\n= x/5  (i.e. (1/5)x).\nMethod: subtract bottom exponents from top per base (Law 2); b⁰ and y⁰ become 1.",
+      "tags": [
+        "exponents",
+        "simplify"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-80fe92a349",
+      "front": "Simplify (3ab⁴c⁰)/(18a²bc) (Q2.11) and (4x³y⁷)/(8x²y⁹) (Q2.12).",
+      "back": "(3ab⁴c⁰)/(18a²bc): c⁰=1; coefficient 3/18 = 1/6; a^(1−2)=a⁻¹; b^(4−1)=b³; c gone.\n= b³/(6a) (since a⁻¹ goes to the denominator).\n(4x³y⁷)/(8x²y⁹) = (4/8)·x^(3−2)·y^(7−9) = ½·x·y⁻² = x/(2y²).\nMethod: simplify coefficient fraction, subtract exponents, send negative exponents across the line as positive.",
+      "tags": [
+        "exponents",
+        "simplify"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-3864c3b9e5",
+      "front": "Simplify (−3x²)² (Q3.1) and (−3x⁴)²(2x³) (Q3.2).",
+      "back": "(−3x²)² = (−3)²·(x²)² = 9x⁴ (Law 4 then Law 3; the squared bracket makes the sign positive).\n(−3x⁴)²(2x³) = 9x⁸ · 2x³ = 18x^(8+3) = 18x¹¹.\nMethod: square each factor inside the bracket first (sign included), then multiply remaining factors and add exponents.",
+      "tags": [
+        "exponents",
+        "simplify",
+        "sign-trap"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-c69cbdf61b",
+      "front": "Simplify (2³x²y)³ (Q3.3) and (3p⁵q³)² (Q3.4).",
+      "back": "(2³x²y)³ = (2³)³·(x²)³·y³ = 2⁹·x⁶·y³ = 512x⁶y³ (apply Law 4 to every factor, Law 3 to multiply exponents; 2⁹ = 512).\n(3p⁵q³)² = 3²·p¹⁰·q⁶ = 9p¹⁰q⁶.\nMethod: raise EACH factor — including the numeric coefficient — to the outside power.",
+      "tags": [
+        "exponents",
+        "simplify"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-c7fddfea00",
+      "front": "Simplify 4(−a)² − (−2a)² (Q3.5) and x⁻⁷(2x¹³ + x¹¹) (Q3.6).",
+      "back": "4(−a)² − (−2a)² = 4·a² − 4a² = 4a² − 4a² = 0.\n[(−a)² = a², (−2a)² = 4a²; both brackets make the sign positive.]\nx⁻⁷(2x¹³ + x¹¹) = 2x⁻⁷⁺¹³ + x⁻⁷⁺¹¹ = 2x⁶ + x⁴.\nMethod: square brackets first (signs vanish), then for the second distribute x⁻⁷ over each term adding exponents.",
+      "tags": [
+        "exponents",
+        "simplify"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-7910692acd",
+      "front": "Simplify (8a²·3b)/((a³b²)²) (Q3.7) and (3m³n)(−2m⁴)/((−2mn)⁴) (Q3.9).",
+      "back": "(8a²·3b)/((a³b²)²): top = 24a²b; bottom (a³b²)² = a⁶b⁴.\n= 24·a^(2−6)·b^(1−4) = 24a⁻⁴b⁻³ = 24/(a⁴b³).\n(3m³n)(−2m⁴)/((−2mn)⁴): top = −6m⁷n; bottom (−2mn)⁴ = 16m⁴n⁴.\n= −6/16 · m^(7−4)·n^(1−4) = −3m³/(8n³).\nMethod: expand bracket powers (Law 4), multiply tops, then divide with Law 2.",
+      "tags": [
+        "exponents",
+        "simplify"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-79a9b29245",
+      "front": "Simplify (x³y)/(y⁻⁴) (Q4.1) and (m⁵·n⁻²·p⁰)/(m·n³) (Q4.2).",
+      "back": "(x³y)/(y⁻⁴) = x³·y¹⁻⁽⁻⁴⁾ = x³·y⁵ = x³y⁵ (dividing by y⁻⁴ adds 4 to the y exponent).\n(m⁵n⁻²p⁰)/(m n³): p⁰=1; m^(5−1)=m⁴; n^(−2−3)=n⁻⁵.\n= m⁴/n⁵.\nMethod: subtract bottom exponents (Law 2); subtracting a negative adds; leave answer with positive exponents (Law 6).",
+      "tags": [
+        "exponents",
+        "simplify",
+        "negative-exponents"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-db29d0b0a6",
+      "front": "Simplify (x·y⁻²)/(x⁰·y) (Q4.3) and x⁰/0,25 (Q4.4).",
+      "back": "(x·y⁻²)/(x⁰·y): x⁰=1, so denominator x-part is 1; x^1 stays; y^(−2−1)=y⁻³.\n= x/y³.\nx⁰/0,25 = 1/0,25 = 4 (since x⁰ = 1 and 1 ÷ ¼ = 4).\nMethod: replace any (base)⁰ with 1, then apply Law 2 and Law 6.",
+      "tags": [
+        "exponents",
+        "simplify",
+        "law-zero"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-facd591aa8",
+      "front": "Simplify (5m)⁰/(5m⁰) (Q4.5) and (a⁻²)⁰(−3a⁰) (Q4.6).",
+      "back": "(5m)⁰/(5m⁰): top (5m)⁰ = 1 (whole bracket to 0); bottom 5m⁰ = 5×1 = 5.\n= 1/5.\n(a⁻²)⁰(−3a⁰) = 1 × (−3×1) = −3 [(a⁻²)⁰ = 1; a⁰ = 1].\nTrap: (5m)⁰ = 1 but 5m⁰ = 5 — the bracket changes everything.",
+      "tags": [
+        "exponents",
+        "law-zero"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-f260e7d032",
+      "front": "Simplify (−2a⁴b³)² − (3a²b⁰)² (Q4.7), giving a single simplified expression.",
+      "back": "(−2a⁴b³)² = (−2)²a⁸b⁶ = 4a⁸b⁶.\n(3a²b⁰)² = 9a⁴·(b⁰)² = 9a⁴ (since b⁰ = 1).\nSo the expression = 4a⁸b⁶ − 9a⁴.\nThese are unlike terms (different powers) so they do NOT combine further.\nMethod: square each bracket with Laws 3 and 4; b⁰ = 1.",
+      "tags": [
+        "exponents",
+        "simplify",
+        "law-zero"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-54c63e31ce",
+      "front": "Evaluate without a calculator: 3⁻² + 3⁰ + 3² (Q5.1).",
+      "back": "3⁻² = 1/3² = 1/9.\n3⁰ = 1.\n3² = 9.\nSum = 1/9 + 1 + 9 = 1/9 + 10 = 90/9 + 1/9 = 91/9 = 10⅑.\nMethod: convert each power to a number first (negative exponent → reciprocal, zero exponent → 1), then add.",
+      "tags": [
+        "exponents",
+        "evaluate"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-91533f94fa",
+      "front": "Without a calculator, which is larger: 2⁻⁵ or 5⁻² ? (Q6.2)",
+      "back": "2⁻⁵ = 1/2⁵ = 1/32.\n5⁻² = 1/5² = 1/25.\nCompare 1/32 vs 1/25: the bigger denominator gives the SMALLER fraction, so 1/25 > 1/32.\n∴ 5⁻² is larger.\nMethod: rewrite both as positive-exponent fractions, then compare denominators.",
+      "tags": [
+        "exponents",
+        "compare",
+        "negative-exponents"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-2cf9dbaeda",
+      "front": "Express the number 32 as a power with base 4 (Q8). Hint: 2² = 4.",
+      "back": "32 = 2⁵.\nWrite 2 as 4^(½): since 4 = 2², we have 2 = 4^(½).\nSo 32 = 2⁵ = (4^(½))⁵ = 4^(5/2) = 4²·⁵.\n∴ 32 = 4^(5/2).\nCheck: 4^(5/2) = (√4)⁵ = 2⁵ = 32 ✓.",
+      "tags": [
+        "exponents",
+        "rewrite-base"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-41d370cb55",
+      "front": "Multiple choice (Q9.1): x²/y² = ? Options x/y, y/x, x−y, cannot be simplified.",
+      "back": "Answer: D — it cannot be simplified.\nReason: Law 2 only lets you subtract exponents when the BASES are the SAME. Here x and y are different bases, so x²/y² stays as it is (you cannot 'cancel' to x/y).\nx²/y² = (x/y)² is true, but that is not 'simpler' and none of the other options equal it.",
+      "tags": [
+        "exponents",
+        "common-mistake"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-29a7ebe4ce",
+      "front": "Multiple choice (Q9.4): If p = −½, then −p² = ?  Options ¼, −¼, −1, 1.",
+      "back": "Answer: B — −¼.\nWorking: p² = (−½)² = ¼ (squaring makes it positive).\nThen −p² = −(¼) = −¼.\nTrap: the minus sign is OUTSIDE the square, so you square first (getting +¼) then negate.",
+      "tags": [
+        "exponents",
+        "substitution",
+        "sign-trap"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+    },
+    {
+      "id": "exponents-110b7ce441",
+      "front": "Golden method for simplifying any exponent expression involving multiplication/division: in what order do you handle things?",
+      "back": "Handle SIGNS, then NUMBERS, then LETTERS — one at a time.\n1. Decide the sign of the answer first (count the negatives).\n2. Multiply/divide the number coefficients.\n3. Apply the exponent laws to each letter separately (aᵐ × aⁿ = aᵐ⁺ⁿ, aᵐ ÷ aⁿ = aᵐ⁻ⁿ).\nDoing one thing at a time prevents careless errors.",
+      "tags": [
+        "exponents-method",
+        "order-of-work"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-356ff16ca2",
+      "front": "List the six exponent laws used throughout Ex 4.1.",
+      "back": "1) aᵐ × aⁿ = aᵐ⁺ⁿ\n2) aᵐ ÷ aⁿ = aᵐ⁻ⁿ  (= 1/aⁿ⁻ᵐ)\n3) (aᵐ)ⁿ = aᵐⁿ\n4) (ab)ⁿ = aⁿbⁿ  (each factor is raised to the power)\n5) a⁰ = 1, a ≠ 0\n6) a⁻ⁿ = 1/aⁿ, a ≠ 0",
+      "tags": [
+        "exponents-method",
+        "laws"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-bb1ef35985",
+      "front": "Method for Law 1 with several factors, e.g. simplify 2⁻⁴ × 2⁵ × 2⁰ (Q1.3).",
+      "back": "Same base, multiplied → ADD the exponents (including the negative and the zero):\n2⁻⁴ × 2⁵ × 2⁰ = 2^(−4 + 5 + 0) = 2¹ = 2.\nStep through the exponents carefully: −4 + 5 + 0 = 1. Note 2⁰ contributes exponent 0, not nothing.",
+      "tags": [
+        "exponents-method",
+        "law-1"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-9cc6716310",
+      "front": "Method for Law 2 (division), e.g. simplify a²/a⁻¹ (Q1.6).",
+      "back": "Same base, divided → SUBTRACT the exponents (top minus bottom):\na²/a⁻¹ = a^(2 − (−1)) = a^(2+1) = a³.\nWatch the double negative: subtracting a negative exponent ADDS. 2 − (−1) = 3.",
+      "tags": [
+        "exponents-method",
+        "law-2",
+        "negatives"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-6ca3287a6f",
+      "front": "Method for Law 4, raising a product to a power, e.g. (−4a⁵b³)² (Q1.12).",
+      "back": "EACH factor in the bracket must be raised to the power — the sign, the number AND each letter:\n(−4a⁵b³)² = (−4)² · (a⁵)² · (b³)²\n= 16 · a^(5×2) · b^(3×2) = 16a¹⁰b⁶.\n(−4)² = +16 (even power makes it positive). Multiply the inner exponents by the outer power (Law 3).",
+      "tags": [
+        "exponents-method",
+        "law-4",
+        "signs"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-8107ab1d3a",
+      "front": "How do you handle a zero exponent on only PART of a term, e.g. 3p⁰ + (3p)⁰ (Q1.15)?",
+      "back": "The exponent applies only to what it directly touches.\n3p⁰: the 0 is only on p, so p⁰ = 1, giving 3·1 = 3... but here it is 3(1) = 3 only if written 3·p⁰. Book: 3p⁰ + (3p)⁰ = 3(1) + 1 = 3 + 1 = 4.\nKey: in (3p)⁰ the whole bracket is raised to 0 so the result is 1; in 3p⁰ only p is raised to 0. NB (8x⁰) gives 8(1)=8, which is different from (8x)⁰ = 1.",
+      "tags": [
+        "exponents-method",
+        "law-5",
+        "zero-exponent",
+        "common-mistake"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-11ec6ed449",
+      "front": "Method for Law 6 (negative exponents), e.g. simplify 2⁻³ and x⁻⁴ (Q1.16, 1.17).",
+      "back": "A negative exponent means RECIPROCAL: a⁻ⁿ = 1/aⁿ (a ≠ 0).\n2⁻³ = 1/2³ = 1/8.\nx⁻⁴ = 1/x⁴.\nFor a³·b⁻⁴ (Q1.18): move only the factor with the negative exponent: a³·b⁻⁴ = a³/b⁴.",
+      "tags": [
+        "exponents-method",
+        "law-6",
+        "negatives"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-7de5a04941",
+      "front": "When can you NOT combine two exponent terms? e.g. simplify x⁻⁷(x¹³ + x¹¹) (Q3.6).",
+      "back": "Inside the bracket x¹³ + x¹¹ are NOT like terms (different exponents), so they cannot be added. Instead DISTRIBUTE:\nx⁻⁷(x¹³ + x¹¹) = x^(−7+13) + x^(−7+11) = x⁶ + x⁴.\nCommon mistake: never add the exponents of terms joined by + or −. You only add/subtract exponents when MULTIPLYING/DIVIDING the same base.",
+      "tags": [
+        "exponents-method",
+        "common-mistake",
+        "like-terms"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-e551214628",
+      "front": "Method for a fraction of monomials, e.g. simplify (5²·5³·x²·y⁴)/(5⁶·x³·y²) (Q2.10).",
+      "back": "Gather the same base first (Law 1 on top: 5² · 5³ = 5⁵), then divide each base (Law 2: subtract exponents top − bottom):\n= 5⁵·x²·y⁴ / (5⁶·x³·y²)\n= 5^(5−6) · x^(2−3) · y^(4−2) = 5⁻¹ x⁻¹ y² = y²/(5x).\nTip: gather exponents so their sum is POSITIVE where possible to avoid negative exponents in the final answer.",
+      "tags": [
+        "exponents-method",
+        "fractions",
+        "law-1",
+        "law-2"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-c2b735473e",
+      "front": "Why does cancelling a numerical fraction like 39/12 to lowest terms help, e.g. (39x¹⁷y¹⁰)/(3x⁴y⁻³) (Q2.18)?",
+      "back": "Simplify the NUMBER part and the LETTER parts separately.\nNumbers: 39 ÷ 3 = 13.\nLetters: x^(17−4) = x¹³; y^(10−(−3)) = y^(10+3) = y¹³.\nResult: 13x¹³y¹³.\nWatch the double negative on y: 10 − (−3) = 13.",
+      "tags": [
+        "exponents-method",
+        "fractions",
+        "negatives"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-0cc721535e",
+      "front": "Method for a product of brackets raised to powers, e.g. (3x³y)³ (Q3.4) and (3p⁵q³)² (Q3.4 type).",
+      "back": "Apply the outer power to EVERY factor (Law 4), and multiply inner exponents by it (Law 3):\n(3x³y)³ = 3³ · x^(3×3) · y³ = 27x⁹y³.\n(3p⁵q³)² = 3² · p^(5×2) · q^(3×2) = 9p¹⁰q⁶.\nDon't forget to raise the NUMBER coefficient to the power too (3³ = 27, not 3).",
+      "tags": [
+        "exponents-method",
+        "law-3",
+        "law-4",
+        "common-mistake"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-e82da6037b",
+      "front": "Method when signs cancel, e.g. 4(−a)² − (−2a)² (Q3.5).",
+      "back": "Square carefully: (−a)² = a² and (−2a)² = (−2)²a² = 4a².\nSo 4(−a)² − (−2a)² = 4a² − 4a² = 0.\nKey: an even power removes the negative sign. Square the coefficient AND the variable inside every bracket.",
+      "tags": [
+        "exponents-method",
+        "signs"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-fb9364c9a0",
+      "front": "Method for a big multi-factor fraction, e.g. ab(−2a²b³)³ / (−56b³) (Q3.8).",
+      "back": "Step 1 expand the power on the bracket (Law 4, signs first): (−2a²b³)³ = (−2)³a⁶b⁹ = −8a⁶b⁹.\nStep 2 multiply the numerator: ab·(−8a⁶b⁹) = −8a⁷b¹⁰.\nStep 3 divide by the denominator: (−8a⁷b¹⁰)/(−56b³) = (−8/−56)·a⁷·b^(10−3) = (1/7)a⁷b⁷ = a⁷b⁷/7.\nNegative ÷ negative = positive.",
+      "tags": [
+        "exponents-method",
+        "fractions",
+        "signs"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-e008916e0d",
+      "front": "How do you simplify a multi-base fraction with negatives and a zero exponent, e.g. (a⁻²)(−3a⁰) (Q4.6)?",
+      "back": "The 0 exponent applies only to the a it touches: a⁰ = 1.\n(a⁻²)(−3a⁰) = (a⁻²)(−3·1) = (1/a²)(−3) = −3/a².\nWork the zero exponent first, then convert the negative exponent to a reciprocal.",
+      "tags": [
+        "exponents-method",
+        "zero-exponent",
+        "negatives"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-e211b45dba",
+      "front": "Method for an order-of-operations exponent sum, e.g. 3⁻² + 3⁰ + 3² (Q5.1).",
+      "back": "Evaluate each power separately (these are like terms only after you reach numbers — but they are added, so just compute each):\n3⁻² = 1/3² = 1/9; 3⁰ = 1; 3² = 9.\nSum = 1/9 + 1 + 9 = 1/9 + 9/9... = (1 + 9 + 81)/9 = 91/9.\nUse a common denominator of 9 to add the fraction and the whole numbers.",
+      "tags": [
+        "exponents-method",
+        "evaluating",
+        "fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-c56837b59d",
+      "front": "Method for combining square roots with exponents, e.g. √(36x³⁶ + 64x³⁶) (Q5.8).",
+      "back": "ADD like terms UNDER the root first, then take the root:\n√(36x³⁶ + 64x³⁶) = √(100x³⁶) = √100 · √(x³⁶) = 10x¹⁸.\nWhy x¹⁸: x¹⁸ × x¹⁸ = x³⁶ so √(x³⁶) = x¹⁸ (halve the even exponent). Common mistake: do not take the root of each term separately before adding.",
+      "tags": [
+        "exponents-method",
+        "roots",
+        "like-terms"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    },
+    {
+      "id": "exponents-9dc10cf9e2",
+      "front": "How do you simplify √(9(a + 2b)²x⁴) (Q5.11) involving a squared bracket under a root?",
+      "back": "Just as √(3²) = 3, so √((a+2b)²) = a + 2b. Take the square root of each factor:\n√(9(a+2b)²x⁴) = √9 · √((a+2b)²) · √(x⁴) = 3(a+2b)x² = 3x²(a+2b) = 3ax² + 6bx².\nHalve even exponents (x⁴ → x²); the squared bracket comes out as itself.",
+      "tags": [
+        "exponents-method",
+        "roots"
+      ],
+      "difficulty": "medium",
+      "source": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014",
+      "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml"
+    }
+  ],
+  "triage": null,
+  "guide": null
+}
