@@ -1536,8 +1536,9 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(v17, /try \{ ttsWorker\(\)/, 'voice.js: pumpSynth wraps ttsWorker in try');
         assert.match(v17, /if \(!_ttsReady\).*_synthBusy = false/, 'voice.js: pumpSynth null-guards _ttsReady');
         assert.match(v17, /_tts = null.*_ttsReady = null|_ttsReady = null.*_tts = null/, 'voice.js: pumpSynth catch resets worker on failure');
-        // stt timeout rejects
+        // stt timeout rejects — and the executor actually binds reject (run-18: was called out-of-scope, hung the promise)
         assert.match(v17, /reject.*transcription timed out|transcription timed out.*reject/, 'voice.js: stt timeout rejects instead of silently resolving');
+        assert.match(v17, /new Promise\(\(resolve, reject\) =>[\s\S]*transcription timed out/, 'voice.js: transcribe executor binds reject (timeout can actually settle the promise)');
         // syllabus empty-string guard
         assert.match(syl17, /if \(!id\).*throw/, 'syllabus.js: setActiveSyllabus rejects empty id');
         // mic keyboard equivalent

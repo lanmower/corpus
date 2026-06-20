@@ -1,0 +1,122 @@
+# Gr 9 Maths 2-in-1 — exponents / Exponents Ex 4.1 Worked Solutions
+deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+notes:
+  - guid: 11a2b3c4d5e6f701
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Golden method for simplifying any exponent expression involving multiplication/division: in what order do you handle things?"
+      Back: "Handle SIGNS, then NUMBERS, then LETTERS — one at a time.\n1. Decide the sign of the answer first (count the negatives).\n2. Multiply/divide the number coefficients.\n3. Apply the exponent laws to each letter separately (aᵐ × aⁿ = aᵐ⁺ⁿ, aᵐ ÷ aⁿ = aᵐ⁻ⁿ).\nDoing one thing at a time prevents careless errors."
+    tags: ["exponents-method", "order-of-work", "subject:exponents"]
+  - guid: 22b3c4d5e6f70812
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "List the six exponent laws used throughout Ex 4.1."
+      Back: "1) aᵐ × aⁿ = aᵐ⁺ⁿ\n2) aᵐ ÷ aⁿ = aᵐ⁻ⁿ  (= 1/aⁿ⁻ᵐ)\n3) (aᵐ)ⁿ = aᵐⁿ\n4) (ab)ⁿ = aⁿbⁿ  (each factor is raised to the power)\n5) a⁰ = 1, a ≠ 0\n6) a⁻ⁿ = 1/aⁿ, a ≠ 0"
+    tags: ["exponents-method", "laws", "subject:exponents"]
+  - guid: 33c4d5e6f7081923
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method for Law 1 with several factors, e.g. simplify 2⁻⁴ × 2⁵ × 2⁰ (Q1.3)."
+      Back: "Same base, multiplied → ADD the exponents (including the negative and the zero):\n2⁻⁴ × 2⁵ × 2⁰ = 2^(−4 + 5 + 0) = 2¹ = 2.\nStep through the exponents carefully: −4 + 5 + 0 = 1. Note 2⁰ contributes exponent 0, not nothing."
+    tags: ["exponents-method", "law-1", "subject:exponents"]
+  - guid: 44d5e6f708192a34
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method for Law 2 (division), e.g. simplify a²/a⁻¹ (Q1.6)."
+      Back: "Same base, divided → SUBTRACT the exponents (top minus bottom):\na²/a⁻¹ = a^(2 − (−1)) = a^(2+1) = a³.\nWatch the double negative: subtracting a negative exponent ADDS. 2 − (−1) = 3."
+    tags: ["exponents-method", "law-2", "negatives", "subject:exponents"]
+  - guid: 55e6f708192a3b45
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method for Law 4, raising a product to a power, e.g. (−4a⁵b³)² (Q1.12)."
+      Back: "EACH factor in the bracket must be raised to the power — the sign, the number AND each letter:\n(−4a⁵b³)² = (−4)² · (a⁵)² · (b³)²\n= 16 · a^(5×2) · b^(3×2) = 16a¹⁰b⁶.\n(−4)² = +16 (even power makes it positive). Multiply the inner exponents by the outer power (Law 3)."
+    tags: ["exponents-method", "law-4", "signs", "subject:exponents"]
+  - guid: 66f708192a3b4c56
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "How do you handle a zero exponent on only PART of a term, e.g. 3p⁰ + (3p)⁰ (Q1.15)?"
+      Back: "The exponent applies only to what it directly touches.\n3p⁰: the 0 is only on p, so p⁰ = 1, giving 3·1 = 3... but here it is 3(1) = 3 only if written 3·p⁰. Book: 3p⁰ + (3p)⁰ = 3(1) + 1 = 3 + 1 = 4.\nKey: in (3p)⁰ the whole bracket is raised to 0 so the result is 1; in 3p⁰ only p is raised to 0. NB (8x⁰) gives 8(1)=8, which is different from (8x)⁰ = 1."
+    tags: ["exponents-method", "law-5", "zero-exponent", "common-mistake", "subject:exponents"]
+  - guid: 7708192a3b4c5d67
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method for Law 6 (negative exponents), e.g. simplify 2⁻³ and x⁻⁴ (Q1.16, 1.17)."
+      Back: "A negative exponent means RECIPROCAL: a⁻ⁿ = 1/aⁿ (a ≠ 0).\n2⁻³ = 1/2³ = 1/8.\nx⁻⁴ = 1/x⁴.\nFor a³·b⁻⁴ (Q1.18): move only the factor with the negative exponent: a³·b⁻⁴ = a³/b⁴."
+    tags: ["exponents-method", "law-6", "negatives", "subject:exponents"]
+  - guid: 88192a3b4c5d6e78
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "When can you NOT combine two exponent terms? e.g. simplify x⁻⁷(x¹³ + x¹¹) (Q3.6)."
+      Back: "Inside the bracket x¹³ + x¹¹ are NOT like terms (different exponents), so they cannot be added. Instead DISTRIBUTE:\nx⁻⁷(x¹³ + x¹¹) = x^(−7+13) + x^(−7+11) = x⁶ + x⁴.\nCommon mistake: never add the exponents of terms joined by + or −. You only add/subtract exponents when MULTIPLYING/DIVIDING the same base."
+    tags: ["exponents-method", "common-mistake", "like-terms", "subject:exponents"]
+  - guid: 99203b4c5d6e7f89
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method for a fraction of monomials, e.g. simplify (5²·5³·x²·y⁴)/(5⁶·x³·y²) (Q2.10)."
+      Back: "Gather the same base first (Law 1 on top: 5² · 5³ = 5⁵), then divide each base (Law 2: subtract exponents top − bottom):\n= 5⁵·x²·y⁴ / (5⁶·x³·y²)\n= 5^(5−6) · x^(2−3) · y^(4−2) = 5⁻¹ x⁻¹ y² = y²/(5x).\nTip: gather exponents so their sum is POSITIVE where possible to avoid negative exponents in the final answer."
+    tags: ["exponents-method", "fractions", "law-1", "law-2", "subject:exponents"]
+  - guid: aa314c5d6e7f8a9b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Why does cancelling a numerical fraction like 39/12 to lowest terms help, e.g. (39x¹⁷y¹⁰)/(3x⁴y⁻³) (Q2.18)?"
+      Back: "Simplify the NUMBER part and the LETTER parts separately.\nNumbers: 39 ÷ 3 = 13.\nLetters: x^(17−4) = x¹³; y^(10−(−3)) = y^(10+3) = y¹³.\nResult: 13x¹³y¹³.\nWatch the double negative on y: 10 − (−3) = 13."
+    tags: ["exponents-method", "fractions", "negatives", "subject:exponents"]
+  - guid: bb425d6e7f8a9bac
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method for a product of brackets raised to powers, e.g. (3x³y)³ (Q3.4) and (3p⁵q³)² (Q3.4 type)."
+      Back: "Apply the outer power to EVERY factor (Law 4), and multiply inner exponents by it (Law 3):\n(3x³y)³ = 3³ · x^(3×3) · y³ = 27x⁹y³.\n(3p⁵q³)² = 3² · p^(5×2) · q^(3×2) = 9p¹⁰q⁶.\nDon't forget to raise the NUMBER coefficient to the power too (3³ = 27, not 3)."
+    tags: ["exponents-method", "law-3", "law-4", "common-mistake", "subject:exponents"]
+  - guid: cc536e7f8a9bacbd
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method when signs cancel, e.g. 4(−a)² − (−2a)² (Q3.5)."
+      Back: "Square carefully: (−a)² = a² and (−2a)² = (−2)²a² = 4a².\nSo 4(−a)² − (−2a)² = 4a² − 4a² = 0.\nKey: an even power removes the negative sign. Square the coefficient AND the variable inside every bracket."
+    tags: ["exponents-method", "signs", "subject:exponents"]
+  - guid: dd647f8a9bacbdce
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method for a big multi-factor fraction, e.g. ab(−2a²b³)³ / (−56b³) (Q3.8)."
+      Back: "Step 1 expand the power on the bracket (Law 4, signs first): (−2a²b³)³ = (−2)³a⁶b⁹ = −8a⁶b⁹.\nStep 2 multiply the numerator: ab·(−8a⁶b⁹) = −8a⁷b¹⁰.\nStep 3 divide by the denominator: (−8a⁷b¹⁰)/(−56b³) = (−8/−56)·a⁷·b^(10−3) = (1/7)a⁷b⁷ = a⁷b⁷/7.\nNegative ÷ negative = positive."
+    tags: ["exponents-method", "fractions", "signs", "subject:exponents"]
+  - guid: ee758a9bacbdcedf
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "How do you simplify a multi-base fraction with negatives and a zero exponent, e.g. (a⁻²)(−3a⁰) (Q4.6)?"
+      Back: "The 0 exponent applies only to the a it touches: a⁰ = 1.\n(a⁻²)(−3a⁰) = (a⁻²)(−3·1) = (1/a²)(−3) = −3/a².\nWork the zero exponent first, then convert the negative exponent to a reciprocal."
+    tags: ["exponents-method", "zero-exponent", "negatives", "subject:exponents"]
+  - guid: ff869bacbdcedfe0
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method for an order-of-operations exponent sum, e.g. 3⁻² + 3⁰ + 3² (Q5.1)."
+      Back: "Evaluate each power separately (these are like terms only after you reach numbers — but they are added, so just compute each):\n3⁻² = 1/3² = 1/9; 3⁰ = 1; 3² = 9.\nSum = 1/9 + 1 + 9 = 1/9 + 9/9... = (1 + 9 + 81)/9 = 91/9.\nUse a common denominator of 9 to add the fraction and the whole numbers."
+    tags: ["exponents-method", "evaluating", "fractions", "subject:exponents"]
+  - guid: 0a97acbdcedfe0f1
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "Method for combining square roots with exponents, e.g. √(36x³⁶ + 64x³⁶) (Q5.8)."
+      Back: "ADD like terms UNDER the root first, then take the root:\n√(36x³⁶ + 64x³⁶) = √(100x³⁶) = √100 · √(x³⁶) = 10x¹⁸.\nWhy x¹⁸: x¹⁸ × x¹⁸ = x³⁶ so √(x³⁶) = x¹⁸ (halve the even exponent). Common mistake: do not take the root of each term separately before adding."
+    tags: ["exponents-method", "roots", "like-terms", "subject:exponents"]
+  - guid: 1ba8bdcedfe0f102
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents Ex 4.1 Worked Solutions"
+    fields:
+      Front: "How do you simplify √(9(a + 2b)²x⁴) (Q5.11) involving a squared bracket under a root?"
+      Back: "Just as √(3²) = 3, so √((a+2b)²) = a + 2b. Take the square root of each factor:\n√(9(a+2b)²x⁴) = √9 · √((a+2b)²) · √(x⁴) = 3(a+2b)x² = 3x²(a+2b) = 3ax² + 6bx².\nHalve even exponents (x⁴ → x²); the squared bracket comes out as itself."
+    tags: ["exponents-method", "roots", "subject:exponents"]

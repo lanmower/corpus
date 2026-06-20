@@ -1,0 +1,108 @@
+# Gr 9 Maths 2-in-1 — measurement / Volume and TSA of 3D Objects
+deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+notes:
+  - guid: a1f0c3d29b7e4061
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "What do Total Surface Area (TSA) and Volume each measure for a 3D object, and how do their definitions differ?"
+      Back: "TSA = sum of the areas of ALL the exposed faces (the total exterior area of the object). It is a 2D area, measured in square units (mm², cm², m²).\nVolume = the amount of 3D space the object occupies, measured in cubic units (mm³, cm³, m³).\nGeneral idea: TSA = sum of areas of all surfaces; Volume = area of base × perpendicular height (for prisms)."
+    tags: ["volume-tsa", "definitions", "subject:measurement"]
+  - guid: b2e1d4a3c8f05172
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Cube with side s: give the TSA formula and explain it."
+      Back: "TSA = 6s²\nA cube has 6 identical square faces, each of area s × s = s². So total = 6 × s² = 6s².\nUnits: square units (e.g. cm²)."
+    tags: ["volume-tsa", "cube", "subject:measurement"]
+  - guid: c3d2e5b4a9016283
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Cube with side s: give the Volume formula and explain it."
+      Back: "V = s³\nVolume = area of base × height = (s × s) × s = s³.\nUnits: cubic units (e.g. cm³)."
+    tags: ["volume-tsa", "cube", "subject:measurement"]
+  - guid: d4c3f6e5b0127394
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Rectangular prism with length ℓ, breadth b, height h: give the TSA formula and where it comes from."
+      Back: "TSA = 2ℓb + 2bh + 2ℓh   (also written 2(ℓ×b) + 2(b×h) + 2(ℓ×h))\nA rectangular prism has 3 pairs of identical rectangular faces: top/bottom (ℓ×b), front/back (ℓ×h) and the two ends (b×h). Add the area of all 6 faces.\nUnits: square units."
+    tags: ["volume-tsa", "rectangular-prism", "subject:measurement"]
+  - guid: e5d4a7f6c1238405
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Rectangular prism with length ℓ, breadth b, height h: give the Volume formula."
+      Back: "V = ℓ × b × h\nVolume = area of base (ℓ × b) × height h.\nUnits: cubic units."
+    tags: ["volume-tsa", "rectangular-prism", "subject:measurement"]
+  - guid: f6e5b8a7d2349516
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Triangular prism: a = base of triangle, h = height of triangle, c = sides of triangle, H = distance between the two triangular bases (length of prism). Give the TSA formula and explain each part."
+      Back: "TSA = 2(½ × a × h) + (sides of prism)\n= 2(½ a h) + (a × H) + (b × H) + (c × H)\nThe two triangular ends each have area ½ × base × height = ½ a h (so 2 of them).\nThe three rectangular side faces each have area (a side of the triangle) × H, the length of the prism.\nUnits: square units."
+    tags: ["volume-tsa", "triangular-prism", "subject:measurement"]
+  - guid: 0708c9b8e3450627
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Triangular prism: give the Volume formula (a = base of triangle, h = height of triangle, H = length of prism)."
+      Back: "V = area of base triangle × length of prism = (½ × b × h) × H\nWritten: V = (b × h)/2 × H, i.e. V = ½ b h H.\nRemember the area of the triangular base is ½ b h, NOT b h.\nUnits: cubic units."
+    tags: ["volume-tsa", "triangular-prism", "subject:measurement"]
+  - guid: 1819dac9f4561738
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Cylinder with base radius r and height h: give the TSA formula and explain the parts."
+      Back: "TSA = 2πr² + 2πrh\nThe two circular ends each have area πr² (so 2πr²). The curved side, unrolled, is a rectangle of width = circumference = 2πr and height h, giving area 2πrh.\nUnits: square units."
+    tags: ["volume-tsa", "cylinder", "subject:measurement"]
+  - guid: 293aebd0a5672849
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Cylinder with base radius r and height h: give the Volume formula."
+      Back: "V = πr² × h = πr²h\nVolume = area of circular base (πr²) × height h.\nUnits: cubic units."
+    tags: ["volume-tsa", "cylinder", "subject:measurement"]
+  - guid: 3a4bfce1b678395a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "What is the single big idea linking Volume of any prism or cylinder?"
+      Back: "Volume = (area of the base) × (perpendicular height).\nCube: base s² → V = s²·s = s³.\nRectangular prism: base ℓb → V = ℓbh.\nTriangular prism: base ½bh → V = ½bh·H.\nCylinder: base πr² → V = πr²h.\nAlways find the base area first, then multiply by the height/length."
+    tags: ["volume-tsa", "method", "subject:measurement"]
+  - guid: 4b5c0df2c789406b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "SI LENGTH ladder: give the conversion factors between mm, cm, m and km and how to know whether to multiply or divide."
+      Back: "1 cm = 10 mm; 1 m = 100 cm; 1 km = 1000 m.\nWhen going from a BIG unit to a SMALL unit you MULTIPLY (×) by the factor.\nWhen going from a SMALL unit to a BIG unit you DIVIDE (÷) by the factor.\nLadder (×10 each step down): km →(×1000)→ m →(×100)→ cm →(×10)→ mm. Reverse the arrows and divide to go up."
+    tags: ["si-conversions", "length", "subject:measurement"]
+  - guid: 5c6d1e03d89a417c
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "SI AREA (squared units) conversions: what are the factors and why do they differ from length?"
+      Back: "Square each linear factor. So:\n1 cm² = 10² = 100 mm²; 1 m² = 100² = 10 000 cm²; 1 km² = 1000² = 1 000 000 m².\nBig → small: MULTIPLY. Small → big: DIVIDE.\nThe factors are the SQUARES of the length factors because area has two dimensions (length × length)."
+    tags: ["si-conversions", "area", "subject:measurement"]
+  - guid: 6d7e2f14e9ab428d
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "SI VOLUME (cubed units) conversions: what are the factors?"
+      Back: "Cube each linear factor. So:\n1 cm³ = 10³ = 1000 mm³; 1 m³ = 100³ = 1 000 000 cm³; 1 km³ = 1000³ = 1 000 000 000 m³.\nBig → small: MULTIPLY. Small → big: DIVIDE.\nThe factors are the CUBES of the length factors because volume has three dimensions."
+    tags: ["si-conversions", "volume", "subject:measurement"]
+  - guid: 7e8f3025f0bc439e
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Common-mistake check: converting between squared and cubed units. Convert 2.5 m³ to cm³."
+      Back: "Big unit (m³) → small unit (cm³): MULTIPLY by 100³ = 1 000 000.\n2.5 m³ × 1 000 000 = 2 500 000 cm³.\nMistake to avoid: do NOT just use ×100 (that is the LENGTH factor). For cubed units cube the factor (100³); for squared units square it (100²)."
+    tags: ["si-conversions", "common-mistake", "subject:measurement"]
+  - guid: 8f904136a1cd44af
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Volume and TSA of 3D Objects"
+    fields:
+      Front: "Worked example: a cylinder has radius 7 cm and height 10 cm. Find its Volume (use π ≈ 22/7) and its TSA (leave in terms of π)."
+      Back: "Volume: V = πr²h = (22/7)(7²)(10) = (22/7)(49)(10) = 22 × 7 × 10 = 1540 cm³.\nTSA: TSA = 2πr² + 2πrh = 2π(7²) + 2π(7)(10) = 98π + 140π = 238π cm² ≈ 748 cm².\nAlways keep length and area/volume units consistent before substituting."
+    tags: ["volume-tsa", "cylinder", "subject:measurement"]

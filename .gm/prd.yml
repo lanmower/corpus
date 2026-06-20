@@ -2589,3 +2589,15 @@
   description: voice.js transcribe() timeout resolves with '' silently; user sees spinner disappear with no explanation — distinguish timeout and show toast
   status: completed
   witness: 'voice.js:113: resolve('''') changed to reject(new Error(''transcription timed out'')); both callers have try/catch'
+- id: fix-voice-transcribe-reject
+  title: voice.js transcribe() timeout calls undefined reject — bind reject in executor, remove message listener on timeout, settle promise
+  witness: site/voice.js:111 executor now (resolve, reject); browser-1 bindsReject:true; test.js:1541 asserts executor binds reject
+  status: completed
+- id: drop-voice-dead-exports
+  title: 'voice.js: remove unused exports preload/voices/setVoice + orphaned _voiceList plumbing (no consumer in tree)'
+  witness: browser-1 exps=[cancelSpeech..stopListening], dead:[], noVoiceList:true; no JS consumers in tree
+  status: completed
+- id: review-cardbyid-map-reuse
+  title: review.js renderReview resolves queue via O(allCards) .find per id; build/reuse id->card map for O(queueLen) lookup
+  witness: site/views/review.js:110 cardById[id]; browser-1 mapReuse:true (no allCards.find remains)
+  status: completed

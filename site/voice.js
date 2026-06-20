@@ -12,10 +12,8 @@
 //   cancelSpeech()                    stop playback + clear the queue (interrupt / new user turn)
 //   resetSpeech()                     clear the sentence buffer for a fresh turn
 //   setSpeechEnabled(bool) / speechEnabled()
-//   setVoice(name) / voices(): Promise<string[]>
-//   preload()                         warm both workers
 
-let _tts = null, _ttsReady = null, _voiceList = null;
+let _tts = null, _ttsReady = null;
 let _stt = null, _sttReady = null;
 // Opt-in: spoken replies (and the ~24MB KittenTTS download) only start once the
 // user enables the speaker toggle, so a silent tutor session downloads nothing.
@@ -30,7 +28,7 @@ function ttsWorker() {
     _ttsReady = new Promise((resolve, reject) => {
         const onMsg = (e) => {
             const d = e.data || {};
-            if (d.status === 'ready') { _voiceList = d.voices || []; _tts.removeEventListener('message', onMsg); resolve(d); }
+            if (d.status === 'ready') { _tts.removeEventListener('message', onMsg); resolve(d); }
             else if (d.status === 'error' && !d.requestId) { _tts.removeEventListener('message', onMsg); reject(new Error(d.error || 'tts load failed')); }
         };
         _tts.addEventListener('message', onMsg);
@@ -54,9 +52,6 @@ function sttWorker() {
     _stt.postMessage({ type: 'load' });
     return _stt;
 }
-export function preload() { try { ttsWorker(); sttWorker(); } catch {} }
-export async function voices() { ttsWorker(); await _ttsReady; return _voiceList || []; }
-export function setVoice(name) { if (name) _voice = name; }
 export function setSpeechEnabled(on) { _speechEnabled = !!on; if (!_speechEnabled) cancelSpeech(); }
 export function speechEnabled() { return _speechEnabled; }
 
@@ -108,7 +103,7 @@ function transcribe(audio) {
         return Promise.reject(new Error('microphone unavailable: ' + err.message));
     }
     if (!_sttReady) return Promise.reject(new Error('microphone unavailable'));
-    return _sttReady.then(() => new Promise((resolve) => {
+    return _sttReady.then(() => new Promise((resolve, reject) => {
         const id = 'stt-' + (++_reqSeq);
         const timer = setTimeout(() => { _stt.removeEventListener('message', onMsg); reject(new Error('transcription timed out')); }, 30000);
         const onMsg = (e) => {

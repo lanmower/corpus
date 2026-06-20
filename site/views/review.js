@@ -48,11 +48,11 @@ export async function renderReview() {
     }
     const cardIds = allCards.map(c => c.id);
     state.reviewAllCardIds = cardIds;
+    const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
 
     if (!state.reviewQueueIds || state.reviewQueueIds.length === 0) {
         const states = srs.loadStates();
         let pool = cardIds;
-        const cardById = Object.fromEntries(allCards.map(c => [c.id, c]));
         if (state.paletteReviewSet && state.paletteReviewSet.length) pool = pool.filter(id => state.paletteReviewSet.includes(id));
         if (state.reviewTagFilter.size > 0) {
             pool = pool.filter(id => {
@@ -107,7 +107,7 @@ export async function renderReview() {
         state.reviewSessionStarted = state.reviewQueueIds.length;
         state.sessionFinished = false;
     }
-    state.reviewQueue = state.reviewQueueIds.map(id => allCards.find(c => c.id === id)).filter(Boolean);
+    state.reviewQueue = state.reviewQueueIds.map(id => cardById[id]).filter(Boolean);
     if (state.reviewIndex >= state.reviewQueue.length) state.reviewIndex = 0;
 
     const p = progress.load();
