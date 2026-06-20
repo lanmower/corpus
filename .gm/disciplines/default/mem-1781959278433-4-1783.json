@@ -1,0 +1,15 @@
+## Corpus quality-max 20th run (2026-06-20, commit 036ca82)
+
+Loop '/gm-skill maximize quality'. Ran .claude/workflows/quality-max.js (26 agents): 14 raw -> 13 confirmed/1 refuted, 8 unique.
+
+LANDED (browser-witnessed session 41, 33 tests pass, run-22):
+1. stats-sort-dom-stacking (medium, real bug): views/stats.js renderStats appended without clearing; sort select/th handlers re-invoke renderStats() directly (bypass app.js render() which clears) -> each sort stacked a full duplicate stats DOM. Fix: getStage().innerHTML='' at top. Witness: section-head count stays 1 across sorts.
+2. welcome-subject-count: today.js hardcoded '8 subjects' -> state.manifest?.subjects?.length (cmed4=10, mccqe1=31). Witness welcomeCount=10.
+3. schedule-examdate-rot: schedule.js DEFAULT_CONFIG.examDate frozen '2026-06-15' (same rot as srs run-19); exported srs.defaultExamDate(), used in defaultConfig/loadConfig/saveConfig.
+4. search-arrow-move-class: search.js arrows rebuilt full list innerHTML; added setActive() toggling .active on existing nodes.
+5. cancelspeech-listener-leak: voice.js pumpSynth onMsg self-removes only on 'audio' reply; cancelSpeech interrupt skips it -> leak per turn. Track _activeSynthMsg, detach in cancelSpeech.
+6. feedtext test: extracted pure splitSentences (fence-hold+sentence-split) exported; behavioral test.
+7. mccqe1-general-surgery-misclassify (build): import_mccqe1 subjectFromToken mapped ANY general_* to surgery; now only general-surgery.
+8. mccqe1-rmsync-media-guard (build): rmSync wiped scaffolded media dirs; now scans for non-.gitkeep media and process.exit(1).
+
+NOTE: long-gap instruction recovery once (workflow+edits >5min). Two browser sessions open at residual time: 7 (mine, closed) + 6 (C:\dev\spoint, another project's session, left alone).
