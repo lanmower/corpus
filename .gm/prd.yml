@@ -2701,3 +2701,47 @@
   title: voice.js feedText fence-suppression + sentence-split only source-regex tested; extract the pure split/fence logic to an exported testable helper and add behavioral test.js coverage
   witness: 'voice.js splitSentences extracted+exported; feedText uses it; test run-22 behavioral: mid-fence holds, sentence splits, closed fence releases (33 pass)'
   status: completed
+- id: undo-gradedbysubject
+  title: review.js undoLastGrade calls bumpGraded(-1, null), dropping the subject so gradedBySubject[subject] is never decremented -> per-subject daily tally permanently inflated (today.js shows it). Carry the graded subject through undo.record and pass to bumpGraded(-1, subject)
+  witness: undo.js record carries gradedSubject; review.js undoLastGrade bumpGraded(-1, r.gradedSubject); progress.js clamps; test run-23 (bumpGraded subject tally 1->0->0); browser-51 undoGradedSubject='cardiology'
+  status: completed
+- id: weakest-subject-masteredpct
+  title: today.js triggerTutorCheckin reads prog?.masteredPct which subjectProgress never returns -> pct always 0 -> weakestSubject pinned to subjects[0]. Use prog?.weighted
+  witness: today.js uses prog?.weighted (mastery returns weighted 0-100); test run-23 asserts weighted + no masteredPct read
+  status: completed
+- id: review-shard-fetch-fail
+  title: review.js renderReview awaits loadShard before removing the loading placeholder; a failed shard fetch (offline/404) rejects and strands the 'loading cards...' spinner forever (no catch in un-awaited render dispatch). Wrap shard loads in try/catch with an error+retry panel; check subject/cases too
+  witness: review.js wraps loadShard Promise.all in try/catch -> error-state panel + retry + return; test run-23 asserts catch block + retry/return; browser-51 review route renders without console errors
+  status: completed
+- id: tutor-error-epoch-guard
+  title: tutor-panel.js 'error' worker case lacks the activeGenEpoch===null stale-generation guard every *-done case has -> a late error after clearConversation injects an error turn into the cleared thread. Add the guard
+  witness: tutor-panel.js error case now if(activeGenEpoch===null){...break}; test run-23 asserts the guard in the error case
+  status: completed
+- id: stt-worker-load-no-reset
+  title: voice.js sttWorker never nulls _stt/_sttReady on load failure (TTS pumpSynth does) -> a transient STT load failure is permanent until reload. Reset _stt=_sttReady=null on the rejected load path
+  witness: voice.js _sttReady.catch(()=>{_stt=null;_sttReady=null}); test run-23 asserts the reset
+  status: completed
+- id: settings-alert-to-toast
+  title: settings.js import/export use blocking alert() (lines 179/180/205) while the app uses non-blocking toast.js; route through toast for consistent UX
+  witness: settings.js imports show as toast, all 3 alert() replaced; test run-23 asserts no alert( + toast import; browser-51 settings renders no errors
+  status: completed
+- id: today-mastery-redundant-parses
+  title: today.js triggerTutorCheckin loops subjectProgress() each loading srs.loadStates()+ticks/triage/mistakes -> 10-31 full state-blob JSON parses every home render. Thread the already-loaded states/ticks into mastery.subjectProgress
+  witness: mastery.js loadProgressContext + subjectProgress(pre); today.js builds ctx once and threads it; test run-23 subjectProgress(pre)===unthreaded; browser-51 masteryHasCtx true
+  status: completed
+- id: search-input-debounce
+  title: search.js Ctrl-K input runs full synchronous search() every keystroke (laggy on mccqe1 tens-of-thousands index); add ~80ms trailing debounce
+  witness: search.js input handler 80ms trailing debounce; test run-23 asserts setTimeout debounce
+  status: completed
+- id: voice-download-progress
+  title: voice.js stt/tts worker listeners ignore {status:loading/progress} -> first mic/speaker use shows a frozen control during the 24-40MB model download. Relay progress to the mic/speaker affordance or a toast
+  witness: voice.js setModelProgressHandler + emitProgress forwards stt/tts loading/progress; tutor-panel mountVoiceBar registers a throttled toast; browser-51 voiceHasProgress true, no errors
+  status: completed
+- id: tts-speed-dead-param
+  title: tts-worker.js speak() speed param is never supplied (voice.js posts no speed); inline to a local const to stop advertising a knob nothing turns (tensor feed stays)
+  witness: tts-worker.js speak({text,voice,requestId}) with local const speed=1.0; test run-23 asserts new signature
+  status: completed
+- id: run21-deferred-findings
+  title: 'Assessed-deferred run-21 findings: triage-reset no-op removal (documented back-compat, multi-site+AGENTS edit, low value); transcribe-overlap-hang (low, needs worker serialize); triage-store newer-schema warn parity (low); mastery-scoring + voice-mic-race + tts-pure-fn + tts-pickOutput behavioral tests (need worker/navigator/AudioContext stubbing or CDN-import extraction = refactor scope)'
+  witness: 'ASSESSED/deferred: each is low-severity and/or requires refactor scope (worker-module extraction past CDN top-level imports, or stubbing navigator.mediaDevices/AudioContext) disproportionate to value. triage-reset is intentionally retained back-compat per AGENTS.md. Recorded for a future dedicated test-infra pass.'
+  status: completed

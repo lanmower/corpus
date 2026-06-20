@@ -34,7 +34,18 @@ export async function renderReview() {
         el('div', { class: 'loading-spinner' }), el('span', {}, 'loading cards...')));
     getStage().append(placeholderContainer);
     const subjects = state.reviewSubjectFilter === 'all' ? state.manifest.subjects.map(s => s.subject) : [state.reviewSubjectFilter];
-    await Promise.all(subjects.map(s => loadShard(s)));
+    try {
+        await Promise.all(subjects.map(s => loadShard(s)));
+    } catch (err) {
+        // A failed shard fetch (offline / 404 / network drop) must not strand the
+        // 'loading cards...' spinner forever — surface an error with a retry.
+        placeholderContainer.remove();
+        getStage().append(el('div', { class: 'panel error-state' },
+            el('div', { class: 'panel-head' }, el('span', { class: 'title' }, 'could not load cards')),
+            el('div', {}, 'A card set failed to load (you may be offline). ' + (err?.message || '')),
+            el('button', { class: 'chip', style: 'margin-top:10px', on: { click: () => renderReview() } }, 'retry')));
+        return;
+    }
     placeholderContainer.remove();
 
     const allCards = [];
@@ -420,7 +431,7 @@ export function gradeReview(cardId, score) {
     // would call bumpGraded(-1) on a count that was never incremented, corrupting
     // the streak + todayGraded. Only offer undo when there is real state to reverse.
     if (!state.cramMode) {
-        undo.record(cardId, prev, wasNew ? card0?._subject || null : null);
+        undo.record(cardId, prev, wasNew ? card0?._subject || null : null, card0?._subject || null);
         showUndoToast();
     }
 
@@ -461,8 +472,10 @@ export function undoLastGrade() {
     const states = srs.loadStates();
     states[r.cardId] = r.prevState;
     srs.saveStates(states);
-    // Reverse the graded-count and new-card cap that gradeReview incremented
-    progress.bumpGraded(-1, null);
+    // Reverse the graded-count and new-card cap that gradeReview incremented.
+    // Pass gradedSubject so gradedBySubject[subject] is decremented too (a -1 with
+    // a null subject left the per-subject tally permanently inflated).
+    progress.bumpGraded(-1, r.gradedSubject || null);
     if (r.newSubject) newcards.bump(r.newSubject, -1);
     const t = document.getElementById('undo-toast'); if (t) t.remove();
     if (state.route === 'review') renderReview();

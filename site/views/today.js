@@ -65,13 +65,18 @@ function renderWelcome() {
 function triggerTutorCheckin(due) {
     if (!state.tutorWorker) return;
 
-    // Find weakest subject by progress
+    // Find weakest subject by progress. Load the SRS/guide/triage/mistakes blobs once
+    // and thread them into every subjectProgress call — otherwise each subject re-parses
+    // the full state blob (10-31 redundant parses per home render).
     let weakestSubject = null;
     let weakestPct = 101;
+    const masteryCtx = mastery.loadProgressContext();
     for (const subj of (state.manifest?.subjects || [])) {
         try {
-            const prog = mastery.subjectProgress(state.manifest, state.shards, subj.subject);
-            const pct = prog?.masteredPct || 0;
+            const prog = mastery.subjectProgress(state.manifest, state.shards, subj.subject, masteryCtx);
+            // subjectProgress returns `weighted` (0-100), not masteredPct (which never
+            // existed — the old read was always 0, pinning weakest to subjects[0]).
+            const pct = prog?.weighted || 0;
             if (pct < weakestPct) {
                 weakestPct = pct;
                 weakestSubject = subj.subject;

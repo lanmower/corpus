@@ -154,11 +154,18 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
         for (let n = 0; n < kids.length; n++) kids[n].classList.toggle('active', n === active);
         kids[active]?.scrollIntoView({ block: 'nearest' });
     };
+    // Debounce the scan: search() is a synchronous O(items) main-thread linear scan,
+    // so on a large index (mccqe1: tens of thousands) running it on every keystroke
+    // makes typing laggy. A short trailing debounce coalesces bursts into one scan.
+    let _searchTimer = null;
     input.addEventListener('input', () => {
-        const items = getItems();
-        results = search(items, input.value);
-        active = 0;
-        render();
+        if (_searchTimer) clearTimeout(_searchTimer);
+        _searchTimer = setTimeout(() => {
+            _searchTimer = null;
+            results = search(getItems(), input.value);
+            active = 0;
+            render();
+        }, 80);
     });
     clearBtn.addEventListener('click', (e) => {
         e.preventDefault();

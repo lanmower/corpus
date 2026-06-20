@@ -80,7 +80,7 @@ export function bumpGraded(n = 1, subject = null) {
     p.lastReviewedAt = Date.now();
     if (subject) {
         p.gradedBySubject = p.gradedBySubject || {};
-        p.gradedBySubject[subject] = (p.gradedBySubject[subject] || 0) + n;
+        p.gradedBySubject[subject] = Math.max(0, (p.gradedBySubject[subject] || 0) + n);
     }
     save(p);
     return p;

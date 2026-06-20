@@ -48,16 +48,23 @@ export function overallProgress(manifest, shards) {
     return computeFromCards(manifest, shards, null);
 }
 
-export function subjectProgress(manifest, shards, subject) {
-    return computeFromCards(manifest, shards, subject);
+// pre (optional): { states, ticks, triage, mistakes } preloaded once by the caller so
+// a loop over many subjects doesn't re-parse the full localStorage blobs per subject.
+export function subjectProgress(manifest, shards, subject, pre) {
+    return computeFromCards(manifest, shards, subject, pre);
+}
+
+// Build the shared state bundle once for a multi-subject loop (see subjectProgress pre).
+export function loadProgressContext() {
+    return { states: srs.loadStates(), ticks: loadGuideTicks(), triage: loadTriage(), mistakes: loadMistakes() };
 }
 
 // Compute readiness-adjusted mastery score
-function computeFromCards(manifest, shards, only) {
-    const states = srs.loadStates();
-    const ticks = loadGuideTicks();
-    const triage = loadTriage();
-    const mistakes = loadMistakes();
+function computeFromCards(manifest, shards, only, pre) {
+    const states = pre?.states ?? srs.loadStates();
+    const ticks = pre?.ticks ?? loadGuideTicks();
+    const triage = pre?.triage ?? loadTriage();
+    const mistakes = pre?.mistakes ?? loadMistakes();
     let cardsTotal = 0, cardsMast = 0, cardsDue = 0, cardsIntroduced = 0;
     let secTotal = 0, secTicked = 0;
     let caseTotal = 0, casePass = 0;

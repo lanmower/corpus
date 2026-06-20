@@ -1633,6 +1633,50 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(READ('site/voice.js'), /_activeSynthMsg\) \{ try \{ _tts\.removeEventListener\('message', _activeSynthMsg\)/, 'voice.js: cancelSpeech detaches in-flight synth listener');
     });
 
+    await ta('run-23: undo decrements gradedBySubject + weakest uses weighted + mastery pre-thread + review error-state + stt reset + settings toast + search debounce', async () => {
+        // undo.record now carries the graded subject distinctly from the new-card subject.
+        const undo = await import('./site/undo.js');
+        undo.record('c1', { interval: 3 }, null, 'cardiology');
+        const r = undo.consume();
+        assert.strictEqual(r.gradedSubject, 'cardiology', 'undo.record stores gradedSubject');
+        assert.strictEqual(r.newSubject, null, 'undo.record keeps newSubject separate');
+        // bumpGraded(-1, subject) symmetrically reverses the per-subject tally (clamped).
+        global.localStorage.clear();
+        progress.bumpGraded(1, 'cardiology');
+        assert.strictEqual(progress.load().gradedBySubject?.cardiology, 1, 'bumpGraded(1) increments subject tally');
+        progress.bumpGraded(-1, 'cardiology');
+        assert.strictEqual(progress.load().gradedBySubject?.cardiology, 0, 'bumpGraded(-1, subject) decrements subject tally');
+        progress.bumpGraded(-1, 'cardiology');
+        assert.strictEqual(progress.load().gradedBySubject?.cardiology, 0, 'gradedBySubject clamps at 0');
+        // mastery: pre-threaded context yields the same result as re-parsing each call.
+        const mastery = await import('./site/mastery.js');
+        global.localStorage.clear();
+        const ctx = mastery.loadProgressContext();
+        const a = mastery.subjectProgress(MANIFEST, SHARDMAP, 'cardiology');
+        const b = mastery.subjectProgress(MANIFEST, SHARDMAP, 'cardiology', ctx);
+        assert.deepStrictEqual(a, b, 'subjectProgress(pre) equals unthreaded');
+        // weakest-subject reads the real field (weighted), not the nonexistent masteredPct.
+        const today = READ('site/views/today.js');
+        assert.match(today, /prog\?\.weighted \|\| 0/, 'today.js: weakest uses prog.weighted');
+        assert.ok(!/\?\.masteredPct/.test(today), 'today.js: no masteredPct property read');
+        assert.match(today, /loadProgressContext\(\)/, 'today.js: threads a single mastery context');
+        // review surfaces an error+retry instead of a permanent spinner on shard-fetch failure.
+        const rev = READ('site/views/review.js');
+        assert.match(rev, /catch \(err\)[\s\S]{0,400}could not load cards/, 'review.js: shard-fetch error state');
+        assert.match(rev, /'retry'\)\)\);\s*\n\s*return;/, 'review.js: error state has retry + bails');
+        // stt worker resets its singleton on load failure (transient errors recover).
+        assert.match(READ('site/voice.js'), /_sttReady\.catch\(\(\) => \{ _stt = null; _sttReady = null; \}\)/, 'voice.js: stt load failure resets worker');
+        // settings uses toast, not blocking alert().
+        const setj = READ('site/views/settings.js');
+        assert.ok(!/\balert\(/.test(setj), 'settings.js: no blocking alert()');
+        assert.match(setj, /import \{ show as toast \}/, 'settings.js: imports toast');
+        // search debounces the scan; tts speak no longer advertises a dead speed param.
+        assert.match(READ('site/search.js'), /setTimeout\(\(\) => \{[\s\S]{0,120}search\(getItems\(\)/, 'search.js: debounced input');
+        assert.match(READ('site/tts-worker.js'), /async function speak\(\{ text, voice, requestId \}\)/, 'tts-worker: speak drops dead speed param');
+        // tutor error case applies the stale-generation epoch guard.
+        assert.match(READ('site/tutor-panel.js'), /case 'error':[\s\S]{0,450}activeGenEpoch === null/, 'tutor-panel: error case has epoch guard');
+    });
+
     t('run-21: tutor panel reserves desktop page width (was: fixed panel overlaid/clipped content) + start-card left-align + header ellipsis', () => {
         const css21 = READ('site/style.css'), tp21 = READ('site/tutor-panel.js');
         // JS sets the reserve var on desktop, clears it on mobile.

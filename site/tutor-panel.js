@@ -208,6 +208,18 @@ function mountVoiceBar(root) {
     const bar = document.createElement('div');
     bar.className = 'tutor-voice-bar';
 
+    // Surface the (~24-40MB) STT/TTS model download so the mic/speaker doesn't look
+    // frozen on first use. Throttle progress toasts to 25% buckets per engine.
+    const dlBucket = { stt: -25, tts: -25 };
+    voice.setModelProgressHandler((p) => {
+        const label = p.engine === 'stt' ? 'speech recognition' : 'voice';
+        if (p.status === 'loading') { dlBucket[p.engine] = -25; showTutorToast(`Downloading ${label} model…`, 4000); return; }
+        if (p.status === 'progress' && p.total) {
+            const pctNow = Math.floor((p.loaded / p.total) * 100);
+            if (pctNow >= dlBucket[p.engine] + 25) { dlBucket[p.engine] = pctNow; showTutorToast(`Downloading ${label} model… ${pctNow}%`, 4000); }
+        }
+    });
+
     const mic = document.createElement('button');
     mic.type = 'button';
     mic.className = 'tutor-voice-mic chip';
@@ -1136,6 +1148,10 @@ export function wireWorkerToPanel(worker) {
                 clearThinkingWatchdog();
                 setChatLive('polite');
                 streamingBuf = '';
+                // Drop a late error from a generation that clearConversation() already
+                // interrupted — same stale-generation guard the *-done cases apply —
+                // otherwise it repopulates the freshly-cleared thread with an error turn.
+                if (activeGenEpoch === null) { if (sdkRender) sdkRender(); break; }
                 addTutorMessage(`Something went wrong: ${error || e.data.msg}. Use retry below.`, false, { err: true });
                 break;
         }

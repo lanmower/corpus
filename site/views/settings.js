@@ -12,6 +12,7 @@ import { makeToggleButton } from '../theme.js';
 import { openShortcutsModal } from '../shortcuts.js';
 import { dataPath, listSyllabi, getActiveSyllabus, setActiveSyllabus } from '../syllabus.js';
 import { confirmModal } from '../modal.js';
+import { show as toast } from '../toast.js';
 
 function debounce(fn, ms) { let h = null; return (...a) => { clearTimeout(h); h = setTimeout(() => fn(...a), ms); }; }
 
@@ -176,8 +177,8 @@ export async function renderSettings() {
             const f = e.target.files?.[0]; if (!f) return;
             if (!await confirmModal('import overwrites current progress. continue?')) return;
             const text = await f.text();
-            try { const n = srs.importState(text); alert(`imported ${n} cards`); render(); }
-            catch (err) { alert('import failed: ' + err.message); }
+            try { const n = srs.importState(text); toast(`imported ${n} cards`); render(); }
+            catch (err) { toast('import failed: ' + err.message); }
         } } });
     const importBtn = el('button', { class: 'chip', 'aria-label': 'import',
         on: { click: () => importInput.click() } }, 'import');
@@ -202,7 +203,7 @@ export async function renderSettings() {
                 const blob = new Blob([lines.join('\n') + '\n'], { type: 'text/tab-separated-values' });
                 const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
                 a.download = `corpus-anki-${srs.today()}.txt`; a.click(); URL.revokeObjectURL(a.href);
-            } catch (e) { alert('anki export failed: ' + e.message); }
+            } catch (e) { toast('anki export failed: ' + e.message); }
         } } }, 'export to Anki (.txt)');
     const shortcutsBtn = el('button', { class: 'chip', 'aria-label': 'shortcuts',
         on: { click: () => openShortcutsModal() } }, 'shortcuts');

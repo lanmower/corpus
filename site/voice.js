@@ -21,6 +21,17 @@ let _speechEnabled = false;
 let _voice = 'expr-voice-2-f';
 let _reqSeq = 0;
 
+// Optional UI hook so the mic/speaker affordance can show the (~24-40MB) model
+// download progress instead of looking frozen on first use. Receives
+// { engine:'stt'|'tts', status:'loading'|'progress', stage?, loaded?, total? }.
+let _progressCb = null;
+export function setModelProgressHandler(cb) { _progressCb = cb || null; }
+function emitProgress(engine, d) {
+    if (_progressCb && (d.status === 'loading' || d.status === 'progress')) {
+        try { _progressCb({ engine, status: d.status, stage: d.stage, loaded: d.loaded, total: d.total }); } catch {}
+    }
+}
+
 // ---- worker singletons ----
 function ttsWorker() {
     if (_tts) return _tts;
@@ -28,6 +39,7 @@ function ttsWorker() {
     _ttsReady = new Promise((resolve, reject) => {
         const onMsg = (e) => {
             const d = e.data || {};
+            emitProgress('tts', d);
             if (d.status === 'ready') { _tts.removeEventListener('message', onMsg); resolve(d); }
             else if (d.status === 'error' && !d.requestId) { _tts.removeEventListener('message', onMsg); reject(new Error(d.error || 'tts load failed')); }
         };
@@ -43,12 +55,18 @@ function sttWorker() {
     _sttReady = new Promise((resolve, reject) => {
         const onMsg = (e) => {
             const d = e.data || {};
+            emitProgress('stt', d);
             if (d.status === 'ready') { _stt.removeEventListener('message', onMsg); resolve(d); }
             else if (d.status === 'error' && !d.requestId) { _stt.removeEventListener('message', onMsg); reject(new Error(d.error || 'stt load failed')); }
         };
         _stt.addEventListener('message', onMsg);
         _stt.addEventListener('error', (ev) => reject(new Error('stt worker: ' + (ev.message || ev.filename || '?'))));
     });
+    // Reset the singleton on load failure so a transient error (CDN blip during the
+    // whisper download, first press before network) isn't permanent — the next
+    // transcribe() re-spawns the worker instead of awaiting the same rejected promise.
+    // (Mirrors the TTS recovery in pumpSynth's catch.)
+    _sttReady.catch(() => { _stt = null; _sttReady = null; });
     _stt.postMessage({ type: 'load' });
     return _stt;
 }
