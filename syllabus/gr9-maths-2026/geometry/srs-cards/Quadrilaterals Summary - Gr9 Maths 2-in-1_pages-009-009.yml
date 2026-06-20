@@ -1,0 +1,73 @@
+# Gr 9 Maths 2-in-1 — geometry / Quadrilaterals Summary
+deck: "Corpus::Gr9 Maths::Quadrilaterals"
+notes:
+  - guid: c1a2b3d4e5f60718
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "What is the sum of the interior angles of ANY quadrilateral, and why?"
+      Back: "The interior angles of any quadrilateral add up to 360°.\nReason: a quadrilateral can be split by one diagonal into 2 triangles. Each triangle's angles sum to 180°, so 2 × 180° = 360°.\nNotation: â + b̂ + ĉ + d̂ + ... = 360°.\nThis is the starting fact; all special quadrilaterals inherit it."
+    tags: ["geometry", "quadrilaterals", "angle-sum", "subject:geometry"]
+  - guid: d2b3c4e5f6071829
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "Square: definition, key properties, and area formula."
+      Back: "Definition: the 'ultimate' quadrilateral — it IS a rectangle AND a rhombus (a parallelogram with one right angle and all sides equal).\nProperties (it has ALL the properties of rectangle, rhombus, parallelogram and kite): all 4 sides equal; all 4 angles = 90°; diagonals are equal, bisect each other, are perpendicular, and bisect the angles.\nArea = s² (side squared)."
+    tags: ["geometry", "quadrilaterals", "square", "subject:geometry"]
+  - guid: e3c4d5f607182930
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "Rectangle: definition, key properties, and area formula."
+      Back: "Definition: a parallelogram with one right angle (which forces all four angles to be 90°).\nProperties: opposite sides equal and parallel; all angles = 90°; diagonals are EQUAL and bisect each other (it keeps every parallelogram property too).\nArea = ℓ × b (length × breadth)."
+    tags: ["geometry", "quadrilaterals", "rectangle", "subject:geometry"]
+  - guid: f4d5e60718293041
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "Parallelogram: definition, key properties, and area formula."
+      Back: "Definition: a quadrilateral with 2 pairs of opposite sides parallel.\nProperties: 2 pairs of opposite sides equal; 2 pairs of opposite angles equal; the diagonals BISECT one another (they are NOT equal and NOT perpendicular in a general parallelogram).\nArea = base × height (the perpendicular height, not the slanted side)."
+    tags: ["geometry", "quadrilaterals", "parallelogram", "subject:geometry"]
+  - guid: 05e6071829304152
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "Rhombus: definition, key properties, and area formula(s)."
+      Back: "Definition: a parallelogram with one pair of adjacent sides equal (which makes ALL four sides equal).\nProperties: all 4 sides equal; opposite angles equal; the diagonals bisect one another PERPENDICULARLY, bisect the angles of the rhombus, and bisect its area.\nArea = ½ × (product of the diagonals)  [as for a kite],\nOR Area = base × height  [as for a parallelogram]."
+    tags: ["geometry", "quadrilaterals", "rhombus", "subject:geometry"]
+  - guid: 16f7182930415263
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "Trapezium: definition and area formula (with the meaning of the formula)."
+      Back: "Definition: a quadrilateral with 1 pair of opposite sides parallel.\nArea = ½(a + b)·h, where a and b are the two PARALLEL sides and h is the perpendicular distance between them.\nIn words: 'half the sum of the parallel sides × the distance between them'.\nIt can be seen as two triangles: Area = ½·ah + ½·bh = ½(a+b)h."
+    tags: ["geometry", "quadrilaterals", "trapezium", "subject:geometry"]
+  - guid: 2708293041526374
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "Kite: definition, what the diagonals do, and the area formula."
+      Back: "Definition: a quadrilateral with 2 pairs of ADJACENT sides equal.\nThe diagonals: cut perpendicularly; and ONE diagonal bisects the other diagonal, the opposite angles, and the area.\nArea = ½ × (product of the diagonals) = ½·a·b, where a and b are the diagonal lengths.\nIn words: 'half the product of the diagonals'."
+    tags: ["geometry", "quadrilaterals", "kite", "subject:geometry"]
+  - guid: 3819304152637485
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "Which quadrilaterals have diagonals that are (a) equal, (b) perpendicular, (c) bisect each other?"
+      Back: "(a) EQUAL diagonals: rectangle and square.\n(b) PERPENDICULAR diagonals: rhombus, kite and square.\n(c) BISECT each other: parallelogram, rectangle, rhombus and square (all parallelogram-family shapes). In a kite only ONE diagonal bisects the other.\nTip: the square sits at the bottom of the 'pathway' and has every property."
+    tags: ["geometry", "quadrilaterals", "diagonals", "subject:geometry"]
+  - guid: 492a415263748596
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "The 'pathways' idea: how do properties accumulate from 'any' quadrilateral down to the square?"
+      Back: "Moving from a general quadrilateral towards the square, properties ACCUMULATE — each successive shape keeps all the properties of those before it and adds its own.\nOrder of increasing specialness: any quadrilateral → trapezium/parallelogram/kite → rectangle/rhombus → square.\nThe square is the 'ultimate' quadrilateral: being both a rectangle and a rhombus (and a parallelogram and a kite), ALL their properties apply to it.\nUse: to prove a shape is a special type, show it has the defining extra property on top of the previous one."
+    tags: ["geometry", "quadrilaterals", "pathways", "subject:geometry"]
+  - guid: 5a3b526374859 6a7
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadrilaterals"
+    fields:
+      Front: "In the rhombus 'Note' figure, the angles at the centre give 2x + 2y = 180° and x + y = 90°. Explain the two reasons."
+      Back: "Reason for 2x + 2y = 180°: the angles x, x, y, y are the angles of a triangle formed by two sides and a diagonal — wait, more precisely they are co-interior angles / angles on a straight line. The book's reasons: '∠ˢ of △' (angles of a triangle sum to 180°) OR 'co-int ∠ˢ ; ∥ lines' (co-interior angles between the parallel sides).\nDividing 2x + 2y = 180° by 2 gives x + y = 90°, which shows the diagonals meet at 90° (the diagonals of a rhombus are perpendicular)."
+    tags: ["geometry", "quadrilaterals", "rhombus", "diagonals", "subject:geometry"]
