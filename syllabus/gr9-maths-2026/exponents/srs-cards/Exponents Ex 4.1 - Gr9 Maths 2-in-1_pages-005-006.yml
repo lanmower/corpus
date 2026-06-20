@@ -1,0 +1,192 @@
+# Gr 9 Maths 2-in-1 — exponents / Exponents Ex 4.1
+deck: "Corpus::Gr9 Maths::Exponents"
+notes:
+  - guid: a1f3c0d29e7b4610
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Law 1 of exponents: state the multiplication law and give a worked example."
+      Back: "Law 1: aᵐ × aⁿ = aᵐ⁺ⁿ.\nWhen you MULTIPLY powers of the SAME base, you ADD the exponents.\nWorked example (1.1): x⁵ × 2x³ = 2·x⁵⁺³ = 2x⁸.\n(The coefficient 2 just multiplies through; only the matching x-bases combine.)\nNote: bases must be equal. 3x² × 2x³ = 6x⁵, but x² × y³ cannot be combined."
+    tags: ["exponents", "law-product", "subject:exponents"]
+  - guid: b2e4d1a37f085921
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify 3x² × 2x³ (Law 1) and also 2⁻⁴ × 2⁵ × 2⁰."
+      Back: "3x² × 2x³ = (3×2)·x²⁺³ = 6x⁵.\n2⁻⁴ × 2⁵ × 2⁰ = 2⁻⁴⁺⁵⁺⁰ = 2¹ = 2.\nMethod: multiply coefficients, ADD exponents of the same base; remember 2⁰ = 1 so it contributes 0 to the exponent sum."
+    tags: ["exponents", "law-product", "subject:exponents"]
+  - guid: c3a5e2b48a196032
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Law 2 of exponents: state the division law and give a worked example."
+      Back: "Law 2: aᵐ ÷ aⁿ = aᵐ⁻ⁿ.\nWhen you DIVIDE powers of the SAME base, you SUBTRACT the exponents (top minus bottom).\nWorked example (1.4): 2⁵ ÷ 2² = 2⁵⁻² = 2³ = 8.\nExample (1.5): p⁷ ÷ p³ = p⁷⁻³ = p⁴.\nExample (1.6): a²/a⁻¹ = a²⁻⁽⁻¹⁾ = a³."
+    tags: ["exponents", "law-quotient", "subject:exponents"]
+  - guid: d4b6f3c59b207143
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Law 3 of exponents: state the power-of-a-power law with a worked example."
+      Back: "Law 3: (aᵐ)ⁿ = aᵐⁿ.\nA power raised to a power: MULTIPLY the exponents.\nWorked example (1.7): (2³)² = 2³ˣ² = 2⁶ = 64.\nExample (1.8): (s³)⁵ = s¹⁵.\nExample (1.9): (3ˣ)² = 3²ˣ.\nCommon mistake: do NOT add here — (2³)² is 2⁶, not 2⁵."
+    tags: ["exponents", "law-power-of-power", "subject:exponents"]
+  - guid: e5c7a4d6ac318254
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Law 4 of exponents: state the power-of-a-product law with a worked example."
+      Back: "Law 4: (ab)ᵐ = aᵐbᵐ.\nA product inside a bracket raised to a power: give EACH factor that power.\nWorked example (1.10): (2×5)² = 2²×5² = 4×25 = 100 (= 10² ✓).\nExample (1.11): (3x³)³ = 3³·x³ˣ³ = 27x⁹.\nExample (1.12): (−4a⁵b³)³ = (−4)³·a¹⁵·b⁹ = −64a¹⁵b⁹.\nWatch the coefficient: it is also raised to the power."
+    tags: ["exponents", "law-power-of-product", "subject:exponents"]
+  - guid: f6d8b5e7bd429365
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Law 5 (the zero-exponent law): what is a⁰ and what is the restriction?"
+      Back: "Law 5: a⁰ = 1, provided a ≠ 0.\nANY non-zero base to the power 0 equals 1.\nExamples (1.13–1.15): 5⁰ = 1; 7a⁰ = 7×1 = 7 (only the a is to the power 0, not the 7); 3p⁰ + (3p)⁰ = 3×1 + 1 = 4.\nTrap: in 7a⁰ the exponent applies only to a, so 7a⁰ = 7, NOT 1. But (3p)⁰ = 1 because the whole bracket is to the power 0."
+    tags: ["exponents", "law-zero", "subject:exponents"]
+  - guid: 07e9c6f8ce530476
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Law 6 (negative-exponent law): state it and simplify 2⁻³, a³·b⁻⁴ and x⁻⁴."
+      Back: "Law 6: a⁻ⁿ = 1/aⁿ (and 1/a⁻ⁿ = aⁿ), with a ≠ 0.\nA negative exponent means take the RECIPROCAL of the positive power.\n2⁻³ = 1/2³ = 1/8.\na³·b⁻⁴ = a³/b⁴.\nx⁻⁴ = 1/x⁴.\nMethod: move a factor across the fraction line to flip the sign of its exponent."
+    tags: ["exponents", "law-negative", "subject:exponents"]
+  - guid: 18fad709df641587
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "The sign trap: what is (−3)² versus −3², and (−3)⁰ versus −3⁰?"
+      Back: "(−3)² = (−3)(−3) = 9  — the bracket squares the sign too.\nBut −3² = −(3²) = −9  — here only the 3 is squared, the minus stays in front.\n(−3)⁰ = 1  — whole bracket to power 0.\nBut −3⁰ = −(3⁰) = −1  — only the 3 is to the power 0.\nRULE: without a bracket, the exponent binds tighter than the leading minus sign."
+    tags: ["exponents", "sign-trap", "subject:exponents"]
+  - guid: 290be81ae0752698
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "List all 6 exponent laws (the summary using algebra)."
+      Back: "1. aᵐ × aⁿ = aᵐ⁺ⁿ (multiply → add exponents)\n2. aᵐ ÷ aⁿ = aᵐ⁻ⁿ (divide → subtract exponents)\n3. (aᵐ)ⁿ = aᵐⁿ (power of power → multiply)\n4. (a×b)ⁿ = aⁿ × bⁿ (distribute power over a product)\n5. a⁰ = 1, a ≠ 0\n6. a⁻ⁿ = 1/aⁿ = (1/a)ⁿ, a ≠ 0"
+    tags: ["exponents", "laws-summary", "subject:exponents"]
+  - guid: 3a1cf92bf1863709
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify 3a·2ab·3abc (Q2.1) and 2a⁴ × 4a² (Q2.3)."
+      Back: "3a·2ab·3abc: multiply coefficients 3×2×3 = 18; add exponents of each base: a^(1+1+1)=a³, b^(1+1)=b², c¹.\n= 18a³b²c.\n2a⁴ × 4a² = (2×4)a⁴⁺² = 8a⁶.\nMethod: coefficients multiply; same-base exponents add (Law 1)."
+    tags: ["exponents", "simplify", "subject:exponents"]
+  - guid: 4b2da03c02974810
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify x³(x²)³·x⁻² (Q2.5) and 6a⁵ ÷ a ÷ 3a² (Q2.6)."
+      Back: "x³(x²)³x⁻²: first (x²)³ = x⁶ (Law 3). Then x³·x⁶·x⁻² = x^(3+6−2) = x⁷.\n6a⁵ ÷ a ÷ 3a² = 6a⁵ /(a · 3a²) = 6a⁵/(3a³) = 2a⁵⁻³ = 2a².\nMethod: apply Law 3 inside brackets first, then combine with Laws 1 and 2."
+    tags: ["exponents", "simplify", "subject:exponents"]
+  - guid: 5c3eb14d03085921
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify 5x³y³ × 3x⁻¹y² (Q2.7) and 8y³ × ¼y² (Q2.8)."
+      Back: "5x³y³ × 3x⁻¹y²: coefficients 5×3 = 15; x^(3+(−1)) = x²; y^(3+2) = y⁵.\n= 15x²y⁵.\n8y³ × ¼y² = (8×¼)y^(3+2) = 2y⁵.\nMethod: multiply coefficients (including fractions), add exponents per base; a negative exponent in the sum just subtracts."
+    tags: ["exponents", "simplify", "subject:exponents"]
+  - guid: 6d4fc25e14196032
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify (a²b²c)/(a·b²·c³) (Q2.9) and (5²·5³·x³·y²)/(5⁶·x²·y²) (Q2.10)."
+      Back: "(a²b²c)/(a b²c³) = a^(2−1)·b^(2−2)·c^(1−3) = a¹·b⁰·c⁻² = a/c².\n(5²·5³·x³y²)/(5⁶x²y²): top 5-power = 5⁵; 5⁵/5⁶ = 5⁻¹ = 1/5; x^(3−2)=x; y^(2−2)=y⁰=1.\n= x/5  (i.e. (1/5)x).\nMethod: subtract bottom exponents from top per base (Law 2); b⁰ and y⁰ become 1."
+    tags: ["exponents", "simplify", "subject:exponents"]
+  - guid: 7e50d36f25207143
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify (3ab⁴c⁰)/(18a²bc) (Q2.11) and (4x³y⁷)/(8x²y⁹) (Q2.12)."
+      Back: "(3ab⁴c⁰)/(18a²bc): c⁰=1; coefficient 3/18 = 1/6; a^(1−2)=a⁻¹; b^(4−1)=b³; c gone.\n= b³/(6a) (since a⁻¹ goes to the denominator).\n(4x³y⁷)/(8x²y⁹) = (4/8)·x^(3−2)·y^(7−9) = ½·x·y⁻² = x/(2y²).\nMethod: simplify coefficient fraction, subtract exponents, send negative exponents across the line as positive."
+    tags: ["exponents", "simplify", "subject:exponents"]
+  - guid: 8f61e47036318254
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify (−3x²)² (Q3.1) and (−3x⁴)²(2x³) (Q3.2)."
+      Back: "(−3x²)² = (−3)²·(x²)² = 9x⁴ (Law 4 then Law 3; the squared bracket makes the sign positive).\n(−3x⁴)²(2x³) = 9x⁸ · 2x³ = 18x^(8+3) = 18x¹¹.\nMethod: square each factor inside the bracket first (sign included), then multiply remaining factors and add exponents."
+    tags: ["exponents", "simplify", "sign-trap", "subject:exponents"]
+  - guid: 9072f58147429365
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify (2³x²y)³ (Q3.3) and (3p⁵q³)² (Q3.4)."
+      Back: "(2³x²y)³ = (2³)³·(x²)³·y³ = 2⁹·x⁶·y³ = 512x⁶y³ (apply Law 4 to every factor, Law 3 to multiply exponents; 2⁹ = 512).\n(3p⁵q³)² = 3²·p¹⁰·q⁶ = 9p¹⁰q⁶.\nMethod: raise EACH factor — including the numeric coefficient — to the outside power."
+    tags: ["exponents", "simplify", "subject:exponents"]
+  - guid: a183069258530476
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify 4(−a)² − (−2a)² (Q3.5) and x⁻⁷(2x¹³ + x¹¹) (Q3.6)."
+      Back: "4(−a)² − (−2a)² = 4·a² − 4a² = 4a² − 4a² = 0.\n[(−a)² = a², (−2a)² = 4a²; both brackets make the sign positive.]\nx⁻⁷(2x¹³ + x¹¹) = 2x⁻⁷⁺¹³ + x⁻⁷⁺¹¹ = 2x⁶ + x⁴.\nMethod: square brackets first (signs vanish), then for the second distribute x⁻⁷ over each term adding exponents."
+    tags: ["exponents", "simplify", "subject:exponents"]
+  - guid: b29417a369641587
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify (8a²·3b)/((a³b²)²) (Q3.7) and (3m³n)(−2m⁴)/((−2mn)⁴) (Q3.9)."
+      Back: "(8a²·3b)/((a³b²)²): top = 24a²b; bottom (a³b²)² = a⁶b⁴.\n= 24·a^(2−6)·b^(1−4) = 24a⁻⁴b⁻³ = 24/(a⁴b³).\n(3m³n)(−2m⁴)/((−2mn)⁴): top = −6m⁷n; bottom (−2mn)⁴ = 16m⁴n⁴.\n= −6/16 · m^(7−4)·n^(1−4) = −3m³/(8n³).\nMethod: expand bracket powers (Law 4), multiply tops, then divide with Law 2."
+    tags: ["exponents", "simplify", "subject:exponents"]
+  - guid: c305281a4a752698
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify (x³y)/(y⁻⁴) (Q4.1) and (m⁵·n⁻²·p⁰)/(m·n³) (Q4.2)."
+      Back: "(x³y)/(y⁻⁴) = x³·y¹⁻⁽⁻⁴⁾ = x³·y⁵ = x³y⁵ (dividing by y⁻⁴ adds 4 to the y exponent).\n(m⁵n⁻²p⁰)/(m n³): p⁰=1; m^(5−1)=m⁴; n^(−2−3)=n⁻⁵.\n= m⁴/n⁵.\nMethod: subtract bottom exponents (Law 2); subtracting a negative adds; leave answer with positive exponents (Law 6)."
+    tags: ["exponents", "simplify", "negative-exponents", "subject:exponents"]
+  - guid: d4163920b1863709
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify (x·y⁻²)/(x⁰·y) (Q4.3) and x⁰/0,25 (Q4.4)."
+      Back: "(x·y⁻²)/(x⁰·y): x⁰=1, so denominator x-part is 1; x^1 stays; y^(−2−1)=y⁻³.\n= x/y³.\nx⁰/0,25 = 1/0,25 = 4 (since x⁰ = 1 and 1 ÷ ¼ = 4).\nMethod: replace any (base)⁰ with 1, then apply Law 2 and Law 6."
+    tags: ["exponents", "simplify", "law-zero", "subject:exponents"]
+  - guid: e527403ac2974810
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify (5m)⁰/(5m⁰) (Q4.5) and (a⁻²)⁰(−3a⁰) (Q4.6)."
+      Back: "(5m)⁰/(5m⁰): top (5m)⁰ = 1 (whole bracket to 0); bottom 5m⁰ = 5×1 = 5.\n= 1/5.\n(a⁻²)⁰(−3a⁰) = 1 × (−3×1) = −3 [(a⁻²)⁰ = 1; a⁰ = 1].\nTrap: (5m)⁰ = 1 but 5m⁰ = 5 — the bracket changes everything."
+    tags: ["exponents", "law-zero", "subject:exponents"]
+  - guid: f63851b4d3085921
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Simplify (−2a⁴b³)² − (3a²b⁰)² (Q4.7), giving a single simplified expression."
+      Back: "(−2a⁴b³)² = (−2)²a⁸b⁶ = 4a⁸b⁶.\n(3a²b⁰)² = 9a⁴·(b⁰)² = 9a⁴ (since b⁰ = 1).\nSo the expression = 4a⁸b⁶ − 9a⁴.\nThese are unlike terms (different powers) so they do NOT combine further.\nMethod: square each bracket with Laws 3 and 4; b⁰ = 1."
+    tags: ["exponents", "simplify", "law-zero", "subject:exponents"]
+  - guid: 0749620c5e419632
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Evaluate without a calculator: 3⁻² + 3⁰ + 3² (Q5.1)."
+      Back: "3⁻² = 1/3² = 1/9.\n3⁰ = 1.\n3² = 9.\nSum = 1/9 + 1 + 9 = 1/9 + 10 = 90/9 + 1/9 = 91/9 = 10⅑.\nMethod: convert each power to a number first (negative exponent → reciprocal, zero exponent → 1), then add."
+    tags: ["exponents", "evaluate", "subject:exponents"]
+  - guid: 185a731d6f520743
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Without a calculator, which is larger: 2⁻⁵ or 5⁻² ? (Q6.2)"
+      Back: "2⁻⁵ = 1/2⁵ = 1/32.\n5⁻² = 1/5² = 1/25.\nCompare 1/32 vs 1/25: the bigger denominator gives the SMALLER fraction, so 1/25 > 1/32.\n∴ 5⁻² is larger.\nMethod: rewrite both as positive-exponent fractions, then compare denominators."
+    tags: ["exponents", "compare", "negative-exponents", "subject:exponents"]
+  - guid: 296b842e70631854
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Express the number 32 as a power with base 4 (Q8). Hint: 2² = 4."
+      Back: "32 = 2⁵.\nWrite 2 as 4^(½): since 4 = 2², we have 2 = 4^(½).\nSo 32 = 2⁵ = (4^(½))⁵ = 4^(5/2) = 4²·⁵.\n∴ 32 = 4^(5/2).\nCheck: 4^(5/2) = (√4)⁵ = 2⁵ = 32 ✓."
+    tags: ["exponents", "rewrite-base", "subject:exponents"]
+  - guid: 3a7c953f81742965
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Multiple choice (Q9.1): x²/y² = ? Options x/y, y/x, x−y, cannot be simplified."
+      Back: "Answer: D — it cannot be simplified.\nReason: Law 2 only lets you subtract exponents when the BASES are the SAME. Here x and y are different bases, so x²/y² stays as it is (you cannot 'cancel' to x/y).\nx²/y² = (x/y)² is true, but that is not 'simpler' and none of the other options equal it."
+    tags: ["exponents", "common-mistake", "subject:exponents"]
+  - guid: 4b8da640927853a6
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exponents"
+    fields:
+      Front: "Multiple choice (Q9.4): If p = −½, then −p² = ?  Options ¼, −¼, −1, 1."
+      Back: "Answer: B — −¼.\nWorking: p² = (−½)² = ¼ (squaring makes it positive).\nThen −p² = −(¼) = −¼.\nTrap: the minus sign is OUTSIDE the square, so you square first (getting +¼) then negate."
+    tags: ["exponents", "substitution", "sign-trap", "subject:exponents"]

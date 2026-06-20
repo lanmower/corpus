@@ -1,0 +1,13 @@
+## Corpus quality-max 18th run (2026-06-20, commit 4e11b87)
+
+User re-issued loop '/gm-skill maximize quality'. Watcher was 14h dead AND gm-plugkit 0.1.654 unpublished; only 0.3.13 installable but ships a UTF-8 BOM in bootstrap.js/plugkit-wasm-wrapper.js that breaks node. RECOVERY: stripped BOM from the bunx @latest cache js files, booted via `node <cache>/cli.js spool` (reports file_version 0.1.654, works).
+
+RAN existing .claude/workflows/quality-max.js (12 lenses, 23 agents): 11 raw -> 11 confirmed/0 refuted, but they collapse to 3 UNIQUE issues (9 lenses all flagged the same voice.js reject bug).
+
+FIXES LANDED (browser-witnessed session 3, 29 tests pass):
+1. fix-voice-transcribe-reject: voice.js transcribe() executor was `new Promise((resolve) =>` but the 30s timeout called `reject(...)` -> ReferenceError, promise never settles, stopListening() hangs forever. Added reject param.
+2. drop-voice-dead-exports: removed unused exports preload/voices/setVoice + _voiceList plumbing (no JS consumer).
+3. review-cardbyid-map-reuse: views/review.js:110 resolved reviewQueue via allCards.find per id (O(queueLen x allCards), bad on mccqe1 16560 cards); hoisted cardById map, now O(queueLen).
+4. test.js: strengthened run-17 timeout assertion - old regex `/reject.*transcription timed out/` passed while reject was undefined; added assertion that executor binds reject.
+
+LESSON: source-regex tests can pass on broken code; assert the binding/shape not just substring presence.
