@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — algebra / Word Problems
+deck: "Corpus::Gr9 Maths::Word Problems"
+notes:
+  - guid: b123344556677889
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Word Problems"
+    fields:
+      Front: "What are the steps to solve an algebra word problem?"
+      Back: "1. Let a variable (e.g. x) represent the UNKNOWN you want.\n2. Write other quantities in terms of x.\n3. Translate the words into an EQUATION.\n4. Solve the equation.\n5. Answer the question in words and CHECK it makes sense.\nKeywords: 'sum'→+, 'difference'→−, 'product'→×, 'is/equals'→=."
+    tags: ["word-problems", "subject:algebra"]
+  - guid: c234455667788990
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Word Problems"
+    fields:
+      Front: "Word problem: The sum of three consecutive numbers is 72. Find them."
+      Back: "Let the first number = x. Consecutive numbers go up by 1: x, x+1, x+2.\nEquation: x + (x+1) + (x+2) = 72.\n3x + 3 = 72 → 3x = 69 → x = 23.\nNumbers: 23, 24, 25.\nCheck: 23+24+25 = 72. ✓"
+    tags: ["word-problems", "consecutive-numbers", "subject:algebra"]
+  - guid: d345566778899001
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Word Problems"
+    fields:
+      Front: "Word problem (ages): Sam is 4 years older than Thabo. Together they are 30. How old is each?"
+      Back: "Let Thabo's age = x. Then Sam = x + 4.\nEquation: x + (x + 4) = 30.\n2x + 4 = 30 → 2x = 26 → x = 13.\nThabo is 13, Sam is 13 + 4 = 17.\nCheck: 13 + 17 = 30. ✓"
+    tags: ["word-problems", "ages", "subject:algebra"]
+  - guid: e456677889900112
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Word Problems"
+    fields:
+      Front: "Word problem (perimeter): A rectangle is 3 cm longer than it is wide. Its perimeter is 26 cm. Find its dimensions."
+      Back: "Let width = x. Length = x + 3.\nPerimeter = 2(length + width): 2(x + 3 + x) = 26.\n2(2x + 3) = 26 → 4x + 6 = 26 → 4x = 20 → x = 5.\nWidth = 5 cm, length = 8 cm.\nCheck: 2(5 + 8) = 26. ✓"
+    tags: ["word-problems", "perimeter", "subject:algebra"]
+  - guid: f567788990011223
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Word Problems"
+    fields:
+      Front: "Word problem: I think of a number, multiply it by 5 and subtract 7; the result is 28. Find the number."
+      Back: "Let the number = x.\nTranslate: 5x − 7 = 28.\nAdd 7: 5x = 35.\nDivide by 5: x = 7.\nThe number is 7.\nCheck: 5(7) − 7 = 35 − 7 = 28. ✓"
+    tags: ["word-problems", "subject:algebra"]
+  - guid: 0678899001122334
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Word Problems"
+    fields:
+      Front: "Word problem (quadratic): The product of two consecutive positive integers is 56. Find them."
+      Back: "Let the integers be x and x+1.\nEquation: x(x + 1) = 56 → x² + x − 56 = 0.\nFactorise: (x + 8)(x − 7) = 0 → x = −8 or x = 7.\nIntegers must be positive, so x = 7.\nThe numbers are 7 and 8. Check: 7×8 = 56. ✓"
+    tags: ["word-problems", "consecutive-numbers", "quadratic", "subject:algebra"]

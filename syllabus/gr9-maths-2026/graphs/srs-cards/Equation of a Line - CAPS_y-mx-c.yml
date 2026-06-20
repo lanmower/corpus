@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — graphs / Equation of a Line
+deck: "Corpus::Gr9 Maths::Equation of a Line"
+notes:
+  - guid: 7c1a5e9f3b0d2846
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equation of a Line"
+    fields:
+      Front: "In y = mx + c, what do m and c stand for?"
+      Back: "y = mx + c is the equation of a straight line.\n• m = the gradient (steepness/direction of the line).\n• c = the y-intercept (the y-value where the line crosses the y-axis, i.e. where x = 0).\nExample: in y = 3x + 4, gradient m = 3 and y-intercept c = 4, so the line cuts the y-axis at (0;4)."
+    tags: ["y-mx-c", "subject:graphs"]
+  - guid: 1b8d4f0a6c2e9357
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equation of a Line"
+    fields:
+      Front: "State the gradient and y-intercept of y = −2x + 5."
+      Back: "Compare with y = mx + c.\n• m = −2 → gradient is −2 (line slopes down to the right).\n• c = 5 → y-intercept is 5, so the line crosses the y-axis at (0;5).\nThe coefficient of x is the gradient; the constant term is the y-intercept."
+    tags: ["reading-equation", "subject:graphs"]
+  - guid: 9f3c7a1e5b8d0462
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equation of a Line"
+    fields:
+      Front: "Find the gradient and y-intercept of 2y = 6x − 8. (Trap: not yet in y = mx + c form.)"
+      Back: "First make y the subject by dividing every term by 2:\n2y = 6x − 8\ny = 3x − 4.\nNow compare with y = mx + c:\n• m = 3 (gradient).\n• c = −4 (y-intercept at (0;−4)).\nPitfall: never read m and c before y stands alone with coefficient 1."
+    tags: ["rearranging", "subject:graphs"]
+  - guid: 4a0e8c2f6b9d1735
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equation of a Line"
+    fields:
+      Front: "Rearrange 3x + y = 7 into y = mx + c and give m and c."
+      Back: "Make y the subject: subtract 3x from both sides.\n3x + y = 7\ny = −3x + 7.\nSo m = −3 (gradient) and c = 7 (y-intercept (0;7)).\nPitfall: moving 3x across changes its sign to −3x; do not leave it as +3x."
+    tags: ["rearranging", "subject:graphs"]
+  - guid: 6d2a8f4c0e7b9153
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equation of a Line"
+    fields:
+      Front: "How do you find the y-intercept and x-intercept from the equation y = 2x − 6?"
+      Back: "y-intercept: set x = 0 → y = 2(0) − 6 = −6 → point (0;−6).\nx-intercept: set y = 0 → 0 = 2x − 6 → 2x = 6 → x = 3 → point (3;0).\nGeneral rule: the line crosses the y-axis where x = 0, and the x-axis where y = 0."
+    tags: ["intercepts-from-equation", "subject:graphs"]
+  - guid: 0c6e2a8f4b1d7539
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equation of a Line"
+    fields:
+      Front: "Does the point (2;1) lie on the line y = 3x − 5? Show how to check."
+      Back: "Substitute x = 2 into the equation and see if y matches.\ny = 3(2) − 5 = 6 − 5 = 1.\nThe equation gives y = 1, which equals the point's y-value (1). So YES, (2;1) lies on the line.\nMethod: a point lies on a line only if its coordinates satisfy the equation."
+    tags: ["point-on-line", "subject:graphs"]
+  - guid: 8b4f0c6a2e9d1357
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equation of a Line"
+    fields:
+      Front: "What is the gradient and y-intercept of y = x? And of y = −x + 2?"
+      Back: "y = x is short for y = 1x + 0:\n• gradient m = 1, y-intercept c = 0 (passes through the origin).\ny = −x + 2 is y = (−1)x + 2:\n• gradient m = −1, y-intercept c = 2.\nWhen no number shows in front of x, the coefficient is 1 (or −1)."
+    tags: ["reading-equation", "subject:graphs"]

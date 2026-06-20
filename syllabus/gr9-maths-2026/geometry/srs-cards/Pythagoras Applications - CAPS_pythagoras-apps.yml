@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — geometry / Pythagoras Applications
+deck: "Corpus::Gr9 Maths::Pythagoras Applications"
+notes:
+  - guid: a7a1e9b67e9c0231
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Pythagoras Applications"
+    fields:
+      Front: "In a right-angled triangle the two shorter sides are 6 cm and 8 cm. Find the hypotenuse."
+      Back: "The hypotenuse is opposite the right angle.\nh² = 6² + 8²    (Pythagoras)\nh² = 36 + 64\nh² = 100\nh = √100\nh = 10 cm.\nTip: to find the HYPOTENUSE you ADD the squares of the two shorter sides."
+    tags: ["find-hypotenuse", "subject:geometry"]
+  - guid: b9b2f0c78f0d1342
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Pythagoras Applications"
+    fields:
+      Front: "A right-angled triangle has hypotenuse 13 cm and one short side 5 cm. Find the other short side."
+      Back: "To find a SHORTER side, SUBTRACT:\nx² = 13² − 5²    (Pythagoras)\nx² = 169 − 25\nx² = 144\nx = √144\nx = 12 cm.\nPitfall: the hypotenuse is the LARGEST number — its square goes first and you subtract. Adding here would be wrong."
+    tags: ["find-shorter-side", "subject:geometry"]
+  - guid: c1c3a1d89a1e2453
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Pythagoras Applications"
+    fields:
+      Front: "A 5 m ladder leans against a wall with its foot 3 m from the base. How high up the wall does it reach?"
+      Back: "The ladder is the hypotenuse (5 m); the ground distance (3 m) is one short side; the wall height (h) is the other short side.\nh² = 5² − 3²    (Pythagoras)\nh² = 25 − 9\nh² = 16\nh = 4 m.\nThe ladder reaches 4 m up the wall.\nMethod for word problems: sketch the triangle and mark the hypotenuse FIRST (it is always opposite the 90° corner)."
+    tags: ["pythagoras-ladder", "subject:geometry"]
+  - guid: d3d4b2e90b2f3564
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Pythagoras Applications"
+    fields:
+      Front: "Find the length of the diagonal of a rectangle measuring 9 cm by 12 cm."
+      Back: "A diagonal splits the rectangle into two right-angled triangles. The diagonal is the hypotenuse.\nd² = 9² + 12²    (Pythagoras)\nd² = 81 + 144\nd² = 225\nd = √225\nd = 15 cm.\nThe diagonal is 15 cm."
+    tags: ["pythagoras-diagonal", "subject:geometry"]
+  - guid: e5e5b2f01c3a4675
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Pythagoras Applications"
+    fields:
+      Front: "Use the CONVERSE of Pythagoras to test whether a triangle with sides 7, 24 and 25 is right-angled."
+      Back: "Compare the square of the longest side with the sum of the squares of the other two:\nlongest² = 25² = 625\nother two: 7² + 24² = 49 + 576 = 625\nSince 625 = 625, the equation holds.\n∴ the triangle IS right-angled   (converse of Pythagoras), with the right angle opposite the 25-side.\nIf the two sides were NOT equal, the triangle would not be right-angled."
+    tags: ["converse-pythagoras", "subject:geometry"]
+  - guid: f7f6d4a12c3a5786
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Pythagoras Applications"
+    fields:
+      Front: "A right-angled triangle has short sides 2 cm and 3 cm. Give the hypotenuse as a surd in simplest form."
+      Back: "h² = 2² + 3²    (Pythagoras)\nh² = 4 + 9 = 13\nh = √13 cm.\n√13 cannot be simplified (13 is prime and has no square factor), so leave it as √13.\nExample where you DO simplify: √8 = √(4×2) = 2√2. Always pull out the largest perfect-square factor."
+    tags: ["pythagoras-surds", "subject:geometry"]

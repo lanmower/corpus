@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — measurement / Effect of Changing Dimensions
+deck: "Corpus::Gr9 Maths::Effect of Changing Dimensions"
+notes:
+  - guid: c2e4a6f8b0139d57
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Effect of Changing Dimensions"
+    fields:
+      Front: "If you DOUBLE the side of a square, what happens to its perimeter and to its area?"
+      Back: "Take side s. Original P = 4s, A = s².\nNew side 2s: P = 4(2s) = 8s → perimeter DOUBLES (×2).\nNew area = (2s)² = 4s² → area becomes 4× as big (×4).\nKey idea: perimeter scales by the SAME factor as the length; area scales by the factor SQUARED."
+    tags: ["scaling", "square", "subject:measurement"]
+  - guid: 5a7c9e1b3d028f46
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Effect of Changing Dimensions"
+    fields:
+      Front: "General rule: if every dimension of a 2D shape is multiplied by k, what happens to perimeter and area?"
+      Back: "Perimeter is multiplied by k (the linear factor).\nArea is multiplied by k² (the factor squared).\nExamples: ×3 the sides → perimeter ×3, area ×9.  ×½ the sides → perimeter ×½, area ×¼.\nReason: area = length × length, so each length factor appears twice."
+    tags: ["scaling", "general-rule", "subject:measurement"]
+  - guid: 8c0e2a4f6b15d397
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Effect of Changing Dimensions"
+    fields:
+      Front: "A rectangle is 6 cm × 4 cm. Both dimensions are tripled. Find the new area and compare with the old."
+      Back: "Old area = 6 × 4 = 24 cm².\nNew dimensions: 18 cm × 12 cm.\nNew area = 18 × 12 = 216 cm².\nRatio = 216 ÷ 24 = 9 = 3². So tripling each side multiplies the area by 9, confirming the ×k² rule."
+    tags: ["scaling", "rectangle", "area-ratio", "subject:measurement"]
+  - guid: 1d3f5a7c9e024b68
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Effect of Changing Dimensions"
+    fields:
+      Front: "Only the LENGTH of a rectangle is doubled (the breadth stays the same). What happens to the area?"
+      Back: "A = ℓ × b. If only ℓ doubles to 2ℓ: new A = 2ℓ × b = 2(ℓb) → area DOUBLES.\nPitfall: the ×k² rule (area ×4 for doubling) applies only when ALL dimensions change by k. Changing one dimension by 2 changes the area by just 2.\nIf length ×3 and breadth ×2: area × (3×2) = ×6."
+    tags: ["scaling", "one-dimension", "subject:measurement"]
+  - guid: 4f6a8c0e2b137d95
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Effect of Changing Dimensions"
+    fields:
+      Front: "The radius of a circle is doubled. What happens to its circumference and its area?"
+      Back: "Circumference C = 2πr is linear in r → doubling r DOUBLES C (×2).\nArea A = πr² depends on r² → doubling r gives (2r)² = 4r² → area ×4.\nSame pattern as all 2D shapes: the 'around' measure scales ×k, the 'inside' measure scales ×k²."
+    tags: ["scaling", "circle", "subject:measurement"]
+  - guid: 7c9e1a3f5b08d264
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Effect of Changing Dimensions"
+    fields:
+      Front: "Two squares have sides in the ratio 2 : 5. What is the ratio of their areas?"
+      Back: "Ratio of areas = (ratio of sides)² = 2² : 5² = 4 : 25.\nMethod: for similar shapes, area ratio = (length ratio)². Always SQUARE each part of the side ratio.\nReverse: if areas are 9 : 49, the side ratio is √9 : √49 = 3 : 7."
+    tags: ["scaling", "area-ratio", "subject:measurement"]

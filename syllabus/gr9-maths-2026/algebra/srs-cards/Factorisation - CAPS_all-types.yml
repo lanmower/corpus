@@ -1,0 +1,101 @@
+# Gr 9 Maths CAPS — algebra / Factorisation
+deck: "Corpus::Gr9 Maths::Factorisation"
+notes:
+  - guid: 0a1b2c3d4e5f6071
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "What does it mean to 'factorise', and what is the GOLDEN RULE about order?"
+      Back: "Factorising means writing an expression as a PRODUCT of factors (the reverse of expanding).\nGOLDEN RULE: ALWAYS take out a common factor FIRST, before trying any other method. Then check whether what remains can be factorised further (difference of squares, trinomial, etc.).\n'Factorise fully' = keep going until no factor can be broken down any more."
+    tags: ["factorising-overview", "subject:algebra"]
+  - guid: 1b2c3d4e5f607182
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Type 1 — common factor: factorise 6x² + 9x."
+      Back: "Find the HCF of the terms. Numbers: HCF(6,9)=3. Variables: lowest power of x common to both is x.\nCommon factor = 3x.\nDivide each term by 3x to get the bracket: 6x²÷3x = 2x, 9x÷3x = 3.\nAnswer: 3x(2x + 3).\nCheck by expanding: 3x(2x+3) = 6x² + 9x. ✓"
+    tags: ["common-factor", "subject:algebra"]
+  - guid: 2c3d4e5f60718293
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Factorise: 12a²b − 18ab² + 6ab."
+      Back: "HCF of 12, 18, 6 is 6. Common variables: a and b (lowest power each). Common factor = 6ab.\n12a²b ÷ 6ab = 2a; −18ab² ÷ 6ab = −3b; 6ab ÷ 6ab = 1.\nAnswer: 6ab(2a − 3b + 1).\nDon't drop the +1 — the last term divides to 1, not 0."
+    tags: ["common-factor", "subject:algebra"]
+  - guid: 3d4e5f6071829304
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Type 2 — difference of two squares: factorise x² − 25."
+      Back: "Pattern a² − b² = (a + b)(a − b). It works ONLY for a difference (minus) of two perfect squares.\nx² = (x)², 25 = (5)². So a = x, b = 5.\nAnswer: (x + 5)(x − 5).\nNote: x² + 25 (a SUM of squares) does NOT factorise."
+    tags: ["difference-of-squares", "subject:algebra"]
+  - guid: 4e5f607182930415
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Factorise: 9x² − 16y²."
+      Back: "Difference of two squares. Take the square root of each part:\n√(9x²) = 3x, √(16y²) = 4y.\nSo a = 3x, b = 4y.\nAnswer: (3x + 4y)(3x − 4y)."
+    tags: ["difference-of-squares", "subject:algebra"]
+  - guid: 5f60718293041526
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Factorise FULLY (common factor first): 2x² − 50."
+      Back: "Step 1 — common factor 2: 2(x² − 25).\nStep 2 — the bracket is a difference of squares: x² − 25 = (x + 5)(x − 5).\nAnswer: 2(x + 5)(x − 5).\nLesson: pulling out the 2 first revealed a difference of squares that was hidden before."
+    tags: ["common-factor", "difference-of-squares", "factorise-fully", "subject:algebra"]
+  - guid: 6071829304152637
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Type 3 — trinomial x² + bx + c: factorise x² + 7x + 12."
+      Back: "Find two numbers that MULTIPLY to c (=12) and ADD to b (=7).\nPairs of 12: 1×12, 2×6, 3×4. Which adds to 7? 3 + 4 = 7. ✓\nAnswer: (x + 3)(x + 4).\nCheck: outer+inner = 4x + 3x = 7x. ✓"
+    tags: ["trinomial", "subject:algebra"]
+  - guid: 7182930415263748
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Factorise x² − 5x + 6 (signs!)."
+      Back: "Need two numbers: product = +6, sum = −5.\nSince product is positive but sum is negative, BOTH numbers are negative.\n−2 and −3: (−2)(−3)=6 and −2+−3=−5. ✓\nAnswer: (x − 2)(x − 3)."
+    tags: ["trinomial", "subject:algebra"]
+  - guid: 8293041526374859
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Factorise x² + 2x − 15 (mixed signs)."
+      Back: "Two numbers: product = −15 (negative ⇒ one +, one −), sum = +2.\nFactors of 15: 3 and 5. To get +2 with a sum, the bigger is positive: +5 and −3.\n5×(−3)=−15, 5+(−3)=+2. ✓\nAnswer: (x + 5)(x − 3)."
+    tags: ["trinomial", "subject:algebra"]
+  - guid: 9304152637485960
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Type 3b — trinomial ax² + bx + c: factorise 2x² + 7x + 3."
+      Back: "Multiply a×c = 2×3 = 6. Find two numbers that multiply to 6 and add to b=7: that's 1 and 6.\nSplit the middle term: 2x² + x + 6x + 3.\nGroup: x(2x + 1) + 3(2x + 1).\nFactor the common bracket: (2x + 1)(x + 3).\nCheck: 2x²+6x+x+3 = 2x²+7x+3. ✓"
+    tags: ["trinomial", "ax2-trinomial", "subject:algebra"]
+  - guid: a415263748596071
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Factorise 3x² − 10x − 8."
+      Back: "a×c = 3×(−8) = −24. Two numbers multiplying to −24, adding to −10: −12 and +2.\nSplit: 3x² − 12x + 2x − 8.\nGroup: 3x(x − 4) + 2(x − 4).\nAnswer: (x − 4)(3x + 2).\nAlways check the common bracket matches in both groups."
+    tags: ["ax2-trinomial", "grouping", "subject:algebra"]
+  - guid: b526374859607182
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Type 4 — factorise by grouping (4 terms): ax + ay + bx + by."
+      Back: "Group into pairs and take a common factor from each pair:\n(ax + ay) + (bx + by) = a(x + y) + b(x + y).\nNow (x + y) is a common bracket: factor it out.\nAnswer: (x + y)(a + b).\nKey: choose the grouping so both pairs leave the SAME bracket."
+    tags: ["grouping", "subject:algebra"]
+  - guid: c637485960718293
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Factorise by grouping: x³ + 2x² − 5x − 10."
+      Back: "Pair them: (x³ + 2x²) + (−5x − 10).\nFirst pair: x²(x + 2). Second pair: −5(x + 2).\n= x²(x + 2) − 5(x + 2) = (x + 2)(x² − 5).\nWatch signs: factoring −5 out of (−5x − 10) leaves (x + 2), matching the first bracket."
+    tags: ["grouping", "subject:algebra"]
+  - guid: d748596071829304
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Factorisation"
+    fields:
+      Front: "Factorise fully: 3x³ − 27x."
+      Back: "Step 1 — common factor 3x: 3x(x² − 9).\nStep 2 — x² − 9 is a difference of squares: (x + 3)(x − 3).\nAnswer: 3x(x + 3)(x − 3).\nAlways finish by checking each remaining factor really can't be factorised further."
+    tags: ["common-factor", "difference-of-squares", "factorise-fully", "subject:algebra"]

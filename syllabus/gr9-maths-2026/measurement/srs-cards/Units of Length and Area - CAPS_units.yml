@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — measurement / Units of Length and Area
+deck: "Corpus::Gr9 Maths::Units of Length and Area"
+notes:
+  - guid: a3c5e7f9b0124d68
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Units of Length and Area"
+    fields:
+      Front: "Give the basic LENGTH conversion ladder (mm, cm, m, km)."
+      Back: "10 mm = 1 cm\n100 cm = 1 m\n1000 m = 1 km\nAlso: 1 m = 1000 mm.\nGoing to a SMALLER unit → MULTIPLY; going to a LARGER unit → DIVIDE.\nExample: 3,5 m = 3,5 × 100 = 350 cm."
+    tags: ["units", "length-conversion", "subject:measurement"]
+  - guid: 6d8f0a2c4e137b59
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Units of Length and Area"
+    fields:
+      Front: "Why is 1 m² = 10 000 cm² and not 100 cm²?"
+      Back: "Because area is length × length, so you square the length conversion.\n1 m = 100 cm, so 1 m² = (100 cm)² = 100 × 100 = 10 000 cm².\nGeneral: for AREA units, square the linear factor. The number gets bigger because each direction is converted."
+    tags: ["units", "area-conversion", "subject:measurement"]
+  - guid: 9a1c3e5f7b08d246
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Units of Length and Area"
+    fields:
+      Front: "List the key squared-unit (area) conversions."
+      Back: "1 cm² = 100 mm²   (since 1 cm = 10 mm, 10² = 100)\n1 m² = 10 000 cm²   (100² )\n1 m² = 1 000 000 mm²\n1 km² = 1 000 000 m²   (1000² )\n1 hectare (ha) = 10 000 m².\nRule: square the linear conversion factor each time."
+    tags: ["units", "area-conversion", "subject:measurement"]
+  - guid: 2c4e6a8b0d15f397
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Units of Length and Area"
+    fields:
+      Front: "Convert 25 000 cm² to m²."
+      Back: "Going from a smaller area unit (cm²) to a larger one (m²) → DIVIDE.\n1 m² = 10 000 cm², so divide by 10 000:\n25 000 ÷ 10 000 = 2,5 m².\nPitfall: don't divide by 100 — area uses the SQUARED factor 10 000."
+    tags: ["units", "area-conversion", "subject:measurement"]
+  - guid: 5e7a9c1b3d04f286
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Units of Length and Area"
+    fields:
+      Front: "Why must you convert units BEFORE substituting into an area formula? Show with an example."
+      Back: "All measurements must be in the SAME unit, or the answer is wrong.\nExample: rectangle 2 m by 50 cm. Don't compute 2 × 50.\nConvert first: 50 cm = 0,5 m.\nA = 2 × 0,5 = 1 m²  (or convert to cm: 200 × 50 = 10 000 cm² = 1 m² — same).\nRule: make units match first, then substitute."
+    tags: ["units", "convert-first", "subject:measurement"]
+  - guid: 8a0c2e4f6b139d57
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Units of Length and Area"
+    fields:
+      Front: "How do you CHOOSE an appropriate unit for a measurement?"
+      Back: "Pick a unit that gives a sensible, not-too-big or not-too-small number.\nLength: thickness of a coin → mm; a person's height → cm or m; distance between towns → km.\nArea: a stamp → mm² or cm²; a room floor → m²; a farm → hectares or km².\nGuideline: small objects use mm/cm, rooms/buildings use m, land uses km²/ha."
+    tags: ["units", "choosing-units", "subject:measurement"]

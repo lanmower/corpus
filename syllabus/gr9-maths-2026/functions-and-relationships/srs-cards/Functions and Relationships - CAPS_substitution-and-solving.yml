@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — functions-and-relationships / Functions and Relationships
+deck: "Corpus::Gr9 Maths::Functions and Relationships"
+notes:
+  - guid: dfe0f10213243546
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "How do you substitute a value into a formula to find the output? Use y = 4x − 7 with x = 3."
+      Back: "Substitution means replacing the variable with its value, in brackets, then simplifying.\ny = 4x − 7, x = 3:\ny = 4(3) − 7\ny = 12 − 7\ny = 5.\nAlways use brackets around the substituted number (essential for negatives) and follow order of operations: multiply before subtract."
+    tags: ["substitution", "subject:functions-and-relationships"]
+  - guid: e0f1021324354657
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Substitute a NEGATIVE input: find y when x = −2 in y = −3x + 5."
+      Back: "Use brackets to keep the sign correct:\ny = −3(−2) + 5\ny = 6 + 5   (negative × negative = positive)\ny = 11.\nPitfall: −3 × −2 = +6, not −6. Without brackets students often write −3−2 = −5 by mistake."
+    tags: ["substitution", "negative-numbers", "subject:functions-and-relationships"]
+  - guid: f102132435465768
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Substitute into a formula with a square: find y when x = −4 in y = x² + 2x."
+      Back: "y = (−4)² + 2(−4)\ny = 16 + (−8)   ((−4)² = 16; 2×−4 = −8)\ny = 8.\nDo the squaring first (order of operations), then the multiplication, then add. Remember (−4)² = 16 (positive)."
+    tags: ["substitution", "quadratic", "subject:functions-and-relationships"]
+  - guid: 0213243546576879
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Solving for the input when the output is given: in y = 2x + 1, find x when y = 13."
+      Back: "Substitute the known output and solve the equation for x:\n13 = 2x + 1\n13 − 1 = 2x   (subtract 1 from both sides)\n12 = 2x\n12 ÷ 2 = x   (divide both sides by 2)\nx = 6.\nCheck: 2(6)+1 = 13 ✓.\nThis is the algebra version of 'working backwards' through a flow diagram."
+    tags: ["substitution", "solving", "inverse-operations", "subject:functions-and-relationships"]
+  - guid: 1324354657687980
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Solve for the input with a negative gradient: in y = −2x + 3, find x when y = 11."
+      Back: "11 = −2x + 3\n11 − 3 = −2x\n8 = −2x\nx = 8 ÷ (−2)\nx = −4.\nCheck: −2(−4)+3 = 8+3 = 11 ✓.\nPitfall: dividing by a negative changes the sign — 8 ÷ (−2) = −4, not 4."
+    tags: ["substitution", "solving", "negative-numbers", "subject:functions-and-relationships"]
+  - guid: 2435465768798091
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Word-problem substitution: cost C = 5n + 10 (rand). (a) Find C for n = 8 items. (b) If C = R60, how many items?"
+      Back: "(a) Substitute n = 8: C = 5(8) + 10 = 40 + 10 = R50.\n(b) Solve for n with C = 60:\n60 = 5n + 10\n60 − 10 = 5n\n50 = 5n\nn = 10 items.\nCheck: 5(10)+10 = 60 ✓.\nForwards (substitute) gives the cost; backwards (solve) gives the number of items."
+    tags: ["substitution", "solving", "word-problem", "subject:functions-and-relationships"]

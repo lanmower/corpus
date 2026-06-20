@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — finance / Discount
+deck: "Corpus::Gr9 Maths::Discount"
+notes:
+  - guid: 1a2b3c4d5e6f7081
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Discount"
+    fields:
+      Front: "Define marked price and sale price, and state the discount formulas."
+      Back: "Marked price (MP) = the original/ticket price BEFORE discount.\nSale price = the price you actually PAY after the discount is taken off.\nDiscount amount = MP × (discount% ÷ 100).\nSale price = MP − discount = MP × (1 − discount% ÷ 100)."
+    tags: ["marked-price-sale-price", "subject:finance"]
+  - guid: 2b3c4d5e6f708192
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Discount"
+    fields:
+      Front: "A jacket is marked R800 with a 25% discount. Find the discount amount and the sale price."
+      Back: "Discount = 25% of R800 = 0,25 × 800 = R200.\nSale price = MP − discount = 800 − 200 = R600.\nShortcut: pay (100 − 25)% = 75% → 0,75 × 800 = R600. ✓"
+    tags: ["percentage-discount", "subject:finance"]
+  - guid: 3c4d5e6f70819203
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Discount"
+    fields:
+      Front: "After a 30% discount a TV costs R2 100. What was the marked price? (Reverse)"
+      Back: "Sale price = 70% of MP, so 2 100 = 0,70 × MP.\nMP = 2 100 ÷ 0,70 = R3 000.\nCheck: 30% of 3 000 = R900; 3 000 − 900 = R2 100. ✓\nMistake to avoid: do NOT add 30% of R2 100 — the % is of the marked price."
+    tags: ["reverse-percentage", "subject:finance"]
+  - guid: 4d5e6f7081920314
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Discount"
+    fields:
+      Front: "An item marked R500 is sold for R375. What percentage discount was given?"
+      Back: "Discount amount = MP − sale = 500 − 375 = R125.\n% discount = (discount ÷ MP) × 100 = (125 ÷ 500) × 100 = 25%.\nNote: discount % is calculated on the MARKED PRICE (the original)."
+    tags: ["percentage-discount", "subject:finance"]
+  - guid: 5e6f708192031425
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Discount"
+    fields:
+      Front: "How do you handle SUCCESSIVE discounts (e.g. 20% then a further 10%)? Why can't you just add them?"
+      Back: "Apply them ONE AFTER THE OTHER as multipliers. You cannot add to 30% because the second discount is taken on the already-reduced price.\nFinal price = MP × (1 − 0,20) × (1 − 0,10) = MP × 0,80 × 0,90 = MP × 0,72.\nSo the overall discount = 1 − 0,72 = 0,28 = 28% (not 30%)."
+    tags: ["successive-discounts", "subject:finance"]
+  - guid: 6f70819203142536
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Discount"
+    fields:
+      Front: "A coat is marked R1 000. A 20% discount is given, then a further 15% off at the till. Find the final price."
+      Back: "After first discount: 1 000 × 0,80 = R800.\nAfter second discount: 800 × 0,85 = R680.\nFinal price = R680.\nOverall: 1 000 × 0,80 × 0,85 = R680. Overall discount = 32%, not 35%."
+    tags: ["successive-discounts", "subject:finance"]
+  - guid: 7081920314253647
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Discount"
+    fields:
+      Front: "Distinguish 'cash discount' / 'discount for paying early' from a marked-down sale price."
+      Back: "Both reduce what you pay, calculated the same way: amount paid = full price × (1 − discount%).\nCash discount = reduction for paying immediately/in cash instead of on credit.\nExample: invoice R2 000, 5% cash discount → pay 2 000 × 0,95 = R1 900, saving R100."
+    tags: ["percentage-discount", "subject:finance"]
+  - guid: 8192031425364758
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Discount"
+    fields:
+      Front: "Common mistake: adding two successive discounts of 50% and 50% to get 100% off. What is the real answer?"
+      Back: "Multiply the multipliers, do not add the percentages.\nFinal = MP × 0,50 × 0,50 = MP × 0,25 → you still pay 25% of the price, a 75% total discount.\nTwo 50% discounts NEVER make something free."
+    tags: ["common-mistakes", "subject:finance"]

@@ -1,0 +1,164 @@
+# Gr 9 Maths CAPS — numbers / Fractions
+deck: "Corpus::Gr9 Maths::Fractions"
+notes:
+  - guid: 4a1f9c2e7b8d0356
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "What are equivalent fractions, and how do you make one?"
+      Back: "Equivalent fractions name the same value but look different.\nMake one by multiplying (or dividing) the numerator AND denominator by the SAME non-zero number.\nExample: 2/3 = (2×4)/(3×4) = 8/12.\nCheck: 2/3 and 8/12 both sit at the same point on a number line.\nWarning: you may NOT add the same number to top and bottom — only multiply/divide."
+    tags: ["equivalent-fractions", "subject:numbers"]
+  - guid: b7e3d1a08f6c2459
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Simplify 18/24 to lowest terms. Show the method."
+      Back: "Step 1: Find the HCF of 18 and 24.\n18 = 2×3×3, 24 = 2×2×2×3, so HCF = 2×3 = 6.\nStep 2: Divide top and bottom by the HCF.\n18÷6 = 3, 24÷6 = 4.\n∴ 18/24 = 3/4.\nA fraction is in lowest terms when the only common factor of top and bottom is 1."
+    tags: ["simplifying-fractions", "subject:numbers"]
+  - guid: c2906fa4e1b87d33
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "How do you know a fraction is fully simplified (in lowest terms)?"
+      Back: "It is in lowest terms when the HCF of the numerator and denominator is 1 (no common factor other than 1).\nExample: 3/4 is fully simplified (HCF of 3 and 4 is 1).\nExample: 6/9 is NOT — HCF is 3, so 6/9 = 2/3.\nTip: keep dividing by common factors until none remain."
+    tags: ["simplifying-fractions", "subject:numbers"]
+  - guid: 5d8b0e3f9a1c6742
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Convert the mixed number 3 2/5 to an improper fraction."
+      Back: "Rule: (whole × denominator + numerator) / denominator.\nStep: 3×5 = 15, then 15 + 2 = 17.\nKeep the same denominator (5).\n∴ 3 2/5 = 17/5.\nCheck: 17/5 = 3 remainder 2 = 3 2/5. ✓"
+    tags: ["mixed-numbers", "subject:numbers"]
+  - guid: e1a7c4920d6b8f35
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Convert the improper fraction 23/4 to a mixed number."
+      Back: "Divide the numerator by the denominator: 23 ÷ 4 = 5 remainder 3.\nThe quotient (5) is the whole number; the remainder (3) is the new numerator; keep the denominator (4).\n∴ 23/4 = 5 3/4.\nCheck: 5×4 + 3 = 23. ✓"
+    tags: ["mixed-numbers", "subject:numbers"]
+  - guid: 9f2b6d1e8a0c4753
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Add 2/3 + 1/4. Show the common-denominator method."
+      Back: "Step 1: LCM of denominators 3 and 4 is 12.\nStep 2: Make equivalent fractions over 12.\n2/3 = 8/12, 1/4 = 3/12.\nStep 3: Add the numerators, keep the denominator.\n8/12 + 3/12 = 11/12.\n∴ 2/3 + 1/4 = 11/12 (already simplified)."
+    tags: ["adding-fractions", "subject:numbers"]
+  - guid: 0c5a8e2f7b9d1463
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Subtract 5/6 − 1/4. Show all steps."
+      Back: "Step 1: LCM of 6 and 4 is 12.\nStep 2: 5/6 = 10/12, 1/4 = 3/12.\nStep 3: Subtract numerators: 10/12 − 3/12 = 7/12.\n∴ 5/6 − 1/4 = 7/12.\nReminder: NEVER subtract denominators — only the numerators once denominators match."
+    tags: ["subtracting-fractions", "subject:numbers"]
+  - guid: 6b3f0d9c1e8a7254
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "How do you find the LCM of two denominators, e.g. 6 and 8?"
+      Back: "Method 1 (prime factors): 6 = 2×3, 8 = 2×2×2. Take the highest power of each prime: 2³×3 = 24.\nMethod 2 (list multiples): 6, 12, 18, 24...; 8, 16, 24... first shared = 24.\n∴ LCM(6, 8) = 24, the smallest common denominator to use."
+    tags: ["lcm-denominators", "subject:numbers"]
+  - guid: a4e9120c8b6d3f57
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Add the mixed numbers 2 1/2 + 1 2/3."
+      Back: "Method: add wholes and fractions separately.\nWholes: 2 + 1 = 3.\nFractions: 1/2 + 2/3. LCM(2,3)=6, so 3/6 + 4/6 = 7/6 = 1 1/6.\nCombine: 3 + 1 1/6 = 4 1/6.\n∴ 2 1/2 + 1 2/3 = 4 1/6.\nAlternative: convert to improper first (5/2 + 5/3 = 15/6 + 10/6 = 25/6 = 4 1/6)."
+    tags: ["mixed-numbers", "adding-fractions", "subject:numbers"]
+  - guid: 73c1f8a0e2b94d65
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Subtract mixed numbers 4 1/4 − 1 2/3 (with borrowing)."
+      Back: "Convert to improper fractions to avoid borrowing errors.\n4 1/4 = 17/4, 1 2/3 = 5/3.\nLCM(4,3)=12: 17/4 = 51/12, 5/3 = 20/12.\n51/12 − 20/12 = 31/12 = 2 7/12.\n∴ 4 1/4 − 1 2/3 = 2 7/12."
+    tags: ["mixed-numbers", "subtracting-fractions", "subject:numbers"]
+  - guid: 18d6b0f3a9c7e254
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Multiply 3/8 × 4/9. Cross-cancel first."
+      Back: "Step 1: Cross-cancel common factors before multiplying.\n3 and 9 share 3: 3→1, 9→3. 4 and 8 share 4: 4→1, 8→2.\nNow (1/2) × (1/3).\nStep 2: Multiply tops and bottoms: (1×1)/(2×3) = 1/6.\n∴ 3/8 × 4/9 = 1/6.\nCancelling first keeps numbers small and the answer already simplified."
+    tags: ["multiplying-fractions", "subject:numbers"]
+  - guid: 2f9a7c1e0b8d6453
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "What is the rule for multiplying fractions? (Do you need a common denominator?)"
+      Back: "NO common denominator needed for multiplication.\nRule: multiply numerator × numerator and denominator × denominator, then simplify (or cancel first).\nExample: 2/5 × 3/7 = (2×3)/(5×7) = 6/35.\nCommon mistake: students wrongly find an LCM — that is only for + and −."
+    tags: ["multiplying-fractions", "subject:numbers"]
+  - guid: bc4708e2a1f9d365
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Multiply the mixed numbers 1 1/3 × 2 1/4."
+      Back: "Step 1: Convert to improper fractions FIRST.\n1 1/3 = 4/3, 2 1/4 = 9/4.\nStep 2: Cancel: 3 and 9 share 3 → 9 becomes 3. Now (4/1)×(3/4)... cancel 4: (1/1)×(3/1)=3.\nWritten: 4/3 × 9/4 = (4×9)/(3×4) = 36/12 = 3.\n∴ 1 1/3 × 2 1/4 = 3.\nMistake to avoid: never multiply the whole parts and fraction parts separately."
+    tags: ["multiplying-fractions", "mixed-numbers", "subject:numbers"]
+  - guid: 5e0c9a2f7b1d8466
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Divide 3/5 ÷ 2/7 using keep-flip-change."
+      Back: "Keep-flip-change (keep-change-flip): keep the first fraction, change ÷ to ×, flip the second (use its reciprocal).\n3/5 ÷ 2/7 = 3/5 × 7/2.\nMultiply: (3×7)/(5×2) = 21/10 = 2 1/10.\n∴ 3/5 ÷ 2/7 = 21/10 = 2 1/10."
+    tags: ["dividing-fractions", "subject:numbers"]
+  - guid: d9a1f6c30e8b7425
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "What is the reciprocal of a fraction, and of a whole number like 4?"
+      Back: "The reciprocal flips numerator and denominator. A number × its reciprocal = 1.\nReciprocal of 3/8 is 8/3.\nReciprocal of 4 (= 4/1) is 1/4.\nReciprocal of a mixed number: convert first — reciprocal of 2 1/2 = 5/2 is 2/5.\nUsed in division: dividing by a fraction = multiplying by its reciprocal."
+    tags: ["dividing-fractions", "reciprocal", "subject:numbers"]
+  - guid: 3a8c0f1e9b6d7524
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Divide the mixed numbers 2 1/2 ÷ 1 1/4."
+      Back: "Step 1: Convert to improper: 2 1/2 = 5/2, 1 1/4 = 5/4.\nStep 2: Keep-flip-change: 5/2 × 4/5.\nStep 3: Cancel 5 with 5, and 2 with 4: = (1/1)×(2/1) = 2.\n∴ 2 1/2 ÷ 1 1/4 = 2."
+    tags: ["dividing-fractions", "mixed-numbers", "subject:numbers"]
+  - guid: 6f2b9d0a8c1e7345
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "In maths, what does the word \"of\" mean with fractions?"
+      Back: "\"of\" means MULTIPLY.\nExample: 1/3 of 12 = 1/3 × 12 = 12/3 = 4.\nExample: 3/4 of 20 = 3/4 × 20 = 60/4 = 15.\nSo \"a fraction of a quantity\" is just fraction × quantity."
+    tags: ["fraction-of-quantity", "subject:numbers"]
+  - guid: 90c4a7f2e1b8d563
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Calculate 3/4 of R120 (a CAPS money problem)."
+      Back: "\"of\" means ×, so 3/4 × 120.\nMethod: 120 ÷ 4 = 30 (that is 1/4), then 30 × 3 = 90.\n∴ 3/4 of R120 = R90.\nQuick check: 1/4 of R120 is R30, and 3 quarters is 3×R30 = R90. ✓"
+    tags: ["fraction-of-quantity", "subject:numbers"]
+  - guid: 1b7e3c0a9f2d8654
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Tickets cost R150 and a learner pays 2/5 of it. How much does she pay?"
+      Back: "2/5 of R150 = 2/5 × 150.\nMethod: 150 ÷ 5 = 30 (that is 1/5), then 30 × 2 = 60.\n∴ she pays R60.\nThe remaining 3/5 = R90 (since R60 + R90 = R150). ✓"
+    tags: ["fraction-of-quantity", "subject:numbers"]
+  - guid: e8d2a0c1f9b67435
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "What is the order of operations (BODMAS) when a calculation has fractions?"
+      Back: "Same rules as with whole numbers — fractions do not change the order:\nB Brackets, O Of/Orders (powers, roots), D&M Division and Multiplication (left to right), A&S Addition and Subtraction (left to right).\nNote: \"of\" is treated as multiplication and done with the O/DM stage.\nExample: 1/2 + 1/3 × 3/4 → do × first: 1/3 × 3/4 = 1/4, then 1/2 + 1/4 = 3/4."
+    tags: ["order-of-operations", "subject:numbers"]
+  - guid: 47b0c9e2a1f8d365
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Evaluate 2/3 + 1/4 × 8/9 using order of operations."
+      Back: "Step 1 (multiply first): 1/4 × 8/9. Cancel 4 with 8 (8→2): = 2/(4×9)... cleanly (1×2)/(1×9) = 2/9.\nStep 2 (now add): 2/3 + 2/9. LCM=9: 6/9 + 2/9 = 8/9.\n∴ 2/3 + 1/4 × 8/9 = 8/9.\nMistake to avoid: do NOT add 2/3 + 1/4 first — multiplication comes before addition."
+    tags: ["order-of-operations", "subject:numbers"]
+  - guid: a0f1c7e29b3d8645
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Evaluate (1/2 + 1/3) ÷ 5/6 using order of operations."
+      Back: "Step 1 (brackets first): 1/2 + 1/3. LCM=6: 3/6 + 2/6 = 5/6.\nStep 2 (divide, keep-flip-change): 5/6 ÷ 5/6 = 5/6 × 6/5 = 1.\n∴ (1/2 + 1/3) ÷ 5/6 = 1.\nBrackets are always resolved before the division."
+    tags: ["order-of-operations", "dividing-fractions", "subject:numbers"]
+  - guid: c3e8b0a1f29d7546
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Fractions"
+    fields:
+      Front: "Common mistake: a learner writes 1/2 + 1/3 = 2/5. Why is this wrong, and what is correct?"
+      Back: "Wrong: you cannot add numerators and denominators straight across for + or −.\nYou MUST use a common denominator first.\nCorrect: LCM(2,3)=6 → 3/6 + 2/6 = 5/6.\n∴ 1/2 + 1/3 = 5/6, not 2/5.\n(Adding straight across is only used when MULTIPLYING — and even then it is tops×tops, bottoms×bottoms, not +.)"
+    tags: ["adding-fractions", "common-mistakes", "subject:numbers"]

@@ -1,0 +1,87 @@
+# Gr 9 Maths CAPS — finance / Profit and Loss
+deck: "Corpus::Gr9 Maths::Profit and Loss"
+notes:
+  - guid: a1f3c9e07b2d4e61
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "Define cost price (CP) and selling price (SP), and state how to tell a profit from a loss."
+      Back: "Cost price (CP) = the amount a trader PAYS to buy/make an item (price in).\nSelling price (SP) = the amount the customer PAYS the trader (price out).\nIf SP > CP → PROFIT (gain).\nIf SP < CP → LOSS.\nIf SP = CP → break-even (no profit, no loss).\nProfit = SP − CP. Loss = CP − SP (keep it positive)."
+    tags: ["cost-price-selling-price", "subject:finance"]
+  - guid: b2e4d8a16c3f5072
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "A shop buys a kettle for R180 and sells it for R234. Find the profit amount."
+      Back: "Profit = SP − CP\nProfit = R234 − R180 = R54.\nSince SP (234) > CP (180), it is a profit of R54.\nTip: profit/loss AMOUNT is always Rand value; percentage profit is separate."
+    tags: ["profit-amount", "subject:finance"]
+  - guid: c3a5e9b27d406183
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "State the formula for percentage profit and percentage loss. On what value is it calculated in CAPS?"
+      Back: "In CAPS Grade 9, percentage profit/loss is calculated ON THE COST PRICE (unless told otherwise).\n% profit = (profit ÷ CP) × 100\n% loss = (loss ÷ CP) × 100\nCommon mistake: dividing by the selling price. Always divide by CP."
+    tags: ["percentage-profit-loss", "subject:finance"]
+  - guid: d4b6f0c38e517294
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "A trader buys goods for R250 and sells them for R325. Calculate the percentage profit."
+      Back: "Step 1: Profit = SP − CP = R325 − R250 = R75.\nStep 2: % profit = (profit ÷ CP) × 100\n= (75 ÷ 250) × 100\n= 0,3 × 100 = 30%.\nThe profit is 30% on cost."
+    tags: ["percentage-profit-loss", "subject:finance"]
+  - guid: e5c7a1d49f6283a5
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "A phone costing R4 000 is sold for R3 400. Calculate the percentage loss."
+      Back: "Step 1: Loss = CP − SP = R4 000 − R3 400 = R600.\nStep 2: % loss = (loss ÷ CP) × 100\n= (600 ÷ 4 000) × 100\n= 0,15 × 100 = 15%.\nA 15% loss on cost."
+    tags: ["percentage-profit-loss", "subject:finance"]
+  - guid: f6d8b2e5a07394b6
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "Given CP = R200 and a 25% profit, find the selling price (SP)."
+      Back: "Method 1 (find profit then add):\nProfit = 25% of 200 = 0,25 × 200 = R50.\nSP = CP + profit = 200 + 50 = R250.\nMethod 2 (multiplier): SP = CP × (1 + 25/100) = 200 × 1,25 = R250."
+    tags: ["markup", "subject:finance"]
+  - guid: a7e9c3f6b18405c7
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "Given CP = R600 and a 20% loss, find the selling price."
+      Back: "SP = CP × (1 − 20/100) = 600 × 0,80 = R480.\nCheck: loss = 600 − 480 = R120 = 20% of 600. ✓\nA loss means you MULTIPLY by (1 − %), i.e. less than 1."
+    tags: ["percentage-profit-loss", "subject:finance"]
+  - guid: b8f0d4a7c29516d8
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "An item is sold for R360 at a 20% profit. Find the cost price. (Reverse percentage)"
+      Back: "The SP is 120% of the CP, so SP = CP × 1,20.\nCP = SP ÷ 1,20 = 360 ÷ 1,20 = R300.\nCheck: 20% of 300 = R60; 300 + 60 = R360. ✓\nCommon mistake: taking 20% of R360 (= R72) — wrong, because the % is on the CP, not the SP."
+    tags: ["reverse-percentage", "subject:finance"]
+  - guid: c9a1e5b8d306278a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "What is 'markup' and how does it relate to cost price and selling price?"
+      Back: "Markup = the amount ADDED to the cost price to get the selling price.\nMarkup amount = SP − CP (same as profit).\nMarkup % = (markup ÷ CP) × 100.\nSP = CP + markup = CP × (1 + markup%).\nExample: CP R80, markup 50% → markup = R40, SP = R120."
+    tags: ["markup", "subject:finance"]
+  - guid: d0b2f6c9e417389b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "What does 'break-even' mean and how do you find the break-even point?"
+      Back: "Break-even = the point where total income EQUALS total cost, so profit = 0 (SP = CP overall).\nBreak-even number of units = total fixed costs ÷ profit per unit (or ÷ (price − variable cost per unit)).\nExample: fixed costs R600, profit R30 per item → break-even = 600 ÷ 30 = 20 items. Selling fewer than 20 = loss; more than 20 = profit."
+    tags: ["break-even", "subject:finance"]
+  - guid: e1c3a7d0f528490c
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "A tuck shop has fixed costs of R450. Each sweet sells for R5 and costs R2 to buy. How many sweets to break even?"
+      Back: "Profit per sweet = price − cost = R5 − R2 = R3.\nBreak-even units = fixed costs ÷ profit per unit = 450 ÷ 3 = 150 sweets.\nAt 150 sweets income = 150 × 5 = R750; costs = 450 + 150 × 2 = R750. Equal → break-even. ✓"
+    tags: ["break-even", "subject:finance"]
+  - guid: f2d4b8e1a639501d
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Profit and Loss"
+    fields:
+      Front: "Common-mistake check: a learner divides profit by selling price to get % profit. Why is that wrong?"
+      Back: "CAPS defines percentage profit/loss ON THE COST PRICE. Dividing by SP gives the 'margin', not the % profit asked for.\nCorrect: % profit = (profit ÷ CP) × 100.\nAlways read the question — only divide by SP if it explicitly says 'percentage of the selling price'."
+    tags: ["common-mistakes", "subject:finance"]

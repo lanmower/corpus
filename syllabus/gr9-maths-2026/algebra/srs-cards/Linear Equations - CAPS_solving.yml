@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — algebra / Linear Equations
+deck: "Corpus::Gr9 Maths::Linear Equations"
+notes:
+  - guid: 718293041526374f
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Equations"
+    fields:
+      Front: "What is the GOLDEN RULE for solving any equation?"
+      Back: "Whatever you do to one side, you MUST do to the other, to keep the equation balanced.\nGoal: isolate the variable on one side. Use INVERSE operations — undo + with −, × with ÷, etc.\nWork in reverse BODMAS order: deal with +/− terms first, then the ×/÷ coefficient last."
+    tags: ["solving-equations", "subject:algebra"]
+  - guid: 8293041526374f60
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Equations"
+    fields:
+      Front: "Solve: 3x + 5 = 20."
+      Back: "Subtract 5 from both sides: 3x = 15.\nDivide both sides by 3: x = 5.\nCheck: 3(5) + 5 = 20. ✓\nUndo the +5 first (inverse −5), then undo the ×3 (inverse ÷3)."
+    tags: ["solving-equations", "subject:algebra"]
+  - guid: 93041526374f6071
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Equations"
+    fields:
+      Front: "Solve with brackets: 2(x − 3) = 10."
+      Back: "Option A — expand: 2x − 6 = 10 → 2x = 16 → x = 8.\nOption B — divide both sides by 2 first: x − 3 = 5 → x = 8.\nEither way x = 8.\nCheck: 2(8 − 3) = 2(5) = 10. ✓"
+    tags: ["solving-equations", "brackets", "subject:algebra"]
+  - guid: a041526374f60718
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Equations"
+    fields:
+      Front: "Solve with variable on both sides: 5x − 4 = 2x + 11."
+      Back: "Collect variables on one side, numbers on the other.\nSubtract 2x from both sides: 3x − 4 = 11.\nAdd 4: 3x = 15.\nDivide by 3: x = 5.\nMove the SMALLER variable term to keep the coefficient positive."
+    tags: ["solving-equations", "variable-both-sides", "subject:algebra"]
+  - guid: b1526374f6071829
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Equations"
+    fields:
+      Front: "Solve with fractions: x/2 + x/3 = 5."
+      Back: "Multiply EVERY term by the LCD (of 2 and 3) = 6 to clear fractions.\n6·(x/2) + 6·(x/3) = 6·5.\n3x + 2x = 30.\n5x = 30 → x = 6.\nMultiplying every term by the LCD removes all denominators in one step."
+    tags: ["solving-equations", "fractions", "lcd", "subject:algebra"]
+  - guid: c26374f607182930
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Equations"
+    fields:
+      Front: "Solve: (x + 1)/3 = (2x − 1)/5."
+      Back: "Cross-multiply (or multiply both sides by LCD 15):\n5(x + 1) = 3(2x − 1).\n5x + 5 = 6x − 3.\nGather: 5 + 3 = 6x − 5x → 8 = x.\nAnswer: x = 8."
+    tags: ["solving-equations", "fractions", "subject:algebra"]
+  - guid: d374f6071829304a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Equations"
+    fields:
+      Front: "Solve a literal equation (change the subject): make x the subject of y = mx + c."
+      Back: "Isolate x using inverse operations.\nSubtract c: y − c = mx.\nDivide by m: (y − c)/m = x.\nAnswer: x = (y − c)/m.\nTreat the other letters just like numbers; the same balancing rules apply."
+    tags: ["changing-subject", "literal-equation", "subject:algebra"]
+  - guid: e4f6071829304a5b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Equations"
+    fields:
+      Front: "Make r the subject of the formula P = 2(l + r)."
+      Back: "Divide both sides by 2: P/2 = l + r.\nSubtract l: P/2 − l = r.\nAnswer: r = P/2 − l (or r = (P − 2l)/2).\nUndo the operations in reverse: bracket multiplication (×2) first, then the +l."
+    tags: ["changing-subject", "literal-equation", "subject:algebra"]

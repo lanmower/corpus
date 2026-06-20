@@ -55,9 +55,10 @@ function render() {
             if (getStage()) getStage().innerHTML = '';
             if (!state.manifest) { if (getStage()) getStage().append(el('div', { class: 'loading' }, 'loading…')); return; }
             const r = state.route;
-            // day-of-exam minimal mode — only mistakes + farewell
-            const days = srs.daysUntilExam();
-            if (days === 0 && r !== 'mistakes' && r !== 'settings') {
+            // day-of-exam minimal mode — only mistakes + farewell. Gated on the
+            // exam date being exactly today (not daysUntilExam===0, which also
+            // matches any past/default date and would hijack every route).
+            if (srs.isExamDay() && r !== 'mistakes' && r !== 'settings') {
                 renderExamDay(); updateFooter(); return;
             }
             (ROUTE_FNS[r] || renderToday)();

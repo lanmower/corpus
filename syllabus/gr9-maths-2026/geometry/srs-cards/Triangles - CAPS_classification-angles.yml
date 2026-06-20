@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — geometry / Triangles
+deck: "Corpus::Gr9 Maths::Triangles"
+notes:
+  - guid: a3c1e5f70b9d2846
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Triangles"
+    fields:
+      Front: "Classify triangles BY THEIR SIDES. Name each type and its property."
+      Back: "Equilateral: all 3 sides equal AND all 3 angles equal (each 60°).\nIsosceles: exactly 2 sides equal; the 2 angles opposite those equal sides are equal (base angles).\nScalene: all 3 sides different, so all 3 angles different.\nNotation: equal sides are shown with matching tick marks."
+    tags: ["triangle-by-sides", "subject:geometry"]
+  - guid: b5d2f4a81c0e3957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Triangles"
+    fields:
+      Front: "Classify triangles BY THEIR ANGLES."
+      Back: "Acute-angled: all 3 angles less than 90°.\nRight-angled: one angle exactly 90° (the side opposite it is the hypotenuse — the longest side).\nObtuse-angled: one angle greater than 90° (a triangle can have at most ONE obtuse or right angle, since the three add to 180°)."
+    tags: ["triangle-by-angles", "subject:geometry"]
+  - guid: c7e3a1b90d2f4685
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Triangles"
+    fields:
+      Front: "State the angle-sum property of a triangle and the acceptable reason."
+      Back: "The three interior angles of any triangle add up to 180°.\nAcceptable reason: '∠ sum of △' (sum of angles in a triangle / interior ∠s of △).\nExample: if two angles are 50° and 70°, the third = 180° − 50° − 70° = 60° (∠ sum of △)."
+    tags: ["angle-sum-triangle", "subject:geometry"]
+  - guid: d9f4b2c01e3a5786
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Triangles"
+    fields:
+      Front: "In △ABC, ∠A = 3x, ∠B = 2x and ∠C = x. Find x and each angle."
+      Back: "∠A + ∠B + ∠C = 180°   (∠ sum of △)\n3x + 2x + x = 180°\n6x = 180°\nx = 30°\n∴ ∠A = 90°, ∠B = 60°, ∠C = 30°.\nCheck: 90 + 60 + 30 = 180 ✓"
+    tags: ["angle-sum-triangle", "subject:geometry"]
+  - guid: e1a5c3d12f4b6897
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Triangles"
+    fields:
+      Front: "State the EXTERIOR-ANGLE theorem of a triangle and its acceptable reason."
+      Back: "The exterior angle of a triangle equals the SUM of the two opposite (non-adjacent) interior angles.\nAcceptable reason: 'ext ∠ of △'.\nIf the exterior angle at C is ext-C, then ext-C = ∠A + ∠B.\nConsequence: the exterior angle is always bigger than either opposite interior angle."
+    tags: ["exterior-angle-theorem", "subject:geometry"]
+  - guid: f3b6d4e23a5c7908
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Triangles"
+    fields:
+      Front: "An exterior angle of a triangle is 125°. One opposite interior angle is 70°. Find the other opposite interior angle."
+      Back: "ext ∠ = sum of opposite interior ∠s   (ext ∠ of △)\n125° = 70° + x\nx = 125° − 70°\nx = 55°\nWhy it works: the exterior angle + its adjacent interior angle = 180° (∠s on a straight line), and the three interior angles = 180°, so the exterior angle equals the other two."
+    tags: ["exterior-angle-theorem", "subject:geometry"]
+  - guid: a4c7e5f34b6d8019
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Triangles"
+    fields:
+      Front: "In an isosceles △PQR, PQ = PR and ∠Q = 65°. Find ∠P."
+      Back: "PQ = PR, so the base angles are equal:\n∠R = ∠Q = 65°   (∠s opposite equal sides / base ∠s of isosceles △)\n∠P + ∠Q + ∠R = 180°   (∠ sum of △)\n∠P = 180° − 65° − 65°\n∠P = 50°.\nPitfall: the equal angles lie opposite the equal SIDES — identify which side is the 'odd one' first."
+    tags: ["isosceles-angles", "subject:geometry"]
+  - guid: b6d8f6a45c7e9120
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Triangles"
+    fields:
+      Front: "The vertex angle of an isosceles triangle is 40°. Find each base angle."
+      Back: "Let each base angle = x. They are equal (∠s opp equal sides).\nx + x + 40° = 180°   (∠ sum of △)\n2x = 140°\nx = 70°.\nSo each base angle is 70°."
+    tags: ["isosceles-angles", "subject:geometry"]

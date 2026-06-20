@@ -8,7 +8,12 @@ import { skey } from './syllabus.js';
 // call so the post-boot active syllabus (and a mid-session switch+reload) is honored.
 const STATES_KEY = () => skey('srs.states');
 const CONFIG_KEY = () => skey('srs.config');
-const DEFAULT_EXAM_DATE = '2026-06-15';
+// Default exam date is computed relative to today (not a frozen constant): a
+// hardcoded date silently rots into the past, and a past default makes
+// daysUntilExam clamp to 0 -> the exam-day takeover hijacks every route for a
+// fresh user. ~12 weeks out is a sane default study horizon.
+const DEFAULT_EXAM_HORIZON_DAYS = 84;
+const defaultExamDate = () => localDayISO(new Date(Date.now() + DEFAULT_EXAM_HORIZON_DAYS * 86400000));
 const SCHEMA_VERSION = 1;
 const LEARNING_STEPS_MIN = [1, 10];
 const GRADUATING_INTERVAL = 1;
@@ -210,13 +215,13 @@ export function loadConfig() {
     try {
         const raw = localStorage.getItem(CONFIG_KEY());
         const cfg = raw ? JSON.parse(raw) : {};
-        const out = { examDate: DEFAULT_EXAM_DATE, sessionGoal: 30, ...cfg };
+        const out = { examDate: defaultExamDate(), sessionGoal: 30, ...cfg };
         // A hand-edited / legacy / unparseable examDate would make new Date() an
         // Invalid Date and cascade NaN through the whole SM-2 schedule. Fall back
         // to the default rather than persist a poison value downstream.
-        if (!Number.isFinite(new Date(out.examDate).getTime())) out.examDate = DEFAULT_EXAM_DATE;
+        if (!Number.isFinite(new Date(out.examDate).getTime())) out.examDate = defaultExamDate();
         return out;
-    } catch { return { examDate: DEFAULT_EXAM_DATE, sessionGoal: 30 }; }
+    } catch { return { examDate: defaultExamDate(), sessionGoal: 30 }; }
 }
 
 export function saveConfig(cfg) {
@@ -240,6 +245,13 @@ export function saveConfig(cfg) {
 export function daysUntilExam(cfg = loadConfig()) {
     const ms = new Date(cfg.examDate) - new Date(today());
     return Math.max(0, Math.floor(ms / 86400000));
+}
+
+// True only when the configured exam date is exactly today. daysUntilExam clamps
+// past dates to 0, so `daysUntilExam() === 0` also matches any PAST date and would
+// pin the exam-day takeover on forever; compare the calendar day instead.
+export function isExamDay(cfg = loadConfig()) {
+    return localDayISO(new Date(cfg.examDate)) === today();
 }
 
 export function effectiveDays(cfg = loadConfig()) { return Math.max(1, daysUntilExam(cfg) - 14); }
@@ -360,7 +372,7 @@ if (typeof window !== 'undefined') {
     window.__srs = {
         defaultCardState, calcSM2, schedule, fuzzInterval, compressInterval, today,
         loadStates, saveStates, loadConfig, saveConfig, exportState, importState,
-        daysUntilExam, effectiveDays, getDueCards, getCardState, updateCard,
+        daysUntilExam, isExamDay, effectiveDays, getDueCards, getCardState, updateCard,
         getScheduleStats, getForecast, resetAll, suspendCard, isSuspended, isNewCardForGate, SCHEMA_VERSION
     };
 }

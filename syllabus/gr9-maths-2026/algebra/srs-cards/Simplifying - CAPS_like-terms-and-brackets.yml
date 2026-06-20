@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — algebra / Simplifying
+deck: "Corpus::Gr9 Maths::Simplifying"
+notes:
+  - guid: 1a2b3c4d5e6f7081
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simplifying"
+    fields:
+      Front: "Simplify by collecting like terms: 5x + 3y − 2x + 7y."
+      Back: "Group like terms: (5x − 2x) + (3y + 7y).\nx-terms: 5x − 2x = 3x.\ny-terms: 3y + 7y = 10y.\nAnswer: 3x + 10y.\nMethod: add/subtract the COEFFICIENTS of like terms; the variable part stays the same. Never combine unlike terms (3x and 10y can't be merged)."
+    tags: ["like-terms", "subject:algebra"]
+  - guid: 2b3c4d5e6f708192
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simplifying"
+    fields:
+      Front: "Simplify: 4a² − 7a + 2 + a² + 3a − 5."
+      Back: "Collect each type:\na²-terms: 4a² + a² = 5a².\na-terms: −7a + 3a = −4a.\nconstants: 2 − 5 = −3.\nAnswer: 5a² − 4a − 3.\nWrite the result in descending order of powers. Remember a² and a are UNLIKE — keep them separate."
+    tags: ["like-terms", "subject:algebra"]
+  - guid: 3c4d5e6f70819203
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simplifying"
+    fields:
+      Front: "State the distributive law and use it: 3(2x + 5)."
+      Back: "Distributive law: a(b + c) = ab + ac. Multiply the outside factor by EVERY term inside.\n3(2x + 5) = 3·2x + 3·5 = 6x + 15.\nCommon error: only multiplying the first term (writing 6x + 5). The 3 must reach the 5 too."
+    tags: ["distributive-law", "subject:algebra"]
+  - guid: 4d5e6f7081920314
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simplifying"
+    fields:
+      Front: "Remove brackets and simplify: −(x − 4)."
+      Back: "A minus in front of a bracket means multiply every inside term by −1, so EVERY sign flips.\n−(x − 4) = −x + 4.\nPitfall: forgetting to change −4 into +4. Think of it as −1(x − 4) = −1·x − 1·(−4) = −x + 4."
+    tags: ["distributive-law", "minus-bracket", "subject:algebra"]
+  - guid: 5e6f708192031425
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simplifying"
+    fields:
+      Front: "Simplify: 2(3x − 1) − 4(x + 2)."
+      Back: "Distribute each bracket first (watch the −4):\n2(3x − 1) = 6x − 2.\n−4(x + 2) = −4x − 8.\nNow add: 6x − 2 − 4x − 8 = (6x − 4x) + (−2 − 8) = 2x − 10.\nKey pitfall: the −4 makes BOTH +2 and x negative inside the second bracket."
+    tags: ["distributive-law", "like-terms", "subject:algebra"]
+  - guid: 6f70819203142536
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simplifying"
+    fields:
+      Front: "Simplify: 5 − 2(x − 3) + x."
+      Back: "Do the bracket before combining (BODMAS): −2(x − 3) = −2x + 6.\nExpression becomes: 5 − 2x + 6 + x.\nCollect: x-terms −2x + x = −x; constants 5 + 6 = 11.\nAnswer: −x + 11 (or 11 − x).\nDo NOT do 5 − 2 first — the multiplication of the bracket comes before the subtraction."
+    tags: ["distributive-law", "order-of-operations", "subject:algebra"]
+  - guid: 708192031425364a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simplifying"
+    fields:
+      Front: "Simplify: x(x + 3) − (x² − 2x)."
+      Back: "Expand each part:\nx(x + 3) = x² + 3x.\n−(x² − 2x) = −x² + 2x (all signs flip).\nCombine: x² + 3x − x² + 2x = (x² − x²) + (3x + 2x) = 0 + 5x = 5x.\nAnswer: 5x. The x² terms cancel."
+    tags: ["distributive-law", "like-terms", "subject:algebra"]

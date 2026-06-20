@@ -1,7 +1,176 @@
 {
   "subject": "functions-and-relationships",
   "cat": "sun",
-  "cards": [],
+  "cards": [
+    {
+      "id": "functions-and-relationships-15626a6ee6",
+      "front": "Flow diagram with rule 3x (Ex 6.1 Q1). Inputs 1, b, −2, d give outputs a, 15, c, −21. Find a, b, c, d.",
+      "back": "The rule multiplies each input by 3 (output = 3 × input).\na: input 1 → 3×1 = 3, so a = 3.\nb: output 15 → 3b = 15 ⇒ b = 5.\nc: input −2 → 3×(−2) = −6, so c = −6.\nd: output −21 → 3d = −21 ⇒ d = −7.\n∴ a = 3, b = 5, c = −6, d = −7.\nMethod: apply the rule forwards for unknown outputs, reverse it (divide by 3) for unknown inputs.",
+      "tags": [
+        "functions",
+        "flow-diagram"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml"
+    },
+    {
+      "id": "functions-and-relationships-c27101ad82",
+      "front": "Two-step flow diagram (Ex 6.1 Q2): inputs 4,7,2,−1,c through boxes a then b give 15,24,9,0,−2. (2.1) Find operations a and b. (2.2) Find c.",
+      "back": "Look for one rule (input → output): 4→15, 7→24, 2→9, −1→0. The pattern is output = 3×input + 3 (check: 3×4+3=15 ✓, 3×7+3=24 ✓, 3×2+3=9 ✓, 3×(−1)+3=0 ✓).\n2.1: box a = '×3', box b = '+3'.\n2.2: output −2 ⇒ 3c + 3 = −2 ⇒ 3c = −5 ⇒ c = −5/3.\nMethod: find the constant 'step' between consecutive outputs (here 3 per 1 input ⇒ ×3) then the shift (+3); reverse for c.",
+      "tags": [
+        "functions",
+        "flow-diagram"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml"
+    },
+    {
+      "id": "functions-and-relationships-f9f97ab53c",
+      "front": "Flow diagram rule x² + 1 (Ex 6.1 Q3). Inputs −3, −1, 0, 2. Find the four output values.",
+      "back": "Apply output = x² + 1 to each input (square first, then add 1):\n−3 → (−3)² + 1 = 9 + 1 = 10.\n−1 → (−1)² + 1 = 1 + 1 = 2.\n0 → 0² + 1 = 0 + 1 = 1.\n2 → 2² + 1 = 4 + 1 = 5.\nOutputs: 10, 2, 1, 5.\nWatch the sign trap: (−3)² = 9 (positive), not −9.",
+      "tags": [
+        "functions",
+        "flow-diagram",
+        "quadratic"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml"
+    },
+    {
+      "id": "functions-and-relationships-100b00896d",
+      "front": "Input/output table (Ex 6.1 Q4): x = 1,2,3,4,5,6 give y = 4,7,10,...  (4.1) Complete it. (4.2) Formula. (4.3) Linear? Reason.",
+      "back": "The y-values rise by 3 each time the x rises by 1 (4→7→10 ...). So continue: 4, 7, 10, 13, 16, 19.\n4.1: y for x=4,5,6 are 13, 16, 19.\n4.2: gradient/step = 3, so y = 3x + c. At x=1, y=4 ⇒ 3(1)+c=4 ⇒ c=1. Formula: y = 3x + 1.\n4.3: YES, it is linear, because there is a CONSTANT difference (3) between consecutive outputs (a straight-line relationship).",
+      "tags": [
+        "functions",
+        "tables",
+        "linear"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml",
+      "requires": {
+        "subject": "functions-and-relationships",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "functions-and-relationships-7720b1f55b",
+      "front": "Given y = 3x − 4 (Ex 6.1 Q5), complete the table for x = −2, −1, 0, 1, 2.",
+      "back": "Substitute each x into y = 3x − 4:\nx=−2: 3(−2)−4 = −6−4 = −10.\nx=−1: 3(−1)−4 = −3−4 = −7.\nx=0: 0−4 = −4.\nx=1: 3−4 = −1.\nx=2: 6−4 = 2.\nSo y = −10, −7, −4, −1, 2.\nCheck: each step in x of 1 raises y by 3 (the gradient) ✓.",
+      "tags": [
+        "functions",
+        "tables",
+        "substitution"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml",
+      "requires": {
+        "subject": "functions-and-relationships",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "functions-and-relationships-e28a5ca6d9",
+      "front": "Input/output table (Ex 6.1 Q6): x = 1,2,3,4,5,6 give y = 5,2,−1,p,q,r. (6.1) Find p,q,r. (6.2) Formula. (6.4) Linear?",
+      "back": "y DECREASES by 3 each time x rises by 1 (5→2→−1...). Continue: p = −1−3 = −4, q = −4−3 = −7, r = −7−3 = −10.\n6.1: p=−4, q=−7, r=−10.\n6.2: step = −3 ⇒ y = −3x + c. At x=1, y=5 ⇒ −3+c=5 ⇒ c=8. Formula: y = −3x + 8 (= 8 − 3x).\n6.4: YES, linear — constant difference of −3 between outputs.\n6.3: a flow diagram would be: input → ×(−3) → +8 → output.",
+      "tags": [
+        "functions",
+        "tables",
+        "linear"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml"
+    },
+    {
+      "id": "functions-and-relationships-2752a5cbec",
+      "front": "Table (Ex 6.1 Q7): x = −2,−1,0,1,3 give y = −3,−1,1,3,7. (7.1) Linear or non-linear? Reason. (7.2) Formula.",
+      "back": "7.1: Check the rate of change. From x=−2 to 0 (Δx=2) y goes −3→1 (Δy=4), rate 2 per unit x; from x=1 to 3 (Δx=2) y goes 3→7 (Δy=4), again 2 per unit. Constant rate ⇒ LINEAR.\n7.2: gradient = 2, so y = 2x + c. At x=0, y=1 ⇒ c=1. Formula: y = 2x + 1.\nCheck x=3: 2(3)+1 = 7 ✓.\nMethod: equal y-change per equal x-change means linear; read c off the x=0 (y-intercept) value.",
+      "tags": [
+        "functions",
+        "tables",
+        "linear"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml"
+    },
+    {
+      "id": "functions-and-relationships-f535b033b5",
+      "front": "Use y = −2x + 3 (Ex 6.1 Q8) to complete the y-row for x = −4, −1, 0, 2, 5, 8.",
+      "back": "Substitute into y = −2x + 3:\nx=−4: −2(−4)+3 = 8+3 = 11.\nx=−1: 2+3 = 5.\nx=0: 0+3 = 3.\nx=2: −4+3 = −1.\nx=5: −10+3 = −7.\nx=8: −16+3 = −13.\ny = 11, 5, 3, −1, −7, −13.\nNote the negative gradient: as x increases, y decreases (by 2 per unit).",
+      "tags": [
+        "functions",
+        "tables",
+        "substitution"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml",
+      "requires": {
+        "subject": "functions-and-relationships",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "functions-and-relationships-2223ceae91",
+      "front": "Which equation fits the table (Ex 6.1 Q9): x = 1,2,3 give y = 0,3,8? Options y = x−1, y = x²−1, y = 2x²−2.",
+      "back": "Test each x in the candidates.\ny = x−1: gives 0,1,2 — no.\ny = x²−1: x=1→0, x=2→3, x=3→8 — all match ✓.\ny = 2x²−2: x=1→0, x=2→6 — no.\nAnswer: y = x² − 1.\nMethod: substitute the table's x-values into each option and keep the one matching every y.",
+      "tags": [
+        "functions",
+        "tables",
+        "quadratic"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml"
+    },
+    {
+      "id": "functions-and-relationships-3fa7c065fb",
+      "front": "Reservoir problem (Ex 6.1 Q10): time t = 10,20,30,40,50,60 min give volume V = 7,12,17,22,27,32 kℓ. (10.1) Increase every 10 min? (10.2) Rate per minute? (10.3) Formula for V.",
+      "back": "10.1: V rises by 5 kℓ every 10 minutes (7→12→17...). Increase = 5 kℓ per 10 min.\n10.2: rate = 5 kℓ ÷ 10 min = 0,5 kℓ per minute.\n10.3: V = 0,5t + c. At t=10, V=7 ⇒ 0,5(10)+c=7 ⇒ 5+c=7 ⇒ c=2. Formula: V = 0,5t + 2 (kℓ), where the 2 kℓ is the starting volume at t=0.\nMethod: constant increase ⇒ linear; rate is the gradient, the t=0 value is the constant.",
+      "tags": [
+        "functions",
+        "word-problem",
+        "linear"
+      ],
+      "difficulty": "medium",
+      "source": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008",
+      "sourceFile": "Functions and Relationships Ex 6.1 - Gr9 Maths 2-in-1_pages-008-008.yml"
+    }
+  ],
   "triage": null,
-  "guide": null
+  "guide": {
+    "chars": 2443,
+    "lines": 32,
+    "sections": [
+      {
+        "level": 1,
+        "title": "Functions And Relationships — Complete Study Guide",
+        "line": 0,
+        "body": ""
+      },
+      {
+        "level": 2,
+        "title": "Contents",
+        "line": 2,
+        "body": ""
+      },
+      {
+        "level": 3,
+        "title": "Functions & Relationships (Ex 6.1)",
+        "line": 4,
+        "body": "A **function** (or relationship) links an **input** (x) to an **output** (y) by a fixed rule. You meet it in three forms: flow diagrams, tables, and formulae (equations). The skill is to move freely between them.\n\n**Flow diagrams.** A box contains the rule; arrows carry inputs in and outputs out.\n- Apply the rule **forwards** to find an unknown output.\n- Apply the rule **backwards** (do the inverse operation) to find an unknown input.\n- Example, rule 3x: input 1 → output 3; output 15 → input 15÷3 = 5; input −2 → output −6.\n- A two-step diagram (box a then box b) hides two operations. Find them from the input→output pattern: if outputs are 15, 24, 9, 0 for inputs 4, 7, 2, −1, the rule is ×3 then +3 (so a = ×3, b = +3), because output = 3x + 3.\n- For a rule like x² + 1, square first then add: (−3)² + 1 = 10, 0² + 1 = 1. Mind the sign trap: (−3)² = 9, not −9.\n\n**Tables and finding the formula.** Look at how y changes as x increases by 1.\n- A **constant difference** between consecutive y-values means the relationship is **linear** (a straight line). That common difference is the **gradient** (m).\n- Write y = mx + c. Find c by substituting any one (x, y) pair, or read it off as the y-value when x = 0.\n- Example: x = 1,2,3,4,5,6 give y = 4,7,10,… The difference is +3, so m = 3 and y = 3x + 1 (since at x=1, 3+c=4 ⇒ c=1). Continue the row: 13, 16, 19.\n- A *decreasing* table (e.g. 5, 2, −1, …) has a negative gradient: difference −3 ⇒ y = −3x + 8.\n\n**Deciding linear vs non-linear.** Linear ⇔ equal change in y for equal change in x. If the differences are not constant, test candidate equations by substituting the x-values: e.g. for x = 1,2,3 → y = 0,3,8, only y = x² − 1 fits all three, so it is a non-linear (quadratic) function.\n\n**Worked example (word problem):** A reservoir gains water: t = 10,20,…,60 min give V = 7,12,17,22,27,32 kℓ.\n- Increase every 10 min = 5 kℓ (constant ⇒ linear).\n- Rate per minute = 5 ÷ 10 = 0,5 kℓ/min (this is the gradient).\n- Formula: V = 0,5t + c; at t = 10, V = 7 ⇒ 5 + c = 7 ⇒ c = 2. So **V = 0,5t + 2**, where 2 kℓ is the starting volume.\n\n**Pitfalls:** reverse the operations in the correct order when working backwards through a flow diagram; do not treat a decreasing table as if the gradient were positive; and always check your formula against a second point from the table."
+      }
+    ],
+    "firstParagraph": "### Functions & Relationships (Ex 6.1)\n\nA **function** (or relationship) links an **input** (x) to an **output** (y) by a fixed rule. You meet it in three forms: flow diagrams, tables, and formulae (equations). The skill is to move freely between them.",
+    "body": "# Functions And Relationships — Complete Study Guide\n\n## Contents\n\n### Functions & Relationships (Ex 6.1)\n\nA **function** (or relationship) links an **input** (x) to an **output** (y) by a fixed rule. You meet it in three forms: flow diagrams, tables, and formulae (equations). The skill is to move freely between them.\n\n**Flow diagrams.** A box contains the rule; arrows carry inputs in and outputs out.\n- Apply the rule **forwards** to find an unknown output.\n- Apply the rule **backwards** (do the inverse operation) to find an unknown input.\n- Example, rule 3x: input 1 → output 3; output 15 → input 15÷3 = 5; input −2 → output −6.\n- A two-step diagram (box a then box b) hides two operations. Find them from the input→output pattern: if outputs are 15, 24, 9, 0 for inputs 4, 7, 2, −1, the rule is ×3 then +3 (so a = ×3, b = +3), because output = 3x + 3.\n- For a rule like x² + 1, square first then add: (−3)² + 1 = 10, 0² + 1 = 1. Mind the sign trap: (−3)² = 9, not −9.\n\n**Tables and finding the formula.** Look at how y changes as x increases by 1.\n- A **constant difference** between consecutive y-values means the relationship is **linear** (a straight line). That common difference is the **gradient** (m).\n- Write y = mx + c. Find c by substituting any one (x, y) pair, or read it off as the y-value when x = 0.\n- Example: x = 1,2,3,4,5,6 give y = 4,7,10,… The difference is +3, so m = 3 and y = 3x + 1 (since at x=1, 3+c=4 ⇒ c=1). Continue the row: 13, 16, 19.\n- A *decreasing* table (e.g. 5, 2, −1, …) has a negative gradient: difference −3 ⇒ y = −3x + 8.\n\n**Deciding linear vs non-linear.** Linear ⇔ equal change in y for equal change in x. If the differences are not constant, test candidate equations by substituting the x-values: e.g. for x = 1,2,3 → y = 0,3,8, only y = x² − 1 fits all three, so it is a non-linear (quadratic) function.\n\n**Worked example (word problem):** A reservoir gains water: t = 10,20,…,60 min give V = 7,12,17,22,27,32 kℓ.\n- Increase every 10 min = 5 kℓ (constant ⇒ linear).\n- Rate per minute = 5 ÷ 10 = 0,5 kℓ/min (this is the gradient).\n- Formula: V = 0,5t + c; at t = 10, V = 7 ⇒ 5 + c = 7 ⇒ c = 2. So **V = 0,5t + 2**, where 2 kℓ is the starting volume.\n\n**Pitfalls:** reverse the operations in the correct order when working backwards through a flow diagram; do not treat a decreasing table as if the gradient were positive; and always check your formula against a second point from the table.\n\n\n",
+    "infographics": [],
+    "videos": [],
+    "audio": []
+  }
 }

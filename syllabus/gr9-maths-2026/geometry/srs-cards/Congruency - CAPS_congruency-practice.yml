@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — geometry / Congruency
+deck: "Corpus::Gr9 Maths::Congruency"
+notes:
+  - guid: a5e9c7f56d8b0231
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Congruency"
+    fields:
+      Front: "What does ≅ mean, and what is the rule about the ORDER of letters when writing △ABC ≅ △DEF?"
+      Back: "≅ means 'is congruent to' — the two triangles are identical in shape AND size (same sides, same angles), just possibly flipped or turned.\nThe order of letters shows which parts correspond: A↔D, B↔E, C↔F.\n∴ AB = DE, BC = EF, AC = DF and ∠A = ∠D, ∠B = ∠E, ∠C = ∠F.\nAlways write corresponding vertices in matching positions, or you lose marks."
+    tags: ["congruency-meaning", "subject:geometry"]
+  - guid: b7f0d8a67e9c1342
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Congruency"
+    fields:
+      Front: "List the four conditions that prove two triangles congruent and what each abbreviation means."
+      Back: "SSS — three pairs of sides equal.\nSAS — two sides and the INCLUDED angle equal.\nAAS — two angles and a corresponding side equal.\nRHS — right angle, hypotenuse and one other side equal (right-angled triangles only).\nNote: AAA is NOT a congruency condition (it only gives similar triangles), and SSA/ASS is not valid."
+    tags: ["congruency-conditions", "subject:geometry"]
+  - guid: c9a1e9b78f0d2453
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Congruency"
+    fields:
+      Front: "Prove △ABC ≅ △ADC if AB = AD and CB = CD (AC is common). Set out the proof."
+      Back: "In △ABC and △ADC:\n1. AB = AD            (given)\n2. CB = CD            (given)\n3. AC = AC            (common side)\n∴ △ABC ≅ △ADC   (SSS)\nSet-out tip: always state the THREE pairs first with their reasons, then the conclusion with the condition (SSS) in brackets."
+    tags: ["proof-sss", "subject:geometry"]
+  - guid: d0b2f0c89a1e3564
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Congruency"
+    fields:
+      Front: "In two triangles, △KLM and △PQR, you know KL = PQ, ∠L = ∠Q and LM = QR. Prove congruency."
+      Back: "In △KLM and △PQR:\n1. KL = PQ           (given)\n2. ∠L = ∠Q           (given)\n3. LM = QR           (given)\nThe equal angle ∠L lies BETWEEN the two equal sides KL and LM (included angle).\n∴ △KLM ≅ △PQR   (SAS)\nPitfall: if the equal angle were NOT between the two equal sides, SAS would not apply."
+    tags: ["proof-sas", "subject:geometry"]
+  - guid: e2c3a1d90b2f4675
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Congruency"
+    fields:
+      Front: "Once you have proved △ABC ≅ △DEF, how do you find an unknown side or angle, and what reason do you give?"
+      Back: "Use that corresponding parts of congruent triangles are equal.\nReason wording: '≅ △s' or 'corresponding sides/∠s of ≅ △s'.\nExample: if △ABC ≅ △DEF and DE = 8 cm, then AB = 8 cm (corresp sides of ≅ △s). If ∠D = 50°, then ∠A = 50° (corresp ∠s of ≅ △s).\nFirst PROVE congruency, THEN claim the equal part — never the other way round."
+    tags: ["corresponding-parts", "subject:geometry"]
+  - guid: f4d5b2e01c3a5786
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Congruency"
+    fields:
+      Front: "When is RHS used, and prove △ABC ≅ △DEF given ∠B = ∠E = 90°, AC = DF (hypotenuses) and BC = EF."
+      Back: "RHS is used only for right-angled triangles.\nIn △ABC and △DEF:\n1. ∠B = ∠E = 90°     (given)\n2. AC = DF            (hypotenuses, given)\n3. BC = EF            (given)\n∴ △ABC ≅ △DEF   (RHS)\nKey: AC and DF must be the HYPOTENUSES (the sides opposite the right angles)."
+    tags: ["proof-rhs", "subject:geometry"]

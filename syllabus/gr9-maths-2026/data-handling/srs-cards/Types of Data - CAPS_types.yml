@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — data-handling / Types of Data
+deck: "Corpus::Gr9 Maths::Types of Data"
+notes:
+  - guid: b3c5d7e9f1a20486
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Types of Data"
+    fields:
+      Front: "What is the difference between a POPULATION and a SAMPLE?"
+      Back: "POPULATION = the ENTIRE group you want information about (e.g. all Gr 9 learners in South Africa).\nSAMPLE = a smaller part of the population that you actually collect from (e.g. 100 Gr 9 learners).\n\nWe use samples because surveying a whole population is usually too expensive/time-consuming. A good sample is RANDOM and REPRESENTATIVE so conclusions apply to the population."
+    tags: ["population-sample", "subject:data-handling"]
+  - guid: e7f9a1b3c5d20648
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Types of Data"
+    fields:
+      Front: "Categorical vs numerical data — define each with examples."
+      Back: "CATEGORICAL (qualitative) data = describes a quality/category, NOT a number you do maths on.\nExamples: eye colour, favourite sport, gender, yes/no.\n\nNUMERICAL (quantitative) data = actual numbers you can do arithmetic with.\nExamples: height, test score, number of siblings, temperature.\n\nTip: jersey number is categorical (a label), even though it looks numeric — you'd never average jersey numbers."
+    tags: ["categorical-numerical", "subject:data-handling"]
+  - guid: a2b4c6d8e0f13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Types of Data"
+    fields:
+      Front: "DISCRETE vs CONTINUOUS numerical data — what's the difference?"
+      Back: "DISCRETE = countable, only specific (usually whole) values; gaps between values.\nExamples: number of cars, learners in a class, goals scored. You can't have 2.5 children.\n\nCONTINUOUS = measured, can take ANY value in a range (including decimals); no gaps.\nExamples: height, mass, time, temperature. A height can be 1.673... m.\n\nQuick test: 'How many?' → discrete. 'How much / how long / how heavy?' → continuous."
+    tags: ["discrete-continuous", "subject:data-handling"]
+  - guid: d4e6f8a0b2c15739
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Types of Data"
+    fields:
+      Front: "Classify each: (a) shoe size, (b) mass in kg, (c) number of pets, (d) colour of car."
+      Back: "(a) Shoe size — numerical, discrete (counts in set steps).\n(b) Mass in kg — numerical, continuous (measured).\n(c) Number of pets — numerical, discrete (counted, whole).\n(d) Colour of car — categorical.\n\nWatch (a): shoe sizes go in fixed steps (5, 5½, 6...) so treated as discrete."
+    tags: ["discrete-continuous", "subject:data-handling"]
+  - guid: f6a8b0c2d4e13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Types of Data"
+    fields:
+      Front: "PRIMARY vs SECONDARY data sources — define and give an example."
+      Back: "PRIMARY data = data YOU collect yourself, first-hand, for your specific question (survey you run, measurements you take, your own experiment).\n\nSECONDARY data = data collected by SOMEONE ELSE that you then use (Stats SA reports, newspaper figures, textbook tables, internet databases).\n\nPrimary = fresh and tailored but slower; secondary = quick but may be outdated or not exactly what you need."
+    tags: ["primary-secondary", "subject:data-handling"]
+  - guid: 0c2e4f6a8b1d3759
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Types of Data"
+    fields:
+      Front: "Pitfall: Why is 'number of the bus you take (Bus 3, Bus 7)' categorical, not numerical?"
+      Back: "Because the number is just a LABEL/name identifying the bus, not a quantity. Adding or averaging bus numbers is meaningless — 'average bus = 5' tells you nothing.\n\nRule: if doing arithmetic on the values is meaningless, the data is categorical even though it looks like numbers (also phone numbers, ID numbers, route numbers)."
+    tags: ["categorical-numerical", "subject:data-handling"]
+  - guid: 3e5a7c9b1d2f4860
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Types of Data"
+    fields:
+      Front: "What makes a sample BIASED, and how do you avoid it?"
+      Back: "A sample is biased when some members of the population are over- or under-represented, so it does not reflect the whole population.\nExamples: only asking your friends; only sampling at a gym (fitness-biased).\n\nAvoid by:\n• Random selection (everyone has equal chance)\n• Large enough sample\n• Cover the full range of the population\n\nBiased sample → misleading conclusions, even with perfect maths."
+    tags: ["population-sample", "subject:data-handling"]

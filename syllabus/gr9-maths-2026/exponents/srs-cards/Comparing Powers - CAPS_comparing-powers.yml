@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — exponents / Comparing Powers
+deck: "Corpus::Gr9 Maths::Comparing Powers"
+notes:
+  - guid: 1b1c1d1e1f201a31
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Comparing Powers"
+    fields:
+      Front: "Which is larger, 2⁵ or 5²? (Show the method)"
+      Back: "When bases AND exponents differ, just evaluate each power and compare the values:\n2⁵ = 2×2×2×2×2 = 32.\n5² = 5×5 = 25.\nSince 32 > 25, 2⁵ > 5².\nMoral: you cannot tell from the symbols alone — compute and compare the actual numbers."
+    tags: ["comparing-powers", "subject:exponents"]
+  - guid: 2c2d2e2f30312b42
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Comparing Powers"
+    fields:
+      Front: "Which is larger, 3⁴ or 4³?"
+      Back: "Evaluate both:\n3⁴ = 3×3×3×3 = 81.\n4³ = 4×4×4 = 64.\n81 > 64, so 3⁴ > 4³.\nMethod: when neither base nor exponent matches, calculate each value and compare."
+    tags: ["comparing-powers", "subject:exponents"]
+  - guid: 3d3e3f40414c3c53
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Comparing Powers"
+    fields:
+      Front: "Express 32 as a power of 2, and as a power of 4."
+      Back: "As a power of 2: keep dividing by 2 → 32 = 2×2×2×2×2 = 2⁵.\nAs a power of 4: 4 = 2², so 4ⁿ = 2²ⁿ. We need 2²ⁿ = 2⁵, i.e. 2n = 5, giving n = 2,5.\nSo 32 = 4²ᐟ⁵ (a fractional power). Since 32 is not a whole-number power of 4, it can only be written with a fractional exponent.\nTip: a number is a whole-number power of a base only if it factorises exactly into that base."
+    tags: ["comparing-powers", "express-as-power", "subject:exponents"]
+  - guid: 4e4f50515d6d4d64
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Comparing Powers"
+    fields:
+      Front: "Write 64 as a power of 2, a power of 4, and a power of 8."
+      Back: "Factorise: 64 = 2⁶ (since 2×2×2×2×2×2 = 64).\nAs a power of 4: 4 = 2², so 64 = 2⁶ = (2²)³ = 4³.\nAs a power of 8: 8 = 2³, so 64 = 2⁶ = (2³)² = 8².\nMethod: write everything as a power of 2 first, then regroup the exponent to match the new base."
+    tags: ["comparing-powers", "express-as-power", "subject:exponents"]
+  - guid: 5f5061626e7e5e75
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Comparing Powers"
+    fields:
+      Front: "Compare powers with the SAME base: which is larger, 2⁷ or 2⁴? And with the same exponent: 6³ or 9³?"
+      Back: "Same base (both base 2): the bigger exponent wins for a base > 1. 7 > 4, so 2⁷ > 2⁴ (no need to evaluate).\nSame exponent (both cubed): the bigger base wins. 9 > 6, so 9³ > 6³.\nShortcuts: with equal bases compare exponents; with equal exponents compare bases. Only when BOTH differ must you compute full values."
+    tags: ["comparing-powers", "subject:exponents"]
+  - guid: 60617273808f6f86
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Comparing Powers"
+    fields:
+      Front: "Express 81 as a power of 3, then write it as a power of 9."
+      Back: "81 = 3×3×3×3 = 3⁴.\nSince 9 = 3², we have 81 = 3⁴ = (3²)² = 9².\nCheck: 9² = 81. ✓\nGeneral method: reduce to the smallest base (here 3), then pair up the exponent to rebuild a larger base."
+    tags: ["comparing-powers", "express-as-power", "subject:exponents"]

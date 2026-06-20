@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — probability / Venn Diagrams
+deck: "Corpus::Gr9 Maths::Venn Diagrams"
+notes:
+  - guid: f9c9372243e9fe47
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Venn Diagrams"
+    fields:
+      Front: "In a Venn diagram, what do the union (∪), intersection (∩) and 'not' regions mean?"
+      Back: "A ∪ B (union): everything in A OR B (or both) — both circles together.\nA ∩ B (intersection): only the OVERLAP — items in BOTH A and B.\n'not A' (A'): everything OUTSIDE circle A (still inside the rectangle = sample space).\nThe rectangle holds ALL outcomes."
+    tags: ["venn-notation", "subject:probability"]
+  - guid: 0ada483354fa0f58
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Venn Diagrams"
+    fields:
+      Front: "A Venn diagram: only-A = 8, overlap (A∩B) = 5, only-B = 7, outside = 4. Find n(A∪B) and the total."
+      Back: "n(A∪B) = only-A + overlap + only-B = 8 + 5 + 7 = 20.\nTotal (whole rectangle) = n(A∪B) + outside = 20 + 4 = 24.\nPitfall: count the overlap ONCE only — not in both A and B separately."
+    tags: ["reading-venn", "subject:probability"]
+  - guid: 1beb5944650b1069
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Venn Diagrams"
+    fields:
+      Front: "Using the diagram (only-A = 8, A∩B = 5, only-B = 7, outside = 4, total = 24), find P(A) and P(A∩B)."
+      Back: "n(A) = only-A + overlap = 8 + 5 = 13.\nP(A) = 13/24.\nP(A∩B) = 5/24 (just the overlap).\nKey idea: 'in A' includes the part of A that overlaps B. Read probabilities as region count ÷ total."
+    tags: ["reading-venn", "subject:probability"]
+  - guid: 2cfc6a55760c2170
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Venn Diagrams"
+    fields:
+      Front: "Same diagram (total = 24). Find P(A∪B) and P(not B)."
+      Back: "n(A∪B) = 8 + 5 + 7 = 20 → P(A∪B) = 20/24 = 5/6.\nn(B) = overlap + only-B = 5 + 7 = 12, so n(not B) = 24 − 12 = 12 → P(not B) = 12/24 = 1/2.\n'not B' = everything outside circle B, including the 'outside' region."
+    tags: ["reading-venn", "subject:probability"]
+  - guid: 3d0d7b6687131381
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Venn Diagrams"
+    fields:
+      Front: "30 learners: 18 play soccer (S), 14 play netball (N), 6 play both. Draw the Venn and find how many play neither."
+      Back: "Overlap (both) = 6.\nOnly soccer = 18 − 6 = 12. Only netball = 14 − 6 = 8.\nIn at least one = 12 + 6 + 8 = 26.\nNeither = 30 − 26 = 4.\nPitfall: subtract the overlap from each total first, or you double-count the 6."
+    tags: ["venn-word-problems", "subject:probability"]
+  - guid: 4e1e8c7798242492
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Venn Diagrams"
+    fields:
+      Front: "Using the soccer/netball data (30 learners, 12 only-S, 6 both, 8 only-N, 4 neither), find P(plays soccer or netball)."
+      Back: "n(S∪N) = 12 + 6 + 8 = 26 (everyone in at least one circle).\nP(S∪N) = 26/30 = 13/15.\nAlternatively, by the addition rule: P(S) + P(N) − P(S∩N) = 18/30 + 14/30 − 6/30 = 26/30. Same answer."
+    tags: ["venn-word-problems", "subject:probability"]
+  - guid: 5f2f9d8809353503
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Venn Diagrams"
+    fields:
+      Front: "How does a Venn diagram show the addition rule P(A∪B) = P(A) + P(B) − P(A∩B)?"
+      Back: "If you add n(A) and n(B), the overlap A∩B is counted TWICE.\nTo fix the double-count you subtract the overlap once.\nThe Venn picture makes this clear: union = (only A) + (overlap) + (only B), counted exactly once each."
+    tags: ["venn-notation", "subject:probability"]
+  - guid: 60302e99105be614
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Venn Diagrams"
+    fields:
+      Front: "On a Venn diagram, what does an empty intersection (A∩B = ∅) tell you about the events?"
+      Back: "If the circles do not overlap (A∩B is empty), the events are MUTUALLY EXCLUSIVE — they share no outcomes.\nThen P(A∩B) = 0 and the addition rule simplifies to P(A∪B) = P(A) + P(B)."
+    tags: ["venn-notation", "subject:probability"]

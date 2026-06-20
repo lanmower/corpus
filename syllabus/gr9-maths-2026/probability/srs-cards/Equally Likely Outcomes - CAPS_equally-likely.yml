@@ -1,0 +1,73 @@
+# Gr 9 Maths CAPS — probability / Equally Likely Outcomes
+deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+notes:
+  - guid: 4eb7025391c6ad8a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "What does 'equally likely outcomes' mean, and why does it matter?"
+      Back: "Outcomes are equally likely when each has the same chance of happening (a 'fair' device).\nExamples: a fair coin (Heads/Tails), a fair die (1–6), a balanced spinner with equal sectors.\nIt matters because the formula P = favourable ÷ total ONLY works when outcomes are equally likely. A biased/weighted device breaks this."
+    tags: ["equally-likely", "subject:probability"]
+  - guid: 5fc8136402d7be9b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "A fair coin is tossed once. Give the sample space and P(Heads)."
+      Back: "Sample space: S = {Heads, Tails}, total = 2 equally likely outcomes.\nFavourable for Heads = 1.\nP(Heads) = 1/2 = 0,5 = 50%.\nSame for P(Tails) = 1/2. The two probabilities add to 1."
+    tags: ["coins", "subject:probability"]
+  - guid: 60d9247513e8caf0
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "A fair die is rolled. Find P(a multiple of 3) and P(a prime number)."
+      Back: "S = {1,2,3,4,5,6}, total = 6.\nMultiples of 3: {3, 6} → P = 2/6 = 1/3.\nPrimes: {2, 3, 5} → P = 3/6 = 1/2. (Remember 1 is NOT prime.)\nPitfall: do not count 1 as prime, and 9 is not on a die."
+    tags: ["dice", "subject:probability"]
+  - guid: 71ea358624f9db01
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "A standard pack has 52 cards. How is it made up, and what is P(a red card)?"
+      Back: "4 suits: Hearts (red), Diamonds (red), Clubs (black), Spades (black). 13 cards per suit (A,2–10,J,Q,K).\nRed cards = Hearts + Diamonds = 13 + 13 = 26.\nP(red) = 26/52 = 1/2.\nThere are 4 of each value (e.g. four Kings) and 12 'picture/face' cards (J, Q, K × 4 suits)."
+    tags: ["cards", "subject:probability"]
+  - guid: 82fb469735a0ec12
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "From a 52-card pack, find P(a King) and P(a club)."
+      Back: "Total = 52.\nKings: there are 4 (one per suit) → P(King) = 4/52 = 1/13.\nClubs: there are 13 → P(club) = 13/52 = 1/4.\nPitfall: do not confuse 'a King' (4 cards) with 'the King of clubs' (1 card → 1/52)."
+    tags: ["cards", "subject:probability"]
+  - guid: 930c57a846b1fd23
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "A spinner has 8 EQUAL sectors numbered 1–8. Find P(an odd number)."
+      Back: "Equal sectors → equally likely, total = 8.\nOdd numbers: {1, 3, 5, 7} → 4 favourable.\nP(odd) = 4/8 = 1/2.\nPitfall: this only works because the sectors are EQUAL. If sectors had different sizes you would use the area/angle, not just the count."
+    tags: ["spinners", "subject:probability"]
+  - guid: a41d68b957c20e34
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "A spinner has sectors with central angles 180°, 90°, 90° for colours red, blue, green. Find P(red)."
+      Back: "A full circle = 360°. The sectors are NOT equal, so use angle ÷ 360°.\nP(red) = 180/360 = 1/2.\nP(blue) = 90/360 = 1/4, P(green) = 90/360 = 1/4.\nCheck: 1/2 + 1/4 + 1/4 = 1. Pitfall: never just count colours when sectors are unequal."
+    tags: ["spinners", "subject:probability"]
+  - guid: b52e79c068d31f45
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "A box has 4 white, 6 black and 2 yellow balls. Find P(not black)."
+      Back: "Total = 4 + 6 + 2 = 12.\nMethod 1 (count): not black = white + yellow = 4 + 2 = 6 → P = 6/12 = 1/2.\nMethod 2 (complement): P(black) = 6/12 = 1/2, so P(not black) = 1 − 1/2 = 1/2.\nBoth give 1/2."
+    tags: ["coloured-balls", "subject:probability"]
+  - guid: c630a8d179e42056
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "Why is each card draw from a full shuffled pack an example of equally likely outcomes?"
+      Back: "Because the pack is well shuffled, every one of the 52 cards has the same chance (1/52) of being drawn.\nSo P(any specific card) = 1/52, and P(any event) = (number of matching cards) ÷ 52.\nThis equal chance is what lets us simply count cards."
+    tags: ["cards", "subject:probability"]
+  - guid: d741b9e28af53167
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Equally Likely Outcomes"
+    fields:
+      Front: "Two fair coins are tossed. Why is P(one Head and one Tail) = 1/2, not 1/3?"
+      Back: "Listing outcomes treats the coins as distinct: S = {HH, HT, TH, TT} → 4 equally likely outcomes.\n'One Head and one Tail' = {HT, TH} → 2 outcomes.\nP = 2/4 = 1/2.\nPitfall: writing {two heads, one of each, two tails} gives 3 outcomes that are NOT equally likely, so 1/3 is wrong."
+    tags: ["coins", "subject:probability"]

@@ -1,0 +1,150 @@
+# Gr 9 Maths CAPS — numbers / Real Number System
+deck: "Corpus::Gr9 Maths::Real Number System"
+notes:
+  - guid: 3f9a1c0e7b2d4856
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "What are the natural numbers (N) and the whole numbers (N₀)? Give the first few of each."
+      Back: "Natural numbers N = counting numbers = {1, 2, 3, 4, ...}. They start at 1 (no zero, no negatives, no fractions).\nWhole numbers N₀ = {0, 1, 2, 3, ...}. Same as naturals but WITH 0 included.\nSo the only difference is the 0: N₀ = N together with 0.\n∴ N ⊂ N₀."
+    tags: ["natural-whole-numbers", "subject:numbers"]
+  - guid: a1b2c3d4e5f60718
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "What are the integers (Z)? Give examples."
+      Back: "Integers Z = all whole numbers AND their negatives, with no fractions or decimals.\nZ = {..., -3, -2, -1, 0, 1, 2, 3, ...}.\nExamples: -100, -7, 0, 5, 42 are integers; 2.5 and ½ are NOT.\nThe whole numbers sit inside the integers: N₀ ⊂ Z."
+    tags: ["integers", "subject:numbers"]
+  - guid: 7c2e9f4a1d8b6035
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Define a rational number (Q)."
+      Back: "A rational number is any number that CAN be written as a fraction a/b where a and b are integers and b ≠ 0.\nThis includes:\n• all integers (e.g. 5 = 5/1)\n• proper/improper fractions (e.g. ¾, 7/2)\n• terminating decimals (e.g. 0.25 = 1/4)\n• recurring decimals (e.g. 0.333... = 1/3)\nKey: the denominator may NOT be 0 (division by 0 is undefined)."
+    tags: ["rational-numbers", "subject:numbers"]
+  - guid: e5d4c3b2a1907856
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Define an irrational number (Q')."
+      Back: "An irrational number is a real number that CANNOT be written as a fraction a/b of two integers.\nAs a decimal it is non-terminating AND non-recurring (the digits go on forever with no repeating pattern).\nExamples: √2 = 1.41421356..., π = 3.14159265..., √7, √11, ∛5.\nWarning: √9 = 3 is NOT irrational (it is a perfect square). Only non-perfect roots are irrational."
+    tags: ["irrational-numbers", "subject:numbers"]
+  - guid: 0918273645aabbcc
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "What are the real numbers (R), and how do rationals and irrationals relate to them?"
+      Back: "The real numbers R = every number on the number line.\nR is made of two non-overlapping parts: the rationals (Q) and the irrationals (Q').\nEvery real number is EITHER rational OR irrational, never both.\nQ and Q' together make up all of R, so: Q ∪ Q' = R."
+    tags: ["real-numbers", "subject:numbers"]
+  - guid: bca9876543210fed
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "State the subset chain of the number systems from smallest to largest."
+      Back: "N ⊂ N₀ ⊂ Z ⊂ Q ⊂ R\nIn words: every natural number is a whole number, every whole number is an integer, every integer is rational, and every rational is real.\nThe irrationals Q' are the part of R that lies OUTSIDE Q (Q' is not part of this chain).\n∴ R = Q ∪ Q'."
+    tags: ["subset-relationships", "subject:numbers"]
+  - guid: 4d5e6f7a8b9c0d1e
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Classify the number 7 into ALL the sets it belongs to."
+      Back: "7 is a positive counting number with no fraction part.\nIt belongs to: N (natural), N₀ (whole), Z (integer), Q (rational, since 7 = 7/1), and R (real).\n∴ 7 ∈ N, N₀, Z, Q, R — it sits in every set.\nReason it is rational: it can be written as 7/1."
+    tags: ["classifying-numbers", "subject:numbers"]
+  - guid: f1e2d3c4b5a69780
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Classify the number -4 into ALL the sets it belongs to."
+      Back: "-4 is a negative whole value.\nIt is NOT natural (no negatives) and NOT a whole number (N₀ has no negatives).\nIt belongs to: Z (integer), Q (rational, -4 = -4/1) and R (real).\n∴ -4 ∈ Z, Q, R.\nCommon mistake: thinking negatives are whole numbers — they are not."
+    tags: ["classifying-numbers", "subject:numbers"]
+  - guid: 2b3c4d5e6f708192
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Classify ⅔ (and 0.75) — which sets do they belong to?"
+      Back: "⅔ = 0.666... is a fraction of two integers, so it is rational and real but nothing smaller.\n⅔ ∈ Q, R only.\n0.75 = 3/4 is a terminating decimal, so also rational and real.\n0.75 ∈ Q, R only.\nNeither is an integer, whole or natural number (they have a fraction part)."
+    tags: ["classifying-numbers", "subject:numbers"]
+  - guid: 95a6b7c8d9e0f132
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Classify √2 and √16 — are they rational or irrational?"
+      Back: "√16 = 4 (a perfect square), so √16 ∈ N, N₀, Z, Q, R — it is RATIONAL.\n√2 = 1.41421356... is not a perfect square; it cannot be written as a fraction, so √2 ∈ Q', R — it is IRRATIONAL.\nRule: a square root is rational ONLY if the number under the root is a perfect square. Otherwise it is irrational."
+    tags: ["classifying-numbers", "subject:numbers"]
+  - guid: c8d9e0f1a2b3c4d5
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "What is a terminating decimal? Give examples and link to fractions."
+      Back: "A terminating decimal STOPS after a finite number of digits.\nExamples: 0.5, 0.25, 0.375, 3.2, 0.125.\nThese always come from fractions whose simplest denominator has only factors of 2 and/or 5, e.g. 1/2 = 0.5, 1/8 = 0.125, 3/4 = 0.75.\nAll terminating decimals are rational (they can be written as a fraction)."
+    tags: ["terminating-recurring", "subject:numbers"]
+  - guid: 6e7f8a9b0c1d2e3f
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "What is a recurring (repeating) decimal and how do we write it?"
+      Back: "A recurring decimal has a block of digits that repeats forever.\nWe show it with a dot/bar over the repeating digit(s):\n0.333... = 0.3̇ (the 3 repeats)\n0.7272... = 0.7̇2̇ (the block 72 repeats)\n0.1666... = 0.16̇ (only the 6 repeats).\nRecurring decimals are RATIONAL — they can always be written as a fraction."
+    tags: ["terminating-recurring", "subject:numbers"]
+  - guid: 1a2b3c4d5e6f7081
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "How does the decimal form of a number tell you if it is rational or irrational?"
+      Back: "Look at the decimal expansion:\n• Terminating (stops) → RATIONAL\n• Recurring (repeats a pattern forever) → RATIONAL\n• Non-terminating AND non-recurring (goes forever with NO pattern) → IRRATIONAL\nSo every rational number either terminates or recurs; an irrational number does neither.\nExample: 0.1010010001... (more zeros each time, no repeat) is irrational."
+    tags: ["terminating-recurring", "subject:numbers"]
+  - guid: 8b9c0d1e2f304152
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Why are √2 and π classified as irrational?"
+      Back: "Both have decimal expansions that never end and never settle into a repeating pattern:\n√2 = 1.41421356237... and π = 3.14159265358...\nBecause they are non-terminating AND non-recurring, they cannot be written as a fraction a/b of integers — that is the definition of irrational.\nNote: 22/7 and 3.14 are only APPROXIMATIONS of π, not equal to it."
+    tags: ["irrational-numbers", "subject:numbers"]
+  - guid: d1e2f3a4b5c6d7e8
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Is 0 a rational number? Explain."
+      Back: "Yes. 0 can be written as 0/1 (or 0/b for any b ≠ 0), which fits the a/b form with integer numerator and denominator.\n∴ 0 is rational, and also a whole number (N₀), an integer (Z) and real (R).\n0 is NOT a natural number in CAPS (N starts at 1).\nWarning: b/0 is undefined — 0 may be on top of a fraction but never on the bottom."
+    tags: ["rational-numbers", "subject:numbers"]
+  - guid: 3a4b5c6d7e8f9001
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Convert the recurring decimal 0.4̇ (0.444...) to a fraction. Show all steps."
+      Back: "Let x = 0.444...   ...(1)\nThe repeating block is ONE digit, so multiply by 10:\n10x = 4.444...   ...(2)\nSubtract (1) from (2) so the recurring tails cancel:\n10x - x = 4.444... - 0.444...\n9x = 4\nx = 4/9\n∴ 0.4̇ = 4/9.\nCheck: 4 ÷ 9 = 0.444... ✓"
+    tags: ["recurring-to-fraction", "subject:numbers"]
+  - guid: 90817263544f3e2d
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Convert 0.7̇2̇ (0.727272...) to a fraction. Show the method for a TWO-digit recurring block."
+      Back: "Let x = 0.727272...   ...(1)\nThe repeating block is TWO digits (72), so multiply by 100:\n100x = 72.727272...   ...(2)\nSubtract (1) from (2):\n100x - x = 72.7272... - 0.7272...\n99x = 72\nx = 72/99 = 8/11 (divide top and bottom by 9)\n∴ 0.7̇2̇ = 8/11.\nRule: 1 repeating digit → ×10; 2 repeating digits → ×100; n digits → ×10ⁿ."
+    tags: ["recurring-to-fraction", "subject:numbers"]
+  - guid: fe1d2c3b4a596877
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Convert 0.16̇ (0.16666...) to a fraction, where only the 6 recurs after a non-recurring digit."
+      Back: "Let x = 0.16666...   ...(1)\nOne digit (the 6) repeats. Multiply by 10:\n10x = 1.6666...   ...(2)\nSubtract (1) from (2):\n10x - x = 1.6666... - 0.16666...\n9x = 1.5\nx = 1.5/9 = 15/90 = 1/6\n∴ 0.16̇ = 1/6.\nTip: line up the decimals so the recurring tails (the 666...) match exactly before subtracting."
+    tags: ["recurring-to-fraction", "subject:numbers"]
+  - guid: 2c3d4e5f60718293
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Convert 0.9̇ (0.999...) to a fraction. What surprising result do you get?"
+      Back: "Let x = 0.999...\n10x = 9.999...\n10x - x = 9.999... - 0.999...\n9x = 9\nx = 1\n∴ 0.9̇ = 1.\nThis shows 0.999... is exactly equal to 1 — the algebra is the same as any recurring decimal. It is a classic exam 'gotcha'."
+    tags: ["recurring-to-fraction", "subject:numbers"]
+  - guid: 718293a4b5c6d7e8
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Common mistake check: classify 3.14, π, and 22/7. Which are rational?"
+      Back: "3.14 — terminating decimal = 314/100 = 157/50 → RATIONAL.\n22/7 — a fraction of integers → RATIONAL (= 3.142857142857... recurring).\nπ = 3.14159... — non-terminating, non-recurring → IRRATIONAL.\nWarning: 3.14 and 22/7 are common APPROXIMATIONS of π but are NOT equal to π and ARE rational. Only π itself is irrational."
+    tags: ["classifying-numbers", "subject:numbers"]
+  - guid: a4b5c6d7e8f90112
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real Number System"
+    fields:
+      Front: "Between which two integers does √20 lie, and is it rational?"
+      Back: "Find perfect squares around 20: 16 = 4² and 25 = 5².\nSince 16 < 20 < 25, we get 4 < √20 < 5.\nSo √20 ≈ 4.47, lying between 4 and 5.\n20 is NOT a perfect square, so √20 is IRRATIONAL (√20 ∈ Q', R).\nMethod: trap the number between the nearest perfect squares to estimate a non-perfect root."
+    tags: ["irrational-numbers", "subject:numbers"]

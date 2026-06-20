@@ -1,0 +1,73 @@
+# Gr 9 Maths CAPS — probability / Basic Probability
+deck: "Corpus::Gr9 Maths::Basic Probability"
+notes:
+  - guid: a1f3c9e07b2d6840
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "What is an 'experiment' in probability, and give an example?"
+      Back: "An experiment (or trial) is any action with an uncertain result that can be repeated.\nExamples: tossing a coin, rolling a die, drawing a card, spinning a spinner.\nThe set of all things that could happen is decided BEFORE you do the experiment."
+    tags: ["experiment", "subject:probability"]
+  - guid: b7d2e418f0a93c56
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "Define: outcome, event, and sample space."
+      Back: "Outcome: one single possible result of an experiment (e.g. rolling a 4).\nSample space (S): the set of ALL possible outcomes. For one die S = {1,2,3,4,5,6}.\nEvent: a chosen outcome OR group of outcomes we are interested in (e.g. 'rolling an even number' = {2,4,6}).\nAn event is always a subset of the sample space."
+    tags: ["sample-space", "subject:probability"]
+  - guid: c3a9017fd2e6b845
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "State the basic formula for the probability of an event."
+      Back: "P(event) = (number of favourable outcomes) ÷ (total number of possible outcomes)\nThis formula only works when all outcomes are EQUALLY LIKELY.\nExample: P(even on a die) = 3/6 = 1/2, because favourable = {2,4,6} (3 outcomes) and total = 6."
+    tags: ["probability-formula", "subject:probability"]
+  - guid: d5e2b8071a3f9c64
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "Describe the probability scale from 0 to 1."
+      Back: "Every probability is a number from 0 to 1 (never negative, never more than 1).\n0 = impossible event (cannot happen).\n1 = certain event (must happen).\n1/2 = even chance (equally likely to happen or not).\nClose to 0 = unlikely; close to 1 = likely.\nCheck: if you ever get an answer like 1.3 or −0.2, you made a mistake."
+    tags: ["probability-scale", "subject:probability"]
+  - guid: e9c4a2f8016b7d35
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "How do you write a probability as a fraction, decimal and percentage? Convert P = 3/4."
+      Back: "Fraction: 3/4 (favourable ÷ total, in simplest form).\nDecimal: divide top by bottom: 3 ÷ 4 = 0,75.\nPercentage: multiply the decimal by 100: 0,75 × 100 = 75%.\nSo P = 3/4 = 0,75 = 75%. All three forms mean exactly the same chance."
+    tags: ["fraction-decimal-percent", "subject:probability"]
+  - guid: f2b8d460a9e13c78
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "A bag has 5 red, 3 blue and 2 green marbles. Find P(blue)."
+      Back: "Step 1 — total outcomes: 5 + 3 + 2 = 10 marbles.\nStep 2 — favourable (blue): 3.\nStep 3 — apply formula: P(blue) = 3/10 = 0,3 = 30%.\nPitfall: the denominator is the TOTAL (10), not the number of colours (3)."
+    tags: ["probability-formula", "subject:probability"]
+  - guid: 0a7c3e91d5f28b46
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "Why must P(event) always be between 0 and 1?"
+      Back: "Because favourable outcomes are part of the total outcomes.\nThe smallest possible favourable count is 0 → P = 0/total = 0 (impossible).\nThe largest is when favourable = total → P = total/total = 1 (certain).\nA fraction of a whole can never be less than 0 or more than 1."
+    tags: ["probability-scale", "subject:probability"]
+  - guid: 1b8d4f02e6a39c57
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "List the sample space for rolling one ordinary six-sided die, then give P(rolling a number > 4)."
+      Back: "Sample space: S = {1, 2, 3, 4, 5, 6}, so total = 6.\nNumbers greater than 4: {5, 6} → 2 favourable outcomes.\nP(>4) = 2/6 = 1/3.\nPitfall: 'greater than 4' does NOT include 4 itself; 'at least 4' would include 4."
+    tags: ["sample-space", "subject:probability"]
+  - guid: 2c9e5013f7b48a68
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "Is this true or false: 'P = 70% means the event will definitely happen.' Explain."
+      Back: "False. P = 70% means it is LIKELY but not certain.\nOnly P = 1 (= 100%) means certain. 70% means that, in the long run, about 70 of every 100 trials give the event, but any single trial could still go either way."
+    tags: ["probability-scale", "subject:probability"]
+  - guid: 3da6f124e8c59b79
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Basic Probability"
+    fields:
+      Front: "How do you decide where to place an event word (impossible, unlikely, even chance, likely, certain) on the scale?"
+      Back: "Work out P as a fraction/decimal, then match:\nP = 0 → impossible.\n0 < P < 1/2 → unlikely.\nP = 1/2 → even chance.\n1/2 < P < 1 → likely.\nP = 1 → certain.\nExample: P(a Tuesday this week) = 1/7 ≈ 0,14 → unlikely."
+    tags: ["probability-scale", "subject:probability"]

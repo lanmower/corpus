@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — algebra / Inequalities
+deck: "Corpus::Gr9 Maths::Inequalities"
+notes:
+  - guid: 5b6c7d8e9f011223
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Inequalities"
+    fields:
+      Front: "How is solving a linear inequality like/unlike solving an equation?"
+      Back: "LIKE an equation: use inverse operations and keep both sides balanced.\nUNLIKE: the answer is a RANGE of values (e.g. x > 3), not a single number, AND there is one special rule:\nWhenever you MULTIPLY or DIVIDE both sides by a NEGATIVE number, you must FLIP the inequality sign (< becomes >, ≤ becomes ≥)."
+    tags: ["inequalities", "sign-flip", "subject:algebra"]
+  - guid: 6c7d8e9f01122334
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Inequalities"
+    fields:
+      Front: "Solve: 2x + 3 < 11."
+      Back: "Subtract 3: 2x < 8.\nDivide by 2 (positive, so sign stays): x < 4.\nSolution: all values less than 4.\nNo flip needed because we divided by a positive number."
+    tags: ["inequalities", "subject:algebra"]
+  - guid: 7d8e9f0112233445
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Inequalities"
+    fields:
+      Front: "Solve: −3x ≥ 12 (watch the flip!)."
+      Back: "Divide both sides by −3. Because we divide by a NEGATIVE, FLIP the sign:\nx ≤ −4.\nCheck with a test value, x = −5: −3(−5) = 15 ≥ 12 ✓ and −5 ≤ −4 ✓.\nForgetting to flip is the most common inequality error."
+    tags: ["inequalities", "sign-flip", "subject:algebra"]
+  - guid: 8e9f011223344556
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Inequalities"
+    fields:
+      Front: "Solve: 5 − 2x ≤ 13."
+      Back: "Subtract 5: −2x ≤ 8.\nDivide by −2 and FLIP: x ≥ −4.\nSolution: x ≥ −4.\nThe flip happens at the divide-by-negative step, not the subtraction step."
+    tags: ["inequalities", "sign-flip", "subject:algebra"]
+  - guid: 9f01122334455667
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Inequalities"
+    fields:
+      Front: "How do you represent x > 2 versus x ≥ 2 on a number line?"
+      Back: "Draw the number line, mark 2.\nx > 2: OPEN (unfilled) circle at 2, arrow shading to the right (2 not included).\nx ≥ 2: CLOSED (filled) circle at 2, arrow to the right (2 included).\nRule: strict < or > = open circle; ≤ or ≥ = closed circle. Shade toward the values that satisfy the inequality."
+    tags: ["inequalities", "number-line", "subject:algebra"]
+  - guid: a012233445566778
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Inequalities"
+    fields:
+      Front: "Solve and describe on a number line: −1 ≤ x < 3 (for x an integer)."
+      Back: "This is a compound inequality: x is greater-than-or-equal-to −1 AND less than 3.\nClosed circle at −1 (included), open circle at 3 (excluded), shade between them.\nIf x is an INTEGER, the solutions are: −1, 0, 1, 2."
+    tags: ["inequalities", "number-line", "subject:algebra"]

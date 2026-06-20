@@ -2601,3 +2601,19 @@
   title: review.js renderReview resolves queue via O(allCards) .find per id; build/reuse id->card map for O(queueLen) lookup
   witness: site/views/review.js:110 cardById[id]; browser-1 mapReuse:true (no allCards.find remains)
   status: completed
+- id: dynamic-default-exam-date
+  title: srs.js DEFAULT_EXAM_DATE is hardcoded 2026-06-15 (now past) -> daysUntilExam clamps to 0 -> fresh users permanently stuck in exam-day takeover. Make default computed relative to today (e.g. +84d) so it never goes stale
+  witness: site/srs.js:11-16 defaultExamDate()=localDayISO(now+84d); browser-9 days=84 with no config; test run-19 asserts no frozen literal
+  status: completed
+- id: gate-examday-takeover
+  title: app.js exam-day takeover fires on days===0 which includes any PAST/clamped date; gate it on the exam date being exactly today (isExamDay) so a passed/default date never hijacks all routes
+  witness: site/app.js:60 srs.isExamDay() gate; site/srs.js isExamDay compares localDayISO===today; browser-8/9 isExamDay:false, takeover:false all routes
+  status: completed
+- id: verify-routes-render-content
+  title: After exam-day fix, witness today/guides/review/stats/cases/calendar each render their real content (non-empty main, no good-luck takeover) at desktop+mobile
+  witness: 'browser-8: today/guides/review/stats/cases/calendar all takeover:false with real content (stats 1664ch, cases 28844ch); desktop+mobile screenshots'
+  status: completed
+- id: refresh-stale-sdk-bundle
+  title: corpus site/247420.{js,css} sha differs from freshly-rebuilt anentrypoint-design dist (stale bundle per AGENTS.md); re-copy rebuilt bundle into site/ and browser-witness app still mounts
+  witness: site/247420.{js,css} now sha d0a097e0/6efb370390 = rebuilt SDK dist; browser-9 bootOk:true, sdkScopes:2, errs:[]
+  status: completed

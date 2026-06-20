@@ -1,0 +1,66 @@
+# Gr 9 Maths CAPS — data-handling / Central Tendency
+deck: "Corpus::Gr9 Maths::Central Tendency"
+notes:
+  - guid: b4d6f8a0c2e13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Central Tendency"
+    fields:
+      Front: "What is the MEAN and how do you calculate it?"
+      Back: "The mean is the arithmetic average.\nMean = Σx ÷ n = (sum of all values) ÷ (number of values)\n\nExample: 4, 7, 9, 4, 6\nΣx = 30, n = 5 → mean = 30 ÷ 5 = 6.\n\nThe mean uses every value, so it is strongly affected by outliers (very large/small values)."
+    tags: ["mean", "subject:data-handling"]
+  - guid: d6f8a0c2e4b13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Central Tendency"
+    fields:
+      Front: "How do you find the MEDIAN of a data set?"
+      Back: "1. ORDER the values from smallest to largest.\n2. The median is the MIDDLE value.\n• Odd n: the single middle value. Position = (n+1)/2.\n• Even n: average the TWO middle values.\n\nExample (odd): 3, 5, 8, 9, 12 → median = 8.\nExample (even): 3, 5, 8, 9 → median = (5+8)/2 = 6.5.\n\nMust order first — forgetting this is the most common error."
+    tags: ["median", "subject:data-handling"]
+  - guid: f8a0c2e4b6d13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Central Tendency"
+    fields:
+      Front: "What is the MODE? Can a data set have more than one (or none)?"
+      Back: "The mode is the value that occurs MOST often (highest frequency).\n\n• One mode: 2, 3, 3, 5 → mode = 3.\n• Two modes (bimodal): 2, 2, 5, 5, 7 → modes 2 and 5.\n• No mode: 1, 2, 3, 4 (all appear once) → no mode.\n\nThe mode is the only average that works for CATEGORICAL data (e.g. most popular colour)."
+    tags: ["mode", "subject:data-handling"]
+  - guid: a0c2e4f6b8d13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Central Tendency"
+    fields:
+      Front: "Find the mean, median and mode of: 6, 4, 8, 6, 10, 2, 6."
+      Back: "n = 7.\nMean = (6+4+8+6+10+2+6) ÷ 7 = 42 ÷ 7 = 6.\nMedian: order → 2, 4, 6, 6, 6, 8, 10. Middle (4th) value = 6.\nMode: 6 appears 3 times → mode = 6.\n\nHere all three equal 6 — typical of fairly symmetric data."
+    tags: ["mean", "subject:data-handling"]
+  - guid: c2e4a6f8b0d23957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Central Tendency"
+    fields:
+      Front: "How do you find the MEAN from a FREQUENCY table?"
+      Back: "Mean = Σ(value × frequency) ÷ Σ(frequency)\n\nExample:\nValue | f | value×f\n2     | 3 | 6\n3     | 5 | 15\n4     | 2 | 8\nΣf = 10, Σ(value×f) = 29\nMean = 29 ÷ 10 = 2.9\n\nPitfall: divide by the TOTAL frequency (n), not by the number of different values."
+    tags: ["mean", "subject:data-handling"]
+  - guid: e4a6c8f0b2d13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Central Tendency"
+    fields:
+      Front: "How do you find the MEDIAN and MODE from a frequency table?"
+      Back: "MODE = the value with the HIGHEST frequency (read it straight off the table).\n\nMEDIAN: total n = Σf. Find the middle position (n+1)/2. Add frequencies down the table (cumulative) until you reach that position; the value there is the median.\n\nExample: f's 3,5,2 → n=10, middle is between 5th & 6th value. Cumulative: 3 (value2), then 8 (value3) — both 5th & 6th fall in value 3 → median = 3."
+    tags: ["median", "subject:data-handling"]
+  - guid: a6c8e0f2b4d23957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Central Tendency"
+    fields:
+      Front: "Which average is most AFFECTED by an outlier, and which is most resistant?"
+      Back: "MEAN is most affected — it uses every value, so one extreme value pulls it up or down.\n\nMEDIAN is resistant (robust) — it only depends on the middle position, not the size of extreme values.\n\nExample: 2, 3, 4, 5, 100. Mean = 22.8 (misleading), Median = 4 (typical). Use median when outliers are present."
+    tags: ["outliers", "subject:data-handling"]
+  - guid: c8e0a2f4b6d23957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Central Tendency"
+    fields:
+      Front: "When is the MEAN best, when MEDIAN, when MODE?"
+      Back: "MEAN: numerical data with NO big outliers; uses all data (e.g. average test score).\nMEDIAN: numerical data WITH outliers or skew (e.g. house prices, salaries).\nMODE: categorical data, or when you want the MOST COMMON / most popular value (e.g. most sold shoe size, favourite colour).\n\nChoose the one that best represents the 'typical' value for that data."
+    tags: ["choosing-average", "subject:data-handling"]
+  - guid: e0a2c4f6b8d23957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Central Tendency"
+    fields:
+      Front: "The mean of 5 numbers is 12. Four of them are 10, 11, 13, 14. Find the fifth."
+      Back: "Sum of all 5 = mean × n = 12 × 5 = 60.\nSum of known four = 10+11+13+14 = 48.\nFifth = 60 − 48 = 12.\n\nKey idea: rearrange Mean = Σx ÷ n → Σx = mean × n. This 'reverse' use of the mean is a common exam question."
+    tags: ["mean", "subject:data-handling"]

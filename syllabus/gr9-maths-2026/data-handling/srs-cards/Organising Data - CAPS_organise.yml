@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — data-handling / Organising Data
+deck: "Corpus::Gr9 Maths::Organising Data"
+notes:
+  - guid: a4b6c8d0e2f13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Organising Data"
+    fields:
+      Front: "How does a TALLY table work? Show tallies for the count 7."
+      Back: "A tally table records each data value with a stroke as you read through the data; group strokes in FIVES — four vertical strokes with the fifth drawn diagonally across them.\n\n7 = ||||̸ ||  (a group of 5 + 2 more)\n\nThen the FREQUENCY column converts tallies to a number. Tallying lets you count raw data without missing or double-counting values."
+    tags: ["tally-table", "subject:data-handling"]
+  - guid: c6d8e0f2a4b15739
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Organising Data"
+    fields:
+      Front: "What is a FREQUENCY table and what does 'frequency' mean?"
+      Back: "FREQUENCY = how many times a value (or category) occurs.\nA frequency table lists each value/category with its frequency.\n\nExample (test marks out of 5):\nMark | Frequency\n3    | 4\n4    | 7\n5    | 2\n\nThe frequencies should add up to n (total number of data values) = 13 here. Always check the total."
+    tags: ["frequency-table", "subject:data-handling"]
+  - guid: e8f0a2b4c6d13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Organising Data"
+    fields:
+      Front: "Construct a STEM-AND-LEAF plot for: 23, 25, 31, 34, 34, 42, 47."
+      Back: "Split each number into a STEM (tens) and LEAF (units), leaves in order:\n\nStem | Leaf\n 2   | 3 5\n 3   | 1 4 4\n 4   | 2 7\n\nKey: 2 | 3 means 23.\n\nIt keeps the actual data values while showing the shape. Always include a KEY and order the leaves."
+    tags: ["stem-and-leaf", "subject:data-handling"]
+  - guid: 0a2c4e6f8b1d3957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Organising Data"
+    fields:
+      Front: "What is the ADVANTAGE of a stem-and-leaf plot over a frequency table?"
+      Back: "A stem-and-leaf plot shows the SHAPE/distribution of the data (like a histogram) AND keeps every original data value — so you can still read off the exact numbers, find the median, range, etc.\n\nA grouped frequency table or histogram loses the individual values once data is grouped into intervals."
+    tags: ["stem-and-leaf", "subject:data-handling"]
+  - guid: 2c4e6a8f0b1d3759
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Organising Data"
+    fields:
+      Front: "When and why do we use a GROUPED frequency table with class intervals?"
+      Back: "Use grouping when data has many different values spread over a wide range (e.g. test marks 0–100, or continuous data like heights). Listing every value would be huge.\n\nWe group into CLASS INTERVALS (e.g. 0–9, 10–19, 20–29...) and record the frequency of each interval. This makes the data manageable and ready for a histogram. Trade-off: you lose the individual values."
+    tags: ["grouped-frequency", "subject:data-handling"]
+  - guid: 4e6a8c0f2b1d3957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Organising Data"
+    fields:
+      Front: "Rules for choosing CLASS INTERVALS in a grouped frequency table."
+      Back: "• Intervals must be EQUAL width (e.g. all width 10).\n• Intervals must NOT overlap — every value falls in exactly one class.\n• Use a sensible number of classes (about 5–10).\n• Cover the full range (smallest to largest value).\n\nFor continuous data use boundaries like 0 ≤ x < 10, 10 ≤ x < 20 so there is no gap and no overlap."
+    tags: ["grouped-frequency", "subject:data-handling"]
+  - guid: 6a8c0e2f4b1d3759
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Organising Data"
+    fields:
+      Front: "Group these marks into intervals of 10 (0–9, 10–19, ...): 5, 12, 14, 21, 23, 27, 28, 35."
+      Back: "Interval | Tally | Frequency\n0–9   | |       | 1\n10–19 | ||      | 2\n20–29 | ||||    | 4\n30–39 | |       | 1\n\nTotal frequency = 1+2+4+1 = 8 ✓ (matches 8 data values).\nThe 20–29 class is the modal class (highest frequency)."
+    tags: ["grouped-frequency", "subject:data-handling"]
+  - guid: 8c0e2a4f6b1d3957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Organising Data"
+    fields:
+      Front: "Pitfall: a table uses intervals 0–10, 10–20, 20–30. What's wrong?"
+      Back: "The intervals OVERLAP at the boundaries — where does 10 or 20 go? It could be counted in two classes (double counting) or cause confusion.\n\nFix: use non-overlapping intervals such as 0–9, 10–19, 20–29 (discrete) OR 0 ≤ x < 10, 10 ≤ x < 20 (continuous)."
+    tags: ["grouped-frequency", "subject:data-handling"]

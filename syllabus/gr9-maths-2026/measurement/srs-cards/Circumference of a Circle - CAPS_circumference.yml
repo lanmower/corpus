@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — measurement / Circumference of a Circle
+deck: "Corpus::Gr9 Maths::Circumference of a Circle"
+notes:
+  - guid: c1a4f7e9b2306d58
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Circumference of a Circle"
+    fields:
+      Front: "What is the circumference of a circle, and what are the two formulas for it?"
+      Back: "Circumference = the PERIMETER (distance around) a circle.\nC = 2πr   (using the radius r)\nC = πd     (using the diameter d)\nThese are the same because d = 2r. Use π ≈ 3,14 (or 22/7) unless told otherwise.\nUnits: length units (cm, m …)."
+    tags: ["circumference", "circle", "subject:measurement"]
+  - guid: 5d8b0a2c6e91f437
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Circumference of a Circle"
+    fields:
+      Front: "What is π (pi), and how do radius r, diameter d and π relate?"
+      Back: "π is the constant ratio of a circle's circumference to its diameter: π = C ÷ d ≈ 3,14159… In CAPS we use π ≈ 3,14 or 22/7.\nDiameter d = 2 × r (twice the radius); radius r = d ÷ 2.\nThe diameter passes through the centre; the radius goes from centre to edge."
+    tags: ["pi", "radius-diameter", "circle", "subject:measurement"]
+  - guid: 9f2e4c6a8b15d703
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Circumference of a Circle"
+    fields:
+      Front: "Find the circumference of a circle with radius 7 cm (use π ≈ 22/7)."
+      Back: "C = 2πr\nC = 2 × 22/7 × 7\nC = 2 × 22 = 44 cm.\nTip: when the radius is a multiple of 7, using π ≈ 22/7 cancels neatly. With π ≈ 3,14: C ≈ 2 × 3,14 × 7 = 43,96 cm."
+    tags: ["circumference", "from-radius", "circle", "subject:measurement"]
+  - guid: 2c7a9e1b5d04f386
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Circumference of a Circle"
+    fields:
+      Front: "Find the circumference of a circle with diameter 10 m (use π ≈ 3,14)."
+      Back: "C = πd\nC = 3,14 × 10\nC = 31,4 m.\nPitfall: 10 m is the DIAMETER here, so use C = πd directly. If you only knew the radius (5 m), you would use C = 2πr = 2 × 3,14 × 5 = 31,4 m — same answer."
+    tags: ["circumference", "from-diameter", "circle", "subject:measurement"]
+  - guid: 7b0d3f5a9c28e641
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Circumference of a Circle"
+    fields:
+      Front: "A circle has circumference 31,4 cm. Find its radius (π ≈ 3,14)."
+      Back: "Work backwards from C = 2πr.\n31,4 = 2 × 3,14 × r\n31,4 = 6,28 × r\nr = 31,4 ÷ 6,28 = 5 cm.\nTo get the diameter instead: d = C ÷ π = 31,4 ÷ 3,14 = 10 cm, then r = d ÷ 2 = 5 cm."
+    tags: ["circumference", "find-radius", "circle", "subject:measurement"]
+  - guid: 4e1a8c0b6d97f253
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Circumference of a Circle"
+    fields:
+      Front: "How do you find the perimeter of a SEMICIRCLE (half circle) of radius r?"
+      Back: "A semicircle's perimeter = half the circumference + the straight diameter (the flat edge).\nP = ½ × 2πr + d = πr + 2r.\nWorked example, r = 7 cm (π ≈ 22/7):\nP = 22/7 × 7 + 2 × 7 = 22 + 14 = 36 cm.\nPitfall: don't forget the straight diameter edge — half the curve alone is NOT a closed shape."
+    tags: ["semicircle", "perimeter", "circle", "subject:measurement"]

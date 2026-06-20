@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — graphs / Drawing Lines
+deck: "Corpus::Gr9 Maths::Drawing Lines"
+notes:
+  - guid: 2e8a4c0f6b9d1357
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Drawing Lines"
+    fields:
+      Front: "How do you draw a straight line using a TABLE of values? Use y = 2x − 1."
+      Back: "Step 1: Choose a few x-values, e.g. x = −1, 0, 1, 2.\nStep 2: Work out y for each:\n• x=−1: y = 2(−1)−1 = −3\n• x=0: y = −1\n• x=1: y = 1\n• x=2: y = 3\nStep 3: Write the points (−1;−3), (0;−1), (1;1), (2;3).\nStep 4: Plot them and draw a straight line through them with a ruler, extending past the end points."
+    tags: ["table-method", "subject:graphs"]
+  - guid: 7a1e5c9f3b0d2864
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Drawing Lines"
+    fields:
+      Front: "Explain the DUAL-INTERCEPT method for drawing a line. Use y = 2x − 4."
+      Back: "Find the two points where the line crosses the axes.\nStep 1 (y-intercept): set x = 0 → y = 2(0) − 4 = −4 → point (0;−4).\nStep 2 (x-intercept): set y = 0 → 0 = 2x − 4 → 2x = 4 → x = 2 → point (2;0).\nStep 3: Plot (0;−4) and (2;0), then draw a straight line through both.\nFast and exam-friendly — only two points needed."
+    tags: ["dual-intercept", "subject:graphs"]
+  - guid: 4c0a6e2f8b1d9357
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Drawing Lines"
+    fields:
+      Front: "Explain the GRADIENT–INTERCEPT method for drawing a line. Use y = (3/2)x + 1."
+      Back: "Step 1: Plot the y-intercept c = 1 → point (0;1).\nStep 2: Use the gradient m = 3/2 = rise/run → from (0;1) move UP 3 and RIGHT 2 → point (2;4).\nStep 3: (Optional) repeat to get another point, e.g. up 3, right 2 again → (4;7).\nStep 4: Draw a straight line through the points.\nTip: for a negative gradient, go down for the rise (or right then up by negative)."
+    tags: ["gradient-intercept-method", "subject:graphs"]
+  - guid: 9d3a7c1f5b8e0246
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Drawing Lines"
+    fields:
+      Front: "Draw y = −x + 3 by the dual-intercept method."
+      Back: "y-intercept: x = 0 → y = −(0) + 3 = 3 → (0;3).\nx-intercept: y = 0 → 0 = −x + 3 → x = 3 → (3;0).\nPlot (0;3) and (3;0) and rule a line through them.\nCheck: gradient is −1, so the line should slope downward — it does, going from top-left to bottom-right. Good."
+    tags: ["dual-intercept", "subject:graphs"]
+  - guid: 1f5c9a3e7b0d2648
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Drawing Lines"
+    fields:
+      Front: "Why does the dual-intercept method fail for a line like y = 2x, and what do you do?"
+      Back: "A line through the origin has the same point for both intercepts: x=0 gives (0;0) and y=0 also gives (0;0). One point is not enough to draw a line.\nFix: keep (0;0) as one point, then choose ONE more x-value, e.g. x = 1 → y = 2 → (1;2). Draw the line through (0;0) and (1;2).\nUse the gradient (m = 2 = up 2, right 1) from the origin as your second point."
+    tags: ["through-origin", "subject:graphs"]
+  - guid: 6b2e8c4a0f9d1735
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Drawing Lines"
+    fields:
+      Front: "Good practice for sketching ANY straight line in an exam (checklist)."
+      Back: "1) Write the equation in y = mx + c form.\n2) Find at least two accurate points (intercepts are easiest).\n3) Plot points and use a RULER for the line.\n4) Extend the line beyond your points and add small arrows.\n5) Label the line with its equation, and label intercepts.\n6) Sanity check: positive m slopes up, negative m slopes down; large c means it crosses high/low on the y-axis."
+    tags: ["sketching-checklist", "subject:graphs"]

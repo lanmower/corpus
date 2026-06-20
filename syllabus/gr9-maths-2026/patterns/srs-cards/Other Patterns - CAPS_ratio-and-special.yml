@@ -1,0 +1,87 @@
+# Gr 9 Maths CAPS — patterns / Other Patterns
+deck: "Corpus::Gr9 Maths::Other Patterns"
+notes:
+  - guid: d3a4b5c6e7f80a1c
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "What is a pattern with a constant ratio (a geometric sequence)?"
+      Back: "A sequence where you MULTIPLY by the same number each time to get the next term.\nThat fixed multiplier is the constant ratio, r.\nExample: 2, 6, 18, 54, ... multiplies by 3, so r = 3.\nKey difference from linear: linear ADDS a constant (d); geometric MULTIPLIES by a constant (r)."
+    tags: ["geometric-sequence", "subject:patterns"]
+  - guid: e4b5c6d7f8091b2d
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "How do you find the constant ratio r of a geometric pattern?"
+      Back: "Divide any term by the term BEFORE it: r = T₂ ÷ T₁ = T₃ ÷ T₂.\nExample: 3, 12, 48, 192, ...\nr = 12 ÷ 3 = 4, check 48 ÷ 12 = 4 ✓.\nPitfall: if the RATIO is constant it is geometric; if the DIFFERENCE is constant it is linear. Test both: differences 9, 36, 144 are not constant, so this one is geometric, not linear."
+    tags: ["constant-ratio", "subject:patterns"]
+  - guid: f5c6d7e809102c3e
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "Extend the geometric pattern 5, 10, 20, 40, ... by three terms and find the next-but-one."
+      Back: "r = 10 ÷ 5 = 2.\nKeep multiplying by 2: 80, 160, 320.\nSo the sequence continues 5, 10, 20, 40, 80, 160, 320.\nPitfall: do NOT add a constant here — the gaps (5, 10, 20, ...) keep growing, the signal of a ratio pattern."
+    tags: ["geometric-sequence", "subject:patterns"]
+  - guid: 06d7e8f91021304f
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "Find Tₙ for the geometric pattern of powers 2, 4, 8, 16, ..."
+      Back: "Each term is a power of 2: 2¹, 2², 2³, 2⁴, ...\nSo Tₙ = 2ⁿ.\nCheck: T₁ = 2¹ = 2 ✓, T₄ = 2⁴ = 16 ✓.\nGeneral idea: a geometric pattern starting at the ratio value can often be written as rⁿ; more generally Tₙ = T₁ × r^(n−1)."
+    tags: ["powers", "subject:patterns"]
+  - guid: 17e8f90a12314150
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "Use Tₙ = T₁ × r^(n−1) to find the 6th term of 3, 6, 12, 24, ..."
+      Back: "T₁ = 3, r = 6 ÷ 3 = 2.\nT₆ = 3 × 2^(6−1) = 3 × 2⁵ = 3 × 32 = 96.\nCheck by listing: 3, 6, 12, 24, 48, 96 ✓.\nPitfall: the exponent is (n − 1), not n, because T₁ has NOT yet been multiplied by r."
+    tags: ["geometric-sequence", "subject:patterns"]
+  - guid: 28f90a1b23415261
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "What are the square numbers and what is the rule for the nth square number?"
+      Back: "Square numbers: 1, 4, 9, 16, 25, 36, ... (each is a position squared).\nTₙ = n².\nThey count dots that form a perfect square (1×1, 2×2, 3×3, ...).\nNote: the differences are 3, 5, 7, 9, ... (consecutive odd numbers), so the difference is NOT constant — square numbers are a quadratic, not a linear, pattern."
+    tags: ["square-numbers", "subject:patterns"]
+  - guid: 390a1b2c34516372
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "What are the triangular numbers and how do you build/find them?"
+      Back: "Triangular numbers: 1, 3, 6, 10, 15, 21, ... (dots that form a triangle).\nEach is the running sum: 1, 1+2, 1+2+3, 1+2+3+4, ...\nRule: Tₙ = n(n + 1)/2.\nCheck: T₄ = 4(5)/2 = 10 ✓.\nThe differences are 2, 3, 4, 5, ... (increasing by 1), so it is also a quadratic pattern, not linear."
+    tags: ["triangular-numbers", "subject:patterns"]
+  - guid: 4a1b2c3d45617483
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "What is the Fibonacci-style pattern and how is each term generated?"
+      Back: "A Fibonacci-style pattern: each term is the SUM of the two terms before it.\nExample: 1, 1, 2, 3, 5, 8, 13, 21, ...\nRule (recursive): Tₙ = Tₙ₋₁ + Tₙ₋₂.\nThere is no simple add-or-multiply constant; you must use the two previous terms.\nWorked: 5 + 8 = 13, then 8 + 13 = 21."
+    tags: ["fibonacci", "subject:patterns"]
+  - guid: 5b2c3d4e56718594
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "How do you DECIDE whether a sequence is linear, geometric, or something else?"
+      Back: "Step 1: find the differences between consecutive terms. Constant? → linear, Tₙ = dn + c.\nStep 2: if not, find the ratios (term ÷ previous). Constant? → geometric, multiply by r.\nStep 3: if neither, check special patterns: n² (squares), n(n+1)/2 (triangular), powers (2ⁿ, 3ⁿ), or sum-of-previous-two (Fibonacci).\nPitfall: always test differences FIRST before assuming geometric."
+    tags: ["classify-pattern", "subject:patterns"]
+  - guid: 6c3d4e5f67819605
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "Classify and continue: 1, 4, 9, 16, ___, ___ . What pattern is it?"
+      Back: "Differences: 3, 5, 7 — not constant, so not linear.\nRatios: 4, 2.25, ... — not constant, so not geometric.\nThese are the SQUARE numbers, Tₙ = n².\nNext: T₅ = 25, T₆ = 36.\nSequence: 1, 4, 9, 16, 25, 36."
+    tags: ["square-numbers", "subject:patterns"]
+  - guid: 7d4e5f6078819716
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "Find the next two terms of the geometric pattern with fractions: 64, 32, 16, 8, ..."
+      Back: "r = 32 ÷ 64 = 1/2 (each term is HALVED).\nContinue: 8 × 1/2 = 4, then 4 × 1/2 = 2.\nSequence: 64, 32, 16, 8, 4, 2.\nPitfall: a ratio can be a fraction (0 < r < 1) — the pattern decreases but is still geometric, not linear."
+    tags: ["constant-ratio", "subject:patterns"]
+  - guid: 8e5f60718291a827
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Other Patterns"
+    fields:
+      Front: "Continue the Fibonacci-style pattern 2, 5, 7, 12, 19, ___ and state the rule used."
+      Back: "Rule: add the two previous terms (Tₙ = Tₙ₋₁ + Tₙ₋₂).\nCheck it fits: 2 + 5 = 7 ✓, 5 + 7 = 12 ✓, 7 + 12 = 19 ✓.\nNext term: 12 + 19 = 31.\nSo the sequence continues ..., 19, 31."
+    tags: ["fibonacci", "subject:patterns"]

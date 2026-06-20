@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — functions-and-relationships / Functions and Relationships
+deck: "Corpus::Gr9 Maths::Functions and Relationships"
+notes:
+  - guid: 728a9bacbdcedfe0
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Name the different ways the SAME relationship can be represented in Grade 9."
+      Back: "Six representations of one relationship:\n1. Verbal description (words): 'multiply by 2 and add 3'.\n2. Flow diagram: input → ×2 → +3 → output.\n3. Table of input/output values.\n4. Formula / equation: y = 2x + 3.\n5. Ordered pairs: (x, y) e.g. (0,3), (1,5), (2,7).\n6. Graph: points/line on the Cartesian plane.\nAll six describe the SAME rule — you should be able to convert between any of them."
+    tags: ["representations", "subject:functions-and-relationships"]
+  - guid: 8a9bacbdcedfe0f1
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Convert the verbal description 'multiply the input by 5 and subtract 2' into a flow diagram, an equation, and a table for x = 0,1,2."
+      Back: "Flow diagram: input → ×5 → −2 → output.\nEquation: y = 5x − 2.\nTable (substitute): x=0 → 5(0)−2 = −2; x=1 → 5−2 = 3; x=2 → 10−2 = 8.\nx: 0, 1, 2\ny: −2, 3, 8\nThese are all the same relationship in three forms."
+    tags: ["representations", "converting", "subject:functions-and-relationships"]
+  - guid: 9bacbdcedfe0f102
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Convert the equation y = 2x + 3 into ordered pairs and explain how to plot them as a graph."
+      Back: "Choose x-values and substitute to get y:\nx=−1 → 2(−1)+3 = 1 → (−1, 1)\nx=0 → 3 → (0, 3)\nx=1 → 5 → (1, 5)\nx=2 → 7 → (2, 7)\nOrdered pairs: (−1,1), (0,3), (1,5), (2,7).\nTo graph: the first number is the x-coordinate (across), the second is the y-coordinate (up). Plot each point on the Cartesian plane and join them. A linear equation gives a straight line."
+    tags: ["representations", "ordered-pairs", "graph", "subject:functions-and-relationships"]
+  - guid: acbdcedfe0f10213
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "From the table x = 1,2,3 → y = 7,9,11, write the relationship as ordered pairs and as an equation."
+      Back: "Ordered pairs: (1,7), (2,9), (3,11).\nEquation: first difference in y = 2 ⇒ m = 2. y = 2x + c; at x=1, y=7 ⇒ 2+c=7 ⇒ c=5. So y = 2x + 5.\nCheck (3,11): 2(3)+5 = 11 ✓.\nRemember: an ordered pair is just one row of the table written as (input, output)."
+    tags: ["representations", "ordered-pairs", "converting", "subject:functions-and-relationships"]
+  - guid: bdcedfe0f1021324
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "A graph passes through (0,−1), (1,1), (2,3), (3,5). Read off the equation."
+      Back: "Read coordinates as (x, y). Build a table:\nx: 0,1,2,3 → y: −1,1,3,5.\nFirst difference in y = 2 ⇒ gradient m = 2.\nc = y when x=0 = −1 (the y-intercept, where the line crosses the y-axis).\nEquation: y = 2x − 1.\nCheck (3,5): 2(3)−1 = 5 ✓.\nMethod: turn graph points into a table, then find m and c as usual."
+    tags: ["representations", "graph", "converting", "subject:functions-and-relationships"]
+  - guid: cedfe0f102132435
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Why must all six representations of a relationship agree, and how do you check?"
+      Back: "Because they all describe ONE rule — only the form differs. If they disagree, one is wrong.\nCheck by picking a single input and tracing it through each form:\nVerbal/flow diagram give an output, the equation gives the same output when you substitute, that (input, output) must be a row in the table, an ordered pair, and a point on the graph.\nExample for y = 3x: input 4 → flow ×3 → 12; equation 3(4)=12; table row (4,12); ordered pair (4,12); graph point (4,12). All agree ✓."
+    tags: ["representations", "checking", "subject:functions-and-relationships"]

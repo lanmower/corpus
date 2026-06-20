@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — exponents / Exam Traps
+deck: "Corpus::Gr9 Maths::Exam Traps"
+notes:
+  - guid: 1f2e3d4c5b6a7980
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exam Traps"
+    fields:
+      Front: "TRAP: What is the difference between −3² and (−3)²?"
+      Back: "The brackets decide what the power acts on.\n−3²: only the 3 is squared, then the minus is applied → −(3²) = −9.\n(−3)²: the whole −3 is squared → (−3)×(−3) = +9.\nSo −3² = −9 but (−3)² = +9. Without brackets the exponent binds tighter than the negative sign. Same idea: −2⁴ = −16 but (−2)⁴ = 16."
+    tags: ["exam-trap", "sign-rules", "subject:exponents"]
+  - guid: 2a3b4c5d6e7f8091
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exam Traps"
+    fields:
+      Front: "TRAP: Simplify 2x⁻³. Does the negative power affect the 2?"
+      Back: "No. The exponent −3 attaches ONLY to its base x, not to the coefficient 2.\n2x⁻³ = 2 × x⁻³ = 2 × (1/x³) = 2/x³.\nIt is NOT 1/(2x)³ — the 2 stays on top, only x moves to the denominator.\nIf the whole thing were bracketed, (2x)⁻³ = 1/(2x)³ = 1/(8x³). Brackets change everything."
+    tags: ["exam-trap", "negative-index", "coefficient", "subject:exponents"]
+  - guid: 3b4c5d6e7f809102
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exam Traps"
+    fields:
+      Front: "TRAP: Simplify (3x)⁻² and contrast it with 3x⁻²."
+      Back: "(3x)⁻²: bracket means the WHOLE 3x is the base. (3x)⁻² = 1/(3x)² = 1/(9x²).\n3x⁻²: no bracket, so −2 acts only on x. 3x⁻² = 3/x².\nThese are different: 1/(9x²) vs 3/x². Always check whether the coefficient is inside the bracket before applying a negative exponent."
+    tags: ["exam-trap", "negative-index", "brackets", "subject:exponents"]
+  - guid: 4c5d6e7f80910213
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exam Traps"
+    fields:
+      Front: "TRAP: What is 0⁰, 0⁵ and 5⁰? Is 0 always a valid base?"
+      Back: "5⁰ = 1 (any NON-zero base to the power 0 equals 1).\n0⁵ = 0 (zero multiplied by itself is still 0).\n0⁰ is UNDEFINED — the rule 'anything⁰ = 1' needs a non-zero base, so do not write 0⁰ = 1.\nAlso 0⁻ⁿ = 1/0ⁿ = 1/0 is undefined. So 0 cannot be used as a base with the zero or negative exponent rules."
+    tags: ["exam-trap", "zero-base", "subject:exponents"]
+  - guid: 5d6e7f8091021324
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exam Traps"
+    fields:
+      Front: "TRAP: A learner writes x² × y³ = (xy)⁵. Why is this wrong?"
+      Back: "Law 1 (add exponents) only applies to the SAME base. Here the bases x and y are different, so x² and y³ cannot be combined — x²y³ is already fully simplified.\n(xy)⁵ would mean x⁵y⁵, which is not equal to x²y³.\nGolden rule: add/subtract exponents ONLY for like bases; unlike bases stay as a product."
+    tags: ["exam-trap", "like-bases", "subject:exponents"]
+  - guid: 6e7f809102132435
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exam Traps"
+    fields:
+      Front: "TRAP: A learner writes 2³ + 2² = 2⁵. Why is this wrong, and what is the correct value?"
+      Back: "The exponent laws are for MULTIPLYING/dividing powers, NOT adding them. You may NOT add exponents when the terms are added.\nCorrect: 2³ + 2² = 8 + 4 = 12.\n(2⁵ = 32, which is wrong.)\nOnly 2³ × 2² = 2⁵ uses the add-exponents law. For a SUM, just evaluate each power and add the results."
+    tags: ["exam-trap", "addition-vs-multiplication", "subject:exponents"]
+  - guid: 7f80910213243546
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exam Traps"
+    fields:
+      Front: "TRAP: Simplify −2⁻². Handle BOTH the sign and the negative exponent."
+      Back: "Two separate things: the leading minus, and the exponent −2 on base 2.\nThe exponent acts only on 2: 2⁻² = 1/2² = 1/4.\nThe leading minus then applies: −2⁻² = −(1/4) = −1/4.\nContrast (−2)⁻² = 1/(−2)² = 1/4 (positive, because the whole −2 is squared). Brackets and sign placement matter."
+    tags: ["exam-trap", "sign-rules", "negative-index", "subject:exponents"]

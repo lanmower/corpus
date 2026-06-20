@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — finance / VAT
+deck: "Corpus::Gr9 Maths::VAT"
+notes:
+  - guid: 11aa22bb33cc44dd
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::VAT"
+    fields:
+      Front: "What is VAT, what is the current SA VAT rate, and what do 'VAT-exclusive' and 'VAT-inclusive' mean?"
+      Back: "VAT = Value Added Tax, a tax added to most goods/services. The South African VAT rate is 15%.\nVAT-exclusive price = price BEFORE VAT is added.\nVAT-inclusive price = price AFTER VAT is added (what you pay).\nInclusive = exclusive + 15% of exclusive."
+    tags: ["vat-basics", "subject:finance"]
+  - guid: 22bb33cc44dd55ee
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::VAT"
+    fields:
+      Front: "How do you convert a VAT-EXCLUSIVE price to a VAT-INCLUSIVE price (15%)?"
+      Back: "Multiply by 1,15 (because you add 15%).\nInclusive = exclusive × 1,15.\nExample: exclusive R200 → inclusive = 200 × 1,15 = R230.\nThe VAT portion here = 230 − 200 = R30 (= 15% of 200)."
+    tags: ["exclusive-to-inclusive", "subject:finance"]
+  - guid: 33cc44dd55ee66ff
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::VAT"
+    fields:
+      Front: "How do you convert a VAT-INCLUSIVE price back to a VAT-EXCLUSIVE price (15%)?"
+      Back: "Divide by 1,15 (undo the ×1,15).\nExclusive = inclusive ÷ 1,15.\nExample: inclusive R230 → exclusive = 230 ÷ 1,15 = R200.\nCommon mistake: subtracting 15% of the inclusive price — that is WRONG because the 15% was added to the SMALLER (exclusive) amount."
+    tags: ["inclusive-to-exclusive", "subject:finance"]
+  - guid: 44dd55ee66ff7700
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::VAT"
+    fields:
+      Front: "A price tag shows R575 (VAT inclusive). Find the VAT portion."
+      Back: "Step 1: exclusive = 575 ÷ 1,15 = R500.\nStep 2: VAT = inclusive − exclusive = 575 − 500 = R75.\nOR directly: VAT = inclusive × (15 ÷ 115) = 575 × 0,130434... = R75.\nThe R75 is the tax inside the R575."
+    tags: ["vat-portion", "subject:finance"]
+  - guid: 55ee66ff77008811
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::VAT"
+    fields:
+      Front: "Why do you find the VAT portion of an inclusive price using 15/115 and not 15/100?"
+      Back: "The inclusive price represents 115% of the exclusive price (100% + 15% VAT).\nSo VAT as a fraction of the INCLUSIVE price = 15/115 ≈ 0,1304 (about 13,04%), not 15%.\nVAT = inclusive × 15/115.\nUse 15/100 only when you START from the exclusive price."
+    tags: ["vat-portion", "subject:finance"]
+  - guid: 66ff770088112233
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::VAT"
+    fields:
+      Front: "A laptop costs R8 000 before VAT. Find the VAT amount and the total price you pay (15%)."
+      Back: "VAT = 15% of 8 000 = 0,15 × 8 000 = R1 200.\nTotal (inclusive) = 8 000 + 1 200 = R9 200.\nCheck with multiplier: 8 000 × 1,15 = R9 200. ✓"
+    tags: ["exclusive-to-inclusive", "subject:finance"]
+  - guid: 7700881122334455
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::VAT"
+    fields:
+      Front: "Are all items charged VAT? Give the term for items with no VAT."
+      Back: "No. Some basic foodstuffs are ZERO-RATED (0% VAT), e.g. brown bread, maize meal, rice, milk, fruit and vegetables.\nFor zero-rated items the inclusive price = exclusive price (no VAT added).\nMost other goods/services are charged the standard 15% VAT."
+    tags: ["vat-basics", "subject:finance"]
+  - guid: 8811223344556677
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::VAT"
+    fields:
+      Front: "Common mistake: to remove VAT from R1 150 inclusive, a learner subtracts 15% (R172,50). Show the correct method and the error."
+      Back: "Wrong: 1 150 − 15% of 1 150 = 1 150 − 172,50 = R977,50 (too low).\nCorrect: exclusive = 1 150 ÷ 1,15 = R1 000, so VAT = R150.\nReason: the 15% was originally added to R1 000, not to R1 150. Always DIVIDE by 1,15 to remove VAT."
+    tags: ["common-mistakes", "subject:finance"]

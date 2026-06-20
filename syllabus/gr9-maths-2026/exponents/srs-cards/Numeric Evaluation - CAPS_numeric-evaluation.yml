@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — exponents / Numeric Evaluation
+deck: "Corpus::Gr9 Maths::Numeric Evaluation"
+notes:
+  - guid: a10b20c30d40e051
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Numeric Evaluation"
+    fields:
+      Front: "Evaluate without a calculator: 2³ + 3² − 5⁰."
+      Back: "Work out each power first (BODMAS: exponents before adding/subtracting):\n2³ = 8\n3² = 9\n5⁰ = 1  (any non-zero base to the power 0 is 1)\nThen: 8 + 9 − 1 = 16.\nAnswer: 16."
+    tags: ["numeric-eval", "bodmas", "subject:exponents"]
+  - guid: b21c31d41e51f062
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Numeric Evaluation"
+    fields:
+      Front: "Evaluate without a calculator: 3² × 2³ ÷ 6."
+      Back: "BODMAS: powers first, then left-to-right × and ÷.\n3² = 9, 2³ = 8.\n9 × 8 = 72.\n72 ÷ 6 = 12.\nAnswer: 12. (× and ÷ have equal priority, so go left to right.)"
+    tags: ["numeric-eval", "bodmas", "subject:exponents"]
+  - guid: c32d42e52f62a073
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Numeric Evaluation"
+    fields:
+      Front: "Evaluate without a calculator: 2⁻³ + 4⁻¹."
+      Back: "A negative index means reciprocal: a⁻ⁿ = 1/aⁿ.\n2⁻³ = 1/2³ = 1/8.\n4⁻¹ = 1/4.\nCommon denominator 8: 1/8 + 2/8 = 3/8.\nAnswer: 3/8."
+    tags: ["numeric-eval", "negative-index", "subject:exponents"]
+  - guid: d43e53f62a73b084
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Numeric Evaluation"
+    fields:
+      Front: "Evaluate without a calculator: (2² + 3²)⁰ + 10¹."
+      Back: "Brackets first: 2² + 3² = 4 + 9 = 13.\nThen 13⁰ = 1 (whole bracket, non-zero, to the power 0).\n10¹ = 10.\nSum: 1 + 10 = 11.\nAnswer: 11. Watch: the ⁰ applies to the whole bracket, so you do NOT need the value 13 itself — it just must be non-zero."
+    tags: ["numeric-eval", "zero-index", "subject:exponents"]
+  - guid: e54f63a72b84c095
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Numeric Evaluation"
+    fields:
+      Front: "Evaluate without a calculator: (3⁴ × 3⁻²) ÷ 3³."
+      Back: "Use the laws on the same base 3 (add then subtract exponents):\nNumerator: 3⁴ × 3⁻² = 3⁴⁺⁽⁻²⁾ = 3².\nDivide: 3² ÷ 3³ = 3²⁻³ = 3⁻¹.\n3⁻¹ = 1/3.\nAnswer: 1/3. Keeping everything as powers of 3 avoids large intermediate numbers."
+    tags: ["numeric-eval", "laws", "subject:exponents"]
+  - guid: f65a73b82c95d0a6
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Numeric Evaluation"
+    fields:
+      Front: "Evaluate without a calculator: 5² − 2 × 3² + (−2)³."
+      Back: "BODMAS — powers, then ×, then + and −:\n5² = 25\n3² = 9, so 2 × 9 = 18\n(−2)³ = −8 (negative base, odd power → negative)\nCombine: 25 − 18 + (−8) = 25 − 18 − 8 = −1.\nAnswer: −1."
+    tags: ["numeric-eval", "bodmas", "subject:exponents"]
+  - guid: a76b84c92d0ae1b7
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Numeric Evaluation"
+    fields:
+      Front: "Consolidation: evaluate (2³ × 2²) ÷ (2⁴) + 2⁰ without a calculator."
+      Back: "Same base 2 throughout.\nNumerator: 2³ × 2² = 2³⁺² = 2⁵ = 32.\nDivide: 2⁵ ÷ 2⁴ = 2⁵⁻⁴ = 2¹ = 2.\nAdd 2⁰ = 1.\nTotal: 2 + 1 = 3.\nAnswer: 3. Apply laws to the like bases first, then do the final + as ordinary arithmetic."
+    tags: ["numeric-eval", "laws", "subject:exponents"]

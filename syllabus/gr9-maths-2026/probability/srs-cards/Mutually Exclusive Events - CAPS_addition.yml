@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — probability / Mutually Exclusive Events
+deck: "Corpus::Gr9 Maths::Mutually Exclusive Events"
+notes:
+  - guid: d7a7153882ce2493
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Mutually Exclusive Events"
+    fields:
+      Front: "What does 'mutually exclusive' mean? Give an example and a non-example."
+      Back: "Two events are mutually exclusive if they CANNOT happen at the same time (no common outcomes).\nExample: on one die roll, 'getting a 2' and 'getting a 5' are mutually exclusive.\nNon-example: 'getting an even number' and 'getting a number > 3' can both happen (a 4 or 6), so they are NOT mutually exclusive."
+    tags: ["mutually-exclusive", "subject:probability"]
+  - guid: e8b8264993df3504
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Mutually Exclusive Events"
+    fields:
+      Front: "State the addition rule for P(A or B) when A and B are MUTUALLY EXCLUSIVE."
+      Back: "P(A or B) = P(A) + P(B).\nThis works because there is no overlap to double-count.\nExample (one die): P(2 or 5) = P(2) + P(5) = 1/6 + 1/6 = 2/6 = 1/3."
+    tags: ["addition-rule", "subject:probability"]
+  - guid: f9c9375004e04615
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Mutually Exclusive Events"
+    fields:
+      Front: "State the addition rule for P(A or B) when events are NOT mutually exclusive."
+      Back: "P(A or B) = P(A) + P(B) − P(A and B).\nYou subtract the overlap P(A and B) because outcomes in both were counted twice.\nIf A and B are mutually exclusive, P(A and B) = 0 and this reduces to P(A) + P(B)."
+    tags: ["addition-rule", "subject:probability"]
+  - guid: 0ada486115f15726
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Mutually Exclusive Events"
+    fields:
+      Front: "On one die roll, find P(even OR greater than 3). Watch the overlap!"
+      Back: "Even = {2,4,6}, greater than 3 = {4,5,6}.\nNOT mutually exclusive — overlap = {4,6}.\nP(even) = 3/6, P(>3) = 3/6, P(both) = 2/6.\nP(even or >3) = 3/6 + 3/6 − 2/6 = 4/6 = 2/3.\nCheck by listing: {2,4,5,6} = 4 outcomes → 4/6. ✓"
+    tags: ["addition-rule", "subject:probability"]
+  - guid: 1beb597226020837
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Mutually Exclusive Events"
+    fields:
+      Front: "From a 52-card pack, find P(a King or a Queen)."
+      Back: "A card cannot be a King and a Queen at once → mutually exclusive.\nP(King) = 4/52, P(Queen) = 4/52.\nP(King or Queen) = 4/52 + 4/52 = 8/52 = 2/13.\nNo overlap to subtract."
+    tags: ["mutually-exclusive", "subject:probability"]
+  - guid: 2cfc6a8337131948
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Mutually Exclusive Events"
+    fields:
+      Front: "From a 52-card pack, find P(a King or a Heart). Why is this different from King or Queen?"
+      Back: "A card CAN be both a King and a Heart (the King of Hearts) → NOT mutually exclusive.\nP(King) = 4/52, P(Heart) = 13/52, P(King and Heart) = 1/52.\nP(King or Heart) = 4/52 + 13/52 − 1/52 = 16/52 = 4/13.\nPitfall: forgetting to subtract the King of Hearts gives the wrong 17/52."
+    tags: ["addition-rule", "subject:probability"]
+  - guid: 3d0d7b9448242059
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Mutually Exclusive Events"
+    fields:
+      Front: "How can you TEST whether two events are mutually exclusive?"
+      Back: "List the outcomes of each event and look for any shared (common) outcomes.\n- No common outcome → mutually exclusive → P(A and B) = 0.\n- At least one common outcome → not mutually exclusive → subtract the overlap.\nQuick check: ask 'can both happen in a single trial?' If no, they are mutually exclusive."
+    tags: ["mutually-exclusive", "subject:probability"]
+  - guid: 4e1e8ca559353160
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Mutually Exclusive Events"
+    fields:
+      Front: "Are complementary events also mutually exclusive? Are mutually exclusive events always complementary?"
+      Back: "Complementary events (A and not A) ARE always mutually exclusive AND together fill the whole sample space, so their probabilities add to 1.\nBut mutually exclusive events are NOT always complementary: 'roll a 2' and 'roll a 5' are mutually exclusive yet don't cover everything (their P's add to 1/3, not 1)."
+    tags: ["mutually-exclusive", "subject:probability"]

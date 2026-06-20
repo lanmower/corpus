@@ -1,0 +1,66 @@
+# Gr 9 Maths CAPS — patterns / Geometric Diagram Patterns
+deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+notes:
+  - guid: 28f90a1b23415231
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+    fields:
+      Front: "What is the general method for finding the rule of a pattern made from diagrams (matchsticks, dots, tiles)?"
+      Back: "Step 1: COUNT the items in each figure (figure 1, 2, 3, ...).\nStep 2: build a TABLE: figure number n vs number of items Tₙ.\nStep 3: find the constant difference d.\nStep 4: write the rule Tₙ = dn + c, with c = (first count − d).\nStep 5: VERIFY on a known figure, then use it to predict figure n."
+    tags: ["diagram-patterns", "subject:patterns"]
+  - guid: 390a1b2c34516342
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+    fields:
+      Front: "A matchstick pattern uses 4, 7, 10 matches for figures 1, 2, 3 (squares in a row). Find the rule and the matches for figure 20."
+      Back: "Table → n: 1,2,3  matches: 4, 7, 10.\nd = 7 − 4 = 3 (each new square adds 3 matches).\nc = 4 − 3 = 1, so Tₙ = 3n + 1.\nCheck: T₃ = 3(3) + 1 = 10 ✓.\nFigure 20: T₂₀ = 3(20) + 1 = 61 matches."
+    tags: ["matchsticks", "subject:patterns"]
+  - guid: 4a1b2c3d45617453
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+    fields:
+      Front: "Why does a row-of-squares matchstick pattern give Tₙ = 3n + 1 (explain the +1)?"
+      Back: "The first square needs 4 matches; each ADDITIONAL square shares one side, so it only needs 3 more.\nSo matches = 1 (the extra left-hand vertical) + 3 per square = 3n + 1.\nThe constant difference d = 3 is 'matches added per new square'; the c = 1 is the single starting match not repeated.\nUnderstanding the structure lets you justify the rule, not just compute it."
+    tags: ["matchsticks", "subject:patterns"]
+  - guid: 5b2c3d4e56718564
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+    fields:
+      Front: "A dot pattern grows 2, 5, 8, 11 dots for figures 1–4. Which figure has 32 dots?"
+      Back: "d = 3, c = 2 − 3 = −1, so Tₙ = 3n − 1.\nSet 3n − 1 = 32 → 3n = 33 → n = 11.\nFigure 11 has 32 dots.\nPitfall: the answer is a FIGURE NUMBER (position), so n must be a whole number — here it is, so 32 is valid."
+    tags: ["dots", "subject:patterns"]
+  - guid: 6c3d4e5f67819675
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+    fields:
+      Front: "A tile border pattern uses 8, 12, 16, 20 tiles for figures 1–4. Predict tiles for figure n and for figure 15."
+      Back: "d = 4, c = 8 − 4 = 4, so Tₙ = 4n + 4.\nGeneral prediction for figure n: 4n + 4 tiles.\nFigure 15: T₁₅ = 4(15) + 4 = 64 tiles.\nCheck the rule on figure 2: 4(2) + 4 = 12 ✓."
+    tags: ["tiles", "subject:patterns"]
+  - guid: 7d4e5f6078819786
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+    fields:
+      Front: "For a triangle matchstick pattern: 3, 5, 7, 9 matches for figures 1–4. Find Tₙ and matches for figure 50."
+      Back: "d = 2, c = 3 − 2 = 1, so Tₙ = 2n + 1.\nFirst triangle = 3 matches; each new triangle shares a side and adds 2.\nFigure 50: T₅₀ = 2(50) + 1 = 101 matches.\nCheck: T₄ = 2(4) + 1 = 9 ✓."
+    tags: ["matchsticks", "subject:patterns"]
+  - guid: 8e5f607182917897
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+    fields:
+      Front: "A square dot array pattern is 1, 4, 9, 16 dots for figures 1–4. What is Tₙ and is this linear?"
+      Back: "Differences are 3, 5, 7 — NOT constant, so it is NOT linear.\nThe counts are perfect squares: Tₙ = n².\nFigure n is an n × n square of dots.\nFigure 10: T₁₀ = 10² = 100 dots.\nPitfall: always test the differences first; here a 'dn + c' rule would be wrong."
+    tags: ["dots", "subject:patterns"]
+  - guid: 9f607182a3b489a8
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+    fields:
+      Front: "Exam phrasing: 'How many matches are needed for the 100th figure?' What is the efficient strategy?"
+      Back: "Do NOT draw 100 figures. Instead:\n1. Build a table from the first 3–4 figures.\n2. Find d and write Tₙ = dn + c.\n3. Substitute n = 100.\nExample: counts 5, 9, 13 → d = 4, c = 1 → Tₙ = 4n + 1 → T₁₀₀ = 4(100) + 1 = 401.\nThe rule is what makes far-figure predictions possible."
+    tags: ["predict-figure-n", "subject:patterns"]
+  - guid: a0718293b4c5d0b9
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Diagram Patterns"
+    fields:
+      Front: "A pattern asks for BOTH the perimeter-tiles and the inside-tiles separately. How do you handle a 'two-rule' diagram question?"
+      Back: "Treat each quantity as its OWN sequence with its own table and rule.\nExample border tiles: 8, 12, 16 → Tₙ = 4n + 4.\nInside tiles: 1, 4, 9 → Tₙ = n² (a square array).\nThen answer each part with its matching rule.\nPitfall: do not mix the two counts in one table."
+    tags: ["diagram-patterns", "subject:patterns"]

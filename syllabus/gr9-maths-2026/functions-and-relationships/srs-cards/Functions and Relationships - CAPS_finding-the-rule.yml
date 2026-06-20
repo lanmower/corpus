@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — functions-and-relationships / Functions and Relationships
+deck: "Corpus::Gr9 Maths::Functions and Relationships"
+notes:
+  - guid: 172839405161728a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Step-by-step method: how do you find the rule (formula) of a linear relationship from a table of x and y values?"
+      Back: "1. Check x increases by a constant step (usually 1).\n2. Find the FIRST DIFFERENCE: how much y changes for each step in x. This constant change is the gradient m.\n3. Write y = mx + c.\n4. Find c by substituting any one (x, y) pair and solving.\n5. Check with a second pair.\nExample: x = 1,2,3 → y = 5,8,11. y rises 3 each step ⇒ m = 3. y = 3x + c; at x=1, y=5 ⇒ 3+c=5 ⇒ c=2. Rule: y = 3x + 2."
+    tags: ["finding-the-rule", "linear", "subject:functions-and-relationships"]
+  - guid: 2839405161728a9b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Find the rule (in words and as an equation) for: x = 1,2,3,4 → y = 2,5,8,11."
+      Back: "First difference in y: 5−2 = 3, 8−5 = 3, 11−8 = 3. Constant 3 ⇒ gradient m = 3.\ny = 3x + c. Use x=1, y=2: 3(1)+c = 2 ⇒ c = −1.\nEquation: y = 3x − 1.\nIn words: 'multiply the input by 3 and then subtract 1.'\nCheck x=4: 3(4)−1 = 11 ✓."
+    tags: ["finding-the-rule", "linear", "subject:functions-and-relationships"]
+  - guid: 39405161728a9bac
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Find the rule when x does NOT start at 0 or increase by 1: x = 2,4,6,8 → y = 1,7,13,19."
+      Back: "x jumps by 2 each time; y jumps by 6 each time.\nGradient m = change in y ÷ change in x = 6 ÷ 2 = 3.\ny = 3x + c. Use x=2, y=1: 3(2)+c = 1 ⇒ 6+c = 1 ⇒ c = −5.\nEquation: y = 3x − 5.\nCheck x=8: 3(8)−5 = 19 ✓.\nPitfall: when x does not go up by 1, the first difference in y is NOT the gradient — you must divide Δy by Δx."
+    tags: ["finding-the-rule", "linear", "gradient", "subject:functions-and-relationships"]
+  - guid: 405161728a9bacbd
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Find the rule for the simple proportion table: x = 1,2,3,4 → y = 4,8,12,16."
+      Back: "Each y is exactly 4 times its x (4=4×1, 8=4×2, ...). There is no shift.\nGradient m = 4, and c = 0.\nEquation: y = 4x.\nIn words: 'the output is 4 times the input.'\nQuick test for y = mx (direct proportion): y ÷ x is the same constant for every pair (here always 4)."
+    tags: ["finding-the-rule", "proportion", "subject:functions-and-relationships"]
+  - guid: 5161728a9bacbdce
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "How can you read the constant c straight off a table, and how do you find the gradient quickly?"
+      Back: "Constant c = the y-value when x = 0 (the y-intercept). If the table includes x = 0, c is read directly.\nGradient m = the amount y changes each time x increases by 1 (the first difference). If x steps by more than 1, m = Δy ÷ Δx.\nThen the rule is y = mx + c.\nExample: table has x=0 → y=−2, and y rises 5 per unit x. Then c = −2, m = 5, so y = 5x − 2."
+    tags: ["finding-the-rule", "y-intercept", "gradient", "subject:functions-and-relationships"]
+  - guid: 61728a9bacbdcedf
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "The first differences are NOT constant: x = 1,2,3,4 → y = 1,4,9,16. Find the rule."
+      Back: "First differences: 3, 5, 7 — not constant, so the rule is NOT linear (not y = mx + c).\nLook at the y-values themselves: 1, 4, 9, 16 = 1², 2², 3², 4².\nSo each y is the square of its x.\nEquation: y = x².\nMethod tip: when first differences are not constant, test squaring, or check if the SECOND differences are constant (constant second difference ⇒ quadratic)."
+    tags: ["finding-the-rule", "quadratic", "non-linear", "subject:functions-and-relationships"]

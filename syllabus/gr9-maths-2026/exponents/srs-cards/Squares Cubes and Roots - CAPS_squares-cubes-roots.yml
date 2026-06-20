@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — exponents / Squares Cubes and Roots
+deck: "Corpus::Gr9 Maths::Squares Cubes and Roots"
+notes:
+  - guid: 1c2d3e4f5a6b7081
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Squares Cubes and Roots"
+    fields:
+      Front: "How are square roots and cube roots the inverse of exponents? State √(a²) and ∛(a³)."
+      Back: "A root undoes a power. For a ≥ 0:\n√(a²) = a  (square root undoes squaring)\n∛(a³) = a  (cube root undoes cubing)\nGenerally the n-th root undoes the n-th power. Example: √(7²) = √49 = 7 and ∛(5³) = ∛125 = 5.\nThis is why finding √ or ∛ of a perfect power is just reading off the base."
+    tags: ["roots", "squares-cubes", "subject:exponents"]
+  - guid: 2d3e4f506b7c8192
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Squares Cubes and Roots"
+    fields:
+      Front: "Simplify √(9x⁴). (Method for a square root of a perfect-square monomial)"
+      Back: "Method: take the root of the number part and HALVE the exponent of each variable (because √ = power of ½).\n√(9x⁴) = √9 × √(x⁴) = 3 × x⁴ᐟ² = 3x².\nCheck by squaring: (3x²)² = 9x⁴. ✓\nThis works when the coefficient is a perfect square (9) and each variable exponent is even (4)."
+    tags: ["roots", "monomials", "subject:exponents"]
+  - guid: 3e4f50617c8d92a3
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Squares Cubes and Roots"
+    fields:
+      Front: "Simplify ∛(27x⁶) and ∛(64a³b⁹)."
+      Back: "Method: take the cube root of the number, and DIVIDE each variable's exponent by 3.\n∛(27x⁶) = ∛27 × x⁶÷³ = 3x².\n∛(64a³b⁹) = ∛64 × a³÷³ × b⁹÷³ = 4 × a¹ × b³ = 4ab³.\nCheck: (4ab³)³ = 64a³b⁹. ✓\nFor cube roots the exponents must be multiples of 3 to come out whole."
+    tags: ["roots", "cube-root", "subject:exponents"]
+  - guid: 4f5061728d9ea3b4
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Squares Cubes and Roots"
+    fields:
+      Front: "Simplify √(16x⁸y²) showing every step."
+      Back: "√(16x⁸y²)\n= √16 × √(x⁸) × √(y²)\n= 4 × x⁸ᐟ² × y²ᐟ²\n= 4x⁴y.\nMethod recap: root the number (√16 = 4), halve each exponent (8→4, 2→1). The y¹ is just written y.\nCheck: (4x⁴y)² = 16x⁸y². ✓"
+    tags: ["roots", "monomials", "subject:exponents"]
+  - guid: 5061728e9eafb4c5
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Squares Cubes and Roots"
+    fields:
+      Front: "Estimate √50 between two whole numbers WITHOUT a calculator."
+      Back: "Method: find the perfect squares either side of 50.\n7² = 49 and 8² = 64, so 49 < 50 < 64, meaning 7 < √50 < 8.\nBecause 50 is very close to 49, √50 ≈ 7,1 (just above 7).\nSimilarly for cube roots: 3³ = 27, 4³ = 64, so ∛50 lies between 3 and 4, and closer to 4."
+    tags: ["roots", "estimating", "subject:exponents"]
+  - guid: 61728f90afb0c5d6
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Squares Cubes and Roots"
+    fields:
+      Front: "Between which two consecutive integers does ∛100 lie, and which is it nearer?"
+      Back: "Find perfect cubes around 100:\n4³ = 64 and 5³ = 125, so 64 < 100 < 125, giving 4 < ∛100 < 5.\n100 is between 64 and 125; it is a bit nearer to 125, so ∛100 ≈ 4,6.\nAlways anchor an estimate using the nearest perfect cubes (or squares for √)."
+    tags: ["roots", "estimating", "subject:exponents"]
+  - guid: 728f90a1b0c1d6e7
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Squares Cubes and Roots"
+    fields:
+      Front: "Why can you NOT simplify √(x² + y²) to x + y? (Common error)"
+      Back: "A root does NOT distribute over addition or subtraction.\n√(x² + y²) ≠ x + y.\nCounter-example: x = 3, y = 4 → √(9 + 16) = √25 = 5, but x + y = 7. 5 ≠ 7.\nRoots only split over MULTIPLICATION/division: √(x²y²) = xy. So you can only root a monomial (single product term), never a sum, unless you can factorise it into a perfect square first."
+    tags: ["roots", "pitfall", "subject:exponents"]

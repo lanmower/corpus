@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — data-handling / Dispersion
+deck: "Corpus::Gr9 Maths::Dispersion"
+notes:
+  - guid: b6d8f0a2c4e13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Dispersion"
+    fields:
+      Front: "What is the RANGE and how do you calculate it?"
+      Back: "Range = maximum value − minimum value.\nIt measures the SPREAD of the data (how far apart the extremes are).\n\nExample: 4, 7, 9, 15, 2 → max = 15, min = 2 → range = 15 − 2 = 13.\n\nA large range means widely spread data; a small range means values are close together. The range is easy but only uses the two extremes."
+    tags: ["range", "subject:data-handling"]
+  - guid: d8f0a2c4e6b13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Dispersion"
+    fields:
+      Front: "What are the EXTREMES of a data set?"
+      Back: "The extremes are the smallest value (minimum) and the largest value (maximum) of the ordered data set.\n\nThey define the range (max − min) and are the two endpoints of a box-and-whisker plot. Extremes can sometimes be outliers, but not always."
+    tags: ["extremes", "subject:data-handling"]
+  - guid: f0a2c4e6b8d13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Dispersion"
+    fields:
+      Front: "What is an OUTLIER and how do you spot one?"
+      Back: "An outlier is a data value that is much SMALLER or much LARGER than the rest of the data — it stands far apart from the cluster.\n\nExample: in 21, 23, 22, 25, 90 the value 90 is an outlier.\n\nSpot it by ordering the data and looking for a value with a big gap from the others. Outliers may be errors, or genuine unusual cases — investigate before deciding."
+    tags: ["outliers", "subject:data-handling"]
+  - guid: a2c4e6f8b0d13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Dispersion"
+    fields:
+      Front: "What EFFECT does an outlier have on the range and the mean?"
+      Back: "An outlier greatly INCREASES the RANGE (because it changes max or min), making the spread look bigger than it is for most data.\n\nIt also pulls the MEAN towards itself (up for a high outlier, down for a low one).\n\nThe MEDIAN and MODE are barely affected. So with outliers, report the median and note the outlier separately."
+    tags: ["outliers", "subject:data-handling"]
+  - guid: c4e6a8f0b2d13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Dispersion"
+    fields:
+      Front: "Data: 12, 14, 13, 15, 60. Find the range, then the range without the outlier."
+      Back: "Outlier = 60 (far from the rest).\nFull range = 60 − 12 = 48.\nWithout 60: values 12,13,14,15 → range = 15 − 12 = 3.\n\nThe single outlier inflated the range from 3 to 48 — showing how one extreme value distorts a measure of spread."
+    tags: ["range", "subject:data-handling"]
+  - guid: e6a8c0f2b4d13957
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Dispersion"
+    fields:
+      Front: "Why is the range a LIMITED measure of spread?"
+      Back: "Because it uses ONLY the two extreme values (max and min) and ignores how all the middle data is distributed. One outlier can make the range huge even if 98% of data is tightly clustered.\n\nThe INTERQUARTILE RANGE (IQR = Q3 − Q1) is more reliable for spread because it ignores the extreme 25% on each end."
+    tags: ["range", "subject:data-handling"]

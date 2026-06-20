@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — algebra / Quadratic Equations
+deck: "Corpus::Gr9 Maths::Quadratic Equations"
+notes:
+  - guid: f5071829304a5b6c
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadratic Equations"
+    fields:
+      Front: "State the zero-product rule used to solve quadratics by factorising."
+      Back: "Zero-product rule: if A × B = 0, then A = 0 OR B = 0.\nSo first make one side = 0, factorise the other side into two brackets, then set EACH bracket equal to zero and solve.\nA quadratic usually gives TWO solutions."
+    tags: ["zero-product", "quadratic", "subject:algebra"]
+  - guid: 061829304a5b6c7d
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadratic Equations"
+    fields:
+      Front: "Solve: x² + 5x + 6 = 0."
+      Back: "Factorise: two numbers multiplying to 6, adding to 5 → 2 and 3.\n(x + 2)(x + 3) = 0.\nZero-product: x + 2 = 0 OR x + 3 = 0.\nSo x = −2 OR x = −3.\nBoth are valid solutions."
+    tags: ["zero-product", "quadratic", "trinomial", "subject:algebra"]
+  - guid: 1829304a5b6c7d8e
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadratic Equations"
+    fields:
+      Front: "Solve: x² = 4x (do NOT divide by x)."
+      Back: "Move everything to one side: x² − 4x = 0.\nFactorise (common factor x): x(x − 4) = 0.\nx = 0 OR x − 4 = 0 → x = 0 OR x = 4.\nPITFALL: dividing by x loses the solution x = 0. Always factorise instead."
+    tags: ["zero-product", "quadratic", "common-factor", "subject:algebra"]
+  - guid: 29304a5b6c7d8e9f
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadratic Equations"
+    fields:
+      Front: "Solve: x² − 9 = 0."
+      Back: "Factorise as a difference of squares: (x + 3)(x − 3) = 0.\nx + 3 = 0 OR x − 3 = 0.\nx = −3 OR x = 3 (often written x = ±3).\nAlternatively x² = 9 → x = ±√9 = ±3."
+    tags: ["zero-product", "difference-of-squares", "subject:algebra"]
+  - guid: 304a5b6c7d8e9f01
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadratic Equations"
+    fields:
+      Front: "Solve: 2x² + 7x + 3 = 0."
+      Back: "Factorise (a×c = 6, numbers 1 and 6, split middle): 2x² + x + 6x + 3 = 0 → x(2x+1)+3(2x+1)=0 → (2x + 1)(x + 3) = 0.\n2x + 1 = 0 → x = −1/2.\nx + 3 = 0 → x = −3.\nAnswer: x = −1/2 OR x = −3."
+    tags: ["zero-product", "ax2-trinomial", "subject:algebra"]
+  - guid: 4a5b6c7d8e9f0112
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Quadratic Equations"
+    fields:
+      Front: "Solve: x² + 2x = 15 (rearrange first)."
+      Back: "Make one side zero: x² + 2x − 15 = 0.\nFactorise: numbers multiplying to −15, adding to 2 → 5 and −3.\n(x + 5)(x − 3) = 0.\nx = −5 OR x = 3.\nYou must move the 15 across BEFORE factorising — the zero-product rule only works against 0."
+    tags: ["zero-product", "quadratic", "subject:algebra"]

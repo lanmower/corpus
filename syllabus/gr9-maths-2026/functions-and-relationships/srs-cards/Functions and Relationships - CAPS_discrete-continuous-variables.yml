@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — functions-and-relationships / Functions and Relationships
+deck: "Corpus::Gr9 Maths::Functions and Relationships"
+notes:
+  - guid: 80a1b2c3d4e5f607
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "What is the difference between a DISCRETE and a CONTINUOUS relationship?"
+      Back: "DISCRETE: the input can only take separate, countable values (often whole numbers) — there are gaps between allowed values. Example: number of learners, number of cars. Graphed as separate dots (not joined).\nCONTINUOUS: the input can take ANY value in a range, including fractions/decimals — no gaps. Example: time, length, mass, temperature. Graphed as an unbroken line or curve.\nQuick test: 'can a half make sense?' Half a person → no (discrete); half a minute → yes (continuous)."
+    tags: ["discrete", "continuous", "subject:functions-and-relationships"]
+  - guid: a1b2c3d4e5f60718
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Decide discrete or continuous: (a) cost of n loaves of bread; (b) distance travelled over time; (c) number of goals scored."
+      Back: "(a) n loaves: DISCRETE — you buy whole loaves, n = 1,2,3,... (no half a loaf in the count).\n(b) distance over time: CONTINUOUS — time and distance can take any value, including decimals.\n(c) goals scored: DISCRETE — goals are whole numbers, 0,1,2,...\nRule of thumb: counted things are discrete; measured things (time, length, mass) are continuous."
+    tags: ["discrete", "continuous", "subject:functions-and-relationships"]
+  - guid: b2c3d4e5f6071829
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "What are the INDEPENDENT and DEPENDENT variables, and which goes on which axis?"
+      Back: "INDEPENDENT variable: the input — the value you choose/control. It does NOT depend on the other. Goes on the horizontal x-axis.\nDEPENDENT variable: the output — its value DEPENDS on the input. Goes on the vertical y-axis.\nExample: cost depends on the number of items, so number of items is independent (x) and cost is dependent (y).\nAsk: 'which one depends on the other?' That one is dependent."
+    tags: ["dependent-variable", "independent-variable", "subject:functions-and-relationships"]
+  - guid: c3d4e5f607182930
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Real-life context: a plumber charges cost = R5 × (number of items) + R10 call-out. Identify the variables and find the cost for 6 items."
+      Back: "Equation: C = 5n + 10.\nIndependent variable: n (number of items) — chosen, goes on x-axis.\nDependent variable: C (cost) — depends on n, goes on y-axis.\nThe R10 is a FIXED start value (call-out fee, the cost when n = 0). The R5 is the rate per item (gradient).\nFor 6 items: C = 5(6) + 10 = 30 + 10 = R40.\nThis is discrete (whole items) and linear (constant R5 per item)."
+    tags: ["word-problem", "dependent-variable", "independent-variable", "linear", "subject:functions-and-relationships"]
+  - guid: d4e5f60718293041
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "In a real-life relationship, what do the gradient and the constant (y-intercept) usually mean?"
+      Back: "The CONSTANT c is the starting/fixed value — the output when the input is 0 (e.g. a fixed fee, an initial amount of water in a tank, a flat call-out charge).\nThe GRADIENT m is the RATE of change — how much the output changes for each one-unit increase in the input (e.g. cost per item, litres per minute, rand per hour).\nExample: V = 0,5t + 2 means 2 (kℓ) was there at the start and it fills at 0,5 kℓ per minute."
+    tags: ["word-problem", "gradient", "y-intercept", "rate-of-change", "subject:functions-and-relationships"]
+  - guid: e5f6071829304152
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Why might a real-life graph be drawn with separate dots instead of a joined line? Give an example."
+      Back: "Because the relationship is DISCRETE: only certain input values make sense, so the in-between points have no meaning and must not be joined.\nExample: cost of buying CDs at R50 each — you can buy 1, 2 or 3 CDs but not 2,5 CDs, so the graph is dots at (1,50), (2,100), (3,150), not a continuous line.\nContrast: distance vs time is continuous, so its graph IS a solid line."
+    tags: ["discrete", "continuous", "graph", "subject:functions-and-relationships"]

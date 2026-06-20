@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — graphs / Finding the Equation
+deck: "Corpus::Gr9 Maths::Finding the Equation"
+notes:
+  - guid: 2c6a0e4f8b9d1573
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Finding the Equation"
+    fields:
+      Front: "How do you find the equation of a line from a graph (general method)?"
+      Back: "Step 1: Read c — the y-value where the line cuts the y-axis (x = 0).\nStep 2: Find m — pick two clear points and count rise/run, or use m = (y₂−y₁)/(x₂−x₁).\nStep 3: Substitute m and c into y = mx + c.\nExample: line cuts y-axis at 2 (c=2) and rises 3 up for 1 right (m=3) → y = 3x + 2."
+    tags: ["equation-from-graph", "subject:graphs"]
+  - guid: 7e1c5a9f3b0d2846
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Finding the Equation"
+    fields:
+      Front: "Find the equation of the line through (0;−3) with gradient 4."
+      Back: "The point (0;−3) is the y-intercept, so c = −3. Gradient m = 4.\nSubstitute into y = mx + c:\ny = 4x + (−3)\ny = 4x − 3.\nThat is the equation."
+    tags: ["point-and-gradient", "subject:graphs"]
+  - guid: 1a5e9c3f7b0d2648
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Finding the Equation"
+    fields:
+      Front: "Find the equation of the line with gradient 2 passing through (3;5). (y-intercept not given.)"
+      Back: "Step 1: m = 2, so y = 2x + c.\nStep 2: Substitute the known point (3;5) to find c:\n5 = 2(3) + c → 5 = 6 + c → c = −1.\nStep 3: Write the equation: y = 2x − 1.\nCheck: 2(3) − 1 = 5 ✓."
+    tags: ["point-and-gradient", "subject:graphs"]
+  - guid: 6c0a4e8f2b9d1357
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Finding the Equation"
+    fields:
+      Front: "Find the equation of the line through the two points A(1;3) and B(4;9)."
+      Back: "Step 1: Gradient m = (9 − 3)/(4 − 1) = 6/3 = 2.\nStep 2: Use y = 2x + c and substitute one point, say (1;3):\n3 = 2(1) + c → 3 = 2 + c → c = 1.\nStep 3: Equation: y = 2x + 1.\nCheck with B: 2(4) + 1 = 9 ✓."
+    tags: ["equation-from-two-points", "subject:graphs"]
+  - guid: 9b3e7c1f5a8d0264
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Finding the Equation"
+    fields:
+      Front: "Find the equation of the line through (−2;7) and (2;−1)."
+      Back: "Step 1: m = (−1 − 7)/(2 − (−2)) = −8/4 = −2.\nStep 2: y = −2x + c. Substitute (2;−1):\n−1 = −2(2) + c → −1 = −4 + c → c = 3.\nStep 3: Equation: y = −2x + 3.\nCheck with (−2;7): −2(−2) + 3 = 4 + 3 = 7 ✓."
+    tags: ["equation-from-two-points", "subject:graphs"]
+  - guid: 4f8c0a6e2b1d9735
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Finding the Equation"
+    fields:
+      Front: "Find the equation of a horizontal line through (4;−2), and a vertical line through (4;−2)."
+      Back: "Horizontal line through (4;−2): y stays −2 for all x → equation y = −2 (gradient 0).\nVertical line through (4;−2): x stays 4 for all y → equation x = 4 (gradient undefined).\nUse only the relevant coordinate: horizontal uses the y-value, vertical uses the x-value."
+    tags: ["special-line-equations", "subject:graphs"]
+  - guid: 0d4a8c2f6b9e1357
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Finding the Equation"
+    fields:
+      Front: "Pitfall: a learner finds m = 2 from two points, then writes y = 2x without finding c. Why wrong?"
+      Back: "y = 2x only works if the line passes through the origin (c = 0). Most lines do not.\nYou MUST find c by substituting one known point into y = 2x + c and solving.\nSkipping this gives a parallel line in the wrong place. Always finish: find m, then find c, then write y = mx + c."
+    tags: ["equation-from-two-points", "subject:graphs"]

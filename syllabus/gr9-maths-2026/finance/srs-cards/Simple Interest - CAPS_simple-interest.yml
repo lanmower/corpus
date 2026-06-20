@@ -1,0 +1,66 @@
+# Gr 9 Maths CAPS — finance / Simple Interest
+deck: "Corpus::Gr9 Maths::Simple Interest"
+notes:
+  - guid: aa01bb02cc03dd04
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simple Interest"
+    fields:
+      Front: "State the simple interest formulas and define each symbol."
+      Back: "Interest: I = P × r × t (or I = P·i·n).\nAccumulated amount: A = P + I = P(1 + i·n).\nP = principal (starting amount), r or i = interest rate per year as a DECIMAL, t or n = time in YEARS, I = interest earned/charged, A = final total.\nRemember: simple interest is calculated on the ORIGINAL principal every year."
+    tags: ["simple-interest-formula", "subject:finance"]
+  - guid: bb02cc03dd04ee05
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simple Interest"
+    fields:
+      Front: "R5 000 is invested at 8% simple interest per year for 3 years. Find the interest and the final amount."
+      Back: "Convert rate: 8% = 0,08.\nI = P·r·t = 5 000 × 0,08 × 3 = R1 200.\nA = P + I = 5 000 + 1 200 = R6 200.\nCheck with A = P(1 + i·n) = 5 000(1 + 0,08×3) = 5 000 × 1,24 = R6 200. ✓"
+    tags: ["find-interest-amount", "subject:finance"]
+  - guid: cc03dd04ee05ff06
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simple Interest"
+    fields:
+      Front: "How do you convert a percentage rate to a decimal, and how do you handle time given in months?"
+      Back: "Rate to decimal: divide by 100. e.g. 7,5% = 0,075.\nTime must be in YEARS: divide months by 12. e.g. 18 months = 18 ÷ 12 = 1,5 years; 6 months = 0,5 years.\nCommon mistake: using t = 6 for 6 months — you must use 0,5."
+    tags: ["rate-and-time-conversion", "subject:finance"]
+  - guid: dd04ee05ff06aa07
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simple Interest"
+    fields:
+      Front: "How much interest does R2 400 earn at 10% per year simple interest over 9 months?"
+      Back: "t = 9 ÷ 12 = 0,75 years; r = 0,10.\nI = P·r·t = 2 400 × 0,10 × 0,75 = R180.\nSo after 9 months the interest is R180 and the total is R2 580."
+    tags: ["rate-and-time-conversion", "subject:finance"]
+  - guid: ee05ff06aa07bb08
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simple Interest"
+    fields:
+      Front: "What principal must be invested at 6% simple interest to earn R900 interest in 5 years? (Solve for P)"
+      Back: "I = P·r·t → P = I ÷ (r·t).\nP = 900 ÷ (0,06 × 5) = 900 ÷ 0,30 = R3 000.\nCheck: 3 000 × 0,06 × 5 = R900. ✓"
+    tags: ["solve-for-principal", "subject:finance"]
+  - guid: ff06aa07bb08cc09
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simple Interest"
+    fields:
+      Front: "R4 000 earns R720 simple interest over 4 years. Find the annual interest rate. (Solve for r)"
+      Back: "I = P·r·t → r = I ÷ (P·t).\nr = 720 ÷ (4 000 × 4) = 720 ÷ 16 000 = 0,045.\nAs a percentage: 0,045 × 100 = 4,5% per year.\nRemember to convert the decimal back to a % for the final answer."
+    tags: ["solve-for-rate", "subject:finance"]
+  - guid: aa07bb08cc09dd10
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simple Interest"
+    fields:
+      Front: "How long must R6 000 be invested at 5% simple interest to grow to R7 500? (Solve for t)"
+      Back: "First find I: I = A − P = 7 500 − 6 000 = R1 500.\nt = I ÷ (P·r) = 1 500 ÷ (6 000 × 0,05) = 1 500 ÷ 300 = 5 years."
+    tags: ["solve-for-time", "subject:finance"]
+  - guid: bb08cc09dd10ee11
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simple Interest"
+    fields:
+      Front: "A loan of R12 000 is taken at 11% simple interest for 2 years. How much must be repaid in total?"
+      Back: "I = P·r·t = 12 000 × 0,11 × 2 = R2 640.\nTotal repaid A = P + I = 12 000 + 2 640 = R14 640.\nFor a LOAN, interest is what you pay EXTRA; for an INVESTMENT it is what you EARN. Same formula."
+    tags: ["loans-and-investments", "subject:finance"]
+  - guid: cc09dd10ee11ff12
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Simple Interest"
+    fields:
+      Front: "Common mistake: a learner uses 8 for the rate instead of 0,08 in I = P·r·t. What goes wrong?"
+      Back: "Using r = 8 makes the interest 100× too big (because 8 = 800%).\nAlways convert: 8% = 8 ÷ 100 = 0,08.\nQuick check: simple interest for a few years should be a sensible fraction of P, not many times bigger than P."
+    tags: ["common-mistakes", "subject:finance"]

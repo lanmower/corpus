@@ -1,0 +1,73 @@
+# Gr 9 Maths CAPS — probability / Compound Events
+deck: "Corpus::Gr9 Maths::Compound Events"
+notes:
+  - guid: 5f2f9da66a464271
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "What is a compound (two-stage) event, and what three tools list its sample space?"
+      Back: "A compound event involves two (or more) actions, e.g. tossing two coins, or rolling two dice.\nThree tools to list all outcomes:\n1. Systematic listing,\n2. A two-way table (grid),\n3. A tree diagram.\nEach helps you count the TOTAL outcomes and the favourable ones."
+    tags: ["compound-events", "subject:probability"]
+  - guid: 60302eb77b575382
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "List the full sample space for tossing two coins. How many outcomes?"
+      Back: "Treat the coins as Coin 1 then Coin 2:\nS = {HH, HT, TH, TT} → 4 outcomes.\nThe fundamental counting principle: 2 outcomes × 2 outcomes = 4.\nEach of the 4 is equally likely, so each has probability 1/4."
+    tags: ["sample-space-listing", "subject:probability"]
+  - guid: 71413fc88c686493
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "Two coins are tossed. Find P(at least one Head)."
+      Back: "S = {HH, HT, TH, TT}, total = 4.\n'At least one Head' = {HH, HT, TH} → 3 outcomes.\nP(at least one Head) = 3/4.\nQuicker (complement): the only outcome with no Head is TT, P(TT) = 1/4, so P(at least one Head) = 1 − 1/4 = 3/4."
+    tags: ["sample-space-listing", "subject:probability"]
+  - guid: 825240d99979757a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "How do you build the sample space for rolling two dice, and how many outcomes are there?"
+      Back: "Make a two-way table: rows = die 1 (1–6), columns = die 2 (1–6). Each cell is an ordered pair (d1, d2).\nTotal outcomes = 6 × 6 = 36, all equally likely.\nNote (1,3) and (3,1) are DIFFERENT outcomes. P(any single pair) = 1/36."
+    tags: ["two-dice", "subject:probability"]
+  - guid: 936351ea0a8a8681
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "Two dice are rolled and the scores added. Find P(sum = 7)."
+      Back: "Total outcomes = 36.\nSum 7 pairs: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 outcomes.\nP(sum = 7) = 6/36 = 1/6.\nSum 7 is the MOST likely total. Pitfall: count ordered pairs — (3,4) and (4,3) are separate."
+    tags: ["two-dice", "subject:probability"]
+  - guid: a474621bb19b9792
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "Two dice are rolled. Find P(sum = 2) and P(a double)."
+      Back: "Total = 36.\nSum 2: only (1,1) → 1 outcome → P = 1/36 (the rarest sum).\nDoubles: (1,1),(2,2),(3,3),(4,4),(5,5),(6,6) → 6 outcomes → P(double) = 6/36 = 1/6."
+    tags: ["two-dice", "subject:probability"]
+  - guid: b58572fcc2acba03
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "How do you read a tree diagram to find the probability of a path (e.g. two coins, P(HT))?"
+      Back: "Each branch shows an outcome with its probability. To find a path's probability, MULTIPLY along the branches.\nTwo coins: P(H) = 1/2 then P(T) = 1/2.\nP(HT) = 1/2 × 1/2 = 1/4.\nTo combine several paths (an 'or'), ADD the path probabilities. Multiply along, add across."
+    tags: ["tree-diagrams", "subject:probability"]
+  - guid: c69604ee0fb6cb14
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "A two-way table records 30 learners by gender and whether they wear glasses. How do you read P(a girl who wears glasses)?"
+      Back: "Find the cell that is BOTH 'girl' AND 'glasses' (the intersection of that row and column).\nSay that cell = 6. Total = 30 (use the grand total in the corner).\nP(girl and glasses) = 6/30 = 1/5.\nRow/column totals (margins) give single-event probabilities; inner cells give 'and' probabilities."
+    tags: ["two-way-tables", "subject:probability"]
+  - guid: d7a715002cc7dc25
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "Two dice are rolled. Find P(sum is greater than 9)."
+      Back: "Sums greater than 9 means 10, 11 or 12.\n10: (4,6),(5,5),(6,4) = 3.\n11: (5,6),(6,5) = 2.\n12: (6,6) = 1.\nTotal favourable = 3 + 2 + 1 = 6.\nP(sum > 9) = 6/36 = 1/6.\nPitfall: 'greater than 9' excludes 9 itself."
+    tags: ["two-dice", "subject:probability"]
+  - guid: e8b826113dd8ed36
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Events"
+    fields:
+      Front: "A spinner (1,2,3) is spun and a coin tossed. List the sample space and give P(an even number and a Tail)."
+      Back: "Combine each spinner result with H and T:\nS = {1H, 1T, 2H, 2T, 3H, 3T} → 6 outcomes (3 × 2).\nEven number = 2 only, with Tail → {2T} = 1 outcome.\nP(even and Tail) = 1/6."
+    tags: ["sample-space-listing", "subject:probability"]

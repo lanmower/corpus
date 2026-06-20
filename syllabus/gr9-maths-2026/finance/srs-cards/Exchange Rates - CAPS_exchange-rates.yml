@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — finance / Exchange Rates
+deck: "Corpus::Gr9 Maths::Exchange Rates"
+notes:
+  - guid: 20bb5e07ccaa6f08
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exchange Rates"
+    fields:
+      Front: "What is an exchange rate, and what does 'R18,50 to the dollar' mean?"
+      Back: "An exchange rate tells you how much of one currency you get for another.\n'R18,50 to the dollar' (R/$ = 18,50) means R18,50 = $1.\nTo buy $1 you pay R18,50; to convert dollars to rands you MULTIPLY by 18,50; to convert rands to dollars you DIVIDE by 18,50."
+    tags: ["exchange-rate-basics", "subject:finance"]
+  - guid: 21ccaa6f08ddbb7a09
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exchange Rates"
+    fields:
+      Front: "Using R18,50 = $1, convert $250 to rands."
+      Back: "Rands = dollars × rate = 250 × 18,50 = R4 625.\nRule: foreign → rands, MULTIPLY by the R/foreign rate.\nSo $250 is worth R4 625."
+    tags: ["foreign-to-rand", "subject:finance"]
+  - guid: 22ddbb7a09eecc8b10
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exchange Rates"
+    fields:
+      Front: "Using R18,50 = $1, convert R7 400 to US dollars."
+      Back: "Dollars = rands ÷ rate = 7 400 ÷ 18,50 = $400.\nRule: rands → foreign, DIVIDE by the R/foreign rate.\nSo R7 400 is worth $400."
+    tags: ["rand-to-foreign", "subject:finance"]
+  - guid: 23eecc8b10ffdd9c11
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exchange Rates"
+    fields:
+      Front: "Exchange rates: R23 = £1 and R20 = €1. Convert £150 to rands, and R5 000 to euros."
+      Back: "£150 to rands: 150 × 23 = R3 450.\nR5 000 to euros: 5 000 ÷ 20 = €250.\nAlways match the rate to the currency: use the R/£ rate for pounds and the R/€ rate for euros."
+    tags: ["multiple-currencies", "subject:finance"]
+  - guid: 24ffdd9c11aaee0d12
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exchange Rates"
+    fields:
+      Front: "A jacket costs $80 in the USA and R1 600 in South Africa. If R18,50 = $1, where is it cheaper?"
+      Back: "Convert $80 to rands: 80 × 18,50 = R1 480.\nCompare: USA price R1 480 vs SA price R1 600.\nR1 480 < R1 600, so it is cheaper in the USA (by R120). Always convert to the SAME currency before comparing."
+    tags: ["comparing-prices", "subject:finance"]
+  - guid: 25aaee0d12bbff1e13
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Exchange Rates"
+    fields:
+      Front: "Common mistake: deciding whether to multiply or divide when converting currencies. Give a reliable rule."
+      Back: "Write the rate as R(rate) = 1 foreign unit.\nForeign → Rand: MULTIPLY by the rate (you get a bigger number of rands).\nRand → Foreign: DIVIDE by the rate (you get fewer foreign units).\nSanity check: since R1 is worth less than $1, a rand amount should give a SMALLER dollar number — if it grew, you divided/multiplied the wrong way."
+    tags: ["common-mistakes", "subject:finance"]

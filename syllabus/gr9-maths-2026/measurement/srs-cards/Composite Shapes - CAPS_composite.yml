@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — measurement / Composite Shapes
+deck: "Corpus::Gr9 Maths::Composite Shapes"
+notes:
+  - guid: b1d3f5a7c9028e46
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Composite Shapes"
+    fields:
+      Front: "What is a composite (compound) shape, and what is the general strategy for its area?"
+      Back: "A composite shape is made by joining or cutting out basic shapes (rectangles, triangles, circles…).\nStrategy: \"ADD or SUBTRACT.\"\n1. Split the shape into basic shapes (or see it as a big shape with a piece removed).\n2. Find each basic area.\n3. ADD the parts (if joined) or SUBTRACT (if a hole/cut-out).\nAlways keep units consistent."
+    tags: ["composite", "strategy", "area", "subject:measurement"]
+  - guid: 4c6e8a0b2d137f59
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Composite Shapes"
+    fields:
+      Front: "Find the area of an L-shape: a 10 cm × 8 cm rectangle with a 4 cm × 3 cm rectangle cut out of one corner."
+      Back: "Subtract method:\nBig rectangle = 10 × 8 = 80 cm².\nCut-out rectangle = 4 × 3 = 12 cm².\nArea of L-shape = 80 − 12 = 68 cm².\n(Alternatively, split the L into two rectangles and ADD — you get the same answer.)"
+    tags: ["composite", "L-shape", "area", "subject:measurement"]
+  - guid: 7a9c1e3f5b08d264
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Composite Shapes"
+    fields:
+      Front: "A rectangular plate is 12 cm × 6 cm with a circle of radius 2 cm cut out. Find the SHADED (remaining) area (π ≈ 3,14)."
+      Back: "Shaded area = rectangle − circle.\nRectangle = 12 × 6 = 72 cm².\nCircle = πr² = 3,14 × 2² = 3,14 × 4 = 12,56 cm².\nShaded = 72 − 12,56 = 59,44 cm².\nShaded-region rule: outer shape area − inner (removed) shape area."
+    tags: ["composite", "shaded-region", "area", "subject:measurement"]
+  - guid: 1f3a5c7e9b04d286
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Composite Shapes"
+    fields:
+      Front: "Find the area of a shape made of a rectangle (8 m × 5 m) with a triangle (base 8 m, height 3 m) joined on top to form a 'house' shape."
+      Back: "Add method:\nRectangle = 8 × 5 = 40 m².\nTriangle = ½ × b × h = ½ × 8 × 3 = 12 m².\nTotal area = 40 + 12 = 52 m².\nMethod: identify each basic shape, compute separately, then ADD because they are joined (no overlap)."
+    tags: ["composite", "add-method", "area", "subject:measurement"]
+  - guid: 9b2d4f6a8c01e357
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Composite Shapes"
+    fields:
+      Front: "How do you find the PERIMETER of a composite shape, and what is the key trap?"
+      Back: "Perimeter = total length of the OUTER boundary only. Trace the outline and add every outside edge.\nKey trap: edges where two shapes JOIN are inside the figure — they are NOT part of the perimeter, so do NOT count them.\nAlso: for curved parts use the relevant fraction of circumference (e.g. a semicircle edge = πr), not the area formula."
+    tags: ["composite", "perimeter", "subject:measurement"]
+  - guid: 3d6f8a0c2e15b794
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Composite Shapes"
+    fields:
+      Front: "A running track shape is a 20 m × 10 m rectangle with a semicircle (radius 5 m) on each short end. Find the total area (π ≈ 3,14)."
+      Back: "Two semicircles of radius 5 m make ONE full circle.\nRectangle = 20 × 10 = 200 m².\nFull circle = πr² = 3,14 × 5² = 3,14 × 25 = 78,5 m².\nTotal area = 200 + 78,5 = 278,5 m².\nTip: two equal semicircles always combine into one whole circle."
+    tags: ["composite", "semicircle", "area", "subject:measurement"]
+  - guid: 6e8a0c2f4b17d935
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Composite Shapes"
+    fields:
+      Front: "Find a missing length on a composite L-shape so the outline 'closes'."
+      Back: "Rule: on a rectilinear (right-angled) composite shape, opposite sets of sides must sum equally.\nHorizontal: the top edges added must equal the bottom edge. Vertical: the left edges added must equal the right edge.\nExample: if the full bottom is 10 cm and the top is split into 6 cm + an unknown x, then 6 + x = 10, so x = 4 cm. Use this to fill in unlabelled sides before finding perimeter or area."
+    tags: ["composite", "missing-length", "subject:measurement"]

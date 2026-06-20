@@ -1,0 +1,66 @@
+# Gr 9 Maths CAPS — patterns / Representing Patterns
+deck: "Corpus::Gr9 Maths::Representing Patterns"
+notes:
+  - guid: 9f60718293a4b938
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Representing Patterns"
+    fields:
+      Front: "What are the four ways to represent a number pattern in Grade 9?"
+      Back: "1. In WORDS (e.g. 'start at 3 and add 4 each time').\n2. As a FLOW DIAGRAM (input n → operation box → output Tₙ).\n3. In a TABLE (top row = position n, bottom row = term value Tₙ).\n4. ALGEBRAICALLY, as a formula (e.g. Tₙ = 4n − 1).\nAll four describe the SAME pattern; you should be able to convert between them."
+    tags: ["representations", "subject:patterns"]
+  - guid: a0718293b4c5d049
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Representing Patterns"
+    fields:
+      Front: "Build a table (n vs Tₙ) for the rule Tₙ = 4n − 1 for n = 1 to 5."
+      Back: "n  : 1 | 2 | 3 | 4 | 5\nTₙ : 3 | 7 | 11 | 15 | 19\nWorked: T₁ = 4(1) − 1 = 3, T₂ = 4(2) − 1 = 7, ..., T₅ = 4(5) − 1 = 19.\nThe top row is the POSITION (input); the bottom row is the TERM VALUE (output)."
+    tags: ["tables", "subject:patterns"]
+  - guid: b18293a4c5d6e15a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Representing Patterns"
+    fields:
+      Front: "A flow diagram shows: input n → (×3) → (+2) → output. Write the rule and find the output for n = 10."
+      Back: "Follow the boxes in order: multiply by 3, then add 2.\nRule: Tₙ = 3n + 2.\nFor n = 10: 10 × 3 = 30, then 30 + 2 = 32. Output = 32.\nPitfall: do the operations in the ORDER shown in the flow diagram, left to right."
+    tags: ["flow-diagrams", "subject:patterns"]
+  - guid: c293a4b5d6e7f26b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Representing Patterns"
+    fields:
+      Front: "Turn the WORDS 'start at 5 and add 6 each time' into a table and a formula."
+      Back: "Table (n vs Tₙ):\nn  : 1 | 2 | 3 | 4\nTₙ : 5 | 11 | 17 | 23\nFormula: d = 6, c = 5 − 6 = −1, so Tₙ = 6n − 1.\nCheck: T₁ = 6(1) − 1 = 5 ✓.\nThis shows words → table → algebra are interchangeable views of one pattern."
+    tags: ["representations", "subject:patterns"]
+  - guid: d3a4b5c6e7f80a7c
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Representing Patterns"
+    fields:
+      Front: "From this table, find the rule Tₙ.  n: 1,2,3,4  Tₙ: 8, 13, 18, 23"
+      Back: "Read down the table to find the constant difference: 13 − 8 = 5, 18 − 13 = 5 ✓, so d = 5.\nc = T₀ = first term − d = 8 − 5 = 3.\nTₙ = 5n + 3.\nCheck against the table: T₄ = 5(4) + 3 = 23 ✓."
+    tags: ["tables", "subject:patterns"]
+  - guid: e4b5c6d7f8091b8d
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Representing Patterns"
+    fields:
+      Front: "Describe the rule Tₙ = 7n + 1 IN WORDS (the way an exam wants)."
+      Back: "'Multiply the position number by 7 and then add 1.'\nEquivalently: 'Start at 8 (the first term) and add 7 each time.'\nBoth describe Tₙ = 7n + 1. The first describes the formula directly; the second describes how the sequence grows term to term."
+    tags: ["rule-in-words", "subject:patterns"]
+  - guid: f5c6d7e809102c9e
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Representing Patterns"
+    fields:
+      Front: "Draw (describe) a flow diagram for the rule Tₙ = 2n + 5."
+      Back: "Input n → [× 2] → [+ 5] → Output Tₙ\nThe input is the position number n; the first box multiplies by 2; the second box adds 5; the output is the term value.\nExample trace: n = 4 → 8 → 13, so T₄ = 13.\nPitfall: keep multiply-before-add order to match Tₙ = 2n + 5."
+    tags: ["flow-diagrams", "subject:patterns"]
+  - guid: 06d7e8f91021300f
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Representing Patterns"
+    fields:
+      Front: "A flow diagram input/output table reads: input 1,2,3,4 → output 4, 7, 10, 13. Find the operation rule."
+      Back: "Outputs differ by 3 each time → multiply by 3 somewhere.\nTest ×3: 1×3 = 3, need 4, so add 1. Check: 2×3 + 1 = 7 ✓, 4×3 + 1 = 13 ✓.\nRule: output = 3 × input + 1, i.e. Tₙ = 3n + 1.\nFlow diagram: n → [×3] → [+1] → Tₙ."
+    tags: ["flow-diagrams", "subject:patterns"]
+  - guid: 17e8f90a12314120
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Representing Patterns"
+    fields:
+      Front: "Why must the input row of a pattern table be the position number n, not the term value?"
+      Back: "The formula Tₙ = dn + c takes the POSITION n as input and produces the TERM VALUE as output.\nIf you accidentally feed term values into n you get nonsense.\nConvention: top/left row = n = 1, 2, 3, 4, ... (positions); bottom/right row = T₁, T₂, T₃, ... (values).\nKeep these straight to avoid wrong substitutions."
+    tags: ["tables", "subject:patterns"]

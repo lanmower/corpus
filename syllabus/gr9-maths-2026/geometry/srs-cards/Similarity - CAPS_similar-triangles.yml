@@ -1,0 +1,38 @@
+# Gr 9 Maths CAPS — geometry / Similarity
+deck: "Corpus::Gr9 Maths::Similarity"
+notes:
+  - guid: a6f0d8b67e9c0231
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Similarity"
+    fields:
+      Front: "What does ~ mean for triangles, and how do similar triangles differ from congruent ones?"
+      Back: "~ means 'is similar to' — same SHAPE but not necessarily the same size.\nSimilar triangles have: all corresponding angles equal AND all corresponding sides in the same ratio (proportion).\nCongruent (≅) is a special case of similar where the ratio is 1:1 (same size).\nOrder of letters still matters: △ABC ~ △DEF means ∠A = ∠D, ∠B = ∠E, ∠C = ∠F."
+    tags: ["similarity-meaning", "subject:geometry"]
+  - guid: b8a1e9c78f0d1342
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Similarity"
+    fields:
+      Front: "State the condition for two triangles to be similar (the equiangular rule)."
+      Back: "If two triangles are equiangular (all three pairs of corresponding angles equal), then they are similar — their corresponding sides are in proportion.\nReason wording: '∠∠∠' or 'equiangular △s'.\nNote: you only need to show TWO pairs of equal angles, because the third pair is then automatically equal (∠ sum of △)."
+    tags: ["equiangular", "subject:geometry"]
+  - guid: c0b2f0d89a1e2453
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Similarity"
+    fields:
+      Front: "△ABC ~ △DEF. AB = 4, BC = 6, DE = 6. Find EF."
+      Back: "Corresponding sides are in the same ratio:\nAB/DE = BC/EF\n4/6 = 6/EF\nCross-multiply: 4 × EF = 6 × 6\n4 EF = 36\nEF = 9.\nMethod: pair each side with its CORRESPONDING side using the letter order, then build one fraction = another and cross-multiply."
+    tags: ["proportion-missing-side", "subject:geometry"]
+  - guid: d2c3a1e90b2f3564
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Similarity"
+    fields:
+      Front: "Two similar triangles have scale factor (ratio) 2:5. The smaller triangle has a side of 8 cm. Find the matching side of the larger triangle."
+      Back: "Let the larger side = x.\nsmall/large = 2/5\n8/x = 2/5\n2x = 8 × 5 = 40\nx = 20 cm.\nThe ratio of any pair of corresponding sides equals the scale factor 2:5. Check: 8:20 simplifies to 2:5 ✓."
+    tags: ["scale-factor", "subject:geometry"]
+  - guid: e4d5b2f01c3a4675
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Similarity"
+    fields:
+      Front: "A 1,5 m tall person casts a 2 m shadow. A nearby tree casts a 10 m shadow at the same time. How tall is the tree (similar triangles)?"
+      Back: "The sun's rays make equal angles, so the two triangles are equiangular ⇒ similar.\nheight/shadow is the same ratio for both:\nperson: 1,5/2 = tree: h/10\nh/10 = 1,5/2\n2h = 1,5 × 10 = 15\nh = 7,5 m.\nThe tree is 7,5 m tall."
+    tags: ["similarity-application", "subject:geometry"]

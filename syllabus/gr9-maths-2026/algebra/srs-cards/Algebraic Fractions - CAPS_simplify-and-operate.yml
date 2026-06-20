@@ -1,0 +1,66 @@
+# Gr 9 Maths CAPS — algebra / Algebraic Fractions
+deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+notes:
+  - guid: e859607182930415
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+    fields:
+      Front: "Simplify the algebraic fraction (6x²)/(9x)."
+      Back: "Cancel common factors top and bottom.\nNumbers: 6/9 = 2/3. Variables: x²/x = x.\nAnswer: 2x/3.\nYou may only cancel FACTORS (things multiplied), never individual terms added/subtracted."
+    tags: ["simplify-fraction", "subject:algebra"]
+  - guid: f960718293041526
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+    fields:
+      Front: "Simplify (x² − 9)/(x + 3) by factorising first."
+      Back: "Factorise the numerator (difference of squares): x² − 9 = (x + 3)(x − 3).\nFraction = [(x + 3)(x − 3)]/(x + 3).\nCancel the common factor (x + 3).\nAnswer: x − 3.\nNEVER cancel before factorising — you can't cancel the x² or the 9 individually."
+    tags: ["simplify-fraction", "factorise-then-cancel", "subject:algebra"]
+  - guid: 0a7182930415263a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+    fields:
+      Front: "Simplify (x² + 5x + 6)/(x² − 4)."
+      Back: "Factorise top and bottom:\nTop: x² + 5x + 6 = (x + 2)(x + 3).\nBottom: x² − 4 = (x + 2)(x − 2).\n= [(x + 2)(x + 3)] / [(x + 2)(x − 2)].\nCancel (x + 2).\nAnswer: (x + 3)/(x − 2)."
+    tags: ["simplify-fraction", "factorise-then-cancel", "subject:algebra"]
+  - guid: 1b8293041526374b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+    fields:
+      Front: "Multiply algebraic fractions: (2x/3) × (9/(4x))."
+      Back: "Multiply straight across, but cancel common factors first to keep it simple.\nNumerators 2x and 9; denominators 3 and 4x.\nCancel: 2x/4x = 1/2; 9/3 = 3.\nLeft with (1/1)×(3/2) = 3/2.\nAnswer: 3/2. (You may cancel diagonally across a multiplication.)"
+    tags: ["multiply-fractions", "subject:algebra"]
+  - guid: 2c9304152637485c
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+    fields:
+      Front: "Divide algebraic fractions: (x/4) ÷ (x²/8)."
+      Back: "Dividing by a fraction = multiply by its RECIPROCAL (flip the second one).\n(x/4) ÷ (x²/8) = (x/4) × (8/x²).\n= (x·8)/(4·x²) = 8x/4x² = 2/x.\nRule: 'keep, change, flip'."
+    tags: ["divide-fractions", "subject:algebra"]
+  - guid: 3da4152637485d61
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+    fields:
+      Front: "Add fractions with the same denominator: (3x)/5 + (2x)/5."
+      Back: "Same denominator ⇒ just add the numerators, keep the denominator.\n(3x + 2x)/5 = 5x/5 = x.\nAnswer: x.\nNever add denominators."
+    tags: ["add-fractions", "subject:algebra"]
+  - guid: 4eb5263748596e72
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+    fields:
+      Front: "Add fractions with different denominators: x/2 + x/3."
+      Back: "Find the LCD of 2 and 3, which is 6. Rewrite each fraction over 6.\nx/2 = 3x/6; x/3 = 2x/6.\nAdd: 3x/6 + 2x/6 = 5x/6.\nAnswer: 5x/6.\nMultiply top and bottom by what's needed to reach the LCD."
+    tags: ["add-fractions", "lcd", "subject:algebra"]
+  - guid: 5fc63748596071f8
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+    fields:
+      Front: "Subtract: (2x + 1)/3 − (x − 2)/4."
+      Back: "LCD of 3 and 4 is 12.\n(2x+1)/3 = 4(2x+1)/12 = (8x+4)/12.\n(x−2)/4 = 3(x−2)/12 = (3x−6)/12.\nSubtract numerators (keep the bracket!): (8x+4) − (3x−6) = 8x+4−3x+6 = 5x+10.\nAnswer: (5x + 10)/12.\nPitfall: the minus must flip BOTH terms of (3x−6)."
+    tags: ["subtract-fractions", "lcd", "subject:algebra"]
+  - guid: 60d748596071829a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Algebraic Fractions"
+    fields:
+      Front: "Add with variable denominators: 1/x + 2/(3x)."
+      Back: "LCD of x and 3x is 3x.\n1/x = 3/(3x); 2/(3x) stays.\nAdd: 3/(3x) + 2/(3x) = 5/(3x).\nAnswer: 5/(3x)."
+    tags: ["add-fractions", "lcd", "subject:algebra"]

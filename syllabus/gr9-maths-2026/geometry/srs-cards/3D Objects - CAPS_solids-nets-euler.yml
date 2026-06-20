@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — geometry / 3D Objects
+deck: "Corpus::Gr9 Maths::3D Objects"
+notes:
+  - guid: a9a1e9b67e9c0231
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::3D Objects"
+    fields:
+      Front: "Define faces, edges and vertices of a 3D object."
+      Back: "Face: a flat (or curved) surface of the solid.\nEdge: a line segment where two faces meet.\nVertex (plural vertices): a corner point where edges meet.\nExample — a cube has 6 faces, 12 edges and 8 vertices."
+    tags: ["faces-edges-vertices", "subject:geometry"]
+  - guid: b1b2f0c78f0d1342
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::3D Objects"
+    fields:
+      Front: "State Euler's formula for polyhedra and use it to check a cube."
+      Back: "Euler's formula: F + V − E = 2 (Faces + Vertices − Edges = 2).\nCube: F = 6, V = 8, E = 12.\n6 + 8 − 12 = 2 ✓\nThe formula holds for any polyhedron (solid with flat faces). It does NOT apply to a cylinder/cone/sphere (they have curved surfaces)."
+    tags: ["euler-formula", "subject:geometry"]
+  - guid: c3c3a1d89a1e2453
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::3D Objects"
+    fields:
+      Front: "A polyhedron has 5 faces and 9 edges. Use Euler's formula to find the number of vertices."
+      Back: "F + V − E = 2\n5 + V − 9 = 2\nV − 4 = 2\nV = 6.\n(This solid is a triangular prism: 5 faces, 9 edges, 6 vertices.)"
+    tags: ["euler-formula", "subject:geometry"]
+  - guid: d5d4b2e90b2f3564
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::3D Objects"
+    fields:
+      Front: "What is a NET, and describe the nets of a cube and a cylinder."
+      Back: "A net is a 2D flat pattern that folds up to form a 3D object — it shows every face opened out.\nCube: 6 equal squares (e.g. a row of 4 with one square above and one below — a cross shape).\nCylinder: 2 circles (top and bottom) + 1 rectangle (the curved surface unrolled); the rectangle's length equals the circumference of the circle (2πr)."
+    tags: ["nets", "subject:geometry"]
+  - guid: e7e5b2f01c3a4675
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::3D Objects"
+    fields:
+      Front: "Describe the nets of a (rectangular) prism and a square-based pyramid."
+      Back: "Rectangular prism: 6 rectangles — 2 identical ends plus 4 sides folded out around them.\nSquare-based pyramid: 1 square base + 4 triangular faces, one triangle hinged on each side of the square.\nTriangular prism: 2 triangles (the ends) + 3 rectangles (the sides)."
+    tags: ["nets", "subject:geometry"]
+  - guid: f9f6d4a12c3a5786
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::3D Objects"
+    fields:
+      Front: "How are PRISMS and PYRAMIDS named, and what is the difference between them?"
+      Back: "Both are named after the shape of their BASE.\nPrism: two identical parallel bases joined by rectangles; the cross-section is the same all the way along (e.g. triangular prism, hexagonal prism, rectangular prism = cuboid).\nPyramid: one base and all other faces are triangles meeting at a single apex (e.g. triangular pyramid = tetrahedron, square-based pyramid).\nKey difference: a prism has 2 identical bases; a pyramid has 1 base and comes to a point."
+    tags: ["naming-prisms-pyramids", "subject:geometry"]

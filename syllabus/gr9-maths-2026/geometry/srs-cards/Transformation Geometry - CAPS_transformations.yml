@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — geometry / Transformation Geometry
+deck: "Corpus::Gr9 Maths::Transformation Geometry"
+notes:
+  - guid: a8a1e9b67e9c0231
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Transformation Geometry"
+    fields:
+      Front: "Name the four transformations and state which ones change SIZE and which change ORIENTATION."
+      Back: "Translation (slide), Reflection (flip), Rotation (turn), Enlargement/Reduction (resize).\nSize: only enlargement/reduction changes size. Translation, reflection and rotation keep size and shape the same — they are 'rigid' (congruent image).\nOrientation: reflection REVERSES orientation (mirror image); rotation turns it; translation keeps orientation; enlargement keeps orientation but changes size."
+    tags: ["transformations-overview", "subject:geometry"]
+  - guid: b0b2f0c78f0d1342
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Transformation Geometry"
+    fields:
+      Front: "Give the coordinate rule for a translation, and translate A(2;−3) by 4 units right and 5 units up."
+      Back: "Rule: (x;y) → (x + a; y + b), where a = horizontal shift (right +, left −) and b = vertical shift (up +, down −).\nHere a = +4, b = +5:\nA(2;−3) → (2 + 4; −3 + 5) = A'(6;2).\nSize, shape and orientation are unchanged."
+    tags: ["translation-rule", "subject:geometry"]
+  - guid: c2c3a1d89a1e2453
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Transformation Geometry"
+    fields:
+      Front: "Give the reflection rules in the x-axis, the y-axis and the line y = x, with one example each for P(3;5)."
+      Back: "Reflection in x-axis: (x;y) → (x;−y).  P(3;5) → (3;−5).\nReflection in y-axis: (x;y) → (−x;y).  P(3;5) → (−3;5).\nReflection in y = x: (x;y) → (y;x) (swap the coordinates).  P(3;5) → (5;3).\nA reflection produces a mirror image — orientation is reversed but size and shape stay the same."
+    tags: ["reflection-rules", "subject:geometry"]
+  - guid: d4d4b2e90b2f3564
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Transformation Geometry"
+    fields:
+      Front: "Give the rotation rules about the ORIGIN for 90° and 180°, with examples for B(4;1)."
+      Back: "Rotation 90° anticlockwise: (x;y) → (−y;x).  B(4;1) → (−1;4).\nRotation 90° clockwise: (x;y) → (y;−x).  B(4;1) → (1;−4).\nRotation 180° (either direction): (x;y) → (−x;−y).  B(4;1) → (−4;−1).\nSize and shape are kept; only the orientation/position turns about (0;0)."
+    tags: ["rotation-rules", "subject:geometry"]
+  - guid: e6e5b2f01c3a4675
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Transformation Geometry"
+    fields:
+      Front: "Give the coordinate rule for an enlargement through the origin with scale factor k, and enlarge C(2;−3) by factor 3."
+      Back: "Rule: (x;y) → (kx; ky).\nC(2;−3) with k = 3 → (3×2; 3×−3) = C'(6;−9).\nScale factor k > 1 ⇒ enlargement (bigger); 0 < k < 1 ⇒ reduction (smaller, e.g. k = ½ halves it).\nThe image is SIMILAR to the original: same shape, lengths multiplied by k, area multiplied by k²."
+    tags: ["enlargement-rule", "subject:geometry"]
+  - guid: f8f6d4a12c3a5786
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Transformation Geometry"
+    fields:
+      Front: "Under an enlargement with scale factor 4, a shape has area 5 cm². What is the image's area, and why?"
+      Back: "Area is multiplied by k² (the SQUARE of the scale factor), not by k.\nk = 4, so k² = 16.\nImage area = 5 × 16 = 80 cm².\nReason: enlargement scales every LENGTH by k, and area depends on length × length, hence k². (Perimeter, being a length, scales by k = 4.)"
+    tags: ["enlargement-area", "subject:geometry"]

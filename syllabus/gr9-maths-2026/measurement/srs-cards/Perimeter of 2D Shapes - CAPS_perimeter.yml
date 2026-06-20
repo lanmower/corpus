@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — measurement / Perimeter of 2D Shapes
+deck: "Corpus::Gr9 Maths::Perimeter of 2D Shapes"
+notes:
+  - guid: 4a1c9f2e7b035d68
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Perimeter of 2D Shapes"
+    fields:
+      Front: "What is the perimeter of a 2D shape, and what units is it measured in?"
+      Back: "Perimeter = the total distance around the OUTSIDE of a closed 2D shape, i.e. the sum of the lengths of all its sides.\nIt is a LENGTH, so it uses length units (mm, cm, m, km) — NOT square units.\nPitfall: perimeter is a 1D measure; only area uses squared units (cm²)."
+    tags: ["perimeter-definition", "subject:measurement"]
+  - guid: 7d2e0a3f9c14b6e7
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Perimeter of 2D Shapes"
+    fields:
+      Front: "How do you find the perimeter of ANY polygon (e.g. an irregular 5-sided field)?"
+      Back: "Rule: P = sum of ALL the side lengths. Add every side once, going around the shape.\nWorked example (irregular pentagon, sides 4, 6, 3, 5, 7 cm):\nP = 4 + 6 + 3 + 5 + 7 = 25 cm.\nPitfall: don't miss a side or count one twice — trace around the outline. All sides must be in the SAME unit before adding."
+    tags: ["polygon", "perimeter", "subject:measurement"]
+  - guid: 1b8c4d6e2f905a37
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Perimeter of 2D Shapes"
+    fields:
+      Front: "Square with side s: give the perimeter formula and a worked example."
+      Back: "P = 4s   (4 equal sides).\nWorked example, s = 9 cm:\nP = 4 × 9 = 36 cm.\nReverse: if P = 36 cm, then s = P ÷ 4 = 36 ÷ 4 = 9 cm."
+    tags: ["square", "perimeter", "subject:measurement"]
+  - guid: 9e3f1a7c5d28b04f
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Perimeter of 2D Shapes"
+    fields:
+      Front: "Rectangle with length ℓ and breadth b: give the perimeter formula and a worked example."
+      Back: "P = 2ℓ + 2b = 2(ℓ + b)   (two long sides + two short sides).\nWorked example, ℓ = 12 m, b = 5 m:\nP = 2(12 + 5) = 2 × 17 = 34 m.\nPitfall: P = 2(ℓ + b), NOT ℓ + b. Reverse: if P = 34 and ℓ = 12, then b = (P ÷ 2) − ℓ = 17 − 12 = 5 m."
+    tags: ["rectangle", "perimeter", "subject:measurement"]
+  - guid: 3c6a8e0b1d49f725
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Perimeter of 2D Shapes"
+    fields:
+      Front: "How do you find the perimeter of a triangle (scalene, isosceles, equilateral)?"
+      Back: "P = a + b + c (add the three sides).\nScalene (5, 6, 8 cm): P = 5 + 6 + 8 = 19 cm.\nEquilateral side s: P = 3s, e.g. s = 7 → P = 21 cm.\nIsosceles (two equal sides s, base b): P = 2s + b, e.g. s = 10, b = 6 → P = 26 cm."
+    tags: ["triangle", "perimeter", "subject:measurement"]
+  - guid: 6f0d2b4a8c13e795
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Perimeter of 2D Shapes"
+    fields:
+      Front: "Parallelogram and rhombus: how do you find the perimeter?"
+      Back: "Parallelogram: opposite sides equal, so with sides a and b, P = 2a + 2b = 2(a + b). E.g. a = 8, b = 5 → P = 2(13) = 26 cm.\nRhombus: ALL four sides equal (length s), so P = 4s. E.g. s = 6 → P = 24 cm.\nPitfall: use the SIDE lengths for perimeter, never the height or the diagonals."
+    tags: ["parallelogram", "rhombus", "perimeter", "subject:measurement"]
+  - guid: 2a9c7e5b0d68f143
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Perimeter of 2D Shapes"
+    fields:
+      Front: "Trapezium: how do you find the perimeter, and what is a common mistake?"
+      Back: "A trapezium has 4 sides; just add all four: P = a + b + c + d (the two parallel sides plus the two non-parallel sides).\nWorked example (parallel sides 10 cm and 6 cm, slant sides 5 cm and 5 cm):\nP = 10 + 6 + 5 + 5 = 26 cm.\nPitfall: the perpendicular HEIGHT h is used only for AREA, not perimeter. Do not add h."
+    tags: ["trapezium", "perimeter", "subject:measurement"]
+  - guid: 8b1f3d5a9c07e264
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Perimeter of 2D Shapes"
+    fields:
+      Front: "A missing side: a rectangle has perimeter 50 cm and length 15 cm. Find the breadth."
+      Back: "P = 2(ℓ + b)\n50 = 2(15 + b)\n25 = 15 + b   (divide both sides by 2)\nb = 25 − 15 = 10 cm.\nMethod: substitute the known values, then solve like an equation."
+    tags: ["rectangle", "missing-side", "perimeter", "subject:measurement"]

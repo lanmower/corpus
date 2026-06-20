@@ -1,0 +1,66 @@
+# Gr 9 Maths CAPS — measurement / Area of 2D Shapes
+deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+notes:
+  - guid: a0c2e4f6b8137d59
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+    fields:
+      Front: "What is area, and what units is it measured in?"
+      Back: "Area = the amount of flat SURFACE a 2D shape covers — how much space is inside its boundary.\nIt is measured in SQUARE units: mm², cm², m², km², hectares (ha).\nPitfall: area always uses squared units; perimeter uses plain length units. Different quantities!"
+    tags: ["area-definition", "subject:measurement"]
+  - guid: d3f5a7c9e0248b16
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+    fields:
+      Front: "Area of a square and a rectangle: give the formulas with worked examples."
+      Back: "Square (side s): A = s².  e.g. s = 6 cm → A = 6² = 36 cm².\nRectangle (length ℓ, breadth b): A = ℓ × b.  e.g. ℓ = 8 m, b = 5 m → A = 8 × 5 = 40 m².\nPitfall: square the unit too — 6 cm × 6 cm = 36 cm², not 36 cm."
+    tags: ["square", "rectangle", "area", "subject:measurement"]
+  - guid: 6a8c0e2f4b139d57
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+    fields:
+      Front: "Area of a triangle: give the formula, explain h, and a worked example."
+      Back: "A = ½ × b × h, where b = base and h = PERPENDICULAR height (the height at right angles to that base, NOT the slant side).\nWorked example, b = 10 cm, h = 6 cm:\nA = ½ × 10 × 6 = 30 cm².\nPitfall: use the perpendicular height, not a slanted side length. For a right-angled triangle the two legs are base and height."
+    tags: ["triangle", "area", "subject:measurement"]
+  - guid: 1e4a6c8b0d35f927
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+    fields:
+      Front: "Area of a parallelogram: give the formula and a worked example, and explain why it is not b × slant side."
+      Back: "A = b × h, where b = base, h = perpendicular height between the two parallel sides.\nWorked example, b = 12 cm, h = 5 cm:\nA = 12 × 5 = 60 cm².\nWhy not the slant side? A parallelogram 'shears' to a rectangle of the same base and perpendicular height, so the area depends on h (the straight-up distance), not the slanted side length."
+    tags: ["parallelogram", "area", "subject:measurement"]
+  - guid: 8c1f3a5e7b09d246
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+    fields:
+      Front: "Area of a rhombus: give the two formulas and a worked example using the diagonals."
+      Back: "Method 1 (diagonals): A = ½ × d₁ × d₂.\nMethod 2 (like a parallelogram): A = b × h.\nWorked example, diagonals d₁ = 8 cm, d₂ = 6 cm:\nA = ½ × 8 × 6 = 24 cm².\nThe diagonals of a rhombus cross at right angles, which is why the ½ × d₁ × d₂ formula works."
+    tags: ["rhombus", "area", "subject:measurement"]
+  - guid: 3b6d8f0a2c14e795
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+    fields:
+      Front: "Area of a trapezium: give the formula, name the parts, and a worked example."
+      Back: "A = ½ × (a + b) × h, where a and b are the two PARALLEL sides and h is the perpendicular distance between them.\nWorked example, a = 10 cm, b = 6 cm, h = 4 cm:\nA = ½ × (10 + 6) × 4 = ½ × 16 × 4 = 32 cm².\nPitfall: a and b MUST be the parallel sides; h must be perpendicular, not a slant side."
+    tags: ["trapezium", "area", "subject:measurement"]
+  - guid: 9d2a4c6e8b07f315
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+    fields:
+      Front: "Area of a circle: give the formula and a worked example (π ≈ 3,14)."
+      Back: "A = πr², where r is the radius (NOT the diameter).\nWorked example, r = 5 cm:\nA = 3,14 × 5² = 3,14 × 25 = 78,5 cm².\nPitfall: square the RADIUS first, then multiply by π. If given the diameter, halve it first: r = d ÷ 2. Don't confuse with circumference C = 2πr."
+    tags: ["circle", "area", "subject:measurement"]
+  - guid: 5f8b0d2a4c16e937
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+    fields:
+      Front: "A circle has diameter 14 cm. Find its area (use π ≈ 22/7)."
+      Back: "First find the radius: r = d ÷ 2 = 14 ÷ 2 = 7 cm.\nA = πr² = 22/7 × 7² = 22/7 × 49 = 22 × 7 = 154 cm².\nPitfall: you were given the DIAMETER (14), so you must halve it to r = 7 before squaring."
+    tags: ["circle", "area", "from-diameter", "subject:measurement"]
+  - guid: 2e5c7a9b1d04f386
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Area of 2D Shapes"
+    fields:
+      Front: "A rectangle has area 48 cm² and length 8 cm. Find its breadth."
+      Back: "A = ℓ × b\n48 = 8 × b\nb = 48 ÷ 8 = 6 cm.\nMethod: to find a missing dimension, substitute the known values and divide. Always include the correct unit (cm here, since the answer is a length)."
+    tags: ["rectangle", "missing-side", "area", "subject:measurement"]

@@ -1,0 +1,87 @@
+# Gr 9 Maths CAPS — patterns / Linear Sequences
+deck: "Corpus::Gr9 Maths::Linear Sequences"
+notes:
+  - guid: 1a2f3c4d5e6b7a08
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "What is a numeric pattern with a constant difference (a linear sequence)?"
+      Back: "A sequence where you add (or subtract) the SAME number to get from each term to the next.\nThat fixed number is the constant (common) difference, d.\nExample: 3, 7, 11, 15, ... adds 4 each time, so d = 4.\nBecause the difference between consecutive terms is constant, the rule for the nth term is LINEAR: Tₙ = dn + c."
+    tags: ["linear-sequence", "subject:patterns"]
+  - guid: 2b3c4d5e6f7a8b91
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "How do you find the constant difference d of a sequence?"
+      Back: "Subtract any term from the term AFTER it: d = T₂ − T₁ = T₃ − T₂ (and so on).\nExample: 5, 8, 11, 14, ...\nd = 8 − 5 = 3, and check 11 − 8 = 3, 14 − 11 = 3. ✓\nPitfall: the difference must be the SAME between every pair. If it changes, the sequence is NOT linear (it may be quadratic or geometric)."
+    tags: ["constant-difference", "subject:patterns"]
+  - guid: 3c4d5e6f7a8b9c02
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "What is the general formula for the nth term of a linear sequence, and what do d and c mean?"
+      Back: "Tₙ = dn + c\nd = the constant difference (T₂ − T₁).\nc = T₀ = the term BEFORE the first term = (first term − d).\nThink of c as 'where the sequence would start at position 0'.\nOnce you know d and c, substitute any position n to get that term."
+    tags: ["general-term", "subject:patterns"]
+  - guid: 4d5e6f7a8b9c0d13
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "Find the rule Tₙ for the sequence 7, 12, 17, 22, ..."
+      Back: "Step 1: d = 12 − 7 = 5.\nStep 2: c = T₀ = first term − d = 7 − 5 = 2.\nStep 3: Tₙ = dn + c = 5n + 2.\nCheck: T₁ = 5(1) + 2 = 7 ✓, T₃ = 5(3) + 2 = 17 ✓.\nAlways verify your rule on at least two known terms."
+    tags: ["general-term", "subject:patterns"]
+  - guid: 5e6f7a8b9c0d1e24
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "Find the rule Tₙ for a DECREASING sequence: 20, 17, 14, 11, ..."
+      Back: "Step 1: d = 17 − 20 = −3 (negative because it decreases).\nStep 2: c = T₀ = 20 − (−3) = 20 + 3 = 23.\nStep 3: Tₙ = −3n + 23.\nCheck: T₁ = −3(1) + 23 = 20 ✓, T₄ = −3(4) + 23 = 11 ✓.\nPitfall: keep the sign of d; for a decreasing sequence d is negative."
+    tags: ["general-term", "subject:patterns"]
+  - guid: 6f7a8b9c0d1e2f35
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "Find the 50th term of the sequence 4, 9, 14, 19, ..."
+      Back: "Step 1: d = 9 − 4 = 5, c = 4 − 5 = −1, so Tₙ = 5n − 1.\nStep 2: substitute n = 50: T₅₀ = 5(50) − 1 = 250 − 1 = 249.\nFinding a far-off term is exactly why we build the rule — never list out 50 terms by hand."
+    tags: ["specific-term", "subject:patterns"]
+  - guid: 7a8b9c0d1e2f3a46
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "Extend the sequence 6, 11, 16, 21, ... by three more terms, two ways."
+      Back: "Quick way (add d): d = 5, so continue 26, 31, 36.\nFormula way: Tₙ = 5n + 1, so T₅ = 26, T₆ = 31, T₇ = 36.\nBoth agree. The formula is essential when the question jumps far ahead (e.g. 'the 80th term')."
+    tags: ["extending-sequences", "subject:patterns"]
+  - guid: 8b9c0d1e2f3a4b57
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "Which term of the sequence 5, 8, 11, 14, ... is equal to 95? (Find the position n.)"
+      Back: "Step 1: rule is Tₙ = 3n + 2.\nStep 2: set Tₙ = 95 → 3n + 2 = 95.\nStep 3: solve: 3n = 93 → n = 31.\nAnswer: 95 is the 31st term.\nAlways state the position as a whole number — n counts position so it must be a positive integer."
+    tags: ["which-term", "subject:patterns"]
+  - guid: 9c0d1e2f3a4b5c68
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "Is 100 a term of the sequence 3, 7, 11, 15, ...? Show how to decide."
+      Back: "Rule: d = 4, c = 3 − 4 = −1, so Tₙ = 4n − 1.\nSet 4n − 1 = 100 → 4n = 101 → n = 25.25.\nn is NOT a whole number, so 100 is NOT a term of the sequence.\nPitfall: a non-integer n means the value does not appear; you must say so explicitly."
+    tags: ["which-term", "subject:patterns"]
+  - guid: a0d1e2f3b4c5d679
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "The 3rd term of a linear sequence is 17 and the 7th term is 37. Find Tₙ."
+      Back: "Between T₃ and T₇ there are 7 − 3 = 4 steps of d.\nChange in value = 37 − 17 = 20, so 4d = 20 → d = 5.\nWork back: T₀ = T₃ − 3d = 17 − 15 = 2, so c = 2.\nTₙ = 5n + 2.\nCheck: T₇ = 5(7) + 2 = 37 ✓."
+    tags: ["general-term", "subject:patterns"]
+  - guid: b1e2f3a4c5d6e78a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "Why is c in Tₙ = dn + c equal to (first term − d) and not just the first term?"
+      Back: "Because Tₙ = dn + c must give the first term when n = 1: T₁ = d(1) + c = d + c.\nSo c = T₁ − d = (first term − d).\nc is the value at position 0 (T₀), one step before T₁.\nPitfall: students often write c = first term; that is wrong unless d = 0."
+    tags: ["general-term", "subject:patterns"]
+  - guid: c2f3a4b5d6e7f89b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Linear Sequences"
+    fields:
+      Front: "A sequence has rule Tₙ = 7n − 4. Find the first three terms and the 100th term."
+      Back: "T₁ = 7(1) − 4 = 3.\nT₂ = 7(2) − 4 = 10.\nT₃ = 7(3) − 4 = 17.\nFirst three terms: 3, 10, 17.\nT₁₀₀ = 7(100) − 4 = 700 − 4 = 696.\nThe constant difference is 7 (the coefficient of n)."
+    tags: ["general-term", "subject:patterns"]

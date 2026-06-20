@@ -1,0 +1,45 @@
+# Gr 9 Maths CAPS — functions-and-relationships / Functions and Relationships
+deck: "Corpus::Gr9 Maths::Functions and Relationships"
+notes:
+  - guid: b1c2d3e4f5061728
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "What is a flow diagram (function machine) and how do you read it?"
+      Back: "A flow diagram shows a relationship as a 'machine': an INPUT enters on the left, passes through one or more operation boxes (the RULE), and an OUTPUT comes out on the right.\nRead it left → right: do each operation in order.\nExample: input → ×4 → +1 → output. For input 3: 3×4 = 12, then 12+1 = 13. Output = 13.\nThe input is the independent value; the output depends on it."
+    tags: ["flow-diagram", "subject:functions-and-relationships"]
+  - guid: c2d3e4f506172839
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Apply the two-operation machine input → ×3 → −5 → output to the inputs 2, 0, −4."
+      Back: "Do the operations IN ORDER (multiply first, then subtract):\n2 → 3×2 = 6 → 6−5 = 1.\n0 → 3×0 = 0 → 0−5 = −5.\n−4 → 3×(−4) = −12 → −12−5 = −17.\nOutputs: 1, −5, −17.\nPitfall: never do +/− before the × if the × box comes first — order matters."
+    tags: ["flow-diagram", "applying-a-rule", "subject:functions-and-relationships"]
+  - guid: d3e4f50617283940
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Working backwards: a machine is input → ×2 → +7 → output. The output is 19. Find the input."
+      Back: "Work backwards using INVERSE (opposite) operations, in REVERSE order.\nForward order: ×2 then +7. Reverse order: undo +7 first (subtract 7), then undo ×2 (divide by 2).\nStart at output 19: 19 − 7 = 12, then 12 ÷ 2 = 6.\nInput = 6.\nCheck forwards: 6×2 = 12, 12+7 = 19 ✓.\nKey idea: + ↔ −, × ↔ ÷, and reverse the sequence of steps."
+    tags: ["flow-diagram", "inverse-operations", "working-backwards", "subject:functions-and-relationships"]
+  - guid: e4f5061728394051
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "List the inverse of each operation used when reversing a flow diagram."
+      Back: "Inverse (opposite) operations:\n+a  →  −a\n−a  →  +a\n×a  →  ÷a\n÷a  →  ×a\nx²  →  √x (for non-negative values)\nWhen working from output back to input you must (1) replace each operation by its inverse AND (2) apply them in the REVERSE order to how the machine ran them."
+    tags: ["flow-diagram", "inverse-operations", "subject:functions-and-relationships"]
+  - guid: f50617283940516a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "Machine input → −3 → ×4 → output. Outputs are 8, −12, 0. Find each input (work backwards)."
+      Back: "Forward order: −3 then ×4. Reverse: undo ×4 first (÷4), then undo −3 (+3).\nOutput 8: 8÷4 = 2, 2+3 = 5 ⇒ input 5.\nOutput −12: −12÷4 = −3, −3+3 = 0 ⇒ input 0.\nOutput 0: 0÷4 = 0, 0+3 = 3 ⇒ input 3.\nCheck (5): 5−3 = 2, 2×4 = 8 ✓.\nPitfall: divide before adding because ×4 was the LAST forward step, so it is undone FIRST."
+    tags: ["flow-diagram", "inverse-operations", "working-backwards", "subject:functions-and-relationships"]
+  - guid: 0617283940516a7b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Functions and Relationships"
+    fields:
+      Front: "A single machine multiplies the input by itself (input → x² → output). Find the output for −5, 6, 0 and explain the sign trap."
+      Back: "Square each input (multiply it by itself):\n−5 → (−5)² = (−5)×(−5) = 25.\n6 → 6² = 36.\n0 → 0² = 0.\nOutputs: 25, 36, 0.\nSign trap: a negative input squared is POSITIVE because a negative times a negative is positive. (−5)² = 25, NOT −25. (−5² without brackets would mean −(5²) = −25, a different thing.)"
+    tags: ["flow-diagram", "quadratic", "subject:functions-and-relationships"]

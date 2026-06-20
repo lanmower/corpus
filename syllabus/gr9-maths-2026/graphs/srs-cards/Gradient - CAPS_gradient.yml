@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — graphs / Gradient
+deck: "Corpus::Gr9 Maths::Gradient"
+notes:
+  - guid: 3e9a1f7c5b2d8064
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient"
+    fields:
+      Front: "What is gradient and what are the formulas for it?"
+      Back: "Gradient (m) measures the steepness and direction of a line — how much it rises for each step across.\nm = rise/run = Δy/Δx = (y₂ − y₁)/(x₂ − x₁)\n• rise = change in y (vertical, up is positive).\n• run = change in x (horizontal, right is positive).\nA bigger |m| means a steeper line."
+    tags: ["gradient", "subject:graphs"]
+  - guid: b7d2049f6a1c3e85
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient"
+    fields:
+      Front: "Find the gradient of the line through A(1;2) and B(5;10)."
+      Back: "Use m = (y₂ − y₁)/(x₂ − x₁).\nLet (x₁;y₁) = (1;2) and (x₂;y₂) = (5;10).\nm = (10 − 2)/(5 − 1) = 8/4 = 2.\nSo the gradient is 2: the line rises 2 units for every 1 unit across.\nCheck: swapping the points gives (2−10)/(1−5) = −8/−4 = 2 — same answer, so order does not matter as long as you are consistent."
+    tags: ["gradient-two-points", "subject:graphs"]
+  - guid: 4f8c2a6e0d9b1735
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient"
+    fields:
+      Front: "Find the gradient through P(−2;5) and Q(3;−5). Watch the negative signs."
+      Back: "m = (y₂ − y₁)/(x₂ − x₁) with (x₁;y₁)=(−2;5), (x₂;y₂)=(3;−5).\nm = (−5 − 5)/(3 − (−2)) = (−10)/(3 + 2) = −10/5 = −2.\nGradient = −2 (negative → line slopes downward to the right).\nPitfall: 3 − (−2) becomes 3 + 2 = 5; subtracting a negative adds."
+    tags: ["gradient-two-points", "subject:graphs"]
+  - guid: 6a0e4c8f2b7d9153
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient"
+    fields:
+      Front: "How do you tell positive, negative, zero and undefined gradient apart?"
+      Back: "• Positive m: line goes UP from left to right (/).\n• Negative m: line goes DOWN from left to right (\\).\n• Zero gradient (m = 0): horizontal line (—); rise = 0, so 0/run = 0.\n• Undefined gradient: vertical line (|); run = 0, so rise/0 is undefined (you cannot divide by zero)."
+    tags: ["gradient-types", "subject:graphs"]
+  - guid: 1c5f9b3a7e0d2648
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient"
+    fields:
+      Front: "Why is the gradient of a vertical line undefined but of a horizontal line zero?"
+      Back: "Horizontal line: all points have the SAME y, so Δy = 0. m = Δy/Δx = 0/Δx = 0 → gradient 0.\nVertical line: all points have the SAME x, so Δx = 0. m = Δy/Δx = Δy/0, and dividing by zero is undefined → gradient undefined.\nKey contrast: 0/something = 0 (fine), but something/0 = undefined."
+    tags: ["gradient-types", "subject:graphs"]
+  - guid: 9e3a7c1f5b8d0426
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient"
+    fields:
+      Front: "How can you find gradient by counting blocks on a graph?"
+      Back: "Step 1: Pick two clear points where the line crosses grid corners.\nStep 2: Count the vertical jump between them = rise (up +, down −).\nStep 3: Count the horizontal jump = run (right +, left −).\nStep 4: m = rise/run and simplify.\nExample: from one point go up 6 and right 2 → m = 6/2 = 3."
+    tags: ["gradient-from-graph", "subject:graphs"]
+  - guid: 5d8b2f0a4c6e9137
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient"
+    fields:
+      Front: "Which is steeper, a line with gradient 4 or a line with gradient −5?"
+      Back: "Steepness depends on the SIZE of the gradient (its absolute value), not its sign.\n|4| = 4 and |−5| = 5. Since 5 > 4, the line with gradient −5 is steeper.\nThe sign only tells direction (up or down); the magnitude tells steepness."
+    tags: ["steepness", "subject:graphs"]
+  - guid: 2a6c0e8f4b1d7359
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient"
+    fields:
+      Front: "Pitfall: a learner computes m for A(2;7), B(6;3) as (6−2)/(3−7). Fix it."
+      Back: "They put the x-differences on top and y-differences on the bottom — that is upside down.\nGradient is Δy over Δx: m = (y₂ − y₁)/(x₂ − x₁) = (3 − 7)/(6 − 2) = −4/4 = −1.\nRemember: rise (y) on top, run (x) on the bottom. Keep the SAME point as 'first' in both numerator and denominator."
+    tags: ["gradient-two-points", "subject:graphs"]

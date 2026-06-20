@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — graphs / Real-Life Graphs
+deck: "Corpus::Gr9 Maths::Real-Life Graphs"
+notes:
+  - guid: 2a6e0c4f8b9d1357
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real-Life Graphs"
+    fields:
+      Front: "On a distance–time graph, what does the gradient represent?"
+      Back: "Gradient = rise/run = change in distance ÷ change in time = SPEED (or velocity).\n• Steeper line → faster speed (more distance in the same time).\n• Gentler slope → slower speed.\n• Horizontal line (gradient 0) → distance not changing → the object is STATIONARY (at rest).\nExample: rising 100 km over 2 h gives gradient 100/2 = 50 km/h."
+    tags: ["distance-time", "subject:graphs"]
+  - guid: 7c1a5e9f3b0d2486
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real-Life Graphs"
+    fields:
+      Front: "A distance–time graph rises, then is flat, then rises more steeply. Describe the journey."
+      Back: "• Rising section: the object is moving away at a steady speed (gradient = that speed).\n• Flat (horizontal) section: gradient 0 → distance constant → the object is stopped/resting.\n• Steeper rising section: moving again but FASTER than before (bigger gradient).\nReading slopes in order tells the whole story of the trip."
+    tags: ["distance-time", "subject:graphs"]
+  - guid: 1e5c9a3f7b0d2648
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real-Life Graphs"
+    fields:
+      Front: "On a distance–time graph, what does a line sloping DOWNWARD (negative gradient) mean?"
+      Back: "A downward slope means distance from the start is DECREASING as time goes on — the object is RETURNING toward the starting point.\nThe steeper the downward slope, the faster the return.\nWhen the line reaches distance 0, the object is back at the start."
+    tags: ["distance-time", "subject:graphs"]
+  - guid: 6a0c4e8f2b9d1573
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real-Life Graphs"
+    fields:
+      Front: "In a real-life cost graph (e.g. taxi fare = R8 per km + R20 call-out), what do gradient and y-intercept mean?"
+      Back: "Equation: cost = 8 × (km) + 20, like y = mx + c.\n• y-intercept c = 20 → the FIXED starting cost (call-out fee) before travelling any distance (at km = 0).\n• gradient m = 8 → the RATE: cost increases R8 for each extra km.\nSo intercept = fixed/base amount; gradient = cost per unit (rate of change)."
+    tags: ["rate-graphs", "subject:graphs"]
+  - guid: 9f3c7a1e5b8d0264
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real-Life Graphs"
+    fields:
+      Front: "What is the difference between CONTINUOUS and DISCRETE data on a graph?"
+      Back: "• Continuous data can take ANY value in a range (e.g. time, distance, temperature). Plot as a SOLID line — points in between have meaning.\n• Discrete data takes only separate, countable values (e.g. number of learners, number of cars). Plot as SEPARATE points (or a dotted guide) — you cannot have 2.5 cars, so the gaps are not joined.\nRule: join points with a line only if every value between makes sense."
+    tags: ["continuous-discrete", "subject:graphs"]
+  - guid: 4c8a0e2f6b1d9375
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real-Life Graphs"
+    fields:
+      Front: "A water tank graph shows volume rising steeply, then gently, then flat. Interpret each part."
+      Back: "Gradient = rate of filling (litres per minute).\n• Steep rise: filling FAST (high flow rate).\n• Gentle rise: still filling but SLOWER (lower flow rate).\n• Flat line: gradient 0 → volume not changing → the tap is OFF or the tank is FULL.\nAlways link the slope to 'how fast the quantity is changing'."
+    tags: ["rate-graphs", "subject:graphs"]
+  - guid: 0a4e8c2f6b9d1735
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Real-Life Graphs"
+    fields:
+      Front: "Why must you always read the AXIS LABELS and UNITS before interpreting a real-life graph?"
+      Back: "The same shape means different things depending on what the axes measure. Distance–time gradient is speed, but cost–quantity gradient is price per item.\nUnits also set the rate's units (e.g. km/h vs R/litre).\nMethod: 1) read what each axis represents and its units, 2) note the scale, 3) only then interpret intercepts (starting value) and gradient (rate of change)."
+    tags: ["reading-real-graphs", "subject:graphs"]

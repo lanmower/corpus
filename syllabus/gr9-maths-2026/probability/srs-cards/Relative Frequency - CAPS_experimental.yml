@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — probability / Relative Frequency
+deck: "Corpus::Gr9 Maths::Relative Frequency"
+notes:
+  - guid: e852c0f39b016248
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Relative Frequency"
+    fields:
+      Front: "What is relative frequency (experimental probability)? Give the formula."
+      Back: "It is the probability worked out from the RESULTS of an actual experiment.\nRelative frequency = (number of times the event occurred) ÷ (total number of trials).\nExample: a drawing pin lands 'point up' 18 times in 50 throws → relative frequency = 18/50 = 0,36 = 36%."
+    tags: ["relative-frequency", "subject:probability"]
+  - guid: f963d104ac127359
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Relative Frequency"
+    fields:
+      Front: "What is the difference between THEORETICAL and EXPERIMENTAL probability?"
+      Back: "Theoretical: worked out by reasoning, P = favourable ÷ total, assuming fairness (e.g. P(Head) = 1/2).\nExperimental (relative frequency): worked out from real data, = times occurred ÷ trials.\nThey are usually CLOSE but not always equal. Theory predicts; experiment measures what actually happened."
+    tags: ["theoretical-vs-experimental", "subject:probability"]
+  - guid: 0a74e215bd238460
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Relative Frequency"
+    fields:
+      Front: "Why does experimental probability get CLOSER to theoretical probability with more trials?"
+      Back: "This is the Law of Large Numbers. In a few trials, luck can make results uneven (e.g. 7 Heads in 10 tosses = 0,7).\nAs the number of trials grows, the relative frequency settles down and converges toward the true theoretical value (0,5 for a fair coin).\nMore trials = more reliable estimate."
+    tags: ["convergence", "subject:probability"]
+  - guid: 1b85f326ce349571
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Relative Frequency"
+    fields:
+      Front: "A coin is tossed 200 times and lands Heads 118 times. Find the relative frequency of Heads and compare with theory."
+      Back: "Relative frequency = 118/200 = 0,59 = 59%.\nTheoretical P(Heads) = 1/2 = 0,5 = 50%.\nThe experimental value (0,59) is a bit higher than theory (0,5). With even more tosses we'd expect it to move closer to 0,5. A small difference is normal."
+    tags: ["relative-frequency", "subject:probability"]
+  - guid: 2c960437df45a682
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Relative Frequency"
+    fields:
+      Front: "When MUST you use experimental probability instead of theoretical?"
+      Back: "When outcomes are NOT equally likely or you cannot reason them out, e.g.:\n- a bent/biased coin or weighted die,\n- a drawing pin landing point-up or down,\n- the chance a bus is late, or a seed germinates.\nThere is no fair-counting formula, so you collect data and use times occurred ÷ trials."
+    tags: ["theoretical-vs-experimental", "subject:probability"]
+  - guid: 3d071548e056b793
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Relative Frequency"
+    fields:
+      Front: "A die is rolled 60 times. The number 6 appears 18 times. Does this prove the die is unfair?"
+      Back: "Experimental P(6) = 18/60 = 0,3. Theoretical = 1/6 ≈ 0,17.\nThe gap is fairly large, which is SUSPICIOUS, but 60 rolls is not many — chance alone could cause it.\nTo decide fairly, roll MANY more times. If P(6) stays near 0,3 over thousands of rolls, the die is probably biased."
+    tags: ["theoretical-vs-experimental", "subject:probability"]
+  - guid: 4e182659f167c804
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Relative Frequency"
+    fields:
+      Front: "A frequency table shows colours drawn (with replacement): Red 24, Blue 36, Green 60. Estimate P(Blue)."
+      Back: "Total trials = 24 + 36 + 60 = 120.\nP(Blue) ≈ relative frequency = 36/120 = 0,3 = 30%.\nThis is an ESTIMATE of the true probability based on the data; more draws would refine it.\nPitfall: divide by the total (120), not by the number of colours (3)."
+    tags: ["relative-frequency", "subject:probability"]
+  - guid: 5f293760026ad915
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Relative Frequency"
+    fields:
+      Front: "If relative frequency = 0,28 over 50 trials, how many times did the event occur?"
+      Back: "Rearrange the formula: times occurred = relative frequency × trials.\ntimes occurred = 0,28 × 50 = 14.\nCheck: 14 ÷ 50 = 0,28. ✓"
+    tags: ["relative-frequency", "subject:probability"]

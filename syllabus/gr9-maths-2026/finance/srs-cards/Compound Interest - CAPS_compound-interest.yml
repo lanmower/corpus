@@ -1,0 +1,52 @@
+# Gr 9 Maths CAPS — finance / Compound Interest
+deck: "Corpus::Gr9 Maths::Compound Interest"
+notes:
+  - guid: dd10ee11ff120013
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Interest"
+    fields:
+      Front: "State the compound interest formula and explain how it differs from simple interest."
+      Back: "A = P(1 + i)ⁿ, where P = principal, i = interest rate per period (decimal), n = number of periods, A = final amount.\nDifference: with COMPOUND interest you earn interest on the interest already added (the new balance), so growth speeds up. SIMPLE interest is only ever on the original P.\nInterest earned = A − P."
+    tags: ["compound-interest-formula", "subject:finance"]
+  - guid: ee11ff12001324aa
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Interest"
+    fields:
+      Front: "R5 000 is invested at 8% compound interest per year for 3 years. Find the final amount."
+      Back: "A = P(1 + i)ⁿ = 5 000(1 + 0,08)³ = 5 000 × (1,08)³.\n(1,08)³ = 1,08 × 1,08 × 1,08 = 1,259712.\nA = 5 000 × 1,259712 = R6 298,56.\nInterest = 6 298,56 − 5 000 = R1 298,56."
+    tags: ["growth-over-n-years", "subject:finance"]
+  - guid: ff12001324aabb14
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Interest"
+    fields:
+      Front: "Compare simple vs compound: R5 000 at 8% for 3 years. Which earns more and by how much?"
+      Back: "Simple: I = 5 000 × 0,08 × 3 = R1 200 → A = R6 200.\nCompound: A = 5 000(1,08)³ = R6 298,56 → interest R1 298,56.\nCompound earns more by 6 298,56 − 6 200 = R98,56.\nCompound always ≥ simple (equal only after the first year); the gap grows over time."
+    tags: ["compare-simple-vs-compound", "subject:finance"]
+  - guid: 001324aabb14cc15
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Interest"
+    fields:
+      Front: "Show year-by-year how R1 000 grows at 10% compound interest for 2 years (to see why it compounds)."
+      Back: "Year 1: interest = 10% of 1 000 = R100 → balance R1 100.\nYear 2: interest = 10% of 1 100 = R110 (on the NEW balance) → balance R1 210.\nFormula check: 1 000(1,10)² = 1 000 × 1,21 = R1 210. ✓\nNote year 2 earns R110, more than year 1's R100 — that extra R10 is interest on interest."
+    tags: ["growth-over-n-years", "subject:finance"]
+  - guid: 1324aabb14cc15dd
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Interest"
+    fields:
+      Front: "A car worth R200 000 LOSES value (depreciates) at 12% per year. Find its value after 2 years."
+      Back: "For depreciation (decrease), use A = P(1 − i)ⁿ.\nA = 200 000(1 − 0,12)² = 200 000 × (0,88)².\n(0,88)² = 0,7744.\nA = 200 000 × 0,7744 = R154 880."
+    tags: ["depreciation", "subject:finance"]
+  - guid: 24aabb14cc15dd16
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Interest"
+    fields:
+      Front: "How do you calculate a power like (1,06)⁴ by hand if you have no exponent key?"
+      Back: "Multiply the base by itself n times, step by step.\n(1,06)⁴ = 1,06 × 1,06 × 1,06 × 1,06.\n1,06 × 1,06 = 1,1236.\n1,1236 × 1,06 = 1,191016.\n1,191016 × 1,06 = 1,26247696.\nKeep many decimals during working; only round the FINAL money answer to 2 decimals (cents)."
+    tags: ["calculating-powers", "subject:finance"]
+  - guid: aabb14cc15dd1617
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Compound Interest"
+    fields:
+      Front: "Common mistake: a learner computes 5 000 × 1,08 × 3 for 3 years of compound interest. Why is that wrong?"
+      Back: "That is simple-interest-style thinking. Compound needs the EXPONENT n, not multiplication by n.\nWrong: 5 000 × 1,08 × 3.\nCorrect: 5 000 × (1,08)³ — raise (1 + i) to the power of the number of years.\nMultiply the rate factor by itself n times, not by n."
+    tags: ["common-mistakes", "subject:finance"]

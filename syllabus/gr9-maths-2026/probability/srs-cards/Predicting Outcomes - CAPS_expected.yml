@@ -1,0 +1,59 @@
+# Gr 9 Maths CAPS — probability / Predicting Outcomes
+deck: "Corpus::Gr9 Maths::Predicting Outcomes"
+notes:
+  - guid: 71413f0021666725
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Predicting Outcomes"
+    fields:
+      Front: "What is the formula for the expected (predicted) number of times an event occurs?"
+      Back: "Expected number = probability of the event × number of trials.\nExpected = P(event) × n.\nThis PREDICTS roughly how often an event happens over many trials; the real count will be close but usually not exact."
+    tags: ["expected-number", "subject:probability"]
+  - guid: 825240337b777836
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Predicting Outcomes"
+    fields:
+      Front: "A fair die is rolled 300 times. How many 6s do you expect?"
+      Back: "P(6) = 1/6.\nExpected number = P × n = 1/6 × 300 = 50.\nSo about 50 sixes. Pitfall: you would NOT necessarily get exactly 50 — but 50 is the best prediction."
+    tags: ["expected-number", "subject:probability"]
+  - guid: 936351446c888947
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Predicting Outcomes"
+    fields:
+      Front: "A coin is tossed 80 times. How many Heads are expected? How many Tails?"
+      Back: "P(Heads) = 1/2.\nExpected Heads = 1/2 × 80 = 40.\nExpected Tails = 1/2 × 80 = 40.\nCheck: expected Heads + expected Tails = 40 + 40 = 80 = total trials. ✓"
+    tags: ["expected-number", "subject:probability"]
+  - guid: a47462559d999058
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Predicting Outcomes"
+    fields:
+      Front: "A spinner lands on red with probability 0,3. In 200 spins, how many reds are expected?"
+      Back: "Expected reds = P(red) × n = 0,3 × 200 = 60.\nSo about 60 reds out of 200 spins.\nYou can use a decimal probability directly — no need to convert to a fraction first."
+    tags: ["expected-number", "subject:probability"]
+  - guid: b585720660aaa169
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Predicting Outcomes"
+    fields:
+      Front: "In a survey, 35% of people prefer tea. In a town of 4000, predict how many prefer tea."
+      Back: "Expected = P × n = 35% × 4000 = 0,35 × 4000 = 1400.\nSo about 1400 people. This uses experimental probability (the survey) to predict for a larger group.\nPitfall: convert the percentage to a decimal (0,35) before multiplying."
+    tags: ["expected-number", "subject:probability"]
+  - guid: c69604772dbbb270
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Predicting Outcomes"
+    fields:
+      Front: "A factory finds 2% of bulbs are faulty. In a batch of 1500, how many faulty bulbs are expected?"
+      Back: "Expected faulty = 2% × 1500 = 0,02 × 1500 = 30.\nSo about 30 faulty bulbs.\nThis prediction helps plan quality control even though the exact number varies batch to batch."
+    tags: ["expected-number", "subject:probability"]
+  - guid: d7a715998ecccd81
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Predicting Outcomes"
+    fields:
+      Front: "Working backwards: a die was rolled n times and about 25 fours were expected. Find n. (P(4) = 1/6)"
+      Back: "Expected = P × n → 25 = 1/6 × n.\nMultiply both sides by 6: n = 25 × 6 = 150.\nSo the die was rolled about 150 times.\nRearranging: n = expected ÷ P."
+    tags: ["expected-number", "subject:probability"]
+  - guid: e8b826ffcfddd092
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Predicting Outcomes"
+    fields:
+      Front: "Two dice are rolled 180 times. How many times do you expect a sum of 7?"
+      Back: "P(sum = 7) = 6/36 = 1/6.\nExpected = 1/6 × 180 = 30.\nSo about 30 times.\nThis links compound-event probability with prediction: first find P from the 36 outcomes, then multiply by the number of trials."
+    tags: ["expected-number", "subject:probability"]

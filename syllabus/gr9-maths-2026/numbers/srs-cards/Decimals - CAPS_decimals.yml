@@ -1,0 +1,157 @@
+# Gr 9 Maths CAPS — numbers / Decimals
+deck: "Corpus::Gr9 Maths::Decimals"
+notes:
+  - guid: a1f3c8e29b04d6f7
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "What is the place value of each digit in 4.728?"
+      Back: "Read positions after the decimal point as tenths, hundredths, thousandths.\n4 = ones (units)\n7 = 7 tenths = 7/10\n2 = 2 hundredths = 2/100\n8 = 8 thousandths = 8/1000\nSo 4.728 = 4 + 0.7 + 0.02 + 0.008.\nTip: 1st place = tenths, 2nd = hundredths, 3rd = thousandths."
+    tags: ["place-value", "subject:numbers"]
+  - guid: b7d20e4af19c3680
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Write 'three and forty-five thousandths' as a decimal."
+      Back: "Thousandths means 3 decimal places.\n45 thousandths = 045 in the three places after the point.\nAnswer: 3.045\nCommon mistake: writing 3.45 (that is 45 hundredths). You must fill the empty tenths place with 0."
+    tags: ["place-value", "subject:numbers"]
+  - guid: c3e91a07d8b426f5
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Compare: which is bigger, 0.4 or 0.38? Explain."
+      Back: "Give both the same number of decimal places by adding a trailing zero.\n0.4 = 0.40\nCompare 0.40 and 0.38 → 40 hundredths vs 38 hundredths.\n∴ 0.4 > 0.38\nWarning: do NOT think 0.38 is bigger because it has more digits. More digits ≠ bigger."
+    tags: ["comparing-decimals", "subject:numbers"]
+  - guid: d8a4f6029c1e73b5
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Method: how do you add or subtract decimals correctly?"
+      Back: "1. Line up the decimal points (and the place-value columns) under each other.\n2. Fill empty places with zeros so all numbers have the same length.\n3. Add/subtract column by column, carrying or borrowing as usual.\n4. Bring the decimal point straight down into the answer."
+    tags: ["adding-subtracting", "subject:numbers"]
+  - guid: e2c70b9143a8d6f0
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Calculate 12.6 + 3.45 + 0.8"
+      Back: "Line up points and pad with zeros:\n  12.60\n   3.45\n+  0.80\n-------\n  16.85\nAdd: hundredths 0+5+0=5; tenths 6+4+8=18 (write 8 carry 1); ones 2+3+0+1=6; tens 1.\nAnswer: 16.85\nMistake to avoid: ragged right-hand ends — always pad with zeros."
+    tags: ["adding-subtracting", "subject:numbers"]
+  - guid: f5b81d0263e9a4c7
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Calculate 9.3 − 4.78"
+      Back: "Pad and line up:\n  9.30\n− 4.78\n------\n  4.52\nHundredths: 0−8 → borrow, 10−8=2; tenths: 2−7 → borrow, 12−7=5; ones: 8−4=4.\nAnswer: 4.52\nTip: write 9.3 as 9.30 before subtracting so you don't get stuck."
+    tags: ["adding-subtracting", "subject:numbers"]
+  - guid: 0a9c2e6f47b1d385
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Method: how do you multiply two decimals, e.g. 0.6 × 0.04?"
+      Back: "1. Ignore the decimal points and multiply as whole numbers: 6 × 4 = 24.\n2. Count the total decimal places in BOTH numbers: 0.6 (1) + 0.04 (2) = 3 places.\n3. Put that many decimal places in the answer.\n24 → 0.024 (3 places).\nAnswer: 0.6 × 0.04 = 0.024"
+    tags: ["multiplying-decimals", "subject:numbers"]
+  - guid: 1b8d3f7058c2e496
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Calculate 1.25 × 3.4"
+      Back: "Whole numbers: 125 × 34 = 4250.\nDecimal places: 1.25 (2) + 3.4 (1) = 3 places.\nPlace point 3 in from the right: 4250 → 4.250 = 4.25.\nAnswer: 1.25 × 3.4 = 4.25\nCheck by estimating: 1.25 × 3.4 ≈ 1.3 × 3 ≈ 4 ✓"
+    tags: ["multiplying-decimals", "subject:numbers"]
+  - guid: 2c7e4081a9b3d5f6
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Why does 0.2 × 0.3 = 0.06 and not 0.6?"
+      Back: "Multiply digits: 2 × 3 = 6.\nTotal decimal places: 0.2 (1) + 0.3 (1) = 2 places.\nSo 6 must have 2 decimal places: 0.06.\nMeaning check: 0.2 × 0.3 = 1/5 × 3/10 = 3/50 = 0.06 ✓\nCommon mistake: forgetting to insert the extra zero to make 2 places."
+    tags: ["multiplying-decimals", "subject:numbers"]
+  - guid: 3d6f51920ac8b4e7
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Method: how do you divide by a decimal, e.g. 4.5 ÷ 0.5?"
+      Back: "Make the DIVISOR a whole number by multiplying both numbers by the same power of 10.\n0.5 × 10 = 5, so multiply 4.5 × 10 = 45.\nNow 4.5 ÷ 0.5 = 45 ÷ 5 = 9.\nAnswer: 9\nRule: shift the point in both the same number of places — this keeps the value of the fraction unchanged."
+    tags: ["dividing-decimals", "subject:numbers"]
+  - guid: 4e7062a3b1d9c5f8
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Calculate 7.5 ÷ 0.25"
+      Back: "Divisor 0.25 has 2 decimal places → multiply both by 100.\n7.5 × 100 = 750; 0.25 × 100 = 25.\n7.5 ÷ 0.25 = 750 ÷ 25 = 30.\nAnswer: 30\nTip: dividing by a number less than 1 gives an answer BIGGER than the start — 30 > 7.5 ✓"
+    tags: ["dividing-decimals", "subject:numbers"]
+  - guid: 5f81730a2cb4d6e9
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Calculate 6.4 ÷ 8 (decimal ÷ whole number)."
+      Back: "When the divisor is already a whole number, just divide and keep the point lined up.\n6.4 ÷ 8: 64 tenths ÷ 8 = 8 tenths = 0.8.\nLong division: 8 into 6 is 0; 8 into 64 is 8 → 0.8.\nAnswer: 0.8\nKeep the decimal point in the quotient directly above the point in the dividend."
+    tags: ["dividing-decimals", "subject:numbers"]
+  - guid: 6a92840b3dc5e7f0
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Rule: how do you multiply a decimal by 10, 100 or 1000?"
+      Back: "Move the decimal point to the RIGHT, one place for each zero.\n× 10 → 1 place right\n× 100 → 2 places right\n× 1000 → 3 places right\nExamples: 3.45 × 10 = 34.5; 3.45 × 100 = 345; 0.7 × 1000 = 700 (add zeros to fill)."
+    tags: ["powers-of-ten", "subject:numbers"]
+  - guid: 7b03951c4ed6f8a1
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Rule: how do you divide a decimal by 10, 100 or 1000?"
+      Back: "Move the decimal point to the LEFT, one place for each zero.\n÷ 10 → 1 place left\n÷ 100 → 2 places left\n÷ 1000 → 3 places left\nExamples: 56.2 ÷ 10 = 5.62; 56.2 ÷ 100 = 0.562; 8 ÷ 1000 = 0.008 (insert zeros as placeholders)."
+    tags: ["powers-of-ten", "subject:numbers"]
+  - guid: 8c14062d5fe7a9b2
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Method: how do you round a decimal to a given number of decimal places (dp)?"
+      Back: "1. Find the digit in the last place you are keeping.\n2. Look at the NEXT digit to its right (the decider).\n3. If the decider is 5 or more, round up (add 1); if 4 or less, leave the kept digit as is.\n4. Drop all digits after the rounding place.\nExample: 3.7846 to 2 dp → decider is 4 → 3.78."
+    tags: ["rounding-dp", "subject:numbers"]
+  - guid: 9d25173e6af8b0c3
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Round 0.4567 to (a) 1 dp and (b) 3 dp."
+      Back: "(a) 1 dp: keep the 4 (tenths); decider is 5 → round up → 0.5\n(b) 3 dp: keep ...456; decider is 7 → round up the 6 to 7 → 0.457\nWarning: when rounding up a 9 you carry, e.g. 0.198 to 2 dp → 0.20 (keep the trailing zero to show 2 dp)."
+    tags: ["rounding-dp", "subject:numbers"]
+  - guid: a0364e2f7b09c1d4
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "What are significant figures (sig figs) and which digits count?"
+      Back: "Significant figures are the digits that carry meaning about a number's size.\nRules:\n1. All non-zero digits are significant.\n2. Zeros BETWEEN non-zero digits are significant (e.g. 3.05 has 3 sf).\n3. Leading zeros are NOT significant (0.0042 has 2 sf).\n4. Trailing zeros after a decimal point ARE significant (0.300 has 3 sf)."
+    tags: ["significant-figures", "subject:numbers"]
+  - guid: b1475f308c1ad2e5
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Round 0.04736 to 2 significant figures."
+      Back: "Leading zeros don't count. First sig fig = 4, second = 7.\nDecider is the next digit, 3 → 3 < 5 → leave the 7.\nAnswer: 0.047 (2 sf)\nMistake to avoid: don't count the zeros before the 4 as sig figs, but you MUST keep them as placeholders."
+    tags: ["significant-figures", "subject:numbers"]
+  - guid: c2586041ad2be3f6
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Round 23 947 to 2 significant figures."
+      Back: "First sf = 2, second sf = 3. Decider is the next digit 9 → 9 ≥ 5 → round up 3 to 4.\nReplace the remaining digits with zeros as placeholders.\nAnswer: 24 000 (2 sf)\nNote: the zeros here are placeholders, not significant — they hold the place value."
+    tags: ["significant-figures", "subject:numbers"]
+  - guid: d3697152be3cf407
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "How do you estimate to check 38.7 × 5.2 is reasonable?"
+      Back: "Round each number to 1 significant figure, then compute:\n38.7 ≈ 40 and 5.2 ≈ 5.\nEstimate: 40 × 5 = 200.\nThe exact answer 201.24 is close to 200, so it is reasonable ✓\nUse estimation to catch place-value slips like getting 20.124 or 2012.4."
+    tags: ["estimation", "subject:numbers"]
+  - guid: e4708263cf4da518
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Estimate 612 ÷ 2.9 by rounding, then say whether 21.1 is reasonable."
+      Back: "Round to convenient numbers: 612 ≈ 600 and 2.9 ≈ 3.\nEstimate: 600 ÷ 3 = 200.\nThe candidate answer 21.1 is about 10× too small, so it is NOT reasonable — likely a decimal-point error.\nThe true answer ≈ 211, which matches the estimate of 200 ✓"
+    tags: ["estimation", "subject:numbers"]
+  - guid: f5819374da5eb629
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Decimals"
+    fields:
+      Front: "Convert 0.375 to a fraction in simplest form."
+      Back: "0.375 has 3 decimal places → write over 1000.\n0.375 = 375/1000.\nSimplify: divide top and bottom by 125 → 3/8.\nAnswer: 0.375 = 3/8\nCheck: 3 ÷ 8 = 0.375 ✓"
+    tags: ["decimals-fractions", "subject:numbers"]

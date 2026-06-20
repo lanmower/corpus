@@ -1557,6 +1557,20 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.strictEqual(estReviewMinutes(0), 1, 'estReviewMinutes(0)=1 (min 1)');
     });
 
+    t('run-19: dynamic default exam date + isExamDay gate (was: hardcoded past date pinned the exam-day takeover on every route)', () => {
+        const srs19 = READ('site/srs.js'), app19 = READ('site/app.js');
+        // No frozen exam-date literal that can rot into the past.
+        assert.ok(!/DEFAULT_EXAM_DATE\s*=\s*'20\d\d-\d\d-\d\d'/.test(srs19), 'srs.js: no hardcoded literal DEFAULT_EXAM_DATE');
+        // Default is computed relative to now via a horizon offset.
+        assert.match(srs19, /defaultExamDate\s*=\s*\(\)\s*=>\s*localDayISO\(new Date\(Date\.now\(\)\s*\+\s*DEFAULT_EXAM_HORIZON_DAYS/, 'srs.js: defaultExamDate computed from now + horizon');
+        assert.match(srs19, /DEFAULT_EXAM_HORIZON_DAYS\s*=\s*\d+/, 'srs.js: horizon constant defined');
+        // isExamDay compares the calendar day, not the clamped daysUntilExam.
+        assert.match(srs19, /export function isExamDay[\s\S]*localDayISO\(new Date\(cfg\.examDate\)\)\s*===\s*today\(\)/, 'srs.js: isExamDay compares exam date calendar-day to today');
+        // The takeover is gated on isExamDay(), never daysUntilExam()===0.
+        assert.match(app19, /srs\.isExamDay\(\)\s*&&\s*r !== 'mistakes'/, 'app.js: exam-day takeover gated on isExamDay');
+        assert.ok(!/days === 0 && r !== 'mistakes'/.test(app19), 'app.js: no days===0 takeover gate remains');
+    });
+
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
 })();

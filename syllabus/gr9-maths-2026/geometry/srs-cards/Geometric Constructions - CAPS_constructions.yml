@@ -1,0 +1,87 @@
+# Gr 9 Maths CAPS — geometry / Geometric Constructions
+deck: "Corpus::Gr9 Maths::Geometric Constructions"
+notes:
+  - guid: a1f0c3e9b2d74608
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "What instruments are allowed in a 'construction', and what is the golden rule about measuring?"
+      Back: "A construction uses only a compass and an unmarked straight-edge (ruler).\nGolden rule: you may NOT measure angles with a protractor, and you set lengths only with the compass — never by reading the ruler markings (except to draw a given side length).\nKeep all construction arcs light and visible — examiners award marks for the arcs that show your method, so do NOT rub them out."
+    tags: ["construction-basics", "subject:geometry"]
+  - guid: b3d8e1a07c45f29d
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "Construct the perpendicular bisector of line segment AB. Give the steps."
+      Back: "1. Set the compass wider than half of AB.\n2. Place the compass point on A and draw an arc above and below the line.\n3. Keeping the SAME radius, place the point on B and draw arcs that cut the first two — call the crossings P (above) and Q (below).\n4. Draw the straight line PQ.\nPQ cuts AB exactly in half (at midpoint M) AND meets it at 90°.\n∴ PQ is the perpendicular bisector. Every point on PQ is equidistant from A and B.\nPitfall: if the radius is ≤ half of AB the arcs never meet — always open wider than half."
+    tags: ["perpendicular-bisector", "subject:geometry"]
+  - guid: c5a2f4b91e63d870
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "How do you bisect an angle ∠ABC with compass and ruler?"
+      Back: "1. Compass point on the vertex B; draw an arc cutting both arms — call the points D (on BA) and E (on BC).\n2. Compass point on D, draw an arc in the interior.\n3. Same radius, point on E, draw an arc cutting the previous one at F.\n4. Draw ray BF.\nBF bisects the angle: ∠ABF = ∠FBC (each is half of ∠ABC).\nPitfall: keep the radius the same for steps 2 and 3 or the bisector is wrong."
+    tags: ["angle-bisector", "subject:geometry"]
+  - guid: d7b6e0c83a15f942
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "Construct a line perpendicular to line ℓ passing through a point P that lies ON ℓ."
+      Back: "1. Compass point on P; draw arcs cutting ℓ on both sides at A and B (so P is the midpoint of AB).\n2. Now construct the perpendicular bisector of AB: open wider than PA, draw arcs from A and from B above the line, crossing at Q.\n3. Draw PQ.\nPQ ⊥ ℓ at P (∠QPB = 90°)."
+    tags: ["construct-perpendicular", "subject:geometry"]
+  - guid: e9c4a2f60b87d531
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "Construct a perpendicular to line ℓ from a point P that is NOT on ℓ (dropping a perpendicular)."
+      Back: "1. Compass point on P; draw an arc that cuts ℓ at two points A and B.\n2. From A draw an arc on the far side of ℓ from P.\n3. Same radius from B, cutting it at point Q.\n4. Draw PQ — it crosses ℓ at 90°.\nThis is the shortest distance from P to ℓ."
+    tags: ["construct-perpendicular", "subject:geometry"]
+  - guid: f1d8b3e509a64c72
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "Construct a line through point P parallel to a given line ℓ (using equal corresponding angles)."
+      Back: "1. Draw any transversal through P that cuts ℓ at point A.\n2. With centre A draw an arc cutting both ℓ and the transversal; with the SAME radius and centre P draw a matching arc.\n3. Use the compass to measure the gap of the arc at A, then copy that gap onto the arc at P — this reproduces the angle.\n4. Draw the line through P and the new point.\nThe new line ∥ ℓ because corresponding angles are equal (corresp ∠s equal ⇒ lines parallel)."
+    tags: ["construct-parallel", "subject:geometry"]
+  - guid: a2e7c1b94f6d3085
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "Construct an angle of exactly 60° at point A on line AB (without a protractor)."
+      Back: "1. Compass point on A; draw an arc cutting AB at C.\n2. Keep the SAME radius. Move the point to C and draw an arc cutting the first arc at D.\n3. Draw ray AD.\n∠DAB = 60°.\nWhy: A, C and D form an equilateral triangle (all three radii are equal), and every angle of an equilateral triangle is 60°."
+    tags: ["construct-60", "subject:geometry"]
+  - guid: b4f9d2a07c8e1635
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "How do you construct a 30° angle?"
+      Back: "First construct a 60° angle (equilateral-triangle method), then BISECT it.\n60° ÷ 2 = 30°.\nThe bisector arcs give a ray that makes 30° with AB.\n(Similarly 15° = bisect a 30° angle.)"
+    tags: ["construct-30", "subject:geometry"]
+  - guid: c6a1e3f80b29d574
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "How do you construct a 90° angle and then a 45° angle?"
+      Back: "90°: construct a perpendicular at a point on the line (point-on-line method) — the perpendicular makes 90°.\n45°: BISECT the 90° angle. 90° ÷ 2 = 45°.\nAlternative for 45°: construct 60° and 30° adjacent gives 90°... simplest is bisect the right angle.\n(135° = 90° + 45° built side by side.)"
+    tags: ["construct-90-45", "subject:geometry"]
+  - guid: d8c3f1b07a4e2956
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "Construct △ABC given AB = 7 cm, BC = 5 cm, AC = 4 cm (three sides, SSS)."
+      Back: "1. Draw the longest side AB = 7 cm with the ruler.\n2. Compass radius = 4 cm (= AC); centre A, draw an arc above AB.\n3. Compass radius = 5 cm (= BC); centre B, draw an arc cutting the first arc at C.\n4. Join AC and BC.\n△ABC is the required triangle.\nPitfall: the triangle is only possible if the two short sides add to MORE than the long side (4 + 5 = 9 > 7 ✓) — triangle inequality."
+    tags: ["construct-triangle-sss", "subject:geometry"]
+  - guid: e0d4a2c81b6f3597
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "Construct △PQR given PQ = 6 cm, ∠P = 60° and PR = 5 cm (SAS — two sides and included angle)."
+      Back: "1. Draw PQ = 6 cm.\n2. At P CONSTRUCT a 60° angle (equilateral-triangle arc method, not a protractor).\n3. Along that new arm measure PR = 5 cm with the compass and mark R.\n4. Join RQ.\n△PQR is complete.\nKey: the given angle must lie BETWEEN the two given sides (the 'included' angle)."
+    tags: ["construct-triangle-sas", "subject:geometry"]
+  - guid: f2e5b3d90c7a4618
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Geometric Constructions"
+    fields:
+      Front: "Outline how to construct a quadrilateral, e.g. rectangle ABCD with AB = 6 cm and BC = 4 cm."
+      Back: "1. Draw AB = 6 cm.\n2. At A and at B construct 90° angles (perpendiculars to AB).\n3. On each perpendicular measure 4 cm with the compass: mark D (above A) and C (above B).\n4. Join DC.\nABCD is the rectangle. For a general quadrilateral, split it into two triangles along a diagonal and construct each triangle (SSS/SAS) in turn."
+    tags: ["construct-quadrilateral", "subject:geometry"]

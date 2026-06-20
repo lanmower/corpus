@@ -1,0 +1,66 @@
+# Gr 9 Maths CAPS — algebra / Products
+deck: "Corpus::Gr9 Maths::Products"
+notes:
+  - guid: aa11bb22cc33dd44
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Products"
+    fields:
+      Front: "Multiply a monomial by a polynomial: 2x(3x² − 4x + 5)."
+      Back: "Distribute the monomial to every term; multiply numbers and ADD exponents of like bases.\n2x·3x² = 6x³; 2x·(−4x) = −8x²; 2x·5 = 10x.\nAnswer: 6x³ − 8x² + 10x.\nRecall law of exponents: x·x² = x¹⁺² = x³."
+    tags: ["monomial-times-polynomial", "subject:algebra"]
+  - guid: bb22cc33dd44ee55
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Products"
+    fields:
+      Front: "Multiply two binomials using FOIL: (x + 3)(x + 5)."
+      Back: "FOIL = First, Outer, Inner, Last.\nFirst: x·x = x². Outer: x·5 = 5x. Inner: 3·x = 3x. Last: 3·5 = 15.\nAdd: x² + 5x + 3x + 15 = x² + 8x + 15.\nFOIL just means each term in the first bracket multiplies each term in the second."
+    tags: ["foil", "binomial-product", "subject:algebra"]
+  - guid: cc33dd44ee55ff66
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Products"
+    fields:
+      Front: "Expand (2x − 3)(x + 4)."
+      Back: "First: 2x·x = 2x². Outer: 2x·4 = 8x. Inner: −3·x = −3x. Last: −3·4 = −12.\n= 2x² + 8x − 3x − 12 = 2x² + 5x − 12.\nKeep the signs with the terms: −3 stays negative throughout."
+    tags: ["foil", "binomial-product", "subject:algebra"]
+  - guid: dd44ee55ff6600a7
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Products"
+    fields:
+      Front: "Square of a binomial: what is (a + b)²? Expand (x + 4)²."
+      Back: "Rule: (a + b)² = a² + 2ab + b² (square the first, plus twice the product, plus square the last).\n(x + 4)² = x² + 2·x·4 + 4² = x² + 8x + 16.\nBIG pitfall: (x + 4)² is NOT x² + 16. You must include the middle term 2ab = 8x."
+    tags: ["square-of-binomial", "perfect-square", "subject:algebra"]
+  - guid: ee55ff6600a7b1c8
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Products"
+    fields:
+      Front: "Expand (3x − 2)²."
+      Back: "Use (a − b)² = a² − 2ab + b².\na = 3x, b = 2.\na² = 9x²; 2ab = 2·3x·2 = 12x; b² = 4.\n(3x − 2)² = 9x² − 12x + 4.\nThe middle term is negative; the last term (b²) is always positive."
+    tags: ["square-of-binomial", "subject:algebra"]
+  - guid: ff6600a7b1c8d2e9
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Products"
+    fields:
+      Front: "Product of a sum and difference: (a + b)(a − b) = ? Expand (x + 7)(x − 7)."
+      Back: "Rule: (a + b)(a − b) = a² − b² (the middle terms cancel).\n(x + 7)(x − 7) = x² − 49.\nCheck with FOIL: x² − 7x + 7x − 49; the −7x and +7x cancel, leaving x² − 49. This is the 'difference of two squares'."
+    tags: ["difference-of-squares", "subject:algebra"]
+  - guid: 00a7b1c8d2e9f30a
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Products"
+    fields:
+      Front: "Expand (2x + 5)(2x − 5)."
+      Back: "This is a sum × difference, so use (a + b)(a − b) = a² − b² with a = 2x, b = 5.\na² = (2x)² = 4x²; b² = 25.\nAnswer: 4x² − 25.\nRemember to square the WHOLE first term: (2x)² = 4x², not 2x²."
+    tags: ["difference-of-squares", "subject:algebra"]
+  - guid: a7b1c8d2e9f30a1b
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Products"
+    fields:
+      Front: "Multiply a binomial by a trinomial: (x + 2)(x² − 3x + 4)."
+      Back: "Multiply each term of the binomial into every term of the trinomial.\nx·(x² − 3x + 4) = x³ − 3x² + 4x.\n2·(x² − 3x + 4) = 2x² − 6x + 8.\nAdd and collect like terms: x³ − 3x² + 2x² + 4x − 6x + 8 = x³ − x² − 2x + 8."
+    tags: ["binomial-times-trinomial", "subject:algebra"]
+  - guid: b1c8d2e9f30a1b2c
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Products"
+    fields:
+      Front: "Expand and simplify: (x + 3)² − (x − 2)(x + 2)."
+      Back: "(x + 3)² = x² + 6x + 9.\n(x − 2)(x + 2) = x² − 4 (difference of squares).\nSubtract: (x² + 6x + 9) − (x² − 4) = x² + 6x + 9 − x² + 4 = 6x + 13.\nWatch the minus in front of the second bracket: −(x² − 4) becomes −x² + 4."
+    tags: ["square-of-binomial", "difference-of-squares", "subject:algebra"]
