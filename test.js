@@ -1597,6 +1597,19 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(typeof active === 'string' && active.length > 0, 'fetch failure still returns an active id');
     });
 
+    t('run-21: tutor panel reserves desktop page width (was: fixed panel overlaid/clipped content) + start-card left-align + header ellipsis', () => {
+        const css21 = READ('site/style.css'), tp21 = READ('site/tutor-panel.js');
+        // JS sets the reserve var on desktop, clears it on mobile.
+        assert.match(tp21, /setProperty\('--tutor-reserve', w\)/, 'tutor-panel.js: desktop sets --tutor-reserve to panel width');
+        assert.match(tp21, /removeProperty\('--tutor-reserve'\)/, 'tutor-panel.js: mobile clears --tutor-reserve');
+        // CSS applies it with specificity that beats the SDK `.ds-247420 body { padding:0 }` reset.
+        assert.match(css21, /html\.ds-247420 body \{ padding-right: var\(--tutor-reserve, 0px\)/, 'style.css: reserve padding on html.ds-247420 body (outranks SDK reset)');
+        // start-card column resets the inherited center alignment.
+        assert.match(css21, /\.today-primary \.primary-action \{[\s\S]*align-items: flex-start;/, 'style.css: today primary-action align-items flex-start');
+        // header title truncates with ellipsis instead of hard-clipping.
+        assert.match(css21, /\.chat-head \.ds-chat-title \{[\s\S]*text-overflow: ellipsis/, 'style.css: chat-head title ellipsis');
+    });
+
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
 })();

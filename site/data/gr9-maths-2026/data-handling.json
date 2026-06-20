@@ -1,0 +1,818 @@
+{
+  "subject": "data-handling",
+  "cat": "purple",
+  "cards": [
+    {
+      "id": "data-handling-a976604c2f",
+      "front": "What is the MEAN and how do you calculate it?",
+      "back": "The mean is the arithmetic average.\nMean = Σx ÷ n = (sum of all values) ÷ (number of values)\n\nExample: 4, 7, 9, 4, 6\nΣx = 30, n = 5 → mean = 30 ÷ 5 = 6.\n\nThe mean uses every value, so it is strongly affected by outliers (very large/small values).",
+      "tags": [
+        "mean"
+      ],
+      "difficulty": "medium",
+      "source": "Central Tendency - CAPS_averages",
+      "sourceFile": "Central Tendency - CAPS_averages.yml"
+    },
+    {
+      "id": "data-handling-d6615210d7",
+      "front": "How do you find the MEDIAN of a data set?",
+      "back": "1. ORDER the values from smallest to largest.\n2. The median is the MIDDLE value.\n• Odd n: the single middle value. Position = (n+1)/2.\n• Even n: average the TWO middle values.\n\nExample (odd): 3, 5, 8, 9, 12 → median = 8.\nExample (even): 3, 5, 8, 9 → median = (5+8)/2 = 6.5.\n\nMust order first — forgetting this is the most common error.",
+      "tags": [
+        "median"
+      ],
+      "difficulty": "medium",
+      "source": "Central Tendency - CAPS_averages",
+      "sourceFile": "Central Tendency - CAPS_averages.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-664f88ad85",
+      "front": "What is the MODE? Can a data set have more than one (or none)?",
+      "back": "The mode is the value that occurs MOST often (highest frequency).\n\n• One mode: 2, 3, 3, 5 → mode = 3.\n• Two modes (bimodal): 2, 2, 5, 5, 7 → modes 2 and 5.\n• No mode: 1, 2, 3, 4 (all appear once) → no mode.\n\nThe mode is the only average that works for CATEGORICAL data (e.g. most popular colour).",
+      "tags": [
+        "mode"
+      ],
+      "difficulty": "medium",
+      "source": "Central Tendency - CAPS_averages",
+      "sourceFile": "Central Tendency - CAPS_averages.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-ccf42091e5",
+      "front": "Find the mean, median and mode of: 6, 4, 8, 6, 10, 2, 6.",
+      "back": "n = 7.\nMean = (6+4+8+6+10+2+6) ÷ 7 = 42 ÷ 7 = 6.\nMedian: order → 2, 4, 6, 6, 6, 8, 10. Middle (4th) value = 6.\nMode: 6 appears 3 times → mode = 6.\n\nHere all three equal 6 — typical of fairly symmetric data.",
+      "tags": [
+        "mean"
+      ],
+      "difficulty": "medium",
+      "source": "Central Tendency - CAPS_averages",
+      "sourceFile": "Central Tendency - CAPS_averages.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-13b021adb7",
+      "front": "How do you find the MEAN from a FREQUENCY table?",
+      "back": "Mean = Σ(value × frequency) ÷ Σ(frequency)\n\nExample:\nValue | f | value×f\n2     | 3 | 6\n3     | 5 | 15\n4     | 2 | 8\nΣf = 10, Σ(value×f) = 29\nMean = 29 ÷ 10 = 2.9\n\nPitfall: divide by the TOTAL frequency (n), not by the number of different values.",
+      "tags": [
+        "mean"
+      ],
+      "difficulty": "medium",
+      "source": "Central Tendency - CAPS_averages",
+      "sourceFile": "Central Tendency - CAPS_averages.yml"
+    },
+    {
+      "id": "data-handling-0438c31419",
+      "front": "How do you find the MEDIAN and MODE from a frequency table?",
+      "back": "MODE = the value with the HIGHEST frequency (read it straight off the table).\n\nMEDIAN: total n = Σf. Find the middle position (n+1)/2. Add frequencies down the table (cumulative) until you reach that position; the value there is the median.\n\nExample: f's 3,5,2 → n=10, middle is between 5th & 6th value. Cumulative: 3 (value2), then 8 (value3) — both 5th & 6th fall in value 3 → median = 3.",
+      "tags": [
+        "median"
+      ],
+      "difficulty": "medium",
+      "source": "Central Tendency - CAPS_averages",
+      "sourceFile": "Central Tendency - CAPS_averages.yml"
+    },
+    {
+      "id": "data-handling-f2d5743148",
+      "front": "Which average is most AFFECTED by an outlier, and which is most resistant?",
+      "back": "MEAN is most affected — it uses every value, so one extreme value pulls it up or down.\n\nMEDIAN is resistant (robust) — it only depends on the middle position, not the size of extreme values.\n\nExample: 2, 3, 4, 5, 100. Mean = 22.8 (misleading), Median = 4 (typical). Use median when outliers are present.",
+      "tags": [
+        "outliers"
+      ],
+      "difficulty": "medium",
+      "source": "Central Tendency - CAPS_averages",
+      "sourceFile": "Central Tendency - CAPS_averages.yml"
+    },
+    {
+      "id": "data-handling-395e2ec94a",
+      "front": "When is the MEAN best, when MEDIAN, when MODE?",
+      "back": "MEAN: numerical data with NO big outliers; uses all data (e.g. average test score).\nMEDIAN: numerical data WITH outliers or skew (e.g. house prices, salaries).\nMODE: categorical data, or when you want the MOST COMMON / most popular value (e.g. most sold shoe size, favourite colour).\n\nChoose the one that best represents the 'typical' value for that data.",
+      "tags": [
+        "choosing-average"
+      ],
+      "difficulty": "medium",
+      "source": "Central Tendency - CAPS_averages",
+      "sourceFile": "Central Tendency - CAPS_averages.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-08a7b6d516",
+      "front": "The mean of 5 numbers is 12. Four of them are 10, 11, 13, 14. Find the fifth.",
+      "back": "Sum of all 5 = mean × n = 12 × 5 = 60.\nSum of known four = 10+11+13+14 = 48.\nFifth = 60 − 48 = 12.\n\nKey idea: rearrange Mean = Σx ÷ n → Σx = mean × n. This 'reverse' use of the mean is a common exam question.",
+      "tags": [
+        "mean"
+      ],
+      "difficulty": "medium",
+      "source": "Central Tendency - CAPS_averages",
+      "sourceFile": "Central Tendency - CAPS_averages.yml"
+    },
+    {
+      "id": "data-handling-c04047569a",
+      "front": "List the seven stages of the data-handling cycle in order.",
+      "back": "1. Pose a question\n2. Collect data\n3. Organise data\n4. Represent data\n5. Summarise data\n6. Interpret / analyse data\n7. Report / draw conclusions\n\nMemory: every stage feeds the next — a good question shapes good collection, which shapes everything after it.",
+      "tags": [
+        "data-cycle"
+      ],
+      "difficulty": "medium",
+      "source": "Data Cycle - CAPS_cycle",
+      "sourceFile": "Data Cycle - CAPS_cycle.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "data-handling-233c7cba9d",
+      "front": "Why must the data-handling cycle START with posing a clear question?",
+      "back": "The question decides:\n• WHAT data to collect (relevant variables)\n• WHO/WHAT to collect it from (population or sample)\n• HOW to organise and represent it\n\nA vague question (\"Are learners healthy?\") gives messy data. A sharp question (\"How many hours of sleep do Gr 9 learners get on a school night?\") gives data you can actually organise and analyse.",
+      "tags": [
+        "data-cycle"
+      ],
+      "difficulty": "medium",
+      "source": "Data Cycle - CAPS_cycle",
+      "sourceFile": "Data Cycle - CAPS_cycle.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "data-handling-dcd8d4b001",
+      "front": "In the data cycle, what is the difference between 'organise' and 'represent'?",
+      "back": "ORGANISE = put raw data into order/groups: tally tables, frequency tables, stem-and-leaf plots, class intervals.\nREPRESENT = turn the organised data into a visual: bar graph, histogram, pie chart, line graph, scatter plot.\n\nOrganise first (numbers/tables), THEN represent (pictures). You cannot draw a good graph from unorganised raw data.",
+      "tags": [
+        "data-cycle"
+      ],
+      "difficulty": "medium",
+      "source": "Data Cycle - CAPS_cycle",
+      "sourceFile": "Data Cycle - CAPS_cycle.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "data-handling-5a96336dea",
+      "front": "What happens in the 'summarise' stage of the data cycle?",
+      "back": "You calculate numbers that describe the whole data set in a few values:\n• Measures of central tendency: mean, median, mode\n• Measures of dispersion/spread: range, extremes, outliers\n\nThese summary statistics let you compare data sets and spot patterns without listing every value.",
+      "tags": [
+        "data-cycle"
+      ],
+      "difficulty": "medium",
+      "source": "Data Cycle - CAPS_cycle",
+      "sourceFile": "Data Cycle - CAPS_cycle.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "data-handling-8872ac957d",
+      "front": "What is the difference between 'interpret/analyse' and 'report' in the data cycle?",
+      "back": "INTERPRET/ANALYSE = make sense of the summaries and graphs: What do they show? Trends? Outliers? Does this answer the original question?\nREPORT = communicate your findings clearly to others — a written conclusion, recommendation, or presentation that ties back to the question you posed at the start.\n\nA report without interpretation is just raw results; interpretation without a report is never shared.",
+      "tags": [
+        "data-cycle"
+      ],
+      "difficulty": "medium",
+      "source": "Data Cycle - CAPS_cycle",
+      "sourceFile": "Data Cycle - CAPS_cycle.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "data-handling-36dd5606ca",
+      "front": "A learner wants to know the favourite sport of Grade 9s. Walk through the full data cycle briefly.",
+      "back": "1. Question: \"What is the favourite sport of Gr 9 learners at our school?\"\n2. Collect: survey/questionnaire to a sample of Gr 9s\n3. Organise: tally table by sport, then frequency table\n4. Represent: bar graph or pie chart of sports\n5. Summarise: mode = most popular sport; percentages per sport\n6. Analyse: which sport leads, by how much\n7. Report: \"Soccer is the favourite, chosen by 40% of learners.\"",
+      "tags": [
+        "data-cycle"
+      ],
+      "difficulty": "medium",
+      "source": "Data Cycle - CAPS_cycle",
+      "sourceFile": "Data Cycle - CAPS_cycle.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "data-handling-a72e70edeb",
+      "front": "Pitfall: a survey only asked learners leaving the library. Which stage failed and why?",
+      "back": "The COLLECT stage failed — the sample is biased. Learners at the library are more likely to enjoy reading/studying, so results won't represent ALL Gr 9 learners.\n\nFix: collect from a random, representative sample across the whole population (not just one location).",
+      "tags": [
+        "data-cycle"
+      ],
+      "difficulty": "medium",
+      "source": "Data Cycle - CAPS_cycle",
+      "sourceFile": "Data Cycle - CAPS_cycle.yml"
+    },
+    {
+      "id": "data-handling-902c31fa9e",
+      "front": "What is the RANGE and how do you calculate it?",
+      "back": "Range = maximum value − minimum value.\nIt measures the SPREAD of the data (how far apart the extremes are).\n\nExample: 4, 7, 9, 15, 2 → max = 15, min = 2 → range = 15 − 2 = 13.\n\nA large range means widely spread data; a small range means values are close together. The range is easy but only uses the two extremes.",
+      "tags": [
+        "range"
+      ],
+      "difficulty": "medium",
+      "source": "Dispersion - CAPS_spread",
+      "sourceFile": "Dispersion - CAPS_spread.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-f3043678a5",
+      "front": "What are the EXTREMES of a data set?",
+      "back": "The extremes are the smallest value (minimum) and the largest value (maximum) of the ordered data set.\n\nThey define the range (max − min). Extremes can sometimes be outliers, but not always.",
+      "tags": [
+        "extremes"
+      ],
+      "difficulty": "medium",
+      "source": "Dispersion - CAPS_spread",
+      "sourceFile": "Dispersion - CAPS_spread.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-cadbb70a7f",
+      "front": "What is an OUTLIER and how do you spot one?",
+      "back": "An outlier is a data value that is much SMALLER or much LARGER than the rest of the data — it stands far apart from the cluster.\n\nExample: in 21, 23, 22, 25, 90 the value 90 is an outlier.\n\nSpot it by ordering the data and looking for a value with a big gap from the others. Outliers may be errors, or genuine unusual cases — investigate before deciding.",
+      "tags": [
+        "outliers"
+      ],
+      "difficulty": "medium",
+      "source": "Dispersion - CAPS_spread",
+      "sourceFile": "Dispersion - CAPS_spread.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-d3d2e88ac6",
+      "front": "What EFFECT does an outlier have on the range and the mean?",
+      "back": "An outlier greatly INCREASES the RANGE (because it changes max or min), making the spread look bigger than it is for most data.\n\nIt also pulls the MEAN towards itself (up for a high outlier, down for a low one).\n\nThe MEDIAN and MODE are barely affected. So with outliers, report the median and note the outlier separately.",
+      "tags": [
+        "outliers"
+      ],
+      "difficulty": "medium",
+      "source": "Dispersion - CAPS_spread",
+      "sourceFile": "Dispersion - CAPS_spread.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-6e59a6dcda",
+      "front": "Data: 12, 14, 13, 15, 60. Find the range, then the range without the outlier.",
+      "back": "Outlier = 60 (far from the rest).\nFull range = 60 − 12 = 48.\nWithout 60: values 12,13,14,15 → range = 15 − 12 = 3.\n\nThe single outlier inflated the range from 3 to 48 — showing how one extreme value distorts a measure of spread.",
+      "tags": [
+        "range"
+      ],
+      "difficulty": "medium",
+      "source": "Dispersion - CAPS_spread",
+      "sourceFile": "Dispersion - CAPS_spread.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-769d1fb4d3",
+      "front": "Why is the range a LIMITED measure of spread?",
+      "back": "Because it uses ONLY the two extreme values (max and min) and ignores how all the middle data is distributed. One outlier can make the range huge even if most of the data is tightly clustered.\n\nThat is why we also look at the central-tendency values (mean, median, mode) alongside the range to describe a data set fairly.",
+      "tags": [
+        "range"
+      ],
+      "difficulty": "medium",
+      "source": "Dispersion - CAPS_spread",
+      "sourceFile": "Dispersion - CAPS_spread.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-2505e74138",
+      "front": "What does it mean to INTERPRET and ANALYSE data?",
+      "back": "To look at the organised data, graphs and summary statistics and draw MEANING from them:\n• What is the typical value (mean/median/mode)?\n• How spread out is it (range, IQR)?\n• Are there trends, patterns or outliers?\n• Does it answer the original question?\n\nAnalysis turns numbers and pictures into conclusions you can report.",
+      "tags": [
+        "interpreting"
+      ],
+      "difficulty": "medium",
+      "source": "Interpreting Data - CAPS_bias",
+      "sourceFile": "Interpreting Data - CAPS_bias.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-c164525274",
+      "front": "What is BIAS in data handling? Give two ways it creeps in.",
+      "back": "Bias is anything that makes results unfairly favour one outcome, so they don't truly represent the population.\n\nSources:\n• Sampling bias — unrepresentative sample (e.g. only surveying friends).\n• Question bias — leading/loaded questions (e.g. 'Don't you agree our food is great?').\nOthers: small samples, non-responses, misleading graphs.\n\nBias → wrong conclusions even with correct calculations.",
+      "tags": [
+        "bias"
+      ],
+      "difficulty": "medium",
+      "source": "Interpreting Data - CAPS_bias",
+      "sourceFile": "Interpreting Data - CAPS_bias.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-8f0057346f",
+      "front": "How can a BROKEN (truncated) axis make a graph misleading?",
+      "back": "If the vertical axis does NOT start at 0 (a 'broken axis'), small differences look huge. A bar of 102 next to one of 100 can appear twice as tall when the axis starts at 99.\n\nThis exaggerates differences to mislead the reader. To judge fairly, check whether the y-axis starts at 0 and whether the scale is even.",
+      "tags": [
+        "misleading-graphs"
+      ],
+      "difficulty": "medium",
+      "source": "Interpreting Data - CAPS_bias",
+      "sourceFile": "Interpreting Data - CAPS_bias.yml"
+    },
+    {
+      "id": "data-handling-06fb4948ce",
+      "front": "List ways a graph can be MISLEADING (distorted).",
+      "back": "• Broken/truncated axis not starting at 0 → exaggerates differences.\n• Uneven or inconsistent scale (jumps of 2 then 10).\n• Missing labels or no scale.\n• 3-D or oversized pictogram icons that distort area/volume.\n• Cherry-picked time range to show a fake trend.\n\nAlways read the axes and scale before trusting a graph's 'story'.",
+      "tags": [
+        "misleading-graphs"
+      ],
+      "difficulty": "medium",
+      "source": "Interpreting Data - CAPS_bias",
+      "sourceFile": "Interpreting Data - CAPS_bias.yml"
+    },
+    {
+      "id": "data-handling-3dd1ed507b",
+      "front": "Why can using a pictogram with DIFFERENT-SIZED icons be misleading?",
+      "back": "If one icon is scaled up to be twice as tall AND twice as wide to show 'double', its AREA becomes 4 times bigger, so the eye sees a 4× difference instead of 2×.\n\nFair pictograms use identical icons and a clear key (each icon = same fixed amount), using more icons (not bigger ones) to show larger values.",
+      "tags": [
+        "misleading-graphs"
+      ],
+      "difficulty": "medium",
+      "source": "Interpreting Data - CAPS_bias",
+      "sourceFile": "Interpreting Data - CAPS_bias.yml"
+    },
+    {
+      "id": "data-handling-943e60347a",
+      "front": "A shop's graph shows sales 'soaring' but the y-axis runs from 480 to 500. How do you critique it?",
+      "back": "The y-axis is TRUNCATED (does not start at 0) and covers a tiny range (480–500), so a rise from say 485 to 495 looks dramatic but is only about a 2% increase.\n\nCritique: redraw with the y-axis starting at 0 to show the true, modest change. The original is designed to mislead.",
+      "tags": [
+        "misleading-graphs"
+      ],
+      "difficulty": "medium",
+      "source": "Interpreting Data - CAPS_bias",
+      "sourceFile": "Interpreting Data - CAPS_bias.yml"
+    },
+    {
+      "id": "data-handling-d274f632e0",
+      "front": "Checklist: what should you ask when CRITICALLY reading any data/graph?",
+      "back": "• Who collected it and how? (primary/secondary, sample size, bias)\n• Does the y-axis start at 0? Is the scale even?\n• Are axes and units labelled?\n• Is the right type of graph used?\n• Are outliers hidden or exaggerated?\n• Does the conclusion actually follow from the data?\n\nThinking critically guards against being misled.",
+      "tags": [
+        "interpreting"
+      ],
+      "difficulty": "medium",
+      "source": "Interpreting Data - CAPS_bias",
+      "sourceFile": "Interpreting Data - CAPS_bias.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-d74247f82c",
+      "front": "How does a TALLY table work? Show tallies for the count 7.",
+      "back": "A tally table records each data value with a stroke as you read through the data; group strokes in FIVES — four vertical strokes with the fifth drawn diagonally across them.\n\n7 = ||||̸ ||  (a group of 5 + 2 more)\n\nThen the FREQUENCY column converts tallies to a number. Tallying lets you count raw data without missing or double-counting values.",
+      "tags": [
+        "tally-table"
+      ],
+      "difficulty": "medium",
+      "source": "Organising Data - CAPS_organise",
+      "sourceFile": "Organising Data - CAPS_organise.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-5cbb5acee8",
+      "front": "What is a FREQUENCY table and what does 'frequency' mean?",
+      "back": "FREQUENCY = how many times a value (or category) occurs.\nA frequency table lists each value/category with its frequency.\n\nExample (test marks out of 5):\nMark | Frequency\n3    | 4\n4    | 7\n5    | 2\n\nThe frequencies should add up to n (total number of data values) = 13 here. Always check the total.",
+      "tags": [
+        "frequency-table"
+      ],
+      "difficulty": "medium",
+      "source": "Organising Data - CAPS_organise",
+      "sourceFile": "Organising Data - CAPS_organise.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-38afb00117",
+      "front": "Construct a STEM-AND-LEAF plot for: 23, 25, 31, 34, 34, 42, 47.",
+      "back": "Split each number into a STEM (tens) and LEAF (units), leaves in order:\n\nStem | Leaf\n 2   | 3 5\n 3   | 1 4 4\n 4   | 2 7\n\nKey: 2 | 3 means 23.\n\nIt keeps the actual data values while showing the shape. Always include a KEY and order the leaves.",
+      "tags": [
+        "stem-and-leaf"
+      ],
+      "difficulty": "medium",
+      "source": "Organising Data - CAPS_organise",
+      "sourceFile": "Organising Data - CAPS_organise.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-5f91966ab3",
+      "front": "What is the ADVANTAGE of a stem-and-leaf plot over a frequency table?",
+      "back": "A stem-and-leaf plot shows the SHAPE/distribution of the data (like a histogram) AND keeps every original data value — so you can still read off the exact numbers, find the median, range, etc.\n\nA grouped frequency table or histogram loses the individual values once data is grouped into intervals.",
+      "tags": [
+        "stem-and-leaf"
+      ],
+      "difficulty": "medium",
+      "source": "Organising Data - CAPS_organise",
+      "sourceFile": "Organising Data - CAPS_organise.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-70d801cb89",
+      "front": "When and why do we use a GROUPED frequency table with class intervals?",
+      "back": "Use grouping when data has many different values spread over a wide range (e.g. test marks 0–100, or continuous data like heights). Listing every value would be huge.\n\nWe group into CLASS INTERVALS (e.g. 0–9, 10–19, 20–29...) and record the frequency of each interval. This makes the data manageable and ready for a histogram. Trade-off: you lose the individual values.",
+      "tags": [
+        "grouped-frequency"
+      ],
+      "difficulty": "medium",
+      "source": "Organising Data - CAPS_organise",
+      "sourceFile": "Organising Data - CAPS_organise.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-6e49bbd653",
+      "front": "Rules for choosing CLASS INTERVALS in a grouped frequency table.",
+      "back": "• Intervals must be EQUAL width (e.g. all width 10).\n• Intervals must NOT overlap — every value falls in exactly one class.\n• Use a sensible number of classes (about 5–10).\n• Cover the full range (smallest to largest value).\n\nFor continuous data use boundaries like 0 ≤ x < 10, 10 ≤ x < 20 so there is no gap and no overlap.",
+      "tags": [
+        "grouped-frequency"
+      ],
+      "difficulty": "medium",
+      "source": "Organising Data - CAPS_organise",
+      "sourceFile": "Organising Data - CAPS_organise.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-76800ca9da",
+      "front": "Group these marks into intervals of 10 (0–9, 10–19, ...): 5, 12, 14, 21, 23, 27, 28, 35.",
+      "back": "Interval | Tally | Frequency\n0–9   | |       | 1\n10–19 | ||      | 2\n20–29 | ||||    | 4\n30–39 | |       | 1\n\nTotal frequency = 1+2+4+1 = 8 ✓ (matches 8 data values).\nThe 20–29 class is the modal class (highest frequency).",
+      "tags": [
+        "grouped-frequency"
+      ],
+      "difficulty": "medium",
+      "source": "Organising Data - CAPS_organise",
+      "sourceFile": "Organising Data - CAPS_organise.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-691d1c852f",
+      "front": "Pitfall: a table uses intervals 0–10, 10–20, 20–30. What's wrong?",
+      "back": "The intervals OVERLAP at the boundaries — where does 10 or 20 go? It could be counted in two classes (double counting) or cause confusion.\n\nFix: use non-overlapping intervals such as 0–9, 10–19, 20–29 (discrete) OR 0 ≤ x < 10, 10 ≤ x < 20 (continuous).",
+      "tags": [
+        "grouped-frequency"
+      ],
+      "difficulty": "medium",
+      "source": "Organising Data - CAPS_organise",
+      "sourceFile": "Organising Data - CAPS_organise.yml"
+    },
+    {
+      "id": "data-handling-9c09255e92",
+      "front": "What is a BAR GRAPH used for, and what are its key features?",
+      "back": "A bar graph displays CATEGORICAL (or discrete) data. Each category gets a bar; the bar's height shows its frequency.\n\nFeatures:\n• Bars are SEPARATED by gaps\n• Bars are equal width\n• Axes labelled, title given, scale even\n\nGood for comparing categories (e.g. favourite sports, learners per grade).",
+      "tags": [
+        "bar-graph"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-5686a378a4",
+      "front": "What is a DOUBLE bar graph and when is it useful?",
+      "back": "A double bar graph shows TWO data sets side-by-side for each category, using two different colours/shadings (with a key/legend).\n\nUseful for COMPARING two groups across the same categories, e.g. boys vs girls choosing each sport, or 2025 vs 2026 sales per month.\n\nAlways include a legend so the reader knows which colour is which group.",
+      "tags": [
+        "bar-graph"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-58621dab07",
+      "front": "How does a HISTOGRAM differ from a bar graph?",
+      "back": "HISTOGRAM: for NUMERICAL data grouped into class intervals (continuous data). Bars TOUCH (no gaps) because the intervals are continuous. The horizontal axis is a number line of intervals.\n\nBAR GRAPH: for CATEGORICAL/discrete data. Bars have GAPS between them; horizontal axis lists separate categories.\n\nKey memory: histogram bars touch (continuous), bar graph bars are separated (categories).",
+      "tags": [
+        "histogram"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-6e774e76c6",
+      "front": "How do you calculate the ANGLE for a sector in a PIE CHART?",
+      "back": "Angle = (frequency ÷ total) × 360°\n  = (category fraction) × 360°\n\nThe whole pie = 360° = 100% of the data. Each slice's angle is proportional to its share.\n\nCheck: all sector angles must add to 360°. Use a protractor to draw each angle from the centre.",
+      "tags": [
+        "pie-chart"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-27294bd432",
+      "front": "Pie chart worked example: 20 learners — 10 soccer, 6 netball, 4 hockey. Find each angle.",
+      "back": "Angle = (frequency ÷ 20) × 360°\n• Soccer: (10/20) × 360° = 180°\n• Netball: (6/20) × 360° = 108°\n• Hockey: (4/20) × 360° = 72°\n\nCheck: 180 + 108 + 72 = 360° ✓\n\nPercentages: soccer 50%, netball 30%, hockey 20%.",
+      "tags": [
+        "pie-chart"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml"
+    },
+    {
+      "id": "data-handling-b17d47bb7a",
+      "front": "What is a LINE graph / BROKEN-LINE graph best for?",
+      "back": "A line graph shows how data CHANGES OVER TIME (or another continuous variable). Points are plotted and joined with straight line segments (broken-line graph).\n\nBest for TRENDS: temperature through a day, plant height over weeks, sales per month.\n\nThe slope shows rate of change: rising line = increasing, falling = decreasing, flat = no change.",
+      "tags": [
+        "line-graph"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-6600b7915c",
+      "front": "What is a SCATTER PLOT and what does it reveal?",
+      "back": "A scatter plot plots PAIRS of values (x, y) as dots — used to see the RELATIONSHIP/correlation between two numerical variables (e.g. hours studied vs test mark).\n\nPatterns:\n• Points trend upward → positive correlation\n• Points trend downward → negative correlation\n• No pattern → no correlation\n\nPoints are NOT joined up — you look at the overall trend.",
+      "tags": [
+        "scatter-plot"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml"
+    },
+    {
+      "id": "data-handling-8b2c2f1cb2",
+      "front": "What is a PICTOGRAM and what must it always include?",
+      "back": "A pictogram represents data using PICTURES/icons, where each icon stands for a number of items.\n\nMust include a KEY, e.g. 🍎 = 5 apples. Partial icons show parts (half an icon = 2.5 apples).\n\nGood for simple, eye-catching categorical comparisons; less precise for exact values, especially with fractional icons.",
+      "tags": [
+        "pictogram"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-5f2b8c37e1",
+      "front": "Choosing the right graph: which graph for (a) trend over time, (b) parts of a whole, (c) comparing categories, (d) relationship between two variables?",
+      "back": "(a) Trend over time → LINE / broken-line graph.\n(b) Parts of a whole (proportions, %) → PIE chart.\n(c) Comparing categories → BAR graph (double bar for two groups).\n(d) Relationship between two numerical variables → SCATTER plot.\n\nBonus: grouped continuous data → HISTOGRAM.",
+      "tags": [
+        "choosing-graph"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-52a3429257",
+      "front": "What features must EVERY good graph include?",
+      "back": "• A clear TITLE (what the graph shows)\n• Both AXES LABELLED (with units)\n• An EVEN, consistent SCALE on each axis\n• A KEY/legend if more than one data set or icon\n\nMissing labels or uneven scales make a graph misleading or impossible to read accurately.",
+      "tags": [
+        "choosing-graph"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Data - CAPS_graphs",
+      "sourceFile": "Representing Data - CAPS_graphs.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-73847c4f80",
+      "front": "What is the difference between a POPULATION and a SAMPLE?",
+      "back": "POPULATION = the ENTIRE group you want information about (e.g. all Gr 9 learners in South Africa).\nSAMPLE = a smaller part of the population that you actually collect from (e.g. 100 Gr 9 learners).\n\nWe use samples because surveying a whole population is usually too expensive/time-consuming. A good sample is RANDOM and REPRESENTATIVE so conclusions apply to the population.",
+      "tags": [
+        "population-sample"
+      ],
+      "difficulty": "medium",
+      "source": "Types of Data - CAPS_types",
+      "sourceFile": "Types of Data - CAPS_types.yml"
+    },
+    {
+      "id": "data-handling-2779a0b366",
+      "front": "Categorical vs numerical data — define each with examples.",
+      "back": "CATEGORICAL (qualitative) data = describes a quality/category, NOT a number you do maths on.\nExamples: eye colour, favourite sport, gender, yes/no.\n\nNUMERICAL (quantitative) data = actual numbers you can do arithmetic with.\nExamples: height, test score, number of siblings, temperature.\n\nTip: jersey number is categorical (a label), even though it looks numeric — you'd never average jersey numbers.",
+      "tags": [
+        "categorical-numerical"
+      ],
+      "difficulty": "medium",
+      "source": "Types of Data - CAPS_types",
+      "sourceFile": "Types of Data - CAPS_types.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-ddce29912a",
+      "front": "DISCRETE vs CONTINUOUS numerical data — what's the difference?",
+      "back": "DISCRETE = countable, only specific (usually whole) values; gaps between values.\nExamples: number of cars, learners in a class, goals scored. You can't have 2.5 children.\n\nCONTINUOUS = measured, can take ANY value in a range (including decimals); no gaps.\nExamples: height, mass, time, temperature. A height can be 1.673... m.\n\nQuick test: 'How many?' → discrete. 'How much / how long / how heavy?' → continuous.",
+      "tags": [
+        "discrete-continuous"
+      ],
+      "difficulty": "medium",
+      "source": "Types of Data - CAPS_types",
+      "sourceFile": "Types of Data - CAPS_types.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-93c69966a5",
+      "front": "Classify each: (a) shoe size, (b) mass in kg, (c) number of pets, (d) colour of car.",
+      "back": "(a) Shoe size — numerical, discrete (counts in set steps).\n(b) Mass in kg — numerical, continuous (measured).\n(c) Number of pets — numerical, discrete (counted, whole).\n(d) Colour of car — categorical.\n\nWatch (a): shoe sizes go in fixed steps (5, 5½, 6...) so treated as discrete.",
+      "tags": [
+        "discrete-continuous"
+      ],
+      "difficulty": "medium",
+      "source": "Types of Data - CAPS_types",
+      "sourceFile": "Types of Data - CAPS_types.yml"
+    },
+    {
+      "id": "data-handling-74e09315dd",
+      "front": "PRIMARY vs SECONDARY data sources — define and give an example.",
+      "back": "PRIMARY data = data YOU collect yourself, first-hand, for your specific question (survey you run, measurements you take, your own experiment).\n\nSECONDARY data = data collected by SOMEONE ELSE that you then use (Stats SA reports, newspaper figures, textbook tables, internet databases).\n\nPrimary = fresh and tailored but slower; secondary = quick but may be outdated or not exactly what you need.",
+      "tags": [
+        "primary-secondary"
+      ],
+      "difficulty": "medium",
+      "source": "Types of Data - CAPS_types",
+      "sourceFile": "Types of Data - CAPS_types.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-e42c4efde9",
+      "front": "Pitfall: Why is 'number of the bus you take (Bus 3, Bus 7)' categorical, not numerical?",
+      "back": "Because the number is just a LABEL/name identifying the bus, not a quantity. Adding or averaging bus numbers is meaningless — 'average bus = 5' tells you nothing.\n\nRule: if doing arithmetic on the values is meaningless, the data is categorical even though it looks like numbers (also phone numbers, ID numbers, route numbers).",
+      "tags": [
+        "categorical-numerical"
+      ],
+      "difficulty": "medium",
+      "source": "Types of Data - CAPS_types",
+      "sourceFile": "Types of Data - CAPS_types.yml",
+      "requires": {
+        "subject": "data-handling",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "data-handling-ae2a296bb9",
+      "front": "What makes a sample BIASED, and how do you avoid it?",
+      "back": "A sample is biased when some members of the population are over- or under-represented, so it does not reflect the whole population.\nExamples: only asking your friends; only sampling at a gym (fitness-biased).\n\nAvoid by:\n• Random selection (everyone has equal chance)\n• Large enough sample\n• Cover the full range of the population\n\nBiased sample → misleading conclusions, even with perfect maths.",
+      "tags": [
+        "population-sample"
+      ],
+      "difficulty": "medium",
+      "source": "Types of Data - CAPS_types",
+      "sourceFile": "Types of Data - CAPS_types.yml"
+    }
+  ],
+  "triage": null,
+  "guide": {
+    "chars": 16335,
+    "lines": 217,
+    "sections": [
+      {
+        "level": 1,
+        "title": "Data Handling — Complete Study Guide",
+        "line": 0,
+        "body": ""
+      },
+      {
+        "level": 2,
+        "title": "Contents",
+        "line": 2,
+        "body": ""
+      },
+      {
+        "level": 3,
+        "title": "The Data-Handling Cycle",
+        "line": 4,
+        "body": "Data handling is not a single skill but a *cycle* of stages, each feeding the next. Working through it in order keeps an investigation honest and useful.\n\n1. **Pose a question.** Everything starts with a clear, specific question — for example, \"How many hours of sleep do Grade 9 learners at our school get on a school night?\" A sharp question decides what data you need, who you collect it from, and how you will analyse it. Vague questions produce messy, unusable data.\n\n2. **Collect data.** Gather the values that answer the question, through surveys, questionnaires, experiments, observation or existing records. Decide whether you are collecting from the whole *population* or from a *sample*, and take care to avoid bias.\n\n3. **Organise data.** Raw data is disordered. Bring order with tally tables, frequency tables, stem-and-leaf plots, or grouped class intervals so patterns can begin to show.\n\n4. **Represent data.** Turn the organised data into a visual — bar graph, histogram, pie chart, line graph or scatter plot — so trends and comparisons are easy to see.\n\n5. **Summarise data.** Reduce the data to a few describing numbers: measures of central tendency (mean, median, mode) and measures of spread (range, extremes, outliers).\n\n6. **Interpret / analyse.** Make sense of the summaries and graphs. What is typical? How spread out is it? Are there trends or outliers? Does this answer the original question?\n\n7. **Report.** Communicate the findings clearly — a written conclusion, recommendation or presentation that ties back to the question you posed at the start.\n\nA failure at any stage corrupts the rest: a biased sample (collect) or an overlapping class interval (organise) will lead to wrong conclusions no matter how neat the later maths is. Always trace a surprising result back through the cycle to find where it came from."
+      },
+      {
+        "level": 3,
+        "title": "Types of Data",
+        "line": 25,
+        "body": "Before collecting or analysing, you must know *what kind* of data you are dealing with — it determines which tables, graphs and averages are appropriate.\n\n**Population vs sample.** The *population* is the entire group you want information about (all Grade 9 learners in South Africa). A *sample* is a smaller part of it that you actually collect from. Samples save time and money, but a good sample must be *random* and *representative* so that conclusions about the sample apply to the whole population. A *biased* sample (only your friends, only people at a gym) over- or under-represents part of the population and gives misleading results.\n\n**Categorical vs numerical.** *Categorical* (qualitative) data describes a quality or category — eye colour, favourite sport, yes/no — and cannot be sensibly added or averaged. *Numerical* (quantitative) data consists of actual numbers you can do arithmetic with — height, marks, number of siblings. Beware of number-like labels (jersey numbers, ID numbers, bus routes): they are categorical because arithmetic on them is meaningless.\n\n**Discrete vs continuous.** Within numerical data, *discrete* data is counted and takes only specific (usually whole) values with gaps between them — number of cars, learners in a class. *Continuous* data is measured and can take any value in a range, including decimals — height, mass, time, temperature. A quick test: \"How many?\" signals discrete; \"How much / how long / how heavy?\" signals continuous.\n\n**Primary vs secondary sources.** *Primary* data is collected first-hand by you for your own question (a survey you run, measurements you take). *Secondary* data was collected by someone else and reused (Stats SA reports, newspapers, textbooks, online databases). Primary data is tailored but slower to get; secondary data is quick but may be outdated or not exactly what you need.\n\nClassifying data correctly is the foundation: continuous grouped data calls for a histogram, categorical data for a bar graph or pie chart, and the mode is the only average that works for categories."
+      },
+      {
+        "level": 3,
+        "title": "Organising Data",
+        "line": 40,
+        "body": "Raw data straight from collection is just a jumble of values. Organising it reveals structure and prepares it for graphing and summarising.\n\n**Tally tables.** As you read through raw data, record each value with a stroke. Group strokes in fives — four uprights with the fifth drawn diagonally across them — so they are easy to count. Tallying ensures you neither miss nor double-count a value.\n\n**Frequency tables.** *Frequency* is how many times a value or category occurs. A frequency table lists each value alongside its frequency (often converted from the tally column). The frequencies must add up to *n*, the total number of data values — always check this total.\n\n**Stem-and-leaf plots.** Each number is split into a *stem* (the leading digit(s), e.g. tens) and a *leaf* (the final digit). For 23, 25, 31, 34, 34, 42, 47:\n\n```\nStem | Leaf\n 2   | 3 5\n 3   | 1 4 4\n 4   | 2 7\n```\nwith a key such as \"2 | 3 means 23\". Always order the leaves. The plot's great strength is that it shows the *shape* of the data like a histogram while still keeping every original value, so you can read off the median and range exactly.\n\n**Grouped frequency tables (class intervals).** When data spreads over a wide range or is continuous, listing every value is impractical. Instead group values into *class intervals* and record the frequency of each interval. Rules for good intervals:\n- equal width (all width 10, say);\n- non-overlapping, so every value falls in exactly one class;\n- a sensible number (about 5–10);\n- covering the full range.\n\nFor discrete data use intervals like 0–9, 10–19, 20–29. For continuous data use boundaries like 0 ≤ x < 10, 10 ≤ x < 20 to leave no gap and no overlap. A common error is writing 0–10, 10–20 — the boundary value 10 then belongs to two classes. Grouping makes data manageable and ready for a histogram, but the trade-off is that the individual values are lost."
+      },
+      {
+        "level": 3,
+        "title": "Representing Data",
+        "line": 67,
+        "body": "A graph turns organised data into a picture so trends and comparisons jump out. Choosing the right type is half the skill.\n\n**Bar graph.** For categorical (or discrete) data. Each category gets an equal-width bar whose height is its frequency, and the bars are *separated by gaps*. Good for comparing categories such as favourite sports.\n\n**Double bar graph.** Shows two data sets side-by-side for each category, in two colours with a legend — ideal for comparing two groups (boys vs girls, 2025 vs 2026) across the same categories.\n\n**Histogram.** For numerical data grouped into class intervals (typically continuous). Crucially, the bars *touch* with no gaps, because the intervals form a continuous number line. This is the key difference from a bar graph: histogram bars touch (continuous data), bar-graph bars are separated (distinct categories).\n\n**Pie chart.** Shows parts of a whole as slices of a circle. The whole circle (360°) is 100% of the data, and each slice's angle is:\n\n> angle = (frequency ÷ total) × 360° = (category fraction) × 360°\n\nWorked example — 20 learners, 10 soccer, 6 netball, 4 hockey:\n- soccer: (10/20) × 360° = 180°\n- netball: (6/20) × 360° = 108°\n- hockey: (4/20) × 360° = 72°\n\nCheck: 180 + 108 + 72 = 360°. Draw each angle from the centre with a protractor.\n\n**Line / broken-line graph.** Points joined by straight segments, used to show how a quantity changes over time (temperature through a day, sales per month). The slope shows the rate of change.\n\n**Scatter plot.** Plots pairs (x, y) as unjoined dots to reveal a *relationship* between two numerical variables. An upward trend is positive correlation, downward is negative, and a shapeless cloud means no correlation.\n\n**Pictogram.** Uses repeated icons, each standing for a fixed amount (key: one apple = 5 apples), with partial icons for parts. Eye-catching but imprecise.\n\n**Choosing the right graph:** trend over time → line graph; parts of a whole → pie chart; comparing categories → bar graph (double bar for two groups); relationship between two variables → scatter plot; grouped continuous data → histogram. Whatever the choice, every good graph needs a title, labelled axes with units, an even scale, and a key where needed."
+      },
+      {
+        "level": 3,
+        "title": "Measures of Central Tendency",
+        "line": 97,
+        "body": "A measure of central tendency is a single value that represents the \"typical\" or \"centre\" of a data set. There are three, and choosing the right one matters.\n\n**Mean.** The arithmetic average:\n\n> mean = Σx ÷ n = (sum of all values) ÷ (number of values)\n\nFor 4, 7, 9, 4, 6: Σx = 30, n = 5, mean = 6. Because the mean uses every value, it is strongly affected by outliers. From a frequency table, mean = Σ(value × frequency) ÷ Σ(frequency); divide by the *total* frequency, not by the number of different values. A useful rearrangement is Σx = mean × n — if the mean of 5 numbers is 12, their sum is 60, which lets you find a missing value.\n\n**Median.** The middle value of the *ordered* data. For an odd count, it is the single middle value (position (n+1)/2). For an even count, average the two middle values: 3, 5, 8, 9 gives (5+8)/2 = 6.5. From a frequency table, find the middle position and add frequencies cumulatively until you reach it. The biggest mistake is forgetting to order the data first. The median is *resistant* to outliers.\n\n**Mode.** The value that occurs most often. Data can have one mode, two (bimodal), or none (all values appear once). The mode is the only average that works for categorical data — the most popular colour or sport.\n\n**Outliers and which average to use.** Consider 2, 3, 4, 5, 100. The mean is 22.8 (misleading), while the median is 4 (genuinely typical). The mean is most affected by outliers; the median and mode are barely affected. So:\n- use the **mean** for numerical data with no big outliers (uses all the data);\n- use the **median** when outliers or skew are present (house prices, salaries);\n- use the **mode** for categorical data or when you want the most common value.\n\nAlways pick the average that best represents what is typical for that particular data set."
+      },
+      {
+        "level": 3,
+        "title": "Measures of Dispersion",
+        "line": 119,
+        "body": "Two data sets can share the same mean yet look completely different — one tightly clustered, one widely scattered. *Dispersion* (spread) describes how spread out the data is.\n\n**Range.** The simplest measure:\n\n> range = maximum − minimum\n\nFor 4, 7, 9, 15, 2: range = 15 − 2 = 13. A large range means widely spread data; a small range means values close together. Its weakness is that it uses *only* the two extreme values and ignores everything in between.\n\n**Extremes.** The extremes are the smallest value (minimum) and largest value (maximum) of the ordered data. They define the range.\n\n**Outliers and their effect.** An outlier is a value much smaller or larger than the rest, standing far apart from the cluster — the 90 in 21, 23, 22, 25, 90, or the 60 in 12, 14, 13, 15, 60. Spot one by ordering the data and looking for a big gap. Outliers have a dramatic effect:\n- they greatly **increase the range** (with 60 the range is 48; without it, just 3);\n- they pull the **mean** towards themselves;\n- the **median** and **mode** stay almost unchanged.\n\nSo when outliers are present, report the median rather than the mean, and note the outlier separately. An outlier may be a recording error or a genuine unusual case — investigate before discarding it.\n\nBecause the range is so easily distorted by a single outlier, always read it together with a measure of central tendency (usually the median) so the spread is described fairly."
+      },
+      {
+        "level": 3,
+        "title": "Interpreting Data",
+        "line": 141,
+        "body": "Once data has been collected, organised and summarised, the final step is to **interpret and analyse** it — to draw meaning and conclusions from the numbers, tables and graphs. Collecting data is pointless if you cannot read the story it tells, so this section is about turning pictures and statistics into sensible, *honest* conclusions, and about spotting when someone is trying to mislead you.\n\n**What it means to interpret and analyse data**\n\nTo analyse data is to look at the organised information and answer questions like:\n\n- What is the **typical** or central value? (the mean, median or mode)\n- How **spread out** is the data? (the range — the difference between the largest and smallest values)\n- Are there **trends or patterns**? (Are values rising, falling, repeating?)\n- Are there **outliers** — values that lie far from the rest?\n- Does the data actually **answer the original question** that was asked?\n\nA good interpretation reports these findings in plain words, for example: \"Most learners scored between 50 and 70, the mean was 61, and one unusually low score of 12 pulled the average down.\"\n\n**Reading graphs and tables**\n\nDifferent graphs answer different questions, so read them carefully:\n\n- **Bar graphs / pictograms** — compare separate categories (e.g. favourite sports).\n- **Line graphs** — show how something changes over time (a trend).\n- **Pie charts** — show how a whole is divided into parts (proportions).\n- **Tables** — give exact values; read the correct row and column.\n\nAlways start by reading the **title, the axis labels, the units and the scale** before you read any values. The numbers mean nothing until you know what they count.\n\n**Bias**\n\n**Bias** is anything that makes results unfairly favour one outcome, so they do not truly represent the whole population. Bias produces *wrong conclusions even when every calculation is correct*. Two common sources:\n\n- **Sampling bias** — the sample is not representative (e.g. surveying only your friends, or only people outside a gym about exercise habits). A fair sample should be **random** and **large enough**.\n- **Question bias** — leading or loaded questions push people towards an answer, e.g. \"Don't you agree our delicious food is the best?\" A fair question is neutral: \"How would you rate the food?\"\n\nOther sources include very small samples, many non-responses, and misleading graphs.\n\n**Misleading graphs**\n\nA graph can be technically \"correct\" yet designed to deceive. Watch for:\n\n- **Broken (truncated) vertical axis** — the y-axis does not start at 0. Small differences then look huge. A bar of 102 next to one of 100 can look twice as tall if the axis starts at 99.\n- **Uneven or inconsistent scale** — gaps that jump by 2, then by 10, distorting the shape.\n- **Missing labels or no scale** — you cannot judge the real size of anything.\n- **Different-sized pictogram icons** — see the worked example below.\n- **3-D effects** — exaggerate or hide differences.\n- **Cherry-picked time range** — choosing only the months that show the trend you want.\n\n> **Worked example 1 — Critiquing a truncated axis**\n> A shop's graph shows sales \"soaring\", but the y-axis runs only from 480 to 500. A rise from 485 to 495 fills most of the graph and looks dramatic.\n> *Critique:* The y-axis is truncated (it does not start at 0) and covers a tiny range (480–500), so a change of only 10 units looks enormous. In reality 485 → 495 is about a 2% increase. Redraw with the y-axis starting at 0 to show the true, modest change. The original is built to mislead.\n\n> **Worked example 2 — Misleading pictogram**\n> A pictogram doubles a value by drawing one icon **twice as tall and twice as wide**.\n> Because both dimensions double, the icon's **area** becomes 2 × 2 = 4 times bigger. The eye reads a 4× difference instead of the true 2×.\n> *Fair method:* use **identical** icons with a clear key (each icon = a fixed amount), and show \"more\" by drawing **more icons**, never bigger ones.\n\n**Critical-reading checklist**\n\nWhen reading any data or graph, ask:\n\n- Who collected it and how? (sample size, randomness, possible bias)\n- Does the y-axis start at 0? Is the scale even?\n- Are the axes and units labelled?\n- Is the right type of graph used for this data?\n- Are outliers hidden or exaggerated?\n- Does the stated conclusion actually follow from the data?\n\n**Pitfalls**\n\n- A correct calculation on a **biased** sample still gives a wrong conclusion — check the data source first.\n- Do not trust a graph's \"story\" before reading its axes; a truncated axis is the most common trick.\n- The complement of \"double the icon\" is not double the area — scaling both width and height multiplies area, not length.\n- Correlation seen in a graph does not prove one thing **causes** another; only report what the data actually supports."
+      }
+    ],
+    "firstParagraph": "### The Data-Handling Cycle\n\nData handling is not a single skill but a *cycle* of stages, each feeding the next. Working through it in order keeps an investigation honest and useful.",
+    "body": "# Data Handling — Complete Study Guide\n\n## Contents\n\n### The Data-Handling Cycle\n\nData handling is not a single skill but a *cycle* of stages, each feeding the next. Working through it in order keeps an investigation honest and useful.\n\n1. **Pose a question.** Everything starts with a clear, specific question — for example, \"How many hours of sleep do Grade 9 learners at our school get on a school night?\" A sharp question decides what data you need, who you collect it from, and how you will analyse it. Vague questions produce messy, unusable data.\n\n2. **Collect data.** Gather the values that answer the question, through surveys, questionnaires, experiments, observation or existing records. Decide whether you are collecting from the whole *population* or from a *sample*, and take care to avoid bias.\n\n3. **Organise data.** Raw data is disordered. Bring order with tally tables, frequency tables, stem-and-leaf plots, or grouped class intervals so patterns can begin to show.\n\n4. **Represent data.** Turn the organised data into a visual — bar graph, histogram, pie chart, line graph or scatter plot — so trends and comparisons are easy to see.\n\n5. **Summarise data.** Reduce the data to a few describing numbers: measures of central tendency (mean, median, mode) and measures of spread (range, extremes, outliers).\n\n6. **Interpret / analyse.** Make sense of the summaries and graphs. What is typical? How spread out is it? Are there trends or outliers? Does this answer the original question?\n\n7. **Report.** Communicate the findings clearly — a written conclusion, recommendation or presentation that ties back to the question you posed at the start.\n\nA failure at any stage corrupts the rest: a biased sample (collect) or an overlapping class interval (organise) will lead to wrong conclusions no matter how neat the later maths is. Always trace a surprising result back through the cycle to find where it came from.\n\n\n### Types of Data\n\nBefore collecting or analysing, you must know *what kind* of data you are dealing with — it determines which tables, graphs and averages are appropriate.\n\n**Population vs sample.** The *population* is the entire group you want information about (all Grade 9 learners in South Africa). A *sample* is a smaller part of it that you actually collect from. Samples save time and money, but a good sample must be *random* and *representative* so that conclusions about the sample apply to the whole population. A *biased* sample (only your friends, only people at a gym) over- or under-represents part of the population and gives misleading results.\n\n**Categorical vs numerical.** *Categorical* (qualitative) data describes a quality or category — eye colour, favourite sport, yes/no — and cannot be sensibly added or averaged. *Numerical* (quantitative) data consists of actual numbers you can do arithmetic with — height, marks, number of siblings. Beware of number-like labels (jersey numbers, ID numbers, bus routes): they are categorical because arithmetic on them is meaningless.\n\n**Discrete vs continuous.** Within numerical data, *discrete* data is counted and takes only specific (usually whole) values with gaps between them — number of cars, learners in a class. *Continuous* data is measured and can take any value in a range, including decimals — height, mass, time, temperature. A quick test: \"How many?\" signals discrete; \"How much / how long / how heavy?\" signals continuous.\n\n**Primary vs secondary sources.** *Primary* data is collected first-hand by you for your own question (a survey you run, measurements you take). *Secondary* data was collected by someone else and reused (Stats SA reports, newspapers, textbooks, online databases). Primary data is tailored but slower to get; secondary data is quick but may be outdated or not exactly what you need.\n\nClassifying data correctly is the foundation: continuous grouped data calls for a histogram, categorical data for a bar graph or pie chart, and the mode is the only average that works for categories.\n\n\n### Organising Data\n\nRaw data straight from collection is just a jumble of values. Organising it reveals structure and prepares it for graphing and summarising.\n\n**Tally tables.** As you read through raw data, record each value with a stroke. Group strokes in fives — four uprights with the fifth drawn diagonally across them — so they are easy to count. Tallying ensures you neither miss nor double-count a value.\n\n**Frequency tables.** *Frequency* is how many times a value or category occurs. A frequency table lists each value alongside its frequency (often converted from the tally column). The frequencies must add up to *n*, the total number of data values — always check this total.\n\n**Stem-and-leaf plots.** Each number is split into a *stem* (the leading digit(s), e.g. tens) and a *leaf* (the final digit). For 23, 25, 31, 34, 34, 42, 47:\n\n```\nStem | Leaf\n 2   | 3 5\n 3   | 1 4 4\n 4   | 2 7\n```\nwith a key such as \"2 | 3 means 23\". Always order the leaves. The plot's great strength is that it shows the *shape* of the data like a histogram while still keeping every original value, so you can read off the median and range exactly.\n\n**Grouped frequency tables (class intervals).** When data spreads over a wide range or is continuous, listing every value is impractical. Instead group values into *class intervals* and record the frequency of each interval. Rules for good intervals:\n- equal width (all width 10, say);\n- non-overlapping, so every value falls in exactly one class;\n- a sensible number (about 5–10);\n- covering the full range.\n\nFor discrete data use intervals like 0–9, 10–19, 20–29. For continuous data use boundaries like 0 ≤ x < 10, 10 ≤ x < 20 to leave no gap and no overlap. A common error is writing 0–10, 10–20 — the boundary value 10 then belongs to two classes. Grouping makes data manageable and ready for a histogram, but the trade-off is that the individual values are lost.\n\n\n### Representing Data\n\nA graph turns organised data into a picture so trends and comparisons jump out. Choosing the right type is half the skill.\n\n**Bar graph.** For categorical (or discrete) data. Each category gets an equal-width bar whose height is its frequency, and the bars are *separated by gaps*. Good for comparing categories such as favourite sports.\n\n**Double bar graph.** Shows two data sets side-by-side for each category, in two colours with a legend — ideal for comparing two groups (boys vs girls, 2025 vs 2026) across the same categories.\n\n**Histogram.** For numerical data grouped into class intervals (typically continuous). Crucially, the bars *touch* with no gaps, because the intervals form a continuous number line. This is the key difference from a bar graph: histogram bars touch (continuous data), bar-graph bars are separated (distinct categories).\n\n**Pie chart.** Shows parts of a whole as slices of a circle. The whole circle (360°) is 100% of the data, and each slice's angle is:\n\n> angle = (frequency ÷ total) × 360° = (category fraction) × 360°\n\nWorked example — 20 learners, 10 soccer, 6 netball, 4 hockey:\n- soccer: (10/20) × 360° = 180°\n- netball: (6/20) × 360° = 108°\n- hockey: (4/20) × 360° = 72°\n\nCheck: 180 + 108 + 72 = 360°. Draw each angle from the centre with a protractor.\n\n**Line / broken-line graph.** Points joined by straight segments, used to show how a quantity changes over time (temperature through a day, sales per month). The slope shows the rate of change.\n\n**Scatter plot.** Plots pairs (x, y) as unjoined dots to reveal a *relationship* between two numerical variables. An upward trend is positive correlation, downward is negative, and a shapeless cloud means no correlation.\n\n**Pictogram.** Uses repeated icons, each standing for a fixed amount (key: one apple = 5 apples), with partial icons for parts. Eye-catching but imprecise.\n\n**Choosing the right graph:** trend over time → line graph; parts of a whole → pie chart; comparing categories → bar graph (double bar for two groups); relationship between two variables → scatter plot; grouped continuous data → histogram. Whatever the choice, every good graph needs a title, labelled axes with units, an even scale, and a key where needed.\n\n\n### Measures of Central Tendency\n\nA measure of central tendency is a single value that represents the \"typical\" or \"centre\" of a data set. There are three, and choosing the right one matters.\n\n**Mean.** The arithmetic average:\n\n> mean = Σx ÷ n = (sum of all values) ÷ (number of values)\n\nFor 4, 7, 9, 4, 6: Σx = 30, n = 5, mean = 6. Because the mean uses every value, it is strongly affected by outliers. From a frequency table, mean = Σ(value × frequency) ÷ Σ(frequency); divide by the *total* frequency, not by the number of different values. A useful rearrangement is Σx = mean × n — if the mean of 5 numbers is 12, their sum is 60, which lets you find a missing value.\n\n**Median.** The middle value of the *ordered* data. For an odd count, it is the single middle value (position (n+1)/2). For an even count, average the two middle values: 3, 5, 8, 9 gives (5+8)/2 = 6.5. From a frequency table, find the middle position and add frequencies cumulatively until you reach it. The biggest mistake is forgetting to order the data first. The median is *resistant* to outliers.\n\n**Mode.** The value that occurs most often. Data can have one mode, two (bimodal), or none (all values appear once). The mode is the only average that works for categorical data — the most popular colour or sport.\n\n**Outliers and which average to use.** Consider 2, 3, 4, 5, 100. The mean is 22.8 (misleading), while the median is 4 (genuinely typical). The mean is most affected by outliers; the median and mode are barely affected. So:\n- use the **mean** for numerical data with no big outliers (uses all the data);\n- use the **median** when outliers or skew are present (house prices, salaries);\n- use the **mode** for categorical data or when you want the most common value.\n\nAlways pick the average that best represents what is typical for that particular data set.\n\n\n### Measures of Dispersion\n\nTwo data sets can share the same mean yet look completely different — one tightly clustered, one widely scattered. *Dispersion* (spread) describes how spread out the data is.\n\n**Range.** The simplest measure:\n\n> range = maximum − minimum\n\nFor 4, 7, 9, 15, 2: range = 15 − 2 = 13. A large range means widely spread data; a small range means values close together. Its weakness is that it uses *only* the two extreme values and ignores everything in between.\n\n**Extremes.** The extremes are the smallest value (minimum) and largest value (maximum) of the ordered data. They define the range.\n\n**Outliers and their effect.** An outlier is a value much smaller or larger than the rest, standing far apart from the cluster — the 90 in 21, 23, 22, 25, 90, or the 60 in 12, 14, 13, 15, 60. Spot one by ordering the data and looking for a big gap. Outliers have a dramatic effect:\n- they greatly **increase the range** (with 60 the range is 48; without it, just 3);\n- they pull the **mean** towards themselves;\n- the **median** and **mode** stay almost unchanged.\n\nSo when outliers are present, report the median rather than the mean, and note the outlier separately. An outlier may be a recording error or a genuine unusual case — investigate before discarding it.\n\nBecause the range is so easily distorted by a single outlier, always read it together with a measure of central tendency (usually the median) so the spread is described fairly.\n\n\n### Interpreting Data\n\nOnce data has been collected, organised and summarised, the final step is to **interpret and analyse** it — to draw meaning and conclusions from the numbers, tables and graphs. Collecting data is pointless if you cannot read the story it tells, so this section is about turning pictures and statistics into sensible, *honest* conclusions, and about spotting when someone is trying to mislead you.\n\n**What it means to interpret and analyse data**\n\nTo analyse data is to look at the organised information and answer questions like:\n\n- What is the **typical** or central value? (the mean, median or mode)\n- How **spread out** is the data? (the range — the difference between the largest and smallest values)\n- Are there **trends or patterns**? (Are values rising, falling, repeating?)\n- Are there **outliers** — values that lie far from the rest?\n- Does the data actually **answer the original question** that was asked?\n\nA good interpretation reports these findings in plain words, for example: \"Most learners scored between 50 and 70, the mean was 61, and one unusually low score of 12 pulled the average down.\"\n\n**Reading graphs and tables**\n\nDifferent graphs answer different questions, so read them carefully:\n\n- **Bar graphs / pictograms** — compare separate categories (e.g. favourite sports).\n- **Line graphs** — show how something changes over time (a trend).\n- **Pie charts** — show how a whole is divided into parts (proportions).\n- **Tables** — give exact values; read the correct row and column.\n\nAlways start by reading the **title, the axis labels, the units and the scale** before you read any values. The numbers mean nothing until you know what they count.\n\n**Bias**\n\n**Bias** is anything that makes results unfairly favour one outcome, so they do not truly represent the whole population. Bias produces *wrong conclusions even when every calculation is correct*. Two common sources:\n\n- **Sampling bias** — the sample is not representative (e.g. surveying only your friends, or only people outside a gym about exercise habits). A fair sample should be **random** and **large enough**.\n- **Question bias** — leading or loaded questions push people towards an answer, e.g. \"Don't you agree our delicious food is the best?\" A fair question is neutral: \"How would you rate the food?\"\n\nOther sources include very small samples, many non-responses, and misleading graphs.\n\n**Misleading graphs**\n\nA graph can be technically \"correct\" yet designed to deceive. Watch for:\n\n- **Broken (truncated) vertical axis** — the y-axis does not start at 0. Small differences then look huge. A bar of 102 next to one of 100 can look twice as tall if the axis starts at 99.\n- **Uneven or inconsistent scale** — gaps that jump by 2, then by 10, distorting the shape.\n- **Missing labels or no scale** — you cannot judge the real size of anything.\n- **Different-sized pictogram icons** — see the worked example below.\n- **3-D effects** — exaggerate or hide differences.\n- **Cherry-picked time range** — choosing only the months that show the trend you want.\n\n> **Worked example 1 — Critiquing a truncated axis**\n> A shop's graph shows sales \"soaring\", but the y-axis runs only from 480 to 500. A rise from 485 to 495 fills most of the graph and looks dramatic.\n> *Critique:* The y-axis is truncated (it does not start at 0) and covers a tiny range (480–500), so a change of only 10 units looks enormous. In reality 485 → 495 is about a 2% increase. Redraw with the y-axis starting at 0 to show the true, modest change. The original is built to mislead.\n\n> **Worked example 2 — Misleading pictogram**\n> A pictogram doubles a value by drawing one icon **twice as tall and twice as wide**.\n> Because both dimensions double, the icon's **area** becomes 2 × 2 = 4 times bigger. The eye reads a 4× difference instead of the true 2×.\n> *Fair method:* use **identical** icons with a clear key (each icon = a fixed amount), and show \"more\" by drawing **more icons**, never bigger ones.\n\n**Critical-reading checklist**\n\nWhen reading any data or graph, ask:\n\n- Who collected it and how? (sample size, randomness, possible bias)\n- Does the y-axis start at 0? Is the scale even?\n- Are the axes and units labelled?\n- Is the right type of graph used for this data?\n- Are outliers hidden or exaggerated?\n- Does the stated conclusion actually follow from the data?\n\n**Pitfalls**\n\n- A correct calculation on a **biased** sample still gives a wrong conclusion — check the data source first.\n- Do not trust a graph's \"story\" before reading its axes; a truncated axis is the most common trick.\n- The complement of \"double the icon\" is not double the area — scaling both width and height multiplies area, not length.\n- Correlation seen in a graph does not prove one thing **causes** another; only report what the data actually supports.\n\n\n",
+    "infographics": [],
+    "videos": [],
+    "audio": []
+  }
+}

@@ -3,6 +3,194 @@
   "cat": "sky",
   "cards": [
     {
+      "id": "exponents-2d286d677d",
+      "front": "Which is larger, 2⁵ or 5²? (Show the method)",
+      "back": "When bases AND exponents differ, just evaluate each power and compare the values:\n2⁵ = 2×2×2×2×2 = 32.\n5² = 5×5 = 25.\nSince 32 > 25, 2⁵ > 5².\nMoral: you cannot tell from the symbols alone — compute and compare the actual numbers.",
+      "tags": [
+        "comparing-powers"
+      ],
+      "difficulty": "medium",
+      "source": "Comparing Powers - CAPS_comparing-powers",
+      "sourceFile": "Comparing Powers - CAPS_comparing-powers.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "70"
+      }
+    },
+    {
+      "id": "exponents-544066db62",
+      "front": "Which is larger, 3⁴ or 4³?",
+      "back": "Evaluate both:\n3⁴ = 3×3×3×3 = 81.\n4³ = 4×4×4 = 64.\n81 > 64, so 3⁴ > 4³.\nMethod: when neither base nor exponent matches, calculate each value and compare.",
+      "tags": [
+        "comparing-powers"
+      ],
+      "difficulty": "medium",
+      "source": "Comparing Powers - CAPS_comparing-powers",
+      "sourceFile": "Comparing Powers - CAPS_comparing-powers.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "70"
+      }
+    },
+    {
+      "id": "exponents-72802b6d46",
+      "front": "Express 32 as a power of 2, and as a power of 4.",
+      "back": "As a power of 2: keep dividing by 2 → 32 = 2×2×2×2×2 = 2⁵.\nAs a power of 4: 4 = 2², so 4ⁿ = 2²ⁿ. We need 2²ⁿ = 2⁵, i.e. 2n = 5, giving n = 2,5.\nSo 32 = 4²ᐟ⁵ (a fractional power). Since 32 is not a whole-number power of 4, it can only be written with a fractional exponent.\nTip: a number is a whole-number power of a base only if it factorises exactly into that base.",
+      "tags": [
+        "comparing-powers",
+        "express-as-power"
+      ],
+      "difficulty": "medium",
+      "source": "Comparing Powers - CAPS_comparing-powers",
+      "sourceFile": "Comparing Powers - CAPS_comparing-powers.yml"
+    },
+    {
+      "id": "exponents-c927e3e26c",
+      "front": "Write 64 as a power of 2, a power of 4, and a power of 8.",
+      "back": "Factorise: 64 = 2⁶ (since 2×2×2×2×2×2 = 64).\nAs a power of 4: 4 = 2², so 64 = 2⁶ = (2²)³ = 4³.\nAs a power of 8: 8 = 2³, so 64 = 2⁶ = (2³)² = 8².\nMethod: write everything as a power of 2 first, then regroup the exponent to match the new base.",
+      "tags": [
+        "comparing-powers",
+        "express-as-power"
+      ],
+      "difficulty": "medium",
+      "source": "Comparing Powers - CAPS_comparing-powers",
+      "sourceFile": "Comparing Powers - CAPS_comparing-powers.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "70"
+      }
+    },
+    {
+      "id": "exponents-42ed564e17",
+      "front": "Compare powers with the SAME base: which is larger, 2⁷ or 2⁴? And with the same exponent: 6³ or 9³?",
+      "back": "Same base (both base 2): the bigger exponent wins for a base > 1. 7 > 4, so 2⁷ > 2⁴ (no need to evaluate).\nSame exponent (both cubed): the bigger base wins. 9 > 6, so 9³ > 6³.\nShortcuts: with equal bases compare exponents; with equal exponents compare bases. Only when BOTH differ must you compute full values.",
+      "tags": [
+        "comparing-powers"
+      ],
+      "difficulty": "medium",
+      "source": "Comparing Powers - CAPS_comparing-powers",
+      "sourceFile": "Comparing Powers - CAPS_comparing-powers.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "exponents-2fc53724d9",
+      "front": "Express 81 as a power of 3, then write it as a power of 9.",
+      "back": "81 = 3×3×3×3 = 3⁴.\nSince 9 = 3², we have 81 = 3⁴ = (3²)² = 9².\nCheck: 9² = 81. ✓\nGeneral method: reduce to the smallest base (here 3), then pair up the exponent to rebuild a larger base.",
+      "tags": [
+        "comparing-powers",
+        "express-as-power"
+      ],
+      "difficulty": "medium",
+      "source": "Comparing Powers - CAPS_comparing-powers",
+      "sourceFile": "Comparing Powers - CAPS_comparing-powers.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "70"
+      }
+    },
+    {
+      "id": "exponents-199fe7ad0e",
+      "front": "TRAP: What is the difference between −3² and (−3)²?",
+      "back": "The brackets decide what the power acts on.\n−3²: only the 3 is squared, then the minus is applied → −(3²) = −9.\n(−3)²: the whole −3 is squared → (−3)×(−3) = +9.\nSo −3² = −9 but (−3)² = +9. Without brackets the exponent binds tighter than the negative sign. Same idea: −2⁴ = −16 but (−2)⁴ = 16.",
+      "tags": [
+        "exam-trap",
+        "sign-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Exam Traps - CAPS_exam-traps",
+      "sourceFile": "Exam Traps - CAPS_exam-traps.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "132"
+      }
+    },
+    {
+      "id": "exponents-5cdd15e02e",
+      "front": "TRAP: Simplify 2x⁻³. Does the negative power affect the 2?",
+      "back": "No. The exponent −3 attaches ONLY to its base x, not to the coefficient 2.\n2x⁻³ = 2 × x⁻³ = 2 × (1/x³) = 2/x³.\nIt is NOT 1/(2x)³ — the 2 stays on top, only x moves to the denominator.\nIf the whole thing were bracketed, (2x)⁻³ = 1/(2x)³ = 1/(8x³). Brackets change everything.",
+      "tags": [
+        "exam-trap",
+        "negative-index",
+        "coefficient"
+      ],
+      "difficulty": "medium",
+      "source": "Exam Traps - CAPS_exam-traps",
+      "sourceFile": "Exam Traps - CAPS_exam-traps.yml"
+    },
+    {
+      "id": "exponents-3b1a986239",
+      "front": "TRAP: Simplify (3x)⁻² and contrast it with 3x⁻².",
+      "back": "(3x)⁻²: bracket means the WHOLE 3x is the base. (3x)⁻² = 1/(3x)² = 1/(9x²).\n3x⁻²: no bracket, so −2 acts only on x. 3x⁻² = 3/x².\nThese are different: 1/(9x²) vs 3/x². Always check whether the coefficient is inside the bracket before applying a negative exponent.",
+      "tags": [
+        "exam-trap",
+        "negative-index",
+        "brackets"
+      ],
+      "difficulty": "medium",
+      "source": "Exam Traps - CAPS_exam-traps",
+      "sourceFile": "Exam Traps - CAPS_exam-traps.yml"
+    },
+    {
+      "id": "exponents-e802901799",
+      "front": "TRAP: What is 0⁰, 0⁵ and 5⁰? Is 0 always a valid base?",
+      "back": "5⁰ = 1 (any NON-zero base to the power 0 equals 1).\n0⁵ = 0 (zero multiplied by itself is still 0).\n0⁰ is UNDEFINED — the rule 'anything⁰ = 1' needs a non-zero base, so do not write 0⁰ = 1.\nAlso 0⁻ⁿ = 1/0ⁿ = 1/0 is undefined. So 0 cannot be used as a base with the zero or negative exponent rules.",
+      "tags": [
+        "exam-trap",
+        "zero-base"
+      ],
+      "difficulty": "medium",
+      "source": "Exam Traps - CAPS_exam-traps",
+      "sourceFile": "Exam Traps - CAPS_exam-traps.yml"
+    },
+    {
+      "id": "exponents-bd17292b31",
+      "front": "TRAP: A learner writes x² × y³ = (xy)⁵. Why is this wrong?",
+      "back": "Law 1 (add exponents) only applies to the SAME base. Here the bases x and y are different, so x² and y³ cannot be combined — x²y³ is already fully simplified.\n(xy)⁵ would mean x⁵y⁵, which is not equal to x²y³.\nGolden rule: add/subtract exponents ONLY for like bases; unlike bases stay as a product.",
+      "tags": [
+        "exam-trap",
+        "like-bases"
+      ],
+      "difficulty": "medium",
+      "source": "Exam Traps - CAPS_exam-traps",
+      "sourceFile": "Exam Traps - CAPS_exam-traps.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "exponents-6d33183bf3",
+      "front": "TRAP: A learner writes 2³ + 2² = 2⁵. Why is this wrong, and what is the correct value?",
+      "back": "The exponent laws are for MULTIPLYING/dividing powers, NOT adding them. You may NOT add exponents when the terms are added.\nCorrect: 2³ + 2² = 8 + 4 = 12.\n(2⁵ = 32, which is wrong.)\nOnly 2³ × 2² = 2⁵ uses the add-exponents law. For a SUM, just evaluate each power and add the results.",
+      "tags": [
+        "exam-trap",
+        "addition-vs-multiplication"
+      ],
+      "difficulty": "medium",
+      "source": "Exam Traps - CAPS_exam-traps",
+      "sourceFile": "Exam Traps - CAPS_exam-traps.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "exponents-14582ccdb0",
+      "front": "TRAP: Simplify −2⁻². Handle BOTH the sign and the negative exponent.",
+      "back": "Two separate things: the leading minus, and the exponent −2 on base 2.\nThe exponent acts only on 2: 2⁻² = 1/2² = 1/4.\nThe leading minus then applies: −2⁻² = −(1/4) = −1/4.\nContrast (−2)⁻² = 1/(−2)² = 1/4 (positive, because the whole −2 is squared). Brackets and sign placement matter.",
+      "tags": [
+        "exam-trap",
+        "sign-rules",
+        "negative-index"
+      ],
+      "difficulty": "medium",
+      "source": "Exam Traps - CAPS_exam-traps",
+      "sourceFile": "Exam Traps - CAPS_exam-traps.yml"
+    },
+    {
       "id": "exponents-5f5844f17e",
       "front": "Correct the false statement (Q10.1): x² + x² = 2x⁴. What is the right-hand side?",
       "back": "It is FALSE. x² + x² are LIKE terms (same base and exponent), so you ADD the coefficients, you do NOT add exponents.\nx² + x² = 2x².\nThe exponent stays 2; only the count of terms (the coefficient) becomes 2.\nAdding exponents is for MULTIPLYING (x²·x² = x⁴), not for adding.",
@@ -346,7 +534,11 @@
       ],
       "difficulty": "medium",
       "source": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007",
-      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml"
+      "sourceFile": "Exponential Equations and Substitution Ex 4.2-4.3 - Gr9 Maths 2-in-1_pages-007-007.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "146"
+      }
     },
     {
       "id": "exponents-db28706bdf",
@@ -483,7 +675,11 @@
       ],
       "difficulty": "medium",
       "source": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006",
-      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml"
+      "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "121"
+      }
     },
     {
       "id": "exponents-b3b364d2ae",
@@ -722,7 +918,7 @@
       "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml",
       "requires": {
         "subject": "exponents",
-        "sectionLine": "70"
+        "sectionLine": "132"
       }
     },
     {
@@ -739,7 +935,7 @@
       "sourceFile": "Exponents Ex 4.1 - Gr9 Maths 2-in-1_pages-005-006.yml",
       "requires": {
         "subject": "exponents",
-        "sectionLine": "70"
+        "sectionLine": "132"
       }
     },
     {
@@ -1034,7 +1230,7 @@
       "sourceFile": "Exponents Ex 4.1 Worked Solutions - Gr9 Maths 2-in-1_pages-012-014.yml",
       "requires": {
         "subject": "exponents",
-        "sectionLine": "70"
+        "sectionLine": "146"
       }
     },
     {
@@ -1069,12 +1265,363 @@
         "subject": "exponents",
         "sectionLine": "0"
       }
+    },
+    {
+      "id": "exponents-b35b1412a0",
+      "front": "Evaluate without a calculator: 2³ + 3² − 5⁰.",
+      "back": "Work out each power first (BODMAS: exponents before adding/subtracting):\n2³ = 8\n3² = 9\n5⁰ = 1  (any non-zero base to the power 0 is 1)\nThen: 8 + 9 − 1 = 16.\nAnswer: 16.",
+      "tags": [
+        "numeric-eval",
+        "bodmas"
+      ],
+      "difficulty": "medium",
+      "source": "Numeric Evaluation - CAPS_numeric-evaluation",
+      "sourceFile": "Numeric Evaluation - CAPS_numeric-evaluation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "132"
+      }
+    },
+    {
+      "id": "exponents-0437405167",
+      "front": "Evaluate without a calculator: 3² × 2³ ÷ 6.",
+      "back": "BODMAS: powers first, then left-to-right × and ÷.\n3² = 9, 2³ = 8.\n9 × 8 = 72.\n72 ÷ 6 = 12.\nAnswer: 12. (× and ÷ have equal priority, so go left to right.)",
+      "tags": [
+        "numeric-eval",
+        "bodmas"
+      ],
+      "difficulty": "medium",
+      "source": "Numeric Evaluation - CAPS_numeric-evaluation",
+      "sourceFile": "Numeric Evaluation - CAPS_numeric-evaluation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "132"
+      }
+    },
+    {
+      "id": "exponents-d4f5eb34c9",
+      "front": "Evaluate without a calculator: 2⁻³ + 4⁻¹.",
+      "back": "A negative index means reciprocal: a⁻ⁿ = 1/aⁿ.\n2⁻³ = 1/2³ = 1/8.\n4⁻¹ = 1/4.\nCommon denominator 8: 1/8 + 2/8 = 3/8.\nAnswer: 3/8.",
+      "tags": [
+        "numeric-eval",
+        "negative-index"
+      ],
+      "difficulty": "medium",
+      "source": "Numeric Evaluation - CAPS_numeric-evaluation",
+      "sourceFile": "Numeric Evaluation - CAPS_numeric-evaluation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "132"
+      }
+    },
+    {
+      "id": "exponents-97cbce02bb",
+      "front": "Evaluate without a calculator: (2² + 3²)⁰ + 10¹.",
+      "back": "Brackets first: 2² + 3² = 4 + 9 = 13.\nThen 13⁰ = 1 (whole bracket, non-zero, to the power 0).\n10¹ = 10.\nSum: 1 + 10 = 11.\nAnswer: 11. Watch: the ⁰ applies to the whole bracket, so you do NOT need the value 13 itself — it just must be non-zero.",
+      "tags": [
+        "numeric-eval",
+        "zero-index"
+      ],
+      "difficulty": "medium",
+      "source": "Numeric Evaluation - CAPS_numeric-evaluation",
+      "sourceFile": "Numeric Evaluation - CAPS_numeric-evaluation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "132"
+      }
+    },
+    {
+      "id": "exponents-800fbcda4b",
+      "front": "Evaluate without a calculator: (3⁴ × 3⁻²) ÷ 3³.",
+      "back": "Use the laws on the same base 3 (add then subtract exponents):\nNumerator: 3⁴ × 3⁻² = 3⁴⁺⁽⁻²⁾ = 3².\nDivide: 3² ÷ 3³ = 3²⁻³ = 3⁻¹.\n3⁻¹ = 1/3.\nAnswer: 1/3. Keeping everything as powers of 3 avoids large intermediate numbers.",
+      "tags": [
+        "numeric-eval",
+        "laws"
+      ],
+      "difficulty": "medium",
+      "source": "Numeric Evaluation - CAPS_numeric-evaluation",
+      "sourceFile": "Numeric Evaluation - CAPS_numeric-evaluation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "exponents-198ca480c0",
+      "front": "Evaluate without a calculator: 5² − 2 × 3² + (−2)³.",
+      "back": "BODMAS — powers, then ×, then + and −:\n5² = 25\n3² = 9, so 2 × 9 = 18\n(−2)³ = −8 (negative base, odd power → negative)\nCombine: 25 − 18 + (−8) = 25 − 18 − 8 = −1.\nAnswer: −1.",
+      "tags": [
+        "numeric-eval",
+        "bodmas"
+      ],
+      "difficulty": "medium",
+      "source": "Numeric Evaluation - CAPS_numeric-evaluation",
+      "sourceFile": "Numeric Evaluation - CAPS_numeric-evaluation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "132"
+      }
+    },
+    {
+      "id": "exponents-00d0394675",
+      "front": "Consolidation: evaluate (2³ × 2²) ÷ (2⁴) + 2⁰ without a calculator.",
+      "back": "Same base 2 throughout.\nNumerator: 2³ × 2² = 2³⁺² = 2⁵ = 32.\nDivide: 2⁵ ÷ 2⁴ = 2⁵⁻⁴ = 2¹ = 2.\nAdd 2⁰ = 1.\nTotal: 2 + 1 = 3.\nAnswer: 3. Apply laws to the like bases first, then do the final + as ordinary arithmetic.",
+      "tags": [
+        "numeric-eval",
+        "laws"
+      ],
+      "difficulty": "medium",
+      "source": "Numeric Evaluation - CAPS_numeric-evaluation",
+      "sourceFile": "Numeric Evaluation - CAPS_numeric-evaluation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "132"
+      }
+    },
+    {
+      "id": "exponents-d10732f572",
+      "front": "What is scientific notation (standard form) and what are the rules for the number a?",
+      "back": "Scientific notation writes a number as a × 10ⁿ, where:\n• 1 ≤ a < 10 (a has exactly ONE non-zero digit before the decimal point), and\n• n is an integer (positive, negative or zero).\nExamples: 4 500 = 4,5 × 10³ and 0,0072 = 7,2 × 10⁻³.\nIt is used to write very large or very small numbers compactly. The value of a must be at least 1 but less than 10 — so 45 × 10² is NOT correct standard form; rewrite as 4,5 × 10³.",
+      "tags": [
+        "scientific-notation"
+      ],
+      "difficulty": "medium",
+      "source": "Scientific Notation - CAPS_scientific-notation",
+      "sourceFile": "Scientific Notation - CAPS_scientific-notation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "exponents-1f3e1dd902",
+      "front": "Write the large number 384 000 000 in scientific notation. (Method)",
+      "back": "Step 1: Place the decimal point after the first non-zero digit: 3,84000000\nStep 2: Count how many places the point moved from its original (end) position: it moved 8 places LEFT.\nStep 3: For a LARGE number the exponent is POSITIVE and equals that count: n = 8.\nAnswer: 384 000 000 = 3,84 × 10⁸.\nCheck: moving the point 8 places right in 3,84 restores the original number.",
+      "tags": [
+        "scientific-notation",
+        "large-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Scientific Notation - CAPS_scientific-notation",
+      "sourceFile": "Scientific Notation - CAPS_scientific-notation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "exponents-8da9e7ab10",
+      "front": "Write the small number 0,000 062 in scientific notation. (Method)",
+      "back": "Step 1: Place the decimal after the first non-zero digit: 6,2\nStep 2: Count how many places the point moved from its original position: 5 places RIGHT.\nStep 3: For a SMALL number (less than 1) the exponent is NEGATIVE and equals that count: n = −5.\nAnswer: 0,000 062 = 6,2 × 10⁻⁵.\nCheck: 10⁻⁵ = 1/100 000, and 6,2 ÷ 100 000 = 0,000 062. ✓",
+      "tags": [
+        "scientific-notation",
+        "small-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Scientific Notation - CAPS_scientific-notation",
+      "sourceFile": "Scientific Notation - CAPS_scientific-notation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "exponents-fdbd1e0362",
+      "front": "Convert 2,05 × 10⁴ and 9,1 × 10⁻³ back to ordinary (decimal) notation.",
+      "back": "Rule: a POSITIVE exponent moves the decimal point RIGHT; a NEGATIVE exponent moves it LEFT. The exponent = number of places.\n2,05 × 10⁴: move point 4 places right → 20 500.\n9,1 × 10⁻³: move point 3 places left → 0,0091.\nFill in zeros as needed while shifting. A positive power gives a big number; a negative power gives a small (less than 1) number.",
+      "tags": [
+        "scientific-notation",
+        "converting"
+      ],
+      "difficulty": "medium",
+      "source": "Scientific Notation - CAPS_scientific-notation",
+      "sourceFile": "Scientific Notation - CAPS_scientific-notation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "exponents-eccd75429d",
+      "front": "Multiply in scientific notation: (3 × 10⁵) × (2 × 10⁴).",
+      "back": "Method: multiply the a-values together, and use Law 1 (ADD exponents) on the powers of 10.\n(3 × 10⁵) × (2 × 10⁴)\n= (3 × 2) × (10⁵ × 10⁴)\n= 6 × 10⁵⁺⁴\n= 6 × 10⁹.\nSince 1 ≤ 6 < 10, this is already correct standard form.",
+      "tags": [
+        "scientific-notation",
+        "multiplying"
+      ],
+      "difficulty": "medium",
+      "source": "Scientific Notation - CAPS_scientific-notation",
+      "sourceFile": "Scientific Notation - CAPS_scientific-notation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "exponents-9fd9f26f19",
+      "front": "Multiply (5 × 10⁶) × (4 × 10³) and fix the answer into correct standard form.",
+      "back": "(5 × 10⁶) × (4 × 10³) = (5 × 4) × 10⁶⁺³ = 20 × 10⁹.\nPitfall: 20 is NOT between 1 and 10, so this is not yet standard form.\nRewrite 20 = 2 × 10¹, so 20 × 10⁹ = 2 × 10¹ × 10⁹ = 2 × 10¹⁰.\nFinal answer: 2 × 10¹⁰. Always check that 1 ≤ a < 10 at the end.",
+      "tags": [
+        "scientific-notation",
+        "multiplying"
+      ],
+      "difficulty": "medium",
+      "source": "Scientific Notation - CAPS_scientific-notation",
+      "sourceFile": "Scientific Notation - CAPS_scientific-notation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "exponents-d715eb1568",
+      "front": "Divide in scientific notation: (8 × 10⁷) ÷ (2 × 10³).",
+      "back": "Method: divide the a-values, and use Law 2 (SUBTRACT exponents) on the powers of 10.\n(8 × 10⁷) ÷ (2 × 10³)\n= (8 ÷ 2) × 10⁷⁻³\n= 4 × 10⁴.\nIf the a-division had given a value below 1 (e.g. 2 ÷ 8 = 0,25), rewrite it: 0,25 × 10ⁿ = 2,5 × 10ⁿ⁻¹ to restore 1 ≤ a < 10.",
+      "tags": [
+        "scientific-notation",
+        "dividing"
+      ],
+      "difficulty": "medium",
+      "source": "Scientific Notation - CAPS_scientific-notation",
+      "sourceFile": "Scientific Notation - CAPS_scientific-notation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "70"
+      }
+    },
+    {
+      "id": "exponents-e201e01860",
+      "front": "Real-world: A red blood cell is about 0,000 008 m wide; the distance to the Sun is about 150 000 000 km. Write both in scientific notation.",
+      "back": "Cell: 0,000 008 = 8 × 10⁻⁶ m (small number → negative exponent; point moves 6 right).\nSun distance: 150 000 000 = 1,5 × 10⁸ km (large number → positive exponent; point moves 8 left).\nScientific notation is ideal for sizes of atoms/cells (tiny, negative powers) and astronomical distances (huge, positive powers).",
+      "tags": [
+        "scientific-notation",
+        "real-world"
+      ],
+      "difficulty": "medium",
+      "source": "Scientific Notation - CAPS_scientific-notation",
+      "sourceFile": "Scientific Notation - CAPS_scientific-notation.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "exponents-400961a8c4",
+      "front": "How are square roots and cube roots the inverse of exponents? State √(a²) and ∛(a³).",
+      "back": "A root undoes a power. For a ≥ 0:\n√(a²) = a  (square root undoes squaring)\n∛(a³) = a  (cube root undoes cubing)\nGenerally the n-th root undoes the n-th power. Example: √(7²) = √49 = 7 and ∛(5³) = ∛125 = 5.\nThis is why finding √ or ∛ of a perfect power is just reading off the base.",
+      "tags": [
+        "roots",
+        "squares-cubes"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes and Roots - CAPS_squares-cubes-roots",
+      "sourceFile": "Squares Cubes and Roots - CAPS_squares-cubes-roots.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "121"
+      }
+    },
+    {
+      "id": "exponents-ecc51134d3",
+      "front": "Simplify √(9x⁴). (Method for a square root of a perfect-square monomial)",
+      "back": "Method: take the root of the number part and HALVE the exponent of each variable (because √ = power of ½).\n√(9x⁴) = √9 × √(x⁴) = 3 × x⁴ᐟ² = 3x².\nCheck by squaring: (3x²)² = 9x⁴. ✓\nThis works when the coefficient is a perfect square (9) and each variable exponent is even (4).",
+      "tags": [
+        "roots",
+        "monomials"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes and Roots - CAPS_squares-cubes-roots",
+      "sourceFile": "Squares Cubes and Roots - CAPS_squares-cubes-roots.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "70"
+      }
+    },
+    {
+      "id": "exponents-7d3af4307c",
+      "front": "Simplify ∛(27x⁶) and ∛(64a³b⁹).",
+      "back": "Method: take the cube root of the number, and DIVIDE each variable's exponent by 3.\n∛(27x⁶) = ∛27 × x⁶÷³ = 3x².\n∛(64a³b⁹) = ∛64 × a³÷³ × b⁹÷³ = 4 × a¹ × b³ = 4ab³.\nCheck: (4ab³)³ = 64a³b⁹. ✓\nFor cube roots the exponents must be multiples of 3 to come out whole.",
+      "tags": [
+        "roots",
+        "cube-root"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes and Roots - CAPS_squares-cubes-roots",
+      "sourceFile": "Squares Cubes and Roots - CAPS_squares-cubes-roots.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "70"
+      }
+    },
+    {
+      "id": "exponents-2a39532b19",
+      "front": "Simplify √(16x⁸y²) showing every step.",
+      "back": "√(16x⁸y²)\n= √16 × √(x⁸) × √(y²)\n= 4 × x⁸ᐟ² × y²ᐟ²\n= 4x⁴y.\nMethod recap: root the number (√16 = 4), halve each exponent (8→4, 2→1). The y¹ is just written y.\nCheck: (4x⁴y)² = 16x⁸y². ✓",
+      "tags": [
+        "roots",
+        "monomials"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes and Roots - CAPS_squares-cubes-roots",
+      "sourceFile": "Squares Cubes and Roots - CAPS_squares-cubes-roots.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "70"
+      }
+    },
+    {
+      "id": "exponents-37d877be1d",
+      "front": "Estimate √50 between two whole numbers WITHOUT a calculator.",
+      "back": "Method: find the perfect squares either side of 50.\n7² = 49 and 8² = 64, so 49 < 50 < 64, meaning 7 < √50 < 8.\nBecause 50 is very close to 49, √50 ≈ 7,1 (just above 7).\nSimilarly for cube roots: 3³ = 27, 4³ = 64, so ∛50 lies between 3 and 4, and closer to 4.",
+      "tags": [
+        "roots",
+        "estimating"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes and Roots - CAPS_squares-cubes-roots",
+      "sourceFile": "Squares Cubes and Roots - CAPS_squares-cubes-roots.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "121"
+      }
+    },
+    {
+      "id": "exponents-3b3a949a64",
+      "front": "Between which two consecutive integers does ∛100 lie, and which is it nearer?",
+      "back": "Find perfect cubes around 100:\n4³ = 64 and 5³ = 125, so 64 < 100 < 125, giving 4 < ∛100 < 5.\n100 is between 64 and 125; it is a bit nearer to 125, so ∛100 ≈ 4,6.\nAlways anchor an estimate using the nearest perfect cubes (or squares for √).",
+      "tags": [
+        "roots",
+        "estimating"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes and Roots - CAPS_squares-cubes-roots",
+      "sourceFile": "Squares Cubes and Roots - CAPS_squares-cubes-roots.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "121"
+      }
+    },
+    {
+      "id": "exponents-38ae70d4e5",
+      "front": "Why can you NOT simplify √(x² + y²) to x + y? (Common error)",
+      "back": "A root does NOT distribute over addition or subtraction.\n√(x² + y²) ≠ x + y.\nCounter-example: x = 3, y = 4 → √(9 + 16) = √25 = 5, but x + y = 7. 5 ≠ 7.\nRoots only split over MULTIPLICATION/division: √(x²y²) = xy. So you can only root a monomial (single product term), never a sum, unless you can factorise it into a perfect square first.",
+      "tags": [
+        "roots",
+        "pitfall"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes and Roots - CAPS_squares-cubes-roots",
+      "sourceFile": "Squares Cubes and Roots - CAPS_squares-cubes-roots.yml",
+      "requires": {
+        "subject": "exponents",
+        "sectionLine": "93"
+      }
     }
   ],
   "triage": null,
   "guide": {
-    "chars": 6592,
-    "lines": 107,
+    "chars": 12807,
+    "lines": 174,
     "sections": [
       {
         "level": 1,
@@ -1135,10 +1682,40 @@
         "title": "Worked example (mixed)",
         "line": 99,
         "body": "Simplify ab(−2a²b³)³ / (−56b³).\n- Expand bracket (Law 4, sign first): (−2a²b³)³ = −8a⁶b⁹.\n- Numerator: ab·(−8a⁶b⁹) = −8a⁷b¹⁰.\n- Divide: (−8a⁷b¹⁰)/(−56b³) = (1/7)a⁷b⁷ = a⁷b⁷/7  (negative ÷ negative = positive)."
+      },
+      {
+        "level": 3,
+        "title": "Scientific Notation (Standard Form)",
+        "line": 106,
+        "body": "Scientific notation writes any number in the form **a × 10ⁿ**, where **1 ≤ a < 10** and **n** is an integer. It keeps very large and very small numbers short and easy to compare. The single non-zero digit before the decimal point is what distinguishes correct standard form (4,5 × 10³) from an almost-right answer (45 × 10²).\n\n**Large numbers → positive exponent.** Place the decimal point after the first non-zero digit, then count how many places it moved to the left. That count is the exponent. For example, 384 000 000 becomes 3,84 × 10⁸ because the point shifts 8 places left.\n\n**Small numbers (less than 1) → negative exponent.** Place the point after the first non-zero digit and count how many places it moved to the right; the exponent is the negative of that count. So 0,000 062 = 6,2 × 10⁻⁵.\n\n**Converting back:** a positive exponent moves the point right (bigger number), a negative exponent moves it left (smaller number), filling zeros as needed.\n\n**Multiplying and dividing** use the exponent laws on the powers of 10: multiply the a-values and **add** the exponents; divide the a-values and **subtract** the exponents. Always finish by checking 1 ≤ a < 10. If a multiplication gives 20 × 10⁹, rewrite 20 = 2 × 10¹ to get 2 × 10¹⁰. If a division gives 0,25 × 10⁴, rewrite as 2,5 × 10³.\n\nScientific notation is the natural language of the very small (cell widths, atoms: negative powers) and the very large (distances to stars and planets: positive powers)."
+      },
+      {
+        "level": 3,
+        "title": "Squares, Cubes and Their Roots",
+        "line": 121,
+        "body": "A root is the inverse of a power. For a ≥ 0, the square root undoes squaring and the cube root undoes cubing: **√(a²) = a** and **∛(a³) = a**. Reading these the other way, finding √ or ∛ of a perfect power simply gives back the base — √49 = 7 because 7² = 49, and ∛125 = 5 because 5³ = 125.\n\n**Simplifying the root of a monomial.** A square root is the same as a power of ½, so to take √ of a single product term you root the number part and **halve** each variable's exponent. For example √(9x⁴) = √9 × x⁴ᐟ² = 3x², and √(16x⁸y²) = 4x⁴y. For a cube root you take the cube root of the number and **divide** each exponent by 3: ∛(27x⁶) = 3x² and ∛(64a³b⁹) = 4ab³. Always verify by raising the answer back to the power. This only works cleanly when the coefficient is a perfect square/cube and the exponents are multiples of 2 (or 3).\n\n**Estimating non-perfect roots.** Trap the number between the nearest perfect squares (or cubes) and reason about which it is closer to. Since 7² = 49 and 8² = 64, √50 lies between 7 and 8 and, being just above 49, is about 7,1. Likewise 4³ = 64 and 5³ = 125, so ∛100 lies between 4 and 5, nearer 5 (≈ 4,6).\n\n**Key pitfall:** a root does *not* distribute over addition. √(x² + y²) ≠ x + y — test x = 3, y = 4: √25 = 5, not 7. Roots only split over multiplication and division."
+      },
+      {
+        "level": 3,
+        "title": "Numeric Evaluation Without a Calculator",
+        "line": 132,
+        "body": "Consolidation problems mix powers with the order of operations (BODMAS). The rule is: **deal with brackets, then exponents, then × and ÷ (left to right), then + and − (left to right).** Powers are always worked out before any adding or subtracting.\n\nWorked patterns:\n- **Powers then add/subtract:** 2³ + 3² − 5⁰ = 8 + 9 − 1 = 16 (remember 5⁰ = 1).\n- **Powers in a × ÷ chain:** 3² × 2³ ÷ 6 = 9 × 8 ÷ 6 = 72 ÷ 6 = 12.\n- **Negative indices as fractions:** 2⁻³ + 4⁻¹ = 1/8 + 1/4 = 3/8.\n- **Zero index on a bracket:** (2² + 3²)⁰ + 10¹ = 13⁰ + 10 = 1 + 10 = 11.\n- **Negative bases:** 5² − 2 × 3² + (−2)³ = 25 − 18 − 8 = −1 (an odd power of a negative is negative).\n\nWhen a single base repeats, it is often cleaner to apply the exponent laws and keep everything as powers, avoiding big intermediate numbers: (3⁴ × 3⁻²) ÷ 3³ = 3² ÷ 3³ = 3⁻¹ = 1/3. Likewise (2³ × 2²) ÷ 2⁴ + 2⁰ = 2⁵⁻⁴ + 1 = 2 + 1 = 3. Use the laws on the like bases first, then finish any leftover addition or subtraction as ordinary arithmetic."
+      },
+      {
+        "level": 3,
+        "title": "Comparing Powers and Expressing Numbers as Powers",
+        "line": 146,
+        "body": "**Comparing two powers.** Look at the bases and exponents:\n- *Same base (>1):* the larger exponent gives the larger value — 2⁷ > 2⁴ at a glance.\n- *Same exponent:* the larger base wins — 9³ > 6³.\n- *Both different:* you cannot judge from the symbols, so evaluate each and compare. 2⁵ = 32 versus 5² = 25, so 2⁵ > 5². Similarly 3⁴ = 81 beats 4³ = 64.\n\nA useful habit is to never assume the bigger-looking expression is larger; compute when in doubt.\n\n**Expressing a number as a power of a given base.** Factorise the number down to its smallest prime base, then regroup the exponent to rebuild the requested base. For 64: 64 = 2⁶. Then, since 4 = 2² and 8 = 2³, we get 64 = (2²)³ = 4³ and 64 = (2³)² = 8². Similarly 81 = 3⁴ = (3²)² = 9².\n\nSometimes the number is *not* a whole-number power of the requested base. Writing 32 as a power of 4: 32 = 2⁵, and 4ⁿ = 2²ⁿ, so we need 2n = 5, giving n = 2,5 and 32 = 4²ᐟ⁵. A number is a whole-number power of a base only when it factorises exactly into copies of that base."
+      },
+      {
+        "level": 3,
+        "title": "Common Exam Traps",
+        "line": 160,
+        "body": "These are the errors that cost the most marks in exponent questions.\n\n**−3² versus (−3)².** An exponent binds tighter than a leading minus sign. So −3² means −(3²) = −9, while (−3)² means (−3)×(−3) = +9. The brackets decide whether the negative is squared. Same idea: −2⁴ = −16 but (−2)⁴ = 16, and −2⁻² = −(1/4) = −1/4 while (−2)⁻² = 1/4.\n\n**Coefficient versus base with negative exponents.** A negative exponent attaches only to its own base, not to any coefficient. So 2x⁻³ = 2/x³ (the 2 stays on top). It is *not* 1/(2x)³. By contrast (2x)⁻³ puts the whole 2x in the base: (2x)⁻³ = 1/(8x³). Likewise 3x⁻² = 3/x² but (3x)⁻² = 1/(9x²). Always check whether the coefficient sits inside the bracket.\n\n**Zero as a base.** Any non-zero base to the power 0 is 1 (5⁰ = 1), but 0⁵ = 0, and 0⁰ is *undefined* — never write 0⁰ = 1. Negative powers of 0 are also undefined, since they require dividing by 0.\n\n**Laws apply only to like bases.** Adding or subtracting exponents is allowed only when the bases match. x² × y³ stays x²y³ — it does not become (xy)⁵. And the laws are for multiplication/division, never for sums: 2³ + 2² = 8 + 4 = 12, not 2⁵. For a sum of powers, evaluate each term and add the results."
       }
     ],
     "firstParagraph": "### Exponents — The Six Laws and Simplification (Ex 4.1)\n\nAn exponent (or power) is a short way of writing repeated multiplication: aⁿ means a multiplied by itself n times, where a is the **base** and n is the **exponent**. All of Grade 9 algebra of exponents is built on six laws.",
-    "body": "# Exponents — Complete Study Guide\n\n## Contents\n\n### Exponents — The Six Laws and Simplification (Ex 4.1)\n\nAn exponent (or power) is a short way of writing repeated multiplication: aⁿ means a multiplied by itself n times, where a is the **base** and n is the **exponent**. All of Grade 9 algebra of exponents is built on six laws.\n\n**The six laws (a, b ≠ 0):**\n\n1. **Product law:** aᵐ × aⁿ = aᵐ⁺ⁿ — when you *multiply* powers of the *same base*, **add** the exponents.\n2. **Quotient law:** aᵐ ÷ aⁿ = aᵐ⁻ⁿ — when you *divide* powers of the *same base*, **subtract** the exponents (top minus bottom).\n3. **Power of a power:** (aᵐ)ⁿ = aᵐⁿ — **multiply** the exponents.\n4. **Power of a product:** (a × b)ⁿ = aⁿ × bⁿ — give the power to **every** factor inside the bracket (including the number/coefficient).\n5. **Zero exponent:** a⁰ = 1 — any non-zero base to the power 0 is 1.\n6. **Negative exponent:** a⁻ⁿ = 1/aⁿ = (1/a)ⁿ — a negative exponent means take the **reciprocal** of the positive power.\n\n**Key points and method:**\n- Laws 1 and 2 only apply when the **bases are equal**. x²/y² cannot be simplified to x/y because x and y are different bases.\n- The coefficient (the number in front) is multiplied/divided separately from the variable powers, e.g. 3x² × 2x³ = (3×2)x²⁺³ = 6x⁵.\n- When simplifying a fraction, subtract the bottom exponent from the top for each base. A resulting negative exponent is moved across the fraction line to become positive (Law 6): e.g. a⁻¹ on top becomes 1/a on the bottom.\n- Always leave the final answer with **positive exponents**.\n\n**Worked example 1:** Simplify (4x³y⁷)/(8x²y⁹).\nCoefficient: 4/8 = ½. x: x³⁻² = x¹. y: y⁷⁻⁹ = y⁻². So we get ½·x·y⁻² = **x/(2y²)** (the y⁻² drops to the denominator as y²).\n\n**Worked example 2:** Simplify (−3x⁴)²(2x³).\nSquare the bracket first (Laws 3 & 4): (−3x⁴)² = (−3)²(x⁴)² = 9x⁸. Then 9x⁸ × 2x³ = 18x⁸⁺³ = **18x¹¹**.\n\n**Special cases and pitfalls:**\n- **a⁰ = 1, but the coefficient is not affected:** 7a⁰ = 7×1 = 7, whereas (3p)⁰ = 1 because the whole bracket is to the power 0.\n- **The sign trap:** (−3)² = 9 (the bracket squares the minus too), but −3² = −9 (only the 3 is squared, the minus stays in front). Likewise (−3)⁰ = 1 but −3⁰ = −1.\n- **Adding vs multiplying:** x² + x² = 2x² (like terms → add coefficients, exponent unchanged), but x² × x² = x⁴ (multiply → add exponents). Do not confuse these.\n- **2³ × 2⁴ = 2⁷, not 4⁷** — when multiplying same-base powers the base never changes.\n\nTo evaluate without a calculator, convert each power to a number first: e.g. 3⁻² + 3⁰ + 3² = 1/9 + 1 + 9 = 91/9 = 10⅑. To compare powers like 2⁻⁵ and 5⁻², rewrite both with positive exponents (1/32 and 1/25); the larger denominator gives the smaller fraction, so 5⁻² (= 1/25) is larger.\n\n\n### Substitution and Exponential Equations (Ex 4.2 & 4.3)\n\n**Substitution (Ex 4.2).** You are given values for letters and must evaluate an expression. Work the powers out before multiplying/adding, and watch signs.\n- Example: a × bᶜ with a = 3, b = 2, c = −1 → 3 × 2⁻¹ = 3 × ½ = 3/2.\n- Example: aᵇ + bᶜ with a = 2, b = −1, c = 3 → 2⁻¹ + (−1)³ = ½ + (−1) = −½.\nRemember (−1) to an odd power is −1; to an even power is +1.\n\n**Exponential equations (Ex 4.3): the equal-base method.**\nThe unknown is now *in the exponent*. The strategy is:\n1. Rewrite **both sides as powers of the same base.**\n2. Once the bases are equal, the **exponents must be equal** — drop the bases and solve the resulting (usually linear) equation.\n\nUseful conversions: 9 = 3², 27 = 3³, 81 = 3⁴; 8 = 2³, 64 = 2⁶, 32 = 2⁵; 1 = base⁰; a lone base = base¹; reciprocals use negative exponents (1/8 = 2⁻³, 0,1 = 10⁻¹, 0,04 = 1/25 = 5⁻²).\n\n**Worked example 1:** Solve 9ˣ = 27.\nUse base 3: 9 = 3², 27 = 3³, so 3²ˣ = 3³ ⇒ 2x = 3 ⇒ **x = 3/2**.\n\n**Worked example 2:** Solve 3²ˣ⁺¹ = 3ˣ⁺³.\nBases already equal, so equate exponents: 2x + 1 = x + 3 ⇒ **x = 2**.\n\n**Worked example 3 (combine first):** Solve 2ˣ·2³ = 32.\nLeft side: 2ˣ⁺³. Right side: 32 = 2⁵. So x + 3 = 5 ⇒ **x = 2**.\n\n**Root-type equations.** If the unknown is the base (e.g. x³ = −8 or x⁻² = 4/9), isolate the power and take the appropriate root:\n- x³ = −8 ⇒ x = ∛(−8) = −2 (a cube root *can* be negative).\n- 2x³ = 54 ⇒ x³ = 27 ⇒ x = 3.\n- x⁻² = 4/9 ⇒ 1/x² = 4/9 ⇒ x² = 9/4 ⇒ x = **±3/2** (an even power gives two answers, + and −).\n- x⁻¹ = ½ ⇒ 1/x = ½ ⇒ x = 2.\n\n**Pitfalls:** keep the base unchanged when combining powers (2ˣ·2³ = 2ˣ⁺³, never 4-something); convert 1 to base⁰ rather than guessing; and never forget the ± when you take an even root.\n\n\n### Exponents Ex 4.1 — Worked-Solution Method\n\nThese pages show the fully worked answers to the exponent simplification problems. The marks live in the **method**, not just the final answer. Master the workflow and the six laws.\n\n#### The golden workflow\nWhen multiplying or dividing, deal with **signs first, then numbers, then letters — one at a time.** This stops careless errors.\n\n#### The six laws\n1. aᵐ × aⁿ = aᵐ⁺ⁿ  (same base, multiply → add exponents)\n2. aᵐ ÷ aⁿ = aᵐ⁻ⁿ  (same base, divide → subtract exponents; also = 1/aⁿ⁻ᵐ)\n3. (aᵐ)ⁿ = aᵐⁿ  (power of a power → multiply exponents)\n4. (ab)ⁿ = aⁿbⁿ  (each factor in the bracket is raised to the power — the sign, the number AND each letter)\n5. a⁰ = 1, a ≠ 0\n6. a⁻ⁿ = 1/aⁿ, a ≠ 0\n\n#### Key techniques and pitfalls\n- **Negatives in exponents:** subtracting a negative adds. a²/a⁻¹ = a^(2−(−1)) = a³. In (5²·5³·x²y⁴)/(5⁶x³y²) you get 5⁻¹x⁻¹y² = y²/(5x). Tip: \"gather exponents so their sum is positive\" to keep answers tidy.\n- **Zero exponent only on what it touches:** 3p⁰ = 3·1 but (3p)⁰ = 1. Likewise 8x⁰ = 8 while (8x)⁰ = 1. These are NOT the same.\n- **Raise EVERY factor to an outer power:** (−4a⁵b³)² = (−4)²a¹⁰b⁶ = 16a¹⁰b⁶. Don't forget to raise the numerical coefficient (e.g. (3x³y)³ = 27x⁹y³, not 3x⁹y³).\n- **Even powers kill negatives:** (−a)² = a²; 4(−a)² − (−2a)² = 4a² − 4a² = 0.\n- **Terms joined by + or − are NOT combined by adding exponents.** Instead distribute: x⁻⁷(x¹³ + x¹¹) = x⁶ + x⁴. And x⁶ + x⁴ cannot be added (not like terms).\n- **Roots:** add like terms under the root first, then take the root: √(36x³⁶ + 64x³⁶) = √(100x³⁶) = 10x¹⁸ (halve the even exponent). And √((a+2b)²) = a + 2b.\n\n#### Worked example (fraction)\nSimplify (39x¹⁷y¹⁰)/(3x⁴y⁻³).\n- Numbers: 39 ÷ 3 = 13.\n- x: x^(17−4) = x¹³.  y: y^(10−(−3)) = y¹³.\n- Answer: 13x¹³y¹³.\n\n#### Worked example (mixed)\nSimplify ab(−2a²b³)³ / (−56b³).\n- Expand bracket (Law 4, sign first): (−2a²b³)³ = −8a⁶b⁹.\n- Numerator: ab·(−8a⁶b⁹) = −8a⁷b¹⁰.\n- Divide: (−8a⁷b¹⁰)/(−56b³) = (1/7)a⁷b⁷ = a⁷b⁷/7  (negative ÷ negative = positive).\n\n\n",
+    "body": "# Exponents — Complete Study Guide\n\n## Contents\n\n### Exponents — The Six Laws and Simplification (Ex 4.1)\n\nAn exponent (or power) is a short way of writing repeated multiplication: aⁿ means a multiplied by itself n times, where a is the **base** and n is the **exponent**. All of Grade 9 algebra of exponents is built on six laws.\n\n**The six laws (a, b ≠ 0):**\n\n1. **Product law:** aᵐ × aⁿ = aᵐ⁺ⁿ — when you *multiply* powers of the *same base*, **add** the exponents.\n2. **Quotient law:** aᵐ ÷ aⁿ = aᵐ⁻ⁿ — when you *divide* powers of the *same base*, **subtract** the exponents (top minus bottom).\n3. **Power of a power:** (aᵐ)ⁿ = aᵐⁿ — **multiply** the exponents.\n4. **Power of a product:** (a × b)ⁿ = aⁿ × bⁿ — give the power to **every** factor inside the bracket (including the number/coefficient).\n5. **Zero exponent:** a⁰ = 1 — any non-zero base to the power 0 is 1.\n6. **Negative exponent:** a⁻ⁿ = 1/aⁿ = (1/a)ⁿ — a negative exponent means take the **reciprocal** of the positive power.\n\n**Key points and method:**\n- Laws 1 and 2 only apply when the **bases are equal**. x²/y² cannot be simplified to x/y because x and y are different bases.\n- The coefficient (the number in front) is multiplied/divided separately from the variable powers, e.g. 3x² × 2x³ = (3×2)x²⁺³ = 6x⁵.\n- When simplifying a fraction, subtract the bottom exponent from the top for each base. A resulting negative exponent is moved across the fraction line to become positive (Law 6): e.g. a⁻¹ on top becomes 1/a on the bottom.\n- Always leave the final answer with **positive exponents**.\n\n**Worked example 1:** Simplify (4x³y⁷)/(8x²y⁹).\nCoefficient: 4/8 = ½. x: x³⁻² = x¹. y: y⁷⁻⁹ = y⁻². So we get ½·x·y⁻² = **x/(2y²)** (the y⁻² drops to the denominator as y²).\n\n**Worked example 2:** Simplify (−3x⁴)²(2x³).\nSquare the bracket first (Laws 3 & 4): (−3x⁴)² = (−3)²(x⁴)² = 9x⁸. Then 9x⁸ × 2x³ = 18x⁸⁺³ = **18x¹¹**.\n\n**Special cases and pitfalls:**\n- **a⁰ = 1, but the coefficient is not affected:** 7a⁰ = 7×1 = 7, whereas (3p)⁰ = 1 because the whole bracket is to the power 0.\n- **The sign trap:** (−3)² = 9 (the bracket squares the minus too), but −3² = −9 (only the 3 is squared, the minus stays in front). Likewise (−3)⁰ = 1 but −3⁰ = −1.\n- **Adding vs multiplying:** x² + x² = 2x² (like terms → add coefficients, exponent unchanged), but x² × x² = x⁴ (multiply → add exponents). Do not confuse these.\n- **2³ × 2⁴ = 2⁷, not 4⁷** — when multiplying same-base powers the base never changes.\n\nTo evaluate without a calculator, convert each power to a number first: e.g. 3⁻² + 3⁰ + 3² = 1/9 + 1 + 9 = 91/9 = 10⅑. To compare powers like 2⁻⁵ and 5⁻², rewrite both with positive exponents (1/32 and 1/25); the larger denominator gives the smaller fraction, so 5⁻² (= 1/25) is larger.\n\n\n### Substitution and Exponential Equations (Ex 4.2 & 4.3)\n\n**Substitution (Ex 4.2).** You are given values for letters and must evaluate an expression. Work the powers out before multiplying/adding, and watch signs.\n- Example: a × bᶜ with a = 3, b = 2, c = −1 → 3 × 2⁻¹ = 3 × ½ = 3/2.\n- Example: aᵇ + bᶜ with a = 2, b = −1, c = 3 → 2⁻¹ + (−1)³ = ½ + (−1) = −½.\nRemember (−1) to an odd power is −1; to an even power is +1.\n\n**Exponential equations (Ex 4.3): the equal-base method.**\nThe unknown is now *in the exponent*. The strategy is:\n1. Rewrite **both sides as powers of the same base.**\n2. Once the bases are equal, the **exponents must be equal** — drop the bases and solve the resulting (usually linear) equation.\n\nUseful conversions: 9 = 3², 27 = 3³, 81 = 3⁴; 8 = 2³, 64 = 2⁶, 32 = 2⁵; 1 = base⁰; a lone base = base¹; reciprocals use negative exponents (1/8 = 2⁻³, 0,1 = 10⁻¹, 0,04 = 1/25 = 5⁻²).\n\n**Worked example 1:** Solve 9ˣ = 27.\nUse base 3: 9 = 3², 27 = 3³, so 3²ˣ = 3³ ⇒ 2x = 3 ⇒ **x = 3/2**.\n\n**Worked example 2:** Solve 3²ˣ⁺¹ = 3ˣ⁺³.\nBases already equal, so equate exponents: 2x + 1 = x + 3 ⇒ **x = 2**.\n\n**Worked example 3 (combine first):** Solve 2ˣ·2³ = 32.\nLeft side: 2ˣ⁺³. Right side: 32 = 2⁵. So x + 3 = 5 ⇒ **x = 2**.\n\n**Root-type equations.** If the unknown is the base (e.g. x³ = −8 or x⁻² = 4/9), isolate the power and take the appropriate root:\n- x³ = −8 ⇒ x = ∛(−8) = −2 (a cube root *can* be negative).\n- 2x³ = 54 ⇒ x³ = 27 ⇒ x = 3.\n- x⁻² = 4/9 ⇒ 1/x² = 4/9 ⇒ x² = 9/4 ⇒ x = **±3/2** (an even power gives two answers, + and −).\n- x⁻¹ = ½ ⇒ 1/x = ½ ⇒ x = 2.\n\n**Pitfalls:** keep the base unchanged when combining powers (2ˣ·2³ = 2ˣ⁺³, never 4-something); convert 1 to base⁰ rather than guessing; and never forget the ± when you take an even root.\n\n\n### Exponents Ex 4.1 — Worked-Solution Method\n\nThese pages show the fully worked answers to the exponent simplification problems. The marks live in the **method**, not just the final answer. Master the workflow and the six laws.\n\n#### The golden workflow\nWhen multiplying or dividing, deal with **signs first, then numbers, then letters — one at a time.** This stops careless errors.\n\n#### The six laws\n1. aᵐ × aⁿ = aᵐ⁺ⁿ  (same base, multiply → add exponents)\n2. aᵐ ÷ aⁿ = aᵐ⁻ⁿ  (same base, divide → subtract exponents; also = 1/aⁿ⁻ᵐ)\n3. (aᵐ)ⁿ = aᵐⁿ  (power of a power → multiply exponents)\n4. (ab)ⁿ = aⁿbⁿ  (each factor in the bracket is raised to the power — the sign, the number AND each letter)\n5. a⁰ = 1, a ≠ 0\n6. a⁻ⁿ = 1/aⁿ, a ≠ 0\n\n#### Key techniques and pitfalls\n- **Negatives in exponents:** subtracting a negative adds. a²/a⁻¹ = a^(2−(−1)) = a³. In (5²·5³·x²y⁴)/(5⁶x³y²) you get 5⁻¹x⁻¹y² = y²/(5x). Tip: \"gather exponents so their sum is positive\" to keep answers tidy.\n- **Zero exponent only on what it touches:** 3p⁰ = 3·1 but (3p)⁰ = 1. Likewise 8x⁰ = 8 while (8x)⁰ = 1. These are NOT the same.\n- **Raise EVERY factor to an outer power:** (−4a⁵b³)² = (−4)²a¹⁰b⁶ = 16a¹⁰b⁶. Don't forget to raise the numerical coefficient (e.g. (3x³y)³ = 27x⁹y³, not 3x⁹y³).\n- **Even powers kill negatives:** (−a)² = a²; 4(−a)² − (−2a)² = 4a² − 4a² = 0.\n- **Terms joined by + or − are NOT combined by adding exponents.** Instead distribute: x⁻⁷(x¹³ + x¹¹) = x⁶ + x⁴. And x⁶ + x⁴ cannot be added (not like terms).\n- **Roots:** add like terms under the root first, then take the root: √(36x³⁶ + 64x³⁶) = √(100x³⁶) = 10x¹⁸ (halve the even exponent). And √((a+2b)²) = a + 2b.\n\n#### Worked example (fraction)\nSimplify (39x¹⁷y¹⁰)/(3x⁴y⁻³).\n- Numbers: 39 ÷ 3 = 13.\n- x: x^(17−4) = x¹³.  y: y^(10−(−3)) = y¹³.\n- Answer: 13x¹³y¹³.\n\n#### Worked example (mixed)\nSimplify ab(−2a²b³)³ / (−56b³).\n- Expand bracket (Law 4, sign first): (−2a²b³)³ = −8a⁶b⁹.\n- Numerator: ab·(−8a⁶b⁹) = −8a⁷b¹⁰.\n- Divide: (−8a⁷b¹⁰)/(−56b³) = (1/7)a⁷b⁷ = a⁷b⁷/7  (negative ÷ negative = positive).\n\n\n### Scientific Notation (Standard Form)\n\nScientific notation writes any number in the form **a × 10ⁿ**, where **1 ≤ a < 10** and **n** is an integer. It keeps very large and very small numbers short and easy to compare. The single non-zero digit before the decimal point is what distinguishes correct standard form (4,5 × 10³) from an almost-right answer (45 × 10²).\n\n**Large numbers → positive exponent.** Place the decimal point after the first non-zero digit, then count how many places it moved to the left. That count is the exponent. For example, 384 000 000 becomes 3,84 × 10⁸ because the point shifts 8 places left.\n\n**Small numbers (less than 1) → negative exponent.** Place the point after the first non-zero digit and count how many places it moved to the right; the exponent is the negative of that count. So 0,000 062 = 6,2 × 10⁻⁵.\n\n**Converting back:** a positive exponent moves the point right (bigger number), a negative exponent moves it left (smaller number), filling zeros as needed.\n\n**Multiplying and dividing** use the exponent laws on the powers of 10: multiply the a-values and **add** the exponents; divide the a-values and **subtract** the exponents. Always finish by checking 1 ≤ a < 10. If a multiplication gives 20 × 10⁹, rewrite 20 = 2 × 10¹ to get 2 × 10¹⁰. If a division gives 0,25 × 10⁴, rewrite as 2,5 × 10³.\n\nScientific notation is the natural language of the very small (cell widths, atoms: negative powers) and the very large (distances to stars and planets: positive powers).\n\n\n### Squares, Cubes and Their Roots\n\nA root is the inverse of a power. For a ≥ 0, the square root undoes squaring and the cube root undoes cubing: **√(a²) = a** and **∛(a³) = a**. Reading these the other way, finding √ or ∛ of a perfect power simply gives back the base — √49 = 7 because 7² = 49, and ∛125 = 5 because 5³ = 125.\n\n**Simplifying the root of a monomial.** A square root is the same as a power of ½, so to take √ of a single product term you root the number part and **halve** each variable's exponent. For example √(9x⁴) = √9 × x⁴ᐟ² = 3x², and √(16x⁸y²) = 4x⁴y. For a cube root you take the cube root of the number and **divide** each exponent by 3: ∛(27x⁶) = 3x² and ∛(64a³b⁹) = 4ab³. Always verify by raising the answer back to the power. This only works cleanly when the coefficient is a perfect square/cube and the exponents are multiples of 2 (or 3).\n\n**Estimating non-perfect roots.** Trap the number between the nearest perfect squares (or cubes) and reason about which it is closer to. Since 7² = 49 and 8² = 64, √50 lies between 7 and 8 and, being just above 49, is about 7,1. Likewise 4³ = 64 and 5³ = 125, so ∛100 lies between 4 and 5, nearer 5 (≈ 4,6).\n\n**Key pitfall:** a root does *not* distribute over addition. √(x² + y²) ≠ x + y — test x = 3, y = 4: √25 = 5, not 7. Roots only split over multiplication and division.\n\n\n### Numeric Evaluation Without a Calculator\n\nConsolidation problems mix powers with the order of operations (BODMAS). The rule is: **deal with brackets, then exponents, then × and ÷ (left to right), then + and − (left to right).** Powers are always worked out before any adding or subtracting.\n\nWorked patterns:\n- **Powers then add/subtract:** 2³ + 3² − 5⁰ = 8 + 9 − 1 = 16 (remember 5⁰ = 1).\n- **Powers in a × ÷ chain:** 3² × 2³ ÷ 6 = 9 × 8 ÷ 6 = 72 ÷ 6 = 12.\n- **Negative indices as fractions:** 2⁻³ + 4⁻¹ = 1/8 + 1/4 = 3/8.\n- **Zero index on a bracket:** (2² + 3²)⁰ + 10¹ = 13⁰ + 10 = 1 + 10 = 11.\n- **Negative bases:** 5² − 2 × 3² + (−2)³ = 25 − 18 − 8 = −1 (an odd power of a negative is negative).\n\nWhen a single base repeats, it is often cleaner to apply the exponent laws and keep everything as powers, avoiding big intermediate numbers: (3⁴ × 3⁻²) ÷ 3³ = 3² ÷ 3³ = 3⁻¹ = 1/3. Likewise (2³ × 2²) ÷ 2⁴ + 2⁰ = 2⁵⁻⁴ + 1 = 2 + 1 = 3. Use the laws on the like bases first, then finish any leftover addition or subtraction as ordinary arithmetic.\n\n\n### Comparing Powers and Expressing Numbers as Powers\n\n**Comparing two powers.** Look at the bases and exponents:\n- *Same base (>1):* the larger exponent gives the larger value — 2⁷ > 2⁴ at a glance.\n- *Same exponent:* the larger base wins — 9³ > 6³.\n- *Both different:* you cannot judge from the symbols, so evaluate each and compare. 2⁵ = 32 versus 5² = 25, so 2⁵ > 5². Similarly 3⁴ = 81 beats 4³ = 64.\n\nA useful habit is to never assume the bigger-looking expression is larger; compute when in doubt.\n\n**Expressing a number as a power of a given base.** Factorise the number down to its smallest prime base, then regroup the exponent to rebuild the requested base. For 64: 64 = 2⁶. Then, since 4 = 2² and 8 = 2³, we get 64 = (2²)³ = 4³ and 64 = (2³)² = 8². Similarly 81 = 3⁴ = (3²)² = 9².\n\nSometimes the number is *not* a whole-number power of the requested base. Writing 32 as a power of 4: 32 = 2⁵, and 4ⁿ = 2²ⁿ, so we need 2n = 5, giving n = 2,5 and 32 = 4²ᐟ⁵. A number is a whole-number power of a base only when it factorises exactly into copies of that base.\n\n\n### Common Exam Traps\n\nThese are the errors that cost the most marks in exponent questions.\n\n**−3² versus (−3)².** An exponent binds tighter than a leading minus sign. So −3² means −(3²) = −9, while (−3)² means (−3)×(−3) = +9. The brackets decide whether the negative is squared. Same idea: −2⁴ = −16 but (−2)⁴ = 16, and −2⁻² = −(1/4) = −1/4 while (−2)⁻² = 1/4.\n\n**Coefficient versus base with negative exponents.** A negative exponent attaches only to its own base, not to any coefficient. So 2x⁻³ = 2/x³ (the 2 stays on top). It is *not* 1/(2x)³. By contrast (2x)⁻³ puts the whole 2x in the base: (2x)⁻³ = 1/(8x³). Likewise 3x⁻² = 3/x² but (3x)⁻² = 1/(9x²). Always check whether the coefficient sits inside the bracket.\n\n**Zero as a base.** Any non-zero base to the power 0 is 1 (5⁰ = 1), but 0⁵ = 0, and 0⁰ is *undefined* — never write 0⁰ = 1. Negative powers of 0 are also undefined, since they require dividing by 0.\n\n**Laws apply only to like bases.** Adding or subtracting exponents is allowed only when the bases match. x² × y³ stays x²y³ — it does not become (xy)⁵. And the laws are for multiplication/division, never for sums: 2³ + 2² = 8 + 4 = 12, not 2⁵. For a sum of powers, evaluate each term and add the results.\n\n\n",
     "infographics": [],
     "videos": [],
     "audio": []

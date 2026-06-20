@@ -1,0 +1,838 @@
+{
+  "subject": "graphs",
+  "cat": "flame",
+  "cards": [
+    {
+      "id": "graphs-ad5bff0ae5",
+      "front": "What is the Cartesian plane and what are its main parts?",
+      "back": "The Cartesian plane is a flat surface formed by two number lines that cross at right angles (90°).\nParts:\n• x-axis — the horizontal number line.\n• y-axis — the vertical number line.\n• origin — the point where the axes cross, with coordinates (0;0).\nThe two axes divide the plane into four regions called quadrants. Every point on the plane is named by an ordered pair (x;y).",
+      "tags": [
+        "cartesian-plane"
+      ],
+      "difficulty": "medium",
+      "source": "Cartesian Plane - CAPS_plane-basics",
+      "sourceFile": "Cartesian Plane - CAPS_plane-basics.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "graphs-50553c7302",
+      "front": "What does an ordered pair (x;y) mean, and why is the order important?",
+      "back": "An ordered pair (x;y) gives the position of a point.\n• First number = x-coordinate: how far LEFT/RIGHT from the origin (along the x-axis).\n• Second number = y-coordinate: how far UP/DOWN from the origin (along the y-axis).\nOrder matters: (3;5) is NOT the same point as (5;3). Always read x first, then y.\nNote: in SA CAPS a semicolon separates the values: (x;y).",
+      "tags": [
+        "ordered-pairs"
+      ],
+      "difficulty": "medium",
+      "source": "Cartesian Plane - CAPS_plane-basics",
+      "sourceFile": "Cartesian Plane - CAPS_plane-basics.yml"
+    },
+    {
+      "id": "graphs-036be12999",
+      "front": "How do you plot the point (−4;3) on the Cartesian plane?",
+      "back": "Step 1: Start at the origin (0;0).\nStep 2: x = −4 → move 4 units LEFT (negative x is left).\nStep 3: y = 3 → move 3 units UP (positive y is up).\nStep 4: Mark a dot there.\nThe point lies in the second quadrant (top-left), since x is negative and y is positive.",
+      "tags": [
+        "plotting-points"
+      ],
+      "difficulty": "medium",
+      "source": "Cartesian Plane - CAPS_plane-basics",
+      "sourceFile": "Cartesian Plane - CAPS_plane-basics.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "graphs-0d5d7c9e71",
+      "front": "How do you READ the coordinates of a plotted point off the Cartesian plane?",
+      "back": "Step 1: From the point, drop a line straight DOWN (or up) to the x-axis — read that value = x-coordinate.\nStep 2: From the point, go straight ACROSS to the y-axis — read that value = y-coordinate.\nStep 3: Write as (x;y).\nExample: a point above 2 on the x-axis and across from −1 on the y-axis is (2;−1).",
+      "tags": [
+        "reading-points"
+      ],
+      "difficulty": "medium",
+      "source": "Cartesian Plane - CAPS_plane-basics",
+      "sourceFile": "Cartesian Plane - CAPS_plane-basics.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-1524356d10",
+      "front": "Name the four quadrants and the signs of (x;y) in each.",
+      "back": "Quadrants are numbered anticlockwise starting top-right:\n• Quadrant I (top-right): (+;+) — x positive, y positive.\n• Quadrant II (top-left): (−;+) — x negative, y positive.\n• Quadrant III (bottom-left): (−;−) — both negative.\n• Quadrant IV (bottom-right): (+;−) — x positive, y negative.\nMemory aid: signs of x go +,−,−,+ and signs of y go +,+,−,−.",
+      "tags": [
+        "quadrants"
+      ],
+      "difficulty": "medium",
+      "source": "Cartesian Plane - CAPS_plane-basics",
+      "sourceFile": "Cartesian Plane - CAPS_plane-basics.yml"
+    },
+    {
+      "id": "graphs-6a2d82896d",
+      "front": "In which quadrant does each point lie? (5;2), (−3;−6), (−1;4), (7;−2)",
+      "back": "Use the sign rule (x-sign; y-sign):\n• (5;2) → (+;+) → Quadrant I.\n• (−3;−6) → (−;−) → Quadrant III.\n• (−1;4) → (−;+) → Quadrant II.\n• (7;−2) → (+;−) → Quadrant IV.",
+      "tags": [
+        "quadrants"
+      ],
+      "difficulty": "medium",
+      "source": "Cartesian Plane - CAPS_plane-basics",
+      "sourceFile": "Cartesian Plane - CAPS_plane-basics.yml"
+    },
+    {
+      "id": "graphs-87b3d066d4",
+      "front": "Where do points lie if x = 0, or if y = 0? Are axis points in a quadrant?",
+      "back": "• If x = 0, the point is ON the y-axis, e.g. (0;4) sits on the y-axis.\n• If y = 0, the point is ON the x-axis, e.g. (−3;0) sits on the x-axis.\n• The origin (0;0) is where the axes cross.\nPoints lying ON an axis are NOT in any quadrant — quadrants are the open regions between the axes.",
+      "tags": [
+        "axes"
+      ],
+      "difficulty": "medium",
+      "source": "Cartesian Plane - CAPS_plane-basics",
+      "sourceFile": "Cartesian Plane - CAPS_plane-basics.yml"
+    },
+    {
+      "id": "graphs-7473e01ea6",
+      "front": "Common pitfall: a learner plots (2;−5) by going up 2 and right 5. What went wrong?",
+      "back": "Two errors:\n1) They swapped x and y. The first number (2) is the x-value → move RIGHT 2, not up.\n2) The second number (−5) is the y-value → move DOWN 5 (negative = down).\nCorrect: from origin, right 2, then down 5 → Quadrant IV.\nRule: ALWAYS x first (across), then y (up/down).",
+      "tags": [
+        "plotting-points"
+      ],
+      "difficulty": "medium",
+      "source": "Cartesian Plane - CAPS_plane-basics",
+      "sourceFile": "Cartesian Plane - CAPS_plane-basics.yml"
+    },
+    {
+      "id": "graphs-a95d6ba5d1",
+      "front": "How do you draw a straight line using a TABLE of values? Use y = 2x − 1.",
+      "back": "Step 1: Choose a few x-values, e.g. x = −1, 0, 1, 2.\nStep 2: Work out y for each:\n• x=−1: y = 2(−1)−1 = −3\n• x=0: y = −1\n• x=1: y = 1\n• x=2: y = 3\nStep 3: Write the points (−1;−3), (0;−1), (1;1), (2;3).\nStep 4: Plot them and draw a straight line through them with a ruler, extending past the end points.",
+      "tags": [
+        "table-method"
+      ],
+      "difficulty": "medium",
+      "source": "Drawing Lines - CAPS_drawing-methods",
+      "sourceFile": "Drawing Lines - CAPS_drawing-methods.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-f30b157a5f",
+      "front": "Explain the DUAL-INTERCEPT method for drawing a line. Use y = 2x − 4.",
+      "back": "Find the two points where the line crosses the axes.\nStep 1 (y-intercept): set x = 0 → y = 2(0) − 4 = −4 → point (0;−4).\nStep 2 (x-intercept): set y = 0 → 0 = 2x − 4 → 2x = 4 → x = 2 → point (2;0).\nStep 3: Plot (0;−4) and (2;0), then draw a straight line through both.\nFast and exam-friendly — only two points needed.",
+      "tags": [
+        "dual-intercept"
+      ],
+      "difficulty": "medium",
+      "source": "Drawing Lines - CAPS_drawing-methods",
+      "sourceFile": "Drawing Lines - CAPS_drawing-methods.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "73"
+      }
+    },
+    {
+      "id": "graphs-31d850c7d1",
+      "front": "Explain the GRADIENT–INTERCEPT method for drawing a line. Use y = (3/2)x + 1.",
+      "back": "Step 1: Plot the y-intercept c = 1 → point (0;1).\nStep 2: Use the gradient m = 3/2 = rise/run → from (0;1) move UP 3 and RIGHT 2 → point (2;4).\nStep 3: (Optional) repeat to get another point, e.g. up 3, right 2 again → (4;7).\nStep 4: Draw a straight line through the points.\nTip: for a negative gradient, go down for the rise (or right then up by negative).",
+      "tags": [
+        "gradient-intercept-method"
+      ],
+      "difficulty": "medium",
+      "source": "Drawing Lines - CAPS_drawing-methods",
+      "sourceFile": "Drawing Lines - CAPS_drawing-methods.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "73"
+      }
+    },
+    {
+      "id": "graphs-1e97609160",
+      "front": "Draw y = −x + 3 by the dual-intercept method.",
+      "back": "y-intercept: x = 0 → y = −(0) + 3 = 3 → (0;3).\nx-intercept: y = 0 → 0 = −x + 3 → x = 3 → (3;0).\nPlot (0;3) and (3;0) and rule a line through them.\nCheck: gradient is −1, so the line should slope downward — it does, going from top-left to bottom-right. Good.",
+      "tags": [
+        "dual-intercept"
+      ],
+      "difficulty": "medium",
+      "source": "Drawing Lines - CAPS_drawing-methods",
+      "sourceFile": "Drawing Lines - CAPS_drawing-methods.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-b5729b956b",
+      "front": "Why does the dual-intercept method fail for a line like y = 2x, and what do you do?",
+      "back": "A line through the origin has the same point for both intercepts: x=0 gives (0;0) and y=0 also gives (0;0). One point is not enough to draw a line.\nFix: keep (0;0) as one point, then choose ONE more x-value, e.g. x = 1 → y = 2 → (1;2). Draw the line through (0;0) and (1;2).\nUse the gradient (m = 2 = up 2, right 1) from the origin as your second point.",
+      "tags": [
+        "through-origin"
+      ],
+      "difficulty": "medium",
+      "source": "Drawing Lines - CAPS_drawing-methods",
+      "sourceFile": "Drawing Lines - CAPS_drawing-methods.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-f2df874082",
+      "front": "Good practice for sketching ANY straight line in an exam (checklist).",
+      "back": "1) Write the equation in y = mx + c form.\n2) Find at least two accurate points (intercepts are easiest).\n3) Plot points and use a RULER for the line.\n4) Extend the line beyond your points and add small arrows.\n5) Label the line with its equation, and label intercepts.\n6) Sanity check: positive m slopes up, negative m slopes down; large c means it crosses high/low on the y-axis.",
+      "tags": [
+        "sketching-checklist"
+      ],
+      "difficulty": "medium",
+      "source": "Drawing Lines - CAPS_drawing-methods",
+      "sourceFile": "Drawing Lines - CAPS_drawing-methods.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-bfd7c02f99",
+      "front": "In y = mx + c, what do m and c stand for?",
+      "back": "y = mx + c is the equation of a straight line.\n• m = the gradient (steepness/direction of the line).\n• c = the y-intercept (the y-value where the line crosses the y-axis, i.e. where x = 0).\nExample: in y = 3x + 4, gradient m = 3 and y-intercept c = 4, so the line cuts the y-axis at (0;4).",
+      "tags": [
+        "y-mx-c"
+      ],
+      "difficulty": "medium",
+      "source": "Equation of a Line - CAPS_y-mx-c",
+      "sourceFile": "Equation of a Line - CAPS_y-mx-c.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-294da1b3c8",
+      "front": "State the gradient and y-intercept of y = −2x + 5.",
+      "back": "Compare with y = mx + c.\n• m = −2 → gradient is −2 (line slopes down to the right).\n• c = 5 → y-intercept is 5, so the line crosses the y-axis at (0;5).\nThe coefficient of x is the gradient; the constant term is the y-intercept.",
+      "tags": [
+        "reading-equation"
+      ],
+      "difficulty": "medium",
+      "source": "Equation of a Line - CAPS_y-mx-c",
+      "sourceFile": "Equation of a Line - CAPS_y-mx-c.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-03d6961562",
+      "front": "Find the gradient and y-intercept of 2y = 6x − 8. (Trap: not yet in y = mx + c form.)",
+      "back": "First make y the subject by dividing every term by 2:\n2y = 6x − 8\ny = 3x − 4.\nNow compare with y = mx + c:\n• m = 3 (gradient).\n• c = −4 (y-intercept at (0;−4)).\nPitfall: never read m and c before y stands alone with coefficient 1.",
+      "tags": [
+        "rearranging"
+      ],
+      "difficulty": "medium",
+      "source": "Equation of a Line - CAPS_y-mx-c",
+      "sourceFile": "Equation of a Line - CAPS_y-mx-c.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-526e548996",
+      "front": "Rearrange 3x + y = 7 into y = mx + c and give m and c.",
+      "back": "Make y the subject: subtract 3x from both sides.\n3x + y = 7\ny = −3x + 7.\nSo m = −3 (gradient) and c = 7 (y-intercept (0;7)).\nPitfall: moving 3x across changes its sign to −3x; do not leave it as +3x.",
+      "tags": [
+        "rearranging"
+      ],
+      "difficulty": "medium",
+      "source": "Equation of a Line - CAPS_y-mx-c",
+      "sourceFile": "Equation of a Line - CAPS_y-mx-c.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-208ef7b344",
+      "front": "How do you find the y-intercept and x-intercept from the equation y = 2x − 6?",
+      "back": "y-intercept: set x = 0 → y = 2(0) − 6 = −6 → point (0;−6).\nx-intercept: set y = 0 → 0 = 2x − 6 → 2x = 6 → x = 3 → point (3;0).\nGeneral rule: the line crosses the y-axis where x = 0, and the x-axis where y = 0.",
+      "tags": [
+        "intercepts-from-equation"
+      ],
+      "difficulty": "medium",
+      "source": "Equation of a Line - CAPS_y-mx-c",
+      "sourceFile": "Equation of a Line - CAPS_y-mx-c.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-87f2683784",
+      "front": "Does the point (2;1) lie on the line y = 3x − 5? Show how to check.",
+      "back": "Substitute x = 2 into the equation and see if y matches.\ny = 3(2) − 5 = 6 − 5 = 1.\nThe equation gives y = 1, which equals the point's y-value (1). So YES, (2;1) lies on the line.\nMethod: a point lies on a line only if its coordinates satisfy the equation.",
+      "tags": [
+        "point-on-line"
+      ],
+      "difficulty": "medium",
+      "source": "Equation of a Line - CAPS_y-mx-c",
+      "sourceFile": "Equation of a Line - CAPS_y-mx-c.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-76d259d162",
+      "front": "What is the gradient and y-intercept of y = x? And of y = −x + 2?",
+      "back": "y = x is short for y = 1x + 0:\n• gradient m = 1, y-intercept c = 0 (passes through the origin).\ny = −x + 2 is y = (−1)x + 2:\n• gradient m = −1, y-intercept c = 2.\nWhen no number shows in front of x, the coefficient is 1 (or −1).",
+      "tags": [
+        "reading-equation"
+      ],
+      "difficulty": "medium",
+      "source": "Equation of a Line - CAPS_y-mx-c",
+      "sourceFile": "Equation of a Line - CAPS_y-mx-c.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-bd3dbb5a8b",
+      "front": "How do you find the equation of a line from a graph (general method)?",
+      "back": "Step 1: Read c — the y-value where the line cuts the y-axis (x = 0).\nStep 2: Find m — pick two clear points and count rise/run, or use m = (y₂−y₁)/(x₂−x₁).\nStep 3: Substitute m and c into y = mx + c.\nExample: line cuts y-axis at 2 (c=2) and rises 3 up for 1 right (m=3) → y = 3x + 2.",
+      "tags": [
+        "equation-from-graph"
+      ],
+      "difficulty": "medium",
+      "source": "Finding the Equation - CAPS_find-equation",
+      "sourceFile": "Finding the Equation - CAPS_find-equation.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-2860c99345",
+      "front": "Find the equation of the line through (0;−3) with gradient 4.",
+      "back": "The point (0;−3) is the y-intercept, so c = −3. Gradient m = 4.\nSubstitute into y = mx + c:\ny = 4x + (−3)\ny = 4x − 3.\nThat is the equation.",
+      "tags": [
+        "point-and-gradient"
+      ],
+      "difficulty": "medium",
+      "source": "Finding the Equation - CAPS_find-equation",
+      "sourceFile": "Finding the Equation - CAPS_find-equation.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-77d9a7621b",
+      "front": "Find the equation of the line with gradient 2 passing through (3;5). (y-intercept not given.)",
+      "back": "Step 1: m = 2, so y = 2x + c.\nStep 2: Substitute the known point (3;5) to find c:\n5 = 2(3) + c → 5 = 6 + c → c = −1.\nStep 3: Write the equation: y = 2x − 1.\nCheck: 2(3) − 1 = 5 ✓.",
+      "tags": [
+        "point-and-gradient"
+      ],
+      "difficulty": "medium",
+      "source": "Finding the Equation - CAPS_find-equation",
+      "sourceFile": "Finding the Equation - CAPS_find-equation.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-35f52b3d2c",
+      "front": "Find the equation of the line through the two points A(1;3) and B(4;9).",
+      "back": "Step 1: Gradient m = (9 − 3)/(4 − 1) = 6/3 = 2.\nStep 2: Use y = 2x + c and substitute one point, say (1;3):\n3 = 2(1) + c → 3 = 2 + c → c = 1.\nStep 3: Equation: y = 2x + 1.\nCheck with B: 2(4) + 1 = 9 ✓.",
+      "tags": [
+        "equation-from-two-points"
+      ],
+      "difficulty": "medium",
+      "source": "Finding the Equation - CAPS_find-equation",
+      "sourceFile": "Finding the Equation - CAPS_find-equation.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-59bc1d77e6",
+      "front": "Find the equation of the line through (−2;7) and (2;−1).",
+      "back": "Step 1: m = (−1 − 7)/(2 − (−2)) = −8/4 = −2.\nStep 2: y = −2x + c. Substitute (2;−1):\n−1 = −2(2) + c → −1 = −4 + c → c = 3.\nStep 3: Equation: y = −2x + 3.\nCheck with (−2;7): −2(−2) + 3 = 4 + 3 = 7 ✓.",
+      "tags": [
+        "equation-from-two-points"
+      ],
+      "difficulty": "medium",
+      "source": "Finding the Equation - CAPS_find-equation",
+      "sourceFile": "Finding the Equation - CAPS_find-equation.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-b58923bbb5",
+      "front": "Find the equation of a horizontal line through (4;−2), and a vertical line through (4;−2).",
+      "back": "Horizontal line through (4;−2): y stays −2 for all x → equation y = −2 (gradient 0).\nVertical line through (4;−2): x stays 4 for all y → equation x = 4 (gradient undefined).\nUse only the relevant coordinate: horizontal uses the y-value, vertical uses the x-value.",
+      "tags": [
+        "special-line-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Finding the Equation - CAPS_find-equation",
+      "sourceFile": "Finding the Equation - CAPS_find-equation.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-ae7d70c07f",
+      "front": "Pitfall: a learner finds m = 2 from two points, then writes y = 2x without finding c. Why wrong?",
+      "back": "y = 2x only works if the line passes through the origin (c = 0). Most lines do not.\nYou MUST find c by substituting one known point into y = 2x + c and solving.\nSkipping this gives a parallel line in the wrong place. Always finish: find m, then find c, then write y = mx + c.",
+      "tags": [
+        "equation-from-two-points"
+      ],
+      "difficulty": "medium",
+      "source": "Finding the Equation - CAPS_find-equation",
+      "sourceFile": "Finding the Equation - CAPS_find-equation.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "110"
+      }
+    },
+    {
+      "id": "graphs-7c18f2ad0e",
+      "front": "What is gradient and what are the formulas for it?",
+      "back": "Gradient (m) measures the steepness and direction of a line — how much it rises for each step across.\nm = rise/run = Δy/Δx = (y₂ − y₁)/(x₂ − x₁)\n• rise = change in y (vertical, up is positive).\n• run = change in x (horizontal, right is positive).\nA bigger |m| means a steeper line.",
+      "tags": [
+        "gradient"
+      ],
+      "difficulty": "medium",
+      "source": "Gradient - CAPS_gradient",
+      "sourceFile": "Gradient - CAPS_gradient.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-481a675883",
+      "front": "Find the gradient of the line through A(1;2) and B(5;10).",
+      "back": "Use m = (y₂ − y₁)/(x₂ − x₁).\nLet (x₁;y₁) = (1;2) and (x₂;y₂) = (5;10).\nm = (10 − 2)/(5 − 1) = 8/4 = 2.\nSo the gradient is 2: the line rises 2 units for every 1 unit across.\nCheck: swapping the points gives (2−10)/(1−5) = −8/−4 = 2 — same answer, so order does not matter as long as you are consistent.",
+      "tags": [
+        "gradient-two-points"
+      ],
+      "difficulty": "medium",
+      "source": "Gradient - CAPS_gradient",
+      "sourceFile": "Gradient - CAPS_gradient.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-7b3a611b2b",
+      "front": "Find the gradient through P(−2;5) and Q(3;−5). Watch the negative signs.",
+      "back": "m = (y₂ − y₁)/(x₂ − x₁) with (x₁;y₁)=(−2;5), (x₂;y₂)=(3;−5).\nm = (−5 − 5)/(3 − (−2)) = (−10)/(3 + 2) = −10/5 = −2.\nGradient = −2 (negative → line slopes downward to the right).\nPitfall: 3 − (−2) becomes 3 + 2 = 5; subtracting a negative adds.",
+      "tags": [
+        "gradient-two-points"
+      ],
+      "difficulty": "medium",
+      "source": "Gradient - CAPS_gradient",
+      "sourceFile": "Gradient - CAPS_gradient.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-da927240d6",
+      "front": "How do you tell positive, negative, zero and undefined gradient apart?",
+      "back": "• Positive m: line goes UP from left to right (/).\n• Negative m: line goes DOWN from left to right (\\).\n• Zero gradient (m = 0): horizontal line (—); rise = 0, so 0/run = 0.\n• Undefined gradient: vertical line (|); run = 0, so rise/0 is undefined (you cannot divide by zero).",
+      "tags": [
+        "gradient-types"
+      ],
+      "difficulty": "medium",
+      "source": "Gradient - CAPS_gradient",
+      "sourceFile": "Gradient - CAPS_gradient.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-99fd4bb761",
+      "front": "Why is the gradient of a vertical line undefined but of a horizontal line zero?",
+      "back": "Horizontal line: all points have the SAME y, so Δy = 0. m = Δy/Δx = 0/Δx = 0 → gradient 0.\nVertical line: all points have the SAME x, so Δx = 0. m = Δy/Δx = Δy/0, and dividing by zero is undefined → gradient undefined.\nKey contrast: 0/something = 0 (fine), but something/0 = undefined.",
+      "tags": [
+        "gradient-types"
+      ],
+      "difficulty": "medium",
+      "source": "Gradient - CAPS_gradient",
+      "sourceFile": "Gradient - CAPS_gradient.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-4a3460bde4",
+      "front": "How can you find gradient by counting blocks on a graph?",
+      "back": "Step 1: Pick two clear points where the line crosses grid corners.\nStep 2: Count the vertical jump between them = rise (up +, down −).\nStep 3: Count the horizontal jump = run (right +, left −).\nStep 4: m = rise/run and simplify.\nExample: from one point go up 6 and right 2 → m = 6/2 = 3.",
+      "tags": [
+        "gradient-from-graph"
+      ],
+      "difficulty": "medium",
+      "source": "Gradient - CAPS_gradient",
+      "sourceFile": "Gradient - CAPS_gradient.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-59ec73aa53",
+      "front": "Which is steeper, a line with gradient 4 or a line with gradient −5?",
+      "back": "Steepness depends on the SIZE of the gradient (its absolute value), not its sign.\n|4| = 4 and |−5| = 5. Since 5 > 4, the line with gradient −5 is steeper.\nThe sign only tells direction (up or down); the magnitude tells steepness.",
+      "tags": [
+        "steepness"
+      ],
+      "difficulty": "medium",
+      "source": "Gradient - CAPS_gradient",
+      "sourceFile": "Gradient - CAPS_gradient.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-0ac4e58d58",
+      "front": "Pitfall: a learner computes m for A(2;7), B(6;3) as (6−2)/(3−7). Fix it.",
+      "back": "They put the x-differences on top and y-differences on the bottom — that is upside down.\nGradient is Δy over Δx: m = (y₂ − y₁)/(x₂ − x₁) = (3 − 7)/(6 − 2) = −4/4 = −1.\nRemember: rise (y) on top, run (x) on the bottom. Keep the SAME point as 'first' in both numerator and denominator.",
+      "tags": [
+        "gradient-two-points"
+      ],
+      "difficulty": "medium",
+      "source": "Gradient - CAPS_gradient",
+      "sourceFile": "Gradient - CAPS_gradient.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-fbc32c3c35",
+      "front": "What is the gradient rule for PARALLEL lines?",
+      "back": "Parallel lines never meet and have the SAME steepness, so they have EQUAL gradients: m₁ = m₂.\nExample: y = 3x + 1 and y = 3x − 4 are parallel because both have gradient 3 (only the y-intercept differs).\nTo test if two lines are parallel, compare their gradients — equal means parallel.",
+      "tags": [
+        "parallel-lines"
+      ],
+      "difficulty": "medium",
+      "source": "Parallel Lines - CAPS_parallel",
+      "sourceFile": "Parallel Lines - CAPS_parallel.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "131"
+      }
+    },
+    {
+      "id": "graphs-c8a81f5be5",
+      "front": "Are y = 2x + 5 and 2y = 4x − 3 parallel? Show your working.",
+      "back": "Put each in y = mx + c form.\n• First: y = 2x + 5 → m = 2.\n• Second: 2y = 4x − 3 → divide by 2 → y = 2x − 3/2 → m = 2.\nBoth gradients are 2, so YES the lines are parallel.\nPitfall: read m only after y is the subject; do not compare 2x with 4x directly.",
+      "tags": [
+        "parallel-lines"
+      ],
+      "difficulty": "medium",
+      "source": "Parallel Lines - CAPS_parallel",
+      "sourceFile": "Parallel Lines - CAPS_parallel.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "131"
+      }
+    },
+    {
+      "id": "graphs-94fdb4b756",
+      "front": "Find the equation of the line parallel to y = −3x + 2 passing through (1;4).",
+      "back": "Parallel → same gradient, so m = −3.\ny = −3x + c. Substitute (1;4):\n4 = −3(1) + c → 4 = −3 + c → c = 7.\nEquation: y = −3x + 7.\nCheck: 4 ≠ the other line's value at x=1, so it is a different (parallel) line. ✓",
+      "tags": [
+        "parallel-lines"
+      ],
+      "difficulty": "medium",
+      "source": "Parallel Lines - CAPS_parallel",
+      "sourceFile": "Parallel Lines - CAPS_parallel.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-db29a60388",
+      "front": "On a distance–time graph, what does the gradient represent?",
+      "back": "Gradient = rise/run = change in distance ÷ change in time = SPEED (or velocity).\n• Steeper line → faster speed (more distance in the same time).\n• Gentler slope → slower speed.\n• Horizontal line (gradient 0) → distance not changing → the object is STATIONARY (at rest).\nExample: rising 100 km over 2 h gives gradient 100/2 = 50 km/h.",
+      "tags": [
+        "distance-time"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Graphs - CAPS_interpreting",
+      "sourceFile": "Real-Life Graphs - CAPS_interpreting.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-5562418f8c",
+      "front": "A distance–time graph rises, then is flat, then rises more steeply. Describe the journey.",
+      "back": "• Rising section: the object is moving away at a steady speed (gradient = that speed).\n• Flat (horizontal) section: gradient 0 → distance constant → the object is stopped/resting.\n• Steeper rising section: moving again but FASTER than before (bigger gradient).\nReading slopes in order tells the whole story of the trip.",
+      "tags": [
+        "distance-time"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Graphs - CAPS_interpreting",
+      "sourceFile": "Real-Life Graphs - CAPS_interpreting.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-31ea9f9f60",
+      "front": "On a distance–time graph, what does a line sloping DOWNWARD (negative gradient) mean?",
+      "back": "A downward slope means distance from the start is DECREASING as time goes on — the object is RETURNING toward the starting point.\nThe steeper the downward slope, the faster the return.\nWhen the line reaches distance 0, the object is back at the start.",
+      "tags": [
+        "distance-time"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Graphs - CAPS_interpreting",
+      "sourceFile": "Real-Life Graphs - CAPS_interpreting.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-379d28da6a",
+      "front": "In a real-life cost graph (e.g. taxi fare = R8 per km + R20 call-out), what do gradient and y-intercept mean?",
+      "back": "Equation: cost = 8 × (km) + 20, like y = mx + c.\n• y-intercept c = 20 → the FIXED starting cost (call-out fee) before travelling any distance (at km = 0).\n• gradient m = 8 → the RATE: cost increases R8 for each extra km.\nSo intercept = fixed/base amount; gradient = cost per unit (rate of change).",
+      "tags": [
+        "rate-graphs"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Graphs - CAPS_interpreting",
+      "sourceFile": "Real-Life Graphs - CAPS_interpreting.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-e6c0e77c33",
+      "front": "What is the difference between CONTINUOUS and DISCRETE data on a graph?",
+      "back": "• Continuous data can take ANY value in a range (e.g. time, distance, temperature). Plot as a SOLID line — points in between have meaning.\n• Discrete data takes only separate, countable values (e.g. number of learners, number of cars). Plot as SEPARATE points (or a dotted guide) — you cannot have 2.5 cars, so the gaps are not joined.\nRule: join points with a line only if every value between makes sense.",
+      "tags": [
+        "continuous-discrete"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Graphs - CAPS_interpreting",
+      "sourceFile": "Real-Life Graphs - CAPS_interpreting.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-d85e17b4c2",
+      "front": "A water tank graph shows volume rising steeply, then gently, then flat. Interpret each part.",
+      "back": "Gradient = rate of filling (litres per minute).\n• Steep rise: filling FAST (high flow rate).\n• Gentle rise: still filling but SLOWER (lower flow rate).\n• Flat line: gradient 0 → volume not changing → the tap is OFF or the tank is FULL.\nAlways link the slope to 'how fast the quantity is changing'.",
+      "tags": [
+        "rate-graphs"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Graphs - CAPS_interpreting",
+      "sourceFile": "Real-Life Graphs - CAPS_interpreting.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-c6ac99d2b7",
+      "front": "Why must you always read the AXIS LABELS and UNITS before interpreting a real-life graph?",
+      "back": "The same shape means different things depending on what the axes measure. Distance–time gradient is speed, but cost–quantity gradient is price per item.\nUnits also set the rate's units (e.g. km/h vs R/litre).\nMethod: 1) read what each axis represents and its units, 2) note the scale, 3) only then interpret intercepts (starting value) and gradient (rate of change).",
+      "tags": [
+        "reading-real-graphs"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Graphs - CAPS_interpreting",
+      "sourceFile": "Real-Life Graphs - CAPS_interpreting.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "26"
+      }
+    },
+    {
+      "id": "graphs-0ee864f130",
+      "front": "What does the equation y = c (e.g. y = 3) look like, and what is its gradient?",
+      "back": "y = 3 is a HORIZONTAL line: every point on it has y = 3, whatever x is, e.g. (−2;3), (0;3), (5;3).\nIt is parallel to the x-axis and crosses the y-axis at (0;3).\nGradient = 0 (no rise), because Δy = 0 so m = 0/Δx = 0.",
+      "tags": [
+        "horizontal-line"
+      ],
+      "difficulty": "medium",
+      "source": "Special Lines - CAPS_special-lines",
+      "sourceFile": "Special Lines - CAPS_special-lines.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "131"
+      }
+    },
+    {
+      "id": "graphs-a390b9369e",
+      "front": "What does the equation x = c (e.g. x = −2) look like, and what is its gradient?",
+      "back": "x = −2 is a VERTICAL line: every point on it has x = −2, whatever y is, e.g. (−2;0), (−2;3), (−2;−5).\nIt is parallel to the y-axis and crosses the x-axis at (−2;0).\nGradient is UNDEFINED, because Δx = 0 and m = Δy/0 cannot be calculated (no division by zero).",
+      "tags": [
+        "vertical-line"
+      ],
+      "difficulty": "medium",
+      "source": "Special Lines - CAPS_special-lines",
+      "sourceFile": "Special Lines - CAPS_special-lines.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "131"
+      }
+    },
+    {
+      "id": "graphs-05d234132c",
+      "front": "Easy way to remember which of x = c and y = c is vertical vs horizontal?",
+      "back": "• x = c → VERTICAL line (a 'wall' standing up). Think: x fixed, so you can only move up/down.\n• y = c → HORIZONTAL line (lying flat). Think: y fixed, so you can only move left/right.\nMemory: 'x = number is a vertical line' — the x stands tall like the letter does.\nGradients: horizontal = 0, vertical = undefined.",
+      "tags": [
+        "special-lines"
+      ],
+      "difficulty": "medium",
+      "source": "Special Lines - CAPS_special-lines",
+      "sourceFile": "Special Lines - CAPS_special-lines.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-c52ed41419",
+      "front": "Describe the line y = x: its gradient, intercept and the points it passes through.",
+      "back": "y = x means the y-value always equals the x-value.\n• gradient m = 1, y-intercept c = 0 → passes through the origin (0;0).\n• Points: (−2;−2), (0;0), (1;1), (3;3).\nIt is a diagonal line rising at 45° through Quadrants I and III.\nIt is the line of symmetry y = x used to reflect points (swap x and y).",
+      "tags": [
+        "y-equals-x"
+      ],
+      "difficulty": "medium",
+      "source": "Special Lines - CAPS_special-lines",
+      "sourceFile": "Special Lines - CAPS_special-lines.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-edd3d6b8e8",
+      "front": "Describe the line y = −x: its gradient and the points it passes through.",
+      "back": "y = −x means the y-value is the negative of the x-value.\n• gradient m = −1, y-intercept c = 0 → passes through the origin.\n• Points: (−2;2), (0;0), (1;−1), (3;−3).\nIt is a diagonal line falling at 45° through Quadrants II and IV.\nIt is the line of symmetry y = −x (reflect by swapping and negating coordinates).",
+      "tags": [
+        "y-equals-minus-x"
+      ],
+      "difficulty": "medium",
+      "source": "Special Lines - CAPS_special-lines",
+      "sourceFile": "Special Lines - CAPS_special-lines.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    },
+    {
+      "id": "graphs-331be84e52",
+      "front": "Give the equation of (a) the x-axis itself and (b) the y-axis itself.",
+      "back": "(a) The x-axis is the horizontal line where y = 0 for every point → equation y = 0.\n(b) The y-axis is the vertical line where x = 0 for every point → equation x = 0.\nSo the axes are special cases: x-axis has gradient 0; y-axis has undefined gradient.",
+      "tags": [
+        "axes-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Special Lines - CAPS_special-lines",
+      "sourceFile": "Special Lines - CAPS_special-lines.yml",
+      "requires": {
+        "subject": "graphs",
+        "sectionLine": "52"
+      }
+    }
+  ],
+  "triage": null,
+  "guide": {
+    "chars": 11813,
+    "lines": 160,
+    "sections": [
+      {
+        "level": 1,
+        "title": "Graphs — Complete Study Guide",
+        "line": 0,
+        "body": ""
+      },
+      {
+        "level": 2,
+        "title": "Contents",
+        "line": 2,
+        "body": ""
+      },
+      {
+        "level": 3,
+        "title": "The Cartesian Plane",
+        "line": 4,
+        "body": "The Cartesian plane is the grid we use to give every point an exact address. It is built from two number lines that cross at right angles: the horizontal **x-axis** and the vertical **y-axis**. The point where they meet is the **origin**, written (0;0).\n\nEvery point is named by an **ordered pair** (x;y). The first number is the x-coordinate — how far left or right of the origin — and the second is the y-coordinate — how far up or down. Order matters: (3;5) and (5;3) are different points. In South African CAPS notation we separate the two values with a semicolon: (x;y).\n\n**Plotting a point.** Always start at the origin. Move along the x-axis first (right for positive x, left for negative x), then move parallel to the y-axis (up for positive y, down for negative y), and mark the spot. For example, to plot (−4;3): go 4 left, then 3 up.\n\n**Reading a point.** Drop a vertical line from the point to the x-axis to read x, and a horizontal line across to the y-axis to read y, then write (x;y).\n\n**The four quadrants.** The axes cut the plane into four regions, numbered anticlockwise from the top-right:\n\n- Quadrant I (top-right): (+;+)\n- Quadrant II (top-left): (−;+)\n- Quadrant III (bottom-left): (−;−)\n- Quadrant IV (bottom-right): (+;−)\n\nPoints lying exactly on an axis (where x = 0 or y = 0) are not in any quadrant. A point with x = 0 sits on the y-axis; a point with y = 0 sits on the x-axis.\n\n**Common pitfall.** Do not swap the coordinates. The first number always moves you across (x), the second always moves you up or down (y). Mixing them is the single most frequent plotting error."
+      },
+      {
+        "level": 3,
+        "title": "Gradient",
+        "line": 26,
+        "body": "The **gradient** (symbol m) measures how steep a line is and in which direction it slopes. It is the amount the line rises for each unit it moves across:\n\nm = rise/run = Δy/Δx = (y₂ − y₁)/(x₂ − x₁)\n\nHere Δy (\"delta y\") is the change in y between two points, and Δx is the change in x. Up and right count as positive; down and left count as negative.\n\n**Worked example.** For A(1;2) and B(5;10): m = (10 − 2)/(5 − 1) = 8/4 = 2. The line rises 2 units for every 1 unit across. You may take the points in either order, as long as you are consistent in numerator and denominator — (2 − 10)/(1 − 5) = −8/−4 = 2 gives the same answer.\n\n**Four kinds of gradient.**\n\n- **Positive** (m > 0): the line rises from left to right (/).\n- **Negative** (m < 0): the line falls from left to right (\\).\n- **Zero** (m = 0): a horizontal line; Δy = 0, so 0 ÷ run = 0.\n- **Undefined**: a vertical line; Δx = 0, and Δy ÷ 0 cannot be calculated.\n\nThe contrast is worth memorising: 0 divided by something is 0 (fine), but something divided by 0 is undefined.\n\n**Steepness** depends on the *size* of the gradient, not its sign. A line with gradient −5 is steeper than one with gradient 4, because |−5| = 5 > 4. The sign only says which way it tilts.\n\n**Reading gradient from a graph.** Choose two points where the line passes neatly through grid corners, count the vertical jump (rise) and horizontal jump (run), and write m = rise/run, then simplify.\n\n**Pitfall.** Keep rise (y) on top and run (x) on the bottom — never the other way round — and subtract the coordinates of the same point first in both top and bottom."
+      },
+      {
+        "level": 3,
+        "title": "The Straight-Line Equation y = mx + c",
+        "line": 52,
+        "body": "Every straight line (except vertical ones) can be written in the form **y = mx + c**, where:\n\n- **m** is the **gradient** — the steepness and direction of the line.\n- **c** is the **y-intercept** — the y-value where the line crosses the y-axis (the point (0;c)).\n\nSo in y = 3x + 4, the gradient is 3 and the line cuts the y-axis at (0;4). In y = −2x + 5, the gradient is −2 and the y-intercept is 5.\n\n**Watch the form first.** You can only read m and c straight off the equation once y stands alone with a coefficient of 1. If you are given 2y = 6x − 8, divide every term by 2 to get y = 3x − 4, then read m = 3 and c = −4. If you are given 3x + y = 7, make y the subject: y = −3x + 7 (moving 3x across flips its sign), giving m = −3 and c = 7.\n\n**Finding intercepts from the equation.** The line crosses the y-axis where x = 0 and the x-axis where y = 0.\n\n- y-intercept: substitute x = 0. For y = 2x − 6, y = −6, so (0;−6).\n- x-intercept: substitute y = 0. For 0 = 2x − 6, x = 3, so (3;0).\n\n**Testing a point.** A point lies on a line only if its coordinates satisfy the equation. To check (2;1) on y = 3x − 5: substitute x = 2 → y = 3(2) − 5 = 1, which matches, so the point is on the line.\n\n**Hidden coefficients.** When no number is written in front of x, the coefficient is 1 (or −1). So y = x means m = 1, c = 0; and y = −x + 2 means m = −1, c = 2."
+      },
+      {
+        "level": 3,
+        "title": "Drawing Straight-Line Graphs",
+        "line": 73,
+        "body": "There are three standard ways to draw a straight line. Choose whichever suits the equation.\n\n**1. Table of values.** Pick a few x-values, calculate y for each, then plot and join the points. For y = 2x − 1 with x = −1, 0, 1, 2 you get y = −3, −1, 1, 3, giving points (−1;−3), (0;−1), (1;1), (2;3). Rule a straight line through them and extend past the ends. This always works but is the slowest method.\n\n**2. Dual-intercept method.** Find the two points where the line crosses the axes.\n\n- y-intercept: set x = 0.\n- x-intercept: set y = 0.\n\nFor y = 2x − 4: x = 0 gives (0;−4); y = 0 gives 2x = 4, so (2;0). Plot the two intercepts and rule the line through them. This is fast and exam-friendly because only two points are needed.\n\n**3. Gradient–intercept method.** Plot the y-intercept first, then use the gradient as rise/run to step to the next point. For y = (3/2)x + 1, plot (0;1), then go up 3 and right 2 to reach (2;4), and draw the line. For a negative gradient, step down for the rise.\n\n**Lines through the origin.** For y = 2x both intercepts are the same point (0;0), so the dual-intercept method gives only one point. Keep (0;0) and choose one more x-value (e.g. x = 1 → (1;2)), or use the gradient to step to a second point.\n\n**Exam checklist.** Write the equation as y = mx + c; find at least two accurate points (intercepts are easiest); use a ruler; extend and arrow the line; label it with its equation; and sanity-check — positive gradient slopes up, negative slopes down."
+      },
+      {
+        "level": 3,
+        "title": "Special Lines",
+        "line": 93,
+        "body": "Some lines have especially simple equations and are worth recognising instantly.\n\n**Horizontal lines: y = c.** Every point on y = 3 has y = 3 whatever x is — for example (−2;3), (0;3), (5;3). The line lies flat, parallel to the x-axis, crossing the y-axis at (0;3). Its **gradient is 0**, because there is no rise (Δy = 0, so m = 0 ÷ run = 0).\n\n**Vertical lines: x = c.** Every point on x = −2 has x = −2 whatever y is — for example (−2;0), (−2;3), (−2;−5). The line stands upright, parallel to the y-axis, crossing the x-axis at (−2;0). Its **gradient is undefined**, because there is no run (Δx = 0, and Δy ÷ 0 cannot be calculated).\n\nA handy memory aid: \"x = a number is a vertical line\" — the x stands tall, just like a vertical line. By contrast, y = a number lies flat (horizontal).\n\n**The line y = x.** Here the y-value always equals the x-value, so it passes through points like (−2;−2), (0;0), (1;1), (3;3). It has gradient 1 and y-intercept 0, rising at 45° through Quadrants I and III. It is the line of symmetry y = x, used to reflect points by swapping their coordinates.\n\n**The line y = −x.** Here the y-value is the negative of x, giving points like (−2;2), (0;0), (1;−1), (3;−3). It has gradient −1 and y-intercept 0, falling at 45° through Quadrants II and IV.\n\n**The axes themselves** are special cases: the x-axis is the line y = 0 (gradient 0), and the y-axis is the line x = 0 (gradient undefined)."
+      },
+      {
+        "level": 3,
+        "title": "Finding the Equation of a Line",
+        "line": 110,
+        "body": "To find a line's equation you need its gradient m and its y-intercept c, then write y = mx + c.\n\n**From a graph.** Read c directly — the y-value where the line crosses the y-axis. Find m by counting rise/run between two clear points, or using m = (y₂ − y₁)/(x₂ − x₁). If a line cuts the y-axis at 2 and rises 3 for every 1 across, the equation is y = 3x + 2.\n\n**From a point and the gradient.** If the point given is the y-intercept, you already have c. For gradient 4 through (0;−3): c = −3, so y = 4x − 3.\n\nIf the point is not on the y-axis, substitute it to find c. For gradient 2 through (3;5): start with y = 2x + c, then 5 = 2(3) + c gives c = −1, so y = 2x − 1. Always check by substituting back: 2(3) − 1 = 5 ✓.\n\n**From two points.** First find the gradient, then find c.\n\nFor A(1;3) and B(4;9): m = (9 − 3)/(4 − 1) = 2. Then y = 2x + c; substitute (1;3): 3 = 2 + c, so c = 1, giving y = 2x + 1. Check with B: 2(4) + 1 = 9 ✓.\n\nFor (−2;7) and (2;−1): m = (−1 − 7)/(2 − (−2)) = −8/4 = −2. Then −1 = −2(2) + c gives c = 3, so y = −2x + 3.\n\n**Special lines from a point.** A horizontal line through (4;−2) is y = −2 (use the y-value); a vertical line through (4;−2) is x = 4 (use the x-value).\n\n**Pitfall.** After finding the gradient, do not stop at y = mx. Unless the line passes through the origin, you must substitute a point to find c. Finish every problem: find m, then c, then write y = mx + c."
+      },
+      {
+        "level": 3,
+        "title": "Gradient Relationships: Parallel Lines",
+        "line": 131,
+        "body": "The gradient tells us how two lines are related.\n\n**Parallel lines** never meet, so they have exactly the same steepness: their gradients are **equal**, m₁ = m₂. For example, y = 3x + 1 and y = 3x − 4 are parallel — both have gradient 3, differing only in their y-intercepts. To test whether two lines are parallel, put each in y = mx + c form and compare the gradients. For y = 2x + 5 and 2y = 4x − 3, divide the second by 2 to get y = 2x − 3/2; both have gradient 2, so they are parallel.\n\nTo find a line parallel to y = −3x + 2 through (1;4): the gradient stays −3, so y = −3x + c; substituting (1;4) gives 4 = −3 + c, so c = 7 and the equation is y = −3x + 7.\n\n**Pitfall.** Read the gradient m only once y is the subject of the equation — don't compare the x-terms before making y the subject (e.g. 2y = 4x − 3 has gradient 2, not 4)."
+      },
+      {
+        "level": 3,
+        "title": "Interpreting Real-Life Graphs",
+        "line": 142,
+        "body": "Real-life graphs use the same gradient and intercept ideas, but now they describe something physical. Always read the axis labels and units first, because the same shape means different things depending on what the axes measure.\n\n**Distance–time graphs.** The gradient is the change in distance divided by the change in time, which is **speed**.\n\n- A steeper line means a faster speed; a gentler slope means slower.\n- A horizontal line (gradient 0) means distance is not changing — the object is **stationary**.\n- A downward (negative) slope means distance is decreasing — the object is **returning** toward the start, reaching it when distance hits 0.\n\nA typical journey graph might rise (moving away at steady speed), go flat (resting), then rise more steeply (moving again, faster). Reading the slopes in order tells the whole story.\n\n**Rate graphs and cost graphs.** Consider a taxi fare of R8 per km plus a R20 call-out fee: cost = 8 × (km) + 20, which mirrors y = mx + c. The **y-intercept (20)** is the fixed starting cost before any travel; the **gradient (8)** is the rate — the cost per extra km. In general, the intercept is the base/fixed amount and the gradient is the rate of change per unit. A water-tank graph works the same way: the gradient is the filling rate in litres per minute, and a flat section means the tap is off or the tank is full.\n\n**Continuous vs discrete data.** Continuous data (time, distance, temperature) can take any value, so we join points with a solid line — in-between values have meaning. Discrete data (number of learners, number of cars) takes only separate whole values, so we plot separate points and do not join them, because something like 2.5 cars is meaningless. The rule: join points only if every value between them makes real-world sense."
+      }
+    ],
+    "firstParagraph": "### The Cartesian Plane\n\nThe Cartesian plane is the grid we use to give every point an exact address. It is built from two number lines that cross at right angles: the horizontal **x-axis** and the vertical **y-axis**. The point where they meet is the **origin**, written (0;0).",
+    "body": "# Graphs — Complete Study Guide\n\n## Contents\n\n### The Cartesian Plane\n\nThe Cartesian plane is the grid we use to give every point an exact address. It is built from two number lines that cross at right angles: the horizontal **x-axis** and the vertical **y-axis**. The point where they meet is the **origin**, written (0;0).\n\nEvery point is named by an **ordered pair** (x;y). The first number is the x-coordinate — how far left or right of the origin — and the second is the y-coordinate — how far up or down. Order matters: (3;5) and (5;3) are different points. In South African CAPS notation we separate the two values with a semicolon: (x;y).\n\n**Plotting a point.** Always start at the origin. Move along the x-axis first (right for positive x, left for negative x), then move parallel to the y-axis (up for positive y, down for negative y), and mark the spot. For example, to plot (−4;3): go 4 left, then 3 up.\n\n**Reading a point.** Drop a vertical line from the point to the x-axis to read x, and a horizontal line across to the y-axis to read y, then write (x;y).\n\n**The four quadrants.** The axes cut the plane into four regions, numbered anticlockwise from the top-right:\n\n- Quadrant I (top-right): (+;+)\n- Quadrant II (top-left): (−;+)\n- Quadrant III (bottom-left): (−;−)\n- Quadrant IV (bottom-right): (+;−)\n\nPoints lying exactly on an axis (where x = 0 or y = 0) are not in any quadrant. A point with x = 0 sits on the y-axis; a point with y = 0 sits on the x-axis.\n\n**Common pitfall.** Do not swap the coordinates. The first number always moves you across (x), the second always moves you up or down (y). Mixing them is the single most frequent plotting error.\n\n\n### Gradient\n\nThe **gradient** (symbol m) measures how steep a line is and in which direction it slopes. It is the amount the line rises for each unit it moves across:\n\nm = rise/run = Δy/Δx = (y₂ − y₁)/(x₂ − x₁)\n\nHere Δy (\"delta y\") is the change in y between two points, and Δx is the change in x. Up and right count as positive; down and left count as negative.\n\n**Worked example.** For A(1;2) and B(5;10): m = (10 − 2)/(5 − 1) = 8/4 = 2. The line rises 2 units for every 1 unit across. You may take the points in either order, as long as you are consistent in numerator and denominator — (2 − 10)/(1 − 5) = −8/−4 = 2 gives the same answer.\n\n**Four kinds of gradient.**\n\n- **Positive** (m > 0): the line rises from left to right (/).\n- **Negative** (m < 0): the line falls from left to right (\\).\n- **Zero** (m = 0): a horizontal line; Δy = 0, so 0 ÷ run = 0.\n- **Undefined**: a vertical line; Δx = 0, and Δy ÷ 0 cannot be calculated.\n\nThe contrast is worth memorising: 0 divided by something is 0 (fine), but something divided by 0 is undefined.\n\n**Steepness** depends on the *size* of the gradient, not its sign. A line with gradient −5 is steeper than one with gradient 4, because |−5| = 5 > 4. The sign only says which way it tilts.\n\n**Reading gradient from a graph.** Choose two points where the line passes neatly through grid corners, count the vertical jump (rise) and horizontal jump (run), and write m = rise/run, then simplify.\n\n**Pitfall.** Keep rise (y) on top and run (x) on the bottom — never the other way round — and subtract the coordinates of the same point first in both top and bottom.\n\n\n### The Straight-Line Equation y = mx + c\n\nEvery straight line (except vertical ones) can be written in the form **y = mx + c**, where:\n\n- **m** is the **gradient** — the steepness and direction of the line.\n- **c** is the **y-intercept** — the y-value where the line crosses the y-axis (the point (0;c)).\n\nSo in y = 3x + 4, the gradient is 3 and the line cuts the y-axis at (0;4). In y = −2x + 5, the gradient is −2 and the y-intercept is 5.\n\n**Watch the form first.** You can only read m and c straight off the equation once y stands alone with a coefficient of 1. If you are given 2y = 6x − 8, divide every term by 2 to get y = 3x − 4, then read m = 3 and c = −4. If you are given 3x + y = 7, make y the subject: y = −3x + 7 (moving 3x across flips its sign), giving m = −3 and c = 7.\n\n**Finding intercepts from the equation.** The line crosses the y-axis where x = 0 and the x-axis where y = 0.\n\n- y-intercept: substitute x = 0. For y = 2x − 6, y = −6, so (0;−6).\n- x-intercept: substitute y = 0. For 0 = 2x − 6, x = 3, so (3;0).\n\n**Testing a point.** A point lies on a line only if its coordinates satisfy the equation. To check (2;1) on y = 3x − 5: substitute x = 2 → y = 3(2) − 5 = 1, which matches, so the point is on the line.\n\n**Hidden coefficients.** When no number is written in front of x, the coefficient is 1 (or −1). So y = x means m = 1, c = 0; and y = −x + 2 means m = −1, c = 2.\n\n\n### Drawing Straight-Line Graphs\n\nThere are three standard ways to draw a straight line. Choose whichever suits the equation.\n\n**1. Table of values.** Pick a few x-values, calculate y for each, then plot and join the points. For y = 2x − 1 with x = −1, 0, 1, 2 you get y = −3, −1, 1, 3, giving points (−1;−3), (0;−1), (1;1), (2;3). Rule a straight line through them and extend past the ends. This always works but is the slowest method.\n\n**2. Dual-intercept method.** Find the two points where the line crosses the axes.\n\n- y-intercept: set x = 0.\n- x-intercept: set y = 0.\n\nFor y = 2x − 4: x = 0 gives (0;−4); y = 0 gives 2x = 4, so (2;0). Plot the two intercepts and rule the line through them. This is fast and exam-friendly because only two points are needed.\n\n**3. Gradient–intercept method.** Plot the y-intercept first, then use the gradient as rise/run to step to the next point. For y = (3/2)x + 1, plot (0;1), then go up 3 and right 2 to reach (2;4), and draw the line. For a negative gradient, step down for the rise.\n\n**Lines through the origin.** For y = 2x both intercepts are the same point (0;0), so the dual-intercept method gives only one point. Keep (0;0) and choose one more x-value (e.g. x = 1 → (1;2)), or use the gradient to step to a second point.\n\n**Exam checklist.** Write the equation as y = mx + c; find at least two accurate points (intercepts are easiest); use a ruler; extend and arrow the line; label it with its equation; and sanity-check — positive gradient slopes up, negative slopes down.\n\n\n### Special Lines\n\nSome lines have especially simple equations and are worth recognising instantly.\n\n**Horizontal lines: y = c.** Every point on y = 3 has y = 3 whatever x is — for example (−2;3), (0;3), (5;3). The line lies flat, parallel to the x-axis, crossing the y-axis at (0;3). Its **gradient is 0**, because there is no rise (Δy = 0, so m = 0 ÷ run = 0).\n\n**Vertical lines: x = c.** Every point on x = −2 has x = −2 whatever y is — for example (−2;0), (−2;3), (−2;−5). The line stands upright, parallel to the y-axis, crossing the x-axis at (−2;0). Its **gradient is undefined**, because there is no run (Δx = 0, and Δy ÷ 0 cannot be calculated).\n\nA handy memory aid: \"x = a number is a vertical line\" — the x stands tall, just like a vertical line. By contrast, y = a number lies flat (horizontal).\n\n**The line y = x.** Here the y-value always equals the x-value, so it passes through points like (−2;−2), (0;0), (1;1), (3;3). It has gradient 1 and y-intercept 0, rising at 45° through Quadrants I and III. It is the line of symmetry y = x, used to reflect points by swapping their coordinates.\n\n**The line y = −x.** Here the y-value is the negative of x, giving points like (−2;2), (0;0), (1;−1), (3;−3). It has gradient −1 and y-intercept 0, falling at 45° through Quadrants II and IV.\n\n**The axes themselves** are special cases: the x-axis is the line y = 0 (gradient 0), and the y-axis is the line x = 0 (gradient undefined).\n\n\n### Finding the Equation of a Line\n\nTo find a line's equation you need its gradient m and its y-intercept c, then write y = mx + c.\n\n**From a graph.** Read c directly — the y-value where the line crosses the y-axis. Find m by counting rise/run between two clear points, or using m = (y₂ − y₁)/(x₂ − x₁). If a line cuts the y-axis at 2 and rises 3 for every 1 across, the equation is y = 3x + 2.\n\n**From a point and the gradient.** If the point given is the y-intercept, you already have c. For gradient 4 through (0;−3): c = −3, so y = 4x − 3.\n\nIf the point is not on the y-axis, substitute it to find c. For gradient 2 through (3;5): start with y = 2x + c, then 5 = 2(3) + c gives c = −1, so y = 2x − 1. Always check by substituting back: 2(3) − 1 = 5 ✓.\n\n**From two points.** First find the gradient, then find c.\n\nFor A(1;3) and B(4;9): m = (9 − 3)/(4 − 1) = 2. Then y = 2x + c; substitute (1;3): 3 = 2 + c, so c = 1, giving y = 2x + 1. Check with B: 2(4) + 1 = 9 ✓.\n\nFor (−2;7) and (2;−1): m = (−1 − 7)/(2 − (−2)) = −8/4 = −2. Then −1 = −2(2) + c gives c = 3, so y = −2x + 3.\n\n**Special lines from a point.** A horizontal line through (4;−2) is y = −2 (use the y-value); a vertical line through (4;−2) is x = 4 (use the x-value).\n\n**Pitfall.** After finding the gradient, do not stop at y = mx. Unless the line passes through the origin, you must substitute a point to find c. Finish every problem: find m, then c, then write y = mx + c.\n\n\n### Gradient Relationships: Parallel Lines\n\nThe gradient tells us how two lines are related.\n\n**Parallel lines** never meet, so they have exactly the same steepness: their gradients are **equal**, m₁ = m₂. For example, y = 3x + 1 and y = 3x − 4 are parallel — both have gradient 3, differing only in their y-intercepts. To test whether two lines are parallel, put each in y = mx + c form and compare the gradients. For y = 2x + 5 and 2y = 4x − 3, divide the second by 2 to get y = 2x − 3/2; both have gradient 2, so they are parallel.\n\nTo find a line parallel to y = −3x + 2 through (1;4): the gradient stays −3, so y = −3x + c; substituting (1;4) gives 4 = −3 + c, so c = 7 and the equation is y = −3x + 7.\n\n**Pitfall.** Read the gradient m only once y is the subject of the equation — don't compare the x-terms before making y the subject (e.g. 2y = 4x − 3 has gradient 2, not 4).\n\n\n### Interpreting Real-Life Graphs\n\nReal-life graphs use the same gradient and intercept ideas, but now they describe something physical. Always read the axis labels and units first, because the same shape means different things depending on what the axes measure.\n\n**Distance–time graphs.** The gradient is the change in distance divided by the change in time, which is **speed**.\n\n- A steeper line means a faster speed; a gentler slope means slower.\n- A horizontal line (gradient 0) means distance is not changing — the object is **stationary**.\n- A downward (negative) slope means distance is decreasing — the object is **returning** toward the start, reaching it when distance hits 0.\n\nA typical journey graph might rise (moving away at steady speed), go flat (resting), then rise more steeply (moving again, faster). Reading the slopes in order tells the whole story.\n\n**Rate graphs and cost graphs.** Consider a taxi fare of R8 per km plus a R20 call-out fee: cost = 8 × (km) + 20, which mirrors y = mx + c. The **y-intercept (20)** is the fixed starting cost before any travel; the **gradient (8)** is the rate — the cost per extra km. In general, the intercept is the base/fixed amount and the gradient is the rate of change per unit. A water-tank graph works the same way: the gradient is the filling rate in litres per minute, and a flat section means the tap is off or the tank is full.\n\n**Continuous vs discrete data.** Continuous data (time, distance, temperature) can take any value, so we join points with a solid line — in-between values have meaning. Discrete data (number of learners, number of cars) takes only separate whole values, so we plot separate points and do not join them, because something like 2.5 cars is meaningless. The rule: join points only if every value between them makes real-world sense.\n\n\n",
+    "infographics": [],
+    "videos": [],
+    "audio": []
+  }
+}

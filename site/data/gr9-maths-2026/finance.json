@@ -1,0 +1,1043 @@
+{
+  "subject": "finance",
+  "cat": "sky",
+  "cards": [
+    {
+      "id": "finance-91135eeda0",
+      "front": "What is a budget, and what do income, expenditure, surplus and deficit mean?",
+      "back": "A budget is a plan of expected income and expenses over a period (usually a month).\nIncome = money coming IN (salary, wages, commission).\nExpenditure = money going OUT (rent, food, transport).\nIf income > expenditure → SURPLUS (you save).\nIf income < expenditure → DEFICIT (you overspend / borrow).\nBalance = income − expenditure.",
+      "tags": [
+        "budget-basics"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "187"
+      }
+    },
+    {
+      "id": "finance-9e8027716b",
+      "front": "Thabo earns R12 000 per month. His expenses are: rent R4 500, food R3 000, transport R1 800, airtime R500, savings R1 000. Does he have a surplus or deficit, and how much?",
+      "back": "Total expenditure = 4 500 + 3 000 + 1 800 + 500 + 1 000 = R10 800.\nBalance = income − expenditure = 12 000 − 10 800 = R1 200.\nSince income > expenditure, he has a SURPLUS of R1 200.",
+      "tags": [
+        "income-and-expenditure"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "187"
+      }
+    },
+    {
+      "id": "finance-63b81be185",
+      "front": "What is commission and how is it calculated? Work out 7% commission on R85 000 of sales.",
+      "back": "Commission = a percentage of sales paid to a salesperson as earnings.\nCommission = sales × (rate ÷ 100).\n= 85 000 × 0,07 = R5 950.\nIf there is also a fixed 'basic salary', total earnings = basic salary + commission.",
+      "tags": [
+        "commission"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml"
+    },
+    {
+      "id": "finance-500b43e6d9",
+      "front": "A salesperson earns a basic salary of R6 000 plus 5% commission on sales above R20 000. If she sells R50 000, what does she earn?",
+      "back": "Commission applies only to sales ABOVE R20 000: 50 000 − 20 000 = R30 000.\nCommission = 5% of 30 000 = 0,05 × 30 000 = R1 500.\nTotal earnings = basic + commission = 6 000 + 1 500 = R7 500.\nRead carefully whether commission is on ALL sales or only sales above a threshold.",
+      "tags": [
+        "commission"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml"
+    },
+    {
+      "id": "finance-eb99bc1ed1",
+      "front": "What is inflation, and how do you calculate a new price after inflation?",
+      "back": "Inflation = the general rise in prices over time, given as a % increase per year.\nNew price = old price × (1 + inflation rate).\nFor several years it compounds: price after n years = P(1 + i)ⁿ.\nExample: bread R15, inflation 8% → next year 15 × 1,08 = R16,20.",
+      "tags": [
+        "inflation"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml"
+    },
+    {
+      "id": "finance-0ac8993043",
+      "front": "A basket of groceries costs R800 now. With inflation at 6% per year, what will it cost in 3 years?",
+      "back": "Inflation compounds like compound interest: A = P(1 + i)ⁿ.\nA = 800 × (1,06)³.\n(1,06)³ = 1,191016.\nA = 800 × 1,191016 = R952,81.\nSo in 3 years the basket costs about R952,81.",
+      "tags": [
+        "inflation"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "111"
+      }
+    },
+    {
+      "id": "finance-e961fcd8cf",
+      "front": "What is rent/rental, and what is the difference between a loan and rent?",
+      "back": "Rental = a regular payment to USE something (a house, flat, car) that you do NOT own — you give it back.\nLoan = borrowed money you must REPAY, usually with interest; you keep what you bought.\nIn a budget both are EXPENSES (money out). Rent is ongoing; a loan repayment ends once the debt is paid.",
+      "tags": [
+        "loans-and-rentals"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-06592adb81",
+      "front": "How do you read a simple bank/account statement to find the closing balance?",
+      "back": "A statement lists transactions with deposits (credits, +) and withdrawals/payments (debits, −).\nClosing balance = opening balance + total deposits − total withdrawals.\nExample: opening R2 000, deposit R1 500, withdrawals R900 and R300 → 2 000 + 1 500 − 900 − 300 = R2 300 closing balance.",
+      "tags": [
+        "accounts-and-statements"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-49383669b0",
+      "front": "A business has income R50 000 and total expenses (stock, rent, wages) R38 000 for a month. State its profit and profit as a % of income.",
+      "back": "Profit = income − expenses = 50 000 − 38 000 = R12 000.\nProfit as % of income = (12 000 ÷ 50 000) × 100 = 24%.\nFor a business budget, profit (or loss) is the bottom line; a loss occurs if expenses exceed income.",
+      "tags": [
+        "business-profit"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-187303919f",
+      "front": "Common mistake: in a budget a learner adds savings to income instead of treating it as money set aside. How should savings be handled?",
+      "back": "Savings are money you DEDUCT and keep aside — list them under expenditure (an 'expense to yourself'), not as extra income.\nBalance = income − (all expenses including savings).\nMixing them up gives a false surplus. Income is only money actually earned/received.",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Budgets and Personal Finance - CAPS_budgets-finance",
+      "sourceFile": "Budgets and Personal Finance - CAPS_budgets-finance.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "187"
+      }
+    },
+    {
+      "id": "finance-7445fb5255",
+      "front": "State the compound interest formula and explain how it differs from simple interest.",
+      "back": "A = P(1 + i)ⁿ, where P = principal, i = interest rate per period (decimal), n = number of periods, A = final amount.\nDifference: with COMPOUND interest you earn interest on the interest already added (the new balance), so growth speeds up. SIMPLE interest is only ever on the original P.\nInterest earned = A − P.",
+      "tags": [
+        "compound-interest-formula"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Interest - CAPS_compound-interest",
+      "sourceFile": "Compound Interest - CAPS_compound-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-b0a21211fd",
+      "front": "R5 000 is invested at 8% compound interest per year for 3 years. Find the final amount.",
+      "back": "A = P(1 + i)ⁿ = 5 000(1 + 0,08)³ = 5 000 × (1,08)³.\n(1,08)³ = 1,08 × 1,08 × 1,08 = 1,259712.\nA = 5 000 × 1,259712 = R6 298,56.\nInterest = 6 298,56 − 5 000 = R1 298,56.",
+      "tags": [
+        "growth-over-n-years"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Interest - CAPS_compound-interest",
+      "sourceFile": "Compound Interest - CAPS_compound-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "111"
+      }
+    },
+    {
+      "id": "finance-c0dcf3e8a8",
+      "front": "Compare simple vs compound: R5 000 at 8% for 3 years. Which earns more and by how much?",
+      "back": "Simple: I = 5 000 × 0,08 × 3 = R1 200 → A = R6 200.\nCompound: A = 5 000(1,08)³ = R6 298,56 → interest R1 298,56.\nCompound earns more by 6 298,56 − 6 200 = R98,56.\nCompound always ≥ simple (equal only after the first year); the gap grows over time.",
+      "tags": [
+        "compare-simple-vs-compound"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Interest - CAPS_compound-interest",
+      "sourceFile": "Compound Interest - CAPS_compound-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "111"
+      }
+    },
+    {
+      "id": "finance-485a147066",
+      "front": "Show year-by-year how R1 000 grows at 10% compound interest for 2 years (to see why it compounds).",
+      "back": "Year 1: interest = 10% of 1 000 = R100 → balance R1 100.\nYear 2: interest = 10% of 1 100 = R110 (on the NEW balance) → balance R1 210.\nFormula check: 1 000(1,10)² = 1 000 × 1,21 = R1 210. ✓\nNote year 2 earns R110, more than year 1's R100 — that extra R10 is interest on interest.",
+      "tags": [
+        "growth-over-n-years"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Interest - CAPS_compound-interest",
+      "sourceFile": "Compound Interest - CAPS_compound-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "111"
+      }
+    },
+    {
+      "id": "finance-31e60298ba",
+      "front": "A car worth R200 000 LOSES value (depreciates) at 12% per year. Find its value after 2 years.",
+      "back": "For depreciation (decrease), use A = P(1 − i)ⁿ.\nA = 200 000(1 − 0,12)² = 200 000 × (0,88)².\n(0,88)² = 0,7744.\nA = 200 000 × 0,7744 = R154 880.",
+      "tags": [
+        "depreciation"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Interest - CAPS_compound-interest",
+      "sourceFile": "Compound Interest - CAPS_compound-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "59"
+      }
+    },
+    {
+      "id": "finance-c446b3e528",
+      "front": "How do you calculate a power like (1,06)⁴ by hand if you have no exponent key?",
+      "back": "Multiply the base by itself n times, step by step.\n(1,06)⁴ = 1,06 × 1,06 × 1,06 × 1,06.\n1,06 × 1,06 = 1,1236.\n1,1236 × 1,06 = 1,191016.\n1,191016 × 1,06 = 1,26247696.\nKeep many decimals during working; only round the FINAL money answer to 2 decimals (cents).",
+      "tags": [
+        "calculating-powers"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Interest - CAPS_compound-interest",
+      "sourceFile": "Compound Interest - CAPS_compound-interest.yml"
+    },
+    {
+      "id": "finance-f77f72930a",
+      "front": "Common mistake: a learner computes 5 000 × 1,08 × 3 for 3 years of compound interest. Why is that wrong?",
+      "back": "That is simple-interest-style thinking. Compound needs the EXPONENT n, not multiplication by n.\nWrong: 5 000 × 1,08 × 3.\nCorrect: 5 000 × (1,08)³ — raise (1 + i) to the power of the number of years.\nMultiply the rate factor by itself n times, not by n.",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Interest - CAPS_compound-interest",
+      "sourceFile": "Compound Interest - CAPS_compound-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "111"
+      }
+    },
+    {
+      "id": "finance-bef6462eb3",
+      "front": "Define marked price and sale price, and state the discount formulas.",
+      "back": "Marked price (MP) = the original/ticket price BEFORE discount.\nSale price = the price you actually PAY after the discount is taken off.\nDiscount amount = MP × (discount% ÷ 100).\nSale price = MP − discount = MP × (1 − discount% ÷ 100).",
+      "tags": [
+        "marked-price-sale-price"
+      ],
+      "difficulty": "medium",
+      "source": "Discount - CAPS_discount",
+      "sourceFile": "Discount - CAPS_discount.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "34"
+      }
+    },
+    {
+      "id": "finance-f29c336bad",
+      "front": "A jacket is marked R800 with a 25% discount. Find the discount amount and the sale price.",
+      "back": "Discount = 25% of R800 = 0,25 × 800 = R200.\nSale price = MP − discount = 800 − 200 = R600.\nShortcut: pay (100 − 25)% = 75% → 0,75 × 800 = R600. ✓",
+      "tags": [
+        "percentage-discount"
+      ],
+      "difficulty": "medium",
+      "source": "Discount - CAPS_discount",
+      "sourceFile": "Discount - CAPS_discount.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "34"
+      }
+    },
+    {
+      "id": "finance-73e2929e0f",
+      "front": "After a 30% discount a TV costs R2 100. What was the marked price? (Reverse)",
+      "back": "Sale price = 70% of MP, so 2 100 = 0,70 × MP.\nMP = 2 100 ÷ 0,70 = R3 000.\nCheck: 30% of 3 000 = R900; 3 000 − 900 = R2 100. ✓\nMistake to avoid: do NOT add 30% of R2 100 — the % is of the marked price.",
+      "tags": [
+        "reverse-percentage"
+      ],
+      "difficulty": "medium",
+      "source": "Discount - CAPS_discount",
+      "sourceFile": "Discount - CAPS_discount.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "34"
+      }
+    },
+    {
+      "id": "finance-4b74d3929d",
+      "front": "An item marked R500 is sold for R375. What percentage discount was given?",
+      "back": "Discount amount = MP − sale = 500 − 375 = R125.\n% discount = (discount ÷ MP) × 100 = (125 ÷ 500) × 100 = 25%.\nNote: discount % is calculated on the MARKED PRICE (the original).",
+      "tags": [
+        "percentage-discount"
+      ],
+      "difficulty": "medium",
+      "source": "Discount - CAPS_discount",
+      "sourceFile": "Discount - CAPS_discount.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "34"
+      }
+    },
+    {
+      "id": "finance-44e7fb4a47",
+      "front": "How do you handle SUCCESSIVE discounts (e.g. 20% then a further 10%)? Why can't you just add them?",
+      "back": "Apply them ONE AFTER THE OTHER as multipliers. You cannot add to 30% because the second discount is taken on the already-reduced price.\nFinal price = MP × (1 − 0,20) × (1 − 0,10) = MP × 0,80 × 0,90 = MP × 0,72.\nSo the overall discount = 1 − 0,72 = 0,28 = 28% (not 30%).",
+      "tags": [
+        "successive-discounts"
+      ],
+      "difficulty": "medium",
+      "source": "Discount - CAPS_discount",
+      "sourceFile": "Discount - CAPS_discount.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "34"
+      }
+    },
+    {
+      "id": "finance-517a051e0b",
+      "front": "A coat is marked R1 000. A 20% discount is given, then a further 15% off at the till. Find the final price.",
+      "back": "After first discount: 1 000 × 0,80 = R800.\nAfter second discount: 800 × 0,85 = R680.\nFinal price = R680.\nOverall: 1 000 × 0,80 × 0,85 = R680. Overall discount = 32%, not 35%.",
+      "tags": [
+        "successive-discounts"
+      ],
+      "difficulty": "medium",
+      "source": "Discount - CAPS_discount",
+      "sourceFile": "Discount - CAPS_discount.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "34"
+      }
+    },
+    {
+      "id": "finance-ceaa77cb5e",
+      "front": "Distinguish 'cash discount' / 'discount for paying early' from a marked-down sale price.",
+      "back": "Both reduce what you pay, calculated the same way: amount paid = full price × (1 − discount%).\nCash discount = reduction for paying immediately/in cash instead of on credit.\nExample: invoice R2 000, 5% cash discount → pay 2 000 × 0,95 = R1 900, saving R100.",
+      "tags": [
+        "percentage-discount"
+      ],
+      "difficulty": "medium",
+      "source": "Discount - CAPS_discount",
+      "sourceFile": "Discount - CAPS_discount.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "34"
+      }
+    },
+    {
+      "id": "finance-f71bae6ea5",
+      "front": "Common mistake: adding two successive discounts of 50% and 50% to get 100% off. What is the real answer?",
+      "back": "Multiply the multipliers, do not add the percentages.\nFinal = MP × 0,50 × 0,50 = MP × 0,25 → you still pay 25% of the price, a 75% total discount.\nTwo 50% discounts NEVER make something free.",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Discount - CAPS_discount",
+      "sourceFile": "Discount - CAPS_discount.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "34"
+      }
+    },
+    {
+      "id": "finance-c009d2289c",
+      "front": "What is an exchange rate, and what does 'R18,50 to the dollar' mean?",
+      "back": "An exchange rate tells you how much of one currency you get for another.\n'R18,50 to the dollar' (R/$ = 18,50) means R18,50 = $1.\nTo buy $1 you pay R18,50; to convert dollars to rands you MULTIPLY by 18,50; to convert rands to dollars you DIVIDE by 18,50.",
+      "tags": [
+        "exchange-rate-basics"
+      ],
+      "difficulty": "medium",
+      "source": "Exchange Rates - CAPS_exchange-rates",
+      "sourceFile": "Exchange Rates - CAPS_exchange-rates.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "162"
+      }
+    },
+    {
+      "id": "finance-04041926c0",
+      "front": "Using R18,50 = $1, convert $250 to rands.",
+      "back": "Rands = dollars × rate = 250 × 18,50 = R4 625.\nRule: foreign → rands, MULTIPLY by the R/foreign rate.\nSo $250 is worth R4 625.",
+      "tags": [
+        "foreign-to-rand"
+      ],
+      "difficulty": "medium",
+      "source": "Exchange Rates - CAPS_exchange-rates",
+      "sourceFile": "Exchange Rates - CAPS_exchange-rates.yml"
+    },
+    {
+      "id": "finance-c25a1bca7e",
+      "front": "Using R18,50 = $1, convert R7 400 to US dollars.",
+      "back": "Dollars = rands ÷ rate = 7 400 ÷ 18,50 = $400.\nRule: rands → foreign, DIVIDE by the R/foreign rate.\nSo R7 400 is worth $400.",
+      "tags": [
+        "rand-to-foreign"
+      ],
+      "difficulty": "medium",
+      "source": "Exchange Rates - CAPS_exchange-rates",
+      "sourceFile": "Exchange Rates - CAPS_exchange-rates.yml"
+    },
+    {
+      "id": "finance-2083f0f3c3",
+      "front": "Exchange rates: R23 = £1 and R20 = €1. Convert £150 to rands, and R5 000 to euros.",
+      "back": "£150 to rands: 150 × 23 = R3 450.\nR5 000 to euros: 5 000 ÷ 20 = €250.\nAlways match the rate to the currency: use the R/£ rate for pounds and the R/€ rate for euros.",
+      "tags": [
+        "multiple-currencies"
+      ],
+      "difficulty": "medium",
+      "source": "Exchange Rates - CAPS_exchange-rates",
+      "sourceFile": "Exchange Rates - CAPS_exchange-rates.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "162"
+      }
+    },
+    {
+      "id": "finance-157fc504a8",
+      "front": "A jacket costs $80 in the USA and R1 600 in South Africa. If R18,50 = $1, where is it cheaper?",
+      "back": "Convert $80 to rands: 80 × 18,50 = R1 480.\nCompare: USA price R1 480 vs SA price R1 600.\nR1 480 < R1 600, so it is cheaper in the USA (by R120). Always convert to the SAME currency before comparing.",
+      "tags": [
+        "comparing-prices"
+      ],
+      "difficulty": "medium",
+      "source": "Exchange Rates - CAPS_exchange-rates",
+      "sourceFile": "Exchange Rates - CAPS_exchange-rates.yml"
+    },
+    {
+      "id": "finance-8b22c7926a",
+      "front": "Common mistake: deciding whether to multiply or divide when converting currencies. Give a reliable rule.",
+      "back": "Write the rate as R(rate) = 1 foreign unit.\nForeign → Rand: MULTIPLY by the rate (you get a bigger number of rands).\nRand → Foreign: DIVIDE by the rate (you get fewer foreign units).\nSanity check: since R1 is worth less than $1, a rand amount should give a SMALLER dollar number — if it grew, you divided/multiplied the wrong way.",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Exchange Rates - CAPS_exchange-rates",
+      "sourceFile": "Exchange Rates - CAPS_exchange-rates.yml"
+    },
+    {
+      "id": "finance-7088d43130",
+      "front": "What is hire purchase (HP) and how is the total cost worked out?",
+      "back": "Hire purchase = buying on credit by paying a DEPOSIT now and then equal MONTHLY INSTALMENTS over a fixed period; interest (usually simple) is charged on the amount borrowed.\nTotal cost = deposit + (monthly instalment × number of months).\nHP almost always costs MORE than the cash price because of the interest.",
+      "tags": [
+        "hire-purchase-basics"
+      ],
+      "difficulty": "medium",
+      "source": "Hire Purchase - CAPS_hire-purchase",
+      "sourceFile": "Hire Purchase - CAPS_hire-purchase.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "136"
+      }
+    },
+    {
+      "id": "finance-242758eb53",
+      "front": "A fridge is bought on HP: deposit R1 500 plus R650 per month for 24 months. Find the total amount paid.",
+      "back": "Instalments total = 650 × 24 = R15 600.\nTotal paid = deposit + instalments = 1 500 + 15 600 = R17 100.\nThat is the full HP price.",
+      "tags": [
+        "total-cost"
+      ],
+      "difficulty": "medium",
+      "source": "Hire Purchase - CAPS_hire-purchase",
+      "sourceFile": "Hire Purchase - CAPS_hire-purchase.yml"
+    },
+    {
+      "id": "finance-bd3e5ee73c",
+      "front": "The fridge above (total HP paid R17 100) has a cash price of R14 000. How much interest was charged?",
+      "back": "Interest charged = total HP paid − cash price = 17 100 − 14 000 = R3 100.\nThis is the 'cost of credit' — the extra you pay for not paying cash up front.",
+      "tags": [
+        "interest-charged"
+      ],
+      "difficulty": "medium",
+      "source": "Hire Purchase - CAPS_hire-purchase",
+      "sourceFile": "Hire Purchase - CAPS_hire-purchase.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-f1a52f3631",
+      "front": "Cash price R8 000. You pay a 10% deposit and simple interest of 18% per year is charged on the balance over 2 years. Find the monthly instalment.",
+      "back": "Deposit = 10% of 8 000 = R800. Balance financed = 8 000 − 800 = R7 200.\nInterest = P·r·t = 7 200 × 0,18 × 2 = R2 592.\nAmount to repay = 7 200 + 2 592 = R9 792.\nMonths = 2 × 12 = 24.\nMonthly instalment = 9 792 ÷ 24 = R408.",
+      "tags": [
+        "instalment-calculation"
+      ],
+      "difficulty": "medium",
+      "source": "Hire Purchase - CAPS_hire-purchase",
+      "sourceFile": "Hire Purchase - CAPS_hire-purchase.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-d06accad52",
+      "front": "In the previous example, what is the TOTAL cost of the fridge on hire purchase and how much more than cash is that?",
+      "back": "Total HP cost = deposit + repayments = 800 + 9 792 = R10 592.\nExtra over cash = 10 592 − 8 000 = R2 592 (which is exactly the interest charged).\nLesson: paying cash saves the R2 592 interest.",
+      "tags": [
+        "total-cost"
+      ],
+      "difficulty": "medium",
+      "source": "Hire Purchase - CAPS_hire-purchase",
+      "sourceFile": "Hire Purchase - CAPS_hire-purchase.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-4dc6d76d89",
+      "front": "Why is interest in HP charged on the BALANCE and not the full cash price?",
+      "back": "You pay the deposit immediately, so you only BORROW the balance = cash price − deposit. Interest is the cost of borrowing, so it applies to that borrowed balance.\nUsing the full cash price would over-charge interest. Always subtract the deposit FIRST, then apply I = P·r·t to the balance.",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Hire Purchase - CAPS_hire-purchase",
+      "sourceFile": "Hire Purchase - CAPS_hire-purchase.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-0ca3c43a05",
+      "front": "Common mistake: forgetting to add the deposit when finding total HP cost. State the correct full formula.",
+      "back": "Total HP cost = deposit + (monthly instalment × number of months).\nThe deposit is part of what you pay — it must be ADDED.\nLikewise, when finding interest: interest = total HP cost − cash price (the deposit is included on both sides).",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Hire Purchase - CAPS_hire-purchase",
+      "sourceFile": "Hire Purchase - CAPS_hire-purchase.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-bae8db7929",
+      "front": "Define cost price (CP) and selling price (SP), and state how to tell a profit from a loss.",
+      "back": "Cost price (CP) = the amount a trader PAYS to buy/make an item (price in).\nSelling price (SP) = the amount the customer PAYS the trader (price out).\nIf SP > CP → PROFIT (gain).\nIf SP < CP → LOSS.\nIf SP = CP → break-even (no profit, no loss).\nProfit = SP − CP. Loss = CP − SP (keep it positive).",
+      "tags": [
+        "cost-price-selling-price"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-f4a014978f",
+      "front": "A shop buys a kettle for R180 and sells it for R234. Find the profit amount.",
+      "back": "Profit = SP − CP\nProfit = R234 − R180 = R54.\nSince SP (234) > CP (180), it is a profit of R54.\nTip: profit/loss AMOUNT is always Rand value; percentage profit is separate.",
+      "tags": [
+        "profit-amount"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-db0d72347e",
+      "front": "State the formula for percentage profit and percentage loss. On what value is it calculated in CAPS?",
+      "back": "In CAPS Grade 9, percentage profit/loss is calculated ON THE COST PRICE (unless told otherwise).\n% profit = (profit ÷ CP) × 100\n% loss = (loss ÷ CP) × 100\nCommon mistake: dividing by the selling price. Always divide by CP.",
+      "tags": [
+        "percentage-profit-loss"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-09cdd422bb",
+      "front": "A trader buys goods for R250 and sells them for R325. Calculate the percentage profit.",
+      "back": "Step 1: Profit = SP − CP = R325 − R250 = R75.\nStep 2: % profit = (profit ÷ CP) × 100\n= (75 ÷ 250) × 100\n= 0,3 × 100 = 30%.\nThe profit is 30% on cost.",
+      "tags": [
+        "percentage-profit-loss"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-d18f0f050f",
+      "front": "A phone costing R4 000 is sold for R3 400. Calculate the percentage loss.",
+      "back": "Step 1: Loss = CP − SP = R4 000 − R3 400 = R600.\nStep 2: % loss = (loss ÷ CP) × 100\n= (600 ÷ 4 000) × 100\n= 0,15 × 100 = 15%.\nA 15% loss on cost.",
+      "tags": [
+        "percentage-profit-loss"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-c201d61943",
+      "front": "Given CP = R200 and a 25% profit, find the selling price (SP).",
+      "back": "Method 1 (find profit then add):\nProfit = 25% of 200 = 0,25 × 200 = R50.\nSP = CP + profit = 200 + 50 = R250.\nMethod 2 (multiplier): SP = CP × (1 + 25/100) = 200 × 1,25 = R250.",
+      "tags": [
+        "markup"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-a95ab8052f",
+      "front": "Given CP = R600 and a 20% loss, find the selling price.",
+      "back": "SP = CP × (1 − 20/100) = 600 × 0,80 = R480.\nCheck: loss = 600 − 480 = R120 = 20% of 600. ✓\nA loss means you MULTIPLY by (1 − %), i.e. less than 1.",
+      "tags": [
+        "percentage-profit-loss"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-262746ef70",
+      "front": "An item is sold for R360 at a 20% profit. Find the cost price. (Reverse percentage)",
+      "back": "The SP is 120% of the CP, so SP = CP × 1,20.\nCP = SP ÷ 1,20 = 360 ÷ 1,20 = R300.\nCheck: 20% of 300 = R60; 300 + 60 = R360. ✓\nCommon mistake: taking 20% of R360 (= R72) — wrong, because the % is on the CP, not the SP.",
+      "tags": [
+        "reverse-percentage"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-6ccf2a8934",
+      "front": "What is 'markup' and how does it relate to cost price and selling price?",
+      "back": "Markup = the amount ADDED to the cost price to get the selling price.\nMarkup amount = SP − CP (same as profit).\nMarkup % = (markup ÷ CP) × 100.\nSP = CP + markup = CP × (1 + markup%).\nExample: CP R80, markup 50% → markup = R40, SP = R120.",
+      "tags": [
+        "markup"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-d75b9cff47",
+      "front": "What does 'break-even' mean and how do you find the break-even point?",
+      "back": "Break-even = the point where total income EQUALS total cost, so profit = 0 (SP = CP overall).\nBreak-even number of units = total fixed costs ÷ profit per unit (or ÷ (price − variable cost per unit)).\nExample: fixed costs R600, profit R30 per item → break-even = 600 ÷ 30 = 20 items. Selling fewer than 20 = loss; more than 20 = profit.",
+      "tags": [
+        "break-even"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-743107fbc5",
+      "front": "A tuck shop has fixed costs of R450. Each sweet sells for R5 and costs R2 to buy. How many sweets to break even?",
+      "back": "Profit per sweet = price − cost = R5 − R2 = R3.\nBreak-even units = fixed costs ÷ profit per unit = 450 ÷ 3 = 150 sweets.\nAt 150 sweets income = 150 × 5 = R750; costs = 450 + 150 × 2 = R750. Equal → break-even. ✓",
+      "tags": [
+        "break-even"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-70fd780078",
+      "front": "Common-mistake check: a learner divides profit by selling price to get % profit. Why is that wrong?",
+      "back": "CAPS defines percentage profit/loss ON THE COST PRICE. Dividing by SP gives the 'margin', not the % profit asked for.\nCorrect: % profit = (profit ÷ CP) × 100.\nAlways read the question — only divide by SP if it explicitly says 'percentage of the selling price'.",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Profit and Loss - CAPS_profit-loss",
+      "sourceFile": "Profit and Loss - CAPS_profit-loss.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "finance-669e232e74",
+      "front": "State the simple interest formulas and define each symbol.",
+      "back": "Interest: I = P × r × t (or I = P·i·n).\nAccumulated amount: A = P + I = P(1 + i·n).\nP = principal (starting amount), r or i = interest rate per year as a DECIMAL, t or n = time in YEARS, I = interest earned/charged, A = final total.\nRemember: simple interest is calculated on the ORIGINAL principal every year.",
+      "tags": [
+        "simple-interest-formula"
+      ],
+      "difficulty": "medium",
+      "source": "Simple Interest - CAPS_simple-interest",
+      "sourceFile": "Simple Interest - CAPS_simple-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-3f5d738aa8",
+      "front": "R5 000 is invested at 8% simple interest per year for 3 years. Find the interest and the final amount.",
+      "back": "Convert rate: 8% = 0,08.\nI = P·r·t = 5 000 × 0,08 × 3 = R1 200.\nA = P + I = 5 000 + 1 200 = R6 200.\nCheck with A = P(1 + i·n) = 5 000(1 + 0,08×3) = 5 000 × 1,24 = R6 200. ✓",
+      "tags": [
+        "find-interest-amount"
+      ],
+      "difficulty": "medium",
+      "source": "Simple Interest - CAPS_simple-interest",
+      "sourceFile": "Simple Interest - CAPS_simple-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-2cedf11f41",
+      "front": "How do you convert a percentage rate to a decimal, and how do you handle time given in months?",
+      "back": "Rate to decimal: divide by 100. e.g. 7,5% = 0,075.\nTime must be in YEARS: divide months by 12. e.g. 18 months = 18 ÷ 12 = 1,5 years; 6 months = 0,5 years.\nCommon mistake: using t = 6 for 6 months — you must use 0,5.",
+      "tags": [
+        "rate-and-time-conversion"
+      ],
+      "difficulty": "medium",
+      "source": "Simple Interest - CAPS_simple-interest",
+      "sourceFile": "Simple Interest - CAPS_simple-interest.yml"
+    },
+    {
+      "id": "finance-d3e622b205",
+      "front": "How much interest does R2 400 earn at 10% per year simple interest over 9 months?",
+      "back": "t = 9 ÷ 12 = 0,75 years; r = 0,10.\nI = P·r·t = 2 400 × 0,10 × 0,75 = R180.\nSo after 9 months the interest is R180 and the total is R2 580.",
+      "tags": [
+        "rate-and-time-conversion"
+      ],
+      "difficulty": "medium",
+      "source": "Simple Interest - CAPS_simple-interest",
+      "sourceFile": "Simple Interest - CAPS_simple-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-6edbe26dcf",
+      "front": "What principal must be invested at 6% simple interest to earn R900 interest in 5 years? (Solve for P)",
+      "back": "I = P·r·t → P = I ÷ (r·t).\nP = 900 ÷ (0,06 × 5) = 900 ÷ 0,30 = R3 000.\nCheck: 3 000 × 0,06 × 5 = R900. ✓",
+      "tags": [
+        "solve-for-principal"
+      ],
+      "difficulty": "medium",
+      "source": "Simple Interest - CAPS_simple-interest",
+      "sourceFile": "Simple Interest - CAPS_simple-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-a1041c9b9c",
+      "front": "R4 000 earns R720 simple interest over 4 years. Find the annual interest rate. (Solve for r)",
+      "back": "I = P·r·t → r = I ÷ (P·t).\nr = 720 ÷ (4 000 × 4) = 720 ÷ 16 000 = 0,045.\nAs a percentage: 0,045 × 100 = 4,5% per year.\nRemember to convert the decimal back to a % for the final answer.",
+      "tags": [
+        "solve-for-rate"
+      ],
+      "difficulty": "medium",
+      "source": "Simple Interest - CAPS_simple-interest",
+      "sourceFile": "Simple Interest - CAPS_simple-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-fc268aea99",
+      "front": "How long must R6 000 be invested at 5% simple interest to grow to R7 500? (Solve for t)",
+      "back": "First find I: I = A − P = 7 500 − 6 000 = R1 500.\nt = I ÷ (P·r) = 1 500 ÷ (6 000 × 0,05) = 1 500 ÷ 300 = 5 years.",
+      "tags": [
+        "solve-for-time"
+      ],
+      "difficulty": "medium",
+      "source": "Simple Interest - CAPS_simple-interest",
+      "sourceFile": "Simple Interest - CAPS_simple-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-5d7cb461b7",
+      "front": "A loan of R12 000 is taken at 11% simple interest for 2 years. How much must be repaid in total?",
+      "back": "I = P·r·t = 12 000 × 0,11 × 2 = R2 640.\nTotal repaid A = P + I = 12 000 + 2 640 = R14 640.\nFor a LOAN, interest is what you pay EXTRA; for an INVESTMENT it is what you EARN. Same formula.",
+      "tags": [
+        "loans-and-investments"
+      ],
+      "difficulty": "medium",
+      "source": "Simple Interest - CAPS_simple-interest",
+      "sourceFile": "Simple Interest - CAPS_simple-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-5a78ca1470",
+      "front": "Common mistake: a learner uses 8 for the rate instead of 0,08 in I = P·r·t. What goes wrong?",
+      "back": "Using r = 8 makes the interest 100× too big (because 8 = 800%).\nAlways convert: 8% = 8 ÷ 100 = 0,08.\nQuick check: simple interest for a few years should be a sensible fraction of P, not many times bigger than P.",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Simple Interest - CAPS_simple-interest",
+      "sourceFile": "Simple Interest - CAPS_simple-interest.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "84"
+      }
+    },
+    {
+      "id": "finance-cce3b31426",
+      "front": "What is VAT, what is the current SA VAT rate, and what do 'VAT-exclusive' and 'VAT-inclusive' mean?",
+      "back": "VAT = Value Added Tax, a tax added to most goods/services. The South African VAT rate is 15%.\nVAT-exclusive price = price BEFORE VAT is added.\nVAT-inclusive price = price AFTER VAT is added (what you pay).\nInclusive = exclusive + 15% of exclusive.",
+      "tags": [
+        "vat-basics"
+      ],
+      "difficulty": "medium",
+      "source": "VAT - CAPS_vat",
+      "sourceFile": "VAT - CAPS_vat.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "59"
+      }
+    },
+    {
+      "id": "finance-76b09011d1",
+      "front": "How do you convert a VAT-EXCLUSIVE price to a VAT-INCLUSIVE price (15%)?",
+      "back": "Multiply by 1,15 (because you add 15%).\nInclusive = exclusive × 1,15.\nExample: exclusive R200 → inclusive = 200 × 1,15 = R230.\nThe VAT portion here = 230 − 200 = R30 (= 15% of 200).",
+      "tags": [
+        "exclusive-to-inclusive"
+      ],
+      "difficulty": "medium",
+      "source": "VAT - CAPS_vat",
+      "sourceFile": "VAT - CAPS_vat.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "59"
+      }
+    },
+    {
+      "id": "finance-6a5f44827f",
+      "front": "How do you convert a VAT-INCLUSIVE price back to a VAT-EXCLUSIVE price (15%)?",
+      "back": "Divide by 1,15 (undo the ×1,15).\nExclusive = inclusive ÷ 1,15.\nExample: inclusive R230 → exclusive = 230 ÷ 1,15 = R200.\nCommon mistake: subtracting 15% of the inclusive price — that is WRONG because the 15% was added to the SMALLER (exclusive) amount.",
+      "tags": [
+        "inclusive-to-exclusive"
+      ],
+      "difficulty": "medium",
+      "source": "VAT - CAPS_vat",
+      "sourceFile": "VAT - CAPS_vat.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "59"
+      }
+    },
+    {
+      "id": "finance-ea40ef577d",
+      "front": "A price tag shows R575 (VAT inclusive). Find the VAT portion.",
+      "back": "Step 1: exclusive = 575 ÷ 1,15 = R500.\nStep 2: VAT = inclusive − exclusive = 575 − 500 = R75.\nOR directly: VAT = inclusive × (15 ÷ 115) = 575 × 0,130434... = R75.\nThe R75 is the tax inside the R575.",
+      "tags": [
+        "vat-portion"
+      ],
+      "difficulty": "medium",
+      "source": "VAT - CAPS_vat",
+      "sourceFile": "VAT - CAPS_vat.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "59"
+      }
+    },
+    {
+      "id": "finance-07cf421e4e",
+      "front": "Why do you find the VAT portion of an inclusive price using 15/115 and not 15/100?",
+      "back": "The inclusive price represents 115% of the exclusive price (100% + 15% VAT).\nSo VAT as a fraction of the INCLUSIVE price = 15/115 ≈ 0,1304 (about 13,04%), not 15%.\nVAT = inclusive × 15/115.\nUse 15/100 only when you START from the exclusive price.",
+      "tags": [
+        "vat-portion"
+      ],
+      "difficulty": "medium",
+      "source": "VAT - CAPS_vat",
+      "sourceFile": "VAT - CAPS_vat.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "59"
+      }
+    },
+    {
+      "id": "finance-81341f32e5",
+      "front": "A laptop costs R8 000 before VAT. Find the VAT amount and the total price you pay (15%).",
+      "back": "VAT = 15% of 8 000 = 0,15 × 8 000 = R1 200.\nTotal (inclusive) = 8 000 + 1 200 = R9 200.\nCheck with multiplier: 8 000 × 1,15 = R9 200. ✓",
+      "tags": [
+        "exclusive-to-inclusive"
+      ],
+      "difficulty": "medium",
+      "source": "VAT - CAPS_vat",
+      "sourceFile": "VAT - CAPS_vat.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "59"
+      }
+    },
+    {
+      "id": "finance-c7bbe0ce72",
+      "front": "Are all items charged VAT? Give the term for items with no VAT.",
+      "back": "No. Some basic foodstuffs are ZERO-RATED (0% VAT), e.g. brown bread, maize meal, rice, milk, fruit and vegetables.\nFor zero-rated items the inclusive price = exclusive price (no VAT added).\nMost other goods/services are charged the standard 15% VAT.",
+      "tags": [
+        "vat-basics"
+      ],
+      "difficulty": "medium",
+      "source": "VAT - CAPS_vat",
+      "sourceFile": "VAT - CAPS_vat.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "59"
+      }
+    },
+    {
+      "id": "finance-ca5968dd65",
+      "front": "Common mistake: to remove VAT from R1 150 inclusive, a learner subtracts 15% (R172,50). Show the correct method and the error.",
+      "back": "Wrong: 1 150 − 15% of 1 150 = 1 150 − 172,50 = R977,50 (too low).\nCorrect: exclusive = 1 150 ÷ 1,15 = R1 000, so VAT = R150.\nReason: the 15% was originally added to R1 000, not to R1 150. Always DIVIDE by 1,15 to remove VAT.",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "VAT - CAPS_vat",
+      "sourceFile": "VAT - CAPS_vat.yml",
+      "requires": {
+        "subject": "finance",
+        "sectionLine": "59"
+      }
+    }
+  ],
+  "triage": null,
+  "guide": {
+    "chars": 11461,
+    "lines": 217,
+    "sections": [
+      {
+        "level": 1,
+        "title": "Finance — Complete Study Guide",
+        "line": 0,
+        "body": ""
+      },
+      {
+        "level": 2,
+        "title": "Contents",
+        "line": 2,
+        "body": ""
+      },
+      {
+        "level": 3,
+        "title": "Profit and Loss",
+        "line": 4,
+        "body": "Trade is about buying and selling. The **cost price (CP)** is what a trader pays to obtain or make an item; the **selling price (SP)** is what the customer pays. Comparing them tells you whether money was made or lost.\n\n**Key definitions and formulas**\n- Profit = SP − CP (when SP > CP)\n- Loss = CP − SP (when SP < CP)\n- Break-even: SP = CP, so profit = 0\n- Percentage profit = (profit ÷ CP) × 100\n- Percentage loss = (loss ÷ CP) × 100\n- Markup = amount added to CP to get SP (markup amount = SP − CP)\n- SP = CP × (1 + profit% ÷ 100); SP = CP × (1 − loss% ÷ 100)\n- Reverse: CP = SP ÷ (1 + profit% ÷ 100)\n\nIn CAPS Grade 9, percentage profit and loss are always calculated **on the cost price** unless a question says otherwise.\n\n**Worked example 1.** A trader buys a bag for R250 and sells it for R325.\nProfit = 325 − 250 = R75. % profit = (75 ÷ 250) × 100 = 30%.\n\n**Worked example 2 (reverse).** An item sells for R360 at a 20% profit. Find CP.\nSP = CP × 1,20, so CP = 360 ÷ 1,20 = R300. (Do not take 20% of R360 — the percentage is on the cost price.)\n\n**Break-even.** If a tuck shop has fixed costs of R450 and makes R3 profit per sweet, break-even = 450 ÷ 3 = 150 sweets. Below 150 it loses money; above 150 it profits.\n\n**Pitfalls**\n- Dividing by the selling price instead of the cost price for percentage profit/loss.\n- In reverse-percentage problems, applying the percentage to the selling price instead of the unknown cost price.\n- Forgetting that a loss uses a multiplier less than 1, e.g. 0,80 for a 20% loss."
+      },
+      {
+        "level": 3,
+        "title": "Discount",
+        "line": 34,
+        "body": "A **discount** is a reduction in price. The **marked price (MP)** is the original ticket price; the **sale price** is what you actually pay after the discount.\n\n**Formulas**\n- Discount amount = MP × (discount% ÷ 100)\n- Sale price = MP − discount = MP × (1 − discount% ÷ 100)\n- Percentage discount = (discount amount ÷ MP) × 100\n- Reverse: MP = sale price ÷ (1 − discount% ÷ 100)\n\n**Worked example 1.** A jacket marked R800 has 25% off.\nDiscount = 0,25 × 800 = R200. Sale price = 800 − 200 = R600. (Shortcut: pay 75% → 0,75 × 800 = R600.)\n\n**Worked example 2 (successive discounts).** A coat marked R1 000 gets 20% off, then a further 15% off at the till.\nAfter first: 1 000 × 0,80 = R800. After second: 800 × 0,85 = R680.\nOverall: 1 000 × 0,80 × 0,85 = R680. The overall discount is 32%, **not** 35% — you cannot simply add successive percentages, because the second discount is taken on the already-reduced price.\n\n**Reverse example.** After 30% off a TV costs R2 100. Sale price is 70% of MP, so MP = 2 100 ÷ 0,70 = R3 000.\n\n**Pitfalls**\n- Adding successive discounts instead of multiplying the multipliers (two 50% discounts give a 75% total discount, never free).\n- Calculating the percentage discount on the sale price instead of the marked price.\n- In reverse problems, adding the percentage back onto the sale price instead of dividing by (1 − discount%)."
+      },
+      {
+        "level": 3,
+        "title": "VAT (Value Added Tax)",
+        "line": 59,
+        "body": "**VAT** is a tax added to most goods and services. The South African VAT rate is **15%**. A **VAT-exclusive** price is the price before VAT; a **VAT-inclusive** price is the price after VAT (what you actually pay).\n\n**Formulas (15%)**\n- Exclusive → inclusive: inclusive = exclusive × 1,15\n- Inclusive → exclusive: exclusive = inclusive ÷ 1,15\n- VAT from exclusive: VAT = exclusive × 0,15\n- VAT from inclusive: VAT = inclusive × (15 ÷ 115) = inclusive − exclusive\n\nThe inclusive price is 115% of the exclusive price (100% + 15%). That is why, to find the VAT hidden inside an inclusive price, you use the fraction 15/115 (≈ 13,04% of the inclusive amount), not 15/100.\n\n**Worked example 1.** A laptop costs R8 000 before VAT.\nVAT = 0,15 × 8 000 = R1 200. Total = 8 000 × 1,15 = R9 200.\n\n**Worked example 2.** A tag shows R575 including VAT. Find the VAT.\nExclusive = 575 ÷ 1,15 = R500. VAT = 575 − 500 = R75. (Directly: 575 × 15/115 = R75.)\n\n**Zero-rated items.** Some basic foods (brown bread, maize meal, rice, milk, fruit, vegetables) are zero-rated: 0% VAT, so inclusive = exclusive.\n\n**Pitfalls**\n- To remove VAT, dividing by 1,15 is correct; subtracting 15% of the inclusive price is wrong (it removes too much, because the 15% was added to the smaller exclusive amount).\n- Using 15/100 instead of 15/115 when extracting VAT from an inclusive price."
+      },
+      {
+        "level": 3,
+        "title": "Simple Interest",
+        "line": 84,
+        "body": "**Simple interest** is calculated on the original principal only, the same amount every year. It applies to many short-term loans and investments.\n\n**Formulas**\n- I = P × r × t (also written I = P·i·n)\n- A = P + I = P(1 + i·n)\n- Solve for P: P = I ÷ (r·t)\n- Solve for r: r = I ÷ (P·t)\n- Solve for t: t = I ÷ (P·r)\n\nHere P = principal, r or i = annual rate as a **decimal**, t or n = time in **years**, I = interest, A = final amount. Convert a rate by dividing by 100 (7,5% = 0,075) and convert months to years by dividing by 12 (18 months = 1,5 years).\n\n**Worked example 1.** R5 000 at 8% simple interest for 3 years.\nI = 5 000 × 0,08 × 3 = R1 200. A = 5 000 + 1 200 = R6 200. (Check: 5 000 × 1,24 = R6 200.)\n\n**Worked example 2 (solve for r).** R4 000 earns R720 over 4 years.\nr = 720 ÷ (4 000 × 4) = 720 ÷ 16 000 = 0,045 = 4,5% per year.\n\nFor a **loan**, the interest is what you pay extra; for an **investment**, it is what you earn — the formula is identical.\n\n**Pitfalls**\n- Using the rate as a whole number (8 instead of 0,08) inflates interest 100×.\n- Leaving time in months instead of converting to years.\n- Forgetting to convert the rate decimal back to a percentage in the final answer when solving for r."
+      },
+      {
+        "level": 3,
+        "title": "Compound Interest",
+        "line": 111,
+        "body": "With **compound interest** you earn interest on the interest already added, so the balance grows faster each period. This is the basis of most savings and inflation calculations.\n\n**Formulas**\n- A = P(1 + i)ⁿ (growth)\n- A = P(1 − i)ⁿ (depreciation / decrease)\n- Interest earned = A − P\n\nP = principal, i = rate per period as a decimal, n = number of periods, A = final amount.\n\n**Worked example 1.** R5 000 at 8% compound for 3 years.\nA = 5 000 × (1,08)³. (1,08)³ = 1,259712, so A = 5 000 × 1,259712 = R6 298,56. Interest = R1 298,56.\n\n**Compare with simple interest** for the same figures: simple gives A = R6 200, so compound earns R98,56 more. Compound always equals simple after one year and pulls ahead thereafter; the gap widens with time.\n\n**Year-by-year intuition.** R1 000 at 10%: year 1 adds R100 → R1 100; year 2 adds 10% of R1 100 = R110 → R1 210. The formula confirms 1 000 × (1,10)² = R1 210. The extra R10 in year 2 is interest on interest.\n\n**Depreciation example.** A car worth R200 000 losing 12% per year for 2 years: A = 200 000 × (0,88)² = 200 000 × 0,7744 = R154 880.\n\n**Pitfalls**\n- Treating compound like simple: writing 5 000 × 1,08 × 3 instead of 5 000 × (1,08)³. Raise (1 + i) to the power n; multiply it by itself n times, not by n.\n- Rounding intermediate powers too early — keep many decimals and round only the final Rand answer to cents."
+      },
+      {
+        "level": 3,
+        "title": "Hire Purchase",
+        "line": 136,
+        "body": "**Hire purchase (HP)** is buying on credit: you pay a **deposit** now and then equal **monthly instalments** over a fixed time. Interest (usually simple interest) is charged on the amount borrowed. HP almost always costs more than paying cash.\n\n**Formulas**\n- Balance financed = cash price − deposit\n- Interest = balance × r × t (simple interest)\n- Amount to repay = balance + interest\n- Monthly instalment = amount to repay ÷ number of months\n- Total HP cost = deposit + (instalment × number of months)\n- Interest charged = total HP cost − cash price\n\n**Worked example.** Cash price R8 000, deposit 10%, simple interest 18% per year on the balance over 2 years.\nDeposit = 0,10 × 8 000 = R800. Balance = 8 000 − 800 = R7 200.\nInterest = 7 200 × 0,18 × 2 = R2 592. Repay = 7 200 + 2 592 = R9 792.\nMonths = 24, so instalment = 9 792 ÷ 24 = R408.\nTotal HP cost = 800 + 9 792 = R10 592, which is R2 592 (the interest) more than the cash price.\n\n**Why interest is on the balance.** You pay the deposit immediately, so you only borrow the balance. Interest is the cost of borrowing, so it applies to that balance, not the full cash price.\n\n**Pitfalls**\n- Forgetting to add the deposit when finding the total HP cost.\n- Charging interest on the full cash price instead of on the balance after the deposit.\n- Not converting the time period to years for the simple-interest step, or the period to months for the instalment count."
+      },
+      {
+        "level": 3,
+        "title": "Exchange Rates",
+        "line": 162,
+        "body": "An **exchange rate** tells you how much of one currency you get for another. Written as R18,50 = $1, it means one US dollar costs R18,50.\n\n**Rules**\n- Foreign currency → Rands: **multiply** by the R/foreign rate.\n- Rands → foreign currency: **divide** by the R/foreign rate.\n\nAlways match the rate to the currency: use the R/$ rate for dollars, R/£ for pounds, R/€ for euros.\n\n**Worked example 1.** Using R18,50 = $1, convert $250 to rands and R7 400 to dollars.\n$250 → 250 × 18,50 = R4 625.\nR7 400 → 7 400 ÷ 18,50 = $400.\n\n**Worked example 2 (comparing prices).** A jacket is $80 in the USA and R1 600 in SA, with R18,50 = $1.\nConvert to the same currency: $80 × 18,50 = R1 480. Since R1 480 < R1 600, it is cheaper in the USA by R120.\n\n**Multiple currencies.** With R23 = £1 and R20 = €1: £150 → 150 × 23 = R3 450; R5 000 → 5 000 ÷ 20 = €250.\n\n**Pitfalls**\n- Multiplying when you should divide (or vice versa). Sanity check: because R1 is worth less than $1, converting a rand amount to dollars must give a smaller number.\n- Using the wrong currency's rate.\n- Comparing prices in different currencies without converting to one common currency first."
+      },
+      {
+        "level": 3,
+        "title": "Budgets, Income and Personal Finance",
+        "line": 187,
+        "body": "A **budget** is a plan of expected income and expenditure, usually per month. **Income** is money coming in (salary, wages, commission); **expenditure** is money going out (rent, food, transport, savings). The difference is the balance.\n\n**Formulas**\n- Balance = income − expenditure (surplus if positive, deficit if negative)\n- Commission = sales × (rate ÷ 100); total earnings = basic salary + commission\n- New price after inflation = old price × (1 + i); over n years = P(1 + i)ⁿ\n- Closing balance = opening balance + deposits − withdrawals\n- Business profit = income − expenses (loss if expenses exceed income)\n\n**Worked example 1 (budget).** Thabo earns R12 000. Expenses: rent R4 500, food R3 000, transport R1 800, airtime R500, savings R1 000.\nTotal expenditure = R10 800. Balance = 12 000 − 10 800 = R1 200 surplus.\n\n**Worked example 2 (commission).** Basic salary R6 000 plus 5% commission on sales above R20 000; sales are R50 000.\nCommission = 5% of (50 000 − 20 000) = 0,05 × 30 000 = R1 500. Total = 6 000 + 1 500 = R7 500.\n\n**Inflation.** Inflation is the general rise in prices, given as a yearly % increase, and it compounds. A R800 basket at 6% over 3 years = 800 × (1,06)³ = R952,81.\n\n**Loans vs rentals.** A loan is borrowed money you repay (often with interest) and you keep the item; a rental is a regular payment to use something you do not own. Both are expenses in a budget.\n\n**Statements.** A bank statement lists deposits (credits) and withdrawals (debits); closing balance = opening + deposits − withdrawals.\n\n**Pitfalls**\n- Treating savings as income rather than as money set aside (an expense), which creates a false surplus.\n- Applying commission to all sales when it is only on sales above a threshold.\n- Treating inflation as simple rather than compound growth over several years."
+      }
+    ],
+    "firstParagraph": "### Profit and Loss\n\nTrade is about buying and selling. The **cost price (CP)** is what a trader pays to obtain or make an item; the **selling price (SP)** is what the customer pays. Comparing them tells you whether money was made or lost.",
+    "body": "# Finance — Complete Study Guide\n\n## Contents\n\n### Profit and Loss\n\nTrade is about buying and selling. The **cost price (CP)** is what a trader pays to obtain or make an item; the **selling price (SP)** is what the customer pays. Comparing them tells you whether money was made or lost.\n\n**Key definitions and formulas**\n- Profit = SP − CP (when SP > CP)\n- Loss = CP − SP (when SP < CP)\n- Break-even: SP = CP, so profit = 0\n- Percentage profit = (profit ÷ CP) × 100\n- Percentage loss = (loss ÷ CP) × 100\n- Markup = amount added to CP to get SP (markup amount = SP − CP)\n- SP = CP × (1 + profit% ÷ 100); SP = CP × (1 − loss% ÷ 100)\n- Reverse: CP = SP ÷ (1 + profit% ÷ 100)\n\nIn CAPS Grade 9, percentage profit and loss are always calculated **on the cost price** unless a question says otherwise.\n\n**Worked example 1.** A trader buys a bag for R250 and sells it for R325.\nProfit = 325 − 250 = R75. % profit = (75 ÷ 250) × 100 = 30%.\n\n**Worked example 2 (reverse).** An item sells for R360 at a 20% profit. Find CP.\nSP = CP × 1,20, so CP = 360 ÷ 1,20 = R300. (Do not take 20% of R360 — the percentage is on the cost price.)\n\n**Break-even.** If a tuck shop has fixed costs of R450 and makes R3 profit per sweet, break-even = 450 ÷ 3 = 150 sweets. Below 150 it loses money; above 150 it profits.\n\n**Pitfalls**\n- Dividing by the selling price instead of the cost price for percentage profit/loss.\n- In reverse-percentage problems, applying the percentage to the selling price instead of the unknown cost price.\n- Forgetting that a loss uses a multiplier less than 1, e.g. 0,80 for a 20% loss.\n\n\n### Discount\n\nA **discount** is a reduction in price. The **marked price (MP)** is the original ticket price; the **sale price** is what you actually pay after the discount.\n\n**Formulas**\n- Discount amount = MP × (discount% ÷ 100)\n- Sale price = MP − discount = MP × (1 − discount% ÷ 100)\n- Percentage discount = (discount amount ÷ MP) × 100\n- Reverse: MP = sale price ÷ (1 − discount% ÷ 100)\n\n**Worked example 1.** A jacket marked R800 has 25% off.\nDiscount = 0,25 × 800 = R200. Sale price = 800 − 200 = R600. (Shortcut: pay 75% → 0,75 × 800 = R600.)\n\n**Worked example 2 (successive discounts).** A coat marked R1 000 gets 20% off, then a further 15% off at the till.\nAfter first: 1 000 × 0,80 = R800. After second: 800 × 0,85 = R680.\nOverall: 1 000 × 0,80 × 0,85 = R680. The overall discount is 32%, **not** 35% — you cannot simply add successive percentages, because the second discount is taken on the already-reduced price.\n\n**Reverse example.** After 30% off a TV costs R2 100. Sale price is 70% of MP, so MP = 2 100 ÷ 0,70 = R3 000.\n\n**Pitfalls**\n- Adding successive discounts instead of multiplying the multipliers (two 50% discounts give a 75% total discount, never free).\n- Calculating the percentage discount on the sale price instead of the marked price.\n- In reverse problems, adding the percentage back onto the sale price instead of dividing by (1 − discount%).\n\n\n### VAT (Value Added Tax)\n\n**VAT** is a tax added to most goods and services. The South African VAT rate is **15%**. A **VAT-exclusive** price is the price before VAT; a **VAT-inclusive** price is the price after VAT (what you actually pay).\n\n**Formulas (15%)**\n- Exclusive → inclusive: inclusive = exclusive × 1,15\n- Inclusive → exclusive: exclusive = inclusive ÷ 1,15\n- VAT from exclusive: VAT = exclusive × 0,15\n- VAT from inclusive: VAT = inclusive × (15 ÷ 115) = inclusive − exclusive\n\nThe inclusive price is 115% of the exclusive price (100% + 15%). That is why, to find the VAT hidden inside an inclusive price, you use the fraction 15/115 (≈ 13,04% of the inclusive amount), not 15/100.\n\n**Worked example 1.** A laptop costs R8 000 before VAT.\nVAT = 0,15 × 8 000 = R1 200. Total = 8 000 × 1,15 = R9 200.\n\n**Worked example 2.** A tag shows R575 including VAT. Find the VAT.\nExclusive = 575 ÷ 1,15 = R500. VAT = 575 − 500 = R75. (Directly: 575 × 15/115 = R75.)\n\n**Zero-rated items.** Some basic foods (brown bread, maize meal, rice, milk, fruit, vegetables) are zero-rated: 0% VAT, so inclusive = exclusive.\n\n**Pitfalls**\n- To remove VAT, dividing by 1,15 is correct; subtracting 15% of the inclusive price is wrong (it removes too much, because the 15% was added to the smaller exclusive amount).\n- Using 15/100 instead of 15/115 when extracting VAT from an inclusive price.\n\n\n### Simple Interest\n\n**Simple interest** is calculated on the original principal only, the same amount every year. It applies to many short-term loans and investments.\n\n**Formulas**\n- I = P × r × t (also written I = P·i·n)\n- A = P + I = P(1 + i·n)\n- Solve for P: P = I ÷ (r·t)\n- Solve for r: r = I ÷ (P·t)\n- Solve for t: t = I ÷ (P·r)\n\nHere P = principal, r or i = annual rate as a **decimal**, t or n = time in **years**, I = interest, A = final amount. Convert a rate by dividing by 100 (7,5% = 0,075) and convert months to years by dividing by 12 (18 months = 1,5 years).\n\n**Worked example 1.** R5 000 at 8% simple interest for 3 years.\nI = 5 000 × 0,08 × 3 = R1 200. A = 5 000 + 1 200 = R6 200. (Check: 5 000 × 1,24 = R6 200.)\n\n**Worked example 2 (solve for r).** R4 000 earns R720 over 4 years.\nr = 720 ÷ (4 000 × 4) = 720 ÷ 16 000 = 0,045 = 4,5% per year.\n\nFor a **loan**, the interest is what you pay extra; for an **investment**, it is what you earn — the formula is identical.\n\n**Pitfalls**\n- Using the rate as a whole number (8 instead of 0,08) inflates interest 100×.\n- Leaving time in months instead of converting to years.\n- Forgetting to convert the rate decimal back to a percentage in the final answer when solving for r.\n\n\n### Compound Interest\n\nWith **compound interest** you earn interest on the interest already added, so the balance grows faster each period. This is the basis of most savings and inflation calculations.\n\n**Formulas**\n- A = P(1 + i)ⁿ (growth)\n- A = P(1 − i)ⁿ (depreciation / decrease)\n- Interest earned = A − P\n\nP = principal, i = rate per period as a decimal, n = number of periods, A = final amount.\n\n**Worked example 1.** R5 000 at 8% compound for 3 years.\nA = 5 000 × (1,08)³. (1,08)³ = 1,259712, so A = 5 000 × 1,259712 = R6 298,56. Interest = R1 298,56.\n\n**Compare with simple interest** for the same figures: simple gives A = R6 200, so compound earns R98,56 more. Compound always equals simple after one year and pulls ahead thereafter; the gap widens with time.\n\n**Year-by-year intuition.** R1 000 at 10%: year 1 adds R100 → R1 100; year 2 adds 10% of R1 100 = R110 → R1 210. The formula confirms 1 000 × (1,10)² = R1 210. The extra R10 in year 2 is interest on interest.\n\n**Depreciation example.** A car worth R200 000 losing 12% per year for 2 years: A = 200 000 × (0,88)² = 200 000 × 0,7744 = R154 880.\n\n**Pitfalls**\n- Treating compound like simple: writing 5 000 × 1,08 × 3 instead of 5 000 × (1,08)³. Raise (1 + i) to the power n; multiply it by itself n times, not by n.\n- Rounding intermediate powers too early — keep many decimals and round only the final Rand answer to cents.\n\n\n### Hire Purchase\n\n**Hire purchase (HP)** is buying on credit: you pay a **deposit** now and then equal **monthly instalments** over a fixed time. Interest (usually simple interest) is charged on the amount borrowed. HP almost always costs more than paying cash.\n\n**Formulas**\n- Balance financed = cash price − deposit\n- Interest = balance × r × t (simple interest)\n- Amount to repay = balance + interest\n- Monthly instalment = amount to repay ÷ number of months\n- Total HP cost = deposit + (instalment × number of months)\n- Interest charged = total HP cost − cash price\n\n**Worked example.** Cash price R8 000, deposit 10%, simple interest 18% per year on the balance over 2 years.\nDeposit = 0,10 × 8 000 = R800. Balance = 8 000 − 800 = R7 200.\nInterest = 7 200 × 0,18 × 2 = R2 592. Repay = 7 200 + 2 592 = R9 792.\nMonths = 24, so instalment = 9 792 ÷ 24 = R408.\nTotal HP cost = 800 + 9 792 = R10 592, which is R2 592 (the interest) more than the cash price.\n\n**Why interest is on the balance.** You pay the deposit immediately, so you only borrow the balance. Interest is the cost of borrowing, so it applies to that balance, not the full cash price.\n\n**Pitfalls**\n- Forgetting to add the deposit when finding the total HP cost.\n- Charging interest on the full cash price instead of on the balance after the deposit.\n- Not converting the time period to years for the simple-interest step, or the period to months for the instalment count.\n\n\n### Exchange Rates\n\nAn **exchange rate** tells you how much of one currency you get for another. Written as R18,50 = $1, it means one US dollar costs R18,50.\n\n**Rules**\n- Foreign currency → Rands: **multiply** by the R/foreign rate.\n- Rands → foreign currency: **divide** by the R/foreign rate.\n\nAlways match the rate to the currency: use the R/$ rate for dollars, R/£ for pounds, R/€ for euros.\n\n**Worked example 1.** Using R18,50 = $1, convert $250 to rands and R7 400 to dollars.\n$250 → 250 × 18,50 = R4 625.\nR7 400 → 7 400 ÷ 18,50 = $400.\n\n**Worked example 2 (comparing prices).** A jacket is $80 in the USA and R1 600 in SA, with R18,50 = $1.\nConvert to the same currency: $80 × 18,50 = R1 480. Since R1 480 < R1 600, it is cheaper in the USA by R120.\n\n**Multiple currencies.** With R23 = £1 and R20 = €1: £150 → 150 × 23 = R3 450; R5 000 → 5 000 ÷ 20 = €250.\n\n**Pitfalls**\n- Multiplying when you should divide (or vice versa). Sanity check: because R1 is worth less than $1, converting a rand amount to dollars must give a smaller number.\n- Using the wrong currency's rate.\n- Comparing prices in different currencies without converting to one common currency first.\n\n\n### Budgets, Income and Personal Finance\n\nA **budget** is a plan of expected income and expenditure, usually per month. **Income** is money coming in (salary, wages, commission); **expenditure** is money going out (rent, food, transport, savings). The difference is the balance.\n\n**Formulas**\n- Balance = income − expenditure (surplus if positive, deficit if negative)\n- Commission = sales × (rate ÷ 100); total earnings = basic salary + commission\n- New price after inflation = old price × (1 + i); over n years = P(1 + i)ⁿ\n- Closing balance = opening balance + deposits − withdrawals\n- Business profit = income − expenses (loss if expenses exceed income)\n\n**Worked example 1 (budget).** Thabo earns R12 000. Expenses: rent R4 500, food R3 000, transport R1 800, airtime R500, savings R1 000.\nTotal expenditure = R10 800. Balance = 12 000 − 10 800 = R1 200 surplus.\n\n**Worked example 2 (commission).** Basic salary R6 000 plus 5% commission on sales above R20 000; sales are R50 000.\nCommission = 5% of (50 000 − 20 000) = 0,05 × 30 000 = R1 500. Total = 6 000 + 1 500 = R7 500.\n\n**Inflation.** Inflation is the general rise in prices, given as a yearly % increase, and it compounds. A R800 basket at 6% over 3 years = 800 × (1,06)³ = R952,81.\n\n**Loans vs rentals.** A loan is borrowed money you repay (often with interest) and you keep the item; a rental is a regular payment to use something you do not own. Both are expenses in a budget.\n\n**Statements.** A bank statement lists deposits (credits) and withdrawals (debits); closing balance = opening + deposits − withdrawals.\n\n**Pitfalls**\n- Treating savings as income rather than as money set aside (an expense), which creates a false surplus.\n- Applying commission to all sales when it is only on sales above a threshold.\n- Treating inflation as simple rather than compound growth over several years.\n\n\n",
+    "infographics": [],
+    "videos": [],
+    "audio": []
+  }
+}

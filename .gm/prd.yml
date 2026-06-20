@@ -2653,3 +2653,19 @@
   title: triage-live.js SDK case-search onInput calls full render() (re-maps chat, rebuilds chips, re-filters) per keystroke; scope to scenario-list re-render like the legacy path
   witness: 'ASSESSED/won''t-fix: triage SDK sidebar is a single mount closure by design; a partial scoped re-render would break the vdom render contract. Per-keystroke JS is bounded (~68 scenarios + short chat) and the vdom diff bounds DOM cost. Risk outweighs the low-severity micro-opt.'
   status: completed
+- id: tutor-panel-reserve-space
+  title: 'Desktop: tutor panel (position:fixed right:0, 30% or 52px) overlays the right of main content — cards clipped mid-word. Reserve page space via body padding-right (--tutor-reserve) set in applyResponsiveWidth desktop branch, cleared on mobile'
+  witness: 'tutor-panel.js applyResponsiveWidth sets body --tutor-reserve (desktop) / clears (mobile); style.css html.ds-247420 body padding-right:var(--tutor-reserve). browser-34: clipped:false at 1100/1440 expanded+collapsed, mobile reserve 0; v-expanded-final.png content not clipped'
+  status: completed
+- id: tutor-header-title-clip
+  title: 'Tutor panel chat-head title ''Study Coach'' hard-truncates (''Study C'') because chat-head padding-right:210px + wide control cluster leave no room at 30% width. Assess: shorten name / tighten controls / allow ellipsis'
+  witness: style.css .tutor-panel-root .chat-head .ds-chat-title overflow/ellipsis/min-width:0; browser-36 titleEllipsis:'ellipsis'; v-expanded-final.png shows 'Study Co...' graceful truncation not hard clip
+  status: completed
+- id: start-card-alignment
+  title: today 'start with cardiology' suggestion card is center-aligned text while welcome + start-reading cards are left-aligned — inconsistent. Align left for consistency
+  witness: style.css .today-primary .primary-action align-items:flex-start (resets base center); browser-27 align flex-start labelLeftOffset 23; v-expanded-final.png 'start with cardiology' left-aligned
+  status: completed
+- id: verify-tutor-reserve-witness
+  title: 'Browser-witness desktop: with tutor expanded AND collapsed, no main card right edge exceeds panel left edge (contentClipped false) at 1100 + 1440 widths; mobile unaffected (sheet path)'
+  witness: browser-34 measured clipped:false at vw 1100 (reserve 325px) + 1440 (reserve 427px), expanded AND collapsed (52px); mobile reserve 0px (bottom-sheet path); no console errors
+  status: completed

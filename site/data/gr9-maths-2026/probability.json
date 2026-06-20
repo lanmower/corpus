@@ -1,0 +1,935 @@
+{
+  "subject": "probability",
+  "cat": "sun",
+  "cards": [
+    {
+      "id": "probability-ccfa048be1",
+      "front": "What is an 'experiment' in probability, and give an example?",
+      "back": "An experiment (or trial) is any action with an uncertain result that can be repeated.\nExamples: tossing a coin, rolling a die, drawing a card, spinning a spinner.\nThe set of all things that could happen is decided BEFORE you do the experiment.",
+      "tags": [
+        "experiment"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "probability-ef28d70eff",
+      "front": "Define: outcome, event, and sample space.",
+      "back": "Outcome: one single possible result of an experiment (e.g. rolling a 4).\nSample space (S): the set of ALL possible outcomes. For one die S = {1,2,3,4,5,6}.\nEvent: a chosen outcome OR group of outcomes we are interested in (e.g. 'rolling an even number' = {2,4,6}).\nAn event is always a subset of the sample space.",
+      "tags": [
+        "sample-space"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-607c73c6cc",
+      "front": "State the basic formula for the probability of an event.",
+      "back": "P(event) = (number of favourable outcomes) ÷ (total number of possible outcomes)\nThis formula only works when all outcomes are EQUALLY LIKELY.\nExample: P(even on a die) = 3/6 = 1/2, because favourable = {2,4,6} (3 outcomes) and total = 6.",
+      "tags": [
+        "probability-formula"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-fbc18d3a44",
+      "front": "Describe the probability scale from 0 to 1.",
+      "back": "Every probability is a number from 0 to 1 (never negative, never more than 1).\n0 = impossible event (cannot happen).\n1 = certain event (must happen).\n1/2 = even chance (equally likely to happen or not).\nClose to 0 = unlikely; close to 1 = likely.\nCheck: if you ever get an answer like 1.3 or −0.2, you made a mistake.",
+      "tags": [
+        "probability-scale"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-4cf6d36d27",
+      "front": "How do you write a probability as a fraction, decimal and percentage? Convert P = 3/4.",
+      "back": "Fraction: 3/4 (favourable ÷ total, in simplest form).\nDecimal: divide top by bottom: 3 ÷ 4 = 0,75.\nPercentage: multiply the decimal by 100: 0,75 × 100 = 75%.\nSo P = 3/4 = 0,75 = 75%. All three forms mean exactly the same chance.",
+      "tags": [
+        "fraction-decimal-percent"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "probability-6de09308ea",
+      "front": "A bag has 5 red, 3 blue and 2 green marbles. Find P(blue).",
+      "back": "Step 1 — total outcomes: 5 + 3 + 2 = 10 marbles.\nStep 2 — favourable (blue): 3.\nStep 3 — apply formula: P(blue) = 3/10 = 0,3 = 30%.\nPitfall: the denominator is the TOTAL (10), not the number of colours (3).",
+      "tags": [
+        "probability-formula"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-8e16a86b5b",
+      "front": "Why must P(event) always be between 0 and 1?",
+      "back": "Because favourable outcomes are part of the total outcomes.\nThe smallest possible favourable count is 0 → P = 0/total = 0 (impossible).\nThe largest is when favourable = total → P = total/total = 1 (certain).\nA fraction of a whole can never be less than 0 or more than 1.",
+      "tags": [
+        "probability-scale"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-ed08821dc8",
+      "front": "List the sample space for rolling one ordinary six-sided die, then give P(rolling a number > 4).",
+      "back": "Sample space: S = {1, 2, 3, 4, 5, 6}, so total = 6.\nNumbers greater than 4: {5, 6} → 2 favourable outcomes.\nP(>4) = 2/6 = 1/3.\nPitfall: 'greater than 4' does NOT include 4 itself; 'at least 4' would include 4.",
+      "tags": [
+        "sample-space"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-a0c48aba4a",
+      "front": "Is this true or false: 'P = 70% means the event will definitely happen.' Explain.",
+      "back": "False. P = 70% means it is LIKELY but not certain.\nOnly P = 1 (= 100%) means certain. 70% means that, in the long run, about 70 of every 100 trials give the event, but any single trial could still go either way.",
+      "tags": [
+        "probability-scale"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-e3f876fe8e",
+      "front": "How do you decide where to place an event word (impossible, unlikely, even chance, likely, certain) on the scale?",
+      "back": "Work out P as a fraction/decimal, then match:\nP = 0 → impossible.\n0 < P < 1/2 → unlikely.\nP = 1/2 → even chance.\n1/2 < P < 1 → likely.\nP = 1 → certain.\nExample: P(a Tuesday this week) = 1/7 ≈ 0,14 → unlikely.",
+      "tags": [
+        "probability-scale"
+      ],
+      "difficulty": "medium",
+      "source": "Basic Probability - CAPS_basics",
+      "sourceFile": "Basic Probability - CAPS_basics.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-475cbf8a83",
+      "front": "What are complementary events, and what is the key rule?",
+      "back": "The complement of event A, written 'not A' or A', is everything in the sample space that is NOT A.\nKey rule: P(A) + P(not A) = 1, so P(not A) = 1 − P(A).\nExample: if P(rain) = 0,3 then P(no rain) = 1 − 0,3 = 0,7.",
+      "tags": [
+        "complement"
+      ],
+      "difficulty": "medium",
+      "source": "Complementary Events - CAPS_complement",
+      "sourceFile": "Complementary Events - CAPS_complement.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "57"
+      }
+    },
+    {
+      "id": "probability-6f3257a8e9",
+      "front": "Why do the probabilities of all outcomes in a sample space add up to 1?",
+      "back": "Because something must happen: one of the outcomes is certain to occur, and certainty = 1.\nE.g. for a die: 1/6 + 1/6 + 1/6 + 1/6 + 1/6 + 1/6 = 6/6 = 1.\nThis is a useful CHECK: if your outcome probabilities don't sum to 1, there is an error.",
+      "tags": [
+        "sum-to-one"
+      ],
+      "difficulty": "medium",
+      "source": "Complementary Events - CAPS_complement",
+      "sourceFile": "Complementary Events - CAPS_complement.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-6213c1724a",
+      "front": "P(picking a faulty bulb) = 3/40. Find P(picking a good bulb).",
+      "back": "'Good' is the complement of 'faulty'.\nP(good) = 1 − P(faulty) = 1 − 3/40.\nWrite 1 as 40/40: 40/40 − 3/40 = 37/40.\nP(good) = 37/40 = 0,925 = 92,5%.",
+      "tags": [
+        "complement"
+      ],
+      "difficulty": "medium",
+      "source": "Complementary Events - CAPS_complement",
+      "sourceFile": "Complementary Events - CAPS_complement.yml"
+    },
+    {
+      "id": "probability-87dd6d7001",
+      "front": "When is using the complement FASTER than counting directly? Give an example with a die.",
+      "back": "When 'not A' is much simpler to count than A.\nExample: P(rolling at least 2) on a die = P(2,3,4,5,6).\nInstead, use complement: 'not at least 2' = rolling a 1 = 1/6.\nP(at least 2) = 1 − 1/6 = 5/6. Much quicker than adding five fractions.",
+      "tags": [
+        "complement"
+      ],
+      "difficulty": "medium",
+      "source": "Complementary Events - CAPS_complement",
+      "sourceFile": "Complementary Events - CAPS_complement.yml"
+    },
+    {
+      "id": "probability-64b5061545",
+      "front": "The probability a learner passes is 85%. Express P(fail) in three forms.",
+      "back": "P(fail) = 1 − P(pass) = 100% − 85% = 15%.\nFraction: 15% = 15/100 = 3/20.\nDecimal: 0,15.\nPitfall: complements must be written as 1 (or 100%) minus the value — not just 'the rest of 100' guessed at.",
+      "tags": [
+        "complement"
+      ],
+      "difficulty": "medium",
+      "source": "Complementary Events - CAPS_complement",
+      "sourceFile": "Complementary Events - CAPS_complement.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "probability-4d6b8736dd",
+      "front": "Spinner outcomes: P(red) = 0,4, P(blue) = 0,35, P(green) = x. Find x.",
+      "back": "All outcome probabilities sum to 1.\n0,4 + 0,35 + x = 1.\n0,75 + x = 1.\nx = 1 − 0,75 = 0,25.\nSo P(green) = 0,25. Check: 0,4 + 0,35 + 0,25 = 1. ✓",
+      "tags": [
+        "sum-to-one"
+      ],
+      "difficulty": "medium",
+      "source": "Complementary Events - CAPS_complement",
+      "sourceFile": "Complementary Events - CAPS_complement.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-a6191790f2",
+      "front": "Common pitfall: is the complement of 'rolling a 6' equal to 'rolling a 1'? Explain.",
+      "back": "No. The complement of 'rolling a 6' is 'NOT rolling a 6' = {1,2,3,4,5}, which is 5 outcomes.\nP(not 6) = 5/6, not 1/6.\nThe complement is everything else in the sample space, not just one other outcome.",
+      "tags": [
+        "complement"
+      ],
+      "difficulty": "medium",
+      "source": "Complementary Events - CAPS_complement",
+      "sourceFile": "Complementary Events - CAPS_complement.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-74aa849161",
+      "front": "What is a compound (two-stage) event, and what three tools list its sample space?",
+      "back": "A compound event involves two (or more) actions, e.g. tossing two coins, or rolling two dice.\nThree tools to list all outcomes:\n1. Systematic listing,\n2. A two-way table (grid),\n3. A tree diagram.\nEach helps you count the TOTAL outcomes and the favourable ones.",
+      "tags": [
+        "compound-events"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-f0b67ff3bf",
+      "front": "List the full sample space for tossing two coins. How many outcomes?",
+      "back": "Treat the coins as Coin 1 then Coin 2:\nS = {HH, HT, TH, TT} → 4 outcomes.\nThe fundamental counting principle: 2 outcomes × 2 outcomes = 4.\nEach of the 4 is equally likely, so each has probability 1/4.",
+      "tags": [
+        "sample-space-listing"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-5ec820afc1",
+      "front": "Two coins are tossed. Find P(at least one Head).",
+      "back": "S = {HH, HT, TH, TT}, total = 4.\n'At least one Head' = {HH, HT, TH} → 3 outcomes.\nP(at least one Head) = 3/4.\nQuicker (complement): the only outcome with no Head is TT, P(TT) = 1/4, so P(at least one Head) = 1 − 1/4 = 3/4.",
+      "tags": [
+        "sample-space-listing"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-b6d24a8172",
+      "front": "How do you build the sample space for rolling two dice, and how many outcomes are there?",
+      "back": "Make a two-way table: rows = die 1 (1–6), columns = die 2 (1–6). Each cell is an ordered pair (d1, d2).\nTotal outcomes = 6 × 6 = 36, all equally likely.\nNote (1,3) and (3,1) are DIFFERENT outcomes. P(any single pair) = 1/36.",
+      "tags": [
+        "two-dice"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-3cdb0350ee",
+      "front": "Two dice are rolled and the scores added. Find P(sum = 7).",
+      "back": "Total outcomes = 36.\nSum 7 pairs: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 outcomes.\nP(sum = 7) = 6/36 = 1/6.\nSum 7 is the MOST likely total. Pitfall: count ordered pairs — (3,4) and (4,3) are separate.",
+      "tags": [
+        "two-dice"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-63742c8c8a",
+      "front": "Two dice are rolled. Find P(sum = 2) and P(a double).",
+      "back": "Total = 36.\nSum 2: only (1,1) → 1 outcome → P = 1/36 (the rarest sum).\nDoubles: (1,1),(2,2),(3,3),(4,4),(5,5),(6,6) → 6 outcomes → P(double) = 6/36 = 1/6.",
+      "tags": [
+        "two-dice"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-e3acf95255",
+      "front": "How do you read a tree diagram to find the probability of a path (e.g. two coins, P(HT))?",
+      "back": "Each branch shows an outcome with its probability. To find a path's probability, MULTIPLY along the branches.\nTwo coins: P(H) = 1/2 then P(T) = 1/2.\nP(HT) = 1/2 × 1/2 = 1/4.\nTo combine several paths (an 'or'), ADD the path probabilities. Multiply along, add across.",
+      "tags": [
+        "tree-diagrams"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "probability-6106aff027",
+      "front": "A two-way table records 30 learners by gender and whether they wear glasses. How do you read P(a girl who wears glasses)?",
+      "back": "Find the cell that is BOTH 'girl' AND 'glasses' (the intersection of that row and column).\nSay that cell = 6. Total = 30 (use the grand total in the corner).\nP(girl and glasses) = 6/30 = 1/5.\nRow/column totals (margins) give single-event probabilities; inner cells give 'and' probabilities.",
+      "tags": [
+        "two-way-tables"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml"
+    },
+    {
+      "id": "probability-b35052f134",
+      "front": "Two dice are rolled. Find P(sum is greater than 9).",
+      "back": "Sums greater than 9 means 10, 11 or 12.\n10: (4,6),(5,5),(6,4) = 3.\n11: (5,6),(6,5) = 2.\n12: (6,6) = 1.\nTotal favourable = 3 + 2 + 1 = 6.\nP(sum > 9) = 6/36 = 1/6.\nPitfall: 'greater than 9' excludes 9 itself.",
+      "tags": [
+        "two-dice"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml"
+    },
+    {
+      "id": "probability-11e21f6d68",
+      "front": "A spinner (1,2,3) is spun and a coin tossed. List the sample space and give P(an even number and a Tail).",
+      "back": "Combine each spinner result with H and T:\nS = {1H, 1T, 2H, 2T, 3H, 3T} → 6 outcomes (3 × 2).\nEven number = 2 only, with Tail → {2T} = 1 outcome.\nP(even and Tail) = 1/6.",
+      "tags": [
+        "sample-space-listing"
+      ],
+      "difficulty": "medium",
+      "source": "Compound Events - CAPS_two-events",
+      "sourceFile": "Compound Events - CAPS_two-events.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-74d86f1d6d",
+      "front": "What does 'equally likely outcomes' mean, and why does it matter?",
+      "back": "Outcomes are equally likely when each has the same chance of happening (a 'fair' device).\nExamples: a fair coin (Heads/Tails), a fair die (1–6), a balanced spinner with equal sectors.\nIt matters because the formula P = favourable ÷ total ONLY works when outcomes are equally likely. A biased/weighted device breaks this.",
+      "tags": [
+        "equally-likely"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-e3cb0712ec",
+      "front": "A fair coin is tossed once. Give the sample space and P(Heads).",
+      "back": "Sample space: S = {Heads, Tails}, total = 2 equally likely outcomes.\nFavourable for Heads = 1.\nP(Heads) = 1/2 = 0,5 = 50%.\nSame for P(Tails) = 1/2. The two probabilities add to 1.",
+      "tags": [
+        "coins"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-3b6900ed6e",
+      "front": "A fair die is rolled. Find P(a multiple of 3) and P(a prime number).",
+      "back": "S = {1,2,3,4,5,6}, total = 6.\nMultiples of 3: {3, 6} → P = 2/6 = 1/3.\nPrimes: {2, 3, 5} → P = 3/6 = 1/2. (Remember 1 is NOT prime.)\nPitfall: do not count 1 as prime, and 9 is not on a die.",
+      "tags": [
+        "dice"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml"
+    },
+    {
+      "id": "probability-718f69d2f9",
+      "front": "A standard pack has 52 cards. How is it made up, and what is P(a red card)?",
+      "back": "4 suits: Hearts (red), Diamonds (red), Clubs (black), Spades (black). 13 cards per suit (A,2–10,J,Q,K).\nRed cards = Hearts + Diamonds = 13 + 13 = 26.\nP(red) = 26/52 = 1/2.\nThere are 4 of each value (e.g. four Kings) and 12 'picture/face' cards (J, Q, K × 4 suits).",
+      "tags": [
+        "cards"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml"
+    },
+    {
+      "id": "probability-3d366152ea",
+      "front": "From a 52-card pack, find P(a King) and P(a club).",
+      "back": "Total = 52.\nKings: there are 4 (one per suit) → P(King) = 4/52 = 1/13.\nClubs: there are 13 → P(club) = 13/52 = 1/4.\nPitfall: do not confuse 'a King' (4 cards) with 'the King of clubs' (1 card → 1/52).",
+      "tags": [
+        "cards"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml"
+    },
+    {
+      "id": "probability-ca24c5096d",
+      "front": "A spinner has 8 EQUAL sectors numbered 1–8. Find P(an odd number).",
+      "back": "Equal sectors → equally likely, total = 8.\nOdd numbers: {1, 3, 5, 7} → 4 favourable.\nP(odd) = 4/8 = 1/2.\nPitfall: this only works because the sectors are EQUAL. If sectors had different sizes you would use the area/angle, not just the count.",
+      "tags": [
+        "spinners"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-1ad9b56d4e",
+      "front": "A spinner has sectors with central angles 180°, 90°, 90° for colours red, blue, green. Find P(red).",
+      "back": "A full circle = 360°. The sectors are NOT equal, so use angle ÷ 360°.\nP(red) = 180/360 = 1/2.\nP(blue) = 90/360 = 1/4, P(green) = 90/360 = 1/4.\nCheck: 1/2 + 1/4 + 1/4 = 1. Pitfall: never just count colours when sectors are unequal.",
+      "tags": [
+        "spinners"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml"
+    },
+    {
+      "id": "probability-b78906b82c",
+      "front": "A box has 4 white, 6 black and 2 yellow balls. Find P(not black).",
+      "back": "Total = 4 + 6 + 2 = 12.\nMethod 1 (count): not black = white + yellow = 4 + 2 = 6 → P = 6/12 = 1/2.\nMethod 2 (complement): P(black) = 6/12 = 1/2, so P(not black) = 1 − 1/2 = 1/2.\nBoth give 1/2.",
+      "tags": [
+        "coloured-balls"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml"
+    },
+    {
+      "id": "probability-c040b2586d",
+      "front": "Why is each card draw from a full shuffled pack an example of equally likely outcomes?",
+      "back": "Because the pack is well shuffled, every one of the 52 cards has the same chance (1/52) of being drawn.\nSo P(any specific card) = 1/52, and P(any event) = (number of matching cards) ÷ 52.\nThis equal chance is what lets us simply count cards.",
+      "tags": [
+        "cards"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-1616f30821",
+      "front": "Two fair coins are tossed. Why is P(one Head and one Tail) = 1/2, not 1/3?",
+      "back": "Listing outcomes treats the coins as distinct: S = {HH, HT, TH, TT} → 4 equally likely outcomes.\n'One Head and one Tail' = {HT, TH} → 2 outcomes.\nP = 2/4 = 1/2.\nPitfall: writing {two heads, one of each, two tails} gives 3 outcomes that are NOT equally likely, so 1/3 is wrong.",
+      "tags": [
+        "coins"
+      ],
+      "difficulty": "medium",
+      "source": "Equally Likely Outcomes - CAPS_equally-likely",
+      "sourceFile": "Equally Likely Outcomes - CAPS_equally-likely.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-d98241c4cf",
+      "front": "What does 'mutually exclusive' mean? Give an example and a non-example.",
+      "back": "Two events are mutually exclusive if they CANNOT happen at the same time (no common outcomes).\nExample: on one die roll, 'getting a 2' and 'getting a 5' are mutually exclusive.\nNon-example: 'getting an even number' and 'getting a number > 3' can both happen (a 4 or 6), so they are NOT mutually exclusive.",
+      "tags": [
+        "mutually-exclusive"
+      ],
+      "difficulty": "medium",
+      "source": "Mutually Exclusive Events - CAPS_addition",
+      "sourceFile": "Mutually Exclusive Events - CAPS_addition.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "182"
+      }
+    },
+    {
+      "id": "probability-c1fc008e87",
+      "front": "State the addition rule for P(A or B) when A and B are MUTUALLY EXCLUSIVE.",
+      "back": "P(A or B) = P(A) + P(B).\nThis works because there is no overlap to double-count.\nExample (one die): P(2 or 5) = P(2) + P(5) = 1/6 + 1/6 = 2/6 = 1/3.",
+      "tags": [
+        "addition-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Mutually Exclusive Events - CAPS_addition",
+      "sourceFile": "Mutually Exclusive Events - CAPS_addition.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "182"
+      }
+    },
+    {
+      "id": "probability-91b3d884e0",
+      "front": "State the addition rule for P(A or B) when events are NOT mutually exclusive.",
+      "back": "P(A or B) = P(A) + P(B) − P(A and B).\nYou subtract the overlap P(A and B) because outcomes in both were counted twice.\nIf A and B are mutually exclusive, P(A and B) = 0 and this reduces to P(A) + P(B).",
+      "tags": [
+        "addition-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Mutually Exclusive Events - CAPS_addition",
+      "sourceFile": "Mutually Exclusive Events - CAPS_addition.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "182"
+      }
+    },
+    {
+      "id": "probability-d3754b1c19",
+      "front": "On one die roll, find P(even OR greater than 3). Watch the overlap!",
+      "back": "Even = {2,4,6}, greater than 3 = {4,5,6}.\nNOT mutually exclusive — overlap = {4,6}.\nP(even) = 3/6, P(>3) = 3/6, P(both) = 2/6.\nP(even or >3) = 3/6 + 3/6 − 2/6 = 4/6 = 2/3.\nCheck by listing: {2,4,5,6} = 4 outcomes → 4/6. ✓",
+      "tags": [
+        "addition-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Mutually Exclusive Events - CAPS_addition",
+      "sourceFile": "Mutually Exclusive Events - CAPS_addition.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "182"
+      }
+    },
+    {
+      "id": "probability-638f72d029",
+      "front": "From a 52-card pack, find P(a King or a Queen).",
+      "back": "A card cannot be a King and a Queen at once → mutually exclusive.\nP(King) = 4/52, P(Queen) = 4/52.\nP(King or Queen) = 4/52 + 4/52 = 8/52 = 2/13.\nNo overlap to subtract.",
+      "tags": [
+        "mutually-exclusive"
+      ],
+      "difficulty": "medium",
+      "source": "Mutually Exclusive Events - CAPS_addition",
+      "sourceFile": "Mutually Exclusive Events - CAPS_addition.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "182"
+      }
+    },
+    {
+      "id": "probability-333e8386d7",
+      "front": "From a 52-card pack, find P(a King or a Heart). Why is this different from King or Queen?",
+      "back": "A card CAN be both a King and a Heart (the King of Hearts) → NOT mutually exclusive.\nP(King) = 4/52, P(Heart) = 13/52, P(King and Heart) = 1/52.\nP(King or Heart) = 4/52 + 13/52 − 1/52 = 16/52 = 4/13.\nPitfall: forgetting to subtract the King of Hearts gives the wrong 17/52.",
+      "tags": [
+        "addition-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Mutually Exclusive Events - CAPS_addition",
+      "sourceFile": "Mutually Exclusive Events - CAPS_addition.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "182"
+      }
+    },
+    {
+      "id": "probability-17ed1b0f2f",
+      "front": "How can you TEST whether two events are mutually exclusive?",
+      "back": "List the outcomes of each event and look for any shared (common) outcomes.\n- No common outcome → mutually exclusive → P(A and B) = 0.\n- At least one common outcome → not mutually exclusive → subtract the overlap.\nQuick check: ask 'can both happen in a single trial?' If no, they are mutually exclusive.",
+      "tags": [
+        "mutually-exclusive"
+      ],
+      "difficulty": "medium",
+      "source": "Mutually Exclusive Events - CAPS_addition",
+      "sourceFile": "Mutually Exclusive Events - CAPS_addition.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "182"
+      }
+    },
+    {
+      "id": "probability-dcbdd02e96",
+      "front": "Are complementary events also mutually exclusive? Are mutually exclusive events always complementary?",
+      "back": "Complementary events (A and not A) ARE always mutually exclusive AND together fill the whole sample space, so their probabilities add to 1.\nBut mutually exclusive events are NOT always complementary: 'roll a 2' and 'roll a 5' are mutually exclusive yet don't cover everything (their P's add to 1/3, not 1).",
+      "tags": [
+        "mutually-exclusive"
+      ],
+      "difficulty": "medium",
+      "source": "Mutually Exclusive Events - CAPS_addition",
+      "sourceFile": "Mutually Exclusive Events - CAPS_addition.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "182"
+      }
+    },
+    {
+      "id": "probability-0970fefb76",
+      "front": "What is the formula for the expected (predicted) number of times an event occurs?",
+      "back": "Expected number = probability of the event × number of trials.\nExpected = P(event) × n.\nThis PREDICTS roughly how often an event happens over many trials; the real count will be close but usually not exact.",
+      "tags": [
+        "expected-number"
+      ],
+      "difficulty": "medium",
+      "source": "Predicting Outcomes - CAPS_expected",
+      "sourceFile": "Predicting Outcomes - CAPS_expected.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "probability-9e361ae715",
+      "front": "A fair die is rolled 300 times. How many 6s do you expect?",
+      "back": "P(6) = 1/6.\nExpected number = P × n = 1/6 × 300 = 50.\nSo about 50 sixes. Pitfall: you would NOT necessarily get exactly 50 — but 50 is the best prediction.",
+      "tags": [
+        "expected-number"
+      ],
+      "difficulty": "medium",
+      "source": "Predicting Outcomes - CAPS_expected",
+      "sourceFile": "Predicting Outcomes - CAPS_expected.yml"
+    },
+    {
+      "id": "probability-0f65654a25",
+      "front": "A coin is tossed 80 times. How many Heads are expected? How many Tails?",
+      "back": "P(Heads) = 1/2.\nExpected Heads = 1/2 × 80 = 40.\nExpected Tails = 1/2 × 80 = 40.\nCheck: expected Heads + expected Tails = 40 + 40 = 80 = total trials. ✓",
+      "tags": [
+        "expected-number"
+      ],
+      "difficulty": "medium",
+      "source": "Predicting Outcomes - CAPS_expected",
+      "sourceFile": "Predicting Outcomes - CAPS_expected.yml"
+    },
+    {
+      "id": "probability-78956a694b",
+      "front": "A spinner lands on red with probability 0,3. In 200 spins, how many reds are expected?",
+      "back": "Expected reds = P(red) × n = 0,3 × 200 = 60.\nSo about 60 reds out of 200 spins.\nYou can use a decimal probability directly — no need to convert to a fraction first.",
+      "tags": [
+        "expected-number"
+      ],
+      "difficulty": "medium",
+      "source": "Predicting Outcomes - CAPS_expected",
+      "sourceFile": "Predicting Outcomes - CAPS_expected.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "probability-c06761e007",
+      "front": "In a survey, 35% of people prefer tea. In a town of 4000, predict how many prefer tea.",
+      "back": "Expected = P × n = 35% × 4000 = 0,35 × 4000 = 1400.\nSo about 1400 people. This uses experimental probability (the survey) to predict for a larger group.\nPitfall: convert the percentage to a decimal (0,35) before multiplying.",
+      "tags": [
+        "expected-number"
+      ],
+      "difficulty": "medium",
+      "source": "Predicting Outcomes - CAPS_expected",
+      "sourceFile": "Predicting Outcomes - CAPS_expected.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "40"
+      }
+    },
+    {
+      "id": "probability-ca3e15bc9d",
+      "front": "A factory finds 2% of bulbs are faulty. In a batch of 1500, how many faulty bulbs are expected?",
+      "back": "Expected faulty = 2% × 1500 = 0,02 × 1500 = 30.\nSo about 30 faulty bulbs.\nThis prediction helps plan quality control even though the exact number varies batch to batch.",
+      "tags": [
+        "expected-number"
+      ],
+      "difficulty": "medium",
+      "source": "Predicting Outcomes - CAPS_expected",
+      "sourceFile": "Predicting Outcomes - CAPS_expected.yml"
+    },
+    {
+      "id": "probability-ec507b4064",
+      "front": "Working backwards: a die was rolled n times and about 25 fours were expected. Find n. (P(4) = 1/6)",
+      "back": "Expected = P × n → 25 = 1/6 × n.\nMultiply both sides by 6: n = 25 × 6 = 150.\nSo the die was rolled about 150 times.\nRearranging: n = expected ÷ P.",
+      "tags": [
+        "expected-number"
+      ],
+      "difficulty": "medium",
+      "source": "Predicting Outcomes - CAPS_expected",
+      "sourceFile": "Predicting Outcomes - CAPS_expected.yml"
+    },
+    {
+      "id": "probability-382c90784f",
+      "front": "Two dice are rolled 180 times. How many times do you expect a sum of 7?",
+      "back": "P(sum = 7) = 6/36 = 1/6.\nExpected = 1/6 × 180 = 30.\nSo about 30 times.\nThis links compound-event probability with prediction: first find P from the 36 outcomes, then multiply by the number of trials.",
+      "tags": [
+        "expected-number"
+      ],
+      "difficulty": "medium",
+      "source": "Predicting Outcomes - CAPS_expected",
+      "sourceFile": "Predicting Outcomes - CAPS_expected.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "probability-9782698b92",
+      "front": "What is relative frequency (experimental probability)? Give the formula.",
+      "back": "It is the probability worked out from the RESULTS of an actual experiment.\nRelative frequency = (number of times the event occurred) ÷ (total number of trials).\nExample: a drawing pin lands 'point up' 18 times in 50 throws → relative frequency = 18/50 = 0,36 = 36%.",
+      "tags": [
+        "relative-frequency"
+      ],
+      "difficulty": "medium",
+      "source": "Relative Frequency - CAPS_experimental",
+      "sourceFile": "Relative Frequency - CAPS_experimental.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "40"
+      }
+    },
+    {
+      "id": "probability-39e355d9f5",
+      "front": "What is the difference between THEORETICAL and EXPERIMENTAL probability?",
+      "back": "Theoretical: worked out by reasoning, P = favourable ÷ total, assuming fairness (e.g. P(Head) = 1/2).\nExperimental (relative frequency): worked out from real data, = times occurred ÷ trials.\nThey are usually CLOSE but not always equal. Theory predicts; experiment measures what actually happened.",
+      "tags": [
+        "theoretical-vs-experimental"
+      ],
+      "difficulty": "medium",
+      "source": "Relative Frequency - CAPS_experimental",
+      "sourceFile": "Relative Frequency - CAPS_experimental.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "40"
+      }
+    },
+    {
+      "id": "probability-832297a003",
+      "front": "Why does experimental probability get CLOSER to theoretical probability with more trials?",
+      "back": "This is the Law of Large Numbers. In a few trials, luck can make results uneven (e.g. 7 Heads in 10 tosses = 0,7).\nAs the number of trials grows, the relative frequency settles down and converges toward the true theoretical value (0,5 for a fair coin).\nMore trials = more reliable estimate.",
+      "tags": [
+        "convergence"
+      ],
+      "difficulty": "medium",
+      "source": "Relative Frequency - CAPS_experimental",
+      "sourceFile": "Relative Frequency - CAPS_experimental.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "40"
+      }
+    },
+    {
+      "id": "probability-56dc9824b7",
+      "front": "A coin is tossed 200 times and lands Heads 118 times. Find the relative frequency of Heads and compare with theory.",
+      "back": "Relative frequency = 118/200 = 0,59 = 59%.\nTheoretical P(Heads) = 1/2 = 0,5 = 50%.\nThe experimental value (0,59) is a bit higher than theory (0,5). With even more tosses we'd expect it to move closer to 0,5. A small difference is normal.",
+      "tags": [
+        "relative-frequency"
+      ],
+      "difficulty": "medium",
+      "source": "Relative Frequency - CAPS_experimental",
+      "sourceFile": "Relative Frequency - CAPS_experimental.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "40"
+      }
+    },
+    {
+      "id": "probability-66b462f3f9",
+      "front": "When MUST you use experimental probability instead of theoretical?",
+      "back": "When outcomes are NOT equally likely or you cannot reason them out, e.g.:\n- a bent/biased coin or weighted die,\n- a drawing pin landing point-up or down,\n- the chance a bus is late, or a seed germinates.\nThere is no fair-counting formula, so you collect data and use times occurred ÷ trials.",
+      "tags": [
+        "theoretical-vs-experimental"
+      ],
+      "difficulty": "medium",
+      "source": "Relative Frequency - CAPS_experimental",
+      "sourceFile": "Relative Frequency - CAPS_experimental.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "23"
+      }
+    },
+    {
+      "id": "probability-83d4f34da6",
+      "front": "A die is rolled 60 times. The number 6 appears 18 times. Does this prove the die is unfair?",
+      "back": "Experimental P(6) = 18/60 = 0,3. Theoretical = 1/6 ≈ 0,17.\nThe gap is fairly large, which is SUSPICIOUS, but 60 rolls is not many — chance alone could cause it.\nTo decide fairly, roll MANY more times. If P(6) stays near 0,3 over thousands of rolls, the die is probably biased.",
+      "tags": [
+        "theoretical-vs-experimental"
+      ],
+      "difficulty": "medium",
+      "source": "Relative Frequency - CAPS_experimental",
+      "sourceFile": "Relative Frequency - CAPS_experimental.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "40"
+      }
+    },
+    {
+      "id": "probability-44b78feb18",
+      "front": "A frequency table shows colours drawn (with replacement): Red 24, Blue 36, Green 60. Estimate P(Blue).",
+      "back": "Total trials = 24 + 36 + 60 = 120.\nP(Blue) ≈ relative frequency = 36/120 = 0,3 = 30%.\nThis is an ESTIMATE of the true probability based on the data; more draws would refine it.\nPitfall: divide by the total (120), not by the number of colours (3).",
+      "tags": [
+        "relative-frequency"
+      ],
+      "difficulty": "medium",
+      "source": "Relative Frequency - CAPS_experimental",
+      "sourceFile": "Relative Frequency - CAPS_experimental.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "40"
+      }
+    },
+    {
+      "id": "probability-6ffb646d87",
+      "front": "If relative frequency = 0,28 over 50 trials, how many times did the event occur?",
+      "back": "Rearrange the formula: times occurred = relative frequency × trials.\ntimes occurred = 0,28 × 50 = 14.\nCheck: 14 ÷ 50 = 0,28. ✓",
+      "tags": [
+        "relative-frequency"
+      ],
+      "difficulty": "medium",
+      "source": "Relative Frequency - CAPS_experimental",
+      "sourceFile": "Relative Frequency - CAPS_experimental.yml",
+      "requires": {
+        "subject": "probability",
+        "sectionLine": "40"
+      }
+    }
+  ],
+  "triage": null,
+  "guide": {
+    "chars": 17569,
+    "lines": 303,
+    "sections": [
+      {
+        "level": 1,
+        "title": "Probability — Complete Study Guide",
+        "line": 0,
+        "body": ""
+      },
+      {
+        "level": 2,
+        "title": "Contents",
+        "line": 2,
+        "body": ""
+      },
+      {
+        "level": 3,
+        "title": "Basic Probability",
+        "line": 4,
+        "body": "Probability measures how likely something is to happen. Before we can calculate anything we need four words.\n\nAn **experiment** (or trial) is any action with an uncertain result that can be repeated: tossing a coin, rolling a die, drawing a card, spinning a spinner. An **outcome** is one single result of that experiment, such as rolling a 4. The **sample space**, written S, is the set of all possible outcomes; for one die S = {1, 2, 3, 4, 5, 6}. An **event** is the outcome or group of outcomes we are interested in, for example \"rolling an even number\" = {2, 4, 6}. An event is always a subset of the sample space.\n\nWhen every outcome is equally likely, the probability of an event is\n\n  P(event) = (number of favourable outcomes) ÷ (total number of possible outcomes).\n\nFor example, P(even on a die) = 3/6 = 1/2, because there are three favourable outcomes {2, 4, 6} out of six. A common pitfall is putting the wrong number on the bottom: the denominator is always the TOTAL number of outcomes, never the number of categories.\n\nEvery probability is a number on the **probability scale** from 0 to 1. A value of 0 means the event is impossible; 1 means it is certain; 1/2 means an even chance. Values close to 0 are unlikely and values close to 1 are likely. Because favourable outcomes are part of the total, a probability can never be negative or greater than 1 — if you ever calculate 1,3 or −0,2 you have made a mistake.\n\nThe same probability can be written three ways. Take P = 3/4. As a fraction it is 3/4. As a decimal, divide top by bottom: 3 ÷ 4 = 0,75. As a percentage, multiply the decimal by 100: 75%. So 3/4 = 0,75 = 75% all describe the same chance. Note that a high probability like 70% means likely, not guaranteed; only P = 1 (100%) means certain.\n\nTo place an event word on the scale, work out P first, then match: P = 0 impossible, 0 < P < 1/2 unlikely, P = 1/2 even chance, 1/2 < P < 1 likely, P = 1 certain."
+      },
+      {
+        "level": 3,
+        "title": "Equally Likely Outcomes",
+        "line": 23,
+        "body": "The counting formula P = favourable ÷ total only works when the outcomes are **equally likely** — that is, each outcome has exactly the same chance of happening. We get this from \"fair\" devices: a fair coin, a fair die, a balanced spinner with equal sectors, a well-shuffled pack of cards, or balls drawn blindly from a bag. A biased or weighted device breaks the equal-chance assumption, and then we must use experimental probability instead.\n\n**Coins.** One fair coin has S = {Heads, Tails}, so P(Heads) = P(Tails) = 1/2. The two probabilities add to 1.\n\n**Dice.** A fair die has S = {1, 2, 3, 4, 5, 6}. To find P(a multiple of 3): the multiples are {3, 6}, so P = 2/6 = 1/3. For P(a prime number): the primes are {2, 3, 5} (remember 1 is not prime), so P = 3/6 = 1/2.\n\n**Cards.** A standard pack has 52 cards in four suits — Hearts and Diamonds (red), Clubs and Spades (black) — with 13 cards per suit (Ace, 2–10, Jack, Queen, King). So there are 26 red cards: P(red) = 26/52 = 1/2. There are four of each value, so P(a King) = 4/52 = 1/13, and 13 of each suit, so P(a club) = 13/52 = 1/4. Do not confuse \"a King\" (4 cards) with \"the King of clubs\" (just 1 card, probability 1/52).\n\n**Spinners.** If a spinner has 8 equal sectors numbered 1–8, then P(odd) = 4/8 = 1/2. But the equal-counting trick only works when the sectors are the same size. If sectors are unequal, use the central angle: a sector of 180° out of 360° gives P = 180/360 = 1/2.\n\n**Coloured balls.** With 4 white, 6 black and 2 yellow balls (total 12), P(not black) = (4 + 2)/12 = 1/2, which you can also get by complement: 1 − 6/12 = 1/2.\n\nA subtle pitfall: with two coins, the outcomes {HH, HT, TH, TT} are the four equally likely cases. \"One Head and one Tail\" matches {HT, TH}, giving 2/4 = 1/2 — not 1/3. Grouping outcomes that are not equally likely (two heads / one of each / two tails) gives the wrong answer."
+      },
+      {
+        "level": 3,
+        "title": "Relative Frequency and Experimental Probability",
+        "line": 40,
+        "body": "So far we have calculated probability by reasoning about fair devices. But sometimes we cannot reason it out — a coin might be bent, a die weighted, or we want the chance a drawing pin lands point-up. In these cases we run the experiment many times and measure what actually happens. This gives the **relative frequency**, also called the **experimental probability**:\n\n  relative frequency = (number of times the event occurred) ÷ (total number of trials).\n\nFor example, if a drawing pin lands point-up 18 times in 50 throws, the relative frequency is 18/50 = 0,36 = 36%.\n\nIt helps to compare two ideas. **Theoretical probability** is worked out by reasoning, P = favourable ÷ total, assuming the device is fair — for a coin, P(Heads) = 1/2. **Experimental probability** is measured from real data. The two are usually close but not exactly equal. Theory predicts; experiment measures.\n\nWhy do they tend to agree? Because of the **Law of Large Numbers**. In a small number of trials, luck can make results lopsided — 7 Heads in 10 tosses is a relative frequency of 0,7, far from 0,5. But as the number of trials grows, the relative frequency settles down and **converges** toward the true theoretical value. More trials means a more reliable estimate. So if a coin shows 118 Heads in 200 tosses (0,59), that is a bit above the theoretical 0,5, and we would expect it to drift closer to 0,5 with more tosses; a small difference is completely normal.\n\nThis also tells us how to judge whether a device is fair. If a die shows the number 6 on 18 of 60 rolls, the experimental P(6) = 0,3 is well above the theoretical 1/6 ≈ 0,17 — suspicious, but 60 rolls is not many, so chance alone could explain it. To be sure, roll thousands of times: if P(6) stays near 0,3, the die is probably biased.\n\nThe formula rearranges usefully. If the relative frequency is 0,28 over 50 trials, then the number of times the event occurred is 0,28 × 50 = 14. And when given a frequency table — say Red 24, Blue 36, Green 60 — the total trials is 120, so the estimated P(Blue) = 36/120 = 0,3. Always divide by the grand total, not by the number of categories."
+      },
+      {
+        "level": 3,
+        "title": "Complementary Events",
+        "line": 57,
+        "body": "**The complement** of an event A — written **\"not A\"** or **A′** — is everything in the sample space that is **not** A. For example, if A is \"rolling a 6\" on a die, then \"not A\" is \"rolling a 1, 2, 3, 4 or 5\".\n\n**Probabilities sum to 1**\n\nIn any experiment *something* must happen, and certainty has probability 1. So the probabilities of all the separate outcomes in a sample space always add up to **1**.\n\nFor a fair die:\n1/6 + 1/6 + 1/6 + 1/6 + 1/6 + 1/6 = 6/6 = 1.\n\nThis is a useful **check**: if your outcome probabilities do not add to 1, you have made an error somewhere.\n\n**The complement rule**\n\nBecause an event and its complement together fill the whole sample space:\n\n> **P(A) + P(not A) = 1**, which rearranges to **P(not A) = 1 − P(A)**.\n\nFor example, if P(rain) = 0,3 then P(no rain) = 1 − 0,3 = 0,7.\n\n**Why the complement is useful**\n\nUsing the complement is *faster* whenever \"not A\" is much simpler to count than A. Classic case: \"at least one\".\n\n> **Worked example 1 — Faulty bulbs**\n> P(picking a faulty bulb) = 3/40. Find P(good bulb).\n> \"Good\" is the complement of \"faulty\":\n> P(good) = 1 − P(faulty) = 1 − 3/40.\n> Write 1 as 40/40: P(good) = 40/40 − 3/40 = **37/40** = 0,925 = 92,5%.\n\n> **Worked example 2 — Finding a missing probability**\n> A spinner has P(red) = 0,4, P(blue) = 0,35, P(green) = x. Find x.\n> All outcomes sum to 1:\n> 0,4 + 0,35 + x = 1\n> 0,75 + x = 1\n> x = 1 − 0,75 = **0,25**.\n> Check: 0,4 + 0,35 + 0,25 = 1. ✓\n\n> **Worked example 3 — \"At least\" shortcut**\n> Find P(rolling at least 2) on a fair die.\n> Counting directly means adding P(2,3,4,5,6). Instead use the complement: \"not at least 2\" is rolling a 1, so P = 1/6.\n> P(at least 2) = 1 − 1/6 = **5/6**. Much quicker than adding five fractions.\n\n**Expressing a complement in different forms**\n\nIf P(pass) = 85%, then P(fail) = 100% − 85% = 15% = 15/100 = 3/20 = 0,15. A probability can be given as a fraction, decimal or percentage — all equal.\n\n**Pitfalls**\n\n- The complement of A is **everything else**, not just one other outcome. The complement of \"rolling a 6\" is {1, 2, 3, 4, 5}, so P(not 6) = 5/6 — **not** 1/6.\n- Always compute a complement as **1 (or 100%) minus** the given value; do not guess \"the rest\".\n- When subtracting, write 1 as a fraction with the same denominator (e.g. 1 = 40/40) before subtracting."
+      },
+      {
+        "level": 3,
+        "title": "Compound Events",
+        "line": 112,
+        "body": "A **compound (two-stage) event** involves two or more actions, such as tossing two coins, rolling two dice, or spinning a spinner and tossing a coin. To find probabilities you first need the full **sample space** — the list of every possible outcome.\n\n**Three tools for listing the sample space**\n\n1. **Systematic listing** — write out every outcome in an orderly way.\n2. **A two-way table (grid)** — rows for one action, columns for the other.\n3. **A tree diagram** — branches for each stage.\n\n**The fundamental counting principle**\n\nThe total number of outcomes is found by **multiplying** the number of outcomes at each stage:\n\n> total outcomes = (outcomes of action 1) × (outcomes of action 2)\n\nFor two coins: 2 × 2 = 4. For two dice: 6 × 6 = 36.\n\n**Two coins**\n\nTreating the coins as Coin 1 then Coin 2:\nS = {HH, HT, TH, TT} → **4** equally likely outcomes, each with probability 1/4.\n\n> **Worked example 1 — At least one Head**\n> Find P(at least one Head) when two coins are tossed.\n> \"At least one Head\" = {HH, HT, TH} → 3 outcomes, so P = **3/4**.\n> Quicker with the complement: the only outcome with no Head is TT (P = 1/4), so P(at least one Head) = 1 − 1/4 = 3/4.\n\n**Two dice — the two-way table**\n\nBuild a 6 × 6 grid: rows = die 1 (1–6), columns = die 2 (1–6). Each cell is an **ordered pair** (d1, d2). There are 6 × 6 = **36** equally likely outcomes. Note that (1, 3) and (3, 1) are **different** outcomes, so P(any single pair) = 1/36.\n\n> **Worked example 2 — Sum of two dice**\n> Find P(sum = 7).\n> Pairs giving 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) → 6 outcomes.\n> P(sum = 7) = 6/36 = **1/6**. (Sum 7 is the most likely total.)\n> Compare: sum = 2 occurs only as (1,1) → P = 1/36 (the rarest), and a **double** {(1,1),(2,2),(3,3),(4,4),(5,5),(6,6)} → 6/36 = 1/6.\n\n> **Worked example 3 — Sum greater than 9**\n> \"Greater than 9\" means 10, 11 or 12.\n> 10: (4,6),(5,5),(6,4) = 3; 11: (5,6),(6,5) = 2; 12: (6,6) = 1.\n> Favourable = 3 + 2 + 1 = 6, so P(sum > 9) = 6/36 = **1/6**.\n\n**Tree diagrams — multiply along, add across**\n\nEach branch shows an outcome with its probability. To find the probability of one **path**, **multiply** along the branches. For two coins: P(HT) = P(H) × P(T) = 1/2 × 1/2 = **1/4**. To combine several paths (an \"or\"), **add** the path probabilities.\n\n**Two-way tables of real data**\n\nA two-way table can sort people by two features (e.g. gender and whether they wear glasses). The **inner cells** give \"and\" probabilities (the intersection of a row and column); the **row/column totals (margins)** give single-event probabilities; the **grand total** in the corner is the whole group.\n\n> **Worked example 4 — Reading a data table**\n> 30 learners are sorted by gender and glasses. The cell that is both \"girl\" and \"glasses\" = 6.\n> P(girl and glasses) = 6/30 = **1/5**.\n\n**Combining different actions**\n\n> **Worked example 5 — Spinner and coin**\n> A spinner (1, 2, 3) is spun and a coin tossed.\n> S = {1H, 1T, 2H, 2T, 3H, 3T} → 6 outcomes (3 × 2).\n> \"Even number and Tail\" = {2T} → 1 outcome, so P = **1/6**.\n\n**Pitfalls**\n\n- For two dice, count **ordered** pairs: (3,4) and (4,3) are separate outcomes.\n- \"Greater than 9\" excludes 9 itself; read inequality words carefully.\n- On a tree diagram: **multiply** along a single path, but **add** when combining paths.\n- (This is Grade 9 — use lists, tables and tree diagrams only; Venn diagrams are not used here.)"
+      },
+      {
+        "level": 3,
+        "title": "Mutually Exclusive Events",
+        "line": 182,
+        "body": "Two events are **mutually exclusive** if they **cannot happen at the same time** — they share no common outcomes.\n\n- **Example:** on one roll of a die, \"getting a 2\" and \"getting a 5\" are mutually exclusive — a single roll cannot be both.\n- **Non-example:** \"getting an even number\" and \"getting a number greater than 3\" are **not** mutually exclusive, because a 4 or a 6 satisfies both at once.\n\n**Testing for mutual exclusivity**\n\nList the outcomes of each event and look for any **shared** outcome:\n\n- No common outcome → mutually exclusive → P(A and B) = 0.\n- At least one common outcome → not mutually exclusive → there is an overlap to subtract.\n\nQuick check: ask \"**can both happen in a single trial?**\" If no, they are mutually exclusive.\n\n**The addition rule**\n\nWhen A and B **are** mutually exclusive (no overlap to double-count):\n\n> **P(A or B) = P(A) + P(B)**\n\nWhen A and B are **not** mutually exclusive (they overlap):\n\n> **P(A or B) = P(A) + P(B) − P(A and B)**\n\nYou subtract the overlap P(A and B) because the outcomes lying in both events were counted twice. Note that if A and B are mutually exclusive, P(A and B) = 0 and the second rule collapses into the first — so the second rule is really the general one.\n\n> **Worked example 1 — Mutually exclusive (no overlap)**\n> From a 52-card pack, find P(a King or a Queen).\n> A card cannot be a King and a Queen at once → mutually exclusive.\n> P(King) = 4/52, P(Queen) = 4/52.\n> P(King or Queen) = 4/52 + 4/52 = 8/52 = **2/13**. (Nothing to subtract.)\n\n> **Worked example 2 — Overlapping events**\n> From a 52-card pack, find P(a King or a Heart).\n> A card **can** be both — the King of Hearts → **not** mutually exclusive.\n> P(King) = 4/52, P(Heart) = 13/52, P(King and Heart) = 1/52.\n> P(King or Heart) = 4/52 + 13/52 − 1/52 = 16/52 = **4/13**.\n> Forgetting to subtract the King of Hearts gives the wrong answer 17/52.\n\n> **Worked example 3 — Checking by listing**\n> On one die roll, find P(even or greater than 3).\n> Even = {2, 4, 6}, greater than 3 = {4, 5, 6}; overlap = {4, 6} → not mutually exclusive.\n> P(even) = 3/6, P(>3) = 3/6, P(both) = 2/6.\n> P(even or >3) = 3/6 + 3/6 − 2/6 = 4/6 = **2/3**.\n> Check by listing the union {2, 4, 5, 6} = 4 outcomes → 4/6. ✓\n\n**Link to complementary events**\n\nComplementary events (A and \"not A\") are **always** mutually exclusive **and** together fill the whole sample space, so their probabilities add to 1. But mutually exclusive events are **not** always complementary: \"roll a 2\" and \"roll a 5\" are mutually exclusive yet their probabilities add to only 1/3, not 1 — they do not cover everything.\n\n**Pitfalls**\n\n- Do not use the simple rule P(A) + P(B) when the events overlap — you must subtract P(A and B).\n- Always check for a shared outcome **before** adding; the King-of-Hearts trap (Example 2) is the classic mistake.\n- \"Mutually exclusive\" is about having no common outcome; it does **not** mean the two events together cover the whole sample space."
+      },
+      {
+        "level": 3,
+        "title": "Predicting Outcomes",
+        "line": 241,
+        "body": "Once you know the probability of an event, you can **predict** roughly how often it will happen over many trials. This is called the **expected number**.\n\n**The formula**\n\n> **Expected number = probability of the event × number of trials**\n> Expected = P(event) × n\n\nThe expected number is the best *prediction*; the actual count will usually be close but **not exactly** equal — real experiments vary.\n\n> **Worked example 1 — Sixes on a die**\n> A fair die is rolled 300 times. How many 6s are expected?\n> P(6) = 1/6, so Expected = 1/6 × 300 = **50**.\n> About 50 sixes. You would not necessarily get exactly 50, but 50 is the best prediction.\n\n> **Worked example 2 — Heads and Tails**\n> A coin is tossed 80 times.\n> P(Heads) = 1/2 → Expected Heads = 1/2 × 80 = **40**; Expected Tails = 1/2 × 80 = **40**.\n> Check: 40 + 40 = 80 = total trials. ✓ (The expected counts should add up to n.)\n\n**Using decimal or percentage probabilities**\n\nYou can multiply by a decimal directly — no need to convert to a fraction first. Convert a **percentage to a decimal** before multiplying.\n\n> **Worked example 3 — Spinner**\n> A spinner lands on red with P(red) = 0,3. In 200 spins: Expected reds = 0,3 × 200 = **60**.\n\n> **Worked example 4 — Survey prediction**\n> A survey finds 35% of people prefer tea. In a town of 4000, predict how many prefer tea.\n> Expected = 35% × 4000 = 0,35 × 4000 = **1400** people. (This uses experimental probability from the survey to predict for a larger group.)\n\n> **Worked example 5 — Quality control**\n> A factory finds 2% of bulbs are faulty. In a batch of 1500: Expected faulty = 0,02 × 1500 = **30** bulbs.\n\n**Working backwards**\n\nRearrange the formula to find a missing value:\n\n> **n = expected ÷ P**\n\n> **Worked example 6 — Find the number of trials**\n> A die was rolled n times and about 25 fours were expected, with P(4) = 1/6.\n> 25 = 1/6 × n → multiply both sides by 6 → n = 25 × 6 = **150**. The die was rolled about 150 times.\n\n**Linking to compound events**\n\nFirst find the probability from the sample space, then multiply by the number of trials.\n\n> **Worked example 7 — Sum of two dice**\n> Two dice are rolled 180 times. How many sums of 7 are expected?\n> P(sum = 7) = 6/36 = 1/6, so Expected = 1/6 × 180 = **30** times.\n\n**Pitfalls**\n\n- Convert a **percentage to a decimal** (35% → 0,35) before multiplying.\n- The expected number is a **prediction**, not a guarantee; the real result varies from trial to trial.\n- Expected counts for all the outcomes of one experiment should add up to the total number of trials — a handy check.\n- To find the number of trials, divide: n = expected ÷ P (do not multiply by P again)."
+      }
+    ],
+    "firstParagraph": "### Basic Probability\n\nProbability measures how likely something is to happen. Before we can calculate anything we need four words.",
+    "body": "# Probability — Complete Study Guide\n\n## Contents\n\n### Basic Probability\n\nProbability measures how likely something is to happen. Before we can calculate anything we need four words.\n\nAn **experiment** (or trial) is any action with an uncertain result that can be repeated: tossing a coin, rolling a die, drawing a card, spinning a spinner. An **outcome** is one single result of that experiment, such as rolling a 4. The **sample space**, written S, is the set of all possible outcomes; for one die S = {1, 2, 3, 4, 5, 6}. An **event** is the outcome or group of outcomes we are interested in, for example \"rolling an even number\" = {2, 4, 6}. An event is always a subset of the sample space.\n\nWhen every outcome is equally likely, the probability of an event is\n\n  P(event) = (number of favourable outcomes) ÷ (total number of possible outcomes).\n\nFor example, P(even on a die) = 3/6 = 1/2, because there are three favourable outcomes {2, 4, 6} out of six. A common pitfall is putting the wrong number on the bottom: the denominator is always the TOTAL number of outcomes, never the number of categories.\n\nEvery probability is a number on the **probability scale** from 0 to 1. A value of 0 means the event is impossible; 1 means it is certain; 1/2 means an even chance. Values close to 0 are unlikely and values close to 1 are likely. Because favourable outcomes are part of the total, a probability can never be negative or greater than 1 — if you ever calculate 1,3 or −0,2 you have made a mistake.\n\nThe same probability can be written three ways. Take P = 3/4. As a fraction it is 3/4. As a decimal, divide top by bottom: 3 ÷ 4 = 0,75. As a percentage, multiply the decimal by 100: 75%. So 3/4 = 0,75 = 75% all describe the same chance. Note that a high probability like 70% means likely, not guaranteed; only P = 1 (100%) means certain.\n\nTo place an event word on the scale, work out P first, then match: P = 0 impossible, 0 < P < 1/2 unlikely, P = 1/2 even chance, 1/2 < P < 1 likely, P = 1 certain.\n\n\n### Equally Likely Outcomes\n\nThe counting formula P = favourable ÷ total only works when the outcomes are **equally likely** — that is, each outcome has exactly the same chance of happening. We get this from \"fair\" devices: a fair coin, a fair die, a balanced spinner with equal sectors, a well-shuffled pack of cards, or balls drawn blindly from a bag. A biased or weighted device breaks the equal-chance assumption, and then we must use experimental probability instead.\n\n**Coins.** One fair coin has S = {Heads, Tails}, so P(Heads) = P(Tails) = 1/2. The two probabilities add to 1.\n\n**Dice.** A fair die has S = {1, 2, 3, 4, 5, 6}. To find P(a multiple of 3): the multiples are {3, 6}, so P = 2/6 = 1/3. For P(a prime number): the primes are {2, 3, 5} (remember 1 is not prime), so P = 3/6 = 1/2.\n\n**Cards.** A standard pack has 52 cards in four suits — Hearts and Diamonds (red), Clubs and Spades (black) — with 13 cards per suit (Ace, 2–10, Jack, Queen, King). So there are 26 red cards: P(red) = 26/52 = 1/2. There are four of each value, so P(a King) = 4/52 = 1/13, and 13 of each suit, so P(a club) = 13/52 = 1/4. Do not confuse \"a King\" (4 cards) with \"the King of clubs\" (just 1 card, probability 1/52).\n\n**Spinners.** If a spinner has 8 equal sectors numbered 1–8, then P(odd) = 4/8 = 1/2. But the equal-counting trick only works when the sectors are the same size. If sectors are unequal, use the central angle: a sector of 180° out of 360° gives P = 180/360 = 1/2.\n\n**Coloured balls.** With 4 white, 6 black and 2 yellow balls (total 12), P(not black) = (4 + 2)/12 = 1/2, which you can also get by complement: 1 − 6/12 = 1/2.\n\nA subtle pitfall: with two coins, the outcomes {HH, HT, TH, TT} are the four equally likely cases. \"One Head and one Tail\" matches {HT, TH}, giving 2/4 = 1/2 — not 1/3. Grouping outcomes that are not equally likely (two heads / one of each / two tails) gives the wrong answer.\n\n\n### Relative Frequency and Experimental Probability\n\nSo far we have calculated probability by reasoning about fair devices. But sometimes we cannot reason it out — a coin might be bent, a die weighted, or we want the chance a drawing pin lands point-up. In these cases we run the experiment many times and measure what actually happens. This gives the **relative frequency**, also called the **experimental probability**:\n\n  relative frequency = (number of times the event occurred) ÷ (total number of trials).\n\nFor example, if a drawing pin lands point-up 18 times in 50 throws, the relative frequency is 18/50 = 0,36 = 36%.\n\nIt helps to compare two ideas. **Theoretical probability** is worked out by reasoning, P = favourable ÷ total, assuming the device is fair — for a coin, P(Heads) = 1/2. **Experimental probability** is measured from real data. The two are usually close but not exactly equal. Theory predicts; experiment measures.\n\nWhy do they tend to agree? Because of the **Law of Large Numbers**. In a small number of trials, luck can make results lopsided — 7 Heads in 10 tosses is a relative frequency of 0,7, far from 0,5. But as the number of trials grows, the relative frequency settles down and **converges** toward the true theoretical value. More trials means a more reliable estimate. So if a coin shows 118 Heads in 200 tosses (0,59), that is a bit above the theoretical 0,5, and we would expect it to drift closer to 0,5 with more tosses; a small difference is completely normal.\n\nThis also tells us how to judge whether a device is fair. If a die shows the number 6 on 18 of 60 rolls, the experimental P(6) = 0,3 is well above the theoretical 1/6 ≈ 0,17 — suspicious, but 60 rolls is not many, so chance alone could explain it. To be sure, roll thousands of times: if P(6) stays near 0,3, the die is probably biased.\n\nThe formula rearranges usefully. If the relative frequency is 0,28 over 50 trials, then the number of times the event occurred is 0,28 × 50 = 14. And when given a frequency table — say Red 24, Blue 36, Green 60 — the total trials is 120, so the estimated P(Blue) = 36/120 = 0,3. Always divide by the grand total, not by the number of categories.\n\n\n### Complementary Events\n\n**The complement** of an event A — written **\"not A\"** or **A′** — is everything in the sample space that is **not** A. For example, if A is \"rolling a 6\" on a die, then \"not A\" is \"rolling a 1, 2, 3, 4 or 5\".\n\n**Probabilities sum to 1**\n\nIn any experiment *something* must happen, and certainty has probability 1. So the probabilities of all the separate outcomes in a sample space always add up to **1**.\n\nFor a fair die:\n1/6 + 1/6 + 1/6 + 1/6 + 1/6 + 1/6 = 6/6 = 1.\n\nThis is a useful **check**: if your outcome probabilities do not add to 1, you have made an error somewhere.\n\n**The complement rule**\n\nBecause an event and its complement together fill the whole sample space:\n\n> **P(A) + P(not A) = 1**, which rearranges to **P(not A) = 1 − P(A)**.\n\nFor example, if P(rain) = 0,3 then P(no rain) = 1 − 0,3 = 0,7.\n\n**Why the complement is useful**\n\nUsing the complement is *faster* whenever \"not A\" is much simpler to count than A. Classic case: \"at least one\".\n\n> **Worked example 1 — Faulty bulbs**\n> P(picking a faulty bulb) = 3/40. Find P(good bulb).\n> \"Good\" is the complement of \"faulty\":\n> P(good) = 1 − P(faulty) = 1 − 3/40.\n> Write 1 as 40/40: P(good) = 40/40 − 3/40 = **37/40** = 0,925 = 92,5%.\n\n> **Worked example 2 — Finding a missing probability**\n> A spinner has P(red) = 0,4, P(blue) = 0,35, P(green) = x. Find x.\n> All outcomes sum to 1:\n> 0,4 + 0,35 + x = 1\n> 0,75 + x = 1\n> x = 1 − 0,75 = **0,25**.\n> Check: 0,4 + 0,35 + 0,25 = 1. ✓\n\n> **Worked example 3 — \"At least\" shortcut**\n> Find P(rolling at least 2) on a fair die.\n> Counting directly means adding P(2,3,4,5,6). Instead use the complement: \"not at least 2\" is rolling a 1, so P = 1/6.\n> P(at least 2) = 1 − 1/6 = **5/6**. Much quicker than adding five fractions.\n\n**Expressing a complement in different forms**\n\nIf P(pass) = 85%, then P(fail) = 100% − 85% = 15% = 15/100 = 3/20 = 0,15. A probability can be given as a fraction, decimal or percentage — all equal.\n\n**Pitfalls**\n\n- The complement of A is **everything else**, not just one other outcome. The complement of \"rolling a 6\" is {1, 2, 3, 4, 5}, so P(not 6) = 5/6 — **not** 1/6.\n- Always compute a complement as **1 (or 100%) minus** the given value; do not guess \"the rest\".\n- When subtracting, write 1 as a fraction with the same denominator (e.g. 1 = 40/40) before subtracting.\n\n\n### Compound Events\n\nA **compound (two-stage) event** involves two or more actions, such as tossing two coins, rolling two dice, or spinning a spinner and tossing a coin. To find probabilities you first need the full **sample space** — the list of every possible outcome.\n\n**Three tools for listing the sample space**\n\n1. **Systematic listing** — write out every outcome in an orderly way.\n2. **A two-way table (grid)** — rows for one action, columns for the other.\n3. **A tree diagram** — branches for each stage.\n\n**The fundamental counting principle**\n\nThe total number of outcomes is found by **multiplying** the number of outcomes at each stage:\n\n> total outcomes = (outcomes of action 1) × (outcomes of action 2)\n\nFor two coins: 2 × 2 = 4. For two dice: 6 × 6 = 36.\n\n**Two coins**\n\nTreating the coins as Coin 1 then Coin 2:\nS = {HH, HT, TH, TT} → **4** equally likely outcomes, each with probability 1/4.\n\n> **Worked example 1 — At least one Head**\n> Find P(at least one Head) when two coins are tossed.\n> \"At least one Head\" = {HH, HT, TH} → 3 outcomes, so P = **3/4**.\n> Quicker with the complement: the only outcome with no Head is TT (P = 1/4), so P(at least one Head) = 1 − 1/4 = 3/4.\n\n**Two dice — the two-way table**\n\nBuild a 6 × 6 grid: rows = die 1 (1–6), columns = die 2 (1–6). Each cell is an **ordered pair** (d1, d2). There are 6 × 6 = **36** equally likely outcomes. Note that (1, 3) and (3, 1) are **different** outcomes, so P(any single pair) = 1/36.\n\n> **Worked example 2 — Sum of two dice**\n> Find P(sum = 7).\n> Pairs giving 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) → 6 outcomes.\n> P(sum = 7) = 6/36 = **1/6**. (Sum 7 is the most likely total.)\n> Compare: sum = 2 occurs only as (1,1) → P = 1/36 (the rarest), and a **double** {(1,1),(2,2),(3,3),(4,4),(5,5),(6,6)} → 6/36 = 1/6.\n\n> **Worked example 3 — Sum greater than 9**\n> \"Greater than 9\" means 10, 11 or 12.\n> 10: (4,6),(5,5),(6,4) = 3; 11: (5,6),(6,5) = 2; 12: (6,6) = 1.\n> Favourable = 3 + 2 + 1 = 6, so P(sum > 9) = 6/36 = **1/6**.\n\n**Tree diagrams — multiply along, add across**\n\nEach branch shows an outcome with its probability. To find the probability of one **path**, **multiply** along the branches. For two coins: P(HT) = P(H) × P(T) = 1/2 × 1/2 = **1/4**. To combine several paths (an \"or\"), **add** the path probabilities.\n\n**Two-way tables of real data**\n\nA two-way table can sort people by two features (e.g. gender and whether they wear glasses). The **inner cells** give \"and\" probabilities (the intersection of a row and column); the **row/column totals (margins)** give single-event probabilities; the **grand total** in the corner is the whole group.\n\n> **Worked example 4 — Reading a data table**\n> 30 learners are sorted by gender and glasses. The cell that is both \"girl\" and \"glasses\" = 6.\n> P(girl and glasses) = 6/30 = **1/5**.\n\n**Combining different actions**\n\n> **Worked example 5 — Spinner and coin**\n> A spinner (1, 2, 3) is spun and a coin tossed.\n> S = {1H, 1T, 2H, 2T, 3H, 3T} → 6 outcomes (3 × 2).\n> \"Even number and Tail\" = {2T} → 1 outcome, so P = **1/6**.\n\n**Pitfalls**\n\n- For two dice, count **ordered** pairs: (3,4) and (4,3) are separate outcomes.\n- \"Greater than 9\" excludes 9 itself; read inequality words carefully.\n- On a tree diagram: **multiply** along a single path, but **add** when combining paths.\n- (This is Grade 9 — use lists, tables and tree diagrams only; Venn diagrams are not used here.)\n\n\n### Mutually Exclusive Events\n\nTwo events are **mutually exclusive** if they **cannot happen at the same time** — they share no common outcomes.\n\n- **Example:** on one roll of a die, \"getting a 2\" and \"getting a 5\" are mutually exclusive — a single roll cannot be both.\n- **Non-example:** \"getting an even number\" and \"getting a number greater than 3\" are **not** mutually exclusive, because a 4 or a 6 satisfies both at once.\n\n**Testing for mutual exclusivity**\n\nList the outcomes of each event and look for any **shared** outcome:\n\n- No common outcome → mutually exclusive → P(A and B) = 0.\n- At least one common outcome → not mutually exclusive → there is an overlap to subtract.\n\nQuick check: ask \"**can both happen in a single trial?**\" If no, they are mutually exclusive.\n\n**The addition rule**\n\nWhen A and B **are** mutually exclusive (no overlap to double-count):\n\n> **P(A or B) = P(A) + P(B)**\n\nWhen A and B are **not** mutually exclusive (they overlap):\n\n> **P(A or B) = P(A) + P(B) − P(A and B)**\n\nYou subtract the overlap P(A and B) because the outcomes lying in both events were counted twice. Note that if A and B are mutually exclusive, P(A and B) = 0 and the second rule collapses into the first — so the second rule is really the general one.\n\n> **Worked example 1 — Mutually exclusive (no overlap)**\n> From a 52-card pack, find P(a King or a Queen).\n> A card cannot be a King and a Queen at once → mutually exclusive.\n> P(King) = 4/52, P(Queen) = 4/52.\n> P(King or Queen) = 4/52 + 4/52 = 8/52 = **2/13**. (Nothing to subtract.)\n\n> **Worked example 2 — Overlapping events**\n> From a 52-card pack, find P(a King or a Heart).\n> A card **can** be both — the King of Hearts → **not** mutually exclusive.\n> P(King) = 4/52, P(Heart) = 13/52, P(King and Heart) = 1/52.\n> P(King or Heart) = 4/52 + 13/52 − 1/52 = 16/52 = **4/13**.\n> Forgetting to subtract the King of Hearts gives the wrong answer 17/52.\n\n> **Worked example 3 — Checking by listing**\n> On one die roll, find P(even or greater than 3).\n> Even = {2, 4, 6}, greater than 3 = {4, 5, 6}; overlap = {4, 6} → not mutually exclusive.\n> P(even) = 3/6, P(>3) = 3/6, P(both) = 2/6.\n> P(even or >3) = 3/6 + 3/6 − 2/6 = 4/6 = **2/3**.\n> Check by listing the union {2, 4, 5, 6} = 4 outcomes → 4/6. ✓\n\n**Link to complementary events**\n\nComplementary events (A and \"not A\") are **always** mutually exclusive **and** together fill the whole sample space, so their probabilities add to 1. But mutually exclusive events are **not** always complementary: \"roll a 2\" and \"roll a 5\" are mutually exclusive yet their probabilities add to only 1/3, not 1 — they do not cover everything.\n\n**Pitfalls**\n\n- Do not use the simple rule P(A) + P(B) when the events overlap — you must subtract P(A and B).\n- Always check for a shared outcome **before** adding; the King-of-Hearts trap (Example 2) is the classic mistake.\n- \"Mutually exclusive\" is about having no common outcome; it does **not** mean the two events together cover the whole sample space.\n\n\n### Predicting Outcomes\n\nOnce you know the probability of an event, you can **predict** roughly how often it will happen over many trials. This is called the **expected number**.\n\n**The formula**\n\n> **Expected number = probability of the event × number of trials**\n> Expected = P(event) × n\n\nThe expected number is the best *prediction*; the actual count will usually be close but **not exactly** equal — real experiments vary.\n\n> **Worked example 1 — Sixes on a die**\n> A fair die is rolled 300 times. How many 6s are expected?\n> P(6) = 1/6, so Expected = 1/6 × 300 = **50**.\n> About 50 sixes. You would not necessarily get exactly 50, but 50 is the best prediction.\n\n> **Worked example 2 — Heads and Tails**\n> A coin is tossed 80 times.\n> P(Heads) = 1/2 → Expected Heads = 1/2 × 80 = **40**; Expected Tails = 1/2 × 80 = **40**.\n> Check: 40 + 40 = 80 = total trials. ✓ (The expected counts should add up to n.)\n\n**Using decimal or percentage probabilities**\n\nYou can multiply by a decimal directly — no need to convert to a fraction first. Convert a **percentage to a decimal** before multiplying.\n\n> **Worked example 3 — Spinner**\n> A spinner lands on red with P(red) = 0,3. In 200 spins: Expected reds = 0,3 × 200 = **60**.\n\n> **Worked example 4 — Survey prediction**\n> A survey finds 35% of people prefer tea. In a town of 4000, predict how many prefer tea.\n> Expected = 35% × 4000 = 0,35 × 4000 = **1400** people. (This uses experimental probability from the survey to predict for a larger group.)\n\n> **Worked example 5 — Quality control**\n> A factory finds 2% of bulbs are faulty. In a batch of 1500: Expected faulty = 0,02 × 1500 = **30** bulbs.\n\n**Working backwards**\n\nRearrange the formula to find a missing value:\n\n> **n = expected ÷ P**\n\n> **Worked example 6 — Find the number of trials**\n> A die was rolled n times and about 25 fours were expected, with P(4) = 1/6.\n> 25 = 1/6 × n → multiply both sides by 6 → n = 25 × 6 = **150**. The die was rolled about 150 times.\n\n**Linking to compound events**\n\nFirst find the probability from the sample space, then multiply by the number of trials.\n\n> **Worked example 7 — Sum of two dice**\n> Two dice are rolled 180 times. How many sums of 7 are expected?\n> P(sum = 7) = 6/36 = 1/6, so Expected = 1/6 × 180 = **30** times.\n\n**Pitfalls**\n\n- Convert a **percentage to a decimal** (35% → 0,35) before multiplying.\n- The expected number is a **prediction**, not a guarantee; the real result varies from trial to trial.\n- Expected counts for all the outcomes of one experiment should add up to the total number of trials — a handy check.\n- To find the number of trials, divide: n = expected ÷ P (do not multiply by P again).\n\n\n",
+    "infographics": [],
+    "videos": [],
+    "audio": []
+  }
+}

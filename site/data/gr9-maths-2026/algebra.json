@@ -3,6 +3,182 @@
   "cat": "purple",
   "cards": [
     {
+      "id": "algebra-665d61f118",
+      "front": "Simplify the algebraic fraction (6x²)/(9x).",
+      "back": "Cancel common factors top and bottom.\nNumbers: 6/9 = 2/3. Variables: x²/x = x.\nAnswer: 2x/3.\nYou may only cancel FACTORS (things multiplied), never individual terms added/subtracted.",
+      "tags": [
+        "simplify-fraction"
+      ],
+      "difficulty": "medium",
+      "source": "Algebraic Fractions - CAPS_simplify-and-operate",
+      "sourceFile": "Algebraic Fractions - CAPS_simplify-and-operate.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "51"
+      }
+    },
+    {
+      "id": "algebra-8834315c01",
+      "front": "Simplify (x² − 9)/(x + 3) by factorising first.",
+      "back": "Factorise the numerator (difference of squares): x² − 9 = (x + 3)(x − 3).\nFraction = [(x + 3)(x − 3)]/(x + 3).\nCancel the common factor (x + 3).\nAnswer: x − 3.\nNEVER cancel before factorising — you can't cancel the x² or the 9 individually.",
+      "tags": [
+        "simplify-fraction",
+        "factorise-then-cancel"
+      ],
+      "difficulty": "medium",
+      "source": "Algebraic Fractions - CAPS_simplify-and-operate",
+      "sourceFile": "Algebraic Fractions - CAPS_simplify-and-operate.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "algebra-53e72c48f2",
+      "front": "Simplify (x² + 5x + 6)/(x² − 4).",
+      "back": "Factorise top and bottom:\nTop: x² + 5x + 6 = (x + 2)(x + 3).\nBottom: x² − 4 = (x + 2)(x − 2).\n= [(x + 2)(x + 3)] / [(x + 2)(x − 2)].\nCancel (x + 2).\nAnswer: (x + 3)/(x − 2).",
+      "tags": [
+        "simplify-fraction",
+        "factorise-then-cancel"
+      ],
+      "difficulty": "medium",
+      "source": "Algebraic Fractions - CAPS_simplify-and-operate",
+      "sourceFile": "Algebraic Fractions - CAPS_simplify-and-operate.yml"
+    },
+    {
+      "id": "algebra-4596458c91",
+      "front": "Multiply algebraic fractions: (2x/3) × (9/(4x)).",
+      "back": "Multiply straight across, but cancel common factors first to keep it simple.\nNumerators 2x and 9; denominators 3 and 4x.\nCancel: 2x/4x = 1/2; 9/3 = 3.\nLeft with (1/1)×(3/2) = 3/2.\nAnswer: 3/2. (You may cancel diagonally across a multiplication.)",
+      "tags": [
+        "multiply-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Algebraic Fractions - CAPS_simplify-and-operate",
+      "sourceFile": "Algebraic Fractions - CAPS_simplify-and-operate.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "208"
+      }
+    },
+    {
+      "id": "algebra-6f413b35ef",
+      "front": "Divide algebraic fractions: (x/4) ÷ (x²/8).",
+      "back": "Dividing by a fraction = multiply by its RECIPROCAL (flip the second one).\n(x/4) ÷ (x²/8) = (x/4) × (8/x²).\n= (x·8)/(4·x²) = 8x/4x² = 2/x.\nRule: 'keep, change, flip'.",
+      "tags": [
+        "divide-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Algebraic Fractions - CAPS_simplify-and-operate",
+      "sourceFile": "Algebraic Fractions - CAPS_simplify-and-operate.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "208"
+      }
+    },
+    {
+      "id": "algebra-0d5ecb5379",
+      "front": "Add fractions with the same denominator: (3x)/5 + (2x)/5.",
+      "back": "Same denominator ⇒ just add the numerators, keep the denominator.\n(3x + 2x)/5 = 5x/5 = x.\nAnswer: x.\nNever add denominators.",
+      "tags": [
+        "add-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Algebraic Fractions - CAPS_simplify-and-operate",
+      "sourceFile": "Algebraic Fractions - CAPS_simplify-and-operate.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "208"
+      }
+    },
+    {
+      "id": "algebra-955e7b81d3",
+      "front": "Add fractions with different denominators: x/2 + x/3.",
+      "back": "Find the LCD of 2 and 3, which is 6. Rewrite each fraction over 6.\nx/2 = 3x/6; x/3 = 2x/6.\nAdd: 3x/6 + 2x/6 = 5x/6.\nAnswer: 5x/6.\nMultiply top and bottom by what's needed to reach the LCD.",
+      "tags": [
+        "add-fractions",
+        "lcd"
+      ],
+      "difficulty": "medium",
+      "source": "Algebraic Fractions - CAPS_simplify-and-operate",
+      "sourceFile": "Algebraic Fractions - CAPS_simplify-and-operate.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "208"
+      }
+    },
+    {
+      "id": "algebra-e61d83b35f",
+      "front": "Subtract: (2x + 1)/3 − (x − 2)/4.",
+      "back": "LCD of 3 and 4 is 12.\n(2x+1)/3 = 4(2x+1)/12 = (8x+4)/12.\n(x−2)/4 = 3(x−2)/12 = (3x−6)/12.\nSubtract numerators (keep the bracket!): (8x+4) − (3x−6) = 8x+4−3x+6 = 5x+10.\nAnswer: (5x + 10)/12.\nPitfall: the minus must flip BOTH terms of (3x−6).",
+      "tags": [
+        "subtract-fractions",
+        "lcd"
+      ],
+      "difficulty": "medium",
+      "source": "Algebraic Fractions - CAPS_simplify-and-operate",
+      "sourceFile": "Algebraic Fractions - CAPS_simplify-and-operate.yml"
+    },
+    {
+      "id": "algebra-c0f66f1872",
+      "front": "Add with variable denominators: 1/x + 2/(3x).",
+      "back": "LCD of x and 3x is 3x.\n1/x = 3/(3x); 2/(3x) stays.\nAdd: 3/(3x) + 2/(3x) = 5/(3x).\nAnswer: 5/(3x).",
+      "tags": [
+        "add-fractions",
+        "lcd"
+      ],
+      "difficulty": "medium",
+      "source": "Algebraic Fractions - CAPS_simplify-and-operate",
+      "sourceFile": "Algebraic Fractions - CAPS_simplify-and-operate.yml"
+    },
+    {
+      "id": "algebra-80a100ed64",
+      "front": "Divide a polynomial by a monomial: (6x² + 9x) ÷ 3x.",
+      "back": "Divide EACH term by the monomial separately (term-by-term):\n6x² ÷ 3x = 2x (6÷3=2, x²÷x=x).\n9x ÷ 3x = 3.\nAnswer: 2x + 3.\nLaw of exponents: when dividing same bases, subtract exponents (x²÷x¹ = x¹).",
+      "tags": [
+        "polynomial-by-monomial"
+      ],
+      "difficulty": "medium",
+      "source": "Division - CAPS_polynomial-by-monomial",
+      "sourceFile": "Division - CAPS_polynomial-by-monomial.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "148"
+      }
+    },
+    {
+      "id": "algebra-bc1141a2d6",
+      "front": "Simplify: (12x³ − 8x² + 4x) ÷ 4x.",
+      "back": "Split over each term:\n12x³ ÷ 4x = 3x².\n−8x² ÷ 4x = −2x.\n4x ÷ 4x = 1.\nAnswer: 3x² − 2x + 1.\nCommon error: forgetting the last term gives 1 (not 0) — anything divided by itself is 1.",
+      "tags": [
+        "polynomial-by-monomial"
+      ],
+      "difficulty": "medium",
+      "source": "Division - CAPS_polynomial-by-monomial",
+      "sourceFile": "Division - CAPS_polynomial-by-monomial.yml"
+    },
+    {
+      "id": "algebra-6953022a50",
+      "front": "Simplify: (15a²b − 10ab²) ÷ 5ab.",
+      "back": "Divide each term by 5ab:\n15a²b ÷ 5ab = 3a (15÷5=3, a²÷a=a, b÷b=1).\n−10ab² ÷ 5ab = −2b.\nAnswer: 3a − 2b.\nCancel each variable using subtraction of exponents; matching single powers cancel to 1.",
+      "tags": [
+        "polynomial-by-monomial"
+      ],
+      "difficulty": "medium",
+      "source": "Division - CAPS_polynomial-by-monomial",
+      "sourceFile": "Division - CAPS_polynomial-by-monomial.yml"
+    },
+    {
+      "id": "algebra-b4d9b29707",
+      "front": "Write (8x³ + 4x²)/(2x²) as a simplified expression.",
+      "back": "Treat the fraction bar as ÷ and split term-by-term over 2x²:\n8x³/2x² = 4x.\n4x²/2x² = 2.\nAnswer: 4x + 2.\nYou may only split a sum/difference over a single-term denominator like this — not over a denominator that itself has two terms.",
+      "tags": [
+        "polynomial-by-monomial"
+      ],
+      "difficulty": "medium",
+      "source": "Division - CAPS_polynomial-by-monomial",
+      "sourceFile": "Division - CAPS_polynomial-by-monomial.yml"
+    },
+    {
       "id": "algebra-328a402ec3",
       "front": "MCQ (Q1.1): Simplify 2x − x(x + y). Options: A x²+xy  B 2x−x²−xy  C x²−xy  D 2x−x²+xy.",
       "back": "Answer: B.\nDistribute the −x: 2x − x(x + y) = 2x − x·x − x·y = 2x − x² − xy.\nWatch the sign: the minus in front of x multiplies BOTH terms in the bracket, making both negative.",
@@ -39,7 +215,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "208"
+      }
     },
     {
       "id": "algebra-81131cc260",
@@ -78,7 +258,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "208"
+      }
     },
     {
       "id": "algebra-a6d9258287",
@@ -147,7 +331,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "148"
+      }
     },
     {
       "id": "algebra-31a2cd58b2",
@@ -177,7 +365,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "51"
+      }
     },
     {
       "id": "algebra-171e9939a6",
@@ -190,7 +382,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "208"
+      }
     },
     {
       "id": "algebra-cc9e167dc6",
@@ -220,7 +416,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "109"
+      }
     },
     {
       "id": "algebra-eaa67fb5a0",
@@ -287,7 +487,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "245"
+      }
     },
     {
       "id": "algebra-cc3c8ba648",
@@ -300,7 +504,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
     },
     {
       "id": "algebra-5c1d26adcf",
@@ -313,7 +521,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
     },
     {
       "id": "algebra-681a3bdd09",
@@ -326,7 +538,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "208"
+      }
     },
     {
       "id": "algebra-a27050ffd2",
@@ -339,7 +555,11 @@
       ],
       "difficulty": "medium",
       "source": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016",
-      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml"
+      "sourceFile": "Exam Paper D1 Algebra - Gr9 Maths 2-in-1_pages-015-016.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "148"
+      }
     },
     {
       "id": "algebra-200950062c",
@@ -409,12 +629,868 @@
         "subject": "algebra",
         "sectionLine": "27"
       }
+    },
+    {
+      "id": "algebra-9bee29cc97",
+      "front": "What does it mean to 'factorise', and what is the GOLDEN RULE about order?",
+      "back": "Factorising means writing an expression as a PRODUCT of factors (the reverse of expanding).\nGOLDEN RULE: ALWAYS take out a common factor FIRST, before trying any other method. Then check whether what remains can be factorised further (difference of squares, trinomial, etc.).\n'Factorise fully' = keep going until no factor can be broken down any more.",
+      "tags": [
+        "factorising-overview"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "algebra-bc39b8d251",
+      "front": "Type 1 — common factor: factorise 6x² + 9x.",
+      "back": "Find the HCF of the terms. Numbers: HCF(6,9)=3. Variables: lowest power of x common to both is x.\nCommon factor = 3x.\nDivide each term by 3x to get the bracket: 6x²÷3x = 2x, 9x÷3x = 3.\nAnswer: 3x(2x + 3).\nCheck by expanding: 3x(2x+3) = 6x² + 9x. ✓",
+      "tags": [
+        "common-factor"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "109"
+      }
+    },
+    {
+      "id": "algebra-7d74164a8e",
+      "front": "Factorise: 12a²b − 18ab² + 6ab.",
+      "back": "HCF of 12, 18, 6 is 6. Common variables: a and b (lowest power each). Common factor = 6ab.\n12a²b ÷ 6ab = 2a; −18ab² ÷ 6ab = −3b; 6ab ÷ 6ab = 1.\nAnswer: 6ab(2a − 3b + 1).\nDon't drop the +1 — the last term divides to 1, not 0.",
+      "tags": [
+        "common-factor"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-3e50cc43fa",
+      "front": "Type 2 — difference of two squares: factorise x² − 25.",
+      "back": "Pattern a² − b² = (a + b)(a − b). It works ONLY for a difference (minus) of two perfect squares.\nx² = (x)², 25 = (5)². So a = x, b = 5.\nAnswer: (x + 5)(x − 5).\nNote: x² + 25 (a SUM of squares) does NOT factorise.",
+      "tags": [
+        "difference-of-squares"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-2a4976acd3",
+      "front": "Factorise: 9x² − 16y².",
+      "back": "Difference of two squares. Take the square root of each part:\n√(9x²) = 3x, √(16y²) = 4y.\nSo a = 3x, b = 4y.\nAnswer: (3x + 4y)(3x − 4y).",
+      "tags": [
+        "difference-of-squares"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-f89b89f6b9",
+      "front": "Factorise FULLY (common factor first): 2x² − 50.",
+      "back": "Step 1 — common factor 2: 2(x² − 25).\nStep 2 — the bracket is a difference of squares: x² − 25 = (x + 5)(x − 5).\nAnswer: 2(x + 5)(x − 5).\nLesson: pulling out the 2 first revealed a difference of squares that was hidden before.",
+      "tags": [
+        "common-factor",
+        "difference-of-squares",
+        "factorise-fully"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-2977998d78",
+      "front": "Type 3 — trinomial x² + bx + c: factorise x² + 7x + 12.",
+      "back": "Find two numbers that MULTIPLY to c (=12) and ADD to b (=7).\nPairs of 12: 1×12, 2×6, 3×4. Which adds to 7? 3 + 4 = 7. ✓\nAnswer: (x + 3)(x + 4).\nCheck: outer+inner = 4x + 3x = 7x. ✓",
+      "tags": [
+        "trinomial"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-3ff2cfbd3a",
+      "front": "Factorise x² − 5x + 6 (signs!).",
+      "back": "Need two numbers: product = +6, sum = −5.\nSince product is positive but sum is negative, BOTH numbers are negative.\n−2 and −3: (−2)(−3)=6 and −2+−3=−5. ✓\nAnswer: (x − 2)(x − 3).",
+      "tags": [
+        "trinomial"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-a1cdf157b2",
+      "front": "Factorise x² + 2x − 15 (mixed signs).",
+      "back": "Two numbers: product = −15 (negative ⇒ one +, one −), sum = +2.\nFactors of 15: 3 and 5. To get +2 with a sum, the bigger is positive: +5 and −3.\n5×(−3)=−15, 5+(−3)=+2. ✓\nAnswer: (x + 5)(x − 3).",
+      "tags": [
+        "trinomial"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-df399251a2",
+      "front": "Type 3b — trinomial ax² + bx + c: factorise 2x² + 7x + 3.",
+      "back": "Multiply a×c = 2×3 = 6. Find two numbers that multiply to 6 and add to b=7: that's 1 and 6.\nSplit the middle term: 2x² + x + 6x + 3.\nGroup: x(2x + 1) + 3(2x + 1).\nFactor the common bracket: (2x + 1)(x + 3).\nCheck: 2x²+6x+x+3 = 2x²+7x+3. ✓",
+      "tags": [
+        "trinomial",
+        "ax2-trinomial"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-5d4a0d0d86",
+      "front": "Factorise 3x² − 10x − 8.",
+      "back": "a×c = 3×(−8) = −24. Two numbers multiplying to −24, adding to −10: −12 and +2.\nSplit: 3x² − 12x + 2x − 8.\nGroup: 3x(x − 4) + 2(x − 4).\nAnswer: (x − 4)(3x + 2).\nAlways check the common bracket matches in both groups.",
+      "tags": [
+        "ax2-trinomial",
+        "grouping"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-a13cdb5dcc",
+      "front": "Type 4 — factorise by grouping (4 terms): ax + ay + bx + by.",
+      "back": "Group into pairs and take a common factor from each pair:\n(ax + ay) + (bx + by) = a(x + y) + b(x + y).\nNow (x + y) is a common bracket: factor it out.\nAnswer: (x + y)(a + b).\nKey: choose the grouping so both pairs leave the SAME bracket.",
+      "tags": [
+        "grouping"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "44"
+      }
+    },
+    {
+      "id": "algebra-55e2c4133a",
+      "front": "Factorise by grouping: x³ + 2x² − 5x − 10.",
+      "back": "Pair them: (x³ + 2x²) + (−5x − 10).\nFirst pair: x²(x + 2). Second pair: −5(x + 2).\n= x²(x + 2) − 5(x + 2) = (x + 2)(x² − 5).\nWatch signs: factoring −5 out of (−5x − 10) leaves (x + 2), matching the first bracket.",
+      "tags": [
+        "grouping"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-6703cdb0d7",
+      "front": "Factorise fully: 3x³ − 27x.",
+      "back": "Step 1 — common factor 3x: 3x(x² − 9).\nStep 2 — x² − 9 is a difference of squares: (x + 3)(x − 3).\nAnswer: 3x(x + 3)(x − 3).\nAlways finish by checking each remaining factor really can't be factorised further.",
+      "tags": [
+        "common-factor",
+        "difference-of-squares",
+        "factorise-fully"
+      ],
+      "difficulty": "medium",
+      "source": "Factorisation - CAPS_all-types",
+      "sourceFile": "Factorisation - CAPS_all-types.yml"
+    },
+    {
+      "id": "algebra-b72bd30b6f",
+      "front": "How is solving a linear inequality like/unlike solving an equation?",
+      "back": "LIKE an equation: use inverse operations and keep both sides balanced.\nUNLIKE: the answer is a RANGE of values (e.g. x > 3), not a single number, AND there is one special rule:\nWhenever you MULTIPLY or DIVIDE both sides by a NEGATIVE number, you must FLIP the inequality sign (< becomes >, ≤ becomes ≥).",
+      "tags": [
+        "inequalities",
+        "sign-flip"
+      ],
+      "difficulty": "medium",
+      "source": "Inequalities - CAPS_solving-and-number-line",
+      "sourceFile": "Inequalities - CAPS_solving-and-number-line.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "37"
+      }
+    },
+    {
+      "id": "algebra-cca07ee6f9",
+      "front": "Solve: 2x + 3 < 11.",
+      "back": "Subtract 3: 2x < 8.\nDivide by 2 (positive, so sign stays): x < 4.\nSolution: all values less than 4.\nNo flip needed because we divided by a positive number.",
+      "tags": [
+        "inequalities"
+      ],
+      "difficulty": "medium",
+      "source": "Inequalities - CAPS_solving-and-number-line",
+      "sourceFile": "Inequalities - CAPS_solving-and-number-line.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-baf6863a71",
+      "front": "Solve: −3x ≥ 12 (watch the flip!).",
+      "back": "Divide both sides by −3. Because we divide by a NEGATIVE, FLIP the sign:\nx ≤ −4.\nCheck with a test value, x = −5: −3(−5) = 15 ≥ 12 ✓ and −5 ≤ −4 ✓.\nForgetting to flip is the most common inequality error.",
+      "tags": [
+        "inequalities",
+        "sign-flip"
+      ],
+      "difficulty": "medium",
+      "source": "Inequalities - CAPS_solving-and-number-line",
+      "sourceFile": "Inequalities - CAPS_solving-and-number-line.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-7d152a191e",
+      "front": "Solve: 5 − 2x ≤ 13.",
+      "back": "Subtract 5: −2x ≤ 8.\nDivide by −2 and FLIP: x ≥ −4.\nSolution: x ≥ −4.\nThe flip happens at the divide-by-negative step, not the subtraction step.",
+      "tags": [
+        "inequalities",
+        "sign-flip"
+      ],
+      "difficulty": "medium",
+      "source": "Inequalities - CAPS_solving-and-number-line",
+      "sourceFile": "Inequalities - CAPS_solving-and-number-line.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-951c5db939",
+      "front": "How do you represent x > 2 versus x ≥ 2 on a number line?",
+      "back": "Draw the number line, mark 2.\nx > 2: OPEN (unfilled) circle at 2, arrow shading to the right (2 not included).\nx ≥ 2: CLOSED (filled) circle at 2, arrow to the right (2 included).\nRule: strict < or > = open circle; ≤ or ≥ = closed circle. Shade toward the values that satisfy the inequality.",
+      "tags": [
+        "inequalities",
+        "number-line"
+      ],
+      "difficulty": "medium",
+      "source": "Inequalities - CAPS_solving-and-number-line",
+      "sourceFile": "Inequalities - CAPS_solving-and-number-line.yml"
+    },
+    {
+      "id": "algebra-f0a7082517",
+      "front": "Solve and describe on a number line: −1 ≤ x < 3 (for x an integer).",
+      "back": "This is a compound inequality: x is greater-than-or-equal-to −1 AND less than 3.\nClosed circle at −1 (included), open circle at 3 (excluded), shade between them.\nIf x is an INTEGER, the solutions are: −1, 0, 1, 2.",
+      "tags": [
+        "inequalities",
+        "number-line"
+      ],
+      "difficulty": "medium",
+      "source": "Inequalities - CAPS_solving-and-number-line",
+      "sourceFile": "Inequalities - CAPS_solving-and-number-line.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-fb636bf957",
+      "front": "What is the GOLDEN RULE for solving any equation?",
+      "back": "Whatever you do to one side, you MUST do to the other, to keep the equation balanced.\nGoal: isolate the variable on one side. Use INVERSE operations — undo + with −, × with ÷, etc.\nWork in reverse BODMAS order: deal with +/− terms first, then the ×/÷ coefficient last.",
+      "tags": [
+        "solving-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Equations - CAPS_solving",
+      "sourceFile": "Linear Equations - CAPS_solving.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "37"
+      }
+    },
+    {
+      "id": "algebra-38d7fad65d",
+      "front": "Solve: 3x + 5 = 20.",
+      "back": "Subtract 5 from both sides: 3x = 15.\nDivide both sides by 3: x = 5.\nCheck: 3(5) + 5 = 20. ✓\nUndo the +5 first (inverse −5), then undo the ×3 (inverse ÷3).",
+      "tags": [
+        "solving-equations"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Equations - CAPS_solving",
+      "sourceFile": "Linear Equations - CAPS_solving.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "44"
+      }
+    },
+    {
+      "id": "algebra-13c5e2cb2d",
+      "front": "Solve with brackets: 2(x − 3) = 10.",
+      "back": "Option A — expand: 2x − 6 = 10 → 2x = 16 → x = 8.\nOption B — divide both sides by 2 first: x − 3 = 5 → x = 8.\nEither way x = 8.\nCheck: 2(8 − 3) = 2(5) = 10. ✓",
+      "tags": [
+        "solving-equations",
+        "brackets"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Equations - CAPS_solving",
+      "sourceFile": "Linear Equations - CAPS_solving.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-1c4bd01e2d",
+      "front": "Solve with variable on both sides: 5x − 4 = 2x + 11.",
+      "back": "Collect variables on one side, numbers on the other.\nSubtract 2x from both sides: 3x − 4 = 11.\nAdd 4: 3x = 15.\nDivide by 3: x = 5.\nMove the SMALLER variable term to keep the coefficient positive.",
+      "tags": [
+        "solving-equations",
+        "variable-both-sides"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Equations - CAPS_solving",
+      "sourceFile": "Linear Equations - CAPS_solving.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "44"
+      }
+    },
+    {
+      "id": "algebra-113b18136a",
+      "front": "Solve with fractions: x/2 + x/3 = 5.",
+      "back": "Multiply EVERY term by the LCD (of 2 and 3) = 6 to clear fractions.\n6·(x/2) + 6·(x/3) = 6·5.\n3x + 2x = 30.\n5x = 30 → x = 6.\nMultiplying every term by the LCD removes all denominators in one step.",
+      "tags": [
+        "solving-equations",
+        "fractions",
+        "lcd"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Equations - CAPS_solving",
+      "sourceFile": "Linear Equations - CAPS_solving.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "208"
+      }
+    },
+    {
+      "id": "algebra-c409d830b0",
+      "front": "Solve: (x + 1)/3 = (2x − 1)/5.",
+      "back": "Cross-multiply (or multiply both sides by LCD 15):\n5(x + 1) = 3(2x − 1).\n5x + 5 = 6x − 3.\nGather: 5 + 3 = 6x − 5x → 8 = x.\nAnswer: x = 8.",
+      "tags": [
+        "solving-equations",
+        "fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Equations - CAPS_solving",
+      "sourceFile": "Linear Equations - CAPS_solving.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-917bfa238b",
+      "front": "Solve a literal equation (change the subject): make x the subject of y = mx + c.",
+      "back": "Isolate x using inverse operations.\nSubtract c: y − c = mx.\nDivide by m: (y − c)/m = x.\nAnswer: x = (y − c)/m.\nTreat the other letters just like numbers; the same balancing rules apply.",
+      "tags": [
+        "changing-subject",
+        "literal-equation"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Equations - CAPS_solving",
+      "sourceFile": "Linear Equations - CAPS_solving.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-5758c0e985",
+      "front": "Make r the subject of the formula P = 2(l + r).",
+      "back": "Divide both sides by 2: P/2 = l + r.\nSubtract l: P/2 − l = r.\nAnswer: r = P/2 − l (or r = (P − 2l)/2).\nUndo the operations in reverse: bracket multiplication (×2) first, then the +l.",
+      "tags": [
+        "changing-subject",
+        "literal-equation"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Equations - CAPS_solving",
+      "sourceFile": "Linear Equations - CAPS_solving.yml"
+    },
+    {
+      "id": "algebra-1d9eb4176c",
+      "front": "Multiply a monomial by a polynomial: 2x(3x² − 4x + 5).",
+      "back": "Distribute the monomial to every term; multiply numbers and ADD exponents of like bases.\n2x·3x² = 6x³; 2x·(−4x) = −8x²; 2x·5 = 10x.\nAnswer: 6x³ − 8x² + 10x.\nRecall law of exponents: x·x² = x¹⁺² = x³.",
+      "tags": [
+        "monomial-times-polynomial"
+      ],
+      "difficulty": "medium",
+      "source": "Products - CAPS_multiplying-polynomials",
+      "sourceFile": "Products - CAPS_multiplying-polynomials.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "148"
+      }
+    },
+    {
+      "id": "algebra-3a85d3370a",
+      "front": "Multiply two binomials using FOIL: (x + 3)(x + 5).",
+      "back": "FOIL = First, Outer, Inner, Last.\nFirst: x·x = x². Outer: x·5 = 5x. Inner: 3·x = 3x. Last: 3·5 = 15.\nAdd: x² + 5x + 3x + 15 = x² + 8x + 15.\nFOIL just means each term in the first bracket multiplies each term in the second.",
+      "tags": [
+        "foil",
+        "binomial-product"
+      ],
+      "difficulty": "medium",
+      "source": "Products - CAPS_multiplying-polynomials",
+      "sourceFile": "Products - CAPS_multiplying-polynomials.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "16"
+      }
+    },
+    {
+      "id": "algebra-7d1679caf4",
+      "front": "Expand (2x − 3)(x + 4).",
+      "back": "First: 2x·x = 2x². Outer: 2x·4 = 8x. Inner: −3·x = −3x. Last: −3·4 = −12.\n= 2x² + 8x − 3x − 12 = 2x² + 5x − 12.\nKeep the signs with the terms: −3 stays negative throughout.",
+      "tags": [
+        "foil",
+        "binomial-product"
+      ],
+      "difficulty": "medium",
+      "source": "Products - CAPS_multiplying-polynomials",
+      "sourceFile": "Products - CAPS_multiplying-polynomials.yml"
+    },
+    {
+      "id": "algebra-6c3bef92e1",
+      "front": "Square of a binomial: what is (a + b)²? Expand (x + 4)².",
+      "back": "Rule: (a + b)² = a² + 2ab + b² (square the first, plus twice the product, plus square the last).\n(x + 4)² = x² + 2·x·4 + 4² = x² + 8x + 16.\nBIG pitfall: (x + 4)² is NOT x² + 16. You must include the middle term 2ab = 8x.",
+      "tags": [
+        "square-of-binomial",
+        "perfect-square"
+      ],
+      "difficulty": "medium",
+      "source": "Products - CAPS_multiplying-polynomials",
+      "sourceFile": "Products - CAPS_multiplying-polynomials.yml"
+    },
+    {
+      "id": "algebra-e96b22129d",
+      "front": "Expand (3x − 2)².",
+      "back": "Use (a − b)² = a² − 2ab + b².\na = 3x, b = 2.\na² = 9x²; 2ab = 2·3x·2 = 12x; b² = 4.\n(3x − 2)² = 9x² − 12x + 4.\nThe middle term is negative; the last term (b²) is always positive.",
+      "tags": [
+        "square-of-binomial"
+      ],
+      "difficulty": "medium",
+      "source": "Products - CAPS_multiplying-polynomials",
+      "sourceFile": "Products - CAPS_multiplying-polynomials.yml"
+    },
+    {
+      "id": "algebra-6a7bd28076",
+      "front": "Product of a sum and difference: (a + b)(a − b) = ? Expand (x + 7)(x − 7).",
+      "back": "Rule: (a + b)(a − b) = a² − b² (the middle terms cancel).\n(x + 7)(x − 7) = x² − 49.\nCheck with FOIL: x² − 7x + 7x − 49; the −7x and +7x cancel, leaving x² − 49. This is the 'difference of two squares'.",
+      "tags": [
+        "difference-of-squares"
+      ],
+      "difficulty": "medium",
+      "source": "Products - CAPS_multiplying-polynomials",
+      "sourceFile": "Products - CAPS_multiplying-polynomials.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "16"
+      }
+    },
+    {
+      "id": "algebra-97261608ce",
+      "front": "Expand (2x + 5)(2x − 5).",
+      "back": "This is a sum × difference, so use (a + b)(a − b) = a² − b² with a = 2x, b = 5.\na² = (2x)² = 4x²; b² = 25.\nAnswer: 4x² − 25.\nRemember to square the WHOLE first term: (2x)² = 4x², not 2x².",
+      "tags": [
+        "difference-of-squares"
+      ],
+      "difficulty": "medium",
+      "source": "Products - CAPS_multiplying-polynomials",
+      "sourceFile": "Products - CAPS_multiplying-polynomials.yml"
+    },
+    {
+      "id": "algebra-f2038eec05",
+      "front": "Multiply a binomial by a trinomial: (x + 2)(x² − 3x + 4).",
+      "back": "Multiply each term of the binomial into every term of the trinomial.\nx·(x² − 3x + 4) = x³ − 3x² + 4x.\n2·(x² − 3x + 4) = 2x² − 6x + 8.\nAdd and collect like terms: x³ − 3x² + 2x² + 4x − 6x + 8 = x³ − x² − 2x + 8.",
+      "tags": [
+        "binomial-times-trinomial"
+      ],
+      "difficulty": "medium",
+      "source": "Products - CAPS_multiplying-polynomials",
+      "sourceFile": "Products - CAPS_multiplying-polynomials.yml"
+    },
+    {
+      "id": "algebra-eebc9d9d82",
+      "front": "Expand and simplify: (x + 3)² − (x − 2)(x + 2).",
+      "back": "(x + 3)² = x² + 6x + 9.\n(x − 2)(x + 2) = x² − 4 (difference of squares).\nSubtract: (x² + 6x + 9) − (x² − 4) = x² + 6x + 9 − x² + 4 = 6x + 13.\nWatch the minus in front of the second bracket: −(x² − 4) becomes −x² + 4.",
+      "tags": [
+        "square-of-binomial",
+        "difference-of-squares"
+      ],
+      "difficulty": "medium",
+      "source": "Products - CAPS_multiplying-polynomials",
+      "sourceFile": "Products - CAPS_multiplying-polynomials.yml"
+    },
+    {
+      "id": "algebra-3c98185057",
+      "front": "State the zero-product rule used to solve quadratics by factorising.",
+      "back": "Zero-product rule: if A × B = 0, then A = 0 OR B = 0.\nSo first make one side = 0, factorise the other side into two brackets, then set EACH bracket equal to zero and solve.\nA quadratic usually gives TWO solutions.",
+      "tags": [
+        "zero-product",
+        "quadratic"
+      ],
+      "difficulty": "medium",
+      "source": "Quadratic Equations - CAPS_solve-by-factorising",
+      "sourceFile": "Quadratic Equations - CAPS_solve-by-factorising.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-cce230279b",
+      "front": "Solve: x² + 5x + 6 = 0.",
+      "back": "Factorise: two numbers multiplying to 6, adding to 5 → 2 and 3.\n(x + 2)(x + 3) = 0.\nZero-product: x + 2 = 0 OR x + 3 = 0.\nSo x = −2 OR x = −3.\nBoth are valid solutions.",
+      "tags": [
+        "zero-product",
+        "quadratic",
+        "trinomial"
+      ],
+      "difficulty": "medium",
+      "source": "Quadratic Equations - CAPS_solve-by-factorising",
+      "sourceFile": "Quadratic Equations - CAPS_solve-by-factorising.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-2d8a997cba",
+      "front": "Solve: x² = 4x (do NOT divide by x).",
+      "back": "Move everything to one side: x² − 4x = 0.\nFactorise (common factor x): x(x − 4) = 0.\nx = 0 OR x − 4 = 0 → x = 0 OR x = 4.\nPITFALL: dividing by x loses the solution x = 0. Always factorise instead.",
+      "tags": [
+        "zero-product",
+        "quadratic",
+        "common-factor"
+      ],
+      "difficulty": "medium",
+      "source": "Quadratic Equations - CAPS_solve-by-factorising",
+      "sourceFile": "Quadratic Equations - CAPS_solve-by-factorising.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "148"
+      }
+    },
+    {
+      "id": "algebra-cc0f826025",
+      "front": "Solve: x² − 9 = 0.",
+      "back": "Factorise as a difference of squares: (x + 3)(x − 3) = 0.\nx + 3 = 0 OR x − 3 = 0.\nx = −3 OR x = 3 (often written x = ±3).\nAlternatively x² = 9 → x = ±√9 = ±3.",
+      "tags": [
+        "zero-product",
+        "difference-of-squares"
+      ],
+      "difficulty": "medium",
+      "source": "Quadratic Equations - CAPS_solve-by-factorising",
+      "sourceFile": "Quadratic Equations - CAPS_solve-by-factorising.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-184dd1e665",
+      "front": "Solve: 2x² + 7x + 3 = 0.",
+      "back": "Factorise (a×c = 6, numbers 1 and 6, split middle): 2x² + x + 6x + 3 = 0 → x(2x+1)+3(2x+1)=0 → (2x + 1)(x + 3) = 0.\n2x + 1 = 0 → x = −1/2.\nx + 3 = 0 → x = −3.\nAnswer: x = −1/2 OR x = −3.",
+      "tags": [
+        "zero-product",
+        "ax2-trinomial"
+      ],
+      "difficulty": "medium",
+      "source": "Quadratic Equations - CAPS_solve-by-factorising",
+      "sourceFile": "Quadratic Equations - CAPS_solve-by-factorising.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-03c2cd1e29",
+      "front": "Solve: x² + 2x = 15 (rearrange first).",
+      "back": "Make one side zero: x² + 2x − 15 = 0.\nFactorise: numbers multiplying to −15, adding to 2 → 5 and −3.\n(x + 5)(x − 3) = 0.\nx = −5 OR x = 3.\nYou must move the 15 across BEFORE factorising — the zero-product rule only works against 0.",
+      "tags": [
+        "zero-product",
+        "quadratic"
+      ],
+      "difficulty": "medium",
+      "source": "Quadratic Equations - CAPS_solve-by-factorising",
+      "sourceFile": "Quadratic Equations - CAPS_solve-by-factorising.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "274"
+      }
+    },
+    {
+      "id": "algebra-cc08ec5898",
+      "front": "Simplify by collecting like terms: 5x + 3y − 2x + 7y.",
+      "back": "Group like terms: (5x − 2x) + (3y + 7y).\nx-terms: 5x − 2x = 3x.\ny-terms: 3y + 7y = 10y.\nAnswer: 3x + 10y.\nMethod: add/subtract the COEFFICIENTS of like terms; the variable part stays the same. Never combine unlike terms (3x and 10y can't be merged).",
+      "tags": [
+        "like-terms"
+      ],
+      "difficulty": "medium",
+      "source": "Simplifying - CAPS_like-terms-and-brackets",
+      "sourceFile": "Simplifying - CAPS_like-terms-and-brackets.yml"
+    },
+    {
+      "id": "algebra-15ad2cea55",
+      "front": "Simplify: 4a² − 7a + 2 + a² + 3a − 5.",
+      "back": "Collect each type:\na²-terms: 4a² + a² = 5a².\na-terms: −7a + 3a = −4a.\nconstants: 2 − 5 = −3.\nAnswer: 5a² − 4a − 3.\nWrite the result in descending order of powers. Remember a² and a are UNLIKE — keep them separate.",
+      "tags": [
+        "like-terms"
+      ],
+      "difficulty": "medium",
+      "source": "Simplifying - CAPS_like-terms-and-brackets",
+      "sourceFile": "Simplifying - CAPS_like-terms-and-brackets.yml"
+    },
+    {
+      "id": "algebra-fd8d6ad99b",
+      "front": "State the distributive law and use it: 3(2x + 5).",
+      "back": "Distributive law: a(b + c) = ab + ac. Multiply the outside factor by EVERY term inside.\n3(2x + 5) = 3·2x + 3·5 = 6x + 15.\nCommon error: only multiplying the first term (writing 6x + 5). The 3 must reach the 5 too.",
+      "tags": [
+        "distributive-law"
+      ],
+      "difficulty": "medium",
+      "source": "Simplifying - CAPS_like-terms-and-brackets",
+      "sourceFile": "Simplifying - CAPS_like-terms-and-brackets.yml"
+    },
+    {
+      "id": "algebra-d947c5be01",
+      "front": "Remove brackets and simplify: −(x − 4).",
+      "back": "A minus in front of a bracket means multiply every inside term by −1, so EVERY sign flips.\n−(x − 4) = −x + 4.\nPitfall: forgetting to change −4 into +4. Think of it as −1(x − 4) = −1·x − 1·(−4) = −x + 4.",
+      "tags": [
+        "distributive-law",
+        "minus-bracket"
+      ],
+      "difficulty": "medium",
+      "source": "Simplifying - CAPS_like-terms-and-brackets",
+      "sourceFile": "Simplifying - CAPS_like-terms-and-brackets.yml"
+    },
+    {
+      "id": "algebra-9b987e716f",
+      "front": "Simplify: 2(3x − 1) − 4(x + 2).",
+      "back": "Distribute each bracket first (watch the −4):\n2(3x − 1) = 6x − 2.\n−4(x + 2) = −4x − 8.\nNow add: 6x − 2 − 4x − 8 = (6x − 4x) + (−2 − 8) = 2x − 10.\nKey pitfall: the −4 makes BOTH +2 and x negative inside the second bracket.",
+      "tags": [
+        "distributive-law",
+        "like-terms"
+      ],
+      "difficulty": "medium",
+      "source": "Simplifying - CAPS_like-terms-and-brackets",
+      "sourceFile": "Simplifying - CAPS_like-terms-and-brackets.yml"
+    },
+    {
+      "id": "algebra-19977f6ec1",
+      "front": "Simplify: 5 − 2(x − 3) + x.",
+      "back": "Do the bracket before combining (BODMAS): −2(x − 3) = −2x + 6.\nExpression becomes: 5 − 2x + 6 + x.\nCollect: x-terms −2x + x = −x; constants 5 + 6 = 11.\nAnswer: −x + 11 (or 11 − x).\nDo NOT do 5 − 2 first — the multiplication of the bracket comes before the subtraction.",
+      "tags": [
+        "distributive-law",
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Simplifying - CAPS_like-terms-and-brackets",
+      "sourceFile": "Simplifying - CAPS_like-terms-and-brackets.yml"
+    },
+    {
+      "id": "algebra-a24ef874a8",
+      "front": "Simplify: x(x + 3) − (x² − 2x).",
+      "back": "Expand each part:\nx(x + 3) = x² + 3x.\n−(x² − 2x) = −x² + 2x (all signs flip).\nCombine: x² + 3x − x² + 2x = (x² − x²) + (3x + 2x) = 0 + 5x = 5x.\nAnswer: 5x. The x² terms cancel.",
+      "tags": [
+        "distributive-law",
+        "like-terms"
+      ],
+      "difficulty": "medium",
+      "source": "Simplifying - CAPS_like-terms-and-brackets",
+      "sourceFile": "Simplifying - CAPS_like-terms-and-brackets.yml"
+    },
+    {
+      "id": "algebra-1394bf18ca",
+      "front": "What is a 'term' in an algebraic expression?",
+      "back": "A term is a single number, variable, or product/quotient of numbers and variables, separated from other terms by + or − signs.\nIn 3x² − 5x + 7 there are THREE terms: 3x², −5x and 7.\nKey: the + and − signs are what split an expression into terms (each sign belongs to the term that follows it).",
+      "tags": [
+        "term"
+      ],
+      "difficulty": "medium",
+      "source": "Vocabulary - CAPS_algebraic-language",
+      "sourceFile": "Vocabulary - CAPS_algebraic-language.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "44"
+      }
+    },
+    {
+      "id": "algebra-26145e2dbf",
+      "front": "Define: variable, constant and coefficient. Identify each in 7x − 4.",
+      "back": "Variable: a letter standing for an unknown value (x).\nConstant: a term that is just a number, with no variable (−4).\nCoefficient: the number multiplying a variable (the 7 in 7x).\nIn 7x − 4: variable = x, coefficient = 7, constant = −4.\nNote: x alone has a coefficient of 1; −x has coefficient −1.",
+      "tags": [
+        "variable",
+        "coefficient",
+        "constant"
+      ],
+      "difficulty": "medium",
+      "source": "Vocabulary - CAPS_algebraic-language",
+      "sourceFile": "Vocabulary - CAPS_algebraic-language.yml"
+    },
+    {
+      "id": "algebra-912c6abab9",
+      "front": "What are 'like terms' and why do they matter?",
+      "back": "Like terms have EXACTLY the same variable(s) raised to EXACTLY the same power(s). Only the coefficient may differ.\nLike: 3x and −5x; 2xy and 7xy; 4x² and x².\nUnlike: 3x and 3x² (different powers); 2x and 2y (different variables).\nThey matter because ONLY like terms can be added or subtracted (combined) when simplifying.",
+      "tags": [
+        "like-terms"
+      ],
+      "difficulty": "medium",
+      "source": "Vocabulary - CAPS_algebraic-language",
+      "sourceFile": "Vocabulary - CAPS_algebraic-language.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "22"
+      }
+    },
+    {
+      "id": "algebra-03ee4a14ec",
+      "front": "Classify by number of terms: monomial, binomial, trinomial. Give an example of each.",
+      "back": "Monomial = 1 term, e.g. 5x²y.\nBinomial = 2 terms, e.g. 3x − 2.\nTrinomial = 3 terms, e.g. x² + 5x + 6.\nA general expression with many terms is a 'polynomial'. Count the terms (the chunks split by + and −) to classify.",
+      "tags": [
+        "monomial-binomial-trinomial"
+      ],
+      "difficulty": "medium",
+      "source": "Vocabulary - CAPS_algebraic-language",
+      "sourceFile": "Vocabulary - CAPS_algebraic-language.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "148"
+      }
+    },
+    {
+      "id": "algebra-fb9d421416",
+      "front": "What is the 'degree' of an expression? Find the degree of 4x³ − 2x²y² + x.",
+      "back": "The degree is the HIGHEST total exponent found in any single term.\nFor a single variable, it's the largest power.\nFor a term with several variables, ADD their exponents.\n4x³ → degree 3; −2x²y² → 2+2 = 4; x → 1.\nHighest is 4, so the expression has degree 4.",
+      "tags": [
+        "degree"
+      ],
+      "difficulty": "medium",
+      "source": "Vocabulary - CAPS_algebraic-language",
+      "sourceFile": "Vocabulary - CAPS_algebraic-language.yml"
+    },
+    {
+      "id": "algebra-9206fa1574",
+      "front": "How many terms, and what is the coefficient of x, in 9 − x + 2x²?",
+      "back": "Three terms: 9, −x and 2x².\nThe coefficient of x is −1 (because −x means −1×x). The sign always travels WITH the coefficient.\nThe constant term is 9 and the coefficient of x² is 2.",
+      "tags": [
+        "term",
+        "coefficient"
+      ],
+      "difficulty": "medium",
+      "source": "Vocabulary - CAPS_algebraic-language",
+      "sourceFile": "Vocabulary - CAPS_algebraic-language.yml"
+    },
+    {
+      "id": "algebra-1776398dc4",
+      "front": "What are the steps to solve an algebra word problem?",
+      "back": "1. Let a variable (e.g. x) represent the UNKNOWN you want.\n2. Write other quantities in terms of x.\n3. Translate the words into an EQUATION.\n4. Solve the equation.\n5. Answer the question in words and CHECK it makes sense.\nKeywords: 'sum'→+, 'difference'→−, 'product'→×, 'is/equals'→=.",
+      "tags": [
+        "word-problems"
+      ],
+      "difficulty": "medium",
+      "source": "Word Problems - CAPS_setting-up-equations",
+      "sourceFile": "Word Problems - CAPS_setting-up-equations.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "27"
+      }
+    },
+    {
+      "id": "algebra-b09ef86285",
+      "front": "Word problem: The sum of three consecutive numbers is 72. Find them.",
+      "back": "Let the first number = x. Consecutive numbers go up by 1: x, x+1, x+2.\nEquation: x + (x+1) + (x+2) = 72.\n3x + 3 = 72 → 3x = 69 → x = 23.\nNumbers: 23, 24, 25.\nCheck: 23+24+25 = 72. ✓",
+      "tags": [
+        "word-problems",
+        "consecutive-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Word Problems - CAPS_setting-up-equations",
+      "sourceFile": "Word Problems - CAPS_setting-up-equations.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "27"
+      }
+    },
+    {
+      "id": "algebra-10e611d24b",
+      "front": "Word problem (ages): Sam is 4 years older than Thabo. Together they are 30. How old is each?",
+      "back": "Let Thabo's age = x. Then Sam = x + 4.\nEquation: x + (x + 4) = 30.\n2x + 4 = 30 → 2x = 26 → x = 13.\nThabo is 13, Sam is 13 + 4 = 17.\nCheck: 13 + 17 = 30. ✓",
+      "tags": [
+        "word-problems",
+        "ages"
+      ],
+      "difficulty": "medium",
+      "source": "Word Problems - CAPS_setting-up-equations",
+      "sourceFile": "Word Problems - CAPS_setting-up-equations.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "27"
+      }
+    },
+    {
+      "id": "algebra-2b3e397c08",
+      "front": "Word problem (perimeter): A rectangle is 3 cm longer than it is wide. Its perimeter is 26 cm. Find its dimensions.",
+      "back": "Let width = x. Length = x + 3.\nPerimeter = 2(length + width): 2(x + 3 + x) = 26.\n2(2x + 3) = 26 → 4x + 6 = 26 → 4x = 20 → x = 5.\nWidth = 5 cm, length = 8 cm.\nCheck: 2(5 + 8) = 26. ✓",
+      "tags": [
+        "word-problems",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Word Problems - CAPS_setting-up-equations",
+      "sourceFile": "Word Problems - CAPS_setting-up-equations.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "27"
+      }
+    },
+    {
+      "id": "algebra-ab4ebf9fe9",
+      "front": "Word problem: I think of a number, multiply it by 5 and subtract 7; the result is 28. Find the number.",
+      "back": "Let the number = x.\nTranslate: 5x − 7 = 28.\nAdd 7: 5x = 35.\nDivide by 5: x = 7.\nThe number is 7.\nCheck: 5(7) − 7 = 35 − 7 = 28. ✓",
+      "tags": [
+        "word-problems"
+      ],
+      "difficulty": "medium",
+      "source": "Word Problems - CAPS_setting-up-equations",
+      "sourceFile": "Word Problems - CAPS_setting-up-equations.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "27"
+      }
+    },
+    {
+      "id": "algebra-5fdab3af49",
+      "front": "Word problem (quadratic): The product of two consecutive positive integers is 56. Find them.",
+      "back": "Let the integers be x and x+1.\nEquation: x(x + 1) = 56 → x² + x − 56 = 0.\nFactorise: (x + 8)(x − 7) = 0 → x = −8 or x = 7.\nIntegers must be positive, so x = 7.\nThe numbers are 7 and 8. Check: 7×8 = 56. ✓",
+      "tags": [
+        "word-problems",
+        "consecutive-numbers",
+        "quadratic"
+      ],
+      "difficulty": "medium",
+      "source": "Word Problems - CAPS_setting-up-equations",
+      "sourceFile": "Word Problems - CAPS_setting-up-equations.yml",
+      "requires": {
+        "subject": "algebra",
+        "sectionLine": "27"
+      }
     }
   ],
   "triage": null,
   "guide": {
-    "chars": 3139,
-    "lines": 52,
+    "chars": 23653,
+    "lines": 346,
     "sections": [
       {
         "level": 1,
@@ -475,10 +1551,70 @@
         "title": "Setting up equations from words (Q4.2, Q4.3)",
         "line": 44,
         "body": "- Jellybeans: (x+9) + (2x−3) = 2(x+8) → 3x+6 = 2x+16 → x = 10; orange = x+9 = 19.\n- Hockey ratio won:lost = 5:1, lost = x+4 → won = 5(x+4) = 5x+20. Total 10x: (5x+20)+(x+4)=10x → x = 6, total = 60.\n\n**Pitfall throughout:** keep brackets when subtracting whole expressions so every sign flips, and always substitute back into the quantity the question actually asks for."
+      },
+      {
+        "level": 3,
+        "title": "Algebraic Vocabulary",
+        "line": 51,
+        "body": "Algebra has its own language, and getting the words right makes every later topic easier. Learn these carefully.\n\n**Term.** A term is a single number, variable, or a product/quotient of numbers and variables. Terms are separated from one another by + and − signs, and each sign belongs to the term that follows it. In 3x² − 5x + 7 there are THREE terms: 3x², −5x and 7.\n\n**Variable, constant and coefficient.**\n- A *variable* is a letter standing for an unknown value (such as x).\n- A *constant* is a term that is just a number, with no variable (such as −4).\n- A *coefficient* is the number multiplying a variable (the 7 in 7x).\n\nIn 7x − 4: the variable is x, the coefficient is 7, and the constant is −4. Note that x on its own has a coefficient of 1, and −x has a coefficient of −1. The sign always travels with the coefficient.\n\n**Like terms.** Like terms have exactly the same variable(s) raised to exactly the same power(s); only the coefficient may differ. So 3x and −5x are like, and 2xy and 7xy are like, but 3x and 3x² are unlike (different powers) and 2x and 2y are unlike (different variables). This matters because ONLY like terms can be added or subtracted when simplifying.\n\n**Classifying by number of terms.**\n- Monomial = 1 term, e.g. 5x²y\n- Binomial = 2 terms, e.g. 3x − 2\n- Trinomial = 3 terms, e.g. x² + 5x + 6\n\nAny expression made of such terms is called a *polynomial*. Just count the chunks split by + and − to classify it.\n\n**Degree.** The degree of an expression is the highest total exponent found in any single term. For a single variable it is the largest power; for a term with several variables, add their exponents.\n\n*Worked example.* Find the degree of 4x³ − 2x²y² + x. Here 4x³ has degree 3; −2x²y² has degree 2 + 2 = 4; and x has degree 1. The highest is 4, so the expression has degree 4.\n\n*Worked example.* In 9 − x + 2x² there are three terms (9, −x and 2x²). The constant term is 9, the coefficient of x is −1 (because −x means −1×x), and the coefficient of x² is 2.\n\n**Common pitfalls.** Forgetting that the sign in front of a term belongs to it; treating −x as if its coefficient were +1; and confusing \"like terms\" (same variables AND powers) with terms that merely look similar."
+      },
+      {
+        "level": 3,
+        "title": "Simplifying Expressions",
+        "line": 82,
+        "body": "Simplifying means writing an expression in its shortest equivalent form by collecting like terms and removing brackets.\n\n**Collecting like terms.** Add or subtract the COEFFICIENTS of like terms; the variable part stays the same. Never combine unlike terms.\n\n*Worked example.* Simplify 5x + 3y − 2x + 7y. Group like terms: (5x − 2x) + (3y + 7y) = 3x + 10y. The 3x and 10y cannot be merged because x and y are different variables.\n\n*Worked example.* Simplify 4a² − 7a + 2 + a² + 3a − 5. Collect each type: a²-terms 4a² + a² = 5a²; a-terms −7a + 3a = −4a; constants 2 − 5 = −3. Answer: 5a² − 4a − 3. Write results in descending order of powers, and remember a² and a are UNLIKE, so keep them separate.\n\n**The distributive law.** a(b + c) = ab + ac. Multiply the outside factor by EVERY term inside.\n\n*Worked example.* 3(2x + 5) = 3·2x + 3·5 = 6x + 15. A common error is only multiplying the first term and writing 6x + 5 — the 3 must reach the 5 too.\n\n**A minus sign in front of a bracket** means multiply every inside term by −1, so EVERY sign flips. For example, −(x − 4) = −x + 4. Think of it as −1(x − 4) = −1·x − 1·(−4) = −x + 4.\n\n**Order of operations.** Expand brackets (the multiplication) BEFORE combining like terms — do not subtract numbers that sit outside a bracket first.\n\n*Worked example.* Simplify 2(3x − 1) − 4(x + 2). Distribute each bracket, watching the −4: 2(3x − 1) = 6x − 2 and −4(x + 2) = −4x − 8. Now combine: 6x − 2 − 4x − 8 = (6x − 4x) + (−2 − 8) = 2x − 10. The −4 makes BOTH terms of the second bracket negative.\n\n*Worked example.* Simplify 5 − 2(x − 3) + x. Do the bracket first: −2(x − 3) = −2x + 6, giving 5 − 2x + 6 + x. Collect: −2x + x = −x and 5 + 6 = 11, so the answer is −x + 11 (or 11 − x). Do NOT do 5 − 2 first.\n\n*Worked example.* Simplify x(x + 3) − (x² − 2x). Expand: x(x + 3) = x² + 3x and −(x² − 2x) = −x² + 2x. Combine: x² + 3x − x² + 2x = 5x. The x² terms cancel.\n\n**Common pitfalls.** Forgetting to distribute to every term; mishandling the sign when a minus precedes a bracket; and combining unlike terms such as 3x and 10y."
+      },
+      {
+        "level": 3,
+        "title": "Products (Expanding)",
+        "line": 109,
+        "body": "Expanding means multiplying out brackets. The key idea is that each term in one bracket multiplies every term in the other, and when you multiply the same base you ADD the exponents (x·x² = x¹⁺² = x³).\n\n**Monomial × polynomial.** Distribute the monomial to every term.\n\n*Worked example.* 2x(3x² − 4x + 5) = 2x·3x² + 2x·(−4x) + 2x·5 = 6x³ − 8x² + 10x.\n\n**Binomial × binomial (FOIL).** FOIL stands for First, Outer, Inner, Last — it simply means each term in the first bracket multiplies each term in the second.\n\n*Worked example.* (x + 3)(x + 5): First x·x = x²; Outer x·5 = 5x; Inner 3·x = 3x; Last 3·5 = 15. Add: x² + 8x + 15.\n\n*Worked example.* (2x − 3)(x + 4) = 2x² + 8x − 3x − 12 = 2x² + 5x − 12. Keep signs with their terms throughout.\n\n**Special product — square of a binomial.**\n- (a + b)² = a² + 2ab + b²\n- (a − b)² = a² − 2ab + b²\n\nSquare the first, plus (or minus) twice the product, plus the square of the last. The last term b² is always positive.\n\n*Worked example.* (x + 4)² = x² + 2·x·4 + 4² = x² + 8x + 16. Big pitfall: this is NOT x² + 16 — you must include the middle term 8x.\n\n*Worked example.* (3x − 2)² with a = 3x, b = 2: a² = 9x², 2ab = 12x, b² = 4, so (3x − 2)² = 9x² − 12x + 4.\n\n**Special product — sum × difference (difference of two squares).** (a + b)(a − b) = a² − b². The two middle terms cancel.\n\n*Worked example.* (x + 7)(x − 7) = x² − 49. Checking with FOIL gives x² − 7x + 7x − 49, and the −7x and +7x cancel.\n\n*Worked example.* (2x + 5)(2x − 5) = (2x)² − 5² = 4x² − 25. Remember to square the WHOLE first term: (2x)² = 4x², not 2x².\n\n**Binomial × trinomial.** Multiply each term of the binomial into every term of the trinomial, then collect like terms.\n\n*Worked example.* (x + 2)(x² − 3x + 4): x·(x² − 3x + 4) = x³ − 3x² + 4x and 2·(x² − 3x + 4) = 2x² − 6x + 8. Combine: x³ − x² − 2x + 8.\n\n*Worked example (mixed).* (x + 3)² − (x − 2)(x + 2) = (x² + 6x + 9) − (x² − 4) = x² + 6x + 9 − x² + 4 = 6x + 13. Watch the minus in front of the second bracket: −(x² − 4) becomes −x² + 4.\n\n**Common pitfalls.** Writing (a + b)² as a² + b² (forgetting 2ab); failing to square coefficients; and dropping a sign when a bracket is subtracted."
+      },
+      {
+        "level": 3,
+        "title": "Dividing a Polynomial by a Monomial",
+        "line": 148,
+        "body": "To divide a polynomial by a single-term divisor (a monomial), divide EACH term of the polynomial by the monomial separately. When dividing the same base, subtract the exponents (x² ÷ x¹ = x¹).\n\n*Worked example.* (6x² + 9x) ÷ 3x. Take each term: 6x² ÷ 3x = 2x (6÷3 = 2, x²÷x = x) and 9x ÷ 3x = 3. Answer: 2x + 3.\n\n*Worked example.* (12x³ − 8x² + 4x) ÷ 4x. Split over each term: 12x³ ÷ 4x = 3x²; −8x² ÷ 4x = −2x; 4x ÷ 4x = 1. Answer: 3x² − 2x + 1. Note the last term divides to 1, not 0 — anything divided by itself is 1.\n\n*Worked example (two variables).* (15a²b − 10ab²) ÷ 5ab. Divide each term by 5ab: 15a²b ÷ 5ab = 3a (15÷5 = 3, a²÷a = a, b÷b = 1) and −10ab² ÷ 5ab = −2b. Answer: 3a − 2b. Matching single powers cancel to 1.\n\n**Fraction-bar form.** A fraction bar means the same as ÷, so you can split the same way.\n\n*Worked example.* (8x³ + 4x²)/(2x²): 8x³/2x² = 4x and 4x²/2x² = 2, giving 4x + 2.\n\n**Common pitfalls.** Dropping a term that divides to 1 (writing it as 0); forgetting to carry the sign of each term; and — most importantly — you may only split a sum or difference over a SINGLE-term denominator. You may NOT split over a denominator that itself has two terms."
+      },
+      {
+        "level": 3,
+        "title": "Factorisation",
+        "line": 165,
+        "body": "Factorising means writing an expression as a PRODUCT of factors — it is the reverse of expanding. The GOLDEN RULE: always take out a common factor FIRST, then check whether what remains can be factorised further. \"Factorise fully\" means keep going until no factor can be broken down any more.\n\n**Type 1 — Common factor.** Find the highest common factor (HCF) of the numbers and the lowest power of each common variable, then divide each term by it.\n\n*Worked example.* 6x² + 9x. HCF of 6 and 9 is 3; the common variable (lowest power) is x; so the common factor is 3x. Dividing: 6x²÷3x = 2x and 9x÷3x = 3. Answer: 3x(2x + 3). Check by expanding: 3x(2x + 3) = 6x² + 9x. ✓\n\n*Worked example.* 12a²b − 18ab² + 6ab. HCF of 12, 18, 6 is 6; common variables a and b; common factor 6ab. Dividing gives 2a, −3b and 1. Answer: 6ab(2a − 3b + 1). Don't drop the +1.\n\n**Type 2 — Difference of two squares.** a² − b² = (a + b)(a − b). It works ONLY for a difference (minus) of two perfect squares. A sum of squares such as x² + 25 does NOT factorise.\n\n*Worked example.* x² − 25: here a = x, b = 5, so (x + 5)(x − 5).\n\n*Worked example.* 9x² − 16y²: √(9x²) = 3x and √(16y²) = 4y, so (3x + 4y)(3x − 4y).\n\n*Worked example (fully).* 2x² − 50. Common factor 2 first: 2(x² − 25). The bracket is a difference of squares: 2(x + 5)(x − 5). Pulling out the 2 revealed a difference of squares that was hidden before.\n\n**Type 3 — Trinomial x² + bx + c.** Find two numbers that MULTIPLY to c and ADD to b.\n\n*Worked example.* x² + 7x + 12: pairs of 12 are 1×12, 2×6, 3×4; 3 + 4 = 7, so (x + 3)(x + 4).\n\n*Worked example (signs).* x² − 5x + 6: product +6, sum −5, so both numbers are negative: −2 and −3, giving (x − 2)(x − 3).\n\n*Worked example (mixed signs).* x² + 2x − 15: product −15 (so one + and one −), sum +2; the numbers are +5 and −3, giving (x + 5)(x − 3).\n\n**Type 3b — Trinomial ax² + bx + c.** Multiply a×c, find two numbers that multiply to that product and add to b, split the middle term, then group.\n\n*Worked example.* 2x² + 7x + 3: a×c = 6; two numbers multiply to 6 and add to 7 → 1 and 6. Split: 2x² + x + 6x + 3. Group: x(2x + 1) + 3(2x + 1) = (2x + 1)(x + 3).\n\n*Worked example.* 3x² − 10x − 8: a×c = −24; numbers −12 and +2. Split: 3x² − 12x + 2x − 8. Group: 3x(x − 4) + 2(x − 4) = (x − 4)(3x + 2).\n\n**Type 4 — Grouping (four terms).** Group into pairs, take a common factor from each pair, and arrange so both pairs leave the SAME bracket.\n\n*Worked example.* ax + ay + bx + by = a(x + y) + b(x + y) = (x + y)(a + b).\n\n*Worked example (signs).* x³ + 2x² − 5x − 10 = (x³ + 2x²) + (−5x − 10) = x²(x + 2) − 5(x + 2) = (x + 2)(x² − 5). Factoring −5 out of (−5x − 10) leaves (x + 2), matching the first bracket.\n\n*Worked example (fully).* 3x³ − 27x. Common factor 3x: 3x(x² − 9). The bracket is a difference of squares: 3x(x + 3)(x − 3).\n\n**Common pitfalls.** Trying another method before removing the common factor; trying to factorise a SUM of squares; sign errors in trinomials and grouping; and stopping before the expression is factorised fully."
+      },
+      {
+        "level": 3,
+        "title": "Algebraic Fractions",
+        "line": 208,
+        "body": "An algebraic fraction is a fraction with variables in it. The golden rule for simplifying is: you may only cancel FACTORS (things multiplied), never individual terms that are added or subtracted.\n\n**Simplifying.** Cancel common factors from top and bottom.\n\n*Worked example.* (6x²)/(9x): numbers 6/9 = 2/3, variables x²/x = x, so the answer is 2x/3.\n\n**Factorise first, then cancel.** When the top or bottom is a polynomial, factorise before cancelling.\n\n*Worked example.* (x² − 9)/(x + 3). Factorise the top (difference of squares): (x + 3)(x − 3). The fraction is [(x + 3)(x − 3)]/(x + 3); cancel (x + 3) to get x − 3. Never cancel the x² or the 9 individually.\n\n*Worked example.* (x² + 5x + 6)/(x² − 4). Top: (x + 2)(x + 3); bottom: (x + 2)(x − 2). Cancel (x + 2) to get (x + 3)/(x − 2).\n\n**Multiplying.** Multiply straight across, but cancel common factors first (you may cancel diagonally across a multiplication).\n\n*Worked example.* (2x/3) × (9/(4x)): cancel 2x/4x = 1/2 and 9/3 = 3, leaving (1/2)×3 = 3/2.\n\n**Dividing.** Dividing by a fraction means multiplying by its RECIPROCAL — keep, change, flip.\n\n*Worked example.* (x/4) ÷ (x²/8) = (x/4) × (8/x²) = 8x/(4x²) = 2/x.\n\n**Adding and subtracting — same denominator.** Just add or subtract the numerators and keep the denominator. Never add the denominators.\n\n*Worked example.* (3x)/5 + (2x)/5 = (3x + 2x)/5 = 5x/5 = x.\n\n**Adding and subtracting — different denominators.** Find the lowest common denominator (LCD), rewrite each fraction over it, then combine the numerators.\n\n*Worked example.* x/2 + x/3. LCD is 6: x/2 = 3x/6 and x/3 = 2x/6, so 3x/6 + 2x/6 = 5x/6.\n\n*Worked example (subtraction).* (2x + 1)/3 − (x − 2)/4. LCD is 12: (2x+1)/3 = (8x+4)/12 and (x−2)/4 = (3x−6)/12. Subtract numerators, keeping the bracket: (8x+4) − (3x−6) = 8x + 4 − 3x + 6 = 5x + 10. Answer: (5x + 10)/12. The minus must flip BOTH terms of (3x − 6).\n\n*Worked example (variable denominators).* 1/x + 2/(3x). LCD is 3x: 1/x = 3/(3x), so 3/(3x) + 2/(3x) = 5/(3x).\n\n**Common pitfalls.** Cancelling terms instead of factors; cancelling before factorising; adding denominators; and forgetting that a subtraction sign in front of a fraction flips every term in its numerator."
+      },
+      {
+        "level": 3,
+        "title": "Linear Equations",
+        "line": 245,
+        "body": "A linear equation has a variable to the power 1 only. The GOLDEN RULE for solving any equation: whatever you do to one side, you must do to the other, to keep it balanced. Your goal is to isolate the variable using INVERSE operations (undo + with −, × with ÷). Work in reverse BODMAS order — deal with +/− terms first, then the ×/÷ coefficient last.\n\n*Worked example.* 3x + 5 = 20. Subtract 5 from both sides: 3x = 15. Divide both sides by 3: x = 5. Check: 3(5) + 5 = 20. ✓\n\n**Brackets.** Either expand first or divide both sides by the outside factor.\n\n*Worked example.* 2(x − 3) = 10. Option A — expand: 2x − 6 = 10 → 2x = 16 → x = 8. Option B — divide by 2 first: x − 3 = 5 → x = 8. Check: 2(8 − 3) = 10. ✓\n\n**Variable on both sides.** Collect variables on one side and numbers on the other. Move the smaller variable term so the coefficient stays positive.\n\n*Worked example.* 5x − 4 = 2x + 11. Subtract 2x: 3x − 4 = 11. Add 4: 3x = 15. Divide by 3: x = 5.\n\n**Fractions.** Multiply EVERY term by the LCD to clear denominators in one step.\n\n*Worked example.* x/2 + x/3 = 5. LCD of 2 and 3 is 6: 6·(x/2) + 6·(x/3) = 6·5 → 3x + 2x = 30 → 5x = 30 → x = 6.\n\n*Worked example.* (x + 1)/3 = (2x − 1)/5. Cross-multiply (or use LCD 15): 5(x + 1) = 3(2x − 1) → 5x + 5 = 6x − 3 → 5 + 3 = 6x − 5x → x = 8.\n\n**Literal equations (changing the subject).** Treat the other letters just like numbers and use the same balancing rules.\n\n*Worked example.* Make x the subject of y = mx + c. Subtract c: y − c = mx. Divide by m: x = (y − c)/m.\n\n*Worked example.* Make r the subject of P = 2(l + r). Divide by 2: P/2 = l + r. Subtract l: r = P/2 − l (or (P − 2l)/2).\n\n**Common pitfalls.** Doing an operation to only one side; tackling the coefficient before the +/− terms; sign errors when moving terms across; and, with fractions, multiplying only some terms by the LCD instead of every term."
+      },
+      {
+        "level": 3,
+        "title": "Quadratic Equations (Solve by Factorising)",
+        "line": 274,
+        "body": "A quadratic equation contains an x² term. In Grade 9 we solve them by factorising and using the ZERO-PRODUCT RULE: if A × B = 0, then A = 0 OR B = 0. So first make one side equal to 0, factorise the other side into brackets, then set EACH bracket equal to zero and solve. A quadratic usually gives TWO solutions.\n\n*Worked example.* x² + 5x + 6 = 0. Factorise (two numbers multiplying to 6, adding to 5 → 2 and 3): (x + 2)(x + 3) = 0. So x + 2 = 0 or x + 3 = 0, giving x = −2 or x = −3.\n\n**Common factor (do NOT divide by x).**\n\n*Worked example.* x² = 4x. Move everything to one side: x² − 4x = 0. Factorise: x(x − 4) = 0, so x = 0 or x = 4. Pitfall: dividing both sides by x loses the solution x = 0 — always factorise instead.\n\n**Difference of squares.**\n\n*Worked example.* x² − 9 = 0. Factorise: (x + 3)(x − 3) = 0, so x = −3 or x = 3 (often written x = ±3). Alternatively x² = 9 → x = ±√9 = ±3.\n\n**Harder trinomials (ax² + bx + c).**\n\n*Worked example.* 2x² + 7x + 3 = 0. Factorise (a×c = 6, numbers 1 and 6, split the middle): 2x² + x + 6x + 3 = 0 → x(2x + 1) + 3(2x + 1) = 0 → (2x + 1)(x + 3) = 0. So x = −1/2 or x = −3.\n\n**Rearrange first.** The zero-product rule only works against 0, so move everything across before factorising.\n\n*Worked example.* x² + 2x = 15. Make one side zero: x² + 2x − 15 = 0. Factorise (numbers multiplying to −15, adding to 2 → 5 and −3): (x + 5)(x − 3) = 0, so x = −5 or x = 3.\n\n**Common pitfalls.** Factorising before setting the equation equal to 0; dividing by x and losing a solution; and giving only one answer when a quadratic normally has two."
+      },
+      {
+        "level": 3,
+        "title": "Inequalities",
+        "line": 299,
+        "body": "Solving a linear inequality is LIKE solving an equation: use inverse operations and keep both sides balanced. There are two differences. First, the answer is a RANGE of values (such as x > 3), not a single number. Second, there is one special rule: whenever you MULTIPLY or DIVIDE both sides by a NEGATIVE number, you must FLIP the inequality sign (< becomes >, ≤ becomes ≥, and so on).\n\n*Worked example (no flip).* 2x + 3 < 11. Subtract 3: 2x < 8. Divide by 2 (positive, so the sign stays): x < 4. The solution is all values less than 4.\n\n*Worked example (flip).* −3x ≥ 12. Divide both sides by −3 and, because it is negative, FLIP: x ≤ −4. Check with x = −5: −3(−5) = 15 ≥ 12 ✓ and −5 ≤ −4 ✓.\n\n*Worked example (flip happens at the right step).* 5 − 2x ≤ 13. Subtract 5: −2x ≤ 8. Divide by −2 and FLIP: x ≥ −4. The flip happens at the divide-by-negative step, not at the subtraction step.\n\n**Number lines.** Draw the line and mark the boundary value.\n- Strict < or > → OPEN (unfilled) circle; the boundary is NOT included.\n- ≤ or ≥ → CLOSED (filled) circle; the boundary IS included.\n\nThen shade toward the values that satisfy the inequality. For example, x > 2 has an open circle at 2 with shading to the right, while x ≥ 2 has a closed circle at 2 with shading to the right.\n\n**Compound inequalities.** An inequality like −1 ≤ x < 3 means x ≥ −1 AND x < 3 at the same time. Draw a closed circle at −1 (included), an open circle at 3 (excluded), and shade between them. If x is restricted to integers, the solutions here are −1, 0, 1, 2.\n\n**Common pitfalls.** Forgetting to flip the sign when multiplying or dividing by a negative (the most common error); flipping at the wrong step (only at the negative multiply/divide); and using the wrong circle type (open vs closed) on the number line."
+      },
+      {
+        "level": 3,
+        "title": "Word Problems",
+        "line": 320,
+        "body": "Word problems ask you to turn a sentence into an equation, solve it, and answer in words. Follow these steps:\n\n1. Let a variable (such as x) represent the UNKNOWN you want.\n2. Write the other quantities in terms of x.\n3. Translate the words into an EQUATION.\n4. Solve the equation.\n5. Answer the question in words and CHECK that it makes sense.\n\nUseful keyword translations: \"sum\" → +, \"difference\" → −, \"product\" → ×, and \"is\" or \"equals\" → =.\n\n*Worked example (number).* I think of a number, multiply it by 5 and subtract 7; the result is 28. Let the number = x. Translate: 5x − 7 = 28. Add 7: 5x = 35. Divide by 5: x = 7. Check: 5(7) − 7 = 28. ✓\n\n*Worked example (consecutive numbers).* The sum of three consecutive numbers is 72. Let the first = x; consecutive numbers go up by 1, so they are x, x+1, x+2. Equation: x + (x+1) + (x+2) = 72 → 3x + 3 = 72 → 3x = 69 → x = 23. The numbers are 23, 24, 25. Check: 23 + 24 + 25 = 72. ✓\n\n*Worked example (ages).* Sam is 4 years older than Thabo, and together they are 30. Let Thabo = x; then Sam = x + 4. Equation: x + (x + 4) = 30 → 2x + 4 = 30 → 2x = 26 → x = 13. Thabo is 13 and Sam is 17. Check: 13 + 17 = 30. ✓\n\n*Worked example (perimeter).* A rectangle is 3 cm longer than it is wide, and its perimeter is 26 cm. Let width = x; length = x + 3. Perimeter = 2(length + width): 2(x + 3 + x) = 26 → 2(2x + 3) = 26 → 4x + 6 = 26 → 4x = 20 → x = 5. Width = 5 cm, length = 8 cm. Check: 2(5 + 8) = 26. ✓\n\n*Worked example (quadratic).* The product of two consecutive positive integers is 56. Let the integers be x and x+1. Equation: x(x + 1) = 56 → x² + x − 56 = 0. Factorise: (x + 8)(x − 7) = 0 → x = −8 or x = 7. The integers must be positive, so x = 7, and the numbers are 7 and 8. Check: 7 × 8 = 56. ✓\n\n**Common pitfalls.** Not clearly defining the variable; mistranslating keywords; forgetting to express the second quantity in terms of x; giving only the value of x instead of answering the actual question; and (in quadratic problems) keeping an answer that the context rules out, such as a negative integer where only positives make sense."
       }
     ],
     "firstParagraph": "### Exam Paper D1 — Algebra (Products, Factorising, Equations, MCQs)\n\nThis exam covers the core Grade 9 algebra skills. Below are the methods, with the memo's worked reasoning and full solutions to the question-only parts.",
-    "body": "# Algebra — Complete Study Guide\n\n## Contents\n\n### Exam Paper D1 — Algebra (Products, Factorising, Equations, MCQs)\n\nThis exam covers the core Grade 9 algebra skills. Below are the methods, with the memo's worked reasoning and full solutions to the question-only parts.\n\n#### Multiple choice (Q1) — reasoning, not guessing\n- 2x − x(x + y): distribute the −x to BOTH terms → 2x − x² − xy (answer B). The leading minus flips both signs.\n- 1 is rational, whole and an integer, but NOT irrational (answer C). Irrational = non-terminating, non-recurring decimal.\n- A fraction can be a percentage, a decimal and a ratio (answer D) — three ways to express the same fraction.\n- √(16x⁴/y¹⁶): root each part by halving exponents → 4x²/y⁸ (answer D).\n- Sequence 2; 5; 10; ?; 26 has differences +3, +5, +7, +9, so the missing term is 17 (answer C); equivalently terms = n²+1.\n- Ratio 2/5 : 4/6 : 7/15 → common denom 30 → 12:20:14 → ÷2 → 6:10:7 (answer D).\n\n#### Products (Q2.1) — FOIL and patterns\n- Distribute: 3x(y + 4z) = 3xy + 12xz.\n- Perfect square (a + b)² = a² + 2ab + b²: (2x + 1)² = 4x² + 4x + 1. The two middle terms are always equal.\n- FOIL (First, Outer, Inner, Last): (2x − 1)(3x + 2) = 6x² + 4x − 3x − 2 = 6x² + x − 2.\n- Keep brackets when subtracting: (2x−5)(x−3) + (x+2)⁰ − (x−2)² = (2x²−11x+15) + 1 − (x²−4x+4) = x² − 7x + 12.\n\n#### Simplifying (Q2.2)\n- Dividing by a fraction = multiply by its reciprocal: 10x³ ÷ ½x² = 10x³ × 2/x² = 20x.\n- Algebraic fractions: **you can only cancel factors, so factorise first.** (6x² − 24)/(3x² + 6x) = 6(x+2)(x−2) / 3x(x+2) = 2(x−2)/x.\n- Add algebraic fractions only when denominators match, then add numerators and simplify at the end (3x/3y → x/y).\n\n#### Perimeter word problem (Q2.3)\nTwo equal sides 2x² + 2x, perimeter 7x² + 10x. Third side = P − (two equal sides) = (7x²+10x) − (4x²+4x) = 3x² + 6x.\n\n#### Factorising (Q3)\n- Common factor: 2x² + 14x = 2x(x + 7).\n- Difference of squares a² − b² = (a+b)(a−b): x⁴ − 16 = (x²+4)(x²−4) = (x²+4)(x+2)(x−2). (A sum of squares x²+4 does not factorise.)\n- Always take out common factors first: 4x² − 36 = 4(x²−9) = 4(x+3)(x−3).\n- Trinomial x² + 7x + 12: find two numbers multiplying to 12 and adding to 7 → 3 and 4 → (x+3)(x+4).\n- Grouping with a reversed bracket: (2x−3y)x² + (3y−2x) = (2x−3y)x² − (2x−3y) = (2x−3y)(x²−1) = (2x−3y)(x+1)(x−1).\n\n#### Solving equations (Q4)\n- 10 − 3x = 1 → −3x = −9 → x = 3.\n- 3(x+2) = 2 − 1(x+4) → 3x+6 = −x−2 → 4x = −8 → x = −2.\n- Clear fractions with the LCD: 2x/4 + 1/3 = −4/6 → ×12 → 6x + 4 = −8 → x = −2.\n- (2x²+x)/x = (4x²+3)/(2x): simplify LHS to 2x+1, ×2x → 4x²+2x = 4x²+3 → x = 3/2.\n- 3(x+2) = 2x²+12+x² simplifies to x²−x+2 = 0, whose discriminant is −7, so there is no real solution.\n\n#### Setting up equations from words (Q4.2, Q4.3)\n- Jellybeans: (x+9) + (2x−3) = 2(x+8) → 3x+6 = 2x+16 → x = 10; orange = x+9 = 19.\n- Hockey ratio won:lost = 5:1, lost = x+4 → won = 5(x+4) = 5x+20. Total 10x: (5x+20)+(x+4)=10x → x = 6, total = 60.\n\n**Pitfall throughout:** keep brackets when subtracting whole expressions so every sign flips, and always substitute back into the quantity the question actually asks for.\n\n\n",
+    "body": "# Algebra — Complete Study Guide\n\n## Contents\n\n### Exam Paper D1 — Algebra (Products, Factorising, Equations, MCQs)\n\nThis exam covers the core Grade 9 algebra skills. Below are the methods, with the memo's worked reasoning and full solutions to the question-only parts.\n\n#### Multiple choice (Q1) — reasoning, not guessing\n- 2x − x(x + y): distribute the −x to BOTH terms → 2x − x² − xy (answer B). The leading minus flips both signs.\n- 1 is rational, whole and an integer, but NOT irrational (answer C). Irrational = non-terminating, non-recurring decimal.\n- A fraction can be a percentage, a decimal and a ratio (answer D) — three ways to express the same fraction.\n- √(16x⁴/y¹⁶): root each part by halving exponents → 4x²/y⁸ (answer D).\n- Sequence 2; 5; 10; ?; 26 has differences +3, +5, +7, +9, so the missing term is 17 (answer C); equivalently terms = n²+1.\n- Ratio 2/5 : 4/6 : 7/15 → common denom 30 → 12:20:14 → ÷2 → 6:10:7 (answer D).\n\n#### Products (Q2.1) — FOIL and patterns\n- Distribute: 3x(y + 4z) = 3xy + 12xz.\n- Perfect square (a + b)² = a² + 2ab + b²: (2x + 1)² = 4x² + 4x + 1. The two middle terms are always equal.\n- FOIL (First, Outer, Inner, Last): (2x − 1)(3x + 2) = 6x² + 4x − 3x − 2 = 6x² + x − 2.\n- Keep brackets when subtracting: (2x−5)(x−3) + (x+2)⁰ − (x−2)² = (2x²−11x+15) + 1 − (x²−4x+4) = x² − 7x + 12.\n\n#### Simplifying (Q2.2)\n- Dividing by a fraction = multiply by its reciprocal: 10x³ ÷ ½x² = 10x³ × 2/x² = 20x.\n- Algebraic fractions: **you can only cancel factors, so factorise first.** (6x² − 24)/(3x² + 6x) = 6(x+2)(x−2) / 3x(x+2) = 2(x−2)/x.\n- Add algebraic fractions only when denominators match, then add numerators and simplify at the end (3x/3y → x/y).\n\n#### Perimeter word problem (Q2.3)\nTwo equal sides 2x² + 2x, perimeter 7x² + 10x. Third side = P − (two equal sides) = (7x²+10x) − (4x²+4x) = 3x² + 6x.\n\n#### Factorising (Q3)\n- Common factor: 2x² + 14x = 2x(x + 7).\n- Difference of squares a² − b² = (a+b)(a−b): x⁴ − 16 = (x²+4)(x²−4) = (x²+4)(x+2)(x−2). (A sum of squares x²+4 does not factorise.)\n- Always take out common factors first: 4x² − 36 = 4(x²−9) = 4(x+3)(x−3).\n- Trinomial x² + 7x + 12: find two numbers multiplying to 12 and adding to 7 → 3 and 4 → (x+3)(x+4).\n- Grouping with a reversed bracket: (2x−3y)x² + (3y−2x) = (2x−3y)x² − (2x−3y) = (2x−3y)(x²−1) = (2x−3y)(x+1)(x−1).\n\n#### Solving equations (Q4)\n- 10 − 3x = 1 → −3x = −9 → x = 3.\n- 3(x+2) = 2 − 1(x+4) → 3x+6 = −x−2 → 4x = −8 → x = −2.\n- Clear fractions with the LCD: 2x/4 + 1/3 = −4/6 → ×12 → 6x + 4 = −8 → x = −2.\n- (2x²+x)/x = (4x²+3)/(2x): simplify LHS to 2x+1, ×2x → 4x²+2x = 4x²+3 → x = 3/2.\n- 3(x+2) = 2x²+12+x² simplifies to x²−x+2 = 0, whose discriminant is −7, so there is no real solution.\n\n#### Setting up equations from words (Q4.2, Q4.3)\n- Jellybeans: (x+9) + (2x−3) = 2(x+8) → 3x+6 = 2x+16 → x = 10; orange = x+9 = 19.\n- Hockey ratio won:lost = 5:1, lost = x+4 → won = 5(x+4) = 5x+20. Total 10x: (5x+20)+(x+4)=10x → x = 6, total = 60.\n\n**Pitfall throughout:** keep brackets when subtracting whole expressions so every sign flips, and always substitute back into the quantity the question actually asks for.\n\n\n### Algebraic Vocabulary\n\nAlgebra has its own language, and getting the words right makes every later topic easier. Learn these carefully.\n\n**Term.** A term is a single number, variable, or a product/quotient of numbers and variables. Terms are separated from one another by + and − signs, and each sign belongs to the term that follows it. In 3x² − 5x + 7 there are THREE terms: 3x², −5x and 7.\n\n**Variable, constant and coefficient.**\n- A *variable* is a letter standing for an unknown value (such as x).\n- A *constant* is a term that is just a number, with no variable (such as −4).\n- A *coefficient* is the number multiplying a variable (the 7 in 7x).\n\nIn 7x − 4: the variable is x, the coefficient is 7, and the constant is −4. Note that x on its own has a coefficient of 1, and −x has a coefficient of −1. The sign always travels with the coefficient.\n\n**Like terms.** Like terms have exactly the same variable(s) raised to exactly the same power(s); only the coefficient may differ. So 3x and −5x are like, and 2xy and 7xy are like, but 3x and 3x² are unlike (different powers) and 2x and 2y are unlike (different variables). This matters because ONLY like terms can be added or subtracted when simplifying.\n\n**Classifying by number of terms.**\n- Monomial = 1 term, e.g. 5x²y\n- Binomial = 2 terms, e.g. 3x − 2\n- Trinomial = 3 terms, e.g. x² + 5x + 6\n\nAny expression made of such terms is called a *polynomial*. Just count the chunks split by + and − to classify it.\n\n**Degree.** The degree of an expression is the highest total exponent found in any single term. For a single variable it is the largest power; for a term with several variables, add their exponents.\n\n*Worked example.* Find the degree of 4x³ − 2x²y² + x. Here 4x³ has degree 3; −2x²y² has degree 2 + 2 = 4; and x has degree 1. The highest is 4, so the expression has degree 4.\n\n*Worked example.* In 9 − x + 2x² there are three terms (9, −x and 2x²). The constant term is 9, the coefficient of x is −1 (because −x means −1×x), and the coefficient of x² is 2.\n\n**Common pitfalls.** Forgetting that the sign in front of a term belongs to it; treating −x as if its coefficient were +1; and confusing \"like terms\" (same variables AND powers) with terms that merely look similar.\n\n\n### Simplifying Expressions\n\nSimplifying means writing an expression in its shortest equivalent form by collecting like terms and removing brackets.\n\n**Collecting like terms.** Add or subtract the COEFFICIENTS of like terms; the variable part stays the same. Never combine unlike terms.\n\n*Worked example.* Simplify 5x + 3y − 2x + 7y. Group like terms: (5x − 2x) + (3y + 7y) = 3x + 10y. The 3x and 10y cannot be merged because x and y are different variables.\n\n*Worked example.* Simplify 4a² − 7a + 2 + a² + 3a − 5. Collect each type: a²-terms 4a² + a² = 5a²; a-terms −7a + 3a = −4a; constants 2 − 5 = −3. Answer: 5a² − 4a − 3. Write results in descending order of powers, and remember a² and a are UNLIKE, so keep them separate.\n\n**The distributive law.** a(b + c) = ab + ac. Multiply the outside factor by EVERY term inside.\n\n*Worked example.* 3(2x + 5) = 3·2x + 3·5 = 6x + 15. A common error is only multiplying the first term and writing 6x + 5 — the 3 must reach the 5 too.\n\n**A minus sign in front of a bracket** means multiply every inside term by −1, so EVERY sign flips. For example, −(x − 4) = −x + 4. Think of it as −1(x − 4) = −1·x − 1·(−4) = −x + 4.\n\n**Order of operations.** Expand brackets (the multiplication) BEFORE combining like terms — do not subtract numbers that sit outside a bracket first.\n\n*Worked example.* Simplify 2(3x − 1) − 4(x + 2). Distribute each bracket, watching the −4: 2(3x − 1) = 6x − 2 and −4(x + 2) = −4x − 8. Now combine: 6x − 2 − 4x − 8 = (6x − 4x) + (−2 − 8) = 2x − 10. The −4 makes BOTH terms of the second bracket negative.\n\n*Worked example.* Simplify 5 − 2(x − 3) + x. Do the bracket first: −2(x − 3) = −2x + 6, giving 5 − 2x + 6 + x. Collect: −2x + x = −x and 5 + 6 = 11, so the answer is −x + 11 (or 11 − x). Do NOT do 5 − 2 first.\n\n*Worked example.* Simplify x(x + 3) − (x² − 2x). Expand: x(x + 3) = x² + 3x and −(x² − 2x) = −x² + 2x. Combine: x² + 3x − x² + 2x = 5x. The x² terms cancel.\n\n**Common pitfalls.** Forgetting to distribute to every term; mishandling the sign when a minus precedes a bracket; and combining unlike terms such as 3x and 10y.\n\n\n### Products (Expanding)\n\nExpanding means multiplying out brackets. The key idea is that each term in one bracket multiplies every term in the other, and when you multiply the same base you ADD the exponents (x·x² = x¹⁺² = x³).\n\n**Monomial × polynomial.** Distribute the monomial to every term.\n\n*Worked example.* 2x(3x² − 4x + 5) = 2x·3x² + 2x·(−4x) + 2x·5 = 6x³ − 8x² + 10x.\n\n**Binomial × binomial (FOIL).** FOIL stands for First, Outer, Inner, Last — it simply means each term in the first bracket multiplies each term in the second.\n\n*Worked example.* (x + 3)(x + 5): First x·x = x²; Outer x·5 = 5x; Inner 3·x = 3x; Last 3·5 = 15. Add: x² + 8x + 15.\n\n*Worked example.* (2x − 3)(x + 4) = 2x² + 8x − 3x − 12 = 2x² + 5x − 12. Keep signs with their terms throughout.\n\n**Special product — square of a binomial.**\n- (a + b)² = a² + 2ab + b²\n- (a − b)² = a² − 2ab + b²\n\nSquare the first, plus (or minus) twice the product, plus the square of the last. The last term b² is always positive.\n\n*Worked example.* (x + 4)² = x² + 2·x·4 + 4² = x² + 8x + 16. Big pitfall: this is NOT x² + 16 — you must include the middle term 8x.\n\n*Worked example.* (3x − 2)² with a = 3x, b = 2: a² = 9x², 2ab = 12x, b² = 4, so (3x − 2)² = 9x² − 12x + 4.\n\n**Special product — sum × difference (difference of two squares).** (a + b)(a − b) = a² − b². The two middle terms cancel.\n\n*Worked example.* (x + 7)(x − 7) = x² − 49. Checking with FOIL gives x² − 7x + 7x − 49, and the −7x and +7x cancel.\n\n*Worked example.* (2x + 5)(2x − 5) = (2x)² − 5² = 4x² − 25. Remember to square the WHOLE first term: (2x)² = 4x², not 2x².\n\n**Binomial × trinomial.** Multiply each term of the binomial into every term of the trinomial, then collect like terms.\n\n*Worked example.* (x + 2)(x² − 3x + 4): x·(x² − 3x + 4) = x³ − 3x² + 4x and 2·(x² − 3x + 4) = 2x² − 6x + 8. Combine: x³ − x² − 2x + 8.\n\n*Worked example (mixed).* (x + 3)² − (x − 2)(x + 2) = (x² + 6x + 9) − (x² − 4) = x² + 6x + 9 − x² + 4 = 6x + 13. Watch the minus in front of the second bracket: −(x² − 4) becomes −x² + 4.\n\n**Common pitfalls.** Writing (a + b)² as a² + b² (forgetting 2ab); failing to square coefficients; and dropping a sign when a bracket is subtracted.\n\n\n### Dividing a Polynomial by a Monomial\n\nTo divide a polynomial by a single-term divisor (a monomial), divide EACH term of the polynomial by the monomial separately. When dividing the same base, subtract the exponents (x² ÷ x¹ = x¹).\n\n*Worked example.* (6x² + 9x) ÷ 3x. Take each term: 6x² ÷ 3x = 2x (6÷3 = 2, x²÷x = x) and 9x ÷ 3x = 3. Answer: 2x + 3.\n\n*Worked example.* (12x³ − 8x² + 4x) ÷ 4x. Split over each term: 12x³ ÷ 4x = 3x²; −8x² ÷ 4x = −2x; 4x ÷ 4x = 1. Answer: 3x² − 2x + 1. Note the last term divides to 1, not 0 — anything divided by itself is 1.\n\n*Worked example (two variables).* (15a²b − 10ab²) ÷ 5ab. Divide each term by 5ab: 15a²b ÷ 5ab = 3a (15÷5 = 3, a²÷a = a, b÷b = 1) and −10ab² ÷ 5ab = −2b. Answer: 3a − 2b. Matching single powers cancel to 1.\n\n**Fraction-bar form.** A fraction bar means the same as ÷, so you can split the same way.\n\n*Worked example.* (8x³ + 4x²)/(2x²): 8x³/2x² = 4x and 4x²/2x² = 2, giving 4x + 2.\n\n**Common pitfalls.** Dropping a term that divides to 1 (writing it as 0); forgetting to carry the sign of each term; and — most importantly — you may only split a sum or difference over a SINGLE-term denominator. You may NOT split over a denominator that itself has two terms.\n\n\n### Factorisation\n\nFactorising means writing an expression as a PRODUCT of factors — it is the reverse of expanding. The GOLDEN RULE: always take out a common factor FIRST, then check whether what remains can be factorised further. \"Factorise fully\" means keep going until no factor can be broken down any more.\n\n**Type 1 — Common factor.** Find the highest common factor (HCF) of the numbers and the lowest power of each common variable, then divide each term by it.\n\n*Worked example.* 6x² + 9x. HCF of 6 and 9 is 3; the common variable (lowest power) is x; so the common factor is 3x. Dividing: 6x²÷3x = 2x and 9x÷3x = 3. Answer: 3x(2x + 3). Check by expanding: 3x(2x + 3) = 6x² + 9x. ✓\n\n*Worked example.* 12a²b − 18ab² + 6ab. HCF of 12, 18, 6 is 6; common variables a and b; common factor 6ab. Dividing gives 2a, −3b and 1. Answer: 6ab(2a − 3b + 1). Don't drop the +1.\n\n**Type 2 — Difference of two squares.** a² − b² = (a + b)(a − b). It works ONLY for a difference (minus) of two perfect squares. A sum of squares such as x² + 25 does NOT factorise.\n\n*Worked example.* x² − 25: here a = x, b = 5, so (x + 5)(x − 5).\n\n*Worked example.* 9x² − 16y²: √(9x²) = 3x and √(16y²) = 4y, so (3x + 4y)(3x − 4y).\n\n*Worked example (fully).* 2x² − 50. Common factor 2 first: 2(x² − 25). The bracket is a difference of squares: 2(x + 5)(x − 5). Pulling out the 2 revealed a difference of squares that was hidden before.\n\n**Type 3 — Trinomial x² + bx + c.** Find two numbers that MULTIPLY to c and ADD to b.\n\n*Worked example.* x² + 7x + 12: pairs of 12 are 1×12, 2×6, 3×4; 3 + 4 = 7, so (x + 3)(x + 4).\n\n*Worked example (signs).* x² − 5x + 6: product +6, sum −5, so both numbers are negative: −2 and −3, giving (x − 2)(x − 3).\n\n*Worked example (mixed signs).* x² + 2x − 15: product −15 (so one + and one −), sum +2; the numbers are +5 and −3, giving (x + 5)(x − 3).\n\n**Type 3b — Trinomial ax² + bx + c.** Multiply a×c, find two numbers that multiply to that product and add to b, split the middle term, then group.\n\n*Worked example.* 2x² + 7x + 3: a×c = 6; two numbers multiply to 6 and add to 7 → 1 and 6. Split: 2x² + x + 6x + 3. Group: x(2x + 1) + 3(2x + 1) = (2x + 1)(x + 3).\n\n*Worked example.* 3x² − 10x − 8: a×c = −24; numbers −12 and +2. Split: 3x² − 12x + 2x − 8. Group: 3x(x − 4) + 2(x − 4) = (x − 4)(3x + 2).\n\n**Type 4 — Grouping (four terms).** Group into pairs, take a common factor from each pair, and arrange so both pairs leave the SAME bracket.\n\n*Worked example.* ax + ay + bx + by = a(x + y) + b(x + y) = (x + y)(a + b).\n\n*Worked example (signs).* x³ + 2x² − 5x − 10 = (x³ + 2x²) + (−5x − 10) = x²(x + 2) − 5(x + 2) = (x + 2)(x² − 5). Factoring −5 out of (−5x − 10) leaves (x + 2), matching the first bracket.\n\n*Worked example (fully).* 3x³ − 27x. Common factor 3x: 3x(x² − 9). The bracket is a difference of squares: 3x(x + 3)(x − 3).\n\n**Common pitfalls.** Trying another method before removing the common factor; trying to factorise a SUM of squares; sign errors in trinomials and grouping; and stopping before the expression is factorised fully.\n\n\n### Algebraic Fractions\n\nAn algebraic fraction is a fraction with variables in it. The golden rule for simplifying is: you may only cancel FACTORS (things multiplied), never individual terms that are added or subtracted.\n\n**Simplifying.** Cancel common factors from top and bottom.\n\n*Worked example.* (6x²)/(9x): numbers 6/9 = 2/3, variables x²/x = x, so the answer is 2x/3.\n\n**Factorise first, then cancel.** When the top or bottom is a polynomial, factorise before cancelling.\n\n*Worked example.* (x² − 9)/(x + 3). Factorise the top (difference of squares): (x + 3)(x − 3). The fraction is [(x + 3)(x − 3)]/(x + 3); cancel (x + 3) to get x − 3. Never cancel the x² or the 9 individually.\n\n*Worked example.* (x² + 5x + 6)/(x² − 4). Top: (x + 2)(x + 3); bottom: (x + 2)(x − 2). Cancel (x + 2) to get (x + 3)/(x − 2).\n\n**Multiplying.** Multiply straight across, but cancel common factors first (you may cancel diagonally across a multiplication).\n\n*Worked example.* (2x/3) × (9/(4x)): cancel 2x/4x = 1/2 and 9/3 = 3, leaving (1/2)×3 = 3/2.\n\n**Dividing.** Dividing by a fraction means multiplying by its RECIPROCAL — keep, change, flip.\n\n*Worked example.* (x/4) ÷ (x²/8) = (x/4) × (8/x²) = 8x/(4x²) = 2/x.\n\n**Adding and subtracting — same denominator.** Just add or subtract the numerators and keep the denominator. Never add the denominators.\n\n*Worked example.* (3x)/5 + (2x)/5 = (3x + 2x)/5 = 5x/5 = x.\n\n**Adding and subtracting — different denominators.** Find the lowest common denominator (LCD), rewrite each fraction over it, then combine the numerators.\n\n*Worked example.* x/2 + x/3. LCD is 6: x/2 = 3x/6 and x/3 = 2x/6, so 3x/6 + 2x/6 = 5x/6.\n\n*Worked example (subtraction).* (2x + 1)/3 − (x − 2)/4. LCD is 12: (2x+1)/3 = (8x+4)/12 and (x−2)/4 = (3x−6)/12. Subtract numerators, keeping the bracket: (8x+4) − (3x−6) = 8x + 4 − 3x + 6 = 5x + 10. Answer: (5x + 10)/12. The minus must flip BOTH terms of (3x − 6).\n\n*Worked example (variable denominators).* 1/x + 2/(3x). LCD is 3x: 1/x = 3/(3x), so 3/(3x) + 2/(3x) = 5/(3x).\n\n**Common pitfalls.** Cancelling terms instead of factors; cancelling before factorising; adding denominators; and forgetting that a subtraction sign in front of a fraction flips every term in its numerator.\n\n\n### Linear Equations\n\nA linear equation has a variable to the power 1 only. The GOLDEN RULE for solving any equation: whatever you do to one side, you must do to the other, to keep it balanced. Your goal is to isolate the variable using INVERSE operations (undo + with −, × with ÷). Work in reverse BODMAS order — deal with +/− terms first, then the ×/÷ coefficient last.\n\n*Worked example.* 3x + 5 = 20. Subtract 5 from both sides: 3x = 15. Divide both sides by 3: x = 5. Check: 3(5) + 5 = 20. ✓\n\n**Brackets.** Either expand first or divide both sides by the outside factor.\n\n*Worked example.* 2(x − 3) = 10. Option A — expand: 2x − 6 = 10 → 2x = 16 → x = 8. Option B — divide by 2 first: x − 3 = 5 → x = 8. Check: 2(8 − 3) = 10. ✓\n\n**Variable on both sides.** Collect variables on one side and numbers on the other. Move the smaller variable term so the coefficient stays positive.\n\n*Worked example.* 5x − 4 = 2x + 11. Subtract 2x: 3x − 4 = 11. Add 4: 3x = 15. Divide by 3: x = 5.\n\n**Fractions.** Multiply EVERY term by the LCD to clear denominators in one step.\n\n*Worked example.* x/2 + x/3 = 5. LCD of 2 and 3 is 6: 6·(x/2) + 6·(x/3) = 6·5 → 3x + 2x = 30 → 5x = 30 → x = 6.\n\n*Worked example.* (x + 1)/3 = (2x − 1)/5. Cross-multiply (or use LCD 15): 5(x + 1) = 3(2x − 1) → 5x + 5 = 6x − 3 → 5 + 3 = 6x − 5x → x = 8.\n\n**Literal equations (changing the subject).** Treat the other letters just like numbers and use the same balancing rules.\n\n*Worked example.* Make x the subject of y = mx + c. Subtract c: y − c = mx. Divide by m: x = (y − c)/m.\n\n*Worked example.* Make r the subject of P = 2(l + r). Divide by 2: P/2 = l + r. Subtract l: r = P/2 − l (or (P − 2l)/2).\n\n**Common pitfalls.** Doing an operation to only one side; tackling the coefficient before the +/− terms; sign errors when moving terms across; and, with fractions, multiplying only some terms by the LCD instead of every term.\n\n\n### Quadratic Equations (Solve by Factorising)\n\nA quadratic equation contains an x² term. In Grade 9 we solve them by factorising and using the ZERO-PRODUCT RULE: if A × B = 0, then A = 0 OR B = 0. So first make one side equal to 0, factorise the other side into brackets, then set EACH bracket equal to zero and solve. A quadratic usually gives TWO solutions.\n\n*Worked example.* x² + 5x + 6 = 0. Factorise (two numbers multiplying to 6, adding to 5 → 2 and 3): (x + 2)(x + 3) = 0. So x + 2 = 0 or x + 3 = 0, giving x = −2 or x = −3.\n\n**Common factor (do NOT divide by x).**\n\n*Worked example.* x² = 4x. Move everything to one side: x² − 4x = 0. Factorise: x(x − 4) = 0, so x = 0 or x = 4. Pitfall: dividing both sides by x loses the solution x = 0 — always factorise instead.\n\n**Difference of squares.**\n\n*Worked example.* x² − 9 = 0. Factorise: (x + 3)(x − 3) = 0, so x = −3 or x = 3 (often written x = ±3). Alternatively x² = 9 → x = ±√9 = ±3.\n\n**Harder trinomials (ax² + bx + c).**\n\n*Worked example.* 2x² + 7x + 3 = 0. Factorise (a×c = 6, numbers 1 and 6, split the middle): 2x² + x + 6x + 3 = 0 → x(2x + 1) + 3(2x + 1) = 0 → (2x + 1)(x + 3) = 0. So x = −1/2 or x = −3.\n\n**Rearrange first.** The zero-product rule only works against 0, so move everything across before factorising.\n\n*Worked example.* x² + 2x = 15. Make one side zero: x² + 2x − 15 = 0. Factorise (numbers multiplying to −15, adding to 2 → 5 and −3): (x + 5)(x − 3) = 0, so x = −5 or x = 3.\n\n**Common pitfalls.** Factorising before setting the equation equal to 0; dividing by x and losing a solution; and giving only one answer when a quadratic normally has two.\n\n\n### Inequalities\n\nSolving a linear inequality is LIKE solving an equation: use inverse operations and keep both sides balanced. There are two differences. First, the answer is a RANGE of values (such as x > 3), not a single number. Second, there is one special rule: whenever you MULTIPLY or DIVIDE both sides by a NEGATIVE number, you must FLIP the inequality sign (< becomes >, ≤ becomes ≥, and so on).\n\n*Worked example (no flip).* 2x + 3 < 11. Subtract 3: 2x < 8. Divide by 2 (positive, so the sign stays): x < 4. The solution is all values less than 4.\n\n*Worked example (flip).* −3x ≥ 12. Divide both sides by −3 and, because it is negative, FLIP: x ≤ −4. Check with x = −5: −3(−5) = 15 ≥ 12 ✓ and −5 ≤ −4 ✓.\n\n*Worked example (flip happens at the right step).* 5 − 2x ≤ 13. Subtract 5: −2x ≤ 8. Divide by −2 and FLIP: x ≥ −4. The flip happens at the divide-by-negative step, not at the subtraction step.\n\n**Number lines.** Draw the line and mark the boundary value.\n- Strict < or > → OPEN (unfilled) circle; the boundary is NOT included.\n- ≤ or ≥ → CLOSED (filled) circle; the boundary IS included.\n\nThen shade toward the values that satisfy the inequality. For example, x > 2 has an open circle at 2 with shading to the right, while x ≥ 2 has a closed circle at 2 with shading to the right.\n\n**Compound inequalities.** An inequality like −1 ≤ x < 3 means x ≥ −1 AND x < 3 at the same time. Draw a closed circle at −1 (included), an open circle at 3 (excluded), and shade between them. If x is restricted to integers, the solutions here are −1, 0, 1, 2.\n\n**Common pitfalls.** Forgetting to flip the sign when multiplying or dividing by a negative (the most common error); flipping at the wrong step (only at the negative multiply/divide); and using the wrong circle type (open vs closed) on the number line.\n\n\n### Word Problems\n\nWord problems ask you to turn a sentence into an equation, solve it, and answer in words. Follow these steps:\n\n1. Let a variable (such as x) represent the UNKNOWN you want.\n2. Write the other quantities in terms of x.\n3. Translate the words into an EQUATION.\n4. Solve the equation.\n5. Answer the question in words and CHECK that it makes sense.\n\nUseful keyword translations: \"sum\" → +, \"difference\" → −, \"product\" → ×, and \"is\" or \"equals\" → =.\n\n*Worked example (number).* I think of a number, multiply it by 5 and subtract 7; the result is 28. Let the number = x. Translate: 5x − 7 = 28. Add 7: 5x = 35. Divide by 5: x = 7. Check: 5(7) − 7 = 28. ✓\n\n*Worked example (consecutive numbers).* The sum of three consecutive numbers is 72. Let the first = x; consecutive numbers go up by 1, so they are x, x+1, x+2. Equation: x + (x+1) + (x+2) = 72 → 3x + 3 = 72 → 3x = 69 → x = 23. The numbers are 23, 24, 25. Check: 23 + 24 + 25 = 72. ✓\n\n*Worked example (ages).* Sam is 4 years older than Thabo, and together they are 30. Let Thabo = x; then Sam = x + 4. Equation: x + (x + 4) = 30 → 2x + 4 = 30 → 2x = 26 → x = 13. Thabo is 13 and Sam is 17. Check: 13 + 17 = 30. ✓\n\n*Worked example (perimeter).* A rectangle is 3 cm longer than it is wide, and its perimeter is 26 cm. Let width = x; length = x + 3. Perimeter = 2(length + width): 2(x + 3 + x) = 26 → 2(2x + 3) = 26 → 4x + 6 = 26 → 4x = 20 → x = 5. Width = 5 cm, length = 8 cm. Check: 2(5 + 8) = 26. ✓\n\n*Worked example (quadratic).* The product of two consecutive positive integers is 56. Let the integers be x and x+1. Equation: x(x + 1) = 56 → x² + x − 56 = 0. Factorise: (x + 8)(x − 7) = 0 → x = −8 or x = 7. The integers must be positive, so x = 7, and the numbers are 7 and 8. Check: 7 × 8 = 56. ✓\n\n**Common pitfalls.** Not clearly defining the variable; mistranslating keywords; forgetting to express the second quantity in terms of x; giving only the value of x instead of answering the actual question; and (in quadratic problems) keeping an answer that the context rules out, such as a negative integer where only positives make sense.\n\n\n",
     "infographics": [],
     "videos": [],
     "audio": []

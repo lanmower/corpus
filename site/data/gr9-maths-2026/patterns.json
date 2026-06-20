@@ -1,0 +1,813 @@
+{
+  "subject": "patterns",
+  "cat": "green",
+  "cards": [
+    {
+      "id": "patterns-ab97057cf4",
+      "front": "What is the difference between the POSITION number and the TERM VALUE in a pattern?",
+      "back": "The POSITION number n is WHERE a term sits: 1st, 2nd, 3rd, ... (the input).\nThe TERM VALUE Tₙ is WHAT that term equals (the output).\nExample in 6, 11, 16, ...: the term in position n = 2 has value T₂ = 11.\nPitfall: 'which term is 11?' asks for the POSITION (2); 'what is the 2nd term?' asks for the VALUE (11). Read the question carefully.",
+      "tags": [
+        "position-vs-value"
+      ],
+      "difficulty": "medium",
+      "source": "Describing and Verifying Rules - CAPS_rule-position-vs-value",
+      "sourceFile": "Describing and Verifying Rules - CAPS_rule-position-vs-value.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-21d987d7d8",
+      "front": "How do you describe the rule of 4, 9, 14, 19, ... in words?",
+      "back": "Two acceptable forms:\n1. Recursive (term to term): 'Start at 4 and add 5 each time.'\n2. General (position to value): 'Multiply the position by 5 and subtract 1' (since Tₙ = 5n − 1).\nThe general form is more powerful because it directly gives any term without listing the ones before it.",
+      "tags": [
+        "rule-in-words"
+      ],
+      "difficulty": "medium",
+      "source": "Describing and Verifying Rules - CAPS_rule-position-vs-value",
+      "sourceFile": "Describing and Verifying Rules - CAPS_rule-position-vs-value.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-a3de6ba735",
+      "front": "How do you VERIFY that a proposed rule is correct for a sequence?",
+      "back": "Substitute at least TWO known positions into the rule and check the values match.\nExample: claim Tₙ = 3n + 2 for 5, 8, 11, 14.\nT₁ = 3(1) + 2 = 5 ✓\nT₄ = 3(4) + 2 = 14 ✓\nBoth match, so the rule is verified.\nPitfall: checking only T₁ is not enough — a wrong rule can still fit one term by chance.",
+      "tags": [
+        "verify-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Describing and Verifying Rules - CAPS_rule-position-vs-value",
+      "sourceFile": "Describing and Verifying Rules - CAPS_rule-position-vs-value.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-376cfcf91e",
+      "front": "A learner claims Tₙ = 2n + 3 for the sequence 5, 7, 10, 13. Verify or disprove the rule.",
+      "back": "T₁ = 2(1) + 3 = 5 ✓\nT₂ = 2(2) + 3 = 7 ✓\nT₃ = 2(3) + 3 = 9, but the sequence shows 10 ✗.\nThe rule FAILS at T₃, so it is wrong.\nActually the differences 2, 3, 3 are not constant, so no single dn + c rule fits — the sequence is not linear.",
+      "tags": [
+        "verify-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Describing and Verifying Rules - CAPS_rule-position-vs-value",
+      "sourceFile": "Describing and Verifying Rules - CAPS_rule-position-vs-value.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-e08bcc5c3f",
+      "front": "In the sequence 7, 12, 17, 22, ..., what is T₅ and which position holds the value 47?",
+      "back": "Rule: d = 5, c = 7 − 5 = 2, so Tₙ = 5n + 2.\nT₅ = 5(5) + 2 = 27 (this is a VALUE).\nFor value 47: 5n + 2 = 47 → 5n = 45 → n = 9 (this is a POSITION).\nSo the 5th term is 27, and 47 is the 9th term. Keep value vs position distinct.",
+      "tags": [
+        "position-vs-value"
+      ],
+      "difficulty": "medium",
+      "source": "Describing and Verifying Rules - CAPS_rule-position-vs-value",
+      "sourceFile": "Describing and Verifying Rules - CAPS_rule-position-vs-value.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-17b927dcd4",
+      "front": "Why can two different-looking rules describe the same pattern? Show with Tₙ = 3n + 2.",
+      "back": "A rule can be written in equivalent forms.\n'Multiply position by 3, add 2' = Tₙ = 3n + 2.\n'Start at 5, add 3 each time' is the same sequence (5, 8, 11, ...).\nYou can also factor or expand without changing values, e.g. Tₙ = 3(n + 1) − 1 = 3n + 2.\nTo confirm two rules match, check they give identical values for several n.",
+      "tags": [
+        "verify-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Describing and Verifying Rules - CAPS_rule-position-vs-value",
+      "sourceFile": "Describing and Verifying Rules - CAPS_rule-position-vs-value.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-cf10b25595",
+      "front": "Common pitfall: a learner writes Tₙ = 5n for the sequence 8, 13, 18, 23. What went wrong and what is correct?",
+      "back": "They used only the difference d = 5 and forgot c.\nCorrect: c = first term − d = 8 − 5 = 3, so Tₙ = 5n + 3.\nCheck the wrong rule: 5(1) = 5 ≠ 8 ✗. Correct rule: 5(1) + 3 = 8 ✓.\nLesson: Tₙ = dn + c always needs the constant c; do not drop it.",
+      "tags": [
+        "verify-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Describing and Verifying Rules - CAPS_rule-position-vs-value",
+      "sourceFile": "Describing and Verifying Rules - CAPS_rule-position-vs-value.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-619506811a",
+      "front": "Question reads 'Determine which term in 3, 7, 11, 15, ... has a value of 43.' What exactly is being asked and how do you answer?",
+      "back": "It asks for the POSITION n, not a value.\nRule: Tₙ = 4n − 1. Set 4n − 1 = 43 → 4n = 44 → n = 11.\nAnswer in words: '43 is the 11th term.'\nPitfall: do not answer with another value; the question wants the position number.",
+      "tags": [
+        "position-vs-value"
+      ],
+      "difficulty": "medium",
+      "source": "Describing and Verifying Rules - CAPS_rule-position-vs-value",
+      "sourceFile": "Describing and Verifying Rules - CAPS_rule-position-vs-value.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-7e786c80e0",
+      "front": "Describe in words and as a formula the rule for the pattern in this table.  n: 1,2,3,4  Tₙ: 10, 8, 6, 4",
+      "back": "In words: 'Start at 10 and subtract 2 each time.'\nFormula: d = 8 − 10 = −2, c = 10 − (−2) = 12, so Tₙ = −2n + 12.\nCheck: T₄ = −2(4) + 12 = 4 ✓.\nThis decreasing pattern still fits Tₙ = dn + c with a negative d.",
+      "tags": [
+        "rule-in-words"
+      ],
+      "difficulty": "medium",
+      "source": "Describing and Verifying Rules - CAPS_rule-position-vs-value",
+      "sourceFile": "Describing and Verifying Rules - CAPS_rule-position-vs-value.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-c94ce3fa98",
+      "front": "What is the general method for finding the rule of a pattern made from diagrams (matchsticks, dots, tiles)?",
+      "back": "Step 1: COUNT the items in each figure (figure 1, 2, 3, ...).\nStep 2: build a TABLE: figure number n vs number of items Tₙ.\nStep 3: find the constant difference d.\nStep 4: write the rule Tₙ = dn + c, with c = (first count − d).\nStep 5: VERIFY on a known figure, then use it to predict figure n.",
+      "tags": [
+        "diagram-patterns"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles",
+      "sourceFile": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-85453af924",
+      "front": "A matchstick pattern uses 4, 7, 10 matches for figures 1, 2, 3 (squares in a row). Find the rule and the matches for figure 20.",
+      "back": "Table → n: 1,2,3  matches: 4, 7, 10.\nd = 7 − 4 = 3 (each new square adds 3 matches).\nc = 4 − 3 = 1, so Tₙ = 3n + 1.\nCheck: T₃ = 3(3) + 1 = 10 ✓.\nFigure 20: T₂₀ = 3(20) + 1 = 61 matches.",
+      "tags": [
+        "matchsticks"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles",
+      "sourceFile": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-f064e2b566",
+      "front": "Why does a row-of-squares matchstick pattern give Tₙ = 3n + 1 (explain the +1)?",
+      "back": "The first square needs 4 matches; each ADDITIONAL square shares one side, so it only needs 3 more.\nSo matches = 1 (the extra left-hand vertical) + 3 per square = 3n + 1.\nThe constant difference d = 3 is 'matches added per new square'; the c = 1 is the single starting match not repeated.\nUnderstanding the structure lets you justify the rule, not just compute it.",
+      "tags": [
+        "matchsticks"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles",
+      "sourceFile": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-d633447e9b",
+      "front": "A dot pattern grows 2, 5, 8, 11 dots for figures 1–4. Which figure has 32 dots?",
+      "back": "d = 3, c = 2 − 3 = −1, so Tₙ = 3n − 1.\nSet 3n − 1 = 32 → 3n = 33 → n = 11.\nFigure 11 has 32 dots.\nPitfall: the answer is a FIGURE NUMBER (position), so n must be a whole number — here it is, so 32 is valid.",
+      "tags": [
+        "dots"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles",
+      "sourceFile": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-c80bd13111",
+      "front": "A tile border pattern uses 8, 12, 16, 20 tiles for figures 1–4. Predict tiles for figure n and for figure 15.",
+      "back": "d = 4, c = 8 − 4 = 4, so Tₙ = 4n + 4.\nGeneral prediction for figure n: 4n + 4 tiles.\nFigure 15: T₁₅ = 4(15) + 4 = 64 tiles.\nCheck the rule on figure 2: 4(2) + 4 = 12 ✓.",
+      "tags": [
+        "tiles"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles",
+      "sourceFile": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-14f62db7df",
+      "front": "For a triangle matchstick pattern: 3, 5, 7, 9 matches for figures 1–4. Find Tₙ and matches for figure 50.",
+      "back": "d = 2, c = 3 − 2 = 1, so Tₙ = 2n + 1.\nFirst triangle = 3 matches; each new triangle shares a side and adds 2.\nFigure 50: T₅₀ = 2(50) + 1 = 101 matches.\nCheck: T₄ = 2(4) + 1 = 9 ✓.",
+      "tags": [
+        "matchsticks"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles",
+      "sourceFile": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles.yml"
+    },
+    {
+      "id": "patterns-a5890cd066",
+      "front": "A square dot array pattern is 1, 4, 9, 16 dots for figures 1–4. What is Tₙ and is this linear?",
+      "back": "Differences are 3, 5, 7 — NOT constant, so it is NOT linear.\nThe counts are perfect squares: Tₙ = n².\nFigure n is an n × n square of dots.\nFigure 10: T₁₀ = 10² = 100 dots.\nPitfall: always test the differences first; here a 'dn + c' rule would be wrong.",
+      "tags": [
+        "dots"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles",
+      "sourceFile": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-fb6c73141e",
+      "front": "Exam phrasing: 'How many matches are needed for the 100th figure?' What is the efficient strategy?",
+      "back": "Do NOT draw 100 figures. Instead:\n1. Build a table from the first 3–4 figures.\n2. Find d and write Tₙ = dn + c.\n3. Substitute n = 100.\nExample: counts 5, 9, 13 → d = 4, c = 1 → Tₙ = 4n + 1 → T₁₀₀ = 4(100) + 1 = 401.\nThe rule is what makes far-figure predictions possible.",
+      "tags": [
+        "predict-figure-n"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles",
+      "sourceFile": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "69"
+      }
+    },
+    {
+      "id": "patterns-e5999f473f",
+      "front": "A pattern asks for BOTH the perimeter-tiles and the inside-tiles separately. How do you handle a 'two-rule' diagram question?",
+      "back": "Treat each quantity as its OWN sequence with its own table and rule.\nExample border tiles: 8, 12, 16 → Tₙ = 4n + 4.\nInside tiles: 1, 4, 9 → Tₙ = n² (a square array).\nThen answer each part with its matching rule.\nPitfall: do not mix the two counts in one table.",
+      "tags": [
+        "diagram-patterns"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles",
+      "sourceFile": "Geometric Diagram Patterns - CAPS_matchsticks-dots-tiles.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-c69f12e9af",
+      "front": "What is a numeric pattern with a constant difference (a linear sequence)?",
+      "back": "A sequence where you add (or subtract) the SAME number to get from each term to the next.\nThat fixed number is the constant (common) difference, d.\nExample: 3, 7, 11, 15, ... adds 4 each time, so d = 4.\nBecause the difference between consecutive terms is constant, the rule for the nth term is LINEAR: Tₙ = dn + c.",
+      "tags": [
+        "linear-sequence"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-e280a1ff87",
+      "front": "How do you find the constant difference d of a sequence?",
+      "back": "Subtract any term from the term AFTER it: d = T₂ − T₁ = T₃ − T₂ (and so on).\nExample: 5, 8, 11, 14, ...\nd = 8 − 5 = 3, and check 11 − 8 = 3, 14 − 11 = 3. ✓\nPitfall: the difference must be the SAME between every pair. If it changes, the sequence is NOT linear (it may be quadratic or geometric).",
+      "tags": [
+        "constant-difference"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-c963a00797",
+      "front": "What is the general formula for the nth term of a linear sequence, and what do d and c mean?",
+      "back": "Tₙ = dn + c\nd = the constant difference (T₂ − T₁).\nc = T₀ = the term BEFORE the first term = (first term − d).\nThink of c as 'where the sequence would start at position 0'.\nOnce you know d and c, substitute any position n to get that term.",
+      "tags": [
+        "general-term"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-9e53eeb961",
+      "front": "Find the rule Tₙ for the sequence 7, 12, 17, 22, ...",
+      "back": "Step 1: d = 12 − 7 = 5.\nStep 2: c = T₀ = first term − d = 7 − 5 = 2.\nStep 3: Tₙ = dn + c = 5n + 2.\nCheck: T₁ = 5(1) + 2 = 7 ✓, T₃ = 5(3) + 2 = 17 ✓.\nAlways verify your rule on at least two known terms.",
+      "tags": [
+        "general-term"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-7dbdd07142",
+      "front": "Find the rule Tₙ for a DECREASING sequence: 20, 17, 14, 11, ...",
+      "back": "Step 1: d = 17 − 20 = −3 (negative because it decreases).\nStep 2: c = T₀ = 20 − (−3) = 20 + 3 = 23.\nStep 3: Tₙ = −3n + 23.\nCheck: T₁ = −3(1) + 23 = 20 ✓, T₄ = −3(4) + 23 = 11 ✓.\nPitfall: keep the sign of d; for a decreasing sequence d is negative.",
+      "tags": [
+        "general-term"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-6bb5cf250c",
+      "front": "Find the 50th term of the sequence 4, 9, 14, 19, ...",
+      "back": "Step 1: d = 9 − 4 = 5, c = 4 − 5 = −1, so Tₙ = 5n − 1.\nStep 2: substitute n = 50: T₅₀ = 5(50) − 1 = 250 − 1 = 249.\nFinding a far-off term is exactly why we build the rule — never list out 50 terms by hand.",
+      "tags": [
+        "specific-term"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-d6cabf3a50",
+      "front": "Extend the sequence 6, 11, 16, 21, ... by three more terms, two ways.",
+      "back": "Quick way (add d): d = 5, so continue 26, 31, 36.\nFormula way: Tₙ = 5n + 1, so T₅ = 26, T₆ = 31, T₇ = 36.\nBoth agree. The formula is essential when the question jumps far ahead (e.g. 'the 80th term').",
+      "tags": [
+        "extending-sequences"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "48"
+      }
+    },
+    {
+      "id": "patterns-6afcf8623b",
+      "front": "Which term of the sequence 5, 8, 11, 14, ... is equal to 95? (Find the position n.)",
+      "back": "Step 1: rule is Tₙ = 3n + 2.\nStep 2: set Tₙ = 95 → 3n + 2 = 95.\nStep 3: solve: 3n = 93 → n = 31.\nAnswer: 95 is the 31st term.\nAlways state the position as a whole number — n counts position so it must be a positive integer.",
+      "tags": [
+        "which-term"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-1b52b7c059",
+      "front": "Is 100 a term of the sequence 3, 7, 11, 15, ...? Show how to decide.",
+      "back": "Rule: d = 4, c = 3 − 4 = −1, so Tₙ = 4n − 1.\nSet 4n − 1 = 100 → 4n = 101 → n = 25.25.\nn is NOT a whole number, so 100 is NOT a term of the sequence.\nPitfall: a non-integer n means the value does not appear; you must say so explicitly.",
+      "tags": [
+        "which-term"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-0d4f733c06",
+      "front": "The 3rd term of a linear sequence is 17 and the 7th term is 37. Find Tₙ.",
+      "back": "Between T₃ and T₇ there are 7 − 3 = 4 steps of d.\nChange in value = 37 − 17 = 20, so 4d = 20 → d = 5.\nWork back: T₀ = T₃ − 3d = 17 − 15 = 2, so c = 2.\nTₙ = 5n + 2.\nCheck: T₇ = 5(7) + 2 = 37 ✓.",
+      "tags": [
+        "general-term"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-e7b1d97c32",
+      "front": "Why is c in Tₙ = dn + c equal to (first term − d) and not just the first term?",
+      "back": "Because Tₙ = dn + c must give the first term when n = 1: T₁ = d(1) + c = d + c.\nSo c = T₁ − d = (first term − d).\nc is the value at position 0 (T₀), one step before T₁.\nPitfall: students often write c = first term; that is wrong unless d = 0.",
+      "tags": [
+        "general-term"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-c6a0b75218",
+      "front": "A sequence has rule Tₙ = 7n − 4. Find the first three terms and the 100th term.",
+      "back": "T₁ = 7(1) − 4 = 3.\nT₂ = 7(2) − 4 = 10.\nT₃ = 7(3) − 4 = 17.\nFirst three terms: 3, 10, 17.\nT₁₀₀ = 7(100) − 4 = 700 − 4 = 696.\nThe constant difference is 7 (the coefficient of n).",
+      "tags": [
+        "general-term"
+      ],
+      "difficulty": "medium",
+      "source": "Linear Sequences - CAPS_constant-difference",
+      "sourceFile": "Linear Sequences - CAPS_constant-difference.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-b93c9e86cf",
+      "front": "What is a pattern with a constant ratio (a geometric sequence)?",
+      "back": "A sequence where you MULTIPLY by the same number each time to get the next term.\nThat fixed multiplier is the constant ratio, r.\nExample: 2, 6, 18, 54, ... multiplies by 3, so r = 3.\nKey difference from linear: linear ADDS a constant (d); geometric MULTIPLIES by a constant (r).",
+      "tags": [
+        "geometric-sequence"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-25846ad0a9",
+      "front": "How do you find the constant ratio r of a geometric pattern?",
+      "back": "Divide any term by the term BEFORE it: r = T₂ ÷ T₁ = T₃ ÷ T₂.\nExample: 3, 12, 48, 192, ...\nr = 12 ÷ 3 = 4, check 48 ÷ 12 = 4 ✓.\nPitfall: if the RATIO is constant it is geometric; if the DIFFERENCE is constant it is linear. Test both: differences 9, 36, 144 are not constant, so this one is geometric, not linear.",
+      "tags": [
+        "constant-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-b7912b5722",
+      "front": "Extend the geometric pattern 5, 10, 20, 40, ... by three terms and find the next-but-one.",
+      "back": "r = 10 ÷ 5 = 2.\nKeep multiplying by 2: 80, 160, 320.\nSo the sequence continues 5, 10, 20, 40, 80, 160, 320.\nPitfall: do NOT add a constant here — the gaps (5, 10, 20, ...) keep growing, the signal of a ratio pattern.",
+      "tags": [
+        "geometric-sequence"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "27"
+      }
+    },
+    {
+      "id": "patterns-074767cf34",
+      "front": "Find Tₙ for the geometric pattern of powers 2, 4, 8, 16, ...",
+      "back": "Each term is a power of 2: 2¹, 2², 2³, 2⁴, ...\nSo Tₙ = 2ⁿ.\nCheck: T₁ = 2¹ = 2 ✓, T₄ = 2⁴ = 16 ✓.\nGeneral idea: a geometric pattern starting at the ratio value can often be written as rⁿ; more generally Tₙ = T₁ × r^(n−1).",
+      "tags": [
+        "powers"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "27"
+      }
+    },
+    {
+      "id": "patterns-3b38baed85",
+      "front": "Use Tₙ = T₁ × r^(n−1) to find the 6th term of 3, 6, 12, 24, ...",
+      "back": "T₁ = 3, r = 6 ÷ 3 = 2.\nT₆ = 3 × 2^(6−1) = 3 × 2⁵ = 3 × 32 = 96.\nCheck by listing: 3, 6, 12, 24, 48, 96 ✓.\nPitfall: the exponent is (n − 1), not n, because T₁ has NOT yet been multiplied by r.",
+      "tags": [
+        "geometric-sequence"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml"
+    },
+    {
+      "id": "patterns-036ad5e353",
+      "front": "What are the square numbers and what is the rule for the nth square number?",
+      "back": "Square numbers: 1, 4, 9, 16, 25, 36, ... (each is a position squared).\nTₙ = n².\nThey count dots that form a perfect square (1×1, 2×2, 3×3, ...).\nNote: the differences are 3, 5, 7, 9, ... (consecutive odd numbers), so the difference is NOT constant — square numbers are a quadratic, not a linear, pattern.",
+      "tags": [
+        "square-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-8022351350",
+      "front": "What are the triangular numbers and how do you build/find them?",
+      "back": "Triangular numbers: 1, 3, 6, 10, 15, 21, ... (dots that form a triangle).\nEach is the running sum: 1, 1+2, 1+2+3, 1+2+3+4, ...\nRule: Tₙ = n(n + 1)/2.\nCheck: T₄ = 4(5)/2 = 10 ✓.\nThe differences are 2, 3, 4, 5, ... (increasing by 1), so it is also a quadratic pattern, not linear.",
+      "tags": [
+        "triangular-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-5f609027bd",
+      "front": "What is the Fibonacci-style pattern and how is each term generated?",
+      "back": "A Fibonacci-style pattern: each term is the SUM of the two terms before it.\nExample: 1, 1, 2, 3, 5, 8, 13, 21, ...\nRule (recursive): Tₙ = Tₙ₋₁ + Tₙ₋₂.\nThere is no simple add-or-multiply constant; you must use the two previous terms.\nWorked: 5 + 8 = 13, then 8 + 13 = 21.",
+      "tags": [
+        "fibonacci"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-8c24591f94",
+      "front": "How do you DECIDE whether a sequence is linear, geometric, or something else?",
+      "back": "Step 1: find the differences between consecutive terms. Constant? → linear, Tₙ = dn + c.\nStep 2: if not, find the ratios (term ÷ previous). Constant? → geometric, multiply by r.\nStep 3: if neither, check special patterns: n² (squares), n(n+1)/2 (triangular), powers (2ⁿ, 3ⁿ), or sum-of-previous-two (Fibonacci).\nPitfall: always test differences FIRST before assuming geometric.",
+      "tags": [
+        "classify-pattern"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-890b9f2b57",
+      "front": "Classify and continue: 1, 4, 9, 16, ___, ___ . What pattern is it?",
+      "back": "Differences: 3, 5, 7 — not constant, so not linear.\nRatios: 4, 2.25, ... — not constant, so not geometric.\nThese are the SQUARE numbers, Tₙ = n².\nNext: T₅ = 25, T₆ = 36.\nSequence: 1, 4, 9, 16, 25, 36.",
+      "tags": [
+        "square-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-7bcfb0c3af",
+      "front": "Find the next two terms of the geometric pattern with fractions: 64, 32, 16, 8, ...",
+      "back": "r = 32 ÷ 64 = 1/2 (each term is HALVED).\nContinue: 8 × 1/2 = 4, then 4 × 1/2 = 2.\nSequence: 64, 32, 16, 8, 4, 2.\nPitfall: a ratio can be a fraction (0 < r < 1) — the pattern decreases but is still geometric, not linear.",
+      "tags": [
+        "constant-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-f698540aca",
+      "front": "Continue the Fibonacci-style pattern 2, 5, 7, 12, 19, ___ and state the rule used.",
+      "back": "Rule: add the two previous terms (Tₙ = Tₙ₋₁ + Tₙ₋₂).\nCheck it fits: 2 + 5 = 7 ✓, 5 + 7 = 12 ✓, 7 + 12 = 19 ✓.\nNext term: 12 + 19 = 31.\nSo the sequence continues ..., 19, 31.",
+      "tags": [
+        "fibonacci"
+      ],
+      "difficulty": "medium",
+      "source": "Other Patterns - CAPS_ratio-and-special",
+      "sourceFile": "Other Patterns - CAPS_ratio-and-special.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-8f29d106b2",
+      "front": "What are the four ways to represent a number pattern in Grade 9?",
+      "back": "1. In WORDS (e.g. 'start at 3 and add 4 each time').\n2. As a FLOW DIAGRAM (input n → operation box → output Tₙ).\n3. In a TABLE (top row = position n, bottom row = term value Tₙ).\n4. ALGEBRAICALLY, as a formula (e.g. Tₙ = 4n − 1).\nAll four describe the SAME pattern; you should be able to convert between them.",
+      "tags": [
+        "representations"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Patterns - CAPS_words-tables-flow",
+      "sourceFile": "Representing Patterns - CAPS_words-tables-flow.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-a4ecc6f343",
+      "front": "Build a table (n vs Tₙ) for the rule Tₙ = 4n − 1 for n = 1 to 5.",
+      "back": "n  : 1 | 2 | 3 | 4 | 5\nTₙ : 3 | 7 | 11 | 15 | 19\nWorked: T₁ = 4(1) − 1 = 3, T₂ = 4(2) − 1 = 7, ..., T₅ = 4(5) − 1 = 19.\nThe top row is the POSITION (input); the bottom row is the TERM VALUE (output).",
+      "tags": [
+        "tables"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Patterns - CAPS_words-tables-flow",
+      "sourceFile": "Representing Patterns - CAPS_words-tables-flow.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-d536549fd9",
+      "front": "A flow diagram shows: input n → (×3) → (+2) → output. Write the rule and find the output for n = 10.",
+      "back": "Follow the boxes in order: multiply by 3, then add 2.\nRule: Tₙ = 3n + 2.\nFor n = 10: 10 × 3 = 30, then 30 + 2 = 32. Output = 32.\nPitfall: do the operations in the ORDER shown in the flow diagram, left to right.",
+      "tags": [
+        "flow-diagrams"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Patterns - CAPS_words-tables-flow",
+      "sourceFile": "Representing Patterns - CAPS_words-tables-flow.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-3456402070",
+      "front": "Turn the WORDS 'start at 5 and add 6 each time' into a table and a formula.",
+      "back": "Table (n vs Tₙ):\nn  : 1 | 2 | 3 | 4\nTₙ : 5 | 11 | 17 | 23\nFormula: d = 6, c = 5 − 6 = −1, so Tₙ = 6n − 1.\nCheck: T₁ = 6(1) − 1 = 5 ✓.\nThis shows words → table → algebra are interchangeable views of one pattern.",
+      "tags": [
+        "representations"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Patterns - CAPS_words-tables-flow",
+      "sourceFile": "Representing Patterns - CAPS_words-tables-flow.yml"
+    },
+    {
+      "id": "patterns-da0a0b592b",
+      "front": "From this table, find the rule Tₙ.  n: 1,2,3,4  Tₙ: 8, 13, 18, 23",
+      "back": "Read down the table to find the constant difference: 13 − 8 = 5, 18 − 13 = 5 ✓, so d = 5.\nc = T₀ = first term − d = 8 − 5 = 3.\nTₙ = 5n + 3.\nCheck against the table: T₄ = 5(4) + 3 = 23 ✓.",
+      "tags": [
+        "tables"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Patterns - CAPS_words-tables-flow",
+      "sourceFile": "Representing Patterns - CAPS_words-tables-flow.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "patterns-3e77d5ecf5",
+      "front": "Describe the rule Tₙ = 7n + 1 IN WORDS (the way an exam wants).",
+      "back": "'Multiply the position number by 7 and then add 1.'\nEquivalently: 'Start at 8 (the first term) and add 7 each time.'\nBoth describe Tₙ = 7n + 1. The first describes the formula directly; the second describes how the sequence grows term to term.",
+      "tags": [
+        "rule-in-words"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Patterns - CAPS_words-tables-flow",
+      "sourceFile": "Representing Patterns - CAPS_words-tables-flow.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-37d3af8f3e",
+      "front": "Draw (describe) a flow diagram for the rule Tₙ = 2n + 5.",
+      "back": "Input n → [× 2] → [+ 5] → Output Tₙ\nThe input is the position number n; the first box multiplies by 2; the second box adds 5; the output is the term value.\nExample trace: n = 4 → 8 → 13, so T₄ = 13.\nPitfall: keep multiply-before-add order to match Tₙ = 2n + 5.",
+      "tags": [
+        "flow-diagrams"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Patterns - CAPS_words-tables-flow",
+      "sourceFile": "Representing Patterns - CAPS_words-tables-flow.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-489e637dab",
+      "front": "A flow diagram input/output table reads: input 1,2,3,4 → output 4, 7, 10, 13. Find the operation rule.",
+      "back": "Outputs differ by 3 each time → multiply by 3 somewhere.\nTest ×3: 1×3 = 3, need 4, so add 1. Check: 2×3 + 1 = 7 ✓, 4×3 + 1 = 13 ✓.\nRule: output = 3 × input + 1, i.e. Tₙ = 3n + 1.\nFlow diagram: n → [×3] → [+1] → Tₙ.",
+      "tags": [
+        "flow-diagrams"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Patterns - CAPS_words-tables-flow",
+      "sourceFile": "Representing Patterns - CAPS_words-tables-flow.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    },
+    {
+      "id": "patterns-9ba94352c8",
+      "front": "Why must the input row of a pattern table be the position number n, not the term value?",
+      "back": "The formula Tₙ = dn + c takes the POSITION n as input and produces the TERM VALUE as output.\nIf you accidentally feed term values into n you get nonsense.\nConvention: top/left row = n = 1, 2, 3, 4, ... (positions); bottom/right row = T₁, T₂, T₃, ... (values).\nKeep these straight to avoid wrong substitutions.",
+      "tags": [
+        "tables"
+      ],
+      "difficulty": "medium",
+      "source": "Representing Patterns - CAPS_words-tables-flow",
+      "sourceFile": "Representing Patterns - CAPS_words-tables-flow.yml",
+      "requires": {
+        "subject": "patterns",
+        "sectionLine": "91"
+      }
+    }
+  ],
+  "triage": null,
+  "guide": {
+    "chars": 9876,
+    "lines": 106,
+    "sections": [
+      {
+        "level": 1,
+        "title": "Patterns — Complete Study Guide",
+        "line": 0,
+        "body": ""
+      },
+      {
+        "level": 2,
+        "title": "Contents",
+        "line": 2,
+        "body": ""
+      },
+      {
+        "level": 3,
+        "title": "Numeric Patterns with a Constant Difference (Linear Sequences)",
+        "line": 4,
+        "body": "A **linear sequence** is a list of numbers where you add (or subtract) the *same* number to move from one term to the next. That fixed number is the **constant difference**, written **d**. For example, 3, 7, 11, 15, ... adds 4 every step, so d = 4.\n\n**Finding the constant difference.** Subtract any term from the term after it: d = T₂ − T₁ = T₃ − T₂. The difference must be identical between every consecutive pair. If it changes, the sequence is not linear and a rule of the form dn + c will not work.\n\n**The general (nth-term) rule.** Every linear sequence can be written as\n\n> Tₙ = dn + c\n\nwhere **d** is the constant difference and **c = T₀ = first term − d**. The value c is what the sequence would be at position 0, one step before the first term. A frequent mistake is to set c equal to the first term; that is only correct when d = 0. Always compute c = T₁ − d.\n\n**Worked example.** For 7, 12, 17, 22, ...: d = 12 − 7 = 5, and c = 7 − 5 = 2, so Tₙ = 5n + 2. Verify on two terms: T₁ = 5(1) + 2 = 7 ✓ and T₃ = 5(3) + 2 = 17 ✓. For a decreasing sequence such as 20, 17, 14, 11, ..., d is negative: d = −3, c = 20 − (−3) = 23, giving Tₙ = −3n + 23.\n\n**Extending a sequence** can be done quickly by repeatedly adding d, or by substituting positions into the formula. The formula is essential when a question jumps far ahead.\n\n**Finding a specific term.** Substitute the position into Tₙ. To find the 50th term of 4, 9, 14, ...: Tₙ = 5n − 1, so T₅₀ = 5(50) − 1 = 249.\n\n**Finding which term equals a given value.** Set Tₙ equal to that value and solve for n. For 5, 8, 11, ... reaching 95: 3n + 2 = 95 → n = 31, so 95 is the 31st term. Because n counts position, it must be a **positive whole number**. If solving gives a fraction (for example n = 25.25 when testing whether 100 is in 3, 7, 11, ...), the value is **not** a term of the sequence, and you must say so.\n\n**Using two known terms.** If T₃ = 17 and T₇ = 37, there are 4 steps between them, so 4d = 37 − 17 = 20, giving d = 5; then T₀ = 17 − 3d = 2, so Tₙ = 5n + 2."
+      },
+      {
+        "level": 3,
+        "title": "Patterns with a Constant Ratio and Other Special Patterns",
+        "line": 27,
+        "body": "Not every pattern grows by adding a constant. Some grow by **multiplying**, and others follow well-known number shapes.\n\n**Geometric patterns (constant ratio).** In a geometric sequence you multiply by the same number each time to get the next term. That multiplier is the **constant ratio**, r. Find it by dividing any term by the one before it: r = T₂ ÷ T₁. For 2, 6, 18, 54, ..., r = 3. To extend, keep multiplying: 5, 10, 20, 40, 80, 160 (r = 2). The ratio may be a fraction: 64, 32, 16, 8, 4, 2 halves each time (r = ½) and still counts as geometric even though it decreases. The nth term can be written\n\n> Tₙ = T₁ × r^(n−1)\n\nThe exponent is (n − 1) because the first term has not yet been multiplied by r. Example: for 3, 6, 12, 24, ..., T₆ = 3 × 2⁵ = 96.\n\n**Linear vs geometric — how to decide.** Always test the **differences** first: if they are constant, the pattern is linear (Tₙ = dn + c). If not, test the **ratios**: if they are constant, it is geometric. Only if neither is constant do you look for a special pattern.\n\n**Powers.** Sequences such as 2, 4, 8, 16, ... are powers: Tₙ = 2ⁿ. These are geometric with r equal to the base.\n\n**Square numbers.** 1, 4, 9, 16, 25, ... count dots arranged in perfect squares: Tₙ = n². Their differences are the consecutive odd numbers 3, 5, 7, 9, ..., so the difference is not constant — square numbers are a quadratic, not a linear, pattern.\n\n**Triangular numbers.** 1, 3, 6, 10, 15, ... are running sums 1, 1+2, 1+2+3, .... The rule is Tₙ = n(n + 1)/2; for example T₄ = 4(5)/2 = 10. Their differences increase by 1 each time.\n\n**Fibonacci-style patterns.** Here each term is the sum of the two before it: Tₙ = Tₙ₋₁ + Tₙ₋₂. For 1, 1, 2, 3, 5, 8, 13, 21, ... you compute 5 + 8 = 13, then 8 + 13 = 21. There is no single add-or-multiply constant; you must use the previous two terms."
+      },
+      {
+        "level": 3,
+        "title": "Representing Patterns in Multiple Ways",
+        "line": 48,
+        "body": "The same number pattern can be shown in **four** equivalent ways, and Grade 9 expects you to convert freely between them.\n\n**1. In words.** A verbal description such as \"start at 3 and add 4 each time\" captures how the sequence grows. A general verbal rule describes the formula directly, e.g. \"multiply the position number by 7 and add 1.\"\n\n**2. As a flow diagram.** A flow diagram feeds the **position number** n through one or more operation boxes to produce the **term value**. For Tₙ = 2n + 5 the diagram is: input n → [× 2] → [+ 5] → output Tₙ. Trace n = 4: 4 → 8 → 13, so T₄ = 13. Always apply the boxes in the order shown, left to right; for these rules that means multiply before you add.\n\n**3. In a table.** A pattern table has two rows (or columns): the **position** n = 1, 2, 3, 4, ... and the **term value** Tₙ. For Tₙ = 4n − 1:\n\n| n  | 1 | 2 | 3 | 4 | 5 |\n|----|---|---|---|---|---|\n| Tₙ | 3 | 7 | 11 | 15 | 19 |\n\nThe top row is always the input (position); the bottom row is the output (value). Feeding values where positions belong is a common error.\n\n**4. Algebraically.** The compact formula, e.g. Tₙ = 4n − 1.\n\n**Converting between representations.** To go from a **table** to a **formula**, read off the constant difference down the value row, then use c = first term − d. For n: 1,2,3,4 and Tₙ: 8, 13, 18, 23, d = 5 and c = 3, so Tₙ = 5n + 3. To go from a **flow diagram** to a formula, write the operations in order: n → [×3] → [+2] gives Tₙ = 3n + 2. To go from **words** to a table, just apply the description term by term. Because all four describe one pattern, a value computed one way must agree with every other way — a useful self-check."
+      },
+      {
+        "level": 3,
+        "title": "Patterns from Diagrams and Physical Contexts",
+        "line": 69,
+        "body": "Many exam questions present a pattern as a sequence of **pictures** — matchsticks forming squares, dots forming arrays, tiles forming borders. The skill is to turn the pictures into numbers, find a rule, and then predict any figure without drawing it.\n\n**The general method.**\n1. **Count** the items in figures 1, 2, 3 (and 4 if shown).\n2. **Tabulate**: figure number n vs item count Tₙ.\n3. Find the **constant difference** d.\n4. Write **Tₙ = dn + c** with c = first count − d.\n5. **Verify** on a known figure, then substitute the required figure number.\n\n**Worked matchstick example.** Squares in a row use 4, 7, 10 matches for figures 1, 2, 3. The table gives d = 3, c = 4 − 3 = 1, so Tₙ = 3n + 1. Figure 20 needs T₂₀ = 3(20) + 1 = 61 matches. The structure explains the rule: the first square needs 4 matches, but each new square shares a side and adds only 3. The \"+1\" is the single starting vertical that is never repeated, and d = 3 is the matches added per new square. A triangle pattern 3, 5, 7, 9 works the same way: d = 2, c = 1, Tₙ = 2n + 1, so figure 50 needs 101 matches.\n\n**Dot and tile examples.** For dots growing 2, 5, 8, 11, Tₙ = 3n − 1; to find which figure has 32 dots, solve 3n − 1 = 32 → n = 11. For a tile border 8, 12, 16, 20, Tₙ = 4n + 4, so figure 15 has 64 tiles.\n\n**Not all diagram patterns are linear.** A square dot array 1, 4, 9, 16 has differences 3, 5, 7 (not constant), so it is **not** linear — it is Tₙ = n², because figure n is an n × n square. Always test the differences before assuming a dn + c rule.\n\n**Predicting far-off figures.** When asked \"how many matches for the 100th figure,\" never draw 100 pictures. Build the rule from the first few figures and substitute n = 100. For counts 5, 9, 13, Tₙ = 4n + 1, so T₁₀₀ = 401.\n\n**Two-rule questions.** If a diagram asks separately for border tiles and inside tiles, treat each as its own sequence with its own table and rule — for example border 8, 12, 16 → 4n + 4, while inside 1, 4, 9 → n². Do not mix the two counts in one table."
+      },
+      {
+        "level": 3,
+        "title": "Describing the Rule, Verifying It, and Position vs Value",
+        "line": 91,
+        "body": "**Position number vs term value.** This is the single most important distinction in pattern questions. The **position number** n tells you *where* a term sits — 1st, 2nd, 3rd — and is the input. The **term value** Tₙ tells you *what* that term equals — the output. In 6, 11, 16, ..., the term in position n = 2 has value 11. So \"what is the 2nd term?\" asks for a **value** (11), while \"which term is 11?\" asks for a **position** (2). Read each question carefully and answer with the right quantity.\n\n**Describing a rule in words.** There are two standard styles. The **recursive** style describes term-to-term growth: \"start at 4 and add 5 each time.\" The **general** style describes position-to-value: \"multiply the position by 5 and subtract 1,\" matching Tₙ = 5n − 1. The general style is more powerful because it gives any term directly without listing earlier terms. For a decreasing table 10, 8, 6, 4 the rule is \"start at 10 and subtract 2 each time,\" i.e. Tₙ = −2n + 12.\n\n**Verifying a rule.** Substitute at least **two** known positions and check the values match. Claiming Tₙ = 3n + 2 for 5, 8, 11, 14: T₁ = 5 ✓ and T₄ = 14 ✓, so it is verified. Checking only one term is not enough, because a wrong rule can fit a single term by coincidence. If a rule fails on any term it is wrong — e.g. Tₙ = 2n + 3 gives T₃ = 9 but the sequence shows 10, so it fails (and indeed 5, 7, 10, 13 has non-constant differences 2, 3, 3, so no dn + c rule fits at all).\n\n**Common pitfalls.**\n- *Dropping c.* Writing Tₙ = 5n for 8, 13, 18, 23 ignores the constant; the correct rule is Tₙ = 5n + 3 (c = 8 − 5 = 3). Check: 5(1) + 3 = 8 ✓.\n- *Answering the wrong quantity.* \"Determine which term has value 43\" in 3, 7, 11, ... wants the **position**: 4n − 1 = 43 → n = 11, so \"43 is the 11th term.\"\n- *Equivalent rules.* Two different-looking rules can describe the same pattern; Tₙ = 3(n + 1) − 1 and Tₙ = 3n + 2 give identical values. Confirm equivalence by comparing outputs for several n."
+      }
+    ],
+    "firstParagraph": "### Numeric Patterns with a Constant Difference (Linear Sequences)\n\nA **linear sequence** is a list of numbers where you add (or subtract) the *same* number to move from one term to the next. That fixed number is the **constant difference**, written **d**. For example, 3, 7, 11, 15, ... adds 4 every step, so d = 4.",
+    "body": "# Patterns — Complete Study Guide\n\n## Contents\n\n### Numeric Patterns with a Constant Difference (Linear Sequences)\n\nA **linear sequence** is a list of numbers where you add (or subtract) the *same* number to move from one term to the next. That fixed number is the **constant difference**, written **d**. For example, 3, 7, 11, 15, ... adds 4 every step, so d = 4.\n\n**Finding the constant difference.** Subtract any term from the term after it: d = T₂ − T₁ = T₃ − T₂. The difference must be identical between every consecutive pair. If it changes, the sequence is not linear and a rule of the form dn + c will not work.\n\n**The general (nth-term) rule.** Every linear sequence can be written as\n\n> Tₙ = dn + c\n\nwhere **d** is the constant difference and **c = T₀ = first term − d**. The value c is what the sequence would be at position 0, one step before the first term. A frequent mistake is to set c equal to the first term; that is only correct when d = 0. Always compute c = T₁ − d.\n\n**Worked example.** For 7, 12, 17, 22, ...: d = 12 − 7 = 5, and c = 7 − 5 = 2, so Tₙ = 5n + 2. Verify on two terms: T₁ = 5(1) + 2 = 7 ✓ and T₃ = 5(3) + 2 = 17 ✓. For a decreasing sequence such as 20, 17, 14, 11, ..., d is negative: d = −3, c = 20 − (−3) = 23, giving Tₙ = −3n + 23.\n\n**Extending a sequence** can be done quickly by repeatedly adding d, or by substituting positions into the formula. The formula is essential when a question jumps far ahead.\n\n**Finding a specific term.** Substitute the position into Tₙ. To find the 50th term of 4, 9, 14, ...: Tₙ = 5n − 1, so T₅₀ = 5(50) − 1 = 249.\n\n**Finding which term equals a given value.** Set Tₙ equal to that value and solve for n. For 5, 8, 11, ... reaching 95: 3n + 2 = 95 → n = 31, so 95 is the 31st term. Because n counts position, it must be a **positive whole number**. If solving gives a fraction (for example n = 25.25 when testing whether 100 is in 3, 7, 11, ...), the value is **not** a term of the sequence, and you must say so.\n\n**Using two known terms.** If T₃ = 17 and T₇ = 37, there are 4 steps between them, so 4d = 37 − 17 = 20, giving d = 5; then T₀ = 17 − 3d = 2, so Tₙ = 5n + 2.\n\n\n### Patterns with a Constant Ratio and Other Special Patterns\n\nNot every pattern grows by adding a constant. Some grow by **multiplying**, and others follow well-known number shapes.\n\n**Geometric patterns (constant ratio).** In a geometric sequence you multiply by the same number each time to get the next term. That multiplier is the **constant ratio**, r. Find it by dividing any term by the one before it: r = T₂ ÷ T₁. For 2, 6, 18, 54, ..., r = 3. To extend, keep multiplying: 5, 10, 20, 40, 80, 160 (r = 2). The ratio may be a fraction: 64, 32, 16, 8, 4, 2 halves each time (r = ½) and still counts as geometric even though it decreases. The nth term can be written\n\n> Tₙ = T₁ × r^(n−1)\n\nThe exponent is (n − 1) because the first term has not yet been multiplied by r. Example: for 3, 6, 12, 24, ..., T₆ = 3 × 2⁵ = 96.\n\n**Linear vs geometric — how to decide.** Always test the **differences** first: if they are constant, the pattern is linear (Tₙ = dn + c). If not, test the **ratios**: if they are constant, it is geometric. Only if neither is constant do you look for a special pattern.\n\n**Powers.** Sequences such as 2, 4, 8, 16, ... are powers: Tₙ = 2ⁿ. These are geometric with r equal to the base.\n\n**Square numbers.** 1, 4, 9, 16, 25, ... count dots arranged in perfect squares: Tₙ = n². Their differences are the consecutive odd numbers 3, 5, 7, 9, ..., so the difference is not constant — square numbers are a quadratic, not a linear, pattern.\n\n**Triangular numbers.** 1, 3, 6, 10, 15, ... are running sums 1, 1+2, 1+2+3, .... The rule is Tₙ = n(n + 1)/2; for example T₄ = 4(5)/2 = 10. Their differences increase by 1 each time.\n\n**Fibonacci-style patterns.** Here each term is the sum of the two before it: Tₙ = Tₙ₋₁ + Tₙ₋₂. For 1, 1, 2, 3, 5, 8, 13, 21, ... you compute 5 + 8 = 13, then 8 + 13 = 21. There is no single add-or-multiply constant; you must use the previous two terms.\n\n\n### Representing Patterns in Multiple Ways\n\nThe same number pattern can be shown in **four** equivalent ways, and Grade 9 expects you to convert freely between them.\n\n**1. In words.** A verbal description such as \"start at 3 and add 4 each time\" captures how the sequence grows. A general verbal rule describes the formula directly, e.g. \"multiply the position number by 7 and add 1.\"\n\n**2. As a flow diagram.** A flow diagram feeds the **position number** n through one or more operation boxes to produce the **term value**. For Tₙ = 2n + 5 the diagram is: input n → [× 2] → [+ 5] → output Tₙ. Trace n = 4: 4 → 8 → 13, so T₄ = 13. Always apply the boxes in the order shown, left to right; for these rules that means multiply before you add.\n\n**3. In a table.** A pattern table has two rows (or columns): the **position** n = 1, 2, 3, 4, ... and the **term value** Tₙ. For Tₙ = 4n − 1:\n\n| n  | 1 | 2 | 3 | 4 | 5 |\n|----|---|---|---|---|---|\n| Tₙ | 3 | 7 | 11 | 15 | 19 |\n\nThe top row is always the input (position); the bottom row is the output (value). Feeding values where positions belong is a common error.\n\n**4. Algebraically.** The compact formula, e.g. Tₙ = 4n − 1.\n\n**Converting between representations.** To go from a **table** to a **formula**, read off the constant difference down the value row, then use c = first term − d. For n: 1,2,3,4 and Tₙ: 8, 13, 18, 23, d = 5 and c = 3, so Tₙ = 5n + 3. To go from a **flow diagram** to a formula, write the operations in order: n → [×3] → [+2] gives Tₙ = 3n + 2. To go from **words** to a table, just apply the description term by term. Because all four describe one pattern, a value computed one way must agree with every other way — a useful self-check.\n\n\n### Patterns from Diagrams and Physical Contexts\n\nMany exam questions present a pattern as a sequence of **pictures** — matchsticks forming squares, dots forming arrays, tiles forming borders. The skill is to turn the pictures into numbers, find a rule, and then predict any figure without drawing it.\n\n**The general method.**\n1. **Count** the items in figures 1, 2, 3 (and 4 if shown).\n2. **Tabulate**: figure number n vs item count Tₙ.\n3. Find the **constant difference** d.\n4. Write **Tₙ = dn + c** with c = first count − d.\n5. **Verify** on a known figure, then substitute the required figure number.\n\n**Worked matchstick example.** Squares in a row use 4, 7, 10 matches for figures 1, 2, 3. The table gives d = 3, c = 4 − 3 = 1, so Tₙ = 3n + 1. Figure 20 needs T₂₀ = 3(20) + 1 = 61 matches. The structure explains the rule: the first square needs 4 matches, but each new square shares a side and adds only 3. The \"+1\" is the single starting vertical that is never repeated, and d = 3 is the matches added per new square. A triangle pattern 3, 5, 7, 9 works the same way: d = 2, c = 1, Tₙ = 2n + 1, so figure 50 needs 101 matches.\n\n**Dot and tile examples.** For dots growing 2, 5, 8, 11, Tₙ = 3n − 1; to find which figure has 32 dots, solve 3n − 1 = 32 → n = 11. For a tile border 8, 12, 16, 20, Tₙ = 4n + 4, so figure 15 has 64 tiles.\n\n**Not all diagram patterns are linear.** A square dot array 1, 4, 9, 16 has differences 3, 5, 7 (not constant), so it is **not** linear — it is Tₙ = n², because figure n is an n × n square. Always test the differences before assuming a dn + c rule.\n\n**Predicting far-off figures.** When asked \"how many matches for the 100th figure,\" never draw 100 pictures. Build the rule from the first few figures and substitute n = 100. For counts 5, 9, 13, Tₙ = 4n + 1, so T₁₀₀ = 401.\n\n**Two-rule questions.** If a diagram asks separately for border tiles and inside tiles, treat each as its own sequence with its own table and rule — for example border 8, 12, 16 → 4n + 4, while inside 1, 4, 9 → n². Do not mix the two counts in one table.\n\n\n### Describing the Rule, Verifying It, and Position vs Value\n\n**Position number vs term value.** This is the single most important distinction in pattern questions. The **position number** n tells you *where* a term sits — 1st, 2nd, 3rd — and is the input. The **term value** Tₙ tells you *what* that term equals — the output. In 6, 11, 16, ..., the term in position n = 2 has value 11. So \"what is the 2nd term?\" asks for a **value** (11), while \"which term is 11?\" asks for a **position** (2). Read each question carefully and answer with the right quantity.\n\n**Describing a rule in words.** There are two standard styles. The **recursive** style describes term-to-term growth: \"start at 4 and add 5 each time.\" The **general** style describes position-to-value: \"multiply the position by 5 and subtract 1,\" matching Tₙ = 5n − 1. The general style is more powerful because it gives any term directly without listing earlier terms. For a decreasing table 10, 8, 6, 4 the rule is \"start at 10 and subtract 2 each time,\" i.e. Tₙ = −2n + 12.\n\n**Verifying a rule.** Substitute at least **two** known positions and check the values match. Claiming Tₙ = 3n + 2 for 5, 8, 11, 14: T₁ = 5 ✓ and T₄ = 14 ✓, so it is verified. Checking only one term is not enough, because a wrong rule can fit a single term by coincidence. If a rule fails on any term it is wrong — e.g. Tₙ = 2n + 3 gives T₃ = 9 but the sequence shows 10, so it fails (and indeed 5, 7, 10, 13 has non-constant differences 2, 3, 3, so no dn + c rule fits at all).\n\n**Common pitfalls.**\n- *Dropping c.* Writing Tₙ = 5n for 8, 13, 18, 23 ignores the constant; the correct rule is Tₙ = 5n + 3 (c = 8 − 5 = 3). Check: 5(1) + 3 = 8 ✓.\n- *Answering the wrong quantity.* \"Determine which term has value 43\" in 3, 7, 11, ... wants the **position**: 4n − 1 = 43 → n = 11, so \"43 is the 11th term.\"\n- *Equivalent rules.* Two different-looking rules can describe the same pattern; Tₙ = 3(n + 1) − 1 and Tₙ = 3n + 2 give identical values. Confirm equivalence by comparing outputs for several n.\n\n\n",
+    "infographics": [],
+    "videos": [],
+    "audio": []
+  }
+}

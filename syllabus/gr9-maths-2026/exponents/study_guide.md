@@ -104,3 +104,70 @@ Simplify ab(−2a²b³)³ / (−56b³).
 - Divide: (−8a⁷b¹⁰)/(−56b³) = (1/7)a⁷b⁷ = a⁷b⁷/7  (negative ÷ negative = positive).
 
 
+### Scientific Notation (Standard Form)
+
+Scientific notation writes any number in the form **a × 10ⁿ**, where **1 ≤ a < 10** and **n** is an integer. It keeps very large and very small numbers short and easy to compare. The single non-zero digit before the decimal point is what distinguishes correct standard form (4,5 × 10³) from an almost-right answer (45 × 10²).
+
+**Large numbers → positive exponent.** Place the decimal point after the first non-zero digit, then count how many places it moved to the left. That count is the exponent. For example, 384 000 000 becomes 3,84 × 10⁸ because the point shifts 8 places left.
+
+**Small numbers (less than 1) → negative exponent.** Place the point after the first non-zero digit and count how many places it moved to the right; the exponent is the negative of that count. So 0,000 062 = 6,2 × 10⁻⁵.
+
+**Converting back:** a positive exponent moves the point right (bigger number), a negative exponent moves it left (smaller number), filling zeros as needed.
+
+**Multiplying and dividing** use the exponent laws on the powers of 10: multiply the a-values and **add** the exponents; divide the a-values and **subtract** the exponents. Always finish by checking 1 ≤ a < 10. If a multiplication gives 20 × 10⁹, rewrite 20 = 2 × 10¹ to get 2 × 10¹⁰. If a division gives 0,25 × 10⁴, rewrite as 2,5 × 10³.
+
+Scientific notation is the natural language of the very small (cell widths, atoms: negative powers) and the very large (distances to stars and planets: positive powers).
+
+
+### Squares, Cubes and Their Roots
+
+A root is the inverse of a power. For a ≥ 0, the square root undoes squaring and the cube root undoes cubing: **√(a²) = a** and **∛(a³) = a**. Reading these the other way, finding √ or ∛ of a perfect power simply gives back the base — √49 = 7 because 7² = 49, and ∛125 = 5 because 5³ = 125.
+
+**Simplifying the root of a monomial.** A square root is the same as a power of ½, so to take √ of a single product term you root the number part and **halve** each variable's exponent. For example √(9x⁴) = √9 × x⁴ᐟ² = 3x², and √(16x⁸y²) = 4x⁴y. For a cube root you take the cube root of the number and **divide** each exponent by 3: ∛(27x⁶) = 3x² and ∛(64a³b⁹) = 4ab³. Always verify by raising the answer back to the power. This only works cleanly when the coefficient is a perfect square/cube and the exponents are multiples of 2 (or 3).
+
+**Estimating non-perfect roots.** Trap the number between the nearest perfect squares (or cubes) and reason about which it is closer to. Since 7² = 49 and 8² = 64, √50 lies between 7 and 8 and, being just above 49, is about 7,1. Likewise 4³ = 64 and 5³ = 125, so ∛100 lies between 4 and 5, nearer 5 (≈ 4,6).
+
+**Key pitfall:** a root does *not* distribute over addition. √(x² + y²) ≠ x + y — test x = 3, y = 4: √25 = 5, not 7. Roots only split over multiplication and division.
+
+
+### Numeric Evaluation Without a Calculator
+
+Consolidation problems mix powers with the order of operations (BODMAS). The rule is: **deal with brackets, then exponents, then × and ÷ (left to right), then + and − (left to right).** Powers are always worked out before any adding or subtracting.
+
+Worked patterns:
+- **Powers then add/subtract:** 2³ + 3² − 5⁰ = 8 + 9 − 1 = 16 (remember 5⁰ = 1).
+- **Powers in a × ÷ chain:** 3² × 2³ ÷ 6 = 9 × 8 ÷ 6 = 72 ÷ 6 = 12.
+- **Negative indices as fractions:** 2⁻³ + 4⁻¹ = 1/8 + 1/4 = 3/8.
+- **Zero index on a bracket:** (2² + 3²)⁰ + 10¹ = 13⁰ + 10 = 1 + 10 = 11.
+- **Negative bases:** 5² − 2 × 3² + (−2)³ = 25 − 18 − 8 = −1 (an odd power of a negative is negative).
+
+When a single base repeats, it is often cleaner to apply the exponent laws and keep everything as powers, avoiding big intermediate numbers: (3⁴ × 3⁻²) ÷ 3³ = 3² ÷ 3³ = 3⁻¹ = 1/3. Likewise (2³ × 2²) ÷ 2⁴ + 2⁰ = 2⁵⁻⁴ + 1 = 2 + 1 = 3. Use the laws on the like bases first, then finish any leftover addition or subtraction as ordinary arithmetic.
+
+
+### Comparing Powers and Expressing Numbers as Powers
+
+**Comparing two powers.** Look at the bases and exponents:
+- *Same base (>1):* the larger exponent gives the larger value — 2⁷ > 2⁴ at a glance.
+- *Same exponent:* the larger base wins — 9³ > 6³.
+- *Both different:* you cannot judge from the symbols, so evaluate each and compare. 2⁵ = 32 versus 5² = 25, so 2⁵ > 5². Similarly 3⁴ = 81 beats 4³ = 64.
+
+A useful habit is to never assume the bigger-looking expression is larger; compute when in doubt.
+
+**Expressing a number as a power of a given base.** Factorise the number down to its smallest prime base, then regroup the exponent to rebuild the requested base. For 64: 64 = 2⁶. Then, since 4 = 2² and 8 = 2³, we get 64 = (2²)³ = 4³ and 64 = (2³)² = 8². Similarly 81 = 3⁴ = (3²)² = 9².
+
+Sometimes the number is *not* a whole-number power of the requested base. Writing 32 as a power of 4: 32 = 2⁵, and 4ⁿ = 2²ⁿ, so we need 2n = 5, giving n = 2,5 and 32 = 4²ᐟ⁵. A number is a whole-number power of a base only when it factorises exactly into copies of that base.
+
+
+### Common Exam Traps
+
+These are the errors that cost the most marks in exponent questions.
+
+**−3² versus (−3)².** An exponent binds tighter than a leading minus sign. So −3² means −(3²) = −9, while (−3)² means (−3)×(−3) = +9. The brackets decide whether the negative is squared. Same idea: −2⁴ = −16 but (−2)⁴ = 16, and −2⁻² = −(1/4) = −1/4 while (−2)⁻² = 1/4.
+
+**Coefficient versus base with negative exponents.** A negative exponent attaches only to its own base, not to any coefficient. So 2x⁻³ = 2/x³ (the 2 stays on top). It is *not* 1/(2x)³. By contrast (2x)⁻³ puts the whole 2x in the base: (2x)⁻³ = 1/(8x³). Likewise 3x⁻² = 3/x² but (3x)⁻² = 1/(9x²). Always check whether the coefficient sits inside the bracket.
+
+**Zero as a base.** Any non-zero base to the power 0 is 1 (5⁰ = 1), but 0⁵ = 0, and 0⁰ is *undefined* — never write 0⁰ = 1. Negative powers of 0 are also undefined, since they require dividing by 0.
+
+**Laws apply only to like bases.** Adding or subtracting exponents is allowed only when the bases match. x² × y³ stays x²y³ — it does not become (xy)⁵. And the laws are for multiplication/division, never for sums: 2³ + 2² = 8 + 4 = 12, not 2⁵. For a sum of powers, evaluate each term and add the results.
+
+

@@ -1,0 +1,3001 @@
+{
+  "subject": "numbers",
+  "cat": "mascot",
+  "cards": [
+    {
+      "id": "numbers-82164394e7",
+      "front": "What is the place value of each digit in 4.728?",
+      "back": "Read positions after the decimal point as tenths, hundredths, thousandths.\n4 = ones (units)\n7 = 7 tenths = 7/10\n2 = 2 hundredths = 2/100\n8 = 8 thousandths = 8/1000\nSo 4.728 = 4 + 0.7 + 0.02 + 0.008.\nTip: 1st place = tenths, 2nd = hundredths, 3rd = thousandths.",
+      "tags": [
+        "place-value"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "539"
+      }
+    },
+    {
+      "id": "numbers-489960ed2a",
+      "front": "Write 'three and forty-five thousandths' as a decimal.",
+      "back": "Thousandths means 3 decimal places.\n45 thousandths = 045 in the three places after the point.\nAnswer: 3.045\nCommon mistake: writing 3.45 (that is 45 hundredths). You must fill the empty tenths place with 0.",
+      "tags": [
+        "place-value"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-4194268f82",
+      "front": "Compare: which is bigger, 0.4 or 0.38? Explain.",
+      "back": "Give both the same number of decimal places by adding a trailing zero.\n0.4 = 0.40\nCompare 0.40 and 0.38 → 40 hundredths vs 38 hundredths.\n∴ 0.4 > 0.38\nWarning: do NOT think 0.38 is bigger because it has more digits. More digits ≠ bigger.",
+      "tags": [
+        "comparing-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-6acf74eeb1",
+      "front": "Method: how do you add or subtract decimals correctly?",
+      "back": "1. Line up the decimal points (and the place-value columns) under each other.\n2. Fill empty places with zeros so all numbers have the same length.\n3. Add/subtract column by column, carrying or borrowing as usual.\n4. Bring the decimal point straight down into the answer.",
+      "tags": [
+        "adding-subtracting"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "539"
+      }
+    },
+    {
+      "id": "numbers-4605e00db2",
+      "front": "Calculate 12.6 + 3.45 + 0.8",
+      "back": "Line up points and pad with zeros:\n  12.60\n   3.45\n+  0.80\n-------\n  16.85\nAdd: hundredths 0+5+0=5; tenths 6+4+8=18 (write 8 carry 1); ones 2+3+0+1=6; tens 1.\nAnswer: 16.85\nMistake to avoid: ragged right-hand ends — always pad with zeros.",
+      "tags": [
+        "adding-subtracting"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "298"
+      }
+    },
+    {
+      "id": "numbers-bc76781d53",
+      "front": "Calculate 9.3 − 4.78",
+      "back": "Pad and line up:\n  9.30\n− 4.78\n------\n  4.52\nHundredths: 0−8 → borrow, 10−8=2; tenths: 2−7 → borrow, 12−7=5; ones: 8−4=4.\nAnswer: 4.52\nTip: write 9.3 as 9.30 before subtracting so you don't get stuck.",
+      "tags": [
+        "adding-subtracting"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "224"
+      }
+    },
+    {
+      "id": "numbers-d047a21d25",
+      "front": "Method: how do you multiply two decimals, e.g. 0.6 × 0.04?",
+      "back": "1. Ignore the decimal points and multiply as whole numbers: 6 × 4 = 24.\n2. Count the total decimal places in BOTH numbers: 0.6 (1) + 0.04 (2) = 3 places.\n3. Put that many decimal places in the answer.\n24 → 0.024 (3 places).\nAnswer: 0.6 × 0.04 = 0.024",
+      "tags": [
+        "multiplying-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-8b380f7bd4",
+      "front": "Calculate 1.25 × 3.4",
+      "back": "Whole numbers: 125 × 34 = 4250.\nDecimal places: 1.25 (2) + 3.4 (1) = 3 places.\nPlace point 3 in from the right: 4250 → 4.250 = 4.25.\nAnswer: 1.25 × 3.4 = 4.25\nCheck by estimating: 1.25 × 3.4 ≈ 1.3 × 3 ≈ 4 ✓",
+      "tags": [
+        "multiplying-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "numbers-aa68707487",
+      "front": "Why does 0.2 × 0.3 = 0.06 and not 0.6?",
+      "back": "Multiply digits: 2 × 3 = 6.\nTotal decimal places: 0.2 (1) + 0.3 (1) = 2 places.\nSo 6 must have 2 decimal places: 0.06.\nMeaning check: 0.2 × 0.3 = 1/5 × 3/10 = 3/50 = 0.06 ✓\nCommon mistake: forgetting to insert the extra zero to make 2 places.",
+      "tags": [
+        "multiplying-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-88c00dff60",
+      "front": "Method: how do you divide by a decimal, e.g. 4.5 ÷ 0.5?",
+      "back": "Make the DIVISOR a whole number by multiplying both numbers by the same power of 10.\n0.5 × 10 = 5, so multiply 4.5 × 10 = 45.\nNow 4.5 ÷ 0.5 = 45 ÷ 5 = 9.\nAnswer: 9\nRule: shift the point in both the same number of places — this keeps the value of the fraction unchanged.",
+      "tags": [
+        "dividing-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-6b7ee3be71",
+      "front": "Calculate 7.5 ÷ 0.25",
+      "back": "Divisor 0.25 has 2 decimal places → multiply both by 100.\n7.5 × 100 = 750; 0.25 × 100 = 25.\n7.5 ÷ 0.25 = 750 ÷ 25 = 30.\nAnswer: 30\nTip: dividing by a number less than 1 gives an answer BIGGER than the start — 30 > 7.5 ✓",
+      "tags": [
+        "dividing-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-c1cc39577d",
+      "front": "Calculate 6.4 ÷ 8 (decimal ÷ whole number).",
+      "back": "When the divisor is already a whole number, just divide and keep the point lined up.\n6.4 ÷ 8: 64 tenths ÷ 8 = 8 tenths = 0.8.\nLong division: 8 into 6 is 0; 8 into 64 is 8 → 0.8.\nAnswer: 0.8\nKeep the decimal point in the quotient directly above the point in the dividend.",
+      "tags": [
+        "dividing-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-d121a6e8cd",
+      "front": "Rule: how do you multiply a decimal by 10, 100 or 1000?",
+      "back": "Move the decimal point to the RIGHT, one place for each zero.\n× 10 → 1 place right\n× 100 → 2 places right\n× 1000 → 3 places right\nExamples: 3.45 × 10 = 34.5; 3.45 × 100 = 345; 0.7 × 1000 = 700 (add zeros to fill).",
+      "tags": [
+        "powers-of-ten"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-d2a586e024",
+      "front": "Rule: how do you divide a decimal by 10, 100 or 1000?",
+      "back": "Move the decimal point to the LEFT, one place for each zero.\n÷ 10 → 1 place left\n÷ 100 → 2 places left\n÷ 1000 → 3 places left\nExamples: 56.2 ÷ 10 = 5.62; 56.2 ÷ 100 = 0.562; 8 ÷ 1000 = 0.008 (insert zeros as placeholders).",
+      "tags": [
+        "powers-of-ten"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-b43a08e6eb",
+      "front": "Method: how do you round a decimal to a given number of decimal places (dp)?",
+      "back": "1. Find the digit in the last place you are keeping.\n2. Look at the NEXT digit to its right (the decider).\n3. If the decider is 5 or more, round up (add 1); if 4 or less, leave the kept digit as is.\n4. Drop all digits after the rounding place.\nExample: 3.7846 to 2 dp → decider is 4 → 3.78.",
+      "tags": [
+        "rounding-dp"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-905e6e9bfc",
+      "front": "Round 0.4567 to (a) 1 dp and (b) 3 dp.",
+      "back": "(a) 1 dp: keep the 4 (tenths); decider is 5 → round up → 0.5\n(b) 3 dp: keep ...456; decider is 7 → round up the 6 to 7 → 0.457\nWarning: when rounding up a 9 you carry, e.g. 0.198 to 2 dp → 0.20 (keep the trailing zero to show 2 dp).",
+      "tags": [
+        "rounding-dp"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "224"
+      }
+    },
+    {
+      "id": "numbers-2880ab3df8",
+      "front": "What are significant figures (sig figs) and which digits count?",
+      "back": "Significant figures are the digits that carry meaning about a number's size.\nRules:\n1. All non-zero digits are significant.\n2. Zeros BETWEEN non-zero digits are significant (e.g. 3.05 has 3 sf).\n3. Leading zeros are NOT significant (0.0042 has 2 sf).\n4. Trailing zeros after a decimal point ARE significant (0.300 has 3 sf).",
+      "tags": [
+        "significant-figures"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-4f7052c3d2",
+      "front": "Round 0.04736 to 2 significant figures.",
+      "back": "Leading zeros don't count. First sig fig = 4, second = 7.\nDecider is the next digit, 3 → 3 < 5 → leave the 7.\nAnswer: 0.047 (2 sf)\nMistake to avoid: don't count the zeros before the 4 as sig figs, but you MUST keep them as placeholders.",
+      "tags": [
+        "significant-figures"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "224"
+      }
+    },
+    {
+      "id": "numbers-2679701450",
+      "front": "Round 23 947 to 2 significant figures.",
+      "back": "First sf = 2, second sf = 3. Decider is the next digit 9 → 9 ≥ 5 → round up 3 to 4.\nReplace the remaining digits with zeros as placeholders.\nAnswer: 24 000 (2 sf)\nNote: the zeros here are placeholders, not significant — they hold the place value.",
+      "tags": [
+        "significant-figures"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "539"
+      }
+    },
+    {
+      "id": "numbers-8ccee61c53",
+      "front": "How do you estimate to check 38.7 × 5.2 is reasonable?",
+      "back": "Round each number to 1 significant figure, then compute:\n38.7 ≈ 40 and 5.2 ≈ 5.\nEstimate: 40 × 5 = 200.\nThe exact answer 201.24 is close to 200, so it is reasonable ✓\nUse estimation to catch place-value slips like getting 20.124 or 2012.4.",
+      "tags": [
+        "estimation"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "539"
+      }
+    },
+    {
+      "id": "numbers-5d5a65715e",
+      "front": "Estimate 612 ÷ 2.9 by rounding, then say whether 21.1 is reasonable.",
+      "back": "Round to convenient numbers: 612 ≈ 600 and 2.9 ≈ 3.\nEstimate: 600 ÷ 3 = 200.\nThe candidate answer 21.1 is about 10× too small, so it is NOT reasonable — likely a decimal-point error.\nThe true answer ≈ 211, which matches the estimate of 200 ✓",
+      "tags": [
+        "estimation"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "0"
+      }
+    },
+    {
+      "id": "numbers-b94f236fde",
+      "front": "Convert 0.375 to a fraction in simplest form.",
+      "back": "0.375 has 3 decimal places → write over 1000.\n0.375 = 375/1000.\nSimplify: divide top and bottom by 125 → 3/8.\nAnswer: 0.375 = 3/8\nCheck: 3 ÷ 8 = 0.375 ✓",
+      "tags": [
+        "decimals-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Decimals - CAPS_decimals",
+      "sourceFile": "Decimals - CAPS_decimals.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-91ee0cdee6",
+      "front": "What is a FACTOR of a number? Give the factors of 12.",
+      "back": "A factor of a number divides into it exactly (no remainder).\nFactors of 12: 1, 2, 3, 4, 6, 12.\nTip: list them in pairs that multiply to 12 — 1×12, 2×6, 3×4 — so you miss none.",
+      "tags": [
+        "factors-definition"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-1c0dfd0099",
+      "front": "What is a MULTIPLE of a number? Give the first five multiples of 6.",
+      "back": "A multiple is the answer when you multiply a number by 1, 2, 3, ...\nFirst five multiples of 6: 6, 12, 18, 24, 30.\nEvery number has infinitely many multiples but a finite number of factors.",
+      "tags": [
+        "multiples-definition"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-6357322d73",
+      "front": "What is a PRIME number? List all primes below 20.",
+      "back": "A prime number has exactly TWO different factors: 1 and itself.\nPrimes below 20: 2, 3, 5, 7, 11, 13, 17, 19.\nNote: 2 is the only even prime.",
+      "tags": [
+        "prime-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "307"
+      }
+    },
+    {
+      "id": "numbers-9e581c6373",
+      "front": "What is a COMPOSITE number? Is 1 composite?",
+      "back": "A composite number has MORE than two factors (it has factors besides 1 and itself).\nExample: 15 has factors 1, 3, 5, 15 → composite.\n1 is NOT composite (and not prime) — it has only one factor, itself.",
+      "tags": [
+        "composite-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-a273b92721",
+      "front": "Why is 1 NOT a prime number?",
+      "back": "A prime must have EXACTLY two DIFFERENT factors.\n1 has only one factor (itself), so it fails this rule.\n∴ 1 is neither prime nor composite — it is a special case. (This also keeps prime factorisation unique.)",
+      "tags": [
+        "prime-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "322"
+      }
+    },
+    {
+      "id": "numbers-cb72dd852c",
+      "front": "Prime factorise 360 using the LADDER (division) method. Give exponent form.",
+      "back": "Divide by smallest primes, top to bottom:\n2 | 360\n2 | 180\n2 | 90\n3 | 45\n3 | 15\n5 | 5\n   | 1\nPrimes used: 2, 2, 2, 3, 3, 5.\n∴ 360 = 2³ × 3² × 5",
+      "tags": [
+        "prime-factorisation"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "307"
+      }
+    },
+    {
+      "id": "numbers-2596fe64e9",
+      "front": "Prime factorise 84 using a FACTOR TREE. Give exponent form.",
+      "back": "Split into any two factors, keep splitting until all branches are prime:\n84 = 4 × 21\n4 = 2 × 2 ; 21 = 3 × 7\nPrime leaves: 2, 2, 3, 7.\n∴ 84 = 2² × 3 × 7\nWhichever first split you choose, the prime factors are always the same.",
+      "tags": [
+        "prime-factorisation"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "322"
+      }
+    },
+    {
+      "id": "numbers-6a1d6ad8df",
+      "front": "Always start the ladder/division method with which prime? Why?",
+      "back": "Start with the SMALLEST prime that divides the number (try 2, then 3, then 5, 7, ...).\nKeep dividing by the same prime while it still goes in, then move up.\nThis gives the prime factors neatly in order and avoids missing any.",
+      "tags": [
+        "prime-factorisation"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "322"
+      }
+    },
+    {
+      "id": "numbers-cb4f54f24f",
+      "front": "Divisibility rule for 2 and for 5.",
+      "back": "÷2: the number is EVEN — last digit is 0, 2, 4, 6 or 8.\n÷5: last digit is 0 or 5.\nExample: 130 ends in 0 → divisible by both 2 and 5.",
+      "tags": [
+        "divisibility-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-e6cb970be9",
+      "front": "Divisibility rule for 10.",
+      "back": "÷10: the last digit is 0.\nExample: 470 ends in 0 → divisible by 10.\n(A number divisible by 10 is automatically divisible by both 2 and 5.)",
+      "tags": [
+        "divisibility-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-eb0b6ff449",
+      "front": "Divisibility rule for 3 and for 9.",
+      "back": "÷3: the SUM of the digits is divisible by 3.\n÷9: the SUM of the digits is divisible by 9.\nExample: 738 → 7+3+8 = 18. 18 ÷ 3 = 6 ✓ and 18 ÷ 9 = 2 ✓, so 738 is divisible by both 3 and 9.",
+      "tags": [
+        "divisibility-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-e147cab8d6",
+      "front": "Divisibility rule for 4.",
+      "back": "÷4: the number formed by the LAST TWO digits is divisible by 4.\nExample: 1 316 → last two digits 16; 16 ÷ 4 = 4 ✓ → 1 316 is divisible by 4.\nCounter: 1 322 → 22 ÷ 4 leaves a remainder, so not divisible by 4.",
+      "tags": [
+        "divisibility-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-9894d4aa9e",
+      "front": "Divisibility rule for 8.",
+      "back": "÷8: the number formed by the LAST THREE digits is divisible by 8.\nExample: 5 120 → last three digits 120; 120 ÷ 8 = 15 ✓ → divisible by 8.\nFor smaller numbers just check if 8 divides the whole number.",
+      "tags": [
+        "divisibility-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-a8bf4c5661",
+      "front": "Divisibility rule for 6.",
+      "back": "÷6: the number must be divisible by BOTH 2 AND 3.\nSo: it is even AND its digit sum is divisible by 3.\nExample: 522 → even ✓; 5+2+2 = 9, divisible by 3 ✓ → 522 is divisible by 6.",
+      "tags": [
+        "divisibility-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-5679d4689e",
+      "front": "Divisibility rule for 11.",
+      "back": "÷11: find the difference between the sum of digits in odd positions and the sum in even positions; if it is 0 or a multiple of 11, the number is divisible by 11.\nExample: 2 783 → (2+8) − (7+3) = 10 − 10 = 0 ✓ → divisible by 11.\n(2 783 = 11 × 253.)",
+      "tags": [
+        "divisibility-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-d52988e5b3",
+      "front": "How do you find the HCF using prime factors? State the rule.",
+      "back": "HCF = product of the COMMON primes, each to its LOWEST power.\nSteps: prime factorise each number, find primes appearing in EVERY number, take the smallest exponent of each, multiply.\nIf there is no common prime, the HCF is 1.",
+      "tags": [
+        "hcf"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "352"
+      }
+    },
+    {
+      "id": "numbers-7826e8bc35",
+      "front": "Find the HCF of 72 and 120 using prime factors.",
+      "back": "72 = 2³ × 3²\n120 = 2³ × 3 × 5\nCommon primes: 2 and 3.\nLowest powers: 2³ and 3¹.\nHCF = 2³ × 3 = 8 × 3 = 24",
+      "tags": [
+        "hcf"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "352"
+      }
+    },
+    {
+      "id": "numbers-fd362fa01a",
+      "front": "How do you find the LCM using prime factors? State the rule.",
+      "back": "LCM = product of ALL primes that appear in ANY number, each to its HIGHEST power.\nSteps: prime factorise each number, list every prime that occurs, take the largest exponent of each, multiply.\nThe LCM is always ≥ the largest number.",
+      "tags": [
+        "lcm"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-88e90a1e02",
+      "front": "Find the LCM of 72 and 120 using prime factors.",
+      "back": "72 = 2³ × 3²\n120 = 2³ × 3 × 5\nAll primes: 2, 3, 5.\nHighest powers: 2³, 3², 5¹.\nLCM = 2³ × 3² × 5 = 8 × 9 × 5 = 360",
+      "tags": [
+        "lcm"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "307"
+      }
+    },
+    {
+      "id": "numbers-b1470a8032",
+      "front": "Common mistake: students swap HCF and LCM. How do you remember which power to use?",
+      "back": "HCF — Highest COMMON Factor → only COMMON primes, LOWEST powers (the answer is SMALL).\nLCM — Lowest COMMON Multiple → ALL primes, HIGHEST powers (the answer is BIG).\nCheck: HCF ≤ each number ≤ LCM.",
+      "tags": [
+        "hcf"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "352"
+      }
+    },
+    {
+      "id": "numbers-0e6dc9e8b5",
+      "front": "Useful shortcut linking HCF and LCM of two numbers a and b.",
+      "back": "For any two numbers: HCF × LCM = a × b.\nCheck with 72 and 120: HCF × LCM = 24 × 360 = 8 640, and 72 × 120 = 8 640 ✓\nThis lets you find the LCM quickly once you know the HCF: LCM = (a × b) ÷ HCF.",
+      "tags": [
+        "hcf"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "352"
+      }
+    },
+    {
+      "id": "numbers-f1a7514403",
+      "front": "WORD PROBLEM: Two lighthouses flash every 72 s and every 120 s. They flash together now. After how many seconds do they next flash together?",
+      "back": "\"Together again\" → use the LCM.\n72 = 2³ × 3², 120 = 2³ × 3 × 5.\nLCM = 2³ × 3² × 5 = 360.\n∴ They flash together again after 360 seconds (6 minutes).",
+      "tags": [
+        "lcm"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "364"
+      }
+    },
+    {
+      "id": "numbers-38aad6d8f8",
+      "front": "WORD PROBLEM: 48 pencils and 36 erasers are packed into identical bags with none left over. What is the greatest number of bags? How many of each per bag?",
+      "back": "\"Greatest number of equal groups\" → use the HCF.\n48 = 2⁴ × 3, 36 = 2² × 3².\nCommon primes lowest powers: 2² × 3 = 12.\n∴ 12 bags, each with 48÷12 = 4 pencils and 36÷12 = 3 erasers.",
+      "tags": [
+        "hcf"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-d62c98024a",
+      "front": "Is 1 a factor and a multiple of every number? Is every number a factor and multiple of itself?",
+      "back": "Yes: 1 is a factor of every whole number (1 divides everything).\nEvery number is a multiple of 1.\nEvery number is both a factor and a multiple of itself (e.g. 7 is a factor of 7 and a multiple of 7).\n0 is a multiple of every number but factors are usually taken as positive whole numbers.",
+      "tags": [
+        "factors-definition"
+      ],
+      "difficulty": "medium",
+      "source": "Factors Multiples Primes - CAPS_factors",
+      "sourceFile": "Factors Multiples Primes - CAPS_factors.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-cf254fd750",
+      "front": "What are equivalent fractions, and how do you make one?",
+      "back": "Equivalent fractions name the same value but look different.\nMake one by multiplying (or dividing) the numerator AND denominator by the SAME non-zero number.\nExample: 2/3 = (2×4)/(3×4) = 8/12.\nCheck: 2/3 and 8/12 both sit at the same point on a number line.\nWarning: you may NOT add the same number to top and bottom — only multiply/divide.",
+      "tags": [
+        "equivalent-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-a5dbc5fb31",
+      "front": "Simplify 18/24 to lowest terms. Show the method.",
+      "back": "Step 1: Find the HCF of 18 and 24.\n18 = 2×3×3, 24 = 2×2×2×3, so HCF = 2×3 = 6.\nStep 2: Divide top and bottom by the HCF.\n18÷6 = 3, 24÷6 = 4.\n∴ 18/24 = 3/4.\nA fraction is in lowest terms when the only common factor of top and bottom is 1.",
+      "tags": [
+        "simplifying-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "352"
+      }
+    },
+    {
+      "id": "numbers-a725860332",
+      "front": "How do you know a fraction is fully simplified (in lowest terms)?",
+      "back": "It is in lowest terms when the HCF of the numerator and denominator is 1 (no common factor other than 1).\nExample: 3/4 is fully simplified (HCF of 3 and 4 is 1).\nExample: 6/9 is NOT — HCF is 3, so 6/9 = 2/3.\nTip: keep dividing by common factors until none remain.",
+      "tags": [
+        "simplifying-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "352"
+      }
+    },
+    {
+      "id": "numbers-befaf3dd07",
+      "front": "Convert the mixed number 3 2/5 to an improper fraction.",
+      "back": "Rule: (whole × denominator + numerator) / denominator.\nStep: 3×5 = 15, then 15 + 2 = 17.\nKeep the same denominator (5).\n∴ 3 2/5 = 17/5.\nCheck: 17/5 = 3 remainder 2 = 3 2/5. ✓",
+      "tags": [
+        "mixed-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "435"
+      }
+    },
+    {
+      "id": "numbers-d9f1486b2b",
+      "front": "Convert the improper fraction 23/4 to a mixed number.",
+      "back": "Divide the numerator by the denominator: 23 ÷ 4 = 5 remainder 3.\nThe quotient (5) is the whole number; the remainder (3) is the new numerator; keep the denominator (4).\n∴ 23/4 = 5 3/4.\nCheck: 5×4 + 3 = 23. ✓",
+      "tags": [
+        "mixed-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-9f41180454",
+      "front": "Add 2/3 + 1/4. Show the common-denominator method.",
+      "back": "Step 1: LCM of denominators 3 and 4 is 12.\nStep 2: Make equivalent fractions over 12.\n2/3 = 8/12, 1/4 = 3/12.\nStep 3: Add the numerators, keep the denominator.\n8/12 + 3/12 = 11/12.\n∴ 2/3 + 1/4 = 11/12 (already simplified).",
+      "tags": [
+        "adding-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "364"
+      }
+    },
+    {
+      "id": "numbers-7d77fc264c",
+      "front": "Subtract 5/6 − 1/4. Show all steps.",
+      "back": "Step 1: LCM of 6 and 4 is 12.\nStep 2: 5/6 = 10/12, 1/4 = 3/12.\nStep 3: Subtract numerators: 10/12 − 3/12 = 7/12.\n∴ 5/6 − 1/4 = 7/12.\nReminder: NEVER subtract denominators — only the numerators once denominators match.",
+      "tags": [
+        "subtracting-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "364"
+      }
+    },
+    {
+      "id": "numbers-169dab4b9a",
+      "front": "How do you find the LCM of two denominators, e.g. 6 and 8?",
+      "back": "Method 1 (prime factors): 6 = 2×3, 8 = 2×2×2. Take the highest power of each prime: 2³×3 = 24.\nMethod 2 (list multiples): 6, 12, 18, 24...; 8, 16, 24... first shared = 24.\n∴ LCM(6, 8) = 24, the smallest common denominator to use.",
+      "tags": [
+        "lcm-denominators"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "364"
+      }
+    },
+    {
+      "id": "numbers-837bc3aafb",
+      "front": "Add the mixed numbers 2 1/2 + 1 2/3.",
+      "back": "Method: add wholes and fractions separately.\nWholes: 2 + 1 = 3.\nFractions: 1/2 + 2/3. LCM(2,3)=6, so 3/6 + 4/6 = 7/6 = 1 1/6.\nCombine: 3 + 1 1/6 = 4 1/6.\n∴ 2 1/2 + 1 2/3 = 4 1/6.\nAlternative: convert to improper first (5/2 + 5/3 = 15/6 + 10/6 = 25/6 = 4 1/6).",
+      "tags": [
+        "mixed-numbers",
+        "adding-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "435"
+      }
+    },
+    {
+      "id": "numbers-61ed48a611",
+      "front": "Subtract mixed numbers 4 1/4 − 1 2/3 (with borrowing).",
+      "back": "Convert to improper fractions to avoid borrowing errors.\n4 1/4 = 17/4, 1 2/3 = 5/3.\nLCM(4,3)=12: 17/4 = 51/12, 5/3 = 20/12.\n51/12 − 20/12 = 31/12 = 2 7/12.\n∴ 4 1/4 − 1 2/3 = 2 7/12.",
+      "tags": [
+        "mixed-numbers",
+        "subtracting-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "435"
+      }
+    },
+    {
+      "id": "numbers-3375520b00",
+      "front": "Multiply 3/8 × 4/9. Cross-cancel first.",
+      "back": "Step 1: Cross-cancel common factors before multiplying.\n3 and 9 share 3: 3→1, 9→3. 4 and 8 share 4: 4→1, 8→2.\nNow (1/2) × (1/3).\nStep 2: Multiply tops and bottoms: (1×1)/(2×3) = 1/6.\n∴ 3/8 × 4/9 = 1/6.\nCancelling first keeps numbers small and the answer already simplified.",
+      "tags": [
+        "multiplying-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "503"
+      }
+    },
+    {
+      "id": "numbers-30224a654a",
+      "front": "What is the rule for multiplying fractions? (Do you need a common denominator?)",
+      "back": "NO common denominator needed for multiplication.\nRule: multiply numerator × numerator and denominator × denominator, then simplify (or cancel first).\nExample: 2/5 × 3/7 = (2×3)/(5×7) = 6/35.\nCommon mistake: students wrongly find an LCM — that is only for + and −.",
+      "tags": [
+        "multiplying-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "364"
+      }
+    },
+    {
+      "id": "numbers-99fdb59ddd",
+      "front": "Multiply the mixed numbers 1 1/3 × 2 1/4.",
+      "back": "Step 1: Convert to improper fractions FIRST.\n1 1/3 = 4/3, 2 1/4 = 9/4.\nStep 2: Cancel: 3 and 9 share 3 → 9 becomes 3. Now (4/1)×(3/4)... cancel 4: (1/1)×(3/1)=3.\nWritten: 4/3 × 9/4 = (4×9)/(3×4) = 36/12 = 3.\n∴ 1 1/3 × 2 1/4 = 3.\nMistake to avoid: never multiply the whole parts and fraction parts separately.",
+      "tags": [
+        "multiplying-fractions",
+        "mixed-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "435"
+      }
+    },
+    {
+      "id": "numbers-032f031ee6",
+      "front": "Divide 3/5 ÷ 2/7 using keep-flip-change.",
+      "back": "Keep-flip-change (keep-change-flip): keep the first fraction, change ÷ to ×, flip the second (use its reciprocal).\n3/5 ÷ 2/7 = 3/5 × 7/2.\nMultiply: (3×7)/(5×2) = 21/10 = 2 1/10.\n∴ 3/5 ÷ 2/7 = 21/10 = 2 1/10.",
+      "tags": [
+        "dividing-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "224"
+      }
+    },
+    {
+      "id": "numbers-35382aaa9d",
+      "front": "What is the reciprocal of a fraction, and of a whole number like 4?",
+      "back": "The reciprocal flips numerator and denominator. A number × its reciprocal = 1.\nReciprocal of 3/8 is 8/3.\nReciprocal of 4 (= 4/1) is 1/4.\nReciprocal of a mixed number: convert first — reciprocal of 2 1/2 = 5/2 is 2/5.\nUsed in division: dividing by a fraction = multiplying by its reciprocal.",
+      "tags": [
+        "dividing-fractions",
+        "reciprocal"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-b8f83a17e5",
+      "front": "Divide the mixed numbers 2 1/2 ÷ 1 1/4.",
+      "back": "Step 1: Convert to improper: 2 1/2 = 5/2, 1 1/4 = 5/4.\nStep 2: Keep-flip-change: 5/2 × 4/5.\nStep 3: Cancel 5 with 5, and 2 with 4: = (1/1)×(2/1) = 2.\n∴ 2 1/2 ÷ 1 1/4 = 2.",
+      "tags": [
+        "dividing-fractions",
+        "mixed-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "435"
+      }
+    },
+    {
+      "id": "numbers-9d3519e1a5",
+      "front": "In maths, what does the word \"of\" mean with fractions?",
+      "back": "\"of\" means MULTIPLY.\nExample: 1/3 of 12 = 1/3 × 12 = 12/3 = 4.\nExample: 3/4 of 20 = 3/4 × 20 = 60/4 = 15.\nSo \"a fraction of a quantity\" is just fraction × quantity.",
+      "tags": [
+        "fraction-of-quantity"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-6347f9d457",
+      "front": "Calculate 3/4 of R120 (a CAPS money problem).",
+      "back": "\"of\" means ×, so 3/4 × 120.\nMethod: 120 ÷ 4 = 30 (that is 1/4), then 30 × 3 = 90.\n∴ 3/4 of R120 = R90.\nQuick check: 1/4 of R120 is R30, and 3 quarters is 3×R30 = R90. ✓",
+      "tags": [
+        "fraction-of-quantity"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "503"
+      }
+    },
+    {
+      "id": "numbers-1ced1a19d0",
+      "front": "Tickets cost R150 and a learner pays 2/5 of it. How much does she pay?",
+      "back": "2/5 of R150 = 2/5 × 150.\nMethod: 150 ÷ 5 = 30 (that is 1/5), then 30 × 2 = 60.\n∴ she pays R60.\nThe remaining 3/5 = R90 (since R60 + R90 = R150). ✓",
+      "tags": [
+        "fraction-of-quantity"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml"
+    },
+    {
+      "id": "numbers-01f4e1e165",
+      "front": "What is the order of operations (BODMAS) when a calculation has fractions?",
+      "back": "Same rules as with whole numbers — fractions do not change the order:\nB Brackets, O Of/Orders (powers, roots), D&M Division and Multiplication (left to right), A&S Addition and Subtraction (left to right).\nNote: \"of\" is treated as multiplication and done with the O/DM stage.\nExample: 1/2 + 1/3 × 3/4 → do × first: 1/3 × 3/4 = 1/4, then 1/2 + 1/4 = 3/4.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "513"
+      }
+    },
+    {
+      "id": "numbers-86a39ff563",
+      "front": "Evaluate 2/3 + 1/4 × 8/9 using order of operations.",
+      "back": "Step 1 (multiply first): 1/4 × 8/9. Cancel 4 with 8 (8→2): = 2/(4×9)... cleanly (1×2)/(1×9) = 2/9.\nStep 2 (now add): 2/3 + 2/9. LCM=9: 6/9 + 2/9 = 8/9.\n∴ 2/3 + 1/4 × 8/9 = 8/9.\nMistake to avoid: do NOT add 2/3 + 1/4 first — multiplication comes before addition.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "167"
+      }
+    },
+    {
+      "id": "numbers-9f5057e2f9",
+      "front": "Evaluate (1/2 + 1/3) ÷ 5/6 using order of operations.",
+      "back": "Step 1 (brackets first): 1/2 + 1/3. LCM=6: 3/6 + 2/6 = 5/6.\nStep 2 (divide, keep-flip-change): 5/6 ÷ 5/6 = 5/6 × 6/5 = 1.\n∴ (1/2 + 1/3) ÷ 5/6 = 1.\nBrackets are always resolved before the division.",
+      "tags": [
+        "order-of-operations",
+        "dividing-fractions"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "167"
+      }
+    },
+    {
+      "id": "numbers-8ff63f8f66",
+      "front": "Common mistake: a learner writes 1/2 + 1/3 = 2/5. Why is this wrong, and what is correct?",
+      "back": "Wrong: you cannot add numerators and denominators straight across for + or −.\nYou MUST use a common denominator first.\nCorrect: LCM(2,3)=6 → 3/6 + 2/6 = 5/6.\n∴ 1/2 + 1/3 = 5/6, not 2/5.\n(Adding straight across is only used when MULTIPLYING — and even then it is tops×tops, bottoms×bottoms, not +.)",
+      "tags": [
+        "adding-fractions",
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Fractions - CAPS_fractions",
+      "sourceFile": "Fractions - CAPS_fractions.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "364"
+      }
+    },
+    {
+      "id": "numbers-45a0899dbf",
+      "front": "What are integers? Give examples and where they sit on the number line.",
+      "back": "Integers are the whole numbers together with their negatives and zero:\n… −3, −2, −1, 0, 1, 2, 3 …\nThey include positive integers (right of 0), negative integers (left of 0) and zero (neither positive nor negative).\nOn a number line, numbers increase to the right and decrease to the left, so −5 < −2 < 0 < 3.",
+      "tags": [
+        "integers-definition"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "202"
+      }
+    },
+    {
+      "id": "numbers-b34d29ba19",
+      "front": "How do you compare two negative integers, e.g. which is greater: −8 or −3?",
+      "back": "On the number line the number further to the RIGHT is greater.\n−3 lies to the right of −8, so −3 > −8.\nWarning: with negatives the bigger digit is the smaller number. −8 is smaller than −3 even though 8 > 3.\nAnswer: −3 is greater.",
+      "tags": [
+        "comparing-integers"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-c1769c5201",
+      "front": "Add integers with the SAME sign: rule and example −6 + (−4).",
+      "back": "Same signs → ADD the values and KEEP the common sign.\n−6 + (−4):\nBoth negative, so add 6 + 4 = 10, keep the minus.\n= −10\nThink: going 6 steps left, then 4 more steps left → 10 steps left of 0.",
+      "tags": [
+        "adding-integers"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "224"
+      }
+    },
+    {
+      "id": "numbers-4efd5a4717",
+      "front": "Add integers with DIFFERENT signs: rule and example −9 + 5.",
+      "back": "Different signs → SUBTRACT the smaller value from the larger, and KEEP the sign of the number with the larger value.\n−9 + 5:\nLarger value is 9 (negative). 9 − 5 = 4, keep minus.\n= −4\nCheck on number line: start at −9, move 5 right → −4.",
+      "tags": [
+        "adding-integers"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-e322170973",
+      "front": "State the \"keep–change–change\" rule for subtracting integers.",
+      "back": "To SUBTRACT an integer, turn it into an ADDITION:\n1. KEEP the first number.\n2. CHANGE the subtraction sign to addition.\n3. CHANGE the sign of the second number.\nThen apply the addition rules.\nExample: 7 − (−2) → 7 + (+2) = 9.\nExample: −5 − 3 → −5 + (−3) = −8.",
+      "tags": [
+        "subtracting-integers"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "224"
+      }
+    },
+    {
+      "id": "numbers-42da19620a",
+      "front": "Why does subtracting a negative equal adding? Evaluate 4 − (−6).",
+      "back": "Subtracting a negative removes a debt, which increases the value, so − (−) = +.\n4 − (−6) = 4 + 6 = 10.\nTwo minus signs next to each other (a \"double negative\") become a plus:\n−(−6) = +6.\nMistake to avoid: writing 4 − 6 = −2. The two negatives must first become a plus.",
+      "tags": [
+        "double-negatives"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "445"
+      }
+    },
+    {
+      "id": "numbers-5f3966e913",
+      "front": "Simplify a chain of additions and subtractions: −3 + 8 − (−5) − 11.",
+      "back": "First change all subtractions to additions:\n−3 + 8 − (−5) − 11\n= −3 + 8 + 5 + (−11)\nWork left to right:\n−3 + 8 = 5\n5 + 5 = 10\n10 + (−11) = −1\nAnswer: −1.\nTip: you may add all positives (8 + 5 = 13) and all negatives (−3 − 11 = −14), then 13 − 14 = −1.",
+      "tags": [
+        "adding-integers"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "17"
+      }
+    },
+    {
+      "id": "numbers-19c0d0ea79",
+      "front": "State the sign rules for MULTIPLYING and DIVIDING two integers.",
+      "back": "Same signs → POSITIVE answer.\nDifferent signs → NEGATIVE answer.\n(+)(+) = +    (−)(−) = +\n(+)(−) = −    (−)(+) = −\nThe same rules hold for division.\nMemory aid: \"a friend (+) of my enemy (−) is my enemy (−); an enemy of my enemy is my friend.\"",
+      "tags": [
+        "multiplying-dividing"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "239"
+      }
+    },
+    {
+      "id": "numbers-6601394d8a",
+      "front": "Evaluate −7 × 4 and −6 × −8.",
+      "back": "−7 × 4: different signs → negative. 7 × 4 = 28 → −28.\n−6 × −8: same signs → positive. 6 × 8 = 48 → +48.\nWork out the digits first, then decide the sign from the rule.",
+      "tags": [
+        "multiplying-dividing"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml"
+    },
+    {
+      "id": "numbers-9fe4c1f9c0",
+      "front": "Evaluate the divisions: −48 ÷ 6 and −72 ÷ −9.",
+      "back": "−48 ÷ 6: different signs → negative. 48 ÷ 6 = 8 → −8.\n−72 ÷ −9: same signs → positive. 72 ÷ 9 = 8 → +8.\nDivision follows exactly the same sign rules as multiplication.",
+      "tags": [
+        "multiplying-dividing"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "378"
+      }
+    },
+    {
+      "id": "numbers-9178dd668a",
+      "front": "Find the sign of a PRODUCT of several integers: (−2)(−3)(−1)(4).",
+      "back": "Count the negative factors. An EVEN number of negatives → positive; an ODD number → negative.\n(−2)(−3)(−1)(4): three negatives → ODD → answer is negative.\nValues: 2 × 3 × 1 × 4 = 24.\nAnswer: −24.",
+      "tags": [
+        "multiplying-dividing"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-56699cd484",
+      "front": "What is the difference between (−3)² and −3² ? Evaluate both.",
+      "back": "The brackets decide what gets squared.\n(−3)² means (−3) × (−3) = +9. The whole −3 is squared.\n−3² means −(3 × 3) = −9. Only the 3 is squared; the minus stays in front.\nSo (−3)² = 9 but −3² = −9.\nThis is a very common exam trap — always check for brackets.",
+      "tags": [
+        "exponents-of-negatives"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "503"
+      }
+    },
+    {
+      "id": "numbers-3934890dd1",
+      "front": "Evaluate (−2)³ and (−2)⁴. What pattern decides the sign of a power of a negative?",
+      "back": "(−2)³ = (−2)(−2)(−2) = −8.\n(−2)⁴ = (−2)(−2)(−2)(−2) = +16.\nPattern: a negative base raised to an EVEN power is positive; raised to an ODD power is negative.\nOdd exponent → odd number of negative factors → negative result.",
+      "tags": [
+        "exponents-of-negatives"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-e8b805bc28",
+      "front": "Give the order of operations (BODMAS) used with integers.",
+      "back": "Work in this order:\nB – Brackets\nO – Of / Orders (exponents, roots)\nD – Division\nM – Multiplication\nA – Addition\nS – Subtraction\nDivision and Multiplication rank equally (left to right); Addition and Subtraction rank equally (left to right).\nApply the integer sign rules at each step.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "270"
+      }
+    },
+    {
+      "id": "numbers-0217902dfb",
+      "front": "Evaluate using BODMAS: −12 + 3 × (−4).",
+      "back": "Multiplication before addition:\n3 × (−4) = −12 (different signs → negative).\nNow: −12 + (−12) = −24.\nMistake to avoid: doing −12 + 3 = −9 first, then × (−4) = 36. Multiplication must be done before the addition.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "167"
+      }
+    },
+    {
+      "id": "numbers-fa41f3f594",
+      "front": "Evaluate: (−5 + 2)² − (−4).",
+      "back": "Brackets first: −5 + 2 = −3.\nExponent: (−3)² = 9.\nNow the subtraction of a negative: 9 − (−4) = 9 + 4 = 13.\nAnswer: 13.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml"
+    },
+    {
+      "id": "numbers-d4ecc29e56",
+      "front": "Evaluate: −20 ÷ (−4) + (−3) × 2.",
+      "back": "Division and multiplication first (left to right):\n−20 ÷ (−4) = 5 (same signs → positive).\n(−3) × 2 = −6 (different signs → negative).\nNow add: 5 + (−6) = −1.\nAnswer: −1.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml"
+    },
+    {
+      "id": "numbers-4e0f09d3e8",
+      "front": "Temperature word problem: At 06:00 the temperature was −4 °C. By midday it rose by 11 °C, then dropped 6 °C by evening. Find the evening temperature.",
+      "back": "Translate to integers and work left to right:\nStart: −4\nRose 11 °C: −4 + 11 = 7\nDropped 6 °C: 7 − 6 = 1\nEvening temperature = 1 °C.\nA rise means add; a drop means subtract.",
+      "tags": [
+        "word-problems"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "503"
+      }
+    },
+    {
+      "id": "numbers-84959f8bda",
+      "front": "Bank balance word problem: Thabo's account is R250 in debit (−R250). He deposits R400, then withdraws R180. What is the new balance?",
+      "back": "Debit means a negative balance.\nStart: −250\nDeposit R400 (add): −250 + 400 = 150\nWithdraw R180 (subtract): 150 − 180 = −30\nNew balance = −R30, i.e. R30 in debit (overdrawn).",
+      "tags": [
+        "word-problems"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "290"
+      }
+    },
+    {
+      "id": "numbers-5cd2a2169f",
+      "front": "Altitude word problem: A diver is 18 m below sea level (−18 m). A bird flies 25 m above sea level (+25 m). What is the vertical distance between them?",
+      "back": "Distance = difference between the two positions.\n25 − (−18) = 25 + 18 = 43.\nThe vertical distance is 43 m.\nSubtracting the negative (−18) adds it on, which makes sense: you cross 18 m to reach the surface, then 25 m more to the bird.",
+      "tags": [
+        "word-problems"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "224"
+      }
+    },
+    {
+      "id": "numbers-0ad2ee8a32",
+      "front": "What is the additive inverse (opposite) of an integer, and what is −(−7)?",
+      "back": "The additive inverse of a number is the number that adds to it to give 0.\nThe inverse of 7 is −7, because 7 + (−7) = 0.\nThe inverse of −7 is +7.\nSo −(−7) = 7. The minus sign in front means \"the opposite of\", and the opposite of −7 is 7.",
+      "tags": [
+        "double-negatives"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "158"
+      }
+    },
+    {
+      "id": "numbers-1afc18788d",
+      "front": "Common mistake check: evaluate −6 − (−6) and −6 + (−6).",
+      "back": "−6 − (−6): change to addition → −6 + 6 = 0.\n−6 + (−6): same signs, add and keep sign → −12.\nNotice how one sign change flips the answer from 0 to −12. Always rewrite subtraction of a negative as addition before calculating.",
+      "tags": [
+        "double-negatives"
+      ],
+      "difficulty": "medium",
+      "source": "Integers - CAPS_integers",
+      "sourceFile": "Integers - CAPS_integers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "224"
+      }
+    },
+    {
+      "id": "numbers-bdfbe4486b",
+      "front": "State the commutative property of addition and give an example.",
+      "back": "Commutative property of addition: the ORDER of the numbers does not change the sum.\na + b = b + a\nExample: 7 + 3 = 3 + 7 = 10.\n∴ You may swap the order of numbers being ADDED.",
+      "tags": [
+        "commutative-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "numbers-37c3e0412c",
+      "front": "State the commutative property of multiplication and give an example.",
+      "back": "Commutative property of multiplication: the ORDER of the factors does not change the product.\na × b = b × a\nExample: 4 × 6 = 6 × 4 = 24.\n∴ You may swap the order of numbers being MULTIPLIED.",
+      "tags": [
+        "commutative-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "numbers-f701d40caf",
+      "front": "Is subtraction commutative? Is division commutative? Show why not.",
+      "back": "NO — neither subtraction nor division is commutative.\nSubtraction: 8 − 3 = 5 but 3 − 8 = −5, so 8 − 3 ≠ 3 − 8.\nDivision: 12 ÷ 4 = 3 but 4 ÷ 12 = ⅓, so 12 ÷ 4 ≠ 4 ÷ 12.\n∴ Order MATTERS for − and ÷.",
+      "tags": [
+        "commutative-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "106"
+      }
+    },
+    {
+      "id": "numbers-0de7136cad",
+      "front": "State the associative property of addition with an example.",
+      "back": "Associative property of addition: the GROUPING (brackets) does not change the sum.\n(a + b) + c = a + (b + c)\nExample: (2 + 5) + 4 = 7 + 4 = 11 and 2 + (5 + 4) = 2 + 9 = 11.\n∴ Same answer regardless of which pair you add first.",
+      "tags": [
+        "associative-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "119"
+      }
+    },
+    {
+      "id": "numbers-048b5be200",
+      "front": "State the associative property of multiplication with an example.",
+      "back": "Associative property of multiplication: the GROUPING (brackets) does not change the product.\n(a × b) × c = a × (b × c)\nExample: (3 × 2) × 5 = 6 × 5 = 30 and 3 × (2 × 5) = 3 × 10 = 30.\n∴ Same product regardless of which pair you multiply first.",
+      "tags": [
+        "associative-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "119"
+      }
+    },
+    {
+      "id": "numbers-8fdd8994e3",
+      "front": "Is subtraction associative? Show a counterexample.",
+      "back": "NO — subtraction is NOT associative.\n(10 − 4) − 2 = 6 − 2 = 4\n10 − (4 − 2) = 10 − 2 = 8\nSince 4 ≠ 8, (a − b) − c ≠ a − (b − c).\n∴ Where you place brackets changes the answer for −.",
+      "tags": [
+        "associative-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "119"
+      }
+    },
+    {
+      "id": "numbers-e83909298e",
+      "front": "Is division associative? Show a counterexample.",
+      "back": "NO — division is NOT associative.\n(24 ÷ 6) ÷ 2 = 4 ÷ 2 = 2\n24 ÷ (6 ÷ 2) = 24 ÷ 3 = 8\nSince 2 ≠ 8, (a ÷ b) ÷ c ≠ a ÷ (b ÷ c).\n∴ Brackets matter for ÷.",
+      "tags": [
+        "associative-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "119"
+      }
+    },
+    {
+      "id": "numbers-bae0b29dd0",
+      "front": "State the distributive property of multiplication over addition.",
+      "back": "Distributive property: a(b + c) = ab + ac.\nMultiply the outside number by EACH term inside the brackets.\nExample: 3(x + 4) = 3·x + 3·4 = 3x + 12.",
+      "tags": [
+        "distributive-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "135"
+      }
+    },
+    {
+      "id": "numbers-0dba2c776f",
+      "front": "Expand using the distributive property: 5(2x + 3).",
+      "back": "Multiply 5 by each term inside the brackets:\n5(2x + 3) = 5·2x + 5·3 = 10x + 15.\n∴ 5(2x + 3) = 10x + 15.",
+      "tags": [
+        "distributive-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "135"
+      }
+    },
+    {
+      "id": "numbers-9865ecb54e",
+      "front": "Distributive property over SUBTRACTION: expand 4(3x − 5).",
+      "back": "a(b − c) = ab − ac. Distribute the 4 to BOTH terms, keeping the sign:\n4(3x − 5) = 4·3x − 4·5 = 12x − 20.\nCommon mistake: forgetting to multiply the second term, giving 12x − 5. WRONG.\n∴ 4(3x − 5) = 12x − 20.",
+      "tags": [
+        "distributive-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "135"
+      }
+    },
+    {
+      "id": "numbers-241b691c2e",
+      "front": "Expand with a NEGATIVE outside the bracket: −2(x − 6).",
+      "back": "Distribute −2 to each term, watching the signs (negative × negative = positive):\n−2(x − 6) = −2·x + (−2)·(−6) = −2x + 12.\nCommon mistake: writing −2x − 12. WRONG — the second sign flips.\n∴ −2(x − 6) = −2x + 12.",
+      "tags": [
+        "distributive-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "92"
+      }
+    },
+    {
+      "id": "numbers-7d1e7d85ed",
+      "front": "Use the distributive property for easy mental maths: 6 × 47.",
+      "back": "Break 47 into (40 + 7) and distribute:\n6 × 47 = 6(40 + 7) = 6·40 + 6·7 = 240 + 42 = 282.\n∴ Distribution makes large multiplications easier.",
+      "tags": [
+        "distributive-property"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "135"
+      }
+    },
+    {
+      "id": "numbers-db9f4e84d1",
+      "front": "What is the additive identity? State the rule.",
+      "back": "The additive identity is 0.\nAdding 0 to any number leaves it unchanged:\na + 0 = a and 0 + a = a.\nExample: 17 + 0 = 17.",
+      "tags": [
+        "identity-element"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-1a90219f52",
+      "front": "What is the multiplicative identity? State the rule.",
+      "back": "The multiplicative identity is 1.\nMultiplying any number by 1 leaves it unchanged:\na × 1 = a and 1 × a = a.\nExample: 23 × 1 = 23.",
+      "tags": [
+        "identity-element"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-bdc6f6b2e2",
+      "front": "What is the additive inverse of a number? Give the rule and an example.",
+      "back": "The additive inverse of a is −a — the number you ADD to get 0.\na + (−a) = 0.\nExample: the additive inverse of 7 is −7, because 7 + (−7) = 0.\nThe additive inverse of −5 is 5, because −5 + 5 = 0.",
+      "tags": [
+        "inverse-element"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-216c9dcec3",
+      "front": "What is the multiplicative inverse (reciprocal)? Give the rule and examples.",
+      "back": "The multiplicative inverse of a is 1/a — the number you MULTIPLY by to get 1.\na × 1/a = 1 (a ≠ 0).\nExample: the reciprocal of 5 is ⅕, because 5 × ⅕ = 1.\nThe reciprocal of ⅔ is 3/2, because ⅔ × 3/2 = 1.\nNote: 0 has NO multiplicative inverse.",
+      "tags": [
+        "inverse-element"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "158"
+      }
+    },
+    {
+      "id": "numbers-2e0f8161fb",
+      "front": "What does BODMAS stand for and what is the order of operations?",
+      "back": "BODMAS gives the order to work out a calculation:\nB — Brackets\nO — Of / Orders (exponents, roots)\nD — Division\nM — Multiplication\nA — Addition\nS — Subtraction\nKey rule: Division and Multiplication rank EQUALLY (left to right); Addition and Subtraction rank EQUALLY (left to right).",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "167"
+      }
+    },
+    {
+      "id": "numbers-dbde98bd66",
+      "front": "Work out using BODMAS: 5 + 3 × 4.",
+      "back": "Multiplication before addition:\n5 + 3 × 4 = 5 + 12 = 17.\nCommon mistake: working left to right gives 8 × 4 = 32. WRONG.\n∴ 5 + 3 × 4 = 17.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "92"
+      }
+    },
+    {
+      "id": "numbers-2115b30d70",
+      "front": "Work out using BODMAS: 2 × (3 + 4)² − 6.",
+      "back": "Step 1 Brackets: (3 + 4) = 7\nStep 2 Orders (exponent): 7² = 49\nStep 3 Multiplication: 2 × 49 = 98\nStep 4 Subtraction: 98 − 6 = 92.\n∴ 2 × (3 + 4)² − 6 = 92.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "167"
+      }
+    },
+    {
+      "id": "numbers-ec162f3cb4",
+      "front": "Work out using BODMAS: 20 ÷ 4 + 2 × 3.",
+      "back": "Do ÷ and × first (left to right), then add:\n20 ÷ 4 = 5 and 2 × 3 = 6\n5 + 6 = 11.\nCommon mistake: doing 20 ÷ (4 + 2) first. WRONG — there are no brackets there.\n∴ 20 ÷ 4 + 2 × 3 = 11.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "92"
+      }
+    },
+    {
+      "id": "numbers-5128f15d85",
+      "front": "Work out using BODMAS: 18 − 12 ÷ (2 + 1) + 4².",
+      "back": "Step 1 Brackets: (2 + 1) = 3\nStep 2 Orders: 4² = 16\nStep 3 Division: 12 ÷ 3 = 4\nStep 4 left to right (− then +): 18 − 4 + 16 = 14 + 16 = 30.\n∴ 18 − 12 ÷ (2 + 1) + 4² = 30.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "167"
+      }
+    },
+    {
+      "id": "numbers-54a4cd02ec",
+      "front": "BODMAS pitfall: explain why 10 − 4 − 3 is NOT 9.",
+      "back": "Addition and subtraction are done LEFT TO RIGHT, not subtraction-of-everything-grouped.\n10 − 4 − 3 = (10 − 4) − 3 = 6 − 3 = 3.\nCommon mistake: grouping as 10 − (4 − 3) = 10 − 1 = 9. WRONG.\n∴ 10 − 4 − 3 = 3.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Properties of Numbers - CAPS_properties",
+      "sourceFile": "Properties of Numbers - CAPS_properties.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "48"
+      }
+    },
+    {
+      "id": "numbers-d63f802384",
+      "front": "What is a ratio, and what does the ratio 3:5 mean?",
+      "back": "A ratio compares two or more quantities OF THE SAME KIND, showing how much of one there is compared to another.\n3:5 means: for every 3 parts of the first quantity there are 5 parts of the second.\nKey points:\n• Order matters: 3:5 ≠ 5:3.\n• A ratio has NO units (the units cancel) — it is a pure comparison.\n• Total parts here = 3 + 5 = 8.\nExample: 3 boys : 5 girls means out of every 8 learners, 3 are boys and 5 are girls.",
+      "tags": [
+        "ratio-meaning"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "503"
+      }
+    },
+    {
+      "id": "numbers-c3e958ac01",
+      "front": "How do you simplify the ratio 18:24 to simplest form?",
+      "back": "Divide every part by the HCF (highest common factor) of the numbers.\nStep 1: Find HCF of 18 and 24.\n  18 = 2 × 3 × 3,  24 = 2 × 2 × 2 × 3 → HCF = 2 × 3 = 6.\nStep 2: Divide each part by 6.\n  18 ÷ 6 = 3,  24 ÷ 6 = 4.\n∴ 18:24 = 3:4 (simplest form).\nCheck: 3 and 4 share no common factor except 1. ✓",
+      "tags": [
+        "simplify-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "352"
+      }
+    },
+    {
+      "id": "numbers-7492d814a9",
+      "front": "Simplify a ratio that contains fractions or decimals: simplify ½ : ¾",
+      "back": "First clear fractions by multiplying every part by the LCD, then simplify.\n½ : ¾  — LCD of 2 and 4 is 4.\nMultiply each part by 4:\n  ½ × 4 = 2,  ¾ × 4 = 3.\n∴ ½ : ¾ = 2:3.\nFor decimals, multiply by 10, 100, … to clear them: e.g. 0.4 : 0.6 → ×10 → 4:6 → 2:3.\nA ratio in simplest form should use whole numbers with HCF 1.",
+      "tags": [
+        "simplify-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "503"
+      }
+    },
+    {
+      "id": "numbers-c99fd55ea8",
+      "front": "What are equivalent ratios? Give equivalent ratios of 2:3.",
+      "back": "Equivalent ratios represent the SAME relationship — you get them by multiplying OR dividing every part by the same non-zero number.\n2:3 → multiply each part:\n  ×2 → 4:6\n  ×3 → 6:9\n  ×5 → 10:15\nAll of 2:3, 4:6, 6:9, 10:15 are equivalent.\nUse: to find a missing value, e.g. 2:3 = 10:?  →  2 × 5 = 10, so ? = 3 × 5 = 15.",
+      "tags": [
+        "equivalent-ratios"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "415"
+      }
+    },
+    {
+      "id": "numbers-3e3766bb1c",
+      "front": "Why must you convert to the same unit BEFORE writing a ratio? Write 50 cm to 2 m as a ratio.",
+      "back": "A ratio compares like quantities, so both must be in the SAME unit first — otherwise the comparison is wrong.\nCommon mistake: writing 50:2 — WRONG (cm vs m).\nStep 1: Convert. 2 m = 200 cm (since 1 m = 100 cm).\nStep 2: Write ratio in same unit: 50 cm : 200 cm = 50:200.\nStep 3: Simplify (÷50): 1:4.\n∴ 50 cm : 2 m = 1:4.",
+      "tags": [
+        "ratio-units"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "48"
+      }
+    },
+    {
+      "id": "numbers-8fb2e84ee5",
+      "front": "Convert and simplify: write 45 minutes to 1½ hours as a ratio.",
+      "back": "Convert to the same unit (minutes) first.\nStep 1: 1½ hours = 1.5 × 60 = 90 minutes.\nStep 2: Ratio = 45 min : 90 min = 45:90.\nStep 3: Simplify (HCF = 45): 45 ÷ 45 : 90 ÷ 45 = 1:2.\n∴ 45 min : 1½ h = 1:2.\nWarning: never mix minutes with hours in the ratio.",
+      "tags": [
+        "ratio-units"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "352"
+      }
+    },
+    {
+      "id": "numbers-45be3750b7",
+      "front": "What is a three-part ratio? Simplify 12:18:30.",
+      "back": "A three-part ratio compares three quantities at once, e.g. a:b:c.\nSimplify by dividing ALL parts by their common HCF.\n12:18:30 — HCF of 12, 18, 30 = 6.\n  12 ÷ 6 = 2,  18 ÷ 6 = 3,  30 ÷ 6 = 5.\n∴ 12:18:30 = 2:3:5.\nTotal parts = 2 + 3 + 5 = 10 (useful for sharing problems).",
+      "tags": [
+        "three-part-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "352"
+      }
+    },
+    {
+      "id": "numbers-131d043dea",
+      "front": "Method: how do you share/divide an amount in a given ratio?",
+      "back": "Steps to share an amount in a ratio:\n1. Add the ratio parts to get the TOTAL number of parts.\n2. Find the value of ONE part: amount ÷ total parts.\n3. Multiply the value of one part by each share's number of parts.\n4. Check: the shares must add back to the original amount.\nThis works for any number of parts (2-part, 3-part, …).",
+      "tags": [
+        "sharing-in-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-aedc63b086",
+      "front": "Worked: Share R240 between two people in the ratio 3:5.",
+      "back": "Step 1: Total parts = 3 + 5 = 8.\nStep 2: Value of one part = R240 ÷ 8 = R30.\nStep 3: Multiply out each share:\n  First person: 3 × R30 = R90.\n  Second person: 5 × R30 = R150.\nStep 4: Check: R90 + R150 = R240 ✓.\n∴ The shares are R90 and R150.",
+      "tags": [
+        "sharing-in-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-7ff5049807",
+      "front": "Worked: Share R600 among A, B and C in the ratio 1:2:3.",
+      "back": "Step 1: Total parts = 1 + 2 + 3 = 6.\nStep 2: One part = R600 ÷ 6 = R100.\nStep 3: \n  A: 1 × R100 = R100\n  B: 2 × R100 = R200\n  C: 3 × R100 = R300\nStep 4: Check: R100 + R200 + R300 = R600 ✓.\n∴ A gets R100, B gets R200, C gets R300.",
+      "tags": [
+        "sharing-in-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-d8bb59ef9f",
+      "front": "What is a RATE, and how does it differ from a ratio?",
+      "back": "A rate compares two quantities of DIFFERENT kinds (different units), e.g. km per hour, R per kg, words per minute.\n• A ratio compares the SAME kind of quantity and has no units.\n• A rate has units, written with 'per' or '/'.\nExamples: 80 km/h (distance per time), R25/kg (cost per mass), 60 beats/min.\nA UNIT rate is the amount per ONE unit of the other quantity.",
+      "tags": [
+        "rate-meaning"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "503"
+      }
+    },
+    {
+      "id": "numbers-867a1cd4bd",
+      "front": "How do you find a unit rate? A car travels 240 km in 3 hours — find its rate in km/h.",
+      "back": "A unit rate is the amount per ONE unit — divide so the second quantity becomes 1.\nUnit rate = quantity ÷ (number of units of the other quantity).\nHere: rate = 240 km ÷ 3 h = 80 km/h.\nThis means the car covers 80 km in each 1 hour.\nGeneral: divide the top quantity by the bottom quantity to get 'per one'.",
+      "tags": [
+        "unit-rate"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-83fe8c2924",
+      "front": "Best buy: 500 g costs R30, or 800 g costs R44. Which is the better value?",
+      "back": "Find the UNIT PRICE (cost per gram, or per same unit) for each, then compare — lowest unit price wins.\nOption A: R30 ÷ 500 g = R0,06 per g.\nOption B: R44 ÷ 800 g = R0,055 per g.\nCompare: R0,055 < R0,06.\n∴ The 800 g pack (R44) is the better buy because it costs less per gram.\nTip: always divide cost by quantity to compare fairly.",
+      "tags": [
+        "best-buy"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "364"
+      }
+    },
+    {
+      "id": "numbers-638027b5e0",
+      "front": "State the speed–distance–time formula and its rearrangements.",
+      "back": "Speed = distance ÷ time.\nThe triangle gives the three forms:\n• speed = distance / time\n• distance = speed × time\n• time = distance / speed\nUnits must match: km with h gives km/h; m with s gives m/s.\nKeep units consistent throughout the problem.",
+      "tags": [
+        "speed"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "224"
+      }
+    },
+    {
+      "id": "numbers-2c2e4177ab",
+      "front": "Worked: A cyclist rides 45 km in 1 hour 30 minutes. Find the average speed in km/h.",
+      "back": "Step 1: Convert time to hours. 1 h 30 min = 1,5 h.\nStep 2: speed = distance ÷ time = 45 km ÷ 1,5 h = 30 km/h.\n∴ Average speed = 30 km/h.\nCommon mistake: dividing by 1.30 instead of 1.5 — convert minutes to a fraction of an hour (30 min = 0,5 h).",
+      "tags": [
+        "speed"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-76eaa5626e",
+      "front": "Worked: A car travels at 90 km/h for 2½ hours. How far does it go?",
+      "back": "Use distance = speed × time.\nStep 1: time = 2½ h = 2,5 h.\nStep 2: distance = 90 km/h × 2,5 h = 225 km.\n∴ The car travels 225 km.\nNote how the hours cancel: km/h × h = km.",
+      "tags": [
+        "speed"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-df2ef2ab19",
+      "front": "What is DIRECT proportion? Give the rule and an everyday example.",
+      "back": "In direct proportion, as one quantity increases, the other increases in the SAME ratio (and if one halves, the other halves).\nThe RATIO between them stays constant: y/x = constant (k), so y = kx.\nExample: more litres of petrol → proportionally more cost.\n1 litre costs R22, so 5 litres cost 5 × R22 = R110.\nThe cost per litre (the constant) never changes.",
+      "tags": [
+        "direct-proportion"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-04cc4d4f1b",
+      "front": "Worked direct proportion: 4 pens cost R20. How much do 7 pens cost?",
+      "back": "Direct proportion — find the value of ONE, then scale up (the unitary method).\nStep 1: 1 pen costs R20 ÷ 4 = R5.\nStep 2: 7 pens cost 7 × R5 = R35.\n∴ 7 pens cost R35.\nCheck with ratios: 4:20 = 7:35 (both give R5 per pen). ✓",
+      "tags": [
+        "direct-proportion"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-a6d60f2f21",
+      "front": "What is INVERSE (indirect) proportion? Give the rule and an example.",
+      "back": "In inverse proportion, as one quantity increases, the other DECREASES so that their PRODUCT stays constant.\nRule: x × y = constant (k), so y = k/x.\nExample: more workers → the job takes less time.\nIf 4 workers take 6 days, then 4 × 6 = 24 worker-days is the constant for the whole job.\nMore workers means proportionally fewer days.",
+      "tags": [
+        "inverse-proportion"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-556e025aa9",
+      "front": "Worked inverse proportion: 6 workers build a wall in 8 days. How long would 4 workers take?",
+      "back": "Inverse proportion — the PRODUCT (workers × days) is constant.\nStep 1: Find the constant: 6 × 8 = 48 worker-days (the total work).\nStep 2: Divide by the new number of workers: 48 ÷ 4 = 12 days.\n∴ 4 workers take 12 days.\nSense check: fewer workers → MORE time. ✓\nMistake to avoid: do NOT just scale directly (4/6 × 8) — that is the wrong direction.",
+      "tags": [
+        "inverse-proportion"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-da4d8fd213",
+      "front": "Worked inverse proportion: A tank fills in 20 min using 3 taps. How long with 5 taps?",
+      "back": "Inverse: more taps → less time, with product constant.\nStep 1: Constant = 3 × 20 = 60 (tap-minutes).\nStep 2: New time = 60 ÷ 5 = 12 minutes.\n∴ 5 taps fill the tank in 12 min.\nCheck: 5 × 12 = 60 = 3 × 20 ✓ (same total).",
+      "tags": [
+        "inverse-proportion"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "158"
+      }
+    },
+    {
+      "id": "numbers-969cc63c94",
+      "front": "How do you DECIDE whether a problem is direct or inverse proportion?",
+      "back": "Ask: when one quantity goes UP, what happens to the other?\n• Both go UP together (or down together) → DIRECT proportion. Ratio y/x is constant; use the unitary method (find one, multiply).\n• One goes UP while the other goes DOWN → INVERSE proportion. Product x×y is constant; find the constant, then divide.\nClues for inverse: more workers/taps/machines → less time; faster speed → less time.\nClues for direct: more items → more cost; more hours → more pay.",
+      "tags": [
+        "direct-vs-inverse"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "158"
+      }
+    },
+    {
+      "id": "numbers-904d96adf3",
+      "front": "Worked direct proportion (scaling a recipe): A recipe for 6 people needs 450 g flour. How much for 10 people?",
+      "back": "Direct proportion — use the unitary method.\nStep 1: Flour for 1 person = 450 g ÷ 6 = 75 g.\nStep 2: Flour for 10 people = 10 × 75 g = 750 g.\n∴ You need 750 g of flour.\nMore people → more flour, so it is direct. ✓",
+      "tags": [
+        "direct-proportion"
+      ],
+      "difficulty": "medium",
+      "source": "Ratio Rate Proportion - CAPS_ratio",
+      "sourceFile": "Ratio Rate Proportion - CAPS_ratio.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "numbers-7d5014cb5c",
+      "front": "What are the natural numbers (N) and the whole numbers (N₀)? Give the first few of each.",
+      "back": "Natural numbers N = counting numbers = {1, 2, 3, 4, ...}. They start at 1 (no zero, no negatives, no fractions).\nWhole numbers N₀ = {0, 1, 2, 3, ...}. Same as naturals but WITH 0 included.\nSo the only difference is the 0: N₀ = N together with 0.\n∴ N ⊂ N₀.",
+      "tags": [
+        "natural-whole-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "435"
+      }
+    },
+    {
+      "id": "numbers-be7f3026e1",
+      "front": "What are the integers (Z)? Give examples.",
+      "back": "Integers Z = all whole numbers AND their negatives, with no fractions or decimals.\nZ = {..., -3, -2, -1, 0, 1, 2, 3, ...}.\nExamples: -100, -7, 0, 5, 42 are integers; 2.5 and ½ are NOT.\nThe whole numbers sit inside the integers: N₀ ⊂ Z.",
+      "tags": [
+        "integers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "202"
+      }
+    },
+    {
+      "id": "numbers-dea37b259f",
+      "front": "Define a rational number (Q).",
+      "back": "A rational number is any number that CAN be written as a fraction a/b where a and b are integers and b ≠ 0.\nThis includes:\n• all integers (e.g. 5 = 5/1)\n• proper/improper fractions (e.g. ¾, 7/2)\n• terminating decimals (e.g. 0.25 = 1/4)\n• recurring decimals (e.g. 0.333... = 1/3)\nKey: the denominator may NOT be 0 (division by 0 is undefined).",
+      "tags": [
+        "rational-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "38"
+      }
+    },
+    {
+      "id": "numbers-584258fd24",
+      "front": "Define an irrational number (Q').",
+      "back": "An irrational number is a real number that CANNOT be written as a fraction a/b of two integers.\nAs a decimal it is non-terminating AND non-recurring (the digits go on forever with no repeating pattern).\nExamples: √2 = 1.41421356..., π = 3.14159265..., √7, √11, ∛5.\nWarning: √9 = 3 is NOT irrational (it is a perfect square). Only non-perfect roots are irrational.",
+      "tags": [
+        "irrational-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "38"
+      }
+    },
+    {
+      "id": "numbers-9afc88a56f",
+      "front": "What are the real numbers (R), and how do rationals and irrationals relate to them?",
+      "back": "The real numbers R = every number on the number line.\nR is made of two non-overlapping parts: the rationals (Q) and the irrationals (Q').\nEvery real number is EITHER rational OR irrational, never both.\nQ and Q' together make up all of R, so: Q ∪ Q' = R.",
+      "tags": [
+        "real-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-36ecf3ab50",
+      "front": "State the subset chain of the number systems from smallest to largest.",
+      "back": "N ⊂ N₀ ⊂ Z ⊂ Q ⊂ R\nIn words: every natural number is a whole number, every whole number is an integer, every integer is rational, and every rational is real.\nThe irrationals Q' are the part of R that lies OUTSIDE Q (Q' is not part of this chain).\n∴ R = Q ∪ Q'.",
+      "tags": [
+        "subset-relationships"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-a209150f31",
+      "front": "Classify the number 7 into ALL the sets it belongs to.",
+      "back": "7 is a positive counting number with no fraction part.\nIt belongs to: N (natural), N₀ (whole), Z (integer), Q (rational, since 7 = 7/1), and R (real).\n∴ 7 ∈ N, N₀, Z, Q, R — it sits in every set.\nReason it is rational: it can be written as 7/1.",
+      "tags": [
+        "classifying-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-ccc623c146",
+      "front": "Classify the number -4 into ALL the sets it belongs to.",
+      "back": "-4 is a negative whole value.\nIt is NOT natural (no negatives) and NOT a whole number (N₀ has no negatives).\nIt belongs to: Z (integer), Q (rational, -4 = -4/1) and R (real).\n∴ -4 ∈ Z, Q, R.\nCommon mistake: thinking negatives are whole numbers — they are not.",
+      "tags": [
+        "classifying-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-05659fede8",
+      "front": "Classify ⅔ (and 0.75) — which sets do they belong to?",
+      "back": "⅔ = 0.666... is a fraction of two integers, so it is rational and real but nothing smaller.\n⅔ ∈ Q, R only.\n0.75 = 3/4 is a terminating decimal, so also rational and real.\n0.75 ∈ Q, R only.\nNeither is an integer, whole or natural number (they have a fraction part).",
+      "tags": [
+        "classifying-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-adcd23b5cf",
+      "front": "Classify √2 and √16 — are they rational or irrational?",
+      "back": "√16 = 4 (a perfect square), so √16 ∈ N, N₀, Z, Q, R — it is RATIONAL.\n√2 = 1.41421356... is not a perfect square; it cannot be written as a fraction, so √2 ∈ Q', R — it is IRRATIONAL.\nRule: a square root is rational ONLY if the number under the root is a perfect square. Otherwise it is irrational.",
+      "tags": [
+        "classifying-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "27"
+      }
+    },
+    {
+      "id": "numbers-82983363d5",
+      "front": "What is a terminating decimal? Give examples and link to fractions.",
+      "back": "A terminating decimal STOPS after a finite number of digits.\nExamples: 0.5, 0.25, 0.375, 3.2, 0.125.\nThese always come from fractions whose simplest denominator has only factors of 2 and/or 5, e.g. 1/2 = 0.5, 1/8 = 0.125, 3/4 = 0.75.\nAll terminating decimals are rational (they can be written as a fraction).",
+      "tags": [
+        "terminating-recurring"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "38"
+      }
+    },
+    {
+      "id": "numbers-ef4d93aab0",
+      "front": "What is a recurring (repeating) decimal and how do we write it?",
+      "back": "A recurring decimal has a block of digits that repeats forever.\nWe show it with a dot/bar over the repeating digit(s):\n0.333... = 0.3̇ (the 3 repeats)\n0.7272... = 0.7̇2̇ (the block 72 repeats)\n0.1666... = 0.16̇ (only the 6 repeats).\nRecurring decimals are RATIONAL — they can always be written as a fraction.",
+      "tags": [
+        "terminating-recurring"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-65c85abfc8",
+      "front": "How does the decimal form of a number tell you if it is rational or irrational?",
+      "back": "Look at the decimal expansion:\n• Terminating (stops) → RATIONAL\n• Recurring (repeats a pattern forever) → RATIONAL\n• Non-terminating AND non-recurring (goes forever with NO pattern) → IRRATIONAL\nSo every rational number either terminates or recurs; an irrational number does neither.\nExample: 0.1010010001... (more zeros each time, no repeat) is irrational.",
+      "tags": [
+        "terminating-recurring"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "38"
+      }
+    },
+    {
+      "id": "numbers-f77b319b27",
+      "front": "Why are √2 and π classified as irrational?",
+      "back": "Both have decimal expansions that never end and never settle into a repeating pattern:\n√2 = 1.41421356237... and π = 3.14159265358...\nBecause they are non-terminating AND non-recurring, they cannot be written as a fraction a/b of integers — that is the definition of irrational.\nNote: 22/7 and 3.14 are only APPROXIMATIONS of π, not equal to it.",
+      "tags": [
+        "irrational-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "38"
+      }
+    },
+    {
+      "id": "numbers-2cacc527e4",
+      "front": "Is 0 a rational number? Explain.",
+      "back": "Yes. 0 can be written as 0/1 (or 0/b for any b ≠ 0), which fits the a/b form with integer numerator and denominator.\n∴ 0 is rational, and also a whole number (N₀), an integer (Z) and real (R).\n0 is NOT a natural number in CAPS (N starts at 1).\nWarning: b/0 is undefined — 0 may be on top of a fraction but never on the bottom.",
+      "tags": [
+        "rational-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-257cd48124",
+      "front": "Convert the recurring decimal 0.4̇ (0.444...) to a fraction. Show all steps.",
+      "back": "Let x = 0.444...   ...(1)\nThe repeating block is ONE digit, so multiply by 10:\n10x = 4.444...   ...(2)\nSubtract (1) from (2) so the recurring tails cancel:\n10x - x = 4.444... - 0.444...\n9x = 4\nx = 4/9\n∴ 0.4̇ = 4/9.\nCheck: 4 ÷ 9 = 0.444... ✓",
+      "tags": [
+        "recurring-to-fraction"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-c29ad5cebe",
+      "front": "Convert 0.7̇2̇ (0.727272...) to a fraction. Show the method for a TWO-digit recurring block.",
+      "back": "Let x = 0.727272...   ...(1)\nThe repeating block is TWO digits (72), so multiply by 100:\n100x = 72.727272...   ...(2)\nSubtract (1) from (2):\n100x - x = 72.7272... - 0.7272...\n99x = 72\nx = 72/99 = 8/11 (divide top and bottom by 9)\n∴ 0.7̇2̇ = 8/11.\nRule: 1 repeating digit → ×10; 2 repeating digits → ×100; n digits → ×10ⁿ.",
+      "tags": [
+        "recurring-to-fraction"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-cfc3d4c184",
+      "front": "Convert 0.16̇ (0.16666...) to a fraction, where only the 6 recurs after a non-recurring digit.",
+      "back": "Let x = 0.16666...   ...(1)\nOne digit (the 6) repeats. Multiply by 10:\n10x = 1.6666...   ...(2)\nSubtract (1) from (2):\n10x - x = 1.6666... - 0.16666...\n9x = 1.5\nx = 1.5/9 = 15/90 = 1/6\n∴ 0.16̇ = 1/6.\nTip: line up the decimals so the recurring tails (the 666...) match exactly before subtracting.",
+      "tags": [
+        "recurring-to-fraction"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "38"
+      }
+    },
+    {
+      "id": "numbers-55df16d20c",
+      "front": "Convert 0.9̇ (0.999...) to a fraction. What surprising result do you get?",
+      "back": "Let x = 0.999...\n10x = 9.999...\n10x - x = 9.999... - 0.999...\n9x = 9\nx = 1\n∴ 0.9̇ = 1.\nThis shows 0.999... is exactly equal to 1 — the algebra is the same as any recurring decimal. It is a classic exam 'gotcha'.",
+      "tags": [
+        "recurring-to-fraction"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-21bda4bace",
+      "front": "Common mistake check: classify 3.14, π, and 22/7. Which are rational?",
+      "back": "3.14 — terminating decimal = 314/100 = 157/50 → RATIONAL.\n22/7 — a fraction of integers → RATIONAL (= 3.142857142857... recurring).\nπ = 3.14159... — non-terminating, non-recurring → IRRATIONAL.\nWarning: 3.14 and 22/7 are common APPROXIMATIONS of π but are NOT equal to π and ARE rational. Only π itself is irrational.",
+      "tags": [
+        "classifying-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "38"
+      }
+    },
+    {
+      "id": "numbers-29a560533a",
+      "front": "Between which two integers does √20 lie, and is it rational?",
+      "back": "Find perfect squares around 20: 16 = 4² and 25 = 5².\nSince 16 < 20 < 25, we get 4 < √20 < 5.\nSo √20 ≈ 4.47, lying between 4 and 5.\n20 is NOT a perfect square, so √20 is IRRATIONAL (√20 ∈ Q', R).\nMethod: trap the number between the nearest perfect squares to estimate a non-perfect root.",
+      "tags": [
+        "irrational-numbers"
+      ],
+      "difficulty": "medium",
+      "source": "Real Number System - CAPS_real-numbers",
+      "sourceFile": "Real Number System - CAPS_real-numbers.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-215795d6e2",
+      "front": "What does it mean to square a number? Give the meaning of 7² and its value.",
+      "back": "Squaring means multiplying a number by itself.\n7² = 7 × 7 = 49\nThe small raised 2 is the exponent. ∴ '7 squared' = 49.\nMistake to avoid: 7² is NOT 7 × 2 = 14.",
+      "tags": [
+        "squaring"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-2c5dffaa23",
+      "front": "List the perfect squares from 1² to 12².",
+      "back": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144.\nThese come from 1², 2², 3², ... 12².\nKnowing these by heart makes root and estimation questions fast in exams.",
+      "tags": [
+        "perfect-squares"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml"
+    },
+    {
+      "id": "numbers-32ea55520f",
+      "front": "What does the square root symbol √ mean? Find √81.",
+      "back": "√ asks: which positive number, multiplied by itself, gives the number inside?\n√81 = 9 because 9 × 9 = 81.\nSquare root is the inverse (opposite) of squaring.",
+      "tags": [
+        "square-roots"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-d0ced5399f",
+      "front": "What does it mean to cube a number? Give the meaning of 4³ and its value.",
+      "back": "Cubing means using a number as a factor three times.\n4³ = 4 × 4 × 4 = 64\nThe exponent 3 shows three factors. ∴ '4 cubed' = 64.\nMistake to avoid: 4³ is NOT 4 × 3 = 12.",
+      "tags": [
+        "cubing"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-2bd06c3ea7",
+      "front": "List the perfect cubes from 1³ to 6³ (and give 10³).",
+      "back": "1³ = 1, 2³ = 8, 3³ = 27, 4³ = 64, 5³ = 125, 6³ = 216.\nAlso useful: 7³ = 343, 8³ = 512, 9³ = 729, 10³ = 1000.\nMemorise these for cube-root questions.",
+      "tags": [
+        "perfect-cubes"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml"
+    },
+    {
+      "id": "numbers-e73aacbf14",
+      "front": "What does the cube root symbol ∛ mean? Find ∛125.",
+      "back": "∛ asks: which number, used three times as a factor, gives the number inside?\n∛125 = 5 because 5 × 5 × 5 = 125.\nCube root is the inverse of cubing.",
+      "tags": [
+        "cube-roots"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "numbers-61e451e054",
+      "front": "Method: How do you use prime factorisation to find a square root? Demonstrate with √576.",
+      "back": "Steps:\n1. Prime factorise: 576 = 2⁶ × 3².\n2. Pair the prime factors (or halve each exponent).\n3. Take ONE factor from each pair.\n√576 = 2³ × 3¹ = 8 × 3 = 24.\nCheck: 24 × 24 = 576. ✓",
+      "tags": [
+        "prime-factorisation"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "322"
+      }
+    },
+    {
+      "id": "numbers-04b9c7b1d4",
+      "front": "Use prime factorisation to find √324.",
+      "back": "324 = 2² × 3⁴.\nHalve each exponent: 2¹ × 3² = 2 × 9 = 18.\n∴ √324 = 18.\nCheck: 18² = 324. ✓",
+      "tags": [
+        "prime-factorisation"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "322"
+      }
+    },
+    {
+      "id": "numbers-1be4c3ca84",
+      "front": "Method: How do you use prime factorisation to find a cube root? Demonstrate with ∛1728.",
+      "back": "Steps:\n1. Prime factorise: 1728 = 2⁶ × 3³.\n2. Group factors in threes (or divide each exponent by 3).\n3. Take ONE factor from each group of three.\n∛1728 = 2² × 3¹ = 4 × 3 = 12.\nCheck: 12 × 12 × 12 = 1728. ✓",
+      "tags": [
+        "prime-factorisation"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "322"
+      }
+    },
+    {
+      "id": "numbers-d60c07dfc3",
+      "front": "Use prime factorisation to find ∛3375.",
+      "back": "3375 = 3³ × 5³.\nDivide each exponent by 3: 3¹ × 5¹ = 3 × 5 = 15.\n∴ ∛3375 = 15.\nCheck: 15³ = 3375. ✓",
+      "tags": [
+        "prime-factorisation"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "322"
+      }
+    },
+    {
+      "id": "numbers-81603d0934",
+      "front": "Why pair factors for square roots but group in threes for cube roots?",
+      "back": "A square root undoes an exponent of 2, so each pair of identical primes contributes ONE factor.\nA cube root undoes an exponent of 3, so each group of three identical primes contributes ONE factor.\nRule: divide every exponent by 2 (square root) or by 3 (cube root).",
+      "tags": [
+        "prime-factorisation"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "307"
+      }
+    },
+    {
+      "id": "numbers-2b1589483d",
+      "front": "Method: How do you estimate √50 without a calculator (between which integers)?",
+      "back": "Find the nearest perfect squares either side of 50: 49 = 7² and 64 = 8².\nSince 49 < 50 < 64, we know 7 < √50 < 8.\n√50 ≈ 7,07 (closer to 7, since 50 is close to 49).\nAnswer: √50 lies between 7 and 8.",
+      "tags": [
+        "estimating-roots"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "202"
+      }
+    },
+    {
+      "id": "numbers-6820b84184",
+      "front": "Between which two integers does √90 lie? Explain.",
+      "back": "Nearest perfect squares: 81 = 9² and 100 = 10².\n81 < 90 < 100, so 9 < √90 < 10.\n√90 ≈ 9,49.\n∴ √90 lies between 9 and 10.",
+      "tags": [
+        "estimating-roots"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "202"
+      }
+    },
+    {
+      "id": "numbers-2c406b9f2e",
+      "front": "Between which two integers does ∛100 lie? Explain.",
+      "back": "Nearest perfect cubes: 64 = 4³ and 125 = 5³.\n64 < 100 < 125, so 4 < ∛100 < 5.\n∛100 ≈ 4,64.\n∴ ∛100 lies between 4 and 5.",
+      "tags": [
+        "estimating-roots"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "202"
+      }
+    },
+    {
+      "id": "numbers-8dbfc992cb",
+      "front": "How do you square a fraction? Work out (2/3)².",
+      "back": "Square the numerator AND the denominator separately.\n(2/3)² = 2²/3² = 4/9.\nMistake to avoid: do NOT square only the top. (2/3)² ≠ 4/3.",
+      "tags": [
+        "fractions-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-19b63d010a",
+      "front": "How do you find the square root of a fraction? Work out √(9/16).",
+      "back": "Take the square root of the numerator and denominator separately.\n√(9/16) = √9/√16 = 3/4.\nCheck: (3/4)² = 9/16. ✓",
+      "tags": [
+        "fractions-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-3742faa882",
+      "front": "How do you cube a fraction? Work out (1/2)³.",
+      "back": "Cube the numerator and the denominator.\n(1/2)³ = 1³/2³ = 1/8.\nThe cube of ½ is ⅛.",
+      "tags": [
+        "fractions-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-1319304451",
+      "front": "How do you square a decimal? Work out 0,3².",
+      "back": "0,3² = 0,3 × 0,3 = 0,09.\nTip: there is one decimal place in 0,3, so the answer has two decimal places.\nMistake to avoid: 0,3² is NOT 0,9.",
+      "tags": [
+        "fractions-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-13db8b585c",
+      "front": "Find √0,64 and explain the decimal places.",
+      "back": "√0,64 = 0,8 because 0,8 × 0,8 = 0,64.\nThink: 64 = 8², and matching the decimal places gives 0,8.\nCheck: 0,8² = 0,64. ✓",
+      "tags": [
+        "fractions-decimals"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "62"
+      }
+    },
+    {
+      "id": "numbers-179a5f47d1",
+      "front": "Order of operations with roots: evaluate √(36 + 64).",
+      "back": "A root acts like a bracket — simplify INSIDE first.\n√(36 + 64) = √100 = 10.\nMistake to avoid: √36 + √64 = 6 + 8 = 14 is WRONG. √(a + b) ≠ √a + √b.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "167"
+      }
+    },
+    {
+      "id": "numbers-9f142c316f",
+      "front": "Evaluate using order of operations: 3² + ∛27 × 2.",
+      "back": "Powers and roots first, then × ÷, then + −.\n3² = 9 and ∛27 = 3.\n= 9 + 3 × 2\n= 9 + 6 (multiply before add)\n= 15.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "167"
+      }
+    },
+    {
+      "id": "numbers-29350a4f69",
+      "front": "Evaluate: √144 − 2³ + 5².",
+      "back": "Roots and powers first:\n√144 = 12, 2³ = 8, 5² = 25.\n= 12 − 8 + 25\n= 4 + 25\n= 29.\nWork left to right for + and −.",
+      "tags": [
+        "order-of-operations"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "598"
+      }
+    },
+    {
+      "id": "numbers-dd4b26f31a",
+      "front": "Common error check: is √(a²) related to a? And does (−5)² differ from −5²?",
+      "back": "√(a²) = a for positive a (e.g. √(7²) = 7).\n(−5)² = (−5) × (−5) = 25 (brackets square the sign too).\n−5² = −(5²) = −25 (only the 5 is squared).\n∴ (−5)² ≠ −5².",
+      "tags": [
+        "common-mistakes"
+      ],
+      "difficulty": "medium",
+      "source": "Squares Cubes Roots - CAPS_roots",
+      "sourceFile": "Squares Cubes Roots - CAPS_roots.yml",
+      "requires": {
+        "subject": "numbers",
+        "sectionLine": "92"
+      }
+    }
+  ],
+  "triage": null,
+  "guide": {
+    "chars": 41649,
+    "lines": 931,
+    "sections": [
+      {
+        "level": 1,
+        "title": "Numbers — Complete Study Guide",
+        "line": 0,
+        "body": ""
+      },
+      {
+        "level": 2,
+        "title": "Contents",
+        "line": 2,
+        "body": ""
+      },
+      {
+        "level": 3,
+        "title": "The Real Number System",
+        "line": 4,
+        "body": "Every number you use in Grade 9 Mathematics belongs to the **real number system (R)**. The real numbers are simply all the numbers that can be placed on a number line. Inside R there are several smaller, named sets that fit neatly inside one another. Knowing these sets — and being able to classify a number into all the sets it belongs to — is a core CAPS skill."
+      },
+      {
+        "level": 4,
+        "title": "The named sets of numbers",
+        "line": 8,
+        "body": "- **Natural numbers (N)** — the counting numbers: N = {1, 2, 3, 4, ...}. They start at 1. No zero, no negatives, no fractions.\n- **Whole numbers (N₀)** — the naturals together with 0: N₀ = {0, 1, 2, 3, ...}. The only difference from N is that 0 is included.\n- **Integers (Z)** — all whole numbers and their negatives: Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}. Still no fractions or decimals.\n- **Rational numbers (Q)** — any number that can be written as a fraction a/b where a and b are integers and b ≠ 0.\n- **Irrational numbers (Q')** — real numbers that *cannot* be written as such a fraction.\n- **Real numbers (R)** — everything above combined; every point on the number line."
+      },
+      {
+        "level": 4,
+        "title": "The subset chain",
+        "line": 17,
+        "body": "Each set sits inside the next larger one:\n\n**N ⊂ N₀ ⊂ Z ⊂ Q ⊂ R**\n\nIn words: every natural number is also a whole number, every whole number is an integer, every integer is rational (e.g. 5 = 5/1), and every rational number is real. The irrationals Q' are the *other* part of R — the numbers that are real but not rational. So:\n\n**R = Q ∪ Q'**, and every real number is *either* rational *or* irrational, never both."
+      },
+      {
+        "level": 4,
+        "title": "Rational numbers in detail",
+        "line": 27,
+        "body": "A number is rational if it **can** be written as a/b with integers a and b and b ≠ 0. This covers more than it first appears:\n\n- all integers: 6 = 6/1, -4 = -4/1\n- ordinary fractions: ¾, 7/2, -⅔\n- terminating decimals: 0.25 = 1/4, 0.125 = 1/8\n- recurring decimals: 0.333... = 1/3, 0.727272... = 8/11\n\nThe denominator may **never** be 0, because division by zero is undefined. Note that 0 itself is rational (0 = 0/1) — it just may never sit on the *bottom* of the fraction."
+      },
+      {
+        "level": 4,
+        "title": "Terminating, recurring and irrational decimals",
+        "line": 38,
+        "body": "The decimal form of a number is a quick test for which type it is:\n\n- **Terminating** — the decimal stops: 0.5, 0.375, 3.2. Always **rational**.\n- **Recurring** — a block of digits repeats forever: 0.333..., 0.727272..., 0.16666.... Always **rational**. We mark the repeat with a dot over the repeating digit(s): 0.3̇, 0.7̇2̇, 0.16̇.\n- **Non-terminating and non-recurring** — the digits run on forever with **no** repeating pattern. These are the **irrational** numbers.\n\nSo the rule is: a rational number's decimal always either *terminates* or *recurs*. An irrational number's decimal does **neither**."
+      },
+      {
+        "level": 4,
+        "title": "Why √2 and π are irrational",
+        "line": 48,
+        "body": "√2 = 1.41421356237... and π = 3.14159265358... Both expansions never end and never settle into a repeating block, so neither can be written as a fraction of two integers — that is exactly what \"irrational\" means. Be careful: 3.14 and 22/7 are common **approximations** of π, but they are themselves *rational* and are *not* equal to π.\n\nFor square roots there is a handy shortcut: **√n is rational only if n is a perfect square.** So √16 = 4 is rational, but √2, √7, √20 are irrational. To locate √20, trap it between the nearest perfect squares: 16 < 20 < 25, so 4 < √20 < 5 (√20 ≈ 4.47)."
+      },
+      {
+        "level": 4,
+        "title": "Worked example: classifying a number",
+        "line": 54,
+        "body": "Classify -4, ⅔ and √16 into all sets they belong to.\n\n- **-4** is a negative integer. Not natural (no negatives), not whole. So -4 ∈ Z, Q, R.\n- **⅔** = 0.666... is a fraction of integers, so ⅔ ∈ Q, R only.\n- **√16** = 4, a perfect square, so √16 ∈ N, N₀, Z, Q, R (it is in every set)."
+      },
+      {
+        "level": 4,
+        "title": "Worked example: converting a recurring decimal to a fraction",
+        "line": 62,
+        "body": "This is the most important method to master. The idea: multiply by a power of 10 so the repeating tails line up, then subtract to cancel them.\n\n**Example A — one repeating digit: convert 0.4̇ (0.444...) to a fraction.**\n\n1. Let x = 0.444...   ...(1)\n2. One digit repeats, so multiply by 10: 10x = 4.444...   ...(2)\n3. Subtract (1) from (2) — the recurring tails cancel:\n   10x − x = 4.444... − 0.444...\n   9x = 4\n4. Solve: x = 4/9.\n\nSo 0.4̇ = 4/9. Check: 4 ÷ 9 = 0.444... ✓\n\n**Example B — two repeating digits: convert 0.7̇2̇ (0.727272...) to a fraction.**\n\n1. Let x = 0.727272...   ...(1)\n2. The block \"72\" is **two** digits, so multiply by 100: 100x = 72.727272...   ...(2)\n3. Subtract (1) from (2):\n   100x − x = 72.7272... − 0.7272...\n   99x = 72\n4. Solve and simplify: x = 72/99 = 8/11 (dividing top and bottom by 9).\n\nSo 0.7̇2̇ = 8/11.\n\n**The general rule:** if the repeating block is 1 digit, multiply by 10; if 2 digits, multiply by 100; for n digits, multiply by 10ⁿ. Then subtract the original to remove the recurring tail.\n\nA famous surprise: applying this to 0.9̇ gives 10x − x = 9, so 9x = 9 and x = 1. That is, 0.999... = 1 exactly."
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls",
+        "line": 92,
+        "body": "- **0 is not a natural number** in CAPS — N starts at 1. But 0 *is* a whole number, integer, rational and real.\n- **Negatives are not whole numbers.** -3 is an integer but not in N₀.\n- **Not every root is irrational.** √36 = 6 is rational; only non-perfect-square roots are irrational.\n- **π ≠ 22/7 and π ≠ 3.14.** Those are rational approximations, not π itself.\n- **Recurring decimals are rational.** Students often mislabel 0.333... as irrational — it equals 1/3.\n- **When subtracting recurring decimals, line up the repeating tails exactly** (e.g. for 0.16̇ both lines must end in ...6666) so they cancel cleanly."
+      },
+      {
+        "level": 3,
+        "title": "Properties of Numbers & Operations",
+        "line": 102,
+        "body": "The properties of numbers describe how addition, subtraction, multiplication and division behave. Knowing them lets you simplify calculations, rearrange algebra correctly, and avoid common mistakes. They also underpin the rules of algebra you will use throughout Grade 9 and beyond."
+      },
+      {
+        "level": 4,
+        "title": "The commutative property",
+        "line": 106,
+        "body": "The commutative property says that the **order** of the numbers does not change the answer — but only for addition and multiplication.\n\n- Addition: a + b = b + a\n- Multiplication: a × b = b × a\n\nWorked example: 7 + 3 = 10 and 3 + 7 = 10, so the order made no difference. Likewise 4 × 6 = 24 and 6 × 4 = 24.\n\n**Pitfall — subtraction and division are NOT commutative.** Order matters for them:\n- 8 − 3 = 5 but 3 − 8 = −5, so 8 − 3 ≠ 3 − 8.\n- 12 ÷ 4 = 3 but 4 ÷ 12 = ⅓, so 12 ÷ 4 ≠ 4 ÷ 12."
+      },
+      {
+        "level": 4,
+        "title": "The associative property",
+        "line": 119,
+        "body": "The associative property says that the **grouping** (which numbers you bracket together) does not change the answer — again only for addition and multiplication.\n\n- Addition: (a + b) + c = a + (b + c)\n- Multiplication: (a × b) × c = a × (b × c)\n\nWorked example: (2 + 5) + 4 = 7 + 4 = 11 and 2 + (5 + 4) = 2 + 9 = 11. Same answer.\nFor multiplication: (3 × 2) × 5 = 6 × 5 = 30 and 3 × (2 × 5) = 3 × 10 = 30.\n\n**Pitfall — subtraction and division are NOT associative:**\n- (10 − 4) − 2 = 6 − 2 = 4, but 10 − (4 − 2) = 10 − 2 = 8. Different.\n- (24 ÷ 6) ÷ 2 = 4 ÷ 2 = 2, but 24 ÷ (6 ÷ 2) = 24 ÷ 3 = 8. Different.\n\nSo with − and ÷ you must respect both the order and the bracketing."
+      },
+      {
+        "level": 4,
+        "title": "The distributive property",
+        "line": 135,
+        "body": "The distributive property links multiplication with addition (or subtraction). The number outside the brackets is multiplied by **every** term inside:\n\n  a(b + c) = ab + ac    and    a(b − c) = ab − ac\n\nWorked example 1 (over addition): 3(x + 4) = 3·x + 3·4 = 3x + 12.\n\nWorked example 2 (over subtraction): 4(3x − 5) = 4·3x − 4·5 = 12x − 20.\n\nWorked example 3 (negative outside the bracket): −2(x − 6) = −2·x + (−2)·(−6) = −2x + 12. Notice that negative × negative gives a positive, so the second sign flips.\n\nYou can also use distribution for fast mental maths: 6 × 47 = 6(40 + 7) = 240 + 42 = 282.\n\n**Pitfall:** never multiply only the first term. 4(3x − 5) is 12x − 20, NOT 12x − 5. And watch the signs carefully when the outside number is negative."
+      },
+      {
+        "level": 4,
+        "title": "Identity elements",
+        "line": 151,
+        "body": "An identity element leaves a number unchanged under an operation.\n\n- **Additive identity is 0:** a + 0 = a. For example, 17 + 0 = 17.\n- **Multiplicative identity is 1:** a × 1 = a. For example, 23 × 1 = 23."
+      },
+      {
+        "level": 4,
+        "title": "Inverse elements",
+        "line": 158,
+        "body": "An inverse \"undoes\" a number, returning it to the identity.\n\n- **Additive inverse of a is −a**, because a + (−a) = 0. The additive inverse of 7 is −7 (since 7 + (−7) = 0); the additive inverse of −5 is 5.\n- **Multiplicative inverse (reciprocal) of a is 1/a**, because a × 1/a = 1. The reciprocal of 5 is ⅕ (since 5 × ⅕ = 1); the reciprocal of ⅔ is 3/2 (since ⅔ × 3/2 = 1).\n\n**Pitfall:** 0 has no multiplicative inverse — you cannot divide by zero."
+      },
+      {
+        "level": 4,
+        "title": "Order of operations — BODMAS",
+        "line": 167,
+        "body": "When a calculation mixes operations, BODMAS (also written BEDMAS) tells you the order to work in:\n\n- **B** — Brackets\n- **O** — Of / Orders (exponents and roots)\n- **D** — Division\n- **M** — Multiplication\n- **A** — Addition\n- **S** — Subtraction\n\nTwo crucial rules people forget:\n1. Division and Multiplication have **equal** rank — do them left to right as they appear.\n2. Addition and Subtraction have **equal** rank — do them left to right as they appear.\n\nWorked example 1: 5 + 3 × 4. Multiplication first: 3 × 4 = 12, then 5 + 12 = 17. (Working left to right to get 8 × 4 = 32 is WRONG.)\n\nWorked example 2: 2 × (3 + 4)² − 6.\n- Brackets: (3 + 4) = 7\n- Orders: 7² = 49\n- Multiplication: 2 × 49 = 98\n- Subtraction: 98 − 6 = 92\n\nWorked example 3: 18 − 12 ÷ (2 + 1) + 4².\n- Brackets: (2 + 1) = 3\n- Orders: 4² = 16\n- Division: 12 ÷ 3 = 4\n- Now left to right: 18 − 4 + 16 = 14 + 16 = 30\n\n**Common BODMAS pitfalls:**\n- 20 ÷ 4 + 2 × 3 = 5 + 6 = 11. Do not invent brackets — it is not 20 ÷ (4 + 2).\n- 10 − 4 − 3 = (10 − 4) − 3 = 6 − 3 = 3. Subtraction goes left to right; grouping it as 10 − (4 − 3) = 9 is WRONG.\n- Remember D and M are equal, and A and S are equal — the letters in BODMAS do not mean multiplication always beats division."
+      },
+      {
+        "level": 3,
+        "title": "Integers",
+        "line": 202,
+        "body": "Integers are the whole numbers together with their opposites (negatives) and zero:\n\n… −3, −2, −1, 0, 1, 2, 3 …\n\nPositive integers lie to the right of 0 on the number line, negative integers lie to the left, and 0 is neither positive nor negative. On the number line, value increases as you move right and decreases as you move left, so −5 < −2 < 0 < 3. A common trap when comparing negatives is that the bigger digit gives the smaller number: −8 < −3, because −8 is further to the left.\n\nThe **additive inverse** (opposite) of a number is what you add to it to get 0. The opposite of 7 is −7, and the opposite of −7 is +7. So −(−7) = 7."
+      },
+      {
+        "level": 4,
+        "title": "Adding integers",
+        "line": 212,
+        "body": "Use the number line as your mental model: a positive number moves you right, a negative number moves you left.\n\n- **Same signs** → add the values and keep the common sign.\n  −6 + (−4) = −10  (6 left, then 4 more left).\n- **Different signs** → subtract the smaller value from the larger and keep the sign of the number with the larger value.\n  −9 + 5 = −4  (9 is the larger value and is negative).\n\nA handy shortcut for long chains: add all the positives, add all the negatives, then combine.\n−3 + 8 + 5 − 11 → positives 8 + 5 = 13; negatives −3 − 11 = −14; then 13 − 14 = −1."
+      },
+      {
+        "level": 4,
+        "title": "Subtracting integers — keep–change–change",
+        "line": 224,
+        "body": "To subtract, turn the subtraction into an addition:\n\n1. **Keep** the first number.\n2. **Change** the minus (subtraction) to plus (addition).\n3. **Change** the sign of the second number.\n\nThen apply the addition rules.\n\n- 7 − (−2) → 7 + (+2) = 9\n- −5 − 3 → −5 + (−3) = −8\n\n**Subtracting a negative is the same as adding**, because the two minus signs (a \"double negative\") combine into a plus: −(−6) = +6. So 4 − (−6) = 4 + 6 = 10. A frequent error is writing 4 − 6 = −2; the two negatives must first become a plus."
+      },
+      {
+        "level": 4,
+        "title": "Multiplying and dividing integers",
+        "line": 239,
+        "body": "The sign rules are the same for both operations:\n\n- **Same signs → positive:** (+)(+) = + and (−)(−) = +\n- **Different signs → negative:** (+)(−) = − and (−)(+) = −\n\nWork out the digits first, then decide the sign.\n\n- −7 × 4 = −28 (different signs)\n- −6 × −8 = +48 (same signs)\n- −48 ÷ 6 = −8 (different signs)\n- −72 ÷ −9 = +8 (same signs)\n\nFor a product of several integers, count the negative factors: an **even** number of negatives gives a positive answer, an **odd** number gives a negative answer.\n(−2)(−3)(−1)(4): three negatives (odd) → negative; 2 × 3 × 1 × 4 = 24, so the answer is −24."
+      },
+      {
+        "level": 4,
+        "title": "Exponents of negatives — (−3)² vs −3²",
+        "line": 256,
+        "body": "This is one of the most common exam pitfalls. The **brackets** decide what is being squared.\n\n- **(−3)²** means (−3) × (−3) = **+9**. The whole −3 (including its sign) is squared.\n- **−3²** means −(3 × 3) = **−9**. Only the 3 is squared; the minus sign stays in front.\n\nSo (−3)² = 9 but −3² = −9. Always check whether the negative is inside the brackets.\n\nThe sign of a power of a negative base follows the parity of the exponent:\n\n- Even exponent → positive: (−2)⁴ = +16\n- Odd exponent → negative: (−2)³ = −8"
+      },
+      {
+        "level": 4,
+        "title": "Order of operations (BODMAS) with integers",
+        "line": 270,
+        "body": "Work in this order, applying the sign rules at every step:\n\n- **B** – Brackets\n- **O** – Of / Orders (exponents and roots)\n- **D** – Division\n- **M** – Multiplication\n- **A** – Addition\n- **S** – Subtraction\n\nDivision and multiplication rank equally and are done left to right; the same is true for addition and subtraction.\n\n**Worked example 1:** −12 + 3 × (−4)\nMultiplication first: 3 × (−4) = −12. Then −12 + (−12) = −24.\n(Do not add −12 + 3 first — multiplication comes before addition.)\n\n**Worked example 2:** (−5 + 2)² − (−4)\nBrackets: −5 + 2 = −3. Exponent: (−3)² = 9. Subtract the negative: 9 − (−4) = 9 + 4 = **13**."
+      },
+      {
+        "level": 4,
+        "title": "Word and contextual problems",
+        "line": 290,
+        "body": "Translate the situation into integers, then calculate. A rise/deposit/gain means add; a drop/withdrawal/loss means subtract.\n\n- **Temperature:** Start −4 °C, rise 11 °C, then drop 6 °C: −4 + 11 − 6 = 1 °C.\n- **Bank balance:** A debit (overdrawn) balance is negative. Start −R250, deposit R400, withdraw R180: −250 + 400 − 180 = −R30, i.e. R30 in debit.\n- **Altitude:** Bird +25 m, diver −18 m. Vertical distance = 25 − (−18) = 25 + 18 = 43 m."
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls to avoid",
+        "line": 298,
+        "body": "- Confusing −3² (= −9) with (−3)² (= 9). Check the brackets.\n- Forgetting to turn subtraction of a negative into addition: 4 − (−6) = 10, not −2.\n- Treating a \"bigger digit\" negative as the larger number: −8 is smaller than −3.\n- Breaking BODMAS by adding before multiplying or dividing.\n- Mixing up the sign rules: same signs give positive, different signs give negative (for × and ÷)."
+      },
+      {
+        "level": 3,
+        "title": "Factors, Multiples & Primes",
+        "line": 307,
+        "body": "This section builds the number-theory toolkit you need for fractions, ratios and algebra: knowing how whole numbers break apart into building blocks, and how to combine those blocks to find the HCF and LCM."
+      },
+      {
+        "level": 4,
+        "title": "Key definitions",
+        "line": 311,
+        "body": "- **Factor:** a whole number that divides exactly into another number with no remainder. The factors of 12 are 1, 2, 3, 4, 6, 12. List them in pairs (1×12, 2×6, 3×4) so you don't miss any. A number has a *finite* number of factors.\n- **Multiple:** the result of multiplying a number by 1, 2, 3, … The first five multiples of 6 are 6, 12, 18, 24, 30. A number has *infinitely many* multiples.\n- **Prime number:** a number with exactly **two different** factors — 1 and itself. The primes below 20 are 2, 3, 5, 7, 11, 13, 17, 19. **2 is the only even prime.**\n- **Composite number:** a number with **more than two** factors (it has factors besides 1 and itself), e.g. 15 (factors 1, 3, 5, 15).\n\n**Why isn't 1 prime?** A prime needs *exactly two different* factors. The number 1 has only **one** factor — itself — so it is neither prime nor composite. Excluding 1 also makes prime factorisation **unique** (otherwise you could insert 1's endlessly).\n\nHandy facts: 1 is a factor of every number; every number is a multiple of 1; every number is both a factor and a multiple of itself."
+      },
+      {
+        "level": 4,
+        "title": "Prime factorisation",
+        "line": 322,
+        "body": "Every composite number can be written as a product of primes in exactly one way (apart from order). We write the answer in **exponent form**, e.g. 360 = 2³ × 3² × 5.\n\n**Ladder (division) method.** Divide by the *smallest* prime that fits, repeatedly, moving up only when it no longer divides:\n\n```\n2 | 360\n2 | 180\n2 |  90\n3 |  45\n3 |  15\n5 |   5\n  |   1\n```\n\nThe primes down the side are 2, 2, 2, 3, 3, 5, so **360 = 2³ × 3² × 5**.\n\n**Factor-tree method.** Split the number into any two factors and keep splitting until every branch is prime:\n\n```\n        84\n       /  \\\n      4    21\n     / \\   / \\\n    2   2 3   7\n```\n\nThe prime leaves are 2, 2, 3, 7, so **84 = 2² × 3 × 7**. No matter which first split you choose, the final prime factors are always the same."
+      },
+      {
+        "level": 4,
+        "title": "HCF — Highest Common Factor",
+        "line": 352,
+        "body": "The HCF is the largest number that divides into all the given numbers.\n\n**Rule:** prime factorise each number, then multiply the **common primes**, each taken to its **lowest** power. If there are no common primes, the HCF is 1.\n\nExample — HCF of 72 and 120:\n- 72 = 2³ × 3²\n- 120 = 2³ × 3 × 5\n- Common primes: 2 and 3. Lowest powers: 2³ and 3¹.\n- **HCF = 2³ × 3 = 24**"
+      },
+      {
+        "level": 4,
+        "title": "LCM — Lowest Common Multiple",
+        "line": 364,
+        "body": "The LCM is the smallest number that all the given numbers divide into.\n\n**Rule:** prime factorise each number, then multiply **all** primes that appear in any number, each taken to its **highest** power.\n\nExample — LCM of 72 and 120 (same factorisations):\n- All primes: 2, 3, 5. Highest powers: 2³, 3², 5¹.\n- **LCM = 2³ × 3² × 5 = 360**\n\n**Don't mix them up:** HCF uses **common primes, lowest powers** (answer is small); LCM uses **all primes, highest powers** (answer is big). A quick check: HCF ≤ each number ≤ LCM.\n\n**Useful shortcut:** for two numbers, HCF × LCM = product of the numbers. Here 24 × 360 = 8 640 = 72 × 120. So LCM = (a × b) ÷ HCF."
+      },
+      {
+        "level": 4,
+        "title": "Divisibility rules",
+        "line": 378,
+        "body": "| Divisor | Rule | Example |\n|---|---|---|\n| 2 | last digit even (0,2,4,6,8) | 130 ✓ |\n| 3 | digit sum divisible by 3 | 738 → 18 ✓ |\n| 4 | last **two** digits divisible by 4 | 1 316 → 16 ✓ |\n| 5 | last digit 0 or 5 | 135 ✓ |\n| 6 | divisible by 2 **and** 3 | 522 ✓ |\n| 8 | last **three** digits divisible by 8 | 5 120 → 120 ✓ |\n| 9 | digit sum divisible by 9 | 738 → 18 ✓ |\n| 10 | last digit 0 | 470 ✓ |\n| 11 | (sum of odd-position digits) − (sum of even-position digits) = 0 or a multiple of 11 | 2 783 → (2+8)−(7+3)=0 ✓ |\n\nThese rules let you spot prime factors fast when starting the ladder method."
+      },
+      {
+        "level": 4,
+        "title": "Worked combined problems",
+        "line": 394,
+        "body": "**Lighthouses (LCM).** Two lighthouses flash every 72 s and every 120 s and flash together now. When next together? \"Together again\" → LCM = 2³ × 3² × 5 = 360 s = **6 minutes**.\n\n**Packing bags (HCF).** Pack 48 pencils and 36 erasers into identical bags with none left over — greatest number of bags? \"Greatest equal groups\" → HCF. 48 = 2⁴ × 3, 36 = 2² × 3², so HCF = 2² × 3 = 12. **12 bags**, each with 4 pencils and 3 erasers.\n\n**Choosing HCF vs LCM:** phrases like *greatest, largest group, share equally* signal **HCF**; phrases like *next time together, smallest length, least* signal **LCM**."
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls",
+        "line": 402,
+        "body": "- Calling 1 prime, or forgetting 2 is prime.\n- Stopping a factor tree before all branches are prime.\n- Swapping the HCF and LCM rules (lowest vs highest powers).\n- Forgetting to write the final answer in exponent form.\n- Checking divisibility by 4 or 8 using only the last digit instead of the last two/three digits."
+      },
+      {
+        "level": 3,
+        "title": "Fractions",
+        "line": 411,
+        "body": "A fraction a/b means a parts out of b equal parts. The top number is the **numerator**, the bottom is the **denominator**. This section covers equivalent fractions, simplifying, the four operations (including mixed numbers), finding a fraction \"of\" a quantity, and order of operations with fractions. All money is in rand (R), as in the CAPS curriculum."
+      },
+      {
+        "level": 4,
+        "title": "Equivalent fractions",
+        "line": 415,
+        "body": "Equivalent fractions have different numbers but the same value. You make them by multiplying **or** dividing the numerator and the denominator by the **same** non-zero number.\n\n- 2/3 = (2×4)/(3×4) = 8/12\n- 6/10 = (6÷2)/(10÷2) = 3/5\n\nPitfall: you may never **add** the same number to top and bottom. Only multiplying/dividing keeps the value the same."
+      },
+      {
+        "level": 4,
+        "title": "Simplifying to lowest terms",
+        "line": 424,
+        "body": "A fraction is in **lowest terms** when the highest common factor (HCF) of numerator and denominator is 1. To simplify, divide both by their HCF.\n\nWorked example — simplify 18/24:\n- 18 = 2×3×3, 24 = 2×2×2×3, so HCF = 2×3 = 6\n- 18÷6 = 3, 24÷6 = 4\n- 18/24 = 3/4\n\nYou can also divide by common factors step by step until none remain: 18/24 → (÷2) 9/12 → (÷3) 3/4."
+      },
+      {
+        "level": 4,
+        "title": "Mixed numbers ↔ improper fractions",
+        "line": 435,
+        "body": "An **improper fraction** has a numerator ≥ denominator (e.g. 17/5). A **mixed number** combines a whole and a fraction (e.g. 3 2/5).\n\nMixed → improper: (whole × denominator + numerator) / denominator.\n- 3 2/5 = (3×5 + 2)/5 = 17/5\n\nImproper → mixed: divide numerator by denominator; quotient is the whole, remainder is the new numerator.\n- 23/4 = 23÷4 = 5 remainder 3 = 5 3/4"
+      },
+      {
+        "level": 4,
+        "title": "Adding and subtracting fractions",
+        "line": 445,
+        "body": "You can only add or subtract fractions that have the **same denominator**. Find the LCM of the denominators, rewrite each as an equivalent fraction over that LCM, then add/subtract **numerators only** (the denominator stays the same).\n\nFinding the LCM (e.g. of 6 and 8): use prime factors — 6 = 2×3, 8 = 2³ — take the highest power of each prime: 2³×3 = 24. Or list multiples until you find the first shared one.\n\nWorked example — add 2/3 + 1/4:\n- LCM(3,4) = 12\n- 2/3 = 8/12, 1/4 = 3/12\n- 8/12 + 3/12 = 11/12\n\nWorked example — subtract 5/6 − 1/4:\n- LCM(6,4) = 12\n- 5/6 = 10/12, 1/4 = 3/12\n- 10/12 − 3/12 = 7/12\n\n**Mixed numbers (addition).** Either add wholes and fractions separately, or convert to improper fractions first.\n\nWorked example — 2 1/2 + 1 2/3:\n- Wholes: 2 + 1 = 3\n- Fractions: 1/2 + 2/3 = 3/6 + 4/6 = 7/6 = 1 1/6\n- Total: 3 + 1 1/6 = 4 1/6\n\n**Mixed numbers (subtraction with borrowing).** Converting to improper fractions avoids tricky borrowing.\n\nWorked example — 4 1/4 − 1 2/3:\n- 4 1/4 = 17/4, 1 2/3 = 5/3\n- LCM(4,3) = 12: 17/4 = 51/12, 5/3 = 20/12\n- 51/12 − 20/12 = 31/12 = 2 7/12\n\nPitfall: never add or subtract the denominators. 1/2 + 1/3 is **not** 2/5; it is 5/6."
+      },
+      {
+        "level": 4,
+        "title": "Multiplying fractions",
+        "line": 477,
+        "body": "No common denominator is needed. Multiply numerator × numerator and denominator × denominator, then simplify. It is easier to **cross-cancel** common factors first so numbers stay small.\n\nWorked example — 3/8 × 4/9:\n- Cancel 3 with 9 (9→3) and 4 with 8 (8→2): (1/2) × (1/3)\n- (1×1)/(2×3) = 1/6\n\n**Mixed numbers:** convert to improper fractions first, never multiply whole parts separately.\n\nWorked example — 1 1/3 × 2 1/4:\n- 1 1/3 = 4/3, 2 1/4 = 9/4\n- 4/3 × 9/4 = 36/12 = 3"
+      },
+      {
+        "level": 4,
+        "title": "Dividing fractions",
+        "line": 491,
+        "body": "Use **keep-flip-change** (keep–change–flip): keep the first fraction, change ÷ to ×, and flip the second fraction to its **reciprocal**. The reciprocal of a/b is b/a; the reciprocal of 4 (= 4/1) is 1/4.\n\nWorked example — 3/5 ÷ 2/7:\n- 3/5 ÷ 2/7 = 3/5 × 7/2 = 21/10 = 2 1/10\n\n**Mixed numbers:** convert to improper first.\n\nWorked example — 2 1/2 ÷ 1 1/4:\n- 5/2 ÷ 5/4 = 5/2 × 4/5 = 20/10 = 2"
+      },
+      {
+        "level": 4,
+        "title": "\"of\" means multiply — fractions of quantities",
+        "line": 503,
+        "body": "The word \"of\" means **multiply**.\n\n- 1/3 of 12 = 1/3 × 12 = 4\n- 3/4 of R120: 120 ÷ 4 = 30, then 30 × 3 = R90\n- 2/5 of R150: 150 ÷ 5 = 30, then 30 × 2 = R60 (the other 3/5 is R90)\n\nA handy method: divide the quantity by the denominator to get one part, then multiply by the numerator."
+      },
+      {
+        "level": 4,
+        "title": "Order of operations with fractions",
+        "line": 513,
+        "body": "Fractions follow the same **BODMAS** order as whole numbers:\n**B**rackets, **O**f/Orders (powers and roots), **D**ivision and **M**ultiplication (left to right), **A**ddition and **S**ubtraction (left to right). \"Of\" is handled as multiplication.\n\nWorked example — 2/3 + 1/4 × 8/9:\n- Multiply first: 1/4 × 8/9 = 2/9\n- Then add: 2/3 + 2/9 = 6/9 + 2/9 = 8/9\n\nWorked example — (1/2 + 1/3) ÷ 5/6:\n- Brackets first: 1/2 + 1/3 = 3/6 + 2/6 = 5/6\n- Then divide: 5/6 ÷ 5/6 = 5/6 × 6/5 = 1"
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls checklist",
+        "line": 526,
+        "body": "- Do not add/subtract straight across — find a common denominator first.\n- Do not find an LCM for multiplication or division — only for + and −.\n- Always convert mixed numbers to improper fractions before × or ÷.\n- For ÷, flip the **second** fraction, not the first.\n- Always simplify your final answer to lowest terms."
+      },
+      {
+        "level": 3,
+        "title": "Decimals",
+        "line": 535,
+        "body": "Decimals are another way of writing fractions whose denominators are powers of ten (10, 100, 1000, ...). The decimal point separates the whole-number part (on the left) from the fractional part (on the right). Mastering decimals means understanding place value first, then applying it to the four operations, to rounding, and to sensible estimation."
+      },
+      {
+        "level": 4,
+        "title": "Place value of decimals",
+        "line": 539,
+        "body": "Each position to the right of the decimal point is ten times smaller than the one before it:\n\n- 1st place = tenths (1/10)\n- 2nd place = hundredths (1/100)\n- 3rd place = thousandths (1/1000)\n\nExample: 4.728 = 4 ones + 7 tenths + 2 hundredths + 8 thousandths = 4 + 0.7 + 0.02 + 0.008.\n\nReading words into digits: \"three and forty-five thousandths\" = 3.045. Thousandths needs 3 decimal places, and 45 only fills two of them, so we pad the empty tenths place with a zero. Writing 3.45 would mean forty-five hundredths, which is wrong.\n\nComparing decimals: give the numbers the same number of decimal places by adding trailing zeros, then compare as whole numbers. Is 0.4 or 0.38 bigger? Write 0.4 = 0.40, then compare 40 hundredths with 38 hundredths, so 0.4 > 0.38. Pitfall: more digits does not mean a bigger number."
+      },
+      {
+        "level": 4,
+        "title": "Adding and subtracting decimals",
+        "line": 553,
+        "body": "1. Line up the decimal points so matching place-value columns sit under each other.\n2. Pad with zeros so every number has the same number of decimal places.\n3. Add or subtract column by column, carrying or borrowing as normal.\n4. Bring the decimal point straight down into the answer.\n\nWorked example (add): 12.6 + 3.45 + 0.8\n```\n  12.60\n   3.45\n+  0.80\n-------\n  16.85\n```\n\nWorked example (subtract): 9.3 − 4.78. Write 9.3 as 9.30 first.\n```\n  9.30\n- 4.78\n------\n  4.52\n```\nPitfall: never line the numbers up by their right-hand ends. Always align the decimal points."
+      },
+      {
+        "level": 4,
+        "title": "Multiplying decimals",
+        "line": 578,
+        "body": "1. Ignore the decimal points and multiply as whole numbers.\n2. Count the total number of decimal places in both factors.\n3. Put that many decimal places into the answer.\n\nWorked example: 1.25 × 3.4. Whole numbers: 125 × 34 = 4250. Decimal places: 2 + 1 = 3, so place the point 3 from the right: 4.250 = 4.25. Estimate check: 1.3 × 3 ≈ 4, which is close.\n\nWorked example: 0.2 × 0.3. Digits: 2 × 3 = 6. Decimal places: 1 + 1 = 2, so the answer needs 2 places: 0.06 (not 0.6). Pitfall: remember to insert the leading zero to make up the required number of places."
+      },
+      {
+        "level": 4,
+        "title": "Dividing decimals",
+        "line": 588,
+        "body": "Make the divisor a whole number by multiplying both the divisor and the dividend by the same power of 10 (this shifts both points the same number of places and keeps the value unchanged).\n\nWorked example: 4.5 ÷ 0.5. The divisor 0.5 has 1 decimal place, so multiply both by 10: 45 ÷ 5 = 9.\n\nWorked example: 7.5 ÷ 0.25. The divisor has 2 decimal places, so multiply both by 100: 750 ÷ 25 = 30. Note that dividing by a number less than 1 makes the answer bigger, so 30 > 7.5 is expected.\n\nWhen the divisor is already a whole number, just divide and keep the decimal point in the quotient directly above the point in the dividend: 6.4 ÷ 8 = 0.8."
+      },
+      {
+        "level": 4,
+        "title": "Multiplying and dividing by powers of 10",
+        "line": 598,
+        "body": "Shift the decimal point, one place for each zero.\n\n- Multiplying moves the point to the RIGHT: 3.45 × 10 = 34.5; 3.45 × 100 = 345; 0.7 × 1000 = 700.\n- Dividing moves the point to the LEFT: 56.2 ÷ 10 = 5.62; 56.2 ÷ 100 = 0.562; 8 ÷ 1000 = 0.008.\n\nInsert zeros as placeholders whenever you run out of digits."
+      }
+    ],
+    "firstParagraph": "### The Real Number System\n\nEvery number you use in Grade 9 Mathematics belongs to the **real number system (R)**. The real numbers are simply all the numbers that can be placed on a number line. Inside R there are several smaller, named sets that fit neatly inside one another. Knowing these sets — and being able to classify a number into all the sets it belongs to — is a core CAPS skill.",
+    "body": "# Numbers — Complete Study Guide\n\n## Contents\n\n### The Real Number System\n\nEvery number you use in Grade 9 Mathematics belongs to the **real number system (R)**. The real numbers are simply all the numbers that can be placed on a number line. Inside R there are several smaller, named sets that fit neatly inside one another. Knowing these sets — and being able to classify a number into all the sets it belongs to — is a core CAPS skill.\n\n#### The named sets of numbers\n\n- **Natural numbers (N)** — the counting numbers: N = {1, 2, 3, 4, ...}. They start at 1. No zero, no negatives, no fractions.\n- **Whole numbers (N₀)** — the naturals together with 0: N₀ = {0, 1, 2, 3, ...}. The only difference from N is that 0 is included.\n- **Integers (Z)** — all whole numbers and their negatives: Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}. Still no fractions or decimals.\n- **Rational numbers (Q)** — any number that can be written as a fraction a/b where a and b are integers and b ≠ 0.\n- **Irrational numbers (Q')** — real numbers that *cannot* be written as such a fraction.\n- **Real numbers (R)** — everything above combined; every point on the number line.\n\n#### The subset chain\n\nEach set sits inside the next larger one:\n\n**N ⊂ N₀ ⊂ Z ⊂ Q ⊂ R**\n\nIn words: every natural number is also a whole number, every whole number is an integer, every integer is rational (e.g. 5 = 5/1), and every rational number is real. The irrationals Q' are the *other* part of R — the numbers that are real but not rational. So:\n\n**R = Q ∪ Q'**, and every real number is *either* rational *or* irrational, never both.\n\n#### Rational numbers in detail\n\nA number is rational if it **can** be written as a/b with integers a and b and b ≠ 0. This covers more than it first appears:\n\n- all integers: 6 = 6/1, -4 = -4/1\n- ordinary fractions: ¾, 7/2, -⅔\n- terminating decimals: 0.25 = 1/4, 0.125 = 1/8\n- recurring decimals: 0.333... = 1/3, 0.727272... = 8/11\n\nThe denominator may **never** be 0, because division by zero is undefined. Note that 0 itself is rational (0 = 0/1) — it just may never sit on the *bottom* of the fraction.\n\n#### Terminating, recurring and irrational decimals\n\nThe decimal form of a number is a quick test for which type it is:\n\n- **Terminating** — the decimal stops: 0.5, 0.375, 3.2. Always **rational**.\n- **Recurring** — a block of digits repeats forever: 0.333..., 0.727272..., 0.16666.... Always **rational**. We mark the repeat with a dot over the repeating digit(s): 0.3̇, 0.7̇2̇, 0.16̇.\n- **Non-terminating and non-recurring** — the digits run on forever with **no** repeating pattern. These are the **irrational** numbers.\n\nSo the rule is: a rational number's decimal always either *terminates* or *recurs*. An irrational number's decimal does **neither**.\n\n#### Why √2 and π are irrational\n\n√2 = 1.41421356237... and π = 3.14159265358... Both expansions never end and never settle into a repeating block, so neither can be written as a fraction of two integers — that is exactly what \"irrational\" means. Be careful: 3.14 and 22/7 are common **approximations** of π, but they are themselves *rational* and are *not* equal to π.\n\nFor square roots there is a handy shortcut: **√n is rational only if n is a perfect square.** So √16 = 4 is rational, but √2, √7, √20 are irrational. To locate √20, trap it between the nearest perfect squares: 16 < 20 < 25, so 4 < √20 < 5 (√20 ≈ 4.47).\n\n#### Worked example: classifying a number\n\nClassify -4, ⅔ and √16 into all sets they belong to.\n\n- **-4** is a negative integer. Not natural (no negatives), not whole. So -4 ∈ Z, Q, R.\n- **⅔** = 0.666... is a fraction of integers, so ⅔ ∈ Q, R only.\n- **√16** = 4, a perfect square, so √16 ∈ N, N₀, Z, Q, R (it is in every set).\n\n#### Worked example: converting a recurring decimal to a fraction\n\nThis is the most important method to master. The idea: multiply by a power of 10 so the repeating tails line up, then subtract to cancel them.\n\n**Example A — one repeating digit: convert 0.4̇ (0.444...) to a fraction.**\n\n1. Let x = 0.444...   ...(1)\n2. One digit repeats, so multiply by 10: 10x = 4.444...   ...(2)\n3. Subtract (1) from (2) — the recurring tails cancel:\n   10x − x = 4.444... − 0.444...\n   9x = 4\n4. Solve: x = 4/9.\n\nSo 0.4̇ = 4/9. Check: 4 ÷ 9 = 0.444... ✓\n\n**Example B — two repeating digits: convert 0.7̇2̇ (0.727272...) to a fraction.**\n\n1. Let x = 0.727272...   ...(1)\n2. The block \"72\" is **two** digits, so multiply by 100: 100x = 72.727272...   ...(2)\n3. Subtract (1) from (2):\n   100x − x = 72.7272... − 0.7272...\n   99x = 72\n4. Solve and simplify: x = 72/99 = 8/11 (dividing top and bottom by 9).\n\nSo 0.7̇2̇ = 8/11.\n\n**The general rule:** if the repeating block is 1 digit, multiply by 10; if 2 digits, multiply by 100; for n digits, multiply by 10ⁿ. Then subtract the original to remove the recurring tail.\n\nA famous surprise: applying this to 0.9̇ gives 10x − x = 9, so 9x = 9 and x = 1. That is, 0.999... = 1 exactly.\n\n#### Common pitfalls\n\n- **0 is not a natural number** in CAPS — N starts at 1. But 0 *is* a whole number, integer, rational and real.\n- **Negatives are not whole numbers.** -3 is an integer but not in N₀.\n- **Not every root is irrational.** √36 = 6 is rational; only non-perfect-square roots are irrational.\n- **π ≠ 22/7 and π ≠ 3.14.** Those are rational approximations, not π itself.\n- **Recurring decimals are rational.** Students often mislabel 0.333... as irrational — it equals 1/3.\n- **When subtracting recurring decimals, line up the repeating tails exactly** (e.g. for 0.16̇ both lines must end in ...6666) so they cancel cleanly.\n\n\n### Properties of Numbers & Operations\n\nThe properties of numbers describe how addition, subtraction, multiplication and division behave. Knowing them lets you simplify calculations, rearrange algebra correctly, and avoid common mistakes. They also underpin the rules of algebra you will use throughout Grade 9 and beyond.\n\n#### The commutative property\n\nThe commutative property says that the **order** of the numbers does not change the answer — but only for addition and multiplication.\n\n- Addition: a + b = b + a\n- Multiplication: a × b = b × a\n\nWorked example: 7 + 3 = 10 and 3 + 7 = 10, so the order made no difference. Likewise 4 × 6 = 24 and 6 × 4 = 24.\n\n**Pitfall — subtraction and division are NOT commutative.** Order matters for them:\n- 8 − 3 = 5 but 3 − 8 = −5, so 8 − 3 ≠ 3 − 8.\n- 12 ÷ 4 = 3 but 4 ÷ 12 = ⅓, so 12 ÷ 4 ≠ 4 ÷ 12.\n\n#### The associative property\n\nThe associative property says that the **grouping** (which numbers you bracket together) does not change the answer — again only for addition and multiplication.\n\n- Addition: (a + b) + c = a + (b + c)\n- Multiplication: (a × b) × c = a × (b × c)\n\nWorked example: (2 + 5) + 4 = 7 + 4 = 11 and 2 + (5 + 4) = 2 + 9 = 11. Same answer.\nFor multiplication: (3 × 2) × 5 = 6 × 5 = 30 and 3 × (2 × 5) = 3 × 10 = 30.\n\n**Pitfall — subtraction and division are NOT associative:**\n- (10 − 4) − 2 = 6 − 2 = 4, but 10 − (4 − 2) = 10 − 2 = 8. Different.\n- (24 ÷ 6) ÷ 2 = 4 ÷ 2 = 2, but 24 ÷ (6 ÷ 2) = 24 ÷ 3 = 8. Different.\n\nSo with − and ÷ you must respect both the order and the bracketing.\n\n#### The distributive property\n\nThe distributive property links multiplication with addition (or subtraction). The number outside the brackets is multiplied by **every** term inside:\n\n  a(b + c) = ab + ac    and    a(b − c) = ab − ac\n\nWorked example 1 (over addition): 3(x + 4) = 3·x + 3·4 = 3x + 12.\n\nWorked example 2 (over subtraction): 4(3x − 5) = 4·3x − 4·5 = 12x − 20.\n\nWorked example 3 (negative outside the bracket): −2(x − 6) = −2·x + (−2)·(−6) = −2x + 12. Notice that negative × negative gives a positive, so the second sign flips.\n\nYou can also use distribution for fast mental maths: 6 × 47 = 6(40 + 7) = 240 + 42 = 282.\n\n**Pitfall:** never multiply only the first term. 4(3x − 5) is 12x − 20, NOT 12x − 5. And watch the signs carefully when the outside number is negative.\n\n#### Identity elements\n\nAn identity element leaves a number unchanged under an operation.\n\n- **Additive identity is 0:** a + 0 = a. For example, 17 + 0 = 17.\n- **Multiplicative identity is 1:** a × 1 = a. For example, 23 × 1 = 23.\n\n#### Inverse elements\n\nAn inverse \"undoes\" a number, returning it to the identity.\n\n- **Additive inverse of a is −a**, because a + (−a) = 0. The additive inverse of 7 is −7 (since 7 + (−7) = 0); the additive inverse of −5 is 5.\n- **Multiplicative inverse (reciprocal) of a is 1/a**, because a × 1/a = 1. The reciprocal of 5 is ⅕ (since 5 × ⅕ = 1); the reciprocal of ⅔ is 3/2 (since ⅔ × 3/2 = 1).\n\n**Pitfall:** 0 has no multiplicative inverse — you cannot divide by zero.\n\n#### Order of operations — BODMAS\n\nWhen a calculation mixes operations, BODMAS (also written BEDMAS) tells you the order to work in:\n\n- **B** — Brackets\n- **O** — Of / Orders (exponents and roots)\n- **D** — Division\n- **M** — Multiplication\n- **A** — Addition\n- **S** — Subtraction\n\nTwo crucial rules people forget:\n1. Division and Multiplication have **equal** rank — do them left to right as they appear.\n2. Addition and Subtraction have **equal** rank — do them left to right as they appear.\n\nWorked example 1: 5 + 3 × 4. Multiplication first: 3 × 4 = 12, then 5 + 12 = 17. (Working left to right to get 8 × 4 = 32 is WRONG.)\n\nWorked example 2: 2 × (3 + 4)² − 6.\n- Brackets: (3 + 4) = 7\n- Orders: 7² = 49\n- Multiplication: 2 × 49 = 98\n- Subtraction: 98 − 6 = 92\n\nWorked example 3: 18 − 12 ÷ (2 + 1) + 4².\n- Brackets: (2 + 1) = 3\n- Orders: 4² = 16\n- Division: 12 ÷ 3 = 4\n- Now left to right: 18 − 4 + 16 = 14 + 16 = 30\n\n**Common BODMAS pitfalls:**\n- 20 ÷ 4 + 2 × 3 = 5 + 6 = 11. Do not invent brackets — it is not 20 ÷ (4 + 2).\n- 10 − 4 − 3 = (10 − 4) − 3 = 6 − 3 = 3. Subtraction goes left to right; grouping it as 10 − (4 − 3) = 9 is WRONG.\n- Remember D and M are equal, and A and S are equal — the letters in BODMAS do not mean multiplication always beats division.\n\n\n### Integers\n\nIntegers are the whole numbers together with their opposites (negatives) and zero:\n\n… −3, −2, −1, 0, 1, 2, 3 …\n\nPositive integers lie to the right of 0 on the number line, negative integers lie to the left, and 0 is neither positive nor negative. On the number line, value increases as you move right and decreases as you move left, so −5 < −2 < 0 < 3. A common trap when comparing negatives is that the bigger digit gives the smaller number: −8 < −3, because −8 is further to the left.\n\nThe **additive inverse** (opposite) of a number is what you add to it to get 0. The opposite of 7 is −7, and the opposite of −7 is +7. So −(−7) = 7.\n\n#### Adding integers\n\nUse the number line as your mental model: a positive number moves you right, a negative number moves you left.\n\n- **Same signs** → add the values and keep the common sign.\n  −6 + (−4) = −10  (6 left, then 4 more left).\n- **Different signs** → subtract the smaller value from the larger and keep the sign of the number with the larger value.\n  −9 + 5 = −4  (9 is the larger value and is negative).\n\nA handy shortcut for long chains: add all the positives, add all the negatives, then combine.\n−3 + 8 + 5 − 11 → positives 8 + 5 = 13; negatives −3 − 11 = −14; then 13 − 14 = −1.\n\n#### Subtracting integers — keep–change–change\n\nTo subtract, turn the subtraction into an addition:\n\n1. **Keep** the first number.\n2. **Change** the minus (subtraction) to plus (addition).\n3. **Change** the sign of the second number.\n\nThen apply the addition rules.\n\n- 7 − (−2) → 7 + (+2) = 9\n- −5 − 3 → −5 + (−3) = −8\n\n**Subtracting a negative is the same as adding**, because the two minus signs (a \"double negative\") combine into a plus: −(−6) = +6. So 4 − (−6) = 4 + 6 = 10. A frequent error is writing 4 − 6 = −2; the two negatives must first become a plus.\n\n#### Multiplying and dividing integers\n\nThe sign rules are the same for both operations:\n\n- **Same signs → positive:** (+)(+) = + and (−)(−) = +\n- **Different signs → negative:** (+)(−) = − and (−)(+) = −\n\nWork out the digits first, then decide the sign.\n\n- −7 × 4 = −28 (different signs)\n- −6 × −8 = +48 (same signs)\n- −48 ÷ 6 = −8 (different signs)\n- −72 ÷ −9 = +8 (same signs)\n\nFor a product of several integers, count the negative factors: an **even** number of negatives gives a positive answer, an **odd** number gives a negative answer.\n(−2)(−3)(−1)(4): three negatives (odd) → negative; 2 × 3 × 1 × 4 = 24, so the answer is −24.\n\n#### Exponents of negatives — (−3)² vs −3²\n\nThis is one of the most common exam pitfalls. The **brackets** decide what is being squared.\n\n- **(−3)²** means (−3) × (−3) = **+9**. The whole −3 (including its sign) is squared.\n- **−3²** means −(3 × 3) = **−9**. Only the 3 is squared; the minus sign stays in front.\n\nSo (−3)² = 9 but −3² = −9. Always check whether the negative is inside the brackets.\n\nThe sign of a power of a negative base follows the parity of the exponent:\n\n- Even exponent → positive: (−2)⁴ = +16\n- Odd exponent → negative: (−2)³ = −8\n\n#### Order of operations (BODMAS) with integers\n\nWork in this order, applying the sign rules at every step:\n\n- **B** – Brackets\n- **O** – Of / Orders (exponents and roots)\n- **D** – Division\n- **M** – Multiplication\n- **A** – Addition\n- **S** – Subtraction\n\nDivision and multiplication rank equally and are done left to right; the same is true for addition and subtraction.\n\n**Worked example 1:** −12 + 3 × (−4)\nMultiplication first: 3 × (−4) = −12. Then −12 + (−12) = −24.\n(Do not add −12 + 3 first — multiplication comes before addition.)\n\n**Worked example 2:** (−5 + 2)² − (−4)\nBrackets: −5 + 2 = −3. Exponent: (−3)² = 9. Subtract the negative: 9 − (−4) = 9 + 4 = **13**.\n\n#### Word and contextual problems\n\nTranslate the situation into integers, then calculate. A rise/deposit/gain means add; a drop/withdrawal/loss means subtract.\n\n- **Temperature:** Start −4 °C, rise 11 °C, then drop 6 °C: −4 + 11 − 6 = 1 °C.\n- **Bank balance:** A debit (overdrawn) balance is negative. Start −R250, deposit R400, withdraw R180: −250 + 400 − 180 = −R30, i.e. R30 in debit.\n- **Altitude:** Bird +25 m, diver −18 m. Vertical distance = 25 − (−18) = 25 + 18 = 43 m.\n\n#### Common pitfalls to avoid\n\n- Confusing −3² (= −9) with (−3)² (= 9). Check the brackets.\n- Forgetting to turn subtraction of a negative into addition: 4 − (−6) = 10, not −2.\n- Treating a \"bigger digit\" negative as the larger number: −8 is smaller than −3.\n- Breaking BODMAS by adding before multiplying or dividing.\n- Mixing up the sign rules: same signs give positive, different signs give negative (for × and ÷).\n\n\n### Factors, Multiples & Primes\n\nThis section builds the number-theory toolkit you need for fractions, ratios and algebra: knowing how whole numbers break apart into building blocks, and how to combine those blocks to find the HCF and LCM.\n\n#### Key definitions\n\n- **Factor:** a whole number that divides exactly into another number with no remainder. The factors of 12 are 1, 2, 3, 4, 6, 12. List them in pairs (1×12, 2×6, 3×4) so you don't miss any. A number has a *finite* number of factors.\n- **Multiple:** the result of multiplying a number by 1, 2, 3, … The first five multiples of 6 are 6, 12, 18, 24, 30. A number has *infinitely many* multiples.\n- **Prime number:** a number with exactly **two different** factors — 1 and itself. The primes below 20 are 2, 3, 5, 7, 11, 13, 17, 19. **2 is the only even prime.**\n- **Composite number:** a number with **more than two** factors (it has factors besides 1 and itself), e.g. 15 (factors 1, 3, 5, 15).\n\n**Why isn't 1 prime?** A prime needs *exactly two different* factors. The number 1 has only **one** factor — itself — so it is neither prime nor composite. Excluding 1 also makes prime factorisation **unique** (otherwise you could insert 1's endlessly).\n\nHandy facts: 1 is a factor of every number; every number is a multiple of 1; every number is both a factor and a multiple of itself.\n\n#### Prime factorisation\n\nEvery composite number can be written as a product of primes in exactly one way (apart from order). We write the answer in **exponent form**, e.g. 360 = 2³ × 3² × 5.\n\n**Ladder (division) method.** Divide by the *smallest* prime that fits, repeatedly, moving up only when it no longer divides:\n\n```\n2 | 360\n2 | 180\n2 |  90\n3 |  45\n3 |  15\n5 |   5\n  |   1\n```\n\nThe primes down the side are 2, 2, 2, 3, 3, 5, so **360 = 2³ × 3² × 5**.\n\n**Factor-tree method.** Split the number into any two factors and keep splitting until every branch is prime:\n\n```\n        84\n       /  \\\n      4    21\n     / \\   / \\\n    2   2 3   7\n```\n\nThe prime leaves are 2, 2, 3, 7, so **84 = 2² × 3 × 7**. No matter which first split you choose, the final prime factors are always the same.\n\n#### HCF — Highest Common Factor\n\nThe HCF is the largest number that divides into all the given numbers.\n\n**Rule:** prime factorise each number, then multiply the **common primes**, each taken to its **lowest** power. If there are no common primes, the HCF is 1.\n\nExample — HCF of 72 and 120:\n- 72 = 2³ × 3²\n- 120 = 2³ × 3 × 5\n- Common primes: 2 and 3. Lowest powers: 2³ and 3¹.\n- **HCF = 2³ × 3 = 24**\n\n#### LCM — Lowest Common Multiple\n\nThe LCM is the smallest number that all the given numbers divide into.\n\n**Rule:** prime factorise each number, then multiply **all** primes that appear in any number, each taken to its **highest** power.\n\nExample — LCM of 72 and 120 (same factorisations):\n- All primes: 2, 3, 5. Highest powers: 2³, 3², 5¹.\n- **LCM = 2³ × 3² × 5 = 360**\n\n**Don't mix them up:** HCF uses **common primes, lowest powers** (answer is small); LCM uses **all primes, highest powers** (answer is big). A quick check: HCF ≤ each number ≤ LCM.\n\n**Useful shortcut:** for two numbers, HCF × LCM = product of the numbers. Here 24 × 360 = 8 640 = 72 × 120. So LCM = (a × b) ÷ HCF.\n\n#### Divisibility rules\n\n| Divisor | Rule | Example |\n|---|---|---|\n| 2 | last digit even (0,2,4,6,8) | 130 ✓ |\n| 3 | digit sum divisible by 3 | 738 → 18 ✓ |\n| 4 | last **two** digits divisible by 4 | 1 316 → 16 ✓ |\n| 5 | last digit 0 or 5 | 135 ✓ |\n| 6 | divisible by 2 **and** 3 | 522 ✓ |\n| 8 | last **three** digits divisible by 8 | 5 120 → 120 ✓ |\n| 9 | digit sum divisible by 9 | 738 → 18 ✓ |\n| 10 | last digit 0 | 470 ✓ |\n| 11 | (sum of odd-position digits) − (sum of even-position digits) = 0 or a multiple of 11 | 2 783 → (2+8)−(7+3)=0 ✓ |\n\nThese rules let you spot prime factors fast when starting the ladder method.\n\n#### Worked combined problems\n\n**Lighthouses (LCM).** Two lighthouses flash every 72 s and every 120 s and flash together now. When next together? \"Together again\" → LCM = 2³ × 3² × 5 = 360 s = **6 minutes**.\n\n**Packing bags (HCF).** Pack 48 pencils and 36 erasers into identical bags with none left over — greatest number of bags? \"Greatest equal groups\" → HCF. 48 = 2⁴ × 3, 36 = 2² × 3², so HCF = 2² × 3 = 12. **12 bags**, each with 4 pencils and 3 erasers.\n\n**Choosing HCF vs LCM:** phrases like *greatest, largest group, share equally* signal **HCF**; phrases like *next time together, smallest length, least* signal **LCM**.\n\n#### Common pitfalls\n\n- Calling 1 prime, or forgetting 2 is prime.\n- Stopping a factor tree before all branches are prime.\n- Swapping the HCF and LCM rules (lowest vs highest powers).\n- Forgetting to write the final answer in exponent form.\n- Checking divisibility by 4 or 8 using only the last digit instead of the last two/three digits.\n\n\n### Fractions\n\nA fraction a/b means a parts out of b equal parts. The top number is the **numerator**, the bottom is the **denominator**. This section covers equivalent fractions, simplifying, the four operations (including mixed numbers), finding a fraction \"of\" a quantity, and order of operations with fractions. All money is in rand (R), as in the CAPS curriculum.\n\n#### Equivalent fractions\n\nEquivalent fractions have different numbers but the same value. You make them by multiplying **or** dividing the numerator and the denominator by the **same** non-zero number.\n\n- 2/3 = (2×4)/(3×4) = 8/12\n- 6/10 = (6÷2)/(10÷2) = 3/5\n\nPitfall: you may never **add** the same number to top and bottom. Only multiplying/dividing keeps the value the same.\n\n#### Simplifying to lowest terms\n\nA fraction is in **lowest terms** when the highest common factor (HCF) of numerator and denominator is 1. To simplify, divide both by their HCF.\n\nWorked example — simplify 18/24:\n- 18 = 2×3×3, 24 = 2×2×2×3, so HCF = 2×3 = 6\n- 18÷6 = 3, 24÷6 = 4\n- 18/24 = 3/4\n\nYou can also divide by common factors step by step until none remain: 18/24 → (÷2) 9/12 → (÷3) 3/4.\n\n#### Mixed numbers ↔ improper fractions\n\nAn **improper fraction** has a numerator ≥ denominator (e.g. 17/5). A **mixed number** combines a whole and a fraction (e.g. 3 2/5).\n\nMixed → improper: (whole × denominator + numerator) / denominator.\n- 3 2/5 = (3×5 + 2)/5 = 17/5\n\nImproper → mixed: divide numerator by denominator; quotient is the whole, remainder is the new numerator.\n- 23/4 = 23÷4 = 5 remainder 3 = 5 3/4\n\n#### Adding and subtracting fractions\n\nYou can only add or subtract fractions that have the **same denominator**. Find the LCM of the denominators, rewrite each as an equivalent fraction over that LCM, then add/subtract **numerators only** (the denominator stays the same).\n\nFinding the LCM (e.g. of 6 and 8): use prime factors — 6 = 2×3, 8 = 2³ — take the highest power of each prime: 2³×3 = 24. Or list multiples until you find the first shared one.\n\nWorked example — add 2/3 + 1/4:\n- LCM(3,4) = 12\n- 2/3 = 8/12, 1/4 = 3/12\n- 8/12 + 3/12 = 11/12\n\nWorked example — subtract 5/6 − 1/4:\n- LCM(6,4) = 12\n- 5/6 = 10/12, 1/4 = 3/12\n- 10/12 − 3/12 = 7/12\n\n**Mixed numbers (addition).** Either add wholes and fractions separately, or convert to improper fractions first.\n\nWorked example — 2 1/2 + 1 2/3:\n- Wholes: 2 + 1 = 3\n- Fractions: 1/2 + 2/3 = 3/6 + 4/6 = 7/6 = 1 1/6\n- Total: 3 + 1 1/6 = 4 1/6\n\n**Mixed numbers (subtraction with borrowing).** Converting to improper fractions avoids tricky borrowing.\n\nWorked example — 4 1/4 − 1 2/3:\n- 4 1/4 = 17/4, 1 2/3 = 5/3\n- LCM(4,3) = 12: 17/4 = 51/12, 5/3 = 20/12\n- 51/12 − 20/12 = 31/12 = 2 7/12\n\nPitfall: never add or subtract the denominators. 1/2 + 1/3 is **not** 2/5; it is 5/6.\n\n#### Multiplying fractions\n\nNo common denominator is needed. Multiply numerator × numerator and denominator × denominator, then simplify. It is easier to **cross-cancel** common factors first so numbers stay small.\n\nWorked example — 3/8 × 4/9:\n- Cancel 3 with 9 (9→3) and 4 with 8 (8→2): (1/2) × (1/3)\n- (1×1)/(2×3) = 1/6\n\n**Mixed numbers:** convert to improper fractions first, never multiply whole parts separately.\n\nWorked example — 1 1/3 × 2 1/4:\n- 1 1/3 = 4/3, 2 1/4 = 9/4\n- 4/3 × 9/4 = 36/12 = 3\n\n#### Dividing fractions\n\nUse **keep-flip-change** (keep–change–flip): keep the first fraction, change ÷ to ×, and flip the second fraction to its **reciprocal**. The reciprocal of a/b is b/a; the reciprocal of 4 (= 4/1) is 1/4.\n\nWorked example — 3/5 ÷ 2/7:\n- 3/5 ÷ 2/7 = 3/5 × 7/2 = 21/10 = 2 1/10\n\n**Mixed numbers:** convert to improper first.\n\nWorked example — 2 1/2 ÷ 1 1/4:\n- 5/2 ÷ 5/4 = 5/2 × 4/5 = 20/10 = 2\n\n#### \"of\" means multiply — fractions of quantities\n\nThe word \"of\" means **multiply**.\n\n- 1/3 of 12 = 1/3 × 12 = 4\n- 3/4 of R120: 120 ÷ 4 = 30, then 30 × 3 = R90\n- 2/5 of R150: 150 ÷ 5 = 30, then 30 × 2 = R60 (the other 3/5 is R90)\n\nA handy method: divide the quantity by the denominator to get one part, then multiply by the numerator.\n\n#### Order of operations with fractions\n\nFractions follow the same **BODMAS** order as whole numbers:\n**B**rackets, **O**f/Orders (powers and roots), **D**ivision and **M**ultiplication (left to right), **A**ddition and **S**ubtraction (left to right). \"Of\" is handled as multiplication.\n\nWorked example — 2/3 + 1/4 × 8/9:\n- Multiply first: 1/4 × 8/9 = 2/9\n- Then add: 2/3 + 2/9 = 6/9 + 2/9 = 8/9\n\nWorked example — (1/2 + 1/3) ÷ 5/6:\n- Brackets first: 1/2 + 1/3 = 3/6 + 2/6 = 5/6\n- Then divide: 5/6 ÷ 5/6 = 5/6 × 6/5 = 1\n\n#### Common pitfalls checklist\n\n- Do not add/subtract straight across — find a common denominator first.\n- Do not find an LCM for multiplication or division — only for + and −.\n- Always convert mixed numbers to improper fractions before × or ÷.\n- For ÷, flip the **second** fraction, not the first.\n- Always simplify your final answer to lowest terms.\n\n\n### Decimals\n\nDecimals are another way of writing fractions whose denominators are powers of ten (10, 100, 1000, ...). The decimal point separates the whole-number part (on the left) from the fractional part (on the right). Mastering decimals means understanding place value first, then applying it to the four operations, to rounding, and to sensible estimation.\n\n#### Place value of decimals\n\nEach position to the right of the decimal point is ten times smaller than the one before it:\n\n- 1st place = tenths (1/10)\n- 2nd place = hundredths (1/100)\n- 3rd place = thousandths (1/1000)\n\nExample: 4.728 = 4 ones + 7 tenths + 2 hundredths + 8 thousandths = 4 + 0.7 + 0.02 + 0.008.\n\nReading words into digits: \"three and forty-five thousandths\" = 3.045. Thousandths needs 3 decimal places, and 45 only fills two of them, so we pad the empty tenths place with a zero. Writing 3.45 would mean forty-five hundredths, which is wrong.\n\nComparing decimals: give the numbers the same number of decimal places by adding trailing zeros, then compare as whole numbers. Is 0.4 or 0.38 bigger? Write 0.4 = 0.40, then compare 40 hundredths with 38 hundredths, so 0.4 > 0.38. Pitfall: more digits does not mean a bigger number.\n\n#### Adding and subtracting decimals\n\n1. Line up the decimal points so matching place-value columns sit under each other.\n2. Pad with zeros so every number has the same number of decimal places.\n3. Add or subtract column by column, carrying or borrowing as normal.\n4. Bring the decimal point straight down into the answer.\n\nWorked example (add): 12.6 + 3.45 + 0.8\n```\n  12.60\n   3.45\n+  0.80\n-------\n  16.85\n```\n\nWorked example (subtract): 9.3 − 4.78. Write 9.3 as 9.30 first.\n```\n  9.30\n- 4.78\n------\n  4.52\n```\nPitfall: never line the numbers up by their right-hand ends. Always align the decimal points.\n\n#### Multiplying decimals\n\n1. Ignore the decimal points and multiply as whole numbers.\n2. Count the total number of decimal places in both factors.\n3. Put that many decimal places into the answer.\n\nWorked example: 1.25 × 3.4. Whole numbers: 125 × 34 = 4250. Decimal places: 2 + 1 = 3, so place the point 3 from the right: 4.250 = 4.25. Estimate check: 1.3 × 3 ≈ 4, which is close.\n\nWorked example: 0.2 × 0.3. Digits: 2 × 3 = 6. Decimal places: 1 + 1 = 2, so the answer needs 2 places: 0.06 (not 0.6). Pitfall: remember to insert the leading zero to make up the required number of places.\n\n#### Dividing decimals\n\nMake the divisor a whole number by multiplying both the divisor and the dividend by the same power of 10 (this shifts both points the same number of places and keeps the value unchanged).\n\nWorked example: 4.5 ÷ 0.5. The divisor 0.5 has 1 decimal place, so multiply both by 10: 45 ÷ 5 = 9.\n\nWorked example: 7.5 ÷ 0.25. The divisor has 2 decimal places, so multiply both by 100: 750 ÷ 25 = 30. Note that dividing by a number less than 1 makes the answer bigger, so 30 > 7.5 is expected.\n\nWhen the divisor is already a whole number, just divide and keep the decimal point in the quotient directly above the point in the dividend: 6.4 ÷ 8 = 0.8.\n\n#### Multiplying and dividing by powers of 10\n\nShift the decimal point, one place for each zero.\n\n- Multiplying moves the point to the RIGHT: 3.45 × 10 = 34.5; 3.45 × 100 = 345; 0.7 × 1000 = 700.\n- Dividing moves the point to the LEFT: 56.2 ÷ 10 = 5.62; 56.2 ÷ 100 = 0.562; 8 ÷ 1000 = 0.008.\n\nInsert zeros as placeholders whenever you run out of digits.\n\n#### Rounding to a number of decimal places (dp)\n\n1. Find the digit in the last place you are keeping.\n2. Look at the next digit to the right (the decider).\n3. If the decider is 5 or more, round up; if 4 or less, leave the kept digit unchanged.\n4. Drop everything after the rounding place.\n\nExamples: 3.7846 to 2 dp → decider 4 → 3.78. And 0.4567 to 1 dp → decider 5 → 0.5; to 3 dp → decider 7 → 0.457. When rounding up causes a carry, keep trailing zeros to show the required dp: 0.198 to 2 dp → 0.20.\n\n#### Significant figures (sig figs)\n\nSignificant figures are the digits that tell us about the size of a number. Rules:\n\n1. All non-zero digits are significant.\n2. Zeros between non-zero digits are significant (3.05 has 3 sf).\n3. Leading zeros are NOT significant (0.0042 has 2 sf).\n4. Trailing zeros after a decimal point ARE significant (0.300 has 3 sf).\n\nTo round to sig figs, find the first significant digit, count along to the last one you keep, then use the next digit as the decider exactly as in dp rounding. Keep placeholder zeros so the number stays the right size.\n\nExamples: 0.04736 to 2 sf → first two sig figs are 4 and 7, decider 3 → 0.047. And 23 947 to 2 sf → sig figs 2 and 3, decider 9 → round up to 24 000 (the zeros are placeholders, not significant).\n\n#### Estimation and approximation\n\nBefore or after a calculation, round each number (often to 1 significant figure) and do an easy mental sum. This checks that your answer is reasonable and catches place-value or decimal-point errors.\n\nExample: 38.7 × 5.2 ≈ 40 × 5 = 200, so the exact 201.24 is reasonable. Example: 612 ÷ 2.9 ≈ 600 ÷ 3 = 200, so a candidate answer of 21.1 is about ten times too small and must be a decimal-point error (the true answer is about 211).\n\n#### Decimals and fractions\n\nA terminating decimal can be written over a power of 10 and simplified: 0.375 = 375/1000 = 3/8. Check by dividing: 3 ÷ 8 = 0.375.\n\n#### Common pitfalls\n\n- Aligning numbers by their ends instead of by the decimal point when adding or subtracting.\n- Forgetting placeholder zeros (3.45 vs 3.045; 0.6 vs 0.06).\n- Thinking a decimal with more digits is automatically larger.\n- Counting leading zeros as significant figures.\n- Forgetting to multiply BOTH numbers when making a divisor whole.\n- Dropping a trailing zero that is needed to show the rounding place (0.20).\n\n\n### Ratio, Rate & Proportion\n\nThis section shows how to compare quantities using ratios and rates, how to share an amount in a given ratio, and how to solve direct and inverse (indirect) proportion problems. Work carefully with units and always check your answer makes sense.\n\n#### 1. What is a ratio?\n\nA **ratio** compares two or more quantities **of the same kind**, telling us how much of one there is compared to another. We write it with a colon, for example 3:5.\n\n- The ratio 3:5 means \"for every 3 parts of the first quantity, there are 5 parts of the second.\"\n- **Order matters:** 3:5 is not the same as 5:3.\n- A ratio has **no units** — the units cancel because we compare like with like.\n- The total number of parts is 3 + 5 = 8.\n\nExample: in a class with 3 boys for every 5 girls, out of every 8 learners, 3 are boys and 5 are girls.\n\n#### 2. Simplifying ratios\n\nTo simplify a ratio, divide **every** part by the **HCF** (highest common factor) of the numbers, until the parts share no common factor except 1.\n\nWorked example — simplify 18:24:\n- HCF of 18 and 24: 18 = 2 × 3 × 3, 24 = 2 × 2 × 2 × 3, so HCF = 2 × 3 = 6.\n- Divide: 18 ÷ 6 = 3, 24 ÷ 6 = 4.\n- So 18:24 = **3:4**.\n\n**Ratios with fractions or decimals:** clear them first.\n- ½ : ¾ → multiply each part by the LCD (4): 2:3.\n- 0,4 : 0,6 → multiply each part by 10: 4:6 → 2:3.\n\n#### 3. Equivalent ratios\n\n**Equivalent ratios** show the same relationship. You obtain them by multiplying or dividing every part by the same non-zero number.\n\n2:3 = 4:6 = 6:9 = 10:15 (multiplying by 2, 3, 5).\n\nUse equivalent ratios to find a missing value:\n- 2:3 = 10:? Since 2 × 5 = 10, the missing value is 3 × 5 = **15**.\n\n#### 4. Ratios with units — convert first\n\nA ratio must compare quantities in the **same unit**. Always convert before writing the ratio.\n\nWorked example — write 50 cm to 2 m as a ratio:\n- Convert: 2 m = 200 cm.\n- Ratio: 50:200, simplify by 50 → **1:4**.\n\nWorked example — write 45 minutes to 1½ hours:\n- Convert: 1½ h = 90 min.\n- Ratio: 45:90 → **1:2**.\n\n**Pitfall:** never write 50:2 (cm vs m) or 45:1½ (min vs h). Mixing units gives a wrong answer.\n\n#### 5. Three-part ratios\n\nA ratio can compare three quantities, written a:b:c. Simplify by dividing **all** parts by their common HCF.\n\n- 12:18:30, HCF = 6 → **2:3:5**. Total parts = 2 + 3 + 5 = 10.\n\n#### 6. Sharing an amount in a given ratio\n\nMethod:\n1. Add the parts to get the **total** number of parts.\n2. Find the value of **one part** = amount ÷ total parts.\n3. Multiply one part by each share's number of parts.\n4. Check the shares add up to the original amount.\n\nWorked example — share R240 in the ratio 3:5:\n- Total parts = 3 + 5 = 8.\n- One part = R240 ÷ 8 = R30.\n- First share = 3 × R30 = **R90**; second share = 5 × R30 = **R150**.\n- Check: R90 + R150 = R240. ✓\n\nWorked example — share R600 among A, B, C in 1:2:3:\n- Total parts = 6; one part = R600 ÷ 6 = R100.\n- A = R100, B = R200, C = R300. Check: R100 + R200 + R300 = R600. ✓\n\n#### 7. Rates\n\nA **rate** compares two quantities of **different** kinds (different units), written with \"per\" or \"/\", for example km/h, R/kg, beats/min. Unlike a ratio, a rate **has units**.\n\nA **unit rate** gives the amount per **one** unit. To find it, divide so the second quantity becomes 1.\n\n- A car travels 240 km in 3 hours → 240 ÷ 3 = **80 km/h** (80 km each hour).\n\n#### 8. Unit price and best buy\n\nTo compare value, find the **unit price** (cost per same unit) of each option. The lowest unit price is the better buy.\n\nWorked example — 500 g for R30, or 800 g for R44:\n- Option A: R30 ÷ 500 = R0,06 per g.\n- Option B: R44 ÷ 800 = R0,055 per g.\n- R0,055 < R0,06, so the **800 g pack** is the better buy.\n\n#### 9. Speed, distance and time\n\nSpeed is a rate (distance per time):\n- speed = distance ÷ time\n- distance = speed × time\n- time = distance ÷ speed\n\nKeep units consistent (km with h gives km/h).\n\nWorked example — a cyclist rides 45 km in 1 h 30 min:\n- Convert time: 1 h 30 min = 1,5 h.\n- speed = 45 ÷ 1,5 = **30 km/h**.\n- Pitfall: divide by 1,5 (not 1,30); 30 min = 0,5 h.\n\nWorked example — a car at 90 km/h for 2½ h:\n- distance = 90 × 2,5 = **225 km**.\n\n#### 10. Direct proportion\n\nIn **direct proportion**, as one quantity increases, the other increases in the **same ratio** (halve one, the other halves). The ratio y/x stays constant: y = kx.\n\nUse the **unitary method**: find the value of one, then multiply.\n\nWorked example — 4 pens cost R20, find the cost of 7 pens:\n- 1 pen = R20 ÷ 4 = R5.\n- 7 pens = 7 × R5 = **R35**.\n- Check with ratios: 4:20 = 7:35. ✓\n\nWorked example — a recipe for 6 people needs 450 g flour; for 10 people:\n- 1 person = 450 ÷ 6 = 75 g; 10 people = 10 × 75 = **750 g**.\n\nMore items → more cost; more people → more flour. This is direct.\n\n#### 11. Inverse (indirect) proportion\n\nIn **inverse proportion**, as one quantity increases, the other **decreases**, so that their **product stays constant**: x × y = k, so y = k/x.\n\nMethod: find the constant (the product), then divide by the new value.\n\nWorked example — 6 workers build a wall in 8 days; how long for 4 workers?\n- Constant = 6 × 8 = 48 worker-days (the total work).\n- 4 workers: 48 ÷ 4 = **12 days**.\n- Sense check: fewer workers → more time. ✓\n- Pitfall: do **not** scale directly (4/6 × 8) — that is the wrong direction.\n\nWorked example — a tank fills in 20 min using 3 taps; with 5 taps?\n- Constant = 3 × 20 = 60. With 5 taps: 60 ÷ 5 = **12 min**.\n\n#### 12. Direct vs inverse — how to decide\n\nAsk: when one quantity goes **up**, what happens to the other?\n\n- Both go up together (or down together) → **direct** proportion. Ratio y/x constant; use the unitary method (find one, multiply).\n- One goes up while the other goes down → **inverse** proportion. Product x×y constant; find the constant, then divide.\n\nClues for **inverse**: more workers / taps / machines → less time; faster speed → less time.\nClues for **direct**: more items → more cost; more hours worked → more pay.\n\n#### Common pitfalls to avoid\n\n- Forgetting to convert to the **same unit** before writing a ratio.\n- Not dividing by the **HCF**, leaving the ratio unsimplified.\n- Swapping the order of a ratio (3:5 ≠ 5:3).\n- Treating an inverse problem as direct (scaling the wrong way).\n- Converting time wrongly: 1 h 30 min = 1,5 h, not 1,30 h.\n- Always **check** that shares add back to the original total.\n\n\n### Squares, Cubes & Roots\n\nThis section covers how to square and cube numbers, how to find square roots and cube roots, and how to handle these operations with large numbers, fractions, decimals, and inside longer calculations. Mastering the perfect squares and cubes by heart makes the rest of the work fast and reliable in an exam.\n\n#### Squares and square roots\n\nTo **square** a number means to multiply it by itself. We write this with a small raised 2, called an exponent.\n\n- 7² = 7 × 7 = 49\n- 12² = 12 × 12 = 144\n\nA common mistake is to read 7² as 7 × 2 = 14. The exponent tells you how many times the number is used as a factor, not what to multiply by. So 7² uses 7 twice: 7 × 7.\n\nA **perfect square** is a number you get by squaring a whole number. You should know these by heart:\n\n1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144\n\n(these are 1² up to 12²).\n\nThe **square root** of a number, written with the symbol √, asks the reverse question: \"Which positive number, multiplied by itself, gives this number?\" Square root is the inverse of squaring.\n\n- √49 = 7, because 7 × 7 = 49\n- √144 = 12, because 12 × 12 = 144\n\n#### Cubes and cube roots\n\nTo **cube** a number means to use it as a factor three times. We write this with a raised 3.\n\n- 4³ = 4 × 4 × 4 = 64\n- 10³ = 10 × 10 × 10 = 1000\n\nAgain, do not confuse 4³ with 4 × 3 = 12. The 3 means three factors of 4.\n\nA **perfect cube** is a number you get by cubing a whole number. Useful ones to memorise:\n\n1, 8, 27, 64, 125, 216, 343, 512, 729, 1000\n\n(these are 1³ up to 10³).\n\nThe **cube root**, written ∛, reverses cubing: \"Which number, used three times as a factor, gives this number?\"\n\n- ∛27 = 3, because 3 × 3 × 3 = 27\n- ∛1000 = 10, because 10 × 10 × 10 = 1000\n\n#### Finding roots of large numbers using prime factorisation\n\nFor large numbers you cannot guess, prime factorisation gives a sure method.\n\n**Square root via prime factors — find √576**\n\n1. Prime factorise: 576 = 2 × 2 × 2 × 2 × 2 × 2 × 3 × 3 = 2⁶ × 3².\n2. For a square root, divide each exponent by 2 (or pair the factors and take one from each pair).\n3. 2⁶ → 2³ and 3² → 3¹.\n\nSo √576 = 2³ × 3 = 8 × 3 = **24**. Check: 24 × 24 = 576. ✓\n\nAnother example, **√324**: 324 = 2² × 3⁴. Halving the exponents gives 2¹ × 3² = 2 × 9 = **18**.\n\n**Cube root via prime factors — find ∛1728**\n\n1. Prime factorise: 1728 = 2⁶ × 3³.\n2. For a cube root, divide each exponent by 3 (or group the factors in threes and take one from each group).\n3. 2⁶ → 2² and 3³ → 3¹.\n\nSo ∛1728 = 2² × 3 = 4 × 3 = **12**. Check: 12 × 12 × 12 = 1728. ✓\n\nAnother example, **∛3375**: 3375 = 3³ × 5³. Dividing each exponent by 3 gives 3 × 5 = **15**.\n\n**Why pair vs group in threes?** A square root undoes an exponent of 2, so each pair of identical primes produces one factor. A cube root undoes an exponent of 3, so each group of three identical primes produces one factor. The shortcut is simply: divide every exponent by 2 (square root) or by 3 (cube root).\n\n#### Estimating roots of non-perfect numbers\n\nMany numbers are not perfect squares or cubes. We estimate by trapping the root between two consecutive integers using the nearest perfect squares/cubes.\n\n**Estimate √50.** The nearest perfect squares are 49 = 7² and 64 = 8². Since 49 < 50 < 64, we have 7 < √50 < 8. Because 50 is very close to 49, √50 ≈ 7,07, which lies between 7 and 8.\n\n**Estimate √90.** Nearest perfect squares: 81 = 9² and 100 = 10². So 9 < √90 < 10, and √90 ≈ 9,49.\n\n**Estimate ∛100.** Nearest perfect cubes: 64 = 4³ and 125 = 5³. So 4 < ∛100 < 5, and ∛100 ≈ 4,64.\n\nNote the South African convention: decimals use a comma, so we write 7,07 not 7.07.\n\n#### Squares and cubes of fractions and decimals\n\nFor a **fraction**, apply the power to both the numerator and the denominator.\n\n- (2/3)² = 2²/3² = 4/9\n- (1/2)³ = 1³/2³ = 1/8\n\nDo not square only the top. (2/3)² is 4/9, never 4/3.\n\nFor a **root of a fraction**, take the root of the top and the bottom separately.\n\n- √(9/16) = √9 / √16 = 3/4\n\nFor **decimals**, multiply out carefully and count the decimal places.\n\n- 0,3² = 0,3 × 0,3 = 0,09 (one decimal place squared gives two)\n- √0,64 = 0,8, because 0,8 × 0,8 = 0,64\n\nA common error is writing 0,3² = 0,9. Always multiply the decimal by itself.\n\n#### Order of operations with roots and powers\n\nRoots and exponents are handled at the same stage as powers, after brackets but before × ÷ and + −. A root sign also acts like a bracket: simplify everything inside it first.\n\n**Example: √(36 + 64).** Simplify inside first: 36 + 64 = 100, then √100 = 10. It is wrong to write √36 + √64 = 6 + 8 = 14. In general √(a + b) ≠ √a + √b.\n\n**Example: 3² + ∛27 × 2.** Powers/roots first: 3² = 9 and ∛27 = 3, giving 9 + 3 × 2. Multiply before adding: 9 + 6 = 15.\n\n**Example: √144 − 2³ + 5².** Evaluate roots and powers: 12 − 8 + 25. Then work left to right: 12 − 8 = 4, and 4 + 25 = 29.\n\n#### Common pitfalls\n\n- 7² means 7 × 7, not 7 × 2; 4³ means 4 × 4 × 4, not 4 × 3.\n- √(a + b) ≠ √a + √b. Simplify under the root first.\n- (−5)² = 25 (the brackets square the negative sign too), but −5² = −(5²) = −25 (only the 5 is squared). These are different.\n- When taking a root by prime factorisation, divide exponents by 2 for square roots and by 3 for cube roots — do not mix them up.\n- Keep the South African decimal comma in all answers, e.g. √50 ≈ 7,07.\n\n\n",
+    "infographics": [],
+    "videos": [],
+    "audio": []
+  }
+}

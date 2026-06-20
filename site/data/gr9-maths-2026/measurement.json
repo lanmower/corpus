@@ -3,6 +3,809 @@
   "cat": "sky",
   "cards": [
     {
+      "id": "measurement-7f5b575559",
+      "front": "What is area, and what units is it measured in?",
+      "back": "Area = the amount of flat SURFACE a 2D shape covers — how much space is inside its boundary.\nIt is measured in SQUARE units: mm², cm², m², km², hectares (ha).\nPitfall: area always uses squared units; perimeter uses plain length units. Different quantities!",
+      "tags": [
+        "area-definition"
+      ],
+      "difficulty": "medium",
+      "source": "Area of 2D Shapes - CAPS_area",
+      "sourceFile": "Area of 2D Shapes - CAPS_area.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "120"
+      }
+    },
+    {
+      "id": "measurement-94facaa273",
+      "front": "Area of a square and a rectangle: give the formulas with worked examples.",
+      "back": "Square (side s): A = s².  e.g. s = 6 cm → A = 6² = 36 cm².\nRectangle (length ℓ, breadth b): A = ℓ × b.  e.g. ℓ = 8 m, b = 5 m → A = 8 × 5 = 40 m².\nPitfall: square the unit too — 6 cm × 6 cm = 36 cm², not 36 cm.",
+      "tags": [
+        "square",
+        "rectangle",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Area of 2D Shapes - CAPS_area",
+      "sourceFile": "Area of 2D Shapes - CAPS_area.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "199"
+      }
+    },
+    {
+      "id": "measurement-dc877e3654",
+      "front": "Area of a triangle: give the formula, explain h, and a worked example.",
+      "back": "A = ½ × b × h, where b = base and h = PERPENDICULAR height (the height at right angles to that base, NOT the slant side).\nWorked example, b = 10 cm, h = 6 cm:\nA = ½ × 10 × 6 = 30 cm².\nPitfall: use the perpendicular height, not a slanted side length. For a right-angled triangle the two legs are base and height.",
+      "tags": [
+        "triangle",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Area of 2D Shapes - CAPS_area",
+      "sourceFile": "Area of 2D Shapes - CAPS_area.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "199"
+      }
+    },
+    {
+      "id": "measurement-64799309b7",
+      "front": "Area of a parallelogram: give the formula and a worked example, and explain why it is not b × slant side.",
+      "back": "A = b × h, where b = base, h = perpendicular height between the two parallel sides.\nWorked example, b = 12 cm, h = 5 cm:\nA = 12 × 5 = 60 cm².\nWhy not the slant side? A parallelogram 'shears' to a rectangle of the same base and perpendicular height, so the area depends on h (the straight-up distance), not the slanted side length.",
+      "tags": [
+        "parallelogram",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Area of 2D Shapes - CAPS_area",
+      "sourceFile": "Area of 2D Shapes - CAPS_area.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "199"
+      }
+    },
+    {
+      "id": "measurement-da2912653b",
+      "front": "Area of a rhombus: give the two formulas and a worked example using the diagonals.",
+      "back": "Method 1 (diagonals): A = ½ × d₁ × d₂.\nMethod 2 (like a parallelogram): A = b × h.\nWorked example, diagonals d₁ = 8 cm, d₂ = 6 cm:\nA = ½ × 8 × 6 = 24 cm².\nThe diagonals of a rhombus cross at right angles, which is why the ½ × d₁ × d₂ formula works.",
+      "tags": [
+        "rhombus",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Area of 2D Shapes - CAPS_area",
+      "sourceFile": "Area of 2D Shapes - CAPS_area.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "32"
+      }
+    },
+    {
+      "id": "measurement-348b930078",
+      "front": "Area of a trapezium: give the formula, name the parts, and a worked example.",
+      "back": "A = ½ × (a + b) × h, where a and b are the two PARALLEL sides and h is the perpendicular distance between them.\nWorked example, a = 10 cm, b = 6 cm, h = 4 cm:\nA = ½ × (10 + 6) × 4 = ½ × 16 × 4 = 32 cm².\nPitfall: a and b MUST be the parallel sides; h must be perpendicular, not a slant side.",
+      "tags": [
+        "trapezium",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Area of 2D Shapes - CAPS_area",
+      "sourceFile": "Area of 2D Shapes - CAPS_area.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "206"
+      }
+    },
+    {
+      "id": "measurement-b5cfc493d1",
+      "front": "Area of a circle: give the formula and a worked example (π ≈ 3,14).",
+      "back": "A = πr², where r is the radius (NOT the diameter).\nWorked example, r = 5 cm:\nA = 3,14 × 5² = 3,14 × 25 = 78,5 cm².\nPitfall: square the RADIUS first, then multiply by π. If given the diameter, halve it first: r = d ÷ 2. Don't confuse with circumference C = 2πr.",
+      "tags": [
+        "circle",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Area of 2D Shapes - CAPS_area",
+      "sourceFile": "Area of 2D Shapes - CAPS_area.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "199"
+      }
+    },
+    {
+      "id": "measurement-f8c3f3f0b9",
+      "front": "A circle has diameter 14 cm. Find its area (use π ≈ 22/7).",
+      "back": "First find the radius: r = d ÷ 2 = 14 ÷ 2 = 7 cm.\nA = πr² = 22/7 × 7² = 22/7 × 49 = 22 × 7 = 154 cm².\nPitfall: you were given the DIAMETER (14), so you must halve it to r = 7 before squaring.",
+      "tags": [
+        "circle",
+        "area",
+        "from-diameter"
+      ],
+      "difficulty": "medium",
+      "source": "Area of 2D Shapes - CAPS_area",
+      "sourceFile": "Area of 2D Shapes - CAPS_area.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "158"
+      }
+    },
+    {
+      "id": "measurement-a369324dbb",
+      "front": "A rectangle has area 48 cm² and length 8 cm. Find its breadth.",
+      "back": "A = ℓ × b\n48 = 8 × b\nb = 48 ÷ 8 = 6 cm.\nMethod: to find a missing dimension, substitute the known values and divide. Always include the correct unit (cm here, since the answer is a length).",
+      "tags": [
+        "rectangle",
+        "missing-side",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Area of 2D Shapes - CAPS_area",
+      "sourceFile": "Area of 2D Shapes - CAPS_area.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "120"
+      }
+    },
+    {
+      "id": "measurement-afe9dcdf13",
+      "front": "What is the circumference of a circle, and what are the two formulas for it?",
+      "back": "Circumference = the PERIMETER (distance around) a circle.\nC = 2πr   (using the radius r)\nC = πd     (using the diameter d)\nThese are the same because d = 2r. Use π ≈ 3,14 (or 22/7) unless told otherwise.\nUnits: length units (cm, m …).",
+      "tags": [
+        "circumference",
+        "circle"
+      ],
+      "difficulty": "medium",
+      "source": "Circumference of a Circle - CAPS_circumference",
+      "sourceFile": "Circumference of a Circle - CAPS_circumference.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "72"
+      }
+    },
+    {
+      "id": "measurement-4f6179837f",
+      "front": "What is π (pi), and how do radius r, diameter d and π relate?",
+      "back": "π is the constant ratio of a circle's circumference to its diameter: π = C ÷ d ≈ 3,14159… In CAPS we use π ≈ 3,14 or 22/7.\nDiameter d = 2 × r (twice the radius); radius r = d ÷ 2.\nThe diameter passes through the centre; the radius goes from centre to edge.",
+      "tags": [
+        "pi",
+        "radius-diameter",
+        "circle"
+      ],
+      "difficulty": "medium",
+      "source": "Circumference of a Circle - CAPS_circumference",
+      "sourceFile": "Circumference of a Circle - CAPS_circumference.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "72"
+      }
+    },
+    {
+      "id": "measurement-84c23af698",
+      "front": "Find the circumference of a circle with radius 7 cm (use π ≈ 22/7).",
+      "back": "C = 2πr\nC = 2 × 22/7 × 7\nC = 2 × 22 = 44 cm.\nTip: when the radius is a multiple of 7, using π ≈ 22/7 cancels neatly. With π ≈ 3,14: C ≈ 2 × 3,14 × 7 = 43,96 cm.",
+      "tags": [
+        "circumference",
+        "from-radius",
+        "circle"
+      ],
+      "difficulty": "medium",
+      "source": "Circumference of a Circle - CAPS_circumference",
+      "sourceFile": "Circumference of a Circle - CAPS_circumference.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "72"
+      }
+    },
+    {
+      "id": "measurement-475015660e",
+      "front": "Find the circumference of a circle with diameter 10 m (use π ≈ 3,14).",
+      "back": "C = πd\nC = 3,14 × 10\nC = 31,4 m.\nPitfall: 10 m is the DIAMETER here, so use C = πd directly. If you only knew the radius (5 m), you would use C = 2πr = 2 × 3,14 × 5 = 31,4 m — same answer.",
+      "tags": [
+        "circumference",
+        "from-diameter",
+        "circle"
+      ],
+      "difficulty": "medium",
+      "source": "Circumference of a Circle - CAPS_circumference",
+      "sourceFile": "Circumference of a Circle - CAPS_circumference.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "72"
+      }
+    },
+    {
+      "id": "measurement-f59170911a",
+      "front": "A circle has circumference 31,4 cm. Find its radius (π ≈ 3,14).",
+      "back": "Work backwards from C = 2πr.\n31,4 = 2 × 3,14 × r\n31,4 = 6,28 × r\nr = 31,4 ÷ 6,28 = 5 cm.\nTo get the diameter instead: d = C ÷ π = 31,4 ÷ 3,14 = 10 cm, then r = d ÷ 2 = 5 cm.",
+      "tags": [
+        "circumference",
+        "find-radius",
+        "circle"
+      ],
+      "difficulty": "medium",
+      "source": "Circumference of a Circle - CAPS_circumference",
+      "sourceFile": "Circumference of a Circle - CAPS_circumference.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "72"
+      }
+    },
+    {
+      "id": "measurement-f792f6334a",
+      "front": "How do you find the perimeter of a SEMICIRCLE (half circle) of radius r?",
+      "back": "A semicircle's perimeter = half the circumference + the straight diameter (the flat edge).\nP = ½ × 2πr + d = πr + 2r.\nWorked example, r = 7 cm (π ≈ 22/7):\nP = 22/7 × 7 + 2 × 7 = 22 + 14 = 36 cm.\nPitfall: don't forget the straight diameter edge — half the curve alone is NOT a closed shape.",
+      "tags": [
+        "semicircle",
+        "perimeter",
+        "circle"
+      ],
+      "difficulty": "medium",
+      "source": "Circumference of a Circle - CAPS_circumference",
+      "sourceFile": "Circumference of a Circle - CAPS_circumference.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "32"
+      }
+    },
+    {
+      "id": "measurement-7a251fb6a8",
+      "front": "What is a composite (compound) shape, and what is the general strategy for its area?",
+      "back": "A composite shape is made by joining or cutting out basic shapes (rectangles, triangles, circles…).\nStrategy: \"ADD or SUBTRACT.\"\n1. Split the shape into basic shapes (or see it as a big shape with a piece removed).\n2. Find each basic area.\n3. ADD the parts (if joined) or SUBTRACT (if a hole/cut-out).\nAlways keep units consistent.",
+      "tags": [
+        "composite",
+        "strategy",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Composite Shapes - CAPS_composite",
+      "sourceFile": "Composite Shapes - CAPS_composite.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "107"
+      }
+    },
+    {
+      "id": "measurement-ace8a91031",
+      "front": "Find the area of an L-shape: a 10 cm × 8 cm rectangle with a 4 cm × 3 cm rectangle cut out of one corner.",
+      "back": "Subtract method:\nBig rectangle = 10 × 8 = 80 cm².\nCut-out rectangle = 4 × 3 = 12 cm².\nArea of L-shape = 80 − 12 = 68 cm².\n(Alternatively, split the L into two rectangles and ADD — you get the same answer.)",
+      "tags": [
+        "composite",
+        "L-shape",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Composite Shapes - CAPS_composite",
+      "sourceFile": "Composite Shapes - CAPS_composite.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "206"
+      }
+    },
+    {
+      "id": "measurement-5fbe54a378",
+      "front": "A rectangular plate is 12 cm × 6 cm with a circle of radius 2 cm cut out. Find the SHADED (remaining) area (π ≈ 3,14).",
+      "back": "Shaded area = rectangle − circle.\nRectangle = 12 × 6 = 72 cm².\nCircle = πr² = 3,14 × 2² = 3,14 × 4 = 12,56 cm².\nShaded = 72 − 12,56 = 59,44 cm².\nShaded-region rule: outer shape area − inner (removed) shape area.",
+      "tags": [
+        "composite",
+        "shaded-region",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Composite Shapes - CAPS_composite",
+      "sourceFile": "Composite Shapes - CAPS_composite.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "measurement-f41ffb1c19",
+      "front": "Find the area of a shape made of a rectangle (8 m × 5 m) with a triangle (base 8 m, height 3 m) joined on top to form a 'house' shape.",
+      "back": "Add method:\nRectangle = 8 × 5 = 40 m².\nTriangle = ½ × b × h = ½ × 8 × 3 = 12 m².\nTotal area = 40 + 12 = 52 m².\nMethod: identify each basic shape, compute separately, then ADD because they are joined (no overlap).",
+      "tags": [
+        "composite",
+        "add-method",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Composite Shapes - CAPS_composite",
+      "sourceFile": "Composite Shapes - CAPS_composite.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "measurement-005b3f6e3b",
+      "front": "How do you find the PERIMETER of a composite shape, and what is the key trap?",
+      "back": "Perimeter = total length of the OUTER boundary only. Trace the outline and add every outside edge.\nKey trap: edges where two shapes JOIN are inside the figure — they are NOT part of the perimeter, so do NOT count them.\nAlso: for curved parts use the relevant fraction of circumference (e.g. a semicircle edge = πr), not the area formula.",
+      "tags": [
+        "composite",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Composite Shapes - CAPS_composite",
+      "sourceFile": "Composite Shapes - CAPS_composite.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "54"
+      }
+    },
+    {
+      "id": "measurement-fcd9333ab9",
+      "front": "A running track shape is a 20 m × 10 m rectangle with a semicircle (radius 5 m) on each short end. Find the total area (π ≈ 3,14).",
+      "back": "Two semicircles of radius 5 m make ONE full circle.\nRectangle = 20 × 10 = 200 m².\nFull circle = πr² = 3,14 × 5² = 3,14 × 25 = 78,5 m².\nTotal area = 200 + 78,5 = 278,5 m².\nTip: two equal semicircles always combine into one whole circle.",
+      "tags": [
+        "composite",
+        "semicircle",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Composite Shapes - CAPS_composite",
+      "sourceFile": "Composite Shapes - CAPS_composite.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "measurement-1e2f5046f4",
+      "front": "Find a missing length on a composite L-shape so the outline 'closes'.",
+      "back": "Rule: on a rectilinear (right-angled) composite shape, opposite sets of sides must sum equally.\nHorizontal: the top edges added must equal the bottom edge. Vertical: the left edges added must equal the right edge.\nExample: if the full bottom is 10 cm and the top is split into 6 cm + an unknown x, then 6 + x = 10, so x = 4 cm. Use this to fill in unlabelled sides before finding perimeter or area.",
+      "tags": [
+        "composite",
+        "missing-length"
+      ],
+      "difficulty": "medium",
+      "source": "Composite Shapes - CAPS_composite",
+      "sourceFile": "Composite Shapes - CAPS_composite.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "206"
+      }
+    },
+    {
+      "id": "measurement-4d1e28667b",
+      "front": "If you DOUBLE the side of a square, what happens to its perimeter and to its area?",
+      "back": "Take side s. Original P = 4s, A = s².\nNew side 2s: P = 4(2s) = 8s → perimeter DOUBLES (×2).\nNew area = (2s)² = 4s² → area becomes 4× as big (×4).\nKey idea: perimeter scales by the SAME factor as the length; area scales by the factor SQUARED.",
+      "tags": [
+        "scaling",
+        "square"
+      ],
+      "difficulty": "medium",
+      "source": "Effect of Changing Dimensions - CAPS_scaling",
+      "sourceFile": "Effect of Changing Dimensions - CAPS_scaling.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "138"
+      }
+    },
+    {
+      "id": "measurement-673363ee51",
+      "front": "General rule: if every dimension of a 2D shape is multiplied by k, what happens to perimeter and area?",
+      "back": "Perimeter is multiplied by k (the linear factor).\nArea is multiplied by k² (the factor squared).\nExamples: ×3 the sides → perimeter ×3, area ×9.  ×½ the sides → perimeter ×½, area ×¼.\nReason: area = length × length, so each length factor appears twice.",
+      "tags": [
+        "scaling",
+        "general-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Effect of Changing Dimensions - CAPS_scaling",
+      "sourceFile": "Effect of Changing Dimensions - CAPS_scaling.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "248"
+      }
+    },
+    {
+      "id": "measurement-feb734ab97",
+      "front": "A rectangle is 6 cm × 4 cm. Both dimensions are tripled. Find the new area and compare with the old.",
+      "back": "Old area = 6 × 4 = 24 cm².\nNew dimensions: 18 cm × 12 cm.\nNew area = 18 × 12 = 216 cm².\nRatio = 216 ÷ 24 = 9 = 3². So tripling each side multiplies the area by 9, confirming the ×k² rule.",
+      "tags": [
+        "scaling",
+        "rectangle",
+        "area-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Effect of Changing Dimensions - CAPS_scaling",
+      "sourceFile": "Effect of Changing Dimensions - CAPS_scaling.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "measurement-79e591513d",
+      "front": "Only the LENGTH of a rectangle is doubled (the breadth stays the same). What happens to the area?",
+      "back": "A = ℓ × b. If only ℓ doubles to 2ℓ: new A = 2ℓ × b = 2(ℓb) → area DOUBLES.\nPitfall: the ×k² rule (area ×4 for doubling) applies only when ALL dimensions change by k. Changing one dimension by 2 changes the area by just 2.\nIf length ×3 and breadth ×2: area × (3×2) = ×6.",
+      "tags": [
+        "scaling",
+        "one-dimension"
+      ],
+      "difficulty": "medium",
+      "source": "Effect of Changing Dimensions - CAPS_scaling",
+      "sourceFile": "Effect of Changing Dimensions - CAPS_scaling.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "120"
+      }
+    },
+    {
+      "id": "measurement-26a43304a1",
+      "front": "The radius of a circle is doubled. What happens to its circumference and its area?",
+      "back": "Circumference C = 2πr is linear in r → doubling r DOUBLES C (×2).\nArea A = πr² depends on r² → doubling r gives (2r)² = 4r² → area ×4.\nSame pattern as all 2D shapes: the 'around' measure scales ×k, the 'inside' measure scales ×k².",
+      "tags": [
+        "scaling",
+        "circle"
+      ],
+      "difficulty": "medium",
+      "source": "Effect of Changing Dimensions - CAPS_scaling",
+      "sourceFile": "Effect of Changing Dimensions - CAPS_scaling.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "90"
+      }
+    },
+    {
+      "id": "measurement-c5d0b9ce64",
+      "front": "Two squares have sides in the ratio 2 : 5. What is the ratio of their areas?",
+      "back": "Ratio of areas = (ratio of sides)² = 2² : 5² = 4 : 25.\nMethod: for similar shapes, area ratio = (length ratio)². Always SQUARE each part of the side ratio.\nReverse: if areas are 9 : 49, the side ratio is √9 : √49 = 3 : 7.",
+      "tags": [
+        "scaling",
+        "area-ratio"
+      ],
+      "difficulty": "medium",
+      "source": "Effect of Changing Dimensions - CAPS_scaling",
+      "sourceFile": "Effect of Changing Dimensions - CAPS_scaling.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "199"
+      }
+    },
+    {
+      "id": "measurement-2d04c20322",
+      "front": "What is the perimeter of a 2D shape, and what units is it measured in?",
+      "back": "Perimeter = the total distance around the OUTSIDE of a closed 2D shape, i.e. the sum of the lengths of all its sides.\nIt is a LENGTH, so it uses length units (mm, cm, m, km) — NOT square units.\nPitfall: perimeter is a 1D measure; only area uses squared units (cm²).",
+      "tags": [
+        "perimeter-definition"
+      ],
+      "difficulty": "medium",
+      "source": "Perimeter of 2D Shapes - CAPS_perimeter",
+      "sourceFile": "Perimeter of 2D Shapes - CAPS_perimeter.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "120"
+      }
+    },
+    {
+      "id": "measurement-aaaa4a5ef1",
+      "front": "How do you find the perimeter of ANY polygon (e.g. an irregular 5-sided field)?",
+      "back": "Rule: P = sum of ALL the side lengths. Add every side once, going around the shape.\nWorked example (irregular pentagon, sides 4, 6, 3, 5, 7 cm):\nP = 4 + 6 + 3 + 5 + 7 = 25 cm.\nPitfall: don't miss a side or count one twice — trace around the outline. All sides must be in the SAME unit before adding.",
+      "tags": [
+        "polygon",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Perimeter of 2D Shapes - CAPS_perimeter",
+      "sourceFile": "Perimeter of 2D Shapes - CAPS_perimeter.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "199"
+      }
+    },
+    {
+      "id": "measurement-555a65cdfd",
+      "front": "Square with side s: give the perimeter formula and a worked example.",
+      "back": "P = 4s   (4 equal sides).\nWorked example, s = 9 cm:\nP = 4 × 9 = 36 cm.\nReverse: if P = 36 cm, then s = P ÷ 4 = 36 ÷ 4 = 9 cm.",
+      "tags": [
+        "square",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Perimeter of 2D Shapes - CAPS_perimeter",
+      "sourceFile": "Perimeter of 2D Shapes - CAPS_perimeter.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "199"
+      }
+    },
+    {
+      "id": "measurement-7d2c199e44",
+      "front": "Rectangle with length ℓ and breadth b: give the perimeter formula and a worked example.",
+      "back": "P = 2ℓ + 2b = 2(ℓ + b)   (two long sides + two short sides).\nWorked example, ℓ = 12 m, b = 5 m:\nP = 2(12 + 5) = 2 × 17 = 34 m.\nPitfall: P = 2(ℓ + b), NOT ℓ + b. Reverse: if P = 34 and ℓ = 12, then b = (P ÷ 2) − ℓ = 17 − 12 = 5 m.",
+      "tags": [
+        "rectangle",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Perimeter of 2D Shapes - CAPS_perimeter",
+      "sourceFile": "Perimeter of 2D Shapes - CAPS_perimeter.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "206"
+      }
+    },
+    {
+      "id": "measurement-5de4ee51b2",
+      "front": "How do you find the perimeter of a triangle (scalene, isosceles, equilateral)?",
+      "back": "P = a + b + c (add the three sides).\nScalene (5, 6, 8 cm): P = 5 + 6 + 8 = 19 cm.\nEquilateral side s: P = 3s, e.g. s = 7 → P = 21 cm.\nIsosceles (two equal sides s, base b): P = 2s + b, e.g. s = 10, b = 6 → P = 26 cm.",
+      "tags": [
+        "triangle",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Perimeter of 2D Shapes - CAPS_perimeter",
+      "sourceFile": "Perimeter of 2D Shapes - CAPS_perimeter.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "206"
+      }
+    },
+    {
+      "id": "measurement-aaabc1ed93",
+      "front": "Parallelogram and rhombus: how do you find the perimeter?",
+      "back": "Parallelogram: opposite sides equal, so with sides a and b, P = 2a + 2b = 2(a + b). E.g. a = 8, b = 5 → P = 2(13) = 26 cm.\nRhombus: ALL four sides equal (length s), so P = 4s. E.g. s = 6 → P = 24 cm.\nPitfall: use the SIDE lengths for perimeter, never the height or the diagonals.",
+      "tags": [
+        "parallelogram",
+        "rhombus",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Perimeter of 2D Shapes - CAPS_perimeter",
+      "sourceFile": "Perimeter of 2D Shapes - CAPS_perimeter.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "206"
+      }
+    },
+    {
+      "id": "measurement-6478cd440f",
+      "front": "Trapezium: how do you find the perimeter, and what is a common mistake?",
+      "back": "A trapezium has 4 sides; just add all four: P = a + b + c + d (the two parallel sides plus the two non-parallel sides).\nWorked example (parallel sides 10 cm and 6 cm, slant sides 5 cm and 5 cm):\nP = 10 + 6 + 5 + 5 = 26 cm.\nPitfall: the perpendicular HEIGHT h is used only for AREA, not perimeter. Do not add h.",
+      "tags": [
+        "trapezium",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Perimeter of 2D Shapes - CAPS_perimeter",
+      "sourceFile": "Perimeter of 2D Shapes - CAPS_perimeter.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "206"
+      }
+    },
+    {
+      "id": "measurement-b9ea2a63d7",
+      "front": "A missing side: a rectangle has perimeter 50 cm and length 15 cm. Find the breadth.",
+      "back": "P = 2(ℓ + b)\n50 = 2(15 + b)\n25 = 15 + b   (divide both sides by 2)\nb = 25 − 15 = 10 cm.\nMethod: substitute the known values, then solve like an equation.",
+      "tags": [
+        "rectangle",
+        "missing-side",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Perimeter of 2D Shapes - CAPS_perimeter",
+      "sourceFile": "Perimeter of 2D Shapes - CAPS_perimeter.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "206"
+      }
+    },
+    {
+      "id": "measurement-15ab492390",
+      "front": "FENCING: a rectangular garden is 15 m by 9 m. Fencing costs R45 per metre. Find the total cost.",
+      "back": "Fencing follows the PERIMETER.\nP = 2(ℓ + b) = 2(15 + 9) = 2 × 24 = 48 m.\nCost = 48 × R45 = R2 160.\nKey: fencing/edging/border problems use PERIMETER (length), then multiply by cost per metre.",
+      "tags": [
+        "real-life",
+        "fencing",
+        "perimeter"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Measurement Problems - CAPS_reallife",
+      "sourceFile": "Real-Life Measurement Problems - CAPS_reallife.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "281"
+      }
+    },
+    {
+      "id": "measurement-cc44ef12fe",
+      "front": "TILING: a floor is 4 m by 3 m. Tiles cost R120 per m². Find the cost to tile the floor.",
+      "back": "Tiling/covering follows AREA.\nA = ℓ × b = 4 × 3 = 12 m².\nCost = 12 × R120 = R1 440.\nKey: covering a surface (tiles, carpet, paint, grass) uses AREA, then multiply by cost per m².",
+      "tags": [
+        "real-life",
+        "tiling",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Measurement Problems - CAPS_reallife",
+      "sourceFile": "Real-Life Measurement Problems - CAPS_reallife.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "281"
+      }
+    },
+    {
+      "id": "measurement-ef9646f943",
+      "front": "How many 25 cm × 25 cm tiles are needed to cover a 4 m × 3 m floor?",
+      "back": "Method: total area ÷ area of one tile (use same units!).\nFloor = 4 m × 3 m = 12 m² = 120 000 cm² (since 1 m² = 10 000 cm²).\nOne tile = 25 × 25 = 625 cm².\nNumber of tiles = 120 000 ÷ 625 = 192 tiles.\nPitfall: convert to the same unit first; in real life round UP to a whole tile.",
+      "tags": [
+        "real-life",
+        "tiling",
+        "number-of-tiles"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Measurement Problems - CAPS_reallife",
+      "sourceFile": "Real-Life Measurement Problems - CAPS_reallife.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "measurement-f11885c7d4",
+      "front": "PAINTING: a wall is 5 m by 3 m. One litre of paint covers 8 m². How many litres are needed for one coat?",
+      "back": "Area to paint = 5 × 3 = 15 m².\nPaint needed = area ÷ coverage = 15 ÷ 8 = 1,875 litres.\nIn practice you must buy a whole/round amount, so round UP to 2 litres.\nKey: painting uses AREA ÷ coverage rate; round up so you don't run short.",
+      "tags": [
+        "real-life",
+        "painting",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Measurement Problems - CAPS_reallife",
+      "sourceFile": "Real-Life Measurement Problems - CAPS_reallife.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "264"
+      }
+    },
+    {
+      "id": "measurement-bc5b4f2b89",
+      "front": "How do you decide whether a real-life problem needs PERIMETER or AREA?",
+      "back": "Ask: am I going AROUND the edge, or COVERING the surface?\nPERIMETER (length, e.g. m): fencing, edging/trim, skirting, border, length of ribbon/rope around.\nAREA (squared units, e.g. m²): tiling, carpeting, painting, planting grass, glass for a window, cost per m².\nWrong choice is the most common exam error — read the context carefully.",
+      "tags": [
+        "real-life",
+        "perimeter-vs-area"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Measurement Problems - CAPS_reallife",
+      "sourceFile": "Real-Life Measurement Problems - CAPS_reallife.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "120"
+      }
+    },
+    {
+      "id": "measurement-948f66c488",
+      "front": "COST PER m²: a plot of land of 250 m² sells for R375 000. Find the price per square metre.",
+      "back": "Price per m² = total cost ÷ area.\n= R375 000 ÷ 250 = R1 500 per m².\nReverse use: if you know the rate, multiply by the area to get the total cost (e.g. 250 × R1 500 = R375 000).",
+      "tags": [
+        "real-life",
+        "cost-per-m2"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Measurement Problems - CAPS_reallife",
+      "sourceFile": "Real-Life Measurement Problems - CAPS_reallife.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "281"
+      }
+    },
+    {
+      "id": "measurement-d14539ea8e",
+      "front": "BORDER/PATH: a 10 m × 8 m lawn has a 1 m wide paved path around the OUTSIDE. Find the area of the path.",
+      "back": "Outer rectangle adds 1 m on every side: (10 + 2) × (8 + 2) = 12 × 10 = 120 m².\nInner lawn = 10 × 8 = 80 m².\nPath area = outer − inner = 120 − 80 = 40 m².\nPitfall: a border adds the width on BOTH sides, so add 2 × (path width) to each dimension.",
+      "tags": [
+        "real-life",
+        "border-path",
+        "area"
+      ],
+      "difficulty": "medium",
+      "source": "Real-Life Measurement Problems - CAPS_reallife",
+      "sourceFile": "Real-Life Measurement Problems - CAPS_reallife.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "289"
+      }
+    },
+    {
+      "id": "measurement-2bdb6bd0f6",
+      "front": "Give the basic LENGTH conversion ladder (mm, cm, m, km).",
+      "back": "10 mm = 1 cm\n100 cm = 1 m\n1000 m = 1 km\nAlso: 1 m = 1000 mm.\nGoing to a SMALLER unit → MULTIPLY; going to a LARGER unit → DIVIDE.\nExample: 3,5 m = 3,5 × 100 = 350 cm.",
+      "tags": [
+        "units",
+        "length-conversion"
+      ],
+      "difficulty": "medium",
+      "source": "Units of Length and Area - CAPS_units",
+      "sourceFile": "Units of Length and Area - CAPS_units.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "measurement-b505324370",
+      "front": "Why is 1 m² = 10 000 cm² and not 100 cm²?",
+      "back": "Because area is length × length, so you square the length conversion.\n1 m = 100 cm, so 1 m² = (100 cm)² = 100 × 100 = 10 000 cm².\nGeneral: for AREA units, square the linear factor. The number gets bigger because each direction is converted.",
+      "tags": [
+        "units",
+        "area-conversion"
+      ],
+      "difficulty": "medium",
+      "source": "Units of Length and Area - CAPS_units",
+      "sourceFile": "Units of Length and Area - CAPS_units.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "120"
+      }
+    },
+    {
+      "id": "measurement-4fcd6ea998",
+      "front": "List the key squared-unit (area) conversions.",
+      "back": "1 cm² = 100 mm²   (since 1 cm = 10 mm, 10² = 100)\n1 m² = 10 000 cm²   (100² )\n1 m² = 1 000 000 mm²\n1 km² = 1 000 000 m²   (1000² )\n1 hectare (ha) = 10 000 m².\nRule: square the linear conversion factor each time.",
+      "tags": [
+        "units",
+        "area-conversion"
+      ],
+      "difficulty": "medium",
+      "source": "Units of Length and Area - CAPS_units",
+      "sourceFile": "Units of Length and Area - CAPS_units.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "138"
+      }
+    },
+    {
+      "id": "measurement-1c38ca225a",
+      "front": "Convert 25 000 cm² to m².",
+      "back": "Going from a smaller area unit (cm²) to a larger one (m²) → DIVIDE.\n1 m² = 10 000 cm², so divide by 10 000:\n25 000 ÷ 10 000 = 2,5 m².\nPitfall: don't divide by 100 — area uses the SQUARED factor 10 000.",
+      "tags": [
+        "units",
+        "area-conversion"
+      ],
+      "difficulty": "medium",
+      "source": "Units of Length and Area - CAPS_units",
+      "sourceFile": "Units of Length and Area - CAPS_units.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "4"
+      }
+    },
+    {
+      "id": "measurement-03feaa3085",
+      "front": "Why must you convert units BEFORE substituting into an area formula? Show with an example.",
+      "back": "All measurements must be in the SAME unit, or the answer is wrong.\nExample: rectangle 2 m by 50 cm. Don't compute 2 × 50.\nConvert first: 50 cm = 0,5 m.\nA = 2 × 0,5 = 1 m²  (or convert to cm: 200 × 50 = 10 000 cm² = 1 m² — same).\nRule: make units match first, then substitute.",
+      "tags": [
+        "units",
+        "convert-first"
+      ],
+      "difficulty": "medium",
+      "source": "Units of Length and Area - CAPS_units",
+      "sourceFile": "Units of Length and Area - CAPS_units.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "158"
+      }
+    },
+    {
+      "id": "measurement-d33092d14e",
+      "front": "How do you CHOOSE an appropriate unit for a measurement?",
+      "back": "Pick a unit that gives a sensible, not-too-big or not-too-small number.\nLength: thickness of a coin → mm; a person's height → cm or m; distance between towns → km.\nArea: a stamp → mm² or cm²; a room floor → m²; a farm → hectares or km².\nGuideline: small objects use mm/cm, rooms/buildings use m, land uses km²/ha.",
+      "tags": [
+        "units",
+        "choosing-units"
+      ],
+      "difficulty": "medium",
+      "source": "Units of Length and Area - CAPS_units",
+      "sourceFile": "Units of Length and Area - CAPS_units.yml",
+      "requires": {
+        "subject": "measurement",
+        "sectionLine": "4"
+      }
+    },
+    {
       "id": "measurement-7378a21d2f",
       "front": "What do Total Surface Area (TSA) and Volume each measure for a 3D object, and how do their definitions differ?",
       "back": "TSA = sum of the areas of ALL the exposed faces (the total exterior area of the object). It is a 2D area, measured in square units (mm², cm², m²).\nVolume = the amount of 3D space the object occupies, measured in cubic units (mm³, cm³, m³).\nGeneral idea: TSA = sum of areas of all surfaces; Volume = area of base × perpendicular height (for prisms).",
@@ -31,7 +834,7 @@
       "sourceFile": "Volume and TSA of 3D Objects - Gr9 Maths 2-in-1_pages-011-011.yml",
       "requires": {
         "subject": "measurement",
-        "sectionLine": "4"
+        "sectionLine": "120"
       }
     },
     {
@@ -63,7 +866,7 @@
       "sourceFile": "Volume and TSA of 3D Objects - Gr9 Maths 2-in-1_pages-011-011.yml",
       "requires": {
         "subject": "measurement",
-        "sectionLine": "4"
+        "sectionLine": "120"
       }
     },
     {
@@ -79,7 +882,7 @@
       "sourceFile": "Volume and TSA of 3D Objects - Gr9 Maths 2-in-1_pages-011-011.yml",
       "requires": {
         "subject": "measurement",
-        "sectionLine": "4"
+        "sectionLine": "120"
       }
     },
     {
@@ -95,7 +898,7 @@
       "sourceFile": "Volume and TSA of 3D Objects - Gr9 Maths 2-in-1_pages-011-011.yml",
       "requires": {
         "subject": "measurement",
-        "sectionLine": "4"
+        "sectionLine": "120"
       }
     },
     {
@@ -111,7 +914,7 @@
       "sourceFile": "Volume and TSA of 3D Objects - Gr9 Maths 2-in-1_pages-011-011.yml",
       "requires": {
         "subject": "measurement",
-        "sectionLine": "4"
+        "sectionLine": "120"
       }
     },
     {
@@ -127,7 +930,7 @@
       "sourceFile": "Volume and TSA of 3D Objects - Gr9 Maths 2-in-1_pages-011-011.yml",
       "requires": {
         "subject": "measurement",
-        "sectionLine": "4"
+        "sectionLine": "120"
       }
     },
     {
@@ -191,7 +994,7 @@
       "sourceFile": "Volume and TSA of 3D Objects - Gr9 Maths 2-in-1_pages-011-011.yml",
       "requires": {
         "subject": "measurement",
-        "sectionLine": "4"
+        "sectionLine": "120"
       }
     },
     {
@@ -223,7 +1026,7 @@
       "sourceFile": "Volume and TSA of 3D Objects - Gr9 Maths 2-in-1_pages-011-011.yml",
       "requires": {
         "subject": "measurement",
-        "sectionLine": "4"
+        "sectionLine": "120"
       }
     },
     {
@@ -245,8 +1048,8 @@
   ],
   "triage": null,
   "guide": {
-    "chars": 2386,
-    "lines": 55,
+    "chars": 16006,
+    "lines": 307,
     "sections": [
       {
         "level": 1,
@@ -283,10 +1086,160 @@
         "title": "SI unit conversions",
         "line": 37,
         "body": "**Rule of thumb:** going from a BIG unit to a SMALL unit you **multiply (×)**; from a SMALL unit to a BIG unit you **divide (÷)**.\n\nLength ladder: 1 km = 1000 m, 1 m = 100 cm, 1 cm = 10 mm.\n- km →(×1000)→ m →(×100)→ cm →(×10)→ mm; reverse and divide to go up.\n\nArea (squared) units: **square the length factor**.\n- 1 cm² = 10² = 100 mm²; 1 m² = 100² = 10 000 cm²; 1 km² = 1000² = 1 000 000 m².\n\nVolume (cubed) units: **cube the length factor**.\n- 1 cm³ = 10³ = 1000 mm³; 1 m³ = 100³ = 1 000 000 cm³; 1 km³ = 1000³ = 1 000 000 000 m³.\n\n**Worked example:** 2.5 m³ → cm³. Big to small, cubed unit, so × 100³ = ×1 000 000: 2.5 × 1 000 000 = 2 500 000 cm³.\n\n**Pitfall:** the most common error is using the length factor (×100) for squared or cubed units. Always square the factor for areas and cube it for volumes."
+      },
+      {
+        "level": 3,
+        "title": "Perimeter of 2D Shapes",
+        "line": 54,
+        "body": "Perimeter is the total distance around the outside of a closed 2D shape — literally the length you would walk if you traced its boundary once. Because it is a length, perimeter is always measured in plain length units (mm, cm, m, km), never in squared units. This is the single most important distinction to keep separate from area.\n\nThe universal method works for every polygon: **add up all the side lengths**. For an irregular five-sided field with sides 4, 6, 3, 5 and 7 cm, the perimeter is simply 4 + 6 + 3 + 5 + 7 = 25 cm. The only discipline required is to trace carefully around the outline so that you count each side exactly once, and to make sure every measurement is in the same unit before you add.\n\nFor the standard shapes we use shortcut formulas that come straight from this rule:\n\n- **Square** (side s): all four sides equal, so P = 4s. With s = 9 cm, P = 36 cm.\n- **Rectangle** (length ℓ, breadth b): two long sides and two short sides, so P = 2ℓ + 2b = 2(ℓ + b). With ℓ = 12 m and b = 5 m, P = 2(17) = 34 m. A frequent error is writing P = ℓ + b instead of doubling.\n- **Triangle**: P = a + b + c. An equilateral triangle simplifies to P = 3s; an isosceles to P = 2s + b.\n- **Parallelogram**: opposite sides equal, P = 2(a + b).\n- **Rhombus**: all sides equal, P = 4s.\n- **Trapezium**: four unequal sides, just add all four.\n\nTwo pitfalls recur. First, for the parallelogram, rhombus and trapezium, perimeter uses the **side** lengths only — never the perpendicular height or the diagonals, which belong to area. Second, missing-side questions are solved by treating the formula as an equation: given a rectangle with P = 50 cm and ℓ = 15 cm, substitute into 50 = 2(15 + b), divide by 2 to get 25 = 15 + b, and solve b = 10 cm."
+      },
+      {
+        "level": 3,
+        "title": "Circumference of a Circle",
+        "line": 72,
+        "body": "The circumference is just the perimeter of a circle — the distance around its curved edge. Because a circle has no straight sides to add, we use a special constant, π (pi). Pi is the fixed ratio of any circle's circumference to its diameter; it is approximately 3,14159…, and in CAPS we use either π ≈ 3,14 or π ≈ 22/7.\n\nThere are two equivalent formulas:\n\n- **C = 2πr**, using the radius r (centre to edge), and\n- **C = πd**, using the diameter d (right across, through the centre).\n\nThey are the same because the diameter is twice the radius: d = 2r. Choosing the right one is just a matter of which measurement you are given.\n\n**From radius:** a circle with r = 7 cm and π ≈ 22/7 gives C = 2 × 22/7 × 7 = 44 cm. Choosing 22/7 is smart whenever the radius is a multiple of 7, because the 7s cancel. **From diameter:** a circle with d = 10 m and π ≈ 3,14 gives C = 3,14 × 10 = 31,4 m.\n\nWorking **backwards** is a common exam task. If C = 31,4 cm, then from C = 2πr we get 31,4 = 6,28 × r, so r = 31,4 ÷ 6,28 = 5 cm. Equivalently, find the diameter first with d = C ÷ π, then halve it.\n\nA **semicircle's** perimeter needs care: it is half the circumference plus the straight diameter that closes the shape, P = πr + 2r. With r = 7 and π ≈ 22/7, P = 22 + 14 = 36 cm. Forgetting the straight edge is the classic mistake — half a curve on its own is not a closed figure."
+      },
+      {
+        "level": 3,
+        "title": "Area of 2D Shapes",
+        "line": 90,
+        "body": "Area measures how much flat surface a shape covers — the space enclosed inside its boundary. It is always expressed in **square** units (mm², cm², m², km², hectares), because area is a length multiplied by a length. Keeping this separate from perimeter (plain length units) prevents the most common error in the topic.\n\nThe CAPS area formulas to know:\n\n- **Square**: A = s². With s = 6 cm, A = 36 cm².\n- **Rectangle**: A = ℓ × b. With ℓ = 8 m, b = 5 m, A = 40 m².\n- **Triangle**: A = ½ × b × h, where h is the **perpendicular** height to the chosen base — not a slanted side. With b = 10, h = 6, A = 30 cm².\n- **Parallelogram**: A = b × h, again using the perpendicular height. A parallelogram shears into a rectangle of the same base and height, which is why the slant side is irrelevant.\n- **Rhombus**: either A = ½ × d₁ × d₂ (the diagonals, which meet at right angles) or A = b × h. With diagonals 8 and 6 cm, A = 24 cm².\n- **Trapezium**: A = ½ × (a + b) × h, where a and b are the two **parallel** sides and h the perpendicular distance between them. With a = 10, b = 6, h = 4, A = 32 cm².\n- **Circle**: A = πr². With r = 5 and π ≈ 3,14, A = 78,5 cm².\n\nThree recurring pitfalls: square the unit as well as the number (6 cm × 6 cm = 36 cm²); always use the perpendicular height, not a slant; and for circles use the **radius**, halving the diameter first if necessary (d = 14 → r = 7, A = 22/7 × 49 = 154 cm²). Missing-dimension questions are solved by substituting and dividing: A = 48 cm², ℓ = 8 → b = 48 ÷ 8 = 6 cm."
+      },
+      {
+        "level": 3,
+        "title": "Composite (Compound) Shapes",
+        "line": 107,
+        "body": "A composite shape is built by joining or cutting basic shapes — rectangles, triangles, circles and semicircles. The whole strategy is captured in two words: **add or subtract**. Break the figure into shapes you recognise, find each basic area, then add the pieces that are joined or subtract any piece that has been cut out.\n\nFor an **L-shape** (a 10 × 8 cm rectangle with a 4 × 3 cm corner removed), subtract: 80 − 12 = 68 cm². The same shape can be split into two rectangles and added — both routes give 68 cm², which is a useful self-check.\n\n**Shaded-region** problems are simply outer shape minus inner shape. A 12 × 6 cm plate with a circle of radius 2 cm removed gives 72 − 12,56 = 59,44 cm². A \"house\" shape (rectangle plus a triangle on top) is an add problem: 40 + 12 = 52 m². When two equal **semicircles** sit on the ends of a rectangle, they combine into one full circle, so a 20 × 10 m rectangle with radius-5 m ends has area 200 + 78,5 = 278,5 m².\n\n**Perimeter** of a composite shape follows a different rule from area: trace only the **outer boundary**. Internal edges where two shapes meet are inside the figure and must not be counted. For curved sections use the matching fraction of the circumference (a semicircle edge contributes πr), never an area formula.\n\nFinally, many diagrams leave some sides unlabelled. On a rectilinear shape the horizontal top edges must sum to the bottom edge, and the left edges to the right edge. If the bottom is 10 cm and the top reads 6 cm plus an unknown x, then 6 + x = 10 gives x = 4 cm. Fill in every missing length this way before computing perimeter or area."
+      },
+      {
+        "level": 3,
+        "title": "Units of Length and Area",
+        "line": 120,
+        "body": "Every measurement answer must be given in a sensible unit, and all measurements in a calculation must be in the **same** unit before you work with them. This section covers converting between units of length and units of area, and choosing an appropriate unit."
+      },
+      {
+        "level": 4,
+        "title": "Length conversions",
+        "line": 124,
+        "body": "The basic length ladder is:\n\n- 10 mm = 1 cm\n- 100 cm = 1 m\n- 1000 m = 1 km\n- (so 1 m = 1000 mm)\n\n**Rule:** going to a *smaller* unit → **multiply**; going to a *larger* unit → **divide**.\n\n- 3,5 m = 3,5 × 100 = 350 cm (m → cm, smaller unit, multiply)\n- 4200 m = 4200 ÷ 1000 = 4,2 km (m → km, larger unit, divide)"
+      },
+      {
+        "level": 4,
+        "title": "Area conversions — square the factor",
+        "line": 138,
+        "body": "Area is length × length, so when you convert an area unit you must **square** the linear conversion factor. This is the part learners most often get wrong.\n\nBecause 1 m = 100 cm, it follows that 1 m² = (100 cm)² = 100 × 100 = **10 000 cm²** — not 100 cm². Each of the two directions is converted, so the factor appears twice.\n\nKey squared-unit conversions:\n\n- 1 cm² = 100 mm²    (since 10² = 100)\n- 1 m² = 10 000 cm²    (100²)\n- 1 m² = 1 000 000 mm²\n- 1 km² = 1 000 000 m²    (1000²)\n- 1 hectare (ha) = 10 000 m²\n\nThe multiply/divide rule still applies: smaller area unit → larger one means **divide** by the squared factor.\n\n**Worked example 1 — area conversion.** Convert 25 000 cm² to m².\ncm² → m² is going to a larger unit, so divide. The factor is 10 000 (the square of 100):\n25 000 ÷ 10 000 = **2,5 m²**."
+      },
+      {
+        "level": 4,
+        "title": "Convert before you substitute",
+        "line": 158,
+        "body": "You must make units match *before* putting numbers into a formula.\n\n**Worked example 2.** Find the area of a rectangle 2 m by 50 cm.\nDo **not** compute 2 × 50. Convert first: 50 cm = 0,5 m.\nA = 2 × 0,5 = **1 m²**.\n(Check by converting the other way: 200 cm × 50 cm = 10 000 cm² = 1 m². Same answer.)"
+      },
+      {
+        "level": 4,
+        "title": "Choosing an appropriate unit",
+        "line": 167,
+        "body": "Pick a unit that gives a sensible number — not awkwardly huge or tiny.\n\n- Length: coin thickness → mm; a person's height → cm or m; distance between towns → km.\n- Area: a stamp → mm² or cm²; a room floor → m²; a farm → hectares or km²."
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls",
+        "line": 174,
+        "body": "- Using the *linear* factor (100) for area instead of the *squared* factor (10 000). Always square it for area units.\n- Forgetting to convert so that all measurements share one unit before substituting.\n- Mixing up multiply and divide — to a smaller unit multiply, to a larger unit divide."
+      },
+      {
+        "level": 3,
+        "title": "Effect of Changing Dimensions",
+        "line": 181,
+        "body": "When you scale the dimensions of a 2D shape, the perimeter and the area do **not** change in the same way. Understanding this is a core Grade 9 idea."
+      },
+      {
+        "level": 4,
+        "title": "The two key rules",
+        "line": 185,
+        "body": "If **every** dimension of a 2D shape is multiplied by a factor **k**, then:\n\n- **Perimeter is multiplied by k** (the linear factor).\n- **Area is multiplied by k²** (the factor squared).\n\nThe reason: a length (perimeter) is a single \"direction\", so it scales by k. Area = length × length, so each length factor appears twice, giving k × k = k².\n\nExamples of the rule:\n\n- Sides × 3 → perimeter × 3, area × 9\n- Sides × ½ → perimeter × ½, area × ¼"
+      },
+      {
+        "level": 4,
+        "title": "Worked example 1 — square, doubling the side",
+        "line": 199,
+        "body": "Take a square of side s. Original P = 4s and A = s².\nNew side = 2s, so k = 2.\n- New perimeter = 4(2s) = 8s → perimeter **doubles** (× 2).\n- New area = (2s)² = 4s² → area becomes **4× as big** (× 4 = 2²)."
+      },
+      {
+        "level": 4,
+        "title": "Worked example 2 — rectangle, tripling both sides",
+        "line": 206,
+        "body": "A rectangle is 6 cm × 4 cm; both dimensions are tripled (k = 3).\n- Old area = 6 × 4 = 24 cm².\n- New dimensions = 18 cm × 12 cm, so new area = 18 × 12 = 216 cm².\n- Ratio = 216 ÷ 24 = 9 = 3². This confirms area × k²."
+      },
+      {
+        "level": 4,
+        "title": "Circles follow the same pattern",
+        "line": 213,
+        "body": "The radius of a circle is doubled (k = 2):\n- Circumference C = 2πr is linear in r → C **doubles** (× 2).\n- Area A = πr² depends on r² → (2r)² = 4r² → area × 4.\n\nThe \"around\" measure scales by k; the \"inside\" measure scales by k²."
+      },
+      {
+        "level": 4,
+        "title": "Changing only ONE dimension",
+        "line": 221,
+        "body": "The × k² rule applies **only when all dimensions change by the same factor k**.\n\nA = ℓ × b. If only the length doubles to 2ℓ (breadth unchanged):\nnew A = 2ℓ × b = 2(ℓb) → area only **doubles**, not × 4.\n\nIf length × 3 and breadth × 2, the area changes by 3 × 2 = × 6."
+      },
+      {
+        "level": 4,
+        "title": "Ratios of areas",
+        "line": 230,
+        "body": "For similar shapes, **area ratio = (length ratio)²** — square each part of the side ratio.\n\n- Sides in ratio 2 : 5 → areas in ratio 2² : 5² = **4 : 25**.\n- Reverse: if areas are 9 : 49, the side ratio is √9 : √49 = **3 : 7**."
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls",
+        "line": 237,
+        "body": "- Saying area doubles when the sides double — it becomes 4× as big.\n- Applying × k² when only one dimension changed (then it is just × k for that dimension, or × the product of the separate factors).\n- Forgetting to square (or square-root) when working with ratios of areas."
+      },
+      {
+        "level": 3,
+        "title": "Real-Life Measurement Problems",
+        "line": 244,
+        "body": "These problems put measurement into a context — fencing, tiling, painting, paths, costs. The single most important decision is whether the situation needs **perimeter** or **area**."
+      },
+      {
+        "level": 4,
+        "title": "Perimeter or area?",
+        "line": 248,
+        "body": "Ask: am I going **around the edge**, or **covering the surface**?\n\n- **Perimeter** (length, e.g. metres): fencing, edging, trim, skirting, a border or frame, ribbon/rope around something.\n- **Area** (squared units, e.g. m²): tiling, carpeting, painting, planting grass, glass for a window, anything priced \"per m²\".\n\nChoosing the wrong one is the most common exam error, so read the context carefully."
+      },
+      {
+        "level": 4,
+        "title": "Fencing — uses perimeter",
+        "line": 257,
+        "body": "**Worked example.** A rectangular garden is 15 m by 9 m. Fencing costs R45 per metre. Find the total cost.\nFencing follows the perimeter:\nP = 2(ℓ + b) = 2(15 + 9) = 2 × 24 = 48 m.\nCost = 48 × R45 = **R2 160**."
+      },
+      {
+        "level": 4,
+        "title": "Tiling, carpeting, painting — uses area",
+        "line": 264,
+        "body": "**Tiling cost.** A floor is 4 m by 3 m; tiles cost R120 per m².\nA = ℓ × b = 4 × 3 = 12 m².\nCost = 12 × R120 = **R1 440**.\n\n**Number of tiles.** How many 25 cm × 25 cm tiles cover a 4 m × 3 m floor?\nMethod: total area ÷ area of one tile, in the **same unit**.\nFloor = 12 m² = 120 000 cm² (since 1 m² = 10 000 cm²).\nOne tile = 25 × 25 = 625 cm².\nNumber = 120 000 ÷ 625 = **192 tiles**.\nIn real life, round **up** to a whole tile.\n\n**Painting.** A wall is 5 m by 3 m. One litre of paint covers 8 m². How many litres for one coat?\nArea = 5 × 3 = 15 m².\nPaint = area ÷ coverage = 15 ÷ 8 = 1,875 litres → round **up** to **2 litres** so you don't run short."
+      },
+      {
+        "level": 4,
+        "title": "Cost per square metre",
+        "line": 281,
+        "body": "Price per m² = total cost ÷ area.\n\n**Worked example.** A plot of 250 m² sells for R375 000.\nPrice per m² = R375 000 ÷ 250 = **R1 500 per m²**.\nReverse: knowing the rate, multiply by area for the total (250 × R1 500 = R375 000)."
+      },
+      {
+        "level": 4,
+        "title": "Border or path problems",
+        "line": 289,
+        "body": "A border adds its width on **both** sides, so add 2 × (width) to each dimension.\n\n**Worked example.** A 10 m × 8 m lawn has a 1 m wide paved path around the outside. Find the path's area.\nOuter rectangle = (10 + 2) × (8 + 2) = 12 × 10 = 120 m².\nInner lawn = 10 × 8 = 80 m².\nPath area = outer − inner = 120 − 80 = **40 m²**."
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls",
+        "line": 298,
+        "body": "- Mixing up perimeter and area — go around vs cover the surface.\n- Not converting to the same unit before dividing (e.g. tiles).\n- Rounding the wrong way: for tiles/paint you must round **up**, or you run short.\n- For a border, forgetting it adds the width to **both** ends — add 2 × width per dimension."
       }
     ],
     "firstParagraph": "### Volume & Total Surface Area of 3D Objects + SI Unit Conversions\n\nA 3D object has two key measurements. **Total Surface Area (TSA)** is the sum of the areas of every exposed face — it is a 2D area, so it is measured in square units (mm², cm², m²). **Volume** is the amount of 3D space the object occupies, measured in cubic units (mm³, cm³, m³).",
-    "body": "# Measurement — Complete Study Guide\n\n## Contents\n\n### Volume & Total Surface Area of 3D Objects + SI Unit Conversions\n\nA 3D object has two key measurements. **Total Surface Area (TSA)** is the sum of the areas of every exposed face — it is a 2D area, so it is measured in square units (mm², cm², m²). **Volume** is the amount of 3D space the object occupies, measured in cubic units (mm³, cm³, m³).\n\nThe unifying idea for Volume of any prism or cylinder is:\n\n> **Volume = (area of base) × (perpendicular height/length).**\n\n#### Formulas per solid\n\n**Cube** (side s)\n- TSA = 6s²  (six identical square faces, each s²)\n- V = s³  (base s² × height s)\n\n**Rectangular prism** (length ℓ, breadth b, height h)\n- TSA = 2ℓb + 2bh + 2ℓh  (three pairs of rectangular faces)\n- V = ℓ × b × h\n\n**Triangular prism** (triangle base a, triangle height h, prism length H, triangle sides a, b, c)\n- TSA = 2(½ a h) + (a × H) + (b × H) + (c × H)  — two triangular ends plus three rectangular sides\n- V = (½ × base × height of triangle) × length of prism = ½ b h H\n\n**Cylinder** (radius r, height h)\n- TSA = 2πr² + 2πrh  (two circles + the unrolled curved side, a rectangle 2πr by h)\n- V = πr²h\n\n**Pitfall:** for the triangular prism the base area is ½ b h, not b h — students often forget the ½. For the cylinder, remember to square only r in πr², and to add BOTH circular ends (2πr²).\n\n#### Worked example (cylinder)\nRadius 7 cm, height 10 cm, π ≈ 22/7.\n- V = πr²h = (22/7)(49)(10) = 1540 cm³.\n- TSA = 2πr² + 2πrh = 2π(49) + 2π(70) = 98π + 140π = 238π cm² ≈ 748 cm².\n\n#### SI unit conversions\n**Rule of thumb:** going from a BIG unit to a SMALL unit you **multiply (×)**; from a SMALL unit to a BIG unit you **divide (÷)**.\n\nLength ladder: 1 km = 1000 m, 1 m = 100 cm, 1 cm = 10 mm.\n- km →(×1000)→ m →(×100)→ cm →(×10)→ mm; reverse and divide to go up.\n\nArea (squared) units: **square the length factor**.\n- 1 cm² = 10² = 100 mm²; 1 m² = 100² = 10 000 cm²; 1 km² = 1000² = 1 000 000 m².\n\nVolume (cubed) units: **cube the length factor**.\n- 1 cm³ = 10³ = 1000 mm³; 1 m³ = 100³ = 1 000 000 cm³; 1 km³ = 1000³ = 1 000 000 000 m³.\n\n**Worked example:** 2.5 m³ → cm³. Big to small, cubed unit, so × 100³ = ×1 000 000: 2.5 × 1 000 000 = 2 500 000 cm³.\n\n**Pitfall:** the most common error is using the length factor (×100) for squared or cubed units. Always square the factor for areas and cube it for volumes.\n\n\n",
+    "body": "# Measurement — Complete Study Guide\n\n## Contents\n\n### Volume & Total Surface Area of 3D Objects + SI Unit Conversions\n\nA 3D object has two key measurements. **Total Surface Area (TSA)** is the sum of the areas of every exposed face — it is a 2D area, so it is measured in square units (mm², cm², m²). **Volume** is the amount of 3D space the object occupies, measured in cubic units (mm³, cm³, m³).\n\nThe unifying idea for Volume of any prism or cylinder is:\n\n> **Volume = (area of base) × (perpendicular height/length).**\n\n#### Formulas per solid\n\n**Cube** (side s)\n- TSA = 6s²  (six identical square faces, each s²)\n- V = s³  (base s² × height s)\n\n**Rectangular prism** (length ℓ, breadth b, height h)\n- TSA = 2ℓb + 2bh + 2ℓh  (three pairs of rectangular faces)\n- V = ℓ × b × h\n\n**Triangular prism** (triangle base a, triangle height h, prism length H, triangle sides a, b, c)\n- TSA = 2(½ a h) + (a × H) + (b × H) + (c × H)  — two triangular ends plus three rectangular sides\n- V = (½ × base × height of triangle) × length of prism = ½ b h H\n\n**Cylinder** (radius r, height h)\n- TSA = 2πr² + 2πrh  (two circles + the unrolled curved side, a rectangle 2πr by h)\n- V = πr²h\n\n**Pitfall:** for the triangular prism the base area is ½ b h, not b h — students often forget the ½. For the cylinder, remember to square only r in πr², and to add BOTH circular ends (2πr²).\n\n#### Worked example (cylinder)\nRadius 7 cm, height 10 cm, π ≈ 22/7.\n- V = πr²h = (22/7)(49)(10) = 1540 cm³.\n- TSA = 2πr² + 2πrh = 2π(49) + 2π(70) = 98π + 140π = 238π cm² ≈ 748 cm².\n\n#### SI unit conversions\n**Rule of thumb:** going from a BIG unit to a SMALL unit you **multiply (×)**; from a SMALL unit to a BIG unit you **divide (÷)**.\n\nLength ladder: 1 km = 1000 m, 1 m = 100 cm, 1 cm = 10 mm.\n- km →(×1000)→ m →(×100)→ cm →(×10)→ mm; reverse and divide to go up.\n\nArea (squared) units: **square the length factor**.\n- 1 cm² = 10² = 100 mm²; 1 m² = 100² = 10 000 cm²; 1 km² = 1000² = 1 000 000 m².\n\nVolume (cubed) units: **cube the length factor**.\n- 1 cm³ = 10³ = 1000 mm³; 1 m³ = 100³ = 1 000 000 cm³; 1 km³ = 1000³ = 1 000 000 000 m³.\n\n**Worked example:** 2.5 m³ → cm³. Big to small, cubed unit, so × 100³ = ×1 000 000: 2.5 × 1 000 000 = 2 500 000 cm³.\n\n**Pitfall:** the most common error is using the length factor (×100) for squared or cubed units. Always square the factor for areas and cube it for volumes.\n\n\n### Perimeter of 2D Shapes\n\nPerimeter is the total distance around the outside of a closed 2D shape — literally the length you would walk if you traced its boundary once. Because it is a length, perimeter is always measured in plain length units (mm, cm, m, km), never in squared units. This is the single most important distinction to keep separate from area.\n\nThe universal method works for every polygon: **add up all the side lengths**. For an irregular five-sided field with sides 4, 6, 3, 5 and 7 cm, the perimeter is simply 4 + 6 + 3 + 5 + 7 = 25 cm. The only discipline required is to trace carefully around the outline so that you count each side exactly once, and to make sure every measurement is in the same unit before you add.\n\nFor the standard shapes we use shortcut formulas that come straight from this rule:\n\n- **Square** (side s): all four sides equal, so P = 4s. With s = 9 cm, P = 36 cm.\n- **Rectangle** (length ℓ, breadth b): two long sides and two short sides, so P = 2ℓ + 2b = 2(ℓ + b). With ℓ = 12 m and b = 5 m, P = 2(17) = 34 m. A frequent error is writing P = ℓ + b instead of doubling.\n- **Triangle**: P = a + b + c. An equilateral triangle simplifies to P = 3s; an isosceles to P = 2s + b.\n- **Parallelogram**: opposite sides equal, P = 2(a + b).\n- **Rhombus**: all sides equal, P = 4s.\n- **Trapezium**: four unequal sides, just add all four.\n\nTwo pitfalls recur. First, for the parallelogram, rhombus and trapezium, perimeter uses the **side** lengths only — never the perpendicular height or the diagonals, which belong to area. Second, missing-side questions are solved by treating the formula as an equation: given a rectangle with P = 50 cm and ℓ = 15 cm, substitute into 50 = 2(15 + b), divide by 2 to get 25 = 15 + b, and solve b = 10 cm.\n\n\n### Circumference of a Circle\n\nThe circumference is just the perimeter of a circle — the distance around its curved edge. Because a circle has no straight sides to add, we use a special constant, π (pi). Pi is the fixed ratio of any circle's circumference to its diameter; it is approximately 3,14159…, and in CAPS we use either π ≈ 3,14 or π ≈ 22/7.\n\nThere are two equivalent formulas:\n\n- **C = 2πr**, using the radius r (centre to edge), and\n- **C = πd**, using the diameter d (right across, through the centre).\n\nThey are the same because the diameter is twice the radius: d = 2r. Choosing the right one is just a matter of which measurement you are given.\n\n**From radius:** a circle with r = 7 cm and π ≈ 22/7 gives C = 2 × 22/7 × 7 = 44 cm. Choosing 22/7 is smart whenever the radius is a multiple of 7, because the 7s cancel. **From diameter:** a circle with d = 10 m and π ≈ 3,14 gives C = 3,14 × 10 = 31,4 m.\n\nWorking **backwards** is a common exam task. If C = 31,4 cm, then from C = 2πr we get 31,4 = 6,28 × r, so r = 31,4 ÷ 6,28 = 5 cm. Equivalently, find the diameter first with d = C ÷ π, then halve it.\n\nA **semicircle's** perimeter needs care: it is half the circumference plus the straight diameter that closes the shape, P = πr + 2r. With r = 7 and π ≈ 22/7, P = 22 + 14 = 36 cm. Forgetting the straight edge is the classic mistake — half a curve on its own is not a closed figure.\n\n\n### Area of 2D Shapes\n\nArea measures how much flat surface a shape covers — the space enclosed inside its boundary. It is always expressed in **square** units (mm², cm², m², km², hectares), because area is a length multiplied by a length. Keeping this separate from perimeter (plain length units) prevents the most common error in the topic.\n\nThe CAPS area formulas to know:\n\n- **Square**: A = s². With s = 6 cm, A = 36 cm².\n- **Rectangle**: A = ℓ × b. With ℓ = 8 m, b = 5 m, A = 40 m².\n- **Triangle**: A = ½ × b × h, where h is the **perpendicular** height to the chosen base — not a slanted side. With b = 10, h = 6, A = 30 cm².\n- **Parallelogram**: A = b × h, again using the perpendicular height. A parallelogram shears into a rectangle of the same base and height, which is why the slant side is irrelevant.\n- **Rhombus**: either A = ½ × d₁ × d₂ (the diagonals, which meet at right angles) or A = b × h. With diagonals 8 and 6 cm, A = 24 cm².\n- **Trapezium**: A = ½ × (a + b) × h, where a and b are the two **parallel** sides and h the perpendicular distance between them. With a = 10, b = 6, h = 4, A = 32 cm².\n- **Circle**: A = πr². With r = 5 and π ≈ 3,14, A = 78,5 cm².\n\nThree recurring pitfalls: square the unit as well as the number (6 cm × 6 cm = 36 cm²); always use the perpendicular height, not a slant; and for circles use the **radius**, halving the diameter first if necessary (d = 14 → r = 7, A = 22/7 × 49 = 154 cm²). Missing-dimension questions are solved by substituting and dividing: A = 48 cm², ℓ = 8 → b = 48 ÷ 8 = 6 cm.\n\n\n### Composite (Compound) Shapes\n\nA composite shape is built by joining or cutting basic shapes — rectangles, triangles, circles and semicircles. The whole strategy is captured in two words: **add or subtract**. Break the figure into shapes you recognise, find each basic area, then add the pieces that are joined or subtract any piece that has been cut out.\n\nFor an **L-shape** (a 10 × 8 cm rectangle with a 4 × 3 cm corner removed), subtract: 80 − 12 = 68 cm². The same shape can be split into two rectangles and added — both routes give 68 cm², which is a useful self-check.\n\n**Shaded-region** problems are simply outer shape minus inner shape. A 12 × 6 cm plate with a circle of radius 2 cm removed gives 72 − 12,56 = 59,44 cm². A \"house\" shape (rectangle plus a triangle on top) is an add problem: 40 + 12 = 52 m². When two equal **semicircles** sit on the ends of a rectangle, they combine into one full circle, so a 20 × 10 m rectangle with radius-5 m ends has area 200 + 78,5 = 278,5 m².\n\n**Perimeter** of a composite shape follows a different rule from area: trace only the **outer boundary**. Internal edges where two shapes meet are inside the figure and must not be counted. For curved sections use the matching fraction of the circumference (a semicircle edge contributes πr), never an area formula.\n\nFinally, many diagrams leave some sides unlabelled. On a rectilinear shape the horizontal top edges must sum to the bottom edge, and the left edges to the right edge. If the bottom is 10 cm and the top reads 6 cm plus an unknown x, then 6 + x = 10 gives x = 4 cm. Fill in every missing length this way before computing perimeter or area.\n\n\n### Units of Length and Area\n\nEvery measurement answer must be given in a sensible unit, and all measurements in a calculation must be in the **same** unit before you work with them. This section covers converting between units of length and units of area, and choosing an appropriate unit.\n\n#### Length conversions\n\nThe basic length ladder is:\n\n- 10 mm = 1 cm\n- 100 cm = 1 m\n- 1000 m = 1 km\n- (so 1 m = 1000 mm)\n\n**Rule:** going to a *smaller* unit → **multiply**; going to a *larger* unit → **divide**.\n\n- 3,5 m = 3,5 × 100 = 350 cm (m → cm, smaller unit, multiply)\n- 4200 m = 4200 ÷ 1000 = 4,2 km (m → km, larger unit, divide)\n\n#### Area conversions — square the factor\n\nArea is length × length, so when you convert an area unit you must **square** the linear conversion factor. This is the part learners most often get wrong.\n\nBecause 1 m = 100 cm, it follows that 1 m² = (100 cm)² = 100 × 100 = **10 000 cm²** — not 100 cm². Each of the two directions is converted, so the factor appears twice.\n\nKey squared-unit conversions:\n\n- 1 cm² = 100 mm²    (since 10² = 100)\n- 1 m² = 10 000 cm²    (100²)\n- 1 m² = 1 000 000 mm²\n- 1 km² = 1 000 000 m²    (1000²)\n- 1 hectare (ha) = 10 000 m²\n\nThe multiply/divide rule still applies: smaller area unit → larger one means **divide** by the squared factor.\n\n**Worked example 1 — area conversion.** Convert 25 000 cm² to m².\ncm² → m² is going to a larger unit, so divide. The factor is 10 000 (the square of 100):\n25 000 ÷ 10 000 = **2,5 m²**.\n\n#### Convert before you substitute\n\nYou must make units match *before* putting numbers into a formula.\n\n**Worked example 2.** Find the area of a rectangle 2 m by 50 cm.\nDo **not** compute 2 × 50. Convert first: 50 cm = 0,5 m.\nA = 2 × 0,5 = **1 m²**.\n(Check by converting the other way: 200 cm × 50 cm = 10 000 cm² = 1 m². Same answer.)\n\n#### Choosing an appropriate unit\n\nPick a unit that gives a sensible number — not awkwardly huge or tiny.\n\n- Length: coin thickness → mm; a person's height → cm or m; distance between towns → km.\n- Area: a stamp → mm² or cm²; a room floor → m²; a farm → hectares or km².\n\n#### Common pitfalls\n\n- Using the *linear* factor (100) for area instead of the *squared* factor (10 000). Always square it for area units.\n- Forgetting to convert so that all measurements share one unit before substituting.\n- Mixing up multiply and divide — to a smaller unit multiply, to a larger unit divide.\n\n\n### Effect of Changing Dimensions\n\nWhen you scale the dimensions of a 2D shape, the perimeter and the area do **not** change in the same way. Understanding this is a core Grade 9 idea.\n\n#### The two key rules\n\nIf **every** dimension of a 2D shape is multiplied by a factor **k**, then:\n\n- **Perimeter is multiplied by k** (the linear factor).\n- **Area is multiplied by k²** (the factor squared).\n\nThe reason: a length (perimeter) is a single \"direction\", so it scales by k. Area = length × length, so each length factor appears twice, giving k × k = k².\n\nExamples of the rule:\n\n- Sides × 3 → perimeter × 3, area × 9\n- Sides × ½ → perimeter × ½, area × ¼\n\n#### Worked example 1 — square, doubling the side\n\nTake a square of side s. Original P = 4s and A = s².\nNew side = 2s, so k = 2.\n- New perimeter = 4(2s) = 8s → perimeter **doubles** (× 2).\n- New area = (2s)² = 4s² → area becomes **4× as big** (× 4 = 2²).\n\n#### Worked example 2 — rectangle, tripling both sides\n\nA rectangle is 6 cm × 4 cm; both dimensions are tripled (k = 3).\n- Old area = 6 × 4 = 24 cm².\n- New dimensions = 18 cm × 12 cm, so new area = 18 × 12 = 216 cm².\n- Ratio = 216 ÷ 24 = 9 = 3². This confirms area × k².\n\n#### Circles follow the same pattern\n\nThe radius of a circle is doubled (k = 2):\n- Circumference C = 2πr is linear in r → C **doubles** (× 2).\n- Area A = πr² depends on r² → (2r)² = 4r² → area × 4.\n\nThe \"around\" measure scales by k; the \"inside\" measure scales by k².\n\n#### Changing only ONE dimension\n\nThe × k² rule applies **only when all dimensions change by the same factor k**.\n\nA = ℓ × b. If only the length doubles to 2ℓ (breadth unchanged):\nnew A = 2ℓ × b = 2(ℓb) → area only **doubles**, not × 4.\n\nIf length × 3 and breadth × 2, the area changes by 3 × 2 = × 6.\n\n#### Ratios of areas\n\nFor similar shapes, **area ratio = (length ratio)²** — square each part of the side ratio.\n\n- Sides in ratio 2 : 5 → areas in ratio 2² : 5² = **4 : 25**.\n- Reverse: if areas are 9 : 49, the side ratio is √9 : √49 = **3 : 7**.\n\n#### Common pitfalls\n\n- Saying area doubles when the sides double — it becomes 4× as big.\n- Applying × k² when only one dimension changed (then it is just × k for that dimension, or × the product of the separate factors).\n- Forgetting to square (or square-root) when working with ratios of areas.\n\n\n### Real-Life Measurement Problems\n\nThese problems put measurement into a context — fencing, tiling, painting, paths, costs. The single most important decision is whether the situation needs **perimeter** or **area**.\n\n#### Perimeter or area?\n\nAsk: am I going **around the edge**, or **covering the surface**?\n\n- **Perimeter** (length, e.g. metres): fencing, edging, trim, skirting, a border or frame, ribbon/rope around something.\n- **Area** (squared units, e.g. m²): tiling, carpeting, painting, planting grass, glass for a window, anything priced \"per m²\".\n\nChoosing the wrong one is the most common exam error, so read the context carefully.\n\n#### Fencing — uses perimeter\n\n**Worked example.** A rectangular garden is 15 m by 9 m. Fencing costs R45 per metre. Find the total cost.\nFencing follows the perimeter:\nP = 2(ℓ + b) = 2(15 + 9) = 2 × 24 = 48 m.\nCost = 48 × R45 = **R2 160**.\n\n#### Tiling, carpeting, painting — uses area\n\n**Tiling cost.** A floor is 4 m by 3 m; tiles cost R120 per m².\nA = ℓ × b = 4 × 3 = 12 m².\nCost = 12 × R120 = **R1 440**.\n\n**Number of tiles.** How many 25 cm × 25 cm tiles cover a 4 m × 3 m floor?\nMethod: total area ÷ area of one tile, in the **same unit**.\nFloor = 12 m² = 120 000 cm² (since 1 m² = 10 000 cm²).\nOne tile = 25 × 25 = 625 cm².\nNumber = 120 000 ÷ 625 = **192 tiles**.\nIn real life, round **up** to a whole tile.\n\n**Painting.** A wall is 5 m by 3 m. One litre of paint covers 8 m². How many litres for one coat?\nArea = 5 × 3 = 15 m².\nPaint = area ÷ coverage = 15 ÷ 8 = 1,875 litres → round **up** to **2 litres** so you don't run short.\n\n#### Cost per square metre\n\nPrice per m² = total cost ÷ area.\n\n**Worked example.** A plot of 250 m² sells for R375 000.\nPrice per m² = R375 000 ÷ 250 = **R1 500 per m²**.\nReverse: knowing the rate, multiply by area for the total (250 × R1 500 = R375 000).\n\n#### Border or path problems\n\nA border adds its width on **both** sides, so add 2 × (width) to each dimension.\n\n**Worked example.** A 10 m × 8 m lawn has a 1 m wide paved path around the outside. Find the path's area.\nOuter rectangle = (10 + 2) × (8 + 2) = 12 × 10 = 120 m².\nInner lawn = 10 × 8 = 80 m².\nPath area = outer − inner = 120 − 80 = **40 m²**.\n\n#### Common pitfalls\n\n- Mixing up perimeter and area — go around vs cover the surface.\n- Not converting to the same unit before dividing (e.g. tiles).\n- Rounding the wrong way: for tiles/paint you must round **up**, or you run short.\n- For a border, forgetting it adds the width to **both** ends — add 2 × width per dimension.\n\n\n",
     "infographics": [],
     "videos": [],
     "audio": []

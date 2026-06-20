@@ -3,6 +3,156 @@
   "cat": "mascot",
   "cards": [
     {
+      "id": "geometry-d957eb8037",
+      "front": "Define faces, edges and vertices of a 3D object.",
+      "back": "Face: a flat (or curved) surface of the solid.\nEdge: a line segment where two faces meet.\nVertex (plural vertices): a corner point where edges meet.\nExample — a cube has 6 faces, 12 edges and 8 vertices.",
+      "tags": [
+        "faces-edges-vertices"
+      ],
+      "difficulty": "medium",
+      "source": "3D Objects - CAPS_solids-nets",
+      "sourceFile": "3D Objects - CAPS_solids-nets.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "325"
+      }
+    },
+    {
+      "id": "geometry-ed2b0f0f3a",
+      "front": "What is a NET, and describe the nets of a cube and a cylinder.",
+      "back": "A net is a 2D flat pattern that folds up to form a 3D object — it shows every face opened out.\nCube: 6 equal squares (e.g. a row of 4 with one square above and one below — a cross shape).\nCylinder: 2 circles (top and bottom) + 1 rectangle (the curved surface unrolled); the rectangle's length equals the circumference of the circle (2πr).",
+      "tags": [
+        "nets"
+      ],
+      "difficulty": "medium",
+      "source": "3D Objects - CAPS_solids-nets",
+      "sourceFile": "3D Objects - CAPS_solids-nets.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "303"
+      }
+    },
+    {
+      "id": "geometry-fa77b89044",
+      "front": "Describe the nets of a (rectangular) prism and a square-based pyramid.",
+      "back": "Rectangular prism: 6 rectangles — 2 identical ends plus 4 sides folded out around them.\nSquare-based pyramid: 1 square base + 4 triangular faces, one triangle hinged on each side of the square.\nTriangular prism: 2 triangles (the ends) + 3 rectangles (the sides).",
+      "tags": [
+        "nets"
+      ],
+      "difficulty": "medium",
+      "source": "3D Objects - CAPS_solids-nets",
+      "sourceFile": "3D Objects - CAPS_solids-nets.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "362"
+      }
+    },
+    {
+      "id": "geometry-0282abf793",
+      "front": "How are PRISMS and PYRAMIDS named, and what is the difference between them?",
+      "back": "Both are named after the shape of their BASE.\nPrism: two identical parallel bases joined by rectangles; the cross-section is the same all the way along (e.g. triangular prism, hexagonal prism, rectangular prism = cuboid).\nPyramid: one base and all other faces are triangles meeting at a single apex (e.g. triangular pyramid = tetrahedron, square-based pyramid).\nKey difference: a prism has 2 identical bases; a pyramid has 1 base and comes to a point.",
+      "tags": [
+        "naming-prisms-pyramids"
+      ],
+      "difficulty": "medium",
+      "source": "3D Objects - CAPS_solids-nets",
+      "sourceFile": "3D Objects - CAPS_solids-nets.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "362"
+      }
+    },
+    {
+      "id": "geometry-22545def7d",
+      "front": "What does ≅ mean, and what is the rule about the ORDER of letters when writing △ABC ≅ △DEF?",
+      "back": "≅ means 'is congruent to' — the two triangles are identical in shape AND size (same sides, same angles), just possibly flipped or turned.\nThe order of letters shows which parts correspond: A↔D, B↔E, C↔F.\n∴ AB = DE, BC = EF, AC = DF and ∠A = ∠D, ∠B = ∠E, ∠C = ∠F.\nAlways write corresponding vertices in matching positions, or you lose marks.",
+      "tags": [
+        "congruency-meaning"
+      ],
+      "difficulty": "medium",
+      "source": "Congruency - CAPS_congruency-practice",
+      "sourceFile": "Congruency - CAPS_congruency-practice.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "69"
+      }
+    },
+    {
+      "id": "geometry-abf33dbbde",
+      "front": "List the four conditions that prove two triangles congruent and what each abbreviation means.",
+      "back": "SSS — three pairs of sides equal.\nSAS — two sides and the INCLUDED angle equal.\nAAS — two angles and a corresponding side equal.\nRHS — right angle, hypotenuse and one other side equal (right-angled triangles only).\nNote: AAA is NOT a congruency condition (it only gives similar triangles), and SSA/ASS is not valid.",
+      "tags": [
+        "congruency-conditions"
+      ],
+      "difficulty": "medium",
+      "source": "Congruency - CAPS_congruency-practice",
+      "sourceFile": "Congruency - CAPS_congruency-practice.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "130"
+      }
+    },
+    {
+      "id": "geometry-a20431d6da",
+      "front": "Prove △ABC ≅ △ADC if AB = AD and CB = CD (AC is common). Set out the proof.",
+      "back": "In △ABC and △ADC:\n1. AB = AD            (given)\n2. CB = CD            (given)\n3. AC = AC            (common side)\n∴ △ABC ≅ △ADC   (SSS)\nSet-out tip: always state the THREE pairs first with their reasons, then the conclusion with the condition (SSS) in brackets.",
+      "tags": [
+        "proof-sss"
+      ],
+      "difficulty": "medium",
+      "source": "Congruency - CAPS_congruency-practice",
+      "sourceFile": "Congruency - CAPS_congruency-practice.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "243"
+      }
+    },
+    {
+      "id": "geometry-936eec9eb1",
+      "front": "In two triangles, △KLM and △PQR, you know KL = PQ, ∠L = ∠Q and LM = QR. Prove congruency.",
+      "back": "In △KLM and △PQR:\n1. KL = PQ           (given)\n2. ∠L = ∠Q           (given)\n3. LM = QR           (given)\nThe equal angle ∠L lies BETWEEN the two equal sides KL and LM (included angle).\n∴ △KLM ≅ △PQR   (SAS)\nPitfall: if the equal angle were NOT between the two equal sides, SAS would not apply.",
+      "tags": [
+        "proof-sas"
+      ],
+      "difficulty": "medium",
+      "source": "Congruency - CAPS_congruency-practice",
+      "sourceFile": "Congruency - CAPS_congruency-practice.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "130"
+      }
+    },
+    {
+      "id": "geometry-5c333db50a",
+      "front": "Once you have proved △ABC ≅ △DEF, how do you find an unknown side or angle, and what reason do you give?",
+      "back": "Use that corresponding parts of congruent triangles are equal.\nReason wording: '≅ △s' or 'corresponding sides/∠s of ≅ △s'.\nExample: if △ABC ≅ △DEF and DE = 8 cm, then AB = 8 cm (corresp sides of ≅ △s). If ∠D = 50°, then ∠A = 50° (corresp ∠s of ≅ △s).\nFirst PROVE congruency, THEN claim the equal part — never the other way round.",
+      "tags": [
+        "corresponding-parts"
+      ],
+      "difficulty": "medium",
+      "source": "Congruency - CAPS_congruency-practice",
+      "sourceFile": "Congruency - CAPS_congruency-practice.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "130"
+      }
+    },
+    {
+      "id": "geometry-726c2e1aad",
+      "front": "When is RHS used, and prove △ABC ≅ △DEF given ∠B = ∠E = 90°, AC = DF (hypotenuses) and BC = EF.",
+      "back": "RHS is used only for right-angled triangles.\nIn △ABC and △DEF:\n1. ∠B = ∠E = 90°     (given)\n2. AC = DF            (hypotenuses, given)\n3. BC = EF            (given)\n∴ △ABC ≅ △DEF   (RHS)\nKey: AC and DF must be the HYPOTENUSES (the sides opposite the right angles).",
+      "tags": [
+        "proof-rhs"
+      ],
+      "difficulty": "medium",
+      "source": "Congruency - CAPS_congruency-practice",
+      "sourceFile": "Congruency - CAPS_congruency-practice.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "69"
+      }
+    },
+    {
       "id": "geometry-3cf3733f64",
       "front": "LINES: The adjacent angles on a straight line are supplementary (add to 180°). What is the acceptable reason?",
       "back": "Acceptable reason: ∠s on a str line",
@@ -280,7 +430,7 @@
       "sourceFile": "Euclidean Geometry Theorems and Reasons - Gr9 Maths 2-in-1_pages-017-018.yml",
       "requires": {
         "subject": "geometry",
-        "sectionLine": "65"
+        "sectionLine": "184"
       }
     },
     {
@@ -298,7 +448,7 @@
       "sourceFile": "Euclidean Geometry Theorems and Reasons - Gr9 Maths 2-in-1_pages-017-018.yml",
       "requires": {
         "subject": "geometry",
-        "sectionLine": "65"
+        "sectionLine": "212"
       }
     },
     {
@@ -330,7 +480,7 @@
       "sourceFile": "Euclidean Geometry Theorems and Reasons - Gr9 Maths 2-in-1_pages-017-018.yml",
       "requires": {
         "subject": "geometry",
-        "sectionLine": "31"
+        "sectionLine": "130"
       }
     },
     {
@@ -823,6 +973,186 @@
       }
     },
     {
+      "id": "geometry-84fc4fc25c",
+      "front": "What instruments are allowed in a 'construction', and what is the golden rule about measuring?",
+      "back": "A construction uses only a compass and an unmarked straight-edge (ruler).\nGolden rule: you may NOT measure angles with a protractor, and you set lengths only with the compass — never by reading the ruler markings (except to draw a given side length).\nKeep all construction arcs light and visible — examiners award marks for the arcs that show your method, so do NOT rub them out.",
+      "tags": [
+        "construction-basics"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-28a21be404",
+      "front": "Construct the perpendicular bisector of line segment AB. Give the steps.",
+      "back": "1. Set the compass wider than half of AB.\n2. Place the compass point on A and draw an arc above and below the line.\n3. Keeping the SAME radius, place the point on B and draw arcs that cut the first two — call the crossings P (above) and Q (below).\n4. Draw the straight line PQ.\nPQ cuts AB exactly in half (at midpoint M) AND meets it at 90°.\n∴ PQ is the perpendicular bisector. Every point on PQ is equidistant from A and B.\nPitfall: if the radius is ≤ half of AB the arcs never meet — always open wider than half.",
+      "tags": [
+        "perpendicular-bisector"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-7ffd611e9d",
+      "front": "How do you bisect an angle ∠ABC with compass and ruler?",
+      "back": "1. Compass point on the vertex B; draw an arc cutting both arms — call the points D (on BA) and E (on BC).\n2. Compass point on D, draw an arc in the interior.\n3. Same radius, point on E, draw an arc cutting the previous one at F.\n4. Draw ray BF.\nBF bisects the angle: ∠ABF = ∠FBC (each is half of ∠ABC).\nPitfall: keep the radius the same for steps 2 and 3 or the bisector is wrong.",
+      "tags": [
+        "angle-bisector"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-12b820c648",
+      "front": "Construct a line perpendicular to line ℓ passing through a point P that lies ON ℓ.",
+      "back": "1. Compass point on P; draw arcs cutting ℓ on both sides at A and B (so P is the midpoint of AB).\n2. Now construct the perpendicular bisector of AB: open wider than PA, draw arcs from A and from B above the line, crossing at Q.\n3. Draw PQ.\nPQ ⊥ ℓ at P (∠QPB = 90°).",
+      "tags": [
+        "construct-perpendicular"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "289"
+      }
+    },
+    {
+      "id": "geometry-c6f8023a11",
+      "front": "Construct a perpendicular to line ℓ from a point P that is NOT on ℓ (dropping a perpendicular).",
+      "back": "1. Compass point on P; draw an arc that cuts ℓ at two points A and B.\n2. From A draw an arc on the far side of ℓ from P.\n3. Same radius from B, cutting it at point Q.\n4. Draw PQ — it crosses ℓ at 90°.\nThis is the shortest distance from P to ℓ.",
+      "tags": [
+        "construct-perpendicular"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "173"
+      }
+    },
+    {
+      "id": "geometry-629437cd9a",
+      "front": "Construct a line through point P parallel to a given line ℓ (using equal corresponding angles).",
+      "back": "1. Draw any transversal through P that cuts ℓ at point A.\n2. With centre A draw an arc cutting both ℓ and the transversal; with the SAME radius and centre P draw a matching arc.\n3. Use the compass to measure the gap of the arc at A, then copy that gap onto the arc at P — this reproduces the angle.\n4. Draw the line through P and the new point.\nThe new line ∥ ℓ because corresponding angles are equal (corresp ∠s equal ⇒ lines parallel).",
+      "tags": [
+        "construct-parallel"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "69"
+      }
+    },
+    {
+      "id": "geometry-52dc0726e9",
+      "front": "Construct an angle of exactly 60° at point A on line AB (without a protractor).",
+      "back": "1. Compass point on A; draw an arc cutting AB at C.\n2. Keep the SAME radius. Move the point to C and draw an arc cutting the first arc at D.\n3. Draw ray AD.\n∠DAB = 60°.\nWhy: A, C and D form an equilateral triangle (all three radii are equal), and every angle of an equilateral triangle is 60°.",
+      "tags": [
+        "construct-60"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-e798948656",
+      "front": "How do you construct a 30° angle?",
+      "back": "First construct a 60° angle (equilateral-triangle method), then BISECT it.\n60° ÷ 2 = 30°.\nThe bisector arcs give a ray that makes 30° with AB.\n(Similarly 15° = bisect a 30° angle.)",
+      "tags": [
+        "construct-30"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-f27db003e6",
+      "front": "How do you construct a 90° angle and then a 45° angle?",
+      "back": "90°: construct a perpendicular at a point on the line (point-on-line method) — the perpendicular makes 90°.\n45°: BISECT the 90° angle. 90° ÷ 2 = 45°.\nAlternative for 45°: construct 60° and 30° adjacent gives 90°... simplest is bisect the right angle.\n(135° = 90° + 45° built side by side.)",
+      "tags": [
+        "construct-90-45"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-0feb7e312f",
+      "front": "Construct △ABC given AB = 7 cm, BC = 5 cm, AC = 4 cm (three sides, SSS).",
+      "back": "1. Draw the longest side AB = 7 cm with the ruler.\n2. Compass radius = 4 cm (= AC); centre A, draw an arc above AB.\n3. Compass radius = 5 cm (= BC); centre B, draw an arc cutting the first arc at C.\n4. Join AC and BC.\n△ABC is the required triangle.\nPitfall: the triangle is only possible if the two short sides add to MORE than the long side (4 + 5 = 9 > 7 ✓) — triangle inequality.",
+      "tags": [
+        "construct-triangle-sss"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "173"
+      }
+    },
+    {
+      "id": "geometry-85d5ce1e76",
+      "front": "Construct △PQR given PQ = 6 cm, ∠P = 60° and PR = 5 cm (SAS — two sides and included angle).",
+      "back": "1. Draw PQ = 6 cm.\n2. At P CONSTRUCT a 60° angle (equilateral-triangle arc method, not a protractor).\n3. Along that new arm measure PR = 5 cm with the compass and mark R.\n4. Join RQ.\n△PQR is complete.\nKey: the given angle must lie BETWEEN the two given sides (the 'included' angle).",
+      "tags": [
+        "construct-triangle-sas"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-3b41d18569",
+      "front": "Outline how to construct a quadrilateral, e.g. rectangle ABCD with AB = 6 cm and BC = 4 cm.",
+      "back": "1. Draw AB = 6 cm.\n2. At A and at B construct 90° angles (perpendiculars to AB).\n3. On each perpendicular measure 4 cm with the compass: mark D (above A) and C (above B).\n4. Join DC.\nABCD is the rectangle. For a general quadrilateral, split it into two triangles along a diagonal and construct each triangle (SSS/SAS) in turn.",
+      "tags": [
+        "construct-quadrilateral"
+      ],
+      "difficulty": "medium",
+      "source": "Geometric Constructions - CAPS_constructions",
+      "sourceFile": "Geometric Constructions - CAPS_constructions.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "69"
+      }
+    },
+    {
       "id": "geometry-1fb4350fb4",
       "front": "Classify angles by size: acute, right, obtuse, straight, reflex, revolution.",
       "back": "Acute angle: lies between 0° and 90°.\nRight angle: exactly 90°.\nObtuse angle: lies between 90° and 180°.\nStraight angle: exactly 180°.\nReflex angle: lies between 180° and 360°.\nRevolution: exactly 360° (a full turn).",
@@ -1015,6 +1345,96 @@
       }
     },
     {
+      "id": "geometry-960e8d3bf1",
+      "front": "In a right-angled triangle the two shorter sides are 6 cm and 8 cm. Find the hypotenuse.",
+      "back": "The hypotenuse is opposite the right angle.\nh² = 6² + 8²    (Pythagoras)\nh² = 36 + 64\nh² = 100\nh = √100\nh = 10 cm.\nTip: to find the HYPOTENUSE you ADD the squares of the two shorter sides.",
+      "tags": [
+        "find-hypotenuse"
+      ],
+      "difficulty": "medium",
+      "source": "Pythagoras Applications - CAPS_pythagoras-apps",
+      "sourceFile": "Pythagoras Applications - CAPS_pythagoras-apps.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "173"
+      }
+    },
+    {
+      "id": "geometry-6af1eebf4f",
+      "front": "A right-angled triangle has hypotenuse 13 cm and one short side 5 cm. Find the other short side.",
+      "back": "To find a SHORTER side, SUBTRACT:\nx² = 13² − 5²    (Pythagoras)\nx² = 169 − 25\nx² = 144\nx = √144\nx = 12 cm.\nPitfall: the hypotenuse is the LARGEST number — its square goes first and you subtract. Adding here would be wrong.",
+      "tags": [
+        "find-shorter-side"
+      ],
+      "difficulty": "medium",
+      "source": "Pythagoras Applications - CAPS_pythagoras-apps",
+      "sourceFile": "Pythagoras Applications - CAPS_pythagoras-apps.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "173"
+      }
+    },
+    {
+      "id": "geometry-45eac367ae",
+      "front": "A 5 m ladder leans against a wall with its foot 3 m from the base. How high up the wall does it reach?",
+      "back": "The ladder is the hypotenuse (5 m); the ground distance (3 m) is one short side; the wall height (h) is the other short side.\nh² = 5² − 3²    (Pythagoras)\nh² = 25 − 9\nh² = 16\nh = 4 m.\nThe ladder reaches 4 m up the wall.\nMethod for word problems: sketch the triangle and mark the hypotenuse FIRST (it is always opposite the 90° corner).",
+      "tags": [
+        "pythagoras-ladder"
+      ],
+      "difficulty": "medium",
+      "source": "Pythagoras Applications - CAPS_pythagoras-apps",
+      "sourceFile": "Pythagoras Applications - CAPS_pythagoras-apps.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "196"
+      }
+    },
+    {
+      "id": "geometry-3077a02511",
+      "front": "Find the length of the diagonal of a rectangle measuring 9 cm by 12 cm.",
+      "back": "A diagonal splits the rectangle into two right-angled triangles. The diagonal is the hypotenuse.\nd² = 9² + 12²    (Pythagoras)\nd² = 81 + 144\nd² = 225\nd = √225\nd = 15 cm.\nThe diagonal is 15 cm.",
+      "tags": [
+        "pythagoras-diagonal"
+      ],
+      "difficulty": "medium",
+      "source": "Pythagoras Applications - CAPS_pythagoras-apps",
+      "sourceFile": "Pythagoras Applications - CAPS_pythagoras-apps.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "65"
+      }
+    },
+    {
+      "id": "geometry-4f35844ab2",
+      "front": "Use the CONVERSE of Pythagoras to test whether a triangle with sides 7, 24 and 25 is right-angled.",
+      "back": "Compare the square of the longest side with the sum of the squares of the other two:\nlongest² = 25² = 625\nother two: 7² + 24² = 49 + 576 = 625\nSince 625 = 625, the equation holds.\n∴ the triangle IS right-angled   (converse of Pythagoras), with the right angle opposite the 25-side.\nIf the two sides were NOT equal, the triangle would not be right-angled.",
+      "tags": [
+        "converse-pythagoras"
+      ],
+      "difficulty": "medium",
+      "source": "Pythagoras Applications - CAPS_pythagoras-apps",
+      "sourceFile": "Pythagoras Applications - CAPS_pythagoras-apps.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "212"
+      }
+    },
+    {
+      "id": "geometry-9a9c864e37",
+      "front": "A right-angled triangle has short sides 2 cm and 3 cm. Give the hypotenuse as a surd in simplest form.",
+      "back": "h² = 2² + 3²    (Pythagoras)\nh² = 4 + 9 = 13\nh = √13 cm.\n√13 cannot be simplified (13 is prime and has no square factor), so leave it as √13.\nExample where you DO simplify: √8 = √(4×2) = 2√2. Always pull out the largest perfect-square factor.",
+      "tags": [
+        "pythagoras-surds"
+      ],
+      "difficulty": "medium",
+      "source": "Pythagoras Applications - CAPS_pythagoras-apps",
+      "sourceFile": "Pythagoras Applications - CAPS_pythagoras-apps.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "184"
+      }
+    },
+    {
       "id": "geometry-ce2f9808f7",
       "front": "What is the sum of the interior angles of ANY quadrilateral, and why?",
       "back": "The interior angles of any quadrilateral add up to 360°.\nReason: a quadrilateral can be split by one diagonal into 2 triangles. Each triangle's angles sum to 180°, so 2 × 180° = 360°.\nNotation: â + b̂ + ĉ + d̂ + ... = 360°.\nThis is the starting fact; all special quadrilaterals inherit it.",
@@ -1045,7 +1465,7 @@
       "sourceFile": "Quadrilaterals Summary - Gr9 Maths 2-in-1_pages-009-009.yml",
       "requires": {
         "subject": "geometry",
-        "sectionLine": "4"
+        "sectionLine": "130"
       }
     },
     {
@@ -1062,7 +1482,7 @@
       "sourceFile": "Quadrilaterals Summary - Gr9 Maths 2-in-1_pages-009-009.yml",
       "requires": {
         "subject": "geometry",
-        "sectionLine": "4"
+        "sectionLine": "130"
       }
     },
     {
@@ -1096,7 +1516,7 @@
       "sourceFile": "Quadrilaterals Summary - Gr9 Maths 2-in-1_pages-009-009.yml",
       "requires": {
         "subject": "geometry",
-        "sectionLine": "4"
+        "sectionLine": "303"
       }
     },
     {
@@ -1130,7 +1550,7 @@
       "sourceFile": "Quadrilaterals Summary - Gr9 Maths 2-in-1_pages-009-009.yml",
       "requires": {
         "subject": "geometry",
-        "sectionLine": "69"
+        "sectionLine": "226"
       }
     },
     {
@@ -1147,7 +1567,7 @@
       "sourceFile": "Quadrilaterals Summary - Gr9 Maths 2-in-1_pages-009-009.yml",
       "requires": {
         "subject": "geometry",
-        "sectionLine": "4"
+        "sectionLine": "226"
       }
     },
     {
@@ -1184,12 +1604,293 @@
         "subject": "geometry",
         "sectionLine": "69"
       }
+    },
+    {
+      "id": "geometry-a840c6a36a",
+      "front": "What does ~ mean for triangles, and how do similar triangles differ from congruent ones?",
+      "back": "~ means 'is similar to' — same SHAPE but not necessarily the same size.\nSimilar triangles have: all corresponding angles equal AND all corresponding sides in the same ratio (proportion).\nCongruent (≅) is a special case of similar where the ratio is 1:1 (same size).\nOrder of letters still matters: △ABC ~ △DEF means ∠A = ∠D, ∠B = ∠E, ∠C = ∠F.",
+      "tags": [
+        "similarity-meaning"
+      ],
+      "difficulty": "medium",
+      "source": "Similarity - CAPS_similar-triangles",
+      "sourceFile": "Similarity - CAPS_similar-triangles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "81"
+      }
+    },
+    {
+      "id": "geometry-a734799d2e",
+      "front": "State the condition for two triangles to be similar (the equiangular rule).",
+      "back": "If two triangles are equiangular (all three pairs of corresponding angles equal), then they are similar — their corresponding sides are in proportion.\nReason wording: '∠∠∠' or 'equiangular △s'.\nNote: you only need to show TWO pairs of equal angles, because the third pair is then automatically equal (∠ sum of △).",
+      "tags": [
+        "equiangular"
+      ],
+      "difficulty": "medium",
+      "source": "Similarity - CAPS_similar-triangles",
+      "sourceFile": "Similarity - CAPS_similar-triangles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "173"
+      }
+    },
+    {
+      "id": "geometry-824fdb20fe",
+      "front": "△ABC ~ △DEF. AB = 4, BC = 6, DE = 6. Find EF.",
+      "back": "Corresponding sides are in the same ratio:\nAB/DE = BC/EF\n4/6 = 6/EF\nCross-multiply: 4 × EF = 6 × 6\n4 EF = 36\nEF = 9.\nMethod: pair each side with its CORRESPONDING side using the letter order, then build one fraction = another and cross-multiply.",
+      "tags": [
+        "proportion-missing-side"
+      ],
+      "difficulty": "medium",
+      "source": "Similarity - CAPS_similar-triangles",
+      "sourceFile": "Similarity - CAPS_similar-triangles.yml"
+    },
+    {
+      "id": "geometry-f13031a3d3",
+      "front": "Two similar triangles have scale factor (ratio) 2:5. The smaller triangle has a side of 8 cm. Find the matching side of the larger triangle.",
+      "back": "Let the larger side = x.\nsmall/large = 2/5\n8/x = 2/5\n2x = 8 × 5 = 40\nx = 20 cm.\nThe ratio of any pair of corresponding sides equals the scale factor 2:5. Check: 8:20 simplifies to 2:5 ✓.",
+      "tags": [
+        "scale-factor"
+      ],
+      "difficulty": "medium",
+      "source": "Similarity - CAPS_similar-triangles",
+      "sourceFile": "Similarity - CAPS_similar-triangles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "81"
+      }
+    },
+    {
+      "id": "geometry-029db3a9cb",
+      "front": "A 1,5 m tall person casts a 2 m shadow. A nearby tree casts a 10 m shadow at the same time. How tall is the tree (similar triangles)?",
+      "back": "The sun's rays make equal angles, so the two triangles are equiangular ⇒ similar.\nheight/shadow is the same ratio for both:\nperson: 1,5/2 = tree: h/10\nh/10 = 1,5/2\n2h = 1,5 × 10 = 15\nh = 7,5 m.\nThe tree is 7,5 m tall.",
+      "tags": [
+        "similarity-application"
+      ],
+      "difficulty": "medium",
+      "source": "Similarity - CAPS_similar-triangles",
+      "sourceFile": "Similarity - CAPS_similar-triangles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "81"
+      }
+    },
+    {
+      "id": "geometry-85e5a5e7e1",
+      "front": "Name the four transformations and state which ones change SIZE and which change ORIENTATION.",
+      "back": "Translation (slide), Reflection (flip), Rotation (turn), Enlargement/Reduction (resize).\nSize: only enlargement/reduction changes size. Translation, reflection and rotation keep size and shape the same — they are 'rigid' (congruent image).\nOrientation: reflection REVERSES orientation (mirror image); rotation turns it; translation keeps orientation; enlargement keeps orientation but changes size.",
+      "tags": [
+        "transformations-overview"
+      ],
+      "difficulty": "medium",
+      "source": "Transformation Geometry - CAPS_transformations",
+      "sourceFile": "Transformation Geometry - CAPS_transformations.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "289"
+      }
+    },
+    {
+      "id": "geometry-7e84a20d77",
+      "front": "Give the coordinate rule for a translation, and translate A(2;−3) by 4 units right and 5 units up.",
+      "back": "Rule: (x;y) → (x + a; y + b), where a = horizontal shift (right +, left −) and b = vertical shift (up +, down −).\nHere a = +4, b = +5:\nA(2;−3) → (2 + 4; −3 + 5) = A'(6;2).\nSize, shape and orientation are unchanged.",
+      "tags": [
+        "translation-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Transformation Geometry - CAPS_transformations",
+      "sourceFile": "Transformation Geometry - CAPS_transformations.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "264"
+      }
+    },
+    {
+      "id": "geometry-bd7a74008e",
+      "front": "Give the reflection rules in the x-axis, the y-axis and the line y = x, with one example each for P(3;5).",
+      "back": "Reflection in x-axis: (x;y) → (x;−y).  P(3;5) → (3;−5).\nReflection in y-axis: (x;y) → (−x;y).  P(3;5) → (−3;5).\nReflection in y = x: (x;y) → (y;x) (swap the coordinates).  P(3;5) → (5;3).\nA reflection produces a mirror image — orientation is reversed but size and shape stay the same.",
+      "tags": [
+        "reflection-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Transformation Geometry - CAPS_transformations",
+      "sourceFile": "Transformation Geometry - CAPS_transformations.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "273"
+      }
+    },
+    {
+      "id": "geometry-41d4219fe2",
+      "front": "Give the rotation rules about the ORIGIN for 90° and 180°, with examples for B(4;1).",
+      "back": "Rotation 90° anticlockwise: (x;y) → (−y;x).  B(4;1) → (−1;4).\nRotation 90° clockwise: (x;y) → (y;−x).  B(4;1) → (1;−4).\nRotation 180° (either direction): (x;y) → (−x;−y).  B(4;1) → (−4;−1).\nSize and shape are kept; only the orientation/position turns about (0;0).",
+      "tags": [
+        "rotation-rules"
+      ],
+      "difficulty": "medium",
+      "source": "Transformation Geometry - CAPS_transformations",
+      "sourceFile": "Transformation Geometry - CAPS_transformations.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "281"
+      }
+    },
+    {
+      "id": "geometry-b5f91b14dd",
+      "front": "Give the coordinate rule for an enlargement through the origin with scale factor k, and enlarge C(2;−3) by factor 3.",
+      "back": "Rule: (x;y) → (kx; ky).\nC(2;−3) with k = 3 → (3×2; 3×−3) = C'(6;−9).\nScale factor k > 1 ⇒ enlargement (bigger); 0 < k < 1 ⇒ reduction (smaller, e.g. k = ½ halves it).\nThe image is SIMILAR to the original: same shape, lengths multiplied by k, area multiplied by k².",
+      "tags": [
+        "enlargement-rule"
+      ],
+      "difficulty": "medium",
+      "source": "Transformation Geometry - CAPS_transformations",
+      "sourceFile": "Transformation Geometry - CAPS_transformations.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "289"
+      }
+    },
+    {
+      "id": "geometry-983004f2d5",
+      "front": "Under an enlargement with scale factor 4, a shape has area 5 cm². What is the image's area, and why?",
+      "back": "Area is multiplied by k² (the SQUARE of the scale factor), not by k.\nk = 4, so k² = 16.\nImage area = 5 × 16 = 80 cm².\nReason: enlargement scales every LENGTH by k, and area depends on length × length, hence k². (Perimeter, being a length, scales by k = 4.)",
+      "tags": [
+        "enlargement-area"
+      ],
+      "difficulty": "medium",
+      "source": "Transformation Geometry - CAPS_transformations",
+      "sourceFile": "Transformation Geometry - CAPS_transformations.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "303"
+      }
+    },
+    {
+      "id": "geometry-b9a50122a8",
+      "front": "Classify triangles BY THEIR SIDES. Name each type and its property.",
+      "back": "Equilateral: all 3 sides equal AND all 3 angles equal (each 60°).\nIsosceles: exactly 2 sides equal; the 2 angles opposite those equal sides are equal (base angles).\nScalene: all 3 sides different, so all 3 angles different.\nNotation: equal sides are shown with matching tick marks.",
+      "tags": [
+        "triangle-by-sides"
+      ],
+      "difficulty": "medium",
+      "source": "Triangles - CAPS_classification-angles",
+      "sourceFile": "Triangles - CAPS_classification-angles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "69"
+      }
+    },
+    {
+      "id": "geometry-c14a1ae172",
+      "front": "Classify triangles BY THEIR ANGLES.",
+      "back": "Acute-angled: all 3 angles less than 90°.\nRight-angled: one angle exactly 90° (the side opposite it is the hypotenuse — the longest side).\nObtuse-angled: one angle greater than 90° (a triangle can have at most ONE obtuse or right angle, since the three add to 180°).",
+      "tags": [
+        "triangle-by-angles"
+      ],
+      "difficulty": "medium",
+      "source": "Triangles - CAPS_classification-angles",
+      "sourceFile": "Triangles - CAPS_classification-angles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "130"
+      }
+    },
+    {
+      "id": "geometry-24ea8758a5",
+      "front": "State the angle-sum property of a triangle and the acceptable reason.",
+      "back": "The three interior angles of any triangle add up to 180°.\nAcceptable reason: '∠ sum of △' (sum of angles in a triangle / interior ∠s of △).\nExample: if two angles are 50° and 70°, the third = 180° − 50° − 70° = 60° (∠ sum of △).",
+      "tags": [
+        "angle-sum-triangle"
+      ],
+      "difficulty": "medium",
+      "source": "Triangles - CAPS_classification-angles",
+      "sourceFile": "Triangles - CAPS_classification-angles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "69"
+      }
+    },
+    {
+      "id": "geometry-13b6b5f5b6",
+      "front": "In △ABC, ∠A = 3x, ∠B = 2x and ∠C = x. Find x and each angle.",
+      "back": "∠A + ∠B + ∠C = 180°   (∠ sum of △)\n3x + 2x + x = 180°\n6x = 180°\nx = 30°\n∴ ∠A = 90°, ∠B = 60°, ∠C = 30°.\nCheck: 90 + 60 + 30 = 180 ✓",
+      "tags": [
+        "angle-sum-triangle"
+      ],
+      "difficulty": "medium",
+      "source": "Triangles - CAPS_classification-angles",
+      "sourceFile": "Triangles - CAPS_classification-angles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-2338c386f3",
+      "front": "State the EXTERIOR-ANGLE theorem of a triangle and its acceptable reason.",
+      "back": "The exterior angle of a triangle equals the SUM of the two opposite (non-adjacent) interior angles.\nAcceptable reason: 'ext ∠ of △'.\nIf the exterior angle at C is ext-C, then ext-C = ∠A + ∠B.\nConsequence: the exterior angle is always bigger than either opposite interior angle.",
+      "tags": [
+        "exterior-angle-theorem"
+      ],
+      "difficulty": "medium",
+      "source": "Triangles - CAPS_classification-angles",
+      "sourceFile": "Triangles - CAPS_classification-angles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-1d011b6adf",
+      "front": "An exterior angle of a triangle is 125°. One opposite interior angle is 70°. Find the other opposite interior angle.",
+      "back": "ext ∠ = sum of opposite interior ∠s   (ext ∠ of △)\n125° = 70° + x\nx = 125° − 70°\nx = 55°\nWhy it works: the exterior angle + its adjacent interior angle = 180° (∠s on a straight line), and the three interior angles = 180°, so the exterior angle equals the other two.",
+      "tags": [
+        "exterior-angle-theorem"
+      ],
+      "difficulty": "medium",
+      "source": "Triangles - CAPS_classification-angles",
+      "sourceFile": "Triangles - CAPS_classification-angles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
+    },
+    {
+      "id": "geometry-d83f039f50",
+      "front": "In an isosceles △PQR, PQ = PR and ∠Q = 65°. Find ∠P.",
+      "back": "PQ = PR, so the base angles are equal:\n∠R = ∠Q = 65°   (∠s opposite equal sides / base ∠s of isosceles △)\n∠P + ∠Q + ∠R = 180°   (∠ sum of △)\n∠P = 180° − 65° − 65°\n∠P = 50°.\nPitfall: the equal angles lie opposite the equal SIDES — identify which side is the 'odd one' first.",
+      "tags": [
+        "isosceles-angles"
+      ],
+      "difficulty": "medium",
+      "source": "Triangles - CAPS_classification-angles",
+      "sourceFile": "Triangles - CAPS_classification-angles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "69"
+      }
+    },
+    {
+      "id": "geometry-d9cb9946c8",
+      "front": "The vertex angle of an isosceles triangle is 40°. Find each base angle.",
+      "back": "Let each base angle = x. They are equal (∠s opp equal sides).\nx + x + 40° = 180°   (∠ sum of △)\n2x = 140°\nx = 70°.\nSo each base angle is 70°.",
+      "tags": [
+        "isosceles-angles"
+      ],
+      "difficulty": "medium",
+      "source": "Triangles - CAPS_classification-angles",
+      "sourceFile": "Triangles - CAPS_classification-angles.yml",
+      "requires": {
+        "subject": "geometry",
+        "sectionLine": "31"
+      }
     }
   ],
   "triage": null,
   "guide": {
-    "chars": 9605,
-    "lines": 114,
+    "chars": 25967,
+    "lines": 381,
     "sections": [
       {
         "level": 1,
@@ -1256,10 +1957,160 @@
         "title": "Theorem of Pythagoras",
         "line": 101,
         "body": "In a right-angled triangle, the square of the hypotenuse equals the sum of the squares of the other two sides: c² = a² + b², where c (the hypotenuse) is opposite the right angle — reason **Pythagoras** / **Theorem of Pythagoras**.\n\n**Worked example:** legs 6 cm and 8 cm. hyp² = 6² + 8² = 36 + 64 = 100, so hyp = 10 cm.\n\n**Converse of Pythagoras:** if the square of the longest side equals the sum of the squares of the other two, the triangle is right-angled — reason **Converse Pythagoras** / **Converse Theorem of Pythagoras**. Use it to PROVE a right angle.\n\n**Worked example:** sides 5, 12, 13. Since 5² + 12² = 25 + 144 = 169 = 13², the triangle is right-angled (right angle opposite the 13 side).\n\n**Pitfall:** always quote the reason exactly and, for parallel-line reasons, name the parallel lines (e.g. \"alt ∠s; AB ∥ CD\"). Marks are lost for vague or missing reasons."
+      },
+      {
+        "level": 3,
+        "title": "Geometric Constructions",
+        "line": 113,
+        "body": "A construction is a drawing made with only a **compass** and an **unmarked straight-edge** — no protractor for angles and no reading of ruler markings to set lengths (except to lay off a given side). Marks are always given to the construction arcs that reveal your method, so keep all arcs light and visible; do not erase them.\n\n**Perpendicular bisector of a line segment AB.** Open the compass wider than half of AB. From A draw arcs above and below the line; with the same radius from B draw arcs that cut them, at P and Q. The line PQ cuts AB at its midpoint and at 90°. Every point on PQ is the same distance from A and B. If the radius is not wider than half of AB the arcs never meet.\n\n**Bisecting an angle ABC.** From the vertex B draw an arc cutting both arms at D and E. From D and from E (same radius) draw arcs that cross at F. Ray BF bisects the angle, so ∠ABF = ∠FBC.\n\n**Perpendiculars.** *At a point P on the line:* draw an arc from P cutting the line at A and B, then construct the perpendicular bisector of AB. *From a point P off the line:* draw an arc from P cutting the line at A and B, then from A and B draw arcs crossing on the far side at Q; PQ is perpendicular.\n\n**Parallel line through P.** Draw a transversal through P meeting the line at A, then copy the angle at A to P (using the compass to reproduce the arc width). Equal corresponding angles force the lines to be parallel.\n\n**Special angles.** A **60°** angle comes from the equilateral-triangle method: from A draw an arc cutting the line at C; with the same radius from C cut the arc at D; AD makes 60°. **30°** is a bisected 60°; **90°** is a perpendicular at a point; **45°** is a bisected 90°; **15°** is a bisected 30°.\n\n**Triangles and quadrilaterals.** Given three sides (SSS), draw the longest side, then swing two arcs of the other lengths to locate the third vertex — possible only if the two shorter sides add to more than the longest (triangle inequality). Given two sides and the included angle (SAS), draw one side, construct the angle, measure the second side along the new arm. A quadrilateral is built by splitting it along a diagonal into two triangles and constructing each in turn; a rectangle uses two 90° angles and the compass to set the equal sides."
+      },
+      {
+        "level": 3,
+        "title": "Triangles — Classification and Angle Properties",
+        "line": 130,
+        "body": "Triangles are classified two ways. **By sides:** *equilateral* (all three sides equal, hence all three angles 60°), *isosceles* (two equal sides, with the two base angles opposite them equal), and *scalene* (all sides — and angles — different). **By angles:** *acute* (all angles below 90°), *right-angled* (one 90° angle, with the hypotenuse opposite it as the longest side), and *obtuse* (one angle above 90°). A triangle can hold at most one right or obtuse angle.\n\n**Angle sum.** The three interior angles of any triangle add to 180°. The acceptable reason is \"∠ sum of △\". To find a missing angle, subtract the known angles from 180°; for angles given in terms of x, add them, set the sum equal to 180°, and solve. For example 3x + 2x + x = 180° gives x = 30°.\n\n**Exterior-angle theorem.** An exterior angle (formed by extending one side) equals the **sum of the two opposite interior angles**; the reason is \"ext ∠ of △\". This follows because the exterior angle plus its adjacent interior angle make 180° (∠s on a straight line), and the three interior angles also make 180°. So an exterior angle of 125° with one opposite interior angle of 70° gives the other as 125° − 70° = 55°. An exterior angle is always larger than either opposite interior angle.\n\n**Isosceles work.** Identify which side is the odd one out; the equal angles lie *opposite the equal sides* (reason: \"∠s opp equal sides\"). If a base angle is 65°, the other base angle is also 65° and the apex is 180° − 65° − 65° = 50°. If the apex is given, set each base angle to x and solve 2x + apex = 180°."
+      },
+      {
+        "level": 3,
+        "title": "Congruency in Practice",
+        "line": 141,
+        "body": "Two triangles are **congruent** (≅) when they have exactly the same shape and size — every pair of corresponding sides and angles is equal — even if one is flipped or turned. When you write △ABC ≅ △DEF the letter order encodes the correspondence: A↔D, B↔E, C↔F, so AB = DE, BC = EF, AC = DF and ∠A = ∠D, and so on. Writing the vertices in the wrong order loses marks.\n\n**The four conditions.** SSS (three sides), SAS (two sides and the *included* angle), AAS (two angles and a corresponding side), and RHS (right angle, hypotenuse, and one other side — for right-angled triangles only). AAA is **not** a congruency condition (it gives only similar triangles) and the arrangement SSA is invalid.\n\n**Setting out a proof.** State the two triangles, then list the three matching pairs each with its own reason (\"given\", \"common\", \"vertically opposite ∠s\", etc.), and finish with the conclusion and the condition in brackets. For SAS the equal angle must sit *between* the two equal sides; for RHS the equal long sides must be the hypotenuses.\n\n**Finding unknowns.** Only *after* proving congruency may you claim that corresponding parts are equal, with the reason \"corresp sides/∠s of ≅ △s\". So if △ABC ≅ △DEF and DE = 8 cm then AB = 8 cm. Always prove first, then extract the equal part."
+      },
+      {
+        "level": 3,
+        "title": "Similarity",
+        "line": 152,
+        "body": "Two triangles are **similar** (~) when they have the same shape but not necessarily the same size. This means all corresponding angles are equal *and* all corresponding sides are in the same ratio. Congruency is the special case of similarity where that ratio is 1:1. As with congruency, the letter order in △ABC ~ △DEF fixes the correspondence of angles and sides.\n\n**The equiangular condition.** If two triangles are equiangular — all three pairs of corresponding angles equal — they are similar; the reason is \"equiangular △s\" or \"∠∠∠\". You only need to show *two* pairs of equal angles, because the third pair then follows from the angle sum of a triangle.\n\n**Finding a missing side by proportion.** Pair each side with its corresponding side using the letter order, form one ratio equal to another, and cross-multiply. If AB = 4, BC = 6 and DE = 6 in △ABC ~ △DEF, then 4/6 = 6/EF gives EF = 9. The common ratio is the **scale factor**; for a 2:5 scale factor a side of 8 corresponds to a side of 20.\n\n**Applications.** Similar triangles model shadows and heights: a 1,5 m person with a 2 m shadow and a tree with a 10 m shadow give 1,5/2 = h/10, so the tree is 7,5 m tall. The sun's parallel rays make the two triangles equiangular, hence similar."
+      },
+      {
+        "level": 3,
+        "title": "Pythagoras Applications",
+        "line": 163,
+        "body": "The **Theorem of Pythagoras** applies only to **right-angled triangles**. The side opposite the right angle (90°) is the longest side, called the **hypotenuse**. The theorem states:\n\n> hypotenuse² = (short side)² + (short side)²\n\nIf we call the hypotenuse *h* and the two shorter sides *a* and *b*, then:\n\n**h² = a² + b²**     (Pythagoras)"
+      },
+      {
+        "level": 4,
+        "title": "Two cases — add or subtract",
+        "line": 173,
+        "body": "The single most useful idea is knowing whether to **add** or **subtract**:\n\n- **Finding the hypotenuse** (the longest side): **ADD** the squares of the two shorter sides.\n  - h² = a² + b²\n- **Finding a shorter side**: **SUBTRACT** the known short side's square from the hypotenuse's square. The hypotenuse (the largest number) goes first.\n  - a² = h² − b²\n\nAlways finish by taking the **square root** to get the length itself, and remember the answer is a length, so keep the units (cm, m, …)."
+      },
+      {
+        "level": 4,
+        "title": "Worked example 1 — finding the hypotenuse",
+        "line": 184,
+        "body": "The two shorter sides of a right-angled triangle are 6 cm and 8 cm. Find the hypotenuse.\n\n```\nh² = 6² + 8²     (Pythagoras)\nh² = 36 + 64\nh² = 100\nh  = √100\nh  = 10 cm\n```"
+      },
+      {
+        "level": 4,
+        "title": "Worked example 2 — a real-world (ladder) problem",
+        "line": 196,
+        "body": "A 5 m ladder leans against a wall, with its foot 3 m from the base of the wall. How high up the wall does it reach?\n\nFirst **sketch** the triangle and identify the hypotenuse: it is always opposite the 90° corner. The ladder leans across the right angle formed by the wall and the ground, so the **ladder (5 m) is the hypotenuse**. The ground distance (3 m) is one short side, and the wall height *h* is the other short side. We want a **shorter** side, so subtract:\n\n```\nh² = 5² − 3²     (Pythagoras)\nh² = 25 − 9\nh² = 16\nh  = √16\nh  = 4 m\n```\n\nThe ladder reaches **4 m** up the wall."
+      },
+      {
+        "level": 4,
+        "title": "The converse of Pythagoras",
+        "line": 212,
+        "body": "The **converse** lets you *test* whether a triangle is right-angled. Compare the square of the **longest** side with the sum of the squares of the other two:\n\n- If longest² = (other)² + (other)², the triangle **is** right-angled (right angle opposite the longest side).\n- If they are not equal, it is **not** right-angled.\n\n**Example:** Is a triangle with sides 7, 24 and 25 right-angled?\n```\nlongest²       = 25² = 625\nother two: 7² + 24² = 49 + 576 = 625\n```\nSince 625 = 625, the equation holds. ∴ the triangle **is** right-angled, with the right angle opposite the 25-side."
+      },
+      {
+        "level": 4,
+        "title": "Diagonals of rectangles",
+        "line": 226,
+        "body": "A diagonal splits a rectangle into two right-angled triangles, and the diagonal is the **hypotenuse**. For a 9 cm × 12 cm rectangle:\n```\nd² = 9² + 12² = 81 + 144 = 225\nd  = √225 = 15 cm\n```"
+      },
+      {
+        "level": 4,
+        "title": "Answers as surds",
+        "line": 234,
+        "body": "Sometimes the answer is not a whole number and is left as a **surd** (a √ that cannot be evaluated exactly). For short sides 2 cm and 3 cm:\n```\nh² = 2² + 3² = 4 + 9 = 13\nh  = √13 cm\n```\n√13 cannot be simplified (13 is prime, with no perfect-square factor), so leave it as √13. When a surd *does* have a perfect-square factor, simplify by pulling it out, e.g. √8 = √(4×2) = 2√2."
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls",
+        "line": 243,
+        "body": "- **Adding when you should subtract.** If you are looking for a shorter side, the hypotenuse² goes first and you subtract. Adding gives a wrong (too-large) answer.\n- **Forgetting the square root.** h² = 100 is *not* the answer; h = 10 is.\n- **Using it on a non-right triangle.** Pythagoras only works when there is a 90° angle.\n- **Mislabelling the hypotenuse.** It is always the side opposite the right angle — sketch first and mark it before substituting."
+      },
+      {
+        "level": 3,
+        "title": "Transformation Geometry",
+        "line": 251,
+        "body": "A **transformation** moves or resizes a shape. The original is the **object** and the result is the **image** (its points are marked with a dash, e.g. A → A'). There are **four** transformations to know:\n\n| Transformation | Plain word | Changes size? | Changes orientation? |\n|---|---|---|---|\n| Translation | slide | no | no |\n| Reflection | flip | no | yes (mirror image) |\n| Rotation | turn | no | yes (turned) |\n| Enlargement / Reduction | resize | **yes** | no |\n\nTranslation, reflection and rotation are **rigid** transformations: they keep size and shape, so the image is **congruent** (≅) to the object. Only an enlargement/reduction changes size, producing an image that is **similar** (~) to the object."
+      },
+      {
+        "level": 4,
+        "title": "1. Translation (slide)",
+        "line": 264,
+        "body": "Every point moves the same distance in the same direction.\n\n**Rule:** (x ; y) → (x + a ; y + b), where *a* is the horizontal shift (right +, left −) and *b* is the vertical shift (up +, down −).\n\n**Example:** Translate A(2 ; −3) by 4 right and 5 up (a = +4, b = +5):\nA(2 ; −3) → (2 + 4 ; −3 + 5) = **A'(6 ; 2)**. Size, shape and orientation are unchanged."
+      },
+      {
+        "level": 4,
+        "title": "2. Reflection (flip)",
+        "line": 273,
+        "body": "The image is a **mirror image** across a line; orientation is reversed, but size and shape stay the same.\n\n- Reflection in the **x-axis**: (x ; y) → (x ; −y).  P(3 ; 5) → (3 ; −5)\n- Reflection in the **y-axis**: (x ; y) → (−x ; y).  P(3 ; 5) → (−3 ; 5)\n- Reflection in the line **y = x**: (x ; y) → (y ; x) — **swap** the coordinates.  P(3 ; 5) → (5 ; 3)"
+      },
+      {
+        "level": 4,
+        "title": "3. Rotation (turn) about the origin",
+        "line": 281,
+        "body": "The shape turns about (0 ; 0); size and shape are kept.\n\n- **90° anticlockwise**: (x ; y) → (−y ; x).  B(4 ; 1) → (−1 ; 4)\n- **90° clockwise**: (x ; y) → (y ; −x).  B(4 ; 1) → (1 ; −4)\n- **180°** (either direction): (x ; y) → (−x ; −y).  B(4 ; 1) → (−4 ; −1)"
+      },
+      {
+        "level": 4,
+        "title": "4. Enlargement / Reduction through the origin",
+        "line": 289,
+        "body": "Every coordinate is multiplied by the **scale factor** *k*.\n\n**Rule:** (x ; y) → (kx ; ky).\n\n**Example:** Enlarge C(2 ; −3) by factor 3 (k = 3):\nC(2 ; −3) → (3×2 ; 3×−3) = **C'(6 ; −9)**.\n\n- **k > 1** ⇒ enlargement (bigger).\n- **0 < k < 1** ⇒ reduction (smaller); e.g. k = ½ halves the shape.\n\nThe image is **similar** to the object: same shape, every **length** multiplied by *k*."
+      },
+      {
+        "level": 4,
+        "title": "How enlargement affects length, perimeter and area",
+        "line": 303,
+        "body": "- **Length** (and perimeter, which is a total length) is multiplied by **k**.\n- **Area** is multiplied by **k²** — the *square* of the scale factor — because area depends on length × length.\n\n**Example:** Under scale factor 4, a shape of area 5 cm² becomes:\nimage area = 5 × 4² = 5 × 16 = **80 cm²**.\nIts perimeter, by contrast, scales by k = 4."
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls",
+        "line": 312,
+        "body": "- **Reflection in y = x:** you swap coordinates (x ; y) → (y ; x); you do **not** change signs.\n- **Mixing up the rotation rules:** 90° anticlockwise is (−y ; x); 90° clockwise is (y ; −x). Check by sketching one point.\n- **Sign of the shift in a translation:** down and left are **negative**.\n- **Area scale factor:** multiply area by **k²**, not by k. This is the most common enlargement error.\n- **Confusing congruent and similar:** slides/flips/turns give congruent images (same size); only resizing gives a similar image of different size."
+      },
+      {
+        "level": 3,
+        "title": "3D Objects",
+        "line": 321,
+        "body": "A **3D object** (a solid) takes up space and is built from flat or curved surfaces. We describe every solid using three features."
+      },
+      {
+        "level": 4,
+        "title": "Faces, edges and vertices",
+        "line": 325,
+        "body": "- **Face:** a flat (or curved) surface of the solid.\n- **Edge:** a line segment where two faces meet.\n- **Vertex** (plural **vertices**): a corner point where edges meet.\n\n**Example — a cube:** 6 faces, 12 edges and 8 vertices.\n\nTo count reliably, work around the solid systematically: count top and bottom faces first, then the side faces; count the edges of the base, the top, and the verticals; count base corners then top corners."
+      },
+      {
+        "level": 4,
+        "title": "Nets",
+        "line": 335,
+        "body": "A **net** is a 2D flat pattern that folds up to form a 3D object. It shows every face \"opened out\" flat, with no gaps or overlaps. Building or drawing a net helps you see exactly which faces a solid has.\n\n- **Cube:** 6 equal squares. A common arrangement is a row of 4 squares with one square above and one below — a cross shape.\n- **Cylinder:** 2 circles (the top and bottom) + 1 rectangle (the curved surface \"unrolled\"). The length of the rectangle equals the **circumference** of the circle, which is 2πr.\n- **Rectangular prism (cuboid):** 6 rectangles — 2 identical end rectangles plus the 4 sides folded out around them.\n- **Triangular prism:** 2 triangles (the ends) + 3 rectangles (the sides).\n- **Square-based pyramid:** 1 square base + 4 triangular faces, one triangle hinged on each side of the square, all meeting at the apex.\n\nA useful check: the number of shapes in a net equals the number of **faces** of the solid."
+      },
+      {
+        "level": 4,
+        "title": "Naming and comparing prisms and pyramids",
+        "line": 347,
+        "body": "Both prisms and pyramids are **named after the shape of their base**.\n\n**Prism**\n- Has **two identical, parallel bases** joined by rectangles.\n- The **cross-section is the same all the way along** its length.\n- Examples: triangular prism, rectangular prism (= cuboid), hexagonal prism.\n\n**Pyramid**\n- Has **one base**, and all the other faces are **triangles** meeting at a single point called the **apex**.\n- Examples: square-based pyramid; triangular pyramid (= tetrahedron).\n\n**Key difference:** a prism has **2 identical bases** and a uniform cross-section; a pyramid has **1 base** and tapers to a **point**."
+      },
+      {
+        "level": 4,
+        "title": "Worked example — describing a triangular prism",
+        "line": 362,
+        "body": "A triangular prism has:\n- **Faces:** 5 — the 2 triangular ends and the 3 rectangular sides.\n- **Edges:** 9 — 3 around each triangular end (3 + 3 = 6) and 3 connecting them lengthways.\n- **Vertices:** 6 — 3 at each triangular end.\n\nIts **net** is 2 triangles + 3 rectangles, which matches its 5 faces."
+      },
+      {
+        "level": 4,
+        "title": "Common pitfalls",
+        "line": 371,
+        "body": "- **Vertex vs vertices:** \"vertex\" is one corner; \"vertices\" is more than one.\n- **Edges are where faces meet,** not the same as the number of faces — count them separately.\n- **Prism vs pyramid:** if it has two matching ends it is a prism; if it comes to a point it is a pyramid.\n- **Naming:** always name by the **base** shape, e.g. a pyramid on a square base is a \"square-based pyramid\", not just a \"pyramid\".\n- **Net check:** make sure a net has exactly the right number of each face with no piece missing or repeated, and that nothing overlaps when folded."
       }
     ],
     "firstParagraph": "### Quadrilaterals — Definitions, Properties and Areas\n\nA **quadrilateral** is any four-sided figure. The interior angles of *any* quadrilateral add up to **360°** (split it with one diagonal into two triangles: 2 × 180° = 360°).",
-    "body": "# Geometry — Complete Study Guide\n\n## Contents\n\n### Quadrilaterals — Definitions, Properties and Areas\n\nA **quadrilateral** is any four-sided figure. The interior angles of *any* quadrilateral add up to **360°** (split it with one diagonal into two triangles: 2 × 180° = 360°).\n\nThe special quadrilaterals lie on a \"pathway\": as you move from a general quadrilateral towards the **square**, properties **accumulate** — each shape keeps everything the earlier ones have and adds its own. The square is the \"ultimate\" quadrilateral: it is a rectangle *and* a rhombus (and therefore a parallelogram and a kite), so **all** their properties apply to it.\n\n**The shapes (definition · properties · area):**\n\n- **Trapezium** — one pair of opposite sides parallel. Area = ½(a + b)·h, where a and b are the two parallel sides and h the perpendicular distance between them (\"half the sum of the parallel sides × the distance between them\").\n- **Parallelogram** — two pairs of opposite sides parallel. Properties: opposite sides equal; opposite angles equal; **diagonals bisect one another** (but are not equal and not perpendicular in general). Area = base × height (perpendicular height).\n- **Rectangle** — a parallelogram with one right angle (so all four angles are 90°). Extra property: **diagonals are equal** (and still bisect each other). Area = ℓ × b.\n- **Rhombus** — a parallelogram with one pair of adjacent sides equal (so **all four sides equal**). Diagonals **bisect each other perpendicularly**, bisect the angles, and bisect the area. Area = ½ × product of diagonals (as for a kite) **or** base × height (as for a parallelogram).\n- **Kite** — two pairs of *adjacent* sides equal. Diagonals cut perpendicularly, and **one** diagonal bisects the other diagonal, the opposite angles and the area. Area = ½ × product of the diagonals (\"half the product of the diagonals\").\n- **Square** — the rectangle-and-rhombus combination: all sides equal, all angles 90°, diagonals equal, perpendicular, bisecting each other and the angles. Area = s².\n\n**Quick diagonal reference:**\n- Equal diagonals: rectangle, square.\n- Perpendicular diagonals: rhombus, kite, square.\n- Diagonals bisect each other: parallelogram, rectangle, rhombus, square (in a kite, only one does).\n\n**Worked example:** A rhombus has diagonals 6 cm and 8 cm. Area = ½ × 6 × 8 = 24 cm². (The same ½ × d₁ × d₂ formula works for a kite.)\n\n**Note on the perpendicular diagonals of a rhombus:** at the centre the half-angles satisfy 2x + 2y = 180° (angles of a triangle, or co-interior angles between the parallel sides), so dividing by 2 gives x + y = 90° — confirming the diagonals meet at a right angle.\n\n**Pitfalls:** use the *perpendicular* height for parallelogram/rhombus area, not the slanted side; remember that in a general parallelogram the diagonals are **not** equal; and that a kite has only **one** diagonal that bisects the other.\n\n\n### Geometry of Straight Lines (Angle Relationships)\n\n**Classifying angles by size:** acute (between 0° and 90°), right (exactly 90°), obtuse (between 90° and 180°), straight (exactly 180°), reflex (between 180° and 360°), revolution (exactly 360°).\n\n**Angles that add up to a special total:**\n- **Complementary** angles add up to **90°** (reason: \"comp ∠ˢ\").\n- **Supplementary** angles add up to **180°** (reason: \"sup ∠ˢ\").\n\n**At a single intersection (two lines crossing):** four angles form.\n- **Adjacent** angles share a vertex and an arm; adjacent angles on a straight line are **supplementary** (add to 180°) — reason \"∠ˢ on a str line\".\n- **Vertically opposite** angles sit directly opposite each other and are **EQUAL** — reason \"vert opp ∠ˢ\".\n\n**Two lines cut by a transversal:** a third line (the **transversal**) cutting two lines makes 8 angles. **Interior** angles lie between the two lines; **exterior** angles lie outside. Three named pairs matter:\n\n| Pair | Shape | Position | Fact when lines are PARALLEL | Reason |\n|------|-------|----------|------------------------------|--------|\n| Corresponding | F | same position at each crossing | EQUAL | corresp ∠ˢ ; ∥ lines |\n| Alternate (interior) | Z | opposite sides of transversal, between lines | EQUAL | alt ∠ˢ ; ∥ lines |\n| Co-interior | C / U | same side of transversal, between lines | SUPPLEMENTARY (add to 180°) | co-int ∠ˢ ; ∥ lines |\n\nImportant: corresponding and alternate angles are only **equal**, and co-interior angles only **supplementary**, **when the two lines are parallel**. If the lines are not parallel these pairs are *not necessarily* equal/supplementary. (Exterior alternate angles exist but are not used in answers.)\n\n**The FACTS (parallel lines).** When two parallel lines are cut by a transversal: corresponding angles are equal, (interior) alternate angles are equal, and co-interior angles are supplementary.\n\n**The CONVERSE (proving lines parallel).** The two lines are parallel if any one of these holds: corresponding angles equal, OR alternate angles equal, OR co-interior angles supplementary.\n\n**Worked example:** AB ∥ CD are cut by a transversal and one angle is 70°.\n- Its corresponding angle = 70° (corresp ∠ˢ ; ∥ lines).\n- Its alternate angle = 70° (alt ∠ˢ ; ∥ lines).\n- Its co-interior angle = 180° − 70° = 110° (co-int ∠ˢ ; ∥ lines).\n\n**Pitfalls:** always quote \"∥ lines\" in the reason when you use the parallel-line equality/supplementary facts; do not assume corresponding/alternate angles are equal unless the lines are marked parallel; and identify the pair by its shape — F (corresponding), Z (alternate), C/U (co-interior).\n\n\n### Euclidean Geometry: Theorem Statements, Acceptable Reasons & Pythagoras\n\nIn Grade 9 geometry every statement in a proof must be justified with an **acceptable reason** — the exact short wording the marker expects. Learn the statement AND its reason word-for-word; the abbreviation is worth the mark.\n\n#### Lines and angles\n- Adjacent angles on a straight line are supplementary (add to 180°) — **∠s on a str line**.\n- If adjacent angles are supplementary, the outer arms form a straight line — **adj ∠s supp**.\n- Angles in a revolution add to 360° — **∠s round a pt** OR **∠s in a rev**.\n- Vertically opposite angles are equal — **vert opp ∠s**.\n\n#### Parallel lines (always name the parallel lines)\n- AB ∥ CD ⇒ alternate angles equal — **alt ∠s; AB ∥ CD**.\n- AB ∥ CD ⇒ corresponding angles equal — **corresp ∠s; AB ∥ CD**.\n- AB ∥ CD ⇒ co-interior angles supplementary — **co-int ∠s; AB ∥ CD**.\n- Converses (to prove lines parallel): **alt ∠s =**, **corresp ∠s =**, **co-int ∠s supp**.\n\n#### Triangles\n- Interior angles add to 180° — **∠ sum in △** / **sum of ∠s in △** / **int ∠s in △**.\n- Exterior angle = sum of two interior opposite angles — **ext ∠ of △**.\n- Isosceles: angles opposite equal sides are equal — **∠s opp equal sides**; converse: sides opposite equal angles are equal — **sides opp equal ∠s**.\n- Midpoint theorem: segment joining midpoints of two sides is parallel to the third side and half its length — **Midpt Theorem**; converse: line from a midpoint parallel to another side bisects the third side — **line through midpt ∥ to 2ⁿᵈ side**.\n- Proportion: a line parallel to one side divides the other two proportionally — **line ∥ one side of △** / **prop theorem; name ∥ lines**; converse — **line divides two sides of △ in prop**.\n- Similarity: equiangular triangles have sides in proportion — **||| △s** / **equiangular △s**; converse — **Sides of △ in prop**.\n- Equal areas: triangles/parallelograms on the same base (or equal bases) between the same parallels have equal areas — **same base; same height** / **equal bases; equal height**.\n\n#### Congruency conditions\n- **SSS** (three sides), **SAS** / **S∠S** (two sides + included angle), **AAS** / **∠∠S** (two angles + corresponding side), **RHS** / **90°HS** (right angle, hypotenuse, side).\n\n#### Quadrilaterals\n- Interior angles add to 360° — **sum of ∠s in quad**.\n- Parallelogram: opposite sides parallel and equal — **opp sides of ∥m**; opposite angles equal — **opp ∠s of ∥m**; diagonals bisect each other — **diag of ∥m**; a diagonal bisects its area — **diag bisect area of ∥m**. Converses to prove a parallelogram use phrases like **opp sides of quad are ∥**, **opp sides of quad are =**, **opp ∠s of quad are =**, **diags of quad bisect each other**, **pair of opp sides = and ∥**.\n- Rhombus: diagonals bisect each other at right angles and bisect the interior angles, all sides equal — **diags of rhombus** / **sides of rhombus**.\n- Square: all sides equal — **sides of square**.\n- Rectangle: diagonals equal — **diags of rect**.\n- Kite: diagonals intersect at right angles, one diagonal bisects the other and bisects the opposite angles — **diags of kite**.\n\n#### Theorem of Pythagoras\nIn a right-angled triangle, the square of the hypotenuse equals the sum of the squares of the other two sides: c² = a² + b², where c (the hypotenuse) is opposite the right angle — reason **Pythagoras** / **Theorem of Pythagoras**.\n\n**Worked example:** legs 6 cm and 8 cm. hyp² = 6² + 8² = 36 + 64 = 100, so hyp = 10 cm.\n\n**Converse of Pythagoras:** if the square of the longest side equals the sum of the squares of the other two, the triangle is right-angled — reason **Converse Pythagoras** / **Converse Theorem of Pythagoras**. Use it to PROVE a right angle.\n\n**Worked example:** sides 5, 12, 13. Since 5² + 12² = 25 + 144 = 169 = 13², the triangle is right-angled (right angle opposite the 13 side).\n\n**Pitfall:** always quote the reason exactly and, for parallel-line reasons, name the parallel lines (e.g. \"alt ∠s; AB ∥ CD\"). Marks are lost for vague or missing reasons.\n\n\n",
+    "body": "# Geometry — Complete Study Guide\n\n## Contents\n\n### Quadrilaterals — Definitions, Properties and Areas\n\nA **quadrilateral** is any four-sided figure. The interior angles of *any* quadrilateral add up to **360°** (split it with one diagonal into two triangles: 2 × 180° = 360°).\n\nThe special quadrilaterals lie on a \"pathway\": as you move from a general quadrilateral towards the **square**, properties **accumulate** — each shape keeps everything the earlier ones have and adds its own. The square is the \"ultimate\" quadrilateral: it is a rectangle *and* a rhombus (and therefore a parallelogram and a kite), so **all** their properties apply to it.\n\n**The shapes (definition · properties · area):**\n\n- **Trapezium** — one pair of opposite sides parallel. Area = ½(a + b)·h, where a and b are the two parallel sides and h the perpendicular distance between them (\"half the sum of the parallel sides × the distance between them\").\n- **Parallelogram** — two pairs of opposite sides parallel. Properties: opposite sides equal; opposite angles equal; **diagonals bisect one another** (but are not equal and not perpendicular in general). Area = base × height (perpendicular height).\n- **Rectangle** — a parallelogram with one right angle (so all four angles are 90°). Extra property: **diagonals are equal** (and still bisect each other). Area = ℓ × b.\n- **Rhombus** — a parallelogram with one pair of adjacent sides equal (so **all four sides equal**). Diagonals **bisect each other perpendicularly**, bisect the angles, and bisect the area. Area = ½ × product of diagonals (as for a kite) **or** base × height (as for a parallelogram).\n- **Kite** — two pairs of *adjacent* sides equal. Diagonals cut perpendicularly, and **one** diagonal bisects the other diagonal, the opposite angles and the area. Area = ½ × product of the diagonals (\"half the product of the diagonals\").\n- **Square** — the rectangle-and-rhombus combination: all sides equal, all angles 90°, diagonals equal, perpendicular, bisecting each other and the angles. Area = s².\n\n**Quick diagonal reference:**\n- Equal diagonals: rectangle, square.\n- Perpendicular diagonals: rhombus, kite, square.\n- Diagonals bisect each other: parallelogram, rectangle, rhombus, square (in a kite, only one does).\n\n**Worked example:** A rhombus has diagonals 6 cm and 8 cm. Area = ½ × 6 × 8 = 24 cm². (The same ½ × d₁ × d₂ formula works for a kite.)\n\n**Note on the perpendicular diagonals of a rhombus:** at the centre the half-angles satisfy 2x + 2y = 180° (angles of a triangle, or co-interior angles between the parallel sides), so dividing by 2 gives x + y = 90° — confirming the diagonals meet at a right angle.\n\n**Pitfalls:** use the *perpendicular* height for parallelogram/rhombus area, not the slanted side; remember that in a general parallelogram the diagonals are **not** equal; and that a kite has only **one** diagonal that bisects the other.\n\n\n### Geometry of Straight Lines (Angle Relationships)\n\n**Classifying angles by size:** acute (between 0° and 90°), right (exactly 90°), obtuse (between 90° and 180°), straight (exactly 180°), reflex (between 180° and 360°), revolution (exactly 360°).\n\n**Angles that add up to a special total:**\n- **Complementary** angles add up to **90°** (reason: \"comp ∠ˢ\").\n- **Supplementary** angles add up to **180°** (reason: \"sup ∠ˢ\").\n\n**At a single intersection (two lines crossing):** four angles form.\n- **Adjacent** angles share a vertex and an arm; adjacent angles on a straight line are **supplementary** (add to 180°) — reason \"∠ˢ on a str line\".\n- **Vertically opposite** angles sit directly opposite each other and are **EQUAL** — reason \"vert opp ∠ˢ\".\n\n**Two lines cut by a transversal:** a third line (the **transversal**) cutting two lines makes 8 angles. **Interior** angles lie between the two lines; **exterior** angles lie outside. Three named pairs matter:\n\n| Pair | Shape | Position | Fact when lines are PARALLEL | Reason |\n|------|-------|----------|------------------------------|--------|\n| Corresponding | F | same position at each crossing | EQUAL | corresp ∠ˢ ; ∥ lines |\n| Alternate (interior) | Z | opposite sides of transversal, between lines | EQUAL | alt ∠ˢ ; ∥ lines |\n| Co-interior | C / U | same side of transversal, between lines | SUPPLEMENTARY (add to 180°) | co-int ∠ˢ ; ∥ lines |\n\nImportant: corresponding and alternate angles are only **equal**, and co-interior angles only **supplementary**, **when the two lines are parallel**. If the lines are not parallel these pairs are *not necessarily* equal/supplementary. (Exterior alternate angles exist but are not used in answers.)\n\n**The FACTS (parallel lines).** When two parallel lines are cut by a transversal: corresponding angles are equal, (interior) alternate angles are equal, and co-interior angles are supplementary.\n\n**The CONVERSE (proving lines parallel).** The two lines are parallel if any one of these holds: corresponding angles equal, OR alternate angles equal, OR co-interior angles supplementary.\n\n**Worked example:** AB ∥ CD are cut by a transversal and one angle is 70°.\n- Its corresponding angle = 70° (corresp ∠ˢ ; ∥ lines).\n- Its alternate angle = 70° (alt ∠ˢ ; ∥ lines).\n- Its co-interior angle = 180° − 70° = 110° (co-int ∠ˢ ; ∥ lines).\n\n**Pitfalls:** always quote \"∥ lines\" in the reason when you use the parallel-line equality/supplementary facts; do not assume corresponding/alternate angles are equal unless the lines are marked parallel; and identify the pair by its shape — F (corresponding), Z (alternate), C/U (co-interior).\n\n\n### Euclidean Geometry: Theorem Statements, Acceptable Reasons & Pythagoras\n\nIn Grade 9 geometry every statement in a proof must be justified with an **acceptable reason** — the exact short wording the marker expects. Learn the statement AND its reason word-for-word; the abbreviation is worth the mark.\n\n#### Lines and angles\n- Adjacent angles on a straight line are supplementary (add to 180°) — **∠s on a str line**.\n- If adjacent angles are supplementary, the outer arms form a straight line — **adj ∠s supp**.\n- Angles in a revolution add to 360° — **∠s round a pt** OR **∠s in a rev**.\n- Vertically opposite angles are equal — **vert opp ∠s**.\n\n#### Parallel lines (always name the parallel lines)\n- AB ∥ CD ⇒ alternate angles equal — **alt ∠s; AB ∥ CD**.\n- AB ∥ CD ⇒ corresponding angles equal — **corresp ∠s; AB ∥ CD**.\n- AB ∥ CD ⇒ co-interior angles supplementary — **co-int ∠s; AB ∥ CD**.\n- Converses (to prove lines parallel): **alt ∠s =**, **corresp ∠s =**, **co-int ∠s supp**.\n\n#### Triangles\n- Interior angles add to 180° — **∠ sum in △** / **sum of ∠s in △** / **int ∠s in △**.\n- Exterior angle = sum of two interior opposite angles — **ext ∠ of △**.\n- Isosceles: angles opposite equal sides are equal — **∠s opp equal sides**; converse: sides opposite equal angles are equal — **sides opp equal ∠s**.\n- Midpoint theorem: segment joining midpoints of two sides is parallel to the third side and half its length — **Midpt Theorem**; converse: line from a midpoint parallel to another side bisects the third side — **line through midpt ∥ to 2ⁿᵈ side**.\n- Proportion: a line parallel to one side divides the other two proportionally — **line ∥ one side of △** / **prop theorem; name ∥ lines**; converse — **line divides two sides of △ in prop**.\n- Similarity: equiangular triangles have sides in proportion — **||| △s** / **equiangular △s**; converse — **Sides of △ in prop**.\n- Equal areas: triangles/parallelograms on the same base (or equal bases) between the same parallels have equal areas — **same base; same height** / **equal bases; equal height**.\n\n#### Congruency conditions\n- **SSS** (three sides), **SAS** / **S∠S** (two sides + included angle), **AAS** / **∠∠S** (two angles + corresponding side), **RHS** / **90°HS** (right angle, hypotenuse, side).\n\n#### Quadrilaterals\n- Interior angles add to 360° — **sum of ∠s in quad**.\n- Parallelogram: opposite sides parallel and equal — **opp sides of ∥m**; opposite angles equal — **opp ∠s of ∥m**; diagonals bisect each other — **diag of ∥m**; a diagonal bisects its area — **diag bisect area of ∥m**. Converses to prove a parallelogram use phrases like **opp sides of quad are ∥**, **opp sides of quad are =**, **opp ∠s of quad are =**, **diags of quad bisect each other**, **pair of opp sides = and ∥**.\n- Rhombus: diagonals bisect each other at right angles and bisect the interior angles, all sides equal — **diags of rhombus** / **sides of rhombus**.\n- Square: all sides equal — **sides of square**.\n- Rectangle: diagonals equal — **diags of rect**.\n- Kite: diagonals intersect at right angles, one diagonal bisects the other and bisects the opposite angles — **diags of kite**.\n\n#### Theorem of Pythagoras\nIn a right-angled triangle, the square of the hypotenuse equals the sum of the squares of the other two sides: c² = a² + b², where c (the hypotenuse) is opposite the right angle — reason **Pythagoras** / **Theorem of Pythagoras**.\n\n**Worked example:** legs 6 cm and 8 cm. hyp² = 6² + 8² = 36 + 64 = 100, so hyp = 10 cm.\n\n**Converse of Pythagoras:** if the square of the longest side equals the sum of the squares of the other two, the triangle is right-angled — reason **Converse Pythagoras** / **Converse Theorem of Pythagoras**. Use it to PROVE a right angle.\n\n**Worked example:** sides 5, 12, 13. Since 5² + 12² = 25 + 144 = 169 = 13², the triangle is right-angled (right angle opposite the 13 side).\n\n**Pitfall:** always quote the reason exactly and, for parallel-line reasons, name the parallel lines (e.g. \"alt ∠s; AB ∥ CD\"). Marks are lost for vague or missing reasons.\n\n\n### Geometric Constructions\n\nA construction is a drawing made with only a **compass** and an **unmarked straight-edge** — no protractor for angles and no reading of ruler markings to set lengths (except to lay off a given side). Marks are always given to the construction arcs that reveal your method, so keep all arcs light and visible; do not erase them.\n\n**Perpendicular bisector of a line segment AB.** Open the compass wider than half of AB. From A draw arcs above and below the line; with the same radius from B draw arcs that cut them, at P and Q. The line PQ cuts AB at its midpoint and at 90°. Every point on PQ is the same distance from A and B. If the radius is not wider than half of AB the arcs never meet.\n\n**Bisecting an angle ABC.** From the vertex B draw an arc cutting both arms at D and E. From D and from E (same radius) draw arcs that cross at F. Ray BF bisects the angle, so ∠ABF = ∠FBC.\n\n**Perpendiculars.** *At a point P on the line:* draw an arc from P cutting the line at A and B, then construct the perpendicular bisector of AB. *From a point P off the line:* draw an arc from P cutting the line at A and B, then from A and B draw arcs crossing on the far side at Q; PQ is perpendicular.\n\n**Parallel line through P.** Draw a transversal through P meeting the line at A, then copy the angle at A to P (using the compass to reproduce the arc width). Equal corresponding angles force the lines to be parallel.\n\n**Special angles.** A **60°** angle comes from the equilateral-triangle method: from A draw an arc cutting the line at C; with the same radius from C cut the arc at D; AD makes 60°. **30°** is a bisected 60°; **90°** is a perpendicular at a point; **45°** is a bisected 90°; **15°** is a bisected 30°.\n\n**Triangles and quadrilaterals.** Given three sides (SSS), draw the longest side, then swing two arcs of the other lengths to locate the third vertex — possible only if the two shorter sides add to more than the longest (triangle inequality). Given two sides and the included angle (SAS), draw one side, construct the angle, measure the second side along the new arm. A quadrilateral is built by splitting it along a diagonal into two triangles and constructing each in turn; a rectangle uses two 90° angles and the compass to set the equal sides.\n\n\n### Triangles — Classification and Angle Properties\n\nTriangles are classified two ways. **By sides:** *equilateral* (all three sides equal, hence all three angles 60°), *isosceles* (two equal sides, with the two base angles opposite them equal), and *scalene* (all sides — and angles — different). **By angles:** *acute* (all angles below 90°), *right-angled* (one 90° angle, with the hypotenuse opposite it as the longest side), and *obtuse* (one angle above 90°). A triangle can hold at most one right or obtuse angle.\n\n**Angle sum.** The three interior angles of any triangle add to 180°. The acceptable reason is \"∠ sum of △\". To find a missing angle, subtract the known angles from 180°; for angles given in terms of x, add them, set the sum equal to 180°, and solve. For example 3x + 2x + x = 180° gives x = 30°.\n\n**Exterior-angle theorem.** An exterior angle (formed by extending one side) equals the **sum of the two opposite interior angles**; the reason is \"ext ∠ of △\". This follows because the exterior angle plus its adjacent interior angle make 180° (∠s on a straight line), and the three interior angles also make 180°. So an exterior angle of 125° with one opposite interior angle of 70° gives the other as 125° − 70° = 55°. An exterior angle is always larger than either opposite interior angle.\n\n**Isosceles work.** Identify which side is the odd one out; the equal angles lie *opposite the equal sides* (reason: \"∠s opp equal sides\"). If a base angle is 65°, the other base angle is also 65° and the apex is 180° − 65° − 65° = 50°. If the apex is given, set each base angle to x and solve 2x + apex = 180°.\n\n\n### Congruency in Practice\n\nTwo triangles are **congruent** (≅) when they have exactly the same shape and size — every pair of corresponding sides and angles is equal — even if one is flipped or turned. When you write △ABC ≅ △DEF the letter order encodes the correspondence: A↔D, B↔E, C↔F, so AB = DE, BC = EF, AC = DF and ∠A = ∠D, and so on. Writing the vertices in the wrong order loses marks.\n\n**The four conditions.** SSS (three sides), SAS (two sides and the *included* angle), AAS (two angles and a corresponding side), and RHS (right angle, hypotenuse, and one other side — for right-angled triangles only). AAA is **not** a congruency condition (it gives only similar triangles) and the arrangement SSA is invalid.\n\n**Setting out a proof.** State the two triangles, then list the three matching pairs each with its own reason (\"given\", \"common\", \"vertically opposite ∠s\", etc.), and finish with the conclusion and the condition in brackets. For SAS the equal angle must sit *between* the two equal sides; for RHS the equal long sides must be the hypotenuses.\n\n**Finding unknowns.** Only *after* proving congruency may you claim that corresponding parts are equal, with the reason \"corresp sides/∠s of ≅ △s\". So if △ABC ≅ △DEF and DE = 8 cm then AB = 8 cm. Always prove first, then extract the equal part.\n\n\n### Similarity\n\nTwo triangles are **similar** (~) when they have the same shape but not necessarily the same size. This means all corresponding angles are equal *and* all corresponding sides are in the same ratio. Congruency is the special case of similarity where that ratio is 1:1. As with congruency, the letter order in △ABC ~ △DEF fixes the correspondence of angles and sides.\n\n**The equiangular condition.** If two triangles are equiangular — all three pairs of corresponding angles equal — they are similar; the reason is \"equiangular △s\" or \"∠∠∠\". You only need to show *two* pairs of equal angles, because the third pair then follows from the angle sum of a triangle.\n\n**Finding a missing side by proportion.** Pair each side with its corresponding side using the letter order, form one ratio equal to another, and cross-multiply. If AB = 4, BC = 6 and DE = 6 in △ABC ~ △DEF, then 4/6 = 6/EF gives EF = 9. The common ratio is the **scale factor**; for a 2:5 scale factor a side of 8 corresponds to a side of 20.\n\n**Applications.** Similar triangles model shadows and heights: a 1,5 m person with a 2 m shadow and a tree with a 10 m shadow give 1,5/2 = h/10, so the tree is 7,5 m tall. The sun's parallel rays make the two triangles equiangular, hence similar.\n\n\n### Pythagoras Applications\n\nThe **Theorem of Pythagoras** applies only to **right-angled triangles**. The side opposite the right angle (90°) is the longest side, called the **hypotenuse**. The theorem states:\n\n> hypotenuse² = (short side)² + (short side)²\n\nIf we call the hypotenuse *h* and the two shorter sides *a* and *b*, then:\n\n**h² = a² + b²**     (Pythagoras)\n\n#### Two cases — add or subtract\n\nThe single most useful idea is knowing whether to **add** or **subtract**:\n\n- **Finding the hypotenuse** (the longest side): **ADD** the squares of the two shorter sides.\n  - h² = a² + b²\n- **Finding a shorter side**: **SUBTRACT** the known short side's square from the hypotenuse's square. The hypotenuse (the largest number) goes first.\n  - a² = h² − b²\n\nAlways finish by taking the **square root** to get the length itself, and remember the answer is a length, so keep the units (cm, m, …).\n\n#### Worked example 1 — finding the hypotenuse\n\nThe two shorter sides of a right-angled triangle are 6 cm and 8 cm. Find the hypotenuse.\n\n```\nh² = 6² + 8²     (Pythagoras)\nh² = 36 + 64\nh² = 100\nh  = √100\nh  = 10 cm\n```\n\n#### Worked example 2 — a real-world (ladder) problem\n\nA 5 m ladder leans against a wall, with its foot 3 m from the base of the wall. How high up the wall does it reach?\n\nFirst **sketch** the triangle and identify the hypotenuse: it is always opposite the 90° corner. The ladder leans across the right angle formed by the wall and the ground, so the **ladder (5 m) is the hypotenuse**. The ground distance (3 m) is one short side, and the wall height *h* is the other short side. We want a **shorter** side, so subtract:\n\n```\nh² = 5² − 3²     (Pythagoras)\nh² = 25 − 9\nh² = 16\nh  = √16\nh  = 4 m\n```\n\nThe ladder reaches **4 m** up the wall.\n\n#### The converse of Pythagoras\n\nThe **converse** lets you *test* whether a triangle is right-angled. Compare the square of the **longest** side with the sum of the squares of the other two:\n\n- If longest² = (other)² + (other)², the triangle **is** right-angled (right angle opposite the longest side).\n- If they are not equal, it is **not** right-angled.\n\n**Example:** Is a triangle with sides 7, 24 and 25 right-angled?\n```\nlongest²       = 25² = 625\nother two: 7² + 24² = 49 + 576 = 625\n```\nSince 625 = 625, the equation holds. ∴ the triangle **is** right-angled, with the right angle opposite the 25-side.\n\n#### Diagonals of rectangles\n\nA diagonal splits a rectangle into two right-angled triangles, and the diagonal is the **hypotenuse**. For a 9 cm × 12 cm rectangle:\n```\nd² = 9² + 12² = 81 + 144 = 225\nd  = √225 = 15 cm\n```\n\n#### Answers as surds\n\nSometimes the answer is not a whole number and is left as a **surd** (a √ that cannot be evaluated exactly). For short sides 2 cm and 3 cm:\n```\nh² = 2² + 3² = 4 + 9 = 13\nh  = √13 cm\n```\n√13 cannot be simplified (13 is prime, with no perfect-square factor), so leave it as √13. When a surd *does* have a perfect-square factor, simplify by pulling it out, e.g. √8 = √(4×2) = 2√2.\n\n#### Common pitfalls\n\n- **Adding when you should subtract.** If you are looking for a shorter side, the hypotenuse² goes first and you subtract. Adding gives a wrong (too-large) answer.\n- **Forgetting the square root.** h² = 100 is *not* the answer; h = 10 is.\n- **Using it on a non-right triangle.** Pythagoras only works when there is a 90° angle.\n- **Mislabelling the hypotenuse.** It is always the side opposite the right angle — sketch first and mark it before substituting.\n\n\n### Transformation Geometry\n\nA **transformation** moves or resizes a shape. The original is the **object** and the result is the **image** (its points are marked with a dash, e.g. A → A'). There are **four** transformations to know:\n\n| Transformation | Plain word | Changes size? | Changes orientation? |\n|---|---|---|---|\n| Translation | slide | no | no |\n| Reflection | flip | no | yes (mirror image) |\n| Rotation | turn | no | yes (turned) |\n| Enlargement / Reduction | resize | **yes** | no |\n\nTranslation, reflection and rotation are **rigid** transformations: they keep size and shape, so the image is **congruent** (≅) to the object. Only an enlargement/reduction changes size, producing an image that is **similar** (~) to the object.\n\n#### 1. Translation (slide)\n\nEvery point moves the same distance in the same direction.\n\n**Rule:** (x ; y) → (x + a ; y + b), where *a* is the horizontal shift (right +, left −) and *b* is the vertical shift (up +, down −).\n\n**Example:** Translate A(2 ; −3) by 4 right and 5 up (a = +4, b = +5):\nA(2 ; −3) → (2 + 4 ; −3 + 5) = **A'(6 ; 2)**. Size, shape and orientation are unchanged.\n\n#### 2. Reflection (flip)\n\nThe image is a **mirror image** across a line; orientation is reversed, but size and shape stay the same.\n\n- Reflection in the **x-axis**: (x ; y) → (x ; −y).  P(3 ; 5) → (3 ; −5)\n- Reflection in the **y-axis**: (x ; y) → (−x ; y).  P(3 ; 5) → (−3 ; 5)\n- Reflection in the line **y = x**: (x ; y) → (y ; x) — **swap** the coordinates.  P(3 ; 5) → (5 ; 3)\n\n#### 3. Rotation (turn) about the origin\n\nThe shape turns about (0 ; 0); size and shape are kept.\n\n- **90° anticlockwise**: (x ; y) → (−y ; x).  B(4 ; 1) → (−1 ; 4)\n- **90° clockwise**: (x ; y) → (y ; −x).  B(4 ; 1) → (1 ; −4)\n- **180°** (either direction): (x ; y) → (−x ; −y).  B(4 ; 1) → (−4 ; −1)\n\n#### 4. Enlargement / Reduction through the origin\n\nEvery coordinate is multiplied by the **scale factor** *k*.\n\n**Rule:** (x ; y) → (kx ; ky).\n\n**Example:** Enlarge C(2 ; −3) by factor 3 (k = 3):\nC(2 ; −3) → (3×2 ; 3×−3) = **C'(6 ; −9)**.\n\n- **k > 1** ⇒ enlargement (bigger).\n- **0 < k < 1** ⇒ reduction (smaller); e.g. k = ½ halves the shape.\n\nThe image is **similar** to the object: same shape, every **length** multiplied by *k*.\n\n#### How enlargement affects length, perimeter and area\n\n- **Length** (and perimeter, which is a total length) is multiplied by **k**.\n- **Area** is multiplied by **k²** — the *square* of the scale factor — because area depends on length × length.\n\n**Example:** Under scale factor 4, a shape of area 5 cm² becomes:\nimage area = 5 × 4² = 5 × 16 = **80 cm²**.\nIts perimeter, by contrast, scales by k = 4.\n\n#### Common pitfalls\n\n- **Reflection in y = x:** you swap coordinates (x ; y) → (y ; x); you do **not** change signs.\n- **Mixing up the rotation rules:** 90° anticlockwise is (−y ; x); 90° clockwise is (y ; −x). Check by sketching one point.\n- **Sign of the shift in a translation:** down and left are **negative**.\n- **Area scale factor:** multiply area by **k²**, not by k. This is the most common enlargement error.\n- **Confusing congruent and similar:** slides/flips/turns give congruent images (same size); only resizing gives a similar image of different size.\n\n\n### 3D Objects\n\nA **3D object** (a solid) takes up space and is built from flat or curved surfaces. We describe every solid using three features.\n\n#### Faces, edges and vertices\n\n- **Face:** a flat (or curved) surface of the solid.\n- **Edge:** a line segment where two faces meet.\n- **Vertex** (plural **vertices**): a corner point where edges meet.\n\n**Example — a cube:** 6 faces, 12 edges and 8 vertices.\n\nTo count reliably, work around the solid systematically: count top and bottom faces first, then the side faces; count the edges of the base, the top, and the verticals; count base corners then top corners.\n\n#### Nets\n\nA **net** is a 2D flat pattern that folds up to form a 3D object. It shows every face \"opened out\" flat, with no gaps or overlaps. Building or drawing a net helps you see exactly which faces a solid has.\n\n- **Cube:** 6 equal squares. A common arrangement is a row of 4 squares with one square above and one below — a cross shape.\n- **Cylinder:** 2 circles (the top and bottom) + 1 rectangle (the curved surface \"unrolled\"). The length of the rectangle equals the **circumference** of the circle, which is 2πr.\n- **Rectangular prism (cuboid):** 6 rectangles — 2 identical end rectangles plus the 4 sides folded out around them.\n- **Triangular prism:** 2 triangles (the ends) + 3 rectangles (the sides).\n- **Square-based pyramid:** 1 square base + 4 triangular faces, one triangle hinged on each side of the square, all meeting at the apex.\n\nA useful check: the number of shapes in a net equals the number of **faces** of the solid.\n\n#### Naming and comparing prisms and pyramids\n\nBoth prisms and pyramids are **named after the shape of their base**.\n\n**Prism**\n- Has **two identical, parallel bases** joined by rectangles.\n- The **cross-section is the same all the way along** its length.\n- Examples: triangular prism, rectangular prism (= cuboid), hexagonal prism.\n\n**Pyramid**\n- Has **one base**, and all the other faces are **triangles** meeting at a single point called the **apex**.\n- Examples: square-based pyramid; triangular pyramid (= tetrahedron).\n\n**Key difference:** a prism has **2 identical bases** and a uniform cross-section; a pyramid has **1 base** and tapers to a **point**.\n\n#### Worked example — describing a triangular prism\n\nA triangular prism has:\n- **Faces:** 5 — the 2 triangular ends and the 3 rectangular sides.\n- **Edges:** 9 — 3 around each triangular end (3 + 3 = 6) and 3 connecting them lengthways.\n- **Vertices:** 6 — 3 at each triangular end.\n\nIts **net** is 2 triangles + 3 rectangles, which matches its 5 faces.\n\n#### Common pitfalls\n\n- **Vertex vs vertices:** \"vertex\" is one corner; \"vertices\" is more than one.\n- **Edges are where faces meet,** not the same as the number of faces — count them separately.\n- **Prism vs pyramid:** if it has two matching ends it is a prism; if it comes to a point it is a pyramid.\n- **Naming:** always name by the **base** shape, e.g. a pyramid on a square base is a \"square-based pyramid\", not just a \"pyramid\".\n- **Net check:** make sure a net has exactly the right number of each face with no piece missing or repeated, and that nothing overlaps when folded.\n\n\n",
     "infographics": [],
     "videos": [],
     "audio": []

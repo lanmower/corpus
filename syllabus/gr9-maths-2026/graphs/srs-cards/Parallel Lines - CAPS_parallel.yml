@@ -1,0 +1,24 @@
+# Gr 9 Maths CAPS — graphs / Gradient Relationships
+deck: "Corpus::Gr9 Maths::Gradient Relationships"
+notes:
+  - guid: 3c7a1e5f9b0d2864
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient Relationships"
+    fields:
+      Front: "What is the gradient rule for PARALLEL lines?"
+      Back: "Parallel lines never meet and have the SAME steepness, so they have EQUAL gradients: m₁ = m₂.\nExample: y = 3x + 1 and y = 3x − 4 are parallel because both have gradient 3 (only the y-intercept differs).\nTo test if two lines are parallel, compare their gradients — equal means parallel."
+    tags: ["parallel-lines", "subject:graphs"]
+  - guid: 8e2c6a0f4b9d1573
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient Relationships"
+    fields:
+      Front: "Are y = 2x + 5 and 2y = 4x − 3 parallel? Show your working."
+      Back: "Put each in y = mx + c form.\n• First: y = 2x + 5 → m = 2.\n• Second: 2y = 4x − 3 → divide by 2 → y = 2x − 3/2 → m = 2.\nBoth gradients are 2, so YES the lines are parallel.\nPitfall: read m only after y is the subject; do not compare 2x with 4x directly."
+    tags: ["parallel-lines", "subject:graphs"]
+  - guid: 1f5a9c3e7b0d2648
+    noteType: Basic
+    deck: "Corpus::Gr9 Maths::Gradient Relationships"
+    fields:
+      Front: "Find the equation of the line parallel to y = −3x + 2 passing through (1;4)."
+      Back: "Parallel → same gradient, so m = −3.\ny = −3x + c. Substitute (1;4):\n4 = −3(1) + c → 4 = −3 + c → c = 7.\nEquation: y = −3x + 7.\nCheck: 4 ≠ the other line's value at x=1, so it is a different (parallel) line. ✓"
+    tags: ["parallel-lines", "subject:graphs"]

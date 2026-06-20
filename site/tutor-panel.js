@@ -632,10 +632,16 @@ function applyResponsiveWidth() {
         // it would fight the !important sheet rules and the height transition.
         panelContainer.style.width = '';
         document.body.classList.toggle('tutor-sheet-open', !isPanelCollapsed);
+        // The bottom-sheet path reserves vertical space; clear any desktop gutter.
+        document.body.style.removeProperty('--tutor-reserve');
     } else {
         // Desktop: collapsed strip vs configured width. Clear the body class.
         document.body.classList.remove('tutor-sheet-open');
-        panelContainer.style.width = isPanelCollapsed ? '52px' : ((config.panelWidth || 30) + '%');
+        const w = isPanelCollapsed ? '52px' : ((config.panelWidth || 30) + '%');
+        panelContainer.style.width = w;
+        // The panel is position:fixed right:0, so reserve the same width as page
+        // padding-right — otherwise it overlays (clips) the right of main content.
+        document.body.style.setProperty('--tutor-reserve', w);
     }
 
     // The chat body is hidden when collapsed via the .tutor-collapsed class in CSS

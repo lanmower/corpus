@@ -1164,6 +1164,14 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
                 transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tutor-panel-root.tutor-collapsed { box-shadow: none; }
+/* Reserve desktop page width for the position:fixed tutor panel so it docks beside
+   the content instead of overlaying (clipping) the right of every card. The width
+   is set inline on body by applyResponsiveWidth (matches the panel width / collapsed
+   strip); mobile clears it and uses the bottom-sheet padding instead. */
+/* html carries .ds-247420, so the SDK reset `.ds-247420 body { padding:0 }` (0,1,1)
+   outranks a plain `body` rule; match its specificity-plus to win the gutter. */
+html.ds-247420 body { padding-right: var(--tutor-reserve, 0px); transition: padding-right 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+@media (prefers-reduced-motion: reduce) { html.ds-247420 body { transition: none; } }
 /* Explicit reduced-motion guard for the panel + mobile body reflow (the global
    blanket rule covers this, but make the intent unambiguous across desktop/mobile). */
 @media (prefers-reduced-motion: reduce) {
@@ -1263,6 +1271,13 @@ body.really-late { filter: brightness(0.7) sepia(0.2); }
    runs underneath the overlay controls. */
 .tutor-panel-root .chat-head .sub { display: none; }
 .tutor-panel-root .chat-head { padding-right: 210px; }
+/* The overlay control cluster (model pill + buttons) occupies the right 210px; the
+   title must ellipsis within the remaining space instead of hard-clipping mid-word
+   at narrow panel widths. */
+.tutor-panel-root .chat-head > span:nth-child(2),
+.tutor-panel-root .chat-head .ds-chat-title {
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0;
+}
 /* empty-state starter chips overlay (AICat has no empty slot) */
 #tutor-empty-slot {
     position: absolute; left: 0; right: 0; top: 64px; z-index: 4;
@@ -1722,6 +1737,9 @@ details.collapsible[open] > summary::after { content: '(^)'; }
 .today-primary { margin: 14px 0 12px; }
 .today-primary .primary-action {
     display: flex; flex-direction: column; gap: 4px;
+    /* base .primary-action sets align-items:center for the inline pill; reset it
+       so the column label/meta read left-aligned like the other today cards. */
+    align-items: flex-start;
     padding: 18px 22px; border-radius: var(--r-md);
     background: var(--panel-1); border: 1px solid var(--border-strong);
     text-decoration: none; color: var(--fg);

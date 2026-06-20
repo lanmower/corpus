@@ -8,20 +8,6 @@ notes:
       Front: "Define faces, edges and vertices of a 3D object."
       Back: "Face: a flat (or curved) surface of the solid.\nEdge: a line segment where two faces meet.\nVertex (plural vertices): a corner point where edges meet.\nExample — a cube has 6 faces, 12 edges and 8 vertices."
     tags: ["faces-edges-vertices", "subject:geometry"]
-  - guid: b1b2f0c78f0d1342
-    noteType: Basic
-    deck: "Corpus::Gr9 Maths::3D Objects"
-    fields:
-      Front: "State Euler's formula for polyhedra and use it to check a cube."
-      Back: "Euler's formula: F + V − E = 2 (Faces + Vertices − Edges = 2).\nCube: F = 6, V = 8, E = 12.\n6 + 8 − 12 = 2 ✓\nThe formula holds for any polyhedron (solid with flat faces). It does NOT apply to a cylinder/cone/sphere (they have curved surfaces)."
-    tags: ["euler-formula", "subject:geometry"]
-  - guid: c3c3a1d89a1e2453
-    noteType: Basic
-    deck: "Corpus::Gr9 Maths::3D Objects"
-    fields:
-      Front: "A polyhedron has 5 faces and 9 edges. Use Euler's formula to find the number of vertices."
-      Back: "F + V − E = 2\n5 + V − 9 = 2\nV − 4 = 2\nV = 6.\n(This solid is a triangular prism: 5 faces, 9 edges, 6 vertices.)"
-    tags: ["euler-formula", "subject:geometry"]
   - guid: d5d4b2e90b2f3564
     noteType: Basic
     deck: "Corpus::Gr9 Maths::3D Objects"
