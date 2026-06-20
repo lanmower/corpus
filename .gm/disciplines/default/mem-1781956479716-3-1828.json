@@ -1,0 +1,11 @@
+## Corpus layout fix: tutor panel overlay-clip (2026-06-20, commit 33e93ed)
+
+User re-issued 'tons of layout/design problems, fix all jank, update anentrypoint-design'. Found via live browser recon (measuring panel.left vs card.right): the desktop tutor panel (.tutor-panel-root position:fixed right:0, 30% or 52px collapsed) reserved NO page space, so it overlaid+clipped the right of every card on every route (welcome/stat text cut mid-word).
+
+FIXES (browser-witnessed, 32 tests pass, run-21):
+1. tutor-panel.js applyResponsiveWidth: body.style.setProperty('--tutor-reserve', w) on desktop (w=panel width % or 52px); removeProperty on mobile (mobile uses bottom-sheet padding).
+2. style.css: `html.ds-247420 body { padding-right: var(--tutor-reserve,0px) }`. CRITICAL SPECIFICITY: html carries the .ds-247420 scope class, so SDK reset `.ds-247420 body { padding:0 }` (0,1,1) outranks a plain `body` rule; needed html.ds-247420 body (0,1,2) to win.
+3. start-card-alignment: `.today-primary .primary-action { align-items:flex-start }` — base .primary-action sets align-items:center for the inline pill, leaked into the today column card centering 'start with cardiology'.
+4. header ellipsis: `.chat-head .ds-chat-title { overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0 }` (title is h2.ds-chat-title, not span).
+
+WITNESS CACHE TRAP: the dev server (serve.js) link href is style.css?v=__BUILD_VERSION__ (literal, replaced only at deploy by pages.yml). The browser caches the <link> at that constant URL; CDP Network.setCacheDisabled + SW unregister did NOT refetch the stylesheet (modules/ESM DID load fresh via cache-disable, but the <link> stayed stale). To witness CSS edits: hot-swap the link in-page with `?cb=Math.random()`, or block sw.js via page.route abort. Cost many iterations before realizing.
