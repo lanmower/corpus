@@ -1,0 +1,16 @@
+## Corpus quality-max 19th run (2026-06-20, commit 83fc265)
+
+Loop '/gm-skill maximize quality'. Ran .claude/workflows/quality-max.js (27 agents): 15 raw -> 12 confirmed/3 refuted, ~9 unique.
+
+LANDED (browser-witnessed session 13, 31 tests pass):
+1. voice-startlistening-teardown: startListening graph build now in try/catch + shared teardownMic(); _listening=true only after graph built -> a browser rejecting 16kHz AudioContext no longer strands _listening + leaks mic.
+2. voice-stop-during-acquire: _acquiring/_stopRequested flags; pointerup during getUserMedia prompt aborts in-flight capture (was: mic records forever).
+3. voice-transcribe-error-reject: worker {status:error} now reject(d.error) not resolve('') -> failure toast distinguishable from silence.
+4. cram-undo-corruption: review.js gate undo.record+showUndoToast on !cramMode (cram persists nothing; undoLastGrade bumpGraded(-1) corrupted streak/todayGraded).
+5. settings-label-for-id: added id to syllabus <select> AND exam-date <input> (both label for= were broken no-ops).
+6. search-precompute-haystack: search.js buildSearchIndex sets _hay/_titleLow per item; keystrokes no longer re-lowercase 934KB-16MB prose.
+7. test.js run-20: behavioral initSyllabi coverage (stub fetchJson; valid/stale-reset/preserve/fail-fallback).
+
+ASSESSED WON'T-FIX (reasoned in PRD): feedText incremental ``` count (double-counts non-overlapping across append boundary -> parity corruption; fences bounded so O(n^2) immaterial); triage SDK search scoping (single mount closure by design, vdom bounds cost).
+
+NOTE: gr9-maths concurrent writer settled this session; staged my 5 files explicitly.
