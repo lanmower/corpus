@@ -1,0 +1,19 @@
+## Corpus quality-max 21st run (2026-06-20, commit cda87a4)
+
+Loop '/gm-skill maximize quality'. Ran .claude/workflows/quality-max.js (30 agents): 18 raw -> 18 confirmed/0 refuted, ~10 unique fixable.
+
+LANDED (browser-witnessed session 51, 34 tests pass, run-23):
+1. undo-gradedbysubject (medium real bug): undoLastGrade bumpGraded(-1,null) dropped subject -> gradedBySubject permanently inflated (today.js shows it). undo.record now carries gradedSubject distinct from newSubject; progress.js clamps per-subject at 0.
+2. weakest-subject-masteredpct (medium): today.js read prog.masteredPct (never exists) -> always subjects[0]. Now prog.weighted.
+3. review-shard-fetch-fail (medium worst-case): renderReview awaited loadShard before removing 'loading cards...' placeholder; failed fetch stranded spinner. Wrapped in try/catch -> error panel + retry.
+4. tutor-error-epoch-guard: error case lacked activeGenEpoch===null guard -> late error repopulated cleared thread.
+5. stt-worker-load-no-reset: voice.js sttWorker never nulled _stt/_sttReady on load fail (TTS does); added _sttReady.catch reset.
+6. today-mastery-redundant-parses (perf): mastery.loadProgressContext() threaded into subjectProgress(pre) so the home loop parses once not 10-31x.
+7. search-input-debounce: 80ms trailing debounce.
+8. settings-alert-to-toast: alert()->toast.show.
+9. voice-download-progress (UX): voice.setModelProgressHandler + emitProgress; tutor-panel mountVoiceBar shows throttled download toast.
+10. tts-speed-dead-param: dropped unused speak() speed param.
+
+DEFERRED (run21-deferred-findings, assessed): triage-reset no-op (back-compat per AGENTS), transcribe-overlap-hang, triage-store schema-warn parity, and mastery/voice-mic/tts-pure-fn/pickOutput behavioral tests (need worker/navigator/AudioContext stubbing or CDN-import extraction = refactor scope).
+
+NOTE: long-gap recovery once (30-agent workflow + 10 fixes >5min).
