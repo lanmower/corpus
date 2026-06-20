@@ -57,39 +57,68 @@ export function speechEnabled() { return _speechEnabled; }
 
 // ---- push-to-talk mic capture (16kHz mono Float32 via a 16k AudioContext) ----
 let _micCtx = null, _micStream = null, _micNode = null, _micSrc = null, _micChunks = null, _listening = false;
+// _acquiring: getUserMedia/graph build in flight. _stopRequested: a release
+// arrived during acquisition and the capture must abort once the stream resolves.
+let _acquiring = false, _stopRequested = false;
 
 export function isListening() { return _listening; }
 
-export async function startListening() {
-    if (_listening) return;
-    _micChunks = [];
-    try {
-        _micStream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true } });
-    } catch (err) {
-        _micChunks = null;
-        throw err;
-    }
-    _listening = true;
-    // A 16kHz context resamples the (typically 48kHz) mic input to Whisper's rate.
-    _micCtx = new (self.AudioContext || self.webkitAudioContext)({ sampleRate: 16000 });
-    _micSrc = _micCtx.createMediaStreamSource(_micStream);
-    _micNode = _micCtx.createScriptProcessor(4096, 1, 1);
-    _micNode.onaudioprocess = (e) => {
-        if (!_listening) return;
-        _micChunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
-    };
-    _micSrc.connect(_micNode);
-    _micNode.connect(_micCtx.destination); // required for onaudioprocess to fire
-    sttWorker(); // warm in parallel with recording
-}
-
-export async function stopListening() {
-    if (!_listening) return '';
-    _listening = false;
+// Tear down the audio graph + release the mic stream. Idempotent; used by the
+// graph-build failure path, the stop-during-acquisition abort, and stopListening.
+function teardownMic() {
     try { _micNode && _micNode.disconnect(); } catch {}
     try { _micSrc && _micSrc.disconnect(); } catch {}
     try { _micStream && _micStream.getTracks().forEach(t => t.stop()); } catch {}
     try { _micCtx && _micCtx.close(); } catch {}
+    _micNode = _micSrc = _micStream = _micCtx = null;
+}
+
+export async function startListening() {
+    if (_listening || _acquiring) return;
+    _micChunks = [];
+    _acquiring = true; _stopRequested = false;
+    let stream;
+    try {
+        // getUserMedia can block on the permission prompt for an arbitrary time;
+        // a pointerup during that window sets _stopRequested so we abort instead
+        // of starting a capture with no matching stop (mic-records-forever bug).
+        stream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true } });
+    } catch (err) {
+        _micChunks = null; _acquiring = false;
+        throw err;
+    }
+    _micStream = stream;
+    if (_stopRequested) { teardownMic(); _micChunks = null; _acquiring = false; return; }
+    // A 16kHz context resamples the (typically 48kHz) mic input to Whisper's rate.
+    // The graph build can throw (e.g. a browser that rejects an explicit
+    // sampleRate, or lacks createScriptProcessor); tear down + reset rather than
+    // strand _listening=true with a live, unstoppable stream.
+    try {
+        _micCtx = new (self.AudioContext || self.webkitAudioContext)({ sampleRate: 16000 });
+        _micSrc = _micCtx.createMediaStreamSource(_micStream);
+        _micNode = _micCtx.createScriptProcessor(4096, 1, 1);
+        _micNode.onaudioprocess = (e) => {
+            if (!_listening) return;
+            _micChunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+        };
+        _micSrc.connect(_micNode);
+        _micNode.connect(_micCtx.destination); // required for onaudioprocess to fire
+    } catch (err) {
+        teardownMic(); _micChunks = null; _acquiring = false;
+        throw err;
+    }
+    _listening = true; // only after the graph is fully built
+    _acquiring = false;
+    sttWorker(); // warm in parallel with recording
+}
+
+export async function stopListening() {
+    // A release during acquisition (before _listening flips) must cancel the
+    // in-flight capture, not silently no-op.
+    if (_acquiring) { _stopRequested = true; return ''; }
+    if (!_listening) return '';
+    _listening = false;
+    teardownMic();
     const chunks = _micChunks || []; _micChunks = null;
     let len = 0; for (const c of chunks) len += c.length;
     if (len < 1600) return ''; // < 0.1s — treat as empty
@@ -108,10 +137,18 @@ function transcribe(audio) {
         const timer = setTimeout(() => { _stt.removeEventListener('message', onMsg); reject(new Error('transcription timed out')); }, 30000);
         const onMsg = (e) => {
             const d = e.data || {};
-            if (d.requestId === id && (d.status === 'transcript' || d.status === 'error')) {
+            if (d.requestId !== id) return;
+            if (d.status === 'transcript') {
                 clearTimeout(timer);
                 _stt.removeEventListener('message', onMsg);
                 resolve(d.text || '');
+            } else if (d.status === 'error') {
+                // Reject (not resolve '') so a real STT failure is distinguishable
+                // from silence and the caller surfaces a failure toast — matching
+                // the timeout/worker-unavailable reject paths above.
+                clearTimeout(timer);
+                _stt.removeEventListener('message', onMsg);
+                reject(new Error(d.error || 'transcription failed'));
             }
         };
         _stt.addEventListener('message', onMsg);
@@ -137,7 +174,9 @@ export function feedText(chunk) {
     _sentenceBuf += chunk;
     // Never emit while inside an unclosed ``` fence: a streamed tool block would
     // otherwise be spoken as garbage JSON before its closing fence arrives. An odd
-    // count of ``` means we're mid-fence — hold until it closes.
+    // count of ``` means we're mid-fence — hold until it closes. (A full-buffer
+    // scan is kept deliberately: tool fences are bounded, and incremental counting
+    // across the append boundary miscounts non-overlapping ``` matches.)
     if (((_sentenceBuf.match(/```/g) || []).length % 2) === 1) return;
     // Emit complete sentences as they form so speech starts before the reply ends.
     const re = /[^.!?\n]*[.!?\n]+/g;

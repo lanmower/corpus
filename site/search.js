@@ -56,6 +56,13 @@ export function buildSearchIndex(manifest, shards) {
             flush(srcLines.length);
         }
     }
+    // Precompute the lowercased haystack + title once per item so a keystroke does
+    // only indexOf scans, not a full re-lowercasing of every body (934KB prose on
+    // cmed4, ~16MB on mccqe1) on every input event.
+    for (const it of items) {
+        it._hay = (it.title + ' ' + it.body + ' ' + it.subject).toLowerCase();
+        it._titleLow = it.title.toLowerCase();
+    }
     return items;
 }
 
@@ -75,12 +82,15 @@ export function search(items, q, limit = 30) {
     const tokens = t.split(/\s+/).filter(Boolean);
     const scored = [];
     for (const it of items) {
-        const hay = (it.title + ' ' + it.body + ' ' + it.subject).toLowerCase();
+        // _hay / _titleLow are precomputed at buildSearchIndex time; fall back for
+        // ad-hoc items (e.g. tests) that bypass the index builder.
+        const hay = it._hay || (it.title + ' ' + it.body + ' ' + it.subject).toLowerCase();
+        const titleLow = it._titleLow || it.title.toLowerCase();
         let score = 0, matched = true;
         for (const tok of tokens) {
             const i = hay.indexOf(tok);
             if (i < 0) { matched = false; break; }
-            score += 1 + (it.title.toLowerCase().includes(tok) ? 3 : 0) + (i < 20 ? 1 : 0);
+            score += 1 + (titleLow.includes(tok) ? 3 : 0) + (i < 20 ? 1 : 0);
         }
         if (matched) scored.push({ it, score });
     }

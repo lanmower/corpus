@@ -152,7 +152,7 @@ export async function renderSettings() {
     const cfg = srs.loadConfig();
     const schedCfg = schedule.loadConfig();
     const p = progress.load();
-    const examInput = el('input', { type: 'date', value: cfg.examDate, class: 'search', style: 'max-width:200px',
+    const examInput = el('input', { id: 'exam-date', type: 'date', value: cfg.examDate, class: 'search', style: 'max-width:200px',
         'aria-label': 'exam date', on: { change: e => {
             const newDate = e.target.value;
             srs.saveConfig({ ...cfg, examDate: newDate });
@@ -211,7 +211,7 @@ export async function renderSettings() {
     const syllabi = listSyllabi();
     if (syllabi.length > 1) {
         const active = getActiveSyllabus();
-        const sel = el('select', { class: 'syllabus-select', 'aria-label': 'active syllabus' },
+        const sel = el('select', { id: 'syllabus-select', class: 'syllabus-select', 'aria-label': 'active syllabus' },
             ...syllabi.map(s => el('option', { value: s.id, ...(s.id === active ? { selected: '' } : {}) }, s.label || s.id)));
         sel.addEventListener('change', async () => {
             const id = sel.value;

@@ -2617,3 +2617,39 @@
   title: corpus site/247420.{js,css} sha differs from freshly-rebuilt anentrypoint-design dist (stale bundle per AGENTS.md); re-copy rebuilt bundle into site/ and browser-witness app still mounts
   witness: site/247420.{js,css} now sha d0a097e0/6efb370390 = rebuilt SDK dist; browser-9 bootOk:true, sdkScopes:2, errs:[]
   status: completed
+- id: voice-startlistening-teardown
+  title: 'voice.js startListening: AudioContext/graph build (lines 74-87) is outside try/catch; on a browser that rejects 16kHz ctx it strands _listening=true + leaks mic stream forever. Wrap with teardown that stops tracks + resets _listening, and set _listening=true only after graph built'
+  witness: site/voice.js teardownMic() + graph build in try/catch, _listening=true only after graph; browser-13 voiceTeardown/voiceGraphTryCatch true
+  status: completed
+- id: voice-stop-during-acquire
+  title: 'voice.js: pointerup before getUserMedia resolves no-ops (isListening false) then capture starts with no matching stop -> mic records forever. Add a stop-requested-during-acquisition flag that aborts/stops on resolve'
+  witness: 'site/voice.js _acquiring/_stopRequested: stopListening sets _stopRequested during acquire; startListening aborts+teardown on resolve; browser-13 voiceTeardown true'
+  status: completed
+- id: voice-transcribe-error-reject
+  title: 'voice.js transcribe(): worker {status:error} resolves '''' (indistinguishable from silence); reject(d.error) so callers surface a failure toast, matching the timeout/unavailable reject paths'
+  witness: site/voice.js transcribe onMsg error branch reject(new Error(d.error||'transcription failed')); browser-13 voiceErrorReject true
+  status: completed
+- id: cram-undo-corruption
+  title: review.js gradeReview gates progress on !cramMode but undo.record/showUndoToast run unconditionally; undoLastGrade then bumpGraded(-1) corrupting streak/todayGraded. Gate undo record+toast on !cramMode
+  witness: 'site/views/review.js: undo.record+showUndoToast now gated in if(!state.cramMode); browser-13 cramUndoGated true'
+  status: completed
+- id: settings-label-for-id
+  title: settings.js syllabus selector label for='syllabus-select' but select has only class, no matching id -> clicking label is a no-op + broken AT association. Add id to the select
+  witness: 'site/views/settings.js: id ''syllabus-select'' on select + id ''exam-date'' on examInput (also broken); browser-13 examLabelOk true (label[for]->#id resolves)'
+  status: completed
+- id: search-precompute-haystack
+  title: search.js search() re-lowercases (title+body+subject) for every item every keystroke (934KB-16MB prose); precompute _hay + _titleLow at buildSearchIndex time
+  witness: site/search.js buildSearchIndex sets _hay/_titleLow per item; search() uses them; browser-13 hayPrecomputed+searchWorks true
+  status: completed
+- id: feedText-incremental-backtick
+  title: voice.js feedText re-scans whole growing _sentenceBuf with /```/g every token (O(n^2) inside an unclosed fence); scan only the appended chunk / track count incrementally
+  witness: 'ASSESSED/won''t-fix: incremental ``` count across the append boundary double-counts non-overlapping matches when the buffer tail ends a prior fence, corrupting parity (would speak tool JSON). Tool fences are bounded so full-buffer scan O(n^2) is immaterial. Reverted; comment added at site/voice.js feedText.'
+  status: completed
+- id: initsyllabi-test-coverage
+  title: syllabus.js initSyllabi (valid list / failed-fetch fallback / stale-id reset) is boot-critical and untested; add behavioral test.js coverage with a stub fetchJson
+  witness: 'test.js run-20 ta(): valid list, stale-id reset (storage rewritten), valid-id preserved, fetch-failure single-default fallback; 31 pass'
+  status: completed
+- id: triage-search-scope-render
+  title: triage-live.js SDK case-search onInput calls full render() (re-maps chat, rebuilds chips, re-filters) per keystroke; scope to scenario-list re-render like the legacy path
+  witness: 'ASSESSED/won''t-fix: triage SDK sidebar is a single mount closure by design; a partial scoped re-render would break the vdom render contract. Per-keystroke JS is bounded (~68 scenarios + short chat) and the vdom diff bounds DOM cost. Risk outweighs the low-severity micro-opt.'
+  status: completed

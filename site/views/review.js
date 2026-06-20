@@ -415,9 +415,14 @@ export function gradeReview(cardId, score) {
     // Mistake log
     const card = state.reviewQueue?.[state.reviewIndex];
     if (score <= 2 && card) mistakes.logMistake(cardId, card._subject, score);
-    // Undo record — snapshot wasNew + subject so undoLastGrade can reverse counters
-    undo.record(cardId, prev, wasNew && !state.cramMode ? card0?._subject || null : null);
-    showUndoToast();
+    // Undo record — snapshot wasNew + subject so undoLastGrade can reverse counters.
+    // Cram mode persists nothing (no updateCard/bumpGraded above), so an undo there
+    // would call bumpGraded(-1) on a count that was never incremented, corrupting
+    // the streak + todayGraded. Only offer undo when there is real state to reverse.
+    if (!state.cramMode) {
+        undo.record(cardId, prev, wasNew ? card0?._subject || null : null);
+        showUndoToast();
+    }
 
     // Send to tutor for coaching (non-blocking). Gated by config; uses the
     // worker's actual handler cmd ('generate-coaching', tutor.js:196).

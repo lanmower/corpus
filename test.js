@@ -1571,6 +1571,32 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(!/days === 0 && r !== 'mistakes'/.test(app19), 'app.js: no days===0 takeover gate remains');
     });
 
+    await ta('run-20: initSyllabi resolves list/default, resets a stale active id, falls back on fetch failure', async () => {
+        const syl = await import('./site/syllabus.js');
+        const list = [{ id: 'alpha', label: 'Alpha', default: true }, { id: 'beta', label: 'Beta' }];
+        // valid list -> default derived; active defaults to the default when nothing stored.
+        global.localStorage.clear();
+        let active = await syl.initSyllabi(async () => list);
+        assert.strictEqual(active, 'alpha', 'active defaults to the default syllabus');
+        assert.strictEqual(syl.listSyllabi().length, 2, 'list populated from syllabi.json');
+        // stale persisted id (a removed syllabus) is reset to the default in storage.
+        global.localStorage.clear();
+        global.localStorage.setItem('corpus.syllabus.v1', 'removed-syllabus');
+        active = await syl.initSyllabi(async () => list);
+        assert.strictEqual(active, 'alpha', 'stale active id reset to default');
+        assert.strictEqual(global.localStorage.getItem('corpus.syllabus.v1'), 'alpha', 'stale id rewritten in storage (no 404 boot)');
+        // a valid stored id is preserved.
+        global.localStorage.clear();
+        global.localStorage.setItem('corpus.syllabus.v1', 'beta');
+        active = await syl.initSyllabi(async () => list);
+        assert.strictEqual(active, 'beta', 'valid stored id preserved');
+        // fetch failure degrades to a single default syllabus without throwing.
+        global.localStorage.clear();
+        active = await syl.initSyllabi(async () => { throw new Error('no syllabi.json'); });
+        assert.strictEqual(syl.listSyllabi().length, 1, 'fetch failure degrades to single default');
+        assert.ok(typeof active === 'string' && active.length > 0, 'fetch failure still returns an active id');
+    });
+
     console.log(`\n${pass} pass · ${fail} fail`);
     process.exit(fail === 0 ? 0 : 1);
 })();
