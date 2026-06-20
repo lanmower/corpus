@@ -1597,6 +1597,42 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.ok(typeof active === 'string' && active.length > 0, 'fetch failure still returns an active id');
     });
 
+    await ta('run-22: splitSentences fence-hold/sentence-split behavioral + schedule examDate not-frozen + stats clear + welcome count + search setActive + general-surgery + media guard', async () => {
+        const voice = await import('./site/voice.js');
+        // mid-fence: an unclosed ``` holds everything (no sentences emitted).
+        let r = voice.splitSentences('intro. then ```tool\n{"a":1}');
+        assert.deepStrictEqual(r.sentences, [], 'splitSentences: holds all while mid-fence');
+        assert.strictEqual(r.rest, 'intro. then ```tool\n{"a":1}', 'splitSentences: mid-fence keeps full buffer');
+        // complete sentences split, remainder retained.
+        r = voice.splitSentences('Hello world. How are');
+        assert.deepStrictEqual(r.sentences, ['Hello world.'], 'splitSentences: emits complete sentence');
+        assert.strictEqual(r.rest, ' How are', 'splitSentences: keeps the incomplete remainder');
+        // closed fence (even count) no longer holds.
+        r = voice.splitSentences('see ```x``` now.');
+        assert.strictEqual(r.sentences.length, 1, 'splitSentences: closed fence releases');
+        assert.strictEqual(r.rest, '', 'splitSentences: fully consumed when ending in punctuation');
+        // schedule default exam date is computed (future), not the frozen past literal.
+        const sched = await import('./site/schedule.js');
+        global.localStorage.clear();
+        const dc = sched.defaultConfig();
+        assert.ok(new Date(dc.examDate).getTime() > Date.now(), 'schedule.defaultConfig examDate is in the future (not frozen 2026-06-15)');
+        assert.ok(!READ('site/schedule.js').includes("examDate: '2026-06-15'"), 'schedule.js: no frozen examDate literal');
+        // stats clears the stage before rebuilding (no sort-stacking).
+        assert.match(READ('site/views/stats.js'), /renderStats\(\) \{\s*\n[\s\S]{0,260}getStage\(\)\.innerHTML = '';/, 'stats.js: renderStats clears stage');
+        // welcome derives the subject count from the manifest.
+        assert.match(READ('site/views/today.js'), /state\.manifest\?\.subjects\?\.length \|\| 0\} subjects/, 'today.js: welcome count from manifest');
+        // search arrows move the class instead of rebuilding the list.
+        const srch = READ('site/search.js');
+        assert.match(srch, /const setActive = \(i\) =>/, 'search.js: setActive helper');
+        assert.match(srch, /setActive\(Math\.min\(results\.length - 1, active \+ 1\)\)/, 'search.js: ArrowDown uses setActive');
+        // mccqe1 importer: only general-surgery maps to surgery; media guard present.
+        const imp = READ('scripts/import_mccqe1.js');
+        assert.match(imp, /parts\[1\] === 'surgery' \? 'surgery' : null/, 'import_mccqe1: only general-surgery -> surgery');
+        assert.match(imp, /Refusing to wipe.*hand-added media/s, 'import_mccqe1: media-loss guard before rmSync');
+        // cancelSpeech detaches the in-flight synth listener.
+        assert.match(READ('site/voice.js'), /_activeSynthMsg\) \{ try \{ _tts\.removeEventListener\('message', _activeSynthMsg\)/, 'voice.js: cancelSpeech detaches in-flight synth listener');
+    });
+
     t('run-21: tutor panel reserves desktop page width (was: fixed panel overlaid/clipped content) + start-card left-align + header ellipsis', () => {
         const css21 = READ('site/style.css'), tp21 = READ('site/tutor-panel.js');
         // JS sets the reserve var on desktop, clears it on mobile.

@@ -1,6 +1,6 @@
 // schedule engine — corpus.schedule.v1 (blocks) + corpus.schedule.config.v1 (config)
 // Deterministic per (config, exam date, due-counts, weights). Re-run from same inputs -> same output.
-import { loadConfig as srsLoadConfig } from './srs.js';
+import { loadConfig as srsLoadConfig, defaultExamDate } from './srs.js';
 import { skey } from './syllabus.js';
 
 const KEY = () => skey('schedule.v1');
@@ -11,8 +11,9 @@ export function setSubjectList(list) {
     if (Array.isArray(list) && list.length) SUBJECTS = list.slice();
 }
 
+// examDate is intentionally absent here — a frozen literal rots into the past
+// (see srs.js defaultExamDate). It is filled relative to today() at read time.
 const DEFAULT_CONFIG = {
-    examDate: '2026-06-15',
     intensity: 'standard',     // light | standard | hard | cram
     chronotype: 'morning',     // morning | evening | flex
     pomodoro: 25,
@@ -41,7 +42,7 @@ const MIN_PER_REVIEW = 0.4;                // estimator: minutes per card review
 const MAX_GUIDE_SECTIONS_PER_DAY = 2;
 const MAX_CASES_PER_DAY = 2;
 
-export function defaultConfig() { return fillSubjectMaps(JSON.parse(JSON.stringify(DEFAULT_CONFIG))); }
+export function defaultConfig() { return fillSubjectMaps({ ...JSON.parse(JSON.stringify(DEFAULT_CONFIG)), examDate: defaultExamDate() }); }
 
 export function loadConfig() {
     try {
@@ -54,7 +55,7 @@ export function loadConfig() {
             // sanitizer filters corrupt dates before we adopt them here.
             try { examDate = srsLoadConfig().examDate; } catch {}
         }
-        if (!examDate) examDate = DEFAULT_CONFIG.examDate;
+        if (!examDate) examDate = defaultExamDate();
         return fillSubjectMaps({
             ...DEFAULT_CONFIG, ...cfg, examDate,
             availability: { ...DEFAULT_CONFIG.availability, ...(cfg.availability || {}) },
@@ -70,7 +71,7 @@ export function saveConfig(cfg) {
     if (!Number.isFinite(merged.pomodoro) || merged.pomodoro < 5) merged.pomodoro = DEFAULT_CONFIG.pomodoro;
     if (!Number.isFinite(merged.breakLen) || merged.breakLen < 1) merged.breakLen = DEFAULT_CONFIG.breakLen;
     if (!INTENSITY_FACTOR[merged.intensity]) merged.intensity = DEFAULT_CONFIG.intensity;
-    if (!merged.examDate) merged.examDate = DEFAULT_CONFIG.examDate;
+    if (!merged.examDate) merged.examDate = defaultExamDate();
     persist(CFG_KEY(), JSON.stringify(merged));
     emit('config');
     return merged;

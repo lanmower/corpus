@@ -2669,3 +2669,35 @@
   title: 'Browser-witness desktop: with tutor expanded AND collapsed, no main card right edge exceeds panel left edge (contentClipped false) at 1100 + 1440 widths; mobile unaffected (sheet path)'
   witness: browser-34 measured clipped:false at vw 1100 (reserve 325px) + 1440 (reserve 427px), expanded AND collapsed (52px); mobile reserve 0px (bottom-sheet path); no console errors
   status: completed
+- id: stats-sort-dom-stacking
+  title: stats.js renderStats appends to stage without clearing; sort select/th handlers re-invoke renderStats() directly (bypass render() which clears) -> each sort stacks a duplicate full stats DOM + orphan listeners. Clear getStage().innerHTML at top of renderStats
+  witness: site/views/stats.js renderStats first line getStage().innerHTML=''; browser-41 section-head count stays 1 across 2 sorts (was stacking)
+  status: completed
+- id: welcome-subject-count
+  title: today.js welcome copy hardcodes '8 subjects' but cmed4-2026 has 10 / mccqe1 has 31; derive from state.manifest.subjects.length
+  witness: today.js welcome uses state.manifest?.subjects?.length; browser-41 welcomeCount=10 (cmed4, was hardcoded 8)
+  status: completed
+- id: schedule-examdate-rot
+  title: schedule.js DEFAULT_CONFIG.examDate='2026-06-15' frozen past (same anti-pattern srs.js documents+avoids); mirror srs.defaultExamDate() relative to today for defaultConfig()+saveConfig fallback
+  witness: srs.js exports defaultExamDate; schedule.js uses it in defaultConfig/loadConfig/saveConfig, removed frozen literal; test run-22 asserts defaultConfig().examDate>now
+  status: completed
+- id: search-arrow-move-class
+  title: search.js ArrowUp/Down rebuild full list innerHTML (recreate 30 li + listeners) just to move .active; move the class between existing nodes instead
+  witness: search.js setActive() toggles .active on existing nodes; arrows call it not render(); browser-41 ArrowDown activeCount=1 no errors
+  status: completed
+- id: mccqe1-general-surgery-misclassify
+  title: import_mccqe1.js subjectFromToken maps ANY 'general_*' token to surgery, mis-shelving general_medicine etc into surgery (opposite of documented general-medicine fallback); only general-surgery* should map to surgery
+  witness: scripts/import_mccqe1.js:78 parts[1]==='surgery'?'surgery':null; test run-22 asserts the guard
+  status: completed
+- id: mccqe1-rmsync-media-guard
+  title: import_mccqe1.js rmSync wipes whole mccqe1 tree incl scaffolded media dirs; warn/abort if non-.gitkeep files exist under videos/audio-deepdive/infographics before destroying
+  witness: scripts/import_mccqe1.js scans media dirs for non-.gitkeep files and process.exit(1) before rmSync; test run-22 asserts 'Refusing to wipe.*hand-added media'
+  status: completed
+- id: cancelspeech-listener-leak
+  title: 'voice.js pumpSynth onMsg listener self-removes only on ''audio'' reply; cancelSpeech interrupt makes worker skip the reply so listener leaks per interrupted job (common path: every new turn). Track + detach in-flight pumpSynth listeners on cancel'
+  witness: voice.js _activeSynthMsg tracks in-flight onMsg; cancelSpeech removeEventListener detaches it; test run-22 asserts; browser-41 no console errors on load
+  status: completed
+- id: feedtext-behavioral-test
+  title: voice.js feedText fence-suppression + sentence-split only source-regex tested; extract the pure split/fence logic to an exported testable helper and add behavioral test.js coverage
+  witness: 'voice.js splitSentences extracted+exported; feedText uses it; test run-22 behavioral: mid-fence holds, sentence splits, closed fence releases (33 pass)'
+  status: completed

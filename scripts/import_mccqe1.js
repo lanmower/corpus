@@ -75,7 +75,9 @@ function subjectFromToken(raw) {
         if (parts[1] === 'imaging') return 'medical-imaging';
         return null;
     }
-    if (lead === 'general') return parts[1] ? 'surgery' : null; // "general" alone = misc, classify by tags
+    // Only "general-surgery*" is surgery; "general-medicine"/"general-internal-*"/bare
+    // "general" must fall through to the general-medicine default, not be mis-shelved.
+    if (lead === 'general') return parts[1] === 'surgery' ? 'surgery' : null;
     return TOKEN_TO_SUBJECT[lead] || null;
 }
 
@@ -168,7 +170,26 @@ function main() {
         subj.topics[topicKey].push(c);
     }
 
-    // Clean output dir for the card/guide content (idempotent regenerate).
+    // Clean output dir for the card/guide content (idempotent regenerate). The media
+    // dirs (videos/audio-deepdive/infographics) are scaffolded for hand-added assets;
+    // a blind rmSync would silently destroy them, so refuse if any real media is present.
+    const MEDIA_DIRS = ['videos', 'audio-deepdive', 'infographics'];
+    const strandedMedia = [];
+    if (fs.existsSync(OUT)) {
+        for (const subj of fs.readdirSync(OUT)) {
+            for (const md of MEDIA_DIRS) {
+                const dir = path.join(OUT, subj, md);
+                if (!fs.existsSync(dir)) continue;
+                for (const f of fs.readdirSync(dir)) if (f !== '.gitkeep') strandedMedia.push(path.join(subj, md, f));
+            }
+        }
+    }
+    if (strandedMedia.length) {
+        console.error(`Refusing to wipe ${OUT}: ${strandedMedia.length} hand-added media file(s) would be destroyed:\n  ` +
+            strandedMedia.slice(0, 12).join('\n  ') + (strandedMedia.length > 12 ? '\n  …' : '') +
+            `\nMove or remove them before re-running the importer.`);
+        process.exit(1);
+    }
     fs.rmSync(OUT, { recursive: true, force: true });
 
     let totalCards = 0;

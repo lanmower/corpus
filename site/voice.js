@@ -161,6 +161,10 @@ let _sentenceBuf = '';
 let _playCtx = null, _playCursor = 0, _playEpoch = 0;
 const _synthQueue = [];   // pending sentences awaiting synthesis
 let _synthBusy = false;
+// The in-flight pumpSynth message listener. It self-removes on its 'audio' reply,
+// but an interrupt makes the worker skip that reply, so cancelSpeech must detach it
+// explicitly — otherwise one dead listener leaks per interrupted job (every turn).
+let _activeSynthMsg = null;
 
 function playCtx() {
     if (!_playCtx || _playCtx.state === 'closed') { _playCtx = new (self.AudioContext || self.webkitAudioContext)(); _playCursor = 0; }
@@ -169,24 +173,30 @@ function playCtx() {
 
 export function resetSpeech() { _sentenceBuf = ''; }
 
+// Pure: given the accumulated buffer, return the complete sentences to emit and the
+// unconsumed remainder. Holds everything (no sentences) while inside an unclosed ```
+// fence — a streamed tool block must not be spoken as garbage JSON before its closing
+// fence arrives; an odd ``` count means mid-fence. Exported for behavioral testing.
+// (A full-buffer scan is deliberate: tool fences are bounded, and incremental counting
+// across the append boundary miscounts non-overlapping ``` matches.)
+export function splitSentences(buf) {
+    if (((buf.match(/```/g) || []).length % 2) === 1) return { sentences: [], rest: buf };
+    const re = /[^.!?\n]*[.!?\n]+/g;
+    let m, consumed = 0; const sentences = [];
+    while ((m = re.exec(buf))) {
+        const s = m[0].trim();
+        consumed = re.lastIndex;
+        if (s) sentences.push(s);
+    }
+    return { sentences, rest: consumed ? buf.slice(consumed) : buf };
+}
+
 export function feedText(chunk) {
     if (!_speechEnabled || !chunk) return;
     _sentenceBuf += chunk;
-    // Never emit while inside an unclosed ``` fence: a streamed tool block would
-    // otherwise be spoken as garbage JSON before its closing fence arrives. An odd
-    // count of ``` means we're mid-fence — hold until it closes. (A full-buffer
-    // scan is kept deliberately: tool fences are bounded, and incremental counting
-    // across the append boundary miscounts non-overlapping ``` matches.)
-    if (((_sentenceBuf.match(/```/g) || []).length % 2) === 1) return;
-    // Emit complete sentences as they form so speech starts before the reply ends.
-    const re = /[^.!?\n]*[.!?\n]+/g;
-    let m, consumed = 0;
-    while ((m = re.exec(_sentenceBuf))) {
-        const sentence = m[0].trim();
-        consumed = re.lastIndex;
-        if (sentence) enqueueSentence(sentence);
-    }
-    if (consumed) _sentenceBuf = _sentenceBuf.slice(consumed);
+    const { sentences, rest } = splitSentences(_sentenceBuf);
+    for (const s of sentences) enqueueSentence(s);
+    _sentenceBuf = rest;
 }
 
 export function flushSpeech() {
@@ -217,12 +227,14 @@ function pumpSynth() {
             const d = e.data || {};
             if (d.requestId !== id) return;
             _tts.removeEventListener('message', onMsg);
+            if (_activeSynthMsg === onMsg) _activeSynthMsg = null;
             _synthBusy = false;
             if (d.status === 'audio' && d.pcm && d.pcm.length && job.epoch === _playEpoch) {
                 schedulePcm(d.pcm, d.sampleRate || 24000);
             }
             pumpSynth();
         };
+        _activeSynthMsg = onMsg;
         _tts.addEventListener('message', onMsg);
         _tts.postMessage({ type: 'speak', text: job.text, voice: _voice, requestId: id });
     }).catch(() => { _tts = null; _ttsReady = null; _synthBusy = false; });
@@ -247,6 +259,9 @@ export function cancelSpeech() {
     _synthQueue.length = 0;
     _sentenceBuf = '';
     _synthBusy = false;
+    // Detach the in-flight synth listener: the interrupt below makes the worker skip
+    // the 'audio' reply that would otherwise self-remove it, so it would leak.
+    if (_tts && _activeSynthMsg) { try { _tts.removeEventListener('message', _activeSynthMsg); } catch {} _activeSynthMsg = null; }
     if (_tts) { try { _tts.postMessage({ type: 'interrupt' }); } catch {} }
     if (_playCtx && _playCtx.state !== 'closed') { try { _playCtx.close(); } catch {} _playCtx = null; _playCursor = 0; }
 }

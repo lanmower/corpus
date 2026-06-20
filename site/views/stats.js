@@ -9,6 +9,10 @@ import { buildRows, VERDICT_RANK } from '../verdicts.js';
 import { localDayISO } from '../dates.js';
 
 export async function renderStats() {
+    // The verdict-table sort controls re-invoke renderStats() directly (bypassing
+    // app.js render(), which is what normally clears the stage), so clear here too
+    // — otherwise each sort appends a second full copy of the page beneath the first.
+    getStage().innerHTML = '';
     getStage().append(el('div', { class: 'section-head' },
         el('span', { class: 'eyebrow' }, 'stats'), el('h2', {}, 'stats')));
     getStage().append(el('div', { class: 'toolbar stats-deeplinks' },

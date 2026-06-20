@@ -13,7 +13,7 @@ const CONFIG_KEY = () => skey('srs.config');
 // daysUntilExam clamp to 0 -> the exam-day takeover hijacks every route for a
 // fresh user. ~12 weeks out is a sane default study horizon.
 const DEFAULT_EXAM_HORIZON_DAYS = 84;
-const defaultExamDate = () => localDayISO(new Date(Date.now() + DEFAULT_EXAM_HORIZON_DAYS * 86400000));
+export const defaultExamDate = () => localDayISO(new Date(Date.now() + DEFAULT_EXAM_HORIZON_DAYS * 86400000));
 const SCHEMA_VERSION = 1;
 const LEARNING_STEPS_MIN = [1, 10];
 const GRADUATING_INTERVAL = 1;

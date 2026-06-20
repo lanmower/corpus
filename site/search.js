@@ -145,6 +145,15 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
         // and scrollable, so arrowing past the fold must scroll it into view.
         list.children[active]?.scrollIntoView({ block: 'nearest' });
     };
+    // Move the active highlight without rebuilding the list: arrowing only relocates
+    // one '.active' class, so a full innerHTML teardown + 30-node re-parse per keypress
+    // is wasteful. Toggle the class on the existing nodes instead.
+    const setActive = (i) => {
+        active = i;
+        const kids = list.children;
+        for (let n = 0; n < kids.length; n++) kids[n].classList.toggle('active', n === active);
+        kids[active]?.scrollIntoView({ block: 'nearest' });
+    };
     input.addEventListener('input', () => {
         const items = getItems();
         results = search(items, input.value);
@@ -157,8 +166,8 @@ export function mountPalette(doc, openSelector, getItems, onSelect) {
     });
     input.addEventListener('keydown', e => {
         if (e.key === 'Escape') { e.preventDefault(); close(); }
-        else if (e.key === 'ArrowDown') { e.preventDefault(); active = Math.min(results.length - 1, active + 1); render(); }
-        else if (e.key === 'ArrowUp') { e.preventDefault(); active = Math.max(0, active - 1); render(); }
+        else if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(results.length - 1, active + 1)); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(0, active - 1)); }
         else if (e.key === 'Enter') { e.preventDefault(); if (results[active]) { onSelect(results[active]); close(); } }
     });
     el.addEventListener('click', e => { if (e.target === el) close(); });

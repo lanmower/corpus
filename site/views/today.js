@@ -53,7 +53,7 @@ function renderWelcome() {
             el('button', { class: 'chip', style: 'margin-left:auto', 'aria-label': 'dismiss welcome',
                 on: { click: () => { localStorage.setItem('corpus.welcome.dismissed', '1'); render(); } } }, 'got it')),
         el('div', { style: 'font-family:var(--ff-prose);line-height:1.6;font-size:15px' },
-            el('p', {}, 'this is your medical study corpus — a personal notebook covering 8 subjects with spaced repetition cards, study guides, and clinical cases.'),
+            el('p', {}, `this is your medical study corpus — a personal notebook covering ${state.manifest?.subjects?.length || 0} subjects with spaced repetition cards, study guides, and clinical cases.`),
             el('p', {}, 'cards marked "due" use a spaced repetition algorithm (SRS) to optimize memory retention. review them daily to build mastery.'),
             el('p', {}, el('strong', {}, 'get started:'), ' review due cards, read a guide, or work through a clinical case.')
         )
