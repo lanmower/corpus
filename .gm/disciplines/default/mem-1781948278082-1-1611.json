@@ -1,0 +1,12 @@
+## Corpus layout/design jank fix (2026-06-20, commit 35e5322)
+
+User: 'tons of layout and design problems, fix all the jank, update anentrypoint-design if needed.' DOMINANT root cause found via live browser recon (not code review): srs.js DEFAULT_EXAM_DATE was the frozen literal '2026-06-15', now past. daysUntilExam() clamps past dates to 0 via Math.max(0,...), and app.js fired the exam-day takeover (renderExamDay 'good luck. trust your prep.') on `days === 0`. So a fresh user (no config) or anyone past their exam date was pinned to the empty farewell card on EVERY route (subjects/cards/stats/cases all replaced). The whole app looked broken.
+
+FIXES (browser-witnessed sessions 8/9, 30 tests pass):
+1. srs.js: DEFAULT_EXAM_DATE const -> defaultExamDate()=localDayISO(now+84d) (DEFAULT_EXAM_HORIZON_DAYS) so the default never rots past.
+2. srs.js: new isExamDay(cfg) = localDayISO(new Date(cfg.examDate))===today() (calendar-day compare; daysUntilExam===0 also matches PAST dates). Exported on window.__srs.
+3. app.js:60: takeover gated on srs.isExamDay() not days===0.
+4. site/247420.{js,css}: corpus shipped STALE SDK bundle (sha b1c263bd vs freshly-rebuilt anentrypoint-design dist d0a097e0). Rebuilt SDK (no source change) + re-copied. AGENTS rule: sha-compare only AFTER rebuild.
+5. test.js run-19 regression.
+
+LESSON: hardcoded date constants rot into the past and silently break degenerate-state UX. Live browser recon across all routes found what programmatic overflow/tap-target checks (clean) missed. The gr9-maths concurrent writer churned the tree throughout; staged only my 5 files explicitly.
