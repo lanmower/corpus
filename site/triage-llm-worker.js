@@ -86,7 +86,7 @@ async function generate(messages, requestId) {
     currentStopping = stopping;
     let startTime;
     let numTokens = 0;
-    let tps;
+    let tps = 0;
     const streamer = new TextStreamer(generator.tokenizer, {
         skip_prompt: true,
         skip_special_tokens: true,

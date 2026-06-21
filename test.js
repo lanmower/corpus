@@ -486,6 +486,14 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
     });
 
     t('videos: 8 subjects each have ≥1 mp4 + shard.guide.videos populated + manifest videoCount + totals=8 + app wires .video-hero', () => {
+        // *.mp4 are git-LFS blobs not fetched in fresh clones / CI / web sessions
+        // (AGENTS.md: "new clones don't fetch"; pages.yml builds "without media").
+        // Assert all wiring unconditionally; gate the on-disk check on media being
+        // present so the suite stays green LFS-less yet strict when media IS pulled.
+        const videosOnDisk = SUBJECTS.some(s => {
+            const v = SHARDMAP[s].guide.videos?.[0];
+            return v && fs.existsSync(path.join(ROOT, 'site', v.src));
+        });
         for (const s of SUBJECTS) {
             const sh = SHARDMAP[s];
             assert.ok(Array.isArray(sh.guide.videos) && sh.guide.videos.length >= 1, `${s} missing videos`);
@@ -494,7 +502,7 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
             assert.ok(v.src && v.src.startsWith(`data/cmed4-2026/videos/${s}/`), `${s} video src path`);
             const meta = MANIFEST.subjects.find(x => x.subject === s);
             assert.strictEqual(meta.videoCount, sh.guide.videos.length, `${s} manifest videoCount mismatch`);
-            assert.ok(fs.existsSync(path.join(ROOT, 'site', v.src)), `${s} video file missing on disk`);
+            if (videosOnDisk) assert.ok(fs.existsSync(path.join(ROOT, 'site', v.src)), `${s} video file missing on disk`);
         }
         // Video count should equal number of subjects with videos
         const subjectsWithVideos = MANIFEST.subjects.filter(m => m.videoCount > 0).length;
@@ -1688,6 +1696,28 @@ const SHARDMAP = Object.fromEntries(SUBJECTS.map((s, i) => [s, SHARDS[i]]));
         assert.match(css21, /\.today-primary \.primary-action \{[\s\S]*align-items: flex-start;/, 'style.css: today primary-action align-items flex-start');
         // header title truncates with ellipsis instead of hard-clipping.
         assert.match(css21, /\.chat-head \.ds-chat-title \{[\s\S]*text-overflow: ellipsis/, 'style.css: chat-head title ellipsis');
+    });
+
+    t('run-24: schedule daysToExam fallback uses LOCAL isoDate + worker tps init + README accuracy + CI workflow runs tests', () => {
+        // schedule.js:144 fallback must use the local isoDate(), not UTC toISOString,
+        // matching the documented local-day-key invariant (the rest of the engine).
+        const sched24 = READ('site/schedule.js');
+        assert.match(sched24, /daysToExam = extras\.daysToExam \|\| daysBetween\(isoDate\(new Date\(\)\), cfg\.examDate\)/,
+            'schedule daysToExam fallback must use local isoDate(new Date())');
+        assert.ok(!/daysBetween\(new Date\(\)\.toISOString\(\)\.slice\(0, 10\), cfg\.examDate\)/.test(sched24),
+            'schedule must not use UTC toISOString for daysToExam day-key');
+        // worker streams a defined tps (0) on the first token, never undefined.
+        assert.match(READ('site/triage-llm-worker.js'), /let tps = 0;/, 'worker tps must initialize to 0');
+        // README must name the real tutor model (Bonsai-1.7B) and carry no decorative
+        // arrow/check/refresh glyph tells (Cmd key glyph + typographic dash/middot exempt).
+        const readme24 = READ('README.md');
+        assert.match(readme24, /Bonsai-1\.7B/, 'README must name the Bonsai-1.7B tutor model');
+        assert.ok(!/Gemma-4 E2B/.test(readme24), 'README must not name the stale Gemma model');
+        assert.ok(!/[→✓↻]/.test(readme24), 'README must have no ->/check/refresh glyph tells');
+        // CI workflow: a committed workflow that builds shards then runs the suite.
+        const ci = READ('.github/workflows/ci.yml');
+        assert.match(ci, /node scripts\/build_data\.js/, 'CI must build data shards');
+        assert.match(ci, /node test\.js/, 'CI must run the integration test suite');
     });
 
     console.log(`\n${pass} pass · ${fail} fail`);

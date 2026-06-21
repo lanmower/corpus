@@ -2745,3 +2745,26 @@
   title: 'Assessed-deferred run-21 findings: triage-reset no-op removal (documented back-compat, multi-site+AGENTS edit, low value); transcribe-overlap-hang (low, needs worker serialize); triage-store newer-schema warn parity (low); mastery-scoring + voice-mic-race + tts-pure-fn + tts-pickOutput behavioral tests (need worker/navigator/AudioContext stubbing or CDN-import extraction = refactor scope)'
   witness: 'ASSESSED/deferred: each is low-severity and/or requires refactor scope (worker-module extraction past CDN top-level imports, or stubbing navigator.mediaDevices/AudioContext) disproportionate to value. triage-reset is intentionally retained back-compat per AGENTS.md. Recorded for a future dedicated test-infra pass.'
   status: completed
+- id: ci-test-workflow
+  scope: Add .github/workflows/ci.yml running `node test.js` on push+PR to every branch and on workflow_dispatch. Must build data shards first (node scripts/build_data.js) so site/data exists, run without LFS media (continue-on-error lfs), and fail the job when test.js reports any failing assertion. Currently NO CI runs the 1696-line test suite — only pages.yml deploys. This is the durable committed 'workflow' deliverable.
+  status: completed
+  witness: '.github/workflows/ci.yml created (push **/PR/dispatch -> setup-node 20 -> node scripts/build_data.js -> node test.js); validated locally: `node scripts/build_data.js && node test.js` => ''35 pass · 0 fail''. test.js already ends process.exit(fail===0?0:1) so a failing assertion fails the job.'
+- id: test-exit-code
+  scope: test.js prints '33 pass · 1 fail' but exits 0 — a failing suite returns success, so CI could never catch a regression. Make the runner process.exit(1) when fail>0. Prerequisite for ci-test-workflow to be meaningful.
+  status: completed
+  witness: 'Already satisfied: test.js tail reads `process.exit(fail === 0 ? 0 : 1)`. Earlier ''exit 0'' was tail(1)''s code, not node''s. No change needed; CI fails on red.'
+- id: test-lfs-tolerant-video
+  scope: 'test.js ''videos'' block asserts fs.existsSync on every subject mp4 unconditionally; LFS *.mp4 blobs are not fetched in fresh clones/CI/web sessions (AGENTS.md documents this), so the suite hard-fails ''cardiology video file missing on disk''. Make on-disk video assertion LFS-tolerant: always assert manifest/shard/app wiring, but skip the disk-existence check when the media file is absent (mirroring pages.yml ''building without media'' and the audio block''s hasAudioSource OR-logic). Must still assert on-disk when media IS present.'
+  status: completed
+  witness: test.js video block now computes videosOnDisk=SUBJECTS.some(on-disk) and gates the per-subject fs.existsSync behind `if (videosOnDisk)`; all manifest/shard/app wiring still asserted unconditionally. LFS-less run goes from '33 pass · 1 fail (cardiology video missing on disk)' to green.
+- id: readme-glyph-sweep
+  scope: README.md contains decorative non-ASCII glyphs (rolled-over and ahead arrows U+21BB, check U+2713, arrow U+2192, middot, approx) describing UI strings. Per AGENTS.md glyph rule convert decorative glyphs to ASCII in docs prose. Verify whether the app source itself emits these glyphs (schedule.js notes) and sweep those too; data/*.json medical content is exempt.
+  status: completed
+  witness: 'README.md decorative glyphs converted: U+2192 arrows (lines 11,55,60) -> ''->''; U+21BB/U+2713 reconcile markers -> accurate UI text ''Rolled over from earlier''/''Ahead by N'' (matches today.js:514-518); also fixed stale ''Gemma-4 E2B'' -> ''Bonsai-1.7B'' (test.js pins onnx-community/Bonsai-1.7B-ONNX). App source emits none of these glyphs (grep clean). run-24 asserts !/[->check-glyph]/.test(README) + Bonsai name. Cmd-key U+2318 + typographic dash/middot kept (exempt).'
+- id: code-review-fanout
+  scope: Fan out parallel review across the corpus module clusters (srs/schedule/progress; views/*; tutor/triage workers; build scripts; service worker/search) hunting real correctness bugs and half-wired jank not caught by 23 prior quality runs. Each confirmed finding spawns its own fix+witness row. Refute-by-default to filter false positives.
+  status: completed
+  witness: '3 parallel review agents (srs/schedule/progress; views/app spine; workers/search/scripts). Confirmed+fixed: schedule.js:144 daysToExam fallback used UTC toISOString instead of local isoDate() (violates documented local-day-key invariant lines 98-104) -> isoDate(new Date()); triage-llm-worker.js:89 tps undefined on first streamed token -> let tps=0. Refuted (false positives, verified against source): review.js:236 deref (clamped by line 122), subject.js back-to-top handler ''leak'' (remove-before-add at 461->463 dedups via __backToTopHandler), mini-card handler ''leak'' (DOM rebuilt each render), async-render (established 23-run pattern, no defect). All fixes pinned in test.js run-24; 35 pass.'
+- id: residual-triage-push
+  scope: 'At COMPLETE: triage git status residuals (.gm/instructions/browser.md transient -> ignore/managed-gitignore; exports/corpus-anki-cmed4-2026.txt is regenerated by test run -> revert if unchanged-in-spirit or commit if intended), run test.js green with exit-code fix, browser-witness any client edits, git_finalize to origin claude/gifted-allen-v14fh5.'
+  status: pending
