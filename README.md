@@ -8,7 +8,7 @@ A local, private, browser-only study workspace for eight medical subjects: cardi
 
 ```bash
 node scripts/serve.js
-# → http://127.0.0.1:8765
+# -> http://127.0.0.1:8765
 ```
 
 The dev server adds COOP/COEP headers so the WebGPU LLM in the live tutor (`triage-live.html`) can use SharedArrayBuffer.
@@ -21,7 +21,7 @@ A service worker caches the shell + manifest + shards on first visit, so once yo
 - **guides** — eight rewritten study guides in a grid, each card showing section count, KB size, ~min read, mastery%.
 - **subject** — full study-guide prose with section checkboxes, mastery bar, infographics, audio deep-dive, lecture video (where present), flashcards, case list.
 - **review** — spaced repetition with friendly four-grade buttons (`again · hard · good · easy`); review-progress line, end-of-session summary, undo last grade with `u`.
-- **cases** — parameterized triage scenarios; the live tutor runs Gemma-4 E2B in WebGPU as a Socratic study assistant with a phase-gated disclosure (Socratic in `asking`, atom-grader in `grading`).
+- **cases** — parameterized triage scenarios; the live tutor runs Bonsai-1.7B in WebGPU as a Socratic study assistant with a phase-gated disclosure (Socratic in `asking`, atom-grader in `grading`).
 - **stats** — exam-readiness verdict table per subject (cold / weak / getting there / solid), 14-day forecast, this-week vs last, exam-date setting, export/import.
 - **calendar** — month grid; click a day to see its blocks and minutes.
 - **mistakes** — last 50 cards graded ≤2, grouped by subject, "review all" bridges into the review queue.
@@ -34,7 +34,7 @@ Append `?debug` to any URL for the operator surface (raw scheduler stats, EF ave
 
 ## Schedule-driven SRS
 
-The daily plan isn't a fixed queue — it's a reconciliation. Each morning `schedule.regenerate({ dueCounts })` lays out study blocks against your configured time budget. As you work through the day, `schedule.reconcile({ actualBySubject })` watches what you actually did. Anything you fell short on rolls into tomorrow with a `↻ rolled over` note; anything you got ahead on credits forward with `✓ ahead by N`. There are no gates — every subject and section is reachable any time. The schedule is a recommendation, not a lock.
+The daily plan isn't a fixed queue — it's a reconciliation. Each morning `schedule.regenerate({ dueCounts })` lays out study blocks against your configured time budget. As you work through the day, `schedule.reconcile({ actualBySubject })` watches what you actually did. Anything you fell short on rolls into tomorrow with a `Rolled over from earlier` note; anything you got ahead on credits forward with an `Ahead by N` credit. There are no gates — every subject and section is reachable any time. The schedule is a recommendation, not a lock.
 
 ## Where your progress lives
 
@@ -52,12 +52,12 @@ Seventeen `localStorage` keys under `corpus.*`, all under your control. A few of
 | `corpus.flagged.v1` | Cards flagged with `f` for later |
 | `corpus.usercards.v1` | Personal cards added with `+` |
 
-Stats → settings → **export your data** downloads a JSON snapshot. **import data** restores it.
+Stats -> settings -> **export your data** downloads a JSON snapshot. **import data** restores it.
 
 ## Streak policy
 
 - Each day you grade at least one card or work at least one case, the streak rolls forward.
-- Two consecutive active days → streak goes up by 1.
+- Two consecutive active days -> streak goes up by 1.
 - One missed day resets the streak to 1 the next time you study (no grace day).
 - Post-midnight grace: study between 0:00 and 6:00 attributes back to the prior calendar date so a late session doesn't reset a streak.
 

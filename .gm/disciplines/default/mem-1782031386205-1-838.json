@@ -1,0 +1,5 @@
+## Corpus mccqe1 syllabus import + perf detail
+
+mccqe1 syllabus imported from c:/dev/srs-mccqe1 via `node scripts/import_mccqe1.js`: reads data/cards.json (16560 cards) + syllabi/mccqe1/topics.json; classifies each card to a discipline subject via topics.json -> topicId-prefix -> tag-scan -> fallback `general-medicine`; emits syllabus/mccqe1/<subject>/srs-cards/<topicId>.yml in the {cards:[...]} shape + study_guide.md generated FROM the cards (one `## topic` section each). 31 discipline subjects, no triage scenarios (views degrade to empty cleanly).
+
+PERF: mccqe1 active makes loadAllShards eager-fetch ~32MB at boot (cardiology shard 3.8MB; guide.body + guide.sections[].body duplicate content but are coupled to the #L line-anchor system); default cmed4-2026 (~2MB) unaffected. Lazy cards/guide shard split is tracked future work.

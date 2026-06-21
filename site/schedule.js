@@ -141,7 +141,7 @@ export function buildDayBlocks(cfg, dateIso, dueCounts, extras = {}) {
     const total = dayMinutes(cfg, dateIso);
     if (total <= 0) return [];
     const startHour = cfg.chronotype === 'morning' ? 8 : (cfg.chronotype === 'evening' ? 17 : 12);
-    const daysToExam = extras.daysToExam || daysBetween(new Date().toISOString().slice(0, 10), cfg.examDate);
+    const daysToExam = extras.daysToExam || daysBetween(isoDate(new Date()), cfg.examDate);
     const allocs = allocateSubjects(total, cfg.weights, dueCounts, daysToExam, cfg.enabled);
     const intensityMul = INTENSITY_FACTOR[cfg.intensity] || 1;
     // Per-subject daily review cap: base × intensity, but never more than what's actually due.
